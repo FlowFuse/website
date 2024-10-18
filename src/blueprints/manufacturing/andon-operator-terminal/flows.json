@@ -1,0 +1,1172 @@
+[
+    {
+        "id": "e09c0c19df41c454",
+        "type": "tab",
+        "label": "Andon Alert System",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9be7d4cfe3852028",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Station Overview",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f3963d42a535ccfa",
+            "73d8160b9c1cd5dd",
+            "d4eb8cf4b269a3ad",
+            "9e5ea8063f249b8c",
+            "bbb3bf2fb18e0beb"
+        ],
+        "x": 74,
+        "y": 99,
+        "w": 472,
+        "h": 282
+    },
+    {
+        "id": "48ecb67e2239fe1b",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Notification",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "90a767ed66993a7e",
+            "c41382aa948332d7",
+            "0436f8858b9b25b1"
+        ],
+        "x": 1274,
+        "y": 499,
+        "w": 532,
+        "h": 142
+    },
+    {
+        "id": "e4c45e8aa307ff37",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "ANDON Event Details",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5defe48678aab4b0",
+            "6324b08d4991ffc2",
+            "53397298df9e264c",
+            "0ea0f62b6804d399",
+            "46e4e21cfefa2776",
+            "88e48250ec07c5f6",
+            "f82f4b6d2ed33111",
+            "ed29d4ed316ae7b4",
+            "8fdd589c25f30a2b",
+            "9e8a666976eeb7c3",
+            "364ff65ba4d1f6b2",
+            "f41880f72c9ec01e",
+            "31e7b00e2d39a972",
+            "743c129c06133e4c",
+            "dc35a99d04a88c04",
+            "d1586fa2ad6c0484",
+            "9af98abe348574c7",
+            "b8ed68326d54985b"
+        ],
+        "x": 274,
+        "y": 499,
+        "w": 882,
+        "h": 322
+    },
+    {
+        "id": "0171a3e5c855325d",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Log Events",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "56841a3f78860807",
+            "05b35da45abec8b1",
+            "e747fc74d4418cc6",
+            "13623f667412e8f7",
+            "bbef0adf5bb635cb",
+            "f443ed0d29cd0f5b",
+            "a676eb8c10d8ecd7",
+            "429d524b7add1662",
+            "cd9e5ecd5041feee",
+            "ee77d7f371bce161",
+            "a65824efa223fca1",
+            "e47cb6008b923dc2",
+            "99cb67b7aa4aff14",
+            "cb18477d076b65b5",
+            "1b960d82518adaac"
+        ],
+        "x": 594,
+        "y": 119,
+        "w": 1212,
+        "h": 262
+    },
+    {
+        "id": "f3963d42a535ccfa",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "group": "ce5222c5901ff88e",
+        "dashboard": "afea04ce8735c0a6",
+        "page": "f6b6a4e75084de2b",
+        "name": "Display Workstation Status",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<!-- Display the image -->\n    <v-img :src=\"msg?.image || 'https://upload.wikimedia.org/wikipedia/commons/5/57/Tesla_auto_bots.jpg'\" height=\"400px\" cover></v-img>\n    \n    <!-- Display the name of the workstation -->\n    <v-row class=\"mt-5 justify-center\">\n      <v-col class=\"text-center\">\n        <h1 class=\"title-text\">Workstation Demo 1</h1>\n      </v-col>\n    </v-row>\n\n    <!-- Display the status -->\n    <v-row class=\"mt-5 justify-center\">\n      <v-col class=\"text-center\">\n        <h3 class=\"subtitle-text\">Status</h3>\n        <div v-if=\"msg?.status === 'Running'\" class=\"status-box running\"><strong>RUNNING</strong></div>\n        <div v-else-if=\"msg?.status === 'Stopped'\" class=\"status-box stopped\"><strong>DOWN</strong></div>\n        <div v-else class=\"status-box unknown\"><strong>UNKNOWN</strong></div>\n      </v-col>\n    </v-row>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 400,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "73d8160b9c1cd5dd",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "name": "Running",
+        "props": [
+            {
+                "p": "status",
+                "v": "Running",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "f3963d42a535ccfa"
+            ]
+        ]
+    },
+    {
+        "id": "d4eb8cf4b269a3ad",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "name": "Stopped",
+        "props": [
+            {
+                "p": "status",
+                "v": "Stopped",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "f3963d42a535ccfa"
+            ]
+        ]
+    },
+    {
+        "id": "9e5ea8063f249b8c",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "group": "ce5222c5901ff88e",
+        "dashboard": "afea04ce8735c0a6",
+        "page": "f6b6a4e75084de2b",
+        "name": "CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".title-text {\n  font-size: 3em;\n}\n\n.subtitle-text {\n  font-size: 2.5em;\n  margin-bottom: 20px;  /* Add margin to push the status text down */\n}\n\n.status-box {\n  font-size: 3em;\n  text-transform: uppercase;\n  padding: 15px;\n  display: inline-block;\n  margin-top: 25px;  /* Add margin to prevent overlap */\n}\n\n.running {\n  background-color: green;\n  color: white;\n}\n\n.stopped {\n  background-color: red;\n  color: white;\n}\n\n.unknown {\n  background-color: grey;\n  color: white;\n}\n.visible {\n  display: block;\n}\n.hidden {\n  display: none !important;\n}\n.button-red {\n  color: #BC3838;\n}\n.center-elements {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 390,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56841a3f78860807",
+        "type": "ui-form",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Select Reason",
+        "group": "0e2eb3d49addd53a",
+        "label": "Reason:",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Quality",
+                "key": "Quality",
+                "type": "checkbox",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Material",
+                "key": "Material",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Maintenance",
+                "key": "Maintenance",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Other",
+                "key": "Other",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Comment",
+                "key": "Comment",
+                "type": "multiline",
+                "required": false,
+                "rows": 3
+            }
+        ],
+        "formValue": {
+            "Quality": false,
+            "Material": false,
+            "Maintenance": false,
+            "Other": false,
+            "Comment": ""
+        },
+        "payload": "",
+        "submit": "Log Event",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "13623f667412e8f7",
+                "a676eb8c10d8ecd7"
+            ]
+        ]
+    },
+    {
+        "id": "05b35da45abec8b1",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "group": "0e2eb3d49addd53a",
+        "name": "Headline",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "# Log Event\nLog critical events by simply filling out this form.",
+        "className": "",
+        "x": 700,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e747fc74d4418cc6",
+        "type": "ui-text-input",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "group": "0e2eb3d49addd53a",
+        "name": "",
+        "label": "Your Name",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "passthru": false,
+        "className": "",
+        "x": 1070,
+        "y": 160,
+        "wires": [
+            [
+                "f443ed0d29cd0f5b"
+            ]
+        ]
+    },
+    {
+        "id": "13623f667412e8f7",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Refresh form",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 160,
+        "wires": [
+            [
+                "e747fc74d4418cc6"
+            ]
+        ]
+    },
+    {
+        "id": "bbef0adf5bb635cb",
+        "type": "join",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Join two form elements",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1470,
+        "y": 220,
+        "wires": [
+            [
+                "c41382aa948332d7",
+                "cb18477d076b65b5",
+                "1b960d82518adaac"
+            ]
+        ]
+    },
+    {
+        "id": "f443ed0d29cd0f5b",
+        "type": "function",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Set to Object",
+        "func": "msg.payload= {\n    \"name\": msg.payload\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 160,
+        "wires": [
+            [
+                "bbef0adf5bb635cb"
+            ]
+        ]
+    },
+    {
+        "id": "90a767ed66993a7e",
+        "type": "ui-notification",
+        "z": "e09c0c19df41c454",
+        "g": "48ecb67e2239fe1b",
+        "ui": "afea04ce8735c0a6",
+        "position": "center center",
+        "displayTime": "10",
+        "showCountdown": true,
+        "outputs": 0,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "raw": true,
+        "className": "",
+        "name": "",
+        "x": 1630,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c41382aa948332d7",
+        "type": "function",
+        "z": "e09c0c19df41c454",
+        "g": "48ecb67e2239fe1b",
+        "name": "Change notification",
+        "func": "if (msg.payload.Quality === true){\n    msg.payload = \"Notification has been sent to the Quality department.\";\n}\nif (msg.payload.Material === true) {\n    msg.payload = \"Notification has been sent to the Material department.\";\n}\nif (msg.payload.Maintenance === true) {\n    msg.payload = \"Notification has been sent to the Maintenance department.\";\n}\nif (msg.payload.Other === true) {\n    msg.payload = \"Notification has been sent.\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1410,
+        "y": 600,
+        "wires": [
+            [
+                "90a767ed66993a7e"
+            ]
+        ]
+    },
+    {
+        "id": "0436f8858b9b25b1",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "48ecb67e2239fe1b",
+        "name": " Inform the department additionally, for example, via email or SMS.",
+        "info": "",
+        "x": 1540,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "bbb3bf2fb18e0beb",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "name": "link in 1",
+        "links": [
+            "429d524b7add1662",
+            "743c129c06133e4c"
+        ],
+        "x": 215,
+        "y": 340,
+        "wires": [
+            [
+                "f3963d42a535ccfa"
+            ]
+        ]
+    },
+    {
+        "id": "a676eb8c10d8ecd7",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Set Status to Stopped",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "Stopped",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 220,
+        "wires": [
+            [
+                "bbef0adf5bb635cb",
+                "429d524b7add1662",
+                "cd9e5ecd5041feee",
+                "ee77d7f371bce161"
+            ]
+        ]
+    },
+    {
+        "id": "429d524b7add1662",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "bbb3bf2fb18e0beb"
+        ],
+        "x": 1185,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "cd9e5ecd5041feee",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Display elements",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ui-property:class",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "visible",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1250,
+        "y": 300,
+        "wires": [
+            [
+                "a65824efa223fca1"
+            ]
+        ]
+    },
+    {
+        "id": "5defe48678aab4b0",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Hide Element",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "reset",
+                "v": "reset",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ui-property:class",
+        "payload": "hidden",
+        "payloadType": "str",
+        "x": 400,
+        "y": 700,
+        "wires": [
+            [
+                "0ea0f62b6804d399",
+                "f41880f72c9ec01e"
+            ]
+        ]
+    },
+    {
+        "id": "ee77d7f371bce161",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Hide elements",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ui-property:class",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "hidden",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 340,
+        "wires": [
+            [
+                "e47cb6008b923dc2"
+            ]
+        ]
+    },
+    {
+        "id": "a65824efa223fca1",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "8fdd589c25f30a2b",
+            "5b6b102db3205247",
+            "dc35a99d04a88c04"
+        ],
+        "x": 1375,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e47cb6008b923dc2",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "3f3597aaf7a7e922",
+            "cf9013ce52e6df90",
+            "9e8a666976eeb7c3"
+        ],
+        "x": 1375,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "99cb67b7aa4aff14",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "In addition ... ",
+        "info": "In addition, you can send the event to a database or message broker.",
+        "x": 1710,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "52c2d87ec8091311",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "name": "LICENSE",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 80,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6324b08d4991ffc2",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "link in 5",
+        "links": [
+            "cb18477d076b65b5",
+            "9edfdd871f47a841"
+        ],
+        "x": 335,
+        "y": 740,
+        "wires": [
+            [
+                "53397298df9e264c"
+            ]
+        ]
+    },
+    {
+        "id": "53397298df9e264c",
+        "type": "function",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Andon Details",
+        "func": "if (msg.payload.Quality === true){\n    msg.reason = \"Quality\";\n}\nif (msg.payload.Material === true) {\n    msg.reason = \"Material\";\n}\nif (msg.payload.Maintenance === true) {\n    msg.reason = \"Maintenance\";\n}\nif (msg.payload.Other === true) {\n    msg.reason = \"Other\";\n}\n\nfunction generateRandomID() {\n    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n    let result = '';\n    for (let i = 0; i < 10; i++) {\n        const randomIndex = Math.floor(Math.random() * characters.length);\n        result += characters[randomIndex];\n    }\n    return result;\n}\nfunction getCurrentTimestampUSStyle() {\n    const now = new Date();\n    const date = `${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getDate().toString().padStart(2, '0')}/${now.getFullYear()}`;\n    const time = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;\n    return `${date} ${time}`;\n}\n\nmsg.timestamp = getCurrentTimestampUSStyle();\n\nconst randomID = generateRandomID();\nmsg.payload.id = randomID;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 740,
+        "wires": [
+            [
+                "f41880f72c9ec01e",
+                "9af98abe348574c7"
+            ]
+        ]
+    },
+    {
+        "id": "cb18477d076b65b5",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "6324b08d4991ffc2",
+            "08f8d8d9c4c018c8"
+        ],
+        "x": 1655,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "0ea0f62b6804d399",
+        "type": "ui-button",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "name": "",
+        "label": "Close Andon",
+        "order": 7,
+        "width": "9",
+        "height": "1",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "center-elements",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 710,
+        "y": 700,
+        "wires": [
+            [
+                "46e4e21cfefa2776",
+                "88e48250ec07c5f6",
+                "31e7b00e2d39a972"
+            ]
+        ]
+    },
+    {
+        "id": "46e4e21cfefa2776",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Display elements",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ui-property:class",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "visible",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 700,
+        "wires": [
+            [
+                "f82f4b6d2ed33111"
+            ]
+        ]
+    },
+    {
+        "id": "88e48250ec07c5f6",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Hide elements",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ui-property:class",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "hidden",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 740,
+        "wires": [
+            [
+                "ed29d4ed316ae7b4"
+            ]
+        ]
+    },
+    {
+        "id": "f82f4b6d2ed33111",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "cf9013ce52e6df90",
+            "3f3597aaf7a7e922",
+            "9e8a666976eeb7c3"
+        ],
+        "x": 1115,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ed29d4ed316ae7b4",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "55a5ae4f7c125807",
+            "8fdd589c25f30a2b",
+            "5b6b102db3205247",
+            "dc35a99d04a88c04"
+        ],
+        "x": 1115,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "8fdd589c25f30a2b",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "link in 6",
+        "links": [
+            "9edfdd871f47a841",
+            "ed29d4ed316ae7b4",
+            "a65824efa223fca1"
+        ],
+        "x": 465,
+        "y": 660,
+        "wires": [
+            [
+                "0ea0f62b6804d399"
+            ]
+        ]
+    },
+    {
+        "id": "9e8a666976eeb7c3",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "link in 7",
+        "links": [
+            "e47cb6008b923dc2",
+            "f82f4b6d2ed33111"
+        ],
+        "x": 465,
+        "y": 620,
+        "wires": [
+            [
+                "b8ed68326d54985b"
+            ]
+        ]
+    },
+    {
+        "id": "364ff65ba4d1f6b2",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "dashboard": "afea04ce8735c0a6",
+        "page": "f6b6a4e75084de2b",
+        "name": "Headline",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": " <!-- Display the name of the workstation -->\n    <v-row class=\"mt-5 justify-center\">\n      <v-col class=\"text-center\">\n        <h1 class=\"title-text\">Andon Event</h1>\n      </v-col>\n    </v-row>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 700,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f41880f72c9ec01e",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "dashboard": "afea04ce8735c0a6",
+        "page": "f6b6a4e75084de2b",
+        "name": "Andon Event Deatils",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<v-row>\n  <v-col>\n    <h3 style=\"margin-bottom: 20px; text-align: center;\">Details</h3>\n    \n    <!-- Table for Andon Event Details -->\n    <v-simple-table class=\"andon-table\">\n      <template v-slot:default>\n        <thead>\n          <tr>\n            <th class=\"text-left key-header\">Key</th>\n            <th class=\"text-left value-header\">Value</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr class=\"andon-row\">\n            <td class=\"key-cell\">ID</td>\n            <td class=\"value-cell\">{{msg.payload.id}}</td>\n          </tr>\n          <tr class=\"andon-row\">\n            <td class=\"key-cell\">Responsible Department</td>\n            <td class=\"value-cell\">{{msg.reason}}</td>\n          </tr>\n          <tr class=\"andon-row\">\n            <td class=\"key-cell\">Created By</td>\n            <td class=\"value-cell\">{{msg.payload.name}}</td>\n          </tr>\n          <tr class=\"andon-row\">\n            <td class=\"key-cell\">Timestamp</td>\n            <td class=\"value-cell\">{{msg.timestamp}}</td>\n          </tr>\n          <tr class=\"andon-row\">\n            <td class=\"key-cell\">Comments</td>\n            <td class=\"value-cell\">{{msg.payload.Comment}}</td>\n          </tr>\n        </tbody>\n      </template>\n    </v-simple-table>\n  </v-col>\n</v-row>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "center-elements",
+        "x": 720,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "31e7b00e2d39a972",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Set Status to Running",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "Running",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 660,
+        "wires": [
+            [
+                "743c129c06133e4c"
+            ]
+        ]
+    },
+    {
+        "id": "743c129c06133e4c",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "bbb3bf2fb18e0beb"
+        ],
+        "x": 1115,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "dc35a99d04a88c04",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "link in 10",
+        "links": [
+            "9edfdd871f47a841",
+            "a65824efa223fca1",
+            "ed29d4ed316ae7b4"
+        ],
+        "x": 465,
+        "y": 780,
+        "wires": [
+            [
+                "f41880f72c9ec01e"
+            ]
+        ]
+    },
+    {
+        "id": "d1586fa2ad6c0484",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "dashboard": "afea04ce8735c0a6",
+        "page": "f6b6a4e75084de2b",
+        "name": "Andon Table Style",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "  .andon-table {\n      border-collapse: collapse;\n      width: 100%;\n      border: 1px solid #ddd;\n  }\n\n  .key-header,\n  .value-header {\n      background-color: #f2f2f2;\n      padding: 10px;\n      text-align: left;\n  }\n\n  .andon-row:nth-child(even) {\n      background-color: #f2f2f2;\n  }\n\n  .key-cell,\n  .value-cell {\n      padding: 14px;\n      border-bottom: 1px solid #ddd;\n  }",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 670,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b960d82518adaac",
+        "type": "debug",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1700,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9af98abe348574c7",
+        "type": "debug",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b8ed68326d54985b",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "name": "Status",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "content": "### At present, no Andon events are active",
+        "className": "center-elements",
+        "x": 670,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "name": "README",
+        "info": "# Andon Operator Terminal\n\nThe Andon Operator Terminal is designed to be at the start of an Andon process, \nallowing end-users to report any issues with the cell to the station supervisor.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a group on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 240,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ce5222c5901ff88e",
+        "type": "ui-group",
+        "name": "Station Status",
+        "page": "f6b6a4e75084de2b",
+        "width": "4",
+        "height": "3",
+        "order": -1,
+        "disp": false
+    },
+    {
+        "id": "afea04ce8735c0a6",
+        "type": "ui-base",
+        "name": "UI Name",
+        "path": "/dashboard"
+    },
+    {
+        "id": "f6b6a4e75084de2b",
+        "type": "ui-page",
+        "name": "Andon Operator Terminal",
+        "ui": "afea04ce8735c0a6",
+        "path": "/",
+        "layout": "grid",
+        "theme": "6d8bff5f3fded5c2",
+        "order": -1
+    },
+    {
+        "id": "0e2eb3d49addd53a",
+        "type": "ui-group",
+        "name": "Log Event",
+        "page": "f6b6a4e75084de2b",
+        "width": "5",
+        "height": "3",
+        "order": -1,
+        "disp": false
+    },
+    {
+        "id": "6b96e8c6c1b15215",
+        "type": "ui-group",
+        "name": "Andon Event",
+        "page": "f6b6a4e75084de2b",
+        "width": "9",
+        "height": "5",
+        "order": -1,
+        "disp": false
+    },
+    {
+        "id": "6d8bff5f3fded5c2",
+        "type": "ui-theme",
+        "name": "FF Theme",
+        "colors": {
+            "surface": "#1f2937",
+            "primary": "#8ce2e7",
+            "bgPage": "#4b5563",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    }
+]
