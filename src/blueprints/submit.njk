@@ -1,0 +1,49 @@
+---
+layout: layouts/page.njk
+title: Submit Your Blueprint
+description: <p>Thank you for your interest in FlowFuse! </br> Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.</p>
+sitemapPriority: 0.7
+pagination:
+  data: collections.blueprints
+  size: 3
+  alias: blueprints
+  reverse: true
+meta:
+    description: Submit your own Blueprints for publishing in the FlowFuse Blueprint Library
+hubspot:
+    script: "hubspot/hs-form.njk"
+    formId: 734455e5-4cda-4329-97da-07e40cda791c
+    cta: "cta-contact-us"
+    reference: "contact-us"
+---
+<div class="text-left max-w-full">
+  <div class="container m-auto text-left max-w-5xl">
+    <div class="flex flex-col justify-center items-center md:block mx-auto">
+      <div class="product pt-3">
+        <!-- Form / Calendar Script -->
+        <div class="max-w-2xl mx-auto">
+          {% include hubspot.script %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full py-10 text-center ">
+    <div class="container m-auto max-w-lg md:max-w-4xl">
+        <h2>Existing Blueprints</h2>
+        <p>Here are a few examples of Blueprints from our collection.You can take a look at the full collection in our <a href="/blueprints">Blueprint Library</a></p>
+        <ul class="flex flex-wrap">
+            {%- asyncEach item in blueprints -%}
+            <li class="w-full md:w-1/3 my-2 px-3 pb-6 border-b mt-6 flex flex-col justify-between group">
+                <a href="{{ item.url }}" class="relative w-full flex flex-col hover:no-underline">
+                    <div class="ff-blog-tile overflow-hidden">
+                        <div class="w-full h-auto transition-transform group-hover:scale-105">
+                            {% tileImage item, "./images/og-blog.jpg", "Image with logo and the slogan: Elevate Node-RED with Flowfuse", 285 %}
+                        </div>
+                        <label class="absolute w-full left-0 bottom-0 bg-indigo-700 text-white font-medium text-left p-2">{{ item.data.title }}</label>
+                    </div>
+                </a>
+            </li>
+            {%- endeach -%}
+        </ul>
+  </div>
+</div>
