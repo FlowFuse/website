@@ -86,6 +86,7 @@ module.exports = function(eleventyConfig) {
 
     // Naive copy of images for backwards compatibility of non short-code image handling (use of <img or in CSS)
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
+    eleventyConfig.addPassthroughCopy("src/blueprints/**/flow.json");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
@@ -366,6 +367,20 @@ module.exports = function(eleventyConfig) {
                         <span>${teamMember.title}</span>
                     </div>
                 </div>`
+    });
+
+    eleventyConfig.addShortcode("renderCompanyTile", function (company) {
+        return `<div class="company-tile">
+            <img class="company-tile-logo" src="${company.img}" />
+            <label>${company.name}</label>
+        </div>`
+    });
+
+    eleventyConfig.addShortcode("renderIntegration", function (integration) {
+        return `<div class="integration-tile">
+            <img class="integration-tile-icon" src="${integration.img}" />
+            <label>${integration.name}</label>
+        </div>`
     });
 
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
