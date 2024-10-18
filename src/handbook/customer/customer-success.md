@@ -178,9 +178,24 @@ and getting more value from the product
 on the product and experience. Allow them to request feature ideas, or ask for bug
 fixes.
 
-## Churned customers
+## Procedure for Handling a Churned Customer
 
-When an annually-billed customer chooses not to renew their subscription, the assigned Account Executive should login into Stripe and cancel the subscription. This will effectively close the account on the platform and prevent invoices to continue being sent.
+The Assigned Account Executive is responsible for executing the following steps when an annually-billed customer chooses not to renew their subscription:
+
+1. **Update Contracted Customer Tracker**
+   Access the [Contracted Customer Tracker](https://docs.google.com/spreadsheets/d/1QcGVeiO_RXwYHCZvGcuBW3oYgR5NMsQ22yi3cOFY73o/edit?gid=1852075496#gid=1852075496) and move the churned customer to the "Churned" tab.
+   
+2. **Cancel Subscription in Stripe**
+   Use the Stripe link provided in the Tracker to log into Stripe. Cancel the subscription to ensure no further invoices are sent and effectively close the customer's account on the platform.
+
+3. **Close Opportunities in Hubspot**
+   In Hubspot, locate any open Growth and Renewal opportunities related to the churned customer. Move these opportunities to "Closed Lost" to reflect the customer's decision not to renew.
+
+4. **Announce Churn in Slack**
+   Post an announcement in the Slack channel #dept-sales, summarizing the reasons for the churn. Encourage the team to ask questions or suggest ways to learn from the situation.
+
+5. **Send Customer Acknowledgment and Learning Questions**
+   Send an acknowledgment email to the churned customer. Include any relevant questions aimed at understanding their reasons for churn and gathering feedback for internal improvement.
 
 ## Notifying Customers of Downtime for FlowFuse Cloud Kubernetes Migrations
 
