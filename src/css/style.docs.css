@@ -1,0 +1,87 @@
+.checklist {
+    
+}
+
+.checklist label {
+    font-weight: bold;
+    border-bottom: 1px solid #D1D5DB;
+    display: block;
+    margin-bottom: 9px;
+    padding: 3px;
+}
+
+.checklist-item {
+    padding: 6px 3px;
+}
+
+.checklist-item .tooltip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+    cursor: help;
+    --tooltip-padding: 3px;
+}
+
+.checklist-item svg {
+    width: 32px;
+    height: 32px;
+}
+
+.checklist-item--required svg {
+    color: #16A34A;
+}
+.checklist-item--recommended svg {
+    color: #EAB308;
+}
+.checklist-item--optional svg {
+    color: #EAB308;
+}
+
+.checklist-item:hover svg{
+    color: blue;
+}
+
+.checklist-item .tooltip:before {
+    content: attr(data-tooltip); /* here's the magic */
+    position: absolute;
+    
+    top: 50%;
+    transform: translateY(-50%);
+    
+    left: 100%;
+    margin-left: calc(var(--tooltip-padding) + 12px);
+    
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+  
+    display: none;
+}
+
+.checklist-item .tooltip:after {
+    content: "";
+    position:absolute;
+    
+    /* position tooltip correctly */
+    left: 100%;
+    margin-left: calc(12 + var(-tooltip-padding));
+   
+    /* vertically center */
+    top: 50%;
+    transform: translateY(-50%);
+   
+    /* the arrow */
+    border: 10px solid #000;
+    border-color: transparent black transparent transparent;
+    
+    display:none;
+}
+
+.checklist-item .tooltip:hover:before,
+.checklist-item .tooltip:hover:after {
+    display:block;
+}
