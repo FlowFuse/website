@@ -2,6 +2,10 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
     content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
+    safelist: [
+      'ml-4',
+      'ml-8'
+    ],
     theme: {
         extend: {
             typography: (theme) => ({
