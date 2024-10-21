@@ -39,8 +39,7 @@ As I began my exploration, I first sought to understand the cost of downtime to 
 This is where MQTT truly shines. Designed for lightweight messaging, MQTT operates on a simple yet powerful **publish-subscribe model**. Unlike traditional request-response protocols that can cause delays due to constant querying, MQTT establishes a persistent connection. Once devices connect, they can publish messages or subscribe to topics in real-time, eliminating the need for repeated requests.
 
 ![MQTT Topic structer](./images/mqtt-packate-size.png)  
-*Image showing the MQTT Topic Structer*
-
+_Image showing the MQTT Topic Structer_
 
 In addition to its efficiency in message handling, MQTT keeps message sizes compact—a crucial factor when working with **low-bandwidth networks** or a high number of connected devices. The MQTT protocol itself introduces **minimal overhead**, as its messages typically consist of just a few bytes, making it perfect for constrained devices like sensors that need to transmit data without overloading the network. The result? As soon as a sensor detects a change—whether it’s a temperature spike or a production error—it can instantly send that data in a compact message to the relevant applications or systems. Decisions can be made on the fly, and proactive measures can be implemented immediately, significantly reducing the risk of costly downtimes.
 
@@ -48,14 +47,13 @@ Another critical aspect of any broker in a UNS context is reliability. What happ
 
 MQTT provides three levels of Quality of Service (QoS) to ensure message delivery reliability, catering to different application needs. QoS 0 delivers messages on a "best-effort" basis, meaning they may be lost if the connection fails. QoS 1 guarantees that messages are delivered at least once, ensuring that even if there’s a temporary disruption, the message will reach its destination. QoS 2 is the highest level, ensuring that messages are delivered exactly once, preventing duplicates and ensuring data integrity.
 
-
 ![MQTT Quality of Service's diffrent levels](./images/mqtt-qos.png)  
-*MQTT Quality of Service's diffrent levels*
+_MQTT Quality of Service's diffrent levels_
 
 In a world where data integrity is paramount, especially in industrial environments, the ability to choose the right QoS level ensures that all components—whether they are sensors, devices, or applications—are working with the most accurate and up-to-date information.
 
 ![MQTT's Compatiblity](./images/mqtt-compatiblity.png)  
-*MQTT can connect with everything*
+_MQTT can connect with everything_
 
 Then the next question arises in my mind: does MQTT **connect with a variety of devices and systems**? This is a primary requirement for any Unified Namespace (UNS), as it serves as a single source of truth collected from every part of the IoT environment. MQTT’s long-standing standardization since the 1990s enables it to bridge the gap between legacy PLCs and modern IoT devices. This compatibility eliminates the need for extensive changes to existing infrastructures, allowing organizations to leverage their current investments while integrating new technologies.
 
@@ -87,7 +85,7 @@ The sheer volume of data can be overwhelming. In a Unified Namespace (UNS), the 
 MQTT helps with this by allowing to use its structured topics that clarify the flow of information from various devices. For example, to organize data in a broker for a house, the topic structure might look like following image, where accessing the kitchen temperature topic would be: `house/rooms/first-floor/kitchen/temperature`
 
 ![MQTT's Topics tree example](./images/mqtt-topics-org.png)  
-*Exmample of MQTT Topics tree heirarchy*
+_Exmample of MQTT Topics tree heirarchy_
 
 Additionally, MQTT’s support for wildcards allows monitoring of multiple data streams simultaneously.
 
@@ -102,7 +100,6 @@ We’ve listened closely to our customers, who expressed the need for a reliable
 This new feature will allow you to connect, manage, and analyze data from all your devices without the hassle of juggling multiple services. With the FlowFuse MQTT Broker, you can oversee all your MQTT clients, Node-RED instances, and devices from a single, centralized platform. This eliminates reliance on external broker services, streamlining your operations and allowing you to focus on driving innovation.
 
 As your operations grow—from small projects to large-scale IoT deployments—our MQTT broker will scale with you. Additionally, robust role-based permissions will keep your data secure, ensuring that only authorized personnel can access sensitive information.
-
 Stay tuned for updates on this exciting enhancement! You can track our progress [here](https://github.com/FlowFuse/flowfuse/issues/1350).
 
 **Ready to take your IoT solutions to the next level?** [Join FlowFuse today](https://app.flowfuse.com/account/create) and experience the power of seamless integration and management for your IoT environment!
