@@ -81,10 +81,10 @@ After examining MQTT's strengths, it’s clear that it’s a strong choice for y
 
 The sheer volume of data can be overwhelming. In a Unified Namespace (UNS), the digital representation of your business needs to be more than just a collection of data—it must provide meaningful context. 
 
+MQTT helps with this by allowing to use its structured topics that clarify the flow of information from various devices. For example, to organize data in a broker for a house, the topic structure might look like following image, where accessing the kitchen temperature topic would be: `house/rooms/first-floor/kitchen/temperature`
+
 ![MQTT's Topics tree example](./images/mqtt-topics-org.png)  
 *Exmample of MQTT Topics tree heirarchy*
-
-MQTT helps with this by allowing to use its structured topics that clarify the flow of information from various devices. Each topic, like `FactoryX/AssemblyLine1/TemperatureSensor/Unit42`, makes it easy to trace data back to its source.
 
 Additionally, MQTT’s support for wildcards allows monitoring of multiple data streams simultaneously.
 
