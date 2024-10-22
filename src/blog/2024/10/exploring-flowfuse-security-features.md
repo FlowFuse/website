@@ -4,7 +4,7 @@ subtitle: Explore the Powerful Security Features That Enhance Your FlowFuse Expe
 description: Discover essential FlowFuse security features that enhance protection and ensure secure Node-RED deployments. Explore tools you didn't know you needed for robust security.
 date: 2024-10-22
 authors: ["sumit-shinde"]
-image:
+image:  /blog/2024/10/images/flowfuse-security-features.png
 keywords: node-red security, node red security, how to secure node-red solutions, secured solution for manufacturing, iot vulnerabilities, iot security concerns, iot and security
 tags:
  - flowfuse security features
