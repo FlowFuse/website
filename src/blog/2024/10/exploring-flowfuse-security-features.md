@@ -1,5 +1,5 @@
 ---
-title: Exploring FlowFuse Security Features You Didn’t Know You Needed 
+title: FlowFuse Security Features You Didn’t Know You Needed 
 subtitle: Explore the hidden security features that enhance your FlowFuse experience.
 description: Discover essential FlowFuse security features that enhance protection and ensure secure Node-RED deployments. Explore tools you didn't know you needed for robust security.
 date: 2024-10-21
