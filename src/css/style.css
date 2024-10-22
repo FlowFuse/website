@@ -2,6 +2,7 @@
 @import "./style.page.css";
 @import "./style.nohero.css";
 @import "./style.handbook.css";
+@import "./style.catalog.css";
 @import "./style.eleventy.nav.css";
 @import "./style.components.css";
 @import "./style.animations.css";
