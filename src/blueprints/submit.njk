@@ -1,7 +1,7 @@
 ---
-layout: layouts/page.njk
+layout: default
 title: Submit Your Blueprint
-description: <p>Thank you for your interest in FlowFuse! </br> Share your info, and our sales team will reach out to discuss tailored solutions for your business-critical applications.</p>
+description: <p>Share your Blueprints to help the FlowFuse community build a best-in-class library of commercially useful content and build recognition of your company as top Node-RED experts.</p><p>We are accepting submissions of Blueprints that are commercially valuable and professionally well-constructed. Submissions will be reviewed by the FlowFuse team. Accepted submissions will be featured on the Blueprints page with acknowledgement of the company that authored the Blueprint.</p>
 sitemapPriority: 0.7
 pagination:
   data: collections.blueprints
@@ -12,20 +12,37 @@ meta:
     description: Submit your own Blueprints for publishing in the FlowFuse Blueprint Library
 hubspot:
     script: "hubspot/hs-form.njk"
-    formId: 734455e5-4cda-4329-97da-07e40cda791c
-    cta: "cta-contact-us"
-    reference: "contact-us"
+    formId: c627fbcb-a3e0-46dd-978b-122461b7835c
+    cta: "blueprint-upload"
+    reference: "blueprint-upload"
 ---
+
+{% extends 'layouts/catalog.njk' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block description %}
+Share your Blueprints to help the FlowFuse community build a best-in-class library of commercially useful content and build recognition of your company as top Node-RED experts.
+{% endblock %}
+
+{% block actions %}
+<a href="/blueprints" class="ff-btn ff-btn--primary flex-col uppercase">View All Blueprints</a>
+{% endblock %}
+
+{% block content %}
 <div class="text-left max-w-full">
-  <div class="container m-auto text-left max-w-5xl">
-    <div class="flex flex-col justify-center items-center md:block mx-auto">
-      <div class="product pt-3">
-        <!-- Form / Calendar Script -->
-        <div class="max-w-2xl mx-auto">
-          {% include hubspot.script %}
+  <div class="container m-auto text-left max-w-6xl px-4">
+    <div class="grid gap-4 pt-12 grid-cols-2">
+        <div>
+            <p>We are accepting submissions of Blueprints that are <b>commercially valuable and professionally well-constructed</b>.</p> <p>Submissions will be reviewed by the FlowFuse team.</p>
+            <p>Accepted submissions will be featured on the Blueprints page with acknowledgement of the company that authored the Blueprint.</p>
         </div>
-      </div>
-    </div>
+        <!-- Form / Calendar Script -->
+        <div class="w-full">
+        {% include hubspot.script %}
+        </div>
   </div>
   <div class="w-full py-10 text-center ">
     <div class="container m-auto max-w-lg md:max-w-4xl">
@@ -47,3 +64,4 @@ hubspot:
         </ul>
   </div>
 </div>
+{% endblock %}
