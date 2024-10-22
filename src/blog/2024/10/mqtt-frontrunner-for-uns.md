@@ -73,9 +73,6 @@ But MQTT doesn’t stop there. It incorporates robust authentication methods, al
 
 I finally discovered the MQTT community—a vibrant network of developers and users eager to share their experiences and help each other. Picture this: when challenges arise, whether they’re bugs or integration issues, there’s a wealth of knowledge at our fingertips.
 
-![MQTT Growing Interest](./images/mqtt-google-trends.png)  
-_Google Trend: showing the growing interest in MQTT all around the world_
-
 The availability of open-source tools, libraries, and forums means that when you face a problem, there’s a good chance someone has encountered it before and can provide guidance. This active support network makes the journey much less daunting and encourages innovation within the ecosystem. Surprisingly, this community is growing day by day. The Google Trends chart below illustrates the exponential increase in interest in MQTT.
 
 ![MQTT Growing Interest](./images/mqtt-google-trends.png)  
