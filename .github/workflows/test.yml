@@ -48,20 +48,9 @@ jobs:
       - name: Build the forge
         run: npm run build:skip-images
         working-directory: 'website'
-
-      # Add Lychee to check for broken links
-      - name: Install Lychee
-        run: |
-          sudo apt update
-          sudo apt install -y curl
-          curl -sSf https://sh.rustup.rs | sh -s -- -y
-          source $HOME/.cargo/env
-          cargo install lychee
-
-      - name: Check for broken links with Lychee
-        run: |
-          lychee --verbose --no-progress --exclude localhost --exclude *.flowfuse.com website/_site/
-          
+      - uses: untitaker/hyperlink@0.1.32
+        with:
+          args: website/_site/ --check-anchors --sources website/src
       - name: Test the website
         run: npm run test
         working-directory: 'website'
