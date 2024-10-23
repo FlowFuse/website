@@ -84,6 +84,8 @@ module.exports = function(eleventyConfig) {
         "src/public/": "/",
     });
 
+    config.addPassthroughCopy('src/_redirects');
+
     // Naive copy of images for backwards compatibility of non short-code image handling (use of <img or in CSS)
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/blueprints/**/flow.json");
@@ -740,6 +742,7 @@ module.exports = function(eleventyConfig) {
     return {
         dir: {
             input: "src"
-        }
+        },
+        passthroughFileCopy: true,
     }
 };
