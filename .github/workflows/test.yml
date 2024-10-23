@@ -48,24 +48,11 @@ jobs:
       - name: Build the forge
         run: npm run build:skip-images
         working-directory: 'website'
-
-      # Add Lychee to check for broken links
-      - name: Install Lychee
-        run: |
-          sudo apt update
-          sudo apt install -y curl
-          curl -sSf https://sh.rustup.rs | sh -s -- -y
-          source $HOME/.cargo/env
-          cargo install lychee
-
-      - name: lychee Link Checker
-        id: lychee
+      - name: Run Link Checker with Lychee
         uses: lycheeverse/lychee-action@v2.0.2
         with:
-          args: --accept=200,301,403,429 --exclude-mail **/*.html **/*.md **/*.txt **/*.json
+          args: --accept=200,301,403,429 --exclude-mail --cache --max-cache-age 1d website/_site/
           fail: true
-
       - name: Test the website
         run: npm run test
         working-directory: 'website'
-
