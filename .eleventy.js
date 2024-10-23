@@ -84,7 +84,7 @@ module.exports = function(eleventyConfig) {
         "src/public/": "/",
     });
 
-    eleventyConfig.addPassthroughCopy('src/_redirects');
+    eleventyConfig.addPassthroughCopy("src/_redirects");
 
     // Naive copy of images for backwards compatibility of non short-code image handling (use of <img or in CSS)
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
@@ -741,7 +741,8 @@ module.exports = function(eleventyConfig) {
 
     return {
         dir: {
-            input: "src"
+            input: "src",
+            output:"_site"
         },
         passthroughFileCopy: true,
     }
