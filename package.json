@@ -12,7 +12,7 @@
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js _site/js/flowrenderer.min.js",
         "build": "cross-env NODE_ENV=production npm-run-all clean build:js --parallel prod:*",
         "build:skip-images": "cross-env SKIP_IMAGES=true npm run build",
-        "clean:dev": "cross-env npx del-cli '_site/!(img)' 'src/docs/**/*.md' 'src/blueprints/**/*' && cross-env npx mkdirp '_site/js/flows'",
+        "clean:dev": "cross-env npx del-cli '_site/!(img)' 'src/docs/**/*.md' 'src/blueprints/**/!(*submit.njk)' && cross-env npx mkdirp '_site/js/flows'",
         "clean": "cross-env npx del-cli '_site/!(img)' && cross-env mkdir -p '_site/js'",
         "dev:docs": "node scripts/copy_docs.js --watch",
         "dev:blueprints": "node scripts/watch_blueprints.js",
