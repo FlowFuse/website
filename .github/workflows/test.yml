@@ -51,7 +51,7 @@ jobs:
       - name: Run Link Checker with Lychee
         uses: lycheeverse/lychee-action@v2.0.2
         with:
-          args: --accept=200,301 --exclude 'http*' --exclude '*://*' --cache --max-cache-age 1d website/_site/
+          args: --accept=200,301 --exclude 'https?://.*' --cache --max-cache-age 1d website/_site/
           fail: true
       - name: Test the website
         run: npm run test
