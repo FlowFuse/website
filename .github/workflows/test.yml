@@ -60,7 +60,7 @@ jobs:
 
       - name: Check only internal links with Lychee
         run: |
-          lychee --verbose --no-progress --exclude "https?://" website/_site/
+          lychee --verbose --no-progress --base "http://localhost:3000" website/_site/
 
       - name: Test the website
         run: npm run test
