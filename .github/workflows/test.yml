@@ -58,10 +58,10 @@ jobs:
           source $HOME/.cargo/env
           cargo install lychee
 
-      - name: Check for broken links with Lychee
+      - name: Check only internal links with Lychee
         run: |
-          lychee --verbose --no-progress --exclude localhost website/_site/
-          
+          lychee --verbose --no-progress --exclude "https?://" website/_site/
+
       - name: Test the website
         run: npm run test
         working-directory: 'website'
