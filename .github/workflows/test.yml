@@ -60,8 +60,8 @@ jobs:
 
       - name: Check for broken links with Lychee
         run: |
-          lychee --offline website/_site/
-          
+          run: lychee --verbose --no-progress --offline website/_site/
+
       - name: Test the website
         run: npm run test
         working-directory: 'website'
