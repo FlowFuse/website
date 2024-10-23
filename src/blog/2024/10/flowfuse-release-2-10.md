@@ -43,7 +43,7 @@ In this view, you can see every time a new set of flows were deployed to your No
 
 We've also added in the ability to define common environment variables in your Device Groups. 
 
-![Screenshot showing the new Device Group Environment Variables](/changelog/2024/10/images/device-group--with-env-vars.png){data-zoomable}
+![Screenshot showing the new Device Group Environment Variables](../../../changelog/2024/10/images/device-group--with-env-vars.png){data-zoomable}
 
 These will now be deployed to any devices contained within a given group, and can still be overridden by environment variables defined in the Device's settings directly.
 
