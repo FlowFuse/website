@@ -9,7 +9,7 @@ keywords: node-red security, node red security, how to secure node-red solutions
 tags:
  - flowfuse security features
  - flowfuse features
- - node-red secureity
+ - node-red security
  - node red security
 ---
 
