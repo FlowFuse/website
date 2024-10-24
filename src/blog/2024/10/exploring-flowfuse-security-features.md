@@ -27,7 +27,6 @@ Here’s the best part- we don’t just offer default protections; we empower yo
 
 If you're interested in learning more about how we safeguard your data privacy and security, we invite you to read our detailed [security statement](/product/security/). Additionally, we are proud to announce that [FlowFuse has achieved SOC 2 Type 1 compliance](/blog/2024/01/soc2/), demonstrating our commitment to maintaining the highest standards in security and data protection.
 
-
 ### Single Sign-On (SSO) Integration
 
 Every organization relies on various tools and platforms to enhance productivity and efficiency. Providing seamless access to these resources is vital for optimizing workflows. That’s where Single Sign-On (SSO) comes in, it simplifies the onboarding and offboarding processes. 
@@ -45,7 +44,7 @@ If you are using FlowFuse Cloud, please get in touch with us for configuration a
 
 We've all been there, managing countless passwords, hoping they're strong enough to protect against security threats. But in today’s digital world, passwords alone aren’t sufficient. That’s why Two-Factor Authentication (2FA) has become essential.
 
-FlowFuse understands this need. By enabling 2FA, even if someone gets hold of your password, they'll still require a second form of verification—like a code sent to your phone—to access your account. This simple yet powerful layer of security ensures your data is much safer from unauthorized access.
+FlowFuse understands this need. By enabling 2FA, even if someone gets hold of your password, they'll still require a second form of verification—like a code sent to your phone—to access your account. This simple yet powerful layer of security ensures your data is much safer from unauthorized access. However, when Single Sign-On (SSO) is enabled, 2FA will be replaced by SSO's authentication process.
 
 To set up 2FA in FlowFuse, you’ll need to head over to **User Settings > Security > Two-Factor Authentication**. It’s as simple as clicking the "Enable Two-Factor Authentication" button, scanning the QR code displayed on the platform with your authenticator app, and then entering the code from your app back into FlowFuse. Once you've done that, 2FA will be up and running, adding that extra layer of security to your account!
 
@@ -56,7 +55,14 @@ _Flowfuse: Two Factor Authentication_
 
 With collaboration at its core, FlowFuse allows you to create teams and invite members to collaborate on projects. However, not all team members require access to every feature. Effective management is essential, as some members might feel overwhelmed by unnecessary options, and there's a risk of accidental changes being made by those who are unfamiliar with the configurations and settings.
 
-To address this, FlowFuse offers [Role-Based Access Control (RBAC)](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/). When inviting team members, you can assign specific roles that provide the appropriate level of access for their work. Higher roles grant more permissions, while lower roles limit access. Additionally, you can later change the roles of team members in the "members" page. This helps prevent unauthorized changes and ensures a more secure and efficient workflow.
+To address this, FlowFuse offers [Role-Based Access Control (RBAC)](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/). When inviting team members, you can assign specific roles that provide the appropriate level of access for their work:
+
+- **Owner**: Has full control over the team settings, applications, instances, and flows. Can invite users and change their roles.
+- **Member**: Can access applications and instances and modify flows, but with limited permissions compared to the Owner. Cannot manage team, application, or instance settings or invite users.
+- **Viewer**: Can view instances and flows but cannot make any changes. Ideal for users who need to monitor without editing capabilities.
+- **Dashboard Only**: Restricted to accessing the dashboard or HTTP endpoint. This role is for users who only need to monitor status without making any changes.
+
+Additionally, you can later change the roles of team members in the "members" page. This helps prevent unauthorized changes and ensures a more secure and efficient workflow.
 
 ![Role Base Accesss control](./images/rbac.png){data-zoomable}
 _Flowfuse: Role Base Accesss control_
@@ -106,14 +112,13 @@ FlowFuse provides robust options for securing all HTTP endpoints served by Flow 
 ![Options to enable authentication for the HTTP endpoints created in the Node-RED instance](./images/http-api-auth.png){data-zoomable}
 _Flowfuse: Options to enable authentication for the HTTP endpoints created in the Node-RED instance._
 
-
 1. **None (Default)**: No authentication is enabled by default, which means anyone can access your endpoints.
 
 2. **Basic Authentication**: By selecting this option, two input fields will appear where you can enter a username and password. This ensures that only users with the correct credentials can access your APIs.
 
 3. **FlowFuse User Authentication**: This option allows all team members to use their unique usernames and passwords when requesting API.
 
-4. **Bearer Tokens**: For more advanced users, there’s also an interface to generate bearer tokens. These tokens can be used for secure API access without needing to send usernames and passwords. You can also set expiration times for these tokens, ensuring that access is time-limited and reducing the risk of unauthorized use.
+4. **Bearer Tokens**: For more advanced users, there’s an option to generate bearer tokens for secure API access without needing to send usernames and passwords. With this feature, you can also set expiration times for these tokens, ensuring that access is time-limited and reducing the risk of unauthorized use. To use bearer tokens, you must first enable **FlowFuse User Authentication**.
 
 For more information, refer to [HTTP Authentication in Node-RED with FlowFuse](/blog/2024/03/http-authentication-node-red-with-flowfuse/).
 
