@@ -27,10 +27,11 @@ This feature allows you to run and manage your own MQTT Clients alongside your N
 
 ### Pricing
 
-From today, Team and Enterprise tier customers on FlowFuse Cloud will be able to create up to 20 clients on their accounts at **no extra cost**.
+From today, Enterprise teams on FlowFuse Cloud will be able to create up to 20 clients on their accounts at **no extra cost**.
 
-In the near future, users will then be able to purchase additional clients above the (current) threshold of 20, more details on that pricing will follow soon too.
+In the near future, users will then be able to purchase additional packs of clients to add to their team.
 
+Self-hosted Enterprise customers will be able to make use of this feature in our next release.
 ## Version History - Visual Timeline
 
 Since early iterations of FlowFuse, Snapshots have played a key role in Version Control for your Node-RED flows, environment variables and settings. Whilst we still offer the same "Snapshots" view in the application, we've also added a new view to give a clearer picture of what flows are running on your Node-RED instances and _when_.
