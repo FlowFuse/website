@@ -9,6 +9,6 @@ tags:
 
 To celibrate 25 years since the first release of the MQTT Specification we are happy announce a new MQTT Broker Service as part of FlowFuse Cloud.
 
-The initial deployment is available to Enterprise Teams and allows up to 20 clients to connect to the broker. Each team has their own independant topic space and can set their own topic ACLs to control what clients can access.
+The initial deployment is available to Enterprise Teams and allows up to 20 clients to connect to the broker. Each team has their own independent topic space and can set their own topic ACLs to control what clients can access.
 
 From today, this feature is available to FlowFuse Cloud Enterprise Teams. We'll be bringing it to Self-Hosted customers in the near future, as well as adding the ability to purchase additional packs of clients.
