@@ -183,7 +183,9 @@ hubspot:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
                                         <li>High availability</li>
+                                        {% if cloud %}
                                         <li>MQTT Broker</li>
+                                        {% endif %}
                                         <li>Single Sign-On</li>
                                         <li>Enterprise Support</li>
                                         {% if show_sla %}
@@ -226,7 +228,7 @@ hubspot:
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full max-sm:mb-11 flex flex-row">
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-3 flex flex-row">
                                 <h2 class="self-end">Free</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
