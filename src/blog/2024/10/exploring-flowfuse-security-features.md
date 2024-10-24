@@ -62,10 +62,10 @@ To address this, FlowFuse offers [Role-Based Access Control (RBAC)](/blog/2024/0
 - **Viewer**: Can view instances and flows but cannot make any changes. Ideal for users who need to monitor without editing capabilities.
 - **Dashboard Only**: Restricted to accessing the dashboard or HTTP endpoint. This role is for users who only need to monitor status without making any changes.
 
-Additionally, you can later change the roles of team members in the "members" page. This helps prevent unauthorized changes and ensures a more secure and efficient workflow.
-
 ![Role Base Accesss control](./images/rbac.png){data-zoomable}
 _Flowfuse: Role Base Accesss control_
+
+Additionally, you can later change the roles of team members in the "members" page. This helps prevent unauthorized changes and ensures a more secure and efficient workflow.
 
 ### Comprehensive Activity Audit Logs
 
