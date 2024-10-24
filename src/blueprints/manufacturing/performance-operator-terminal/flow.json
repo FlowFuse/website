@@ -1,0 +1,1929 @@
+[
+    {
+        "id": "9e994c1c8fa20d7f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7ce432faafd12ae0",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Home",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "eef9e4c814429036",
+            "0c56cbc686059e2c",
+            "3937fdc65607b6f3",
+            "db620321ed7e6520",
+            "507cde3766acf7c4",
+            "146ccc38aa2cf2fe"
+        ],
+        "x": 14,
+        "y": 139,
+        "w": 712,
+        "h": 202
+    },
+    {
+        "id": "8d8ba318187875eb",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Menu",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a4befbeb13af1b02",
+            "44fc651dc03aa1a9",
+            "3d5262bf7026e634",
+            "bb05d7a98cf51ca3",
+            "0b214e6ddbf8389c",
+            "c573ab6d6fec17f2"
+        ],
+        "x": 14,
+        "y": 379,
+        "w": 852,
+        "h": 142
+    },
+    {
+        "id": "d06a39adea28fab4",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Product information form",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59b6280fccc6f297",
+            "7fd83c960679766a",
+            "9059c654314ada40",
+            "24d442660d627be9",
+            "a59c4f2c1cd89a3c",
+            "65789f64bc5450c8"
+        ],
+        "x": 14,
+        "y": 559,
+        "w": 842,
+        "h": 142
+    },
+    {
+        "id": "29c0e8f63abcb25d",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Production",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c64104e340f99e72",
+            "317b15c6718829a0",
+            "2ccb36a66abc0a04",
+            "debaa7057646f4c9",
+            "980e1458f0c10cd6",
+            "75fb79749819c2cb",
+            "203e0b689783c613",
+            "522b4f93b2c44f61",
+            "94d64e84a0fb8ddb",
+            "3a7960f7dadc2d90",
+            "11bec75ee75e71cf",
+            "a765a64c5b69f898",
+            "9aae4440f930b4e1",
+            "ec0e8b63d3033100",
+            "fc3f6a7b7bf4e57d",
+            "d1ea4d2c2e09aed0"
+        ],
+        "x": 894,
+        "y": 139,
+        "w": 832,
+        "h": 362
+    },
+    {
+        "id": "ec1959b5ced2b5ba",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Defect form & Report",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4492a6ccadbb08e5",
+            "960497c3950a8c07",
+            "6e1eefc9c156dace",
+            "afaa053a0fcbd0c5",
+            "f06cd0d35a384a02",
+            "a62312aede481190",
+            "6a54f41eb13a8fb1",
+            "26b5d1dd41dad35d",
+            "e648e04237df60d2",
+            "380cc9d4b6705aa5"
+        ],
+        "x": 894,
+        "y": 519,
+        "w": 772,
+        "h": 282
+    },
+    {
+        "id": "a8ad8c3c83c80e38",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Interuption page",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "049cad0a55b20336",
+            "ba738ad9fd1e7d0b",
+            "98e0b8e85d0b1c7a",
+            "618392bea3fb6354",
+            "4c5f86f0f4b2109e",
+            "e3e0713655d68a4b",
+            "5808f3fa77aa7878",
+            "47798d47c830ede9",
+            "5d17b83bcdd3121e",
+            "8d5c52064139c45f",
+            "3440a9cbc56b1adc",
+            "a2b5c03b11df99e3",
+            "a3841007083d42ac",
+            "60ecbf4bf5d3c277",
+            "a731a3d8a25ebaed",
+            "fd550d39a90fe109",
+            "d5ab4fe2eecf2536",
+            "8dabcfb7bac1ca5d",
+            "fbe3a7c0548b0476",
+            "ed236a9e5705e63f",
+            "148d3f6359893ea7",
+            "fa7476e84edccc9c",
+            "48cb83179a69fc08",
+            "760ed58968283588"
+        ],
+        "x": 1774,
+        "y": 139,
+        "w": 1432,
+        "h": 524.5
+    },
+    {
+        "id": "eef9e4c814429036",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "group": "f1761f7dd1c4d9e6",
+        "name": "",
+        "label": "Start shift",
+        "order": 0,
+        "width": "4",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "start-shift",
+        "icon": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Menu\"],\"hide\":[\"Home\",\"Product information form\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "3937fdc65607b6f3",
+                "0c56cbc686059e2c"
+            ]
+        ]
+    },
+    {
+        "id": "0c56cbc686059e2c",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 580,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3937fdc65607b6f3",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "resetGlobalContext",
+        "func": "const globalKeys = global.keys();\n\nglobalKeys.forEach(key => {\n    global.set(key,'')\n});\n\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4befbeb13af1b02",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "group": "35c9c661a926b35f",
+        "name": "",
+        "label": "SETUP",
+        "order": 1,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "setup",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 480,
+        "wires": [
+            [
+                "bb05d7a98cf51ca3"
+            ]
+        ]
+    },
+    {
+        "id": "44fc651dc03aa1a9",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "group": "35c9c661a926b35f",
+        "name": "",
+        "label": "PRODUCTION",
+        "order": 2,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "production",
+        "icon": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Product information form\"],\"hide\":[\"Menu\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "0b214e6ddbf8389c"
+            ]
+        ]
+    },
+    {
+        "id": "3d5262bf7026e634",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "group": "35c9c661a926b35f",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "name": "user note",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-right",
+        "style": true,
+        "font": "",
+        "fontSize": "14",
+        "color": "#786d6d",
+        "className": "usernote",
+        "x": 560,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "bb05d7a98cf51ca3",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "name": "disableProductionBtn",
+        "func": "\n\n//  for disable product button and change user note\n\n\nif(global.get('state')==\"open\" || global.get('state')==undefined || global.get('state')==\"\"){\n    msg.enabled = false;\n    msg.payload=\"You can start production after setup is completed, click setup again to finish setup\"\n    global.set('state', \"close\")\n    return msg;\n}else{\n    msg.enabled = true;\n    global.set('state', \"open\")\n    msg.payload=\"\"\n    return msg;  \n}\n\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 480,
+        "wires": [
+            [
+                "44fc651dc03aa1a9",
+                "3d5262bf7026e634"
+            ]
+        ]
+    },
+    {
+        "id": "59b6280fccc6f297",
+        "type": "ui-form",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "",
+        "group": "f76e3eece88ddd5a",
+        "label": "",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Product Id",
+                "key": "product-id",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Production Rate(part/min)",
+                "key": "production-rate",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "product-id": "",
+            "production-rate": ""
+        },
+        "payload": "",
+        "submit": "➡ start production",
+        "cancel": "cancle",
+        "resetOnSubmit": false,
+        "topic": "topic",
+        "topicType": "global",
+        "splitLayout": "",
+        "className": "form",
+        "x": 90,
+        "y": 660,
+        "wires": [
+            [
+                "7fd83c960679766a"
+            ]
+        ]
+    },
+    {
+        "id": "7fd83c960679766a",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "storeProductData",
+        "func": "global.set('productInfo',msg.payload)\nconst months = [\n    \"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\",\n    \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"\n  ];\n\n  const currentDate = new Date();\n  const day = currentDate.getDate();\n  const month = months[currentDate.getMonth()];\n  const year = currentDate.getFullYear();\n  const hours = currentDate.getHours();\n  const minutes = currentDate.getMinutes();\n\n  // Add leading zeros if needed\n  const formattedDay = day < 10 ? `0${day}` : day;\n  const formattedHours = hours < 10 ? `0${hours}` : hours;\n  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;\n\n  msg.payload.currentTime =  `${formattedDay} ${month} ${year} ${formattedHours}:${formattedMinutes}`;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 660,
+        "wires": [
+            [
+                "24d442660d627be9"
+            ]
+        ]
+    },
+    {
+        "id": "0b214e6ddbf8389c",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 780,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c64104e340f99e72",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "getProductId",
+        "func": "msg.payload=global.get('productInfo')['product-id']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 240,
+        "wires": [
+            [
+                "11bec75ee75e71cf"
+            ]
+        ]
+    },
+    {
+        "id": "317b15c6718829a0",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "getCurrentTime",
+        "func": "msg.payload=global.get('productInfo')['currentTime']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 280,
+        "wires": [
+            [
+                "3a7960f7dadc2d90"
+            ]
+        ]
+    },
+    {
+        "id": "2ccb36a66abc0a04",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "break",
+        "label": "              ⧗ Break                 ",
+        "order": 4,
+        "width": "5",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "break",
+        "icon": "",
+        "payload": "break",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "str",
+        "x": 970,
+        "y": 300,
+        "wires": [
+            [
+                "522b4f93b2c44f61"
+            ]
+        ]
+    },
+    {
+        "id": "debaa7057646f4c9",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "",
+        "label": "⇅ Changeover",
+        "order": 5,
+        "width": "5",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "changeover",
+        "icon": "",
+        "payload": "changeover",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1000,
+        "y": 340,
+        "wires": [
+            [
+                "522b4f93b2c44f61"
+            ]
+        ]
+    },
+    {
+        "id": "980e1458f0c10cd6",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "",
+        "label": "⚠ Machine error",
+        "order": 6,
+        "width": "5",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "machine-error",
+        "icon": "",
+        "payload": "machine error",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1000,
+        "y": 380,
+        "wires": [
+            [
+                "522b4f93b2c44f61"
+            ]
+        ]
+    },
+    {
+        "id": "75fb79749819c2cb",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "ec62840196677790",
+        "name": "",
+        "label": "⊞ Raw material shortage",
+        "order": 7,
+        "width": "6",
+        "height": "1",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "raw-material-storage",
+        "icon": "",
+        "payload": "raw material shortage",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1030,
+        "y": 460,
+        "wires": [
+            [
+                "522b4f93b2c44f61"
+            ]
+        ]
+    },
+    {
+        "id": "203e0b689783c613",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "ec62840196677790",
+        "name": "",
+        "label": "⚒ Maintenance",
+        "order": 8,
+        "width": "6",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "maintenance",
+        "icon": "",
+        "payload": "maintenance",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1000,
+        "y": 420,
+        "wires": [
+            [
+                "522b4f93b2c44f61"
+            ]
+        ]
+    },
+    {
+        "id": "522b4f93b2c44f61",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "Trigger",
+        "func": "\nglobal.set('currentInteruption',msg.payload);\nmsg.payload = { \"pages\": { \"show\": [\"Terminal\"] }, \"groups\": { \"show\": [\"Interuption page\"], \"hide\": [\"Production button row 1\", \"Production button row 2\", \"Production text row\",\"Production footer\"] } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 360,
+        "wires": [
+            [
+                "9aae4440f930b4e1"
+            ]
+        ]
+    },
+    {
+        "id": "94d64e84a0fb8ddb",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "148d3f6359893ea7",
+            "16e05010677403cb"
+        ],
+        "x": 1665,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "9059c654314ada40",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 700,
+        "y": 660,
+        "wires": [
+            [
+                "a59c4f2c1cd89a3c"
+            ]
+        ]
+    },
+    {
+        "id": "24d442660d627be9",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "sendUIControlPayload",
+        "func": "msg.payload = { \"pages\": { \"show\": [\"Terminal\"] }, \"groups\": { \"show\": [\"Production button row 1\", \"Production button row 2\", \"Production text row\",\"Production footer\"], \"hide\": [ \"Product information form\"] } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 660,
+        "wires": [
+            [
+                "9059c654314ada40"
+            ]
+        ]
+    },
+    {
+        "id": "3a7960f7dadc2d90",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "19195b5eb5e18eac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Start of production :       ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Times New Roman,Times,serif",
+        "fontSize": "20",
+        "color": "#0e1c2c",
+        "className": "production-startat",
+        "x": 1550,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "11bec75ee75e71cf",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "19195b5eb5e18eac",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Product id :          ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Times New Roman,Times,serif",
+        "fontSize": "20",
+        "color": "#0e1c2c",
+        "className": "productionId",
+        "x": 1530,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a765a64c5b69f898",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "19195b5eb5e18eac",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Interuption of production : -",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Times New Roman,Times,serif",
+        "fontSize": "20",
+        "color": "#0e1c2c",
+        "className": "",
+        "x": 1580,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "049cad0a55b20336",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "start stopwatch",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2000,
+        "y": 380,
+        "wires": [
+            [
+                "a2b5c03b11df99e3"
+            ]
+        ]
+    },
+    {
+        "id": "ba738ad9fd1e7d0b",
+        "type": "inject",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "statusCommand",
+        "props": [
+            {
+                "p": "command",
+                "v": "status",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1970,
+        "y": 600,
+        "wires": [
+            [
+                "60ecbf4bf5d3c277"
+            ]
+        ]
+    },
+    {
+        "id": "98e0b8e85d0b1c7a",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "storeRecentInteruptionTime",
+        "func": " const { days, hours, minutes, seconds, milliseconds } = msg.elapsed.time\n  msg.payload =  `${days}:${hours}:${minutes}:${seconds}:${milliseconds}`;\nlet currentInteruption = global.get('currentInteruption')\n\nif(currentInteruption=='break'){\n  global.set(\"breakTime\", msg.payload)\n} else if (currentInteruption=='changeover'){\n  global.set(\"changeOverTime\", msg.payload)\n} else if (currentInteruption=='machine error'){\n  global.set(\"machineErrorTime\", msg.payload)\n} else if (currentInteruption =='raw material shortage'){\n  global.set(\"rawMaterialStorageTime\", msg.payload)\n}else if(currentInteruption == 'maintenance'){\n  global.set(\"maintenanceTime\", msg.payload)\n}\n  \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3060,
+        "y": 500,
+        "wires": [
+            [
+                "4c5f86f0f4b2109e"
+            ]
+        ]
+    },
+    {
+        "id": "618392bea3fb6354",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "storeInteruptionTime",
+        "func": "function updateCollection(collectionName, valuePropertyName) {\n  const collection = global.get(collectionName) || [];\n  const value = global.get(valuePropertyName);\n  collection.push(value);\n  global.set(collectionName, collection);\n}\n\nlet currentInteruption = global.get('currentInteruption');\n\nif (currentInteruption) {\n  if (currentInteruption === 'break') {\n    updateCollection(\"break-time-collection\", \"breakTime\");\n  } else if (currentInteruption === 'changeover') {\n    updateCollection(\"change-over-time-collection\", \"changeOverTime\");\n  } else if (currentInteruption === 'machine error') {\n    updateCollection(\"machine-error-time-collection\", \"machineErrorTime\");\n  } else if (currentInteruption === 'maintenance') {\n    updateCollection(\"maintenance-time-collection\", \"maintenanceTime\");\n  } else if (currentInteruption === 'raw material shortage') {\n    updateCollection(\"raw-material-time-collection\", \"rawMaterialStorageTime\");\n  }\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2640,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c5f86f0f4b2109e",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "group": "c0ba11a9798d7feb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Duration of supension production :",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20",
+        "color": "#432e57",
+        "className": "down-time",
+        "x": 2940,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e3e0713655d68a4b",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "group": "c0ba11a9798d7feb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Reason for suspension of production  : ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "",
+        "fontSize": "20",
+        "color": "#432e57",
+        "className": "down-time-reason",
+        "x": 2950,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5808f3fa77aa7878",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "stop",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "stop",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2090,
+        "y": 280,
+        "wires": [
+            [
+                "a3841007083d42ac"
+            ]
+        ]
+    },
+    {
+        "id": "47798d47c830ede9",
+        "type": "inject",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "currentInteruption",
+        "payloadType": "global",
+        "x": 2650,
+        "y": 220,
+        "wires": [
+            [
+                "e3e0713655d68a4b"
+            ]
+        ]
+    },
+    {
+        "id": "5d17b83bcdd3121e",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 2620,
+        "y": 380,
+        "wires": [
+            [
+                "3440a9cbc56b1adc"
+            ]
+        ]
+    },
+    {
+        "id": "8d5c52064139c45f",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 2620,
+        "y": 440,
+        "wires": [
+            [
+                "3440a9cbc56b1adc"
+            ]
+        ]
+    },
+    {
+        "id": "3440a9cbc56b1adc",
+        "type": "delay",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "0.1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "0.1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2850,
+        "y": 500,
+        "wires": [
+            [
+                "98e0b8e85d0b1c7a"
+            ]
+        ]
+    },
+    {
+        "id": "a2b5c03b11df99e3",
+        "type": "switch",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "property": "currentInteruption",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "break",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "changeover",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "machine error",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "maintenance",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "raw material shortage",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 2230,
+        "y": 380,
+        "wires": [
+            [
+                "5d17b83bcdd3121e"
+            ],
+            [
+                "8d5c52064139c45f"
+            ],
+            [
+                "a731a3d8a25ebaed"
+            ],
+            [
+                "fd550d39a90fe109"
+            ],
+            [
+                "d5ab4fe2eecf2536"
+            ]
+        ]
+    },
+    {
+        "id": "a3841007083d42ac",
+        "type": "switch",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "property": "currentInteruption",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "break",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "changeover",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "machine error",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "maintenance",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "raw material shortage",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 2230,
+        "y": 280,
+        "wires": [
+            [
+                "618392bea3fb6354",
+                "5d17b83bcdd3121e"
+            ],
+            [
+                "618392bea3fb6354",
+                "8d5c52064139c45f"
+            ],
+            [
+                "618392bea3fb6354",
+                "a731a3d8a25ebaed"
+            ],
+            [
+                "618392bea3fb6354",
+                "fd550d39a90fe109"
+            ],
+            [
+                "618392bea3fb6354",
+                "d5ab4fe2eecf2536"
+            ]
+        ]
+    },
+    {
+        "id": "60ecbf4bf5d3c277",
+        "type": "switch",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "property": "currentInteruption",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "break",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "changeover",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "machine error",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "maintenance",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "raw material shortage",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 2230,
+        "y": 600,
+        "wires": [
+            [
+                "5d17b83bcdd3121e"
+            ],
+            [
+                "8d5c52064139c45f"
+            ],
+            [
+                "a731a3d8a25ebaed"
+            ],
+            [
+                "fd550d39a90fe109"
+            ],
+            [
+                "d5ab4fe2eecf2536"
+            ]
+        ]
+    },
+    {
+        "id": "a731a3d8a25ebaed",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 2620,
+        "y": 500,
+        "wires": [
+            [
+                "3440a9cbc56b1adc"
+            ]
+        ]
+    },
+    {
+        "id": "fd550d39a90fe109",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 2620,
+        "y": 560,
+        "wires": [
+            [
+                "3440a9cbc56b1adc"
+            ]
+        ]
+    },
+    {
+        "id": "d5ab4fe2eecf2536",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 2620,
+        "y": 620,
+        "wires": [
+            [
+                "3440a9cbc56b1adc"
+            ]
+        ]
+    },
+    {
+        "id": "8dabcfb7bac1ca5d",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "reset stopwatch",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2000,
+        "y": 500,
+        "wires": [
+            [
+                "d5ab4fe2eecf2536",
+                "fd550d39a90fe109",
+                "a731a3d8a25ebaed",
+                "8d5c52064139c45f",
+                "5d17b83bcdd3121e"
+            ]
+        ]
+    },
+    {
+        "id": "fbe3a7c0548b0476",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "group": "c0ba11a9798d7feb",
+        "name": "",
+        "label": "Continue production",
+        "order": 3,
+        "width": "3",
+        "height": "2",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "continue-production",
+        "icon": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Production button row 1\",\"Production button row 2\",\"Production text row\",\"Production footer\"],\"hide\":[\"Interuption page\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1900,
+        "y": 260,
+        "wires": [
+            [
+                "5808f3fa77aa7878",
+                "48cb83179a69fc08"
+            ]
+        ]
+    },
+    {
+        "id": "ed236a9e5705e63f",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "link in 4",
+        "links": [
+            "c44e23c3e2ce24b0",
+            "6a54f41eb13a8fb1"
+        ],
+        "x": 1855,
+        "y": 500,
+        "wires": [
+            [
+                "8dabcfb7bac1ca5d"
+            ]
+        ]
+    },
+    {
+        "id": "148d3f6359893ea7",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "link in 5",
+        "links": [
+            "6728fcace6c9d7d6",
+            "94d64e84a0fb8ddb"
+        ],
+        "x": 1855,
+        "y": 380,
+        "wires": [
+            [
+                "049cad0a55b20336"
+            ]
+        ]
+    },
+    {
+        "id": "fa7476e84edccc9c",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "Sending commands to hourglass",
+        "info": "Here, we send various commands (such as stop, start, reset) to halt, pause, or reset the countdown for the current interruption \nevent. Additionally, we utilize a switch node to manage the hourglass of the specific interruption event.",
+        "x": 1970,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "9aae4440f930b4e1",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 1520,
+        "y": 380,
+        "wires": [
+            [
+                "94d64e84a0fb8ddb"
+            ]
+        ]
+    },
+    {
+        "id": "48cb83179a69fc08",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 2100,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4492a6ccadbb08e5",
+        "type": "ui-form",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "",
+        "group": "b59b4d10d299a0ee",
+        "label": "",
+        "order": 1,
+        "width": "9",
+        "height": "1",
+        "options": [
+            {
+                "label": "good part",
+                "key": "good-part",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "bad-part",
+                "key": "bad-part",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "good-part": "",
+            "bad-part": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "form",
+        "x": 970,
+        "y": 620,
+        "wires": [
+            [
+                "afaa053a0fcbd0c5"
+            ]
+        ]
+    },
+    {
+        "id": "960497c3950a8c07",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "82655e6f51fd8c44",
+        "name": "",
+        "label": "➡ Continue production",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "log-data-and-continue",
+        "icon": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Production button row 1\",\"Production button row 2\",\"Production text row\",\"Production footer\"],\"hide\":[\"Product evalution form\",\"Defect form footer\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1020,
+        "y": 700,
+        "wires": [
+            [
+                "f06cd0d35a384a02",
+                "e648e04237df60d2"
+            ]
+        ]
+    },
+    {
+        "id": "6e1eefc9c156dace",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "82655e6f51fd8c44",
+        "name": "",
+        "label": "➡ Log data and finish production",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "log-data-and-finish-production",
+        "icon": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Report\",\"Report footer\"],\"hide\":[\"Product evalution form\",\"Defect form footer\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1060,
+        "y": 740,
+        "wires": [
+            [
+                "f06cd0d35a384a02",
+                "6a54f41eb13a8fb1",
+                "e648e04237df60d2"
+            ]
+        ]
+    },
+    {
+        "id": "afaa053a0fcbd0c5",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "storeFormData",
+        "func": "global.set('defect-parts',msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f06cd0d35a384a02",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "storeDataToTable",
+        "func": "let tableData = global.get('data', 'persistent') || [];\nlet productId = global.get(\"productInfo\")['product-id'];\nlet productTime = global.get(\"productInfo\")['currentTime'];\n\n// Get the last entry from each interruption array\nlet interruptionArrays = [\n    \"break-time-collection\",\n    \"change-over-time-collection\",\n    \"machine-error-time-collection\",\n    \"raw-material-time-collection\",\n    \"maintenance-time-collection\"\n];\n\nlet interruptions = interruptionArrays.map(interruptionArray => {\n    let currentArray = global.get(interruptionArray);\n    return (Array.isArray(currentArray) && currentArray.length > 0) ? currentArray.slice(-1)[0] : \"-\";\n});\n\n// Get the number of defect and good parts\nlet defectParts = global.get(\"defect-parts\") || {};\nlet badParts = defectParts['bad-part'] !== undefined ? defectParts['bad-part'] : \"-\";\nlet goodParts = defectParts['good-part'] !== undefined ? defectParts['good-part'] : \"-\";\n\n// Construct the payload\nlet payload = {\n    \"Product Id\": `${productId}`,\n    \"Production Started\": `${productTime}`,\n    \"Break Interruption\": interruptions[0],\n    \"Change-Over Interruption\": interruptions[1],\n    \"Machine Error Interruption\": interruptions[2],\n    \"Raw Material Storage Interruption\": interruptions[3],\n    \"Maintenance Interruption\": interruptions[4],\n    \"Defect Parts\": badParts,\n    \"Good Parts\": goodParts\n};\n\ntableData.push(payload);\nglobal.set('data', tableData, 'persistent');\n\nmsg.payload = tableData\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 720,
+        "wires": [
+            [
+                "a62312aede481190"
+            ]
+        ]
+    },
+    {
+        "id": "a62312aede481190",
+        "type": "ui-table",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "c76a1e717dc6fd44",
+        "name": "production data",
+        "label": "text",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "maxrows": "30",
+        "autocols": true,
+        "columns": [],
+        "x": 1560,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "6a54f41eb13a8fb1",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "cc55fcc4db600847",
+            "ed236a9e5705e63f"
+        ],
+        "x": 1255,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "26b5d1dd41dad35d",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "Obtaining production details including number of defective and functional parts",
+        "info": "hear we take production deatils such as good and defect part from user ,also we take send log data to table",
+        "x": 1190,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ec0e8b63d3033100",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "4897005d4f7a399a",
+        "name": "",
+        "label": "Log out",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "logout",
+        "icon": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Product evalution form\",\"Defect form footer\"],\"hide\":[\"Production button row 1\",\"Production button row 2\",\"Production text row\",\"Production footer\",\"Interuption page\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1260,
+        "y": 400,
+        "wires": [
+            [
+                "9aae4440f930b4e1"
+            ]
+        ]
+    },
+    {
+        "id": "db620321ed7e6520",
+        "type": "inject",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "sendPayloadToHideGroups",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Home\"],\"hide\":[\"Menu\",\"Product information form\",\"Production button row 1\",\"Production button row 2\",\"Production text row\",\"Production footer\",\"Interuption page\",\"Product evalution form\",\"Defect form footer\",\"Report\",\"Report footer\"]}}",
+        "payloadType": "json",
+        "x": 180,
+        "y": 300,
+        "wires": [
+            [
+                "0c56cbc686059e2c"
+            ]
+        ]
+    },
+    {
+        "id": "fc3f6a7b7bf4e57d",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "link in 6",
+        "links": [
+            "a59c4f2c1cd89a3c"
+        ],
+        "x": 945,
+        "y": 260,
+        "wires": [
+            [
+                "c64104e340f99e72",
+                "317b15c6718829a0"
+            ]
+        ]
+    },
+    {
+        "id": "a59c4f2c1cd89a3c",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "fc3f6a7b7bf4e57d"
+        ],
+        "x": 815,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "e648e04237df60d2",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 1300,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "507cde3766acf7c4",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "Reseting memory context and page",
+        "info": "We reset the memory context to ensure there is no previous data when someone presses 'Start Shift'. \nAdditionally, we initially hide all groups except for the 'home' group.",
+        "x": 180,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c573ab6d6fec17f2",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "name": "Setting Machine and moving directly to production ",
+        "info": "By pressing Setup button We take time for setting up machines before transitioning\nto production to ensure that the setup time is not counted as part of the\nproduction time.",
+        "x": 220,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "65789f64bc5450c8",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "Obtaining the Product ID and defining the production's goals.",
+        "info": "Here, we capture the product ID associated with the production and establish the \nproduction quantity goal for that specific product. Additionally, we track the time\nwhen the production form is submitted that time wil be considered as start time of \nproduction.",
+        "x": 260,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d1ea4d2c2e09aed0",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "Starting production and tracking interuptions",
+        "info": "Here, we display the product ID associated with the production and the time when \nproduction has commenced. Furthermore, we enable tracking downtime events with \nvarious interruption reasons. Clicking on these buttons initiates a downtime \ncountdown specific to that reason.\"",
+        "x": 1110,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "760ed58968283588",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "Utilizing hourglass module to track interuptions",
+        "info": "Here, we utilize hourglass nodes to track interruption events. Through these nodes, we can initiate, pause, \nand resume countdowns for specific interruption events.",
+        "x": 1970,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "380cc9d4b6705aa5",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "d267b56680b3ec11",
+        "name": "",
+        "label": "Restart",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "restart",
+        "icon": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Home\"],\"hide\":[\"Report\",\"Report footer\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 980,
+        "y": 660,
+        "wires": [
+            [
+                "e648e04237df60d2"
+            ]
+        ]
+    },
+    {
+        "id": "146ccc38aa2cf2fe",
+        "type": "ui-template",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "group": "82655e6f51fd8c44",
+        "dashboard": "e91dfad2a32019e9",
+        "page": "50d079857067656e",
+        "name": "CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".home .nrdb-group-widgets{\n    display:flex !important;\n    justify-content:center !important;\n    margin-top:150px;\n}\n\n.home .v-btn{\n    width:200px;\n    background:green;\n    \n}\n\n.usernote{\n    position:absolute;\n    bottom:130px;\n}\n\n.menu .nrdb-group-widgets{\n    display:flex !important;\n    justify-content:center !important;\n    margin-top:150px;\n}\n\n.setup .v-btn , .production .v-btn{\n    width:200px;\n}\n\n.product-form .nrdb-group-widgets {\n    display:flex !important;\n    justify-content:center !important;\n    margin-top:150px;\n    \n}\n\n.form .v-form{\n    width:550px;\n}\n\n.button-row-one{\n    position:absolute;\n    left:180px;\n    top:250px;\n}\n\n.button-row-two{\n    position:absolute;\n    left:340px;\n    top:380px;\n}\n\n.production-text-row{\n    position:relative;\n    bottom:40px;\n}\n\n\n.continue-production{\n    position:absolute;\n    left:980px;\n}\n\n.logout .v-btn{\n    height:50px !important;\n    margin-top:auto !important;\n    background:green;\n}\n\n.production-footer{\n    position:absolute;\n    bottom:0;\n    right:0;\n    width:200px !important;\n\n}\n\n.defect-form-footer{\n    position:absolute;\n    bottom:0;\n    right:0;\n    display:flex !important;\n    justify-content:end !important;\n}\n\n.defect-form-footer .nrdb-group-widgets  {\n    display:flex !important;\n    justify-content:end !important;\n}\n\n\n.restart .v-btn{\n    background:green;\n}\n\n\n.report-footer .nrdb-group-widgets{\n    display:flex !important;\n    justify-content:end !important;\n}",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 570,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac1d56c8f5480d74",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "name": "LICENSE",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 80,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "99643c3bcd90269e",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "name": "README",
+        "info": "# Performance Operator Terminal\n\nThe Performance operator terminal blueprint allows an end user to track runtime and downtime information of a machine.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a page on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 240,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f1761f7dd1c4d9e6",
+        "type": "ui-group",
+        "name": "Home",
+        "page": "50d079857067656e",
+        "width": "20",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "home"
+    },
+    {
+        "id": "e91dfad2a32019e9",
+        "type": "ui-base",
+        "name": "FlowFuse",
+        "path": "/dashboard"
+    },
+    {
+        "id": "35c9c661a926b35f",
+        "type": "ui-group",
+        "name": "Menu",
+        "page": "50d079857067656e",
+        "width": "15",
+        "height": "2",
+        "order": 2,
+        "showTitle": false,
+        "className": "menu"
+    },
+    {
+        "id": "f76e3eece88ddd5a",
+        "type": "ui-group",
+        "name": "Product information form",
+        "page": "50d079857067656e",
+        "width": "15",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "product-form"
+    },
+    {
+        "id": "894eb5fdcd8dc0e4",
+        "type": "ui-group",
+        "name": "Production button row 1",
+        "page": "50d079857067656e",
+        "width": "20",
+        "height": "2",
+        "order": 5,
+        "showTitle": false,
+        "className": "button-row-one"
+    },
+    {
+        "id": "ec62840196677790",
+        "type": "ui-group",
+        "name": "Production button row 2",
+        "page": "50d079857067656e",
+        "width": "25",
+        "height": "2",
+        "order": 6,
+        "showTitle": false,
+        "className": "button-row-two"
+    },
+    {
+        "id": "19195b5eb5e18eac",
+        "type": "ui-group",
+        "name": "Production text row",
+        "page": "50d079857067656e",
+        "width": "4",
+        "height": "1",
+        "order": 4,
+        "showTitle": false,
+        "className": "production-text-row"
+    },
+    {
+        "id": "c0ba11a9798d7feb",
+        "type": "ui-group",
+        "name": "Interuption page",
+        "page": "50d079857067656e",
+        "width": "20",
+        "height": "1",
+        "order": 7,
+        "showTitle": false,
+        "className": ""
+    },
+    {
+        "id": "b59b4d10d299a0ee",
+        "type": "ui-group",
+        "name": "Product evalution form",
+        "page": "50d079857067656e",
+        "width": "15",
+        "height": "1",
+        "order": 9,
+        "showTitle": false,
+        "className": "product-form"
+    },
+    {
+        "id": "82655e6f51fd8c44",
+        "type": "ui-group",
+        "name": "Defect form footer",
+        "page": "50d079857067656e",
+        "width": "6",
+        "height": "1",
+        "order": 10,
+        "showTitle": false,
+        "className": "defect-form-footer"
+    },
+    {
+        "id": "c76a1e717dc6fd44",
+        "type": "ui-group",
+        "name": "Report",
+        "page": "50d079857067656e",
+        "width": "27",
+        "height": "1",
+        "order": 11,
+        "showTitle": false,
+        "className": "report"
+    },
+    {
+        "id": "4897005d4f7a399a",
+        "type": "ui-group",
+        "name": "Production footer",
+        "page": "50d079857067656e",
+        "width": "3",
+        "height": "1",
+        "order": 8,
+        "showTitle": false,
+        "className": "production-footer"
+    },
+    {
+        "id": "d267b56680b3ec11",
+        "type": "ui-group",
+        "name": "Report footer",
+        "page": "50d079857067656e",
+        "width": "25",
+        "height": "1",
+        "order": 12,
+        "showTitle": false,
+        "className": "report-footer"
+    },
+    {
+        "id": "50d079857067656e",
+        "type": "ui-page",
+        "name": "Terminal",
+        "ui": "e91dfad2a32019e9",
+        "path": "/",
+        "layout": "grid",
+        "theme": "0b7f47ec55945824",
+        "order": -1,
+        "className": ""
+    },
+    {
+        "id": "0b7f47ec55945824",
+        "type": "ui-theme",
+        "name": "dashboard",
+        "colors": {
+            "surface": "#0e1c2b",
+            "primary": "#2268dc",
+            "bgPage": "#eeeeee",
+            "groupBg": "#eeeeee",
+            "groupOutline": "#eeeeee"
+        }
+    }
+]
