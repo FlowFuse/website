@@ -19,7 +19,7 @@ Most notably, FlowFuse now offers it's own MQTT service, with the option to crea
 
 ## MQTT Broker
 
-This is a significant milestone for FlowFuse, as we're now offering our own MQTT service. We have listened to a lot of feedback from users and prospective customers, and this has consistently been a regularly requested offering, and so we are delighted to announce that this is now live on FlowFuse Cloud.
+This is a significant milestone for FlowFuse, as we're now offering our own MQTT service. We have listened to a lot of feedback from users and prospective customers, and this has consistently been a regularly requested offering, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Enterprise teams.
 
 ![Screenshot of the UI to manage your MQTT clients](./images/screenshot-mqtt-client-config.png){data-zoomable}
 
