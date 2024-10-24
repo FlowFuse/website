@@ -52,6 +52,11 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Access your Node-RED application via your own domain name.</p>"
+      - id: mqtt-broker
+        label: MQTT Broker
+        cloudValues: [ null, null, 'check' ]    
+        tags: [ 'cloud' ]
+        info: "<p>Effortlessly manage and create MQTT clients within your Node-RED instances, facilitating efficient messaging and communication for your applications. Up to 20 clients included at no extra cost, with the option to purchase additional clients in the future.</p>"
       - id: persistent-files
         label: Persistent files
         cloudValues: [ '1 GB', '10 GB', '100 GB' ]    
@@ -158,10 +163,7 @@ buttons:
   cloud:
     - cta: TRY FOR FREE
       url: https://app.flowfuse.com/account/create
-      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
-    - cta: CONTACT US
-      url: "#contact-us"
-      onclick: "scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'team'})"
+      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
