@@ -86,5 +86,5 @@ In summary, MQTT is not just a protocol; it’s a strategic advantage for your U
 
 Moreover, MQTT boasts a vibrant community of developers and users who continuously contribute to its evolution and enhancement. This community provides invaluable resources, support, and shared knowledge, making it easier for organizations to implement and optimize their MQTT solutions. Now is the time to leverage MQTT’s capabilities and tap into this thriving community to drive your data strategy forward.
 
-The FlowFuse Platform now features an [MQTT Broker service](/blog/2024/10/flowfuse-release-2-10#mqtt-broker), allowing you to manage all your MQTT clients, Node-RED instances, and devices from a single, centralized platform. This integration eliminates the need for a separate broker service, streamlining your operations.
+The FlowFuse Platform now features an [MQTT Broker service](/blog/2024/10/flowfuse-release-2-10/), allowing you to manage all your MQTT clients, Node-RED instances, and devices from a single, centralized platform. This integration eliminates the need for a separate broker service, streamlining your operations.
 Currently, this service is available exclusively for enterprise customers. Sign up now to gain complete control over your entire factory from one convenient platform, simplifying your IoT management and enhancing efficiency!
