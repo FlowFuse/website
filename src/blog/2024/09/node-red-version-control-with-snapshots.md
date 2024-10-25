@@ -5,6 +5,7 @@ description: Learn how to use snapshots for version control in Node-RED with Flo
 date: 2024-09-26
 authors: ["sumit-shinde", "stephen-mclaughlin"]
 image: /blog/2024/09/images/snapshot-with-node-red-ff.png
+keywords: node red version control, node-red flows, node red backup, node red flow backup
 tags:
    - flowfuse
    - flowfuse features
