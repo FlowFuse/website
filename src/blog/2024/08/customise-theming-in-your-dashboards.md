@@ -9,7 +9,7 @@ tags:
    - posts
    - dashboard
    - flowfuse dashboard
-   - customizing dashboard
+   - dashboard theming
 ---
 
 A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.

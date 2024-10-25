@@ -5,12 +5,13 @@ description: Learn to integrate Open Telemetry with Node-RED to track and optimi
 date: 2024-08-15
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/opentelemetry-with-node-red.png
+keywords: nodered opentelemetry node opentelemetry, opentelemetry nodejs example, opentelemetry node, open telemetry nodejs
 tags:
-   - posts
-   - flowfuse
-   - distributed tracing in node-red
-   - open telemetry with node-red
-   - how to optimize the performance of node-red flows
+   - post
+   - node-red
+   - how-to
+   - node-red tips
+   - node-red flow
 ---
 
 Have you ever found yourself frustrated by unexpected delays in your Node-RED flows, wondering where the bottlenecks are hiding? Even small latency issues can have a big impact on your system's performance. That's where Open Telemetry comes in. With its powerful distributed tracing capabilities, you can finally take control and get a clear view of how your flows are performing in real time.

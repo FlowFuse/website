@@ -5,13 +5,12 @@ description: Explore how MQTT Sparkplug B enhances MQTT with standardized data f
 date: 2024-08-22
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/using-sparkplug-with-node-red.png
+keywords: node red mqtt sparkplug, sparkplug mqtt, mqtt sparkplug b, sparkplug b mqtt, mqtt sparkplug b specification, sparkplug mqtt specification,  mqtt sparkplug specification, mqtt sparkplug example, mqtt spark plug
 tags:
-   - post
-   - nodered
-   - MQTT sparkplug B with Node-RED
-   - mqtt sparkplug b message
-   - MQTT Sparkplug B example
-   - node red sparkplug b
+   - posts
+   - node-red
+   - mqtt
+   - how-to
 ---
 
 Connected devices can generate a lot of data, but without a standardized format, managing and consuming it can be tricky. MQTT certainly simplifies getting your messages delivered but it does not enforce any structure. This is where MQTT Sparkplug B helps by providing a clear, standardized format for data. In this guide, we’ll show you how to use MQTT Sparkplug B with Node-RED to make managing your device data easier and more organized.

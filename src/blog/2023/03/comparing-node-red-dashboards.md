@@ -5,11 +5,12 @@ description: Explore a thorough comparison of Node-RED dashboard solutions, cove
 date: 2023-03-13
 authors: ["rob-marcer"]
 image: /images/blog/db-comparison.jpg
+keywords: node red dashboard, node-red dashboard, node red ui builder, ui builder node red, flexdash, node red dashboard alternative, node red alternative dashboard
 tags:
-    - posts
+    - post
     - node-red
-    - community
     - dashboard
+    - comparing node-red dashboards
 ---
 
 Dashboards are a great feature of Node-RED, allowing you to easily expose data visualisations and interactive elements of your flows to users via a web browser. I often see discussions in the community about which dashboard option is best for any given scenario, I wanted to compare the most popular options as they stand in early 2023.
