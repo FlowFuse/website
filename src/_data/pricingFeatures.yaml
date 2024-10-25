@@ -9,17 +9,17 @@ sections:
         info: "<p>FlowFuse hosts Node-RED instances.</p>"
       - id: nodered-instances
         label: Number of Node-RED instances
-        selfHostedValues: [ '5', 'Licensed amount' ]        
+        selfHostedValues: [ '5', 'Licensed Amount' ]        
         tags: [ 'self-hosted' ]
         info: "<p>Number of Node-RED runtimes, either as hosted instances or as devices</p>"
       - id: cloud-instances
         label: Number of cloud instances
-        cloudValues: [ '2', 'Licensed amount', 'Licensed amount' ]    
+        cloudValues: [ '2', 'Shared Pool with Devices</br>Starting at 5 (expandable)', 'Licensed Amount' ]    
         tags: [ 'cloud' ]
         info: "<p>FlowFuse hosts multiple Node-RED instances from a common platform.</p>"
       - id: devices
         label: Number of devices
-        cloudValues: [ '2', 'Licensed amount', 'Licensed amount' ]    
+        cloudValues: [ '2', 'Shared Pool with Instances</br>Starting at 5 (expandable)', 'Licensed Amount' ]    
         tags: [ 'cloud' ]
         info: "<p>FlowFuse allows you to manage Node-RED deployments on remote devices.</p>"
       - id: device-mgmt
