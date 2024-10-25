@@ -1,0 +1,11 @@
+.catalog-hero {
+    background-image: url(../images/bg-flow-gradient-w.png);
+    padding: 12px 0 3px;
+    background-size: cover;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+.catalog-content {
+    background-color: white;
+}
