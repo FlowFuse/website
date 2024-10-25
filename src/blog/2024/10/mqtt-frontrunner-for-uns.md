@@ -25,7 +25,6 @@ When choosing a protocol for your UNS broker, it’s crucial to consider how wel
 
 For instance, AMQP is more complex and requires robust messaging patterns and advanced features, which might be overkill for simpler IoT setups. WebSocket, while excellent for real-time communication, can introduce additional overhead and complexity when dealing with numerous low-power devices that need to maintain persistent connections. On the other hand, OPC UA excels in industrial automation but is often more intricate to implement and may not offer the lightweight efficiency needed for large-scale IoT deployments.
 
-
 ## Why MQTT Stands Out
 
 MQTT began its journey in the late 1990s, developed by IBM to address communication challenges in low-bandwidth, unreliable networks. In those formative years, it was a pioneering solution, laying the groundwork for the Internet of Things (IoT).
