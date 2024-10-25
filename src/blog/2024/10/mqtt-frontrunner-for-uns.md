@@ -4,7 +4,7 @@ subtitle: "Why MQTT is the Best Choice for Your UNS Broker"
 description: "Learn why MQTT is the top choice for Unified Namespace (UNS) brokers and explore the ideal platform that simplifies the connection of devices and services while providing a reliable MQTT broker service."
 date: 2024-10-25
 authors: ["sumit-shinde"]
-image: 
+image:  /blog/2024/10/images/mqtt-for-uns.png
 keywords: mqtt unified namespace, why use mqtt in uns, mqtt in a unified namespace, mqtt data modeling UNS, Best protocols for UNS IoT, Implementing UNS with MQTT, Unified Namespace protocols
 tags: 
  - posts
@@ -55,12 +55,12 @@ _MQTT Quality of Service Is different levels_
 
 In a world where data integrity is paramount, especially in industrial environments, the ability to choose the right QoS level ensures that all components—whether they are sensors, devices, or applications—are working with the most accurate and up-to-date information.
 
-![MQTT's Compatibility](./images/mqtt-compatiblity.png)  
-_MQTT can connect with everything_
-
 ## Wide Connectivity
 
 A Primary requirement for any UNS is the connectivity of various devices and systems as it serves as a single source of truth collected from every part of the IoT environment. MQTT’s long-standing standardization since the 1990s enables it to bridge the gap between legacy PLCs and modern IoT devices. Because of its established presence, many modern systems and cloud solutions now support it as well. This compatibility eliminates the need for extensive changes to existing infrastructures, allowing organizations to leverage their current investments while integrating new technologies.
+
+![MQTT's Compatibility](./images/mqtt-compatiblity.png)  
+_MQTT can connect with everything_
 
 For example, a manufacturing facility can use MQTT to connect older machines that previously operated in isolation with newly installed IoT devices. This integration facilitates smooth communication and data sharing across the board. As a result, organizations can enhance operational efficiency while supporting a cohesive data ecosystem that maximizes the value of every device, regardless of its age or manufacturer.
 
