@@ -5,11 +5,12 @@ description: Learn how to effectively integrate MQTT with Node-RED in this compr
 date: 2024-06-05
 authors: ["sumit-shinde"]
 image: /blog/2024/06/images/how-to-use-mqtt-in-node-red.png
+keyword: node-red mqtt, nodered mqtt, mqtt node red, node-red mqtt broker, mqtt broker node red, node red mqtt out, node red mqtt example
 tags:
-   - posts
-   - node-red
+   - post
+   - flowfuse
+   - node-red mqtt
    - mqtt
-   - manufacturing
 ---
 
 In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2025, according to a [statista report](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/). Therefore, efficient communication protocols and platforms that can easily connect to these devices and allow low-code programming are crucial. MQTT and Node-RED stand out for this purpose in the IoT domain. These technologies form the backbone of the popular [MING Stack](/blog/2023/02/ming-blog/) used in IoT, demonstrating their effectiveness in managing and processing data. This guide will walk you through integrating MQTT with Node-RED, practical applications, and best practices.

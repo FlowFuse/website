@@ -5,10 +5,13 @@ description: "Learn how to efficiently write complex logic in Function Nodes wit
 date: 2024-10-09
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/quick-ways-to-write-function-nodes.png
+keywords: node red function, node red function node, nodered function, node-red function, function node red, node red functions, node-red function multiple outputs, node red msg.payload function
 tags:
- - posts
- - node-red function node
- - node red function node
+    - posts
+    - node-red
+    - node-red function node
+    - node red function node
+    - how-to
 ---
 
 Node-RED is a powerful tool for building automation flows through its visual interface and low-code nodes. However, there are times when this low-code approach falls short, particularly when you need to implement complex JavaScript logic. That’s where the Function Node comes into play. Many Node-RED developers excel in their domains—such as IoT integration and PLCs—but may lack a strong foundation in JavaScript.

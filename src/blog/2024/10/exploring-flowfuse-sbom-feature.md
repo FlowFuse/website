@@ -5,13 +5,14 @@ description: Learn how FlowFuse SBoM improves the security and management of Nod
 date: 2024-10-14
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/flowfuse-sbom.png
+keywords: node red dependencies, node red security, securing node red, secure node red, sbom security, software bill of materials example, sbom open source, sbom tool, third party library vulnerabilities, industrial iot security, iot application vulnerabilities, iot application security
 tags:
- - post
- - flowfuse
- - enhancing node-red security
- - flowfuse software bills of material
- - Sbom in the industrial applications
- - sbom open source
+    - posts
+    - flowfuse
+    - enhancing node-red security
+    - securing node-red projects
+    - node-red security
+    - sbom
 ---
 
 FlowFuse recently launched Software Bill of Materials (SBoM) for enterprise customers. This powerful tool enhances security and management within projects, particularly in the Node-RED ecosystem. As open-source libraries and software continue to play a pivotal role in the industry, monitoring third-party components used in projects becomes essential. The SBoM enables organizations to track dependencies and identify vulnerabilities, ensuring compliance and mitigating risks.

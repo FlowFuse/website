@@ -5,12 +5,14 @@ description: Learn how to use FlowFuse project nodes for quick and efficient com
 date: 2024-10-07
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/exploring-flowfuse-project-nodes.png
+keywords: node-red mqtt, node red mqtt, flowfuse project nodes, how to enable fast communication between your iot devices, internet based communication in iot, mqtt in iot, mqtt communication protocol, application protocol for iot
 tags:
    - post
+   - flowfuse
    - flowfuse project nodes
    - node-red mqtt
-   - node red mqtt 
-   - node red communication protocols
+   - mqtt
+   - manufacturing
 ---
 
 Node-RED is a powerful tool for IoT application development, connecting various services and devices. However, establishing communication between different Node-RED instances—whether for monitoring or control—can be complex. This often requires detailed configurations and protocols like MQTT, HTTP, or CoAP, despite its seamless integration with many protocols.

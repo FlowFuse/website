@@ -6,9 +6,11 @@ date: 2024-10-03
 authors: ["sumit-shinde","stephen-mclaughlin"]
 image: /blog/2024/10/images/creating-and-automating-devops-pipeline-nr.png
 tags:
+   - posts
+   - flowfuse
+   - streamlining operations
    - node-red devops
    - node red devops
-   - node red devops pipeline
 ---
 
 When deploying any update in your manufacturing or automotive process, it is important to perform testing and validation. The smallest errors can lead to a production outage. In such cases, having a quick and reliable deployment process is essential for maximising uptime and minimising downtime.

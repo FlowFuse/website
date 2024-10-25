@@ -5,12 +5,13 @@ description: In this blog we will discuss the various forms of authentication fo
 date: 2024-03-26
 authors: ["grey-dziuba"]
 image: /blog/2024/03/images/node-authentication.png
+keywords: node red rest api, node red secure dashboard, node red dashboard security, node red http endpoint, node red http in, basic auth, http basic authentication, basic access authentication, http authentication, http bearer, http auth bearer, http bearer auth, http bearer token, http request with bearer token
 tags:
     - posts
     - flowfuse
-    - http in
-    - http node
-    - api
+    - enhancing node-red security
+    - securing node-red projects
+    - node-red security
 ---
 
 Citizen development empowers employees to create digital solutions. However, it requires guardrails to ensure data security, operational stability, and compliance. These guardrails are what FlowFuse provides to the Node-RED community to level up their deployments. FlowFuse offers many different security measures for authentication and authorization, which all apply to different scenarios. 
