@@ -6,13 +6,10 @@ date: 2024-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/evolution-of-technology.png
 tags:
- - node-red
- - post
- - flowfuse
- - ai
- - nodered jobs
- - low-code
- - no-code
+    - posts
+    - flowfuse
+    - low-code
+    - ai
 ---
 
 Throughout history, technology has continuously transformed industries, job roles, and entire companies. While these changes often evoke fear and resistance, they also create new jobs, opportunities for innovation and growth. This post will explore how historical technological advancements have reshaped both individual job roles and entire companies, examine current trends like AI and low-code tools, and discuss the critical importance of adaptability for both individuals and businesses in navigating technological disruption, Importantly, we will address the pressing question of our time: ***"How can AI and low-code tools both enhance and challenge human capabilities, creativity, and the job market, and is this the next frontier in manufacturing or just hype"***

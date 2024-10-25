@@ -5,14 +5,12 @@ description: Learn how to configure SSO LDAP for your self-hosted FlowFuse platf
 date: 2024-07-29
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/how-to-set-up-sso-ldap-for-node-red.png
+keywords: node red security, node red security, sso with node red nodered security, secure node red, securing node red
 tags:
    - post
-   - node-red
-   - nodered
    - flowfuse
+   - flowfuse features
    - sso
-   - ldap
-   - openldap
 ---
 
 A few days ago, we published a [blog](/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/) explaining SSO and how to set up SAML for your self-hosted FlowFuse. Now, in this guide, we will walk you through the process of setting up SSO with LDAP for your self-hosted FlowFuse. We will use OpenLDAP as the provider and cover everything from introducing LDAP, how it works, installing and configuring OpenLDAP, managing users (create, delete, update), and finally setting up FlowFuse for SSO with LDAP.
