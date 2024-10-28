@@ -10,7 +10,7 @@ tags:
    - posts
    - node-red
    - mqtt
-   - how-to
+   - sparkplug
 ---
 
 Connected devices can generate a lot of data, but without a standardized format, managing and consuming it can be tricky. MQTT certainly simplifies getting your messages delivered but it does not enforce any structure. This is where MQTT Sparkplug B helps by providing a clear, standardized format for data. In this guide, we’ll show you how to use MQTT Sparkplug B with Node-RED to make managing your device data easier and more organized.
