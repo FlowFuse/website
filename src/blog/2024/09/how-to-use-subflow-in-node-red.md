@@ -7,7 +7,6 @@ authors: ["sumit-shinde"]
 image: /blog/2024/09/images/subflow-in-node-red.png
 keywords: node red subflow, nodered subflow, node red subflow environment variables, node red create subflow, node red subflows
 tags:
-    - posts 
     - node-red
     - how-to
 ---
