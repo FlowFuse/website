@@ -11,7 +11,6 @@ tags:
    - node-red
    - mqtt
    - opcua
-   - how-to
 ---
 
 Have you ever found yourself trying to connect old industrial systems with new IoT tools? This is a common scenario when trying to digitally transform while setting up your Unified Name Space. Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?  
