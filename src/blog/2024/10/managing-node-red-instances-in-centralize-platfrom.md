@@ -7,9 +7,9 @@ authors: ["sumit-shinde"]
 image: /blog/2024/10/images/centralize-node-red-instance.png
 keywords: remote device management, easy remote device management, iot device management, iot device monitoring, remote iot management, remote iot device management, iot remote device management, remote access device management, iot remote management software, remote device management platform, node-red management, node red management
 tags:
-   - posts
+   - post
    - flowfuse
-   - streamlining operations
+   - flowfuse features
 ---
 
 Managing a single Node-RED instance involves setting up and configuring a server, securely tunneling for remote access to edge devices, and ensuring proper networking and firewall configurations, all of which can be complex. The complexity increases when overseeing multiple Node-RED instances spread across various projects, edge devices, or environments.

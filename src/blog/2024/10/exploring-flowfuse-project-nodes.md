@@ -9,7 +9,7 @@ keywords: node-red mqtt, node red mqtt, flowfuse project nodes, how to enable fa
 tags:
    - post
    - flowfuse
-   - flowfuse project nodes
+   - flowfuse features
    - node-red mqtt
    - mqtt
    - manufacturing
