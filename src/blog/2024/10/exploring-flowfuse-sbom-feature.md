@@ -10,9 +10,6 @@ tags:
     - post
     - flowfuse
     - flowfuse features
-    - securing node-red projects
-    - node-red security
-    - sbom
 ---
 
 FlowFuse recently launched Software Bill of Materials (SBoM) for enterprise customers. This powerful tool enhances security and management within projects, particularly in the Node-RED ecosystem. As open-source libraries and software continue to play a pivotal role in the industry, monitoring third-party components used in projects becomes essential. The SBoM enables organizations to track dependencies and identify vulnerabilities, ensuring compliance and mitigating risks.
