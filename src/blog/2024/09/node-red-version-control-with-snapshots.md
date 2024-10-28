@@ -9,8 +9,6 @@ keywords: node red version control, node-red flows, node red backup, node red fl
 tags:
    - posts
    - flowfuse
-   - nodered version control
-   - node-red flow
 ---
 
 Version control is essential, especially when multiple people are working on the same Node-RED project. Without it, changes can easily overlap, or worse — accidental updates could break critical flows. FlowFuse solves this challenge with snapshots, allowing you to create backups of your flows, restore previous versions, and safeguard your project from unexpected issues. 

@@ -8,7 +8,8 @@ image: /blog/2024/09/images/webscraping-with-node-red.png
 keywords: node red webscraping, websrcaping with node-red, node red https request, online web scraper free, online web scraper free, custom web scraper, automated web scraping, web scraping solutions, data scraper easy web scraping
 tags:
    - post
-   - nodered
+   - node-red
+   - how-to
    - Web scraping
 ---
 
