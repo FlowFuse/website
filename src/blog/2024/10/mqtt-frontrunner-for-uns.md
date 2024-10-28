@@ -31,7 +31,7 @@ As the IoT landscape evolved, so did MQTT, transitioning from the widely adopted
 
 **But, what exactly makes MQTT the frontrunner for Unified Namespace (UNS) implementations?**
 
-## Low Latency and Lightweight Messaging with Publish-Subscribe Model
+### Low Latency and Lightweight Messaging with Publish-Subscribe Model
 
 Every IoT solution, platform, and technology—including Unified Namespace (UNS)—ultimately focuses on reducing downtime and improving production efficiency. A minute of downtime can cost a company on average $15,000 to $20,000. For engineers monitoring machines, waiting for data can be detrimental to their operations. This urgency underscored the necessity for a low-latency protocol, making it clear that such solutions are essential for any Unified Namespace.
 
@@ -42,7 +42,7 @@ _Image showing the MQTT Topic Structer_
 
 In addition to its efficiency in message handling, MQTT keeps message sizes compact—a crucial factor when working with **low-bandwidth networks** or a high number of connected devices. The MQTT protocol itself introduces **minimal overhead**, as its messages typically consist of just a few bytes, making it perfect for constrained devices like sensors that need to transmit data without overloading the network. The result? As soon as a sensor detects a change—whether it’s a temperature spike or a production error—it can instantly send that data in a compact message to the relevant applications or systems. Decisions can be made on the fly, and proactive measures can be implemented immediately, significantly reducing the risk of costly downtimes.
 
-## Reliability
+### Reliability
 
 Another critical aspect that we need to consider in the UNS context is **reliability**. What happens if communication fails? MQTT excels with its **Quality of Service (QoS)** levels, ensuring message delivery even under challenging network conditions.
 
@@ -53,7 +53,7 @@ _MQTT Quality of Service Is different levels_
 
 In a world where data integrity is paramount, especially in industrial environments, the ability to choose the right QoS level ensures that all components—whether they are sensors, devices, or applications—are working with the most accurate and up-to-date information.
 
-## Wide Connectivity
+### Wide Connectivity
 
 A Primary requirement for any UNS is the connectivity of various devices and systems as it serves as a single source of truth collected from every part of the IoT environment. MQTT’s long-standing standardization since the 1990s enables it to bridge the gap between legacy PLCs and modern IoT devices. Because of its established presence, many modern systems and cloud solutions now support it as well. This compatibility eliminates the need for extensive changes to existing infrastructures, allowing organizations to leverage their current investments while integrating new technologies.
 
