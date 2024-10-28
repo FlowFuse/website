@@ -21,11 +21,11 @@ The [Unified Namespace (UNS)](/blog/2023/12/introduction-to-unified-namespace/) 
 
 Why do you need a protocol in the UNS? A robust communication protocol ensures seamless interactions among diverse devices and systems. It establishes standardized methods for data exchange, which helps maintain data integrity, enhances interoperability, and enables scalability across various applications.
 
-When choosing a protocol for your UNS broker, it’s crucial to consider how well the selected protocol fits the specific requirements of your IoT environment, including the types of devices and systems involved, as well as factors such as scalability, reliability, and ease of integration. Several options are available alongside MQTT, including AMQP, CoAP, HTTP, Kafka, and OPC UA. While these alternatives offer unique features, it's essential to evaluate whether they truly meet the specific needs of various IoT scenarios.
+When choosing a protocol for your UNS broker, it’s crucial to consider how well the selected protocol fits the specific requirements of your IoT environment, including the types of devices and systems involved, as well as factors such as scalability, reliability, and ease of integration. Several options are available alongside MQTT, including [AMQP](/node-red/protocol/amqp/), CoAP, [HTTP](/node-red/integration-technologies/rest/), [Kafka](/blog/2024/03/using-kafka-with-node-red/), and [OPC UA](/node-red/protocol/opa-ua/). While these alternatives offer unique features, it's essential to evaluate whether they truly meet the specific needs of various IoT scenarios.
 
 ## Why MQTT Stands Out
 
-MQTT began its journey in the late 1990s, developed by IBM to address communication challenges in low-bandwidth, unreliable networks. In those formative years, it was a pioneering solution, laying the groundwork for the Internet of Things (IoT).
+[MQTT](/node-red/protocol/mqtt/) began its journey in the late 1990s, developed by IBM to address communication challenges in low-bandwidth, unreliable networks. In those formative years, it was a pioneering solution, laying the groundwork for the Internet of Things (IoT).
 
 As the IoT landscape evolved, so did MQTT, transitioning from the widely adopted MQTT 3.1.1 to the more feature-rich MQTT 5.0. Each iteration not only enhanced its capabilities but also reflected the changing needs of an increasingly interconnected world. Today, 25 years later, MQTT is considered the de facto protocol for IoT.
 
@@ -70,6 +70,6 @@ While HTTP offers decent compatibility, its high overhead, lower reliability, an
 
 In contrast, MQTT stands out as an optimal choice for UNS, as it offers low-latency, reliable message delivery, and compact message sizes—an ideal fit for low-power networks. Its wide support across devices, systems, and cloud solutions further strengthens its adaptability. Consequently, MQTT is well-suited for diverse IoT environments, helping to reduce downtime and improve operational efficiency across connected systems. But these are just some of the key benefits. In the next part of this blog series, we'll dive deeper into how MQTT's security features, scalability, structured topic organization, and community to its effectiveness as the leading protocol for UNS brokers.
 
-Stay tuned for Part 2, where we will explore these advantages in detail.
+**Stay tuned for Part 2, where we will explore these advantages in detail.**
 
 In the meantime, check out our [MQTT Broker service](/blog/2024/10/flowfuse-release-2-10/#mqtt-broker) recently added to the FlowFuse platform, now available for enterprise customers. Gain complete control over your entire factory from one convenient platform, allowing you to manage and control your devices, Node-RED instances, and MQTT clients all from a single interface!
