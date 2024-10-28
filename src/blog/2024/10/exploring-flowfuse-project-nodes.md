@@ -12,7 +12,6 @@ tags:
    - flowfuse features
    - node-red mqtt
    - mqtt
-   - manufacturing
 ---
 
 Node-RED is a powerful tool for IoT application development, connecting various services and devices. However, establishing communication between different Node-RED instances—whether for monitoring or control—can be complex. This often requires detailed configurations and protocols like MQTT, HTTP, or CoAP, despite its seamless integration with many protocols.
