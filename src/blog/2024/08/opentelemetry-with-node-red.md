@@ -11,7 +11,6 @@ tags:
    - node-red
    - how-to
    - node-red tips
-   - node-red flow
 ---
 
 Have you ever found yourself frustrated by unexpected delays in your Node-RED flows, wondering where the bottlenecks are hiding? Even small latency issues can have a big impact on your system's performance. That's where Open Telemetry comes in. With its powerful distributed tracing capabilities, you can finally take control and get a clear view of how your flows are performing in real time.
