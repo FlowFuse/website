@@ -9,7 +9,6 @@ keywords: nodered opentelemetry node opentelemetry, opentelemetry nodejs example
 tags:
    - post
    - node-red
-   - how-to
    - node-red tips
 ---
 
