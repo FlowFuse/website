@@ -2,9 +2,9 @@
 title: "MQTT: The Frontrunner for Your UNS Broker - Part 1" 
 subtitle: "Why MQTT is the Best Choice for Your UNS Broker"
 description: "Learn why MQTT is the top choice for Unified Namespace (UNS) brokers and explore the ideal platform that simplifies the connection of devices and services while providing a reliable MQTT broker service."
-date: 2024-10-28
+date: 2024-10-25
 authors: ["sumit-shinde"]
-image:  /blog/2024/10/images/mqtt-for-uns.png
+image:  /blog/2024/10/images/mqtt-for-uns.png
 keywords: mqtt unified namespace, why use mqtt in uns, mqtt in a unified namespace, mqtt data modeling UNS, Best protocols for UNS IoT, Implementing UNS with MQTT, Unified Namespace protocols
 tags: 
  - posts
@@ -31,48 +31,44 @@ As the IoT landscape evolved, so did MQTT, transitioning from the widely adopted
 
 **But, what exactly makes MQTT the frontrunner for Unified Namespace (UNS) implementations?**
 
-### Low Latency and Lightweight Messaging with Publish-Subscribe Model
+## Low Latency and Lightweight Messaging with Publish-Subscribe Model
 
 Every IoT solution, platform, and technology—including Unified Namespace (UNS)—ultimately focuses on reducing downtime and improving production efficiency. A minute of downtime can cost a company on average $15,000 to $20,000. For engineers monitoring machines, waiting for data can be detrimental to their operations. This urgency underscored the necessity for a low-latency protocol, making it clear that such solutions are essential for any Unified Namespace.
 
 This is where MQTT truly shines. Designed for lightweight messaging, MQTT operates on a simple yet powerful **publish-subscribe model**. Unlike traditional request-response protocols that can cause delays due to constant querying, MQTT establishes a persistent connection. Once devices connect, they can publish messages or subscribe to topics in real time, eliminating the need for repeated requests.
 
-![MQTT Topic structure](./images/mqtt-packate-size.png)  
+![MQTT Topic structure](./images/mqtt-packate-size.png)  
 _Image showing the MQTT Topic Structer_
 
 In addition to its efficiency in message handling, MQTT keeps message sizes compact—a crucial factor when working with **low-bandwidth networks** or a high number of connected devices. The MQTT protocol itself introduces **minimal overhead**, as its messages typically consist of just a few bytes, making it perfect for constrained devices like sensors that need to transmit data without overloading the network. The result? As soon as a sensor detects a change—whether it’s a temperature spike or a production error—it can instantly send that data in a compact message to the relevant applications or systems. Decisions can be made on the fly, and proactive measures can be implemented immediately, significantly reducing the risk of costly downtimes.
 
-### Reliability
+While protocols like HTTP operate over a request-response model and have large payload sizes that increase latency, AMQP, Kafka, and OPC UA require significant processing power and memory, making setup unnecessarily complex, and they also have higher latency than MQTT.
 
-Another critical aspect that we need to consider in the UNS context is **reliability**. What happens if communication fails? MQTT excels with its **Quality of Service (QoS)** levels, ensuring message delivery even under challenging network conditions.
+## Reliability
+
+Another critical aspect we must consider in the UNS context is **reliability**. What happens if communication fails? MQTT excels with its **Quality of Service (QoS)** levels, ensuring message delivery even under challenging network conditions.
 
 MQTT provides three levels of Quality of Service (QoS) to ensure message delivery reliability, catering to different application needs. `QoS 0` delivers messages on a "best-effort" basis, meaning they may be lost if the connection fails. `QoS 1` guarantees that messages are delivered at least once, ensuring that even if there’s a temporary disruption, the message will reach its destination. `QoS 2` is the highest level, ensuring that messages are delivered exactly once, preventing duplicates, and ensuring data integrity.
 
-![MQTT Quality of Service's different levels](./images/mqtt-qos.png)  
+![MQTT Quality of Service's different levels](./images/mqtt-qos.png)  
 _MQTT Quality of Service Is different levels_
 
 In a world where data integrity is paramount, especially in industrial environments, the ability to choose the right QoS level ensures that all components—whether they are sensors, devices, or applications—are working with the most accurate and up-to-date information.
 
-### Wide Connectivity
+While protocols like AMQP, Kafka, and OPC UA also offer strong message delivery capabilities, HTTP and CoAP present certain challenges. Although CoAP is regarded for its low-latency communication and small payload sizes, it can fail in message delivery in unreliable network conditions. Furthermore, CoAP is still maturing in the industry and lacks sufficient resources for effective implementation and troubleshooting.
+
+## Wide Connectivity
 
 A Primary requirement for any UNS is the connectivity of various devices and systems as it serves as a single source of truth collected from every part of the IoT environment. MQTT’s long-standing standardization since the 1990s enables it to bridge the gap between legacy PLCs and modern IoT devices. Because of its established presence, many modern systems and cloud solutions now support it as well. This compatibility eliminates the need for extensive changes to existing infrastructures, allowing organizations to leverage their current investments while integrating new technologies.
 
-![MQTT's Compatibility](./images/mqtt-compatiblity.png)  
+![MQTT's Compatibility](./images/mqtt-compatiblity.png)  
 _MQTT can connect with everything_
 
 For example, a manufacturing facility can use MQTT to connect older machines that previously operated in isolation with newly installed IoT devices. This integration facilitates smooth communication and data sharing across the board. As a result, organizations can enhance operational efficiency while supporting a cohesive data ecosystem that maximizes the value of every device, regardless of its age or manufacturer.
 
-MQTT is a great protocol for Unified Namespace (UNS). It has low latency, a lightweight design, strong reliability, and wide connectivity. Other alternatives do not perform as well in important areas. HTTP is popular but uses a request-response model. This model introduces delays and is not efficient for real-time data exchange. It is not suitable for time-sensitive applications.
+While HTTP offers decent compatibility, its high overhead, lower reliability, and increased latency make it a less favorable choice. Although AMQP and Kafka provide better compatibility and reliability, their integration complexity and the need for greater processing power and memory present significant challenges, particularly for low-power devices. Similarly, while OPC UA demonstrates strong compatibility with legacy systems and robust reliability, it falls short in supporting modern systems and cloud solutions. Like AMQP and Kafka, OPC UA requires substantial resources, adding complexity to its implementation. Meanwhile, CoAP shows promise for low-latency and lightweight payload handling, but it is not widely adopted and lacks the necessary resources, which limits its compatibility and maturity within the industry.
 
-CoAP is designed for low-latency in constrained environments. However, it may miss messages when network conditions vary. This lack of reliability makes it unsuitable for critical operations. CoAP also does not have wide connectivity and is not a mature protocol in the industry yet.
-
-OPC UA offers strong security and interoperability but can be too complex for simpler use cases. This adds unnecessary overhead. Kafka is powerful for handling large amounts of data but does not focus on low-latency communication. This is important for immediate operational responses.
-
-AMQP provides advanced messaging features, but it can be overly complex for straightforward data exchange. It also has higher latency than MQTT.
-
-In contrast, MQTT is standardized and can connect both legacy systems and modern IoT devices easily. Therefore, MQTT is the best choice for UNS. It offers seamless, efficient, and reliable communication. This is ideal for different IoT environments and helps reduce downtime while improving operational efficiency.
-
-As we've explored, MQTT's low latency, lightweight nature, publish-subscribe model, reliability, and wide connectivity make it an ideal choice for your Unified Namespace. However, these are just a few of its key benefits. In the next part of this blog series, we'll further explore how MQTT's security features, scalability, structured topic organization, and active community contribute to its effectiveness as the leading protocol for UNS brokers.
+In contrast, MQTT stands out as an optimal choice for UNS, as it offers low-latency, reliable message delivery, and compact message sizes—an ideal fit for low-power networks. Its wide support across devices, systems, and cloud solutions further strengthens its adaptability. Consequently, MQTT is well-suited for diverse IoT environments, helping to reduce downtime and improve operational efficiency across connected systems. But these are just some of the key benefits. In the next part of this blog series, we'll dive deeper into how MQTT's security features, scalability, structured topic organization, and community to its effectiveness as the leading protocol for UNS brokers.
 
 Stay tuned for Part 2, where we will explore these advantages in detail.
 
