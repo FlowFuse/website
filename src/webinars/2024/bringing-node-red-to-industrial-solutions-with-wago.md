@@ -3,7 +3,7 @@ title: "Bringing Node-RED to Industrial Solutions with Wago"
 subtitle: Nick O'Leary, Co-Creator of Node-RED & CTO at FlowFuse, and Kurt Braun, Director of Automation Sales Engineering and Development at Wago, discuss how to bridge Node-RED to industrial solutions with Wago.
 image: /images/webinars/webinar-node-red-wago.jpg
 date: 2024-10-30
-time: 17:00 CET (11:00am ET) 
+time: 16:00 CET (11:00am ET) 
 duration: 60
 video: 
 hosts: ["nick-oleary", "kurt-braun"]
