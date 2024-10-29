@@ -61,7 +61,7 @@ While protocols like AMQP, Kafka, and OPC UA also offer strong message delivery 
 
 A Primary requirement for any UNS is the connectivity of various devices and systems as it serves as a single source of truth collected from every part of the IoT environment. MQTT’s long-standing standardization since the 1990s enables it to bridge the gap between legacy PLCs and modern IoT devices. Because of its established presence, many modern systems and cloud solutions now support it as well. This compatibility eliminates the need for extensive changes to existing infrastructures, allowing organizations to leverage their current investments while integrating new technologies.
 
-![MQTT's Compatibility](./images/mqtt-compatiblity.png)  
+![MQTT's Compatibility](./images/mqtt-compatiblity.png){data-zoomable}
 _MQTT can connect with everything_
 
 For example, a manufacturing facility can use MQTT to connect older machines that previously operated in isolation with newly installed IoT devices. This integration facilitates smooth communication and data sharing across the board. As a result, organizations can enhance operational efficiency while supporting a cohesive data ecosystem that maximizes the value of every device, regardless of its age or manufacturer.
