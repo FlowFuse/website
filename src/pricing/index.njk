@@ -70,7 +70,7 @@ hubspot:
                         <div class="pricing-tile-background pb-6 md:grid">
                             <div>
                                 <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[145px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                    <div class="flex flex-row justify-between mt-3 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Starter</h4>
                                     </div>
                                     <p class="mt-7"><span class="inline font-normal">For smaller-scale applications. </span>The fastest, easiest way to host <span class="inline-block">Node-RED</span> instances.</p>
@@ -79,9 +79,9 @@ hubspot:
                                     <note class="font-bold" style="display: inline-block;">Includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>2 team members</li>
                                         <li>2 Node-RED instances</li>
                                         <li>2 devices</li>
+                                        <li>2 team members</li>
                                     </ul>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ hubspot:
                     </div>
                     <!-- Team -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid">
+                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
                                 <div
                                     class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
@@ -112,23 +112,23 @@ hubspot:
                                             teams</span> with the collaborative features of FlowFuse Cloud.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Includes:
+                                    <note class="font-bold" style="display: inline-block;">Starter features, plus:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>5 Hosted Node-RED instances</li>
+                                        <li>5 Node-RED instances<span class="align-super text-xs -ml-1">1</span></li>
                                         <li>20 Team members</li>
                                         <li>Team collaboration</li>
-                                        <li>Commited SLA: 99.5&#37;</li>
+                                        <li>Standard Support + SLA: 99.5&#37;</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div data-nosnippet>
+                            <div data-nosnippet class="flex">
                                 <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row">
+                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                                     <div class="text-left flex flex-row md:self-end">
                                         <div class="w-20 mr-1">
                                             <note class="note text-sm">Starting at</note>
-                                            <h2 class="self-end">
+                                            <h2 class="self-end pb-1">
                                                 $175
                                             </h2>
                                         </div>
@@ -156,17 +156,15 @@ hubspot:
                                     <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Top Features:</note>
+                                    <note class="font-bold" style="display: inline-block;">{% if cloud %}Team{% else %}Starter{% endif %} features, plus:</note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>High availability</li>
+                                        <li>20 Node-RED instances<span class="align-super text-xs -ml-1">2</span></li>
+                                        <li>Unlimited team members</li>
                                         {% if cloud %}
                                         <li>MQTT Broker</li>
                                         {% endif %}
                                         <li>Single Sign-On</li>
-                                        <li>Enterprise Support</li>
-                                        {% if show_sla %}
-                                        <li>Commited SLA: up to 99.9&#37;</li>
-                                        {% endif %}
+                                        <li>Enterprise Support{% if show_sla %} + SLA: up to 99.9&#37;{% endif %}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -189,25 +187,25 @@ hubspot:
                 <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-sm mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid">
+                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[145px]">
+                                <div class="flex flex-col items-center text-left md:flex-row md:mb-5 md:px-0 md:block md:min-h-[145px]">
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Starter</h4>
                                     </div>
-                                    <p class="mt-7"><span class="inline font-normal">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
+                                    <p class="mt-7"><span class="inline">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
                                 </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
+                                <div class="flex flex-col content-start features max-md:mt-6 w-full">
                                     <note class="font-bold" style="display: inline-block;">Includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>5 team members</li>
                                         <li>5 Node-RED instances</li>
                                         <li>5 devices</li>
+                                        <li>5 team members</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-3 flex flex-row">
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row">
                                 <h2 class="self-end pb-1">Free</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
