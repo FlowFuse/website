@@ -75,7 +75,7 @@ While AMQP and Kafka offer structured topics as they are built on a publish-subs
 
 ## Summary
 
-In conclusion, MQTT has proven itself as the frontrunner for UNS implementations, showcasing a range of benefits explored in both parts of this series. From its lightweight design and low latency to its robust security features, structured topic management, and extensive community support, MQTT stands out as the go-to protocol for managing complex IoT environments effectively.
+In conclusion, MQTT has proven itself as the frontrunner for UNS implementations, showcasing a range of benefits explored in both parts of this series. From its lightweight design and low latency to its robust security features, structured topic management, MQTT stands out as the go-to protocol for managing complex IoT environments effectively.
 
 In addition, MQTT has a vibrant community of developers and users who contribute to its growth. This group provides valuable resources and support, making it easier for organizations to implement and optimize MQTT solutions. With their expertise, you can confidently navigate your MQTT journey.
 
