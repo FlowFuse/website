@@ -12,7 +12,7 @@ tags:
    - node-red
 ---
 
-You may have seen in our [recent product update](/blog/2024/10/flowfuse-release-2-10) that we have release our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has consistently been a request, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Team and Enterprise teams.
+You may have seen in our [recent product update](/blog/2024/10/flowfuse-release-2-10) that we have added our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has been a highly requested feature, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Team and Enterprise teams.
 
 <!--more-->
 
