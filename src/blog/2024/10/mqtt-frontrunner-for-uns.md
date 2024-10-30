@@ -42,7 +42,7 @@ _Image showing the MQTT Topic Structer_
 
 In addition to its efficiency in message handling, MQTT keeps message sizes compact—a crucial factor when working with **low-bandwidth networks** or a high number of connected devices. The MQTT protocol itself introduces **minimal overhead**, as its messages typically consist of just a few bytes, making it perfect for constrained devices like sensors that need to transmit data without overloading the network. The result? As soon as a sensor detects a change—whether it’s a temperature spike or a production error—it can instantly send that data in a compact message to the relevant applications or systems. Decisions can be made on the fly, and proactive measures can be implemented immediately, significantly reducing the risk of costly downtimes.
 
-While protocols like HTTP operate over a request-response model and have large payload sizes that increase latency, AMQP, Kafka, and OPC UA require significant processing power and memory, making setup unnecessarily complex. They also have higher latency than MQTT.
+While protocols like HTTP operate over a request-response model and have large payload sizes that increase latency. AMQP, Kafka, and OPC UA require significant processing power and memory, making setup unnecessarily complex. They also have higher latency than MQTT.
 
 ## Reliability
 
@@ -55,10 +55,10 @@ _MQTT Quality of Service Is different levels_
 
 In a world where data integrity is paramount, especially in industrial environments, the ability to choose the right QoS level ensures that all components—whether they are sensors, devices, or applications—are working with the most accurate and up-to-date information.
 
-Protocols like AMQP, Kafka, and OPC UA  do offer strong message delivery capabilities, while HTTP and CoAP present certain challenges. Although CoAP is regarded for its low-latency communication and small payload sizes, it can fail in message delivery in unreliable network conditions. Furthermore, CoAP is still maturing in the industry and lacks sufficient resources for effective implementation and troubleshooting.
+Protocols like AMQP, Kafka, and OPC UA offer strong message delivery capabilities but have higher latency than MQTT and are more complex to set up. HTTP and CoAP also present reliability challenges. Although CoAP is known for its low-latency communication and small payload sizes, it can experience message delivery failures in unreliable network conditions. Additionally, CoAP is still maturing in the industry and lacks sufficient resources for effective implementation and troubleshooting.
 
 MQTT stands out as the top choice for UNS implementations due to its lightweight design, low latency, and reliable message delivery. As IoT systems grow more complex, the need for efficient communication is paramount, and MQTT meets this demand with its publish-subscribe model and Quality of Service (QoS) levels.
 
 **In part 2, we explore MQTT's security, scalability, topic organization, and community support, providing more solid reasons why it is the ultimate choice for UNS brokers.**
 
-The FlowFuse Platform now includes a MQTT Broker service to help you manage all your MQTT clients, Node-RED instances, and devices from a single, centralized platform eliminating the need for a separate broker service.
+Additionally, we are excited to announce that the FlowFuse Platform now includes an integrated MQTT Broker service (link to announcement blog), allowing you to manage all your MQTT clients, Node-RED instances, and devices from a single, centralized platform—eliminating the need for a separate broker service.
