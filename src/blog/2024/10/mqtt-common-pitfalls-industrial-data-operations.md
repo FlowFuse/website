@@ -49,7 +49,7 @@ While the challenges of data loss and duplication in MQTT stem from its publish-
 
 Although this lack of visibility can create uncertainty, acknowledgment logic can be implemented to address the issue. This involves additional development to create tracking mechanisms, such as having subscribers publish a response to another topic once they receive data, while the publisher subscribes to that topic. However, this complexity may complicate integration into existing workflows
 
-### TCP Protocol Challenges
+### TCP Limitations in MQTT Frameworks
 
 Moreover, MQTT **operates over the TCP protocol**, which introduces several challenges for industrial environments.
 
@@ -72,7 +72,6 @@ In industrial operations, MQTT is commonly used as a central broker for data flo
 Furthermore, one significant pitfall of using MQTT is the potential for **vendor lock-in**. Many organizations may choose a specific MQTT broker or service provider based on their initial requirements, but as their operations grow and evolve, they may find it difficult to migrate to another solution. This challenge arises because different brokers may have unique features, configurations, and proprietary extensions that can complicate the migration process. The more tightly integrated a broker is with an organization’s existing systems and workflows, the harder it becomes to switch to an alternative without incurring substantial costs or operational disruptions.
 
 Additionally, vendor lock-in can limit flexibility and innovation, forcing organizations to adapt their processes to fit the broker's capabilities rather than the other way around. If the chosen broker lacks essential features or scalability options, organizations may be stuck with inadequate solutions that do not meet their evolving needs.
-
 To mitigate the risks associated with **vendor lock-in**, it becomes important for organizations to prioritize interoperability when selecting an MQTT broker. Opting for open-source solutions or platforms that support standard can facilitate smoother transitions between different services.
 
 In summary, while MQTT offers benefits for industrial data operations, it’s important to be aware of its challenges. Issues like data quality, loss, duplication, and security can impact performance. Understanding these challenges helps organizations create better strategies for communication and efficiency. By addressing these issues, companies can make better use of their data and improve decision-making on the factory floor. The goal is to use data effectively to support a more reliable and responsive industrial environment.
