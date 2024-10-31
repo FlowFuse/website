@@ -5,10 +5,11 @@ description: Discover common pitfalls in industrial data operations using MQTT a
 date: 2024-10-31
 authors: ["sumit-shinde"]
 image: 
-keywords: mqtt
+keywords: mqtt disadvantages, mqtt pitfalls, mqtt challenges, mqtt reliability problems, mqtt drawbacks, mqtt limitations,  cons of using mqtt
 tags:
    - post
    - flowfuse
+   - mqtt
 ---
 
 When it comes to modern industrial operations, data is vital to decision-making. On every factory floor, machines and humans work side by side, each contributing to the production of the final product. But beneath the surface, there's an invisible current flowing—data. It's constantly being collected, analyzed, and acted upon to ensure that every piece of equipment operates efficiently, potential issues are detected early, and production stays on track. Without this constant stream of information, the entire operation could grind to a halt.
@@ -17,7 +18,7 @@ When it comes to modern industrial operations, data is vital to decision-making.
 
 Yet, the road to seamless data communication in industrial environments isn’t always smooth. The rise of protocols like MQTT has transformed how machines communicate, but it also brings its own challenges. Historically, factories operated like busy beehives where sharing information was often a challenge. Decisions relied on instinct and visible cues, sometimes leading to confusion, as data was frequently siloed and hard to use effectively. As technology progressed, the importance of real-time data became clear, driving the need for better communication between devices.
 
-This need led to the creation of MQTT (Message Queuing Telemetry Transport) in the early 2000s. Designed as a lightweight messaging protocol, MQTT enables efficient communication between machines and devices, even in resource-limited environments. Its rise coincided with the growth of the Internet of Things (IoT), making device connectivity essential.
+This need led to the creation of [MQTT](/node-red/protocol/mqtt/) (Message Queuing Telemetry Transport) in the early 2000s. Designed as a lightweight messaging protocol, MQTT enables efficient communication between machines and devices, even in resource-limited environments. Its rise coincided with the growth of the Internet of Things (IoT), making device connectivity essential.
 
 Today, MQTT has become the de facto standard for industrial data communication, celebrating over 25 years of transforming industry operations. However, as new protocols have emerged during this time, each with unique advantages and mechanisms, organizations may find it challenging to determine when to use MQTT versus other options. This growing diversity raises important questions about the most effective approaches in various scenarios.
 
@@ -33,7 +34,7 @@ In industrial environments, effectively leveraging data is crucial for decision-
 
 A significant challenge with MQTT is its **lack of enforced standardization** for data formats. While this flexibility can be beneficial, it often leads to the necessity for data transformation, that adds extra layer of complexity and creating bottlenecks that hinder efficiency.
 
-This lack of standardization can also result in **low-quality data**. Inconsistent or poorly structured data complicates analysis, making it difficult to derive actionable insights. Consequently, decisions may rely on unreliable information, undermining efforts for operational excellence. These challenges underscore the pressing need for robust frameworks and standards, such as **Sparkplug B**, to ensure data consistency and quality in industrial operations. 
+This lack of standardization can also result in **low-quality data**. Inconsistent or poorly structured data complicates analysis, making it difficult to derive actionable insights. Consequently, decisions may rely on unreliable information, undermining efforts for operational excellence. These challenges underscore the pressing need for robust frameworks and standards, such as [**Sparkplug B**](/blog/2024/08/using-mqtt-sparkplugb-with-node-red/), to ensure data consistency and quality in industrial operations. 
 
 ### Risks of Data Loss and Delivery Issues
 
