@@ -2,7 +2,7 @@
 title: "MQTT Service Now Available on FlowFuse"
 subtitle: We are thrilled to announce a significant milestone for FlowFuse, we now offer our very own MQTT service, built-in and ready to use with your node-RED applications.
 description: We are thrilled to announce a significant milestone for FlowFuse, we now offer our very own MQTT service, built-in and ready to use with your node-RED applications.
-date: 2024-10-30
+date: 2024-10-31
 authors: ["joe-pavitt"]
 image: /blog/2024/10/images/ff-mqtt.png
 tags:
