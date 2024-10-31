@@ -21,7 +21,7 @@ The MQTT Service is available now on [FlowFuse Cloud](https://flowfuse.com/produ
 You can now use FlowFuse to manage your own MQTT Clients alongside your Node-RED instances, making it easier to build full-stack, event-driven applications within FlowFuse.
 
 ## Use Cases
-FlowFuse MQTT Service facilitates real-time communication, an essential element for optimizing industrial processes. This service allows for the monitoring of production lines and the precise control of processes, leading to enhanced efficiency. Its seamless integration with existing industrial systems simplifies data collection, which can then be analyzed to improve decision-making and boost productivity. Here are some typical uses cases:
+FlowFuse MQTT Service simplifies access to real-time data, an important element in optimizing industrial processes. With the power of FlowFuse, Node-RED and the MQTT service, your integrations are now even easier. Here are some typical uses cases:
 * Connect your MQTT enabled PLCs (like Omron N Series, Siemens S7, etc) to your Node-RED instance to open up such possibilities like:
    * Data collection and analysis, Predictive Maintenance, OEE, Condition Based Monitoring. 
    * Triggering actions like sending Emails or alerting your engineers about an event.
