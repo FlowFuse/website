@@ -1,7 +1,7 @@
 ---
 title: "MQTT: The common pitfalls in industrial data operations"
-subtitle: Getting Aware of the Common Pitfalls in Industrial Data Operations
-description: Discover common pitfalls in industrial data operations using MQTT and learn how to improve communication for better efficiency and decision-making.
+subtitle: Getting Aware of the Common Pitfalls of using MQTT in Industrial Data Operations
+description: Learn about the common pitfalls of using MQTT in industrial data operations, including data quality issues, security risks, and vendor lock-in.
 date: 2024-10-31
 authors: ["sumit-shinde"]
 image: 
@@ -60,9 +60,9 @@ Second, all MQTT clients must support TCP/IP, which can limit the deployment of 
 
 ### Lack of Built-in Security Mechanisms
 
-Another critical challenge associated with MQTT is the **lack of built-in security mechanisms** within the protocol itself. While MQTT can operate over secure transport layers such as TLS/SSL, the effectiveness of these protections hinges on proper implementation. Therefore, organizations must recognize the importance of configuring TLS/SSL correctly to ensure secure communications.
+Another critical challenge associated with MQTT is the **lack of built-in security mechanisms** within the protocol itself. While MQTT can use TLS to encrypt transmitted data, it does not do so by default. The effectiveness of these protections hinges on proper implementation; therefore, organizations must recognize the importance of configuring TLS/SSL correctly to ensure secure communications.
 
-Moreover, relying solely on secure transport layers is not enough. It becomes crucial to implement additional security measures, such as username and password authentication and access controls. Selecting the right broker services is equally important, as many brokers offer essential security features that enhance overall protection. Additionally, continuous monitoring of network activity is vital to safeguard data integrity and prevent unauthorized access.
+Moreover, relying solely on secure transport layers is insufficient. It becomes crucial to implement additional security measures at different levels. For example, at the network layer, the use of firewalls, VPNs, and IPsec can help prevent intruders. At the application level, implementing username and password authentication along with access controls ensures that only authorized individuals can publish and subscribe to the broker. Selecting the right broker services is equally important, as many brokers offer essential security features that enhance overall protection. Additionally, continuous monitoring of network activity is vital to safeguard data integrity and prevent unauthorized access.
 
 Without these robust security measures in place, MQTT communications can become targets for potential breaches, exposing sensitive data and undermining operational efficiency.
 
@@ -75,10 +75,12 @@ Furthermore, one significant pitfall of using MQTT is the potential for **vendor
 Additionally, vendor lock-in can limit flexibility and innovation, forcing organizations to adapt their processes to fit the broker's capabilities rather than the other way around. If the chosen broker lacks essential features or scalability options, organizations may be stuck with inadequate solutions that do not meet their evolving needs.
 To mitigate the risks associated with **vendor lock-in**, it becomes important for organizations to prioritize interoperability when selecting an MQTT broker. Opting for open-source solutions or platforms that support standard can facilitate smoother transitions between different services.
 
+We recently announced the launch of our new MQTT broker service at FlowFuse! This service adheres to open-source standards and emphasizes robust security, featuring username and password authentication along with comprehensive access control mechanisms.
+
+With the FlowFuse Platform, you can now easily manage all your IoT devices, Node-RED instances, and MQTT clients from a centralized platform, ensuring your operations remain secure. Discover the powerful capabilities this service brings to your IoT solutions. For more details, check out our announcement blog]( todo: link to announcement blog).
+
 ## Conclusion
 
 In summary, while MQTT offers numerous benefits for industrial data operations, it’s crucial to be aware of its challenges. Issues like data quality, loss, duplication, and security can significantly impact performance. Understanding these challenges helps organizations create better strategies for communication and efficiency.
 
 By addressing these issues, companies can make better use of their data and improve decision-making on the factory floor. The goal is to use data effectively to support a more reliable and responsive industrial environment.
-
-**Now that you understand the challenges of industrial data operations, it’s time to harness the power of MQTT. We recently announced our new MQTT broker service(todo: link to announcement blog) at FlowFuse, which offers robust security features such as username and password authentication and access control mechanisms. Now, you can effortlessly manage all your IoT devices, Node-RED instances, and MQTT clients from a centralized platform!**
