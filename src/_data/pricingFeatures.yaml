@@ -40,6 +40,11 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Connect to an edge device and develop your flows.</p>"
+      - id: mqtt-broker
+        label: MQTT Broker
+        cloudValues: [ null, 'check', 'check' ]    
+        tags: [ 'cloud' ]
+        info: "<p>Effortlessly manage and create MQTT clients to transport data for efficient messaging and communication for your applications. Up to 20 clients included at no extra cost, with the option to purchase additional clients in the future.</p>"
       - id: device-groups
         label: Device Group Management
         cloudValues: [ null, null, 'check' ]
@@ -58,12 +63,6 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Access your Node-RED application via your own domain name.</p>"
-      - id: mqtt-broker
-        label: MQTT Broker
-        cloudValues: [ null, null, 'check' ]    
-        tags: [ 'cloud' ]
-        info: "<p>Effortlessly manage and create MQTT clients to transport data for efficient messaging and communication for your applications. Up to 20 clients included at no extra cost, with the option to purchase additional clients in the future.</p>"
-
       - id: persistent-files
         label: Persistent files
         cloudValues: [ '1 GB', '10 GB', '100 GB' ]    
