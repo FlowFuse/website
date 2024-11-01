@@ -437,3 +437,14 @@ hubspot:
         capture('dedicated');
     });
 </script>
+
+<!-- Features info -->
+<script>
+    function openInfo(id, hosting) {
+        capture('info-feature', { feature: id }, { hosting: hosting })
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
+    }
+    function closeInfo(id, hosting) {
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
+    }
+</script>
