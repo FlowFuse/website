@@ -20,7 +20,7 @@
                     <span class="font-medium text-white px-2 py-1 bg-red-600 rounded-sm">{{ ad.type }}</span>
                 {% endif %}
                 {% if ad.title %}
-                <h3 class="font-semibold text-2xl mb-2{% if ad.type %} mt-4{% endif %}">{{ ad.title }}</h3>
+                <h3 class="font-semibold text-2xl mb-2{% if ad.type %} mt-4{% endif %}">{{ ad.title | safe }}</h3>
                 {% endif %}
                 {% if ad.eventTime %}
                     <div class="text-md text-gray-500 mb-3">
