@@ -7,21 +7,27 @@ sections:
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse hosts Node-RED instances.</p>"
-      - id: nodered-instances
-        label: Number of Node-RED instances
-        selfHostedValues: [ '5', 'Licensed Amount' ]        
-        tags: [ 'self-hosted' ]
-        info: "<p>Number of Node-RED runtimes, either as hosted instances or as devices</p>"
       - id: cloud-instances
-        label: Number of cloud instances
-        cloudValues: [ '2', '<div><sup>1</sup>Shared Pool with Devices</br>Starting at 5 (expandable)</div>', 'Licensed Amount' ]    
+        label: Hosted Instances
+        cloudValues: [ 'check', 'check', 'check' ] 
+        selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'cloud' ]
-        info: "<p>FlowFuse hosts multiple Node-RED instances from a common platform.</p>"
-      - id: devices
-        label: Number of devices
-        cloudValues: [ '2', '<div><sup>1</sup>Shared Pool with Devices</br>Starting at 5 (expandable)</div>', 'Licensed Amount' ]    
+        info: "<ul><li>Starter: Includes 2 hosted instances</li><li>Team: Starts with 5, shared with edge device count</li><li>Enterprise: Starts with 20, shared with edge device count</li></ul>"
+      - id: self-hosted-instances
+        label: Hosted Instances
+        selfHostedValues: [ 'check', 'check' ]   
+        tags: [ 'self-hosted' ]
+        info: "<ul><li>Starter: Includes 5 hosted instances</li><li>Enterprise: Starts with 20, shared with edge device count</li></ul>"
+      - id: cloud-devices
+        label: Edge Devices
+        cloudValues: [ 'check', 'check', 'check' ]      
         tags: [ 'cloud' ]
-        info: "<p>FlowFuse allows you to manage Node-RED deployments on remote devices.</p>"
+        info: "<ul><li>Starter: Includes 5 edge devices</li><li>Team: Starts with 5, shared with hosted instance count</li><li>Enterprise: Starts with 20, shared with hosted instance count</li></ul>"
+      - id: self-hosted-devices
+        label: Edge Devices  
+        selfHostedValues: [ 'check', 'check' ]   
+        tags: [ 'self-hosted' ]
+        info: "<ul><li>Starter: Includes 5 edge devices</li><li>Enterprise: Starts with 20, shared with hosted instance count</li></ul>"
       - id: device-mgmt
         label: Device Management
         cloudValues: [ 'check', 'check', 'check' ]
