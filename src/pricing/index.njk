@@ -10,13 +10,7 @@ meta:
     faq:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
           answer: >
-            Yes, we offer a 20% discount for Team customers who move from monthly to annual subscriptions. Please <a href="/contact-us/">reach out</a> to request the discount.
-        - question: "Is there a minimum for purchase?"
-          answer: >
-            Yes, 5 instances on Team and 10 instances on Enterprise.
-        - question: "Why isn't there an option for self-hosted Team?"
-          answer: >
-            Due to the configuration and support required for a self-hosted deployment, it is only possible through the Enterprise tier at this time.
+            Yes, customers on an annual subscription receive a 20% discount off of the monthly subscription price. Please reach out to request the discount. Please <a href="/contact-us/">reach out</a> to request the discount.
         - question: "Why is self-hosted the same price as cloud?"
           answer: >
             Self-hosted environments require more support and configuration than FlowFuse Cloud, which offset any resources saved.
@@ -76,12 +70,12 @@ hubspot:
                                     <p class="mt-7"><span class="inline font-normal">For smaller-scale applications. </span>The fastest, easiest way to host <span class="inline-block">Node-RED</span> instances.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Includes:
+                                    <note class="font-bold">2 hosted instances, 2 edge devices, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>2 Node-RED instances</li>
-                                        <li>2 devices</li>
                                         <li>2 team members</li>
+                                        <li>Device management</li>
+                                        <li>Blueprints</li>
                                     </ul>
                                 </div>
                             </div>
@@ -112,12 +106,12 @@ hubspot:
                                             teams</span> with the collaborative features of FlowFuse Cloud.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Starter features, plus:
+                                    <note class="font-bold" style="display: inline-block;">Starts at 5 hosted instances or edge devices, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>5 Node-RED instances<span class="align-super text-xs -ml-1">1</span></li>
                                         <li>20 Team members</li>
                                         <li>Team collaboration</li>
+                                        <li>MQTT Broker (5 clients to start)</li>
                                         <li>Standard Support + SLA: 99.5&#37;</li>
                                     </ul>
                                 </div>
@@ -156,15 +150,15 @@ hubspot:
                                     <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">{% if cloud %}Team{% else %}Starter{% endif %} features, plus:</note>
+                                    <note class="font-bold" style="display: inline-block;">Starts at 20 hosted instances or edge devices, and includes:</note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>20 Node-RED instances<span class="align-super text-xs -ml-1">2</span></li>
                                         <li>Unlimited team members</li>
-                                        {% if cloud %}
-                                        <li>MQTT Broker</li>
-                                        {% endif %}
                                         <li>Single Sign-On</li>
-                                        <li>Enterprise Support{% if show_sla %} + SLA: up to 99.9&#37;{% endif %}</li>
+                                        {% if cloud %}
+                                        <li>MQTT Broker (20 clients to start)</li>
+                                        {% endif %}
+                                        <li>Enterprise support{% if show_sla %} + SLA: 99.9&#37;{% endif %}</li>
+                                        <li>Device group management</li>
                                     </ul>
                                 </div>
                             </div>
@@ -433,4 +427,15 @@ hubspot:
         updateContentAndUrl(hosting);
         capture('dedicated');
     });
+</script>
+
+<!-- Features info -->
+<script>
+    function openInfo(id, hosting) {
+        capture('info-feature', { feature: id }, { hosting: hosting })
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
+    }
+    function closeInfo(id, hosting) {
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
+    }
 </script>
