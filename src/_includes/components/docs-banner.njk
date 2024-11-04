@@ -22,11 +22,6 @@
                 {% if ad.title %}
                 <h3 class="font-semibold text-2xl mb-2{% if ad.type %} mt-4{% endif %}">{{ ad.title }}</h3>
                 {% endif %}
-                {% if ad.expire %}
-                    <div class="text-lg text-gray-500">
-                        {{ ad.expire | shortDate }}
-                    </div>
-                {% endif %}
                 {% if ad.eventTime %}
                     <div class="text-md text-gray-500 mb-3">
                         {{ ad.eventTime }}
