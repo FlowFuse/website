@@ -1,4 +1,4 @@
-- type: "Webinar"
+- type:
   title: "Take your Node-RED from Prototype to Production"
   buttonText: "Learn more"
   link: "/product/features/"
