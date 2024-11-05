@@ -17,7 +17,7 @@ sections:
         label: Hosted Instances
         selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'self-hosted' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 hosted instances.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 hosted instances, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
       - id: cloud-devices
         label: Edge Devices
         cloudValues: [ 'check', 'check', 'check' ]      
@@ -27,7 +27,7 @@ sections:
         label: Edge Devices  
         selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'self-hosted' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
       - id: device-mgmt
         label: Device Management
         cloudValues: [ 'check', 'check', 'check' ]
