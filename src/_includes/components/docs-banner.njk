@@ -15,7 +15,7 @@
 <div class="w-full bg-indigo-50 border-indigo-300 border-2 rounded-lg max-lg:hidden p-3">
     {% set ad = docs_banner[0] %}
         {% if ad.expire and ad.expire | isFutureDate or not ad.expire %}
-            <a href="{{ ad.link }}" class="text-sm justify-center hover:no-underline">
+            <a href="{{ ad.link }}" onclick="capture('cta-{{ ad.buttonText }}', {'reference': '{{ ad.reference }}'})" class="text-sm justify-center hover:no-underline">
                 {% if ad.type %}
                     <span class="font-medium text-white px-2 py-1 bg-red-600 rounded-sm">{{ ad.type }}</span>
                 {% endif %}
