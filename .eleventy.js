@@ -100,6 +100,26 @@ module.exports = function(eleventyConfig) {
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
     eleventyConfig.addGlobalData('DEV_MODE', () => DEV_MODE || DEV_MODE_POSTS)
+    eleventyConfig.addGlobalData('latestAgreementVersion', async () => {
+        const directoryPath = path.join(__dirname, 'src/handbook/customer/sales/subscription-agreements');
+    
+        const files = await fs.promises.readdir(directoryPath);
+    
+        const versionPattern = /^subscription-agreement-(\d+\.\d+)\.njk$/;
+    
+        const versions = files
+            .map(file => {
+                const match = file.match(versionPattern);
+                return match ? match[1] : null;
+            })
+            .filter(Boolean);
+    
+        versions.sort((a, b) => b.localeCompare(a, undefined, { numeric: true }));
+    
+        const latestVersion = versions[0];
+    
+        return latestVersion;
+    });
 
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
