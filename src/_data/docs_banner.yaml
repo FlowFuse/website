@@ -2,6 +2,7 @@
   title: "Take your <span class='inline-block'>Node-RED</span> from Prototype to Production"
   buttonText: "Learn more"
   link: "/product/features/"
+  reference: "docs_banner-features_page"
   expire: "2024-11-30T16:00:00Z"
   eventTime: 
   secondaryText:
