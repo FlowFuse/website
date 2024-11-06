@@ -14,43 +14,15 @@ In this article, you will learn how to migrate from a self-managed and self-host
 
 ## What is FlowFuse?
 
-[FlowFuse](/) is a platform that helps engineers easily build and manage their Node-RED solutions for digitalizing operations. It allows teams to connect IT and OT environments, making it simple to collect, transform, and visualize data to improve industrial workflows.
+[FlowFuse](/) is a platform that helps engineers easily build and manage their Node-RED solutions for digitalizing operations. It allows teams to connect IT and OT environments, making it simple to connect, collect, transform, and visualize data to improve industrial workflows.
 
 ## Why Switch from Self-Managed Node-RED to FlowFuse-Managed Node-RED?
 
-Node-RED is a great low-code tool that facilitates connections between hardware devices, APIs, and various services. However, managing Node-RED on a server can become complex and time-consuming, particularly in industrial environments where multiple instances may be needed.
+Node-RED is a powerful low-code tool that connects hardware devices, APIs, and various services. It enables the transformation, contextualization, and visualization of data, making it increasingly popular in IIoT (Industrial Internet of Things) environments. While Node-RED is easy to install, deploying it on servers often requires technical expertise and presents several challenges. In IIoT use cases, the growing need for multiple instances—one for each device—adds complexity, making the deployment even more challenging.
 
-### Challenges of Self-Managed Node-RED
+Transitioning from a self-managed Node-RED setup to a FlowFuse-managed environment offers significant benefits. Self-hosting Node-RED introduces challenges such as deployment difficulties, security concerns, operational issues, and the complexities of remotely accessing edge devices securely.
 
-1. **Complex Deployment**: Setting up Node-RED for remote monitoring and flow building can be complicated, requiring significant effort to ensure everything functions properly.
-
-2. **Security Concerns**: Each instance must be secured individually, which can lead to vulnerabilities if not managed carefully. Unauthorized access poses a risk to operations.
-
-3. **Operational Issues**: Troubleshooting issues in a Node-RED instance or scaling it for higher demand can be disruptive and time-consuming.
-
-4. **Edge Device Access**: Accessing Node-RED instances running on edge devices from a remote location can introduce additional complications, making effective management more challenging.
-
-5. **Accidental Recovery**: Rolling back to a previous change after an accidental Node-RED crash is not possible, as it requires manual exports of flows, credentials, and environment variables. This process is time-consuming and error-prone, increasing the risk of data loss.
-
-### The FlowFuse Advantage
-
-- **Streamlined Management**: FlowFuse allows for quick creation and management of Node-RED instances, simplifying the setup process.
-
-- **Centralized Collaboration**: All Node-RED instances are organized within the FlowFuse platform, facilitating better team collaboration across different applications.
-
-- **Improved Security**: FlowFuse provides security features to protect your Node-RED editor from unauthorized access. You can control access levels within your team, enhancing overall security.
-
-- **Simplified Scaling**: Scaling instances is straightforward with FlowFuse, allowing for quick adjustments as needed.
-
-- **Focus on Development**: FlowFuse manages infrastructure complexities, enabling you to concentrate on developing and deploying applications.
-
-- **Quick and Easy Accidental Recovery**: FlowFuse provides a [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) feature that allows for quick recovery from accidental changes or crashes, minimizing downtime and reducing the risk of data loss.
-
-- **Edge Device Support**: FlowFuse supports running Node-RED on edge devices using [Device agent](/product/device-agent/), allowing remote access to manage, monitor and build application edge devices effectively.
-
-- **DevOps Pipelines**: FlowFuse includes a [DevOps pipeline](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) feature that helps ensure applications are well-tested before deployment. This feature allows for easy application deployment across multiple devices with minimal effort.
-
-In conclusion, transitioning to FlowFuse-managed Node-RED can simplify your operations by reducing the complexities of self-management, improving security, and enabling easier scaling. This approach allows you to focus on what truly matters, avoiding unnecessary time and effort spent on managing infrastructure and ensuring reliability.
+With FlowFuse, you can concentrate on building innovative solutions, while we handle the complexities of infrastructure, security, and scalability—empowering you to deliver results faster and more efficiently. For more information on how FlowFuse centralizes Node-RED instance management, while ensuring secure, scalable, and high-performance solutions refer to Article: [Transform Chaos into Control: Centralize Node-RED Management with FlowFuse](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/).
 
 ## Migrating from Node-RED to FlowFuse
 
@@ -113,7 +85,6 @@ To get these variables, you can use the following flow to dump a list of all pro
 [{"id":"3ed886625239a5d0","type":"function","z":"a87879f70edc3463","name":"process.env","func":"msg.payload = process.env\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[{"var":"process","module":"process"}],"x":650,"y":480,"wires":[["9ca3edbd6857853f"]]},{"id":"b35ef390a46ff129","type":"inject","z":"a87879f70edc3463","name":"List env vars","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":430,"y":480,"wires":[["3ed886625239a5d0"]]},{"id":"9ca3edbd6857853f","type":"debug","z":"a87879f70edc3463","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":880,"y":480,"wires":[]}]
 {% endrenderFlow %}
 
-
 1. Import and deploy the flow into your  sefl-managed Node-RED instance.
 2. Click the Inject button.
 
@@ -130,11 +101,20 @@ Now that you have created the snapshots and copied the process environment varia
 
 For more information refer to [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/)
 
+### Migrating Static Assets to FlowFuse Static Assets
+
+When working with dashboards or files required in your Node-RED project, these files are typically stored locally and are always available, even if you restart or modify the flows. However, when migrating from Node-RED to a FlowFuse cloud environment, you'll need to manually migrate these files to the cloud-based Node-RED instances. To make this process easier, FlowFuse offers a static assets service feature at the instance level.
+
+Here’s how you can migrate your assets:
+
+1. Locate your static assets in your local system that are used in your Node-RED instance from the snapshot we have taken.
+2. Upload them one by one through the Instance Static Assets tab. For more information, refer to the [Static Asset Service documentation]( /docs/user/static-asset-service/).
+
+Once you have migrated all your assets, you will be able to access them in the instance created in FlowFuse cloud. Just ensure that after deploying the snapshot, the path set in the flow matches the static assets migrated to the FlowFuse instance.
+
 ### Deploying Snapshot for the Remote/Device instance
 
 Once the System-level environment variables are set, your good to deploy that captured snapshot in the Device or the Remote instance.
-
-### Deploying Snapshot for the Remote Instance
 
 1. Navigate to the remote instance for which you created the snapshot, either to migrate your current Node-RED setup or to prepare it for later deployment on a device.
 2. Switch to the "Snapshots" tab at the top to locate the snapshot you created from the list.
@@ -144,3 +124,7 @@ Once the System-level environment variables are set, your good to deploy that ca
    - If you are migrating to a Device Instance, select **"Set as Device Target."**
 
 Setting as device target will ensure that the snapshot will be deployed on all of the devices assigned to this instance.
+
+## Conclusion
+
+Migrating your Node-RED instance to FlowFuse centralizes management and simplifies deployment. Once migrated, FlowFuse takes care of the infrastructure, security, and scalability, making the process much easier. This allows you to focus on building solutions without worrying about the complexities of self-hosting. Whether you're working with edge devices or remote instances, this migration streamlines the management of your IIoT workflows, improving efficiency and scalability.
