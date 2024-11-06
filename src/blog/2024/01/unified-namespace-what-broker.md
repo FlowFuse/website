@@ -39,13 +39,13 @@ In addition to vendor lock-in, cloud message queue brokers also introduce relian
 
 ### Exotic options
 
-RabbitMQ is a widely used open-source message broker that’s mostly used as an event message bus for web applications. It can also function as a hub in a unified namespace. The broker primarily supports the [AMQP](/blog/2024/09/using-amqp-with-node-red/) (Advanced Message Queuing Protocol), considered the industry standard for high-performance messaging systems. It also supports STOMP (Streaming Text Oriented Messaging Protocol) and MQTT (MQ Telemetry Transport), catering to various messaging needs.
+RabbitMQ is a widely used open-source message broker that’s mostly used as an event message bus for web applications. It can also function as a hub in a unified namespace. The broker primarily supports the [AMQP](/node-red/protocol/amqp/) (Advanced Message Queuing Protocol), considered the industry standard for high-performance messaging systems. It also supports STOMP (Streaming Text Oriented Messaging Protocol) and MQTT (MQ Telemetry Transport), catering to various messaging needs.
 
 NATS, short for Network Agnostic Messaging System, is another open-source message broker that is designed for simplicity and reliability. NATS implements its own protocols, making it harder to be interoperable with hardware and software previously purchased. NATS has requirements on message structure too, which creates another barrier to adoption for IoT use cases.
 
 ## How Node-RED Helps
 
-Node-RED provides a powerful and flexible way to integrate with various brokers, supporting protocols such as [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), [Kafka](/blog/2024/03/using-kafka-with-node-red/), and [AMQP](/blog/2024/09/using-amqp-with-node-red/). It allows you to build and manage workflows that interact with your chosen broker, seamlessly connecting different data sources and systems.
+Node-RED provides a powerful and flexible way to integrate with various brokers, supporting protocols such as [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), [Kafka](/blog/2024/03/using-kafka-with-node-red/), and [AMQP](/node-red/protocol/amqp/). It allows you to build and manage workflows that interact with your chosen broker, seamlessly connecting different data sources and systems.
 
 However, using Node-RED alone in production environments requires additional considerations, such as server deployment, instance management, security implementation, and scalability. This is where FlowFuse enhances Node-RED's capabilities by adding production-ready features. FlowFuse simplifies managing and deploying Node-RED applications, providing essential functionalities like scalability, robust security, and efficient collaboration tools.
 
