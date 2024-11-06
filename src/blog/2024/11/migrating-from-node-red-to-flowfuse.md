@@ -13,6 +13,8 @@ tags:
 
 In this article, you will learn how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment and how that flow works for edge devices and remote instances.
 
+<!--more-->
+
 ## What is FlowFuse?
 
 [FlowFuse](/) is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. The platform empowers customers to seamlessly integrate IT and OT environments allowing teams to quickly connect, collect, transform, and visualize data to optimize industrial workflows.
