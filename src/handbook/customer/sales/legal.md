@@ -38,6 +38,13 @@ remote company and keep Confidential Information according to our [data classifi
 1. Auditability of destruction of Confidential Information. As a remote company
 we will not allow third parties access to homes or offices of employees.
 
+## Insurance Coverage
+
+1. Commercial General Liability - $1,000,000 per occurrence and $2,000,000 aggregate.
+2. Professional Liability (also known as Errors & Omissions) - amount not less than $1,000,000 per claim, $1,000,000 aggregate.
+3. Umbrella/Excess Liability -  n/a
+4. Cyber Liability (Network Security/Privacy Liability) - n/a
+
 ## Miscellaneous
 
 - [W9 with signature](https://drive.google.com/file/d/1A2_mnPRfc5gWAb4yEYNiViuCHiARkLcD/view){rel="nofollow"}
