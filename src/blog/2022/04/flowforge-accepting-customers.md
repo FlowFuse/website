@@ -34,4 +34,4 @@ instance to connect virtually any online service. Multiple users will have
 access to the same flows and can collaborate. Further, once Node-RED 3.0 has
 been released, the platform will provide a pain-free way to upgrade and keep
 your projects up to date. There's many more exciting features right around the
-corner on our [roadmap](/product/roadmap/)
+corner on our [roadmap](/changelog/)

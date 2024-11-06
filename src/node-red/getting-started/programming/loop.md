@@ -111,7 +111,7 @@ Here’s how you can replicate this functionality in Node-RED:
 
 When you click the **Inject** button, the **Split** node will process each element of the array individually, and the **Debug** node will display each one in the debug window.
 
-To explore how you can map, sort, filter, and reduce data using this approach, check out our guide: [How to Filter, Map, Sort, and Reduce Data in Node-RED](/blog/2024/06/filtering-mapping-sorting-reducing-with-node-red/).
+To explore how you can map, sort, filter, and reduce data using this approach, check out our guide: [How to Filter, Map, Sort, and Reduce Data in Node-RED](/node-red/getting-started/programming/data-tranformation/).
 
 ```mermaid
 graph TD
