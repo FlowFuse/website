@@ -4,17 +4,18 @@ subtitle: A Step-by-Step Guide to Transitioning Your Node-RED Flows to a Streaml
 description: Discover how to migrate from a self-managed Node-RED setup to a FlowFuse-managed environment, including step-by-step instructions for instance creation, data backup, and snapshot deployment.
 date: 2024-11-06
 authors: ["sumit-shinde"]
-image: 
+image:
+keywords: node-red migration, node-red snapshot, node-red instance management, remote instance management, edge device management,  node-red backup, node-red to flowfuse migration, flowfuse static assets, node-red deployment, cloud-based node-red, node-red instance snapshot
 tags:
-   - node-red
-   - devops
+   - flowfuse
+   - flowfuse features
 ---
 
 In this article, you will learn how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment and how that flow works for edge devices and remote instances.
 
 ## What is FlowFuse?
 
-[FlowFuse](/) is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. The platform empowers customers to seamlessly integrate IT and OT environments allowing teams to quickly connect, collect, transform, and visualise data to optimize industrial workflows.
+[FlowFuse](/) is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. The platform empowers customers to seamlessly integrate IT and OT environments allowing teams to quickly connect, collect, transform, and visualize data to optimize industrial workflows.
 
 ## Why Switch from Self-Managed Node-RED to FlowFuse-Managed Node-RED?
 
@@ -74,14 +75,14 @@ Follow these steps to create a remote instance:
 1. Install the `@flowfuse/nr-tools-plugin` into your Node-RED instance from the Palette Manager, which will help create the snapshots from the Node-RED instance.
 2. Once installed, open the FlowFuse tools tab in the sidebar.
 3. Connect to your FlowFuse account by clicking the "Connect to FlowFuse" button.
-4. A browser popup will appear asking you to log in to your FlowFuse account (if not already logged in). Grant permission by clicking "Allow."
+4. A browser popup will appear asking you to log in to your FlowFuse account. Grant permission by clicking "Allow."
 5. After authorization, you’ll see options to select the team and associated instances in the FlowFuse tools tab.
 6. Select the Team and Node-RED instance you want to migrate to or going to use to take snapshots for your device.
 7. Click the "+ Snapshot" button to create a snapshot. A popup will appear asking for a name, and description. Enter the details and click "Create."
 8. Once the snapshot is created, it will be listed in the sidebar.
 9. To confirm, go to the FlowFuse platform, navigate to the FlowFuse instance, and switch to the "Snapshots" tab. The snapshot you created should be listed there.
 
-### Backing Up System-level Environment Variables
+#### Backing Up System-level Environment Variables
 
 While the snapshot captures flows, credentials, and environment variables at the flow and global level, it does not capture **process environment variables**—those set in the Node-RED `settings.json` file.
 
@@ -96,7 +97,7 @@ To get these variables, you can use the following flow to dump a list of all pro
 
 Once clicked, the flow will print all environment variables in the debug window. Identify the environment variables required for your flow and save them in a notepad for later use.
 
-### Setting System-Level Environment Variables in FlowFuse
+#### Setting System-Level Environment Variables in FlowFuse
 
 Now that you have created the snapshots and copied the process environment variables, you need to set these variables in the Node-RED instance to avoid errors during deployment.
 
@@ -107,7 +108,7 @@ Now that you have created the snapshots and copied the process environment varia
 
 For more information refer to [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/)
 
-### Migrating Static Assets to FlowFuse Static Assets
+#### Migrating Static Assets to FlowFuse Static Assets
 
 When working with dashboards or files required in your Node-RED project, these files are typically stored locally and are always available, even if you restart or modify the flows. However, when migrating from Node-RED to a FlowFuse cloud environment, you'll need to manually migrate these files to the cloud-based Node-RED instances. To make this process easier, FlowFuse offers a static assets service feature at the instance level.
 
