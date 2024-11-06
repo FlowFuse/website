@@ -10,13 +10,7 @@ meta:
     faq:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
           answer: >
-            Yes, we offer a 20% discount for Team customers who move from monthly to annual subscriptions. Please <a href="/contact-us/">reach out</a> to request the discount.
-        - question: "Is there a minimum for purchase?"
-          answer: >
-            Yes, 5 instances on Team and 10 instances on Enterprise.
-        - question: "Why isn't there an option for self-hosted Team?"
-          answer: >
-            Due to the configuration and support required for a self-hosted deployment, it is only possible through the Enterprise tier at this time.
+            Yes, customers on an annual subscription receive a 20% discount off of the monthly subscription price. Please reach out to request the discount. Please <a href="/contact-us/">reach out</a> to request the discount.
         - question: "Why is self-hosted the same price as cloud?"
           answer: >
             Self-hosted environments require more support and configuration than FlowFuse Cloud, which offset any resources saved.
@@ -63,44 +57,45 @@ hubspot:
             </div>
             <!-- Plans -->
             <!-- Cloud -->
-            <div class="contentCloud m-auto transition duration-1000 md:min-h-[547px]">
-                <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
+            <div class="contentCloud m-auto transition duration-1000 md:min-h-[502px]">
+                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-lg mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid flex-col">
+                        <div class="pricing-tile-background pb-6 md:grid">
                             <div>
                                 <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[145px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                    <div class="flex flex-row justify-between mt-3 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Starter</h4>
                                     </div>
-                                    <p class="mt-7"><span class="inline font-normal">Ideal to get started. </span>Quick
-                                        hosting of Node-RED instances.</p>
+                                    <p class="mt-7"><span class="inline font-normal">For smaller-scale applications. </span>The fastest, easiest way to host <span class="inline-block">Node-RED</span> instances.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Includes:
+                                    <note class="font-semibold">2 hosted instances, 2 edge devices, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
                                         <li>2 team members</li>
-                                        <li>2 Node-RED instances</li>
-                                        <li>2 devices</li>
+                                        <li>Device management</li>
+                                        <li>Blueprints</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mt-20 md:mb-0 flex flex-row">
-                                <h2 class="pb-5">$20</h2>
-                                <div class="pl-3 text-sm leading-4 text-left pt-1">
-                                    <note class="note">
-                                        /month
-                                        <br>
-                                        <span class="text-xs text-gray-500">after free trial of Team</span>
-                                    </note>
+                            <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-16 flex flex-row">
+                                <div class="md:self-end flex flex-row">
+                                    <h2>$20</h2>
+                                    <div class="pl-3 text-sm leading-4 text-left pt-1">
+                                        <note class="note">
+                                            /month
+                                            <br>
+                                            <span class="text-xs text-gray-500">after free trial of Team</span>
+                                        </note>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Team -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid flex-col">
+                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
                                 <div
                                     class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
@@ -111,91 +106,70 @@ hubspot:
                                             teams</span> with the collaborative features of FlowFuse Cloud.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Top Features:
+                                    <note class="font-semibold">Starts at 5 hosted instances or edge devices, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>Device management</li>
-                                        <li>DevOps Pipelines</li>
+                                        <li>20 Team members</li>
                                         <li>Team collaboration</li>
-                                        <li>Commited SLA: 99.5&#37;</li>
+                                        <li>MQTT Broker (5 clients to start)</li>
+                                        <li>Standard Support + SLA: 99.5&#37;</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div data-nosnippet>
-                                <!-- Slider -->
-                                <ul class="font-extralight text-sm leading-7 mt-6 w-full flex flex-row justify-between text-gray-600">
-                                    <li>Instances</li>
-                                    <li id="team-monthly-value" class="value">5</li>
-                                </ul>
-                                <div class="range contentMonthly">
-                                    <input type="range" min="5" max="105" value="5" id="team-monthly-slider" class="transition duration-1000" step="5" />
-                                </div>
+                            <div data-nosnippet class="flex">
                                 <!-- Price -->
-                                <div id="team-m-original-div" class="mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
-                                    <div class="text-left flex flex-row">
-                                        <div class="w-16 mr-1">
-                                            <h2 class="self-end">
-                                                <span class="align-top text-sm leading-7">$</span><span
-                                                    id="team-monthly-price-int" class="align-top">20</span><span
-                                                    id="team-monthly-price-dec"
-                                                    class="align-top text-sm leading-7">83</span>
+                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                                    <div class="text-left flex flex-row md:self-end">
+                                        <div class="w-20 mr-1">
+                                            <note class="note text-sm">Starting at</note>
+                                            <h2 class="self-end pb-1">
+                                                $175
                                             </h2>
                                         </div>
-                                        <div class="pl-2 text-sm leading-4 text-left self-end pb-1">
-                                            <note id="team-monthly-price-note" class="note text-xs">
-                                                /instance a
-                                                month <br>Billed monthly at $300<br \></note>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="team-m-alternate-div" class="hidden mt-3 mb-6 flex flex-row flex-wrap w-full gap-x-2">
-                                    <div class="text-left flex flex-row">
-                                        <div class="text-left">
-                                            <h2 class="self-end">
-                                                <span class="align-top">Let's talk</span>
-                                            </h2>
-                                        </div>
+                                        <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
+                                            /month
+                                        </note>
                                     </div>
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href="{{ site.appURL }}/account/create"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})">TRY
+                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})">TRY FOR
                                  FREE</a>
                         </div>
                     </div>
                     <!-- Enterprise -->
                     {% macro enterprise(show_sla=true, cloud=true) %}
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid flex-col">
+                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
-                                <div
-                                    class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
+                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Enterprise</h4>
                                     </div>
-                                    <p class="mt-7">For <span class="inline font-normal">business critical
-                                            applications</span> that require high availability and enterprise support.
-                                    </p>
+                                    <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Top Features:
-                                    </note>
+                                    <note class="font-semibold">Starts at 20 hosted instances or edge devices, and includes:</note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>High availability</li>
+                                        <li>Unlimited team members</li>
                                         <li>Single Sign-On</li>
-                                        <li>Enterprise Support</li>
-                                        {% if show_sla %}
-                                        <li>Commited SLA: up to 99.9&#37;</li>
+                                        {% if cloud %}
+                                        <li>MQTT Broker (20 clients to start)</li>
                                         {% endif %}
+                                        <li>Enterprise support{% if show_sla %} + SLA: 99.9&#37;{% endif %}</li>
+                                        <li>Device group management</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 {% if cloud %}md:mt-20 {% endif %}md:mb-3 flex flex-row">
-                                <h2 class="self-end">Let's Talk</h2>
+                            <div data-nosnippet class="flex">
+                                <!-- Price -->
+                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                                    <h2 class="self-end pb-1">Let's Talk</h2>
+                                </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                            href="/book-demo/" onclick="capture('cta-lets-talk', {'position': 'primary'}, {'plan': 'sh-enterprise'})">book a demo</a>
+                               href="/book-demo/" onclick="capture('cta-lets-talk', {'position': 'primary'}, {'plan': 'sh-enterprise'})">book a demo</a>
                         </div>
                     </div>
                     {% endmacro %}
@@ -203,30 +177,29 @@ hubspot:
                 </div>
             </div>
             <!-- Self-hosted -->
-            <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[500px]">
-                <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-sm mt-4 md:mt-0">
+            <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[502px]">
+                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-sm mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid flex-col">
+                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[145px]">
+                                <div class="flex flex-col items-center text-left md:flex-row md:mb-5 md:px-0 md:block md:min-h-[145px]">
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Starter</h4>
                                     </div>
-                                    <p class="mt-7"><span class="inline font-normal">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
+                                    <p class="mt-7"><span class="inline">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
                                 </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Includes:
+                                <div class="flex flex-col content-start features max-md:mt-6 w-full">
+                                    <note class="font-semibold">Includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
+                                        <li>5 hosted instances or edge devices</li>
                                         <li>5 team members</li>
-                                        <li>5 Node-RED instances</li>
-                                        <li>5 devices</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-3 flex flex-row">
-                                <h2 class="self-end">Free</h2>
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row">
+                                <h2 class="self-end pb-1">Free</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                             href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">INSTALL NOW</a>
@@ -240,7 +213,7 @@ hubspot:
             </div>
             <!-- Dedicated -->
             <div class="contentDedicated hide m-auto transition duration-1000 md:min-h-[500px] w-full mb-12">
-                <div class="pricing-tiles flex flex-col md:grid md:flex-row md:max-w-screen-lg mt-4 md:mt-0">
+                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-lg mt-4 md:mt-0">
                     <!-- Card -->
                     <div class="pricing-tile md:h-full">
                         <div class="pricing-tile-background pb-6 md:grid">
@@ -253,7 +226,7 @@ hubspot:
                                         <p class="mt-7">Tailored for businesses prioritizing data security, compliance, and regional flexibility, ideal for demanding efficiency and productivity in strict regulatory environments.</p>
                                     </div>
                                     <div class="flex flex-col content-start features md:mt-3 mt-10 mb-10 w-full">
-                                        <note class="font-bold" style="display: inline-block;">Everything from Enterprise Tier, plus:
+                                        <note class="font-bold" style="display: inline-block;">Top features:
                                         </note>
                                         <ul class="ff-checklist font-light leading-7 mt-2 flex flex-col md:flex-row md:gap-2">
                                             <div class="w-full md:w-3/5">
@@ -453,68 +426,6 @@ hubspot:
         updateContentAndUrl(hosting);
         capture('dedicated');
     });
-</script>
-
-<!-- Sliders -->
-<script>
-    function setupPricingSlider(sliderId, basePrice, stepSize, priceIntElementId, priceDecElementId, valueElementId, priceNoteElementId) {
-        const sliderEl = document.querySelector(sliderId)
-        sliderEl.min = stepSize;
-        sliderEl.value = stepSize;
-        sliderEl.step = stepSize;
-        const sliderValue = document.querySelector(valueElementId)
-        const priceIntElement = document.querySelector(priceIntElementId);
-        const priceDecElement = document.querySelector(priceDecElementId);
-        const priceNoteElement = document.querySelector(priceNoteElementId);
-
-        sliderEl.addEventListener("input", (event) => {
-            let tempSliderValue = Math.ceil(event.target.value / stepSize) * stepSize;
-
-            // Map slider IDs to div IDs
-            const divIds = {
-                "#team-monthly-slider": ["#team-m-original-div", "#team-m-alternate-div", 100],
-            };
-
-            // Check if the slider ID is in the divIds map
-            if (sliderId in divIds) {
-                let originalDiv = document.querySelector(divIds[sliderId][0]);
-                let alternateDiv = document.querySelector(divIds[sliderId][1]);
-                let limit = divIds[sliderId][2];
-
-                if (tempSliderValue > limit) {
-                    sliderValue.textContent = "∞";
-                    originalDiv.classList.add('hidden');
-                    alternateDiv.classList.remove('hidden');
-                } else {
-                    sliderValue.textContent = tempSliderValue;
-                    originalDiv.classList.remove('hidden');
-                    alternateDiv.classList.add('hidden');
-                }
-            } else {
-                sliderValue.textContent = tempSliderValue;
-            }
-
-            const progress = (tempSliderValue / sliderEl.max) * 100;
-            sliderEl.style.background = `linear-gradient(to right, #4F46E5 ${progress}%, #A5B4FC ${progress}%)`;
-
-            const discount = ((tempSliderValue - stepSize) / stepSize) * 0.01;
-            let discountedPriceMonthly = (basePrice * (1 - discount)) / 12;
-            let regularPriceMonthly = basePrice / 12;
-
-            const [intValue, decValue] = regularPriceMonthly.toFixed(2).split(".");
-            priceIntElement.textContent = intValue;
-            priceDecElement.textContent = decValue;
-
-            const totalMonthlyPrice = regularPriceMonthly * tempSliderValue;
-
-            priceNoteElement.innerHTML = `/instance a month <br>Billed monthly at <span class="font-semibold">$${totalMonthlyPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span><br \\>`;
-        })
-
-        sliderEl.dispatchEvent(new Event('input'));
-    }
-
-    // Setup the sliders
-    setupPricingSlider("#team-monthly-slider", 420, 5, "#team-monthly-price-int", "#team-monthly-price-dec", "#team-monthly-value", "#team-monthly-price-note");
 </script>
 
 <!-- Features info -->

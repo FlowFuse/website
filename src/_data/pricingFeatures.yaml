@@ -7,21 +7,27 @@ sections:
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse hosts Node-RED instances.</p>"
-      - id: nodered-instances
-        label: Number of Node-RED instances
-        selfHostedValues: [ '5', 'Licensed amount' ]        
-        tags: [ 'self-hosted' ]
-        info: "<p>Number of Node-RED runtimes, either as hosted instances or as devices</p>"
       - id: cloud-instances
-        label: Number of cloud instances
-        cloudValues: [ '2', 'Licensed amount', 'Licensed amount' ]    
+        label: Hosted Instances
+        cloudValues: [ 'check', 'check', 'check' ] 
+        selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'cloud' ]
-        info: "<p>FlowFuse hosts multiple Node-RED instances from a common platform.</p>"
-      - id: devices
-        label: Number of devices
-        cloudValues: [ '2', 'Licensed amount', 'Licensed amount' ]    
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 2 hosted instances.</li><li><span class='font-semibold'>Team:</span> Starts with 5, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
+      - id: self-hosted-instances
+        label: Hosted Instances
+        selfHostedValues: [ 'check', 'check' ]   
+        tags: [ 'self-hosted' ]
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 hosted instances, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
+      - id: cloud-devices
+        label: Edge Devices
+        cloudValues: [ 'check', 'check', 'check' ]      
         tags: [ 'cloud' ]
-        info: "<p>FlowFuse allows you to manage Node-RED deployments on remote devices.</p>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices.</li><li><span class='font-semibold'>Team:</span> Starts with 5, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
+      - id: self-hosted-devices
+        label: Edge Devices  
+        selfHostedValues: [ 'check', 'check' ]   
+        tags: [ 'self-hosted' ]
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
       - id: device-mgmt
         label: Device Management
         cloudValues: [ 'check', 'check', 'check' ]
@@ -34,6 +40,11 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Connect to an edge device and develop your flows.</p>"
+      - id: mqtt-broker
+        label: MQTT Broker
+        cloudValues: [ null, 'check', 'check' ]    
+        tags: [ 'cloud' ]
+        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Team Tier includes 5 clients at no extra cost, while the Enterprise Tier includes 20 clients for free as part of your existing plan, with purchase additional clients as needed in the future.</p>"
       - id: device-groups
         label: Device Group Management
         cloudValues: [ null, null, 'check' ]
@@ -158,10 +169,7 @@ buttons:
   cloud:
     - cta: TRY FOR FREE
       url: https://app.flowfuse.com/account/create
-      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
-    - cta: CONTACT US
-      url: "#contact-us"
-      onclick: "scrollToAnchor(event, 'contact-us'), capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'team'})"
+      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"

@@ -1,7 +1,8 @@
-- type: "Webinar"
-  title: "Operationalizing Node-RED for the Enterprise"
-  buttonText: "Register now"
-  link: "/webinars/2024/operationalizing-node-red-for-the-enterprise/"
-  expire: "2024-09-24T16:00:00Z"
-  eventTime: "17:00 CET (11:00am ET)"
+- type:
+  title: "Take your <span class='inline-block'>Node-RED</span> from Prototype to Production"
+  buttonText: "Learn more"
+  link: "/product/features/"
+  reference: "docs_banner-features_page"
+  expire: "2024-11-30T16:00:00Z"
+  eventTime: 
   secondaryText:

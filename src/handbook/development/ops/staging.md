@@ -38,6 +38,10 @@ of short-lived testing of sign-up and user management.
 The inboxes for these email addresses are publicly accessible if known, so the list
 is available on [this private issue](https://github.com/FlowFuse/CloudProject/issues/135).
 
+### Accessing Staging
+
+To access the staging environment, log in with your @flowfuse.com account through Google SSO. The url for the staging environment is https://forge.flowfuse.dev.
+
 ## Using staging
 
 When setting up a team you'll need to enter billing details. For credit card

@@ -79,6 +79,15 @@ Converting an array of 16-bit unsigned integers to String, Float and a scaled in
 #### Example 3: Modbus data on a dashboard
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer for publishing to a dashboard!
 ![Legacy data to dashboard](images/industrial-legacy-data-to-dashboard.png)
+
+### Simplify Your Node-RED Operations with FlowFuse
+
+While Node-RED is a fantastic tool for data collection, transformation, and analysis, integrating it into a production environment can sometimes feel like navigating a maze. Whether you’re deploying Node-RED on a server, ensuring secure remote access for your team, or managing a sprawling network of thousands of instances, it’s easy to feel overwhelmed.
+
+That’s where FlowFuse steps in to make your life easier. FlowFuse is designed to tackle these challenges head-on. It enhances Node-RED with features that simplify collaboration, strengthen security, and provide scalable deployment options. Imagine having a robust system that not only keeps your Node-RED applications running smoothly but also scales effortlessly with your needs. With FlowFuse, you gain access to a comprehensive suite of production-ready [features](/product/features/) designed to streamline your Node-RED workflows and boost overall performance.
+
+**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and experience FlowFuse's features**
+
 ### Learn More
 
 We will be publishing follow-up blog posts with more details, best practices and examples on how to use Node-RED to make sense of your industrial data. In the meantime, you can learn more about these tools by visiting the following links:
