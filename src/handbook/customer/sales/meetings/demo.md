@@ -16,7 +16,7 @@ Please also make this team your 'default team' under your user settings.
 
 Create one instance called ‘Central-<demo-customer-name>’, and another instance called "Data-Acquisition-<demo-customer-name>".
 
-Make sure you have an example device ready, [install the latest device agent](/docs/user/devices/). Do not yet install the device within FlowFuse, that's done during the demo using the web ui.
+Make sure you have an example device ready, [install the latest device agent/docs/device-agent/introduction/). Do not yet install the device within FlowFuse, that's done during the demo using the web ui.
 
 ```
 cd /tmp

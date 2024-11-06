@@ -40,7 +40,7 @@ Each metric we track provides unique insights into different facets of our produ
 
 4. **Snapshot Adoption Rate**: This rate evaluates the prevalence of active instances using one or more [snapshots](/docs/user/snapshots/). It's determined by dividing the number of active instances with one or more snapshots by the total number of active instances.
 
-5. **Device Adoption Rate**: This metric demonstrates the rate at which teams adopt [devices](/docs/user/devices/), determined by dividing the number of teams with one or more devices by the total number of teams.
+5. **Device Adoption Rate**: This metric demonstrates the rate at which teams adopt [devices](/docs/device-agent/introduction/), determined by dividing the number of teams with one or more devices by the total number of teams.
 
 6. **Weekly Active Users**: This fundamental metric provides insight into the overall usage and engagement with our product on a weekly basis.
 

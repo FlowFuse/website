@@ -27,7 +27,7 @@ Node-RED allows you to set environment variables, but not to change them when ex
 
 Our first example was using a predefined variable, exposed by Node-RED. As of 3.0 it exposes a few environment variables among which `NR_NODE_NAME`, `NR_GROUP_NAME`, and `NR_FLOW_NAME`.
 
-[FlowFuse](/) extends this list with for example a `FF_PROJECT_ID` allowing you to for example understand what group of instances sent a certain message, but also sets them for each [device agent](/docs/user/devices/). This allows users to pinpoint which device sent a message, for example to update a dashboard accordingly.
+[FlowFuse](/) extends this list with for example a `FF_PROJECT_ID` allowing you to for example understand what group of instances sent a certain message, but also sets them for each [device agent](/docs/device-agent/introduction/). This allows users to pinpoint which device sent a message, for example to update a dashboard accordingly.
 
 ### Managing environments variables
 

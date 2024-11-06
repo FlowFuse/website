@@ -38,7 +38,7 @@ In our previous release, we introduced [Editor Access for Devices](../../05/flow
 
 Imagine this: Your industrial equipment arrives with the Device Agent preinstalled. In the past, you might have faced challenges in configuring and connecting your device with FlowFuse, particularly if you had no direct shell access. But not any more.
 
-With the newly introduced UI, you can easily set up and connect your device with FlowFuse without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](/docs/user/devices/).
+With the newly introduced UI, you can easily set up and connect your device with FlowFuse without needing to access the command line interface directly. This simplifies the process significantly and saves you time. For more details, see our [documentation](/docs/device-agent/introduction/).
 
 ## Node-RED 3.1 Beta 3 Available
 
@@ -54,7 +54,7 @@ We're making great strides on our journey towards SOC2 certification, striving t
 
 We're always working to enhance your experience with FlowFuse. Here's how you can stay informed and contribute:
 
-- **Roadmap Overview**: Check out our [Product Roadmap Page](/product/roadmap/) to see what we're planning for future updates.
+- **Roadmap Overview**: Check out our [Product Roadmap Page](/changelog/) to see what we're planning for future updates.
 - **Entire Roadmap**: Visit our [Roadmap on GitHub](https://github.com/orgs/FlowFuse/projects/5) to follow our progress and contribute your ideas.
 - **Feedback**: We're interested in your thoughts about FlowFuse. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose). 
 

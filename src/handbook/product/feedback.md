@@ -58,7 +58,7 @@ The Product Manager should set up a minimum of one poll every six months, to col
 ### GitHub Voting
 
 By allowing users to vote on issues or proposed epics, we can gain insight into what changes or improvements are most demanded by the users. This democratic approach ensures we prioritize features that resonate most with our user base.
-Our website [Roadmap page](/product/roadmap/) provides an overview of Epics that are currently under consideration.
+Our website [Roadmap page](/changelog/) provides an overview of Epics that are currently under consideration.
 
 ### Node-RED Community
 
