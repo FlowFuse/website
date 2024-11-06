@@ -85,9 +85,6 @@ module.exports = function(eleventyConfig) {
         "src/public/": "/",
     });
 
-    // Copy the contents of the `_redirects` to the output folder
-    eleventyConfig.addPassthroughCopy("src/_redirects");
-
     // Naive copy of images for backwards compatibility of non short-code image handling (use of <img or in CSS)
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/blueprints/**/flow.json");
