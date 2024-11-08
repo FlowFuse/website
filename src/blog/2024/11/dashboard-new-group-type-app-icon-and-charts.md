@@ -39,7 +39,7 @@ The three controls at the top of the page are:
 
 You can then use the handles on each group to resize them, or click and drag to re-position the groups on the page. How this re-positioning is done is controlled by the "Layout" property of the page. The Visual Editor is currently available for "Grid" and "Fixed" layouts only.
 
-Once you're happy with your changes clicked the "Save Changes" button to deploy them to the underlying Node-RED flow. Not you will then be made aware that _"your flows have been updated"_ by Dashboard when you return to your Node-RED Editor.
+Once you're happy with your changes clicked the "Save Changes" button to deploy them to the underlying Node-RED flow. Note, you will then be made aware that _"your flows have been updated"_ by Dashboard when you return to your Node-RED Editor.
 
 Note that you can only enter "Edit Mode" via the Node-RED Editor, this is to ensure security and stability of your Dashboard, in cases where you may have users for your Dashboard that should not have access to modify your Dashboard's layout.
 
