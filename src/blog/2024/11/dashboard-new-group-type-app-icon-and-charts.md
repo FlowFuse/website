@@ -2,7 +2,7 @@
 title: Visual Layout Editor - Now Available in Dashboard
 subtitle: With the latest update we have released a new Layout Editor for Dashboard, as well as new widgets and wide-spread improvements.
 description: With the latest update we have released a new Layout Editor for Dashboard, as well as new widgets and wide-spread improvements.
-date: 2024-11-07
+date: 2024-11-08
 authors: ["joe-pavitt"]
 image: /blog/2024/11/images/dashboard-1-19-0-tile.png
 tags:
