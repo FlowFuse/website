@@ -45,13 +45,13 @@ On the other hand, if your use case involves monitoring or collecting metrics—
 
 ### Creating a Cloud Instance
 
-The FlowFuse snapshot feature, available through the @flowfuse/nr-tools-plugin for self-managed Node-RED (a plugin that allows you to create snapshots from a self-managed Node-RED instance to the FlowFuse platform), However, it does not support direct device snapshots. Instead, you must first create a snapshot for the Cloud Instance and then assign it as the target for your device.
+The FlowFuse snapshot feature, available through the `@flowfuse/nr-tools-plugin` for self-managed Node-RED (a plugin that allows you to create snapshots from a self-managed Node-RED instance to the FlowFuse platform), However, it does not support direct device snapshots. Instead, you must first create a snapshot for the Cloud Instance and then assign it as the target for your device.
 
 1. Navigate to the FlowFuse platform and log in to your account.
 2. Select the application under which you want to manage your Node-RED instance. You can either choose the default application created with your account or click the "Create Application" button to create a new one.
 3. Once inside the application, select "Add Instance."
 4. Enter a name (or let the system generate one automatically), select the instance type, and choose the Node-RED version that matches your current setup.
-5. Click "Create" to launch the instance. You can now manage this Node-RED instance remotely via FlowFuse.
+5. Click "Create" to launch the instance.
 
 ### Creating a Device Instance and Connecting It to FlowFuse
 
@@ -79,7 +79,7 @@ Follow these steps to create a cloud instance:
 1. Install the `@flowfuse/nr-tools-plugin` into your Node-RED instance via the Palette Manager.
 2. Once installed, open the "FlowFuse tools" tab in the sidebar.
 3. Connect to your FlowFuse Cloud account by clicking the "Connect to FlowFuse" button.  
-   *(If you're migrating to a self-hosted FlowFuse instance, ensure you configure the plugin with the correct URL. For detailed steps, refer to the [FlowFuse Node-RED Tools plugin Documentation](/docs/migration/node-red-tools/#connecting-to-flowfuse)).*
+   *(If you're migrating to a self-hosted FlowFuse instance, ensure you configure the plugin with the correct URL. For detailed steps, refer to the [FlowFuse Node-RED Tools plugin Documentation](/docs/migration/node-red-tools/#connecting-to-flowfuse))*.
 4. A browser popup will appear, prompting you to log in to your FlowFuse account. Click "Allow" to grant permission.
 5. After successful authorization, you'll be able to select your team and the associated instance from the "FlowFuse tools" tab.
 6. Choose the team and FlowFuse instance you want to migrate to or the one you will use to take snapshots for your device.
