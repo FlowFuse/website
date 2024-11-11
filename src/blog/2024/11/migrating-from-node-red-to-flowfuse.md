@@ -39,6 +39,8 @@ Running Node-RED on an edge device is ideal when you need direct access to hardw
 
 On the other hand, if your use case involves monitoring or collecting metrics—such as through MQTT—without needing direct hardware interaction, a **cloud instance** may be more suitable. This option allows you to centralize data collection and processing, making it easier to manage and analyze data from multiple devices.
 
+*Note: The instructions provided in this article also work for [self-hosted](/docs/install/introduction/) FlowFuse environments. Just ensure that when following the steps, you're performing the actions within your self-hosted FlowFuse setup rather than the FlowFuse cloud platform.*
+
 ### Creating a Cloud Instance
 
 Creating a cloud instance is necessary in both cases. The FlowFuse snapshot feature, accessible via the `flowfuse-nr-plugin`, does not support direct device snapshots. Instead, you must first create a snapshot for the Cloud Instance and then assign it as the target for your device.
@@ -74,7 +76,7 @@ Follow these steps to create a cloud instance:
 
 1. Install the `@flowfuse/nr-tools-plugin` into your Node-RED instance from the Palette Manager, which will help create the snapshots from the Node-RED instance.
 2. Once installed, open the FlowFuse tools tab in the sidebar.
-3. Connect to your FlowFuse account by clicking the "Connect to FlowFuse" button.
+3. Connect to your FlowFuse Cloud account by clicking the "Connect to FlowFuse" button ( If you're migrating to a self-hosted FlowFuse, make sure you configure the plugin with the correct URL. For more detailed steps, refer to the [FlowFuse Node-RED Tools plugin Documentation](/docs/migration/node-red-tools/#connecting-to-flowfuse) )
 4. A browser popup will appear asking you to log in to your FlowFuse account. Grant permission by clicking "Allow."
 5. After authorization, you’ll see options to select the team and associated instances in the FlowFuse tools tab.
 6. Select the Team and Node-RED instance you want to migrate to or going to use to take snapshots for your device.
@@ -101,7 +103,7 @@ Once clicked, the flow will print all environment variables in the debug window.
 
 Now that you have created the snapshots and copied the process environment variables, you need to set these variables in the Node-RED instance to avoid errors during deployment.
 
-1. Go to the Node-RED Remote/Device instance.
+1. Go to the Node-RED Cloud/Device instance.
 2. Switch to the environment tab by clicking the "Environments" option at the top.
 3. Add the environment variables one by one by clicking the "+ Add" button in the bottom-left corner.
 4. After adding all the environment variables, click "Save."
@@ -119,7 +121,7 @@ Here’s how you can migrate your assets:
 
 Once you have migrated all your assets, you will be able to access them in the instance created in the FlowFuse cloud. Just ensure that after deploying the snapshot, the path set in the flow matches the static assets migrated to the FlowFuse instance.
 
-### Deploying Snapshot for the Remote/Device instance
+### Deploying Snapshot for the Cloud/Device instance
 
 Once the System-level environment variables are set, you are good to deploy that captured snapshot in the Device or the Cloud Instance.
 
