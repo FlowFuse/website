@@ -11,11 +11,11 @@ tags:
    - flowfuse features
 ---
 
-In this article, you will learn how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment and how that flow works for edge devices and remote instances.
+Migrating your Node-RED instance to FlowFuse centralizes management and simplifies deployment. Once migrated, FlowFuse takes care of the infrastructure, security, and scalability, making the process much easier. This allows you to focus on building solutions without worrying about the complexities of self-hosting. Whether you're working with edge devices or remote instances, this migration streamlines the management of your IIoT workflows, improving efficiency and scalability.
 
 <!--more-->
 
-## What is FlowFuse?
+In this article, you will learn how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment and how that flow works for edge devices and remote instances.
 
 [FlowFuse](/) is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. The platform empowers customers to seamlessly integrate IT and OT environments allowing teams to quickly connect, collect, transform, and visualize data to optimize industrial workflows.
 
@@ -136,4 +136,6 @@ Setting a device target will ensure that the snapshot will be deployed on all of
 
 ## Conclusion
 
-Migrating your Node-RED instance to FlowFuse centralizes management and simplifies deployment. Once migrated, FlowFuse takes care of the infrastructure, security, and scalability, making the process much easier. This allows you to focus on building solutions without worrying about the complexities of self-hosting. Whether you're working with edge devices or remote instances, this migration streamlines the management of your IIoT workflows, improving efficiency and scalability.
+Migrating to FlowFuse simplifies Node-RED management, offering better scalability, security, and ease of maintenance. With FlowFuse handling infrastructure, you can focus on building and optimizing your IIoT solutions.
+
+**Ready to get started?** [Sign up](https://app.flowfuse.com/account/create) for FlowFuse today and streamline your Node-RED deployment!
