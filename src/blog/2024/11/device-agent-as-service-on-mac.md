@@ -3,14 +3,14 @@ title: Run FlowFuse Device Agent as a service on Mac using docker
 subtitle: Automating FlowFuse Device Agent on macOS with Docker and Colima.
 description: Learn how to run the FlowFuse Device Agent as a service on macOS using Docker and Colima, ensuring automatic startup and seamless integration with the FlowFuse platform for managing IoT edge devices.
 date: 2024-11-12
-authors: ["sumit-shinde","rob-marcer"]
+authors: ["sumit-shinde"]
 image:
 keywords: FlowFuse Device Agent, Node-RED edge device, Node-RED macOS, FlowFuse agent macOS, IoT edge device management, Node-RED device agent
 tags:
-   - flowfuse
+ - flowfuse
 ---
 
-The FlowFuse Device Agent is a tool that enables you to run Node-RED on various hardware platforms, such as Raspberry Pi, Windows, macOS, and PLCs. running node-red direclty on device helps when your application flow needs direct access to sensors and actuators connected to the hardware, facilitating seamless integration with the FlowFuse platform. This integration enables secure management, monitoring, and remote editing of flows from a centralized platform, even at the edge.
+The FlowFuse Device Agent is a tool that enables you to run Node-RED on various hardware platforms, such as Raspberry Pi, Windows, macOS, and PLCs. Running node-red directly on the device helps when your application flow needs direct access to sensors and actuators connected to the hardware, facilitating seamless integration with the FlowFuse platform. This integration enables secure management, monitoring, and remote editing of flows from a centralized platform, even at the edge.
 
 <!--more-->
 
@@ -22,9 +22,9 @@ Before starting, ensure that you have the following installed:
 
 - Homebrew: MacOS package manager for installing software
 - Docker: Platform for running containers
-- Colima: A tool for running Docker containers on macOS
+- Colima: A lightweight, open-source tool for running Docker containers on macOS. It provides better compatibility and performance, particularly on Apple Silicon, and is a free alternative to Docker Desktop.
 
-**NOTE: The instructions in this guide were tested on MacBook M1 and MacBook Pro M4 Pro**
+*NOTE: The instructions in this guide were tested on MacBook M1 and MacBook Pro M4 Pro*
 
 ### Step 1: Install Homebrew
 
@@ -68,6 +68,9 @@ This will start Colima’s virtual machine, which is optimized for running Docke
 colima status
 ```
 
+![CLI: Showing the result of `colima status`](./images/colima-status.png){data-zoomable}
+_CLI: Showing the result of `colima status`_
+
 ### Step 5: Set Colima to Run as a Service
 
 To ensure Colima starts automatically in the background, run the following:
@@ -84,21 +87,21 @@ Now, you'll need to add a new device to the FlowFuse platform and download the d
 
 ### Step 7: Run the FlowFuse Device Agent Container
 
-You can now run the FlowFuse Device Agent container using Docker. Replace `/path/to/device.yml` with the actual path to your device configuration file you have downloaded. The following command will launch the container:
+You can now run the FlowFuse Device Agent container using Docker. Replace `/path/to/device.yml` with the actual path to the device configuration file you have downloaded. The following command will launch the container:
 
 ```bash
 docker run -d --restart unless-stopped \
-  --mount type=bind,src=/path/to/device.yml,target=/opt/flowfuse-device/device.yml \
+ --mount type=bind,src=/path/to/device.yml,target=/opt/flowfuse-device/device.yml \
   -p 1880:1880 flowfuse/device-agent:latest
 ```
 
 Explanation of the command:
 
-- -d: Run the container in detached mode (in the background).
-- --restart unless-stopped: Ensure the container restarts automatically unless explicitly stopped.
-- --mount type=bind,src=/path/to/device.yml,target=/opt/flowfuse-device/device.yml: Mounts your local device.yml file into the container so it can be accessed by the agent.
-- -p 1880:1880: Exposes port 1880 on your host machine, which is typically used for Node-RED web interface.
-- flowfuse/device-agent:latest: The Docker image for the FlowFuse Device Agent.
+- `-d`: Run the container in detached mode (in the background).
+- `--restart` unless-stopped: Ensure the container restarts automatically unless explicitly stopped.
+- `--mount type=bind,src=/path/to/device.yml,target=/opt/flowfuse-device/device.yml`: Mounts your local device.yml file into the container so it can be accessed by the agent.
+- `-p 1880:1880`: Exposes port 1880 on your host machine, which is typically used for the Node-RED web interface.
+- `flowfuse/device-agent:latest`: The Docker image for the FlowFuse Device Agent.
 
 ### Step 8: Verify the Device Agent is Running
 
@@ -108,11 +111,26 @@ To verify that the Device Agent is running correctly, you can use the following 
 docker ps
 ```
 
+![CLI: Showing the result of `docker ps` indicating device agent is running correctly](./images/docker-ps-result.png){data-zoomable}
+_CLI: Showing the result of `docker ps` indicating the device agent is running correctly_
+
+
 This will list all running containers, and you should see the FlowFuse Device Agent listed there. If it's not running, you can check the logs to troubleshoot:
 
 ```bash
 docker logs <container_id>
 ```
+
+Additionally, you can confirm that the device agent is running and successfully connected to the FlowFuse platform by following these steps:
+
+1. Navigate to the FlowFuse platform.
+2. In the left sidebar, click on Devices.
+3. Then, select the device you added for macOS.
+
+![FlowFuse Platform: showing the status of your edge device](./images/device-status-on-ff.png){data-zoomable}
+_FlowFuse Platform: showing the status of your edge device_
+
+Now, you can start developing applications on the device remotely from any location and manage it efficiently.
 
 ### Step 9: Ensure the Device Agent Restarts Automatically
 
@@ -121,9 +139,9 @@ The `--restart unless-stopped` flag in the Docker command ensures that your Flow
 1. Restart your Mac.
 2. After rebooting, check the status of the FlowFuse Device Agent:
 
-   ```bash
+```bash
    docker ps
-   ```
+```
 
 ### Conclusion
 
