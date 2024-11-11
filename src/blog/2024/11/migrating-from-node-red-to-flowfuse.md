@@ -2,7 +2,7 @@
 title: Migrating from Self-Managed Node-RED to FlowFuse-Managed Node-RED
 subtitle: A Step-by-Step Guide to Transitioning Your Node-RED Flows to a Streamlined FlowFuse Environment
 description: Discover how to migrate from a self-managed Node-RED setup to a FlowFuse-managed environment, including step-by-step instructions for instance creation, data backup, and snapshot deployment.
-date: 2024-11-06
+date: 2024-11-11
 authors: ["sumit-shinde"]
 image:
 keywords: node-red migration, node-red snapshot, node-red instance management, remote instance management, edge device management,  node-red backup, node-red to flowfuse migration, flowfuse static assets, node-red deployment, cloud-based node-red, node-red instance snapshot
