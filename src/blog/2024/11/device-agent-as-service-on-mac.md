@@ -20,15 +20,13 @@ In this article, we will explore how to run the FlowFuse Device Agent as a servi
 
 Before starting, ensure that you have the following installed:
 
-- Homebrew: MacOS package manager for installing software
-- Docker: Platform for running containers
-- Colima: A lightweight, open-source tool for running Docker containers on macOS. It provides better compatibility and performance, particularly on Apple Silicon, and is a free alternative to Docker Desktop.
+- **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can sign up at FlowFuse.
 
 *NOTE: The instructions in this guide were tested on MacBook M1 and MacBook Pro M4 Pro*
 
 ### Step 1: Install Homebrew
 
-If you don't already have Homebrew installed, you can install it using the following command:
+The Homebrew is the macOS package manager for installing packages, libraries in mac...... you can install it using the following command:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -48,7 +46,7 @@ This will install Docker and its credential helper, which is useful for managing
 
 ### Step 3: Install Colima
 
-Since Colima is a lightweight alternative to Docker Desktop for Macs, you'll need it to run Docker containers on macOS. To install Colima, run:
+Colima is a free alternative to Docker Desktop, particularly useful for macOS, and offers better compatibility with Apple Silicon hardware. we’ll need it to run the Flowfuse device agent container that we will create later. To install Colima, run:
 
 ```bash
 brew install colima
@@ -62,7 +60,7 @@ Once Colima is installed, start it with:
 colima start
 ```
 
-This will start Colima’s virtual machine, which is optimized for running Docker containers on macOS. You can verify that Colima is running with the following command:
+This command starts the Colima virtual machine, which Docker will then use to run containers. If Colima is not running, Docker won't have the necessary environment to create and run containers
 
 ```bash
 colima status
@@ -79,7 +77,7 @@ To ensure Colima starts automatically in the background, run the following:
 brew services start colima
 ```
 
-This will set Colima to run as a service, so it will start automatically every time your Mac boots up.
+This will set Colima to run as a service, so it will start automatically every time your Mac boots up. 
 
 ### Step 6: Adding the Device to the FlowFuse Platform
 
