@@ -10,17 +10,17 @@ tags:
  - flowfuse
 ---
 
-The FlowFuse Device Agent is a tool that enables you to run Node-RED on various hardware platforms, such as Raspberry Pi, Windows, MacOS, and PLCs. Running Node-RED directly on the device helps when your application flow needs direct access to sensors and actuators connected to the hardware, facilitating seamless integration with the FlowFuse platform. This integration enables secure management, monitoring, and remote editing of flows from a centralized platform, even at the edge.
+The FlowFuse Device Agent is a tool that enables you to run Node-RED on various hardware devices, such as Raspberry Pi, Windows, MacOS, and PLCs. Running Node-RED directly on the device helps when your application flow needs direct access to sensors and actuators connected to the hardware, facilitating seamless integration with the FlowFuse platform. This integration enables secure management, monitoring, and remote editing of flows from a centralized platform, even at the edge.
 
 <!--more-->
 
-In this article, we will explore how to run the FlowFuse Device Agent as a service on MacOS using Docker. This setup ensures that the Device Agent operates in the background, automatically starts on boot, and provides continuous access to the FlowFuse platform for remotely managing your flows, even after a device restart. This eliminates the need to manually start the agent after each reboot, saving you time and effort.
+In this article, we will explore how to run the FlowFuse Device Agent as a service on MacOS using Docker. This setup ensures that the Device Agent runs in the background, automatically starts on boot, and maintains a continuous connection the FlowFuse platform for remotely managing your Node-RED flows, even after a device restart. This eliminates the need to manually start the agent after each reboot, saving you time and effort.
 
 ### Prerequisites
 
-Before starting, ensure that you have the following installed:
+Before starting, ensure that you have the following set up:
 
-- **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can [sign up](/) at FlowFuse.
+- **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can [sign up]([/](https://app.flowfuse.com/account/create)) at FlowFuse.
 
 *NOTE: The instructions in this guide were tested on MacBook M1 and MacBook Pro M4 Pro*
 
@@ -46,7 +46,7 @@ This will install Docker and its credential helper, which is useful for managing
 
 ### Step 3: Install Colima
 
-Colima is a free alternative to Docker Desktop, particularly useful for MacOS, and offers better compatibility with Apple Silicon hardware. We’ll need it to run the Flowfuse device agent container that we will create later. To install Colima, run:
+Colima is a free alternative to Docker Desktop, particularly useful for MacOS, and offers better compatibility with Apple Silicon hardware. We’ll need it to run the Flowfuse Device Agent container that we will create later. To install Colima, run:
 
 ```bash
 brew install colima
@@ -81,7 +81,7 @@ This will set Colima to run as a service, so it will start automatically every t
 
 ### Step 6: Adding the Device to the FlowFuse Platform
 
-Now, you'll need to add a new device to the FlowFuse platform and download the device configuration file. This configuration will help connect your MacOS device to your FlowFuse team. For more information on how to add a device and generate the configuration, refer to [Generating "Device Configuration"](https://flowfuse.com/docs/device-agent/register/#generating-%22device-configuration%22).
+Now, you'll need to add a new device to the FlowFuse platform and download the device configuration file. This configuration will allow to connect your MacOS device to your FlowFuse team. For more information on how to add a device and generate the configuration, refer to [Generating "Device Configuration"](https://flowfuse.com/docs/device-agent/register/#generating-%22device-configuration%22).
 
 ### Step 7: Run the FlowFuse Device Agent Container
 
@@ -112,7 +112,6 @@ docker ps
 ![CLI: Showing the result of `docker ps` indicating device agent is running correctly](./images/docker-ps-result.png){data-zoomable}
 _CLI: Showing the result of `docker ps` indicating the device agent is running correctly_
 
-
 This will list all running containers, and you should see the FlowFuse Device Agent listed there. If it's not running, you can check the logs to troubleshoot:
 
 ```bash
@@ -130,7 +129,7 @@ _FlowFuse Platform: showing the status of your edge device_
 
 Now, you can start developing applications on the device remotely from any location and manage it efficiently.
 
-### Step 9: Ensure the Device Agent Restarts Automatically
+### Step 9: Ensure the Device Agent Restarts Automatically After a Reboot
 
 The `--restart unless-stopped` flag in the Docker command ensures that your FlowFuse Device Agent container will automatically restart if your Mac reboots. However, it's always good to verify this by restarting your system:
 
