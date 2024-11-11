@@ -5,17 +5,17 @@ description: Discover how to migrate from a self-managed Node-RED setup to a Flo
 date: 2024-11-11
 authors: ["sumit-shinde"]
 image:
-keywords: node-red migration, node-red snapshot, node-red instance management, remote instance management, edge device management,  node-red backup, node-red to flowfuse migration, flowfuse static assets, node-red deployment, cloud-based node-red, node-red instance snapshot
+keywords: node-red migration, node-red snapshot, node-red instance management, Cloud Instance management, edge device management,  node-red backup, node-red to flowfuse migration, flowfuse static assets, node-red deployment, cloud-based node-red, node-red instance snapshot
 tags:
    - flowfuse
    - flowfuse features
 ---
 
-Migrating your Node-RED instance to [FlowFuse](/) centralizes management and simplifies deployment. Once migrated, FlowFuse takes care of the infrastructure, security, and scalability, making the process much easier. This allows you to focus on building solutions without worrying about the complexities of self-hosting. Whether you're working with edge devices or remote instances, this migration streamlines the management of your IIoT workflows, improving efficiency and scalability.
+Migrating your Node-RED instance to [FlowFuse](/) centralizes management and simplifies deployment. Once migrated, FlowFuse takes care of the infrastructure, security, and scalability, making the process much easier. This allows you to focus on building solutions without worrying about the complexities of self-hosting. Whether you're working with edge devices or want to work on cloud instances, this migration streamlines the management of your IIoT workflows, improving efficiency and scalability.
 
 <!--more-->
 
-In this article, you will learn how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment and how that flow works for edge devices and remote instances.
+In this article, you will learn how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment and how that flow works for edge devices and Cloud Instances.
 
 ## Why Switch from Self-Managed Node-RED to FlowFuse-Managed Node-RED?
 
@@ -29,19 +29,19 @@ Managing self-hosted Node-RED instances can introduce a range of challenges, par
 
 - **Remote Management**: For edge devices, managing Node-RED remotely can be tricky. You need a robust way to access, monitor, and update devices securely from a central location, especially as your network expands.
 
-FlowFuse addresses all of these challenges by providing a fully managed, secure, and scalable environment for your Node-RED instances. With FlowFuse, you can focus on building your IIoT solutions while FlowFuse takes care of the infrastructure, updates, and scalability. This reduces the operational overhead and ensures your instances are always up-to-date and secure. For more information, refer to the article: [Transform Chaos into Control: Centralize Node-RED Management with FlowFuse](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/).
+FlowFuse addresses these challenges by providing a fully managed, secure, and scalable environment for your Node-RED instances. With FlowFuse, you can focus on building your IIoT solutions while FlowFuse takes care of the infrastructure, updates, and scalability. This reduces the operational overhead and ensures your instances are always up-to-date and secure. For more information, refer to the article: [Transform Chaos into Control: Centralize Node-RED Management with FlowFuse](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/).
 
 ## Migrating from Node-RED to FlowFuse
 
-Before you start, make sure you have a FlowFuse Account created. Next, consider how your Node-RED instance needs to be deployed. Decide whether it should run on the device itself or as a remote instance. 
+Before you start, make sure you have a FlowFuse Account created. Next, consider how your Node-RED instance needs to be deployed. Decide whether it should run on the edge device or as a cloud instance. 
 
-Running Node-RED on an edge device is ideal when you need direct access to hardware components, such as reading sensors or controlling actuators. This setup allows for immediate data processing and control, which is crucial for applications requiring low latency responses.
+Running Node-RED on an edge device is ideal when you need direct access to hardware components, such as reading sensors or controlling actuators. This setup allows immediate data processing and control, crucial for applications requiring low latency responses.
 
-On the other hand, if your use case involves monitoring or collecting metrics—such as through MQTT—without needing direct hardware interaction, a **remote instance** may be more suitable. This option allows you to centralize data collection and processing, making it easier to manage and analyze data from multiple devices.
+On the other hand, if your use case involves monitoring or collecting metrics—such as through MQTT—without needing direct hardware interaction, a **cloud instance** may be more suitable. This option allows you to centralize data collection and processing, making it easier to manage and analyze data from multiple devices.
 
-### Creating a Remote Instance
+### Creating a Cloud Instance
 
-Creating a remote instance is necessary in both cases. The FlowFuse snapshot feature, accessible via the `flowfuse-nr-plugin`, does not support direct device snapshots. Instead, you must first create a snapshot for the remote instance and then assign it as the target for your device.
+Creating a cloud instance is necessary in both cases. The FlowFuse snapshot feature, accessible via the `flowfuse-nr-plugin`, does not support direct device snapshots. Instead, you must first create a snapshot for the Cloud Instance and then assign it as the target for your device.
 
 1. Navigate to the FlowFuse platform and log in to your account.
 2. Select the application under which you want to manage your Node-RED instance. You can either choose the default application created with your account or click the "Create Application" button to create a new one.
@@ -53,7 +53,7 @@ Creating a remote instance is necessary in both cases. The FlowFuse snapshot fea
 
 If you need to run Node-RED on the edge itself but want to manage it remotely, follow the steps below. Skip this step if your Node-RED instance can run on the cloud.
 
-1. Navigate to the remote instance you created above.
+1. Navigate to the cloud instance you created above.
 2. Go to the "Devices" tab and select "Add Device."
 3. Once you click "Add Device," a device configuration popup will appear. Copy the command provided and save it for later.
 4. Follow the steps to install the FlowFuse agent on your device as given in this [documentation](/docs/device-agent/install/).
@@ -68,9 +68,9 @@ Running on port `1881` ensures it doesn't conflict with your locally running Nod
 
 ### Creating Essential Backups Before Migration
 
-Creating a remote instance is essential for the migration process, regardless of whether your Node-RED instance will run on the device or as a remote setup. Self-managed or locally running Node-RED does not support direct snapshots for devices. Therefore, you must first create a snapshot for the remote instance before deploying it to the device.
+Creating a Cloud Instance is essential for the migration process, regardless of whether your Node-RED instance will run on the device or as a remote setup. Self-managed or locally running Node-RED does not support direct snapshots for devices. Therefore, you must first create a snapshot for the Cloud Instance before deploying it to the device.
 
-Follow these steps to create a remote instance:
+Follow these steps to create a cloud instance:
 
 1. Install the `@flowfuse/nr-tools-plugin` into your Node-RED instance from the Palette Manager, which will help create the snapshots from the Node-RED instance.
 2. Once installed, open the FlowFuse tools tab in the sidebar.
@@ -121,19 +121,19 @@ Once you have migrated all your assets, you will be able to access them in the i
 
 ### Deploying Snapshot for the Remote/Device instance
 
-Once the System-level environment variables are set, you are good to deploy that captured snapshot in the Device or the Remote instance.
+Once the System-level environment variables are set, you are good to deploy that captured snapshot in the Device or the Cloud Instance.
 
-1. Navigate to the remote instance for which you created the snapshot, either to migrate your current Node-RED setup or to prepare it for later deployment on a device.
+1. Navigate to the Cloud Instance for which you created the snapshot, either to migrate your current Node-RED setup or to prepare it for later deployment on a device.
 2. Switch to the "Snapshots" tab at the top to locate the snapshot you created from the list.
 3. On the right side of the snapshot, click the three-dot icon:
 
-   - If you are migrating to the remote instance, select **"Restore Snapshot."**
+   - If you are migrating to the Cloud Instance, select **"Restore Snapshot."**
    - If you are migrating to a Device Instance, select **"Set as Device Target."**
 
 Setting a device target will ensure that the snapshot will be deployed on all of the devices assigned to this instance.
 
 ## Conclusion
 
-Migrating to FlowFuse simplifies Node-RED management, offering better scalability, security, and ease of maintenance. With FlowFuse handling infrastructure, you can focus on building and optimizing your IIoT solutions.
+Migrating from a self-managed Node-RED setup to FlowFuse is simple and offers significant benefits. By transitioning, you’ll reduce operational complexity, enhance security, and improve scalability. FlowFuse handles the infrastructure, so you can focus on building and optimizing your IIoT solutions—whether on edge devices or in the cloud.
 
 **Ready to get started?** [Sign up](https://app.flowfuse.com/account/create) for FlowFuse today and streamline your Node-RED deployment!
