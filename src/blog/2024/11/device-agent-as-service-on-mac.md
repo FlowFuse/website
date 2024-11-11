@@ -16,7 +16,7 @@ The FlowFuse Device Agent is a tool that enables you to run Node-RED on various 
 
 In this article, we will explore how to run the FlowFuse Device Agent as a service on macOS using Docker. This setup ensures that the Device Agent operates in the background, automatically starts on boot, and provides continuous access to the FlowFuse platform for remotely managing your flows, even after a device restart. This eliminates the need to manually start the agent after each reboot, saving you time and effort.
 
-## Prerequisites
+### Prerequisites
 
 Before starting, ensure that you have the following installed:
 
@@ -26,7 +26,7 @@ Before starting, ensure that you have the following installed:
 
 **NOTE: The instructions in this guide were tested on MacBook M1 and MacBook Pro M4 Pro**
 
-## Step 1: Install Homebrew
+### Step 1: Install Homebrew
 
 If you don't already have Homebrew installed, you can install it using the following command:
 
@@ -36,7 +36,7 @@ If you don't already have Homebrew installed, you can install it using the follo
 
 This script will install the Homebrew package manager on your Mac. Once installed, you can easily install other software packages like Docker and Colima.
 
-## Step 2: Install Docker
+### Step 2: Install Docker
 
 With Homebrew installed, you can now install Docker by running:
 
@@ -46,7 +46,7 @@ brew install docker-credential-helper docker
 
 This will install Docker and its credential helper, which is useful for managing authentication with Docker registries.
 
-## Step 3: Install Colima
+### Step 3: Install Colima
 
 Since Colima is a lightweight alternative to Docker Desktop for Macs, you'll need it to run Docker containers on macOS. To install Colima, run:
 
@@ -54,7 +54,7 @@ Since Colima is a lightweight alternative to Docker Desktop for Macs, you'll nee
 brew install colima
 ```
 
-## Step 4: Start Colima
+### Step 4: Start Colima
 
 Once Colima is installed, start it with:
 
@@ -68,7 +68,7 @@ This will start Colima’s virtual machine, which is optimized for running Docke
 colima status
 ```
 
-## Step 5: Set Colima to Run as a Service
+### Step 5: Set Colima to Run as a Service
 
 To ensure Colima starts automatically in the background, run the following:
 
@@ -78,11 +78,11 @@ brew services start colima
 
 This will set Colima to run as a service, so it will start automatically every time your Mac boots up.
 
-## Step 6: Adding the Device to the FlowFuse Platform
+### Step 6: Adding the Device to the FlowFuse Platform
 
 Now, you'll need to add a new device to the FlowFuse platform and download the device configuration file. This configuration will help us connect to the FlowFuse team with the added device. For more information on how to add a device and generate the configuration, refer to [Generating "Device Configuration"](https://flowfuse.com/docs/device-agent/register/#generating-%22device-configuration%22).
 
-## Step 7: Run the FlowFuse Device Agent Container
+### Step 7: Run the FlowFuse Device Agent Container
 
 You can now run the FlowFuse Device Agent container using Docker. Replace `/path/to/device.yml` with the actual path to your device configuration file you have downloaded. The following command will launch the container:
 
@@ -100,7 +100,7 @@ Explanation of the command:
 - -p 1880:1880: Exposes port 1880 on your host machine, which is typically used for Node-RED web interface.
 - flowfuse/device-agent:latest: The Docker image for the FlowFuse Device Agent.
 
-## Step 8: Verify the Device Agent is Running
+### Step 8: Verify the Device Agent is Running
 
 To verify that the Device Agent is running correctly, you can use the following command:
 
@@ -114,7 +114,7 @@ This will list all running containers, and you should see the FlowFuse Device Ag
 docker logs <container_id>
 ```
 
-## Step 9: Ensure the Device Agent Restarts Automatically
+### Step 9: Ensure the Device Agent Restarts Automatically
 
 The `--restart unless-stopped` flag in the Docker command ensures that your FlowFuse Device Agent container will automatically restart if your Mac reboots. However, it's always good to verify this by restarting your system:
 
