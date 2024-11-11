@@ -35,7 +35,7 @@ FlowFuse addresses all of these challenges by providing a fully managed, secure,
 
 ## Migrating from Node-RED to FlowFuse
 
-Before you start, make sure you have a FlowFuse Account created Next, consider how your Node-RED instance needs to be deployed. Decide whether it should run **on the device itself** or as a **remote instance**. 
+Before you start, make sure you have a FlowFuse Account created. Next, consider how your Node-RED instance needs to be deployed. Decide whether it should run on the device itself or as a remote instance. 
 
 Running Node-RED on the device is ideal when you need direct access to hardware components, such as reading sensors or controlling actuators. This setup allows for immediate data processing and control, which is crucial for applications requiring real-time responses.
 
