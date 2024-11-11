@@ -35,7 +35,7 @@ FlowFuse addresses all of these challenges by providing a fully managed, secure,
 
 Before you start, make sure you have a FlowFuse Account created. Next, consider how your Node-RED instance needs to be deployed. Decide whether it should run on the device itself or as a remote instance. 
 
-Running Node-RED on the device is ideal when you need direct access to hardware components, such as reading sensors or controlling actuators. This setup allows for immediate data processing and control, which is crucial for applications requiring real-time responses.
+Running Node-RED on an edge device is ideal when you need direct access to hardware components, such as reading sensors or controlling actuators. This setup allows for immediate data processing and control, which is crucial for applications requiring low latency responses.
 
 On the other hand, if your use case involves monitoring or collecting metrics—such as through MQTT—without needing direct hardware interaction, a **remote instance** may be more suitable. This option allows you to centralize data collection and processing, making it easier to manage and analyze data from multiple devices.
 
