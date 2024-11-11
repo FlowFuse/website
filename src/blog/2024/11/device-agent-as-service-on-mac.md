@@ -121,7 +121,7 @@ docker logs <container_id>
 Additionally, you can confirm that the Device Agent is running and successfully connected to the FlowFuse platform by following these steps:
 
 1. Navigate to the FlowFuse platform.
-2. In the left sidebar, click on Devices.
+2. In the left sidebar, click on "Edge Devices".
 3. Then, select the device you added for MacOS.
 
 ![FlowFuse Platform: showing the status of your edge device](./images/device-status-on-ff.png){data-zoomable}
