@@ -56,10 +56,34 @@ hubspot:
             <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
                 <h2 class="text-center w-full md:text-left">Empowering you to <span class="text-indigo-600">unlock data and build applications faster</span></h2>
                 <p class="text-center w-full md:text-left">
-                    Supporting your OT and IT teams with the tools and safeguards they need to drive operational
-                    efficiency
-                    and deliver real business value.
+                    Supporting your OT and IT teams with the tools and safeguards they need to drive operational efficiency and deliver real business value.
                 </p>
+                <!-- Metrics -->
+                {% set metrics = [
+                {
+                    number: "20x",
+                    text: "Increase in DevOps pipeline speed with automation"
+                },
+                {
+                    number: "20%",
+                    text: "Reduction in developer time spent on new solutions"
+                },
+                {
+                    number: "9x",
+                    text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services"
+                }]
+                %}
+                <div class="grid sm:grid-cols-3 gap-6 bg-indigo-50 rounded-lg mt-10 pb-3 px-4 pt-6 max-sm:max-w-[300px] m-auto">
+                    {% for metric in metrics %}
+                        <div class="max-w-[230px] m-auto">
+                            <div class="flex justify-center">
+                                <h3 class="text-4xl font-normal text-indigo-400">{{ metric.number }}</h3>
+                            </div>
+                            <p class="text-center mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Wheel section -->
                 {% set sections = [
                 {
                 title: "Manage",
@@ -95,7 +119,7 @@ hubspot:
                     </div>
                     {% for section in sections %}
                     <div class="{{ section.mdOrder }}">
-                        <div class="max-sm:mx-auto w-8 h-8 text-indigo-600 mb-3">
+                        <div class="max-sm:mx-auto w-8 h-8 text-red-300 mb-3">
                             {% set svgPath = section.svgPath %}
                             {% include svgPath %}
                         </div>
