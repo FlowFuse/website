@@ -4,10 +4,11 @@ subtitle: Automating FlowFuse Device Agent on macOS with Docker and Colima.
 description: Learn how to run the FlowFuse Device Agent as a service on macOS using Docker and Colima, ensuring automatic startup and seamless integration with the FlowFuse platform for managing IoT edge devices.
 date: 2024-11-12
 authors: ["sumit-shinde","rob-marcer"]
-image:
+image: /blog/2024/11/images/flowfuse-device-agent-as-service-on-mac.png
 keywords: FlowFuse Device Agent, Node-RED edge device, Node-RED macOS, FlowFuse agent macOS, IoT edge device management, Node-RED device agent
 tags:
  - flowfuse
+ - how-to
 ---
 
 The FlowFuse Device Agent is a tool that enables you to run Node-RED on various hardware devices, such as Raspberry Pi, Windows, MacOS, and PLCs. Running Node-RED directly on the device helps when your application flow needs direct access to sensors and actuators connected to the hardware, facilitating seamless integration with the FlowFuse platform. This integration enables secure management, monitoring, and remote editing of flows from a centralized platform, even at the edge.
