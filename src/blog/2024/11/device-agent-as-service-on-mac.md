@@ -22,7 +22,7 @@ Before starting, ensure that you have the following set up:
 
 - **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can [sign up](https://app.flowfuse.com/account/create) at FlowFuse.
 
-*NOTE: The instructions in this guide were tested on MacBook M1 and MacBook Pro M4 Pro*
+*NOTE: The instructions in this guide were tested on MacBook M1 & M4 MacBook Pro*
 
 ### Step 1: Install Homebrew
 
