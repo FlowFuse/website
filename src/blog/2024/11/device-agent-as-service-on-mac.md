@@ -1,5 +1,5 @@
 ---
-title: Run FlowFuse Device Agent as a service on Mac using docker
+title: Run FlowFuse Device Agent as a service on MacOS using Docker
 subtitle: Automating FlowFuse Device Agent on macOS with Docker and Colima.
 description: Learn how to run the FlowFuse Device Agent as a service on macOS using Docker and Colima, ensuring automatic startup and seamless integration with the FlowFuse platform for managing IoT edge devices.
 date: 2024-11-12
