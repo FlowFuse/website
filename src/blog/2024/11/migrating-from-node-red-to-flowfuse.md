@@ -4,7 +4,7 @@ subtitle: A Step-by-Step Guide to Transitioning Your Node-RED Flows to a Streaml
 description: Discover how to migrate from a self-managed Node-RED setup to a FlowFuse-managed environment, including step-by-step instructions for instance creation, data backup, and snapshot deployment.
 date: 2024-11-13
 authors: ["sumit-shinde"]
-image:
+image: /blog/2024/11/images/migrating-from-self-managed-nr-to-flowfuse-managed-nr.png
 keywords: node-red migration, node-red snapshot, node-red instance management, Cloud Instance management, edge device management,  node-red backup, node-red to flowfuse migration, flowfuse static assets, node-red deployment, cloud-based node-red, node-red instance snapshot
 tags:
    - flowfuse
