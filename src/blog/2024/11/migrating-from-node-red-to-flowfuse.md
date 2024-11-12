@@ -120,7 +120,7 @@ When working with dashboards or files required in your Node-RED project, these f
 Here’s how you can migrate your assets:
 
 1. Locate your static assets in your local system that are used in your Self-managed Node-RED instance from the snapshot we have taken.
-2. Upload them one by one through the Instance "Static Assets" tab. For more information, refer to the [Static Asset Service documentation]( /docs/user/static-asset-service/).
+2. Upload them one by one through the Instance "Static Assets" tab. For more information, refer to the [Static Asset Service documentation](/docs/user/static-asset-service/).
 
 Once you have migrated all your assets, you will be able to access them in the instance created in the FlowFuse cloud. Just ensure that after deploying the snapshot, the path set in the flow matches the static assets migrated to the FlowFuse instance.
 
