@@ -15,7 +15,7 @@ Migrating your Node-RED instance to [FlowFuse](/) centralizes management and sim
 
 <!--more-->
 
-This article will explore how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment, detailing how the migration works for both edge devices and cloud instances.
+Let's explore how to migrate from a self-managed and self-hosted Node-RED setup to a FlowFuse-managed environment. We'll look at how the migration works for both edge devices and cloud instances.
 
 ## Why Switch from Self-Managed Node-RED to FlowFuse-Managed Node-RED?
 
