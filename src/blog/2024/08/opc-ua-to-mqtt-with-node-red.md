@@ -5,14 +5,12 @@ description: Learn how to bridge OPC UA data to MQTT using Node-RED for seamless
 date: 2024-08-13
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/brdging-opcua-to-mqtt.png
+keywords: opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, opc ua mqtt, opc ua over mqtt, opc ua to mqtt gateway, mqtt to opc ua, mqtt and opc ua, opc ua and mqtt, opc ua via mqtt, opcua to mqtt
 tags:
    - posts
-   - flowfuse
-   - node-red opc ua to mqtt integration
-   - bridging opc ua data to mqtt
-   - node-red mqtt protocol conversion
-   - unified name space
-   - digital tranformation
+   - node-red
+   - mqtt
+   - opcua
 ---
 
 Have you ever found yourself trying to connect old industrial systems with new IoT tools? This is a common scenario when trying to digitally transform while setting up your Unified Name Space. Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?  
