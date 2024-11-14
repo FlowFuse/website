@@ -153,31 +153,30 @@ meta:
     <!-- Learn UNS -->
     <div class="about w-full pt-24">
         <h3 class="w-full mb-8 text-gray-500 text-center">Learn about the Unified Namespace (UNS)</h3>
-        <div class="m-auto">
-            <div class="grid grid-cols-1 md:gap-12 md:grid-cols-2 pt-4 md:pt-6 items-start">
-                <!-- Getting Started -->
-                {% set articles = [
-                {
-                "title": "Introduction into the UNS",
-                "url": "/blog/2023/12/introduction-to-unified-namespace/",
-                "image": "./blog/2023/12/images/introduction-to-uns.png",
-                "alt": "Graphics depicting a unified namespace."
-                },
-                {
-                "title": "From ISA 95 towards the UNS",
-                "url": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/",
-                "image": "./blog/2023/08/images/UNS/UNS-Headline.svg",
-                "alt": "Graphics depicting the UNS related to the automation pyramid."
-                },
-                {
-                "title": "Node-RED: The perfect adapter and middleware for the UNS",
-                "url": "/blog/2024/02/node-red-perfect-adapter-middleware-uns/",
-                "image": "./blog/2024/02/images/node-red-for-uns.png",
-                "alt": "Node-RED and the UNS"
-                }
-                ] %}
-                <div class="pb-12 md:pb-0">
-                    <h4 class="w-full max-md:text-center mb-4 text-gray-500 font-light">Getting Started</h5>
+        <div class="grid grid-cols-1 md:gap-12 md:grid-cols-2 pt-4 md:pt-6 items-start m-auto">
+            <!-- Getting Started -->
+            {% set articles = [
+            {
+            "title": "Introduction into the UNS",
+            "url": "/blog/2023/12/introduction-to-unified-namespace/",
+            "image": "./blog/2023/12/images/introduction-to-uns.png",
+            "alt": "Graphics depicting a unified namespace."
+            },
+            {
+            "title": "From ISA 95 towards the UNS",
+            "url": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/",
+            "image": "./blog/2023/08/images/UNS/UNS-Headline.svg",
+            "alt": "Graphics depicting the UNS related to the automation pyramid."
+            },
+            {
+            "title": "Node-RED: The perfect adapter and middleware for the UNS",
+            "url": "/blog/2024/02/node-red-perfect-adapter-middleware-uns/",
+            "image": "./blog/2024/02/images/node-red-for-uns.png",
+            "alt": "Node-RED and the UNS"
+            }
+            ] %}
+            <div class="pb-12 md:pb-0">
+                <h4 class="w-full max-md:text-center mb-4 text-gray-500 font-light">Getting Started</h5>
                     <div class="ff-nodered-resources grid grid-cols-1 max-md:text-center">
                         {% for article in articles %}
                         <a href="{{ article.url }}">
@@ -190,30 +189,30 @@ meta:
                         </a>
                         {% endfor %}
                     </div>
-                </div>
-                <!-- Implementation of the UNS -->
-                {% set implementation_articles = [
-                {
-                "title": "Data Modeling for your Unified Namespace",
-                "url": "/blog/2023/12/unified-namespace-data-modelling/",
-                "image": "./blog/2023/12/images/uns-data-modeling.png",
-                "alt": "Graphics depicting unified namespace data modeling using FlowFuse."
-                },
-                {
-                "title": "Selecting your UNS Broker",
-                "url": "/blog/2024/01/unified-namespace-what-broker/",
-                "image": "./blog/2024/01/images/broker-for-uns.png",
-                "alt": "Graphics displaying different broker logos."
-                },
-                {
-                "title": "Unified Namespace: When to Use It, and When to Choose Something Else",
-                "url": "/blog/2024/01/unified-namespace-when-not-to-use/",
-                "image": "./blog/2024/01/images/when-not-to-use-the-uns.png",
-                "alt": "Graphics depicting unified namespace data modeling using FlowFuse."
-                }
-                ] %}
-                <div class="pb-6 md:pb-0">
-                    <h4 class="w-full mb-4 text-gray-500 font-light max-md:text-center">Implementation of the UNS</h5>
+            </div>
+            <!-- Implementation of the UNS -->
+            {% set implementation_articles = [
+            {
+            "title": "Data Modeling for your Unified Namespace",
+            "url": "/blog/2023/12/unified-namespace-data-modelling/",
+            "image": "./blog/2023/12/images/uns-data-modeling.png",
+            "alt": "Graphics depicting unified namespace data modeling using FlowFuse."
+            },
+            {
+            "title": "Selecting your UNS Broker",
+            "url": "/blog/2024/01/unified-namespace-what-broker/",
+            "image": "./blog/2024/01/images/broker-for-uns.png",
+            "alt": "Graphics displaying different broker logos."
+            },
+            {
+            "title": "Unified Namespace: When to Use It, and When to Choose Something Else",
+            "url": "/blog/2024/01/unified-namespace-when-not-to-use/",
+            "image": "./blog/2024/01/images/when-not-to-use-the-uns.png",
+            "alt": "Graphics depicting unified namespace data modeling using FlowFuse."
+            }
+            ] %}
+            <div class="pb-6 md:pb-0">
+                <h4 class="w-full mb-4 text-gray-500 font-light max-md:text-center">Implementation of the UNS</h5>
                     <div class="ff-nodered-resources grid grid-cols-1">
                         {% for article in implementation_articles %}
                         <a href="{{ article.url }}">
@@ -226,7 +225,6 @@ meta:
                         </a>
                         {% endfor %}
                     </div>
-                </div>
             </div>
         </div>
     </div>
