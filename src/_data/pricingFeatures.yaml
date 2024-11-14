@@ -180,3 +180,6 @@ buttons:
     - cta: Request a Quote
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
+
+
+Include BAA check box for Enterprise
