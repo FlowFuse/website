@@ -91,61 +91,143 @@ meta:
                 {% endfor %}
             </div>
             <!-- From Data Source to Application -->     
-            <h2 class="mb-12 mt-6">From Data Source to Application:</br>
+            <h2 class="mb-16 mt-16">From Data Source to Application:</br>
                 <span class="text-indigo-600">Streamline Your UNS Workflows with FlowFuse</span></h2>
             {% image "./images/solutions/flowfuse-uns.png", "FlowFuse UNS Workflow", [1024] %}
         </div>
     </div>
 </div>
 <!--Why FlowFuse-->    
-<div class="w-full bg-indigo-50/50 py-12 mt-16">
+<div class="w-full bg-indigo-50/50 py-12 mt-20">
     <div class="max-w-screen-lg mx-auto px-6">
-    <h2 class="font-bold m-auto w-full text-center sm:text-left mb-12">The FlowFuse <span class="text-red-600">Advantage</span></h2>
-    <div class="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-        {% set sections = [
+        <h2 class="font-bold m-auto w-full text-center sm:text-left mb-12">The FlowFuse <span class="text-red-600">Advantage</span></h2>
+        <div class="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            {% set sections = [
             {
-                "title": "Built-in adaptation layer",
-                "description": "Leverage the power of Node-RED to transform and make your data available for UNS."
+            "title": "Built-in adaptation layer",
+            "description": "Leverage the power of Node-RED to transform and make your data available for UNS."
             },
             {
-                "title": "End-to-end UNS platform",
-                "description": "Everything you need to connect, manage, visualize and analyze your data in one place."
+            "title": "End-to-end UNS platform",
+            "description": "Everything you need to connect, manage, visualize and analyze your data in one place."
             },
             {
-                "title": "Seamless integration",
-                "description": "Built-in MQTT Broker ready to use alongside your Node-RED applications with robust enterprise-grade features of the FlowFuse Platform."
+            "title": "Seamless integration",
+            "description": "Built-in MQTT Broker ready to use alongside your Node-RED applications with robust
+            enterprise-grade features of the FlowFuse Platform."
             },
             {
-                "title": "Rapid implementation",
-                "description": "Get up and running quickly on FlowFuse Cloud."
+            "title": "Rapid implementation",
+            "description": "Get up and running quickly on FlowFuse Cloud."
             },
             {
-                "title": "Open-source",
-                "description": "Avoid vendor lock-in."
+            "title": "Open-source",
+            "description": "Avoid vendor lock-in."
             },
             {
-                "title": "Low-Code",
-                "description": "Empowering your teams to build custom solutions with ease."
+            "title": "Low-Code",
+            "description": "Empowering your teams to build custom solutions with ease."
             }
-        ] %}
-
-        {% for section in sections %}
+            ] %}
+    
+            {% for section in sections %}
             <div class="w-full mt-4 md:mt-0 flex flex-col">
                 <h4 class="flex justify-center sm:justify-start font-semibold text-gray-500">{{ section.title }}</h4>
-                <p class="text-center sm:text-left font-light mt-6 max-sm:max-w-md max-md:mx-auto">{{ section.description }}</p>
+                <p class="text-center sm:text-left font-light mt-6 max-sm:max-w-md max-sm:mx-auto">{{ section.description }}
+                </p>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
- </div> 
 </div>
 
-<div class="max-w-screen-lg mx-auto text-center pt-10 pb-6 px-6 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap mb-12">
+<div class="max-md:max-w-xl md:max-w-screen-lg mx-auto max-sm:text-center pt-16 pb-10 px-6 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap mb-12">
     <!--CTA-->
-    <div class="ff-blue-card max-md:max-w-xl">
+    <div class="ff-blue-card max-sm:max-w-none">
         <h4 class="mb-6 w-full text-center">Ready to simplify your UNS journey and unlock the power of your industrial data?</h4>
-        <div class="flex max-sm:flex-col max-md:max-w-sm max-md:mx-auto gap-3 justify-center">
+        <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
             <a class="ff-btn ff-btn--primary min-h-[40px]" href="/book-demo/" onclick="capture('cta-contact-us-for-demo', {'position': 'secondary'}, {'page': 'uns'})">CONTACT US FOR DEMO</a>
             <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-try-it-on-the-cloud', {'position': 'secondary'}, {'page': 'uns'})">TRY IT ON THE CLOUD</a>
+        </div>
+    </div>
+    <!-- Learn UNS -->
+    <div class="about w-full pt-24">
+        <h3 class="w-full mb-8 text-gray-500 text-center">Learn about the Unified Namespace (UNS)</h3>
+        <div class="m-auto">
+            <div class="grid grid-cols-1 md:gap-12 md:grid-cols-2 pt-4 md:pt-6 items-start">
+                <!-- Getting Started -->
+                {% set articles = [
+                {
+                "title": "Introduction into the UNS",
+                "url": "/blog/2023/12/introduction-to-unified-namespace/",
+                "image": "./blog/2023/12/images/introduction-to-uns.png",
+                "alt": "Graphics depicting a unified namespace."
+                },
+                {
+                "title": "From ISA 95 towards the UNS",
+                "url": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/",
+                "image": "./blog/2023/08/images/UNS/UNS-Headline.svg",
+                "alt": "Graphics depicting the UNS related to the automation pyramid."
+                },
+                {
+                "title": "Node-RED: The perfect adapter and middleware for the UNS",
+                "url": "/blog/2024/02/node-red-perfect-adapter-middleware-uns/",
+                "image": "./blog/2024/02/images/node-red-for-uns.png",
+                "alt": "Node-RED and the UNS"
+                }
+                ] %}
+                <div class="pb-12 md:pb-0">
+                    <h4 class="w-full max-md:text-center mb-4 text-gray-500 font-light">Getting Started</h5>
+                    <div class="ff-nodered-resources grid grid-cols-1 max-md:text-center">
+                        {% for article in articles %}
+                        <a href="{{ article.url }}">
+                            <li>
+                                <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
+                                    {% image article.image, article.alt, [208] %}
+                                </div>
+                                <label class="w-3/5 font-light text-left">{{ article.title }}</label>
+                            </li>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Implementation of the UNS -->
+                {% set implementation_articles = [
+                {
+                "title": "Data Modeling for your Unified Namespace",
+                "url": "/blog/2023/12/unified-namespace-data-modelling/",
+                "image": "./blog/2023/12/images/uns-data-modeling.png",
+                "alt": "Graphics depicting unified namespace data modeling using FlowFuse."
+                },
+                {
+                "title": "Selecting your UNS Broker",
+                "url": "/blog/2024/01/unified-namespace-what-broker/",
+                "image": "./blog/2024/01/images/broker-for-uns.png",
+                "alt": "Graphics displaying different broker logos."
+                },
+                {
+                "title": "Unified Namespace: When to Use It, and When to Choose Something Else",
+                "url": "/blog/2024/01/unified-namespace-when-not-to-use/",
+                "image": "./blog/2024/01/images/when-not-to-use-the-uns.png",
+                "alt": "Graphics depicting unified namespace data modeling using FlowFuse."
+                }
+                ] %}
+                <div class="pb-6 md:pb-0">
+                    <h4 class="w-full mb-4 text-gray-500 font-light max-md:text-center">Implementation of the UNS</h5>
+                    <div class="ff-nodered-resources grid grid-cols-1">
+                        {% for article in implementation_articles %}
+                        <a href="{{ article.url }}">
+                            <li>
+                                <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
+                                    {% image article.image, article.alt, [208] %}
+                                </div>
+                                <label class="w-3/5 font-light text-left">{{ article.title }}</label>
+                            </li>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
