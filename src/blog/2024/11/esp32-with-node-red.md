@@ -37,7 +37,7 @@ If you haven’t signed up for a FlowFuse account yet, [sign up](http://app.flow
 ## Getting Started with ESP32 and Node-RED
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">
-<iframe src="https://www.youtube.com/watch?v=ecfJ-9MxyVE" 
+<iframe src="https://youtu.be/vY1Py1zGres?si=jafcck1EFuUhKd0u" 
         title="Interacting with ESP32 Using Node-RED and MQTT" frameborder="0" allowfullscreen
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         style="position: absolute; width: 100%; height: 100%;">
