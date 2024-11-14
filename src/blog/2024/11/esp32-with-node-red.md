@@ -35,6 +35,14 @@ If you haven’t signed up for a FlowFuse account yet, [sign up](http://app.flow
 
 ## Getting Started with ESP32 and Node-RED
 
+<div style="position: relative; width: 100%; padding-bottom: 56.25%">
+<iframe src="https://www.youtube.com/watch?v=ecfJ-9MxyVE" 
+        title="Interacting with ESP32 Using Node-RED and MQTT" frameborder="0" allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        style="position: absolute; width: 100%; height: 100%;">
+</iframe>
+</div>
+
 In this section, we’ll set up Node-RED on FlowFuse, create an MQTT connection, and configure everything to interact with your ESP32. This will lay the foundation for building your IoT flows and controlling devices.
 
 ### Step 1: Creating Node-RED instance on FlowFuse Cloud
