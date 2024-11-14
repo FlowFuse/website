@@ -1,5 +1,5 @@
 ---
-title: Interacting with ESP32 Using Node-RED
+title: Interacting with ESP32 Using Node-RED and MQTT
 subtitle: Building IoT Flows with ESP32 and FlowFuse
 description:  Learn how to connect your ESP32 with Node-RED using MQTT in this easy-to-follow guide. Build a user-friendly dashboard with FlowFuse Dashboard to control your IoT devices remotely. Ideal for beginners and IoT hobbyists!
 date: 2024-11-14
@@ -36,13 +36,9 @@ If you haven’t signed up for a FlowFuse account yet, [sign up](http://app.flow
 
 ## Getting Started with ESP32 and Node-RED
 
-<div style="position: relative; width: 100%; padding-bottom: 56.25%">
-<iframe src="https://youtu.be/vY1Py1zGres?si=jafcck1EFuUhKd0u" 
-        title="Interacting with ESP32 Using Node-RED and MQTT" frameborder="0" allowfullscreen
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        style="position: absolute; width: 100%; height: 100%;">
-</iframe>
-</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ecfJ-9MxyVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 In this section, we’ll set up Node-RED on FlowFuse, create an MQTT connection, and configure everything to interact with your ESP32. This will lay the foundation for building your IoT flows and controlling devices.
 
@@ -58,7 +54,10 @@ In this step, we’ll set up MQTT to enable communication between Node-RED and t
 
 We use MQTT because it allows devices to communicate over a network (like Wi-Fi) without the need for a direct physical connection. This makes it perfect for long-distance communication, where devices need to send and receive data efficiently, even when they are not physically connected or close to each other.
 
-In our setup, Node-RED will send commands to the ESP32 via MQTT, and the ESP32 will respond by performing actions, such as controlling an LED. To enable this, we’ll create two MQTT clients in FlowFuse (the MQTT broker is already set up and managed by FlowFuse, so you don’t need to worry about creating, configuring, or maintaining it). One client will be for Node-RED, and the other will be for the ESP32. These clients will handle the secure and reliable exchange of messages between the two, ensuring smooth communication.
+![Diagram showing the flow of data and how commands are sent to the ESP32 using MQTT using Node-RED.](./images/esp32-mqtt-node-red.png){data-zoomable}
+_Diagram showing the flow of data and how commands are sent to the ESP32 using MQTT using Node-RED_
+
+In our setup, Node-RED will publish commands to the MQTT broker, and the ESP32 will subscribe to topics to receive responses. The ESP32 will then perform actions, such as controlling an LED. To facilitate this, we’ll create two MQTT clients in FlowFuse (since the MQTT broker is already set up and managed by FlowFuse, you don’t need to worry about its configuration or maintenance). One client will be for Node-RED, and the other will be for the ESP32. These clients will handle the secure and reliable exchange of messages, ensuring smooth communication between the two devices.
 
 **To Create MQTT Clients in FlowFuse:**
 
