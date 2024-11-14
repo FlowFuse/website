@@ -26,19 +26,17 @@ The ESP32 is an affordable and powerful microchip that combines Wi-Fi and Blueto
 
 To follow this tutorial, you'll need the following:
 
-- ESP32 microcontroller: The hardware you'll be using for this project.
-- USB cable: To connect the ESP32 to your computer.
-- Arduino IDE: Installed and set up to program your ESP32. Download the Arduino IDE if you haven't already done so.
+- **ESP32 microcontroller**: The hardware you'll be using for this project.
+- **USB cable**: To connect the ESP32 to your computer.
+- **Arduino IDE**: Installed and set up to program your ESP32. [Download](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) the Arduino IDE if you haven't already done so.
     - Additionally, if you haven't set up the Arduino IDE for the ESP32 board, please follow this tutorial: [How to Set Up ESP32 with Arduino IDE](https://www.youtube.com/watch?v=CD8VJl27n94)
-- FlowFuse account: This will allow you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on your Node-RED projects with your team, manage and program your edge devices remotely, and provide an MQTT broker with an interface for securely managing clients.
+- **FlowFuse account**: This will allow you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on your Node-RED projects with your team, manage and program your edge devices remotely, and provide an MQTT broker with an interface for securely managing clients.
 
 If you haven’t signed up for a FlowFuse account yet, [sign up](http://app.flowfuse.com/account/create) now.
 
 ## Getting Started with ESP32 and Node-RED
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ecfJ-9MxyVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/ecfJ-9MxyVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In this section, we’ll set up Node-RED on FlowFuse, create an MQTT connection, and configure everything to interact with your ESP32. This will lay the foundation for building your IoT flows and controlling devices.
 
@@ -65,7 +63,7 @@ In our setup, Node-RED will publish commands to the MQTT broker, and the ESP32 w
 2. In the left sidebar, click on "Broker".
 3. In the newly opened interface, click the “Create Client” button.
 4. Enter a username and password for your MQTT client. Confirm the password.
-    - You can leave the default pattern as # for access control, or set a custom pattern if needed.
+    - You can leave the default pattern as `#` for access control, or set a custom pattern if needed.
 
 ![Interface for setting MQTT client details and credentials](./images/mqtt-client-create.png){data-zoomable}
 _Interface for setting MQTT client details and credentials_
@@ -80,41 +78,41 @@ Now that we’ve created the MQTT clients, it’s time to build a Node-RED dashb
 
 **Let's first create a flow to connect to the MQTT broker with the client config we have created:**
 
-1. Drag the mqtt out node onto the canvas in Node-RED.
-2. Double-click the mqtt out node to open the settings.
+1. Drag the **mqtt out** node onto the canvas in Node-RED.
+2. Double-click the **mqtt out** node to open the settings.
 3. Click the pencil icon next to the Server field to open the MQTT broker configuration.
 4. In the configuration, enter the following details:
     - Server: `broker.flowfuse.cloud`
     - Client ID: The Client ID you created earlier.
-    - Username: The MQTT username.
+    - Username: The MQTT username (Client ID).
     - Password: The MQTT password.
-5. Click Add to save the configuration, then select the newly added configuration.
-6. In the Topic field, enter a topic name, such as /LEDControl.
-7. Click Done to close the settings.
-8. Click Deploy in the top-right corner to deploy the flow.
+5. Click "Add" to save the configuration, then select the newly added configuration.
+6. In the Topic field, enter a topic name, such as `/LEDControl`.
+7. Click "Done" to close the settings.
+8. Click "Deploy" in the top-right corner to deploy the flow.
 9. Once deployed, check the MQTT out node for a Connected status, confirming the connection to the MQTT broker.
 
 For this example, we will create a very simple dashboard. If you're not familiar with FlowFuse Dashboard, you can refer to the following blog to get started: [FlowFuse Dashboard: Getting Started](/blog/2024/03/dashboard-getting-started/)
 
-1. Install the @flowfuse/node-red-dashboard from the Node-RED Palette Manager.
-2. Drag two ui-button widgets onto the canvas.
-3. Click on the first button and set the Label to "ON", the Background Color to Green, and the Payload to 1. Adjust the Width and Height as needed.
-4. Click on the second button and set the Label to "OFF", the Background Color to Red, and the Payload to 2.
-5. Connect the output of both buttons to the input of the mqtt out node.
-6. Click Deploy to save the flow.
+1. Install the `@flowfuse/node-red-dashboard` from the Node-RED Palette Manager.
+2. Drag two **ui-button** widgets onto the canvas.
+3. Double-click on the first button and set the Label to "ON", the Background Color to Green, and the Payload to `1`. Adjust the Width and Height as needed.
+4. Double-click on the second button and set the Label to "OFF", the Background Color to Red, and the Payload to `2`.
+5. Connect the output of both buttons to the input of the **mqtt out** node.
+6. Click "Deploy" to save the flow.
 
 {% renderFlow %}
 [{"id":"59887a8115c95eae","type":"tab","label":"Flow 1","disabled":false,"info":"","env":[]},{"id":"02c25e8a30f9379d","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"showPageTitle":true,"navigationStyle":"default","titleBarStyle":"default"},{"id":"cfb2ab9ff30660fc","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"density":"default","pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"d263574af6876c7a","type":"ui-page","name":"ESP32","ui":"02c25e8a30f9379d","path":"/page1","icon":"home","layout":"grid","theme":"cfb2ab9ff30660fc","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"3ae115ea7ede6827","type":"ui-group","name":"Group 1","page":"d263574af6876c7a","width":"6","height":"1","order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"def97b29f5f7baab","type":"mqtt-broker","name":"","broker":"broker.flowfuse.cloud","port":"1883","clientid":"","autoConnect":true,"usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closeRetain":"false","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","willMsg":{},"userProps":"","sessionExpiry":""},{"id":"5a9162986a34a4d6","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"ON","order":1,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"1","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"green","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":120,"wires":[["9239f8a7cca5c858"]]},{"id":"f9c194994d9491a8","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"OFF","order":2,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"2","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"red","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":160,"wires":[["9239f8a7cca5c858"]]},{"id":"9239f8a7cca5c858","type":"mqtt out","z":"59887a8115c95eae","name":"","topic":"/LedControl","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"def97b29f5f7baab","x":390,"y":140,"wires":[]}]
 {% endrenderFlow %}
 
-Now, when you click either the ON or OFF button on the dashboard, it will send either 1 or 2 as the payload. The ESP32 will use this payload in its code to turn the LED on or off. To view the dashboard, switch to the Dashboard 2.0 tab on the right side and click the Open Dashboard button. The dashboard will look like the example below.
+Now, when you click either the "ON" or "OFF" button on the dashboard, it will send either 1 or 2 as the payload. The ESP32 will use this payload in its code to turn the LED on or off. To view the dashboard, switch to the Dashboard 2.0 tab on the right side and click the Open Dashboard button. The dashboard will look similar to the image below.
 
 ![FlowFuse Dashboard Build to control the ESP32 LED](./images/dashboard2.png){data-zoomable}
 _FlowFuse Dashboard Build to control the ESP32 LED_
 
 ### Step 4: Programming ESP32 to receive commands from MQTT and Control LED
 
-Now, let's move on to the final step. Before proceeding, make sure your ESP32 is connected to your laptop or computer via USB. The USB connection is essential for uploading the code (sketch) to the ESP32, which will enable it to connect to the internet and communicate with the MQTT broker.
+Now, let's move on to the final step. Before proceeding, make sure your ESP32 is **connected to your laptop or computer via USB***. The USB connection is essential for uploading the code (sketch) to the ESP32, which will enable it to connect to the internet and communicate with the MQTT broker.
 The ESP32 will subscribe to the MQTT topic we configured earlier (e.g., /LEDControl). Based on the received payload (1 or 2), it will control the LED accordingly — turning it on or off.
 
 **Setting up Arduino IDE:**
@@ -128,7 +126,7 @@ The ESP32 will subscribe to the MQTT topic we configured earlier (e.g., /LEDCont
 
 **Code for ESP32:**
 
-Copy the following code into the Arduino IDE:
+1. Copy the following code into the Arduino IDE:
 
 ```cpp
 #if defined(ESP32)
@@ -147,7 +145,7 @@ const char* password = ""; // Change this to your WiFi password
 const char* mqtt_server = "broker.flowfuse.cloud"; // FlowFuse MQTT broker server
 
 // MQTT client credentials
-const char* mqtt_client_id = "j"; // Replace with your MQTT client ID
+const char* mqtt_client_id = ""; // Replace with your MQTT client ID
 const char* mqtt_username = ""; // Replace with your MQTT username
 const char* mqtt_password = ""; // Replace with your MQTT password
 
@@ -230,9 +228,9 @@ void loop() {
 }
 ```
 
-1. Replace the placeholder values in the code: SSID (your Wi-Fi network's SSID), Wi-Fi Password (your Wi-Fi network's password), MQTT Client ID (the MQTT client ID you generated for esp32), MQTT Username and Password (the MQTT credentials you created).
-2. After you've made these changes, click Upload in the Arduino IDE to upload the code to your ESP32.
-3. Once the upload is complete, open the Serial Monitor (set the baud rate to 115200) to monitor the output.
+2. Replace the placeholder values in the code: SSID (your Wi-Fi network's SSID), Wi-Fi Password (your Wi-Fi network's password), MQTT Client ID (the MQTT client ID you generated for esp32), MQTT Username and Password (the MQTT credentials you created).
+3. After you've made these changes, click "Upload" in the Arduino IDE to upload the code to your ESP32.
+4. Once the upload is complete, open the Serial Monitor (set the baud rate to 115200) to monitor the output.
 
 If everything is set up correctly, you should see the output in the Serial Monitor as shown in the image.
 
@@ -253,7 +251,7 @@ If the port is missing, [Download](https://www.silabs.com/developer-tools/usb-to
 If both devices share the same client ID, they will conflict and cause disconnections.
 
 3. **ESP32 Doesn’t Respond to Commands (LED Not Turning On/Off)**
-    - Solution: Verify the topic in the ESP32 code matches the one in Node-RED (e.g., /LedControl).
+    - Solution: Verify the topic in the ESP32 code matches the one in Node-RED (e.g., /LedControl). If it still doesn't work, try rebooting your ESP32.
 
 ## Conclusion
 
