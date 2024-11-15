@@ -4,7 +4,7 @@ subtitle: Building IoT Flows with ESP32 and FlowFuse
 description:  Learn how to connect your ESP32 with Node-RED using MQTT in this easy-to-follow guide. Build a user-friendly dashboard with FlowFuse Dashboard to control your IoT devices remotely. Ideal for beginners and IoT hobbyists!
 date: 2024-11-14
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/11/images/esp32-with-node-red.png
 keywords: esp32 with node red, node red esp32, connect esp32 to node red, esp node red, esp32 mqtt node red, esp32 node red, esp32 node red mqtt, mqtt esp32 node red, mqtt node red esp32, node red mqtt esp32, node red with esp32
 tags:
  - node-red
