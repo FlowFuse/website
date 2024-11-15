@@ -165,24 +165,18 @@ void setup_wifi() {
 
 // Callback function to handle messages from subscribed topics
 void callback(char* topic, byte* payload, unsigned int length) {
-    Serial.print("Message arrived [");
-    Serial.print(topic);
-    Serial.print("]: ");
 
  String msg;
     for (int i = 0; i < length; i++) {
  msg += (char)payload[i];
  }
-    Serial.println(msg);
 
  // Control LED based on message
     if (msg == "1") {
         digitalWrite(LedPin, HIGH); // Turn LED on
-        Serial.println("LED ON");
  }
     else if (msg == "2") {
         digitalWrite(LedPin, LOW); // Turn LED off
-        Serial.println("LED OFF");
  }
 }
 
