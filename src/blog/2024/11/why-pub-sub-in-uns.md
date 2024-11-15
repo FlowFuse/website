@@ -35,13 +35,13 @@ Now that you have a basic understanding of Pub/Sub, let’s dive into why this a
 
 ### Decoupling Producers and Consumers with Flexible Communication
 
-In a typical manufacturing setup, various systems and machines operate in silos. Sensors, control systems, maintenance platforms, and quality control software** often struggle to share data. This leads to inefficiencies and delays in accessing the right data when it’s needed most. Traditional approaches—such as point-to-point integrations—often become cumbersome as more devices and systems are added to the factory floor.
+In a typical manufacturing setup, various systems and machines operate in silos. Sensors, control systems, maintenance platforms, and quality control software often struggle to share data. This leads to inefficiencies and delays in accessing the right data when it’s needed most. Traditional approaches—such as point-to-point integrations—often become cumbersome as more devices and systems are added to the factory floor.
 
-This is where the Pub-Sub model** shines. In a Pub-Sub system, publishers** (such as IoT devices or machines) generate data, which is then distributed to subscribers (other systems, applications, or users). Crucially, these publishers and subscribers don’t need to know about each other directly. Instead, they rely on a central Namespace to act as a common point for all data streams.
+This is where the Pub-Sub model shines. In a Pub-Sub system, publishers** (such as IoT devices or machines) generate data, which is then distributed to subscribers (other systems, applications, or users). Crucially, these publishers and subscribers don’t need to know about each other directly. Instead, they rely on a central Namespace to act as a common point for all data streams.
 
 By using publish-subscribe in Unified Namespace, industries can create a single reference point for all operational data, allowing systems to "subscribe" to specific data streams that are relevant to them, regardless of where that data originates. For example, a production line monitoring system can easily access data from temperature sensors, pressure gauges, and robotic arms across the factory floor without needing to integrate directly with each individual system.
 
-The Pub-Sub model not only decouples producers (like machines and sensors) from consumers (such as monitoring systems or maintenance platforms), but it also offers flexible communication patterns to meet the diverse needs of modern manufacturing. Whether it’s one-to-one, one-to-many, or many-to-many, Pub-Sub allows data to flow effortlessly across systems without direct connections. This flexibility ensures that as your factory evolves, new devices and applications can easily integrate into the Unified Namespace. For example, a sensor can send data to multiple systems simultaneously, or multiple machines can share data with various subscribers, all without being tightly coupled.
+The Pub-Sub model not only decouples producers from consumers, but it also offers flexible communication patterns to meet the diverse needs of modern manufacturing. Whether it’s one-to-one, one-to-many, or many-to-many, Pub-Sub allows data to flow effortlessly across systems without direct connections. This flexibility ensures that as your factory evolves, new devices and applications can easily integrate into the Unified Namespace. For example, a sensor can send data to multiple systems simultaneously, or multiple machines can share data with various subscribers, all without being tightly coupled.
 
 ### Event-driven and Asynchronous Communication
 
@@ -51,7 +51,7 @@ For instance, a predictive maintenance system can subscribe to real-time sensor 
 
 ### Less Delay, More Efficiency
 
-In many industries, particularly those with IIoT-enabled operations, real-time data is critical for decision-making. Whether it’s adjusting production rates, detecting anomalies, or triggering alerts, Pub-Sub ensures that data is delivered instantly to all relevant subscribers. But In a traditional system, multiple layers of data collection, storage, and processing can introduce **latency**, delaying access to critical information. In manufacturing, even small delays can result in inefficiencies—whether that’s slow machine adjustments, missed production targets, or avoidable equipment failures.
+In industries where IIoT-enabled operations are prevalent, real-time data is essential for effective decision-making. Traditional systems often introduce delays due to multiple layers of data collection, storage, and processing. These delays can result in inefficiencies such as slow machine adjustments, missed production targets, or equipment failures.
 
 The Pub-Sub model reduces latency by immediately pushing data to subscribers as soon as it’s available. There’s no need for systems to poll or wait for periodic updates. Instead, they can respond to real-time events as soon as they occur.
 
