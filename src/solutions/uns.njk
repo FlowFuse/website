@@ -157,7 +157,6 @@ meta:
             <!-- Getting Started -->
             {% set sections = [
                 {
-                    "title": "Getting Started",
                     "articles": [
                         {
                             "title": "Introduction into the UNS",
@@ -180,7 +179,6 @@ meta:
                     ]
                 },
                 {
-                    "title": "Implementation of the UNS",
                     "articles": [
                         {
                             "title": "Data Modeling for your Unified Namespace",
@@ -204,8 +202,7 @@ meta:
                 }
             ] %}
             {% for section in sections %}
-            <div class="pb-12 md:pb-0">
-                <h4 class="w-full max-md:text-center mb-4 text-gray-500 font-light">{{ section.title }}</h4>
+            <div class="pb-4 md:pb-0">
                 <div class="ff-nodered-resources grid grid-cols-1 max-md:text-center">
                     {% for article in section.articles %}
                     <a href="{{ article.url }}">
