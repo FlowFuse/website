@@ -12,7 +12,7 @@ tags:
    - unified namespace
 ---
 
-As the manufacturing industry evolves and becomes increasingly connected through the Industrial Internet of Things, the concept of a Unified Namespace (UNS) has emerged as a critical architecture for centralizing and organizing data. UNS serves as a central reference point where all operational data, from machines to the enterprise, can be accessed in a consistent and structured way. Over time, more and more manufacturers have adopted UNS to simplify data integration and improve real-time visibility across systems.
+As the manufacturing industry evolves and becomes increasingly connected through the Industrial Internet of Things (IIoT), the concept of a Unified Namespace (UNS) has emerged as a critical architecture for centralizing and organizing data. UNS serves as a central reference point where all operational data, from machines to the enterprise, can be accessed in a consistent and structured way. Over time, more and more manufacturers have adopted UNS to simplify data integration and improve real-time visibility across systems.
 
 If you're unfamiliar with UNS, please read our [Introduction to Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) for a basic understanding of UNS.
 
