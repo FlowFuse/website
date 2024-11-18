@@ -12,9 +12,9 @@ tags:
    - unified namespace
 ---
 
-As the manufacturing industry evolves and becomes increasingly connected through the Industrial Internet of Things, the concept of a Unified Namespace (UNS) has emerged as a critical architecture for centralizing and organizing data. UNS serves as a central reference point where all operational data—from machines to sensors—can be accessed in a consistent and structured way. Over time, more and more manufacturers have adopted UNS to simplify data integration and improve real-time visibility across systems.
+As the manufacturing industry evolves and becomes increasingly connected through the Industrial Internet of Things, the concept of a Unified Namespace (UNS) has emerged as a critical architecture for centralizing and organizing data. UNS serves as a central reference point where all operational data, from machines to the enterprise, can be accessed in a consistent and structured way. Over time, more and more manufacturers have adopted UNS to simplify data integration and improve real-time visibility across systems.
 
-If you're unfamiliar with UNS, please read our [Introduction to Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) for a Basic understanding of UNS.
+If you're unfamiliar with UNS, please read our [Introduction to Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) for a basic understanding of UNS.
 
 <!--more-->
 
@@ -85,7 +85,7 @@ As we've discussed, the Pub/Sub model is a game-changer for Unified Namespace ar
 
 To help you leverage the power of MQTT in your manufacturing operations along with Node-RED, Flowfuse offers a robust MQTT broker service. Now, Flowfuse will not only help you build, scale, and manage Node-RED solutions, collaborate across teams, and manage edge devices, but it will also simplify your integration of IoT data streams into your Unified Namespace. For more information on how our FlowFuse MQTT broker Service, read our [MQTT Broker Service announcement](/blog/2024/10/announcement-mqtt-broker/).
 
-[Sign Up](https://app.flowfuse.com/account/create) Now to Streamline Your IIoT Operation from Centralize Place
+[Sign Up](https://app.flowfuse.com/account/create) now to streamline your IIoT operations from centralized place.
 
 ## Conclusion 
 
