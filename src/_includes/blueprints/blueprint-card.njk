@@ -8,15 +8,15 @@
     </div>
     <div class="grid bg-white ff-image-cover blueprint rounded-lg border drop-shadow-md hover:drop-shadow-lg grow">
         <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
-            <div class="ff-image-cover aspect-video border-b">
+            <div class="transition-transform group-hover:scale-105 ff-image-cover aspect-video border-b">
                 {% tileImage item, "./images/og-blog.jpg", "Image with logo and the slogan: Elevate Node-RED with Flowfuse", 285 %}
             </div>
-            <h5 class="mt-6 mb-0 group-hover:underline px-4 font-medium text-lg leading-6">{{ item.data.title }}</h5>
+            <h5 class="mt-4 mb-0 group-hover:underline px-4 font-medium text-lg leading-6">{{ item.data.title }}</h5>
             <p class="text-sm leading-normal font-light pt-1 mb-4 mt-3 px-4 text-gray-500">
                 {{ item.data.description | excerpt | safe }}
             </p>
         </a>
-        <div class="justify-self-end flex flex-row justify-between items-end w-full px-4 py-2 bg-indigo-50/50 mt-auto border-t">
+        <div class="justify-self-end flex flex-row justify-between items-center w-full px-4 py-2 bg-indigo-50/50 mt-auto border-t">
             <div class="flex flex-col">
                 <label for="Author" class="text-xs">Author:</label>
                 {% if author %}
