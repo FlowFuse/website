@@ -29,19 +29,23 @@ _Publish Subscribe Model_
 
 The Pub-Sub model is a way for systems to communicate where one component, called the publisher, sends messages to a central system ( Broker such [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), [RabitMQ](/node-red/protocol/amqp/), and [Kafka](/blog/2024/03/using-kafka-with-node-red/) ), and other components, called subscribers, receive those messages. The publisher doesn’t need to know who the subscribers are, and the subscribers don’t know who the publishers are. The central system, or broker, ensures the right messages go to the right subscribers based on their interests.
 
+Additionally, it’s important to note that the roles of publisher and subscriber are not mutually exclusive. A component can act as a publisher in one context, sending messages to the broker, and as a subscriber in another, receiving messages from the broker.
+
 ## Why Does a UNS Need Pub/Sub?
 
 Now that you have a basic understanding of Pub/Sub, let’s dive into why this architecture is essential for a Unified Namespace.
 
 ### Decoupling Producers and Consumers with Flexible Communication
 
-In a typical manufacturing setup, various systems and machines operate in silos. Sensors, control systems, maintenance platforms, and quality control software often struggle to share data. This leads to inefficiencies and delays in accessing the right data when it’s needed most. Traditional approaches—such as point-to-point integrations—often become cumbersome as more devices and systems are added to the factory floor.
+In traditional manufacturing setups, various systems and machines often operate in silos, requiring point-to-point connections for communication. This means each device or system must be directly linked to others, which quickly becomes complex and cumbersome as the number of systems grows. Point-to-point integrations are hard to scale because each new device needs a dedicated connection. This not only makes data harder to access but also blocks innovation by creating dependencies between systems.
 
-This is where the Pub-Sub model shines. In a Pub-Sub system, publishers (such as IoT devices or machines) generate data, which is then distributed to subscribers (other systems, applications, or users). Crucially, these publishers and subscribers don’t need to know about each other directly. Instead, they rely on a central Namespace to act as a common point for all data streams.
+To learn more about how point-to-point systems restrict innovation, please read the article: [Why the Automation Pyramid Blocks Digital Transformation](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/)
 
-By using Pub-Sub in UNS, industries can create a single reference point for all operational data, allowing systems to "subscribe" to specific data streams that are relevant to them, regardless of where that data originates. For example, a production line monitoring system can easily access data from temperature sensors, pressure gauges, and robotic arms across the factory floor without needing to integrate directly with each individual system.
+The Pub-Sub model provides a more scalable solution. In this model, publishers (such as IoT devices or machines) generate data and send it to a central system. Subscribers (other systems, applications, or users) then receive only the data relevant to them. Crucially, the publishers and subscribers do not need to know about each other, relying instead on a central Namespace to distribute the data efficiently.
 
-The Pub-Sub model not only decouples producers from consumers, but it also offers flexible communication patterns to meet the diverse needs of modern manufacturing. Whether it’s one-to-one, one-to-many, or many-to-many, Pub-Sub allows data to flow effortlessly across systems without direct connections. This flexibility ensures that as your factory evolves, new devices and applications can easily integrate into the UNS. For example, a sensor can send data to multiple systems simultaneously, or multiple machines can share data with various subscribers, all without being tightly coupled.
+By using Pub-Sub in a Unified Namespace (UNS), industries can create a single reference point for all data, enabling systems to subscribe to the data streams they need, without direct connections to every other system. For example, a production line monitoring system can easily access data from temperature sensors, pressure gauges, and robotic arms without the need for complex point-to-point integrations.
+
+Unlike point-to-point systems, the Pub-Sub model allows for flexible communication—whether one-to-one, one-to-many, or many-to-many—without the need for direct connections between each system. This flexibility ensures that as your factory evolves, new devices and applications can easily be integrated into the UNS, driving innovation.
 
 ### Event-driven and Asynchronous Communication
 
@@ -79,13 +83,15 @@ Consider a delivery system In a Point-to-Point setup, all vehicles send data dir
 
 This decoupling of systems improves resilience, meaning that your factory can continue running smoothly even if individual components experience issues.
 
+While the broker is a critical part of the Pub-Sub system and can also go down, this risk can be mitigated. Strategies such as high-availability brokers, failover mechanisms, and clustered deployments can be implemented to prevent downtime and ensure uninterrupted data flow.
+
 ### Taking Action
 
 As we've discussed, the Pub/Sub model is a game-changer for Unified Namespace architectures in the manufacturing industry. One of the most widely adopted protocols for implementing Pub/Sub is MQTT (Message Queuing Telemetry Transport). MQTT is known for its simplicity, efficiency, and low-bandwidth requirements, making it an ideal choice for Industrial applications.
 
-To help you leverage the power of MQTT in your manufacturing operations along with Node-RED, Flowfuse offers a robust MQTT broker service. Now, Flowfuse will not only help you build, scale, and manage Node-RED solutions, collaborate across teams, and manage edge devices, but it will also simplify your integration of IoT data streams into your Unified Namespace. For more information on how our FlowFuse MQTT broker Service, read our [MQTT Broker Service announcement](/blog/2024/10/announcement-mqtt-broker/).
+To help you leverage the power of MQTT in your manufacturing operations along with Node-RED, Flowfuse offers a robust MQTT broker service. Now, Flowfuse will not only help you build, scale, and manage Node-RED solutions, collaborate across teams, and manage edge devices, but it will also simplify your integration of IIoT data streams into your Unified Namespace. For more information on how our FlowFuse MQTT broker Service, read our [MQTT Broker Service Announcement](/blog/2024/10/announcement-mqtt-broker/).
 
-[Sign Up](https://app.flowfuse.com/account/create) now to streamline your IIoT operations from centralized place.
+[Sign Up](https://app.flowfuse.com/account/create) now to streamline your IIoT operations from a centralized place.
 
 ## Conclusion 
 
