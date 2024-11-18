@@ -27,7 +27,7 @@ Before discussing why Publish-Subscribe (Pub/Sub) is essential for a UNS, let's 
 ![Publish Subscribe Model](./images/pub-sub.png){data-zoomable}
 _Publish Subscribe Model_
 
-The Pub-Sub model is a way for systems to communicate where one component, called the publisher, sends messages to a central system ( Broker such [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), [RabitMQ](/node-red/protocol/amqp/), and [Kafka](/blog/2024/03/using-kafka-with-node-red/) ), and other components, called subscribers, receive those messages. The publisher doesn’t need to know who the subscribers are, and the subscribers don’t know who the publishers are. The central system, or broker, ensures the right messages go to the right subscribers based on their interests.
+The Pub-Sub model is a way for systems to communicate where one component, called the publisher, sends messages to a central system ( Broker such as [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), [RabitMQ](/node-red/protocol/amqp/), and [Kafka](/blog/2024/03/using-kafka-with-node-red/) ), and other components, called subscribers, receive those messages. The publisher doesn’t need to know who the subscribers are, and the subscribers don’t know who the publishers are. The central system, or broker, ensures the right messages go to the right subscribers based on their interests.
 
 Additionally, it’s important to note that the roles of publisher and subscriber are not mutually exclusive. A component can act as a publisher in one context, sending messages to the broker, and as a subscriber in another, receiving messages from the broker.
 
