@@ -6,7 +6,11 @@ navTitle: Proof of Concept
 
 ### Cloud trial
 
-If the prospect would like to trial FlowFuse Cloud, they are able to self-service at https://app.flowfuse.com/account/create. If they would like to test with Teams or Enterprise features, you can apply a coupon code to their Stripe account and elevate their Tier, after they create their trial account.
+If the prospect would like to trial FlowFuse Cloud, they are able to self-service at https://app.flowfuse.com/account/create. This will give them a 14-day trial of the Team tier. If they would like to test with Enterprise features, you can apply a coupon code to their Stripe account and elevate their Tier, after they create their trial account.
+
+#### Extending a trial
+
+To extend the trial period, including if a trial has expired already, use the 'Extend Trial' button on the Team Settings page. This is only available to platform Administrators. If you do not have admin access, raise a [CloudProject change request](https://github.com/FlowFuse/CloudProject/issues/new?assignees=&labels=change-request&projects=&template=change-request.yml&title=Change%3A+) with details.
 
 ### Self-hosted trial
 
