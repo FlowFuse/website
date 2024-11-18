@@ -79,7 +79,7 @@ In manufacturing, system downtime is costly. However traditional, monolithic sys
 
 With a Pub-Sub architecture, this is less of a concern. If one publisher (like a sensor or machine) fails or goes offline, the rest of the systems can continue operating as normal. Other sensors or machines can continue to send their data, and subscribers can still receive real-time updates from other sources.
 
-Consider a delivery system In a Point-to-Point setup, all vehicles send data directly to a central dispatch system. If the central dispatch system fails, data from all vehicles is lost. In a Pub-Sub setup, vehicles send their data to a central namespace instead of directly to the dispatch system. If the central dispatch system fails, it doesn’t result in data loss. Vehicles can still send their updates.
+Consider a delivery system in a Point-to-Point setup, all vehicles send data directly to a central dispatch system. If the central dispatch system fails, data from all vehicles is lost. In a Pub-Sub setup, vehicles send their data to a central namespace instead of directly to the dispatch system. If the central dispatch system fails, it doesn’t result in data loss. Vehicles can still send their updates.
 
 This decoupling of systems improves resilience, meaning that your factory can continue running smoothly even if individual components experience issues.
 
