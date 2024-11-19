@@ -4,7 +4,7 @@ subtitle: Discover How Pub/Sub Transforms Unified Namespace into a Scalable, Rea
 description: Explore why integrating Publish/Subscribe (Pub/Sub) with Unified Namespace (UNS) is key to optimizing manufacturing data flow. Learn how this combination reduces latency, improves scalability, and enables real-time decision-making in IIoT systems.
 date: 2024-11-19
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/11/images/why-uns-needs-pub-sub.png
 keywords: unified namespace, pub/sub, mqtt, iiot, manufacturing, real-time data, event-driven, scalability, smart factory, flowfuse, iot integration
 tags:
    - flowfuse
