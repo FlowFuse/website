@@ -43,14 +43,14 @@ If you haven’t signed up for a FlowFuse account yet, [sign up](https://app.flo
 
 The first step is to collect data from your Modbus devices. Node-RED doesn't include Modbus nodes by default, but you can easily add them to your palette.
 
-#### Step 1.1: Install Modbus Nodes
+**Step 1.1: Install Modbus Nodes**
 
 1. Open the **Palette Manager** by clicking the menu icon in the top-right corner of Node-RED and selecting **Palette Manager**.
 2. In the Palette Manager, search for `node-red-contrib-modbus` in the search bar.
 3. Click **Install** to add the Modbus nodes to your Node-RED environment.
 4. Once the nodes are installed, you will see them in the left-side palette under the **Modbus** category. These nodes will allow you to interact with Modbus devices in your flow.
 
-#### Step 1.2: Configure the Modbus Connection
+**Step 1.2: Configure the Modbus Connection**
 
 Next, you'll need to configure the Modbus connection based on your device type. Modbus devices can communicate using two primary protocols: **Modbus RTU** (over serial) or **Modbus TCP** (over Ethernet/Wi-Fi). The specific choice depends on the type of device you are working with.
 
@@ -68,7 +68,7 @@ Next, you'll need to configure the Modbus connection based on your device type. 
    - Set the **Unit ID** (again, this should match the Unit ID you entered earlier).
 5. Once the connection details are filled in, click **Add** to save the configuration, then click **Done**.
 
-#### Step 1.3: Test the Modbus Connection
+**Step 1.3: Test the Modbus Connection**
 
 After configuring the connection, it's time to test the data collection.
 
