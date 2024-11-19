@@ -12,7 +12,7 @@ tags:
    - modbus
 ---
 
-Modbus is a popular protocol in industrial automation, used to connect devices like sensors and PLCs, but it’s not designed to connect easily with cloud platforms or modern IoT systems. MQTT, however, is well-suited for real-time data transfer to the cloud. By using Node-RED, you can bridge the gap between Modbus and MQTT, allowing older equipment to connect to modern IoT networks. Let’s take a look at how you can set this up.
+Modbus is a popular protocol in industrial automation, used to connect devices like sensors and PLCs, but it’s not designed to connect easily with cloud platforms or modern IoT systems. MQTT, however, is well-suited for real-time data transfer to the cloud. Using Node-RED, you can bridge the gap between Modbus and MQTT, allowing older equipment to connect to modern IoT networks. Let’s take a look at how you can set this up.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ For decades, Modbus has been a cornerstone of industrial communication, particul
 
 This challenge is known as the OT/IT gap—the difficulty of linking operational technology (OT) like Modbus devices to information technology (IT) systems and cloud platforms that use newer protocols. While Modbus works well for local control and data collection, it doesn’t easily integrate with cloud or IoT systems. That’s where MQTT comes in.
 
-MQTT is a lightweight, real-time messaging protocol that efficiently transmits data from devices to the cloud, even in environments with limited network connectivity, bandwidth, or power. It’s a perfect fit for IoT applications. However, Modbus and MQTT aren’t natively compatible, which is why bridging the two protocols with a solution like Node-RED is essential.
+MQTT is a lightweight, real-time messaging protocol that efficiently transmits data from devices to the cloud, even in environments with limited network connectivity, bandwidth, or power. It’s a perfect fit for IIoT applications. However, Modbus and MQTT aren’t natively compatible, which is why bridging the two protocols with a solution like Node-RED is essential.
 
 By connecting Modbus to MQTT, you can send data from legacy systems to the cloud for remote monitoring and analysis. This setup enables you to track performance, detect issues, and gain insights from anywhere, without the need to replace existing equipment. The result is improved efficiency, reduced downtime, and better decision-making based on real-time data.
 
@@ -30,12 +30,12 @@ For instance, in a factory where Modbus is still in use, machines like motors, p
 
 ## How to Bridge Modbus to MQTT
 
-In this section, we will cover the steps to bridge Modbus data to MQTT using FlowFuse, leveraging Node-RED's capabilities. The process involves retrieving data from a Modbus device (in this example, we will use OpenSim to simulate data), transforming and processing the data (e.g., scaling raw sensor data into human-readable formats), and sending it to an MQTT broker for cloud integration.
+In this section, we will cover the steps to bridge Modbus data to MQTT using FlowFuse, leveraging Node-RED's capabilities. The process involves retrieving data from a Modbus device (For Practical example, we are using OpenSim to simulate Modbus data), transforming and processing the data (e.g., scaling raw sensor data into human-readable formats), and sending it to an MQTT broker for cloud integration.
 
 ## Prequsite
 
-- A **Modbus data source**, such as a real Modbus device or a simulator like OpenSim.
-- A **FlowFuse account** that allows you to create and deploy multiple **Node-RED** instances securely on the cloud with a single click, collaborate on Node-RED projects with your team, centrally manage and monitor edge devices, manage data pipelines effectively, and use an MQTT broker with an interface for securely managing clients.
+- A **Modbus data source**, such as a real Modbus device or a simulator like ModSim.
+- A **FlowFuse account** that will allow us to create and deploy **Node-RED** instances securely on the cloud with a single click, collaborate on Node-RED projects with your team, centrally manage and monitor edge devices, manage data pipelines effectively, and use an MQTT broker with an interface for securely managing clients.
 
 If you haven’t signed up for a FlowFuse account yet, [sign up](https://app.flowfuse.com/account/create) now.
 
@@ -54,7 +54,7 @@ The first step is to collect data from your Modbus devices. Node-RED doesn't inc
 
 Next, you'll need to configure the Modbus connection based on your device type. Modbus devices can communicate using two primary protocols: **Modbus RTU** (over serial) or **Modbus TCP** (over Ethernet/Wi-Fi). The specific choice depends on the type of device you are working with.
 
-1. Drag a **Modbus Read** node onto your Node-RED workspace.
+1. Drag a **Modbus Read** node onto your Node-RED Canvas.
 2. Double-click on the **Modbus Read** node to open its configuration.
 3. In the configuration window:
    - Enter the **Unit ID** (this is the device address, typically **1**, but it may vary depending on your device).
@@ -77,7 +77,7 @@ After configuring the connection, it's time to test the data collection.
 3. Click **Deploy** in the top-right corner of Node-RED to deploy your flow.
 4. Open the **Debug Panel** on the right side of the Node-RED interface. If the connection is successful, you should see the raw data from your Modbus device in the Debug Panel.
 
-If no data appears, check the connection settings (IP address, Unit ID, port, etc.) and ensure that your Modbus device is correctly configured and accessible. If you're using a simulator like OpenSim, ensure it’s running and properly configured to send data.
+If no data appears, check the connection settings (IP address, Unit ID, port, etc.) and ensure that your Modbus device is correctly configured and accessible. If you're using a simulator like ModSim, ensure it’s running and properly configured to send data.
 
 For more information on how to use Modbus with Node-RED, please read our tutorial on [Using Modbus with Node-RED](/node-red/protocol/modbus/).
 
@@ -99,16 +99,18 @@ Here’s an example of the raw Modbus data I am receiving: `[225, 1013, 29, 50, 
 - 50: Vibration (in tenths of degrees, which would be 5g)
 - 603: Humidity (in tenths of degrees, which would be 60.3%)
 
-Now, we need to convert these raw register values into human-readable formats for cloud integration. For instance, we divide the temperature and vibration by 10 to get the actual values in degrees Celsius and g, respectively, and similarly for other parameters like humidity.
+Now, we need to convert these raw register values into human-readable formats for cloud integration. For instance, we divide the temperature and vibration by 10 to get the actual values in degrees Celsius and g, respectively, and similarly for other parameters like humidity. For pressure, the higher and lower register values are combined to compute the complete value accurately.
 
-In Node-RED, you can achieve this transformation using various nodes. There are several approaches you can take, such as using the Function node for advanced processing, the Change node for simpler operations, or the Template node for defining schemas. In this article, I will demonstrate a low-code approach using the **Change** node to process the data in a clean and organized way.
+To determine how to process raw Modbus data, such as whether to divide by a specific value, concatenate, or apply other transformation formulas, refer to the manual of the sensor you are using for specific instructions.
 
-Additionally, for better organization and accessibility, I will send each metric separately and include additional metadata such as the timestamp and unit.
+For transformation, in Node-RED, you can use various nodes. You can choose the Function node for advanced processing, the Change node for simpler operations, or the Template node for defining schemas. In this article, I will demonstrate a low-code approach using the Change node to process the data in a clean and organized way.
+
+Additionally, for better organization and accessibility, I will send each metric separately and include additional metadata such as the `timestamp` and `unit`.
 
 **For Temperature**:
 
    1. Drag the **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to timestamp function of change node.
+   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
    3. Set `msg.payload.value` to `payload[0]/10`.
    4. Set `msg.payload.unit` to `'c'`.
    5. Click **Done** to save the configuration.
@@ -117,7 +119,7 @@ Additionally, for better organization and accessibility, I will send each metric
 **For Pressure**
 
    1. Drag another **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to timestamp function of change node.
+   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
    3. Set `msg.payload.value` to `$number($string(payload[1]) & $string(payload[2]))` as jsonata expression.
    4. Set `msg.payload.unit` to `ppm`.
    5. Click **Done** to save the configuration.
@@ -126,8 +128,8 @@ Additionally, for better organization and accessibility, I will send each metric
 **For Vibration**
 
    1. Drag another **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to timestamp function of change node.
-   3. Set `msg.payload.value` to `payload[3]/10` as jsonata expression.
+   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
+   3. Set `msg.payload.value` to `payload[3]/10` as a jsonata expression.
    4. Set `msg.payload.unit` to `g`.
    5. Click **Done** to save the configuration.
    6. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
@@ -135,13 +137,13 @@ Additionally, for better organization and accessibility, I will send each metric
 **For Humidity**
 
    1. Drag another **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to timestamp function of change node.
-   3. Set `msg.payload.value` to `payload[4]/10` as jsonata expression.
+   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
+   3. Set `msg.payload.value` to `payload[4]/10` as a jsonata expression.
    4. Set `msg.payload.unit` to `%`.
    5. Click **Done** to save the configuration.
    6. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
 
-Once you have configured all the Change nodes and connected them, add a Debug node to each Change node's output to verify that the transformed data appears as expected. Deploy the flow, then check the output in the Debug Panel to ensure that each metric is correctly formatted with the appropriate timestamp, value, and unit.
+Once you have configured all the Change nodes and connected them, add a **Debug** node to each Change node's output to verify that the transformed data appears as expected. Deploy the flow, then check the output in the Debug Panel to ensure that each metric is correctly formatted with the appropriate timestamp, value, and unit.
 
 ### Step 3: Send Data to an MQTT Broker
 
@@ -149,11 +151,11 @@ Now that the Modbus data is transformed into a human-readable format, the next s
 
 **Step 3.1: Preparing MQTT Broker**
 
-With FlowFuse, you don’t need to set up an MQTT broker separately. FlowFuse provides an integrated MQTT broker service, streamlining the entire process. To use the broker, you’ll first need to create MQTT clients on the platform. These clients are secured with username/password authentication, ensuring that only authorized devices can publish or subscribe to topics.
+With FlowFuse, you don’t need to set up an MQTT broker separately. FlowFuse provides an integrated MQTT broker service teams and enterprise users, streamlining the entire process. To use the broker, you’ll first need to create MQTT clients on the platform. These clients are secured with username/password authentication, ensuring that only authorized devices can publish or subscribe to topics.
 
 **To create MQTT clients:**
 
-1. Navigate to the FlowFuse platform and click on Broker in the left sidebar.
+1. Navigate to the FlowFuse platform and click on "Broker" in the left sidebar.
 2. In the newly opened interface, click the Create Client button.
 3. Enter a username and password for the client.
 4. Configure topic access control patterns if needed, specifying which topics the client can publish or subscribe to.
@@ -176,7 +178,7 @@ Repeat these steps for each metric (e.g., pressure, vibration, humidity), giving
 
 For more information on how to use MQTT with Node-RED, please read [Using MQTT with Node-RED](/blog/2024/06/how-to-use-mqtt-in-node-red/).
 
-Once you’ve configured the MQTT nodes for all your metrics and deployed the flow, check the status at the bottom of each MQTT node. If it shows "connected", your Node-RED flow is successfully publishing data to the MQTT broker.  From here, you can integrate the data with cloud-based analytics platforms, Build dashboards with [FlowFuse Dashboard](https://dashboard.flowfuse.com/), or other systems to enable real-time monitoring, predictive maintenance, and automated decision-making. This setup effectively bridges the gap between legacy Modbus devices and modern IoT infrastructure, empowering smarter, more efficient industrial operations.
+Once you’ve configured the MQTT nodes for all your metrics and deployed the flow, check the status at the bottom of each MQTT node. If it shows "connected", your Node-RED flow is successfully publishing data to the MQTT broker. From here, you can integrate the data with cloud-based analytics platforms, Build IoT dashboards with [FlowFuse Dashboard](https://dashboard.flowfuse.com/), or other systems to enable real-time monitoring, predictive maintenance, and automated decision-making. This setup effectively bridges the gap between legacy Modbus devices and modern IoT infrastructure, empowering smarter, more efficient industrial operations.
 
 To monitor the data being sent to the cloud, you can use MQTT client monitoring software like MQTT Explorer or similar tools.
 
