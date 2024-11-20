@@ -1,6 +1,6 @@
 ---
-title: Bridging Modbus Data to MQTT using Node-RED
-subtitle: Seamlessly Integrating Modbus with MQTT for Smart Industrial Automation using Node-RED
+title: Bridging Modbus Data to MQTT using FlowFuse
+subtitle: Seamlessly Integrating Modbus with MQTT for Smart Industrial Automation using FlowFuse
 description: Learn how to bridge Modbus data to MQTT using Node-RED for cloud integration and real-time industrial monitoring.
 date: 2024-11-20
 authors: ["sumit-shinde"]
