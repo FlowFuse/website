@@ -5,7 +5,7 @@ description: Learn how to bridge Modbus data to MQTT using Node-RED for cloud in
 date: 2024-11-20
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/bridging-modbus-to-mqtt.png
-keywords: 
+keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt
 tags:
    - flowfuse
    - mqtt 
@@ -101,10 +101,10 @@ Let's walk through the transformation process step by step.
 
 Modbus devices often return data in registers that need to be interpreted. For example, a temperature sensor might return a register value like 350, which represents 35.0°C if the sensor stores values in tenths of degrees.
 
-Here’s an example of the raw Modbus data I am receiving from ModSim: `[225, 1013, 29, 50, 603]`. These values represent the following:
-
 ![The ModSim interface, generating simulated Modbus data](./images/modsim.png){data-zoomable}
 _The ModSim interface, generating simulated Modbus data_
+
+Here’s an example of the raw Modbus data I am receiving from ModSim: `[225, 1013, 29, 50, 603]`. These values represent the following:
 
 - `225`: Temperature (in tenths of degrees, which would be 22.5°C)
 - `1013`: Part 1 of the pressure value (higher register)
@@ -116,7 +116,7 @@ We need to convert these raw register values into human-readable formats for clo
 
 To determine how to process raw Modbus data, such as dividing by a specific value, concatenating, or applying other transformation formulas, refer to the manual of the sensor you are using for specific instructions.
 
-In Node-RED, you can use various nodes for transformation. You can choose the Function node for advanced processing, the Change node for simpler operations, or the Template node for defining schemas. In this article, I will demonstrate a low-code approach using the Change node to process the data cleanly.
+In Node-RED, you can use various nodes for transformation. You can choose the [Function node](/node-red/core-nodes/function/) for advanced processing, the [Change node](/node-red/core-nodes/change/) for simpler operations, or the [Template node](/node-red/core-nodes/template/) for defining schemas. In this article, I will demonstrate a low-code approach using the Change node to process the data cleanly.
 
 Additionally, for better organization and accessibility, I will send each metric separately and include additional metadata such as the `timestamp` and `unit`.
 
@@ -137,7 +137,6 @@ _Image showing the Change node rules transforming temperature data_
 4. Click **Done** to save the configuration.
 5. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
 
-
 **For Pressure**:
 
 1. Drag another **Change** node onto the canvas.
@@ -155,7 +154,6 @@ _Image showing the Change node rules transforming pressure data_
 4. Click **Done** to save the configuration.
 5. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
 
-
 **For Vibration**
 
 1. Drag another **Change** node onto the canvas.
@@ -172,7 +170,6 @@ _Image showing the Change node rules transforming vibration data_
 
 4. Click **Done** to save the configuration.
 5. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
-
 
 **For Humidity**
 
@@ -199,15 +196,15 @@ Now that the Modbus data is transformed into a human-readable format, the next s
 
 **Step 3.1: Preparing MQTT Broker**
 
-With FlowFuse, you don’t need to set up an MQTT broker separately. FlowFuse provides an integrated MQTT broker service teams and enterprise users, streamlining the process. You’ll first need to create MQTT clients on the platform to use the broker. These clients are secured with username/password authentication, ensuring only authorized devices can publish or subscribe to topics.
+FlowFuse simplifies the setup process by providing an integrated MQTT broker service for teams and enterprise users. This built-in service eliminates the need for setting up an external broker. To use the FlowFuse MQTT broker, you need to create MQTT clients on the platform. These clients are secured with username and password authentication, ensuring that only authorized devices can publish or subscribe to topics. For more details about the MQTT broker service provided by FlowFuse, refer to the [MQTT Broker Service Announcement](/blog/2024/10/announcement-mqtt-broker/).
 
 **To create MQTT clients:**
 
 1. Navigate to the FlowFuse platform and click "Broker" in the left sidebar.
-2. In the newly opened interface, click the Create Client button.
+2. In the newly opened interface, click the "Create Client" button.
 3. Enter a username and password for the client.
 4. Configure topic access control patterns if needed, specifying which topics the client can publish or subscribe to.
-5. Click Save to create the client.
+5. Click "Save" to create the client.
 6. Once saved, copy the newly added client's Client ID from the list and save it for later use.
 
 **Step 3.2: Configure MQTT Nodes in Node-RED**
@@ -238,7 +235,7 @@ For more information on using MQTT with Node-RED, please read [Using MQTT with N
 
 Once you’ve configured the MQTT nodes for all your metrics and deployed the flow, check the status at the bottom of each MQTT node. If it shows "connected," your Node-RED flow is successfully connected to the broker and publishes data to the MQTT broker. From here, you can integrate the data with cloud-based analytics platforms. Build IoT dashboards with [FlowFuse Dashboard](https://dashboard.flowfuse.com/), or other systems to enable real-time monitoring, predictive maintenance, and automated decision-making. This setup effectively bridges the gap between legacy Modbus devices and modern IoT infrastructure, empowering smarter, more efficient industrial operations.
 
-To monitor the data being sent to the cloud, you can use MQTT client monitoring software, such as MQTT Explorer, or similar tools.
+To monitor the data being sent to the Broker, you can use MQTT client monitoring software, such as MQTT Explorer, or similar tools.
 
 ![Image showing the MQTT Explorer interface monitoring an MQTT broker](./images/mqtt-client-explorer.png){data-zoomable}
 _Image showing the MQTT Explorer interface monitoring an MQTT broker_
