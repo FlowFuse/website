@@ -84,7 +84,7 @@ By selecting a broker that prioritizes flexibility, open standards, and scalabil
 
 FlowFuse is an industrial data platform designed to simplify the management, scaling, and security of industrial IoT applications. Built on top of Node-RED, FlowFuse supports various industrial protocols, including MQTT, to facilitate seamless data communication between devices. FlowFuse addresses many of the challenges mentioned above with its robust set of features.
 
-For instance, FlowFuse helps standardize data before it is sent to the MQTT broker using Node-RED’s powerful low-code programming capabilities. You can define data formats and topics, ensuring consistency and quality across all connected devices. This minimizes issues like data inconsistency and allows for smoother integration of diverse systems. It also supports the implementation of [Sparkplug B](blog/2024/08/using-mqtt-sparkplugb-with-node-red/).
+For instance, FlowFuse helps standardize data before it is sent to the MQTT broker using Node-RED’s powerful low-code programming capabilities. You can define data formats and topics, ensuring consistency and quality across all connected devices. This minimizes issues like data inconsistency and allows for smoother integration of diverse systems. It also supports the implementation of [Sparkplug B](/blog/2024/08/using-mqtt-sparkplugb-with-node-red/).
 
 Security is another area where FlowFuse provides benefit in the context of MQTT. By leveraging MQTT nodes, you can implement robust security as it allows you to configure it with SSL/TLS, username/password authentication, and more. This ensures secure communication between devices, protecting data from unauthorized access and ensuring confidentiality.
 
