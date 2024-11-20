@@ -7,8 +7,9 @@ authors: ["sumit-shinde"]
 image: /blog/2024/11/images/bridging-modbus-to-mqtt.png
 keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt
 tags:
-   - flowfuse
-   - mqtt 
+   - node-red
+   - mqtt
+   - opcua
    - modbus
 ---
 
