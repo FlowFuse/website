@@ -4,7 +4,7 @@ subtitle: Seamlessly Integrating Modbus with MQTT for Smart Industrial Automatio
 description: Learn how to bridge Modbus data to MQTT using Node-RED for cloud integration and real-time industrial monitoring.
 date: 2024-11-20
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/11/images/bridging-modbus-to-mqtt.png
 keywords: 
 tags:
    - flowfuse
@@ -28,9 +28,13 @@ By connecting Modbus to MQTT, you can send data from legacy systems to the cloud
 
 For instance, in a factory where Modbus is still in use, machines like motors, pumps, and conveyors can send their data to the cloud via MQTT. This provides real-time visibility into machine performance and supports predictive maintenance, helping prevent unexpected failures and minimizing costly downtime.
 
+
 ## How to Bridge Modbus to MQTT
 
 In this section, we will cover the steps to bridge Modbus data to MQTT using FlowFuse, leveraging Node-RED's capabilities. The process involves retrieving data from a Modbus device (For Practical example, we are using OpenSim to simulate Modbus data), transforming and processing the data (e.g., scaling raw sensor data into human-readable formats), and sending it to an MQTT broker for cloud integration.
+
+![Bridging Modbus Data to MQTT using Node-RED](./images/bridging-modbus-data-to-mqtt.png){data-zoomable}
+_Bridging Modbus Data to MQTT using Node-RED_
 
 ## Prequsite
 
@@ -66,6 +70,13 @@ Next, you'll need to configure the Modbus connection based on your device type. 
    - For **Modbus TCP**: Enter the **IP address** and **Port** (the default Modbus TCP port is **502**).
    - For **Modbus RTU**: If you're using a serial connection, you'll need to specify the serial port (such as `/dev/ttyUSB0` on Linux or `COM1` on Windows), as well as the baud rate and other serial settings.
    - Set the **Unit ID** (again, this should match the Unit ID you entered earlier).
+
+![Image showing Modbus node configuration for reading holding registers](./images/modbus-connection-configuration.png){data-zoomable}
+_Image showing Modbus node configuration for reading holding registers_
+
+![Image showing Modbus client node configuration](./images/modbus-connection-config.png){data-zoomable}
+_Image showing Modbus client node configuration_
+
 5. Once the connection details are filled in, click **Add** to save the configuration, then click **Done**.
 
 **Step 1.3: Test the Modbus Connection**
@@ -91,13 +102,16 @@ Let's walk through the transformation process step by step.
 
 Modbus devices often return data in registers that need to be interpreted. For example, a temperature sensor might return a register value like 350, which represents 35.0°C if the sensor stores values in tenths of degrees.
 
-Here’s an example of the raw Modbus data I am receiving: `[225, 1013, 29, 50, 603]`. These values represent the following:
+Here’s an example of the raw Modbus data I am receiving from ModSim: `[225, 1013, 29, 50, 603]`. These values represent the following:
 
-- 225: Temperature (in tenths of degrees, which would be 22.5°C)
-- 1013: Part 1 of the pressure value (higher register)
-- 29: Part 2 of the pressure value (lower register)
-- 50: Vibration (in tenths of degrees, which would be 5g)
-- 603: Humidity (in tenths of degrees, which would be 60.3%)
+![The ModSim interface, generating simulated Modbus data](./images/modsim.png){data-zoomable}
+_The ModSim interface, generating simulated Modbus data_
+
+- `225`: Temperature (in tenths of degrees, which would be 22.5°C)
+- `1013`: Part 1 of the pressure value (higher register)
+- `29`: Part 2 of the pressure value (lower register)
+- `50`: Vibration (in tenths of degrees, which would be 5g)
+- `603`: Humidity (in tenths of degrees, which would be 60.3%)
 
 Now, we need to convert these raw register values into human-readable formats for cloud integration. For instance, we divide the temperature and vibration by 10 to get the actual values in degrees Celsius and g, respectively, and similarly for other parameters like humidity. For pressure, the higher and lower register values are combined to compute the complete value accurately.
 
@@ -109,39 +123,74 @@ Additionally, for better organization and accessibility, I will send each metric
 
 **For Temperature**:
 
-   1. Drag the **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
-   3. Set `msg.payload.value` to `payload[0]/10`.
-   4. Set `msg.payload.unit` to `'c'`.
-   5. Click **Done** to save the configuration.
-   6. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
+1. Drag a **Change** node onto the canvas.
+2. Double-click the node to open its configuration panel.
+3. Set the following in the **Set** rules:
+   - Set `msg.data` to `msg.payload`.
+   - Set `msg.payload` to `{}`.
+   - Set `msg.payload.timestamp` to the timestamp function of the Change node.
+   - Set `msg.payload.value` to `data[0] / 10`.
+   - Set `msg.payload.unit` to `'c'`.
 
-**For Pressure**
+![Image showing the Change node rules transforming temperature data](./images/temperature-data-tranformation.png){data-zoomable}
+_Image showing the Change node rules transforming temperature data_
 
-   1. Drag another **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
-   3. Set `msg.payload.value` to `$number($string(payload[1]) & $string(payload[2]))` as jsonata expression.
-   4. Set `msg.payload.unit` to `ppm`.
-   5. Click **Done** to save the configuration.
-   6. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
+4. Click **Done** to save the configuration.
+5. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
+
+
+**For Pressure**:
+
+1. Drag another **Change** node onto the canvas.
+2. Double-click the node to open its configuration panel.
+3. Set the following in the **Set** rules:
+   - Set `msg.data` to `msg.payload`.
+   - Set `msg.payload` to `{}`.
+   - Set `msg.payload.timestamp` to the timestamp function of the Change node.
+   - Set `msg.payload.value` to `$number($string(data[1]) & $string(data[2]))` as a JSONata expression.
+   - Set `msg.payload.unit` to `'ppm'`.
+
+![Image showing the Change node rules transforming pressure data](./images/pressure-data-transformation.png){data-zoomable}
+_Image showing the Change node rules transforming pressure data_
+
+4. Click **Done** to save the configuration.
+5. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
+
 
 **For Vibration**
 
-   1. Drag another **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
-   3. Set `msg.payload.value` to `payload[3]/10` as a jsonata expression.
-   4. Set `msg.payload.unit` to `g`.
-   5. Click **Done** to save the configuration.
-   6. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
+1. Drag another **Change** node onto the canvas.
+2. Double-click the node to open its configuration panel.
+3. Set the following in the **Set** rules:
+   - Set `msg.data` to `msg.payload`.
+   - Set `msg.payload` to `{}`.
+   - Set `msg.payload.timestamp` to the timestamp function of the Change node.
+   - Set `msg.payload.value` to `data[3] / 10` as a JSONata expression.
+   - Set `msg.payload.unit` to `'g'`.
+
+![Image showing the Change node rules transforming vibration data](./images/vibration-data-transformation.png){data-zoomable}
+_Image showing the Change node rules transforming vibration data_
+
+4. Click **Done** to save the configuration.
+5. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
+
 
 **For Humidity**
 
-   1. Drag another **Change** node onto the canvas.
-   2. Double-click to open the node config and set `msg.payload.timestamp` to the timestamp function of the change node.
-   3. Set `msg.payload.value` to `payload[4]/10` as a jsonata expression.
-   4. Set `msg.payload.unit` to `%`.
-   5. Click **Done** to save the configuration.
-   6. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
+1. Drag another **Change** node onto the canvas.
+2. Double-click the node to open its configuration panel.
+3. Set the following in the **Set** rules:
+   - Set `msg.data` to `msg.payload`.
+   - Set `msg.payload` to `{}`.
+   - Set `msg.payload.timestamp` to the timestamp function of the Change node.
+   - Set `msg.payload.value` to `data[4] / 10` as a JSONata expression.
+   - Set `msg.payload.unit` to `'%'`.
+
+![Image showing the Change node rules transforming humidity data](./images/humidity-data-transformation.png){data-zoomable}
+_Image showing the Change node rules transforming humidity data_
+
+4. Click **Done** to save the configuration.
+5. Connect the first output of the **Modbus Read** node to the input of this **Change** node.
 
 Once you have configured all the Change nodes and connected them, add a **Debug** node to each Change node's output to verify that the transformed data appears as expected. Deploy the flow, then check the output in the Debug Panel to ensure that each metric is correctly formatted with the appropriate timestamp, value, and unit.
 
@@ -168,9 +217,19 @@ With FlowFuse, you don’t need to set up an MQTT broker separately. FlowFuse pr
 2. Double-click the node, then click the **+** icon next to the **Server** field to configure your broker details:
    - For FlowFuse MQTT, use `broker.flowfuse.cloud` as the server address.
    - Enter the **Client ID**, **username**, and **password** that you generated earlier.
+
+![Image mqtt broker node configuration](./images/mqtt-broker-config.png){data-zoomable}
+_Image mqtt broker node configuration_
+
 3. Click **Add** to save the configuration.
 4. Select the appropriate **QoS** (Quality of Service) level based on your needs.
 5. Enter the Topic for the MQTT message, such as `plant2/Area4/Cell2/DeviceA/temperature`. This naming convention organizes data by plant, area, cell, and device, making it easier to manage, filter, and scale your system. It also simplifies data segmentation and provides straightforward access when monitoring specific devices or cells.
+
+![Image showing the MQTT Out node configuration ](./images/mqtt-client-config-temperature.png){data-zoomable}
+_Image showing the MQTT Out node configuration_
+
+*Note: For the configuration of MQTT nodes and Modbus, environment variables are used to prevent accidental exposure when sharing. For more information, refer to [Using Environment Variables with Node-RED](/blog/2023/01/environment-variables-in-node-red/).*
+
 6. Click **Done** to save the node.
 7. Connect the output of the Change node, which is transforming the metrics you are sending via MQTT, to the mqtt out node.
 
@@ -181,6 +240,9 @@ For more information on how to use MQTT with Node-RED, please read [Using MQTT w
 Once you’ve configured the MQTT nodes for all your metrics and deployed the flow, check the status at the bottom of each MQTT node. If it shows "connected", your Node-RED flow is successfully publishing data to the MQTT broker. From here, you can integrate the data with cloud-based analytics platforms, Build IoT dashboards with [FlowFuse Dashboard](https://dashboard.flowfuse.com/), or other systems to enable real-time monitoring, predictive maintenance, and automated decision-making. This setup effectively bridges the gap between legacy Modbus devices and modern IoT infrastructure, empowering smarter, more efficient industrial operations.
 
 To monitor the data being sent to the cloud, you can use MQTT client monitoring software like MQTT Explorer or similar tools.
+
+![Image showing the MQTT Explorer interface monitoring an MQTT broker](./images/mqtt-client-explorer.png){data-zoomable}
+_Image showing the MQTT Explorer interface monitoring an MQTT broker_
 
 ## Final Thought
 
