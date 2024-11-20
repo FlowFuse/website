@@ -28,7 +28,6 @@ By connecting Modbus to MQTT, you can send data from legacy systems to the cloud
 
 For instance, in a factory where Modbus is still in use, machines like motors, pumps, and conveyors can send their data to the cloud via MQTT. This provides real-time visibility into machine performance and supports predictive maintenance, helping prevent unexpected failures and minimizing costly downtime.
 
-
 ## How to Bridge Modbus to MQTT
 
 In this section, we will cover the steps to bridge Modbus data to MQTT using FlowFuse, leveraging Node-RED's capabilities. The process involves retrieving data from a Modbus device (For Practical example, we are using OpenSim to simulate Modbus data), transforming and processing the data (e.g., scaling raw sensor data into human-readable formats), and sending it to an MQTT broker for cloud integration.
