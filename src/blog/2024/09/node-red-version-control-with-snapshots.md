@@ -5,11 +5,9 @@ description: Learn how to use snapshots for version control in Node-RED with Flo
 date: 2024-09-26
 authors: ["sumit-shinde", "stephen-mclaughlin"]
 image: /blog/2024/09/images/snapshot-with-node-red-ff.png
+keywords: node red version control, node-red flows, node red backup, node red flow backup
 tags:
-   - posts
-   - node red version control
-   - nodered version control
-   - node-red flow backup
+   - flowfuse
 ---
 
 Version control is essential, especially when multiple people are working on the same Node-RED project. Without it, changes can easily overlap, or worse — accidental updates could break critical flows. FlowFuse solves this challenge with snapshots, allowing you to create backups of your flows, restore previous versions, and safeguard your project from unexpected issues. 

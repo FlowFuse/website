@@ -4,7 +4,16 @@ navTitle: Market Segments
 
 # Market Segments
 
-By understanding the various markets in which we fit, we can align our [product strategy](./strategy.md) to meet those specific needs. For this overview, we will focus on three distinct product markets: Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
+By understanding the various markets in which we fit, we can align our [product strategy](./strategy.md) to meet those specific needs. For this overview, we will focus on four distinct product markets: Enterprise-Grade Node-RED, Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
+
+## Enterprise Grade Node-RED
+
+For companies who are already adopting Node-RED as the base technology, they are looking for a solution to mature their use of Node-RED.
+
+We believe FlowFuse is the only viable commercial solution in this space. Our main competitor here is in-house built solutions; where companies are faced with building their own ways to manage Node-RED securely and at scale. This is usually not their core business, so a commercial solution is an attractive alternative.
+
+Where companies have already invested in their own automations around Node-RED, it is important for FlowFuse to demonstrate the additional value it can bring.
+
 
 ## Industrial IoT Platforms
 

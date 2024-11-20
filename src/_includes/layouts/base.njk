@@ -219,6 +219,7 @@ eleventyComputed:
                         {% navoption "Solutions", null, 0 %}
                             <ul>
                                 {% navoption "Manufacturing", "/solutions/manufacturing/", 1, "cog" %}{% endnavoption %}
+                                {% navoption "Unified Namespace", "/solutions/uns/", 1, "uns" %}{% endnavoption %}
                                 {% navoption "Device management", "/solutions/device-management/", 1, "chip" %}{% endnavoption %}
                                 {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
                             </ul>
@@ -236,7 +237,7 @@ eleventyComputed:
                             </ul>
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
-                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
+                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-4 sm:grid-cols-1 sm:pr-9">
                                 {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
                                 {% navoption "Webinars", "/webinars/", 1, "screen" %}{% endnavoption %}
                                 {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 1, "github", true %}{% endnavoption %}
@@ -245,7 +246,6 @@ eleventyComputed:
                                 {% navoption "Support forums", "https://discourse.nodered.org/c/vendors/flowfuse/24/", 1, "chat-bubble-left-right-sm" %}{% endnavoption %}
                                 {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
                                 {% navoption "Node-RED", "/node-red/", 1, "nr-icon" %}{% endnavoption %}
-                                {% navoption "Unified Namespace", "/unified-namespace/", 1, "info" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
                         {% navoption "Docs", "/docs/", 0, false %}{% endnavoption %}

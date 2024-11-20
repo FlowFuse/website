@@ -5,12 +5,10 @@ description: Learn how to effectively use subflows in Node-RED with this compreh
 date: 2024-09-13
 authors: ["sumit-shinde"]
 image: /blog/2024/09/images/subflow-in-node-red.png
+keywords: node red subflow, nodered subflow, node red subflow environment variables, node red create subflow, node red subflows
 tags:
-   - post
-   - nodered
-   - nodered subflow
-   - subflow node red
-   - how to use subflow in nodered
+    - node-red
+    - how-to
 ---
 
 In traditional programming, managing complex and repetitive tasks can quickly lead to a tangled mess of code that’s hard to maintain and update. To tackle this issue, developers use libraries or modules—reusable chunks of code that help organize functionality, minimize duplication, and keep codebases clean and manageable.

@@ -61,13 +61,13 @@
     {% endfor %}
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--column-buttons mt-6 h-10 gap-x-3">
-            <span class="sticky left-0 h-full z-10"></span>
             {% if hosting == "cloud" %}
+                <span></span>
                 {% set buttons = pricingFeatures.buttons.cloud %}
             {% elif hosting == "self-hosted" %}
                 {% set buttons = pricingFeatures.buttons.selfHosted %}
             {% endif %}
-
+            <label class="align-baseline w-full text-center"></label>
             {% for button in buttons %}
                 <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href="{{ button.url }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
             {% endfor %}

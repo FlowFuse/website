@@ -104,6 +104,6 @@ Our regular release cycle puts the next release on Thursday 14th April.
 We're still in planning stage for the release, but we'll also be beginning to invite
 people from the waiting list to sign-up to FlowFuse Cloud.
 
-For more information, check out the [annoucement blog post](/blog/announcing-flowforge-cloud/).
+For more information, check out the [annoucement blog post](/blog/2022/02/announcing-flowforge-cloud/).
 You can also sign up to our general mailing list below if you want to hear more
 about the work we're doing.

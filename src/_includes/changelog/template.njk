@@ -1,9 +1,12 @@
 <div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
-    <div class="px-2 flex items-center gap-12">
+    <div class="px-2 flex items-end gap-12 justify-between">
         <div class="mb-0">
             <h1 class="mb-0">Changelog</h1>
             <p class="my-0">Getting all the news on new features we ship</p>
         </div>
+        <a href="/changelog/index.xml" class="mb-2 hover:text-blue-800 hover:cursor-pointer" title="View the changelog RSS feed">
+            {% include "components/rss.njk" %}
+        </a>
     </div>
     <ul class="flex flex-wrap border-t">
         {%- asyncEach item in posts -%}

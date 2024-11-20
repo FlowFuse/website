@@ -496,6 +496,11 @@ h4:hover .header-anchor {
     transition: transform 0.5s;
 }
 
+.ff-image-cover.blueprint img,
+.ff-image-cover.blueprint picture {
+    object-position: left top;
+}
+
 .ff-image-cover.scale:hover img,
 .ff-image-cover.scale:hover picture {
     transform: scale(1.1);
@@ -1461,11 +1466,11 @@ h4:hover .header-anchor {
     }
 
     .social-proof-logos-smaller ul {
-        @apply social-proof-ul-common;
+        @apply social-proof-ul-common gap-[15%];
     }
 
     .social-proof-logos-smaller ul li {
-        @apply pb-3;
+        @apply pb-6;
     }
 }
 pre.mermaid {
