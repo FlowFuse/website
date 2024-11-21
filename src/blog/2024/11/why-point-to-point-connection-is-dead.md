@@ -39,25 +39,7 @@ For example, adding an assembly line with multiple machines requiring individual
 
 As the factory expands, every new addition increases the number of connections, each of which must be configured, tested, and maintained separately. This scaling issue is particularly problematic in industries where operations must be agile and adaptable.
 
-### 2. Inflexibility, Limiting Innovation, and Causing Downtime
-
-Point-to-point connections create a rigid and inflexible network. When new technology or equipment is added, the entire system often requires reconfiguration, leading to significant downtime. For instance, if a new machine is introduced to the production line, many connections may need to be adjusted or re-established, which can temporarily halt production.
-
-This downtime disrupts the flow of operations and makes it harder to implement new technologies quickly, slowing down innovation. As a result, manufacturers may struggle to stay competitive, as they can't integrate advancements like automation, real-time analytics, or AI without significant delays and costly interruptions.
-
-### 3. Limited Data Sharing, Visibility, and Delayed Data
-
-Another significant drawback of point-to-point connections is the creation of data silos. Each device or machine communicates only with its direct counterpart, which limits real-time visibility across the system. If critical data isn’t shared between systems, issues can go unnoticed, leading to defective products, downtime, and rework.
-
-Moreover, data often passes through multiple layers of systems (following ISA-95 models) before reaching the decision-makers, causing delays. If a machine's performance data isn't integrated across all relevant teams, such as quality control, issues like defective parts might not be addressed in time.
-
-In modern manufacturing, real-time data is crucial for maintaining efficiency. However, point-to-point connections introduce delays because data often needs to pass through multiple layers of systems (such as control systems (Level 1), supervisory control (Level 2), and manufacturing execution (Level 3)) before reaching higher-level systems (Level 4). Each layer adds a delay, slowing down the response time.
-
-This delay means problems, such as a machine producing defective parts, may not be addressed in time. For instance, if the quality control team doesn’t receive real-time data due to the lack of system integration, defective parts may continue down the line, causing waste and customer complaints.
-
-The inability to easily share data between systems creates gaps in visibility, which hampers managers' and teams' ability to make informed decisions. In fast-paced environments where quick action is necessary to fix problems and optimize production, this lack of data visibility can slow down decision-making and negatively impact efficiency and profitability.
-
-### 4. High Costs Over Time and Maintenance Complexity
+### 2. High Costs Over Time and Maintenance Complexity
 
 While P2P connections may appear cost-effective in the short term, their maintenance becomes increasingly expensive as the number of systems grows. Each new system requires additional connections, increasing the installation, labor, and maintenance costs. Over time, the complexity of managing an extensive web of connections adds a significant financial and technical burden.
 
@@ -78,6 +60,20 @@ However, as the company grows and adds more systems, the number of required conn
 As the number of connections increases, so do the costs for installation, labor, maintenance, and troubleshooting. Initially, the cost of setting up these connections may be low, but as the system scales, the cost of managing, updating, and fixing the growing number of connections becomes much higher.
 
 The exponential growth in connections makes the system harder to maintain and more expensive over time. Each change or update requires significant labor to adjust multiple systems, increasing operational costs and reducing flexibility.
+
+### 3. Inflexibility, Limiting Innovation, and Causing Downtime
+
+Point-to-point connections create a rigid and inflexible network. When new technology or equipment is added, the entire system often requires reconfiguration, leading to significant downtime. For instance, if a new machine is introduced to the production line, many connections may need to be adjusted or re-established, which can temporarily halt production.
+
+This downtime disrupts the flow of operations and makes it harder to implement new technologies quickly, slowing down innovation. As a result, manufacturers may struggle to stay competitive, as they can't integrate advancements like automation, real-time analytics, or AI without significant delays and costly interruptions.
+
+### 4. Limited Data Sharing, Visibility, and Delayed Data
+
+Point-to-point connections often result in data silos, where each device or machine communicates only with its direct counterpart. This isolation limits visibility across the system, making it difficult to share critical data in real time. As a result, issues such as defective products, downtime, and rework can go unnoticed until it’s too late.
+
+In modern manufacturing, real-time data is essential for efficiency. However, point-to-point connections introduce delays as data must pass through multiple layers (following ISA-95 model) such as control systems (Level 1), supervisory control (Level 2), and manufacturing execution (Level 3)—before reaching higher-level systems (Level 4). Each additional layer adds latency, slowing response times and delaying the identification of problems.
+
+Without integrated data across teams, like quality control, issues such as defective parts may not be addressed in time, leading to waste and customer complaints. The lack of seamless data sharing creates visibility gaps, slowing decision-making and hindering the ability to act quickly. In fast-paced environments, this lack of timely data can significantly impact both efficiency and profitability.
 
 ### 5. Security Vulnerabilities
 
@@ -101,7 +97,7 @@ A UNS also improves data sharing. All data is collected in one place, so any sys
 ![Publish-Subscribe Archtecture](./images/pub-sub.png){data-zoomable}
 _Publish-Subscribe Archtecture_
 
-We use a **publish-subscribe (pub/sub)** architecture to implement a hub-and-spoke model in a UNS. In this architecture, instead of connecting devices directly to each other, they send data to a central broker, and other devices can subscribe to the data they need. This approach eliminates the need for a complex network of point-to-point connections, making it easier to scale, update, and maintain the system.
+We use a **publish-subscribe (pub/sub)** architecture to implement a hub-and-spoke model in a UNS. In this architecture, devices, systems send data to a central broker, and other devices can subscribe to the data they need. This approach eliminates the need for a complex network of point-to-point connections, making it easier to scale, update, and maintain the system.
 
 This model addresses all the significant problems of point-to-point connections. For more information on how pub/sub solves these problems or why UNS needs pub/sub, read the article: [Why UNS Needs Pub/Sub](/blog/2024/11/why-pub-sub-in-uns/).
 
@@ -110,7 +106,7 @@ This model addresses all the significant problems of point-to-point connections.
 ![Unified Namespace](./images/nr-in-uns.png){data-zoomable}
 _Unified Namespace_
 
-To simplify the creation of a UNS in your manufacturing environment, FlowFuse provides an integrated MQTT broker service. The platform makes building, scaling, and managing Node-RED solutions easy. It supports seamless connections between devices, services, and APIs using over 5,000 community-contributed nodes for data collection. FlowFuse also enables efficient data transformation and visualization with a low-code approach, remote management of edge devices, and team collaboration on projects. With everything centralized on one platform, FlowFuse offers high security, scalability, and availability to optimize and maintain your system effectively.
+To simplify the creation of a UNS in your manufacturing environment, [FlowFuse](/) provides an integrated MQTT broker service. The platform makes building, scaling, and managing Node-RED solutions easy. It supports seamless connections between devices, services, and APIs using over 5,000 community-contributed nodes for data collection. FlowFuse also enables efficient data transformation and visualization with a low-code approach, remote management of edge devices, and team collaboration on projects. With everything centralized on one platform, FlowFuse offers high security, scalability, and availability to optimize and maintain your system effectively.
 
 [Sign up](https://app.flowfuse.cloud/account/create/) now to start building your own Unified Namespace and take the first step toward a more efficient and connected manufacturing system.
 
