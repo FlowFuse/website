@@ -84,7 +84,7 @@ wget <link of the latest tar.gz release>
 
 The `flowforge.yml` file was updated to include our domain in key fields: `domain`, `base_url`, and `broker.public_url`. These adjustments ensure that instance names on Docker platforms incorporate your domain, provide accurate URLs for accessing the platform, and specify the correct URL for devices to connect to the broker if different from `broker.url`. Additionally, in the `docker-compose.yml` file, we configured `VIRTUAL_HOST` and `LETSENCRYPT_HOST` to reflect our domain.
 
-For more details on these configuration changes, refer to the [documentation](/docs/install/docker/configuration/#configuring-flowfuse).
+For more details on these configuration changes, refer to the [documentation](/docs/install/docker/configuration/).
 
 ### Securing Communication with SSL
 
