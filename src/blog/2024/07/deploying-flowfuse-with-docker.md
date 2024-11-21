@@ -16,6 +16,8 @@ With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored plat
 
 <!--more-->
 
+*Note: While the approach provided in this article is an older method for deploying FlowFuse and still works, I recommend following the newer, simpler, and quicker approach. For more details, refer to the official [Docker documentation](/docs/install/docker/).*
+
 ## What is Docker?
 
 [Docker](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-an-image/) is an open-source platform that simplifies how applications are deployed, scaled, and managed through containerization. It enables you to package all components required by your project such as code, libraries, and dependencies into a single, portable unit known as a [Docker container](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-a-container/). These containers ensure consistency in application environments and ease deployment by ensuring that applications run predictably across different computing environments, whether on a developer's laptop, a server, or a cloud platform.
