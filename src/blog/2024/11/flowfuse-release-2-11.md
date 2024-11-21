@@ -24,7 +24,7 @@ If you're using FlowFuse Cloud, you'll have already noticed a big improvement to
 ![Screenshot of the new navigation sidebar in FlowFuse](./images/screenshot-sidebar.png){data-zoomable}
 _Screenshot of the improve left-side navigation in FlowFuse_
 
-This is the first stage of a navigation revamp we're working on, that will represent a big improvement for navigation around FlowFUse, and help make managing your applications easier.
+This is the first stage of a navigation revamp we're working on, that will represent a big improvement for navigation around FlowFuse, and help make managing your applications easier.
 
 You'll notice we've renamed "Devices" to "Edge Devices" to make it clearer that these are _instances of Node-RED_ that are running on devices, rather than just a record of the device itself. We've also separated out many of the pages into sections, making it easier to find what you're looking for, and giving us scope to add in more in the coming weeks, which will make it easy to jump straight to the features you need.
 
