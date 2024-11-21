@@ -18,6 +18,9 @@ Manufacturing has changed significantly over the years, driven by new technology
 
 ## What are Point-to-Point Connections?
 
+![Point-to-point connection](./images/pixelcut-export-4.png){data-zoomable}
+_Point-to-point connection_
+
 Point-to-point (P2P) connections are direct links between two systems or devices, allowing them to communicate with each other. They can be physical, like cables, or network-based (client-server), like a machine sending data to a server.
 
 In a P2P setup, each connection links exactly two systems. These systems could be hardware, software, or even databases, exchanging data tailored to their needs.
@@ -86,17 +89,26 @@ For example, imagine a situation where a hacker gains access to a machine’s co
 
 ## Unified Namespace: The Modern Solution
 
+![Hub and Spoke Model](./images/HUB.png){data-zoomable}
+_Hub and Spoke Model_
+
 A Unified Namespace (UNS) is a more straightforward way to connect devices and systems in a factory. Instead of having separate connections between each device, everything is connected through one central hub, which we call the **hub-and-spoke** model. This means devices don’t need to be directly linked to each other, making the system easier to manage and maintain; for more information on Unified Namespace, read our article: [Introduction to unified namespace](/blog/2023/12/introduction-to-unified-namespace/).
 
 With a UNS, adding new devices or systems becomes straightforward. Rather than setting up multiple direct connections—like in a point-to-point system—new devices (spokes) connect to the central hub. This reduces the complexity of growing your system and eliminates downtime. If equipment is replaced or updated, only that device needs to be reconnected to the hub rather than reconfiguring the entire network.
 
 A UNS also improves data sharing. All data is collected in one place, so any system that needs it can access it in real time. This leads to quicker decisions and faster responses to problems. With fewer connections to manage, the costs of maintaining the system are lower. Plus, the central hub makes the whole system more secure, as fewer direct connections need to be protected.
 
+![Publish-Subscribe Archtecture](./images/pub-sub.png){data-zoomable}
+_Publish-Subscribe Archtecture_
+
 We use a **publish-subscribe (pub/sub)** architecture to implement a hub-and-spoke model in a UNS. In this architecture, instead of connecting devices directly to each other, they send data to a central broker, and other devices can subscribe to the data they need. This approach eliminates the need for a complex network of point-to-point connections, making it easier to scale, update, and maintain the system.
 
 This model addresses all the significant problems of point-to-point connections. For more information on how pub/sub solves these problems or why UNS needs pub/sub, read the article: [Why UNS Needs Pub/Sub](/blog/2024/11/why-pub-sub-in-uns/).
 
 [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) is a widely used for implementing the publish-subscribe model. It is lightweight, efficient, and works well in manufacturing environments where network reliability can be inconsistent. 
+
+![Unified Namespace](./images/nr-in-uns.png){data-zoomable}
+_Unified Namespace_
 
 To simplify the creation of a UNS in your manufacturing environment, FlowFuse provides an integrated MQTT broker service. The platform makes building, scaling, and managing Node-RED solutions easy. It supports seamless connections between devices, services, and APIs using over 5,000 community-contributed nodes for data collection. FlowFuse also enables efficient data transformation and visualization with a low-code approach, remote management of edge devices, and team collaboration on projects. With everything centralized on one platform, FlowFuse offers high security, scalability, and availability to optimize and maintain your system effectively.
 
