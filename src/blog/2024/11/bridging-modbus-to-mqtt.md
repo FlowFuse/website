@@ -13,7 +13,7 @@ tags:
    - modbus
 ---
 
-Modbus is a popular protocol in industrial automation used to connect devices like sensors and PLCs, but it’s not designed to connect easily with cloud platforms or modern IoT systems. MQTT, however, is well-suited for real-time data transfer to the cloud. Using Node-RED, you can bridge the gap between Modbus and MQTT, allowing older equipment to connect to modern IoT networks. Let’s take a look at how you can set this up.
+Modbus is a popular protocol in industrial automation used to connect devices like sensors and PLCs, but it’s not designed to connect easily with cloud platforms or modern IoT systems. MQTT, however, is well-suited for real-time data transfer to the cloud. Using Node-Red, you can bridge the gap between Modbus and MQTT, allowing older equipment to connect to modern IoT networks. Let’s take a look at how you can set this up on the FlowFuse Platform. 
 
 <!--more-->
 
