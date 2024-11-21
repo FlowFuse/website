@@ -54,4 +54,3 @@ jobs:
       - name: Test the website
         run: npm run test
         working-directory: 'website'
-
