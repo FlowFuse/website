@@ -85,7 +85,7 @@ For example, imagine a situation where a hacker gains access to a machine’s co
 
 ## Unified Namespace: The Modern Solution
 
-![Hub and Spoke Model](./images/HUB.png){data-zoomable}
+![Hub and Spoke Model](./images/hub.png){data-zoomable}
 _Hub and Spoke Model_
 
 A Unified Namespace (UNS) is a more straightforward way to connect devices and systems in a factory. Instead of having separate connections between each device, everything is connected through one central hub, which we call the **hub-and-spoke** model. This means devices don’t need to be directly linked to each other, making the system easier to manage and maintain; for more information on Unified Namespace, read our article: [Introduction to unified namespace](/blog/2023/12/introduction-to-unified-namespace/).
