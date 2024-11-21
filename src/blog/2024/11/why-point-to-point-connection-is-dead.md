@@ -2,7 +2,7 @@
 title: "UNS: Why Point-to-point Connection is Dead"
 subtitle: Why the Traditional Point-to-Point Connection Model is Holding Back Manufacturing Innovation and How Unified Namespace (UNS) Can Transform Factory Operations
 description: Learn why point-to-point connections are outdated in modern manufacturing and how a Unified Namespace (UNS) simplifies system integration, enhances data sharing, and improves scalability and security.
-date: 2024-11-13
+date: 2024-11-25
 authors: ["sumit-shinde"]
 image: 
 keywords: 
