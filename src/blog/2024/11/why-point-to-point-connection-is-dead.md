@@ -5,7 +5,7 @@ description: Learn why point-to-point connections are outdated in modern manufac
 date: 2024-11-25
 authors: ["sumit-shinde"]
 image: 
-keywords: 
+keywords: uns, cons of p2p, cons of point-to-point connection, drawbacks of point-to-point connection, publish-subscribe, mqtt
 tags:
    - flowfuse
    - mqtt 
