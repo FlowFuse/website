@@ -4,7 +4,7 @@ subtitle: Why the Traditional Point-to-Point Connection Model is Holding Back Ma
 description: Learn why point-to-point connections are outdated in modern manufacturing and how a Unified Namespace (UNS) simplifies system integration, enhances data sharing, and improves scalability and security.
 date: 2024-11-25
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2024/11/images/why-point-to-point-connection-dead.png
 keywords: uns, cons of p2p, cons of point-to-point connection, drawbacks of point-to-point connection, publish-subscribe, mqtt
 tags:
    - flowfuse
@@ -18,7 +18,7 @@ Manufacturing has changed significantly over the years, driven by new technology
 
 ## What are Point-to-Point Connections?
 
-![Point-to-point connection](./images/pixelcut-export-4.png){data-zoomable}
+![Point-to-point connection](./images/p2p.png){data-zoomable}
 _Point-to-point connection_
 
 Point-to-point (P2P) connections are direct links between two systems or devices, allowing them to communicate with each other. They can be physical, like cables, or network-based (client-server), like a machine sending data to a server.
