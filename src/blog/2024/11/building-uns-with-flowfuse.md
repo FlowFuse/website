@@ -42,7 +42,7 @@ The first step in building your UNS is collecting data from your devices. The me
 
 As mentioned earlier, Node-RED supports various industrial protocols, from legacy to modern ones. While older protocols like Modbus and OPC-UA were initially designed for machine-to-machine (M2M) communication and cannot directly interact with cloud systems, Node-RED bridges this gap. Using Node-RED, you can collect data from these legacy systems, transform and format it using low-code workflows, and then send it to the cloud via protocols like MQTT, Kafka, AMQP, or others.
 
-In our example, Node-RED can directly collect metrics from sensors using I2C on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/product/device-agent/), which enables you to remotely monitor and build flows securely from the FlowFuse platform in your edge devices. For more details on how to set up and run FlowFuse Device Agent on different devices, refer to this [documentation section](/node-red/hardware/).
+In our example, Node-RED can directly collect metrics from sensors using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/product/device-agent/), which enables you to remotely monitor and build flows securely from the FlowFuse platform in your edge devices. For more details on how to set up and run FlowFuse Device Agent on different devices, refer to this [documentation section](/node-red/hardware/).
 
 ### **Step 2: Transform and Process the Collected metrics**
 
@@ -62,7 +62,7 @@ Raw data from the ADXL345 sensor might look like this:
 [26,0,244,255,37,255]  
 ```  
 
-Using a function node in Node-RED, we can convert this into a human-readable format.
+Using a [function node](/node-red/core-nodes/function/) in Node-RED, we can convert this into a human-readable format.
 
 ![Function node: Transforming Raw Data into Readable Format](./images/function-node.png){data-zoomable}
 _Function node: Transforming Raw Data into Readable Format_
@@ -82,7 +82,7 @@ While this is more readable, it can still be challenging to monitor changes in v
 ![Change node: Calculating Magnitude](./images/change-node-calculating-magnitude.png){data-zoomable}
 _Change node: Calculating Magnitude_
 
-After calculating the Magnitude using a Change node, the data might look like this:
+After calculating the Magnitude using a [Change node](/node-red/core-nodes/change/), the data might look like this:
 
 ```json
 {
@@ -93,11 +93,11 @@ After calculating the Magnitude using a Change node, the data might look like th
 }  
 ```
 
-Now, the data is easier to monitor with a single metric (Magnitude), but this structure is still not optimal for a Unified Namespace (UNS). We need to transform it further to provide more context.
+Now, the data is easier to monitor with a single metric (Magnitude), but this structure is still not optimal for a UNS. We need to transform it further to provide more context.
 
 **Enhanced Data Structure for UNS:**
 
-To make the data more useful for integration and interpretation in a Unified Namespace (UNS), we can transform it to include additional context, such as units and timestamps, while removing unnecessary metrics like the three-axis components (`x`, `y`, `z`). The easiest and most low-code approach for achieving this in Node-RED is to use the Change node, which is specifically designed for formatting and structuring payloads.
+To make the data more useful for integration and interpretation in a UNS, we can transform it to include additional context, such as units and timestamps, while removing unnecessary metrics like the three-axis components (`x`, `y`, `z`). The easiest and most low-code approach for achieving this in Node-RED is to use the Change node, which is specifically designed for formatting and structuring payloads.
 
 ![Change Node: Formatting and structuring payload for UNS](./images/change-node-structering-data.png){data-zoomable}
 _Change Node: Formatting and structuring payload for UNS_
@@ -162,7 +162,7 @@ While Sparkplug B provides a standardized topic model, its hierarchy may not alw
 
 ### **Step 5 : Sending Collected metrics to UNS **
 
-With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the MQTT Out node to send the transformed data to the broker.
+With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/node-red/core-nodes/mqtt/) node to send the transformed data to the broker.
 
 1. Drag an MQTT out node into your flow.  
 2. Configure the node to connect to the FlowFuse MQTT Broker using the client credentials generated earlier.
