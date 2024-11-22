@@ -26,7 +26,9 @@ On the other hand, Node-RED is an open-source visual programming tool used for w
 
 ### Setting up your MQTT Environment
 
-In this guide, we will utilize the [HiveMQ Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/), a fully managed MQTT broker service platform provided by HiveMQ. We will use their free trial as we are learning, but if you want to use it for your project, make sure to use their correct cluster according to your needs. If you prefer to use another cloud platform such as Mosquito, or EMqX, feel free to do so.
+In this guide, we will utilize the [HiveMQ Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/). We will use their free trial as we are learning, but if you want to use it for your project, make sure to use their correct cluster according to your needs. If you prefer to use another cloud platform such as Mosquito, or EMqX, feel free to do so.
+
+FlowFuse has also launched an MQTT broker service that is integrated directly into platform, making it easy to use MQTT with Node-RED. For more information, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
 
 1. Create your account with HiveMQ and log in.
 2. After logging in, you will be asked to select a cluster. Choose the **Starter** cluster, then select the **AWS Cloud** provider and set the tier to **Production S**. Make sure to select the correct region and proceed to create the cluster.

@@ -38,7 +38,11 @@ In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-R
 
 - OPC UA Server: Make sure you have an OPC UA server configured and running with the necessary data. For this blog, we'll use the Prosys OPC UA Simulation Server, which simulates data from CNC machines designed for testing OPC UA client applications and learning the technology. You can download it from [here](https://prosysopc.com/products/opc-ua-simulation-server/).
 
+- FlowFuse Account: A FlowFuse account lets you quickly create, deploy, and manage Node-RED instances in the cloud. Sign up here, [sign up now](https://app.flowfuse.com/account/create).
+
 - [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua): install the node-red contrib package that will enable integration of opcua in Node-RED.
+
+- MQTT Broker: We’ll need an MQTT broker for data communication. FlowFuse offers an integrated MQTT Broker Service within Platform for easy setup. For more details, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
 
 ### Retrieving Data from the OPC UA Server
 
@@ -87,7 +91,7 @@ _Setting the msg.topic with the change node to retrieve data from the OPC UA ser
 Now, in this section, we will show you how to send the collected data to an MQTT broker:
 
 1. Drag the **mqtt out** node onto the canvas.
-2. Double-click on it and configure it with your MQTT broker details. For this guide, I am using the [free HiveMQ public broker](https://www.hivemq.com/mqtt/public-mqtt-broker/), which is specially designed for testing and learning purposes.
+2. Double-click on it and configure it with your MQTT broker details.
 
 ![Configuring the mqtt out node with broker information](./images/mqtt-out-node-config.png){data-zoomable}
 _Configuring the mqtt out node with broker information_
