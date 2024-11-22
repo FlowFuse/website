@@ -15,36 +15,36 @@ As operations become more connected, managing data from different systems and de
 
 <!--more-->
 
-## What is the Unified Namespace?
+## **What is the Unified Namespace?**
 
 ![Unified Namespace](./images/uns.png){data-zoomable}
 _Unified Namespace_
 
-A Unified Namespace (UNS) is a data architecture that allows connecting all your systems, sensors, and machines into a single, easy-to-access network. It helps organize data from different sources consistently, making it simple for everyone in your business to share and find the information they need. By unifying your data, UNS speeds up application development, simplifies system integration, and provides faster insights to improve productivity.  
+A Unified Namespace (UNS) is a data architecture that allows connecting all your systems, sensors, and machines into a single, easy-to-access network. It helps organize data from different sources consistently, making it simple for everyone in your business to share and find the information they need. By unifying your data, UNS speeds up operations, simplifies system integration, and provides faster insights to improve productivity.  
 
 For more information on UNS, please read our article [What is UNS](/blog/2023/12/introduction-to-unified-namespace/).
 
-## The Role of FlowFuse in Industrial Data Operations and Building Your UNS
+## **The Role of FlowFuse in Industrial Data Operations and Building Your UNS**
 
 [FlowFuse](/) bridges the gap between legacy systems and modern technologies. It enables seamless data collection from edge devices, systems, and services while allowing business applications to contribute data to the UNS through its data pipelines.
 
 FlowFuse offers a complete toolkit for building and managing your UNS, featuring Node-RED for data orchestration, MQTT for real-time communication, and an enterprise layer for centralized management and collaboration. This unified solution simplifies the integration of devices, applications, and legacy systems, ensuring smooth data flow and real-time insights across your organization.
 
-## Building UNS with FlowFuse
+## **Building UNS with FlowFuse**
 
-This section will demonstrate how to build a UNS with FlowFuse using a practical example. We will send data from a Raspberry Pi connected to an ADXL345 (for measuring vibration) to the UNS.
+In this section, we'll walk you through building a UNS with FlowFuse using a practical example. We’ll send real-time data from a Raspberry Pi connected to an ADXL345 sensor to the UNS.
 
-The Raspberry Pi will collect real-time data from the ADXL345 sensor. We’ll then process and structure this raw data using FlowFuse, converting it into human-readable formats and performing calculations with the three-axis accelerometer data to calculate vibration magnitude. We will apply standardized topic naming conventions to send this data to the UNS, helping you centralize and manage data seamlessly across your systems.
+The Raspberry Pi will collect data from the ADXL345 sensor, which we’ll process and format in Node-RED using FlowFuse. We’ll calculate vibration magnitude from the raw accelerometer data and apply standardized topic naming conventions to send the data to the UNS. This approach helps centralize and manage data across your systems.
 
 ### **Step 1: Collect Metrics from Devices**
 
-The first step in building your Universal Node System (UNS) is collecting data from your devices. The method you choose will depend on the type of device and the communication protocol it supports. For instance, many devices use serial communication standards like Modbus, while others, such as industrial controllers, might use OPC-UA.
+The first step in building your UNS is collecting data from your devices. The method you choose will depend on the type of device and the communication protocol it supports. For instance, many devices use serial communication standards like Modbus, while others, such as industrial controllers, might use OPC-UA.
 
 As mentioned earlier, Node-RED supports various industrial protocols, from legacy to modern ones. While older protocols like Modbus and OPC-UA were initially designed for machine-to-machine (M2M) communication and cannot directly interact with cloud systems, Node-RED bridges this gap. Using Node-RED, you can collect data from these legacy systems, transform and format it using low-code workflows, and then send it to the cloud via protocols like MQTT, Kafka, AMQP, or others.
 
 In our example, Node-RED can directly collect metrics from sensors using I2C on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/product/device-agent/), which enables you to remotely monitor and build flows securely from the FlowFuse platform in your edge devices. For more details on how to set up and run FlowFuse Device Agent on different devices, refer to this [documentation section](/node-red/hardware/).
 
-### Step 2: Transform and Process the Collected metrics
+### **Step 2: Transform and Process the Collected metrics**
 
 Once you've collected data from your devices, the next step is to transform it using Node-RED. Industrial systems often use different protocols (e.g., Modbus, OPC UA), and each might have its own data structure, which can create challenges for integration—for example, the ADXL345 sensor outputs raw data as electrical signals (buffer data). We first need to format it into a human-readable format and then calculate the Magnitude, a standard vibration monitoring unit.
 
@@ -115,7 +115,7 @@ After formatting, the data will look as shown below:
 
 This format is more structured and consistent, with important labels like `value`, `unit`, and `timestamp` that provide meaningful context. It clarifies that the value represents the Magnitude of vibration in **m/s²** and provides the precise time when the data was collected.
 
-### Step 3: Setting Up Your UNS Broker
+### **Step 3: Setting Up Your UNS Broker**
 
 Now, it's time to configure your UNS broker. As mentioned, we’ll use the [FlowFuse MQTT Broker](/blog/2024/10/announcement-mqtt-broker/). This broker is integrated within the FlowFuse platform to simplify your workflow by eliminating the need for multiple separate services. With FlowFuse, you can monitor and configure everything from a single, centralized platform. This ensures you can efficiently monitor, manage, and configure your UNS without juggling multiple tools or services.
 
@@ -160,7 +160,7 @@ You can also use the [**Sparkplug B**](/blog/2024/08/using-mqtt-sparkplugb-with-
 
 While Sparkplug B provides a standardized topic model, its hierarchy may not always suit the specific needs of your architecture. Alternative methods, such as the Paris and Schultz models, help address these limitations with Sparkplug B topics. However, to keep things simple and avoid unnecessary complexity, we will use plain MQTT with the ISA-95 hierarchy.
 
-### Step 5 : Sending Collected metrics to UNS 
+### **Step 5 : Sending Collected metrics to UNS **
 
 With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the MQTT Out node to send the transformed data to the broker.
 
@@ -197,6 +197,6 @@ With real-time data access, you can create monitoring dashboards using the FlowF
 ![FlowFuse Dashboard Monitoring Vibrations](./images/flowfuse-dashboard.png){data-zoomable}
 _FlowFuse Dashboard Monitoring Vibrations_
 
-## Final Thoughts
+## **Final Thoughts**
 
 FlowFuse makes building a Unified Namespace (UNS) easy by centralizing data from systems, devices, and sensors. With seamless integration of Node-RED, MQTT, and its enterprise layer, FlowFuse ensures smooth data flow, real-time insights, and efficient management. It simplifies operations, enhances productivity, and improves system interoperability, making it easy to adapt your UNS to specific needs and support real-time analytics and automation.
