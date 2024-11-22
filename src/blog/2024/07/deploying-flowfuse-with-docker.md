@@ -16,6 +16,8 @@ With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored plat
 
 <!--more-->
 
+*Note: While the approach provided in this article is an older method for deploying FlowFuse and still works, I recommend following the newer, simpler, and quicker approach. For more details, refer to the official [Docker documentation](/docs/install/docker/).*
+
 ## What is Docker?
 
 [Docker](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-an-image/) is an open-source platform that simplifies how applications are deployed, scaled, and managed through containerization. It enables you to package all components required by your project such as code, libraries, and dependencies into a single, portable unit known as a [Docker container](https://docs.docker.com/guides/docker-concepts/the-basics/what-is-a-container/). These containers ensure consistency in application environments and ease deployment by ensuring that applications run predictably across different computing environments, whether on a developer's laptop, a server, or a cloud platform.
@@ -82,7 +84,7 @@ wget <link of the latest tar.gz release>
 
 The `flowforge.yml` file was updated to include our domain in key fields: `domain`, `base_url`, and `broker.public_url`. These adjustments ensure that instance names on Docker platforms incorporate your domain, provide accurate URLs for accessing the platform, and specify the correct URL for devices to connect to the broker if different from `broker.url`. Additionally, in the `docker-compose.yml` file, we configured `VIRTUAL_HOST` and `LETSENCRYPT_HOST` to reflect our domain.
 
-For more details on these configuration changes, refer to the [documentation](/docs/install/docker/#configuring-flowfuse).
+For more details on these configuration changes, refer to the [documentation](/docs/install/configuration/#configuring-flowfuse).
 
 ### Securing Communication with SSL
 
