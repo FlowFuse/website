@@ -22,7 +22,7 @@ _Unified Namespace_
 
 A Unified Namespace (UNS) is a data architecture that allows connecting all your systems, sensors, and machines into a single, easy-to-access network. It helps organize data from different sources consistently, making it simple for everyone in your business to share and find the information they need. By unifying your data, UNS speeds up application development, simplifies system integration, and provides faster insights to improve productivity.  
 
-For more information on UNS, please read our article [What is UNS](/unified-namespace/).
+For more information on UNS, please read our article [What is UNS](/blog/2023/12/introduction-to-unified-namespace/).
 
 ## The Role of FlowFuse in Industrial Data Operations and Building Your UNS
 
@@ -167,7 +167,7 @@ With your topic naming convention chosen, it’s time to send the data to the UN
 1. Drag an MQTT out node into your flow.  
 2. Configure the node to connect to the FlowFuse MQTT Broker using the client credentials generated earlier.
 
-**Note**: Use environment variables to secure configuration and prevent exposing credentials when sharing flows. This ensures that sensitive data remains secure and allows easy sharing without compromising security. For more details, refer to the [Article: Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+**Note**: Use environment variables to secure configuration and prevent exposing credentials when sharing flows. This ensures that sensitive data remains secure and allows easy sharing without compromising security. For more details, refer to the [Article: Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
 ![Configuring mqtt-broker-config node](./images/mqtt-broker-node-config.png){data-zoomable}
 _Configuring mqtt-broker-config node_
@@ -183,7 +183,7 @@ _Configuring mqtt-out node_
 
 4. Connect the input of the mqtt out node to your data transformation flow and deploy the flow.
 
-For information on how to use MQTT with Node-RED, refer to [Using MQTT with Node-RED](/blog/2024/06/how-to-use-MQTT-in-node-red/)
+For information on how to use MQTT with Node-RED, refer to [Using MQTT with Node-RED](/blog/2024/06/how-to-use-mqtt-in-node-red/)
 
 After deploying, you can monitor the topic hierarchy on the FlowFuse platform by switching to the "Hierarchy" tab in the Broker interface.
 
