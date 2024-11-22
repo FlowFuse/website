@@ -41,25 +41,11 @@ As the factory expands, every new addition increases the number of connections, 
 
 ### 2. High Costs Over Time and Maintenance Complexity
 
-While P2P connections may appear cost-effective in the short term, their maintenance becomes increasingly expensive as the number of systems grows. Each new system requires additional connections, increasing the installation, labor, and maintenance costs. Over time, the complexity of managing an extensive web of connections adds a significant financial and technical burden.
+At first glance, point-to-point (P2P) connections may appear to be a cost-effective and straightforward solution. However, as systems expand, the true costs and complexities become increasingly apparent. In the automation pyramid (ISA-95 model), communication occurs across multiple hierarchical levels, with field devices interacting with controllers, controllers with SCADA, and SCADA with higher-level systems such as MES and ERP.
 
-The costs are not just monetary but also operational. Every change or system update requires careful reconfiguration, testing, and validation, which becomes increasingly complex as more devices are added. Maintaining and troubleshooting such a network can quickly consume resources, reducing the operation's overall efficiency. 
+While this layered structure can keep connections orderly, it quickly becomes a logistical nightmare when scaling. Introducing new devices often triggers a cascade of necessary updates and reconfigurations across various levels. For example, adding a new field device typically requires adjustments to the controller, followed by updates to the SCADA system, creating a ripple effect that impacts the entire system.
 
-For example, let’s say a company starts with 10 systems, each requiring 1 connection to every other system. At first, this means a manageable number of connections—specifically, 10 systems would need 45 connections. This can be calculated using the formula: 
-
-**Number of connections = (n * (n - 1)) / 2**
-
-Where "n" is the number of systems.
-
-However, as the company grows and adds more systems, the number of required connections increases exponentially. If the company adds just 10 more systems, the total connections rise to over 100, and with each system added, the number of connections grows quickly. For example:
-
-- **10 systems** = 45 connections  
-- **20 systems** = 190 connections  
-- **30 systems** = 435 connections  
-
-As the number of connections increases, so do the costs for installation, labor, maintenance, and troubleshooting. Initially, the cost of setting up these connections may be low, but as the system scales, the cost of managing, updating, and fixing the growing number of connections becomes much higher.
-
-The exponential growth in connections makes the system harder to maintain and more expensive over time. Each change or update requires significant labor to adjust multiple systems, increasing operational costs and reducing flexibility.
+This ongoing need for constant reconfiguration not only drives up costs but also introduces significant complexity in maintenance. As the system grows, so does the effort and resources required to manage it, making the P2P model inefficient and prohibitively expensive in environments that demand agility, scalability, and long-term sustainability. Ultimately, the simplicity of P2P connections gives way to an increasingly cumbersome and expensive maintenance burden, undermining its initial advantages.
 
 ### 3. Inflexibility, Limiting Innovation, and Causing Downtime
 
