@@ -8,9 +8,9 @@
         "d2fe": "https://boards.greenhouse.io/flowfuse/jobs/5185319004"
     },
     "messaging": {
-        "tagLine": "The Fastest Way to Build and Operate Industrial Data Solutions",
-        "subtitle": "Connect, collect, transform, visualise, and interact with your Industrial Data in a single platform. Use FlowFuse to manage, scale and secure your Node-RED solutions.",
+        "tagLine": "The Power of Integration at Industrial Scale",
+        "subtitle": "Supercharge your industrial operations with tools built for seamless collaboration, effortless deployment, and scalable solutions. FlowFuse simplifies development, accelerates delivery, and ensures reliability—all in one platform",
         "title": "Enterprise-ready Node-RED for Rapid Industrial Process Improvement",
-        "keywords": "Node-RED, Application Developement, IoT, IIoT, Low-Code, Open-Source, open source"
+        "keywords": "Node-RED, Application Development, IoT, IIoT, Low-Code, Open-Source, open source"
     }
 }
