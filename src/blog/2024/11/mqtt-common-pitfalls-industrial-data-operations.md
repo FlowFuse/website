@@ -22,7 +22,7 @@ The challenges we’ll discuss depend largely on an organization’s specific us
 
 Industrial data often comes from a variety of devices, machines, and software services. For it to be truly useful, it must be standardized and formatted in a way that makes it easily processable by the receiving systems.
 
-A significant issue with MQTT is its **lack of enforced standardization** in data formats. While this flexibility can be advantageous in some contexts, it often means that additional work is required to transform data into a usable format, which can create inefficiencies. Without a standardized approach, data may become inconsistent or poorly structured, which complicates analysis and makes it harder to extract actionable insights.
+A significant challenge with MQTT is its **lack of enforced standardization** in data formats. While this flexibility can be advantageous in some contexts, it often means that additional work is required to transform data into a usable format, which can create inefficiencies. Without a standardized approach, data may become inconsistent or poorly structured, which complicates analysis and makes it harder to extract actionable insights.
 
 To address this, frameworks like **Sparkplug B** provide a standardized way of managing MQTT payloads, ensuring data consistency and quality across devices and systems. Leveraging such frameworks ensures that data is delivered in a structured, reliable format, which ultimately supports more informed decision-making and streamlined operations.
 
