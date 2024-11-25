@@ -30,7 +30,7 @@ For more information on UNS, please read our article [What is UNS](/blog/2023/12
 
 FlowFuse offers a complete toolkit for building and managing your UNS, featuring Node-RED for data orchestration, MQTT for real-time communication, and an enterprise layer for centralized management and collaboration. This unified solution simplifies the integration of devices, applications, and legacy systems, ensuring smooth data flow and real-time insights across your organization.
 
-## **Building UNS with FlowFuse**
+## **Building a UNS with Real-Time Sensor Data**
 
 In this section, we'll walk you through building a UNS with FlowFuse using a practical example. We’ll send real-time data from a Raspberry Pi connected to an ADXL345 sensor to the UNS.
 
