@@ -7,7 +7,6 @@ authors: ["sumit-shinde"]
 image: /blog/2024/10/images/flowfuse-sbom.png
 keywords: node red dependencies, node red security, securing node red, secure node red, sbom security, software bill of materials example, sbom open source, sbom tool, third party library vulnerabilities, industrial iot security, iot application vulnerabilities, iot application security
 tags:
-    - post
     - flowfuse
     - flowfuse features
 ---
