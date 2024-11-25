@@ -7,7 +7,6 @@ authors: ["grey-dziuba"]
 image: /blog/2024/05/images/why-you-need-a-low-code-platform.png
 keywords: low-code, digital Transformation, app development, Citizen Development 
 tags:
-    - posts
     - flowfuse
     - low-code
 ---
