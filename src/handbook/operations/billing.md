@@ -20,27 +20,21 @@ The customer must first configure their billing details within their FlowFuse ac
 
 ## Invoices
 
-For all monthly recurring invoices Stripe will automatically generate an invoice
+Monthly subscriptions will be automatically generated in Stripe 
 and charge customers based on their payment method filed with Stripe.
 
-For annual subscriptions, which could also be self-managed, invoices are created
-in Stripe. These invoices are created manually *after* the customer has agreed
-on the [quote](/handbook/customer/sales/engagements#generating-a-quote) and
-[terms](/handbook/customer/sales/legal/#subscription-agreement).
+Annual subscriptions and invoices are managed in HubSpot, please see instructions below.
 
 ### Creating an invoice
 
-Email billing@flowfuse.com with the following information (available as a template [here](https://app-eu1.hubspot.com/templates/26586079/edit/53524964?q=invoi&page=1):
+To generate an invoice, the corresponding deal and quote must first be in place in HubSpot. This ensures the correct products and amounts are auto-populated.
 
-* Start date:
-* Name:
-* Email:
-* Address:
-* Terms:
-* VAT Number:
-* Cloud or Self-Hosted:
-* Custom terms (if applicable):
-* Stripe Link (if applicable):
+1. Ensure the company details are updated, and include an address and country.
+1. On the Deal page, find the Invoices section on the right-hand side, then click Add and Convert Deal to Subscription.
+2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
+3. Make sure both ACH and Credit Card options are checked for payment.
+4. Click the Finalize button on the top right.
+5. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 
 ## Coupons
 
