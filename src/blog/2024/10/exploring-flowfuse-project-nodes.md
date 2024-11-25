@@ -7,7 +7,6 @@ authors: ["sumit-shinde"]
 image: /blog/2024/10/images/exploring-flowfuse-project-nodes.png
 keywords: node-red mqtt, node red mqtt, flowfuse project nodes, how to enable fast communication between your iot devices, internet based communication in iot, mqtt in iot, mqtt communication protocol, application protocol for iot
 tags:
-   - post
    - flowfuse
    - flowfuse features
    - node-red mqtt
