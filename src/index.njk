@@ -12,8 +12,8 @@ hubspot:
     <div class="max-w-md sm:max-w-screen-lg mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
             <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
-                <h1 class="font-medium leading-tight max-w-xl m-auto lg:m-0 text-center lg:text-left text-indigo-800 text-4xl">
-                    {{ site.messaging.tagLine }}
+                <h1 class="font-medium leading-tight max-w-xl m-auto lg:m-0 text-center lg:text-left text-indigo-800 text-4xl sm:text-5xl lg:text-4xl">
+                    {{ site.messaging.tagLine | safe }}
                 </h1>
                 <p class="mt-6 text-center lg:text-left">
                     {{ site.messaging.subtitle }}
