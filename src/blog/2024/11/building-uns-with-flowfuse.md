@@ -1,6 +1,6 @@
 ---
 title: Building a Unified Namespace (UNS) with FlowFuse
-subtitle: FlowFuse provides a complete toolkit for implementing a Unified Namespace seamlessly
+subtitle: Implement your Unified Namespace seamlessly using our low-code platform
 description: Discover how FlowFuse helps you build a Unified Namespace (UNS) effortlessly, streamlining industrial data sharing, improving operational efficiency, and enabling real-time insights for smarter decision-making.
 date: 2024-11-25
 authors: ["sumit-shinde"]
@@ -192,7 +192,7 @@ _Monitoring your mqtt topic hierarchy within FlowFuse_
 
 Once your data is in the UNS, you have a centralized, real-time view of your operations. This unified structure enables easier access, sharing, and analysis of data across systems, helping you drive better decisions, improve efficiency, and gain valuable insights to optimize your processes.
 
-With real-time data access, you can create monitoring dashboards using the [FlowFuse Dashboard](https://flowfuse.com/product/dashboard/) with a low-code approach, integrate with other cloud solutions, or leverage it further for enhanced analytics or automation.
+With real-time data access, you can create monitoring dashboards using the [FlowFuse Dashboard](/product/dashboard/) with a low-code approach, integrate with other cloud solutions, or leverage it further for enhanced analytics or automation.
 
 ![FlowFuse Dashboard Monitoring Vibrations](./images/flowfuse-dashboard.png){data-zoomable}
 _FlowFuse Dashboard Monitoring Vibrations_
