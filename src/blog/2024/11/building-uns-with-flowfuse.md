@@ -32,7 +32,7 @@ FlowFuse offers a complete toolkit for building and managing your UNS, featuring
 
 ## **Building a UNS with Real-Time Sensor Data**
 
-In this section, we'll walk you through building a UNS with FlowFuse using a practical example. We’ll send real-time data from a Raspberry Pi connected to an ADXL345 sensor to the UNS.
+This example demonstrates how to build a UNS using FlowFuse and a Raspberry Pi with an ADXL345 sensor. We'll cover data acquisition, processing, formatting, and publishing to the UNS, highlighting the benefits of standardized data management and real-time insights.
 
 The Raspberry Pi will collect data from the ADXL345 sensor, which we’ll process and format in Node-RED using FlowFuse. We’ll calculate vibration magnitude from the raw accelerometer data and apply standardized topic naming conventions to send the data to the UNS. This approach helps centralize and manage data across your systems.
 
