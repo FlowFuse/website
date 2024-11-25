@@ -5,14 +5,10 @@ description: Discover how low-code platforms like FlowFuse empower domain expert
 date: 2024-05-22
 authors: ["grey-dziuba"]
 image: /blog/2024/05/images/why-you-need-a-low-code-platform.png
+keywords: low-code, digital Transformation, app development, Citizen Development 
 tags:
-    - posts
     - flowfuse
     - low-code
-    - digital Transformation
-    - app development 
-    - Node-RED
-    - Citizen Development 
 ---
 
 Digital transformation is a series of technological advancements that aim to simplify complex tasks. From calculators and graphical user interfaces (GUIs) to new programming languages, these advancements have enabled individuals to create value that was once beyond their reach. The key is to understand that these tools are not meant to replace expertise but to enhance it, making complex tasks more manageable, speeding up development time, and empowering more people.

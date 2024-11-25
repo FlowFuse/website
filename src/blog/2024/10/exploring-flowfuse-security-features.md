@@ -7,10 +7,10 @@ authors: ["sumit-shinde"]
 image: /blog/2024/10/images/flowfuse-security-features.png
 keywords: node-red security, node red security, how to secure node-red solutions, secured solution for manufacturing, iot vulnerabilities, iot security concerns, iot and security
 tags:
- - flowfuse security features
+ - post
+ - flowfuse
  - flowfuse features
  - node-red security
- - node red security
 ---
 
 When it comes to securing Node-RED applications and its editor, ensuring that your flows and data are protected from unauthorized access can feel like a daunting task. Even after investing considerable time, achieving the right level of security often remains a complex challenge. For enterprises, this goes far beyond access control— security is a cornerstone of protecting sensitive data, maintaining operational continuity, and meeting strict regulatory requirements. A robust security framework not only prevents breaches but also safeguards intellectual property, preserves trust, and shields the organization from costly cyber threats.
