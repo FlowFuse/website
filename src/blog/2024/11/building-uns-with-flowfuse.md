@@ -5,36 +5,24 @@ description: Discover how FlowFuse helps you build a Unified Namespace (UNS) eff
 date: 2024-11-25
 authors: ["sumit-shinde"]
 image:
+keywords: building unified namespace using nodered, nodered uns, uns nodered
 tags:
    - flowfuse
    - uns
    - mqtt
 ---
 
-As operations become more connected, managing data from different systems and devices can be challenging. A Unified Namespace (UNS) centralizes your data, making it easy to access and use across your network. This article demonstrates how to build a UNS with FlowFuse, streamlining data flow and enabling real-time insights.
+As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/solutions/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
 
 <!--more-->
 
-## **What is the Unified Namespace?**
+[FlowFuse](/) makes building a UNS simple. It connects old and new systems, collects data from devices and applications, and streamlines workflows. With tools like Node-RED for data flow, MQTT for real-time updates, and a central management layer, FlowFuse helps you improve efficiency and make better decisions.
 
-![Unified Namespace](./images/uns.png){data-zoomable}
-_Unified Namespace_
-
-A Unified Namespace (UNS) is a data architecture that allows connecting all your systems, sensors, and machines into a single, easy-to-access network. It helps organize data from different sources consistently, making it simple for everyone in your business to share and find the information they need. By unifying your data, UNS speeds up operations, simplifies system integration, and provides faster insights to improve productivity.  
-
-For more information on UNS, please read our article [What is UNS](/blog/2023/12/introduction-to-unified-namespace/).
-
-## **The Role of FlowFuse in Industrial Data Operations and Building Your UNS**
-
-[FlowFuse](/) bridges the gap between legacy systems and modern technologies. It enables seamless data collection from edge devices, systems, and services while allowing business applications to contribute data to the UNS through its data pipelines.
-
-FlowFuse offers a complete toolkit for building and managing your UNS, featuring Node-RED for data orchestration, MQTT for real-time communication, and an enterprise layer for centralized management and collaboration. This unified solution simplifies the integration of devices, applications, and legacy systems, ensuring smooth data flow and real-time insights across your organization.
+This article will show you how to build your UNS using FlowFuse, step by step.
 
 ## **Building a UNS with Real-Time Sensor Data**
 
-This example demonstrates how to build a UNS using FlowFuse and a Raspberry Pi with an ADXL345 sensor. We'll cover data acquisition, processing, formatting, and publishing to the UNS, highlighting the benefits of standardized data management and real-time insights.
-
-The Raspberry Pi will collect data from the ADXL345 sensor, which we’ll process and format in Node-RED using FlowFuse. We’ll calculate vibration magnitude from the raw accelerometer data and apply standardized topic naming conventions to send the data to the UNS. This approach helps centralize and manage data across your systems.
+This section explains how to set up a Unified Namespace (UNS) using FlowFuse, a Raspberry Pi, and an ADXL345 sensor. The Raspberry Pi collects data from the sensor, which we collect and process in Node-RED, calculate vibration magnitude, format it, and send it to the UNS using standardized topic names.
 
 ### **Step 1: Collect Metrics from Devices**
 
