@@ -7,7 +7,6 @@ authors: ["rob-marcer"]
 image: /blog/2023/03/images/function-nodes.png
 keywords: node red function, node red function node, nodered function, node-red function, function node red, node red functions, node red msg.payload function
 tags:
-    - posts
     - node-red
     - node-red function node
     - node red function node
