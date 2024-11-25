@@ -7,7 +7,6 @@ authors: ["sumit-shinde"]
 image: /blog/2024/10/images/quick-ways-to-write-function-nodes.png
 keywords: node red function, node red function node, nodered function, node-red function, function node red, node red functions, node-red function multiple outputs, node red msg.payload function
 tags:
-    - posts
     - node-red
     - node-red function node
     - node red function node
