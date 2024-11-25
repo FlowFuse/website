@@ -123,7 +123,7 @@ Now, it's time to configure your UNS broker. As mentioned, we’ll use the [Flow
 ![FlowFuse Interface for creating MQTT Client](./images/creating-client-interface.png){data-zoomable}
 _FlowFuse Interface for creating MQTT Client_
 
-### Step 4: Choosing Your Topic Naming Convention
+### **Step 4: Choosing Your Topic Naming Convention**
 
 The key to building a successful UNS is organizing your data with a clear and consistent naming convention. A well-designed convention ensures data is accessible and understandable across systems and users, simplifying communication and integration.
 
@@ -148,7 +148,7 @@ You can also use the [**Sparkplug B**](/blog/2024/08/using-mqtt-sparkplugb-with-
 
 While Sparkplug B provides a standardized topic model, its hierarchy may not always suit the specific needs of your architecture. Alternative methods, such as the Paris and Schultz models, help address these limitations with Sparkplug B topics. However, to keep things simple and avoid unnecessary complexity, we will use plain MQTT with the ISA-95 hierarchy.
 
-### **Step 5 : Sending Collected metrics to UNS **
+### **Step 5: Sending Collected metrics to UNS**
 
 With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/node-red/core-nodes/mqtt/) node to send the transformed data to the broker.
 
