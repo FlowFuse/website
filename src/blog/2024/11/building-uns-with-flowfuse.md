@@ -46,7 +46,7 @@ In our example, Node-RED can directly collect metrics from sensors using [I2C](h
 
 ### **Step 2: Transform and Process the Collected metrics**
 
-Once you've collected data from your devices, the next step is to transform it using Node-RED. Industrial systems often use different protocols (e.g., Modbus, OPC UA), and each might have its own data structure, which can create challenges for integration—for example, the ADXL345 sensor outputs raw data as electrical signals (buffer data). We first need to format it into a human-readable format and then calculate the Magnitude, a standard vibration monitoring unit.
+Once you've collected data from your devices, the next step is to transform it using Node-RED. Industrial systems often use different protocols such as Modbus and OPC UA, and each might have its own data structure, which can create challenges for integration.For example, the ADXL345 sensor outputs raw data as electrical signals (buffer data). We first need to format it into a human-readable format and then calculate the Magnitude, a standard vibration monitoring unit.
 
 **Why Data Transformation Matters:**
 
