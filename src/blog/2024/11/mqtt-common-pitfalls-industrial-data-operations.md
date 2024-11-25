@@ -22,7 +22,7 @@ The challenges we’ll discuss depend largely on an organization’s specific us
 
 Industrial data often comes from a variety of devices, machines, and software services. For it to be truly useful, it must be standardized and formatted in a way that makes it easily processable by the receiving systems.
 
-A significant challenge with MQTT is its **lack of enforced standardization** in data formats. While this flexibility can be advantageous in some contexts, it often means that additional work is required to transform data into a usable format, which can create inefficiencies. Without a standardized approach, data may become inconsistent or poorly structured, which complicates analysis and makes it harder to extract actionable insights.
+A significant challenge with MQTT is its lack of enforced standardization in data formats. While this flexibility can be advantageous in some contexts, it often means that additional work is required to transform data into a usable format, leading to inefficiencies. Without a standardized approach, data may become inconsistent or poorly structured, complicating analysis and making it harder to extract actionable insights. Furthermore, the absence of message schema enforcement means that the consumer of the data does not know what to expect. This uncertainty can lead to compatibility issues and increases the effort required to interpret and validate the incoming messages, especially in systems where diverse applications rely on a uniform data structure.
 
 To address this, frameworks like **Sparkplug B** provide a standardized way of managing MQTT payloads, ensuring data consistency and quality across devices and systems. Leveraging such frameworks ensures that data is delivered in a structured, reliable format, which ultimately supports more informed decision-making and streamlined operations.
 
@@ -30,13 +30,13 @@ To address this, frameworks like **Sparkplug B** provide a standardized way of m
 
 MQTT can struggle when transmitting large amounts of data or high-frequency messages, especially when bandwidth is limited. Although the MQTT standard allows message payloads up to 250 MB, sending such large amounts of data can cause delays and performance issues. This is because MQTT was designed for small, lightweight messages, and many brokers set limits on payload sizes. Large payloads, like images or detailed sensor data, can make this even worse.
 
-To avoid these problems, consider compressing your data before sending it, sending data less often by aggregating it, or adjusting the frequency of updates. By managing the size and frequency of messages and designing your topics efficiently, you can keep data flowing smoothly, even in bandwidth-limited environments.
+To avoid these problems, consider compressing your data before sending it, aggregating data to send less frequently, or adjusting the frequency of updates. For large blobs or binary data, it is better to store them on a shared storage layer, such as AWS S3 or network drives, and send a pointer to the data file instead. 
 
 ### Risks of Data Loss and Delivery Issues
 
-In industrial settings, the timely and accurate transmission of data is critical. Data loss, duplication, or out-of-order delivery can significantly impact decision-making, safety, and efficiency. Unfortunately, MQTT’s architecture — based on a publish-subscribe model — can lead to issues like message loss or misordering.
+In industrial settings, the timely and reliable transmission of data is critical. Data loss, duplication, or out-of-order delivery can significantly impact decision-making, safety, and efficiency. While MQTT is generally robust, its publish-subscribe model can sometimes lead to reliability challenges, such as message loss or misordering.
 
-Network disruptions, for example, can cause important messages to be dropped before they reach their destination. Similarly, when a network reconnects after a failure, MQTT might deliver messages out of order or resend some messages, creating duplicates. This can lead to confusion, unreliable analyses, or even unsafe conditions (e.g., in the case of robotic control systems, where mis-sequenced commands can lead to malfunction).
+Network disruptions, for instance, may result in important messages being dropped before they reach their destination. Similarly, when a network reconnects after a failure, MQTT might deliver messages out of order or resend some messages, creating duplicates. These issues can lead to confusion, unreliable analyses, or even unsafe conditions (e.g., in the case of robotic control systems, where mis-sequenced commands can cause malfunctions).
 
 To mitigate these risks, MQTT offers **Quality of Service (QoS) levels**, which define how messages are delivered:
 
@@ -48,27 +48,27 @@ While higher QoS levels offer more reliable message delivery, they also introduc
 
 ### Lack of Acknowledgment Mechanisms
 
-Another key challenge with MQTT and other Pub/Sub architectures, is the **lack of acknowledgment mechanisms**. Unlike traditional request-response communication models, MQTT doesn’t inherently provide a built-in way for the receiver to acknowledge receipt of a message. This lack of visibility can make it difficult to ensure that data has been successfully transmitted, which could lead to uncertainties in operational systems.
+Another key challenge with MQTT is the **lack of acknowledgment mechanisms**. Unlike traditional request-response communication models, MQTT doesn’t inherently provide a built-in way for the receiver to acknowledge receipt of a message. This lack of visibility can make it difficult to ensure that data has been successfully transmitted, which could lead to uncertainties in operational systems.
 
 While MQTT allows for some workarounds (such as implementing tracking mechanisms or using a second topic for acknowledgment), these solutions add complexity to the integration process. By designing systems that include these acknowledgment mechanisms, you can improve reliability, but it requires careful planning and additional development effort.
 
 ### TCP Limitations in MQTT Frameworks
 
-MQTT operates over the TCP/IP protocol to ensure connections between clients and the broker, which introduces several challenges for resource-constrained industrial devices.
+While MQTT operates over the TCP/IP protocol to ensure reliable message delivery, this introduces several challenges, particularly for resource-constrained industrial devices.
 
-TCP requires maintaining a constant connection state, which demands significant processing power and memory. This becomes problematic for some IoT environments, especially on the field level, where many devices are low-powered and designed for minimal energy consumption. The ongoing need for devices to manage and maintain a persistent TCP connection can quickly drain resources, limiting overall system efficiency and scalability.
+TCP requires maintaining a constant connection state, which demands significant processing power and memory. This becomes problematic in industrial IoT environments, where many devices are low-powered and designed for minimal energy consumption. The ongoing need for devices to manage and maintain a persistent TCP connection can quickly drain resources, limiting overall system efficiency and scalability.
 
 Moreover, not all IoT devices are capable of supporting the overhead required by TCP/IP. Simpler devices, such as sensors with limited computing capabilities, may struggle with the complexities of maintaining a reliable TCP connection. This can restrict the deployment of MQTT in systems where lightweight communication protocols, like UDP, would be more appropriate for ensuring broad compatibility and energy efficiency.
 
-### Security Risks and Vulnerabilities
+### Security Risks and Vulnerabilities  
 
-Security is a critical concern when using MQTT in industrial environments. Since MQTT does not include built-in encryption or authentication, it can be vulnerable to various attacks such as data interception, unauthorized access, or man-in-the-middle attacks. In industrial settings, this could result in the manipulation of data, disruption of operations, or even cause safety issues with critical systems.
+Security is a critical concern when using MQTT in industrial environments. While MQTT supports features like encryption and authentication, it is possible to misconfigure the system to bypass these safeguards. A poorly configured MQTT deployment—such as one without authentication or encryption—can leave it vulnerable to attacks like data interception, unauthorized access, or man-in-the-middle attacks. In industrial settings, these vulnerabilities could lead to data manipulation, operational disruptions, or even safety issues in critical systems.  
 
-To prevent these risks, it's essential to implement encryption (SSL/TLS) to protect the data being transmitted between devices and the broker. This ensures that any sensitive information sent over the network is secure and cannot be easily intercepted. Additionally, setting up authentication (such as using passwords, usernames, or certificates) will ensure that only authorized devices or users can connect to the system, preventing unauthorized access.
+To ensure a secure MQTT setup, proper configuration is essential. Implement encryption (SSL/TLS) to protect data transmitted between devices and the broker, safeguarding sensitive information from interception. Enable authentication mechanisms, such as usernames, passwords, or client certificates, to ensure that only authorized devices and users can access the system.  
 
-Another important step is to use access control, which allows you to limit the actions different devices or users can take within the system. For example, you can restrict certain devices from sending commands that could affect safety-critical operations. Monitoring MQTT traffic for unusual or suspicious activity can also help spot potential security threats before they cause harm.
+Using access control measures further strengthens security by limiting the actions that devices or users can perform. For example, restricting permissions for certain commands can prevent unsafe operations in safety-critical environments. Monitoring MQTT traffic for anomalies or suspicious activity can also help identify and address potential threats proactively.  
 
-To further protect data integrity, use message integrity checks to ensure that messages are not tampered with during transmission. By taking these security precautions, you can reduce the chances of cyberattacks and ensure your industrial systems remain safe, reliable, and efficient.
+Lastly, employ message integrity checks to confirm that messages are not tampered with during transmission. With the right configuration and adherence to these best practices, MQTT can be deployed securely to support safe, reliable, and efficient industrial systems.
 
 ### Single Point of Failure and the Risks of Vendor Lock-In
 
