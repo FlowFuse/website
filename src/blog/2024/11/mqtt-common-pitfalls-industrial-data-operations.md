@@ -2,7 +2,7 @@
 title: "Common Pitfalls of Using MQTT in Industrial Data Operations"
 subtitle: We explore 6 Common Pitfalls of using MQTT in Industrial Data Operations and how you can overcome them
 description: Learn about the common pitfalls of using MQTT in industrial data operations, including data quality issues, security risks, and vendor lock-in.
-date: 2024-11-22
+date: 2024-11-25
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/mqtt-common-pitfalls.png
 keywords: mqtt disadvantages, mqtt pitfalls, mqtt challenges, mqtt reliability problems, mqtt drawbacks, mqtt limitations, cons of using mqtt
