@@ -48,7 +48,7 @@ While higher QoS levels offer more reliable message delivery, they also introduc
 
 ### Lack of Acknowledgment Mechanisms
 
-Another key challenge with MQTT is the **lack of acknowledgment mechanisms**. Unlike traditional request-response communication models, MQTT doesn’t inherently provide a built-in way for the receiver to acknowledge receipt of a message. This lack of visibility can make it difficult to ensure that data has been successfully transmitted, which could lead to uncertainties in operational systems.
+Another key challenge with MQTT and other Pub/Sub architectures, is the **lack of acknowledgment mechanisms**. Unlike traditional request-response communication models, MQTT doesn’t inherently provide a built-in way for the receiver to acknowledge receipt of a message. This lack of visibility can make it difficult to ensure that data has been successfully transmitted, which could lead to uncertainties in operational systems.
 
 While MQTT allows for some workarounds (such as implementing tracking mechanisms or using a second topic for acknowledgment), these solutions add complexity to the integration process. By designing systems that include these acknowledgment mechanisms, you can improve reliability, but it requires careful planning and additional development effort.
 
