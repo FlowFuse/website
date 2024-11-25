@@ -7,7 +7,6 @@ authors: ["sumit-shinde"]
 image: /blog/2024/06/images/how-to-use-mqtt-in-node-red.png
 keyword: node-red mqtt, nodered mqtt, mqtt node red, node-red mqtt broker, mqtt broker node red, node red mqtt out, node red mqtt example
 tags:
-   - post
    - flowfuse
    - node-red mqtt
    - mqtt
