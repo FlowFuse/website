@@ -1,5 +1,5 @@
 ---
-title: Building out uns with FlowFuse
+title: Building a Unified Namespace (UNS) with FlowFuse
 subtitle: FlowFuse provides a complete toolkit for implementing a Unified Namespace seamlessly
 description: Discover how FlowFuse helps you build a Unified Namespace (UNS) effortlessly, streamlining industrial data sharing, improving operational efficiency, and enabling real-time insights for smarter decision-making.
 date: 2024-11-25
