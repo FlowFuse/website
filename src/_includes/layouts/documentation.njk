@@ -52,20 +52,6 @@ date: git Last Modified
             {% if nav == 'docs' %}
                 {% include "components/docs-banner.njk" %}
             {% endif %}
-            {% if nav == 'node-red' %}
-            <div class="rounded-md bg-indigo-50 p-3 flex flex-col items-center gap-3">
-                <div class="w-[50px]">
-                    {% image "./images/node-red-icon.png", "Node-RED icon", [50] %}
-                </div>
-                <h5 class="leading-5 text-center font-medium">
-                Is your Node-RED production ready?</h5>
-                <div class="container button-container" id="maturity-cta">
-                    <a href="/node-red/adoption-maturity/" class="ff-btn ff-btn--primary-outlined flex flex-col uppercase">
-                        Take the quiz
-                    </a>
-                </div>
-            </div>
-            {% endif %}
         </div>
     </div>
 </div>
