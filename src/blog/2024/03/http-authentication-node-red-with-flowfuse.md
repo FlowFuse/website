@@ -7,7 +7,6 @@ authors: ["grey-dziuba"]
 image: /blog/2024/03/images/node-authentication.png
 keywords: node red rest api, node red secure dashboard, node red dashboard security, node red http endpoint, node red http in, basic auth, http basic authentication, basic access authentication, http authentication, http bearer, http auth bearer, http bearer auth, http bearer token, http request with bearer token
 tags:
-    - posts
     - flowfuse
     - enhancing node-red security
     - securing node-red projects
