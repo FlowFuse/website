@@ -7,7 +7,6 @@ authors: ["sumit-shinde"]
 image: /blog/2024/10/images/centralize-node-red-instance.png
 keywords: remote device management, easy remote device management, iot device management, iot device monitoring, remote iot management, remote iot device management, iot remote device management, remote access device management, iot remote management software, remote device management platform, node-red management, node red management
 tags:
-   - post
    - flowfuse
    - flowfuse features
 ---
