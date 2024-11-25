@@ -56,7 +56,7 @@ While MQTT allows for some workarounds (such as implementing tracking mechanisms
 
 MQTT operates over the TCP/IP protocol to ensure connections between clients and the broker, which introduces several challenges for resource-constrained industrial devices.
 
-TCP requires maintaining a constant connection state, which demands significant processing power and memory. This becomes problematic in industrial IoT environments, where many devices are low-powered and designed for minimal energy consumption. The ongoing need for devices to manage and maintain a persistent TCP connection can quickly drain resources, limiting overall system efficiency and scalability.
+TCP requires maintaining a constant connection state, which demands significant processing power and memory. This becomes problematic for some IoT environments, especially on the field level, where many devices are low-powered and designed for minimal energy consumption. The ongoing need for devices to manage and maintain a persistent TCP connection can quickly drain resources, limiting overall system efficiency and scalability.
 
 Moreover, not all IoT devices are capable of supporting the overhead required by TCP/IP. Simpler devices, such as sensors with limited computing capabilities, may struggle with the complexities of maintaining a reliable TCP connection. This can restrict the deployment of MQTT in systems where lightweight communication protocols, like UDP, would be more appropriate for ensuring broad compatibility and energy efficiency.
 
