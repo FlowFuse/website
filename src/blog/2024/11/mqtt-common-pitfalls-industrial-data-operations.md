@@ -54,7 +54,7 @@ While MQTT allows for some workarounds (such as implementing tracking mechanisms
 
 ### TCP Limitations in MQTT Frameworks
 
-While MQTT operates over the TCP/IP protocol to ensure reliable message delivery, this introduces several challenges, particularly for resource-constrained industrial devices.
+MQTT operates over the TCP/IP protocol to ensure connections between clients and the broker, which introduces several challenges for resource-constrained industrial devices.
 
 TCP requires maintaining a constant connection state, which demands significant processing power and memory. This becomes problematic in industrial IoT environments, where many devices are low-powered and designed for minimal energy consumption. The ongoing need for devices to manage and maintain a persistent TCP connection can quickly drain resources, limiting overall system efficiency and scalability.
 
