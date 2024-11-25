@@ -6,7 +6,6 @@ date: 2024-09-26
 authors: ["sumit-shinde", "stephen-mclaughlin"]
 image: /blog/2024/09/images/snapshot-with-node-red-ff.png
 tags:
-   - post
    - flowfuse
    - flowfuse features
    - node-red flow backup
