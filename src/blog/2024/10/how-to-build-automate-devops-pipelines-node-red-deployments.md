@@ -6,7 +6,6 @@ date: 2024-10-03
 authors: ["sumit-shinde","stephen-mclaughlin"]
 image: /blog/2024/10/images/creating-and-automating-devops-pipeline-nr.png
 tags:
-   - post
    - flowfuse
    - flowfuse features
 ---
