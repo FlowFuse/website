@@ -2,7 +2,7 @@
 title: "The Death of Point-to-Point: Why You Need a Unified Namespace"
 subtitle: Traditional Point-to-Point Connection Model is Holding Back Manufacturing Innovation - Unified Namespace (UNS) Can Transform Factory Operations
 description: Learn why point-to-point connections are outdated in modern manufacturing and how a Unified Namespace (UNS) simplifies system integration, enhances data sharing, and improves scalability and security.
-date: 2024-11-25
+date: 2024-11-26
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/why-point-to-point-connection-dead.png
 keywords: uns, cons of p2p, cons of point-to-point connection, drawbacks of point-to-point connection, publish-subscribe, mqtt
@@ -73,7 +73,7 @@ These issues compound when scaling across multiple production lines or sites, cr
 
 ## Unified Namespace: The Modern Solution
 
-![Hub and Spoke Model](./images/hub.png){data-zoomable}
+![Hub and Spoke Model](./images/hub.png){data-zoomable}{width="400px"}
 _Hub and Spoke Model_
 
 A Unified Namespace (UNS) is a more straightforward way to connect devices and systems in a factory. Instead of having separate connections between each device, everything is connected through one central hub, which we call the **hub-and-spoke** model. This means devices don’t need to be directly linked to each other, making the system easier to manage and maintain; for more information on Unified Namespace, read our article: [Introduction to unified namespace](/blog/2023/12/introduction-to-unified-namespace/).
