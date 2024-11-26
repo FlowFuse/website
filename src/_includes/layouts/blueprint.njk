@@ -33,9 +33,9 @@ layout: layouts/base.njk
                     {% endif %}
                     {% if dependencies %}
                     <h3 class="mb-3 pt-6">Integrations:</h3>
-                    {% for dependency in dependencies %}
+                    {# {% for dependency in dependencies %}
                         {% renderIntegration integrations[dependency] %}
-                    {% endfor %}
+                    {% endfor %} #}
                     {% endif %}
                     {% include "contact-us-cta-line.njk" %}
                 </div>

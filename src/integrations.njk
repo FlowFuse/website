@@ -1,0 +1,34 @@
+---
+layout: default
+sitemapPriority: 0.9
+pagination:
+  data: integrations
+  size: 12
+  addAllPagesToCollections: true
+title: Integrations
+description:
+  Explore FlowFuse Blueprints, choose templates for quick setups, perfect for learning and fast solution-building.
+  Customizable for unique needs. Simplify your Node-RED projects with FlowFuse Blueprints!
+meta:
+    title: Integrations
+---
+
+{% extends 'layouts/catalog.njk' %}
+
+{% block title %}
+Integrations
+{% endblock %}
+
+{% block description %}
+Explore FlowFuse Blueprints, choose templates for quick setups, perfect for learning and fast solution-building. Customizable for unique needs. Simplify your Node-RED projects with FlowFuse Blueprints!
+{% endblock %}
+
+{% block content %}
+<div class="container m-auto text-left max-w-lg md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4">
+    <ul>
+        {% for integration in integrations %}
+        <li><a href="/integrations/{{ integration.module }}">{{ integration.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

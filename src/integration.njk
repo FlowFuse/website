@@ -1,0 +1,15 @@
+---
+pagination:
+    data: integrations
+    size: 1
+    alias: integration
+    addAllPagesToCollections: true
+layout: default
+tags: integrations
+permalink: "/integrations/{{ integration.module }}/"
+eleventyComputed:
+    title: "{{ integration.name }}"
+    description: "{{ integration.description }}"
+---
+
+{{ integration | json }}
