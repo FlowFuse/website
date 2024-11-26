@@ -221,7 +221,7 @@ FlowFuse simplifies the setup process by providing an integrated MQTT broker ser
    - For FlowFuse MQTT, use `broker.flowfuse.cloud` as the server address.
    - Enter the **Client ID**, **username**, and **password** that you generated earlier.
 
-![Image mqtt broker node configuration](./images/mqtt-broker-config.png){data-zoomable}
+![Image mqtt broker node configuration](./images/mqtt-broker-config-node.png){data-zoomable}
 _Image mqtt broker node configuration_
 
 3. Click **Add** to save the configuration.
