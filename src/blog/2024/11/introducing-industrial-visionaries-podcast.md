@@ -17,7 +17,7 @@ Today, we’re excited to announce our new podcast: Industrial Visionaries!
 
 This show is dedicated to exploring the transformative power of technology in the manufacturing sector. 
 
-In each episode, our host ZJ van de Weg, CEO of FlowFuse, brings you face-to-face with industry leaders who are pioneering digital solutions, sharing insights that will help you navigate the future of manufacturing. interviews. 
+In each episode, our host ZJ van de Weg, CEO of FlowFuse, brings you face-to-face with industry leaders who are pioneering digital solutions, sharing insights that will help you navigate the future of manufacturing. 
 
 ### Episode 1: FlowFuse’s Nick O’Leary on Low-Code Development and Its Impact on IoT
 
@@ -26,11 +26,7 @@ In our inaugural episode of Industrial Visionaries, our host ZJ van de Weg, chat
 Listen to the first episode on: 
 
 - [Apple Podcasts](https://podcasts.apple.com/us/podcast/ep-1-flowfuses-nick-oleary-on-low-code-development/id1781774461?i=1000678217258)
-
-
 - [Spotify](https://open.spotify.com/episode/6HJB35FbK1U7pVNpTyM6P2)
-
-
 - [YouTube](https://www.youtube.com/watch?v=AI-bjry8vLU)
 
 
