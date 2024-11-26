@@ -27,7 +27,7 @@ Explore FlowFuse Blueprints, choose templates for quick setups, perfect for lear
 <div class="container m-auto text-left max-w-lg md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4">
     <ul>
         {% for integration in integrations %}
-        <li><a href="/integrations/{{ integration.module }}">{{ integration.name }}</a></li>
+        <li><a href="/integrations/{{ integration._id }}">{{ integration.name }}</a></li>
         {% endfor %}
     </ul>
 </div>

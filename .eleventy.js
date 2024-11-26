@@ -378,7 +378,6 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("renderIntegration", function (integration) {
-        console.log(integration)
         return `<div class="integration-tile">
             <img class="integration-tile-icon" src="${integration.img}" />
             <label>${integration.name}</label>
