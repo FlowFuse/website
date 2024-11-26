@@ -2,14 +2,13 @@
 title: Publishing Modbus data to your UNS with FlowFuse
 subtitle: Bridging Modbus Data to MQTT using FlowFuse
 description: Learn how to bridge Modbus data to MQTT and publish it to a Unified Namespace (UNS) using FlowFuse for real-time monitoring and cloud integration.
-date: 2024-11-20
+date: 2024-11-26
 authors: ["sumit-shinde"]
-image: /blog/2024/11/images/bridging-modbus-to-mqtt.png
-keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt, modbus to uns, uns
+image: /blog/2024/11/images/publishing-modbus-data-to-uns-using-ff.png
+keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt, modbus to uns, modbus data to unified namespace
 tags:
-   - node-red
+   - flowfuse
    - mqtt
-   - opcua
    - modbus
    - uns
 ---
@@ -243,10 +242,10 @@ For more information on using MQTT with Node-RED, please read [Using MQTT with N
 
 Once you’ve configured the MQTT nodes for all your metrics and deployed the flow, check the status at the bottom of each MQTT node. If it shows "connected," your Node-RED flow is successfully connected to the broker and publishes data to the UNS. From here, you can integrate the data with cloud-based analytics platforms. Build IoT dashboards with [FlowFuse Dashboard](https://dashboard.flowfuse.com/), or other systems to enable real-time monitoring, predictive maintenance, and automated decision-making. This setup effectively bridges the gap between legacy Modbus devices and modern IoT infrastructure, empowering smarter, more efficient industrial operations.
 
-You can use MQTT client monitoring software, such as MQTT Explorer or similar tools, to monitor the data sent to the UNS broker.
+To view the topic hierarchy in UNS, go to the FlowFuse platform, navigate to the Broker section, and click on the Hierarchy tab. The interface will look similar to the one shown below:
 
-![Image showing the MQTT Explorer interface monitoring an MQTT broker](./images/mqtt-client-explorer.png){data-zoomable}
-_Image showing the MQTT Explorer interface monitoring an MQTT broker_
+![Image showing FlowFuse topic heirachy intergace for UNS](./images/flowfuse-mqtt-topic-hierarchy-monitoring.png){data-zoomable}
+_Image showing FlowFuse topic heirachy intergace for UNS_
 
 ## Final Thought
 
