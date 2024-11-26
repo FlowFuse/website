@@ -15,6 +15,14 @@ hubspot:
 
 <div class="nohero w-full">
     <div class="w-full px-6">
+        <!-- Add modal structure -->
+        <div id="modal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white p-6 rounded-lg max-w-2xl w-full">
+                <span class="close absolute top-2 right-2 cursor-pointer text-xl">&times;</span>
+                <h2 id="download-platform-overview" class="mb-6 w-full text-center">Download Platform Overview</h2>
+                {% include hubspot.script %}
+            </div>
+        </div>
         <div class="pt-12 pb-20 max-w-screen-lg mx-auto">
             <!--Hero Content-->
             <div class="container text-center max-w-4xl mx-auto">
@@ -25,14 +33,14 @@ hubspot:
                         Low-Code Development Meets Industrial Strength
                     </h3>
                     <p class="text-center m-auto mt-6">Bridging the gaps between OT and IT, FlowFuse provides a comprehensive platform for all your industrial data connectivity needs, delivered with enterprise-grade control and security.</p>
-                    <div class="m-auto my-8 flex gap-6 items-center justify-center flex-row">
+                    <div class="m-auto my-8 flex gap-6 items-center justify-center flex-row pb-2">
                         <a class="ff-btn ff-btn--primary flex flex-col" href="/contact-us"
                             onclick="capture('cta-contact-us', {'position': 'hero'})">
                             <span class="text-base flex gap-2 uppercase items-center">
                                 Contact us
                             </span>
                         </a>
-                        <a class="ff-btn ff-btn--primary-outlined flex flex-col max-xl:mb-6" onclick="scrollToAnchor(event, 'download-platform-overview')">
+                        <a class="ff-btn ff-btn--primary-outlined flex flex-col" onclick="openModal(event)">
                             <span class="text-base uppercase items-center">
                                 DOWNLOAD PLATFORM OVERVIEW
                             </span>
@@ -159,12 +167,26 @@ hubspot:
         </div>
     </div>
     <div class="w-full px-6">
-        <div class="max-w-2xl m-auto my-12">
-            <h2 id="download-platform-overview" class="mb-6 w-full text-center">Download Platform Overview</h2>
-            {% include hubspot.script %}
+        <div class="m-auto text-center sm:text-left py-20 max-w-screen-lg">
+            {% include "get-started.njk" %}
         </div>
     </div>
 </div>
 
-<!-- Scroll to anchor -->
-{% include "smooth-scroll.njk" %}
+<!-- Add JavaScript to handle modal display -->
+<script>
+    function openModal(event) {
+        event.preventDefault();
+        document.getElementById('modal').classList.remove('hidden');
+    }
+
+    document.querySelector('.close').onclick = function() {
+        document.getElementById('modal').classList.add('hidden');
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('modal')) {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    }
+</script>
