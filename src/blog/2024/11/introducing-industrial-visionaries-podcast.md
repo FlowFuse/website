@@ -26,7 +26,7 @@ In our inaugural episode of Industrial Visionaries, our host ZJ van de Weg, chat
 Listen to the first episode on: 
 Apple Podcasts
 Spotify
-YouTube
+[YouTube](https://www.youtube.com/watch?v=AI-bjry8vLU)
 
 We look forward to bringing you more conversations with actionable insights that help in your pursuit to innovate in your industry. 
 
