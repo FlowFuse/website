@@ -30,7 +30,9 @@ Listen to the first episode on:
 
 - [Spotify](https://open.spotify.com/episode/6HJB35FbK1U7pVNpTyM6P2)
 
-[YouTube](https://www.youtube.com/watch?v=AI-bjry8vLU)
+
+- [YouTube](https://www.youtube.com/watch?v=AI-bjry8vLU)
+
 
 We look forward to bringing you more conversations with actionable insights that help in your pursuit to innovate in your industry. 
 
