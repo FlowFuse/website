@@ -4,7 +4,7 @@ subtitle: Introducing Industrial Visionaries, the podcast that explores the mind
 description: New podcast exploring technologies in the manufacturing sector 
 date: 2024-11-26
 authors: ["FlowFuse"]
-image: 
+image: /blog/2024/11/images/FLOWFUSE-IV-Pod__1200x627px_Intro.jpg
 tags:
    - posts
    - flowfuse
