@@ -32,7 +32,7 @@ For instance, in a factory still relying on Modbus, machines such as motors, pum
 
 ## How to Bridge Modbus to MQTT
 
-This section will cover the steps to bridge Modbus data to MQTT using FlowFuse, leveraging Node-RED's capabilities. The process involves retrieving data from a Modbus device (For Practical example, we are using OpenSim to simulate Modbus data), transforming and processing the data (e.g., scaling raw sensor data into human-readable formats), and sending it to your Unified Namespace.
+Let's look at the steps to bridge Modbus data to MQTT using FlowFuse, leveraging Node-RED's capabilities. The process involves retrieving data from a Modbus device (For Practical example, we are using OpenSim to simulate Modbus data), transforming and processing the data (e.g., scaling raw sensor data into human-readable formats), and sending it to your Unified Namespace.
 
 ![Bridging Modbus Data to MQTT using Node-RED](./images/bridging-modbus-data-to-mqtt.png){data-zoomable}
 _Bridging Modbus Data to MQTT using Node-RED_
