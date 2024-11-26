@@ -27,7 +27,9 @@ Listen to the first episode on:
 
 - [Apple Podcasts](https://podcasts.apple.com/us/podcast/ep-1-flowfuses-nick-oleary-on-low-code-development/id1781774461?i=1000678217258)
 
-[Spotify](https://open.spotify.com/episode/6HJB35FbK1U7pVNpTyM6P2)
+
+- [Spotify](https://open.spotify.com/episode/6HJB35FbK1U7pVNpTyM6P2)
+
 [YouTube](https://www.youtube.com/watch?v=AI-bjry8vLU)
 
 We look forward to bringing you more conversations with actionable insights that help in your pursuit to innovate in your industry. 
