@@ -1,6 +1,6 @@
 ---
 title: "Introducing the Industrial Visionaries Podcast!"
-subtitle: Introducing Industrial Visionaries, the podcast that explores the minds behind industry's biggest breakthroughs.
+subtitle: Introducing Industrial Visionaries, the podcast that explores the minds behind the industry's biggest breakthroughs.
 description: New podcast exploring new technologies in the manufacturing sector 
 date: 2024-11-26
 authors: ["FlowFuse"]
