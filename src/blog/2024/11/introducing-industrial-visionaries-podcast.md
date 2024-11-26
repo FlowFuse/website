@@ -19,7 +19,7 @@ This show is dedicated to exploring the transformative power of technology in th
 
 In each episode, our host ZJ van de Weg, CEO of FlowFuse, brings you face-to-face with industry leaders who are pioneering digital solutions, sharing insights that will help you navigate the future of manufacturing. interviews. 
 
-Episode 1: FlowFuse’s Nick O’Leary on Low-Code Development and Its Impact on IoT
+### Episode 1: FlowFuse’s Nick O’Leary on Low-Code Development and Its Impact on IoT
 
 In our inaugural episode of Industrial Visionaries, our host ZJ van de Weg, chats with fellow FlowFuse exec, Nick O’Leary, CTO & Founder. Nick, who is also the creator of Node-RED, shares his extensive insights into the evolution of the Internet of Things (IoT). He discusses the early days of IoT and the transformative role of edge computing, highlighting how increased computing power has shifted data processing closer to devices. 
 
