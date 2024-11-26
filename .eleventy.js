@@ -231,6 +231,15 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addFilter("truncate", function(text, maxWordCount) {
+        const split = text.split(" ");
+        if (split.length <= maxWordCount) {
+            return text;
+        }
+        return text.split(" ").splice(0, maxWordCount).join(" ") + "..."
+    });
+
+
     eleventyConfig.addFilter("excerpt", function(str) {
         const content = new String(str);
         return content.split("\n<!--more-->\n")[0]

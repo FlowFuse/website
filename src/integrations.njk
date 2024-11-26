@@ -25,10 +25,27 @@ Explore FlowFuse Blueprints, choose templates for quick setups, perfect for lear
 
 {% block content %}
 <div class="container m-auto text-left max-w-lg md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4">
-    <ul>
-        {% for integration in integrations %}
-        <li><a href="/integrations/{{ integration._id }}">{{ integration.name }}</a></li>
+    <ul class="grid grid-cols-3 gap-3">
+        {% for integration in pagination.items %}
+        <li class="integration-card border border-gray-300 rounded-xl bg-white drop-shadow-md">
+            <a href="/integrations/{{ integration._id }}" class="h-48 flex flex-col">
+                <div class="integration-card--details p-3 grow min-h-0">
+                    <label>{{ integration.name }}</label>
+                    <p>{{ integration.description | truncate(16) }}</p>
+                </div>
+                <div class="integration-card--meta flex justify-between bg-indigo-50 p-3">
+                    <div class="integration-card--author">
+                        <label>Author</label>
+                        <span>{{ integration.npmOwners[0] }}</span>
+                    </div>
+                    <div class="integration-card--stats">
+
+                    </div>
+                </div>
+            </a>
+        </li>
         {% endfor %}
     </ul>
+    {% include "blog/pagination.njk" %}
 </div>
 {% endblock %}
