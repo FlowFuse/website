@@ -24,7 +24,7 @@ This article shows you how to bridge Modbus data to MQTT using FlowFuse and Node
 
 Modbus has long been a foundational protocol in industrial environments, enabling reliable communication between devices like PLCs, sensors, and motors. It has served the needs of operational technology (OT) for decades. However, as industries embrace Industry 4.0, there is an increasing need to bridge the gap between legacy OT systems like Modbus and modern information technology (IT) platforms, including cloud-based systems and IoT applications. This is where the challenge of the OT/IT gap arises.
 
-While Modbus excels in local control and data collection, it struggles to integrate with cloud-based platforms and real-time IoT solutions. That's where MQTT—a lightweight, real-time messaging protocol—becomes essential. MQTT allows devices to transmit data efficiently to the cloud, even in environments with limited bandwidth, power, or connectivity. However, bridging them is crucial since Modbus and MQTT don’t natively communicate for bridging. We will need to use a platform like Flowfuse that supports both.
+While Modbus excels in local control and data collection, it struggles to integrate with cloud-based platforms and real-time IoT solutions. That's where MQTT, a lightweight, real-time messaging protocol, becomes essential. MQTT allows devices to transmit data efficiently to the cloud, even in environments with limited bandwidth, power, or connectivity. However, bridging them is crucial since Modbus and MQTT don’t natively communicate for bridging. We will need to use a platform like Flowfuse that supports both.
 
 Connecting Modbus data to MQTT allows you to send data from legacy systems to the cloud without replacing existing equipment. This enables real-time monitoring and remote analysis. Once you create the bridge for data from Modbus to MQTT, publishing it into a Unified Namespace (UNS) further enhances data accessibility and usability. A UNS centralizes all operational data into a single namespace, making it easier to track performance, detect issues, and perform analytics without complex integrations.
 
@@ -48,9 +48,9 @@ If you haven’t signed up for a FlowFuse account yet, do so now by clicking [si
 
 The first step is to collect data from your Modbus devices. To do this, you'll need to run Node-RED on your Device. If your Modbus device communicates via a serial port, Node-RED will need access to that port, which you can manage with the appropriate configuration. If you're using Modbus TCP and both Node-RED and your Modbus device are on the same network, the connection is straightforward.
 
-**Step 1.1: Running Node-RED on your Device**
+**Step 1.1: Running the FlowFuse device agent on your edge device**
 
-To run Node-RED on your Device with just a few simple steps, you can use the [FlowFuse Device Agent](/docs/device-agent/quickstart/). This allows you to run Node-RED locally and also connect it to the FlowFuse cloud for remote monitoring and management, making it easier to keep track of your devices and workflows from anywhere.
+To run Node-RED on your edge device with just a few simple steps, you can use the [FlowFuse Device Agent](/docs/device-agent/quickstart/). This allows you to run Node-RED locally and also connect it to FlowFuse Cloud for remote monitoring and management, making it easier to keep track of your devices and workflows from anywhere.
 
 **Step 1.2: Install Modbus Nodes**
 
