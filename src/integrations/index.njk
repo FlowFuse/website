@@ -1,0 +1,213 @@
+---
+layout: default
+sitemapPriority: 0.9
+pagination:
+  data: integrations
+  size: 30
+  addAllPagesToCollections: true
+title: Integrations
+description:
+  Explore the list of integrations and modules available for your Node-RED projects. Created (and curated) by FlowFuse and the Node-RED community.
+meta:
+    title: Integrations
+---
+
+{% extends 'layouts/catalog.njk' %}
+
+{% block title %}
+Integrations
+{% endblock %}
+
+{% block description %}
+Explore FlowFuse Blueprints, choose templates for quick setups, perfect for learning and fast solution-building. Customizable for unique needs. Simplify your Node-RED projects with FlowFuse Blueprints!
+{% endblock %}
+
+{% block content %}
+<script>
+    const pagination = {
+        perPage: 30,
+        currentPage: 0,
+        maxPages: 0
+    }
+    const filters = {
+        ai: {
+            checked: false,
+            label: 'AI'
+        },
+        communication: {
+            checked: false,
+            label: 'Communication'
+        },
+        ui: {
+            checked: false,
+            label: 'UI'
+        },
+        industrial: {
+            checked: false,
+            label: 'Industrial'
+        }
+    }
+    var catalogue = []
+
+    function renderFilters () {
+        console.log(Object.keys(filters))
+        const ul = document.getElementById('catalogue-filter--categories')
+        
+        Object.keys(filters).forEach(key => {
+            const li = document.createElement('li');
+            li.innerHTML = `<input id="catalogue-filter-${key}" type="checkbox" onchange="toggleFilter('${key}')"><label for="catalogue-filter-${key}">${filters[key].label}</label>`
+            ul.appendChild(li)
+        })
+    }
+
+    async function loadCatalogue () {
+        await fetch('https://ff-integrations.flowfuse.cloud/api/nodes')
+            .then(response => response.json())
+            .then(data => {
+                catalogue = data.catalogue;
+                pagination.maxPage = Math.ceil(catalogue.length / pagination.perPage);
+                updateUI(catalogue);
+                renderFilters();
+            });
+    }
+    loadCatalogue()
+
+    function updateUI (nodes) {
+        // update the nodes counters
+        document.getElementById('integrations-count').innerHTML = nodes.length;
+
+        // pagination
+        document.getElementById('pagination-current').innerHTML = pagination.currentPage + 1;
+        document.getElementById('pagination-max').innerHTML = pagination.maxPage + 1;
+
+        if (pagination.currentPage === 0) {
+            document.getElementById('pagination-previous').classList.add('opacity-0', 'pointer-events-none');
+        } else {
+            document.getElementById('pagination-previous').classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        if (pagination.currentPage === pagination.maxPage) {
+            document.getElementById('pagination-next').classList.add('opacity-0', 'pointer-events-none');
+        } else {
+            document.getElementById('pagination-next').classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        // render tiles
+        showPage(nodes);
+    }
+
+    function changePage (diff) {
+        if ( pagination.currentPage + diff < 0 || pagination.currentPage + diff > pagination.maxPage) {
+            return;
+        }
+        pagination.currentPage += diff;
+        updateUI(catalogue);
+    }
+
+    function showPage (catalogue) {
+        const tiles = document.getElementById('integration-tiles');
+        tiles.innerHTML = '';
+        const onPage = catalogue.slice(pagination.currentPage * pagination.perPage, (pagination.currentPage + 1) * pagination.perPage); 
+        onPage.forEach(node => {
+            const tile = document.createElement('integration-tile');
+            tile.setAttribute('integration', JSON.stringify(node));
+            tiles.appendChild(tile);
+        })
+    }
+
+    function toggleFilter (key) {
+        filters[key].checked = document.getElementById(`catalogue-filter-${key}`).checked;
+        filterCatalogue();
+    }
+
+    function filterCatalogue () {
+        const search = document.getElementById('search-catalogue').value;
+        const filtered = catalogue.filter(node => {
+            let hasCategories = true
+            // loop over categories
+            Object.keys(filters).forEach(key => {
+                const filter = filters[key];
+                if (filter.checked && !node.categories.includes(key)) {
+                    hasCategories = false
+                }
+            })
+            return node._id.includes(search) && hasCategories
+        });
+        pagination.maxPage = Math.ceil(filtered.length / pagination.perPage);
+        if (pagination.currentPage > pagination.maxPage) {
+            pagination.currentPage = pagination.maxPage;
+        }
+        updateUI(filtered);
+    }
+
+    class IntegrationTile extends HTMLElement {
+        static observedAttributes = ["integration"];
+
+        constructor() {
+            super();
+            // defaults
+            this.integration = {}
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            // handle setting of the value
+            if (name === "integration") {
+                this.integration = JSON.parse(newValue);
+            }
+        }
+        
+        connectedCallback () {
+            const integration = this.integration || {};
+            const description = integration.description || '';
+            this.innerHTML = `
+                <li class="integration-card border border-gray-300 rounded-xl bg-white drop-shadow-md">
+                    <a href="/integrations/nodes/${integration._id}" class="h-48 flex flex-col">
+                        <div class="integration-card--details p-3 grow min-h-0">
+                            <label>${integration._id} ${integration.categories}</label>
+                            <p>${description}</p>
+                        </div>
+                        <div class="integration-card--meta flex justify-between bg-indigo-50 p-3">
+                            <div class="integration-card--author">
+                                <label>Author</label>
+                                <span>${integration.npmOwners[0]}</span>
+                            </div>
+                            <div class="integration-card--stats"></div>
+                        </div>
+                    </a>
+                </li>`;
+        }
+    }
+    customElements.define('integration-tile', IntegrationTile);
+</script>
+
+<div class="container m-auto text-left max-w-lg md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4 flex">
+    <div class="catalogue-filters w-52 shrink-0">
+        <label>Filters</label>
+        <ul id="catalogue-filter--certified">
+            <li><input type="checkbox"/>FlowFuse Certified</li>
+        </ul>
+        <label>Categories</label>
+        <ul id="catalogue-filter--categories"></ul>
+    </div>
+    <div class="grow">
+        <input id="search-catalogue" class="catalogue-search" type="text" placeholder="Search Integrations" onkeyup="filterCatalogue()" onchange="filterCatalogue()"/>
+        <div class="catalogue-meta">
+            <div><span id="integrations-count">X</span> Integrations</div>
+        </div>
+        <ul id="integration-tiles" class="grid grid-cols-3 gap-3"></ul>
+        <nav aria-labelledby="pagination" class="pagination mt-4">
+            <ol class="flex flex-row w-full justify-between text-gray-600">
+                <li id="pagination-previous" class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p" onclick="changePage(-1)">Previous</li>
+                <li>
+                    <span id="pagination-current">X</span> of <span id="pagination-max">Y</span>
+                </li>
+                <li id="pagination-next" class="flex md:flex-initial w-40 justify-end pr-2 ff-nav-blog-n" onclick="changePage(1)">Next</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+{% endblock %}
+
+<script>
+    renderFilters()
+</script>

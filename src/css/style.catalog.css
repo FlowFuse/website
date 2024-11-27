@@ -8,3 +8,41 @@
         background-position-y: -25px;
     }
 }
+.catalogue-filters > label {
+    font-weight: bold;
+}
+.catalogue-filters ul {
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+.catalogue-filters li {
+    padding: 6px;
+}
+.catalogue-filters li:hover {
+    color: black;
+    cursor: pointer;
+}
+.catalogue-filters label {
+    cursor: pointer;
+}
+.catalogue-filters input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.catalogue-search {
+    width: 100%;
+    background-color: theme(colors.white);
+    border: 1px solid theme(colors.gray.300);
+    padding: 12px;
+    border-radius: 3px;
+}
+.catalogue-meta {
+    padding: 12px 0;
+    color: theme(colors.gray.500);
+    font-weight: 300;
+}
+
+.pagination li:hover {
+    cursor: pointer;
+    color: theme(colors.blue.500);
+}
