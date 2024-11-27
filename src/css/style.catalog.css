@@ -46,3 +46,19 @@
     cursor: pointer;
     color: theme(colors.blue.500);
 }
+
+.ff-certified-tag {
+    background-color: theme(colors.blue.50);
+    border: 1px solid theme(colors.blue.600);
+    padding: 3px 6px;
+    border-radius: 6px;
+    align-items: center;
+    gap: 3px;
+}
+
+.integration-card--stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

@@ -15,7 +15,7 @@ module.exports = async () => {
         acc[node.id] = node;
         return acc;
     }, {});
-    console.log(response.catalogue.length + " integrations loaded.")
+    
     // TODO: Overlap certified nodes here
     const data = response.catalogue.map((node) => {
         if (ffNodesMap[node._id]) {
