@@ -112,7 +112,7 @@ For example, as you add new machines, automated production lines, or advanced se
 
 With all these benefits in mind, the next logical question is: How do you implement data modeling effectively, and which platform can help you achieve it? We've only scratched the surface here—data modeling is a much deeper, more dynamic process that can reshape how you use data across your entire business. It’s not just about structuring and integrating data; it’s about transforming your operations, unlocking new efficiencies, and driving growth. The right platform can help you go beyond essential organization and truly harness the power of your data. So, what’s your next step to turn your data into a strategic asset?
 
-## Leverage FlowFuse for Effective Data Modeling in Your UNS
+## **Leverage FlowFuse for Effective Data Modeling in Your UNS**
 
 FlowFuse offers a comprehensive toolkit for building, managing, and scaling your Unified Namespace (UNS), focusing on turning data into actionable insights. Leveraging Node-RED, FlowFuse enables users to visually design and orchestrate data flows, transforming raw, unstructured data from machines, sensors, and systems into structured, standardized models. The platform streamlines organizing data, defining relationships, and adding critical context—such as timestamps, units, and machine identifiers—ensuring a unified, consistent data structure. With support for over 5000 community nodes and seamless integration of industrial protocols (MQTT, OPC-UA, Modbus) alongside both legacy systems and modern IoT devices, FlowFuse bridges the gap between operational technology (OT) and IT, unifying all your data sources into a single, cohesive system.
 
