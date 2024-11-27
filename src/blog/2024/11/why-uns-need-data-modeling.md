@@ -2,7 +2,7 @@
 title: "UNS & Why You Need Data Modeling"
 subtitle: Why data modeling is key to making your Unified Namespace work effectively.
 description: Discover why data modeling is crucial for a Unified Namespace (UNS) in manufacturing and how it helps organize and make data actionable.
-date: 2024-11-25
+date: 2024-11-29
 authors: ["sumit-shinde"]
 image: 
 keywords: uns, data modeling, why uns needs data modeling, unified namespace
@@ -98,13 +98,13 @@ With a well-structured data model in place, data from production lines, machiner
 
 For instance, consider a predictive maintenance system that tracks sensor data such as temperature and vibration to predict when a machine is likely to fail. With an effective data model, this sensor data can be directly linked to your CMMS (Computerized Maintenance Management System) since it already understands the type and format of the incoming data. This automatic integration triggers maintenance alerts and work orders, helping prevent downtime and reducing the need for manual intervention.
 
-## **4. Enables Easy Access and Time Savings**
+### **4. Enables Easy Access and Time Savings**
 
 Time is money in manufacturing, and inefficient access to data can be costly. A well-designed data model ensures that information is organized intuitively, making it easy to access when needed. Instead of sifting through a mountain of raw, unstructured data, operators can quickly find the information they need—whether it's for troubleshooting, analyzing performance, or making operational decisions.
 
 When data is structured properly, it’s easier to navigate, reducing the time spent searching for relevant data or deciphering inconsistent naming conventions. This leads to quicker decision-making and more efficient operations.
 
-### **5. **Scalability and Continuous Improvement**
+### **5. Scalability and Continuous Improvement**
 
 A well-structured data model serves the needs of your current manufacturing operations and lays the groundwork for future growth and continuous improvement. As your production processes evolve or new technologies and data sources come online, a good data model allows your UNS to adapt without disrupting existing systems.
 
@@ -116,7 +116,7 @@ With all these benefits in mind, the next logical question is: How do you implem
 
 FlowFuse offers a comprehensive toolkit for building, managing, and scaling your Unified Namespace (UNS), focusing on turning data into actionable insights. Leveraging Node-RED, FlowFuse enables users to visually design and orchestrate data flows, transforming raw, unstructured data from machines, sensors, and systems into structured, standardized models. The platform streamlines organizing data, defining relationships, and adding critical context—such as timestamps, units, and machine identifiers—ensuring a unified, consistent data structure. With support for over 5000 community nodes and seamless integration of industrial protocols (MQTT, OPC-UA, Modbus) alongside both legacy systems and modern IoT devices, FlowFuse bridges the gap between operational technology (OT) and IT, unifying all your data sources into a single, cohesive system.
 
-Check out this [article](/blog/2023/12/unified-namespace-data-modelling/) where Marian, explains how you can practically implement data modeling with FlowFuse.
+*Check out this [article](/blog/2023/12/unified-namespace-data-modelling/) where Marian, explains how you can practically implement data modeling with FlowFuse.*
 
 FlowFuse’s enterprise layer also empowers centralized management of edge devices and Node-RED instances, enabling real-time collaboration, seamless scalability, and robust security—giving you full control as your operations grow and evolve.
 
