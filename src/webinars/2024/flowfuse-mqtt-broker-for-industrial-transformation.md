@@ -9,7 +9,7 @@ video: FHsVS7LYE_4
 hosts: ["nick-oleary"]
 hubspot:
     formId: a428b608-d71d-4955-8791-f0d309cf2fec
-    downloadFormId:5be899dc-9908-4797-a207-89f47ace69c7
+    downloadFormId: 5be899dc-9908-4797-a207-89f47ace69c7
 ---
 
 **Optimize your industrial processes with FlowFuse MQTT Broker, a new service that simplifies real-time data access.**
