@@ -1,6 +1,7 @@
 ---
 contentTitle: The Ultimate Beginner Guide to a Professional <span class="inline-block">Node-RED</span>
 image: /images/ebooks/beginner-guide-node-red.png
+thumbnail: /ebooks-and-whitepapers/images/ebook_-The-Ultimate-Beginner-Guide-to-a-Professional-Node-RED.png
 meta:
   title: The Ultimate Beginner guide to a Professional Node-RED
   description: Here's your free guide to an enterprise-ready Node-RED. Learn all about Node-RED history to securing your flows and dashboard data visualization. Download now!

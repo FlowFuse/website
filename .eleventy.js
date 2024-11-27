@@ -628,6 +628,13 @@ module.exports = function(eleventyConfig) {
         return nav;
     });
 
+    eleventyConfig.addCollection("ebooksAndWhitepapers", function(collectionApi) {
+        return [
+          ...collectionApi.getFilteredByTag("whitepaper"),
+          ...collectionApi.getFilteredByTag("ebook"),
+        ];
+      });
+
     // Plugins
     eleventyConfig.addPlugin(EleventyRenderPlugin)
     eleventyConfig.addPlugin(pluginRSS)

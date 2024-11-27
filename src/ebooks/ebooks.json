@@ -1,5 +1,8 @@
 {
     "layout": "layouts/ebook.njk",
     "nav": "ebooks",
-    "searchTitle": "E-Books"
+    "searchTitle": "E-Books",
+    "tags": [
+        "ebook"
+    ]
 }
