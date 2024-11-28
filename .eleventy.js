@@ -630,10 +630,16 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addCollection("ebooksAndWhitepapers", function(collectionApi) {
         return [
-          ...collectionApi.getFilteredByTag("whitepaper"),
-          ...collectionApi.getFilteredByTag("ebook"),
+            ...collectionApi.getFilteredByTag("whitepaper").map(item => {
+                item.data.tags = item.data.tags.map(tag => tag.toLowerCase() === 'whitepaper' ? 'Whitepaper' : tag);
+                return item;
+            }),
+            ...collectionApi.getFilteredByTag("ebook").map(item => {
+                item.data.tags = item.data.tags.map(tag => tag.toLowerCase() === 'ebook' ? 'eBook' : tag);
+                return item;
+            })
         ];
-      });
+    });
 
     // Plugins
     eleventyConfig.addPlugin(EleventyRenderPlugin)

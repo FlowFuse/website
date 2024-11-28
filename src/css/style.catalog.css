@@ -7,7 +7,11 @@
         background-position-x: right;
         background-position-y: -25px;
     }
+    .catalog-hero.cropped {
+        background-position-y: -90px;
+    }
 }
+
 .catalogue-filters > label {
     font-weight: bold;
 }
@@ -121,3 +125,4 @@
         background-position: right;
     }
 }
+
