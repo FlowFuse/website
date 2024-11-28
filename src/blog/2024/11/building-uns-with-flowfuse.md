@@ -26,15 +26,17 @@ This section explains how to set up a Unified Namespace (UNS) using FlowFuse, a 
 
 ### **Step 1: Collect Metrics from Devices**
 
-The first step in building your UNS is collecting data from your devices. The method you choose will depend on the type of device and the communication protocol it supports. For instance, many devices use serial communication standards like Modbus, while others, such as industrial controllers, might use OPC-UA.
+The first step in building your Universal Networking System (UNS) is collecting data from your devices. The method you choose will depend on the type of device and the communication protocol it supports. For example, many devices use traditional communication standards like Modbus, while others, such as industrial controllers, might rely on OPC-UA.
 
-Node-RED supports various industrial protocols, from legacy to modern ones. While older protocols like Modbus and OPC-UA were initially designed for machine-to-machine (M2M) communication and cannot directly interact with cloud systems, Node-RED bridges this gap. Using Node-RED, you can collect data from these legacy systems, transform and format it using low-code workflows, and then send it to the cloud via protocols like MQTT, Kafka, AMQP, or others.
+Fortunately, Node-RED provides support for a wide range of industrial protocols, from legacy to modern ones. While older protocols like Modbus and OPC-UA were originally designed for machine-to-machine (M2M) communication and are not directly compatible with cloud systems, Node-RED acts as a bridge to overcome this limitation.
 
-In our example, Node-RED can directly collect metrics from sensors using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/product/device-agent/), which enables you to remotely monitor and build flows securely from the FlowFuse platform in your edge devices. [See here](/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
+By leveraging Node-RED, you can collect data from these legacy systems, process and transform the data using low-code workflows, and then seamlessly send it to the cloud via modern protocols such as MQTT, Kafka, AMQP, and more.
+
+In our example, Node-RED can directly collect metrics from sensor using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/product/device-agent/), This agent enables you to remotely monitor, manage, and build Node-RED flows securely through the FlowFuse platform remotely. [See here](/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
 
 ### **Step 2: Transform and Process the Collected metrics**
 
-Once you've collected data from your devices, the next step is to transform it using Node-RED. Industrial systems often use different protocols such as Modbus and OPC UA, and each might have its own data structure, which can create challenges for integration.For example, the ADXL345 sensor outputs raw data as electrical signals (buffer data). We first need to format it into a human-readable format and then calculate the Magnitude, a standard vibration monitoring unit.
+Once you've collected data from your devices, the next step is to transform it using Node-RED. Industrial systems often use different protocols such as Modbus and OPC UA, and each might have its own data structure, which can create challenges for integration. For example, the ADXL345 sensor which we are uisng in our practile example outputs raw data as electrical signals (buffer data). We first need to format it into a human-readable format and then calculate the Magnitude, a standard vibration monitoring unit.
 
 **Why Data Transformation Matters:**
 
@@ -50,7 +52,7 @@ Raw data from the ADXL345 sensor might look like this:
 [26,0,244,255,37,255]  
 ```  
 
-Using a [function node](/node-red/core-nodes/function/) in Node-RED, we can convert this into a human-readable format.
+Using a [Function node](/node-red/core-nodes/function/) in Node-RED, we can convert this into a human-readable format.
 
 ![Function node: Transforming Raw Data into Readable Format](./images/function-node.png){data-zoomable}
 _Function node: Transforming Raw Data into Readable Format_
@@ -94,11 +96,11 @@ After formatting, the data will look as shown below:
 
 ```json
 {
- “name”: “vibration”: 
- "timestamp": "2024-11-13T10:00:00Z",
- "unit": "m/s²",
- “value”: 0.8547996098775871
- }
+  "name": "vibration",
+  "timestamp": "2024-11-13T10:00:00Z",
+  "unit": "m/s²",
+  "value": 0.8547996098775871
+}
 ```
 
 This format is more structured and consistent, with important labels like `value`, `unit`, and `timestamp` that provide meaningful context. It clarifies that the value represents the Magnitude of vibration in **m/s²** and provides the precise time when the data was collected.
