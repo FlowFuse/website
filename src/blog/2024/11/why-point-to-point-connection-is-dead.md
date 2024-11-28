@@ -96,7 +96,7 @@ _Unified Namespace_
 
 To simplify the creation of a UNS in your manufacturing environment, [FlowFuse](/) provides an integrated MQTT broker service. The platform makes building, scaling, and managing Node-RED solutions easy. It supports seamless connections between devices, services, and APIs using over 5,000 community-contributed nodes for data collection. FlowFuse also enables efficient data transformation and visualization with a low-code approach, remote management of edge devices, and team collaboration on projects. With everything centralized on one platform, FlowFuse offers high security, scalability, and availability to optimize and maintain your system effectively.
 
-[Sign up](https://app.flowfuse.cloud/account/create/) now to start building your own Unified Namespace and take the first step toward a more efficient and connected manufacturing system.
+[Sign up](https://app.flowfuse.cloud/account/create/) now to [start building your own Unified Namespace with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/) and take the first step toward a more efficient and connected manufacturing system.
 
 ## Summary
 
