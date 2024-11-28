@@ -11,7 +11,7 @@ meta:
         <p class="max-w-2xl">Ready to dive deeper into the world of FlowFuse? Browse our library of whitepapers and ebooks and discover the power of our low-code industrial data platform.</p>
     </div>
     <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-6 mt-16">
-        {%- for item in collections.ebooksAndWhitepapers | sort(attribute='date') | reverse -%}
+        {%- for item in collections.publications | sort(attribute='date') | reverse -%}
         <li class="customer-story-tile w-full my-2 border px-0 rounded-lg hover:drop-shadow-lg hover:border-blue-600 transition ease-in-out duration-300 bg-white">
             <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline h-full m-0">
                 <div class="">

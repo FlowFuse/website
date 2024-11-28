@@ -628,7 +628,7 @@ module.exports = function(eleventyConfig) {
         return nav;
     });
 
-    eleventyConfig.addCollection("ebooksAndWhitepapers", function(collectionApi) {
+    eleventyConfig.addCollection("publications", function(collectionApi) {
         return [
             ...collectionApi.getFilteredByTag("whitepaper").map(item => {
                 item.data.tags = item.data.tags.map(tag => tag.toLowerCase() === 'whitepaper' ? 'Whitepaper' : tag);
