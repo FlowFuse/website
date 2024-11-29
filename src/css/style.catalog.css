@@ -47,15 +47,34 @@
     color: theme(colors.blue.500);
 }
 
-.ff-certified-tag {
+/* .ff-certified-tag {
     background-color: theme(colors.blue.50);
     border: 1px solid theme(colors.blue.600);
     padding: 3px 6px;
     border-radius: 6px;
     align-items: center;
     gap: 3px;
+} */
+
+.certified-icon {
+    width: 24px;
+    height: 24px;
+    fill: theme(colors.indigo.600);
+    stroke: theme(colors.white);
 }
 
+.integration-card a {
+    color: theme(colors.gray.600);
+}
+
+.integration-card a:hover {
+    text-decoration: none;
+}
+
+.integration-card--meta {
+    border-bottom-right-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+}
 .integration-card--stats {
     display: flex;
     justify-content: space-between;

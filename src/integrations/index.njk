@@ -19,7 +19,7 @@ Integrations
 {% endblock %}
 
 {% block description %}
-Explore FlowFuse Blueprints, choose templates for quick setups, perfect for learning and fast solution-building. Customizable for unique needs. Simplify your Node-RED projects with FlowFuse Blueprints!
+Explore the list of integrations and modules available for your Node-RED projects. Created (and curated) by FlowFuse and the Node-RED community.
 {% endblock %}
 
 {% block content %}
@@ -199,6 +199,21 @@ Explore FlowFuse Blueprints, choose templates for quick setups, perfect for lear
         return trimmed.join(' ') + (tokens.length > amount ? '...' : '')
     }
 
+    class CertifiedIcon extends HTMLElement {
+
+        constructor() {
+            super();
+        }
+        
+        connectedCallback () {
+            const integration = this.integration || {};
+            const description = truncate(integration.description, 15) || '';
+            const certified = integration.ffCertified || false;
+            this.innerHTML = `<svg class="certified-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" /></svg>`;
+        }
+    }
+    customElements.define('certified-icon', CertifiedIcon);
+
     class IntegrationTile extends HTMLElement {
         static observedAttributes = ["integration"];
 
@@ -220,20 +235,19 @@ Explore FlowFuse Blueprints, choose templates for quick setups, perfect for lear
             const description = truncate(integration.description, 15) || '';
             const certified = integration.ffCertified || false;
             this.innerHTML = `
-                <li class="integration-card border border-gray-300 rounded-xl bg-white drop-shadow-md">
+                <li class="integration-card group border border-gray-300 rounded-xl bg-white drop-shadow-md">
                     <a href="/integrations/nodes/${integration._id}" class="h-48 flex flex-col">
                         <div class="integration-card--details p-3 grow min-h-0">
                             <div class="flex justify-between text-sm items-center">
                                 <span>@${integration.npmScope || integration.npmOwners[0]}</span>
                                 <span class="ff-certified-tag" style="display: ${certified ? 'flex' : 'none'}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-</svg>Certified</span>
+                                    <certified-icon />
+                                </span>
                             </div>    
-                            <label>${integration.name}</label>
+                            <label class="group-hover:text-indigo-600 cursor-pointer">${integration.name}</label>
                             <p class="text-sm my-2 leading-5">${description}</p>
                         </div>
-                        <div class="integration-card--meta flex justify-between bg-indigo-50 p-3 text-sm">
+                        <div class="integration-card--meta flex justify-between bg-indigo-50/50 group-hover:bg-indigo-50 p-3 text-sm">
                             <div class="integration-card--stats">
                                 <span>v${integration.version}</span>
                                 <span class="flex items-center gap-1">
@@ -253,7 +267,10 @@ Explore FlowFuse Blueprints, choose templates for quick setups, perfect for lear
     <div class="catalogue-filters w-52 shrink-0">
         <label>Filters</label>
         <ul>
-            <li><input type="checkbox" id="catalogue-filter-certified" onchange="toggleCertified()"/><label for="catalogue-filter-certified">FlowFuse Certified</label></li>
+            <li>
+                <input type="checkbox" id="catalogue-filter-certified" onchange="toggleCertified()"/>
+                <label class="inline-flex gap-1 items-center" for="catalogue-filter-certified">FlowFuse Certified <certified-icon /></label>
+            </li>
         </ul>
         <label>Categories</label>
         <ul id="catalogue-filter--categories"></ul>
