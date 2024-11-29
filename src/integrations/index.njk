@@ -1,10 +1,6 @@
 ---
 layout: default
 sitemapPriority: 0.9
-pagination:
-  data: integrations
-  size: 30
-  addAllPagesToCollections: true
 title: Integrations
 description:
   Explore the list of integrations and modules available for your Node-RED projects. Created (and curated) by FlowFuse and the Node-RED community.
@@ -82,6 +78,13 @@ Explore the list of integrations and modules available for your Node-RED project
     }
     var catalogue = []
 
+    function showElementById (id) {
+        document.getElementById(id).style.display = 'block';
+    }
+    function hideElementById (id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
     function renderFilters () {
         const ul = document.getElementById('catalogue-filter--categories')
         
@@ -93,9 +96,15 @@ Explore the list of integrations and modules available for your Node-RED project
     }
 
     async function loadCatalogue () {
+        // show placeholders
         await fetch('https://ff-integrations.flowfuse.cloud/api/nodes')
             .then(response => response.json())
             .then(data => {
+                showElementById('count-container');
+                showElementById('catalog-pagination');
+                hideElementById('count-placeholder');
+                hideElementById('integration-tiles-placeholder');
+                hideElementById('catalogue-filter--placeholder');
                 catalogue = data.catalogue
                 pagination.maxPage = Math.ceil(catalogue.length / pagination.perPage);
                 renderFilters();
@@ -214,6 +223,56 @@ Explore the list of integrations and modules available for your Node-RED project
     }
     customElements.define('certified-icon', CertifiedIcon);
 
+    class PlaceholderBar extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback () {
+            this.innerHTML = `<div class="placeholder-bar"><div class="placeholder-gradient"></div></div>`;
+        }
+    }
+    customElements.define('placeholder-bar', PlaceholderBar);
+
+    class IntegrationTilePlaceholder extends HTMLElement {
+        static observedAttributes = ["integration"];
+
+        constructor() {
+            super();
+            // defaults
+            this.integration = {}
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            // handle setting of the value
+            if (name === "integration") {
+                this.integration = JSON.parse(newValue);
+            }
+        }
+        
+        connectedCallback () {
+            const integration = this.integration || {};
+            const description = truncate(integration.description, 15) || '';
+            const certified = integration.ffCertified || false;
+            this.innerHTML = `
+                <li class="integration-card pointer-events-none border border-gray-300 rounded-xl bg-white drop-shadow-md">
+                    <span class="h-48 flex flex-col">
+                        <div class="integration-card--details p-3 grow min-h-0">
+                            <placeholder-bar class="block w-1/2 h-5 mt-1 mb-3"></placeholder-bar>
+                            <placeholder-bar class="block w-full h-16 opacity-50"></placeholder-bar>
+                        </div>
+                        <div class="integration-card--meta flex justify-between bg-indigo-50/50 p-3 text-sm">
+                            <div class="integration-card--stats">
+                                <placeholder-bar class="block h-5 w-5"></placeholder-bar>
+                                <placeholder-bar class="block h-5 w-5"></placeholder-bar>
+                            </div>
+                        </div>
+                    </span>
+                </li>`;
+        }
+    }
+    customElements.define('integration-tile-placeholder', IntegrationTilePlaceholder);
+
     class IntegrationTile extends HTMLElement {
         static observedAttributes = ["integration"];
 
@@ -274,14 +333,23 @@ Explore the list of integrations and modules available for your Node-RED project
         </ul>
         <label>Categories</label>
         <ul id="catalogue-filter--categories"></ul>
+        <ul id="catalogue-filter--placeholder">
+            <placeholder-bar class="block h-5 w-3/4"></placeholder-bar>
+        </ul>
     </div>
     <div class="grow">
         <input id="search-catalogue" class="catalogue-search" type="text" placeholder="Search Integrations" onkeyup="filterCatalogue()" onchange="filterCatalogue()"/>
         <div class="catalogue-meta">
-            <div><span id="integrations-count">X</span> Integrations</div>
+            <div id="count-container" style="display: none;"><span id="integrations-count">X</span> Integrations</div>
+            <div id="count-placeholder"><span id="integrations-count">Loading...</div>
         </div>
+        <ul id="integration-tiles-placeholder" class="grid grid-cols-3 gap-3">
+            <integration-tile-placeholder></integration-tile-placeholder>
+            <integration-tile-placeholder></integration-tile-placeholder>
+            <integration-tile-placeholder></integration-tile-placeholder>
+        </ul>
         <ul id="integration-tiles" class="grid grid-cols-3 gap-3"></ul>
-        <nav aria-labelledby="pagination" class="pagination mt-4">
+        <nav id="catalog-pagination" style="display: none;" aria-labelledby="pagination" class="pagination mt-4">
             <ol class="flex flex-row w-full justify-between text-gray-600">
                 <li id="pagination-previous" class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p" onclick="changePage(-1)">Previous</li>
                 <li>

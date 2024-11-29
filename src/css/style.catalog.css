@@ -81,3 +81,43 @@
     align-items: center;
     width: 100%;
 }
+
+.placeholder-bar {
+    background-color: theme(colors.gray.200);
+    min-height: 12px;
+    min-width: 12px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+
+.placeholder-gradient {
+    background: linear-gradient(90deg, theme(colors.gray.200), theme(colors.gray.100), theme(colors.gray.200));
+    background-repeat: repeat;
+    background-size: 50% 100%;
+    min-width: 100px;
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -100%;
+    bottom: 0;
+
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+}
+
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
