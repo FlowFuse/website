@@ -1,3 +1,6 @@
+{% if readingResources and readingResources == "stories" %}
+ {% include "stories-block.njk" %}
+{% else %}
 <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-x-8 pt-8">
     <div class="w-full my-2 grid grid-cols-1 pb-4">
         <div class="pb-2 md:pb-0">
@@ -60,3 +63,4 @@
         </div>
     </div>
 </div>
+{% endif %}
