@@ -8,7 +8,7 @@ image: /blog/2024/11/images/building-uns-with-flowfuse.png
 keywords: building unified namespace using nodered, nodered uns, uns nodered
 tags:
    - flowfuse
-   - uns
+   - unified-namespace
    - mqtt
 ---
 

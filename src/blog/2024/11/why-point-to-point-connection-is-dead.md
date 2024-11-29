@@ -9,7 +9,7 @@ keywords: uns, cons of p2p, cons of point-to-point connection, drawbacks of poin
 tags:
    - flowfuse
    - mqtt 
-   - unified namespace
+   - unified-namespace
 ---
 
 Manufacturing has changed significantly over the years, driven by new technology and the need for better communication between systems. In the past, point-to-point (P2P) connections, where devices communicate directly with each other, were the standard. However, as factories become more complex, P2P connections are no longer practical. This article explains why P2P connections are outdated and how a Unified Namespace (UNS) offers a better, more flexible solution.
