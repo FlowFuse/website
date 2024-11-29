@@ -112,6 +112,37 @@ h1, h2, h3, h4 {
     /* background-color: theme(colors.gray.800); */
 }
 
+*:has(> .ff-helper) {
+    position: relative;
+}
+*:has(> .ff-helper):hover .ff-helper {
+    visibility: visible;
+}
+
+.ff-helper {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    font-size: 0.75rem;
+}
+
+.ff-helper::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
 /* .ff-bg-flows {
     background-image: url('/images/ff-bg-flows.svg');
     background-repeat: repeat-x;
