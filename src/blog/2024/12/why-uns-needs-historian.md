@@ -67,7 +67,7 @@ By storing data in an organized and accessible way, historians provide a clear a
 
 FlowFuse is an industrial data platform designed to help engineers build, manage, and scale their Node-RED solutions for digitalizing processes and operations. It streamlines the creation of a Unified Namespace (UNS) and integrates data historians, different systems, services, and hardware seamlessly into your operations.
 
-For a step-by-step guide on setting up a UNS in just 15 minutes, check out our article on [Building a UNS with FlowFuse](blog/2024/11/building-uns-with-flowfuse/).
+For a step-by-step guide on setting up a UNS in just 15 minutes, check out our article on [Building a UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/).
 
 FlowFuse supports a wide range of industrial protocols, including [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), [OPC UA](/node-red/protocol/modbus/), [Modbus](/node-red/protocol/opa-ua/), and more, making it adaptable to both legacy systems and modern IoT devices. This flexibility bridges the gap between IT and OT environments, ensuring smooth integration across different technologies.
 
