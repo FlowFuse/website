@@ -6,6 +6,10 @@ navTitle: Engagements & Pricing
 
 Pricing is publicly available at [our pricing page](/pricing/).
 
+## Per-site licenses
+
+Self-hosted FlowFuse installations require a minumum of 10 instances per location or geographic site.
+
 ## Generating a Quote
 
 Clearly written, easy to understand quotes are crucial for customers to understand what they are purchasing and how much it costs. To create a quote, combine the (1) product plan and (2) other purchased items according to the following guide.

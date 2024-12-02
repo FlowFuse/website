@@ -7,4 +7,122 @@
         background-position-x: right;
         background-position-y: -25px;
     }
+    .catalog-hero.cropped {
+        background-position-y: -90px;
+    }
 }
+
+.catalogue-filters > label {
+    font-weight: bold;
+}
+.catalogue-filters ul {
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+.catalogue-filters li {
+    padding: 6px;
+}
+.catalogue-filters li:hover {
+    color: black;
+    cursor: pointer;
+}
+.catalogue-filters label {
+    cursor: pointer;
+}
+.catalogue-filters input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.catalogue-search {
+    width: 100%;
+    background-color: theme(colors.white);
+    border: 1px solid theme(colors.gray.300);
+    padding: 12px;
+    border-radius: 3px;
+}
+.catalogue-meta {
+    padding: 12px 0;
+    color: theme(colors.gray.500);
+    font-weight: 300;
+}
+
+.pagination li:hover {
+    cursor: pointer;
+    color: theme(colors.blue.500);
+}
+
+/* .ff-certified-tag {
+    background-color: theme(colors.blue.50);
+    border: 1px solid theme(colors.blue.600);
+    padding: 3px 6px;
+    border-radius: 6px;
+    align-items: center;
+    gap: 3px;
+} */
+
+.certified-icon {
+    width: 24px;
+    height: 24px;
+    fill: theme(colors.indigo.600);
+    stroke: theme(colors.white);
+}
+
+.integration-card a {
+    color: theme(colors.gray.600);
+}
+
+.integration-card a:hover {
+    text-decoration: none;
+}
+
+.integration-card--meta {
+    border-bottom-right-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+}
+.integration-card--stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.placeholder-bar {
+    background-color: theme(colors.gray.200);
+    min-height: 12px;
+    min-width: 12px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+
+.placeholder-gradient {
+    background: linear-gradient(90deg, theme(colors.gray.200), theme(colors.gray.100), theme(colors.gray.200));
+    background-repeat: repeat;
+    background-size: 50% 100%;
+    min-width: 100px;
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -100%;
+    bottom: 0;
+
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+}
+
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+

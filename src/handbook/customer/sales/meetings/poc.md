@@ -14,7 +14,7 @@ To extend the trial period, including if a trial has expired already, use the 'E
 
 ### Self-hosted trial
 
-If a self-hosted trial is desired, you need to generate a license key. See below.
+If a self-hosted trial is desired, you need to generate a license key to unlock paid-for features. See below.
 
 Every self-hosted POC call should have an engineer present.
 
@@ -24,8 +24,9 @@ During the initial POC meeting, the [POC Criteria document](https://docs.google.
 
 ### Generating a license
 
-For self-managed installs a license needs to be generated and installed to
-unlock paid-for features. Generate one by [filling out this form](https://energetic-sanderling-4472.flowfuse.cloud/dashboard/license){rel="nofollow"}.
-For Trial licenses the license is valid for 30 days, from the day of the request onwards and includes 10 users, 10 teams, and 10 Node-RED instances on the Enterprise Tier.
+-Generate one by [filling out this form](https://energetic-sanderling-4472.flowfuse.cloud/dashboard/license){rel="nofollow"}.
+-Trial license expiry date should be set for 30 days, even in cases where longer than 30 days may be warranted.
+-Include 10 users, 10 teams, and 10 Node-RED instances on the Enterprise Tier.
+-Trial extensions need to be approved by management.
 
 All generated licenses are added [to this sheet](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0){rel="nofollow"} automatically.

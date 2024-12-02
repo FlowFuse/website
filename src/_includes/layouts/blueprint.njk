@@ -24,7 +24,7 @@ layout: layouts/base.njk
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="sticky top-20 mt-6 flex flex-col">
-                    <a href="https://app.flowfuse.com/deploy/blueprint?blueprintId={{ item.data.blueprintId }}" class="ff-btn ff-btn--primary flex gap-2 mb-6 mt-4 uppercase" target="_blank">Deploy {% include "components/icons/rocket-launch.svg" %}</a>
+                    <a href="https://app.flowfuse.com/deploy/blueprint?blueprintId={{ blueprintId }}" class="ff-btn ff-btn--primary flex gap-2 mb-6 mt-4 uppercase" target="_blank">Deploy {% include "components/icons/rocket-launch.svg" %}</a>
                     <h3 class="mb-3">Author:</h3>
                     {% if author %}
                     {% renderCompanyTile companies[author] %}
@@ -33,9 +33,9 @@ layout: layouts/base.njk
                     {% endif %}
                     {% if dependencies %}
                     <h3 class="mb-3 pt-6">Integrations:</h3>
-                    {% for dependency in dependencies %}
+                    {# {% for dependency in dependencies %}
                         {% renderIntegration integrations[dependency] %}
-                    {% endfor %}
+                    {% endfor %} #}
                     {% endif %}
                     {% include "contact-us-cta-line.njk" %}
                 </div>

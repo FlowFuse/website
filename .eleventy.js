@@ -231,6 +231,15 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addFilter("truncate", function(text, maxWordCount) {
+        const split = text.split(" ");
+        if (split.length <= maxWordCount) {
+            return text;
+        }
+        return text.split(" ").splice(0, maxWordCount).join(" ") + "..."
+    });
+
+
     eleventyConfig.addFilter("excerpt", function(str) {
         const content = new String(str);
         return content.split("\n<!--more-->\n")[0]
@@ -617,6 +626,22 @@ module.exports = function(eleventyConfig) {
         }
 
         return nav;
+    });
+
+    eleventyConfig.addCollection("publications", function(collectionApi) {
+        return collectionApi.getAll().filter(item => {
+            return item.data.tags && (item.data.tags.includes("whitepaper") || item.data.tags.includes("ebook"));
+        }).map(item => {
+            item.data.tags = item.data.tags.map(tag => {
+                if (tag.toLowerCase() === 'whitepaper') {
+                    return 'Whitepaper';
+                } else if (tag.toLowerCase() === 'ebook') {
+                    return 'eBook';
+                }
+                return tag;
+            });
+            return item;
+        });
     });
 
     // Plugins

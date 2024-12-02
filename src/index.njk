@@ -20,15 +20,15 @@ hubspot:
                 </p>
                 <div class="flex flex-col">
                     <div class="m-auto lg:mt-3 flex gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 flex-row">
-                        <a class="ff-btn ff-btn--highlight flex flex-col max-xl:mb-6" href="/product/features/">
+                        <a class="ff-btn ff-btn--highlight flex flex-col max-xl:mb-6" href="{{ site.appURL }}/account/create"
+                        onclick="capture('cta-try-it-now', {'position': 'hero'})">
                             <span class="text-base uppercase items-center">
-                                LEARN MORE
+                                TRY IT OUT
                             </span>
                         </a>
-                        <a class="ff-btn flex flex-col max-xl:mb-6" href="/contact-us"
-                            onclick="capture('cta-contact-us', {'position': 'hero'})">
-                            <span class="text-base flex gap-2 uppercase items-center text-indigo-600">
-                                Contact us
+                        <a class="ff-btn flex flex-col max-xl:mb-6" href="/product/features/" onclick="capture('cta-learn-more', {'position': 'hero'})">
+                            <span class="text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                LEARN MORE
                                 {% include "components/icons/arrow-right.svg" %}
                             </span>
                         </a>
@@ -158,35 +158,7 @@ hubspot:
     </div>
     <!-- Get Started -->
     <div class="ff-blue-card">
-            <div class="m-auto w-full text-center sm:text-left mb-2">
-                <h2 class="font-bold"><span class="text-red-600">Get Started</span> with FlowFuse</h2>
-                <p class="-mt-1">Explore our <a href="/pricing/">pricing</a></p>
-            </div>
-            <div class="w-full sm:grid sm:grid-cols-2 gap-6 sm:gap-8">
-                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-center sm:justify-start mt-3 mb-2 mx-auto md:mx-0 w-6 h-6">
-                            {% include "components/icons/building-office-2.svg" %}
-                        </div>
-                        <h4 class="flex justify-center sm:justify-start font-semibold">On Premise</h4>
-                        <p class="font-light mt-6">Deploy FlowFuse on your hardware for enhanced flexibility. Opt for self-hosted deployment with FlowFuse, enabling on-premises installation and full control over your deployment process.</p>
-                    </div>
-                    <a class="mt-4 mb-6 sm:mb-0 ff-btn ff-btn--highlight uppercase inline-block self-center sm:self-start"
-                        href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'secondary'})">Install now</a>
-                </div>
-                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-center sm:justify-start mt-3 mb-2 mx-auto md:mx-0 w-6 h-6">
-                            {% include "components/icons/cloud.svg" %}
-                        </div>
-                        <h4 class="flex justify-center sm:justify-start font-semibold">FlowFuse Cloud</h4>
-                        <p class="font-light mt-6">Our managed hosted solution, maintained and supported by the FlowFuse team. Experience flexibility, scalability, and expert assistance to drive your business forward.</p>
-                    </div>
-                    <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
-                        href="{{ site.appURL }}/account/create"
-                        onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>
-                </div>
-            </div>
+        {% include "get-started.njk" %}
     </div>
     <!-- FF Content -->
     <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl px-6">

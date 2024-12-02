@@ -121,12 +121,18 @@ When only black or white are allowed, search for the file name ending with "blac
 
 ## Fonts
 
-In both the FlowFuse application and on our website, we use [Tailwind CSS](https://tailwindcss.com/). With Tailwind, comes the `font-sans` class, which we use across FlowFuse.
+The following fonts are used across the FlowFuse platform, website, and branded materials. The table below outlines where each font is applied.
 
-For branded materials such as videos and images we have two stylized fonts in-use:
+| Font                                                   | Logo | Platform | Website | Branded Materials |
+|--------------------------------------------------------|------|----------|---------|--------------------|
+| [**font-sans** (Tailwind CSS)](https://tailwindcss.com) |      | *        |         |                    |
+| [**Heebo**](https://fonts.google.com/specimen/Heebo)   |      |          | *       | *                  |
+| [**Baloo Da 2**](https://fonts.google.com/specimen/Baloo+Da+2) | *    |          |         |                    |
 
-- ["DIN Alternate Bold"](https://fontsgeek.com/fonts/DIN-Alternate-Bold): Used in videos & social media content.
-- ["Baloo Da 2"](https://fonts.google.com/specimen/Baloo+Da+2): Used in the FlowFuse logo.
+#### Notes:
+- **Heebo:** When using this font, we aim to avoid weights heavier than *semi-bold* to maintain a clean and balanced design.
+- **Baloo Da 2:** Exclusively used in the FlowFuse logo.
+
 ## Colour Palette
 
 <div class="space-y-6">

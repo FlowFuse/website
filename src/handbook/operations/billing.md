@@ -4,13 +4,10 @@ navTitle: Billing
 
 # Billing
 
-We use Stripe to bill our customers and to manage subscriptions for FlowFuse.
-Team members will be given a login to the  Stripe dashboard as required for
+Subscriptiona and their invoices are all stored in Hubspot, and Stripe is used for payment processing for contracted
+revenue. For FlowFuse's montly self-service customers Stripe also tracks the subscription instead of Hubspot.
+Team members will be given a login to the relevant Stripe and Hubspot dashboard as required for
 their role with an appropriate level of access.
-
-We also contract with Formation Financial to help assist with business administration and billing support. You can direct any billing related requests to billing@flowfuse.com for their assistance if preferred.
-
-You should first get approval from the CEO or CTO to make any changes to existing subscriptions. Use coupons as described below when providing customer access to resources subscribed to through pre-paid deals.
 
 ## Providing support
 
@@ -25,7 +22,7 @@ and charge customers based on their payment method filed with Stripe.
 
 Annual subscriptions and invoices are managed in HubSpot, please see instructions below.
 
-### Creating an invoice
+### Creating a subscription invoice
 
 To generate an invoice, the corresponding deal and quote must first be in place in HubSpot. This ensures the correct products and amounts are auto-populated.
 
@@ -35,6 +32,14 @@ To generate an invoice, the corresponding deal and quote must first be in place 
 3. Make sure both ACH and Credit Card options are checked for payment.
 4. Click the Finalize button on the top right.
 5. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
+
+### Creating a PS invoice
+
+For new customers an invoice should be generated in [Hubspot's Invoice section](https://app-eu1.hubspot.com/contacts/26586079/objects/0-53/views/all/list).
+
+1. Ensure the company details are updated, and include an address and country.
+2. Ensure the customer provided a PO number if they require one.
+3. Create a one-time invoice through Hubspot -- If the customer already is used to paying through Stripe, use best judgement when to switch them over
 
 ## Coupons
 
