@@ -628,6 +628,22 @@ module.exports = function(eleventyConfig) {
         return nav;
     });
 
+    eleventyConfig.addCollection("publications", function(collectionApi) {
+        return collectionApi.getAll().filter(item => {
+            return item.data.tags && (item.data.tags.includes("whitepaper") || item.data.tags.includes("ebook"));
+        }).map(item => {
+            item.data.tags = item.data.tags.map(tag => {
+                if (tag.toLowerCase() === 'whitepaper') {
+                    return 'Whitepaper';
+                } else if (tag.toLowerCase() === 'ebook') {
+                    return 'eBook';
+                }
+                return tag;
+            });
+            return item;
+        });
+    });
+
     // Plugins
     eleventyConfig.addPlugin(EleventyRenderPlugin)
     eleventyConfig.addPlugin(pluginRSS)
