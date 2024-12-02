@@ -2,7 +2,7 @@
 title: Publishing Modbus data to your UNS with FlowFuse
 subtitle: Bridging Modbus Data to MQTT using FlowFuse
 description: Learn how to bridge Modbus data to MQTT and publish it to a Unified Namespace (UNS) using FlowFuse for real-time monitoring and cloud integration.
-date: 2024-11-26
+date: 2024-12-02
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/publishing-modbus-data-to-uns-using-ff.png
 keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt, modbus to uns, modbus data to unified namespace
@@ -19,15 +19,17 @@ This article shows you how to bridge Modbus data to MQTT using FlowFuse and Node
 
 <!--more-->
 
+If you haven’t built a Unified Namespace yet, please read our article on [building a UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/) and create your own in just 15 minutes.
+
 ## The Importance of Bridging Modbus Data to MQTT for Cloud Integration and UNS
 
-Modbus has long been a foundational protocol in industrial environments, enabling reliable communication between devices like PLCs, sensors, and motors. It has served the needs of operational technology (OT) for decades. However, as industries embrace Industry 4.0, there is an increasing need to bridge the gap between legacy OT systems like Modbus and modern information technology (IT) platforms, including cloud-based systems and IoT applications. This is where the challenge of the OT/IT gap arises.
+Modbus has been a go-to protocol in industrial environments for a long time, providing reliable communication between devices like PLCs, sensors, and motors. It’s been essential for operational technology (OT) for decades. But as industries move towards Industry 4.0, there’s a growing need to connect older OT systems like Modbus with modern IT platforms, such as cloud systems and IoT applications. This is where the OT/IT gap becomes a challenge.
 
-While Modbus excels in local control and data collection, it struggles to integrate with cloud-based platforms and real-time IoT solutions. That's where MQTT, a lightweight, real-time messaging protocol, becomes essential. MQTT allows devices to transmit data efficiently to the cloud, even in environments with limited bandwidth, power, or connectivity. However, bridging them is crucial since Modbus and MQTT don’t natively communicate for bridging. We will need to use a platform like Flowfuse that supports both.
+While Modbus does a great job at local control and data collection, it has some limitations when it comes to cloud integration and real-time IoT solutions. Without a centralized approach, data often remains locked in silos—isolated within different systems and devices. That’s where a Unified Namespace (UNS) comes in. A UNS acts as a bridge to break down these data silos. It’s a centralized architecture that allows different systems to communicate seamlessly, no matter the underlying technology. By setting up a UNS, you can easily bring in data from various systems, including Modbus, and consolidate it into one accessible point.
 
-Connecting Modbus data to MQTT allows you to send data from legacy systems to the cloud without replacing existing equipment. This enables real-time monitoring and remote analysis. Once you create the bridge for data from Modbus to MQTT, publishing it into a Unified Namespace (UNS) further enhances data accessibility and usability. A UNS centralizes all operational data into a single namespace, making it easier to track performance, detect issues, and perform analytics without complex integrations.
+At FlowFuse, we help make this connection by integrating Modbus data into the UNS. We’ve chosen MQTT as the broker for our UNS because it’s lightweight, uses a pub-sub architecture, and is well-suited for real-time communication and cloud integration.
 
-For instance, in a factory still relying on Modbus, machines such as motors, pumps, and conveyors can send their operational data to the cloud via MQTT. Once the data is in the cloud, it can be published into the Unified Namespace (UNS), giving stakeholders easy access to a centralized view of all device data in real time. This integration provides immediate insights into machine performance, enabling operators to track temperature, vibration, and runtime metrics. With these insights, predictive maintenance models can be applied, helping to identify potential failures before they occur and preventing unplanned downtime.
+Once the Modbus data is in the UNS, it can be used for real-time monitoring, predictive maintenance, and analytics. For instance, in a factory still running Modbus with older systems, data from machines like motors, pumps, and conveyors can be sent to the UNS. This means stakeholders can access that data in real time, gaining insights into machine performance and system health. By consolidating data that was once trapped in silos into one place, the UNS helps organizations streamline operations, make better decisions, and boost efficiency.
 
 ## How to Bridge Modbus to MQTT
 
