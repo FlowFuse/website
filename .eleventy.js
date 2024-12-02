@@ -629,16 +629,19 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addCollection("publications", function(collectionApi) {
-        return [
-            ...collectionApi.getFilteredByTag("whitepaper").map(item => {
-                item.data.tags = item.data.tags.map(tag => tag.toLowerCase() === 'whitepaper' ? 'Whitepaper' : tag);
-                return item;
-            }),
-            ...collectionApi.getFilteredByTag("ebook").map(item => {
-                item.data.tags = item.data.tags.map(tag => tag.toLowerCase() === 'ebook' ? 'eBook' : tag);
-                return item;
-            })
-        ];
+        return collectionApi.getAll().filter(item => {
+            return item.data.tags && (item.data.tags.includes("whitepaper") || item.data.tags.includes("ebook"));
+        }).map(item => {
+            item.data.tags = item.data.tags.map(tag => {
+                if (tag.toLowerCase() === 'whitepaper') {
+                    return 'Whitepaper';
+                } else if (tag.toLowerCase() === 'ebook') {
+                    return 'eBook';
+                }
+                return tag;
+            });
+            return item;
+        });
     });
 
     // Plugins
