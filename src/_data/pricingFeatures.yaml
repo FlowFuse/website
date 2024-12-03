@@ -58,11 +58,16 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Connect to an edge device and develop your flows.</p>"
-      - id: mqtt-broker
+      - id: mqtt-broker-cloud
         label: MQTT Broker
         cloudValues: [ null, 'check', 'check' ]    
         tags: [ 'cloud' ]
         info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Team Tier includes 5 clients at no extra cost, while the Enterprise Tier includes 20 clients for free as part of your existing plan, with purchase additional clients as needed in the future.</p>"
+      - id: mqtt-broker-sh
+        label: MQTT Broker
+        selfHostedValues: [ null, 'check' ]    
+        tags: [ 'self-hosted' ]
+        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Enterprise Tier includes 20 clients for free as part of your existing plan, with purchase additional clients as needed in the future.</p>"
       - id: pipelines
         label: DevOps Pipelines
         cloudValues: [ null, 'check', 'check' ]
