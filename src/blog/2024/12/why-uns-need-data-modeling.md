@@ -2,7 +2,7 @@
 title: "UNS & Why You Need Data Modeling"
 subtitle: Why data modeling is key to making your Unified Namespace work effectively.
 description: Discover why data modeling is crucial for a Unified Namespace (UNS) in manufacturing and how it helps organize and make data actionable.
-date: 2024-11-29
+date: 2024-12-04
 authors: ["sumit-shinde"]
 image: 
 keywords: uns, data modeling, why uns needs data modeling, unified namespace
