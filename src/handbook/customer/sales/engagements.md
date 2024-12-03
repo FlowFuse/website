@@ -6,6 +6,10 @@ navTitle: Engagements & Pricing
 
 Pricing is publicly available at [our pricing page](/pricing/).
 
+## Per-site licenses
+
+Self-hosted FlowFuse installations require a minumum of 10 instances per location or geographic site.
+
 ## Generating a Quote
 
 Clearly written, easy to understand quotes are crucial for customers to understand what they are purchasing and how much it costs. To create a quote, combine the (1) product plan and (2) other purchased items according to the following guide.
@@ -44,7 +48,7 @@ countersignature.
 
 ### Steps
 
-1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
+1. [Start invoice procedure](/handbook/operations/billing/#creating-a-subscription-invoice)
 1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
@@ -65,7 +69,7 @@ A deal is considered an upsell when the customer already has an annual subscript
 
 1. Create a new "expansion" deal in HubSpot with the total new ARR, specifying the start date and renewal date for proration. Be sure to associate the existing renewal deal in order to track total ARR.
 1. Send a HubSpot quote for signature to confirm the additional yearly costs.
-1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
+1. [Start invoice procedure](/handbook/operations/billing/#creating-a-subscription-invoice)
 1. Send an email including instructions how they get access to bought resources.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer

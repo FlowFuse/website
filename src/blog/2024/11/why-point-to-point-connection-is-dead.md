@@ -9,7 +9,7 @@ keywords: uns, cons of p2p, cons of point-to-point connection, drawbacks of poin
 tags:
    - flowfuse
    - mqtt 
-   - unified namespace
+   - unified-namespace
 ---
 
 Manufacturing has changed significantly over the years, driven by new technology and the need for better communication between systems. In the past, point-to-point (P2P) connections, where devices communicate directly with each other, were the standard. However, as factories become more complex, P2P connections are no longer practical. This article explains why P2P connections are outdated and how a Unified Namespace (UNS) offers a better, more flexible solution.
@@ -96,7 +96,7 @@ _Unified Namespace_
 
 To simplify the creation of a UNS in your manufacturing environment, [FlowFuse](/) provides an integrated MQTT broker service. The platform makes building, scaling, and managing Node-RED solutions easy. It supports seamless connections between devices, services, and APIs using over 5,000 community-contributed nodes for data collection. FlowFuse also enables efficient data transformation and visualization with a low-code approach, remote management of edge devices, and team collaboration on projects. With everything centralized on one platform, FlowFuse offers high security, scalability, and availability to optimize and maintain your system effectively.
 
-[Sign up](https://app.flowfuse.cloud/account/create/) now to start building your own Unified Namespace and take the first step toward a more efficient and connected manufacturing system.
+[Sign up](https://app.flowfuse.cloud/account/create/) now to [start building your own Unified Namespace with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/) and take the first step toward a more efficient and connected manufacturing system.
 
 ## Summary
 
