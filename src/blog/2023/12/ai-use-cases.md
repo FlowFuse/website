@@ -15,7 +15,7 @@ Are we standing on the brink of a Fifth Industrial Revolution? The manufacturing
 
 But the question lingers for many plant managers and decision makers: in which AI-powered capabilities should one invest to bring about transformative changes in the manufacturing environment?
 
-As we navigate this question, I want to focus on three AI uses that are not only ripe for investment but also pivotal in driving manufacturing success competitive market.
+As we navigate this question, I want to focus on three AI uses that are not only ripe for investment but also pivotal in driving manufacturing success in this competitive market.
 
 ## Empowering Citizen Developer Strategy with AI
 The concept of citizen development stands as one of the most significant fields in my opinion, a sentiment I've detailed in my [previous article](/blog/2023/10/citizen-development/) about Citizen Developers. This approach is revolutionizing the manner in which applications are crafted and deployed across various industries. By empowering individuals—irrespective of their coding knowledge—to create applications, AI is dramatically hastening this process.
