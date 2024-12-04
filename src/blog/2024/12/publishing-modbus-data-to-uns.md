@@ -2,7 +2,7 @@
 title: Publishing Modbus data to your UNS with FlowFuse
 subtitle: Bridging Modbus Data to MQTT using FlowFuse
 description: Learn how to bridge Modbus data to MQTT and publish it to a Unified Namespace (UNS) using FlowFuse for real-time monitoring and cloud integration.
-date: 2024-12-03
+date: 2024-12-04
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/publishing-modbus-data-to-uns-using-ff.png
 keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt, modbus to uns, modbus data to unified namespace
