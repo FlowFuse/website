@@ -2,8 +2,8 @@
 title: Streamlining Node-RED Collaboration with FlowFuse
 subtitle:  Enabling Real-Time Collaboration in Industrial Environments with FlowFuse
 description: Learn how FlowFuse simplifies collaboration for Node-RED projects by centralizing resources, enabling real-time updates, and ensuring secure, scalable teamwork. 
-date: 2024-12-05
-authors: ["joe-pavitt"]
+date: 2024-11-05
+authors: ["sumit-shinde"]
 image:
 keywords: real-time collaboration on node-red projects, centrlize management, real-time collaboration on nodered projects
 tags:
@@ -25,6 +25,15 @@ This is exactly why centralized management is so crucial. With FlowFuse, everyth
 
 Having everything in one place means fewer mistakes, fewer mix-ups, and much easier collaboration. Whether you're working in a single instance or managing a whole network of edge devices, FlowFuse makes it easy to stay aligned. You can move quickly and confidently without worrying about missing something important.
 
+![List of all Node-RED instances organized centrally within your team.](./images/application-wise-instance-organization.jpeg){data-zoomable}
+A centralized view of applications with Node-RED instances organized under each application for easier management.
+
+![List of all Node-RED instances organized centrally within your team.](./images/list-of-instances.jpeg){data-zoomable}
+A list of all Node-RED instances displayed in a centralized way, allowing team members to manage and access them easily.
+
+![All edge devices centralized for easy management.](./images/edge-devices.jpeg){data-zoomable}
+A centralized view of edge devices, providing streamlined management for all devices within the platform.
+
 In short, centralization makes everything simpler. It’s the backbone of effective teamwork because it ensures that everyone is working from the same starting point. With FlowFuse, you don't have to worry about syncing up—everything's already in sync for you.
 
 If you want to dive deeper into how FlowFuse centralizes things, check out this article: [Managing Node-RED Instances in a Centralized Platform](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/).
@@ -35,6 +44,12 @@ Collaboration begins with the right team setup. In FlowFuse, you can quickly [cr
 
 However, simply creating a team and inviting members isn’t enough. Not all team members need access to all information, features, or controls. It’s important to ensure that the right people have the right level of access to do their work effectively. Providing excessive access to members who don’t require it, or who might lack the necessary expertise, can lead to accidental changes or mistakes.
 
+![Invite new members to your FlowFuse team by assigning roles and permissions.](./images/inviting-member-to-team.jpeg){data-zoomable}
+A centralized view of edge devices, providing streamlined management for all devices within the platform.
+
+![FlowFuse team management interface displaying team members and their roles for streamlined collaboration control.](./images/team-members-list.jpeg){data-zoomable}
+A comprehensive list of team members with assigned roles and permissions
+
 This is where [FlowFuse’s Role-Based Access Control (RBAC)](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/) comes in. When inviting new team members, you can assign them specific roles, each with a different set of permissions and access scopes. This ensures that each team member has the appropriate level of access based on their role, reducing the risk of unintended changes or disruptions.
 
 If needed, you can later update roles to adjust permissions as your team and projects evolve. FlowFuse’s RBAC helps maintain control and security while empowering each team member to contribute effectively to the project.
@@ -44,6 +59,9 @@ If needed, you can later update roles to adjust permissions as your team and pro
 Once team members have been invited, Node-RED instances have been created, and edge devices have been added by the team owner, the real-time collaboration capabilities of FlowFuse come into play. Team members, whether they have owner or member roles, can work on the same project simultaneously. They can update flows, deploy them, and monitor progress in real time.
 
 With FlowFuse, it’s easy to track who is working on which project and at what stage. The platform allows you to see who has opened the Node-RED editor you are working on, which flow they are working on, and even which specific node they are interacting with. This visibility ensures that team members are always aligned and that collaboration happens seamlessly without stepping on each other’s toes.
+
+![A screenshot showing multiple users working on the same Node-RED flow in real time within FlowFuse, with live updates and visibility of each user's actions.](./images/multiplayer-flowfuse.jpeg){data-zoomable}
+Multiple users collaborating on the same Node-RED flow in real time within FlowFuse.
 
 For instance, if two members are modifying different parts of the same flow, they can do so without interrupting each other’s work. They’ll both be able to see each other's updates in real time, ensuring the project moves forward smoothly. This collaborative approach enhances teamwork and helps avoid mistakes, as everyone has the information they need when they need it.
 
@@ -57,9 +75,15 @@ FlowFuse provides robust version control features that make it easier to manage 
 
 To view the version history, navigate to your Node-RED Instance view and switch to the 'Version History' tab. Here, you’ll find two key sections:
 
-- Timeline: This section displays a timeline of who deployed which flow and when. Each deployment automatically creates a snapshot of your Node-RED instance. You can easily roll back to any previous version by clicking the three-dot icon on the right and selecting Restore Snapshot. You also have the option to compare the current version of your Node-RED instance with previous snapshots, download it, and more.
+- Timeline: This section displays a timeline of who deployed, what is updated and for which flow and when. Each deployment automatically creates a snapshot of your Node-RED instance. You can easily roll back to any previous version by clicking the three-dot icon on the right and selecting Restore Snapshot. You also have the option to compare the current version of your Node-RED instance with previous snapshots, download it, and more.
+
+![A screenshot displaying the version history timeline in FlowFuse, showing deployment snapshots and the ability to track and roll back changes in Node-RED instances.](./images/version-history-timeline.jpeg){data-zoomable}
+Version history timeline showing deployment and changes flows, making it easy to track updates and revert to previous versions.
 
 - Snapshots: The second tab, Snapshots, provides a clean, list-style interface that shows all available snapshots. Unlike the timeline view, this section focuses solely on the snapshots themselves, without the detailed deployment history. You can upload or download snapshots, and even create a snapshot of your instance at any time by clicking the Create Snapshot button.
+
+![A screenshot of the snapshots interface in FlowFuse, showing a list of available snapshots that can be restored or compared.](./images/version-history-snapshots.jpeg){data-zoomable}
+Snapshots list interface in FlowFuse, providing an organized view of all available snapshots for easy restoration or comparison.
 
 This version control functionality allows you to manage and recover Node-RED instances seamlessly, ensuring that your team can collaborate effectively without the risk of losing or overwriting important work.
 
@@ -69,11 +93,17 @@ When working on projects, it's common to develop reusable flows that can save ti
 
 FlowFuse makes this process easy with the [Shared Flow Library](/docs/user/shared-library/). This feature allows both owners and members to export important flows and store them in a shared library, making them available to all team members. Once a flow is added to the library, anyone within the same team can import and use it in any Node-RED instance whenever needed.
 
+![A screenshot of the Shared Flow Library in FlowFuse, showing a list of flows available for import and reuse by team members in any Node-RED instance.](./images/shared-lib-import.jpeg){data-zoomable}
+Shared Flow Library in FlowFuse, displaying a list of reusable flows that can be imported and used by team members across multiple Node-RED instances.
+
 This shared approach streamlines development, eliminates redundant work, and ensures consistency across projects, ultimately saving time. Whether it’s a reusable function, a common configuration, or a flow for recurring tasks, FlowFuse’s Shared Flow Library enables your team to easily access and integrate these resources, boosting productivity and fostering better collaboration.
 
 ## **Audit Logs**
 
 Accountability is essential when multiple team members collaborate on complex industrial projects. FlowFuse offers comprehensive Audit Logs to track every action taken within the platform. This feature provides a detailed record of who made which changes, when those changes were made, and the specifics of each action.
+
+![A screenshot of the audit logs in FlowFuse, displaying detailed records of changes made by users, ensuring accountability and security within the platform.](./images/application-audit-logs.jpeg){data-zoomable}
+Audit logs in FlowFuse, tracking every action taken within the platform to ensure accountability and transparency among team members.
 
 With Audit Logs, you can easily trace who deployed a flow, modified settings, or interacted with assets. This transparency ensures that all team members are accountable for their actions, enhancing security and reducing the risk of errors or unauthorized changes.
 
@@ -81,25 +111,25 @@ Audit Logs are especially valuable for troubleshooting. They allow you to pinpoi
 
 For more information on how to use Audit Logs effectively, refer to our documentation on [Audit Logs in FlowFuse](/docs/user/logs/#audit-log).
 
-These are just the surface-level features that facilitate collaboration. FlowFuse offers many more tools that make teamwork easier, such as the ability for team members to view, update, and manage settings and configurations of Node-RED instances and edge devices. For a deeper look into all the collaboration features, check out the [FlowFuse Role-Based Permission Table](/docs/user/team/#role-based-access-control).
+These are just a few of the features we’ve covered. FlowFuse has many more tools and capabilities that can further enhance collaboration, streamline workflows, and optimize your industrial operations.
 
-In summary, FlowFuse is an industrial data platform designed to simplify collaboration on Node-RED projects. By centralizing your instances, devices, and data, it ensures that everyone on your team has access to the same resources, boosting productivity and minimizing errors. With features like real-time updates, role-based access, version control, and audit logs, FlowFuse enables teams to work together securely and efficiently. Whether you’re managing small flows or complex industrial systems, FlowFuse helps your team collaborate and achieve more.
+In summary, FlowFuse is a platform that streamlines collaboration on Node-RED projects. By centralizing your Node-RED instances, devices, and data, it ensures everyone on your team is aligned and has access to the same resources. Features like real-time updates, role-based access, version control, and audit logs make it easier to collaborate, stay secure, and avoid errors. Whether you're managing small flows or large-scale industrial systems, FlowFuse helps your team work together more efficiently and effectively.
 
-**Ready to Improve Your Manufacturing Team’s Collaboration?**
+*Ready to Improve Your Manufacturing Team’s Collaboration?*
 
 Start using FlowFuse today to streamline your industrial projects, enhance teamwork, and securely manage your Node-RED instances. 
 
 [Sign up now](https://flowfuse.com/signup) and experience the difference FlowFuse can make for your industrial environment and team.
 
-## **Up Next**
+## *Up Next*
 
 Explore more resources and deepen your understanding of FlowFuse with these articles:
 
-- *[Managing Node-RED Instances in a Centralized Platform](https://flowfuse.com/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/)* 
+- **[Managing Node-RED Instances in a Centralized Platform](https://flowfuse.com/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/)**  
   Learn how to effectively manage Node-RED instances in a centralized environment with FlowFuse, simplifying deployment and ensuring scalability.
 
-- *[Exploring FlowFuse Security Features](https://flowfuse.com/blog/2024/10/exploring-flowfuse-security-features/)*
+- **[Exploring FlowFuse Security Features](https://flowfuse.com/blog/2024/10/exploring-flowfuse-security-features/)**  
   Discover the security tools and features built into FlowFuse to help protect your industrial data and keep your systems secure.
 
-- *[Building on FlowFuse: Working with Devices](https://flowfuse.com/blog/2024/07/building-on-flowfuse-devices/)* 
+- **[Building on FlowFuse: Working with Devices](https://flowfuse.com/blog/2024/07/building-on-flowfuse-devices/)**  
   Dive into how FlowFuse supports device management, enabling you to build, deploy, and monitor edge devices more efficiently.
