@@ -8,7 +8,7 @@ image:
 keywords: uns, data modeling, why uns needs data modeling, unified namespace
 tags:
    - flowfuse
-   - uns
+   - unified-namespace
    - data modeling
 ---
 
