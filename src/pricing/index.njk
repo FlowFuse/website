@@ -170,7 +170,7 @@ hubspot:
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                             {% if cloud %}
-                               href="/book-demo/" onclick="capture('cta-lets-talk', {'position': 'primary'}, {'plan': 'sh-enterprise'})">book a demo</a>
+                               href="#contact-us" onclick="scrollToAnchor(event, 'contact-us'); capture('cta-contact-us', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">Contact Us</a>
                             {% else %}
                                 href="#request-trial-license" onclick="scrollToAnchor(event, 'request-trial-license'); capture('cta-trial-license', {'position': 'primary'}, {'plan': 'sh-enterprise'});">Get 30-day Trial License</a>
                             {% endif %}
