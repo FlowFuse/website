@@ -165,11 +165,15 @@ hubspot:
                             <div data-nosnippet class="flex">
                                 <!-- Price -->
                                 <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
-                                    <h2 class="self-end pb-1">Let's Talk</h2>
+                                    <h2 class="self-end pb-1">{% if cloud %}Let's Talk{% else %}Free Trial{% endif %}</h2>
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
+                            {% if cloud %}
                                href="/book-demo/" onclick="capture('cta-lets-talk', {'position': 'primary'}, {'plan': 'sh-enterprise'})">book a demo</a>
+                            {% else %}
+                                href="#request-trial-license" onclick="scrollToAnchor(event, 'request-trial-license'); capture('cta-trial-license', {'position': 'primary'}, {'plan': 'sh-enterprise'});">Get 30-day Trial License</a>
+                            {% endif %}
                         </div>
                     </div>
                     {% endmacro %}
@@ -322,7 +326,7 @@ hubspot:
         <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
             <div>
                 <h3 class="w-full text-center md:text-left">
-                    Request a trial license
+                    30-day Trial License
                 </h3>
                 <p>
                     Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial gives you the chance to explore all the features and functionalities of FlowFuse in your own environment. To start your trial, simply fill out the form. Our sales team will reach out to you to discuss your needs and provide the license.
