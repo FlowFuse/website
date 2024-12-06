@@ -1,6 +1,6 @@
 ---
 title: "Linear Regression Analytics: Understand the Future with D2.0 in 10 Minutes"
-subtitle: Leveraging Linear Regression with Flowfuse D2.0: A Guide to Smarter Manufacturing Predictions
+subtitle: "Leveraging Linear Regression with Flowfuse D2.0: A Guide to Smarter Manufacturing Predictions"
 description: "Learn how linear regression and Flowfuse D2.0 analytics can help predict and optimize your manufacturing operations."
 date: 2024-12-08
 authors: ["sumit-shinde"]
