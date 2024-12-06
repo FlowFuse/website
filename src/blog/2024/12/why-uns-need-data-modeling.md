@@ -111,6 +111,8 @@ A well-structured data model serves the needs of your current manufacturing oper
 
 For example, as you add new machines, automated production lines, or advanced sensors to your operations, the data model ensures that these new elements integrate smoothly into the existing framework. It maintains consistency, enabling new data points to be mapped easily while keeping the system organized and efficient.
 
+---
+
 With all these benefits in mind, the next step is to think about how to effectively implement data modeling.  Data modeling is a much deeper, more dynamic process that can reshape how you use data across your entire business, Its not only about structuring and integrating data but also about transforming your operations, unlocking new efficiencies, and driving growth. The right platform can help you go beyond essential organization and truly harness the power of your data. 
 
 ## **Leverage FlowFuse for Effective Data Modeling in Your UNS**
