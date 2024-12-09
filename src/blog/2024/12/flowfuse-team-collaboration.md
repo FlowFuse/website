@@ -36,7 +36,7 @@ A list of all Node-RED instances is displayed centrally, allowing team members t
 ![All edge devices centralized for easy management.](./images/edge-devices.jpeg){data-zoomable}
 A centralized view of edge devices, providing streamlined management for all devices within the platform.
 
-In short, centralization makes everything simpler. It’s the backbone of effective teamwork, ensuring everyone works from the same starting point. With FlowFuse, you don't have to worry about syncing up—everything's already in sync for you.
+In short, centralization makes everything simpler. It’s the backbone of effective teamwork, ensuring everyone works from the same starting point. With FlowFuse, you don't have to worry about syncing — everything's already in sync for you.
 
 If you want to dive deeper into how FlowFuse centralizes things, check out this article: [Managing Node-RED Instances in a Centralized Platform](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/).
 
