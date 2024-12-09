@@ -11,7 +11,7 @@ tags:
    - flowfuse features
 ---
 
-A few weeks ago, we discussed how FlowFuse centralizes edge device and Node-RED management, as well as its security features. Now, we're focusing on another key benefit of FlowFuse—making collaboration easier for teams in industrial environments.
+A few weeks ago, we discussed how [FlowFuse centralizes edge device and Node-RED management](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/), as well as its [security features](/blog/2024/10/exploring-flowfuse-security-features/). Now, we're focusing on another key benefit of FlowFuse—making collaboration easier for teams in industrial environments.
 
 <!--more-->
 
@@ -127,11 +127,11 @@ Start using FlowFuse today to streamline your industrial projects, enhance teamw
 
 Explore more resources and deepen your understanding of FlowFuse with these articles:
 
-- **[Managing Node-RED Instances in a Centralized Platform](https://flowfuse.com/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/)**  
+- **[Managing Node-RED Instances in a Centralized Platform](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/)**  
   Learn how to effectively manage Node-RED instances in a centralized environment with FlowFuse, simplifying deployment and ensuring scalability.
 
-- **[Exploring FlowFuse Security Features](https://flowfuse.com/blog/2024/10/exploring-flowfuse-security-features/)**  
+- **[Exploring FlowFuse Security Features](/blog/2024/10/exploring-flowfuse-security-features/)**  
   Discover the security tools and features built into FlowFuse to help protect your industrial data and keep your systems secure.
 
-- **[Building on FlowFuse: Working with Devices](https://flowfuse.com/blog/2024/07/building-on-flowfuse-devices/)**  
+- **[Building on FlowFuse: Working with Devices](/blog/2024/07/building-on-flowfuse-devices/)**  
   Dive into how FlowFuse supports device management, enabling you to build, deploy, and monitor edge devices more efficiently.
