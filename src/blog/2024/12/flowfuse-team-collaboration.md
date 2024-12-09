@@ -2,7 +2,7 @@
 title: Streamlining Node-RED Collaboration with FlowFuse
 subtitle:  Enabling Real-Time Collaboration in Industrial Environments with FlowFuse
 description: Learn how FlowFuse simplifies collaboration for Node-RED projects by centralizing resources, enabling real-time updates, and ensuring secure, scalable teamwork. 
-date: 2024-12-05
+date: 2024-12-09
 authors: ["sumit-shinde"]
 image: /blog/2024/12/images/flowfuse-team-collaboration.png
 keywords: real-time collaboration on node-red projects, centrlize management, real-time collaboration on nodered projects
