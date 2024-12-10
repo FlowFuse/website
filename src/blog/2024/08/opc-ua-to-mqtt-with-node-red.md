@@ -127,17 +127,17 @@ _Image showing the successful bridging of OPC UA data to MQTT_
 
 ### Up Next
 
-- [Using MQTT with Node-RED](https://flowfuse.com/blog/2023/07/using-mqtt-with-node-red/)
+- [Using MQTT with Node-RED](/blog/2023/07/using-mqtt-with-node-red/)
   Learn how to integrate MQTT with Node-RED to enhance your IoT solutions with real-time data messaging.
 
-- [How to Build an OPC UA Client Dashboard in Node-RED](https://flowfuse.com/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
+- [How to Build an OPC UA Client Dashboard in Node-RED](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
   Follow a step-by-step guide to create a comprehensive OPC UA client dashboard in Node-RED for effective monitoring and control.
 
-- [Building a Secure OPC UA Server in Node-RED](https://flowfuse.com/node-red/protocol/opa-ua/)
+- [Building a Secure OPC UA Server in Node-RED](/node-red/protocol/opc-ua/)
   Explore best practices for configuring a secure OPC UA server in Node-RED to ensure safe and reliable data exchange.
 
-- [How to Deploy a Basic OPC UA Server in Node-RED](https://flowfuse.com/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/)
+- [How to Deploy a Basic OPC UA Server in Node-RED](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/)
   Learn how to quickly deploy a basic OPC UA server in Node-RED for testing and development purposes.
 
-- [Node-RED as a No-Code EtherNet/IP to S7 Protocol Converter](https://flowfuse.com/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/)
+- [Node-RED as a No-Code EtherNet/IP to S7 Protocol Converter](/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/)
   Discover how to use Node-RED to seamlessly convert EtherNet/IP to S7 protocols with Node-RED.
