@@ -41,7 +41,7 @@ For new customers an invoice should be generated in [Hubspot's Invoice section](
 2. Ensure the customer provided a PO number if they require one.
 3. Create a one-time invoice through Hubspot -- If the customer already is used to paying through Stripe, use best judgement when to switch them over
 
-## Coupons
+## Adding a Coupon
 
 From time to time we may wish to provide a user with some free access to 
 the managed FlowFuse platform. In this situation we will create a coupon code
@@ -64,6 +64,16 @@ To create a couple on Stripe:
 11. Press 'Create coupon' which is bottom right of the page.
 
 That coupon code can now be used when you are asked to provide payment card details.
+
+## Removing a Coupon
+
+The preferred course of action is to create coupons that will expire on their own. However, in the event that a coupon needs to be removed manually, follow these steps.
+
+1. Find the customer's subscription.
+2. Click 'Actions' in the upper-right corner.
+3. Choose 'Update a Subscription'. The customer's subscription details are now open.
+4. Locate the coupon and remove it.
+5. Click 'Update Subscription' to save the changes.
 
 ## Credits
 
