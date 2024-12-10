@@ -127,7 +127,7 @@ _Image showing the successful bridging of OPC UA data to MQTT_
 
 ### Up Next
 
-- [Using MQTT with Node-RED](/blog/2023/07/using-mqtt-with-node-red/)
+- [Using MQTT with Node-RED](/node-red/protocol/mqtt/)
   Learn how to integrate MQTT with Node-RED to enhance your IoT solutions with real-time data messaging.
 
 - [How to Build an OPC UA Client Dashboard in Node-RED](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
