@@ -13,9 +13,9 @@ tags:
 
 We’ve been talking a lot about UNS lately—how it works, why pub-sub is often a better choice than point-to-point, and even how you can set up your UNS in just 15 minutes using Flowfuse. But there’s one thing we haven’t discussed enough: topic structuring. It’s not rocket science, but it’s essential. Getting your topic structure right can make a huge difference in how your UNS performs and scales. In this post, we’ll dive into why it matters and how to approach it for the best results.
 
-<--more-->
+<!--more-->
 
-## Why Topic Structuring Matters for Your UNS
+## **Why Topic Structuring Matters for Your UNS**
 
 When you're building a Unified Namespace (UNS), one thing you really can't overlook is how you structure your topics. If you're using MQTT (which is super common for UNS), you’re dealing with a hierarchical system, where topics are organized like a tree, with slashes (/) separating each level. Think of it like a folder system on your computer—everything has its place, and that makes a big difference when you’re handling lots of data.
 
@@ -23,11 +23,11 @@ Why does topic structuring matter so much? Well, a good structure helps your sys
 
 Another bonus is performance. When your topics are well-organized, it’s easier to ensure that consumers only get the data they actually need. For example, if a device only cares about temperature, it can subscribe to something like /`sensor/temperature` rather than receiving every bit of data that’s floating around. This reduces unnecessary traffic and helps your system and edge device run smoothly.
 
-## Designing a Topic Structure for Your UNS
+## **Designing a Topic Structure for Your UNS**
 
 Before you start collecting data in your UNS, it’s essential to design your topic structure. While it might seem like a small step, it’s the foundation of your system. Taking the time to plan will save you significant time and effort down the road. More importantly, it gives you a clear, high-level view of your entire factory, which is crucial for scaling effectively.
 
-### Organizing the Hierarchy
+### **Organizing the Hierarchy**
 
 First, think about the key components of your factory. For example, in a manufacturing setting, you might have different plants or production lines. Within each production line, there will be machines or devices that produce data. Then, you’ll have various data points coming from sensors on these machines, such as temperature, humidity, or pressure.
 
@@ -114,7 +114,7 @@ Example Topics:
 
 At the ERP level, topics might reflect cross-plant business data like inventory, order management, or performance metrics. These are less granular than lower levels and serve to provide decision-makers with high-level insights into the health of the overall business.
 
-## Best Practices for Managing Your Topic Structure
+## **Best Practices for Managing Your Topic Structure**
 
 As your UNS scales, following some essential best practices will ensure your topic structure remains efficient, secure, and easy to manage.
 
@@ -142,7 +142,7 @@ Access control is another fundamental aspect of managing a large-scale UNS. The 
 
 By taking the time to implement clear documentation, regular topic cleanup, and robust access control, you’re laying a solid foundation for a scalable and secure UNS that will grow with your business needs.
 
-## Effortless MQTT and Topic Management with FlowFuse
+## **Effortless MQTT and Topic Management with FlowFuse**
 
 FlowFuse is more than just a low-code platform; it’s a game-changer for building and scaling your Unified Namespace (UNS). By seamlessly integrating MQTT, FlowFuse empowers you to connect, manage, and scale your industrial data systems with unmatched efficiency.
 
