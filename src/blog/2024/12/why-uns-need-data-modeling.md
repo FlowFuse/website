@@ -2,7 +2,7 @@
 title: "Data Modeling: The Key to a Successful Unified Namespace"
 subtitle: Why data modeling is key to making your Unified Namespace work effectively.
 description: Discover why data modeling is crucial for a Unified Namespace (UNS) in manufacturing and how it helps organize and make data actionable.
-date: 2024-12-04
+date: 2024-12-12
 authors: ["sumit-shinde"]
 image: /blog/2024/12/images/data-modeling-uns.png
 keywords: uns, data modeling, why uns needs data modeling, unified namespace
@@ -18,7 +18,7 @@ In manufacturing, data flows from a variety of sources—machines, sensors, ente
 
 By applying a solid data model, you can turn scattered, unstructured data into a cohesive, meaningful system that not only supports better decision-making but also drives operational improvements. let's explore what data modeling is and why it is crucial for making your UNS function effectively and how it turns scattered data into valuable insights.
 
-At its core, **data modeling** is the process of designing how data will be structured, organized, and stored within the UNS. It’s about creating a blueprint or framework that defines the relationships between different data points, ensuring they’re logically structured, easily accessible, and aligned with the business's needs.
+*At its core, **data modeling** is the process of designing how data will be structured, organized, and stored within the UNS. It’s about creating a blueprint or framework that defines the relationships between different data points, ensuring they’re logically structured, easily accessible, and aligned with the business's needs.*
 
 A solid data model forms the foundation for understanding and using data effectively. It addresses essential questions like:
 
@@ -89,9 +89,7 @@ In summary, data modeling transforms raw data into actionable insights, helping 
 
 In manufacturing, various devices and systems generate data in different formats and use distinct communication protocols, making it challenging to integrate and utilize this data effectively.
 
-For example, PLCs may use one protocol, while SCADA systems or MES may rely on entirely different ones. This lack of consistency complicates the process of consolidating data and extracting meaningful insights.
-Integrating different systems often requires addressing discrepancies in how data is structured and labeled. For instance, multiple sensors on a production line might send data in various formats or label the same metric differently. One sensor might label temperature as "temp," another as "temperature," and yet another as "T1." These inconsistencies can lead to errors or failures in integrated systems, such as monitoring tools that depend on consistent data labeling to function correctly.
-This is where data modeling becomes essential. It creates a standard structure for organizing and labeling data, ensuring that different systems can "speak the same language" and integrate seamlessly.
+For example, PLCs may use one protocol, while SCADA systems or MES may rely on entirely different ones. This lack of consistency complicates the process of consolidating data and extracting meaningful insights. Integrating different systems often requires addressing discrepancies in how data is structured and labeled. For instance, multiple sensors on a production line might send data in various formats or label the same metric differently. One sensor might label temperature as "temp," another as "temperature," and yet another as "T1." These inconsistencies can lead to errors or failures in integrated systems, such as monitoring tools that depend on consistent data labeling to function correctly.
 
 This is where data modeling becomes essential. It creates a standard structure for organizing and labeling data, ensuring that different systems can "speak the same language" and integrate seamlessly.
 
@@ -117,17 +115,22 @@ With all these benefits in mind, the next step is to think about how to effectiv
 
 ## **Leverage FlowFuse for Effective Data Modeling in Your UNS**
 
-[FlowFuse](/) makes it easy to manage and build your own Unified Namespace (UNS) and improve data operations. It helps connect IT and OT systems and streamline workflows. With FlowFuse, you can quickly connect (integrate different services, hardware, and APIs), collect (aggregate data), transform (transform and contextualize data), and visualize (build dashboards with a low-code approach) data for more efficient processes.
+[FlowFuse](/) makes building and managing a Unified Namespace (UNS) simple and efficient. It connects IT and OT systems, streamlines workflows, and transforms raw data into meaningful insights. With FlowFuse, you can:  
 
-If you are looking to build your own Unified Namespace (UNS), see [this article](/blog/2024/11/building-uns-with-flowfuse/) that shows how you can create a UNS in less than 15 minutes with FlowFuse.
+- **Connect**: Integrate various services, hardware, and APIs effortlessly.  
+- **Collect**: Aggregate data from machines, sensors, and other sources.  
+- **Transform**: Easily standardize and add context to raw data, making it more meaningful and usable across your systems.  
+- **Visualize**: Create dashboards with a low-code approach to monitor and analyze your operations.  
 
-FlowFuse leverages Node-RED, the open source low-code platform that helps you create simple flows to turn raw data from machines and sensors into organized, useful models. It helps structure data, define connections, and add context to keep everything consistent.
+Learn how to build your UNS in just 15 minutes with [this article](/blog/2024/11/building-uns-with-flowfuse/).
 
-With over 5,000 community nodes and support for protocols like MQTT, OPC-UA, and Modbus, FlowFuse makes it easy to connect different systems and unify your data.
+FlowFuse uses Node-RED, an open-source low-code platform, to turn unstructured data into organized, actionable models. Its ability to transform and contextualize data ensures consistency and clarity, helping you get the most value from your data.
 
-*Read this [article](/blog/2023/12/unified-namespace-data-modelling/) where you can see how to use FlowFuse for data modeling.*
+With support for over 5,000 community nodes and protocols like MQTT, OPC-UA, and Modbus, FlowFuse simplifies connecting systems and unifying data.
 
-With FlowFuse's enterprise-grade features, you can manage edge devices and Node-RED instances in one place, making it easier to collaborate, scale, and stay compliant as you grow.
+Check out [this article](/blog/2023/12/unified-namespace-data-modelling/) to see how FlowFuse makes data modeling easier.
+
+FlowFuse also offers enterprise-grade features to manage edge devices and Node-RED instances, helping you scale, collaborate, and stay compliant.
 
 **Take Control of Your Data Operations with FlowFuse**
 
