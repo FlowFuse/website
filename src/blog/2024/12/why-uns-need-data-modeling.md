@@ -132,6 +132,6 @@ Check out [this article](/blog/2023/12/unified-namespace-data-modelling/) to see
 
 FlowFuse also offers enterprise-grade features to manage edge devices and Node-RED instances, helping you scale, collaborate, and stay compliant.
 
-**Take Control of Your Data Operations with FlowFuse**
+**Take Control of Your Data with FlowFuse**
 
-Ready to optimize your data operations? Build your Unified Namespace and data model with FlowFuse today. [Get started now](https://app.flowfuse.com/account/create) and unlock the full potential of your data.
+Want to make the most of your data? [Let’s talk!]( /book-demo/) Our team is ready to help you set up a Unified Namespace (UNS) that fits your needs.
