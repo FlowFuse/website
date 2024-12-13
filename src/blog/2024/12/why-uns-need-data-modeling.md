@@ -12,7 +12,7 @@ tags:
    - data modeling
 ---
 
-In manufacturing, data flows from various sources—machines, sensors, enterprise systems, and more. A Unified Namespace (UNS) brings all this data into a central hub. However, centralizing data isn't enough to truly call it a UNS. It's not just about aggregating information. A true UNS goes beyond being a data repository; it organizes, structures, and contextualizes that data, transforming it into something valuable and actionable for your business.
+In manufacturing, data flows from various sources—machines, sensors, enterprise systems, and more. A [Unified Namespace (UNS)](/solutions/uns/) brings all this data into a central hub. However, centralizing data isn't enough to truly call it a UNS. It's not just about aggregating information. A true UNS goes beyond being a data repository; it organizes, structures, and contextualizes that data, transforming it into something valuable and actionable for your business.
 
 <!--more-->
 
