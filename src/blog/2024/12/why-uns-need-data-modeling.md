@@ -29,7 +29,7 @@ The data model can vary significantly from business to business, depending on th
 
 ```json
 {
-  "timestamp": "2024-09-19T12:33:46.6035772+02:00", 
+  "timestamp": "2024-09-19T12:33:46.6035772+02:00",
   "machineId": "press_001",
   "manufacturer": "XYZ Corp",
   "model": "MPX-5000",
@@ -37,19 +37,20 @@ The data model can vary significantly from business to business, depending on th
     {
       "name": "vibration",
       "value": 1.5,
-      "unit": "mm/s",
+      "unit": "mm/s"
     },
     {
       "name": "temperature",
       "value": 72.4,
-      "unit": "Celsius",
+      "unit": "Celsius"
     },
     {
       "name": "pressure",
       "value": 3.8,
-      "unit": "Bar",
+      "unit": "Bar"
     }
   ]
+}
 ```
 
 Alternatively, a simpler model might look like this:
@@ -61,7 +62,6 @@ Alternatively, a simpler model might look like this:
   "vibration": { "value": 1.5, "unit": "mm/s" },
   "temperature": { "value": 72.4, "unit": "Celsius" },
   "pressure": { "value": 3.8, "unit": "Bar" }
-  }
 }
 ```
 
