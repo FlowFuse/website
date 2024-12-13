@@ -71,7 +71,7 @@ Now that you have a basic understanding of what data modeling is Let’s take a 
 
 ### **1. Ensures Data Consistency and Standardization**
 
-As mentioned earlier, data is generated from various sources in manufacturing, including machines, sensors, ERP systems, databases, and inventory management tools. Each source may provide data in different formats, units of measurement, or naming conventions.
+As mentioned earlier, data is generated from various sources in manufacturing, including machines, sensors, ERP systems, and inventory management tools. Each source may provide data in different formats, units of measurement, or naming conventions.
 
 For example, one machine might report temperature in Celsius, while another uses Fahrenheit. Some systems might track production rates in pieces per hour, while others use units per minute. These inconsistencies can create confusion and lead to errors in a computerized structure.
 
