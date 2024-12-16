@@ -22,6 +22,9 @@ At its core, a [UNS](/solutions/uns/) is a data architecture that brings togethe
 
 To truly understand why FlowFuse is the ultimate toolkit for UNS, we need to look at the core components of UNS. As mentioned earlier, a UNS is designed to act as a single source of truth, bringing together data from various devices, systems, and software into one unified view of your entire manufacturing environment. But how does this happen? What components are necessary to make it work effectively?
 
+![Core Components of UNS](./images/component-of-uns.png){data-zoomable}
+_Core Components of UNS_
+
 ### **1. Connectvity Layer**
 
 The first step in any successful UNS strategy is the **Connectvity layer**. This is the part of the system where data flows into the UNS from various sources—whether it's sensors on the factory floor, data from PLCs, readings from SCADA systems, or other devices. This layer is critical because it ensures that all the necessary data is captured in real time, providing a comprehensive view of the operation. Without a reliable Connectvity layer, your UNS won’t be able to gather the information it needs to create a unified view.
