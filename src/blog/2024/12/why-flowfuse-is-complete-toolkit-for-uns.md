@@ -85,7 +85,7 @@ Alongside the powerful capabilities of Node-RED, FlowFuse recently [announced it
 
 Additionally, Node-RED within FlowFuse includes standard MQTT nodes, providing flexibility to configure connections with the broker using essential security features like TLS encryption and username/password authentication. These nodes also allow dynamic configuration of topics and brokers, making it simple to customize your MQTT setup and ensure secure and efficient communication within your UNS.
 
----
+<hr style="border: none; border-top: 3px solid rgba(173, 192, 252, 0.55); opacity: 0.3; margin-bottom: 20px;">
 
 FlowFuse makes building and managing a Unified Namespace (UNS) easy. It connects devices, transforms data into a usable format, and ensures smooth communication using an MQTT broker. Powered by Node-RED, it works with both old and new systems, helping you scale and adapt quickly.
 
