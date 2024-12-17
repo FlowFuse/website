@@ -7,7 +7,7 @@ tags:
     - changelog
 ---
 
-To help give a total overview Team level views of all Pipelines and Bill of Materials have been added.
+Team-level views of all Pipelines and Bill of Materials have been added to provide a complete overview.
 
 The Bill of Materials view shows which components and their versions across all Node-RED Devices &  Instances in the whole Team rather than at an Application level.
 
