@@ -12,7 +12,7 @@ hubspot:
     formId: b4ec9aa1-8648-47b3-b908-ec8597e8735d
 ---
 
-**In today's fast-paced and interconnected world, the demand for scalable and highly available applications is greater than ever. Node-RED, a powerful flow-based programming tool, has gained immense popularity due to its simplicity and versatility in building Internet of Things (IoT) and automation applications. However, when it comes to developing robust and resilient systems, scalability and high availability are crucial factors that cannot be overlooked.**
+**The demand for scalable and highly available applications is greater than ever. Node-RED, a powerful flow-based programming tool, has gained immense popularity due to its simplicity and versatility in building Internet of Things (IoT) and automation applications. However, when it comes to developing robust and resilient systems, scalability and high availability are crucial factors that cannot be overlooked.**
 
 <!--more-->
 

@@ -6,29 +6,17 @@ navTitle: Engagements & Pricing
 
 Pricing is publicly available at [our pricing page](/pricing/).
 
+## Per-site licenses
+
+Self-hosted FlowFuse installations require a minumum of 10 instances per location or geographic site.
+
 ## Generating a Quote
 
 Clearly written, easy to understand quotes are crucial for customers to understand what they are purchasing and how much it costs. To create a quote, combine the (1) product plan and (2) other purchased items according to the following guide.
 
 **What to Quote**
 
-When preparing a quote, include both the plan and any extras that go beyond what comes with the plan at the designated tier. Include a note in the Terms section that indicates what comes with the plan. (This will be pre-filled when using one of the HubSpot quote templates). The product plan will be listed as its own line, with a quantity of 1, and the minimum purchase price for that plan. On a separate line(s), include only additional items that are being added to the deal. Do not use line items to enumerate what comes with the plan. This will cause confusion and makes the line item(s) redundant.
-
-EXAMPLE 1:
-
-Suppose that a customer wants to purchase a year of the Team plan with 5 small instances, the minimum number for the Team plan. That quote would look like this (ignoring any discounts or other extras):
-
-| Item & Description | Quantity | Unit Price | Total |
-| ----- | ----- | ----- | ----- |
-| FlowFuse Team Platform \- Cloud | 1 | $X,000/year | $X,000 |
-
-Annual Subtotal	  $2,100  
-**Total**			  $2,100
-
-
-EXAMPLE 2:
-
-Suppose a customer wants to purchase a year of the Enterprise plan with 20 instances, plus 10 additional instances and 10 devices. That quote would look like this (ignoring any discounts or other extras):
+When preparing a quote, include both the plan and any extras that go beyond what comes with the plan at the designated tier. Include a note in the Terms section that indicates what comes with the plan. (This will be pre-filled when using one of the HubSpot quote templates). The product plan will be listed as its own line, with a quantity of 1, and the minimum purchase price for that plan. The add-on options should also be added to the product section, as referenced by the purchase term template.
 
 | Item & Description | Quantity | Unit Price | Total |
 | ----- | ----- | ----- | ----- |
@@ -60,7 +48,7 @@ countersignature.
 
 ### Steps
 
-1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
+1. [Start invoice procedure](/handbook/operations/billing/#creating-a-subscription-invoice)
 1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
@@ -81,7 +69,7 @@ A deal is considered an upsell when the customer already has an annual subscript
 
 1. Create a new "expansion" deal in HubSpot with the total new ARR, specifying the start date and renewal date for proration. Be sure to associate the existing renewal deal in order to track total ARR.
 1. Send a HubSpot quote for signature to confirm the additional yearly costs.
-1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
+1. [Start invoice procedure](/handbook/operations/billing/#creating-a-subscription-invoice)
 1. Send an email including instructions how they get access to bought resources.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer

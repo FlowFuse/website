@@ -5,14 +5,12 @@ description: Learn how to bridge OPC UA data to MQTT using Node-RED for seamless
 date: 2024-08-13
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/brdging-opcua-to-mqtt.png
+keywords: opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, opc ua mqtt, opc ua over mqtt, opc ua to mqtt gateway, mqtt to opc ua, mqtt and opc ua, opc ua and mqtt, opc ua via mqtt, opcua to mqtt
 tags:
    - posts
-   - flowfuse
-   - node-red opc ua to mqtt integration
-   - bridging opc ua data to mqtt
-   - node-red mqtt protocol conversion
-   - unified name space
-   - digital tranformation
+   - node-red
+   - mqtt
+   - opcua
 ---
 
 Have you ever found yourself trying to connect old industrial systems with new IoT tools? This is a common scenario when trying to digitally transform while setting up your Unified Name Space. Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?  
@@ -40,7 +38,11 @@ In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-R
 
 - OPC UA Server: Make sure you have an OPC UA server configured and running with the necessary data. For this blog, we'll use the Prosys OPC UA Simulation Server, which simulates data from CNC machines designed for testing OPC UA client applications and learning the technology. You can download it from [here](https://prosysopc.com/products/opc-ua-simulation-server/).
 
+- FlowFuse Account: A FlowFuse account lets you quickly create, deploy, and manage Node-RED instances in the cloud. [sign up now](https://app.flowfuse.com/account/create).
+
 - [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua): install the node-red contrib package that will enable integration of opcua in Node-RED.
+
+- MQTT Broker: We’ll need an MQTT broker for data communication. FlowFuse offers an integrated MQTT Broker Service within Platform for easy setup. For more details, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
 
 ### Retrieving Data from the OPC UA Server
 
@@ -89,7 +91,7 @@ _Setting the msg.topic with the change node to retrieve data from the OPC UA ser
 Now, in this section, we will show you how to send the collected data to an MQTT broker:
 
 1. Drag the **mqtt out** node onto the canvas.
-2. Double-click on it and configure it with your MQTT broker details. For this guide, I am using the [free HiveMQ public broker](https://www.hivemq.com/mqtt/public-mqtt-broker/), which is specially designed for testing and learning purposes.
+2. Double-click on it and configure it with your MQTT broker details.
 
 ![Configuring the mqtt out node with broker information](./images/mqtt-out-node-config.png){data-zoomable}
 _Configuring the mqtt out node with broker information_
@@ -125,17 +127,17 @@ _Image showing the successful bridging of OPC UA data to MQTT_
 
 ### Up Next
 
-- [Using MQTT with Node-RED](https://flowfuse.com/blog/2023/07/using-mqtt-with-node-red/)
+- [Using MQTT with Node-RED](/node-red/protocol/mqtt/)
   Learn how to integrate MQTT with Node-RED to enhance your IoT solutions with real-time data messaging.
 
-- [How to Build an OPC UA Client Dashboard in Node-RED](https://flowfuse.com/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
+- [How to Build an OPC UA Client Dashboard in Node-RED](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
   Follow a step-by-step guide to create a comprehensive OPC UA client dashboard in Node-RED for effective monitoring and control.
 
-- [Building a Secure OPC UA Server in Node-RED](https://flowfuse.com/node-red/protocol/opa-ua/)
+- [Building a Secure OPC UA Server in Node-RED](/node-red/protocol/opc-ua/)
   Explore best practices for configuring a secure OPC UA server in Node-RED to ensure safe and reliable data exchange.
 
-- [How to Deploy a Basic OPC UA Server in Node-RED](https://flowfuse.com/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/)
+- [How to Deploy a Basic OPC UA Server in Node-RED](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/)
   Learn how to quickly deploy a basic OPC UA server in Node-RED for testing and development purposes.
 
-- [Node-RED as a No-Code EtherNet/IP to S7 Protocol Converter](https://flowfuse.com/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/)
+- [Node-RED as a No-Code EtherNet/IP to S7 Protocol Converter](/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/)
   Discover how to use Node-RED to seamlessly convert EtherNet/IP to S7 protocols with Node-RED.

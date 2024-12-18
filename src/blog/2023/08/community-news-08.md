@@ -31,7 +31,7 @@ OPC-UA is a popular communication protocol used to communicate industrial data b
 
 - Our developer advocate, Richard Meyer, published a series of articles on OPC-UA:
   - Part 1: [How to Deploy a Basic OPC-UA Server in Node-RED](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/)
-  - Part 2: [How to Build a Secure OPC-UA Server for PLCs in Node-RED](/node-red/protocol/opa-ua/)
+  - Part 2: [How to Build a Secure OPC-UA Server for PLCs in Node-RED](/node-red/protocol/opc-ua/)
   - Part 3: [How to Build an OPC UA Client Dashboard in Node-RED](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
 
 

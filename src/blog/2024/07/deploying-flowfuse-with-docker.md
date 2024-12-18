@@ -5,16 +5,18 @@ description: Learn to deploy the FlowFuse on your Ubuntu server with Docker, fro
 date: 2024-07-15
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/deploying-flowfuse.png
+keywords: nodered docker, flowfuse docker, node red docker, docker nodered, install node red docker
 tags:
- - node-red
+ - post
  - flowfuse
  - self hosted
- - docker
 ---
 
 With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored platform for deploying production Node-RED applications. It offers [extensive features](/product/features/) at a low cost, reducing operational overhead. However, the cloud is not the only option we provide; we also offer a self-hosted option for users who prefer to deploy FlowFuse on their servers. This guide demonstrates how to deploy FlowFuse on your Ubuntu server using Docker, covering key aspects such as domain setup, email, SSL, and more for real-world production scenarios
 
 <!--more-->
+
+*Note: While the approach provided in this article is an older method for deploying FlowFuse and still works, I recommend following the newer, simpler, and quicker approach. For more details, refer to the official [Docker documentation](/docs/install/docker/).*
 
 ## What is Docker?
 
@@ -82,7 +84,7 @@ wget <link of the latest tar.gz release>
 
 The `flowforge.yml` file was updated to include our domain in key fields: `domain`, `base_url`, and `broker.public_url`. These adjustments ensure that instance names on Docker platforms incorporate your domain, provide accurate URLs for accessing the platform, and specify the correct URL for devices to connect to the broker if different from `broker.url`. Additionally, in the `docker-compose.yml` file, we configured `VIRTUAL_HOST` and `LETSENCRYPT_HOST` to reflect our domain.
 
-For more details on these configuration changes, refer to the [documentation](/docs/install/docker/#configuring-flowfuse).
+For more details on these configuration changes, refer to the [documentation](/docs/install/configuration/#configuring-flowfuse).
 
 ### Securing Communication with SSL
 
