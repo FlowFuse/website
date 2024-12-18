@@ -1,54 +1,126 @@
-Type: Article
-
-Title: New Free Forever Plan
-Subtitle: With release N.NN comes a new Free plan
-
-Body: FlowFuse N.NN is focused on getting you started with managing edge devices, at no cost to you.
+---
+title: FlowFuse Cloud now available for free!
+subtitle: With our new FlowFuse release, comes a new team tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
+description: With our new FlowFuse release, comes a new team tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
+date: 2024-12-19
+authors: ["greg-stoutenburg"]
+image: /blog/2024/12/images/flowfuse-team-collaboration.png
+tags:
+   - flowfuse
+   - news
+   - releases
+---
 
 The new Free plan on FlowFuse Cloud will allow you to manage two edge devices using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.
 
-**Setting Up Your Team**
+<!--more-->
 
-The new Free plan is all about getting started with remote device management. Here’s what you’ll need: 
- 
-- A free team
-- An installation of Device Agent on your devices
+FlowFuse is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. More fundamentally though, it's a great platform to manage multiple instances of Node-RED.
 
-The rest of this announcement will walk you through how to set those up.
+## What's Included?
 
-**Creating a Free Team**
+Whether you're running multiple Node-RED instances at home for Home Automation, or running thousands of Node-RED instances in your factory, FlowFuse provides an easy-to-use, centralised view of your Node-RED instances, making it easy to manage and monitor them in one place.
 
-To create a free team, sign up at app.flowfuse.com/create. You will automatically join the Team tier on a free trial. (We will enable you to sign up directly for the Free tier and bypass this step in a subsequent product update.) Delete the instance that is created for you automatically. Reload the page.
+In our new free tier on FlowFuse Cloud you get:
 
-<img width="438" alt="image" src="https://github.com/user-attachments/assets/da6fde55-27bc-42d7-afcc-19235661b558" />
+- 2 x Remote Node-RED Instances, managed through the FlowFuse [Device Agent](/docs/device-agent/quickstart)
+- Version control for your Node-RED flows with FlowFuse's [Snapshots](/docs/user/snapshots/#introduction)
+- Remote access to your Node-RED instances through FlowFuse Cloud, utilizing the Device Agent's [Developer Mode](/docs/device-agent/quickstart/#developer-mode)
 
+## Getting Started
 
-Now, navigate to Team Settings and select Change Team Type, and choose Free. 
+### Create Your Free Team
 
-Depending on the age of your account, you may be asked to check out for $0. You will not be charged. (In a subsequent update, new users will be able to skip this step.)
+To create a free team, simply [sign up to FlowFuse Cloud](https://app.flowfuse.com/create).
 
-You are now signed up on a free forever team! 
+Once you've filled in your details, you'll be presented with the option to choose your team type. Select the "Free" option, and you're good to go.
 
-**Create an Application**
+![](./images/onboarding-team-type.png){data-zoomable}
+_Screenshot showing the UI for selecting your Team's type, when onboarding through on FlowFuse Cloud._
 
-On the Free plan, you will need to create an Application before you can assign a device to it. From the Applications page, click Create Application
+<!-- <img width="438" alt="image" src="https://github.com/user-attachments/assets/da6fde55-27bc-42d7-afcc-19235661b558" /> -->
 
-<img width="231" alt="image" src="https://github.com/user-attachments/assets/7d4c2eda-c93e-43ca-a0f5-53418ca8d3a0" />
+_Please do note, that whilst we do require credit card information, this is just for verification purposes. You will never be charged for the Free plan._
 
+### Create your First Application
 
-Complete the form, and you will have a new application in your team.
+Applications in FlowFuse help you organise and group your resources, from Instances to DevOps Pipelines and Snapshots for Version Control. So, before you can add your first "Device", you'll first need to create an Application to store it.
 
-**Install Device Agent**
+![](./images/onboarding-new-application.png){data-zoomable}
+_Screenshot showing the form to create a new Application in FlowFuse._
 
-You will need to install Device Agent on your edge devices. Follow these steps to install Device Agent and connect your devices to FlowFuse: https://flowfuse.com/docs/device-agent/quickstart/ .
+## Edge Devices
 
-You can now manage your edge devices from within FlowFuse!
+Now you have an Application setup, you can "register" your first Device. 
 
+A "Device" in FlowFuse is a just a term for a remote Node-RED instance that is managed by FlowFuse. FlowFuse connects to these remote instances using the FlowFuse Device Agent, which is easy to setup and get running.
 
-**FlowFuse for Edge Device Management**
+### Install Device Agent
 
-We’re expanding how you can manage edge devices with FlowFuse beyond just the new Free plan. On the Starter plan, you can now access Device Auto Snapshot and two MQTT clients. The Team plan now include 8 clients to start.
+Firstly, wherever you want your Node-RED to run, e.g. on a Raspberry Pi or your own Laptop, install the `flowfuse-device-agent` package:
 
-**Try FlowFuse Cloud Today**
+#### Linux/MacOS
 
-[Get started](https://app.flowfuse.com/account/create) with FlowFuse Cloud today\! 
+```bash
+sudo npm install -g @flowfuse/device-agent
+```
+
+#### Windows
+
+Issue the below command in an elevated command prompt:
+
+```bash
+npm install -g @flowfuse/device-agent
+```
+
+For alternative installation options and more details, please refer to our [documentation](/docs/device-agent/).
+
+### Registering Your Device
+
+To register your Device, in the FlowFuse Platform, click on the "Edge Devices" option in the left-hand menu, and then click the "Add Device" button.
+
+![](./images/onboarding-device-registration.png){data-zoomable}
+__
+
+You'll be presented with a `flowfuse-device-agent` command, e.g:
+
+```bash
+flowfuse-device-agent -o one-time-passcode -u https://app.flowfuse.com
+```
+
+Run this where you just installed the `flowfuse-device-agent` package. This will connect your remote Node-RED instance to the FlowFuse platform.
+
+The final step to take is to then start running the device agent, which you can do by simply calling:
+
+```bash
+flowfuse-device-agent
+```
+
+FlowFuse offers remote development capabilities, allowing you to edit your Node-RED flows directly from the FlowFuse Cloud platform. This is done through the Device Agent's "Developer Mode". 
+
+To get started with developing flows on your Device, select your newly created Device, toggle on 'Developer Mode", and click "Open Editor"!
+
+## What Else is New?
+
+In addition to the Free plan, we've also added two new views to the FlowFuse platform:
+
+- **Pipelines**: This view provides a way to manage all of your DevOps Pipelines, making it even easier to manage your development, testing, staging and production environments.
+- **Bill of Materials**: This view provides a way to manage all of your Node-RED dependencies, making it easy to see what versions of nodes are being used across all of your Node-RED instances.
+
+For a full list of everything that went into our 2.12 release, you can check out the [release notes](https://github.com/FlowFuse/flowfuse/releases/tag/v2.12.0).
+
+We're always working to enhance your experience with FlowFuse. We're always interested in your thoughts about FlowFuse too. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose). 
+
+Together, we can make FlowFuse better with each release!
+
+## Try FlowFuse
+
+### Self-Hosted
+
+We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
+
+### FlowFuse Cloud
+
+The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
+
+[Get started for free]({{ site.appURL }}/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
