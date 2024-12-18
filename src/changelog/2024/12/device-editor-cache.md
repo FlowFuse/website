@@ -9,4 +9,4 @@ tags:
 
 With the 2.12 release we have included some improvements to the Device Editor experience.
 
-For Devices running with Node-RED 4.0.x and newer, there should be performance improvements when loading the editor, especially when the device is on a slow network link.
+For Devices running with Node-RED 4.0.x and newer, there should be significant performance improvements when loading the editor, especially when the device is on a slow network link.
