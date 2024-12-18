@@ -184,6 +184,12 @@ sections:
         info: "<p>Setup standard nodes and flows that can be shared with all team members.</p>"
 buttons: 
   cloud:
+    - cta: GET STARTED
+      url: https://app.flowfuse.com/account/create
+      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-free'})"
+    - cta: TRY FOR FREE
+      url: https://app.flowfuse.com/account/create
+      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
     - cta: TRY FOR FREE
       url: https://app.flowfuse.com/account/create
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"

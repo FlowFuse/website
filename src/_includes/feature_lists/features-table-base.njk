@@ -66,7 +66,6 @@
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--column-buttons mt-6 h-10 gap-x-3">
             {% if hosting == "cloud" %}
-                <span></span>
                 {% set buttons = pricingFeatures.buttons.cloud %}
             {% elif hosting == "self-hosted" %}
                 {% set buttons = pricingFeatures.buttons.selfHosted %}
