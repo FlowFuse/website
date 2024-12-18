@@ -36,7 +36,7 @@ it uses an HTTP polling approach to check for updates. That was a pragmatic choi
 to get something working - but it isn't our long term strategy. We'll be working
 towards a more IoT-native MQTT/WebSocket appoach in the coming releases.
 
- - [Devices documentation](/docs/user/devices/)
+ - [Devices documentation](/docs/device-agent/introduction/)
  - [Epic #446 - Devices](https://github.com/FlowFuse/flowfuse/issues/446)
 
 ### Snapshots

@@ -11,7 +11,7 @@ tags:
     - node-red
     - OPC-UA
 ---
-This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/node-red/protocol/opa-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
+This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/node-red/protocol/opc-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
 In this article, we show how to build an OPC Client in Node-RED that communicates with a 3rd party OPC UA Server and utilizes an interactive dashboard.
 <!--more-->
 

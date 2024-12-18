@@ -37,7 +37,7 @@ On June 27, FlowFuse is doing a webinar with our friends at InfluxDB. A great op
 - [Bringing High Availability to Node-RED](/blog/2023/05/bringing-high-availability-to-node-red/) - FlowFuse CTO discusses the strategy for delivering high availability in the FlowFuse platform.
 
 - Two articles featuring how to connect Modbus data with Node-RED:
-    - [Using Node-RED to Visualize Industrial Production Data via Modbus](/blog/2023/05/visualize-production-data-via-modbus-in-node-red/)
+    - [Using Node-RED to Visualize Industrial Production Data via Modbus](/node-red/protocol/modbus/)
     - [Best Practices Integrating a Modbus Device With Node-RED](/blog/2023/05/integrating modbus with node-red/)
 
 - [Node-RED Tips - Dashboard Edition](/blog/2023/06/3-quick-node-red-tips-7/) - A new set of Node-RED quick tips that are focused on using Node-RED Dashboard.

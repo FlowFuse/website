@@ -10,13 +10,7 @@ meta:
     faq:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
           answer: >
-            Yes, we offer a 20% discount for Team customers who move from monthly to annual subscriptions. Please <a href="/contact-us/">reach out</a> to request the discount.
-        - question: "Is there a minimum for purchase?"
-          answer: >
-            Yes, 5 instances on Team and 10 instances on Enterprise.
-        - question: "Why isn't there an option for self-hosted Team?"
-          answer: >
-            Due to the configuration and support required for a self-hosted deployment, it is only possible through the Enterprise tier at this time.
+            Yes, customers on an annual subscription receive a 20% discount off of the monthly subscription price. Please reach out to request the discount. Please <a href="/contact-us/">reach out</a> to request the discount.
         - question: "Why is self-hosted the same price as cloud?"
           answer: >
             Self-hosted environments require more support and configuration than FlowFuse Cloud, which offset any resources saved.
@@ -70,18 +64,18 @@ hubspot:
                         <div class="pricing-tile-background pb-6 md:grid">
                             <div>
                                 <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[145px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                    <div class="flex flex-row justify-between mt-3 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Starter</h4>
                                     </div>
                                     <p class="mt-7"><span class="inline font-normal">For smaller-scale applications. </span>The fastest, easiest way to host <span class="inline-block">Node-RED</span> instances.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Includes:
+                                    <note class="font-semibold">2 hosted instances, 2 edge devices, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
                                         <li>2 team members</li>
-                                        <li>2 Node-RED instances</li>
-                                        <li>2 devices</li>
+                                        <li>Device management</li>
+                                        <li>Blueprints</li>
                                     </ul>
                                 </div>
                             </div>
@@ -101,7 +95,7 @@ hubspot:
                     </div>
                     <!-- Team -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid">
+                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
                                 <div
                                     class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
@@ -112,23 +106,23 @@ hubspot:
                                             teams</span> with the collaborative features of FlowFuse Cloud.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Includes:
+                                    <note class="font-semibold">Starts at 5 hosted instances or edge devices, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>5 Hosted Node-RED instances</li>
                                         <li>20 Team members</li>
                                         <li>Team collaboration</li>
-                                        <li>Commited SLA: 99.5&#37;</li>
+                                        <li>MQTT Broker (5 clients to start)</li>
+                                        <li>Standard Support + SLA: 99.5&#37;</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div data-nosnippet>
+                            <div data-nosnippet class="flex">
                                 <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row">
+                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                                     <div class="text-left flex flex-row md:self-end">
                                         <div class="w-20 mr-1">
                                             <note class="note text-sm">Starting at</note>
-                                            <h2 class="self-end">
+                                            <h2 class="self-end pb-1">
                                                 $175
                                             </h2>
                                         </div>
@@ -156,28 +150,30 @@ hubspot:
                                     <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Top Features:</note>
+                                    <note class="font-semibold">Starts at 20 hosted instances or edge devices, and includes:</note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>High availability</li>
-                                        {% if cloud %}
-                                        <li>MQTT Broker</li>
-                                        {% endif %}
+                                        <li>Unlimited team members</li>
                                         <li>Single Sign-On</li>
-                                        <li>Enterprise Support</li>
-                                        {% if show_sla %}
-                                        <li>Commited SLA: up to 99.9&#37;</li>
+                                        {% if cloud %}
+                                        <li>MQTT Broker (20 clients to start)</li>
                                         {% endif %}
+                                        <li>Enterprise support{% if show_sla %} + SLA: 99.9&#37;{% endif %}</li>
+                                        <li>Device group management</li>
                                     </ul>
                                 </div>
                             </div>
                             <div data-nosnippet class="flex">
                                 <!-- Price -->
                                 <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
-                                    <h2 class="self-end pb-1">Let's Talk</h2>
+                                    <h2 class="self-end pb-1">{% if cloud %}Let's Talk{% else %}Free Trial{% endif %}</h2>
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                               href="/book-demo/" onclick="capture('cta-lets-talk', {'position': 'primary'}, {'plan': 'sh-enterprise'})">book a demo</a>
+                            {% if cloud %}
+                               href="#contact-us" onclick="scrollToAnchor(event, 'contact-us'); capture('cta-contact-us', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">Contact Us</a>
+                            {% else %}
+                                href="#request-trial-license" onclick="scrollToAnchor(event, 'request-trial-license'); capture('cta-trial-license', {'position': 'primary'}, {'plan': 'sh-enterprise'});">Get 30-day Trial License</a>
+                            {% endif %}
                         </div>
                     </div>
                     {% endmacro %}
@@ -189,25 +185,24 @@ hubspot:
                 <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-sm mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid">
+                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[145px]">
+                                <div class="flex flex-col items-center text-left md:flex-row md:mb-5 md:px-0 md:block md:min-h-[145px]">
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Starter</h4>
                                     </div>
-                                    <p class="mt-7"><span class="inline font-normal">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
+                                    <p class="mt-7"><span class="inline">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
                                 </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-bold" style="display: inline-block;">Includes:
+                                <div class="flex flex-col content-start features max-md:mt-6 w-full">
+                                    <note class="font-semibold">Includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
+                                        <li>5 hosted instances or edge devices</li>
                                         <li>5 team members</li>
-                                        <li>5 Node-RED instances</li>
-                                        <li>5 devices</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-3 flex flex-row">
+                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row">
                                 <h2 class="self-end pb-1">Free</h2>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
@@ -235,7 +230,7 @@ hubspot:
                                         <p class="mt-7">Tailored for businesses prioritizing data security, compliance, and regional flexibility, ideal for demanding efficiency and productivity in strict regulatory environments.</p>
                                     </div>
                                     <div class="flex flex-col content-start features md:mt-3 mt-10 mb-10 w-full">
-                                        <note class="font-bold" style="display: inline-block;">Everything from Enterprise Tier, plus:
+                                        <note class="font-bold" style="display: inline-block;">Top features:
                                         </note>
                                         <ul class="ff-checklist font-light leading-7 mt-2 flex flex-col md:flex-row md:gap-2">
                                             <div class="w-full md:w-3/5">
@@ -331,7 +326,7 @@ hubspot:
         <div class="container max-w-5xl m-auto grid grid-cols-1 md:grid-cols-2 px-6 pt-16 gap-x-16 gap-y-6">
             <div>
                 <h3 class="w-full text-center md:text-left">
-                    Request a trial license
+                    30-day Trial License
                 </h3>
                 <p>
                     Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial gives you the chance to explore all the features and functionalities of FlowFuse in your own environment. To start your trial, simply fill out the form. Our sales team will reach out to you to discuss your needs and provide the license.
@@ -435,4 +430,15 @@ hubspot:
         updateContentAndUrl(hosting);
         capture('dedicated');
     });
+</script>
+
+<!-- Features info -->
+<script>
+    function openInfo(id, hosting) {
+        capture('info-feature', { feature: id }, { hosting: hosting })
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
+    }
+    function closeInfo(id, hosting) {
+        document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
+    }
 </script>

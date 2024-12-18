@@ -4,13 +4,10 @@ navTitle: Billing
 
 # Billing
 
-We use Stripe to bill our customers and to manage subscriptions for FlowFuse.
-Team members will be given a login to the  Stripe dashboard as required for
+Subscriptiona and their invoices are all stored in Hubspot, and Stripe is used for payment processing for contracted
+revenue. For FlowFuse's montly self-service customers Stripe also tracks the subscription instead of Hubspot.
+Team members will be given a login to the relevant Stripe and Hubspot dashboard as required for
 their role with an appropriate level of access.
-
-We also contract with Formation Financial to help assist with business administration and billing support. You can direct any billing related requests to billing@flowfuse.com for their assistance if preferred.
-
-You should first get approval from the CEO or CTO to make any changes to existing subscriptions. Use coupons as described below when providing customer access to resources subscribed to through pre-paid deals.
 
 ## Providing support
 
@@ -20,29 +17,31 @@ The customer must first configure their billing details within their FlowFuse ac
 
 ## Invoices
 
-For all monthly recurring invoices Stripe will automatically generate an invoice
+Monthly subscriptions will be automatically generated in Stripe 
 and charge customers based on their payment method filed with Stripe.
 
-For annual subscriptions, which could also be self-managed, invoices are created
-in Stripe. These invoices are created manually *after* the customer has agreed
-on the [quote](/handbook/customer/sales/engagements#generating-a-quote) and
-[terms](/handbook/customer/sales/legal/#subscription-agreement).
+Annual subscriptions and invoices are managed in HubSpot, please see instructions below.
 
-### Creating an invoice
+### Creating a subscription invoice
 
-Email billing@flowfuse.com with the following information (available as a template [here](https://app-eu1.hubspot.com/templates/26586079/edit/53524964?q=invoi&page=1):
+To generate an invoice, the corresponding deal and quote must first be in place in HubSpot. This ensures the correct products and amounts are auto-populated.
 
-* Start date:
-* Name:
-* Email:
-* Address:
-* Terms:
-* VAT Number:
-* Cloud or Self-Hosted:
-* Custom terms (if applicable):
-* Stripe Link (if applicable):
+1. Ensure the company details are updated, and include an address and country.
+1. On the Deal page, find the Invoices section on the right-hand side, then click Add and Convert Deal to Subscription.
+2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
+3. Make sure both ACH and Credit Card options are checked for payment.
+4. Click the Finalize button on the top right.
+5. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 
-## Coupons
+### Creating a PS invoice
+
+For new customers an invoice should be generated in [Hubspot's Invoice section](https://app-eu1.hubspot.com/contacts/26586079/objects/0-53/views/all/list).
+
+1. Ensure the company details are updated, and include an address and country.
+2. Ensure the customer provided a PO number if they require one.
+3. Create a one-time invoice through Hubspot -- If the customer already is used to paying through Stripe, use best judgement when to switch them over
+
+## Adding a Coupon
 
 From time to time we may wish to provide a user with some free access to 
 the managed FlowFuse platform. In this situation we will create a coupon code
@@ -65,6 +64,16 @@ To create a couple on Stripe:
 11. Press 'Create coupon' which is bottom right of the page.
 
 That coupon code can now be used when you are asked to provide payment card details.
+
+## Removing a Coupon
+
+The preferred course of action is to create coupons that will expire on their own. However, in the event that a coupon needs to be removed manually, follow these steps.
+
+1. Find the customer's subscription.
+2. Click 'Actions' in the upper-right corner.
+3. Choose 'Update a Subscription'. The customer's subscription details are now open.
+4. Locate the coupon and remove it.
+5. Click 'Update Subscription' to save the changes.
 
 ## Credits
 

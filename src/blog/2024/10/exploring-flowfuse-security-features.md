@@ -7,10 +7,10 @@ authors: ["sumit-shinde"]
 image: /blog/2024/10/images/flowfuse-security-features.png
 keywords: node-red security, node red security, how to secure node-red solutions, secured solution for manufacturing, iot vulnerabilities, iot security concerns, iot and security
 tags:
- - flowfuse security features
+ - post
+ - flowfuse
  - flowfuse features
  - node-red security
- - node red security
 ---
 
 When it comes to securing Node-RED applications and its editor, ensuring that your flows and data are protected from unauthorized access can feel like a daunting task. Even after investing considerable time, achieving the right level of security often remains a complex challenge. For enterprises, this goes far beyond access control— security is a cornerstone of protecting sensitive data, maintaining operational continuity, and meeting strict regulatory requirements. A robust security framework not only prevents breaches but also safeguards intellectual property, preserves trust, and shields the organization from costly cyber threats.
@@ -21,7 +21,7 @@ Here are 9 ways FlowFuse simplifies and strengthens your Node-RED deployments, e
 
 ## Default Security Measures to Keep Your Environment Safe
 
-In today's digital landscape, where threats are ever-present, safeguarding your Node-RED applications is more crucial than ever. That's why we implement robust security measures right from the start. Your data is encrypted during transmission, and we utilize rate limiting to prevent traffic overloads, ensuring smooth and safe operations. Additionally, we employ secure tunnelling to facilitate safe communication between your edge devices and the FlowFuse platform. To ensure that only authorized personnel have access to your FlowFuse team, we have implemented robust login authentication measures, which you can further enhance with multi-factor authentication as needed. 
+Securing your Node-RED applications is essential to protect sensitive data, proprietary business logic, and critical systems from unauthorized access or cyberattacks. Without proper safeguards, the risks of data loss, operational disruptions, and reputational damage are significant. FlowFuse implements robust security measures right from the start, ensuring your deployments remain safe. Data is encrypted during transmission, and rate limiting prevents traffic overloads, ensuring smooth operations. Additionally, secure tunnelling facilitates safe communication between your edge devices and the FlowFuse platform. To ensure that only authorized personnel have access to your FlowFuse team, we’ve implemented strong login authentication measures, which can be further enhanced with multi-factor authentication as needed.
 
 Here’s the best part- we don’t just offer default protections; we empower you to fine-tune your security defences. FlowFuse features a user-friendly interface that allows you to customize your security settings and design a strategy tailored to your needs. Rest easy knowing that we've laid a solid security foundation while giving you the flexibility to enhance your defences.
 

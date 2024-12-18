@@ -13,22 +13,22 @@ hubspot:
         <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
             <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
                 <h1 class="font-medium leading-tight max-w-xl m-auto lg:m-0 text-center lg:text-left text-indigo-800 text-4xl">
-                    {{ site.messaging.tagLine }}
+                    {{ site.messaging.tagLine | safe }}
                 </h1>
                 <p class="mt-6 text-center lg:text-left">
                     {{ site.messaging.subtitle }}
                 </p>
                 <div class="flex flex-col">
                     <div class="m-auto lg:mt-3 flex gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 flex-row">
-                        <a class="ff-btn ff-btn--highlight flex flex-col max-xl:mb-6" href="/product/features/">
+                        <a class="ff-btn ff-btn--highlight flex flex-col max-xl:mb-6" href="{{ site.appURL }}/account/create"
+                        onclick="capture('cta-try-it-now', {'position': 'hero'})">
                             <span class="text-base uppercase items-center">
-                                LEARN MORE
+                                TRY IT OUT
                             </span>
                         </a>
-                        <a class="ff-btn flex flex-col max-xl:mb-6" href="/contact-us"
-                            onclick="capture('cta-contact-us', {'position': 'hero'})">
-                            <span class="text-base flex gap-2 uppercase items-center text-indigo-600">
-                                Contact us
+                        <a class="ff-btn flex flex-col max-xl:mb-6" href="/product/features/" onclick="capture('cta-learn-more', {'position': 'hero'})">
+                            <span class="text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                LEARN MORE
                                 {% include "components/icons/arrow-right.svg" %}
                             </span>
                         </a>
@@ -56,10 +56,34 @@ hubspot:
             <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
                 <h2 class="text-center w-full md:text-left">Empowering you to <span class="text-indigo-600">unlock data and build applications faster</span></h2>
                 <p class="text-center w-full md:text-left">
-                    Supporting your OT and IT teams with the tools and safeguards they need to drive operational
-                    efficiency
-                    and deliver real business value.
+                    Supporting your OT and IT teams with the tools and safeguards they need to drive operational efficiency and deliver real business value.
                 </p>
+                <!-- Metrics -->
+                {% set metrics = [
+                {
+                    number: "20x",
+                    text: "Increase in DevOps pipeline speed with automation"
+                },
+                {
+                    number: "20%",
+                    text: "Reduction in developer time spent on new solutions"
+                },
+                {
+                    number: "9x",
+                    text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services"
+                }]
+                %}
+                <div class="grid sm:grid-cols-3 gap-6 bg-indigo-50 rounded-lg mt-10 pb-3 px-4 pt-6 max-sm:max-w-[300px] m-auto">
+                    {% for metric in metrics %}
+                        <div class="max-w-[230px] m-auto">
+                            <div class="flex justify-center">
+                                <h3 class="text-4xl font-normal text-indigo-400">{{ metric.number }}</h3>
+                            </div>
+                            <p class="text-center mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Wheel section -->
                 {% set sections = [
                 {
                 title: "Manage",
@@ -95,7 +119,7 @@ hubspot:
                     </div>
                     {% for section in sections %}
                     <div class="{{ section.mdOrder }}">
-                        <div class="max-sm:mx-auto w-8 h-8 text-indigo-600 mb-3">
+                        <div class="max-sm:mx-auto w-8 h-8 text-red-300 mb-3">
                             {% set svgPath = section.svgPath %}
                             {% include svgPath %}
                         </div>
@@ -116,37 +140,25 @@ hubspot:
     </div>
 </div>
 <div class="pb-10 md:pb-12 pt-14 px-6">
+
+    <!-- IT/OT Graphic -->
+    <div class="about w-full pb-10">
+        <div class="max-w-md sm:max-w-screen-lg mx-auto">
+            <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
+                <h2 class="text-center w-full md:text-left mb-6"><span class="text-indigo-600">Bridging OT and IT</span> in Manufacturing</h2>
+                <p class="text-center w-full md:text-left">
+                    Integrate data between OT and IT systems efficiently. With low-code solutions and seamless integration, FlowFuse empowers engineers to collect, visualise, and act on data rapidly, maintaining compliance and security standards. Achieve operational excellence by enabling faster innovation and smoother data flow across your organisation.
+                </p>
+                <div class="flex justify-center mt-10 max-w-2xl mx-auto">
+                    {% image "./images/home/ff_ot_it.png", "FlowFuse IT/OT Integration", [800] %}
+                </div>
+                <p class="text-center mt-6 text-base font-light w-full italic">FlowFuse: <a href="/solutions/it-ot-middleware/" class="underline" onclick="capture('cta-ot-it-solution', {'reference': 'homepage'})">The IT/OT Middleware Solution</a></p>
+            </div>
+        </div>
+    </div>
     <!-- Get Started -->
     <div class="ff-blue-card">
-            <div class="m-auto w-full text-center sm:text-left mb-2">
-                <h2 class="font-bold"><span class="text-red-600">Get Started</span> with FlowFuse</h2>
-                <p class="-mt-1">Explore our <a href="/pricing/">pricing</a></p>
-            </div>
-            <div class="w-full sm:grid sm:grid-cols-2 gap-6 sm:gap-8">
-                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-center sm:justify-start mt-3 mb-2 mx-auto md:mx-0 w-6 h-6">
-                            {% include "components/icons/building-office-2.svg" %}
-                        </div>
-                        <h4 class="flex justify-center sm:justify-start font-semibold">On Premise</h4>
-                        <p class="font-light mt-6">Deploy FlowFuse on your hardware for enhanced flexibility. Opt for self-hosted deployment with FlowFuse, enabling on-premises installation and full control over your deployment process.</p>
-                    </div>
-                    <a class="mt-4 mb-6 sm:mb-0 ff-btn ff-btn--highlight uppercase inline-block self-center sm:self-start"
-                        href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'secondary'})">Install now</a>
-                </div>
-                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-center sm:justify-start mt-3 mb-2 mx-auto md:mx-0 w-6 h-6">
-                            {% include "components/icons/cloud.svg" %}
-                        </div>
-                        <h4 class="flex justify-center sm:justify-start font-semibold">FlowFuse Cloud</h4>
-                        <p class="font-light mt-6">Our managed hosted solution, maintained and supported by the FlowFuse team. Experience flexibility, scalability, and expert assistance to drive your business forward.</p>
-                    </div>
-                    <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
-                        href="{{ site.appURL }}/account/create"
-                        onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>
-                </div>
-            </div>
+        {% include "get-started.njk" %}
     </div>
     <!-- FF Content -->
     <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl px-6">
