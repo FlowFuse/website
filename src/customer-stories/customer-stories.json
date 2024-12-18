@@ -2,5 +2,7 @@
     "tags": [
         "stories"
     ],
-    "layout": "layouts/story.njk"
+    "layout": "layouts/story.njk",
+    "nav": "customer-stories",
+    "searchTitle": "Customer Stories"
 }

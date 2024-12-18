@@ -44,6 +44,55 @@
 }
 
 /*
+    Company Tile - Used in Blueprint Profile
+*/
+.company-tile {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    gap: 8px;
+    padding: 6px;
+    border: 1px solid #D1D5DB;
+    background-color: white;
+    border-radius: 6px;
+}
+.company-tile label {
+    margin-bottom: -2px;
+}
+.company-tile-logo {
+    width: 24px;
+    max-width: 24px;
+}
+
+.blueprint .company-tile {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    padding-bottom: 10px;
+    padding-top: 4px;
+}
+/*
+    Integrations Tile Used in Blueprint Profile
+*/
+.integration-tile {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    gap: 8px;
+    padding: 6px;
+    border: 1px solid #D1D5DB;
+    background-color: white;
+    border-radius: 6px;
+}
+.integration-tile label {
+    margin-bottom: -2px;
+}
+.integration-tile-icon {
+    width: 24px;
+}
+
+/*
     Customer Story Tile
 */
 .customer-story-tile a {

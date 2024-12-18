@@ -11,10 +11,10 @@ tags:
     - community
 ---
 
-In today's rapidly evolving industrial landscape, the ability to collect, analyse, and act upon data is more critical than ever.
-The Industrial Internet of Things (IIoT) has ushered in a new era of connectivity and automation, but what about the wealth of data locked away in legacy industrial protocols like Modbus?
-How can we unlock and make sense of this valuable information in _any_ data, e.g. serial comms with no protocol, Siemens S7, Omron Fins, Mitsubishi MC-Protocol, or Allen Bradley DF1, etc.
-in the IIoT era? That's where tools like Node-RED and `node-red-contrib-buffer-parser` come into play.
+Industrial systems generate valuable data, but legacy protocols like Modbus or non-IIoT standards often make it hard to use. Bridging this gap is essential to connect traditional systems with the modern Industrial Internet of Things (IIoT).  
+
+Whether it’s Modbus registers, serial communication without a protocol, or standards like Siemens S7 and Mitsubishi MC-Protocol, the challenge lies in making sense of this raw information. With tools like Node-RED and the node-red-contrib-buffer-parser, you can turn complex, outdated data streams into usable formats that power IIoT innovation. 
+
 
 <!--more-->
 
@@ -79,6 +79,15 @@ Converting an array of 16-bit unsigned integers to String, Float and a scaled in
 #### Example 3: Modbus data on a dashboard
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer for publishing to a dashboard!
 ![Legacy data to dashboard](images/industrial-legacy-data-to-dashboard.png)
+
+### Simplify Your Node-RED Operations with FlowFuse
+
+While Node-RED is a fantastic tool for data collection, transformation, and analysis, integrating it into a production environment can sometimes feel like navigating a maze. Whether you’re deploying Node-RED on a server, ensuring secure remote access for your team, or managing a sprawling network of thousands of instances, it’s easy to feel overwhelmed.
+
+That’s where FlowFuse steps in to make your life easier. FlowFuse is designed to tackle these challenges head-on. It enhances Node-RED with features that simplify collaboration, strengthen security, and provide scalable deployment options. Imagine having a robust system that not only keeps your Node-RED applications running smoothly but also scales effortlessly with your needs. With FlowFuse, you gain access to a comprehensive suite of production-ready [features](/product/features/) designed to streamline your Node-RED workflows and boost overall performance.
+
+**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and experience FlowFuse's features**
+
 ### Learn More
 
 We will be publishing follow-up blog posts with more details, best practices and examples on how to use Node-RED to make sense of your industrial data. In the meantime, you can learn more about these tools by visiting the following links:

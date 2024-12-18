@@ -75,7 +75,7 @@ We also have a `#flowfuse` channel on the [Node-RED Slack workspace](https://nod
 Our regular release cycle puts the next release on Thursday 12th May.
 We will be building on features in the last few releases around managing your projects and using templates, we're also  setting the foundations of our work to [manage Node-RED on your own devices running at the Edge](https://github.com/FlowFuse/flowfuse/issues/446).
 
-For more information, check out the [announcement blog post](/blog/announcing-flowforge-cloud/).
+For more information, check out the [announcement blog post](/blog/2022/02/announcing-flowforge-cloud/).
 
 You can also sign up to our general mailing list below if you want to hear more
 about the work we're doing.

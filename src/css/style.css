@@ -2,9 +2,11 @@
 @import "./style.page.css";
 @import "./style.nohero.css";
 @import "./style.handbook.css";
+@import "./style.catalog.css";
 @import "./style.eleventy.nav.css";
 @import "./style.components.css";
 @import "./style.animations.css";
+@import "./style.docs.css";
 @import "./algolia-theme.css";
 @import "./roadmap.css";
 @import "./zoom-style.css";
@@ -108,6 +110,37 @@ h1, h2, h3, h4 {
 
 .ff-website {
     /* background-color: theme(colors.gray.800); */
+}
+
+*:has(> .ff-helper) {
+    position: relative;
+}
+*:has(> .ff-helper):hover .ff-helper {
+    visibility: visible;
+}
+
+.ff-helper {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    font-size: 0.75rem;
+}
+
+.ff-helper::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
 }
 
 /* .ff-bg-flows {
@@ -492,6 +525,11 @@ h4:hover .header-anchor {
     height: 100%;
     width: 100%;
     transition: transform 0.5s;
+}
+
+.ff-image-cover.blueprint img,
+.ff-image-cover.blueprint picture {
+    object-position: left top;
 }
 
 .ff-image-cover.scale:hover img,
@@ -1459,11 +1497,11 @@ h4:hover .header-anchor {
     }
 
     .social-proof-logos-smaller ul {
-        @apply social-proof-ul-common;
+        @apply social-proof-ul-common gap-[15%];
     }
 
     .social-proof-logos-smaller ul li {
-        @apply pb-3;
+        @apply pb-6;
     }
 }
 pre.mermaid {

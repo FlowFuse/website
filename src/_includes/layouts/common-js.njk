@@ -7,29 +7,131 @@
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
     mermaid.initialize({
         securityLevel: 'loose',
-        startOnLoad:true
+        startOnLoad  : true
     });
 </script>
 
 <!-- Clipboard -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css"  as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 {% initClipboardJS %}
 
 <!-- Syntax Highlighting CSS -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-<link rel="preload"href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js" onload="initSearchBar()"></script>
-<script async type="text/javascript">
-  function initSearchBar () {
-    algoliasearchNetlify({
-        appId: 'KWE0727TZS',
-        apiKey: '595ee07f069991380e9c3036cfad8e5e',
-        siteId: '00f8cf60-997f-4c4d-9427-a97924358648',
-        branch: 'live',
-        selector: 'div#algolia-search',
-        detached: false
-    });
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.5.1/themes/reset-min.css" integrity="sha256-KvFgFCzgqSErAPu6y9gz/AhZAvzK48VJASu3DpNLCEQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.6.1"/>
+
+<script type="text/javascript">
+    const searchScope = document.head.querySelector('[property="article:section"][content]')?.content ?? '';
+
+    function initSearchBar() {
+        const {autocomplete, getAlgoliaResults} = window['@algolia/autocomplete-js'];
+        const searchClient = algoliasearch('KWE0727TZS', '595ee07f069991380e9c3036cfad8e5e');
+        const scopeTitles = {
+            'ama': 'Ask Me Anything',
+            'blog': 'Blog',
+            'changelog': 'Changelog',
+            'customer-stories': 'Customer Stories',
+            'docs': 'Docs',
+            'ebooks': 'E-Books',
+            'handbook': 'Handbook',
+            'node-red': 'Node-RED',
+            'webinars': 'Webinars',
+        }
+        const placeholder = Object.prototype.hasOwnProperty.call(scopeTitles, searchScope) ? `Search in ${scopeTitles[searchScope]}...` : 'Search...'
+
+        const searchQuery = (searchClient, query, scope) => {
+            return {
+                sourceId : scope,
+                getItems : () => getAlgoliaResults({
+                    searchClient,
+                    queries: [
+                        {
+                            indexName            : 'netlify_00f8cf60-997f-4c4d-9427-a97924358648_live_all',
+                            params               : {
+                                query,
+                                hitsPerPage: 5,
+                            },
+                            attributesToHighlight: '*',
+                            filters: scope.length === 0 ?  undefined : `category:${scope}`
+                        },
+                    ],
+                }),
+                templates: {
+                    header({html}) {
+                        if (!Object.prototype.hasOwnProperty.call(scopeTitles, scope)) {
+                            return null;
+                        }
+
+                        return html`
+                            <span class="aa-SourceHeaderTitle">In ${scopeTitles[scope]}</span>
+                            <div class="aa-SourceHeaderLine"/>
+                        `;
+                    },
+                    item({item, components, html}) {
+                        return html`
+                            <a href="#" data-href="${item.url}" class="aa-ItemWrapper">
+                                <div class="aa-ItemContent">
+                                    <div class="aa-ItemIcon aa-ItemIcon--alignTop">
+                                        <img
+                                                src="#"
+                                                data-src="${item.image}"
+                                                alt="${item.name}"
+                                                width="40"
+                                                height="40"
+                                        />
+                                    </div>
+                                    <div class="aa-ItemContentBody">
+                                        <div class="aa-ItemContentTitle">
+                                            ${components.Highlight({
+                                                hit      : item,
+                                                attribute: ['hierarchy', 'lvl0'],
+                                            })}
+                                        </div>
+                                          <div class="aa-ItemContentSubTitle ${item.type === 'lvl0' ? 'hidden' : ''}">
+                                            ${components.Highlight({
+                                                hit      : item,
+                                                attribute: ['hierarchy', item.type],
+                                            })}
+                                          </div>
+                                        <div class="aa-ItemContentDescription">
+                                            ${components.Snippet({
+                                                hit      : item,
+                                                attribute: 'content',
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>`;
+                    },
+                }
+            };
+        }
+
+        autocomplete({
+            debug: true,
+            container: '#algolia-search',
+            placeholder,
+            getSources({query}) {
+                return [
+                    searchQuery(searchClient, query, searchScope)
+                ]
+            },
+            onStateChange({ state, prevState }) {
+                // this is a fix or workaround for untitaker/hyperlink static broken link checker plugin
+                //      the plugin can't resolve dynamic (${item.xxx}) src or href values
+                //      the plugin can't escape/ignore files, code blocks, scripts etc
+                document.querySelectorAll('.aa-Panel a').forEach(item => {
+                    item.href = item.getAttribute('data-href');
+                });
+                document.querySelectorAll('.aa-Panel img').forEach(img => {
+                    img.src = img.getAttribute('data-src');
+                });
+            }
+        });
     }
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js"
+        integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.6.1" onload="initSearchBar()"></script>

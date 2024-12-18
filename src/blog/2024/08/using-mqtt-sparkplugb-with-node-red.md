@@ -5,13 +5,12 @@ description: Explore how MQTT Sparkplug B enhances MQTT with standardized data f
 date: 2024-08-22
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/using-sparkplug-with-node-red.png
+keywords: node red mqtt sparkplug, sparkplug mqtt, mqtt sparkplug b, sparkplug b mqtt, mqtt sparkplug b specification, sparkplug mqtt specification,  mqtt sparkplug specification, mqtt sparkplug example, mqtt spark plug
 tags:
-   - post
-   - nodered
-   - MQTT sparkplug B with Node-RED
-   - mqtt sparkplug b message
-   - MQTT Sparkplug B example
-   - node red sparkplug b
+   - posts
+   - node-red
+   - mqtt
+   - sparkplug
 ---
 
 Connected devices can generate a lot of data, but without a standardized format, managing and consuming it can be tricky. MQTT certainly simplifies getting your messages delivered but it does not enforce any structure. This is where MQTT Sparkplug B helps by providing a clear, standardized format for data. In this guide, we’ll show you how to use MQTT Sparkplug B with Node-RED to make managing your device data easier and more organized.
@@ -86,9 +85,10 @@ In this section, we'll explore an example where Machine1 on the factory floor se
 
 Before you begin, ensure you have the following:
 
+- FlowFuse Account: This will allow you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on your Node-RED projects with your team, manage and program your edge devices remotely, If you haven’t created an account yet, [sign up now](https://app.flowfuse.com/account/create).
 - [node-red-contrib-mqtt-sparkplug-plus](https://flows.nodered.org/node/node-red-contrib-mqtt-sparkplug-plus): Install this Node-RED package for Sparkplug B support via palette manager.
-- MQTT Broker: Make sure you have your MQTT broker configuration details ready.
-- 
+- MQTT Broker: You’ll need an MQTT broker to send and receive messages. If you don’t have one set up, FlowFuse also offers an integrated MQTT broker service, simplifying the process of using MQTT with Node-RED without needing an external broker. For more details, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
+
 ### Configuring Node-RED for MQTT Sparkplug B
 
 1. Drag any mqtt sparkplug node onto the canvas.

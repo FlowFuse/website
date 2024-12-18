@@ -5,6 +5,7 @@ meta:
     title: Open Source Software for Manufacturing
     description: In this free white paper get a comprehensive understanding of why open source software (OSS) is a smart choice for digital transformation and industrial agility
 image: /whitepaper/images/whitepaper-oss-manufacturing.jpg
+thumbnail: /resources/images/Whitepaper_Open-Source-in-Manufacturing.png
 hubspot:
     script: "hubspot/hs-form.njk"
     formId: 0ecb7f9a-cae9-403f-9067-50d4cf494255

@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+image: /landing/images/low-code-whitepaper.png
+title: Empowering Engineers to Drive Innovation
+tags:
+    - whitepaper
+thumbnail: /resources/images/Whitepaper_Accelerating-Industrial-Innovation-With-Low-Code-Platforms.png
+meta:
+    title: "Accelerating Industrial Innovation with Low-Code Platforms"
+    description: "Discover how low-code platforms are accelerating industrial innovation, and how you can leverage them to drive digital transformation in your manufacturing business."
+hubspot:
+    script: "hubspot/hs-form.njk"
+    formId: b9b00a26-31ee-435a-b5fc-ebc38cd90055
+    cta: "cta-download-now"
+    reference: "low-code-whitepaper"
+---
+<div class="w-full nohero py-16">
+    <div class="container flex flex-col m-auto text-left max-lg:px-6 md:max-w-screen-lg items-stretch">
+        <div class="ff-prose whitepaper w-full flex flex-col md:flex-row md:gap-10 mt-3 pb-4 md:pb-12">
+            <div class="sm:1/3 md:w-1/2 flex-grow">
+                <div class="ff-image-cover ff-image-rounded w-full h-full mb-6">
+                    {% set imageSrc = ["./", image ] | join %}
+                    {% set imageDescription = ["Image representing ", title] | join %}
+                    {% image imageSrc, imageDescription, [644] %}
+                </div>                
+            </div>
+            <div class="main-content prose sm:2/3 md:w-1/2">
+                <label class="text-red-600 font-medium mb-2">Whitepaper</label>
+                <h1 class="md:max-w-screen-md">{{ title | safe }}</h1>
+                <p>The competitive industrial landscape puts immense pressure on companies to innovate. However, traditional IT processes often hinder operational technology (OT) engineers, preventing them from quickly implementing solutions that drive efficiency.</p>
+            </div>
+        </div>
+    </div>
+    <div class="w-full md:bg-white md:pt-8">
+    <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg md:gap-14 items-stretch">
+        <div class="ff-prose whitepaper w-full mt-3">
+            <h3 class="text-gray-600 leading-normal">Accelerating Industrial Innovation with <span class="inline-block">Low-Code Platforms</span></h3>
+            <p>We explore the challenges faced by engineers and introduce low-code platforms as a powerful solution. By empowering domain experts, low-code platforms like <span class="inline-block">Node-RED</span> enable rapid application development, prototyping, and iteration, fostering a culture of continuous improvement and driving significant cost reduction. Add to this FlowFuse enterprise-grade features and you have powerful production-ready solutions.</p>
+                <!-- Social proof logos -->
+            <div class="social-proof-logos-smaller border-t border-gray-200 mt-16">
+                {% include "social-proof.njk" %}
+            </div>
+        </div>
+        <div class="max-w-[350px] flex flex-col mx-auto">
+            <div class="sticky top-20 bg-indigo-50 border-2 border-indigo-200 rounded-md drop-shadow-xl px-6 pb-2 mt-4">
+                <p class="text-gray-500"><span class="font-semibold">Download our whitepaper</span></br>to learn how to unleash your engineers' potential and accelerate industrial innovation.</p>
+                {% include hubspot.script %}
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

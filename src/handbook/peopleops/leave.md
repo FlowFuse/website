@@ -25,6 +25,9 @@ team members. To prevent an undefined number of vacation days to start a race to
 the bottom, we recommend each team member to take a minimum of 25 days a year,
 and at least 5 days a quarter.
 
+Due to legal limitations, Canadian employees can not be offered unlimited PTO and
+will have the aforementioned 25 days instead.
+
 ## Sick leave
 
 Sick leave, or having limited availability is not recorded currently. Keep your

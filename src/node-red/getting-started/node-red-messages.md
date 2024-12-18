@@ -1,6 +1,7 @@
 ---
 eleventyNavigation:
-  key: Node-RED Messages
+  key: Working with Messages
+  order: 2
   parent: Getting Started
 meta:
   title: Understanding Node-RED Messages
@@ -217,10 +218,4 @@ This mistake often occurs in the change node where an inject node sends `msg.pay
 
 By mastering the intricacies of Node-RED message objects and avoiding common pitfalls, you can build more robust and efficient workflows. Understanding how to work with JSON data, cloning messages, and correctly handling properties ensures that your data flows smoothly between nodes.
 
-As you continue exploring and building with Node-RED, keep these best practices in mind to maintain error-free and high-performance flows. 
-
-### Up Next 
-
-- [Understanding Node, Flow, Global, and Environment Variables in Node-RED](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/)
-- [How to Filter, Map, Sort, and Reduce Data in Node-RED](/blog/2024/06/filtering-mapping-sorting-reducing-with-node-red/).
-- [How to Use If-Else Logic in Node-RED: A Step-by-Step Guide](/blog/2024/09/node-red-if-else-logic-guide/)
+As you continue exploring and building with Node-RED, keep these best practices in mind to maintain error-free and high-performance flows.

@@ -3,38 +3,36 @@
     let toc = document.getElementById("toc")
 
     let currentTag = "";
-    let currentToc = toc;
-    let currentItem;
 
-    let activeTier = 0 // which index to read from the depth
-    let depth = [1, 1, 1, 1] // tracks the active number to render at each depth
+    let indentation = 0 // how much to indent the current item
+    const STEP = 4 // how much to indent at each level
 
-    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n) {
+    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n, i) {
         // which level of "H_" are we working with, and which one did we see most recently
         const level = parseInt(n.nodeName[1])
         const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
-
-        // Render Table of Contents
-        if (prevLevel > 0 && level - prevLevel < 0) {
-            // we are moving left with our indent
-            currentToc = toc;
-        } else if (prevLevel > 0 && level - prevLevel > 0) {
-            // we are creating a new, nested `<ul>`
-            currentToc = document.createElement("ul");
-            currentToc.classList.add("ml-4")
-            currentToc.classList.add("mt-2")
-            currentToc.classList.add("mb-4")
-            currentItem.append(currentToc);
-        }
         currentTag = n.nodeName;
-        currentItem = document.createElement("li");
-        currentItem.classList.add("mb-2")
-        let currentLink = document.createElement("a");
-        currentItem.append(currentLink);
-        let link = n.getElementsByTagName('a')
-        currentLink.href = link[0].href;
-        currentLink.textContent = n.textContent.replace(/#\s+/g,"");
-        currentToc.append(currentItem);
+
+        if (i === 0) {
+            indentation = 0
+        } else if (level > prevLevel) {
+            // we're going deeper
+            indentation = indentation + (level - prevLevel)
+        } else if (level < prevLevel) {
+            // we're going up
+            indentation = indentation - (prevLevel - level)
+        }
+
+        row = document.createElement("li");
+        row.classList.add(`mb-2`)
+        row.classList.add(`ml-${STEP * indentation}`)
+
+        let link = document.createElement("a")
+        row.append(link)
+        let hLink = n.getElementsByTagName('a')
+        link.href = hLink[0].href;
+        link.textContent = n.textContent.replace(/#\s+/g,"")
+        toc.append(row);
     })
 
     // All external links open in new page

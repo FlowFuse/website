@@ -1,16 +1,25 @@
-<div class="ff-blog container m-auto text-left max-w-lg md:max-w-5xl pt-8 pb-12 w-full ff-full-bg px-4">
-    <div class="px-2 flex items-center gap-12">
-        <h1 class="mb-0">Blueprint Library</h1>
-    </div>
-    <div class="px-2 mt-4 text-lg">   
-            <p>Explore FlowFuse Blueprints, choose templates for quick setups, perfect for learning and fast solution-building. Customizable for unique needs. Simplify your Node-RED projects with FlowFuse Blueprints!</p> 
-    </div>
+{% extends 'layouts/catalog.njk' %}
 
-    <ul class="flex flex-wrap">
+{% block title %}
+Blueprint Library
+{% endblock %}
+
+{% block description %}
+Explore FlowFuse Blueprints, choose templates for quick setups, perfect for learning and fast solution-building. Customizable for unique needs. Simplify your Node-RED projects with FlowFuse Blueprints!
+{% endblock %}
+
+{% block actions %}
+<a href="/blueprints/submit" class="ff-btn ff-btn--primary flex-col uppercase">Submit Your Own</a>
+{% endblock %}
+
+{% block content %}
+<div class="container m-auto text-left max-w-lg md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4">
+    <ul class="flex flex-col sm:grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 pb-10 border-b">
         {%- asyncEach item in blueprints -%}
-            {% include "blueprints/blueprints.njk" %}
+            {% include "blueprints/blueprint-card.njk" %}
         {%- endeach -%}
     </ul>
     {% include "blog/pagination.njk" %}
     {% include "contact-us-cta-line.njk" %}
 </div>
+{% endblock %}

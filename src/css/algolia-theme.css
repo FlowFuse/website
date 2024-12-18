@@ -1,47 +1,82 @@
 #algolia-search {
-    --aa-search-input-height: 42px;
-    --aa-input-border-color-rgb: none;
-    --aa-spacing: 12px;
     border-color: #dedede;
-    padding-left: var(--nav-pl);
-    padding-right: var(--nav-pl);
+    flex: auto;
 }
 
-#algolia-search .aa-Input {
-    font-size: 14px;
-    border: 0;
-}
-#algolia-search .aa-Autocomplete {
-    --height: 42px;
-}
-#algolia-search .aa-InputWrapperSuffix {
-    padding: 0 6px;
-}
-
-/*
-    Detatched Mode
-*/
-
-.ff-website .aa-DetachedOverlay {
-    background-color: #0000003b;
-    --height: 42px;
-    --aa-search-input-height: 42px;
-}
-
-.ff-website .aa-DetachedContainer {
-    --height: 42px;
-    --aa-search-input-height: 42px;
-    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
-}
-
-.ff-website .aa-DetachedContainer .aa-Form {
+#algolia-search .aa-DetachedSearchButton {
     border: none;
-}
-
-.ff-website .aa-DetachedFormContainer {
     padding: 0;
 }
-.ff-website .aa-DetachedFormContainer .aa-InputWrapper,
-.ff-website .aa-DetachedFormContainer .aa-InputWrapperSuffix, {
-    --height: 42px;
+
+#algolia-search .aa-DetachedSearchButton:focus,
+#algolia-search .aa-DetachedSearchButton:focus-within,
+#algolia-search .aa-DetachedSearchButton:active {
+    outline: none;
+    box-shadow: none;
+}
+
+#algolia-search .aa-Form {
+    height: 42px;
+    border: none;
+}
+#algolia-search .aa-Form:focus-visible,
+#algolia-search .aa-Form:focus-within {
+    box-shadow: none;
+    outline: none;
+}
+#algolia-search .aa-Form .aa-SubmitIcon,
+#algolia-search .aa-DetachedSearchButton .aa-DetachedSearchButtonIcon .aa-SubmitIcon{
+    color: #777;
+    height: 16px;
+    width: 16px;
+}
+
+#algolia-search .aa-Form  .aa-Input::placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aa-Panel {
+    z-index: 999;
+    min-width: 350px;
+}
+
+.aa-Panel .aa-ItemContent {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemIcon {
+    box-shadow: none;
+    background: transparent;
+    height: 100%;
+    grid-column: span 1;
+    width: 100%;
+    align-items: baseline;
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemIcon img {
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody {
+    grid-column: span 4;
+}
+
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentTitle {
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentSubTitle {
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+}
+
+.aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentDescription {
+    color: #777;
 }

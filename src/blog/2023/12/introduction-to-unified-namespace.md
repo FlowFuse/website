@@ -60,3 +60,15 @@ schema which both the producer and consumer can read and validate each event
 against. As such a common Schema Definition Language (SDL) is chosen to provide
 clarity of how the data is structured, how it can be parsed, and in some cases
 also what it means for the developer.
+
+## How Node-RED Fits In
+
+Node-RED excels in implementing a Unified Namespace with its flexible and powerful capabilities. It can act as both a central hub and a data consumer within a hub-and-spokes model, simplifying the integration of various data sources and consumers. By leveraging Node-RED's extensive library of nodes and its easy-to-use flow-based programming interface, organizations can efficiently manage data ingestion, transformation, and distribution.
+
+Node-RED also supports structured data through its support for JSON, XML, and other standard formats, allowing for clear and consistent data schemas. With its built-in nodes for MQTT, HTTP, and other protocols, Node-RED can seamlessly integrate with existing systems, enabling real-time data exchange and visualization. This makes it an ideal tool for operationalizing the Unified Namespace, ensuring that data flows efficiently and is readily available to all relevant stakeholders.
+
+### How FlowFuse Can Help
+
+While Node-RED is highly effective for implementing UNS, managing and deploying it can be complex. FlowFuse provides a unified platform that simplifies deployment with one-click operations, secure management, and scalable Node-RED applications. It also includes features that enhance collaboration, alongside offering centralized management of all Node-RED instances to ensure streamlined operations and increased efficiency.
+
+**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and experience FlowFuse's features**

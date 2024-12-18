@@ -5,12 +5,11 @@ description: Learn to integrate Open Telemetry with Node-RED to track and optimi
 date: 2024-08-15
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/opentelemetry-with-node-red.png
+keywords: nodered opentelemetry node opentelemetry, opentelemetry nodejs example, opentelemetry node, open telemetry nodejs
 tags:
-   - posts
-   - flowfuse
-   - distributed tracing in node-red
-   - open telemetry with node-red
-   - how to optimize the performance of node-red flows
+   - post
+   - node-red
+   - node-red tips
 ---
 
 Have you ever found yourself frustrated by unexpected delays in your Node-RED flows, wondering where the bottlenecks are hiding? Even small latency issues can have a big impact on your system's performance. That's where Open Telemetry comes in. With its powerful distributed tracing capabilities, you can finally take control and get a clear view of how your flows are performing in real time.
@@ -89,6 +88,15 @@ _Image showing the total duration taken by the flow after fixing the issue_
 
 Throughout this guide, we’ve interacted with an exporter which is running locally. However, by deploying and setting up your exporter on a server, you can remotely monitor the performance of your Node-RED flows. This setup enables you to oversee your system's performance from anywhere, making it easier to detect and address issues promptly.
 
+## Enhancing Monitoring and Optimization with FlowFuse
+
+While OpenTelemetry excels at tracing and optimizing Node-RED flows, FlowFuse offers a powerful solution for managing and monitoring Node-RED instances. It streamlines the creation, deployment, and management of instances, allowing you to deploy your applications with a single click and minimizing deployment complexity and errors.
+
+FlowFuse also boosts collaboration and security through features like team management, role-based access control, multi-factor authentication, and snapshot recovery. These capabilities ensure effective management, secure access, and easy recovery from changes, making FlowFuse an essential tool for optimizing and overseeing your Node-RED deployments.
+
+**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and discover how FlowFuse can simplify your Node-RED management and deployment.**
+
 ## Conclusion
 
-Using Open Telemetry with Node-RED helps you spot and fix delays in your flows quickly. By tracking data through your system, you can see where things slow down and make improvements. This makes your IoT applications run smoother and more efficiently. With the steps in this guide, you're now ready to use distributed tracing to keep your Node-RED flows performing at their best.
+Integrating OpenTelemetry with Node-RED enables you to efficiently trace and resolve delays in your flows, ensuring smoother and more efficient operation of your IoT applications. By following the steps outlined in this guide, you can leverage distributed tracing to identify performance bottlenecks and optimize your flows effectively. With OpenTelemetry's detailed insights and FlowFuse's robust features, you'll be well-equipped to maintain peak performance and manage your Node-RED environment seamlessly.
+

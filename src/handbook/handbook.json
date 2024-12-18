@@ -1,6 +1,7 @@
 {
     "layout": "layouts/documentation.njk",
     "nav": "handbook",
+    "searchTitle": "Handbook",
     "tags": [
         "handbook"
     ]

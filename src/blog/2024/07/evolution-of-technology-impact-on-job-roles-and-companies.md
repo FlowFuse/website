@@ -6,13 +6,10 @@ date: 2024-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/evolution-of-technology.png
 tags:
- - node-red
- - post
- - flowfuse
- - ai
- - nodered jobs
- - low-code
- - no-code
+    - posts
+    - flowfuse
+    - low-code
+    - ai
 ---
 
 Throughout history, technology has continuously transformed industries, job roles, and entire companies. While these changes often evoke fear and resistance, they also create new jobs, opportunities for innovation and growth. This post will explore how historical technological advancements have reshaped both individual job roles and entire companies, examine current trends like AI and low-code tools, and discuss the critical importance of adaptability for both individuals and businesses in navigating technological disruption, Importantly, we will address the pressing question of our time: ***"How can AI and low-code tools both enhance and challenge human capabilities, creativity, and the job market, and is this the next frontier in manufacturing or just hype"***
@@ -39,7 +36,7 @@ Furthermore, AI and low-code tools disrupt traditional job roles and create new 
 
 Historically, individuals and businesses that fail to adapt to technological change or embrace innovation risk becoming obsolete in competitive markets. A notable example is Nokia, once a dominant player in the mobile phone industry. Nokia initially thrived by pioneering mobile technology and establishing a strong market presence. However, the company's reluctance to embrace the shift to smartphones and its adherence to outdated business models ultimately led to its decline. In contrast, competitors like Apple and Samsung seized opportunities in the smartphone market, leveraging innovation and consumer-centric strategies to surpass Nokia in market share and profitability. There are numerous such examples, one being Xerox. Watch this short video where Steve Jobs, founder of Apple, explains [Why Xerox failed](https://www.youtube.com/watch?v=X3NASGb5m8s&t=2s).
 
-In today's business landscape, the strategic adoption of AI and low-code tools is critical for maintaining competitive advantage and driving sustainable growth. While concerns about AI ethics and reliability are valid, businesses that implement AI technologies responsibly can enhance operational efficiency, improve decision-making processes, and deliver superior customer experiences. Similarly, companies that embrace low-code development platforms can accelerate time-to-market for new applications, reduce development costs, and empower business units to innovate and iterate more rapidly. Amazon, for instance, exemplifies this adaptability by evolving from an online bookstore to a global leader in e-commerce and cloud computing through strategic technology integration.
+The strategic adoption of AI and low-code tools is critical for maintaining competitive advantage and driving sustainable growth. While concerns about AI ethics and reliability are valid, businesses that implement AI technologies responsibly can enhance operational efficiency, improve decision-making processes, and deliver superior customer experiences. Similarly, companies that embrace low-code development platforms can accelerate time-to-market for new applications, reduce development costs, and empower business units to innovate and iterate more rapidly. Amazon, for instance, exemplifies this adaptability by evolving from an online bookstore to a global leader in e-commerce and cloud computing through strategic technology integration.
 
 ## FlowFuse: The perfect combo of Low-code and AI
 
