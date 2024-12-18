@@ -76,4 +76,4 @@ MQTT is the ideal broker for a UNS in IIoT environments, offering real-time, low
 
 **In Part 2**, we will explore MQTT's security, scalability, topic organization, and community support, providing even more compelling reasons why it is the ultimate choice for UNS brokers.
 
-If you're looking to build your own UNS with MQTT, check out our step-by-step [Article on Building UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/). Plus, we've made it even easier by offering a built-in MQTT broker service within the **FlowFuse Platform**, allowing you to manage all your MQTT clients, devices, services, and data from a single, centralized interface. Check it out [here](blog/2024/10/announcement-mqtt-broker/)!
+If you're looking to build your own UNS with MQTT, check out our step-by-step [Article on Building UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/). Plus, we've made it even easier by offering a built-in MQTT broker service within the **FlowFuse Platform**, allowing you to manage all your MQTT clients, devices, services, and data from a single, centralized interface. Check it out [here](/blog/2024/10/announcement-mqtt-broker/)!
