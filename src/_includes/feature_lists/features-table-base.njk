@@ -4,6 +4,9 @@
             <span class="sticky left-0 h-full"></span>
             {% if hosting == "cloud" %}
             <label class="mr-2">
+                <div>Free</div>
+            </label>
+            <label class="mr-2">
                 <div>Starter</div>
             </label>
             <label>Team</label>
@@ -18,6 +21,7 @@
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--header sticky top-[44px]">
             <span style="padding-top: 12px; padding-bottom: 12px;" class="sticky left-0 h-full">{{ section.label }}</span>
+            <span></span>
             <span></span>
             <span></span>
         </li>
