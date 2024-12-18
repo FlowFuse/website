@@ -79,16 +79,12 @@ For alternative installation options and more details, please refer to our [docu
 
 To register your Device, in the FlowFuse Platform, click on the "Edge Devices" option in the left-hand menu, and then click the "Add Device" button.
 
-![](./images/onboarding-device-registration.png){data-zoomable}
-__
+Fill out the name, device type and select the application you've just created, and you'll be presented with the following:
 
-You'll be presented with a `flowfuse-device-agent` command, e.g:
+![Screenshot showing the dialog with the one-time-code to connect your remote Node_RED instance to FlowFuse](./images/onboarding-device-registration.png){data-zoomable}
+_Screenshot showing the dialog with the one-time-code to connect your remote Node_RED instance to FlowFuse_
 
-```bash
-flowfuse-device-agent -o one-time-passcode -u https://app.flowfuse.com
-```
-
-Run this where you just installed the `flowfuse-device-agent` package. This will connect your remote Node-RED instance to the FlowFuse platform.
+The command presented is used to connect your device to FlowFuse. Run this where you just installed the `@flowfuse/device-agent` package. This will connect your remote Node-RED instance to the FlowFuse platform.
 
 The final step to take is to then start running the device agent, which you can do by simply calling:
 
@@ -96,9 +92,11 @@ The final step to take is to then start running the device agent, which you can 
 flowfuse-device-agent
 ```
 
-FlowFuse offers remote development capabilities, allowing you to edit your Node-RED flows directly from the FlowFuse Cloud platform. This is done through the Device Agent's "Developer Mode". 
+### Developing on your Device
 
-To get started with developing flows on your Device, select your newly created Device, toggle on 'Developer Mode", and click "Open Editor"!
+FlowFuse offers remote development capabilities, allowing you to edit your Node-RED flows directly, and securely, from the FlowFuse Cloud platform. This is done through the Device Agent's "Developer Mode". 
+
+To get started with developing flows on your Device, simply select your newly created Device, toggle on 'Developer Mode", and click "Open Editor"!
 
 ## What Else is New?
 
