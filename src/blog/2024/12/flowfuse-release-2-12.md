@@ -4,7 +4,7 @@ subtitle: With our new FlowFuse release, comes a new team tier, available on Flo
 description: With our new FlowFuse release, comes a new team tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
 date: 2024-12-19
 authors: ["greg-stoutenburg"]
-image: /blog/2024/12/images/flowfuse-team-collaboration.png
+image: /blog/2024/12/images/tile-release-2-12.png
 tags:
    - flowfuse
    - news
