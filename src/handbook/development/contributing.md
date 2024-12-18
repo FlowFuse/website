@@ -89,8 +89,25 @@ The environment itself will then be available at: `https://<pr-number>.flowfuse.
 
 Access credentials for the pre-staging environment are located in the FlowFuse 1Password vault.
 
-The FlowFuse application deployed from the Pull Request comes pre-configured. The environment is terminated upon PR merging or closure. 
+The FlowFuse application deployed from the Pull Request comes pre-configured. The environment is terminated upon PR merging or closure.
 
+#### Custom Pre-Staging Environment
+
+By default, a pre-staging environment is automatically created for each Pull Request made in the `flowfuse/flowfuse` repository, containing changes from the related feature branch. 
+However, there are instances where it is necessary to test changes or features made in the dependency packages of `flowfuse/flowfuse`. 
+This can be accomplished by triggering a GitHub Actions pipeline to create a pre-staging environment with additional input parameters.
+
+To create a customized pre-staging environment, please follow the steps below:
+1. Publish the changes to the feature branch of the package you wish to test.
+2. Create a feature branch in the `flowfuse/flowfuse` repository with changes that depend on the package from step 1.
+3. Create a Pull Request for the changes in the `flowfuse/flowfuse` repository.
+4. Navigate to the [Create pre-staging environment workflow page](https://github.com/FlowFuse/flowfuse/actions/workflows/branch-deploy.yaml) in the Actions tab of the `flowfuse/flowfuse` repository.
+5. On the right side, click the `Run workflow` button.
+6. Complete the `Pull request number` field and the dependent package feature branch name.
+
+![Create pre-staging environment workflow inputs](../images/screenshots/gh-pre-staging-workflow-inputs.png)
+
+7. Click the `Run workflow` button and wait for the results. A Slack notification will be sent to the `gh-pipelines` channel with the link to the pre-staging environment.
 
 
 [website-repo]: https://github.com/FlowFuse/website
