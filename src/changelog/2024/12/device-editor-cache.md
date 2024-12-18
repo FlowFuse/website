@@ -1,7 +1,7 @@
 ---
 title: Device Editor Access Speed Up
 description:
-date: 2024-12-18 14:00:00.0
+date: 2024-12-19 14:00:00.0
 authors: ["ben-hardill"]
 tags:
     - changelog
