@@ -98,6 +98,10 @@ FlowFuse offers remote development capabilities, allowing you to edit your Node-
 
 To get started with developing flows on your Device, simply select your newly created Device, toggle on 'Developer Mode", and click "Open Editor"!
 
+### Version Control with Snapshots
+
+FlowFuse makes version control easy with [Snapshots](/docs/user/snapshots/#introduction). The new Free plan includes Device Auto Snapshots, which will automatically create a snapshot any time a flow is deployed to your device.
+
 ## What Else is New?
 
 In addition to the Free plan, we've also added two new views to the FlowFuse platform:
