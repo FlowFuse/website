@@ -1187,7 +1187,7 @@ h4:hover .header-anchor {
     
     .ff-feature-table-section li {
         display: grid;
-        grid-template-columns: 270px 1fr 1fr 1fr;
+        grid-template-columns: 270px 1fr 1fr 1fr 1fr;
         align-items: center;
         @apply bg-indigo-50/30;
     }
@@ -1202,7 +1202,7 @@ h4:hover .header-anchor {
     
     @media (max-width: 720px) {
         .ff-feature-table-section li {
-            grid-template-columns: 220px 1fr 1fr 1fr;
+            grid-template-columns: 220px 1fr 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
             grid-template-columns: 220px 1fr 1fr;
@@ -1211,7 +1211,7 @@ h4:hover .header-anchor {
 
     @media (max-width: 680px) {
         .ff-feature-table-section li {
-            grid-template-columns: 170px 1fr 1fr 1fr;
+            grid-template-columns: 170px 1fr 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
             grid-template-columns: 170px 1fr 1fr;
