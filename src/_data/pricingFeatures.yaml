@@ -62,7 +62,7 @@ sections:
         label: MQTT Broker
         cloudValues: [ null, 'check', 'check', 'check' ]    
         tags: [ 'cloud' ]
-        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. At no extra cost, the Starter Tier includes 2 clients, the Team Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
+        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Starter Tier includes 2 clients, the Team Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
       - id: mqtt-broker-sh
         label: MQTT Broker
         selfHostedValues: [ null, 'check' ]    
@@ -111,7 +111,7 @@ sections:
         cloudValues: [ null, 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
         selfHostedValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
         tags: [ 'cloud', 'self-hosted' ]
-        info: "<p>Use FlowFuse credentials to secure HTTP endpoints.</p>"
+        info: "<p>Use FlowFuse credentials to secure HTTP endpoints for hosted instances.</p>"
       - id: 2fa
         label: Two-factor authentication
         cloudValues: [ 'check', 'check', 'check', 'check' ]
