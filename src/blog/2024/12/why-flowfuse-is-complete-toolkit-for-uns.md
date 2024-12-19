@@ -21,7 +21,7 @@ Think of it as the brain of your entire operation, connecting all your business 
 
 ## **Core Components of UNS and How FlowFuse Fits In**
 
-To truly understand why FlowFuse is the ultimate toolkit for UNS, we need to explore its core components and see how FlowFuse enhances each one to help create a successful Unified Namespace in industrial IoT environments.
+To truly understand why FlowFuse is the ultimate toolkit for building and managing UNS, we need to explore its core components and see how FlowFuse enhances each one to help create a successful Unified Namespace in industrial IoT environments.
 
 ![Core Components of UNS](./images/component-of-uns.png){data-zoomable}  
 _Core Components of UNS: Key Elements to Consider When Building Your UNS_
