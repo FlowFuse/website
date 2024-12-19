@@ -1,6 +1,6 @@
 ---
 title: Why FlowFuse is the Complete Toolkit for UNS?
-subtitle: An In-Depth Look at FlowFuse's Features for Unified Namespace Integration
+subtitle: An In-Depth Look at FlowFuse for Unified Namespace
 description: Discover how FlowFuse is the ultimate solution for managing and implementing Unified Namespace (UNS) in industrial IoT environments.
 date: 2024-12-18
 authors: ["sumit-shinde"]
