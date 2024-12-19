@@ -39,13 +39,15 @@ The following are the steps to produce a montly webinar.
 
 ## Webinar Promotion
 
-* Week 1: Added to the newsletter
+* Week 1: Added to the newsletter (note to also promote on-demand version of the previous month's webinar in the newsletter) 
 * Week 2: Social media promotion on all channels:
     * LinkedIn, Twitter, Facebook, Node-RED Forum Event category, Redit Node-RED, Node-RED slack
     * Encourage FlowFuse employees to promote their network
-* Week 3 (1 week before webinar): Email to Hubspot list
+    * Dedicated email to all in the community outreach list
+* Week 3 (1 week before webinar): Email to Hubspot list (Send to those you didn't open previous week's email and new leads in DB. Exclude registered leads) 
     * Typically clone a previous email as the starting point.
-* Week 4: Another social media promotion and email. 
+* Week 4: Another social media promotion and email.
+    * Typically this is sent 1 day before the webinar as a reminder that its not too late to join.  
 
 ## Post Webinar
 
@@ -56,7 +58,7 @@ The following are the steps to produce a montly webinar.
 * In Hubspot send follow-up email to the registration list created in Hubspot that includes a link to the recording on YouTube.
 * For those who wanted to be contacted, change Life Cycle Stage property to MQL 
 
-
+This [webinar prep issue](https://github.com/FlowFuse/customer/issues/271) can be cloned and updated to keep track of activities.
 
 ## Creating a Webinar Page
 
