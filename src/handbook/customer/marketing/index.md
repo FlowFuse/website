@@ -17,7 +17,7 @@ of FlowFuse. This includes:
 them in a cost effective way.
 
 The ultimate goal for the department is to generate MQLs for the
-sales or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
+sales team or sign-ups for [FlowFuse Cloud](https://app.flowfuse.com).
 
 ## Team
 
@@ -25,8 +25,7 @@ sales or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
 |------|--------------|
 | CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
 | Visual Designer | [Yndira Escobar](https://www.linkedin.com/in/yndira-escobar-es) [@Yndira-E](https://github.com/Yndira-E) |
-| OT Data & Community Strategist | [Grey Dziuba](https://www.linkedin.com/in/gdziuba) [@gdziuba](https://github.com/gdziuba) |
-| Demand Gen Manager | [Hasmin AbdulCader](https://www.linkedin.com/in/hasminabdulcader/) |
+
 
 ## Contact us
 
