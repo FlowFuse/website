@@ -19,12 +19,12 @@ At its core, a **Unified Namespace** ([UNS](/solutions/uns/)) is a data architec
 
 Think of it as the brain of your entire operation, connecting all your business events in one place. Whether you're tracking performance, optimizing workflows, or making real-time decisions, a well-designed UNS makes it all possible. For more details, check out our article: [Introduction to the Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/).
 
-## Core Components of UNS and How FlowFuse Fits In
+## **Core Components of UNS and How FlowFuse Fits In**
 
 To truly understand why FlowFuse is the ultimate toolkit for UNS, we need to explore its core components and see how FlowFuse enhances each one to help create a successful Unified Namespace in industrial IoT environments.
 
 ![Core Components of UNS](./images/component-of-uns.png){data-zoomable}  
-*Core Components of UNS*
+_Core Components of UNS: Key Elements to Consider When Building Your UNS_
 
 #### **1. Connectivity Layer**
 
