@@ -2,7 +2,7 @@
 title: "MQTT: The Frontrunner for Your UNS Broker - Part 1" 
 subtitle: "Why MQTT is the Best Choice for Your UNS Broker"
 description: "Learn why MQTT is the top choice for Unified Namespace (UNS) brokers and explore the ideal platform that simplifies the connection of devices and services while providing a reliable MQTT broker service."
-date: 2024-12-18
+date: 2025-01-2
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/mqtt-for-uns.png
 keywords: mqtt unified namespace, why use mqtt in uns, mqtt in a unified namespace, mqtt data modeling UNS, best protocols for UNS IoT, implementing UNS with MQTT, unified namespace protocols
@@ -55,8 +55,7 @@ As we explored, MQTT uses a publish-subscribe model, which is built for real-tim
 
 In addition to being fast, MQTT is very efficient. Its messages are small and use little bandwidth—important when working with low-bandwidth networks or many connected devices. Even with limited resources, MQTT allows devices to send data without overwhelming the system. The result? As soon as a sensor detects a change—like a temperature spike or a production issue—it can send the information right away to the right system, triggering immediate actions to avoid costly downtime.
 
-![MQTT Topic structure](./images/mqtt-packate-size.png)  
-_Image showing the MQTT Topic Structer_
+![MQTT Packet Structer](./images/mqtt-packate-size.png)  _MQTT Packet Structer_
 
 ### **Reliability**
 
