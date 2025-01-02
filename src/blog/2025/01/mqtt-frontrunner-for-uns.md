@@ -2,7 +2,7 @@
 title: "MQTT: The Frontrunner for Your UNS Broker - Part 1" 
 subtitle: "Why MQTT is the Best Choice for Your UNS Broker"
 description: "Learn why MQTT is the top choice for Unified Namespace (UNS) brokers and explore the ideal platform that simplifies the connection of devices and services while providing a reliable MQTT broker service."
-date: 2025-01-2
+date: 2025-01-02
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/mqtt-for-uns.png
 keywords: mqtt unified namespace, why use mqtt in uns, mqtt in a unified namespace, mqtt data modeling UNS, best protocols for UNS IoT, implementing UNS with MQTT, unified namespace protocols
