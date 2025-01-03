@@ -49,7 +49,7 @@ Additionally, the increasing use of **unified data architecture** is helping to 
 
 Finally, modular design is helping manufacturers embrace iteration. By creating products with interchangeable components, manufacturers can focus on improving individual parts of a product without having to redesign the entire system. This modular approach allows for quicker adaptations and testing of new ideas, facilitating iterative changes and faster time to market.
 
-## ***The Toyota Example: Iterative Development in Action***
+### ***The Toyota Example: Iterative Development in Action***
 
 A well-established example of iterative development in manufacturing is the **Toyota Production System (TPS)**, which incorporates continuous, incremental improvements through the philosophy of [Kaizen](https://mag.toyota.co.uk/kaizen-toyota-production-system/). Unlike the traditional, rigid manufacturing process, Toyota has embraced iterative improvements as a core part of its operations. This approach allows the company to continuously optimize its manufacturing processes while keeping costs down and ensuring high product quality.
 
@@ -59,7 +59,7 @@ A concrete example of this iterative process is Toyota's use of the **Andon Cord
 
 In addition to Kaizen, Toyota has also utilized **just-in-time production (JIT)** and **Jidoka** (automation with a human touch) to create a system that allows for rapid adjustments without compromising quality or efficiency. These practices allow Toyota to iteratively improve products and the processes and systems that produce them. This ongoing, iterative feedback and adaptation make Toyota a leader in operational efficiency and product innovation.
 
-### **How Manufacturers Can Adapt Iterative Development**
+## **How Manufacturers Can Adapt Iterative Development**
 
 Adopting iterative development in manufacturing can seem challenging, but the benefits far outweigh the initial investment. To get started, manufacturers don’t need to completely overhaul their processes—small, incremental steps can lay the foundation for broader transformation. Begin with pilot projects: test agile methods on a specific product line or phase of production. Focusing on a controlled environment allows you to fine-tune your approach without significant risks or disruptions.
 
