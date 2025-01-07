@@ -105,7 +105,7 @@ To create a customized pre-staging environment, please follow the steps below:
 5. On the right side, click the `Run workflow` button.
 6. Complete the `Pull request number` field and the dependent package feature branch name.
 
-![Create pre-staging environment workflow inputs](../images/screenshots/gh-pre-staging-workflow-inputs.png)
+![Create pre-staging environment workflow inputs](../images/screenshots/gh-pre-staging-workflow-inputs.png){data-zoomable}
 
 7. Click the `Run workflow` button and wait for the results. A Slack notification will be sent to the `gh-pipelines` channel with the link to the pre-staging environment.
 
