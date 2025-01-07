@@ -98,8 +98,8 @@ However, there are instances where it is necessary to test changes or features m
 This can be accomplished by triggering a GitHub Actions pipeline to create a pre-staging environment with additional input parameters.
 
 To create a customized pre-staging environment, please follow the steps below:
-1. Publish the changes to the feature branch of the package you wish to test.
-2. Create a feature branch in the `flowfuse/flowfuse` repository with changes that depend on the package from step 1.
+1. Push the changes you want to test to the feature branch of the specific package's repository, ie. `nr-project-nodes`.
+2. In the `flowfuse/flowfuse` repository, create a new feature branch. Use this branch to make any necessary changes that depend on the updated package from step 1, if applicable.
 3. Create a Pull Request for the changes in the `flowfuse/flowfuse` repository.
 4. Navigate to the [Create pre-staging environment workflow page](https://github.com/FlowFuse/flowfuse/actions/workflows/branch-deploy.yaml) in the Actions tab of the `flowfuse/flowfuse` repository.
 5. On the right side, click the `Run workflow` button.
