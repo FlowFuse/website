@@ -21,7 +21,7 @@ In this first part of our series, we’ll explain why MQTT is the standout choic
 
 The [Unified Namespace (UNS)](/solutions/uns/) is a data architecture (not just a tool or new technology) that centralizes and organizes data from various sources into a single, unified structure. It eliminates data silos by providing a standardized way to represent, access, and share information across different devices, systems, and services. For more information on what is UNS, read our article: [Introduction to the Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/).
 
-When choosing a broker for your UNS, it's crucial to consider how well the selected broker fits the specific requirements of your IIoT environment, including the types of devices and systems involved, as well as factors like scalability, reliability, and ease of integration. Several options are available alongside MQTT, including [AMQP](/node-red/protocol/amqp/), [Kafka](/blog/2024/03/using-kafka-with-node-red/), and cloud message brokers like AWS Kinesis and GCP Pub/Sub. While these alternatives offer unique features, MQTT stands out, and we’ll explain why later in this article. But If you’re interested in a brief overview of why these alternatives are not the best fit for UNS, check out our article: [Unified Namespace: What Broker to Use?](https://flowfuse.com/blog/2024/01/unified-namespace-what-broker/)
+When choosing a broker for your UNS, it's crucial to consider how well the selected broker fits the specific requirements of your IIoT environment, including the types of devices and systems involved, as well as factors like scalability, reliability, and ease of integration. Several options are available alongside MQTT, including [AMQP](/node-red/protocol/amqp/), [Kafka](/blog/2024/03/using-kafka-with-node-red/), and cloud message brokers like AWS Kinesis and GCP Pub/Sub. While these alternatives offer unique features, MQTT stands out, and we’ll explain why later in this article. But If you’re interested in a brief overview of why these alternatives are not the best fit for UNS, check out our article: [Unified Namespace: What Broker to Use?](/blog/2024/01/unified-namespace-what-broker/)
 
 There is also an ongoing debate regarding the use of OPC-UA and other protocols for implementing UNS. While I won’t dive into this in detail here as i havent explored it much yet, I encourage you to start with the approach we call reverse engineering. First, understand why MQTT is the preferred choice for implementing UNS, and then explore how its features align with UNS needs. From there, you can evaluate whether other protocols offer similar capabilities. By following this process, you will find the right answer of your questions.
 
@@ -29,7 +29,7 @@ There is also an ongoing debate regarding the use of OPC-UA and other protocols 
 
 Before diving into its specific advantages for UNS, let’s take a brief look at the history of **MQTT** and how it became the backbone of modern IoT communication.
 
-[MQTT](/node-red/protocol/mqtt/) was developed in the late 1990s by **Andy Stanford-Clark** at **IBM** and **Arlen Nipper** at **Eurotech** to address communication challenges in low-bandwidth, unreliable networks. This early focus on lightweight messaging paved the way for MQTT to become a pioneering solution for the rapidly expanding IoT space.
+[MQTT](/node-red/protocol/mqtt/) was developed in the late 1990s by Andy Stanford-Clark at IBM and Arlen Nipper at Eurotech to address communication challenges in low-bandwidth, unreliable networks. This early focus on lightweight messaging paved the way for MQTT to become a pioneering solution for the rapidly expanding IoT space.
 
 Since then, MQTT has evolved significantly. The protocol has gone through several iterations, from **MQTT 3.1.1** to the more feature-rich **MQTT 5.0**, each version enhancing the protocol's capabilities to meet the demands of an increasingly connected world. Today, more than 25 years later, MQTT remains the **de facto protocol** for IoT applications, and its simplicity, scalability, and reliability continue to make it an ideal choice for industrial systems.
 
@@ -61,7 +61,7 @@ In addition to being fast, MQTT is very efficient. Its messages are small and us
 
 When it comes to building a UNS, **reliability** is absolutely crucial. Missing or duplicate data can lead to poor decision-making, system malfunctions, or even costly downtime—things no one wants in their IIoT environment.
 
-This is where **MQTT** truly shines. It’s built with a **Quality of Service (QoS)** mechanism that allows you to control how reliably your messages are delivered. Depending on the level you choose, you can ensure that data is delivered exactly as you need it, without compromising on system performance.
+This is where MQTT truly shines. It’s built with a **Quality of Service (QoS)** mechanism that allows you to control how reliably your messages are delivered. Depending on the level you choose, you can ensure that data is delivered exactly as you need it, without compromising on system performance.
 
 MQTT offers three levels of QoS to suit different use cases:
 
