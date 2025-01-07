@@ -18,11 +18,12 @@ In Part 1 , we discussed the compelling reasons behind MQTT's popularity as a ch
 
 ## **Wide Connectivity**
 
-When we talk about a UNS, it’s often described as the “single source of truth” for all your business events. This means your UNS needs to collect data from every part of your factory or system. To do this, you need a protocol that can connect to a wide range of devices and systems.
+For your Unified Namespace (UNS) to function properly, it needs to collect data from a variety of devices and systems. MQTT is perfect for this because it can connect to a wide range of devices, from modern systems to older legacy equipment.
+One of the biggest advantages of MQTT is its broad compatibility. It works seamlessly in cloud-based systems and is widely supported in industrial environments. This makes MQTT a natural fit for connecting all the components of your UNS, regardless of whether they are new or old.
 
-In many cases, this can be a challenge, as not all devices or PLCs in a factory are MQTT-compatible. This is where FlowFuse comes in. It acts as a bridge, enabling older systems to communicate with newer MQTT-based setups, ensuring no part of your system is left behind.
+That said, some older devices (such as legacy PLCs) might not support MQTT directly. However, this is not a problem. FlowFuse solves this challenge by acting as a bridge between older systems and newer MQTT setups, ensuring that everything can communicate within the same UNS.
 
-However, despite these challenges, MQTT stands out as one of the most widely supported protocols in the industrial world. It’s not only lightweight and efficient, but it also performs well in low-bandwidth environments. And as the demand for cloud solutions grows, many modern cloud platforms now support MQTT natively, making it an even more compelling choice for connecting your UNS.
+This broad connectivity makes MQTT ideal for unifying different data sources in the complex networks of a UNS, whether they are new or legacy systems.
 
 ![MQTT's Compatibility](./images/mqtt-compatiblity.png){data-zoomable}{width="400px"}
 _MQTT's Compatibility_
