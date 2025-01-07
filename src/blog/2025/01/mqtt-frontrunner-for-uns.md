@@ -32,7 +32,7 @@ Before diving into its specific advantages for UNS, let’s take a brief look at
 
 Since then, MQTT has evolved significantly. The protocol has gone through several iterations, from MQTT 3.1.1 to the more feature-rich MQTT 5.0, each version enhancing the protocol's capabilities to meet the demands of an increasingly connected world. Today, more than 25 years later, MQTT remains the **de facto protocol** for IoT applications, and its simplicity, scalability, and reliability continue to make it an ideal choice for industrial systems.
 
-**But, what exactly makes MQTT the frontrunner for UNS implementations? Let's take a deeper look at some of its key features?**
+But, what exactly makes MQTT the frontrunner for UNS implementations? Let's take a deeper look at some of its key features?
 
 ## **Publish-Subscribe Model and Event-Driven Architecture**
 
@@ -72,6 +72,6 @@ Now, some other protocols like AMQP or Kafka also provide reliability guarantees
 
 MQTT is the ideal broker for a UNS in IIoT environments, offering real-time, low-latency communication through its Publish-Subscribe model. With Quality of Service (QoS) options for reliable data delivery, it balances performance, scalability, and simplicity. MQTT’s lightweight design makes it perfect for handling large-scale, mission-critical data flows without the complexity of heavier protocols.
 
-**In Part 2, we will explore MQTT's scalability, topic organization, and wide connectivity providing even more compelling reasons why it is the ultimate choice for UNS brokers.**
+In Part 2, we will explore MQTT's scalability, topic organization, and wide connectivity providing even more compelling reasons why it is the ultimate choice for UNS brokers.
 
 If you're looking to build your own UNS with MQTT, check out our step-by-step [Article on Building UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/). Plus, we've made it even easier by offering a built-in MQTT broker service within the FlowFuse Platform, allowing you to manage all your MQTT clients, devices, services, and data from a single, centralized interface. Check it out [here](/blog/2024/10/announcement-mqtt-broker/)!
