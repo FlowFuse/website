@@ -1,4 +1,5 @@
 ---
+navTitle: Contributing
 originalPath: development/contributing.md
 updated: git modified
 ---
