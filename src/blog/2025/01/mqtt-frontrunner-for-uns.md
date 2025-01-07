@@ -30,7 +30,7 @@ Before diving into its specific advantages for UNS, let’s take a brief look at
 
 [MQTT](/node-red/protocol/mqtt/) was developed in the late 1990s by Andy Stanford-Clark at IBM and Arlen Nipper at Eurotech to address communication challenges in low-bandwidth, unreliable networks. This early focus on lightweight messaging paved the way for MQTT to become a pioneering solution for the rapidly expanding IoT space.
 
-Since then, MQTT has evolved significantly. The protocol has gone through several iterations, from **MQTT 3.1.1** to the more feature-rich **MQTT 5.0**, each version enhancing the protocol's capabilities to meet the demands of an increasingly connected world. Today, more than 25 years later, MQTT remains the **de facto protocol** for IoT applications, and its simplicity, scalability, and reliability continue to make it an ideal choice for industrial systems.
+Since then, MQTT has evolved significantly. The protocol has gone through several iterations, from MQTT 3.1.1 to the more feature-rich MQTT 5.0, each version enhancing the protocol's capabilities to meet the demands of an increasingly connected world. Today, more than 25 years later, MQTT remains the **de facto protocol** for IoT applications, and its simplicity, scalability, and reliability continue to make it an ideal choice for industrial systems.
 
 **But, what exactly makes MQTT the frontrunner for UNS implementations? Let's take a deeper look at some of its key features?**
 
@@ -44,7 +44,7 @@ Beyond this, MQTT’s event-driven architecture takes the system to a whole new 
 
 With MQTT, data is pushed as soon as it’s available, enabling faster decision-making and real-time responses. This means events like machine faults or environmental changes are addressed immediately, making the Our UNS more agile, responsive, and capable of scaling as needed which is one of priamary need of IIoT environemnt.
 
-If you’d like to understand the importance of **Publish-Subscribe (Pub/Sub)** architecture in detail for UNS, I highly recommend reading our article: [Why UNS Needs Pub/Sub](/blog/2024/11/why-pub-sub-in-uns/).
+If you’d like to understand the importance of Publish-Subscribe (Pub/Sub) architecture in detail for UNS, I highly recommend reading our article: [Why UNS Needs Pub/Sub](/blog/2024/11/why-pub-sub-in-uns/).
 
 ### **Low Latency and Lightweight Messaging**
 
@@ -58,20 +58,20 @@ In addition to being fast, MQTT is very efficient. Its messages are small and us
 
 ### **Reliability**
 
-When it comes to building a UNS, **reliability** is absolutely crucial. Missing or duplicate data can lead to poor decision-making, system malfunctions, or even costly downtime—things no one wants in their IIoT environment.
+When it comes to building a UNS, reliability is absolutely crucial. Missing or duplicate data can lead to poor decision-making, system malfunctions, or even costly downtime—things no one wants in their IIoT environment.
 
-This is where MQTT truly shines. It’s built with a **Quality of Service (QoS)** mechanism that allows you to control how reliably your messages are delivered. Depending on the level you choose, you can ensure that data is delivered exactly as you need it, without compromising on system performance.
+This is where MQTT truly shines. It’s built with a Quality of Service (QoS) mechanism that allows you to control how reliably your messages are delivered. Depending on the level you choose, you can ensure that data is delivered exactly as you need it, without compromising on system performance.
 
 MQTT offers three levels of QoS to suit different use cases:
 
-- **QoS 0 - "At most once"**: The message is delivered once and isn’t acknowledged. This is fine for non-critical data where the occasional loss of a message is acceptable.
-- **QoS 1 - "At least once"**: The message is delivered at least once, with an acknowledgment to ensure it was received. This is ideal for most IIoT applications, where you need reliable delivery, but duplicate messages are not a major concern.
-- **QoS 2 - "Exactly once"**: This guarantees the message is delivered exactly once—no duplicates, no omissions. It's the best choice for mission-critical applications where data integrity is paramount.
+- QoS 0 - "At most once": The message is delivered once and isn’t acknowledged. This is fine for non-critical data where the occasional loss of a message is acceptable.
+- QoS 1 - "At least once": The message is delivered at least once, with an acknowledgment to ensure it was received. This is ideal for most IIoT applications, where you need reliable delivery, but duplicate messages are not a major concern.
+- QoS 2 - "Exactly once": This guarantees the message is delivered exactly once—no duplicates, no omissions. It's the best choice for mission-critical applications where data integrity is paramount.
 
-Now, some other protocols like **AMQP** or **Kafka** also provide reliability guarantees, but they tend to be more complex and come with heavier infrastructure requirements. MQTT, on the other hand, offers a simple and lightweight design while still giving you just the right level of reliability for most IIoT scenarios. You can scale your network with ease, all while maintaining a high standard of reliability in your data flows.
+Now, some other protocols like AMQP or Kafka also provide reliability guarantees, but they tend to be more complex and come with heavier infrastructure requirements. MQTT, on the other hand, offers a simple and lightweight design while still giving you just the right level of reliability for most IIoT scenarios. You can scale your network with ease, all while maintaining a high standard of reliability in your data flows.
 
 MQTT is the ideal broker for a UNS in IIoT environments, offering real-time, low-latency communication through its Publish-Subscribe model. With Quality of Service (QoS) options for reliable data delivery, it balances performance, scalability, and simplicity. MQTT’s lightweight design makes it perfect for handling large-scale, mission-critical data flows without the complexity of heavier protocols.
 
 **In Part 2, we will explore MQTT's scalability, topic organization, and wide connectivity providing even more compelling reasons why it is the ultimate choice for UNS brokers.**
 
-If you're looking to build your own UNS with MQTT, check out our step-by-step [Article on Building UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/). Plus, we've made it even easier by offering a built-in MQTT broker service within the **FlowFuse Platform**, allowing you to manage all your MQTT clients, devices, services, and data from a single, centralized interface. Check it out [here](/blog/2024/10/announcement-mqtt-broker/)!
+If you're looking to build your own UNS with MQTT, check out our step-by-step [Article on Building UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/). Plus, we've made it even easier by offering a built-in MQTT broker service within the FlowFuse Platform, allowing you to manage all your MQTT clients, devices, services, and data from a single, centralized interface. Check it out [here](/blog/2024/10/announcement-mqtt-broker/)!
