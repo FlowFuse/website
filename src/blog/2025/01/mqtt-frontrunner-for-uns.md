@@ -24,7 +24,7 @@ When choosing a broker for your UNS, it's crucial to consider how well the selec
 
 There is also an ongoing debate regarding the use of OPC-UA and other protocols for implementing UNS. While I won’t dive into this in detail here as i havent explored it much yet, I encourage you to start with the approach we call reverse engineering. First, understand why MQTT is the preferred choice for implementing UNS, and then explore how its features align with UNS needs. From there, you can evaluate whether other protocols offer similar capabilities. By following this process, you will find the right answer of your questions.
 
-## **Background of MQTT**
+## Background of MQTT
 
 Before diving into its specific advantages for UNS, let’s take a brief look at the history of **MQTT** and how it became the backbone of modern IoT communication.
 
@@ -34,7 +34,7 @@ Since then, MQTT has evolved significantly. The protocol has gone through severa
 
 But, what exactly makes MQTT the frontrunner for UNS implementations? Let's take a deeper look at some of its key features?
 
-## **Publish-Subscribe Model and Event-Driven Architecture**
+## Publish-Subscribe Model and Event-Driven Architecture
 
 One of the standout features of MQTT is its publish-subscribe (Pub/Sub) model, which is the primary need of an UNS. In this model, data producers (such as sensors or devices) don’t need to know who is receiving the data or how many consumers are out there. Instead, they publish their data to a central broker, and any consumer (like a monitoring system, data warehouse, or analytics engine) that is interested simply subscribes to the relevant data stream.
 
@@ -46,7 +46,7 @@ With MQTT, data is pushed as soon as it’s available, enabling faster decision-
 
 If you’d like to understand the importance of Publish-Subscribe (Pub/Sub) architecture in detail for UNS, I highly recommend reading our article: [Why UNS Needs Pub/Sub](/blog/2024/11/why-pub-sub-in-uns/).
 
-### **Low Latency and Lightweight Messaging**
+### Low Latency and Lightweight Messaging
 
 Downtime in industrial operations can be very costly—ranging from $15,000 to $20,000 per minute or more. For engineers and operators watching over machines, waiting for data can mean the difference between smooth operations and expensive disruptions,  If you're interested in learning more about downtime, read this research by Siemens from 2022: [True Cost of Downtime 2022](https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf). Low-latency messaging is key in these situations, which is why data architectures like UNS are being explored to make sure systems and devices in your IIoT setup communicate without delays. MQTT is the protocol that makes this possible.
 
@@ -56,7 +56,7 @@ In addition to being fast, MQTT is very efficient. Its messages are small and us
 
 ![MQTT Packet Structer](./images/mqtt-packate-size.png)  _MQTT Packet Structer_
 
-### **Reliability**
+### Reliability
 
 When it comes to building a UNS, reliability is absolutely crucial. Missing or duplicate data can lead to poor decision-making, system malfunctions, or even costly downtime—things no one wants in their IIoT environment.
 
