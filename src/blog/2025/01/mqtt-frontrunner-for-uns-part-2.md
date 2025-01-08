@@ -18,7 +18,7 @@ In Part 1 , we discussed the compelling reasons behind MQTT's popularity as a ch
 
 ## **Wide Connectivity**
 
-For your Unified Namespace (UNS) to function properly, it needs to collect data from a variety of devices and systems. MQTT is perfect for this because it can connect to a wide range of devices, from modern systems to older legacy equipment.
+For your UNS to be valuable it needs to transport data from a variety of devices and systems. MQTT is perfect for this because it can connect to a wide range of devices, from modern systems to older legacy equipment.
 One of the biggest advantages of MQTT is its broad compatibility. It works seamlessly in cloud-based systems and is widely supported in industrial environments. This makes MQTT a natural fit for connecting all the components of your UNS, regardless of whether they are new or old.
 
 That said, some older devices (such as legacy PLCs) might not support MQTT directly. However, this is not a problem. FlowFuse solves this challenge by acting as a bridge between older systems and newer MQTT setups, ensuring that everything can communicate within the same UNS.
