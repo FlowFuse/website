@@ -16,7 +16,7 @@ In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the compellin
 
 <!--more-->
 
-## **Wide Connectivity**
+## Wide Connectivity
 
 For your UNS to be truly effective, it must be able to connect seamlessly with every part of your IIoT environment—whether it’s a device or the cloud. MQTT is an excellent protocol for this because it’s widely adopted in both cloud-based systems and industrial environments.
 
@@ -29,7 +29,7 @@ Overall, MQTT has better compatibility than many other protocols. Some other pro
 ![MQTT's Compatibility](./images/mqtt-compatiblity.png){data-zoomable}{width="550px"}
 _MQTT's Compatibility_
 
-## **Easily Scalable**
+## Easily Scalable
 
 A UNS broker needs to be able to grow as your factory or system expands. What starts with just a few sensors or devices might quickly scale up to hundreds or thousands over time. Can MQTT handle this growth? Absolutely.
 
@@ -37,7 +37,7 @@ MQTT's lightweight architecture, based on a simple publish-subscribe model, make
 
 MQTT brokers handle large volumes of data and can distribute messages to many clients at once. This ensures that as more devices are added, the system remains stable. The broker can also scale horizontally, meaning you can add more brokers or resources to handle the increased load, without affecting the performance or reliability of the system.
 
-## **Semantic Hierarchy with Topics**
+## Semantic Hierarchy with Topics
 
 When setting up a UNS, it’s not just about collecting all your data in one place—it’s about organizing it so that it’s easy to navigate. A semantic hierarchy helps do this by arranging data from broad categories down to more specific details. For example, in a factory, you might have levels like factory, area, line, and machine, with data points like temperature or humidity at the bottom. This is similar to how files are organized in folders, making it simple to find what you need.
 
@@ -47,7 +47,7 @@ While  AMQP and Kafka also support topics and wildcards, they handle them differ
 
 In conclusion, MQTT is an excellent choice for your UNS broker because it offers simplicity, scalability, and efficient data organization. Its lightweight design ensures smooth performance as your system grows, while the publish-subscribe  model decouples producers and consumers, allowing them to operate independently. This reduces direct dependencies between devices and systems, making the overall architecture more flexible and easier to scale. MQTT’s hierarchical topic structure further simplifies data management and access. Compared to other options like AMQP and Kafka, MQTT provides a more intuitive, reliable, and scalable and most importantly simple solution for building a Unified Namespace that can adapt to future needs.
 
-## **Build Your UNS with FlowFuse Now**
+## Build Your UNS with FlowFuse Now
 
 Now that you understand why MQTT is the best choice for your UNS, it’s time to build it. FlowFuse is the ideal platform for implementing your UNS with MQTT.
 
