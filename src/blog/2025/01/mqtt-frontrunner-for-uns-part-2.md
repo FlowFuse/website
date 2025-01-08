@@ -2,7 +2,7 @@
 title: "MQTT: The Frontrunner for Your UNS Broker - Part 2" 
 subtitle: "Why MQTT is the Best Choice for Your UNS Broker"
 description: "Learn why MQTT is the top choice for Unified Namespace (UNS) brokers and explore the ideal platform that simplifies the connection of devices and services while providing a reliable MQTT broker service."
-date: 2025-01-07
+date: 2025-01-08
 authors: ["sumit-shinde"]
 image: /blog/2025/01/images/mqtt-for-uns.png
 keywords: mqtt unified namespace, why use mqtt in uns, mqtt in a unified namespace, mqtt data modeling UNS, Best protocols for UNS IoT, Implementing UNS with MQTT, Unified Namespace protocols
@@ -12,7 +12,7 @@ tags:
  - unified namespace
 ---
 
-In Part 1 , we discussed the compelling reasons behind MQTT's popularity as a choice for Unified Namespace (UNS) implementations, focusing on its lightweight design, low latency, and reliable message delivery. In this second part, we’ll explore additional factors that further establish MQTT as the leading protocol for UNS brokers, diving into its connectivity, scalability, structured topic management, and the vibrant community that supports it. 
+In Part 1 , we discussed the compelling reasons behind MQTT's popularity as a choice for Unified Namespace (UNS) implementations, focusing on its lightweight design, low latency, and reliable message delivery. In this second part, we’ll explore additional factors that further establish MQTT as the leading protocol for UNS brokers, diving into its connectivity, scalability, structured topic management. 
 
 <!--more-->
 
@@ -25,7 +25,7 @@ That said, some older devices (such as legacy PLCs) might not support MQTT direc
 
 This broad connectivity makes MQTT ideal for unifying different data sources in the complex networks of a UNS, whether they are new or legacy systems.
 
-![MQTT's Compatibility](./images/mqtt-compatiblity.png){data-zoomable}{width="400px"}
+![MQTT's Compatibility](./images/mqtt-compatiblity.png){data-zoomable}{width="550px"}
 _MQTT's Compatibility_
 
 ## **Easily Scalable**
