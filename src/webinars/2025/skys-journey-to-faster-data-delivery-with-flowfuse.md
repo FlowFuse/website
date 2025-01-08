@@ -1,6 +1,8 @@
 ---
 title: "Sky's Journey to Faster Data Delivery with FlowFuse"
 subtitle: ZJ van de Weg, CEO of FlowFuse, and Anthony Sargeant, Senior Developer Global Digital Platforms at Sky, discuss how Sky transformed its data delivery processes with FlowFuse to accelerate innovation and enhance efficiency.
+meta:
+    description: Discover how Sky, the largest paid TV broadcaster in the UK, overcame legacy system challenges and accelerated innovation by streamlining data workflows with FlowFuse in this insightful webinar.
 image: /images/webinars/skys-journey-to-faster-data-delivery-with-flowfuse.jpg
 date: 2025-01-28
 time: 17:00 CET (11:00am ET) 
@@ -12,7 +14,7 @@ hubspot:
     downloadFormId: 
 ---
 
-**Discover how Sky, a media and entertainment company, accelerated its data delivery processes by leveraging FlowFuse.**
+**Discover how Sky, the largest paid TV broadcaster in the UK, overcame legacy system challenges to streamline its data workflows and accelerate innovation using FlowFuse.**
 
 <!--more-->
 
