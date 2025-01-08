@@ -11,7 +11,7 @@ tags:
    - releases
 ---
 
-The new Free plan on FlowFuse Cloud will allow you to manage two edge devices using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.
+The new Free plan on FlowFuse Cloud will allow you to manage two remote instances using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.
 
 <!--more-->
 
@@ -42,18 +42,12 @@ _Screenshot showing the UI for selecting your Team's type, when onboarding throu
 
 _Please do note, that whilst we do require credit card information, this is just for verification purposes. You will never be charged for the Free plan._
 
-### Create your First Application
 
-Applications in FlowFuse help you organise and group your resources, from Instances to DevOps Pipelines and Snapshots for Version Control. So, before you can add your first "Device", you'll first need to create an Application to store it.
+### Remote Instances
 
-![](./images/onboarding-new-application.png){data-zoomable}
-_Screenshot showing the form to create a new Application in FlowFuse._
+When you create a Free team, an Application is created for you automatically. Applications in FlowFuse help you organise and group your resources, from Instances to DevOps Pipelines and Snapshots for Version Control. Within your new application, you can "register" your first Remote Instance. 
 
-## Edge Devices
-
-Now you have an Application setup, you can "register" your first Device. 
-
-A "Device" in FlowFuse is a just a term for a remote Node-RED instance that is managed by FlowFuse. FlowFuse connects to these remote instances using the FlowFuse Device Agent, which is easy to setup and get running.
+A "Remote Instance" in FlowFuse is a just a term for a remote Node-RED instance that is managed by FlowFuse. FlowFuse connects to these remote instances using the FlowFuse Device Agent, which is easy to setup and get running.
 
 ### Install Device Agent
 
@@ -77,7 +71,7 @@ For alternative installation options and more details, please refer to our [docu
 
 ### Registering Your Device
 
-To register your Device, in the FlowFuse Platform, click on the "Edge Devices" option in the left-hand menu, and then click the "Add Device" button.
+To register your Device, in the FlowFuse Platform, click on the "Remote Instances" option in the left-hand menu, and then click the "Add Device" button.
 
 Fill out the name, device type and select the application you've just created, and you'll be presented with the following:
 
