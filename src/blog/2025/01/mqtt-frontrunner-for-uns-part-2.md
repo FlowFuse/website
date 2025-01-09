@@ -9,7 +9,7 @@ keywords: mqtt unified namespace, why use mqtt in uns, mqtt in a unified namespa
 tags: 
  - mqtt
  - uns
- - unified namespace
+ - unified-namespace
 ---
 
 In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the compelling reasons behind MQTT's popularity as a choice for Unified Namespace (UNS) implementations, focusing on its lightweight design, low latency, and reliable message delivery. In this second part, we’ll explore additional factors that further establish MQTT as the leading protocol for UNS brokers, diving into its connectivity, scalability, structured topic management. 
