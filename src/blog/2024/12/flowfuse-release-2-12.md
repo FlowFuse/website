@@ -47,7 +47,12 @@ _Please do note, that whilst we do require credit card information, this is just
 
 When you create a Free team, an Application is created for you automatically. Applications in FlowFuse help you organise and group your resources, from Instances to DevOps Pipelines and Snapshots for Version Control. Within your new application, you can "register" your first Remote Instance. 
 
-A "Remote Instance" in FlowFuse is a just a term for a remote Node-RED instance that is managed by FlowFuse. FlowFuse connects to these remote instances using the FlowFuse Device Agent, which is easy to setup and get running.
+A "Remote Instance" in FlowFuse is a just a term for an instance Node-RED, managed by FlowFuse, but running somewhere different from FlowFuse, e.g. on Edge hardware in a factory or your home. FlowFuse connects to these Remote Instances using the FlowFuse Device Agent, which is easy to setup and get running.
+
+To get started with your Remote Instance, you need to complete two steps:
+
+1. **Install Device Agent**: The FlowFuse Device Agent is installed onto the hardware where you want your Node-RED Instance to run.
+2. **Add Your Remote Instance**: In the FlowFuse UI, add a new "Remote Instance", and connect to your hardware.
 
 ### Install Device Agent
 
