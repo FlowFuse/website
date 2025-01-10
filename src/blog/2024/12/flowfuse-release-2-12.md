@@ -76,7 +76,7 @@ For alternative installation options and more details, please refer to our [docu
 
 ### Connect Your Hardware to FlowFuse
 
-To register your Device, in the FlowFuse Platform, click on the "Remote Instances" option in the left-hand menu, and then click the "Add Device" button.
+To connect your Device Agent, in the FlowFuse Platform, click on the "Remote Instances" option in the left-hand menu, and then click the "Add Remote Instance" button.
 
 Fill out the name, device type and select the application you've just created, and you'll be presented with the following:
 
