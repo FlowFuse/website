@@ -9,7 +9,7 @@ keywords: mqtt unified namespace, why use mqtt in uns, mqtt in a unified namespa
 tags: 
  - mqtt
  - uns
- - unified namespace
+ - unified-namespace
 ---
 
 Choosing the right broker for your Unified Namespace (UNS) is often one of the first challenges you'll face when building it. With so many options available, it’s critical to pick one that can handle real-time data, scale effortlessly, and integrate smoothly across diverse devices and services.
