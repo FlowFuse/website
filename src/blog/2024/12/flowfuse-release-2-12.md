@@ -86,11 +86,11 @@ The final step to take is to then start running the device agent, which you can 
 flowfuse-device-agent
 ```
 
-### Developing on your Device
+### Developing on your Remote Instance
 
-FlowFuse offers remote development capabilities, allowing you to edit your Node-RED flows directly, and securely, from the FlowFuse Cloud platform. This is done through the Device Agent's "Developer Mode". 
+FlowFuse offers remote development capabilities, allowing you to edit your Node-RED flows directly, and securely, from the FlowFuse Cloud platform. This is done through "Developer Mode". 
 
-To get started with developing flows on your Device, simply select your newly created Device, toggle on 'Developer Mode", and click "Open Editor"!
+To get started with developing flows with your Remote Instance, simply select your newly created Instance in the FlowFuse UI, toggle on 'Developer Mode", and click "Open Editor"!
 
 ### Version Control with Snapshots
 
