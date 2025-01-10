@@ -44,7 +44,7 @@ hubspot:
                     <h5>Table of Contents</h5>
                     <ul class="text-left">
                         {% for item in contentTable %}
-                        <li>{{ item }}</li>
+                        <li>{{ item | safe }}</li>
                         {% endfor %}
                     </ul>
                 </div>
