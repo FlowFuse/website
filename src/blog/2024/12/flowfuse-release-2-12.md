@@ -74,7 +74,7 @@ npm install -g @flowfuse/device-agent
 
 For alternative installation options and more details, please refer to our [documentation](/docs/device-agent/).
 
-### Registering Your Device
+### Connect Your Hardware to FlowFuse
 
 To register your Device, in the FlowFuse Platform, click on the "Remote Instances" option in the left-hand menu, and then click the "Add Device" button.
 
