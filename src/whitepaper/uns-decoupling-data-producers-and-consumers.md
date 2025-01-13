@@ -149,6 +149,6 @@ We explored the crucial role of decoupling in modern manufacturing and how a UNS
 
 FlowFuse emerges as an ideal platform for simplifying UNS adoption. Its ability to abstract broker complexities, streamline data integration, and standardise interfaces empowers businesses to unlock the full potential of their industrial data. With FlowFuse, building a robust and future-proof UNS becomes a manageable and iterative process, paving the way for innovation and growth in the era of Industry 4.0.
 
-### _<span class="text-indigo-400">Ready to transform your industrial data strategy?</span>_
+## _<span class="text-indigo-400">Ready to transform your industrial data strategy?</span>_
 
 We’re happy to schedule a consultation with one of our experts to explore how UNS and FlowFuse can revolutionise your manufacturing operations. Our team will provide tailored insights, address your specific challenges, and guide you through the implementation process. Take the first step towards decoupling your data producers and consumers for greater flexibility, scalability, and innovation. [Click here](https://flowfuse.com/book-demo/) to book your consultation today and unlock the full potential of Industry 4.0 for your business.
