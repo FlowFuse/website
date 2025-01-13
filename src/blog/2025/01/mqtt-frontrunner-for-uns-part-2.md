@@ -12,7 +12,7 @@ tags:
  - unified-namespace
 ---
 
-In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the compelling reasons behind MQTT's popularity as a choice for Unified Namespace (UNS) implementations, focusing on its lightweight design, low latency, and reliable message delivery. In this second part, we’ll explore additional factors that further establish MQTT as the leading protocol for UNS brokers, diving into its connectivity, scalability, structured topic management. 
+In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the  reasons behind MQTT's popularity as a choice for Unified Namespace (UNS) implementations; focusing on its lightweight design, low latency, and reliable message delivery. In this second part, we’ll explore additional factors that further establish MQTT as the leading protocol for UNS brokers, diving into its connectivity, scalability, structured topic management. 
 
 <!--more-->
 
@@ -20,7 +20,7 @@ In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the compellin
 
 For your UNS to be truly effective, it must be able to connect seamlessly with every part of your IIoT environment—whether it’s a device or the cloud. MQTT is an excellent protocol for this because it’s widely adopted in both cloud-based systems and industrial environments.
 
-In a factory, you typically have a mix of physical devices (like sensors and machines) and cloud systems. To make real-time decisions, data needs to flow seamlessly from the shop floor to the cloud. MQTT excels at connecting modern devices with the cloud. However, one challenge is that it doesn’t natively support older systems that typically use protocols like OPC UA or MODBUS.
+In a typical industrial data architecture, you typically have a mix of physical devices (like sensors and machines) and cloud systems. To make real-time decisions, data needs to flow seamlessly from the shop floor to the cloud. MQTT excels at connecting modern devices with the cloud. However, one challenge is that it doesn’t natively support older systems that typically use protocols like OPC UA or MODBUS.
 
 This isn’t a major issue, though. You can bridge the gap using tools like FlowFuse and Node-RED, which allow MQTT to communicate with older systems.
 
