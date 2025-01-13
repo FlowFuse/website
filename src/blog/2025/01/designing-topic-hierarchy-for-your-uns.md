@@ -2,7 +2,7 @@
 title: "Designing a Clear Topic Structure for Your UNS"
 subtitle: Why Topic Structuring is Key to Scaling and Optimizing Your UNS
 description: Learn why topic structuring is crucial for your UNS’s performance and scalability. In this post, we explore best practices and strategies to design an effective topic hierarchy for your system.
-date: 2024-12-13
+date: 2024-12-14
 authors: ["sumit-shinde"]
 image:
 tags:
