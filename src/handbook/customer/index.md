@@ -26,8 +26,6 @@ on taking the FlowFuse platform to market.
 | Account Executive | [Zack](https://www.linkedin.com/in/zack-wasli/) [@zackwasli](https://github.com/zackwasli) |
 | Customer Success Manager | [Rob](https://www.linkedin.com/in/rob-marcer-b414b910/) [@robmarcer](https://github.com/robmarcer) |
 | Visual designer | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
-| OT Data & Community Strategist | [Grey](https://www.linkedin.com/in/gdziuba/) [@gdziuba](https://github.com/gdziuba) |
-| Demand Gen Manager | [Hasmin AbdulCader](https://www.linkedin.com/in/hasminabdulcader/) [@Hasmin-AC](https://github.com/Hasmin-AC) |
 | GTM | [Michael](https://www.linkedin.com/in/michaelbdavis/) [@MichaelBDavis](https://github.com/MichaelBDavis) |
 
 

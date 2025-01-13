@@ -19,7 +19,7 @@ As more manufacturing companies use FlowFuse for edge device management, data pi
 
 Now, let’s look at how FlowFuse makes collaboration effortless. With features like centralized management, real-time updates, and easy sharing, FlowFuse helps teams stay on the same page—whether working on the same flow or across multiple projects. The platform eliminates the usual pain points of collaboration, allowing teams to quickly deploy, modify, and scale Node-RED solutions confidently while maintaining control and security.
 
-## **Laying the Foundation for Better Collaboration with Centralization**
+## Laying the Foundation for Better Collaboration with Centralization
 
 Effective collaboration starts with everyone having access to the same interface and information. When team members work with different versions of flows or data, things can easily get out of sync, making collaboration difficult.
 
@@ -40,7 +40,7 @@ In short, centralization makes everything simpler. It’s the backbone of effect
 
 If you want to dive deeper into how FlowFuse centralizes things, check out this article: [Managing Node-RED Instances in a Centralized Platform](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/).
 
-## **Creating and Managing Teams**
+## Creating and Managing Teams
 
 Collaboration begins with the right team setup. In FlowFuse, you can quickly [create a team](/docs/user/team/#creating-a-new-team) and assign it a name. Once your team is set up, you can easily [invite members to join](/docs/user/team/#adding-team-members). As mentioned earlier, all your Node-RED instances, edge devices, configurations, settings, and data are organized and centralized within that team.
 
@@ -56,7 +56,7 @@ This is where [FlowFuse’s Role-Based Access Control (RBAC)](/blog/2024/04/role
 
 You can later update roles to adjust permissions as your team, and projects evolve if needed. FlowFuse’s RBAC helps maintain control and security while empowering each team member to contribute effectively to the project.
 
-## **Real-Time Collaboration and Monitoring**
+## Real-Time Collaboration and Monitoring
 
 Once team members have been invited, Node-RED instances have been created, and edge devices have been added by the team owner, FlowFuse's real-time collaboration capabilities come into play. Team members, whether they have owner or member roles, can work on the same project simultaneously. They can update flows, deploy them, and monitor real-time progress.
 
@@ -69,7 +69,7 @@ For instance, if two members modify different parts of the same flow, they can d
 
 In addition, FlowFuse’s real-time monitoring features allow you to track the status of edge devices, Node-RED instances, and overall system health. You can also monitor Node-RED logs for troubleshooting, ensuring no issue slips through the cracks as your team works together efficiently.
 
-## **Version Controlling**
+## Version Controlling
 
 In any collaborative environment, accidental changes or conflicts are inevitable, especially when multiple team members are working on the same project. While collaboration is essential for progress, the ability to track changes, roll back versions, and understand who made what updates is critical for maintaining control and continuity.
 
@@ -89,7 +89,7 @@ _The snapshots list interface in FlowFuse provides an organized view of all avai
 
 This version control functionality allows you to manage and recover Node-RED instances seamlessly, ensuring that your team can collaborate effectively without the risk of losing or overwriting important work.
 
-## **Shared Flow Library**
+## Shared Flow Library
 
 When working on projects, it's common to develop reusable flows that can save time and effort for the entire team. For example, you might create a flow to calculate Overall Equipment Efficiency (OEE) or other valuable flows that can be reused across multiple projects.
 
@@ -100,7 +100,7 @@ _Shared Flow Library in FlowFuse displays a list of reusable flows that team mem
 
 This shared approach streamlines development, eliminates redundant work, and ensures project consistency, ultimately saving time. Whether it’s a reusable function, a typical configuration, or a flow for recurring tasks, FlowFuse’s Shared Flow Library enables your team to easily access and integrate these resources, boosting productivity and fostering better collaboration.
 
-## **Audit Logs**
+## Audit Logs
 
 Accountability is essential when multiple team members collaborate on complex industrial projects. FlowFuse offers comprehensive Audit Logs to track every action taken within the platform. This feature provides a detailed record of who made which changes, when those changes were made, and the specifics of each action.
 
@@ -125,7 +125,7 @@ Start using FlowFuse today to streamline your industrial projects, enhance teamw
 
 [Sign up now](https://flowfuse.com/signup) and experience the difference FlowFuse can make for your industrial environment and team.
 
-## *Up Next*
+## Up Next
 
 Explore more resources and deepen your understanding of FlowFuse with these articles:
 

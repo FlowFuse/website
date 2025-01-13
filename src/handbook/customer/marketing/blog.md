@@ -16,8 +16,8 @@ Content creation and blogging are effective ways to communicate with our communi
 5. Convert to Draft
 6. No Reviews shall be done until the PR is “Ready for Review”
 7. Assign two reviewers
-    * One Reviewer for Content (ZJ / Grey)
-    * One Reviewer for SEO. (Hasmin / Grey)
+    * One Reviewer for Content (ZJ)
+    * One Reviewer for SEO.
 8. Content will be reviewed first.
 9. SEO will be reviewed second.
 10. When both reviews are done, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
