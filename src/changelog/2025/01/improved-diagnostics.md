@@ -1,7 +1,7 @@
 ---
 title: Improved Diagnostics
 description: "Improved diagnostic info directly to your inbox"
-date: 2024-12-20 13:00:00.0
+date: 2024-01-14 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
 tags:
@@ -10,7 +10,7 @@ tags:
 
 It happens! Sometimes things go wrong, but don't worry, we have you covered.
 
-In FlowFuse V2.12, we have added some new email templates that provide better diagnostics for those rare occasions when things go wrong.
+In FlowFuse V2.13, we have added some new email templates that provide better diagnostics for those rare occasions when things go wrong.
 
 If you make a mistake when configuring your flows, or if there is a problem with the data you are sending, and you manage to crash your
 instance, the new email templates will provide you with more information about what went wrong.
