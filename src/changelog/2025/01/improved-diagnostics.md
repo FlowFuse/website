@@ -10,9 +10,8 @@ tags:
 
 It happens! Sometimes things go wrong, but don't worry, we have you covered.
 
-In FlowFuse V2.13, we have added some new email templates that provide better diagnostics for those rare occasions when things go wrong.
+For Team and Enterprise customers on FlowFuse Cloud, we've improved the emails we send notifying you that something has gone wrong with one of your instances.
 
-If you make a mistake when configuring your flows, or if there is a problem with the data you are sending, and you manage to crash your
-instance, the new email templates will provide you with more information about what went wrong.
+The emails now include more information about what has happened, including the most recent logs from Node-RED. We also include some tips as to what to do next, whether it was a code bug or a memory issue that triggered the problem.
 
 We hope you never need to see these emails, but if you do, we hope they help you get back on track quickly.
