@@ -3,3 +3,8 @@
   buttonText: "Register now"
   link: "/webinars/2025/skys-journey-to-faster-data-delivery-with-flowfuse/"
   expire: "2025-01-28T16:00:00Z"
+- type: "New Whitepaper"
+  title: "UNS - Decoupling data producers and consumers"
+  buttonText: "Download now"
+  link: "/whitepaper/uns-decoupling-data-producers-and-consumers/"
+  expire: "2025-04-30T23:59:00Z"
