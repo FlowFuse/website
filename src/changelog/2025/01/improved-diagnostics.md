@@ -1,7 +1,7 @@
 ---
 title: Improved Diagnostics
 description: "Improved diagnostic info directly to your inbox"
-date: 2024-01-14 13:00:00.0
+date: 2025-01-15 13:00:00.0
 
 authors: ["stephen-mclaughlin"]
 tags:
