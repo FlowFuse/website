@@ -33,7 +33,7 @@ _PUT/GET Communication from remote partners is Allowed_
 ![Providing complete access to the PLC](./images/providing-full-access-to-plc.png){data-zoomable}
 _Providing complete access to the PLC_
 
-1. Ensure that the appropriate ladder program (or any other logic) is written according to your requirements and successfully downloaded to the PLC. However, before downloading, make sure the 'Optimized Block Access' option is disabled for the data block that your ladder program using.
+2. Ensure that the appropriate ladder program (or any other logic) is written according to your requirements and successfully downloaded to the PLC. However, before downloading, make sure the 'Optimized Block Access' option is disabled for the data block that your ladder program using.
 
 ![Untick 'Optimized Block Access'.](./images/optimized-block-access.png){data-zoomable}
 _Untick 'Optimized Block Access.'_
