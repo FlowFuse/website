@@ -170,6 +170,8 @@ _Configuring S7-out Node to write data to plc_
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/AilWMNPzP1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+
 In the video above, the dashboard interface is built to control the stack light. At the end of this article, I will provide the complete flow for you to download.
 
 If you're building a dashboard, keep in mind that when running Node-RED with the Flowfuse device agent, you won’t be able to build the dashboard within the remote instance. Instead, you'll need to create a separate hosted instance on Flowfuse to build your dashboard which is accessible for you. To enable communication between your Remote instance and the hosted dashboard, you can use the Flowfuse Projects nodes, which makes communication between diffrent Node-RED instances easy and simple. For more details on how to set this up, check out our article: [Exploring Flowfuse Project Nodes](/blog/2024/10/exploring-flowfuse-project-nodes/).
@@ -210,6 +212,9 @@ Now that you have the desired format for your output data, you may want to build
 The video below shows the updated dashboard interface used to monitor the stack light LED status:
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+---
 
 Here is the flow you can import into your FlowFuse remote instance and deploy. Ensure that you have installed `node-red-contrib-s7` and `node-red-contrib-buffer-parser`. This flow includes S7 nodes for interacting with the S7 PLC and Project nodes for communicating with the FlowFuse hosted instance, where you will build the dashboard.
 
