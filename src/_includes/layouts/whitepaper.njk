@@ -18,9 +18,11 @@ layout: layouts/base.njk
                 {{ content | safe }}
             </div>
             <div class="w-72 flex-shrink-0 flex flex-col">
-                <div class="sticky top-20">
+                <div>
                     <h5 class="font-medium pb-1 mb-4">Table of Contents</h5>
                     <ul id="toc" class="text-sm border-b mb-10"></ul>
+                </div>
+                <div class="sticky top-20">
                     <h5 class="font-medium pb-1 mb-4">Download Whitepaper</h5>
                     {% include hubspot.script %}
                 </div>

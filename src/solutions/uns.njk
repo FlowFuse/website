@@ -175,16 +175,28 @@ meta:
                             "url": "/blog/2024/02/node-red-perfect-adapter-middleware-uns/",
                             "image": "./blog/2024/02/images/node-red-for-uns.png",
                             "alt": "Node-RED and the UNS"
+                        },
+                        {
+                            "title": "Building a Unified Namespace (UNS) with FlowFuse",
+                            "url": "/blog/2024/11/building-uns-with-flowfuse/",
+                            "image": "./blog/2024/11/images/building-uns-with-flowfuse.png",
+                            "alt": "Graphics depicting a Unified Namespace with FlowFuse."
                         }
                     ]
                 },
                 {
                     "articles": [
                         {
-                            "title": "Data Modeling for your Unified Namespace",
-                            "url": "/blog/2023/12/unified-namespace-data-modelling/",
-                            "image": "./blog/2023/12/images/uns-data-modeling.png",
-                            "alt": "Graphics depicting unified namespace data modeling using FlowFuse."
+                            "title": "<span class='font-semibold'>Free whitepaper:</span> UNS - Decoupling data producers and consumers",
+                            "url": "/whitepaper/uns-decoupling-data-producers-and-consumers/",
+                            "image": "./resources/images/whitepaper_uns.png",
+                            "alt": "Graphics depicting the cover of the Whitepaper."
+                        },
+                        {
+                            "title": "Data Modeling: The Key to a Successful Unified Namespace",
+                            "url": "/blog/2024/12/why-uns-need-data-modeling/",
+                            "image": "./blog/2024/12/images/data-modeling-uns.png",
+                            "alt": "Graphics depicting unified namespace data modeling."
                         },
                         {
                             "title": "Selecting your UNS Broker",
@@ -210,7 +222,7 @@ meta:
                             <div class="w-2/5 ff-image-cover ff-image-left-rounded h-full">
                                 {% image article.image, article.alt, [208] %}
                             </div>
-                            <label class="w-3/5 font-light text-left">{{ article.title }}</label>
+                            <label class="w-3/5 font-light text-left">{{ article.title | safe }}</label>
                         </li>
                     </a>
                     {% endfor %}
