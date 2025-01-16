@@ -11,7 +11,7 @@ tags:
    - releases
 ---
 
-Happy New Year everyone! We're back with another release of FlowFuse, and whilst it's been a shorter sprint for us this time round, with most of the team out for a two-week break over Christmas and New Year, that hasn't stopped us packing in lot of great new value into FlowFuse nonetheless.
+Happy New Year everyone! We're back with another release of FlowFuse, and whilst it's been a shorter sprint for us this time round, with most of the team out for a well-earned break over Christmas and New Year, that hasn't stopped us packing in lot of great new value into FlowFuse nonetheless.
 
 <!--more-->
 
@@ -33,7 +33,7 @@ _Diagram to show the hierarchy of different concepts in FlowFuse_
 
 Just under three months ago, we [released our own MQTT Service](/blog/2024/10/flowfuse-release-2-10/), making it easy for your to configure MQTT clients through FlowFuse, and connect your hardware and applications. With the Unified Namespace (UNS) growing in popularity in Industry, we wanted to make sure that if you're using MQTT to run your UNS, then FlowFuse offers the best experience for managing it.
 
-// Screenshot of the new Schema button in the Broker view
+![FlowFuse Topic Hierarchy Schema](./images/flowfuse-topic-schema.png){data-zoomable}
 
 With this in mind, we're now generating a formal schema for your MQTT Broker's topic hierarchy automatically, and we've made it possible to access the underlying schema through the FlowFuse interface. The schema we generate is using the industry-standard, open-sourced, [AsyncAPI](https://www.asyncapi.com/).
 
@@ -45,15 +45,15 @@ If you're interested in learning more about UNS, then we recommend taking a look
 
 ### Future Plans
 
-We're just getting started here, and have plans to present this schema in a much clearer and more interactive format in the next release. This will make it easy for your whole development team, and anyone else that needs to know, to get a clear description of the topics and payloads that are being used in your MQTT Broker.
+This is very much a first iteration and we have work underway to improve it. Right now, the generated spec is pretty minimal - there is lots of scope to add more information and present it in a clearer and more interactive format. This will make it easy for your whole development team, and anyone else that needs to know, to get a clear picture of the topics and payloads that are being used in your MQTT Broker.
 
-We also plan to improve the development experience within Node-RED when working with a UNS, as well as automatically generating full schemas for payloads, in addition to the topic hierarchy we've already got working.
+We're also looking at how this information can enhance the development experience within Node-RED itself.
 
 ## Managing Groups of Instances
 
 We've introduced a new view in FlowFuse which you can find in the "Operations" section of the side navigation. This new view is called "Groups" and it allows you to group your Remote Instances together, making it easier to manage and deploy to multiple instances at once.
 
-// Insert Screenshot for new Groups view
+![FlowFuse Groups view](./images/flowfuse-team-groups.png){data-zoomable}
 
 This functionality has been in FlowFuse for a little while, but was buried down in the "Applications" view, and found users were missing it. We've now brought it to the forefront, and made it easier to use, and help you deploy out to thousands of Remote Instances with the single click of a button.
 
