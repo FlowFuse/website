@@ -63,4 +63,4 @@ FlowFuse not only allows you to build and manage your UNS, but also provides a c
 
 With FlowFuse, you get everything you need to handle data pipelines, implement a UNS, and scale efficiently—all within a single platform.
 
-*Ready to get started? [Talk to with us](/book-demo/) to learn more about how FlowFuse can accelerate your UNS journey.*
+*Ready to get started? [Talk to us](/book-demo/) to learn more about how FlowFuse can accelerate your UNS journey.*
