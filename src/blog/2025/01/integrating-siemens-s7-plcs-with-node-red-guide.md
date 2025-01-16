@@ -2,9 +2,9 @@
 title: "Getting Started: Integrating Siemens S7 PLCs with Node-RED" 
 subtitle: "A Step-by-Step Beginner's Guide to Connect, Control, and Monitor Siemens S7 PLCs Using Node-RED"
 description: "Learn how to integrate Siemens S7 PLCs with Node-RED for seamless industrial automation. This guide covers setup, configuration, and workflow creation to control and monitor PLCs effortlessly, including writing and reading data from your PLCs."
-date: 2025-01-16
+date: 2025-01-17
 authors: ["sumit-shinde","stephen-mclaughlin"]
-image: 
+image: /blog/2025/01/images/s7-with-node-red.png
 keywords: s7,siemens, siemens s7 1200 with node-red, siemens s7 1500 with node-red, writing data to plc using node-red, reading data from plc using node-red, s7 with node-red
 tags: 
   - node-red
