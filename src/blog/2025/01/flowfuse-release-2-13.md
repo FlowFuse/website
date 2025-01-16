@@ -37,11 +37,12 @@ Just under three months ago, we [released our own MQTT Service](/blog/2024/10/fl
 
 With this in mind, we're now generating a formal schema for your MQTT Broker's topic hierarchy automatically, and we've made it possible to access the underlying schema through the FlowFuse interface. The schema we generate is using the industry-standard, open-sourced, [AsyncAPI](https://www.asyncapi.com/).
 
-If you're interested in learning more about UNS, then we recommend taking a look at some of the following articles:
+If you're interested in learning more about UNS, then we recommend taking a look at some of the following resources:
 
 - [Introduction to the Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/)
 - [Why you need a Unified Namespace](/blog/2024/11/why-point-to-point-connection-is-dead/)
 - [Building a Unified Namespace (UNS) with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/)
+- [**Free whitepaper:** UNS - Decoupling data producers and consumers](/whitepaper/uns-decoupling-data-producers-and-consumers/)
 
 ### Future Plans
 
