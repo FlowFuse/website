@@ -44,14 +44,6 @@ _Untick 'Optimized Block Access.'_
 
 4. Verify that the device running Node-RED is in the same network as the PLC and can successfully ping the PLC. Also, a firewall should not block the S7 port (typically port 102).
 
-```bash
-ping <PLC_IP>
-```
-
-```bash
-netstat -an | findstr 102
-```
-
 ## Integrating Siemens S7 PLCs with Node-RED
 
 Now that everything is set up, let's integrate your Siemens S7 PLC with Node-RED. In this article, I’ll demonstrate the process using a Siemens S7-1212C PLC. I’ve connected it to a stack/tower light and will walk you through how to write data to the PLC to control this light. Later, I’ll show you how to read data and reflect the status of the light.
