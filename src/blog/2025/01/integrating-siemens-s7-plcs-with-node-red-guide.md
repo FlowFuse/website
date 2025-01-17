@@ -64,7 +64,7 @@ Let’s break down what’s happening in the ladder logic above. First, we have 
 
 ### Installing the S7 Node
 
-To communicate from Node-RED to the PLC, we need to install the S7 node, which allows Node-RED to interface with Siemens S7 PLCs. This node provides the necessary functionality to read and write data to the PLC. While there are many S7 nodes available in the Node-RED catalog, in this article, we will be using `node-red-contrib-s7`, which is quite popular. However, it is important to note that this node is not actively updated, so you may choose other nodes that are more frequently maintained and updated. You can find these alternatives here: [Node-RED Siemens Nodes](https://flows.nodered.org/search?term=siemens&type=node).
+To communicate from Node-RED to the PLC, we need to install the S7 node, which allows Node-RED to interface with Siemens S7 PLCs. In this article, we will be using `node-red-contrib-s7`, which is quite popular. If this particular node is not suitable for your workflow you can find alternatives in the [Node-RED catalog](https://flows.nodered.org/search?term=siemens&type=node).
 
 #### Steps to Install the S7 Node:
 
@@ -187,7 +187,7 @@ _Custom ladder diagram function storing output statuses in a single word for opt
 
 There are several ways to implement this, and depending on your system’s needs, some methods may be more efficient than others. In this case, the output values are stored in a single word within the PLC, as shown in the ladder diagram above. This is not the only correct method—it's simply one approach that works for this particular scenario. Feel free to adapt or explore other methods that might better suit your setup. 
 
-Additionally, if the data you’re reading is mission-critical and you can't afford to lose any, consider using stack logic in your PLC program. This method ensures that even if there’s a network disruption or communication failure, no data is lost. Stack logic temporarily stores the data, and once the network connection is restored, the stored data is transmitted, ensuring no gaps or interruptions in your system. This guarantees data integrity and prevents costly data loss, even in less-than-ideal conditions.
+Additionally, if the data you’re reading is mission-critical and you can't afford to lose any, consider using a FIFO stack or buffer in your PLC program. This method ensures that even if there is a network outage or computer problem, no data is lost as it will remain siting in the stack until your Node-RED is back on line and retrieves it.  This ensures no gaps or interruptions in your data and guarantees data integrity.
 
 Now, let’s begin reading the data from the PLC.
 
