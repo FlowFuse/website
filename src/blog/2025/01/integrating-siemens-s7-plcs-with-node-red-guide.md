@@ -164,7 +164,7 @@ _Configuring S7-out Node to write data to plc_
 
 In the video above, the dashboard interface is built to control the stack light. At the end of this article, I will provide the complete flow for you to download.
 
-If you're building a dashboard, keep in mind that when running Node-RED with the Flowfuse device agent, you won’t be able to build the dashboard within the remote instance. Instead, you'll need to create a separate hosted instance on Flowfuse to build your dashboard which is accessible for you. To enable communication between your Remote instance and the hosted dashboard, you can use the Flowfuse Projects nodes, which makes communication between diffrent Node-RED instances easy and simple. For more details on how to set this up, check out our article: [Exploring Flowfuse Project Nodes](/blog/2024/10/exploring-flowfuse-project-nodes/).
+If you're building a dashboard, keep in mind that when running Node-RED with the FlowFuse Device Agent, you can create the dashboard on the remote instance but you won’t be able to access it remotely across the device editor tunnel. You can of course access it locally on the device or on the local LAN.  For this demonstration, I wish to access the dashboard remotely across the internet and so I will create the dashboard in a hosted instance of Node-RED and using the FlowFuse Projects nodes to simplify passing values between the hosted and remote Node-RED instances. For more details on how to set this up, check out our article: [Exploring FlowFuse Project Nodes](/blog/2024/10/exploring-flowfuse-project-nodes/).
 
 ### Reading Data from the PLC 
 
