@@ -11,9 +11,11 @@ tags:
   - flowfuse
 ---
 
-Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges. This is where Node-RED comes in, offering a user-friendly solution to seamlessly connect Siemens S7 PLCs with a variety of platforms. With its intuitive flow-based interface, Node-RED enables you to create custom workflows and dashboards—no deep technical expertise required.
+Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
 
 <!--more-->
+
+This is where Node-RED comes in, offering a user-friendly solution to seamlessly connect Siemens S7 PLCs with a variety of platforms. With its intuitive flow-based interface, Node-RED enables you to create custom workflows and dashboards—no deep technical expertise required.
 
 Siemens S7 PLCs are typically programmed using TIA Portal, Siemens' integrated development environment, and communication with external systems usually relies on the S7 protocol (ISO over TCP/IP). In this article, we’ll walk you through how to use Node-RED to read from and write to Siemens S7 PLCs via the S7 protocol, unlocking new possibilities for remote control and system integration in your industrial automation setup.
 
