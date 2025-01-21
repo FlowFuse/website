@@ -19,7 +19,7 @@ This is where Node-RED comes in, offering a user-friendly solution to seamlessly
 
 Siemens S7 PLCs are typically programmed using TIA Portal, Siemens' integrated development environment, and communication with external systems usually relies on the S7 protocol (ISO over TCP/IP). In this article, we’ll walk you through how to use Node-RED to read from and write to Siemens S7 PLCs via the S7 protocol, unlocking new possibilities for remote control and system integration in your industrial automation setup.
 
-## Prequsite
+## Prerequisite
 
 Before integrating your Siemens S7 PLC with Node-RED, make sure you have the following :
 
