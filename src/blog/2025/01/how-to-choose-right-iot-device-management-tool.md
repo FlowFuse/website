@@ -15,8 +15,6 @@ As more devices are integrated into industrial and manufacturing environments, m
 
 In this guide, we’ll walk you through the key features and considerations you should evaluate when selecting IIoT device management software. Whether you’re a small manufacturer just beginning to implement IIoT or a larger enterprise with a more complex system, these insights will help you choose a platform that aligns with your needs.
 
-Let’s Get Started
-
 ### 1. Remote Access
 
 The ideal IoT device management software should have robust remote access capabilities to enable easy and efficient management of devices across different locations. Remote access is essential for businesses operating in multiple regions or running devices 24/7. This feature allows your team to monitor device performance, troubleshoot problems, and deploy updates without being physically on-site. Remote access minimizes downtime and increases flexibility, ensuring your devices are always operational, regardless of location.
@@ -53,7 +51,7 @@ DevOps pipelines allow you to create workflows tailored to your needs, automatin
 
 With the flexibility to create custom DevOps pipelines, you can manage devices more efficiently, save time, minimize errors, and keep everything aligned with production requirements.
 
-## 6. Accidental Recovery or Rollback
+### 6. Accidental Recovery or Rollback
 
 Another essential feature to look for is the ability to recover from system failures or accidental misconfigurations. Accidents can happen at any time, and being able to revert to a previous stable state quickly can save you from costly downtime and operational disruptions.
 
