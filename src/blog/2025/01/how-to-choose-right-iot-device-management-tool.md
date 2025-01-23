@@ -4,7 +4,7 @@ subtitle: Key Features and Considerations for Effective IoT Device Management
 description: Learn how to choose the right IoT device management software for your business.
 date: 2025-01-24
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/01/images/choosing-iot-device-mangement-platform.png
 tags:
    - flowfuse
 ---
