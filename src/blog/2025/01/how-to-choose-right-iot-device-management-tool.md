@@ -113,7 +113,7 @@ When your devices, machines, and software are connected, it keeps important info
 
 The right platform should support a wide range of industrial protocols, from the latest to older systems, so everything can be included. By linking all your existing systems, you can create a single source of truth, keeping things running more smoothly and efficiently.
 
----
+<hr style="border: none; border-top: 3px solid rgba(173, 192, 252, 0.55); opacity: 0.3; margin-bottom: 20px;">
 
 So, after all’s said and done, the secret to choosing the right IIoT device management software isn’t just about checking boxes on a list. It’s about finding a solution that keeps things simple, secure, and scalable for the long haul. Look for something that lets you stay in control, whether you're managing one device or a thousand, and make sure it’s backed by solid support when you need it most. In the end, the right platform should feel less like a tool and more like a partner that grows with you. Trust me, the right fit will make your life a whole lot easier.
 
