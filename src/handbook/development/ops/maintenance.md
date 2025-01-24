@@ -38,7 +38,9 @@ E-mail template for maintenance communication can be found in the [FlowFuse Clou
 
 The notification message should be sent to all FlowFuse Cloud Team Owners who have active instances in the FlowFuse Cloud. To get the contact list, please refere to the [internal documentation](https://docs.google.com/document/d/1s0mXpuuPKl-1U-YVzoTEGBhllUd-UPJjFXTqa0O481c/#heading=h.hing87m0bsmu).
 
-Before sending the message, consult with the Operations team to ensure that the information is up-to-date and infrastructure is ready to handle self-care maintenance by customers.
+We should sent notification at least twice - two weeks before the maintenance and a reminder one week before the maintenance day.
+
+Before sending the initial message, consult with the Operations team to ensure that the information is up-to-date and infrastructure is ready to handle self-care maintenance by customers.
 
 ## Infrastructure preparation
 
