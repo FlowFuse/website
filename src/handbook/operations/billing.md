@@ -29,9 +29,10 @@ To generate an invoice, the corresponding deal and quote must first be in place 
 1. Ensure the company details are updated, and include an address and country.
 1. On the Deal page, find the Invoices section on the right-hand side, then click Add and Convert Deal to Subscription.
 2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
-3. Make sure both ACH and Credit Card options are checked for payment.
-4. Click the Finalize button on the top right.
-5. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
+3. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
+4. Make sure both ACH and Credit Card options are checked for payment.
+5. Click the Finalize button on the top right.
+6. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 
 ### Creating a PS invoice
 
