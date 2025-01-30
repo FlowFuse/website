@@ -28,9 +28,9 @@ Manufacturing operations often experience rapid growth. The sheer number of sens
 For example: 
 
 
-```
+`
 /factory/line1/machine1/temperature
-```
+`
 
 This topic structure indicates that the data comes from machine1 on line1 of your factory, specifically from a temperature sensor. The structure is intuitive because it directly reflects the factory’s layout.
 Adding more machines, sensors, or production lines is straightforward as your factory grows. 
@@ -48,10 +48,11 @@ A well-structured topic hierarchy improves the performance of both the network a
 For example, imagine a maintenance team only needs to monitor the temperature of machines in line 1. With a clean topic structure, they can subscribe to:
 
 
-```
-/factory/line1/machine1/temperature 
-/factory/line1/machine2/temperature
-```
+
+- `/factory/line1/machine1/temperature `
+
+- `/factory/line1/machine2/temperature`
+
 
 By filtering the data, they avoid receiving irrelevant data, such as vibration readings from other machines or temperatures from machines on different production lines. This reduces network load, ensures more responsive performance, and prevents overloads on edge devices.
 
@@ -59,9 +60,9 @@ A well-organized topic structure makes maintenance and troubleshooting much more
 
 For instance, imagine a temperature sensor on machine 3 in line 2 reporting abnormal values. A topic like:
 
-```
-/factory/line2/machine3/temperature
-```
+
+- `/factory/line2/machine3/temperature`
+
 
 Immediately indicates the affected machine and production line. This clarity lets your team act quickly, reducing downtime and improving system reliability.
 
@@ -92,11 +93,11 @@ This is where the physical data originates: sensors, actuators, and devices dire
 
 Example Topics:
 
-`/plantA/productionLine1/machineB/sensor/temperature`
+- `/plantA/productionLine1/machineB/sensor/temperature`
 
-`/plantA/productionLine1/machineB/sensor/pressure`
+- `/plantA/productionLine1/machineB/sensor/pressure`
 
-`/plantA/productionLine2/machineC/sensor/humidity`
+- `/plantA/productionLine2/machineC/sensor/humidity`
 
 At this level, you're dealing with specific machines and sensors. The topic name clearly defines the device type (e.g., "sensor") and the type of data it generates (e.g., "temperature"). This structure makes tracking sensor data easy for each machine or production line.
 
@@ -106,11 +107,11 @@ This level represents the control systems that operate the machinery and manage 
 
 Example Topics:
 
-`/plantA/productionLine1/machineB/PLC/status`
+- `/plantA/productionLine1/machineB/PLC/status`
 
-`/plantA/productionLine1/machineB/PLC/mode`
+- `/plantA/productionLine1/machineB/PLC/mode`
 
-`/plantA/productionLine2/machineC/SCADA/alerts`
+- `/plantA/productionLine2/machineC/SCADA/alerts`
 
 Topics at this level might focus on the status and control functions of the machines. Separating control systems like PLCs or SCADA ensures that operational data (e.g., machine modes or alerts) is distinct from raw sensor data. This approach ensures that each system component can be monitored and managed independently.
 
@@ -120,11 +121,11 @@ At this level, systems monitor and manage operations. They might include higher-
 
 Example Topics:
 
-`/plantA/productionLine1/supervisor/alerts`
+- `/plantA/productionLine1/supervisor/alerts`
 
-`/plantA/productionLine1/supervisor/performance`
+- `/plantA/productionLine1/supervisor/performance`
 
-`/plantA/productionLine2/supervisor/utilization`
+- `/plantA/productionLine2/supervisor/utilization`
 
 Here, you might aggregate data from several control devices (like PLCs) and provide higher-level insight into the overall system. For example, a "performance" topic could aggregate sensor data to monitor the efficiency of a production line, while "alerts" might be used for system-wide warnings.
 
@@ -134,11 +135,11 @@ This level encompasses managing the overall production process, such as scheduli
 
 Example Topics:
 
-`/plantA/productionLine1/MES/productionOrder`
+- `/plantA/productionLine1/MES/productionOrder`
 
-`/plantA/productionLine2/MES/scheduling`
+- `/plantA/productionLine2/MES/scheduling`
 
-`/plantB/productionLine1/MES/inventoryStatus`
+- `/plantB/productionLine1/MES/inventoryStatus`
 
 The data becomes more abstract at this level as you deal with business logic, production orders, and scheduling systems. For example, the "productionOrder" topic could track orders for specific products, while "inventoryStatus" could provide data on material availability for each production line.
 
@@ -148,11 +149,11 @@ The highest level in the ISA-95 hierarchy is focused on enterprise-wide resource
 
 Example Topics:
 
-`/enterprise/ERP/inventory/overview`
+- `/enterprise/ERP/inventory/overview`
 
-`/enterprise/ERP/sales/orders`
+- `/enterprise/ERP/sales/orders`
 
-`/enterprise/ERP/production/metrics`
+- `/enterprise/ERP/production/metrics`
 
 At the ERP level, topics reflect cross-plant business data like inventory, order management, or performance metrics. These are less granular than lower levels and provide decision-makers with high-level insights into the health of the overall business.
 
