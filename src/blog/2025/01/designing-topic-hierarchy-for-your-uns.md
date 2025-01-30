@@ -189,7 +189,7 @@ By defining clear access rules, you enhance security, maintain data integrity, a
 
 ## Effortless MQTT and Topic Management with FlowFuse
 
-FlowFuse is more than just a low-code platform; it’s a game-changer for building and scaling your Unified Namespace (UNS). By seamlessly integrating MQTT, FlowFuse empowers you to connect, manage, and scale your industrial data systems efficiently.
+FlowFuse is more than just a low-code platform; it’s a game-changer for building and scaling your UNS. By seamlessly integrating MQTT, FlowFuse empowers you to connect, manage, and scale your industrial data systems efficiently.
 
 FlowFuse's built-in MQTT broker gives you high-performance data handling without additional infrastructure overhead. The platform also features an interface for managing MQTT clients with access control for topics and an intuitive Topic Hierarchy View, which provides a real-time, visual representation of your entire MQTT topic structure. This makes organizing, monitoring, and managing your topics easy, ensuring clarity and consistency as your system grows.
 
