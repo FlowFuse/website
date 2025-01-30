@@ -1,8 +1,8 @@
-- type:
-  title: "Take your <span class='inline-block'>Node-RED</span> from Prototype to Production"
-  buttonText: "Learn more"
-  link: "/product/features/"
-  reference: "docs_banner-features_page"
-  expire: "2024-11-30T16:00:00Z"
+- type: "New Whitepaper"
+  title: "UNS - Decoupling data producers and consumers"
+  buttonText: "Download now"
+  link: "https://eu1.hubs.ly/H0fY8Vl0"
+  reference: "docs_banner-whitepaper_uns"
+  expire: "2025-04-30T23:59:00Z"
   eventTime: 
-  secondaryText:
+  secondaryText: "A Practical Guide to Unified Namespace with FlowFuse"

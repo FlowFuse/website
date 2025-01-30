@@ -1,6 +1,6 @@
 Contact: mailto:security@flowfuse.com
-Expires: 2023-08-11T23:00:00.000Z
+Expires: 2025-12-31T23:00:00.000Z
 Preferred-Languages: en
-Canonical: https://flowforge.com/.well-known/security.txt
+Canonical: https://flowfuse.com/.well-known/security.txt
 Policy: https://github.com/FlowFuse/flowfuse/blob/main/SECURITY.md
 
