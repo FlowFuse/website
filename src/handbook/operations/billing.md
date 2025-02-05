@@ -4,7 +4,7 @@ navTitle: Billing
 
 # Billing
 
-Subscriptiona and their invoices are all stored in Hubspot, and Stripe is used for payment processing for contracted
+Subscriptions and their invoices are all stored in Hubspot, and Stripe is used for payment processing for contracted
 revenue. For FlowFuse's montly self-service customers Stripe also tracks the subscription instead of Hubspot.
 Team members will be given a login to the relevant Stripe and Hubspot dashboard as required for
 their role with an appropriate level of access.
