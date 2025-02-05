@@ -4,16 +4,18 @@ subtitle: Why Topic Structuring is Key to Scaling and Optimizing Your UNS
 description: Learn why topic structuring is crucial for your UNS’s performance and scalability. This post explores best practices and strategies to design an effective topic hierarchy for your system.
 date: 2025-01-31
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/01/images/uns-topic-structer.png
 tags:
  - flowfuse
  - unified-namespace
  - mqtt
 ---
 
-Topic structuring is not just a technical concern when building a high-performance Unified Namespace (UNS) for manufacturing environments; it's a strategic design choice that can determine the system's scalability, efficiency, and overall effectiveness. A well-structured topic hierarchy is critical in manufacturing, where vast amounts of data flow from sensors, machines, and systems. By organizing your topics correctly, you can streamline data flow, simplify scaling, and make your system more manageable as your operations grow.
+Topic structuring is not just a technical concern when building a high-performance Unified Namespace (UNS) for manufacturing environments; it's a strategic design choice that can determine the system's scalability, efficiency, and overall effectiveness. 
 
 <!--more-->
+
+A well-structured topic hierarchy is critical in manufacturing, where vast amounts of data flow from sensors, machines, and systems. By organizing your topics correctly, you can streamline data flow, simplify scaling, and make your system more manageable as your operations grow.
 
 In this post, we'll explore the significance of topic structuring for your UNS, outline why it's essential for scalability and performance, and share best practices for designing a robust topic hierarchy that can evolve alongside your business.
 
