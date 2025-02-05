@@ -19,7 +19,7 @@ This linear process made sense when the industry relied on mass production techn
 
 That’s why the shift to iterative development is a challenging yet necessary evolution for the manufacturing sector. In this article, we will take a closer look at what iterative development is, the challenges manufacturers face in adopting it, and how today's manufacturing is navigating this transformation through emerging technologies.
 
-## **What Exactly is Iterative Development?**
+## What Exactly is Iterative Development?
 
 **Planning → Designing → Implementation → Testing → Gathering Feedback**
 
@@ -27,7 +27,7 @@ Iterative development is a dynamic approach to product creation that focuses on 
 
 Each iteration allows for quick adjustments, reducing the risks associated with traditional "big bang" development. The result is a product that is continuously improved based on real-world feedback, with each iteration aligning more closely with customer needs and market demands.
 
-## **Why Software Embraces Iterative Development**
+## Why Software Embraces Iterative Development
 
 The software development industry, in contrast, operates in a digital environment that allows for much greater flexibility and rapid changes. Software code can be written, tested, and deployed quickly, and bugs can be fixed instantly. As a result, the software development process has evolved into a highly iterative one. For example, in **Agile** development, products are developed in small, manageable increments, called **sprints**, each lasting a few weeks. At the end of each sprint, a usable version of the product is delivered, and feedback is gathered. The development team then revises the product based on user feedback or new requirements. 
 
