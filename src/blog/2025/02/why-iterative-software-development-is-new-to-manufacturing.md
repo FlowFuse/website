@@ -2,7 +2,7 @@
 title: Why Is Iterative Development for Software New to Manufacturing? 
 subtitle: Exploring How Agile Principles Are Changing the Manufacturing Landscape
 description: Iterative development, a software core principle, reshaping manufacturing. This blog explores why agile methods are new to manufacturing, highlighting emerging technologies like 3D printing, digital twins, and modular design, enabling faster, more flexible production cycles.
-date: 2025-02-6
+date: 2025-02-06
 authors: ["sumit-shinde"]
 image: 
 tags:
