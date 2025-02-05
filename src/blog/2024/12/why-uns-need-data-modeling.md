@@ -69,7 +69,7 @@ In both examples, the data is structured with critical elements like timestamps,
 
 Now that you have a basic understanding of what data modeling is Let’s take a deep dive into why data modeling is essential to unlocking the full potential of your UNS:
 
-### **1. Ensures Data Consistency and Standardization**
+### 1. Ensures Data Consistency and Standardization
 
 As mentioned earlier, data is generated from various sources in manufacturing, including machines, sensors, ERP systems, and inventory management tools. Each source may provide data in different formats, units of measurement, or naming conventions.
 
@@ -77,7 +77,7 @@ For example, one machine might report temperature in Celsius, while another uses
 
 Data modeling addresses this issue by establishing clear standards for how data should be structured and labeled. It ensures uniform temperature, unit, and measurement formats across all systems. For example, a data model might require recording all temperature readings in Celsius and production rates in pieces per hour. This consistency simplifies data analysis from diverse sources and ensures that the system functions reliably and accurately.
 
-### **2. Gives Data Meaning**
+### 2. Gives Data Meaning
 
 Raw data on its own is just numbers—isolated and incomplete. For example, a temperature reading of 72.4°C or a vibration level of 1.5 mm/s doesn’t tell much without the proper context. This is where data modeling truly adds value. A data model turns simple measurements into meaningful insights by organizing data that includes critical details like timestamps, data sources, and relationships between data points.
 
@@ -85,7 +85,7 @@ Contextualizing data means understanding when it was captured, where it came fro
 
 In summary, data modeling transforms raw data into actionable insights, helping you understand what is happening in your operation, when it started, where it is occurring, and how to address it effectively.
 
-### **3. Facilitates Data Interoperability and Integration**
+### 3. Facilitates Data Interoperability and Integration
 
 In manufacturing, various devices and systems generate data in different formats and use distinct communication protocols, making integrating and utilizing this data effectively challenging.
 
@@ -95,7 +95,7 @@ This is where data modeling becomes essential. It creates a standard structure f
 
 For example, in a predictive maintenance system, sensor data such as temperature and vibration can be used to predict potential machine failures. With the right data model, this sensor data can be directly linked to your CMMS (Computerized Maintenance Management System), regardless of how many sensors are involved or added over time. Since engineers understand the standardized data structure, they can easily integrate the CMMS with minimal effort. This integration automatically triggers maintenance alerts and work orders, helping to prevent downtime without requiring manual intervention.
 
-### **4. Enables Easy Access and Time Savings**
+### 4. Enables Easy Access and Time Savings
 
 Disorganized data wastes time and resources in manufacturing. A transparent data model makes essential information easy for troubleshooting, performance checks, and decision-making tasks.
 
@@ -103,7 +103,7 @@ With a standardized system, figuring out confusing labels or complex data is unn
 
 Quick access to accurate data speeds up decision-making, cuts downtime, and improves efficiency, leading to cost savings.
 
-### **5. Scalability and Continuous Improvement**
+### 5. Scalability and Continuous Improvement
 
 A well-structured data model serves the needs of your current manufacturing operations and lays the groundwork for future growth and continuous improvement. As your production processes evolve or new technologies and data sources come online, a good data model allows your UNS to adapt without disrupting existing systems.
 
@@ -113,7 +113,7 @@ For example, as you add new machines, automated production lines, or advanced se
 
 With all these benefits in mind, the next step is to consider how to implement data modeling effectively. Data modeling is a much deeper, more dynamic process that can reshape how you use data across your entire business. It's not only about structuring and integrating data but also about transforming your operations, unlocking new efficiencies, and driving growth. The right platform can help you go beyond essential organization and truly harness the power of your data. 
 
-## **Leverage FlowFuse for Effective Data Modeling in Your UNS**
+## Leverage FlowFuse for Effective Data Modeling in Your UNS
 
 [FlowFuse](/) makes building and managing a Unified Namespace (UNS) simple and efficient. It connects IT and OT systems, streamlines workflows, and transforms raw data into meaningful insights. With FlowFuse, you can:  
 

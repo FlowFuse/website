@@ -11,7 +11,7 @@ tags:
    - releases
 ---
 
-The new Free plan on FlowFuse Cloud will allow you to manage two edge devices using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.
+The new Free plan on FlowFuse Cloud will allow you to manage two remote instances using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.
 
 <!--more-->
 
@@ -42,18 +42,17 @@ _Screenshot showing the UI for selecting your Team's type, when onboarding throu
 
 _Please do note, that whilst we do require credit card information, this is just for verification purposes. You will never be charged for the Free plan._
 
-### Create your First Application
 
-Applications in FlowFuse help you organise and group your resources, from Instances to DevOps Pipelines and Snapshots for Version Control. So, before you can add your first "Device", you'll first need to create an Application to store it.
+### Remote Instances
 
-![](./images/onboarding-new-application.png){data-zoomable}
-_Screenshot showing the form to create a new Application in FlowFuse._
+When you create a Free team, an Application is created for you automatically. Applications in FlowFuse help you organise and group your resources, from Instances to DevOps Pipelines and Snapshots for Version Control. Within your new application, you can "register" your first Remote Instance. 
 
-## Edge Devices
+A "Remote Instance" in FlowFuse is a just a term for an instance Node-RED, managed by FlowFuse, but running somewhere different from FlowFuse, e.g. on Edge hardware in a factory or your home. FlowFuse connects to these Remote Instances using the FlowFuse Device Agent, which is easy to setup and get running.
 
-Now you have an Application setup, you can "register" your first Device. 
+To get started with your Remote Instance, you need to complete two steps:
 
-A "Device" in FlowFuse is a just a term for a remote Node-RED instance that is managed by FlowFuse. FlowFuse connects to these remote instances using the FlowFuse Device Agent, which is easy to setup and get running.
+1. **Install Device Agent**: The FlowFuse Device Agent is installed onto the hardware where you want your Node-RED Instance to run.
+2. **Add Your Remote Instance**: In the FlowFuse UI, add a new "Remote Instance", and connect to your hardware.
 
 ### Install Device Agent
 
@@ -75,9 +74,9 @@ npm install -g @flowfuse/device-agent
 
 For alternative installation options and more details, please refer to our [documentation](/docs/device-agent/).
 
-### Registering Your Device
+### Connect Your Hardware to FlowFuse
 
-To register your Device, in the FlowFuse Platform, click on the "Edge Devices" option in the left-hand menu, and then click the "Add Device" button.
+To connect your Device Agent, in the FlowFuse Platform, click on the "Remote Instances" option in the left-hand menu, and then click the "Add Remote Instance" button.
 
 Fill out the name, device type and select the application you've just created, and you'll be presented with the following:
 
@@ -92,11 +91,11 @@ The final step to take is to then start running the device agent, which you can 
 flowfuse-device-agent
 ```
 
-### Developing on your Device
+### Developing on your Remote Instance
 
-FlowFuse offers remote development capabilities, allowing you to edit your Node-RED flows directly, and securely, from the FlowFuse Cloud platform. This is done through the Device Agent's "Developer Mode". 
+FlowFuse offers remote development capabilities, allowing you to edit your Node-RED flows directly, and securely, from the FlowFuse Cloud platform. This is done through "Developer Mode". 
 
-To get started with developing flows on your Device, simply select your newly created Device, toggle on 'Developer Mode", and click "Open Editor"!
+To get started with developing flows with your Remote Instance, simply select your newly created Instance in the FlowFuse UI, toggle on 'Developer Mode", and click "Open Editor"!
 
 ### Version Control with Snapshots
 
