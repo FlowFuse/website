@@ -24,6 +24,7 @@ Within a team, a maintenance date should be agreed upon, and the team should be 
 While picking the correct date and time for maintenance, the following should be considered:
 * at least two weeks' notice should be provided to customers
 * maintenance should not overlap with [scheduled release](../releases/process.md) week
+* at a time to minimise disruption to customers; outside of core business hours or the weekend
 
 ## Customers communication
 
