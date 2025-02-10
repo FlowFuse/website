@@ -12,6 +12,8 @@ tags:
 
 Arduino is an open-source hardware board that enables users to create interactive projects and control physical devices. Various affordable boards and sensors offer endless possibilities for both simple and advanced systems.
 
+<!--more-->
+
 Although Arduino can be programmed using the Arduino platform, it lacks one feature compared to devices like the Raspberry Pi or ESP32: internet connectivity. This limitation makes it difficult for some users to send commands remotely. Typically, you need to write a program that runs continuously. Additionally, you'll need programming knowledge to program the board, which can be a barrier for some.
 
 In this post, I will show you how to interact with and control an Arduino remotely using FlowFuse (Node-RED). You'll be able to send commands and receive input data without programming knowledge. We will achieve this using the Firmata protocol, enabling seamless communication between your Arduino and Node-RED.
@@ -31,7 +33,7 @@ If you haven't created an account yet, you can create one and take advantage of 
 
 In this section, we’ll set up Node-RED on FlowFuse and download the Firmata protocol setup on the Arduino using Arduino IDE. We will also create a flow that will control an LED on the Arduino and read input data. We will later control the LED based on object detection using an object sensor to make it more interesting. If you don’t have the sensor, don't worry— you can still follow the article. The goal of this example is to demonstrate both reading and writing operations, as well as build an automation flow that reacts to input.
 
-## Step 1: Creating Node-RED instance on FlowFuse Cloud
+### Step 1: Creating Node-RED instance on FlowFuse Cloud
 
 Log into your [FlowFuse](/) account and create a new Node-RED instance. For more information on creating a Node-RED instance, refer to the [FlowFuse documentation](/docs/user/introduction/#creating-a-node-red-instance).
 
@@ -83,7 +85,7 @@ _Adding the port to the Arduino node_
 
 Once deployed, after a few seconds, the node will establish a connection with the Arduino board. You should see a green square below the node, indicating that the connection is successful and the status is "Connected."
 
-## Step 4: Sending Commands to Arduino
+### Step 4: Sending Commands to Arduino
 
 In this section, I'll show you how to send commands to your Arduino. For this practical demonstration, we will control the default Arduino LED, which is typically connected to pin 13.
 
@@ -118,7 +120,7 @@ Now, you can turn the LED on and off by clicking the inject buttons. Instead of 
 
 If you're interested in learning how to create a dashboard, you can refer to the [Getting Started Guide](/blog/2024/03/dashboard-getting-started/). It will help clarify basic dashboard concepts and guide you through building a simple dashboard interface.
 
-## Step 5: Receiving Inputs from the Arduino
+### Step 5: Receiving Inputs from the Arduino
 
 In this step, we’ll focus on receiving inputs from the Arduino to Node-RED. For this practical demonstration, we will use the input from the IR object detection sensor connected to my Arduino.
 
@@ -143,7 +145,7 @@ _Configuring Arduino-in node_
 
 Now, the Arduino will send the sensor input data to Node-RED. If a change is detected in the input, the Arduino will output that input, and you will see it in the debug panel.
 
-## Step 6: Creating an Automation Flow
+### Step 6: Creating an Automation Flow
 
 Now that you've learned how to send commands and read inputs from the Arduino, let’s move on to creating an automation flow. This section aims to show you how to program the Arduino without writing a single line of code—using only Node-RED.
 
