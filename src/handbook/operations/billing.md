@@ -28,7 +28,7 @@ To generate an invoice, the corresponding deal and quote must first be in place 
 
 1. Ensure the company details are updated, and include an address and country.
 1. On the Deal page, find the Invoices section on the right-hand side, then click Add and Convert Deal to Subscription.
-2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
+2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote). Ensure the invoice always lists what the term of the subscription is, and when the subscriptions starts.
 3. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
 4. Make sure both ACH and Credit Card options are checked for payment.
 5. Click the Finalize button on the top right.
