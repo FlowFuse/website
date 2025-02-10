@@ -60,6 +60,7 @@ countersignature.
 1. Download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
 1. Set the Renewal data for the deal
 1. Move the deal to `Closed Won` in HubSpots Deal overview.
+1. If Professional Services are included, contact the person who runs the FlowFuse PS team with the description of the work sold, the amount of hours, and the total value.
 
 ## Closing an upsell
 
