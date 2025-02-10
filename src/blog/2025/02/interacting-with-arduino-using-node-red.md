@@ -39,7 +39,7 @@ Log into your [FlowFuse](/) account and create a new Node-RED instance. For more
 
 Once the instance is created, open the Node-RED editor.
 
-## Step 2: Downloading Firmata protocol setup to Arduino.
+### Step 2: Downloading Firmata protocol setup to Arduino.
 
 [Firmata](https://github.com/firmata/protocol) is a protocol for communicating between an Arduino (and other microcontrollers) and the host computer, providing direct access to the IO pins.
 
