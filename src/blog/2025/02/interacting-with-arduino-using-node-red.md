@@ -99,7 +99,7 @@ In this section, I'll show you how to send commands to your Arduino. For this pr
 
 Based on the type of data you want to send, select the appropriate pin type:
 
-- Digital (0/1) – accepts 0, 1, true, false, on, off
+- Digital (0/1) – accepts 0, 1
 - Analog (0-255) (PWM) – accepts Integer values from 0 to 255
 - Servo (0-180) – accepts Integer values from 0 to 180
 - String – to send a string to the Arduino
