@@ -10,14 +10,13 @@ tags:
  - node-red
 ---
 
-Arduino is an open-source hardware board that enables users to create interactive projects and control physical devices. Various affordable boards and sensors offer endless possibilities for both simple and advanced systems.
+Arduino is a popular open-source platform that lets you build cool electronics projects. It’s affordable and flexible, with lots of different boards and sensors to choose from.
 
 <!--more-->
 
-Although Arduino can be programmed using the Arduino platform, it lacks one feature compared to devices like the Raspberry Pi or ESP32: internet connectivity. This limitation makes it difficult for some users to send commands remotely. Typically, you need to write a program that runs continuously. Additionally, you'll need programming knowledge to program the board, which can be a barrier for some.
+However, unlike some other boards, Arduino doesn’t have built-in internet connectivity, which can make remote control a bit tricky. Plus, it usually requires some coding to make things work.
 
-In this post, I will show you how to interact with and control an Arduino remotely using FlowFuse (Node-RED). You'll be able to send commands and receive input data without programming knowledge. We will achieve this using the Firmata protocol, enabling seamless communication between your Arduino and Node-RED.
-
+In this guide, I’ll show you how to control and automate your Arduino remotely using Node-RED and FlowFuse, all without writing any code. We’ll use the Firmata protocol to make it easy to send commands and get data from your Arduino. By the end of this tutorial, you’ll have a simple automation setup that you can control from anywhere, Just keep in mind, the Arduino will need to be connected to the device running Node-RED!
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/FTuxOy16nwo?si=i7wds6zH0Hpo0TTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -47,25 +46,25 @@ Once the instance is created, open the Node-RED editor.
 
 [Firmata](https://github.com/firmata/protocol) is a protocol for communicating between an Arduino (and other microcontrollers) and the host computer, providing direct access to the IO pins.
 
-Now, let's download the setup to Arduino. Before proceeding, ensure your Arduino is connected to your laptop or computer via the correct USB cable. The USB connection is essential for uploading the code (sketch) to the Arduino.
+Now, let's download the setup to the Arduino. Before proceeding, ensure your Arduino is connected to your laptop or computer via the correct USB cable. The USB connection is essential for uploading the code (sketch) to the Arduino and will also be used by Firmata for communication later.
 
 **Setting up Arduino IDE and Download the setup from examples:**
 
 1. Open the Arduino IDE on your computer.
-2. Ensure you have selected the correct board and port in the Tools menu. I have selected an Arduino Uno since I have used one.
+2. Ensure you have selected the correct board and port in the Tools menu. Since I am using an Arduino Uno 3 board, I’ve selected the Arduino Uno board.
 3. Go to File → Examples → Firmata, and then click on StandardFirmata. This will open the Firmata setup code.
 4. Click the Upload button in the Arduino IDE to upload the setup to your Arduino board.
 
 ![Importing Standard Firmata setup sketch from examples in Arduino IDE](./images/firmata-import.png){data-zoomable}
 _Importing Standard Firmata setup sketch from examples in Arduino IDE_
 
-Once the upload is complete, the Arduino can communicate via the Firmata protocol.
+Once the upload is complete, the Arduino is ready to communicate via the Firmata protocol.
 
 ## Step 3: Connecting Node-RED to Arduino via Serial Communication
 
-Firmata typically works over a serial connection (like USB), enabling communication between the Arduino board and your Node-RED instance. The serial communication allows Node-RED to send commands to and receive data from the Arduino.
+As mentioned earlier, Firmata typically works over a serial connection (such as USB), enabling communication between the Arduino board and your Node-RED instance. The serial communication allows Node-RED to send commands to the Arduino and receive data from it.
 
-First of all, we will need to install a node that will allow us to communicate with node-red via firmata, 
+First, we will need to install a node that will enable communication between Node-RED and the Arduino via Firmata.
 
 **Installing Arduino Node**
 
@@ -74,7 +73,7 @@ First of all, we will need to install a node that will allow us to communicate w
 3. Switch to the "Install" tab and type "node-red-node-arduino" in the search field.
 4. Click "Install" next to the node name.
 
-After installing the required node for Arduino, we will set up the flow in Node-RED to establish communication with the Arduino. This flow will allow us to control the connected Arduino board via Node-RED.
+After installing the required node for Arduino, we will set up the flow in Node-RED to establish a connection with the Arduino.
 
 **Establishing Connection with Arduino**
 
@@ -85,7 +84,7 @@ After installing the required node for Arduino, we will set up the flow in Node-
 ![Adding the port to the Arduino node](./images/serial-port-config.png){data-zoomable}
 _Adding the port to the Arduino node_
 
-4. Click and deploy by clicking the top-right deploy button
+4. Click and deploy by clicking the top-right deploy button.
 
 Once deployed, after a few seconds, the node will establish a connection with the Arduino board. You should see a green square below the node, indicating that the connection is successful and the status is "Connected."
 
@@ -93,65 +92,64 @@ Once deployed, after a few seconds, the node will establish a connection with th
 
 In this section, I'll show you how to send commands to your Arduino. For this practical demonstration, we will control the default Arduino LED, which is typically connected to pin 13.
 
-1. Drag the Arduino-out node onto the canvas
+1. Drag the Arduino-out node onto the canvas.
 2. Double-click the node to open its configuration window.
-3. Select the correct configuration (serial port) you added in Step 3.
-4. Next, choose the type of pin you want to interact with (e.g., digital, analog, servo, etc.); since in my example, I am interacting with an LED, which only requires on or off commands, I have selected Digital(0/1).
+3. Select the correct configuration (serial port) that you set up in Step 3.
+4. Next, choose the type of pin you want to interact with (e.g., digital, analog, servo, etc.). Since in this example we will be interacting with an LED, which only requires on or off commands, I’ve selected Digital (0/1).
 
 Based on the type of data you want to send, select the appropriate pin type:
 
-- Digital(0/1) - accepts 0, 1, true, false, on, off
-- Analogue(0-255) (PWM) - accepts Integer 0 to 255
-- Servo(0-180) - accepts Integer 0 - 180
-- String - to send a String to the Arduino
+- Digital (0/1) – accepts 0, 1, true, false, on, off
+- Analog (0-255) (PWM) – accepts Integer values from 0 to 255
+- Servo (0-180) – accepts Integer values from 0 to 180
+- String – to send a string to the Arduino
 
-5. Once you've configured the pin type.
-6. Once you've configured the pin type, enter the pin number (e.g., 13 for the built-in LED).
-7. Click done.
+5. Once you've configured the pin type, enter the pin number (e.g., 13 for the built-in LED).
+6. Click Done.
 
-![Configuring Arduino-out node](./images/control-led.png){data-zoomable}
+![Configuring Arduino-out node](./images/control-led.png){data-zoomable}  
 _Configuring Arduino-out node_
 
-8. Drag two Inject nodes onto the canvas. For one Inject node, set the Payload to true (to turn the LED on), and for the other, set the Payload to false (to turn the LED off).
-9. Connect the Inject node output to the input of both Change nodes, and connect the outputs of the Change nodes to the input of the Arduino-out node.
-10. Deploy the flow.
+7. Drag two Inject nodes onto the canvas. For one Inject node, set the payload to true (to turn the LED on), and for the other, set the payload to false (to turn the LED off).
+8. Connect the output of each Inject node to the input of the Arduino-out node.
+9. Deploy the flow.
 
-Below is the flow that controls the LED connected to pin 13.
+Now, you can turn the LED on and off by clicking the inject buttons. Instead of using the inject node, you can also use the FlowFuse dashboard to build an interactive dashboard. The dashboard will allow you to control the LED directly from a web interface.
+
+Below is the flow that allows you to control the LED connected to pin 13.
 
 {% renderFlow %}
 [{"id":"fbe0eb6547cbfed7","type":"arduino out","z":"FFF0000000000001","name":"","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":739.8345947265625,"y":645.8272094726562,"wires":[]},{"id":"e222d2df8c62483d","type":"inject","z":"FFF0000000000001","name":"Turn LED on","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"true","payloadType":"bool","x":530,"y":580,"wires":[["fbe0eb6547cbfed7"]]},{"id":"c82bd0280ee45b3b","type":"inject","z":"FFF0000000000001","name":"Turn LED off","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"false","payloadType":"bool","x":530,"y":680,"wires":[["fbe0eb6547cbfed7"]]},{"id":"d7663aaf.47194","type":"arduino-board","device":"COM5"}]
 {% endrenderFlow %}
 
-Now, you can turn the LED on and off by clicking the inject buttons. Instead of using the inject node, you can also use the FlowFuse dashboard to build an interactive dashboard. The dashboard will allow you to control the LED directly from a web interface.
-
 If you're interested in learning how to create a dashboard, you can refer to the [Getting Started Guide](/blog/2024/03/dashboard-getting-started/). It will help clarify basic dashboard concepts and guide you through building a simple dashboard interface.
 
 ### Step 5: Receiving Inputs from the Arduino
 
-In this step, we’ll focus on receiving inputs from the Arduino to Node-RED. For this practical demonstration, we will use the input from the IR object detection sensor connected to my Arduino.
+In this step, we’ll focus on receiving inputs from the Arduino to Node-RED. For this practical demonstration, we will use the input from the IR object detection sensor connected to the Arduino.
 
 1. Drag the Arduino-in node onto the canvas.
 2. Double-click the node to open its configuration window.
-3. Select the serial port that you connected the Arduino to.
-4. Based on the input type, choose the correct pin type (e.g., digital, analog). Since we are using the IR sensor, which usually provides a digital output, select the "Digital pin" type.
-5. Enter the pin number (pin 9 if your sensor is connected to pin 9 on the Arduino).
+3. Select the serial port to which your Arduino is connected.
+4. Based on the input type, choose the correct pin type (e.g., digital, analog). Since we are using an IR sensor, which typically provides a digital output, select the "Digital pin" type.
+5. Enter the pin number (e.g., pin 9, if your sensor is connected to pin 9 on the Arduino).
 
-![Configuring Arduino-in node](./images/read-sensor-data.png){data-zoomable}
+![Configuring Arduino-in node](./images/read-sensor-data.png){data-zoomable}  
 _Configuring Arduino-in node_
 
-*Note: You cannot use the same pin for output and input on the Arduino simultaneously. Ensure the pin you use for input (like the IR sensor) is separate from the pin you're using for output (like the LED).*
+*Note: You cannot use the same pin for both output and input on the Arduino simultaneously. Ensure the pin you use for input (like the IR sensor) is separate from the pin you're using for output (like the LED).*
 
-1. Click Done.
-2. Drag the Debug node onto the canvas and connect its input to the output of the Arduino-in node.
-3. Deploy the flow.
+6. Click Done.
+7. Drag the Debug node onto the canvas and connect its input to the output of the Arduino-in node.
+8. Deploy the flow.
 
-Below, I have provided the flow that reads the IR object detection sensor data connected to pin 9.
+Now, the Arduino will send the sensor input data to Node-RED. If a change is detected in the input, the Arduino will output that input, and you will see it in the debug panel.
+
+Below, I have provided the flow that reads the IR object detection sensor data connected to pin 9, in case you need it.
 
 {% renderFlow %}
 [{"id":"2b871fb5d0923355","type":"arduino in","z":"FFF0000000000001","name":"Read Sensor Data","pin":"9","state":"INPUT","arduino":"d7663aaf.47194","x":170,"y":360,"wires":[["e3e52e51a2e4e058"]]},{"id":"e3e52e51a2e4e058","type":"debug","z":"FFF0000000000001","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":360,"y":360,"wires":[]},{"id":"d7663aaf.47194","type":"arduino-board","device":"COM5"}]
 {% endrenderFlow %}
-
-Now, the Arduino will send the sensor input data to Node-RED. If a change is detected in the input, the Arduino will output that input, and you will see it in the debug panel.
 
 ### Step 6: Creating an Automation Flow
 
@@ -161,8 +159,8 @@ The idea is to trigger an action, such as turning on an LED, when the sensor det
 
 1. Drag a Switch node onto the canvas.
 2. Double-click on the Switch node to open its configuration window and add the following conditions:
-- msg.payload == 1
-- msg.payload == 0
+ - msg.payload == 1
+ - msg.payload == 0
 3. Click Done to save the configuration.
 
 ![Adding conditions in the Switch node to check if the object is detected or not.](./images/switch.png){data-zoomable}
@@ -173,7 +171,6 @@ _Adding conditions in the Switch node to check if the object is detected or not.
 6. Connect the first output of the Switch node to the input of the first Change node, and the second output of the Switch node to the input of the second Change node.
 
 Since IR object detection sensors output a LOW (0) signal when an object is detected and a HIGH (1) signal when no object is detected, this flow will turn the LED on when an object is detected (when msg.payload is equal to 0) and turn the LED off  object is not detected (when msg.payload is equal to 1).
-
 
 Below, I have provided the complete flow of how we read the IR object detection sensor data and control the LED in response to the input. I have also included a video demo.
 
