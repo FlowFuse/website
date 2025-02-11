@@ -4,7 +4,7 @@ subtitle: "Control and Automate Arduino with Node-RED"
 description: "Learn how to set up and control your Arduino remotely using Node-RED and FlowFuse. Explore the simplicity of automation flows"
 date: 2025-02-11
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/02/images/arduino-with-node-red.png
 keywords: Arduino, Node-RED, Firmata, Node-RED IoT, automation, FlowFuse, LED control with Node-RED, IR sensor, input-output, serial communication, microcontroller, Arduino Uno, remote control, object detection, dashboard.
 tags: 
  - node-red
@@ -176,9 +176,7 @@ Below, I have provided the complete flow of how we read the IR object detection 
 [{"id":"2b871fb5d0923355","type":"arduino in","z":"FFF0000000000001","name":"Read Sensor Data","pin":"9","state":"INPUT","arduino":"d7663aaf.47194","x":130,"y":460,"wires":[["8ad3d1504ba05942"]]},{"id":"49b04d8b6f015846","type":"change","z":"FFF0000000000001","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"true","tot":"bool"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":480,"wires":[["d6e251e983f908ac"]]},{"id":"8f56a3d6ac64e87c","type":"change","z":"FFF0000000000001","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"false","tot":"bool"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":440,"wires":[["d6e251e983f908ac"]]},{"id":"8ad3d1504ba05942","type":"switch","z":"FFF0000000000001","name":"","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"num"},{"t":"else"}],"checkall":"true","repair":false,"outputs":2,"x":330,"y":460,"wires":[["8f56a3d6ac64e87c"],["49b04d8b6f015846"]]},{"id":"d6e251e983f908ac","type":"arduino out","z":"FFF0000000000001","name":"Control LED","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":770,"y":460,"wires":[]},{"id":"d7663aaf.47194","type":"arduino-board","device":"COM5"}]
 {% endrenderFlow %}
 
-
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/FTuxOy16nwo?si=i7wds6zH0Hpo0TTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 ## Conclusion
 
