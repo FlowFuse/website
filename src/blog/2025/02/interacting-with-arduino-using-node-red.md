@@ -18,6 +18,10 @@ Although Arduino can be programmed using the Arduino platform, it lacks one feat
 
 In this post, I will show you how to interact with and control an Arduino remotely using FlowFuse (Node-RED). You'll be able to send commands and receive input data without programming knowledge. We will achieve this using the Firmata protocol, enabling seamless communication between your Arduino and Node-RED.
 
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/FTuxOy16nwo?si=i7wds6zH0Hpo0TTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## Prerequisites
 
 To follow this tutorial, you'll need the following:
@@ -108,9 +112,11 @@ Based on the type of data you want to send, select the appropriate pin type:
 ![Configuring Arduino-out node](./images/control-led.png){data-zoomable}
 _Configuring Arduino-out node_
 
-1. Drag two Inject nodes onto the canvas. For one Inject node, set the Payload to true (to turn the LED on), and for the other, set the Payload to false (to turn the LED off).
-2. Connect the Inject node output to the input of both Change nodes, and connect the outputs of the Change nodes to the input of the Arduino-out node.
-3. Deploy the flow.
+8. Drag two Inject nodes onto the canvas. For one Inject node, set the Payload to true (to turn the LED on), and for the other, set the Payload to false (to turn the LED off).
+9. Connect the Inject node output to the input of both Change nodes, and connect the outputs of the Change nodes to the input of the Arduino-out node.
+10. Deploy the flow.
+
+Below is the flow that controls the LED connected to pin 13.
 
 {% renderFlow %}
 [{"id":"fbe0eb6547cbfed7","type":"arduino out","z":"FFF0000000000001","name":"","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":739.8345947265625,"y":645.8272094726562,"wires":[]},{"id":"e222d2df8c62483d","type":"inject","z":"FFF0000000000001","name":"Turn LED on","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"true","payloadType":"bool","x":530,"y":580,"wires":[["fbe0eb6547cbfed7"]]},{"id":"c82bd0280ee45b3b","type":"inject","z":"FFF0000000000001","name":"Turn LED off","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"false","payloadType":"bool","x":530,"y":680,"wires":[["fbe0eb6547cbfed7"]]},{"id":"d7663aaf.47194","type":"arduino-board","device":"COM5"}]
@@ -139,6 +145,8 @@ _Configuring Arduino-in node_
 2. Drag the Debug node onto the canvas and connect its input to the output of the Arduino-in node.
 3. Deploy the flow.
 
+Below, I have provided the flow that reads the IR object detection sensor data connected to pin 9.
+
 {% renderFlow %}
 [{"id":"2b871fb5d0923355","type":"arduino in","z":"FFF0000000000001","name":"Read Sensor Data","pin":"9","state":"INPUT","arduino":"d7663aaf.47194","x":170,"y":360,"wires":[["e3e52e51a2e4e058"]]},{"id":"e3e52e51a2e4e058","type":"debug","z":"FFF0000000000001","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":360,"y":360,"wires":[]},{"id":"d7663aaf.47194","type":"arduino-board","device":"COM5"}]
 {% endrenderFlow %}
@@ -164,11 +172,18 @@ _Adding conditions in the Switch node to check if the object is detected or not.
 5. Next, drag two Change nodes onto the canvas. Set the payload to false for the first Change node and true for the second Change node.
 6. Connect the first output of the Switch node to the input of the first Change node, and the second output of the Switch node to the input of the second Change node.
 
+Since IR object detection sensors output a LOW (0) signal when an object is detected and a HIGH (1) signal when no object is detected, this flow will turn the LED on when an object is detected (when msg.payload is equal to 0) and turn the LED off  object is not detected (when msg.payload is equal to 1).
+
+
+Below, I have provided the complete flow of how we read the IR object detection sensor data and control the LED in response to the input. I have also included a video demo.
+
 {% renderFlow %}
 [{"id":"2b871fb5d0923355","type":"arduino in","z":"FFF0000000000001","name":"Read Sensor Data","pin":"9","state":"INPUT","arduino":"d7663aaf.47194","x":130,"y":460,"wires":[["8ad3d1504ba05942"]]},{"id":"49b04d8b6f015846","type":"change","z":"FFF0000000000001","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"true","tot":"bool"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":480,"wires":[["d6e251e983f908ac"]]},{"id":"8f56a3d6ac64e87c","type":"change","z":"FFF0000000000001","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"false","tot":"bool"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":440,"wires":[["d6e251e983f908ac"]]},{"id":"8ad3d1504ba05942","type":"switch","z":"FFF0000000000001","name":"","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"num"},{"t":"else"}],"checkall":"true","repair":false,"outputs":2,"x":330,"y":460,"wires":[["8f56a3d6ac64e87c"],["49b04d8b6f015846"]]},{"id":"d6e251e983f908ac","type":"arduino out","z":"FFF0000000000001","name":"Control LED","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":770,"y":460,"wires":[]},{"id":"d7663aaf.47194","type":"arduino-board","device":"COM5"}]
 {% endrenderFlow %}
 
-Since IR object detection sensors output a LOW (0) signal when an object is detected and a HIGH (1) signal when no object is detected, this flow will turn the LED on when an object is detected (when msg.payload is equal to 0) and turn the LED off  object is not detected (when msg.payload is equal to 1).
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/FTuxOy16nwo?si=i7wds6zH0Hpo0TTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Conclusion
 
