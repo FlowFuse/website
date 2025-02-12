@@ -37,7 +37,7 @@ To begin, you need to run Node-RED on the device connected to your Arduino, whet
 
 Using the FlowFuse device agent simplifies this process. It allows you to remotely access and manage your Node-RED instance without the need for extensive configuration or security management. This approach ensures a more efficient and secure deployment, enabling you to focus on building automation solutions.
 
-For a step-by-step guide on installing and running the FlowFuse device agent, refer to the official documentation: [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/). We also offer a free tier that lets you manage up to one device for free. [Sign up](https://app.flowfuse.com/account/create) today! 
+For a step-by-step guide on installing and running the FlowFuse device agent, refer to the official documentation: [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/). By the way, we also offer a [free tier](/blog/2024/12/flowfuse-release-2-12/) that lets you manage up to two edge devices for free. [Sign up today](https://app.flowfuse.com/account/create)!
 
 ### Step 2: Downloading Firmata protocol setup to Arduino.
 
