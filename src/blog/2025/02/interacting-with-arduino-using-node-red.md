@@ -18,7 +18,6 @@ In this guide, I’ll show you how to control and automate your Arduino remotely
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/FTuxOy16nwo?si=i7wds6zH0Hpo0TTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 ## Prerequisites
 
 To follow this tutorial, you'll need the following:
@@ -27,8 +26,6 @@ To follow this tutorial, you'll need the following:
 - USB cable: To connect the Arduino to your computer.
 - Arduino IDE: Installed and set up to program your Arduino. Download the Arduino IDE if you haven't already done so. we will be using this for initial firmata implementation, not for programming
 - FlowFuse Account: You will need a FlowFuse instance running on the device connected to the Arduino. FlowFuse allows you to access that remote instance, build flows, create remotely available dashboards, collaborate with your team on the instance, provide robust security, and much more.
-
-If you haven't created an account yet, you can create one and take advantage of our free tier, which allows you to create and manage up to two edge devices. [Sign up now](https://app.flowfuse.com/account/create).
 
 ## Getting Started with Arduino and Node-RED
 
@@ -40,7 +37,7 @@ To begin, you need to run Node-RED on the device connected to your Arduino, whet
 
 Using the FlowFuse device agent simplifies this process. It allows you to remotely access and manage your Node-RED instance without the need for extensive configuration or security management. This approach ensures a more efficient and secure deployment, enabling you to focus on building automation solutions.
 
-For a step-by-step guide on installing and running the FlowFuse device agent, refer to the official documentation: [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/).
+For a step-by-step guide on installing and running the FlowFuse device agent, refer to the official documentation: [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/). We also offer a free tier that lets you manage up to one device for free. [Sign up](https://app.flowfuse.com/account/create) today! 
 
 ### Step 2: Downloading Firmata protocol setup to Arduino.
 
