@@ -34,11 +34,13 @@ If you haven't created an account yet, you can create one and take advantage of 
 
 In this section, we’ll set up Node-RED on FlowFuse and download the Firmata protocol setup on the Arduino using Arduino IDE. We will also create a flow that will control an LED on the Arduino and read input data. We will later control the LED based on object detection using an object sensor to make it more interesting. If you don’t have the sensor, don't worry— you can still follow the article. The goal of this example is to demonstrate both reading and writing operations, as well as build an automation flow that reacts to input.
 
-### Step 1: Creating Node-RED instance on FlowFuse Cloud
+### Step 1: Running Node-RED on the Device connected to Arduino
 
-Log into your [FlowFuse](/) account and create a new Node-RED instance. For more information on creating a Node-RED instance, refer to the [FlowFuse documentation](/docs/user/introduction/#creating-a-node-red-instance).
+To begin, you need to run Node-RED on the device connected to your Arduino, whether it is a Raspberry Pi, Windows, or Linux system. However, simply running Node-RED locally is not sufficient if you require remote access. Setting up a server, securing it, and ensuring accessibility can be time-consuming and complex.
 
-Once the instance is created, open the Node-RED editor.
+Using the FlowFuse device agent simplifies this process. It allows you to remotely access and manage your Node-RED instance without the need for extensive configuration or security management. This approach ensures a more efficient and secure deployment, enabling you to focus on building automation solutions.
+
+For a step-by-step guide on installing and running the FlowFuse device agent, refer to the official documentation: [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/).
 
 ### Step 2: Downloading Firmata protocol setup to Arduino.
 
