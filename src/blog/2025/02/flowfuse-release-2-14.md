@@ -4,7 +4,7 @@ subtitle: A huge wave of new features in FlowFuse elevates your MQTT experience 
 description: A huge wave of new features in FlowFuse elevates your MQTT experience as well as providing improved Remote Instances security and version control too
 date: 2025-02-11
 authors: ["joe-pavitt"]
-image: /blog/2025/01/images/release-2-13.png
+image: /blog/2025/02/images/release-2-14.png
 tags:
    - flowfuse
    - news
@@ -44,7 +44,7 @@ For each topic, you can define descriptions so that team members and anyone inte
 
 We have also hopped the first piece of our Smart Suggestions, which is an agent that runs and works out the structure of the payloads to each of your topics. Right now, this is shown in the UI under "Detected Schema", but we have bigger plans here, that hopefully you'll be seeing more of in the very near future.
 
-#### UNS Schema Documentation
+#### Personalized UNS Documentation
 
 The second view is focussed on clarity, and collaboration.
 
