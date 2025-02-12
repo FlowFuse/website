@@ -79,3 +79,13 @@ The preferred course of action is to create coupons that will expire on their ow
 ## Credits
 
 Occasionally we may need to apply a credit to a customers account as a goodwill gesture to cover an issue they have experienced, this should be the exception and must be approved by either CTO or CEO. We will also check to see if the customer has received any previous credits on their account.
+
+## Failed Payments
+
+In the event that a scheduled payment does not go through, Stripe will retry collecting the payment four times within one week. After all retries fail, Stripe will automatically cancel the subscription and suspend all instances for the team. 
+
+When a payment does not go through, an email is sent from @flowfuse.com. This also applies to cards that are on file with an upcoming expiration date.
+
+For customers paying an invoice, once a payment has been incomplete for 15 days, the invoice is marked as uncollectible.
+
+These settings are configurable by Stripe administrators, here: https://dashboard.stripe.com/settings/billing/automatic.
