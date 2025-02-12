@@ -2,7 +2,7 @@
 title: "Interacting with Arduino using Node-RED" 
 subtitle: "Control and Automate Arduino with Node-RED"
 description: "Learn how to set up and control your Arduino remotely using Node-RED and FlowFuse. Explore the simplicity of automation flows"
-date: 2025-02-11
+date: 2025-02-12
 authors: ["sumit-shinde"]
 image: /blog/2025/02/images/arduino-with-node-red.png
 keywords: Arduino, Node-RED, Firmata, Node-RED IoT, automation, FlowFuse, LED control with Node-RED, IR sensor, input-output, serial communication, microcontroller, Arduino Uno, remote control, object detection, dashboard.
