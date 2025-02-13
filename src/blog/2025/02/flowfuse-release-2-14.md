@@ -11,31 +11,31 @@ tags:
    - releases
 ---
 
-This release is full of many highlights, and we're going to break them down into two areas, the **FlowFuse MQTT Experience**, and **Remote Instances**, so that you can better digest all of the great new functionality going into FlowFuse in the 2.14 release.
+This release is full of highlights, which we’ll break down into two key areas - the **FlowFuse MQTT Experience** and **Remote Instances** - so you can better digest all of the great new functionality introduced in FlowFuse 2.14.
 
 <!--more-->
 
 ## MQTT Experience in FlowFuse
 
-In [October we announced the FlowFuse MQTT Broker](/blog/2024/10/announcement-mqtt-broker/), included in our Team and Enterprise tiers, it permits you to setup your own secure clients to begin publishing and subscribing to your own topics, and building out your full event-driven applications.
+In [October we announced the FlowFuse MQTT Broker](/blog/2024/10/announcement-mqtt-broker/), included in our Starter, Team, and Enterprise tiers. It lets you setup your own secure clients to begin publishing and subscribing to your own topics, and building out your full event-driven applications.
 
-We see the MQTT experience and Node-RED experience regularly paired together, and so it's one of our missions at FlowFuse is to provide the best developer experience for building out your event-driven applications when these two elements are in play.
+We see the MQTT experience and Node-RED experience regularly paired together, and so it's one of our missions at FlowFuse to provide the best developer experience for building out your event-driven applications when these two elements are in play.
 
 ### Third Party Broker Integration
 
 Whilst the Team Broker is a great addition, we are aware that many of our customers already have their own existing MQTT brokers and infrastructure, so what does FlowFuse bring to the table for them?
 
-With this new release, it is now possible for you to connect your external brokers to FlowFUse. With that, you'll then get access to the same great features to help you gain a clear understanding of the activity on your broker, and the structure of the data and topics that are being used.
+With this new release, it is now possible for you to connect your external brokers to FlowFuse. With that, you'll get access to the same great features to help you gain a clear understanding of the activity on your broker, and the structure of the data and topics that are being used.
 
 ### Schema Generation
 
-A pain point we've seen for many customers is collaboration around a single UNS, or MQTT Broker. There is limited (if any) documentation, and to create that, especially at industrial scale would be a monstrous and time-consuming task. With that in mind, FlowFuse now offers **automated schema generation**. 
+A pain point we've seen for many customers is collaboration around a single UNS, or MQTT Broker. There is limited (if any) documentation, and to create that, especially at industrial scale, would be a monstrous and time-consuming task. With that in mind, FlowFuse now offers **automated schema generation**. 
 
 FlowFuse now generates a schema for your MQTT Broker's topic hierarchy, whether you're using the in-built FlowFuse Team Broker, or integrating your own, without you needing to do anything. The schema is generated using the industry-standard, open-sourced, [AsyncAPI](https://www.asyncapi.com/), and is clearly presented to you in the FlowFuse UI in two formats.
 
 #### Topic Hierarchy Editor
 
-The first view lives within the FlowFuse UI that you're familiar with, it will display your interactive topic hierarchy which you can explore, and is predominantly the "edit" and "review" view of your hierarchy.
+The first view lives within the FlowFuse UI that you're familiar with, will display your interactive topic hierarchy which you can explore, and is predominantly the "edit" and "review" view of your hierarchy.
 
 ![Screenshot of the Topic Hierarchy view for a given Broker in FlowFuse](./images/screenshot-topic-hierarchy.png){data-zoomable}
 _Screenshot of the Topic Hierarchy view for a given Broker in FlowFuse_
@@ -74,7 +74,7 @@ Please note that this does require that your hardware has a connection to FlowFu
 ![Screenshot of the new "Version History" timeline view available for Remote Instances](./images/screenshot-timeline.png){data-zoomable}
 _Screenshot of the new "Version History" timeline view available for Remote Instances_
 
-This release brings another great update for Remote Instances, the "Timeline" view has been rolled out to provide you a clear picture of everything that has been running on your Remote Instance.
+This release brings another great update for Remote Instances: the "Timeline" view has been rolled out to provide you a clear picture of everything that has been running on your Remote Instance.
 
 Here you will be able to see every time flows were deployed (for example from within [Developer Mode](/docs/device-agent/quickstart/#developer-mode)), when settings have updated, [Snapshots](/docs/user/snapshots/) have been created, or new flows have been deployed via a [DevOps Pipeline](/docs/user/devops-pipelines/).
 
