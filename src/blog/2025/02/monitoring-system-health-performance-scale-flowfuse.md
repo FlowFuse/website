@@ -14,35 +14,44 @@ Monitoring system health is crucial for keeping devices running smoothly, whethe
 
 <!--more-->
 
-In this post, we will show you how to monitor devices using Node-RED. We will start by building a flow that captures system metrics from a Raspberry Pi, and later, we will explore how FlowFuse simplifies large-scale device monitoring.
+In this post, we will show you how to monitor devices using Node-RED. We will start by building a flow that captures system metrics from a single device, and later, we will explore how FlowFuse simplifies large-scale device monitoring.
 
 ## What Exactly Does Monitoring Device Health Mean and Why Is It Essential?
 
-Monitoring device health means keeping an eye on basic metrics like CPU usage, memory, and performance to make sure devices are working properly. This helps you spot problems early, before they turn into bigger issues like crashes or downtime. In IoT and IIoT, devices are often essential for daily tasks, and if they fail, it can cause disruptions, safety risks, or financial losses. For example, if a machine’s CPU is overloaded or its memory is full, it can lead to wrong data or a complete failure of the system.
+Monitoring device health is all about keeping an eye on key performance indicators like CPU usage, memory, system uptime, and load. By tracking these metrics, you can catch potential issues early—before they turn into serious problems like crashes or unexpected downtime.
 
-By monitoring these metrics regularly, you can catch problems early, fix them quickly, and reduce downtime. It also ensures devices are running efficiently, not wasting resources. In industrial settings, this can prevent costly breakdowns or unsafe situations, while in IoT networks, it makes sure that smart devices are working as they should.
+In IoT and IIoT environments, devices play a crucial role in keeping things running smoothly. They handle communication, process data, and ensure different systems work together seamlessly. If a device fails, it can cause disruptions, safety risks, or even financial losses. Take manufacturing, for example—many companies use devices as middleware with Node-RED to connect older industrial machines to modern cloud systems. These devices help collect, process, and route real-time data between sensors, PLCs, and enterprise applications. But if one of them runs into issues like high CPU usage or low memory, data flow can be disrupted, automation can slow down, and decision-making can be affected, leading to production inefficiencies.
 
-## Monitoring CPU and System Data
+By monitoring device health regularly, you can catch small problems before they become big ones, fix them quickly, and keep everything running efficiently. In industrial settings, this helps prevent costly breakdowns and safety hazards, while in IoT networks, it ensures that smart devices continue working as they should.
 
-Throughout this section, we will demonstrate how to retrieve key metrics such as CPU usage, memory usage, and other system data from a device. For this guide, I have used a Raspberry Pi, a Windows machine, and a macOS device.
+## Getting Started with Monitoring Devices
 
-First, we will focus on monitoring a single device—starting with the Raspberry Pi. We will send this data to a hosted Node-RED instance and visualize it using the FlowFuse dashboard. Later, we will explore how to scale the monitoring process to multiple devices efficiently. Additionally, we will build a basic dashboard to display the collected data.
+In this section, we will demonstrate how to retrieve key metrics such as CPU usage, memory usage, and other system data from a device. Ideally, I would have tested this on thousands of devices, but that is not feasible, so I have used a Raspberry Pi, a Windows machine, and a macOS device. However, our customers manage more than thousands of devices, and FlowFuse makes it possible to monitor them efficiently.
+
+First, we will focus on monitoring a single device—starting with the Raspberry Pi. We will send this data to a hosted Node-RED instance and visualize it using the FlowFuse dashboard. Later, we will explore how to scale the monitoring process to multiple devices efficiently.
 
 ### Prerequisites
 
 Before you begin, ensure you have the following:
 
-- Running Node-RED Instance: Make sure you have a running Node-RED instance on the device you need to monitor. You can use the FlowFuse Device Agent to install Node-RED, which allows you to access the instance remotely with full security. It also provides additional features such as real-time collaboration with your team, snapshot for recovering from accidental changes, DevOps tools, and the ability to manage multiple devices in groups. You can push updates to all devices with a single click and much more.
+- Running Node-RED Instance: Make sure you have a running Node-RED instance on the device you need to monitor. You can use the [FlowFuse Device Agent](/product/device-agent/) to install Node-RED, which allows you to access the instance remotely with full security. It also provides additional features such as real-time collaboration with your team, snapshot for recovering from accidental changes, DevOps tools, and the ability to manage multiple devices in groups. You can push updates to all devices with a single click and much more.
 
 For a step-by-step guide on installing and running the FlowFuse device agent, refer to the official documentation: [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/).
 
 If you haven’t signed up for a FlowFuse account yet, [sign up now](https://app.flowfuse.com/account/create/).
 
-- Install Necessary Nodes: Install [node-red-contrib-os](https://flows.nodered.org/node/node-red-contrib-os) and [node-red-contrib-cpu](https://flows.nodered.org/node/node-red-contrib-cpu) to retrieve system and CPU usage data. You can install them via the [Node-RED Palette Manager](https://nodered.org/docs/user-guide/editor/palette/manager). Additionally, install [@flowfuse/node-red-dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) to build a dashboard for visualizing and monitoring system metrics in real-time. Also, install [node-red-contrib-moment](https://flows.nodered.org/node/node-red-contrib-moment) to format the uptime duration in a human-readable format.  
+- Install Necessary Nodes: You need to install the following Node-RED nodes to collect system data and display it on a dashboard:
 
-## Collecting CPU and System Metrics with Node-RED
+- `node-red-contrib-os`: Retrieves system information such as memory, uptime, and load.
+- `node-red-contrib-cpu`: Monitors CPU usage.
+- `@flowfuse/node-red-dashboard`: Provides UI components for visualizing system metrics.
+- `node-red-contrib-moment`: Formats uptime duration in a human-readable format.
 
-Now that Node-RED is set up on the device, let's collect key system metrics that are important for monitoring such as overall CPU Usage, Memory Usage, System Uptime 
+You can install these nodes from the [Node-RED Palette Manager](https://nodered.org/docs/user-guide/editor/palette/manager).
+
+### Collecting CPU and System Metrics with Node-RED
+
+Now that Node-RED is set up on the device, let's collect key system metrics essential for monitoring, such as overall CPU usage, memory usage, system uptime, and average load over different periods.
 
 **Collecting CPU Usage Data**
 
@@ -51,7 +60,7 @@ Now that Node-RED is set up on the device, let's collect key system metrics that
 3. Drag a Debug node onto the canvas and connect it to the output of the CPU node to view the collected data in the debug pane.
 4. Deploy the flow by clicking the Deploy button in the top right corner of the Node-RED editor.
 
-Once deployed, you will start receiving CPU usage data in the debug pane, allowing you to monitor system performance in real time.
+Once deployed, CPU usage data will appear in the debug pane.
 
 **Monitoring Memory Usage**
 
@@ -60,7 +69,7 @@ Once deployed, you will start receiving CPU usage data in the debug pane, allowi
 3. Then, connect the output of the Memory node to the input of the Debug node that you previously added.
 4. Deploy the flow.  
 
-Now, alongside the CPU data, you will receive an object containing the following properties in the debug pane:  
+Now, alongside the CPU data, you will receive an object containing the memory usage with the following properties in the debug pane:
 
 - totalmem: total available memory  
 - freemem: free memory  
@@ -84,9 +93,13 @@ Once deployed, you will start receiving uptime data in the debug pane. The uptim
 
 This will give us the average load over 1 minute, 5 minutes, and 15 minutes. The load average represents the number of processes waiting for CPU time. A high value means the system is under heavy load, while a low value indicates it has available processing capacity. By analyzing these values, you can determine whether system performance is degrading over time. If the load average stays consistently high, it may indicate excessive CPU demand, which could require optimization or additional processing resources.
 
-## Sharing Data Across Different Node-RED Instances
+### Sharing Data Across Different Node-RED Instances
 
-Now that we have the data, we need to send it to the instance where we will build the monitoring dashboard. Using a separate instance ensures that as we scale to multiple devices, we can efficiently monitor all of them from a single dashboard. Additionally, we will combine all the collected data into a single object for better organization and easier processing.
+Now that we have the data, we need to send it to the Node-RED instance where we will build the monitoring dashboard. Using a separate instance for the dashboard ensures that, as we scale to multiple devices, we can efficiently monitor all of them from a single location.
+
+While sending the data, we combine all the collected metrics from each device into a single object for better organization and easier processing.
+
+Import the following flow and deploy it in the device instance:
 
 {% renderFlow %}
 [{"id":"6f655630d97bac87","type":"cpu","z":"FFF0000000000001","name":"","msgCore":false,"msgOverall":true,"msgArray":false,"msgTemp":false,"x":450,"y":380,"wires":[["d47b2da8024123bf"]]},{"id":"733dc91d94f03e49","type":"inject","z":"FFF0000000000001","name":"","props":[],"repeat":"10","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":210,"y":440,"wires":[["6f655630d97bac87","bcddc3aba82a12da","7af11ed245ddf9c3","d6d58c81cea93671"]]},{"id":"bcddc3aba82a12da","type":"Memory","z":"FFF0000000000001","name":"","scale":"Gigabyte","x":440,"y":420,"wires":[["03ee32ddbd80d7a2"]]},{"id":"7af11ed245ddf9c3","type":"Uptime","z":"FFF0000000000001","name":"","x":440,"y":460,"wires":[["6117e013be2a11ac"]]},{"id":"d6d58c81cea93671","type":"Loadavg","z":"FFF0000000000001","name":"","x":440,"y":500,"wires":[["b759167c1663eb21"]]},{"id":"d47b2da8024123bf","type":"change","z":"FFF0000000000001","name":"CPU USAGE","rules":[{"t":"set","p":"data","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"data.CPU_USAGE","pt":"msg","to":"payload","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":650,"y":380,"wires":[["7429fa970d1e3099"]]},{"id":"03ee32ddbd80d7a2","type":"change","z":"FFF0000000000001","name":"MEMORY USAGE","rules":[{"t":"set","p":"data","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"data.MEMORY_USAGE","pt":"msg","to":"payload","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":670,"y":420,"wires":[["7429fa970d1e3099"]]},{"id":"6117e013be2a11ac","type":"change","z":"FFF0000000000001","name":"SYSTEM UPTIME","rules":[{"t":"set","p":"data","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"data.UPTIME","pt":"msg","to":"payload.uptime","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":670,"y":460,"wires":[["7429fa970d1e3099"]]},{"id":"b759167c1663eb21","type":"change","z":"FFF0000000000001","name":"LOAD AVERAGE","rules":[{"t":"set","p":"data","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"data.LOAD_AVERAGE.ONE_MIN","pt":"msg","to":"payload.loadavg[0]","tot":"msg"},{"t":"set","p":"data.LOAD_AVERAGE.FIVE_MIN","pt":"msg","to":"payload.loadavg[1]","tot":"msg"},{"t":"set","p":"data.LOAD_AVERAGE.FIFTEEN_MIN","pt":"msg","to":"payload.loadavg[2]","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":670,"y":500,"wires":[["7429fa970d1e3099"]]},{"id":"7429fa970d1e3099","type":"join","z":"FFF0000000000001","name":"","mode":"custom","build":"merged","property":"data","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","useparts":false,"accumulate":true,"timeout":"","count":"4","reduceRight":false,"reduceExp":"","reduceInit":"","reduceInitType":"","reduceFixup":"","x":890,"y":440,"wires":[["133d57048a7b057d"]]},{"id":"133d57048a7b057d","type":"change","z":"FFF0000000000001","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"data","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":1070,"y":440,"wires":[["8123ad61cf50e61e"]]},{"id":"8123ad61cf50e61e","type":"project link out","z":"FFF0000000000001","name":"project out 1","mode":"link","broadcast":true,"project":"28a809c6-b8f3-499f-bb20-e357c292b443","topic":"${FF_DEVICE_NAME}","x":1250,"y":440,"wires":[]}]
@@ -94,13 +107,20 @@ Now that we have the data, we need to send it to the instance where we will buil
 
 Let's understand the flow.
 
-We use four Change nodes, each connected to the output of the CPU, Memory, Uptime, and Loadavg nodes. Since these nodes output data as `msg.payload`, we first use a Change node to initialize msg.data as an empty object. Then, we assign each payload value to a meaningful property within `msg.data`, such as `msg.data.CPU_USAGE` for CPU usage.
+In the flow above, we use four Change nodes, each connected to the output of the CPU, Memory, Uptime, and Loadavg nodes. The reason we use Change nodes is that these nodes provide their data as `msg.payload`, and we need to structure the data in a more organized way before sending it out.
 
-Next, we use a Join node to combine the msg.data objects from all Change nodes into a single data object. Another Change node then assigns this combined object back to msg.payload.
+Next, we use a Join node to combine the `msg.data` objects from all Change nodes into a single data object. Another Change node then assigns this combined object back to `msg.payload`.
 
-To share this data with other Node-RED instances, we use the Project Out node, which are only available in the FlowFuse. It works similarly to MQTT, using MQTT in the background but without requiring manual configuration—just a topic name and the target instance.
+The combined object appears as shown in the image below:
 
-We use `${FF_DEVICE_NAME}` as the topic, an environment variable automatically created in all FlowFuse instances. This allows the same flow to be used across multiple devices without modification.  
+![Combined object containing system data such as CPU usage, memory usage, uptime, and load average.](./images/combine-object.png){data-zoomable}
+_Combined object containing system data such as CPU usage, memory usage, uptime, and load average._
+
+To share this data with other Node-RED instances, we use the Project Out node, which is only available in FlowFuse. It works similarly to MQTT, using MQTT in the background, but without requiring manual configuration—just a topic name and the target instance.
+
+The Project nodes make it easy to manage communication and connection between Node-RED instances. To learn more, read the article: [Using FlowFuse Project Nodes for Faster and More Efficient Communication](/blog/2024/10/exploring-flowfuse-project-nodes/).
+
+In this Project node, we broadcast the message across all instances in the team using `${FF_DEVICE_NAME}` as the topic—an environment variable automatically created in all FlowFuse instances. This enables the same flow to be used across multiple devices without modification, ensuring that each device utilizes its own environment variables and sends data under its respective topic.
 
 ## Visualizing Data with the FlowFuse Dashboard  
 
@@ -109,32 +129,31 @@ Now that the data is being broadcasted, it can be used to build a simple dashboa
 Ensure that a separate hosted instance has been created in the same team where the device is registered. This instance will be used to deploy the dashboard.  
 
 1. Drag the Project In node onto the canvas. Double-click on it and select "Listen for broadcast messages from". Choose "All instances and devices" from the dropdown menu. Enter the device name in the topic field and ensure it matches exactly with the device name environment variable. Click Done.  
-
 2. Drag two Change nodes onto the canvas.  
-
 3. Double-click on the first Change node. Set msg.payload to the JSONata expression:  
-   ```json
+   
+```json
    payload.MEMORY_USAGE.totalmem - payload.MEMORY_USAGE.freemem
-   ```  
+```  
    Set msg.topic to "USED MEMORY". Click Done.  
 
 4. Double-click on the second Change node. Set msg.payload to:  
-   ```json
+   
+```json
    msg.payload.MEMORY_USAGE.freemem
-   ```  
+```  
    Set msg.topic to "Free Memory". Click Done.  
 
-5. Drag the ui-chart widget onto the canvas. Double-click on it and create a new group. Set the correct width and height. Select "Pie" as the chart type. Set the action to "Append". Set X to msg.topic. Leave Y empty. Click Done.  
-
+5. Drag the ui-chart widget onto the canvas. Double-click on it and create a new group. Set the correct width and height. Select "Pie" as the chart type. Set the action to "Append". Set X to msg.topic. Leave Y empty and Click Done.  
 6. Connect the nodes as follows:  
 
    Project In node → Change nodes → ui-chart widget  
 
-7. Drag another Change node onto the canvas. Double-click on it and set msg.payload to the JSONata expression:  
-   ```json
+7. Drag another Change node onto the canvas. Double-click on it and set `msg.payload` to the JSONata expression and Click Done:  
+
+```json
    $round(payload.CPU_USAGE, 2)
-   ```  
-   Click Done.  
+```  
 
 8. Drag the ui-gauge widget onto the canvas. Double-click on it and create a new group. Set the height and size. Select "3/4 gauge" with a rounded style. Set the range from 0 to 10. Add three segments with different colors: 0 (Green), 4 (Yellow), 7 (Red). Set the label to "CPU". Click Done.  
 
@@ -142,21 +161,21 @@ Ensure that a separate hosted instance has been created in the same team where t
 
    Project In node → Change node → ui-gauge widget  
 
-10. Drag the Humanizer node onto the canvas. Double-click on it and enter "UPTIME" in the input variable field.  
+10.  Drag the Humanizer node onto the canvas. Double-click on it and enter "UPTIME" in the input variable field.  
 
-11. Drag a Change node onto the canvas. Double-click on it and set msg.payload to msg.payload.humanized.  
+11.  Drag a Change node onto the canvas. Double-click on it and set msg.payload to msg.payload.humanized.  
 
-12. Drag the ui-text widget onto the canvas. Double-click on it and create a new group. Select the fifth layout. Check "Apply style" and set the text size to 99. Click Done.  
+12.  Drag the ui-text widget onto the canvas. Double-click on it and create a new group. Select the fifth layout. Check "Apply style" and set the text size to 99. Click Done.  
 
-13. Connect the nodes as follows:  
+13.  Connect the nodes as follows:  
 
    Project In node → Humanizer node → Change node → ui-text widget  
 
-14. Drag three Change nodes onto the canvas.  
+14.  Drag three Change nodes onto the canvas.  
 
-15. Double-click on the first Change node. Set msg.payload to msg.payload.LOAD_AVERAGE.ONE_MIN. Set msg.topic to "One Minute". Click Done.  
+15.  Double-click on the first Change node. Set `msg.payload` to `msg.payload.LOAD_AVERAGE.ONE_MIN`. Set `msg.topic` to "One Minute" and Click Done.  
 
-16. Double-click on the second Change node. Set msg.payload to msg.payload.LOAD_AVERAGE.FIVE_MIN. Set msg.topic to "Five Minute". Click Done.  
+16.  Double-click on the second Change node. Set `msg.payload` to `msg.payload.LOAD_AVERAGE.FIVE_MIN`. Set `msg.topic` to "Five Minute" and Click Done.  
 
 17. Double-click on the third Change node. Set msg.payload to msg.payload.LOAD_AVERAGE.FIFTEEN_MIN. Set msg.topic to "Fifteen Minute". Click Done.  
 
@@ -166,25 +185,68 @@ Ensure that a separate hosted instance has been created in the same team where t
 
    Project In node → Change nodes → ui-chart widget  
 
-20 . Deploy the flow by click top-right deploy button
+20. Deploy the flow by click top-right deploy button.
+
+![Dashboard monitoring device CPU usage, memory uptime, and load average](./images/dashboard-monitoring-device.png){data-zoomable}
+_Dashboard monitoring device CPU usage, memory uptime, and load average_
+
+Below is the complete flow of the dashboard visualizing the system data we collected.
+
+{% renderFlow %}
+[{"id":"018657fd6a7e4237","type":"project link in","z":"797e084100cec864","name":"project in 1","project":"all","broadcast":true,"topic":"MacOS","x":80,"y":260,"wires":[["1335f4283b6bac10","acd675febbdadc6f","f875ddcc0de1c40f","95e3d356bd589be7","7cde186dd1601efb","6448cab78573bf39","d0e232ec780650fa"]]},{"id":"1335f4283b6bac10","type":"change","z":"797e084100cec864","name":"Free Memory","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.MEMORY_USAGE.freemem","tot":"msg"},{"t":"set","p":"topic","pt":"msg","to":"Free Memory","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":270,"y":160,"wires":[["eed0837fccf2639d"]]},{"id":"eed0837fccf2639d","type":"ui-chart","z":"797e084100cec864","group":"a54eed4c7110dfb5","name":"Memory Usage","label":"X - msg.topic, Series - msg.series","order":1,"chartType":"pie","category":"Pie","categoryType":"str","xAxisLabel":"","xAxisProperty":"topic","xAxisPropertyType":"msg","xAxisType":"radial","xAxisFormat":"","xAxisFormatType":"auto","xmin":"","xmax":"","yAxisLabel":"","yAxisProperty":"","yAxisPropertyType":"property","ymin":"","ymax":"","bins":"","action":"append","stackSeries":false,"pointShape":"circle","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"3","height":"3","className":"","interpolation":"linear","x":520,"y":140,"wires":[[]]},{"id":"acd675febbdadc6f","type":"change","z":"797e084100cec864","name":"Used Memory","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.MEMORY_USAGE.totalmem - payload.MEMORY_USAGE.freemem","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"Used Memory","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":280,"y":120,"wires":[["eed0837fccf2639d"]]},{"id":"f875ddcc0de1c40f","type":"change","z":"797e084100cec864","name":"CPU Overall Usage","rules":[{"t":"set","p":"payload","pt":"msg","to":"$round(payload.CPU_USAGE, 2)","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"CPU Overall Usage","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":290,"y":260,"wires":[["a777eb57611ddd60"]]},{"id":"a777eb57611ddd60","type":"ui-gauge","z":"797e084100cec864","name":"","group":"0d1f7e47031c74c1","order":1,"width":"4","height":"5","gtype":"gauge-34","gstyle":"rounded","title":"CPU ","units":"units","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#5cd65c"},{"from":"4","color":"#ffc800"},{"from":"7","color":"#ea5353"}],"min":0,"max":10,"sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":490,"y":260,"wires":[]},{"id":"95e3d356bd589be7","type":"humanizer","z":"797e084100cec864","name":"","input":"UPTIME","x":290,"y":340,"wires":[["9d237ff676ad6083"]]},{"id":"79e5bdfa309d27ea","type":"ui-text","z":"797e084100cec864","group":"3827fa7650fa2fa1","order":1,"width":"4","height":"5","name":"Uptime","label":"","format":"{{msg.payload}}","layout":"col-center","style":true,"font":"","fontSize":"99","color":"#0056d6","wrapText":false,"className":"","x":680,"y":340,"wires":[]},{"id":"9d237ff676ad6083","type":"change","z":"797e084100cec864","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.humanized","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":480,"y":340,"wires":[["79e5bdfa309d27ea"]]},{"id":"7cde186dd1601efb","type":"change","z":"797e084100cec864","name":"One Minute (LOAD_AVERAGE)","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.LOAD_AVERAGE.ONE_MIN","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"One Minute","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":330,"y":400,"wires":[["b5bf2c8c93abb5a9"]]},{"id":"6448cab78573bf39","type":"change","z":"797e084100cec864","name":"Five Minute (LOAD_AVERAGE)","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.LOAD_AVERAGE.FIVE_MIN","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"Five Minute","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":330,"y":440,"wires":[["b5bf2c8c93abb5a9"]]},{"id":"d0e232ec780650fa","type":"change","z":"797e084100cec864","name":"Fifteen Minute (LOAD_AVERAGE)","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.LOAD_AVERAGE.FIFTEEN_MIN","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"Fifteen Minute","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":340,"y":480,"wires":[["b5bf2c8c93abb5a9"]]},{"id":"b5bf2c8c93abb5a9","type":"ui-chart","z":"797e084100cec864","group":"0c78dcb3aefb38a8","name":"LOAD AVERAGE","label":"chart","order":1,"chartType":"line","category":"topic","categoryType":"msg","xAxisLabel":"","xAxisProperty":"","xAxisPropertyType":"timestamp","xAxisType":"time","xAxisFormat":"","xAxisFormatType":"auto","xmin":"","xmax":"","yAxisLabel":"","yAxisProperty":"payload","yAxisPropertyType":"msg","ymin":"","ymax":"","bins":10,"action":"append","stackSeries":false,"pointShape":"dash","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#a347e1","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"12","height":"6","className":"","interpolation":"linear","x":610,"y":440,"wires":[[]]},{"id":"a54eed4c7110dfb5","type":"ui-group","name":"Memory Usage","page":"d0621b8f20aee671","width":"3","height":"3","order":3,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"0d1f7e47031c74c1","type":"ui-group","name":"CPU Usage","page":"d0621b8f20aee671","width":"4","height":"5","order":2,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"3827fa7650fa2fa1","type":"ui-group","name":"SYSTEM UPTIME","page":"d0621b8f20aee671","width":"5","height":"5","order":1,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"0c78dcb3aefb38a8","type":"ui-group","name":"Load Average","page":"d0621b8f20aee671","width":"12","height":1,"order":4,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"d0621b8f20aee671","type":"ui-page","name":"Mac OS","ui":"6c8450c52cafa145","path":"/macos","icon":"home","layout":"grid","theme":"5075a7d8e4947586","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"6c8450c52cafa145","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"headerContent":"page","navigationStyle":"default","titleBarStyle":"default","showReconnectNotification":true,"notificationDisplayTime":1,"showDisconnectNotification":true},{"id":"5075a7d8e4947586","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}}]
+{% endrenderFlow %}
 
 ## Scaling Device Monitoring with FlowFuse  
 
 Now that we have learned how to monitor a single device and built a flow that gathers system data from it, the real challenge arises when scaling up to thousands or even tens of thousands of devices. Manually creating a system data-gathering flow for each device would be impractical. However, with FlowFuse, this process can be automated in less than five minutes. Let's see how.  
 
-1. Navigate to the FlowFuse platform and go to the "Groups" page by clicking on "Groups" from the main sidebar.  
+1. Navigate to the FlowFuse platform and go to the Application in which you devices are and wanted to create group in, Ensure that all the devices you want to monitor are part of this application. 
 
-2. Click on "Create Group". In the newly opened window, select the application to which this group should belong. Ensure that all the devices you want to monitor are part of this application. Enter a group name and description, then click "Create".  
+2. Click on "Device Groups" from the top menu. Next, click on the "Add Device Group" button. In the newly opened window, select the application to which this group should belong. Enter a group name and description, then click "Create".  
 
-3. Click on the newly created group and then click the "Edit" button at the top-right. In the left-side container, you will see a list of all available devices in your application. Select the devices you want to add to the group, click the "Add Devices" button at the top-right of that container, and then click "Save Changes" at the top-right of the right-side container. Once done, you will see all added devices in the right-side container, confirming that the devices have been successfully added to the group.  
+![Form to Create a Device Group: Enter the group name and description ](./images/device-group-form.png){data-zoomable}
+_Form to Create a Device Group: Enter the group name and description_
 
-4. Navigate to the application where the devices were added and the group was created. Switch to the "Pipelines" tab at the top, then click "Add Pipeline". In the newly opened window, enter a pipeline name.  
+3. Click on the newly created group and then click the "Edit" button at the top-right. 
 
-5. In the newly added pipeline, click "Add Stage". In the newly opened window, select "Remote Instance" as the stage type, enter a stage name, and select the device where we previously built the flow for a single device. Select "Use latest device snapshot" under "Action" and click "Add Stage".  
+![Image showing the device group added to the application.](./images/Device-group-created.png){data-zoomable}
+_Image showing the device group added to the application._
 
-6. Add another stage, select "Device Group" as the stage type, enter a stage name, choose the device group created earlier, and click "Add Stage".  
+![Image showing the edit button to be clicked on.](./images/edit-device-group.png){data-zoomable}
+_Image showing the edit button to be clicked on._
 
-7. Once both stages are added, click the "Run Pipeline" button for the first stage. Running the pipeline creates a snapshot that includes all settings, environment variables, and flows for that instance. This snapshot is then copied and deployed to the next stage, which includes all devices in the group. Whether you have 100, 1,000, or 10,000 devices, your system data-gathering flow will be deployed and running in just a few seconds.
+4. In the left-side container, you will see a list of all available devices in your application. Select the devices you want to add to the group, click the "Add Devices" button at the top-right of that container, and then click "Save Changes" at the top-right of the right-side container. Once done, you will see all added devices in the right-side container, confirming that the devices have been successfully added to the group. 
+
+![Interface to select the devices that need to be added to the group, along with the 'Add Devices' button.](./images/device-group-device-adding.png ){data-zoomable}
+_Interface to select the devices that need to be added to the group, along with the 'Add Devices' button._
+
+![Showing the selected devices we chose to add, along with the 'Save Changes' button.](./images/save-changes-to-add-devices.png ){data-zoomable}
+_Showing the selected devices we chose to add, along with the 'Save Changes' button._
+
+5. Navigate to the application where the devices were added and the group was created. Switch to the "Pipelines" tab at the top, then click "Add Pipeline". In the newly opened window, enter a pipeline name. 
+
+![Image showing the 'Add Pipeline' button.](./images/add-pipeline.png ){data-zoomable}
+_Image showing the 'Add Pipeline' button._
+
+![Image showing the form to create a pipeline by entering a name.](./images/pipeline-creation-form.png ){data-zoomable}
+_Image showing the form to create a pipeline by entering a name_
+
+6. In the newly added pipeline, click "Add Stage".
+
+![Image showing the button to add a stage.](./images/adding-stage-button.png ){data-zoomable}
+_Image showing the button to add a stage._
+
+7. In the newly opened window, select "Remote Instance" as the stage type, enter a stage name, and select the device where we previously built the flow for a single device. Select "Use latest device snapshot" under "Action" and click "Add Stage". 
+
+![Image showing the form to add a stage, where a stage is being added for a Raspberry Pi remote instance.](./images/rpi-stage.png ){data-zoomable}
+_Image showing the form to add a stage, where a stage is being added for a Raspberry Pi remote instance._
+
+8. Add another stage, select this time "Device Group" as the stage type, enter a stage name, choose the device group created earlier, and click "Add Stage".  
+
+![Image showing the form to add a stage, where a stage is being added for a Device Group](./images/production-with-deviec-group.png ){data-zoomable}
+_Image showing the form to add a stage, where a stage is being added for a Device Group_
+
+9.  Once both stages are added, click the "Run Pipeline" button for the first stage. Running the pipeline creates a snapshot that includes all settings, environment variables, and flows for that instance. This snapshot is then copied and deployed to the next stage, which includes all devices in the group. Whether you have 100, 1,000, or 10,000 devices, your system data-gathering flow will be deployed and running in just a few seconds.
 
 Now you have the system data of all devices broadcasted on the topic with the device name. To monitor each device, go to the dashboard instance, copy the flow, and create copies for each device. Make sure to replace the topic with the corresponding device name. Additionally, ensure that you have created a separate page for each device, assigned them to separate groups, and correctly moved all copied widgets in to the correct groups.  
 
