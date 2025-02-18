@@ -209,7 +209,7 @@ _Showing the option to switch to "Device Groups" and the "Add Device Group" butt
 
 2. Click on "Device Groups" from the top menu. Next, click on the "Add Device Group" button. In the newly opened window, select the application to which this group should belong. Enter a group name and description, then click "Create".  
 
-![Form to Create a Device Group: Enter the group name and description ](./images/device-group-form.png){data-zoomable}  
+![Form to Create a Device Group: Enter the group name and description ](./images/device-group-form-create.png){data-zoomable}  
 _Form to Create a Device Group: Enter the group name and description_
 
 3. Click on the newly created group and then click the "Edit" button at the top-right.
@@ -241,7 +241,7 @@ _Showing the form to create a snapshot and the "Set as Target" option._
 
 1. Navigate to the application where the devices were added and the group was created. Switch to the "Pipelines" tab at the top, then click "Add Pipeline". In the newly opened window, enter a pipeline name.
 
-![Image showing the 'Add Pipeline' button.](./images/add-pipeline.png ){data-zoomable}  
+![Image showing the 'Add Pipeline' button.](./images/add-pipeline-button.png ){data-zoomable}  
 _Image showing the 'Add Pipeline' button._
 
 ![Image showing the form to create a pipeline by entering a name.](./images/pipeline-creation-form.png ){data-zoomable}  
