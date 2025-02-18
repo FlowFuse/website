@@ -2,7 +2,7 @@
 title: "Why Data schemas Are needed to Mature your Industrial Data Operations" 
 subtitle: "FlowFuse Makes Industrial Data Schema Management and Implementation Effortless"
 description: "Explore the importance of data schemas in industrial data operations and how FlowFuse simplifies their implementation for efficient, consistent, and reliable data processing."
-date: 
+date: 2025-02-21
 authors: ["sumit-shinde"]
 image: 
 keywords: 
