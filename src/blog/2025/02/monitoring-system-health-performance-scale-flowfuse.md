@@ -13,9 +13,9 @@ tags:
 
 Edge devices are everywhere, and their numbers are skyrocketing—from 2.7 billion in 2020 to a projected 7.8 billion by 2030, according to [various reports](https://transformainsights.com/news/edge-computing-rapid-growth-iot#:~:text=New%20Transforma%20Insights%20reports%20covering,edge%20capabilities%20in%20IoT%20devices.). That is a massive leap, highlighting their growing role in IoT and industrial automation.
 
-These edge devices are essential for automation, data processing, and connectivity. As their numbers grow, so does the need to monitor their health. Tracking key metrics like CPU usage, memory, and system performance helps ensure they run efficiently and remain reliable. Early detection of potential issues allows for timely intervention, preventing disruptions and optimizing performance.
-
 <!--more-->
+
+These edge devices are essential for automation, data processing, and connectivity. As their numbers grow, so does the need to monitor their health. Tracking key metrics like CPU usage, memory, and system performance helps ensure they run efficiently and remain reliable. Early detection of potential issues allows for timely intervention, preventing disruptions and optimizing performance.
 
 In this post, we will explore how to monitor devices using Node-RED. We will start with a flow that collects system metrics from a single device and then look at how FlowFuse simplifies monitoring at scale.  
 
