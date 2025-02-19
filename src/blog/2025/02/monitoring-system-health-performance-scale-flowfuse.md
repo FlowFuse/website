@@ -2,12 +2,13 @@
 title: "Monitoring Device Health and Performance at Scale with FlowFuse" 
 subtitle: "Track and Optimize Edge Device Performance with Node-RED and FlowFuse."
 description: "Learn how to monitor system health and performance with Node-RED. Track CPU usage, memory, and other key metrics, and efficiently scale device monitoring with FlowFuse to thousands of devices."
-date: 2025-02-11
+date: 2025-02-19
 authors: ["sumit-shinde"]
 image:
-keywords: 
+keywords: real-time device monitoring, FlowFuse for IoT monitoring, scalable edge device monitoring, remote device performance tracking, centralized device monitoring dashboard, optimizing IoT device health, real-time performance tracking with Node-RED, remote monitoring for industrial automation
 tags: 
  - node-red
+ - flowfuse
 ---
 
 Edge devices are everywhere, and their numbers are skyrocketing—from 2.7 billion in 2020 to a projected 7.8 billion by 2030, according to [various reports](https://transformainsights.com/news/edge-computing-rapid-growth-iot#:~:text=New%20Transforma%20Insights%20reports%20covering,edge%20capabilities%20in%20IoT%20devices.). That is a massive leap, highlighting their growing role in IoT and industrial automation.
