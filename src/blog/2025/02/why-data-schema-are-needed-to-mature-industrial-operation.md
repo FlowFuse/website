@@ -116,9 +116,9 @@ When defining the schema, it is essential to decide which properties are necessa
 
 By carefully planning and involving the whole team, you create a schema that supports consistent data flow across systems and departments. This collaborative approach leads to a well-rounded and effective data schema that helps align team expectations, minimizes future issues, and improves operational efficiency. Taking the time to get everyone on the same page ensures that your data will be consistent, reliable, and ready to drive informed decision-making across the organization.
 
-Once you planned the data scheme, prepare it in the following format.
+Once you have planned the data schema, prepare it in the following JSON Schema format. JSON Schema is the fastest way to model and validate the data.
 
-If you want to learn more about how to create JSON Schemas, check out this helpful : [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step)
+If you want to learn more about how to create JSON Schemas, check out this helpful: [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step)
 
 ```json
 {
