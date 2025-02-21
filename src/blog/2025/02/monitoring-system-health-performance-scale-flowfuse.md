@@ -116,7 +116,6 @@ To understand how busy your system has been over time, let’s analyze the load 
 This will give you three key metrics:  
 
 ![An image showing the flow that gathers system load average data and prints it in the debug pane](./images/load-avg.png){data-zoomable}
-![An image showing the flow that gathers system load average data and prints it in the debug pane](./images/load-avg.png){data-zoomable}
 
 - 1-minute load average: Immediate system load  
 - 5-minute load average: Recent short-term trend  
