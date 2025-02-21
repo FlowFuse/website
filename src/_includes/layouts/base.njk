@@ -406,6 +406,7 @@ eleventyComputed:
         .finally(() => {
             posthog.init('{{ POSTHOG_APIKEY }}', {
                 api_host:'https://eu.posthog.com',
+                person_profiles: 'always',
                 bootstrap: phBootstrap,
                 capture_pageleave: false,
                 opt_out_capturing_by_default: optOutByDefault
