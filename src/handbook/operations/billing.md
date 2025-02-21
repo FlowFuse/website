@@ -80,6 +80,10 @@ The preferred course of action is to create coupons that will expire on their ow
 
 Occasionally we may need to apply a credit to a customers account as a goodwill gesture to cover an issue they have experienced, this should be the exception and must be approved by either CTO or CEO. We will also check to see if the customer has received any previous credits on their account.
 
+## Refunds
+
+For customers using self service we will occasionally need issue a refund via Stripe. This can be done by looking the user up, normally via their email address, in the Stripe dashboard. On the customers page there is a section labelled *Payments* which will list recent payments. Select the 3 dots at the end of the last payment line and from the menu select *Refund*. This will present a dialog to adjust the value to be refunded (the last invoice for a closed team will show the remaining credit) and to initiate the refund. You will be prompted to re-enter your password to confirm the refund.
+
 ## Failed Payments
 
 In the event that a scheduled payment does not go through, Stripe will retry collecting the payment four times within one week. After all retries fail, Stripe will automatically cancel the subscription and suspend all instances for the team. 
