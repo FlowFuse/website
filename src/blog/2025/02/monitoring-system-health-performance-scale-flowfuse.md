@@ -4,7 +4,7 @@ subtitle: "Track and Optimize Edge Device Performance with Node-RED and FlowFuse
 description: "Learn how to monitor system health and performance with Node-RED. Track CPU usage, memory, and other key metrics, and efficiently scale device monitoring with FlowFuse to thousands of devices."
 date: 2025-02-21
 authors: ["sumit-shinde"]
-image:
+image:  /blog/2025/02/images/monitoring-device-health-and-performance-at-scale.png
 keywords: real-time device monitoring, FlowFuse for IoT monitoring, scalable edge device monitoring, remote device performance tracking, centralized device monitoring dashboard, optimizing IoT device health, real-time performance tracking with Node-RED, remote monitoring for industrial automation
 tags: 
  - node-red
@@ -58,8 +58,6 @@ Let’s break it down step by step.
 
 #### Collecting CPU Usage Data  
 
-// Add screenshot here of the flow and debug output
-
 To start, let’s capture CPU usage in real time:  
 
 1. Drag a **CPU** node from the "Performance" category onto the canvas.  
@@ -70,9 +68,10 @@ To start, let’s capture CPU usage in real time:
 
 Your debug pane will now start showing live CPU usage data:
 
-#### Monitoring Memory Usage  
+![An image showing the flow that gathers CPU usage data and prints it in the debug pane](./images/cpu-usage.png){data-zoomable}
+_An image showing the flow that gathers CPU usage data and prints it in the debug pane_
 
-// Show screenshot of "structured object in the debug pane containing along with cpu usage"
+#### Monitoring Memory Usage  
 
 Next, let’s track memory consumption:  
 
@@ -84,13 +83,14 @@ Next, let’s track memory consumption:
 
 Once deployed, you will see a structured object in the debug pane containing along with cpu usage:  
 
+![An image showing the flow that gathers memory usage data and prints it in the debug pane](./images/memory-usage.png){data-zoomable}
+_An image showing the flow that gathers memory usage data and prints it in the debug pane_
+
 - totalmem: Total available memory  
 - freemem: Free memory  
 - memusage: Current memory usage  
 
 #### Tracking System Uptime  
-
-// Add screenshot of this addition too
 
 Monitoring uptime helps detect unexpected reboots and ensures system stability.  
 
@@ -100,6 +100,9 @@ Monitoring uptime helps detect unexpected reboots and ensures system stability.
 4. Click Deploy to activate uptime tracking.  
 
 Each time the Inject node triggers, the debug pane will display the uptime in seconds and CPU and memory usage. 
+
+![An image showing the flow that gathers system uptime data and prints it in the debug pane](./images/uptime.png){data-zoomable}
+_An image showing the flow that gathers system uptime data and prints it in the debug pane_
 
 #### Analyzing Load Average  
 
@@ -111,6 +114,9 @@ To understand how busy your system has been over time, let’s analyze the load 
 4. Click Deploy to start tracking.  
 
 This will give you three key metrics:  
+
+![An image showing the flow that gathers system load average data and prints it in the debug pane](./images/load-avg.png){data-zoomable}
+![An image showing the flow that gathers system load average data and prints it in the debug pane](./images/load-avg.png){data-zoomable}
 
 - 1-minute load average: Immediate system load  
 - 5-minute load average: Recent short-term trend  
