@@ -181,7 +181,7 @@ The device-agent will now be running and you can access the UI at [http://127.0.
 _NOTE: These credentials are temporary and only valid during the device setup_
 
 Proceed to configure the device-agent and link it to your flowfuse team. Full instructions can be found [here](
-/docs/device-agent/register/#generating-%22device-configuration%22).
+/docs/device-agent/register).
 Once you have linked the device-agent to your team, you can stop it by pressing `ctrl+c` in the command prompt window.
 
 ## Create the device-agent service

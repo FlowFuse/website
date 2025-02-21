@@ -82,7 +82,7 @@ This will set Colima to run as a service, so it will start automatically every t
 
 ### Step 6: Adding the Device to the FlowFuse Platform
 
-Now, you'll need to add a new device to the FlowFuse platform and download the device configuration file. This configuration will allow to connect your MacOS device to your FlowFuse team. For more information on how to add a device and generate the configuration, refer to [Generating "Device Configuration"](https://flowfuse.com/docs/device-agent/register/#generating-%22device-configuration%22).
+Now, you'll need to add a new device to the FlowFuse platform and download the device configuration file. This configuration will allow to connect your MacOS device to your FlowFuse team. For more information on how to add a device and generate the configuration, refer to [Generating "Device Configuration"](/docs/device-agent/register/).
 
 ### Step 7: Run the FlowFuse Device Agent Container
 
