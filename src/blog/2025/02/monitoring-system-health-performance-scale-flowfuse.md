@@ -2,7 +2,7 @@
 title: "Monitoring Device Health and Performance at Scale with FlowFuse" 
 subtitle: "Track and Optimize Edge Device Performance with Node-RED and FlowFuse."
 description: "Learn how to monitor system health and performance with Node-RED. Track CPU usage, memory, and other key metrics, and efficiently scale device monitoring with FlowFuse to thousands of devices."
-date: 2025-02-19
+date: 2025-02-21
 authors: ["sumit-shinde"]
 image:
 keywords: real-time device monitoring, FlowFuse for IoT monitoring, scalable edge device monitoring, remote device performance tracking, centralized device monitoring dashboard, optimizing IoT device health, real-time performance tracking with Node-RED, remote monitoring for industrial automation
@@ -11,29 +11,27 @@ tags:
  - flowfuse
 ---
 
-Edge devices are everywhere, and their numbers are skyrocketing—from 2.7 billion in 2020 to a projected 7.8 billion by 2030, according to [various reports](https://transformainsights.com/news/edge-computing-rapid-growth-iot#:~:text=New%20Transforma%20Insights%20reports%20covering,edge%20capabilities%20in%20IoT%20devices.). That is a massive leap, highlighting their growing role in IoT and industrial automation.
+Edge devices are everywhere, and their numbers are skyrocketing—from 2.7 billion in 2020 to a projected 7.8 billion by 2030, according to [various reports](https://transformainsights.com/news/edge-computing-rapid-growth-iot#:~:text=New%20Transforma%20Insights%20reports%20covering,edge%20capabilities%20in%20IoT%20devices.). As these devices become critical for automation and data processing, monitoring their health is essential to ensure reliability and efficiency.  
 
-<!--more-->
+<!--more--> 
 
-These edge devices are essential for automation, data processing, and connectivity. As their numbers grow, so does the need to monitor their health. Tracking key metrics like CPU usage, memory, and system performance helps ensure they run efficiently and remain reliable. Early detection of potential issues allows for timely intervention, preventing disruptions and optimizing performance.
-
-In this post, we will explore how to monitor devices using Node-RED. We will start with a flow that collects system metrics from a single device and then look at how FlowFuse simplifies monitoring at scale.  
+Tracking CPU usage, memory, and system performance helps detect potential issues early, preventing downtime and optimizing operations. In this post, we will explore how to monitor devices using Node-RED and scale this process efficiently with FlowFuse.  
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/43te5aD1RRw?si=5X2XbER_-ZQMLZOb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## What Exactly Does Monitoring Device Health Mean, and Why Is It Essential?
+## What is Device Health Monitoring, and Why is it Important?  
 
-Monitoring device health involves tracking various metrics to ensure they run efficiently. While many factors can be monitored, the most common and essential ones include CPU usage, memory, system uptime, and system load. These help identify potential issues early, preventing crashes or unexpected downtime.
+Edge devices power IoT and automation, handling communication and data processing. As their numbers grow, ensuring they run efficiently is crucial.  
 
-Edge devices are key in communication, data processing, and system integration in IoT and industrial settings. If these devices experience high CPU usage or low memory, they can slow down automation, disrupt data flow, and reduce overall efficiency. For example, in manufacturing, edge devices with tools like FlowFuse help connect older machines to modern cloud systems, collect and transform data, and integrate with other platforms. If these devices fail, real-time data flow can be interrupted, affecting decision-making and production.
+Monitoring device health means tracking key metrics like CPU usage, memory, uptime, and system load. High CPU usage or low memory can slow down processes, disrupt data flow, and reduce efficiency.  
 
-Regular monitoring helps catch small issues before they turn into major problems. This proactive approach keeps devices running smoothly, reduces downtime, and ensures they perform reliably in any environment.
+For example, in manufacturing, edge devices connect machines to cloud systems for real-time data. If a device fails, production can be impacted.  
+
+Regular monitoring helps detect issues early, prevents downtime, and keeps devices running smoothly. 
 
 ## Getting Started with Monitoring Devices
 
-In this section, you will learn how to retrieve key system metrics—CPU usage, memory usage, and more—using Node-RED. While testing on thousands of devices would be ideal, it is not practical here. Instead, we will demonstrate the process using a Raspberry Pi, a Windows machine, and a macOS device.
-
-We will begin by monitoring a single device (Raspberry Pi), collecting its data, and sending it to a hosted Node-RED instance for visualization in the FlowFuse dashboard. This step-by-step approach will help you understand how to retrieve these metrics before scaling up. Once you have learned the process and set it up, we will expand it to monitor multiple devices efficiently—just as FlowFuse enables customers to do at scale.
+We will begin by monitoring a single device, such as a Raspberry Pi, collecting system data, and visualizing it using FlowFuse. Once the process is clear, we will expand it to monitor multiple devices at scale.  
 
 ### Prerequisites
 
