@@ -1,3 +1,8 @@
+- type: "Webinar"
+  title: "The Power of Integration: FlowFuse Platform Update"
+  buttonText: "Register now"
+  link: "/webinars/2025/the-power-of-integration-flowfuse-platform-update/"
+  expire: "2025-02-27T16:00:00Z"
 - type: "New Whitepaper"
   title: "UNS - Decoupling data producers and consumers"
   buttonText: "Download now"

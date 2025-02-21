@@ -19,14 +19,22 @@ The following are the steps to produce a montly webinar.
    4. [Create a webinar page](#creating-a-webinar-page) for the website
    5. Create a Zoom webinar page
         * Login to zoom and select the Webinars tab. There is a webinar template that will help getting going.
-        *  Use the same description and topic that was used for the web page. 
-        * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud, require registration 
+        * Use the same description and topic that was used for the web page. 
+        * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud, require registration. 
         * Under Invitations, invite the speaker as a Panelist.
             - Panelist receive a unique url to join the webinar that grants them access before the webinar starts. It is important the speaker knows to use this url.
         * Under Email Setting ensure the following: Confirmation email sent to panelist, Reminder sent 1 hour and 1 day before.  Turn off email for follow-up since we do that inside Hubspot.
         * Under Branding, for the banner add the graphic created for the web site.
         * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in Hubspot.
-   6. Setup HubSpot to accept webinar registrations.
+   6. Setting up the survey on HubSpot.  
+        * Under **Automations > Surveys**, you'll find the latest one called *‘Webinar Survey - [&lt;month> &lt;year>]’*.  
+        * Clone it, update the survey name to match the month and year of the upcoming webinar, and update the header to match the webinar's name.  
+        * Publish the survey and copy the shareable link.  
+        * Under **Automations > Workflows**, you'll need to update two workflows: *‘Contact Us Request’* and *‘New Contact Us Form Completion - MQLs’*. In both workflows, you need to update the trigger enrollment for contacts.  
+        * Look for the group with the criteria: *‘Contact is associated to: Any Feedback submission’* and update the survey name to the one you just created.  
+        * Save the change and when it asks *'Do you want to enroll existing contacts?'* click on the button that says **'Save and don't enroll existing contacts'**. You should pay close attention to this step, because if you choose the other option, all of the contacts that have ever requested to be contacted will re-enroll and sales will get notifications and tasks to contact all of them again.  
+        * Go to **Zoom**, and in the **Webinars** section, under **Survey**, choose *'Use a 3rd party survey'* and paste the shareable link you obtained when the survey was published.
+   7. Setup HubSpot to accept webinar registrations.
         * Create a new static list called ‘Webinar Registrations [&lt;month> Edition]
         * Create a new form - clone an existing webinar registration form and rename it
         * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Three changes are required:
