@@ -123,7 +123,7 @@ With FlowFuse, factories can achieve faster, safer, and more scalable collaborat
 
 Start using FlowFuse today to streamline your industrial projects, enhance teamwork, and securely manage your Node-RED instances. 
 
-[Sign up now](https://flowfuse.com/signup) and experience the difference FlowFuse can make for your industrial environment and team.
+[Talk to experts](/book-demo/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Streamlining%20Node-RED%20Collaboration%20with%20FlowFuse) and learn more about how FlowFuse can optimize your operations.
 
 ## Up Next
 
