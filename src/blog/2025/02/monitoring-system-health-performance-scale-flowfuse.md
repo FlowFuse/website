@@ -41,9 +41,9 @@ Before you begin, ensure you have the following:
 
 For a step-by-step installation guide, refer to the [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/).  
 
-If you haven’t yet signed up for a FlowFuse account, [sign up now](https://app.flowfuse.com/account/create/).
+If you haven’t yet signed up for a FlowFuse account, [sign up now](https://app.flowfuse.com/account/create/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Monitoring%20Device%20Health%20and%20Performance%20at%20Scale%20with%20FlowFuse).
 
-2. **Required Node-RED Nodes:** To collect system data and display it on a dashboard, install the following Node-RED nodes via the [Node-RED Palette Manager](https://nodered.org/docs/user-guide/editor/palette/manager):  
+1. **Required Node-RED Nodes:** To collect system data and display it on a dashboard, install the following Node-RED nodes via the [Node-RED Palette Manager](https://nodered.org/docs/user-guide/editor/palette/manager):  
 
 - `node-red-contrib-os`: Retrieves system information such as memory, uptime, and load.
 - `node-red-contrib-cpu`: Monitors CPU usage.
@@ -159,7 +159,7 @@ _Image showing the environment variables of Raspberry Pi devices with their valu
 
 Using environment variables as the topic enables the same flow to be used across multiple devices without modification, ensuring that each device utilizes its own environment variables (device name) and sends data under its respective topic.
 
-## Visualizing Data with the FlowFuse Dashboard  
+### Visualizing Data with the FlowFuse Dashboard  
 
 Now that the data is being broadcasted, it can be used to build a simple dashboard that visualizes it with different types of charts.  
 
@@ -168,7 +168,7 @@ _Dashboard monitoring device CPU usage, memory uptime, and load average_
 
 Ensure that a separate **Hosted Instance** has been created in the same Team where the hardware is registered. This instance will be used to deploy the dashboard.  
 
-### Setting Up the Data Source
+#### Setting Up the Data Source
 
 1. Drag the **Project In** node onto the canvas.  
 2. Double-click on it and select "Listen for broadcast messages from".  
@@ -176,7 +176,7 @@ Ensure that a separate **Hosted Instance** has been created in the same Team whe
 4. Enter the device name in the topic field, ensuring it matches exactly with the `${FF_DEVICE_NAME}` device environment variable.  
 5. Click **Done**.  
 
-### Memory Usage Visualization
+#### Memory Usage Visualization
 
 1. Drag two **Change** nodes onto the canvas.  
 2. Double-click on the first **Change** node. Set `msg.payload` to:  
@@ -198,7 +198,7 @@ Ensure that a separate **Hosted Instance** has been created in the same Team whe
 
  Project In node → Change nodes → ui-chart widget  
 
-### CPU Usage Visualization
+#### CPU Usage Visualization
 
 1. Drag a Change node onto the canvas.  
 2. Double-click on the node. Set `msg.payload` to:  
@@ -218,7 +218,7 @@ Ensure that a separate **Hosted Instance** has been created in the same Team whe
 
  Project In node → Change node → ui-gauge widget
 
-## System Uptime Visualization
+#### System Uptime Visualization
 
 1. Drag the Humanizer node onto the canvas.  
 2. Double-click on the node and enter "UPTIME" in the input variable field.  
@@ -244,11 +244,11 @@ Below is the complete dashboard flow, which visualizes the system data we collec
 [{"id":"018657fd6a7e4237","type":"project link in","z":"797e084100cec864","name":"project in 1","project":"all","broadcast":true,"topic":"MacOS","x":80,"y":260,"wires":[["1335f4283b6bac10","acd675febbdadc6f","f875ddcc0de1c40f","95e3d356bd589be7","7cde186dd1601efb","6448cab78573bf39","d0e232ec780650fa"]]},{"id":"1335f4283b6bac10","type":"change","z":"797e084100cec864","name":"Free Memory","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.MEMORY_USAGE.freemem","tot":"msg"},{"t":"set","p":"topic","pt":"msg","to":"Free Memory","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":270,"y":160,"wires":[["eed0837fccf2639d"]]},{"id":"eed0837fccf2639d","type":"ui-chart","z":"797e084100cec864","group":"a54eed4c7110dfb5","name":"Memory Usage","label":"X - msg.topic, Series - msg.series","order":1,"chartType":"pie","category":"Pie","categoryType":"str","xAxisLabel":"","xAxisProperty":"topic","xAxisPropertyType":"msg","xAxisType":"radial","xAxisFormat":"","xAxisFormatType":"auto","xmin":"","xmax":"","yAxisLabel":"","yAxisProperty":"","yAxisPropertyType":"property","ymin":"","ymax":"","bins":"","action":"append","stackSeries":false,"pointShape":"circle","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"3","height":"3","className":"","interpolation":"linear","x":520,"y":140,"wires":[[]]},{"id":"acd675febbdadc6f","type":"change","z":"797e084100cec864","name":"Used Memory","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.MEMORY_USAGE.totalmem - payload.MEMORY_USAGE.freemem","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"Used Memory","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":280,"y":120,"wires":[["eed0837fccf2639d"]]},{"id":"f875ddcc0de1c40f","type":"change","z":"797e084100cec864","name":"CPU Overall Usage","rules":[{"t":"set","p":"payload","pt":"msg","to":"$round(payload.CPU_USAGE, 2)","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"CPU Overall Usage","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":290,"y":260,"wires":[["a777eb57611ddd60"]]},{"id":"a777eb57611ddd60","type":"ui-gauge","z":"797e084100cec864","name":"","group":"0d1f7e47031c74c1","order":1,"width":"4","height":"5","gtype":"gauge-34","gstyle":"rounded","title":"CPU ","units":"units","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#5cd65c"},{"from":"4","color":"#ffc800"},{"from":"7","color":"#ea5353"}],"min":0,"max":10,"sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":490,"y":260,"wires":[]},{"id":"95e3d356bd589be7","type":"humanizer","z":"797e084100cec864","name":"","input":"UPTIME","x":290,"y":340,"wires":[["9d237ff676ad6083"]]},{"id":"79e5bdfa309d27ea","type":"ui-text","z":"797e084100cec864","group":"3827fa7650fa2fa1","order":1,"width":"4","height":"5","name":"Uptime","label":"","format":"{{msg.payload}}","layout":"col-center","style":true,"font":"","fontSize":"99","color":"#0056d6","wrapText":false,"className":"","x":680,"y":340,"wires":[]},{"id":"9d237ff676ad6083","type":"change","z":"797e084100cec864","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.humanized","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":480,"y":340,"wires":[["79e5bdfa309d27ea"]]},{"id":"7cde186dd1601efb","type":"change","z":"797e084100cec864","name":"One Minute (LOAD_AVERAGE)","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.LOAD_AVERAGE.ONE_MIN","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"One Minute","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":330,"y":400,"wires":[["b5bf2c8c93abb5a9"]]},{"id":"6448cab78573bf39","type":"change","z":"797e084100cec864","name":"Five Minute (LOAD_AVERAGE)","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.LOAD_AVERAGE.FIVE_MIN","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"Five Minute","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":330,"y":440,"wires":[["b5bf2c8c93abb5a9"]]},{"id":"d0e232ec780650fa","type":"change","z":"797e084100cec864","name":"Fifteen Minute (LOAD_AVERAGE)","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.LOAD_AVERAGE.FIFTEEN_MIN","tot":"jsonata"},{"t":"set","p":"topic","pt":"msg","to":"Fifteen Minute","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":340,"y":480,"wires":[["b5bf2c8c93abb5a9"]]},{"id":"b5bf2c8c93abb5a9","type":"ui-chart","z":"797e084100cec864","group":"0c78dcb3aefb38a8","name":"LOAD AVERAGE","label":"chart","order":1,"chartType":"line","category":"topic","categoryType":"msg","xAxisLabel":"","xAxisProperty":"","xAxisPropertyType":"timestamp","xAxisType":"time","xAxisFormat":"","xAxisFormatType":"auto","xmin":"","xmax":"","yAxisLabel":"","yAxisProperty":"payload","yAxisPropertyType":"msg","ymin":"","ymax":"","bins":10,"action":"append","stackSeries":false,"pointShape":"dash","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#a347e1","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"12","height":"6","className":"","interpolation":"linear","x":610,"y":440,"wires":[[]]},{"id":"a54eed4c7110dfb5","type":"ui-group","name":"Memory Usage","page":"d0621b8f20aee671","width":"3","height":"3","order":3,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"0d1f7e47031c74c1","type":"ui-group","name":"CPU Usage","page":"d0621b8f20aee671","width":"4","height":"5","order":2,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"3827fa7650fa2fa1","type":"ui-group","name":"SYSTEM UPTIME","page":"d0621b8f20aee671","width":"5","height":"5","order":1,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"0c78dcb3aefb38a8","type":"ui-group","name":"Load Average","page":"d0621b8f20aee671","width":"12","height":1,"order":4,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"d0621b8f20aee671","type":"ui-page","name":"Mac OS","ui":"6c8450c52cafa145","path":"/macos","icon":"home","layout":"grid","theme":"5075a7d8e4947586","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"6c8450c52cafa145","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"headerContent":"page","navigationStyle":"default","titleBarStyle":"default","showReconnectNotification":true,"notificationDisplayTime":1,"showDisconnectNotification":true},{"id":"5075a7d8e4947586","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}}]
 {% endrenderFlow %}
 
-## Scaling Device Monitoring with FlowFuse
+### Scaling Device Monitoring with FlowFuse
 
 Now that we have learned how to monitor a single device, built a flow to gather system data, and created a dashboard to visualize those metrics, the real challenge arises when scaling up to thousands or even tens of thousands of devices. Manually creating a system data-gathering flow for each device would be impractical. However, FlowFuse can automate this process in less than five minutes. Let's see how.
 
-### Creating Device Group
+#### Creating Device Group
 
 1. Navigate to the FlowFuse platform and go to the Application where your devices are and where you want to create a group. Ensure that all the devices you want to monitor are part of this application.  
 
@@ -260,12 +260,12 @@ _Showing the option to switch to "Device Groups" and the "Add Device Group" butt
 ![Form to Create a Device Group: Enter the group name and description ](./images/device-group-form-create.png){data-zoomable}  
 _Form to Create a Device Group: Enter the group name and description_
 
-3. Click on the newly created group and then click the "Edit" button at the top-right.
+2. Click on the newly created group and then click the "Edit" button at the top-right.
 
 ![Image showing the edit button to be clicked on.](./images/edit-device-group.png){data-zoomable}  
 _Image showing the edit button to be clicked on._
 
-4. Next, in the left-side container, you will see a list of all available devices in your application. Select the devices you want to add to the group (make sure to add only the devices that require the deployment of the flow built to gather system metrics). Click the "Add Devices" button at the top-right of that container, and then click "Save Changes". Once done, you will see all added devices in the right-side container, confirming that they have been successfully added to the group.
+3. Next, in the left-side container, you will see a list of all available devices in your application. Select the devices you want to add to the group (make sure to add only the devices that require the deployment of the flow built to gather system metrics). Click the "Add Devices" button at the top-right of that container, and then click "Save Changes". Once done, you will see all added devices in the right-side container, confirming that they have been successfully added to the group.
 
 ![Interface to select the devices that need to be added to the group, along with the 'Add Devices' button.](./images/device-group-device-adding.png ){data-zoomable}  
 _Interface to select the devices that must be added to the group, along with the 'Add Devices' button._
@@ -273,7 +273,7 @@ _Interface to select the devices that must be added to the group, along with the
 ![Showing the selected devices we chose to add, along with the 'Save Changes' button.](./images/save-changes-to-add-devices.png ){data-zoomable}  
 _Showing the selected devices we chose to add, along with the 'Save Changes' button._
 
-### Creating Snapshot
+#### Creating Snapshot
 
 1. Navigate to the Remote Instance on which we developed the flow to monitor performance. Switch to "Version History" by clicking on "Version History" from the top.
 
@@ -287,7 +287,7 @@ _Showing the form to create a snapshot and the "Set as Target" option._
 
 If you want to learn more about snapshots, you can read our article [Using Snapshots for Version Control in Node-RED with FlowFuse](/blog/2024/09/node-red-version-control-with-snapshots/).
 
-### Creating a DevOps Pipeline  
+#### Creating a DevOps Pipeline  
 
 1. Navigate to the application where the devices were added and the device group was created. Switch to the "Pipelines" tab at the top, then click "Add Pipeline". In the newly opened window, enter a pipeline name.  
 
@@ -302,7 +302,7 @@ _Image showing the form to create a pipeline by entering a name._
 ![Image showing the button to add a stage.](./images/adding-stage-button.png){data-zoomable}  
 _Image showing the button to add a stage._  
 
-1. In the newly opened window, select "Remote Instance" as the stage type, enter a stage name, and select the device where the flow was previously built for a single device. Under "Action," select "Use active snapshot" and click "Add Stage".  
+3. In the newly opened window, select "Remote Instance" as the stage type, enter a stage name, and select the device where the flow was previously built for a single device. Under "Action," select "Use active snapshot" and click "Add Stage".  
 
 ![Image showing the form to add a stage, where a stage is being added for a Raspberry Pi remote instance.](./images/rpi-stage.png){data-zoomable}  
 _Image showing the form to add a stage, where a stage is being added for a Raspberry Pi remote instance._  
@@ -317,7 +317,7 @@ _Image showing the form to add a stage, where a stage is being added for a Devic
 ![Image showing the fleet mode status of the device (disabling the developer mode option will set the device to fleet mode).](./images/fleet-mode.png){data-zoomable}  
 _Image showing the fleet mode status of the device (disabling the developer mode option will set the device to fleet mode)._  
 
-7. Once both stages are added, click the 'Run Pipeline' button for the first stage. Running the pipeline will deploy the active snapshot to the devices in the device group, including all settings, environment variables, and flows of that instance. Whether the device group has two devices or thousands, the deployment will be completed efficiently and quickly.
+6. Once both stages are added, click the 'Run Pipeline' button for the first stage. Running the pipeline will deploy the active snapshot to the devices in the device group, including all settings, environment variables, and flows of that instance. Whether the device group has two devices or thousands, the deployment will be completed efficiently and quickly.
 
 To learn more about DevOps pipelines, read the article: [Creating and Automating DevOps Pipelines for Node-RED in Industrial Environments](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/).  
 

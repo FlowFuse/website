@@ -43,7 +43,7 @@ _Bridging Modbus Data to MQTT using Node-RED_
 - A **Modbus data source**, such as an actual Modbus device or a simulator like ModSim.
 - A **FlowFuse account**, which enables you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on projects with your team, manage and monitor edge devices centrally, handle data pipelines efficiently, and leverage its integrated MQTT broker service for seamless UNS management, with an intuitive interface for securely managing clients.
 
-If you haven’t signed up for a FlowFuse account yet, do so now by clicking [sign up](https://app.flowfuse.com/account/create).
+If you haven’t signed up for a FlowFuse account yet, do so now by clicking [sign up](https://app.flowfuse.com/account/create?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Publishing%20Modbus%20data%20to%20your%20UNS%20with%20FlowFuse).
 
 ### Step 1: Collect Data from Modbus Devices
 

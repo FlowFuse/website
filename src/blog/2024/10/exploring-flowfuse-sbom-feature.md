@@ -65,6 +65,6 @@ _Image showing the Dependencies tab along with the detailed notes of each item d
 
 Incorporating a Software Bill of Materials into your development process not only enhances security but also fosters a culture of accountability and transparency within your team. By understanding your dependencies, you can make informed decisions that protect your applications and ensure compliance with industry standards. 
 
-**Try FlowFuse today with a free trial! Discover how you can enhance your Node-RED projects and accelerate your production processes. [Sign up now](https://app.flowfuse.com/account/create)!**
+**Try FlowFuse today with a free trial! Discover how you can enhance your Node-RED projects and accelerate your production processes. [Sign up now](https://app.flowfuse.com/account/create?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%27s%20Software%20bills%20of%20material%20helps%20enhance%20Application%20Security%20and%20Management)!**
 
-*If you are an educator or student, we offer support and provide free licenses. Contact us for more information [here](/education/).*
+*If you are an educator or student, we offer support and provide free licenses. Contact us for more information [here](/education/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta%20educational%20license&utm_term=high_intent&utm_content=FlowFuse%27s%20Software%20bills%20of%20material%20helps%20enhance%20Application%20Security%20and%20Management).*

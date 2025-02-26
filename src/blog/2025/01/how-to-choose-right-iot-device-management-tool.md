@@ -129,8 +129,8 @@ Built on the flexible [Node-RED](/node-red) framework, FlowFuse easily integrate
 
 If things go awry, FlowFuse’s [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) feature lets you quickly revert to a previous stable state, minimizing downtime and keeping your systems running smoothly. Advanced monitoring tools continuously track device performance, sending alerts if issues like crashes or resource overloads arise, so your team can act before problems escalate. Detailed device logs and audit trails make troubleshooting straightforward, helping you quickly pinpoint issues and maintain a secure environment.
 
-FlowFuse offers [flexible pricing plans](/pricing/), including a free tier that allows you to manage up to two devices—so you can try the platform before making any commitment. Whether you’re just starting out or scaling your operations, FlowFuse provides the tools and support you need to efficiently manage your IIoT network.
+FlowFuse offers [flexible pricing plans](/pricing/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta%20pricing&utm_term=high_intent&utm_content=How%20to%20Choose%20the%20Right%20IIoT%20Device%20Management%20Software%20for%20Your%20Business), including a free tier that allows you to manage up to two devices—so you can try the platform before making any commitment. Whether you’re just starting out or scaling your operations, FlowFuse provides the tools and support you need to efficiently manage your IIoT network.
 
 Ready to elevate your IIoT management? Get started with FlowFuse today and see the difference for yourself.
 
-**Ready to learn more? [Talk to our expert or book a demo](/book-demo/) today!**
+**Ready to learn more? [Talk to our expert or book a demo](/book-demo/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=How%20to%20Choose%20the%20Right%20IIoT%20Device%20Management%20Software%20for%20Your%20Business) today!**
