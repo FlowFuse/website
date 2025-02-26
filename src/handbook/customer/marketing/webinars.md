@@ -59,8 +59,9 @@ The following are the steps to produce a montly webinar.
 
 ### Promo video
 #### Technical specifications
-* Use a solid, contrasting background.
+* Use a solid, contrasting background to make it easier to crop the video and remove the background later.
 * Frame the speaker from the chest up with space around the head and shoulders for both landscape and portrait formats.
+![Video framing examples](./images/video-framing.png){ width=600 }
 * Ensure the video is in HD quality or higher.
 * Keep the video under one minute to allow for YouTube Shorts.
 
@@ -81,6 +82,10 @@ If you're interested in [Relevant Topic or Pain Point], this is the perfect sess
 Don’t miss out, register now and join me as we dive into [What You’ll Learn or Discuss in the Session].
 I look forward to seeing you there!
 ```
+
+And [here's](https://youtube.com/shorts/RCT-_m_NVbM) a sample of one of our past promo videos.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bgJNk0x_sMs?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Post Webinar
 
