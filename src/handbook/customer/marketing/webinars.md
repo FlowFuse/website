@@ -11,7 +11,7 @@ The FlowFuse webinar is typically scheduled during the last week of the month. T
 
 The following are the steps to produce a montly webinar.
 
-## Webinar preparation
+## Webinar Preparation
 
    1. Identify the webinar topic and speaker as close as possible to the previous webinar.
    2. Create a draft webinar title and abstract that is reviewed and approved by the speaker. 
@@ -49,13 +49,38 @@ The following are the steps to produce a montly webinar.
 
 * Week 1: Added to the newsletter (note to also promote on-demand version of the previous month's webinar in the newsletter) 
 * Week 2: Social media promotion on all channels:
-    * LinkedIn, Twitter, Facebook, Node-RED Forum Event category, Redit Node-RED, Node-RED slack
+    * LinkedIn, Twitter, Facebook, Node-RED Forum Event category, Redit Node-RED, Node-RED slack. For socials a [promo video](#promo-video) recorded by the speaker is recommended.
     * Encourage FlowFuse employees to promote their network
     * Dedicated email to all in the community outreach list
 * Week 3 (1 week before webinar): Email to Hubspot list (Send to those you didn't open previous week's email and new leads in DB. Exclude registered leads) 
     * Typically clone a previous email as the starting point.
 * Week 4: Another social media promotion and email.
-    * Typically this is sent 1 day before the webinar as a reminder that its not too late to join.  
+    * Typically this is sent 1 day before the webinar as a reminder that its not too late to join.
+
+### Promo video
+#### Technical specifications
+* Use a solid, contrasting background.
+* Frame the speaker from the chest up with space around the head and shoulders for both landscape and portrait formats.
+* Ensure the video is in HD quality or higher.
+* Keep the video under one minute to allow for YouTube Shorts.
+
+#### Recommended script structure
+We encourage the speaker to create their own script for a natural delivery. However, the following points should be covered:
+* Speaker's name, job title, and company.
+* Webinar date and title.
+* Brief description of what the audience will learn or gain.
+* A call to action (e.g., "Register now and join me for [what the session will cover]").
+* A phrase that encourages engagement, such as "I look forward to having you join us!" or "I hope to see you there!"
+
+Here's a template to help you get started:
+```
+Hi, I'm [Name], [Job Title] at [Company Name].
+I'll be presenting in our upcoming webinar on [Date], titled “[Webinar Title]”.
+In this session, we’ll cover [Brief Overview of the Webinar's Focus/Key Topics].
+If you're interested in [Relevant Topic or Pain Point], this is the perfect session for you.
+Don’t miss out, register now and join me as we dive into [What You’ll Learn or Discuss in the Session].
+I look forward to seeing you there!
+```
 
 ## Post Webinar
 
