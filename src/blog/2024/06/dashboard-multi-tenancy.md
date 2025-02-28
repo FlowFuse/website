@@ -97,4 +97,4 @@ A huge thanks to Fred Loucks ([@fullmetal-fred](https://github.com/fullmetal-fre
 
 ## Build Multi Tenant Dashboards with FlowFuse Cloud
 
-If you want to try out multi-tenant dashboards for yourself, you can sign up to FlowFuse Cloud [here](https://app.flowfuse.com/account/create), and get started by following our [Getting Started Guide](https://dashboard.flowfuse.com/user/multi-tenancy.html#building-multi-tenant-dashboards).
+If you want to try out multi-tenant dashboards for yourself, you can sign up to FlowFuse Cloud [here](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Multi-Tenancy%20available%20for%20everyone%20with%20FlowFuse%27s%20Dashboard%202.0), and get started by following our [Getting Started Guide](https://dashboard.flowfuse.com/user/multi-tenancy.html#building-multi-tenant-dashboards).

@@ -134,4 +134,4 @@ FlowFuse also offers enterprise-grade features to manage edge devices and Node-R
 
 **Take Control of Your Data with FlowFuse**
 
-Want to make the most of your data? [Let’s talk!](/book-demo/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Data%20Modeling%3A%20The%20Key%20to%20a%20Successful%20Unified%20Namespace) Our team is ready to help you set up a Unified Namespace (UNS) that fits your needs.
+Want to make the most of your data? [Let’s talk!](/book-demo/?utm_campaign=60167396-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Data%20Modeling%3A%20The%20Key%20to%20a%20Successful%20Unified%20Namespace) Our team is ready to help you set up a Unified Namespace (UNS) that fits your needs.

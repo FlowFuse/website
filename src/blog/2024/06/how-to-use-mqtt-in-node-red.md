@@ -38,7 +38,7 @@ FlowFuse has also launched an MQTT broker service that is integrated directly in
 
 For Node-RED, we will be using FlowFuse, which enhances Node-RED usage with managed instances, automated deployments, and real-time collaboration features, making it ideal for enterprise teams. It simplifies the configuration, monitoring, and operation of Node-RED applications. 
 
-1. Head to the [FlowFuse sign-up](https://app.flowfuse.com/account/create) page to create your new account and the [FlowFuse login](https://app.flowfuse.com/) page to log in.
+1. Head to the [FlowFuse sign-up](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Use%20MQTT%20in%20Node-RED) page to create your new account and the [FlowFuse login](https://app.flowfuse.com/) page to log in.
 2. After successful login, you will see the Application and instance which is added by default.
 3. Click on that instance and then click on the editor URL to open the Node-RED editor.
 
