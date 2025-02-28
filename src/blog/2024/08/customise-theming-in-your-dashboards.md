@@ -258,3 +258,5 @@ For more information on  theme, how to add new themes, and set themes for pages,
 ## Conclusion
 
 In this article, we explored FlowFuse Dashboard's new customization features. We focused on adding elements like buttons and logos to the header, and discussed styling options such as default, hidden, and fixed for headers. We also covered how to adjust dashboard themes to personalize colors and layout. These insights empower users to create more personalized and functional Node-RED dashboards.
+
+If you are looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team, [sign up](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Customise%20theming%20in%20your%20FlowFuse%20Dashboard) for FlowFuse and get started today!

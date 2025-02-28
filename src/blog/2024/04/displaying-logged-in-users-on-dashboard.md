@@ -146,3 +146,5 @@ If you want to learn more about the FlowFuse Multiuser addon and Personalize Mul
 
 ## Conclusion 
 In this guide, we have demonstrated how to secure your dashboard and how to retrieve and display logged in user data on Dashboard 2.0. Additionally, we have discussed the functionality of the FlowFuse multi-user addon.
+
+If you want to build a multi-user dashboard, deploy it effortlessly, scale and manage Node-RED seamlessly, and provide secure remote access for your team, [get started](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Displaying%20logged%20in%20user%20on%20Node-RED%20Dashboard%202.0) with FlowFuse today!
