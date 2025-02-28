@@ -87,7 +87,7 @@ With its intuitive interface, FlowFuse handles deployments, updates, and real-ti
 FlowFuse also enhances security with advanced settings, keeping your systems safe while boosting collaboration. As operations grow, FlowFuse scales seamlessly, integrating new devices and systems without added complexity.
 
 By simplifying system management, FlowFuse cuts costs, keeps production running smoothly, and lets your team focus on growth and innovation.
-[**Get started with FlowFuse on the Cloud**](https://app.flowfuse.com/account/create/?utm_campaign=60167396-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Transform%20Chaos%20into%20Control%3A%20Centralize%20Node-RED%20Management%20with%20FlowFuse)
+[**Get started with FlowFuse on the Cloud**](https://app.flowfuse.com/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Transform%20Chaos%20into%20Control%3A%20Centralize%20Node-RED%20Management%20with%20FlowFuse)
 
 ## Conclusion
 

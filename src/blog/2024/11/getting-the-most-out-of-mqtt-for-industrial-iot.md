@@ -108,7 +108,7 @@ FlowFuse also simplifies the creation of acknowledgment mechanisms. With Node-RE
 
 Additionally, FlowFuse provides its own MQTT broker service that follows open standards, helping you avoid vendor lock-in and offering the flexibility to scale and adapt as your needs evolve. With built-in high availability, load balancing, and access control mechanisms, FlowFuse ensures continuous and reliable and secure data flow. And you can scale its capabilities by contacting FlowFuse support to meet the growing demands of your industrial IoT system.
 
-**Ready to elevate your industrial IoT system? [Get started with FlowFuse today!](https://app.flowfuse.cloud/account/create/?utm_campaign=60167396-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Getting%20the%20Most%20Out%20of%20MQTT%20for%20Industrial%20IoT)**
+**Ready to elevate your industrial IoT system? [Get started with FlowFuse today!](https://app.flowfuse.cloud/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Getting%20the%20Most%20Out%20of%20MQTT%20for%20Industrial%20IoT)**
 
 ## Conclusion
 

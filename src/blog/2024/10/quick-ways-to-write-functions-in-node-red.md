@@ -84,9 +84,9 @@ Before proceeding, ensure you have updated Node-RED to the latest version on the
 
 Using the FlowFuse Assistant is significantly easier than Blockly, as it streamlines the process and saves you valuable time. You can articulate your goals in plain English or other languages, such as Spanish or Dutch, and the assistant generates your Function Node seamlessly. This allows you to focus more on your project objectives rather than getting bogged down in coding or block arrangements. Additionally, it provides you with the original Function Node, maintaining standard functionality.
 
-*Start using FlowFuse today by creating your free trial account [here](https://app.flowfuse.com/account/create?utm_campaign=60167396-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Exploring%20Quick%20Ways%20to%20Write%20Complex%20Logic%20in%20Function%20Nodes%20in%20Node-RED).*
+*Start using FlowFuse today by creating your free trial account [here](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Exploring%20Quick%20Ways%20to%20Write%20Complex%20Logic%20in%20Function%20Nodes%20in%20Node-RED).*
 
-*If you are an educator or a student, we offer FlowFuse for free. Visit the [FlowFuse for Education page](/education/?utm_campaign=60167396-BCTA&utm_source=blog&utm_medium=cta%20educational%20license&utm_term=high_intent&utm_content=Exploring%20Quick%20Ways%20to%20Write%20Complex%20Logic%20in%20Function%20Nodes%20in%20Node-RED) to learn more.*
+*If you are an educator or a student, we offer FlowFuse for free. Visit the [FlowFuse for Education page](/education/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20educational%20license&utm_term=high_intent&utm_content=Exploring%20Quick%20Ways%20to%20Write%20Complex%20Logic%20in%20Function%20Nodes%20in%20Node-RED) to learn more.*
 
 ## Conclusion 
 
