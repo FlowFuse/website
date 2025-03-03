@@ -7,7 +7,7 @@ tags:
   - changelog
 ---
 
-# New Device Version History Events in FlowFuse 2.14
+# New Device Version History Events
 
 Starting with the 2.14 release, users will now be able to track additional events in the remote instance version history timeline. This enhancement improves traceability and provides deeper insights into remote instance state changes over time.
 
