@@ -65,7 +65,7 @@ For testing, we have created a flow to get you started. Follow this [link](https
 ### Finalizing and Testing the Setup
 The final steps ensure that your setup is fully operational:
 1. Once deployed, navigate to the device.  
-2. [Enable Developer Mode](/docs/device-agent/deploy/#editing-the-node-red-flows-on-a-device-that-is-assigned-to-an-application).
+2. [Enable Developer Mode](/docs/device-agent/deploy/#editing-the-node-red-flows-on-a-remote-instance-that-is-assigned-to-an-application).
 3. Next, click the newly revealed button, **Open Editor**, to access the deployed Flow.
 
 ### Conclusion
