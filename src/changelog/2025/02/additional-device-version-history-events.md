@@ -17,4 +17,4 @@ Starting with the 2.14 release, users will now be able to track additional event
 - **Snapshot Rollback**
 - **Snapshot Create**
 
-These events will be automatically recorded in the version history, allowing users to review and audit changes more effectively. This update enhances transparency and troubleshooting capabilities within the FlowFuse platform.
+These events will be automatically recorded in the version history, allowing users to review and audit changes more effectively.
