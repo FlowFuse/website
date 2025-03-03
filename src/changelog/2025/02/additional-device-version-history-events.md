@@ -9,7 +9,7 @@ tags:
 
 # New Device Version History Events
 
-Starting with the 2.14 release, users will now be able to track additional events in the remote instance version history timeline. This enhancement improves traceability and provides deeper insights into remote instance state changes over time.
+Users can now get better visibility of the state of their Remote Instances with additional events in the Version History timeline. This enhancement improves traceability and provides deeper insights into remote instance state changes over time.
 
 ## New Trackable Events
 - **Deploying Snapshots to Remote Instance via a Pipeline**
