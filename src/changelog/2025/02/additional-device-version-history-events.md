@@ -1,5 +1,5 @@
 ---
-title: New Remote Instances Version History Events in FlowFuse 2.14
+title: New Remote Instances Version History Events
 description:
 date: 2025-02-25 12:00:00.0
 authors: ['serban-costin']
