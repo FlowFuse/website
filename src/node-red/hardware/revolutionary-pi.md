@@ -10,13 +10,13 @@ meta:
 
 # {{meta.title}}
 
-The Revolutionary Pi is a popular edge device used for data processing, IoT integration, and automation.
+Revolution Pi is an industrial-grade computer based on the Raspberry Pi Compute Module, designed specifically for use in industrial automation environments, offering features like robust hardware, a real-time operating system, and support for various industrial protocols, allowing it to be used as an IIoT gateway to collect and send data from factory machines to the cloud.
 
-### Goal
+## Goal
 
 This documentation guides users through installing the FlowFuse Device Agent on a Revolution Pi. The agent enables running Node-RED on the edge device, managing it remotely via FlowFuse, and accessing [enterprise features](/product/features/) that are useful for organizations. Since the device does not come with Node.js preinstalled, this guide covers installing both Node.js and the FlowFuse Device Agent.
 
-### Prerequisites
+## Prerequisites
 
 Before proceeding with the installation, ensure you have the following:
 
