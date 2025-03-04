@@ -92,8 +92,6 @@ Given the above architecture, let's take a look at the relevant FlowFuse offerin
 
 ### Deploy to FlowFuse
 
-{% include "cta.njk", cta_url: "/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=Building%20on%20FlowFuse%3A%20Remote%20Device%20Monitoring", cta_type: "talk", cta_text: "If you're interested in discussing how your company could benefit from this design pattern" %}
-
 ### Customer Stories
 
 If you want to deep dive further into how this design pattern has been used by our customers, we have some customer stories that you might find interesting:
