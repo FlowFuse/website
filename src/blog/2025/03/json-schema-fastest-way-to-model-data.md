@@ -2,9 +2,9 @@
 title: "JSON Schema: The Fastest Way to Model and Validate Your Data"
 subtitle: "Streamline Your Data with JSON Schema: Model, Validate, and Standardize Effortlessly."
 description: Learn how JSON Schema simplifies data modeling and validation for seamless industrial data operations and how you can leverage popular industrial low-code platforms to implement it.
-date: 2025-02-26
+date: 2025-03-06
 authors: ["sumit-shinde"]
-image: 
+image:  /blog/2025/03/images/json-schema-fastest-way-to-validate-data.png
 keywords: json schema, data validation, data modeling, industrial data, node-red, flowfuse, low-code, siemens plc, raspberry pi, json schema validator, structured data, mqtt, industrial automation, real-time data, edge computing, data consistency
 tags:
   - node-red
