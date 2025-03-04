@@ -19,9 +19,7 @@ A well-structured topic hierarchy is critical in manufacturing, where vast amoun
 
 In this post, we'll explore the significance of topic structuring for your UNS, outline why it's essential for scalability and performance, and share best practices for designing a robust topic hierarchy that can evolve alongside your business.
 
-
 ## Why Topic Structuring is Crucial for Your UNS
-
 
 When building a UNS for manufacturing environments, [MQTT](/blog/2025/01/mqtt-frontrunner-for-uns/) is one of the most popular and preferred choices due to its lightweight, efficient, and scalable design. MQTT’s publish-subscribe model is perfect for handling the real-time, high-volume data flow in factories, where machines, sensors, and devices constantly generate information. However, while MQTT is a powerful tool, how you structure your topics plays a pivotal role in ensuring that your UNS is scalable and efficient.
 
@@ -202,4 +200,4 @@ What truly stands out is FlowFuse's ability to handle both legacy and modern ind
 
 FlowFuse doesn’t just help you manage topics—it streamlines collaboration, enhances system performance, and accelerates your journey toward a fully integrated, future-proof UNS.
 
-**Looking to simplify your UNS management? [Start](https://app.flowfuse.com/account/create) using FlowFuse today and unlock the full potential of your data architecture. If you need more information, feel free to [reach out to our experts.](/book-demo/)**
+**Looking to simplify your UNS management? [Start](https://app.flowfuse.com/account/create?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Designing%20a%20Clear%20Topic%20Structure%20for%20Your%20UNS) using FlowFuse today and unlock the full potential of your data architecture. If you need more information, feel free to [reach out to our experts.](/book-demo/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Designing%20a%20Clear%20Topic%20Structure%20for%20Your%20UNS)**
