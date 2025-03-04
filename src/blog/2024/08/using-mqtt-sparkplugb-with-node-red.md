@@ -207,3 +207,5 @@ _Images of some Sparkplug messages printed on debug panel_
 
 - [Using MQTT With Node-RED](/node-red/protocol/mqtt/): This guide provides a basic overview of how to integrate MQTT with Node-RED, offering a foundational understanding for beginners who are just starting with this protocol.
 - [How to Use MQTT With Node-RED](/blog/2024/06/how-to-use-mqtt-in-node-red/): This comprehensive guide delves into the detailed steps and advanced techniques for effectively using MQTT within Node-RED, including practical examples to help you apply these concepts in real-world scenarios.
+
+{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Using%20MQTT%20Sparkplug%20B%20with%20Node-RED", cta_type: "signup", cta_text: "Enhance your Node-RED experience with FlowFuse! Gain better scalability, streamlined deployments, and improved team collaboration—all while optimizing MQTT Sparkplug B integration for efficient data exchange." %}

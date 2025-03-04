@@ -285,3 +285,5 @@ To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse ac
 ## Conclusion
 
 In this guide, we covered how to set up SSO with LDAP for your self-hosted FlowFuse platform using OpenLDAP. We installed and configured OpenLDAP, learned to managed groups and users, and configured SSO within FlowFuse. This setup enhances security by centralizing user authentication and simplifies access across applications, ensuring efficient user management in your FlowFuse deployment.
+
+{% include "cta.njk", cta_url: "/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=How%20to%20Set%20Up%20SSO%20LDAP%20for%20Node-RED", cta_type: "contact", cta_text: "Got questions or need help setting up SSO LDAP for FlowFuse (Node-RED)? with us!" %}

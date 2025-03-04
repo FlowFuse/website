@@ -143,3 +143,5 @@ To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse ac
 ## Conclusion
 
 In this guide, we've covered setting up SSO SAML for your self-hosted FlowFuse platform, exploring how SSO and SAML enhance user experience, improve security, and simplify management. You've learned to create an SSO configuration in FlowFuse, set up a SAML app in Google Workspace, and enable seamless authentication.
+
+{% include "cta.njk", cta_url: "/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=How%20to%20Set%20Up%20SSO%20SAML%20for%20Node-RED", cta_type: "contact", cta_text: "Got questions or need help setting up SSO SAML for FlowFuse (Node-RED)?" %}

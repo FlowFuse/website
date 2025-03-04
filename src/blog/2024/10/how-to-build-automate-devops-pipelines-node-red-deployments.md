@@ -93,4 +93,4 @@ When creating a pipeline, you can include only one Device Group, and it must be 
 
 DevOps pipelines formalize deployment patterns, standardize testing, and streamline updates, minimizing errors and downtime. This clear process improves reliability and helps organizations adapt more easily thus ensuring smooth operation of critical applications in manufacturing and automotive environments.
 
-[Talk to our experts](/book-demo/?utm_campaign=60167396-BlogClickToAction&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Creating%20and%20Automating%20DevOps%20Pipelines%20for%20Node-RED%20in%20Industrial%20Environments) to learn how FlowFuse can help automate your Node-RED deployments for efficiency and reliability.
+{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Creating%20and%20Automating%20DevOps%20Pipelines%20for%20Node-RED%20in%20Industrial%20Environments", cta_type: "demo", cta_text: "Want to learn how FlowFuse can help you scale, manage, and optimize your industrial processes?" %}
