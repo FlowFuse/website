@@ -218,6 +218,11 @@ pre code {
     margin: auto;
 }
 
+.prose .cta a > p {
+    color: inherit;
+    font-weight: inherit;
+}
+
 .nodered table {
     text-align: center;
 }
