@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Hardware
 meta:
    title: Setting Node-RED on Revolutionary Pi
-   description: Learn how to set up Node-RED on a Raspberry Pi 4, including installation, configuration, and integration with sensors and actuators.
+   description: Learn how to install and configure the FlowFuse Device Agent on a Revolutionary Pi, set up Node.js, and ensure seamless remote management with FlowFuse.
    keywords: node-red, raspberry pi, Revolutionary Pi
 ---
 
@@ -31,7 +31,13 @@ Before proceeding with the installation, ensure you have the following:
 
   - `https://registry.npmjs.com`
 
-Verify that your network can access the necessary services. You can run the following `curl` commands to check connectivity:
+Verify that your device can access the necessary services. If telnet is not installed, install it using:
+
+```bash
+sudo apt install -y telnet
+```
+
+Then, run the following commands:
 
   ```bash
   telnet app.flowfuse.com 443
@@ -114,7 +120,7 @@ After installing the FlowFuse Device Agent, the next step is to link the Revolut
 
 Follow the instructions in the official documentation to add your device to your FlowFuse team: [Add a Remote Instance](/docs/device-agent/register/#add-remote-instance).
 
-Once you register the device, you will receive the configuration details required to connect it to your team. Copy the provided command.
+Once you register the device, you will receive the configuration details required to connect device to your team. Copy the provided command.
 
 ![Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team.](./images/how-to-setup-node-red-on-raspberry-pi-device-configuration-dialog.png "Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team."){data-zoomable}
 
@@ -124,7 +130,7 @@ Execute the command you copied to complete the device configuration.
 
 #### Step 3: Restart the Device Agent
 
-Once the device is configured, restart the device. The FlowFuse Device Agent will start automatically every time you restart the device.
+Once the device is configured, restart it. The FlowFuse Device Agent will start automatically upon reboot.
 
 #### Step 4: Verifying the Device Agent is Running
 
@@ -144,6 +150,6 @@ sudo systemctl start flowfuse-agent
 
 #### Step 5: Monitor and Manage Device from FlowFuse
 
-Once the device is successfully registered and running, you can monitor and manage it from the FlowFuse platform. Any changes you make to the device’s configuration or Node-RED flows will be reflected on the device immediately.
+Once the device is successfully registered and running, you can monitor and manage it from the FlowFuse platform remotly. Any changes you make to the device’s configuration or Node-RED flows will be reflected on the device immediately.
 
 To access the device editor, go to your FlowFuse team, where you will see the Revolutionary Pi listed under remote instances. Click on it to enable the device editor, then open the editor. For more information, refer to [Deploy Flows to Remote Instances](https://flowfuse.com/docs/device-agent/quickstart/#deploy-flows-to-remote-instances).
