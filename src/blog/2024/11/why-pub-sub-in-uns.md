@@ -91,10 +91,10 @@ As we've discussed, the Pub/Sub model is a game-changer for Unified Namespace ar
 
 To help you leverage the power of MQTT in your manufacturing operations along with Node-RED, Flowfuse offers a robust MQTT broker service. Now, Flowfuse will not only help you build, scale, and manage Node-RED solutions, collaborate across teams, and manage edge devices, but it will also simplify your integration of IIoT data streams into your Unified Namespace. For more information on how our FlowFuse MQTT broker Service, read our [MQTT Broker Service Announcement](/blog/2024/10/announcement-mqtt-broker/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20mqtt%20announcement&utm_term=high_intent&utm_content=Why%20UNS%20needs%20Pub%2FSub).
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Why%20UNS%20needs%20Pub%2FSub", cta_type: "signup", cta_text: "Curious about how FlowFuse can simplify building your Unified Namespace?" %}
-
 Get started with this article [Building UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/).
 
 ## Conclusion 
 
 Integrating Pub/Sub with a Unified Namespace enhances manufacturing operations by enabling real-time data flow, reducing latency, and improving scalability. This combination ensures efficient, resilient, and future-ready systems, empowering manufacturers to stay competitive in the IIoT era.
+
+{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Why%20UNS%20needs%20Pub%2FSub", cta_type: "signup", cta_text: "Curious about how FlowFuse can simplify building your Unified Namespace?" %}

@@ -96,10 +96,10 @@ _Unified Namespace_
 
 To simplify the creation of a UNS in your manufacturing environment, [FlowFuse](/) provides an integrated MQTT broker service. The platform makes building, scaling, and managing Node-RED solutions easy. It supports seamless connections between devices, services, and APIs using over 5,000 community-contributed nodes for data collection. FlowFuse also enables efficient data transformation and visualization with a low-code approach, remote management of edge devices, and team collaboration on projects. With everything centralized on one platform, FlowFuse offers high security, scalability, and availability to optimize and maintain your system effectively.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.cloud/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20Death%20of%20Point-to-Point%3A%20Why%20You%20Need%20a%20Unified%20Namespace", cta_type: "signup", cta_text: "Start building your own Unified Namespace with FlowFuse and take the first step toward a more efficient and connected manufacturing system." %}
-
 Get started with this article [Building UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/).
 
 ## Summary
 
 Due to complexity, high maintenance costs, and security risks, point-to-point (P2P) connections are becoming less effective in modern factories. A Unified Namespace (UNS) solves these problems by connecting devices through a central hub, making managing, scaling, and securing systems easier. UNS improves data sharing and reduces downtime. Tools like FlowFuse make it simple to set up and manage a UNS, offering a more efficient and flexible solution for manufacturing.
+
+{% include "cta.njk", cta_url: "https://app.flowfuse.cloud/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20Death%20of%20Point-to-Point%3A%20Why%20You%20Need%20a%20Unified%20Namespace", cta_type: "signup", cta_text: "Start building your own Unified Namespace with FlowFuse and take the first step toward a more efficient and connected manufacturing system." %}
