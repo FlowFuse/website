@@ -50,7 +50,7 @@ sudo apt update && sudo apt upgrade -y
 Before adding the NodeSource repository, ensure that curl is installed, as it is required to download the setup script.
 
 ```bash
-sudo apt install curl -y
+sudo apt install -y curl
 ```
 
 #### Step 3: Install the Latest LTS Version of Node.js
