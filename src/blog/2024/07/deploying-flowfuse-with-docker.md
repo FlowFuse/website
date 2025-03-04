@@ -254,4 +254,4 @@ When you open the platform in your browser for the first time, you'll need to cr
 - [Deploying FlowFuse with Docker on Ubuntu youtube video](https://www.youtube.com/watch?v=qQwAPuz9bEk): This YouTube video demonstrates how to deploy FlowFuse using Docker on an Ubuntu server for your server's local network.
 - [Form for requesting Installation Service](/docs/install/introduction/#do-you-need-help%3F-installation-service): Fill this form if you need assistance with the installation process.
 
-Got questions or need help deploying FlowFuse (Node-RED) on your Ubuntu server? [Get in touch](/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=Deploying%20FlowFuse%20with%20Docker%20on%20an%20Ubuntu%20server) with us!
+{% include "cta.njk", cta_url: "/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=Deploying%20FlowFuse%20with%20Docker%20on%20an%20Ubuntu%20server", cta_type: "talk", cta_text: "Got questions or need help deploying FlowFuse (Node-RED) on your Ubuntu server?" %}

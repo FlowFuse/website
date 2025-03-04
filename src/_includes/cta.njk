@@ -1,0 +1,19 @@
+<div class="cta">
+  <p>
+    {% if cta_text %}
+      {{ cta_text }}
+    {% else %}
+        Discover how FlowFuse can help you scale, manage, and optimize your industrial processes.
+    {% endif %}
+    
+    <a href="{{ cta_url }}">
+      {% if cta_type == "talk" %}
+        Talk to Us Now
+      {% elsif cta_type == "demo" %}
+        Let’s Walk You Through It – Book a Demo Today
+      {% else %}
+        Sign Up for FlowFuse Now
+      {% endif %}
+    </a>
+  </p>
+</div>

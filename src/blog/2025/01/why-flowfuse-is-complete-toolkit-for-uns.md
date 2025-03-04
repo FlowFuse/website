@@ -92,4 +92,4 @@ On top of that, FlowFuse provides features like [DevOps pipeline management](/bl
 
 FlowFuse is a complete platform for building and managing a Unified Namespace. It combines everything you need—connectivity, data transformation, and message brokering—into one easy-to-use solution. Open-source flexibility makes it simple to connect devices, scale your system, and keep data secure.
 
-***Want to learn more about how FlowFuse can help? [Talk with Our experts!](/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Why%20FlowFuse%20is%20the%20Complete%20Toolkit%20For%20Building%20UNS%3F)***
+{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Why%20FlowFuse%20is%20the%20Complete%20Toolkit%20For%20Building%20UNS%3F", cta_type: "demo", cta_text: "Want to learn more about how FlowFuse can help?" %}

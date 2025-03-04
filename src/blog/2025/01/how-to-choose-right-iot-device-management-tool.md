@@ -131,6 +131,4 @@ If things go awry, FlowFuse’s [snapshot](/blog/2024/09/node-red-version-contro
 
 FlowFuse offers [flexible pricing plans](/pricing/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20pricing&utm_term=high_intent&utm_content=How%20to%20Choose%20the%20Right%20IIoT%20Device%20Management%20Software%20for%20Your%20Business), including a free tier that allows you to manage up to two devices—so you can try the platform before making any commitment. Whether you’re just starting out or scaling your operations, FlowFuse provides the tools and support you need to efficiently manage your IIoT network.
 
-Ready to elevate your IIoT management? Get started with FlowFuse today and see the difference for yourself.
-
-**Ready to learn more? [Talk to our expert or book a demo](/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=How%20to%20Choose%20the%20Right%20IIoT%20Device%20Management%20Software%20for%20Your%20Business) today!**
+{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=How%20to%20Choose%20the%20Right%20IIoT%20Device%20Management%20Software%20for%20Your%20Business", cta_type: "demo", cta_text: "" %}

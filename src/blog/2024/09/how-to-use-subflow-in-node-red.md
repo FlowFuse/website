@@ -157,4 +157,4 @@ Now, just like regular Node-RED nodes, you can effectively use this Subflow node
 
 In this guide, we explored the concept of subflows in Node-RED, including their definition and purpose. We walked through the steps to create and configure subflows, demonstrating how to integrate them into your main flow. Additionally, we discussed how to edit and update existing subflows, and provided best practices for managing and organizing them effectively.
 
-Now, take your Node-RED operations further with FlowFuse. Leverage its powerful features to manage, deploy, and scale your flows efficiently. [Create your account](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20create%20and%20use%20Subflow%20in%20Node-RED) today and get started!
+{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20create%20and%20use%20Subflow%20in%20Node-RED", cta_type: "signup", cta_text: "" %}

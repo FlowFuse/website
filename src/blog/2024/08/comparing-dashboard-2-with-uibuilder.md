@@ -235,4 +235,4 @@ FlowFuse Dashboard is well-suited for users seeking a user-friendly, low-code so
 
 UI-Builder, however, offers nice performance and customization, benefiting users with coding expertise who need highly tailored UIs. Despite its flexibility and faster load times, it requires more complex setup and migration.
 
-Ready to take your dashboards further? [Sign up](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Dashboard%20vs%20UI-Builder%3A%20A%20Comprehensive%20Comparison) for FlowFuse and unlock multi-user capabilities of FlowFuse Dashboard, better control, and effortless scalability.
+{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Dashboard%20vs%20UI-Builder%3A%20A%20Comprehensive%20Comparison", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

@@ -128,4 +128,4 @@ Web scraping can be a valuable tool for gathering data, but it's crucial to navi
 
 You’ve now learned to use Node-RED for web scraping, from sending requests and parsing HTML to transforming data into practical formats. This approach streamlines data collection from websites, making it easier to manage and analyze information efficiently.
 
-If you want to scale your Node-RED deployments, build multi-user dashboards, collaborate with your team, maintain high security, and enhance your data operations, [start your free trial](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Scrape%20Data%20from%20Websites%20Using%20Node-RED) of FlowFuse today!
+{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Scrape%20Data%20from%20Websites%20Using%20Node-RED", cta_type: "signup", cta_text: "" %}
