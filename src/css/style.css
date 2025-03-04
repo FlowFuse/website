@@ -1678,14 +1678,4 @@ input[type="range"] {
 
 .ebook-images > :nth-child(2){
     height: 100%;
-}    
-
-.cta-link a {
-    color: #2563eb;
-    text-decoration: none;
-}
-
-.cta-link a:hover {
-    color: #2563eb;
-    text-decoration: underline;
 }
