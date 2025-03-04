@@ -1481,7 +1481,7 @@ h4:hover .header-anchor {
     }
 
     .social-proof-logos-smaller {
-        @apply social-proof-common max-w-3xl px-6;
+        @apply social-proof-common max-w-3xl;
     }
 
     .social-proof-ul-common {
@@ -1497,7 +1497,7 @@ h4:hover .header-anchor {
     }
 
     .social-proof-logos-smaller ul {
-        @apply social-proof-ul-common gap-[15%];
+        @apply social-proof-ul-common gap-[7%];
     }
 
     .social-proof-logos-smaller ul li {
