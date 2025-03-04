@@ -34,22 +34,25 @@ Before proceeding with the installation, ensure you have the following:
 Verify that your network can access the necessary services. You can run the following `curl` commands to check connectivity:
 
   ```bash
-  curl -I https://app.flowfuse.com
-  curl -I https://mqtt.flowfuse.cloud
-  curl -I https://registry.npmjs.com
+  telnet app.flowfuse.com 443
+  telnet mqtt.flowfuse.cloud 443
+  telnet registry.npmjs.com 443
 ```
 
 The expected output should indicate that the servers are reachable. For example, a successful response would look like this:
 
 ```bash
-HTTP/1.1 200 OK
-Date: Mon, 04 Mar 2025 12:00:00 GMT
-Server: nginx
-Content-Type: text/html; charset=UTF-8
-Connection: keep-alive
+Trying <IP Address>...
+Connected to <hostname>.
+Escape character is '^]'.
 ```
 
-If the connection is unsuccessful, check for network restrictions or DNS issues. You should see a 200 OK status code if the services are accessible.
+If the connection fails, it will show:
+
+```bash
+Trying <IP Address>...
+Unable to connect to remote host: Connection refused
+```
 
 ## Getting Started
 
@@ -98,22 +101,10 @@ sudo apt install -y curl
 To install the FlowFuse Device Agent and set it up as a service, download and execute the installation script from GitHub:
 
 ```bash
-curl -O https://raw.githubusercontent.com/FlowFuse/device-agent/main/service/raspbian-install-device-agent.sh
+bash <(curl -sL https://raw.githubusercontent.com/FlowFuse/device-agent/main/service/raspbian-install-device-agent.sh)
 ```
 
-Make the script executable:
-
-```bash
-chmod +x raspbian-install-device-agent.sh
-```
-
-Finally, execute the script with `sudo` to install the FlowFuse Device Agent and configure it as a service:
-
-```bash
-sudo ./raspbian-install-device-agent.sh
-```
-
-This script will install the FlowFuse Device Agent, set it up as a service, and start it automatically.
+This script installs the agent, and configures the Revolutionary Pi to run the FlowFuse agent on boot and restart it if it crashes.
 
 ### Registering the Device Agent to FlowFuse and Running It
 
@@ -124,6 +115,8 @@ After installing the FlowFuse Device Agent, the next step is to link the Revolut
 Follow the instructions in the official documentation to add your device to your FlowFuse team: [Add a Remote Instance](/docs/device-agent/register/#add-remote-instance).
 
 Once you register the device, you will receive the configuration details required to connect it to your team. Copy the provided command.
+
+![Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team.](./images/how-to-setup-node-red-on-raspberry-pi-device-configuration-dialog.png "Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team."){data-zoomable}
 
 #### Step 2: Configuring the Device
 
@@ -138,7 +131,7 @@ Once the device is configured, restart the device. The FlowFuse Device Agent wil
 After the device restarts, you can check if the FlowFuse Device Agent is running by using the following command:
 
 ```bash
-sudo systemctl status flowfuse-agent
+sudo systemctl status flowfuse-device-agent
 ```
 
 This should display the status of the FlowFuse Device Agent, showing whether it's active and running.
