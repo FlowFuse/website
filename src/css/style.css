@@ -1680,12 +1680,12 @@ input[type="range"] {
     height: 100%;
 }    
 
-
-.cta-link {
+.cta-link a {
     color: #2563eb;
     text-decoration: none;
 }
 
-.cta-link:hover {
+.cta-link a:hover {
+    color: #2563eb;
     text-decoration: underline;
 }
