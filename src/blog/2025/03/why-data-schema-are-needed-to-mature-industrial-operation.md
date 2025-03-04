@@ -2,9 +2,9 @@
 title: "Why Data schemas Are needed to Mature your Industrial Data Operations" 
 subtitle: "Improve industrial data operations with structured and reliable data."
 description: "Learn how data schemas enhance industrial data operations by improving consistency, validation, processing speed, and compliance."
-date: 2025-02-28
+date: 2025-03-04
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/03/images/why-data-schema-need-to-mature-data.png
 keywords: data schema, industrial data, data validation, data consistency, data integrity, industrial automation, data processing, compliance, standardization, FlowFuse, Node-RED, JSON Schema, data modeling, data governance, real-time analytics, data integration, operational efficiency, SCADA systems, manufacturing data, industrial IoT, structured data
 tags: 
  - node-red
