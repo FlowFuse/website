@@ -81,7 +81,7 @@ Here you will be able to see every time flows were deployed (for example from wi
 
 ## What Else Is New?
 
-For a full list of everything that went into our 2.13 release, you can check out the [release notes](https://github.com/FlowFuse/flowfuse/releases/tag/v2.13.0).
+For a full list of everything that went into our 2.13 release, you can check out the [release notes](https://github.com/FlowFuse/flowfuse/releases/tag/v2.14.0).
 
 We're always working to enhance your experience with FlowFuse. We're always interested in your thoughts about FlowFuse too. Your feedback is crucial to us, and we'd love to hear about your experiences with the new features and improvements. Please share your thoughts, suggestions, or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose). 
 
