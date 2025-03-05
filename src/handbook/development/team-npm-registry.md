@@ -19,7 +19,7 @@ To enable a local development environment for the Team NPM feature follow these 
     ```
 - Install verdaccio
     ```
-    npm install --perfix=. verdaccio
+    npm install --prefix=. verdaccio
     ```
 - Clone auth plugin
     ```
