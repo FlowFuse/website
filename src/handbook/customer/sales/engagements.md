@@ -48,7 +48,8 @@ countersignature.
 
 ### Steps
 
-1. [Start invoice procedure](/handbook/operations/billing/#creating-a-subscription-invoice)
+1. Move the deal to `Closed Won` in HubSpots. Contract start date, renewal date, and ARR are required fields.
+1. Download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
 1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
@@ -57,10 +58,8 @@ countersignature.
    * *Self-Managed*
       * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
       * Send the license key with the onboarding email to the customer, in the email explain how to use support@flowfuse.com and our live chat the get support from our team.
-1. Download the completed Order Form and Subscription Agreement, and upload them to the Legal folder in Google Drive.
-1. Set the Renewal data for the deal
-1. Move the deal to `Closed Won` in HubSpots Deal overview.
 1. If Professional Services are included, contact the person who runs the FlowFuse PS team with the description of the work sold, the amount of hours, and the total value.
+1. [Start invoice procedure](/handbook/operations/billing/#creating-a-subscription-invoice), unless you are waiting on a purchase order. Once the PO arrives, process the invoice accordingly (Net 30/60/90, PO number, correct email, etc).
 
 ## Closing an upsell
 
