@@ -15,7 +15,7 @@ To enable a local development environment for the Team NPM feature follow these 
     ```
 - Create 
     ```
-    mkd ir config storage
+    mkdir config storage
     ```
 - Install verdaccio
     ```
