@@ -20,7 +20,7 @@ layout: layouts/hardware.njk
 
 ## Raspberry Pi OS Installation
 
-To set up your Raspberry Pi 5 for use with Node-RED and FlowFuse, follow these steps:
+To set up your Raspberry Pi 4 for use with Node-RED and FlowFuse, follow these steps:
 
 ### Flashing Raspberry Pi OS
 
@@ -34,7 +34,7 @@ To set up your Raspberry Pi 5 for use with Node-RED and FlowFuse, follow these s
 
 3. Write the OS and configuration to the SD card. This process takes about 10 minutes.
 
-4. Insert the SD card into the Raspberry Pi 5 and power it on. The device should appear on your network after a minute or so.
+4. Insert the SD card into the Raspberry Pi 4 and power it on. The device should appear on your network after a minute or so.
 
 5. Connect to the Raspberry Pi using SSH:
 
