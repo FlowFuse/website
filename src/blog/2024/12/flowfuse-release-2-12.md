@@ -40,9 +40,6 @@ _Screenshot showing the UI for selecting your Team's type, when onboarding throu
 
 <!-- <img width="438" alt="image" src="https://github.com/user-attachments/assets/da6fde55-27bc-42d7-afcc-19235661b558" /> -->
 
-_Please do note, that whilst we do require credit card information, this is just for verification purposes. You will never be charged for the Free plan._
-
-
 ### Remote Instances
 
 When you create a Free team, an Application is created for you automatically. Applications in FlowFuse help you organise and group your resources, from Instances to DevOps Pipelines and Snapshots for Version Control. Within your new application, you can "register" your first Remote Instance. 
