@@ -8,3 +8,8 @@
   buttonText: "Download now"
   link: "https://eu1.hubs.ly/H0fY9900"
   expire: "2025-04-30T23:59:00Z"
+- type: "Let's Meet!"
+  title: "FlowFuse at Hannover Messe 2025"
+  buttonText: "Claim free ticket"
+  link: "/events/hannover-messe-2025/"
+  expire: "2025-03-30T23:59:00Z"
