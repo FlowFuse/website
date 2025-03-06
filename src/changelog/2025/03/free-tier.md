@@ -9,7 +9,7 @@ tags:
 
 We introduced the Free tier on FlowFuse Cloud [back in December](/blog/2024/12/flowfuse-release-2-12/). This allows you to manage two remote instances using the FlowFuse Device Agent completely free of charge.
 
-Since its launch we had many users sign-up and start connecting their remote instances to the platform. We've also had feedback on the fact it required you to enter credit card details to get fully setup.
+Since its launch we had many users sign-up and start connecting their remote instances to the platform. We've also had feedback on the fact it required you to enter credit card details to get fully set up.
 
 We're please to announce that, as of today, you no longer need a credit card to sign-up to our Free tier - you can jump straight into getting your remote instances connected.
 
