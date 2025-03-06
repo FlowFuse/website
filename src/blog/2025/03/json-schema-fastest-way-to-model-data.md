@@ -125,7 +125,7 @@ Now that we have planned and defined the JSON schema, we must ensure everyone ca
 ![Adding a data schema to the Template node.](./images/template.png){data-zoomable}
 _Adding a data schema to the Template node._
 
-1. Next, deploy the flow. Then, go to the **main menu (top-right corner)**, click **Export**, switch to **Team Library**, create a new folder, give your data schema flow a meaningful name, and export it to that folder.
+2. Next, deploy the flow. Then, go to the **main menu (top-right corner)**, click **Export**, switch to **Team Library**, create a new folder, give your data schema flow a meaningful name, and export it to that folder.
 
 ![Exporting Schema to Team Library](./images/export-to-team-lib.png){data-zoomable}
 _Exporting Schema to Team Library_
