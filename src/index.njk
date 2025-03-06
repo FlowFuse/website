@@ -133,35 +133,12 @@ hubspot:
     </div>
     
     <!-- Blueprints -->
-    {% set blueprints = [
-        {
-        title: "CRUD MongoDB API",
-        url: "/blueprints/getting-started/crud/",
-        img: "screenshot-crud-flow.png",
-        imgAlt: "CRUD MongoDB API Dashboard",
-        label: "Getting Started"
-        },
-        {
-        title: "ANDON Operator Terminal",
-        url: "/blueprints/manufacturing/andon-operator-terminal/",
-        img: "ANDON1.png",
-        imgAlt: "ANDON Operator Terminal Dashboard",
-        label: "Manufacturing"
-        },
-        {
-        title: "Historical Data Dashboard with InfluxDB",
-        url: "/blueprints/flowfuse-dashboard/historical-dashboard-influxdb/",
-        img: "historical-data-dashboard.png",
-        imgAlt: "Historical Data Dashboard with InfluxDB Dashboard",
-        label: "Dashboard 2.0"
-        }]
-    %}
     <div class="max-w-md sm:max-w-xl md:max-w-screen-lg mx-auto mt-24 mb-20">
         <h2 class="text-center w-full md:text-left"><span class="text-indigo-600">Drive industrial innovation</span> with Node-RED and FlowFuse</h2>
         <p class="text-center w-full md:text-left">Create powerful industrial applications — from real-time monitoring to complex automation — all in one platform. Whether you're optimising production, tracking performance, or visualising data, FlowFuse makes it easy to turn ideas into reality. And to help you get started faster, explore our library of ready-made blueprints for quick, customisable solutions.</p>
         <div class="container m-auto text-left max-w-sm md:max-w-none pt-8 w-full gap-4">
             <ul class="flex flex-col sm:grid md:grid-cols-3 gap-x-6 gap-y-12">
-                {% for blueprint in blueprints %}
+                {% for blueprint in homepage_blueprints %}
                 <li class="flex flex-col h-full">
                     <div class="mb-2">
                         <label class="text-gray-700 text-xs font-light rounded-sm bg-indigo-50 py-1.5 px-2 inline-block w-auto">{{ blueprint.label }}</label>
