@@ -40,12 +40,12 @@ To enable a local development environment for the Team NPM feature follow these 
     ```
     storage: ../storage
     auth:
-    ff-auth:
-        baseURL: http://127.0.0.1:3000
-        adminSecret: secret
+        ff-auth:
+            baseURL: http://127.0.0.1:3000
+            adminSecret: secret
     packages:
-    '@*/*':
-        access: $authenticated
+        '@*/*':
+            access: $authenticated
     log: { type: stdout, format: pretty, level: http }
     ```
 - Start verdaccio
