@@ -69,21 +69,20 @@ Now, before you begin developing applications with FlowFuse running on the devic
 
 To configure the FlowFuse Cloud with your devices:
 
-1. Log into the FlowFuse team and go to the devices option in the sidebar.
+1. Log into the FlowFuse team and go to the remote instances option in the sidebar.
 2. Add a new device by clicking on the top right "Add Device" button. In the popup that opens, enter the name for your device, select the type (optional), and assign the device to an application (optional). Then, click on the "Add" button.
 3. After successfully creating and adding the device, you'll see a popup window with the command that allows you to quickly configure the device with FlowFuse Cloud.
+4. Copy that command and run it in your device's terminal. The device agent will start, and it will be configured with FlowFuse Cloud. To verify this, go to the FlowFuse team, click on the devices option in the sidebar, and then click on the device you have configured. You will see the status as running and last seen in green color.
 
 ![Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team.](./images/raspberry-pi-5.png "Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team."){data-zoomable}
-
-1. Copy that command and run it in your device's terminal. The device agent will start, and it will be configured with FlowFuse Cloud. To verify this, go to the FlowFuse team, click on the devices option in the sidebar, and then click on the device you have configured. You will see the status as running and last seen in green color.
 
 ### Accessing Node-RED Editor.
 
 ![Image showing device edtitor button.](./images/raspberry-pi-5-editor.png "Image showing device edtitor button."){data-zoomable}
 
 1. Login into your FlowFuse account.
-2. Click on the **Devices** option in the left sidebar.
-3. Click on the device and enable the **developer mode** by clicking on the top right-corner switch.
-4. Once Developer Mode is enabled, click on the **Device Editor** option located next to the that switch.
+2. Click on the remote instances option in the left sidebar.
+3. Click on the device and enable the developer mode by clicking on the top right-corner switch.
+4. Once Developer Mode is enabled, click on the Open Editor option located next to the that switch.
 
 For more information refer to [FlowFuse documentation](/docs/user/introduction/#working-with-devices)
