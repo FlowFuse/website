@@ -21,7 +21,6 @@ layout: layouts/hardware.njk
 ## Raspberry Pi OS Installation
 
 To set up your Raspberry Pi 4 for use with Node-RED and FlowFuse, follow these steps:
-To set up your Raspberry Pi 4 for use with Node-RED and FlowFuse, follow these steps:
 
 ### Flashing Raspberry Pi OS
 
