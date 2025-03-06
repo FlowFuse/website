@@ -137,21 +137,21 @@ hubspot:
         {
         title: "CRUD MongoDB API",
         url: "/blueprints/getting-started/crud/",
-        img: "getting-started/crud/screenshot-crud-flow.png",
+        img: "screenshot-crud-flow.png",
         imgAlt: "CRUD MongoDB API Dashboard",
         label: "Getting Started"
         },
         {
         title: "ANDON Operator Terminal",
         url: "/blueprints/manufacturing/andon-operator-terminal/",
-        img: "manufacturing/andon-operator-terminal/ANDON1.png",
+        img: "ANDON1.png",
         imgAlt: "ANDON Operator Terminal Dashboard",
         label: "Manufacturing"
         },
         {
         title: "Historical Data Dashboard with InfluxDB",
         url: "/blueprints/flowfuse-dashboard/historical-dashboard-influxdb/",
-        img: "flowfuse-dashboard/historical-dashboard-influxdb/historical-data-dashboard.png",
+        img: "historical-data-dashboard.png",
         imgAlt: "Historical Data Dashboard with InfluxDB Dashboard",
         label: "Dashboard 2.0"
         }]
@@ -169,7 +169,7 @@ hubspot:
                     <div class="grid bg-indigo-50 ff-image-cover blueprint rounded-lg border drop-shadow-md hover:drop-shadow-lg grow pb-4">
                         <a href="{{ blueprint.url }}" class="w-full flex flex-col group hover:no-underline">
                             <div class="transition-transform group-hover:scale-105 ff-image-cover aspect-video border-b">
-                                {% set imageSrc = ["./blueprints/", blueprint.img  ] | join %}
+                                {% set imageSrc = ["./images/home/blueprints/", blueprint.img  ] | join %}
                                 {% set imageAlt = blueprint.imgAlt %}                
                                 {% image imageSrc, imageAlt, [285] %}
                             </div>
