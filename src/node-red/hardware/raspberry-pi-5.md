@@ -3,13 +3,20 @@ eleventyNavigation:
   key: Raspberry Pi 5
   parent: Hardware
 meta:
-   title: Setting Up Node-RED on Raspberry Pi 5
-   description: Learn how to install the FlowFuse Edge Agent on the Raspberry Pi 5 effortlessly. Manage your device with Node-RED through FlowFuse with ease.
-   keywords: node-red, flowfuse, raspberry pi, raspberry pi 5
-image: "/node-red/hardware/images/raspberry-pi-5-device-agent.png"
+  title: Setting Up Node-RED on Raspberry Pi 5
+  description: Learn how to install the FlowFuse Edge Agent on the Raspberry Pi 5 effortlessly. Manage your device with Node-RED through FlowFuse with ease.
+  keywords: node-red, flowfuse, raspberry pi, raspberry pi 5
+image: "/node-red/hardware/images/raspberrypi-5.png"
+specifications:
+  Model: Raspberry Pi 5 Model 8GB   
+  RAM: 8GB LPDDR4 SDRAM
+  Processor: Broadcom BCM2712, ARM Cortex-A76 (ARMv8.2-A), 4 (Quad-core)
+  GPIO: Standard 40-pin GPIO Header
+  Connectivity: 2 × USB 2.0 Ports, 2 × USB 3.0 Ports, Bluetooth 5.0, USB-C, Wi-Fi + Bluetooth® Low Energy
+  Clock Speed: 2.4 GHz
+  Storage: microSD
+layout: layouts/hardware.njk
 ---
-
-# {{meta.title}}
 
 ## Raspberry Pi OS Installation
 

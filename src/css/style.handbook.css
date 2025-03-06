@@ -134,7 +134,7 @@
 
     .handbook div[style="position: relative"],
     .handbook pre {
-        width: max-content;
+        width: 100%;
         @apply max-w-full lg:max-w-[calc(100vw-580px)] xl:max-w-[calc(100vw-630px)]  2xl:max-w-[calc(100vw-690px)];
     }
 

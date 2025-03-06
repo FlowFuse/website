@@ -3,13 +3,20 @@ eleventyNavigation:
   key: Robustel EG5120
   parent: Hardware
 meta:
-   title: Setting Node-RED on Robustel EG5120
-   description: In this guide, we will discuss how to install FlowFuse Device agent on Robustel EG5120.
-   keywords: node-red, flowfuse, robustel eg5120
-image: /node-red/hardware/images/flowfuse-on-robustel-eg5120-node-red.png
+  title: Setting Node-RED on Robustel EG5120
+  description: In this guide, we will discuss how to install FlowFuse Device agent on Robustel EG5120.
+  keywords:  node-red, flowfuse, robustel eg5120
+image: "/node-red/hardware/images/robustel-eg5120.png"
+specifications:
+  Model: Robustel EG5120
+  RAM: 2 GB DDR4
+  Processor: Broadcom BCM2711, ARM Cortex-A72 (ARMv8-A), 4 (Quad-core)
+  GPIO: (Fully backwar ds-compatible with previous boards), Standard 40-pin GPIO Header
+  Connectivity: Dual-band Wi-Fi, Bluetooth 5.0, Gigabit Ethernet, 2x USB 3.0, 2x USB 2.0
+  Clock Speed: 1.5 GHz
+  Storage: microSD
+layout: layouts/hardware.njk
 ---
-
-# {{meta.title}}
 
 The [Robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-computing-gateway/) is a versatile gateway that facilitates robust connectivity for industrial IoT applications. Integrating this powerful hardware with FlowFuse not only enhances its capabilities but also simplifies the management and deployment process. In this documentation, we’ll walk through the steps to integrate the Robustel EG5120 with FlowFuse.
 
