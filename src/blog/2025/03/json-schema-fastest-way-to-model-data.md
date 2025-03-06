@@ -2,7 +2,7 @@
 title: "JSON Schema: The Fastest Way to Model and Validate Your Data"
 subtitle: "Streamline Your Data with JSON Schema: Model, Validate, and Standardize Effortlessly."
 description: Learn how JSON Schema simplifies data modeling and validation for seamless industrial data operations and how you can leverage popular industrial low-code platforms to implement it.
-date: 2025-03-06
+date: 2025-03-07
 authors: ["sumit-shinde"]
 image:  /blog/2025/03/images/json-schema-fastest-way-to-validate-data.png
 keywords: json schema, data validation, data modeling, industrial data, node-red, flowfuse, low-code, siemens plc, raspberry pi, json schema validator, structured data, mqtt, industrial automation, real-time data, edge computing, data consistency
@@ -10,10 +10,9 @@ tags:
   - node-red
 ---
 
-Data consistency is the foundation of reliable and efficient operations. Our last article explored why structured schemas are essential for managing industrial data. Let’s take it further and implement it with JSON Schema, one of the quickest ways to define, validate, and enforce data structure. See how JSON Schema simplifies data modeling and validation, making it faster and more efficient to ensure accuracy across your systems.
+Data consistency is the foundation of reliable and efficient operations. Our [last article](todo) explored the importance of structured schemas in managing industrial data. Now, let’s take it a step further by implementing JSON Schema—one of the quickest ways to define, validate, and enforce data structure. See how JSON Schema simplifies schema implementation, improving efficiency and ensuring accuracy across your systems.
 
 <!--more-->
-
 
 Let’s dive in.
 
@@ -25,21 +24,22 @@ When working with industrial data, it is crucial to ensure that incoming informa
 
 What makes JSON Schema particularly fast and efficient is that it works directly with JSON, the most widely used format for modern applications. Unlike other schema definitions, there is no need for additional transformation or compilation. Validation happens in real time, allowing data to move seamlessly through APIs, databases, and automation workflows without unnecessary processing overhead. Its lightweight design makes it faster than XML Schema and more flexible than Protobuf, ensuring a balance of speed and adaptability.
 
-## Getting Started with Implementing JSON Schema
+## Getting Started with Implementing JSON Schema  
 
-There are multiple ways to implement JSON Schema, but a low-code approach can significantly speed up deployment for industrial environments. This is where [FlowFuse](/) comes in.
+There are multiple ways to implement JSON Schema, but a low-code approach can significantly speed up deployment in industrial environments. This is where [FlowFuse](/) comes in.  
 
-FlowFuse is an industrial data platform that acts as a complete toolkit for industrial data operations, simplifying all aspects of the process. Whether it’s integration—supporting almost all industrial protocols, hardware API integration, or offering over 5000 pre-built nodes—FlowFuse makes things easier. It handles data collection, aggregation, transformation (with no coding required, just drag-and-drop), MQTT broker management, and visualization with various pre-built widgets (again, no coding required).
+FlowFuse is an industrial data platform that provides a complete toolkit for industrial data operations, simplifying the entire process. Whether it is integration—supporting almost all industrial protocols, hardware API integration, or offering over 5,000 pre-built nodes—FlowFuse streamlines the workflow. It manages data collection, aggregation, transformation (with no coding required, just drag and drop), MQTT broker management, and visualization using various pre-built widgets, all without requiring code. 
 
-From those over 5000 pre-built nodes, we have several that make implementing data schemas easier. We will use one of them today. For this practical example, I have a Siemens PLC integrated with a Raspberry Pi using Node-RED, receiving demo data for temperature and pressure. Let’s implement a data schema for it.
+Among the 5,000+ pre-built nodes available, several facilitate the implementation of data schemas. In this example, we will use one of these nodes.  
 
-If you want to learn how to integrate Siemens S7 PLCs with FlowFuse, read the article [Getting Started: Integrating Siemens S7 PLCs with Node-RED](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) and  If you want to learn how to integrate a Raspberry Pi, read the following documents:
+For this demonstration, I have a Siemens PLC integrated with a Raspberry Pi using Node-RED, receiving demo data for temperature and pressure. Let’s implement a data schema for this setup.  
 
-- [Setting Node-RED on Raspberry Pi 4](/node-red/hardware/raspberry-pi-4/)
+If you want to learn how to integrate Siemens S7 PLCs with FlowFuse, refer to the article [Getting Started: Integrating Siemens S7 PLCs with Node-RED](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/). If you are looking to integrate a Raspberry Pi, check out the following guides:  
 
-- [Setting Up Node-RED on Raspberry Pi 5](/node-red/hardware/raspberry-pi-5/)
+- [Setting Up Node-RED on Raspberry Pi 4](/node-red/hardware/raspberry-pi-4/)  
+- [Setting Up Node-RED on Raspberry Pi 5](/node-red/hardware/raspberry-pi-5/)  
 
-If you don’t have the S7 and Raspberry Pi, no worries. You can follow this with other data sources or even use mock data, which you can generate with the **Inject** and **Change** nodes.
+If you do not have an S7 PLC or a Raspberry Pi, no worries. You can follow along using other data sources or generate mock data using the **Inject** and **Change** nodes.  
 
 ### Prerequisites
 
@@ -50,9 +50,9 @@ Ensure that you have a running FlowFuse remote instance on your edge device. Thi
 
 To install and run the FlowFuse instance (Node-RED) on your device, use the [FlowFuse Device Agent](/docs/device-agent/quickstart/). This agent will help run and connect your device instance to the FlowFuse Cloud Team, enabling remote access from anywhere.
 
-Do you not have a FlowFuse account yet? No worries! [Sign up now](https://app.flowfuse.com/account/create) and activate your [free tier](/blog/2024/12/flowfuse-release-2-12/). You can manage up to two edge devices at no cost.
+Do you not have a FlowFuse account yet? No worries! [Sign up now](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=JSON%20Schema%3A%20The%20Fastest%20Way%20to%20Model%20and%20Validate%20Your%20Data) and activate your [free tier](/blog/2024/12/flowfuse-release-2-12/). You can manage up to two edge devices at no cost.
 
-- [node-red-contrib-json-full-schema-validator](https://flows.nodered.org/node/node-red-contrib-full-msg-json-schema-validation): 
+- [node-red-contrib-json-full-schema-validator](https://flows.nodered.org/node/node-red-contrib-full-msg-json-schema-validation):
 This package will be required for JSON schema validation in your flows. Make sure it is installed in your Node-RED environment.
 
 ### Planning Your Data Schema
@@ -61,11 +61,11 @@ Before moving forward, the first step is to plan the data schema carefully. Sinc
 
 When defining the schema, deciding which properties are necessary, what data types they should be, and what units they should have is essential. For example, if the data includes temperature, determine if it should be in Celsius or Fahrenheit and define the valid range for that data (e.g., -40°C to 150°C). Other factors, such as precision, mandatory fields, and additional attributes, should also be considered to ensure everyone’s needs are addressed.
 
-By carefully planning and involving the whole team, you create a schema that supports consistent data flow across systems and departments. This collaborative approach leads to a well-rounded and effective data schema that helps align team expectations, minimizes future issues, and improves operational efficiency. Taking the time to get everyone on the same page ensures that your data will be consistent, reliable, and ready to drive informed decision-making across the organization.
+By carefully planning and involving the whole team, you create a schema that supports consistent data flow across systems and departments. This collaborative approach leads to a well-rounded and effective data schema that helps align team expectations, minimizes future issues, and improves operational efficiency.
 
 Once you planned the data scheme, prepare it in the following format.
 
-If you want to learn more about how to create JSON Schemas, check out this helpful : [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step)
+If you want to learn more about how to define JSON Schemas, check out this helpful : [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step)
 
 ```json
 {
