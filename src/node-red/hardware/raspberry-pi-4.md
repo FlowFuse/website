@@ -35,7 +35,6 @@ To set up your Raspberry Pi 4 for use with Node-RED and FlowFuse, follow these s
 3. Write the OS and configuration to the SD card. This process takes about 10 minutes.
 
 4. Insert the SD card into the Raspberry Pi 4 and power it on. The device should appear on your network after a minute or so.
-4. Insert the SD card into the Raspberry Pi 4 and power it on. The device should appear on your network after a minute or so.
 
 5. Connect to the Raspberry Pi using SSH:
 
@@ -54,7 +53,7 @@ To set up your Raspberry Pi 4 for use with Node-RED and FlowFuse, follow these s
 
 The FlowFuse Device Agent manages Node-RED on the Raspberry Pi, handling Node-RED versions, upgrades, setup, management, and access controls.
 
-FlowFuse provides a script to install the FlowFuse Device Agent onto a Raspberry Pi in an easy way. This script will check if Node.js is installed and ensure it's at least version 14; if not found, it installs latest Node.js version. Then, it installs the latest FlowFuse Device Agent using npm and sets it up to run as a service, which means it sets up the Pi to run the FlowFuse agent every time it boots up and restart it if it ever crashes.
+FlowFuse provides a script to install the FlowFuse Device Agent onto a Raspberry Pi in an easy way. This script will check if Node.js is installed and ensure it's at least version 14; if not found, it installs latest Node.js version. Then, it installs the latest FlowFuse Device Agent and sets it up to run as a service, which means it sets up the Pi to run the FlowFuse agent every time it boots up and restart it if it ever crashes.
 
 ```sh
 bash <(curl -sL https://raw.githubusercontent.com/FlowFuse/device-agent/main/service/raspbian-install-device-agent.sh)
@@ -68,7 +67,7 @@ Now, before you begin developing applications with FlowFuse running on the devic
 
 To configure the FlowFuse Cloud with your devices:
 
-1. Log into the FlowFuse team and go to the devices option in the sidebar.
+1. Log into the FlowFuse team and go to the remote instances option in the sidebar.
 2. Add a new device by clicking on the top right "Add Device" button. In the popup that opens, enter the name for your device, select the type (optional), and assign the device to an application (optional). Then, click on the "Add" button.
 3. After successfully creating and adding the device, you'll see a popup window with the command that allows you to quickly configure the device with FlowFuse Cloud.
 
@@ -83,8 +82,8 @@ To configure the FlowFuse Cloud with your devices:
 ![Image showing device edtitor button.](./images/raspberry-4-editor.png "Image showing device edtitor button."){data-zoomable}
 
 1. Login into your FlowFuse account.
-2. Click on the **Devices** option in the left sidebar.
-3. Click on the device and enable the **developer mode** by clicking on the top right-corner switch.
-4. Once Developer Mode is enabled, click on the **Device Editor** option located next to the that switch.
+2. Click on the remote instances option in the left sidebar.
+3. Click on the device and enable the developer mode by clicking on the top right-corner switch.
+4. Once Developer Mode is enabled, click on the Open Editor option located next to the that switch.
 
 For more information refer to [FlowFuse documentation](/docs/user/introduction/#working-with-devices)
