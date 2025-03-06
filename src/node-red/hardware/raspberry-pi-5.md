@@ -61,6 +61,10 @@ The FlowFuse Device Agent manages Node-RED on the Raspberry Pi, handling Node-RE
 
    This script installs a Node.js runtime, the agent, and configures the Raspberry Pi to run the FlowFuse agent on boot and restart it if it crashes.
 
+## Linking the Device Agent to Your FlowFuse Team
+
+Now, before you begin developing applications with FlowFuse running on the device, you need the device to be configured with a token to identify itself on FlowFuse.
+
 ### Configuring the FlowFuse Agent
 
 To configure the FlowFuse Cloud with your devices:
@@ -69,10 +73,17 @@ To configure the FlowFuse Cloud with your devices:
 2. Add a new device by clicking on the top right "Add Device" button. In the popup that opens, enter the name for your device, select the type (optional), and assign the device to an application (optional). Then, click on the "Add" button.
 3. After successfully creating and adding the device, you'll see a popup window with the command that allows you to quickly configure the device with FlowFuse Cloud.
 
-![Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team.](./images/how-to-setup-node-red-on-raspberry-pi-device-configuration-dialog.png "Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team."){data-zoomable}
+![Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team.](./images/raspberry-pi-5.png "Image showing command device configuration dialog and the command placeholder, where you will find the command to link the device to your FlowFuse team."){data-zoomable}
 
-4. Copy that command and run it in your device's terminal. The device agent will start, and it will be configured with FlowFuse Cloud. To verify this, go to the FlowFuse team, click on the devices option in the sidebar, and then click on the device you have configured. You will see the status as running and last seen in green color.
+1. Copy that command and run it in your device's terminal. The device agent will start, and it will be configured with FlowFuse Cloud. To verify this, go to the FlowFuse team, click on the devices option in the sidebar, and then click on the device you have configured. You will see the status as running and last seen in green color.
 
-![Image showing command device connection status](./images/flowfuse-cloud-device-connection.png "Image showing command device connection status"){data-zoomable}
+### Accessing Node-RED Editor.
+
+![Image showing device edtitor button.](./images/raspberry-pi-5-editor.png "Image showing device edtitor button."){data-zoomable}
+
+1. Login into your FlowFuse account.
+2. Click on the **Devices** option in the left sidebar.
+3. Click on the device and enable the **developer mode** by clicking on the top right-corner switch.
+4. Once Developer Mode is enabled, click on the **Device Editor** option located next to the that switch.
 
 For more information refer to [FlowFuse documentation](/docs/user/introduction/#working-with-devices)
