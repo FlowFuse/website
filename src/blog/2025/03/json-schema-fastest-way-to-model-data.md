@@ -10,7 +10,7 @@ tags:
   - node-red
 ---
 
-Data consistency is the foundation of reliable and efficient operations. Our [last article](todo) explored the importance of structured schemas in managing industrial data. Now, let’s take it a step further by implementing JSON Schema—one of the quickest ways to define, validate, and enforce data structure. See how JSON Schema simplifies schema implementation, improving efficiency and ensuring accuracy across your systems.
+Data consistency is the foundation of reliable and efficient operations. Our last article(todo) explored the importance of structured schemas in managing industrial data. Now, let’s take it a step further by implementing JSON Schema—one of the quickest ways to define, validate, and enforce data structure. See how JSON Schema simplifies schema implementation, improving efficiency and ensuring accuracy across your systems.
 
 <!--more-->
 
