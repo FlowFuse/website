@@ -4,7 +4,7 @@ subtitle: Detailed instructions on how to create a Node-RED dashboard that shows
 description: Discover how to build a Historical Data Dashboard with InfluxDB and Node-RED. Capture, store, and visualize data for insightful analysis.
 date: 2023-07-18
 authors: ["andrew-lynch"]
-image: blog/2023/07/images/historical-data-dashboard.png
+image: blog/2023/07/images/historical-data_dashboard.png
 tags:
     - posts
     - node-red
