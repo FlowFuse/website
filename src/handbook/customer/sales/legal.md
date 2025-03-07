@@ -7,7 +7,7 @@ navGroup: Customer Department
 
 ## Subscription agreement
 
-For self-managed licenses FlowFuse has a standard [subscription agreement template](/handbook/customer/sales/subscription-agreement-1.4/).
+For self-managed licenses FlowFuse has a standard [subscription agreement template](/handbook/customer/sales/subscription-agreement-1.5/).
 
 ## Professional Services agreement
 
