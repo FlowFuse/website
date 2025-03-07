@@ -13,7 +13,7 @@ specifications:
   Processor: ARM TI AM6528 GP
   GPIO: x20 Digital I/O
   Connectivity: 1x RS 232 / 422 / 485, Ethernet, USB 2.0, Arduino, mPCIe
-  Clock Speed: Not specified
+  Clock Speed: 1 GHz
   Storage: SD Card
 layout: layouts/hardware.njk
 ---
