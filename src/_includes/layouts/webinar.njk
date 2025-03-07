@@ -28,6 +28,14 @@ layout: layouts/base.njk
                 </a>
                 {% if video %}
                     <iframe width="706" height="397" class="mb-4" src="https://www.youtube.com/embed/{{video}}?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% else %}
+                    {% if image %}
+                    <div class="max-w-[706px] mb-6">
+                        {% set imageSrc = ["./", image ] | join %}
+                        {% set imageDescription = ["Image representing ", title] | join %}
+                        {% image imageSrc, imageDescription, [706] %}
+                    </div>
+                    {% endif %}
                 {% endif %}
                 <div class="prose">
                     {{ content | safe }}
@@ -52,8 +60,8 @@ layout: layouts/base.njk
                             {% set formId = hubspot.downloadFormId %}
                             {% set cta = 'cta-webinar-download-slides' %}
                             {% include "hubspot/hs-form.njk" %}
-                        {% endif %}
-                    </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

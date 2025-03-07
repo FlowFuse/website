@@ -3,13 +3,20 @@ eleventyNavigation:
   key: Siemens IoT2050
   parent: Hardware
 meta:
-   title: Run FlowFuse on Siemens IoT2050
-   description: In this guide, we will discuss how to install FlowFuse Device agent on Siemens IoT2050.
-   keywords: node-red, siemens iot2050 flowfuse
-image: /node-red/hardware/images/flowfuse-on-siemens-iot2050.png
+  title: Run Node-RED on Siemens IoT2050
+  description: In this guide, we will discuss how to install FlowFuse Device agent on Siemens IoT2050.
+  keywords: node-red, flowfuse, siemens iot2050 flowfuse
+image: "/node-red/hardware/images/siemens-iot-2050.jpg"
+specifications:
+  Model: IOT2050 Basic
+  RAM: 1GB DDR4
+  Processor: ARM TI AM6528 GP
+  GPIO: x20 Digital I/O
+  Connectivity: 1x RS 232 / 422 / 485, Ethernet, USB 2.0, Arduino, mPCIe
+  Clock Speed: 1 GHz
+  Storage: SD Card
+layout: layouts/hardware.njk
 ---
-
-# {{meta.title}}
 
 Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens-gateway-between-cloud-company-it-and-production) the IoT2000 series in March of 2020.  With this tool many have been using it to function as a gateway between their plant operations and cloud infrastructure.  Onboard it came with Node-RED pre-installed. To manage Node-RED as an organization the FlowFuse agent is recommended, this documentation shows you how to do so.
 

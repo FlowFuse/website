@@ -11,4 +11,4 @@ FlowFuse's new "Smart Suggestions" feature will help you get your full UNS and M
 
 Our agent will monitor traffic through the Broker, and make calculate the schema of any payloads passed through. This assessment is turned into a "Suggestion" within the FlowFuse Platform, and can quickly be added to the formal schema for your Broker.
 
-![MQTT payload suggestions](images/mqtt-schema-suggestions.png){data-zoomable}
+<lite-youtube videoid="bNeTDJUZ1So" params="rel=0" style="width: 100%; height: 350px; overflow: hidden;" ></lite-youtube>
