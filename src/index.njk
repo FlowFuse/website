@@ -131,7 +131,44 @@ hubspot:
             </div>
         </div>
     </div>
-
+    
+    <!-- Blueprints -->
+    <div class="max-w-md sm:max-w-xl md:max-w-screen-lg mx-auto mt-24 mb-20">
+        <h2 class="text-center w-full md:text-left"><span class="text-indigo-600">Drive industrial innovation</span> with Node-RED and FlowFuse</h2>
+        <p class="text-center w-full md:text-left">Create powerful industrial applications — from real-time monitoring to complex automation — all in one platform. Whether you're optimising production, tracking performance, or visualising data, FlowFuse makes it easy to turn ideas into reality. And to help you get started faster, explore our library of ready-made blueprints for quick, customisable solutions.</p>
+        <div class="container m-auto text-left max-w-sm md:max-w-none pt-8 w-full gap-4">
+            <ul class="flex flex-col sm:grid md:grid-cols-3 gap-x-6 gap-y-12">
+                {% set blueprintIds = ["d9yNg20jRw", "e85N3lmyX6", "6EbLVbLa9j"] %}
+                {%- for item in collections.blueprints | reverse -%}
+                    {% if item.data.blueprintId in blueprintIds %}
+                    <li class="flex flex-col h-full">
+                        <div class="mb-2">
+                            {%- for tag in item.data.tags -%}
+                            {% if tag !== "blueprints" %}
+                            <label class="text-gray-700 text-xs font-light rounded-sm bg-indigo-50 py-1.5 px-2 inline-block w-auto">{{ tag | replace('-', ' ') | replace('20', '2.0') | title }}</label>
+                            {% endif %}
+                            {%- endfor %}
+                        </div>
+                        <div class="grid bg-indigo-50 ff-image-cover blueprint rounded-lg border drop-shadow-md hover:drop-shadow-lg grow pb-4">
+                            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+                                <div class="transition-transform group-hover:scale-105 ff-image-cover aspect-video border-b">
+                                    {% tileImage item, "./images/og-blog.jpg", "Image with logo and the slogan: Elevate Node-RED with Flowfuse", 285 %}
+                                </div>
+                                <div class="pt-4 my-auto">
+                                    <h5 class="my-auto group-hover:underline px-4 font-medium text-lg leading-6">{{ item.data.title }}</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    {% endif %}
+                {%- endfor -%}
+            </ul>
+            <a href="/blueprints/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1 mt-6">
+                See all
+                {% include "components/icons/arrow-long-right.svg" %}
+            </a>
+        </div>
+    </div>
     <!-- Testimonials -->
     <div class="w-full mt-24 md:px-0">
         <div class="sm:max-w-screen-lg mx-auto">
