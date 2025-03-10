@@ -1,0 +1,507 @@
+[
+    {
+        "id": "ad0d2e8ce07aeb8b",
+        "type": "tab",
+        "label": "API CRUD",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5ec972105e22f885",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Create",
+        "style": {
+            "label": true,
+            "stroke": "#001f60"
+        },
+        "nodes": [
+            "4d520d237b8fa367",
+            "f9bc674cec25701a",
+            "6bdb8e09e0040762",
+            "e9380431662efaa2",
+            "5c180573c64ad009"
+        ],
+        "x": 54,
+        "y": 99,
+        "w": 752,
+        "h": 142
+    },
+    {
+        "id": "2be6d51426f3c136",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Read",
+        "style": {
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "73ca548a538b51f6",
+            "2886a575c030bbf3",
+            "10ae865f5172e394",
+            "432c767f39597ad9",
+            "5f5892e29f52a52c"
+        ],
+        "x": 54,
+        "y": 279,
+        "w": 752,
+        "h": 142
+    },
+    {
+        "id": "5e16a2b85de330c9",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Update",
+        "style": {
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "a392449ea69d6f4d",
+            "d3278bb8813e4043",
+            "0da9a3917b9f8f7a",
+            "dc171bfa2fc023ee",
+            "aa42605c56d5340b"
+        ],
+        "x": 54,
+        "y": 459,
+        "w": 752,
+        "h": 142
+    },
+    {
+        "id": "6a5387fa241d0202",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Delete",
+        "style": {
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "8aed2a245f4d08dd",
+            "8e4aaedcd13dc0a5",
+            "66796e517ea3770a",
+            "125bfceb838d458b",
+            "4e317fba3bb40ac1"
+        ],
+        "x": 54,
+        "y": 639,
+        "w": 752,
+        "h": 142
+    },
+    {
+        "id": "4d520d237b8fa367",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5ec972105e22f885",
+        "name": "",
+        "url": "/food",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "5c180573c64ad009"
+            ]
+        ]
+    },
+    {
+        "id": "f9bc674cec25701a",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5ec972105e22f885",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "73ca548a538b51f6",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "2be6d51426f3c136",
+        "name": "",
+        "url": "/food/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "10ae865f5172e394"
+            ]
+        ]
+    },
+    {
+        "id": "2886a575c030bbf3",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "2be6d51426f3c136",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "a392449ea69d6f4d",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5e16a2b85de330c9",
+        "name": "",
+        "url": "/food/:id",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "0da9a3917b9f8f7a"
+            ]
+        ]
+    },
+    {
+        "id": "d3278bb8813e4043",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5e16a2b85de330c9",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "8aed2a245f4d08dd",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "6a5387fa241d0202",
+        "name": "",
+        "url": "/food/:id",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 740,
+        "wires": [
+            [
+                "66796e517ea3770a"
+            ]
+        ]
+    },
+    {
+        "id": "8e4aaedcd13dc0a5",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "6a5387fa241d0202",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "6bdb8e09e0040762",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5ec972105e22f885",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.insertedId",
+                "pt": "msg",
+                "to": "payload.id",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.acknowledged",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "f9bc674cec25701a"
+            ]
+        ]
+    },
+    {
+        "id": "10ae865f5172e394",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "2be6d51426f3c136",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload._id",
+                "pt": "msg",
+                "to": "req.params.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "5f5892e29f52a52c"
+            ]
+        ]
+    },
+    {
+        "id": "66796e517ea3770a",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "6a5387fa241d0202",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload._id",
+                "pt": "msg",
+                "to": "req.params.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 740,
+        "wires": [
+            [
+                "4e317fba3bb40ac1"
+            ]
+        ]
+    },
+    {
+        "id": "0da9a3917b9f8f7a",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5e16a2b85de330c9",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "req.params.id",
+                "pt": "msg",
+                "to": "req.params._id",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "temp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[$.req.params, $.temp]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [
+                "aa42605c56d5340b"
+            ]
+        ]
+    },
+    {
+        "id": "e9380431662efaa2",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5ec972105e22f885",
+        "name": "Create",
+        "info": "A HTTP POST command to `/food` \nwith a content type of \n`application/json` will create a new \nfood entry in the database and \nreturn a json object with an `id` \nvalue",
+        "x": 130,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "432c767f39597ad9",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "2be6d51426f3c136",
+        "name": "Read",
+        "info": "A HTTP GET command to `/food/:id` \nwill return a JSON object representing\nthe food matching the supplied ìd`",
+        "x": 130,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "dc171bfa2fc023ee",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5e16a2b85de330c9",
+        "name": "Update",
+        "info": "A HTTP PUT command to `/food/:id` \nwith a a JSON object as the body will\nreplace the current food entry matching\nthe supplied ìd`",
+        "x": 130,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "125bfceb838d458b",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "6a5387fa241d0202",
+        "name": "Delete",
+        "info": "A HTTP DELETE command to `/food/:id` \nwill remove the entry with the matching\nìd`",
+        "x": 130,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5c180573c64ad009",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5ec972105e22f885",
+        "clientNode": "",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "insertOne",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "",
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "6bdb8e09e0040762"
+            ]
+        ]
+    },
+    {
+        "id": "5f5892e29f52a52c",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "2be6d51426f3c136",
+        "clientNode": "b168227646cdf667",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "findOne",
+        "output": "forEach",
+        "maxTimeMS": "0",
+        "handleDocId": true,
+        "name": "",
+        "x": 540,
+        "y": 380,
+        "wires": [
+            [
+                "2886a575c030bbf3"
+            ]
+        ]
+    },
+    {
+        "id": "4e317fba3bb40ac1",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "6a5387fa241d0202",
+        "clientNode": "b168227646cdf667",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "deleteOne",
+        "output": "forEach",
+        "maxTimeMS": "0",
+        "handleDocId": true,
+        "name": "",
+        "x": 550,
+        "y": 740,
+        "wires": [
+            [
+                "8e4aaedcd13dc0a5"
+            ]
+        ]
+    },
+    {
+        "id": "aa42605c56d5340b",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "5e16a2b85de330c9",
+        "clientNode": "b168227646cdf667",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "replaceOne",
+        "output": "forEach",
+        "maxTimeMS": "0",
+        "handleDocId": true,
+        "name": "",
+        "x": 550,
+        "y": 560,
+        "wires": [
+            [
+                "d3278bb8813e4043"
+            ]
+        ]
+    },
+    {
+        "id": "77c6da893917fed0",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "README",
+        "info": "# Basic MongoDB CRUD implementation\n\nA demonstration of how to implement a basic CRUD datastore API with MongoDB.\nThis store is backed by a MongoDB instance, you will need to supply connection details for your database. \n\nTo start with you can make use of a free [here](https://www.mongodb.com/pricing) using the \"Shared\" plan.\n\n## Integration\n\nBefore integrating this example into your environment:\n\n1. Familiarize yourself with the provided flow. \n2. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "fc23cedbf1194ca4",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "License",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 270,
+        "y": 40,
+        "wires": []
+    }
+]
