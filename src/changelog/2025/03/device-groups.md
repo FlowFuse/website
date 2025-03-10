@@ -7,8 +7,8 @@ tags:
   - changelog
 ---
 
-Last year, we announced the introducuction of Device Groups. For those that are not familiar with Device Groups, this feature enables users to logically group their devices so that they can be targeted in a DevOps Pipeline facilitating streamlined and efficient deployments across your fleet of devices.
+Last year, we announced the introduction of Device Groups. For those that are not familiar with Device Groups, this feature enables users to logically group their Remote Instances so that they can be targeted in a DevOps Pipeline facilitating streamlined and efficient deployments across your fleet of devices.
 
-Prior to this update, only 1 Device Group was allowed in a pipeline. Now, we are now permitting as many Device Groups as you wish to be chained in a pipeline, further streamlining your workflow.
+Previously, you could only use a Group as the last stage in a pipeline. With this update, you can now have Groups at other stages in a pipeline. For example, you may have a group of test devices that you want to push updates to before pushing them out to your larger group of production devices.
 
-This improvement not only saves time but also enhances the consistency and reliability of device management across your fleet.
+This improvement not only saves time but also enhances the consistency and reliability of remote instance management across your fleet.
