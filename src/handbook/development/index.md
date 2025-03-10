@@ -23,6 +23,7 @@ This includes, but is not limited to:
 - [Contributing](./contributing.md) - tips on our development style to help get started contributing
 - [Project Management](./project-management.md) - details the processes we use to guide product development.
 - [Tools](./tools.md) - the tools we use
+- [Team NPM Registry](./team-npm-registry.md) - Setting up local development environment
 
 ## Releases
 
