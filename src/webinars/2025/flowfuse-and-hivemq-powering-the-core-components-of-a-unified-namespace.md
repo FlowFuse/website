@@ -4,7 +4,7 @@ meta:
     description: Join this webinar to learn how to use FlowFuse (Node-RED) and HiveMQ (MQTT) platforms to build a Unified Namespace (UNS) that integrates enterprise and control domain data for improved production scheduling and machine performance monitoring.
 image: /images/webinars/flowfuse-and-hivemq-powering-the-core-components-of-a-unified-namespace.jpg
 date: 2025-03-25
-time: 17:00 CET (11:00am ET) 
+time: 17:00 CET (12:00pm ET) 
 duration: 60
 video: 
 hosts: ["kudzai-manditereza"]
