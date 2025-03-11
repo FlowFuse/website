@@ -19,13 +19,10 @@ The maintenance most often involves updates to the following resources:
 
 The maintenance process is initiated by the Operations Team. The process is planned in advance and communicated to the customers. The maintenance window is scheduled to minimize the impact on the team and customers.
 
-Within a team, a maintenance date should be agreed upon, and the team should be informed about the maintenance window.
-
-While picking the correct date and time for maintenance, the following should be considered:
-* at least two weeks' notice should be provided to customers
+Where the maintenance action will cause disruption to customers, it must be scheduled with the following considerations:
+* at least 45 days notice should be provided to customers
+* not during the working week
 * maintenance should not overlap with [scheduled release](../releases/process.md) week
-* at a time to minimise disruption to customers; outside of core business hours or the weekend
-
 ## Customers communication
 
 Once the maintenance date is set, customers should be informed about the upcoming maintenance. The communication should include:
