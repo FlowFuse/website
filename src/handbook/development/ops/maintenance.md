@@ -31,7 +31,7 @@ Once the maintenance date is set, customers should be informed about the upcomin
 * the date and time of the maintenance
 * expected duration of the maintenance
 * self-care actions which customers can/should take before the maintenance date
-* other relevant details to help customers to prepare for potential restart of their NodeRED instances
+* other relevant details to help customers to prepare for potential restart of their Node-RED instances
 
 E-mail template for maintenance communication can be found in the [FlowFuse Cloud Maintenance Communication document](https://docs.google.com/document/d/1Pkd0qifjgs7xv96hfQ5OHnvX5n_WPHyA0AvPd9UUPL0). Adjust the template accordingly.
 
