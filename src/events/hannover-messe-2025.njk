@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+image: /events/images/hm25/hm-25-hero.png
+tags:
+    - trade-show
+meta:
+    title: "FlowFuse at Hannover Messe 2025"
+    description: "Visit us at Hall 15, Stand H71 and experience live demos, explore real-time data visualisations, and see how open source innovation is shaping the future of industrial operations."
+---
+<div class="w-full nohero py-20">
+    <div class="w-full px-6">
+        <div class="container flex flex-col m-auto text-left md:max-w-screen-lg items-stretch">
+            <div class="w-full flex flex-col max-md:justify-center md:flex-row md:gap-10 mt-3 pb-8 md:pb-12">
+                <div class="md:max-w-[390px] flex flex-grow relative ff-image-cover ff-image-rounded w-full max-md:mb-6">
+                    <div class="event bg-indigo-50 max-md:max-h-[300px] w-full md:h-full flex-grow">
+                        {% set imageSrc = ["./", image ] | join %}
+                        {% set imageDescription = ["Image of people at the FlowFuse booth"] | join %}
+                        {% image imageSrc, imageDescription, [644] %}
+                    </div>
+                    <div class="hannover-logo-container">
+                        {% set logoSrc = "./events/images/hm25/hm_logo.png" %}
+                        {% set logoDescription = "Hannover Logo" %}
+                        {% image logoSrc, logoDescription, [50] %}
+                    </div>
+                </div>
+                <div class="main-content sm:2/3">
+                    <label class="text-red-600 font-medium mb-2">Trade Show</label>
+                    <h1 class="md:max-w-screen-md">FlowFuse at Hannover Messe 2025</h1>
+                    <p>Discover how FlowFuse empowers you to build, deploy, and scale industrial automation — your way.</p>
+                    <p>Visit us at <span class="font-semibold">Hall 15, Stand H71</span> and experience live demos, explore
+                        real-time data visualisations, and see how open source innovation is shaping the future of
+                        industrial operations.</p>
+                    <p class="font-semibold">Let’s shape the future of industrial automation, together.</p>
+                    <div class="flex items-start justify-start mt-10">
+                        <a class="ff-btn ff-btn--primary uppercase items-center text-base"
+                            href="https://www.hannovermesse.de/en/application/registration/direct-entry-tickets-passes?code=rkGXe"
+                            target="_blank">
+                            CLAIM FREE TICKET
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full md:bg-white pt-12 md:pt-20 px-6">
+        <div class="container flex flex-col md:flex-row m-auto text-left md:max-w-screen-lg m-auto md:gap-14 items-stretch">
+            <div class="ff-prose mt-3 sm:1/3 flex-grow">
+                <h3 class="text-gray-600 leading-snug">Visit Us and Unlock the Future of Modular Industrial Software</span></h3>
+                <p>At Hannover Messe 2025, you’ll see how FlowFuse empowers you to enhance your existing MES and explore an alternative to traditional SCADA systems. You’ll experience:</p>
+                <div class="prose">
+                    <ul>
+                        <li>Real-time production monitoring for instant insights</li>
+                        <li>Seamless integration with your existing systems</li>
+                        <li>Fully customisable dashboards and alerts</li>
+                        <li>Hands-on demos that put you in control of your operations</li>
+                    </ul>
+                </div>
+                <p>At FlowFuse, we believe in empowering engineers to take charge—designing, adapting, and scaling solutions to meet unique operational challenges.</p>
+                <p>Visit us at Hall 15, Stand H71 and unlock the potential of smarter, more efficient manufacturing.</p>
+            </div>
+            <div class="md:max-w-[390px] flex flex-grow w-full max-md:mb-6">
+                <div class="ff-image-cover right ff-image-rounded max-md:max-h-[300px] w-full md:h-full flex-grow mb-6">
+                    {% set imageSrc = ["./events/images/hm25/hm-25-demo.png" ] | join %}
+                    {% set imageDescription = ["Image of people attending the FlowFuse demo."] | join %}
+                    {% image imageSrc, imageDescription, [644] %}
+                </div>
+            </div>
+        </div>
+        <div class="container md:max-w-screen-lg p-8 border-2 border-indigo-200 rounded-lg bg-white drop-shadow-lg m-auto mt-10 md:mt-20 grid grid-cols-1 sm:grid-cols-3 sm:grid-flow-col sm:gap-x-6 sm:py-0 sm:grid-rows-[100px_minmax(20px,_1fr)]">
+            <h3 class="order-1 sm:mt-6">Can’t make it to Hannover Messe 2025?</h3>
+            <div class="sm:row-span-2 sm:col-span-2 sm:order-3 order-2">
+                <p>No problem! You can still experience FlowFuse’s cutting-edge modular MES solution from the comfort of your own space. Book a personalised online demo with us and see how our flexible, real-time industrial software can optimise your operations.</p>
+                <p>Our team is ready to walk you through the features that matter most to your business and answer any questions you may have.</p>
+                <p>Take control of your industrial data and improve efficiency across your operations.</p>
+            </div>
+            <div class="flex items-start justify-start sm:order-2 order-3 sm:self-end sm:pb-6 max-sm:mt-6">
+                <a class="ff-btn ff-btn--primary uppercase items-center text-base" href="/book-demo" target="_blank">
+                    BOOK A DEMO
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

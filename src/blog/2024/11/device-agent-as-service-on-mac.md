@@ -21,7 +21,7 @@ In this article, we will explore how to run the FlowFuse Device Agent as a servi
 
 Before starting, ensure that you have the following set up:
 
-- **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can [sign up](https://app.flowfuse.com/account/create) at FlowFuse.
+- **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can [sign up](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Run%20FlowFuse%20Device%20Agent%20as%20a%20service%20on%20MacOS%20using%20Docker) at FlowFuse.
 
 *NOTE: The instructions in this guide were tested on MacBook M1 & M4 MacBook Pro*
 
@@ -82,7 +82,7 @@ This will set Colima to run as a service, so it will start automatically every t
 
 ### Step 6: Adding the Device to the FlowFuse Platform
 
-Now, you'll need to add a new device to the FlowFuse platform and download the device configuration file. This configuration will allow to connect your MacOS device to your FlowFuse team. For more information on how to add a device and generate the configuration, refer to [Generating "Device Configuration"](https://flowfuse.com/docs/device-agent/register/#generating-%22device-configuration%22).
+Now, you'll need to add a new device to the FlowFuse platform and download the device configuration file. This configuration will allow to connect your MacOS device to your FlowFuse team. For more information on how to add a device and generate the configuration, refer to [Generating "Device Configuration"](/docs/device-agent/register/).
 
 ### Step 7: Run the FlowFuse Device Agent Container
 

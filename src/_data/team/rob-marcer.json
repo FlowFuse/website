@@ -1,15 +1,16 @@
 {
     "order": 6,
     "name": "Rob Marcer",
-    "title": "Customer Success Manager",
+    "title": "Head of Professional Services",
     "github": "robmarcer",
     "linkedin": "rob-marcer-b414b910",
     "email": "rob@flowfuse.com",
     "country": "GB",
     "headshot": "rob.png",
     "facts": [
-        "Founder of airship.co.uk CRM SaaS.",
-        "Collects hobbies for a hobby.",
-        "Loves low-code, using Node-RED is not 'work'."
+        "6 years experience in building and deploying Node-RED applications across many industries",
+        "25 years experience in owning, operating, and working for various SaaS companies",
+        "Serial entrepreneur, always looking for innovative ways to use technology in business", 
+        "Collects hobbies for a hobby, loves to camp, trek, sail, cycle, build lego, and lots more"
     ]
 }

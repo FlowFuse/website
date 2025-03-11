@@ -4,7 +4,7 @@ navTitle: Billing
 
 # Billing
 
-Subscriptiona and their invoices are all stored in Hubspot, and Stripe is used for payment processing for contracted
+Subscriptions and their invoices are all stored in Hubspot, and Stripe is used for payment processing for contracted
 revenue. For FlowFuse's montly self-service customers Stripe also tracks the subscription instead of Hubspot.
 Team members will be given a login to the relevant Stripe and Hubspot dashboard as required for
 their role with an appropriate level of access.
@@ -28,10 +28,11 @@ To generate an invoice, the corresponding deal and quote must first be in place 
 
 1. Ensure the company details are updated, and include an address and country.
 1. On the Deal page, find the Invoices section on the right-hand side, then click Add and Convert Deal to Subscription.
-2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
-3. Make sure both ACH and Credit Card options are checked for payment.
-4. Click the Finalize button on the top right.
-5. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
+2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote). Ensure the invoice always lists what the term of the subscription is, and when the subscriptions starts.
+3. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
+4. Make sure both ACH and Credit Card options are checked for payment.
+5. Click the Finalize button on the top right.
+6. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 
 ### Creating a PS invoice
 
@@ -78,3 +79,17 @@ The preferred course of action is to create coupons that will expire on their ow
 ## Credits
 
 Occasionally we may need to apply a credit to a customers account as a goodwill gesture to cover an issue they have experienced, this should be the exception and must be approved by either CTO or CEO. We will also check to see if the customer has received any previous credits on their account.
+
+## Refunds
+
+For customers using self service we will occasionally need issue a refund via Stripe. This can be done by looking the user up, normally via their email address, in the Stripe dashboard. On the customers page there is a section labelled *Payments* which will list recent payments. Select the 3 dots at the end of the last payment line and from the menu select *Refund*. This will present a dialog to adjust the value to be refunded (the last invoice for a closed team will show the remaining credit) and to initiate the refund. You will be prompted to re-enter your password to confirm the refund.
+
+## Failed Payments
+
+In the event that a scheduled payment does not go through, Stripe will retry collecting the payment four times within one week. After all retries fail, Stripe will automatically cancel the subscription and suspend all instances for the team. 
+
+When a payment does not go through, an email is sent from @flowfuse.com. This also applies to cards that are on file with an upcoming expiration date.
+
+For customers paying an invoice, once a payment has been incomplete for 15 days, the invoice is marked as uncollectible.
+
+These settings are configurable by Stripe administrators, here: https://dashboard.stripe.com/settings/billing/automatic.

@@ -92,7 +92,7 @@ Given the above architecture, let's take a look at the relevant FlowFuse offerin
 
 ### Deploy to FlowFuse
 
-If you're interested in discussing how your company could benefit from this design pattern, please do [get in touch](/contact-us/).
+If you're interested in discussing how your company could benefit from this design pattern, please do [get in touch](/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=Building%20on%20FlowFuse%3A%20Remote%20Device%20Monitoring).
 
 ### Customer Stories
 

@@ -11,7 +11,7 @@ The FlowFuse webinar is typically scheduled during the last week of the month. T
 
 The following are the steps to produce a montly webinar.
 
-## Webinar preparation
+## Webinar Preparation
 
    1. Identify the webinar topic and speaker as close as possible to the previous webinar.
    2. Create a draft webinar title and abstract that is reviewed and approved by the speaker. 
@@ -19,14 +19,22 @@ The following are the steps to produce a montly webinar.
    4. [Create a webinar page](#creating-a-webinar-page) for the website
    5. Create a Zoom webinar page
         * Login to zoom and select the Webinars tab. There is a webinar template that will help getting going.
-        *  Use the same description and topic that was used for the web page. 
-        * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud, require registration 
+        * Use the same description and topic that was used for the web page. 
+        * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud, require registration. 
         * Under Invitations, invite the speaker as a Panelist.
             - Panelist receive a unique url to join the webinar that grants them access before the webinar starts. It is important the speaker knows to use this url.
         * Under Email Setting ensure the following: Confirmation email sent to panelist, Reminder sent 1 hour and 1 day before.  Turn off email for follow-up since we do that inside Hubspot.
         * Under Branding, for the banner add the graphic created for the web site.
         * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in Hubspot.
-   6. Setup HubSpot to accept webinar registrations.
+   6. Setting up the survey on HubSpot.  
+        * Under **Automations > Surveys**, you'll find the latest one called *‘Webinar Survey - [&lt;month> &lt;year>]’*.  
+        * Clone it, update the survey name to match the month and year of the upcoming webinar, and update the header to match the webinar's name.  
+        * Publish the survey and copy the shareable link.  
+        * Under **Automations > Workflows**, you'll need to update two workflows: *‘Contact Us Request’* and *‘New Contact Us Form Completion - MQLs’*. In both workflows, you need to update the trigger enrollment for contacts.  
+        * Look for the group with the criteria: *‘Contact is associated to: Any Feedback submission’* and update the survey name to the one you just created.  
+        * Save the change and when it asks *'Do you want to enroll existing contacts?'* click on the button that says **'Save and don't enroll existing contacts'**. You should pay close attention to this step, because if you choose the other option, all of the contacts that have ever requested to be contacted will re-enroll and sales will get notifications and tasks to contact all of them again.  
+        * Go to **Zoom**, and in the **Webinars** section, under **Survey**, choose *'Use a 3rd party survey'* and paste the shareable link you obtained when the survey was published.
+   7. Setup HubSpot to accept webinar registrations.
         * Create a new static list called ‘Webinar Registrations [&lt;month> Edition]
         * Create a new form - clone an existing webinar registration form and rename it
         * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Three changes are required:
@@ -41,13 +49,43 @@ The following are the steps to produce a montly webinar.
 
 * Week 1: Added to the newsletter (note to also promote on-demand version of the previous month's webinar in the newsletter) 
 * Week 2: Social media promotion on all channels:
-    * LinkedIn, Twitter, Facebook, Node-RED Forum Event category, Redit Node-RED, Node-RED slack
+    * LinkedIn, Twitter, Facebook, Node-RED Forum Event category, Redit Node-RED, Node-RED slack. For socials a [promo video](#promo-video) recorded by the speaker is recommended.
     * Encourage FlowFuse employees to promote their network
     * Dedicated email to all in the community outreach list
 * Week 3 (1 week before webinar): Email to Hubspot list (Send to those you didn't open previous week's email and new leads in DB. Exclude registered leads) 
     * Typically clone a previous email as the starting point.
 * Week 4: Another social media promotion and email.
-    * Typically this is sent 1 day before the webinar as a reminder that its not too late to join.  
+    * Typically this is sent 1 day before the webinar as a reminder that its not too late to join.
+
+### Promo video
+#### Technical specifications
+* Use a solid, contrasting background to make it easier to crop the video and remove the background later.
+* Frame the speaker from the chest up with space around the head and shoulders for both landscape and portrait formats.
+![Video framing examples](./images/video-framing.png){ width=600 }
+* Ensure the video is in HD quality or higher.
+* Keep the video under one minute to allow for YouTube Shorts.
+
+#### Recommended script structure
+We encourage the speaker to create their own script for a natural delivery. However, the following points should be covered:
+* Speaker's name, job title, and company.
+* Webinar date and title.
+* Brief description of what the audience will learn or gain.
+* A call to action (e.g., "Register now and join me for [what the session will cover]").
+* A phrase that encourages engagement, such as "I look forward to having you join us!" or "I hope to see you there!"
+
+Here's a template to help you get started:
+```
+Hi, I'm [Name], [Job Title] at [Company Name].
+I'll be presenting in our upcoming webinar on [Date], titled “[Webinar Title]”.
+In this session, we’ll cover [Brief Overview of the Webinar's Focus/Key Topics].
+If you're interested in [Relevant Topic or Pain Point], this is the perfect session for you.
+Don’t miss out, register now and join me as we dive into [What You’ll Learn or Discuss in the Session].
+I look forward to seeing you there!
+```
+
+And [here's](https://youtube.com/shorts/RCT-_m_NVbM) a sample of one of our past promo videos.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bgJNk0x_sMs?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Post Webinar
 

@@ -243,11 +243,12 @@ eleventyComputed:
                                 {% navoption "Webinars", "/webinars/", 1, "screen" %}{% endnavoption %}
                                 {% navoption "Publications", "/resources/publications/", 1, "book-open" %}{% endnavoption %}
                                 {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 1, "github", true %}{% endnavoption %}
-                                {% navoption "Educational License", "/education/", 1, "academic-cap" %}{% endnavoption %}
+                                {% navoption "Educational License", "/education/", 1, "certificate" %}{% endnavoption %}
                                 {% navoption "Docs", "/docs/", 1, "document-text" %}{% endnavoption %}
                                 {% navoption "Support forums", "https://discourse.nodered.org/c/vendors/flowfuse/24/", 1, "chat-bubble-left-right-sm" %}{% endnavoption %}
                                 {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
                                 {% navoption "Node-RED", "/node-red/", 1, "nr-icon" %}{% endnavoption %}
+                                {% navoption "Node-RED Academy", "https://node-red-academy.learnworlds.com/", 1, "academic-cap" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
                         {% navoption "Docs", "/docs/", 0, false %}{% endnavoption %}
@@ -405,6 +406,7 @@ eleventyComputed:
         .finally(() => {
             posthog.init('{{ POSTHOG_APIKEY }}', {
                 api_host:'https://eu.posthog.com',
+                person_profiles: 'always',
                 bootstrap: phBootstrap,
                 capture_pageleave: false,
                 opt_out_capturing_by_default: optOutByDefault
