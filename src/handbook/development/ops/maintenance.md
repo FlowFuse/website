@@ -63,6 +63,8 @@ See documentation for more details.
 
 ## Maintenance day
 
+All maintenance activities should be communicated in the `#ops-cloud` slack channel.
+
 ### Kubernetes worker nodes upgrade
 
 On the maintenance day, the Operartions Team should perform the following steps to migrate workloads to the new node group(s):
