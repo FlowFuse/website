@@ -25,7 +25,8 @@ Where the maintenance action will cause disruption to customers, it must be sche
 * maintenance should not overlap with [scheduled release](../releases/process.md) week
 ## Customers communication
 
-Once the maintenance date is set, customers should be informed about the upcoming maintenance. The communication should include:
+Once the maintenance date is set, customers should be informed about the upcoming maintenance. This must be done in co-ordination with Customer team. The communication should include:
+
 * the scope of the maintenance
 * the date and time of the maintenance
 * expected duration of the maintenance
