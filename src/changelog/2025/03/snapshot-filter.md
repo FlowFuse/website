@@ -11,5 +11,3 @@ To simplify management of Snapshots, they can now be filtered to "All Snapshots"
 
 ![Screenshot of the new Snapshot filter](./images/snapshot-filter.png){data-zoomable}
 _Screenshot of the new Snapshot filter_
-
-
