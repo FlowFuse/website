@@ -70,7 +70,7 @@ See documentation for more details.
 On the maintenance day, the Operartions Team should perform the following steps to migrate workloads to the new node group(s):
 * selectively restart workloads still running on old node group(s).
 * monitor the workloads and ensure that:
-  * they were schedulled on correct node group
+  * they were scheduled on correct node group
   * NodeRED flows started correctly - take corrective action (e.g., redeployment or log analysis) if issues occur
 
 Once all workloads are migrated to the new node group(s), the old one can be safely [terminated](https://docs.aws.amazon.com/eks/latest/userguide/delete-managed-node-group.html#eksctl-delete-managed-nodegroup).
