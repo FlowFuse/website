@@ -91,6 +91,7 @@ module.exports = function(eleventyConfig) {
     // Naive copy of images for backwards compatibility of non short-code image handling (use of <img or in CSS)
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/blueprints/**/flow.json");
+    eleventyConfig.addPassthroughCopy("src/events/hm25-invite.ics");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
