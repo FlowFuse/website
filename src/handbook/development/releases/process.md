@@ -89,6 +89,7 @@ have been published as needed.
  - [`flowfuse/nr-persistent-context`](https://github.com/FlowFuse/nr-persistent-context)
  - [`flowfuse/nr-assistant`](https://github.com/FlowFuse/nr-assistant)
  - [`flowfuse/nr-tools-plugin`](https://www.github.com/FlowFuse/nr-tools-plugin)
+ - [`flowfuse/verdaccio-ff-auth`](https://www.github.com/flowfuse/verdaccio-ff-auth)
 
 Verify [`flowfuse/flowfuse-nr-launcher`](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
