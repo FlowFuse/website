@@ -32,7 +32,7 @@ Until now, to utilise these packages within FlowFuse, you would either need to p
 
 ### Now in FlowFuse
 
-With our new update, every ___ Tier Team's Library in FlowFuse has an in-built private Node collection, ready for you to go. This means that you can push your custom node packages directly to that registry, and make it available to all of your Instances running in FlowFuse within seconds. This comes built in with full version control and all of the great update mechanisms that you already have in Node-RED.
+With our new update, every Team- and Enterprise-Tier Library in FlowFuse has an in-built private Node collection, ready for you to go. This means that you can push your custom node packages directly to that registry, and make it available to all of your Instances running in FlowFuse within seconds. This comes built in with full version control and all of the great update mechanisms that you already have in Node-RED.
 
 This new feature also integrates seamlessly ith our [Bill of Materials](https://flowfuse.com/docs/user/bill-of-materials/) view, providing you the single source of truth to all of your Instance's dependencies in one-place, making it easier to audit and manage your Node-RED instances and their dependencies.
 
