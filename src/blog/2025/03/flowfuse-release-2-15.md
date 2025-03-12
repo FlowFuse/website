@@ -4,7 +4,7 @@ subtitle: Start building out your own collection of private nodes and Javascript
 description: Start building out your own collection of private nodes and Javascript libraries for Node-RED with our new Custom Node catalogues
 date: 2025-03-12
 authors: ["joe-pavitt"]
-image: /blog/2025/02/images/release-2-14.png
+image: /blog/2025/03/images/release-2-15.png
 tags:
    - flowfuse
    - news
