@@ -65,7 +65,7 @@
         "codeowners": "^5.1.1",
         "js-yaml": "^4.1.0",
         "markdown-it-attrs": "^4.1.6",
-        "netlify-cli": "^18.1.0",
+        "netlify-cli": "^19.0.2",
         "xml-js": "^1.6.11"
     }
 }
