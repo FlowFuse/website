@@ -93,7 +93,7 @@ have been published as needed.
 
 Verify [`flowfuse/flowfuse-nr-launcher`](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
-Verify that the helm/node-red-container Dockerfiles point to the latest Node-RED release (e.g. 3.1.x) and that the [install-device-cache.sh](https://github.com/FlowFuse/helm/blob/main/flowforge-container/install-device-cache.sh) has been updated.
+Verify that the helm/node-red-container Dockerfiles point to the latest Node-RED release (e.g. 3.1.x) and that both the helm [install-device-cache.sh](https://github.com/FlowFuse/helm/blob/main/flowforge-container/install-device-cache.sh) and docker-compose [install-device-cache.sh](https://github.com/FlowFuse/docker-compose/blob/main/flowforge-docker/install-device-cache.sh) have been updated.
 
 If any need to be updated, refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
 
