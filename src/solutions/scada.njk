@@ -1,0 +1,120 @@
+---
+layout: page
+nohero: true
+heroSection:
+    title: "FlowFuse for <span class='text-indigo-600 inline-block'>SCADA</span>"
+    image:
+    diagram:
+bannerSection:
+    title: "SCADA meets Industry 4.0"
+    content: Legacy SCADA systems were built to monitor and control industrial systems before technological advancements provided a way to perform those functions without monolithic hardware systems. FlowFuse provides a complete SCADA solution on the foundation of Node-RED, enabling industrial control and monitoring at scale and with enterprise-grade security.
+howSection:
+    title: "How it Works"
+    p1: "Built on Node-RED, FlowFuse uses open-source technology capable of quickly and securely building applications to connect, integrate, and control machines previously packaged as a standalone SCADA system"
+    i1: 
+    p2: "Let’s take an example. Your factory is using a Siemens S7 PLC connected to a Sentron and various sensors and actuators. You want to manage the efficiency of this process, so you open the Node-RED instance that you created for managing this workflow and drag in the FlowFuse Certified S7 PLC node and Sentron node, entering configuration details to connect these devices along with anything else running in your factory."
+    i2:
+    p3: "After perfecting the flow to connect your devices needed for control, you add settings to send data from every important part of the process to a database. To save time creating actionable visualizations, you pull in one of the customizable dashboard Blueprints approved by FlowFuse. Because this entire process runs on Node-RED, each step is customizable and not limited to built-in parameters imposed by closed software. And because you’re using FlowFuse, the entire operation is secure and can scale to as many lines and sites as you need."
+    blueprintIds:
+        - "d9yNg20jRw"
+        - "e85N3lmyX6"
+        - "6EbLVbLa9j"
+    p4: "No matter your SCADA setup, FlowFuse empowers your organization to securely control, connect, and operate your workflow the way you see fit."
+whySection:
+    title: "The FlowFuse <span class='text-red-600'>Advantage</span>"
+    reasons:
+        - title: "Built-in adaptation layer"
+          description: "Leverage the power of Node-RED to integrate your SCADA functions into a comprehensive, modular platform."
+        - title: "End-to-end insight and control"
+          description: "Everything you need to connect, manage, visualize and analyze your data in one place."
+        - title: "Limitless connections"
+          description: "Robust and growing open-source library provides connections for all protocols, all machines, and all devices."
+        - title: "Rapid implementation"
+          description: "Get up and running quickly on FlowFuse Cloud."
+        - title: "Open-source"
+          description: "Avoid vendor lock-in."
+        - title: "Low-Code"
+          description: "Empowering your teams to build custom solutions with ease."
+ctaSection:
+    title: "Ready to simplify your UNS journey and unlock the power of your industrial data?"
+meta:
+    title: "FlowFuse for SCADA"
+    description: "FlowFuse replaces legacy SCADA systems with its powerful, customizable, modular components that streamline operations, reduce dependence on costly, monolithic solutions. Powered by Node-RED."
+    keywords: "FlowFuse, manufacturing, SCADA, Industry 4.0, Siemens S7, PLC, Sentron"
+---
+<!--First two sections-->
+<div class="nohero w-full px-6">
+    <!--Hero Content-->
+    <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
+        <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
+            <div class="my-auto max-md:mx-auto md:w-1/2 lg:w-5/12 max-w-md">
+                <h1 class="w-full mt-0 px-12 md:px-0 m-auto font-medium">
+                    {{ heroSection.title | safe }}
+                </h1>
+                <p class="mb-10">
+                    {{ meta.description }}
+                </p>
+                <div class="flex md:hidden justify-center m-auto max-w-[400px] mb-10">
+                    {% image "./images/solutions/ff-uns.png", "FlowFuse hosting Node-RED connected to many devices", [400] %}
+                </div>
+                <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
+                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'uns'})">TALK TO AN EXPERT</a>
+                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'uns'})">GET STARTED</a>
+                </div>
+            </div>
+            <div class="flex max-md:hidden justify-center m-auto max-w-[400px]">
+                {% image "./images/solutions/ff-uns.png", "FlowFuse hosting Node-RED connected to many devices", [400] %}
+            </div>
+        </div>   
+    </div>
+    <div class="w-full">
+        <div class="max-w-screen-lg mx-auto">
+            <!-- Banner - SCADA meets Industry 4.0 -->  
+            <div class="flex md:flex-row flex-col w-full bg-white border-2 border-indigo-200 p-6 drop-shadow-lg md:gap-6 rounded-lg">
+                <h2 class="w-full max-sm:text-center max-sm:mx-auto mb-6 text-indigo-400">{{ bannerSection.title | safe }}</span></h2>
+                <p class="md:max-w-2/3 max-sm:text-center max-sm:mx-auto">{{ bannerSection.content }}</p>
+            </div>
+            <!--How it works-->    
+            <h2 class="mt-16">{{ howSection.title }}</h2>
+            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p1 }}</p>
+            {% image "./images/solutions/flowfuse-uns.png", "FlowFuse UNS Workflow", [1024] %}
+            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p2 }}</p>
+            {% image "./images/solutions/flowfuse-uns.png", "FlowFuse UNS Workflow", [1024] %}
+            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p3 }}</p>
+            <div class="container m-auto text-left max-w-sm md:max-w-none pt-8 w-full gap-4">
+                <ul class="flex flex-col sm:grid md:grid-cols-3 gap-x-6 gap-y-12">
+                    {% include "homepage_blueprints.njk" %}
+                </ul>
+            </div>    
+            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p4 }}</p>
+        </div>
+    </div>
+</div>
+<!--Why FlowFuse-->    
+<div class="w-full bg-indigo-50/50 py-12 mt-20">
+    <div class="max-w-screen-lg mx-auto px-6">
+        <h2 class="font-bold m-auto w-full text-center sm:text-left mb-12">{{ whySection.title | safe }}</h2>
+        <div class="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            {% for reason in whySection.reasons %}
+            <div class="w-full mt-4 md:mt-0 flex flex-col">
+                <h4 class="flex justify-center sm:justify-start font-semibold text-gray-500">{{ reason.title }}</h4>
+                <p class="text-center sm:text-left font-light mt-6 max-sm:max-w-md max-sm:mx-auto">{{ reason.description }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="max-md:max-w-xl md:max-w-screen-lg mx-auto max-sm:text-center pt-16 pb-10 px-6 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap mb-12">
+    <!--CTA-->
+    <div class="ff-blue-card max-sm:max-w-none">
+        <h4 class="mb-6 w-full text-center">{{ ctaSection.title }}</h4>
+        <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
+            <a class="ff-btn ff-btn--primary min-h-[40px]" href="/book-demo/" onclick="capture('cta-contact-us-for-demo', {'position': 'secondary'}, {'page': 'uns'})">CONTACT US FOR DEMO</a>
+            <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-try-it-on-the-cloud', {'position': 'secondary'}, {'page': 'uns'})">TRY IT ON THE CLOUD</a>
+        </div>
+    </div>
+</div>
+
+
