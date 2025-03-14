@@ -16,7 +16,7 @@ With version 1.12 of FlowFuse, it is now possible to use your custom nodes. In t
 
 <div class="blog-update-notes">
     <p><strong>UPDATE:</strong> Since this article was published, we've made this even easier on FlowFuse!</p>
-    <p>Now, FlowFuse includes a a private registry for all Team- and Enterprise-Tier customers, so there is no need to host and manage your own.</p>
+    <p>Now, FlowFuse includes a a private registry for all Team and Enterprise-Tier customers, so there is no need to host and manage your own.</p>
     <p>You can view our documentation on this feature <a href="/docs/user/custom-npm-packages/">here</a></p> 
 </div>
 
