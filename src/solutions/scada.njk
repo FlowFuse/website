@@ -3,23 +3,23 @@ layout: page
 nohero: true
 heroSection:
     title: "FlowFuse for <span class='text-indigo-600 inline-block'>SCADA</span>"
-    image:
-    diagram:
+    image: images/solutions/scada-hero.png
+    imgAlt: "SCADA system with FlowFuse"
 bannerSection:
     title: "SCADA meets Industry 4.0"
-    content: Legacy SCADA systems were built to monitor and control industrial systems before technological advancements provided a way to perform those functions without monolithic hardware systems. FlowFuse provides a complete SCADA solution on the foundation of Node-RED, enabling industrial control and monitoring at scale and with enterprise-grade security.
+    content: "Legacy SCADA systems were built to monitor and control industrial systems before technological advancements provided a way to perform those functions without monolithic hardware systems. FlowFuse provides a complete SCADA solution on the foundation of Node-RED, enabling industrial control and monitoring at scale and with enterprise-grade security. Enjoy low-code, agile, and responsive development with a platform that will integrate with all future protocols."
 howSection:
     title: "How it Works"
-    p1: "Built on Node-RED, FlowFuse uses open-source technology capable of quickly and securely building applications to connect, integrate, and control machines previously packaged as a standalone SCADA system"
-    i1: 
-    p2: "Let’s take an example. Your factory is using a Siemens S7 PLC connected to a Sentron and various sensors and actuators. You want to manage the efficiency of this process, so you open the Node-RED instance that you created for managing this workflow and drag in the FlowFuse Certified S7 PLC node and Sentron node, entering configuration details to connect these devices along with anything else running in your factory."
-    i2:
-    p3: "After perfecting the flow to connect your devices needed for control, you add settings to send data from every important part of the process to a database. To save time creating actionable visualizations, you pull in one of the customizable dashboard Blueprints approved by FlowFuse. Because this entire process runs on Node-RED, each step is customizable and not limited to built-in parameters imposed by closed software. And because you’re using FlowFuse, the entire operation is secure and can scale to as many lines and sites as you need."
-    blueprintIds:
-        - "d9yNg20jRw"
-        - "e85N3lmyX6"
-        - "6EbLVbLa9j"
-    p4: "No matter your SCADA setup, FlowFuse empowers your organization to securely control, connect, and operate your workflow the way you see fit."
+    p1: "Built on Node-RED, FlowFuse uses open-source technology capable of quickly and securely building applications to connect, integrate, and control machines previously packaged as a standalone SCADA system."
+    image1: images/solutions/scada-how-diagram.png
+    imageAlt1: "FlowFuse SCADA diagram"
+    p2: "Let’s take an example. Your factory is using a Siemens S7 PLC and a Sentron, collecting data from various sensors and actuators. You want to manage the efficiency of this process, so you open the Node-RED instance that you created for managing this workflow and drag in the FlowFuse Certified S7 PLC node and Sentron node, entering configuration details to connect these devices along with anything else running in your factory."
+    image2: images/solutions/scada-how-flow.png
+    imageAlt2: "Node-RED flow using the FlowFuse Certified S7 PLC node"
+    p3:
+        - "After perfecting the flow to connect your devices needed for control, you add settings to send data from every important part of the process to a database. To save time creating actionable visualizations, you pull in one of the customizable dashboard Blueprints approved by FlowFuse. Because this entire process runs on Node-RED, each step is customizable and not limited to built-in parameters imposed by closed software. And because you’re using FlowFuse, the entire operation is secure and can scale to as many lines and sites as you need."
+        - "The last step is to create useful visualizations. Since your team has been empowered to build the applications you need, you import some of your custom nodes and flows from your Team Library directly into your instance, structure your data the way you want to see it, and use FlowFuse Dashboard to create actionable visualizations. Because this entire process runs on Node-RED, each step is customizable and not limited to built-in parameters imposed by closed software. And because you’re using FlowFuse, the entire operation is secure and can scale to as many lines and sites as you need."
+        - "No matter your SCADA setup, FlowFuse empowers your organization to securely control, connect, and operate your workflow the way you see fit."
 whySection:
     title: "The FlowFuse <span class='text-red-600'>Advantage</span>"
     reasons:
@@ -32,14 +32,18 @@ whySection:
         - title: "Rapid implementation"
           description: "Get up and running quickly on FlowFuse Cloud."
         - title: "Open-source"
-          description: "Avoid vendor lock-in."
+          description: "Avoid vendor lock-in. Rely on an open-source community of thousands for insights and advice."
         - title: "Low-Code"
           description: "Empowering your teams to build custom solutions with ease."
 ctaSection:
-    title: "Ready to simplify your UNS journey and unlock the power of your industrial data?"
+    title: "Ready to unlock SCADA for your organisation?"
+    primaryUrl: "/book-demo/"
+    primaryCta: "Contact us for Demo"
+    secondaryUrl: "https://app.flowfuse.com/account/create"
+    secondaryCta: "Try FlowFuse Now"
 meta:
     title: "FlowFuse for SCADA"
-    description: "FlowFuse replaces legacy SCADA systems with its powerful, customizable, modular components that streamline operations, reduce dependence on costly, monolithic solutions. Powered by Node-RED."
+    description: "FlowFuse replaces legacy SCADA systems and unlocks the potential to build your own SCADA system with its powerful, customizable, modular components that streamline operations, reduce dependence on costly, monolithic solutions. Powered by Node-RED."
     keywords: "FlowFuse, manufacturing, SCADA, Industry 4.0, Siemens S7, PLC, Sentron"
 ---
 <!--First two sections-->
@@ -47,52 +51,60 @@ meta:
     <!--Hero Content-->
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
         <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
-            <div class="my-auto max-md:mx-auto md:w-1/2 lg:w-5/12 max-w-md">
-                <h1 class="w-full mt-0 px-12 md:px-0 m-auto font-medium">
+            <div class="my-auto max-md:mx-auto md:w-1/2 lg:w-5/12 max-w-lg">
+                <h1 class="w-full mt-0 md:px-0 m-auto font-medium">
                     {{ heroSection.title | safe }}
                 </h1>
-                <p class="mb-10">
+                <p class="mb-10 flex-grow">
                     {{ meta.description }}
                 </p>
-                <div class="flex md:hidden justify-center m-auto max-w-[400px] mb-10">
-                    {% image "./images/solutions/ff-uns.png", "FlowFuse hosting Node-RED connected to many devices", [400] %}
+                <div class="flex md:hidden justify-center m-auto max-w-[400px] mb-10"> 
+                    {% set image = ["./", heroSection.image ] | join %}
+                    {% set imageAlt = heroSection.imgAlt %}
+                    {% image image, imageAlt, [400] %}
                 </div>
                 <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                     <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'uns'})">TALK TO AN EXPERT</a>
                     <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'uns'})">GET STARTED</a>
                 </div>
             </div>
-            <div class="flex max-md:hidden justify-center m-auto max-w-[400px]">
-                {% image "./images/solutions/ff-uns.png", "FlowFuse hosting Node-RED connected to many devices", [400] %}
+            <div class="flex max-md:hidden justify-center m-auto max-w-[450px]">
+                {% set image = ["./", heroSection.image ] | join %}
+                {% set imageAlt = heroSection.imgAlt %}
+                {% image image, imageAlt, [450] %}
             </div>
         </div>   
     </div>
     <div class="w-full">
         <div class="max-w-screen-lg mx-auto">
             <!-- Banner - SCADA meets Industry 4.0 -->  
-            <div class="flex md:flex-row flex-col w-full bg-white border-2 border-indigo-200 p-6 drop-shadow-lg md:gap-6 rounded-lg">
-                <h2 class="w-full max-sm:text-center max-sm:mx-auto mb-6 text-indigo-400">{{ bannerSection.title | safe }}</span></h2>
-                <p class="md:max-w-2/3 max-sm:text-center max-sm:mx-auto">{{ bannerSection.content }}</p>
+            <div class="flex md:flex-row flex-col w-full bg-white border-2 border-indigo-200 px-6 py-2 drop-shadow-lg md:gap-6 rounded-lg">
+                <h2 class="w-full max-sm:mx-auto my-6 text-indigo-400">{{ bannerSection.title | safe }}</span></h2>
+                <p class="md:max-w-2/3 max-sm:mx-auto">{{ bannerSection.content }}</p>
             </div>
             <!--How it works-->    
             <h2 class="mt-16">{{ howSection.title }}</h2>
-            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p1 }}</p>
-            {% image "./images/solutions/flowfuse-uns.png", "FlowFuse UNS Workflow", [1024] %}
-            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p2 }}</p>
-            {% image "./images/solutions/flowfuse-uns.png", "FlowFuse UNS Workflow", [1024] %}
-            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p3 }}</p>
-            <div class="container m-auto text-left max-w-sm md:max-w-none pt-8 w-full gap-4">
-                <ul class="flex flex-col sm:grid md:grid-cols-3 gap-x-6 gap-y-12">
-                    {% include "homepage_blueprints.njk" %}
-                </ul>
-            </div>    
-            <p class="max-sm:max-w-md w-full max-sm:text-center max-sm:mx-auto mt-6">{{ howSection.p4 }}</p>
+            <p class="w-full max-sm:mx-auto mt-6">{{ howSection.p1 }}</p>
+            <div class="mx-auto max-w-[550px] my-12">
+                {% set image = ["./", howSection.image1 ] | join %}
+                {% set imageAlt = howSection.imageAlt1 %}
+                {% image image, imageAlt, [550] %}
+            </div>
+            <p class="w-full max-sm:mx-auto mt-6">{{ howSection.p2 }}</p>
+            <div class="mx-auto ff-image-rounded border drop-shadow-md p-1 max-w-[385px] my-12 bg-white">
+                {% set image = ["./", howSection.image2 ] | join %}
+                {% set imageAlt = howSection.imageAlt2 %}
+                {% image image, imageAlt, [385] %}
+            </div>
+            {% for p in howSection.p3 %}
+            <p class="w-full max-sm:mx-auto mt-6">{{ p }}</p>
+            {% endfor %}
         </div>
     </div>
 </div>
 <!--Why FlowFuse-->    
-<div class="w-full bg-indigo-50/50 py-12 mt-20">
-    <div class="max-w-screen-lg mx-auto px-6">
+<div class="w-full bg-indigo-50/50 py-12 mt-20 px-6">
+    <div class="max-w-screen-lg mx-auto">
         <h2 class="font-bold m-auto w-full text-center sm:text-left mb-12">{{ whySection.title | safe }}</h2>
         <div class="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {% for reason in whySection.reasons %}
@@ -111,8 +123,8 @@ meta:
     <div class="ff-blue-card max-sm:max-w-none">
         <h4 class="mb-6 w-full text-center">{{ ctaSection.title }}</h4>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
-            <a class="ff-btn ff-btn--primary min-h-[40px]" href="/book-demo/" onclick="capture('cta-contact-us-for-demo', {'position': 'secondary'}, {'page': 'uns'})">CONTACT US FOR DEMO</a>
-            <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-try-it-on-the-cloud', {'position': 'secondary'}, {'page': 'uns'})">TRY IT ON THE CLOUD</a>
+            <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="{{ ctaSection.primaryUrl }}" onclick="capture('cta-contact-us-for-demo', {'position': 'secondary'}, {'page': 'scada'})">{{ ctaSection.primaryCta }}</a>
+            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{{ ctaSection.secondaryUrl }}" onclick="capture('cta-try-flowfuse-now', {'position': 'secondary'}, {'page': 'scada'})">{{ ctaSection.secondaryCta }}</a>
         </div>
     </div>
 </div>
