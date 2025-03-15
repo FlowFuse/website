@@ -14,6 +14,12 @@ With version 1.12 of FlowFuse, it is now possible to use your custom nodes. In t
 
 <!--more-->
 
+<div class="blog-update-notes">
+    <p><strong>UPDATE:</strong> Since this article was published, we've made this even easier on FlowFuse!</p>
+    <p>Now, FlowFuse includes a private registry for all Team and Enterprise Tier customers, so there is no need to host and manage your own.</p>
+    <p>You can view our documentation on this feature <a href="/docs/user/custom-npm-packages/">here</a></p> 
+</div>
+
 What do we mean by custom nodes? Typically, Node-RED nodes are hosted publicly on the npmjs registry, making them accessible to everyone for download and contribution. However, there are use cases where you may not want to share your developed nodes publicly. In such scenarios, it becomes necessary to run your own private Node-RED catalog and npm repository. This approach allows you to manage your custom nodes securely and efficiently.
 
 ## Step 1 - Setting Up a Private npm Repository
