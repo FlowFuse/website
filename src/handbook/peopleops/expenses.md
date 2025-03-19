@@ -78,8 +78,8 @@ We recognize that developers will have slightly more demanding requirements for 
 
 | Operating System | Recommended Device |
 |------------------|--------------------|
-| MacOS            | [MacBook Pro 14"/16" - 18 GB RAM](https://www.apple.com/uk/shop/buy-mac/macbook-pro/16-inch) (~$3,000)
-| Windows/Linux    | [ThinkPad P16s Gen 3 - 32 GB RAM](https://www.lenovo.com/gb/en/p/laptops/thinkpad/thinkpadp/lenovo-thinkpad-p16s-gen-3-(16-inch-intel)-mobile-workstation/len101t0105?orgRef=https%253A%252F%252Fwww.google.com%252F&cid=uk:sem:0whw5v&gad_source=1&gclid=CjwKCAjw1K-zBhBIEiwAWeCOF_UftxW7heFXlvLivuHrs3Wy_UyLikLPHu8j42i5Gt1nyz6AKqP4jxoCKFwQAvD_BwE&gclsrc=aw.ds) (~$2,300) or [Dell XPS 15 - 16 GB RAM](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-15-laptop/spd/xps-15-9530-laptop/cn95303cc) (~$2,300) |
+| MacOS            | [MacBook Air 15" - 24 GB RAM](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-24gb-memory-512gb) (~$1,600 ex VAT) |
+| Windows/Linux    | [Dell XPS 15 - 16 GB RAM](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-15-laptop/spd/xps-15-9530-laptop/cn95303cc) (~$2,300) |
 
 If you require an alternative device, please discuss with your manager.
 
@@ -89,7 +89,7 @@ For any other employee within the company, the following devices are recommended
 
 | Operating System | Recommended Device |
 |------------------|--------------------|
-| MacOS            | [MacBook Air 15" - 16 GB RAM](https://www.apple.com/uk/shop/buy-mac/macbook-air/15-inch-m3) (~$2,300) |
+| MacOS            | [MacBook Air 15" - 16 GB RAM](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-16gb-memory-256gb) (~$1200 ex VAT) |
 | Windows/Linux    | [Dell XPS 14](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-14-laptop/spd/xps-14-9440-laptop/cn94001cc) (~$1,800) |
 
 Unless circumstances require otherwise, laptops will only be considered for a refresh after 4 years. Please discuss with your manager if you need to refresh your laptop.
