@@ -38,12 +38,11 @@ Node-RED the prospect/customer is.
 
 We classify a customer into one of five "stages":
 
-- **Stage 0:** No awareness of Node-RED
-- **Stage 1:** Aware of what Node-RED is, and may have dabbled with it a little
-- **Stage 2:** Aware of Node-RED, and convinced of the Node-RED "wow" factor
-- **Stage 3:** Person has built and deployed Node-RED at scale
-- **Stage 4:** User has experienced the friction/pain-points around deploying
-and managing Node-RED at scale, in a production environment.
+- **Stage 0: Unaware of Node-RED** No knowledge of Node-RED and what is does
+- **Stage 1: Node-RED Discovery** Aware of what Node-RED is, and may have dabbled with it a little, without using it in-depth
+- **Stage 2: Value of Node-RED** User has used Node-RED in their own personal projects,  or for professional proof-of-concepts
+- **Stage 3: Node-RED in Production** Person has built and deployed Node-RED in a professional, production, environment
+- **Stage 4: Node-RED at Scale** User has over 5 x Node-RED instances running in a production environment
 
 Independent of the stage a customer is at, we need to ensure we have consistent
 messaging around the value of FlowFuse, but be aware of other value (e.g. the
