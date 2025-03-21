@@ -118,5 +118,22 @@ Where possible, systems shall be configured to enforce these standards.
  - Passwords may only be stored in the company provided password vault, 1Password.
 
 
+## Programmaticaly Accessible Resources
+
+When programmatic access to resources is required, the following guidelines must
+be followed:
+- Use of API keys or access tokens (secrets) is preferred over username/password
+  combinations
+- if possible, secrets shouldn't be shared between environments 
+- secrets must be stored securely in 1Password and not shared in
+  plaintext
+- secrets must be rotated on a regular basis - at least annually, follow [internal 
+  guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo)
+  for details
+- secrets should follow least privilege principle - only provide access to the
+  resources that are required for the application to function
+- secrets must not be hardcoded in the source code 
+
+
 --- 
 Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
