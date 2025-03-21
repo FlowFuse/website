@@ -3,8 +3,7 @@ layout: layouts/documentation.njk
 ---
 <article class="max-w-2xl mx-auto">
     <h1 class="text-3xl font-bold">{{ meta.title }}</h1>
-    <img src="{{ image }}" alt="{{ meta.title }}" class="w-full rounded-lg my-4">
-
+    <img src="{{ image }}" alt="{{ meta.title }}" class="w-full h-auto max-h-96 object-contain rounded-lg my-4">
     <!-- Tabs -->
     <div x-data="{ tab: new URLSearchParams(window.location.search).get('tab') || 'install' }" 
          x-init="$watch('tab', value => {
