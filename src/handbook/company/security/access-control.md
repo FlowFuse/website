@@ -122,17 +122,22 @@ Where possible, systems shall be configured to enforce these standards.
 
 When programmatic access to resources is required, the following guidelines must
 be followed:
-- Use of API keys or access tokens (secrets) is preferred over username/password
-  combinations
-- if possible, secrets shouldn't be shared between environments 
-- secrets must be stored securely in 1Password and not shared in
-  plaintext
-- secrets must be rotated on a regular basis - at least annually, follow [internal 
-  guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo)
-  for details
-- secrets should follow least privilege principle - only provide access to the
-  resources that are required for the application to function
-- secrets must not be hardcoded in the source code 
+
+1. Use of API keys or access tokens (secrets) is preferred over username/password
+combinations
+
+2. Whenever possible, secrets shouldn't be shared between environments
+
+3. Secrets must be stored securely in 1Password and not shared in
+plaintext
+4. Secrets must be rotated on a regular basis - at least annually, follow [internal 
+guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo)
+for details
+
+5. Secrets should follow least privilege principle - only provide access to the
+resources that are required for the application to function
+
+6. Secrets must not be hardcoded in the source code 
 
 
 --- 
