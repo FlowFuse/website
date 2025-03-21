@@ -43,7 +43,7 @@ Before we start, it is recommended to update and upgrade your system to ensure a
 sudo apt update && sudo apt upgrade -y
 ```
 
-Next, let's install the FlowFuse device agent with the following script. The FlowFuse Device Agent will enable us to run Node-RED on the ARMxy BL340 and connect the instance to the FlowFuse platform, allowing you to manage and scale your Node-RED flows remotely.
+Next, let's install the FlowFuse device agent with the following script.
 
 ```bash
 bash <(curl -sL https://raw.githubusercontent.com/FlowFuse/device-agent/main/service/raspbian-install-device-agent.sh)
@@ -57,7 +57,7 @@ To verify that the service is running, use the following command:
 sudo systemctl status flowfuse-device-agent.service
 ```
 
-If active, you should see a result similar to the one shown in the image below:
+If running, you should see a result similar to the one shown in the image below:
 
 !["Status of the FlowFuse Device Agent systemd service"](./images/systemctl-status.png "Status of the FlowFuse Device Agent systemd service"){data-zoomable}
 
@@ -73,7 +73,7 @@ When registering your hardware, you will be presented with a dialog containing a
 
 ### Connecting Device
 
-Execute the command you have copied:
+Execute the command you have copied with sudo as shown below
 
 ```bash
 sudo flowfuse-device-agent -o <insert-your-three-word-token> https://app.flowfuse.com
