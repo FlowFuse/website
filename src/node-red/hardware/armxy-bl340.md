@@ -21,8 +21,6 @@ specifications:
 layout: layouts/hardware.njk
 ---
 
-## Setting Up Node-RED on ARMxy BL340
-
 The ARMxy BL340 is a high-performance single-board computer designed for demanding applications, including edge computing, automation, and embedded systems. Featuring an octa-core ARM processor, advanced connectivity options, and support for high-speed storage, it provides a powerful platform for developers and engineers.
 
 ## Prerequisites
