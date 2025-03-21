@@ -30,6 +30,24 @@ does
 
 See also the description of [our market](/handbook/company/strategy/#the-market).
 
+### Prospect Stages (Node-RED Awareness)
+
+When considering messaging, sales conversations and how we communicate our value as
+a product and company, wan important factor for us at this stage is how aware of
+Node-RED the prospect/customer is.
+
+We classify a customer into one of five "stages":
+
+- **Stage 0: Unaware of Node-RED** No knowledge of Node-RED and what is does
+- **Stage 1: Node-RED Discovery** Aware of what Node-RED is, and may have dabbled with it a little, without using it in-depth
+- **Stage 2: Value of Node-RED** User has used Node-RED in their own personal projects,  or for professional proof-of-concepts
+- **Stage 3: Node-RED in Production** Person has built and deployed Node-RED in a professional, production, environment
+- **Stage 4: Node-RED at Scale** User has over 5 x Node-RED instances running in a production environment
+
+Independent of the stage a customer is at, we need to ensure we have consistent
+messaging around the value of FlowFuse, but be aware of other value (e.g. the
+pure value of Node-RED) which can still be factored into the conversation.
+
 ## Messaging
 
 ### Tagline
