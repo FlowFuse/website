@@ -30,7 +30,7 @@ will have the aforementioned 25 days instead.
 
 ## Sick leave
 
-Sick leave, or having limited availability is not recorded currently. Keep your
+Sick leave, or having limited availability, is not recorded currently. Keep your
 manager updated on your health, and let them know what FlowFuse can do for you
 to aid in your recovery.
 
@@ -46,7 +46,7 @@ Any employee can take up to 6-weeks if they wish without requiring manager
 approval. We recommend a minimum of 4 weeks, but recognise it's a personal
 choice to make. Further leave can be requested, but should be discussed with
 your manager. Inform your manager of the expected new family member at least 16
-weeks before the due date to qualify to the extended parental leave.
+weeks before the due date to qualify for the extended parental leave.
 
 If you live in a country that offers statutory leave longer than this, then
 FlowFuse will abide by this.
@@ -55,6 +55,6 @@ FlowFuse will abide by this.
 
 Our company understands the profound impact that the loss of a loved one can
 have on an employee, and we are committed to supporting our team members
-during these difficult times. Therefore, FlowFuse has a bereavement leave policy.
+during difficult times. Therefore, FlowFuse has a bereavement leave policy.
 Employees who experience the death of an immediate family member, such as a spouse,
 child, parent, or sibling, are eligible for up to five consecutive days of paid leave.
