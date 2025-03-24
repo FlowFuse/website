@@ -4,7 +4,7 @@ navTitle: Code of Conduct
 
 # Code of Conduct
 
-The primary goal of our Code of Conduct is to foster inclusive, collaborative
+The primary goal of our Code of Conduct is to foster inclusive, collaborative,
 and safe working conditions for all FlowFuse staff and community members who
 participate in our open core projects.
 
