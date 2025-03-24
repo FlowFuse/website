@@ -7,10 +7,10 @@ navTitle: Performance review
 In September a performance review is done for all employees. The performance
 review is based on [our values](../company/values) and meeting role
 expectations. A review is held by the direct manager of each employeee. The
-manager will write down their expectations, where these were met and where the
+manager will write down their expectations, where these were met, and where the
 employee can still grow. This text is shared with each individual employee.
 
-While this performance review is written down, each manager should've communicated
+While this performance review is written down, each manager should be communicating
 feedback regularly to minimize the chance for surprises during the written review.
 
 ## Structure
@@ -29,11 +29,11 @@ Each of the Company Values will be rated as one of the following:
 - **Room for Growth:** This is an area where the employee could improve.
 
 Details and examples should be provided with each instance. It is also important that employees are not disheartened
-if given "Room for Growth" feedback, in fact, managers are encouraged to assign this rating to at least one of the
+if given "Room for Growth" feedback. In fact, managers are encouraged to assign this rating to at least one of the
 company values, although this should not be forced.
 
 It is almost impossible to achieve/exceed all values perfectly, sometimes particular employees are more focus on
-customer/community engagement, others may be more focussed on specific technical requirements. This is normal and should be embraced.
+customer/community engagement, others may be more focused on specific technical requirements. This is normal and should be embraced.
 
 ### Highlights
 
@@ -45,11 +45,11 @@ on the positive aspects of the employee's work, great contributions made and the
 
 As per the ["Compensation"](../peopleops/compensation) section of the Handbook, FlowFuse can opt to adjust your compensation
 at the same time your performance reviews are delivered. Please see the ["Adjustments"](../peopleops/compensation#adjustment)
-section for more details on the factor of these changes.
+section for more details on the factors driving those changes.
 
 This section of the review should clearly state the Employee's existing compensation, the change (if any) to that compensation, and the net
 salary after the change.
 
 ### Notes
 
-This section should be used to capture employee thoughts and feedback, and any other topics that come up during the review.
+This section should be used to capture employee thoughts, feedback, and any other topics that come up during the review.

@@ -41,7 +41,7 @@ When conducting interviews to hire new team members, prioritize value-fit over c
 ### STAR interviews
 
 By utilizing [the STAR framework](https://www.themuse.com/advice/star-interview-method)
-andidates will be interviewed to share their past experiences. This approach enables us to assess their actions and achievements, aiming to predict their future performance.
+candidates will be interviewed to share their past experiences. This approach enables us to assess their actions and achievements, aiming to predict their future performance.
 
 For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE){rel="nofollow"}
 to make a copy of.
@@ -77,12 +77,11 @@ During the onboarding process on our EOR provider platform, candidates must eith
 ## Onboarding
 
 Just before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
-and preferred company email address. An issuewill be created on our [internal issue tracker][issue-tracker] with steps for you and
+and preferred company email address. An issue will be created on our [internal issue tracker](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} with steps for you and
 the team to complete once you start.
 
 On the day you start, a message will be sent to your personal email address to grant you access to your FlowFuse email address.
 This process ensures that all new joiners receive access either on their first day or up to 24 hours before their official start date.
-
 
 Upon setting up your password, it is essential to [turn on the 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop). Failure to do so may result in being locked out of your account after a few days, requiring assistance from an admin to regain access.
 
@@ -90,7 +89,7 @@ Once your FlowFuse email is set up, you will have access to invitations to other
 
 On your first day, once your email and 1Password accounts are set up, it is important to prioritize
 gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
-Additionally, your manager will assign tasks for you to begin working on during your first week.
+Additionally, your manager will assign tasks for you to begin working on during your first week. Further details on Onboarding will be available in your Onboarding issue. 
 
 ## Greenhouse
 
@@ -98,7 +97,7 @@ Additionally, your manager will assign tasks for you to begin working on during 
 
 When opening a job post, you'll need a couple of things:
 
-1. A draft Job Description
+1. A draft Job Description.
 2. Verifying the availability of the approved role.
 3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
 
@@ -108,7 +107,7 @@ Once these elements are in place, the CEO will proceed to design a pipeline for 
 
 A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
 For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
-**must** include all values, and job requirements.
+**must** include all values and job requirements.
 
 #### Accepting applications
 
@@ -142,7 +141,7 @@ During this call FlowFuse should understand:
 1. Compensation range for the candidate
 1. Notice period, or time from offer to start
 
-For all candidates that are moved on the next stage a scorecard needs to be filled out.
+For all candidates that are moved on the next stage, a scorecard needs to be filled out.
 
 After this stage **no more than 25%** of the total number of candidates should remain.
 
@@ -158,7 +157,7 @@ When in doubt, reject the candidate.
 #### STAR interview
 After the skills assessment, the last round includes a behaviour interview. STAR interviews are aimed at discussing the candidates past performance in certain situations, and hopefully predict the way they acted is in line with FlowFuse expectations.
 
-Again, a scoresheet will be filled out.
+Again, a scorecard will be filled out.
 
 #### Offer stage
 
@@ -173,14 +172,14 @@ Before the peopleops team extends an offer, explicit approval is required from:
 1. The new manager of the candidate
 1. CEO
 
-When a candidate accepted an offer, proceed to [onboard them](#after-an-offer-is-accepted).
+When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
 
 ### Closing a job
 
 As soon as there's a pipeline that would support at least three strong candidates
 for the open position, take the job posting offline. Candidates applying for a job
-that's no longer available is a waste of their time and a bad experience with
-FlowFuse and hurts our reputation.
+that's no longer available is a waste of their time, a bad experience with
+FlowFuse, and hurts our reputation.
 
 ## Offboarding
 
@@ -190,7 +189,7 @@ When a team member or contractor decides to leave FlowFuse, they will receive a 
 
 ### Voluntary Resignation
 
-If a team member decides to leave FlowFuse they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
+If a team member decides to leave FlowFuse, they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
 
 If you are considering resigning from your position at FlowFuse, we highly recommend discussing your reasons with your manager or the People Ops manager. We are always open to improving and making changes that benefit our team members. While we understand that sometimes leaving is the best option, we encourage you to explore all possible solutions before making a final decision.
 
@@ -202,7 +201,7 @@ When a team member is being let go, it is usually due to either performance issu
 
 ### Communicating Departures
 
-When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary,  reasons of the departure will be at the sole discretion of the FlowFuse management.
+When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary, reasons of the departure will be at the sole discretion of the FlowFuse management.
 
 ## Offboarding process
 

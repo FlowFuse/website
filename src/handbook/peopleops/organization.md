@@ -1,14 +1,14 @@
 ---
-navTitle: HR Policies
+navTitle: PeopleOps Policies
 ---
 
 # PeopleOps policies
 
-All employees at FlowFuse will find HR policies in this section of the handbook. Please note that this section of the handbook will be continuously updated to reflect the evolving needs of our organization. As FlowFuse is actively in the process of developing and incorporating additional policies, we encourage you to check back regularly for the latest updates. Your familiarity with these policies ensures that you stay informed and aligned with our company's values and practices.
+All employees at FlowFuse will find PeopleOps policies in this section of the handbook. Please note that this section of the handbook will be continuously updated to reflect the evolving needs of our organization. As FlowFuse is actively in the process of developing and incorporating additional policies, we encourage you to check back regularly for the latest updates. Your familiarity with these policies ensures that you stay informed and aligned with our company's values and practices.
 
 ## Grievance Procedure
 
-We're all about making FlowFuse an great place to work for everyone, however if you ever run into any concerns while you're here, these guidelines are here to help you out in raising a grievance. 
+We're all about making FlowFuse an great place to work for everyone. However, if you ever run into any concerns while you're here, these guidelines are here to help you out in raising a grievance. 
 
 This procedure applies to all employees and full-time contractors regardless of length of service. It does not apply to ad-hoc freelancers.
 

@@ -11,7 +11,7 @@ People operations contains information on HR related policies at FlowFuse.
 - [Compensation](./compensation.md)
 - [Expenses](./expenses.md)
 - [Hiring](./hiring.md)
-- [Organization](./organization.md)
+- [PeopleOps Policies](./organization.md)
 - [Vacation & Leave](./leave.md)
 - [Summits](./summit.md)
 
