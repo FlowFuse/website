@@ -58,13 +58,13 @@ sections:
 <div class="partners mx-auto w-full flex flex-col gap-4">
     {% for section in sections %}
     <div class="w-full py-14 px-6">
-        <div class="max-w-screen-lg m-auto flex flex-col md:flex-row md:gap-10 gap-6 md:items-start">
-            <div class="md:w-[50%] w-full">
-                <h3 class="m-auto max-sm:text-center w-full">{{ section.title | safe }}</h3>
+        <div class="max-w-screen-lg m-auto grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-x-6 md:items-start md:grid-rows-[auto_minmax(20px,_1fr)]">
+            <div class="w-full">
+                <h3 class="max-md:text-center w-full">{{ section.title | safe }}</h3>
                 {% if section.subtitle %}
-                    <h5 class="m-auto max-sm:text-center w-full font-normal">{{ section.subtitle | safe }}</h5>
+                    <h5 class="m-auto max-md:text-center w-full font-normal">{{ section.subtitle | safe }}</h5>
                 {% endif %}
-                <p>{{ section.description | safe }}</p>
+                <p class="mt-8">{{ section.description | safe }}</p>
                 {% if section.bullet_points %}
                     <div class="prose ff-prose">
                         <ul>
@@ -74,15 +74,8 @@ sections:
                         </ul>
                     </div>    
                 {% endif %}
-                {% if section.ctaText and section.ctaUrl %}
-                <div class="max-sm:mx-auto mt-6 pt-6 md:pt-0 max-md:mb-8">
-                    <a href="{{ section.ctaUrl }}" class="text-center inline-block ff-btn ff-btn--primary uppercase">
-                        <span>{{ section.ctaText }}</span>
-                    </a>
-                </div>
-                {% endif %}
             </div>
-            <ul class="md:w-[50%] grid grid-cols-2 justify-center w-full items-center gap-4">
+            <ul class="grid grid-cols-2 justify-center w-full items-center gap-4 md:row-span-2 max-md:mt-6">
                 {% for partner in section.partners %}
                 <a href="{{ partner.url }}" target="_blank" class="partner-logo flex justify-center align-center items-center h-[90px] bg-white px-6 py-4 border rounded-lg hover:drop-shadow-lg transition ease-in duration-300">
                     {% set imgSrc= [ "../", partner.logo ] | join %}
@@ -90,6 +83,13 @@ sections:
                 </a>
                 {% endfor %}
             </ul>
+            {% if section.ctaText and section.ctaUrl %}
+            <div class="max-md:mx-auto mt-6 pt-6 md:pt-0 max-md:mt-8">
+                <a href="{{ section.ctaUrl }}" class="text-center inline-block ff-btn ff-btn--primary uppercase">
+                    <span>{{ section.ctaText }}</span>
+                </a>
+            </div>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
