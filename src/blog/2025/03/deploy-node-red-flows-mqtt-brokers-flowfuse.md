@@ -4,7 +4,7 @@ subtitle: Automating MQTT Configuration in FlowFuse Using Environment Variables
 description: Learn how to configure MQTT brokers dynamically in FlowFuse using environment variables at both instance and device group levels. Streamline deployments across pipeline stages and monitor MQTT topics efficiently.
 date: 2025-03-24
 authors: ["sumit-shinde"]
-image: /blog/2025/03/images/release-2-15.png
+image:
 tags:
    - flowfuse
 ---
