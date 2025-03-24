@@ -18,7 +18,7 @@ well as the consequences for unacceptable behavior.
 ## Scope 
 
 The Code of Conduct applies to all FlowFuse staff. This includes full-time,
-part-time and contractor staff employed at every seniority level. It also applies
+part-time, and contractor staff employed at every seniority level. It also applies
 to contributors who engage with our open core projects.
 
 The Code of Conduct is to be upheld during all professional functions and events,
