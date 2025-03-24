@@ -2,73 +2,95 @@
 layout: layouts/page.njk
 title: FlowFuse Partners
 meta:
-    keywords: FlowFuse Partners, Node-RED System Integrator, Hardware Partners, Referral Partners
+    keywords: FlowFuse Partners, Node-RED System Integrator
 description: FlowFuse partners with leading cloud, hardware, technology and consulting companies to provide a complete solution that allows our customers to deliver results using Node-RED and FlowFuse.
+sections:
+    - title: <span class="text-indigo-600">Cloud</span> Providers
+      description: FlowFuse is available for deployment from the marketplace of the following Cloud providers.
+      partners:
+        - name: Amazon Web Services
+          logo: /images/partners/logo-aws.png
+          url: https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug
+        - name: Digital Ocean
+          logo: /images/partners/logo-digital-o.png
+          url: https://marketplace.digitalocean.com/apps/flowforge
+    - title: <span class="text-indigo-600">Hardware</span> Partners
+      description: FlowFuse partners with key industry hardware partners to provide an integrated experience using Node-RED and FlowFuse.
+      ctaText: CERTIFY YOUR HARDWARE
+      ctaUrl: /partners/certify-hardware/
+      partners:
+        - name: Bosch Rexroth
+          logo: /images/partners/logo-rexroth.png
+          url: /partners/ctrlx/
+        - name: NCD.io
+          logo: /images/partners/logo-ncd-io.png
+          url: https://ncd.io/
+        - name: Wago
+          logo: /images/partners/logo-wago.png
+          url: https://www.wago.com/global/
+    - title: <span class="text-indigo-600">Solutions</span> Partners
+      subtitle: Build and Deploy Enterprise-Ready Solutions
+      description: "Our Solutions Partners—trusted resellers and system integrators—help you design, implement, and manage production-ready applications with Node-RED and FlowFuse. They provide:"
+      ctaText: APPLY NOW
+      ctaUrl: /partners/referral-sign-up/
+      bullet_points:
+        - Expertise in enterprise industrial IoT, SCADA, MES, and UNS
+        - Specialized, local support and services
+        - Seamless integration with industry-specific tools
+        - Scalable solutions tailored to your business needs
+      partners:
+        - name: Gallarus
+          logo: /images/partners/logo-gallarus.png
+          url: https://gis.ie/
+        - name: Idoneos
+          logo: /images/partners/logo-idoneos.png
+          url: https://idoneos.com/
+        - name: Iniationware
+          logo: /images/partners/logo-iniationware.png
+          url: https://iniationware.eu/
+        - name: 4.0 Hero
+          logo: /images/partners/logo-40hero.png
+          url: https://40hero.com/
+        - name: Mayker
+          logo: /images/partners/logo-mayker.png
+          url: https://mayker.eu/
 ---
-<div class="bg-white w-full px-6 pt-10 md:pt-16 pb-20 md:px-0 flex flex-col gap-8 md:gap-10">
-    <div class="container max-w-screen-md m-auto flex flex-col gap-4">
-        <h3 class="m-auto text-center w-full">Cloud Providers</h3>
-        <div class="flex flex-col md:flex-row md:gap-10 gap-6">
-            <p class="md:w-[65%] w-full">FlowFuse is available for deployment from the marketplace of the following Cloud providers.</p>
-            <ul class="md:w-[35%] flex flex-row justify-center md:justify-end gap-10 w-full items-center">
-                <li class="w-[84px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300">
-                    <a href="https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug" target="_blank">{% image "../images/partners/logo-aws.png", "aws logo", [84] %}</a>
-                </li>
-                <li class="w-[92px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300">
-                    <a href="https://marketplace.digitalocean.com/apps/flowforge" target="_blank">{% image "../images/partners/logo-digital-o.png", "Digital Ocean logo", [92] %}</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <hr class="w-full md:w-[768px] mx-auto">
-    <div class="container max-w-screen-md m-auto flex flex-col gap-4">
-        <h3 class="m-auto text-center w-full">Hardware Partners</h3>
-        <div class="pb-8">
-            <div class="flex flex-col md:flex-row md:gap-10 gap-6">
-            <p class="md:w-[65%] w-full">FlowFuse partners with key industry hardware partners to provide an integrated experience
-                using Node-RED and FlowFuse.</p>
-            <ul class="md:w-[35%] flex flex-row justify-center md:justify-end w-full items-center gap-10">
-                <li class="w-[150px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300">
-                    <a href="/partners/ctrlx/">{% image "../images/partners/logo-rexroth.png", "Rexroth logo", [150] %}</a>
-                </li>
-                <li class="w-[150px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300">
-                    <a href="https://ncd.io/" target="_blank">{% image "../images/partners/logo-ncd-io.png", "NCD.io logo", [150] %}</a>
-                </li>
-            </ul>
+<div class="partners mx-auto w-full flex flex-col gap-4">
+    {% for section in sections %}
+    <div class="w-full py-14 px-6">
+        <div class="max-w-screen-lg m-auto grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-x-6 md:items-start md:grid-rows-[auto_minmax(20px,_1fr)]">
+            <div class="w-full">
+                <h3 class="max-md:text-center w-full">{{ section.title | safe }}</h3>
+                {% if section.subtitle %}
+                    <h5 class="m-auto max-md:text-center w-full font-normal">{{ section.subtitle | safe }}</h5>
+                {% endif %}
+                <p class="mt-8">{{ section.description | safe }}</p>
+                {% if section.bullet_points %}
+                    <div class="prose ff-prose">
+                        <ul>
+                        {% for point in section.bullet_points %}
+                            <li>{{ point | safe }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>    
+                {% endif %}
             </div>
-            <div class="text-center pt-6 md:pt-0">
-                <a href="/partners/certify-hardware/" class="inline-block ff-btn ff-btn--primary uppercase w-[218px]">
-                    <span>CERTIFY YOUR HARDWARE</span>
+            <ul class="grid grid-cols-2 justify-center w-full items-center gap-4 md:row-span-2 max-md:mt-6">
+                {% for partner in section.partners %}
+                <a href="{{ partner.url }}" target="_blank" class="partner-logo flex justify-center align-center items-center h-[90px] bg-white px-6 py-4 border rounded-lg hover:drop-shadow-lg transition ease-in duration-300">
+                    {% set imgSrc= [ "../", partner.logo ] | join %}
+                    {% image imgSrc, [ partner.name, "logo" ] | join , [auto] %}
+                </a>
+                {% endfor %}
+            </ul>
+            {% if section.ctaText and section.ctaUrl %}
+            <div class="max-md:mx-auto mt-6 pt-6 md:pt-0 max-md:mt-8">
+                <a href="{{ section.ctaUrl }}" class="text-center inline-block ff-btn ff-btn--primary uppercase">
+                    <span>{{ section.ctaText }}</span>
                 </a>
             </div>
+            {% endif %}
         </div>
     </div>
-    <hr class="w-full md:w-[768px] mx-auto">
-    <div class="container max-w-screen-md m-auto flex flex-col gap-4">
-        <h3 class="m-auto text-center w-full">Referral partners</h3>
-        <div class="flex flex-col gap-6">
-            <p class="w-full">FlowFuse partners with different solution providers to encourage them to recommend and support
-                Node-RED and FlowFuse with their customers.</p>
-            <ul class="flex flex-row justify-center gap-4 md:gap-10 w-full items-center">
-                <li class="w-[142px] pb-6 md:pb-0">{% image "../images/partners/logo-iniationware.png", "Iniationware logo", [142] %}</li>
-                <li class="w-[98px] pb-6 md:pb-0">{% image "../images/partners/logo-idoneo.png", "Idoneo logo", [98] %}</li>
-                <!-- <li class="w-[145px] pb-6 md:pb-0">{% image "../images/partners/logo-hexa-ai.png", "Hexa-AI logo", [145] %}</li>
-                -->
-            </ul>
-            <div class="text-center">
-                <a href="/partners/referral-sign-up/" class="inline-block ff-btn ff-btn--primary uppercase w-[218px]">
-                    <span>APPLY NOW</span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <hr class="w-full md:w-[768px] mx-auto">
-    <div class="container max-w-screen-md m-auto flex flex-col gap-4">
-        <h3 class="m-auto text-center w-full">Strategic Partners</h3>
-        <div class="flex flex-col gap-6 mt-6">
-            <ul class="flex flex-row justify-center gap-4 md:gap-10 w-full items-center">
-                <li class="w-[160px] pb-6 md:pb-0">{% image "../images/partners/logo-gallarus.png", "Iniationware logo", [160] %}</li>
-            </ul>
-        </div>
-    </div>
+    {% endfor %}
 </div>
