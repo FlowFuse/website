@@ -62,4 +62,4 @@ The FlowFuse Platform addresses the problems status above by providing our ICP w
 1. Simplify Complexity: We abstract away the complexities of industrial systems, providing a comprehensive user-friendly interface that allows engineers to focus on solving problems, not wrestling with technology.
 See also our [Messaging page](/handbook/customer/marketing/messaging/).
 
-FlowFuse uses Open-Source technologies like Node-RED, and MQTT to help our customers being successful in remedying their problems.
+FlowFuse uses Open-Source technologies like Node-RED and MQTT to help our customers being successful in remedying their problems.
