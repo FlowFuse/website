@@ -17,7 +17,7 @@ This article shows how to continue using FlowFuse’s one-click deployment while
 
 ## Goal and Prerequisites
 
-This article explains how to deploy Node-RED flows across different pipeline stages while ensuring each stage connects to its appropriate MQTT broker. It is intended for pipelines created on the FlowFuse platform.
+This article explains how to deploy Node-RED flows across different pipeline stages while ensuring each stage connects to its appropriate MQTT broker.
 
 To proceed, ensure that the DevOps pipeline is created with the correct stages. If a stage includes remote instances, verify that all instances are running the FlowFuse Device Agent and are connected to your team.
 
