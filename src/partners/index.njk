@@ -25,6 +25,9 @@ sections:
         - name: NCD.io
           logo: /images/partners/logo-ncd-io.png
           url: https://ncd.io/
+        - name: Wago
+          logo: /images/partners/logo-wago.png
+          url: https://www.wago.com/global/
     - title: <span class="text-indigo-600">Solutions</span> Partners
       subtitle: Build and Deploy Enterprise-Ready Solutions
       description: "Our Solutions Partners—trusted resellers and system integrators—help you design, implement, and manage production-ready applications with Node-RED and FlowFuse. They provide:"
@@ -52,41 +55,41 @@ sections:
           logo: /images/partners/logo-mayker.png
           url: https://mayker.eu/
 ---
-<div class="partners container w-full flex flex-col gap-4">
+<div class="partners mx-auto w-full flex flex-col gap-4">
     {% for section in sections %}
-    <div class="max-w-screen-lg px-6 m-auto py-10">
-        <h3 class="m-auto max-sm:text-center w-full">{{ section.title | safe }}</h3>
-        {% if section.subtitle %}
-            <h4 class="m-auto max-sm:text-center w-full text-sm">{{ section.subtitle | safe }}</h4>
-        {% endif %}
-        <div class="flex flex-col py-8">
-            <div class="flex flex-col md:flex-row md:gap-10 gap-6">
-                <div class="md:w-[65%] w-full prose ff-prose">
-                    <p>{{ section.description | safe }}</p>
-                    {% if section.bullet_points %}
-                        <ul class="">
+    <div class="w-full py-14 px-6">
+        <div class="max-w-screen-lg m-auto flex flex-col md:flex-row md:gap-10 gap-6 md:items-start">
+            <div class="md:w-[50%] w-full">
+                <h3 class="m-auto max-sm:text-center w-full">{{ section.title | safe }}</h3>
+                {% if section.subtitle %}
+                    <h5 class="m-auto max-sm:text-center w-full font-normal">{{ section.subtitle | safe }}</h5>
+                {% endif %}
+                <p>{{ section.description | safe }}</p>
+                {% if section.bullet_points %}
+                    <div class="prose ff-prose">
+                        <ul>
                         {% for point in section.bullet_points %}
                             <li>{{ point | safe }}</li>
                         {% endfor %}
                         </ul>
-                    {% endif %}
+                    </div>    
+                {% endif %}
+                {% if section.ctaText and section.ctaUrl %}
+                <div class="max-sm:mx-auto mt-6 pt-6 md:pt-0 max-md:mb-8">
+                    <a href="{{ section.ctaUrl }}" class="text-center inline-block ff-btn ff-btn--primary uppercase">
+                        <span>{{ section.ctaText }}</span>
+                    </a>
                 </div>
-                <ul class="partner-logo md:w-[35%] flex flex-row justify-center md:justify-end w-full items-center gap-10">
-                    {% for partner in section.partners %}
-                    <li class="w-[150px] pb-6 md:pb-0 hover:transition-opacity hover:opacity-75 transition ease-in duration-300">
-                        {% set imgSrc= [ "../", partner.logo ] | join %}
-                        <a href="{{ partner.url }}" target="_blank">{% image imgSrc, [ partner.name, "logo" ] | join , [150] %}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
+                {% endif %}
             </div>
-            {% if section.ctaText and section.ctaUrl %}
-            <div class="max-sm:mx-auto mt-6 pt-6 md:pt-0">
-                <a href="{{ section.ctaUrl }}" class="text-center inline-block ff-btn ff-btn--primary uppercase">
-                    <span>{{ section.ctaText }}</span>
+            <ul class="md:w-[50%] grid grid-cols-2 justify-center w-full items-center gap-4">
+                {% for partner in section.partners %}
+                <a href="{{ partner.url }}" target="_blank" class="partner-logo flex justify-center align-center items-center h-[90px] bg-white px-6 py-4 border rounded-lg hover:drop-shadow-lg transition ease-in duration-300">
+                    {% set imgSrc= [ "../", partner.logo ] | join %}
+                    {% image imgSrc, [ partner.name, "logo" ] | join , [auto] %}
                 </a>
-            </div>
-            {% endif %}
+                {% endfor %}
+            </ul>
         </div>
     </div>
     {% endfor %}
