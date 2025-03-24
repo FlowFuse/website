@@ -24,26 +24,12 @@ The [Robustel EG5120](https://www.robustel.com/product/eg5120-industrial-edge-co
 
 The Robustel EG5120 supports multiple connectivity options including Ethernet, Wi-Fi, and cellular networks, which are essential for flexible deployments in various industrial scenarios. Its built-in support for Bluetooth, cellular connectivity, RS232, RS485, and Modbus facilitates seamless integration with a wide array of IoT devices and services. This blog will guide you through using FlowFuse to effectively manage your Node-RED instance, enhancing both the security and scalability of your IoT applications.
 
-## Setting Up the Environment
+## Getting Started
 
-After exploring various deployment methods, we decided to test the Raspbian deployment script for deploying FlowFuse to a Raspberry Pi. Both the Robustel EG5120 and Raspberry Pi run a Debian-based Linux operating system. Raspberry Pi devices use a customized version of Debian called Raspbian, while Robustel EG5120 uses Debian 11.
-  
-An [install script is available](/docs/hardware/raspbian/#installing-the-device-agent) that will guide through installing the FlowFuse device agent on the EG5120.  
+This guide explores how to install and run Node-RED through the FlowFuse Device Agent on the Robustel EG5120, enabling you to build, manage, and scale Node-RED flows efficiently from a remote location.
 
-When finished you should see an out put stating **Started FlowFuse Device Agent.**
+{% include "hardware/system/debian-ff-install.njk" %}
 
-!["Started FlowFuse Device Agent"](./images/flowfuse-on-robustel-eg5120-installation-complete.png "Screenshot displaying completion of installation"){data-zoomable}
+{% include "hardware/device-registration.njk" %}
 
-The script does the following:
-
-1. Detect if Node.js is already installed, it will ensure it is at least v14. If less than v14 it will stop. If nothing is found it will install the Node.js 18 LTS release
-2. Install the latest version of the FlowFuse Device Agent using npm.
-3. Setup the FlowFuse Device Agent to run as a service and installs it to **/opt/flowfuse-device**.
-
-If you are interested in running the device agent as a service, we have provided a [guide](/docs/hardware/raspbian/#running-as-a-service) on just how to do that.
-
-The last step is to link your EG5120 to FlowFuse.  These steps entail registering your device withing the FlowFuse platform.  The [guide here](/docs/device-agent/quickstart/) will help you register your EG5120 with FlowFuse.
-
-## Practical Application
-
-Consider a scenario where multiple similar remote facilities need to efficiently monitor and manage multiple industrial machines. By integrating the Robustel EG5120 with FlowFuse, the facilities can streamline data collection, enhance device management, and improve operational efficiencies through real-time analytics and remote management capabilities. By leveraging FlowFuse, managing your Node-RED instance becomes even easier by allow the management of all the runtimes from a central location. 
+{% include "hardware/accessing-node-red-editor.njk" %}
