@@ -386,7 +386,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addShortcode("renderCompanyTile", function (company) {
         return `<div class="company-tile">
             <img class="company-tile-logo" src="${company.img}" />
-            <label>${company.name}</label>
+            <a href="${company.url}" class="no-underline text-gray-700">${company.name}</a>
         </div>`
     });
 
