@@ -19,10 +19,10 @@
         <div class="justify-self-end flex flex-row justify-between items-center w-full px-4 py-2 bg-indigo-50/50 mt-auto border-t">
             <div class="flex flex-col">
                 <label for="Author" class="text-xs">Author:</label>
-                {% if author %}
-                {% renderCompanyTile companies[author] %}
+                {% if item.data.author %}
+                    {% renderCompanyTile companies[item.data.author] %}
                 {% else %}
-                {% renderCompanyTile companies["flowfuse"] %}
+                    {% renderCompanyTile companies["flowfuse"] %}
                 {% endif %}
             </div>
             <a href="https://app.flowfuse.com/deploy/blueprint?blueprintId={{ item.data.blueprintId }}"
