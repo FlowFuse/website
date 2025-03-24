@@ -21,8 +21,6 @@ To proceed, ensure the DevOps pipeline is created with the correct stages. If a 
 
 For more information on how to create a DevOps pipeline, refer to [How to Build and Automate DevOps Pipelines for Node-RED Deployments](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/). For instructions on creating a device group, refer to the [Device Groups Documentation](/docs/user/device-groups/).
 
----
-
 ## Setting Environment Variables for Development Instance
 
 In this guide, environment variables will ensure that each pipeline stage connects to the correct MQTT broker without manual intervention, enabling a seamless deployment process.
