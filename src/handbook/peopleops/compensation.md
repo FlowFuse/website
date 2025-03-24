@@ -6,7 +6,7 @@ navTitle: Compensation
 
 FlowFuse provides a comprehensive compensation package with base salary, augmented
 depending on the role with stock options (equity), and/or performance bonus structure.
-FlowFUse aims to be competitive with similar companies. Factors like
+FlowFuse aims to be competitive with similar companies. Factors like
 company stage, market conditions, role, and level influence salary
 determination during the hiring process. FlowFuse typically pays in the local
 currency, unless there are explicit discussions stating otherwise, taking
