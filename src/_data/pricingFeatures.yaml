@@ -52,12 +52,6 @@ sections:
         selfHostedValues: [ 'check', 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
-      - id: edge-development
-        label: Edge Development
-        cloudValues: [ null, null, 'check', 'check' ]
-        selfHostedValues: [ null, 'check' ]    
-        tags: [ 'cloud', 'self-hosted' ]
-        info: "<p>Connect to an edge device and develop your flows.</p>"
       - id: mqtt-broker-cloud
         label: MQTT Broker
         cloudValues: [ null, 'check', 'check', 'check' ]    
@@ -68,6 +62,18 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'self-hosted' ]
         info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Enterprise Tier includes 20 clients for free as part of your existing plan, with purchase additional clients as needed in the future.</p>"
+      - id: volume-pricing
+        label: Volume Pricing
+        cloudValues: [ null, null, 'check', 'check' ]
+        selfHostedValues: [ null, 'check' ]
+        tags: [ 'cloud', 'self-hosted' ]
+        info: "<p>Scaling to hundreds or thousands of Node-RED instances? <a href='/contact-us'>Contact us</a> for customized volume discounts!</p>"
+      - id: edge-development
+        label: Edge Development
+        cloudValues: [ null, null, 'check', 'check' ]
+        selfHostedValues: [ null, 'check' ]    
+        tags: [ 'cloud', 'self-hosted' ]
+        info: "<p>Connect to an edge device and develop your flows.</p>"
       - id: pipelines
         label: DevOps Pipelines
         cloudValues: [ null, null, 'check', 'check' ]
