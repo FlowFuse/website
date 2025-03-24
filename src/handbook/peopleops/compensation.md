@@ -41,10 +41,10 @@ FlowFuse can choose to increase compensation based on varying situations:
 
 ### Equity
 
-FlowFuse intents to offers equity for key roles. The level of stock compensation
+FlowFuse intends to offers equity for key roles. The level of stock compensation
 can vary based on when an employee joined, their performance, and the variables
 that decide salary. Equity is offered as stock options, which upon
-execution will be transformed in the underlying stock. Stock compensation are
+execution will be transformed in the underlying stock. Stock compensation is
 awarded on a 4 year vesting schedule with a 1 year cliff.
 
 Employees might be taxed personally when accepting or executing stock options.
@@ -52,7 +52,7 @@ FlowFuse does not provide any advice on financial decisions for employees. For
 FlowFuse employees the Fair Market Value of the underlying stock can be found
 in [this internal document](https://docs.google.com/document/d/1_DmqzQ5rmjYHlBvF5owJpj3JVR_BlJUg_S-pwfRtA5g).
 
-Equity is subject to board approval.
+Equity grants are subject to board approval.
 
 ### Benefits
 
@@ -73,7 +73,7 @@ account. You'll need to link your family, see also [their docs](https://support.
 
 ##### Launch Lunch
 
-A lunch is organized to celebrate every release, and team members participating in a social Zoom call are encouraged to order a meal. You can claim [expensed](./expenses) for the lunch, up to a maximum of $25, and all reimbursements must be processed through Deel.
+A lunch is organized to celebrate every release, and team members participating in a social Zoom call are encouraged to order a meal. You can [expense](./expenses) the lunch, up to a maximum of $25, and all reimbursements must be processed through Deel.
 
 ##### Dinner Bonus
 
@@ -88,7 +88,7 @@ added to the list, especially when you're considering a job offer at FlowFuse.
 
 ##### USA and Canada
 
-For employees located in the United States, FlowFuse offer basic health insurance coverage which includes dental and vision with 50% dependents coverage benefits through United Medical.
+For employees located in the United States, FlowFuse offer basic health insurance coverage which includes dental and vision with 50% dependent coverage benefits through United Medical.
 
 For employees located in the Canada, FlowFuse offer basic health insurance coverage which includes dental, vision, and health services via Sterling brokers/Manulife.  
 
