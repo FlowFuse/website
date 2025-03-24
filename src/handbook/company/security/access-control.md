@@ -130,6 +130,7 @@ combinations
 
 3. Secrets must be stored securely in 1Password and not shared in
 plaintext
+
 4. Secrets must be rotated on a regular basis - at least annually, follow [internal 
 guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo)
 for details
