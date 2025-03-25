@@ -6,6 +6,12 @@ navTitle: Project Management
 
 This page details provides a comprehensive overview of the project management processes and procedures that guide product development at FlowFuse. 
 
+## Responsibilities
+
+The three roles primarily involved in product planning and development at FlowFuse are the CTO, Engineering Manager, and Product Lead. The Product Lead advances strategic priorities and develops the product roadmap to achieve those priorities, the CTO determines technical feasibility and identifies the scope and dependencies of roadmap items, and the Engineering Manager assigns tasks to the engineering team and is responsible for delivering work on schedule.
+
+The three meet weekly or bi-weekly to identify, define, discuss, and plan work for each release.
+
 ## Hierarchy
 
 As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](../product/strategy.md#product-pillars).
