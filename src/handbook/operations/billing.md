@@ -18,7 +18,7 @@ The customer must first configure their billing details within their FlowFuse ac
 ## Invoices
 
 Monthly subscriptions will be automatically generated in Stripe 
-and charge customers based on their payment method filed with Stripe.
+and charge customers based on their payment method filed with Stripe. Customers can access their invoices via the 'Stripe Customer Portal' link on their Team's billing page.
 
 Annual subscriptions and invoices are managed in HubSpot, please see instructions below.
 
