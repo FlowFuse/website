@@ -2,7 +2,7 @@
 title: Changes to tags for flowfuse/node-red
 description: Updating what Node-RED version the latest tag points to
 date: 2025-03-26 14:00:00.0
-authors: ['ben-hardill]
+authors: ['ben-hardill']
 tags:
  - chagelog
 ---
