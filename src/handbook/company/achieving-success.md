@@ -14,7 +14,7 @@ The second tool employed at FlowFuse to improve on the identfied problems are [O
 
 ## KPI
 
-A KPI, or Key Point Indicator, is used as a heuristic metric for company-wide
+A KPI, or Key Performance Indicator, is used as a heuristic metric for company-wide
 success. At FlowFuse we're engaged in many initiatives to grow our offering and
 assess product-market fit. At this time, there's one KPI to track progress.
 
