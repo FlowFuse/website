@@ -12,7 +12,7 @@ within an organization. The purpose of a DRI is to ensure that there is a single
 individual who is ultimately responsible for the success or failure of a
 particular undertaking.
 
-When decisions need to be made regarding a DRI's area of responsibility, the DRI
+When decisions need to be made in a DRI's area of responsibility, the DRI
 is the person who has the final say and is empowered to make those decisions.
 This allows for efficient decision-making and prevents decision paralysis or
 ambiguity within FlowFuse. The DRI is expected to gather relevant input and
@@ -28,7 +28,7 @@ the appropriate DRI. The selection of a DRI is based on factors such as
 expertise, experience, and the individual's ability to handle the specific task
 or project successfully.
 
-Note that both the CEO and CTO retain the right to veto decisions. This should very seldomly happen. 
+Note that both the CEO and CTO retain the right to override decisions. This should very seldomly happen. 
 
 DRI's weren't invented by FlowFuse, we stand on the shoulder of giants that
 championed the term and iterated before us. Read about the prior art:
@@ -70,7 +70,5 @@ In cross-functional meetings, there are often action items assigned. When any am
 ### Resources
 
 More information about the RACI framework and how it can be applied can be found here:
-
-[Atlassian](https://www.atlassian.com/work-management/project-management/raci-chart#:~:text=RACI%20charts%20categorize%20these%20roles,accountability%20for%20tasks%20or%20deliverables)
-
-[Monday.com](https://monday.com/blog/project-management/raci-model/)
+* [Atlassian](https://www.atlassian.com/work-management/project-management/raci-chart#:~:text=RACI%20charts%20categorize%20these%20roles,accountability%20for%20tasks%20or%20deliverables)
+* [Monday.com](https://monday.com/blog/project-management/raci-model/)
