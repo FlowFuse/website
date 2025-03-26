@@ -2,11 +2,12 @@
 title: "How to Deploy Node-RED Flows with MQTT Brokers Per Pipeline Stage Using FlowFuse"
 subtitle: Automating MQTT Configuration in FlowFuse Using Environment Variables
 description: Learn how to configure MQTT brokers dynamically in FlowFuse using environment variables at both instance and device group levels. Streamline deployments across pipeline stages and monitor MQTT topics efficiently.
-date: 2025-03-24
+date: 2025-03-26
 authors: ["sumit-shinde"]
 image:
 tags:
    - flowfuse
+   - mqtt
 ---
 
 FlowFuse makes it easy to deploy Node-RED flows at scale using DevOps pipelines and device groups. However, different stages in a pipeline may need different MQTT brokers—for example, one for development and another for production. Manually configuring each stage can be time-consuming, especially when a stage has multiple remote instances (devices).
