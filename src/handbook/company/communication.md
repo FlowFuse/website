@@ -47,7 +47,7 @@ During the meeting notes should be taken in an inline fashion. Non-participants
 can then read the agenda after the meeting and are up-to-date without having to
 scroll to a notes section.
 
-### No Agenda No Attenda
+### No Agenda, No Attenda
 
 Most meetings are scheduled to discuss items and make decisions. There's meetings
 that just shouldn't take place when there's nothing to discuss on the agenda
@@ -170,23 +170,33 @@ All feedback is then sent directly to the relevant user via the Slack App, meani
 
 ## 1:1 meetings
 
-Each employee at FlowFuse will have regular one to one meetings with their
-manager. The primary goal of this meeting is for the report to set the agenda
-and tone. It's important to understand what's going on in ones life, how they're
-feeling, and what their challenges are.
+Each employee at FlowFuse will have weekly one-on-one meetings with their
+manager. It is the responsibility of the direct report to set the agenda for the 
+meeting. This is a great opportunity to communicate with your manager on how to 
+set you up for success. Topics might include changes in one's personal life, how 
+one is feeling, or ongoing challenges.
 
-An agenda is kept for this meeting to which both parties can add items to discuss.
-It's advised to add to the agenda throughout the week, and only filter content
-during the meeting.
+An agenda is kept in a closed off Google Doc for this meeting to which both parties 
+should add items to the discussion list. It's generally recommended to add items to 
+the agenda as they come to your mind, rather than wait to prep the agenda the day before. 
+During the meeting, the direct report can filter through relevant discussion topics. 
 
-When struggling to fill the agenda you might want to think about:
+It is important for 1:1s to not turn into a status update meeting. Statuses are best shared
+in the issue where work is being done, in regular standup, or in otherasync updates. 
+Projects are discussed in 1:1s when there needs to be alignment, a difficulty needs to be 
+discussed, or a solution needs to be brainstormed
+
+When preparing an agenda for a 1:1, consider the following questions:
 - What has changed in the last few weeks that worked out well?
 - What has changed in the last few weeks that didn't work out?
 - Were there difficult problems to be solved last week? What would've made it easier to solve?
 - What's important but not urgent that's left undone?
+- How did you receive feedback and was that the best way?
+- Where do you feel there is an area to improve? Do you want to work with your manager on brainstorming a plan to improve it? 
 
-Further, the document should include an "Action Items" list to track what needs
-doing, and when.
+Your 1:1 agenda should include an "Action Items" list to track what follow on actions 
+were committed to by each of the different parties. It is also helpful include a
+timeline if one was committed.
 
 ## Skip level meetings
 
