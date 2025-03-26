@@ -150,4 +150,4 @@ Watch this short video to learn how to bring your brokers for topic monitoring i
 
 FlowFuse makes it easy to deploy Node-RED flows while ensuring each stage connects to the right MQTT broker. You can automate MQTT configurations by using environment variables at both the instance and device group levels, reducing manual setup and ensuring consistency.
 
-🚀 [Get Started Now](https://app.flowfuse.com/account/create/)
+[Get Started Now](https://app.flowfuse.com/account/create/)
