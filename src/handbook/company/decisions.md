@@ -50,7 +50,7 @@ An **Informed** person is anyone who must be made aware of project status. This 
 
 ## DRI, Responsible, and Accountable
 
-Because at FlowFuse we are committed to the DRI concept, the DRI for a project or initiative always assumes both the Responsible role and an Accountable role in the RACI matrix. They have final decision-making authority and are ultimately responsible for the success or failure of the work.
+Because at FlowFuse we are committed to the [DRI](/handbook/company/decisions/#directly-responsible-individual) concept, the DRI for a project or initiative always assumes both the Responsible role and an Accountable role in the RACI matrix. They have final decision-making authority and are ultimately responsible for the success or failure of the work.
 
 ## When to use RACI
 
