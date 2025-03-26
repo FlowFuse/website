@@ -577,6 +577,18 @@ h4:hover .header-anchor {
     @apply rounded-tl-lg;
 }
 
+.partner-logo img,
+.partner-logo picture {
+    height: 100%;
+    width: auto;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.partners > div:nth-child(2) {
+    @apply bg-gray-50;
+}
+
 @media (min-width: 768px) {
     .ff-min-h-56 {
         min-height: 56px;

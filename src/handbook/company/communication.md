@@ -80,7 +80,7 @@ Don't store information in:
 
 Email for internal communication is only used for discussions that need
 a 'paper'-trail. Compensation, underperformance, and other made decisions.
-In _all_ other case; use [Slack](#slack).
+In _all_ other cases, use [Slack](#slack).
 
 ### Slack
 
@@ -98,8 +98,7 @@ Our recommended Slack (light) theme is:
 Not all channels are joined by default when you join Slack. We've added a bunch
 below so you get to decide if you want more channels or not.
 
-- `#metrics` will output sales and engagement metrics
-- `#social-twitter` is a stream of engagement with @FlowFuseInc
+- `#ops-metrics` will output sales and engagement metrics
 - `#virtual-coffee` to schedule coffee calls with other team members!
 
 #### Channel name structure

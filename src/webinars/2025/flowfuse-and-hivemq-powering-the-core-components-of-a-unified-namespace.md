@@ -1,19 +1,19 @@
 ---
 title: "FlowFuse & HiveMQ: Powering the Core Components of a Unified Namespace"
 meta:
-    description: Join this webinar to learn how to use FlowFuse (Node-RED) and HiveMQ (MQTT) platforms to build a Unified Namespace (UNS) that integrates enterprise and control domain data for improved production scheduling and machine performance monitoring.
+    description: Watch this webinar to learn how to use FlowFuse (Node-RED) and HiveMQ (MQTT) platforms to build a Unified Namespace (UNS) that integrates enterprise and control domain data for improved production scheduling and machine performance monitoring.
 image: /images/webinars/flowfuse-and-hivemq-powering-the-core-components-of-a-unified-namespace.jpg
 date: 2025-03-25
 time: 17:00 CET (12:00pm ET) 
 duration: 60
-video: 
+video: z62O5RrOK8o
 hosts: ["kudzai-manditereza"]
 hubspot:
     formId: 57889c77-f98b-4634-8547-46ba2246aec8
-    downloadFormId:
+    downloadFormId: ee08fc51-64c7-4d91-bf1c-990fd699129b
 ---
 
-**Join this webinar to learn how to use FlowFuse (Node-RED) and HiveMQ (MQTT) platforms to build a Unified Namespace (UNS) that integrates enterprise and control domain data for improved production scheduling and machine performance monitoring.**
+**Watch this webinar to learn how to use FlowFuse (Node-RED) and HiveMQ (MQTT) platforms to build a Unified Namespace (UNS) that integrates enterprise and control domain data for improved production scheduling and machine performance monitoring.**
 
 <!--more-->
 
@@ -21,7 +21,7 @@ Manufacturers undergoing digital transformation often struggle to scale their da
 
 The Unified Namespace (UNS) solves this by using a decoupled architecture to break down data silos and enable flexible OT/IT integration, providing a standardized interface for seamless data access across the entire manufacturing operation.
 
-Join Kudzai Manditereza, a leading expert in Unified Namespace, as he explores and demonstrates how to implement UNS for OT/IT data interoperability using FlowFuse (Node-RED) and HiveMQ (MQTT).
+In this session, Kudzai Manditereza, a leading expert in Unified Namespace, explores and demonstrates how to implement UNS for OT/IT data interoperability using FlowFuse (Node-RED) and HiveMQ (MQTT).
 
 Key topics include:
 - Understanding the core components of a Unified Namespace and how FlowFuse and HiveMQ powers it.

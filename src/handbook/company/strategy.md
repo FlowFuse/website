@@ -28,16 +28,16 @@ to be achieved. Two good examples are
 1. Project-Link - Linking Edge devices to the Cloud, enabling broadcasts and point-to-point connections
 
 A key differentiator for FlowFuse is our approach to licensing of our software.
-The core is open, free as in beer and as in speech. Our product is open for scrutany,
+The core is open, free as in beer and as in speech. Our product is open for scrutiny,
 usage, improvements, for the world. While there's a subset of the product
 proprietary licensed, the source is available to read. We believe that Open Source
 Software plays a key part in education, reducing vendor lock-in, and community building.
 
 ## The market
 
-Our Target persona is the Industrial engineer: specifically those working in manufacturing, logistics, and other data-intensive industrial sectors where operational efficiency is equivalent to generating profit and creates real business value.
+We focus on [Ideal Customer Profile (ICP)](https://flowfuse.com/handbook/customer/marketing/messaging/) companies, which are those in manufacturing, logistics, and other data-intensive industrial sectors where operational efficiency is critical to providing value.
 
-We target them because Industrial engineers are the driving force behind innovations that lead to process optimizations in their organizations. They possess deep domain expertise and understand the intricacies of their operations. In order to improve their systems, they need to actively collect and analyze data.
+Within those companies, we focus our outreach and marketing activities on people who are responsible for improving engineering processes. These individuals are often Architects, Engineering Managers, and specialists in IT or OT. 
 
 ## The problems 
 
@@ -62,4 +62,4 @@ The FlowFuse Platform addresses the problems status above by providing our ICP w
 1. Simplify Complexity: We abstract away the complexities of industrial systems, providing a comprehensive user-friendly interface that allows engineers to focus on solving problems, not wrestling with technology.
 See also our [Messaging page](/handbook/customer/marketing/messaging/).
 
-FlowFuse uses Open-Source technologies like Node-RED, and MQTT to help our customers being successful in remedying their problems.
+FlowFuse uses Open-Source technologies like Node-RED and MQTT to help our customers being successful in remedying their problems.
