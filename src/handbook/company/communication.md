@@ -182,7 +182,7 @@ the agenda as they come to your mind, rather than wait to prep the agenda the da
 During the meeting, the direct report can filter through relevant discussion topics. 
 
 It is important for 1:1s to not turn into a status update meeting. Statuses are best shared
-in the issue where work is being done, in regular standup, or in otherasync updates. 
+in the issue where work is being done, in regular standup, or in other async updates. 
 Projects are discussed in 1:1s when there needs to be alignment, a difficulty needs to be 
 discussed, or a solution needs to be brainstormed
 
