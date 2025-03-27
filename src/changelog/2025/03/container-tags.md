@@ -7,18 +7,18 @@ tags:
  - changelog
 ---
 
-As part of the upcoming FlowFuse 2.16.0 release we will be updating which
+As part of the upcoming FlowFuse 2.16.0 release, due on April 10th, we will be updating which
 version the `latest` tag points to for the `flowfuse/node-red` containers.
 
-This tag currently points to the latest version of the FlowFuse Stack container but contains Node-RED version 3.0.2 and NodeJS 16. After the update it will contain Node-RED version 4.0.9 and NodeJS 20.
+This change will impact self-hosted Docker and Kubernetes installs that have not changed the default stack.
 
-It will track the latest Node-RED version as they are released.
+The `latest` tag currently points to the latest version of the FlowFuse Stack container but contains Node-RED version 3.0.2 and NodeJS 16. After the update it will contain Node-RED version 4.0.9 and NodeJS 20.
 
-This change will impact self hosted Docker and Kubernetes that have not changed the default stack.
+It will then continue to track the latest stable Node-RED version as they are released.
 
 You can update the tag by creating a new version of the Stack under the Admin Settings -> Stacks page as a FlowFuse Admin user.
 
-We make the following tags available which track the latest version of FlowFuse.
+We make the following tags available which track the latest version of FlowFuse:
 
 - `flowfuse/node-red:latest` as described above
 - `flowfuse/node-red:latest-2.2.x` which contains Node-RED 2.2.2 NodeJS 16
