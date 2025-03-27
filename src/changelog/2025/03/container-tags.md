@@ -4,7 +4,7 @@ description: Updating what Node-RED version the latest tag points to
 date: 2025-03-26 14:00:00.0
 authors: ['ben-hardill']
 tags:
- - chagelog
+ - changelog
 ---
 
 As part of the upcoming FlowFuse 2.16.0 release we will be updating which
