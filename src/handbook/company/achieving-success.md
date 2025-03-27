@@ -8,15 +8,15 @@ meta:
 
 There's multiple ways to align a company around business goals, and at FlowFuse
 we've identified two ways to help us shape this. The core metric are captured in
-the [KPI](#kpi). A KPI is a tool to identify problems and areas for improvement.
+our [KPIs](#kpi). A KPI is a tool to identify problems and areas for improvement.
 
 The second tool employed at FlowFuse to improve on the identfied problems are [OKR](#okrs)s.
 
 ## KPI
 
-A KPI, or Key Point Indicator, is used as a heuristic metric for company wide
+A KPI, or Key Performance Indicator, is used as a heuristic metric for company-wide
 success. At FlowFuse we're engaged in many initiatives to grow our offering and
-assess product market fit. At this time there's one KPI to track progress.
+assess product-market fit. At this time, there's one KPI to track progress.
 
 ### Annual Recurring Revenue (ARR)
 
@@ -43,7 +43,7 @@ The current OKRs are documented [in this internal document](https://docs.google.
 
 ### Anatomy of an OKR
 
-Per timeboxed period a couple of OKRs are created. Each of them should describe
+Per timeboxed period, a couple of OKRs are created. Each of them should describe
 clearly what the objective is, the key results that will be used to measure the success.
 Further, the goal and plan to achieve it should align with the [values](./values/).
 
