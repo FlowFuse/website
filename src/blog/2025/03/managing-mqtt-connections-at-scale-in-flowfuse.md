@@ -1,8 +1,8 @@
 ---
-title: "How to Deploy Node-RED Flows with MQTT Brokers Per Pipeline Stage Using FlowFuse"
+title: "Managing MQTT Connections at Scale in FlowFuse"
 subtitle: Automating MQTT Configuration in FlowFuse Using Environment Variables
 description: Learn how to configure MQTT brokers dynamically in FlowFuse using environment variables at both instance and device group levels. Streamline deployments across pipeline stages and monitor MQTT topics efficiently.
-date: 2025-03-26
+date: 2025-03-27
 authors: ["sumit-shinde"]
 image:
 tags:
@@ -52,11 +52,11 @@ Now, let's explore how these environment variables can be used within Node-RED t
 
 Environment variables can be directly referenced in the MQTT node properties using the `${ENV_NAME}` syntax as shown in the following images.
 
+![Setting up MQTT connection using environment variables.](./images/mqtt-config-with-env.png){data-zoomable}
+_Setting up MQTT connection using environment variables._
+
 ![Configuring MQTT node security settings using environment variables in Node-RED.](./images/mqtt-node-security-config.png){data-zoomable}
 _Configuring MQTT node security settings using environment variables in Node-RED._
-
-![Setting up MQTT connection using environment variables.](./images/mqtt-node-security-config.png){data-zoomable}
-_Setting up MQTT connection using environment variables._
 
 ![Configuring the MQTT topic in Node-RED using environment variables.](./images/mqtt-broker-out-config.png){data-zoomable}
 _Configuring the MQTT topic in Node-RED using environment variables._
