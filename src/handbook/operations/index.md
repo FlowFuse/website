@@ -11,7 +11,7 @@ This covers how we run our business and deliver service to our customers.
 - [Accounts](../operations/accounts.md)
 - [Change Control](../operations/change.md)
 - [Vendors](../operations/vendors.md)
-- [Insurance] (https://drive.google.com/drive/folders/1Q2UqEmusDIpBD4-4Km1eFksHaRkVzl7O?usp=drive_link)
+- [Insurance](https://drive.google.com/drive/folders/1Q2UqEmusDIpBD4-4Km1eFksHaRkVzl7O?usp=drive_link)
 
 ### Services used at FlowFuse
 
