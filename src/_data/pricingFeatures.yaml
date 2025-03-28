@@ -17,7 +17,7 @@ sections:
         cloudValues: [ null, 'check', 'check', 'check' ] 
         selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'cloud' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 2 hosted instances.</li><li><span class='font-semibold'>Team:</span> Starts with 5, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted/3 remote instances.</li><li><span class='font-semibold'>Team:</span> Starts with 5, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
       - id: self-hosted-instances
         label: Hosted Instances
         selfHostedValues: [ 'check', 'check' ]   
