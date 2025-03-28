@@ -10,11 +10,11 @@ tags:
    - flowfuse
 ---
 
-OEE (Overall Equipment Effectiveness) is a key performance indicator (KPI) in manufacturing that measures equipment performance. It focuses on three core areas: availability, efficiency, and quality. Creating a customizable OEE dashboard can be a challenge, especially when trying to combine data from multiple sources into one unified view. With Node-RED Dashboard 2.0 and FlowFuse, you can build a flexible, no-code dashboard that gives you real-time insights into production performance.
+OEE (Overall Equipment Effectiveness) is a KPI used in manufacturing to measure equipment performance based on availability, efficiency, and quality. To effectively track this KPI, an OEE dashboard is built, but creating one can be complex, especially when consolidating data from various sources. Often, there’s limited flexibility to seamlessly combine data across different systems. Additionally, building a customizable dashboard to suit specific needs adds another layer of complexity. With FlowFuse, a no-code, customizable OEE dashboard can be created to provide real-time production insights, tailored to your unique requirements.
 
 <!--more-->
 
-In this first part, we’ll walk you through the concept of OEE and the basic plan for building the OEE Dashboard. We will discuss the scope of OEE calculation, key metrics to include, visualization strategies, and the expected final design of the dashboard.
+We’re starting a blog series on building an OEE dashboard with FlowFuse. In this first part, we’ll explain the concept of OEE and outline the basic plan for the dashboard. We’ll cover the scope of OEE calculation, key metrics, visualization strategies, and the expected design of the dashboard.
 
 Let’s get started!
 
