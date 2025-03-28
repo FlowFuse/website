@@ -10,7 +10,7 @@ tags:
 
 We have introduced a new Local Login option for Remote Instances.
 
-This feature allows you to enable or disable local login for you Remote Instance, which is particularly useful in air-gapped environments or times when the FlowFuse platform is unreachable.
+This feature allows you to enable a local login for your Remote Instance, which is particularly useful in air-gapped environments or times when the instance cannot reach the FlowFuse platform.
 
 When local login is enabled, users can log in to Node-RED locally using the specified credentials.
 
