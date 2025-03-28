@@ -98,8 +98,10 @@ Our recommended Slack (light) theme is:
 Not all channels are joined by default when you join Slack. We've added a bunch
 below so you get to decide if you want more channels or not.
 
-- `#ops-metrics` will output sales and engagement metrics
-- `#virtual-coffee` to schedule coffee calls with other team members!
+- `#announcements` is for company-wide announcements.
+- `#feature-demos` is where product updates are shared. All team members should keep a pulse of product changes, independent of their roles.
+- `#ops-metrics` will output sales and engagement metrics.
+- `#virtual-coffee` to schedule coffee calls with other team members.
 
 #### Channel name structure
 
