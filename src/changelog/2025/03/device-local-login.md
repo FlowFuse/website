@@ -8,7 +8,7 @@ tags:
 ---
 
 
-We have introduced a new Local Login option for Remote Instances.
+With the new 3.2.0 release of the FlowFuse Device Agent, we have introduced a new Local Login option for Remote Instances.
 
 This feature allows you to enable a local login for your Remote Instance, which is particularly useful in air-gapped environments or times when the instance cannot reach the FlowFuse platform.
 
