@@ -136,13 +136,18 @@ async, we're using [Geekbot](https://geekbot.com/). Geekbot will trigger each
 workday morning at 9:00 local time, when online in Slack. Everyone who's a
 member of the #standup channel in Slack will be prompted.
 
+A good standup message reduces the need for status updates in live meetings.
+When writing a standup message, please mind the following:
+1. Bridge the gap between high-level strategies and actionable daily tasks. Explain what you do today and how it helps the strategic objectives of the company.
+2. Focus on specific, measurable actions for the day, providing clarity and accountability, instead of vague updates.
+
 Pro-tips:
 - When a questions doesn't need answering, fill in `-` to skip
 - When you want to report earlier that day, message Geekbot `report`
 
 ### Current meetings
 
-#### Wednesday Team meeting
+#### Monday Team catchup
 
 Weekly a meeting is held to announce company wide updates, get to know each
 other, and share things you want to share both professionally and personally.
