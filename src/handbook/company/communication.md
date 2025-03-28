@@ -145,6 +145,13 @@ Pro-tips:
 - When a questions doesn't need answering, fill in `-` to skip
 - When you want to report earlier that day, message Geekbot `report`
 
+Example Standup: 
+* Bad: "More work on the special feature"
+* Better: "Align on plan for building special feature with Manny and work on it"
+* Best:
+   * Get Manny's sign off on plan for special feature
+   * Break Issue 1234 into relevant tasks
+
 ### Current meetings
 
 #### Monday Team catchup
