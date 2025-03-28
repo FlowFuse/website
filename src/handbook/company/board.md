@@ -7,6 +7,11 @@ navTitle: Board
 Scheduled over a month in advance, these meetings occur roughly every six weeks, reflecting a cadence designed for focused, high-impact engagement.
 To balance the high cadence, board meetings are only scheduled for an hour.
 
+## Prewatch
+
+Three business days before the meeting, the CEO will send a 5-10 minute prewatch video giving Board Members an overview of the metrics and topics for discussion. 
+In most circumstances a 5-10 min prewatch can help make the time together even more productive, as you get to move contextualizing to before-the-meeting and it gives people time to let things bake in their head, improving the quality of conversation.
+
 ### Structure
 
 The 60 minutes of each meeting are structured in the following time blocks:
