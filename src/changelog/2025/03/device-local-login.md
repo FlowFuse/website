@@ -12,9 +12,9 @@ We have introduced a new Local Login option for Remote Instances.
 
 This feature allows you to enable a local login for your Remote Instance, which is particularly useful in air-gapped environments or times when the instance cannot reach the FlowFuse platform.
 
-When local login is enabled, users can log in to Node-RED locally using the specified credentials.
+When local login is enabled, users can log in to Node-RED directly using the specified credentials.
 
-Please note that this feature is not the recommended method for accessing your Remote Instance. However, we acknowledge that some users may require this functionality for specific use cases.
+For day-to-day activity, we still recommending accessing the editor through the FlowFuse Platform for the best user experience. However, for those times when that isn't possible, this option provides a fall-back to allow continued access to the device.
 
 You can configure this option in your Remote Instance Settings tab under the Security section.
 ![Screenshot of local login options](./images/device-agent-local-login-settings.png){data-zoomable}
