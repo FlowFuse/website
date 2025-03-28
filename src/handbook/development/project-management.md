@@ -6,6 +6,22 @@ navTitle: Project Management
 
 This page details provides a comprehensive overview of the project management processes and procedures that guide product development at FlowFuse. 
 
+## Responsibilities
+
+The three roles primarily involved in product planning and development at FlowFuse are the CTO, Engineering Manager, and Product Lead. The Product Lead advances strategic priorities and develops the product roadmap to achieve those priorities, the CTO determines technical feasibility and identifies the scope and dependencies of significant initiatives on the product roadmap, and the Engineering Manager assigns tasks to the engineering team and is responsible for delivering work on schedule.
+
+Following the RACI framework articulated elsewhere in the [Handbook](https://flowfuse.com/handbook/company/decisions/#projects), product responsibilities among the CTO, Engineering Manager, and Product Lead are:
+
+Overall product roadmap and strategy: Product Lead is Responsible and Accountable, CTO is Consulted, Engineering Manager is Consulted.
+
+Articulating technical requirements and feasibility: Product Lead is Informed, CTO is Responsible and Accountable, Engineering Manager is Consulted and Informed
+
+Delivering work that is high quality and on schedule: Product Lead is Informed, CTO is Informed, Engineering Manager is Responsible and Accountable.
+
+This means that on a day-to-day basis, the Product Lead and Engineering Manager work together to set the direction of product development and execute on a defined strategy that the CTO has helped to shape, with the Product Lead setting goals and defining initiatives, the Engineering Manager delivering the work, and the CTO serving as technical guide and sharing a product vision.
+
+The three meet bi-weekly to review progress of the current release and identify, define, discuss, and plan work for upcoming releases.
+
 ## Hierarchy
 
 As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](../product/strategy.md#product-pillars).
