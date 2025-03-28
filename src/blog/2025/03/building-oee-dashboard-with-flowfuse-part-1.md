@@ -22,9 +22,6 @@ Let’s get started!
 
 ## What is OEE?
 
-![What is OEE?](./images/what-is-oee.png){data-zoomable}
-_What is OEE?_
-
 Overall Equipment Effectiveness (OEE) is a crucial metric in manufacturing that assesses the productivity of equipment through three key components. These components evaluate the efficiency of equipment during the production process:
 
 1. Availability — How often does the equipment perform when needed?
