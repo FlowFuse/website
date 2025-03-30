@@ -138,7 +138,7 @@ With this approach, you do not need to set environment variables separately for 
 
 ## Deploying Flow with Stage-Specific Configurations via DevOps Pipeline
 
-Now that everything is set up, trigger the deployment pipeline for the development stage. This will push the flow and settings to the next stage, which has the device group, while preserving the existing environment variables. Before applying the new configuration, all remote instances in the target stage will restart automatically.
+Now that everything is set up, trigger the deployment pipeline for the development stage. This will push the flow and settings to the next-stage instances while preserving the existing environment variables. Before applying the new configuration, all remote instances in the target stage will restart automatically.
 
 ![Deploying Node-RED flows using FlowFuse's DevOps pipeline.](./images/devops-pipeline.png){data-zoomable}
 _Deploying Node-RED flows using FlowFuse's DevOps pipeline._
