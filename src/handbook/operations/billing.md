@@ -22,17 +22,24 @@ and charge customers based on their payment method filed with Stripe. Customers 
 
 Annual subscriptions and invoices are managed in HubSpot, please see instructions below.
 
-### Creating a subscription invoice
+### Creating a subscription
 
-To generate an invoice, the corresponding deal and quote must first be in place in HubSpot. This ensures the correct products and amounts are auto-populated.
+To generate a subscription, the corresponding deal and quote must first be in place in HubSpot.
 
 1. Ensure the company details are updated, and include an address and country.
-1. On the Deal page, find the Invoices section on the right-hand side, then click Add and Convert Deal to Subscription.
-2. Change the dates, terms, products, discounts, PO number, contact, and company information if required (most will be correct, since it is pulling from the signed quote). Ensure the invoice always lists what the term of the subscription is, and when the subscriptions starts.
-3. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
-4. Make sure both ACH and Credit Card options are checked for payment.
-5. Click the Finalize button on the top right.
-6. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
+1. On the Deal page, find the Subscription section on the right-hand side, then click Add and Convert Deal to Subscription.
+1. Change the dates, terms, products, discounts, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
+1. Under Invoice Settings, uncheck the box that automatically emails customers. You will want to manually create the invoice next before sending. This is because the converted subscriptions have limitations on what discounts can be applied.
+1. Click the Create button on the top right.
+
+### Creating an invoice
+
+1. On the Deal page, find the Invoices section on the right-hand side, then click Create Blank Invoice.
+1. Add the corresponding products, dates, discounts, PO number to reflect their first invoice as agreed in the order form.
+1. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
+1. Make sure both ACH and Credit Card options are checked for payment.
+1. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
+1. Finalize this manual invoice, then delete the automatically created one from the subscription conversion.
 
 ### Creating a PS invoice
 
