@@ -37,13 +37,13 @@ Once the maintenance date is set, customers should be informed about the upcomin
 * self-care actions which customers can/should take before the maintenance date
 * other relevant details to help customers to prepare for potential restart of their Node-RED instances
 
-E-mail template for maintenance communication can be found in the [FlowFuse Cloud Maintenance Communication document](https://docs.google.com/document/d/1Pkd0qifjgs7xv96hfQ5OHnvX5n_WPHyA0AvPd9UUPL0). Adjust the template accordingly.
+The e-mail template for all maintenance communication can be found in the [FlowFuse Cloud Maintenance Communication document](https://docs.google.com/document/d/1Pkd0qifjgs7xv96hfQ5OHnvX5n_WPHyA0AvPd9UUPL0). Create a copy of the template and link to from the CloudProject issue.
 
 The notification message should be sent to all FlowFuse Cloud Team Owners who have active instances in the FlowFuse Cloud and who are affected by the maintenance. To get the contact list, please refer to the [internal documentation](https://docs.google.com/document/d/1s0mXpuuPKl-1U-YVzoTEGBhllUd-UPJjFXTqa0O481c/#heading=h.hing87m0bsmu).
 
-We should sent notification at least twice - 45 days before the maintenance and a reminder one week before the maintenance day.
+The Customer team will handle sending the email once the content is agreed with engineering and the target list of customers has been provided.
 
-Before sending the initial message, consult with the Operations team to ensure that the information is up-to-date and infrastructure is ready to handle self-care maintenance by customers.
+The first notification should sent at least 45 days before the event. A reminder should be sent one week prior to the event.
 
 ## Infrastructure preparation
 
