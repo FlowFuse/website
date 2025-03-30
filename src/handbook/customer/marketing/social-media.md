@@ -15,6 +15,7 @@ Each content type has channels which are appropriate, this table sets out which 
 |Short videos         |*        |*        |*        |*        |        |       |              |                  |
 |Long format videos   |         |*        |         |*        |        |       |              |                  |
 |Downloadable content |*        |*        |*        |         |*       |       |*             |                  |
+|New roles opening    |*        |*        |*        |         |*       |*      |*             |*                 |
 
 ## Strategy for increasing reach
 
