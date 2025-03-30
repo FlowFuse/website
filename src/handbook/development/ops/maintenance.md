@@ -17,7 +17,11 @@ The maintenance most often involves updates to the following resources:
 
 ## Planning
 
-The maintenance process is initiated by the Operations Team. The process is planned in advance and communicated to the customers. The maintenance window is scheduled to minimize the impact on the team and customers.
+The maintenance process is initiated by the Operations Team.
+
+A new [Infrastructure task](https://github.com/FlowFuse/CloudProject/issues/new?template=infra-task.yml) is created to co-ordinate all activities regarding the task - including the technical tasks and communications with customers.
+
+The maintenance window is scheduled to minimize the impact on the team and customers.
 
 Where the maintenance action will cause disruption to customers, it must be scheduled with the following considerations:
 * at least 45 days notice should be provided to customers
