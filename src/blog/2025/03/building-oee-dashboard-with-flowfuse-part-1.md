@@ -34,6 +34,28 @@ The concept of OEE was introduced by Seiichi Nakajima in the 1960s as part of th
 
 Measuring and improving OEE allows you to improve the utilization of existing machinery and improves operational efficiency. In many cases, improving OEE is the most strategic and cost-effective approach to increasing output.
 
+## How is OEE calculated?
+
+OEE is calculated using three key components that work together to give you an idea of how well your equipment is performing:
+Availability indicates the proportion of scheduled production time that is utilized for actual production. Factors like equipment breakdowns, maintenance, or setup changes can reduce availability.
+
+- **Availability (%) = (Operating Time ÷ Planned Production Time) × 100**
+
+Performance measures the efficiency of the equipment relative to its optimal speed. It accounts for slow cycles, brief interruptions, and reduced operating speeds.
+	
+- **Performance (%) = (Actual Output ÷ Maximum Possible Output) × 100**
+ 
+Quality assesses the ratio of products that meet quality standards. Scrap, rework, and defective items negatively impact this metric.
+
+- **Quality (%) = (Good Products ÷ Total Products) × 100**
+ 
+When you multiply these three components together, you get the overall OEE score.
+
+**OEE (%) = Availability × Performance × Quality**
+
+For example, if a machine is available 90% of the time, runs at 95% of its ideal speed, and 98% of products are defect-free, your OEE would be: 0.90 X 0.95 X 0.98 = 83.7%
+This means your machine is effectively producing good parts just over 83% of the time—which isn’t bad, but there’s room for improvement.
+
 ## Planning Your OEE Dashboard
 
 Now that we’ve covered what OEE is, let's focus on designing a basic plan that details what are the things that we should display on our dashboard. This should consist of three parts:
