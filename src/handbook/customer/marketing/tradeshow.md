@@ -14,6 +14,7 @@ navGroup: Sales & Marketing
 - **Immediately after booking, define:**  
   - **Attending team members** (selected by the CEO/CTO) and confirm their availability.  
     - At least one team member should be responsible for building the demo. Ensure the team includes a technically skilled person to support this.  
+    - Create a Slack channel with the confirmed attendees. The name of the channel should have the following format `#proj-[event-name]-year`
   - **Accommodation** – book a hotel near the venue, ideally with breakfast included.  
     - If the demo involves physical devices, the team member transporting them should arrive **two days** before the event. The rest of the team should arrive **one day** before.  
 
@@ -87,19 +88,22 @@ navGroup: Sales & Marketing
 
 ### During the Event  
 
+- **Schedule a retrospective meetingwith the on-site team to assess what went well and what could be improved.**
+    - Create a document to take notes, share it in the event Slack channel and pin it, so everyone can start adding notes while they're there. 
 - **The on-site team should:**  
   - Ensure all checklist items are completed.  
   - Follow the booth schedule.  
   - Capture content for social media.  
   - Adhere to the lead capture strategy.  
-  - Maintain professional booth etiquette – see [dos and don’ts](https://www.esntradeshow.com/dos-and-donts-of-trade-show-exhibiting/) from ESN for reference.  
+  - Maintain professional booth etiquette – see [dos and don’ts](https://www.esntradeshow.com/dos-and-donts-of-trade-show-exhibiting/) from ESN for reference.
 
 ### After the Event  
 
 - **Sales and marketing teams to follow up with leads** as per the pre-defined strategy.  
   - Prioritise high-intent leads immediately.  
   - Continue nurturing long-term prospects with regular touchpoints. 
-  - Hold a retrospective meeting with the on-site team to assess what went well and what could be improved.
+  - Hold the retrospective meeting.
+  - Add any learnings to this handbook page.
 
 ## As visitor
 
