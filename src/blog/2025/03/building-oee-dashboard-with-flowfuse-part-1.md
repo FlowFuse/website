@@ -18,7 +18,7 @@ To effectively track this KPI, an OEE dashboard is built, but creating one can b
 
 With FlowFuse, it's possible to build a customized, OEE Dashboard, without writing any code, that can provide real-time production data based on your needs.
 
-In this, the first part of a new blog series on building an OEE dashboard with FlowFuse, we’ll explain the concept of OEE and outline the basic plan for the dashboard. We’ll cover the scope of OEE calculation, key metrics, visualization strategies, and the expected design of the dashboard.
+In this first part of a new blog series on building an OEE dashboard with FlowFuse, we explain the concept of OEE, how it is calculated, and outline the basic plan for the dashboard. In that plan, we cover the scope of OEE calculation, key metrics, visualization strategies, and the expected design of the dashboard.
 
 Let’s get started!
 
@@ -36,25 +36,17 @@ Measuring and improving OEE allows you to improve the utilization of existing ma
 
 ## How is OEE calculated?
 
-OEE is calculated using three key components that work together to give you an idea of how well your equipment is performing:
-Availability indicates the proportion of scheduled production time that is utilized for actual production. Factors like equipment breakdowns, maintenance, or setup changes can reduce availability.
-
-- **Availability (%) = (Operating Time ÷ Planned Production Time) × 100**
-
-Performance measures the efficiency of the equipment relative to its optimal speed. It accounts for slow cycles, brief interruptions, and reduced operating speeds.
-	
-- **Performance (%) = (Actual Output ÷ Maximum Possible Output) × 100**
- 
-Quality assesses the ratio of products that meet quality standards. Scrap, rework, and defective items negatively impact this metric.
-
-- **Quality (%) = (Good Products ÷ Total Products) × 100**
- 
-When you multiply these three components together, you get the overall OEE score.
+OEE is calculated using the formula:
 
 **OEE (%) = Availability × Performance × Quality**
 
-For example, if a machine is available 90% of the time, runs at 95% of its ideal speed, and 98% of products are defect-free, your OEE would be: 0.90 X 0.95 X 0.98 = 83.7%
-This means your machine is effectively producing good parts just over 83% of the time—which isn’t bad, but there’s room for improvement.
+Where:
+
+- **Availability (%)** = (Operating Time ÷ Planned Production Time) × 100
+- **Performance (%)** = (Actual Output ÷ Maximum Possible Output) × 100
+- **Quality (%)** = (Good Products ÷ Total Products) × 100
+
+For example, if a machine is available 90% of the time, runs at 95% of its ideal speed, and 98% of products are defect-free, your OEE would be: 0.90 × 0.95 × 0.98 = 83.7%
 
 ## Planning Your OEE Dashboard
 
