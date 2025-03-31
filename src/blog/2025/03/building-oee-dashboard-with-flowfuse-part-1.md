@@ -10,13 +10,15 @@ tags:
    - flowfuse
 ---
 
-OEE (Overall Equipment Effectiveness) is a KPI used in manufacturing to measure equipment performance based on availability, efficiency, and quality. To effectively track this KPI, an OEE dashboard is built, but creating one can be complex, especially when consolidating data from various sources. Often, there’s limited flexibility to seamlessly combine data across different systems. Additionally, building a customizable dashboard to suit specific needs adds another layer of complexity.
+OEE (Overall Equipment Effectiveness) is a KPI used in manufacturing to measure equipment performance based on availability, efficiency, and quality.
+
+To effectively track this KPI, an OEE dashboard is built, but creating one can be complex, especially when consolidating data from various sources, with limited flexibility to integrate data across different systems. Additionally, building a customizable dashboard to suit specific needs adds another layer of complexity.
 
 <!--more-->
 
-With FlowFuse, a no-code OEE dashboard can be created to provide real-time production data based on your needs.
+With FlowFuse, it's possible to build a customized, OEE Dashboard, without writing any code, that can provide real-time production data based on your needs.
 
-We’re starting a blog series on building an OEE dashboard with FlowFuse. In this first part, we’ll explain the concept of OEE and outline the basic plan for the dashboard. We’ll cover the scope of OEE calculation, key metrics, visualization strategies, and the expected design of the dashboard.
+In this, the first part of a new blog series on building an OEE dashboard with FlowFuse, we’ll explain the concept of OEE and outline the basic plan for the dashboard. We’ll cover the scope of OEE calculation, key metrics, visualization strategies, and the expected design of the dashboard.
 
 Let’s get started!
 
@@ -24,9 +26,9 @@ Let’s get started!
 
 Overall Equipment Effectiveness (OEE) is a crucial metric in manufacturing that assesses the productivity of equipment through three key components. These components evaluate the efficiency of equipment during the production process:
 
-1. Availability — How often does the equipment perform when needed?
-2. Performance  — How much product does the equipment produce?
-3. Production Quality — How many high-quality products does the equipment produce?
+- **Availability:** How often does the equipment perform when needed?
+- **Performance:** How much product does the equipment produce?
+- **Production Quality:** How many high-quality products does the equipment produce?
 
 The concept of OEE was introduced by Seiichi Nakajima in the 1960s as part of the [Total Productive Maintenance (TPM)](https://en.wikipedia.org/wiki/Total_productive_maintenance) initiative in Japan. Nakajima, an engineer at the Japan Institute of Plant Maintenance (JIPM), developed OEE to measure and enhance manufacturing productivity by identifying inefficiencies. This metric has since become widely adopted across the manufacturing industry. Today, OEE remains one of the most critical KPIs, with a really huge number of manufacturers considering it either important or very important for improving production efficiency and minimizing waste.
 
@@ -34,21 +36,27 @@ Measuring and improving OEE allows you to improve the utilization of existing ma
 
 ## Planning Your OEE Dashboard
 
-Now that we’ve covered what OEE is, let's focus on designing a basic plan that details what are the things that we should display on our dashboard, the scope and level of calculation, and how the visual layout will be structured for effective monitoring and analysis.
+Now that we’ve covered what OEE is, let's focus on designing a basic plan that details what are the things that we should display on our dashboard. This should consist of three parts:
+
+- **Scope of the Calculation:** How much data will be collected and analyzed?
+- **Key Metrics:** Which metrics are the most important to track?
+- **Layout & Visualisation:** What visual elements will be used to present the data? 
 
 ### Defining the Scope of OEE Calculation
 
-The first and most important step before creating the dashboard is defining the scope of the OEE calculation. The tracking level can vary based on the focus on area, whether it is individual machines, entire production line, or the factory as a whole. 
+The first and most important step before creating the dashboard is defining the scope of the OEE calculation. The tracking level can vary based on the focus on area. Scope can vary between:
 
-Machine-level OEE concentrates on individual machines, aiding in the identification of specific inefficiencies that impact performance. Line-level OEE assesses the entire production line, offering insights into the collaboration of multiple machines and pinpointing where bottlenecks arise. Factory-level OEE compiles data from various production lines to provide a comprehensive overview of overall efficiency and trends.  
+- **Machine-level OEE:** Concentrates on individual machines, aiding in the identification of specific inefficiencies that impact performance.
+- **Line-level OEE:** Assesses the entire production line, offering insights into the collaboration of multiple machines and pinpointing where bottlenecks arise.
+- **Factory-level OEE:** Compiles data from various production lines to provide a comprehensive overview of overall efficiency and trends. 
 
-For those building the dashboard from scratch, it’s advisable to start at the machine level. This approach allows for faster time to value, as data collection can typically begin from a single point, reducing initial complexity. Once you’ve established the machine-level tracking and identified the inefficiencies, you can scale up to line-level and eventually factory-level OEE. Starting with machine-level data ensures that you can quickly uncover key insights and iteratively improve the scope and detail of your dashboard.
+For those building dashboards from scratch, it’s advisable to start at the machine level. This approach allows for faster time to value, as data collection can typically begin from a single point, reducing initial complexity. Once you’ve established the machine-level tracking and identified the inefficiencies, you can scale up to line-level and eventually factory-level OEE. Starting with machine-level data ensures that you can quickly uncover key insights and iteratively improve the scope and detail of your dashboard.
 
-However, for this series, we will be building the dashboard at the line-level. In this case, we will collect data specific to a production line and perform the OEE calculation based on that data.
+For this series, we will be building the dashboard at the line-level. In this case, we will collect data specific to a production line and perform the OEE calculation based on that data.
 
 ### Key Metrics and Insights
 
-As mentioned earlier, the dashboard will calculate OEE for each production line, presenting key metrics such as availability, performance, quality, and the overall OEE score. While the overall OEE score provides a quick snapshot of performance, it does not offer enough detail to pinpoint specific areas that need improvement.
+As mentioned earlier, the dashboard will calculate OEE for a production line, presenting key metrics such as availability, performance, quality, and the overall OEE score. While the overall OEE score provides a quick snapshot of performance, it does not offer enough detail to pinpoint specific areas that need improvement.
 
 To address this, the dashboard will break down the OEE calculation at the machine level as well, enabling managers to identify underperforming machines that affect overall efficiency. Additionally, it will display recent downtime incidents, summarizing this data to uncover trends and identify potential root causes. This breakdown will provide a clearer understanding of where inefficiencies are occurring and allow for targeted corrective actions.
 
@@ -58,7 +66,9 @@ The dashboard will also track production quality, displaying the number of accep
 
 To ensure that insights are easy to understand and act upon, the dashboard will feature a well-structured visual layout that presents complex data in a clear and intuitive manner. After analyzing various OEE dashboards, I designed this one with a focus on clarity, usability, and actionable insights. It will include gauges for a quick OEE overview, bar charts to track downtime and production trends, tables to highlight underperforming machines and recent downtime events, and line charts to monitor efficiency patterns over time. This setup ensures managers can quickly spot problems, understand their causes, and take the necessary steps to optimize production.
 
-The following dashboard image illustrates the intended design and key objectives of our OEE dashboard. Based on the plan outlined in this part, we will build the dashboard interface in the next part of the series using simulated production and downtime data. Later, we will show how to connect real factory data, scale the dashboard across multiple production lines, and use it to enhance OEE effectively.
+The following dashboard image illustrates the intended design and key objectives of our OEE dashboard. Based on the plan outlined in this part, we will build the dashboard interface in the next part of the series using simulated production and downtime data.
+
+Later, we will show how to connect real factory data, scale the dashboard across multiple production lines, and use it to enhance OEE effectively.
 
 ![OEE Dashboard](./images/oee-dashboard-1.png){data-zoomable}
 _OEE Dashboard_
@@ -66,4 +76,6 @@ _OEE Dashboard_
 ![OEE Dashboard](./images/oee-dashboard-2.png){data-zoomable}
 _OEE Dashboard_
 
-If you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/). Gain insights swiftly, optimize your operations, and enhance efficiency starting today! 
+## What Next?
+
+Part 2 of this series will follow soon. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/). Gain insights swiftly, optimize your operations, and enhance efficiency starting today! 
