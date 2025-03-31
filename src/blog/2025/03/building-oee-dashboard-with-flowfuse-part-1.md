@@ -38,13 +38,13 @@ Measuring and improving OEE allows you to improve the utilization of existing ma
 
 OEE is calculated using the formula:
 
-**OEE (%) = Availability × Performance × Quality**
+***OEE (%) = Availability × Performance × Quality***
 
 Where:
 
-- **Availability (%)** = (Operating Time ÷ Planned Production Time) × 100
-- **Performance (%)** = (Actual Output ÷ Maximum Possible Output) × 100
-- **Quality (%)** = (Good Products ÷ Total Products) × 100
+- ***Availability (%) = (Operating Time ÷ Planned Production Time) × 100***
+- ***Performance (%) = (Actual Output ÷ Maximum Possible Output) × 100***
+- **Quality (%) = (Good Products ÷ Total Products) × 100***
 
 For example, if a machine is available 90% of the time, runs at 95% of its ideal speed, and 98% of products are defect-free, your OEE would be: 0.90 × 0.95 × 0.98 = 83.7%
 
