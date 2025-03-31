@@ -23,7 +23,7 @@ navGroup: Sales & Marketing
   - The CTO should always be involved in demo planning, even if they are not attending the event.  
 - **Research booth vendors** and obtain at least **three different quotations**.  
   - Keep in mind that **US vendors do not include taxes in their quotations**. For example, in Dallas, TX, taxes were around **8%**.  
-- **Create a landing page for the event**, optimised for SEO, including:  
+- **Create a landing page for the event**, optimised for SEO,with the goal of ranking among the top search results for the event, including:  
   - What we’re showcasing or demoing at the fair.  
   - Video.  
   - Contact form.  
@@ -56,7 +56,7 @@ navGroup: Sales & Marketing
   - Factor in available storage space at the booth.  
 - **Create a booth schedule**, ensuring:  
   - Demo builders have adequate setup time.  
-  - A balanced distribution of booth duties among team members.  
+  - A fair distribution of booth hours among team members.
   - A plan for teardown after the event.  
 - **Share the schedule** and request that team members book flights accordingly.  
   - Ensure arrival and departure times align with their booth responsibilities.  
@@ -98,7 +98,8 @@ navGroup: Sales & Marketing
 
 - **Sales and marketing teams to follow up with leads** as per the pre-defined strategy.  
   - Prioritise high-intent leads immediately.  
-  - Continue nurturing long-term prospects with regular touchpoints.  
+  - Continue nurturing long-term prospects with regular touchpoints. 
+  - Hold a retrospective meeting with the on-site team to assess what went well and what could be improved.
 
 ## As visitor
 
