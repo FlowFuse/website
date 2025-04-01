@@ -13,8 +13,8 @@ navGroup: Sales & Marketing
 - **Book the exhibition space.**  
 - **Immediately after booking, define:**  
   - **Attending team members** (selected by the CEO/CTO) and confirm their availability.  
-    - At least one team member should be responsible for building the demo. Ensure the team includes a technically skilled person to support this.  
-    - Create a Slack channel with the confirmed attendees. The name of the channel should have the following format `#proj-[event-name]-year`
+    - One team member is responsible for building the demo. Ensure the team member is technically skilled to support this.  
+    - Create a Slack channel with the confirmed attendees. The name of the channel should have the following format `#proj-[event-name]-[year] - e.g. #proj-hannover-25`
   - **Accommodation** – book a hotel near the venue, ideally with breakfast included.  
     - If the demo involves physical devices, the team member transporting them should arrive **two days** before the event. The rest of the team should arrive **one day** before.  
 
@@ -23,7 +23,7 @@ navGroup: Sales & Marketing
 - **Define what will be demonstrated**, as this impacts the **booth layout and messaging**.  
   - The CTO should always be involved in demo planning, even if they are not attending the event.  
 - **Research booth vendors** and obtain at least **three different quotations**.  
-  - Keep in mind that **US vendors do not include taxes in their quotations**. For example, in Dallas, TX, taxes were around **8%**.  
+  - Keep in mind that US vendors do not include taxes in their quotations. For example, in Dallas, TX, taxes were around **8%**.  
 - **Create a landing page for the event**, optimised for SEO,with the goal of ranking among the top search results for the event, including:  
   - What we’re showcasing or demoing at the fair.  
   - Video.  
