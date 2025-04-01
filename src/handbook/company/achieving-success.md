@@ -16,7 +16,17 @@ The second tool employed at FlowFuse to improve on the identfied problems are [O
 
 A KPI, or Key Performance Indicator, is used as a heuristic metric for company-wide
 success. At FlowFuse we're engaged in many initiatives to grow our offering and
-assess product-market fit. At this time, there's one KPI to track progress.
+assess product-market fit. 
+
+We review KPIs every Tuesday as part of our recurring strategy meeting. 
+At this point in time, we review the following KPIs:
+* Engineering throughput 
+* NR Active Instances
+* MQLs
+* CARR Projected (This Q)
+* CARR Closed (This Q)
+* CARR Goal (This Q)
+* MRR
 
 ### Annual Recurring Revenue (ARR)
 
