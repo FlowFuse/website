@@ -44,6 +44,8 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
    * Provide feedback to the product team on market needs and requirements.
 
 ## EMEA Specific information
+* Expand FlowFuse's customer base and revenue in the EMEA market, targeting key accounts using an Account-Based Marketing (ABM) approach.
+* Test and refine our sales motion to optimize effectiveness in the EMEA market.
 * Multilingual & Culturally Fluent (Bonus): Fluency in French, German, or another European language is a significant plus.
 
 ## Hiring Plan:
