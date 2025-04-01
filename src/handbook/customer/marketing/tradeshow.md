@@ -9,22 +9,22 @@ navGroup: Sales & Marketing
 
 ### Six Months Before the Event  
 
-- **Define the event budget** (set by the CEO) and create an expense tracking sheet.  
-- **Book the exhibition space.**  
-- **Immediately after booking, define:**  
-  - **Attending team members** (selected by the CEO/CTO) and confirm their availability.  
+- Define the event budget (set by the CEO) and create an expense tracking sheet.  
+- Book the exhibition space.  
+- Immediately after booking, define:  
+  - Attending team members (selected by the CEO/CTO) and confirm their availability.  
     - One team member is responsible for building the demo. Ensure the team member is technically skilled to support this.  
-    - Create a Slack channel with the confirmed attendees. The name of the channel should have the following format `#proj-[event-name]-[year] - e.g. #proj-hannover-25`
-  - **Accommodation** – book a hotel near the venue, ideally with breakfast included.  
+    - Create a Slack channel with the confirmed attendees. The name of the channel should have the following format `#proj-[event-name]-[year]` - e.g. `#proj-hannover-25`
+  - Accommodation – book a hotel near the venue, ideally with breakfast included.  
     - If the demo involves physical devices, the team member transporting them should arrive **two days** before the event. The rest of the team should arrive **one day** before.  
 
 ### Four Months Before the Event  
 
-- **Define what will be demonstrated**, as this impacts the **booth layout and messaging**.  
+- Define what will be demonstrated, as this impacts the booth layout and messaging.  
   - The CTO should always be involved in demo planning, even if they are not attending the event.  
-- **Research booth vendors** and obtain at least **three different quotations**.  
+- Research booth vendors and obtain at least three different quotations.  
   - Keep in mind that US vendors do not include taxes in their quotations. For example, in Dallas, TX, taxes were around **8%**.  
-- **Create a landing page for the event**, optimised for SEO,with the goal of ranking among the top search results for the event, including:  
+- Create a landing page for the event, optimised for SEO,with the goal of ranking among the top search results for the event, including:  
   - What we’re showcasing or demoing at the fair.  
   - Video.  
   - Contact form.  
@@ -33,45 +33,45 @@ navGroup: Sales & Marketing
   - Giveaways.  
   - Contests.  
   - Special events.  
-- **Begin social media promotion**, posting **once per week**, and include the event in the monthly newsletter.  
-- **If the event provides free passes**, send a dedicated email to customers and ICPs, inviting them to attend and sharing the landing page link.  
+- Begin social media promotion, posting once per week, and include the event in the monthly newsletter.  
+- If the event provides free passes, send a dedicated email to customers and ICPs, inviting them to attend and sharing the landing page link.  
 
 ### Three Months Before the Event  
 
-- **Select a booth vendor**.  
-- **Order booth services**, or provide access to the vendor to do so, including:  
+- Select a booth vendor.  
+- Order booth services, or provide access to the vendor to do so, including:  
   - Electricity, internet access, Wi-Fi.  
   - Lead capture app.  
   - Cleaning, catering, coffee machine.  
-- **Define booth messaging**.  
-- **Work on the booth artwork** once the vendor provides the technical specifications.  
-- **If possible, obtain a list of exhibitors** and have the sales team reach out to those that match our ICPs.  
+- Define booth messaging.  
+- Work on the booth artwork once the vendor provides the technical specifications.  
+- If possible, obtain a list of exhibitors and have the sales team reach out to those that match our ICPs.  
   - The goal is to book meetings at the event with potential prospects.  
 
 ### Two Months Before the Event  
 
-- **Define and order giveaways.**  
+- Define and order giveaways. 
   - Check if they can be shipped directly to the venue or hotel.  
   - If not, coordinate with the team member closest to the event location to bring them.  
   - Consider estimated event attendance, as well as volume and weight, especially if team members need to transport them.  
   - Factor in available storage space at the booth.  
-- **Create a booth schedule**, ensuring:  
+- Create a booth schedule, ensuring:  
   - Demo builders have adequate setup time.  
   - A fair distribution of booth hours among team members.
   - A plan for teardown after the event.  
-- **Share the schedule** and request that team members book flights accordingly.  
+- Share the schedule and request that team members book flights accordingly.  
   - Ensure arrival and departure times align with their booth responsibilities.  
   - Allocate extra luggage for those transporting demo equipment or giveaways.  
-- **Increase social media activity**, posting **twice per week**.  
-- **Define lead capture and follow-up strategy** with the sales team, including:  
+- Increase social media activity, posting twice per week.  
+- Define lead capture and follow-up strategy with the sales team, including:  
   - Who will upload leads to HubSpot.  
   - How and when to follow up.  
   - The timeline for lead nurturing.  
 
 ### One Month Before the Event  
 
-- **Assign a team member responsible for content creation on-site.**  
-- **Prepare a social media content plan** covering pre-event, live updates, and post-event content.  
+- Assign a team member responsible for content creation on-site.  
+- Prepare a social media content plan covering pre-event, live updates, and post-event content.  
 
 ### Two Weeks Before the Event  
 
@@ -84,13 +84,13 @@ navGroup: Sales & Marketing
   - Team schedule.  
   - Social media content plan.  
   - Checklist for team members.  
-- **Sales team to send personal emails** to those who redeemed free tickets, inviting them to book a meeting at the booth.  
+- Sales team to send personal emails to those who redeemed free tickets, inviting them to book a meeting at the booth.  
 
 ### During the Event  
 
-- **Schedule a retrospective meetingwith the on-site team to assess what went well and what could be improved.**
+- Schedule a retrospective meetingwith the on-site team to assess what went well and what could be improved.
     - Create a document to take notes, share it in the event Slack channel and pin it, so everyone can start adding notes while they're there. 
-- **The on-site team should:**  
+- The on-site team should: 
   - Ensure all checklist items are completed.  
   - Follow the booth schedule.  
   - Capture content for social media.  
@@ -99,7 +99,7 @@ navGroup: Sales & Marketing
 
 ### After the Event  
 
-- **Sales and marketing teams to follow up with leads** as per the pre-defined strategy.  
+- Sales and marketing teams to follow up with leads as per the pre-defined strategy.  
   - Prioritise high-intent leads immediately.  
   - Continue nurturing long-term prospects with regular touchpoints. 
   - Hold the retrospective meeting.
