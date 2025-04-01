@@ -2,9 +2,9 @@
 title: "Part 1: Building an OEE Dashboard with FlowFuse"
 subtitle: Defining OEE and Planning an Effective Dashboard
 description: Create an OEE dashboard with FlowFuse to track equipment performance, optimize efficiency, and gain real-time production insights
-date: 2025-03-31
+date: 2025-04-01
 authors: ["sumit-shinde"]
-image:
+image: building-oee-dashboard-part1.png
 keywords: free oee dashboard, oee dashboard free, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
