@@ -12,7 +12,7 @@ Please see our [company values](/handbook/company/values/).
 ## FlowFuse's Mission
 
 FlowFuse will empower 1 billion people to fuse the digital realm and physical
-reality through building bespoke workflows, applications and integrations,
+reality through building bespoke workflows, applications, and integrations,
 unleashing their creativity so that they can effortlessly leverage their own
 skills and expertise.
 
