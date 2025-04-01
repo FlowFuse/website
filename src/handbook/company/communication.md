@@ -6,6 +6,13 @@ navTitle: Communications
 
 As a distributed company we should be mindful of how we communicate.
 
+## Company-wide announcements
+
+Company-wide announcements are made in the #announcements channel in Slack. All team
+members are expected to follow all announcements made in this channel. Depending on the 
+kind of announcment, it will be accompanied with a video recording by the person making 
+the announcement and a link to the PR where the change was made. 
+
 ## Date and time
 
 ### Use UTC for times
