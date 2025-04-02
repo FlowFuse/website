@@ -49,7 +49,7 @@ Given goals are intended to be bold and aggressive, performance on the OKRs has
 no influence on compensation or any other performance indicator of a department
 or individual.
 
-The current OKRs are documented [in this internal document](https://docs.google.com/document/d/1vtuOidsfSe4NQA9PKTlk898MJDNf8dcP2NPhSSqc84g/edit#){rel="nofollow"}.
+While we don't currently use OKRs as a management tool, when we did [OKRs used to be tracked in this internal doc](https://docs.google.com/document/d/12zOCFxot0rlRY-_hNwCmuv7_U1STqjzoaXh8EkIWtZI){rel="nofollow"}.
 
 ### Anatomy of an OKR
 
@@ -64,8 +64,3 @@ Head of Marketing, Head of UX, and product manager are expected to read the OKRs
 and work with their teams to develop at least 2 OKRs their team will implement to help achieve the company goal.
 
 At the start of the OKR period, each team will present their OKRs during a company meeting. Bi-weekly meetings will be held where each team will present a quick update on the status of their OKR and current work being done to achieve the key result. At the end of the OKR period, a company wide retrospective will he held to share lessons learned from the OKR.
-
-### Current OKRs
-
-[OKRs are tracked here](https://docs.google.com/document/d/12zOCFxot0rlRY-_hNwCmuv7_U1STqjzoaXh8EkIWtZI){rel="nofollow"}.
-Every two weeks updates are shared in the [Bi-weekly KPI meeting](./communication/#bi-weekly-kpi-meeting).
