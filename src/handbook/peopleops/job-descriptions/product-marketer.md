@@ -46,6 +46,6 @@ We are seeking a highly motivated and experienced Product Marketer to join our t
 * First Interview: Conduct a phone or video interview to further evaluate candidate skills, experience, and cultural fit.
 * Second Interview: In-depth interview with the hiring manager and other team members to discuss specific experience, skills, and how the candidate aligns with the product strategy and pillars.
 * STAR interview - Behaviour interview to understand if there’s value alignment.
-* Assessment/Presentation: May require a work sample, case study, or presentation to demonstrate the candidate's abilities. 
+* Assessment/Presentation: Will require a work sample, case study, or presentation to demonstrate the candidate's abilities. [Internal doc with assessment guidance](https://docs.google.com/document/d/1AXja3R-SRl5KLNqB-8emMuYgnRp8cAOtkVKVD207szo/edit?tab=t.0){rel="nofollow"}.
 * Final Interview: A final interview with key stakeholders.
 * Offer: Extend an offer to the selected candidate.
