@@ -2,9 +2,9 @@
 title: "Part 2: Building an OEE Dashboard with FlowFuse"
 subtitle: Step-by-step guide to building your own OEE Dashboard.
 description: Learn how to build an OEE Dashboard using FlowFuse Dashboard (Node-RED Dashboard 2.0). This step-by-step guide covers data collection, OEE calculations, and dashboard creation with simulated production and downtime data.
-date: 2025-04-03
+date: 2025-04-04
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/04/images/oee-dashboard-buildig-ff-2.png
 keywords: free oee dashboard, oee dashboard free, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
