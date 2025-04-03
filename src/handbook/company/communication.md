@@ -175,7 +175,7 @@ list of names in the agenda so everyone gets the opportunity to share.
 
 The Strategy call is a chance to team leadership to touchbase on a weekly basis. 
 The other topics change and are based on whatever issues are pressing.
-The first 5-10 minutes is [a review of metrics](../achieving-success/#kpi). This call currently occurs on Tuesdays.
+The first 5-10 minutes is [a review of metrics](./achieving-success/#kpi). This call currently occurs on Tuesdays.
 
 ## Feedback and Thanks
 
