@@ -505,12 +505,13 @@ Using FlowFuse Dashboard (Node-RED Dashboard 2.0), a clean and efficient interfa
 
 13. Drag a Line Chart widget, create a new Group, set width **12** and height **5** for both the group and widget, label it **Daily OEE Trend Over 24 Hours**, set X-axis to **Timescale**, format **Y-l-d**, and map **X to `date`** and **Y to `oee`**. Connect it to the Change node setting `msg.oeeTrend` to `msg.payload`.  
 
-14. Click **Deploy**.  
+14. Click **Deploy**.
+15. Open the dashboard by clicking the Dashboard 2.0 button located at the top-right corner of the Dashboard 2.0 sidebar.
 
 ![OEE Dashboard UI flow](./images/oee-dashboard.png){data-zoomable}
 _OEE Dashboard UI flow_
 
-Your OEE dashboard is now fully set up and ready to use. It will visualize key metrics, including OEE, quality, availability, performance, production data, downtime events, and machine performance trends.  
+Your OEE dashboard is now set up and ready to use. It will visualize key metrics, including OEE, quality, availability, performance, production data, downtime events, and machine performance trends.  
 
 ![OEE Dashboard results without proper theming and styling](./images/oee-dashboard-without-style.png){data-zoomable}
 _OEE Dashboard results without proper theming and styling._
