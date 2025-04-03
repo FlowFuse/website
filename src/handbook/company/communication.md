@@ -163,13 +163,19 @@ Example Standup:
 
 ### Current meetings
 
-#### Monday Team catchup
+#### Monday Team Catchup
 
 Weekly a meeting is held to announce company wide updates, get to know each
 other, and share things you want to share both professionally and personally.
 
 Personal updates don't have to be documented in the agenda, but please do keep a
 list of names in the agenda so everyone gets the opportunity to share.
+
+#### Strategy Call
+
+The Strategy call is a chance to team leadership to touchbase on a weekly basis. 
+The other topics change and are based on whatever issues are pressing.
+The first 5-10 minutes is [a review of metrics](./achieving-success/#kpi). This call currently occurs on Tuesdays.
 
 ## Feedback and Thanks
 
