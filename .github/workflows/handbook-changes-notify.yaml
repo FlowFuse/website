@@ -1,0 +1,129 @@
+name: Notify on Handbook Changes
+
+on:
+  pull_request:
+    types:
+      - closed
+      - opened # testing purpose
+      - synchronize # testing purpose
+      
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-changes:
+    name: Verify changes
+    runs-on: ubuntu-latest
+    outputs:
+      handbook_has_been_updated: ${{ steps.changed-files.outputs.handbook_changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+      - name: Find changed files
+        id: changed-files
+        run: |
+          ./.github/scripts/detect_changed_files.sh
+
+  notify-slack:
+    name: Notify on failure
+    needs: check-changes
+    # if: |
+    #   github.event.pull_request.merged == true && 
+    #   needs.check-changes.outputs.handbook_has_been_updated == 'true'
+    if: |
+      needs.check-changes.outputs.handbook_has_been_updated == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Generate payload variables
+      run: |
+        echo "PR_TITLE=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
+        echo "PR_BODY=${{ github.event.pull_request.body }}" >> $GITHUB_ENV
+        echo "PR_AUTHOR_NAME=${{ github.event.pull_request.user.name }}" >> $GITHUB_ENV
+        echo "PR_MERGE_TIME=${{ github.event.pull_request.merged_at }}" >> $GITHUB_ENV
+        echo "PR_URL=${{ github.event.pull_request.html_url }}" >> $GITHUB_ENV
+
+    - name: Send notification
+      uses: slackapi/slack-github-action@485a9d42d3a73031f12ec201c457e2162c45d02d # v2.0.0
+      with:
+        method: chat.postMessage
+        token: ${{ secrets.SLACK_GHBOT_TOKEN }}
+        payload: |
+          {
+            "channel": "C03AP45RSFP",
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "📚 Handbook Update",
+                  "emoji": true
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Our handbook has been updated with new information."
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Author:*\n${{ env.PR_AUTHOR }}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Updated at:*\n${{ env.PR_MERGE_TIME }}"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*Summary of Changes:*\n${{ env.PR_BODY }}"
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "actions",
+                "elements": [
+                  {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "View Handbook",
+                      "emoji": true
+                    },
+                    "style": "primary",
+                    "url": "http://flowfuse.com/handbook/",
+                    "value": "view_handbook"
+                  },
+                  {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "See Merged Pull Request",
+                      "emoji": true
+                    },
+                    "style": "primary",
+                    "url": "${{ env.PR_URL }}",
+                    "value": "view_changes"
+                  }
+                ]
+              }
+            ]
+          }
+        
