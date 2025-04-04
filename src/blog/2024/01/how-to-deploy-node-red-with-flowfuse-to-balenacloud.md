@@ -35,7 +35,7 @@ Once your fleet is created, the next step is to add devices. To add a device to 
 ### Setting Up FlowFuse
 Setting up FlowFuse correctly is essential for seamless operation:
 1. Create a new instance within FlowFuse or use an existing one if you prefer. Follow these [instructions](/docs/user/introduction/#creating-a-node-red-instance) to create a new instance.
-2. Create a **Device Provisioning Token** by following these [instructions](/docs/device-agent/register/#generating-%22provisioning-configuration%22).
+2. Create a **Device Provisioning Token** by following these [instructions](/docs/device-agent/register/#bulk-registration).
 3. Ensure you add the FlowFuse Node-RED application you want the devices to provision. If left at default, devices will need to be manually added to applications.
 
 ### Using the Device Provisioning Token
