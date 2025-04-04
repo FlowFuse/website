@@ -48,7 +48,7 @@ jobs:
     #     echo "PR_URL=${{ github.event.pull_request.html_url }}" >> $GITHUB_ENV
     - name: Debug payload
       run: |
-        echo ${{ github.event }}
+        echo '${{ toJSON(github.event) }}' | jq '.'
 
     - name: Send notification
       if: false
