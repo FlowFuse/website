@@ -29,7 +29,7 @@ jobs:
           ./.github/scripts/detect_changed_files.sh
 
   notify-slack:
-    name: Notify about handbook changes
+    name: Send notification
     needs: check-changes
     # if: |
     #   github.event.pull_request.merged == true && 
