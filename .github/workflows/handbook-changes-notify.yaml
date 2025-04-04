@@ -41,7 +41,7 @@ jobs:
     steps:
     - name: Generate payload variables
       run: |
-        echo "PR_TITLE=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
+        # echo "PR_TITLE=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
         # echo "PR_BODY=${{ github.event.pull_request.body }}" >> $GITHUB_ENV
         echo "PR_AUTHOR_NAME=${{ github.event.pull_request.user.name }}" >> $GITHUB_ENV
         echo "PR_MERGE_TIME=${{ github.event.pull_request.merged_at }}" >> $GITHUB_ENV
@@ -91,7 +91,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*Summary of Changes:*\n${{ github.event.pull_request.body }}"
+                  "text": "*Summary of Changes:*\n${{ github.event.pull_request.title }}"
                 }
               },
               {
