@@ -46,8 +46,12 @@ jobs:
     #     echo "PR_AUTHOR_NAME=${{ github.event.pull_request.user.name }}" >> $GITHUB_ENV
     #     echo "PR_MERGE_TIME=${{ github.event.pull_request.merged_at }}" >> $GITHUB_ENV
     #     echo "PR_URL=${{ github.event.pull_request.html_url }}" >> $GITHUB_ENV
+    - name: Debug payload
+      run: |
+        echo ${{ github.event }}
 
     - name: Send notification
+      if: false
       uses: slackapi/slack-github-action@485a9d42d3a73031f12ec201c457e2162c45d02d # v2.0.0
       with:
         method: chat.postMessage
