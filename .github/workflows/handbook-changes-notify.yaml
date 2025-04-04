@@ -79,7 +79,7 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Author:*\n${{ github.event.pull_request.user.name }}"
+                    "text": "*Author:*\n${{ github.event.pull_request.user.login }}"
                   },
                   {
                     "type": "mrkdwn",
@@ -115,7 +115,7 @@ jobs:
                     "type": "button",
                     "text": {
                       "type": "plain_text",
-                      "text": "See Merged Pull Request",
+                      "text": "View Merged Pull Request",
                       "emoji": true
                     },
                     "style": "primary",
