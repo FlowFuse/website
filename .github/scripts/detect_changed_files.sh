@@ -23,7 +23,7 @@ fi
 handbook_changed=false
 
 for file in $changed_files; do
-  if [[ $file == handbook/* ]]; then
+  if [[ $file == src/handbook/* ]]; then
     handbook_changed=true
   fi
   
