@@ -32,7 +32,7 @@ To simplify the development process, we will divide development into five key pa
 2. Preparing data for calculations
 3. Calculating OEE and key metrics
 4. Detailed breakdown of OEE data
-5. building the dashboard
+5. Building the dashboard
 
 Before we start, it is recommended to have a basic knowledge of Node-RED. For that, I recommend this free [Node-RED Fundamental Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started).
 
