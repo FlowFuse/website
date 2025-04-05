@@ -69,7 +69,7 @@ Once the simulated data is generated and stored in SQLite, the next step is to c
 
 1. Click on the **"+"** to create a new flow.
 
-2. Rename the newly created flow to **OEE Dashboard for Line-1**.
+2. Name the newly created flow to **OEE Dashboard for Line-1**.
 
 3. Drag a **Change node** onto the canvas, double-click it, and add the following elements:
    - Set `flow.line` to `"Line-1"`
