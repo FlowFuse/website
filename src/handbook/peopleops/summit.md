@@ -19,5 +19,3 @@ the summit, senior leadership will assemble for a strategy day.
 
 Location might vary from summit to summit, and will be communicated three months
 ahead of time, ensuring everyone has sufficient time to make their travel arrangements.
-
-Fake change
