@@ -4,9 +4,6 @@ on:
   pull_request:
     types:
       - closed
-      - opened # testing purpose
-      - synchronize # testing purpose
-      
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -31,25 +28,12 @@ jobs:
   notify-slack:
     name: Send notification
     needs: check-changes
-    # if: |
-    #   github.event.pull_request.merged == true && 
-    #   needs.check-changes.outputs.handbook_has_been_updated == 'true'
     if: |
+      github.event.pull_request.merged == true && 
       needs.check-changes.outputs.handbook_has_been_updated == 'true'
     runs-on: ubuntu-latest
 
     steps:
-    # - name: Generate payload variables
-    #   run: |
-    #     # echo "PR_TITLE=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
-    #     # echo "PR_BODY=${{ github.event.pull_request.body }}" >> $GITHUB_ENV
-    #     echo "PR_AUTHOR_NAME=${{ github.event.pull_request.user.name }}" >> $GITHUB_ENV
-    #     echo "PR_MERGE_TIME=${{ github.event.pull_request.merged_at }}" >> $GITHUB_ENV
-    #     echo "PR_URL=${{ github.event.pull_request.html_url }}" >> $GITHUB_ENV
-    - name: Debug payload
-      run: |
-        echo '${{ toJSON(github.event) }}' | jq '.'
-
     - name: Send notification
       if: false
       uses: slackapi/slack-github-action@485a9d42d3a73031f12ec201c457e2162c45d02d # v2.0.0
