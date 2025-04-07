@@ -11,7 +11,7 @@ FlowFuse has had the ability to provision devices at scale for some time now, bu
 
 In this update, we have added the ability to have your bulk provisioned remote instances automatically assign themselves to an application upon creation.
 
-This will save you a lot of time if you have a large number of devices to provision.
+This will save you a lot of time if you have a large number of remote instances to provision.
 
 ![Screenshot of creating a provisioning token](./images/create-provisioning-token.png){data-zoomable}
 _Screenshot of creating a provisioning token_
