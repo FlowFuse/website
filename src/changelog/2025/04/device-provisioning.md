@@ -1,6 +1,6 @@
 ---
 title: Remote Instance Provisioning
-description: "Bulk Registration now supports auto assigning devices to an application."
+description: "Bulk Registration now supports auto assigning your Remote Instances to an Application."
 date: 2025-04-04 12:00:00.0  
 authors: ["stephen-mclaughlin"]
 tags:
