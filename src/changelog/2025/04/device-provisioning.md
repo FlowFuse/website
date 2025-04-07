@@ -7,7 +7,7 @@ tags:
   - changelog
 ---
 
-FlowFuse has had the ability to provision devices at scale for some time now, but assigning devices to an application has, until now, been a manual process.
+FlowFuse has had the ability to provision remote instances at scale for some time now, but assigning remote instances to an application has, until now, been a manual process.
 
 In this update, we have added the ability to have your bulk provisioned remote instances automatically assign themselves to an application upon creation.
 
