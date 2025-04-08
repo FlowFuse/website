@@ -31,7 +31,7 @@ After the decision has been made to attend an event, the first thing that's need
 Create a Slack channel with the proposed team and confirm their availability. The name of the channel should have the following format `#proj-[event-name]-[year]` - e.g. `#proj-hannover-25`. Use this channel to communicate any updates related to the trade show, it will be especially useful during the event as well.
 
 After the team has confirmed their availability, the accomodation should be booked considering:
-- Hotels near the venue are preferred over centric ones.
+- Hotels near the venue are preferred over city-central ones.
 - They should include breakfast or at least a fridge in the room to sort that out.
 - Most of the team should arrive a day before the event starts, and the person responsible for setting up and dismantling the demo should arrive two days earlier and maybe leave the day after. It's recommended to check this with the team member before booking the rooms.
 
