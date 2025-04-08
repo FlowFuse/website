@@ -22,10 +22,9 @@ Planning a trade show well in advance is crucial. From aligning on the goals and
 
 After the decision has been made to attend an event, the first thing that's needed is a budget. This will guide the next steps in the event planning. The CEO is responsible for setting the budget and it should be tracked in a spreadsheet alongside all the logistic details, such as hotel details, team arrival and departure times, plus any relatet matter and added to the relevant folder in the Drive inside [Fairs](https://drive.google.com/drive/folders/1kfbJy6H3DXYlKDd0RZx-psK7ghDmN4BI?usp=drive_link).
 
-**The planning should start at least six months in advance**, so there's enough time to book hotels and for the team to block their agendas. The on-site team should be proposed by the CEO and CTO, and in general, the team will be of 4 or 5 members and composed of:
-- One or two sales person.
+**The planning should start at least six months in advance**, so there's enough time to book hotels and for the team to block their agendas. The on-site team should be proposed by the CEO and CTO. Team size will depend on factors such as the event itself, the number of passes included, booth size, and duration. For a team of 4–5 members, consider:
+- Two sales representatives or Customer Success.
 - A technically skilled member that will be responsible for setting up and dismantling the demo at the booth.
-- One from customer success.
 - Someone from any other area that will attend to learn or bring support where needed.
 
 Create a Slack channel with the proposed team and confirm their availability. The name of the channel should have the following format `#proj-[event-name]-[year]` - e.g. `#proj-hannover-25`. Use this channel to communicate any updates related to the trade show, it will be especially useful during the event as well.
@@ -37,7 +36,7 @@ After the team has confirmed their availability, the accomodation should be book
 
 #### Four months before the event
 
-The booth vendor search should begin. Get at least three different offers and consider the **demo** as this impacts the layout, artwork and messaging of the booth. A big plus is having the vendor as near as possible to the venue, so the transport costs are lower and their team is nearby to solve any unforseen issues in a timely manner. Check the options with the CEO and once the vendor is selected, make sure to follow the steps on the [vendor section](/handbook/operations/vendors/) of this handbook to handle all invoices.
+The booth vendor search should begin. Get at least three different offers ([here's a list of past and potential vendors](https://docs.google.com/spreadsheets/d/1I2IBOe3gO4B0KEmAUglFWP1aKDMqLsUdzWPFTvbMwQk/edit?usp=sharing)) and consider the **demo** as this impacts the layout, artwork and messaging of the booth. A big plus is having the vendor as near as possible to the venue, so the transport costs are lower and their team is nearby to solve any unforseen issues in a timely manner. Check the options with the CEO and once the vendor is selected, make sure to follow the steps on the [vendor section](/handbook/operations/vendors/) of this handbook to handle all invoices.
 
 Provide access to the vendor so their able to order the necessary services such as electricity, upload the booth blueprints for approval, and anything else that's required to build the booth. Take into consideration that these services are provided for an extra cost, same as wi-fi, cleaning, the leads app that need to be order from our side as soon as possible. The available services will vary from fair to fair, it's recommended to check the expenses sheet from past events to get an idea of what might be neeeded and the cost.
 
