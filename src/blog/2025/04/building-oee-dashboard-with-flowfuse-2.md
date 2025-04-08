@@ -15,8 +15,6 @@ In this Part 2, we will focus on building the OEE dashboard interface using [Flo
 
 <!--more-->
 
-
-
 ## Getting Started
 
 To simplify the development process, we will divide development into five key parts:
@@ -185,13 +183,17 @@ Now that we have all the necessary pieces, we can calculate the key metrics for 
 1. Drag a **Link In node**.
 
 2. Drag a **Change node** and add element as following:
-   - Set `msg.quality` to `$round(($flowContext('total_good_units') / $flowContext('total_produced_units')) * 100, 2)` as JSONata expression.
-   - Set `msg.availability` to `$round((($flowContext('shift_duration') - $flowContext('total_downtime')) / $flowContext('shift_duration')) * 100, 2)` as JSONata expression.
-   - Set `msg.performance` to `$round(($flowContext('total_produced_units') / $flowContext('target_output')) * 100, 2)` as JSONata expression.
+   - Set `msg.quality` to `($flowContext('total_good_units') / $flowContext('total_produced_units')) * 100` as JSONata expression.
+   - Set `msg.availability` to `(($flowContext('shift_duration') - $flowContext('total_downtime')) / $flowContext('shift_duration')) * 100` as JSONata expression.
+   - Set `msg.performance` to `($flowContext('total_produced_units') / $flowContext('target_output')) * 100` as JSONata expression.
    - Set `msg.oee` to `$round(((msg.availability / 100) * (msg.performance / 100) * (msg.quality / 100)) * 100, 2)` as JSONata expression.
-   - Set `msg.productionData` to JSONata expression :
+   - Set `msg.quality`to `$round(msg.quality, 2)`
+   - Set `msg.availability` to `$round(msg.availability, 2)`
+   - Set `msg.performance` to `$round(msg.performance, 2)`
+   - Set `msg.productionData` to JSONata expression:
    ```json
-     {
+   [
+   {
        "reason": "Total Good Units Produced",
        "units": $flowContext("total_good_units")
      },
