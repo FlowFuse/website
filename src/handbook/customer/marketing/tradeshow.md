@@ -3,7 +3,7 @@ navTitle: Trade Shows
 navGroup: Sales & Marketing
 ---
 
-# Trade Shows  
+# Trade Shows
 
 Trade shows are valuable opportunities to connect face-to-face with our industry—customers, partners, and potential users alike. They give us the chance to showcase our product in action, gather feedback, and build relationships that don’t always happen through online calls. Participating in a trade show is both a marketing initiative and a team effort, and often represents a significant investment.
 
