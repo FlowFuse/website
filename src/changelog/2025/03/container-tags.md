@@ -7,7 +7,7 @@ tags:
  - changelog
 ---
 
-As part of the upcoming FlowFuse 2.16.0 release, due on April 10th, we will be updating which
+As part of the upcoming FlowFuse 2.16.0 release we will be updating which
 version the `latest` tag points to for the `flowfuse/node-red` containers.
 
 This change will impact self-hosted Docker and Kubernetes installs that have not changed the default stack.
