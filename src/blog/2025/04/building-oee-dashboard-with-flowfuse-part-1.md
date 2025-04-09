@@ -92,4 +92,4 @@ _OEE Dashboard_
 
 ## What Next?
 
-[Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/) of this series will follow soon. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/). Gain insights swiftly, optimize your operations, and enhance efficiency starting today! 
+[Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/) of this series was published shortly after. Those eager to quickly launch an OEE dashboard in their factory environment did not have to wait [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/). Gain insights swiftly, optimize your operations, and enhance efficiency starting today! 
