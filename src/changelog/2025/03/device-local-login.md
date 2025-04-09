@@ -20,4 +20,4 @@ You can configure this option in your Remote Instance Settings tab under the Sec
 ![Screenshot of local login options](./images/device-agent-local-login-settings.png){data-zoomable}
 _Screenshot of local login options_
 
-Additionally, you can enable or disable local login for in the Device Agents YAML configuration file. For more information, refer to the (Node-RED Settings)[https://flowfuse.com/docs/device-agent/register/#node-red-settings] in our documentation.
+Additionally, you can enable or disable local login for in the Device Agents YAML configuration file. For more information, refer to the [Node-RED Settings](https://flowfuse.com/docs/device-agent/register/#node-red-settings) in our documentation.
