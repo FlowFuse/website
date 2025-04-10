@@ -40,7 +40,6 @@ The booth vendor search should begin. Get at least three different offers ([here
 
 Provide access to the vendor so their able to order the necessary services such as electricity, upload the booth blueprints for approval, and anything else that's required to build the booth. Take into consideration that these services are provided for an extra cost, same as wi-fi, cleaning, the leads app that need to be order from our side as soon as possible. The available services will vary from fair to fair, it's recommended to check the expenses sheet from past events to get an idea of what might be neeeded and the cost.
 
-
 #### Two months before the event
 
 For every trade show, we bring giveaways and marketing materials like flyers or business cards to hand out to the visitors. Check in advance if it's possible to deliver these directly at the venue or the hotel and order the items accordingly. If it's not possible, coordinate this with the team member that's closer to the event location, so they can bring them along. 
@@ -108,6 +107,8 @@ Make sure to create a detailed briefing, provide examples and details of what is
 #### Two Weeks Before the Event
 
 The sales team should send personal emails to those who redeemed free tickets, inviting them to book a meeting at the booth with one of the on-site team members. These should be personal emails, not newsletter or marketing emails, as this is a personal invitation to someone who already knows the company and redeemed their ticket using our link.
+
+Company participants will review the event's messaging framework, practice the pitch, record it, and share it on the Slack channel.
 
 #### During the event
 
