@@ -34,7 +34,7 @@ The URL will be structured accordingly: `/jobs/<job-short-title>`
 
 ## Interviews
 
-When a candidate applies, they will undergo three interviews with three different interviewers before receiving a job offer. The initial stage will involve an interview with the PeopleOps Manager, who will assess the candidate's alignment with our [company values](../company/values). The second interview will focus on competency and technical skills. Lastly, the candidate will participate in a STAR interview for the final round. 
+When a candidate applies, they will undergo three interviews with three different interviewers before receiving a job offer. The initial stage will involve an interview with the PeopleOps Manager, who will assess the candidate's alignment with our [company values](../../company/values). The second interview will focus on competency and technical skills. Lastly, the candidate will participate in a STAR interview for the final round. 
 
 When conducting interviews to hire new team members, prioritize value-fit over culture-fit. Prioritizing value-fit enables individuals to contribute to the company culture, promoting diversity and inclusivity.
 
@@ -121,7 +121,7 @@ These questions should be thought-provoking, yet not overly time-consuming, and 
 
 The initial review will check the aforementioned question for validity, the resume, and the cover letter.
 Check for:
-1. Alignment to [Values](../company/values.md)
+1. Alignment to [Values](../../company/values.md)
 1. Capabilities align with the requirements for the role
 1. Previous retention at companies
    - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
@@ -136,7 +136,7 @@ The resume review should reject **over 50%** of all candidates.
 
 The initial screening call is intended as an additional filter for FlowFuse, but also for the candidate. Screening calls are held on a video call, and the candidate should have plenty of time to ask question and understand if this role is right for them.
 During this call FlowFuse should understand:
-1. Alignment to [Values](../company/values.md)
+1. Alignment to [Values](../../company/values.md)
 1. The candidate is enthusiastic about the company and the open role
 1. Compensation range for the candidate
 1. Notice period, or time from offer to start
