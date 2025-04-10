@@ -156,7 +156,7 @@ When in doubt, reject the candidate.
 
 #### STAR interview
 
-Read more on [the STAR interview at FlowFuse](/star-questions).
+Read more on [the STAR interview at FlowFuse](/handbook/peopleops/hiring/star-questions).
 
 #### Offer stage
 
