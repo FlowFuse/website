@@ -155,9 +155,8 @@ For example `intermediate` vs `senior` for developers.
 When in doubt, reject the candidate.
 
 #### STAR interview
-After the skills assessment, the last round includes a behaviour interview. STAR interviews are aimed at discussing the candidates past performance in certain situations, and hopefully predict the way they acted is in line with FlowFuse expectations.
 
-Again, a scorecard will be filled out.
+Read more on [the STAR interview at FlowFuse](/star-questions).
 
 #### Offer stage
 
