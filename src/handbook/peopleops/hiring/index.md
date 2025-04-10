@@ -122,7 +122,7 @@ These questions should be thought-provoking, yet not overly time-consuming, and 
 
 The initial review will check the aforementioned question for validity, the resume, and the cover letter.
 Check for:
-1. Alignment to [Values](../company/values.md)
+1. Alignment to [Values](../../company/values.md)
 1. Capabilities align with the requirements for the role
 1. Previous retention at companies
    - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
@@ -137,7 +137,7 @@ The resume review should reject **over 50%** of all candidates.
 
 The initial screening call is intended as an additional filter for FlowFuse, but also for the candidate. Screening calls are held on a video call, and the candidate should have plenty of time to ask question and understand if this role is right for them.
 During this call FlowFuse should understand:
-1. Alignment to [Values](../company/values.md)
+1. Alignment to [Values](../../company/values.md)
 1. The candidate is enthusiastic about the company and the open role
 1. Compensation range for the candidate
 1. Notice period, or time from offer to start
@@ -156,9 +156,8 @@ For example `intermediate` vs `senior` for developers.
 When in doubt, reject the candidate.
 
 #### STAR interview
-After the skills assessment, the last round includes a behaviour interview. STAR interviews are aimed at discussing the candidates past performance in certain situations, and hopefully predict the way they acted is in line with FlowFuse expectations.
 
-Again, a scorecard will be filled out.
+Read more on [the STAR interview at FlowFuse](/handbook/peopleops/hiring/star-questions).
 
 #### Offer stage
 
