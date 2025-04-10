@@ -41,7 +41,7 @@ This feature is available to Team and Enterprise teams on FlowFuse Cloud and sel
 
 ## Better Node-RED log handling
 
-We've improved the log handling within our Hosted Node-RED instances. Previously we were using a fix sized buffer in memory; meaning the noiser your Node-RED instance was, the less history you'd have. The UI for browsing the logs was also awkward when you wanted to jump back to an earlier section of the logs.
+We've improved the log handling within our Hosted Node-RED instances. Previously we were using a fix sized buffer in memory; meaning the noisier your Node-RED instance was, the less history you'd have. The UI for browsing the logs was also awkward when you wanted to jump back to an earlier section of the logs.
 
 With this release, once you update your instances to the latest version, we will
 now store the last 7 days worth of logs for each hosted Node-RED instance.
