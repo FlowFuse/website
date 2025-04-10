@@ -29,9 +29,10 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
 
 * Week 1-4:
    * Immerse yourself in FlowFuse’s product, strategy, and market with a focus on enterprise-readiness, applications on the edge, and enhanced integration capabilities.
+   * By week 2, you should be driving sales pitches with a supportive shadow.
    * Familiarize yourself with the Node-RED ecosystem, competitive landscape, and specific regional market dynamics.
    * Meet with key stakeholders across sales, marketing, product, and customer success.
-   * Review existing sales materials and processes, and identify areas for improvement.
+   * Review existing sales materials and processes, and roll out iterative improvements.
 * Week 5-8:
    * Develop a deep understanding of our target customer personas and their specific needs within the region.
    * Begin refining key messaging and positioning for FlowFuse in the regional market.
