@@ -14,7 +14,7 @@ are as follows:
 
 1. We value results over the hours you spend working. We appreciate the effort, but value the results. Make users happy, care about the team member you helped. You schedule your day to make the most out of it for you. Don’t brag about hours worked, take pride in your achievements.
 1. <a name="doitnow">Do it now</a>: Growth is exponential; Ship today, observe first results tomorrow, observe compounding effects in just 2 days.
-1. Ownership: Take initiative, keep stakeholders in the loop, find and resolve bottlenecks. Collaborate with others. There’s one individual responsible for your achievements; You!
+1. Ownership: Take initiative, keep stakeholders in the loop, find and resolve bottlenecks. Collaborate with others. There’s one individual responsible for your achievements; You! Something is never "not my job". If you see an opportunity to drive something forward, do it.
 1. <a name="disagreeandcommit">Disagree and commit</a>: Discussion is healthy, but decisions do not need full consensus. Disagree with a point-of-view, make your case, but accept other solutions are valid too. Once a choice is made, commit as a team to follow it. Allow others to prove themselves. Reaching consensus for every decision does not scale.
 1. Keep it short and simple: Don’t over-engineer your solution or let the scope creep beyond what makes sense for an iteration. Fast progress requires fast understanding. Boring solutions are good. Allow everyone to understand your solution. There will always be another iteration.
 
