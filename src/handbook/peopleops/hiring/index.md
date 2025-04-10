@@ -41,13 +41,13 @@ The URL will be structured accordingly: `/jobs/<job-short-title>`
 
 Hiring plans are role specific and should be included in the job posting. 
 
+### Screening Interview
+
+All candidates will experience a [Screening Call](/handbook/peopleops/hiring/screening-call/) as the first stage in the interview.
+
 ### STAR interviews
 
-By utilizing [the STAR framework](https://www.themuse.com/advice/star-interview-method)
-candidates will be interviewed to share their past experiences. This approach enables us to assess their actions and achievements, aiming to predict their future performance.
-
-For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE){rel="nofollow"}
-to make a copy of.
+All candidates will experience a [STAR Interview](/handbook/peopleops/hiring/star-questions/) at some point in the interview process.
 
 ## Extending an offer
 
@@ -133,19 +133,6 @@ prepare and focus if the strengths are indeed strong, and the same for weaknesse
 
 The resume review should reject **over 50%** of all candidates.
 
-#### Screening Call
-
-The initial screening call is intended as an additional filter for FlowFuse, but also for the candidate. Screening calls are held on a video call, and the candidate should have plenty of time to ask question and understand if this role is right for them.
-During this call FlowFuse should understand:
-1. Alignment to [Values](../../company/values.md)
-1. The candidate is enthusiastic about the company and the open role
-1. Compensation range for the candidate
-1. Notice period, or time from offer to start
-
-For all candidates that are moved on the next stage, a scorecard needs to be filled out.
-
-After this stage **no more than 25%** of the total number of candidates should remain.
-
 #### Skills assessment
 
 For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
@@ -154,10 +141,6 @@ This round will again result in a scorecard, but also an indication what level t
 For example `intermediate` vs `senior` for developers.
 
 When in doubt, reject the candidate.
-
-#### STAR interview
-
-Read more on [the STAR interview at FlowFuse](/handbook/peopleops/hiring/star-questions).
 
 #### Offer stage
 
