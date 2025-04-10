@@ -12,12 +12,7 @@ tags:
 ---
 
 
-
-Our three focal points for the latest release of FlowFuse have been:
-
-- **Collaborative Development:** Our new **Custom Node Catalogues** provides a place for you to centralise your own private nodes and Javascript libraries for Node-RED.
-- **Full Stack Applications:** We've added our new **"Smart Schema Suggestions"** feature for automatically generating documentation for your MQTT Brokers.
-- **DevOps:** We've improved Pipelines now to let you deploy to Device Groups in the middle of a Pipeline, this is just the first step in a wider set of improvements to come for DevOps Pipelines.
+Another release from the FlowFuse team to keep [realising our mission](https://flowfuse.com/handbook/company/strategy/) to empower you to fuse the digital realm and physical reality.
 
 <!--more-->
 
