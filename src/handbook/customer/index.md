@@ -23,8 +23,7 @@ on taking the FlowFuse platform to market.
 | Role | Contributors |
 |------|--------------|
 | CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
-| Account Executive | [Zack](https://www.linkedin.com/in/zack-wasli/) [@zackwasli](https://github.com/zackwasli) |
-| Customer Success Manager | [Rob](https://www.linkedin.com/in/rob-marcer-b414b910/) [@robmarcer](https://github.com/robmarcer) |
+| Professional Services and Support Manager | [Rob](https://www.linkedin.com/in/rob-marcer-b414b910/) [@robmarcer](https://github.com/robmarcer) |
 | Visual designer | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
 | GTM | [Michael](https://www.linkedin.com/in/michaelbdavis/) [@MichaelBDavis](https://github.com/MichaelBDavis) |
 

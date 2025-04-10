@@ -5,6 +5,10 @@ navGroup: Customer Department
 
 # Legal
 
+## Collecting Signatures
+
+FlowFuse uses Hubspot for generating quotes, and requesting the signatures on them. For other legal documents we're using [Google eSignatures](https://support.google.com/docs/answer/12315692?hl=en).
+
 ## Subscription agreement
 
 For self-managed licenses FlowFuse has a standard [subscription agreement template](/handbook/customer/sales/subscription-agreement-1.5/).

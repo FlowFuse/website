@@ -12,15 +12,13 @@ The three roles primarily involved in product planning and development at FlowFu
 
 Following the RACI framework articulated elsewhere in the [Handbook](https://flowfuse.com/handbook/company/decisions/#projects), product responsibilities among the CTO, Engineering Manager, and Product Lead are:
 
-Overall product roadmap and strategy: Product Lead is Responsible and Accountable, CTO is Consulted, Engineering Manager is Consulted.
-
-Articulating technical requirements and feasibility: Product Lead is Informed, CTO is Responsible and Accountable, Engineering Manager is Consulted and Informed
-
-Delivering work that is high quality and on schedule: Product Lead is Informed, CTO is Informed, Engineering Manager is Responsible and Accountable.
+* Overall product roadmap and strategy: Product Lead is Responsible and Accountable, CTO is Consulted, Engineering Manager is Consulted.
+* Articulating technical requirements and feasibility: Product Lead is Informed, CTO is Responsible and Accountable, Engineering Manager is Consulted and Informed
+* Delivering work that is high quality and on schedule: Product Lead is Informed, CTO is Informed, Engineering Manager is Responsible and Accountable.
 
 This means that on a day-to-day basis, the Product Lead and Engineering Manager work together to set the direction of product development and execute on a defined strategy that the CTO has helped to shape, with the Product Lead setting goals and defining initiatives, the Engineering Manager delivering the work, and the CTO serving as technical guide and sharing a product vision.
 
-The three meet bi-weekly to review progress of the current release and identify, define, discuss, and plan work for upcoming releases.
+The three meet every other week to review progress of the current release and identify, define, discuss, and plan work for upcoming releases.
 
 ## Hierarchy
 
