@@ -4,6 +4,11 @@ navTitle: Hiring
 
 # Hiring
 
+When hiring a new role, the process is generally as follows:
+* Write a job description and add it to the handbook to get it approved by any necessary people
+* Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
+* Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
+
 ## Advertising a Role
 
 When advertising for a role on Social Media, engagement is improved (and therefore,
@@ -34,9 +39,7 @@ The URL will be structured accordingly: `/jobs/<job-short-title>`
 
 ## Interviews
 
-When a candidate applies, they will undergo three interviews with three different interviewers before receiving a job offer. The initial stage will involve an interview with the PeopleOps Manager, who will assess the candidate's alignment with our [company values](../company/values). The second interview will focus on competency and technical skills. Lastly, the candidate will participate in a STAR interview for the final round. 
-
-When conducting interviews to hire new team members, prioritize value-fit over culture-fit. Prioritizing value-fit enables individuals to contribute to the company culture, promoting diversity and inclusivity.
+Hiring plans are role specific and should be included in the job posting. 
 
 ### STAR interviews
 
@@ -97,11 +100,9 @@ Additionally, your manager will assign tasks for you to begin working on during 
 
 When opening a job post, you'll need a couple of things:
 
-1. A draft Job Description.
+1. A Job Description
 2. Verifying the availability of the approved role.
 3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
-
-Once these elements are in place, the CEO will proceed to design a pipeline for the hiring process.
 
 ### Pipeline design
 
