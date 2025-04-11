@@ -12,9 +12,9 @@ tags:
 
 In Part 2, we built the flow to calculate OEE for the production line using simulated production and downtime data and created a dashboard interface for visualization. However, we did not focus much on theme, layout, or styling.
 
-In this Part 3, we will focus on improving the theme and design of the OEE dashboard. We will learn how to connect a real data source, adjust fields if your data structure differs, scale the dashboard for multiple production lines, and finally, explore how you can use it to take action based on insights.
+In Part 3, we will focus on improving the theme and design of the OEE dashboard. We will learn how to connect a real data source, adjust fields if your data structure differs, scale the dashboard for multiple production lines, and finally, explore how you can use it to take action based on insights.
 
-Let's get started !
+Let's get started!
 
 ## Enhancing the Dashboard Theme and Design
 
@@ -37,9 +37,9 @@ The primary colors in the theme include:
     - Set Black (#000000) as the page background.
 5. Click **Update** and **Deploy Changes**.
 
-Your dashboard should now display the updated dark theme with a clean, modern appearance and improved visual contrast.
+Your dashboard should display the updated dark theme with a clean, modern appearance and improved visual contrast.
 
-However, a few additional adjustments are needed to fully align the visuals — specifically the chart grid lines and label text colors.
+However, additional adjustments are needed to fully align the visuals, specifically the chart grid lines and label text colors.
 
 ### To update these:
 
@@ -55,7 +55,7 @@ These tweaks will ensure the charts match the dark theme and maintain good reada
 
 ## Improving Layout Consistency Across Screen Sizes
 
-When you open the same dashboard on different screen sizes—such as a mobile phone, tablet, or a smaller desktop monitor—you might find that the layout appears inconsistent or cramped. For example, widgets may overlap or appear too small.
+When you open the same dashboard on different screen sizes—such as a mobile phone, tablet, or smaller desktop monitor—you might find the layout inconsistent or cramped. For example, widgets may overlap or appear too small.
 
 ![OEE Dashboard broken layout on smaller screen](./images/oee-dashboard-breaked-layout.png){data-zoomable}
 _OEE Dashboard broken layout on smaller screen_
@@ -69,8 +69,8 @@ _OEE Dashboard broken layout on smaller screen_
 
 Our OEE dashboard has:
 
-- Four KPI widgets (OEE, Performance, Availability, Quality) each set to 3 columns wide.
-- A total of 3 × 4 = 12 columns, which does not fit in the 9-column grid—so the layout breaks and one widget drops to the next row.
+- Four KPI widgets (OEE, Performance, Availability, Quality), each set to 3 columns wide.
+- A total of 3 × 4 = 12 columns, which does not fit in the 9-column grid—so the layout breaks, and one widget drops to the next row.
 - Other widgets like Production Summary and Downtime Events are each 6 columns wide, which leaves 3 columns of unused space in a 9-column layout.
 
 5. To correct this, set the Tablet column count to `6` in the breakpoint table.
@@ -85,9 +85,9 @@ This change ensures:
 Even after adjusting the breakpoint settings, one more issue may appear: inconsistent heights between the *Top Underperforming Machines* and *Recent Downtime Events* sections—especially when one of the tables has fewer rows than the other.
 
 ![Inconsistent height of the widgets on OEE Dashboard](./images/table-incosistency.png){data-zoomable}
-_Inconsistent height of the widgets on OEE Dashboard_
+_Inconsistent height of the widgets on the OEE Dashboard_
 
-This can make the dashboard layout look uneven, with one card appearing much shorter than the other.
+This can make the dashboard layout uneven, with one card appearing much shorter.
 
 To fix this visual imbalance, apply custom CSS:
 
@@ -105,10 +105,10 @@ To fix this visual imbalance, apply custom CSS:
 
 ## Adding Header Elements: Logo and Dashboard Title
 
-To give your OEE Dashboard a professional look, it is a good idea to add branding elements such as a company logo and a clear dashboard title. These additions improve usability and help users instantly recognize the purpose of the dashboard.
+To give your OEE Dashboard a professional look, add branding elements such as a company logo and a clear dashboard title. These additions improve usability and help users instantly recognize the dashboard's purpose.
 
 1. Drag **Template** widget onto the canvas.
-2. Double click onto it and add the following Vue code into it:
+2. Double click on it and add the following Vue code to it:
 
 ```html
 <template>
@@ -145,11 +145,11 @@ To give your OEE Dashboard a professional look, it is a good idea to add brandin
 
 4. Click Deploy the changes.
 
-We are using Vue’s Teleport feature to insert a custom dashboard title and logo into the top bar of the Dashboard 2.0 layout. For more information on this please read our article: *Customise theming in your FlowFuse Dashboard*.
+We are using Vue’s Teleport feature to insert a custom dashboard title and logo into the top bar of the Dashboard 2.0 layout. For more information, please read our article: *Customise theming in your FlowFuse Dashboard*.
 
 ## Scaling the Dashboard for Multiple Production Lines
 
-Currently, the dashboard is configured for a single production line. To support multiple lines, you need to adjust your flows and dashboard structure to handle each line separately while keeping a consistent layout and theme.
+Currently, the dashboard is configured for a single production line. To support multiple lines, you must adjust your flows and dashboard structure to handle each line separately while keeping a consistent layout and theme.
 
 ### Follow these steps:
 
@@ -171,7 +171,7 @@ This modular approach simplifies scaling and reduces manual work when adding new
 4. Rename the tab to match the new production line.
 5. Create a new dashboard page with the same configuration but a different name and path.
 6. Open the subflow by double-clicking on it and add a new group for dashboard widgets.
-7. Go to the configuration flow, and update the name of the line to match the new production line.
+7. Go to the configuration flow, and update the line's name to match the new production line.
 8. Adjust both shift duration values to reflect the new line’s schedule.
 9. Click **Deploy**.
 
@@ -181,7 +181,7 @@ Once deployed, you will have a separate page ready for your new production line.
 
 Now that you have built a complete OEE dashboard using simulated factory data and learned how to reuse it for all your production lines, the next step is to connect it to your real factory environment.
 
-To make the dashboard truly useful in a live setting, you need to understand how to integrate it with your actual data sources. Most commonly, the OEE dashboard relies on data that is often static or retained — such as values stored in a database. First, determine whether your factory uses a relational database like MySQL or PostgreSQL, a NoSQL database like MongoDB, or a time-series database like InfluxDB.
+To make the dashboard truly useful in a live setting, you must understand how to integrate it with your data sources. Most commonly, the OEE dashboard relies on static or retained data, such as values stored in a database. First, determine whether your factory uses a relational database like MySQL or PostgreSQL, a NoSQL database like MongoDB, or a time-series database like InfluxDB.
 
 ### Then:
 
@@ -191,7 +191,7 @@ To make the dashboard truly useful in a live setting, you need to understand how
 
 For help, refer to our [Database](/node-red/database/) section, which includes guides for MongoDB, PostgreSQL, InfluxDB, TimescaleDB, and DynamoDB.
 
-When connecting to your real data source, you may notice that the field names used in your database are different from those used in the our oee dashboard sqlite node queries. While this might seem like a lot of manual work, the good news is that the dashboard is designed with flexibility in mind. You only need to make two changes to adapt the queries to your schema.
+When connecting to your real data source, you may notice that the field names used in your database differ from those used in the our oee dashboard sqlite node queries. While this seems like a lot of manual work, the dashboard is designed with flexibility in mind. You only need to make two changes to adapt the queries to your schema.
 
 ### To match your schema:
 
@@ -217,7 +217,7 @@ WHERE
    timestamp BETWEEN $startTime AND $endTime AND line = $line;
 ```
 
-If your database uses different field names, such as time instead of timestamp, machine instead of machine_name, section instead of area, production_line instead of line, produced_units instead of total_produced_units, quality_units instead of good_units, faulty_units instead of defect_units, or planned_output instead of target_output, you should update the query accordingly. After modification, it should look like this:
+Suppose your database uses different field names, such as time instead of timestamp, machine instead of machine_name, section instead of area, production_line instead of line, produced_units instead of total_produced_units, quality_units instead of good_units, faulty_units instead of defect_units, or planned_output instead of target_output. In that case, you should update the query accordingly. After modification, it should look like this:
 
 ```sql
 SELECT
@@ -234,26 +234,26 @@ WHERE
     time BETWEEN $startTime AND $endTime AND production_line = $line;
 ```
 
-## How to Actually Use Your OEE Dashboard
+## How to Use Your OEE Dashboard
 
-Your OEE dashboard is live. It updates in real time and shows key metrics. But what should you do with the information?
+Your OEE dashboard is live. It updates in real-time and shows key metrics. But what should you do with the information?
 
 The dashboard is not just for display—it is there to help you take action. When OEE drops, do not stop at the number. Dig into the cause by checking the three main metrics: availability, performance, and quality.
 
 - If availability is low, check for unplanned stops, long changeovers, or idle machines.
-- If performance is down, the line may be running slower than expected.
-- If quality has dropped, you may be producing more rejects or rework.
+- If performance is down, the line may run slower than expected.
+- If quality has dropped, you may produce more rejects or rework.
 
-Say your OEE drops from 82% to 65% and performance is the problem. Start by checking how many good parts were produced. Look at reject counts—more bad parts affect both quality and output. Then check downtime logs and machine performance. Often, one or two machines are behind the drop—maybe they had repeated issues or ran slowly after a setup.
+Say your OEE drops from 82% to 65%, and performance is the problem. Start by checking how many good parts were produced. Look at reject counts—more bad parts affect both quality and output. Then, check downtime logs and machine performance. One or two machines are often behind the drop—maybe they had repeated issues or ran slowly after a setup.
 
-Use the 30-day trend graph to spot patterns over time. A sudden drop might show a specific issue, while a slow decline could signal a bigger process problem. Trends can also help you confirm if recent changes are making a real difference.
-Finally, share what you find. Use the dashboard during team reviews or shift handovers to keep everyone focused on what needs fixing. The real value of an OEE dashboard is in how you respond to it.
+Use the 30-day trend graph to spot patterns over time. A sudden drop might show a specific issue, while a slow decline could signal a more significant process problem. Trends can also help you confirm if recent changes are making a real difference.
+Finally, share what you find. Use the dashboard during team reviews or shift handovers to keep everyone focused on what needs fixing. An OEE dashboard's real value is how you respond to it.
 
 ## Conclusion
 
 This final part completes our series on building a real-time OEE dashboard with FlowFuse. You now have a fully functional, visually refined, and scalable dashboard that connects to live production data, adapts to multiple lines, and reflects your plant’s branding and layout requirements.
 
-By the end of this journey, you have not only built a dashboard—you have created a foundation for continuous improvement in your manufacturing environment using open-source, low-code tools.
-We hope this series helped you understand how FlowFuse and Node-RED can be used to quickly prototype and deploy powerful industrial applications. Thank you for following along!
+By the end of this journey, you have built a dashboard and created a foundation for continuous improvement in your manufacturing environment using open-source, low-code tools.
+We hope this series helped you understand how FlowFuse and Node-RED can quickly prototype and deploy powerful industrial applications. Thank you for following along!
 
-If you have not built your OEE dashboard yet or are facing issues along the way, you can get started instantly—[sign up](https://app.flowfuse.com/account/create) now and use our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to accelerate your deployment.
+Suppose you have not built your OEE dashboard yet or are facing issues. In that case, you can get started instantly—[sign up](https://app.flowfuse.com/account/create) now and use our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to accelerate your deployment.
