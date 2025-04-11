@@ -4,6 +4,20 @@ navTitle: FlowFuse Messaging
 
 # {{ navTitle }}
 
+Clear and consistent messaging serves as a cornerstone for our company to achieve
+growth and a bigger market presence. The messaging framework is essential for the
+company to communicate its value, purpose, and differentiation, to in turn
+effectively acquire and retain our customer base.
+
+Consistency of messaging is important; with our growing company we’ve got limited
+resources and thus it’s imperative to make a significant impact quickly. If that
+fails, the company must learn quickly and iterate. When the messaging is
+consistent the company can learn faster and have a structured approach to these
+iterations.
+
+Please also read the [Company Mission](/handbook/company/strategy/#flowfuse%27s-mission)
+before diving into the messaging.
+
 ## Audience
 
 FlowFuse is a business to business (B2B) company in the industrial markets to

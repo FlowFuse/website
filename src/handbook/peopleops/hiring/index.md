@@ -4,6 +4,11 @@ navTitle: Hiring
 
 # Hiring
 
+When hiring a new role, the process is generally as follows:
+* Write a job description and add it to the handbook to get it approved by any necessary people
+* Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
+* Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
+
 ## Advertising a Role
 
 When advertising for a role on Social Media, engagement is improved (and therefore,
@@ -34,17 +39,15 @@ The URL will be structured accordingly: `/jobs/<job-short-title>`
 
 ## Interviews
 
-When a candidate applies, they will undergo three interviews with three different interviewers before receiving a job offer. The initial stage will involve an interview with the PeopleOps Manager, who will assess the candidate's alignment with our [company values](../company/values). The second interview will focus on competency and technical skills. Lastly, the candidate will participate in a STAR interview for the final round. 
+Hiring plans are role specific and should be included in the job posting. 
 
-When conducting interviews to hire new team members, prioritize value-fit over culture-fit. Prioritizing value-fit enables individuals to contribute to the company culture, promoting diversity and inclusivity.
+### Screening Interview
+
+All candidates will experience a [Screening Call](/handbook/peopleops/hiring/screening-call/) as the first stage in the interview.
 
 ### STAR interviews
 
-By utilizing [the STAR framework](https://www.themuse.com/advice/star-interview-method)
-candidates will be interviewed to share their past experiences. This approach enables us to assess their actions and achievements, aiming to predict their future performance.
-
-For the interviewer a template is available with the [STAR questions](https://docs.google.com/document/d/1v6C1Tf6B-hDOlA9GhR44Y2ftDgiwx4x_twnuo_N4pZE){rel="nofollow"}
-to make a copy of.
+All candidates will experience a [STAR Interview](/handbook/peopleops/hiring/star-questions/) at some point in the interview process.
 
 ## Extending an offer
 
@@ -97,11 +100,9 @@ Additionally, your manager will assign tasks for you to begin working on during 
 
 When opening a job post, you'll need a couple of things:
 
-1. A draft Job Description.
+1. A Job Description
 2. Verifying the availability of the approved role.
 3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
-
-Once these elements are in place, the CEO will proceed to design a pipeline for the hiring process.
 
 ### Pipeline design
 
@@ -121,7 +122,7 @@ These questions should be thought-provoking, yet not overly time-consuming, and 
 
 The initial review will check the aforementioned question for validity, the resume, and the cover letter.
 Check for:
-1. Alignment to [Values](../company/values.md)
+1. Alignment to [Values](../../company/values.md)
 1. Capabilities align with the requirements for the role
 1. Previous retention at companies
    - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
@@ -132,19 +133,6 @@ prepare and focus if the strengths are indeed strong, and the same for weaknesse
 
 The resume review should reject **over 50%** of all candidates.
 
-#### Screening Call
-
-The initial screening call is intended as an additional filter for FlowFuse, but also for the candidate. Screening calls are held on a video call, and the candidate should have plenty of time to ask question and understand if this role is right for them.
-During this call FlowFuse should understand:
-1. Alignment to [Values](../company/values.md)
-1. The candidate is enthusiastic about the company and the open role
-1. Compensation range for the candidate
-1. Notice period, or time from offer to start
-
-For all candidates that are moved on the next stage, a scorecard needs to be filled out.
-
-After this stage **no more than 25%** of the total number of candidates should remain.
-
 #### Skills assessment
 
 For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
@@ -153,11 +141,6 @@ This round will again result in a scorecard, but also an indication what level t
 For example `intermediate` vs `senior` for developers.
 
 When in doubt, reject the candidate.
-
-#### STAR interview
-After the skills assessment, the last round includes a behaviour interview. STAR interviews are aimed at discussing the candidates past performance in certain situations, and hopefully predict the way they acted is in line with FlowFuse expectations.
-
-Again, a scorecard will be filled out.
 
 #### Offer stage
 

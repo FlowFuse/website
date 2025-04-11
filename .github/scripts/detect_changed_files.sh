@@ -33,7 +33,7 @@ for file in $changed_files; do
 done
 
 echo "Changed groups:"
-echo "  Handbook: $backend_changed"
+echo "  Handbook: $handbook_changed"
 
 echo "handbook_changed=$handbook_changed" >> $GITHUB_OUTPUT
 
