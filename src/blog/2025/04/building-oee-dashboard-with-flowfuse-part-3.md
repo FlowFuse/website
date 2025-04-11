@@ -236,13 +236,18 @@ WHERE
 
 ## How to Actually Use Your OEE Dashboard
 
-Alright, your OEE dashboard is up and running. It looks good, updates in real time, and shows a bunch of numbers—but what now?
+Your OEE dashboard is live. It updates in real time and shows key metrics. But what should you do with the information?
 
-This is where the dashboard becomes more than just a display. When OEE drops, do not stop at the number—figure out what changed. Start by checking the three key metrics: availability, performance, and quality. If availability is down, it could mean an unplanned stop, setup time, or a machine that sat idle. If performance dropped, maybe the output slowed down for some reason. And if quality is lower, you are likely seeing more rejects or rework.
+The dashboard is not just for display—it is there to help you take action. When OEE drops, do not stop at the number. Dig into the cause by checking the three main metrics: availability, performance, and quality.
 
-Let’s say OEE falls from 82% to 65%, and the dashboard shows performance is down. Start by checking production data. See if fewer good parts were produced during that time. Then look at the defect count—an increase in rejects might be affecting both quality and performance. After that, check the downtime logs and the list of underperforming machines. Most times, you will find one or two machines behind the dip—maybe there was a recurring issue or a drop in efficiency after a changeover.
+- If availability is low, check for unplanned stops, long changeovers, or idle machines.
+- If performance is down, the line may be running slower than expected.
+- If quality has dropped, you may be producing more rejects or rework.
 
-Use the 30-day graph to spot longer-term trends. Even if the day-to-day numbers look okay, the graph can reveal a slow decline or confirm that recent improvements are working.
+Say your OEE drops from 82% to 65% and performance is the problem. Start by checking how many good parts were produced. Look at reject counts—more bad parts affect both quality and output. Then check downtime logs and machine performance. Often, one or two machines are behind the drop—maybe they had repeated issues or ran slowly after a setup.
+
+Use the 30-day trend graph to spot patterns over time. A sudden drop might show a specific issue, while a slow decline could signal a bigger process problem. Trends can also help you confirm if recent changes are making a real difference.
+Finally, share what you find. Use the dashboard during team reviews or shift handovers to keep everyone focused on what needs fixing. The real value of an OEE dashboard is in how you respond to it.
 
 ## Conclusion
 
