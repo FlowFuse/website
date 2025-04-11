@@ -1,7 +1,7 @@
 ---
 title: "Part 1: Building an Andon Task Manager with FlowFuse"
 subtitle: A step-by-step guide to building a real-time request reporting and response system using Node-RED and FlowFuse.
-description: 
+description: Learn how to build a real-time Andon Task Manager using FlowFuse and Node-RED. This step-by-step guide covers request tracking, dashboard design, and data storage with SQLite and context storage.
 date: 2025-04-09
 authors: ["sumit-shinde"]
 image: 
@@ -53,11 +53,11 @@ When creating the database table, we will need the following fields:
 
 Since the `department` and `line` fields are part of the request, we will also need a reference list of all available lines and departments in the factory. This ensures that requesters and resolvers can create and manage requests using consistent, validated options.
 
-## Outlining Key Feature Requirements
+### Outlining Key Feature Requirements
 
 Now that we know what kind of data each request should include, let’s look at the key features the system needs to support. These are the basic building blocks that will help both frontline workers and responders use the system effectively.
 
-### Core Features
+#### Core Features
 
 - **Create and Submit Requests**  
   Frontline workers should be able to raise a request easily by selecting the line and department, adding a quick note, and submitting it. Each request should automatically record the time it was created.
@@ -80,7 +80,7 @@ Now that we know what kind of data each request should include, let’s look at 
 - **Optional Sound Alerts**  
   To make sure urgent requests don’t go unnoticed, the system could also play a sound if a request has not been acknowledged within a certain time.
 
-## Dashboard Visualization & UI Design
+### Dashboard Visualization & UI Design
 
 With the core features defined, the next step is to design a dashboard that is easy to use and efficient for both frontline workers and managers and admin users. A good UI ensures quick interaction and smooth navigation, especially in fast-paced environments.
 
@@ -129,7 +129,7 @@ _The following dashboard image illustrates the intended design and key objective
 ![The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager.](./images/department-wise.png){data-zoomable}
 _The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager._
 
-## Storage Mechanism
+### Storage Mechanism
 
 Let us now look at how data is stored in the Andon Task Manager. To keep things simple and efficient, we use an SQLite database for storing user requests. SQLite is lightweight, easy to manage, and well-supported in Node-RED through the `node-red-contrib-sqlite` node, making it ideal for local deployments.
 
