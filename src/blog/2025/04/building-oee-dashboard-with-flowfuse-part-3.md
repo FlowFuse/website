@@ -145,7 +145,21 @@ To give your OEE Dashboard a professional look, add branding elements such as a 
 
 4. Click Deploy the changes.
 
-We are using Vue’s Teleport feature to insert a custom dashboard title and logo into the top bar of the Dashboard 2.0 layout. For more information, please read our article: *Customise theming in your FlowFuse Dashboard*.
+We are using Vue’s Teleport feature to insert a custom dashboard title and logo into the top bar of the Dashboard 2.0 layout. For more information, please read our article: [Customise theming in your FlowFuse Dashboard](/blog/2024/08/customise-theming-in-your-dashboards/).
+
+The dashboard now looks clean, adapts well to all screen sizes, and maintains visual consistency across different UI elements. The header elements have also been enhanced to align with the overall design.
+
+![OEE Dashboard with proper styling, theme](./images/oee-dashboard-with-proper-styling.png){data-zoomable}
+_OEE Dashboard with proper styling, theme_
+
+![OEE Dashboard with proper styling, theme](./images/oee-dashboard-with-styling-2.png){data-zoomable}
+_OEE Dashboard with proper styling, theme_
+
+![OEE Dashboard with proper styling, theme on smaller screen](./images/oee-tablet.png){data-zoomable}
+_OEE Dashboard with proper styling, theme on smaller screen_
+
+![OEE Dashboard with proper styling, theme on smaller screen](./images/oee-dashboard-tablet.png){data-zoomable}
+_OEE Dashboard with proper styling, theme on smaller screen_
 
 ## Scaling the Dashboard for Multiple Production Lines
 
