@@ -2,7 +2,7 @@
 title: "Part 3: Building an OEE Dashboard with FlowFuse"
 subtitle: Build a responsive OEE dashboard with real-time updates using FlowFuse.
 description: Learn how to enhance your OEE dashboard with custom theming, responsive layout, real data integration, and multi-line scalability using FlowFuse.
-date: 2025-04-14
+date: 2025-04-15
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/building-oee-dashboard-part1.png
 keywords: free oee dashboard, oee dashboard free, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
@@ -10,9 +10,11 @@ tags:
    - flowfuse
 ---
 
-In Part 2, we built the flow to calculate OEE for the production line using simulated production and downtime data and created a dashboard interface for visualization. However, we did not focus much on theme, layout, or styling.
+In [Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/), we built the flow to calculate OEE for the production line using simulated production and downtime data and created a dashboard interface for visualization. However, we did not focus much on theme, layout, or styling.
 
-In this final part, we will focus on improving the theme and design of the OEE dashboard. We will learn how to connect a real data source, adjust fields if your data structure differs, scale the dashboard for multiple production lines, and finally, explore how you can use it to take action based on insights.
+<!--more-->
+
+In Part 3, we will focus on improving the theme and design of the OEE dashboard. We will learn how to connect a real data source, adjust fields if your data structure differs, scale the dashboard for multiple production lines, and finally, explore how you can use it to take action based on insights.
 
 Let's get started!
 
