@@ -5,7 +5,7 @@ description: Learn how to enhance your OEE dashboard with custom theming, respon
 date: 2025-04-15
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/building-oee-dashboard-part1.png
-keywords: free oee dashboard, oee dashboard free, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
+keywords: oee dashboard, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
 ---
