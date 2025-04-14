@@ -4,8 +4,8 @@
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
         "pm": "https://job-boards.greenhouse.io/flowfuse/jobs/5491176004",
-        "ae-emea": "https://job-boards.greenhouse.io/flowfuse/jobs/5491653004",
-        "ae-us": "https://job-boards.greenhouse.io/flowfuse/jobs/5491685004",
+        "aeemea": "https://job-boards.greenhouse.io/flowfuse/jobs/5491653004",
+        "aeus": "https://job-boards.greenhouse.io/flowfuse/jobs/5491685004",
         "d2fe": "https://boards.greenhouse.io/flowfuse/jobs/5185319004"
     },
     "messaging": {
