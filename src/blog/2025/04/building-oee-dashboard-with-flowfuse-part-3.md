@@ -4,7 +4,7 @@ subtitle: Build a responsive OEE dashboard with real-time updates using FlowFuse
 description: Learn how to enhance your OEE dashboard with custom theming, responsive layout, real data integration, and multi-line scalability using FlowFuse.
 date: 2025-04-15
 authors: ["sumit-shinde"]
-image: /blog/2025/04/images/building-oee-dashboard-part1.png
+image: /blog/2025/04/images/oee-dashboard-building-3.png
 keywords: oee dashboard, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
