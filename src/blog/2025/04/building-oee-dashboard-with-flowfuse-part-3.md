@@ -39,9 +39,14 @@ If you have a brand palette, that’s a great starting point. If not, choose col
 2. Switch to the Theme tab.
 3. In the list of themes (you will likely see only the default one), click the settings (gear) icon next to it.
 4. In the theme settings, click any colored rectangle to open the color picker. You can use the wheel or the dropper tool at the bottom to pick exact colors:
+
+![Color tool for selecting colors for the theme](./images/color-picking.png){data-zoomable}
+_Color tool for selecting colors for the theme_
+
     - Set Charcoal Blue (#1A1C24) as the color for the header background, group background, and group outline.
     - Set Black (#000000) as the page background.
-5. Click **Update** and **Deploy Changes**.
+
+1. Click **Update** and **Deploy Changes**.
 
 Your dashboard should display the updated dark theme with a clean, modern appearance and improved visual contrast.
 
