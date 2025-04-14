@@ -29,12 +29,16 @@ The primary colors in the theme include:
 - **White (#FFFFFF)** — used for text elements to ensure maximum readability against the dark background.
 - **Accent Colors** — vibrant colors such as teal, orange, green, yellow, and blue are used across widget elements, including chart bars, line graphs, and indicators. These accents help differentiate data types and bring attention to key metrics.
 
+But how do you come up with a dashboard design like this on your own? It starts with understanding why the theme matters. The design should reflect the context it is used in, the people interacting with it, and the mood it should convey. A dashboard on a factory floor may need to feel bold and focused, while one used by executives might aim for minimal and polished. A hospital system would need a tone that is calm, clean, and highly legible.
+
+If you have a brand palette, that’s a great starting point. If not, choose colors that support the usability and tone of your dashboard. Our OEE dashboard, for instance, was designed for manufacturing teams who need to quickly read live data. The layout needed to be sharp, high-contrast, and low on visual noise—ideal for control rooms with limited lighting. The dark theme helps key data stand out while reducing eye strain over long periods of use.
+
 ### To update the dashboard theme in Node-RED Dashboard 2.0:
 
 1. Open the Dashboard 2.0 sidebar from the Node-RED editor.
 2. Switch to the Theme tab.
 3. In the list of themes (you will likely see only the default one), click the settings (gear) icon next to it.
-4. In the theme settings:
+4. In the theme settings, click any colored rectangle to open the color picker. You can use the wheel or the dropper tool at the bottom to pick exact colors:
     - Set Charcoal Blue (#1A1C24) as the color for the header background, group background, and group outline.
     - Set Black (#000000) as the page background.
 5. Click **Update** and **Deploy Changes**.
