@@ -182,8 +182,6 @@ For example:
 
 A screenshot of the route and the total distance travelled should be included with any expense claim.
 
-
-
 [gh-admin]: https://github.com/FlowFuse/admin
 
 ## Personal expenses
