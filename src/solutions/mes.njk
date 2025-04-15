@@ -93,22 +93,24 @@ meta:
             <p class="w-full max-sm:mx-auto mt-6">{{ p | safe }}</p>
             {% endfor %}
             <div class="md:grid md:grid-cols-2 md:gap-8 md:align-center">
-                <p class="w-full max-sm:mx-auto mt-6">{{ howSection.p2 | safe }}</p>
-                <div class="mx-auto max-md:max-w-[500px] max-md:my-12 md:mt-6">
+                <p class="w-full max-sm:mx-auto mt-4">{{ howSection.p2 | safe }}</p>
+                <div class="mx-auto max-md:max-w-[500px] max-md:my-12 md:mt-4">
                     {% set image = ["./", howSection.image1 ] | join %}
                     {% set imageAlt = howSection.imageAlt1 %}
                     {% image image, imageAlt, [500] %}
                 </div>
             </div>
             <div class="flex flex-col md:grid md:grid-cols-2 md:gap-8 md:align-center">
-                <div class="mx-auto ff-image-rounded p-1 max-md:max-w-[500px] max-md:my-12 md:mt-6 max-md:order-last">
-                    {% set image = ["./", howSection.image2 ] | join %}
-                    {% set imageAlt = howSection.imageAlt2 %}
-                    {% image image, imageAlt, [500] %}
+                <div class="mx-auto ff-image-rounded p-1 max-md:max-w-[500px] max-md:my-12 md:mt-4 max-md:order-last">
+                    {% if howSection.image2 %}
+                        {% set image = ["./", howSection.image2 ] | join %}
+                        {% set imageAlt = howSection.imageAlt2 %}
+                        {% image image, imageAlt, [500] %}
+                    {% endif %}
                 </div>
                 <div class="max-md:order-first">
                     {% for p in howSection.p3 %}
-                    <p class="w-full max-sm:mx-auto my-6">{{ p | safe }}</p>
+                    <p class="w-full max-sm:mx-auto mt-4">{{ p | safe }}</p>
                     {% endfor %}
                 </div>
             </div>
