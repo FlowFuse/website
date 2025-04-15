@@ -67,11 +67,3 @@ quantity of instances(5), users(5), teams(5), and devices(5) are available.
 When a license is purchased it provides all of the functionality of the higher
 plans. It's then licensed for a number of Node-RED instances on an annual basis.
 
-## Freemium
-
-FlowFuse currently has no Freemium model, meaning there's no "Free Forever" tier.
-A free trial is currently available.
-
-The Freemium is not available as it currently doesn't fit FlowFuse, as:
-1. There's no social / viral benefit for FlowFuse
-2. Free trial already allows low-intent users to understand the value
