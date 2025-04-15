@@ -42,7 +42,7 @@ Target growth for this metric is 10% week over week.
 
 ### Monthly Recurring Revenue (MRR) for Self-Service
 
-Customers on self-service plans, which presently includes only FlowFuse Cloud Starter and Team tier, pay on a monthly basis. For these customers, we track Monthly Recurring Revenue (MRR). 
+Customers on self-service plans, which presently includes only FlowFuse Cloud (FFC) Starter and Team tier, pay on a monthly basis. For these customers, we track Monthly Recurring Revenue (MRR). 
 
 The MRR of FFC Starter + Team is equal to the sum of all monthly subscriptions for those two tiers, including add-ons for additional services like remote instances and larger instances. As fees are paid on a monthly basis, such revenue is considered to be recurring.
 
