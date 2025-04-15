@@ -36,6 +36,12 @@ If you realize that you have used your Brex card for personal purposes by mistak
 2. Notify the CEO/CTO, who will advise on how to reimburse the company the cost of the expense. This can be done via bank transfer to the company account. Note that any fees associated with the transfer will need to be met by you.
 3. Once payment has been confirmed, the Brex expense entry can be marked as 'Paid'.
 
+### Per Diem
+
+For any company-related activities—such as travel, events, or off-site work—employees may spend up to **$70/day** using their [Brex](https://www.brex.com/) card **while traveling** to cover meals and minor incidental expenses.
+
+This is a **limit**, **not a target**. Use **common sense**: be reasonable, avoid unnecessary extras, **use public transport where practical**, and adjust for any meals already provided (e.g. at events or hotels).
+
 ## Reimbursement
 
 If you use your own means to purchase something that ought to be covered by the
@@ -175,6 +181,8 @@ For example:
  - [Netherlands](https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/auto_en_vervoer/auto_van_de_onderneming/autokosten/u_rijdt_in_uw_eigen_auto) - €0.19 per Km
 
 A screenshot of the route and the total distance travelled should be included with any expense claim.
+
+
 
 [gh-admin]: https://github.com/FlowFuse/admin
 
