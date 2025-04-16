@@ -36,12 +36,6 @@ If you realize that you have used your Brex card for personal purposes by mistak
 2. Notify the CEO/CTO, who will advise on how to reimburse the company the cost of the expense. This can be done via bank transfer to the company account. Note that any fees associated with the transfer will need to be met by you.
 3. Once payment has been confirmed, the Brex expense entry can be marked as 'Paid'.
 
-### Per Diem
-
-For any company-related activities—such as travel, events, or off-site work—employees may spend up to **$70/day** using their [Brex](https://www.brex.com/) card **while traveling** to cover meals and minor incidental expenses.
-
-This is a **limit**, **not a target**. Use **common sense**: be reasonable, avoid unnecessary extras, **use public transport where practical**, and adjust for any meals already provided (e.g. at events or hotels).
-
 ## Reimbursement
 
 If you use your own means to purchase something that ought to be covered by the
@@ -53,6 +47,13 @@ company, you can claim back the money through [Deel](https://help.letsdeel.com/h
 * This expense will now appear in your "Pending" list
 * Adjustments approved before the payroll cut-off date will be processed in the current month's payroll. Any adjustment approved after the payroll cut-off date will be processed in the next month's payroll
 * Your manager is authorized to approve expenses that are $250 or less. However, if an expense exceeds $250, both the CEO and your manager will need to review and approve it.
+
+### Per Diem
+
+For any company-related activities—such as events or off-site work—employees may spend up to **$50/day** worldwide or **$100/day** in the USA using their [Brex](https://www.brex.com/) card **while traveling** to cover meals and minor incidental expenses.
+
+This is a **limit**, **not a target**. Use **common sense**: [be reasonable](#expenses), avoid unnecessary extras, **use public transport where practical**, and adjust for any meals already provided (e.g. at events or hotels).
+
 
 ## Equipment
 
