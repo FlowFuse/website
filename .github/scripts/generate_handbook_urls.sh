@@ -2,7 +2,17 @@
 
 set -e
 
-MODIFIED_FILES=$(git diff --name-only --diff-filter=AM origin/$GITHUB_BASE_REF...HEAD -- src/handbook/)
+
+if [[ "$GITHUB_REF" == "refs/heads/main" ]]; then
+  echo "Running on main branch, comparing with previous commit"
+  MODIFIED_FILES=$(git diff --name-only --diff-filter=AM HEAD^ HEAD -- src/handbook/)
+else
+  echo "Running on non-default branch, comparing with $GITHUB_BASE_REF branch"
+  MODIFIED_FILES=$(git diff --name-only --diff-filter=AM origin/$GITHUB_BASE_REF...HEAD -- src/handbook/)
+fi
+
+echo "Modified files in the PR:"
+echo "$MODIFIED_FILES"
 
 MODIFIED_MD_FILES=$(echo "$MODIFIED_FILES" | grep -E '\.md$' || echo "")
 
