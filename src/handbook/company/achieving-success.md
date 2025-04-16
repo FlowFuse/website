@@ -20,24 +20,13 @@ assess product-market fit.
 
 We review KPIs every Tuesday as part of our recurring strategy meeting. 
 At this point in time, we review the following KPIs:
-* [Engineering Throughput](#engineering-throughput) 
+* [Engineering Throughput]() 
 * NR Active Instances
 * MQLs
 * CARR Projected (This Q)
 * CARR Closed (This Q)
 * CARR Goal (This Q)
 * MRR
-
-### Engineering Throughput
-
-Engineering throughput is a measure of how much value we're able to deliver to our customers. It's calculated by summing the total number of Pull Requests merged in a given time frame across the following repositories:
-
-- [FlowFuse](https://github.com/flowfuse/flowfuse)
-- [Node-RED](https://github.com/node-red/node-red)
-- [FlowFuse Dashboard](https://github.com/flowfuse/node-red-dashboard)
-- [Node-RED Launcher](https://github.com/flowfuse/node-red-launcher)
-
-An interactive Dashboard for these metrics, and a breakdown of the specifics issues and Pull Requests involved can be found [here](https://github-stats.flowfuse.cloud/dashboard/analysis)
 
 ### Annual Recurring Revenue (ARR)
 
