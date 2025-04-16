@@ -15,8 +15,8 @@ If neither of the methods previously described is feasible (e.g., when a vendor 
 
 ## Company Credit Card
 
-We use [Brex](https://www.brex.com/) to provide cards to the team. They are, by
-default, virtual Mastercards, although there is an option to get a physical
+Some team members have access to [Brex](https://www.brex.com/) to provide them with a company
+credit card. They are, by default, virtual Mastercards, although there is an option to get a physical
 card sent out.
 
 Expenses on Brex require a memo and receipts. Memos explain the purpose of the expense, while receipts are necessary for expenses of $25 or more.
@@ -25,7 +25,6 @@ Please [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-t
 
 Brex can also be used to create vendor cards that allow for reoccurring payment for a monthly subscription with a vendor.
 Contact the CEO/CTO if you require a vendor card.
-
 
 ### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 
@@ -144,7 +143,7 @@ When seeking an additional license for existing software we pay for, file an iss
 
 When your role at FlowFuse requires you to have calls with external parties, a
 Zoom pro license can be requested by opening an issue to provision you one
-in the [flowforge/admin][gh-admin]{rel="nofollow"} GitHub project. Assign this issue to the CTO
+in the [flowfuse/admin][gh-admin]{rel="nofollow"} GitHub project. Assign this issue to the CTO
 or CEO, who will provision it for you.
 
 ## Workspace & Location
