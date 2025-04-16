@@ -53,6 +53,8 @@ jobs:
         token: ${{ secrets.SLACK_GHBOT_TOKEN }}
         payload: |
           {
+            "unfurl_links": true,
+            "unfurl_media": true,
             "channel": "C03AP45RSFP",
             "blocks": [
               {
