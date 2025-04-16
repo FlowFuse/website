@@ -125,6 +125,7 @@ below so you get to decide if you want more channels or not.
 - `#feature-demos` is where product updates are shared. All team members should keep a pulse of product changes, independent of their roles.
 - `#ops-metrics` will output sales and engagement metrics.
 - `#virtual-coffee` to schedule coffee calls with other team members.
+- `#gh-handbook` to follow changes in the handbook.
 
 #### Channel name structure
 
