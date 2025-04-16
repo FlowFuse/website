@@ -9,9 +9,9 @@
         "d2fe": "https://boards.greenhouse.io/flowfuse/jobs/5185319004"
     },
     "messaging": {
-        "tagLine": "Unlock Industrial Data<br /> Integrate Everything<br />Optimize Faster",
-        "subtitle": "Quickly build workflows, applications and integrations that optimize your operations with our low-code, open-source, end to end platform.",
+        "tagLine": "Unlock Industrial Data <br />Integrate Everything <br />Optimize Faster",
         "title": "Build workflows and integrations that optimize your industrial operations",
+        "subtitle": "Quickly build workflows, applications and integrations that optimize your operations with our low-code, open-source, end to end platform.",
         "keywords": "Node-RED, Application Development, IoT, IIoT, Low-Code, open source, Integration, Workflow, Automation, Data Processing, Data Integration, Data Transformation, Data Visualization, Industrial Automation, Industrial IoT, Industry 4.0"
     }
 }
