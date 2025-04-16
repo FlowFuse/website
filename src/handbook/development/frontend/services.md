@@ -30,8 +30,6 @@ import Alert from '@/services/alerts'
 Alert.emit(msg, type, countdown)
 ```
 
-
-
 The service is built from the [ff-notification-toast](https://flowfuse.github.io/forge-ui-components/#ff-notification-toast) forge-ui-component.
 
 ## Dialog
