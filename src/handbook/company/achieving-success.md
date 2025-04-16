@@ -58,7 +58,7 @@ Those products are:
 - Team - Large Instance Add-On
 - Team - Remote Instance Add-On
 
-For Starter, we calculate MRR by multiplying the total number of subscriptions by the cost of the subscription. This helps keep the focus on growing the number of Starter subscriptions rather than being distracted by noise introduced by sort-term discounts, like promotional coupons.
+For Starter, we calculate MRR by multiplying the total number of subscriptions by the cost of the subscription. This helps keep the focus on growing the number of Starter subscriptions rather than being distracted by noise introduced by short-term discounts, like promotional coupons.
 
 ## OKRs
 
