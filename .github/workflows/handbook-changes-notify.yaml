@@ -4,6 +4,7 @@ on:
   pull_request:
     types:
       - closed
+      - opened
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -34,6 +35,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      with:
+        fetch-depth: 0
+    - name: Generate URLs
+      id: generate-urls
+      run: |
+        ./.github/scripts/generate_handbook_urls.sh
     - name: Send notification
       uses: slackapi/slack-github-action@485a9d42d3a73031f12ec201c457e2162c45d02d # v2.0.0
       with:
@@ -41,7 +50,7 @@ jobs:
         token: ${{ secrets.SLACK_GHBOT_TOKEN }}
         payload: |
           {
-            "channel": "C02UNQAFZPV",
+            "channel": "C03AP45RSFP",
             "blocks": [
               {
                 "type": "header",
@@ -82,22 +91,18 @@ jobs:
                 }
               },
               {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*New/modified pages:*\n${{ steps.generate-urls.outputs.handbook_urls }}"
+                }
+              },
+              {
                 "type": "divider"
               },
               {
                 "type": "actions",
                 "elements": [
-                  {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "View Handbook",
-                      "emoji": true
-                    },
-                    "style": "primary",
-                    "url": "http://flowfuse.com/handbook/",
-                    "value": "view_handbook"
-                  },
                   {
                     "type": "button",
                     "text": {
