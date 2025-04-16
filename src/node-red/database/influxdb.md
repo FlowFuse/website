@@ -31,7 +31,7 @@ Once you have installed the InfluxDB node, you need to configure it. Drag an ins
 
 We can now configure the database.
 
-- organization name.
+- Organization name.
 - Bucket (database) name.
 - Measurement (table) name.
 
