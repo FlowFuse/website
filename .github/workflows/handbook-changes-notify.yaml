@@ -101,25 +101,6 @@ jobs:
                   "type": "mrkdwn",
                   "text": "*New/modified pages:*\n${{ steps.generate-urls.outputs.handbook_urls }}"
                 }
-              },
-              {
-                "type": "divider"
-              },
-              {
-                "type": "actions",
-                "elements": [
-                  {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "View Merged Pull Request",
-                      "emoji": true
-                    },
-                    "style": "primary",
-                    "url": "${{ github.event.pull_request.html_url }}",
-                    "value": "view_changes"
-                  }
-                ]
               }
             ]
           }
