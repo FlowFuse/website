@@ -30,8 +30,7 @@ for FILE in $MODIFIED_MD_FILES; do
     if [ -z "$ALL_URLS" ]; then
         ALL_URLS="$URL"
     else
-        ALL_URLS="$ALL_URLS
-$URL"
+        ALL_URLS="$ALL_URLS $URL"
     fi
 done
 
