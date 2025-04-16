@@ -75,6 +75,14 @@ To add a Blueprint to our public Blueprint Library, we need to publish the Bluep
 
 ### Platform
 
+#### Submitting a Change Request
+
+In order to add a Blueprint to FlowFuse Cloud, we need to submit a Change Request. Change Request's can be created by selecting "New Issue" in the [Cloud Project](https://github.com/FlowFuse/CloudProject/issues) repository.
+
+Your issue should include a link to the relevant Pull Request on the Blueprint Library repository whereby your Blueprint was published.
+
+#### Creating the Blueprint
+
 ![Screenshot of the Blueprint Admin Panel in FlowFuse](../images/development/screenshot-blueprints-admin.png){data-zoomable}
 _Screenshot of the Blueprint Admin Panel in FlowFuse_
 
