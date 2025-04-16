@@ -4,7 +4,8 @@ on:
   pull_request:
     types:
       - closed
-      - opened
+      - opened # testing
+      - synchronize # testing
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -29,8 +30,10 @@ jobs:
   notify-slack:
     name: Send notification
     needs: check-changes
+    # if: |
+    #   github.event.pull_request.merged == true && 
+    #   needs.check-changes.outputs.handbook_has_been_updated == 'true'
     if: |
-      github.event.pull_request.merged == true && 
       needs.check-changes.outputs.handbook_has_been_updated == 'true'
     runs-on: ubuntu-latest
 
