@@ -73,6 +73,25 @@ Blueprints must be published in two locations:
 
 To add a Blueprint to our public Blueprint Library, we need to publish the Blueprint to the [`blueprint-library` repository](https://github.com/FlowFuse/blueprint-library). The Website then automatically picks up the new Blueprint and publishes it.
 
+#### License
+
+All Blueprints require a comment node be added to the flow, with the relevant license included.
+
+You can import the required comment node by importing the following JSON:
+
+```json
+{
+    "id": "fc23cedbf1194ca4",
+    "type": "comment",
+    "z": "ad0d2e8ce07aeb8b",
+    "name": "License",
+    "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+    "x": 270,
+    "y": 40,
+    "wires": []
+}
+```
+
 ### Platform
 
 #### Submitting a Change Request
