@@ -66,12 +66,12 @@ Submissions are encouraged to be from an organisation, rather than an individual
 
 Blueprints must be published in two locations:
 
-- **Website**: This is our public Blueprint Library, where users can browse Blueprints and get access to a quick "Deploy" action.
-- **Platform**: This is the internal Blueprint Library within FlowFuse. It is configured as part of the FlowFuse Admin Panel.
+- **Website**: This is our _public_ Blueprint Library, where users can browse Blueprints and get access to a quick "Deploy" action.
+- **Platform**: This is the _internal_ Blueprint Library within FlowFuse. It is configured as part of the FlowFuse Admin Panel.
 
 ### Website
 
-To add a Blueprint to our public Blueprint Library, we need to add an `.md` file to the relevant category folder in the `/src/blueprints` directory of the [website repository](https://github.com/FlowFuse/website). The purpose of this page is to advertise the Blueprint, so entries should contain appealing visuals and a clear description of the Blueprint's purpose and value.
+To add a Blueprint to our public Blueprint Library, we need to publish the Blueprint to the [`blueprint-library` repository](https://github.com/FlowFuse/blueprint-library). The Website then automatically picks up the new Blueprint and publishes it.
 
 ### Platform
 
