@@ -20,7 +20,7 @@ assess product-market fit.
 
 We review KPIs every Tuesday as part of our recurring strategy meeting. 
 At this point in time, we review the following KPIs:
-* [Engineering Throughput]() 
+* [Engineering Throughput](../development/kpis.md#engineering-throughput) 
 * NR Active Instances
 * MQLs
 * CARR Projected (This Q)
