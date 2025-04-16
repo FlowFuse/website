@@ -5,8 +5,6 @@ navGroup: Company
 
 # Company
 
-
-
 The company sections in the handbook describes how the company as a whole works,
 and contains department agnostic details.
 
