@@ -18,7 +18,7 @@ The handbook is here for the whole company to help maintain. Pull-requests are w
 
 ## How FlowFuse is run
 
-To run our company we provide a comprehensive guide outlining policies, procedures, and expectations, fostering consistency, clarity, and effective communication within the organisation.
+To run our company we provide a comprehensive guide outlining policies, procedures, and expectations, fostering consistency, clarity, and effective communication within the organization.
 
 | | |
 |:----|:----|

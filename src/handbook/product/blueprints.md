@@ -57,7 +57,7 @@ Each Blueprint can also have a custom icon, which should be defined as an icon f
 
 ### Company Information
 
-Submissions are encouraged to be from an organisation, rather than an individual. As such, any submission must has an associated:
+Submissions are encouraged to be from an organization, rather than an individual. As such, any submission must has an associated:
 
 - Company Name
 - Company Logo

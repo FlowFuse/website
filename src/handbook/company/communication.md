@@ -236,7 +236,7 @@ timeline if one was committed.
 
 ## Skip level meetings
 
-Meetings between levels of the organisation happen in regular 1:1s, usually held
+Meetings between levels of the organization happen in regular 1:1s, usually held
 weekly between the manager and report. The report however might want to
 also communicate with the manager's manager to keep in touch with the strategy and
 communicate feedback on what they observe directly.

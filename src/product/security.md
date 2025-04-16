@@ -8,7 +8,7 @@ title: Security Statement - FlowFuse
 Security aspects of FlowFuse are divided up into three sections;
 1. [Application level](#application)
 1. [FlowFuse configuration](#flowfuse-configuration)
-1. [Organisation](#organisation)
+1. [Organization](#organization)
 
 ## Application
 
@@ -127,7 +127,7 @@ When running the Node-RED editor on a user's own network, it will require access
   
 Outbound connections from Node-RED instances running within FlowFuse Cloud will always come from the IP address `63.33.85.112`. 
  
-## Organisation
+## Organization
 
 Keeping our customer's data secure is dependant on our internal practises too.
 
