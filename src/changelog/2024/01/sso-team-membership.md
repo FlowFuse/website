@@ -7,7 +7,7 @@ tags:
     - changelog
 ---
 
-For organisations using Single Sign-On with FlowFuse, we have now added the ability
+For organizations using Single Sign-On with FlowFuse, we have now added the ability
 to manage their user's team memberships and roles via their Identity Provider.
 
 This makes it easier to control access to the FlowFuse Platform from providers such

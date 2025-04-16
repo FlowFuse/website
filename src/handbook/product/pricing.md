@@ -6,7 +6,7 @@ navTitle: Pricing Principles
 
 This page sets out the concepts that we license and what units are measured across both FlowFuse Cloud  and Self-managed. Commercial decisions outside the scope of this document.
 
-We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organisational chart typically implies different requirements.
+We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organizational chart typically implies different requirements.
 
 ## Buyer-Based Open Core (BBOC) Principle
 

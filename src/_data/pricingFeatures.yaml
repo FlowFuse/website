@@ -51,7 +51,7 @@ sections:
         cloudValues: [ 'check', 'check', 'check', 'check' ]
         selfHostedValues: [ 'check', 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
-        info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
+        info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organization.</p>"
       - id: mqtt-broker-cloud
         label: MQTT Broker
         cloudValues: [ null, 'check', 'check', 'check' ]    

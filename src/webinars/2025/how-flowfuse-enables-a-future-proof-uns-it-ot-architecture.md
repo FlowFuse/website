@@ -17,7 +17,7 @@ hubspot:
 
 <!--more-->
 
-Industrial organisations face significant challenges connecting IT and OT systems due to fragmented architectures, inconsistent data formats, and limited scalability. Without a Unified Namespace (UNS), manufacturers struggle with siloed data, leading to inefficiencies and operational blind spots.
+Industrial organizations face significant challenges connecting IT and OT systems due to fragmented architectures, inconsistent data formats, and limited scalability. Without a Unified Namespace (UNS), manufacturers struggle with siloed data, leading to inefficiencies and operational blind spots.
 
 Key topics include:
 - Common challenges in IT/OT integration and why UNS is critical.
