@@ -13,7 +13,7 @@ Key responsibilities include:
 * Developing and executing the company's overall strategic plan, ensuring alignment across all departments.
 * Providing strong and inspirational leadership to the executive team and the entire organization.
 * Building and nurturing a high-performance, collaborative, and inclusive company culture.
-* Overseeing the company's financial performance, ensuring sustainable growth, funding strategy, and profitability.
+* Overseeing the company's financial performance, ensuring sustainable growth, setting and achieving the funding strategy.
 * Driving revenue growth and market share expansion through strategic partnerships, sales initiatives, and product innovation.
 * Representing FlowFuse to investors, [the board of directors](/handbook/company/board/), customers, partners, and the public.
 * Attracting, developing, and retaining top talent across all levels of the organization.
