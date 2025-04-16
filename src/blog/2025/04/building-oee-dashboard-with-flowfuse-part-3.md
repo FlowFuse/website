@@ -33,7 +33,7 @@ But how do you come up with a dashboard design like this on your own? It starts 
 
 If you have a brand palette, that’s a great starting point. If not, choose colors that support the usability and tone of your dashboard. Our OEE dashboard, for instance, was designed for manufacturing teams who need to quickly read live data. The layout needed to be sharp, high-contrast, and low on visual noise—ideal for control rooms with limited lighting. The dark theme helps key data stand out while reducing eye strain over long periods of use.
 
-### To update the dashboard theme in Node-RED Dashboard 2.0:
+### Modifying Theme
 
 1. Open the Dashboard 2.0 sidebar from the Node-RED editor.
 2. Switch to the Theme tab.
