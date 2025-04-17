@@ -14,7 +14,7 @@ In Part 1, the concept of an Andon Task Manager was introduced along with a basi
 
 <!--more-->
 
-In this second part, the focus shifts to building the system using the FlowFuse Dashboard (also known as Node-RED Dashboard 2.0) and the FlowFuse platform.
+In this part 2, the focus shifts to building the system using the FlowFuse Dashboard (also known as Node-RED Dashboard 2.0) and the FlowFuse platform.
 
 ## Getting Started
 
@@ -31,9 +31,9 @@ To simplify the development process, the implementation is divided into the foll
 - Displaying data in a table  
 - Building Flow to Submit a Request
 
-Before proceeding, a basic understanding of Node-RED is recommended. If you are new to Node-RED, consider going through this [free Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) to get started.
+> Before proceeding, a basic understanding of Node-RED is recommended. If you are new to Node-RED, consider going through this [free Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) to get started.
 
-Additionally, please organize the flows into well-structured groups. To align with my group organization, I’ve provided images of the flow for each section. If a Link In node is present at the start, make sure the group begins from the Link In node and ends at the Link Out node.
+Additionally, please organize the flows into well-structured groups. To align with the group organization used in this guide, I have provided images of the flow for each section. Make sure to use the group names as shown — this will help maintain clarity and consistency in the upcoming parts.
 
 ### Prerequisites
 
@@ -77,7 +77,7 @@ Once deployed, this will create the SQLite database and `requests` table if it d
 
 ### Populating Demo Departments and Lines
 
-Since the admin feature is not yet available, let's populate demo data using a predefined flow:
+Since the admin feature to add lines and departments is not yet available, we will populate demo data using a predefined flow:
 
 {% renderFlow 300 %}
 [{"id":"d5dd9bfc599374d4","type":"tab","label":"Populate with demo support areas and lines","disabled":false,"info":"","env":[]},{"id":"6471824e24f18939","type":"group","z":"d5dd9bfc599374d4","name":"Add demo production line and department","style":{"label":true},"nodes":["34c733b480e41a13","4e46ae25d198fd1b","882e29d2dcc9326c","399bd159f46c7427","5001c1cdf6661f88"],"x":34,"y":39,"w":1302,"h":122},{"id":"34c733b480e41a13","type":"inject","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Add production lines and department for testing","props":[],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":260,"y":100,"wires":[["4e46ae25d198fd1b","399bd159f46c7427"]]},{"id":"4e46ae25d198fd1b","type":"switch","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Is lines undefined?","property":"#:(persistent)::lines","propertyType":"global","rules":[{"t":"istype","v":"undefined","vt":"undefined"}],"checkall":"true","repair":false,"outputs":1,"x":770,"y":80,"wires":[["882e29d2dcc9326c"]]},{"id":"882e29d2dcc9326c","type":"change","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Store lines to context store","rules":[{"t":"set","p":"#:(persistent)::lines","pt":"global","to":"[{\"value\":\"T1\",\"label\":\"T1\"},{\"value\":\"T2\",\"label\":\"T2\"}]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":1140,"y":80,"wires":[[]]},{"id":"399bd159f46c7427","type":"switch","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Is departments undefined?","property":"#:(persistent)::departments","propertyType":"global","rules":[{"t":"istype","v":"undefined","vt":"undefined"}],"checkall":"true","repair":false,"outputs":1,"x":800,"y":120,"wires":[["5001c1cdf6661f88"]]},{"id":"5001c1cdf6661f88","type":"change","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Store departments to context store","rules":[{"t":"set","p":"#:(persistent)::departments","pt":"global","to":"[{\"value\":\"Maintenance\",\"label\":\"Maintenance\"},{\"value\":\"Stores\",\"label\":\"Stores\"},{\"value\":\"Quality\",\"label\":\"Quality\"}]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":1170,"y":120,"wires":[[]]}]
