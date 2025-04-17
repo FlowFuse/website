@@ -47,6 +47,13 @@ company, you can claim back the money through [Deel](https://help.letsdeel.com/h
 * Adjustments approved before the payroll cut-off date will be processed in the current month's payroll. Any adjustment approved after the payroll cut-off date will be processed in the next month's payroll
 * Your manager is authorized to approve expenses that are $250 or less. However, if an expense exceeds $250, both the CEO and your manager will need to review and approve it.
 
+### Per Diem
+
+For any company-related activities—such as events or off-site work—employees may spend up to **$50/day** worldwide or **$100/day** in the USA using their [Brex](https://www.brex.com/) card **while traveling** to cover meals and minor incidental expenses.
+
+This is a **limit**, **not a target**. Use **common sense**: [be reasonable](#expenses), avoid unnecessary extras, **use public transport where practical**, and adjust for any meals already provided (e.g. at events or hotels).
+
+
 ## Equipment
 
 As an all-remote company, FlowFuse provides a budget to cover the cost of equipment
