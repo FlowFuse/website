@@ -94,9 +94,9 @@ Now, let us create a new page and menu item for Production Lines. This page will
 
 1. Drag a **ui-event** node to detect page navigation.
 2. Drag a **change** node and configure it to:
-   - Set msg.payload.lines to global.get("lines")
+   - Set `msg.payload.lines` to `global.get("lines")`
 
-3. Drag a **ui-template** node onto the canvas. Create a new page (e.g., “Line Menu”) and a group.
+3. Drag a **ui-template** node onto the canvas. Create a new page called **"All Lines"** and add a group to it.
 4. Paste the following into the template:
 
 ```html
@@ -214,45 +214,68 @@ These widgets output will now include client-related metadata as `msg._client`, 
 
 #### Building a Dashboard Flow for URL Access, Line Validation, and User Selection
 
-1. Drag a **ui-event node** onto the canvas and configure it with the correct UI base path. This node listens for dashboard navigation events, such as URL changes or user interactions.
-   
-2. Drag a **switch node** and configure it with the property `msg.topic` and add the following condition:
-   - `== $pageview`
+1. Drag a `ui-event` node onto the canvas.  
+   - Configure it with the correct UI base path.  
+   - This node listens for dashboard navigation events, such as URL changes or user interactions.
 
-3. **Drag another switch node** and configure it with the property `msg.payload.page.params.line`, with two conditions:
-   - has key `line`
-   - is empty
+2. Drag a `switch` node and name it "Is it a pageview event?"  
+   - Set the property to `msg.topic`  
+   - Add the condition:  
+     - `== "$pageview"`
 
-4. Connect the `ui-event` node to the first `switch` node (from step 2), then connect that `switch` node to the second `switch` node (from step 3). This checks for page access via URL and whether a line parameter is present.
+3. Drag another `switch` node and name it "Has line key?"  
+   - Set the property to `msg.payload.page.params.line`  
+   - Add two conditions:  
+     - has key `line`  
+     - is empty
 
-5. **Drag a function node** onto the canvas and paste the following code:
+4. Connect the nodes:  
+   - Connect the `ui-event` node to the first `switch` node ("Is it a pageview event?")  
+   - Then connect its first output to the second `switch` node ("Has line key?")  
+   - This checks for page access via URL and whether a line parameter is present.
 
-   ```javascript
-   let lines = global.get('lines', 'persistent') || [];
-   let labels = [
-      ...lines.map(obj => obj.label),
-   ];
-   msg.payload.labels = labels;
-   return msg;
-   ```
+5. Drag a `function` node and name it "Extract Labels from Lines"  
+   - Paste the following code:
 
-This retrieves the list of available lines from the persistent global context, extracts their labels, and creates an array for easier verification of whether the line in the URL parameter is present.
+     ```javascript
+     let lines = global.get('lines', 'persistent') || [];
+     let labels = lines.map(obj => obj.label);
+     msg.payload.labels = labels;
+     return msg;
+     ```
 
-6. Drag a change node onto the canvas and configure it to:
-   - Set `global.store[msg._client.socketId].line` to `msg.payload`.
-7. Drag another switch node and configure it with the condition `msg.payload.page.name` is equal to "Lines". This ensures the user is currently on the "Lines" page.
-8. Connect the function node (from step 5) and the change node (from step 6) to the first output of the switch node (from step 3), which handles the case when a line parameter exists.
-9.  Drag another switch node and configure it with the condition:
-    - `msg.payload.labels` contains `global.store[msg._client.socketId].line`
+   - This retrieves the list of available lines from global context and extracts their labels.
 
-This checks whether the selected line is valid by comparing it with the list of known line labels.
+6. Drag a `change` node and name it "Store line selection"  
+   - Configure it to:  
+     - Set `global.store[msg._client.socketId].line` to `msg.payload.page.params.line`
 
-10. For the first output of the switch node from step 7, drag a change node and configure it to:
-    - Set `msg.payload.page.name` to "All Lines"
-11. Drag the ui control widget onto the canvas and 12. connect it to the change node (from step 10). This node will handle the redirection or display feedback on the dashboard.
-13. For the first output of the switch node from step 9, drag a change node and configure it to:
-    - Set `msg.payload` to "Incorrect Link"
-14. Drag a ui-control node onto the canvas and configure it with the correct UI base path.
+7. Drag another `switch` node and name it "Is the currently accessed page 'Lines'?"  
+   - Set the property to `msg.payload.page.name`  
+   - Add the condition:  
+     - `== "Lines"`
+
+8. Connect the `function` node (from step 5) and the `change` node (from step 6) to the first output of the `switch` node (from step 3).
+
+9. Drag another `switch` node and name it "Is line valid?"  
+   - Set the property to `msg.payload.labels`  
+   - Add condition:  
+     - contains `global.store[msg._client.socketId].line`
+
+10. For the first output of the `switch` node from step 7, drag a `change` node and name it "Redirect the user to the All Lines menu"  
+    - Configure it to:  
+      - Set `msg.payload.page.name` to `"All Lines"`
+
+11. Drag a `ui-control` node onto the canvas.
+
+12. Connect it to the `change` node (from step 10). This node will handle the redirection or display feedback on the dashboard.
+
+13. For the first output of the `switch` node from step 9, drag a `change` node and name it "Redirect the user to the Not Found page"  
+    - Configure it to:  
+      - Set `msg.payload` to `"Incorrect Link"`
+
+14. Drag a `ui-control` node onto the canvas and configure it with the correct UI base path.
+
 15. Deploy the changes.
 
 ![Flow for handling dashboard navigation, validating URL parameters, and assigning selected production lines to individual client sessions.](./images/configuration-flow.png){data-zoomable}
@@ -262,58 +285,59 @@ _Flow for managing URL-based access, validating line parameters, and storing cli
 
 Let’s build the flow to retrieve the data.
 
-1. Drag a Template widget onto the canvas.
-2. Double-click the Template widget to open its configuration.
-3. Set the scope to `ui` and select the appropriate UI Base.
+1. Drag a `Template` widget onto the canvas.  
+2. Double-click the Template widget to open its configuration.  
+3. Set the scope to `ui` and select the appropriate UI Base.  
 4. Paste the following script into the content field. This script triggers every second and sends a message that includes the current user's client data:
 
-```html
-<script>
-   export default {
-     mounted() {
-       // Set an interval to update the message every second
-       this.intervalId = setInterval(() => {
-         this.send('Component has loaded')
-       }, 1000);
-     },
-     beforeUnmount() {
-       // Clear the interval when the component is about to be destroyed
-       clearInterval(this.intervalId);
-     },
-   };
-</script>
-```
+   ```html
+   <script>
+     export default {
+       mounted() {
+         // Set an interval to update the message every second
+         this.intervalId = setInterval(() => {
+           this.send('Component has loaded');
+         }, 1000);
+       },
+       beforeUnmount() {
+         // Clear the interval when the component is about to be destroyed
+         clearInterval(this.intervalId);
+       },
+     };
+   </script>
+   ```
 
-5. Drag a Change node onto the canvas.
+5. Drag a `Change` node and name it "Set query and retrieve user-selected line".  
 6. Configure the Change node with the following rules:
-    - Set msg.line to msg.store[msg._client.socketId].line
-    - Set msg.query to "line"
-    - Delete msg.topic
-7. Drag another Template node onto the canvas.
-8. Double-click the Template node and set the property to msg.topic.
+   - Set `msg.line` to `msg.store[msg._client.socketId].line`
+   - Set `msg.query` to `"line"`
+   - Delete `msg.topic`
+
+7. Drag a `Template` node onto the canvas.  
+8. Double-click the Template node and set the property to `msg.topic`.  
 9. Paste the following SQL query into the content field:
 
-```sql
-SELECT * from requests WHERE "{{query}}" ="{{line}}" AND resolved IS NULL
-```
+   ```sql
+   SELECT * FROM requests WHERE "{{query}}" = "{{line}}" AND resolved IS NULL
+   ```
 
-10. Drag a Markdown widget onto the canvas.
-11. Create a new group in the UI for the Markdown widget to render into.
+10. Drag a `Markdown` widget and name it "Show currently selected line".  
+11. Create a new group in the UI for the Markdown widget to render into.  
 12. Enter the following content into the Markdown widget:
 
-```sql
-<h1 style="text-align: center;">Line: {{ msg?.line }}</h1>
-```
+    ```html
+    <h1 style="text-align: center;">Line: {{ msg?.line }}</h1>
+    ```
 
-![Dashboard view showing the title of the selected production line centered at the top.](./images/lines-page-with-tittle-of-selected-line.png){data-zoomable}
-_The dashboard displays the selected production line name, retrieved from the client context, rendered using a Markdown widget._
+    ![Dashboard view showing the title of the selected production line centered at the top.](./images/lines-page-with-tittle-of-selected-line.png){data-zoomable}  
+    _The dashboard displays the selected production line name, retrieved from the client context, rendered using a Markdown widget._
 
-13.  Drag a SQLite node onto the canvas.
-14.  Select the appropriate database configuration.
-15.  Set the SQL Query property to use msg.topic.
-16.  Connect the Template widget to the Change node, Change node to the Template node, and Template node to the SQLite node.
-17.  Drag the link-out node onto the canvas and connect it to the SQLite node.
-18.  Deploy the changes
+13. Drag a `SQLite` node onto the canvas.  
+14. Select the appropriate database configuration.  
+15. Set the node to use the SQL query via `msg.topic`.  
+16. Connect the `Template` widget → `Change` node → `Template` node → `SQLite` node.  
+17. Drag a `link-out` node onto the canvas and connect it to the `SQLite` node.  
+18. Deploy the changes.
 
 ![Node-RED flow to fetch live requests for a selected production line using client context and SQLite query.](./images/retrive-data-flow.png){data-zoomable}
 _Flow that triggers periodic queries for open requests specific to the user’s selected line using the client session and a SQLite database._
@@ -324,34 +348,36 @@ Once the data is retrieved, it needs to be validated, formatted, and routed appr
 
 1. Drag a **link-in node** onto the canvas and connect it to the last **link-out node**.
 
-2. Add a **switch node** to check whether the `msg.payload` is empty.
+2. Add a **switch node** to check whether the `msg.payload` is empty, name it "Is Payload empty?".  
    - Configure the switch with the following conditions:
      - `msg.payload is empty`
      - `Otherwise`
 
-3. Drag a **change node** onto the canvas and configure it to set a message when the payload is empty:
-   - Set `msg.payload` to "There are no outstanding requests"
+3. Drag a **change node**, name it "Show 'no outstanding request' message" and configure it to set a message when the payload is empty:  
+   - Set `msg.payload` to `"There are no outstanding requests"`
    
-4. Connect this **change node** to the first output of the switch node.
+4. Connect this **change node** to the first output of the switch node ("Is Payload empty?").
 
-5. Drag another **change node** onto the canvas and configure it as follows:
+5. Drag another **change node**, name it "Remove 'no outstanding request' message" and configure it as follows:  
    - Set `msg.payload` to an empty string `""`
 
-6. Connect this second **change node** to the second output of the switch node.
+6. Connect this second **change node** to the second output of the switch node ("Is Payload empty?").
 
-7. Drag a **text widget** onto the canvas, double-click it, and add a new group in the "Lines" page to render the message.
+7. Drag a **text widget**, name it "Text Widget for Message", onto the canvas, double-click it, and add a new group in the "Lines" page to render the message.
 
-8. Connect the **text widget** to both **change nodes** that are setting the text message.
+8. Connect the **text widget** ("Text Widget for Message") to both **change nodes** that are setting the text message ("Show 'no outstanding request' message" and "Remove 'no outstanding request' message").
 
-9. Drag another **link-in node** onto the canvas and connect it to the second output of the switch node that checks whether `msg.payload` is empty.
+9. Drag another **link-out node** onto the canvas and connect it to the second output of the switch node ("Is Payload empty?") that checks whether `msg.payload` is empty.
 
-10. Drag the **link-out node** onto the canvas and connect it to the last **link-in node**.
+10. Drag another **link-in** onto the canvas and connect.
 
-11. Drag a **split node** onto the canvas and connect it to the **link-in node**.
+11. Drag a **split node**, name it "Split Node", onto the canvas and connect it to the **link-in node**.
 
-12. Drag a **link-out node** and connect it to the **split node**.
+12. Drag the **link-out node** onto the canvas and connect it to the last **link-in node**.
 
-13. Deploy the changes
+14. Drag a **link-out node** and connect it to the **split node**.
+
+15. Deploy the changes.
 
 ![Node-RED flow showing data validation and routing logic to prepare and display unresolved requests on the dashboard.](./images/preparing-data-flow.png){data-zoomable}
 _Flow that checks if unresolved requests exist, sends an appropriate message when none are found, or prepares the data for tabular rendering._
@@ -360,9 +386,9 @@ _Flow that checks if unresolved requests exist, sends an appropriate message whe
 
 To enhance the visibility of production line requests, this section focuses on setting up visual alerts based on how old each request is and formatting their timestamps in a user-friendly way. The flow will classify requests using configurable thresholds and visually highlight older or unresolved ones. Additionally, timestamps such as requested, acknowledged, and resolved will be formatted using relative time (e.g., "5 minutes ago") to improve readability on the dashboard.
 
-1. Drag a **link-in node** and a **function node** onto the canvas, and open the **function node**.
+1. Drag a **link-in node** and a **function node** onto the canvas. Name the **function node** as "Highlight Old Requests" and open it.
 
-2. Paste the following JavaScript code into the function node:
+2. Paste the following JavaScript code into the **function node**:
 
 ```javascript
 const requested = msg.payload.requested;
@@ -396,43 +422,31 @@ else {
    msg.payload.class = 'normal';
    return msg;
 }
-
 ```
 
 3. Connect the link-in node to the function node.
-
-4. Drag a date time formatter node onto the canvas.
-
-5. Double-click on the date time formatter node and set outputFrom to fromNow.
-
-6. Set both input and output to msg.payload.requested.
-
-7. Connect the function node to the date time formatter node.
-
-8. Drag a link-out node and connect it to the date time formatter node.
-
-9. Drag a switch node onto the canvas and set the property to `msg.payload.requested` and add the following conditions: 
-    - is null, otherwise.
-
-10. Connect this switch node to the link-in node created earlier.
-
-11. Drag a second date time formatter node onto the canvas, Set outputFrom to fromNow and Set both input and output to `msg.payload.acknowledged`.
-
-12. Connect the second date time formatter node to the second output of the switch node from step 23.
-
-13. Drag another switch node onto the canvas and set the property to `msg.payload.resolved` and add the following conditions: 
-    - is null, otherwise.
-14. Connect this switch node to the output of the second date time formatter node and to the first output of the first switch node.
-
-15. Drag a third date time formatter node onto the canvas, Set outputFrom to fromNow and Set input and output to `msg.payload.resolved`.
-
-16. Connect this date time formatter node to the second output of the second switch node.
-
-17. Drag a link-out node and connect this link-out node to the third date time formatter node.
-
-18. Drag another link-out node and connect it to the first output of the second switch node.
-
-19. Deploy the changes
+4. Drag a date time formatter node onto the canvas. Name it "Format Requested Time" and double-click it to configure.
+   - Set outputFrom to fromNow.
+   - Set both input and output to `msg.payload.requested`.
+5. Connect the function node to the date time formatter node.
+6. Drag a link-out node and connect it to the function node.
+7. Drag a switch node onto the canvas. Name it "Check if Acknowledged is null". Set the property to `msg.payload.acknowledged`, and add the following conditions:
+   - is null
+   - Otherwise
+8. Connect the function node to the switch node.
+9. Drag a second date time formatter node onto the canvas. Name it "Format Acknowledged Time".
+   - Set outputFrom to fromNow.
+   - Set both input and output to `msg.payload.acknowledged`.
+11. Connect the second date time formatter node to the second output of the switch node ("Check if Acknowledged is null").
+12. Drag another switch node onto the canvas. Name it "Check if Resolved is null". set the property to `msg.payload.resolved`. Add the following conditions:
+   - is null
+   - Otherwise
+12. Connect this switch node ("Check if Resolved is null") to the output of the second date time formatter ("Format Acknowledged Time") node and to the first output of the first switch node ("Check if Acknowledged is null").
+13. Drag a third date time formatter node onto the canvas. Name it "Format Resolved Time" and set outputFrom to fromNow. Set both input and output to `msg.payload.resolved`.
+14. Connect this third date time formatter node to the second output of the second switch node ("Check if Resolved is null") .
+15. Drag a link-out node and connect it to the third date time formatter node.
+16. Drag another link-out node and connect it to the first output of the second switch node. Name it "Link to First Switch Output".
+17. Deploy the changes.
 
 ![Dashboard view displaying a highlighted request entry with visual emphasis based on request age.](./images/highlighted-requst.png
 ){data-zoomable}
@@ -441,84 +455,154 @@ _Dashboard showing a request visually highlighted based on how long ago it was m
 ![Node-RED flow that includes nodes for assigning visual alert classes and formatting timestamps using relative time.](./images/visual-alert-and-timestamp-formatting.png){data-zoomable}
 _Flow for setting visual alert classes and formatting timestamps like "5 minutes ago" to enhance clarity and urgency of displayed requests._
 
+## Request Status Update Flow and Row Highlighting with CSS
+
+We have the data prepared, the class property added to each request message, and the timestamp formatted for better readability. In this section, we will add **'Resolve'** and **'Acknowledge'** buttons for each request to update its status and apply CSS classes based on the `status` property for visual highlighting.
+
+1. Drag a **link-in** node onto the canvas and connect it to the last **link-out** node.
+2. Drag a switch node, name it "Is acknowledged null?", and set the property to `msg.payload.acknowledged`. Add the following conditions:
+   - is null
+   - otherwise
+3. Drag a **template node**, name it **"Build ack link"**, set the property to `msg.payload.acknowledged`, and add the following Mustache:
+   ```html
+   <a href="/dashboard/lines?line={{line}}&action=ack&request={{payload.rowid}}" style="color: #000000" class="{{payload.class}}">ACKNOWLEDGE</a>
+   ```
+4. Connect the **link-in** node to the **switch** node. Connect the **first output** of the switch node ("Is acknowledged null?") to the input of the **template** node.
+
+5. Drag another switch node, name it "Is resolved null?", set the property to `msg.payload.resolved`, and add the following conditions:
+   - is null
+   - otherwise
+6. Drag a **template node**, give it name "Build res link",  set the property to `msg.payload.resolved`, and add the following Mustache:
+   ```html
+   <a href="/dashboard/lines?line={{line}}&action=res&request={{payload.rowid}}" style="color: #000000">RESOLVE</a>
+   ```
+
+7. Connect the input of this second switch node ("Is resolved null?") to the **second output** of the previous switch node (`acknowledged` switch), then connect the **first output** of the `resolved` switch node to the input of the second **template** node.
+
+8. Drag a **link-out** node and connect both outputs of the `resolved` switch node to this link-out.
+9. Deploy the changes.
+
+### Displaying Data in a Table
+
+Now, let's display the prepared data in a table. To do this, we'll use a **ui_table** widget. However, before displaying, we need to convert the data back into an array, as we are currently spilling array data retrieved from the database into a single message.
+
+1. Drag a **link-in** node onto the canvas and connect it to the **last link-out** node.
+
+2. Drag a **join** node onto the canvas and connect it to the **link-in** node. Double-click on the join node and set the mode to **automatic**.
+
+3. Drag another **link-out** node and connect it to the **join** node.
+
+4. Drag a **link-in** node and connect it to the **last link-out** node.
+
+5. Drag a **ui_table** widget onto the canvas and double-click to configure.
+
+6. Create a **new group** on the *lines* page.
+
+7. Set **Action** to `replace` and **Interaction** to `none`.
+
+8. Untick the **Auto Calculate Columns** option.
+
+9. Add the following column elements:
+   - Key: rowid, Label: Request, Align: Left, Type: Text
+   - Key: line, Label: Line, Align: Left, Type: Text
+   - Key: support, Label: Support, Align: Left, Type: Text
+   - Key: requested, Label: Requested, Align: Left, Type: HTML
+   - Key: acknowledged, Label: Acknowledged, Align: Left, Type: HTML
+   - Key: resolved, Label: Resolved, Align: Left, Type: HTML
+   - Key: notes, Label: Notes, Align: Left, Type: Text
+
+10. Deploy the changes.
+
 ## Building Flow to Submit a Request
 
 To create a flow that allows users to submit a request, follow these steps to set up the necessary UI elements, store the request details, validate input, and store the data in a database.
 
 1. Drag the **ui-event** widget onto the canvas and configure it with the correct UI settings.
 
-2. Drag a **change node** to retrieve the department list. Set `msg.ui_update.options` to `global.departments` to dynamically update the department dropdown.
+2. Drag a **change node** to retrieve the department list and name it "Show Dropdown Options". Add the following:
+   - Set `msg.ui_update.options` to `global.departments`.
 
 3. Create a new group for the dropdown widget on the lines page. Connect the **change node** to the input of the dropdown widget, then link it to the **ui-event** node.
 
-4. Drag another **change node** and set `msg.payload` to `msg.store[msg._client.socketId].support` to store the selected department in the global context.
+4. Drag another **change node** and set `msg.payload` to `msg.store[msg._client.socketId].support`. Name it "Store support (department) to context store".
 
-5. Drag a **text input widget** for the notes field. Create a group for it in the lines page. Add another **change node** to store the notes in the global context:
+5. Drag a **text input widget** for the notes field. Create a group for it in the lines page.
+
+6. Add another **change node** to store the notes in the global context and name it "Store notes to context store":
    - Set `msg.payload` to `msg.store[msg._client.socketId].notes`.
 
-6. Drag the **button widget**, label it "Request Support," and connect it to the **change node** that updates the UI with the department list.
+7. Connect the change node ("Store support (department) to context store") to the input of the dropdown widget and connect the change node ("Store notes to context store") to the text input widget.
 
-7. Add a **change node** to store the request details in the global context:
+8. Drag the **button widget**, label it "Request Support," and connect it to the **change node** that updates the UI with the department list.
+
+9. Add a **change node** to store the request details in the global context and name it "Retrieve entered support request data":
    - Set `msg.store[msg._client.socketId].support` to `msg.request.support`.
    - Set `msg.store[msg._client.socketId].notes` to `msg.request.notes`.
    - Set `msg.store[msg._client.socketId].line` to `msg.request.line`.
    - Set `msg.store[msg._client.socketId].reference` to `msg.request.reference`.
 
-8. Drag a **Function node** and add the following code:
+10. Drag a **function node** and add the following code. Name it "Does department and notes are not empty?":
 
 ```javascript
 let request = msg.request;
 if (typeof request !== "object" || request === null) {
    msg.payload = "Request must be an object.";
-   return [null, null, msg]; // Send msg to third output if request is not an object
+   return [null, null, msg];
 } else if (!request.hasOwnProperty("support")) {
    msg.payload = "Please select the appropriate department for the request.";
-   return [null, msg, null]; // Send msg to second output, nothing to first or third
+   return [null, msg, null];
 } else if (!request.hasOwnProperty("notes") || typeof request.notes !== "string" || request.notes.trim() === "") {
    msg.payload = "Please add notes to provide more context on the request.";
-   return [null, null, msg]; // Send msg to third output, nothing to first or second
+   return [null, null, msg];
 } else {
-   return [msg, null, null]; // Send msg to first output, nothing to second or third
+   return [msg, null, null];
 }
 ```
 
-9. Connect the change node to Function node, function node's first output to the Date/Time Formatter node. Set the input to 'Timestamp (milliseconds since epoch)' and the output to `msg.request.time`.
+11. Connect the change node to the function node. Connect the function node's first output to a **Date/Time Formatter** node. Set the input to 'Timestamp (milliseconds since epoch)' and the output to `msg.request.time`.
 
-10.  Drag a change node and set `msg.payload` to "Are you sure you want to submit a request?"
+12. Drag a **change node** and set `msg.payload` to "Are you sure you want to submit a request?". Name it "Set Confirmation message".
 
-11.  Drag a ui notification widget, configure it with the correct UI, and set the position to center.
+13. Connect the change node ("Set Confirmation message") to the **Date/Time Formatter** node.
 
-12.  Connect the Function node’s second and third outputs to the ui notification widget for displaying validation messages.
+14. Drag a **ui-notification widget**, configure it with the correct UI, and set the position to center.
 
-13.  Add a switch node and set the property to msg.payload with the condition == confirm_clicked.
+15. Connect the function node’s second and third outputs to the **ui-notification** widget for displaying validation messages.
 
-14. Drag a template node and add the following SQL query:
+16. Add a **switch node** and set the property to `msg.payload` with the condition:
+   - == `confirm_clicked`
+   Name it "Is confirm clicked?"
+
+17. Drag a **template node** and add the following SQL query:
 
 ```sql
 INSERT INTO requests (rowid,line,support,requested,notes)
 VALUES(NULL,'{{request.line}}','{{request.support}}','{{request.time}}','{{request.notes}}');
 ```
 
-15. Connect the ui-notification to the switch node, Connect the template node to the switch node's first output.
+18. Connect the **ui-notification** to the switch node ("Is confirm clicked?"). Connect the **template node** to the first output of the switch node.
 
-16.  Drag the sqlite node, select the correct database configuration, and choose SQL Query via `msg.topic`.
+19. Drag a **sqlite node**, select the correct database configuration, and choose SQL Query via `msg.topic`.
 
-17.  Drag a change node and set the following:
-    - Delete `msg.store[msg._client.socketId].support`.
-    - Delete `msg.store[msg._client.socketId].notes`.
-    - Drag the link-out node and connect it to the last change node. Then link the last change node to the first output of the switch node.
+20. Drag a **change node** and set the following:
+   - Delete `msg.store[msg._client.socketId].support`.
+   - Delete `msg.store[msg._client.socketId].notes`.
 
-18.  Connect the switch node to the ui notification widget.
+21. Connect the **template node** to the **sqlite node**. Connect the sqlite node to the **change node**.
 
-19.  Drag the link-in node and connect it to the link-out node.
+22. Drag a **link-out node** and connect it to the last change node.
 
-20.  Drag two change nodes and add the following elements:
-    - First change node: Set `msg.payload` to an empty array [].
-    - Second change node: Set `msg.payload` to an empty string "".
-    
-21.  Connect the change nodes to the link in, completing the flow.
-22.  Connect the first change node to the ui dropdown widget and second to text input widget.
-23. Deploy the changes
+23. Drag a **link-in node** and connect it to the last link-out node.
+
+24. Drag two **change nodes** and configure them as follows:
+   - First change node: Set `msg.payload` to an empty array `[]`.
+   - Second change node: Set `msg.payload` to an empty string `""`.
+
+25. Connect the change nodes to the link-in node to complete the flow.
+
+26. Connect the first change node to the **ui dropdown widget** and the second to the **text input widget**.
+
+27. Deploy the changes.
 
 ![Node-RED flow showing the logic for validating and storing user-submitted support requests.](./images/SUBMIT-REQUEST.png){data-zoomable}
 _Node-RED flow to handle request submission, including form validation, timestamp formatting, and SQL database insertion._
