@@ -62,3 +62,13 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
 * Assessment/Presentation: May require a work sample, case study, or presentation to demonstrate the candidate's abilities. 
 * Final Interview: A final interview with key stakeholders.
 * Offer: Extend an offer to the selected candidate.
+
+### Assessment
+
+Prepare a 10-minute discovery + pitch presentation to a hypothetical industrial automation prospect who is evaluating options for managing hundreds of Node-RED instances across many remote sites. Assume the audience includes an OT leader and an IT architect. Your goal is to identify key pain points and position FlowFuse’s value. Please spend no more than 90 minutes on this task.
+What are we looking for?
+* Messaging skills
+* Ability to tailor pitch to personas
+* Business acumen
+* Clarity
+* Storytelling
