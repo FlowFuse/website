@@ -16,7 +16,7 @@ howSection:
     p2: "Collect data from the shop floor or the lab by using <a href='/integrations/'>FlowFuse Certified Nodes</a> to connect with local machines using any protocol: MQTT, OPC-UA, Modbus, Sparkplug B, and any other protocol that exists now or in the future."
     image1: images/home/connect_graphic.png
     imageAlt1: "Icons of communication protocols"
-    image2: blueprints/manufacturing/oee-dashboard/oee-dashboard--1.png
+    image2: images/solutions/oee-dashboard--1.png
     imageAlt2: "OEE dashboard"
     p3:
         - "Create applications in Node-RED to transform your data for analysis and create visualizations that enable your team to make data-driven decisions about your business. Our ever-expanding <a href='/blueprints/'>Blueprints library</a> helps you get started quickly."
@@ -92,28 +92,24 @@ meta:
             {% for p in howSection.p1 %}
             <p class="w-full max-sm:mx-auto mt-6">{{ p | safe }}</p>
             {% endfor %}
-            <div class="md:grid md:grid-cols-2 md:gap-8 md:align-center">
-                <p class="w-full max-sm:mx-auto mt-4">{{ howSection.p2 | safe }}</p>
+            <p class="w-full max-sm:mx-auto mt-4">{{ howSection.p2 | safe }}</p>
                 <div class="mx-auto max-md:max-w-[500px] max-md:my-12 md:mt-4">
                     {% set image = ["./", howSection.image1 ] | join %}
                     {% set imageAlt = howSection.imageAlt1 %}
-                    {% image image, imageAlt, [500] %}
+                    {% image image, imageAlt, [1024] %}
                 </div>
+            <div class="max-md:order-first">
+                    {% for p in howSection.p3 %}
+                    <p class="w-full max-sm:mx-auto mt-4">{{ p | safe }}</p>
+                    {% endfor %}
             </div>
-            <div class="flex flex-col md:grid md:grid-cols-2 md:gap-8 md:align-center">
                 <div class="mx-auto ff-image-rounded p-1 max-md:max-w-[500px] max-md:my-12 md:mt-4 max-md:order-last">
                     {% if howSection.image2 and not deployPreview %}
                         {% set image = ["./", howSection.image2 ] | join %}
                         {% set imageAlt = howSection.imageAlt2 %}
-                        {% image image, imageAlt, [500] %}
+                        {% image image, imageAlt, [1024] %}
                     {% endif %}
                 </div>
-                <div class="max-md:order-first">
-                    {% for p in howSection.p3 %}
-                    <p class="w-full max-sm:mx-auto mt-4">{{ p | safe }}</p>
-                    {% endfor %}
-                </div>
-            </div>
             <!--How it works-->    
             <h2 class="mt-16">{{ industrySection.title | safe }}</h2>
             {% for p in industrySection.p1 %}
