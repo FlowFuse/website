@@ -104,7 +104,7 @@ meta:
                     {% endfor %}
             </div>
                 <div class="mx-auto ff-image-rounded p-1 max-md:max-w-[500px] max-md:my-12 md:mt-4 max-md:order-last">
-                    {% if howSection.image2 and not deployPreview %}
+                    {% if howSection.image2 %}
                         {% set image = ["./", howSection.image2 ] | join %}
                         {% set imageAlt = howSection.imageAlt2 %}
                         {% image image, imageAlt, [1024] %}
