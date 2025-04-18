@@ -93,11 +93,11 @@ meta:
             <p class="w-full max-sm:mx-auto mt-6">{{ p | safe }}</p>
             {% endfor %}
             <p class="w-full max-sm:mx-auto mt-4">{{ howSection.p2 | safe }}</p>
-                <div class="mx-auto max-md:max-w-[500px] max-md:my-12 md:mt-4">
+            <div class="mx-auto max-w-[550px] my-12">
                     {% set image = ["./", howSection.image1 ] | join %}
                     {% set imageAlt = howSection.imageAlt1 %}
-                    {% image image, imageAlt, [1024] %}
-                </div>
+                    {% image image, imageAlt, [550] %}
+            </div>
             <div class="max-md:order-first">
                     {% for p in howSection.p3 %}
                     <p class="w-full max-sm:mx-auto mt-4">{{ p | safe }}</p>
