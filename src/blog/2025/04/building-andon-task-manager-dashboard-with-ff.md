@@ -27,7 +27,7 @@ To simplify the development process, the implementation is divided into the foll
 - Building the Flow to Fetch Live Requests Per Line Using Client Context 
 - Preparing and rendering data in a table  
 - Setting up visual alerts  
-- Implementing request status updates and row highlighting using CSS  
+- Adding Acknowledge and Resolve buttons for updating request status and highlighting rows using CSS
 - Displaying data in a table  
 - Building Flow to Submit a Request
 
@@ -455,7 +455,7 @@ _Dashboard showing a request visually highlighted based on how long ago it was m
 ![Node-RED flow that includes nodes for assigning visual alert classes and formatting timestamps using relative time.](./images/visual-alert-and-timestamp-formatting.png){data-zoomable}
 _Flow for setting visual alert classes and formatting timestamps like "5 minutes ago" to enhance clarity and urgency of displayed requests._
 
-## Request Status Update Flow and Row Highlighting with CSS
+## Adding Acknowledge and Resolve buttons for updating request status and highlighting rows using CSS
 
 We have the data prepared, the class property added to each request message, and the timestamp formatted for better readability. In this section, we will add **'Resolve'** and **'Acknowledge'** buttons for each request to update its status and apply CSS classes based on the `status` property for visual highlighting.
 
@@ -481,6 +481,36 @@ We have the data prepared, the class property added to each request message, and
 
 8. Drag a **link-out** node and connect both outputs of the `resolved` switch node to this link-out.
 9. Deploy the changes.
+
+### Adding a Mechanism to Update the Status of a Request in the Database
+
+1. Drag **ui event widget** onto the canvas and configure it with the correct ui base.  
+2. Drag **change node** onto the canvas and add the following element:  
+   - Set `msg.payload.query` to `msg.query`  
+3. Drag **Date/Time Formatter node** onto the canvas and set input format to "timestamp: milliseconds since epoch" and output to `msg.now`.  
+4. Drag **switch node** onto the canvas, set property to `msg.query.action`, and add the following conditions to check against:
+   - == ack  
+   - == res  
+   - otherwise  
+5. Drag **two change node** onto canvas.  
+6. For the **first**, set the following element:
+   - Set `msg.action` to `"acknowledged"`  
+7. For the **second**, set the following element:
+   - Set `msg.action` to `"resolved"`  
+8. Drag **template node** onto the canvas, set property to `msg.topic`, and add the following SQL query:
+
+   ```sql
+   UPDATE requests 
+   SET {{action}} = "{{now}}" 
+   WHERE rowid = {{payload.query.request}} 
+   AND {{action}} IS NULL;
+   ```
+
+9. Drag **sqlite node** onto the canvas and configure it with the correct database configuration we have added. Select **SQL Query via msg.topic**.  
+10. Connect the **ui event widget** to **change node**, **change node** to **date/time formatter node**, **date/time formatter** to **switch node**, and:  
+   - **switch node first o** to first **change node**  
+   - **switch node second o** to second **change node**  
+   - Connect both **change node** to the **template node**, and then **template node** to **sqlite node**.
 
 ### Displaying Data in a Table
 
