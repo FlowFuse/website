@@ -49,6 +49,11 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
 * Test and refine our sales motion to optimize effectiveness in the EMEA market.
 * Multilingual & Culturally Fluent (Bonus): Fluency in French, German, or another European language is a significant plus.
 
+## US Specific information
+* Expand FlowFuse's customer base and revenue in the US market, targeting key accounts using an Account-Based Marketing (ABM) approach.
+* Test and refine our sales motion to optimize effectiveness in the US market.
+* Multilingual & Culturally Fluent (Bonus): Fluency in Spanish language is a significant plus.
+
 ## Hiring Plan:
 * Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
 * First Interview: Conduct a phone or video interview to further evaluate candidate skills, experience, and cultural fit.
@@ -57,3 +62,13 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
 * Assessment/Presentation: May require a work sample, case study, or presentation to demonstrate the candidate's abilities. 
 * Final Interview: A final interview with key stakeholders.
 * Offer: Extend an offer to the selected candidate.
+
+### Assessment
+
+Prepare a 10-minute discovery + pitch presentation to a hypothetical industrial automation prospect who is evaluating options for managing hundreds of Node-RED instances across many remote sites. Assume the audience includes an OT leader and an IT architect. Your goal is to identify key pain points and position FlowFuse’s value. Please spend no more than 90 minutes on this task.
+What are we looking for?
+* Messaging skills
+* Ability to tailor pitch to personas
+* Business acumen
+* Clarity
+* Storytelling

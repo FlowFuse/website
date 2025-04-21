@@ -44,10 +44,7 @@ we will not allow third parties access to homes or offices of employees.
 
 ## Insurance Coverage
 
-1. Commercial General Liability - $1,000,000 per occurrence and $2,000,000 aggregate.
-2. Professional Liability (also known as Errors & Omissions) - amount not less than $1,000,000 per claim, $1,000,000 aggregate.
-3. Umbrella/Excess Liability -  n/a
-4. Cyber Liability (Network Security/Privacy Liability) - n/a
+The company maintains insurance for a wide range of events, the full list can be found on [the operations handbook](/handbook/operations/).
 
 ## Miscellaneous
 

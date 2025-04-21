@@ -6,12 +6,12 @@ navTitle: Information Security Policy and Acceptable Use Policy
 
 | Policy owner   | Effective date |
 | -------------- | -------------- |
-| @ZJvandeWeg    | 2023-05-01     |
+| @knolleary     | 2025-04-16     |
 
 
 ## Overview
 
-This Information Security Policy is intended to protect FlowFuse’s employees,
+This Information Security Policy is intended to protect FlowFuse's employees,
 partners and the company from illegal or damaging actions by individuals, either
 knowingly or unknowingly.
 
@@ -26,7 +26,7 @@ understand this policy, and to conduct their activities accordingly.
 ## Purpose 
 
 The purpose of this policy is to communicate our information security policies
-and outline the acceptable use and protection of FlowFuse’s information and
+and outline the acceptable use and protection of FlowFuse's information and
 assets. These rules are in place to protect customers, employees, and FlowFuse.
 Inappropriate use exposes FlowFuse to risks including virus attacks, compromise
 of network systems and services, financial and reputational risk, and legal and
@@ -126,6 +126,14 @@ to ensure compliance with this policy.
 Employees must ensure the software they use is properly licensed and used as
 intended.
 
+### AI Tools Usage
+
+When using AI tools:
+1. Do not input sensitive or confidential information unless explicitly approved
+2. Be aware of data retention and privacy policies of AI tools
+3. Follow our security policies and guidelines
+4. Report any security concerns related to AI tool usage immediately
+
 ## Unacceptable Use
 
 Under no circumstances is an employee of FlowFuse authorized to engage in any
@@ -152,8 +160,8 @@ Role | Purpose
 [Human Resources Policy](./human-resources.md) | To ensure that employees and contractors meet security requirements, understand their responsibilities, and are suitable for their roles.
 [Incident Response Plan](./incident-response.md) | Policy and procedures for suspected or confirmed information security incidents.
 [Operations Security Policy](./operations-security.md) | To ensure the correct and secure operation of information processing systems and facilities.
-Physical Security Policy | To prevent unauthorized physical access or damage to the organization’s information and information processing facilities.
-[Risk Management Policy](./risk-management.md) | To define the process for assessing and managing FlowFuse's information security risks in order to achieve the company’s business and information security objectives.
+Physical Security Policy | To prevent unauthorized physical access or damage to the organization's information and information processing facilities.
+[Risk Management Policy](./risk-management.md) | To define the process for assessing and managing FlowFuse's information security risks in order to achieve the company's business and information security objectives.
 [Secure Development Policy](./secure-development.md) | To ensure that information security is designed and implemented within the development lifecycle for applications and information systems.
 [Third Party Risk Management Policy](./third-party-risk-management.md) | To ensure protection of the organization's data and assets that are shared with, accessible to, or managed by suppliers, including external parties or third-party organizations such as service providers, vendors, and customers, and to maintain an agreed level of information security and service delivery in line with supplier agreements.
 
@@ -179,7 +187,7 @@ company procedures up to and including termination of employment.
 
 ## Whistleblower Policy
 
-Our Whistleblower Policy is intended to encourage and enable employees and others to raise serious concerns internally so that we can address and correct inappropriate conduct and actions. It is the responsibility of all employees to report concerns about violations of our code of ethics or suspected violations of law or regulations that govern our operations. It is contrary to our values for anyone to retaliate against any employee or who in good faith reports an ethics violation, or a suspected violation of law, such as a complaint of discrimination, or suspected fraud, or suspected violation of any regulation. An employee who retaliates against someone who has reported a violation in good faith is subject to discipline up to and including termination of employment. Anonymous reports may be submitted via FlowFuse’s [Whistleblower Channel](https://forms.gle/mttPj8NXd9yhb31H7).
+Our Whistleblower Policy is intended to encourage and enable employees and others to raise serious concerns internally so that we can address and correct inappropriate conduct and actions. It is the responsibility of all employees to report concerns about violations of our code of ethics or suspected violations of law or regulations that govern our operations. It is contrary to our values for anyone to retaliate against any employee or who in good faith reports an ethics violation, or a suspected violation of law, such as a complaint of discrimination, or suspected fraud, or suspected violation of any regulation. An employee who retaliates against someone who has reported a violation in good faith is subject to discipline up to and including termination of employment. Anonymous reports may be submitted via FlowFuse's [Whistleblower Channel](https://forms.gle/mttPj8NXd9yhb31H7).
 
 ---
 Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)

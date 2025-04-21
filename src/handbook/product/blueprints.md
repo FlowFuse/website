@@ -57,7 +57,7 @@ Each Blueprint can also have a custom icon, which should be defined as an icon f
 
 ### Company Information
 
-Submissions are encouraged to be from an organisation, rather than an individual. As such, any submission must has an associated:
+Submissions are encouraged to be from an organization, rather than an individual. As such, any submission must has an associated:
 
 - Company Name
 - Company Logo
@@ -66,14 +66,41 @@ Submissions are encouraged to be from an organisation, rather than an individual
 
 Blueprints must be published in two locations:
 
-- **Website**: This is our public Blueprint Library, where users can browse Blueprints and get access to a quick "Deploy" action.
-- **Platform**: This is the internal Blueprint Library within FlowFuse. It is configured as part of the FlowFuse Admin Panel.
+- **Website**: This is our _public_ Blueprint Library, where users can browse Blueprints and get access to a quick "Deploy" action.
+- **Platform**: This is the _internal_ Blueprint Library within FlowFuse. It is configured as part of the FlowFuse Admin Panel.
 
 ### Website
 
-To add a Blueprint to our public Blueprint Library, we need to add an `.md` file to the relevant category folder in the `/src/blueprints` directory of the [website repository](https://github.com/FlowFuse/website). The purpose of this page is to advertise the Blueprint, so entries should contain appealing visuals and a clear description of the Blueprint's purpose and value.
+To add a Blueprint to our public Blueprint Library, we need to publish the Blueprint to the [`blueprint-library` repository](https://github.com/FlowFuse/blueprint-library). The Website then automatically picks up the new Blueprint and publishes it.
+
+#### License
+
+All Blueprints require a comment node be added to the flow, with the relevant license included.
+
+You can import the required comment node by importing the following JSON:
+
+```json
+{
+    "id": "fc23cedbf1194ca4",
+    "type": "comment",
+    "z": "ad0d2e8ce07aeb8b",
+    "name": "License",
+    "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+    "x": 130,
+    "y": 40,
+    "wires": []
+}
+```
 
 ### Platform
+
+#### Submitting a Change Request
+
+In order to add a Blueprint to FlowFuse Cloud, we need to submit a Change Request. Change Request's can be created by selecting "New Issue" in the [Cloud Project](https://github.com/FlowFuse/CloudProject/issues) repository.
+
+Your issue should include a link to the relevant Pull Request on the Blueprint Library repository whereby your Blueprint was published.
+
+#### Creating the Blueprint
 
 ![Screenshot of the Blueprint Admin Panel in FlowFuse](../images/development/screenshot-blueprints-admin.png){data-zoomable}
 _Screenshot of the Blueprint Admin Panel in FlowFuse_

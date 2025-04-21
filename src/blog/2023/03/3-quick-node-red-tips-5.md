@@ -58,7 +58,7 @@ It's important to note that while custom node examples can be a useful starting 
 
 The group feature in Node-RED allows users to visually group nodes together within the workspace. This feature offers several benefits:
 
-1. Improved organisation: The group feature allows you to group related nodes visually, which can make your flow easier to understand and navigate. This can be particularly helpful for larger, more complex flows.
+1. Improved organization: The group feature allows you to group related nodes visually, which can make your flow easier to understand and navigate. This can be particularly helpful for larger, more complex flows.
 
 2. Simplified editing: When you group nodes together, you can edit or move them as a single unit, rather than individually. This can save time and reduce the chance of errors.
 

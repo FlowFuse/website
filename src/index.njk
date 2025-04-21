@@ -12,8 +12,8 @@ hubspot:
     <div class="max-w-md sm:max-w-screen-lg mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
             <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
-                <h1 class="font-medium leading-tight max-w-xl m-auto lg:m-0 text-center lg:text-left text-indigo-800 text-4xl">
-                    {{ site.messaging.tagLine | safe }}
+                <h1 class="font-medium leading-tight max-w-xl m-auto lg:m-0 text-center lg:text-left text-indigo-800 text-3xl md:text-4xl">
+                    {{ site.messaging.tagLine | replace('. ', ' <br />') | replace('.', '') | safe }}
                 </h1>
                 <p class="mt-6 text-center lg:text-left">
                     {{ site.messaging.subtitle }}
@@ -87,13 +87,13 @@ hubspot:
                 {% set sections = [
                 {
                 title: "Manage",
-                text: "Gain a centralised view of your instances, monitor performance and ensure seamless operations.",
+                text: "Gain a centralized view of your instances, monitor performance and ensure seamless operations.",
                 svgPath: "components/icons/cog.svg",
                 mdOrder: "md:order-0"
                 },
                 {
                 title: "Scale",
-                text: "Democratise innovation; simplified updates, remote access capabilities, and version control for your deployments.",
+                text: "Democratize innovation; simplified updates, remote access capabilities, and version control for your deployments.",
                 svgPath: "components/icons/arrows-pointing-out.svg",
                 mdOrder: "md:order-1"
                 },
@@ -161,7 +161,7 @@ hubspot:
             <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
                 <h2 class="text-center w-full md:text-left mb-6"><span class="text-indigo-600">Bridging OT and IT</span> in Manufacturing</h2>
                 <p class="text-center w-full md:text-left">
-                    Integrate data between OT and IT systems efficiently. With low-code solutions and seamless integration, FlowFuse empowers engineers to collect, visualise, and act on data rapidly, maintaining compliance and security standards. Achieve operational excellence by enabling faster innovation and smoother data flow across your organisation.
+                    Integrate data between OT and IT systems efficiently. With low-code solutions and seamless integration, FlowFuse empowers engineers to collect, visualize, and act on data rapidly, maintaining compliance and security standards. Achieve operational excellence by enabling faster innovation and smoother data flow across your organization.
                 </p>
                 <div class="flex justify-center mt-10 max-w-2xl mx-auto">
                     {% image "./images/home/ff_ot_it.png", "FlowFuse IT/OT Integration", [800] %}
