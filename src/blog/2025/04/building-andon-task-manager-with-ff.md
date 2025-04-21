@@ -4,7 +4,7 @@ subtitle: A step-by-step guide to building a real-time request reporting and res
 description: 
 date: 2025-04-09
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/04/images/Building-an-Andon-Task-Manager-with-FlowFuse-1.png
 keywords: free andon task manager dashboard, andon task manager free, building andon task manager, node-red andon task manager, flowfuse andon task manager
 tags:
    - flowfuse
