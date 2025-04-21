@@ -113,6 +113,6 @@ By using both SQLite for structured request data and context storage for dynamic
 
 ## Up Next
 
-In this first part of the series, we've laid the groundwork for building a real-time Andon Task Manager using FlowFuse. We explored the key objectives of an Andon system, detailed the structure of request data, outlined essential functional requirements, and proposed a streamlined dashboard design for both frontline users and administrators.
+In the next part of this series, we will focus on developing the Lines and Departments view for normal users, along with the navigation menu for selecting lines and departments. Later, we will cover the development of the Admin interface.
 
-With a clear understanding of the data flow, UI layout, and user interactions, we’re now prepared to move on to the implementation phase. In the next part, we will focus on developing the Lines view for normal users, along with the navigation menu, and the menus for selecting lines and departments. Later, we will cover the development of the Admin interface.
+But if you can't wait to get started right away, don’t worry! You can [register](https://app.flowfuse.com/account/create) for FlowFuse and get started with our ready-made [Andon Task Manager blueprint](/blueprints/manufacturing/andon-task/), which is pre-configured for easy deployment. Stay tuned for the next installment to continue your journey toward building a comprehensive, real-time Andon Task Manager solution.
