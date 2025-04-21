@@ -18,9 +18,11 @@ However, many manufacturers struggle to find a solution that truly fits their ne
 
 This blog series introduces a practical approach to building a real-time Andon Task Manager using FlowFuse and Node-RED. In this first part, the focus is on understanding the concept of an Andon system and laying the foundation for the solution.
 
+Let’s get started.
+
 ## What is the Andon Task Manager?
 
-The Andon Task Manager is a digital system designed to streamline real-time issue reporting, escalation, and resolution tracking. Inspired by the traditional Andon systems used in lean manufacturing, it brings these concepts into a modern, cloud-enabled environment.
+The Andon Task Manager is a system designed to streamline real-time issue reporting, escalation, and resolution tracking. Inspired by the traditional Andon systems used in lean manufacturing, it brings these concepts into a modern, cloud-enabled environment.
 
 At its core, it’s a communication and response tool designed to improve transparency and speed on the factory floor or within service teams. Frontline workers can quickly raise issues—like equipment breakdowns, material shortages, or support needs—which are immediately sent to the right person or team. Once the issue is resolved, the responder updates the status so everyone stays informed and the task is properly closed.
 
@@ -47,10 +49,9 @@ Each request must include the following:
 - `line`: The line or machine where the issue was raised.
 - `department`: The department responsible for resolving the issue.
 - `created`: The timestamp when the request was created.
-- `acknowledged`: Optional timestamp indicating when the request was acknowledged.
-- `resolved`: Optional timestamp indicating when the issue was resolved.
-- `note`: Optional text added by users for context or follow-up.
-Only predefined values for line and department should be allowed. These values will be managed through admin settings to ensure consistency across the system.
+- `acknowledged`: A timestamp indicating when the request was acknowledged. This is initially set to `null`, meaning the request has not been acknowledged yet.
+- `resolved`: A timestamp indicating when the issue was resolved. This is also initially set to `null`, indicating the issue has not been resolved yet.
+- `note`: Text added by users for context or follow-up.
 
 ### Defining Key Features
 
@@ -66,7 +67,7 @@ The essential features include:
 - Status display: Requests display their current state — pending, acknowledged, or resolved.
 - Alerts (optional): Visual or sound alerts for unacknowledged requests after a time threshold.
 
-Each of these actions will be timestamped to provide a clear history of who did what and when.
+Each of these actions will be timestamped to provide a clear history of what was done and when.
 
 ### Dashboard Visualization & UI Design
 
