@@ -20,13 +20,24 @@ assess product-market fit.
 
 We review KPIs every Tuesday as part of our recurring strategy meeting. 
 At this point in time, we review the following KPIs:
-* Engineering throughput 
+* [Engineering Throughput](#engineering-throughput) 
 * NR Active Instances
 * MQLs
 * CARR Projected (This Q)
 * CARR Closed (This Q)
 * CARR Goal (This Q)
 * MRR
+
+### Engineering Throughput
+
+Engineering throughput is a measure of how much value we're able to deliver to our customers. It's calculated by summing the total number of Pull Requests merged in a given time frame across the following repositories:
+
+- [FlowFuse](https://github.com/flowfuse/flowfuse)
+- [Node-RED](https://github.com/node-red/node-red)
+- [FlowFuse Dashboard](https://github.com/flowfuse/node-red-dashboard)
+- [Node-RED Launcher](https://github.com/flowfuse/node-red-launcher)
+
+An interactive Dashboard for these metrics, and a breakdown of the specifics issues and Pull Requests involved can be found [here](https://github-stats.flowfuse.cloud/dashboard/analysis)
 
 ### Annual Recurring Revenue (ARR)
 
@@ -39,6 +50,26 @@ hard to build a business with products with unpredictable revenue streams. Furth
 it's usually harder to scale.
 
 Target growth for this metric is 10% week over week.
+
+### Monthly Recurring Revenue (MRR) for Self-Service
+
+Customers on self-service plans, which presently includes only FlowFuse Cloud (FFC) Starter and Team tier, pay on a monthly basis. For these customers, we track Monthly Recurring Revenue (MRR). 
+
+The MRR of both the Starter and Team tier is equal to the sum of all monthly subscriptions for those two tiers, including metered add-ons for additional services like remote instances and larger instances. As fees are paid on a monthly basis, such revenue is considered to be recurring.
+
+At any time, the current MRR of FFC Starter and Team can be calculated by looking up the corresponding products in Stripe, and adding the sum of each individual product's MRR. 
+
+Those products are:
+- FlowFuse Cloud - Starter
+- Starter - Small Instance Add-On
+- Starter - Remote Instance Add-On
+- FlowFuse Team Platform - Cloud
+- Team - Small Instance Add-On
+- Team - Medium Instance Add-On
+- Team - Large Instance Add-On
+- Team - Remote Instance Add-On
+
+For Starter, we calculate MRR by multiplying the total number of subscriptions by the cost of the subscription. This helps keep the focus on growing the number of Starter subscriptions rather than being distracted by noise introduced by short-term discounts, like promotional coupons.
 
 ## OKRs
 

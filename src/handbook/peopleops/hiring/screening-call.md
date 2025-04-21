@@ -15,5 +15,6 @@ During this call FlowFuse should understand:
 1. Compensation range for the candidate
 1. The candidate's time zone and any overlap information that is needed
 1. Notice period, or time from offer to start
+1. "How do you manage your todo list?"
 
 Generally half of all candidates in the screening stage will not move to the next stage of the interview process.

@@ -90,6 +90,6 @@ _OEE Dashboard_
 ![OEE Dashboard](./images/oee-dashboard-2.png){data-zoomable}
 _OEE Dashboard_
 
-## What Next?
+## What Next
 
-[Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/) of this series was published shortly after. Those eager to quickly launch an OEE dashboard in their factory environment did not have to wait [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/). Gain insights swiftly, optimize your operations, and enhance efficiency starting today! 
+Here’s [Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/) on the next steps to build your OEE dashboard with FlowFuse. But if you rather skip the tutorials and dive straight in, just [register for a FlowFuse account](https://app.flowfuse.com/account/create) and start using our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to optimize your operations and boost efficiency right away!
