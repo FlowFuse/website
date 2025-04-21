@@ -1,8 +1,8 @@
 ---
 title: "Part 1: Building an Andon Task Manager with FlowFuse"
-subtitle: A step-by-step guide to building a real-time request reporting and response system using Node-RED and FlowFuse.
-description: 
-date: 2025-04-09
+subtitle: Build a real-time Andon Task Manager with FlowFuse and Node-RED, covering key features, dashboard design, and data storage.
+description: Learn how to build a real-time Andon Task Manager using FlowFuse and Node-RED. This step-by-step guide covers request tracking, dashboard design, and data storage with SQLite and context storage.
+date: 2025-04-22
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/Building-an-Andon-Task-Manager-with-FlowFuse-1.png
 keywords: free andon task manager dashboard, andon task manager free, building andon task manager, node-red andon task manager, flowfuse andon task manager
@@ -14,7 +14,9 @@ In modern manufacturing and service environments, speed and transparency are cri
 
 <!--more-->
 
-However, many manufacturers struggle to find a solution that truly fits their needs. Some tools lack essential features, while others are overloaded with unnecessary ones that add complexity. In this series, we’re going to build a real-time Andon Task Manager using FlowFuse—starting with the foundation and planning in this first part. The result will be a system that’s fully customizable to fit your needs, easy to manage, and scalable across teams or factory floors.
+However, many manufacturers struggle to find a solution that truly fits their needs. Some tools lack essential features, while others are overloaded with unnecessary ones that add complexity.
+
+This blog series introduces a practical approach to building a real-time Andon Task Manager using FlowFuse and Node-RED. In this first part, the focus is on understanding the concept of an Andon system and laying the foundation for the solution.
 
 ## What is the Andon Task Manager?
 
@@ -22,97 +24,69 @@ The Andon Task Manager is a digital system designed to streamline real-time issu
 
 At its core, it’s a communication and response tool designed to improve transparency and speed on the factory floor or within service teams. Frontline workers can quickly raise issues—like equipment breakdowns, material shortages, or support needs—which are immediately sent to the right person or team. Once the issue is resolved, the responder updates the status so everyone stays informed and the task is properly closed.
 
+## What Problem It Solves?
+
+In a typical manufacturing environment, multiple processes run simultaneously across large factory floors. Each area—or line—has specific machinery, workflows, and potential points of failure. When something goes wrong, quick and clear communication is essential. However, factories are often spread out, and support teams are divided across different departments (e.g., maintenance, quality control, safety, etc.).
+
+In many cases, workers rely on informal or manual systems—such as radio calls, phone messages, or shouting across the floor—to report issues. These methods are inefficient, error-prone, and often delay response times. The lack of a structured, real-time communication system leads to:
+
+- Delayed responses because support staff are unaware of new issues
+- Lack of visibility into the status of reported issues
+= No accountability for weather the issue is acknowledged/resolved or not
+- Unstructured logging that makes follow-up or audits difficult
+
+The Andon Task Manager solves this by acting as a centralized system where any frontline worker can quickly raise an issue. Once submitted, the request is instantly visible to the relevant department—without needing someone to manually assign it. This enables self-routing and real-time visibility, ensuring the right people take action quickly and efficiently, even when the requester and responder are in completely different parts of the factory.
+
 ## Planning the Andon Task Manager
 
-Before building the system, it is important to define its core components and plan how each part will work together. We will also discuss the visual components that will be used in the dashboard to ensure operators and responders can interact with the system efficiently. This planning phase helps establish a clear, scalable architecture and avoids unnecessary complexity down the line.
+At the core of the system is the concept of a request. Every request represents a task or issue raised by an operator. To ensure traceability and clarity, each request should include key details. This structured format makes it easier for departments to manage and resolve issues efficiently.
 
-### Breaking Down the Request and Its Data Fields
+Each request must include the following:
 
-The request is the core of the Andon Task Manager. Each request represents a task raised by a frontline worker and needs to carry essential information for proper tracking and resolution. This includes:
+- `id`: A unique identifier for the request.
+- `line`: The line or machine where the issue was raised.
+- `department`: The department responsible for resolving the issue.
+- `created`: The timestamp when the request was created.
+- `acknowledged`: Optional timestamp indicating when the request was acknowledged.
+- `resolved`: Optional timestamp indicating when the issue was resolved.
+- `note`: Optional text added by users for context or follow-up.
+Only predefined values for line and department should be allowed. These values will be managed through admin settings to ensure consistency across the system.
 
-- the line where the issue occurred
-- the department responsible
-- the time the request was made
-- whether it has been acknowledged and when
-- whether it has been resolved and when
-- any notes providing additional context
+### Defining Key Features
 
-Having this data ensures that every request is clearly documented, easy to follow, and can be addressed efficiently.
+The system needs to support core operations that reflect how issues are reported and resolved in real-life factory environments. These features help ensure that tasks are handled efficiently and that everyone involved knows the current status.
 
-#### Request Table Fields
+The essential features include:
 
-When creating the database table, we will need the following fields:
+- Request creation: Users select the line and department, optionally enter a note, and submit a request.
+- Acknowledge requests: A responder can mark a request as acknowledged once they start working on it.
+- Resolve requests: After resolving the issue, the responder marks it as resolved.
+- View filtering: Requests can be filtered by line or department.
+- Admin tools: Admins can add and manage the list of departments and lines.
+- Status display: Requests display their current state — pending, acknowledged, or resolved.
+- Alerts (optional): Visual or sound alerts for unacknowledged requests after a time threshold.
 
-- `id`
-- `line`
-- `department`
-- `created_at`
-- `acknowledged` (null or timestamp when acknowledged)
-- `resolved` (null or timestamp when resolved)
-- `notes`
+Each of these actions will be timestamped to provide a clear history of who did what and when.
 
-Since the `department` and `line` fields are part of the request, we will also need a reference list of all available lines and departments in the factory. This ensures that requesters and resolvers can create and manage requests using consistent, validated options.
+### Dashboard Visualization & UI Design
 
-## Outlining Key Feature Requirements
+With the core features defined, the next step is to design a dashboard that is intuitive and efficient for both frontline workers and admin users. A well-structured user interface ensures quick interaction and smooth navigation, especially in fast-paced environments where timely responses are critical.
 
-Now that we know what kind of data each request should include, let’s look at the key features the system needs to support. These are the basic building blocks that will help both frontline workers and responders use the system effectively.
+The system will support two distinct user roles: admins and regular users. Regular users will have access to features specific to their role, such as submitting requests, viewing requests by department or line, and managing tasks relevant to their area. Admins, on the other hand, will have extended capabilities, including the ability to create and manage departments and lines, and access a full view of all request data.
 
-### Core Features
+The dashboard will be implemented as a single-page interface with dynamic content updates. Instead of traditional page navigation, the content will change based on the user's selection of a line or department. For example, when a user selects a specific production line, the request list and relevant controls will update automatically to reflect only those related to the chosen line.
 
-- **Create and Submit Requests**  
-  Frontline workers should be able to raise a request easily by selecting the line and department, adding a quick note, and submitting it. Each request should automatically record the time it was created.
+Admins will have access to a dedicated view that includes a form for creating new lines or departments, along with a comprehensive table showing all existing requests. This view will also include a user-friendly menu for quickly switching between departments and lines, making it easy to manage the full system from a centralized location.
 
-- **Update Request Status**  
-  Once a team member sees the request, they should be able to acknowledge it. After the issue is handled, they should also be able to mark it as resolved. The system should log both of these timestamps.
+Regular users will interact with a streamlined version of the dashboard. They can use drop-down menus or navigation panels to select their department or line, and the interface will update to show only the relevant request list and input form. This filtered view reduces visual clutter and helps users focus on the tasks that matter to them.
 
-- **Filter by Line and Department**  
-  Since different teams might be handling different lines or departments, users should be able to view and filter requests based on this information.
+To support efficient navigation for all users, the dashboard will include:
 
-- **Manage Departments and Lines**  
-  There should be a way to add or update the list of departments and lines—ideally only available to admins—so the options stay clean and consistent.
+- A department menu and line menu for selecting context.
+- A dynamic request list that updates based on the selected context.
+- Simple, role-appropriate controls for creating, acknowledging, and resolving requests.
 
-- **Clear Status Tracking**  
-  Every request should show its current state: whether it’s still waiting, acknowledged, or resolved. This helps everyone quickly understand what needs attention.
-
-- **Real-Time Visual Feedback**  
-  The dashboard should highlight new or pending requests with visual cues. For example, unacknowledged requests could appear in a darker or more prominent color to draw attention.
-
-- **Optional Sound Alerts**  
-  To make sure urgent requests don’t go unnoticed, the system could also play a sound if a request has not been acknowledged within a certain time.
-
-## Dashboard Visualization & UI Design
-
-With the core features defined, the next step is to design a dashboard that is easy to use and efficient for both frontline workers and managers and admin users. A good UI ensures quick interaction and smooth navigation, especially in fast-paced environments.
-
-The system will support two user roles: **admins** and **regular users**. Regular users will have access only to features relevant to their role, such as viewing and managing requests by line or department. Admins will have extended capabilities, including the ability to create and manage departments and lines.
-
-The dashboard will be designed as a single-page interface with dynamic content rendering. Instead of navigating between pages, the interface will update based on the user’s selection. For example, selecting a specific line or department will refresh the main view to show relevant requests and controls.
-
-Admins will have access to a dedicated section that includes a form for creating new lines or departments and a table listing all requests. Regular users will interact with filtered views as per their selection of department and line.
-
-To support efficient navigation, the dashboard will include menus for selecting specific lines or departments. These menus will dynamically update the request list and input forms to match the selected context, allowing users to view, create, and manage requests.
-
-This design keeps the dashboard focused, avoids unnecessary complexity, and ensures a smooth experience for both everyday users and administrators.
-
-### In summary, our dashboard will include:
-
-#### Admin Page
-- Menu to select and navigate to specific departments or lines
-- Form to create new departments and lines
-- Table to view and manage all requests across the system, with Acknowledge and Resolve buttons
-
-#### Line View
-- Filtered table showing only the requests for the selected line
-- Form to create a new request for that line
-
-#### Department View
-- Filtered table showing only the requests for the selected department
-
-#### Line Menu
-- Displays a list of all available lines
-
-#### Department Menu
-- Displays a list of all available departments
+This design keeps the interface focused and responsive. It avoids unnecessary complexity while providing all necessary tools for users to perform their tasks efficiently — whether they are reporting an issue or managing overall operations.
 
 ![The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager.](./images/dashboard-admin-veiw.png){data-zoomable}
 _The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager._
@@ -129,14 +103,16 @@ _The following dashboard image illustrates the intended design and key objective
 ![The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager.](./images/department-wise.png){data-zoomable}
 _The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager._
 
-## Storage Mechanism
+### Storage Mechanism
 
-Let us now look at how data is stored in the Andon Task Manager. To keep things simple and efficient, we use an SQLite database for storing user requests. SQLite is lightweight, easy to manage, and well-supported in Node-RED through the `node-red-contrib-sqlite` node, making it ideal for local deployments.
+To ensure a simple and efficient data management system for the Andon Task Manager, we will use SQLite to store user requests. SQLite is a lightweight, easy-to-manage database that is well-supported in Node-RED through the `node-red-contrib-sqlite node`. This makes it an ideal choice for local deployments or scenarios where a lightweight database is needed.
 
-For storing dynamic data like the user’s selected line or department, as well as the full list of available lines and departments, we use FlowFuse’s built-in context storage. This approach ensures fast access and persistent state across sessions, without adding database complexity.
+For dynamic runtime data—such as the user's selected line or department, as well as the full list of available lines and departments—FlowFuse’s built-in context storage will be utilized. This solution allows for fast access to real-time data while maintaining persistent state across sessions, without introducing unnecessary database complexity or overhead.
+
+By using both SQLite for structured request data and context storage for dynamic, session-based information, the system remains efficient and easy to maintain.
 
 ## Up Next
 
-In this first part of the series, we defined the foundation for building a real-time Andon Task Manager using FlowFuse. We explored the core objectives of an Andon system, detailed the structure of request data, outlined key functional requirements, and proposed a streamlined dashboard design tailored to both frontline users and administrators.
+In this first part of the series, we've laid the groundwork for building a real-time Andon Task Manager using FlowFuse. We explored the key objectives of an Andon system, detailed the structure of request data, outlined essential functional requirements, and proposed a streamlined dashboard design for both frontline users and administrators.
 
-With a solid understanding of the data flow, UI layout, and user interactions, we’re now ready to move into implementation. In the next part, we will cover building the **Line** and **Department** views, along with the menus for selecting departments and lines. In a later part, we will show how to build the **Admin interface**.
+With a clear understanding of the data flow, UI layout, and user interactions, we’re now prepared to move on to the implementation phase. In the next part, we will focus on developing the Lines view for normal users, along with the navigation menu, and the menus for selecting lines and departments. Later, we will cover the development of the Admin interface.
