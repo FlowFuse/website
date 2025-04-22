@@ -91,10 +91,13 @@ To improve the usability and visual impact of your Andon Task Manager, it is ess
 
 For our Andon task manager, we chose the following colors:
 
-- **Charcoal Blue (#1A1C24)**: <span style="background-color:#1A1C24; color:white; padding:0 5px;">#1A1C24</span> Used for the header and button backgrounds to create a strong visual presence and maintain consistency across the interface.
-- **White (#FFFFFF)**: <span style="background-color:#FFFFFF; color:black; padding:0 5px;">#FFFFFF</span> Applied to group backgrounds and button labels, ensuring readability and clear separation of interface elements.
-- **Black (#000000)**: <span style="background-color:#000000; color:white; padding:0 5px;">#000000</span> Used for all primary text to maximize contrast and improve legibility in various lighting conditions.
-- **Light Gray (#EEEEEE)**: <span style="background-color:#EEEEEE; color:black; padding:0 5px;">#EEEEEE</span> Serves as the page background, providing a neutral base that helps foreground elements stand out without being visually overwhelming.
+- **Charcoal Blue (#1A1C24)**: <span style="background-color:#1A1C24; color:white; padding:0 5px; border:2px solid #C7D2FE; display:inline-block;">#1A1C24</span> Used for the header and button backgrounds to create a strong visual presence and maintain consistency across the interface.
+
+- **White (#FFFFFF)**: <span style="background-color:#FFFFFF; color:black; padding:0 5px; border:2px solid #C7D2FE; display:inline-block;">#FFFFFF</span> Applied to group backgrounds and button labels, ensuring readability and clear separation of interface elements.
+
+- **Black (#000000)**: <span style="background-color:#000000; color:white; padding:0 5px; border:2px solid #C7D2FE; display:inline-block;">#000000</span> Used for all primary text to maximize contrast and improve legibility in various lighting conditions.
+
+- **Light Gray (#EEEEEE)**: <span style="background-color:#EEEEEE; color:black; padding:0 5px; border:2px solid #C7D2FE; display:inline-block;">#EEEEEE</span> Serves as the page background, providing a neutral base that helps foreground elements stand out without being visually overwhelming.
 
 To create a dashboard design like this on your own, it's essential to recognize the importance of the theme. A well-designed theme should be appropriate for the environment it's used in, cater to the needs of the users, and set the right tone.
 
