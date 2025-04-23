@@ -16,7 +16,7 @@ Fast issue resolution and clear communication are critical in modern manufacturi
 
 Despite their value, many off-the-shelf Andon solutions lack flexibility or have unnecessary complexity that slows adoption.
 
-This blog series will guide you through building a real-time Andon Task Manager using FlowFuse and Node-RED—tools that offer low-code flexibility, cloud scalability, and built-in security. In Part 1, we break down what an Andon system is and discuss the basic planning needed to start building your own solution.
+This blog series will guide you through building a real-time Andon Task Manager using FlowFuse—tool that offer low-code flexibility, cloud scalability, and built-in security. In Part 1, we break down what an Andon system is and discuss the basic planning needed to start building your own solution.
 
 Let’s get started.
 
