@@ -1,5 +1,5 @@
 ---
-navTitle: Board
+navTitle: Board & Investors
 ---
 
 ## Board meetings
@@ -32,3 +32,10 @@ Assets will always include:
 1. A link to the final board deck with metrics in the shared Google Drive
 2. A link to the final pre-read for the Strategic Discussion
 3. List of action items
+
+## Investors
+
+FlowFuse investors get a monthly update sent to them, which contains the KPI's we track and editorialized
+information from the CEO on company performance.
+
+Major investors have information to more data on company performance through Carta.
