@@ -1,6 +1,6 @@
 ---
 title: "Part 1: Building an Andon Task Manager with FlowFuse"
-subtitle: Build a real-time Andon Task Manager with FlowFuse and Node-RED, covering key features, dashboard design, and data storage.
+subtitle: Learn how to build a real-time Andon Task Manager using FlowFuse and Node-RED. This guide covers the introduction to Andon systems, the problems they solve, and detailed planning for request tracking, storage, and dashboard design.
 description: Learn how to build a real-time Andon Task Manager using FlowFuse and Node-RED. This step-by-step guide covers request tracking, dashboard design, and data storage with SQLite and context storage.
 date: 2025-04-23
 authors: ["sumit-shinde"]
@@ -39,6 +39,8 @@ Workers often rely on informal or manual systems—such as radio calls, phone me
 The Andon Task Manager solves this as a centralized system where any frontline worker can quickly raise an issue. Once submitted, the request is instantly visible to the relevant department—without needing someone to assign it manually. This enables self-routing and real-time visibility, ensuring the right people take action quickly and efficiently, even when the requester and responder are in entirely different factory parts.
 
 ## Planning the Andon Task Manager
+
+Before we dive into the development of the Andon Task Manager, it's essential to lay the groundwork with a clear plan. In this section, we will define the core features, structure, and storage mechanisms that will shape the system. With a solid plan in place, we'll be able to efficiently build the system, ensuring it meets real-world requirements for managing tasks and issues in a factory setting.
 
 ### The Request
 
@@ -88,7 +90,7 @@ Admins will have a dedicated view to create new departments and lines, see all r
 
 Regular users will see a simplified version of the dashboard. They can choose their department or line, and the dashboard will update to show only the relevant requests and options, such as the form to submit new requests for that line. This keeps the interface focused and streamlined for each user.
 
-**In summary:**
+#### In summary:
 
 **For regular users:**
 
@@ -122,6 +124,6 @@ _The following dashboard image illustrates the intended design and key objective
 
 ## Up Next
 
-In the next part of this series, we will focus on developing the Lines and Departments view for normal users and the navigation menu for selecting lines and departments. Later, we will cover the development of the Admin interface.
+In the next part of this series, we will bring this plan to life by developing the Lines view and the navigation menu for selecting different lines, where users can submit requests and manage them.
 
 But if you can't wait to get started right away, don’t worry! You can [register](https://app.flowfuse.com/account/create) for FlowFuse and get started with our ready-made [Andon Task Manager blueprint](/blueprints/manufacturing/andon-task/), which is pre-configured for easy deployment. Stay tuned for the next installment to continue your journey toward building a comprehensive, real-time Andon Task Manager solution.
