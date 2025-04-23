@@ -27,7 +27,7 @@ When you create a new document that should be shared with the team:
 
 1. Open the document in Google Docs/Sheets/Slides  
 2. Click on the folder icon near the document name at the top of the page  
-3. In the "Move item" dialog box, navigate to the appropriate shared folder. It looks like this: ![][image1]  
+3. In the "Move item" dialog box, navigate to the appropriate shared folder.  
 4. Select the destination folder and click "Move"
 
 Alternatively:
