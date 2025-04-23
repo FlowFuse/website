@@ -17,11 +17,14 @@ For self-managed licenses FlowFuse has a standard [subscription agreement templa
 
 When a customer requires FlowFuse's professional services, this is the [Professional Services Agreement](https://docs.google.com/document/d/1OsasRHu208IOarTiZXp_xLshJX7IKJqfTztgzgovCIA){rel="nofollow"}.
 
-## Cloud Partnership agreement
+## Partnership agreement
 
-For partners that will refer FlowFuse customer to FlowFuse, FlowFuse Cloud or otherwise, a 
-[standard referral agreement](https://docs.google.com/document/d/1BVls7LEC1CBQ6wlrb8GeWSYr2vj9fMqgdsWiWLoQZOY)
-is used. The terms of the contract are set by the CEO prior to sending the first draft to each partner.
+For partners who primarily identify potential opportunities and introduce FlowFuse to new clients, we offer a referral partnership program. In this model, once a referral is made and acknowledged, FlowFuse takes the lead in managing the sales cycle and the ongoing customer relationship, compensating the partner for the successful referral. For the contract this is considered a "Direct" customer for the partnership agreement.
+
+Furthermore, Value-Added Resellers (VARs) and System Integrators (SIs) are crucial to our ecosystem. These partners often integrate FlowFuse into broader solutions and deployment projects for their clients. They serve as the primary support contact for the end-user, backed by FlowFuse's expertise for escalated support issues, managing the commercial transaction with the end customer. For the partnership agreement, these are considered "Indirect" customers, to which VARs and SIs might sublicense FlowFuse to.
+
+The partnership agreement is provided to the counter party through the Account Executive. They can share our
+[standard referral agreement](https://docs.google.com/document/d/1hlmu75o-QG6OsSoBG60v6c0uUMUi98Mz).
 
 ## Non-disclosure agreement (NDA)
 
