@@ -12,6 +12,7 @@ FlowFuse uses Hubspot for generating quotes, and requesting the signatures on th
 ## Subscription agreement
 
 For self-managed licenses FlowFuse has a standard [subscription agreement template](/handbook/customer/sales/subscription-agreement-1.5/).
+When a customer sends over their Standard terms before signing the subscription agreement, we have a [standard repsonse overview](https://docs.google.com/document/d/1US_eixmRtzzFHybl3l9woP0isrwvK2_t7nPXoKYiuq4/edit?tab=t.0#heading=h.w8522tz1d0cr). 
 
 ## Professional Services agreement
 
