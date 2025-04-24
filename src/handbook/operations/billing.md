@@ -31,7 +31,7 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Change the dates, terms, products, discounts, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
 1. Under Invoice Settings, uncheck the box that automatically emails customers. You will want to manually create the invoice next before sending. This is because the converted subscriptions have limitations on what discounts can be applied.
 1. Click the Create button on the top right.
-2. [Structuring Subscriptions and Invoicing in HubSpo](https://docs.google.com/document/d/1UtRYUv7Wjb7CjON4DnNgv-nD-Gt4Bytymgtv1y9eLWY/edit?usp=sharing)
+2. [Structuring Subscriptions and Invoicing in HubSpot](https://docs.google.com/document/d/1UtRYUv7Wjb7CjON4DnNgv-nD-Gt4Bytymgtv1y9eLWY/edit?usp=sharing)
 
 ### Creating an invoice
 
