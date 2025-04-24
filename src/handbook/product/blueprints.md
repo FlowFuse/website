@@ -31,12 +31,12 @@ If a Blueprint is being developed internally, it should be added to the `bluepri
 
 ```markdown
 ---
-title: "OEE Dashboard" 
-description: "
-image: "./oee-dashboard.png"
+title: <Blueprint Name>
+description: "<Description goes here>"
+image: <Image Path>
 tags:
-    - blueprints
-    - manufacturing
+  - blueprints
+  - <blueprint tag such as manufacturing, getting-started, or other>
 layout: layouts/blueprint.njk
 blueprintId: <BlueprintId goes here>
 ---
@@ -127,13 +127,13 @@ _No response_
 
 ### Change Description
 
-This PR (https://github.com/FlowFuse/blueprint-library/pull/101) adds the OEE blueprint flow, along with documentation on how to use it with a real-world data source as well as with simulated data.
+This PR (<PR_LINK>) adds a new blueprint flow, along with documentation on how to use it with both real-world and simulated data sources.
 
 ### Validation Steps
 
-- [] Is the Blueprint PR approved?  
-- [] Is the blueprint added to production?  
-- [] Is the Blueprint PR document updated with the blueprint ID and merged?
+- [ ] Is the Blueprint PR approved?  
+- [ ] Is the blueprint added to the specified environment?  
+- [ ] Is the Blueprint PR documentation updated with the blueprint ID and merged?
 ```
 
 The issue should include a link to the relevant Pull Request in the Blueprint Library repository where your Blueprint has been published.
