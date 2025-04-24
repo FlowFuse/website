@@ -38,4 +38,4 @@ Assets will always include:
 FlowFuse investors get a monthly update sent to them, which contains the KPI's we track and editorialized
 information from the CEO on company performance.
 
-Major investors have information to more data on company performance through Carta.
+Major investors have access to more data on company performance through Carta.
