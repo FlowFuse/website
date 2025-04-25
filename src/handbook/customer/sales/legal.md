@@ -46,6 +46,7 @@ we will not allow third parties access to homes or offices of employees.
 ## Insurance Coverage
 
 The company maintains insurance for a wide range of events, the full list can be found on [the operations handbook](/handbook/operations/).
+Details of what insurance we have is available in [an internal-only Google doc](https://docs.google.com/document/d/1ZhhI8PNsp8QmyX4qHwLBGJ89GsnfmUYjau0qNZzSig0/edit?tab=t.0){rel="nofollow"}.
 
 ## Miscellaneous
 
