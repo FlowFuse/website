@@ -28,6 +28,11 @@ sections:
         selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'self-hosted' ]
         info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
+      - id: self-hosted-installation-support
+        label: Installation Support  
+        selfHostedValues: [ 'check', 'check' ]   
+        tags: [ 'self-hosted' ]
+        info:
       - id: custom-hostname
         label: Custom Hostnames
         cloudValues: [ null, null, null, 'check' ]
