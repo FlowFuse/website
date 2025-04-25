@@ -13,7 +13,7 @@ At FlowFuse, we believe that work should be [shared and accessible to all team m
 * Ensure institutional knowledge is preserved  
 * Enable asynchronous work across time zones
 
-Therefore, when saving your work, please consider whether it is saved in the appropriate folder in our shared Google Drive.
+Therefore, when saving your work, default to putting it in the shared Google Drive in the correct location. If storing your work with a wide audience isn't in accordance with our [data management policy](https://flowfuse.com/handbook/company/security/data-management/), keep it in your private Google Drive.
 
 ## **Proper Document Storage**
 
