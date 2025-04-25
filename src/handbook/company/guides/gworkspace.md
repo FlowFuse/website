@@ -6,7 +6,7 @@ FlowFuse uses Google Workspace for collaboration and productivity tools. Our Goo
 
 ## **Sharing Work**
 
-At FlowFuse, we believe that work should be shared and accessible to all team members who need it. This transparency helps us:
+At FlowFuse, we believe that work should be [shared and accessible to all team members by default](https://flowfuse.com/handbook/company/security/data-management/). This transparency helps us:
 
 * Collaborate more effectively  
 * Reduce duplication of effort  
