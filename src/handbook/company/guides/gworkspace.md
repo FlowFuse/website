@@ -1,4 +1,4 @@
-# **Google Workspace**
+**Google Workspace**
 
 ## **Overview**
 
