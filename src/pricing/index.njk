@@ -193,10 +193,8 @@ hubspot:
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href="{% if cloud %}{{ site.appURL }}/account/create{% else %}/contact-us{% endif %}"
-                                
-                                onclick="{% if cloud %}capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})">TRY FOR FREE{% else %}
-                                onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'})">CONTACT US
-                                {% endif %}
+                                onclick="{% if cloud %}capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'}){% else %}capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'}){% endif %}">
+                                {% if cloud %}TRY FOR FREE{% else %}CONTACT US{% endif %}
                             </a>
                         </div>
                         {% endmacro %}
