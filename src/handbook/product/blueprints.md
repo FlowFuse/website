@@ -27,7 +27,23 @@ We encourage Blueprint submissions from our customers, partners, and the wider c
 
 ### Internal Development
 
-If a Blueprint is being developed internally, then the Blueprint can be added to the Blueprint repository directly, via a Pull Request. An issue should be raised first in the `blueprint-library` repository to track the progress of the Blueprint, and to be sure the Blueprint aligns with the product and company strategy.
+If a Blueprint is being developed internally, it should be added to the `blueprint-library` repository via a Pull Request. First, create an issue in the same repository to track its progress and ensure alignment with product and company strategy. The Pull Request must be reviewed and tested by another team member. Once approved, [submit a Change Request](#submitting-a-change-request). When the responsible admin adds the Blueprint to the platform, they will share the Blueprint ID with the author, who should then include it in the Blueprint's README file:
+
+```markdown
+---
+title: <Blueprint Name>
+description: "<Description goes here>"
+image: <Image Path>
+tags:
+  - blueprints
+  - <blueprint tag such as manufacturing, getting-started, or other>
+layout: layouts/blueprint.njk
+blueprintId: <BlueprintId goes here>
+---
+Rest of the content...
+```
+
+Once done, the reviewer or the author can proceed to merge the Pull Request.
 
 ## Minimum Requirements
 
@@ -96,9 +112,33 @@ You can import the required comment node by importing the following JSON:
 
 #### Submitting a Change Request
 
-In order to add a Blueprint to FlowFuse Cloud, we need to submit a Change Request. Change Request's can be created by selecting "New Issue" in the [Cloud Project](https://github.com/FlowFuse/CloudProject/issues) repository.
+To add a Blueprint to FlowFuse Cloud, a Change Request must be submitted. Change Requests can be created by selecting "New Issue" in the [Cloud Project](https://github.com/FlowFuse/CloudProject/issues) repository.
 
-Your issue should include a link to the relevant Pull Request on the Blueprint Library repository whereby your Blueprint was published.
+Example Change Request: Change: Add OEE Dashboard Blueprint to production
+```
+### Environment
+
+- [ ] Staging
+- [x] Production
+
+### Due Date
+
+_No response_
+
+### Change Description
+
+This PR (<PR_LINK>) adds a new blueprint flow, along with documentation on how to use it with both real-world and simulated data sources.
+
+### Validation Steps
+
+- [ ] Is the Blueprint PR approved?  
+- [ ] Is the blueprint added to the specified environment?  
+- [ ] Is the Blueprint PR documentation updated with the blueprint ID and merged?
+```
+
+The issue should include a link to the relevant Pull Request in the Blueprint Library repository where your Blueprint has been published.
+
+Once the Blueprint is reviewed and approved, someone with admin access to FlowFuse will add it to the platform. After it is added, a Blueprint ID will be generated, which should be shared with the Blueprint author.
 
 #### Creating the Blueprint
 
