@@ -61,11 +61,12 @@ Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7
 
 ## After an offer is accepted
 
-Onboarding on our EOR provider, Deel, takes at least 2 to 3 weeks. The start
-date for a new employee should be at least 2 to 3 weeks out. When a
+Onboarding on our EOR provider, Deel, takes at least 1 to 3 weeks. The start
+date for a new employee should be at least 7 working days out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
+2. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening).
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
