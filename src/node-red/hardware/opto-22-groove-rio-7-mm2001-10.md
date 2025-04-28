@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Opto-22 Groov Rio R7
+  key: GRV-R7-MM2001-10
   parent: Hardware
 meta:
   title: Setting up Node-RED on Opto-22 Groov Rio R7
@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/GRV-R7-MM1001-10.jpeg"
 specifications:
   Model: GRV-R7-MM2001-10
-  RAM: 1 GB DDR3
+  RAM: 1024 MB
   Processor: ARM Cortex-A8, 1 GHz
   I/O Channels: 10 multi-signal, multifunction channels (analog I/O, temperature, discrete I/O, mechanical relays)
   Connectivity:
@@ -31,16 +31,16 @@ The Opto-22 Groov Rio R7 is a rugged edge I/O module designed for industrial app
 Before proceeding with the installation, ensure you have the following:
 
 - **Opto-22 Groov Rio R7** – A functioning device with internet access.
-- **FlowFuse Account** - Ensure you have a FlowFuse account. If not, you can create a free account that allows you to manage up to two edge devices for free. For more information, refer to [FlowFuse Free Tier](/blog/2024/12/flowfuse-release-2-12/)
+- **FlowFuse Account** - You need an active FlowFuse account to access the platform and configure your instance. If you do not have one, please visit the FlowFuse website and [sign up](https://app.flowfuse.com/account/create) for a new account before proceeding.
 - **Sudo Privileges** – Administrator access to install required packages.
 
 ## Getting Started
 
 This guide will walk you through setting up Node-RED on the Groov Rio R7 using the FlowFuse Device Agent, allowing you to manage, scale, and secure your remote instances effectively.
 
-{% include "hardware/system/debian-ff-install.njk" %}
+{% include "hardware/system/opto-22-groove-rio.md" %}
 
-{% include "hardware/device-registration.njk" %}
+{% include "hardware/device-registration.md" %}
 
 ### Configuring FlowFuse Device Agent to use the older Node-RED version
 
@@ -49,9 +49,9 @@ Since our device uses an older version of Node.js, we need to ensure that a well
 1. To configure your device to use a compatible version of Node-RED:
 
 2. Open the FlowFuse platform and navigate to the groov RIO 7 remote instance that you added.
-3. Switch to the Settings tab and then to the Editor section.
-4. Enter 3.1.15 in the Node-RED Version field, click Save Settings, and restart the device.
+3. Switch to the **Settings** tab and then to the **Editor** section.
+4. Enter "3.1.15" in the Node-RED Version field, click **Save Settings**, and **restart** the device.
 
-{% include "starting-device-agent-as-service-sysv.njk" %}
+{% include "hardware/starting-device-agent-as-service-sysv.md" %}
 
-{% include "hardware/accessing-node-red-editor.njk" %}
+{% include "hardware/accessing-node-red-editor.md" %}

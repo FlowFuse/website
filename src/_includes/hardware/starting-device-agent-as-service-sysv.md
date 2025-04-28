@@ -1,4 +1,3 @@
-{% raw %}
 ### Starting the FlowFuse Device Agent as a Service
 
 The system on this device typically utilizes SysVinit as its service management framework, responsible for starting, stopping, and managing background services during system boot and shutdown. On SysVinit-based systems, the FlowFuse Device Agent can be configured to run as a service at system startup by creating and enabling a custom init script.
@@ -78,4 +77,3 @@ sudo update-rc.d flowfuse-device-agent defaults
 ```
 
 This will register the script to start the FlowFuse Device Agent automatically at boot.
-{% endraw %}
