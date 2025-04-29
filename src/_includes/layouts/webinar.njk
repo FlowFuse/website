@@ -42,7 +42,7 @@ layout: layouts/base.njk
                 </div>
             </div>
             <div class="w-72 max-w-full">
-                {% if date | dateInFuture %}
+                {% if date | dateInFuture and not hubspot.downloadFormId %}
                     <div class="mt-6 flex flex-col">
                         <h3 class="mb-3">Register Here:</h3>
                         {% set cta = 'cta-webinar-register' %}
