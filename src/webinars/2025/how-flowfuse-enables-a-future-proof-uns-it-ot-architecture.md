@@ -1,19 +1,19 @@
 ---
 title: "How FlowFuse enables a future-proof UNS IT/OT architecture"
 meta:
-    description: Join Quintijn Steelant (Digital Manufacturing Consultant, Mayker) and Alejandro Simo (IT OT Architect, Mayker) in this session to learn how FlowFuse helps build a future-proof UNS for seamless IT/OT integration.
+    description: Watch Quintijn Steelant (Digital Manufacturing Consultant, Mayker) and Alejandro Simo (IT OT Architect, Mayker) in this session to learn how FlowFuse helps build a future-proof UNS for seamless IT/OT integration.
 image: /images/webinars/webinar-how-flowfuse-enables-a-future-proof-uns-it-ot-architecture.jpg
 date: 2025-04-29
 time: 17:00 CET (11:00pm ET) 
 duration: 60
-video:
+video: rz4PWOcfSd0
 hosts: ["quintijn-steelant", "alejandro-simo"]
 hubspot:
     formId: 04f4903a-1063-43e7-b0ac-369b931a6e11
-    downloadFormId:
+    downloadFormId: e216f941-6b00-4cbe-811c-4d7c9c5e5a66
 ---
 
-**Join Quintijn Steelant (Digital Manufacturing Consultant) and Alejandro Simo (IT OT Architect) from the [Mayker](https://mayker.eu/) team in this session to learn how FlowFuse helps build a future-proof UNS for seamless IT/OT integration.**
+**Watch Quintijn Steelant (Digital Manufacturing Consultant) and Alejandro Simo (IT OT Architect) from the [Mayker](https://mayker.eu/) team in this session to learn how FlowFuse helps build a future-proof UNS for seamless IT/OT integration.**
 
 <!--more-->
 
@@ -28,4 +28,4 @@ Key topics include:
 
 This session is a must for **IIoT Solution Architects, Digital Manufacturing professionals, and IT/OT leaders** looking to build a robust data architecture that scales with their digital transformation initiatives.
 
-Join us to discover how FlowFuse enables a flexible, future-proof UNS architecture and learn practical implementation strategies. Don’t miss this opportunity to gain valuable insights and have your questions answered by industry experts!
+Discover how FlowFuse enables a flexible, future-proof UNS architecture and learn practical implementation strategies. Don’t miss this opportunity to gain valuable insights and have your questions answered by industry experts!
