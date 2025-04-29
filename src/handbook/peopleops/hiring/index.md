@@ -24,9 +24,9 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/Flow
 1. Update the redirect URL in the `njk` file to match that added in Step 1.
 1. Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant page
 
-#### Otta Integration
+#### Welcome to the Jungle Integration
 
-We have an automated integration setup with [Otta](https://hire.otta.com). When a job is posted to our Greenhouse account, it _should_ appear on Otta within 24 hours. If it does not, raise a support ticket with them, and it should be addressed an made public very soon after.
+We have an automated integration setup with [Welcome to the Jungle](https://hire.welcometothejungle.com). When a job is posted to our Greenhouse account, it _should_ appear on Otta within 24 hours. If it does not, raise a support ticket with them, and it should be addressed and made public very soon after. We have to pay to actually post the role, but they will email you a friendly prompt to consider the opportunity.
 
 ### Referrals
 
