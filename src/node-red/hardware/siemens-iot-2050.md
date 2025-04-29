@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/siemens-iot-2050.jpg"
 specifications:
   Model: IOT2050 Basic
-  RAM: 1GB DDR4
+  RAM: 1024
   Processor: ARM TI AM6528 GP
   GPIO: x20 Digital I/O
   Connectivity: 1x RS 232 / 422 / 485, Ethernet, USB 2.0, Arduino, mPCIe
