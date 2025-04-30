@@ -28,4 +28,6 @@ Key topics include:
 
 This session is a must for **IIoT Solution Architects, Digital Manufacturing professionals, and IT/OT leaders** looking to build a robust data architecture that scales with their digital transformation initiatives.
 
-Discover how FlowFuse enables a flexible, future-proof UNS architecture and learn practical implementation strategies. Don’t miss this opportunity to gain valuable insights and have your questions answered by industry experts!
+Discover how FlowFuse enables a flexible, future-proof UNS architecture and learn practical implementation strategies.
+
+If you have any questions or want to explore how FlowFuse can support your next project, feel free to [reach out](/book-demo/). We’d love to hear from you!
