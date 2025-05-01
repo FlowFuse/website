@@ -19,5 +19,6 @@ During this call FlowFuse should understand:
    * Any plans to change location in the near future
 1. Notice period, or time from offer to start
 1. "How do you manage your todo list?"
+1. "How are you using Generative AI in your workflows today?"
 
 Generally half of all candidates in the screening stage will not move to the next stage of the interview process.
