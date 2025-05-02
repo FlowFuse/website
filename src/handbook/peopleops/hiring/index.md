@@ -159,6 +159,24 @@ Before the peopleops team extends an offer, explicit approval is required from:
 
 When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
 
+#### Rejecting Candidates
+
+We will interview candidates at every stage of the interviewing process. When we reject candidates, there are three kinds of rejections: 
+* pre-interview
+* post-screen
+* after candidates have done multiple interviews
+
+Pre-interview, we use the template in Greenhouse to reject candidates. We want candidates to know that we are not moving forward with them. 
+Note: Some candidates who apply through LinkedIn do not attach valid emails to their application, in which case we reject without emailing, but otherwise we always try to let them know. 
+
+Post-screen, we use a different template in Greenhouse to reject candidates. This template recognizes that candidates have spent time with us. 
+
+After candidates have done multiple interviews, we may want to write a more personal email letting them move on. This is up to hiring manager's discretion. In this case, we should make sure to reject via Greenhouse but not send emails. 
+
+##### Candidate Feedback
+
+At times candidates may request feedback on why we are not moving forward with their candidacy. By default, we do not provide feedback, but in some circumstances a hiring manager may be open to discussing further with the candidate.
+
 ### Closing a job
 
 As soon as there's a pipeline that would support at least three strong candidates
