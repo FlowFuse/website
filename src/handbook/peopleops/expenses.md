@@ -99,9 +99,9 @@ We recommend everyone has a quality microphone and web-cam, even if they are onl
 
 #### Suggested Setup
 
-[FiFine USB Microphone](https://fifinemicrophone.com/collections/usb-mics/products/fifine-k669-669b) (~$30)
-[Microphone Stand](https://www.amazon.co.uk/Aokeo-AK-35-Microphone-Suspension-Scissor/dp/B01MZ99Y67) (~$25)
-[Logitech C920 Webcam](https://www.logitech.com/en-gb/products/webcams/c920-pro-hd-webcam.960-001055.html) (~$100)
+* [FiFine USB Microphone](https://fifinemicrophone.com/collections/usb-mics/products/fifine-k669-669b) (~$30)
+* [Microphone Stand](https://www.amazon.co.uk/Aokeo-AK-35-Microphone-Suspension-Scissor/dp/B01MZ99Y67) (~$25)
+* [Logitech C920 Webcam](https://www.logitech.com/en-gb/products/webcams/c920-pro-hd-webcam.960-001055.html) (~$100)
 
 ### Asset purchases over $500
 
