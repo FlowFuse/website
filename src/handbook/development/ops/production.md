@@ -19,9 +19,8 @@ By default, FlowFuse employee accounts do not have Admin level access. A dedicat
 admin account exists with details in `1Password` for those with approved admin level
 access.
 
-If you want to create your own Team for work purposes, use your Brex card when setting
-up the billing details. You can then request a Stripe Coupon to cover the costs
-by raising an issue in [CloudProject](https://github.com/FlowFuse/CloudProject)
+If you want to create your own Team for work purposes, request your team to be
+upgraded using manual billing by filing a [change request issue](/handbook/operations/change/#flowfuse-cloud-change-control).
 
 ## Deployment to FlowFuse Cloud
 
