@@ -22,8 +22,8 @@ When using AI tools for development, never share:
 ### GitHub Copilot
 
 We do not currently provide organization-wide licenses for GitHub Copilot, but if
-team members wish to purchase an individual license they can do so via their Brex
-card and expense the cost.
+team members wish to purchase an individual license they can do so and
+expense the cost.
 
 As it stands, some of the team already have Copilot access via their Open Source work
 at no cost. To enable it at the organization level will cost almost twice that of
