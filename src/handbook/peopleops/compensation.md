@@ -27,6 +27,11 @@ accompanied by an [exhibit](https://docs.google.com/document/d/1kYxnzVR0lh0GIZ1F
 When the terms of the next years compensation plan are signed they should be put
 into this [private Google Drive directory](https://drive.google.com/drive/folders/1yVryN4Kir7n8TLbM_cEttXb_rDC2ORn2) by managment.
 
+## Sales Commissions
+
+FlowFuse pays out commissions to sales reps, the terms of which are to be found
+in [this template doc](https://docs.google.com/document/d/14KSf0N5H6vzUPJrpIqQGffgHk-_5OK2HeS-fuRHTSYw).
+
 ## Performance Review
 
 Performance reviews will be carried out annually, in September. Any employee or
@@ -56,7 +61,7 @@ Equity grants are subject to board approval.
 
 ### Benefits
 
-The final component of our total compensation is the benefits package. While our intention is to keep these benefits as location independent as possible and practical, we also strive to provide all employees with a decent standard of living. Therefore, in certain cases, we may offer location-dependent benefits to ensure that appropriate standards are met. 
+The final component of our total compensation is the benefits package. While our intentionis to keep these benefits as location independent as possible and practical, we also strive to provide all employees with a decent standard of living. Therefore, in certain cases, we may offer location-dependent benefits to ensure that appropriate standards are met. 
 
 Please note that the benefits offered may be subject to change during your employment. These changes may occur due to evolving legislation, fluctuations in the costs associated with providing the benefits, situations where the costs outweigh the benefits for team members, or other relevant reasons. We aim to ensure that any adjustments made to the benefits package are made with careful consideration and the best interests of our employees in mind.
 
