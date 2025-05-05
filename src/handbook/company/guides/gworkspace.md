@@ -4,7 +4,7 @@
 
 FlowFuse uses Google Workspace for collaboration and productivity tools. Our Google Workspace includes Gmail, Drive, Docs, Sheets, Slides, Meet, Calendar, and other applications that help us work efficiently as a team.
 
-## **Sharing Work**
+**Sharing Work**
 
 At FlowFuse, we believe that work should be [shared and accessible to all team members by default](https://flowfuse.com/handbook/company/security/data-management/). This transparency helps us:
 
