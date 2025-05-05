@@ -21,7 +21,7 @@ Therefore, when saving your work, default to putting it in the shared Google Dri
 
 When you create a new Google Doc, Sheet, or Slide, by default it is saved in "My Drive" \- your personal Google Drive space. While this is fine for personal drafts or notes, any work that may be valuable to others in the company should be moved to the appropriate shared folder.
 
-### **How to Move Files to a Shared Folder**
+**How to Move Files to a Shared Folder**
 
 When you create a new document that should be shared with the team:
 
