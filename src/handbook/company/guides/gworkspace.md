@@ -4,7 +4,7 @@
 
 FlowFuse uses Google Workspace for collaboration and productivity tools. Our Google Workspace includes Gmail, Drive, Docs, Sheets, Slides, Meet, Calendar, and other applications that help us work efficiently as a team.
 
-**Sharing Work**
+## Sharing Work
 
 At FlowFuse, we believe that work should be [shared and accessible to all team members by default](https://flowfuse.com/handbook/company/security/data-management/). This transparency helps us:
 
@@ -15,13 +15,13 @@ At FlowFuse, we believe that work should be [shared and accessible to all team m
 
 Therefore, when saving your work, default to putting it in the shared Google Drive in the correct location. If storing your work with a wide audience isn't in accordance with our [data management policy](https://flowfuse.com/handbook/company/security/data-management/), keep it in your private Google Drive.
 
-**Proper Document Storage**
+## Proper Document Storage
 
-**Shared Drive vs. Personal Drive**
+### Shared Drive vs. Personal Drive
 
 When you create a new Google Doc, Sheet, or Slide, by default it is saved in "My Drive" \- your personal Google Drive space. While this is fine for personal drafts or notes, any work that may be valuable to others in the company should be moved to the appropriate shared folder.
 
-**How to Move Files to a Shared Folder**
+### How to Move Files to a Shared Folder 
 
 When you create a new document that should be shared with the team:
 
@@ -38,7 +38,7 @@ Alternatively:
 4. Navigate to the appropriate shared folder  
 5. Click "Move here"
 
-**Access Permissions**
+### Access Permissions
 
 By storing your documents in the shared drive, you ensure they have the correct default permissions. However, there may be times when you need to adjust sharing settings.
 
@@ -50,7 +50,7 @@ To change permission settings:
 
 For sensitive documents, please use the principle of least privilege \- only grant access to those who need it.
 
-**Best Practices**
+## Best Practices
 
 * **Use descriptive file names** that clearly indicate the content and purpose  
 * **Include dates in file names** for documents that are updated periodically  
