@@ -28,8 +28,8 @@ The Robustel EG5120 supports multiple connectivity options including Ethernet, W
 
 This guide explores how to install and run Node-RED through the FlowFuse Device Agent on the Robustel EG5120, enabling you to build, manage, and scale Node-RED flows efficiently from a remote location.
 
-{% include "hardware/system/debian-ff-install.njk" %}
+{% include "hardware/system/debian-ff-install.md" %}
 
-{% include "hardware/device-registration.njk" %}
+{% include "hardware/device-registration.md" %}
 
-{% include "hardware/accessing-node-red-editor.njk" %}
+{% include "hardware/accessing-node-red-editor.md" %}

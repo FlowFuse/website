@@ -1,4 +1,3 @@
-{% raw %}
 ## Accessing Node-RED Editor.
 
 1. Login into your FlowFuse account.
@@ -7,4 +6,3 @@
 4. Once Developer Mode is enabled, click on the Open Editor option located next to the that switch.
 
 For more information refer to [FlowFuse documentation](/docs/user/introduction/#working-with-devices)
-{% endraw %}
