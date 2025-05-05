@@ -50,7 +50,7 @@ To change permission settings:
 
 For sensitive documents, please use the principle of least privilege \- only grant access to those who need it.
 
-## **Best Practices**
+**Best Practices**
 
 * **Use descriptive file names** that clearly indicate the content and purpose  
 * **Include dates in file names** for documents that are updated periodically  
