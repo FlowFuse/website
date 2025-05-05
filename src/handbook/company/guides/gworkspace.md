@@ -38,7 +38,7 @@ Alternatively:
 4. Navigate to the appropriate shared folder  
 5. Click "Move here"
 
-## **Access Permissions**
+**Access Permissions**
 
 By storing your documents in the shared drive, you ensure they have the correct default permissions. However, there may be times when you need to adjust sharing settings.
 
