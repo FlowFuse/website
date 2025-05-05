@@ -22,7 +22,7 @@ Before you begin, make sure the following requirements are met:
 
 - You have an active [FlowFuse account](https://app.flowfuse.com) and a running FlowFuse instance.
 - You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the [Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) sponsored by FlowFuse.
-- Ensure you have installed `flowfuse/node-red-dashboard` and `node-red-contrib-sqlite`.
+- Ensure you have installed `flowfuse/node-red-dashboard` and `node-red-contrib-sqlite` (The SQLite node is required for the demo data generation flow we provided. If you're not using that flow, you can skip this.).
 
 ## Setting Up PDF Generation in Node-RED
 
