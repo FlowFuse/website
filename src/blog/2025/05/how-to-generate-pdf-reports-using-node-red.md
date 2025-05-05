@@ -1,16 +1,16 @@
 ---
-title: "How to Generate PDF Reports Using FlowFuse in Node-RED"
-subtitle:
-description: 
+title: "How to Generate PDF Reports Using Node-RED in FlowFuse"
+subtitle: Learn how to automate the generation of dynamic PDF reports within Node-RED and FlowFuse.
+description: Discover how to create automated PDF reports in Node-RED with FlowFuse. This guide covers everything from setting up the required nodes to generating and serving PDF reports with dynamic data, making it easy to share and archive important business insights.
 date: 2025-05-05
 authors: ["sumit-shinde"]
 image: 
-keywords: 
+keywords: pdf generate with node-red, node-red pdf report generation, pdf report node-red, pdfmake node-red, node-red-contrib-pdfmake
 tags:
    - flowfuse
 ---
 
-Generating PDF reports is a common need in automation and business workflows. With Node-RED, you might often find the need to convert your data into a well-structured PDF for easy sharing or archiving. This guide will walk you through the process of generating dynamic PDF reports within the FlowFuse environment using Node-RED.
+Generating PDF reports is a common need in automation and business workflows. With Node-RED, you might often find the need to convert your data into a well-structured PDF for easy sharing or archiving. This article will walk you through the process of generating dynamic PDF reports within the FlowFuse environment using Node-RED.
 
 <!--more-->
 
@@ -20,8 +20,9 @@ Generating reports allows you to capture snapshots of important data, summarize 
 
 Before you begin, make sure the following requirements are met:
 
-- You have an active FlowFuse account.
-- You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the Node-RED Fundamentals Course sponsored by FlowFuse.
+- You have an active [FlowFuse account](https://app.flowfuse.com) and a running FlowFuse instance.
+- You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the [Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) sponsored by FlowFuse.
+- Ensure you have installed `flowfuse/node-red-dashboard` and `node-red-contrib-sqlite`.
 
 ## Setting Up PDF Generation in Node-RED
 
@@ -37,6 +38,8 @@ The [node-red-contrib-pdfmake](https://flows.nodered.org/node/node-red-contrib-p
 4. Click "Install" to add the node to your palette.
 
 This node allows you to dynamically generate PDFs from various inputs, which is exactly what you will need for generating reports.
+
+If you haven't already installed the `node-red-dashboard` and `node-red-contrib-sqlite` nodes, you can install them in the same way.
 
 ### Step 2: Understanding How to Use the pdfmake Node
 
@@ -153,27 +156,23 @@ _Example pdf result_
 
 ### Step 3: Creating a Flow to Generate a PDF
 
-Now that the required node is installed, you can start creating a flow to generate a PDF report. But before we dive in, let’s clear up a common point of confusion.
-
-When using this node, you do not need to create a separate webpage or use a browser to generate the PDF. Instead, you simply provide inputs like titles, logos, content, and basic styling directly within your flow. The node uses the [pdfmake](https://www.npmjs.com/package/pdfmake) library behind the scenes to generate the PDF.
-
-The main advantage of using pdfmake is that it works entirely in the background — no browser is needed. This is different from how you might be used to generating PDFs from webpages, which often include extra elements like headers, ads, or navigation menus. With pdfmake, you have full control and can include only the content you need, making your reports cleaner and more focused.
+Let's learn how to generate a PDF using dynamic inputs. For this, we’ll use the same example PDF report shown earlier—but this time, we’ll replace the hardcoded values with dynamic input data.
 
 1. Start by creating a flow that collects the data you want to include in the report. This can come from sensors, databases, APIs, or even manual inputs.
-2. For this guide's practical example, I will use the following SQLite flow that generates simulated production data. If you do not have the data source yet, you can import the following flow. After importing, deploy it and click the Inject node button to generate and insert the data:
+2. For this guide's practical example, we will use the following SQLite flow that generates simulated production data. If you don't have the data source set up yet, you can import the flow below to follow along. After importing, deploy the flow and click the Inject node button to generate and insert the data
 
 {% renderFlow 300 %}
 [{"id":"1e73fef718bb4876","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["5169b96ad66dcff6","b75fde37ea431d84","a571bbd7b0c0cb25"],"x":14,"y":59,"w":812,"h":82},{"id":"5169b96ad66dcff6","type":"inject","z":"b37428694e90b2c5","g":"1e73fef718bb4876","name":"Create Table","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":130,"y":100,"wires":[["b75fde37ea431d84"]]},{"id":"b75fde37ea431d84","type":"sqlite","z":"b37428694e90b2c5","g":"1e73fef718bb4876","mydb":"1ae6d7f7fdb60191","sqlquery":"fixed","sql":"CREATE TABLE IF NOT EXISTS production_report (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    date TEXT NOT NULL,\n    shift TEXT NOT NULL,\n    product TEXT NOT NULL,\n    units_produced INTEGER NOT NULL,\n    defective_units INTEGER NOT NULL,\n    operator TEXT NOT NULL\n);","name":"","x":440,"y":100,"wires":[["a571bbd7b0c0cb25"]]},{"id":"a571bbd7b0c0cb25","type":"debug","z":"b37428694e90b2c5","g":"1e73fef718bb4876","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":720,"y":100,"wires":[]},{"id":"1ae6d7f7fdb60191","type":"sqlitedb","db":"productiondata.sqlite","mode":"RWC"},{"id":"ccca7810c6b3db41","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["19ad08d3015ef8f2","b706e4aa8a2d0740","f32cdc1dd16b56b7","3708b00ae17defa5","c4464e3454a8805e","2df338e18c9a60d5"],"x":14,"y":179,"w":1332,"h":82},{"id":"19ad08d3015ef8f2","type":"sqlite","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","mydb":"1ae6d7f7fdb60191","sqlquery":"prepared","sql":"INSERT INTO production_report (\n    date,\n    shift,\n    product,\n    units_produced,\n    defective_units,\n    operator\n) VALUES (\n    $date,\n    $shift,\n    $product,\n    $units_produced,\n    $defective_units,\n    $operator\n);\n","name":"","x":1060,"y":220,"wires":[["2df338e18c9a60d5"]]},{"id":"b706e4aa8a2d0740","type":"inject","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"Click to generate and insert data","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":190,"y":220,"wires":[["f32cdc1dd16b56b7"]]},{"id":"f32cdc1dd16b56b7","type":"function","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"Generate Simulated Production Data","func":"const products = [\"Widget A\", \"Widget B\", \"Gadget X\", \"Component Z\"];\nconst operators = [\"John Matthews\", \"Sarah Lee\", \"Amit Kumar\", \"Rita Patel\"];\nconst shifts = [\"A\", \"B\", \"C\"];\n\nfunction getRandomInt(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nconst data = [];\n\nfor (let i = 0; i < 10; i++) {\n    const date = new Date();\n    date.setDate(date.getDate() - i); // Last 10 days\n\n    data.push({\n        date: date.toISOString().split('T')[0],\n        shift: shifts[getRandomInt(0, shifts.length - 1)],\n        product: products[getRandomInt(0, products.length - 1)],\n        units_produced: getRandomInt(400, 600),\n        defective_units: getRandomInt(0, 10),\n        operator: operators[getRandomInt(0, operators.length - 1)]\n    });\n}\n\nmsg.payload = data;\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":490,"y":220,"wires":[["3708b00ae17defa5"]]},{"id":"3708b00ae17defa5","type":"split","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload","x":710,"y":220,"wires":[["c4464e3454a8805e"]]},{"id":"c4464e3454a8805e","type":"change","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"","rules":[{"t":"set","p":"params","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"params.$date","pt":"msg","to":"payload.date","tot":"msg"},{"t":"set","p":"params.$shift","pt":"msg","to":"payload.shift","tot":"msg"},{"t":"set","p":"params.$product","pt":"msg","to":"payload.product","tot":"msg"},{"t":"set","p":"params.$units_produced","pt":"msg","to":"payload.units_produced","tot":"msg"},{"t":"set","p":"params.$defective_units","pt":"msg","to":"payload.defective_units","tot":"msg"},{"t":"set","p":"params.$operator","pt":"msg","to":"payload.operator","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":860,"y":220,"wires":[["19ad08d3015ef8f2"]]},{"id":"2df338e18c9a60d5","type":"debug","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1240,"y":220,"wires":[]}]
 {% endrenderFlow %}
 
 3. Drag an Inject node onto the canvas.
-4. Drag an SQLite node and connect it to the Inject node. Configure it with the same database used to generate the simulated data. Set the SQL Query type to "fixed statement" and use the following query:
+4. Drag an SQLite node and connect it to the Inject node. Configure SQLite node with the same database used to generate the simulated data. Set the SQL Query type to "fixed statement" and use the following query:
 
 ```sql
 SELECT * FROM production_report;
 ```
 
-5. Drag a Function node onto the canvas and paste the following JavaScript code into it:
+4. Drag a Function node onto the canvas and paste the following JavaScript code into it. Adjust the code to match your data structure if you haven't imported the demo production data.
 
 ```javascript
 // Initialize table body with headers
@@ -279,17 +278,15 @@ return msg;
 8. Connect the SQLite node to the Function node, then to the pdfmake node, and finally to the Write File node.
 9. Deploy the flow and click inject node to genrate the pdf.
 
-Once the PDF is generated, you can find it in the .node-red directory.
+Once the PDF is generated, you can find it in the `.node-red` directory.
 
-However, if you want to share the PDF with others, display it on the dashboard, or provide a download button, you can use the HTTP API, an iframe, and a few supporting nodes. Let's walk through how to do that next.
+However, if you want to share the PDF with others, display it on the dashboard, and provide a download button, you can use the HTTP API, an iframe, and a few supporting nodes. Let's walk through how to do that next.
 
 ### Step 3: Serving the PDF via HTTP and Previewing It on the Dashboard
 
-In this step, we'll make the generated PDF easily accessible through a web interface. You’ll be able to preview the PDF directly in the browser or embed it in your Node-RED dashboard for a seamless experience. Additionally, we’ll add a download button so users can easily download the PDF if needed. Instead of manually fetching the file, we’ll create an HTTP endpoint to serve the PDF and use an iframe on the dashboard to preview it, all while ensuring a clean, user-friendly display.
+In this step, we’ll make the generated PDF accessible through a web interface. You’ll be able to preview the PDF directly in the browser and embed it in your FlowFuse dashboard for a smooth, integrated experience. We’ll also add a download button so users can easily save the report. Instead of manually retrieving the file, we’ll create an HTTP endpoint to serve the PDF and use an iframe to display it.
 
-### Step 4: Exposing the PDF via HTTP and Setting Up the Download
-
-### Step 4: Exposing the PDF via HTTP and Setting Up the Download
+#### Exposing the PDF via HTTP
 
 1. Drag the `http-in` node onto the canvas. Set the method to 'GET' and the URL to `/report.pdf`. This will create an HTTP endpoint for retrieving the generated PDF.
 2. Connect the `http-in` node to the `SQLite` node. This ensures that when a request is made to this endpoint, the necessary data is fetched from the database.
@@ -308,18 +305,43 @@ Now, this will send the generated PDF as a response to the incoming HTTP request
 
 `https://<your-instance-name>.flowfuse.cloud/report.pdf`
 
-Now, this will send the generated PDF as a response to the incoming HTTP request, allowing it to be previewed in the browser. You can check by entering the URL:
+### Embedding the PDF on the Dashboard and Adding the Download Button
 
-`https://<your-instance-name>.flowfuse.cloud/report.pdf`
+Now, let's embed the PDF into the dashboard:
 
-Now, let's embed it on the dashboard:
+1. Drag a `ui-event` node onto the canvas and configure it with the appropriate UI base settings.
 
-1. Drag the `ui-event` node onto the canvas and configure it with the correct UI base settings.
+2. Next, drag an `iframe` node onto the canvas.  
+   - Select the correct group where the PDF should be displayed.  
+   - Adjust the size according to your preferences.  
+   - In the URL field, enter:
 
-2. Next, drag the `iframe` node onto the canvas. Select the correct group for it to render, adjust the sizing according to your preference, and enter the URL `https://<your-instance-name>.flowfuse.cloud/report.pdf` in the iframe configuration.
+   ```
+   https://<your-instance-name>.flowfuse.cloud/report.pdf
+   ```
 
-3. Click **Done** and **Deploy**.
+3. Click Done and Deploy the flow.
 
-Once deployed, when you open the dashboard, the generated PDF will be embedded and previewed directly on the dashboard page.
+Once deployed, when you open the dashboard, the generated PDF will be embedded and displayed directly on the dashboard page.
 
+Now, let's add a download button:
 
+4. Drag a `ui-template` widget onto the canvas and paste the following HTML code into it:
+
+```html
+<div style="text-align:center; margin-top: 20px;">
+    <a href="https://<your-instance-name>.flowfuse.cloud/report.pdf" download="report.pdf"
+        style="display: inline-block; background-color: #4f7a28; color: white; padding: 14px 20px; text-align: center; text-decoration: none; font-size: 16px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease;">
+        Download Report
+    </a>
+</div>
+```
+
+5. Deploy the flow.
+
+![Dashboard displaying embedded PDF with a download button](./images/dashboard-with-embedded-report.png){data-zoomable}
+_[Dashboard displaying embedded PDF with a download button]_
+
+## Final thought
+
+Automating PDF report generation in Node-RED is a great way to save time and effort. By using tools like the node-red-contrib-pdfmake node, you can quickly turn your data into well-designed PDFs without the need for manual work. If you want to save time and avoid the setup process, you can directly use our ready-made [PDF generation blueprint](https://flowfuse.com/blueprints/manufacturing/pdf-report-generator/). It’s an easy way to get started and generate professional reports quickly.
