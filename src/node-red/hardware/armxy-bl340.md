@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/armxy-bl340.jpg"
 specifications:
   Model: BLIIoT ARMxy BL340 Series
-  RAM: 2048
+  RAM_MB: 2048
   Processor: ARM Cortex-A53
   GPU: G31 MP2
   IO Points: Optional (GPIO, RS485,CAN,RS232,DI/DO/AI/AO etc.,)

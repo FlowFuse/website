@@ -1,8 +1,7 @@
 ---
 layout: layouts/documentation.njk
 ---
-{% set ramValue = specifications.RAM or '0' %}
-{% set ramMB = ramValue | float %}
+{% set ramMB = specifications.RAM_MB %}
 
 <article class="max-w-2xl mx-auto">
   {% if ramMB < 512 %}

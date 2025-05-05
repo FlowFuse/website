@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/raspberrypi-5.png"
 specifications:
   Model: Raspberry Pi 5 Model 8GB   
-  RAM: 8192
+  RAM_MB: 8192
   Processor: Broadcom BCM2712, ARM Cortex-A76 (ARMv8.2-A), 4 (Quad-core)
   GPIO: Standard 40-pin GPIO Header
   Connectivity: 2 × USB 2.0 Ports, 2 × USB 3.0 Ports, Bluetooth 5.0, USB-C, Wi-Fi + Bluetooth® Low Energy

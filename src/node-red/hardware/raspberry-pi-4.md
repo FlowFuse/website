@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/raspberry-pi-4-b.png"
 specifications:
   Model: Raspberry Pi 4 B 8GB
-  RAM: 8192
+  RAM_MB: 8192
   Processor: Broadcom BCM2711, ARM Cortex-A72 (ARMv8-A), 4 (Quad-core)
   GPIO: (Fully backwar ds-compatible with previous boards), Standard 40-pin GPIO Header
   Connectivity: Dual-band Wi-Fi, Bluetooth 5.0, Gigabit Ethernet, 2x USB 3.0, 2x USB 2.0
