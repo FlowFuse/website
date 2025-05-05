@@ -1,6 +1,6 @@
 # Google Workspace
 
-## **Overview**
+## Overview
 
 FlowFuse uses Google Workspace for collaboration and productivity tools. Our Google Workspace includes Gmail, Drive, Docs, Sheets, Slides, Meet, Calendar, and other applications that help us work efficiently as a team.
 
