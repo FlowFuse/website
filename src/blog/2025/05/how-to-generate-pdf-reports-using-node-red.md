@@ -287,6 +287,7 @@ In this step, we’ll make the generated PDF accessible through a web interface.
       'Content-Type': 'application/pdf',   
       'Content-Disposition': 'inline; filename="report.pdf"' 
    }
+   ```
 4. Drag the **http-response** node onto the canvas and connect it to the Change node.
 5. Deploy the flow 
 
