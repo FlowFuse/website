@@ -69,84 +69,73 @@ Here’s a simple example of how you can use these attributes to create a basic 
 
 ```json
 {
-    content: [
-        // Header
-        {
-            svg: logo,
-            width: 150, // Adjust the logo size as needed
-            alignment: 'center',
-            margin: [0, 0, 0, 20]
-        },
-        {
-            text: 'Production Report - 2025',
-            style: 'header'
-        },
-
-        // Subheader
-        {
-            text: 'Daily Production Summary with Operator Performance',
-            style: 'subheader',
-            alignment: 'center',
-            margin: [0, 10, 0, 20]
-        },
-
-        // Table
-        {
-            layout: 'lightHorizontalLines',
-            table: {
-                headerRows: 1,
-                widths: ['auto', 'auto', '*', 'auto', 'auto', '*'],
-                body: [
-    ['Date', 'Shift', 'Product', 'Units Produced', 'Defective Units', 'Operator'],
-    ['2025-01-01', 'Morning', 'Product A', '1000', '20', 'John Doe'],
-    ['2025-01-01', 'Afternoon', 'Product B', '950', '15', 'Jane Smith'],
-    ['2025-01-02', 'Morning', 'Product A', '1050', '10', 'James Brown'],
-    ['2025-01-02', 'Afternoon', 'Product C', '800', '30', 'Emily Clark'],
-    ['2025-01-03', 'Morning', 'Product B', '1100', '25', 'Michael Green'],
-    ['2025-01-03', 'Afternoon', 'Product A', '980', '18', 'Sarah White']
-]
-            }
-        },
-
-        // Description
-        {
-            text: 'This table summarizes the daily production output across different shifts and operators. It includes total units produced and defective units recorded for quality analysis.',
-            fontSize: 12,
-            alignment: 'justify',
-            margin: [0, 10, 0, 20]
-        },
-
-        // Footer
-        {
-            text: 'Internal Use Only - Manufacturing Co.',
-            style: 'footer',
-            alignment: 'center',
-            margin: [0, 20, 0, 0]
-        }
-    ],
-
-    styles: {
-        header: {
-            fontSize: 20,
-            bold: true,
-            alignment: 'center',
-            margin: [0, 20, 0, 10]
-        },
-        subheader: {
-            fontSize: 14,
-            italics: true,
-            color: 'grey',
-            margin: [0, 10, 0, 20]
-        },
-        footer: {
-            fontSize: 10,
-            color: 'grey'
-        }
+  "content": [
+    {
+      "svg": "logoDataHere",
+      "width": 150,
+      "alignment": "center",
+      "margin": [0, 0, 0, 20]
     },
-
-    pageSize: 'A4',
-    pageMargins: [40, 60, 40, 60]
-};
+    {
+      "text": "Production Report - 2025",
+      "style": "header"
+    },
+    {
+      "text": "Daily Production Summary with Operator Performance",
+      "style": "subheader",
+      "alignment": "center",
+      "margin": [0, 10, 0, 20]
+    },
+    {
+      "layout": "lightHorizontalLines",
+      "table": {
+        "headerRows": 1,
+        "widths": ["auto", "auto", "*", "auto", "auto", "*"],
+        "body": [
+          ["Date", "Shift", "Product", "Units Produced", "Defective Units", "Operator"],
+          ["2025-01-01", "Morning", "Product A", "1000", "20", "John Doe"],
+          ["2025-01-01", "Afternoon", "Product B", "950", "15", "Jane Smith"],
+          ["2025-01-02", "Morning", "Product A", "1050", "10", "James Brown"],
+          ["2025-01-02", "Afternoon", "Product C", "800", "30", "Emily Clark"],
+          ["2025-01-03", "Morning", "Product B", "1100", "25", "Michael Green"],
+          ["2025-01-03", "Afternoon", "Product A", "980", "18", "Sarah White"]
+        ]
+      }
+    },
+    {
+      "text": "This table summarizes the daily production output across different shifts and operators. It includes total units produced and defective units recorded for quality analysis.",
+      "fontSize": 12,
+      "alignment": "justify",
+      "margin": [0, 10, 0, 20]
+    },
+    {
+      "text": "Internal Use Only - Manufacturing Co.",
+      "style": "footer",
+      "alignment": "center",
+      "margin": [0, 20, 0, 0]
+    }
+  ],
+  "styles": {
+    "header": {
+      "fontSize": 20,
+      "bold": true,
+      "alignment": "center",
+      "margin": [0, 20, 0, 10]
+    },
+    "subheader": {
+      "fontSize": 14,
+      "italics": true,
+      "color": "grey",
+      "margin": [0, 10, 0, 20]
+    },
+    "footer": {
+      "fontSize": 10,
+      "color": "grey"
+    }
+  },
+  "pageSize": "A4",
+  "pageMargins": [40, 60, 40, 60]
+}
 ```
 
 This example creates a simple PDF featuring a centered logo, a title, a subtitle, and a table with a light horizontal line layout, a paragraph of text and footer at the end. The following screenshot shows how it looks. You can further customize it by adjusting the styles, layout, and content.
