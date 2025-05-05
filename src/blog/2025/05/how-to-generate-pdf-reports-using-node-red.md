@@ -1,0 +1,325 @@
+---
+title: "How to Generate PDF Reports Using FlowFuse in Node-RED"
+subtitle:
+description: 
+date: 2025-05-05
+authors: ["sumit-shinde"]
+image: 
+keywords: 
+tags:
+   - flowfuse
+---
+
+Generating PDF reports is a common need in automation and business workflows. With Node-RED, you might often find the need to convert your data into a well-structured PDF for easy sharing or archiving. This guide will walk you through the process of generating dynamic PDF reports within the FlowFuse environment using Node-RED.
+
+<!--more-->
+
+Generating reports allows you to capture snapshots of important data, summarize system activities, and distribute insights in a format that is easy to read and store. PDF is one of the most universally accepted formats for sharing documents, making it an ideal choice for delivering structured information from your Node-RED flows.
+
+## Prerequisites
+
+Before you begin, make sure the following requirements are met:
+
+- You have an active FlowFuse account.
+- You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the Node-RED Fundamentals Course sponsored by FlowFuse.
+
+## Setting Up PDF Generation in Node-RED
+
+Once the prerequisites are in place, the next step is setting up your Node-RED environment to generate PDF reports. In this section, we will go over how to install the necessary Node-RED node and configure a flow that will generate PDF reports.
+
+### Step 1: Install the node-red-contrib-pdfmake Node
+
+The [node-red-contrib-pdfmake](https://flows.nodered.org/node/node-red-contrib-pdfmake) node is the primary node used for creating PDF reports in Node-RED. To install this node:
+
+1. Open your Node-RED editor.
+2. Navigate to the "Manage palette" section from the top-right menu.
+3. Click on the "Install" tab and search for node-red-contrib-pdfmake.
+4. Click "Install" to add the node to your palette.
+
+This node allows you to dynamically generate PDFs from various inputs, which is exactly what you will need for generating reports.
+
+### Step 2: Understanding How to Use the pdfmake Node
+
+Now that the required node is installed, let's dive into how to use it and how to leverage the different attributes to customize your PDF reports. The pdfmake node in Node-RED simplifies the process of generating PDFs by allowing you to define content, layout, and styling directly in your flow.
+
+The key advantage of using pdfmake is that it works in the background, meaning you don’t need a browser or a separate webpage to generate the PDF. This is particularly useful because you can avoid including unwanted page elements like headers, footers, or ads that are often present when PDFs are generated from web pages.
+
+When working with this node, you can use various attributes to customize the content and layout of the PDF, such as text, tables, images, page sizes, margins, headers, footers, and more. Below are the most commonly used attributes:
+
+| **Attribute**     | **Description**                                                                 | **Example**                                              |
+|-------------------|---------------------------------------------------------------------------------|----------------------------------------------------------|
+| `content`         | Defines the content of the PDF (text, tables, images, etc.).                    | `{ "content": "Hello, World!" }`                         |
+| `style`           | Specifies the style for content (font size, font family, etc.).                 | `{ "style": "headerStyle" }`                              |
+| `layout`          | Defines the layout of a table (e.g., 'lightHorizontalLines', 'noBorders').      | `{ "layout": "lightHorizontalLines" }`                    |
+| `pageSize`        | Defines the page size for the PDF.                                              | `{ "pageSize": "A4" }`                                    |
+| `pageMargins`     | Sets the margins for the PDF (left, top, right, bottom).                        | `{ "pageMargins": [40, 60, 40, 60] }`                     |
+| `header`          | Specifies a header for the PDF. Can be a static text or dynamic content.        | `{ "header": "My PDF Report" }`                           |
+| `footer`          | Specifies a footer for the PDF. Can be a static text or dynamic content.        | `{ "footer": "Page {PAGE_NUM} of {PAGE_COUNT}" }`         |
+| `defaultStyle`    | Defines the default style for all content in the PDF.                           | `{ "defaultStyle": { "font": "Helvetica", "fontSize": 12 } }` |
+| `background`      | Adds a background to the page or content area.                                  | `{ "background": { "image": "imageData" } }`             |
+| `width`           | Sets the width of table cells or other elements.                                | `{ "width": 150 }`                                        |
+| `height`          | Sets the height of table cells or other elements.                               | `{ "height": 50 }`                                        |
+| `alignment`       | Specifies the text alignment (left, center, right).                             | `{ "alignment": "center" }`                               |
+| `border`          | Defines the border for tables or table cells (style, width, and color).         | `{ "border": [true, true, true, true] }`                   |
+
+Here’s a simple example of how you can use these attributes to create a basic PDF:
+
+```json
+{
+    content: [
+        // Header
+        {
+            svg: logo,
+            width: 150, // Adjust the logo size as needed
+            alignment: 'center',
+            margin: [0, 0, 0, 20]
+        },
+        {
+            text: 'Production Report - 2025',
+            style: 'header'
+        },
+
+        // Subheader
+        {
+            text: 'Daily Production Summary with Operator Performance',
+            style: 'subheader',
+            alignment: 'center',
+            margin: [0, 10, 0, 20]
+        },
+
+        // Table
+        {
+            layout: 'lightHorizontalLines',
+            table: {
+                headerRows: 1,
+                widths: ['auto', 'auto', '*', 'auto', 'auto', '*'],
+                body: [
+    ['Date', 'Shift', 'Product', 'Units Produced', 'Defective Units', 'Operator'],
+    ['2025-01-01', 'Morning', 'Product A', '1000', '20', 'John Doe'],
+    ['2025-01-01', 'Afternoon', 'Product B', '950', '15', 'Jane Smith'],
+    ['2025-01-02', 'Morning', 'Product A', '1050', '10', 'James Brown'],
+    ['2025-01-02', 'Afternoon', 'Product C', '800', '30', 'Emily Clark'],
+    ['2025-01-03', 'Morning', 'Product B', '1100', '25', 'Michael Green'],
+    ['2025-01-03', 'Afternoon', 'Product A', '980', '18', 'Sarah White']
+]
+            }
+        },
+
+        // Description
+        {
+            text: 'This table summarizes the daily production output across different shifts and operators. It includes total units produced and defective units recorded for quality analysis.',
+            fontSize: 12,
+            alignment: 'justify',
+            margin: [0, 10, 0, 20]
+        },
+
+        // Footer
+        {
+            text: 'Internal Use Only - Manufacturing Co.',
+            style: 'footer',
+            alignment: 'center',
+            margin: [0, 20, 0, 0]
+        }
+    ],
+
+    styles: {
+        header: {
+            fontSize: 20,
+            bold: true,
+            alignment: 'center',
+            margin: [0, 20, 0, 10]
+        },
+        subheader: {
+            fontSize: 14,
+            italics: true,
+            color: 'grey',
+            margin: [0, 10, 0, 20]
+        },
+        footer: {
+            fontSize: 10,
+            color: 'grey'
+        }
+    },
+
+    pageSize: 'A4',
+    pageMargins: [40, 60, 40, 60]
+};
+```
+
+This example creates a simple PDF featuring a centered logo, a title, a subtitle, and a table with a light horizontal line layout, a paragraph of text and footer at the end. The following screenshot shows how it looks. You can further customize it by adjusting the styles, layout, and content.
+
+![Example pdf result](./images/example-pdf.png){data-zoomable}
+_Example pdf result_
+
+### Step 3: Creating a Flow to Generate a PDF
+
+Now that the required node is installed, you can start creating a flow to generate a PDF report. But before we dive in, let’s clear up a common point of confusion.
+
+When using this node, you do not need to create a separate webpage or use a browser to generate the PDF. Instead, you simply provide inputs like titles, logos, content, and basic styling directly within your flow. The node uses the [pdfmake](https://www.npmjs.com/package/pdfmake) library behind the scenes to generate the PDF.
+
+The main advantage of using pdfmake is that it works entirely in the background — no browser is needed. This is different from how you might be used to generating PDFs from webpages, which often include extra elements like headers, ads, or navigation menus. With pdfmake, you have full control and can include only the content you need, making your reports cleaner and more focused.
+
+1. Start by creating a flow that collects the data you want to include in the report. This can come from sensors, databases, APIs, or even manual inputs.
+2. For this guide's practical example, I will use the following SQLite flow that generates simulated production data. If you do not have the data source yet, you can import the following flow. After importing, deploy it and click the Inject node button to generate and insert the data:
+
+{% renderFlow 300 %}
+[{"id":"1e73fef718bb4876","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["5169b96ad66dcff6","b75fde37ea431d84","a571bbd7b0c0cb25"],"x":14,"y":59,"w":812,"h":82},{"id":"5169b96ad66dcff6","type":"inject","z":"b37428694e90b2c5","g":"1e73fef718bb4876","name":"Create Table","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":130,"y":100,"wires":[["b75fde37ea431d84"]]},{"id":"b75fde37ea431d84","type":"sqlite","z":"b37428694e90b2c5","g":"1e73fef718bb4876","mydb":"1ae6d7f7fdb60191","sqlquery":"fixed","sql":"CREATE TABLE IF NOT EXISTS production_report (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    date TEXT NOT NULL,\n    shift TEXT NOT NULL,\n    product TEXT NOT NULL,\n    units_produced INTEGER NOT NULL,\n    defective_units INTEGER NOT NULL,\n    operator TEXT NOT NULL\n);","name":"","x":440,"y":100,"wires":[["a571bbd7b0c0cb25"]]},{"id":"a571bbd7b0c0cb25","type":"debug","z":"b37428694e90b2c5","g":"1e73fef718bb4876","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":720,"y":100,"wires":[]},{"id":"1ae6d7f7fdb60191","type":"sqlitedb","db":"productiondata.sqlite","mode":"RWC"},{"id":"ccca7810c6b3db41","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["19ad08d3015ef8f2","b706e4aa8a2d0740","f32cdc1dd16b56b7","3708b00ae17defa5","c4464e3454a8805e","2df338e18c9a60d5"],"x":14,"y":179,"w":1332,"h":82},{"id":"19ad08d3015ef8f2","type":"sqlite","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","mydb":"1ae6d7f7fdb60191","sqlquery":"prepared","sql":"INSERT INTO production_report (\n    date,\n    shift,\n    product,\n    units_produced,\n    defective_units,\n    operator\n) VALUES (\n    $date,\n    $shift,\n    $product,\n    $units_produced,\n    $defective_units,\n    $operator\n);\n","name":"","x":1060,"y":220,"wires":[["2df338e18c9a60d5"]]},{"id":"b706e4aa8a2d0740","type":"inject","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"Click to generate and insert data","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":190,"y":220,"wires":[["f32cdc1dd16b56b7"]]},{"id":"f32cdc1dd16b56b7","type":"function","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"Generate Simulated Production Data","func":"const products = [\"Widget A\", \"Widget B\", \"Gadget X\", \"Component Z\"];\nconst operators = [\"John Matthews\", \"Sarah Lee\", \"Amit Kumar\", \"Rita Patel\"];\nconst shifts = [\"A\", \"B\", \"C\"];\n\nfunction getRandomInt(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nconst data = [];\n\nfor (let i = 0; i < 10; i++) {\n    const date = new Date();\n    date.setDate(date.getDate() - i); // Last 10 days\n\n    data.push({\n        date: date.toISOString().split('T')[0],\n        shift: shifts[getRandomInt(0, shifts.length - 1)],\n        product: products[getRandomInt(0, products.length - 1)],\n        units_produced: getRandomInt(400, 600),\n        defective_units: getRandomInt(0, 10),\n        operator: operators[getRandomInt(0, operators.length - 1)]\n    });\n}\n\nmsg.payload = data;\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":490,"y":220,"wires":[["3708b00ae17defa5"]]},{"id":"3708b00ae17defa5","type":"split","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload","x":710,"y":220,"wires":[["c4464e3454a8805e"]]},{"id":"c4464e3454a8805e","type":"change","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"","rules":[{"t":"set","p":"params","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"params.$date","pt":"msg","to":"payload.date","tot":"msg"},{"t":"set","p":"params.$shift","pt":"msg","to":"payload.shift","tot":"msg"},{"t":"set","p":"params.$product","pt":"msg","to":"payload.product","tot":"msg"},{"t":"set","p":"params.$units_produced","pt":"msg","to":"payload.units_produced","tot":"msg"},{"t":"set","p":"params.$defective_units","pt":"msg","to":"payload.defective_units","tot":"msg"},{"t":"set","p":"params.$operator","pt":"msg","to":"payload.operator","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":860,"y":220,"wires":[["19ad08d3015ef8f2"]]},{"id":"2df338e18c9a60d5","type":"debug","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1240,"y":220,"wires":[]}]
+{% endrenderFlow %}
+
+3. Drag an Inject node onto the canvas.
+4. Drag an SQLite node and connect it to the Inject node. Configure it with the same database used to generate the simulated data. Set the SQL Query type to "fixed statement" and use the following query:
+
+```sql
+SELECT * FROM production_report;
+```
+
+5. Drag a Function node onto the canvas and paste the following JavaScript code into it:
+
+```javascript
+// Initialize table body with headers
+const tableBody = [
+    ['Date', 'Shift', 'Product', 'Units Produced', 'Defective Units', 'Operator']
+];
+
+const logo = `<replace-this-your-logo-svg`
+
+// Loop through data rows from SQLite (msg.payload)
+for (const row of msg.payload) {
+    tableBody.push([
+        row.date,
+        row.shift,
+        row.product,
+        row.units_produced.toString(),
+        row.defective_units.toString(),
+        row.operator
+    ]);
+}
+
+const docDefinition = {
+    content: [
+        {
+            svg: logo,
+            width: 150, // Adjust the logo size as needed
+            alignment: 'center',
+            margin: [0, 0, 0, 20]
+        },
+        // Header
+        {
+            text: 'Production Report - 2025',
+            style: 'header'
+        },
+
+        // Subheader
+        {
+            text: 'Daily Production Summary with Operator Performance',
+            style: 'subheader',
+            alignment: 'center',
+            margin: [0, 10, 0, 20]
+        },
+
+        // Table
+        {
+            layout: 'lightHorizontalLines',
+            table: {
+                headerRows: 1,
+                widths: ['auto', 'auto', '*', 'auto', 'auto', '*'],
+                body: tableBody
+            }
+        },
+
+        // Description
+        {
+            text: 'This table summarizes the daily production output across different shifts and operators. It includes total units produced and defective units recorded for quality analysis.',
+            fontSize: 12,
+            alignment: 'justify',
+            margin: [0, 10, 0, 20]
+        },
+
+        // Footer
+        {
+            text: 'Internal Use Only - Manufacturing Co.',
+            style: 'footer',
+            alignment: 'center',
+            margin: [0, 20, 0, 0]
+        }
+    ],
+
+    styles: {
+        header: {
+            fontSize: 20,
+            bold: true,
+            alignment: 'center',
+            margin: [0, 20, 0, 10]
+        },
+        subheader: {
+            fontSize: 14,
+            italics: true,
+            color: 'grey',
+            margin: [0, 10, 0, 20]
+        },
+        footer: {
+            fontSize: 10,
+            color: 'grey'
+        }
+    },
+
+    pageSize: 'A4',
+    pageMargins: [40, 60, 40, 60]
+};
+
+msg.payload = docDefinition;
+return msg;
+```
+
+6. Drag a pdfmake node onto the canvas. Set the input property to msg.payload, set output type to Buffer, and output property to msg.payload.
+7. Drag a Write File node, configure it with:
+- Filename: test.pdf
+- Action: Overwrite file
+- Add newline (\n) to each payload?: Checked
+8. Connect the SQLite node to the Function node, then to the pdfmake node, and finally to the Write File node.
+9. Deploy the flow and click inject node to genrate the pdf.
+
+Once the PDF is generated, you can find it in the .node-red directory.
+
+However, if you want to share the PDF with others, display it on the dashboard, or provide a download button, you can use the HTTP API, an iframe, and a few supporting nodes. Let's walk through how to do that next.
+
+### Step 3: Serving the PDF via HTTP and Previewing It on the Dashboard
+
+In this step, we'll make the generated PDF easily accessible through a web interface. You’ll be able to preview the PDF directly in the browser or embed it in your Node-RED dashboard for a seamless experience. Additionally, we’ll add a download button so users can easily download the PDF if needed. Instead of manually fetching the file, we’ll create an HTTP endpoint to serve the PDF and use an iframe on the dashboard to preview it, all while ensuring a clean, user-friendly display.
+
+### Step 4: Exposing the PDF via HTTP and Setting Up the Download
+
+### Step 4: Exposing the PDF via HTTP and Setting Up the Download
+
+1. Drag the `http-in` node onto the canvas. Set the method to 'GET' and the URL to `/report.pdf`. This will create an HTTP endpoint for retrieving the generated PDF.
+2. Connect the `http-in` node to the `SQLite` node. This ensures that when a request is made to this endpoint, the necessary data is fetched from the database.
+3. After the `Write File` node in your flow, add a `Change` node. Connect it to the `Write File` node, and configure it to set the following headers for the HTTP response:
+   
+   - Set `msg.headers` to:
+   ```json
+   {   
+      'Content-Type': 'application/pdf',   
+      'Content-Disposition': 'inline; filename="report.pdf"' 
+   }
+4. Drag the http-response node onto the canvas and connect it to the Change node.
+5. Deploy the flow 
+
+Now, this will send the generated PDF as a response to the incoming HTTP request, allowing it to be previewed in the browser. You can check by entering the URL:
+
+`https://<your-instance-name>.flowfuse.cloud/report.pdf`
+
+Now, this will send the generated PDF as a response to the incoming HTTP request, allowing it to be previewed in the browser. You can check by entering the URL:
+
+`https://<your-instance-name>.flowfuse.cloud/report.pdf`
+
+Now, let's embed it on the dashboard:
+
+1. Drag the `ui-event` node onto the canvas and configure it with the correct UI base settings.
+
+2. Next, drag the `iframe` node onto the canvas. Select the correct group for it to render, adjust the sizing according to your preference, and enter the URL `https://<your-instance-name>.flowfuse.cloud/report.pdf` in the iframe configuration.
+
+3. Click **Done** and **Deploy**.
+
+Once deployed, when you open the dashboard, the generated PDF will be embedded and previewed directly on the dashboard page.
+
+
