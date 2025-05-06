@@ -123,11 +123,10 @@ _FlowFuse instance settings showing the option to allow dashboard embedding in a
 
 3. Click Save Settings and restart your instance for the changes to take effect.
 
-![FlowFuse OEE Dashboard embedded in another FlowFuse dashboard.](./images/embedding-flowfuse-oee-dashboard.png){data-zoomable}
+[![FlowFuse OEE Dashboard embedded in another FlowFuse dashboard.](./images/embedding-flowfuse-oee-dashboard.png){data-zoomable}](https://flowfuse.com/blueprints/manufacturing/oee-dashboard/)
 _FlowFuse OEE Dashboard embedded in another FlowFuse dashboard._
 
 FlowFuse dashboards offer great flexibility, making it easy to embed external content like weather widgets, maps, and PDFs directly into your workspace. With a few simple steps, you can also embed FlowFuse dashboards into other websites, ensuring everything you need is in one place.
-
 
 ## Up Next 
 
