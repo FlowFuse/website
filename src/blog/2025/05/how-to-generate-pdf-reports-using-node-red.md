@@ -32,12 +32,12 @@ The [platmac/node-red-pdfbuilder](https://flows.nodered.org/node/@platmac/node-r
 
 1. Open your Node-RED editor.
 2. Navigate to the "Manage palette" section from the top-right menu.
-3. Click on the "Install" tab and search for `platmac/node-red-pdfbuilder`.
+3. Click on the "Install" tab and search for `@platmac/node-red-pdfbuilder`.
 4. Click "Install" to add the node to your palette.
 
 This node allows you to dynamically generate PDFs from various inputs, which is exactly what you will need to generate reports.
 
-If you haven't installed the `flowfuse/node-red-dashboard`, `@flowfuse/node-red-dashboard-2-ui-iframe` and `node-red-contrib-sqlite` nodes, you can install them similarly.
+If you haven't installed the `@flowfuse/node-red-dashboard`, `@flowfuse/node-red-dashboard-2-ui-iframe` and `node-red-contrib-sqlite` nodes, you can install them similarly.
 
 ### Step 2: Understanding How to Use the Pdfbuilder Node
 
