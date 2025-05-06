@@ -67,31 +67,17 @@ The easiest and most straightforward way to embed external content is by using t
 
 For quick testing, you can use the weather widget, Google Map embedded URL, or the PDF URL. Below, I’ve included an image of a dashboard with the weather widget, Google Map, and PDF embedded.
 
-<div style="display: flex; justify-content: space-around; align-items: stretch; flex-wrap: wrap;">
-  <img src="./images/weather-widget.png" alt="Weather widget embedded in FlowFuse Dashboard" style="height: 200px; width: auto; object-fit: contain;"/>
-  <img src="./images/google-map.png" alt="Google Map embedded in FlowFuse Dashboard" style="height: 200px; width: auto; object-fit: contain;"/>
-  <img src="./images/pdf.png" alt="PDF embedded in FlowFuse Dashboard" style="height: 200px; width: auto; object-fit: contain;"/>
-  <img src="./images/google-calendar.png" alt="Google Calendar embedded in FlowFuse Dashboard" style="height: 200px; width: auto; object-fit: contain;"/>
-</div>
+![Weather widget embedded in FlowFuse Dashboard](./images/weather-widget.png)
+_Weather widget embedded in FlowFuse Dashboard_
 
-<style>
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    div {
-      flex-direction: column;
-      align-items: center;
-    }
-    img {
-      height: auto; /* Adjust height to maintain aspect ratio */
-      width: 100%; /* Ensure images use the full width of the container */
-      max-height: 200px; /* Limit max height to avoid distortion */
-      margin-bottom: 20px; /* Adds space between images */
-      object-fit: contain; /* Ensure images maintain their aspect ratio */
-    }
-  }
-</style>
+![Google Map embedded in FlowFuse Dashboard](./images/google-map.png)
+_Google Map embedded in FlowFuse Dashboard_
 
-_Weather widget, Google Map, and PDF embedded in FlowFuse Dashboard_
+![PDF embedded in FlowFuse Dashboard](./images/pdf.png)
+_PDF embedded in FlowFuse Dashboard_
+
+![Google Calendar embedded in FlowFuse Dashboard](./images/google-calendar.png)
+_Google Calendar embedded in FlowFuse Dashboard_
 
 ##### 2.1 Embed via HTML Embed Code
 
