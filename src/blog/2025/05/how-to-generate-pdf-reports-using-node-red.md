@@ -5,7 +5,7 @@ description: Discover how to create automated PDF reports in Node-RED with FlowF
 date: 2025-05-07
 authors: ["sumit-shinde"]
 image: 
-keywords: pdf generate with node-red, node-red pdf report generation, pdf report node-red, pdfmake node-red, node-red-contrib-pdfmake
+keywords: pdf generate with node-red, node-red pdf report generation, pdf report node-red, pdfmake node-red, platmac/node-red-pdfbuilder
 tags:
    - flowfuse
 ---
@@ -22,7 +22,6 @@ Before you begin, make sure the following requirements are met:
 - You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the [Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) sponsored by FlowFuse.
 - Ensure you have installed `flowfuse/node-red-dashboard` `@flowfuse/node-red-dashboard-2-ui-iframe` and `node-red-contrib-sqlite` (The SQLite node is required for the demo data generation flow we provided. If you're not using that flow, you can skip this.).
 
-
 ## Setting Up PDF Generation in Node-RED
 
 Once the prerequisites are in place, the next step is setting up your Node-RED environment to generate PDF reports. In this section, we will go over how to install the necessary Node-RED node and configure a flow to generate PDF reports.
@@ -33,18 +32,18 @@ The [platmac/node-red-pdfbuilder](https://flows.nodered.org/node/@platmac/node-r
 
 1. Open your Node-RED editor.
 2. Navigate to the "Manage palette" section from the top-right menu.
-3. Click on the "Install" tab and search for node-red-contrib-pdfmake.
+3. Click on the "Install" tab and search for `platmac/node-red-pdfbuilder`.
 4. Click "Install" to add the node to your palette.
 
 This node allows you to dynamically generate PDFs from various inputs, which is exactly what you will need to generate reports.
 
 If you haven't installed the `flowfuse/node-red-dashboard`, `@flowfuse/node-red-dashboard-2-ui-iframe` and `node-red-contrib-sqlite` nodes, you can install them similarly.
 
-### Step 2: Understanding How to Use the pdfmake Node
+### Step 2: Understanding How to Use the Pdfbuilder Node
 
-Now that the required node is installed, let's dive into how to use it and how to leverage the different attributes to customize your PDF reports. The pdfmake node in Node-RED simplifies generating PDFs by allowing you to define content, layout, and styling directly in your flow.
+Now that the required node is installed, let's dive into how to use it and how to leverage the different attributes to customize your PDF reports. The pdfbuilder node in Node-RED simplifies generating PDFs by allowing you to define content, layout, and styling directly in your flow.
 
-The key advantage of using pdfmake is that it works in the background, meaning you don’t need a browser or a separate webpage to generate the PDF. This is particularly useful because you can avoid including unwanted page elements like headers, footers, or ads often present when PDFs are generated from web pages.
+The key advantage of using pdfbuilder is that it works in the background, meaning you don’t need a browser or a separate webpage to generate the PDF. This is particularly useful because you can avoid including unwanted page elements like headers, footers, or ads often present when PDFs are generated from web pages.
 
 When working with this node, you can use various attributes to customize the content and layout of the PDF, such as text, tables, images, page sizes, margins, headers, footers, and more. Below are the most commonly used attributes:
 
@@ -259,12 +258,12 @@ msg.payload = docDefinition;
 return msg;
 ```
 
-6. Drag a **pdfmake** node onto the canvas. Set the input property to `msg.payload`, set output type to Buffer, and output property to `msg.payload`.
+6. Drag a **pdfbuilder** node onto the canvas. Set the input property to `msg.payload`, set output type to Buffer, and output property to `msg.payload`.
 7. Drag a **Write File** node, configure it with:
    - Filename: test.pdf
    - Action: Overwrite file
    - Add newline (\n) to each payload?: Checked
-8. Connect the **SQLite** node to the **Function** node, then to the **pdfmake** node, and finally to the **Write File** node.
+8. Connect the **SQLite** node to the **Function** node, then to the **pdfbuilder** node, and finally to the **Write File** node.
 9. Deploy the flow and click inject node to generate the pdf.
 
 Once the PDF is generated, you can find it in the `.node-red` directory.
