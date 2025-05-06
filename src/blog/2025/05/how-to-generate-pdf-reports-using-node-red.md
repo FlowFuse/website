@@ -26,7 +26,7 @@ Before you begin, make sure the following requirements are met:
 
 Once the prerequisites are in place, the next step is setting up your Node-RED environment to generate PDF reports. In this section, we will go over how to install the necessary Node-RED node and configure a flow to generate PDF reports.
 
-### Step 1: Install the platmac/node-red-pdfbuilder
+### Step 1: Install the @platmac/node-red-pdfbuilder
 
 The [platmac/node-red-pdfbuilder](https://flows.nodered.org/node/@platmac/node-red-pdfbuilder) node is the primary node for creating PDF reports in Node-RED. To install this node:
 
@@ -43,7 +43,7 @@ If you haven't installed the `@flowfuse/node-red-dashboard`, `@flowfuse/node-red
 
 Now that the required node is installed, let's dive into how to use it and how to leverage the different attributes to customize your PDF reports. The pdfbuilder node in Node-RED simplifies generating PDFs by allowing you to define content, layout, and styling directly in your flow.
 
-The key advantage of using pdfbuilder is that it works in the background, meaning you don’t need a browser or a separate webpage to generate the PDF. This is particularly useful because you can avoid including unwanted page elements like headers, footers, or ads often present when PDFs are generated from web pages.
+The key advantage of using pdfbuilder node is that it operates server-side, meaning PDFs can be generated automatically without a browser or manual interaction. This makes it ideal for automated workflows where consistent, programmatically created documents are needed.
 
 When working with this node, you can use various attributes to customize the content and layout of the PDF, such as text, tables, images, page sizes, margins, headers, footers, and more. Below are the most commonly used attributes:
 
@@ -62,6 +62,8 @@ When working with this node, you can use various attributes to customize the con
 | `height`          | Sets the height of table cells or other elements.                               | `{ "height": 50 }`                                        |
 | `alignment`       | Specifies the text alignment (left, center, right).                             | `{ "alignment": "center" }`                               |
 | `border`          | Defines the border for tables or table cells (style, width, and color).         | `{ "border": [true, true, true, true] }`                   |
+
+For additional attributes and information, refer to the [pdfmake documentation](https://pdfmake.github.io/docs/0.1/document-definition-object/), as pdfbuilder-node uses this library to generate PDFs.
 
 Here’s a simple example of how you can use these attributes to create a basic PDF:
 
