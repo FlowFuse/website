@@ -1,7 +1,7 @@
 ---
-title: "How to Embed Webpages in the FlowFuse Dashboard"
-subtitle: Learn how to embed external content like maps, reports, and widgets into your FlowFuse dashboard.
-description:  Learn how to embed external web pages such as maps, reports, and widgets into your FlowFuse dashboard. Follow this guide for easy, step-by-step instructions on improving your dashboard's functionality and collaboration.
+title: "How to Embed Webpages on the FlowFuse Dashboard"
+subtitle: Learn how to embed external content like maps, reports, and widgets onto your FlowFuse dashboard.
+description:  Learn how to embed external web pages such as maps, reports, and widgets onto your FlowFuse dashboard. Follow this guide for easy, step-by-step instructions on improving your dashboard's functionality and collaboration.
 date: 2025-05-14
 authors: ["sumit-shinde"]
 image: 
@@ -10,33 +10,33 @@ tags:
    - flowfuse
 ---
 
-Building a dashboard in FlowFuse is not just about displaying internal data — it’s about centralizing all the resources your team needs. FlowFuse makes it easy to embed external content like live dashboards, maps, PDFs, and videos directly into your dashboard. This helps eliminate switching between tabs and keeps everything in one place. This guide will show you how to embed these elements seamlessly into your FlowFuse dashboard for a more efficient and collaborative workspace.
+When you build a dashboard, sometimes you need more than just internal data. Maybe it’s a live map, a report hosted elsewhere, or another dashboard — whatever it is, having to switch tabs breaks the flow. FlowFuse lets you embed external content like web pages, dashboards, PDFs, and widgets right into your dashboard. This guide shows you how to do exactly that — step by step — so your team has everything they need, all in one place.
 
 <!--more-->
 
 ## Why Embed Webpages in Your Dashboard?
 
-Less Switching: You won't have to jump between tabs or apps. Everything you need is right in front of you.
+Embedding external content directly into your FlowFuse dashboard can make your life a lot easier. Here’s why it’s worth considering:
 
-Use What You Already Have: If you’ve already built a chart, report, or page elsewhere, embed it; there is no need to recreate it.
+- **Streamline Your Workflow:** No more hopping between tabs or switching apps. Everything you need can be in one place.
+  
+- **Save Time on Rework:** If you’ve already built a report, chart, or page somewhere else, just embed it into your dashboard. No need to start from scratch.
+  
+- **Quick Decisions:** Having all your key data together helps you see what’s important at a glance and act faster.
 
-- Faster Decisions: With all your important information in one place, it's easier to understand what’s happening and act quickly.
-
-- Keep Everyone on the Same Page: A shared dashboard ensures your team looks at the same data and updates.
-
-- Save Time, Every Day: Fewer clicks and less back-and-forth means more focus and better time use.
+- **Cut Down on Clicks:** The fewer actions needed to get to your information, the more time you can spend on actually getting things done.
 
 ## How to Embed Webpages On your FlowFuse Dashboard
 
-Embedding external content into your FlowFuse dashboard is simple. 
+Embedding external content into your FlowFuse dashboard is straightforward and flexible. In this section, you'll learn two ways to do it: using a direct URL and using embed code. We’ll also cover common issues you might face and how to fix them. Lastly, you'll see how to embed one FlowFuse dashboard inside another, making it easier to centralize important views in one place.
 
-### Prequastie.
+### Prerequisites
 
 Before you begin embedding webpages on FlowFuse Dashboard, make sure you have the following:
 
 - **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
-- **@flowfuse/node-red-dashboard-2-ui-iframe:** Ensure you have [node-red-contrib-sqlite](https://flows.nodered.org/node/@flowfuse/node-red-dashboard-2-ui-iframe) installed.
+- **@flowfuse/node-red-dashboard-2-ui-iframe:** Ensure you have [node-red-dashboard-2-ui-iframe](https://flows.nodered.org/node/@flowfuse/node-red-dashboard-2-ui-iframe) installed.
 
 #### Step 1: Obtain the URL or Embed Code of the Webpage You Want to Embed
 
@@ -48,24 +48,24 @@ Some websites may restrict embedding through iframes due to [Cross-Origin Resour
 
 Many platforms, such as YouTube and Google Maps, provide a specific "embed code or URL" that is more suitable for embedding. Ensure you use the correct embed link or code these platforms offer to guarantee smooth integration.
 
-Once the URL (or embed code) is ready, move on to the next step.
+Once the URL or embed code is ready, move on to the next step.
 
-#### Step 2: Embedding the Webpage in FlowFuse Dashboard
+#### Step 2: Embedding the Webpage on FlowFuse Dashboard
 
 Now that you’ve gathered the URL or embed code for the external content you want to embed, it’s time to add it to your FlowFuse dashboard. Below are two methods for embedding external content:
 
 ##### 2.1 Embed via URL 
 
-The easiest and most straightforward way to embed external content is by using the URL. FlowFuse's ui_iframe node allows you to use an external URL directly. Here’s how to do it:
+The easiest and most straightforward way to embed external content is by using the URL. FlowFuse's iframe node allows you to use an external URL directly. Here’s how to do it:
 
-1. Drag the ui_iframe node onto the canvas.
+1. Drag the **ui_iframe** node onto the canvas.
 2. Double-click the node to open its configuration dialog.
    - Create a new group for it to render in.
    - Set the size (width and height).
    - Enter the URL you want to embed.
-3. Click Done and then Deploy.
+3. Click **Done** and then **Deploy**.
 
-You can use the weather widget, Google Map embedded URL, or PDF URL for quick testing. Below, I’ve included an image of a dashboard with the weather widget, Google Maps, and PDF embedded.
+For a quick hands-on practice, you can try embedding a weather widget, Google Maps, Google Calendar, or a hosted PDF on your dashboard.
 
 ![Weather widget embedded in FlowFuse Dashboard](./images/weather-widget.png)
 _Weather widget embedded in FlowFuse Dashboard_
@@ -81,9 +81,9 @@ _Google Calendar embedded in FlowFuse Dashboard_
 
 ##### 2.1 Embed via HTML Embed Code
 
-If you have an embed code from third-party services, you can use this HTML code to embed the content into your FlowFuse dashboard. Here’s how to do it:
+If you have an embed code from third-party services, you can use this code to embed the content into your FlowFuse dashboard. Here’s how to do it:
 
-1. Drag the ui_template widget onto the canvas.
+1. Drag the **ui_template** widget onto the canvas.
 2. Double-click on it to open its configuration dialog.
    - Create a new group for it to render in.
    - Set the size (width and height).
@@ -98,30 +98,28 @@ If you have an embed code from third-party services, you can use this HTML code 
 </script>
 ```
 
-Some services provide an iframe tag. In this case, you need only copy the URL and use the embedding via the URL method.
+Some services provide an **iframe** tag. In this case, you need only copy the URL and use the embedding via the URL method.
 
-4. click Done and Deploy to save your changes once you've added the code.
-
-Following is the image of the dashboard on which we are embedding the animated weather widget on the FlowFuse dashboard using embed code.
+4. Click **Done** and **Deploy** to save your changes once you've added the code.
 
 ![Animated weather widget on the Flowfuse dashboard, embedded with code.](./images/weather-widget.gif){data-zoomable}
 _Animated weather widget on the Flowfuse dashboard, embedded with code._
 
-Now that you’ve learned how to embed external content into your FlowFuse dashboard, you might have tried embedding your FlowFuse dashboard into other websites or another FlowFuse dashboard and found that it is not working as expected.
+Now that you’ve learned how to embed external content into your FlowFuse dashboard, one day you may need to embed your FlowFuse dashboard elsewhere—either on another FlowFuse dashboard or an external site. If you’ve tried and found that it’s not working as expected.
 
-This is a security feature designed to protect your data. FlowFuse dashboards, like many other web applications, implement security policies such as Cross-Origin Resource Sharing (CORS) and the X-Frame-Options header. These policies ensure that your dashboard is only viewed in trusted environments, preventing malicious sites from potentially tampering with your data or exposing it to unauthorized users.
+This is a security feature designed to protect your data. FlowFuse dashboards, like many other web applications, implement security policies such as Cross-Origin Resource Sharing (CORS) and the X-Frame-Options header. These policies ensure that your dashboard is only viewed in trusted environments, preventing malicious sites from tampering with your data or exposing it to unauthorized users.
 
-However, if you really need to embed your FlowFuse dashboard into other websites or another FlowFuse dashboard, it is actually possible to do so with some configuration changes. Following is the section on how to enable embedding securely:
+However, if you need to embed your FlowFuse dashboard into other websites or on another FlowFuse dashboard, it’s possible to do so with some configuration changes. Below is a section on how to enable embedding securely of FlowFuse Dashboard:
 
 ### Enabling Embedding of FlowFuse Dashboards
 
 1. Go to your FlowFuse instance settings.
-2. Switch to the editor settings and enable "Allow Dashboard to be embedded in an iFrame."
+2. Switch to the **editor** settings and enable **"Allow Dashboard to be embedded in an iFrame"**
 
 ![FlowFuse instance settings showing the option to allow dashboard embedding in an iframe.](./images/allow-dashboard-embedding.png){data-zoomable}
 _FlowFuse instance settings showing the option to allow dashboard embedding in an iframe._
 
-3. Click Save Settings and restart your instance for the changes to take effect.
+3. Click **Save Settings and restart** your instance for the changes to take effect.
 
 [![FlowFuse OEE Dashboard embedded in another FlowFuse dashboard.](./images/embedding-flowfuse-oee-dashboard.png){data-zoomable}](https://flowfuse.com/blueprints/manufacturing/oee-dashboard/)
 _FlowFuse OEE Dashboard embedded in another FlowFuse dashboard._
