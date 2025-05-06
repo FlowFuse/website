@@ -20,15 +20,16 @@ Before you begin, make sure the following requirements are met:
 
 - You have an active [FlowFuse account](https://app.flowfuse.com) and a running FlowFuse instance.
 - You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the [Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) sponsored by FlowFuse.
-- Ensure you have installed `flowfuse/node-red-dashboard` and `node-red-contrib-sqlite` (The SQLite node is required for the demo data generation flow we provided. If you're not using that flow, you can skip this.).
+- Ensure you have installed `flowfuse/node-red-dashboard` `@flowfuse/node-red-dashboard-2-ui-iframe` and `node-red-contrib-sqlite` (The SQLite node is required for the demo data generation flow we provided. If you're not using that flow, you can skip this.).
+
 
 ## Setting Up PDF Generation in Node-RED
 
 Once the prerequisites are in place, the next step is setting up your Node-RED environment to generate PDF reports. In this section, we will go over how to install the necessary Node-RED node and configure a flow to generate PDF reports.
 
-### Step 1: Install the node-red-contrib-pdfmake Node
+### Step 1: Install the platmac/node-red-pdfbuilder
 
-The [node-red-contrib-pdfmake](https://flows.nodered.org/node/node-red-contrib-pdfmake) node is the primary node for creating PDF reports in Node-RED. To install this node:
+The [platmac/node-red-pdfbuilder](https://flows.nodered.org/node/@platmac/node-red-pdfbuilder) node is the primary node for creating PDF reports in Node-RED. To install this node:
 
 1. Open your Node-RED editor.
 2. Navigate to the "Manage palette" section from the top-right menu.
@@ -37,7 +38,7 @@ The [node-red-contrib-pdfmake](https://flows.nodered.org/node/node-red-contrib-p
 
 This node allows you to dynamically generate PDFs from various inputs, which is exactly what you will need to generate reports.
 
-If you haven't installed the `node-red-dashboard` and `node-red-contrib-sqlite` nodes, you can install them similarly.
+If you haven't installed the `flowfuse/node-red-dashboard`, `@flowfuse/node-red-dashboard-2-ui-iframe` and `node-red-contrib-sqlite` nodes, you can install them similarly.
 
 ### Step 2: Understanding How to Use the pdfmake Node
 
@@ -270,7 +271,7 @@ Once the PDF is generated, you can find it in the `.node-red` directory.
 
 However, if you want to share the PDF with others, display it on the dashboard, and provide a download button, you can use the HTTP API, an iframe, and a few supporting nodes. Let's walk through how to do that next.
 
-### Step 3: Serving the PDF via HTTP and Previewing It on the Dashboard
+### Step 4: Serving the PDF via HTTP and Previewing It on the Dashboard
 
 In this step, we’ll make the generated PDF accessible through a web interface. You’ll be able to preview the PDF directly in the browser and embed it in your FlowFuse dashboard for a smooth, integrated experience. We’ll also add a download button so users can easily save the report. Instead of manually retrieving the file, we’ll create an HTTP endpoint to serve the PDF and use an iframe to display it.
 
