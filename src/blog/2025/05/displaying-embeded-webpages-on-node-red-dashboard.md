@@ -58,11 +58,15 @@ Now that you’ve gathered the URL or embed code for the external content you wa
 
 The easiest and most straightforward way to embed external content is by using the URL. FlowFuse's ui_iframe node allows you to directly use an external URL. Here’s how to do it:
 
-1. Drag the ui_iframe node onto the canvas.
-2. Double-click the node to open its configuration dialog.
+1. Drag the ui_iframe widget onto the canvas.
+2. Double-click the widget to open its configuration dialog.
    - Create a new group for it to render in.
    - Set the size (width and height).
    - Enter the URL you want to embed.
+
+![ui_iframe widget configuration](./images/if_frame-config.png){data-zoomable}
+_iframe widget configuration_
+
 3. Click Done and then Deploy.
 
 For quick testing, you can use the weather widget, Google Map embedded URL, or the PDF URL. Below, I’ve included an image of a dashboard with the weather widget, Google Map, and PDF embedded.
