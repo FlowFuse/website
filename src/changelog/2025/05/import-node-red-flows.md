@@ -33,10 +33,10 @@ FlowFuse Device Agent now supports importing Node-RED flows during the setup pro
 
 ### Screenshots
 
-![Screenshot of the FlowFuse interface for configuring a Remote Instance](device-setup-dialog.png){data-zoomable}
+![Screenshot of the FlowFuse interface for configuring a Remote Instance](./images/device-setup-dialog.png){data-zoomable}
 _Screenshot of the FlowFuse interface for configuring a Remote Instance_
 
-![Screenshot of the new import options in the Device Agent during setup](device-agent-import.png){data-zoomable}
+![Screenshot of the new import options in the Device Agent during setup](./images/device-agent-import.png){data-zoomable}
 _Screenshot of the new import options in the Device Agent during setup_
 
 We hope this enhancement simplifies the process of migrating existing Node-RED flows to FlowFuse.
