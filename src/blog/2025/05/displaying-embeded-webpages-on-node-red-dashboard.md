@@ -58,7 +58,7 @@ Now that you’ve gathered the URL or embed code for the external content you wa
 
 The easiest and most straightforward way to embed external content is by using the URL. FlowFuse's iframe node allows you to use an external URL directly. Here’s how to do it:
 
-1. Drag the **ui_iframe** node onto the canvas.
+1. Drag the **ui-iframe** node onto the canvas.
 2. Double-click the node to open its configuration dialog.
    - Create a new group for it to render in.
    - Set the size (width and height).
@@ -79,11 +79,11 @@ _PDF embedded in FlowFuse Dashboard_
 ![Google Calendar embedded in FlowFuse Dashboard](./images/google-calendar.png)
 _Google Calendar embedded in FlowFuse Dashboard_
 
-##### 2.1 Embed via HTML Embed Code
+##### 2.2 Embed via HTML Embed Code
 
 If you have an embed code from third-party services, you can use this code to embed the content into your FlowFuse dashboard. Here’s how to do it:
 
-1. Drag the **ui_template** widget onto the canvas.
+1. Drag the **ui-template** widget onto the canvas.
 2. Double-click on it to open its configuration dialog.
    - Create a new group for it to render in.
    - Set the size (width and height).
