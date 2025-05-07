@@ -47,9 +47,9 @@ Each request must include the following:
 - `line`: The line or machine where the issue was raised.
 - `department`: The department responsible for resolving the issue.
 - `created`: The timestamp when the request was created.
-- `acknowledged`: Optional timestamp indicating when the request was acknowledged.
-- `resolved`: Optional timestamp indicating when the issue was resolved.
-- `note`: Optional text added by users for context or follow-up.
+- `acknowledged`: Timestamp indicating when the request was acknowledged.
+- `resolved`: Timestamp indicating when the issue was resolved.
+- `note`: Text added by users for context or follow-up.
 Only predefined values for line and department should be allowed. These values will be managed through admin settings to ensure consistency across the system.
 
 ### Defining Key Features
@@ -58,33 +58,25 @@ The system needs to support core operations that reflect how issues are reported
 
 The essential features include:
 
-- Request creation: Users select the line and department, optionally enter a note, and submit a request.
+- Request creation: Users select the line and department, enter a note, and submit a request.
 - Acknowledge requests: A responder can mark a request as acknowledged once they start working on it.
 - Resolve requests: After resolving the issue, the responder marks it as resolved.
 - View filtering: Requests can be filtered by line or department.
 - Admin tools: Admins can add and manage the list of departments and lines.
 - Status display: Requests display their current state — pending, acknowledged, or resolved.
-- Alerts (optional): Visual or sound alerts for unacknowledged requests after a time threshold.
+- Alerts: Visual or sound alerts for unacknowledged requests after a time threshold.
 
 Each of these actions will be timestamped to provide a clear history of who did what and when.
 
 ### Dashboard Visualization & UI Design
 
-With the core features defined, the next step is to design a dashboard that is intuitive and efficient for both frontline workers and admin users. A well-structured user interface ensures quick interaction and smooth navigation, especially in fast-paced environments where timely responses are critical.
+The next step after defining the core features is to design an intuitive and efficient dashboard for both frontline workers and admin users. A well-organized interface ensures quick interactions and smooth navigation, especially in settings where timely responses are crucial.
 
-The system will support two distinct user roles: admins and regular users. Regular users will have access to features specific to their role, such as submitting requests, viewing requests by department or line, and managing tasks relevant to their area. Admins, on the other hand, will have extended capabilities, including the ability to create and manage departments and lines, and access a full view of all request data.
+The system will support two user roles: admins and regular users. Regular users will have access to features such as submitting requests, viewing requests by department or line, and managing tasks within their area (e.g., acknowledging and resolving requests). Admins will have additional capabilities, including creating and managing departments and lines, and accessing all request data.
 
-The dashboard will be implemented as a single-page interface with dynamic content updates. Instead of traditional page navigation, the content will change based on the user's selection of a line or department. For example, when a user selects a specific production line, the request list and relevant controls will update automatically to reflect only those related to the chosen line.
+The regular user's view will be a single-page interface with dynamic content updates. Rather than traditional page navigation, content will update based on the user’s selection of a department or line. For example, when a user selects a production line, the request list and relevant controls will automatically update to display only the requests related to that line.
 
-Admins will have access to a dedicated view that includes a form for creating new lines or departments, along with a comprehensive table showing all existing requests. This view will also include a user-friendly menu for quickly switching between departments and lines, making it easy to manage the full system from a centralized location.
-
-Regular users will interact with a streamlined version of the dashboard. They can use drop-down menus or navigation panels to select their department or line, and the interface will update to show only the relevant request list and input form. This filtered view reduces visual clutter and helps users focus on the tasks that matter to them.
-
-To support efficient navigation for all users, the dashboard will include:
-
-- A department menu and line menu for selecting context.
-- A dynamic request list that updates based on the selected context.
-- Simple, role-appropriate controls for creating, acknowledging, and resolving requests.
+The admin view will have a dedicated view, including a form for creating new lines or departments and a table displaying all requests. This view will also feature a menu for quickly switching between specific department or line section, improving system management efficiency.
 
 This design keeps the interface focused and responsive. It avoids unnecessary complexity while providing all necessary tools for users to perform their tasks efficiently — whether they are reporting an issue or managing overall operations.
 
@@ -107,12 +99,12 @@ _The following dashboard image illustrates the intended design and key objective
 
 To ensure a simple and efficient data management system for the Andon Task Manager, we will use SQLite to store user requests. SQLite is a lightweight, easy-to-manage database that is well-supported in Node-RED through the `node-red-contrib-sqlite node`. This makes it an ideal choice for local deployments or scenarios where a lightweight database is needed.
 
-For dynamic runtime data—such as the user's selected line or department, as well as the full list of available lines and departments—FlowFuse’s built-in context storage will be utilized. This solution allows for fast access to real-time data while maintaining persistent state across sessions, without introducing unnecessary database complexity or overhead.
+For dynamic runtime data—such as the user's selected line or department, as well as the full list of available lines and departments—FlowFuse’s built-in [context storage](/docs/user/persistent-context/) will be utilized. This solution allows for fast access to real-time data while maintaining persistent state across sessions, without introducing unnecessary database complexity or overhead.
 
 By using both SQLite for structured request data and context storage for dynamic, session-based information, the system remains efficient and easy to maintain.
 
 ## Up Next
 
-In the next part of this series, we will focus on developing the Lines and Departments view for normal users, along with the navigation menu for selecting lines and departments. Later, we will cover the development of the Admin interface.
+In the next part of this series, we will focus on developing the Lines view for regular users, along with the navigation menu for switching between different line sections. Later, we will cover the development of the lines view and Admin interface.
 
 But if you can't wait to get started right away, don’t worry! You can [register](https://app.flowfuse.com/account/create) for FlowFuse and get started with our ready-made [Andon Task Manager blueprint](/blueprints/manufacturing/andon-task/), which is pre-configured for easy deployment. Stay tuned for the next installment to continue your journey toward building a comprehensive, real-time Andon Task Manager solution.
