@@ -1,6 +1,6 @@
 ---
 title: "Designing Flexible Cron Schedules in FlowFuse with Node-RED"
-subtitle: Design Flexible Schedules for Seamless Automation in Node-RED
+subtitle: "Go Beyond Inject Nodes: Automate Smarter with Flexible Cron Schedules in Node-RED"
 description:
 date: 2025-04-09
 authors: ["sumit-shinde"]
@@ -56,15 +56,78 @@ The most straightforward way to use cron-plus is to define static schedules usin
 
 5. In the Schedule field, enter the following cron expression to run the task at 8:00 AM every day:
 
+```
    0 8 * * *
+```
+
+![Image explaining the cron expression syntax](./images/cron_expression_syntax.png){data-zoomable}
+_Image explaining the cron expression syntax_
 
 6. Connect the cron-plus node to other nodes (e.g., a debug node or an action node) to specify the actions when the flow is triggered.
 
 7. Click Deploy to save and activate your flow. The cron-plus node will now trigger your flow every day at 8:00 AM.
 
+Here are some advance patterns: 
 
+**Every weekday at 9:30 AM**
+```cron
+30 9 * * 1-5
+```
 
+**Every hour**
+```cron
+0 * * * *
+```
 
+**Every 15 min during work hours (Mon–Fri, 9–5)**
+```cron
+*/15 9-17 * * 1-5
+```
 
+**First Monday of the month at 10:00 AM**
+```cron
+0 10 1-7 * 1
+```
+
+**Last Friday of the month at 6:45 AM**
+```cron
+45 6 25-31 * 5
+```
+
+#### Easy Builder Feature 
+
+To make it even easier to create and customize cron patterns, the cron-plus node includes a feature called Easy Builder. This feature provides a user-friendly interface that lets you quickly generate and adjust cron expressions without needing to write them manually. You can select options like time intervals, days of the week, and more, and the Easy Builder will generate the correct cron syntax for you.
+
+![Image showing the easy builder feature](./images/easy-builder.gif){data-zoomable}
+_Image showing the easy builder feature_
+
+### Solar Event Schedules
+
+Solar event-based triggers are a great feature in cron-plus for automating tasks based on sunlight events like sunrise, sunset, dawn, and dusk. You can fine-tune your triggers with offsets, like triggering an action 30 minutes after sunset.
+
+Here are the solar events you can use:
+
+   - **nightEnd**: End of night, start of twilight.
+   - **nauticalDawn**: Horizon becomes faintly visible, used by sailors.
+   - **civilDawn**: Light enough for outdoor activities without lights.
+   - **sunrise**: Sun first visible on the horizon.
+   - **sunriseEnd**: Full sun above the horizon.
+   - **morningGoldenHourEnd**: End of the morning golden hour.
+   - **solarNoon**: Sun is at its highest point in the sky.
+   - **eveningGoldenHourStart**: Start of the evening golden hour.
+   - **sunsetStart**: Sun starts to set.
+   - **sunset**: Sun is fully below the horizon.
+   - **civilDusk**: Last light before it gets dark.
+   - **nauticalDusk**: Horizon is no longer visible, dark sky.
+   - **nightStart**: Full darkness after twilight.
+   - **nadir**: Darkest point of the night.
+  
+Let's start and learn how to use it. Suppose we need to trigger the flow 30 minutes after sunset. Here's how you do it:
+
+1. First, set the location since solar events depend on it. You can configure the location either at the node level or schedule level. In the location field, you can enter the latitude and longitude manually, or click the three dots next to the field to open a map and select your location.
+
+2. Next, select the solar event. You can choose "All Solar Events" or select "Selected Solar Events" to pick specific ones. Click the dropdown icon to the right of the field to make your selection.
+
+3. Finally, set the offset. The offset allows you to adjust the timing of the event in minutes. For example, to trigger the event 30 minutes after sunset, enter 30. The offset can be set to a positive or negative time value (e.g. -10  for 10 minutes before the event, or 1 hour for 1 hour after the event).
 
 
