@@ -61,7 +61,7 @@ Equity grants are subject to board approval.
 
 ### Benefits
 
-The final component of our total compensation is the benefits package. While our intentionis to keep these benefits as location independent as possible and practical, we also strive to provide all employees with a decent standard of living. Therefore, in certain cases, we may offer location-dependent benefits to ensure that appropriate standards are met. 
+The final component of our total compensation is the benefits package. While our intention is to keep these benefits as location independent as possible and practical, we also strive to provide all employees with a decent standard of living. Therefore, in certain cases, we may offer location-dependent benefits to ensure that appropriate standards are met. 
 
 Please note that the benefits offered may be subject to change during your employment. These changes may occur due to evolving legislation, fluctuations in the costs associated with providing the benefits, situations where the costs outweigh the benefits for team members, or other relevant reasons. We aim to ensure that any adjustments made to the benefits package are made with careful consideration and the best interests of our employees in mind.
 
