@@ -74,27 +74,27 @@ _Image explaining the cron expression syntax_
 Here are some advance patterns: 
 
 **Every weekday at 9:30 AM**
-```cron
+```
 30 9 * * 1-5
 ```
 
 **Every hour**
-```cron
+```
 0 * * * *
 ```
 
 **Every 15 min during work hours (Mon–Fri, 9–5)**
-```cron
+```
 */15 9-17 * * 1-5
 ```
 
 **First Monday of the month at 10:00 AM**
-```cron
+```
 0 10 1-7 * 1
 ```
 
 **Last Friday of the month at 6:45 AM**
-```cron
+```
 45 6 25-31 * 5
 ```
 
