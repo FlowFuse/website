@@ -489,9 +489,6 @@ eleventyComputed:
     posthog.opt_out_capturing();
 </script>
 
-<!-- Clearbit Tracking -->
-<script async src="https://tag.clearbitscripts.com/v1/pk_d62bf91706baf1c207f6010e8f08b8ce/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
-
 <!-- HubSpot Tracking -->
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
