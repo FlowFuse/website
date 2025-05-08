@@ -41,7 +41,7 @@ To put this Blueprint to use, check out the Blueprint page for [Getting Started 
 
 ## Blueprint: PDF Report Generator
 
-![Screenshot of PDF Report Generator](./images/pdf.png)
+![Screenshot of PDF Report Generator](./images/PDF.png)
 _Screenshot of PDF Report Generator_
 
 Until now, creating a presentable report using data accessed in your Node-RED instance was a manual effort.
