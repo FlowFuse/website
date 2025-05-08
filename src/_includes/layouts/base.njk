@@ -469,15 +469,12 @@ eleventyComputed:
     /*
         Get User Agent String
     */
-    console.log(posthog);
-    
     window.addEventListener('load', () => {
         if (posthog && typeof posthog.register === 'function') {
             const phUA = {
                 "user_agent_string": window.navigator.userAgent
             };
             posthog.register(phUA);
-            console.log('PostHog.register called with:', phUA);
         } else {
             console.error('PostHog is not fully initialized.');
         }
