@@ -151,6 +151,7 @@ Letâ€™s start by setting up a flow that triggers 30 minutes after sunset. Hereâ€
 
 6. Click Done, connect the node to the rest of your flow, and Deploy.
 
+{% renderFlow %}
 [{"id":"cba15bd32c5434a5","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["2af2e9274fe1321a","458c9533a1437ee1"],"x":94,"y":179,"w":392,"h":82},{"id":"2af2e9274fe1321a","type":"debug","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":380,"y":220,"wires":[]},{"id":"458c9533a1437ee1","type":"cronplus","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"Cron Plus","outputField":"payload","timeZone":"","storeName":"","commandResponseMsgOutput":"output1","defaultLocation":"","defaultLocationType":"default","outputs":1,"options":[{"name":"et","topic":"30min After Sunset","payloadType":"default","payload":"","expressionType":"solar","expression":" 0 8 * * *","location":"20.70816594524601 75.673828125","offset":"30","solarType":"selected","solarEvents":"sunset"}],"x":200,"y":220,"wires":[["2af2e9274fe1321a"]]}]
 {% endrenderFlow %}
 
