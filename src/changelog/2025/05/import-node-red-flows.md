@@ -29,7 +29,9 @@ FlowFuse Device Agent now supports importing Node-RED flows during the setup pro
 
 - When your Remote Instance is started, it will install all the necessary pieces and run your new Snapshot.
 - The Remote Instance must be assigned to an application before running the **Setup Command**
-- Requires FlowFuse version 2.16
+- Requires Device Agent v3.3.1
+- Available on FlowFuse Cloud today. For self-hosted customers, you'll need FlowFuse version 2.17
+
 
 ### Screenshots
 
