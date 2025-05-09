@@ -11,5 +11,23 @@
             }
         });
     }
+    function fallback() {
+        const targetScript = [...document.scripts].find(
+            s => s.src === 'https://js-eu1.hsforms.net/forms/embed/v2.js' || s.src === 'http://js-eu1.hsforms.net/forms/embed/v2.js'
+        );
+
+        if (targetScript && targetScript.parentNode) {
+            const errorSection = document.createElement('section');
+            errorSection.classList.add('text-center', 'border', 'border-indigo-300', 'rounded-lg', 'bg-white');
+            errorSection.innerHTML = `
+                <p class="text-indigo-500"><strong>Hmm… there was supposed to be a form here.</strong></p>
+                <p>
+                    If you’re using strict privacy settings or navigating in private mode, it might be blocked.
+                    Try adjusting your settings or switching browsers to continue.
+                </p>
+            `;
+            targetScript.parentNode.insertBefore(errorSection, targetScript.nextSibling);
+        }
+    }
 </script>
-<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()" onerror="fallback();"></script>
