@@ -23,10 +23,12 @@ on taking the FlowFuse platform to market.
 | Role | Contributors |
 |------|--------------|
 | CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
-| Professional Services and Support Manager | [Rob](https://www.linkedin.com/in/rob-marcer-b414b910/) [@robmarcer](https://github.com/robmarcer) |
-| Visual designer | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
+| Professional Services | [Rob](https://www.linkedin.com/in/rob-marcer-b414b910/) [@robmarcer](https://github.com/robmarcer) |
 | GTM | [Michael](https://www.linkedin.com/in/michaelbdavis/) [@MichaelBDavis](https://github.com/MichaelBDavis) |
-
+| CSM | [Esmé](https://nl.linkedin.com/in/esméwieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
+| Sales | [Omar](https://ca.linkedin.com/in/omarazizahmed?trk=public_post_feed-actor-name) [@omarazizahmed](https://github.com/omarazizahmed) |
+| Visual designer | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
+| Technical Writer | [Sumit](https://in.linkedin.com/in/shindesumit84) [@sumitshinde-88](https://github.com/sumitshinde-84) |
 
 ## Contact us
 
