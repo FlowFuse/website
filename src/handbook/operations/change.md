@@ -24,6 +24,8 @@ and provide all of the necessary details to enact the change and to verify the c
 
 Where access is required to a system, a `Access / Permission Request` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new?template=access-request.md).
 
+Note: when onboarding/offboarding a new employee, this is managed via the Onboarding/Offboarding change request.
+
 # New GitHub Repository
 
 If a new repository is required within our GitHub organisation, a `New Repository Checklist` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new?template=new-repo.md).
