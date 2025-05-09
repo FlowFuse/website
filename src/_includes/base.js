@@ -73,7 +73,7 @@ function hsFallback (element) {
                 <p class="text-indigo-500"><strong>Hmm… there was supposed to be a form here.</strong></p>
                 <p>
                     If you’re using strict privacy settings or navigating in private mode, it might be blocked.
-                    Try adjusting your settings or switching browsers to continue.
+                    Try adjusting your settings or switching browsers to continue, or send an email to sales@flowfuse.com.
                 </p>
             `;
         element.parentNode.insertBefore(errorSection, element.nextSibling);
