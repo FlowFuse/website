@@ -70,7 +70,7 @@ function hsFallback (element) {
         const errorSection = document.createElement('section');
         errorSection.classList.add('text-center', 'border', 'border-indigo-300', 'rounded-lg', 'bg-white', 'px-4');
         errorSection.innerHTML = `
-                <p class="text-indigo-500"><strong>Hmm… there was supposed to be a form here.</strong></p>
+                <p style="color: #6366f1;"><strong>Hmm… there was supposed to be a form here.</strong></p>
                 <p>
                     If you’re using strict privacy settings or navigating in private mode, it might be blocked.
                     Try adjusting your settings or switching browsers to continue, or email <a href="mailto:sales@flowfuse.com">sales@flowfuse.com</a>.
