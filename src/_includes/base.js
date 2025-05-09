@@ -9,7 +9,7 @@ const blockedScripts = [
 ]
 
 function needsToBeBlocked(src) {
-    return blockedScripts.some((blockedScript) => blockedScript.test(src))
+    return blockedScripts.some((blockedScript) => blockedScript.test(src)) 
 }
 
 // Patch document.createElement to allow blocking of unwanted scripts injected externally
