@@ -454,7 +454,7 @@ module.exports = function(eleventyConfig) {
             }
         }
         if (content) {
-            classes = "ff-nav-dropdown relative " + (addClasses || '')
+            classes = "ff-nav-dropdown relative hover:cursor-pointer" + (addClasses || '')
         } else {
             classes= (addClasses || '')
         }
