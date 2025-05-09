@@ -13,7 +13,7 @@
     }
     function fallback() {
         const targetScript = [...document.scripts].find(
-            s => s.src === 'https://js-eu1.hsforms.net/forms/embed/v2.js' || s.src === 'http://js-eu1.hsforms.net/forms/embed/v2.js'
+            s => s.src.includes('js-eu1.hsforms.net/forms/embed/v2.js')
         );
 
         if (targetScript && targetScript.parentNode) {
