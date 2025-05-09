@@ -64,3 +64,18 @@ document.createElement = function(...args) {
 
     return scriptElt
 }
+
+function hsFallback (element) {
+    if (element && element.parentNode) {
+        const errorSection = document.createElement('section');
+        errorSection.classList.add('text-center', 'border', 'border-indigo-300', 'rounded-lg', 'bg-white', 'px-4');
+        errorSection.innerHTML = `
+                <p style="color: #6366f1;"><strong>Hmm… there was supposed to be a form here.</strong></p>
+                <p>
+                    If you’re using strict privacy settings or navigating in private mode, it might be blocked.
+                    Try adjusting your settings or switching browsers to continue.
+                </p>
+            `;
+        element.parentNode.insertBefore(errorSection, element.nextSibling);
+    }
+}

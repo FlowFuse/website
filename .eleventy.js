@@ -439,7 +439,7 @@ module.exports = function(eleventyConfig) {
                 });
             }
         </script>
-        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="${functionName}()"></script>
+        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="${functionName}()" onerror="hsFallback(this)"></script>
       `;
     });
 
