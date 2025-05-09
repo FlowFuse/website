@@ -59,17 +59,17 @@ module.exports = function(eleventyConfig) {
         if (!content) return '';
 
         const match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
-
+    
         if (match) {
           const textContent = match[1].replace(/<\/?[^>]+>/gi, '').trim();
           return textContent;
         }
-
+    
         return null;
       });
 
     // Add a global data variable for the current date
-    eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());
+    eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());  
 
     // Make filters globally accessible
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
@@ -118,7 +118,7 @@ module.exports = function(eleventyConfig) {
         return `<div class="ff-blue-card">${markdownContent}</div>`;
     });
 
-    let flowId = 0; // Keep a global counter to allow more than one
+    let flowId = 0; // Keep a global counter to allow more than one 
     eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
         flowId++; // Increment the flowId to allow multiple flows on the same page
 
@@ -132,7 +132,7 @@ module.exports = function(eleventyConfig) {
         const coreNodes = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', '_data', 'coreNodes.json'), 'utf-8'));
 
         // Transform coreNodes object into an array
-        return Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));
+        return Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));		
     })
 
     eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {
@@ -176,7 +176,7 @@ module.exports = function(eleventyConfig) {
         array.sort((t1, t2) => {
             var a = t1[attr];
             var b = t2[attr];
-
+        
             return a > b ? 1 : (a === b ? 0 : -1); // eslint-disable-line no-nested-ternary
         });
 
@@ -265,7 +265,7 @@ module.exports = function(eleventyConfig) {
         if (parts[parts.length-1] === "index") {
             parts.pop();
         }
-
+        
         let path = "";
         return "/"+parts.map(p => {
             let url = `${path}/${p}`;
@@ -352,7 +352,7 @@ module.exports = function(eleventyConfig) {
             .sort((a, b) => b.commonTags - a.commonTags || b.date - a.date)
             .slice(0, 5);
     });
-
+    
     // Custom async filters
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
         try {
@@ -406,7 +406,7 @@ module.exports = function(eleventyConfig) {
         let data = fs.readFileSync(relativeFilePath, function(err, contents) {
             if (err) return err
             return contents
-        });
+        });     
         return data.toString('utf8');
     }
 
@@ -468,7 +468,7 @@ module.exports = function(eleventyConfig) {
             return `<li class="${classes}"><span class="flex items-center gap-2">${iconSvg}${label}</span></li>`
         }
     });
-
+    
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
     if (DEV_MODE) {
@@ -505,7 +505,7 @@ module.exports = function(eleventyConfig) {
 
         return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE);
     });
-
+    
     // Create a collection for sidebar navigation
     eleventyConfig.addCollection('nav', function(collection) {
         let nav = {}
@@ -695,7 +695,7 @@ module.exports = function(eleventyConfig) {
         }, {});
 
         const folderPath = env.page.inputPath
-
+        
         // Check if the image has the 'data-zoomable' attribute
         const widths = 'data-zoomable' in attributes ? [1920] : [650]; // maximum width an image can be displayed at as part of blog prose
 
@@ -725,12 +725,12 @@ module.exports = function(eleventyConfig) {
         if (hrefIndex >= 0) {
             let href = tokens[idx].attrs[hrefIndex][1];
             const classIndex = tokens[idx].attrIndex('class');
-
+    
             // Exclude the link if it has the class 'header-anchor'
             if (classIndex >= 0 && tokens[idx].attrs[classIndex][1] === 'header-anchor') {
                 return self.renderToken(tokens, idx, options);
             }
-
+    
             // Ensure the URL has a trailing slash, but do not update if it contains a '#' or ends with '.md' or https
             if (!href.endsWith('/') && !href.includes('#') && !href.endsWith('.md') && !href.endsWith('.zip') && !href.includes('https')) {
                 href += '/';
@@ -741,7 +741,7 @@ module.exports = function(eleventyConfig) {
         return self.renderToken(tokens, idx, options);
     };
 
-
+    
     eleventyConfig.setLibrary("md", markdownLib)
 
     if (!DEV_MODE) {
