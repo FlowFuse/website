@@ -65,7 +65,7 @@
 
     function migrateFile() {
         // Your migration logic goes here
-        
+
         var file = null
         var selectedFile = document.getElementById("dashboard1-flow-file").files
         if (selectedFile) {
@@ -125,4 +125,4 @@
         });
     }
 </script>
-<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()"></script>
+<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()" onerror="hsFallback(this)"></script>
