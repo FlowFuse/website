@@ -69,7 +69,7 @@ The first step is to set up a database to store requests and their updates.
 5. Connect the **Inject** node to the SQLite node.
 6. Click **Deploy**.
 
-![Node-RED flow showing an Inject node connected to an SQLite node to create a requests table in the database.](./images/sqlite-flow.png){data-zoomable}
+![Node-RED flow showing an Inject node connected to an SQLite node to create a requests table in the database.](./images/sqlite-create-flow.png){data-zoomable}
 _Flow to initialize the SQLite database and create the requests table._
 
 Once deployed, this will create the SQLite database and `requests` table if it does not already exist.
@@ -371,7 +371,7 @@ Once the data is retrieved, it needs to be validated, formatted, and routed appr
 
 13. Deploy the changes.
 
-![Flow that checks if unresolved requests exist, sends an appropriate message when none are found, or prepares the data for tabular rendering](./images/preparing-data-flow.png){data-zoomable}
+![Flow that checks if unresolved requests exist, sends an appropriate message when none are found, or prepares the data for tabular rendering](./images/preparing-data.png){data-zoomable}
 _Flow that checks if unresolved requests exist, sends an appropriate message when none are found, or prepares the data for tabular rendering._
 
 ### Setting Up Visual Alerts and Timestamp Formatting
