@@ -90,7 +90,7 @@ Here are some advance patterns:
 
 **First Monday of the month at 10:00 AM**
 ```
-0 10 1-7 * 1
+0 10 * * MON#1
 ```
 
 **Last Friday of the month at 6:45 AM**
