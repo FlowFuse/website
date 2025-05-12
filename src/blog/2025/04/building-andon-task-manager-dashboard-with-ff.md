@@ -10,7 +10,7 @@ tags:
    - flowfuse
 ---
 
-In [Part 1](./part-1), we introduced the concept of an Andon Task Manager—designed to streamline issue reporting and resolution on the factory floor—and outlined the system’s key features, user roles, and dashboard layout.
+In [Part 1](/blog/2025/05/building-andon-task-manager-with-ff/), we introduced the concept of an Andon Task Manager—designed to streamline issue reporting and resolution on the factory floor—and outlined the system’s key features, user roles, and dashboard layout.
 
 <!--more-->
 
@@ -38,11 +38,11 @@ Before proceeding, a basic understanding of Node-RED is recommended. If you are 
 
 Before you begin building the Andon Task Manager with FlowFuse, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out the [free trial](https://flowfuse.com/) and [learn](/docs/user/introduction/#creating-a-node-red-instance) how to create an instance.
-- **FlowFuse Dashboard:** Ensure you have FlowFuse Dashboard (also known as Node-RED Dashboard 2.0 in the community) installed.
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out the [free trial](https://app.flowfuse.com/account/create) and [learn](/docs/user/introduction/#creating-a-node-red-instance) how to create an instance.
+- **@flowfuse/node-red-dashboard:** Ensure you have FlowFuse Dashboard (also known as Node-RED Dashboard 2.0 in the community) installed.
 - **SQLite Contrib Node:** Install `node-red-contrib-sqlite` to handle local data storage.
 - **FlowFuse Multi-user Andon:** Install `@flowfuse/node-red-dashboard-2-user-addon` to enable multi-user support.
-- **User Authentication:** [Enable FlowFuse User Authentication](/blog/2024/04/displaying-logged-in-users-on-dashboard/#enabling-flowfuse-user-authentication) on your FlowFuse instance.
+- **Enable FlowFuse User Authentication:** [Enable FlowFuse User Authentication](/blog/2024/04/displaying-logged-in-users-on-dashboard/#enabling-flowfuse-user-authentication) on your FlowFuse instance.
 - **Moment Contrib Node:** Install `node-red-contrib-moment` for date and time formatting.
 
 ### Initialize SQLite Database
@@ -66,7 +66,7 @@ The first step is to set up a database to store requests and their updates.
    );
    ```
 
-5. Connect the Inject node to the SQLite node.
+5. Connect the **Inject** node to the SQLite node.
 6. Click **Deploy**.
 
 ![Node-RED flow showing an Inject node connected to an SQLite node to create a requests table in the database.](./images/sqlite-flow.png){data-zoomable}
@@ -76,14 +76,14 @@ Once deployed, this will create the SQLite database and `requests` table if it d
 
 ### Seed Demo Data: Departments & Lines
 
-Since the admin feature is not yet available, let's populate demo data using a predefined flow:
+As discussed in the planning section, only the admin role will have the ability to add new departments and lines. Since the admin feature is not yet available, we will populate demo data using a predefined flow to allow ourself to test the application while the standard user interface is being developed.
 
 {% renderFlow 300 %}
 [{"id":"d5dd9bfc599374d4","type":"tab","label":"Populate with demo support areas and lines","disabled":false,"info":"","env":[]},{"id":"6471824e24f18939","type":"group","z":"d5dd9bfc599374d4","name":"Add demo production line and department","style":{"label":true},"nodes":["34c733b480e41a13","4e46ae25d198fd1b","882e29d2dcc9326c","399bd159f46c7427","5001c1cdf6661f88"],"x":34,"y":39,"w":1302,"h":122},{"id":"34c733b480e41a13","type":"inject","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Add production lines and department for testing","props":[],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":260,"y":100,"wires":[["4e46ae25d198fd1b","399bd159f46c7427"]]},{"id":"4e46ae25d198fd1b","type":"switch","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Is lines undefined?","property":"#:(persistent)::lines","propertyType":"global","rules":[{"t":"istype","v":"undefined","vt":"undefined"}],"checkall":"true","repair":false,"outputs":1,"x":770,"y":80,"wires":[["882e29d2dcc9326c"]]},{"id":"882e29d2dcc9326c","type":"change","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Store lines to context store","rules":[{"t":"set","p":"#:(persistent)::lines","pt":"global","to":"[{\"value\":\"T1\",\"label\":\"T1\"},{\"value\":\"T2\",\"label\":\"T2\"}]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":1140,"y":80,"wires":[[]]},{"id":"399bd159f46c7427","type":"switch","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Is departments undefined?","property":"#:(persistent)::departments","propertyType":"global","rules":[{"t":"istype","v":"undefined","vt":"undefined"}],"checkall":"true","repair":false,"outputs":1,"x":800,"y":120,"wires":[["5001c1cdf6661f88"]]},{"id":"5001c1cdf6661f88","type":"change","z":"d5dd9bfc599374d4","g":"6471824e24f18939","name":"Store departments to context store","rules":[{"t":"set","p":"#:(persistent)::departments","pt":"global","to":"[{\"value\":\"Maintenance\",\"label\":\"Maintenance\"},{\"value\":\"Stores\",\"label\":\"Stores\"},{\"value\":\"Quality\",\"label\":\"Quality\"}]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":1170,"y":120,"wires":[[]]}]
 {% endrenderFlow %}
 
 1. Import the provided demo flow.  
-2. Deploy the flow.
+2. **Deploy** the flow.
 
 This will store demo lines and departments in the global context as `global.lines` if not already present.
 
@@ -91,10 +91,10 @@ This will store demo lines and departments in the global context as `global.line
 
 Now, let us create a new page and menu item for Production Lines. This page will list all currently available production lines, making it easier to navigate through them.
 
-1. Drag a **ui-event** node to detect page navigation.
+1. Drag a **ui-event** node onto the canvas to detect page navigation.
 2. Drag a **change** node and configure it to:
    - Set `msg.payload.lines` to `global.get("lines")`
-3. Drag a **ui-template** node onto the canvas. Create a new page (e.g., “Line Menu”) and a group.
+3. Drag a **ui-template** node onto the canvas. Create a new page with name “Line Menu” and a group.
 4. Paste the following into the template:
 
 ```html
@@ -182,21 +182,25 @@ _Node-RED flow to create a dynamic menu for production lines on the dashboard._
 ![FlowFuse Dashboard displaying styled buttons for each production line, enabling quick navigation to specific line pages.](./images/menu-for-lines.png){data-zoomable}
 _Dashboard view showing production line buttons generated from the flow._
 
-This "line" URL parameter will be used in the next section to store the user selected line.
+The "line" URL parameter will be used in the next section to store the user's selected production line.
 
 ### Enable URL-Based Dashboard Access
 
-This flow handles direct URL access to the dashboard. It validates the line parameter in the URL. If the parameter is valid, the flow redirects the user to the Lines page and stores the selected line along with the client session context. If the parameter is invalid or missing, the user is redirected to a Not Found page.
+In this section, we’ll build a flow that allows users to directly access the dashboard using a URL with a line parameter (e.g., ?line=T1). The flow will validate this parameter and store the selected line for each user session. If the parameter is missing or invalid, the user will be redirected to a Not Found page.
 
-However, in order to store the each user's selected line, we also need client-specific metadata. So before we build the flow, we must first configure the dashboard to provide this data.
+To achieve this, we need to:
+
+- Configure the dashboard to expose client-specific metadata.
+- Create a flow that validates the line parameter from the URL.
+- Store the user’s selected line using session-aware context data.
 
 #### Configuring Dashboard Widgets to Include Client Information
 
 To ensure client data is available in your flows, follow these steps:
 
-1. Open the Dashboard 2.0 sidebar.
-2. Switch to the Client Data tab.
-3. Enable the option “Include client data”.
+1. Open the **Dashboard 2.0** sidebar.
+2. Switch to the **Client Data** tab.
+3. Enable the option **“Include client data”**.
 4. Tick the checkbox in front of:
    - ui-control
    - ui-template
@@ -204,14 +208,25 @@ To ensure client data is available in your flows, follow these steps:
    - ui-text-input
    - ui-dropdown
    - ui-notification
-5. Deploy the updated configuration.
+5. **Deploy** the updated configuration.
 
-![Enabling client data in the Dashboard 2.0 settings to include metadata from specific widgets.](./images/calculate-oee-and-key-metrics.png){data-zoomable}
+![Enabling client data in the Dashboard 2.0 settings to include metadata from specific widgets.](./images/client-data-configuration.png){data-zoomable}
 _Dashboard 2.0 settings to include client metadata from selected widgets like buttons and templates._
 
-These widgets output will now include client-related metadata as `msg._client`, which we will use in our OEE Dashboard flow.
+With this setting enabled, the selected widgets will include client-related metadata in their output messages under the `msg._client` property. This metadata is essential for building session-aware features in the Dashboard.
 
 #### Building a Dashboard Flow for URL Access, Line Validation, and User Selection
+
+In this section, we'll build a Node-RED flow that handles dashboard access via direct URLs, validates the line parameter, and stores the selected line per user session using client metadata. This ensures that each user's line selection is tracked independently and that invalid or missing parameters are handled gracefully.
+
+The flow performs the following key tasks:
+
+- Detects when a user accesses the dashboard using a URL containing a line parameter.
+- Validates the parameter against a list of predefined production lines.
+- Stores the selected line using session-aware (client-specific) data.
+- Redirects the user appropriately based on the validity of the parameter.
+
+**Steps to Build the Flow:**
 
 1. Drag a **ui-event node** onto the canvas and configure it with the correct UI base path.
    
@@ -222,7 +237,7 @@ These widgets output will now include client-related metadata as `msg._client`, 
    - has key `line`
    - is empty
 
-4. Connect the ui-event node to the first switch node (labeled Is it a pageview event?). Then, connect the first output of this switch node to the second switch node (labeled Has line key?). This checks whether the page was accessed via URL and if a line parameter is present.
+4. Connect the **ui-event node** to the first switch node (labeled Is it a pageview event?). Then, connect the first output of this switch node to the second switch node (labeled Has line key?). This checks whether the page was accessed via URL and if a line parameter is present.
 
 5. Drag a `function` node and name it "Extract Labels from Lines" and paste the following code:
 
@@ -258,7 +273,7 @@ This checks whether the selected line is valid by comparing it with the list of 
 14.  Drag a ui-control node onto the canvas and configure it with the correct UI base path and connect it the change node (Redirect to Not found page).
 15.  Deploy the changes.
 
-![Flow for handling dashboard navigation, validating URL parameters, and assigning selected production lines to individual client sessions.](./images/client-data-configuration.png){data-zoomable}
+![Flow for handling dashboard navigation, validating URL parameters, and assigning selected production lines to individual client sessions.](./images/accessing-production-lines.png){data-zoomable}
 _Flow for managing URL-based access, validating line parameters, and storing client-specific selections on the OEE dashboard._
 
 ### Create Live Request Fetch Flow (Per Line)
@@ -287,11 +302,10 @@ Let’s build the flow to retrieve the data now based on the user selection.
    </script>
    ```
 
-5. Drag a `Change` node and name it "Set query and retrieve user-selected line".  
+5. Drag a `Change` node and name it "Set params".  
 6. Configure the Change node with the following rules:
-   - Set `msg.line` to `msg.store[msg._client.socketId].line`
+   - Set `msg.params.$line` to `global.store[msg._client.socketId].line`
    - Set `msg.query` to `"line"`
-   - Delete `msg.topic`
 
 7. Drag a `Template` node onto the canvas.  
 8. Double-click the Template node and set the property to `msg.topic`.  
@@ -314,7 +328,7 @@ _The dashboard displays the selected production line name, retrieved from the cl
 
 13. Drag a `SQLite` node onto the canvas.  
 14. Select the appropriate database configuration.  
-15. Set the node to use the SQL query via `msg.topic`.  
+15. Set the node to use the SQL query via "Prepared Statement".  
 16. Connect the `Template` widget to `Change` node and `Template` node to `SQLite` node.  
 17. Drag a `link-out` node onto the canvas and connect it to the `SQLite` node.  
 18. Deploy the changes.
@@ -467,33 +481,36 @@ _Adding action buttons to update the status of each request directly from the da
 
 1. Drag **ui event widget** onto the canvas and configure it with the correct ui base.  
 2. Drag **change node** onto the canvas and add the following element:  
-   - Set `msg.payload.query` to `msg.query`  
+   - Set `msg.params` to `{}` 
+   - Set `msg.params.$request` to `msg.payload.query.request` 
 3. Drag **Date/Time Formatter node** onto the canvas and set input format to "timestamp: milliseconds since epoch" and output to `msg.now`.  
 4. Drag **switch node** onto the canvas, set property to `msg.query.action`, and add the following conditions to check against:
    - == ack  
    - == res  
    - otherwise  
-5. Drag **two change node** onto canvas.  
-6. For the **first**, set the following element:
-   - Set `msg.action` to `"acknowledged"`  
-7. For the **second**, set the following element:
-   - Set `msg.action` to `"resolved"`  
-8. Drag **template node** onto the canvas, set property to `msg.topic`, and add the following SQL query:
+5. Drag two SQLite nodes onto the canvas, select the correct database configuration for both, and set the query type to 'Prepared Statement'.
+6. For the **first**, set the following sql query:
 
    ```sql
    UPDATE requests 
-   SET {{action}} = "{{now}}" 
-   WHERE rowid = {{payload.query.request}} 
-   AND {{action}} IS NULL;
+   SET acknowledged = $now
+   WHERE rowid = $request 
+   AND acknowledged IS NULL
    ```
 
-9. Drag **sqlite node** onto the canvas and configure it with the correct database configuration we have added. Select **SQL Query via msg.topic**.  
-10. Connect the **ui event widget** to **change node**, **change node** to **date/time formatter node**, **date/time formatter** to **switch node**, and:  
-   - **switch node first o** to first **change node**  
-   - **switch node second o** to second **change node**  
-   - Connect both **change node** to the **template node**, and then **template node** to **sqlite node**.
+7. For the **second**, set the following sql query:
 
-![Flow for the mechanism to update request status](./images/update-status-mechanism.png){data-zoomable}  
+   ```sql
+   UPDATE requests 
+   SET resolved = $now
+   WHERE rowid = $request 
+   AND resolved IS NULL 
+   ``` 
+8.  Connect the **ui event widget** to **change node**, **change node** to **date/time formatter node**, **date/time formatter** to **switch node**, and:  
+   - **switch node first output** to first **first sqlite node**  
+   - **switch node second output** to second **second sqlite node**  
+
+![Flow for the mechanism to update request status](./images/update-request-status.png){data-zoomable}  
 _Flow that handles the update of request status based on user actions (Acknowledged or Resolved)._
 
 ### Render Request Data in a Table
@@ -553,12 +570,13 @@ To create a flow that allows users to submit a request, follow these steps to se
 8. Drag the **button widget**, label it "Request Support," and connect it to the **change node** that updates the UI with the department list.
 
 9. Add a **change node** to store the request details in the global context and name it "Retrieve entered support request data":
-   - Set `msg.store[msg._client.socketId].support` to `msg.request.support`.
-   - Set `msg.store[msg._client.socketId].notes` to `msg.request.notes`.
-   - Set `msg.store[msg._client.socketId].line` to `msg.request.line`.
-   - Set `msg.store[msg._client.socketId].reference` to `msg.request.reference`.
-
-10. Drag a **function node** and add the following code. Name it "Does department and notes are not empty?":
+   - Set `msg.request` to `{}`.
+   - Set `msg.request.support` to the value `msg.store[msg._client.socketId].support`.
+   - Set `msg.request.notes` to the value `msg.store[msg._client.socketId].notes`.
+   - Set `msg.request.line` to the value `msg.store[msg._client.socketId].line`.
+   - Set `msg.request.reference` to the value `msg.store[msg._client.socketId].reference`.
+10. Drag the switch node onto the canvas and set property to `msg.request` and add condtion to check "is not null".
+11. Drag a **function node** and add the following code. Name it "Does department and notes are not empty?":
 
 ```javascript
 let request = msg.request;
@@ -576,50 +594,55 @@ if (typeof request !== "object" || request === null) {
 }
 ```
 
-11. Connect the change node to the function node. Connect the function node's first output to a **Date/Time Formatter** node. Set the input to 'Timestamp (milliseconds since epoch)' and the output to `msg.request.time`.
+12.  Connect the change node to switch node and switch node to function node. Connect the function node's first output to a **Date/Time Formatter** node. Set the input to 'Timestamp (milliseconds since epoch)' and the output to `msg.request.time`.
 
-12. Drag a **change node** and set `msg.payload` to "Are you sure you want to submit a request?". Name it "Set Confirmation message".
+13.  Drag a **change node** and set `msg.payload` to "Are you sure you want to submit a request?". Name it "Set Confirmation message".
 
-13. Connect the change node ("Set Confirmation message") to the **Date/Time Formatter** node.
+14.  Connect the change node ("Set Confirmation message") to the **Date/Time Formatter** node.
 
-14. Drag a **ui-notification widget**, configure it with the correct UI, and set the position to center.
+15.  Drag a **ui-notification widget**, configure it with the correct UI, and set the position to center, checked the checkbox for both allow mnaual dismisal and all amnual confirmation, change close to "Cancel".
 
-15. Connect the function node’s second and third outputs to the **ui-notification** widget for displaying validation messages.
+16.  Connect the change node ("Set Confirmation message") to the **ui-notification** widget.
+17.  Drag another **ui-notification widget**, configure it with the correct UI, and set the position to center.
+18.  connect it to the second output of the function node.
 
-16. Add a **switch node** and set the property to `msg.payload` with the condition:
+19.  Add a **switch node** and set the property to `msg.payload` with the condition:
    - == `confirm_clicked`
    Name it "Is confirm clicked?"
 
-17. Drag a **template node** and add the following SQL query:
+20.  Drag a **change node** and add the following elements and give it name "Set Params":
 
-```sql
-INSERT INTO requests (rowid,line,support,requested,notes)
-VALUES(NULL,'{{request.line}}','{{request.support}}','{{request.time}}','{{request.notes}}');
-```
+   - Set `msg.params` to `{}`.
+   - Set `msg.params.$line` to the value `msg.request.linet`.
+   - Set `msg.params.$support` to the value `msg.request.support`.
+   - Set `msg.params.$time` to the value `msg.request.time`.
+   - Set `msg.params.$notes` to the value `msg.request.notes`.
 
-18. Connect the **ui-notification** to the switch node ("Is confirm clicked?"). Connect the **template node** to the first output of the switch node.
+21. Connect the change node ("Set Params") to the switch node ("Is confirm clicked?").
 
-19. Drag a **sqlite node**, select the correct database configuration, and choose SQL Query via `msg.topic`.
+22. Drag a **sqlite node**, select the correct database configuration, and choose SQL Query via "Prepared Statement" and connect that sqlite node to the input change node ("Set Params")
 
-20. Drag a **change node** and set the following:
+23. Drag a **change node** and set the following, give it name "Clear entered request data":
    - Delete `msg.store[msg._client.socketId].support`.
    - Delete `msg.store[msg._client.socketId].notes`.
 
-21. Connect the **template node** to the **sqlite node**. Connect the sqlite node to the **change node**.
+24. Connect the **change node*** ("Clear entered request data") to the **sqlite node**.
 
-22. Drag a **link-out node** and connect it to the last change node.
+25. Drag a **link-out node** and connect it to the last change node.
 
-23. Drag a **link-in node** and connect it to the last link-out node.
+26. Drag a **link-in node** and connect it to the last link-out node.
 
-24. Drag two **change nodes** and configure them as follows:
+27. Drag two **change nodes** and configure them as follows:
    - First change node: Set `msg.payload` to an empty array `[]`.
    - Second change node: Set `msg.payload` to an empty string `""`.
 
-25. Connect the change nodes to the link-in node to complete the flow.
+28. Connect the change nodes to the link-in node to complete the flow.
 
-26. Connect the first change node to the **ui dropdown widget** and the second to the **text input widget**.
+29. Connect the first change node to the **ui dropdown widget** and the second to the **text input widget**.
 
-27. Deploy the changes.
+30. Deploy the changes.
+
+We have now successfully built one part of the Andon task dashboard. You can open the line view in the dashboard and check whether you can submit a request, mark it as acknowledged, and resolve it.
 
 ![Node-RED flow showing the logic for validating and storing user-submitted support requests.](./images/SUBMIT-REQUEST.png){data-zoomable}
 _Node-RED flow to handle request submission, including form validation, timestamp formatting, and SQL database insertion._
