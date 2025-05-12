@@ -85,7 +85,7 @@ Here are some advance patterns:
 
 **Every 15 min during work hours (Mon–Fri, 9–5)**
 ```
-*/15 9-17 * * 1-5
+*/15 9-16 * * 1-5
 ```
 
 **First Monday of the month at 10:00 AM**
