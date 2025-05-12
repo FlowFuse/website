@@ -39,6 +39,8 @@ At the most basic level, you can define static schedules using familiar cron exp
 
 In this section, we’ll walk through each of these layers step by step, starting with the simplest use cases and gradually moving into more powerful and flexible scheduling techniques—giving you full control over when and how your flows run.
 
+> Tip: This article draws information from the node’s [README](https://flows.nodered.org/node/node-red-contrib-cron-plus), which is highly informative. I recommend going through it as well for more details.
+
 ### Static Schedules
 
 The most straightforward way to use cron-plus is to define static schedules using cron expressions. These are pre-configured inside the node and run on a fixed pattern—perfect for predictable, repetitive tasks. For example we need to Trigger a flow every day at 8:00 AM.
@@ -60,8 +62,28 @@ The most straightforward way to use cron-plus is to define static schedules usin
    0 8 * * *
 ```
 
-![Image explaining the cron expression syntax](./images/cron_expression_syntax.png){data-zoomable}
-_Image explaining the cron expression syntax_
+This cron expression is composed of five fields (sometimes six, depending on the system) that determine the schedule for executing tasks. Below is a breakdown of each field:
+
+| Field         | Description                        | Possible Values          | Example | Explanation                                  |
+|---------------|------------------------------------|---------------------------|---------|----------------------------------------------|
+| Minute        | Minute of the hour                 | 0-59                      | 0       | At minute 0                                  |
+| Hour          | Hour of the day (24-hour format)   | 0-23                      | 8       | At 8:00 AM                                   |
+| Day of Month  | Day of the month                   | 1-31 or *                 | *       | Every day of the month                       |
+| Month         | Month                              | 1-12 or *                 | *       | Every month                                  |
+| Day of Week   | Day of the week                    | 0-6 (Sun=0) or *          | *       | Every day of the week                        |
+
+To help you further understand and customize cron expressions, here are some commonly used special symbols and shorthands:
+
+| Symbol | Meaning                                                                | Example           | Explanation                                                      |
+|--------|------------------------------------------------------------------------|-------------------|------------------------------------------------------------------|
+| `*`    | All possible values                                                    | `* * * * *`       | Every minute of every hour, day, month, and weekday             |
+| `?`    | No specific value (day-of-month or day-of-week)                        | `0 0 12 ? * MON`  | 12 PM every Monday, any day of the month                        |
+| `-`    | Range                                                                  | `10-12 * * * *`   | Minutes 10, 11, and 12 of every hour                            |
+| `,`    | List of values                                                         | `MON,WED,FRI`     | Every Monday, Wednesday, and Friday                             |
+| `/`    | Step values                                                            | `*/15 * * * *`    | Every 15 minutes (00, 15, 30, 45)                               |
+| `L`    | Last (day-of-month or day-of-week)                                     | `0 0 12 L * *`    | 12 PM on the last day of the month                              |
+| `W`    | Nearest weekday (day-of-month field)                                   | `15W * * * *`     | Weekday nearest the 15th of the month                           |
+| `#`    | nth weekday of the month (day-of-week field)                           | `1#1 * * *`       | First Monday of the month  
 
 6. Connect the cron-plus node to other nodes (e.g., a debug node or an action node) to specify the actions when the flow is triggered.
 
@@ -167,23 +189,23 @@ The sequence field supports:
 
    - UNIX timestamps (in milliseconds)
    ```
-   1704067200000
+   1767225600000 
    ```
 
    - Date and time (in plain text)
    ```
-   2024-12-31 08:00
+   2026-04-03 00:00
    ```
 
    - Date and time with timezone
    ```
-   2024-12-31 08:00 GMT+8
+   2026-04-06 12:00 GMT+0
    ```
 
 You can list multiple times, separated by commas:
 
 ```
-1704067200000, 2024-12-31 08:00, 2024-12-31 08:00 GMT+8
+1767225600000, 2026-04-03 00:00, 2026-04-06 12:00 GMT+0
 ```
 
 Let’s learn how to set this up:
@@ -199,7 +221,7 @@ Let’s learn how to set this up:
 10. Finally, click Deploy to save and start your schedule.
 
 {% renderFlow %}
-[{"id":"2aa2d59a36bf0fa7","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["2ff341cec3114c53","b66ebe91df84b4ce"],"x":314,"y":519,"w":492,"h":82},{"id":"2ff341cec3114c53","type":"cronplus","z":"b37428694e90b2c5","g":"2aa2d59a36bf0fa7","name":"Date Sequence","outputField":"payload","timeZone":"","storeName":"","commandResponseMsgOutput":"output1","defaultLocation":"","defaultLocationType":"default","outputs":1,"options":[{"name":"schedule1","topic":"fixed dates","payloadType":"str","payload":"fixed","expressionType":"dates","expression":"1609459200000, 2021-12-31 00:00, 2022-12-31 08:00 GMT+8","location":"","offset":"0","solarType":"all","solarEvents":"sunrise,sunset"}],"x":440,"y":560,"wires":[["b66ebe91df84b4ce"]]},{"id":"b66ebe91df84b4ce","type":"debug","z":"b37428694e90b2c5","g":"2aa2d59a36bf0fa7","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":700,"y":560,"wires":[]}]
+[{"id":"2ff341cec3114c53","type":"cronplus","z":"b37428694e90b2c5","g":"2aa2d59a36bf0fa7","name":"Date Sequence","outputField":"payload","timeZone":"","storeName":"","commandResponseMsgOutput":"output1","defaultLocation":"","defaultLocationType":"default","outputs":1,"options":[{"name":"schedule1","topic":"fixed dates","payloadType":"str","payload":"fixed","expressionType":"dates","expression":"1767225600000, 2026-04-03 00:00, 2026-04-06 12:00 GMT+0","location":"","offset":"0","solarType":"all","solarEvents":"sunrise,sunset"}],"x":300,"y":780,"wires":[["b66ebe91df84b4ce"]]},{"id":"b66ebe91df84b4ce","type":"debug","z":"b37428694e90b2c5","g":"2aa2d59a36bf0fa7","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":560,"y":780,"wires":[]}]
 {% endrenderFlow %}
 
 The flow will now trigger exactly at each date and time you've specified.
@@ -223,8 +245,6 @@ The cron-plus node visually indicates its state using status markers in the flow
 
 - **● (Dot):** Indicates a static schedule configured directly in the node.
 - **○ (Ring):** Indicates a dynamic schedule added via input messages.
-- **Greyed-out Node:** No active schedules are present.
-- **Text Labels:** Display useful info like the next trigger time, schedule name, or status (e.g., `waiting`, `paused`).
 
 Also, the node indicates the next event, along with the type of schedule. For example, node in the following image specifies that the next event is on May 26, 2025, at 12:00 AM GMT +5:30. It is a static schedule, and its name is 'Schedule1'
 
@@ -268,42 +288,64 @@ Here are some common dynamic commands:
 | export-inactive     | Exports only inactive schedules (paused or stopped).                                                 | ```json { "command": "export-inactive" } ```                                                           |
 | describe            | Provides a human-readable description of a cron or solar expression. Useful for debugging.           | ```json { "command": "describe", "expression": "0 8 * * 1-5", "expressionType": "cron" } ```           |
 
-Let’s imagine a real-world scenario where you have a system that needs to run maintenance windows on servers, and you have a cron-plus schedule that runs maintenance tasks at certain times. These maintenance windows can change dynamically, for example, if the admin decides to reschedule it based on an emergency, let go thought it building.
+For example, we need to build a flow that triggers on UK public holidays to stop recording the OEE (Overall Equipment Efficiency) or lock the entry gates of the factory. To achieve this, we can integrate a UK public holiday API into our Node-RED flow, fetch the holiday data, and then trigger actions based on those holidays.
 
-1. Drag the cron-plus node onto the canvas, set the proper timezone,then add new scheudle
-   - Schedule Name: e.g., "Maintenance"
-   - Payload: "Start"
-   - and cron to `0 0 12 ? * MONL *` which is "At 12:00 PM (noon) on the last Monday of every month"
-2. Click Done, and connect it to a debug node.
-3. Click Deploy.
+1. Drag the Inject node onto the canvas and set it to trigger on deploy after `0.1` seconds.
+2. Next, drag the HTTP request node onto the canvas, set the method to GET, and use the URL `https://www.gov.uk/bank-holidays.json`. Set the return to "parsed JSON object".
+3. Drag the Function node onto the canvas and add the following JavaScript code into it:
 
-Now let’s simulate an emergency override by dynamically replacing the regular schedule with a one-time run today at 6:00 PM using a change node.
+```javascript
+// Retrieve public holidays for England and Wales from the API response
+const engHols = msg.payload["england-and-wales"].events;
 
-1. Drag an Inject Node.
-2. Connect it to a Change Node.
-3. Configure the Change Node as follows:
-   - Set `msg.payload` to:
-```json
-{
-  "command": "add",
-  "name": "Maintenance",
-  "topic": "maintenance",
-  "expressionType": "date-sequence",
-  "expression": "2025-05-08 18:00", // change date to test it, this date is past since date of blog published
-  "payload": "Start",
-  "payloadType": "default"
+// Clear out any existing schedules before adding new ones
+node.send({ topic: 'remove-all' });
+
+// Create an array to hold the new holiday schedules
+const newSchedules = [];
+
+// Loop through all the holiday events
+for (let index = 0; index < engHols.length; index++) {
+    const hol = engHols[index]; // Get the current holiday
+    const date = new Date(hol.date); // Convert the holiday date to a Date object
+
+    // Skip holidays that are in the past (before the current date)
+    if (date.valueOf() < Date.now()) {
+        continue; // Skip to the next holiday
+    }
+
+    // Create a new schedule for upcoming holidays
+    const newSchedule = {
+        "command": "add", // Command to add a new schedule
+        "name": hol.title + ` (${date.getFullYear()})`, // Holiday name with year
+        "topic": hol.title, // Holiday title as topic
+        "expression": hol.date, // Holiday date to use as an expression
+        "expressionType": "dates", // Define the type as dates
+        "payload": hol, // Send the holiday details as the payload
+        "payloadType": "json" // Specify that the payload is in JSON format
+    };
+
+    // Add the new schedule to the list of new schedules
+    newSchedules.push(newSchedule);    
 }
+
+// Set the topic as empty (not used for now)
+msg.topic = '';
+// Set the payload to the new schedules array created above
+msg.payload = newSchedules;
+
+// Return the updated message with new schedules
+return msg;
 ```
-4. Connect this change node to the same cron-plus node.
-5. Deploy and press Inject button.
+
+4. Drag a cron-plus node onto the canvas. Connect the Inject node to the HTTP request node, the HTTP request node to the Function node, and the Function node to the cron-plus node.
+5. Deploy the flow.
+
+Now you can check the dynamic schedules list. More information is provided at the end of this section.
 
 {% renderFlow %}
 [{"id":"cba15bd32c5434a5","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["458c9533a1437ee1","2af2e9274fe1321a","09b14345f99d2ab7","4c42df24880f84d0"],"x":94,"y":79,"w":452,"h":182},{"id":"458c9533a1437ee1","type":"cronplus","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"","outputField":"payload","timeZone":"","storeName":"","commandResponseMsgOutput":"output2","defaultLocation":"","defaultLocationType":"default","outputs":2,"options":[{"name":"schedule1","topic":"Maintenace","payloadType":"default","payload":"","expressionType":"cron","expression":"0 0 12 ? * MONL *","location":"","offset":"0","solarType":"all","solarEvents":"sunrise,sunset"}],"x":200,"y":220,"wires":[["2af2e9274fe1321a"],[]]},{"id":"2af2e9274fe1321a","type":"debug","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":380,"y":220,"wires":[]},{"id":"09b14345f99d2ab7","type":"inject","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":200,"y":120,"wires":[["4c42df24880f84d0"]]},{"id":"4c42df24880f84d0","type":"change","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"Emergency Override","rules":[{"t":"set","p":"payload","pt":"msg","to":"{\"command\":\"add\",\"name\":\"Maintenance\",\"topic\":\"maintenance\",\"expressionType\":\"dates\",\"expression\":\"2025-05-08 18:00\",\"payload\":\"Start\",\"payloadType\":\"default\"}","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":420,"y":120,"wires":[["458c9533a1437ee1"]]}]
 {% endrenderFlow %}
-
-Now cron-plus node will trigger the "Start" payload today at 6:00 PM, in addition to its original monthly schedule, allowing emergency maintenance to run immediately without affecting future runs.
-
-***Note: The date 2025-05-08 18:00 is in the past relative to the blog’s publishing date. To test it properly, you’ll need to change this to a future date/time to see the schedule trigger.***
 
 Additionally, I'd like to share another demo that Steve has prepared for the community, which demonstrates dynamic scheduling based on the best energy prices:
 
