@@ -1,7 +1,7 @@
 ---
 title: "Designing Flexible Cron Schedules in FlowFuse with Node-RED"
 subtitle: "Go Beyond Inject Nodes: Automate Smarter with Flexible Cron Schedules in Node-RED"
-description:
+description: Learn how to create powerful, flexible cron schedules in Node-RED using the cron-plus node within FlowFuse. Go beyond Inject nodes for smarter, time-based automation.
 date: 2025-05-19
 authors: ["sumit-shinde"]
 image:  /blog/2025/05/images/cron-node-red.png
@@ -257,14 +257,6 @@ _A node showing the next event scheduled for May 26, 2025, at 12:00 AM GMT +5:30
 ### Dynamic Schedule Control via Input Messages
 
 In some cases, you might not know your schedule ahead of time—or you may want it to change based on user actions or incoming data. The cron-plus node supports this with dynamic control using input messages. This means you can add, update, or remove schedules while your flow is running, without opening the editor. It’s a powerful way to make your automations more responsive and adaptable.
-
-Each control message is sent to the cron-plus node using a specially formatted `msg.payload` with a command and associated configuration.
-
-Here are some common dynamic commands:
-
-## 4. Dynamic Schedule Control via Input Messages
-
-In some cases, you might not know your schedule ahead of time—or you may want it to change based on user actions or incoming data. The `cron-plus` node supports this with dynamic control using input messages. This means you can add, update, or remove schedules while your flow is running, without opening the editor. It’s a powerful way to make your automations more responsive and adaptable.
 
 Each control message is sent to the `cron-plus` node using a specially formatted `msg.payload` with a command and associated configuration.
 
