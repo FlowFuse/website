@@ -65,15 +65,15 @@ The most straightforward way to use cron-plus is to define static schedules usin
 A cron expression is composed of five fields (sometimes six or seven, depending on the system) that determine the schedule for executing tasks.
 Below is a breakdown of each field that node-red-contrib-cron-plus supports:
 
-| Field              | Possible Values  | Special Symbols |
-|--------------------|------------------|-----------------|
-| Second  (optional) | 0-59             | * / , -         |
-| Minute             | 0-59             | * / , -         |
-| Hour               | 0-23             | * / , -         |
-| Day of Month       | 1-31             | * / , - ? L W   |
-| Month              | 1-12 or JAN-DEC  | * / , -         |
-| Day of Week        | 0-6 or SUN-SAT   | * / , - ? L #   |
-| Year (optional)    | 1970-2099        | * / , -         |
+| Field              | Possible Values      | Special Symbols   |
+|--------------------|----------------------|-------------------|
+| Second  (optional) | `0-59`               | `* / , -`         |
+| Minute             | `0-59`               | `* / , -`         |
+| Hour               | `0-23`               | `* / , -`         |
+| Day of Month       | `1-31`               | `* / , - ? L W`   |
+| Month              | `1-12` or `JAN-DEC`  | `* / , -`         |
+| Day of Week        | `0-6` or `SUN-SAT`   | `* / , - ? L #`   |
+| Year (optional)    | `1970-2099`          | `* / , -`         |
 
 Here are some examples of how you can use the special symbols and shorthand's:
 
