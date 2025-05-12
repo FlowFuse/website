@@ -2,9 +2,9 @@
 title: "How to Embed Webpages on the FlowFuse Dashboard"
 subtitle: Learn how to embed external content like maps, reports, and widgets onto your FlowFuse dashboard.
 description:  Learn how to embed external web pages such as maps, reports, and widgets onto your FlowFuse dashboard. Follow this guide for easy, step-by-step instructions on improving your dashboard's functionality and collaboration.
-date: 2025-05-14
+date: 2025-05-13
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/05/images/emeding-webpage-on-flowfuse-dashboard.png
 keywords: FlowFuse, embed webpages, external content, dashboard, maps, reports, widgets, Node-RED, iframe, embedding FlowFuse dashboard, dashboard customization
 tags:
    - flowfuse
