@@ -333,7 +333,7 @@ _The dashboard displays the selected production line name, retrieved from the cl
 17. Drag a `link-out` node onto the canvas and connect it to the `SQLite` node.  
 18. Deploy the changes.
 
-![Node-RED flow to fetch live requests for a selected production line using client context and SQLite query.](./images/retrive-data-flow.png){data-zoomable}
+![Node-RED flow to fetch live requests for a selected production line using client context and SQLite query.](./images/retrive-data.png){data-zoomable}
 _Flow that triggers periodic queries for open requests specific to the user’s selected line using the client session and a SQLite database._
 
 ### Preparing Data Rendering it in a Table
@@ -644,7 +644,7 @@ if (typeof request !== "object" || request === null) {
 
 We have now successfully built one part of the Andon task dashboard. You can open the line view in the dashboard and check whether you can submit a request, mark it as acknowledged, and resolve it.
 
-![Node-RED flow showing the logic for validating and storing user-submitted support requests.](./images/SUBMIT-REQUEST.png){data-zoomable}
+![Node-RED flow showing the logic for validating and storing user-submitted support requests.](./images/submit-request-flow.png){data-zoomable}
 _Node-RED flow to handle request submission, including form validation, timestamp formatting, and SQL database insertion._
 
 ![UI form with dropdown, text input, and a submit button labeled "Request Support."](./images/submit-form.png){data-zoomable}
