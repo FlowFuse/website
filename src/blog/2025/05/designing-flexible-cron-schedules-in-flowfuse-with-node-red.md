@@ -95,7 +95,7 @@ Here are some advance patterns:
 
 **Last Friday of the month at 6:45 AM**
 ```
-45 6 25-31 * 5
+45 6 ? * FRIL
 ```
 
 #### Easy Builder Feature 
