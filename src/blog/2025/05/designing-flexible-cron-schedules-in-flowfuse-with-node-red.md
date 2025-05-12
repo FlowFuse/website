@@ -75,18 +75,18 @@ Below is a breakdown of each field that node-red-contrib-cron-plus supports:
 | Day of Week        | 0-6 or SUN-SAT   | * / , - ? L #   |
 | Year (optional)    | 1970-2099        | * / , -         |
 
-To help you further understand and customize cron expressions, here are some commonly used special symbols and shorthands:
+Here are some examples of how you can use the special symbols and shorthand's:
 
-| Symbol | Meaning                                                                | Example           | Explanation                                                      |
-|--------|------------------------------------------------------------------------|-------------------|------------------------------------------------------------------|
-| `*`    | All possible values                                                    | `* * * * *`       | Every minute of every hour, day, month, and weekday             |
-| `?`    | No specific value (day-of-month or day-of-week)                        | `0 0 12 ? * MON`  | 12 PM every Monday, any day of the month                        |
-| `-`    | Range                                                                  | `10-12 * * * *`   | Minutes 10, 11, and 12 of every hour                            |
-| `,`    | List of values                                                         | `MON,WED,FRI`     | Every Monday, Wednesday, and Friday                             |
-| `/`    | Step values                                                            | `*/15 * * * *`    | Every 15 minutes (00, 15, 30, 45)                               |
-| `L`    | Last (day-of-month or day-of-week)                                     | `0 0 12 L * *`    | 12 PM on the last day of the month                              |
-| `W`    | Nearest weekday (day-of-month field)                                   | `15W * * * *`     | Weekday nearest the 15th of the month                           |
-| `#`    | nth weekday of the month (day-of-week field)                           | `1#1 * * *`       | First Monday of the month  
+| Symbol | Meaning                  | Example             | Explanation                                                 |
+|--------|--------------------------|---------------------|-------------------------------------------------------------|
+| `*`    | All possible values      | `* * * * *`         | Every minute of every hour, day, month, and weekday         |
+| `?`    | No specific value        | `0 0 12 ? * MON`    | At 12 PM Only on Mondays (no specific day of the month)     |
+| `-`    | Range                    | `0 10-12 * * * *`     | Minutes 10, 11, and 12 of every hour                      |
+| `,`    | List of values           | `0 0 12 * 1,3,5 *`  | At 12 PM only in January, March, and May                    |
+| `/`    | Step values              | `*/15 * * * *`      | Every 15 minutes (00, 15, 30, 45)                           |
+| `L`    | Last                     | `0 0 12 L * *`      | 12 PM on the last day of the month                          |
+| `W`    | Nearest weekday          | `0 0 0 15W * * *`   | At midnight on the nearest weekday to the 15th of the month |
+| `#`    | nth weekday of the month | `0 0 0 * * MON#1 *` | At midnight on the first Monday of the month                |
 
 6. Connect the cron-plus node to other nodes (e.g., a debug node or an action node) to specify the actions when the flow is triggered.
 
