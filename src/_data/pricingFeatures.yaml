@@ -28,6 +28,11 @@ sections:
         selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'self-hosted' ]
         info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
+      - id: self-hosted-installation-support
+        label: Installation Support  
+        selfHostedValues: [ 'check', 'check' ]   
+        tags: [ 'self-hosted' ]
+        info:
       - id: custom-hostname
         label: Custom Hostnames
         cloudValues: [ null, null, null, 'check' ]
@@ -51,7 +56,7 @@ sections:
         cloudValues: [ 'check', 'check', 'check', 'check' ]
         selfHostedValues: [ 'check', 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
-        info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organisation.</p>"
+        info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organization.</p>"
       - id: mqtt-broker-cloud
         label: MQTT Broker
         cloudValues: [ null, 'check', 'check', 'check' ]    

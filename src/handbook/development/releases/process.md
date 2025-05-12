@@ -175,8 +175,8 @@ must be done manually.
    to update the version and `CHANGELOG.md` file with suitable details.
  - Create the GitHub release with the appropriate `vX.Y.Z` tag.
 
-Finally, create two change request issues in the CloudProject repo, one for staging and
-one for production to upgrade to the latest version.
+Finally, create two [change requests](/handbook/operations/change/), one for
+staging and one for production to upgrade to the latest version.
 
 ### Unmanaged Releases
 

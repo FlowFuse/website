@@ -24,9 +24,9 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/Flow
 1. Update the redirect URL in the `njk` file to match that added in Step 1.
 1. Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant page
 
-#### Otta Integration
+#### Welcome to the Jungle Integration
 
-We have an automated integration setup with [Otta](https://hire.otta.com). When a job is posted to our Greenhouse account, it _should_ appear on Otta within 24 hours. If it does not, raise a support ticket with them, and it should be addressed an made public very soon after.
+We have an automated integration setup with [Welcome to the Jungle](https://hire.welcometothejungle.com). When a job is posted to our Greenhouse account, it _should_ appear on Otta within 24 hours. If it does not, raise a support ticket with them, and it should be addressed and made public very soon after. We have to pay to actually post the role, but they will email you a friendly prompt to consider the opportunity.
 
 ### Referrals
 
@@ -61,14 +61,16 @@ Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7
 
 ## After an offer is accepted
 
-Onboarding on our EOR provider, Deel, takes at least 2 to 3 weeks. The start
-date for a new employee should be at least 2 to 3 weeks out. When a
+Onboarding on our EOR provider, Deel, takes at least 1 to 3 weeks. The start
+date for a new employee should be at least 7 working days out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
+2. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening).
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
+1. Close the role in Greenhouse and filled
 
 ### Background Screening
 
@@ -156,6 +158,24 @@ Before the peopleops team extends an offer, explicit approval is required from:
 1. CEO
 
 When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
+
+#### Rejecting Candidates
+
+We will interview candidates at every stage of the interviewing process. When we reject candidates, there are three kinds of rejections: 
+* pre-interview
+* post-screen
+* after candidates have done multiple interviews
+
+Pre-interview, we use the template in Greenhouse to reject candidates. We want candidates to know that we are not moving forward with them. 
+Note: Some candidates who apply through LinkedIn do not attach valid emails to their application, in which case we reject without emailing, but otherwise we always try to let them know. 
+
+Post-screen, we use a different template in Greenhouse to reject candidates. This template recognizes that candidates have spent time with us. 
+
+After candidates have done multiple interviews, we may want to write a more personal email letting them move on. This is up to hiring manager's discretion. In this case, we should make sure to reject via Greenhouse but not send emails. 
+
+##### Candidate Feedback
+
+At times candidates may request feedback on why we are not moving forward with their candidacy. By default, we do not provide feedback, but in some circumstances a hiring manager may be open to discussing further with the candidate.
 
 ### Closing a job
 

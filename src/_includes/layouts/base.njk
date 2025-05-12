@@ -62,10 +62,10 @@ eleventyComputed:
     <title>{{ title }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
     {% set extractedTitle = content | extractH1Content %}
-    {% if extractedTitle %}
+    {% if extractedTitle and page.url != '/' %}
     <title>{{ extractedTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowFuse &#x2022; {{ site.messaging.title }}</title>
+    <title>FlowFuse &#x2022; {{ site.messaging.tagLine }}</title>
     {% endif %}
     {% endif %}
 
@@ -182,7 +182,7 @@ eleventyComputed:
             {% include "../components/events-banner.njk" %}
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
-                <nav class="relative w-full flex items-center justify-between mx-auto container lg:max-w-screen-xl 2xl:max-w-[1920px]">
+                <nav class="relative w-full flex items-center justify-between mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
                     <a class="flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-wordmark.njk" %}
                     </a>
@@ -218,10 +218,11 @@ eleventyComputed:
                         </ul>
                         {% endnavoption %}
                         {% navoption "Solutions", null, 0 %}
-                            <ul>
+                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-3 sm:grid-cols-1 sm:pr-9 align-left">
                                 {% navoption "IT/OT middleware", "/solutions/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
                                 {% navoption "Unified Namespace", "/solutions/uns/", 1, "uns" %}{% endnavoption %}
                                 {% navoption "SCADA", "/solutions/scada/", 1, "adjustments-horizontal" %}{% endnavoption %}
+                                {% navoption "MES", "/solutions/mes/", 1, "chart" %}{% endnavoption %}
                                 {% navoption "Device management", "/solutions/device-management/", 1, "chip" %}{% endnavoption %}
                                 {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
                             </ul>
@@ -386,7 +387,7 @@ eleventyComputed:
         console.log("No feature flags found - falling back to 'control' content")
     }
 
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     let optOutByDefault = false;
 
     fetch('/country')
@@ -404,9 +405,10 @@ eleventyComputed:
             console.error('Initializing PostHog with opt_out_capturing_by_default set to true due to Fetch failed by:', error);
             optOutByDefault = true;
         })
+
         .finally(() => {
             posthog.init('{{ POSTHOG_APIKEY }}', {
-                api_host:'https://eu.posthog.com',
+                api_host: 'https://eu.i.posthog.com',
                 person_profiles: 'always',
                 bootstrap: phBootstrap,
                 capture_pageleave: false,
@@ -467,10 +469,16 @@ eleventyComputed:
     /*
         Get User Agent String
     */
-    const phUA = {
-        "user_agent_string": window.navigator.userAgent
-    }
-    posthog.register(phUA)
+    window.addEventListener('load', () => {
+        if (posthog && typeof posthog.register === 'function') {
+            const phUA = {
+                "user_agent_string": window.navigator.userAgent
+            };
+            posthog.register(phUA);
+        } else {
+            console.error('PostHog is not fully initialized.');
+        }
+    });
 
     function capture (eventName, props) {
         if (posthog) {
@@ -487,9 +495,6 @@ eleventyComputed:
 <script type="text/plain" data-category="!analytics">
     posthog.opt_out_capturing();
 </script>
-
-<!-- Clearbit Tracking -->
-<script async src="https://tag.clearbitscripts.com/v1/pk_d62bf91706baf1c207f6010e8f08b8ce/tags.js" referrerpolicy="strict-origin-when-cross-origin"></script>
 
 <!-- HubSpot Tracking -->
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}

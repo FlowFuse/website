@@ -25,7 +25,7 @@ any software engineer. As a topic, it's studied when obtaining a Computer Scienc
 Bachelors degree, masters and even PhD. When tasked
 to make a HA system, it took me a good month to define what our goals
 were, and what we were willing to exchange for the properties sought. This
-might be extra hardware, engineering hours, as well as organisational challenges.
+might be extra hardware, engineering hours, as well as organizational challenges.
 For now, let's focus on the first two.
 
 Let's start with defining the goal; reduce the impact of a Node-RED instance

@@ -32,6 +32,11 @@ CS activity is planned to manage each of the cohorts with appropriate support & 
 
 The key goal of CS is to migrate customers from the trial status, down the table of cohorts above, and where appropriate onto being an Enterprise customer. It is however important to consider that some customers would not benefit from our broadest offerings of services. Appropriate resources should be put into customers who have found lasting value further up the cohorts table.
 
+To ensure a smooth onboarding experience and long-term success for our customers, we follow a structured [Customer Success Playbook](https://docs.google.com/document/d/1LqttB5AWueJfahdCciqloS4MSRhDZQRVHjla5xR4toU/edit?tab=t.0#heading=h.rwalcx5xuqez) for our Premium and Enterprise customers. This playbook outlines key activities, engagement points, and best practices that guide our Customer Success team in supporting each customer’s goals throughout their journey with FlowFuse.
+
+
+
+
 ## Customer Success Tools
 
 ### Data Sources

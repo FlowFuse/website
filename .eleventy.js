@@ -26,6 +26,7 @@ const { EleventyEdgePlugin } = require("@11ty/eleventy");
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
+const DEPLOY_PREVIEW = process.env.CONTEXT === "deploy-preview";
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
@@ -104,6 +105,7 @@ module.exports = function(eleventyConfig) {
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
     eleventyConfig.addGlobalData('DEV_MODE', () => DEV_MODE || DEV_MODE_POSTS)
+    eleventyConfig.addGlobalData('deployPreview', DEPLOY_PREVIEW)
 
     // Custom Tooltip "Component"
     eleventyConfig.addPairedShortcode("tooltip", function (content, text) {
@@ -437,7 +439,7 @@ module.exports = function(eleventyConfig) {
                 });
             }
         </script>
-        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="${functionName}()"></script>
+        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="${functionName}()" onerror="hsFallback(this)"></script>
       `;
     });
 
@@ -452,7 +454,7 @@ module.exports = function(eleventyConfig) {
             }
         }
         if (content) {
-            classes = "ff-nav-dropdown relative " + (addClasses || '')
+            classes = "ff-nav-dropdown relative hover:cursor-pointer " + (addClasses || '')
         } else {
             classes= (addClasses || '')
         }

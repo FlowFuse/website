@@ -27,7 +27,7 @@ The following are the steps to produce a montly webinar.
         * Under Branding, for the banner add the graphic created for the web site.
         * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in Hubspot.
    6. Setting up the survey on HubSpot.  
-        * Under **Automations > Surveys**, you'll find the latest one called *‘Webinar Survey - [&lt;month> &lt;year>]’*.  
+        * Under **Service > Feedback Surveys**, you'll find the latest one called *‘Webinar Survey - [&lt;month> &lt;year>]’*.  
         * Clone it, update the survey name to match the month and year of the upcoming webinar, and update the header to match the webinar's name.  
         * Publish the survey and copy the shareable link.  
         * Under **Automations > Workflows**, you'll need to update two workflows: *‘Contact Us Request’* and *‘New Contact Us Form Completion - MQLs’*. In both workflows, you need to update the trigger enrollment for contacts.  

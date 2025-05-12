@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/robustel-eg5120.png"
 specifications:
   Model: Robustel EG5120
-  RAM: 2 GB DDR4
+  RAM_MB: 2048
   Processor: Broadcom BCM2711, ARM Cortex-A72 (ARMv8-A), 4 (Quad-core)
   GPIO: Standard 40-pin GPIO Header
   Connectivity: Dual-band Wi-Fi, Bluetooth 5.0, Gigabit Ethernet, 2x USB 3.0, 2x USB 2.0
