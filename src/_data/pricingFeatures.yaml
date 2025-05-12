@@ -75,7 +75,7 @@ sections:
         label: MQTT Broker
         selfHostedValues: [ 'check', 'check' ]    
         tags: [ 'self-hosted' ]
-        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Enterprise Tier includes 20 clients for free as part of your existing plan, with purchase additional clients as needed in the future.</p>"
+        info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Team Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
       - id: volume-pricing
         label: Volume Pricing
         cloudValues: [ null, null, 'check', 'check' ]
