@@ -62,15 +62,18 @@ The most straightforward way to use cron-plus is to define static schedules usin
    0 8 * * *
 ```
 
-This cron expression is composed of five fields (sometimes six, depending on the system) that determine the schedule for executing tasks. Below is a breakdown of each field:
+A cron expression is composed of five fields (sometimes six or seven, depending on the system) that determine the schedule for executing tasks.
+Below is a breakdown of each field that node-red-contrib-cron-plus supports:
 
-| Field         | Description                        | Possible Values          | Example | Explanation                                  |
-|---------------|------------------------------------|---------------------------|---------|----------------------------------------------|
-| Minute        | Minute of the hour                 | 0-59                      | 0       | At minute 0                                  |
-| Hour          | Hour of the day (24-hour format)   | 0-23                      | 8       | At 8:00 AM                                   |
-| Day of Month  | Day of the month                   | 1-31 or *                 | *       | Every day of the month                       |
-| Month         | Month                              | 1-12 or *                 | *       | Every month                                  |
-| Day of Week   | Day of the week                    | 0-6 (Sun=0) or *          | *       | Every day of the week                        |
+| Field              | Possible Values  | Special Symbols |
+|--------------------|------------------|-----------------|
+| Second  (optional) | 0-59             | * / , -         |
+| Minute             | 0-59             | * / , -         |
+| Hour               | 0-23             | * / , -         |
+| Day of Month       | 1-31             | * / , - ? L W   |
+| Month              | 1-12 or JAN-DEC  | * / , -         |
+| Day of Week        | 0-6 or SUN-SAT   | * / , - ? L #   |
+| Year (optional)    | 1970-2099        | * / , -         |
 
 To help you further understand and customize cron expressions, here are some commonly used special symbols and shorthands:
 
