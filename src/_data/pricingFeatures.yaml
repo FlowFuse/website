@@ -73,7 +73,7 @@ sections:
         info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Starter Tier includes 2 clients, the Team Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
       - id: mqtt-broker-sh
         label: MQTT Broker
-        selfHostedValues: [ null, 'check' ]    
+        selfHostedValues: [ 'check', 'check' ]    
         tags: [ 'self-hosted' ]
         info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Enterprise Tier includes 20 clients for free as part of your existing plan, with purchase additional clients as needed in the future.</p>"
       - id: volume-pricing
