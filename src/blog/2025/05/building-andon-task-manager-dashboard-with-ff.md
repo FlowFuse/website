@@ -2,9 +2,9 @@
 title: "Part 2: Building an Andon Task Manager with FlowFuse"
 subtitle: Step-by-step guide to building a real-time issue reporting and task tracking system using FlowFuse.
 description: Learn how to build an Andon Task Manager with FlowFuse in this step-by-step guide. Create real-time issue reporting and task tracking systems using Node-RED and FlowFuse Dashboard. 
-date: 2025-04-22
+date: 2025-05-15
 authors: ["sumit-shinde"]
-image: /blog/2025/04/images/Building-an-Andon-Task-Manager-with-FlowFuse-2.png
+image: /blog/2025/05/images/Building-an-Andon-Task-Manager-with-FlowFuse-2.png
 keywords: free andon task dashboard, andon task manager dashboard free, building andon task manager, node-red andon task manager, flowfuse andon task manager
 tags:
    - flowfuse
@@ -371,7 +371,7 @@ Once the data is retrieved, it needs to be validated, formatted, and routed appr
 
 13. Deploy the changes.
 
-![Node-RED flow showing data validation and routing logic to prepare and display unresolved requests on the dashboard.](./images/preparing-data-flow.png){data-zoomable}
+![Flow that checks if unresolved requests exist, sends an appropriate message when none are found, or prepares the data for tabular rendering](./images/preparing-data-flow.png){data-zoomable}
 _Flow that checks if unresolved requests exist, sends an appropriate message when none are found, or prepares the data for tabular rendering._
 
 ### Setting Up Visual Alerts and Timestamp Formatting
