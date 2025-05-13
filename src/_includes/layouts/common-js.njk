@@ -51,6 +51,7 @@
                             params               : {
                                 query,
                                 hitsPerPage: 5,
+                                attributesToSnippet: ['content:50']
                             },
                             attributesToHighlight: '*',
                             filters: scope.length === 0 ?  undefined : `category:${scope}`
