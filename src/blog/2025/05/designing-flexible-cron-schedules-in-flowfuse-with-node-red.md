@@ -260,28 +260,33 @@ In some cases, you might not know your schedule ahead of time—or you may want 
 
 Each control message is sent to the `cron-plus` node using a specially formatted `msg.payload` with a command and associated configuration.
 
-Here are some common dynamic commands:
+Below are some examples of dynamic commands. Please refer to the built-in help of the cron-plus node for more details:
 
-| Command             | Description                                                                                           | Example                                                                                                 |
-|---------------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| add                 | Adds a new dynamic schedule. You can specify the cron expression, name, topic, and payload.          | ```json { "command": "add", "name": "dynamic-1", "topic": "dynamic-schedule", "payloadType": "default", "expressionType": "cron", "expression": "*/2 * * * *" } ``` |
-| remove              | Removes a specific schedule by name.                                                                  | ```json { "command": "remove", "name": "dynamic-1" } ```                                                |
-| remove-all          | Removes all schedules (static and dynamic), clearing the configured schedules.                        | ```json { "command": "remove-all" } ```                                                                |
-| remove-active       | Removes all active schedules (either static or dynamic).                                             | ```json { "command": "remove-active" } ```                                                             |
-| remove-inactive     | Removes all inactive schedules (paused or stopped).                                                  | ```json { "command": "remove-inactive" } ```                                                           |
-| list-all            | Lists all schedules, both static and dynamic.                                                        | ```json { "command": "list-all" } ```                                                                  |
-| list-active         | Lists all active schedules.                                                                           | ```json { "command": "list-active" } ```                                                               |
-| list-inactive       | Lists all inactive schedules (paused or stopped).                                                    | ```json { "command": "list-inactive" } ```                                                             |
-| start               | Starts a specific schedule by name.                                                                   | ```json { "command": "start", "name": "dynamic-1" } ```                                                |
-| start-all           | Starts all schedules (static and dynamic).                                                           | ```json { "command": "start-all" } ```                                                                 |
-| stop                | Stops a specific schedule by name.                                                                    | ```json { "command": "stop", "name": "dynamic-1" } ```                                                 |
-| stop-all            | Stops all schedules (static and dynamic).                                                            | ```json { "command": "stop-all" } ```                                                                  |
-| pause               | Pauses a specific schedule by name.                                                                   | ```json { "command": "pause", "name": "dynamic-1" } ```                                                |
-| pause-all           | Pauses all schedules (static and dynamic).                                                           | ```json { "command": "pause-all" } ```                                                                 |
-| export-all          | Exports all schedules (static and dynamic).                                                          | ```json { "command": "export-all" } ```                                                                |
-| export-active       | Exports only active schedules.                                                                        | ```json { "command": "export-active" } ```                                                             |
-| export-inactive     | Exports only inactive schedules (paused or stopped).                                                 | ```json { "command": "export-inactive" } ```                                                           |
-| describe            | Provides a human-readable description of a cron or solar expression. Useful for debugging.           | ```json { "command": "describe", "expression": "0 8 * * 1-5", "expressionType": "cron" } ```           |
+| Command   | Description                                                           | Example                                                                                      |
+|-----------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| `trigger` | Triggers a schedule by name.                                          | `{ "command": "trigger", "name": "dynamic-1" }`                                              |
+| `add`     | Adds a new dynamic schedule.                                          | `{ "command": "add", "name": "dynamic-1", "topic": "dynamic-schedule", "payloadType": "default", "expressionType": "cron", "expression": "*/2 * * * *" }` |
+| `remove`  | Removes a specific schedule by name.                                  | `{ "command": "remove", "name": "dynamic-1" }`                                               |
+| `start`   | Starts a specific schedule by name.                                   | `{ "command": "start", "name": "dynamic-1" }`                                                |
+| `stop`    | Stops a specific schedule by name.                                    | `{ "command": "stop", "name": "dynamic-1" }`                                                 |
+| `pause`   | Pauses a specific schedule by name.                                   | `{ "command": "pause", "name": "dynamic-1" }`                                                |
+| `export`  | Exports a schedule by name.                                           | `{ "command": "export", "name": "dynamic-1" }`                                               |
+| `status`  | Provides the status of a specific schedule by name.                   | `{ "command": "status", "name": "dynamic-1" }`                                               |
+| `describe`| Provides a human-readable description of a cron or solar expression.  | `{ "command": "describe", "expression": "0 8 * * 1-5", "expressionType": "cron" }`           |
+
+Commands can also include a `filter` to operate on multiple schedules at once. Below are a few examples. Please refer to the built-in help of the cron-plus node for more details:
+
+| Filter                    | Description                                          | Example                                        |
+|---------------------------|------------------------------------------------------|------------------------------------------------|
+| `-all`                    | Operate a command on all schedules.                  | `{ "command": "start-all" }`                   |
+| `-all-dynamic`            | Operate a command on all dynamic schedules.          | `{ "command": "export-all-dynamic"  }`         |
+| `-all-static`             | Operate a command on all static schedules.           | `{ "command": "pause-all-static"  }`           |
+| `-all-active`             | Operate a command on all active schedules.           | `{ "command": "stop-all-active"  }`            |
+| `-all-inactive`           | Operate a command on all inactive schedules.         | `{ "command": "start-all-inactive"  }`         |
+| `-all-active-static`      | Operate a command on all active static schedules.    | `{ "command": "stop-all-active-static"  }`     |
+| `-all-active-dynamic`     | Operate a command on all active dynamic schedules.   | `{ "command": "stop-all-active-dynamic"  }`    |
+| `-all-inactive-static`    | Operate a command on all inactive static schedules.  | `{ "command": "start-all-inactive-static"  }`  |
+| `-all-inactive-dynamic`   | Operate a command on all inactive dynamic schedules. | `{ "command": "remove-all-inactive-dynamic"  }`|
 
 For example, we need to build a flow that triggers on UK public holidays to stop recording the OEE (Overall Equipment Efficiency) or lock the entry gates of the factory. To achieve this, we can integrate a UK public holiday API into our Node-RED flow, fetch the holiday data, and then trigger actions based on those holidays.
 
@@ -336,7 +341,7 @@ return msg;
 4. Drag a cron-plus node onto the canvas. Connect the Inject node to the HTTP request node, the HTTP request node to the Function node, and the Function node to the cron-plus node.
 5. Deploy the flow.
 
-Now you can check the dynamic schedules list. More information is provided at the end of this section.
+Now you can check the dynamic schedules list (see how at the end of this section).
 
 {% renderFlow %}
 [{"id":"3608db0d1bd59aa5","type":"inject","z":"1791a7bd576b3a15","name":"Update bank holidays","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"00 02 * * 1","once":false,"onceDelay":0.1,"topic":"","x":160,"y":60,"wires":[["252cb7c88de78e45"]]},{"id":"252cb7c88de78e45","type":"http request","z":"1791a7bd576b3a15","name":"","method":"GET","ret":"obj","paytoqs":"ignore","url":"https://www.gov.uk/bank-holidays.json","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"","senderr":false,"headers":[],"x":370,"y":60,"wires":[["cf71e6ad0a983d80"]]},{"id":"cf71e6ad0a983d80","type":"function","z":"1791a7bd576b3a15","name":"england bank holiday schedules","func":"const engHols = msg.payload[\"england-and-wales\"].events\n\n// clear out existing schedules\nnode.send({topic:'remove-all'})\n\nconst newSchedules = []\nfor(let index = 0; index < engHols.length; index++) {\n    const hol = engHols[index];\n    const date = new Date(hol.date)\n    if (date.valueOf() < Date.now()) {\n        continue\n    }\n    const newSchedule = {\n        \"command\": \"add\",\n        \"name\": hol.title + ` (${date.getFullYear()})`,\n        \"topic\": hol.title,\n        \"expression\": hol.date,\n        \"expressionType\": \"dates\",\n        \"payload\": hol,\n        \"payloadType\": \"json\"\n    }\n    newSchedules.push(newSchedule)    \n}\n\nmsg.topic = ''\nmsg.payload = newSchedules\n\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":120,"wires":[["abea360f336bbf5c"]]},{"id":"abea360f336bbf5c","type":"cronplus","z":"1791a7bd576b3a15","name":"","outputField":"payload","timeZone":"","storeName":"","commandResponseMsgOutput":"output2","defaultLocation":"","defaultLocationType":"default","outputs":2,"options":[],"x":360,"y":200,"wires":[["dfff5dae3de9e7de"],["7834e47a1631346f"]]},{"id":"b5a53df2dedde1d2","type":"inject","z":"1791a7bd576b3a15","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"list-all","x":110,"y":180,"wires":[["abea360f336bbf5c"]]},{"id":"7834e47a1631346f","type":"debug","z":"1791a7bd576b3a15","name":"list","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":220,"wires":[]},{"id":"dfff5dae3de9e7de","type":"debug","z":"1791a7bd576b3a15","name":"action","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":180,"wires":[]},{"id":"041f7306088daf24","type":"inject","z":"1791a7bd576b3a15","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"remove-all","x":120,"y":220,"wires":[["abea360f336bbf5c"]]}]
