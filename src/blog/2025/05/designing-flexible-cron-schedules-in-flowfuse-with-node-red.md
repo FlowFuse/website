@@ -265,7 +265,7 @@ Below are some examples of dynamic commands. Please refer to the built-in help o
 | Command   | Description                                                           | Example                                                                                      |
 |-----------|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | `trigger` | Triggers a schedule by name.                                          | `{ "command": "trigger", "name": "dynamic-1" }`                                              |
-| `add`     | Adds a new dynamic schedule.                                          | `{ "command": "add", "name": "dynamic-1", "topic": "dynamic-schedule", "payloadType": "default", "expressionType": "cron", "expression": "*/2 * * * *" }` |
+| `add`     | Add (or update) a dynamic schedule.                                   | `{ "command": "add", "name": "dynamic-1", "topic": "dynamic-schedule", "payloadType": "default", "expressionType": "cron", "expression": "*/2 * * * *" }` |
 | `remove`  | Removes a specific schedule by name.                                  | `{ "command": "remove", "name": "dynamic-1" }`                                               |
 | `start`   | Starts a specific schedule by name.                                   | `{ "command": "start", "name": "dynamic-1" }`                                                |
 | `stop`    | Stops a specific schedule by name.                                    | `{ "command": "stop", "name": "dynamic-1" }`                                                 |
@@ -276,17 +276,19 @@ Below are some examples of dynamic commands. Please refer to the built-in help o
 
 Commands can also include a `filter` to operate on multiple schedules at once. Below are a few examples. Please refer to the built-in help of the cron-plus node for more details:
 
-| Filter                    | Description                                          | Example                                        |
-|---------------------------|------------------------------------------------------|------------------------------------------------|
-| `-all`                    | Operate a command on all schedules.                  | `{ "command": "start-all" }`                   |
-| `-all-dynamic`            | Operate a command on all dynamic schedules.          | `{ "command": "export-all-dynamic"  }`         |
-| `-all-static`             | Operate a command on all static schedules.           | `{ "command": "pause-all-static"  }`           |
-| `-all-active`             | Operate a command on all active schedules.           | `{ "command": "stop-all-active"  }`            |
-| `-all-inactive`           | Operate a command on all inactive schedules.         | `{ "command": "start-all-inactive"  }`         |
-| `-all-active-static`      | Operate a command on all active static schedules.    | `{ "command": "stop-all-active-static"  }`     |
-| `-all-active-dynamic`     | Operate a command on all active dynamic schedules.   | `{ "command": "stop-all-active-dynamic"  }`    |
-| `-all-inactive-static`    | Operate a command on all inactive static schedules.  | `{ "command": "start-all-inactive-static"  }`  |
-| `-all-inactive-dynamic`   | Operate a command on all inactive dynamic schedules. | `{ "command": "remove-all-inactive-dynamic"  }`|
+| Filter                    | Description                                          | Example                                       |
+|---------------------------|------------------------------------------------------|-----------------------------------------------|
+| `-all`                    | Operate a command on all schedules.                  | `{ "command": "start-all" }`                  |
+| `-all-dynamic`            | Operate a command on all dynamic schedules.          | `{ "command": "export-all-dynamic" }`         |
+| `-all-static`             | Operate a command on all static schedules.           | `{ "command": "pause-all-static" }`           |
+| `-all-active`             | Operate a command on all active schedules.           | `{ "command": "stop-all-active" }`            |
+| `-all-inactive`           | Operate a command on all inactive schedules.         | `{ "command": "start-all-inactive" }`         |
+| `-all-active-static`      | Operate a command on all active static schedules.    | `{ "command": "stop-all-active-static" }`     |
+| `-all-active-dynamic`     | Operate a command on all active dynamic schedules.   | `{ "command": "stop-all-active-dynamic" }`    |
+| `-all-inactive-static`    | Operate a command on all inactive static schedules.  | `{ "command": "start-all-inactive-static" }`  |
+| `-all-inactive-dynamic`   | Operate a command on all inactive dynamic schedules. | `{ "command": "remove-all-inactive-dynamic" }`|
+
+#### Dynamic Demo 1
 
 For example, we need to build a flow that triggers on UK public holidays to stop recording the OEE (Overall Equipment Efficiency) or lock the entry gates of the factory. To achieve this, we can integrate a UK public holiday API into our Node-RED flow, fetch the holiday data, and then trigger actions based on those holidays.
 
@@ -346,6 +348,8 @@ Now you can check the dynamic schedules list (see how at the end of this section
 {% renderFlow %}
 [{"id":"3608db0d1bd59aa5","type":"inject","z":"1791a7bd576b3a15","name":"Update bank holidays","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"00 02 * * 1","once":false,"onceDelay":0.1,"topic":"","x":160,"y":60,"wires":[["252cb7c88de78e45"]]},{"id":"252cb7c88de78e45","type":"http request","z":"1791a7bd576b3a15","name":"","method":"GET","ret":"obj","paytoqs":"ignore","url":"https://www.gov.uk/bank-holidays.json","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"","senderr":false,"headers":[],"x":370,"y":60,"wires":[["cf71e6ad0a983d80"]]},{"id":"cf71e6ad0a983d80","type":"function","z":"1791a7bd576b3a15","name":"england bank holiday schedules","func":"const engHols = msg.payload[\"england-and-wales\"].events\n\n// clear out existing schedules\nnode.send({topic:'remove-all'})\n\nconst newSchedules = []\nfor(let index = 0; index < engHols.length; index++) {\n    const hol = engHols[index];\n    const date = new Date(hol.date)\n    if (date.valueOf() < Date.now()) {\n        continue\n    }\n    const newSchedule = {\n        \"command\": \"add\",\n        \"name\": hol.title + ` (${date.getFullYear()})`,\n        \"topic\": hol.title,\n        \"expression\": hol.date,\n        \"expressionType\": \"dates\",\n        \"payload\": hol,\n        \"payloadType\": \"json\"\n    }\n    newSchedules.push(newSchedule)    \n}\n\nmsg.topic = ''\nmsg.payload = newSchedules\n\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":120,"wires":[["abea360f336bbf5c"]]},{"id":"abea360f336bbf5c","type":"cronplus","z":"1791a7bd576b3a15","name":"","outputField":"payload","timeZone":"","storeName":"","commandResponseMsgOutput":"output2","defaultLocation":"","defaultLocationType":"default","outputs":2,"options":[],"x":360,"y":200,"wires":[["dfff5dae3de9e7de"],["7834e47a1631346f"]]},{"id":"b5a53df2dedde1d2","type":"inject","z":"1791a7bd576b3a15","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"list-all","x":110,"y":180,"wires":[["abea360f336bbf5c"]]},{"id":"7834e47a1631346f","type":"debug","z":"1791a7bd576b3a15","name":"list","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":220,"wires":[]},{"id":"dfff5dae3de9e7de","type":"debug","z":"1791a7bd576b3a15","name":"action","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":180,"wires":[]},{"id":"041f7306088daf24","type":"inject","z":"1791a7bd576b3a15","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"remove-all","x":120,"y":220,"wires":[["abea360f336bbf5c"]]}]
 {% endrenderFlow %}
+
+#### Dynamic Demo 2
 
 Additionally, I'd like to share another demo that Steve has prepared for the community, which demonstrates dynamic scheduling based on the best energy prices:
 
