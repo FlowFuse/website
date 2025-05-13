@@ -65,6 +65,9 @@
 
 .aa-Panel .aa-ItemContent .aa-ItemContentBody {
     grid-column: span 4;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
 }
 
 
