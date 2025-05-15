@@ -2,7 +2,7 @@
 title: "Designing Flexible Cron Schedules in FlowFuse with Node-RED"
 subtitle: "Go Beyond Inject Nodes: Automate Smarter with Flexible Cron Schedules in Node-RED"
 description: Learn how to create powerful, flexible cron schedules in Node-RED using the cron-plus node within FlowFuse. Go beyond Inject nodes for smarter, time-based automation.
-date: 2025-05-19
+date: 2025-05-15
 authors: ["sumit-shinde","stephen-mclaughlin"]
 image:  /blog/2025/05/images/cron-node-red.png
 keywords: Node-RED cron scheduling, cron-plus, Node-RED time-based automation, FlowFuse automation, node-red-contrib-cron-plus
