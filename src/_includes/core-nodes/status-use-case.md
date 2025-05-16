@@ -3,7 +3,7 @@ The Status node allows you to monitor the status of individual nodes or all the 
 
 For example, a delay node that is queuing external messages may want to report an error message after the queue exceeds a specific number. The status node can be used to track the number of messages in the queue.
 
-The output of the status node is in two formats: 1) the textual output is added in real-time below the node. The colour of the output will also change depending on the status. 2) An object called status is accessible from the debugger and other nodes, like the change node.  The properties of the status object are listed below.
+The output of the status node is in two formats: 1) the textual output is added in real-time below the node. The color of the output will also change depending on the status. 2) An object called status is accessible from the debugger and other nodes, like the change node.  The properties of the status object are listed below.
 
 ## Example of Status nodes
 

@@ -38,7 +38,7 @@ The Template node also provides access to two built-in functions that can be use
 
 ![Examples of ui-switch](https://dashboard.flowfuse.com/images/node-examples/ui-switch.png)
 
-Adds a toggle switch to the user interface that can be rendered with a label, and traditional toggle switch, or, as in Dashboard 1.0, can be a square element with an icon & colour provided.
+Adds a toggle switch to the user interface that can be rendered with a label, and traditional toggle switch, or, as in Dashboard 1.0, can be a square element with an icon & color provided.
 
 ## Fixes & Other Changes
 
