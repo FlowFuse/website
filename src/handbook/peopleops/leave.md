@@ -43,7 +43,7 @@ If you live in a country where a statutory Parental Leave benefit is available,
 you will be required to claim statutory Parental Leave pay (if you are eligible).
 
 Any employee can take up to 6-weeks if they wish without requiring manager
-approval. We recommend a minimum of 4 weeks, but recognise it's a personal
+approval. We recommend a minimum of 4 weeks, but recognize it's a personal
 choice to make. Further leave can be requested, but should be discussed with
 your manager. Inform your manager of the expected new family member at least 16
 weeks before the due date to qualify for the extended parental leave.

@@ -12,12 +12,12 @@ FlowFuse.
 
 The basic principal of CS is to help customers succeed in their goals by getting
 value from our services. The assumption is, where customers get value they are
-likely to consciously recognise that value, be open to gaining more value, and
+likely to consciously recognize that value, be open to gaining more value, and
 recommending FlowFuse to potential customers. This should in turn result in
 customers remaining with FlowFuse for longer, delivering greater revenue, and
 encouraging more of their professional and personal networks to join FlowFuse.
 
-FlowFuse has a diverse customer-base. When devising a strategy to deliver CS it is important to recognise the key cohorts within our customers. They are grouped as follows:
+FlowFuse has a diverse customer-base. When devising a strategy to deliver CS it is important to recognize the key cohorts within our customers. They are grouped as follows:
 
 |Cohort|Key Traits|
 |-|-|
