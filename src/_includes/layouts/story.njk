@@ -82,7 +82,7 @@ layout: layouts/base.njk
                             </ul>
                             {% endif %}
                         </div>
-                        <div class="pt-3 pb-3">
+                        <div class="pt-3 pb-3 border-b">
                             <h3 class="text-base">Results</h3>
                             <ul class="list-disc pl-6">
                                 {% for result in story.results %}
@@ -92,6 +92,8 @@ layout: layouts/base.njk
                                 {% endfor %}
                             </ul>
                         </div>
+                        <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full mt-3" href="/book-demo/"
+                        onclick="capture('cta-book-demo', {'reference': 'Customer Story: {{ title }}'})">BOOK A DEMO</a>
                     </div>
                     {% if hubspot.formId %}
                     <div class="flex flex-col mt-6 px-6">
