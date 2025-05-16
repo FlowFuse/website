@@ -7,6 +7,14 @@ navTitle: Board & Investors
 Scheduled over a month in advance, these meetings occur roughly every six weeks, reflecting a cadence designed for focused, high-impact engagement.
 To balance the high cadence, board meetings are only scheduled for an hour.
 
+## Calendar invites
+
+Since some of the folks invited alternate meetings they attend, we have two sequences of invites scheduled to recur at 26 weeks (instead of one sequence at 13 weeks). This is important to note since this means that if you want to link something in the meeting invite (e.g. a doc or slides), it must be edited in two places. This is more reasonable than manually adding folks to the meeting in alternating succession.
+
+Calendar invites include all the folks expected to be at the board meeting, including our legal counsel. 
+
+## The Meeting
+
 ### Prewatch
 
 Three business days before the meeting, the CEO will send a 5-10 minute prewatch video giving Board Members an overview of the metrics and topics for discussion. 
