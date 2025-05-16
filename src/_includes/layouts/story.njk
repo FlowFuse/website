@@ -22,7 +22,7 @@ layout: layouts/base.njk
                 {% include "components/icons/chevron-left.svg" %}
                 Back to Customer Stories
             </a>
-            <div class="ff-prose flex flex-col-reverse md:flex-row md:gap-8">
+            <div class="ff-prose flex flex-col-reverse md:flex-row md:gap-8 mb-6 border-b">
                 <div class="flex-grow">
                     <div class="prose">
                         <q class="py-6 md:pt-3 px-6 text-xl text-gray-600 italic font-bold w-full block">
@@ -105,6 +105,8 @@ layout: layouts/base.njk
                     {% endif %}
                 </div>
             </div>
+            <h3 class="mt-6 -mb-4 text-indigo-400">Read more stories</h3>
+            {% include "stories-block.njk" %}
         </div>
     </div>
 </div>
