@@ -33,7 +33,7 @@ function decodeJsonCookie (cookie) {
 }
 
 /*
-Check if this is a person we already recognise in PostHog (they will have a PostHog cookie)
+Check if this is a person we already recognize in PostHog (they will have a PostHog cookie)
 If not, we need to geenrate a random identifier for them
 */
 function getDistinctId (context) {
