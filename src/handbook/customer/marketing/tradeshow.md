@@ -121,7 +121,7 @@ Sales and marketing teams will follow up with leads as per the pre-defined strat
 ### Design
 
 Around three months before the event, the booth vendor and booth messaging must have been defined. Following the vendor's technical specifications, the demo layout, devices, and the messaging, prepare the required artwork for the booth. There are a couple of things to keep in mind:
-- The background colours of the booth should be inviting, although red is one of our brand colours, use it only to highlight some small portions of the artwork.
+- The background colors of the booth should be inviting, although red is one of our brand colors, use it only to highlight some small portions of the artwork.
 - The top corners near the halls are the most visible sections, make sure to include FlowFuse and Node-RED logos in those areas.
 - Around 1.70m from the ground up won't be visible at all times given the traffic at these events, so don't add any text or relevant info in those areas.
 - Don't add too many elements or text to the walls, people won't stop to read everything that's written on walls so keep it short and easy to read.

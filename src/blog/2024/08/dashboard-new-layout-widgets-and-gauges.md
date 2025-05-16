@@ -64,7 +64,7 @@ Just to highlight a few, particularly valuable, updates and fixes:
 
  - UI Switch - Introduced an "Indicator" mode and enhanced memory handling for better performance.
  - UI Table - Added a "Button" column type for improved interactivity.
- - UI Button - Colour customisation now available, without needing to write overriding CSS.
+ - UI Button - Color customisation now available, without needing to write overriding CSS.
  - Dynamic Properties - Added dynamic property support for `UI-Text-Input` widget.
 
  ## What's Next?
