@@ -4,8 +4,7 @@ navTitle: Board & Investors
 
 ## Board meetings
 
-Scheduled over a month in advance, these meetings occur roughly every six weeks, reflecting a cadence designed for focused, high-impact engagement.
-To balance the high cadence, board meetings are only scheduled for an hour.
+While prior to July 2025, Board Meetings were for 1 hour every eight weeks, we are migrating to a more typical Board Meeting Cadence with 4 official 90-minute meetings per year (once per quarter) about 1 month after the quarter closes, interspersed with 4 60-minute informal meetings that are focused on metrics and cover one strategic topic for a deep dive. 
 
 ## Calendar invites
 
