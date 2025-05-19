@@ -47,3 +47,11 @@ FlowFuse investors get a monthly update sent to them, which contains the KPI's w
 information from the CEO on company performance.
 
 Major investors have access to more data on company performance through Carta.
+
+The company must deliver the following deliverables to all Major Investors:
+* Unaudited financial statements within 120 days after each fiscal year.
+* Unaudited financials within 45 days after each fiscal quarter.
+* Cap table is available through Carta
+* Approved annual budget and business plan for the next fiscal year as soon as practicable, at most within 30 days of each fiscal year.
+
+
