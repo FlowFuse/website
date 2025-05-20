@@ -68,6 +68,14 @@ module.exports = function(eleventyConfig) {
         return null;
       });
 
+    eleventyConfig.addFilter("excludeCurrent", (items, currentUrl) => {
+        return items.filter(item => item.url !== currentUrl);
+    });
+
+      eleventyConfig.addFilter("shuffle", (array) => {
+        return array.sort(() => Math.random() - 0.5);
+    });
+
     // Add a global data variable for the current date
     eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());  
 
