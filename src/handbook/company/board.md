@@ -16,20 +16,23 @@ Calendar invites include all the folks expected to be at the board meeting, incl
 
 ### Prewatch
 
-Three business days before the meeting, the CEO will send a 5-10 minute prewatch video giving Board Members an overview of the metrics and topics for discussion. 
+Three business days before the meeting, the CEO will send a 5-10 minute prewatch video giving Board Members an overview of the metrics and topics for discussion. Since meetings are generally scheduled for Tuesdays, this means the prewatch needs to go out on Fridays. 
+
 In most circumstances a 5-10 min prewatch can help make the time together even more productive, as you get to move contextualizing to before-the-meeting and it gives people time to let things bake in their head, improving the quality of conversation.
 
 ### Structure
 
-The 60 minutes of each meeting are structured in the following time blocks:
+The 90 minutes of each meeting are structured in the following time blocks:
 
-* 10 minutes Metrics and Company Performance - The company presents key metrics, comparing against the plan and updates projections. The figures will be distributed well in advance, and as such the discussion should be focussed on the reflections of the numbers.
-* 40 minutes Strategic Discussion - A comprehensive pre-read document is distributed to all board members and designated observers a week prior to the meeting. This pre-read is mandatory, ensuring that all participants arrive prepared to engage in a productive, informed discussion.
-* 10 minutes "Any other business" - Providing an open forum for board members and observers to raise additional topics, propose motions, or conduct votes, such as those related to stock options or other pertinent matters. It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
+* 15 minutes Metrics and Company Performance - The company presents key metrics, comparing against the plan and updates projections. The figures will be distributed well in advance, and as such the discussion should be focussed on the reflections of the numbers.
+* 60 minutes Strategic Discussion - In the Strategic Discussion portion, we will focus on one or two (but no more) key topics of focus for the business for discussion. Prior context is shared through the prewatch.
+* 15 minutes "Any other business" - Providing an open forum for board members and observers to raise additional topics, propose motions, or conduct votes, such as those related to stock options or other pertinent matters. It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
 
 ### Board Deck
 
-FlowFuse provides a board deck with high level business overview items, the inspiration for slides is [taken from this template](https://www.slideshare.net/slideshow/senovo-board-meeting-template/128164697). The template is updated to fit the FlowFuse business.
+FlowFuse provides a board deck with high level business overview items, the inspiration for slides is [taken from this template](https://www.slideshare.net/slideshow/senovo-board-meeting-template/128164697). The template is updated to fit the FlowFuse business. 
+
+Slides are stored in the "Investors" folder in the "FlowFuse Admin" Shared Drive. 
 
 ### Post meeting action items
 
@@ -37,13 +40,15 @@ Within a week after the board meeting, the CEO will distribute assets related to
 
 Assets will always include:
 1. A link to the final board deck with metrics in the shared Google Drive
-2. A link to the final pre-read for the Strategic Discussion
+2. A link to the pre-shared materials for the Strategic Discussion
 3. List of action items
 
-## Investors
+## Monthly Investor Updates
 
-FlowFuse investors get a monthly update sent to them, which contains the KPI's we track and editorialized
+FlowFuse investors get a monthly update sent to them, which contains the KPIs we track and editorialized
 information from the CEO on company performance.
+
+## Major Investors
 
 Major investors have access to more data on company performance through Carta.
 
