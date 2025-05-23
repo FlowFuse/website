@@ -22,7 +22,7 @@ customer expansion. This includes:
 ## How we work
 
  - [Demo](./meetings/demo.md)
- - [Sales Deck](https://docs.google.com/presentation/d/1FYimrzTe-7nExArcDoh0mdRh7wSjhtSCHZEz1f6sd8s/edit#slide=id.g1809c267caa_0_0)
+ - [Sales Deck](https://docs.google.com/presentation/d/13r9pRNikgEgkim9M9UuyhT2Xvr3aA7FK9rHhICIINDI/)
  - [Engagements & Pricing](./engagements.md)
  - [Deal Board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/board)
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
