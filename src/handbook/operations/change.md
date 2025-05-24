@@ -2,7 +2,7 @@
 navTitle: Change Control
 ---
 
-As part of our [secure operations policies](https://flowfuse.com/handbook/company/security/) we implement a Change Control process for certain operations in order to provide auditable, reviewable changes to key systems.
+As part of our [secure operations policies](/handbook/company/security/) we implement a Change Control process for certain operations in order to provide auditable, reviewable changes to key systems.
 
 The following tasks should be completed under change control.
 
@@ -33,4 +33,6 @@ If a new repository is required within our GitHub organisation, a `New Repositor
 # Onboarding/Offboarding
 
 When bringing a new employee into the company, or saying goodbye to an existing one, the appropriate `Onboarding` or `Offboarding` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new/choose)
+
+More details around Onboarding is available in the [Hiring and Onboarding](/handbook/peopleops/hiring/#onboarding) section of the handbook.
 
