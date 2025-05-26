@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/raspberrypi-5.png"
 specifications:
   Model: Raspberry Pi 5 Model 8GB   
-  RAM: 8GB LPDDR4 SDRAM
+  RAM_MB: 8192
   Processor: Broadcom BCM2712, ARM Cortex-A76 (ARMv8.2-A), 4 (Quad-core)
   GPIO: Standard 40-pin GPIO Header
   Connectivity: 2 × USB 2.0 Ports, 2 × USB 3.0 Ports, Bluetooth 5.0, USB-C, Wi-Fi + Bluetooth® Low Energy
@@ -46,10 +46,10 @@ To set up your Raspberry Pi 5 for use with Node-RED and FlowFuse, follow these s
 
 This guide explores how to install and run Node-RED through the FlowFuse Device Agent on the Raspberry Pi 5, enabling you to build, manage, and scale Node-RED flows efficiently from a remote location.
 
-{% include "hardware/system/debian-ff-install.njk" %}
+{% include "hardware/system/debian-ff-install.md" %}
 
-{% include "hardware/device-registration.njk" %}
+{% include "hardware/device-registration.md" %}
 
 ![Status of the remote instance in FlowFuse, showing its connection and operational state](./images/raspberry-pi-5.png "Status of the remote instance in FlowFuse, showing its connection and operational state."){data-zoomable}
 
-{% include "hardware/accessing-node-red-editor.njk" %}
+{% include "hardware/accessing-node-red-editor.md" %}

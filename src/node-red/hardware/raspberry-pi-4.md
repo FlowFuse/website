@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/raspberry-pi-4-b.png"
 specifications:
   Model: Raspberry Pi 4 B 8GB
-  RAM: 8GB
+  RAM_MB: 8192
   Processor: Broadcom BCM2711, ARM Cortex-A72 (ARMv8-A), 4 (Quad-core)
   GPIO: (Fully backwar ds-compatible with previous boards), Standard 40-pin GPIO Header
   Connectivity: Dual-band Wi-Fi, Bluetooth 5.0, Gigabit Ethernet, 2x USB 3.0, 2x USB 2.0
@@ -46,10 +46,10 @@ To set up your Raspberry Pi 4 for use with Node-RED and FlowFuse, follow these s
 
 This guide explores how to install and run Node-RED through the FlowFuse Device Agent on the Raspberry Pi 4, enabling you to build, manage, and scale Node-RED flows efficiently from a remote location.
 
-{% include "hardware/system/debian-ff-install.njk" %}
+{% include "hardware/system/debian-ff-install.md" %}
 
-{% include "hardware/device-registration.njk" %}
+{% include "hardware/device-registration.md" %}
 
 ![Status of the remote instance in FlowFuse, showing its connection and operational state](./images/raspberry-pi-4.png "Status of the remote instance in FlowFuse, showing its connection and operational state"){data-zoomable}
 
-{% include "hardware/accessing-node-red-editor.njk" %}
+{% include "hardware/accessing-node-red-editor.md" %}

@@ -87,13 +87,13 @@ Before you begin, ensure you have the following:
 
 - FlowFuse Account: This will allow you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on your Node-RED projects with your team, manage and program your edge devices remotely, If you haven’t created an account yet, [sign up now](https://app.flowfuse.com/account/create).
 - [node-red-contrib-mqtt-sparkplug-plus](https://flows.nodered.org/node/node-red-contrib-mqtt-sparkplug-plus): Install this Node-RED package for Sparkplug B support via palette manager.
-- MQTT Broker: You’ll need an MQTT broker to send and receive messages. If you don’t have one set up, FlowFuse also offers an integrated MQTT broker service, simplifying the process of using MQTT with Node-RED without needing an external broker. For more details, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
+- MQTT Broker: An MQTT broker is required to send and receive data between clients. If you do not already have one, FlowFuse offers a built-in MQTT broker service that simplifies the process of using MQTT with Node-RED—no external setup required. To learn how to use the FlowFuse MQTT Broker and create and manage clients, refer to the [FlowFuse MQTT documentation](/docs/user/teambroker/).
 
 ### Configuring Node-RED for MQTT Sparkplug B
 
 1. Drag any mqtt sparkplug node onto the canvas.
 2. Double-click the mqtt sparkplug node to open the configuration panel.
-3. Click the "+" icon next to the "Broker" field. Enter your MQTT broker's host address (e.g., `mqtt.example.com`), specify the port number (e.g., `1883` for unencrypted or `8883` for TLS), and configure the TLS settings if required. Enter the username and password if authentication is needed. Optionally, enter a Client ID or leave it blank for auto-generation. Set the "Keep Alive" interval (default is 60 seconds).
+3. Click the "+" icon next to the "Broker" field. Enter your MQTT broker's host address (e.g., `broker.flowfuse.cloud`), specify the port number (e.g., `1883` for unencrypted or `8883` for TLS), and configure the TLS settings if required. Enter the username and password, enter a Client ID, Set the "Keep Alive" interval (default is 60 seconds).
 4. Switch to the Sparkplug tab by clicking the Sparkplug option in the top-right corner.
 5. Enter a name in the "Name" field (this will be the Edge Node ID). Enter the group name in the "Group" field. Select "No" for the compression setting. Enable the "Use Alias for Metrics" option if you prefer not to send the full metric names every time and use aliases instead.
 6. Click "Add" to save the configuration.

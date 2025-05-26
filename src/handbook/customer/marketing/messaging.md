@@ -70,11 +70,11 @@ pure value of Node-RED) which can still be factored into the conversation.
 
 ### Two sentence description
 
-FlowFuse is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. The platform empowers customers to seamlessly integrate IT and OT environments allowing teams to quickly connect, collect, transform, and visualise data to optimize industrial workflows.
+FlowFuse is the industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. The platform empowers customers to seamlessly integrate IT and OT environments allowing teams to quickly connect, collect, transform, and visualise data to optimize industrial workflows.
 
 ### About FlowFuse - 50 Words
 
-FlowFuse is a platform for building and operating self-built industrial data solutions that digitalize processes and operations. The platform seamlessly integrates into your IT and OT environments leveraging Node-RED, an open source low-code programming technology, making it easy for OT-engineers to quickly connect, collect, transform, and visualize data to interact with industrial processes. Companies use FlowFuse to manage, scale and secure their industrial Node-RED solutions.
+FlowFuse is the platform for building and operating self-built industrial data solutions that digitalize processes and operations. The platform seamlessly integrates into your IT and OT environments leveraging Node-RED, an open source low-code programming technology, making it easy for OT-engineers to quickly connect, collect, transform, and visualize data to interact with industrial processes. Companies use FlowFuse to manage, scale and secure their industrial Node-RED solutions.
 
 
 ### About FlowFuse - 150 Words
@@ -84,5 +84,3 @@ For industrial companies, competition is more intense than ever. Achieving growt
 FlowFuse is the leading open source platform for building and operating self-built industrial data solutions that digitalize processes and operations. The platform leverages Node-RED, a low-code programming technology that makes it easy for your OT-engineers to quickly connect, collect, transform, and visualize data for interacting with industrial processes. Node-RED seamlessly integrates with thousands of industrial devices and 100s of protocols and data services.
 
 Founded in 2021 by Nick O’Leary, co-creator of Node-RED, companies use FlowFuse to manage, scale and secure their industrial Node-RED solutions.
-
-

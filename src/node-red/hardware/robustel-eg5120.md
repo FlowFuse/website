@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/robustel-eg5120.png"
 specifications:
   Model: Robustel EG5120
-  RAM: 2 GB DDR4
+  RAM_MB: 2048
   Processor: Broadcom BCM2711, ARM Cortex-A72 (ARMv8-A), 4 (Quad-core)
   GPIO: Standard 40-pin GPIO Header
   Connectivity: Dual-band Wi-Fi, Bluetooth 5.0, Gigabit Ethernet, 2x USB 3.0, 2x USB 2.0
@@ -28,8 +28,8 @@ The Robustel EG5120 supports multiple connectivity options including Ethernet, W
 
 This guide explores how to install and run Node-RED through the FlowFuse Device Agent on the Robustel EG5120, enabling you to build, manage, and scale Node-RED flows efficiently from a remote location.
 
-{% include "hardware/system/debian-ff-install.njk" %}
+{% include "hardware/system/debian-ff-install.md" %}
 
-{% include "hardware/device-registration.njk" %}
+{% include "hardware/device-registration.md" %}
 
-{% include "hardware/accessing-node-red-editor.njk" %}
+{% include "hardware/accessing-node-red-editor.md" %}

@@ -7,8 +7,10 @@ meta:
 
 FlowFuse has a few core values. Values we aspire to live by in everything we do
 at FlowFuse. With a shared set of values, norms that are created every day will
-align with what company we want to be, and how we conduct business. Our values
-are as follows:
+align with what company we want to be, and how we conduct business. When we are 
+operating within our Values, we are also abiding by our [Code of Conduct](/handbook/peopleops/code-of-conduct/)
+
+Our values are as follows:
 
 ## 📈 Results
 

@@ -77,7 +77,7 @@ to match what is needed.
 #### Private Repositories
 
 For *private* repositories, you will also need to add a Repository Secret as
-they cannot access the organisation-wide secret we have in place.
+they cannot access the organization-wide secret we have in place.
 
 1. Generate a [Personal Access Token](https://github.com/settings/tokens) with
    `repo, write:org` scope.

@@ -1,4 +1,3 @@
-{% raw %}
 ### Registering the Device to Connect to FlowFuse
 
 Once you have installed the FlowFuse Device Agent, you need to register the hardware to connect it to your FlowFuse team.
@@ -27,4 +26,3 @@ Once executed, you should see an output similar to the one below, indicating tha
 ```
 
 Now, you can check the remote instance in the FlowFuse platform, where its status should be displayed as **"running."**.
-{% endraw %}

@@ -21,31 +21,67 @@ Not yet written
 *When running e2e tests locally, the NPM scripts are in the `flowforge` package.*
 *Be sure to `cd` to `flowforge` before attempting to run them*
 
-### Dependencies
-Before running the e2e test suites locally you should make sure you have Docker installed and running locally.
-
 ### Running Locally
 
-To run the E2E tests yourself, we need to first run our own local web server that the tests will run on.
-For our testing purposes, we have a single server configured with multiple users, teams and projects.
-To run this, open a terminal and run:
+To run the E2E tests locally, you first need to start a web server that the tests will run against.
+For testing purposes, a single server is configured with multiple users, teams, and projects.
+
+To start the server, open a terminal and run:
 
 ```bash
 npm run cy:web-server
 ```
 
-This accomplishes two things: 
-- spins up two web servers, each configured differently
-- spins up a SMTP server running in a docker container for each server 
+This spins up two web servers, each configured differently
 
 ```shell
+OS Environment running at http://localhost:3001
+EE Environment running at http://localhost:3002
+ERROR: Failed to verify email connection: Error: connect ECONNREFUSED 127.0.0.1:1025
+```
+
+The email connection failure warning is expected. E2E tests that rely on email functionality will be skipped.
+
+If you need to run tests involving email functionality, you'll have to enable local SMTP servers.
+To do that, add the following section to your `etc/flowforge.local.yml`:
+
+```yml
+...
+e2e:
+  email:
+    os:
+      enabled: true
+      debug: true
+      smtp:
+        host: localhost
+        port: 1025
+        web_port: 8025
+        secure: false
+    ee:
+      enabled: true
+      debug: true
+      smtp:
+        host: localhost
+        port: 1026
+        web_port: 8026
+        secure: false
+...
+```
+
+> **Note**: Docker must be installed and running on your system, as the web servers are launched using Docker containers.
+
+On the next start of the web server, you should see log output similar to:
+
+```shell
+OS Environment running at http://localhost:3001
+EE Environment running at http://localhost:3002
 Mailpit: Starting e-mail server...
 Mailpit: Web UI available at http://localhost:8025/ with SMTP listening on port 1025
 Mailpit: Starting e-mail server...
 Mailpit: Web UI available at http://localhost:8026/ with SMTP listening on port 1026
-OS Environment running at http://localhost:3001
-EE Environment running at http://localhost:3002
 ```
+
+> **Note**: In CI environments, E2E tests that rely on email functionality are run by default with SMTP servers already configured.
 
 Once this is up and running, you then have two options:
 

@@ -9,7 +9,7 @@ meta:
 image: "/node-red/hardware/images/armxy-bl340.jpg"
 specifications:
   Model: BLIIoT ARMxy BL340 Series
-  RAM: 1/2 GB DDR4
+  RAM_MB: 2048
   Processor: ARM Cortex-A53
   GPU: G31 MP2
   IO Points: Optional (GPIO, RS485,CAN,RS232,DI/DO/AI/AO etc.,)
@@ -37,12 +37,12 @@ Before proceeding with the installation, ensure you have the following:
 
 This guide explores how to install and run Node-RED through the FlowFuse Device Agent on the BLIIOT ARMxy BL340, enabling you to build, manage, and scale Node-RED flows efficiently from a remote location.
 
-{% include "hardware/system/debian-ff-install.njk" %}
+{% include "hardware/system/debian-ff-install.md" %}
 
-{% include "hardware/device-registration.njk" %}
+{% include "hardware/device-registration.md" %}
 
 !["Status of the BLIIOT ARMxy BL340 remote instance in FlowFuse, showing its connection and operational state"](./images/status-flowfuse.png "Status of the BLIIOT ARMxy BL340 remote instance in FlowFuse, showing its connection and operational state"){data-zoomable}
 
 Now, when your device reboots, the FlowFuse Device Agent will automatically start, ensuring that your BLIIOT ARMxy BL340 remains connected to the FlowFuse platform.
 
-{% include "hardware/accessing-node-red-editor.njk" %}
+{% include "hardware/accessing-node-red-editor.md" %}
