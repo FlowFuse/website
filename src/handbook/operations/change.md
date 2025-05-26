@@ -15,3 +15,10 @@ and provide all of the necessary details to enact the change and to verify the c
 3. Assign the issue to the person making the change.
 4. Once the change has been applied, verify the change is complete
 5. Close the issue once verified
+
+
+# FlowFuse Dedicated Instance Change Control
+
+Changes to customer dedicated instances managed by FlowFuse should follow the same process 
+as listed above for FlowFuse Cloud. The one difference is that the details of exactly which
+instance the changes should be applied to.
