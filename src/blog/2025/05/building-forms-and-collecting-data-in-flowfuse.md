@@ -1,6 +1,6 @@
 ---
-title: "Building Forms and Collecting Data in FlowFuse"
-subtitle: A step-by-step guide to building and configuring dynamic and static forms in FlowFuse Dashboard for data collection in industrial environments.
+title: "Beyond Paper & Spreadsheets: How FlowFuse Forms Transform Factory Data Collection"
+subtitle: Getting Key Data from the Shop Floor Straight to Machine Settings with FlowFuse Forms
 description: Learn how to create and configure forms in FlowFuse Dashboard to collect data efficiently in industrial applications using Node-RED.
 date: 2025-05-19
 authors: ["sumit-shinde"]
