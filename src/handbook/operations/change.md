@@ -20,6 +20,13 @@ and provide all of the necessary details to enact the change and to verify the c
 4. Once the change has been applied, verify the change is complete
 5. Close the issue once verified
 
+
+# FlowFuse Dedicated Instance Change Control
+
+Changes to customer dedicated instances managed by FlowFuse should follow the same process 
+as listed above for FlowFuse Cloud. The one difference is that the details of exactly which
+instance the changes should be applied to.
+
 # Access / Permission Request
 
 Where access is required to a system, a `Access / Permission Request` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new?template=access-request.md).
