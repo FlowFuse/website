@@ -27,7 +27,7 @@ on taking the FlowFuse platform to market.
 | GTM | [Michael](https://www.linkedin.com/in/michaelbdavis/) [@MichaelBDavis](https://github.com/MichaelBDavis) |
 | CSM | [Esmé](https://nl.linkedin.com/in/esméwieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
 | Sales | [Omar](https://ca.linkedin.com/in/omarazizahmed?trk=public_post_feed-actor-name) [@omarazizahmed](https://github.com/omarazizahmed) |
-| Visual designer | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
+| Marketing Manager, Website & Social Media | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
 | Technical Writer | [Sumit](https://in.linkedin.com/in/shindesumit84) [@sumitshinde-88](https://github.com/sumitshinde-84) |
 
 ## Contact us
