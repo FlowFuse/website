@@ -21,7 +21,8 @@ Our brand should feel like a trusted partner for industrial engineers and develo
 | **Approachable & Close** | We speak plainly and treat people with empathy, respect, and inclusion — no matter their role or experience level. |
 | **Innovative**      | We are always moving forward and encouraging users to do the same. |
 | **Pragmatic**       | Grounded in real-world use cases and needs, not buzzwords. |
-| **Community-minded**| We believe in open-source, shared learning, and mutual success. |
+| **Community-minded** | We believe in open-source, shared learning, and mutual success. |
+
 | **Candid & Constructive** | We give honest, helpful feedback and appreciate the same in return. |
 
 We are the engineer’s enabler — technical enough to be respected, accessible enough to be adopted.
