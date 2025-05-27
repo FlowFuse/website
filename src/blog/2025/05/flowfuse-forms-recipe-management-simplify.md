@@ -66,7 +66,7 @@ The `ui_form` widget supports various input element types that can be tailored t
 ![Adding Form Elements](./images/adding-form-element.gif){data-zoomable}
 _Adding Form Elements_]
 
-#### Adding Options to Dropdown Inputs Statically
+### Adding Options to Dropdown Inputs Statically
 
 When you add Dropdown type input element to the **ui_form** widget, you need to provide a list of options that the user can choose from. These options can be configured in the **ui_form** widget's configuration dialog.
 
@@ -96,7 +96,7 @@ For example, if your form includes fields for `product_name` and `target_tempera
 };
 ```
 
-### Add Form Elements Dynamically at Runtime
+### Add Form Input Elements Dynamically at Runtime
 
 In some cases, you may need to define form elements dynamically based on real-time data. For example, you might want to show additional fields based on a user’s selection or load dropdown options from an external API. This dynamic capability adds a new level of flexibility and interactivity to your forms.
 
@@ -120,7 +120,7 @@ Below are the supported element types and their corresponding JSON configuration
 | **Time** | ```{ "type": "time", "label": "Time of Birth", "key": "tob", "required": true } ``` |
 | **Dropdown** | ```{ "type": "dropdown", "label": "Dropdown", "key": "selection" } ``` |
 
-#### Adding/Overriding Options to Dropdown Inputs Dynamically at Runtime
+### Adding Options to Dropdown Inputs Dynamically at Runtime
 
 To update the options of a dropdown field at runtime, use the `msg.ui_update.dropdownOptions` property in your flow.
 
@@ -299,12 +299,15 @@ For each editable field in your form (e.g., target_temperature_c, mixing_speed_r
 3. Connect the **change** node to an **sqlite** node.
    - Configure it for your database, set SQL Query to prepared statement.
    - Paste your UPDATE SQL query into the "Prepared Statement" field, using the $parameters that match your msg.params.
+
 4. Connect the **sqlite** node's output to a **switch** node. Name it Check for Update Success.
 
-   - Set Property to payload and Rules to is empty.
-   - Add 1 output.
+- Set Property to payload and Rules to is empty.
+- Add 1 output.
+
 5. Connect the **switch** node's output to a **change** node. Name it Success Message.
-   - Set `msg.payload` to str "Recipe updated successfully".
+- Set `msg.payload` to str "Recipe updated successfully".
+
 6. Connect the **change** node to a **ui_notification** node to display the success message on the dashboard.
 7. Deploy the flow, open the dashboard, and try selecting different recipes and updating them.
 
@@ -324,10 +327,10 @@ Below is the complete flow of the system we built.
 
 ## Conclusion
 
-Forms are a big part of how factories collect data from the frontline workers, operators, whether it's for quality checks or machine settings. But relying on old methods like paper or spreadsheets wastes time, creates errors, and costs money. While other ways to build digital forms exist, they often demand specialized coding skills and don't easily connect with your existing industrial systems, which can create new hurdles.
+Factories often rely on paper or spreadsheets for data collection, which can be slow, error-prone, and costly. Many digital form solutions require coding skills and don’t easily integrate with existing systems, creating additional challenges.
 
-This is where FlowFuse comes in. It empowers you to build industrial applications using easy-to-use components like forms, tables, and more. With FlowFuse, your engineers – who know your processes best – can build solutions that fit your exact needs, simply by dragging and dropping, with no complex coding required. This directly replaces those slow, error-prone manual steps and saves your IT team valuable time and money on hiring new specialists.
+FlowFuse empowers your engineers to build tailored industrial applications using simple drag-and-drop tools—no coding needed. This replaces manual processes, reduces errors, saves time, and lowers IT overhead.
 
-This means less wasted time and money by ditching manual data entry, fewer mistakes with accurate, direct data capture, and better control as your teams get clear, real-time information for smarter decisions. With FlowFuse, you're not just building industrial applications; you're giving your factory the tools to be more efficient, more reliable, and ultimately, smarter.
+With accurate, real-time data and better control, FlowFuse helps your factory run smarter and more efficiently.
 
-Want to see how FlowFuse can reduce costs, boost profits, and increase production? [Get in touch with us.](/contact-us/)
+*Want to see how FlowFuse can reduce costs, boost profits, and increase production? [Get in touch with us.](/contact-us/)*
