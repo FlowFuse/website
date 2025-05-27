@@ -2,7 +2,7 @@
 title: "Beyond Paper & Spreadsheets: How FlowFuse Forms Simplifies Building Systems Like Recipe Management—Saving Time and Cost"
 subtitle: Getting Key Data from the Shop Floor Straight to Machine Settings with FlowFuse Forms
 description: Learn how to create and configure forms in FlowFuse Dashboard to collect data efficiently in industrial applications using Node-RED.
-date: 2025-05-19
+date: 2025-05-28
 authors: ["sumit-shinde"]
 image: 
 keywords: flowfuse form, node-red form, Recipe Management System, Node-RED Recipe Management, FlowFuse Recipe Management System
@@ -245,7 +245,7 @@ This flow segment runs when your dashboard page loads. It queries your recipes a
 
 3. Connect the **sqlite** node's output to a **function** node. Name it "Generate Form & Dropdown Definition". In this function, you will write JavaScript to dynamically create the form's elements and populate the dropdown options. Set the function to have 2 outputs.
 
-```javaScript
+```javascript
 // msg.payload contains the recipe_id and recipe_name from SQLite query.
 let dropdownOptions = [];
 if (msg.payload && Array.isArray(msg.payload)) {
