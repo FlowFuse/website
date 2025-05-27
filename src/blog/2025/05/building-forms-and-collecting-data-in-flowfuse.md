@@ -2,7 +2,7 @@
 title: "Beyond Paper & Spreadsheets: How FlowFuse Forms Simplifies Building Systems Like Recipe Management—Saving Time and Cost"
 subtitle: Getting Key Data from the Shop Floor Straight to Machine Settings with FlowFuse Forms
 description: Learn how to create and configure forms in FlowFuse Dashboard to collect data efficiently in industrial applications using Node-RED.
-date: 2025-05-19
+date: 2025-05-28
 authors: ["sumit-shinde"]
 image: 
 keywords: flowfuse form, node-red form, Recipe Management System, Node-RED Recipe Management, FlowFuse Recipe Management System
