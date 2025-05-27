@@ -15,6 +15,8 @@ fails, the company must learn quickly and iterate. When the messaging is
 consistent the company can learn faster and have a structured approach to these
 iterations.
 
+For guidance on how to express our brand in writing and communication style, see [Brand Personality, Tone of Voice & Character](/handbook/customer/marketing/brand-voice/)
+
 Please also read the [Company Mission](/handbook/company/strategy/#flowfuse%27s-mission)
 before diving into the messaging.
 
