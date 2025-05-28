@@ -44,3 +44,7 @@ FlowFuse's Dun and Bradstreet ID is: 11-899-4742
 ### NAICS code
 
 54151 - Computer Systems Design and Related Services
+
+### Tax ID
+
+FlowFuse's tax ID is stored in 1Password in the Employee folder as a Secure Note.
