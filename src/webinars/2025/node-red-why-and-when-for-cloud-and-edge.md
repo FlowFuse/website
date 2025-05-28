@@ -19,6 +19,7 @@ hubspot:
 Discover the common architectures of FlowFuse customers who are running Node-RED in production environments. 
 
 <!--more-->
+Choosing the right architecture isn’t just a matter of preference — it has a direct impact on scalability, reliability, and operational efficiency. A single centralized Node-RED instance may seem simple to manage at first, but it can become a bottleneck as workloads grow, introducing risks like a single point of failure or degraded performance. In this webinar, we'll highlight why many teams are moving toward distributed architectures — like running one instance per device or per workflow — to better align with production demands.
 
 With options to host Instances in the Cloud, Self-Host or deploy to the Edge, discover what factors you should be considering when architecting your own deployments.
 
