@@ -1,5 +1,5 @@
 ---
-title: "Node-RED - Why and when, for Cloud and Edge"
+title: "Node-RED - Why and When, for Cloud and Edge"
 subtitle: 
 meta:
     description: Master how to optimize your Node-RED applications for availability, performance and quality. Discover the common architectures of FlowFuse customers who are running Node-RED in production environments. With options to host Instances in the Cloud, Self-Host or deploy to the Edge, discover what factors you should be considering when architecting your own deployments.
