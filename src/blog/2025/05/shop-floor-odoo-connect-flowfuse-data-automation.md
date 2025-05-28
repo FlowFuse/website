@@ -1,0 +1,278 @@
+---
+title: "FlowFuse Connects Your Shop Floor to ERP – Odoo"
+subtitle: Transform your operations by bringing real-time shop floor data directly into your ERP
+description: Learn how FlowFuse connects your factory floor data directly to Odoo, eliminating manual entry, errors, and wasted time. 
+date: 2025-05-29
+authors: ["sumit-shinde"]
+image:
+keywords: erp to shopfloor, shop floor to erp, integration odoo, odoo integration, node-red odoo, odoo node-red, odoo with low-code
+tags:
+   - flowfuse
+---
+
+Think about your factory floor. You've got machines running, products moving, and skilled operators making sure everything goes to plan. But then there's the data. All those crucial details such as how many units are done, if a machine's acting up, or that last quality check result.** How often does it get jotted on a clipboard, typed into a spreadsheet hours later, or just stay stuck right there on the shop floor?
+
+<!--more-->
+
+This isn't just a minor annoyance. This delay, this constant re-typing, and this disconnect create real problems. It means frustrating errors, wasted time, and money lost because you're making decisions based on old information. If your central business system (like Odoo) isn't seeing the live reality of your production, you're always a step behind. This post looks at a straightforward way to bridge that gap with FlowFuse, bringing genuine clarity and efficiency to your entire manufacturing process.
+
+## Why Your Factory Data Causes Delays, Errors, and Wasted Effort – And How to Fix It
+
+Think about how your team currently records key factory information. Often, it involves writing down production numbers, quality checks, or machine status by hand. Then, someone else types those details into a computer. This manual path is where problems begin. Every single step—from clipboard to keyboard—takes valuable time away from actual production work and creates an easy opportunity for costly errors to sneak into your records.
+
+This constant struggle for accurate, real-time data has a ripple effect across your entire business. If your central system isn't seeing what's truly happening on the shop floor, making smart decisions becomes tough. You might over-order materials due to outdated inventory, miss a potential machine issue before it stops the line, or struggle to adapt quickly to new demands. This 'data lag' ultimately translates into higher operating costs and missed opportunities for your business. Clearly, relying on outdated ways to capture factory data is a problem.
+
+There's a straightforward way to change this. Imagine linking your factory floor directly to your ERP system, enabling data to move automatically and providing accurate, up-to-the-minute details. This helps you make faster, smarter decisions and keeps your operations running smoothly. What's more, you can set up automated updates that not only occur at predefined intervals but also check against specific conditions to proactively manage your operations.
+
+This post will show you exactly how to achieve this. We'll dive into *[FlowFuse](/), an industrial data platform designed to run right on your factory floor, on your edge devices. It connects to your old machines, PLCs, and even IT systems like your ERP. FlowFuse helps collect, send, transform, and clean your data. And it empowers your engineers to build industrial applications and dashboards with easy visualizations, buttons, and more—all with simple drag-and-drop, no complex coding required.* Specifically, you'll learn how to integrate FlowFuse with Odoo, a popular ERP system.
+
+## Getting Data Into and Out of Odoo with FlowFuse
+
+In this section, we will show you how you can connect your ERP (Odoo) with your shop floor using FlowFuse. This connection lets you read information, create new records, update existing ones, and search for specific data, bringing real-time factory insights right into your business system.
+
+### Prerequisites
+
+Before you begin, make sure you have the following:
+
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
+- **node-red-contrib-odoo-xmlrpc-filters-fields:** Ensure you have [node-red-contrib-odoo-xmlrpc-filters-fields](https://flows.nodered.org/node/node-red-contrib-odoo-xmlrpc-filters-fields) installed. This package will enable operations like reading, creating, updating, and searching data, with specific capabilities for filtering records and selecting precise fields.
+
+### Configuring the Odoo Connection Node
+
+Before you can send or receive any data from Odoo, FlowFuse needs to know how to connect to your Odoo instance. This is a one-time setup for your connection details, which can then be reused across all your Odoo nodes in FlowFuse.
+
+Before you can send or receive any data from Odoo, FlowFuse needs to know how to connect to your Odoo instance. This is a one-time setup for your connection details, which can then be reused across all your Odoo nodes in FlowFuse.
+
+1.  Drag any `odoo-xmlrpc` node (like `odoo-xmlrpc-read` or `odoo-xmlrpc-create`) onto your Node-RED canvas.
+2.  Double-click on the node to open its configuration.
+3.  Next to the "Host" field, click the pencil icon to add a new Odoo connection.
+4.  In the configuration dialog, you'll need to enter your Odoo instance's details:
+- Host URL: This is the web address of your Odoo instance (e.g., `https://databaseName.odoo.com`).
+- Database: The name of your Odoo database (this is often visible in your Odoo URL after `databaseName`).
+- Username: Your Odoo login username (e.g., your email address).
+- Password: Your Odoo login password.
+5.  Click "Add" to save this configuration.
+
+![Configuring Odoo Node](./images/configuration-odoo.png)
+_Configuring Odoo Node_
+
+Now, any `odoo-xmlrpc` node you use can select this saved host configuration, meaning you only have to enter your credentials once.
+
+*Note: These configuration details (Host, Database, Username, Password) are confidential. To prevent exposing them when sharing your flows, it's crucial to use **FlowFuse Environment Variables**. These variables allow you to store sensitive information securely outside of your flow code. For more information, refer to our guide on [Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).*
+
+### Understanding Odoo Models
+
+Once your connection is set up, the next key concept for interacting with Odoo is understanding **Models**. In Odoo, a "model" represents a specific type of business object or data record, much like a table in a traditional database. Every piece of data you want to read, create, update, or delete belongs to a specific model.
+
+Common Odoo models relevant to manufacturing include:
+
+- `product.template`: For general product information (e.g., product names, descriptions).
+- `stock.quant`: For inventory quantities and locations.
+- `mrp.production`: For manufacturing orders/production orders.
+- `res.partner`: For contacts (customers, suppliers).
+- `stock.picking`: For internal transfers or delivery orders.
+
+When you use an `odoo-xmlrpc` node in FlowFuse, you'll always need to specify which **`model`** you want to work with. If you're unsure of a specific model's name, you can often find it by enabling "Developer Mode" in your Odoo instance and hovering over fields in the Odoo interface.
+
+Let’s get started. When explaining each operation, I will demonstrate it using different models such as product.product or mrp.production. This is just for demonstration and your understanding. You can perform these operations in the same way with other models—just make sure to pass the correct parameters according to the model and its data.
+
+### Reading Data from Odoo
+
+To read data from Odoo, you'll use the `odoo-xmlrpc-search_read` node. This node requires you to send the id (or ids) of the record(s) you wish to read to this node with `msg.payload`. The `msg.payload` should contain an array of the IDs you want to read.
+
+Here is how you can read products data:
+
+1. Drag an inject node onto your canvas.
+2. Connect it to a change node. Here, you'll set the query details:
+- Set `msg.payload` to the following object:
+
+```json
+[ID]
+```
+
+Replace ID with the actual product ID you want to read. You can include multiple IDs, for example:
+
+```json
+[1, 5, 12]
+```
+
+4. Connect the change node to an odoo-xmlrpc-search_read node. Select your Odoo connection, enter model to `product.product` (or the Odoo model you want to query).
+5. Connect to a debug node to view the data.
+6. Deploy the flow and click the inject node button to see the result.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+
+{% renderFlow %}
+[{"id":"4f2bd9814f07c6a6","type":"odoo-xmlrpc-read","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"product.template","x":1190,"y":280,"wires":[["5601affdba752326"]]},{"id":"5601affdba752326","type":"debug","z":"295d40790bd21f48","name":"debug 6","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":280,"wires":[]},{"id":"4e8b22877e33b496","type":"inject","z":"295d40790bd21f48","name":"Read products with id 23 and 39","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":570,"y":280,"wires":[["b21cdd78ad81d65a"]]},{"id":"b21cdd78ad81d65a","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[39,23]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":280,"wires":[["4f2bd9814f07c6a6"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
+{% endrenderFlow %}
+
+### Creating New Record in Odoo
+
+To create new records in Odoo using FlowFuse, use the `odoo-xmlrpc-create node`. This node requires you to send an array of objects containing the record information as `msg.payload`. The array can include multiple objects, allowing you to create multiple records at once.
+
+Here is how you can create manufacturing order:
+
+1. Drag an inject node onto your canvas and set it to trigger manually.
+2. Connect it to a change node. Configure it to set `msg.payload` with the details for your new Odoo manufacturing order:
+- Set `msg.payload` to:
+```
+[{
+    "product_id": 39,      // Example: Internal Odoo ID of the product to manufacture (e.g., 'Outdoor dining table')
+    "product_qty": 500,     // Example: Quantity of the product to produce
+    "product_uom_id": 1   // Example: Internal Odoo ID for 'Units' (often default, check your Odoo)
+}]
+```
+
+3. Connect the change node to an `odoo-xmlrpc-create node`. Select your configured Odoo connection for its Host and enter model to `mrp.production`
+4. Connect the `odoo-xmlrpc-create node` to a debug node to see the ID of the new record Odoo creates.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+
+{% renderFlow %}
+[{"id":"d89d98a5ec9a8733","type":"odoo-xmlrpc-create","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"mrp.production","filter":"","offset":0,"limit":100,"x":1200,"y":380,"wires":[["ea101f5cab65a241"]]},{"id":"99ba2ffda10cf2d9","type":"inject","z":"295d40790bd21f48","name":"Create New MO","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":620,"y":380,"wires":[["33e0301b6e8f7838"]]},{"id":"ea101f5cab65a241","type":"debug","z":"295d40790bd21f48","name":"debug 5","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":380,"wires":[]},{"id":"33e0301b6e8f7838","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[{\"product_id\":30,\"product_qty\":200,\"product_uom_id\":1}]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":380,"wires":[["d89d98a5ec9a8733"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
+{% endrenderFlow %}
+
+### Updating Existing Data in Odoo
+
+To modify existing records in Odoo using FlowFuse, you'll use the `odoo-xmlrpc-update` node. This node requires the ID of the record(s) you want to update and the new values for the fields you wish to change. The `msg.payload` should contain an array, where the first element is a list of record IDs and the second element is an object with the fields to update.
+
+Here is how you can update the status of manufacturing order:
+
+1. Drag an inject node onto your canvas. Configure it to trigger manually.
+2. Connect it to a change node. This node will prepare the `msg.payload` with the order ID and the new status.
+
+- Set `msg.payload` to :
+```json
+[
+    [13],
+    {"state": "progress"}
+]
+```
+
+3. Connect the change node to an `odoo-xmlrpc-update node`. Select your configured Odoo connection for its Host and enter model to `mrp.production`.
+4. Connect the `odoo-xmlrpc-update node` to a debug node to confirm the update operation. (A successful update typically returns true or an empty payload).
+5. Deploy the flow and click the inject node button to see the result.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+
+{% renderFlow %}
+[{"id":"e43dc05eb7df7ecf","type":"inject","z":"295d40790bd21f48","name":"Update MO Status","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":610,"y":540,"wires":[["11bbd21f1314b839"]]},{"id":"47b01f56b4800c5c","type":"debug","z":"295d40790bd21f48","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":540,"wires":[]},{"id":"bd9de404f2ac1a2e","type":"odoo-xmlrpc-update","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"mrp.production","filter":"","offset":0,"limit":100,"x":1200,"y":540,"wires":[["47b01f56b4800c5c"]]},{"id":"11bbd21f1314b839","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[     [18],     {\"state\": \"progress\"} ]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":540,"wires":[["bd9de404f2ac1a2e"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
+{% endrenderFlow %}
+
+### Deleting Records from Odoo (Unlink)
+
+To delete records in Odoo using FlowFuse, you'll use the `odoo-xmlrpc-unlink` node. This node requires you to send the id (or ids) of the record(s) you wish to remove. The `msg.payload` should contain an array of the IDs you want to delete.
+
+Here is how you can delete product from inventory:
+
+1. Drag an inject node onto your canvas. Configure it to trigger manually.
+2. Connect the inject node to a change node. This node will prepare the msg.payload with the ID(s) of the record(s) to delete.
+- Set `msg.payload` to a JSON array containing the ID of the manufacturing order to delete:
+
+```json
+[16]
+```
+
+3. Connect the change node to an `odoo-xmlrpc-update node`. Select your configured Odoo connection for its Host and enter model to `mrp.production`.
+4. Connect the `odoo-xmlrpc-update node` to a debug node to confirm the update operation.
+5. Deploy the flow and click the inject node button to see the result.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+
+{% renderFlow %}
+[{"id":"f14241bb24af8dc8","type":"odoo-xmlrpc-unlink","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"product.template","x":1190,"y":700,"wires":[["231e32e70753ab22"]]},{"id":"9452d125fd059f79","type":"inject","z":"295d40790bd21f48","name":"Delete the product with ID 60","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":580,"y":700,"wires":[["cfcabeae8b291a9c"]]},{"id":"231e32e70753ab22","type":"debug","z":"295d40790bd21f48","name":"debug 7","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":700,"wires":[]},{"id":"cfcabeae8b291a9c","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[60]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":700,"wires":[["f14241bb24af8dc8"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
+{% endrenderFlow %}
+
+### Advanced Search with Filters and Fields
+
+For advanced queries, you'll use the `odoo-xmlrpc-search_read` node. This versatile node combines the ability to search for records using complex criteria (filters) and to retrieve only the specific data fields you need from those results.
+
+#### Understanding Filters
+
+Filters are conditions you apply to narrow down your search results. They are structured as a **list of lists**, where each inner list defines a single condition: `[field, operator, value]`.
+
+-   `field`: The name of the Odoo field you want to filter by (e.g., `qty_available`, `state`, `name`).
+-   `operator`: How you want to compare the field. Common operators include:
+    -   `=`: Equal to
+    -   `!=`: Not equal to
+    -   `>`: Greater than
+    -   `<`: Less than
+    -   `>=`: Greater than or equal to
+    -   `<=`: Less than or equal to
+    -   `in`: Value is in a list (e.g., `[["id", "in", [1, 2, 3]]`)
+    -   `not in`: Value is not in a list
+    -   `ilike`: Case-insensitive "like" (contains substring)
+    -   `=like`: Case-sensitive "like"
+-   `value`: The value you're comparing against.
+
+When you include multiple conditions within your filters list, Odoo treats them as an "AND" relationship by default. This means all conditions must be true for a record to be returned.
+
+**Example Filters:**
+-   `[[["list_price", "<", 10]]]`: Find products with less than 10 units in stock.
+-   `[[["state", "=", "progress"], ["product_id", "=", 38]]]`: Find manufacturing orders for a specific product that are currently "in progress."
+-   `[[["name", "ilike", "coating"]]]`: Find products where the name contains "coating" (case-insensitive).
+
+#### Understanding Fields
+
+The `fields` parameter allows you to specify exactly which columns or properties you want to retrieve for the matching records. This is important for efficiency, as it avoids pulling unnecessary data, making your flows faster and your payloads smaller.
+
+-   **Structure:** A simple list of field names (e.g., `["name", "qty_available", "default_code"]`).
+
+#### Controlling Results: Offset and Limit
+
+For larger datasets, you'll want to control how many records are returned and where the results start.
+
+- offset: This parameter specifies the number of records to skip from the beginning of the result set. It's useful for pagination.
+- limit: This parameter specifies the maximum number of records to return in a single query. It's crucial for managing the amount of data you retrieve.
+
+#### Example Flow
+
+Here’s an example FlowFuse flow to find products with list price (more than 1000) that are also marked as "saleable" in Odoo, retrieving only their name, quantity, internal reference, and list price, and limiting the results.
+
+1. Drag an inject node onto your canvas and configure it to trigger manually.
+2. Connect it to a change node. This node will define your search criteria (filters and fields) and also set the offset and limit.
+- Set `msg.filters` to JSON:
+
+```json
+[[
+    ["list_price", ">", 1000],   // Filter: list price more than 1000
+    ["sale_ok", "=", true]        // Filter: Product is marked as saleable
+]]
+```
+- Set `msg.fields` to JSON:
+
+```json
+["name", "qty_available", "default_code", "standard_price"]
+```
+- Set `msg.offset` to Number 0 (Start from the first record).
+- Set `msg.limit` to Number 5 (Retrieve a maximum of 10 records).
+
+3. Connect the change node to an odoo-xmlrpc-search_read node. Select your configured Odoo connection.
+4. Connect to a debug node to inspect the filtered and selected data in the debug sidebar.
+5. Deploy the flow and click the inject node button to see the result.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+
+{% renderFlow %}
+[{"id":"0cfe26fd5b4169e7","type":"debug","z":"295d40790bd21f48","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":840,"wires":[]},{"id":"656023449ba5dee9","type":"inject","z":"295d40790bd21f48","name":"Read Top 5 Saleable Products >1000","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":550,"y":840,"wires":[["7f791bfc8caa0721"]]},{"id":"8ada5a972d94dd9d","type":"odoo-xmlrpc-search-read","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"product.product","filter":"","offset":0,"limit":100,"x":1210,"y":840,"wires":[["0cfe26fd5b4169e7"]]},{"id":"7f791bfc8caa0721","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"filters","pt":"msg","to":"[[[\"list_price\",\">\",1000],[\"sale_ok\",\"=\",true]]]","tot":"json"},{"t":"set","p":"limit","pt":"msg","to":"5","tot":"num"},{"t":"set","p":"offset","pt":"msg","to":"0","tot":"num"},{"t":"set","p":"fields","pt":"msg","to":"[\"name\",\"qty_available\",\"default_code\",\"lst_price\"]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":840,"wires":[["8ada5a972d94dd9d"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
+{% endrenderFlow %}
+
+### Basic Demo: Automating Production Data: Getting It Right in Odoo, with FlowFuse
+
+This is really basic demo, where we're showing how FlowFuse acts as a smart bridge between your production line and ERP system (Odoo). We're using a Raspberry Pi to simulate making products (using javascript function), automatically telling us how many good items are produced. You will see this “good” quantity instantly update in Odoo’s inventory, with updates triggered every 5 seconds using the Inject node. This simple setup highlights FlowFuse's power to automate data flow. But its capabilities extend much further: Imagine FlowFuse also checking your production orders (MOs), seeing what materials you need (BOMs), spotting shortages, and then automatically creating purchase orders for missing parts or even new manufacturing orders for components. FlowFuse truly helps you automate and optimize your entire production and supply chain in Odoo.
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+
+Below, I have provided the complete flow for this demo.
+
+{% renderFlow %}
+[{"id":"cab977c8e0d1c054","type":"group","z":"e843a99283f5509d","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["f25627971229702f","d417bd84f8e7de4b","6ba9343481e3b041","8a3adb31adbb7475","bfe37a946a6ed20a"],"x":314,"y":359,"w":1072,"h":122},{"id":"f25627971229702f","type":"inject","z":"e843a99283f5509d","g":"cab977c8e0d1c054","name":"","props":[{"p":"payload"}],"repeat":"5","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":430,"y":440,"wires":[["d417bd84f8e7de4b"]]},{"id":"d417bd84f8e7de4b","type":"function","z":"e843a99283f5509d","g":"cab977c8e0d1c054","name":"Simulate Production","func":"// Initialize variables\nlet stats = flow.get(\"prod_stats\") || {\n    total: 0,\n    good: 0,\n    scrap: 0,\n    machineStatus: \"RUNNING\",\n    lastMaintenance: Date.now()\n};\n\n// Product info\nconst productId = 38;\nconst productName = \"Table Leg\";\n\n// Randomly decide machine status\nlet now = Date.now();\nlet timeSinceMaintenance = now - stats.lastMaintenance;\n\n// Every 2 minutes of runtime, simulate a brief maintenance break\nif (timeSinceMaintenance > 2 * 60 * 1000 && Math.random() < 0.05) {\n    stats.machineStatus = \"MAINTENANCE\";\n    stats.lastMaintenance = now;\n    msg.payload = {\n        status: stats.machineStatus,\n        message: \"Scheduled maintenance in progress...\",\n        product: { id: productId, name: productName },\n        stats\n    };\n    flow.set(\"prod_stats\", stats);\n    return msg;\n}\n\n// Simulate Idle (10% chance)\nif (Math.random() < 0.1) {\n    stats.machineStatus = \"IDLE\";\n    msg.payload = {\n        status: stats.machineStatus,\n        message: \"Machine is currently idle.\",\n        product: { id: productId, name: productName },\n        stats\n    };\n    flow.set(\"prod_stats\", stats);\n    return msg;\n}\n\n// Default: RUNNING\nstats.machineStatus = \"RUNNING\";\n\n// Simulate production\nlet producedThisCycle = Math.floor(Math.random() * 5); // 0–4 items\nstats.total += producedThisCycle;\n\n// Simulate defect rate (10%)\nlet scrap = 0;\nfor (let i = 0; i < producedThisCycle; i++) {\n    if (Math.random() < 0.1) scrap += 1;\n}\n\nlet good = producedThisCycle - scrap;\nstats.good += good;\nstats.scrap += scrap;\n\n// Build output\nmsg.payload = {\n    status: stats.machineStatus,\n    product: {\n        id: productId,\n        name: productName\n    },\n    producedThisCycle,\n    goodThisCycle: good,\n    scrapThisCycle: scrap,\n    stats\n};\n\nflow.set(\"prod_stats\", stats);\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":710,"y":440,"wires":[["8a3adb31adbb7475","bfe37a946a6ed20a"]]},{"id":"6ba9343481e3b041","type":"odoo-xmlrpc-update","z":"e843a99283f5509d","g":"cab977c8e0d1c054","name":"","host":"18818bdefd1f27ce","model":"product.template","filter":"","offset":0,"limit":100,"x":1260,"y":440,"wires":[[]]},{"id":"8a3adb31adbb7475","type":"change","z":"e843a99283f5509d","g":"cab977c8e0d1c054","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[[payload.product.id],{\"qty_available\":payload.stats.good}]","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":980,"y":440,"wires":[["6ba9343481e3b041"]]},{"id":"bfe37a946a6ed20a","type":"debug","z":"e843a99283f5509d","g":"cab977c8e0d1c054","name":"Good Product Produced","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload.stats.good","targetType":"msg","statusVal":"","statusType":"auto","x":1010,"y":400,"wires":[]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"https://individual19.odoo.com","db":"individual19","username":"shindesumit217@gmail.com","password":"atb3-vy2b-p6hb"}]
+{% endrenderFlow %}
+
+## Final thought
+
+So, we've talked about how those manual data methods—paper, spreadsheets—can really slow things down, cause mistakes, and cost money in your factory. And let's be honest, many digital fixes out there just add more complexity or demand specialized coding skills that your team might not have.
+
+This is where FlowFuse steps in. It's built to simplify things. FlowFuse empowers your engineers, the ones who truly know your operations, to create custom industrial applications using straightforward drag-and-drop tools. This means they can connect your shop floor data directly to ERP systems like Odoo, cutting out all those tricky manual steps and saving your IT team valuable time and money.
+
+What's the real payoff? You get to see less wasted time and money, fewer mistakes with accurate, real-time data, and simply better control over your whole factory. FlowFuse helps your entire operation run smarter and more reliably. If you're looking for a practical way to bring these kinds of improvements to your own manufacturing processes, we'd be glad to discuss how FlowFuse can assist. [Get in touch here](/contact-us/)
