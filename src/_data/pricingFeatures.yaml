@@ -106,6 +106,12 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Device Groups enables users to logically group their devices assigned to an application. Additionally, Device Groups can be integrated into the DevOps Pipeline.</p>"    
+      - id: git-integration
+        label: Git Integration
+        cloudValues: [ null, null, null, 'check' ]
+        selfHostedValues: [ null, 'check' ]    
+        tags: [ 'cloud', 'self-hosted' ]
+        info: "<p>Backup your flows to a remote git repository through a DevOps Pipeline.</p>"
       - id: ha
         label: High Availability
         cloudValues: [ null, null, null, 'check' ]
