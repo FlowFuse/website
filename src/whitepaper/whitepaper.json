@@ -1,5 +1,5 @@
 {
-    "layout": "layouts/whitepaper.njk",
+    "layout": "layouts/base.njk",
     "tags": [
         "whitepaper"
     ]
