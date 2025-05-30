@@ -92,7 +92,7 @@ Here is how you can read products data:
 
 1. Drag an inject node onto your canvas.
 2. Connect it to a change node. Here, you'll set the query details:
-- Set `msg.payload` to the following object:
+- Set `msg.payload` to the following array:
 
 ```json
 [ID]
@@ -116,7 +116,7 @@ Replace ID with the actual product ID you want to read. You can include multiple
 
 ### Creating New Record in Odoo
 
-To create new records in Odoo using FlowFuse, use the `odoo-xmlrpc-create node`. This node requires you to send an array of objects containing the record information as `msg.payload`. The array can include multiple objects, allowing you to create multiple records at once.
+To create new records in Odoo using FlowFuse, use the `odoo-xmlrpc-create` node. This node requires you to send an array of objects containing the record information as `msg.payload`. The array can include multiple objects, allowing you to create multiple records at once.
 
 Here is how you can create manufacturing order:
 
@@ -131,7 +131,7 @@ Here is how you can create manufacturing order:
 }]
 ```
 
-3. Connect the change node to an `odoo-xmlrpc-create node`. Select your configured Odoo connection for its Host and enter model to `mrp.production`
+3. Connect the change node to an `odoo-xmlrpc-create` node. Select your configured Odoo connection for its Host and enter model to `mrp.production`
 4. Connect the `odoo-xmlrpc-create node` to a debug node to see the ID of the new record Odoo creates.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/bq_yaF8etmw?si=EQwUskWDzd6I7fQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
@@ -157,8 +157,8 @@ Here is how you can update the status of manufacturing order:
 ]
 ```
 
-3. Connect the change node to an `odoo-xmlrpc-update node`. Select your configured Odoo connection for its Host and enter model to `mrp.production`.
-4. Connect the `odoo-xmlrpc-update node` to a debug node to confirm the update operation. (A successful update typically returns true or an empty payload).
+3. Connect the change node to an `odoo-xmlrpc-update` node. Select your configured Odoo connection for its Host and enter model to `mrp.production`.
+4. Connect the `odoo-xmlrpc-update` node to a debug node to confirm the update operation. (A successful update typically returns true or an empty payload).
 5. Deploy the flow and click the inject node button to see the result.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/SsPfHxCwMI8?si=FYzOkDsL9KfIcvKm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
@@ -181,8 +181,8 @@ Here is how you can delete product from inventory:
 [16]
 ```
 
-3. Connect the change node to an `odoo-xmlrpc-update node`. Select your configured Odoo connection for its Host and enter model to `mrp.production`.
-4. Connect the `odoo-xmlrpc-update node` to a debug node to confirm the update operation.
+3. Connect the change node to an `odoo-xmlrpc-unlink`. Select your configured Odoo connection for its Host and enter model to `mrp.production`.
+4. Connect the `odoo-xmlrpc-unlink` to a debug node to confirm the unlink operation.
 5. Deploy the flow and click the inject node button to see the result.
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/1O1JYRtX-Sg?si=uhsqEtn4PIr7UZfd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
@@ -255,7 +255,7 @@ Here’s an example FlowFuse flow to find products with list price (more than 10
 - Set `msg.offset` to Number 0 (Start from the first record).
 - Set `msg.limit` to Number 5 (Retrieve a maximum of 10 records).
 
-3. Connect the change node to an odoo-xmlrpc-search_read node. Select your configured Odoo connection.
+3. Connect the change node to an `odoo-xmlrpc-search_read` node. Select your configured Odoo connection.
 4. Connect to a debug node to inspect the filtered and selected data in the debug sidebar.
 5. Deploy the flow and click the inject node button to see the result.
 
