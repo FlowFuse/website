@@ -4,7 +4,7 @@ subtitle: Transform your operations by bringing real-time shop floor data direct
 description: Learn how FlowFuse connects your factory floor data directly to Odoo, eliminating manual entry, errors, and wasted time. 
 date: 2025-05-30
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/05/images/Connects-Your-Shop-Floor-to-Your-ERP-–-Odoo-Edition.png
 keywords: erp to shopfloor, shop floor to erp, integration odoo, odoo integration, node-red odoo, odoo node-red, odoo with low-code
 tags:
    - flowfuse
