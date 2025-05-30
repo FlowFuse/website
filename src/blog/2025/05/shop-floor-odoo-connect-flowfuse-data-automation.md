@@ -34,7 +34,7 @@ This is just a simple example of what FlowFuse can do. But it has much more powe
 
 And it's not just about software! FlowFuse supports all modern and traditional industrial communication protocols. This means it can talk to your industrial machines, whether they're old or brand new. It can also connect with other third-party systems you might be using in your factory, like quality control software or specialized sensors. This helps you get a complete picture of your operations and fully automate your processes. In the following section, we will learn how you can connect your ERP (Odoo) with your shopfloor machines.
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/DFYb74TRcnM?si=Rq2FX4qN0G9Q8a0l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/bxVq_8m-GOk?si=r9U6P7YboRpJf4NI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
 
 Below is the complete flow for this demo, in case you'd like to explore it further or try it yourself.
 
