@@ -51,8 +51,6 @@ Before you begin, make sure you have the following:
 
 Before you can send or receive any data from Odoo, FlowFuse needs to know how to connect to your Odoo instance. This is a one-time setup for your connection details, which can then be reused across all your Odoo nodes in FlowFuse.
 
-Before you can send or receive any data from Odoo, FlowFuse needs to know how to connect to your Odoo instance. This is a one-time setup for your connection details, which can then be reused across all your Odoo nodes in FlowFuse.
-
 1.  Drag any `odoo-xmlrpc` node (like `odoo-xmlrpc-read` or `odoo-xmlrpc-create`) onto your Node-RED canvas.
 2.  Double-click on the node to open its configuration.
 3.  Next to the "Host" field, click the pencil icon to add a new Odoo connection.
