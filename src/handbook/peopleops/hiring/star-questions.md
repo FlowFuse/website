@@ -34,7 +34,7 @@ Below are some sample questions that can be used.
    1. Look for:  
       1. Iterative Improvement  
       2. Collaboration  
-      3. Candor  
+      3. Constructive candor  
       4. Customer Empathy  
 5. Can you share an example of making a decision that didn’t have complete data to make a decision?  
    1. Look for:  
