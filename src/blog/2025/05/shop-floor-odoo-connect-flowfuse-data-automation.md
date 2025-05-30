@@ -251,8 +251,8 @@ Here’s an example FlowFuse flow to find products with list price (more than 10
 
 ```json
 [[
-    ["list_price", ">", 1000],   // Filter: list price more than 1000
-    ["sale_ok", "=", true]        // Filter: Product is marked as saleable
+    ["list_price", ">", 1000],
+    ["sale_ok", "=", true]
 ]]
 ```
 - Set `msg.fields` to JSON:
