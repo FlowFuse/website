@@ -73,7 +73,7 @@ Here's why an MES is vital for your factory:
 
 An MES isn't just another system. It's a key tool that helps your factory become smarter, more responsive, and more profitable.
 
-## Major Components of MES
+## Essential Modules of MES
 
 As mentioned earlier, MES isn't just one big piece of software; it's made up of several important parts that work together to manage your factory floor.
 
