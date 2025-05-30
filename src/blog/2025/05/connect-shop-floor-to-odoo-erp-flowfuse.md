@@ -56,7 +56,7 @@ Before you can send or receive any data from Odoo, FlowFuse needs to know how to
 3.  Next to the "Host" field, click the pencil icon to add a new Odoo connection.
 4.  In the configuration dialog, you'll need to enter your Odoo instance's details:
 - Host URL: This is the web address of your Odoo instance (e.g., `https://databaseName.odoo.com`).
-- Database: The name of your Odoo database (this is often visible in your Odoo URL after `databaseName`).
+- Database: The name of your Odoo database.
 - Username: Your Odoo login username (e.g., your email address).
 - Password: Your Odoo login password.
 5.  Click "Add" to save this configuration.
@@ -80,9 +80,9 @@ Common Odoo models relevant to manufacturing include:
 - `res.partner`: For contacts (customers, suppliers).
 - `stock.picking`: For internal transfers or delivery orders.
 
-When you use an `odoo-xmlrpc` node in FlowFuse, you'll always need to specify which **`model`** you want to work with. If you're unsure of a specific model's name, you can often find it by enabling "Developer Mode" in your Odoo instance and hovering over fields in the Odoo interface.
+When you use an `odoo-xmlrpc` node in FlowFuse, you'll always need to specify which `model` you want to work with. If you're unsure of a specific model's name, you can often find it by enabling "Developer Mode" in your Odoo instance and hovering over fields in the Odoo interface.
 
-Let’s get started. When explaining each operation, I will demonstrate it using different models such as product.product or mrp.production. This is just for demonstration and your understanding. You can perform these operations in the same way with other models—just make sure to pass the correct parameters according to the model and its data.
+Let’s get started. When explaining each operation, I will demonstrate it using different models such as `product.product` or `mrp.production`. This is just for demonstration and your understanding. You can perform these operations in the same way with other models—just make sure to pass the correct parameters according to the model and its data.
 
 ### Reading Data from Odoo
 
@@ -123,11 +123,11 @@ Here is how you can create manufacturing order:
 1. Drag an inject node onto your canvas and set it to trigger manually.
 2. Connect it to a change node. Configure it to set `msg.payload` with the details for your new Odoo manufacturing order:
 - Set `msg.payload` to:
-```
+```json
 [{
-    "product_id": 39,      // Example: Internal Odoo ID of the product to manufacture (e.g., 'Outdoor dining table')
-    "product_qty": 500,     // Example: Quantity of the product to produce
-    "product_uom_id": 1   // Example: Internal Odoo ID for 'Units' (often default, check your Odoo)
+    "product_id": 39,      
+    "product_qty": 500,     
+    "product_uom_id": 1 
 }]
 ```
 
