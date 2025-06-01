@@ -21,9 +21,6 @@ payments aren't made within 60 days after the quote is signed.
 
 ### Calculating Team Commissions
 
-Make a copy of this
-[template Google Sheet](https://docs.google.com/spreadsheets/d/1fBq4g4W26M3k-uUOg5p4D2mYUyBPP8EbdtPLwuQ5RPI/).
-
 Download all the deals from hubspot by going to the deal board and filter 2
 ways:
 
@@ -33,7 +30,7 @@ ways:
 When the deal board is updated with on the won deals of last month, click
 "Export View" and export as CSV. Download this file to your machine.
 
-Make a copy of [this Google Sheet template](#TODO) and import the CSV just
+Make a copy of [this Google Sheet template](https://docs.google.com/spreadsheets/d/1fBq4g4W26M3k-uUOg5p4D2mYUyBPP8EbdtPLwuQ5RPI/) and import the CSV just
 downloaded from Hubspot into the "All Deals" sheet. "File" -> "Import" ->
 "Upload" -> "Replace Current Sheet".
 
