@@ -16,10 +16,12 @@ a very manual process, some day to be moved to a Node-RED workflow. Follow the
 next steps to process the commission calculations and setup for payment.
 
 Note: all sales commissions are advances under the assumption customers pay the
-invoice. FlowFuse might withhold commission payments, or claw back payments if
-payments aren't made within 60 days after the quote is signed.
+invoice. FlowFuse might withhold commission payments or claw back payments if
+payments aren't made within 60 days after the [deal was closed](https://flowfuse.com/handbook/customer/sales/engagements/#closing-a-deal).
 
 ### Calculating Team Commissions
+
+In the first week after the month has passed, commission payments are calculated. Only closed won deals that have gone through the full process of closing a deal are considered.
 
 Download all the deals from hubspot by going to the deal board and filter 2
 ways:
@@ -44,6 +46,26 @@ payment for.
 Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
 to get a written agreement to the commission number.
+
+Here is an email template that can be used:
+
+Dear {{first_name}},
+
+This email is to confirm your estimated commissions for {{Month and Year}}. 
+Your target amount for this quarter is {{amount}}. The end of {{Month and Year}} puts us 
+{{X}} weeks into the quarter. 
+
+In {{Month and Year}}, you closed:
+* {{Y}} number of deals
+* {{ARR}} new Contracted ARR
+
+Please remember: FlowFuse might withhold commission payments, or 
+claw back payments if payments aren't made within 60 days after the quote is signed.
+
+Please confirm the numbers in this email for quota to be issued. 
+
+Best,
+{{Manager sending email}}
 
 ### Wiring the money
 
