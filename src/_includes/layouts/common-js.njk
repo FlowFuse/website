@@ -56,7 +56,8 @@
                             indexName            : 'netlify_00f8cf60-997f-4c4d-9427-a97924358648_live_all',
                             params               : {
                                 query,
-                                hitsPerPage
+                                hitsPerPage,
+                                attributesToSnippet: ['content:50']
                             },
                             attributesToHighlight: '*',
                             filters: scope.length === 0 ?  undefined : `category:${scope}`
