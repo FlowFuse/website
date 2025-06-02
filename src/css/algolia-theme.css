@@ -83,3 +83,17 @@
 .aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentDescription {
     color: #777;
 }
+
+.aa-Panel .aa-SourceFooter #load-more {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #777;
+    padding: 10px 0 5px;
+    font-size: 12px;
+}
+
+.aa-Panel .aa-SourceFooter #load-more:hover {
+    cursor: pointer;
+    color: #2563eb;
+}
