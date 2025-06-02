@@ -89,3 +89,8 @@
     padding: 10px 0 5px;
     font-size: 12px;
 }
+
+.aa-Panel .aa-SourceFooter #load-more:hover {
+    cursor: pointer;
+    color: #2563eb;
+}
