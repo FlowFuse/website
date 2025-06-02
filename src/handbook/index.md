@@ -41,7 +41,7 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 | [Security](/handbook/company/security/)<br /><p>Keeping what's private private, and what needs protecting protected.</p>|
  
 
-### Bringing the built product to market
+### Bringing the built product to market 
 
 | | |
 |:----|:----|
