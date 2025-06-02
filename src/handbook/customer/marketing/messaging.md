@@ -39,8 +39,11 @@ our 'ICP'. That's not to say FlowFuse shouldn't cater to this audience, but
 does 
 
 1. Manufacturing or industrial company
-1. $500MM or up in revenue
-1. At least a 3 man IT team
+    1. Tier 1: Automotive, Pharma, Renewable energy
+    1. Tier 2: Electronics, Semiconductor, Chemical, Oil & Gas
+    1. Tier 3: Food & Beverage, Mining, Water & Wastewater
+1. Greater than $500 million in annual revenue. The need to have sufficiently large budgets to purchase FlowFuse.
+1. Greater than 500 employees. The company needs to be large enough to have internal IT and/or OT people on staff.
 1. Node-RED interested
 1. Established Digitalization strategy
 
