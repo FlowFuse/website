@@ -16,15 +16,8 @@ of FlowFuse. This includes:
 1. Growth hacking; always be innovating when finding the audience and engaging with
 them in a cost effective way.
 
-The ultimate goal for the department is to generate MQLs for the
-sales or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
-
-## Team
-
-| Role | Contributors |
-|------|--------------|
-| CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
-| Visual Designer | [Yndira Escobar](https://www.linkedin.com/in/yndira-escobar-es) [@Yndira-E](https://github.com/Yndira-E) |
+The ultimate goal for the department is to generate sales pipeline for the
+sales team or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
 
 ## Contact us
 

@@ -43,7 +43,7 @@ Take your time when committing files. Review each file carefully and ensure what
 - Capitalise the first letter, no trailing dot, 72 chars or less.
 - First line should be an imperative/present tense, e.g. `Change` (not `Changed` or `Changes`)
 - Do not include the issue number in the first line, this means that commit message are then suitable to include in a changelog as-is.
-- Second line should either be blank, or reference to an issue/PR using one of the GitHub recognised keywords, e.g. `closes #...` `fixes #...` `part of #...`
+- Second line should either be blank, or reference to an issue/PR using one of the GitHub recognized keywords, e.g. `closes #...` `fixes #...` `part of #...`
 - The remainder should be any further narrative that is needed. Wrapped at 72 chars.
 
 #### Branching vs. Forking

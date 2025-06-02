@@ -45,7 +45,7 @@ We've also introduced a new widget:
 Not yet part of the first Pre-Alpha Release:
 
 - Toggle Switch ([ui-switch Widget](https://github.com/FlowFuse/node-red-dashboard/issues/42))
-- Colour Picker ([ui-color-picker Widget](https://github.com/FlowFuse/node-red-dashboard/issues/46))
+- Color Picker ([ui-color-picker Widget](https://github.com/FlowFuse/node-red-dashboard/issues/46))
 - Number Input ([ui-numeric Widget](https://github.com/FlowFuse/node-red-dashboard/issues/41))
 - Form ([ui-form Widget](https://github.com/FlowFuse/node-red-dashboard/issues/49))
 - Date selector ([ui-date-picker](https://github.com/FlowFuse/node-red-dashboard/issues/32))

@@ -39,8 +39,14 @@
             'webinars': 'Webinars',
         }
         const placeholder = Object.prototype.hasOwnProperty.call(scopeTitles, searchScope) ? `Search in ${scopeTitles[searchScope]}...` : 'Search...'
-
+        const initialHitsPerPage = 5;
+        
+        let hitsPerPage = initialHitsPerPage
+        let initialQuery = '';
+        
         const searchQuery = (searchClient, query, scope) => {
+            initialQuery = query
+            
             return {
                 sourceId : scope,
                 getItems : () => getAlgoliaResults({
@@ -50,7 +56,7 @@
                             indexName            : 'netlify_00f8cf60-997f-4c4d-9427-a97924358648_live_all',
                             params               : {
                                 query,
-                                hitsPerPage: 5,
+                                hitsPerPage,
                                 attributesToSnippet: ['content:50']
                             },
                             attributesToHighlight: '*',
@@ -105,12 +111,15 @@
                                 </div>
                             </a>`;
                     },
+                    footer({html}) {
+                        return html`<button id="load-more" class="aa-LoadMore">Load more...</button>`;
+                    }
                 }
             };
         }
 
         autocomplete({
-            debug: true,
+            debug: false,
             container: '#algolia-search',
             placeholder,
             getSources({query}) {
@@ -128,6 +137,23 @@
                 document.querySelectorAll('.aa-Panel img').forEach(img => {
                     img.src = img.getAttribute('data-src');
                 });
+
+                // reset the number of results per page if the query changes
+                if (state.query !== initialQuery) {
+                    hitsPerPage = initialHitsPerPage
+                }
+                
+                const loadMoreBtn = document.querySelector('#load-more');
+                if (loadMoreBtn) {
+                    loadMoreBtn.onclick = () => {
+                        hitsPerPage += initialHitsPerPage;
+
+                        const input = document.querySelector('#algolia-search input');
+
+                        // Trick Autocomplete into refreshing and retrieving more hits per page
+                        input.dispatchEvent(new Event('input', { bubbles: true }));
+                    };
+                }
             }
         });
     }
