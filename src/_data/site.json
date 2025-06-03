@@ -3,10 +3,6 @@
     "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
-        "pm": "https://job-boards.greenhouse.io/flowfuse/jobs/5491176004",
-        "aeemea": "https://job-boards.greenhouse.io/flowfuse/jobs/5491653004",
-        "aeus": "https://job-boards.greenhouse.io/flowfuse/jobs/5491685004",
-        "d2fe": "https://boards.greenhouse.io/flowfuse/jobs/5185319004"
     },
     "messaging": {
         "tagLine": "Unlock Industrial Data. Integrate Everything. Optimize Faster.",
