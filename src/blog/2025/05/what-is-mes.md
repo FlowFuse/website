@@ -8,6 +8,7 @@ image:
 keywords: mes, mes implementation, building mes
 tags:
    - flowfuse
+   - mes
 ---
 
 Running a factory means constantly pushing for better production. You want to make more products, make them faster, and ensure they're all high quality. But often, the challenge is simply knowing what's actually happening on the factory floor, right now. Is a machine broken? Are we on track with our orders? Is the quality holding up? Getting these answers often involves manual checks, waiting for reports, or just guessing.
