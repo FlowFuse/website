@@ -2,7 +2,7 @@
 title: "MES: What It Is and Why You Need It for Your Factory"
 subtitle: "MES Explained: Essential Insights for Factory Operations"
 description: "Understand Manufacturing Execution Systems (MES): what they are, why your factory needs one to boost production, common challenges, and how FlowFuse simplifies adoption."
-date: 2025-06-03
+date: 2025-06-04
 authors: ["sumit-shinde"]
 image: /blog/2025/06/images/mes-intro.png
 keywords: mes, mes implementation, building mes
