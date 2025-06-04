@@ -73,8 +73,9 @@ customers who have found lasting value further up the cohorts table.
 
 To ensure a smooth onboarding experience and long-term success for our customers, we follow a structured [Customer Success Playbook](https://docs.google.com/document/d/1LqttB5AWueJfahdCciqloS4MSRhDZQRVHjla5xR4toU/edit?tab=t.0#heading=h.rwalcx5xuqez) for our Premium and Enterprise customers. This playbook outlines key activities, engagement points, and best practices that guide our Customer Success team in supporting each customer’s goals throughout their journey with FlowFuse.
 
+## Playbooks
 
-
+- [Churn Playbook](https://docs.google.com/document/d/1jrtTNEFgiY3NTHMBMm67y2P1Pm3qeIsxy8mckOEg9s4/)
 
 ## Customer Success Tools
 
