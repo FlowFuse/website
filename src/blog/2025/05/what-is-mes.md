@@ -35,7 +35,7 @@ The MES collects real-time information to tell you:
 - What materials are being used up.
 - If the quality of the products is good, right as they're being made.
 
-This means you always know the exact status of your production, live.
+This means you always know the exact status of your production, live. Such real-time insights and operational control are at the core of what a modern MES delivers, often leveraging flexible platforms like FlowFuse to connect diverse factory data and orchestrate workflows.
 
 ## What MES is NOT 
 
@@ -98,4 +98,4 @@ FlowFuse also excels at connecting diverse systems. Its vast library of nodes al
 
 In our upcoming articles, we will go deeper. We plan to explain and practically demonstrate how FlowFuse can be used to build your own MES, giving you the control and flexibility you need without the typical high investment or the need to buy a pre-packaged system. Stay tuned to see how you can create a tailored MES solution for your factory with FlowFuse.
 
-However, if you're eager to learn more or discuss your specific factory needs right now, don't hesitate to [contact us](/contact-us/) at FlowFuse. We're here to help you get started.
+If you're ready to explore how FlowFuse can help you build a modern MES tailored to your factory, [get in touch](/contact-us/) with our team today. We'd love to learn about your needs and help you take the next step toward a more efficient and profitable factory.
