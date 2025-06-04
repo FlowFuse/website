@@ -58,6 +58,8 @@ this part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
 Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
+Equity in the company is offered to some roles, the CEO has access to [the calculator](https://docs.google.com/spreadsheets/d/1M5zN9S4LoMOhz6cubj1VXY0trvKPMFXxCb4_7otQDnA)
+determining how many options to offer.
 
 ## After an offer is accepted
 
