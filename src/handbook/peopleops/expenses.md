@@ -107,6 +107,21 @@ We recommend everyone has a quality microphone and web-cam, even if they are onl
 * [Microphone Stand](https://www.amazon.co.uk/Aokeo-AK-35-Microphone-Suspension-Scissor/dp/B01MZ99Y67) (~$25)
 * [Logitech C920 Webcam](https://www.logitech.com/en-gb/products/webcams/c920-pro-hd-webcam.960-001055.html) (~$100)
 
+#### Other Setup Items
+#### Headset
+
+You should have a headset that gives you clear audio and a good microphone for remote meetings.
+It should be comfortable for long calls, have decent sound quality, and not cause issues for others on the call.
+
+You’re free to choose the model you prefer, as long as it’s reasonable, fits within the budget, and does the job well. Refurbished gear is totally fine if it’s in good condition and comes with a warranty.
+
+If you’re not sure about a specific item, ask your manager before buying.
+
+#### Mouse & Keyboard
+
+Pick whatever mouse and keyboard setup you’re most comfortable with — wired or wireless, compact or full-size — as long as it’s reasonable and within budget.
+Comfort and reliability matter more than brand or style.
+
 ### Asset purchases over $500
 
 Any asset purchase over $500 (laptops, devices etc) needs to be centrally recorded.
