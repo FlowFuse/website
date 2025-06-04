@@ -28,3 +28,6 @@ or go bankrupt a table is maintained with where to go in case of service disrupt
 | [Google Appointment Schedules](https://support.google.com/calendar/answer/10729749?hl=en) | Scheduling meetings with external parties | Calendly | - |
 | AWS | Hosting for FlowFuse Cloud | ? | - |
 
+## Email
+
+While there are a number of email aliases and google groups used throughout the organization, there is some activities across operations, people operations, and finance management that requires that activities be done with external parties. As a redundancy, rather than use a person's individual email (e.g. zj@), we use a google group to avoid the risk of information getting lost. For example, for some government filings, we use ops@. 
