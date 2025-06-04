@@ -7,8 +7,6 @@ tags:
   - changelog
 ---
 
-# Import your Node-RED flows when setting up your Remote Instance
-
 FlowFuse Device Agent now supports importing Node-RED flows during the setup process. This feature streamlines the configuration of your Remote Instance by allowing you to:
 
 - Select an existing Node-RED flows directory from your device.

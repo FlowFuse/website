@@ -133,7 +133,7 @@ The following fonts are used across the FlowFuse platform, website, and branded 
 - **Heebo:** When using this font, we aim to avoid weights heavier than *semi-bold* to maintain a clean and balanced design.
 - **Baloo Da 2:** Exclusively used in the FlowFuse logo.
 
-## Colour Palette
+## Color Palette
 
 <div class="space-y-6">
     <div class="grid gap-x-2 grid-cols-2">

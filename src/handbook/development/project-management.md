@@ -124,7 +124,12 @@ If a developer, who is an expert in a field, wants to change an estimation, they
 
 If a larger number of not estimated tasks need to be estimated, e.g. for a complex epic, the CTO and PM can initiate a [Planning Poker](https://en.wikipedia.org/wiki/Planning_poker) session.
 
-Issue sizes are assigned via [labels](./packaging.md#labels), with the following options available:
+Issue sizes are assigned in two stages:
+
+1. The Product Manager will review high-level Epics and Issues and assign a size based on the broad complexity of the issue. This is done via a label on the issue, and follows the standard planning poker story point sizes.
+2. When an item is moved into the Development Board, the Engineering Manager will review the issue and assign a size based on the effort required to complete the issue. This is done via the "Size" field on the [Development Board](https://github.com/orgs/FlowFuse/projects/1).
+
+Size labels are as follows:
 
 - **XS - 1**: Extra Small ~ Less than a day of development effort
 - **S - 2**: Small ~ 1 day days of development effort
@@ -133,14 +138,23 @@ Issue sizes are assigned via [labels](./packaging.md#labels), with the following
 - **XL - 8**: Extra Large ~ 1-2 weeks of development effort
 - **XXL - 13**: Extra Large ~ More than 2 weeks of development effort
 
-"days of development effort" here would assume this was the only task the developer was working on, which is rarely the case. The actual time to complete a task will be longer than the number of days, or sizing, assigned to it.
+"Days of development effort" here would assume this was the only task the developer was working on, which is rarely the case. The actual time to complete a task will be longer than the number of days, or sizing, assigned to it.
 
 There are two crucial elements to consider when determining an issue's weight:
 
 - **Scope**: The amount of work pertains to the anticipated extent of modifications to the codebase. A minor adjustment might only require a single alteration in a single file, whereas a more extensive modification could necessitate multiple alterations across numerous files and sections of our codebase. 
 - **Complexity:** Complexity can be divided into two components in practice: the degree to which the problem is understood and the expected level of problem-solving challenges.
 
-Epics do not necessarily need an estimation, as long as all sub-issues have estimations, Epics are the sum of all subtasks, as a result, it is possible to handle epics larger than XXL.
+Epics do not necessarily need an estimation, as long as all sub-issues have estimations, Epics are the sum of all subtasks, as a result, it is possible to handle epics larger than XXL. Be sure to not double-book the sizing. If a Story has a sizing, it's children tasks do not need a sizing too. Points are best served at the Story level, however, if you feel the Story is too large, you can break it down into smaller Tasks, and size appropriately there.
+
+#### Measuring Burn Rate
+
+With the "Size" field on the [Development Board](https://github.com/orgs/FlowFuse/projects/1) we can calculate the "burn rate" of the team, and use [GitHub's Insights](https://github.com/orgs/FlowFuse/projects/1/insights/11) to track the burn rate over time.
+
+![Burn Rate from the 2.15 Milestone, showing a sum of the story points scheduled and delivered over time](./images/pm-burn-rate.png){data-zoomable}
+_Burn Rate from the 2.15 Milestone, showing a sum of the story points scheduled and delivered over time_
+
+We can use these Burn Charts to measure the delivery velocity, i.e. the number of story points we expect the Engineering team to deliver in a given time frame. When planning future releases, considerations should be made for planned absences and events, such that the amount of work scheduled is sustainable.
 
 ### What makes a good issue?
 

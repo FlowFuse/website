@@ -2,6 +2,7 @@
 navTitle: Operations
 navGroup: Company
 ---
+
 # Operations
 
 This covers how we run our business and deliver service to our customers.

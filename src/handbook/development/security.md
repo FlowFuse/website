@@ -9,7 +9,7 @@ FlowFuse platform and associated components.
 
 Our internal Incident Response plan is documented [here](../company/security/incident-response.md).
 
-We recognise the benefit of 3rd party security researchers looking for potential vulnerabilities in our application (https://app.flowfuse.com).
+We recognize the benefit of 3rd party security researchers looking for potential vulnerabilities in our application (https://app.flowfuse.com).
 However we ask researchers to do so responsibly.
 
 Please make a good faith effort to avoid privacy violations, destruction of data, and interruption or degradation of our service. Only interact with accounts you own or with explicit permission of the account holder.

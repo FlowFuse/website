@@ -66,11 +66,12 @@ date for a new employee should be at least 7 working days out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
-2. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening).
+1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening). Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. 
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
-1. Close the role in Greenhouse and filled
+1. Close the role in Greenhouse as filled
+1. Update the handbooks so that the role isn't listed as an opening on the website ([Reference PR](https://github.com/FlowFuse/website/pull/3300)) 
 
 ### Background Screening
 

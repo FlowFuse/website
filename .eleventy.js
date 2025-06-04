@@ -68,6 +68,14 @@ module.exports = function(eleventyConfig) {
         return null;
       });
 
+    eleventyConfig.addFilter("excludeCurrent", (items, currentUrl) => {
+        return items.filter(item => item.url !== currentUrl);
+    });
+
+      eleventyConfig.addFilter("shuffle", (array) => {
+        return array.sort(() => Math.random() - 0.5);
+    });
+
     // Add a global data variable for the current date
     eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());  
 
@@ -439,7 +447,7 @@ module.exports = function(eleventyConfig) {
                 });
             }
         </script>
-        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="${functionName}()"></script>
+        <script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="${functionName}()" onerror="hsFallback(this)"></script>
       `;
     });
 
@@ -454,7 +462,7 @@ module.exports = function(eleventyConfig) {
             }
         }
         if (content) {
-            classes = "ff-nav-dropdown relative " + (addClasses || '')
+            classes = "ff-nav-dropdown relative hover:cursor-pointer " + (addClasses || '')
         } else {
             classes= (addClasses || '')
         }
