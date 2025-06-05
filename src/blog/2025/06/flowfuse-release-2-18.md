@@ -37,12 +37,6 @@ Check out the video demo to see it in action, featuring the agent connected to a
 To put this Blueprint to use, check out the Blueprint page for [OpenAI LLM Chat Agent.](https://flowfuse.com/blueprints/ai/llm-chat-agent/)
 
 
-## Flexible Blueprint Integration
-
-Until now, you could only use Blueprints when creating new Node-RED instances. Now, you can add Blueprints to your existing instances, making it easy to enhance your current flows with FlowFuse certified functionality.
-
-Need to add a bit of functionality to an existing instance? Navigate to the Import menu, where you will now find the Blueprint library. 
-
 
 ## Complete Git Integration with Pull Support
 
@@ -50,9 +44,13 @@ Building on our previous Git push functionality, we've now added Git pull suppor
 
 You can now seamlessly synchronize changes from your remote repositories, collaborate more effectively with team members, and maintain consistent version history across your Node-RED projects. 
 
+More details are available in the [Git Integration changelog](/changelog/2025/06/git-integration/).
+
 ## Self-Hosted Blueprint Support
 
-Organizations running self-hosted FlowFuse installations can now take advantage of Blueprints, bringing the same rapid development capabilities to on-premises and private cloud deployments. 
+Organizations running self-hosted FlowFuse installations can now take advantage of the Blueprints we publish, bringing the same rapid development capabilities to on-premises and private cloud deployments. 
+
+Self-hosted installations will automatically pull down the [blueprint library](https://flowfuse.com/blueprints/), and will stay up to date when we publish new blueprints.
 
 This update ensures that all FlowFuse users, regardless of their deployment model, can benefit from our growing library of pre-built solutions.
 
