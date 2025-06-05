@@ -1,6 +1,6 @@
 ---
 title: "MES: Acquiring Operational Data"
-subtitle: Getting Live Factory Info Where It Needs to Be, Made Easier.
+subtitle: Getting Your Factory Data to Your MES
 description: Learn how to effectively acquire and integrate operational data from your factory floor for MES using FlowFuse.
 date: 2025-06-02
 authors: ["sumit-shinde"]
@@ -11,11 +11,9 @@ tags:
   - mes
 ---
 
-In our last post, we talked about how a **MES** helps your factory run better and smarter. An MES can truly make a difference in your operations.
+In our last post, we talked about how a **MES** helps your factory run better and smarter. An MES can truly make a difference in your operations. However, for an MES to be effective, it needs real-time information from your factory floor. This means getting live data, moment by moment, from every machine and sensor. Bringing all this operational data together and making it useful is often a significant challenge.
 
 <!--more-->
-
-However, for an MES to be effective, it needs real-time information from your factory floor. This means getting live data, moment by moment, from every machine and sensor. Bringing all this operational data together and making it useful is often a significant challenge.
 
 This article will explain what data your MES needs, where it comes from, and how it moves through your factory. We’ll also look at the common difficulties in collecting this data. Then, we’ll show how **FlowFuse** simplifies getting the right information to your MES, when and where it's needed most.
 
