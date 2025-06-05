@@ -2,12 +2,13 @@
 title: "MES: What It Is and Why You Need It for Your Factory"
 subtitle: "MES Explained: Essential Insights for Factory Operations"
 description: "Understand Manufacturing Execution Systems (MES): what they are, why your factory needs one to boost production, common challenges, and how FlowFuse simplifies adoption."
-date: 2025-06-04
+date: 2025-06-05
 authors: ["sumit-shinde"]
 image: /blog/2025/06/images/mes-intro.png
 keywords: mes, mes implementation, building mes
 tags:
    - flowfuse
+   - mes
 ---
 
 Running a factory means constantly pushing for better production. You want to make more products, make them faster, and ensure they're all high quality. But often, the challenge is simply knowing what's actually happening on the factory floor, right now. Is a machine broken? Are we on track with our orders? Is the quality holding up? Getting these answers often involves manual checks, waiting for reports, or just guessing.
