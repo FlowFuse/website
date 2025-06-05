@@ -4,9 +4,6 @@
             <span class="sticky left-0 h-full"></span>
             {% if hosting == "cloud" %}
             <label class="mr-2">
-                <div>Free</div>
-            </label>
-            <label class="mr-2">
                 <div>Starter</div>
             </label>
             {% endif %}
@@ -19,9 +16,14 @@
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--header sticky top-[44px]">
             <span style="padding-top: 12px; padding-bottom: 12px;" class="sticky left-0 h-full">{{ section.label }}</span>
+            {% if hosting == "cloud" %}
             <span></span>
             <span></span>
             <span></span>
+            {% elif hosting == "self-hosted" %}
+            <span></span>
+            <span></span>
+            {% endif %}
         </li>
         {% for row in section.rows %}
         {% if hosting in row.tags %}
