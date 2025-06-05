@@ -6,16 +6,16 @@ navTitle: Social Media
 
 Each content type has channels which are appropriate, this table sets out which content should be posted on each channel, but always mindful of the topic of the content. We should share content relevant to the each channel audience.
 
-|Content              |LinkedIn |Facebook |X        |Youtube  |Discord |Reddit |Node-RED Slack|Node-RED Discourse|
-|---                  |---      |---      |---      |---      |---     |---    |---           |---               |
-|Blog Article         |*        |*        |*        |         |        |       |              |                  |
-|Product updates      |*        |*        |*        |         |        |*      |*             |*                 |
-|Curated content      |*        |*        |*        |         |        |       |              |                  |
-|Events               |*        |*        |*        |         |*       |*      |*             |*                 |
-|Short videos         |*        |*        |*        |*        |        |       |              |                  |
-|Long format videos   |         |*        |         |*        |        |       |              |                  |
-|Downloadable content |*        |*        |*        |         |*       |       |*             |                  |
-|New roles opening    |*        |*        |*        |         |*       |*      |*             |*                 |
+|Content              |LinkedIn |Facebook |Youtube  |Discord |Reddit |Node-RED Slack|Node-RED Discourse|
+|---                  |---      |---      |---      |---     |---    |---           |---               |
+|Blog Article         |*        |*        |         |        |       |              |                  |
+|Product updates      |*        |*        |         |        |*      |*             |*                 |
+|Curated content      |*        |*        |         |        |       |              |                  |
+|Events               |*        |*        |         |*       |*      |*             |*                 |
+|Short videos         |*        |*        |*        |        |       |              |                  |
+|Long format videos   |         |*        |*        |        |       |              |                  |
+|Downloadable content |*        |*        |         |*       |       |*             |                  |
+|New roles opening    |*        |*        |         |*       |*      |*             |*                 |
 
 ## Strategy for increasing reach
 
@@ -29,7 +29,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 ### Scope
 
-- Channels: LinkedIn, Facebook, Twitter, Youtube.
+- Channels: LinkedIn, Facebook, Youtube.
 
 ### Tactics
 
@@ -39,11 +39,16 @@ Each content type has channels which are appropriate, this table sets out which 
 
 #### Type of content
 
-- **Own content:** 3x week. Mondays, Wednesdays, and Thursdays.
-    - Fresh blog articles: Every new piece of content will be shared on social media as a link to the article.
-        - The target day for review should be 3 work days before posting date, and the tile image should be requested when it's submited for review.
-    - Additionally, we'll share 1 repurposed blog article per week. This can take the form of slides with a summary of the article, a diagram, a new tile image, an image with a quote, animation, or a short video.
-    - Product updates: this could replace one of the previous types of content, and it could be shared as a short video, short tutorial, animation, or diagram.
+- **Own content:** 2-3x week. Mondays, Wednesdays, and Thursdays.
+    - **Fresh blog articles:** Every new piece of content will be shared on social media as a link to the article.
+    - **Clips form our podcast:** Industrial Visionaries, announcing new episodes.
+    - **Product updates:** Release announcement every four weeks on Thursdays. Additionally, we’ll share quick, dev-driven product highlights whenever available. These are:
+        - Faster to publish: Engineers or other team members can send a short video or screenshot with a quick explanation. The marketing team will handle editing and posting.
+        - Less polished: Raw demos, internal tools, experiments, early features — even work-in-progress — are welcome. These should feel more like dev logs than polished announcements.
+        - More collaborative: Engineers only need 1–2 minutes to hand off the content. Marketing takes care of the rest.
+
+        These posts help us share fast-moving progress, spark community interest, and highlight how FlowFuse evolves day-to-day.
+
 - **Curated content from other sources:** 1x week. Fridays.
     - Articles relevant to our ideal customer / industry related / news / posts.
         - Avoid competitor mentions.
@@ -52,9 +57,9 @@ Each content type has channels which are appropriate, this table sets out which 
         - Fresh, up-to-date, and informative.
         - Include our POV in the post.
         - Tag the original source.
-    - Follow partners and customers on each channel for shareable content..
-- **Other content types:** 1x week. Tuesdays.
-    - Quick tips, repurposed YouTube videos, surveys, product updates, events, downloads, FAQs, best practices, testimonials, quizzes,challenges.
+    - Follow partners and customers on each channel for shareable content.
+- **Other content types:** 1x week. Any day.
+    - Quick tips, clips of longer video formats, customer stories, surveys, events, downloads, FAQs, best practices, testimonials, quizzes, challenges.
 - [Detailed list here](https://docs.google.com/spreadsheets/d/1Ifz6f7D_ZxCxJkAS9LbdvdnEAae0tGFEqkGVHcnn2TU/edit?usp=sharing).
 
 #### Planning and posting
@@ -75,6 +80,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 - Descriptive text: 
     - Align with post purpose and audience goals.
+    - Must reflect our [Brand Voice](/handbook/customer/marketing/brand-voice/).
     - Think about relevance to the audience.
 - Emoji
 - Only one CTA
@@ -84,17 +90,11 @@ Each content type has channels which are appropriate, this table sets out which 
 
 ## Other social channels recommendations 
 
-### Reddit
+For Reddit, Node-RED Slack, and Node-RED Discourse:
 
-- Keep it short, factual, and informal.
-- Include a call to action (link).
 
-### Node-RED Slack (FlowFuse section)
+- Follow the tone and behaviour defined in our [Community Guidelines](/handbook/customer/marketing/community/community-guidelines/#community-interactions).
+- Use your own voice, you're talking from a personal account after all, but also remember that you represent the brand and company values. Blend your tone with our [Brand Voice](/handbook/customer/marketing/brand-voice/#participating-in-community-spaces-(e.g.-node-red-forum%2C-github%2C-discord)).
+- Copy should remain informal, honest, and useful — without sounding like a sales pitch.
 
-- Keep it factual and informal.
-- Include a call to action (link).
-
-### Discourse (Node-RED Forums)
-
-- Keep it factual and informal.
-- Include a call to action (link).
+Keep it factual. Keep it human.
