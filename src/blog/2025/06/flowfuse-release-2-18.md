@@ -4,7 +4,7 @@ subtitle: "Monitor and improve instance performance, run AI chat in your Dashboa
 description: "Monitor and improve instance performance, run AI chat in your Dashboard, Git pull, and more."
 date: 2025-06-05
 authors: ["greg-stoutenburg"]
-image: /blog/2025/06
+image: /blog/2025/06/images/release-2-18.png
 tags:
    - flowfuse
    - news
