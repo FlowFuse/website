@@ -9,6 +9,22 @@ meta:
 
 Please see our [company values](/handbook/company/values/).
 
+## FlowFuse in one sentence
+FlowFuse helps teams easily build, deploy, and manage automation workflows — with the simplicity of low-code and the power of modern DevOps.
+
+## FlowFuse's Definition
+Built on the simplicity of Node-RED, FlowFuse adds the tools teams need to scale automation workflows with confidence.
+FlowFuse is a platform that helps organizations build and manage powerful low-code data applications using Node-RED.
+We make it easy to connect systems, automate processes, and build industrial or digital solutions — all while giving IT teams the control, security, and scalability they need.
+Whether you’re an engineer, a developer, or a company scaling up operations, FlowFuse bridges the gap between innovation and reliability.
+
+## FlowFuse in-depth
+FlowFuse is a software platform that helps companies manage and scale applications built with Node-RED, a popular visual programming tool used to automate tasks and connect systems. While Node-RED allows users to quickly create powerful applications by wiring together different building blocks, it becomes difficult to manage once used across many devices, teams, or environments. That’s where FlowFuse comes in.
+
+FlowFuse adds the structure, tools, and safety needed to use Node-RED in professional and industrial settings. It allows companies to organize and control multiple Node-RED instances, whether they’re running on the cloud or on physical machines like factory equipment. With FlowFuse, users can develop applications, test them safely, and deploy them to different environments without fear of breaking things. Teams can work together more effectively thanks to user access controls, audit logs, and centralized monitoring. It supports both SaaS and self-hosted models, so companies can keep full control when needed, especially in industries with strict security or privacy requirements.
+
+Ultimately, FlowFuse transforms the speed and flexibility of Node-RED into something reliable, scalable, and secure — making it suitable not just for individual developers or hobbyists, but for entire organizations running critical systems. It gives companies the confidence to innovate quickly while staying in control.
+
 ## FlowFuse's Mission
 
 FlowFuse will empower 1 billion people to fuse the digital realm and physical
