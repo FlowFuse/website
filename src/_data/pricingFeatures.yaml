@@ -78,8 +78,8 @@ sections:
         info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Team Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
       - id: volume-pricing
         label: Volume Pricing
-        cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]
+        cloudValues: [ null, 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Scaling to hundreds or thousands of Node-RED instances? <a href='/contact-us'>Contact us</a> for customized volume discounts!</p>"
       - id: edge-development
@@ -122,7 +122,7 @@ sections:
     rows:
       - id: audit-log
         label: Audit Log
-        cloudValues: [ null, 'check', 'check' ]
+        cloudValues: [ 'check', 'check', 'check' ]
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Keep track of everything going on in your Node-RED instances and FlowFuse.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
@@ -144,12 +144,6 @@ sections:
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p><a href='https://flowfuse.com/docs/user/user-settings/#two-factor-authentication' target='blank'>Two-factor authentication</a> adds an extra layer of security to your account.</p>"
-      - id: private-npm-registry
-        label: Private NPM Registry
-        cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
-        tags: [ 'cloud', 'self-hosted' ]
-        info: "<p>Access to private NPM registries for secure package management.</p>"
       - id: certified-nodes
         label: Certified Nodes
         cloudValues: [ null, 'check', 'check' ]
@@ -162,12 +156,6 @@ sections:
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>You can enable alerts to be sent to you via email. <a href='https://flowfuse.com/docs/user/instance-settings/#alerts' target='blank'>Learn more</a></p>"
-      - id: performance-observability
-        label: Performance Observability
-        cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]
-        tags: [ 'cloud', 'self-hosted' ]
-        info: "<p>Advanced performance monitoring and observability tools for enterprise deployments.</p>"
       - id: sso
         label: Single Sign-On (SSO)
         cloudValues: [ null, null, 'check' ]
@@ -175,7 +163,7 @@ sections:
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowFuse with a single set of login credentials, improving security, user experience, and save them time.</p>"
       - id: hipaa
-        label: BAA for HIPAA
+        label: BAA for Hipaa
         cloudValues: [ null, null, 'check' ]
         selfHostedValues: [ null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
@@ -230,7 +218,7 @@ buttons:
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
-      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
+      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
   selfHosted:
     - cta: INSTALL NOW
       url: /docs/install/introduction/
