@@ -9,6 +9,7 @@ Each content type has channels which are appropriate, this table sets out which 
 |Content              |LinkedIn |Facebook |Youtube  |Discord |Reddit |Node-RED Slack|Node-RED Discourse|
 |---                  |---      |---      |---      |---     |---    |---           |---               |
 |Blog Article         |*        |*        |         |        |       |              |                  |
+|Release Post         |*        |*        |         |*       |       |*             |*                 |
 |Product updates      |*        |*        |         |        |*      |*             |*                 |
 |Curated content      |*        |*        |         |        |       |              |                  |
 |Events               |*        |*        |         |*       |*      |*             |*                 |
