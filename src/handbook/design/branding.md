@@ -334,16 +334,27 @@ Sizings:
 - **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
 - **250 x 250 px:** Used as part of page headers, inline with the page title and page description.
 
-## Presentations
+## Branded Templates
+
+### Presentations
 
 There's a **branded theme** for Google Slides presentations available in the [FlowFuse template gallery](https://docs.google.com/presentation/u/0/?tgif=d&ftv=1). To access it, you need to be logged in to your FlowFuse account. Look for a theme called "FlowFuse Template".
 
 When you click on it, two things will happen:   
 1. A new Google Slides file will be created in your Drive with the theme applied.
-2. The copy of the file will open for editing.
+2. The file will open for editing.
 
 You'll find a fully designed presentation as an example of how to use different layouts. To explore all the predefined options available, check the [Layout menu](https://support.google.com/docs/answer/1705254?hl=en&ref_topic=19434&sjid=8039782987794605660-EU#zippy=%2Cchange-layout:~:text=your%20theme%20colors-,Change%20layout,-A%20layout%20is).
 
 Feel free to edit the content, delete or add slides as needed. Any changes you make will only affect your copy in your Drive.
 
-Please note that the theme has predefined typography, margins, and colors. We kindly request that any changes made maintain these design elements as part of the overall composition and design of your presentation.
+### Letterhead
+
+A **branded Google Docs letterhead** is also available in the [FlowFuse template gallery](https://docs.google.com/document/u/0/?ftv=1&folder=16xMKKQxonSD4IkdLJjVuACTrQInZ_-Zr&tgif=d), titled "FlowFuse Letterhead – Template." Make sure you're logged into your FlowFuse account to see it.
+
+Clicking the template will create an editable copy in your Drive — just like with the presentation template. You can customize this copy freely without affecting the original.
+
+---
+
+> **Note:** Both templates include predefined typography, colors, and margins. Please preserve these elements to maintain consistency across all branded materials.
+
