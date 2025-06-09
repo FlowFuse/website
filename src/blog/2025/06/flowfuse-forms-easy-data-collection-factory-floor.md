@@ -2,9 +2,9 @@
 title: "FlowFuse Forms: Easy Data Collection for Your Factory Floor"
 subtitle: Get Shop Floor Data Directly to Machine Settings
 description: Learn how to create and configure forms in FlowFuse Dashboard to collect data efficiently in industrial applications using Node-RED.
-date: 2025-05-30
+date: 2025-06-09
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/06/images/building-forms-in-flowfuse.png
 keywords: flowfuse form, node-red form, Recipe Management System, Node-RED Recipe Management, FlowFuse Recipe Management System
 tags:
    - flowfuse
