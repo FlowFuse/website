@@ -1,3 +1,7 @@
+---
+navTitle: Personas
+---
+
 # Personas
 
 Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. Personas are a generalized way of talking about the ideal target we are aiming to communicate with and design for. 
