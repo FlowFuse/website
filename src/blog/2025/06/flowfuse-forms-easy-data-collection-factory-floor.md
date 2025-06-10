@@ -2,7 +2,7 @@
 title: "FlowFuse Forms: Easy Data Collection for Your Factory Floor"
 subtitle: Get Shop Floor Data Directly to Machine Settings
 description: Learn how to create and configure forms in FlowFuse Dashboard to collect data efficiently in industrial applications using Node-RED.
-date: 2025-06-09
+date: 2025-06-10
 authors: ["sumit-shinde"]
 image: /blog/2025/06/images/building-forms-in-flowfuse.png
 keywords: flowfuse form, node-red form, Recipe Management System, Node-RED Recipe Management, FlowFuse Recipe Management System
@@ -10,21 +10,23 @@ tags:
    - flowfuse
 ---
 
-It's often a pain to get important data from the factory floor. Things like updating recipes, doing quality checks, or setting up machines still rely on old methods like manual notes and slow spreadsheets. This can lead to delays, errors, and a lot of wasted time before anyone can actually use the information. It's especially tough when you need quick feedback from an operator or a need to specify a setting to update a machine.
+It's often a pain to get important data from the factory floor. Things like doing quality checks still rely on old methods like manual notes and slow spreadsheets. This can lead to delays, errors, and a lot of wasted time before anyone can actually use the information. It's especially tough when you need quick feedback from an operator.
 
 <!--more-->
 
-This article will show you an easy way to gather data via a form entry. We'll look at how forms in FlowFuse Dashboard can make collecting factory data much simpler. You'll learn how to build useful forms that connects your team's knowledge directly to your industrial processes. We'll even walk through a example for digitizing machine recipe updates, showing you how to build this solution yourself, step-by-step.
+This article will show you an easy way to gather data via a form entry. We'll look at how forms in FlowFuse Dashboard can make collecting data from factory workers much simpler. You'll learn how to build useful forms that connects your team's knowledge directly to your industrial processes. As a practical example, we'll walk you through building a solution to digitize production recipe updates, showing you exactly how to implement it.
 
 ## Prerequisites
 
 Before you begin, make sure you have the following:
 
 - **Node-RED:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
+
 Then you'll need to add two more sets of nodes to your palette:
 
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
 - **SQLite:** Install the [node-red-node-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) package, which will be used in the practical example.
+
 and finally:
 
 - **Basic Node-RED Knowledge:** You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the [Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) *sponsored by FlowFuse.*
@@ -56,7 +58,7 @@ Now that we have completed all the basic and necessary configurations for the fo
 ### Adding Input Fields to the Form Statically
 
 ![Adding Form Elements](./images/adding-form-element.gif){data-zoomable}
-_Adding Form Elements_]
+_Adding Form Elements_
 
 The widget supports various input element types that can be tailored to specific use cases — from collecting simple text to selecting dates or choosing from predefined options.
 
@@ -182,11 +184,11 @@ After submission, you can access these values like this in your flow:
 
 You can use this data anywhere in your flow — for example, to save it in a database or store it in [FlowFuse’s context storage](/docs/user/persistent-context/#flowfuse-persistent-context). Crucially, this collected data can also directly instruct machines on the shop floor, with FlowFuse Device Agent managing that precise control.
 
-## Building Your Dynamic Recipe Update Form
+## Building Your Dynamic Production Recipe Update Form
 
-In this section, you will build an advanced flow for dynamically updating machine recipes using FlowFuse Forms.
+In this section, you will build an advanced flow for dynamically updating production recipes using FlowFuse Forms.
 
-<< insert line/paragraph about what recipes are here >>.
+A production recipe, often referred to as a manufacturing recipe or master batch record, is a critical set of instructions that defines the precise parameters, ingredients, and steps required to produce a specific product consistently. This includes details like material quantities, temperature, mixing speeds, pressures, and hold times.
 
 This setup uses a **ui-dropdown** for selecting recipes and a **ui-form** that dynamically populates and allows updates to recipe parameters. Everything you have learned so far will come together here to create a practical and interactive solution.
 
@@ -271,7 +273,6 @@ This flow segment pre-fills the form with recipe details when an operator select
 
 4. Connect the **sqlite** node's output to a **function** node. Name it Show values to form fields. This function will format the retrieved recipe details to pre-fill the form.
 
-
 ```javascript
 let recipeDetails = msg.payload[0]; // Get the first (and only) result
 
@@ -332,9 +333,8 @@ For practice, we use an SQLite database. However, since your recipe is often use
 
 *Note: This is just a simple demo we built. When using it in a production environment, you might need to make additional considerations based on your specific requirements."*
 
-![FlowFuse form designed for updating machine recipes. The form shows a dropdown for recipe selection, dynamically populates fields with recipe parameters, and allows the user to modify and submit updates.](./images/recipe-update-form.gif){data-zoomable}
+![FlowFuse form designed for updating production recipes. The form shows a dropdown for recipe selection, dynamically populates fields with recipe parameters, and allows the user to modify and submit updates.](./images/recipe-update-form.gif){data-zoomable}
 _A demonstration of the dynamic **form for recipe updates** in action, showing how it streamlines data entry and submission._
-
 
 Below is the complete flow of the system we built.
 
@@ -348,6 +348,6 @@ So, getting your factory data digital doesn't have to be a headache. Relying on 
 
 That's where FlowFuse comes in. It lets your engineers build exactly what they need for the factory, using simple drag-and-drop tools – no coding required. This means you can ditch the manual steps, cut down on errors, save time, and even lower your IT costs.
 
-With FlowFuse, you get accurate, real-time data and better control, helping your factory run smarter and much more efficiently.
+Also wiith FlowFuse, you get accurate, real-time data and better control, helping your factory run smarter and much more efficiently.
 
 *Want to see how FlowFuse can reduce costs, boost profits, and increase production? [Get in touch with us.](/contact-us/)*
