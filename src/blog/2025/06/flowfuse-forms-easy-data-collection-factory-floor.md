@@ -44,7 +44,6 @@ One of these components is the [Form](https://dashboard.flowfuse.com/nodes/widge
 
 A key benefit of this widget is that you can configure the form fields either statically (with predefined values) or dynamically (updated through your Node-RED flow), depending on your application’s needs.
 
-
 ### Adding and Configuring the Form Widget
 
 1. Drag the **Form** widget onto the canvas.
@@ -55,6 +54,9 @@ A key benefit of this widget is that you can configure the form fields either st
 Now that we have completed all the basic and necessary configurations for the form, let’s add the input elements.
 
 ### Adding Input Fields to the Form Statically
+
+![Adding Form Elements](./images/adding-form-element.gif){data-zoomable}
+_Adding Form Elements_]
 
 The widget supports various input element types that can be tailored to specific use cases — from collecting simple text to selecting dates or choosing from predefined options.
 
@@ -76,9 +78,6 @@ The widget supports various input element types that can be tailored to specific
   - **Checkbox**: For boolean values (checked or unchecked).
 - **Required**: Check this box to make the field mandatory. The form cannot be submitted unless this field is filled.
 - **Row**:: If Multiline is selected, this defines the number of visible rows in the text area.
-
-![Adding Form Elements](./images/adding-form-element.gif){data-zoomable}
-_Adding Form Elements_]
 
 ### Adding Options to Dropdown Inputs Statically
 
