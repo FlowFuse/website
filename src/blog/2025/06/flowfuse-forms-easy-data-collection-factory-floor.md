@@ -298,15 +298,15 @@ if (recipeDetails) {
 return msg;
 ```
 
-5. Connect the output of the Show values to form fields **function** node back to the input of your **ui_form** widget (from Step 2).
+5. Connect the output of the Show values to form fields **function** node back to the input of your form widget (from Step 2).
 
-### Handle Form Submission & Update Database**
+### Handle Form Submission & Update Database
 
 This flow segment processes the data when the operator clicks the "Apply" button, updating the recipe in your database and providing feedback.
 
-1. Connect a new wire from the main output of your **ui_form** widget. This output fires when the form is submitted.
+1. Connect a new wire from the main output of your **ui-form** widget. This output fires when the form is submitted.
 
-2. Connect the **ui_form** output to a **change** node. Name it Prepare Update Params. This node will prepare the `msg.params` object for the SQLite update.
+2. Connect the form's output to a **change** node. Name it Prepare Update Params. This node will prepare the `msg.params` object for the SQLite update.
 
 - Rules:
    - set `msg.params` to JSON `{}`.
@@ -326,7 +326,7 @@ For each editable field in your form (e.g., target_temperature_c, mixing_speed_r
 5. Connect the **switch** node's output to a **change** node. Name it Success Message.
 - Set `msg.payload` to str "Recipe updated successfully".
 
-6. Connect the **change** node to a **ui_notification** node to display the success message on the dashboard.
+6. Connect the **change** node to a **ui-notification** node to display the success message on the dashboard.
 7. Deploy the flow, open the dashboard, and try selecting different recipes and updating them.
 
 For practice, we use an SQLite database. However, since your recipe is often used across an entire production line, it is recommended to store it in a dedicated database instead of locally in SQLite. This ensures it is accessible to all systems and can be utilized by other components in the workflow.
