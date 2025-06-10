@@ -10,32 +10,46 @@ tags:
    - flowfuse
 ---
 
-It's often a pain to get important data from the factory floor. Things like updating recipes, doing quality checks, or setting up machines still rely on old methods – manual notes, slow spreadsheets. This can lead to delays, errors, and a lot of wasted time before anyone can actually use the information. It's especially tough when you need quick feedback from an operator or a specific setting to go straight to a machine.
+It's often a pain to get important data from the factory floor. Things like updating recipes, doing quality checks, or setting up machines still rely on old methods like manual notes and slow spreadsheets. This can lead to delays, errors, and a lot of wasted time before anyone can actually use the information. It's especially tough when you need quick feedback from an operator or a need to specify a setting to update a machine.
 
 <!--more-->
 
-This post will show you a better way. We'll look at how FlowFuse Forms on the FlowFuse Dashboard can make collecting factory data much simpler. You'll learn how to build useful forms that connect what your team knows directly to your industrial processes. We'll even walk through a example for digitizing machine recipe updates, showing you how to build this solution yourself, step-by-step, which will include everything we learned so far about form.
+This article will show you an easy way to gather data via a form entry. We'll look at how forms in FlowFuse Dashboard can make collecting factory data much simpler. You'll learn how to build useful forms that connects your team's knowledge directly to your industrial processes. We'll even walk through a example for digitizing machine recipe updates, showing you how to build this solution yourself, step-by-step.
 
 ## Prerequisites
 
 Before you begin, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
+- **Node-RED:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
+Then you'll need to add two more sets of nodes to your palette:
+
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
-- **SQLite Contrib Node:** Install the [node-red-node-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) package, which will be used in the practical example.
+- **SQLite:** Install the [node-red-node-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) package, which will be used in the practical example.
+and finally:
+
 - **Basic Node-RED Knowledge:** You are familiar with creating and deploying basic flows in Node-RED. If not, consider taking the [Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) *sponsored by FlowFuse.*
 
 ## Building Forms in FlowFuse Dashboard
 
-The FlowFuse Dashboard makes it easy to build interactive industrial applications using drag-and-drop components—no coding required. One of these components is the [ui_form](https://dashboard.flowfuse.com/nodes/widgets/ui-form.html) widget, which allows you to create versatile forms within your application. The ui_form widget supports a wide range of input types, including text fields, number inputs, date pickers, multi-line text areas, dropdowns, and checkboxes. A key benefit of this widget is that you can configure the form fields either statically (with predefined values) or dynamically (updated through your Node-RED flow), depending on your application’s needs.
+The FlowFuse Dashboard makes it easy to build interactive industrial applications using drag-and-drop components — **no coding required**. 
 
-To get started with building a form, follow these steps to add and configure the **ui_form** widget in your FlowFuse Dashboard.
+One of these components is the [Form](https://dashboard.flowfuse.com/nodes/widgets/ui-form.html) widget, which allows you to create versatile forms within your applications. The Form widget supports a wide range of input types, including:
+
+- Text Fields
+- Number Inputs
+- Date Pickers,
+- Multi-line Text Areas
+- Dropdown Selection
+- Checkboxes
+
+A key benefit of this widget is that you can configure the form fields either statically (with predefined values) or dynamically (updated through your Node-RED flow), depending on your application’s needs.
+
 
 ### Adding and Configuring the Form Widget
 
-1. Drag the **ui_form** widget onto the canvas.
-2. Double-click on the widget and create a new group for it with the correct page configuration to render it.
-3. Set the correct size (width and height) according to your preferences.
+1. Drag the **Form** widget onto the canvas.
+2. Double-click on the widget and create a new group for it with the correct page configuration to render it. (note: if this is the first widget you have, this will automatically be created for you)
+3. Set an appropriate size (width and height) according to your preferences.
 4. Enter the label for the form.
 
 Now that we have completed all the basic and necessary configurations for the form, let’s add the input elements.
