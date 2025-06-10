@@ -2,7 +2,7 @@
 title: "MES: Acquiring Operational Data"
 subtitle: Getting Your Factory Data to Your MES
 description: Learn how to effectively acquire and integrate operational data from your factory floor for MES using FlowFuse.
-date: 2025-06-02
+date: 2025-06-13
 authors: ["sumit-shinde"]
 image:
 keywords: MES, Data Acquisition, Operational Technology, Industrial IoT, FlowFuse, Factory Data, Real-time Data, PLCs, SCADA, OPC UA, Modbus, MQTT
@@ -17,7 +17,7 @@ In our last post, we talked about how a **MES** helps your factory run better an
 
 This article will explain what data your MES needs, where it comes from, and how it moves through your factory. We’ll also look at the common difficulties in collecting this data. Then, we’ll show how **FlowFuse** simplifies getting the right information to your MES, when and where it's needed most.
 
-## Understanding Your Factory's Data: Where It Comes From and How It Moves
+## Understanding Your Factory's Data for MES: Where It Comes From and How It Moves
 
 Let's talk about what makes a factory run well, or why it might struggle. For your MES to be an effective control center, it needs to see all the important details. This isn't just about numbers; it's about the core activity of your operation. We mean knowing exactly how many items are made, if a machine is running or stopped, precise measurements like temperature or speed, why a line had downtime, or how much power a production run used. When your MES gets this steady flow of correct information, it becomes a powerful tool, helping you plan smoothly, predict issues before they become costly, and keep things running well.
 
@@ -75,25 +75,16 @@ So with **FlowFuse**, you can:
 
 - Connect to PLCs, sensors, SCADA systems, and more using ready-made nodes for OPC UA, Modbus, MQTT, and HTTP/REST.
 - Transform and structure data using flow logic so it matches what your MES expects.
+- Secure this created data flow with robust features like multi-user authentication and granular role-based access control (RBAC), ensuring data integrity and preventing unauthorized access.
 - Schedule or trigger data flows based on machine events or production states.
-- Deploy and manage flows at scale across multiple devices using **FlowFuse’s** remote deployment features.
-
-### Example Use Case: Packaging Line Integration
-
-Imagine a packaging line where each machine reports production counts, jam alerts, and speed settings. With an **edge device running FlowFuse** on your factory floor, you can:
-
-1.  Use OPC UA or Modbus nodes to collect runtime values from the PLCs, **no coding, just drag and drop**.
-2.  Clean data and Normalize the values to a standard format, **again no coding**.
-3.  Send structured data via MQTT to a central broker or REST API to the MES.
-4.  Log data to an **InfluxDB using the InfluxDB node** for future analysis.
-5.  Visualize the data using **FlowFuse Dashboards**, helping line supervisors identify bottlenecks or failures early.
-
-This illustrates how FlowFuse provides the robust capability to transform complex, raw machine data into the precise, real-time insights your MES needs to drive effective operations.
+- Build industrial applications with pre-built UI widgets using [FlowFuse Dashboards](https://dashboard.flowfuse.com), providing intuitive visualization and control.
 
 ## Final Thoughts
 
-It can feel like a big job to get live information from your factory machines over to your MES. Connecting all the different equipment, which often speak different computer "languages," and then making sense of all that raw data can seem overwhelming. But it doesn't have to be a constant struggle.
+It can feel like a big job to get live information from your factory over to your MES. Connecting all the different equipment, which often speak different computer "languages," and then making sense of all that raw data can seem overwhelming. But it doesn't have to be a constant struggle.
 
 That's where FlowFuse comes in. It acts like a central hub, making it much simpler to connect to almost any machine or system in your factory. Once connected, FlowFuse helps you tidy up and organize that data so your MES gets exactly what it needs, in a way it can easily understand. This makes your MES much more effective, helping you make better choices, run things smoother, and make your factory work more efficiently.
 
-Want to make getting your factory data to your MES easier? [Let's connect](/contact-us/) and discuss your needs.
+Want to make getting your factory data to your MES easier?
+
+[Contact us to learn more!](/contact-us/)
