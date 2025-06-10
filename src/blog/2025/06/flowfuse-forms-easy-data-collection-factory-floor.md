@@ -56,7 +56,7 @@ Now that we have completed all the basic and necessary configurations for the fo
 
 ### Adding Input Fields to the Form Statically
 
-The `ui_form` widget supports various input element types that can be tailored to specific use cases — from collecting simple text to selecting dates or choosing from predefined options.
+The widget supports various input element types that can be tailored to specific use cases — from collecting simple text to selecting dates or choosing from predefined options.
 
 **To add input elements:**
 
@@ -82,11 +82,9 @@ _Adding Form Elements_]
 
 ### Adding Options to Dropdown Inputs Statically
 
-When you add Dropdown type input element to the **ui_form** widget, you need to provide a list of options that the user can choose from. These options can be configured in the **ui_form** widget's configuration dialog.
+When you add Dropdown type input element to the Form widget, you need to provide a list of `options` that the user can choose from. These options can be configured in the widget's configuration dialog.
 
-**To add static options:**
-
-1. In the **ui_form** widget's configuration dialog, switch to the Dropdown Options tab.
+1. In the widget's configuration dialog, switch to the "Dropdown Options" tab.
 2. Click the **+ add** button to insert a new option row.
 3. In the new row, fill in the following fields:
    - **Dropdown**: Select the dropdown input field you want to add options to.
@@ -95,13 +93,13 @@ When you add Dropdown type input element to the **ui_form** widget, you need to 
 
 Repeat this process for each option you want to add.
 
-### Pre-filling Forms: Setting Default Values
+### Pre-filling Forms with Default Values
 
 You can pre-fill forms with default values to streamline user input, reduce typing errors, and save time. This is especially useful in scenarios like editing an existing recipe, where the current details can be loaded directly into the form.
 
-The **ui_form** widget supports setting these default values dynamically. To do this, send a `msg.payload` object to the input of the **ui_form** node, where each key corresponds to a form field and its value represents the pre-filled data.
+We can pass data to the `ui-form` node in our flow to set these values dynamically. To do this, send an object in `msg.payload` to the input of the relevant node. Each key of `msg.payload` corresponds to a form field and its value represents the pre-filled data.
 
-For example, if your form includes fields for `product_name` and `target_temperature_c`, you can send a message like this:
+For example, if your form includes fields for `product_name` and `target_temperature_c`, you can send a `msg.payload` like this:
 
 ```javascript
 {
@@ -112,7 +110,9 @@ For example, if your form includes fields for `product_name` and `target_tempera
 
 ### Add Form Input Elements Dynamically at Runtime
 
-In some cases, you may need to define form elements dynamically based on real-time data. For example, you might want to show additional fields based on a user’s selection or load dropdown options from an external API. This dynamic capability adds a new level of flexibility and interactivity to your forms.
+In some cases, you may need to define form elements dynamically based on real-time data. 
+
+For example, you might want to show additional fields based on a user’s selection or load dropdown options from an external API. This dynamic capability adds a new level of flexibility and interactivity to your forms.
 
 **To define form fields at runtime:**
 
@@ -165,7 +165,7 @@ When a user submits the dashboard form, the input data is sent to Node-RED, wher
 
 ### Retrieving Submitted Data
 
-The data submitted from the form is stored inside `msg.payload`. Each input field’s value can be accessed using the field’s key or name as the property within `msg.payload`.
+The data submitted from the form is transmitted to any nodes connected to the output of the `ui-from` node, and is contained within `msg.payload`. Each field’s value can be accessed using the field’s key or name as the property within `msg.payload`.
 
 For example, let’s say the form includes the following fields:
 
@@ -185,7 +185,11 @@ You can use this data anywhere in your flow — for example, to save it in a dat
 
 ## Building Your Dynamic Recipe Update Form
 
-In this section, you will build an advanced flow for dynamically updating machine recipes using FlowFuse Forms. This setup uses a **ui_dropdown** for selecting recipes and a **ui_form** that dynamically populates and allows updates to recipe parameters. Everything you have learned so far will come together here to create a practical and interactive solution.
+In this section, you will build an advanced flow for dynamically updating machine recipes using FlowFuse Forms.
+
+<< insert line/paragraph about what recipes are here >>.
+
+This setup uses a **ui-dropdown** for selecting recipes and a **ui-form** that dynamically populates and allows updates to recipe parameters. Everything you have learned so far will come together here to create a practical and interactive solution.
 
 ### Set Up Your SQLite Database
 
