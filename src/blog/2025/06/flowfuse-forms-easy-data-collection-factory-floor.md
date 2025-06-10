@@ -265,7 +265,7 @@ This flow segment pre-fills the form with recipe details when an operator select
 
 1. Connect the output of your dropdown node (from Step 2). This output will carry the selected `recipe_id` in `msg.payload`.
 
-2. Connect the **ui_dropdown** output to a **change** node. Name it Set Params & Flow Context. Set `msg.params.$recipe_id` to `msg.payload` and `flow.selected_recipe_id` to `msg.payload`.
+2. Connect the **ui-dropdown** output to a **change** node. Name it Set Params & Flow Context. Set `msg.params.$recipe_id` to `msg.payload` and `flow.selected_recipe_id` to `msg.payload`.
 
 3. Connect the **change** node to an **sqlite** node. Configure it for your database, set SQL Query to prepared statement, and enter `SELECT * FROM recipes WHERE recipe_id = $recipe_id;` as the prepared statement. Ensure you add a rule in change node:
    - `msg.params.$recipe_id` to `msg.payload.recipe_id`
