@@ -207,15 +207,15 @@ Use the following flow to quickly set up your SQLite database. It creates a reci
 [{"id":"d248b8387940a5bc","type":"group","z":"295d40790bd21f48","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["b9693cc84311ae8e","e7619cfe7c7fdaa9","f9e35c9c3b213d47","c719f2b43aef7d44","69a914bb0479925c","bb3da75dcf2b4cdd"],"x":54,"y":79,"w":752,"h":162},{"id":"b9693cc84311ae8e","type":"sqlite","z":"295d40790bd21f48","g":"d248b8387940a5bc","mydb":"5e345bf74f08f47c","sqlquery":"fixed","sql":"CREATE TABLE IF NOT EXISTS recipes (\n    recipe_id TEXT PRIMARY KEY NOT NULL,          -- Unique internal identifier (e.g., 'PX-BLEND-V3')\n    product_name TEXT NOT NULL,                   -- Human-readable product name (e.g., 'Premium Polymer Blend')\n    version_no TEXT NOT NULL,                     -- Recipe version (e.g., '3.1', 'A-Rev')\n    target_temperature_c REAL NOT NULL,           -- Target temperature in Celsius\n    mixing_speed_rpm INTEGER NOT NULL,            -- Mixing speed in Revolutions Per Minute\n    pressure_bar REAL,                            -- Pressure in Bar (more common than PSI in many regions)\n    material_a_kg REAL NOT NULL,                  -- Quantity of main material A in kilograms\n    material_b_kg REAL,                           -- Quantity of secondary material B in kilograms (optional for some recipes)\n    catalyst_ml REAL,                             -- Quantity of catalyst in milliliters (specific additive)\n    hold_time_min INTEGER NOT NULL,               -- Hold time in minutes at target temperature\n    description TEXT,                             -- Optional notes about the recipe\n    created_date TEXT NOT NULL                    -- Date recipe was created/last updated (ISO format)\n);","name":"","x":470,"y":120,"wires":[["f9e35c9c3b213d47"]]},{"id":"e7619cfe7c7fdaa9","type":"inject","z":"295d40790bd21f48","g":"d248b8387940a5bc","name":"Create Recipe table","props":[],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":200,"y":120,"wires":[["b9693cc84311ae8e"]]},{"id":"f9e35c9c3b213d47","type":"debug","z":"295d40790bd21f48","g":"d248b8387940a5bc","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":700,"y":120,"wires":[]},{"id":"c719f2b43aef7d44","type":"sqlite","z":"295d40790bd21f48","g":"d248b8387940a5bc","mydb":"5e345bf74f08f47c","sqlquery":"fixed","sql":"INSERT INTO recipes (recipe_id, product_name, version_no, target_temperature_c, mixing_speed_rpm, pressure_bar, material_a_kg, material_b_kg, catalyst_ml, hold_time_min, description, created_date)\nVALUES\n('POLY_BLEND_V3.1', 'Advanced Polymer Resin', '3.1', 195.0, 850, 1.5, 1250.0, 450.0, 15.0, 60, 'Improved tensile strength for injection molding. Requires high shear.', '2025-01-10'),\n('COATING_ECO_V1.2', 'Eco-Shield Protective Coating', '1.2', 110.0, 320, 0.8, 800.0, 200.0, 5.0, 30, 'Low VOC formulation, quick dry time. Mix gently.', '2024-11-22'),\n('ADHESIVE_FAST_CURE', 'Industrial Adhesive X-500', '1.0', 70.0, 550, 2.1, 300.0, 120.0, 10.0, 15, 'Fast-curing formulation for rapid assembly. Must maintain precise temperature.', '2025-03-01'),\n('FOOD_LIQUID_PURE', 'PureBev Beverage Base', '2.0', 85.0, 180, 0.5, 2000.0, 500.0, NULL, 45, 'Food-grade liquid base. Ensure sterile conditions. No catalyst used.', '2025-02-15'),\n('PHARMA_API_MIX', 'API Compound Blend Alpha', '1.0', 45.0, 400, 1.2, 50.0, 25.0, 2.0, 90, 'Active Pharmaceutical Ingredient blend. Temperature sensitive. Strict hold time.', '2025-04-05');","name":"","x":470,"y":200,"wires":[["bb3da75dcf2b4cdd"]]},{"id":"69a914bb0479925c","type":"inject","z":"295d40790bd21f48","g":"d248b8387940a5bc","name":"Populate Demo Recipes","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":210,"y":200,"wires":[["c719f2b43aef7d44"]]},{"id":"bb3da75dcf2b4cdd","type":"debug","z":"295d40790bd21f48","g":"d248b8387940a5bc","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":700,"y":200,"wires":[]},{"id":"5e345bf74f08f47c","type":"sqlitedb","db":"/tmp/sqlite","mode":"RWC"}]
 {% endrenderFlow %}
 
-### Initial Setup: Populate Dropdown and Define Form Structure**
+### Initial Setup: Populate Dropdown and Define Form Structure
 
-This flow segment runs when your dashboard page loads. It queries your recipes and then dynamically defines both the **ui_dropdown's** options and the **ui_form's** structure.
+We want this flow to run when our dashboard page loads. It queries your exiting recipes and then dynamically defines both the **ui-dropdown's** options and the **ui-form's** structure.
 
-1. Drag a **ui_event** node onto the canvas. This node triggers when the dashboard page loads.
+1. Drag an Event node onto the canvas. This node send a message when the dashboard page loads.
 
-2. Connect the **ui_event** node to an **sqlite** node. Configure it to connect to your SQLite database, set SQL Query to fixed, and enter `SELECT recipe_id FROM recipes;` as the query. Ensure Return Output is set to a "parsed JSON object".
+2. Connect the **ui-event** node to an **sqlite** node. Configure it to connect to your SQLite database, set SQL Query to fixed, and enter `SELECT recipe_id FROM recipes;` as the query. Ensure Return Output is set to a "Parsed JSON Object".
 
-3. Connect the **sqlite** node's output to a **function** node. Name it "Generate Form & Dropdown Definition". In this function, you will write JavaScript to dynamically create the form's elements and populate the dropdown options. Set the function to have 2 outputs.
+3. Connect the **sqlite** node's output to a new **function** node. Name it "Generate Form & Dropdown Definition". In this function, you will write JavaScript to dynamically create the form's elements and populate the dropdown options. Set the function to have 2 outputs.
 
 ```javascript
 // msg.payload contains the recipe_id and recipe_name from SQLite query.
@@ -253,17 +253,17 @@ let msg2 = { ui_update: { options: formElements } };
 return [msg1, msg2]; // Send two separate messages
 ```
 
-4. Drag a **ui_dropdown** node onto the canvas. Configure its dashboard group and label (Select Recipe ID:). Ensure its "Options" list is empty, as it will be populated dynamically. Connect the first output of the "Generate Form & Dropdown Definition" **function** to the input of this **ui_dropdown** node.
+4. Drag a **ui-dropdown** node onto the canvas. Configure its dashboard group and label (Select Recipe ID:). Ensure its "Options" list is empty, as it will be populated dynamically. Connect the first output of the "Generate Form & Dropdown Definition" **function** to the input of this **ui_dropdown** node.
 
-5. Drag a **ui_form** widget onto the canvas. Configure its dashboard group and label (Recipe Parameters). Crucially, leave its "Options" list completely empty in its properties. Set the "Submit" button text to Apply and "Cancel" to Clear.  Connect the second output of the "Generate Form & Dropdown Definition" **function** to the input of this **ui_form** node.
+5. Drag a **ui-form** widget onto the canvas. Configure its dashboard group and label (Recipe Parameters). Crucially, leave its "Options" list completely empty in its properties. Set the "Submit" button text to Apply and "Cancel" to Clear.  Connect the second output of the "Generate Form & Dropdown Definition" **function** to the input of this **ui-form** node.
 
 6. Deploy your flow and open the dashboard. You should now see your form with the "Select Recipe" dropdown populated.
 
-### Populate Form on Recipe Selection**
+### Populate Form on Recipe Selection
 
-This flow segment pre-fills the ui_form with recipe details when an operator selects a recipe from the dropdown.
+This flow segment pre-fills the form with recipe details when an operator selects a recipe from the dropdown.
 
-1. Connect the output of your **ui_dropdown** node (from Step 2). This output will carry the selected recipe_id in `msg.payload`.
+1. Connect the output of your dropdown node (from Step 2). This output will carry the selected `recipe_id` in `msg.payload`.
 
 2. Connect the **ui_dropdown** output to a **change** node. Name it Set Params & Flow Context. Set `msg.params.$recipe_id` to `msg.payload` and `flow.selected_recipe_id` to `msg.payload`.
 
