@@ -42,7 +42,6 @@ Key Metrics to include:
    * End of Quarter Projections
       * Sales Led CARR (Closed & Goal)
       * (Self-Serve MRR * 12) aka Self-Serve ARR
-      * Note: We used to also report on Service TTM Bookings, but we won't going forward.
 * Deal Board for the Quarter (Pipeline broken down by stages)
    * Discovery
    * Diagnose 
