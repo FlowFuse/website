@@ -22,8 +22,6 @@ Please also read the
 [Company Mission](/handbook/company/strategy/#flowfuse%27s-mission) before
 diving into the messaging.
 
-[Who we are]() ....
-
 ## Audience
 
 FlowFuse is a business to business (B2B) company in the industrial markets to
