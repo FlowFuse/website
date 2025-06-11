@@ -22,8 +22,6 @@ Please also read the
 [Company Mission](/handbook/company/strategy/#flowfuse%27s-mission) before
 diving into the messaging.
 
-[Who we are]() ....
-
 ## Audience
 
 FlowFuse is a business to business (B2B) company in the industrial markets to
@@ -78,6 +76,8 @@ messaging around the value of FlowFuse, but be aware of other value (e.g. the
 pure value of Node-RED) which can still be factored into the conversation.
 
 ## Messaging
+
+FlowFuse is an Industrial application platform.
 
 ### Tagline
 

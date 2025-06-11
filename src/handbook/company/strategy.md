@@ -5,6 +5,8 @@ meta:
 
 # Strategy
 
+FlowFuse is an Industrial application platform.
+
 ## Core Values
 
 Please see our [company values](/handbook/company/values/).
