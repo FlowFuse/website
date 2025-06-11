@@ -18,6 +18,8 @@ Before you can take time off you should _always_:
 * Add an event to the shared 'FlowFuse Team Events' calendar showing all the days you will not be working. This makes it easier for our team to understand who is going to be away each week.
 * Inform fellow team members of your time off, and hand over work that's distributed.
 
+PTO requests in Deel will be routed to your manager.
+
 ## Holiday Policy
 
 FlowFuse has a unlimited time off policy. Taking vacation is encouraged for all
@@ -43,7 +45,7 @@ If you live in a country where a statutory Parental Leave benefit is available,
 you will be required to claim statutory Parental Leave pay (if you are eligible).
 
 Any employee can take up to 6-weeks if they wish without requiring manager
-approval. We recommend a minimum of 4 weeks, but recognise it's a personal
+approval. We recommend a minimum of 4 weeks, but recognize it's a personal
 choice to make. Further leave can be requested, but should be discussed with
 your manager. Inform your manager of the expected new family member at least 16
 weeks before the due date to qualify for the extended parental leave.
