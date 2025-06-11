@@ -3,6 +3,8 @@ navTitle: Account Executive
 navGroup: Job Descriptions
 ---
 
+# Account Executive
+
 ## Job Description
 We are seeking a highly motivated, driven, and self-sufficient Account Executive (a "Sales Explorer") to join our team and drive growth in the local region. In this early-stage growth opportunity, you will be responsible for identifying and closing new business opportunities, building strong customer relationships, and contributing to the overall success of FlowFuse. This role requires someone who can build pipeline, refine messaging, and optimize our sales motion based on real conversations, demonstrating a willingness to experiment and a comfort level with ambiguity.
 
