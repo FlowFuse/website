@@ -28,6 +28,8 @@ The 90 minutes of each meeting are structured in the following time blocks:
 * 60 minutes Strategic Discussion - In the Strategic Discussion portion, we will focus on one or two (but no more) key topics of focus for the business for discussion. Prior context is shared through the prewatch.
 * 15 minutes "Any other business" - Providing an open forum for board members and observers to raise additional topics, propose motions, or conduct votes, such as those related to stock options or other pertinent matters. It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
 
+It is the CEO's responsibility to manage time in the meeting. 
+
 ### Board Deck
 
 FlowFuse provides a board deck with high level business overview items, the inspiration for slides is [taken from this template](https://www.slideshare.net/slideshow/senovo-board-meeting-template/128164697). The template is updated to fit the FlowFuse business. 
