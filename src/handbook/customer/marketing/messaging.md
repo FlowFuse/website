@@ -77,6 +77,8 @@ pure value of Node-RED) which can still be factored into the conversation.
 
 ## Messaging
 
+FlowFuse is an Industrial application platform.
+
 ### Tagline
 
 {{ site.messaging.tagLine }}
