@@ -4,71 +4,48 @@ navGroup: Job Descriptions
 ---
 
 ## Job Description
-We are seeking a highly motivated, driven, and self-sufficient Account Executive (a "Sales Explorer") to join our team and drive growth in the local region. In this early-stage growth opportunity, you will be responsible for identifying and closing new business opportunities, building strong customer relationships, and contributing to the overall success of FlowFuse. This role requires someone who can build pipeline, refine messaging, and optimize our sales motion based on real conversations, demonstrating a willingness to experiment and a comfort level with ambiguity.
+At FlowFuse, an Engineering Manager is not just a lead to our team of engineers, but also someone who can not only contribute to our codebase but also guide our engineering team to higher performance and faster innovation.
 
-* Expand FlowFuse's customer base and revenue in the regional market, targeting key accounts using an Account-Based Marketing (ABM) approach.
-* Identify and engage new prospects, and drive deals from initial contact to close.
-* Test and refine our sales motion to optimize effectiveness in the regional market.
-* Generate pipeline through proactive prospecting and creative outreach, going beyond traditional cold emails.
-* Effectively communicate the value proposition of FlowFuse to both technical and business stakeholders.
-* Collaborate cross-functionally with marketing, product, and customer success to align on go-to-market strategy.
-* Gather and communicate market feedback to inform product development and sales enablement.
+We believe in running our engineering team like a sports team. You'll be responsible for fostering a culture of high performance, continuous improvement, and a relentless drive to win.
+
+As an Engineering Manager, you'll be shaping our engineering culture and driving the execution of our product roadmap. You will:
+* **Coach and Develop Your Team**: You'll be responsible for the growth and development of your engineers. This includes conducting regular one-on-ones, providing constructive feedback, identifying areas for improvement, managing performance, and creating opportunities for career advancement. You'll know your team's strengths and weaknesses and how to best utilize their talents.
+* **Drive Performance and Velocity**: You’ll do whatever is in your power to increase team performance and velocity. You'll establish clear goals and metrics, track progress, and implement strategies to help the team move faster and more efficiently without sacrificing quality. You will analyze the team's current performance, identify bottlenecks, and implement solutions to optimize our development processes.
+* **Build a Winning Culture**: You will cultivate a high-performance, results-oriented environment. This means fostering a sense of ownership, accountability, and a shared commitment to our goals.
+* **Strategize and Execute**: You'll work closely with other stakeholders to translate business objectives into a clear technical roadmap. You will be responsible for the successful and timely delivery of user-valuable software.
+* **Lead from the Front**: You're not afraid to get your hands dirty. You'll be expected to contribute to the codebase, conduct code reviews, and provide technical guidance to the team. Your technical expertise will be crucial in making architectural decisions and solving our most challenging problems.
 
 ## Skills
-* Startup Sales DNA: Experience working in an early-stage company (or have the mindset to thrive in one). Embraces ambiguity, iteration, and autonomy.
-* Full-Cycle Sales Experience: Proven experience selling B2B SaaS or enterprise technology and navigating complex sales cycles with multiple stakeholders.
-* Curiosity & Adaptability: A passion for testing new approaches, learning from data, and evolving sales strategies to match market needs.
-* Creative Prospecting Skills: Ability to go beyond cold emails and find innovative ways to connect with buyers.
-* Communication Skills: Excellent verbal and written communication skills with the ability to present complex information clearly.   
-* Technical Acumen: Comfortable understanding and explaining technical solutions such as Node-RED, industrial automation, IoT, or DevOps tooling.
-* Cultural Awareness: Strong understanding of cultural nuances and business practices within the region.
-* Familiarity with AI tools to enhance sales processes is a plus.
-* A strong attitude match with the existing team is critical, as is experience managing both inbound leads and creating outbound strategies.
+To be successful in this role, you'll need a blend of technical prowess and leadership skills. You should bring to the table:
+
+* **A Proven Engineer**: You have a strong background in software development and an understanding of modern technologies and best practices. You are proficient in Node.JS, understand Node-RED and its ecosystem, VueJS, and modern DevOps tooling.
+* **A Growth-Oriented Leader**: You have startup experience, and a track record of building and scaling high-performing engineering teams.
+* **A Performance-Driven Mindset**: You are data-driven and have experience implementing and tracking metrics to improve team performance. You're constantly looking for ways to optimize processes and increase efficiency.
+* **An Excellent Communicator**: You can clearly articulate technical concepts to both technical and non-technical audiences. You are a great listener and can build strong relationships with your team and other stakeholders.
+* **A "Sports Team" Captain**: You understand the dynamics of a high-performing team. You know how to foster collaboration, healthy competition, and a shared will to win. You lead by example and inspire your team to perform at their best.
 
 ## 90-Day Plan:
 
-* Week 1-4:
-   * Immerse yourself in FlowFuse’s product, strategy, and market with a focus on enterprise-readiness, applications on the edge, and enhanced integration capabilities.
-   * By week 2, you should be driving sales pitches with a supportive shadow.
-   * Familiarize yourself with the Node-RED ecosystem, competitive landscape, and specific regional market dynamics.
-   * Meet with key stakeholders across sales, marketing, product, and customer success.
-   * Review existing sales materials and processes, and roll out iterative improvements.
-* Week 5-8:
-   * Develop a deep understanding of our target customer personas and their specific needs within the region.
-   * Begin refining key messaging and positioning for FlowFuse in the regional market.
-   * Start building pipeline through proactive prospecting and outreach.
-   * Analyze initial sales activity and identify key metrics for tracking success.
-* Week 9-13:
-   * Actively manage and progress sales opportunities.
-   * Refine and iterate on sales strategies and playbooks based on market feedback and results.
-   * Collaborate with marketing to develop targeted campaigns for the regional market.
-   * Provide feedback to the product team on market needs and requirements.
-
-## EMEA Specific information
-* Expand FlowFuse's customer base and revenue in the EMEA market, targeting key accounts using an Account-Based Marketing (ABM) approach.
-* Test and refine our sales motion to optimize effectiveness in the EMEA market.
-* Multilingual & Culturally Fluent (Bonus): Fluency in French, German, or another European language is a significant plus.
-
-## US Specific information
-* Expand FlowFuse's customer base and revenue in the US market, targeting key accounts using an Account-Based Marketing (ABM) approach.
-* Test and refine our sales motion to optimize effectiveness in the US market.
-* Multilingual & Culturally Fluent (Bonus): Fluency in Spanish language is a significant plus.
+* Week 1-4: Immerse & Understand
+   * Familiarize yourself with FlowFuse's product vision, engineering strategy, and current roadmap.
+   * Conduct initial one-on-ones with all direct reports, setting up regular cadences for feedback and development. Get to know your team, understand their strengths, career aspirations, and current projects. 
+   * Review existing engineering processes, tools, and codebase to identify initial areas of opportunity.
+   * Meet with key stakeholders across product, sales, and leadership to understand their expectations and challenges related to engineering.
+* Week 5-8: Assess and Plan
+   * Begin to analyze team performance metrics and identify potential bottlenecks or areas for improvement in velocity and quality. Set goals for expected improvements.
+   * Collaborate with product and other engineering leads to refine the immediate technical roadmap and priorities.
+   * Start contributing to the codebase through code reviews and tackling a minor feature or bug fix to understand the developer workflow.
+   * Implement initial process improvements to increase team efficiency and output.
+   * Begin to define and track key performance indicators (KPIs) for your team, regularly reviewing progress.
+* Week 9-13: Execute and Optimize
+   * Lead the planning and execution of a significant feature or project, demonstrating effective project management and technical leadership.
+   * Identify and start addressing any performance management or development needs within the team, creating individual growth plans.
+   * Develop plan to drive 20% throughput improvement in engineering org, leveraging AI and other tools to get there in the next 90 days. 
 
 ## Hiring Plan:
 * Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
-* First Interview: Conduct a phone or video interview to further evaluate candidate skills, experience, and cultural fit.
-* Second Interview: In-depth interview with the hiring manager and other team members to discuss specific experience, skills, and how the candidate aligns with the product strategy and pillars.
-* STAR interview - Behaviour interview to understand if there’s value alignment.
-* Assessment/Presentation: May require a work sample, case study, or presentation to demonstrate the candidate's abilities. 
-* Final Interview: A final interview with key stakeholders.
+* First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
+* Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
+* Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample. 
+* STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
 * Offer: Extend an offer to the selected candidate.
-
-### Assessment
-
-Prepare a 10-minute discovery + pitch presentation to a hypothetical industrial automation prospect who is evaluating options for managing hundreds of Node-RED instances across many remote sites. Assume the audience includes an OT leader and an IT architect. Your goal is to identify key pain points and position FlowFuse’s value. Please spend no more than 90 minutes on this task.
-What are we looking for?
-* Messaging skills
-* Ability to tailor pitch to personas
-* Business acumen
-* Clarity
-* Storytelling
