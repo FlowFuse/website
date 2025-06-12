@@ -7,11 +7,13 @@ authors: ["sumit-shinde"]
 image:
 keywords: MES, Data Acquisition, Operational Technology, Industrial IoT, FlowFuse, Factory Data, Real-time Data, PLCs, SCADA, OPC UA, Modbus, MQTT
 tags:
-  - flowfuse
-  - mes
+   - flowfuse
+   - mes
 ---
 
 A Manufacturing Execution System (MES) should act as the central command system for your factory. To be effective, it requires a constant flow of high-quality, real-time information from the shop floor. This data is fundamental to your entire operation. However, for most factories, the biggest challenge in improving their operations is simply getting this data from the machines to the MES.
+
+<!--more-->
 
 This article dives into the data that fuels your MES and the complex web of sources it comes from. We'll explore the core challenge that keeps this data locked away in silos. Most importantly, we’ll show how **FlowFuse** acts as the catalyst to liberate this data, empowering you to get the right information to your MES, exactly when and where you need it most.
 
