@@ -39,17 +39,31 @@ Key Metrics to include:
    * Current ARR 
       * Sales Led CARR
       * (Self-Serve MRR * 12) aka Self-Serve ARR
-      * Services TTM Bookings
    * Current YoY Growth
    * End of Quarter Projections
       * Sales Led CARR (Closed & Goal)
       * (Self-Serve MRR * 12) aka Self-Serve ARR
+   * Churned revenue
+* Customers
+   * Total Subscriptions
+     * New Subscriptions
+     * Renewed Subscriptions
+     * Churned
+     * Upsell/Upgrade
+     * Downsell/Downgrade
+* Company
+   * Runway in $
+   * Runway in time
+   * Cash Burned, planned vs actual
+   * Cash on hand, planned vs actual
+   * Headcount, planned vs actual
 * Deal Board for the Quarter (Pipeline broken down by stages)
    * Discovery
    * Diagnose 
    * Solution
    * Closing/Committing
    * Closed Won
+   * Also, Key Deals Highlights
 * Product Metrics:
    * Managed NR Runtimes, including self-hosted
    * Self-hosted platforms reported via telemetry
