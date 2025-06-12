@@ -1,3 +1,4 @@
+---
 title: "MES: Acquiring Operational Data"
 subtitle: Getting Your Factory Data to Your MES
 description: Learn how to effectively acquire and integrate operational data from your factory floor for MES using FlowFuse.
