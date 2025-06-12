@@ -3,3 +3,8 @@
   buttonText: "Register now"
   link: "/webinars/2025/node-red-why-and-when-for-cloud-and-edge/"
   expire: "2025-06-25T16:00:00Z"
+- type: "Conference"
+  title: "Node-RED Con 2025 is here! - A Community Conference on Industrial Applications"
+  buttonText: "Learn More"
+  link: "/blog/2025/06/announcing-node-red-con-2025/"
+  expire: "2025-07-21T16:00:00Z"
