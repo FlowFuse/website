@@ -57,7 +57,7 @@ Important Note: Verbal agreements, informal emails, or other non-binding express
 
 ### Steps
 
-1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
+1. [Start subscription and invoice procedures](/handbook/operations/billing/#creating-a-subscription)
 1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
