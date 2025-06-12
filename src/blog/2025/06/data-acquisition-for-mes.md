@@ -1,5 +1,5 @@
 ---
-title: "MES: Acquiring Operational Data"
+title: "MES Data Acquisition: How to Unlock Your Factory’s Hidden Data"
 subtitle: Getting Your Factory Data to Your MES
 description: Learn how to effectively acquire and integrate operational data from your factory floor for MES using FlowFuse.
 date: 2025-06-13
@@ -17,51 +17,44 @@ A Manufacturing Execution System (MES) should act as the central command system 
 
 This article dives into the data that fuels your MES and the complex web of sources it comes from. We'll explore the core challenge that keeps this data locked away in silos. Most importantly, we’ll show how **FlowFuse** acts as the catalyst to liberate this data, empowering you to get the right information to your MES, exactly when and where you need it most.
 
-## The Data That Defines Operational Excellence
+## The Operational Data Your MES Need
 
-For your MES to be an effective command center, it needs to see every critical detail of your factory's activity. This isn't just raw data; it's the very anatomy of your operational performance. This includes:
+For a factory's main computer system (the MES) to do its job, it needs a constant stream of information. Think of it like a control room that needs to see everything at once. This information can be grouped into four main types:
 
-* **Production Data:** The fundamental metrics of output. This covers `Production Counts` (how many items were made), `Cycle Times` (how long each item takes), and `Scrap/Defect Counts`.
-* **Machine & Process Data:** The real-time heartbeat of your equipment. This includes `Machine Status` (running, stopped, faulted), critical `Process Parameters` (temperature, pressure, speed), and `Energy Consumption`.
-* **Contextual & Quality Data:** The information that adds meaning and ensures standards are met. This involves `Downtime Reason Codes`, operator `Labor Tracking`, and vital `Quality Inspection Results`.
-* **Material & Traceability Data:** The data that provides a complete product story. This tracks `Material Consumption`, `Lot Numbers`, and full product `Genealogy` from raw materials to finished goods.
+* **Production Information:** This tells the system how much is being made, how fast it's being made, and if any products had to be thrown out. It's the basic "are we winning?" data.
 
-When this steady, contextualized flow of information feeds your MES, it transforms from a simple tracking system into a powerful predictive and planning tool, enabling you to anticipate issues and keep your operations running at peak performance.
+* **Machine Information:** This is like a live health report for your equipment. It tells the system if a machine is running or stopped, what its settings are (like temperature or speed), and how much power it's using.
 
-## The Sources and Movement of Your Operational Data
+* **Context and Quality Information:** This data adds the "why." It tells the system who is working, why a machine stopped, and if the products being made are good enough to sell.
+
+* **Material Information:** This tells the full story of a product. It tracks all the raw materials and parts from start to finish, so you know exactly what went into every single item.
+
+Once the system gets all this information, it does more than just track numbers. It becomes the factory's control center. It gives workers step-by-step instructions on their screens, makes sure rules are followed to prevent mistakes, and lets managers see exactly what’s happening everywhere so they can fix small problems before they become big ones.
+
+## The Origins Of Your Operational Data
 
 This critical operational data doesn't live in one place; it's generated across a diverse and complex digital ecosystem.
 
 A vast amount comes directly from shop floor equipment—the PLCs that orchestrate your machines, the thousands of sensors measuring every variable, and the Historians that diligently archive past performance. Then you have your core business systems. The ERP provides the what and why through production orders, while Quality (QCS) and Maintenance (CMMS) systems add essential layers of inspection and machine health data.
 
-Finally, and most critically, is the human element. An operator provides the irreplaceable context—explaining why a machine stopped or confirming a quality check—that turns raw numbers into actionable intelligence.
-
 Each of these sources speaks its own digital language. A single factory floor is a cacophony of `Modbus`, `OPC UA`, `EtherNet/IP`, and `MQTT`, etc all running simultaneously. This mix of protocols defines the communication architecture of the operation.
 
 To better understand the data involved, its sources, and the common protocols used, let's look at a detailed breakdown:
 
-| Data Source/System | What Type of Data It Captures | Common Ways Data Is Exchanged (Protocols/Methods) |
-|---|---|---|
-| **PLCs (Machine Controllers)** | Machine status (on/off, fault), current measurements (temp, pressure, flow), control settings, counts of items made, alarms. | Modbus, PROFINET, EtherNet/IP, OPC UA, Proprietary protocols. |
-| **Sensors (Field Devices)** | Raw measurements (temp, humidity, pressure, vibration), environmental data, basic quality checks (e.g., presence, absence). | Analog/Digital signals, IO-Link, HART, Wireless (LoRaWAN, Wi-Fi), Modbus. |
-| **SCADAs** | Real-time plant status, operator actions (starting/stopping batches, recipe changes), recent trends, acknowledged alarms. | OPC Classic/UA, DNP3, Modbus TCP, EtherNet/IP, Specific APIs. |
-| **Historians (Data Archives)** | All recorded historical machine data, event logs, detailed records of past production runs for long-term analysis. | OPC HDA/UA, SQL (database queries), ODBC, MQTT, Specific APIs. |
-| **ERP (Enterprise Resource Planning)** | Production orders, Bill of Materials (what materials are needed), current inventory, material availability, customer orders, product details. | SQL (database queries), HTTP APIs (REST/SOAP), SAP iDocs. |
-| **Manual Input (Operators/Quality Personnel)** | Why machines stopped (downtime reasons), detailed quality inspection results (e.g., defect type, severity), material lot numbers used, start/end times for tasks, shift notes. | HMI screens, Manual entry terminals, Barcode scanners, (Data often stored/transferred via SQL or HTTP APIs). |
-| **Quality Control Systems (QCS)** | Comprehensive quality test results, statistical process control (SPC) data, lab results (LIMS). | SQL (database queries), HTTP APIs. |
-| **Maintenance Management Systems (CMMS/EAM)** | Machine fault codes, maintenance schedules, work order status, repair history, spare parts usage. | SQL (database queries), HTTP APIs. |
+![A table showing the four main categories of data MES need](./images/industrial-data-landscape.png){data-zoomable}
+_A table showing the four main categories of data MES need_
 
-## The Core Challenge of Data Silos
+## Why It's So Difficult, Slow, and Costly to Access
 
 You know what data you need and where it is. The fundamental question is: can you actually get it from your machines and deliver it to your MES?
 
 This is the central struggle where real-time decisions get delayed, opportunities are lost, and innovation is stifled. Your most valuable data is trapped. Because your factory’s systems don’t speak the same digital language, data is locked away in "silos," inaccessible and unusable. This isn't a technical inconvenience; it's a critical business problem.
 
-Every new piece of equipment demands expensive, custom-coded integrations that are fragile and brittle. This creates a chaotic patchwork of data connections, leaving you with a fragmented view of your operation instead of the unified picture you need to make intelligent decisions. How can you optimize a factory you can’t fully see?
+Every new piece of equipment demands expensive, custom-coded integrations that are fragile and brittle. This necessitates a constant reliance on specialized programmers, driving up operational costs significantly. The result is a chaotic patchwork of inconsistent data flows, leaving you with a fragmented view of your operation instead of the unified intelligence you desperately need to make swift, informed decisions. This isn't just inefficient; it actively sabotages your agility, cripples your ability to innovate, and fundamentally undermines your competitive advantage.
 
 ## Orchestrate Your Factory's Data Flow with FlowFuse
 
-t's frustrating to know the data is there but be unable to reach it. FlowFuse was built to solve this exact problem by acting as a data acquisition layer for your factory. It creates reliable pathways for information to get from your various machines and systems directly to your MES.
+It's frustrating to know the data is there but be unable to reach it. FlowFuse was built to solve this exact problem by acting as a data acquisition layer for your factory. It creates reliable pathways for information to get from your various machines and systems directly to your MES.
 
 The power of FlowFuse lies in its foundation on the vast Node-RED ecosystem. This gives you immediate access to a library of over 5,000 pre-built connectors, or "nodes" ready to communicate with a massive array of industrial protocols. This eliminates the need for expensive, time-consuming custom code. The library includes robust nodes for standards like Modbus, OPC UA, and MQTT, as well as for specific controllers from Siemens, Mitsubishi, Omron, and more.
 
@@ -106,4 +99,4 @@ This is precisely where FlowFuse shines. It acts as the universal translator, br
 
 Once that live data starts moving, your MES becomes exponentially more powerful—helping you spot problems faster, plan smarter, and run your operations with confidence.
 
-[Let’s talk about how we can unlock your factory's data, together.](/contact-us/)
+Want to see it in action? [Book a live demo](/book-demo/) and watch FlowFuse unlock your factory data—no custom code required.
