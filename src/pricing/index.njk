@@ -11,9 +11,6 @@ meta:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
           answer: >
             Yes, Team customers on an annual subscription receive a 20% discount off of the monthly subscription price. Please reach out to request the discount. Please <a href="/contact-us/">reach out</a> to request the discount.
-        - question: "Why is self-hosted the same price as cloud?"
-          answer: >
-            Self-hosted environments require more support and configuration than FlowFuse Cloud, which offset any resources saved.
         - question: "Are flat-fee or site-wide licenses available?"
           answer: >
             It is not possible at this time to purchase an unlimited-use license, but contact us to discuss pricing for your unique use case.
@@ -61,43 +58,7 @@ hubspot:
             <!-- Plans -->
             <!-- Cloud -->
             <div class="contentCloud m-auto transition duration-1000 md:min-h-[502px]">
-                <div class="pricing-tiles flex flex-col md:grid md:max-lg:grid-cols-2 lg:max-w-screen-2xl mt-4 md:mt-0">
-                    <!-- Free -->
-                    <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Free</h4>
-                                    </div>
-                                    <p class="mt-7">For edge device management. Free to you.</p>
-                                </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-semibold">2 remote instances, and includes:
-                                    </note>
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>1 Team member</li>
-                                        <li>Device auto snapshots</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
-                                    <div class="text-left flex flex-row md:self-end">
-                                        <div class="mr-1">
-                                            <h2 class="self-end pb-1">
-                                                Free
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.appURL }}/account/create"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-free'})">GET STARTED</a>
-                        </div>
-                    </div>
+                <div class="pricing-tiles flex flex-col md:grid md:max-lg lg:max-w-screen-xl mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
                         <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
@@ -106,14 +67,14 @@ hubspot:
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Starter</h4>
                                     </div>
-                                    <p class="mt-7"><span class="inline font-normal">For smaller-scale applications. </span>The fastest, easiest way to host <span class="inline-block">Node-RED</span> instances.</p>
+                                    <p class="mt-7">Get started with <span class="inline font-normal">AI-enhanced </span><span class="inline-block font-normal">Node-RED</span> in the cloud.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
                                     <note class="font-semibold">Starts at 2 hosted instances, 2 remote instances, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
+                                        <li>AI Node-RED features</li>
                                         <li>2 Team members</li>
-                                        <li>Device management</li>
                                         <li>Device Auto Snapshots</li>
                                         <li>Blueprints</li>
                                         <li>Option to upgrade up to 3 hosted/3 remote instances</li>
@@ -152,13 +113,13 @@ hubspot:
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
                                         <h4 style="display:inline-block;">Team</h4>
                                     </div>
-                                    <p class="mt-7">Empower your <span class="inline font-normal">Node-RED developer
-                                            teams</span> with the collaborative features of FlowFuse{% if cloud %} Cloud.{% else %}.{% endif %}</p>
+                                    <p class="mt-7"><span class="inline font-normal">Build bespoke applications collaboratively</span>, empower developer teams in your organization or small business.</p>
                                 </div>
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
                                     <note class="font-semibold">Starts at {% if cloud %}5{% else %}10{% endif %} hosted instances or remote instances, and includes:
                                     </note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
+                                        <li>AI Node-RED features</li>
                                         <li>20 Team members</li>
                                         <li>Team collaboration</li>
                                         <li>MQTT Broker (8 clients to start)</li>
@@ -214,6 +175,7 @@ hubspot:
                                 <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
                                     <note class="font-semibold">Starts at 20 hosted instances or remote instances, and includes:</note>
                                     <ul class="ff-checklist font-light leading-7 mt-2">
+                                        <li>AI Node-RED features</li>
                                         <li>Unlimited team members</li>
                                         <li>Single Sign-On</li>
                                         {% if cloud %}
@@ -245,9 +207,9 @@ hubspot:
                     {{ enterprise() }}
                 </div>
             </div>
-            <!-- Self-hosted -->
+            <!-- Self-Hosted -->
             <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[502px]">
-                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-sm mt-4 md:mt-0">
+                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-md mt-4 md:mt-0">
                     <!-- Team -->
                     <div class="pricing-tile md:h-full">
                         {{ team(false) }}

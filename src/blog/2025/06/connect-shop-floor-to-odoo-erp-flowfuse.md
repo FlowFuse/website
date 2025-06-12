@@ -1,5 +1,5 @@
 ---
-title: "Connects Your Shop Floor to Your ERP – Odoo Edition"
+title: "Connect Your Shop Floor to Your ERP – Odoo Edition"
 subtitle: Transform your operations by bringing real-time shop floor data directly into your ERP
 description: Learn how FlowFuse connects your factory floor data directly to Odoo, eliminating manual entry, errors, and wasted time. 
 date: 2025-06-02

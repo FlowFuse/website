@@ -14,7 +14,7 @@ Self-hosted FlowFuse installations require a minumum of 10 instances per locatio
 
 Clearly written, easy to understand quotes are crucial for customers to understand what they are purchasing and how much it costs. To create a quote, combine the (1) product plan and (2) other purchased items according to the following guide.
 
-**What to Quote**
+### What to Quote
 
 When preparing a quote, include both the plan and any extras that go beyond what comes with the plan at the designated tier. Include a note in the Terms section that indicates what comes with the plan. (This will be pre-filled when using one of the HubSpot quote templates). The product plan will be listed as its own line, with a quantity of 1, and the minimum purchase price for that plan. The add-on options should also be added to the product section, as referenced by the purchase term template.
 
@@ -34,10 +34,14 @@ Follow these steps to create a quote.
 1. In HubSpot, open the relevant Deal. In the Quotes area, click Add to begin a new quote.  
 2. Fill in the Buyer Information section. This will pre-fill with the information from the contact in the Deal.  
 3. The default Quote creator will be you. Change this if necessary.  
-4. In the Line Items area, select the appropriate Plan that is being quoted. Set billing to Annual, and adjust fields for Term and discount/fee/tax as needed. Add additional line items only for purchases that exceed features that are included with the Plan.  
-5. Set Signature and Payment settings as needed.  
-6. In the Template and Details section, choose the appropriate Quote Template from the dropdown menu. Choosing the correct Quote Template is important because it will pre-fill the correct plan features onto the quote. You can include additional Comments to Buyer or Purchase Terms here. They will not overwrite the Terms and Comments included with the Quote Template.  
-7. Review your Quote, and when everything is correct, click Create to create the quote attached to the relevant Deal.
+4. Add Line Items per [the instructions](/handbook/customer/sales/engagements/#what-to-quote)
+   * Select the appropriate Plan that is being quoted
+   * For each line item, except Professional Services, check the Billing frequence to `Annual` and if the terms **ensure automatic renewal*
+   * Adjust fields for Term and discount/fee/tax as needed.
+   * Add Add-on line items for purchases that exceed features that are included with the Plan.  
+6. Set Signature and Payment settings as needed. Ensure a countersignature is required from either the CEO or Head of GTM. 
+7. In the Template and Details section, choose the appropriate Quote Template from the dropdown menu. Choosing the correct Quote Template is important because it will pre-fill the correct plan features onto the quote. You can include additional Comments to Buyer or Purchase Terms here. They will not overwrite the Terms and Comments included with the Quote Template.  
+8. Review your Quote, and when everything is correct, click Create to create the quote attached to the relevant Deal.
 
 ## Closing a deal
 
@@ -53,7 +57,7 @@ Important Note: Verbal agreements, informal emails, or other non-binding express
 
 ### Steps
 
-1. [Start invoice procedure](/handbook/operations/billing/#creating-an-invoice)
+1. [Start subscription and invoice procedures](/handbook/operations/billing/#creating-a-subscription)
 1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
    * *Cloud*
       * Ensure a team on FlowFuse Cloud has been set up by the customer
