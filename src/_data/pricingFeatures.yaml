@@ -58,6 +58,18 @@ sections:
         cloudValues: [ '10 MB', '100 MB', '1 GB' ]    
         tags: [ 'cloud' ]
         info: "<p>In-memory values defined in a Node-RED flow will persist across project restarts and upgrades.</p>"
+      - id: live-chat-support
+        label: Live Chat Support
+        cloudValues: [ null, 'check', 'check' ]
+        selfHostedValues: [ null, 'check' ]
+        tags: [ 'cloud', 'self-hosted' ]
+        info:
+      - id: workflow-executions
+        label: Workflow Executions
+        cloudValues: [ 'Unlimited', 'Unlimited', 'Unlimited' ]
+        selfHostedValues: [ 'Unlimited', 'Unlimited' ]
+        tags: [ 'cloud', 'self-hosted' ]
+        info:
   - label: Scale
     rows:
       - id: device-mgmt
@@ -78,7 +90,7 @@ sections:
         info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Team Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
       - id: volume-pricing
         label: Volume Pricing
-        cloudValues: [ null, 'check', 'check' ]
+        cloudValues: [ null, null, 'check' ]
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Scaling to hundreds or thousands of Node-RED instances? <a href='/contact-us'>Contact us</a> for customized volume discounts!</p>"
@@ -100,6 +112,12 @@ sections:
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p><a href='https://github.com/FlowFuse/nr-project-nodes' target='blank'>FlowFuse Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowFuse Projects by default.</p>"
+      - id: private-npm-registry
+        label: Private NPM Registry
+        cloudValues: [ null, 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check' ]
+        tags: [ 'cloud', 'self-hosted' ]
+        info:
       - id: device-groups
         label: Device Group Management
         cloudValues: [ null, null, 'check' ]
@@ -163,7 +181,7 @@ sections:
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowFuse with a single set of login credentials, improving security, user experience, and save them time.</p>"
       - id: hipaa
-        label: BAA for Hipaa
+        label: BAA for HIPAA
         cloudValues: [ null, null, 'check' ]
         selfHostedValues: [ null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
