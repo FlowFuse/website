@@ -24,7 +24,7 @@ Before we start diving into how you can connect your shop floor to ERP, let's fi
 
 This is just a simple example of what FlowFuse can do. But it has much more power! Imagine FlowFuse also checking your production orders (MOs) in your ERP to see what you need to make. It can look at your Bills of Material (BOMs) in your ERP to figure out all the parts required. If it sees you're short on something, it can automatically create purchase orders in your ERP to buy the missing parts. It can even make new manufacturing orders for components you need to build.
 
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/bxVq_8m-GOk?si=r9U6P7YboRpJf4NI&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top: 20px; margin-bottom: 20px;"></iframe>
+<lite-youtube videoid="bxVq_8m-GOk" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 Below is the complete flow for this demo, in case you would like to explore it further or try it out yourself after reading the article
 
