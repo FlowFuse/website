@@ -41,7 +41,7 @@ Each of these sources speaks its own digital language. A single factory floor is
 
 To better understand the data involved, its sources, and the common protocols used, let's look at a detailed breakdown:
 
-![A table showing the four main categories of data MES need](./images/industrial-data-landscape.png){data-zoomable}
+![A table showing the four main categories of data MES need](./images/industrial-data-landscapes.png){data-zoomable}
 _A table showing the four main categories of data MES need_
 
 ## Why It's So Difficult, Slow, and Costly to Access Data
