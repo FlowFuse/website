@@ -44,9 +44,9 @@ To be successful in this role, you'll need a blend of technical prowess and lead
    * Develop plan to drive 20% throughput improvement in engineering org, leveraging AI and other tools to get there in the next 90 days. 
 
 ## Hiring Plan:
-* Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
-* First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
-* Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
-* Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample. 
-* STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
-* Offer: Extend an offer to the selected candidate.
+1. Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
+1. First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
+1. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
+1. Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample. 
+1. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
+1. Offer: Extend an offer to the selected candidate.
