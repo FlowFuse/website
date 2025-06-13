@@ -12,7 +12,7 @@ FlowFuse is an Industrial application platform.
 Please see our [company values](/handbook/company/values/).
 
 ## FlowFuse in one sentence
-FlowFuse helps teams easily build, deploy, and manage automation workflows — through a platform designed for industrial reliability, flexibility, and speed.
+FlowFuse helps teams easily build, deploy, and manage industrial applications — we provide the platform to collect, transform, analyze, vizualize and interact with your industrial data.
 
 ## FlowFuse's Definition
 Built on the simplicity of Node-RED, FlowFuse adds the tools teams need to scale automation workflows with confidence.
