@@ -4,7 +4,7 @@ subtitle: Breaking Down Data Silos to Empower Your MES
 description: Learn how to effectively acquire and integrate operational data from your factory floor for MES using FlowFuse.
 date: 2025-06-13
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/06/images/mes-data-aqusition.png
 keywords: MES, Data Acquisition, Operational Technology, Industrial IoT, FlowFuse, Factory Data, Real-time Data, PLCs, SCADA, OPC UA, Modbus, MQTT
 tags:
    - flowfuse
