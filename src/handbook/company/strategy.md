@@ -56,7 +56,7 @@ Software plays a key part in education, reducing vendor lock-in, and community b
 
 ## The market
 
-We focus on [Ideal Customer Profile (ICP)](https://flowfuse.com/handbook/customer/marketing/messaging/) companies, which are those in manufacturing, logistics, and other data-intensive industrial sectors where operational efficiency is critical to providing value.
+We focus on [Ideal Customer Profile (ICP)](https://flowfuse.com/handbook/marketing/messaging/) companies, which are those in manufacturing, logistics, and other data-intensive industrial sectors where operational efficiency is critical to providing value.
 
 Within those companies, we focus our outreach and marketing activities on people who are responsible for improving engineering processes. These individuals are often Architects, Engineering Managers, and specialists in IT or OT. 
 
@@ -81,6 +81,6 @@ The FlowFuse Platform addresses the problems status above by providing our ICP w
 1. Visualize and Interact: FlowFuse offers intuitive visualizations, real-time feedback loops, and interactive dashboards that enable engineers to monitor performance, identify trends, and make data-driven decisions.
 1. Build Custom Solutions: The low-code platform empowers engineers to create custom applications, dashboards, and automation workflows without extensive coding knowledge.
 1. Simplify Complexity: We abstract away the complexities of industrial systems, providing a comprehensive user-friendly interface that allows engineers to focus on solving problems, not wrestling with technology.
-See also our [Messaging page](/handbook/customer/marketing/messaging/).
+See also our [Messaging page](/handbook/marketing/messaging/).
 
 FlowFuse uses Open-Source technologies like Node-RED and MQTT to help our customers being successful in remedying their problems.

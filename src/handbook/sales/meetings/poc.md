@@ -14,7 +14,7 @@ To extend the trial period, including if a trial has expired already, use the 'E
 
 ### Self-hosted trial
 
-If a self-hosted trial is desired, you need to [generate a license key](/handbook/customer/sales/meetings/poc/#generating-a-license) to unlock paid-for features.
+If a self-hosted trial is desired, you need to [generate a license key](/handbook/sales/meetings/poc/#generating-a-license) to unlock paid-for features.
 Every self-hosted POC call should have an engineer present.
 
 ### POC Criteria

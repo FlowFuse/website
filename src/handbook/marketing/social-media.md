@@ -81,7 +81,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 - Descriptive text: 
     - Align with post purpose and audience goals.
-    - Must reflect our [Brand Voice](/handbook/customer/marketing/brand-voice/).
+    - Must reflect our [Brand Voice](/handbook/marketing/brand-voice/).
     - Think about relevance to the audience.
 - Emoji
 - Only one CTA
@@ -94,8 +94,8 @@ Each content type has channels which are appropriate, this table sets out which 
 For Reddit, Node-RED Slack, and Node-RED Discourse:
 
 
-- Follow the tone and behaviour defined in our [Community Guidelines](/handbook/customer/marketing/community/community-guidelines/).
-- Use your own voice, you're talking from a personal account after all, but also remember that you represent the brand and company values. Blend your tone with our [Brand Voice](/handbook/customer/marketing/brand-voice/#participating-in-community-spaces-(e.g.-node-red-forum%2C-github%2C-discord)).
+- Follow the tone and behaviour defined in our [Community Guidelines](/handbook/marketing/community/community-guidelines/).
+- Use your own voice, you're talking from a personal account after all, but also remember that you represent the brand and company values. Blend your tone with our [Brand Voice](/handbook/marketing/brand-voice/#participating-in-community-spaces-(e.g.-node-red-forum%2C-github%2C-discord)).
 - Copy should remain informal, honest, and useful — without sounding like a sales pitch.
 
 Keep it factual. Keep it human.
