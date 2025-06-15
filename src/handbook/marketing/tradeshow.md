@@ -173,4 +173,4 @@ Your phone is kept in your pocket at all times.
 
 Go through the business cards you collected and reach out to _each and everyone_
 of them. Thank them for the conversation and ask if there's any questions
-outstanding you can help them with. Consider adding these contacts to [HubSpot](/handbook/customer/hubspot/).
+outstanding you can help them with. Consider adding these contacts to [HubSpot](/handbook/sales/hubspot/).
