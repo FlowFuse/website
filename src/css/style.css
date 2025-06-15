@@ -1232,7 +1232,7 @@ h4:hover .header-anchor {
     }
 
     .self-hosted.ff-feature-table-section li {
-        grid-template-columns: 320px 1fr 1fr;
+        grid-template-columns: 320px 1fr 1fr 1fr;
     }
 
     .ff-feature-table-section li:first-child {
@@ -1244,7 +1244,7 @@ h4:hover .header-anchor {
             grid-template-columns: 220px 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 220px 1fr 1fr;
+            grid-template-columns: 220px 1fr 1fr 1fr;
         }
     }    
 
@@ -1253,7 +1253,7 @@ h4:hover .header-anchor {
             grid-template-columns: 170px 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 170px 1fr 1fr;
+            grid-template-columns: 170px 1fr 1fr 1fr;
         }
     }
 
