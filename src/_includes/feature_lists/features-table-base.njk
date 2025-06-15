@@ -6,6 +6,10 @@
             <label class="mr-2">
                 <div>Starter</div>
             </label>
+            {% elif hosting == "self-hosted" %}
+            <label class="mr-2">
+                <div>Open Source</div>
+            </label>
             {% endif %}
             <label>Team</label>
             <label class="ml-2">Enterprise</label>
@@ -16,7 +20,9 @@
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--header sticky top-[44px]">
             <span style="padding-top: 12px; padding-bottom: 12px;" class="sticky left-0 h-full">{{ section.label }}</span>
+            {% if hosting == "cloud" or hosting == "self-hosted" %}
             <span></span>
+            {% endif %}
             <span></span>
             <span></span>
         </li>
