@@ -91,16 +91,5 @@ While coaching plans are less formal than PIPs, it's important to:
   - Coaching plans are only shared with; the team member, manager, the managers'
     manager
 
-## Transitioning Between Coaching Plans and PIPs
-
-In rare cases, if a team members performance in a coached area deteriorates
-instead of improves, a manager may need to consider transitioning to a
-[PIP][pip]. However, this should be the rare exception as by design coaching
-plans are only deployed to spur growth.
-
-However, employees who successfully complete a PIP may benefit from ongoing
-coaching plans to continue their development and maintain their improved
-performance.
-
 [pip]: /handbook/peopleops/organization/#performance-improvement-plan-(pip)
 [smart]: https://www.atlassian.com/blog/productivity/how-to-write-smart-goals
