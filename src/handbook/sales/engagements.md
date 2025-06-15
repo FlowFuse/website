@@ -34,7 +34,7 @@ Follow these steps to create a quote.
 1. In HubSpot, open the relevant Deal. In the Quotes area, click Add to begin a new quote.  
 2. Fill in the Buyer Information section. This will pre-fill with the information from the contact in the Deal.  
 3. The default Quote creator will be you. Change this if necessary.  
-4. Add Line Items per [the instructions](/handbook/customer/sales/engagements/#what-to-quote)
+4. Add Line Items per [the instructions](/handbook/sales/engagements/#what-to-quote)
    * Select the appropriate Plan that is being quoted
    * For each line item, except Professional Services, check the Billing frequence to `Annual` and if the terms **ensure automatic renewal*
    * Adjust fields for Term and discount/fee/tax as needed.
