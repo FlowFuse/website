@@ -9,7 +9,7 @@ tags:
 
 Last month we introduced a way for the FlowFuse Device Agent to import Node-RED flows during the setup process. Today, we have built on that and added some new features:
 
-- Automatically scan common file locations and present any found flows found for quick selection
+- Automatically scan common file locations and offer any flows found for immediate selection
 - Scan common directories and present any that contain multiple flows as a quick browse selection
 - Offer a "Browse filesystem" option to let you navigate and select any flows on your device
 
