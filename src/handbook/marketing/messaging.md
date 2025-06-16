@@ -90,12 +90,11 @@ in the strategy document.
 
 ### About FlowFuse - 50 Words
 
-FlowFuse is the Industrial application platform for building and operating
-custom solutions that digitalize processes and operations. It integrates both IT
-and OT environments, leveraging open-source technology as Node-RED, MQTT, and
-PostgreSQL, to enable teams to connect, collect, transform, and visualize data
-from industrial systems. Companies use FlowFuse to manage, scale, and secure
-their Node-RED-based applications across industrial environments.
+FlowFuse is the platform for building and operating industrial applications. It
+connects your IT and OT systems using Node-RED, helping teams collect,
+transform, and visualize data. FlowFuse empower teams to develop and scale
+self-built industrial solutions, enabling better operational decisions and
+improving performance and processes.
 
 ### About FlowFuse - 150 Words
 
