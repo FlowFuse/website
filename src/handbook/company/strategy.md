@@ -12,11 +12,11 @@ FlowFuse is an Industrial application platform.
 Please see our [company values](/handbook/company/values/).
 
 ## FlowFuse in one sentence
-FlowFuse helps teams easily build, deploy, and manage automation workflows — with the simplicity of low-code and the power of modern DevOps.
+FlowFuse is the open source Industrial application platform that helps teams build, deploy, and manage applications to connect, transform, and visualize data from industrial systems — powered by Node-RED, MQTT, and PostgreSQL.
 
 ## FlowFuse's Definition
 Built on the simplicity of Node-RED, FlowFuse adds the tools teams need to scale automation workflows with confidence.
-FlowFuse is a platform that helps organizations build and manage powerful low-code data applications using Node-RED.
+FlowFuse is the open source Industrial application platform that enables organizations to create and manage applications that connect, transform, and visualize data from industrial systems — powered by Node-RED, MQTT and PostgreSQL.
 We make it easy to connect systems, automate processes, and build industrial or digital solutions — all while giving IT teams the control, security, and scalability they need.
 Whether you’re an engineer, a developer, or a company scaling up operations, FlowFuse bridges the gap between innovation and reliability.
 
