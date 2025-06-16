@@ -132,7 +132,7 @@ hubspot:
                                         <li>Dedicated Success Management</li>
                                         {% endif %}
                                     </ul>
-                                    <br>
+                                    {% if cloud %}<span class="hidden md:inline"><br></span>{% endif %}
                                     <br>
                                     <note class="font-semibold">Includes {% if cloud %}5{% else %}10{% endif %} hosted instances or remote instances.
                                     </note>
