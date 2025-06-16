@@ -16,12 +16,12 @@ Last month we introduced a way for the FlowFuse Device Agent to import Node-RED 
 
 ### Lets see it in action
 
-#### Automatically located `~/.node-red/flows.json` flows file
+**Import automatically located `~/.node-red/flows.json` flows file**
 
 ![Screenshot of the Importing an Automatically located flows file during Device Agent Setup](./images/import-flows-quick-select.gif){data-zoomable}
 _Screenshot of the Importing an Automatically located flows file during Device Agent Setup_
 
-#### Using the "Browse filesystem" option
+**Using the "Browse filesystem" option to navigate the filwsystem to chose a different flows file**
 
 ![Screenshot of Browsing the filesystem for flows file during Device Agent Setup](./images/import-flows-browsed.gif){data-zoomable}
 _Screenshot of Browsing the filesystem for flows file during Device Agent Setup_
