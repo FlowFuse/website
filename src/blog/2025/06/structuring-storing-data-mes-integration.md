@@ -5,14 +5,13 @@ description: Learn how to organize, structure, and store your factory data effec
 date: 2025-06-18
 authors: ["sumit-shinde"]
 image:
-keywords:
+keywords: factory data, MES, data structuring, data storage, data validation, JSON Schema
 tags:
    - flowfuse
+   - mes
 ---
 
-Collecting factory data for your MES is just the first step. If that data isn't properly organized, cleaned, and stored, it's a jumbled mess, leading to missed opportunities and wasted investments in your MES.
-
-MES is critical today, and its potential shouldn't be wasted by disorganized, "dump" information. Getting your factory data in order with a clear plan directly impacts your business's success, allowing your MES to quickly find, understand, and compare information. This streamlines operations, cuts costly errors, and empowers confident decisions, boosting production, reducing costs, and improving quality. Without structured, accurate, and immediately ready data, collecting it becomes a waste of time and money.
+Collecting factory data for your MES is just the first step. If that data isn't properly organized, cleaned, and stored, it's a jumbled mess, leading to missed opportunities and wasted investments. Disorganized information prevents your MES from quickly finding, understanding, and comparing crucial data, directly impacting production, increasing errors, and hindering confident decision-making.
 
 <!--more-->
 
@@ -41,13 +40,27 @@ You can easily:
 * Convert units (e.g., Fahrenheit to Celsius)
 * Rename fields for consistency
 
-FlowFuse comes with standard tools called **nodes**, like `split`, `change`, `join`, and `switch`. These let you visually tell FlowFuse how to transform your data. These nodes handle all the technical work for you. You just connect the blocks that clean your data, add context, and prepare it for use in monitoring dashboards or other industrial applications.
+FlowFuse comes with standard nodes, like `split`, `change`, `join`, and `switch`. These let you visually tell FlowFuse how to transform your data. These nodes handle all the technical work for you. You just connect the blocks that clean your data, add context, and prepare it for use in monitoring dashboards or other industrial applications.
 
-Another simple and powerful node allows you to implement data modeling, standardization, and contextualization, along with checks to ensure data is within the correct range or of the correct data type. We call this method **JSON Schema validation**.
+There's another simple and powerful node to tell you about. It lets you handle data modeling, standardization, and contextualization, plus it checks your data to make sure it's in the correct range or type. We call this method JSON Schema validation.
 
 > **JSON Schema** is a vocabulary that allows you to annotate and validate JSON documents. It defines the structure, data types, and validation rules, ensuring consistency and interoperability across different applications and systems.
 
-To implement JSON schema, install the node [`node-red-contrib-json-full-schema-validator`](https://flows.nodered.org/node/node-red-contrib-full-msg-json-schema-validation).Once done What you have to do is just plan the data schema, such as deciding which properties are necessary, what data types they should be, and what units they should have. For example, if the data includes temperature, determine if it should be in Celsius or Fahrenheit and define the valid range for that data (e.g., -40°C to 150°C). Other factors include precision, mandatory fields, and additional attributes. Then, prepare it in the following JSON format. If you want to learn more about how to define JSON Schemas, check out this helpful: [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step):
+### Setting Up JSON Schema Validation
+
+To get started, open your **FlowFuse instance editor**.
+
+Next, you'll need to install the specific node for JSON Schema validation. Search for and install `node-red-contrib-json-full-schema-validator`.
+
+Once the node is installed, your next step is to **plan your data schema**. This involves deciding:
+
+* **Which properties are essential** for your data.
+* **What data types** these properties should have (e.g., number, string, boolean).
+* **The units** for numerical data (e.g., if it's temperature, should it be Celsius or Fahrenheit?).
+* **Valid ranges** for your data (e.g., a temperature range of -40°C to 150°C).
+* Other factors like **precision**, **mandatory fields**, and any **additional attributes**.
+
+After planning, you'll prepare this schema in **JSON format**. For a comprehensive guide on how to define your JSON Schemas, check out this helpful: [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step).
 
 ```json
 {
@@ -129,35 +142,42 @@ _Message passes through the first output and does not include errors when it ali
 
 ## Where to Keep All That Factory Data
 
-Once your factory data is nicely structured and contextualized and checked, you need a safe and smart place to keep it. Different kinds of information often need different types of storage to be most useful.
+Once your factory data is structured and validated, you need a smart place to store it. Different kinds of information often require different storage types to be most useful for your MES.
 
-Choosing the right storage ensures your data is easily accessible and performs well for your MES. Here are the main kinds of storage typically use for factory data:
+Here are the main types of storage typically used for factory data:
 
-* **Time-Series Databases (TSDBs):** These are fantastic for data that changes constantly, like temperature readings from a sensor every few seconds, or how fast a machine is running. They're built to handle massive amounts of incoming updates and are perfect for spotting trends over time. Imagine them as a super-efficient diary that records every single moment. Good examples include **InfluxDB** and **TimescaleDB**.
+* **Time-Series Databases (TSDBs):** Perfect for constantly changing data like sensor readings (temperature, machine speed). They handle massive updates efficiently, ideal for spotting trends over time. Think of them as a super-efficient diary recording every moment. **InfluxDB** and **TimescaleDB** are good examples.
 
-* **Standard Databases (SQL Databases):** If you have structured information with clear connections, like production orders, how much material went into a batch, or results from quality checks, these are your go-to. They keep everything really neat and make sure pieces of information are correctly linked. Think of them like a well-organized spreadsheet or a library catalog. You'll often see **PostgreSQL** or **MySQL** used here.
+* **Standard Databases (SQL Databases):** Best for structured information with clear connections, such as production orders, material usage per batch, or quality check results. They keep data organized and ensure correct links between pieces of information, like a well-organized spreadsheet. You'll often see **PostgreSQL** or **MySQL** used here.
 
-* **Data Lakes or Cloud Storage:** These are for when you have huge amounts of all sorts of data, even if it's not perfectly organized yet. You might use them for long-term historical records or for data you plan to analyze later using advanced tools. Picture them as a huge warehouse where you can store anything, ready for when you need to sort through it. **Amazon S3** and **Azure Data Lake Storage** are common examples.
+* **Data Lakes or Cloud Storage:** Use these for vast amounts of diverse data, even if it's not perfectly organized. They're great for long-term historical records or data you'll analyze later with advanced tools. Imagine them as a huge warehouse for anything, ready when you need to sort through it. **Amazon S3** and **Azure Data Lake Storage** are common examples.
 
-When you're deciding where to store your data, you'll think about things like how much data you have and how fast it's coming in, how often you need to look at it (right now versus historical trends), what it will cost, and if it can grow with your factory. You'll also consider how well it connects with your other systems and how you'll keep the data safe.
+When choosing storage, consider your data volume and speed, how often you need to access it (real-time vs. historical), cost, scalability, system connectivity, and data security.
 
-**FlowFuse also Helps with Data Storage**
+## FlowFuse Also Helps with Data Routing to Storage
 
-FlowFuse also shines here, as it isn't only for contextualizing and transforming data; it also ensures that data lands in the right place to be stored. 
+FlowFuse isn't just for changing and cleaning data; it also makes sure your data gets to the right storage spot.
 
-FlowFuse has many nodesfor almost every database and cloud storage system you'll find in a modern factory. This includes direct connections for regular databases like MySQL and PostgreSQL for your organized production data. It also has special nodes for time-series databases like InfluxDB and TimescaleDB to handle fast-moving sensor and machine data. Plus, FlowFuse connects strongly to big Data Lakes and Cloud Storage services like Amazon S3, Google Cloud Storage, and Microsoft Azure.
+It has tons of nodes for almost every database and cloud storage system you'll find in a factory today.
 
-**FlowFuse makes it easy to build dashboards and industrial applications**
+This includes direct **connections** to normal databases like [MySQL](https://flows.nodered.org/node/node-red-node-mysql) and [PostgreSQL](https://flows.nodered.org/node/node-red-contrib-postgresql) for your organized production data.
 
-FlowFuse doesn't just manage your data; it empowers you to build the user interface (UI) for your MES with ease. You can create dashboards and industrial applications featuring clear visuals and intuitive controls. This is all achieved with a no-code, drag-and-drop approach using ready-made components.
+It also has special nodes for time-series databases like [InfluxDB](https://flows.nodered.org/node/node-red-contrib-influxdb) and [TimescaleDB](/node-red/database/timescaledb/) to handle fast sensor and machine data.
 
-FlowFuse offers a comprehensive collection of UI widgets, packaged as  ["FlowFuse Dashboard"](https://dashboard.flowfuse.com), to simplify this process. These tools allow you to design the screens your operators use to visualize critical information and control industrial processes effectively.
+Plus, FlowFuse **connects** to big Data Lakes and Cloud Storage services like [Amazon S3](https://flows.nodered.org/node/node-red-node-aws), [Google Cloud Storage](https://flows.nodered.org/node/node-red-contrib-google-cloud), and [Microsoft Azure](https://flows.nodered.org/node/node-red-contrib-azure-storage).
+
+**FlowFuse Fuels Your MES Dashboards and Applications**
+
+Once your factory data is effectively structured, validated, and routed by FlowFuse to the right place, it becomes an incredibly powerful asset for your MES.
+
+FlowFuse doesn't just manage your data; it also empowers you to easily build the user interface (UI) for your MES. You can create insightful dashboards and industrial applications using a no-code, drag-and-drop approach with components from [FlowFuse Dashboard](https://dashboard.flowfuse.com/). This allows you to design the screens operators use to visualize critical information and control processes, all built upon the reliable data foundation you've established.
 
 ## Final Thought
 
 Your factory's success hinges on smart decisions, and smart decisions need good data. It's not enough to just collect information from your machines; you need to make sense of it.
 
 That means organizing your data so it's clear and consistent. Think of it like putting all your tools in the right place – easy to find when you need them. You also need to clean up the data, getting rid of errors so you can trust what you see. Finally, you need to store it smartly, choosing the best spot for different types of information so it's always ready for use.
-FlowFuse helps with all of this. It's like your data's personal assistant, collecting raw information, tidying it up, and sending it to the right storage, all without complicated coding. This ensures your Manufacturing Execution System (MES) gets the accurate, reliable data it needs to help you run your factory smoother and make better choices.
+
+FlowFuse helps with all of this. It's like your data's personal assistant, collecting raw information, tidying it up, and sending it to the right storage, all without complicated coding. This ensures your Manufacturing Execution System (MES) gets the accurate, reliable data it needs to help you run your factory smoother and make better choices. Hundreds of other manufacturing companies are already using FlowFuse to transform their data into a powerful asset.
 
 If you want to see FlowFuse in action, [book a demo](/book-demo/) today!
