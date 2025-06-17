@@ -8,7 +8,7 @@ A Coaching Plan is tool for managers to aid in development of their team
 members, helping them grow in their role and improve their performance through a
 structured plan to be completed with the managers mentorship. Unlike
 [Performance Improvement Plans (PIPs)][pip], coaching plans are proactive, focus
-on growth, and come without the negative consequences of a PIP.
+on growth, and come without the formal burden of a PIP. 
 
 ## Purpose and Philosophy
 
@@ -28,7 +28,7 @@ A coaching plan should be initiated by a team members manager when:
   order
   - Minor performance areas need attention but don't warrant formal PIP
     intervention
-- A team member expresses interest in expanding their responsibilities
+- A team member expresses interest in expanding their responsibilities or transitioning to a new role with additional responsibilities
 - The team member is to be prepared for future role progression
 - You observe behaviors or skills that could benefit from focused development
 
@@ -41,7 +41,7 @@ A coaching plan should be initiated by a team members manager when:
 - **Opportunity-based** - Address areas for improvement before they become
   problems
 - **Growth-oriented** - Aimed at expanding capabilities and preparing for
-  advancement
+  advancement or addressing problems before they grow too big
 - **Collaborative** - Employee actively participates in goal-setting
 
 **Performance Improvement Plans** are:
@@ -70,10 +70,10 @@ The coaching plan should include:
 
 1. Development area: What skill or such is to be improved.
 1. Current state: Managers' assesment of the current level.
-1. Goal state: A [SMART goal][smart] goal to collectly aim for.
+1. Goal state: A [SMART goal][smart] goal to collectly aim for. This is the result that you're aiming for.
 1. Activities: What actions, training, experience are to be done to achieve the
-   set goal.
-1. Timeline: Start and end date, typically 3 months apart.
+   set goal. This is the inputs to the goal. Team members should be active participants in trying to craft the activities. A manager's proposal in the coaching plan is just a proposal. 
+1. Timeline: Start and end date, typically 30 days apart.
 1. Support assets: What tools, meeting, or manager assitances will be provided
 1. Update Cadence: How manager and team member align on progress, and how to
    collectively achieve goals.
@@ -88,8 +88,8 @@ While coaching plans are less formal than PIPs, it's important to:
 - Record achievements and milestones
 - Maintain confidentiality while sharing appropriate updates with HR and
   management
-  - Coaching plans are only shared with; the team member, manager, the managers'
-    manager
+  - Coaching plans are only shared with: the team member, manager, the managers'
+    manager, and HR
 
 [pip]: /handbook/peopleops/organization/#performance-improvement-plan-(pip)
 [smart]: https://www.atlassian.com/blog/productivity/how-to-write-smart-goals
