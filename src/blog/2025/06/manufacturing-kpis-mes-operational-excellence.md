@@ -1,5 +1,5 @@
 ---
-title: "Factory KPIs That Matter Most for MES to Monitor"
+title: "Manufacturing KPIs for MES: What to Measure for Operational Excellence"
 subtitle: "Transforming operational data into strategic advantage"
 description: Learn the essential factory KPIs your Manufacturing Execution System (MES) should monitor to drive profitability, eliminate waste, and make data-driven decisions.
 date: 2025-06-17
