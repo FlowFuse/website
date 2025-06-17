@@ -9,11 +9,8 @@ reasonable. The general principle to follow is to treat work-related expenses
 **as if they were your own money**. It is important to seek good value for your
 purchases and use common sense when making decisions.
 
-There are two methods available for using company funds: utilizing a
-[company credit card](#company-credit-card) or seeking
-[reimbursement](#reimbursement). If employees opt to use Brex for purchasing any
-company-related items or subscriptions, it is essential to upload the receipts
-and include a memo within three business days. For all reimbursement requests,
+Whenever spending company money, you should expect to pay for the expense yourself and seek
+[reimbursement](#reimbursement). For all reimbursement requests,
 please ensure to submit the required documentation and proofs through Deel.
 
 If neither of the methods previously described is feasible (e.g., when a vendor
@@ -23,18 +20,16 @@ funds and seek reimbursement), please refer to the instructions provided in our
 
 ## Company Credit Card
 
-Some team members have access to [Brex](https://www.brex.com/) to provide them
-with a company credit card. They are, by default, virtual Mastercards, although
-there is an option to get a physical card sent out.
+Some managers have access to [Brex](https://www.brex.com/) cards to manage reoccuring monthly subscriptions for their team. If you are a manager and have such subscriptions to consider, please speak to the Head of Operations and your manager to explain your use case.
+
+Brex is also used to create vendor cards that allow for reoccurring payment
+for a monthly subscription with a vendor. Contact the Head of Operations if you require a
+vendor card.
 
 Expenses on Brex require a memo and receipts. Memos explain the purpose of the
-expense, while receipts are necessary for expenses of $25 or more. Receipts can
-be attached via the web UI, email, or Slack. Please
+expense. Receipts can be attached via the web UI, email, or Slack. Please
 [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
 
-Brex can also be used to create vendor cards that allow for reoccurring payment
-for a monthly subscription with a vendor. Contact the CEO/CTO if you require a
-vendor card.
 
 ### Oops! Misused Your Brex Card for Personal Expenses? Here's How to Handle the Situation Like a Pro
 

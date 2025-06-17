@@ -22,7 +22,7 @@ is before a deal closes and is signed. From the moment an AE commits to a deal
 onboarding starts for CSM. To understand what their high-level goals are with
 our product, and what the company as vendor can provide soon to a new customer.
 The AE will
-[close the deal](/handbook/customer/sales/engagements/#closing-a-deal), at which
+[close the deal](/handbook/sales/engagements/#closing-a-deal), at which
 point CSM takes over.
 
 Onwards, CSM is responsible for the full customer lifecycle, from establishing

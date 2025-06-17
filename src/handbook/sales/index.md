@@ -1,14 +1,14 @@
 ---
 navTitle: Sales
-navGroup: Customer department
+navGroup: Sales department
 ---
 
-# Sales
+# Sales department
 
 ## What we do
 
-The Sales department is responsible for new customer acquisition and existing
-customer expansion. This includes:
+The Sales department is responsible for new customer acquisition, existing
+customer expansion, and customer success. This includes:
 1. Prospecting and outreach for new business.
 1. Conducting introductory calls to determine use-case and fit.
 1. Giving customized product demonstrations to potential customers.
@@ -17,7 +17,21 @@ customer expansion. This includes:
 1. Working with external procurement teams.
 1. Navigating subscription agreement terms.
 1. Finalizing contracts and billing details.
-1. Introducing new customers to their Customer Success Manager.
+1. Customer success management and support.
+1. Customer onboarding and training.
+
+## Team
+
+| Role | Contributors |
+|------|--------------|
+| CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
+| GTM | [Michael](https://www.linkedin.com/in/michaelbdavis/) [@MichaelBDavis](https://github.com/MichaelBDavis) |
+| Sales | [Omar](https://ca.linkedin.com/in/omarazizahmed?trk=public_post_feed-actor-name) [@omarazizahmed](https://github.com/omarazizahmed) |
+| CSM | [Esmé](https://nl.linkedin.com/in/esméwieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
+
+## Contact us
+
+Questions can be asked in the [#dept-sales](https://flowforgeworkspace.slack.com/archives/C05GYH95NJZ).
 
 ## How we work
 
@@ -29,3 +43,4 @@ customer expansion. This includes:
  - [Customer Licenses (internal)](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0/edit#gid=0)
  - [Ideal Customer Profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl)
  - [Sales Regions](./regions.md)
+ - [Customer Success](./customer-success.md)

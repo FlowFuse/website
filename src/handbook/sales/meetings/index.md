@@ -24,12 +24,12 @@ and sync up what the goals are for the meeting.
 
 The number of times FlowFuse will meet with a customer depends mostly on the
 customer. However, in all cases FlowFuse would like to have an initial
-[Discovery Call](/handbook/customer/sales/meetings/discovery/).
+[Discovery Call](/handbook/sales/meetings/discovery/).
 
-A discovery call is generally followed by a [Demo](/handbook/customer/sales/meetings/demo/). 
+A discovery call is generally followed by a [Demo](/handbook/sales/meetings/demo/). 
 
 To validate the solution to the problem the customer is experiencing, FlowFuse will
-aid in a [POC](/handbook/customer/sales/meetings/poc/).
+aid in a [POC](/handbook/sales/meetings/poc/).
 
 ## Using Fathom Notetaker
 

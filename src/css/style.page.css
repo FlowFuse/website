@@ -145,7 +145,7 @@
 @layer components {
     .pricing-tiles {
         position: relative;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
         z-index: 2;
         margin-left: auto;
