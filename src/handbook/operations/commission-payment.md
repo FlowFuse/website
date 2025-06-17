@@ -17,7 +17,7 @@ next steps to process the commission calculations and setup for payment.
 
 Note: all sales commissions are advances under the assumption customers pay the
 invoice. FlowFuse might withhold commission payments or claw back payments if
-payments aren't made within 60 days after the [deal was closed](https://flowfuse.com/handbook/customer/sales/engagements/#closing-a-deal).
+payments aren't made within 60 days after the [deal was closed](https://flowfuse.com/handbook/sales/engagements/#closing-a-deal).
 
 ### Calculating Team Commissions
 

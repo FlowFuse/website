@@ -7,10 +7,10 @@ meta:
 
 ## Blogging Process
 
-Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance and our [Social Media Strategy](/handbook/customer/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
+Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
 
 1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
-2. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/customer/marketing/social-media/#planning-and-posting).
+2. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
 3. Create a PR requests with your Blog Content.
 4. Assign yourself as an Assignee.
 5. Convert to Draft
@@ -21,7 +21,7 @@ Content creation and blogging are effective ways to communicate with our communi
 8. Content will be reviewed first.
 9. SEO will be reviewed second.
 10. When both reviews are done, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
-11. Once merged, SEO Reviewer will promote on FlowFuse Social channels. Check the [social media planning and posting section](/handbook/customer/marketing/social-media/#planning-and-posting) for guidance and considerations.
+11. Once merged, SEO Reviewer will promote on FlowFuse Social channels. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
 
 
 ## Blog CMS
@@ -96,7 +96,7 @@ You can also add your own custom tags. While these won't create a new page with 
 
 #### Meta Keywords
 
-Additionally, the tags you assign to your content will also be used as [meta keywords](/handbook/customer/marketing/website/#meta-keywords) for each article, alongside the [default keywords](/handbook/customer/marketing/website#default-keywords).
+Additionally, the tags you assign to your content will also be used as [meta keywords](/handbook/marketing/website/#meta-keywords) for each article, alongside the [default keywords](/handbook/marketing/website#default-keywords).
 
 ### Adding Images
 

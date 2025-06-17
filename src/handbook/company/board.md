@@ -20,6 +20,8 @@ Three business days before the meeting, the CEO will send a 5-10 minute prewatch
 
 In most circumstances a 5-10 min prewatch can help make the time together even more productive, as you get to move contextualizing to before-the-meeting and it gives people time to let things bake in their head, improving the quality of conversation.
 
+In the email where we send the pre-watch, we should also include the key metrics in the text of the email. 
+
 ### Structure
 
 The 90 minutes of each meeting are structured in the following time blocks:
@@ -27,6 +29,45 @@ The 90 minutes of each meeting are structured in the following time blocks:
 * 15 minutes Metrics and Company Performance - The company presents key metrics, comparing against the plan and updates projections. The figures will be distributed well in advance, and as such the discussion should be focussed on the reflections of the numbers.
 * 60 minutes Strategic Discussion - In the Strategic Discussion portion, we will focus on one or two (but no more) key topics of focus for the business for discussion. Prior context is shared through the prewatch.
 * 15 minutes "Any other business" - Providing an open forum for board members and observers to raise additional topics, propose motions, or conduct votes, such as those related to stock options or other pertinent matters. It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
+
+It is the CEO's responsibility to manage time in the meeting.
+
+## Metrics
+
+Key Metrics to include:
+* Revenue
+   * Current ARR 
+      * Sales Led CARR
+      * (Self-Serve MRR * 12) aka Self-Serve ARR
+   * Current YoY Growth
+   * End of Quarter Projections
+      * Sales Led CARR (Closed & Goal)
+      * (Self-Serve MRR * 12) aka Self-Serve ARR
+   * Churned revenue
+* Customers
+   * Total Subscriptions
+     * New Subscriptions
+     * Renewed Subscriptions
+     * Churned
+     * Upsell/Upgrade
+     * Downsell/Downgrade
+* Company
+   * Runway in $
+   * Runway in time
+   * Cash Burned, planned vs actual
+   * Cash on hand, planned vs actual
+   * Headcount, planned vs actual
+* Deal Board for the Quarter (Pipeline broken down by stages)
+   * Discovery
+   * Diagnose 
+   * Solution
+   * Closing/Committing
+   * Closed Won
+   * Also, Key Deals Highlights
+* Product Metrics:
+   * Managed NR Runtimes, including self-hosted
+   * Self-hosted platforms reported via telemetry
+   
 
 ### Board Deck
 
