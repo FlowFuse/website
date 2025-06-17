@@ -22,7 +22,7 @@ If you are running Node-RED v4.x, head over to the Palette Manager, update the p
 ![Updating assistant on Node-RED 4](./images/assistant-update-nr4.png){data-zoomable}
 _Screenshot of Updating assistant on Node-RED 4_
 
-If you are still running Node-RED v3.x, you can update the plugin by adding `@flowfuse/nr-assistant` to the instance settings then restart it.
+If you are still running Node-RED v3.x we strogly recommend you update your stack to use Node-RED v4.x but you can still manually update the plugin by adding `@flowfuse/nr-assistant` to the instance settings then restart it.
 
 ![Updating assistant on Node-RED 3](./images/assistant-update-nr3.png){data-zoomable}
 _Screenshot of Updating assistant on Node-RED 3_
