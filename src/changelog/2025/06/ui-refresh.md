@@ -7,7 +7,7 @@ tags:
   - changelog
 ---
 
-We’ve given the top navigation in FlowFuse a visual refresh to help move away from the dated look and feel.
+We’ve given the top navigation in FlowFuse a visual refresh as part of our effort to constantly improve and modernise the user experience of FlowFuse.
 
 Menus now use a clean white background, with updated colors, spacing, and transitions across the user menu, team switcher, and notification buttons. Mobile menus have also been cleaned up for better usability.
 
