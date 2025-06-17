@@ -18,6 +18,8 @@ Before you can take time off you should _always_:
 * Add an event to the shared 'FlowFuse Team Events' calendar showing all the days you will not be working. This makes it easier for our team to understand who is going to be away each week.
 * Inform fellow team members of your time off, and hand over work that's distributed.
 
+PTO requests in Deel will be routed to your manager.
+
 ## Holiday Policy
 
 FlowFuse has a unlimited time off policy. Taking vacation is encouraged for all

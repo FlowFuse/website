@@ -3,10 +3,12 @@
     "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
+        "se": "https://job-boards.greenhouse.io/flowfuse/jobs/5565712004"
+        "em": "https://job-boards.greenhouse.io/flowfuse/jobs/5566913004"
     },
     "messaging": {
         "tagLine": "Unlock Industrial Data. Integrate Everything. Optimize Faster.",
-        "subtitle": "Quickly build workflows, applications and integrations that optimize your operations with our low-code, open-source, end to end platform.",
+        "subtitle": "FlowFuse is the industrial application platform that empowers teams to build, deploy and manage applications that optimize industrial operations.",
         "title": "Build workflows and integrations that optimize your industrial operations",
         "keywords": "Node-RED, Application Development, IoT, IIoT, Low-Code, open source, Integration, Workflow, Automation, Data Processing, Data Integration, Data Transformation, Data Visualization, Industrial Automation, Industrial IoT, Industry 4.0"
     }

@@ -3,6 +3,8 @@ navTitle: CEO
 navGroup: Job Descriptions
 ---
 
+# CEO
+
 ## Job Description
 
 As the Chief Executive Officer (CEO) of FlowFuse, you will be the driving force behind the company's vision, strategy, and overall success. You will be responsible for providing strong leadership, setting strategic direction, fostering a high-performance culture, and ensuring the company achieves its growth objectives. This role requires a dynamic and visionary leader focused on scaling the businesses, building strong teams, and navigating the complexities of a rapidly evolving technology landscape. You will be the primary point of contact for investors, key partners, and the broader market, representing FlowFuse's mission and values. Your leadership will be instrumental in shaping the future of FlowFuse and solidifying its position as a leader in its market.

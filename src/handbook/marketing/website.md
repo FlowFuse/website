@@ -81,7 +81,7 @@ When adding meta keywords to the website pages, a specific priority order is fol
 
 2. **Keywords:** If no `meta.keywords` are found, the `keywords` specified in the front matter of the webpage are used.
 
-3. [**Tags:**](/handbook/customer/marketing/blog/#tags) If neither `meta.keywords` nor `keywords` are assigned, the `tags` assigned to the content are included as meta keywords. These tags are used to categorize the content and provide relevant context.
+3. [**Tags:**](/handbook/marketing/blog/#tags) If neither `meta.keywords` nor `keywords` are assigned, the `tags` assigned to the content are included as meta keywords. These tags are used to categorize the content and provide relevant context.
 
 4. **Default Keywords:** These are always included and provide general information about the website's content. They can be appended to the keywords obtained from previous points, or, if neither of the previous conditions are met, the default keywords are used as a fallback option.
 

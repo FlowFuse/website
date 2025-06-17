@@ -3,6 +3,8 @@ navTitle: Product Marketer
 navGroup: Job Descriptions
 ---
 
+# Product Marketer
+
 ## Job Description
 We are seeking a highly motivated and experienced Product Marketer to join our team. In this role, you will be responsible for developing and executing marketing strategies that drive adoption and growth of the FlowFuse platform. You will work closely with product, engineering, and sales to understand and shape our product roadmap, target audience, and market trends. Your primary focus will be to effectively communicate the value of FlowFuse to our target audience, drive demand, and support our overall business growth.
 

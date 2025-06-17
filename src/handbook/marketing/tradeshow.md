@@ -86,7 +86,7 @@ Alongside sales and the CTO, define the booth messaging considering the demo and
 
 #### Two months before the event
 
-Choose the giveaways that align better with the messaging, audience, storage space, budget and that might be useful on a day to day basis. Remember to consider the weight when deciding the amount of items, specially if a team member will be bringing those items as part of their luggage. Check the [logistics](/handbook/customer/marketing/tradeshow/#logistics) section to decide when to order the items.
+Choose the giveaways that align better with the messaging, audience, storage space, budget and that might be useful on a day to day basis. Remember to consider the weight when deciding the amount of items, specially if a team member will be bringing those items as part of their luggage. Check the [logistics](/handbook/marketing/tradeshow/#logistics) section to decide when to order the items.
 
 The on-site team should have some branded attire and business cards, don't forget to include those in the artwork requests and the orders alonside the giveaways.
 
@@ -173,4 +173,4 @@ Your phone is kept in your pocket at all times.
 
 Go through the business cards you collected and reach out to _each and everyone_
 of them. Thank them for the conversation and ask if there's any questions
-outstanding you can help them with. Consider adding these contacts to [HubSpot](/handbook/customer/hubspot/).
+outstanding you can help them with. Consider adding these contacts to [HubSpot](/handbook/sales/hubspot/).
