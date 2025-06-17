@@ -75,7 +75,7 @@ The coaching plan should include:
    set goal.
 1. Timeline: Start and end date, typically 3 months apart.
 1. Support assets: What tools, meeting, or manager assitances will be provided
-1. Update Cadance: How manager and team member align on progress, and how to
+1. Update Cadence: How manager and team member align on progress, and how to
    collectively achieve goals.
 
 ## Documentation and Tracking
