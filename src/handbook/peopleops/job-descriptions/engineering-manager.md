@@ -5,7 +5,7 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-At FlowFuse, an Engineering Manager is not just a lead to our team of engineers, but also someone who can contribute to our codebase. Further, the Engineering Manager guides their engineering team to higher performance and faster innovation.
+At FlowFuse, an Engineering Manager is not just a lead to our team of engineers. An Engineering Manager is someone comfortable contributing to our codebase and can lead from the front, as well as guiding their engineering team to higher performance and faster innovation.
 
 We believe in running our engineering team like a sports team. You'll be responsible for fostering a culture of high performance, continuous improvement, and a relentless drive to win.
 
