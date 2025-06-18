@@ -4,9 +4,9 @@ navTitle: Pricing Principles
 
 # Pricing Principles
 
-This page sets out the concepts that we license and what units are measured across both FlowFuse Cloud  and Self-managed. Commercial decisions outside the scope of this document.
+This page sets out the concepts that we license and what units are measured across both FlowFuse Cloud and Self-hosted. Commercial decisions outside the scope of this document.
 
-We have three primary tiers: Starter (Open-Source when self-managed), Premium, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organizational chart typically implies different requirements.
+We have three primary tiers: Starter (Open-Source when self-managed), Team, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organizational chart typically implies different requirements.
 
 ## Buyer-Based Open Core (BBOC) Principle
 
@@ -14,7 +14,7 @@ The [Buyer-Based Open Core (BBOC)](https://opencoreventures.com/blog/2023-01-ope
 development and monetization strategy. It's a framework we employ to discern which features should be open source and which should be proprietary. 
 BBOC aligns features into tiers based on their target users or 'buyers' — individual contributors, management, or executives.
 
-Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter (Open-Source) tier. On the other hand, features that have broader organizational relevance, like Edge Device Management or high availability, are offered in our Premium tier or Enterprise tier, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
+Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter tier. On the other hand, features that have broader organizational relevance, like Edge Device Management or high availability, are offered in our Team tier or Enterprise tiers, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
 
 This buyer-based approach helps us focus our efforts on the value to the end-user, rather than technical specifications or development effort. It aligns our pricing strategy with the value each tier provides, ensuring that the cost is justified by the capabilities offered and the user persona it serves.
 
@@ -22,9 +22,9 @@ This buyer-based approach helps us focus our efforts on the value to the end-use
 
 | Tier | Objective | Problem it Solves | Persona |
 | ---- | --------- | ----------------- | ------- |
-| Starter (Open-source) | Introduce Node-RED | <ul><li>Hosting Node-RED</li><li>TLS/SSL</li><li>Subdomain</li><li>Backups (snapshots)</li><ul> | <ul><li>Individual contributor</li><li>PLC engineer</li><li>Line worker</li></ul> |
-| Premium | Scale the roll-out of Node-RED | <ul><li>Managing more than 5 Node-RED instances</li><li>Edge Device Management</li><li>Security</li><li>Effective collaboration</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
-| Enterprise | Node-RED as a company standard | <ul><li>High availibilty</li><li>Auditability</li><li>Enterprise intergration</li></ul> | <ul><li>Central IT departments</li><li>Plant manager</li></ul> |
+| Starter | Introduce Node-RED | <ul><li>Hosting Node-RED</li><li>TLS/SSL</li><li>Subdomain</li><li>Backups (snapshots)</li><ul> | <ul><li>Individual contributor</li><li>PLC engineer</li><li>Line worker</li></ul> |
+| Premium | Scale the roll-out of Node-RED | <ul><li>Managing 5 or more Node-RED instances</li><li>Edge Device Management</li><li>Security</li><li>Effective collaboration</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
+| Enterprise | Node-RED as a company standard | <ul><li>High availability</li><li>Auditability</li><li>Enterprise intergration</li></ul> | <ul><li>Central IT departments</li><li>Plant manager</li></ul> |
 
 ## Teams
 
