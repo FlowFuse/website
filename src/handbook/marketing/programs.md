@@ -37,7 +37,7 @@ This area focuses on shaping our brand perception and effectively communicating 
 
 ## 4. Customer Marketing & Advocacy
 
-This area focuses on delighting our existing customers and empowering them to become advocates for our brand.
+This area focuses on empowering our existing customers to become advocates for our brand.
 
 * **Voice of the Customer (Satisfaction Surveys)**: We systematically collect feedback through in-product surveys, post-webinar forms, and documentation sections. This continuous feedback loop is crucial for improving our product and overall customer experience.
 * **Customer Reviews Program**: We actively encourage satisfied customers to share their experiences on platforms like [G2](https://www.g2.com/products/flowfuse/reviews). This program helps build trust and social proof for new potential customers.
