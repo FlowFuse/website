@@ -4,7 +4,7 @@ subtitle: Making Factory Data Tell the Right Story for Your MES
 description: Learn how to organize, structure, and store your factory data effectively to make your Manufacturing Execution System (MES) work at its best with FlowFuse.
 date: 2025-06-18
 authors: ["sumit-shinde"]
-image:
+image:  /blog/2025/06/images/data-structering-and-storing-for-mes.png
 keywords: factory data, MES, data structuring, data storage, data validation, JSON Schema
 tags:
    - flowfuse
