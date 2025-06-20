@@ -1,5 +1,5 @@
 ---
-title: "MES and Continuous Improvement: Powering Lean, Six Sigma, and Kaizen with Data"
+title: "Use MES to Make Lean, Kaizen, and Six Sigma Actually Work"
 subtitle: "Making Continuous Improvement Work with MES"
 description: "See how MES turns live factory data into real improvements with Lean, Six Sigma, and Kaizen—faster fixes, less waste, better performance."
 date: 2025-06-10
