@@ -86,8 +86,10 @@ Assets will always include:
 
 ## Monthly Investor Updates
 
-FlowFuse investors get a monthly update sent to them, which contains the KPIs we track and editorialized
-information from the CEO on company performance.
+FlowFuse investors get a monthly update sent to them through Carta, which contains
+the KPIs we track and editorialized information from the CEO on company performance.
+For transparency, the company includes financial performance data from QuickBooks, and
+reports on 3 key metrics: ARR, Burn, and Runway.
 
 ## Major Investors
 
