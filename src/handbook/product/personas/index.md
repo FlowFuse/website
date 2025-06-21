@@ -6,23 +6,27 @@ navTitle: Personas
 
 Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. Personas are a generalized way of talking about the ideal target we are aiming to communicate with and design for. 
 
-Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points. At FlowFuse, we have many personas that will evolve over time: 
+Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points.
 
-##### Manufacturing Inc.
+As outlined in our [brand voice](/handbook/customer/marketing/brand-voice/), FlowFuse serves as **a trusted partner for industrial engineers and developers navigating digital transformation**. We position ourselves as "the engineer's enabler — technical enough to be respected, accessible enough to be adopted." This approach ensures our communication is aligned, consistent, and memorable across all organizational levels.
 
+Our personas are structured around the three organizational layers typically involved in FlowFuse adoption, reflecting our role as a reliable, approachable, and pragmatic partner:
 
+##### Three-Layer Organizational Structure
 
-- [Paul Plant Manager](#paul%2C-plant-manager) <!-- omit in toc -->
+**Layer 1 - Engineers & Champions (Hands-On Users)**
+FlowFuse serves as their reliable, technically-grounded partner for daily operational challenges.
+- [Peter Automation and Controls Engineer](#peter%2C-automation-and-controls-engineer) - Uses Node-RED, MQTT, and industrial protocols
+- [Sarah Process Engineer](#sarah%2C-process-engineer) - Works with data and industrial processes
 
-- [Steve Plant Engineer](#steve%2C-plant-engineer)
+**Layer 2 - Engineering Managers (Decision Influencers)**  
+FlowFuse demonstrates value through practical, straightforward solutions that address real business needs.
+- [Steve Plant Engineer](#steve%2C-plant-engineer) - Needs convincing through proven results and clear ROI
+- [Isabella IIoT Project Lead](#isabella%2C-iiot-project-lead) - IT/OT bridge seeking dependable platform for digital transformation
 
-- [Sarah Process Engineer](#sarah%2C-process-engineer)
-
-- [Isabella IIoT Project Lead](#isabella%2C-iiot-project-lead)
-
-- [Peter Automation and Controls Engineer](#peter%2C-automation-and-controls-engineer)
-  
-- [Danielle Developer](#danielle%2C-developer)
+**Layer 3 - Executive Leadership (Budget Holders)**
+FlowFuse provides transparent, enterprise-ready solutions with measurable impact on business outcomes.
+- [Paul Plant Manager](#paul%2C-plant-manager) - Final decision maker focused on operational efficiency and innovation
   
 
 
@@ -449,95 +453,17 @@ What problem does the persona want to solve, or which benefit does the character
 </div>
 
 
-### Danielle, Developer
-
-<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
-    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
-        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/danielle.jpg">
-            <label class="block mt-2 font-medium text-2xl">Danielle</label>
-            <label class="block">Developer</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">24</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Software Developer</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">Not Decision Maker, Small Influence</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Computer Science & AI (BSc)</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Aware of it, but not used it</span>
-            </div>
-        </div>
-    </div>
-    <div class="pt-3">
-        <div class="flex flex-col">
-            <label class="font-bold">Job to be done:</label>
-            <ul>
-                <li>Works for Corporate team.</a></li>
-                <li>Drive application and product development activities</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label class="font-bold">Motivations:</label>
-            <ul>
-                <li>Choosing the technology/tools I use to do my work</li>
-                <li>Being paid to do her job</li>
-                <li>Getting a "that is cool" response from her boss for something she has built</li>
-                <li>Building things that work</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Influences:</label>
-            <ul>
-                <li>Twitter, YouTube, TikTok, Discord Communities</li>
-                <li>Colleagues</li>
-                <li>Stack Overflow</li>
-                <li>Personal Network</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Needs & Expectations:</label>
-            <ul>
-                <li>Understanding how Node-RED works internally to get the most out of it.</li>
-                <li>Confidence the platform she’s being told to use is stable and suitable for the task</li>
-                <li>A modern set of development tools and processes - version control, CI/CD</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Biggest Challenges:</label>
-            <ul>
-                <li>Increasing speed of development</li>
-                <li>Prefers to write code - not sure why low-code is being used</li>
-                <li>Poor documentation for the 10’s of APIs she has to work with</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
 ## Common Use Cases
 
 Based on the Personas, the following section describes the most relevant Use Cases that we identified in exchange with our customers. These Use Cases align with the [Product Strategy](../strategy.md).
 
 1. **Data transformation**
-As Peter, Automation and Controls Engineer and Danielle, Developer,
+As Peter, Automation and Controls Engineer,
 I want to connect, collect, and store data from several sources,
 so that I can analyze my data further and ensure it is accessible in a unified manner.
 
 2. **Generate actionable insights**
-As Peter, Automation and Controls Engineer and Danielle, Developer,
+As Peter, Automation and Controls Engineer and Sarah, Process Engineer,
 I want to visualize and analyze my data,
 so that I can generate actionable insights from my data.
 
