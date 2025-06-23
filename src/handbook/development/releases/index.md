@@ -10,3 +10,7 @@ navTitle: Releases
 ## Node-RED Dashboard 2.0
 
 - [Dashboard Release Process](./dashboard-2) - Release instructions for the Dashboard 2.0
+
+## Beta Release
+
+Sometimes, FlowFuse will release a feature as a beta feature when it is known to be an early version that may lack features or functions that are intended to be made available at a later date. The goal of releasing a feature in beta is that it provides for rapid learning of how users engage with the feature, as this informs later product development. Features initally released as beta versions may later be deprecated entirely, drastically reconfigured, priced differently, or in other ways very significantly revised compared to their initial beta version. 
