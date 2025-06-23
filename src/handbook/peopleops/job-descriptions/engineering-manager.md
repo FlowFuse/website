@@ -26,7 +26,7 @@ To be successful in this role, you'll need a blend of technical prowess and lead
 * **An Excellent Communicator**: You can clearly articulate technical concepts to both technical and non-technical audiences. You are a great listener and can build strong relationships with your team and other stakeholders.
 * **A "Sports Team" Captain**: You understand the dynamics of a high-performing team. You know how to foster collaboration, healthy competition, and a shared will to win. You lead by example and inspire your team to perform at their best.
 
-## 90-Day Plan:
+## 90-Day Plan
 
 * Week 1-4: Immerse & Understand
    * Familiarize yourself with FlowFuse's product vision, engineering strategy, and current roadmap.
@@ -44,7 +44,7 @@ To be successful in this role, you'll need a blend of technical prowess and lead
    * Identify and start addressing any performance management or development needs within the team, creating individual growth plans.
    * Develop plan to drive 20% throughput improvement in engineering org, leveraging AI and other tools to get there in the next 90 days. 
 
-## Hiring Plan:
+## Hiring Plan
 1. Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
 1. First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
 1. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
