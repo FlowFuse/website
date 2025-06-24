@@ -40,7 +40,7 @@ hubspot:
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date  | shortDate }}</time></p>
                     {% if issues and issues.length > 0 %}
-                    <div class="pt-6 border-t-2">
+                    <div class="py-6 border-t-2">
                         <h3 class="mb-3">Related GitHub Issues</h3>
                         <ul class="space-y-2 list-disc pl-5">
                             {% for issue in issues %}

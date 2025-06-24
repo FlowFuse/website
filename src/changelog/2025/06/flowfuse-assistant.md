@@ -5,6 +5,8 @@ date: 2025-06-12 12:00:00.0
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
+issues:
+  - https://github.com/FlowFuse/nr-assistant/pull/44
 ---
 
 Last year, we introduced the FlowFuse Assistant, a Node-RED plugin designed to assist FlowFuse users with tools for developing their Node-RED instances. Today, we are excited to announce that the Assistant has been updated with a new feature powered by AI: the Flows Explainer. This feature uses AI to analyze your Node-RED flows and provide a detailed explanation of what they do, making it easier for you to understand and manage your flows.
