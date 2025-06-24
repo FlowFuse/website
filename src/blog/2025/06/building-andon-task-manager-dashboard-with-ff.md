@@ -2,9 +2,9 @@
 title: "Part 2: Building an Andon Task Manager with FlowFuse"
 subtitle: Step-by-step guide to building a real-time issue reporting and task tracking system using FlowFuse.
 description: Learn how to build an Andon Task Manager with FlowFuse in this step-by-step guide. Create real-time issue reporting and task tracking systems using Node-RED and FlowFuse Dashboard. 
-date: 2025-05-15
+date: 2025-06-24
 authors: ["sumit-shinde"]
-image: /blog/2025/05/images/Building-an-Andon-Task-Manager-with-FlowFuse-2.png
+image: /blog/2025/06/images/Building-an-Andon-Task-Manager-with-FlowFuse-2.png
 keywords: free andon task dashboard, andon task manager dashboard free, building andon task manager, node-red andon task manager, flowfuse andon task manager
 tags:
    - flowfuse
@@ -14,7 +14,7 @@ In [Part 1](/blog/2025/05/building-andon-task-manager-with-ff/), we introduced t
 
 <!--more-->
 
-In this part 2, we move from planning to implementation. The focus now shifts to building the actual system using **FlowFuse Dashboard** (Node-RED Dashboard 2.0) on the **FlowFuse platform**. We will begin by developing the **Lines view** for regular users, along with a line selection menus. The Department View and Admin interface will follow in a later part of the series.
+In this part 2, we move from planning to implementation. The focus now shifts to building the actual system using [FlowFuse Dashboard](https://dashboard.flowfuse.com) (Node-RED Dashboard 2.0), hosted on the FlowFuse platform. We will begin by developing the **Lines view** for regular users, along with a line selection menu. The Department View and Admin interface will follow in a later part of the series.
 
 ## Getting Started
 
@@ -276,7 +276,7 @@ This checks whether the selected line is valid by comparing it with the list of 
 ![Flow for handling dashboard navigation, validating URL parameters, and assigning selected production lines to individual client sessions.](./images/accessing-production-lines.png){data-zoomable}
 _Flow for managing URL-based access, validating line parameters, and storing client-specific selections on the OEE dashboard._
 
-### Create Live Request Fetch Flow (Per Line)
+### Create Live Request Flow (Per Line)
 
 Let’s build the flow to retrieve the data now based on the user selection.
 
