@@ -6,7 +6,7 @@ authors: ["cstns"]
 tags:
   - changelog
 issues:
-  - "https://github.com/FlowFuse/device-agent/issues/5600"
+  - "https://github.com/FlowFuse/flowfuse/issues/5600"
 ---
 
 We’re excited to announce the release of the all-new **Home Page**, designed to simplify navigation and provide relevant information at a glance.
