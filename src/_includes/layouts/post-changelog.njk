@@ -39,6 +39,30 @@ hubspot:
                         {% endif %}
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date  | shortDate }}</time></p>
+                    {% if issues and issues.length > 0 %}
+                    <div class="pt-6 border-t-2">
+                        <h3 class="mb-3">Related GitHub Issues</h3>
+                        <ul class="space-y-2 list-disc pl-5">
+                            {% for issue in issues %}
+                            <li>
+                                {% if issue.startsWith('#') %}
+                                <a href="https://github.com/FlowFuse/flowfuse/issues/{{ issue.substring(1) }}" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">
+                                    {{ issue }}
+                                </a>
+                                {% elif issue.startsWith('http') %}
+                                <a href="{{ issue }}" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">
+                                    #{{ issue.split('/').pop() }}
+                                </a>
+                                {% else %}
+                                <a href="https://github.com/FlowFuse/flowfuse/issues/{{ issue }}" class="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener">
+                                    #{{ issue }}
+                                </a>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
                     <h3 class="mb-3 pt-6 border-t-2">Recent Updates:</h3>
                     <ul class="ml-6 list-disc">
                     {% for post in collections.changelog | reverse | limit(5) %}

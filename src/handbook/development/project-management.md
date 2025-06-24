@@ -116,6 +116,33 @@ We produce changelog entries for new features and changes that are of interest t
 
 ChangeLog entries are created via PR to the [website](https://github.com/FlowFuse/website/tree/main/src/changelog) repository.
 
+##### Changelog Entry Format
+
+Each changelog entry should include frontmatter with the following structure:
+
+```yaml
+---
+title: "Feature Title"
+description: "Brief description of the feature or change"
+date: 2025-06-11 12:00:00.0
+authors: ["author-handle"]
+tags:
+  - changelog
+issues:
+  - "https://github.com/FlowFuse/device-agent/issues/185"
+  - "#1234"
+  - "567"
+---
+```
+
+**GitHub Issues Integration**: You can now link related GitHub issues to changelog entries using the `issues` array in the frontmatter. This helps customers and internal stakeholders easily access the underlying GitHub discussions and technical details. The system supports:
+
+- **Full GitHub URLs**: `"https://github.com/FlowFuse/device-agent/issues/185"`
+- **Short form for main FlowFuse repo**: `"#1234"` (automatically links to FlowFuse/flowfuse)
+- **Issue numbers only**: `"567"` (automatically links to FlowFuse/flowfuse)
+
+The issues will be displayed as clickable links with GitHub icons on both the changelog listing page and individual changelog posts.
+
 ### Sizing Issues
 
 To more accurately understand which tasks can be scheduled without overloading our team, everyone conducts an initial, high-level analysis when creating an issue to assign weight estimates. We recognize that these estimates might not be precise. If the person who creates an issue cannot provide an estimate, any FlowFuse team member is welcome to contribute one.
