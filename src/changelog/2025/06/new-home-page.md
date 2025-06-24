@@ -22,6 +22,6 @@ We’re excited to announce the release of the all-new **Home Page**, designed t
 These enhancements are intended to make managing your instances and reviewing activity smoother and more effective.
 
 ![Screenshot of the New Home Page](../06/images/new-home-page.png){data-zoomable}
-_Screenshot of the all-new Home Page_
+_Screenshot of the new home/landing page in FlowFuse_
 
 This improvement aligns with the feedback we received from the community, aimed at delivering a more user-friendly and focused experience.
