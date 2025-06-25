@@ -2,7 +2,7 @@
 navTitle: Change Control
 ---
 
-As part of our [secure operations policies](https://flowfuse.com/handbook/company/security/) we implement a Change Control process for certain operations in order to provide auditable, reviewable changes to key systems.
+As part of our [secure operations policies](/handbook/company/security/) we implement a Change Control process for certain operations in order to provide auditable, reviewable changes to key systems.
 
 The following tasks should be completed under change control.
 
@@ -20,6 +20,13 @@ and provide all of the necessary details to enact the change and to verify the c
 4. Once the change has been applied, verify the change is complete
 5. Close the issue once verified
 
+
+# FlowFuse Dedicated Instance Change Control
+
+Changes to customer dedicated instances managed by FlowFuse should follow the same process 
+as listed above for FlowFuse Cloud. The one difference is that the details of exactly which
+instance the changes should be applied to.
+
 # Access / Permission Request
 
 Where access is required to a system, a `Access / Permission Request` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new?template=access-request.md).
@@ -33,4 +40,6 @@ If a new repository is required within our GitHub organisation, a `New Repositor
 # Onboarding/Offboarding
 
 When bringing a new employee into the company, or saying goodbye to an existing one, the appropriate `Onboarding` or `Offboarding` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new/choose)
+
+More details around Onboarding is available in the [Hiring and Onboarding](/handbook/peopleops/hiring/#onboarding) section of the handbook.
 

@@ -39,7 +39,7 @@ with different kinds of information, the company has created four classes of dat
  - Public
 
 As FlowFuse is an open company by default, most of our data falls into **public**.
-But it is important to recognise when a higher classification is required.
+But it is important to recognize when a higher classification is required.
 
 ### Definitions and Examples
 

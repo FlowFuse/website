@@ -3,6 +3,8 @@ navTitle: Account Executive
 navGroup: Job Descriptions
 ---
 
+# Account Executive
+
 ## Job Description
 We are seeking a highly motivated, driven, and self-sufficient Account Executive (a "Sales Explorer") to join our team and drive growth in the local region. In this early-stage growth opportunity, you will be responsible for identifying and closing new business opportunities, building strong customer relationships, and contributing to the overall success of FlowFuse. This role requires someone who can build pipeline, refine messaging, and optimize our sales motion based on real conversations, demonstrating a willingness to experiment and a comfort level with ambiguity.
 
@@ -25,7 +27,7 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
 * Familiarity with AI tools to enhance sales processes is a plus.
 * A strong attitude match with the existing team is critical, as is experience managing both inbound leads and creating outbound strategies.
 
-## 90-Day Plan:
+## 90-Day Plan
 
 * Week 1-4:
    * Immerse yourself in FlowFuse’s product, strategy, and market with a focus on enterprise-readiness, applications on the edge, and enhanced integration capabilities.
@@ -54,7 +56,7 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
 * Test and refine our sales motion to optimize effectiveness in the US market.
 * Multilingual & Culturally Fluent (Bonus): Fluency in Spanish language is a significant plus.
 
-## Hiring Plan:
+## Hiring Plan
 * Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
 * First Interview: Conduct a phone or video interview to further evaluate candidate skills, experience, and cultural fit.
 * Second Interview: In-depth interview with the hiring manager and other team members to discuss specific experience, skills, and how the candidate aligns with the product strategy and pillars.

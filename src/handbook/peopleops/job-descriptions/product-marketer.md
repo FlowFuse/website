@@ -3,6 +3,8 @@ navTitle: Product Marketer
 navGroup: Job Descriptions
 ---
 
+# Product Marketer
+
 ## Job Description
 We are seeking a highly motivated and experienced Product Marketer to join our team. In this role, you will be responsible for developing and executing marketing strategies that drive adoption and growth of the FlowFuse platform. You will work closely with product, engineering, and sales to understand and shape our product roadmap, target audience, and market trends. Your primary focus will be to effectively communicate the value of FlowFuse to our target audience, drive demand, and support our overall business growth.
 
@@ -24,7 +26,7 @@ We are seeking a highly motivated and experienced Product Marketer to join our t
 * Requirement to be familiar with the industrial sector, IIoT, Iot or similar
    * Node-RED knowledge and familiarity is a plus.
 
-## 90-Day Plan:
+## 90-Day Plan
 * Week 1-4:
    * Immerse yourself in FlowFuse's product, strategy, and market.
    * Familiarize yourself with the Node-RED ecosystem and competitive landscape.
@@ -41,7 +43,7 @@ We are seeking a highly motivated and experienced Product Marketer to join our t
    * Gather customer feedback and market insights to refine messaging and strategy.
    * Establish processes for ongoing market analysis and competitive intelligence.
 
-## Hiring Plan:
+## Hiring Plan
 * Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
 * First Interview: Conduct a phone or video interview to further evaluate candidate skills, experience, and cultural fit.
 * Second Interview: In-depth interview with the hiring manager and other team members to discuss specific experience, skills, and how the candidate aligns with the product strategy and pillars.
