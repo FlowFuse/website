@@ -2,7 +2,7 @@
 title: "Part 2: Building an Andon Task Manager with FlowFuse"
 subtitle: Step-by-step guide to building a real-time issue reporting and task tracking system using FlowFuse.
 description: Learn how to build an Andon Task Manager with FlowFuse in this step-by-step guide. Create real-time issue reporting and task tracking systems using Node-RED and FlowFuse Dashboard. 
-date: 2025-06-24
+date: 2025-06-26
 authors: ["sumit-shinde"]
 image: /blog/2025/06/images/Building-an-Andon-Task-Manager-with-FlowFuse-2.png
 keywords: free andon task dashboard, andon task manager dashboard free, building andon task manager, node-red andon task manager, flowfuse andon task manager
