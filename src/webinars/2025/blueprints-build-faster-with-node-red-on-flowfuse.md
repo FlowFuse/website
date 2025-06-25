@@ -3,7 +3,7 @@ title: "Blueprints: Build faster with Node-RED on FlowFuse"
 subtitle: Go from idea to application in record time with our library of ready-to-use projects.
 meta:
     description: What if there was a simpler, quicker way to get your Node-RED projects off the ground? This deep dive will explore FlowFuse's growing collection of Blueprints, revealing how these can significantly cut down the time it takes to build your next great application.
-image: /images/webinars/node-red-why-and-when-for-cloud-and-edge.jpg
+image: /images/webinars/blueprints-build-faster-with-node-red-on-flowfuse.jpg
 date: 2025-07-23
 time: 17:00 CET (11:00am ET)
 duration: 60
