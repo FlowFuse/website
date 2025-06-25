@@ -4,14 +4,13 @@ subtitle: "Revolutionary update creating a direct financial link between enterpr
 description: "FlowFuse announces Certified Nodes v2.0 - a new program that financially rewards Node-RED node developers based on enterprise usage and success."
 date: 2025-06-23
 authors: ["zeger-jan-van-de-weg"]
-image: /blog/2025/06/images/certified-nodes-v2.png
+image: blog/2025/06/images/certified-nodes-v2.png
 tags:
    - flowfuse
    - node-red
    - certified-nodes
    - developers
 ---
-
 
 Node-RED is a powerful tool for building automation and IoT projects. Its strength lies in its vibrant open-source community and the vast library of nodes that allow you to connect to almost anything. But for professional developers and system integrators, this vastness can present a challenge. How do you know which nodes are secure, reliable, and actively maintained? And for the talented developers building these nodes, how do you get rewarded for the countless hours spent creating and supporting them?
 
