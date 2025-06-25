@@ -4,7 +4,7 @@ subtitle: "From shop floor data to strategic advantage"
 description: Learn the essential factory KPIs your Manufacturing Execution System (MES) should monitor to drive profitability, eliminate waste, and make data-driven decisions.
 date: 2025-06-20
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/06/images/mes-kpi.png
 keywords: manufacturing kpis, factory kpis, mes, operational excellence, data-driven manufacturing, production metrics, performance indicators, lean manufacturing, six sigma, kaizen, oee, machine downtime, production efficiency, quality control, process improvement, real-time data, shop floor data, flowfuse, low-code automation, industrial iot, smart factory, waste reduction, defect reduction, manufacturing costs, cycle time reduction, traceability, root cause analysis, predictive maintenance, digital transformation, industry 4.0
 tags:
    - flowfuse
