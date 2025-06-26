@@ -106,55 +106,53 @@ FlowFuse should provide a seamless experience when deploying flows to remote env
 
 #### Scale
 
-FlowFuse users should not have to concern when scaling their own applications. FlowFuse should provide intuitive tooling to ensure that applications can scale with ease, and where possible handle this automatically.
+FlowFuse users should not have to be concerned when scaling their own applications. FlowFuse should provide intuitive tooling to ensure that applications can scale with ease, and where possible handle this automatically.
 
 #### Reliability
 
 Flowfuse users should have trust that their applications will run reliably. This includes ensuring that applications are highly available, and that users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
 
-## Go to Market (GTM) pillars & initiatives
+## Go to Market (GTM) Pillars and Initiatives
 
-Our strategic pillars are points aimed at steering our investment and innovation efforts. The initiatives are indication and statement of intent for the next 6 months. All GTM pricing principles can be found [here](./pricing.md).
+Our strategic pillars guide investment and innovation efforts toward our [Ideal Customer Profile (ICP)](https://flowfuse.com/handbook/marketing/messaging/#ideal-customer-profile-(icp)) in manufacturing and other data-intensive industrial sectors. In accordance with [our company mission](https://flowfuse.com/handbook/company/strategy/) \- to “fuse the digital realm and physical reality through building bespoke workflows, applications, and integrations, unleashing their creativity so that they can effortlessly leverage their own skills and expertise” \- these initiatives represent our focused commitment, for the next 12 months, to building bespoke workflows, applications, and integrations that deliver measurable value to industrial operations while enabling all application-builders to create. All GTM pricing principles can be found [here](https://flowfuse.com/handbook/product/pricing/).
 
-- [Advancing Enterprise-Readiness](#advancing-enterprise-readiness)
-- [Applications on the edge](#applications-on-the-edge)
-- [Enhanced Integration Capabilities](#enhanced-integration-capabilities)
-- [Data Visualization & Analytics](#data-visualization-&-analytics)
+- Industrial Application Development  
+- Decreasing Time to Value  
+- Improved Visualization and Analytics  
+- Leading Node-RED Adoption
 
-### Advancing Enterprise-Readiness
+### Industrial Application Development
 
-FlowFuse is committed to augmenting the enterprise-readiness of Node-RED. Our strategy emphasises enhancing audit and compliance capabilities, instituting stringent preventive and corrective controls, and bolstering security. By integrating these vital aspects, we aim to create a reliable, secure, and scalable environment. This initiative underlines our dedication to surpassing enterprise expectations and strengthening Node-RED's position in the industry.
+FlowFuse is positioned to become the leading platform for building custom industrial applications by providing the resources to augment or enable the creation of value provided by Manufacturing Execution Systems (MES), Enterprise Resource Planning (ERP) systems, Supervisory Control and Data Acquisition (SCADA) systems, and Unified Namespace (UNS) architectures. Some roadmap items that fit this theme are:
 
-- [Review-Based Pipeline Execution](https://github.com/FlowFuse/flowfuse/issues/3139): This feature mandates a dual-approval mechanism, colloquially known as the "four-eyes principle," before any changes can be propagated to a production system. This requirement is not only a best practice but a compulsory stipulation in several regulated industries, including food and pharmaceuticals, where the integrity and reliability of production systems are paramount. The introduction of Review-Based Pipeline Execution is poised to serve a dual purpose: it enables FlowFuse to venture into new market segments that necessitate such stringent control mechanisms, and it addresses the existing demands of our current customer base.
+* Database offering: Database feature in FlowFuse that enables seamless integration with Node-RED, easy read/write/query functionality, and simplifies manufacturing application building by bringing more tools into the secure FlowFuse ecosystem.    
+* UNS schema extension: Further develops FlowFuse UNS capabilities by bringing in data sources that rely on protocols other than MQTT.  
+* MES modules: Provides rapid MES development by providing easy UI views of labor management, regulatory compliance, and quality management.  
+* MES and ERP visualization packages: Enables visualizaton of core charts found in MES and ERP softwares.
 
-- [Implement "Organization" as an additional hierarchy level](https://github.com/FlowFuse/flowfuse/issues/2338): FlowFuse is expanding its enterprise capabilities by introducing "Organization" as an additional hierarchy level, particularly within the FlowFuse Cloud environment. This development is a direct response to the growing demand from enterprise customers utilizing our managed SaaS offering. As businesses increasingly seek efficient ways to manage multiple teams on the FlowFuse Cloud, the implementation of Organizations is set to provide a more structured and seamless management and billing system. This enhancement will not only cater to the needs of larger corporations but also streamline administrative processes, thereby offering a more cohesive and efficient platform for enterprise-level operations.
+### Decreasing Time to Value
 
-- [File Storage for Instances](https://github.com/FlowFuse/flowfuse/issues/3056) This feature aims to enable users to store data within FlowFuse-hosted Node-RED instances, a requirement for numerous use cases, such as displaying images in dashboards. More importantly, it is essential for most AI models, which need persistent file storage. The introduction of file storage for Node-RED hosted instances is a critical step towards demonstrating Node-RED's capabilities as an enabler for AI applications, furthering its utility and applicability in advanced, data-driven environments.
+Users can already create just about anything they want to create using FlowFuse. This initiative will further empower industrial application development by making that faster, by creating the ingredients for quickly building  solutions, streamlined onboarding experiences that reduce complexity and accelerate deployment timelines, and AI features that will allow engineers to create effective Node-RED flows and manage instances within FlowFuse very quickly and effectively.
 
-### Applications on the edge 
+* Blueprints Library: 3x expansion of manufacturing-focused blueprints for faster time-to-value across automotive, pharmaceutical, food & beverage, and other industrial use cases with database scaffolding capabilities.  
+* AI Integration: LLM-powered natural language queries, chat-to-flow generation for Node-RED applications, and flow troubleshooting recommendations.  
+* Segmented Onboarding: Faster time-to-value with use case-specific onboarding paths and interactive product demonstrations tailored to industrial applications.  
+* Smart Suggestions: AI-powered recommendations for process optimization, automated anomaly detection, and intelligent workflow optimization.
 
-Many organizations position Node-RED instances on remote servers, edge-, or industrial-devices. This practise allows them to meet network-, infrastructure-, or use-case- requirements.
+### Improved Visualization and Analytics
 
-FlowFuse already supports this process by creating snapshots on Node-RED instances that can be deployed to multiple remote targets. We will continue to expand the functionalities to allow users to manage existing Node-RED instances, improve their development practices to accelerate development and ensure a reliable and repeatable process, providing more flexible remote deployment options and offering the best support for devices in closed and segmented networks as we are facing it in production environments.
+Our visualization and analytics offerings transform industrial data into actionable insights through advanced dashboarding, predictive analytics, and digital twin capabilities that drive operational excellence. This will be achieved through continued investment in the open-source Dashboard project as well as by building manufacturing-specific visualization and analytics tools.
 
-- [Enhanced Device Settings](https://github.com/FlowFuse/flowfuse/issues/3172): The initiative focuses on expanding the configuration options for Devices, aligning with existing capabilities on hosted Node-RED setups. It aims to empower users to remotely manage their device settings, enhancing the efficiency and flexibility of device fleet management. 
+* Industrial Visualization Suite: Comprehensive component library including 3D modeling for quality control and production, SVG nodes, and industry-specific dashboard templates for manufacturing environments.  
+* Dashboard Enhancement: Feature parity improvements, manufacturing widgets extension, and AI-generated dashboards with improved sizing and layout controls.  
+* Predictive Analytics Engine: Machine learning models for predictive maintenance, demand forecasting, and labor management.  
+* Digital Twin Architecture: Physics-based simulation capabilities with real-time synchronization, asset hierarchy management, and performance monitoring.
 
-- [Immersive Node-RED experience](https://github.com/FlowFuse/flowfuse/issues/2246), a separation between the Node-RED Editor and FlowFuse leads to unused features from a UX standpoint in FlowFuse, due to the need to jump between both entities. An immersive Node-RED experience embeds Node-RED into FlowFuse, allowing seamless usage of Node-RED and FlowFuse features.
+### Leading Node-RED Adoption
 
-### Enhanced Integration Capabilities
+FlowFuse drives Node-RED adoption across industrial sectors through education, community building, and platform enhancements that showcase Node-RED's capabilities as the premier low-code solution for industrial applications. We will continue to lead in this way by investing in the open-source Node-RED project, through developing FlowFuse-specific enhancements to Node-RED, and by building the Node-RED Academy educational resource.
 
-The [Unified Namespace](https://flowfuse.com/unified-namespace/) is a modern IT/OT architecture for industrial companies to accelerate digital transformation. All data, from sensors, systems, and machines, are connected to make their data available to a unified network of data producers and consumers. This speeds up application building, system integration, and delivers faster insights into productivity. Node-RED and FlowFuse are a perfect match and should be positioned as integral entities of a modern UNS architecture. The natural flexibility of Node-RED, in combination with FlowFuse, offers all the requirements to realize the OT and IT integration and contextualization into a UNS. It also provides analytical and real-time monitoring capabilities to generate actionable insights.
-
-- [Introduce a way of sharing MQTT Broker connection configurations securely in a team](https://github.com/FlowFuse/flowfuse/issues/3444). MQTT is one of the most common protocols used for an UNS architecture; therefore, it is extremely important to allow users to not only configure and establish an MQTT connection from Node-RED but also to share configurations in a team or enterprise.
-- Adding MQTT Topic tree browsing capabilities is one of the most common MQTT features, which allows easier navigation and application creation while using MQTT. The MQTT topic tree should be ideally accessible directly within the Editor and shared across a Team.
-
-### Data Visualization & Analytics
-
-FlowFuse's commitment to a low-programming approach via Node-RED, complemented by the Node-RED Dashboard, allows for advanced data management and analytical functions. The Node-RED Dashboard provides a crucial interactive graphical user interface for Node-RED applications, allowing users to see data in a more visually engaging and understandable format. By processing and visualizing data, we will deliver insights into asset state, track patterns, and optimize asset use.
-
-- FlowFuse Dashboard feature parity with D1.0. A logical step to replace D1.0 .
-
-- Manufacturing Widgets Extension for Dashboard 2.0. This extension should provide very classic manufacturing visualization, making it even easier to create Node-RED Dashboards for manufacturing.
-
-
-
+* Node-RED Academy: Comprehensive educational program including Building Applications, Node-RED for Industry, Node-RED for Teams, FlowFuse Basics, FlowFuse Advanced, and specialized courses for Application Development and Manufacturing.  
+* Enhanced Node-RED Experience: Immersive Node-RED experience embedded within FlowFuse, improved UI modernization, and enhanced editor integration capabilities.  
+* Development Improvements: Tighter autocomplete functionality with MQTT topics and database credentials, streamlined development workflows, and more granular Role-Based Access Control.  
+* Community Ecosystem: Platform optimizations for sharing and collaborating on Node-RED applications with the wider Node-RED community while maintaining enterprise-grade security and reliability.
