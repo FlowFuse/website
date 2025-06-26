@@ -7,11 +7,11 @@ image: /images/webinars/node-red-why-and-when-for-cloud-and-edge.jpg
 date: 2025-06-25
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: 
+video: qAHAKF5vDuY
 hosts: ["joe-pavitt", "stephen-mclaughlin"]
 hubspot:
     formId: b34f3bed-a9f8-4135-a520-a0cc5b0c2578
-    downloadFormId: 
+    downloadFormId: 25466613-b506-4814-9a5c-7b51c108c203
 ---
 
 What happens to your production line when the network goes down? For engineering teams striving for world-class OEE, the answer is critical: individual cells must keep running in isolation.
