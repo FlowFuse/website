@@ -38,7 +38,7 @@ The following are the steps to produce a montly webinar.
         * Create a new static list called ‘Webinar Registrations [&lt;month> Edition]
         * Create a new form - clone an existing webinar registration form and rename it
         * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Three changes are required:
-         * Edit enrollment criteria to the new registration form submission. 
+         * Edit enrollment criteria to the new registration form submission. Make sure to check the box next to the form name under the 'Settings' tab to allow contacts to re-enroll in this workflow, otherwise, previous webinar attendees won’t be able to register.
          * Edit ‘Add Contact to Zoom Webinar’ to update the new Webinar ID. Replace the current number with the number from the webinar you just created for this month. You find the Webinar ID on the main page of the Zoom webinar. NOTE: you need to  hyphens to replace the spaces in the ID number.
         * Edit ‘Add to static list’ to change the list to the new list for this month’s webinar.
         * Remember to Save the changes.
@@ -94,6 +94,7 @@ And [here's](https://youtube.com/shorts/RCT-_m_NVbM) a sample of one of our past
 * Publish webinar recording
 * Social media post with link to webinar recording
 * In Hubspot send follow-up email to the registration list created in Hubspot that includes a link to the recording on YouTube.
+* Download the attendee list from Zoom and upload it to HubSpot. The filter that captures attendees in HubSpot isn't reliable and might cause non-attendee emails to be sent to actual attendees.
 * For those who wanted to be contacted, change Life Cycle Stage property to MQL 
 
 This [webinar prep issue](https://github.com/FlowFuse/customer/issues/271) can be cloned and updated to keep track of activities.
