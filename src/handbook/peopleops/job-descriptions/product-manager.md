@@ -42,10 +42,3 @@ What the Product Manager brings to the table:
 * Competitive Drive: A natural ambition to push boundaries, innovate, and ensure FlowFuse's product leads the market.
 * Cross-Functional Leader: Proven experience collaborating effectively with engineering, sales, marketing, and customer success teams to deliver outstanding products.
 
-
-
-
-
-
-
-
