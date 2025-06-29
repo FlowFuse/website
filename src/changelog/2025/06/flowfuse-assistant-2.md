@@ -20,10 +20,10 @@ And there more to come in the next week - stay tuned!
 
 #### New Menu
 
-![alt text](image.png)
+![Screenshot of the new Assistant Menu](./images/assistant-new-menu)
 _Screenshot of the new Assistant Menu_
 
-#### Flow Explainers updated look & feel
+#### Flow Explainer updated look & feel
 
 ![Animated GIF showing the Flow Explainer Updated Layout](./images/assistant-0-3-0-flow-explainer.gif){data-zoomable}
 _Animated GIF showing the Flow Explainer Updated Layout_
