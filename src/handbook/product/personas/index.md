@@ -359,7 +359,7 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
             <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/isabella.jpg">
             <label class="block mt-2 font-medium text-2xl">Isabella</label>
-            <label class="block">IIoT Project Lead</label>
+            <label class="block">Architect / IIoT Project Lead</label>
         </div>
         <div class="py-2">
             <div class="flex flex-col">
@@ -368,7 +368,7 @@ What problem does the persona want to solve, or which benefit does the character
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Project Manager / Team Lead, Manufacturing Inc.</span>
+                <span class="leading-6">Architect / Project Manager / Team Lead, Manufacturing Inc.</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Purchasing Role:</label>
@@ -388,7 +388,7 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Job to be done:</label>
             <ul>
-                <li>Reports to <a href="#paul%2C-plant-manager">Paul</a></li>
+                <li>Reports to <a href="#paul%2C-plant-manager">Paul</a>, but acts as strategic advisor for tech decisions.</li>
                 <li>Definition of IT/OT architecture on machine, line, plant and global level</li>
                 <li>Coordination and handover to Operations for operation of software components</li>
                 <li>Define and implement connectivity of machines</li>
@@ -398,7 +398,9 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Motivations:</label>
             <ul>
-                <li>Provide added value</li>
+                <li>Deliver measurable business value through scalable technology</li>
+                <li>Be a driver of digital transformation and IIoT maturity</li>
+                <li>Reduce complexity across the tech stack</li>
                 <li>See IIoT topics growing</li>
             </ul>
         </div>
@@ -415,6 +417,7 @@ What problem does the persona want to solve, or which benefit does the character
             <label>Needs & Expectations:</label>
             <ul>
                 <li>Tools that interacts with industrial equipment and can provide data to other software applications</li>
+                <li>Clear, standards-compliant architecture documentation</li>
                 <li>Easy way to visualize data</li>
                 <li>Stable and high available software</li>
             </ul>
