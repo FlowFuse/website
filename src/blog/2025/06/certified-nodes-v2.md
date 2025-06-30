@@ -1,8 +1,8 @@
 ---
-title: "Supercharge Your Node-RED Development: Get Paid for Your Code with FlowFuse Certified Nodes 2.0"
-subtitle: "Revolutionary update creating a direct financial link between enterprise success and node developers"
-description: "FlowFuse announces Certified Nodes v2.0 - a new program that financially rewards Node-RED node developers based on enterprise usage and success."
-date: 2025-06-23
+title: "Curated Node-RED Integrations: FlowFuse Certified Nodes 2.0"
+subtitle: "FlowFuse Unveils Certified Nodes Program to Reward Quality and Ensure Long-Term Support"
+description: "FlowFuse announces Certified Nodes v2.0 - connecting enterprises with the highest quality Node-RED nodes, built and maintained by recognized experts in their fields."
+date: 2025-06-30
 authors: ["zeger-jan-van-de-weg"]
 image: blog/2025/06/images/certified-nodes-v2.png
 tags:
@@ -12,49 +12,78 @@ tags:
    - developers
 ---
 
-Node-RED is a powerful tool for building automation and IoT projects. Its strength lies in its vibrant open-source community and the vast library of nodes that allow you to connect to almost anything. But for professional developers and system integrators, this vastness can present a challenge. How do you know which nodes are secure, reliable, and actively maintained? And for the talented developers building these nodes, how do you get rewarded for the countless hours spent creating and supporting them?
+Node-RED is a powerful tool for building automation and IoT projects. Its
+strength lies in its open-source community and the library of nodes that allow
+you to connect to almost anything, hardware and software. But for professional
+developers and system integrators, this vastness can present a challenge. How do
+you know which nodes are secure, reliable, and actively maintained? How do you
+identify the nodes built by true experts in their respective domains?
 
-At FlowFuse, we believe that the creators of high-quality, dependable nodes deserve to be compensated for their expertise and effort. That's why we are thrilled to announce a revolutionary update to our ecosystem: **FlowFuse Certified Nodes v2.0**.
-
-This isn't just an update; it's a new paradigm. For the first time, we are creating a direct financial link between the success of our enterprise customers and the developers who build the critical nodes they rely on.
+At FlowFuse, we believe that enterprises deserve access to the highest caliber
+of Node-RED nodes—solutions crafted by recognized experts who bring deep domain
+knowledge and professional standards to their work. That's why we are thrilled
+to announce a significant evolution of our ecosystem: **FlowFuse Certified Nodes
+v2.0**.
 
 <!--more-->
 
-## From Community Contribution to Paid Partnership
+## From Community Contribution to Professional Partnership
 
-For too long, the Node-RED community has relied solely on the passion and goodwill of its developers. While this has fostered an incredible environment of collaboration, it's not a sustainable model for the enterprise-grade solutions that companies are building on Node-RED today.
+The Node-RED community has always had a pasionate and thrived on the
+domain-expertise of its developers. The communityhas created an environment of
+innovation, and now we're taking the next step to support enterprise-grade
+solutions that companies are building on Node-RED today.
 
-Our new **Certified Node Publisher program** changes that. We are formalizing a system to financially reward you—the publishers of custom nodes and plugins—for your contributions.
+Our new **Certified Nodes** program we hope to elevate the community. We are
+establishing a professional partnership with the most skilled node developers
+and domain experts in the community.
 
 Here’s how it works:
 
-- **Share in Our Success:** FlowFuse will earmark a percentage of our enterprise revenue each month for distribution to our certified node publishers. Your success is now directly tied to ours.
-- **Performance-Based Rewards:** The distribution isn't arbitrary. It's a merit-based system calculated on the real-world impact of your nodes. We'll look at the class of integration, the number of installations, and how actively your nodes are being used by our enterprise users.
-- **Public and Private Nodes Welcome:** We understand that not all nodes are meant for public consumption. Our new program is designed to include both your open-source contributions and private, proprietary nodes. Now you can offer enterprise-specific solutions and get rewarded for them, all while we continue to support and maintain public nodes for the wider community.
+- **Expertise Recognition:** FlowFuse partners with developers who have
+  demonstrated deep expertise in their domains, and may have already published
+  nodes in their area of expertise. Ensuring our enterprise customers access the
+  most knowledgeable contributors in each field.
+- **Quality-Driven Selection:** Our certification process identifies nodes that
+  excel in real-world environments, focusing on reliability, security,
+  up-to-date documentation and professional implementation standards.
+- **Comprehensive Solutions:** We welcome both open-source innovations and
+  proprietary solutions. This approach allows experts to share their knowledge
+  broadly while also providing targeted solutions for specific industry needs.
 
 ## What Does It Take to Become a Certified Publisher?
 
-We are looking for partners who are committed to quality and reliability. To be eligible for the rewards program, maintainers must commit to:
+We are seeking partners who represent the pinnacle of expertise in their
+respective domains. To join our certified ecosystem, we look for developers who
+demonstrate:
 
-- **Active Maintenance:** Keep your nodes updated and squash bugs in a timely manner
-- **Rock-Solid Security:** Proactively address any potential security vulnerabilities to protect our users
-- **Rich Feature Set:** Continue to innovate and maintain the features that make your node great
-- **Professional Support:** Provide Level 2 and Level 3 support for your nodes. Don't worry, our expert team at FlowFuse will handle all initial Level 1 support queries
+- **Domain Expertise:** Deep knowledge and proven experience in the specific
+  technology or industry vertical their nodes address
+- **Professional Standards:** Commitment to enterprise-grade code quality,
+  comprehensive testing, and security best practices
+- **Continuous Innovation:** Ongoing development and enhancement of features
+  that solve real-world enterprise challenges
+- **Expert Support:** Ability to provide advanced technical support and guidance
+  that goes beyond basic troubleshooting
 
-If a maintainer is unable to uphold these standards, FlowFuse will step in to assume maintenance, guaranteeing that the nodes our customers depend on remain stable and secure. This ensures a win-win: developers are rewarded for their commitment, and users get the peace of mind that comes with a professionally supported and vetted node library.
+Our certification process ensures that every node in the certified nodes
+ecosystem meets these exacting standards. When enterprises choose certified
+nodes, they gain access not just to code, but to the expertise and ongoing
+support of recognized industry professionals. This creates a sustainable model
+where expert knowledge is properly valued and enterprises receive the
+reliability they require.
 
 ## Why Partner with FlowFuse?
 
-Joining the FlowFuse Certified Nodes v2.0 program means more than just a new revenue stream. It means:
+Joining the FlowFuse Certified Nodes v2.0 program means becoming part of an
+elite community of experts. Moreover, there's now a financial reward for doing
+so. FlowFuse commits a fixed percentage of our FlowFuse Enterprise Platform Fee
+to be distributed quarterly to the node authors.
 
-- **Visibility:** Get your nodes in front of leading system integrators and enterprise clients who are looking for reliable solutions
-- **Collaboration:** Become part of a collaborative ecosystem where your work is valued and supported by a dedicated partner
-- **Focus on What You Do Best:** Let us handle the initial support and marketing, so you can focus on building incredible nodes
-
-## Ready to Turn Your Nodes into Revenue?
-
-If you are a developer or a company that has built high-quality Node-RED nodes and are committed to maintaining them, we want to talk to you. Let's work together to build a more sustainable, professional, and rewarding future for the entire Node-RED ecosystem.
-
-**Have a node you think is ready for the big leagues? Let's chat about getting it certified.**
+If you are an expert developer or organization that has built exceptional
+Node-RED nodes and are committed to maintaining the highest professional
+standards, we want to collaborate with you. Let's work together to create a more
+sustainable, professional ecosystem that connects enterprise users with the
+industry's leading experts.
 
 [Contact us to discuss your node certification](/contact/)
