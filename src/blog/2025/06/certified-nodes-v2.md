@@ -23,7 +23,7 @@ v2.0**.
 ## From Community Contribution to Professional Partnership
 
 The Node-RED community has always had a pasionate and thrived on the
-domain-expertise of its developers. The communityhas created an environment of
+domain-expertise of its developers. The community has created an environment of
 innovation, and now we're taking the next step to support enterprise-grade
 solutions that companies are building on Node-RED today.
 
@@ -79,4 +79,4 @@ standards, we want to collaborate with you. Let's work together to create a more
 sustainable, professional ecosystem that connects enterprise users with the
 industry's leading experts.
 
-[Contact us to discuss your node certification](/contact/)
+[Contact us to discuss your node certification](/contact-us/)
