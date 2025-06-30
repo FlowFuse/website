@@ -12,15 +12,8 @@ tags:
    - developers
 ---
 
-Node-RED is a powerful tool for building automation and IoT projects. Its
-strength lies in its open-source community and the library of nodes that allow
-you to connect to almost anything, hardware and software. But for professional
-developers and system integrators, this vastness can present a challenge. How do
-you know which nodes are secure, reliable, and actively maintained? How do you
-identify the nodes built by true experts in their respective domains?
-
-At FlowFuse, we believe that enterprises deserve access to the highest caliber
-of Node-RED nodes—solutions crafted by recognized experts who bring deep domain
+At FlowFuse, we believe that enterprises deserve access to the best of Node-REDs
+custom nodes and solutions crafted by recognized experts who bring deep domain
 knowledge and professional standards to their work. That's why we are thrilled
 to announce a significant evolution of our ecosystem: **FlowFuse Certified Nodes
 v2.0**.
