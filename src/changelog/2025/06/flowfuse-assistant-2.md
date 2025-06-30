@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Assistant just got smarter
 description: "Understand what your teams flows are doing with the power of AI"
-date: 2025-06-27 12:00:00.0  
+date: 2025-06-30 12:00:00.0  
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
@@ -20,7 +20,7 @@ And there more to come in the next week - stay tuned!
 
 #### New Menu
 
-![Screenshot of the new Assistant Menu](./images/assistant-new-menu)
+![Screenshot of the new Assistant Menu](./images/assistant-new-menu.png){data-zoomable}
 _Screenshot of the new Assistant Menu_
 
 #### Flow Explainer updated look & feel
