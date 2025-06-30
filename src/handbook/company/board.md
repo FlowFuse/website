@@ -86,7 +86,7 @@ Assets will always include:
 
 ### Meeting Minutes
 
-Meeting Minutes are compiled by our Counsel and shared after the meeting. They are stored in the FlowFuse Admin Shared Drive, in the Investors Folder, under the correct year. 
+Meeting Minutes are compiled by our Counsel and shared after the meeting. They are stored in the FlowFuse Admin Shared Drive, in the [Investors directory](https://drive.google.com/drive/folders/1EO1QO2K0wsHKRhA6FUjwkLvILrPCsAHA), under the correct year. 
 
 ## Monthly Investor Updates
 
