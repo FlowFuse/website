@@ -84,6 +84,10 @@ Assets will always include:
 2. A link to the pre-shared materials for the Strategic Discussion
 3. List of action items
 
+### Meeting Minutes
+
+Meeting Minutes are compiled by our Counsel and shared after the meeting. They are stored in the FlowFuse Admin Shared Drive, in the [Investors directory](https://drive.google.com/drive/folders/1EO1QO2K0wsHKRhA6FUjwkLvILrPCsAHA), under the correct year. 
+
 ## Monthly Investor Updates
 
 FlowFuse investors get a monthly update sent to them through Carta, which contains
