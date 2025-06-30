@@ -8,7 +8,7 @@ Personas are fictional characters that represent the different users we expect t
 
 Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points.
 
-As outlined in our [brand voice](/handbook/customer/marketing/brand-voice/), FlowFuse serves as **a trusted partner for industrial engineers and developers navigating digital transformation**. We position ourselves as "the engineer's enabler — technical enough to be respected, accessible enough to be adopted." This approach ensures our communication is aligned, consistent, and memorable across all organizational levels.
+As outlined in our [brand voice](/handbook/marketing/brand-voice/), FlowFuse serves as **a trusted partner for industrial engineers and developers navigating digital transformation**. We position ourselves as "the engineer's enabler — technical enough to be respected, accessible enough to be adopted." This approach ensures our communication is aligned, consistent, and memorable across all organizational levels.
 
 Our personas are structured around three strategic layers that reflect the typical FlowFuse adoption journey, with each layer playing distinct roles in the decision-making process:
 
