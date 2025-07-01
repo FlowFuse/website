@@ -79,4 +79,13 @@ standards, we want to collaborate with you. Let's work together to create a more
 sustainable, professional ecosystem that connects enterprise users with the
 industry's leading experts.
 
-[Contact us to discuss your node certification](/contact-us/)
+### Contact us to discuss your node certification
+
+<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "26586079",
+    formId: "6e02fe34-13c3-442b-8c27-9a12e72bba37",
+    region: "eu1"
+  });
+</script>
