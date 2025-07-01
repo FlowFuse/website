@@ -1,72 +1,113 @@
 ---
-navTitle: Solutions Engineer
+navTitle: Developer Relations Advocate
 navGroup: Job Descriptions
 ---
 
-# Solutions Engineer
+# Developer Relations Advocate
 
-## Job Description
+## About FlowFuse
 
-We’re hiring an experienced Solutions Engineer to work across the full customer lifecycle - from pre-sales discovery to long-term customer success. This is a senior, customer-facing role requiring strong domain expertise in industrial automation and a proven ability to guide both technical implementation and strategic solution expansion.
+FlowFuse is the industrial application platform that empowers teams to build, deploy, and manage applications that optimize industrial operations. Built on Node-RED, FlowFuse provides enterprise-grade capabilities for low-code development in manufacturing, IIoT, and industrial automation environments. We support operational technology (OT) and information technology (IT) teams with the tools and safeguards needed to drive operational efficiency and deliver real business value.
 
-We’re looking for someone who not only enables the initial deployment but also identifies additional opportunities to expand value across the customer’s organization - be it new use cases, integrations, or system-wide architecture improvements.
+Our platform enables organizations to unlock industrial data, create powerful automation workflows, and scale Node-RED deployments with enhanced security, collaboration, and DevOps capabilities. From production monitoring to complex automation systems, FlowFuse makes it easy to turn industrial data into actionable insights and business outcomes.
 
-You’ll be a key technical advisor and trusted partner to both prospective and existing customers.
+## Position Overview
 
-Pre-Sales Support:
-* Partner with Account Executives during discovery to understand customer goals and technical environments.
-* Deliver tailored demos, solution architecture walkthroughs, and lead technical proof-of-concepts (PoCs).
-* Help prospects align FlowFuse to their broader industrial and digital transformation goals.
-* Collaborate on pricing proposals and technical responses to RFPs and security reviews.
+As a Developer Relations Advocate at FlowFuse, you will serve as a crucial bridge between our company and the global community of Node-RED developers, industrial engineers, and automation professionals. This role combines technical evangelism, community building, and business development to drive adoption of the FlowFuse platform. 
 
-Post-Sales Engagement:
-* Lead technical onboarding and early solution implementation.
-* Partner with customers to assess results, resolve blockers, and optimize solution design.
-* Actively explore and surface additional use cases within the customer organization.
-* Facilitate roadmap alignment and strategic planning discussions with technical champions.
-* Deliver ongoing best practices, architecture reviews, and training to ensure long-term success.
+You will be responsible for building relationships with key stakeholders in the industrial automation and IIoT ecosystems, creating compelling and engaging technical content, and identifying business opportunities within developer communities. This position requires a unique blend of technical depth, communication skills, and business acumen to effectively advocate for FlowFuse's solutions while understanding the real-world challenges our target users face.
 
-## Skills
+## Key Responsibilities
 
-What We’re Looking For:
-* 5+ years in a Solutions Engineering, Sales Engineering, or Customer Success Engineering role.
-* Deep industry expertise in industrial automation, IIoT, smart manufacturing, or related fields.
-* Track record of identifying additional solution opportunities within enterprise accounts.
-* Experience with technologies such as Node-RED, MQTT, OPC-UA, SCADA systems, PLCs, or edge computing.
-* Strong communication skills - comfortable engaging engineers, architects, and executive stakeholders.
-* High degree of initiative and ability to manage customer relationships across the lifecycle.
-* Willingness to travel occasionally for key customer engagements.
+### Technical Evangelism & Content Creation
 
-Nice to Haves:
-* Hands-on experience deploying Node-RED at scale.
-* Familiarity with Unified Namespace or other modern industrial data architectures.
-* Experience with containerization, cloud (AWS/Azure), or Linux-based edge devices.
-* Multilingual skills (e.g., German, French, Spanish).
+* Develop and deliver compelling technical presentations at industry conferences, meetups, hackathons, and webinars focused on Node-RED, industrial automation, and IIoT applications  
+* Create high-quality content including videos, webinars, social media posts, blog articles, tutorials, case studies, and technical documentation that demonstrates FlowFuse's value proposition  
+* Build and showcase demo applications that highlight FlowFuse's capabilities in real-world industrial scenarios  
+* Produce social media posts, video content, podcasts, and webinars to engage with the broader Node-RED and industrial automation communities
 
-## 90-Day Plan
+### Community Engagement & Relationship Building
 
-* Week 1-4:
-   * Familiarize yourself with the FlowFuse product, platform capabilities, and target customer profiles.
-   * Understand existing sales processes, customer success methodologies, and relevant internal tools.
-   * Meet with key internal stakeholders across Sales, Product, and Engineering teams.
-   * Begin shadowing customer calls, demos, and technical engagements to learn our approach.
-   * Review and provide feedback on existing solution architecture documentation and sales enablement materials.
-   * Start leading portions of customer demos and technical discussions with guidance.
-* Week 5-8:
-   * Develop a deep technical understanding of FlowFuse and its integration points within industrial environments.
-   * Engage in your first set of technical PoCs, contributing to design and execution
-   * Take ownership of specific pre-sales and post-sales customer engagements, leading technical discussions and solution design.
-   * Proactively identify and propose opportunities for expanding FlowFuse's value within customer accounts.   
-* Week 9-13:
-   * Contribute to internal knowledge sharing, developing best practices or technical guides based on customer interactions.
-   * Start building relationships with customer technical champions to facilitate long-term success and strategic alignment.
+* Actively participate in and contribute to Node-RED, IIoT, and industrial automation communities, forums, and open-source projects  
+* Identify and cultivate relationships with key influencers, community leaders, and potential advocates in the industrial automation space  
+* Organize and participate in developer meetups, industry events, and community gatherings  
+* Foster collaboration between FlowFuse and the broader Node-RED ecosystem, including core maintainers and community contributors
 
-## Hiring Plan
+### Business Development & Lead Generation
 
-* Initial Screening: Review resumes and cover letters to assess candidate qualifications, experience, and domain expertise.
-* First Interview (Technical & Role Fit): Conduct a phone or video interview to evaluate technical knowledge relevant to industrial automation, IIoT, and solutions engineering, as well as communication skills.
-* Second Interview (Deep Dive & Customer Experience): In-depth interview with the hiring manager and other team members to discuss specific experience in customer-facing technical roles, complex problem-solving, and managing customer lifecycles.
-* Technical Presentation / Case Study: Candidate will prepare and deliver a presentation on a technical solution or a case study of a past customer engagement demonstrating their problem-solving and communication skills.
-* STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style.
-* Final Interview: A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
-* Offer: Extend an offer to the selected candidate.
+* Identify and qualify business opportunities through community engagement and relationship building activities  
+* Collaborate with sales and marketing teams to develop lead generation strategies targeting developers and technical decision-makers  
+* Utilize CRM tools to track engagement metrics, community interactions, and pipeline development  
+* Support the sales team by providing technical expertise during prospect meetings and demonstrations
+
+### Product Advocacy & Feedback
+
+* Serve as the voice of the developer community within FlowFuse, providing product feedback and feature requests based on community needs  
+* Work closely with product and engineering teams to ensure FlowFuse addresses real-world challenges faced by Node-RED developers and industrial engineers  
+* Gather feedback from community members to inform product roadmap decisions  
+* Act as a subject matter expert on Node-RED, industrial protocols, and automation workflows
+
+### Strategic Partnerships & Ecosystem Development
+
+* Identify and develop strategic partnerships with complementary technology providers, system integrators, and industrial equipment manufacturers  
+* Collaborate with partner organizations to create joint content, co-marketing opportunities, and technical integrations  
+* Represent FlowFuse in industry standards bodies and working groups related to industrial automation and IIoT
+
+## Requirements
+
+1. **Node-RED Experience**: 3-5 years hands-on experience with Node-RED, ideally in industrial settings
+
+2. **Communication & Content Creation Excellence**: 3-5 years of experience communicating with diverse audiences using various media formats. Proven ability to create engaging content through video, audio, and written formats that resonates with technical and business stakeholders.
+
+3. **Business Development Experience**: Demonstrated experience in business relationship development or lead generation, preferably in technology or B2B SaaS environments. Understanding of sales processes and ability to identify and nurture business opportunities.
+
+4. **Domain Expertise**: Firsthand experience as a user, project lead, or decision-maker in roles similar to FlowFuse's core buyer personas (e.g., IIoT Project Lead, IT Operations Manager, Manufacturing Engineer, Plant Manager). Must have faced the pain points FlowFuse solves in deploying, managing, or scaling Node-RED-based solutions in industrial environments.
+
+5. **Communication Skills**: Excellent written and verbal communication skills in English. Ability to explain complex technical concepts to both technical and non-technical audiences.
+
+6. **Cross-functional Collaboration**: Proven ability to collaborate closely with digital marketing, sales, product, and engineering teams to optimize campaigns, processes, and product development initiatives.
+
+7. **Digital Marketing Knowledge**: Understanding of engagement and retargeting strategies, as well as experience with platforms like Google Ads, LinkedIn ABM, content marketing, and social media engagement.
+
+8. **Results-Driven Approach**: Strong project management skills with the ability to manage multiple priorities simultaneously. Experience measuring the impact of developer relations activities through metrics and analytics.
+
+9. **Data Analysis Skills**: Ability to analyze engagement data, community metrics, and business impact to measure the effectiveness of developer relations activities and optimize strategies.
+
+10. **Community Involvement**: Active participation in online and offline developer communities and ecosystems, including open-source platforms, technical blogs, social channels, forums, and professional networks.
+
+11. **Technical Content Creation**: Demonstrated ability to create content that resonates with technical buyer personas in the form of blog articles, tutorials, webinars, conference presentations, workshop materials, and documentation.
+
+## Nice to Have
+
+* **Open-Source & Low-Code Background**: Experience working in open-source software companies or with low-code/no-code development platforms, understanding of open-source community dynamics  
+* **Marketing Automation**: Familiarity with marketing automation tools such as HubSpot, Marketo, Pardot, or similar platforms for lead nurturing and campaign management  
+* **Global Team Experience**: Experience working effectively in remote and multicultural teams, with understanding of different regional markets and developer communities  
+* **Industrial Protocol Knowledge**: Understanding of industrial communication protocols such as OPC-UA, Modbus, MQTT, or similar technologies used in manufacturing and automation  
+* **Technical Background**: Software development experience in JavaScript/Node.js, Python, or other relevant programming languages  
+* **CRM & Analytics Proficiency**: Ability to identify and qualify business opportunities using CRM tools such as HubSpot, Salesforce, or similar platforms. Experience with lead scoring, pipeline management, and opportunity tracking.
+
+## What We Offer
+
+* Opportunity to shape the future of industrial automation and low-code development  
+* Work with cutting-edge technology in the rapidly growing IIoT and Industry 4.0 market  
+* Collaborate with the core Node-RED development team and contribute to open-source projects  
+* Flexible remote work environment with a global, multicultural team  
+* Professional development opportunities including conference attendance and speaking engagements  
+* Competitive compensation package including equity participation  
+* Comprehensive benefits package  
+* Travel opportunities to industry events and customer sites
+
+## Location & Travel
+
+This is a remote position with flexibility to work from anywhere. The role requires travel for industry conferences, customer meetings, and team gatherings (approximately 25-30% travel expected).
+
+## Application Process
+
+To apply, please submit:
+
+* Resume highlighting relevant experience in developer relations, technical evangelism, or related fields  
+* Cover letter explaining your interest in FlowFuse and how your experience aligns with our mission  
+* Portfolio of content creation work (blog posts, presentations, videos, or other relevant materials)  
+* Examples of community engagement or contributions to open-source projects
+
+We are an equal opportunity employer committed to diversity and inclusion. We welcome applications from all qualified candidates regardless of race, gender, age, religion, sexual orientation, or disability status.
