@@ -240,7 +240,8 @@ eleventyComputed:
                             </ul>
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
-                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
+                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-6 sm:grid-cols-1 sm:pr-9">
+                                {% navoption "Changelog", "/changelog/", 1, "rocket-launch" %}{% endnavoption %}
                                 {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
                                 {% navoption "Webinars", "/webinars/", 1, "screen" %}{% endnavoption %}
                                 {% navoption "Publications", "/resources/publications/", 1, "book-open" %}{% endnavoption %}
