@@ -2,7 +2,7 @@
 title: "Curated Node-RED Integrations: FlowFuse Certified Nodes 2.0"
 subtitle: "FlowFuse Unveils Certified Nodes Program to Reward Quality and Ensure Long-Term Support"
 description: "FlowFuse announces Certified Nodes v2.0 - connecting enterprises with the highest quality Node-RED nodes, built and maintained by recognized experts in their fields."
-date: 2025-06-30
+date: 2025-07-01
 authors: ["zeger-jan-van-de-weg"]
 image: blog/2025/06/images/certified-nodes-v2.png
 tags:
