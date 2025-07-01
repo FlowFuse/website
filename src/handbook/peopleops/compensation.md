@@ -57,7 +57,8 @@ FlowFuse does not provide any advice on financial decisions for employees. For
 FlowFuse employees the Fair Market Value of the underlying stock can be found
 in [this internal document](https://docs.google.com/document/d/1_DmqzQ5rmjYHlBvF5owJpj3JVR_BlJUg_S-pwfRtA5g).
 
-Equity grants are subject to board approval.
+Equity grants are subject to board approval. Grants are presented to the Board
+four times per year at official Board Meetings. 
 
 ### Benefits
 
