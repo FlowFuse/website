@@ -233,7 +233,7 @@ buttons:
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
     - cta: TRY FOR FREE
       url: https://app.flowfuse.com/account/create
-      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"
+      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-pro'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
