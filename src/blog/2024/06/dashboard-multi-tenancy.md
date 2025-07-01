@@ -12,7 +12,7 @@ tags:
    - dashboard
 ---
 
-FlowFuse Dashboard has featured multi-tenancy features through the FlowFuse User Addon. This made user based applications available only to specific FlowFuse team tiers and customers. However, the Node-RED community wanted to use the same feature set in cases FlowFuse didn't consider initially. Taking this feedback on board, today we announce some significant changes to how you can build Dashboards with multi-tenancy in mind.
+FlowFuse Dashboard has featured multi-tenancy features through the FlowFuse User Addon. This made user based applications available only to specific FlowFuse pro tiers and customers. However, the Node-RED community wanted to use the same feature set in cases FlowFuse didn't consider initially. Taking this feedback on board, today we announce some significant changes to how you can build Dashboards with multi-tenancy in mind.
 
 Having taken that feedback on board, we've made some significant changes to how you can build Dashboards with multi-tenancy in mind.
 
@@ -21,7 +21,7 @@ Having taken that feedback on board, we've made some significant changes to how 
 A quick summary of the changes are as follows:
 
 - **Socket constraints moved to core Dashboard:** The ability to constrain communications to a specific client (using the `msg._client.socketId`) has been moved to the core of Dashboard 2.0, and is no longer a feature of the FlowFuse User Addon. As such, it's available to _all_ users, for _all_ node types.
-- **FlowFuse User Addon now Source Available:** The addon is available to install in _any_ instances of Node-RED running on FlowFuse, so that's all team tiers on FlowFuse Cloud, and any self-hosted instances of FlowFuse too. It is available to install from Node-RED's Palette Manager.
+- **FlowFuse User Addon now Source Available:** The addon is available to install in _any_ instances of Node-RED running on FlowFuse, so that's all pro tiers on FlowFuse Cloud, and any self-hosted instances of FlowFuse too. It is available to install from Node-RED's Palette Manager.
 - **Cloudflare Auth Plugin:** Release of the first community-created Auth Plugin for Dashboard for adding a `user` object when authenticating with Cloudflare. (See more details and install the plugin [here](https://flows.nodered.org/node/@fullmetal-fred/node-red-dashboard-2-cloudflare-auth))
 
 ## Using Client Data
