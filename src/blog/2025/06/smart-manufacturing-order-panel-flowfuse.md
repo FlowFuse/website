@@ -24,11 +24,9 @@ Let’s take a closer look.
 
 ----TODO---
 
-In this demo, the operator selects a Manufacturing Order (MO) from a list pulled directly from Odoo ERP. The system checks if enough raw materials are available for the selected MO.
+In this demonstration, an operator starts by selecting a Manufacturing Order (MO) from a list pulled directly from Odoo ERP. The system immediately checks if enough raw materials are available for that specific order.
 
--  If raw materials are available: production starts, the MO status in Odoo is updated to *In Progress*, and the system tracks the quantity being produced.  
--  If raw materials are missing: production won’t start, and the operator is notified.  
-- Once the produced quantity matches the target quantity, the system automatically stops production and marks the MO as *Done* in Odoo.
+If the materials are ready, production begins, and the MO status in Odoo is automatically updated to In Progress. The system then tracks the production count in real time. However, if materials are missing, production won’t start, and the operator is notified instantly. Once the produced quantity matches the target, the system automatically stops the line and marks the MO as Done in Odoo, completing the cycle without manual intervention.
 
 ## How It Works: Behind the Scenes
 
@@ -40,7 +38,7 @@ To build this system, I used **FlowFuse** to create a Node-RED flow that connect
   Holds Manufacturing Orders, product details, and inventory data. This integration allows for a two-way conversation between the shop floor and the business's core planning system. For a detailed guide on how to read from and write to Odoo, you can read our article, [Connect Your Shop Floor to Your ERP – Odoo Edition](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/)
 
 - **FlowFuse**  
-  Executes logic: fetches MOs, checks material availability, updates statuses, and controls production.
+  Executes logic: fetches MOs, checks material availability, updates statuses, and controls production, build panel user interface
 
 - **Simulated Production Line (Factory I/O)**  
   Acts as the shop floor. Starts and stops production based on FlowFuse commands.
