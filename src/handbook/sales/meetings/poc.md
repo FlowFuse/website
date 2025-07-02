@@ -6,7 +6,7 @@ navTitle: Proof of Concept
 
 ### Cloud trial
 
-If the prospect would like to trial FlowFuse Cloud, they are able to self-service at https://app.flowfuse.com/account/create. This will give them a 14-day trial of the Team tier. If they would like to test with Enterprise features, you can apply a coupon code to their Stripe account and elevate their Tier, after they create their trial account.
+If the prospect would like to trial FlowFuse Cloud, they are able to self-service at https://app.flowfuse.com/account/create. This will give them a 14-day trial of the Pro tier. If they would like to test with Enterprise features, you can apply a coupon code to their Stripe account and elevate their Tier, after they create their trial account.
 
 #### Extending a trial
 
