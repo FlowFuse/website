@@ -6,24 +6,83 @@ navTitle: Personas
 
 Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. Personas are a generalized way of talking about the ideal target we are aiming to communicate with and design for. 
 
-Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points. At FlowFuse, we have many personas that will evolve over time: 
+Personas help us not only define our messaging and marketing delivery, but also our product. Keeping personas in mind allows us to use the correct language and make the best decisions to address their specific problems and pain points.
 
-##### Manufacturing Inc.
+As outlined in our [brand voice](/handbook/marketing/brand-voice/), FlowFuse serves as **a trusted partner for industrial engineers and developers navigating digital transformation**. We position ourselves as "the engineer's enabler — technical enough to be respected, accessible enough to be adopted." This approach ensures our communication is aligned, consistent, and memorable across all organizational levels.
 
+Our personas are structured around three strategic layers that reflect the typical FlowFuse adoption journey, with each layer playing distinct roles in the decision-making process:
 
+##### Three-Layer Sales Structure
 
-- [Paul Plant Manager](#paul%2C-plant-manager) <!-- omit in toc -->
+**Layer 1 - Users (End-users & Advocates)**
+FlowFuse serves as their reliable, technically-grounded partner for daily operational challenges.
+- [Peter Automation and Controls Engineer](#peter%2C-automation-and-controls-engineer) - Uses Node-RED, MQTT, and industrial protocols
+- [Sarah Process Engineer](#sarah%2C-process-engineer) - Works with data and industrial processes
 
-- [Steve Plant Engineer](#steve%2C-plant-engineer)
+**Layer 2 - Champions (Technical Influencers & Evaluators)**  
+FlowFuse demonstrates value through practical, straightforward solutions that address real business needs.
+- [Steve Plant Engineer](#steve%2C-plant-engineer) - Needs convincing through proven results and clear ROI
+- [Isabella IIoT Project Lead](#isabella%2C-iiot-project-lead) - IT/OT bridge seeking dependable platform for digital transformation
 
-- [Sarah Process Engineer](#sarah%2C-process-engineer)
+**Layer 3 - Buyers (Economic Decision-Makers)**
+FlowFuse provides transparent, enterprise-ready solutions with measurable impact on business outcomes.
+- [Paul Plant Manager](#paul%2C-plant-manager) - Final decision maker focused on operational efficiency and innovation
 
-- [Isabella IIoT Project Lead](#isabella%2C-iiot-project-lead)
+#### Layer Interactions & Influence Flow
 
-- [Peter Automation and Controls Engineer](#peter%2C-automation-and-controls-engineer)
-  
-- [Danielle Developer](#danielle%2C-developer)
-  
+The personas influence each other in a structured flow that mirrors typical B2B technology adoption:
+
+- **Users → Champions**: End-users like Peter and Sarah identify operational challenges and advocate for solutions to their engineering managers. Their hands-on experience and technical credibility make them powerful advocates for FlowFuse's capabilities.
+
+- **Champions → Buyers**: Technical influencers like Steve and Isabella evaluate solutions, build business cases, and present recommendations to executive decision-makers. They translate technical benefits into business value propositions.
+
+- **Buyers ← → Champions**: Decision-makers like Paul rely on champions for technical validation while providing budget authority and strategic direction. This bidirectional relationship ensures alignment between technical capabilities and business objectives.
+
+- **Cross-layer Communication**: Users often directly influence buyers through demonstration of results and ROI, while buyers set constraints and requirements that flow down to champions and users.
+
+#### Sales Funnel Stages by Layer
+
+Each persona layer engages with FlowFuse at different stages of the sales funnel:
+
+**Awareness Stage**
+- **Users**: Discover FlowFuse through technical communities, Node-RED forums, industrial automation conferences
+- **Champions**: Learn about FlowFuse through industry publications, vendor evaluations, peer networks
+- **Buyers**: Become aware through business publications, executive briefings, strategic planning sessions
+
+**Consideration Stage**
+- **Users**: Evaluate technical capabilities, test integrations, assess ease of implementation
+- **Champions**: Analyze business impact, compare alternatives, build ROI calculations
+- **Buyers**: Review strategic alignment, assess vendor stability, evaluate total cost of ownership
+
+**Decision Stage**
+- **Users**: Provide technical validation and implementation feedback
+- **Champions**: Present business cases and recommendations to decision-makers
+- **Buyers**: Make final purchasing decisions based on business value and risk assessment
+
+#### Marketing Materials by Layer
+
+Each persona layer requires targeted content that addresses their specific needs and decision-making criteria:
+
+**Users (End-users & Advocates)**
+- Technical documentation and integration guides
+- Video tutorials and how-to content
+- Community forum discussions and peer testimonials
+- Hands-on trial experiences and sandbox environments
+- Technical webinars and training sessions
+
+**Champions (Technical Influencers & Evaluators)**
+- ROI calculators and business case templates
+- Comparative analysis and competitive positioning
+- Solution architecture diagrams and technical specifications
+- Case studies demonstrating measurable business outcomes
+- Proof-of-concept implementation guides
+
+**Buyers (Economic Decision-Makers)**
+- Executive briefings and strategic whitepapers
+- Total cost of ownership (TCO) analyses
+- Vendor stability and roadmap documentation
+- Security and compliance certifications
+- Customer success stories from similar organizations
 
 
 ## Persona Template
@@ -84,7 +143,7 @@ What problem does the persona want to solve, or which benefit does the character
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">Final Decision Maker. >$50k. High Influence</span>
+                <span class="leading-6">Final Decision Maker, Architect. >$50k. High Influence</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Technical Skillset:</label>
@@ -300,7 +359,7 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
             <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/isabella.jpg">
             <label class="block mt-2 font-medium text-2xl">Isabella</label>
-            <label class="block">IIoT Project Lead</label>
+            <label class="block">Architect / IIoT Project Lead</label>
         </div>
         <div class="py-2">
             <div class="flex flex-col">
@@ -309,7 +368,7 @@ What problem does the persona want to solve, or which benefit does the character
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Project Manager / Team Lead, Manufacturing Inc.</span>
+                <span class="leading-6">Architect / Project Manager / Team Lead, Manufacturing Inc.</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Purchasing Role:</label>
@@ -329,7 +388,7 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Job to be done:</label>
             <ul>
-                <li>Reports to <a href="#paul%2C-plant-manager">Paul</a></li>
+                <li>Reports to <a href="#paul%2C-plant-manager">Paul</a>, but acts as strategic advisor for tech decisions.</li>
                 <li>Definition of IT/OT architecture on machine, line, plant and global level</li>
                 <li>Coordination and handover to Operations for operation of software components</li>
                 <li>Define and implement connectivity of machines</li>
@@ -339,7 +398,9 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Motivations:</label>
             <ul>
-                <li>Provide added value</li>
+                <li>Deliver measurable business value through scalable technology</li>
+                <li>Be a driver of digital transformation and IIoT maturity</li>
+                <li>Reduce complexity across the tech stack</li>
                 <li>See IIoT topics growing</li>
             </ul>
         </div>
@@ -356,6 +417,7 @@ What problem does the persona want to solve, or which benefit does the character
             <label>Needs & Expectations:</label>
             <ul>
                 <li>Tools that interacts with industrial equipment and can provide data to other software applications</li>
+                <li>Clear, standards-compliant architecture documentation</li>
                 <li>Easy way to visualize data</li>
                 <li>Stable and high available software</li>
             </ul>
@@ -449,95 +511,17 @@ What problem does the persona want to solve, or which benefit does the character
 </div>
 
 
-### Danielle, Developer
-
-<div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
-    <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
-        <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/danielle.jpg">
-            <label class="block mt-2 font-medium text-2xl">Danielle</label>
-            <label class="block">Developer</label>
-        </div>
-        <div class="py-2">
-            <div class="flex flex-col">
-                <label class="font-bold">Age:</label>
-                <span class="leading-6">24</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Software Developer</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">Not Decision Maker, Small Influence</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Computer Science & AI (BSc)</span>
-            </div>
-            <div class="flex flex-col mt-1">
-                <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Aware of it, but not used it</span>
-            </div>
-        </div>
-    </div>
-    <div class="pt-3">
-        <div class="flex flex-col">
-            <label class="font-bold">Job to be done:</label>
-            <ul>
-                <li>Works for Corporate team.</a></li>
-                <li>Drive application and product development activities</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label class="font-bold">Motivations:</label>
-            <ul>
-                <li>Choosing the technology/tools I use to do my work</li>
-                <li>Being paid to do her job</li>
-                <li>Getting a "that is cool" response from her boss for something she has built</li>
-                <li>Building things that work</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Influences:</label>
-            <ul>
-                <li>Twitter, YouTube, TikTok, Discord Communities</li>
-                <li>Colleagues</li>
-                <li>Stack Overflow</li>
-                <li>Personal Network</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Needs & Expectations:</label>
-            <ul>
-                <li>Understanding how Node-RED works internally to get the most out of it.</li>
-                <li>Confidence the platform she’s being told to use is stable and suitable for the task</li>
-                <li>A modern set of development tools and processes - version control, CI/CD</li>
-            </ul>
-        </div>
-        <div class="flex flex-col">
-            <label>Biggest Challenges:</label>
-            <ul>
-                <li>Increasing speed of development</li>
-                <li>Prefers to write code - not sure why low-code is being used</li>
-                <li>Poor documentation for the 10’s of APIs she has to work with</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
 ## Common Use Cases
 
 Based on the Personas, the following section describes the most relevant Use Cases that we identified in exchange with our customers. These Use Cases align with the [Product Strategy](../strategy.md).
 
 1. **Data transformation**
-As Peter, Automation and Controls Engineer and Danielle, Developer,
+As Peter, Automation and Controls Engineer,
 I want to connect, collect, and store data from several sources,
 so that I can analyze my data further and ensure it is accessible in a unified manner.
 
 2. **Generate actionable insights**
-As Peter, Automation and Controls Engineer and Danielle, Developer,
+As Peter, Automation and Controls Engineer and Sarah, Process Engineer,
 I want to visualize and analyze my data,
 so that I can generate actionable insights from my data.
 

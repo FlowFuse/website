@@ -26,7 +26,7 @@ To be successful in this role, you'll need a blend of technical prowess and lead
 * **An Excellent Communicator**: You can clearly articulate technical concepts to both technical and non-technical audiences. You are a great listener and can build strong relationships with your team and other stakeholders.
 * **A "Sports Team" Captain**: You understand the dynamics of a high-performing team. You know how to foster collaboration, healthy competition, and a shared will to win. You lead by example and inspire your team to perform at their best.
 
-## 90-Day Plan:
+## 90-Day Plan
 
 * Week 1-4: Immerse & Understand
    * Familiarize yourself with FlowFuse's product vision, engineering strategy, and current roadmap.
@@ -44,10 +44,20 @@ To be successful in this role, you'll need a blend of technical prowess and lead
    * Identify and start addressing any performance management or development needs within the team, creating individual growth plans.
    * Develop plan to drive 20% throughput improvement in engineering org, leveraging AI and other tools to get there in the next 90 days. 
 
-## Hiring Plan:
+## Hiring Plan
 1. Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
 1. First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
 1. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
 1. Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample. 
 1. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
 1. Offer: Extend an offer to the selected candidate.
+
+### First interview
+Questions to consider:
+* What is your experience with remote work and remote-first environments?
+* Talk me through your EM experience.
+* Tell me about a time you handled an underperforming engineer on your team.
+* Why are you not an engineer but an EM? 
+* What's the best KPI for an EM?
+* What's the best way to measure that an engineering team is delivering customer value? 
+* What metrics do you want to start monitoring in your first week? 
