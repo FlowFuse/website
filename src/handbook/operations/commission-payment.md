@@ -18,7 +18,7 @@ next steps to process the commission calculations and setup for payment.
 Note: all sales commissions are advances under the assumption customers pay the
 invoice. FlowFuse might withhold commission payments or claw back payments if
 payments aren't made within 60 days after the
-[deal was closed](https://flowfuse.com/handbook/sales/engagements/#closing-a-deal).
+[deal was closed](/handbook/sales/engagements/#closing-a-deal).
 
 ### Calculating Team Commissions
 
@@ -51,7 +51,8 @@ payment for.
 
 Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
-to get a written agreement to the commission number.
+to get a written agreement to the commission number. Make sure the CEO and Head
+of GTM both receive a copy.
 
 Here is an email template that can be used:
 
