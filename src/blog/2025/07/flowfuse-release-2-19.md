@@ -54,6 +54,18 @@ To make it easier than ever to create a FlowFuse account, we've introduced socia
 
 This enhancement removes multiple steps from the onboarding process, making it significantly easier for new users to get started with FlowFuse.
 
+## Enhanced Device Agent Flow Selection
+
+Connecting your existing Node-RED instances running on remote devices is now even easier with the new Device Agent terminal file browser. When installing the Device Agent, you can now easily navigate your file system and select existing Node-RED instances through an interactive interface directly in the terminal.
+
+This improvement replaces the previous manual file path entry process with:
+
+- An intuitive file browser that works directly in your terminal
+- Easy navigation through your file system to locate flows
+- Contextual information about flows including file size and modification dates
+- A streamlined selection process that reduces setup friction
+
+
 ## Modernized User Interface
 ![Screenshot of New Homepage](./images/homepage.png)
 _Screenshot of Homepage_
