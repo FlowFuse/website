@@ -20,6 +20,8 @@ Let’s take a closer look.
 
 ## Demo: Smart Manufacturing Order Execution Panel in Action
 
+----TODO---
+
 In this demo, the operator selects a Manufacturing Order (MO) from a list pulled directly from Odoo ERP. The system checks if enough raw materials are available for the selected MO.
 
 -  If raw materials are available: production starts, the MO status in Odoo is updated to *In Progress*, and the system tracks the quantity being produced.  
