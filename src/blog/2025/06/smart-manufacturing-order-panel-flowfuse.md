@@ -12,6 +12,8 @@ tags:
 
 A few days ago, I had a conversation with a solution architect about how the lack of integration between the shop floor and business systems often leads to missed opportunities and financial losses. He also mentioned that while many manufacturers want to bridge this gap, they often hesitate — mostly due to concerns about complexity of integration or fear of disrupting existing operations.
 
+<!--more-->
+
 But there is no need to be afraid. In this blog, I will walk you through a simple demo that shows how easy it can be to connect production systems with your ERP. With just a small integration, you can improve visibility, avoid manual errors, and prevent unnecessary losses.
 
 To demonstrate this, I built a smart Manufacturing Order (MO) execution panel using FlowFuse, connected to ERP.
