@@ -225,18 +225,6 @@ eleventyComputed:
                                 {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
-                        {% navoption "Company", null, 0 %}
-                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-4 sm:grid-cols-1 sm:pr-9">
-                                {% navoption "About", "/about/", 1, "info" %}{% endnavoption %}
-                                {% navoption "Partners", "/partners/", 1, "puzzle-piece" %}{% endnavoption %}
-                                {% navoption "Professional services", "/professional-services/", 1, "check-badge" %}{% endnavoption %}
-                                {% navoption "Support", "/support/", 1, "chat" %}{% endnavoption %}
-                                {% navoption "Contact us", "/contact-us/", 1, "mail" %}{% endnavoption %}
-                                {% navoption "Jobs", "https://boards.greenhouse.io/flowfuse", 1, "case" %}{% endnavoption %}
-                                {% navoption "Team", "/team/", 1, "users" %}{% endnavoption %}
-                                {% navoption "Privacy", "/privacy-policy/", 1, "privacy" %}{% endnavoption %}
-                            </ul>
-                        {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
                             <ul class="sm:grid sm:grid-flow-col sm:grid-rows-6 sm:grid-cols-1 sm:pr-9">
                                 {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
@@ -293,13 +281,14 @@ eleventyComputed:
                     </div>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
+                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-6 gap-y-4 sm:grid-rows-4 md:grid-rows-6 sm:justify-between md:m-auto text-base sm:gap-x-6">
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/team/" class="py-3">Team</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="{{ site.jobBoard }}" class="py-3">Jobs</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/" class="py-3">Partnerships</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/professional-services/" class="py-3">Professional Services</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/" class="py-3">Service Status</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/support/" class="py-3">Request Support</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/" class="py-3">Contact Us</a></li>
