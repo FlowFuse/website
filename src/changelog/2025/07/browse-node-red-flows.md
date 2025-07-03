@@ -1,7 +1,7 @@
 ---
 title: Browse for Node-RED Flows During Remote Instance Setup
 description: Remote Instance setup improvements to help you get up and running faster with the FlowFuse Device Agent.
-date: 2025-06-16 12:00:00.0
+date: 2025-07-03 12:00:00.0
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
