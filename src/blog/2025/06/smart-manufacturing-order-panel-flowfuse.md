@@ -2,9 +2,10 @@
 title: "How we Built a Smart Manufacturing Order Execution Panel with FlowFuse"
 subtitle: "Control and track manufacturing orders with FlowFuse"
 description: "This blog shows how I built a panel using FlowFuse to connect with Odoo ERP. It starts production, checks for raw materials, updates order status, and stops when the target is reached."
-date: 2025-07-02
+date: 2025-07-03
 authors: ["sumit-shinde"]
 image:
+keywords: manufacturing execution system, odoo erp integration, flowfuse manufacturing, smart manufacturing panel, production order tracking, connect shop floor to erp, industry 4.0, factory automation, digital manufacturing workflow, plc integration with erp, odoo node-red integration, real-time production monitoring
 tags:
    - flowfuse
    - mes
@@ -38,7 +39,7 @@ To build this system, I used **FlowFuse** to create a Node-RED flow that connect
   Holds Manufacturing Orders, product details, and inventory data. This integration allows for a two-way conversation between the shop floor and the business's core planning system. For a detailed guide on how to read from and write to Odoo, you can read our article, [Connect Your Shop Floor to Your ERP – Odoo Edition](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/)
 
 - **FlowFuse**  
-  Executes logic: fetches MOs, checks material availability, updates statuses, and controls production, build panel user interface
+  Executes logic such as fetching manufacturing orders, checking material availability, updating statuses, controlling production, and building the operator interface.
 
 - **Simulated Production Line (Factory I/O)**  
   Acts as the shop floor. Starts and stops production based on FlowFuse commands.
@@ -101,9 +102,15 @@ sequenceDiagram
 
 ### Why This Matters for Business
 
-While this might seem like a simple demo, connecting your shop floor to your business systems like this solves some very real and expensive problems. Think about the common headaches: an operator starts a big job, only to find out halfway through that they're missing a key material. The whole line stops. Or, they end up making 10% more than the order called for, and that extra product just sits there, wasting space and money. This panel is designed to prevent exactly those situations.
+This demo might seem simple, but it solves some of the most common and expensive problems on the shop floor. Think about the daily headaches: an operator starts a big job, only to find out halfway through that a key material is missing, forcing the entire line to stop. Or, they produce 10% more than the order required, creating waste that just sits in inventory.
 
-It automatically checks for raw materials before a job can even start, and it stops the line the second the target quantity is hit. No more guesswork and a lot less waste. On top of that, it gets rid of the tedious task of manually updating the ERP. When a job's status changes, the system updates it instantly. This means managers get a live, accurate view of what’s happening on the floor, not data from hours ago. It all adds up to a more efficient and reliable operation that can react much faster to change. The best part is that you don't need to overhaul everything or buy a huge, complex system to get these benefits. A smart, focused integration like this can deliver real results, quickly.
+This smart panel is designed to prevent those exact scenarios. By connecting your production line directly to your business systems, it:
+
+* **Prevents material shortages** by automatically checking for raw materials before a job can even start.
+* **Eliminates overproduction** by stopping the line the moment the target quantity is hit.
+* **Gets rid of manual data entry** by instantly updating the order status in the ERP.
+
+This means managers get a live, accurate view of what’s happening on the floor, not data from hours ago. The best part is that you don't need to overhaul your entire operation or buy a huge, complex system to get these benefits. A smart, focused integration like this can deliver real results, quickly.
 
 ## Ready to Connect Your Shop Floor?
 
