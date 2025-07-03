@@ -55,11 +55,6 @@ LinkedIn provides a valuable platform for gathering feedback. Creating polls on 
 
 The Product Manager should set up a minimum of one poll every six months, to collect feedback based on the upcoming strategic issues.
 
-### GitHub Voting
-
-By allowing users to vote on issues or proposed epics, we can gain insight into what changes or improvements are most demanded by the users. This democratic approach ensures we prioritize features that resonate most with our user base.
-Our website [Roadmap page](/changelog/) provides an overview of Epics that are currently under consideration.
-
 ### Node-RED Community
 
 We are privileged to be part of a vibrant community such as Node-RED, where our product organization can constantly learn and understand user challenges and solutions, as well as the reasons behind the adoption or non-adoption of FlowFuse. This ongoing communication is critical for our growth and improvement.

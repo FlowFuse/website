@@ -77,7 +77,7 @@ pure value of Node-RED) which can still be factored into the conversation.
 
 ## Messaging
 
-FlowFuse is an Industrial application platform.
+FlowFuse is the open-source Industrial application platform.
 
 ### Tagline
 
@@ -85,19 +85,15 @@ FlowFuse is an Industrial application platform.
 
 ### FlowFuse in one sentence
 
-FlowFuse empowers teams to integrate digital systems with their physical
-ecosystems, to create and automate workflows through a low-code, end-to-end
-platform.
+FlowFuse empowers teams to integrate digital systems with their physical ecosystems, to create and automate workflows through a low-code, end-to-end platform.
 
 ### About FlowFuse - 50 Words
 
-FlowFuse is the platform for building and operating self-built industrial data
-solutions that digitalize processes and operations. The platform seamlessly
-integrates into your IT and OT environments leveraging Node-RED, an open source
-low-code programming technology, making it easy for OT-engineers to quickly
-connect, collect, transform, and visualize data to interact with industrial
-processes. Companies use FlowFuse to manage, scale and secure their industrial
-Node-RED solutions.
+FlowFuse is the platform for building and operating industrial applications. It
+connects your IT and OT systems using Node-RED, helping teams collect,
+transform, and visualize data. FlowFuse empower teams to develop and scale
+self-built industrial solutions, enabling better operational decisions and
+improving performance and processes.
 
 ### About FlowFuse - 150 Words
 
@@ -118,17 +114,6 @@ with thousands of industrial devices and 100s of protocols and data services.
 
 Founded in 2021 by Nick O’Leary, co-creator of Node-RED, companies use FlowFuse
 to manage, scale and secure their industrial Node-RED solutions.
-
-## FlowFuse's Definition
-
-Built on the simplicity of Node-RED, FlowFuse adds the tools teams need to scale
-automation workflows with confidence. FlowFuse is a platform that helps
-organizations build and manage powerful low-code data applications using
-Node-RED. We make it easy to connect systems, automate processes, and build
-industrial or digital solutions — all while giving IT teams the control,
-security, and scalability they need. Whether you’re an engineer, a developer, or
-a company scaling up operations, FlowFuse bridges the gap between innovation and
-reliability.
 
 ## FlowFuse in-depth
 
