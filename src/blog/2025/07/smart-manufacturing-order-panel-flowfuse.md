@@ -4,7 +4,7 @@ subtitle: "Control and track manufacturing orders with FlowFuse"
 description: "This blog shows how I built a panel using FlowFuse to connect with Odoo ERP. It starts production, checks for raw materials, updates order status, and stops when the target is reached."
 date: 2025-07-03
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/07/images/how-we-built-smart-order-manufacturing-system.png
 keywords: manufacturing execution system, odoo erp integration, flowfuse manufacturing, smart manufacturing panel, production order tracking, connect shop floor to erp, industry 4.0, factory automation, digital manufacturing workflow, plc integration with erp, odoo node-red integration, real-time production monitoring
 tags:
    - flowfuse
