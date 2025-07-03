@@ -7,9 +7,9 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-As a Developer Relations Advocate at FlowFuse, you serve as a crucial bridge between our company and the global community of Node-RED developers, industrial engineers, and automation professionals. This role combines technical evangelism, community building, and business development to drive adoption of the FlowFuse platform.
+The Developer Relations Advocate at FlowFuse serves as a crucial bridge between the company and the global community of Node-RED developers, industrial engineers, and automation professionals. This role combines technical evangelism, community building, and business development to drive adoption of the FlowFuse platform.
 
-You will be responsible for building relationships with key stakeholders in the industrial automation and IIoT ecosystems, creating compelling and engaging technical content, and identifying business opportunities within developer communities. This position requires a unique blend of technical depth, communication skills, and business acumen to effectively advocate for FlowFuse's solutions while understanding the real-world challenges our target users face.
+The Developer Relations Advocate is responsible for building relationships with key stakeholders in the industrial automation and IIoT ecosystems, creating compelling and engaging technical content, and identifying business opportunities within developer communities. This position requires a unique blend of technical depth, communication skills, and business acumen to effectively advocate for FlowFuse's solutions while understanding the real-world challenges the target users face.
 
 Key Responsibilities:
 
@@ -21,7 +21,7 @@ Key Responsibilities:
 
 ## Skills
 
-What the Developer Relations Advocate Brings to the Role:
+The Developer Relations Advocate skill set includes:
 
 * Node-RED Experience: Hands-on experience with Node-RED, ideally in industrial settings with deep understanding of its capabilities and limitations in real-world applications.
 * Communication & Content Creation Excellence: Experience communicating with diverse audiences using various media formats. Proven ability to create engaging content through video, audio, and written formats that resonates with technical and business stakeholders.
@@ -42,26 +42,3 @@ What the Developer Relations Advocate Brings to the Role:
 * Technical Background: Software development experience in JavaScript/Node.js, Python, or other relevant programming languages
 * CRM & Analytics Proficiency: Ability to identify and qualify business opportunities using CRM tools such as HubSpot, Salesforce, or similar platforms. Experience with lead scoring, pipeline management, and opportunity tracking.
 
-## What We Offer
-
-* Opportunity to shape the future of industrial automation and low-code development
-* Work with cutting-edge technology in the rapidly growing IIoT and Industry 4.0 market
-* Collaborate with the core Node-RED development team and contribute to open-source projects
-* Flexible remote work environment with a global, multicultural team
-* Professional development opportunities including conference attendance and speaking engagements
-* Competitive compensation package including equity participation
-* Comprehensive benefits package
-* Travel opportunities to industry events and customer sites
-
-## Location & Travel
-
-This is a remote position with flexibility to work from anywhere. The role requires travel for industry conferences, customer meetings, and team gatherings (approximately 25-30% travel expected).
-
-## Application Process
-
-To apply, please submit:
-
-* Resume highlighting relevant experience in developer relations, technical evangelism, or related fields
-* Cover letter explaining your interest in FlowFuse and how your experience aligns with our mission
-* Portfolio of content creation work (blog posts, presentations, videos, or other relevant materials)
-* Examples of community engagement or contributions to open-source projects
