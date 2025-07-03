@@ -7,9 +7,7 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-As a Developer Relations Advocate at FlowFuse, you will serve as a crucial bridge between our company and the global community of Node-RED developers, industrial engineers, and automation professionals. This role combines technical evangelism, community building, and business development to drive adoption of the FlowFuse platform.
-
-FlowFuse is the industrial application platform that empowers teams to build, deploy, and manage applications that optimize industrial operations. Built on Node-RED, FlowFuse provides enterprise-grade capabilities for low-code development in manufacturing, IIoT, and industrial automation environments. We support operational technology (OT) and information technology (IT) teams with the tools and safeguards needed to drive operational efficiency and deliver real business value.
+As a Developer Relations Advocate at FlowFuse, you serve as a crucial bridge between our company and the global community of Node-RED developers, industrial engineers, and automation professionals. This role combines technical evangelism, community building, and business development to drive adoption of the FlowFuse platform.
 
 You will be responsible for building relationships with key stakeholders in the industrial automation and IIoT ecosystems, creating compelling and engaging technical content, and identifying business opportunities within developer communities. This position requires a unique blend of technical depth, communication skills, and business acumen to effectively advocate for FlowFuse's solutions while understanding the real-world challenges our target users face.
 
@@ -25,8 +23,8 @@ Key Responsibilities:
 
 What the Developer Relations Advocate Brings to the Role:
 
-* Node-RED Experience: 3-5 years hands-on experience with Node-RED, ideally in industrial settings with deep understanding of its capabilities and limitations in real-world applications.
-* Communication & Content Creation Excellence: 3-5 years of experience communicating with diverse audiences using various media formats. Proven ability to create engaging content through video, audio, and written formats that resonates with technical and business stakeholders.
+* Node-RED Experience: Hands-on experience with Node-RED, ideally in industrial settings with deep understanding of its capabilities and limitations in real-world applications.
+* Communication & Content Creation Excellence: Experience communicating with diverse audiences using various media formats. Proven ability to create engaging content through video, audio, and written formats that resonates with technical and business stakeholders.
 * Business Development Experience: Demonstrated experience in business relationship development or lead generation, preferably in technology or B2B SaaS environments. Understanding of sales processes and ability to identify and nurture business opportunities.
 * Domain Expertise: Firsthand experience as a user, project lead, or decision-maker in roles similar to FlowFuse's core buyer personas (e.g., IIoT Project Lead, IT Operations Manager, Manufacturing Engineer, Plant Manager). Must have faced the pain points FlowFuse solves in deploying, managing, or scaling Node-RED-based solutions in industrial environments.
 * Cross-functional Collaboration: Proven ability to collaborate closely with digital marketing, sales, product, and engineering teams to optimize campaigns, processes, and product development initiatives.
@@ -35,7 +33,7 @@ What the Developer Relations Advocate Brings to the Role:
 * Community Involvement: Active participation in online and offline developer communities and ecosystems, including open-source platforms, technical blogs, social channels, forums, and professional networks.
 * Technical Content Creation: Demonstrated ability to create content that resonates with technical buyer personas in the form of blog articles, tutorials, webinars, conference presentations, workshop materials, and documentation.
 
-## Nice to Have
+### Nice to Have
 
 * Open-Source & Low-Code Background: Experience working in open-source software companies or with low-code/no-code development platforms, understanding of open-source community dynamics
 * Marketing Automation: Familiarity with marketing automation tools such as HubSpot, Marketo, Pardot, or similar platforms for lead nurturing and campaign management
