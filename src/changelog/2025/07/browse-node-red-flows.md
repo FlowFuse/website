@@ -5,6 +5,8 @@ date: 2025-07-03 12:00:00.0
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
+issues:
+  - "https://github.com/FlowFuse/device-agent/issues/415"
 ---
 
 Last month we introduced a way for the FlowFuse Device Agent to import Node-RED flows during the setup process. Today, we have built on that and added some new features:
