@@ -156,5 +156,13 @@ FlowFuse's commitment to a low-programming approach via Node-RED, complemented b
 
 - Manufacturing Widgets Extension for Dashboard 2.0. This extension should provide very classic manufacturing visualization, making it even easier to create Node-RED Dashboards for manufacturing.
 
+## Roadmap
+
+The company roadmap shows a high-level view of the features we are building to bring our company vision to fruition. Our roadmap provides transparency into our development priorities and helps align our team's efforts with our strategic objectives.
+
+You can view our current roadmap in the [12 Month Plan view](https://github.com/orgs/FlowFuse/projects/3/views/19) of our Product Planning project on GitHub.
+
+The roadmap may need to be adjusted over time as we pivot when we identify better ways to accomplish our company goals. This flexibility allows us to respond to market changes, customer feedback, and emerging opportunities while maintaining our focus on delivering maximum value to our customers.
+
 
 
