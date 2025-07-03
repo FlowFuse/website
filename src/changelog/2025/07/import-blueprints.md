@@ -6,7 +6,7 @@ authors: ['nick-oleary']
 tags:
   - changelog
 issues:
- - 5320
+ - "5320"
 ---
 
 FlowFuse provides a growing [library of blueprints](https://flowfuse.com/blueprints/) that provide a great way to get started quickly with a pre-built solution across a range of scenarios.
