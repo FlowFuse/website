@@ -100,6 +100,7 @@ To read from an analog input pin:
 3. Connect to a `debug` node.
 4. Deploy and monitor readings in the debug sidebar.
 
+Once you have basic read/write functionality working with `inject` and `debug` nodes, you can easily build a **dashboard interface** using `ui_button`, `ui_slider`, or `ui_gauge` nodes to control and monitor your Arduino through a web-based UI.
 
 🔗 If you are looking for a more practical, step-by-step article with examples and a video demo, refer to this guide:  
 [Interacting with Arduino using Node-RED](/blog/2025/02/interacting-with-arduino-using-node-red/)
