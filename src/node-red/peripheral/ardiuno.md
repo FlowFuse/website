@@ -9,6 +9,8 @@ meta:
 image: /node-red/peripheral/images/barcode-scanner.png
 ---
 
+# {{meta.title}}
+
 This documentation explains how to use Node-RED to interact with an Arduino board via serial communication using the Firmata protocol. It covers how to write to and read from digital and analog pins using the `node-red-node-arduino` package.
 
 ## Requirements
