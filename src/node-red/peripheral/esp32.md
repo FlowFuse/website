@@ -22,7 +22,7 @@ To follow this guide, ensure you have the following components ready:
 
 - **MQTT broker**  
   A server that facilitates message exchange between the ESP32 and Node-RED.  
-  > If you do not already have one, [FlowFuse](https://flowfuse.com) provides a built-in MQTT broker as part of its platform.
+  > If you do not already have one, [FlowFuse](/) provides a built-in MQTT broker as part of its platform.
 
 - **Node-RED instance**  
   A running instance of Node-RED to process and visualize data from the ESP32.  
