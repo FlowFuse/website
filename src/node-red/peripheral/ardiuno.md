@@ -101,5 +101,5 @@ To read from an analog input pin:
 4. Deploy and monitor readings in the debug sidebar.
 
 
-If you are looking for a more practical, step-by-step article with examples and a video demo, refer to this guide:  
+🔗 If you are looking for a more practical, step-by-step article with examples and a video demo, refer to this guide:  
 [Interacting with Arduino using Node-RED](/blog/2025/02/interacting-with-arduino-using-node-red/)
