@@ -13,10 +13,10 @@ This documentation explains how to use Node-RED to interact with an Arduino boar
 
 ## Requirements
 
-1. An Arduino board connected via USB to the device running Node-RED.
-2. The [StandardFirmata](https://github.com/firmata/protocol) sketch uploaded to the Arduino board.
-3. Node-RED installed and running on the connected device. The quickest way to set up and run Node-RED is [FlowFuse](/).
-4. The Node-RED package [`node-red-node-arduino`](https://flows.nodered.org/node/node-red-node-arduino) installed.
+- An Arduino board connected via USB to the device running Node-RED.
+- The [StandardFirmata](https://github.com/firmata/protocol) sketch uploaded to the Arduino board.
+- Node-RED installed and running on the connected device. The quickest way to set up and run Node-RED is [FlowFuse](/).
+- The Node-RED package [`node-red-node-arduino`](https://flows.nodered.org/node/node-red-node-arduino) installed.
 
 ## Step 1: Install Arduino Nodes
 
