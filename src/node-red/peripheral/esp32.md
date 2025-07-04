@@ -6,7 +6,6 @@ meta:
   title: Connect ESP32 with Node-RED using MQTT
   description: Learn how to send and receive MQTT messages between ESP32 and Node-RED using FlowFuse.
   keywords: node-red, flowfuse, esp32, mqtt, esp32 node-red
-image: /node-red/peripheral/images/esp32-with-node-red.png
 ---
 
 # {{meta.title}}
@@ -39,7 +38,7 @@ To create the necessary MQTT clients (one for ESP32 and one for Node-RED), follo
 
 👉 [Creating MQTT Clients in FlowFuse](/docs/cloud/introduction/#enterprise-team-broker)
 
-Once created, note down the client ID, username, and password for each client. These credentials will be used to authenticate both devices.
+Once created, note down the client ID, username, and password for each client. These credentials will be used later to establish communication.
 
 ## Step 2: Configure Node-RED to Communicate Over MQTT
 
@@ -49,8 +48,8 @@ Once created, note down the client ID, username, and password for each client. T
 4. Set the following fields:
    - **Server**: `broker.flowfuse.cloud`
    - **Client ID**: (as configured in FlowFuse)
-   - **Username**: (MQTT username)
-   - **Password**: (MQTT password)
+   - **Username**: (MQTT client username)
+   - **Password**: (MQTT client password)
 5. Set a topic (e.g., `/esp32/control` or `/esp32/data`) depending on whether you are sending or receiving data.
 
 Once configured and deployed, the Node-RED flow can exchange messages with the ESP32 through these MQTT topics.
@@ -63,6 +62,6 @@ To enable your ESP32 to communicate with Node-RED over MQTT, follow these steps:
 2. Connect the ESP32 to the FlowFuse MQTT broker (`broker.flowfuse.cloud`) using the MQTT credentials created in Step 1.
 3. Subscribe to an MQTT topic that matches the topic configured in Node-RED (e.g., `/esp32/control`) to listen for incoming commands.
 4. Implement behavior to react to messages—such as toggling a GPIO pin or updating a sensor reading based on the received payload.
-5. Publish messages back to Node-RED on another topic (e.g., `/esp32/sensor`) with telemetry or status data. Payloads can be simple values or structured as JSON.
+5. If needed, publish messages on another topic (e.g., `/esp32/sensor`) to send telemetry or status data back to Node-RED. Payloads can be simple strings or structured as JSON.
 
 🔗 For a complete end-to-end example, see: [Interacting with ESP32 Using Node-RED and MQTT](https://flowfuse.com/blog/2024/11/interacting-with-esp32-using-node-red-and-mqtt/)
