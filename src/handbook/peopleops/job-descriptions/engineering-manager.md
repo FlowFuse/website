@@ -51,3 +51,13 @@ To be successful in this role, you'll need a blend of technical prowess and lead
 1. Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample. 
 1. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
 1. Offer: Extend an offer to the selected candidate.
+
+### First interview
+Questions to consider:
+* What is your experience with remote work and remote-first environments?
+* Talk me through your EM experience.
+* Tell me about a time you handled an underperforming engineer on your team.
+* Why are you not an engineer but an EM? 
+* What's the best KPI for an EM?
+* What's the best way to measure that an engineering team is delivering customer value? 
+* What metrics do you want to start monitoring in your first week? 
