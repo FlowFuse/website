@@ -80,10 +80,11 @@ separately. This is typically done by the development team in the build up to th
 full release and should be coordinated by the CTO or Senior Engineer prior to release
 day.
 
-The Release Manager should verify the following repositories are up to date and
+The Release Manager should verify the following projects are up to date and
 have been published as needed.
 
  - [`flowfuse/device-agent`](https://github.com/FlowFuse/device-agent)
+ - [`flowfuse/device-agent/installer`](https://github.com/FlowFuse/device-agent/tree/main/installer#release-process)
  - [`flowfuse/nr-project-nodes`](https://github.com/FlowFuse/nr-project-nodes)
  - [`flowfuse/nr-file-nodes`](https://www.github.com/FlowFuse/nr-file-nodes)
  - [`flowfuse/nr-persistent-context`](https://github.com/FlowFuse/nr-persistent-context)
