@@ -18,13 +18,24 @@ This document outlines the procedure for establishing MQTT communication between
 * An active MQTT broker with access credentials.
 * A running Node-RED instance. The quickest way to get started is with **[FlowFuse](/)**, which allows you to effortlessly deploy and manage Node-RED instances and also includes a built-in MQTT broker service.
 * Arduino IDE configured with the ESP32 core and the **PubSubClient** library installed.
+* *Two MQTT clients configured
+
+## Set Up MQTT Clients
+
+To create the necessary MQTT clients (one for ESP32 and one for Node-RED), follow the official guide: [Creating MQTT Clients in FlowFuse](/docs/cloud/introduction/#enterprise-team-broker)
+
+Once created, note down the client ID, username, and password for each client. These credentials will be used later to establish communication.
 
 ## Node-RED Configuration
 
-1.  In your Node-RED flow, add an **`mqtt out`** node.
-2.  Configure the node's properties with your MQTT broker's server address, port, and client credentials.
-3.  Assign a **Topic** for publishing commands (e.g., `/esp32/control`).
-4.  Deploy the changes. A "connected" status should appear under the node.
+1. Open your Node-RED editor.
+2. Drag either an **`mqtt in`** node (to receive data from ESP32) or an **`mqtt out`** node (to send commands to ESP32) into your flow.
+3. Double-click the node and configure the MQTT connection:
+   - **Server**: Your MQTT broker’s address (e.g., `broker.flowfuse.cloud`)
+   - **Port**: Typically `1883` or `8883` for TLS
+   - **Client ID**, **Username**, and **Password**: Use the credentials created for the Node-RED client in your broker
+4. Specify a **Topic** such as `/esp32/control` for sending commands or `/esp32/data` for receiving sensor data.
+5. Click **Deploy**. Once configured properly, the MQTT node should display a “connected” status.
 
 ## ESP32 Programming
 
@@ -35,9 +46,11 @@ The ESP32 firmware must perform the following actions:
 3.  Subscribe to the topic specified in Node-RED (`/esp32/control`).
 4.  Implement a callback function to process received messages and execute corresponding actions.
 
+Make sure to program the ESP32 accordingly using the Arduino IDE and the PubSubClient library to ensure reliable communication with the MQTT broker.
+
 ## Live Demo: Remote LED Control
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/ecfJ-9MxyVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 This section provides a practical demonstration with an importable Node-RED flow and corresponding ESP32 code to remotely control the onboard LED. For more detailed, practical steps, please refer to our article [Interacting with ESP32 Using Node-RED and MQTT](/blog/2024/11/esp32-with-node-red/)
 
@@ -48,10 +61,6 @@ Import the following JSON into your Node-RED editor. This flow creates a simple 
 {% renderFlow 300 %}
 [{"id":"59887a8115c95eae","type":"tab","label":"Flow 1","disabled":false,"info":"","env":[]},{"id":"02c25e8a30f9379d","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"showPageTitle":true,"navigationStyle":"default","titleBarStyle":"default"},{"id":"cfb2ab9ff30660fc","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"density":"default","pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"d263574af6876c7a","type":"ui-page","name":"ESP32","ui":"02c25e8a30f9379d","path":"/page1","icon":"home","layout":"grid","theme":"cfb2ab9ff30660fc","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"3ae115ea7ede6827","type":"ui-group","name":"Group 1","page":"d263574af6876c7a","width":"6","height":"1","order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"def97b29f5f7baab","type":"mqtt-broker","name":"","broker":"broker.flowfuse.cloud","port":"1883","clientid":"","autoConnect":true,"usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closeRetain":"false","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","willMsg":{},"userProps":"","sessionExpiry":""},{"id":"5a9162986a34a4d6","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"ON","order":1,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"1","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"green","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":120,"wires":[["9239f8a7cca5c858"]]},{"id":"f9c194994d9491a8","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"OFF","order":2,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"2","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"red","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":160,"wires":[["9239f8a7cca5c858"]]},{"id":"9239f8a7cca5c858","type":"mqtt out","z":"59887a8115c95eae","name":"","topic":"/LedControl","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"def97b29f5f7baab","x":390,"y":140,"wires":[]}]
 {% endrenderFlow %}
-
-### 2. ESP32 Demo Code
-
-The following code should be uploaded to your ESP32 board. Replace the placeholder values with your specific network and MQTT credentials.
 
 ### 2. ESP32 Demo Code
 
