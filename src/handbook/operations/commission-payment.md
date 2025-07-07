@@ -49,6 +49,7 @@ to get a written agreement to the commission number.
 
 Here is an email template that can be used:
 
+```
 Dear {{first_name}},
 
 This email is to confirm your estimated commissions for {{Month and Year}}. 
@@ -66,7 +67,8 @@ Please confirm the numbers in this email for quota to be issued.
 
 Best,
 {{Manager sending email}}
+```
 
 ### Wiring the money
 
-If the employee agrees with the commission, process the payment in Deel.
+If the employee agrees with the commission, process the payment in Deel as USD payment.
