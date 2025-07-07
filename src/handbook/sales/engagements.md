@@ -55,24 +55,41 @@ evidenced by one of the following:
 
 Important Note: Verbal agreements, informal emails, or other non-binding expressions of interest do not constitute a closed deal. The legal commitment, as evidenced by a PO or signed quote, is the sole determinant.
 
-### Steps
+### Steps 
 
-1. [Start subscription and invoice procedures](/handbook/operations/billing/#creating-a-subscription)
-1. Send an email including instructions how they get access to bought resources and to introduce the customer to their Customer Success Manager.
-   * *Cloud*
-      * Ensure a team on FlowFuse Cloud has been set up by the customer
-      * Request the customer team to [enter manual billing mode](/handbook/operations/accounts/#internal-teams-and-contracted-revenue)
-      * Have a FlowFuse Admin upgrade the customer to the correct tier
-   * *Self-Managed*
-      * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
-      * Send the license key with the onboarding email to the customer, in the email explain how to use support@flowfuse.com and our live chat the get support from our team.
-1. If Professional Services are included, contact the person who runs the FlowFuse PS team with the description of the work sold, the amount of hours, and the total value.
+1. Setting the deal when either the quote is signed or a PO is Issued.
+  * Check if the order form is signed and that the quote has all the right information.
+  * Describe additional information in line items
+  * Set line items to annual and payment terms to payment renew until cancelled
+  * Deal amount should be equal to ACV (annual contract value)
+
 1. Upload the documents to the Google Drive in the correct directory
    * [Signed quotes and P.O.'s](https://drive.google.com/drive/folders/1Nb3UqFiE56ymgQnyfkDKHMAe6L3akNzQ)
    * If negotiated custom, the [Subscription agreement](https://drive.google.com/drive/folders/1h6jBvkJ2oDrBL7jw751RfAzBKkkprKDc)
 1. Update the deal to:
    * Set the Renewal data for the deal
    * Move the deal to `Closed Won` in HubSpots Deal overview, update the close date to when the customer committed to purchasing.
+1. Send an email to customer to introduce their Customer Success manager.
+1. Send email to CSM to handover new customer, inlcuding the name of the champion, contract start date.
+
+
+## Steps CSM
+1. Check if the deal is set according to the correct standards
+1. Create the subscription 
+1. Create invoice manually if PO number is required
+4. Send an email to introduce the customer to their Customer Success Manager, including instructions to set up their account.
+   * *Cloud*
+      * Set up a team on FlowFuse Cloud for the customer in the right tier
+      * Set the customer team to [enter manual billing mode](/handbook/operations/accounts/#internal-teams-and-contracted-revenue)
+      * Invite customer as owner to the team
+      * Remove own email adress after sign up customer
+   * *Self-Managed*
+      * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
+      * Send the license key with the onboarding email to the customer, in the email explain how to use support@flowfuse.com and our live chat the get support from our team.
+1. If Professional Services are included, contact the person who runs the FlowFuse PS team with the description of the work sold, the amount of hours, and the total value.
+1. Add customer to onboarding stage
+1. Send internal note that deal is complete and can be moved to stage closed
+  
 
 ## Closing an upsell
 
