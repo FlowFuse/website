@@ -19,6 +19,16 @@ them in a cost effective way.
 The ultimate goal for the department is to generate sales pipeline for the
 sales team or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
 
+### Marketing KPI
+
+Our North Star metric is pipeline generated, which aligns with the ultimate goal for the department stated above. This North Star is supported by key input metrics that we track and measure:
+
+- **FFC trial signups**: New users signing up for FlowFuse Cloud trials
+- **Contact Sales form completions**: Qualified leads requesting to speak with our sales team
+- **Unique website visitors**: Total unique visitors to our website
+
+Each of these metrics is reported on weekly during our Marketing Team Meeting to ensure we're tracking progress toward our North Star.
+
 ## Team
 
 | Role | Contributors |
