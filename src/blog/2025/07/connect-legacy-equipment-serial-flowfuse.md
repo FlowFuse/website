@@ -1,8 +1,8 @@
 ---
-title: "Connect Legacy Manufacturing Equipment via Serial Port"
+title: "Connecting Legacy Manufacturing Equipment via Serial Port"
 subtitle: "Learn how to bring serial-connected legacy equipment online using Node-RED and FlowFuse — without changing your existing hardware.."
 description: "Unlock the potential of legacy machines with RS-232 or RS-485 ports by integrating them into modern workflows using Node-RED and FlowFuse. Monitor, control, and automate without replacing trusted equipment."
-date: 2025-07-01
+date: 2025-07-09
 authors: ["sumit-shinde"]
 image: 
 tags:
