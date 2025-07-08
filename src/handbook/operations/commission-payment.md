@@ -31,7 +31,7 @@ Download all the deals from hubspot by going to the
 and add two filters:
 
 1. Closed "Last Month"
-1. Deal stage is "All Closed Won"
+1. Deal stage is "All closed won"; note: there is a different stage called Closed won. This is not that.
 
 Instead of the board view, select a list view, and add the ARR and ACV columns
 to the view so they are included. When the deal board is updated with on the won
