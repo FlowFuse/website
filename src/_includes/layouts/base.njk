@@ -198,7 +198,6 @@ eleventyComputed:
 
                     <!-- Nav -->
                     <ul id="nav-content" class="">
-                        {% navoption "Pricing", "/pricing/", 0 %}{% endnavoption %}
                         {% navoption "Product", null, 0 %}
                         <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-5 sm:pr-1 align-left sm:auto-rows-auto items-center">
                             {% navoption "Platform", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
@@ -241,6 +240,7 @@ eleventyComputed:
                             </ul>
                         {% endnavoption %}
                         {% navoption "Docs", "/docs/", 0, false %}{% endnavoption %}
+                        {% navoption "Pricing", "/pricing/", 0 %}{% endnavoption %}
                     </ul>
                     <!-- CTAs -->
                     <ul class="hidden cta top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
