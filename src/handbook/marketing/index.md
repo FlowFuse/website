@@ -24,7 +24,7 @@ sales team or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
 Our North Star metric is pipeline generated, which aligns with the ultimate goal for the department stated above. This North Star is supported by key input metrics that we track and measure:
 
 - FFC trial signups
-- Contact Sales form completions
+- [Contact Sales form completions](https://app-eu1.hubspot.com/submissions/26586079/form/734455e5-4cda-4329-97da-07e40cda791c/performance/)
 - [Unique website visitors](https://eu.posthog.com/project/2209/insights/PXeb0YSF)
 
 Each of these metrics is reported on weekly during our Marketing Team Meeting to ensure we're tracking progress toward our North Star.
