@@ -1,6 +1,6 @@
 ---
 title: "Connecting Legacy Manufacturing Equipment via Serial Port"
-subtitle: "Learn how to bring serial-connected legacy equipment online using Node-RED and FlowFuse — without changing your existing hardware.."
+subtitle: "Learn how to bring serial-connected legacy equipment online using Node-RED and FlowFuse — without changing your existing hardware."
 description: "Unlock the potential of legacy machines with RS-232 or RS-485 ports by integrating them into modern workflows using Node-RED and FlowFuse. Monitor, control, and automate without replacing trusted equipment."
 date: 2025-07-09
 authors: ["sumit-shinde"]
@@ -11,57 +11,58 @@ tags:
 
 Many factories still use legacy machines that communicate via serial ports such as RS-232 or RS-485. These machines remain reliable but are difficult to connect with modern systems due to limited connectivity.
 
+<!--more-->
+
 This blog shows how to use FlowFuse to connect legacy manufacturing equipment to collect data, enable monitoring without modifying the original hardware.
 
-## Understanding Serial Communication
+## Making Sense of Serial Communication
 
-Serial communication has been the silent workhorse behind industrial machines for decades. Long before Ethernet and wireless networks, factories relied on simple, robust serial links to move data between devices. And even today, many of those machines still speak that same language — **bit by bit, over a single wire**.
+Before diving into the wiring and flow configuration, it helps to understand how serial communication works — and why it is still relevant in industrial settings.
 
-To connect with these machines, it helps to first understand how serial communication actually works — and why it has stood the test of time.
+Serial ports move data one bit at a time, like passing beads on a string. This may sound old-fashioned, but it remains one of the most reliable and predictable ways to connect machines.
 
-### How Data Moves: Direction of Flow
+### Data Direction: Which Way Does It Flow?
 
-Not all serial communication works the same way. The way data travels depends on the device and the protocol it follows:
+Not all serial connections behave the same. Think of them like conversations — some talk, some listen, and some take turns:
 
-- **Simplex** – Data moves in just one direction. Think of it like a broadcast — your machine talks, you just listen.
-- **Half-Duplex** – Data moves both ways, but only one side can speak at a time. It’s like using a walkie-talkie — you talk, then wait for a reply.
-- **Full-Duplex** – Data flows in both directions simultaneously. More like a phone call — smooth, uninterrupted conversation.
+- **Simplex**: One-way only. Like a speaker giving a lecture — the machine talks, you just listen.
+- **Half-Duplex (RS-485)**: Two-way, but only one side at a time. Like using a walkie-talkie.
+- **Full-Duplex (RS-232)**: Two-way, simultaneous. Like a phone call — talk and listen at once.
 
-Most industrial machines use **half-duplex (RS-485)** or **full-duplex (RS-232)**, depending on whether they're designed for multi-device networks or direct communication.
+Most legacy industrial setups use **RS-485** or **RS-232**, depending on the wiring and number of connected devices.
 
-### How Data Is Structured: Timing and Format
+### Data Format: How Is It Structured?
 
-Every machine expects the data it receives to follow a certain structure — just like how we expect words to follow grammar rules.
+Machines are picky — they expect data to arrive in a specific format. Here are the key pieces that make up a serial data **frame**:
 
-Here are the key pieces:
+| Setting      | What It Means                                 |
+|--------------|-----------------------------------------------|
+| **Baud Rate**| Speed of transmission (e.g., 9600 or 115200)  |
+| **Data Bits**| The actual data, usually 7 or 8 bits          |
+| **Parity**   | Optional error check — even, odd, or none     |
+| **Stop Bits**| Marks the end of each message                 |
 
-- **Baud Rate** – How fast data is sent, measured in bits per second. Common rates are `9600`, `19200`, or `115200`. If this setting doesn’t match on both sides, the result is gibberish.
-- **Data Bits** – Usually 7 or 8 bits — this is the actual data being sent.
-- **Parity Bit** – Optional error-checking. Helps detect if data got scrambled during transmission.
-- **Stop Bits** – Marks the end of a message (1 or 2 bits).
+Important: If the frame settings do not match on both sides, your data will appear garbled or not arrive at all.
 
-These form what's called a **frame**. A common frame format like `8N1` means:
-> 8 data bits, No parity, 1 stop bit.
+### Interface Types: How Devices Physically Connect
 
-It might look like a small detail, but getting this frame structure right is critical. One mismatch, and your flow will be filled with noise or nothing at all.
+Different machines use different physical standards. The most common are:
 
-### Common Interfaces You’ll Encounter
+- **RS-232**: Full-duplex, one-to-one. Good for short-distance device communication.
+- **RS-485**: Half-duplex, multi-device. Ideal for networks and longer cable runs.
+- **USB (via adapter)**: Most modern PCs and gateways use USB-to-Serial adapters to talk to RS-232/485 devices.
 
-So, how do machines actually connect? Here are the most common physical standards used:
+## Setting Up Serial Communication with FlowFuse
 
-- **RS-232** – A classic. Full-duplex, point-to-point communication. Best for short distances between two devices.
-- **RS-485** – Built for industrial networks. Half-duplex, supports multiple devices on a shared line, and works well over long distances.
-- **USB (via adapter)** – Most modern systems do not have built-in serial ports. USB-to-serial adapters (like FTDI) are commonly used to bridge that gap.
+Now that you understand how serial communication works and what kind of interfaces your machine might use, the next step is to put that knowledge into practice.
 
-Knowing which interface your machine uses — and matching the electrical standard, connector type, and pinout — is the first real step in bringing it online.
+Using **FlowFuse**, you can easily establish serial communication, process the data, and integrate it into dashboards or automated workflows, all without modifying the original hardware.
 
-## Setting Up Serial Communication in Node-RED with FlowFuse
-
-Once you have identified the interface your legacy machine uses—such as RS-232 or RS-485—the next step is to establish communication using Node-RED. With FlowFuse, you can build, deploy, and manage these Node-RED flows in a controlled, cloud-connected environment.
+Let us walk through how to set this up.
 
 ### Prerequisites
 
-Before configuring serial communication, ensure the following prerequisites are met:
+Before we start, ensure the following prerequisites are met:
 
 - **Hardware Connection:** The legacy machine must be physically connected to your system using a serial interface:
 
@@ -92,40 +93,42 @@ _Screenshot of input and output settings in the Node-RED serial port node, showi
 
 7. Click **Done** to save the configuration.
 
-Once the serial port is correctly configured and the device is connected, the `serial in` node will show a "connected" status below the node with small green square. This confirms that Node-RED has successfully opened the serial port and is ready to send and recive data.
+Once the serial port is correctly configured and the device is connected, the `serial in` node will show a "connected" status below the node with small green square.
 
 ![Serial In node in Node-RED showing connected status with green square indicator.](./images/serial-port-node-status.png){data-zoomable}  
 _Screenshot of the Serial In node in Node-RED showing a green square that indicates a successful connection to the serial port._
 
 ### Writing to Serial Port
 
-To send data to a legacy machine, you use the `serial out` node in Node-RED. This is often necessary to trigger actions such as starting a process, requesting a reading, or changing an internal state.
+To send data to a legacy machine, use the `serial out` node in Node-RED. This is often necessary to trigger actions such as starting a process, requesting a reading, or changing an internal state.
 
-In our case, we are working with a real machine connected via a serial interface. To begin production simulation on the machine, it expects a `START` command to be sent over the serial port.
+Follow these steps to send a command:
 
 1. Drag an `inject` node onto the canvas.
-2. Set the **payload type** to `string` and enter the value to "START".
+2. Set the **payload type** appropriate to your machine’s requirements. This could be a string, number, raw buffer, or JSON object.
 3. Add a `serial out` node and select the configured serial port.
 4. Connect the `inject` node to the `serial out` node.
 
-Once deployed, clicking the inject button will send the command to the machine. This starts the simulated production process, after which the machine begins transmitting data over the same serial connection.
+Once deployed, clicking the inject button will send the specified data to the machine via the serial interface.
+
+In this guide, we are using a real machine connected via a serial interface. The machine is programmed to simulate a production process when it receives the `"START"` command (sent as a string). Once triggered, it begins incrementing the count of good and defect products and sends this data back over the same serial connection.
+
+The next section demonstrates how to read and process this simulated production data using the `serial in` node.
 
 ### Reading and Processing Serial Data
-
-After the machine receives the `START` command and begins its operation, it starts sending real-time data through the serial connection. You can use the `serial in` node to capture and process this incoming data in Node-RED.
 
 Follow these steps to read and handle the serial data:
 
 1. Drag a `serial in` node onto the canvas and configure it to use the same serial port.
 2. Add a `debug` node and connect it to the output of the `serial in` node. This helps you inspect the raw payload and confirm that data is being received correctly.
-3. Once you confirm the format of the incoming data, use a any of node change, json, function node to parse and convert it into a structured format, here we have used function.
+3. Once you confirm the format of the incoming data, use any of the change, JSON, or function node to parse and convert it into a structured format, here we have used function.
 
 In our case, the machine sends production data every 2 seconds in the following format:
 
 ![Debug panel in Node-RED showing temperature and humidity values from serial input.](./images/debug-panel-output.png){data-zoomable}  
 _Screenshot of Node-RED debug panel showing temperature and humidity data sent from the machine every 2 seconds._
 
-To convert this into a structured JSON object, add a function node with the following code:
+To convert this string into a structured JSON object, you can use a `function` node with the following code:
 
 ```javascript
 let parts = msg.payload.trim().split(' ');
@@ -140,7 +143,7 @@ msg.payload = result;
 return msg;
 ```
 
-This transforms the string object similar to below:
+This transforms the string into a JSON object like:
 
 ```json
 {
@@ -149,9 +152,12 @@ This transforms the string object similar to below:
 }
 ```
 
+> **Tip**: You do not need to know JavaScript to use the `function` node.  
+> If you are using FlowFuse, the built-in [FlowFuse Assistant](/docs/user/assistant/) can help you write function code using natural language. Simply provide a sample of the data received from your machine and describe the output you expect — the Assistant will generate the function for you.
+
 ### Handling Request-Response Serial Communication
 
-Not all machines stream data continuously. Some expect a command first, and only then respond with data. In these cases, using a combination of `inject`, `serial out`, and `serial in` nodes can become tricky — especially if you need to match each request with exactly one response. That is where the `serial request` node becomes useful.
+Not all machines stream data continuously. Some expect a request command, and only then respond with data. In these cases, using a combination of `inject`, `serial out`, and `serial in` nodes can become tricky — especially if you need to match each request with exactly one response. That is where the `serial request` node becomes useful.
 
 The `serial request` node handles this entire pattern for you. Internally, it combines the logic of sending a message and waiting for a single reply, working in a **first-in, first-out** manner. This means it will only send the next request after receiving a response (or timeout) for the previous one, making it ideal for synchronous devices.
 
@@ -217,8 +223,8 @@ In short, the `serial control` node adds a layer of resilience and flexibility t
 
 ## Conclusion
 
-Connecting legacy machines is no longer a barrier — it is an opportunity. With FlowFuse, serial-connected equipment can become part of a connected, automated workflow without altering the hardware or disrupting production.
+Legacy machines may be decades old, but their role in production is still vital. Instead of replacing reliable equipment, FlowFuse empowers you to extend its value — by making it visible, connected, and part of your modern workflows.
 
-Whether you need real-time visibility, remote diagnostics, or smarter event handling, FlowFuse gives you the tools to turn reliable machines into valuable data sources. It is a scalable, cloud-managed approach to modernizing operations — starting with the equipment you already trust.
+With just a serial cable and a few nodes, you can monitor production, trigger processes, or collect real-time data, all without touching the original hardware. And with FlowFuse’s cloud-managed platform, your setup remains robust, scalable, and ready for the future, already equipped with AI capabilities.
 
-**Have questions or a project in mind? [Get in touch with us](/contact-us/) — we’d be happy to help you connect your legacy systems the right way.**
+**If you're exploring ways to connect your legacy equipment or want to see how FlowFuse can fit into your operations, [reach out to us](/contact-us/) — we’re here to help you take the next step.**
