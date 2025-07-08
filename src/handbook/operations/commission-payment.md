@@ -65,7 +65,7 @@ of GTM both receive a copy through listing them as `cc` recipients.
 
 Here is an email template that can be used:
 
-```
+``` 
 Dear {{first_name}},
 
 This email is to confirm your estimated commissions for {{Month and Year}}. Your
