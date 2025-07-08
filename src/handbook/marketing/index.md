@@ -25,7 +25,7 @@ Our North Star metric is pipeline generated, which aligns with the ultimate goal
 
 - FFC trial signups
 - Contact Sales form completions
-- Unique website visitors
+- [Unique website visitors](https://eu.posthog.com/project/2209/insights/PXeb0YSF)
 
 Each of these metrics is reported on weekly during our Marketing Team Meeting to ensure we're tracking progress toward our North Star.
 
