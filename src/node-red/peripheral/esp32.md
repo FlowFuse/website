@@ -18,7 +18,7 @@ This document outlines the procedure for establishing MQTT communication between
 * An active MQTT broker with access credentials.
 * A running Node-RED instance. The quickest way to get started is with **[FlowFuse](/)**, which allows you to effortlessly deploy and manage Node-RED instances and also includes a built-in MQTT broker service.
 * Arduino IDE configured with the ESP32 core and the **PubSubClient** library installed.
-* *Two MQTT clients configured
+* Two MQTT clients configured
 
 ## Set Up MQTT Clients
 
