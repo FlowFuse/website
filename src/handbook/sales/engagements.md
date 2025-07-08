@@ -73,7 +73,7 @@ Important Note: Verbal agreements, informal emails, or other non-binding express
 1. Send email to CSM to handover new customer, inlcuding the name of the champion, contract start date.
 
 
-## Steps CSM
+## Steps for the CSM
 1. Check if the deal is set according to the correct standards
 1. Create the subscription 
 1. Create invoice manually if PO number is required
