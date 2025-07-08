@@ -198,7 +198,6 @@ eleventyComputed:
 
                     <!-- Nav -->
                     <ul id="nav-content" class="">
-                        {% navoption "Pricing", "/pricing/", 0 %}{% endnavoption %}
                         {% navoption "Product", null, 0 %}
                         <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-5 sm:pr-1 align-left sm:auto-rows-auto items-center">
                             {% navoption "Platform", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
@@ -225,6 +224,7 @@ eleventyComputed:
                                 {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
+                        {% navoption "Node-RED", "/node-red/", 0, false %}{% endnavoption %}
                         {% navoption "Resources", null, 0 %}
                             <ul class="sm:grid sm:grid-flow-col sm:grid-rows-6 sm:grid-cols-1 sm:pr-9">
                                 {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
@@ -236,11 +236,11 @@ eleventyComputed:
                                 {% navoption "Docs", "/docs/", 1, "document-text" %}{% endnavoption %}
                                 {% navoption "Support forums", "https://discourse.nodered.org/c/vendors/flowfuse/24/", 1, "chat-bubble-left-right-sm" %}{% endnavoption %}
                                 {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
-                                {% navoption "Node-RED", "/node-red/", 1, "nr-icon" %}{% endnavoption %}
                                 {% navoption "Node-RED Academy", "https://node-red-academy.learnworlds.com/", 1, "academic-cap" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
                         {% navoption "Docs", "/docs/", 0, false %}{% endnavoption %}
+                        {% navoption "Pricing", "/pricing/", 0 %}{% endnavoption %}
                     </ul>
                     <!-- CTAs -->
                     <ul class="hidden cta top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
