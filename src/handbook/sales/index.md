@@ -26,7 +26,7 @@ customer expansion, and customer success. This includes:
 |------|--------------|
 | CEO  | [ZJ](https://www.linkedin.com/in/zegerjan/) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
 | GTM | [Michael](https://www.linkedin.com/in/michaelbdavis/) [@MichaelBDavis](https://github.com/MichaelBDavis) |
-| Sales | [Omar](https://ca.linkedin.com/in/omarazizahmed?trk=public_post_feed-actor-name) [@omarazizahmed](https://github.com/omarazizahmed) |
+| Sales | [Omar](https://ca.linkedin.com/in/omarazizahmed?trk=public_post_feed-actor-name) [@omarazizahmed](https://github.com/omarazizahmed) |[Kasheef](https://www.linkedin.com/in/kasheef-mohammed/?originalSubdomain=uk)) [@Kasheef](https://github.com/Kasheef13) |
 | CSM | [Esmé](https://nl.linkedin.com/in/esméwieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
 
 ## Contact us
