@@ -32,7 +32,16 @@ and add two filters:
 
 1. Closed "Last Month"
 1. Deal stage is "All closed won"; note: there is a different stage called Closed won. This is not that.
-
+You need to have the following columns enabled:
+* Deal Name
+* Deal Stage
+* Close Date
+* Amount
+* Deal owner
+* Is Closed Won
+* Deal Type
+* Annual recurring revenue
+* Annual contract value
 Instead of the board view, select a list view, and add the ARR and ACV columns
 to the view so they are included. When the deal board is updated with on the won
 deals of last month, click "Export View" and export as CSV. Download this file
