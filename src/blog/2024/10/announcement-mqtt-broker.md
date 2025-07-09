@@ -12,7 +12,7 @@ tags:
    - node-red
 ---
 
-In our [recent product update](/blog/2024/10/flowfuse-release-2-10) we have added our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has been a highly requested feature, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Team and Enterprise teams.
+In our [recent product update](/blog/2024/10/flowfuse-release-2-10) we have added our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has been a highly requested feature, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Pro and Enterprise teams.
 
 <!--more-->
 
@@ -31,9 +31,9 @@ FlowFuse MQTT Service simplifies access to real-time data, an important element 
 
 ## Pricing
 
-If you're on the Team or Enterprise tiers of FlowFuse Cloud, then you don't have to pay any extra to get started with the MQTT Service. 
+If you're on the Pro or Enterprise tiers of FlowFuse Cloud, then you don't have to pay any extra to get started with the MQTT Service. 
 
-- **Team Tier:** Includes **5 clients for free** as part of your existing plan
+- **Pro Tier:** Includes **5 clients for free** as part of your existing plan
 - **Enterprise Tier:** Includes **20 clients for free** as part of your existing plan
 
 In the near future we'll be publishing extra packages of clients that you can add to your team, beyond the amounts included with the base tiers.
