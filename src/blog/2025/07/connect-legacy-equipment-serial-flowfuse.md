@@ -228,4 +228,4 @@ Manufacturing floors often bring together a mix of old and new machines. Among t
 
 With FlowFuse and Node-RED, you can bridge that gap—bringing equipment online without changing or replacing existing hardware. From data collection to triggering actions and monitoring performance, your machines can become part of a connected and intelligent system.
 
-We have already helped teams across industries—textile, healthcare, precision engineering, automotive, and others—connect their existing equipment and extend its value. If you are looking to do the same, [reach out to us](/contact-us/)—we are here to help you take the next step.
+Whether you’re in textiles, precision engineering, or automotive manufacturing, FlowFuse helps you unlock the full potential of your existing equipment. No rip-and-replace needed—just smarter connections. [Get in touch with us](https://github.com/contact-us/) and start building your serial integration flow today.
