@@ -4,9 +4,11 @@ subtitle: "Learn how to bring serial-connected equipment online using Node-RED a
 description: "Learn how to connect manufacturing equipment using serial interfaces like RS-232/422/485 in Node-RED with FlowFuse. Enable monitoring, data collection, and automation—no hardware changes required"
 date: 2025-07-09
 authors: ["sumit-shinde"]
+keywords: node-red, serial communication, rs232, rs485, rs422, modbus, industrial automation, flowfuse, legacy equipment, machine data collection, manufacturing connectivity, serial port integration, factory floor monitoring, serial devices, equipment integration
 image: 
 tags:
    - flowfuse
+   - opcua
 ---
 
 Many factories rely on machines, both new and old, that communicate via traditional serial interfaces such as **RS-232, RS-422, or RS-485**. These machines remain reliable but can be challenging to integrate with modern systems due to their connectivity style.
