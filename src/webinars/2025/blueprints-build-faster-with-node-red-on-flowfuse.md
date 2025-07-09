@@ -36,7 +36,7 @@ Whether you're automating factory processes, building IoT solutions, or streamli
 ## Who Should Attend?
 
 - Node-RED users looking to speed up development and discover new capabilities
-- Engineers and developers in industrial environments who want to simplify operations and cut software costs
+- Engineers and developers in industrial environments who want to simplify operations, find cost-effective solutions, and avoid vendor lock-in.
 - Anyone seeking to build smarter, faster applications without starting from scratch
 
 Register now to secure your spot and learn how to build smarter, faster, and more efficiently with FlowFuse and Node-RED.
