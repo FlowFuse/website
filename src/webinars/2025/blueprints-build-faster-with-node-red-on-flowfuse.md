@@ -14,7 +14,7 @@ hubspot:
     downloadFormId: 
 ---
 
-Go from idea to a working Node-RED application in minutes, not days or weeks.
+Kickstart your next Node-RED application in minutes using FlowFuse Blueprints.
 
 Getting started on new projects often means losing time on repetitive setup, configuration, and searching for the right approach. FlowFuse Blueprints are here to change that.
 <!--more-->
