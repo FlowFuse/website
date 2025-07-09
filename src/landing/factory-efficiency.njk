@@ -5,6 +5,45 @@ skipIndex: true
 landing: true
 image: /landing/images/factory-efficiency.png
 imageDescription: "Plant manager with a walkie-talkie in a factory setting"
+meta:
+    title: "Transform Your Factory’s Efficiency and Profitability with FlowFuse"
+    description: "See how innovative plant managers like you are cutting costs, boosting uptime, and driving growth."
+hero:
+    buttonText: "DOWNLOAD"
+    buttonLink: "{{ site.appURL }}"
+    buttonReference: "landing-factory-efficiency"
+sectionTitle: "The Industrial Application Platform for Plant Managers"
+sectionSubtitle: "Unlock Data. Accelerate Results. Scale with Confidence."
+stats:
+    - title: "-40%"
+      description: "reduction in integration costs"
+    - title: "9x"
+      description: "faster prototyping"
+    - description: "Deployment <span class='text-indigo-400 font-semibold'>at scale</span>"
+sections:
+    - svgPath: "components/icons/large/connect.svg"
+      title: "Connect your factory systems"
+      description: "Integrate OT, IT, and cloud data for real-time visibility and control."
+    - svgPath: "components/icons/large/launch.svg"
+      title: "Launch industrial apps up to 9x faster"
+      description: "Move from idea to solution in hours, not days."
+    - svgPath: "components/icons/large/reduce.svg"
+      title: "Reduce engineering time by 20%"
+      description: "Free up your team for high-value projects."
+    - svgPath: "components/icons/large/centralized.svg"
+      title: "Centralized management & enterprise security"
+      description: "Deploy and monitor all your applications from one dashboard."
+quotes:
+    - icon: ./images/power-workplace-icon.png
+      alt: "Power Workplace logo"
+      quote: "FlowFuse Cloud is interesting for us because it allows us to focus on growing our business rather than maintaining environments."
+      author: "Alan Yeung, CTO,"
+      company: "Power Workplace"
+    - icon: ./images/abrasive-technology-icon.png
+      alt: "Abrasive Technology logo"
+      quote: "Our search for a better way to host and manage our Node-RED instances is what started our transition to using FlowFuse."
+      author: "Josh Dudley,"
+      company: "Abrasive Technology"
 hubspot:
     script: "hubspot/hs-form.njk"
     formId: eef5e79c-74ae-499e-9fa1-9bd9974959d4
@@ -18,33 +57,29 @@ hubspot:
         <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
             <div class="m-auto md:w-1/2">
                 <h1 class="w-full mt-0 px-12 md:px-0 m-auto text-base">
-                    <span class="text-4xl">Transform Your Factory’s Efficiency and Profitability with FlowFuse</span>
+                    <span class="text-4xl">{{ meta.title }}</span>
                 </h1>
                 <p class="mb-10">
-                    See how innovative plant managers like you are cutting costs, boosting uptime, and driving growth.
+                    {{ meta.description }}
                 </p>
-                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{{ site.appURL }}" onclick="capture('download', {'reference': 'landing-factory-efficiency'})">DOWNLOAD</a>
+                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{{ hero.buttonLink }}" onclick="capture('download', {'reference': '{{ hero.buttonReference }}'})">
+                    {{ hero.buttonText }}
+                </a>
             </div>
             <div class="md:w-1/2 flex-grow relative">
                 <div class="ff-image-cover ff-image-rounded w-full h-full">
                     {% set imageSrc = ["./", image ] | join %}
                     {% image imageSrc, imageDescription, [496] %}
                     <div class="absolute top-0 right-0 flex flex-col p-4 lg:max-w-[45%] text-left">
-                        <!-- Row 1 -->
-                        <div class="mb-2 bg-white/80 rounded-md px-3">
-                            <h3 class="text-indigo-400 mt-3 font-semibold mb-0">-40%</h3>
-                            <p class="my-2 leading-5 mt-0">reduction in integration costs</p>
-                        </div>
-                        <!-- Row 2 -->
-                        <div class="mb-2 bg-white/80 rounded-md px-3">
-                            <h3 class="text-indigo-400 mt-3 font-semibold mb-0">9x</h3>
-                            <p class="my-2 leading-5 mt-0">faster prototyping</p>
-                        </div>
-                        <!-- Row 3 -->
-                        <div class="bg-white/80 rounded-md px-3">
-                            <p class="my-2">Deployment <span class="text-indigo-400 font-semibold">at scale</span></p>
-                        </div>
-                    </div>                
+                        {% for stat in stats %}
+                            <div class="bg-white/80 rounded-md px-3 {% if not loop.last %}mb-2{% endif %}">
+                                {% if stat.title %}
+                                    <h3 class="text-indigo-400 mt-3 font-semibold mb-0">{{ stat.title }}</h3>
+                                {% endif %}
+                                <p class="my-2 leading-5 {% if not loop.last %}mt-0{% endif %}">{{ stat.description | safe }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>              
                 </div>
             </div>
             <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden m-auto mt-12" href="{{ site.appURL }}" onclick="capture('download', {'reference': 'landing-factory-efficiency'})">DOWNLOAD</a>
@@ -54,33 +89,9 @@ hubspot:
     <!-- The Industrial Application Platform for Plant Managers -->  
     <div class="w-full">
         <div class="max-w-screen-lg mx-auto px-6">
-            <h2 class="text-center w-full md:text-left text-indigo-600">The Industrial Application Platform for Plant Managers</h2>
-            <h4 class="text-center w-full md:text-left text-gray-500 font-normal">Unlock Data. Accelerate Results. Scale with Confidence.</h4>
+            <h2 class="text-center w-full md:text-left text-indigo-600">{{ sectionTitle }}</h2>
+            <h4 class="text-center w-full md:text-left text-gray-500 font-normal">{{ sectionSubtitle }}</h4>
             <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
-
-                {% set sections = [
-                    {
-                        "svgPath": "components/icons/large/connect.svg",
-                        "title": "Connect your factory systems",
-                        "description": "Integrate OT, IT, and cloud data for real-time visibility and control."
-                    },
-                    {
-                        "svgPath": "components/icons/large/launch.svg",
-                        "title": "Launch industrial apps up to 9x faster",
-                        "description": "Move from idea to solution in hours, not days."
-                    },
-                    {
-                        "svgPath": "components/icons/large/reduce.svg",
-                        "title": "Reduce engineering time by 20%",
-                        "description": "Free up your team for high-value projects."
-                    },
-                    {
-                        "svgPath": "components/icons/large/centralized.svg",
-                        "title": "Centralized management & enterprise security",
-                        "description": "Deploy and monitor all your applications from one dashboard."
-                    }
-                ] %}
-
                 {% for section in sections %}
                     <div class="relative w-full max-md:max-w-md mx-auto bg-indigo-50 rounded-md p-6">
                         <div class="flex flex-row justify-center items-center gap-8 h-full">
@@ -101,35 +112,24 @@ hubspot:
     </div>
 </div>    
 
-<div class="max-w-screen-lg mx-auto pt-10 pb-12 px-6 text-lg flex flex-col md:flex-row justify-center gap-12 hover:no-underline mt-6">
+<div class="max-w-screen-lg mx-auto mt-28 pb-12 px-6 text-lg flex flex-col md:flex-row justify-center gap-12 hover:no-underline">
     <!-- Quotes -->
     <div class="md:w-2/3 text-center text-teal-50 mb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
         <ul class="m-auto max-w-screen-lg flex flex-col gap-16">
-            {% set testimonials = [
-                {
-                    "image": "../images/power-workplace-icon.png",
-                    "alt": "Power Workplace logo",
-                    "quote": "FlowFuse Cloud is interesting for us because it allows us to focus on growing our business rather than maintaining environments.",
-                    "author": "Alan Yeung, CTO,",
-                    "company": "Power Workplace"
-                },
-                {
-                    "image": "../images/abrasive-technology-icon.png",
-                    "alt": "Abrasive Technology logo",
-                    "quote": "Our search for a better way to host and manage our Node-RED instances is what started our transition to using FlowFuse.",
-                    "author": "Josh Dudley,",
-                    "company": "Abrasive Technology"
-                }
-            ] %}
-
-            {% for testimonial in testimonials %}
+            {% for quote in quotes %}
                 <li class="flex flex-col max-md:items-center md:flex-row gap-6 align-items-start">
                     <div class="w-20 h-20 min-w-20 rounded-full mx-1 bg-black p-2">
-                        {% image testimonial.image, testimonial.alt, [64] %}
+                    {% if quote.icon %}
+                        {% set icon = quote.icon %}
+                        {% set imageDescription = quote.alt %}
+                        {% image icon, imageDescription, [64] %}
+                    {% else %}
+                        <p>Error: Icon not defined for this testimonial.</p>
+                    {% endif %}
                     </div>
                     <div>
-                        <h4 class="md:text-left italic text-gray-500">“{{ testimonial.quote }}”</h4>
-                        <p class="md:text-right text-gray-500 text-lg">{{ testimonial.author }} <span class="font-bold">{{ testimonial.company }}</span></p>
+                        <h4 class="md:text-left italic text-gray-500">“{{ quote.quote }}”</h4>
+                        <p class="md:text-right text-gray-500 text-lg">{{ quote.author }} <span class="font-bold">{{ testimonial.company }}</span></p>
                     </div>
                 </li>
             {% endfor %}
