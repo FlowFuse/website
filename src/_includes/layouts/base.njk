@@ -179,7 +179,9 @@ eleventyComputed:
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner -->
-            {% include "../components/events-banner.njk" %}
+            {% if not landing -%}
+                {% include "../components/events-banner.njk" %}
+            {%- endif %}
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">

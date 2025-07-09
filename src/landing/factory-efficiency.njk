@@ -2,15 +2,21 @@
 layout: page
 nohero: true
 skipIndex: true
+landing: true
 image: /landing/images/factory-efficiency.png
 imageDescription: "Plant manager with a walkie-talkie in a factory setting"
+hubspot:
+    script: "hubspot/hs-form.njk"
+    formId: eef5e79c-74ae-499e-9fa1-9bd9974959d4
+    cta: "download-case-study"
+    reference: "factory-efficiency-landing"
 ---
 <!--First two sections-->
 <div class="nohero w-full">
     <!--Hero Content-->
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
         <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
-            <div class="m-auto md:w-1/2 max-w-lg">
+            <div class="m-auto md:w-1/2">
                 <h1 class="w-full mt-0 px-12 md:px-0 m-auto text-base">
                     <span class="text-4xl">Transform Your Factory’s Efficiency and Profitability with FlowFuse</span>
                 </h1>
@@ -45,84 +51,59 @@ imageDescription: "Plant manager with a walkie-talkie in a factory setting"
         </div>   
     </div>
 
-    <!-- Focus on your flows -->  
+    <!-- The Industrial Application Platform for Plant Managers -->  
     <div class="w-full">
         <div class="max-w-screen-lg mx-auto px-6">
-            <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14">
-                <h2 class="text-center w-full md:text-left col-span-full"><span class="text-indigo-600">Focus on Your Flows,</span> Not the Setup</h2>
+            <h2 class="text-center w-full md:text-left text-indigo-600">The Industrial Application Platform for Plant Managers</h2>
+            <h4 class="text-center w-full md:text-left text-gray-500 font-normal">Unlock Data. Accelerate Results. Scale with Confidence.</h4>
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
 
                 {% set sections = [
                     {
-                        "svgPath": "components/icons/user-group.svg",
-                        "title": "Seamless Team Collaboration",
-                        "description": "With FlowFuse Cloud, collaborating with your teams has never been easier. We enable your teams to work together on workflow instances and share insights and data visualizations all within a single platform. Our intuitive dashboard helps to drive informed decisions together and accelerate development times. "
+                        "svgPath": "components/icons/large/connect.svg",
+                        "title": "Connect your factory systems",
+                        "description": "Integrate OT, IT, and cloud data for real-time visibility and control."
                     },
                     {
-                        "svgPath": "components/icons/lock-closed.svg",
-                        "title": "Robust Security",
-                        "description": "Your data security is our top priority. FlowFuse Cloud employs a multi-layer security approach, ensuring protection at every level, including Role-Based Access Control (RBAC) for granular permissions and Single Sign-On (SSO) for secure access. Our SOC 2 Type 1 compliance demonstrates our commitment to upholding rigorous security standards."
+                        "svgPath": "components/icons/large/launch.svg",
+                        "title": "Launch industrial apps up to 9x faster",
+                        "description": "Move from idea to solution in hours, not days."
                     },
                     {
-                        "svgPath": "components/icons/cloud.svg",
-                        "title": "Hassle-Free Hosting ",
-                        "description": "FlowFuse Cloud handles all your hosting needs. Forget the complexities of managing NGINX, Docker, or any underlying infrastructure. We handle all the technical details and maintenance, ensuring your Node-RED applications are up and running smoothly. This lets you focus your time and efforts on designing, building, and optimizing your applications."
+                        "svgPath": "components/icons/large/reduce.svg",
+                        "title": "Reduce engineering time by 20%",
+                        "description": "Free up your team for high-value projects."
+                    },
+                    {
+                        "svgPath": "components/icons/large/centralized.svg",
+                        "title": "Centralized management & enterprise security",
+                        "description": "Deploy and monitor all your applications from one dashboard."
                     }
                 ] %}
 
                 {% for section in sections %}
-                    <div class="relative w-full max-md:max-w-md mx-auto">
-                        <div class="flex flex-col items-center sm:items-start">
-                            <div class="flex flex-col justify-center md:justify-start gap-3 w-full mb-4">
-                                <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
-                                    {% include section.svgPath %}
-                                </div>
-                                <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                                    <h5 class="w-full md:m-0">
-                                        <div class="text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</div>
-                                    </h5>
-                                </div>
+                    <div class="relative w-full max-md:max-w-md mx-auto bg-indigo-50 rounded-md p-6">
+                        <div class="flex flex-row justify-center items-center gap-8 h-full">
+                            <div class="flex w-1/5 items-center">
+                                {% include section.svgPath %}
                             </div>
-                            <div>
-                                <p class="text-center sm:text-left font-light">{{ section.description | safe }}</p>
+                            <div class="w-4/5">
+                                <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                                    <h4 class="w-full md:m-0 text-gray-600 font-semibold">{{ section.title }}</h4>
+                                </div>
+                                <p class="font-light mb-0">{{ section.description | safe }}</p>
                             </div>
                         </div>
                     </div>
                 {% endfor %}
-
             </div>
         </div>
     </div>
 </div>    
 
-<div class="max-w-screen-lg mx-auto text-center pt-10 pb-6 px-6 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-    <!--Why FlowFuse-->
-    <div class="ff-blue-card">
-        <h2 class="font-bold m-auto w-full text-center sm:text-left mb-6">Why use <span class="text-red-600">FlowFuse</span></h2>
-        <div class="w-full sm:grid sm:grid-cols-2 gap-6 sm:gap-8">
-            {% set sections = [
-                {
-                    "title": "Low Code Advantage",
-                    "description": "FlowFuse Cloud harnesses the power of low code programming to accelerate development times and empower everyone in your organization. By simplifying the application development cycle, our platform enables businesses to launch solutions faster than traditional coding methods allow."
-                },
-                {
-                    "title": "Open Source",
-                    "description": "Open source is a key aspect of the FlowFuse product strategy, as we believe it reduces adoption barriers and provides increased transparency and security to all our users. By leveraging open source components like Node-RED, the FlowFuse platform can quickly innovate and adapt to your evolving needs."
-                }
-            ] %}
-
-            {% for section in sections %}
-                <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
-                    <div>
-                        <h4 class="flex justify-center sm:justify-start font-semibold">{{ section.title }}</h4>
-                        <p class="font-light mt-6">{{ section.description }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-
+<div class="max-w-screen-lg mx-auto pt-10 pb-12 px-6 text-lg flex flex-col md:flex-row justify-center gap-12 hover:no-underline mt-6">
     <!-- Quotes -->
-    <div class="text-center text-teal-50 mt-12 mb-12 pt-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+    <div class="md:w-2/3 text-center text-teal-50 mb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
         <ul class="m-auto max-w-screen-lg flex flex-col gap-16">
             {% set testimonials = [
                 {
@@ -147,19 +128,19 @@ imageDescription: "Plant manager with a walkie-talkie in a factory setting"
                         {% image testimonial.image, testimonial.alt, [64] %}
                     </div>
                     <div>
-                        <h4 class="md:text-left italic mt-2 text-gray-500">“{{ testimonial.quote }}”</h4>
+                        <h4 class="md:text-left italic text-gray-500">“{{ testimonial.quote }}”</h4>
                         <p class="md:text-right text-gray-500 text-lg">{{ testimonial.author }} <span class="font-bold">{{ testimonial.company }}</span></p>
                     </div>
                 </li>
             {% endfor %}
         </ul>
     </div>
-    <!-- Frequently Asked Questions --> 
-    <div class="md:text-left max-md:max-w-md mx-auto pt-24 md:pt-16 text-left">
-        <h2 class="max-md:text-center -mb-12">
-            Frequently Asked <span class="text-indigo-600">Questions</span>
-        </h2>
-        {% include "faq.njk" %}
+    <!-- Form -->
+    <div class="md:w-1/3 w-full max-w-[550px] flex flex-col mx-auto">
+        <div class="px-6 pb-2 max-sm:mt-4">
+            <h4 class="mb-8 max-md:text-center">Download Case Study</h4>
+            {% include hubspot.script %}
+        </div>
     </div>
 </div>
 
