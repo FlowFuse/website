@@ -1,42 +1,47 @@
 ---
 layout: page
 nohero: true
-meta:
-    title: "FlowFuse Cloud"
-    description: "Fully hosted service to build, manage, and deploy Node-RED applications without the hassle of setting up your own cloud infrastructure"
-    keywords: 
-    faq:
-        - question: "How much does FlowFuse Cloud cost?"
-          answer: >
-            After the 2-week free trial, the Starter Tier costs $20 a month for 2 team members, 2 hosted Node-RED instances and 2 remote Node-RED instances. For more details on advanced tiers and features see <a href='/pricing/'>Pricing</a>.
-        - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"    
-          answer: >
-            Yes, we offer a 10% discount for annual subscriptions. Please <a href='/contact-us/'>reach out</a> to request the discount.
-        - question: "Do I need a Credit Card to get started?"    
-          answer: >
-            No, you don’t need a credit card to sign up for the 14-day free trial.
-        - question: "What features are included in FlowFuse Cloud vs Self-hosted?"
-          answer: >
-            At the Enterprise level, all features are available both on the Cloud and Self hosted deployment. For more details on the tiers and available features see <a href='/pricing/'>Pricing</a>. 
+skipIndex: true
+image: /landing/images/factory-efficiency.png
+imageDescription: "Plant manager with a walkie-talkie in a factory setting"
 ---
 <!--First two sections-->
 <div class="nohero w-full">
     <!--Hero Content-->
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
-        <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
-            <div class="m-auto md:w-1/2 lg:w-5/12 max-w-md">
-                <h1 class="w-full mt-0 px-12 md:px-0 m-auto">
-                    FlowFuse <span class="inline-block text-indigo-600">Cloud</span>
+        <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
+            <div class="m-auto md:w-1/2 max-w-lg">
+                <h1 class="w-full mt-0 px-12 md:px-0 m-auto text-base">
+                    <span class="text-4xl">Transform Your Factory’s Efficiency and Profitability with FlowFuse</span>
                 </h1>
                 <p class="mb-10">
-                    Harness the power of Node-RED in the cloud. FlowFuse Cloud is a fully hosted service that lets you build, manage, and deploy Node-RED applications without the hassle of setting up your own infrastructure. Simply sign up and start creating – it's the fastest way to experience the power of Node-RED.
+                    See how innovative plant managers like you are cutting costs, boosting uptime, and driving growth.
                 </p>
-                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{{ site.appURL }}" onclick="capture('start-your-free-trial', {'position': 'ff-cloud-hero'})">START YOUR FREE TRIAL</a>
+                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{{ site.appURL }}" onclick="capture('download', {'reference': 'landing-factory-efficiency'})">DOWNLOAD</a>
             </div>
-            <div class="flex justify-center m-auto">
-                <lite-youtube videoid="Ec4yvcvGmu8" params="rel=0" style="background-image: url('../../images/flowfuse-cloud.png'); background-size: cover; width: 500px; overflow: hidden;" class="border-4 border-indigo-200 rounded-xl sm:max-w-md sm:max-h-full md:max-w-screen-lg lg:max-w-lg lg:max-h-72"></lite-youtube>
+            <div class="md:w-1/2 flex-grow relative">
+                <div class="ff-image-cover ff-image-rounded w-full h-full">
+                    {% set imageSrc = ["./", image ] | join %}
+                    {% image imageSrc, imageDescription, [496] %}
+                    <div class="absolute top-0 right-0 flex flex-col p-4 lg:max-w-[45%] text-left">
+                        <!-- Row 1 -->
+                        <div class="mb-2 bg-white/80 rounded-md px-3">
+                            <h3 class="text-indigo-400 mt-3 font-semibold mb-0">-40%</h3>
+                            <p class="my-2 leading-5 mt-0">reduction in integration costs</p>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="mb-2 bg-white/80 rounded-md px-3">
+                            <h3 class="text-indigo-400 mt-3 font-semibold mb-0">9x</h3>
+                            <p class="my-2 leading-5 mt-0">faster prototyping</p>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="bg-white/80 rounded-md px-3">
+                            <p class="my-2">Deployment <span class="text-indigo-400 font-semibold">at scale</span></p>
+                        </div>
+                    </div>                
+                </div>
             </div>
-            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md m-auto mt-12" href="{{ site.appURL }}" onclick="capture('start-your-free-trial', {'position': 'ff-cloud-hero'})">START YOUR FREE TRIAL</a>
+            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden m-auto mt-12" href="{{ site.appURL }}" onclick="capture('download', {'reference': 'landing-factory-efficiency'})">DOWNLOAD</a>
         </div>   
     </div>
 
