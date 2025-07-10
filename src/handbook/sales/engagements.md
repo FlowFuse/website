@@ -68,7 +68,7 @@ Important Note: Verbal agreements, informal emails, or other non-binding express
    * If negotiated custom, the [Subscription agreement](https://drive.google.com/drive/folders/1h6jBvkJ2oDrBL7jw751RfAzBKkkprKDc)
 1. Update the deal to:
    * Set the Renewal data for the deal
-   * Move the deal to `Closed Won` in HubSpots Deal overview, update the close date to when the customer committed to purchasing.
+   * Move the deal to `Closing` in HubSpots Deal overview, update the close date to when the customer committed to purchasing.
 1. Send an email to customer to set meeting monthly cadence, quarterly. business review and to introduce their Customer Success manager, 
 1. Send email to CSM to handover new customer, inlcuding the name of the champion, contract start date.
 
