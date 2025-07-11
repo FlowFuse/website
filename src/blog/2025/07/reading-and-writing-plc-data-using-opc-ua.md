@@ -55,6 +55,7 @@ To begin communicating with the PLC, create a client connection using the OPC UA
 6. Click **Add**, then **Done**.
 
 ![OPC UA endpoint configuration](./images/opcua-endpoint-config.png){data-zoomable}
+_OPC UA endpoint configuration_
 
 With the connection now defined, you’re ready to explore what tags are available.
 
@@ -72,8 +73,11 @@ If you do not already know the Node IDs of the tags you want to access, use the 
 
 Tag information will be printed to the debug sidebar. You can now identify the exact Node IDs to use in your reads or writes.
 
-![OPC UA Browser node](./images/opcua-browser.png){data-zoomable}  
+![OPC UA Browser node](./images/opcua-browser.png){data-zoomable} 
+_OPC UA Browser node_
+
 ![Tag list](./images/list-of-available-tags.png){data-zoomable}
+_Tag list_
 
 {% renderFlow 300 %}
 [{"id":"c3a8303048e6588f","type":"OpcUa-Browser","z":"85ee0f7701aef489","endpoint":"c0f8c79fc00845c8","item":"","datatype":"","topic":"ns=0;i=85","items":[],"name":"","x":750,"y":180,"wires":[["3428199852f9fcdc"]]},{"id":"1549f797c58ba667","type":"inject","z":"85ee0f7701aef489","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":500,"y":180,"wires":[["c3a8303048e6588f"]]},{"id":"3428199852f9fcdc","type":"debug","z":"85ee0f7701aef489","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":960,"y":180,"wires":[]},{"id":"c0f8c79fc00845c8","type":"OpcUa-Endpoint","endpoint":"","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
@@ -91,8 +95,16 @@ Here’s how to read a single value from the PLC in real time:
 2. Add an **OPC UA Item** node and enter:
    - The **Node ID** (e.g., `ns=3;s="Temperature"`)
    - The **Data Type** (e.g., Double)
+
+![Screenshot showing OPC UA Item node configuration](./images/opcua-item-node.png){data-zoomable}  
+_Screenshot showing OPC UA Item node configuration_
+
 3. Connect the Inject node to the Item node.
 4. Drag an **OPC UA Client** node and set its **Action** to `read`.
+
+![Screenshot showing OPC UA Client node with "Read" action selected](./images/opcua-client-read-node.png){data-zoomable}  
+_Screenshot showing OPC UA Client node with "Read" action selected_
+
 5. Select the correct endpoint configuration.
 6. Connect the Item node to the Client node, and then to a **Debug** node.
 7. Deploy the flow and trigger the Inject node.
@@ -102,14 +114,18 @@ You should see the tag value appear in the debug panel. This confirms that commu
 You can also pass the Node ID dynamically using `msg.topic` from the Inject node if you prefer not to use an Item node.
 
 {% renderFlow 300 %}
-[{"id":"e2a81e2ded6c1bf7","type":"OpcUa-Client","z":"add95e226507ec34","endpoint":"","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":600,"y":320,"wires":[["7f87d386f87b5c24"],[],[]]},{"id":"7f87d386f87b5c24","type":"debug","z":"add95e226507ec34","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":800,"y":320,"wires":[]},{"id":"1d081f02f709edfc","type":"OpcUa-Item","z":"add95e226507ec34","item":"ns=3;i=1001","datatype":"Boolean","value":"true","name":"","x":400,"y":320,"wires":[["e2a81e2ded6c1bf7"]]},{"id":"5cf4b77f2dfe9f0a","type":"inject","z":"add95e226507ec34","name":"Read tag","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":200,"y":320,"wires":[["1d081f02f709edfc"]]}]
+[{"id":"e2a81e2ded6c1bf7","type":"OpcUa-Client","z":"5cba74fb0cf8c7a7","endpoint":"a4df18253e5a79a0","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":600,"y":420,"wires":[["7f87d386f87b5c24"],[],[]]},{"id":"7f87d386f87b5c24","type":"debug","z":"5cba74fb0cf8c7a7","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":800,"y":420,"wires":[]},{"id":"1d081f02f709edfc","type":"OpcUa-Item","z":"5cba74fb0cf8c7a7","item":"ns=3;i=1001","datatype":"Boolean","value":"","name":"OPC UA Item Node","x":410,"y":420,"wires":[["e2a81e2ded6c1bf7"]]},{"id":"5cf4b77f2dfe9f0a","type":"inject","z":"5cba74fb0cf8c7a7","name":"Read tag","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":200,"y":420,"wires":[["1d081f02f709edfc"]]},{"id":"a4df18253e5a79a0","type":"OpcUa-Endpoint","endpoint":"opc.tcp://192.168.0.10:4840","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
 {% endrenderFlow %}
 
 ### Reading Multiple Tags
 
 Reading multiple tags is just as simple and useful for real-time monitoring or logging.
 
-1. Drag an **OPC UA Client** node and set its **Action** to `readmultiple`.
+1. Drag an **OPC UA Client** node and set its **Action** to "READ MULTIPLE".
+
+![Screenshot showing OPC UA Client node with "READ MULTIPLE" action selected](./images/read-multiple.png){data-zoomable}  
+_Screenshot showing OPC UA Client node with "READ MULTIPLE" action selected_
+
 2. Select the endpoint configuration.
 3. Add an **OPC UA Item** node for each tag you want to read.
 4. Add an **Inject** node for each Item node to trigger it.
@@ -118,7 +134,7 @@ Reading multiple tags is just as simple and useful for real-time monitoring or l
 7. Add a **Debug** node to the output of the client.
 8. Deploy the flow.
 9. Click each Inject node once, the client node will store the tag definitions.
-10. Send a message with `msg.topic = "readmultiple"` to trigger the actual read.
+10.  Send a message with `msg.topic = "readmultiple"` to trigger the actual read.
 11. To clear stored items, send `msg.topic = "clearitems"`.
 
 You now have a flexible setup for reading multiple values from your PLC on demand.
@@ -140,11 +156,18 @@ To write a single value:
    - The **Node ID**
    - The **Data Type**
    - The **Value** to write
+
+![Screenshot showing OPC UA Item node configuration for write operation](./images/opcua-item-node-write.png){data-zoomable}  
+_Screenshot showing OPC UA Item node configuration for write operation_
+
 3. Connect the Inject node to the Item node.
-4. Add an **OPC UA Client** node and set its **Action** to `write`.
+4. Add an **OPC UA Client** node and set its **Action** to "WRITE".
+
+![Screenshot showing OPC UA Client node with "WRITE" action selected](./images/opcua-client-write-ops.png){data-zoomable}  
+_Screenshot showing OPC UA Client node with "WRITE" action selected_
+
 5. Select the endpoint configuration.
-6. Connect the Item node to the Client node, and then to a **Debug** node.
-7. Deploy the flow and trigger the Inject node.
+6. Connect the Item node to the Client node, and then to a **Debug** node.7. Deploy the flow and trigger the Inject node.
 
 The client node will confirm the operation with a status like **"values written"**.
 
@@ -156,7 +179,11 @@ The client node will confirm the operation with a status like **"values written"
 
 For writing multiple values at once, follow this pattern:
 
-1. Add an **OPC UA Client** node and set its **Action** to `writemultiple`.
+1. Add an **OPC UA Client** node and set its **Action** to "WRITE MULTIPLE".
+
+![Screenshot showing OPC UA Client node with "WRITE MULTIPLE" action selected](./images/opcua-client-write-multiple.png){data-zoomable}  
+_Screenshot showing OPC UA Client node with "WRITE MULTIPLE" action selected_
+
 2. Select the endpoint configuration.
 3. Add multiple **OPC UA Item** nodes, each with Node ID, Data Type, and Value.
 4. Add an **Inject** node for each Item node.
