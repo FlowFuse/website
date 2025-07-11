@@ -6,7 +6,7 @@ authors: ["serban-costin"]
 tags:
   - changelog
 issues:
-  - "https://github.com/FlowFuse/flowfuse/issues/5590"
+  - "https://github.com/FlowFuse/flowfuse/issues/5525"
 ---
 
 We’ve expanded the **Performance** feature with an exciting new addition: memory usage metrics.
