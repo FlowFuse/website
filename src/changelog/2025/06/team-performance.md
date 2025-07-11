@@ -1,7 +1,7 @@
 ---
 title: Memory Usage in Performance Feature
 description: "Enhance the Performance feature with memory usage metrics"
-date: 2025-06-20 11:43:32.0  
+date: 2025-06-5 11:43:32.0  
 authors: ["serban-costin"]
 tags:
   - changelog
