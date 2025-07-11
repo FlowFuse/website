@@ -185,7 +185,7 @@ context.get('variableName','persistent');
 
 Node-RED provides a dedicated interface for viewing and managing all Node-RED variables. Navigate to the sidebar's "Context Data" tab, where you'll find sections for Node, Flow, and Global variables. Each section has a refresh icon at the top right corner; click on it to see the latest or newly added variables.
 
-!["Screenshot showing Node-RED Context data tab options for managing variables"](./images/variables-in-node-red-change-node-persistent-store-option.gif "Screenshot showing Node-RED Context data tab options for managing variables"){data-zoomable}
+!["Screenshot showing Node-RED Context data tab options for managing variables"](./images/variables-in-node-red-context-data-tab-options-for-varrables.png "Screenshot showing Node-RED Context data tab options for managing variables"){data-zoomable}
 
 In this tab, you'll also find information about when each variable was set or updated, along with additional options on the right side of each variable. The first option allows you to copy the variable's name, the second option lets you copy the variable's value, the third option refreshes the variable to show the most recent value, and the fourth option allows you to delete the variable.
 
