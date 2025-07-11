@@ -5,6 +5,8 @@ date: 2025-06-02 12:00:00.0
 authors: ["serban-costin"]
 tags:
   - changelog
+issues:
+  - "https://github.com/FlowFuse/flowfuse/issues/5590"
 ---
 
 We're excited to announce an enhancement to the existing Performance view for Hosted Instances in FlowFuse. We've expanded the view to include a new Memory Metrics chart.
