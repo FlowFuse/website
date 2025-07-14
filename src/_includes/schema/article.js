@@ -76,24 +76,56 @@ module.exports = function(data) {
     }
   };
   
-  // Add image if available
+  // Add image if available - Google recommends multiple aspect ratios
   if (data.image) {
     // Ensure image URL starts with /
     const imageUrl = data.image.startsWith('/') ? data.image : `/${data.image}`;
-    articleSchema.image = {
-      "@type": "ImageObject",
-      "url": `https://flowfuse.com${imageUrl}`,
-      "width": 1200,
-      "height": 630
-    };
+    const baseUrl = `https://flowfuse.com${imageUrl}`;
+    
+    // Provide multiple aspect ratios as recommended by Google
+    articleSchema.image = [
+      {
+        "@type": "ImageObject",
+        "url": baseUrl,
+        "width": 1200,
+        "height": 1200  // 1:1 aspect ratio
+      },
+      {
+        "@type": "ImageObject", 
+        "url": baseUrl,
+        "width": 1200,
+        "height": 900   // 4:3 aspect ratio
+      },
+      {
+        "@type": "ImageObject",
+        "url": baseUrl,
+        "width": 1200,
+        "height": 675   // 16:9 aspect ratio
+      }
+    ];
   } else {
-    // Default image
-    articleSchema.image = {
-      "@type": "ImageObject",
-      "url": "https://flowfuse.com/images/og-blog.jpg",
-      "width": 1200,
-      "height": 630
-    };
+    // Default image with multiple aspect ratios
+    const defaultUrl = "https://flowfuse.com/images/og-blog.jpg";
+    articleSchema.image = [
+      {
+        "@type": "ImageObject",
+        "url": defaultUrl,
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "@type": "ImageObject",
+        "url": defaultUrl,
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "@type": "ImageObject",
+        "url": defaultUrl,
+        "width": 1200,
+        "height": 675
+      }
+    ];
   }
   
   // Add keywords from frontmatter or tags
