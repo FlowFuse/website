@@ -358,3 +358,6 @@ Clicking the template will create an editable copy in your Drive — just like w
 
 > **Note:** Both templates include predefined typography, colors, and margins. Please preserve these elements to maintain consistency across all branded materials.
 
+### Video Call Backgrounds
+
+As part of our design assets, we have [branded images](https://drive.google.com/open?id=1B0-m5L_X2dvLqbQXvW9RqpMvSDC_FM_0&usp=drive_fs) in our company drive that can be used as backgrounds for video calls. Both regular and mirrored versions are available to suit the platform and view mode you have set up.
