@@ -17,6 +17,7 @@ const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
 const schema = require("@quasibit/eleventy-plugin-schema");
+const pluginTOC = require('eleventy-plugin-toc');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
@@ -667,6 +668,18 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(schema);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(EleventyEdgePlugin);
+    eleventyConfig.addPlugin(pluginTOC, {
+        tags: ['h2', 'h3', 'h4'],
+        wrapper: 'div',
+        wrapperClass: 'toc',
+        ul: true,
+        markdownItAnchor: {
+            permalink: markdownItAnchor.permalink.linkInsideHeader({
+                symbol: ``,
+                placement: 'before'
+            })
+        }
+    });
 
     const markdownItOptions = {
         html: true,
@@ -674,7 +687,7 @@ module.exports = function(eleventyConfig) {
 
     const markdownItAnchorOptions = {
         permalink: markdownItAnchor.permalink.linkInsideHeader({
-            symbol: `#&nbsp;`,
+            symbol: ``,
             placement: 'before'
         })
     }

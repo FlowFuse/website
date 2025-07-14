@@ -99,6 +99,49 @@
     text-decoration: none;
 }
 
+/*
+    Table of Contents - Blog Posts
+*/
+.toc-wrapper .toc {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.toc-wrapper .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.toc-wrapper .toc ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+}
+
+.toc-wrapper .toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-wrapper .toc a {
+    color: theme(colors.gray.700);
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.toc-wrapper .toc a:hover {
+    color: theme(colors.blue.600);
+    background-color: theme(colors.gray.50);
+    padding-left: 0.5rem;
+}
+
+.toc-wrapper .toc a:focus {
+    outline: 2px solid theme(colors.blue.500);
+    outline-offset: 2px;
+}
+
 /* njk/md parser intoduces a bunch of stray <p> tags that we can do nothing about */
 .customer-story-tile p:empty {
     display: none;
