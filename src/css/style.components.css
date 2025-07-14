@@ -123,18 +123,16 @@
 }
 
 .toc-wrapper .toc a {
-    color: theme(colors.gray.700);
+    color: theme(colors.blue.600);
     text-decoration: none;
     display: block;
     padding: 0.25rem 0;
-    border-radius: 0.25rem;
     transition: all 0.2s ease;
 }
 
 .toc-wrapper .toc a:hover {
-    color: theme(colors.blue.600);
-    background-color: theme(colors.gray.50);
     padding-left: 0.5rem;
+    text-decoration: underline;
 }
 
 .toc-wrapper .toc a:focus {
