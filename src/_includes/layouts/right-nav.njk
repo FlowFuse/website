@@ -1,41 +1,5 @@
-<!-- Generate "On this page" -->
+<!-- All external links open in new page -->
 <script>
-    let toc = document.getElementById("toc")
-
-    let currentTag = "";
-
-    let indentation = 0 // how much to indent the current item
-    const STEP = 4 // how much to indent at each level
-
-    document.querySelectorAll(".main-content > h2, .main-content > h3, .main-content > h4").forEach(function(n, i) {
-        // which level of "H_" are we working with, and which one did we see most recently
-        const level = parseInt(n.nodeName[1])
-        const prevLevel = currentTag.length > 1 ? parseInt(currentTag[1]) : 0
-        currentTag = n.nodeName;
-
-        if (i === 0) {
-            indentation = 0
-        } else if (level > prevLevel) {
-            // we're going deeper
-            indentation = indentation + (level - prevLevel)
-        } else if (level < prevLevel) {
-            // we're going up
-            indentation = indentation - (prevLevel - level)
-        }
-
-        row = document.createElement("li");
-        row.classList.add(`mb-2`)
-        row.classList.add(`ml-${STEP * indentation}`)
-
-        let link = document.createElement("a")
-        row.append(link)
-        let hLink = n.getElementsByTagName('a')
-        link.href = hLink[0].href;
-        link.textContent = n.textContent.replace(/#\s+/g,"")
-        toc.append(row);
-    })
-
-    // All external links open in new page
     document.querySelectorAll("[data-{{nav}}] a").forEach((link) => {
         try {
             if (!link.target && window.location.host !== new URL(link.href).host) {
