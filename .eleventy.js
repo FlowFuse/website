@@ -16,7 +16,8 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
-const schema = require("@quasibit/eleventy-plugin-schema");
+// const schema = require("@quasibit/eleventy-plugin-schema"); // Replaced with custom implementation
+const generateSchema = require('./src/_includes/schema/index.js');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
@@ -664,7 +665,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight)
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
-    eleventyConfig.addPlugin(schema);
+    // eleventyConfig.addPlugin(schema); // Replaced with custom implementation
+    
+    // Add custom schema filter
+    eleventyConfig.addFilter("generateSchema", generateSchema);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(EleventyEdgePlugin);
 

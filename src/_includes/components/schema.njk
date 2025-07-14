@@ -1,0 +1,26 @@
+{% if page %}
+{% set schemaData = {
+  type: type,
+  page: page,
+  site: site,
+  meta: meta,
+  title: title,
+  description: description,
+  authors: authors,
+  team: people,
+  tags: tags,
+  image: image,
+  lastUpdated: lastUpdated,
+  category: category,
+  content: content,
+  date: date
+} %}
+
+{% set schema = schemaData | generateSchema %}
+
+{% if schema %}
+<script type="application/ld+json">
+{{ schema | json | safe }}
+</script>
+{% endif %}
+{% endif %}
