@@ -142,7 +142,7 @@
     outline-offset: 2px;
 }
 
-/* njk/md parser intoduces a bunch of stray <p> tags that we can do nothing about */
+/* njk/md parser introduces a bunch of stray <p> tags that we can do nothing about */
 .customer-story-tile p:empty {
     display: none;
 }
