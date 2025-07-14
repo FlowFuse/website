@@ -1,6 +1,6 @@
 ---
-title: Instance Performance View
-description: "A new view for monitoring the performance of your hosted Node-RED instances"
+title: Memory Metrics in Instance Performance View
+description: "The Performance view for hosted Node-RED instances now includes a memory usage chart"
 date: 2025-06-20 12:00:00.0
 authors: ["serban-costin"]
 tags:
