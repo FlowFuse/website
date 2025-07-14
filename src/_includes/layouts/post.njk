@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
-                <div class="sticky top-20 mt-6 flex flex-col">
+                <div class="mt-6 flex flex-col">
                     {% if content | toc %}
                     <div class="mb-6 pb-6 border-b-2">
                         <h3 class="mb-3">Table of Contents</h3>
@@ -70,6 +70,8 @@
                         </div>
                     </div>
                     {% endif %}
+                </div>
+                <div class="sticky top-20">
                     <h3 class="mb-3">Written By:</h3>
                     {% for author in authors %}
                         {% renderTeamMember people[author] %}

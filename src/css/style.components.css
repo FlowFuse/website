@@ -119,14 +119,14 @@
 }
 
 .toc-wrapper .toc li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .toc-wrapper .toc a {
     color: theme(colors.blue.600);
     text-decoration: none;
     display: block;
-    padding: 0.25rem 0;
+    padding: 0.2rem 0;
     transition: all 0.2s ease;
 }
 
