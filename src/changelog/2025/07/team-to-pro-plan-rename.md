@@ -9,13 +9,14 @@ issues:
   - "3424"
 ---
 
-We've renamed our Team tier to Pro tier to better align with the plan's capabilities and target audience. This change provides clearer naming that better reflects the professional features and functionality included in this tier.
+We've renamed our Team tier to Pro tier to better reflect what it's truly designed for: using Node-RED professionally to build applications, replace and augment software in your organization, and scale professional Node-RED deployments.
 
-The rename affects:
-- Pricing page terminology
-- Plan references throughout the platform
-- Documentation and marketing materials
+The Pro plan empowers developers and engineers to move beyond collaboration and into production-ready industrial applications that optimize operations and drive real business value.
 
-All existing Team tier subscribers will automatically be transitioned to the Pro tier with no changes to their service or billing. The functionality, features, and pricing remain exactly the same - only the name has changed.
+All existing Team plan subscribers will automatically transition to Pro. Your applications, instances, and team configurations remain exactly the same.
 
-This update provides better clarity for users when choosing the right plan for their professional Node-RED development needs.
+What's new:
+- A name that better represents professional Node-RED application development
+- Clearer positioning for organizations ready to scale their Node-RED implementations
+
+Ready to build professional Node-RED applications? [Get started with Pro](https://app.flowfuse.com/account/create) or [contact us](/contact-us) to learn more.
