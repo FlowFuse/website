@@ -1,0 +1,44 @@
+{% if faq and faq.length > 0 %}
+<div class="faq-section mt-12 mb-8 border-t-2 pt-8">
+  <h3 class="mb-6 text-xl">Frequently Asked Questions</h3>
+  <div class="faq-container space-y-4">
+    {% for item in faq %}
+    <details class="faq-item border rounded-lg p-4 hover:shadow-md transition-shadow duration-200" id="faq-{{ loop.index0 }}">
+      <summary class="faq-question font-semibold cursor-pointer flex items-center justify-between">
+        <span>{{ item.question }}</span>
+        <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="faq-answer mt-3 text-gray-700 prose prose-sm max-w-none">
+        <p>{{ item.answer | safe }}</p>
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .faq-item[open] summary svg {
+    transform: rotate(180deg);
+  }
+  
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .faq-item summary {
+    list-style: none;
+  }
+  
+  .faq-item summary:focus {
+    outline: none;
+  }
+  
+  .faq-item summary:focus-visible {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+</style>
+{% endif %}

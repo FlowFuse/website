@@ -2,6 +2,7 @@ const articleSchema = require('./article');
 const organizationSchema = require('./organization');
 const websiteSchema = require('./website');
 const breadcrumbSchema = require('./breadcrumb');
+const faqSchema = require('./faq');
 
 module.exports = function generateSchema(data) {
   // Ensure data object exists
@@ -40,6 +41,12 @@ module.exports = function generateSchema(data) {
       category: data.category
     };
     schemas.push(articleSchema(articleData));
+  }
+  
+  // Include FAQ schema if FAQ data exists (for any page type)
+  const faq = faqSchema(data);
+  if (faq) {
+    schemas.push(faq);
   }
   
   // Return null if no schemas to add

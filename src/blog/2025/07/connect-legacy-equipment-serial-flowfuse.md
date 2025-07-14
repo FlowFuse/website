@@ -9,6 +9,15 @@ image: blog/2025/07/images/connect-manufacturing-equipment-via-serial-post.png
 tags:
    - flowfuse
    - opcua
+faq:
+  - question: "What is the difference between RS-232, RS-422, and RS-485?"
+    answer: "RS-232 is a point-to-point connection suitable for short distances (up to 50 feet), supporting one transmitter and one receiver. RS-422 supports longer distances (up to 4000 feet) with one transmitter and up to 10 receivers. RS-485 is the most versatile, supporting multi-point configurations with up to 32 devices on the same bus and distances up to 4000 feet."
+  - question: "Can I connect multiple serial devices to a single Node-RED instance?"
+    answer: "Yes, Node-RED can handle multiple serial connections simultaneously. Each serial port node can be configured independently with its own settings. The practical limit depends on your hardware capabilities and the data throughput requirements of each device."
+  - question: "Do I need special hardware to connect serial devices to FlowFuse?"
+    answer: "For modern computers without built-in serial ports, you'll need a USB-to-serial adapter. For industrial deployments, consider using industrial-grade serial servers or gateways that can convert serial data to Ethernet/TCP, making it easier to integrate with FlowFuse cloud or on-premises installations."
+  - question: "How do I know which serial settings to use for my equipment?"
+    answer: "Check your equipment's manual for communication parameters including baud rate, data bits, stop bits, and parity. Common industrial settings are 9600 or 19200 baud, 8 data bits, 1 stop bit, and no parity (8-N-1). If documentation is unavailable, you may need to try common combinations or use a serial port monitor to analyze existing communications."
 ---
 
 Many factories rely on machines, both new and old, that communicate via traditional serial interfaces such as **RS-232, RS-422, or RS-485**. These machines remain reliable but can be challenging to integrate with modern systems due to their connectivity style.
