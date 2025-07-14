@@ -28,10 +28,6 @@ module.exports = function(data) {
     if (author.linkedin) {
       sameAs.push(`https://linkedin.com/in/${author.linkedin}`);
     }
-    if (author.twitter) {
-      sameAs.push(`https://twitter.com/${author.twitter}`);
-    }
-    
     if (sameAs.length > 0) {
       personSchema.sameAs = sameAs;
     }
