@@ -9,6 +9,24 @@ image: blog/2025/07/images/connect-manufacturing-equipment-via-serial-post.png
 tags:
    - flowfuse
    - opcua
+meta:
+  faq:
+    - question: "What types of serial interfaces can I connect with Node-RED?"
+      answer: "Node-RED supports RS-232, RS-422, and RS-485 interfaces through the serialport node. You can also use USB-to-serial adapters to connect these devices to modern computers and gateways. The serialport node works with most standard serial communication protocols."
+    - question: "Do I need to know JavaScript to process serial data in Node-RED?"
+      answer: "No, you don't need JavaScript knowledge. While function nodes can use JavaScript for complex processing, Node-RED offers many no-code nodes like change, switch, and JSON nodes for data manipulation. FlowFuse users can also use the FlowFuse Assistant to generate function code using natural language descriptions."
+    - question: "How do I handle devices that change port assignments (like USB devices)?"
+      answer: "Use the serial control node to dynamically manage port connections. This node allows you to change ports, start/stop connections, and modify settings without redeploying your flow. You can even create a dashboard interface for users to select the correct port from available options."
+    - question: "What's the difference between serial in/out nodes and the serial request node?"
+      answer: "Serial in/out nodes handle continuous streaming or separate read/write operations. The serial request node is designed for request-response patterns where you send a command and wait for a specific reply. It ensures synchronous communication by processing requests one at a time in order."
+    - question: "Can I connect multiple devices to a single serial interface?"
+      answer: "Yes, RS-485 supports multi-drop configurations where multiple devices share the same communication line in half-duplex mode. RS-422 also supports multiple receivers with one sender. However, RS-232 is typically limited to one-to-one connections. You'll need to implement proper addressing in your communication protocol for multi-device setups."
+    - question: "What is the difference between RS-232, RS-422, and RS-485?"
+      answer: "RS-232 is a point-to-point connection suitable for short distances (up to 50 feet), supporting one transmitter and one receiver. RS-422 supports longer distances (up to 4000 feet) with one transmitter and up to 10 receivers. RS-485 is the most versatile, supporting multi-point configurations with up to 32 devices on the same bus and distances up to 4000 feet."
+    - question: "Can I connect multiple serial devices to a single Node-RED instance?"
+      answer: "Yes, Node-RED can handle multiple serial connections simultaneously. Each serial port node can be configured independently with its own settings. The practical limit depends on your hardware capabilities and the data throughput requirements of each device."
+    - question: "How do I know which serial settings to use for my equipment?"
+      answer: "Check your equipment's manual for communication parameters including baud rate, data bits, stop bits, and parity. Common industrial settings are 9600 or 19200 baud, 8 data bits, 1 stop bit, and no parity (8-N-1). If documentation is unavailable, you may need to try common combinations or use a serial port monitor to analyze existing communications."
 ---
 
 Many factories rely on machines, both new and old, that communicate via traditional serial interfaces such as **RS-232, RS-422, or RS-485**. These machines remain reliable but can be challenging to integrate with modern systems due to their connectivity style.

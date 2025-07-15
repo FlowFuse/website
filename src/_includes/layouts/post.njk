@@ -59,6 +59,9 @@
                     </div>
                     {{ content | safe }}
                 </div>
+                {% if meta.faq %}
+                    {% include "faq.njk" %}
+                {% endif %}
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="sticky top-20 mt-6 flex flex-col">
