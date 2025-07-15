@@ -60,7 +60,10 @@
                     {{ content | safe }}
                 </div>
                 {% if meta.faq %}
-                    {% include "faq.njk" %}
+                    <div class="mt-12">
+                        <h3 class="mb-4">Frequently Asked Questions</h3>
+                        {% include "faq.njk" %}
+                    </div>
                 {% endif %}
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
