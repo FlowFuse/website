@@ -30,7 +30,7 @@
     "imageFolder": "./images/pictograms/",
     "imageFile": "edge_blue.png",
     "imageAlt": " edge management.",
-    "content": "FlowFuse allows you to deploy and manage Node-RED instances out to <a href='/solutions/device-management/'>edge devices</a>. This allows you to deploy the exact same instance out to hundreds or thousands of edge devices and monitor their status."
+    "content": "FlowFuse allows you to deploy and manage Node-RED instances out to <a href='/solutions/edge-connectivity/'>edge devices</a>. This allows you to deploy the exact same instance out to hundreds or thousands of edge devices and monitor their status."
   },{
     "title": "Software Delivery Pipelines",
     "imageFolder": "./images/pictograms/",
