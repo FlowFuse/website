@@ -1,7 +1,7 @@
 <div class="w-full {% if type == 'post' %}py-4{% else %}py-16{% endif %}" id="faqs">
     <div class="m-auto {% if type != 'post' %}sm:max-w-screen-lg{% endif %}">
         {% if faqSubtitle %}
-        <h2 class="text-center">{{ faqTitle | safe }}</h2>
+        <h3 class="text-center">{{ faqTitle | safe }}</h3>
         {% endif %}
         {% if faqSubtitle %}
         <label class="m-auto block max-w-lg md:max-w-none text-center"> {{ faqSubtitle | safe }} </label>
