@@ -1,7 +1,7 @@
 ---
-title: "Reading and Writing PLC Data Using OPC UA"
-subtitle: "Learn how to securely read from and write to PLCs using OPC UA with FlowFuse's Node-RED-based automation platform."
-description: "A hands-on guide to reading and writing PLC data using OPC UA with FlowFuse and Node-RED. Learn how to browse tags, read values, and send commands in industrial environments."
+title: "Reading and Writing Data Through OPC UA"
+subtitle: "A practical guide to accessing industrial data through OPC UA server gateways"
+description: "Discover how to integrate industrial equipment using OPC UA servers and Node-RED. This hands-on tutorial covers connecting to OPC UA gateways like Kepware and MatrikonOPC, browsing tags from PLCs and other devices, reading real-time data, and writing values back to your industrial systems."
 date: 2025-07-03
 authors: ["sumit-shinde"]
 ---
@@ -10,23 +10,27 @@ Modern industrial systems rely on efficient, secure, and interoperable communica
 
 <!--more-->
 
-This guide walks you through how to connect to a PLC using OPC UA, browse available tags, and read and write tag values using FlowFuse’s Node-RED-based platform. Whether you're building proof-of-concept flows or production-ready integrations, this tutorial gives you the foundation needed to work confidently with OPC UA.
+This guide walks you through connecting to industrial equipment via OPC UA servers, browsing available tags, and reading and writing data using FlowFuse's Node-RED-based platform.
 
 ## Why OPC UA?
 
-OPC UA is a vendor-neutral, cross-platform protocol built to handle real-time data exchange in industrial environments. It provides built-in security, supports structured data, and allows access to variables and control logic inside a PLC.
+OPC UA has become the backbone of modern industrial connectivity. Unlike proprietary protocols that lock you into specific vendors, OPC UA is an open standard that works across different manufacturers and platforms. A single OPC UA server can connect to equipment from multiple vendors—your Siemens PLCs, Allen-Bradley controllers, and Modbus devices all become accessible through one standardized interface. Beyond just reading values, OPC UA provides rich context including engineering units, data quality, timestamps, and relationships between data points.
 
-By using OPC UA in your Node-RED flows, you unlock the ability to integrate and automate industrial operations without needing specialized tools or complex middleware.
+With built-in security featuring encryption and certificate-based authentication, it's trusted by thousands of manufacturing facilities for mission-critical operations. By integrating OPC UA with Node-RED, you get industrial-grade connectivity combined with visual, low-code automation—no more wrestling with proprietary software or maintaining complex middleware.
 
 ## What You’ll Need
 
 Before diving into the flow-building process, make sure you have the following:
 
-- A PLC with OPC UA server enabled and tags exposed for access.
-- A Node-RED instance running on your edge device.
+- An OPC UA server (like Kepware, MatrikonOPC, or built into your PLC)
+- A FlowFuse Node-RED instance running on your edge device.
 - Both PLC and Edge Device should be on the same network.
 
-While Node-RED is widely used for industrial and IoT applications, running it in production environments requires additional tooling for DevOps, rapid deployment, scalability, high security, version control, remote access, team collaboration, and device management. **FlowFuse builds on top of Node-RED to provide exactly that, a platform designed for professional and scalable deployments.** If you do not have an account yet, you can [sign up here](/account/create) to get started.
+For production OPC UA deployments, we recommend using FlowFuse. When connecting to industrial systems, you need more than just Node-RED—you need team collaboration so multiple engineers can work on flows safely, audit logs for compliance tracking, high availability to prevent downtime, and remote device management for edge deployments. 
+
+FlowFuse provides these enterprise features plus automatic backups, one-click rollbacks, environment variables for different sites, and DevOps pipelines for testing changes before they reach production.
+
+[Get started →](https://app.flowfuse.com/account/create)
 
 ## Installing OPC UA Support in FlowFuse
 
@@ -41,17 +45,21 @@ To work with OPC UA in Node-RED, you will first need to install the required nod
 
 Once installed, you will find new nodes for OPC UA communication in your palette, including **Client**, **Item**, and **Browser** and other OPC UA nodes.
 
-## Connecting to the PLC
+## Connecting to Your OPC UA Server
 
-To begin communicating with the PLC, create a client connection using the OPC UA Client node.
+To begin accessing industrial data, create a client connection using the OPC UA Client node.
 
 ### Set Up the OPC UA Client
 
 1. Drag an **OPC UA Client** node onto the canvas.
 2. Double-click to configure it.
 3. Click the **+** icon to create a new endpoint configuration.
-4. Enter your PLC’s address, for example: `opc.tcp://192.168.0.10:4840`.
+4. Enter your OPC UA server address, for example: `opc.tcp://192.168.0.10:4840`
 5. Set the security mode to **None** (you can add security later).
+
+> **Security Note:** This tutorial uses **"None"** for the security setting to keep things simple.
+> In production environments, always use appropriate security—typically **"Sign & Encrypt"** with certificates.
+
 6. Click **Add**, then **Done**.
 
 ![OPC UA endpoint configuration](./images/opcua-endpoint-config.png){data-zoomable}
@@ -66,7 +74,7 @@ If you do not already know the Node IDs of the tags you want to access, use the 
 ### Explore Available Tags
 
 1. Drag an **Inject**, **OPC UA Browser**, and **Debug** node onto the canvas.
-2. Wire them in the following order: Inject → Browser → Debug.
+2. Connect the output of the Inject node to the input of the **Browser** node, then connect the Browser's output to the Debug node.
 3. In the **Browser** node, set the topic to `ns=0;i=85` (the root *Objects* folder).
 4. Configure the Inject node to send a timestamp.
 5. Deploy the flow and click the Inject node.
@@ -76,50 +84,48 @@ Tag information will be printed to the debug sidebar. You can now identify the e
 ![OPC UA Browser node](./images/opcua-browser.png){data-zoomable} 
 _OPC UA Browser node_
 
-![Tag list](./images/list-of-available-tags.png){data-zoomable}
-_Tag list_
-
 {% renderFlow 300 %}
-[{"id":"c3a8303048e6588f","type":"OpcUa-Browser","z":"85ee0f7701aef489","endpoint":"c0f8c79fc00845c8","item":"","datatype":"","topic":"ns=0;i=85","items":[],"name":"","x":750,"y":180,"wires":[["3428199852f9fcdc"]]},{"id":"1549f797c58ba667","type":"inject","z":"85ee0f7701aef489","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":500,"y":180,"wires":[["c3a8303048e6588f"]]},{"id":"3428199852f9fcdc","type":"debug","z":"85ee0f7701aef489","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":960,"y":180,"wires":[]},{"id":"c0f8c79fc00845c8","type":"OpcUa-Endpoint","endpoint":"","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
+[{"id":"c3a8303048e6588f","type":"OpcUa-Browser","z":"f66e9c91c269e7fb","endpoint":"c0f8c79fc00845c8","item":"","datatype":"","topic":"ns=0;i=85","items":[],"name":"","x":510,"y":300,"wires":[["3428199852f9fcdc"]]},{"id":"1549f797c58ba667","type":"inject","z":"f66e9c91c269e7fb","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":280,"y":300,"wires":[["c3a8303048e6588f"]]},{"id":"3428199852f9fcdc","type":"debug","z":"f66e9c91c269e7fb","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":740,"y":300,"wires":[]},{"id":"c0f8c79fc00845c8","type":"OpcUa-Endpoint","endpoint":"","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
 {% endrenderFlow %}
 
 ## Reading Tag Values
 
-Once you know the Node IDs, you can begin reading values from the PLC.
+Once you know the Node IDs, you can start reading data from your industrial equipment through the OPC UA server.
 
 ### Reading a Single Tag
 
-Here’s how to read a single value from the PLC in real time:
+Here’s how to read a single value in real time:
 
-1. Drag an **Inject** node (used to trigger the read).
-2. Add an **OPC UA Item** node and enter:
-   - The **Node ID** (e.g., `ns=3;s="Temperature"`)
-   - The **Data Type** (e.g., Double)
+1. Drag an **Inject** node onto the canvas (this will trigger the read operation).
+2. Add an **OPC UA Item** node and configure:
+   - **Node ID**: Enter the tag’s identifier (e.g., `ns=3;i=1003`)
+   - **Data Type**: Select the appropriate type (e.g., `Boolean`)
 
-![Screenshot showing OPC UA Item node configuration](./images/opcua-item-node.png){data-zoomable}  
-_Screenshot showing OPC UA Item node configuration_
+   ![OPC UA Item node configuration](./images/opcua-item-node.png){data-zoomable}
 
-3. Connect the Inject node to the Item node.
-4. Drag an **OPC UA Client** node and set its **Action** to `read`.
+3. Connect the output of the **Inject** node to the input of the **Item** node.
+4. Add an **OPC UA Client** node and set its **Action** to `read`.
 
-![Screenshot showing OPC UA Client node with "Read" action selected](./images/opcua-client-read-node.png){data-zoomable}  
-_Screenshot showing OPC UA Client node with "Read" action selected_
+   ![OPC UA Client node configured for reading](./images/opcua-client-read-node.png){data-zoomable}
 
-5. Select the correct endpoint configuration.
-6. Connect the Item node to the Client node, and then to a **Debug** node.
-7. Deploy the flow and trigger the Inject node.
+5. Select the endpoint configuration you created earlier.
+6. Connect the output of the **Item** node to the input of the **Client** node, then connect the **Client** node's top output to a **Debug** node.
+
+> The **OPC UA Client** node has three outputs: the top carries the data payload, the middle indicates connection status, and the bottom provides raw responses for debugging.
+
+7. Deploy the flow and click the **Inject** button to trigger the read.
 
 You should see the tag value appear in the debug panel. This confirms that communication is working correctly.
 
 You can also pass the Node ID dynamically using `msg.topic` from the Inject node if you prefer not to use an Item node.
 
 {% renderFlow 300 %}
-[{"id":"e2a81e2ded6c1bf7","type":"OpcUa-Client","z":"5cba74fb0cf8c7a7","endpoint":"a4df18253e5a79a0","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":600,"y":420,"wires":[["7f87d386f87b5c24"],[],[]]},{"id":"7f87d386f87b5c24","type":"debug","z":"5cba74fb0cf8c7a7","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":800,"y":420,"wires":[]},{"id":"1d081f02f709edfc","type":"OpcUa-Item","z":"5cba74fb0cf8c7a7","item":"ns=3;i=1001","datatype":"Boolean","value":"","name":"OPC UA Item Node","x":410,"y":420,"wires":[["e2a81e2ded6c1bf7"]]},{"id":"5cf4b77f2dfe9f0a","type":"inject","z":"5cba74fb0cf8c7a7","name":"Read tag","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":200,"y":420,"wires":[["1d081f02f709edfc"]]},{"id":"a4df18253e5a79a0","type":"OpcUa-Endpoint","endpoint":"opc.tcp://192.168.0.10:4840","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
+[{"id":"e2a81e2ded6c1bf7","type":"OpcUa-Client","z":"f66e9c91c269e7fb","endpoint":"a4df18253e5a79a0","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":580,"y":300,"wires":[["7f87d386f87b5c24"],["105fcf81921c122b"],["fe0f4fb1d4d5894e"]]},{"id":"7f87d386f87b5c24","type":"debug","z":"f66e9c91c269e7fb","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":740,"y":260,"wires":[]},{"id":"1d081f02f709edfc","type":"OpcUa-Item","z":"f66e9c91c269e7fb","item":"ns=3;i=1001","datatype":"Boolean","value":"","name":"OPC UA Item Node","x":390,"y":300,"wires":[["e2a81e2ded6c1bf7"]]},{"id":"5cf4b77f2dfe9f0a","type":"inject","z":"f66e9c91c269e7fb","name":"Read tag","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":220,"y":300,"wires":[["1d081f02f709edfc"]]},{"id":"105fcf81921c122b","type":"debug","z":"f66e9c91c269e7fb","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":300,"wires":[]},{"id":"fe0f4fb1d4d5894e","type":"debug","z":"f66e9c91c269e7fb","name":"Raw Respons","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":760,"y":340,"wires":[]},{"id":"a4df18253e5a79a0","type":"OpcUa-Endpoint","endpoint":"opc.tcp://192.168.0.10:4840","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
 {% endrenderFlow %}
 
 ### Reading Multiple Tags
 
-Reading multiple tags is just as simple and useful for real-time monitoring or logging.
+Batch reading improves performance when you need multiple data points from your equipment
 
 1. Drag an **OPC UA Client** node and set its **Action** to "READ MULTIPLE".
 
@@ -131,7 +137,7 @@ _Screenshot showing OPC UA Client node with "READ MULTIPLE" action selected_
 4. Add an **Inject** node for each Item node to trigger it.
 5. Connect each Inject node to its corresponding Item node.
 6. Wire all Item nodes into the OPC UA Client node.
-7. Add a **Debug** node to the output of the client.
+7. Add a **Debug** node to the top output of the **Client** node.
 8. Deploy the flow.
 9. Click each Inject node once, the client node will store the tag definitions.
 10.  Send a message with `msg.topic = "readmultiple"` to trigger the actual read.
@@ -140,88 +146,81 @@ _Screenshot showing OPC UA Client node with "READ MULTIPLE" action selected_
 You now have a flexible setup for reading multiple values from your PLC on demand.
 
 {% renderFlow 300 %}
-[{"id":"6f5e2b1cbce15025","type":"OpcUa-Client","z":"add95e226507ec34","endpoint":"","action":"readmultiple","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":571,"y":97.80000305175781,"wires":[["82daaf6a7bcc8368"],[],[]]},{"id":"4daa958d34c648c5","type":"OpcUa-Item","z":"add95e226507ec34","item":"ns=5;s=Counter1","datatype":"Int32","value":"","name":"","x":316,"y":50.19999694824219,"wires":[["6f5e2b1cbce15025"]]},{"id":"baa2733ca1fcb69d","type":"inject","z":"add95e226507ec34","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":127,"y":49,"wires":[["4daa958d34c648c5"]]},{"id":"82daaf6a7bcc8368","type":"debug","z":"add95e226507ec34","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":783.9999847412109,"y":100.39999389648438,"wires":[]},{"id":"dfd96a4dfe6330af","type":"OpcUa-Item","z":"add95e226507ec34","item":"ns=5;s=Random1","datatype":"Double","value":"","name":"","x":320.20001220703125,"y":116.19999694824219,"wires":[["6f5e2b1cbce15025"]]},{"id":"b8d5e40a98b1fb9f","type":"inject","z":"add95e226507ec34","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":131.20001220703125,"y":115,"wires":[["dfd96a4dfe6330af"]]},{"id":"3f63c46f499c3bca","type":"inject","z":"add95e226507ec34","name":"w multiple items","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"readmultiple","payload":"","payloadType":"str","x":326.99998474121094,"y":183,"wires":[["6f5e2b1cbce15025"]]},{"id":"75c7927996cf44c2","type":"inject","z":"add95e226507ec34","name":"Clear nodeId array","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"clearitems","payload":"","payloadType":"str","x":339.20001220703125,"y":229.1999969482422,"wires":[["6f5e2b1cbce15025"]]}]
+[{"id":"6f5e2b1cbce15025","type":"OpcUa-Client","z":"f66e9c91c269e7fb","endpoint":"","action":"readmultiple","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":600,"y":520,"wires":[["28b575f06bbbe7a7"],["139d346aab204f2f"],["3497d5566fb78f5f"]]},{"id":"4daa958d34c648c5","type":"OpcUa-Item","z":"f66e9c91c269e7fb","item":"ns=5;s=Counter1","datatype":"Int32","value":"","name":"","x":400,"y":500,"wires":[["6f5e2b1cbce15025"]]},{"id":"baa2733ca1fcb69d","type":"inject","z":"f66e9c91c269e7fb","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":220,"y":500,"wires":[["4daa958d34c648c5"]]},{"id":"dfd96a4dfe6330af","type":"OpcUa-Item","z":"f66e9c91c269e7fb","item":"ns=5;s=Random1","datatype":"Double","value":"","name":"","x":400,"y":540,"wires":[["6f5e2b1cbce15025"]]},{"id":"b8d5e40a98b1fb9f","type":"inject","z":"f66e9c91c269e7fb","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":220,"y":540,"wires":[["dfd96a4dfe6330af"]]},{"id":"3f63c46f499c3bca","type":"inject","z":"f66e9c91c269e7fb","name":"Write multiple items","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"readmultiple","payload":"","payloadType":"str","x":390,"y":460,"wires":[["6f5e2b1cbce15025"]]},{"id":"75c7927996cf44c2","type":"inject","z":"f66e9c91c269e7fb","name":"Clear nodeId array","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"clearitems","payload":"","payloadType":"str","x":390,"y":580,"wires":[["6f5e2b1cbce15025"]]},{"id":"28b575f06bbbe7a7","type":"debug","z":"f66e9c91c269e7fb","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":780,"y":480,"wires":[]},{"id":"139d346aab204f2f","type":"debug","z":"f66e9c91c269e7fb","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":770,"y":520,"wires":[]},{"id":"3497d5566fb78f5f","type":"debug","z":"f66e9c91c269e7fb","name":"Raw Respons","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":800,"y":560,"wires":[]}]
 {% endrenderFlow %}
 
-## Writing Values to the PLC
+## Writing Values
 
-In addition to reading values, OPC UA allows you to write control signals or parameters directly to the PLC.
+In addition to reading data, OPC UA also allows you to write control signals or parameters to your equipment.
 
 ### Writing a Single Tag
 
 To write a single value:
 
-1. Drag an **Inject** node (used to trigger the write).
-2. Add an **OPC UA Item** node and define:
-   - The **Node ID**
-   - The **Data Type**
-   - The **Value** to write
+1. Drag an **Inject** node onto the canvas (used to trigger the write operation).
+2. Add an **OPC UA Item** node and configure:
+   - **Node ID**: Enter the target identifier.
+   - **Data Type**: Choose the appropriate type (e.g., `Boolean`, `Double`).
+   - **Value**: Enter the value to write.
 
-![Screenshot showing OPC UA Item node configuration for write operation](./images/opcua-item-node-write.png){data-zoomable}  
-_Screenshot showing OPC UA Item node configuration for write operation_
+   ![Screenshot showing OPC UA Item node configuration for write operation](./images/opcua-item-node-write.png){data-zoomable}  
+   _OPC UA Item node configured for a write operation_
 
-3. Connect the Inject node to the Item node.
-4. Add an **OPC UA Client** node and set its **Action** to "WRITE".
+3. Connect the **Inject** node to the **Item** node.
+4. Add an **OPC UA Client** node and set its **Action** to `WRITE`.
 
-![Screenshot showing OPC UA Client node with "WRITE" action selected](./images/opcua-client-write-ops.png){data-zoomable}  
-_Screenshot showing OPC UA Client node with "WRITE" action selected_
+   ![Screenshot showing OPC UA Client node with "WRITE" action selected](./images/opcua-client-write-ops.png){data-zoomable}  
+   _OPC UA Client node with "WRITE" action selected_
 
-5. Select the endpoint configuration.
-6. Connect the Item node to the Client node, and then to a **Debug** node.7. Deploy the flow and trigger the Inject node.
+5. Select the endpoint configuration you created earlier.
+6. Connect the **Item** node to the **Client** node, then connect the **Client** node's top output to a **Debug** node.
+7. Deploy the flow and click the **Inject** button to trigger the write.
 
-The client node will confirm the operation with a status like **"values written"**.
+The OPC UA Client node will confirm the operation with a status like **"values written"**.
 
 {% renderFlow 300 %}
-[{"id":"6f5e2b1cbce15025","type":"OpcUa-Client","z":"add95e226507ec34","endpoint":"","action":"write","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":571,"y":97.80000305175781,"wires":[["82daaf6a7bcc8368"],[],[]]},{"id":"4daa958d34c648c5","type":"OpcUa-Item","z":"add95e226507ec34","item":"ns=5;s=Counter1","datatype":"Int32","value":"20","name":"","x":320,"y":100,"wires":[["6f5e2b1cbce15025"]]},{"id":"baa2733ca1fcb69d","type":"inject","z":"add95e226507ec34","name":"Write","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":110,"y":100,"wires":[["4daa958d34c648c5"]]},{"id":"82daaf6a7bcc8368","type":"debug","z":"add95e226507ec34","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":783.9999847412109,"y":100.39999389648438,"wires":[]}]
+[{"id":"c922a70d48ecba6f","type":"OpcUa-Client","z":"f66e9c91c269e7fb","endpoint":"","action":"write","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":620,"y":1140,"wires":[["7eb010a4671ac181"],["392bb1fd60c29baf"],["e9d279677dbc87e8"]]},{"id":"5ff1e3c2d5977a34","type":"OpcUa-Item","z":"f66e9c91c269e7fb","item":"ns=5;s=Counter1","datatype":"Int32","value":"20","name":"","x":440,"y":1140,"wires":[["c922a70d48ecba6f"]]},{"id":"8cdd141dbdb350c7","type":"inject","z":"f66e9c91c269e7fb","name":"Write","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":290,"y":1140,"wires":[["5ff1e3c2d5977a34"]]},{"id":"7eb010a4671ac181","type":"debug","z":"f66e9c91c269e7fb","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":780,"y":1100,"wires":[]},{"id":"392bb1fd60c29baf","type":"debug","z":"f66e9c91c269e7fb","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":770,"y":1140,"wires":[]},{"id":"e9d279677dbc87e8","type":"debug","z":"f66e9c91c269e7fb","name":"Raw Respons","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":800,"y":1180,"wires":[]}]
 {% endrenderFlow %}
 
 ### Writing Multiple Tags
 
-For writing multiple values at once, follow this pattern:
+To write multiple values at once, follow this pattern:
 
-1. Add an **OPC UA Client** node and set its **Action** to "WRITE MULTIPLE".
+1. Add an **OPC UA Client** node and set its **Action** to `WRITE MULTIPLE`.
 
-![Screenshot showing OPC UA Client node with "WRITE MULTIPLE" action selected](./images/opcua-client-write-multiple.png){data-zoomable}  
-_Screenshot showing OPC UA Client node with "WRITE MULTIPLE" action selected_
+   ![Screenshot showing OPC UA Client node with "WRITE MULTIPLE" action selected](./images/opcua-client-write-multiple.png){data-zoomable}  
+   _OPC UA Client node configured for writing multiple values_
 
-2. Select the endpoint configuration.
-3. Add multiple **OPC UA Item** nodes, each with Node ID, Data Type, and Value.
-4. Add an **Inject** node for each Item node.
-5. Connect Inject → Item for each, and all Items → Client.
-6. Add a **Debug** node to the client output.
-7. Deploy and click all Inject nodes to load the values.
-8. Send a message with `msg.topic = "writemultiple"` to execute the write.
-9. To reset the stored items, send `msg.topic = "clearitems"`.
+2. Select the appropriate endpoint configuration.
+3. Add multiple **OPC UA Item** nodes, each configured with a **Node ID**, **Data Type**, and **Value** to be written.
+4. Add an **Inject** node for each **Item** node.
+5. Connect each **Inject** node to its corresponding **Item** node, then connect all **Item** nodes to the **Client** node.
+6. Add a **Debug** node to the top output of the **Client** node.
+7. Deploy the flow and trigger all **Inject** nodes to load the values.
+8. To execute the write operation, send a message with `msg.topic = "writemultiple"`.
+9. To clear the stored items, send a message with `msg.topic = "clearitems"`.
 
-This setup gives you precise control over multiple values with a single command.
+This setup allows you to prepare multiple tag values and write them all at once, giving you precise control through a single command.
 
 {% renderFlow 300 %}
-[{"id":"ed421a9.d6319e8","type":"OpcUa-Client","z":"d85dd4e7.e244b","endpoint":"","action":"writemultiple","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":580,"y":120,"wires":[["f993fd12.db5e98"],[],[]]},{"id":"96bd763.14a9308","type":"OpcUa-Item","z":"d85dd4e7.e244b","item":"ns=3;i=1007","datatype":"Double","value":"1.0","name":"","x":316,"y":50.19999694824219,"wires":[["ed421a9.d6319e8"]]},{"id":"d8a68c7a.a73008","type":"inject","z":"d85dd4e7.e244b","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":127,"y":49,"wires":[["96bd763.14a9308"]]},{"id":"f993fd12.db5e98","type":"debug","z":"d85dd4e7.e244b","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":763.9999847412109,"y":100.39999389648438,"wires":[]},{"id":"8ae51c8c.20bd3","type":"OpcUa-Item","z":"d85dd4e7.e244b","item":"ns=3;i=1008","datatype":"Int32","value":"50","name":"","x":320.20001220703125,"y":116.19999694824219,"wires":[["ed421a9.d6319e8"]]},{"id":"1335adce.7f46ba","type":"inject","z":"d85dd4e7.e244b","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":131.20001220703125,"y":115,"wires":[["8ae51c8c.20bd3"]]},{"id":"2c050a3d.91f496","type":"inject","z":"d85dd4e7.e244b","name":"Write multiple items","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"writemultiple","payload":"","payloadType":"str","x":336.99998474121094,"y":183,"wires":[["ed421a9.d6319e8"]]},{"id":"690e4f9f.faeca","type":"inject","z":"d85dd4e7.e244b","name":"Clear nodeId array","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"clearitems","payload":"","payloadType":"str","x":339.20001220703125,"y":229.1999969482422,"wires":[["ed421a9.d6319e8"]]}]
+[{"id":"ed421a9.d6319e8","type":"OpcUa-Client","z":"f66e9c91c269e7fb","endpoint":"","action":"writemultiple","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":620,"y":1620,"wires":[["b0788fb9285c48ea"],["bde690208cbf2c4c"],["0883826b4a0ca030"]]},{"id":"96bd763.14a9308","type":"OpcUa-Item","z":"f66e9c91c269e7fb","item":"ns=3;i=1007","datatype":"Double","value":"1.0","name":"","x":420,"y":1600,"wires":[["ed421a9.d6319e8"]]},{"id":"d8a68c7a.a73008","type":"inject","z":"f66e9c91c269e7fb","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":240,"y":1600,"wires":[["96bd763.14a9308"]]},{"id":"8ae51c8c.20bd3","type":"OpcUa-Item","z":"f66e9c91c269e7fb","item":"ns=3;i=1008","datatype":"Int32","value":"50","name":"","x":420,"y":1640,"wires":[["ed421a9.d6319e8"]]},{"id":"1335adce.7f46ba","type":"inject","z":"f66e9c91c269e7fb","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":240,"y":1640,"wires":[["8ae51c8c.20bd3"]]},{"id":"2c050a3d.91f496","type":"inject","z":"f66e9c91c269e7fb","name":"Write multiple items","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"writemultiple","payload":"","payloadType":"str","x":410,"y":1560,"wires":[["ed421a9.d6319e8"]]},{"id":"690e4f9f.faeca","type":"inject","z":"f66e9c91c269e7fb","name":"Clear nodeId array","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"clearitems","payload":"","payloadType":"str","x":410,"y":1680,"wires":[["ed421a9.d6319e8"]]},{"id":"b0788fb9285c48ea","type":"debug","z":"f66e9c91c269e7fb","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":800,"y":1580,"wires":[]},{"id":"bde690208cbf2c4c","type":"debug","z":"f66e9c91c269e7fb","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":790,"y":1620,"wires":[]},{"id":"0883826b4a0ca030","type":"debug","z":"f66e9c91c269e7fb","name":"Raw Respons","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":820,"y":1660,"wires":[]}]
 {% endrenderFlow %}
 
 ## What’s Next
 
-Now that you have learned how to connect to an OPC UA-enabled PLC, browse available tags, and securely read and write tag values, you have a solid foundation for building industrial automation solutions with FlowFuse.
+You’ve now mastered the fundamentals of OPC UA integration—connecting to servers, browsing tags, and reading or writing data. These core building blocks lay the foundation for powerful industrial automation.
 
-In this guide, we used **Inject** nodes to manually trigger read and write operations for demonstration purposes. But that is just the beginning.
+In real deployments, you will want more than Inject nodes and debug panels. With **FlowFuse Dashboard 2.0**, you can build full operator interfaces—live gauges, control buttons, trend charts—fully connected to your OPC UA data.
 
-With **FlowFuse Dashboards**, you can turn these test flows into full-fledged operator interfaces. Visualize real-time tag values using charts, gauges, and indicators. Set up alerts when values cross critical thresholds. Add buttons and input fields to control equipment directly from the dashboard. This transforms your OPC UA-connected flows into interactive, user-friendly control panels.
+This guide covered the basics, but OPC UA offers far more. In the next article, we will explore:
 
-FlowFuse also integrates easily with cloud platforms, databases, and third-party services, making it simple to build complete, end-to-end industrial applications.
+* Subscriptions for real-time monitoring without polling
+* Events and alarms directly from equipment
+* Historical data queries for trend analysis
+* Method calls to execute functions on your devices
 
-While this guide focused on the basics of OPC UA, including connecting, reading, and writing, it is worth noting that OPC UA supports far more powerful features. These include user authentication, encryption, access control, historical data access, method execution, and real-time event subscriptions. These capabilities are essential for secure, scalable industrial systems.
+When it is time to move beyond prototypes, **FlowFuse** delivers what industrial systems truly need—remote device management, instant rollbacks with full version control, built-in team collaboration, and high availability you can trust.
 
-We will explore these advanced OPC UA features in upcoming articles to help you unlock the full potential of industrial connectivity.
+You are not starting over. You are scaling up—on the Node-RED foundation your team already knows, with the enterprise-grade power that keeps production running.
 
-When you are ready to scale your solution, **FlowFuse** provides all the tools you need to manage your automation platform in production:
-
-- **Remote device management** to deploy and monitor flows across your device fleet  
-- **Version control and audit logs** to track every change  
-- **Secure remote access** to edge devices via encrypted tunnels  
-- **Role-based collaboration** to enable teamwork on industrial projects  
-- **Environment variables, flow backups, and health monitoring** to maintain stability and uptime
-
-Whether you are digitizing one machine or rolling out to hundreds of devices, FlowFuse makes it possible to do it with speed, confidence, and control. Companies across manufacturing, energy, and industrial automation are already building powerful real-time systems with FlowFuse, and we would love to show you how.
-
-**Let’s talk about your use case and how FlowFuse can help you accelerate industrial transformation.**  
-[Book a demo with our team](/book-demo/) and see it in action.
+[Start with FlowFuse](https://app.flowfuse.com/account/create)
