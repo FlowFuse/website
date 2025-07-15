@@ -63,15 +63,5 @@ date: git Last Modified
 
 {% include "./common-js.njk" %}
 
-<!-- Clean up ToC text by removing # symbols -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tocLinks = document.querySelectorAll('.toc a');
-    tocLinks.forEach(link => {
-        link.textContent = link.textContent.replace(/^#\s*/, '');
-    });
-});
-</script>
-
 <!-- medium-zoom 1.1.0 | MIT License | https://github.com/francoischalifour/medium-zoom -->
 {% include "medium-zoom.min.njk" %}

@@ -673,12 +673,6 @@ module.exports = function(eleventyConfig) {
         wrapper: 'div',
         wrapperClass: 'toc',
         ul: true,
-        markdownItAnchor: {
-            permalink: markdownItAnchor.permalink.linkInsideHeader({
-                symbol: ``,
-                placement: 'before'
-            })
-        }
     });
 
     const markdownItOptions = {
@@ -687,7 +681,7 @@ module.exports = function(eleventyConfig) {
 
     const markdownItAnchorOptions = {
         permalink: markdownItAnchor.permalink.linkInsideHeader({
-            symbol: `#&nbsp;`,
+            symbol: ``,
             placement: 'before'
         })
     }
