@@ -61,7 +61,10 @@
                 </div>
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
-                <div class="sticky top-20 mt-6 flex flex-col">
+                <div class="mt-6 flex flex-col">
+                    {% include "layouts/toc.njk" %}
+                </div>
+                <div class="sticky top-20">
                     <h3 class="mb-3">Written By:</h3>
                     {% for author in authors %}
                         {% renderTeamMember people[author] %}
@@ -98,23 +101,6 @@
     </div>
 </div>
 
-<!-- Clipboard -->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-{% initClipboardJS %}
+{% include "./common-js.njk" %}
 
-<!-- Syntax Highlighting CSS -->
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-<!-- MermaidJS -->
-<script type="module">
-    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
-    mermaid.initialize({
-        securityLevel: 'loose',
-        startOnLoad:true
-    });
-</script>
-
-<!-- medium-zoom 1.1.0 | MIT License | https://github.com/francoischalifour/medium-zoom -->
-{% include "medium-zoom.min.njk" %}
