@@ -10,7 +10,10 @@ meta:
             Node-RED is a low-code programming environment that allows developers to connect a wide variety of endpoints, such as industrial PLCs, APIs, databases, enterprise applications and online services. Users of Node-RED visually drag ‘nodes’ from a palette that represent the end points and then connect them together into flows to accomplish the desired task. Node-RED applications are accessible via a web browser.
         - question: "Who uses Node-RED?"    
           answer: >
-            Node-RED is popular among IoT and individuals creating DIY home automation systems. However, increasingly Node-RED is being used in professional use cases in a variety of industries. Apart from software engineers, Node Red’s graphical approach to unlocking and effectively using data has empowered industrial engineers or non developers to apply their domain knowledge easily and accelerate projects. 
+            Node-RED is popular among IoT and individuals creating DIY home automation systems. However, Node-RED is  mostly being used in professional use cases in a variety of industries. Apart from software engineers, Node-RED’s graphical approach to unlocking and effectively using data has empowered industrial engineers or non developers to apply their domain knowledge easily and accelerate projects.
+        - question: "Which industrial sectors use Node-RED in production environments?"
+          answer: >
+            Yes, Node-RED is widely used in real-world production environments across industries like manufacturing, energy, smart buildings, and more. While Node-RED provides a powerful low-code runtime, FlowFuse makes it easier and safer to use in professional settings. Many companies are already using FlowFuse to run Node-RED in production. FlowFuse adds everything needed to manage and scale Node-RED reliably, including user access control, version control for flows, automated deployments, remote device management, and secure team collaboration. This gives organizations the confidence to build and maintain robust industrial applications using Node-RED. 
         - question: "How do I deploy Node-RED online or in the Cloud?"    
           answer: >
             <a href='https://app.flowfuse.com/account/create/'>FlowFuse Cloud</a> is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don't need to install it locally.
@@ -57,22 +60,23 @@ sitemapPriority: 0.8
     <!--Hero Content-->
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
         <div class="flex flex-col px-6 md:my-16 items-center md:flex-row md:items-start container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
-            <div class="md:my-auto md:w-1/2 lg:w-5/12 max-w-md">
-                <h1 class="mt-0 px-12 md:px-0 m-auto text-indigo-800">
-                    What is <span class="inline-block">Node-RED?</span>
-                </h1>
-                <p>
-                    Co-created by Nick O’Leary, CTO of FlowFuse, Node-RED is <span class="font-semibold">the <span class="inline-block">low-code</span> programming language of choice for industrial applications</span>. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
-                </p>
-                <p class="md:mb-10"><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimizing industrial processes.</p>
-                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="/ebooks/beginner-guide-to-a-professional-nodered/" onclick="capture('cta-download-ebook', {'position': 'nodered'})">DOWNLOAD eBOOK</a>
-            </div>
-            <div class="max-w-md md:w-1/2 lg:w-7/12 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
-                {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
-            </div>
-            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md" href="/ebooks/beginner-guide-to-a-professional-nodered/" onclick="capture('cta-download-ebook', {'position': 'nodered'})">DOWNLOAD eBOOK</a>
-        </div>   
-    </div>
+        <div class="md:my-auto md:w-1/2 max-w-md">
+            <h1 class="mt-0 px-12 md:px-0 m-auto text-indigo-800">
+                What is <span class="inline-block">Node-RED?</span>
+            </h1>
+            <p>
+                Co-created by Nick O'Leary, CTO of FlowFuse, Node-RED is <span class="font-semibold">the <span class="inline-block">low-code</span> programming language of choice for industrial applications</span>. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
+            </p>
+            <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
+            <p class="md:mb-10">Ready to <span class="font-semibold">get started building with Node-RED</span>?</p>
+            <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+        </div>
+        <div class="max-w-md md:w-1/2 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
+            {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
+        </div>
+        <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+    </div>   
+</div>
 
     <!-- Power of low-code -->  
     <div class="w-full pb-16">
