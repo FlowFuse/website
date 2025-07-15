@@ -77,7 +77,7 @@ pure value of Node-RED) which can still be factored into the conversation.
 
 ## Messaging
 
-FlowFuse is the open-source Industrial application platform.
+FlowFuse is the open-source Industrial Application Platform.
 
 ### Tagline
 
