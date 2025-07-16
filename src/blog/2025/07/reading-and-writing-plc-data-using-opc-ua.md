@@ -3,7 +3,7 @@ title: "OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment"
 subtitle: "A practical guide to accessing industrial data through OPC UA server gateways"
 description: "OPC UA tutorial: Connect Node-RED to industrial PLCs step-by-step. Configure Kepware endpoints, read/write Siemens S7 tags, browse Allen-Bradley data. Free guide."
 date: 2025-07-16
-keywords OPC UA Node-RED tutorial, connect PLC to Node-RED, OPC UA example, Node-RED industrial IoT, OPC UA browser Node-RED, read PLC data Node-RED, OPC UA client configuration, Kepware Node-RED, OPC UA port 4840, industrial automation tutorial
+keywords: OPC UA Node-RED tutorial, connect PLC to Node-RED, OPC UA example, Node-RED industrial IoT, OPC UA browser Node-RED, read PLC data Node-RED, OPC UA client configuration, Kepware Node-RED, OPC UA port 4840, industrial automation tutorial
 authors: ["sumit-shinde"]
 tags:
    - flowfuse
