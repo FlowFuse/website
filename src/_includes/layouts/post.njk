@@ -59,6 +59,12 @@
                     </div>
                     {{ content | safe }}
                 </div>
+                {% if meta.faq %}
+                    <div class="prose mt-12">
+                        <h2 class="mb-1">Frequently Asked Questions</h2>
+                        {% include "faq.njk" %}
+                    </div>
+                {% endif %}
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="mt-6 flex flex-col">
