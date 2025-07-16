@@ -9,6 +9,24 @@ image: blog/2025/07/images/connect-manufacturing-equipment-via-serial-post.png
 tags:
    - flowfuse
    - opcua
+meta:
+  faq:
+    - question: "What communication parameters do I need to configure for serial connections?"
+      answer: "The key parameters are baud rate (e.g., 9600, 115200), data bits (typically 7 or 8), stop bits (1 or 2), and parity (none, even, or odd). The most common configuration is 8-N-1 (8 data bits, no parity, 1 stop bit). These settings must match exactly between your device and Node-RED, or communication will fail."
+    - question: "Why am I getting garbled or corrupted data from my serial device?"
+      answer: "Garbled data usually indicates mismatched communication settings. Verify that baud rate, data bits, parity, and stop bits match your device specifications. Also check for loose connections, electromagnetic interference, or incorrect character encoding. Using the wrong cable type (null-modem vs straight-through) can also cause data corruption."
+    - question: "How do I handle devices that change port assignments (like USB devices)?"
+      answer: "Use the serial control node to dynamically manage port connections. This node allows you to change ports, start/stop connections, and modify settings without redeploying your flow. You can even create a dashboard interface for users to select the correct port from available options."
+    - question: "What's the difference between RS-232, RS-422, and RS-485?"
+      answer: "RS-232 is a point-to-point connection suitable for short distances (up to 50 feet), supporting one transmitter and one receiver. RS-422 supports longer distances (up to 4000 feet) with one transmitter and up to 10 receivers. RS-485 is the most versatile, supporting multi-point configurations with up to 32 devices on the same bus and distances up to 4000 feet."
+    - question: "Can I connect multiple serial devices to a single Node-RED instance?"
+      answer: "Yes, Node-RED can handle multiple serial connections simultaneously. Each serial port node can be configured independently with its own settings. The practical limit depends on your hardware capabilities and the data throughput requirements of each device."
+    - question: "When should I use the serial request node instead of serial in/out nodes?"
+      answer: "Use the serial request node for devices that follow a command-response pattern (you send a command and wait for a reply). This node handles the request-response cycle automatically and processes commands sequentially. Use serial in/out nodes for continuous data streams or when you need separate control over reading and writing."
+    - question: "How do I parse binary data from serial devices in Node-RED?"
+      answer: "For binary data, configure the serial node to output as Buffer instead of String. Then use a function node to parse the buffer using Node.js Buffer methods like readInt16BE(), readFloatLE(), etc. FlowFuse users can leverage the AI Assistant to generate parsing code by providing a sample of the data format."
+    - question: "What's the best practice for handling serial connection failures in production?"
+      answer: "Implement error handling with catch nodes to detect connection failures. Use the serial control node to attempt reconnection after failures. Add status nodes to monitor connection state and trigger alerts. Consider implementing a watchdog timer that checks for data timeouts and automatically restarts the connection if needed."
 ---
 
 Many factories rely on machines, both new and old, that communicate via traditional serial interfaces such as **RS-232, RS-422, or RS-485**. These machines remain reliable but can be challenging to integrate with modern systems due to their connectivity style.
@@ -224,7 +242,7 @@ Each time a message is received, the node also outputs the current port configur
 
 In short, the **serial control** node adds a layer of resilience and flexibility that is often essential in real-world deployments—where devices come and go, ports are never quite consistent, and downtime is not an option.
 
-## Conclusion
+## Key Takeaways
 
 Manufacturing floors often bring together a mix of old and new machines. Among them, many still operate on traditional communication methods that are reliable but difficult to integrate with modern systems. These machines continue to perform their core functions well, but without connectivity, they remain isolated from digital workflows.
 
