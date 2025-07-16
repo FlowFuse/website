@@ -8,7 +8,7 @@ date: 2025-07-23
 time: 17:00 CET (11:00am ET)
 duration: 60
 video: 
-hosts: ["joe-pavitt"]
+hosts: ["stephen-mclaughlin"]
 hubspot:
     formId: 0b0fd5c1-b5c3-488e-823a-ac2568a3c14d
     downloadFormId: 
@@ -21,15 +21,15 @@ Getting started on new projects often means losing time on repetitive setup, con
 
 ## What You'll Learn
 
-Join Joe Pavitt as he demonstrates how to:
+Join Steve McLaughlin as he demonstrates how to:
 
 - Quickly deploy pre-built Blueprints for real-world use cases like:
-  - Simple **REST APIs** with database integrations
+  - **PDF Report Generator**
   - **OEE Dashboards** for **SCADA** systems
   - **AI-powered agents** interacting via Node-RED
 - Reduce your dependency on expensive and complex software by using Node-RED and FlowFuse as a more **flexible, cost-effective solution**
 
-Joe will also share insights into the process FlowFuse uses to develop Blueprints, designed to balance ease of use with providing real value for your projects.
+Steve will also share insights into the process FlowFuse uses to develop Blueprints, designed to balance ease of use with providing real value for your projects.
 
 Whether you're automating factory processes, building IoT solutions, or streamlining internal tools, this session will show you how FlowFuse Blueprints help you move faster and get more value from your applications.
 
