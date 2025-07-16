@@ -1,40 +1,76 @@
 ---
 title: "OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment"
 subtitle: "A practical guide to accessing industrial data through OPC UA server gateways"
-description: "Discover how to integrate industrial equipment using OPC UA servers and Node-RED. This hands-on tutorial covers connecting to OPC UA gateways like Kepware and MatrikonOPC, browsing tags from PLCs and other devices, reading real-time data, and writing values back to your industrial systems."
-date: 2025-07-15
+description: "OPC UA tutorial: Connect Node-RED to industrial PLCs step-by-step. Configure Kepware endpoints, read/write Siemens S7 tags, browse Allen-Bradley data. Free guide."
+date: 2025-07-16
 authors: ["sumit-shinde"]
+keywords OPC UA Node-RED tutorial, connect PLC to Node-RED, OPC UA example, Node-RED industrial IoT, OPC UA browser Node-RED, read PLC data Node-RED, OPC UA client configuration, Kepware Node-RED, OPC UA port 4840, industrial automation tutorial
 meta:
   faq:
-    - question: "What is OPC UA and why is it important for industrial automation?"
-      answer: "OPC UA (Unified Architecture) is a platform-independent, secure communication protocol that enables data exchange between industrial equipment from different manufacturers. It is important because it provides a standardized way to access real-time and historical data from PLCs, sensors, SCADA systems, and other industrial devices—without vendor lock-in."
-    - question: "What are the main differences between OPC UA and OPC Classic?"
-      answer: "OPC UA is platform-independent and works on any operating system, while OPC Classic requires Windows and DCOM. OPC UA includes built-in security features such as encryption and authentication, supports complex data types and methods, and can traverse firewalls easily. OPC Classic lacks these modern features and supports only simple data types."
-    - question: "Which port does OPC UA use for communication?"
-      answer: "OPC UA typically uses port 4840 for TCP communication, though this can be configured. For secure connections, it may use port 4843. OPC UA also supports multiple transport protocols including TCP, HTTPS, and WebSockets—each with its own port configuration."
-    - question: "How secure is OPC UA compared to other industrial protocols?"
-      answer: "OPC UA includes enterprise-grade security such as X.509 certificates, 128/256-bit encryption, user authentication, and message signing. This makes it significantly more secure than protocols like Modbus or OPC Classic, which have minimal to no built-in security. OPC UA's security architecture aligns well with IT department standards for industrial networks."
-    - question: "Can OPC UA work with existing PLCs and industrial equipment?"
-      answer: "Yes. Many modern PLCs include built-in OPC UA servers. For older devices, OPC UA gateways or protocol converters can be used. Software solutions are also available to wrap legacy protocols like Modbus, Profibus, or Ethernet/IP into OPC UA."
-    - question: "What's the difference between an OPC UA client and server?"
-      answer: "An OPC UA server provides data from equipment (like PLCs or sensors) and makes it available over the network. An OPC UA client connects to these servers to read or write data. Clients are typically applications like HMIs, SCADA systems, or data loggers. A single server can serve multiple clients concurrently."
-    - question: "Do I need special software or licenses to use OPC UA?"
-      answer: "Basic OPC UA clients are available as free and open-source software. However, commercial OPC UA servers—especially those tailored for specific PLCs—may require licenses. Membership in the OPC Foundation offers access to SDKs and certification tools but is not mandatory for basic use. Node-RED with free OPC UA nodes is a popular no-license solution."
+  - question: "How do I connect Node-RED to an OPC UA server?"
+    answer: "Install the node-red-contrib-opcua package from the Node-RED Palette Manager. Then, drag an OPC UA Client node onto your flow, configure the endpoint URL (typically opc.tcp://[IP]:4840), set security to None for testing, and connect it to OPC UA Item nodes to read or write specific tags."
+  - question: "What is the default OPC UA port number?"
+    answer: "The default OPC UA port is 4840 for standard TCP connections and 4843 for secure connections. However, these can be configured differently in your OPC UA server settings. Always check your server documentation for the correct port."
+  - question: "Can Node-RED connect to a Kepware OPC server?"
+    answer: "Yes, Node-RED can connect to Kepware using the OPC UA protocol. Kepware includes a built-in OPC UA server interface. Use the endpoint URL from Kepware’s OPC UA Configuration in your Node-RED OPC UA Client node."
+  - question: "How do I find an OPC UA Node ID?"
+    answer: "Use the OPC UA Browser node in Node-RED to explore the server’s address space. Start with ns=0;i=85 (root Objects folder) and navigate through the hierarchy. Each tag will show its Node ID in the format ns=[namespace];i=[identifier] or ns=[namespace];s=[string identifier]."
+  - question: "What is the difference between OPC UA and MQTT?"
+    answer: "OPC UA is designed for industrial automation with built-in information modeling, security, and complex data types. MQTT is a lightweight publish-subscribe protocol ideal for IoT. OPC UA provides richer context and methods, while MQTT excels at simple, efficient message transport. Many systems use both—OPC UA for equipment integration and MQTT for cloud connectivity."
+  - question: "Is OPC UA free to use?"
+    answer: "The OPC UA specification is open and free to implement. Many open-source clients and servers are available at no cost. However, commercial OPC UA servers (like Kepware or MatrikonOPC) and some certified stacks require licenses. OPC Foundation membership is optional unless you need certification."
+  - question: "Can OPC UA work without internet?"
+    answer: "Yes, OPC UA works perfectly on local networks without internet access. It is commonly deployed on isolated industrial networks for security. OPC UA only requires network connectivity between the client and server—this can be a local LAN, industrial network, or even a direct connection."
+  - question: "How do I test an OPC UA connection?"
+    answer: "Use free tools like UaExpert or Prosys OPC UA Browser to test connections before implementing them in Node-RED. These tools let you browse the address space, read values, and verify security settings. In Node-RED, use the Browser node with a Debug node to test connectivity."
+  - question: "What causes the OPC UA BadNodeIdUnknown error?"
+    answer: "This error means the Node ID you are trying to access does not exist on the server. Common causes include an incorrect namespace index (ns=), invalid identifier format, or a tag that was removed or renamed. Use the Browser node to verify the exact Node ID format from the server."
+  - question: "Can multiple clients connect to one OPC UA server?"
+    answer: "Yes, OPC UA servers support multiple simultaneous client connections. The exact number depends on the server implementation and licensing. Most industrial OPC UA servers handle 10–100+ concurrent clients. Each client maintains its own session and can have different security levels and access rights."
 ---
 
-Modern industrial systems rely on efficient, secure, and interoperable communication between machines and software. OPC UA (Open Platform Communications Unified Architecture) has become a widely adopted standard for achieving exactly that. It provides a unified way to exchange data between PLCs, SCADA systems, and industrial applications.
+OPC UA (Open Platform Communications Unified Architecture) is the industry standard protocol for secure industrial automation and data exchange. Also known as OPC Unified Architecture or IEC 62541, it enables vendor-neutral communication between PLCs, SCADA systems, HMIs, and enterprise applications—regardless of the manufacturer.
 
 <!--more-->
 
-This guide walks you through connecting to industrial equipment via OPC UA servers, browsing available tags, and reading and writing data using FlowFuse's Node-RED-based platform.
+This hands-on guide walks you through building your first **OPC UA integration** using **Node-RED** and **FlowFuse**:
+
+* **Connect** to any OPC UA server—Kepware, MatrikonOPC, or built-in PLC servers
+* **Browse** available tags and discover Node IDs from your equipment
+* **Read** real-time values from PLCs, sensors, and industrial devices
+* **Write** control signals and setpoints back to your systems
 
 ## Why OPC UA?
 
-OPC UA has become the backbone of modern industrial connectivity. Unlike proprietary protocols that lock you into specific vendors, OPC UA is an open standard that works across different manufacturers and platforms. A single OPC UA server can connect to equipment from multiple vendors—your Siemens PLCs, Allen-Bradley controllers, and Modbus devices all become accessible through one standardized interface. Beyond just reading values, OPC UA provides rich context including engineering units, data quality, timestamps, and relationships between data points.
+If you have worked with industrial equipment, you know the pain. Every PLC vendor uses a different protocol. Your Siemens S7-1500 requires TIA Portal and PROFINET drivers. The Allen-Bradley ControlLogix needs RSLinx and EtherNet/IP. A Modbus temperature sensor needs yet another tool. Before long, you are juggling a dozen different software packages—each with its own licensing, training, and maintenance overhead.
 
-With built-in security featuring encryption and certificate-based authentication, it's trusted by thousands of manufacturing facilities for mission-critical operations. By integrating OPC UA with Node-RED, you get industrial-grade connectivity combined with visual, low-code automation—no more wrestling with proprietary software or maintaining complex middleware.
+### Breaking the Cycle
 
-## What You’ll Need
+OPC UA eliminates this fragmentation. Instead of relying on vendor-specific protocols, it provides a universal language for all your equipment. Here is why it is becoming the industry standard:
+
+### Universal Connectivity
+
+Connect to any modern PLC using a single protocol. Leading manufacturers like Siemens, Rockwell, Schneider, and ABB now embed OPC UA servers directly into their controllers. One client, all your equipment.
+
+### Information, Not Just Data
+
+Reading a temperature value from OPC UA does not just give you "42.5"—it gives the full context: 42.5 °C, measured at 14:32:15.625 with "Good" quality, from "Tank\_01/Temperature", and includes alarm limits (10 °C / 80 °C). This context reduces guesswork and helps prevent costly mistakes.
+
+### Security Built for Industry
+
+While protocols like Modbus transmit everything in plain text, OPC UA uses enterprise-grade security. It supports X.509 certificates, 256-bit encryption, and robust user authentication to safeguard critical infrastructure from cyber threats.
+
+### Future-Proof Investment
+
+OPC UA is the foundation of Industry 4.0 initiatives around the world. It is not just another protocol—it is the one major vendors are standardizing on. Choosing OPC UA today ensures long-term compatibility and ROI.
+
+## Getting Started
+
+Now that you understand why OPC UA is widely adopted, let’s explore how to implement it using FlowFuse Node-RED.
+
+This next section walks you through exactly what you need to get started with a working setup, whether for prototyping or production.
+
+### What You’ll Need
 
 Before diving into the flow-building process, make sure you have the following:
 
@@ -47,11 +83,11 @@ FlowFuse provides these enterprise features plus automatic backups, one-click ro
 
 [Get started →](https://app.flowfuse.com/account/create)
 
-## Installing OPC UA Support in FlowFuse
+### Installing OPC UA Support in FlowFuse
 
-To work with OPC UA in Node-RED, you will first need to install the required nodes.
+To work with OPC UA in FlowFuse Node-RED, you will first need to install the required nodes.
 
-### Install the OPC UA Node Package
+#### Install the OPC UA Node Package
 
 1. Open the **FlowFuse Node-RED editor**.
 2. Click the menu in the top-right and choose **Manage palette**.
@@ -60,11 +96,9 @@ To work with OPC UA in Node-RED, you will first need to install the required nod
 
 Once installed, you will find new nodes for OPC UA communication in your palette, including **Client**, **Item**, and **Browser** and other OPC UA nodes.
 
-## Connecting to Your OPC UA Server
+### Connecting to Your OPC UA Server
 
 To begin accessing industrial data, create a client connection using the OPC UA Client node.
-
-### Set Up the OPC UA Client
 
 1. Drag an **OPC UA Client** node onto the canvas.
 2. Double-click to configure it.
@@ -82,11 +116,9 @@ _OPC UA endpoint configuration_
 
 With the connection now defined, you’re ready to explore what tags are available.
 
-## Browsing Tags (Optional)
+### Browsing Tags (Optional)
 
 If you do not already know the Node IDs of the tags you want to access, use the OPC UA Browser node to explore the tag structure.
-
-### Explore Available Tags
 
 1. Drag an **Inject**, **OPC UA Browser**, and **Debug** node onto the canvas.
 2. Connect the output of the Inject node to the input of the **Browser** node, then connect the Browser's output to the Debug node.
@@ -103,11 +135,11 @@ _OPC UA Browser node_
 [{"id":"c3a8303048e6588f","type":"OpcUa-Browser","z":"f66e9c91c269e7fb","endpoint":"c0f8c79fc00845c8","item":"","datatype":"","topic":"ns=0;i=85","items":[],"name":"","x":510,"y":300,"wires":[["3428199852f9fcdc"]]},{"id":"1549f797c58ba667","type":"inject","z":"f66e9c91c269e7fb","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":280,"y":300,"wires":[["c3a8303048e6588f"]]},{"id":"3428199852f9fcdc","type":"debug","z":"f66e9c91c269e7fb","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":740,"y":300,"wires":[]},{"id":"c0f8c79fc00845c8","type":"OpcUa-Endpoint","endpoint":"","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
 {% endrenderFlow %}
 
-## Reading Tag Values
+### Reading Tag Values
 
 Once you know the Node IDs, you can start reading data from your industrial equipment through the OPC UA server.
 
-### Reading a Single Tag
+#### Reading a Single Tag
 
 Here’s how to read a single value in real time:
 
@@ -135,10 +167,10 @@ You should see the tag value appear in the debug panel. This confirms that commu
 You can also pass the Node ID dynamically using `msg.topic` from the Inject node if you prefer not to use an Item node.
 
 {% renderFlow 300 %}
-[{"id":"e2a81e2ded6c1bf7","type":"OpcUa-Client","z":"f66e9c91c269e7fb","endpoint":"a4df18253e5a79a0","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":580,"y":300,"wires":[["7f87d386f87b5c24"],["105fcf81921c122b"],["fe0f4fb1d4d5894e"]]},{"id":"7f87d386f87b5c24","type":"debug","z":"f66e9c91c269e7fb","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":740,"y":260,"wires":[]},{"id":"1d081f02f709edfc","type":"OpcUa-Item","z":"f66e9c91c269e7fb","item":"ns=3;i=1001","datatype":"Boolean","value":"","name":"OPC UA Item Node","x":390,"y":300,"wires":[["e2a81e2ded6c1bf7"]]},{"id":"5cf4b77f2dfe9f0a","type":"inject","z":"f66e9c91c269e7fb","name":"Read tag","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":220,"y":300,"wires":[["1d081f02f709edfc"]]},{"id":"105fcf81921c122b","type":"debug","z":"f66e9c91c269e7fb","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":300,"wires":[]},{"id":"fe0f4fb1d4d5894e","type":"debug","z":"f66e9c91c269e7fb","name":"Raw Respons","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":760,"y":340,"wires":[]},{"id":"a4df18253e5a79a0","type":"OpcUa-Endpoint","endpoint":"opc.tcp://192.168.0.10:4840","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
+[{"id":"d128582dda7adbed","type":"OpcUa-Client","z":"ead97ed756a13a15","endpoint":"a4df18253e5a79a0","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":580,"y":240,"wires":[["3fc16bf912f16169"],["17724a6889ec7378"],["c6b0f16ef7371699"]]},{"id":"3fc16bf912f16169","type":"debug","z":"ead97ed756a13a15","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":740,"y":200,"wires":[]},{"id":"2691196551812a21","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=3;i=1001","datatype":"Boolean","value":"","name":"OPC UA Item Node","x":370,"y":240,"wires":[["d128582dda7adbed"]]},{"id":"96d17841a7f13ac4","type":"inject","z":"ead97ed756a13a15","name":"Read tag","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":200,"y":200,"wires":[["2691196551812a21"]]},{"id":"17724a6889ec7378","type":"debug","z":"ead97ed756a13a15","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":240,"wires":[]},{"id":"c6b0f16ef7371699","type":"debug","z":"ead97ed756a13a15","name":"Raw Respons","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":760,"y":280,"wires":[]},{"id":"a4df18253e5a79a0","type":"OpcUa-Endpoint","endpoint":"opc.tcp://192.168.0.10:4840","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
 {% endrenderFlow %}
 
-### Reading Multiple Tags
+#### Reading Multiple Tags
 
 Batch reading improves performance when you need multiple data points from your equipment
 
@@ -164,11 +196,11 @@ You now have a flexible setup for reading multiple values from your PLC on deman
 [{"id":"6f5e2b1cbce15025","type":"OpcUa-Client","z":"ead97ed756a13a15","endpoint":"","action":"readmultiple","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":580,"y":500,"wires":[["28b575f06bbbe7a7"],["139d346aab204f2f"],["3497d5566fb78f5f"]]},{"id":"4daa958d34c648c5","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=5;s=Counter1","datatype":"Int32","value":"","name":"","x":380,"y":480,"wires":[["6f5e2b1cbce15025"]]},{"id":"baa2733ca1fcb69d","type":"inject","z":"ead97ed756a13a15","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":200,"y":480,"wires":[["4daa958d34c648c5"]]},{"id":"dfd96a4dfe6330af","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=5;s=Random1","datatype":"Double","value":"","name":"","x":380,"y":520,"wires":[["6f5e2b1cbce15025"]]},{"id":"b8d5e40a98b1fb9f","type":"inject","z":"ead97ed756a13a15","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":200,"y":520,"wires":[["dfd96a4dfe6330af"]]},{"id":"3f63c46f499c3bca","type":"inject","z":"ead97ed756a13a15","name":"Read multiple items","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"readmultiple","payload":"","payloadType":"str","x":370,"y":440,"wires":[["6f5e2b1cbce15025"]]},{"id":"75c7927996cf44c2","type":"inject","z":"ead97ed756a13a15","name":"Clear nodeId array","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"clearitems","payload":"","payloadType":"str","x":370,"y":560,"wires":[["6f5e2b1cbce15025"]]},{"id":"28b575f06bbbe7a7","type":"debug","z":"ead97ed756a13a15","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":760,"y":460,"wires":[]},{"id":"139d346aab204f2f","type":"debug","z":"ead97ed756a13a15","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":500,"wires":[]},{"id":"3497d5566fb78f5f","type":"debug","z":"ead97ed756a13a15","name":"Raw Response","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":780,"y":540,"wires":[]}]
 {% endrenderFlow %}
 
-## Writing Values
+### Writing Values
 
 In addition to reading data, OPC UA also allows you to write control signals or parameters to your equipment.
 
-### Writing a Single Tag
+#### Writing a Single Tag
 
 To write a single value:
 
@@ -197,7 +229,7 @@ The OPC UA Client node will confirm the operation with a status like **"values w
 [{"id":"c922a70d48ecba6f","type":"OpcUa-Client","z":"ead97ed756a13a15","endpoint":"","action":"write","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":520,"y":480,"wires":[["7eb010a4671ac181"],["392bb1fd60c29baf"],["e9d279677dbc87e8"]]},{"id":"5ff1e3c2d5977a34","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=5;s=Counter1","datatype":"Int32","value":"20","name":"","x":340,"y":480,"wires":[["c922a70d48ecba6f"]]},{"id":"8cdd141dbdb350c7","type":"inject","z":"ead97ed756a13a15","name":"Write","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":190,"y":480,"wires":[["5ff1e3c2d5977a34"]]},{"id":"7eb010a4671ac181","type":"debug","z":"ead97ed756a13a15","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":680,"y":440,"wires":[]},{"id":"392bb1fd60c29baf","type":"debug","z":"ead97ed756a13a15","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":670,"y":480,"wires":[]},{"id":"e9d279677dbc87e8","type":"debug","z":"ead97ed756a13a15","name":"Raw Response","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":700,"y":520,"wires":[]}]
 {% endrenderFlow %}
 
-### Writing Multiple Tags
+#### Writing Multiple Tags
 
 To write multiple values at once, follow this pattern:
 
