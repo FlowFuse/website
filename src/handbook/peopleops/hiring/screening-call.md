@@ -18,8 +18,8 @@ During this call FlowFuse should understand:
    * Any visa requirements to work in their current location
    * Any plans to change location in the near future
 1. Notice period, or time from offer to start
-1. "How do you manage your todo list?"
-1. "How are you using Generative AI in your workflows today?"
+1. How do you manage your todo list?
+1. How are you using Generative AI in your workflows today?
 2. Do you have experience at start ups? What does it mean for you to operate in a start up?
 3. Do you have experience with Industrial or Manufacturing sectors of the market?
 
