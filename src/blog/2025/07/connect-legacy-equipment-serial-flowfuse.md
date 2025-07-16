@@ -242,7 +242,7 @@ Each time a message is received, the node also outputs the current port configur
 
 In short, the **serial control** node adds a layer of resilience and flexibility that is often essential in real-world deployments—where devices come and go, ports are never quite consistent, and downtime is not an option.
 
-## Takeaways
+## Key Takeaways
 
 Manufacturing floors often bring together a mix of old and new machines. Among them, many still operate on traditional communication methods that are reliable but difficult to integrate with modern systems. These machines continue to perform their core functions well, but without connectivity, they remain isolated from digital workflows.
 
