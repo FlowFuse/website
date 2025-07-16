@@ -3,7 +3,7 @@
     "imageFolder": "./images/pictograms/",
     "imageFile": "cloud_nr_blue.png",
     "imageAlt": " Node-RED hosted in the cloud.",
-    "content": "Experience ease of use with <a href='/product/cloud/'>FlowFuse Cloud</a>, handling all your hosting needs. Forget the complexities of maintaining your development environment; we've got it covered."
+    "content": "Experience ease of use with <a href='https://app.flowfuse.com'>FlowFuse Cloud</a>, handling all your hosting needs. Forget the complexities of maintaining your development environment; we've got it covered."
   },
   {
     "title": "Centralised Instance Management",
