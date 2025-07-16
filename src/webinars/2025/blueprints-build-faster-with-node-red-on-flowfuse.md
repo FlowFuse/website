@@ -24,7 +24,7 @@ Getting started on new projects often means losing time on repetitive setup, con
 Join Steve McLaughlin as he demonstrates how to:
 
 - Quickly deploy pre-built Blueprints for real-world use cases like:
-  - PDF Report Generator
+  - **PDF Report Generator**
   - **OEE Dashboards** for **SCADA** systems
   - **AI-powered agents** interacting via Node-RED
 - Reduce your dependency on expensive and complex software by using Node-RED and FlowFuse as a more **flexible, cost-effective solution**
