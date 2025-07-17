@@ -29,8 +29,8 @@
                 {% if subtitle %}
                     <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
-                <div class="flex items-center gap-4 text-sm text-gray-600 mt-4">
-                    <span class="text-gray-500">Published on <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time></span>
+                <div class="flex items-center gap-1 text-sm text-gray-500 mt-4">
+                    <span>Published on <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time></span>
                     <span>by
                     {% set comma = joiner() %}
                     {%- for author in authors %}
