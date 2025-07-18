@@ -65,6 +65,9 @@
                         {% include "faq.njk" %}
                     </div>
                 {% endif %}
+                
+                <!-- Related Articles -->
+                {% include "components/related-articles.njk" %}
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="mt-6 flex flex-col">
@@ -77,26 +80,6 @@
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     </p>
-                    {%- set postsToShow = collections.posts | relatedPosts -%}
-                    {%- if postsToShow.length == 0 %}
-                        {%- set postsToShow = collections.posts | reverse | limit(5) -%}
-                        {%- set heading = "Recommended Articles:" %}
-                    {%- else %}
-                        {%- set heading = "Related Articles:" %}
-                    {%- endif %}
-
-                    <h3 class="mb-3 pt-6 border-t-2">{{ heading }}</h3>
-                    <ul class="ml-6 list-disc">
-                        {%- for post in postsToShow %}
-                            {% if post.data.title != title %}
-                                <li class="mb-3">
-                                    <a href="{{ post.url }}">
-                                        {{ post.data.title }}
-                                    </a>
-                                </li>
-                            {% endif %}
-                        {%- endfor %}
-                    </ul>
                     <div class="mt-3 pt-6 flex flex-col border-t-2">
                         <h3 class="">Sign up for updates</h3>
                         {% include hubspot.script %}

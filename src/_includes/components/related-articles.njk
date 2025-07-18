@@ -1,0 +1,43 @@
+{%- set postsToShow = collections.posts | relatedPosts -%}
+{%- if postsToShow.length == 0 %}
+    {%- set postsToShow = collections.posts | reverse | limit(3) -%}
+{%- endif %}
+
+{%- set filteredPosts = [] -%}
+{%- for post in postsToShow %}
+    {% if post.data.title != title %}
+        {%- set filteredPosts = (filteredPosts.push(post), filteredPosts) -%}
+    {% endif %}
+{%- endfor %}
+
+{%- set displayPosts = filteredPosts | limit(3) -%}
+
+{% if displayPosts.length > 0 %}
+<div class="related-articles mt-8 pt-6 border-t-2">
+    <h3 class="mb-6">Read Next:</h3>
+    <div class="flex flex-wrap -mx-2">
+        {%- for post in displayPosts %}
+        <div class="w-full md:w-1/3 px-2 mb-4">
+            <a href="{{ post.url }}" class="block group hover:no-underline">
+                <div class="ff-blog-tile mb-3">
+                    <div class="w-full h-auto">
+                        {% tileImage post, post.data.image, "./images/og-blog.jpg", "Related article image", 285 %}
+                    </div>
+                </div>
+                <h3 class="text-lg font-medium group-hover:underline line-clamp-2">{{ post.data.title }}</h3>
+                <time class="text-xs text-gray-500" value="{{ post.date }}">{{ post.date | shortDate }}</time>
+            </a>
+        </div>
+        {%- endfor %}
+    </div>
+</div>
+
+<style>
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+</style>
+{% endif %}
