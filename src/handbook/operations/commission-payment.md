@@ -67,7 +67,6 @@ and Head of GTM both receive a copy by including them in the `cc` on the email.
 
 Here is an email template that can be used:
 
-``` 
 Dear {{first_name}},
 
 This email is to confirm your estimated commissions for {{Month and Year}}. 
