@@ -65,6 +65,55 @@
                         {% include "faq.njk" %}
                     </div>
                 {% endif %}
+                
+                <!-- Related Articles Section -->
+                {%- set postsToShow = collections.posts | relatedPosts -%}
+                {%- if postsToShow.length == 0 %}
+                    {%- set postsToShow = collections.posts | reverse | limit(9) -%}
+                {%- endif %}
+                
+                {%- set filteredPosts = [] -%}
+                {%- for post in postsToShow %}
+                    {% if post.data.title != title %}
+                        {%- set filteredPosts = (filteredPosts.push(post), filteredPosts) -%}
+                    {% endif %}
+                {%- endfor %}
+                
+                {% if filteredPosts.length > 0 %}
+                <div class="related-articles mt-16 pt-8 border-t-2">
+                    <h3 class="mb-6">Read Next:</h3>
+                    <div class="relative">
+                        <div class="related-articles-slider overflow-hidden">
+                            <div class="related-articles-track flex transition-transform duration-500 ease-in-out">
+                                {%- for post in filteredPosts %}
+                                        <div class="related-article-item flex-none w-full md:w-1/3 px-2">
+                                            <a href="{{ post.url }}" class="block group hover:no-underline">
+                                                <div class="ff-blog-tile mb-3">
+                                                    <div class="w-full h-auto">
+                                                        {% tileImage post, post.data.image, "./images/og-blog.jpg", "Related article image", 285 %}
+                                                    </div>
+                                                </div>
+                                                <h3 class="text-lg font-medium group-hover:underline line-clamp-2">{{ post.data.title }}</h3>
+                                                <time class="text-xs text-gray-500" value="{{ post.date }}">{{ post.date | shortDate }}</time>
+                                            </a>
+                                        </div>
+                                {%- endfor %}
+                            </div>
+                        </div>
+                        <!-- Navigation buttons -->
+                        <button class="related-articles-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white shadow-lg rounded-full p-2 hover:bg-gray-100 transition-colors z-10" aria-label="Previous articles">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button class="related-articles-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white shadow-lg rounded-full p-2 hover:bg-gray-100 transition-colors z-10" aria-label="Next articles">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="mt-6 flex flex-col">
@@ -77,26 +126,6 @@
                     {% endfor %}
                     <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     </p>
-                    {%- set postsToShow = collections.posts | relatedPosts -%}
-                    {%- if postsToShow.length == 0 %}
-                        {%- set postsToShow = collections.posts | reverse | limit(5) -%}
-                        {%- set heading = "Recommended Articles:" %}
-                    {%- else %}
-                        {%- set heading = "Related Articles:" %}
-                    {%- endif %}
-
-                    <h3 class="mb-3 pt-6 border-t-2">{{ heading }}</h3>
-                    <ul class="ml-6 list-disc">
-                        {%- for post in postsToShow %}
-                            {% if post.data.title != title %}
-                                <li class="mb-3">
-                                    <a href="{{ post.url }}">
-                                        {{ post.data.title }}
-                                    </a>
-                                </li>
-                            {% endif %}
-                        {%- endfor %}
-                    </ul>
                     <div class="mt-3 pt-6 flex flex-col border-t-2">
                         <h3 class="">Sign up for updates</h3>
                         {% include hubspot.script %}
@@ -108,5 +137,116 @@
 </div>
 
 {% include "./common-js.njk" %}
+
+<style>
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.related-articles-track {
+    will-change: transform;
+}
+
+@media (max-width: 768px) {
+    .related-articles-prev,
+    .related-articles-next {
+        display: none;
+    }
+}
+</style>
+
+<script>
+(function() {
+    const track = document.querySelector('.related-articles-track');
+    const prevBtn = document.querySelector('.related-articles-prev');
+    const nextBtn = document.querySelector('.related-articles-next');
+    
+    if (!track || !prevBtn || !nextBtn) return;
+    
+    const items = track.querySelectorAll('.related-article-item');
+    const totalItems = items.length;
+    const itemsToShow = window.innerWidth >= 768 ? 3 : 1;
+    const itemWidth = 100 / itemsToShow;
+    let currentIndex = 0;
+    const maxIndex = Math.max(0, Math.ceil(totalItems / itemsToShow) - 1);
+    const maxScroll = Math.max(0, totalItems - itemsToShow);
+    
+    // Auto-slide functionality
+    let autoSlideInterval;
+    
+    function updateSlider() {
+        const translateX = -currentIndex * itemWidth;
+        track.style.transform = `translateX(${translateX}%)`;
+        
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxScroll;
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentIndex >= maxScroll ? '0.5' : '1';
+    }
+    
+    function slideNext() {
+        if (currentIndex < maxScroll) {
+            currentIndex = Math.min(currentIndex + 1, maxScroll);
+        } else {
+            currentIndex = 0; // Loop back to start
+        }
+        updateSlider();
+    }
+    
+    function slidePrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = maxScroll; // Loop to end
+        }
+        updateSlider();
+    }
+    
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(slideNext, 5000); // Slide every 5 seconds
+    }
+    
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        slideNext();
+        startAutoSlide();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        slidePrev();
+        startAutoSlide();
+    });
+    
+    // Pause on hover
+    track.addEventListener('mouseenter', stopAutoSlide);
+    track.addEventListener('mouseleave', startAutoSlide);
+    
+    // Handle resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const newItemsToShow = window.innerWidth >= 768 ? 3 : 1;
+            const newMaxScroll = Math.max(0, totalItems - newItemsToShow);
+            currentIndex = Math.min(currentIndex, newMaxScroll);
+            updateSlider();
+        }, 250);
+    });
+    
+    // Initialize
+    updateSlider();
+    startAutoSlide();
+})();
+</script>
 
 
