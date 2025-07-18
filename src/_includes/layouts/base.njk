@@ -131,6 +131,18 @@ eleventyComputed:
     <meta property="article:section" content="{{ nav }}" />
     {% endif %}
 
+    {% if type == 'post' %}
+    <!-- Article dates -->
+    {% if date %}
+    <meta property="article:published_time" content="{{ date | dateToRfc3339 }}" />
+    {% endif %}
+    {% if lastUpdated %}
+    <meta property="article:modified_time" content="{{ lastUpdated | dateToRfc3339 }}" />
+    {% elif date %}
+    <meta property="article:modified_time" content="{{ date | dateToRfc3339 }}" />
+    {% endif %}
+    {% endif %}
+
     {% if searchTitle %}
     <meta property="searchable:title" content="{{ searchTitle }}" />
     {% endif %}
