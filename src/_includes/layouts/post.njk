@@ -30,16 +30,15 @@
                     <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
                 <div class="flex items-center gap-1 text-sm text-gray-500 mt-4">
-                    <span>Published on <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time></span>
-                    <span>by
                     {% set comma = joiner() %}
                     {%- for author in authors %}
                         {{ comma() }} <span class="font-medium">{{ people[author].name if people[author] else 'FlowFuse' }}</span>
                     {%- endfor %}
-                    </span>
-                    {%- if lastUpdated -%}
                     <span class="text-gray-400">•</span>
-                    <span class="text-gray-500">Updated on <time value="{{ lastUpdated | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time></span>
+                    {%- if lastUpdated -%}
+                    <time value="{{ lastUpdated | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time>
+                    {%- else -%}
+                    <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     {%- endif -%}
                 </div>
             </div>
