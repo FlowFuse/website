@@ -4,8 +4,8 @@ subtitle: "Practical AI tools that your production team will actually use"
 description: "Learn how to enhance your Node-RED automation with practical, safe, and explainable AI. This guide shows what works, and how FlowFuse makes AI adoption easy for manufacturing teams."
 date: 2025-07-09
 authors: ["sumit-shinde"]
-keywords: 
-image: AI in manufacturing, manufacturing automation, Node-RED automation, how to implement AI in manufacturing, smart manufacturing, industrial IoT, AI for manufacturing engineers, low-code automation, custom dashboard manufacturing, FlowFuse AI
+keywords: AI in manufacturing, manufacturing automation, Node-RED automation, how to implement AI in manufacturing, smart manufacturing, industrial IoT, AI for manufacturing engineers, low-code automation, custom dashboard manufacturing, FlowFuse AI
+image: 
 tags:
    - flowfuse
 meta:
