@@ -13,7 +13,7 @@ A customer story is the same as a case study, these are helpful in illustrating 
 1. Raise an issue for the content in our private [Github repository](https://github.com/FlowFuse/customer){rel="nofollow"}.
 2. Add it to the [Content Calendar Project](https://github.com/orgs/FlowFuse/projects/21) and schedule it.
 3. If you want to work on the content immediately please triage the issue into our [development board](https://github.com/orgs/FlowFuse/projects/1/views/33).
-4. Conduct an interview call with the customer using Google Meet to record and transcribe the conversation.
+4. Conduct an interview call with the customer using Google Meet to record and transcribe the conversation. Record interviews using Fathom as outlined in the [Sales Meetings guide](/handbook/sales/meetings/).
 5. Consider that the readers of the story may have little knowledge of the industry discussed in the story. Try to explain industry specific terms or avoid using language which excludes any potential FlowFuse customer from understanding altogether.
 6. Create the draft customer story in a Google Doc. The document should be stored in the [Marketing -> Case Study](https://drive.google.com/drive/folders/13A3UWjXdC7a13CVi1nQOMHvTb8MCLd-K?usp=drive_link){rel="nofollow"} folder. Everyone at FlowFuse should be given access to comment on the document.  Add a link to the document in the GitHub issue.
 7. Leave a comment on the doc for each reviewer to request a review.
