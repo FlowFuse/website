@@ -77,7 +77,7 @@ In the aforementioned period, you closed:
 - {{Y}} number of deals
 - {{ARR}} new Contracted ARR
 
-Your commission is {{$XX}}.
+Your commission is {{USD XX}}.
 
 Please remember: FlowFuse might withhold commission payments, or claw back
 payments if payments aren't made within 60 days after the quote is signed.
