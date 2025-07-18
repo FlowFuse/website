@@ -70,7 +70,7 @@ Here is an email template that can be used:
 Dear {{first_name}},
 
 This email is to confirm your estimated commissions for {{Month and Year}}. 
-Your commission percentage for this quarter is {{X%}}. 
+Your commission percentage for this quarter is {{X}}. 
 
 In the aforementioned period, you closed:
 
