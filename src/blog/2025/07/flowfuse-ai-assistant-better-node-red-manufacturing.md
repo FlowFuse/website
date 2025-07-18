@@ -26,10 +26,7 @@ How many times has your team put off automation improvements because "it would r
 
 You're not alone. Manufacturing teams everywhere face this same challenge: the gap between what needs to be done and the technical expertise to make it happen.
 
-FlowFuse's AI Assistant offers a different path forward. One where your
-team's domain knowledge is enough. Where complex requirements become
-simple implementations. Where automation moves at the speed of your
-ideas, not your coding skills.
+FlowFuse's AI Assistant offers a different path forward. One where your team's domain knowledge is enough. Where complex requirements become simple implementations. Where automation moves at the speed of your ideas, not your coding skills.
 
 Let's explore what this means for your production floor.
 
