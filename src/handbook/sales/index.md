@@ -40,6 +40,7 @@ Questions can be asked in the [#dept-sales](https://flowforgeworkspace.slack.com
  - [Engagements & Pricing](./engagements.md)
  - [Deal Board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/board)
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
+ - [SPICED Sales Framework](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU)
  - [Customer Licenses (internal)](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0/edit#gid=0)
  - [Ideal Customer Profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl)
  - [Sales Regions](./regions.md)
