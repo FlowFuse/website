@@ -8,66 +8,65 @@ navGroup: Sales & Marketing
 Trade shows are valuable opportunities to connect face-to-face with our industry—customers, partners, and potential users alike. They give us the chance to showcase our product in action, gather feedback, and build relationships that don’t always happen through online calls. Participating in a trade show is both a marketing initiative and a team effort, and often represents a significant investment.
 
 ## Trade Show Strategy Evolution
-## From Marketing Initiative to Marketing Platform  
-**Traditional Approach:**
+
+### From Marketing Initiative to Marketing Platform
+
+#### Traditional Approach
 Previously, having a booth at trade shows was viewed as a standalone marketing initiative focused on:
 
-**Brand awareness:** Reaching new audiences (trade-show attendees)
-**Product demonstration:** Showcasing our product to gather feedback and spark interest
-**Lead capture:** Building our database and providing sales contacts with known use cases
-**Partner networking:** Opportunities to collaborate with partners for social proof
+- **Brand awareness:** Reaching new audiences (trade-show attendees)
+- **Product demonstration:** Showcasing our product to gather feedback and spark interest
+- **Lead capture:** Building our database and providing sales contacts with known use cases
+- **Partner networking:** Opportunities to collaborate with partners for social proof
 
-**New Strategic Approach:**
+#### New Strategic Approach
 We now view trade shows as comprehensive marketing platforms with three primary goals:
 
-**1. THOUGHT LEADERSHIP**
-
+##### 1. Thought Leadership
 - Establish FlowFuse as an industry thought leader through a structured daily content agenda
 - Deliver scheduled talks, roundtables, and demos throughout the event
 - Create memorable demo experiences that showcase our expertise
 - Ensure all booth staff can deliver a well-crafted pitch consistently
 
-**2. HIGHLY QUALIFIED LEADS**
-
+##### 2. Highly Qualified Leads
 - Run targeted pre-event online campaigns focused on our Ideal Customer Profile (ICP)
 - Drive advance registrations to exclusive on-site events
 - Enable advance meeting bookings with team members
 - Attract quality prospects seeking valuable content, not just coffee
 
-**3. SALES AND POC OPPORTUNITIES**
-
+##### 3. Sales and POC Opportunities
 - Convert qualified leads into sales conversations and proof-of-concept opportunities
 - Focus on meaningful business outcomes rather than just lead volume
- 
-## Partner Strategy Considerations
+
+### Partner Strategy Considerations
 Partners can dilute our brand presence. If we include partners in our strategy, their participation must align with our goals through:
 
-**Cost-Effective Partnership Model:** Joint events where partners sponsor daily agenda/content with FlowFuse case studies at no cost to us
-**Content Partnerships:** Limited to case studies or roundtable participation only
-**Booth Concept:** FlowFuse-only stand with amphitheater setup and structured event agenda
+- **Cost-Effective Partnership Model:** Joint events where partners sponsor daily agenda/content with FlowFuse case studies at no cost to us
+- **Content Partnerships:** Limited to case studies or roundtable participation only
+- **Booth Concept:** FlowFuse-only stand with amphitheater setup and structured event agenda
 
-## Key Performance Indicators (KPIs)
+### Key Performance Indicators (KPIs)
 Our success metrics have evolved to focus on quality over quantity:
 
-1) Paid campaign conversions (pre-event marketing effectiveness)
-2) Registrations to our booth/events (engagement quality)
-3) Attendance to the events (content relevance)
-4) Leads with phone numbers (qualification level)
-5) Follow-up conversations with sales (conversion potential)
+1. Paid campaign conversions (pre-event marketing effectiveness)
+2. Registrations to our booth/events (engagement quality)
+3. Attendance to the events (content relevance)
+4. Leads with phone numbers (qualification level)
+5. Follow-up conversations with sales (conversion potential)
 
-## Booth Traffic Flow Strategy
+### Booth Traffic Flow Strategy
 **Challenge:** Define clear visitor flow to eliminate browsing, resting, or working at our booth.
+
 **Solution:** Visitors must be either:
+- Informed about our agenda (saw it beforehand through our campaigns)
+- Have scheduled appointments (priority access for sales team and executive meetings)
 
-Informed about our agenda (saw it beforehand through our campaigns)
-Have scheduled appointments (priority access for sales team and executive meetings)
-
-## Interactive Demo Strategy
+### Interactive Demo Strategy
 Create a highly visual, interactive demo that engages visitors through clear cause-and-effect demonstrations:
 
-**Concept**: "Do X with our code/tool and watch Y happen" - immediate, visible results
-**Engagement**: Interactive elements that demonstrate real-world applications
-**Memorable Experience**: Consider ambitious concepts like a real working experiment (e.g., a flow-controlled coffee dispensing system)
+- **Concept**: "Do X with our code/tool and watch Y happen" - immediate, visible results
+- **Engagement**: Interactive elements that demonstrate real-world applications
+- **Memorable Experience**: Consider ambitious concepts like a real working experiment (e.g., a flow-controlled coffee dispensing system)
 
 ## Preparing for a Trade Show as an Exhibitor
 Planning a trade show well in advance is crucial. From aligning on the goals and messaging, to making sure we have the right hardware, giveaways, and booth setup—it’s a team effort. We break this down into five areas:
