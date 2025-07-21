@@ -1,18 +1,5 @@
-{%- set postsToShow = collections.posts | relatedPosts -%}
-{%- if postsToShow.length == 0 %}
-    {%- set postsToShow = collections.posts | reverse | limit(3) -%}
-{%- endif %}
+{%- set displayPosts = collections.posts | relatedPosts -%}
 
-{%- set filteredPosts = [] -%}
-{%- for post in postsToShow %}
-    {% if post.data.title != title %}
-        {%- set filteredPosts = (filteredPosts.push(post), filteredPosts) -%}
-    {% endif %}
-{%- endfor %}
-
-{%- set displayPosts = filteredPosts | limit(3) -%}
-
-{% if displayPosts.length > 0 %}
 <div class="related-articles mt-8 pt-6 border-t-2">
     <h3 class="mb-6">Read Next:</h3>
     <div class="flex flex-wrap -mx-2">
@@ -40,4 +27,3 @@
     -webkit-box-orient: vertical;
 }
 </style>
-{% endif %}

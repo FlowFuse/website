@@ -351,8 +351,10 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("relatedPosts", function (collection = []) {
-        const { tags: requiredTags, page } = this.ctx;
-        return collection
+        const { tags: requiredTags, page, title } = this.ctx;
+        
+        // First try to get related posts based on tags
+        let postsToShow = collection
             .map(post => {
                 const commonTags = requiredTags?.reduce((count, tag) => count + (post.data.tags?.includes(tag) ? 1 : 0), 0);
                 return { ...post, commonTags };
@@ -360,6 +362,16 @@ module.exports = function(eleventyConfig) {
             .filter(post => post.url !== page.url && post.commonTags >= requiredTags.length - 1)
             .sort((a, b) => b.commonTags - a.commonTags || b.date - a.date)
             .slice(0, 5);
+
+        // If no related posts found, get the 3 most recent posts
+        if (postsToShow.length === 0) {
+            postsToShow = [...collection].reverse().slice(0, 3);
+        }
+
+        // Filter out posts with the same title as current page and limit to 3
+        return postsToShow
+            .filter(post => post.data.title !== title)
+            .slice(0, 3);
     });
     
     // Custom async filters
