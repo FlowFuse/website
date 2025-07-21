@@ -27,24 +27,25 @@ calculated. Only closed won deals that have gone through the full process of
 closing a deal are considered.
 
 Download all the deals from hubspot by going to the
-[deal board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/list)
+[deal board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/list),
+confirm that under the "Pipelines" list you are looking at the "Sales Pipeline" (not All Pipeline or other options),
 and add two filters:
 
 1. Closed "Last Month"
 1. Deal stage is "All closed won"; note: there is a different stage called Closed won. This is not that.
 You need to have the following columns enabled:
-* Deal Name
-* Deal Stage
-* Close Date
-* Amount
-* Deal owner
-* Is Closed Won
-* Deal Type
-* Annual recurring revenue
-* Annual contract value
-Instead of the board view, select a list view, and add the ARR and ACV columns
-to the view so they are included. When the deal board is updated with on the won
-deals of last month, click "Export View" and export as CSV. Download this file
+   * Deal Name
+   * Deal Stage
+   * Close Date
+   * Amount
+   * Deal owner
+   * Is Closed Won
+   * Deal Type
+   * Annual recurring revenue
+   * Annual contract value
+
+When the deal board is updated with on the won deals of last month, 
+click "Export View" and export as CSV. Download this file
 to your machine.
 
 Make a copy of

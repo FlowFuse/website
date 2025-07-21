@@ -29,11 +29,18 @@
                 {% if subtitle %}
                     <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
-                {%- if lastUpdated -%}
-                  <p class="text-sm text-gray-400 font-normal mb-1">
-                    This post was last updated on <time value="{{ lastUpdated | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time>
-                  </p>
-                {%- endif -%}
+                <div class="flex items-center gap-1 text-sm text-gray-500 mt-4">
+                    {% set comma = joiner() %}
+                    {%- for author in authors %}
+                        {{ comma() }} <span class="font-medium">{{ people[author].name if people[author] else 'FlowFuse' }}</span>
+                    {%- endfor %}
+                    <span class="text-gray-400">•</span>
+                    {%- if lastUpdated -%}
+                    <time value="{{ lastUpdated | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time>
+                    {%- else -%}
+                    <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
+                    {%- endif -%}
+                </div>
             </div>
         </div>
     {% endif %}
@@ -59,18 +66,26 @@
                     </div>
                     {{ content | safe }}
                 </div>
+
+                <!-- FAQ Section -->
+                {% if meta.faq %}
+                    <div class="prose mt-12">
+                        <h2 class="mb-1">Frequently Asked Questions</h2>
+                        {% include "faq.njk" %}
+                    </div>
+                {% endif %}
+                
+                <!-- Author Bio Section -->
+                {% for author in authors %}
+                    {% set author = people[author] %}
+                    {% include "components/author-card.njk" %}
+                {% endfor %}
             </div>
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="mt-6 flex flex-col">
                     {% include "layouts/toc.njk" %}
                 </div>
                 <div class="sticky top-20">
-                    <h3 class="mb-3">Written By:</h3>
-                    {% for author in authors %}
-                        {% renderTeamMember people[author] %}
-                    {% endfor %}
-                    <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
-                    </p>
                     {%- set postsToShow = collections.posts | relatedPosts -%}
                     {%- if postsToShow.length == 0 %}
                         {%- set postsToShow = collections.posts | reverse | limit(5) -%}

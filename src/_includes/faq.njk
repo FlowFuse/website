@@ -1,12 +1,12 @@
-<div class="w-full py-16" id="faqs">
-    <div class="m-auto sm:max-w-screen-lg">
+<div class="w-full {% if type == 'post' %}py-4{% else %}py-16{% endif %}" id="faqs">
+    <div class="m-auto {% if type != 'post' %}sm:max-w-screen-lg{% endif %}">
         {% if faqSubtitle %}
-        <h2 class="text-center">{{ faqTitle | safe }}</h2>
+        <h3 class="text-center">{{ faqTitle | safe }}</h3>
         {% endif %}
         {% if faqSubtitle %}
         <label class="m-auto block max-w-lg md:max-w-none text-center"> {{ faqSubtitle | safe }} </label>
         {% endif %}
-        <div class="mt-12 m-auto w-full ff-prose">
+        <div class="{% if type != 'post' %}mt-12{% endif %} m-auto w-full ff-prose">
             <div class="prose max-w-none">
                 {% for faq in meta.faq %}
                 <div class="w-full {% if not loop.last %}border-b{% endif %} py-4">
