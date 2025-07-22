@@ -317,7 +317,7 @@ _Real-time SPC monitoring detecting process drift and triggering appropriate ale
 
 Time to connect your actual machines. The approach depends on what equipment you have.
 
-For modern PLCs - anything from the last decade like Siemens S7-1200/1500, Allen-Bradley ControlLogix, or Omron NX - you'll use OPC UA. It's already built into these PLCs. Enable it in the configuration, install `node-red-contrib-opcua` from the FlowFuse palette, and point it at your PLC. The endpoint looks like `opc.tcp://192.168.1.100:4840`. Browse for your measurement tags and connect them to your SPC flow. [Full OPC UA guide here](blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
+For modern PLCs - anything from the last decade like Siemens S7-1200/1500, Allen-Bradley ControlLogix, or Omron NX - you'll use OPC UA. It's already built into these PLCs. Enable it in the configuration, install `node-red-contrib-opcua` from the FlowFuse palette, and point it at your PLC. The endpoint looks like `opc.tcp://192.168.1.100:4840`. Browse for your measurement tags and connect them to your SPC flow. [Full OPC UA guide here](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 
 Older equipment speaks Modbus TCP. Check your manual's appendix for the register map. Install `node-red-contrib-modbus`, configure it with your device's IP address and the register holding your measurement (like 40001 for holding registers). Almost every industrial device from the last 30 years supports this. [Modbus tutorial here](/node-red/protocol/modbus/).
 
