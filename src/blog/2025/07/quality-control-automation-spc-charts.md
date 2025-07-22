@@ -23,35 +23,40 @@ meta:
       answer: "Start with I-MR charts for individual measurements using node-red-contrib-simple-spc. Use X-bar/R for grouped samples, P-charts for pass/fail data."
 ---
 
-Every manufacturer knows the pain. You run a batch, inspect the parts, find defects, and throw them away. 
+Leading manufacturers are quietly saving thousands, sometimes millions, of dollars annually with a quality control method that's been proven since the 1920s. The difference today? Modern tools make it simple to implement.
 
-[Industry data shows 4-5% scrap rates are considered normal](https://servicechannel.com/reports/scrap-rate/). But "normal" doesn't mean acceptable. Here's a real example: A manufacturer [shared on this forum](https://www.practicalmachinist.com/forum/threads/scrap-rates.234251/) that they process 400,000 parts per year with a 4% scrap rate - right in that "normal" range. Do the math: that's 16,000 parts in the bin and $160,000 gone from just one production line.
+<!--more-->
 
-The real problem? By the time you find bad parts, you've already paid for the material, machine time, and labor. Too late.
+Consider this real example: A manufacturer [shared on a forum](https://www.practicalmachinist.com/forum/threads/scrap-rates.234251/) that they process 400,000 parts per year with a 4% scrap rate. That's 16,000 parts discarded annually. At even a conservative $10 per part, this represents $160,000 in direct losses from a single production line. They accepted this as normal because [industry reports confirm 4-5% scrap rates are standard](https://servicechannel.com/reports/scrap-rate/).
 
-Statistical Process Control (SPC) catches problems while they're happening. Instead of checking finished parts, it watches your process measurements and tells you when something's going wrong. Fix it before you make scrap.
+What separates industry leaders from the rest? They refuse to accept "normal" waste. Using Statistical Process Control (SPC), they detect problems as they occur, not after producing defective parts. When a process begins drifting, they receive immediate alerts and correct it before generating scrap.
 
 <!--more-->
 
 This guide shows you exactly how to build a real-time SPC system using FlowFuse. You'll create a live dashboard that tracks measurements and alerts operators the moment something goes wrong. No statistics degree needed, just practical steps you can implement today.
 
-## Why Most Quality Control Systems Fail
+## The Hidden Cost of Reactive Quality Control
 
-Traditional quality control fails because it focuses on the wrong question. It asks "is this part good?" when it should ask "is my process healthy?"
+Most manufacturers still rely on end-of-line inspection. Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:
 
-Here's why this matters: Manufacturing processes drift. Temperature changes throughout the day. Tools wear down. Materials vary between batches. Operators change shifts. These variations are normal, but they add up.
+**Problem 1: You're always too late**
+When inspection finds a defect, you've already invested in material, machine time, labor, and energy. That investment is now scrap. Worse, how many parts did you make between when the problem started and when you caught it?
 
-By the time a part fails inspection, your process might have been drifting for hours. You've potentially made hundreds of borderline parts that barely passed inspection. Some might fail in the field. Others reduce your profit margin through rework or warranty claims.
+**Problem 2: The borderline parts you miss**
+Not all defects are obvious. Parts that barely pass inspection today might fail in the field tomorrow. These marginal parts slip through because traditional inspection only catches clear failures, not process degradation.
 
-SPC takes a fundamentally different approach. It tracks your process parameters continuously and uses statistical analysis to detect meaningful changes before they create defects. It's the difference between taking your temperature when you feel sick versus monitoring it continuously to catch a fever early.
+**Problem 3: No insight into root causes**
+Finding bad parts tells you nothing about why they're bad. Was it temperature drift? Tool wear? Material variation? Without process data, you're guessing at solutions.
 
-As the [NIST Engineering Statistics Handbook](https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc12.htm) states:
+**The Proactive Alternative: Statistical Process Control**
+
+SPC flips the entire approach. Instead of checking parts after production, it monitors your process during production. The [NIST Engineering Statistics Handbook](https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc12.htm) explains it simply:
 
 > "The underlying concept of statistical process control is based on a comparison of what is happening today with what happened previously."
 
-That's it. Compare today to yesterday. Catch changes early. Fix problems before they make bad parts.
+When your process starts to drift from its normal behavior, SPC alerts you immediately. You fix the issue before making defective parts, not after.
 
-The math behind SPC isn't new - [Walter Shewhart](https://en.wikipedia.org/wiki/Walter_A._Shewhart) developed it at Bell Labs in the 1920s. What's new is how easy it's become to implement with tools like FlowFuse Node-RED.
+[Walter Shewhart](https://en.wikipedia.org/wiki/Walter_A._Shewhart) developed this method at Bell Labs in the 1920s, proving its effectiveness across industries. Today, FlowFuse makes it accessible to any manufacturer, regardless of size or technical expertise.
 
 ## Essential SPC Charts for Manufacturing
 
