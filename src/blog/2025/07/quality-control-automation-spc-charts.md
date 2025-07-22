@@ -35,7 +35,7 @@ What separates industry leaders from the rest? They refuse to accept "normal" wa
 
 This guide shows you exactly how to build a real-time SPC system using FlowFuse. You'll create a live dashboard that tracks measurements and alerts operators the moment something goes wrong. No statistics degree needed, just practical steps you can implement today.
 
-## The Hidden Cost of Reactive Quality Control
+## Why Traditional Quality Control Falls Short                   
 
 Most manufacturers still rely on end-of-line inspection. Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:
 
