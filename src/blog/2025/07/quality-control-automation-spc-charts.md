@@ -4,9 +4,13 @@ subtitle: "A practical guide to implementing Statistical Process Control with Fl
 description: "Learn how to build real-time SPC charts using Node-RED and FlowFuse for manufacturing quality control."
 date: 2025-07-22
 authors: ["sumit-shinde"]
-image: "/blog/2025/07/images/spc-charts-quality-control.png"
+image:
 keywords: SPC, statistical process control, manufacturing quality, defect prevention, Node-RED, FlowFuse, control charts, I-MR charts, real-time monitoring, scrap reduction, quality control, manufacturing ROI, process monitoring
-faq:
+tags:
+    - posts
+    - flowfuse
+meta:
+    faq:
     - question: "How long does it take to implement SPC with FlowFuse?"
       answer: "Using FlowFuse you can have a basic SPC system monitoring within an hour"
     - question: "Do I need statistical knowledge to use FlowFuse for SPC?"
@@ -17,9 +21,6 @@ faq:
       answer: "Yes. FlowFuse's DevOps tools let you deploy to multiple lines with one click and manage them centrally."
     - question: "Which control chart should I use in FlowFuse?"
       answer: "Start with I-MR charts for individual measurements using node-red-contrib-simple-spc. Use X-bar/R for grouped samples, P-charts for pass/fail data."
-tags:
-    - posts
-    - flowfuse
 ---
 
 Every manufacturer knows the pain. You run a batch, inspect the parts, find defects, and throw them away. 
@@ -131,7 +132,7 @@ Charts need data in a specific format. Add a **change** node between SPC and you
 2. Wire it between the SPC node and where your chart will go
 
 3. Double-click to configure and set one rule: `Set msg.payload` to this JSONata expression:
-```jsonata
+```json
 [
     {"series": "Measurement", "x": $millis(), "y": payload.value},
     {"series": "UCL", "x": $millis(), "y": payload.ucl},
