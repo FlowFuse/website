@@ -20,18 +20,16 @@ meta:
     - question: "Can I deploy to multiple production lines?"
       answer: "Yes. FlowFuse's DevOps tools let you deploy to multiple lines with one click and manage them centrally."
     - question: "Which control chart should I use in FlowFuse?"
-      answer: "Start with I-MR charts for individual measurements using node-red-contrib-simple-spc. Use X-bar/R for grouped samples, P-charts for pass/fail data."
+      answer: "Start with control charts for individual measurements using node-red-contrib-simple-spc. For grouped samples or pass/fail data, additional nodes may be required."
 ---
 
-Leading manufacturers are quietly saving thousands, sometimes millions, of dollars annually with a quality control method that's been proven since the 1920s. The difference today? Modern tools make it simple to implement.
+[Leading manufacturers are quietly saving thousands, sometimes millions, of dollars annually with a quality control method](https://www.sixsigmaonline.org/six-sigma-statistical-process-control/) that's been proven since the 1920s. The difference today? Modern tools make it simple to implement.
 
 <!--more-->
 
 Consider this real example: A manufacturer [shared on a forum](https://www.practicalmachinist.com/forum/threads/scrap-rates.234251/) that they process 400,000 parts per year with a 4% scrap rate. That's 16,000 parts discarded annually. At even a conservative $10 per part, this represents $160,000 in direct losses from a single production line. They accepted this as normal because [industry reports confirm 4-5% scrap rates are standard](https://servicechannel.com/reports/scrap-rate/).
 
 What separates industry leaders from the rest? They refuse to accept "normal" waste. Using Statistical Process Control (SPC), they detect problems as they occur, not after producing defective parts. When a process begins drifting, they receive immediate alerts and correct it before generating scrap.
-
-<!--more-->
 
 This guide shows you exactly how to build a real-time SPC system using FlowFuse. You'll create a live dashboard that tracks measurements and alerts operators the moment something goes wrong. No statistics degree needed, just practical steps you can implement today.
 
@@ -58,27 +56,15 @@ When your process starts to drift from its normal behavior, SPC alerts you immed
 
 [Walter Shewhart](https://en.wikipedia.org/wiki/Walter_A._Shewhart) developed this method at Bell Labs in the 1920s, proving its effectiveness across industries. Today, FlowFuse makes it accessible to any manufacturer, regardless of size or technical expertise.
 
-## Essential SPC Charts for Manufacturing
-
-While textbooks list dozens of control chart types, most manufacturing processes can be effectively monitored with a handful of proven charts. Here are the ones I see implemented most often on factory floors.
-
-I-MR charts are for one-at-a-time measurements. Think chemical batch processes where you test pH once per batch. Or expensive parts where you measure every single one.
-
-X-bar and R charts work when you measure samples in groups. Say you're making plastic bottles. Every hour, you grab five bottles and measure wall thickness. The X-bar chart shows if your average is drifting. The R chart shows if your consistency is getting worse.
-
-P-charts track defect rates. Simple pass/fail stuff. Perfect for visual inspections or go/no-go gauges.
-
-That's it. Master these three and you can monitor almost any process.
-
 ## Building Your First SPC System with FlowFuse
 
-Let’s build a real example. This guide focuses on the I-MR chart - the workhorse of SPC for individual measurements. (We'll cover X-bar/R charts and P-charts in upcoming articles.)
+Let's build a real example. This guide shows you how to create a control chart for individual measurements - perfect for monitoring critical dimensions in real-time.
 
 First, open your FlowFuse Node-RED instance. If you don't have one yet, you can [sign up for a free account](https://app.flowfuse.com/account/create) and have an instance running in minutes.
 
 ### What We're Building
 
-An I-MR (Individual-Moving Range) control chart that monitors single measurements in real-time. Perfect for scenarios where you measure one part at a time - like bearing dimensions on a CNC line. When measurements drift, you'll know instantly - not after scrapping 100 parts.
+A real-time control chart that monitors individual measurements and automatically calculates control limits. Perfect for scenarios where you measure one part at a time - like bearing dimensions on a CNC line. When measurements drift outside the calculated limits, you'll know instantly.
 
 ### Step 1: Get Your Tools Ready
 
@@ -159,7 +145,7 @@ Now we'll create the dashboard that displays your control chart. This is what op
    - X: Set to `x` (as key)
    - Y: Set to `y` (as key)
    - Legend: `Show`
-   - Label: "I-MR Chart: Bearing Diameter (mm)"
+   - Label: "SPC Chart: Bearing Diameter (mm)"
 
 2. Connect the change node to it.
 
@@ -188,8 +174,8 @@ For the "false" path:
 
 5. Deploy the flow.
 
-![Node-RED alert system with switch node routing to process status text displays based on control status](./images/alert.png){data-zoomable}
-_Alert system configuration showing out-of-control detection and status display_
+![Node-RED alert system with switch node: Process stable](./images/spc-visual-alert.png){data-zoomable}
+_Node-RED alert system with switch node: Process stable_
 
 ### Step 7: Test Your SPC System
 
@@ -220,7 +206,7 @@ _Deploy menu with Modified Nodes option for updating only changed nodes_
 
 Once done You will see the chart detect the change within seconds.
 
-![SPC chart showing process shift with measurements exceeding upper control limit and alert triggered](./images/spc-out-control.png){data-zoomable}
+![SPC chart showing process shift with measurements exceeding upper control limit and alert triggered](./images/spc-visual-alert2.png){data-zoomable}
 _SPC chart detecting process shift - measurements above UCL trigger immediate alert_
 
 {% renderFlow 300 %}
@@ -248,6 +234,7 @@ Here's how to implement these rules in FlowFuse:
 1. Drag a **Function** node onto the workspace and add the following JavaScript code to it.
 
 2. Replace switch node with this **Function** node.
+3. Deploy the flow.
 
 ```javascript
 const buffer = context.get('measurements') || [];
@@ -308,7 +295,9 @@ msg.payload = alertMessage;
 return msg;
 ```
 
-![SPC system detecting process drift in real-time, showing chart responding to simulated measurement changes and triggering alerts](./images/simulated-drif-spc.gif){data-zoomable}
+The following image demonstrates the advanced alerting system in action, detecting specific patterns beyond simple control limit violations:
+
+![SPC system detecting process drift in real-time, showing chart responding to simulated measurement changes and triggering alerts](./images/simulated-drift-alert.gif){data-zoomable}
 _Real-time SPC monitoring detecting process drift and triggering appropriate alerts based on trend analysis_
 
 ## Connecting to Real Equipment
