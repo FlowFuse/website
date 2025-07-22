@@ -153,8 +153,18 @@ description:
 </div>
 
 <!-- FAQ Section -->
-{% set faqTitle = "Frequently Asked Questions" %}
-{% include "faq.njk" %}
+<div class="w-full">
+  <div class="container m-auto text-center">
+    <div class="content max-w-screen-lg m-auto px-6 md:px-0">
+      <div class="pt-24 md:pt-16 text-left">
+        <h2 class="max-md:text-center -mb-12">
+          Frequently Asked <span class="text-indigo-600">Questions</span>
+        </h2>
+        {% include "faq.njk" %}
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="w-full">
     <div class="px-6 pt-3 md:pt-10 pb-20 md:pb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
