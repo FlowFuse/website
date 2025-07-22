@@ -33,7 +33,7 @@ What separates industry leaders from the rest? They refuse to accept "normal" wa
 
 This guide shows you exactly how to build a real-time SPC system using FlowFuse. You'll create a live dashboard that tracks measurements and alerts operators the moment something goes wrong. No statistics degree needed, just practical steps you can implement today.
 
-## The Hidden Cost of Reactive Quality Control
+## Why Traditional Quality Control Falls Short                   
 
 Most manufacturers still rely on end-of-line inspection. Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:
 
@@ -304,11 +304,11 @@ _Real-time SPC monitoring detecting process drift and triggering appropriate ale
 
 Time to connect your actual machines. The approach depends on what equipment you have.
 
-For modern PLCs - anything from the last decade like Siemens S7-1200/1500, Allen-Bradley ControlLogix, or Omron NX - you'll use OPC UA. It's already built into these PLCs. Enable it in the configuration, install `node-red-contrib-opcua` from the FlowFuse palette, and point it at your PLC. The endpoint looks like `opc.tcp://192.168.1.100:4840`. Browse for your measurement tags and connect them to your SPC flow. [Full OPC UA guide here](https://flowfuse.com/blog/2023/10/opc-ua-node-red-flowfuse/).
+For modern PLCs - anything from the last decade like Siemens S7-1200/1500, Allen-Bradley ControlLogix, or Omron NX - you'll use OPC UA. It's already built into these PLCs. Enable it in the configuration, install `node-red-contrib-opcua` from the FlowFuse palette, and point it at your PLC. The endpoint looks like `opc.tcp://192.168.1.100:4840`. Browse for your measurement tags and connect them to your SPC flow. [Full OPC UA guide here](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 
-Older equipment speaks Modbus TCP. Check your manual's appendix for the register map. Install `node-red-contrib-modbus`, configure it with your device's IP address and the register holding your measurement (like 40001 for holding registers). Almost every industrial device from the last 30 years supports this. [Modbus tutorial here](https://flowfuse.com/blog/2023/05/modbus-node-red/).
+Older equipment speaks Modbus TCP. Check your manual's appendix for the register map. Install `node-red-contrib-modbus`, configure it with your device's IP address and the register holding your measurement (like 40001 for holding registers). Almost every industrial device from the last 30 years supports this. [Modbus tutorial here](/node-red/protocol/modbus/).
 
-For everything else, get creative. Old gauges with RS-232 ports work fine with a USB adapter and the serial node - [see our serial port guide](https://flowfuse.com/blog/2023/09/serial-port-node-red/). Machines that dump CSV files can be monitored with the watch node. Manual measurements need just a simple dashboard form - one input field, one submit button. Don't overcomplicate it.
+For everything else, get creative. Old gauges with RS-232 ports work fine with a USB adapter and the serial node - [see our serial port guide](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/). Machines that dump CSV files can be monitored with the watch node. Manual measurements need just a simple dashboard form, one input field, one submit button. Don't overcomplicate it.
 
 Before connecting to SPC, always test with inject → protocol node → debug to make sure data flows. Once you see measurements in the debug panel, wire it to your SPC node and you're monitoring real processes.
 
