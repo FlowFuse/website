@@ -4,7 +4,6 @@ subtitle: "A practical guide to implementing Statistical Process Control with Fl
 description: "Learn how to build real-time SPC charts using Node-RED and FlowFuse for manufacturing quality control."
 date: 2025-07-23
 authors: ["sumit-shinde"]
-image:
 keywords: SPC, statistical process control, manufacturing quality, defect prevention, Node-RED, FlowFuse, control charts, I-MR charts, real-time monitoring, scrap reduction, quality control, manufacturing ROI, process monitoring
 tags:
     - posts
