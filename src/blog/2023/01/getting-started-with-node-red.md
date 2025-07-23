@@ -5,6 +5,7 @@ description: In this article we are going to explain the first things you need t
 date: 2023-01-23
 image: /blog/2023/01/images/getting-started-nr.png
 authors: ["rob-marcer"]
+lastUpdated: 2025-07-23
 tags:
     - posts
     - node-red
@@ -12,9 +13,7 @@ tags:
     - nodered getting started
     - nodered tutorial
     - install nodered
-  
 ---
-
 
 Node-RED is a visual programming tool for working with IoT devices and web services. It allows users to create flows using a drag-and-drop interface, making it easy to connect different nodes together to build powerful automations.
 

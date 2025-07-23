@@ -88,6 +88,16 @@ Each content type has channels which are appropriate, this table sets out which 
 - Hashtags, ideally three.
 - Link to article / website.
 
+## Requesting a social post
+
+If you’d like something shared on FlowFuse’s social channels, please follow this process:
+
+1. Create an issue in the [customer GitHub repository](https://github.com/FlowFuse/customer/issues).
+1. Use the Social Post Request template to make sure all relevant information is included.
+1. Assign the issue to the social media manager.
+1. Provide as much context as possible, including links, visual ideas, and deadlines if applicable.
+
+This process helps ensure we can create content that matches your intent and our audience’s expectations.
 
 ## Other social channels recommendations 
 
