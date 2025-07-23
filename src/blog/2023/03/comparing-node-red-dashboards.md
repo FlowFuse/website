@@ -3,6 +3,7 @@ title: Comparing Node-RED Dashboards Solutions
 subtitle: One of the most common features Node-RED users add to their flows is a dashboard, we compaure the 3 most popular options.
 description: Explore a thorough comparison of Node-RED dashboard solutions, covering installation, UI elements, support, and future development plans.
 date: 2023-03-13
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /images/blog/db-comparison.jpg
 keywords: node red dashboard, node-red dashboard, node red ui builder, ui builder node red, flexdash, node red dashboard alternative, node red alternative dashboard
@@ -37,19 +38,13 @@ I'd like to take this opportunity to thank the project leads for each of the thr
 
 To compare these dashboards, I am going to consider each of them based on the following factors:
 
-- [How easy is it to install?](#how-easy-is-it-to-install%3F)
-
-- [How easy is it to get your first demo dashboard running?](#how-easy-is-it-to-get-your-first-demo-dashboard-running%3F)
-
-- [How extensive is the collection of UI elements?](#how-extensive-is-the-collection-of-ui-elements%3F)
-
-- [How good is the support and documentation?](#how-good-is-the-support-and-documentation%3F)
-
-- [How 'cloud native' is the dashboard?](#how-'cloud-native'-is-the-dashboard%3F)
-
-- [How active is each project's development?](#how-active-is-each-project's-development%3F)
-
-- [What are the future development plans?](#what-are-the-future-development-plans%3F)
+- How easy is it to install?
+- How easy is it to get your first demo dashboard running?
+- How extensive is the collection of UI elements?
+- How good is the support and documentation?
+- How 'cloud native' is the dashboard?
+- How active is each project's development?
+- What are the future development plans?
 
 I am assuming the user is a low-code developer. They may have limited experience with coding and are most comfortable working in visual interfaces.
 

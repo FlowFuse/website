@@ -3,6 +3,7 @@ title: "The Death of Point-to-Point: Why You Need a Unified Namespace"
 subtitle: Traditional Point-to-Point Connection Model is Holding Back Manufacturing Innovation - Unified Namespace (UNS) Can Transform Factory Operations
 description: Learn why point-to-point connections are outdated in modern manufacturing and how a Unified Namespace (UNS) simplifies system integration, enhances data sharing, and improves scalability and security.
 date: 2024-11-26
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/the-death-of-point-to-point.png
 keywords: uns, cons of p2p, cons of point-to-point connection, drawbacks of point-to-point connection, publish-subscribe, mqtt
