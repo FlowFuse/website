@@ -3,6 +3,7 @@ title: Building a Unified Namespace (UNS) with FlowFuse
 subtitle: Implement your Unified Namespace seamlessly using our low-code platform
 description: Discover how FlowFuse helps you build a Unified Namespace (UNS) effortlessly, streamlining industrial data sharing, improving operational efficiency, and enabling real-time insights for smarter decision-making.
 date: 2024-11-28
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/building-uns-with-flowfuse.png
 keywords: building unified namespace using nodered, nodered uns, uns nodered

@@ -3,6 +3,7 @@ title: "Getting the Most Out of MQTT for Industrial IoT"
 subtitle: Best Practices for Optimizing MQTT in Industrial IoT Systems
 description: Learn how to optimize MQTT for industrial IoT with best practices for data consistency, security, performance, and scalability. Discover how FlowFuse enhances your IoT system with streamlined MQTT communication and robust features.
 date: 2024-11-25
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/mqtt-common-pitfalls.png
 keywords: 
