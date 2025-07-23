@@ -9,6 +9,94 @@ When hiring a new role, the process is generally as follows:
 * Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
 * Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
 
+## Greenhouse
+
+### Opening a Job
+
+When opening a job post, you'll need a couple of things:
+
+1. A Job Description
+2. Verifying the availability of the approved role.
+3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
+
+### Pipeline design
+
+A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
+For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
+**must** include all values and job requirements.
+
+#### Accepting applications
+
+When you open the role on Greenhouse to accept applications, please [follow the advertisement instructions](/handbook/peopleops/hiring/#advertising-a-role).
+
+Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter.
+Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position.
+These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowfuse.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
+
+#### Initial Review
+
+The initial review will check the aforementioned question for validity, the resume, and the cover letter.
+Check for:
+1. Alignment to [Values](../../company/values.md)
+1. Capabilities align with the requirements for the role
+1. Previous retention at companies
+   - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
+
+For each candidate we'd like to move forward with, a scorecard needs to be filled
+out based on the available information so the interviewer for the next stage can
+prepare and focus if the strengths are indeed strong, and the same for weaknesses or uncertainties.
+
+The resume review should reject **over 50%** of all candidates.
+
+#### Skills assessment
+
+For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
+
+This round will again result in a scorecard, but also an indication what level this candidate would suit in.
+For example `intermediate` vs `senior` for developers.
+
+When in doubt, reject the candidate.
+
+#### Offer stage
+
+First, read about [extending offers](#extending-an-offer).
+
+At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
+Before the peopleops team extends an offer, explicit approval is required from:
+1. A peopleops manager
+   - Check we hire in their location
+   - Notice period aligns with internal processes
+   - Total compensation is in FlowFuse's range
+1. The new manager of the candidate
+1. CEO
+
+When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
+
+#### Rejecting Candidates
+
+We will interview candidates at every stage of the interviewing process. When we reject candidates, there are three kinds of rejections: 
+* pre-interview
+* post-screen
+* after candidates have done multiple interviews
+
+Pre-interview, we use the template in Greenhouse to reject candidates. We want candidates to know that we are not moving forward with them. 
+Note: Some candidates who apply through LinkedIn do not attach valid emails to their application, in which case we reject without emailing, but otherwise we always try to let them know. 
+
+Post-screen, we use a different template in Greenhouse to reject candidates. This template recognizes that candidates have spent time with us. 
+
+After candidates have done multiple interviews, we may want to write a more personal email letting them move on. This is up to hiring manager's discretion. In this case, we should make sure to reject via Greenhouse but not send emails. 
+
+##### Candidate Feedback
+
+At times candidates may request feedback on why we are not moving forward with their candidacy. By default, we do not provide feedback, but in some circumstances a hiring manager may be open to discussing further with the candidate.
+
+### Closing a job
+
+As soon as there's a pipeline that would support at least three strong candidates
+for the open position, take the job posting offline. Candidates applying for a job
+that's no longer available is a waste of their time, a bad experience with
+FlowFuse, and hurts our reputation.
+
 ## Advertising a Role
 
 When advertising for a role on Social Media, engagement is improved (and therefore,
@@ -99,94 +187,6 @@ Once your FlowFuse email is set up, you will have access to invitations to other
 On your first day, once your email and 1Password accounts are set up, it is important to prioritize
 gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
 Additionally, your manager will assign tasks for you to begin working on during your first week. Further details on Onboarding will be available in your Onboarding issue. 
-
-## Greenhouse
-
-### Opening a Job
-
-When opening a job post, you'll need a couple of things:
-
-1. A Job Description
-2. Verifying the availability of the approved role.
-3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
-
-### Pipeline design
-
-A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
-For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
-**must** include all values and job requirements.
-
-#### Accepting applications
-
-When you open the role on Greenhouse to accept applications, please [follow the advertisement instructions](/handbook/peopleops/hiring/#advertising-a-role).
-
-Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter.
-Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position.
-These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowfuse.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
-
-#### Initial Review
-
-The initial review will check the aforementioned question for validity, the resume, and the cover letter.
-Check for:
-1. Alignment to [Values](../../company/values.md)
-1. Capabilities align with the requirements for the role
-1. Previous retention at companies
-   - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
-
-For each candidate we'd like to move forward with, a scorecard needs to be filled
-out based on the available information so the interviewer for the next stage can
-prepare and focus if the strengths are indeed strong, and the same for weaknesses or uncertainties.
-
-The resume review should reject **over 50%** of all candidates.
-
-#### Skills assessment
-
-For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
-
-This round will again result in a scorecard, but also an indication what level this candidate would suit in.
-For example `intermediate` vs `senior` for developers.
-
-When in doubt, reject the candidate.
-
-#### Offer stage
-
-First, read about [extending offers](#extending-an-offer).
-
-At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
-Before the peopleops team extends an offer, explicit approval is required from:
-1. A peopleops manager
-   - Check we hire in their location
-   - Notice period aligns with internal processes
-   - Total compensation is in FlowFuse's range
-1. The new manager of the candidate
-1. CEO
-
-When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
-
-#### Rejecting Candidates
-
-We will interview candidates at every stage of the interviewing process. When we reject candidates, there are three kinds of rejections: 
-* pre-interview
-* post-screen
-* after candidates have done multiple interviews
-
-Pre-interview, we use the template in Greenhouse to reject candidates. We want candidates to know that we are not moving forward with them. 
-Note: Some candidates who apply through LinkedIn do not attach valid emails to their application, in which case we reject without emailing, but otherwise we always try to let them know. 
-
-Post-screen, we use a different template in Greenhouse to reject candidates. This template recognizes that candidates have spent time with us. 
-
-After candidates have done multiple interviews, we may want to write a more personal email letting them move on. This is up to hiring manager's discretion. In this case, we should make sure to reject via Greenhouse but not send emails. 
-
-##### Candidate Feedback
-
-At times candidates may request feedback on why we are not moving forward with their candidacy. By default, we do not provide feedback, but in some circumstances a hiring manager may be open to discussing further with the candidate.
-
-### Closing a job
-
-As soon as there's a pipeline that would support at least three strong candidates
-for the open position, take the job posting offline. Candidates applying for a job
-that's no longer available is a waste of their time, a bad experience with
-FlowFuse, and hurts our reputation.
 
 ## Offboarding
 
