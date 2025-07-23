@@ -3,6 +3,7 @@ title: Exploring Node-RED Dashboard 2.0 Widgets
 subtitle: A guide to using Node-RED 2.0 Widgets for Dashboard Development.
 description: Learn how to use Node-RED Dashboard 2.0 widgets to build interactive applications and dynamic dashboards effortlessly.
 date: 2024-05-27
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/dashboard-widgets.png
 tags:

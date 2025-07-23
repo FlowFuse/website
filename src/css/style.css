@@ -408,17 +408,19 @@ video, iframe {
 h1,h2,h3,h4 {
     position: relative;
 }
-.header-anchor {
+.header-anchor::before {
+    content: '#';
     display: none;
     position:absolute;
+    padding-right: 0.5rem;
     text-decoration: none !important;
     right: calc(100%);
 }
 
-h1:hover .header-anchor,
-h2:hover .header-anchor,
-h3:hover .header-anchor,
-h4:hover .header-anchor {
+h1:hover .header-anchor::before,
+h2:hover .header-anchor::before,
+h3:hover .header-anchor::before,
+h4:hover .header-anchor::before {
     display: inline;
 }
 

@@ -260,6 +260,8 @@ them and scheduled. FlowFuse offers these meetings each quarterly, hence the
 name Quarterly Business Review (QBR). By meeting, FlowFuse can understand,
 pro-actively, how the customer is progressing with their adoption.
 
+Record customer calls using Fathom per the [Sales Meetings guide](/handbook/sales/meetings/).
+
 For each meeting, the goals are:
 
 1. Relationship building -- By having a conversation instead of email, we hope

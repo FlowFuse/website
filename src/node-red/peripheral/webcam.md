@@ -9,6 +9,8 @@ meta:
 image: /node-red/peripheral/images/using_webcam_with_node-red.png
 ---
 
+# {{meta.title}}
+
 Dashboard 2.0 has introduced its first third-party webcam widget, simplifying the integration of webcam features with Node-RED applications. In this documentation, you will learn how to utilize the ui-webcam widget in your Node-RED applications.
 
 Additionally, if you are willing to develop your own third-party widget, we have our [example widget](https://github.com/FlowFuse/node-red-dashboard-2-ui-example) which helps you develop your widget. Additionally for a detailed step-by-step guide refer to [Building Third Party Widgets](https://dashboard.flowfuse.com/contributing/widgets/third-party.html).

@@ -72,12 +72,6 @@ sections:
         info:
   - label: Scale
     rows:
-      - id: device-mgmt
-        label: Device Management
-        cloudValues: [ 'check', 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]    
-        tags: [ 'cloud', 'self-hosted' ]
-        info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organization.</p>"
       - id: mqtt-broker-cloud
         label: MQTT Broker
         cloudValues: [ 'check', 'check', 'check' ]    
@@ -88,6 +82,12 @@ sections:
         selfHostedValues: [ 'check', 'check' ]    
         tags: [ 'self-hosted' ]
         info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Team Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
+      - id: device-mgmt
+        label: Device Fleet Updates
+        cloudValues: [ null, 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check' ]    
+        tags: [ 'cloud', 'self-hosted' ]
+        info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organization.</p>"
       - id: volume-pricing
         label: Volume Pricing
         cloudValues: [ null, null, 'check' ]
