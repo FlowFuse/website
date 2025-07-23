@@ -100,6 +100,12 @@ On your first day, once your email and 1Password accounts are set up, it is impo
 gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
 Additionally, your manager will assign tasks for you to begin working on during your first week. Further details on Onboarding will be available in your Onboarding issue. 
 
+### Onboarding Buddy
+
+As part of your onboarding, you'll be assigned an onboarding buddy who is there to help make you successful. 
+The onboarding buddy should be a person outside of your team. This helps ensure we're building a culture across the company.
+You should reach out to your onboarding buddy regularly in your first 90 days.
+
 ## Greenhouse
 
 ### Opening a Job
