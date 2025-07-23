@@ -5,7 +5,6 @@ description: "FlowFuse AI Assistant helps manufacturing teams write Node-RED fun
 date: 2025-07-09
 authors: ["sumit-shinde"]
 keywords: AI in manufacturing, manufacturing automation, Node-RED automation, FlowFuse AI Assistant, smart manufacturing, industrial IoT, custom dashboard manufacturing, function nodes
-image: 
 tags:
   - flowfuse
 meta:
