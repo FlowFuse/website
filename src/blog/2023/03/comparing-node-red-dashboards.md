@@ -3,6 +3,7 @@ title: Comparing Node-RED Dashboards Solutions
 subtitle: One of the most common features Node-RED users add to their flows is a dashboard, we compaure the 3 most popular options.
 description: Explore a thorough comparison of Node-RED dashboard solutions, covering installation, UI elements, support, and future development plans.
 date: 2023-03-13
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /images/blog/db-comparison.jpg
 keywords: node red dashboard, node-red dashboard, node red ui builder, ui builder node red, flexdash, node red dashboard alternative, node red alternative dashboard
@@ -37,19 +38,34 @@ I'd like to take this opportunity to thank the project leads for each of the thr
 
 To compare these dashboards, I am going to consider each of them based on the following factors:
 
-- [How easy is it to install?](#how-easy-is-it-to-install%3F)
-
-- [How easy is it to get your first demo dashboard running?](#how-easy-is-it-to-get-your-first-demo-dashboard-running%3F)
-
-- [How extensive is the collection of UI elements?](#how-extensive-is-the-collection-of-ui-elements%3F)
-
-- [How good is the support and documentation?](#how-good-is-the-support-and-documentation%3F)
-
-- [How 'cloud native' is the dashboard?](#how-'cloud-native'-is-the-dashboard%3F)
-
-- [How active is each project's development?](#how-active-is-each-project's-development%3F)
-
-- [What are the future development plans?](#what-are-the-future-development-plans%3F)
+- [Which dashboards am I going to consider?](#which-dashboards-am-i-going-to-consider)
+- [Methodology](#methodology)
+- [How easy is it to install?](#how-easy-is-it-to-install)
+  - [uibuilder - 1st place](#uibuilder---1st-place)
+  - [Dashboard - 2nd place](#dashboard---2nd-place)
+  - [FlexDash - 3rd place](#flexdash---3rd-place)
+- [How easy is it to get your first demo dashboard running?](#how-easy-is-it-to-get-your-first-demo-dashboard-running)
+  - [FlexDash - 1st place](#flexdash---1st-place)
+  - [uibuilder - 2nd place](#uibuilder---2nd-place)
+  - [Dashboard - 3rd place](#dashboard---3rd-place)
+- [How extensive is the collection of UI elements?](#how-extensive-is-the-collection-of-ui-elements)
+  - [FlexDash and Dashboard - joint 1st place](#flexdash-and-dashboard---joint-1st-place)
+  - [uibuilder - 3rd place](#uibuilder---3rd-place)
+- [How good is the support and documentation?](#how-good-is-the-support-and-documentation)
+  - [All three - joint first place](#all-three---joint-first-place)
+- [How 'cloud native' is the dashboard?](#how-cloud-native-is-the-dashboard)
+  - [Dashboard - 1st place](#dashboard---1st-place)
+  - [FlexDash - 2nd place](#flexdash---2nd-place)
+  - [uibuilder - 3rd place](#uibuilder---3rd-place-1)
+- [How active is each project's development?](#how-active-is-each-projects-development)
+  - [uibuilder - 1st place](#uibuilder---1st-place-1)
+  - [FlexDash - 2nd place](#flexdash---2nd-place-1)
+  - [Dashboard - 3rd place](#dashboard---3rd-place-1)
+- [What are the future development plans?](#what-are-the-future-development-plans)
+  - [uibuilder - joint firstplace](#uibuilder---joint-firstplace)
+  - [FlexDash - joint firstplace](#flexdash---joint-firstplace)
+  - [Dashboard - third place](#dashboard---third-place)
+- [Conclusions](#conclusions)
 
 I am assuming the user is a low-code developer. They may have limited experience with coding and are most comfortable working in visual interfaces.
 

@@ -3,6 +3,7 @@ title: How to create and use Subflow in Node-RED
 subtitle: A Practical Guide to Implementing Subflows in Node-RED for Efficient Workflow Management
 description: Learn how to effectively use subflows in Node-RED with this comprehensive guide. Discover the benefits, creation steps, and best practices for managing subflows to streamline your automation workflows.
 date: 2024-09-13
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/09/images/subflow-in-node-red.png
 keywords: node red subflow, nodered subflow, node red subflow environment variables, node red create subflow, node red subflows

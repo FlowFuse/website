@@ -3,6 +3,7 @@ title: Using Environment Variables in Node-RED
 subtitle: Predefined data to be used in your Node-RED instance 
 description: Node-RED supports environment variables (env vars) slight different, how to use it and the gotcha's are explained in this article.
 date: 2023-01-27 16:11:47.0
+lastUpdated: 2025-07-23
 authors: ["zeger-jan-van-de-weg"]
 tags:
     - posts

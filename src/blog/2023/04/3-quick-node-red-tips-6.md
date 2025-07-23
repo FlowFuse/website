@@ -3,6 +3,7 @@ title: Node-RED Tips - Subflows, Link Nodes, and the Range Node
 subtitle: Save yourself time when working on Node-RED with these three tips.
 description: "Learn how to streamline your Node-RED projects with these essential tips: Subflows, Link Nodes, and Range Node for efficient workflow organization."
 date: 2023-04-20 12:00:00
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /images/blog/nr-quicktips.jpg
 tags:
