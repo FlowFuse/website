@@ -95,7 +95,7 @@ added to the list, especially when you're considering a job offer at FlowFuse.
 ##### USA and Canada
 
 For employees located in the United States, FlowFuse offer basic health insurance coverage which includes dental and vision with 50% dependent coverage benefits through United Medical.
+For US Employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
 
 For employees located in the Canada, FlowFuse offer basic health insurance coverage which includes dental, vision, and health services via Sterling brokers/Manulife.  
 
-Employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
