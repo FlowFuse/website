@@ -7,7 +7,7 @@ image: /images/webinars/blueprints-build-faster-with-node-red-on-flowfuse.jpg
 date: 2025-07-23
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: 
+video: XgkK7MKfrok
 hosts: ["stephen-mclaughlin"]
 hubspot:
     formId: 0b0fd5c1-b5c3-488e-823a-ac2568a3c14d
