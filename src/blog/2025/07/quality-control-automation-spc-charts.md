@@ -3,7 +3,7 @@ title: "How Leading Manufacturers Save Thousands of Dollars/Year with Real-Time 
 subtitle: "A practical guide to implementing Statistical Process Control with FlowFuse"
 description: "Learn how to build real-time SPC charts using Node-RED and FlowFuse for manufacturing quality control."
 date: 2025-07-23
-authors: ["sumit-shinde"]
+authors: ["sumit-shinde",stephen-mclaughlin]
 keywords: SPC, statistical process control, manufacturing quality, defect prevention, Node-RED, FlowFuse, control charts, I-MR charts, real-time monitoring, scrap reduction, quality control, manufacturing ROI, process monitoring
 tags:
     - posts
@@ -225,13 +225,12 @@ Seven consecutive points above or below the center line means your process has s
 - **Rule 3: Seven points trending**
 Seven points in a row going up or down. Classic sign of tool wear or temperature drift.
 
-- **Rule 4: Obvious patterns**
-This is the catch-all for weird stuff. Cycles that match shift changes. Patterns that repeat every Monday. Trust your operators - they usually know what these mean.
+- **Rule 4: Repeating and Cyclical Patterns**
+This rule is for recurring behaviors that the other rules miss. Cycles that repeat over time, like a regular pattern that appears at the start of every shift change or every Monday. Speak with your operators, they will likely know what these mean.
 
 Here's how to implement these rules in FlowFuse:
 
 1. Drag a **Function** node onto the workspace and add the following JavaScript code to it.
-
 2. Replace switch node with this **Function** node.
 3. Deploy the flow.
 
