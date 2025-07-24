@@ -217,7 +217,7 @@ _SPC chart detecting process shift - measurements above UCL trigger immediate al
 Control limits catch obvious problems. But subtle issues need pattern recognition. Here are the four rules that catch 95% of real problems:
 
 - **Rule 1: Any point outside limits**
-This one's obvious. If you're outside 3-sigma limits, something's wrong.
+This one is fairly obvious:  If a measurement point falls outside of the established upper or lower limits, something is wrong.
 
 - **Rule 2: Seven points on one side**
 Seven consecutive points above or below the center line means your process has shifted. Maybe a new material lot, maybe tool wear.
