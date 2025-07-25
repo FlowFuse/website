@@ -74,9 +74,9 @@ sections:
     rows:
       - id: mqtt-broker-cloud
         label: MQTT Broker
-        cloudValues: [ 'check', 'check', 'check' ]    
+        cloudValues: [ null, 'check', 'check' ]    
         tags: [ 'cloud' ]
-        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Starter Tier includes 2 clients, the Team Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
+        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Team Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
       - id: mqtt-broker-sh
         label: MQTT Broker
         selfHostedValues: [ 'check', 'check' ]    
@@ -140,7 +140,7 @@ sections:
     rows:
       - id: audit-log
         label: Audit Log
-        cloudValues: [ 'check', 'check', 'check' ]
+        cloudValues: [ null, 'check', 'check' ]
         selfHostedValues: [ 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Keep track of everything going on in your Node-RED instances and FlowFuse.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
