@@ -31,7 +31,7 @@ You can see an example flow for the Histogram chart type [here](https://dashboar
 
 ## Customizable App Icon
 
-Branding is an essential part of any user experience and with this new feature, you can customize your dashboard's app icon. The Node-Red Dashboard 2.0 now allows users to provide their own application icon, which appears in the browser tab and when the dashboard is installed as a Progressive Web App (PWA). This customization helps reinforce your brand, whether you’re developing IoT solutions, monitoring systems or creating dashboards for end-users.
+Branding is an essential part of any user experience and with this new feature, you can customize your dashboard's app icon. The Node-RED Dashboard 2.0 now allows users to provide their own application icon, which appears in the browser tab and when the dashboard is installed as a Progressive Web App (PWA). This customization helps reinforce your brand, whether you’re developing IoT solutions, monitoring systems or creating dashboards for end-users.
 
 ![Screenshot showing the customizable app icon in browser and as a PWA](./images/app-icon-installation.png){data-zoomable style="max-width: 400px; margin: auto;"}
 _Screenshot showing the customizable app icon in browser and as a PWA_

@@ -5,7 +5,7 @@ description: Discover essential FlowFuse security features that enhance protecti
 date: 2024-10-24
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/flowfuse-security-features.png
-keywords: node-red security, node red security, how to secure node-red solutions, secured solution for manufacturing, iot vulnerabilities, iot security concerns, iot and security
+keywords: node-red security, node red security, how to secure Node-RED solutions, secured solution for manufacturing, iot vulnerabilities, iot security concerns, iot and security
 tags:
  - post
  - flowfuse

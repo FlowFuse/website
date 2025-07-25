@@ -48,7 +48,7 @@ We need to normalize the payload before sending it to the next node because the 
 
 Now it’s time to install a custom node that can perform sentiment analysis for us. In this guide, we will use the `node-red-node-sentiment` which is a Node-RED node that uses the AFINN-165 wordlists for sentiment analysis of words. It returns a sentiment object containing a score and other properties but we will only use the score property. Score property typically ranges from -5 to 5.
 
-1. Install the `node-red-node-sentiment` package by the node-red palette manager.
+1. Install the `node-red-node-sentiment` package by the Node-RED palette manager.
 2. Drag a sentiment node to canvas.
 3. Connect the change nodes output to sentiment node input.
 

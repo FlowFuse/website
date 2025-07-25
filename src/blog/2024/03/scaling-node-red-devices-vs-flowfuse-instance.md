@@ -18,17 +18,17 @@ FlowFuse is a Software as a Service (SaaS) platform designed to enhance the expe
 
 ## Scalability Challenges with Traditional Node-RED Deployments
 
-While deploying Node-Red is quite simple, managing multiple instances across different environments can become complex and time-consuming. As the number of devices and use cases grow, users face difficulties in scaling their Node-RED applications efficiently to handle increased load without compromising performance or security. This is where FlowFuse comes into play.
+While deploying Node-RED is quite simple, managing multiple instances across different environments can become complex and time-consuming. As the number of devices and use cases grow, users face difficulties in scaling their Node-RED applications efficiently to handle increased load without compromising performance or security. This is where FlowFuse comes into play.
 
 ## The Role of FlowFuse as an Orchestration Tool
 
-FlowFuse functions as an orchestration tool that allows the deployment and management of all your Node-Red instances at scale, addressing scalability challenges head-on. By leveraging its platform, users can quickly deploy and manage multiple Node-RED instances while ensuring optimal performance and security. This enables them to connect with a wide range of devices, from PLCs and sensors to legacy software, without worrying about the complexities of managing their Node-RED deployment.
+FlowFuse functions as an orchestration tool that allows the deployment and management of all your Node-RED instances at scale, addressing scalability challenges head-on. By leveraging its platform, users can quickly deploy and manage multiple Node-RED instances while ensuring optimal performance and security. This enables them to connect with a wide range of devices, from PLCs and sensors to legacy software, without worrying about the complexities of managing their Node-RED deployment.
 
 ## Deploying Node-RED Next to Devices
 
 One common issue in IoT deployments is that device instances of Node-RED often communicate with unsecure devices or networks. To mitigate security risks and ensure data protection, it's common to deploy Node-RED in close proximity to these devices. The FlowFuse platform uses [device agents](/product/device-agent/) that communicate back to the platform via a reverse tunnel over port 443. This setup requires only one firewall rule: allowing outbound connections from the [device agent](/product/device-agent/) running Node-RED to the FlowFuse platform, significantly minimizing security risks while enabling remote monitoring, flow editing, and configuration deployment at scale.
 
-## Deploying Node-Red Instances Within the FlowFuse Platform
+## Deploying Node-RED Instances Within the FlowFuse Platform
 
 Not all instances of Node-RED need to be deployed at the edge and can be deployed anywhere. FlowFuse offers this flexibility in cases where users prefer or require deploying their Node-RED instances within the platform itself. This capability allows users to focus on developing and managing their applications without worrying about the underlying infrastructure.
 

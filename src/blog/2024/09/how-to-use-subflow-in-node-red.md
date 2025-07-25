@@ -91,7 +91,7 @@ _The switch node in Node-RED with a max retry condition set using an environment
 
 As we know, any node in Node-RED requires input and output ports to manage its data flow. Similarly, a Subflow node requires these ports to function correctly. In our Subflow example, it needs to be triggered and therefore requires at least one input port and one or more output ports. Specifically, our Subflow has two outputs: one for successfully fetched data and another to indicate when the maximum retry limit has been exceeded.
 
-1. In the **Subflow** tab, at the top, you will see an option for **inputs** with values 0 and 1. Click on **1** to add an input port (as a any node-red node can have only one input port). Once set to 1, you will see an input port added in the Subflow tab. Connect it to the appropriate node; in our example, it should be connected to the first **change** node.
+1. In the **Subflow** tab, at the top, you will see an option for **inputs** with values 0 and 1. Click on **1** to add an input port (as a any Node-RED node can have only one input port). Once set to 1, you will see an input port added in the Subflow tab. Connect it to the appropriate node; in our example, it should be connected to the first **change** node.
 
 ![Option to add input port for subflow](./images/input-adding-subflow.png){data-zoomable}
 _Option to add input port for subflow_

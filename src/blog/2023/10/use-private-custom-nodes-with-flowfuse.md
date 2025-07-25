@@ -80,7 +80,7 @@ The container accepts the following environment variables:
 - PORT - Which port to listen on (defaults to 3000)
 - HOST - Which local IP Address to bind to (defaults to 0.0.0.0)
 - REGISTRY - A host and optional port number to connect to the NPM registry (defaults to http:/ registry:4873)
-- KEYWORD - The npm keyword to filter on (defaults to node-red)
+- KEYWORD - The npm keyword to filter on (defaults to Node-RED)
 
 **It presents 2 HTTP endpoints**
 

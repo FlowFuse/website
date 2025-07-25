@@ -38,6 +38,6 @@ This dashboard is currently configured to take in CSV files and transform them i
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
 
-## Need to Send a File to Node-Red from another application or source?
+## Need to Send a File to Node-RED from another application or source?
 
 Check out this [blog](/blog/2024/01/send-a-file) on how to send a file from either a stand alone web application or use the sample python script to imbed it into your current application.
