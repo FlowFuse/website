@@ -8,40 +8,75 @@ Pricing is publicly available at [our pricing page](/pricing/).
 
 ## Per-site licenses
 
-Self-hosted FlowFuse installations require a minumum of 10 instances per location or geographic site.
+Self-hosted FlowFuse installations require a minumum of 10 instances per
+location or geographic site.
+
+## Creating a Deal
+
+A deal is opened when the correct stage of the
+[SPICED methodogy](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU/)
+has been achieved.
+
+To open a deal, be sure to set the correct properties.
+
+1. Deal Type
+   - New Business - For new customers or departments
+   - Expansions - Upsells that are to be booked in-term
+   - Renewal - Changes to the subscription effective on renewal date
 
 ## Generating a Quote
 
-Clearly written, easy to understand quotes are crucial for customers to understand what they are purchasing and how much it costs. To create a quote, combine the (1) product plan and (2) other purchased items according to the following guide.
+Clearly written, easy to understand quotes are crucial for customers to
+understand what they are purchasing and how much it costs. To create a quote,
+combine the (1) product plan and (2) other purchased items according to the
+following guide.
 
 ### What to Quote
 
-When preparing a quote, include both the plan and any extras that go beyond what comes with the plan at the designated tier. Include a note in the Terms section that indicates what comes with the plan. (This will be pre-filled when using one of the HubSpot quote templates). The product plan will be listed as its own line, with a quantity of 1, and the minimum purchase price for that plan. The add-on options should also be added to the product section, as referenced by the purchase term template.
+When preparing a quote, include both the plan and any extras that go beyond what
+comes with the plan at the designated tier. Include a note in the Terms section
+that indicates what comes with the plan. (This will be pre-filled when using one
+of the HubSpot quote templates). The product plan will be listed as its own
+line, with a quantity of 1, and the minimum purchase price for that plan. The
+add-on options should also be added to the product section, as referenced by the
+purchase term template.
 
-| Item & Description | Quantity | Unit Price | Total |
-| ----- | ----- | ----- | ----- |
-| FlowFuse Enterprise Platform \- Cloud | 1 | $X,000/year | $X,000 |
-| Enterprise \- Instance Add-On | 10 | $X,000/year | $X,000 |
-| Enterprise \- Remote Device Add-On | 10 | $X,000 | $X,000 |
+| Item & Description                    | Quantity | Unit Price  | Total  |
+| ------------------------------------- | -------- | ----------- | ------ |
+| FlowFuse Enterprise Platform \- Cloud | 1        | $X,000/year | $X,000 |
+| Enterprise \- Instance Add-On         | 10       | $X,000/year | $X,000 |
+| Enterprise \- Remote Device Add-On    | 10       | $X,000      | $X,000 |
 
-Annual Subtotal	  $XX,000  
-**Total**			  $XX,000
+Annual Subtotal	 $XX,000\
+**Total** $XX,000
 
 **Creating a Quote**
 
 Follow these steps to create a quote.
 
-1. In HubSpot, open the relevant Deal. In the Quotes area, click Add to begin a new quote.  
-2. Fill in the Buyer Information section. This will pre-fill with the information from the contact in the Deal.  
-3. The default Quote creator will be you. Change this if necessary.  
-4. Add Line Items per [the instructions](/handbook/sales/engagements/#what-to-quote)
-   * Select the appropriate Plan that is being quoted
-   * For each line item, except Professional Services, check the Billing frequence to `Annual` and if the terms **ensure automatic renewal*
-   * Adjust fields for Term and discount/fee/tax as needed.
-   * Add Add-on line items for purchases that exceed features that are included with the Plan.  
-6. Set Signature and Payment settings as needed. Ensure a countersignature is required from either the CEO or Head of GTM. 
-7. In the Template and Details section, choose the appropriate Quote Template from the dropdown menu. Choosing the correct Quote Template is important because it will pre-fill the correct plan features onto the quote. You can include additional Comments to Buyer or Purchase Terms here. They will not overwrite the Terms and Comments included with the Quote Template.  
-8. Review your Quote, and when everything is correct, click Create to create the quote attached to the relevant Deal.
+1. In HubSpot, open the relevant Deal. In the Quotes area, click Add to begin a
+   new quote.
+   - Ensure the Deal Type is set up, "Expension" is an in-term upsel
+2. Fill in the Buyer Information section. This will pre-fill with the
+   information from the contact in the Deal.
+3. The default Quote creator will be you. Change this if necessary.
+4. Add Line Items per
+   [the instructions](/handbook/sales/engagements/#what-to-quote)
+   - Select the appropriate Plan that is being quoted
+   - For each line item, except Professional Services, check the Billing
+     frequence to `Annual` and if the terms *_ensure automatic renewal_
+   - Adjust fields for Term and discount/fee/tax as needed.
+   - Add Add-on line items for purchases that exceed features that are included
+     with the Plan.
+5. Set Signature and Payment settings as needed. Ensure a countersignature is
+   required from either the CEO or Head of GTM.
+6. In the Template and Details section, choose the appropriate Quote Template
+   from the dropdown menu. Choosing the correct Quote Template is important
+   because it will pre-fill the correct plan features onto the quote. You can
+   include additional Comments to Buyer or Purchase Terms here. They will not
+   overwrite the Terms and Comments included with the Quote Template.
+7. Review your Quote, and when everything is correct, click Create to create the
+   quote attached to the relevant Deal.
 
 ## Closing a deal
 
@@ -50,53 +85,62 @@ Starting the closing process can commence when the customer has legally
 committed to purchase our products or services. This commitment must be
 evidenced by one of the following:
 
-* **Receipt of a Customer Purchase Order (PO)**: A document issued by the customer, authorizing the purchase of specified goods or services at a specified price.
-* **Signed Company Quote**: A formal, written quotation provided by our company, which has been duly signed, indicating their acceptance of the terms and conditions outlined therein.
+- **Receipt of a Customer Purchase Order (PO)**: A document issued by the
+  customer, authorizing the purchase of specified goods or services at a
+  specified price.
+- **Signed Company Quote**: A formal, written quotation provided by our company,
+  which has been duly signed, indicating their acceptance of the terms and
+  conditions outlined therein.
 
-Important Note: Verbal agreements, informal emails, or other non-binding expressions of interest do not constitute a closed deal. The legal commitment, as evidenced by a PO or signed quote, is the sole determinant.
+Important Note: Verbal agreements, informal emails, or other non-binding
+expressions of interest do not constitute a closed deal. The legal commitment,
+as evidenced by a PO or signed quote, is the sole determinant.
 
-### Steps 
+### Steps for the AE to complete
 
-1. Setting the deal when either the quote is signed or a PO is Issued.
-  * Check if the order form is signed and that the quote has all the right information.
-  * Describe additional information in line items
-  * Set line items to annual and payment terms to payment renew until cancelled
-  * Deal amount should be equal to ACV (annual contract value)
-
+1. Verify, again, if the quote has all the rigth properties set accounrding to
+   [Generating a Quote](#generating-a-quote) instructions.
+   - Verify the Deal amount is the same a the IACV (Incremental Annual Contract
+     Value)
+   - On the Hubspot Deal view, check and update:
+     - Hosting Environment
+     - Contract Start Date
+     - Renewal Date
+     - Amount in USD to the IACV (Incremental Annual Contract Value)
+   - Under contract management; check the box for MSA if a custom subscription
+     agreement is agreed upon.
 1. Upload the documents to the Google Drive in the correct directory
-   * [Signed quotes and P.O.'s](https://drive.google.com/drive/folders/1Nb3UqFiE56ymgQnyfkDKHMAe6L3akNzQ)
-   * If negotiated custom, the [Subscription agreement](https://drive.google.com/drive/folders/1h6jBvkJ2oDrBL7jw751RfAzBKkkprKDc)
-1. Update the deal to:
-   * Set the Renewal data for the deal
-   * Move the deal to `Closing` in HubSpots Deal overview, update the close date to when the customer committed to purchasing.
-1. Send an email to customer to set meeting monthly cadence, quarterly. business review and to introduce their Customer Success manager, 
-1. Send email to CSM to handover new customer, inlcuding the name of the champion, contract start date.
+   - [Signed quotes and P.O.'s](https://drive.google.com/drive/folders/1Nb3UqFiE56ymgQnyfkDKHMAe6L3akNzQ)
+   - If negotiated custom, the
+     [Subscription agreement](https://drive.google.com/drive/folders/1h6jBvkJ2oDrBL7jw751RfAzBKkkprKDc)
+1. Send an email to the customer and the assigned CSM to make the introduction.
+   - Also verify if a P.O. number is known for them internally, to put on the
+     invoice
+1. Move the deal to `Closing` in HubSpots Deal overview, update the close date
+   to when the customer committed to purchasing.
 
+### Steps for the CSM to complete
 
-## Steps for the CSM
-1. Check if the deal is set according to the correct standards
-1. Create the subscription 
-1. Create invoice manually if PO number is required
-4. Send an email to introduce the customer to their Customer Success Manager, including instructions to set up their account.
-   * *Cloud*
-      * Set up a team on FlowFuse Cloud for the customer in the right tier
-      * Set the customer team to [enter manual billing mode](/handbook/operations/accounts/#internal-teams-and-contracted-revenue)
-      * Invite customer as owner to the team
-      * Remove own email adress after sign up customer
-   * *Self-Managed*
-      * Generate a [license key](../sales/meetings/poc.md#generating-a-license)
-      * Send the license key with the onboarding email to the customer, in the email explain how to use support@flowfuse.com and our live chat the get support from our team.
-1. If Professional Services are included, contact the person who runs the FlowFuse PS team with the description of the work sold, the amount of hours, and the total value.
-1. Add customer to onboarding stage
-1. Send internal note that deal is complete and can be moved to stage closed
-  
-
-## Closing an upsell
-
-A deal is considered an upsell when the customer already has an annual subscription, and would like to purchase more licenses or services.
-
-### Steps
-
-1. Create a new "expansion" deal in HubSpot with the total new ARR, specifying the start date and renewal date for proration. Be sure to associate the existing renewal deal in order to track total ARR.
-1. Send a HubSpot quote for signature to confirm the additional yearly costs.
-1. Continue the steps when [closing any other deals](#closing-a-deal).
+1. Check the signed quote for:
+   - Start date
+   - Renewal date
+   - Are line items recurring, or not?
+   - Is an MSA agreed upon, and stored in the Google Drive?
+1. Create the
+   [subscription](/handbook/operations/billing/#creating-a-subscription)
+1. If a P.O. number has to filed on the invoice, create invoice manually
+1. Provide access to the agreed upon line items
+   - _Cloud_
+     - Set up a team on FlowFuse Cloud for the customer in the right tier
+     - Set the customer team to
+       [enter manual billing mode](/handbook/operations/accounts/#internal-teams-and-contracted-revenue)
+     - Invite customer as owner to the team
+     - Remove own email adress after sign up customer
+   - _Self-Managed_
+     - Generate a [license key](../sales/meetings/poc.md#generating-a-license)
+     - Send the license key with the onboarding email to the customer, following
+       this
+       [Hubspot Template](https://app-eu1.hubspot.com/templates/26586079/edit/135404737?q=welco&page=1).
+1. If Professional Services are included, inform the PS team of deal.
+1. Add customer to onboarding stage in the CSM tracking document.
+1. Ask the VP of Sales or CEO to move the Deal the the `Closed Won` stage.
