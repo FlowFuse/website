@@ -9,7 +9,7 @@ This paragraph shows a graphical presentation of dependencies between each build
 ```mermaid
 graph TB
     A[NR-File-Nodes package] & C[NR-Project-Nodes package] --> B[NR-launcher package]
-    B ----> X[NodeRed container build]
+    B ----> X[Node-RED container build]
     B --> D[LocalFS package]
     D --> E[Flowfuse package]
     E & F[K8s package] --> Y[Flowfuse container build]

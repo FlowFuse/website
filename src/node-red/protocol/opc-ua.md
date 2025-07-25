@@ -517,7 +517,7 @@ By default, the server is using no security, and allowing anonymous connections.
 ![individual-cert-file-option.png](./images/individual-cert-file-option.png)
 The node gives us some clues on how we can populate this section.  When `node-red-contrib-opcua-server` was installed, it created self-signed ssl certificates that are bound to our host system.  Let’s make use of them. 
 
-navigate to `./node-red-contrib-opcua-server/certificates` folder, where the node-red instance has installed the node-red module.  
+navigate to `./node-red-contrib-opcua-server/certificates` folder, where the node-red instance has installed the Node-RED module.  
 
 - I have Node-RED installed in the root path of my server, so my full path to the certs folder is `/root/.node-red/node_modules/node-red-contrib-opcua-server/certificates`
 - If you’re having trouble finding the directory, do a search for the file `server_selfsigned_cert_2048.pem`.  
