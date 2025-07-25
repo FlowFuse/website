@@ -24,21 +24,27 @@ Node-RED has transformed how manufacturing teams build automation. Its visual pr
 
 FlowFuse's AI Assistant bridges this gap. It generates the custom code your team needs from plain language descriptions. Here's how it works in practice.
 
-## Where AI Assistant Adds Value
+## Common Challenges Teams Face
 
-Node-RED's visual programming and rich ecosystem of nodes solve most automation challenges. But there are three areas where teams benefit from AI assistance to move even faster.
+While Node-RED excels at visual automation, teams consistently hit roadblocks in five specific areas:
 
-**Custom Code in Function Nodes:** Every plant has unique requirements. Whether it's parsing data from specialized equipment, implementing complex calculations specific to your process, or encoding business logic developed over years—these custom solutions require JavaScript in function nodes.
+**Custom Code in Function Nodes:** Your CNC machine outputs proprietary text reports. Your quality calculations use formulas developed over decades. Your business logic is unique to your process. These all require JavaScript in function nodes—and your engineers spend hours writing and debugging code instead of solving manufacturing problems.
 
-**Custom Dashboard Visualizations:** FlowFuse Dashboard's extensive widget library handles most visualization needs excellently. For those rare cases where you need something truly unique to your process—perhaps a specialized chart combining multiple data sources or matching exact corporate reporting standards—these require creating custom Vue.js templates.
+**Generating Test JSON Data:** You need to test a new dashboard but don't have live data yet. Or you're demonstrating a flow and need realistic sensor readings. Creating JSON arrays manually takes forever—timestamps, realistic value ranges, edge cases. It's tedious work that delays actual testing.
 
-**Understanding Complex Flows:** After years of continuous improvement, your Node-RED flows have grown. A temperature control system might span 200+ nodes across multiple tabs. When someone asks "what does this flow do?" or "where is the alarm logic?", finding answers takes hours of tracing connections and reading function nodes. New team members need weeks to understand systems that should take days.
+**Creating Custom Dashboard Components:** FlowFuse Dashboard's extensive widget library handles most visualization needs excellently. For those rare cases where you need something truly unique to your process—perhaps a specialized chart combining multiple data sources or matching exact corporate reporting standards—these require creating custom Vue.js templates.
+
+**Styling Existing Components:** The standard widgets work but look generic. Your temperature gauge needs gradient backgrounds and smooth transitions. Your status indicators need custom animations for alerts. Writing CSS to match corporate HMI standards requires web development skills your team doesn't have.
+
+**Understanding Complex Flows:** Your temperature control system has grown to 200+ nodes across 8 tabs. A new engineer joins and asks "How does the alarm cascade work?" or "Where's the material waste prevention logic?" Finding answers means hours of tracing connections and decoding function nodes. Knowledge transfer takes weeks, not days.
 
 ## How AI Assistant Solves Each Challenge
 
-The AI Assistant tackles all three problems with the same approach: describe what you need in plain language, get working code or documentation instantly. Let's see how this works for each challenge.
+The AI Assistant tackles all three problems with the same approach: describe what you need in plain language, get working code or just select and hit exlain and get documentation instantly. Let's see how this works for each challenge.
 
 ### Challenge 1: Function Node Code Generation
+
+**Example 1: Parsing Machine Data**
 
 Consider this output from a CNC machine that's been reliable for 15 years:
 
@@ -87,7 +93,10 @@ The engineer reviews the code, tests it with their data, and moves on to solving
 ![FlowFuse AI Assistant generating a Node-RED function node to extract data from a CNC text report.](./images/function-ai.gif){data-zoomable}
 _FlowFuse AI Assistant generating a Node-RED function node to extract data from a CNC text report._
 
-### Challenge 2: Custom Dashboard Templates with Vue.js
+### Challenge 2:Generating Test JSON Data
+
+
+### Challenge 3: Custom Dashboard Templates with Vue.js
 
 FlowFuse Dashboard uses Vue.js for custom widgets. While powerful, this means engineers need to understand Vue component structure, reactive data binding, and integration with third-party libraries. Take the Pareto chart—fundamental for root cause analysis but not available as a standard widget.
 
@@ -109,18 +118,12 @@ Without AI assistance, creating this widget means understanding Vue.js template 
 
 The AI Assistant changes this completely. Your engineer describes: "Create a Pareto chart widget using Vue.js and Chart.js. Show defect types as bars sorted by frequency, with a cumulative percentage line. Include the 80% threshold line. Make it responsive and update when new data arrives."
 
-The AI generates a complete Vue.js template component:
-- Proper Vue structure with template, script, and style sections
-- Reactive data handling for live updates
-- Chart.js configuration with dual Y-axes
-- Automatic sorting and percentage calculations
-- Responsive sizing that works on all screens
-- About 150 lines of production-ready code
+The AI generates a complete Vue.js template component for your you just need to deploy.
 
 ![FlowFuse AI Assistant creating a Pareto chart widget in FlowFuse Dashboard using defect count data.](./images/dashboard-ai.gif){data-zoomable}
 _FlowFuse AI Assistant creating a Pareto chart widget in FlowFuse Dashboard using defect count data._
 
-### Challenge 3: Understanding Complex Flows
+### Challenge 4: Understanding Complex Flows
 
 Your plastic extrusion line has been running perfectly for three years. The Node-RED flow controlling it has grown organically—200+ nodes across 8 tabs, dozens of function nodes with critical calculations, complex error handling developed through hard-won experience. Then your lead engineer announces retirement.
 
@@ -128,7 +131,7 @@ The new engineer faces a daunting task. Which nodes handle the critical temperat
 
 The Flow Explainer transforms this situation. Select any flow or group of nodes, click "Explain," and receive comprehensive documentation in seconds. The AI analyzes node connections, reads function node code, identifies data flows between tabs, and generates clear, structured documentation.
 
-![FlowFuse AI Assistant explaining the purpose and behavior of a complex Node-RED flow in plain language.](./images/flow-expainer-ai.gif){data-zoomable}
+![FlowFuse AI Assistant explaining the purpose and behavior of a complex Node-RED flow in plain language.](./images/flow-explainer-ai.gif){data-zoomable}
 _FlowFuse AI Assistant explaining the purpose and behavior of a complex Node-RED flow in plain language._
 
 The generated documentation includes the purpose of each major section, critical function nodes and their roles, data flow between different parts of the system, error handling and safety logic, and integration points with external systems. This turns tribal knowledge into accessible documentation that new team members can understand immediately.
@@ -141,14 +144,6 @@ However, it cannot debug existing code, create entire flows, or handle undocumen
 
 Always review and test generated code before production use.
 
-## Beyond AI: Smart Suggestions
-
-FlowFuse is also developing Smart Suggestions—a pattern recognition feature that learns from common Node-RED workflows. As you build flows, it suggests which core node to add next based on typical usage patterns.
-
-This complements the AI Assistant by speeding up routine flow construction.
-
-![FlowFuse Smart Suggestions guiding next steps as you build flows.](./images/smart-suggestion.gif){data-zoomable}
-*FlowFuse Smart Suggestions guiding next steps as you build flows.*
 
 ## Start Building Today
 
