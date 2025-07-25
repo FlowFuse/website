@@ -24,6 +24,7 @@ To open a deal, be sure to set the correct properties.
    - Expansions - Upsells that are to be booked in-term
    - Renewal - Changes to the subscription effective on renewal date
 
+
 ## Generating a Quote
 
 Clearly written, easy to understand quotes are crucial for customers to
@@ -43,14 +44,14 @@ purchase term template.
 
 | Item & Description                    | Quantity | Unit Price  | Total  |
 | ------------------------------------- | -------- | ----------- | ------ |
-| FlowFuse Enterprise Platform \- Cloud | 1        | $X,000/year | $X,000 |
-| Enterprise \- Instance Add-On         | 10       | $X,000/year | $X,000 |
-| Enterprise \- Remote Device Add-On    | 10       | $X,000      | $X,000 |
+| FlowFuse Enterprise Platform - Cloud  | 1        | $X,000/year | $X,000 |
+| Enterprise - Instance Add-On          | 10       | $X,000/year | $X,000 |
+| Enterprise - Remote Device Add-On     | 10       | $X,000      | $X,000 |
 
 Annual Subtotal	 $XX,000\
 **Total** $XX,000
 
-**Creating a Quote**
+### Creating a Quote
 
 Follow these steps to create a quote.
 
@@ -80,7 +81,7 @@ Follow these steps to create a quote.
 
 ## Closing a deal
 
-A deal is considered closed when all the outlines steps below are completed.
+A deal is considered closed when all the outlined steps below are completed.
 Starting the closing process can commence when the customer has legally
 committed to purchase our products or services. This commitment must be
 evidenced by one of the following:

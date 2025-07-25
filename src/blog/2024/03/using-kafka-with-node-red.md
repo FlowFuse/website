@@ -3,6 +3,7 @@ title: Using Kafka with Node-Red
 subtitle: Step-by-step Guide to Using Kafka with Node-RED for sending and receiving data.
 description: Learn how to seamlessly integrate Apache Kafka with Node-RED to facilitate real-time data communication. This step-by-step guide covers everything you need to harness the full potential of Kafka in your Node-RED applications.
 date: 2024-03-29
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/03/images/using-kafka-with-node-red.png
 tags:
@@ -136,4 +137,3 @@ Our temperature monitoring system is now complete and ready for deployment. To i
 
 ## Conclusion 
 In this guide, we’ve gone over everything you need to know about how to get started with Kafka and node-red. additionally, in this article, we’re going to focus on solving a problem where the sensor data across the city need to be centrally stored for efficient monitoring and visualization. By solving this problem step-by-step, you’ll understand how to integrate Kafka into your node-red applications.
-

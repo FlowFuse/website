@@ -136,3 +136,7 @@ to discuss a reports underperformance. It's advised not to include the CEO in su
 
 If the board agrees with the CEO underperforming a seperate process will be followed
 tailored to the sitation and the bylaws of FlowFuse.
+
+## Role changes
+
+If a team member experiences a role change because they are promoted, demoted, or taking on new responsibilities, their new role should be announced to the whole company via the "announcements" Slack channel so that all team members are aware. The "why" behind the change does not need to be explained unless it's celebratory.

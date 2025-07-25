@@ -16,6 +16,8 @@ Feedback collection is a crucial part of our product management process, and the
 
 Direct communication with customers is one of the most valuable ways of gaining feedback. Customer calls provide us with rich, qualitative data, and allow us to probe deeper into issues, understanding not only what the problems are, but why they exist and how they impact the customer's experience.
 
+Record customer feedback calls using Fathom per the [Sales Meetings guide](/handbook/sales/meetings/).
+
 For each call document all the learnings to share internally, to start; make a
 copy of [this template](https://docs.google.com/document/d/1_gya2WZTJW0G2CxlsJguLDCJI3eHRILJzd9ICsn5QTs)
 and roughly follow the questions listed.

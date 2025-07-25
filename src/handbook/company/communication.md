@@ -61,6 +61,8 @@ going to talk and lead the discussion. Adding new items to the agenda while the
 meeting is started is good practice and can be leveraged to keep the currently
 discussed item focussed and on-rails.
 
+Customer-facing meetings should be recorded using Fathom (see [Sales Meetings guide](/handbook/sales/meetings/) for details).
+
 ### During the meeting
 
 Meetings start on time by the person with the first item on the agenda, verbalize
