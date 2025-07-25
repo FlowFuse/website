@@ -1,0 +1,147 @@
+---
+layout: layouts/page.njk
+sitemapPriority: 0.80
+meta:
+    description: Purchase your FlowFuse self-hosted license. Get the license you need to run FlowFuse on your own infrastructure with full support and documentation.
+    keywords: FlowFuse self-hosted license, Buy FlowFuse license, Self-hosted Node-RED, FlowFuse purchase
+---
+
+<div class="bg-white">
+    <div class="w-full gradient-bg">
+        <div class="text-center w-full pt-12 pb-6">
+            <h1>FlowFuse <span class="text-indigo-600">Self-Hosted License</span></h1>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 pb-12">
+            <div class="text-center mb-12">
+                <p class="text-xl text-gray-700 mb-6">
+                    Take full control of your Node-RED deployments with FlowFuse Self-Hosted. 
+                    Run FlowFuse on your own infrastructure while maintaining complete data sovereignty.
+                </p>
+            </div>
+
+            <!-- Information Section -->
+            <div class="space-y-12 mb-16">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">FlowFuse Team Tier - Self-Hosted License</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Get the complete FlowFuse Team experience on your own infrastructure. Perfect for teams who need collaborative Node-RED development with full data control.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">What's Included</h3>
+                            <ul class="ff-checklist space-y-3 text-gray-700">
+                                <li>Faster, more powerful, AI-enhanced Node-RED</li>
+                                <li>20 Team members</li>
+                                <li>Team collaboration features</li>
+                                <li>MQTT Broker (8 clients to start)</li>
+                                <li>10 hosted instances or remote instances</li>
+                                <li>Enterprise support</li>
+                                <li>Dedicated Success Management</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Why Self-Hosted?</h3>
+                            <ul class="ff-checklist space-y-3 text-gray-700">
+                                <li>Complete control over your data and infrastructure</li>
+                                <li>Deploy on-premises or in your preferred cloud</li>
+                                <li>Meet strict compliance and security requirements</li>
+                                <li>Customize your deployment to fit your needs</li>
+                                <li>No data leaves your environment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Getting Started</h3>
+                    <div class="grid md:grid-cols-3 gap-6 text-gray-700">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-indigo-600 font-bold text-lg">1</span>
+                            </div>
+                            <p><strong>Purchase your Team license</strong> using the form below</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-indigo-600 font-bold text-lg">2</span>
+                            </div>
+                            <p><strong>Install FlowFuse</strong> following our comprehensive documentation</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-indigo-600 font-bold text-lg">3</span>
+                            </div>
+                            <p><strong>Configure and deploy</strong> for your team's needs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <h3 class="text-lg font-semibold text-blue-900 mb-2">Need Installation Help?</h3>
+                    <p class="text-blue-800 mb-4">
+                        Our comprehensive installation documentation covers everything you need to get your Team tier self-hosted FlowFuse up and running.
+                    </p>
+                    <a href="/docs/install/" class="ff-btn ff-btn--primary">
+                        View Installation Docs
+                    </a>
+                </div>
+            </div>
+
+            <!-- Purchase Form - Full Width -->
+            <div class="bg-gray-50 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Purchase Your Team License</h2>
+                <p class="text-center text-gray-600 mb-8">Starting at $699/month (billed annually)</p>
+                
+                <!-- HubSpot Payment Embed -->
+                <div class="payments-iframe-container" data-src="https://app-eu1.hubspot.com/payments/GCmNzCtzZzjxNY?referrer=PAYMENT_LINK_EMBED&layout=embed-full"></div>
+                <script type="text/javascript" src="https://static.hsappstatic.net/payments-embed/ex/PaymentsEmbedCode.js"></script>
+                
+                <div class="mt-6 text-sm text-gray-600 text-center">
+                    <p>Secure payment processing powered by HubSpot</p>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="mt-16 text-center">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Included with Your License</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            {% include "components/icons/shield-check.svg" %}
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Enterprise Support</h3>
+                        <p class="text-gray-600">Get dedicated support from our team of experts</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            {% include "components/icons/book-open.svg" %}
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Complete Documentation</h3>
+                        <p class="text-gray-600">Step-by-step guides for installation and configuration</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            {% include "components/icons/arrows-pointing-out.svg" %}
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Full Feature Access</h3>
+                        <p class="text-gray-600">Access to all FlowFuse features and capabilities</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mt-16 bg-gray-100 p-8 rounded-lg text-center">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Questions about Self-Hosted FlowFuse?</h3>
+                <p class="text-gray-700 mb-6">
+                    Our team is here to help you choose the right deployment option and get started with self-hosted FlowFuse.
+                </p>
+                <a href="/contact-us" class="ff-btn ff-btn--secondary">
+                    Contact Our Team
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
