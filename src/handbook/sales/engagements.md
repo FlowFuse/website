@@ -6,28 +6,26 @@ navTitle: Engagements & Pricing
 
 Pricing is publicly available at [our pricing page](/pricing/).
 
-## Per-site licenses
-
-Self-hosted FlowFuse installations require a minumum of 10 instances per location or geographic site.
-
 ## Generating a Quote
 
 Clearly written, easy to understand quotes are crucial for customers to understand what they are purchasing and how much it costs. To create a quote, combine the (1) product plan and (2) other purchased items according to the following guide.
 
 ### What to Quote
 
-When preparing a quote, include both the plan and any extras that go beyond what comes with the plan at the designated tier. Include a note in the Terms section that indicates what comes with the plan. (This will be pre-filled when using one of the HubSpot quote templates). The product plan will be listed as its own line, with a quantity of 1, and the minimum purchase price for that plan. The add-on options should also be added to the product section, as referenced by the purchase term template.
+When preparing a quote, include both the plan and any extras that go beyond what comes with the plan at the designated tier.
+Include a note in the Terms section that indicates what comes with the plan. (This will be pre-filled when using one of the HubSpot quote templates).
+The product plan will be listed as its own line, with a quantity of 1, and the minimum purchase price for that plan. The add-on options should also be added to the product section, as referenced by the purchase term template.
 
 | Item & Description | Quantity | Unit Price | Total |
 | ----- | ----- | ----- | ----- |
-| FlowFuse Enterprise Platform \- Cloud | 1 | $X,000/year | $X,000 |
-| Enterprise \- Instance Add-On | 10 | $X,000/year | $X,000 |
-| Enterprise \- Remote Device Add-On | 10 | $X,000 | $X,000 |
+| FlowFuse Enterprise Platform - Cloud | 1 | $X,000/year | $X,000 |
+| Enterprise - Instance Add-On | 10 | $X,000/year | $X,000 |
+| Enterprise - Remote Device Add-On | 10 | $X,000 | $X,000 |
 
-Annual Subtotal	  $XX,000  
-**Total**			  $XX,000
+Annual Subtotal: $XX,000  
+**Total**: $XX,000
 
-**Creating a Quote**
+### Creating a Quote
 
 Follow these steps to create a quote.
 
@@ -36,16 +34,16 @@ Follow these steps to create a quote.
 3. The default Quote creator will be you. Change this if necessary.  
 4. Add Line Items per [the instructions](/handbook/sales/engagements/#what-to-quote)
    * Select the appropriate Plan that is being quoted
-   * For each line item, except Professional Services, check the Billing frequence to `Annual` and if the terms **ensure automatic renewal*
+   * For each line item, except Professional Services, check the Billing frequency to `Annual` and if the terms **ensure automatic renewal**
    * Adjust fields for Term and discount/fee/tax as needed.
-   * Add Add-on line items for purchases that exceed features that are included with the Plan.  
+   * Add Add-on line items for purchases that exceed features that are included with the Plan.
 6. Set Signature and Payment settings as needed. Ensure a countersignature is required from either the CEO or Head of GTM. 
 7. In the Template and Details section, choose the appropriate Quote Template from the dropdown menu. Choosing the correct Quote Template is important because it will pre-fill the correct plan features onto the quote. You can include additional Comments to Buyer or Purchase Terms here. They will not overwrite the Terms and Comments included with the Quote Template.  
 8. Review your Quote, and when everything is correct, click Create to create the quote attached to the relevant Deal.
 
 ## Closing a deal
 
-A deal is considered closed when all the outlines steps below are completed.
+A deal is considered closed when all the outlined steps below are completed.
 Starting the closing process can commence when the customer has legally
 committed to purchase our products or services. This commitment must be
 evidenced by one of the following:
