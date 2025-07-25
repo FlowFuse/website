@@ -54,8 +54,10 @@ awarded on a 4 year vesting schedule with a 1 year cliff.
 
 Employees might be taxed personally when accepting or executing stock options.
 FlowFuse does not provide any advice on financial decisions for employees. For
-FlowFuse employees the Fair Market Value of the underlying stock can be found
-in [this internal document](https://docs.google.com/document/d/1_DmqzQ5rmjYHlBvF5owJpj3JVR_BlJUg_S-pwfRtA5g).
+details on the Stock Options like the 409A valuation or otherwise, please consult
+Carta.
+
+FlowFuse offers employees ISO's where possible, otherwise NSO's will be provided.
 
 Equity grants are subject to board approval. Grants are presented to the Board
 four times per year at official Board Meetings. 
