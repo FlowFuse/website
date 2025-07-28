@@ -88,7 +88,7 @@ This subscribes to all tags in the array with a single request.
 
 When using the "multiple" topic, each value update arrives in OPC UA's DataValue format. Here's what you'll see in the debug panel:
 
-```datavalue
+```
 {
     value: {
         dataType: "Double",
