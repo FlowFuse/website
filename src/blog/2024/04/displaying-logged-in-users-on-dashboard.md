@@ -60,7 +60,7 @@ When running Node-RED Dashboard 2.0 on FlowFuse, you'll have a new tab available
 
 **Option 1: Include Client Data**
 
-By default, this option is enabled. When this option is enabled, an object with user information will be added to the “msg” emitted by any widget of the Node-red Dashboard 2.0.
+By default, this option is enabled. When this option is enabled, an object with user information will be added to the “msg” emitted by any widget of the Node-RED Dashboard 2.0.
 
 **Option 2: Accept Client Constraints**
 

@@ -9,7 +9,7 @@
     "title": "Centralised Instance Management",
     "imageFolder": "./images/pictograms/",
     "imageFile": "instance_blue.png",
-    "imageAlt": " three Node-REd instances grouped in a single place.",
+    "imageAlt": " three Node-RED instances grouped in a single place.",
     "content": "FlowFuse enables seamless management of multiple instances from a single platform, streamlining your development and coordination efforts."
   },
   {
