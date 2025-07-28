@@ -11,7 +11,7 @@ graph TB
     A[NR-File-Nodes package] & C[NR-Project-Nodes package] --> B[NR-launcher package]
     B ----> X[Node-RED container build]
     B --> D[LocalFS package]
-    D --> E[Flowfuse package]
+    D --> E[FlowFuse package]
     E & F[K8s package] --> Y[Flowfuse container build]
     G[File-server package] -----> Z[File-server container build]
     click A href "https://github.com/FlowFuse/nr-file-nodes/blob/main/.github/workflows/publish.yml" "NR-File-Nodes package" _blank
