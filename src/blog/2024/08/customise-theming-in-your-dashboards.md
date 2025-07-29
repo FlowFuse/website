@@ -3,6 +3,7 @@ title: Customise theming in your FlowFuse Dashboard
 subtitle: Customising Headers, Themes, and Layouts in FlowFuse Dashboard
 description: Discover the latest enhancements in FlowFuse Dashboard, including customizable headers, themes, and layout modifications to personalize your dashboard experience.
 date: 2024-08-07
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/customize-theming-flowfuse-dashboard.png
 tags:

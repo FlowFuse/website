@@ -63,6 +63,7 @@
         "@quasibit/eleventy-plugin-schema": "^1.11.0",
         "@xmldom/xmldom": "^0.8.10",
         "codeowners": "^5.1.1",
+        "eleventy-plugin-toc": "^1.1.5",
         "js-yaml": "^4.1.0",
         "markdown-it-attrs": "^4.1.6",
         "netlify-cli": "^22.1.3",

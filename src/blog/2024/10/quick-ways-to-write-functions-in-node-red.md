@@ -3,6 +3,7 @@ title: "Exploring Quick Ways to Write Complex Logic in Function Nodes in Node-RE
 subtitle: "Enhancing Your Node-RED Experience"
 description: "Learn how to efficiently write complex logic in Function Nodes within Node-RED, simplifying your development process and improving your workflows."
 date: 2024-10-09
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/quick-ways-to-write-function-nodes.png
 tags:

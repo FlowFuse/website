@@ -7,9 +7,68 @@ navGroup: Sales & Marketing
 
 Trade shows are valuable opportunities to connect face-to-face with our industry—customers, partners, and potential users alike. They give us the chance to showcase our product in action, gather feedback, and build relationships that don’t always happen through online calls. Participating in a trade show is both a marketing initiative and a team effort, and often represents a significant investment.
 
+## Trade Show Strategy Evolution
 
-## Preparing for a Trade Show as an Exhibitor  
+### From Marketing Initiative to Marketing Platform
 
+#### Traditional Approach
+Previously, having a booth at trade shows was viewed as a standalone marketing initiative focused on:
+
+- **Brand awareness:** Reaching new audiences (trade-show attendees)
+- **Product demonstration:** Showcasing our product to gather feedback and spark interest
+- **Lead capture:** Building our database and providing sales contacts with known use cases
+- **Partner networking:** Opportunities to collaborate with partners for social proof
+
+#### New Strategic Approach
+We now view trade shows as comprehensive marketing platforms with three primary goals:
+
+##### 1. Thought Leadership
+- Establish FlowFuse as an industry thought leader through a structured daily content agenda
+- Deliver scheduled talks, roundtables, and demos throughout the event
+- Create memorable demo experiences that showcase our expertise
+- Ensure all booth staff can deliver a well-crafted pitch consistently
+
+##### 2. Highly Qualified Leads
+- Run targeted pre-event online campaigns focused on our Ideal Customer Profile (ICP)
+- Drive advance registrations to exclusive on-site events
+- Enable advance meeting bookings with team members
+- Attract quality prospects seeking valuable content, not just coffee
+
+##### 3. Sales and POC Opportunities
+- Convert qualified leads into sales conversations and proof-of-concept opportunities
+- Focus on meaningful business outcomes rather than just lead volume
+
+### Partner Strategy Considerations
+Partners can dilute our brand presence. If we include partners in our strategy, their participation must align with our goals through:
+
+- **Cost-Effective Partnership Model:** Joint events where partners sponsor daily agenda/content with FlowFuse case studies at no cost to us
+- **Content Partnerships:** Limited to case studies or roundtable participation only
+- **Booth Concept:** FlowFuse-only stand with amphitheater setup and structured event agenda
+
+### Key Performance Indicators (KPIs)
+Our success metrics have evolved to focus on quality over quantity:
+
+1. Paid campaign conversions (pre-event marketing effectiveness)
+2. Registrations to our booth/events (engagement quality)
+3. Attendance to the events (content relevance)
+4. Leads with phone numbers (qualification level)
+5. Follow-up conversations with sales (conversion potential)
+
+### Booth Traffic Flow Strategy
+**Challenge:** Define clear visitor flow to eliminate browsing, resting, or working at our booth.
+
+**Solution:** Visitors must be either:
+- Informed about our agenda (saw it beforehand through our campaigns)
+- Have scheduled appointments (priority access for sales team and executive meetings)
+
+### Interactive Demo Strategy
+Create a highly visual, interactive demo that engages visitors through clear cause-and-effect demonstrations:
+
+- **Concept**: "Do X with our code/tool and watch Y happen" - immediate, visible results
+- **Engagement**: Interactive elements that demonstrate real-world applications
+- **Memorable Experience**: Consider ambitious concepts like a real working experiment (e.g., a flow-controlled coffee dispensing system)
+
+## Preparing for a Trade Show as an Exhibitor
 Planning a trade show well in advance is crucial. From aligning on the goals and messaging, to making sure we have the right hardware, giveaways, and booth setup—it’s a team effort. We break this down into five areas:
 
 1. **Logistics** – budget, team selection, travel, accommodation, vendors, equipment and giveaways.
@@ -20,7 +79,7 @@ Planning a trade show well in advance is crucial. From aligning on the goals and
 
 ### Logistics
 
-After the decision has been made to attend an event, the first thing that's needed is a budget. This will guide the next steps in the event planning. The CEO is responsible for setting the budget and it should be tracked in a spreadsheet alongside all the logistic details, such as hotel details, team arrival and departure times, plus any relatet matter and added to the relevant folder in the Drive inside [Fairs](https://drive.google.com/drive/folders/1kfbJy6H3DXYlKDd0RZx-psK7ghDmN4BI?usp=drive_link).
+After the decision has been made to attend an event, the first thing that's needed is a budget. This will guide the next steps in the event planning. The CEO is responsible for setting the budget and it should be tracked in a spreadsheet alongside all the logistic details, such as hotel details, team arrival and departure times, plus any related matter and added to the relevant folder in the Drive inside [Fairs](https://drive.google.com/drive/folders/1kfbJy6H3DXYlKDd0RZx-psK7ghDmN4BI?usp=drive_link).
 
 **The planning should start at least six months in advance**, so there's enough time to book hotels and for the team to block their agendas. The on-site team should be proposed by the CEO and CTO. Team size will depend on factors such as the event itself, the number of passes included, booth size, and duration. For a team of 4–5 members, consider:
 - Two sales representatives or Customer Success.
@@ -29,16 +88,16 @@ After the decision has been made to attend an event, the first thing that's need
 
 Create a Slack channel with the proposed team and confirm their availability. The name of the channel should have the following format `#proj-[event-name]-[year]` - e.g. `#proj-hannover-25`. Use this channel to communicate any updates related to the trade show, it will be especially useful during the event as well.
 
-After the team has confirmed their availability, the accomodation should be booked considering:
+After the team has confirmed their availability, the accommodation should be booked considering:
 - Hotels near the venue are preferred over city-central ones.
 - They should include breakfast or at least a fridge in the room to sort that out.
 - Most of the team should arrive a day before the event starts, and the person responsible for setting up and dismantling the demo should arrive two days earlier and maybe leave the day after. It's recommended to check this with the team member before booking the rooms.
 
 #### Four months before the event
 
-The booth vendor search should begin. Get at least three different offers ([here's a list of past and potential vendors](https://docs.google.com/spreadsheets/d/1I2IBOe3gO4B0KEmAUglFWP1aKDMqLsUdzWPFTvbMwQk/edit?usp=sharing)) and consider the **demo** as this impacts the layout, artwork and messaging of the booth. A big plus is having the vendor as near as possible to the venue, so the transport costs are lower and their team is nearby to solve any unforseen issues in a timely manner. Check the options with the CEO and once the vendor is selected, make sure to follow the steps on the [vendor section](/handbook/operations/vendors/) of this handbook to handle all invoices.
+The booth vendor search should begin. Get at least three different offers ([here's a list of past and potential vendors](https://docs.google.com/spreadsheets/d/1I2IBOe3gO4B0KEmAUglFWP1aKDMqLsUdzWPFTvbMwQk/edit?usp=sharing)) and consider the **demo** as this impacts the layout, artwork and messaging of the booth. A big plus is having the vendor as near as possible to the venue, so the transport costs are lower and their team is nearby to solve any unforeseen issues in a timely manner. Check the options with the CEO and once the vendor is selected, make sure to follow the steps on the [vendor section](/handbook/operations/vendors/) of this handbook to handle all invoices.
 
-Provide access to the vendor so their able to order the necessary services such as electricity, upload the booth blueprints for approval, and anything else that's required to build the booth. Take into consideration that these services are provided for an extra cost, same as wi-fi, cleaning, the leads app that need to be order from our side as soon as possible. The available services will vary from fair to fair, it's recommended to check the expenses sheet from past events to get an idea of what might be neeeded and the cost.
+Provide access to the vendor so they're able to order the necessary services such as electricity, upload the booth blueprints for approval, and anything else that's required to build the booth. Take into consideration that these services are provided for an extra cost, same as wi-fi, cleaning, the leads app that need to be order from our side as soon as possible. The available services will vary from fair to fair, it's recommended to check the expenses sheet from past events to get an idea of what might be needed and the cost.
 
 #### Two months before the event
 
@@ -54,17 +113,17 @@ Hold a briefing meeting to share a checklist with the on-site team to prepare fo
 
 The demo is the opportunity to shine at these events, is the way to show FlowFuse in action and how it addresses the pain points of our users. Make it the star of the booth. It should be interactive, shiny and reliable.
 
-The CTO will lead this project alongside the team member in charge of the project and the details must be shared with the person in charge of searching booth vendors **at least for months before the event**, so it can be considered for the layout and technical aspects of the set up.
+The CTO will lead this project alongside the team member in charge of the project and the details must be shared with the person in charge of searching booth vendors **at least four months before the event**, so it can be considered for the layout and technical aspects of the set up.
 
 ### Marketing and Sales
 
-The event itself is a marketing activity, but it should be promoted well in advance to attract the biggest possible audience to the booth. Just waiting for visitors passing by to look at something that grabs their attention in our booth is not nearly enough. The purpose of this event and investment is to streghten relationships with current and potential customers and partners, as well as being discovered by a new audience that might be attending but haven't heard of us before.
+The event itself is a marketing activity, but it should be promoted well in advance to attract the biggest possible audience to the booth. Just waiting for visitors passing by to look at something that grabs their attention in our booth is not nearly enough. The purpose of this event and investment is to stregthen relationships with current and potential customers and partners, as well as being discovered by a new audience that might be attending but haven't heard of us before.
 
-These are the recommended marketing innitiatives to cover the basics, but new proposals and experiments are encouraged as well:
+These are the recommended marketing initiatives to cover the basics, but new proposals and experiments are encouraged as well:
 
 #### Around four months before the event
 
-A landing page of the event should be created, under the `/events/` section. It should include all the relevant information about Flowfuse participation. If by that time all the details haven't been confirmed, start with the basic and iterate. Ideally it should include:
+A landing page of the event should be created, under the `/events/` section. It should include all the relevant information about FlowFuse participation. If by that time all the details haven't been confirmed, start with the basic and iterate. Ideally it should include:
   - What we’re showcasing or demoing at the fair.  
   - Video.  
   - Contact form.  
@@ -78,7 +137,7 @@ If the event provides free passes, send a dedicated email to customers and ICPs 
 
 Research who might be attending to the event, sometimes the event page provides a list of exhibitors or attendees. Make sure to share this list with sales for outreach. Getting meetings booked before the event is the first goal of the promotion efforts.
 
-If there's a partner that won't be attending as an exhibitor, they might be interesting in presenting at our booth. Reach out to see if it's possible to plan a special event that could attract a crowd at the booth and include it in the promotion planning.
+If there's a partner that won't be attending as an exhibitor, they might be interested in presenting at our booth. Reach out to see if it's possible to plan a special event that could attract a crowd at the booth and include it in the promotion planning.
 
 #### Three months before the event
 
@@ -88,7 +147,7 @@ Alongside sales and the CTO, define the booth messaging considering the demo and
 
 Choose the giveaways that align better with the messaging, audience, storage space, budget and that might be useful on a day to day basis. Remember to consider the weight when deciding the amount of items, specially if a team member will be bringing those items as part of their luggage. Check the [logistics](/handbook/marketing/tradeshow/#logistics) section to decide when to order the items.
 
-The on-site team should have some branded attire and business cards, don't forget to include those in the artwork requests and the orders alonside the giveaways.
+The on-site team should have some branded attire and business cards, don't forget to include those in the artwork requests and the orders alongside the giveaways.
 
 All these things are ordered online, the usual vendors are Vistaprint and Stickermule as they usually have an online store for each country, make sure to place the order in the corresponding page so the delivery is possible in a timely manner. 
 
@@ -133,9 +192,9 @@ Make sure to update the video loop for the screens, check the taglines, customer
 
 ### On-site team
 
-The team should confirm their availablity around six months before the event, when they're invited to the trade show.
+The team should confirm their availability around six months before the event, when they're invited to the trade show.
 
-As part of the logistics planning, a booth schedule will be created and accomodation will be booked. Considering those things, travels should be planned and booked two months in advance.
+As part of the logistics planning, a booth schedule will be created and accommodation will be booked. Considering those things, travels should be planned and booked two months in advance.
 
 If anyone wishes to take days off after the event, it would be ideal to add the out of office event to the team and personal calendars right after booking the travel tickets, so the retrospective meeting can be planned ahead of time considering the team availability.
 
@@ -146,8 +205,8 @@ At arrival, the team should ensure to check all the items on the list, follow th
 ## Preparing for a Trade Show as visitor
 
 When visiting a trade show you should prepare your trip. Fairs usually publish a
-list of exhibitioners. Scan that list with names you want to visit, and write
-these in a document. Than order that list based on stand location. Fairs can
+list of exhibitors. Scan that list with names you want to visit, and write
+these in a document. Then order that list based on stand location. Fairs can
 become rather big, and going back and forth over the area doesn't scale. Review
 also [the traveling salesperson problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem).
 
@@ -158,7 +217,7 @@ serve a purpose and are easy to give out.
 
 Each conversation you have and stand you visit, try to understand who you want
 to talk to and what your goal is. It's OK to ask someone at the booth if they're
-the right person to talk them.
+the right person to talk to.
 
 Keep your phone in your pocket at all times, give full attention to the person
 you're talking to. Reply to missed messages and calls after you've left the

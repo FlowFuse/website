@@ -3,6 +3,7 @@ title: Securing Node-RED
 subtitle: Step-by-step guide for securing your Node-RED projects.
 description: Explore essential steps for securing Node-RED projects, from LAN access control to encrypted traffic, ensuring robust protection for your projects.
 date: 2023-04-05
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /blog/2023/04/images/security-header.png
 tags:
@@ -142,9 +143,9 @@ If you follow these steps you should be on the right path to running a more secu
 
 In this article, I've focussed on hosting Node-RED on a Pi on your own LAN but if you use FlowFuse Cloud to host Node-RED the solutions discussed above are either ready out of the box or are not needed.
 
-By default, the editor for Node-RED is protected using your FlowFuse user credentials. You can also use SSO to further protect your user accounts and give access to Node-RED to your team members.
+By default, the Node-RED editor is secured using your FlowFuse user credentials. You can also enable SSO to enhance account security and easily grant access to team members. With role-based access control, you can further protect your flows by managing who can view or edit them.
 
-All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates so you can spend time on your flows rather than configuring security.
+All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates, so you can spend time on your flows rather than configuring security. Additionally, remote device access is secured through encrypted tunnels, providing comprehensive protection for your deployments.
 
 FlowFuse has a [free trial]({{ site.appURL }}/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
 

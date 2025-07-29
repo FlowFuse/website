@@ -70,6 +70,12 @@ Whether writing an email, blog post, tweet, UI message, or sales pitch:
 - **Avoid filler.** If a sentence doesn’t help communicate value, cut it.
 - **Sound human.** Write like someone who’s been in the room — and understands.
 
+## Terminology & Style Guidelines
+
+### Node-RED
+
+Node-RED should always be written with a hyphen and this specific capitalization: **Node-RED**. Never "node-red", "NodeRED", or "Node Red". This applies everywhere where applicable, especially in external communications: documentation, blog posts, social media, and emails.
+
 ## Examples of Tone in Action
 
 **✅ Aligned Example:**

@@ -58,7 +58,7 @@ Similarly, install one more package `@flowfuse/node-red-dashboard`. This package
 
 When using Modbus for communication, it is necessary to have a Modbus server, which acts as a middleman. In our case we are building that server on the Node-RED instance running on PLC running a motor turning a belt with a belt scale. 
 
-![Configuring the Modbus server node](./images/modbus-with-node-red-chart-based-profile.png "Configuring the Modbus server node")
+![Configuring the Modbus server node](./images/modbus-server.png "Configuring the Modbus server node")
 
 Add the Modbus server node and configure it as shown in the above image. This node is set to handle up to 1000 coils, discrete inputs, holding registers, and input registers. This means the server can manage up to 1000 binary states for control, monitor 1000 binary states, store up to 1000 read/write data points, and monitor 1000 read-only data points.
 Setting these parameters to 1000 allows the server to handle a broad range of devices and data points within your Modbus network, ensuring flexibility and scalability.
