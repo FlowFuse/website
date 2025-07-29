@@ -8,8 +8,9 @@ image: # TODO
 tags:
    - flowfuse
    - node-red
-   - certified-nodes
-   - developers
+   - Open Source Software
+   - DX
+   - Digital Transformation
 ---
 
 The manufacturing sector is in an interesting situation. It's caught between a
