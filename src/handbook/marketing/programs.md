@@ -45,3 +45,78 @@ This area focuses on empowering our existing customers to become advocates for o
 ## 5. Strategic Partnerships
 
 * **[Partner Program](/handbook/sales/partnerships/)**: In close collaboration with the Sales team, this program focuses on building and nurturing relationships with technology partners and solution providers to expand our reach, enter new markets, and create co-marketing opportunities.
+
+## 6. New Marketing Campaigns Process
+Any team member can propose a new marketing campaign. This process ensures all proposals are evaluated consistently and that approved campaigns align with our strategic objectives.
+
+**Required Elements for All Campaign Proposals**
+Every campaign proposal must include the following 5 components:
+
+**a. Objective and Rationale**
+Clearly define what you want to achieve with this campaign
+Explain why this campaign is needed now
+Connect the proposal to current business objectives or challenges
+
+**b. Target Audience**
+Describe specifically who the campaign is targeting
+Include relevant demographics, behaviors, or characteristics
+Explain why this audience is important to our business
+
+**c. Key Message and Value Proposition**
+Articulate the main message we want to communicate
+Explain what benefit or value we're offering to the target audience
+Define the proposed tone and communication style
+
+**d. Suggested Channels and Tactics**
+Specify which marketing channels you recommend using
+Suggest specific tactics (social media, email, events, content, etc.)
+Justify why these channels are most appropriate for this campaign
+
+**e. Resources and Budget Estimate**
+Provide an estimated budget (can be approximate)
+Identify what human resources would be needed
+Specify if external tools, services, or vendors are required
+
+**Submission Process**
+
+Complete the proposal template with all required elements above
+Submit your proposal to the marketing team via Slack
+
+Evaluation period: Allow 5-7 business days for full review and discussion
+Decision notification: You'll receive feedback and approval status
+
+Next steps: If approved, the marketing team will work with you on implementation planning
+
+Evaluation Criteria
+The marketing team will evaluate proposals based on:
+
+Alignment with company goals and brand strategy
+Feasibility within current resources and timeline
+Potential ROI and impact
+Audience relevance and market opportunity
+Integration with existing marketing initiatives
+
+**New Marketing Campaign Template**
+
+Campaign Name: [Proposed name]
+
+Proposed by: [Your name and department]
+
+Date: [Submission date]
+
+1. Objective and Rationale
+[Your response here]
+
+2. Target Audience
+[Your response here]
+
+3. Key Message and Value Proposition
+[Your response here]
+
+4. Suggested Channels and Tactics
+[Your response here]
+
+5. Resources and Budget Estimate
+[Your response here]
+
+Questions? Contact the marketing team via Slack
