@@ -42,7 +42,7 @@ checking account. Wiring instructions to be shared by the rep are found in
 
 ### Dun & Bradstreet
 
-FlowFuse's Dun and Bradstreet ID is: 11-899-4742
+FlowFuse's Dun (DUNS number) and Bradstreet ID is: 11-899-4742
 
 ### NAICS code
 
