@@ -359,28 +359,28 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
             <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/isabella.jpg">
             <label class="block mt-2 font-medium text-2xl">Isabella</label>
-            <label class="block">Architect / IIoT Project Lead</label>
+        <label class="block">IIoT Project Lead & Industrial IT Architect</label>
         </div>
         <div class="py-2">
             <div class="flex flex-col">
                 <label class="font-bold">Age:</label>
-                <span class="leading-6">32</span>
+                <span class="leading-6">35–52</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Occupation:</label>
-                <span class="leading-6">Architect / Project Manager / Team Lead, Manufacturing Inc.</span>
+                <span class="leading-6">Head of Industrial IT / IIoT Project Lead / IT-OT Architect / Digital Transformation Lead at manufacturing organizations (single plant to multi-plant international groups)</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Purchasing Role:</label>
-                <span class="leading-6">$7k, High Influence</span>
+                <span class="leading-6">$50k–$500k+ budget authority, Strategic buyer and technical influencer</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Technical Skillset:</label>
-                <span class="leading-6">Business Computer Science (MSc)</span>
+                <span class="leading-6">Deep industrial networking, protocols (OPC UA, MQTT, Modbus), cloud/edge architectures, cybersecurity, enterprise IT. Often self-taught, stays current through industry events.</span>
             </div>
             <div class="flex flex-col mt-1">
                 <label class="font-bold">Node-RED Experience:</label>
-                <span class="leading-6">Has seen Node-RED implemented in factories</span>
+                <span class="leading-6">Familiar with Node-RED as flexible integration tool. Experience from plant implementations to multi-site POCs. Seeks scalable, enterprise-ready solutions.</span>
             </div>
         </div>
     </div>
@@ -388,45 +388,54 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Job to be done:</label>
             <ul>
-                <li>Reports to <a href="#paul%2C-plant-manager">Paul</a>, but acts as strategic advisor for tech decisions.</li>
-                <li>Definition of IT/OT architecture on machine, line, plant and global level</li>
-                <li>Coordination and handover to Operations for operation of software components</li>
-                <li>Define and implement connectivity of machines</li>
+                <li>Architect and deploy unified, scalable data collection and management platform across manufacturing sites</li>
+                <li>Enable secure, reliable, cost-effective access to operational data for analytics and business intelligence</li>
+                <li>Define IT/OT architecture from machine level to global enterprise level</li>
+                <li>Coordinate handover to Operations for software component management</li>
+                <li>Manage integration of new facilities via M&A or expansion</li>
                 <li>Interface between IT department and OT departments</li>
             </ul>
         </div>
         <div class="flex flex-col">
             <label class="font-bold">Motivations:</label>
             <ul>
-                <li>Deliver measurable business value through scalable technology</li>
-                <li>Be a driver of digital transformation and IIoT maturity</li>
-                <li>Reduce complexity across the tech stack</li>
-                <li>See IIoT topics growing</li>
+                <li>Deliver measurable business value through scalable, reliable technology solutions</li>
+                <li>Drive digital transformation and increase IIoT maturity across organization</li>
+                <li>Reduce complexity across tech stack while enabling operational excellence</li>
+                <li>Build future-proof data infrastructure supporting business growth</li>
+                <li>Demonstrate clear ROI and strategic value of IT investments to stakeholders</li>
             </ul>
         </div>
         <div class="flex flex-col">
             <label>Influences:</label>
             <ul>
-                <li>LinkedIn</li>
-                <li>Conferences</li>
-                <li>Podcasts</li>
-                <li>Personal Network</li>
+                <li>Peer recommendations and industry analyst reports</li>
+                <li>Technical communities (Node-RED forums, IIoT networks)</li>
+                <li>Industry conferences, podcasts, professional networks</li>
+                <li>Direct POC results and reference cases from similar manufacturers</li>
+                <li>System integrators and technology partners</li>
             </ul>
         </div>
         <div class="flex flex-col">
             <label>Needs & Expectations:</label>
             <ul>
-                <li>Tools that interacts with industrial equipment and can provide data to other software applications</li>
-                <li>Clear, standards-compliant architecture documentation</li>
-                <li>Easy way to visualize data</li>
-                <li>Stable and high available software</li>
+                <li>Tools that interact seamlessly with industrial equipment and provide data to enterprise systems</li>
+                <li>Centralized management across multiple plants with flexible licensing</li>
+                <li>Seamless multi-protocol support with high availability and redundancy</li>
+                <li>Standards-compliant solutions with enterprise-grade security</li>
+                <li>Ability to quickly onboard new facilities and integrate acquired systems</li>
+                <li>Vendor-neutral approach with clear architecture documentation</li>
             </ul>
         </div>
         <div class="flex flex-col">
             <label>Biggest Challenges:</label>
             <ul>
-                <li>Identifying added value for production</li>
-                <li>Establishing IIoT standards</li>
+                <li>Legacy solutions difficult to scale, requiring excessive manual intervention</li>
+                <li>Systems tied to specific vendors or Windows-based platforms creating lock-in</li>
+                <li>Establishing and maintaining IIoT standards across diverse manufacturing environments</li>
+                <li>Managing complexity while ensuring high availability and security</li>
+                <li>Proving added value and ROI to production stakeholders and executive leadership</li>
+                <li>Rapidly integrating new plants and acquired company systems</li>
             </ul>
         </div>
     </div>
