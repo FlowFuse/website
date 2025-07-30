@@ -10,6 +10,8 @@ The Chief of Staff (or Founder's Associate, as the role is often known in Europe
 
 This role is ideal for someone who thrives in a fast-paced environment, can seamlessly switch between high-level strategic thinking and hands-on execution, and possesses exceptional interpersonal and communication skills. This role provides a holistic view of building and scaling a successful company. This role is not an extension of an Executive Assistant role.
 
+The Chief of Staff is always located in the CEO's timezone. This is always a hard requirement for the role.
+
 You:
 * Lead and manage key strategic projects from conception to completion, often cross-departmental and high-priority, on behalf of the CEO
 * Streamline internal workflows to enhance organizational effectiveness and productivity
