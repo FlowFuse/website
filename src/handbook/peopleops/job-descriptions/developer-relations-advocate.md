@@ -46,7 +46,7 @@ The Developer Relations Advocate skill set includes:
 
 ## 90-Day Plan
 
-### Week 1-4: Foundation & FlowFuse Immersion
+* Week 1-4: Foundation & FlowFuse Immersion
 - **Product Deep Dive:** Familiarize yourself with the FlowFuse product, platform capabilities, Node-RED ecosystem, and target customer profiles
 - **Internal Alignment:** Meet with key internal stakeholders across Marketing, Sales, Product, and Engineering teams to understand positioning, messaging, and go-to-market strategies
 - **Content Audit:** Review existing marketing materials, technical documentation, blog content, and community engagement efforts to identify gaps and opportunities
