@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.20: Revolutionary FlowFuse Tables, Enhanced AI Assistance, and Streamlined Application Management"
-subtitle: "Introducing FlowFuse Tables for data storage, Tables nodes for dashboard visualization, Smart Suggestions in the AI Assistant, RAG Blueprint for intelligent applications, and a redesigned Applications page for better workflow management."
-description: "Introducing FlowFuse Tables for data storage, Tables nodes for dashboard visualization, Smart Suggestions in the AI Assistant, RAG Blueprint for intelligent applications, and a redesigned Applications page for better workflow management."
+title: "FlowFuse 2.20: FlowFuse Tables Database Offering, Smart Suggestions for Node-RED, More Powerful Instances, and Streamlined Applications Management"
+subtitle: "Introducing FlowFuse Tables for data storage, Tables nodes for database querying, Smart Suggestions in the Node-RED editor, More Powerful Instances, Retrieval Augmented Generation Blueprint for building intelligent applications, and a redesigned Applications page for better workspace management."
+description: "Introducing FlowFuse Tables for data storage, Tables nodes for dashboard visualization, Smart Suggestions in the Node-RED editor, More Powerful Starter tier, Retrieval Augmented Generation Blueprint for intelligent applications, and a redesigned Applications page for better workspace management."
 date: 2025-07-31
 authors: ["greg-stoutenburg"]
 image: /blog/2025/07/images/release-2-20.png
@@ -11,7 +11,7 @@ tags:
    - releases
 ---
 
-This release represents a major leap forward in FlowFuse's data management and AI capabilities, introducing our revolutionary FlowFuse Tables database solution alongside enhanced AI assistance features and a streamlined user interface. These improvements significantly reduce development time while expanding the possibilities for industrial data applications.
+This release represents a major leap forward in FlowFuse's data management and AI capabilities, introducing our new FlowFuse Tables database feature, along with enhanced AI assistance features and a streamlined user interface. These improvements make FlowFuse a complete solution for building industrial applications, even while reducing development time.
 
 <!--more-->
 
@@ -20,70 +20,40 @@ This release represents a major leap forward in FlowFuse's data management and A
 ![Screenshot of FlowFuse Tables](./images/flowfuse-tables.png)
 _Screenshot of FlowFuse Tables_
 
-FlowFuse Tables transforms how you store and manage data within your industrial applications. This comprehensive database offering provides both historian/timeseries and structured SQL database capabilities specifically designed for critical systems like UNS, MES, SCADA, and ERP.
+FlowFuse Tables is our in-app database feature that allows you to control your data right within the FlowFuse app. This comprehensive database offering comes with FlowFuse's enterprise-grade security and application management abilities and enables building critical systems like MES and ERP.
 
-Key features include:
-
-- **Flexible Database Options**: Choose between timeseries databases for historian data or SQL databases for structured data
-- **Industrial Application Focus**: Optimized for manufacturing and industrial use cases
-- **Seamless Integration**: Native integration with your existing FlowFuse instances and Node-RED flows
-- **Enterprise Reliability**: Built for mission-critical applications with robust performance and security
-
-FlowFuse Tables eliminates the complexity of setting up and managing separate database infrastructure, allowing you to focus on building applications that drive operational efficiency.
-
-## Tables Nodes: Advanced Data Visualization
-
-![Screenshot of Tables Nodes in Dashboard](./images/tables-nodes.png)
-_Screenshot of Tables Nodes_
-
-Building on our Dashboard 2.0 foundation, the new Tables nodes provide powerful data visualization capabilities with enhanced interactivity and customization options. These nodes offer:
-
-- **Dynamic Color Coding**: Automatically color-code table cells based on thresholds and values
-- **Interactive Data Selection**: Click-to-select functionality with both single-row and multi-row checkbox selection
-- **Responsive Design**: Automatically adapts to mobile and narrow layouts with card views
-- **Advanced Cell Types**: Support for text, progress bars, sparkline charts, and custom content
-- **Built-in Search**: Integrated search functionality for large datasets
-
-The Tables nodes make it easier than ever to create professional data displays that help operators quickly identify trends, anomalies, and actionable insights.
+FlowFuse Tables eliminates the complexity of setting up and managing separate database infrastructure, allowing you to focus on building applications that drive operational efficiency. Along with Tables, we have shipped a Tables query node that is automatically aware of your Tables configuration.
 
 ## Smart Suggestions: AI-Powered Development Assistance
 
 ![Screenshot of Smart Suggestions](./images/smart-suggestions.png)
 _Screenshot of Smart Suggestions in Action_
 
-Our FlowFuse Assistant now includes Smart Suggestions, an intelligent code completion and recommendation system that accelerates Node-RED development. This enhancement provides:
+Development in Node-RED is now even faster with Smart Suggestions, an intelligent code completion and recommendation system that provides intelligent next-node recommendations based on your current flow context and node configurations. With Smart Suggestions, as you build in Node-RED, a constantly updating context menu provides recommendations automatically, which you can accept and have placed next in your flow, or revise as you move forward.
 
-- **Context-Aware Suggestions**: Intelligent recommendations based on your current flow context and node configurations
-- **Multi-Language Support**: Generate code suggestions in JavaScript, Python, and other supported languages
-- **Pattern Recognition**: Learn from your coding patterns to provide increasingly relevant suggestions
-- **Error Prevention**: Proactive suggestions to avoid common coding mistakes and security vulnerabilities
+This work is enabled by a custom MCP server run within FlowFuse, which will further power additional development enhancements specific to application development in FlowFuse.
 
-Smart Suggestions reduces development time by anticipating your needs and providing relevant code snippets, function templates, and configuration recommendations as you build your flows.
+## More Powerful "Small" Instances
 
-## RAG Blueprint: Intelligent Knowledge Applications
+Based on user feedback and our own review of instance performance, we have increased the CPU and memory of "small" instances. This will have the immediate benefit of preventing slowdowns and loading issues for all Starter and Team customers.  
 
-![Screenshot of RAG Blueprint](./images/rag-blueprint.png)
-_Screenshot of RAG Blueprint Implementation_
+## Blueprint: Retrieval Augmented Generation
 
-The new RAG (Retrieval-Augmented Generation) Blueprint enables you to quickly build intelligent applications that combine your proprietary data with AI capabilities. This blueprint provides:
+<p><video src="https://website-data.s3.eu-west-1.amazonaws.com/Blueprint+-+Open+AI+RAG.mp4" controls=""></video></p>
 
-- **Pre-built AI Workflows**: Ready-to-use flows for document ingestion, embedding generation, and intelligent query processing
-- **Flexible Data Integration**: Connect to various data sources including databases, file systems, and APIs
-- **Customizable AI Models**: Support for multiple LLM providers and model configurations
-- **Industrial Use Cases**: Optimized for manufacturing documentation, maintenance procedures, and operational knowledge bases
+The new RAG (Retrieval Augmented Generation) Blueprint enables you to train your own LLM agents that combine your proprietary data with AI capabilities. This Blueprint provides two flows: one that adds text into Node-RED's flow context store and uses it to train an OpenAI agent, so you can query the content of the flow directly; and one flow that scrapes websites to train an OpenAI agent so that content can be queried and used as well.
 
-The RAG Blueprint democratizes AI implementation, making it easy to create intelligent applications that leverage your organizational knowledge without requiring deep AI expertise.
+The RAG Blueprint makes it easy to create intelligent agents that leverage your organizational knowledge without requiring deep AI expertise. See it here: [RAG Blueprint](https://flowfuse.com/blueprints/ai/rag-chat-agent/).
 
 ## Redesigned Applications Page
 
-![Screenshot of New Applications Page](./images/applications-page.png)
+![Screenshot of New Applications Page](./07/images/applications.png)
 _Screenshot of Redesigned Applications Page_
 
-Based on user feedback showing that nearly 50% of users navigate directly to Instance and Device pages, we've completely redesigned the Applications experience. The new structure includes:
+With the new FlowFuse Home page in place, we have greatly streamlined the Applications page. The new structure includes:
 
 - **Streamlined Navigation**: Applications now appear under Instances in the navigation hierarchy
 - **Focused Overview Page**: A clean interface that prioritizes recent team activity and recently deployed instances
-- **Quick Access Favorites**: Star your most-used instances for immediate access
 - **Performance Optimizations**: Faster page loading and improved responsiveness
 - **Reduced Cognitive Load**: Eliminated the overwhelming number of call-to-action buttons from the previous design
 
@@ -91,9 +61,9 @@ This redesign creates a more intuitive workflow that aligns with how teams actua
 
 ## What's Next?
 
-Our development roadmap continues to focus on AI integration and enterprise data management. Upcoming releases will expand FlowFuse Tables with additional database types and advanced analytics capabilities, while our AI Assistant will gain more sophisticated workflow automation features.
+Our development roadmap continues to focus on AI integration and enterprise data management. Upcoming releases will expand FlowFuse Tables with additional database types and analytics capabilities, while our AI Assistant will gain more sophisticated workflow automation features.
 
-We're also working on enhanced Blueprint offerings and deeper integration between our AI capabilities and industrial data sources, with several exciting announcements planned for the coming months.
+We're also working on enhanced Blueprint offerings and deeper integration between our AI capabilities and industrial data sources, with several exciting announcements planned for the coming months!
 
 ## What else is new?
 
