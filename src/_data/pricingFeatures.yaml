@@ -137,7 +137,7 @@ sections:
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"      
       - id: performance
-        label: Performance
+        label: Performance Monitoring
         cloudValues: [ null, null, 'check' ]
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
