@@ -130,4 +130,3 @@ To apply, please submit:
 - **Portfolio** of content creation work (blog posts, presentations, videos, or other relevant materials)
 - **Examples** of community engagement or contributions to open-source projects
 
-We are an equal opportunity employer committed to diversity and inclusion. We welcome applications from all qualified candidates regardless of race, gender, age, religion, sexual orientation, or disability status.
