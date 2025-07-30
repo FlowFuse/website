@@ -85,7 +85,7 @@ what was possible with digital systems, and combining these systems with one
 another in new ways. The manufacturers were driving innovation in the software
 industry and gaining real momentous ROI.
 
-Since the late seventies, software became a copywritable good, and with a shift
+Since the late seventies, software became a copywrightable good, and with a shift
 happened mostly in traditional applications of the software – Vendor Lock-In.
 
 Vendor lock-in is an economic and technical condition where a customer becomes
