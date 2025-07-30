@@ -48,85 +48,37 @@ The Developer Relations Advocate skill set includes:
 
 * Week 1-4: Foundation & FlowFuse Immersion
    * **Product Deep Dive:** Familiarize yourself with the FlowFuse product, platform capabilities, Node-RED ecosystem, and target customer profiles
-- **Internal Alignment:** Meet with key internal stakeholders across Marketing, Sales, Product, and Engineering teams to understand positioning, messaging, and go-to-market strategies
-- **Content Audit:** Review existing marketing materials, technical documentation, blog content, and community engagement efforts to identify gaps and opportunities
-- **Community Research:** Map the Node-RED and industrial automation community landscape, identifying key influencers, forums, events, and content creators
-- **Marketing Integration:** Begin collaborating with the marketing team on content calendar planning and campaign alignment
-- **Initial Content Creation:** Start producing introductory content (blog posts, social media content) to establish your voice within the FlowFuse brand
+   * **Internal Alignment:** Meet with key internal stakeholders across Marketing, Sales, Product, and Engineering teams to understand positioning, messaging, and go-to-market strategies
+   * **Content Audit:** Review existing marketing materials, technical documentation, blog content, and community engagement efforts to identify gaps and opportunities
+   * **Community Research:** Map the Node-RED and industrial automation community landscape, identifying key influencers, forums, events, and content creators
+   * **Marketing Integration:** Begin collaborating with the marketing team on content calendar planning and campaign alignment
+   * **Initial Content Creation:** Start producing introductory content (blog posts, social media content) to establish your voice within the FlowFuse brand
 
-### Week 5-8: Community Engagement & Content Production
-- **Active Community Participation:** Begin engaging actively in Node-RED forums, Discord channels, GitHub discussions, and industrial automation communities
-- **Content Creation Acceleration:** Develop and publish technical tutorials, demo videos, and case studies showcasing FlowFuse's industrial applications
-- **Speaking Opportunities:** Identify and apply for speaking slots at upcoming conferences, webinars, and meetups
-- **Partnership Exploration:** Research potential strategic partnerships with complementary tools, system integrators, and technology providers
-- **Lead Generation Integration:** Work with marketing to develop lead magnets and technical content that supports demand generation efforts
-- **Community Feedback Collection:** Start gathering feedback from community interactions to inform product and marketing strategies
+* Week 5-8: Community Engagement & Content Production
+   * **Active Community Participation:** Begin engaging actively in Node-RED forums, Discord channels, GitHub discussions, and industrial automation communities
+   * **Content Creation Acceleration:** Develop and publish technical tutorials, demo videos, and case studies showcasing FlowFuse's industrial applications
+   * **Speaking Opportunities:** Identify and apply for speaking slots at upcoming conferences, webinars, and meetups
+   * **Partnership Exploration:** Research potential strategic partnerships with complementary tools, system integrators, and technology providers
+   * **Lead Generation Integration:** Work with marketing to develop lead magnets and technical content that supports demand generation efforts
+   * **Community Feedback Collection:** Start gathering feedback from community interactions to inform product and marketing strategies
 
-### Week 9-13: Strategic Impact & Growth Initiatives
-- **Conference Speaking & Events:** Deliver your first technical presentations representing FlowFuse at industry events or webinars
-- **Content Strategy Optimization:** Analyze performance metrics of your content and optimize based on engagement data and lead generation results
-- **Strategic Partnership Development:** Initiate conversations with identified strategic partners for content collaboration and co-marketing opportunities
-- **Community Leadership:** Take on leadership roles in relevant communities, potentially organizing meetups or contributing to open-source projects
-- **Marketing Campaign Support:** Collaborate on multi-channel marketing campaigns that integrate developer relations activities with broader marketing initiatives
-- **Success Metrics Establishment:** Develop and implement tracking systems for DevRel-specific KPIs including community growth, content engagement, and qualified lead generation
-
-
-## Hiring Process
-
-### Initial Screening
-Review resumes and cover letters to assess candidate qualifications, developer relations experience, content creation portfolio, and alignment with FlowFuse's mission in industrial automation.
-
-### First Interview (Technical & Communication Assessment)
-Conduct a phone or video interview to evaluate:
-- Node-RED and industrial automation knowledge
-- Communication skills and ability to explain technical concepts
-- Understanding of developer community dynamics
-- Experience with content creation and community engagement
-
-### Second Interview (Marketing Alignment & DevRel Strategy)
-In-depth interview with the hiring manager and marketing team members to discuss:
-- Experience in marketing-focused developer relations roles
-- Approach to content strategy and audience engagement
-- Understanding of B2B SaaS marketing and lead generation
-- Collaboration experience with marketing, sales, and product teams
-
-### Content Creation Portfolio Review
-Candidate will present their content creation portfolio and discuss:
-- Examples of technical content that drove engagement or business results
-- Community building initiatives they've led or contributed to
-- Approach to measuring content effectiveness and community impact
-- Ideas for FlowFuse-specific content and community engagement strategies
-
-### Community & Evangelism Case Study
-Candidate will prepare and present a 20-minute case study on:
-- How they would approach building awareness for FlowFuse in the Node-RED community
-- A specific content strategy for engaging industrial automation professionals
-- Ideas for partnerships and community initiatives that align with marketing objectives
-
-### STAR Interview (Behavioral Alignment)
-Behavioral interview focusing on:
-- Past experiences in cross-functional collaboration, especially with marketing teams
-- Examples of handling competing priorities between community needs and business objectives
-- Situations demonstrating adaptability in fast-paced, evolving markets
-- Alignment with FlowFuse's values and approach to community engagement
-
-### Final Interview
-Final interview with key stakeholders, including marketing leadership and potentially executive team members, to assess:
-- Strategic thinking about developer relations in the context of overall marketing strategy
-- Executive presence and ability to represent FlowFuse at industry events
-- Long-term vision for growing FlowFuse's presence in developer communities
-
-### Offer
-Extend an offer to the selected candidate.
+* Week 9-13: Strategic Impact & Growth Initiatives
+   * **Conference Speaking & Events:** Deliver your first technical presentations representing FlowFuse at industry events or webinars
+   * **Content Strategy Optimization:** Analyze performance metrics of your content and optimize based on engagement data and lead generation results
+   * **Strategic Partnership Development:** Initiate conversations with identified strategic partners for content collaboration and co-marketing opportunities
+   * **Community Leadership:** Take on leadership roles in relevant communities, potentially organizing meetups or contributing to open-source projects
+   * **Marketing Campaign Support:** Collaborate on multi-channel marketing campaigns that integrate developer relations activities with broader marketing initiatives
+   * **Success Metrics Establishment:** Develop and implement tracking systems for DevRel-specific KPIs including community growth, content engagement, and qualified lead generation
 
 ---
 
-## Application Process
+## Hiring Plan
 
-To apply, please submit:
+1. Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
+2. First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
+3. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
+4. Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample.
+5. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
+6. Offer: Extend an offer to the selected candidate.
 
-- **Resume** highlighting relevant experience in developer relations, technical evangelism, or related fields
-- **Cover letter** explaining your interest in FlowFuse and how your experience aligns with our mission
-- **Portfolio** of content creation work (blog posts, presentations, videos, or other relevant materials)
-- **Examples** of community engagement or contributions to open-source projects
 
