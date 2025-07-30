@@ -21,6 +21,8 @@ globally over the next decade. For manufacturers, this is more than just an
 opportunity for incremental improvement; it is a fundamental shift to
 competitiveness.
 
+<!--more-->
+
 Yet, on the other hand, a starkly different narrative is heard from the factory
 floor. Despite the commitment of many IT and OT teams, paired with colossal
 investment, the path to digitalization is proving to be unexpectedly slow. About
