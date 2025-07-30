@@ -51,7 +51,7 @@ executives), a faster time-to-market for new products (36%), and an improved
 customer experience (35%).
 
 To understand the paradox, one must dissect why manufacturing initiatives fail.
-These challenges are connected with one-another, and a symptom from more
+These challenges are connected with one-another, and are symptom from more
 systemic issues. Financial constraints and ROI, particularly high initial costs
 for hardware, software, and integration, coupled with pressure for rapid ROI,
 create a catch-22. DX is now viewed as a cost center rather than a source of
