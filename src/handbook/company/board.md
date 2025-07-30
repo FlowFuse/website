@@ -24,11 +24,12 @@ In the email where we send the pre-watch, we should also include the key metrics
 
 ### Structure
 
-The 90 minutes of each meeting are structured in the following time blocks:
+The 120 minutes of each meeting are structured in the following time blocks:
 
-* 15 minutes Metrics and Company Performance - The company presents key metrics, comparing against the plan and updates projections. The figures will be distributed well in advance, and as such the discussion should be focussed on the reflections of the numbers.
-* 60 minutes Strategic Discussion - In the Strategic Discussion portion, we will focus on one or two (but no more) key topics of focus for the business for discussion. Prior context is shared through the prewatch.
-* 15 minutes "Any other business" - Providing an open forum for board members and observers to raise additional topics, propose motions, or conduct votes, such as those related to stock options or other pertinent matters. It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
+* 30 minutes Metrics and Company Performance - The company presents key metrics, comparing against the plan and updates projections. The figures will be distributed well in advance, and as such the discussion should be focussed on the reflections of the numbers.
+   * 15 minutes (of this 30) on Plan vs Actual Performance
+* 60 minutes Strategic Discussion - In the Strategic Discussion portion, we will focus on one to three (but no more) key topics of focus for the business for discussion. Prior context is shared through the prewatch.
+* 30 minutes "Routine business" (Closed portion of meeting) - Providing an open forum for board members and observers to raise additional topics. In this Closed portion of the meeting, we will always cover: Stock Option Approvals, Approval of previous meeting's minutes, Compensation matters related to team members over 200K USD. It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
 
 It is the CEO's responsibility to manage time in the meeting.
 
