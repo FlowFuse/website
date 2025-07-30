@@ -43,7 +43,6 @@ The Developer Relations Advocate skill set includes:
 * CRM & Analytics Proficiency: Ability to identify and qualify business opportunities using CRM tools such as HubSpot, Salesforce, or similar platforms. Experience with lead scoring, pipeline management, and opportunity tracking.
 
 
----
 
 ## 90-Day Plan
 
