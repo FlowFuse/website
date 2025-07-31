@@ -4,7 +4,7 @@ subtitle: "Introducing FlowFuse Tables for data storage, Tables nodes for databa
 description: "Introducing FlowFuse Tables for data storage, Tables nodes for dashboard visualization, Smart Suggestions in the Node-RED editor, More Powerful Starter tier, Retrieval Augmented Generation Blueprint for intelligent applications, and a redesigned Applications page for better workspace management."
 date: 2025-07-31
 authors: ["greg-stoutenburg"]
-image: /blog/2025/07/images/release-2-19.png
+image: /blog/2025/07/images/release-2-20.png
 tags:
    - flowfuse
    - news
