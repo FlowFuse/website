@@ -3,6 +3,7 @@ title: "Getting Started: Integrating Siemens S7 PLCs with Node-RED"
 subtitle: "A Step-by-Step Beginner's Guide to Connect, Control, and Monitor Siemens S7 PLCs Using Node-RED"
 description: "Learn how to integrate Siemens S7 PLCs with Node-RED for seamless industrial automation. This guide covers setup, configuration, and workflow creation to control and monitor PLCs effortlessly, including writing and reading data from your PLCs."
 date: 2025-01-17
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde","stephen-mclaughlin"]
 image: /blog/2025/01/images/s7-with-node-red.png
 keywords: s7,siemens, siemens s7 1200 with node-red, siemens s7 1500 with node-red, writing data to plc using node-red, reading data from plc using node-red, s7 with node-red
@@ -42,7 +43,7 @@ _Untick 'Optimized Block Access.'_
 
 3. Install Node-RED on the device that will communicate with the S7 PLC. You cannot install Node-RED directly on the S7 PLC, as PLCs are typically controllers, not computers. For example, you can use a device like the Revolutionary Pi to connect and transfer data across systems. Use the [FlowFuse Device Agent](/product/device-agent/) to install Node-RED on your device. 
 
-- Why FlowFuse Device Agent? It allows you to manage Node-RED remotely, enabling control, monitoring, and flow creation without the need for on-site visits. FlowFuse also offers a suite of enterprise-grade features such as collaboration, device management, and DevOps pipelines, which are essential in industrial environments. These features help streamline operations and ensure scalability in complex automation systems. For setup, refer to the [installation guide](/docs/device-agent/install/).
+- Why FlowFuse Device Agent? It allows you to manage Node-RED remotely, enabling control, monitoring, and flow creation without the need for on-site visits. FlowFuse also offers a suite of enterprise-grade features such as collaboration, device management, and DevOps pipelines, which are essential in industrial environments. These features help streamline operations and ensure scalability in complex automation systems. [Sign up for free](https://app.flowfuse.com/account/create) to get started.
 
 4. Verify that the device running Node-RED is in the same network as the PLC and can successfully ping the PLC. Also, a firewall should not block the S7 port (typically port 102).
 

@@ -61,32 +61,35 @@ payment for.
 
 Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
-to get a written agreement to the commission number. Make sure the CEO and Head
-of GTM both receive a copy through listing them as `cc` recipients.
+to get a written agreement to the commission number. 
+
+The email should go to the team member's personal email, and make sure the CEO
+and Head of GTM both receive a copy by including them in the `cc` on the email. 
 
 Here is an email template that can be used:
 
-```
 Dear {{first_name}},
 
-This email is to confirm your estimated commissions for {{Month and Year}}. Your
-target amount for this quarter is {{amount}}. The end of {{Month and Year}} puts
-us {{X}} weeks into the quarter.
+This email is to confirm your estimated commissions for {{Month and Year}}. 
+Your commission percentage for this quarter is {{X}}. 
 
-In {{Month and Year}}, you closed:
+In the aforementioned period, you closed:
 
 - {{Y}} number of deals
 - {{ARR}} new Contracted ARR
 
+Your commission is {{USD XX}}.
+
 Please remember: FlowFuse might withhold commission payments, or claw back
 payments if payments aren't made within 60 days after the quote is signed.
 
-Please confirm the numbers in this email for quota to be issued.
+Please confirm the numbers in this email for the commission payment to be issued.
 
 Best, 
 {{Manager sending email}}
+
 ```
 
 ### Wiring the money
 
-If the employee agrees with the commission, process the payment in Deel as USD payment.
+If the employee agrees to the commission, process the payment in Deel as USD payment.

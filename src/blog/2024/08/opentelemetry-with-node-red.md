@@ -3,6 +3,7 @@ title: Monitoring and Optimizing Node-RED Flows with Open Telemetry.
 subtitle: Integrating Open Telemetry with Node-RED for Efficient Distributed Tracing
 description: Learn to integrate Open Telemetry with Node-RED to track and optimize flow performance.
 date: 2024-08-15
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/opentelemetry-with-node-red.png
 keywords: nodered opentelemetry node opentelemetry, opentelemetry nodejs example, opentelemetry node, open telemetry nodejs

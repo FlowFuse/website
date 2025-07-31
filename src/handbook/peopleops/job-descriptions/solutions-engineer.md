@@ -64,9 +64,34 @@ Nice to Haves:
 ## Hiring Plan
 
 * Initial Screening: Review resumes and cover letters to assess candidate qualifications, experience, and domain expertise.
-* First Interview (Technical & Role Fit): Conduct a phone or video interview to evaluate technical knowledge relevant to industrial automation, IIoT, and solutions engineering, as well as communication skills.
-* Second Interview (Deep Dive & Customer Experience): In-depth interview with the hiring manager and other team members to discuss specific experience in customer-facing technical roles, complex problem-solving, and managing customer lifecycles.
+* First Interview (Technical & Role Fit): Conduct a phone or video interview to evaluate technical knowledge relevant to industrial automation, IIoT, and solutions engineering, as well as communication skills. Conducted by the hiring manager. 
+* Second Interview (Deep Dive & Customer Experience): In-depth interview with the hiring manager and other team members to discuss specific experience in customer-facing technical roles, complex problem-solving, and managing customer lifecycles. Conducted by the Head of Professional Services.
 * Technical Presentation / Case Study: Candidate will prepare and deliver a presentation on a technical solution or a case study of a past customer engagement demonstrating their problem-solving and communication skills.
-* STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style.
+* STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 * Final Interview: A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
 * Offer: Extend an offer to the selected candidate.
+
+### Screning Questions 
+* Can you briefly walk me through your recent experience in a customer-facing engineering or solutions role?
+   * Goal: Confirm they have relevant experience in pre-sales or post-sales technical roles (e.g., Solutions Engineer, Sales Engineer, Customer Success Engineer).
+* Have you worked with industrial technologies like SCADA, PLCs, MQTT, or Node-RED?
+   * Goal: Confirm basic exposure to the industrial automation ecosystem. If not Node-RED specifically, check for adjacent tech like OPC-UA or IIoT platforms.
+* Can you share an example of a time when you helped a customer expand or deepen their use of a solution over time?
+   * Goal: Gauge if they’ve played a role in post-sale expansion, solution discovery, or upsell enablement—key traits for this hybrid SE role.
+* How comfortable are you leading technical conversations with both engineers and business stakeholders?
+   * Goal: Evaluate communication range and confidence in dealing with mixed audiences—an essential skill for FlowFuse’s customer base.
+* Have you ever delivered a proof of concept (PoC) or demo as part of a sales process?
+   * Goal: Validate they’ve led or contributed to technical pre-sales motions.
+* Do you have experience working remotely and managing your own schedule across multiple customers?
+   * Goal: Confirm self-management and comfort with autonomy in a remote startup environment.
+
+#### Evaluation Criteria
+* Go Forward if they:
+   * Have customer-facing technical experience (especially in IIoT or automation)
+   * Can communicate clearly across technical and business audiences
+   * Show signs of proactivity and comfort with ambiguity
+* No-Go if they:
+   * Lack relevant experience (pure dev, sysadmin, etc.)
+   * Struggle to articulate impact in customer engagements
+   * Are uncomfortable with remote work or startup dynamics
+
