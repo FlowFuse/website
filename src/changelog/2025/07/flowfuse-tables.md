@@ -23,6 +23,8 @@ Paired with the Database is a new FlowFuse Tables node which will automatically 
 ![Screenshot of Node-RED with FlowFuse Tables node](./images/tables-node.png){data-zoomable}
 _Screenshot of Node-RED with FlowFuse Tables Node_
 
+The database is a Postgres instance and you should be able to connect 3rd party clients using the credentials provided.
+
 This feature will be available to FlowFuse Cloud Enterprise Tier customers and to Enterprise Licensed Self Hosted customers on Kubernetes to start with, we hope to make it available to Docker Compose users in an upcoming release.
 
 It is currently marked as a [Beta Feature](https://flowfuse.com/handbook/development/releases/#beta-release) while we continue to iterate on adding new features and observe how it is used.
