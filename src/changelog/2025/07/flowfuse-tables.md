@@ -1,3 +1,4 @@
+---
 title: FlowFuse Tables
 description: Adding a Team level Relational Database to FlowFuse
 date: 2025-07-31 12:00:00.0
