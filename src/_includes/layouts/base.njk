@@ -226,19 +226,23 @@ eleventyComputed:
                         </ul>
                         {% endnavoption %}
                         {% navoption "Solutions", null, 0 %}
-                        <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-4 sm:pr-1 align-left sm:auto-rows-auto items-center">
-                            {% navoption "Functions", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
-                            <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2">
-                                {% navoption "Data integration", "/solutions/data-integration/", 2, "db" %}{% endnavoption %}
-                                {% navoption "Edge Connectivity", "/solutions/edge-connectivity/", 2, "chip" %}{% endnavoption %}
-                                {% navoption "IT/OT Middleware", "/solutions/it-ot-middleware/", 2, "cog" %}{% endnavoption %}
-                            </ul>
-                            {% navoption "Industrial Applications", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
-                            <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2">
-                                {% navoption "MES", "/solutions/mes/", 2, "chart" %}{% endnavoption %}
-                                {% navoption "Unified Namespace", "/solutions/uns/", 2, "uns" %}{% endnavoption %}
-                                {% navoption "SCADA", "/solutions/scada/", 2, "adjustments-horizontal" %}{% endnavoption %}
-                            </ul>
+                        <ul class="narrow sm:grid sm:grid-cols-2 sm:gap-8 sm:pr-1 align-left">
+                            <li>
+                                {% navoption "Functions", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
+                                <ul class="sub-menu ml-7 border-l-2 space-y-1">
+                                    {% navoption "Data integration", "/solutions/data-integration/", 2, "db" %}{% endnavoption %}
+                                    {% navoption "Edge Connectivity", "/solutions/edge-connectivity/", 2, "chip" %}{% endnavoption %}
+                                    {% navoption "IT/OT Middleware", "/solutions/it-ot-middleware/", 2, "cog" %}{% endnavoption %}
+                                </ul>
+                            </li>
+                            <li>
+                                {% navoption "Industrial Applications", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
+                                <ul class="sub-menu ml-7 border-l-2 space-y-1">
+                                    {% navoption "MES", "/solutions/mes/", 2, "chart" %}{% endnavoption %}
+                                    {% navoption "Unified Namespace", "/solutions/uns/", 2, "uns" %}{% endnavoption %}
+                                    {% navoption "SCADA", "/solutions/scada/", 2, "adjustments-horizontal" %}{% endnavoption %}
+                                </ul>
+                            </li>
                         </ul>
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
