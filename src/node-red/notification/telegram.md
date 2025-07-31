@@ -101,7 +101,7 @@ Utilizing environment variables is crucial while doing any configuration in your
 
 ## Deploying the flow
 
-!["Screenshot displaying node-red flow for sending and receiving telegram messages"](./images/sending-telegram-with-node-red-flow.png "Screenshot displaying node-red flow for sending and receiving telegram messages"){data-zoomable}
+!["Screenshot displaying Node-RED flow for sending and receiving telegram messages"](./images/sending-telegram-with-node-red-flow.png "Screenshot displaying Node-RED flow for sending and receiving telegram messages"){data-zoomable}
 
 1. Deploy the flow by clicking the top right Deploy button.
 

@@ -26,7 +26,7 @@ The next release of Node-RED has some great new features including support for [
 [**FlowFuse raises $7.25M to bring Node-RED to the Enterprise**](/blog/2022/10/seed-round-bring-node-red-to-enterprise/)  
 Earlier this week, we announced a $7.25M seed round led by [Cota Capital](https://www.cotacapital.com/knowledgecapital/flowforge-closes-the-gap-between-it-and-ot), joined by Westwave Capital, Uncorrelated Ventures, and Open Core Ventures. This brings a huge amount of extensive knowledge and experience in IoT, open source, enterprise-ready software solutions. You can read more about what this investment means for FlowFuse in this [TechCrunch article](https://techcrunch.com/2022/11/03/flowforge-nabs-7-2m-to-help-companies-integrate-iot-using-node-red).
 
-[**Node-Red Dashboard - Beginners Guide**](https://stevesnoderedguide.com/node-red-dashboard)  
+[**Node-RED Dashboard - Beginners Guide**](https://stevesnoderedguide.com/node-red-dashboard)  
 It's great to see members of the Node-RED community taking their personal time to help us all build better projects. This write up takes you through the basics of creating your first Dashboard through to more advanced techniques to help your interfaces look professional and provide great user experiences.
 
 [**FlowFuse Team News**](/team/)    

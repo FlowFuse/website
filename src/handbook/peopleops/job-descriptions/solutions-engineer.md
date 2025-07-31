@@ -70,3 +70,28 @@ Nice to Haves:
 * STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 * Final Interview: A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
 * Offer: Extend an offer to the selected candidate.
+
+### Screning Questions 
+* Can you briefly walk me through your recent experience in a customer-facing engineering or solutions role?
+   * Goal: Confirm they have relevant experience in pre-sales or post-sales technical roles (e.g., Solutions Engineer, Sales Engineer, Customer Success Engineer).
+* Have you worked with industrial technologies like SCADA, PLCs, MQTT, or Node-RED?
+   * Goal: Confirm basic exposure to the industrial automation ecosystem. If not Node-RED specifically, check for adjacent tech like OPC-UA or IIoT platforms.
+* Can you share an example of a time when you helped a customer expand or deepen their use of a solution over time?
+   * Goal: Gauge if they’ve played a role in post-sale expansion, solution discovery, or upsell enablement—key traits for this hybrid SE role.
+* How comfortable are you leading technical conversations with both engineers and business stakeholders?
+   * Goal: Evaluate communication range and confidence in dealing with mixed audiences—an essential skill for FlowFuse’s customer base.
+* Have you ever delivered a proof of concept (PoC) or demo as part of a sales process?
+   * Goal: Validate they’ve led or contributed to technical pre-sales motions.
+* Do you have experience working remotely and managing your own schedule across multiple customers?
+   * Goal: Confirm self-management and comfort with autonomy in a remote startup environment.
+
+#### Evaluation Criteria
+* Go Forward if they:
+   * Have customer-facing technical experience (especially in IIoT or automation)
+   * Can communicate clearly across technical and business audiences
+   * Show signs of proactivity and comfort with ambiguity
+* No-Go if they:
+   * Lack relevant experience (pure dev, sysadmin, etc.)
+   * Struggle to articulate impact in customer engagements
+   * Are uncomfortable with remote work or startup dynamics
+

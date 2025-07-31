@@ -3,6 +3,7 @@ title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling
 subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to style Dashboard 2.0 elements effortlessly.
 description: Discover Dashboard 2.0's layouts, sidebars, and styling features for a seamless user experience.
 date: 2024-05-10
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling.png
 tags:
