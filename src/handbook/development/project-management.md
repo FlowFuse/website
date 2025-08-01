@@ -26,7 +26,7 @@ In order to ensure that releases are able to deliver work according to the prior
 
 Week 1: The team discusses ongoing work and opportunities for future development.
 Week 2: The PM has assigned a milestone to all epics and stories prioritized for the following milestone. For example, if it is week 2 of release 2.30, then the PM has completed this work in anticipation of release 2.31.
-Week 3: The EM has divided epics and stories into appropriate tasks, and with the CTO, assigned story points to them. During this meeting, the PM's proposed release is discussed, and any issues with an oversized or undersized release are discussed and reprioritized by the PM, if necessary. 
+Week 3: The EM has divided epics and stories into appropriate tasks, and with the CTO, assigned story points to them. The EM is also prepared with an estimation of how many story points can be delivered during the subsequent release, as these are influenced by individual engineer schedules, holidays, events, and etc. During this meeting, the PM's proposed release is discussed, and any issues with an oversized or undersized release are discussed and reprioritized by the PM, if necessary. 
 Week 4: The team prepares for the release that occurs during the same week. The EM reviews what was scheduled, what will ship, what will slip, and why.
 
 ## Hierarchy
