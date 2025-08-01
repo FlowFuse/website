@@ -45,7 +45,7 @@ Once you have deleted any instances, applications or devices in the team, you ca
 
 ### I’m self-hosting FlowFuse - do these changes affect me?
 
-No, the new pro tiers and pricing are on FlowFuse Cloud only.
+No, the new team tiers and pricing are on FlowFuse Cloud only.
 
 ### I’m using the DigitalOcean/AWS Marketplace version - do these changes affect me?
 
