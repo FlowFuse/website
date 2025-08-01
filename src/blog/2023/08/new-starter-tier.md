@@ -49,7 +49,7 @@ No, the new pro tiers and pricing are on FlowFuse Cloud only.
 
 ### I’m using the DigitalOcean/AWS Marketplace version - do these changes affect me?
 
-No, the new pro tiers and pricing are on FlowFuse Cloud only.
+No, the new starter tier is only available on FlowFuse Cloud.
 
 ### Anything else?
 
