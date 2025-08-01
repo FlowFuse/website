@@ -114,7 +114,7 @@ hubspot:
                             <div>
                                 <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Team</h4>
+                                        <h4 style="display:inline-block;">Pro</h4>
                                     </div>
                                     <p class="mt-7"><span class="inline font-normal">Build bespoke applications collaboratively</span>, manage your Node-RED applications with improved security and control.</p>
                                 </div>
@@ -134,7 +134,7 @@ hubspot:
                                     </ul>
                                     {% if cloud %}<span class="hidden md:inline"><br></span>{% endif %}
                                     <br>
-                                    <note class="font-semibold">Includes {% if cloud %}5{% else %}10{% endif %} hosted instances or remote instances.
+                                    <note class="font-semibold">Includes {% if cloud %}5{% else %}5{% endif %} hosted instances or remote instances.
                                     </note>
                                 </div>
                             </div>
@@ -143,10 +143,21 @@ hubspot:
                                 <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                                     <div class="text-left flex flex-row md:self-end">
                                         <div class="mr-1">
+                                            {% if cloud %}
+                                            <note class="note text-sm">Starting at</note>
                                             <h2 class="self-end pb-1">
-                                                Let's Talk
+                                                $425
                                             </h2>
+                                            {% else %}
+                                            <note class="note text-sm">Starting at</note>
+                                            <h2 class="self-end pb-1">
+                                                $5,100
+                                            </h2>
+                                            {% endif %}
                                         </div>
+                                        <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
+                                            {% if cloud %}/month{% else %}/year{% endif %}
+                                        </note>
                                     </div>
                                 </div>
                             </div>
