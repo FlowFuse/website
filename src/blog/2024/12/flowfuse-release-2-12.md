@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Cloud now available for free!
 subtitle: With our new FlowFuse release, comes a new team tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
-description: With our new FlowFuse release, comes a new pro tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
+description: With our new FlowFuse release, comes a new team tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
 date: 2024-12-19
 authors: ["greg-stoutenburg"]
 image: /blog/2024/12/images/tile-release-2-12.png
