@@ -3,7 +3,12 @@ navTitle: Screening Call
 ---
 
 The first stage in almost every interview process is a 15-20 minute screening call. 
-This is usually done over a video call, but a phone call can be acceptable in certain circumstances. 
+This is usually done over a video call, but a phone call can be acceptable in certain circumstances.
+
+The structure of this call is as follows:
+1. Set the agenda for the call, and goals for FlowFuse.
+2. Go through [the list of questions](#screening-call).
+3. Leave at least 5 minutes at the end for the candidate to ask their questions.
 
 #### Screening Call
 

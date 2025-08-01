@@ -57,7 +57,9 @@ FlowFuse does not provide any advice on financial decisions for employees. For
 details on the Stock Options like the 409A valuation or otherwise, please consult
 Carta.
 
-FlowFuse offers employees ISO's where possible, otherwise NSO's will be provided.
+FlowFuse offers employees ISOs to US full time employees. Contractors and other
+forms of employments for US personel will receive NSOs. Non-US employees will
+also receive NSOs.
 
 Equity grants are subject to board approval. Grants are presented to the Board
 four times per year at official Board Meetings. 
@@ -97,7 +99,8 @@ added to the list, especially when you're considering a job offer at FlowFuse.
 ##### USA and Canada
 
 For employees located in the United States, FlowFuse offer health insurance coverage through Deel, since this changes regularly, please see Deel for accurate information.
-For US Employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by registering with Zenefits and declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+
+For US Employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
 
 For employees located in the Canada, FlowFuse offer health insurance coverage through Deel, since this changes regularly, please see Deel for accurate information.
 

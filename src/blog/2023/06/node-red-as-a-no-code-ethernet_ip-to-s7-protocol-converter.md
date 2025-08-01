@@ -85,7 +85,7 @@ With both PLCs up and running and properly set up to send/receive remote data, w
 
 ### Install Custom Nodes
 
-First, we need to add two custom nodes that will give node-red the ability to read/write ethernet/IP and S7 data.
+First, we need to add two custom nodes that will give Node-RED the ability to read/write ethernet/IP and S7 data.
 
 Click the hamburger icon → manage pallette
 
