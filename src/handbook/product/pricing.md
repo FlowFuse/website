@@ -14,7 +14,7 @@ The [Buyer-Based Open Core (BBOC)](https://opencoreventures.com/blog/2023-01-ope
 development and monetization strategy. It's a framework we employ to discern which features should be open source and which should be proprietary. 
 BBOC aligns features into tiers based on their target users or 'buyers' — individual contributors, management, or executives.
 
-Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter (Open-Source) tier. On the other hand, features that have broader organizational relevance, like Edge Connectivity or high availability, are offered in our Pro tier or Enterprise tier, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
+Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter tier. On the other hand, features that have broader organizational relevance, like Edge Connectivity or high availability, are offered in our Pro tier or Enterprise tier, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
 
 This buyer-based approach helps us focus our efforts on the value to the end-user, rather than technical specifications or development effort. It aligns our pricing strategy with the value each tier provides, ensuring that the cost is justified by the capabilities offered and the user persona it serves.
 
@@ -23,7 +23,7 @@ This buyer-based approach helps us focus our efforts on the value to the end-use
 | Tier | Objective | Problem it Solves | Persona |
 | ---- | --------- | ----------------- | ------- |
 | Starter (Open-source) | Enable professional Node-RED development for individuals and small teams | <ul><li>Moving beyond local development to cloud hosting</li><li>Secure connections and custom domains</li><li>Version control and backup capabilities</li><li>Basic team collaboration</li></ul> | <ul><li>Individual contributor</li><li>PLC engineer</li><li>Line worker</li></ul> |
-| Pro | Scale Node-RED across distributed environments with advanced management | <ul><li>Managing multiple instances across facilities</li><li>Edge device deployment and monitoring</li><li>Enhanced security and access controls</li><li>Team collaboration for larger organizations</li><li>Automated deployment workflows</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
+| Pro | Scale Node-RED across distributed environments with more advanced management | <ul><li>Managing multiple instances across facilities</li><li>Edge device deployment and monitoring</li><li>Enhanced security and access controls</li><li>Team collaboration for larger organizations</li><li>Automated deployment workflows</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
 | Enterprise | Establish Node-RED as enterprise-wide standard with mission-critical capabilities | <ul><li>Enterprise-grade reliability and high availability</li><li>Compliance and comprehensive audit trails</li><li>Integration with corporate systems and SSO</li><li>Advanced monitoring and observability</li><li>Custom branding and dedicated support</li></ul> | <ul><li>Central IT departments</li><li>Plant manager</li></ul> |
 
 ## Tier Descriptions
@@ -35,19 +35,17 @@ The **Starter** tier is designed to introduce individuals and small teams to Nod
 **Purpose**: Enable individual contributors, PLC engineers, and line workers to quickly deploy and manage Node-RED applications with professional-grade hosting and basic collaboration features.
 
 **Key Capabilities**:
-- Hosted Node-RED instances with reliable infrastructure
-- Secure TLS/SSL connections and custom subdomains
+- Hosted Node-RED instance with reliable infrastructure and FlowFuse editor enhancements
 - Snapshot backups for version control and recovery
 - Basic team collaboration for up to 2 members
-- Community support and documentation access
 
 This tier allows users to move beyond local Node-RED development to a cloud-hosted environment with backup and security features, making it ideal for proof-of-concepts, learning, and small-scale deployments.
 
 ### Pro Tier
 
-The **Pro** tier is built for IIoT managers and plant managers who need to scale Node-RED deployments across multiple instances and manage edge devices effectively.
+The **Pro** tier is built for IIoT managers and plant managers who need to scale Node-RED deployments across multiple instances, manage edge devices effectively, and utilize more advanced Node-RED management features.
 
-**Purpose**: Enable organizations to scale their Node-RED rollout with advanced device management, enhanced security, and team collaboration features for managing 5+ instances across distributed environments.
+**Purpose**: Enable organizations to scale their Node-RED rollout with advanced device management, enhanced security, and team collaboration features for managing 5 or more instances across distributed environments.
 
 **Key Capabilities**:
 - Multiple hosted Node-RED instances (up to 5 included)
@@ -70,6 +68,7 @@ The **Enterprise** tier establishes Node-RED as a company-wide standard with ent
 - Unlimited hosted Node-RED instances (20+ included)
 - High availability and disaster recovery features
 - Comprehensive audit logging and compliance reporting
+- Database feature
 - Enterprise integration with SSO, LDAP, and corporate systems
 - Advanced monitoring and observability tools
 - Custom domains and white-label options
@@ -81,7 +80,7 @@ This tier transforms Node-RED into an enterprise-ready platform that meets the s
 ## Teams
 
 Teams are the basic unit within FlowFuse Cloud and the entity to which bills are charged.
-A teams can create zero or more applications, and one or more user can be members.
+A team can create zero or more applications, and one or more user can be members.
 Subject to access controls, some users can add cloud instances and remote devices (agents)
 to applications, and invite other members.
 
@@ -94,8 +93,8 @@ based on the number of Node-RED instances consuming resources inside application
 
 ## Cloud instances
 
-On the FlowFuse Cloud, different levels of pricing is offered based on the
-resources that the instance has available (CPU/Mem). The price point is defined
+On the FlowFuse Cloud, different levels of pricing is offered based on the CPU and memory
+resources that the instance has available. The price point is defined
 by the instance type which allows for an abstraction of stacks and billing. Additional
 features may also be defined by the instance type, for example: Custom Domains support.
 
