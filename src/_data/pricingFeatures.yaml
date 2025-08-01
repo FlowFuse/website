@@ -142,6 +142,12 @@ sections:
         selfHostedValues: [ null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Monitoring of CPU and memory usage at the team level and instance level.</p>"
+      - id: tables
+        label: FlowFuse Tables
+        cloudValues: [ null, null, 'check' ]
+        selfHostedValues: [ null, 'check' ]    
+        tags: [ 'cloud', 'self-hosted' ]
+        info: "<p>Integrated database feature for storing, reading, writing, and querying data, within FlowFuse.</p>"
   - label: Secure
     rows:
       - id: audit-log
