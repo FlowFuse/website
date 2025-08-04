@@ -1,12 +1,10 @@
 ---
 title: "Team Plan Renamed to Pro Plan"
 description: "The Team tier has been renamed to Pro tier to better reflect the plan's capabilities and target audience"
-date: 2025-07-14 12:00:00.0
+date: 2025-08-04 12:00:00.0
 authors: ["greg-stoutenburg"]
 tags:
   - changelog
-issues:
-  - "3424"
 ---
 
 We've renamed our Team tier to Pro tier to better reflect what it's truly designed for: using Node-RED professionally to build applications, replace and augment software in your organization, and scale professional Node-RED deployments.
