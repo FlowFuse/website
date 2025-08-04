@@ -143,20 +143,17 @@ hubspot:
                                 <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                                     <div class="text-left flex flex-row md:self-end">
                                         <div class="mr-1">
-                                            {% if cloud %}
                                             <note class="note text-sm">Starting at</note>
                                             <h2 class="self-end pb-1">
                                                 $425
                                             </h2>
-                                            {% else %}
-                                            <note class="note text-sm">Starting at</note>
-                                            <h2 class="self-end pb-1">
-                                                $5,100
-                                            </h2>
-                                            {% endif %}
                                         </div>
                                         <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
-                                            {% if cloud %}/month{% else %}/year{% endif %}
+                                            /month
+                                            {% if not cloud %}
+                                            <br>
+                                            <span class="text-xs text-gray-500">Billed annually</span>
+                                            {% endif %}
                                         </note>
                                     </div>
                                 </div>
