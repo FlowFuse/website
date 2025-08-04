@@ -70,7 +70,6 @@ The Developer Relations Advocate skill set includes:
    * **Marketing Campaign Support:** Collaborate on multi-channel marketing campaigns that integrate developer relations activities with broader marketing initiatives
    * **Success Metrics Establishment:** Develop and implement tracking systems for DevRel-specific KPIs including community growth, content engagement, and qualified lead generation
 
----
 
 ## Hiring Plan
 
