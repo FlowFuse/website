@@ -21,7 +21,7 @@ Often times it is necessary to update lookup tables in a SQL database, but you d
 
 Furthermore, on the management layer of most companies, Excel and Google Sheets are the go-to tools to perform data collection tasks. Getting management involved in processes might require you to build an import feature for them. Asking your manager to "Save as" CSV is much easier than teaching them SQL!
 
-## 2 Ways to send a file to node-RED
+## 2 Ways to send a file to Node-RED
 
 There are many approaches that can be taken when solving this. We are going to go over 2 here. 
 
@@ -64,7 +64,7 @@ print(f"Response Status Code: {response.status_code}")
 print(f"Response Body: {response.text}")
 ```
 
-Update the **nodered_url** to the location of the NodeRED instance.  Be sure to adjust the port if the default port of 1880 isn't being used.
+Update the **nodered_url** to the location of the Node-RED instance.  Be sure to adjust the port if the default port of 1880 isn't being used.
 
 Update the **file_path** with the path to where the file to be uploaded will be located.
 

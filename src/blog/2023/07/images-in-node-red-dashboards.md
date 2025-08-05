@@ -3,6 +3,7 @@ title: How to add images to Node-RED dashboards when using FlowFuse
 subtitle: Import your images into your Node-RED dashboards, wherever you are running your instances
 description: Learn to enhance Node-RED dashboards with images using FlowFuse. Pull images from URLs, store locally, and serve them in your dashboards.
 date: 2023-07-21
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: blog/2023/07/images/add-images-in-node-red-header.png
 tags:

@@ -31,6 +31,9 @@ PO Box 7775 #29439
 San Francisco, CA 94120-7775 USA.
 ```
 
+### Official Name Change & Incorporation Document
+[Here's](https://drive.google.com/file/d/1cnHv1K8VxKeq8YuRaUpczO9c8ilm6kHZ/view?usp=drive_link) the official document detailing the transition from Flowforge to Flowfuse and the company's incorporation as a Delaware Corporation. 
+
 ### Banking details
 
 For larger customers with internal processes requiring our bank details, they can wire the money to the company's
@@ -39,7 +42,7 @@ checking account. Wiring instructions to be shared by the rep are found in
 
 ### Dun & Bradstreet
 
-FlowFuse's Dun and Bradstreet ID is: 11-899-4742
+FlowFuse's Dun (DUNS number) and Bradstreet ID is: 11-899-4742
 
 ### NAICS code
 

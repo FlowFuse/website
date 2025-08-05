@@ -3,6 +3,7 @@ title: How to Scrape Data from Websites Using Node-RED
 subtitle: A step-by-step guide to leveraging Node-RED for efficient web scraping and automated data extraction.
 description: Learn how to use Node-RED for web scraping to efficiently collect, extract, and manage data from websites. This step-by-step guide covers everything you need to know about creating automated web scrapers using Node-RED.
 date: 2024-09-16
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/09/images/webscraping-with-node-red.png
 keywords: node red webscraping, websrcaping with node-red, node red https request, online web scraper free, online web scraper free, custom web scraper, automated web scraping, web scraping solutions, data scraper easy web scraping

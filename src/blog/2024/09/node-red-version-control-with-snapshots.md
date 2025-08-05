@@ -3,6 +3,7 @@ title: "Using Snapshots for Version Control in Node-RED with FlowFuse"
 subtitle: "Effortlessly manage and recover your Node-RED flows with snapshots in FlowFuse."
 description: Learn how to use snapshots for version control in Node-RED with FlowFuse. Explore step-by-step guidance on creating, managing, and restoring flow backups to enhance your Node-RED development and save yourself from accidental changes.
 date: 2024-09-26
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde", "stephen-mclaughlin"]
 image: /blog/2024/09/images/snapshot-with-node-red-ff.png
 keywords: node red version control, node-red flows, node red backup, node red flow backup

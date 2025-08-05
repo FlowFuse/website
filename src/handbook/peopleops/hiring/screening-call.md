@@ -3,7 +3,12 @@ navTitle: Screening Call
 ---
 
 The first stage in almost every interview process is a 15-20 minute screening call. 
-This is usually done over a video call, but a phone call can be acceptable in certain circumstances. 
+This is usually done over a video call, but a phone call can be acceptable in certain circumstances.
+
+The structure of this call is as follows:
+1. Set the agenda for the call, and goals for FlowFuse.
+2. Go through [the list of questions](#screening-call).
+3. Leave at least 5 minutes at the end for the candidate to ask their questions.
 
 #### Screening Call
 
@@ -18,7 +23,9 @@ During this call FlowFuse should understand:
    * Any visa requirements to work in their current location
    * Any plans to change location in the near future
 1. Notice period, or time from offer to start
-1. "How do you manage your todo list?"
-1. "How are you using Generative AI in your workflows today?"
+1. How do you manage your todo list?
+1. How are you using Generative AI in your workflows today?
+1. Do you have experience at start ups? What does it mean for you to operate in a start up?
+1. Do you have experience with Industrial or Manufacturing sectors of the market?
 
 Generally half of all candidates in the screening stage will not move to the next stage of the interview process.

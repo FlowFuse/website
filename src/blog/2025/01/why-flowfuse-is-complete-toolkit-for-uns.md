@@ -3,6 +3,7 @@ title: Why FlowFuse is the Complete Toolkit For Building UNS?
 subtitle: The Open-Source Solution to Build and Manage a Successful UNS
 description: Discover how FlowFuse is the ultimate solution for managing and implementing Unified Namespace (UNS) in industrial IoT environments.  
 date: 2025-01-20
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2025/01/images/why-flowfuse-is-complete-toolkit-for-uns.jpeg
 keywords: uns, unified namespace, building uns with flowfuse, building uns using node-red, core components of unified namespace  

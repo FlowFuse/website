@@ -1,35 +1,47 @@
 ---
 title: "Blueprints: Build faster with Node-RED on FlowFuse"
-subtitle: Go from idea to application in record time with our library of ready-to-use projects.
+subtitle: Go from idea to working Node-RED application in minutes with our library of ready-to-use Blueprints.
 meta:
-    description: What if there was a simpler, quicker way to get your Node-RED projects off the ground? This deep dive will explore FlowFuse's growing collection of Blueprints, revealing how these can significantly cut down the time it takes to build your next great application.
+    description: Go from idea to working Node-RED application in minutes, not days or weeks. Watch this deep dive with FlowFuse's Blueprints and learn how to cut down your development time while simplifying industrial and business applications.
 image: /images/webinars/blueprints-build-faster-with-node-red-on-flowfuse.jpg
 date: 2025-07-23
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: 
-hosts: ["joe-pavitt"]
+video: XgkK7MKfrok
+hosts: ["stephen-mclaughlin"]
 hubspot:
     formId: 0b0fd5c1-b5c3-488e-823a-ac2568a3c14d
-    downloadFormId: 
+    downloadFormId: 3c51528b-a54e-46c8-8b9b-712445bdce04
 ---
 
-What if there was a simpler, quicker way to get your Node-RED projects off the ground? This deep dive will explore FlowFuse's growing collection of Blueprints, revealing how these can significantly cut down the time it takes to build your next great application.
+Kickstart your next Node-RED application in minutes using FlowFuse Blueprints.
+
+Getting started on new projects often means losing time on repetitive setup, configuration, and searching for the right approach. FlowFuse Blueprints are here to change that.
 <!--more-->
 
-Have you ever found yourself with a brilliant idea for an application, only to get bogged down in the initial setup and configuration stages, losing valuable time you could be dedicating to innovation? It's a common challenge: the need to build solutions quickly clashes with the initial complexity of getting each project off the ground.
+## What You'll Learn
 
-## What We'll Cover
+Watch Steve McLaughlin as he demonstrates how to:
 
-Join Joe Pavitt as he walks through several of FlowFuse’s Blueprints, covering topics like simple REST APIs interfacing with a database, OEE Dashboards for your SCADA systems and training custom AI agents to interface with via Node-RED.
+- Quickly deploy pre-built Blueprints for real-world use cases like:
+  - **PDF Report Generator**
+  - **OEE Dashboards** for **SCADA** systems
+  - **AI-powered agents** interacting via Node-RED
+- Reduce your dependency on expensive and complex software by using Node-RED and FlowFuse as a more **flexible, cost-effective solution**
 
-During the webinar, Joe will also share the process our team at FlowFuse follows when creating these Blueprints. We constantly strive to achieve a crucial balance: making them easy for you to get started with, while also offering enough depth to be truly valuable for your projects. This intentional design serves two key purposes:
+Steve also shares insights into the process FlowFuse uses to develop Blueprints, designed to balance ease of use with providing real value for your projects.
 
-- To accelerate your development time for your next project.
-- To inspire your thinking and showcase the diverse possibilities within Node-RED.
+Whether you're automating factory processes, building IoT solutions, or streamlining internal tools, this session will show you how FlowFuse Blueprints help you move faster and get more value from your applications.
 
-## Who is this for?
+## You’ll Get the Most Value If You’re…
 
-This webinar is ideal for users of Node-RED, looking to learn about the breadth of capabilities that Node-RED offers, as well as those interested in understanding how Node-RED could replace a lot of their existing, and expensive, ecosystem of software.
+- A Node-RED user looking to speed up development and discover new capabilities
+- An Engineer or developer in industrial environments who wants to simplify operations, find cost-effective solutions, and avoid vendor lock-in.
+- Or just seeking to build smarter, faster applications without starting from scratch
 
-Don’t miss out on joining us live to get inspired for your next Node-RED application and learn how to level up your own Node-RED skillset.
+Watch now and learn how to build smarter, faster, and more efficiently with FlowFuse and Node-RED.
+
+## Ready to Accelerate Your Own Projects?
+
+If you have a specific project in mind, or want to discuss how FlowFuse Blueprints can be tailored to your unique industrial challenges, just [contact us](/contact-us/), our team is here to help you get started faster.
+

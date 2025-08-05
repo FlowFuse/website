@@ -3,6 +3,7 @@ title: Modernize your legacy industrial data
 subtitle: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
 description: Learn how to bridge legacy industrial protocols like Modbus to the IIoT era using Node-RED and buffer parsing. Explore data types, conversion challenges, and examples
 date: 2023-09-14
+lastUpdated: 2025-07-23
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
 tags:

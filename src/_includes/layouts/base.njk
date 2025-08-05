@@ -131,6 +131,18 @@ eleventyComputed:
     <meta property="article:section" content="{{ nav }}" />
     {% endif %}
 
+    {% if type == 'post' %}
+    <!-- Article dates -->
+    {% if date %}
+    <meta property="article:published_time" content="{{ date | dateToRfc3339 }}" />
+    {% endif %}
+    {% if lastUpdated %}
+    <meta property="article:modified_time" content="{{ lastUpdated | dateToRfc3339 }}" />
+    {% elif date %}
+    <meta property="article:modified_time" content="{{ date | dateToRfc3339 }}" />
+    {% endif %}
+    {% endif %}
+
     {% if searchTitle %}
     <meta property="searchable:title" content="{{ searchTitle }}" />
     {% endif %}
@@ -198,14 +210,11 @@ eleventyComputed:
 
                     <!-- Nav -->
                     <ul id="nav-content" class="">
-                        {% navoption "Pricing", "/pricing/", 0 %}{% endnavoption %}
                         {% navoption "Product", null, 0 %}
-                        <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-6 sm:pr-1 align-left sm:auto-rows-auto items-center">
+                        <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-4 sm:pr-1 align-left sm:auto-rows-auto items-center">
                             {% navoption "Platform", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
-                            <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2">
+                            <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2">
                                 {% navoption "Features", "/product/features/", 2, "star" %}{% endnavoption %}
-                                {% navoption "FlowFuse Cloud", "/product/cloud/", 2, "cloud" %}{% endnavoption %}
-                                {% navoption "Changelog", "/changelog/", 2, "rocket-launch" %}{% endnavoption %}
                                 {% navoption "Integrations", "/integrations/", 1, "squares-plus" %}{% endnavoption %}
                                 {% navoption "Blueprint Library", "/blueprints/", 1, "building-library" %}{% endnavoption %}
                             </ul>
@@ -214,7 +223,6 @@ eleventyComputed:
                                 {% navoption "FlowFuse Dashboard", "/product/dashboard/", 2, "dashboard" %}{% endnavoption %}
                                 {% navoption "Device Agent", "/product/device-agent/", 2, "device-agent" %}{% endnavoption %}
                             </ul>
-                            {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
                         </ul>
                         {% endnavoption %}
                         {% navoption "Solutions", null, 0 %}
@@ -223,37 +231,27 @@ eleventyComputed:
                                 {% navoption "Unified Namespace", "/solutions/uns/", 1, "uns" %}{% endnavoption %}
                                 {% navoption "SCADA", "/solutions/scada/", 1, "adjustments-horizontal" %}{% endnavoption %}
                                 {% navoption "MES", "/solutions/mes/", 1, "chart" %}{% endnavoption %}
-                                {% navoption "Device management", "/solutions/device-management/", 1, "chip" %}{% endnavoption %}
+                                {% navoption "Edge Connectivity", "/solutions/edge-connectivity/", 1, "chip" %}{% endnavoption %}
                                 {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
-                        {% navoption "Company", null, 0 %}
-                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-4 sm:grid-cols-1 sm:pr-9">
-                                {% navoption "About", "/about/", 1, "info" %}{% endnavoption %}
-                                {% navoption "Partners", "/partners/", 1, "puzzle-piece" %}{% endnavoption %}
-                                {% navoption "Professional services", "/professional-services/", 1, "check-badge" %}{% endnavoption %}
-                                {% navoption "Support", "/support/", 1, "chat" %}{% endnavoption %}
-                                {% navoption "Contact us", "/contact-us/", 1, "mail" %}{% endnavoption %}
-                                {% navoption "Jobs", "https://boards.greenhouse.io/flowfuse", 1, "case" %}{% endnavoption %}
-                                {% navoption "Team", "/team/", 1, "users" %}{% endnavoption %}
-                                {% navoption "Privacy", "/privacy-policy/", 1, "privacy" %}{% endnavoption %}
-                            </ul>
-                        {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
-                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9">
+                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-6 sm:grid-cols-1 sm:pr-9 align-left">
                                 {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
                                 {% navoption "Webinars", "/webinars/", 1, "screen" %}{% endnavoption %}
                                 {% navoption "Publications", "/resources/publications/", 1, "book-open" %}{% endnavoption %}
+                                {% navoption "Changelog", "/changelog/", 1, "rocket-launch" %}{% endnavoption %} 
                                 {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 1, "github", true %}{% endnavoption %}
                                 {% navoption "Educational License", "/education/", 1, "certificate" %}{% endnavoption %}
                                 {% navoption "Docs", "/docs/", 1, "document-text" %}{% endnavoption %}
                                 {% navoption "Support forums", "https://discourse.nodered.org/c/vendors/flowfuse/24/", 1, "chat-bubble-left-right-sm" %}{% endnavoption %}
                                 {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
-                                {% navoption "Node-RED", "/node-red/", 1, "nr-icon" %}{% endnavoption %}
                                 {% navoption "Node-RED Academy", "https://node-red-academy.learnworlds.com/", 1, "academic-cap" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
+                        {% navoption "Node-RED", "/node-red/", 0, false %}{% endnavoption %}
                         {% navoption "Docs", "/docs/", 0, false %}{% endnavoption %}
+                        {% navoption "Pricing", "/pricing/", 0 %}{% endnavoption %}
                     </ul>
                     <!-- CTAs -->
                     <ul class="hidden cta top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
@@ -294,13 +292,14 @@ eleventyComputed:
                     </div>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
+                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-6 gap-y-4 sm:grid-rows-4 md:grid-rows-6 sm:justify-between md:m-auto text-base sm:gap-x-6">
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/team/" class="py-3">Team</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="{{ site.jobBoard }}" class="py-3">Jobs</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/" class="py-3">Partnerships</a></li>
+                        <li class="inline mr-2 mb-2 md:m-0"><a href="/professional-services/" class="py-3">Professional Services</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/" class="py-3">Service Status</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/support/" class="py-3">Request Support</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/" class="py-3">Contact Us</a></li>

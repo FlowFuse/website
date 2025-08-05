@@ -3,6 +3,7 @@ title: Bridging OPC UA Data to MQTT with Node-RED
 subtitle: Connecting OPC UA Data Streams to MQTT Brokers for Enhanced IoT Communication and Monitoring
 description: Learn how to bridge OPC UA data to MQTT using Node-RED for seamless industrial IoT integration and real-time data flow.
 date: 2024-08-13
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/brdging-opcua-to-mqtt.png
 keywords: opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, opc ua mqtt, opc ua over mqtt, opc ua to mqtt gateway, mqtt to opc ua, mqtt and opc ua, opc ua and mqtt, opc ua via mqtt, opcua to mqtt
