@@ -16,7 +16,7 @@ FlowFuse recently introduced a built-in database service to their platform, maki
 
 ## Getting Started: A Step-by-Step Guide
 
-If you do not have a FlowFuse account yet, [sign up](https://app.flowfuse.com/account/create)here to get started. For a full comparison of all plan features, you can also visit the [FlowFuse Pricing Page](/pricing/).
+FlowFuse Tables is available for Enterprise users. If you do not have an Enterprise FlowFuse account and are interested in trying it out, [contact us](/contact-us/) to get started.
 
 ### Step 1: Enable the Database in Your Project
 
@@ -24,17 +24,18 @@ Once the database feature is active on your account, the first step is to create
 
 1. Log in to your FlowFuse platform.
 2. In the navigation menu on the left, select the Tables option.
-3. On the next screen, you will be prompted to "Choose which Database you'd like to get started with." Click on the Managed PostgreSQL option to proceed.
+3. On the next screen, you will be prompted to "Choose which Database you'd like to get started with." 4. Currently, only Managed PostgreSQL is available. Click on Managed PostgreSQL to proceed.
 
 After you make your selection, FlowFuse will begin provisioning your dedicated database in the background. This process typically takes only a few moments. 
 
 Once the provisioning is complete, you will see two tabs in the Tables section:
-- Explorer – Allows you to manage your tables through the user interface. You can create tables, add columns, and view stored data.
+
+- **Explorer** – Allows you to manage your tables through the user interface. You can create tables, add columns, and view stored data.
 
 ![FlowFuse Tables: Explorer Tab](./images/tables-explorer.png){data-zoomable}
 _FlowFuse Tables: Explorer Tab_
 
-- Credentials – Provides the database connection details such as host, port, username, and password. These credentials allow you to access the FlowFuse-managed database from outside FlowFuse as well.
+- **Credentials** – Provides the database connection details such as host, port, username, and password. These credentials allow you to access the FlowFuse-managed database from outside FlowFuse as well.
 
 ![FlowFuse Tables: Credentials Tab](./images/tables-credentials.png){data-zoomable}
 _FlowFuse Tables: Credentials Tab_
@@ -49,7 +50,7 @@ FlowFuse offers two ways to create a table:
 
 Navigate to the Explorer tab under the Tables section.
 
-1. Click the + button.
+1. Click the **+** button.
 2. A form will slide in from the right side of the screen.
 3. In the first input field, enter the name of your table.
 4. Click Add New Column to start defining the structure of your table:
@@ -95,21 +96,30 @@ CREATE TABLE maintenance_tasks (
 > If you want to send the SQL query dynamically at runtime, you can pass it through `msg.query` instead of hardcoding it in the node configuration.
 
 5. Add an Inject node to trigger the query and optionally connect a Debug node to see the output.
-6. Deploy and click the button to create the table.
+6. Deploy and click the inject button to create the table.
 
 ## Step 3: Performing Operations with Your Table
 
-Once your table is ready, you can start interacting with it using the **Query** node. This node allows you to run SQL queries directly—whether it is inserting new data, retrieving records, updating rows, or deleting entries. You can perform all standard operations just as you would with the PostgreSQL node or when working directly with a PostgreSQL database.
+Once your table is ready, you can start interacting with it using the **Query** node. This node allows you to run SQL queries directly—whether it is inserting new data, retrieving records, updating rows, or deleting entries. You can perform all standard operations just as you would with the other database nodes. For this demonstration, you will see how to insert data into your table.
 
 > For a complete walkthrough of CRUD operations, refer to [this article](/node-red/database/postgresql/). The only difference is the node being used. You can also try out the flow provided at the end of this article.
 
-To demonstrate, here is how to insert a new record into your table:
+### Inserting a New Record
 
 1. In your Node-RED editor, drag a **Query** node from the FlowFuse category.
 
 2. Add an **Inject** node and connect it to the Query node.
 
-3. Double-click the Query node and paste the following SQL command into the **Query** field:
+3. Drag a **Change** node and place it between the Inject and Query nodes. Double-click the Change node and set the following properties based on your SQL query requirements, For example:
+
+   - `msg.title` = `"Check motor status"`
+   - `msg.description` = `"Routine check of motor and related sensors"`
+   - `msg.assigned_to` = `"technician_1"`
+   - `msg.due_date` = `"2025-08-10"`
+   - `msg.status` = `"pending"`
+   - `msg.priority` = `"medium"`
+
+4. Double-click the Query node and write the SQL command in the **Query** field, For example:
 
    ```sql
    INSERT INTO maintenance_tasks (
@@ -120,22 +130,30 @@ To demonstrate, here is how to insert a new record into your table:
      status,
      priority
    ) VALUES (
-     'Check motor status',
-     'Routine check of motor and related sensors',
-     'technician_1',
-     '2025-08-10',
-     'pending',
-     'medium'
+     '{{{ msg.title }}}',
+     '{{{ msg.description }}}',
+     '{{{ msg.assigned_to }}}',
+     '{{{ msg.due_date }}}',
+     '{{{ msg.status }}}',
+     '{{{ msg.priority }}}'
    );
    ```
 
-4. Optionally, connect a **Debug** node to the output of the Query node to inspect the result.
+> This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the `{{{ msg.property }}}` syntax.
+>
+> While convenient for quick testing and prototyping, this method is **not recommended for production use**. For better reliability and maintainability, consider using parameterized queries where supported.
 
-5. Deploy the flow and click the **Inject** button to run the query.
+5. Optionally, connect a **Debug** node to the output of the Query node to inspect the result.
+
+6. Deploy the flow and click the **Inject** button to execute the query.
+
+Upon a successful insert operation, the Query node will output a `msg.payload` containing an empty array, and a `msg.pgsql` object that includes the executed command and a `rowCount` indicating the number of rows affected.
+
+For update or delete operations, the behavior is the same. For select operations, the `msg.payload` will contain an array of the returned rows.
 
 ## Using Parameters in Your Queries
 
-While hardcoding values directly in SQL queries may work for simple use cases or testing, it is not ideal for real-world scenarios where data changes dynamically. That is where parameterized queries come in.
+As mentioned earlier, placing Mustache-style strings directly into SQL queries is not considered a best practice. Instead, you should use parameterized queries to keep your queries cleaner, more reliable, and easier to maintain while following best practices.
 
 The FlowFuse Query node supports both **numbered parameters** and **named parameters**, making your SQL queries more flexible, secure, and reusable.
 
@@ -143,40 +161,43 @@ The FlowFuse Query node supports both **numbered parameters** and **named parame
 
 Numbered parameters let you define placeholders in the SQL string and then pass actual values through `msg.params` as an array.
 
-1. Drag an **Inject** node and set properties like `msg.payload.id` and `msg.payload.status`.
+1. Drag an **Inject** node.
 
-2. Add a **Change** node and set `msg.params` to `[msg.payload.status, msg.payload.id]`.
+2. Drag a **Change** node and set properties based on your SQL command requirements. For example:
 
-3. Add a **Query** node and write an SQL query with numbered parameters. For example:
+   - Set `msg.payload.priority` to 'high'
+   - Set `msg.payload.status` to 'pending'
 
-   ```sql
-   UPDATE maintenance_tasks
-   SET status = $1
-   WHERE id = $2;
-   ```
+3. Add a **Change** node and set `msg.params` to `[msg.payload.priority, msg.payload.status]`.
+4. Add a **Query** node and write an SQL query with numbered parameters. For example:
 
-4. Optionally, add a **Debug** node to view the output.
+```sql
+SELECT * FROM maintenance_tasks WHERE priority = $1 AND status = $2;
+```
 
-5. Connect the Inject node to the Change node, then to the Query node, and finally to the Debug node.
+5. Optionally, add a **Debug** node to view the output.
+6. Connect the Inject node to the Change node, then to the Query node, and finally to the Debug node.
+7. Deploy the flow and trigger the Inject node.
 
-6. Deploy the flow and trigger the Inject node.
-
-This query will update the `status` of the row where the `id` matches. When you click the Inject node, the actual values from `msg.params` will be passed into the placeholders `$1` and `$2`.
-
-You're right—when using **named parameters**, SQL should reference the parameter names with a colon (e.g., `:status`), **not** dollar signs like `$1`.
+This query will retrieve rows where `priority` and `status` match the specified values. When you click the Inject node, the actual values from `msg.params` will be passed into the placeholders `$1` and `$2`.
 
 ### Option 2: Named Parameters
 
 Named parameters allow you to reference values by name using a dollar prefix (e.g., `$status`) in your SQL query. The actual values are passed using `msg.queryParameters` as an object.
 
-1. Drag an **Inject** node and set properties like `msg.id` and `msg.status`.
+1. Drag an **Inject** node.
 
-2. Add a **Change** node and set `msg.queryParameters` to `{}`. Then add the following rules:
+2. Drag a **Change** node and set properties based on your SQL command requirements. For example:
 
-   - Set `msg.queryParameters.id` to `msg.id`
-   - Set `msg.queryParameters.status` to `msg.status`
+   - Set `msg.payload.id` to 1
+   - Set `msg.payload.status` to "in_progress"
 
-3. Add a **Query** node and write the SQL query using named parameters. For example:
+3. Add another **Change** node and set `msg.queryParameters` to `{}`. Then add the following rules:
+
+   - Set `msg.queryParameters.id` to `msg.payload.id`
+   - Set `msg.queryParameters.status` to `msg.payload.status`
+
+4. Add a **Query** node and write the SQL query using named parameters. For example:
 
    ```sql
    UPDATE maintenance_tasks
@@ -184,18 +205,18 @@ Named parameters allow you to reference values by name using a dollar prefix (e.
    WHERE id = $id;
    ```
 
-4. Optionally, add a **Debug** node to view the output.
+5. Optionally, add a **Debug** node to view the output.
 
-5. Connect the Inject node to the Change node, then to the Query node, and finally to the Debug node.
+6. Connect the Inject node to the Change node that sets the payload values, then connect it to another Change node that sets the query parameters. Next, connect it to the Query node, and finally connect the Query node to the Debug node.
 
-6. Deploy the flow and click the Inject button to trigger the update.
+7. Deploy the flow and click the **Inject** button to trigger the update.
 
 When the flow runs, the values in `msg.queryParameters` will replace `$status` and `$id` in the SQL statement, ensuring that your queries are dynamic, readable, and secure.
 
 The Node-RED flow provided below demonstrates a complete set of database interactions. It covers table creation, all standard CRUD (Create, Read, Update, Delete) operations, and includes examples of how to use both numbered and named parameters.
 
 {% renderFlow 300 %}
-[{"id":"8cea02e15f688c4e","type":"group","z":"5b632b4467521c08","name":"Hardcode sql","style":{"label":true},"nodes":["55503d22390ed3cd","7ca6016b25dc9078","12302030cd44cfcd","d83341139c1f934c","dcc70ad274aae125","853be670731093f4","d77c468046588d71","c58ae6ffec545255","482ab91fe2f8c6de","1907b765c8528613","a38b7f2c950af057","602e543875c62a9e","1f274445108f3364","6cf43d0144998791","a3e4f298c0daab6b"],"x":54,"y":79,"w":532,"h":322},{"id":"55503d22390ed3cd","type":"inject","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":120,"wires":[["7ca6016b25dc9078"]]},{"id":"7ca6016b25dc9078","type":"tables-query","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Create Table","query":"CREATE TABLE maintenance_tasks (\n    id SERIAL PRIMARY KEY,\n    title TEXT NOT NULL,\n    description TEXT,\n    assigned_to TEXT NOT NULL,\n    due_date DATE NOT NULL,\n    status TEXT CHECK (status IN ('pending', 'in_progress', 'completed')) NOT NULL,\n    priority TEXT CHECK (priority IN ('low', 'medium', 'high')) NOT NULL\n);\n","split":false,"rowsPerMsg":1,"x":310,"y":120,"wires":[["12302030cd44cfcd"]]},{"id":"12302030cd44cfcd","type":"debug","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":490,"y":120,"wires":[]},{"id":"d83341139c1f934c","type":"inject","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":240,"wires":[["dcc70ad274aae125"]]},{"id":"dcc70ad274aae125","type":"tables-query","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Insert","query":"   INSERT INTO maintenance_tasks (\n     title,\n     description,\n     assigned_to,\n     due_date,\n     status,\n     priority\n   ) VALUES (\n     'Check motor status',\n     'Routine check of motor and related sensors',\n     'technician_1',\n     '2025-08-10',\n     'pending',\n     'medium'\n   );","split":false,"rowsPerMsg":1,"x":290,"y":240,"wires":[["853be670731093f4"]]},{"id":"853be670731093f4","type":"debug","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":490,"y":240,"wires":[]},{"id":"d77c468046588d71","type":"inject","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":300,"wires":[["c58ae6ffec545255"]]},{"id":"c58ae6ffec545255","type":"tables-query","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Update","query":"UPDATE maintenance_tasks\nSET status = 'in_progress'\nWHERE id = 1;\n","split":false,"rowsPerMsg":1,"x":300,"y":300,"wires":[["482ab91fe2f8c6de"]]},{"id":"482ab91fe2f8c6de","type":"debug","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":490,"y":300,"wires":[]},{"id":"1907b765c8528613","type":"inject","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":360,"wires":[["a38b7f2c950af057"]]},{"id":"a38b7f2c950af057","type":"tables-query","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Delete","query":"DELETE FROM maintenance_tasks\nWHERE id = 1;\n","split":false,"rowsPerMsg":1,"x":290,"y":360,"wires":[["602e543875c62a9e"]]},{"id":"602e543875c62a9e","type":"debug","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":490,"y":360,"wires":[]},{"id":"1f274445108f3364","type":"inject","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":180,"wires":[["6cf43d0144998791"]]},{"id":"6cf43d0144998791","type":"tables-query","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Get","query":"SELECT * FROM maintenance_tasks;","split":false,"rowsPerMsg":1,"x":290,"y":180,"wires":[["a3e4f298c0daab6b"]]},{"id":"a3e4f298c0daab6b","type":"debug","z":"5b632b4467521c08","g":"8cea02e15f688c4e","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":490,"y":180,"wires":[]},{"id":"435296aa43ced4fa","type":"group","z":"5b632b4467521c08","name":"Parameterized Queries","style":{"label":true},"nodes":["74c17b4f630b45ba","cd4a231c81924de7","f5bc24c4153f2b84","c8f4e016b476ac27","dac46e95067c0264","fd3c99742de3d9ee","ec5c7009d380545c","45db20ae39e1fbc0","4bce09361e3bd6e4","2476a1869183e9aa"],"x":54,"y":439,"w":672,"h":222},{"id":"74c17b4f630b45ba","type":"tables-query","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"","query":"INSERT INTO maintenance_tasks (\n     title, description, assigned_to, due_date, status, priority\n) VALUES (\n     $title, $description, $assigned_to, $due_date, $status, $priority\n);\n","split":false,"rowsPerMsg":1,"x":490,"y":620,"wires":[["f5bc24c4153f2b84"]]},{"id":"cd4a231c81924de7","type":"change","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"","rules":[{"t":"set","p":"queryParameters","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"queryParameters.title","pt":"msg","to":"payload.title","tot":"msg"},{"t":"set","p":"queryParameters.description","pt":"msg","to":"payload.description","tot":"msg"},{"t":"set","p":"queryParameters.assigned_to","pt":"msg","to":"payload.assigned_to","tot":"msg"},{"t":"set","p":"queryParameters.due_date","pt":"msg","to":"payload.due_date","tot":"msg"},{"t":"set","p":"queryParameters.status","pt":"msg","to":"payload.status","tot":"msg"},{"t":"set","p":"queryParameters.priority","pt":"msg","to":"payload.priority","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":320,"y":620,"wires":[["74c17b4f630b45ba"]]},{"id":"f5bc24c4153f2b84","type":"debug","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":630,"y":620,"wires":[]},{"id":"c8f4e016b476ac27","type":"inject","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"title\":\"Replace air conditioner filter\",\"description\":\"The air filter in the main office needs to be replaced to maintain air quality.\",\"assigned_to\":\"jdoe\",\"due_date\":\"2025-08-15\",\"status\":\"pending\",\"priority\":\"high\"}","payloadType":"json","x":150,"y":620,"wires":[["cd4a231c81924de7"]]},{"id":"dac46e95067c0264","type":"comment","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"Named Parameters","info":"","x":170,"y":580,"wires":[]},{"id":"fd3c99742de3d9ee","type":"comment","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"Numbered Parameters","info":"","x":180,"y":480,"wires":[]},{"id":"ec5c7009d380545c","type":"function","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"function 1","func":"msg.params = {}\nmsg.params = [msg.payload.title, msg.payload.description, msg.payload.assigned_to, msg.payload.due_date, msg.payload.status, msg.payload.priority]\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":320,"y":520,"wires":[["4bce09361e3bd6e4"]]},{"id":"45db20ae39e1fbc0","type":"inject","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"title\":\"Replace air conditioner filter\",\"description\":\"The air filter in the main office needs to be replaced to maintain air quality.\",\"assigned_to\":\"jdoe\",\"due_date\":\"2025-08-15\",\"status\":\"pending\",\"priority\":\"high\"}","payloadType":"json","x":150,"y":520,"wires":[["ec5c7009d380545c"]]},{"id":"4bce09361e3bd6e4","type":"tables-query","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"","query":"INSERT INTO maintenance_tasks (\n     title, description, assigned_to, due_date, status, priority\n) VALUES (\n     $1, $2, $3, $4, $5, $6\n);\n","split":false,"rowsPerMsg":1,"x":490,"y":520,"wires":[["2476a1869183e9aa"]]},{"id":"2476a1869183e9aa","type":"debug","z":"5b632b4467521c08","g":"435296aa43ced4fa","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":630,"y":520,"wires":[]},{"id":"3ad5122100ae7922","type":"global-config","env":[],"modules":{"@flowfuse/nr-tables-nodes":"0.1.0"}}]
+[{"id":"1b32d4c878aae3be","type":"debug","z":"9f65658274f7261e","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":490,"y":240,"wires":[]},{"id":"59e4b997235b486f","type":"group","z":"9f65658274f7261e","name":"","style":{"label":true},"nodes":["891c7f50df99de42","6b0630c1101be59c","35eda0b6c690e85f","d638990b04e75f73","0e0bdc881d4ff5e9","8f66f27f4fe5a3b1","5c2da859792c16fa"],"x":74,"y":59,"w":532,"h":222},{"id":"891c7f50df99de42","type":"inject","z":"9f65658274f7261e","g":"59e4b997235b486f","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":170,"y":140,"wires":[["6b0630c1101be59c"]]},{"id":"6b0630c1101be59c","type":"tables-query","z":"9f65658274f7261e","g":"59e4b997235b486f","name":"Create Table","query":"CREATE TABLE maintenance_tasks (\n    id SERIAL PRIMARY KEY,\n    title TEXT NOT NULL,\n    description TEXT,\n    assigned_to TEXT NOT NULL,\n    due_date DATE NOT NULL,\n    status TEXT CHECK (status IN ('pending', 'in_progress', 'completed')) NOT NULL,\n    priority TEXT CHECK (priority IN ('low', 'medium', 'high')) NOT NULL\n);\n","split":false,"rowsPerMsg":1,"x":330,"y":140,"wires":[["35eda0b6c690e85f"]]},{"id":"35eda0b6c690e85f","type":"debug","z":"9f65658274f7261e","g":"59e4b997235b486f","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":510,"y":140,"wires":[]},{"id":"d638990b04e75f73","type":"comment","z":"9f65658274f7261e","g":"59e4b997235b486f","name":"Hardcode query within node","info":"","x":220,"y":100,"wires":[]},{"id":"0e0bdc881d4ff5e9","type":"comment","z":"9f65658274f7261e","g":"59e4b997235b486f","name":"Dynamically passing query","info":"","x":210,"y":200,"wires":[]},{"id":"8f66f27f4fe5a3b1","type":"inject","z":"9f65658274f7261e","g":"59e4b997235b486f","name":"","props":[{"p":"query","v":"SELECT * FROM maintenance_tasks;","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":170,"y":240,"wires":[["5c2da859792c16fa"]]},{"id":"5c2da859792c16fa","type":"tables-query","z":"9f65658274f7261e","g":"59e4b997235b486f","name":"SELECT","query":"","split":false,"rowsPerMsg":1,"x":320,"y":240,"wires":[["1b32d4c878aae3be"]]},{"id":"98f1c134581e0cdc","type":"group","z":"9f65658274f7261e","name":"CRUD with Named Parameters","style":{"label":true},"nodes":["a70b79e2d1963518","8a617977438aedd1","e725fca338bfc763","ef5cde3b2e4ae6e5","ae071cf83947c204","26de341301b5378b","d1c2458ddef51e8f","eb407128caea1c2f","0b192c85faaee996","8db1c228e1b464fd","0ad1449ee792b623","9a81c88433626bf7","67ad3eddd7920547","7b5e3e5014ba62cb","028bd98bdcf55a8a","d12e44a1eefb3f6e","7b7c3b3586c57b6d","a3f58edc29712b75","e5a71b865a80248c","d6cbc55c66a02e36","6bab0e344178ed4a"],"x":74,"y":299,"w":912,"h":262},{"id":"a70b79e2d1963518","type":"inject","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Insert","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":170,"y":400,"wires":[["7b5e3e5014ba62cb"]]},{"id":"8a617977438aedd1","type":"tables-query","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Insert","query":"INSERT INTO maintenance_tasks (\n     title, description, assigned_to, due_date, status, priority\n) VALUES (\n     $title, $description, $assigned_to, $due_date, $status, $priority\n);\n","split":false,"rowsPerMsg":1,"x":750,"y":400,"wires":[["e725fca338bfc763"]]},{"id":"e725fca338bfc763","type":"debug","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":890,"y":400,"wires":[]},{"id":"ef5cde3b2e4ae6e5","type":"tables-query","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Update","query":"UPDATE maintenance_tasks\nSET status = $status\nWHERE id = $id;\n","split":false,"rowsPerMsg":1,"x":760,"y":480,"wires":[["26de341301b5378b"]]},{"id":"ae071cf83947c204","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"queryParameters","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"queryParameters.id","pt":"msg","to":"payload.id","tot":"msg"},{"t":"set","p":"queryParameters.status","pt":"msg","to":"payload.status","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":600,"y":480,"wires":[["ef5cde3b2e4ae6e5"]]},{"id":"26de341301b5378b","type":"debug","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":890,"y":480,"wires":[]},{"id":"d1c2458ddef51e8f","type":"inject","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Update","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":170,"y":480,"wires":[["028bd98bdcf55a8a"]]},{"id":"eb407128caea1c2f","type":"tables-query","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"SELECT","query":"SELECT * FROM maintenance_tasks \nWHERE priority = $priority;\n","split":false,"rowsPerMsg":1,"x":760,"y":440,"wires":[["8db1c228e1b464fd"]]},{"id":"0b192c85faaee996","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"queryParameters","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"queryParameters.priority","pt":"msg","to":"payload.priority","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":600,"y":440,"wires":[["eb407128caea1c2f"]]},{"id":"8db1c228e1b464fd","type":"debug","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":890,"y":440,"wires":[]},{"id":"0ad1449ee792b623","type":"inject","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"SELECT","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":180,"y":440,"wires":[["9a81c88433626bf7"]]},{"id":"9a81c88433626bf7","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"payload.priority","pt":"msg","to":"high","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":370,"y":440,"wires":[["0b192c85faaee996"]]},{"id":"67ad3eddd7920547","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"queryParameters","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"queryParameters.title","pt":"msg","to":"payload.title","tot":"msg"},{"t":"set","p":"queryParameters.description","pt":"msg","to":"payload.description","tot":"msg"},{"t":"set","p":"queryParameters.assigned_to","pt":"msg","to":"payload.assigned_to","tot":"msg"},{"t":"set","p":"queryParameters.due_date","pt":"msg","to":"payload.due_date","tot":"msg"},{"t":"set","p":"queryParameters.status","pt":"msg","to":"payload.status","tot":"msg"},{"t":"set","p":"queryParameters.priority","pt":"msg","to":"payload.priority","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":600,"y":400,"wires":[["8a617977438aedd1"]]},{"id":"7b5e3e5014ba62cb","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"payload.title","pt":"msg","to":"Replace air conditioner filter","tot":"str"},{"t":"set","p":"payload.description","pt":"msg","to":"The air filter in the main office needs to be replaced to maintain air quality.","tot":"str"},{"t":"set","p":"payload.assigned_to","pt":"msg","to":"jdoe","tot":"str"},{"t":"set","p":"payload.due_date","pt":"msg","to":"2025-08-15","tot":"str"},{"t":"set","p":"payload.status","pt":"msg","to":"pending","tot":"str"},{"t":"set","p":"payload.priority","pt":"msg","to":"high","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":340,"y":400,"wires":[["67ad3eddd7920547"]]},{"id":"028bd98bdcf55a8a","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"payload.id","pt":"msg","to":"1","tot":"num"},{"t":"set","p":"payload.status","pt":"msg","to":"in_progress","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":340,"y":480,"wires":[["ae071cf83947c204"]]},{"id":"d12e44a1eefb3f6e","type":"tables-query","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Delete","query":"DELETE FROM maintenance_tasks\nWHERE id = $id;\n","split":false,"rowsPerMsg":1,"x":750,"y":520,"wires":[["a3f58edc29712b75"]]},{"id":"7b7c3b3586c57b6d","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"queryParameters","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"queryParameters.id","pt":"msg","to":"payload.id","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":600,"y":520,"wires":[["d12e44a1eefb3f6e"]]},{"id":"a3f58edc29712b75","type":"debug","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":890,"y":520,"wires":[]},{"id":"e5a71b865a80248c","type":"inject","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"DELETE","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":180,"y":520,"wires":[["d6cbc55c66a02e36"]]},{"id":"d6cbc55c66a02e36","type":"change","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"","rules":[{"t":"set","p":"payload.id","pt":"msg","to":"2","tot":"num"}],"action":"","property":"","from":"","to":"","reg":false,"x":350,"y":520,"wires":[["7b7c3b3586c57b6d"]]},{"id":"6bab0e344178ed4a","type":"comment","z":"9f65658274f7261e","g":"98f1c134581e0cdc","name":"Named Parameters","info":"","x":190,"y":340,"wires":[]},{"id":"7d584a17652f6545","type":"group","z":"9f65658274f7261e","name":"Example flow: numbered parameters","style":{"label":true},"nodes":["c68690d2546f65cf","eb65c1a44ae25dd7","f38fed90c8e1f2f6","2b9e486cca212636","f492d66aa25e20aa"],"x":74,"y":579,"w":672,"h":122},{"id":"c68690d2546f65cf","type":"comment","z":"9f65658274f7261e","g":"7d584a17652f6545","name":"Numbered Parameters","info":"","x":200,"y":620,"wires":[]},{"id":"eb65c1a44ae25dd7","type":"function","z":"9f65658274f7261e","g":"7d584a17652f6545","name":"function 3","func":"msg.params = {}\nmsg.params = [msg.payload.title, msg.payload.description, msg.payload.assigned_to, msg.payload.due_date, msg.payload.status, msg.payload.priority]\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":340,"y":660,"wires":[["2b9e486cca212636"]]},{"id":"f38fed90c8e1f2f6","type":"inject","z":"9f65658274f7261e","g":"7d584a17652f6545","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"title\":\"Replace air conditioner filter\",\"description\":\"The air filter in the main office needs to be replaced to maintain air quality.\",\"assigned_to\":\"jdoe\",\"due_date\":\"2025-08-15\",\"status\":\"pending\",\"priority\":\"high\"}","payloadType":"json","x":170,"y":660,"wires":[["eb65c1a44ae25dd7"]]},{"id":"2b9e486cca212636","type":"tables-query","z":"9f65658274f7261e","g":"7d584a17652f6545","name":"Insert","query":"INSERT INTO maintenance_tasks (\n     title, description, assigned_to, due_date, status, priority\n) VALUES (\n     $1, $2, $3, $4, $5, $6\n);\n","split":false,"rowsPerMsg":1,"x":510,"y":660,"wires":[["f492d66aa25e20aa"]]},{"id":"f492d66aa25e20aa","type":"debug","z":"9f65658274f7261e","g":"7d584a17652f6545","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":660,"wires":[]},{"id":"f5e94c805a89920a","type":"global-config","env":[],"modules":{"@flowfuse/nr-tables-nodes":"0.1.0"}}]
 {% endrenderFlow %}
 
 ## Wrapping Up
