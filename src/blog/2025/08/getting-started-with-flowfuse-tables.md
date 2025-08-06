@@ -124,23 +124,6 @@ Once your table is ready, you can start interacting with it using the **Query** 
 
 4. Double-click the Query node and write the SQL command in the **Query** field, For example:
 
-```mustache
-INSERT INTO maintenance_tasks (
-  title,
-  description,
-  assigned_to,
-  due_date,
-  status,
-  priority
-) VALUES (
-  '{{{msg.title}}}',
-  '{{{msg.description}}}',
-  '{{{msg.assigned_to}}}',
-  '{{{msg.due_date}}}',
-  '{{{msg.status}}}',
-  '{{{msg.priority}}}'
-);
-```
 
 > This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the `{{{ msg.property }}}` syntax.
 >
