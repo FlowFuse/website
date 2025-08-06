@@ -144,7 +144,7 @@ INSERT INTO maintenance_tasks (
 ```
 {% endraw %}
 
-> This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the `{{{ msg.property }}}` syntax.
+> This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the ```{{{ msg.property }}}``` syntax.
 >
 > While convenient for quick testing and prototyping, this method is **not recommended for production use**. For better reliability and maintainability, consider using parameterized queries where supported.
 
