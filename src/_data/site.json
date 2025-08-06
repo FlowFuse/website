@@ -4,7 +4,9 @@
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
         "se": "https://job-boards.greenhouse.io/flowfuse/jobs/5565712004",
-        "em": "https://job-boards.greenhouse.io/flowfuse/jobs/5566913004"
+        "em": "https://job-boards.greenhouse.io/flowfuse/jobs/5566913004",
+        "dr": "https://job-boards.greenhouse.io/flowfuse/jobs/5611295004"
+
     },
     "messaging": {
         "tagLine": "Unlock Industrial Data. Integrate Everything. Optimize Faster.",
