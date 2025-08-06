@@ -14,7 +14,7 @@ FlowFuse recently introduced a built-in database service to their platform, maki
 
 <!--more-->
 
-## Getting Started: A Step-by-Step Guide
+## Getting Started
 
 FlowFuse Tables is available for Enterprise users. If you do not have an Enterprise FlowFuse account and are interested in trying it out, [contact us](/contact-us/) to get started.
 
@@ -24,7 +24,8 @@ Once the database feature is active on your account, the first step is to create
 
 1. Log in to your FlowFuse platform.
 2. In the navigation menu on the left, select the Tables option.
-3. On the next screen, you will be prompted to "Choose which Database you'd like to get started with." 4. Currently, only Managed PostgreSQL is available. Click on Managed PostgreSQL to proceed.
+3. On the next screen, you will be prompted to "Choose which Database you'd like to get started with."
+4. Currently, only Managed PostgreSQL is available. Click on Managed PostgreSQL to proceed.
 
 ![FlowFuse Tables](./images/tables.png){data-zoomable}
 _FlowFuse Tables_
@@ -105,7 +106,7 @@ CREATE TABLE maintenance_tasks (
 
 Once your table is ready, you can start interacting with it using the **Query** node. This node allows you to run SQL queries directly—whether it is inserting new data, retrieving records, updating rows, or deleting entries. You can perform all standard operations just as you would with the other database nodes. For this demonstration, you will see how to insert data into your table.
 
-> For a complete walkthrough of CRUD operations, refer to [this article](/node-red/database/postgresql/). The only difference is the node being used. You can also try out the flow provided at the end of this article.
+> For a complete walkthrough of CRUD operations, you can try out the flow provided at the end of this guide. The steps remain the same, with the only difference being the database node in use.
 
 ### Inserting a New Record
 
@@ -146,7 +147,7 @@ INSERT INTO maintenance_tasks (
 
 > This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the {% raw %}`{{{ msg.property }}}`{% endraw %} syntax.
 >
-> While convenient for quick testing and prototyping, this method is **not recommended for production use**. For better reliability and maintainability, consider using parameterized queries where supported.
+> While convenient for quick testing and prototyping, this method is **not recommended for production use**. For better reliability and maintainability, consider using parameterized queries, for that follow [Using Parameters in Your Queries](#using-parameters-in-your-queries).
 
 5. Optionally, connect a **Debug** node to the output of the Query node to inspect the result.
 
@@ -181,7 +182,7 @@ SELECT * FROM maintenance_tasks WHERE priority = $1 AND status = $2;
 ```
 
 5. Optionally, add a **Debug** node to view the output.
-6. Connect the Inject node to the Change node, then to the Query node, and finally to the Debug node.
+6. Connect the Inject node to the Change node that sets the payload values, then connect it to another Change node that sets the query parameters. Next, connect it to the Query node, and finally connect the Query node to the Debug node.
 7. Deploy the flow and trigger the Inject node.
 
 This query will retrieve rows where `priority` and `status` match the specified values. When you click the Inject node, the actual values from `msg.params` will be passed into the placeholders `$1` and `$2`.
