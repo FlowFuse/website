@@ -42,3 +42,42 @@ The Developer Relations Advocate skill set includes:
 * Technical Background: Software development experience in JavaScript/Node.js, Python, or other relevant programming languages
 * CRM & Analytics Proficiency: Ability to identify and qualify business opportunities using CRM tools such as HubSpot, Salesforce, or similar platforms. Experience with lead scoring, pipeline management, and opportunity tracking.
 
+
+
+## 90-Day Plan
+
+* Week 1-4: Foundation & FlowFuse Immersion
+   * **Product Deep Dive:** Familiarize yourself with the FlowFuse product, platform capabilities, Node-RED ecosystem, and target customer profiles
+   * **Internal Alignment:** Meet with key internal stakeholders across Marketing, Sales, Product, and Engineering teams to understand positioning, messaging, and go-to-market strategies
+   * **Content Audit:** Review existing marketing materials, technical documentation, blog content, and community engagement efforts to identify gaps and opportunities
+   * **Community Research:** Map the Node-RED and industrial automation community landscape, identifying key influencers, forums, events, and content creators
+   * **Marketing Integration:** Begin collaborating with the marketing team on content calendar planning and campaign alignment
+   * **Initial Content Creation:** Start producing introductory content (blog posts, social media content) to establish your voice within the FlowFuse brand
+
+* Week 5-8: Community Engagement & Content Production
+   * **Active Community Participation:** Begin engaging actively in Node-RED forums, Discord channels, GitHub discussions, and industrial automation communities
+   * **Content Creation Acceleration:** Develop and publish technical tutorials, demo videos, and case studies showcasing FlowFuse's industrial applications
+   * **Speaking Opportunities:** Identify and apply for speaking slots at upcoming conferences, webinars, and meetups
+   * **Partnership Exploration:** Research potential strategic partnerships with complementary tools, system integrators, and technology providers
+   * **Lead Generation Integration:** Work with marketing to develop lead magnets and technical content that supports demand generation efforts
+   * **Community Feedback Collection:** Start gathering feedback from community interactions to inform product and marketing strategies
+
+* Week 9-13: Strategic Impact & Growth Initiatives
+   * **Conference Speaking & Events:** Deliver your first technical presentations representing FlowFuse at industry events or webinars
+   * **Content Strategy Optimization:** Analyze performance metrics of your content and optimize based on engagement data and lead generation results
+   * **Strategic Partnership Development:** Initiate conversations with identified strategic partners for content collaboration and co-marketing opportunities
+   * **Community Leadership:** Take on leadership roles in relevant communities, potentially organizing meetups or contributing to open-source projects
+   * **Marketing Campaign Support:** Collaborate on multi-channel marketing campaigns that integrate developer relations activities with broader marketing initiatives
+   * **Success Metrics Establishment:** Develop and implement tracking systems for DevRel-specific KPIs including community growth, content engagement, and qualified lead generation
+
+
+## Hiring Plan
+
+1. Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
+2. First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
+3. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
+4. Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample.
+5. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
+6. Offer: Extend an offer to the selected candidate.
+
+
