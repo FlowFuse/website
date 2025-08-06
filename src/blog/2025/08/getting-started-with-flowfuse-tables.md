@@ -124,6 +124,7 @@ Once your table is ready, you can start interacting with it using the **Query** 
 
 4. Double-click the Query node and write the SQL command in the **Query** field, For example:
 
+{% raw %}
 ```mustache
 INSERT INTO maintenance_tasks (
   title,
@@ -141,6 +142,7 @@ INSERT INTO maintenance_tasks (
   '{{{msg.priority}}}'
 );
 ```
+{% endraw %}
 
 > This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the `{{{ msg.property }}}` syntax.
 >
