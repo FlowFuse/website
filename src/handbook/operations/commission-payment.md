@@ -33,6 +33,7 @@ and add two filters:
 
 1. Closed "Last Month"
 1. Deal stage is "All closed won"; note: there is a different stage called Closed won. This is not that.
+   
 You need to have the following columns enabled:
    * Deal Name
    * Deal Stage
