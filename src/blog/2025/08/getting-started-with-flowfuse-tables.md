@@ -16,7 +16,7 @@ FlowFuse recently introduced a built-in database service to their platform, maki
 
 ## Getting Started: A Step-by-Step Guide
 
-If you do not have a FlowFuse account yet, [sign up](/account/create)here to get started. For a full comparison of all plan features, you can also visit the [FlowFuse Pricing Page](/pricing/).
+If you do not have a FlowFuse account yet, [sign up](https://app.flowfuse.com/account/create)here to get started. For a full comparison of all plan features, you can also visit the [FlowFuse Pricing Page](/pricing/).
 
 ### Step 1: Enable the Database in Your Project
 
