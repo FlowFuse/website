@@ -26,6 +26,9 @@ Once the database feature is active on your account, the first step is to create
 2. In the navigation menu on the left, select the Tables option.
 3. On the next screen, you will be prompted to "Choose which Database you'd like to get started with." 4. Currently, only Managed PostgreSQL is available. Click on Managed PostgreSQL to proceed.
 
+![FlowFuse Tables](./images/tables.png){data-zoomable}
+_FlowFuse Tables_
+
 After you make your selection, FlowFuse will begin provisioning your dedicated database in the background. This process typically takes only a few moments. 
 
 Once the provisioning is complete, you will see two tabs in the Tables section:
