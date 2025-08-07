@@ -108,15 +108,15 @@ CREATE TABLE "maintenance_tasks" (
 
 Once your table is ready, you can start interacting with it using the **Query** node. This node allows you to run SQL queries directly—whether it is inserting new data, retrieving records, updating rows, or deleting entries. You can perform all standard operations just as you would with the other database nodes. For this demonstration, you will see how to insert data into your table.
 
-> For a complete walkthrough of CRUD operations, you can try out the flow provided at the end of this guide. The steps remain the same, with the only difference being the database node in use.
+> For a complete walkthrough of CRUD operations, you can try out the flow provided at the end of this guide.
 
 #### Inserting a New Record
 
 1. In your Node-RED editor, drag a **Query** node from the FlowFuse category.
 
-2. Add an **Inject** node and connect it to the Query node.
+2. Add an **Inject** node.
 
-3. Drag a **Change** node and place it between the Inject and Query nodes. Double-click the Change node and set the following properties based on your SQL query requirements, For example:
+3. Drag a Change node and place it between the Inject and **Query** nodes. Connect the Inject node to the Change node, and then connect the Change node to the Query node. Double-click the Change node and configure the following properties based on your SQL query requirements. For example:
 
    - `msg.title` = `"Check motor status"`
    - `msg.description` = `"Routine check of motor and related sensors"`
