@@ -230,12 +230,8 @@ The Node-RED flow provided below demonstrates a complete set of database interac
 
 ## Wrapping Up
 
-The new built-in database feature in FlowFuse removes many of the traditional complexities of working with databases, especially in Industrial IoT applications where ease of integration and speed are critical. Whether you prefer using a no-code UI to manage your tables or writing SQL directly in Node-RED, FlowFuse provides the flexibility to build your solutions your way.
+FlowFuse's new built-in database feature streamlines data management for Industrial IoT applications by removing the complexities of external database setup. This guide showed you how to provision the managed PostgreSQL database, create tables via the UI or Query node, and perform operations using the versatile Query node with secure, dynamic parameters.
 
-In this article, we explored how to enable and provision the FlowFuse-managed PostgreSQL database, create tables using both the UI and SQL, perform insert and update operations using the Query node, and apply numbered and named parameters for dynamic, secure queries.
+This feature, alongside the [built-in MQTT broker](/blog/2024/10/announcement-mqtt-broker/), is part of FlowFuse's growing suite of tools designed to simplify industrial automation. The auto-configuring [Project node](/blog/2024/10/exploring-flowfuse-project-nodes/) further accelerates development by seamlessly connecting your instances to the broker. Stay tuned for future articles on advanced Query node features like backpressure and streaming.
 
-The Query node also supports advanced features such as backpressure and flow control, streaming with split results, and message sequencing—these will be covered in future articles.
-
-FlowFuse has also introduced a [built-in MQTT broker](/blog/2024/10/announcement-mqtt-broker/) service, added a few months ago. Similar to the Query node, the [Project node](/blog/2024/10/exploring-flowfuse-project-nodes/) configures itself automatically and enables communication between your instance and devices through the broker, helping teams get started faster. FlowFuse continues to roll out features aimed at simplifying industrial automation—remote monitoring, version control, audit logs, DevOps tools, real-time collaboration, high availability, RBAC, SSO, and much more.
-
-If you are interested in learning more about the platform and its features, book a demo with our experts [here](/book-demo).
+To see how the entire platform can accelerate your industrial projects, book a demo with our experts [here](/book-demo).
