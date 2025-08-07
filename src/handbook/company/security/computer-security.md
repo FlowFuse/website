@@ -4,7 +4,7 @@ navTitle: Hardware Security Policy
 
 As an all-remote company, good security practices are required of all FlowFuse employees.
 
-The following guide details requirements for personal computer security; these are in support of our broader [security policies](../company/security/).
+The following guide details requirements for personal computer security; these are in support of our broader [security policies](/handbook/company/security/).
 
 We use the Vanta Agent to monitor a set of these requirements, but it does not cover them all. At this time, we rely on self-managed compliance.
 
