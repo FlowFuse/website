@@ -42,7 +42,15 @@ Devices must have a screenlock configured to enable after a short period of idle
 Enable a firewall to prevent external access to your device.
 
   - Windows: use the built-in Windows Defender firewall
-  - MacOS: use the built-in firewall service
+ <details>
+<summary><strong>- MacOS: use the built-in firewall service</strong></summary>
+
+1. Open **System Settings**  
+2. Go to **Network**  
+3. Select **Firewall** on the sidebar  
+4. Click **Turn On Firewall** if it's not already enabled
+
+</details> 
   - Linux: use the appropriate tool for your distribution, eg `ufw`/`firewalld`/`shorewall`
 
 ### Disable guest/auto-login
