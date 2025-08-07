@@ -44,13 +44,13 @@ _FlowFuse Tables: Explorer Tab_
 ![FlowFuse Tables: Credentials Tab](./images/tables-credentials.png){data-zoomable}
 _FlowFuse Tables: Credentials Tab_
 
-## Step 2: Create Your First Table
+### Step 2: Create Your First Table
 
 With your database instance provisioned, you can now create a table to start storing data.
 
 FlowFuse offers two ways to create a table:
 
-### Option 1: Using the Table Explorer (UI)
+#### Option 1: Using the Table Explorer (UI)
 
 Navigate to the Explorer tab under the Tables section.
 
@@ -68,7 +68,7 @@ _Interface for creating FlowFuse tables_
 
 5. Click Save once your columns are defined.
 
-### Option 2: Using SQL via the Query Node
+#### Option 2: Using SQL via the Query Node
 
 If you prefer writing raw SQL or need more control over your table structure, you can use the Query node in Node-RED.
 
@@ -104,13 +104,13 @@ CREATE TABLE "maintenance_tasks" (
 5. Add an Inject node to trigger the query and optionally connect a Debug node to see the output.
 6. Deploy and click the inject button to create the table.
 
-## Step 3: Performing Operations with Your Table
+### Step 3: Performing Operations with Your Table
 
 Once your table is ready, you can start interacting with it using the **Query** node. This node allows you to run SQL queries directly—whether it is inserting new data, retrieving records, updating rows, or deleting entries. You can perform all standard operations just as you would with the other database nodes. For this demonstration, you will see how to insert data into your table.
 
 > For a complete walkthrough of CRUD operations, you can try out the flow provided at the end of this guide. The steps remain the same, with the only difference being the database node in use.
 
-### Inserting a New Record
+#### Inserting a New Record
 
 1. In your Node-RED editor, drag a **Query** node from the FlowFuse category.
 
@@ -159,13 +159,13 @@ Upon a successful insert operation, the Query node will output a `msg.payload` c
 
 For update or delete operations, the behavior is the same. For select operations, the `msg.payload` will contain an array of the returned rows.
 
-## Using Parameters in Your Queries
+### Using Parameters in Your Queries
 
 As mentioned earlier, placing Mustache-style strings directly into SQL queries is not considered a best practice. Instead, you should use parameterized queries to keep your queries cleaner, more reliable, and easier to maintain while following best practices.
 
 The FlowFuse Query node supports both **numbered parameters** and **named parameters**, making your SQL queries more flexible, secure, and reusable.
 
-### Option 1: Numbered Parameters
+#### Option 1: Numbered Parameters
 
 Numbered parameters let you define placeholders in the SQL string and then pass actual values through `msg.params` as an array.
 
@@ -190,7 +190,7 @@ WHERE "priority" = $1 AND "status" = $2;
 
 This query will retrieve rows where `priority` and `status` match the specified values. When you click the Inject node, the actual values from `msg.params` will be passed into the placeholders `$1` and `$2`.
 
-### Option 2: Named Parameters
+#### Option 2: Named Parameters
 
 Named parameters allow you to reference values by name using a dollar prefix (e.g., `$status`) in your SQL query. The actual values are passed using `msg.queryParameters` as an object.
 
