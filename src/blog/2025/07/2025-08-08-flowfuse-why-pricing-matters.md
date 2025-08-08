@@ -1,6 +1,14 @@
-# The Evolution of Business Automation: Why Pricing Models Matter
+---
+title: "The Evolution of Business Automation: Why Pricing Models Matter"
+subtitle: The importance of a predictable pricing model in workflow automation
+description: The importance of a predictable pricing model in workflow automation
+date: 2025-08-08
+authors: ["pablo-filomeno"]
+keywords: node-red, n8n, pricing, business automation
+tags:
+   - flowfuse
+---
 
-*August 8, 2025*
 
 The automation landscape is evolving rapidly, and recent industry developments have sparked important conversations about how businesses should evaluate their automation platforms. N8N’s recent shift from workflow-based to execution-based pricing — positioned as removing limits — has received mixed reactions from the community, with many growing businesses finding the reality more complex. As pricing models change across the industry, now is the perfect time to reflect on what truly matters when choosing the right automation solution for your needs.
 
