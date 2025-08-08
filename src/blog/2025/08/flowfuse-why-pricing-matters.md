@@ -5,6 +5,7 @@ description: The importance of a predictable pricing model in workflow automatio
 date: 2025-08-08
 authors: ["pablo-filomeno"]
 keywords: node-red, n8n, pricing, business automation
+image: /blog/2025/08/images/the-evolution-of-business-automation-why-pricing-models-matter.png
 tags:
    - flowfuse
 ---
