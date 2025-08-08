@@ -37,7 +37,7 @@ FlowFuse is designed as an Industrial Application Platform that empowers teams t
 
 ### The Power of Node-RED
 
-At the heart of FlowFuse is Node-RED, the low-code programming language of choice for industrial applications. With over 5,000 community-contributed nodes, Node-RED enables engineers to collect, transform, and integrate data through visualized dashboards. It's been proven in everything from home automation to massive industrial deployments.
+At the heart of FlowFuse is Node-RED, the free and truly Open Source low-code programming tool of choice for industrial applications. With over 5,000 community-contributed nodes, Node-RED enables engineers to collect, transform, and integrate data through visualized dashboards. It's been proven in everything from home automation to massive industrial deployments.
 
 ### Transparent Business Model
 
