@@ -40,7 +40,7 @@ At the heart of FlowFuse is Node-RED, the free and truly Open Source low-code pr
 
 ### Transparent Business Model
 
-Rather than complex execution counting, FlowFuse focuses on delivering reliable automation that scales with your business needs. Our approach eliminates the guesswork and lets you focus on building solutions rather than calculating usage.
+Rather than complex execution counting, FlowFuse focuses on delivering reliable automation that scales with your business needs. Our approach eliminates the guesswork and lets you focus on building solutions rather than calculating usage; costs scale with how many Node-RED runtimes you need to manage.
 
 ## Key Advantages of the FlowFuse Approach
 
