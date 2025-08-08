@@ -2,7 +2,7 @@
 title: "Advanced OPC UA: Real-Time Subscriptions, Alarms, and Historical Data"
 subtitle: "Build production-ready industrial monitoring with FlowFuse's advanced OPC UA capabilities"
 description: "Learn advanced OPC UA techniques in Node-RED: real-time subscriptions, alarm handling, historical data queries, and method calls for production-ready industrial systems."
-date: 2025-07-28
+date: 2025-08-08
 keywords: OPC UA subscriptions Node-RED, OPC UA events alarms, OPC UA historical data, OPC UA method calls, real-time monitoring OPC UA, industrial automation advanced, OPC UA HA redundancy, OPC UA performance optimization
 authors: ["sumit-shinde"]
 tags:
