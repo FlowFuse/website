@@ -230,8 +230,15 @@ The Node-RED flow provided below demonstrates a complete set of database interac
 
 ## Wrapping Up
 
-FlowFuse's new built-in database feature streamlines data management for Industrial IoT applications by removing the complexities of external database setup. This guide showed you how to provision the managed PostgreSQL database, create tables via the UI or Query node, and perform operations using the versatile Query node with secure, dynamic parameters.
+You've now learned how to leverage FlowFuse Tables to simplify database management in your Industrial IoT projects. Here's what you've accomplished:
 
-This feature, alongside the [built-in MQTT broker](/blog/2024/10/announcement-mqtt-broker/), is part of FlowFuse's growing suite of tools designed to simplify industrial automation. The auto-configuring [Project node](/blog/2024/10/exploring-flowfuse-project-nodes/) further accelerates development by seamlessly connecting your instances to the broker. Stay tuned for future articles on advanced Query node features like backpressure and streaming.
+- **Provisioned** a managed PostgreSQL database with zero configuration overhead
+- **Created tables** using both the intuitive UI and flexible SQL approach  
+- **Executed queries** safely using parameterized queries for production-ready flows
+- **Performed CRUD operations** with the versatile Query node
 
-To see how the entire platform can accelerate your industrial projects, book a demo with our experts [here](/book-demo).
+The combination of FlowFuse Tables and the built-in [MQTT broker](/blog/2024/10/announcement-mqtt-broker/) eliminates the complexity of managing external database and messaging infrastructure, letting you focus on building automation solutions rather than wrestling with DevOps.
+
+Ready to see how FlowFuse Tables can accelerate your next industrial project? [Book a demo with our team](/book-demo) to explore the full platform capabilities.
+
+*Next up: We'll dive into Query node advanced features including backpressure handling and streaming large datasets—essential techniques for high-volume industrial applications.*
