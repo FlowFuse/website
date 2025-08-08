@@ -2,23 +2,18 @@
 layout: page
 nohero: true
 skipIndex: true
-image: /landing/images/factory-efficiency.png
-imageDescription: "Plant manager with a walkie-talkie in a factory setting"
+image: /landing/images/technology-migration-1.png
+imageDescription: "Plant manager with a laptop in a factory setting"
+heroTitle: "A Modern Alternative to <span class='text-indigo-600'>ThingWorx</span>"
 meta:
     title: "A Modern Alternative to ThingWorx"
     description: "FlowFuse is the open, cloud-ready solution engineers choose to replace legacy tools like PTC ThingWorx. Build faster, integrate easier, and modernize your industrial workflows — without vendor lock-in."
 hero:
     buttonText: "Talk to a Migration Expert"
-    buttonLink: "form"
-    buttonReference: "landing-factory-efficiency"
+    buttonLink: "https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation"
+    buttonReference: "landing-technology-migration-1"
 sectionTitle: "The Industrial Application Platform for Plant Managers"
 sectionSubtitle: "Unlock Data. Accelerate Results. Scale with Confidence."
-stats:
-    - title: "-40%"
-      description: "reduction in integration costs"
-    - title: "9x"
-      description: "faster prototyping"
-    - description: "Deployment <span class='text-indigo-400 font-semibold'>at scale</span>"
 sections:
     - svgPath: "components/icons/large/connect.svg"
       title: "Connect your factory systems"
@@ -55,37 +50,43 @@ hubspot:
         <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
             <div class="m-auto md:w-1/2">
                 <h1 class="w-full mt-0 px-12 md:px-0 m-auto text-base">
-                    <span class="text-4xl">{{ meta.title }}</span>
+                    <span class="text-4xl">{{ heroTitle | safe }}</span>
                 </h1>
                 <p class="mb-10">
                     {{ meta.description }}
                 </p>
-                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" 
-                    href="#{{ hero.buttonLink }}" 
-                    onclick="scrollToAnchor(event, '{{ hero.buttonLink }}'); capture('download', {'reference': '{{ hero.buttonReference }}'})">
-                    {{ hero.buttonText }}
-                </a>
+                <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">    
+                    {% macro migrationExpertButton(desktop=true) %}
+                    <a class="ff-btn ff-btn--primary flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}" 
+                        href="{{ hero.buttonLink }}" 
+                        onclick="capture('talk-to-migration-expert', {'reference': '{{ hero.buttonReference }}'})">
+                        {{ hero.buttonText }}
+                    </a>
+                    {% endmacro %}
+                    {{ migrationExpertButton() }}
+                    {% macro tryItOutButton(desktop=true) %}
+                    <a class="ff-btn uppercase {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}" 
+                    href="{{ site.appURL }}/account/create" 
+                    onclick="capture('try-it-out', {'reference': '{{ hero.buttonReference }}'})">
+                        <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                            TRY IT OUT
+                            {% include "components/icons/arrow-right.svg" %}
+                        </span>
+                    </a>
+                    {% endmacro %}
+                    {{ tryItOutButton() }}
+                </div>
             </div>
             <div class="md:w-1/2 flex-grow relative">
                 <div class="ff-image-cover ff-image-rounded w-full h-full">
                     {% set imageSrc = ["./", image ] | join %}
-                    {% image imageSrc, imageDescription, [496] %}
-                    <div class="absolute top-0 right-0 flex flex-col p-4 lg:max-w-[45%] text-left">
-                        {% for stat in stats %}
-                            <div class="bg-white/80 rounded-md px-3 {% if not loop.last %}mb-2{% endif %}">
-                                {% if stat.title %}
-                                    <h3 class="text-indigo-400 mt-3 font-semibold mb-0">{{ stat.title }}</h3>
-                                {% endif %}
-                                <p class="my-2 leading-5 {% if not loop.last %}mt-0{% endif %}">{{ stat.description | safe }}</p>
-                            </div>
-                        {% endfor %}
-                    </div>              
+                    {% image imageSrc, imageDescription, [496] %}           
                 </div>
             </div>
-            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden m-auto mt-12"
-            href="#{{ hero.buttonLink }}" 
-            onclick="scrollToAnchor(event, '{{ hero.buttonLink }}'); capture('download', {'reference': '{{ hero.buttonReference }}'})">
-            {{ hero.buttonText }}</a>
+            <div class="flex flex-col sm:flex-row md:hidden gap-3">
+                {{ migrationExpertButton(false) }}
+                {{ tryItOutButton(false) }}
+            </div>
         </div>   
     </div>
 
