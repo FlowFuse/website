@@ -12,21 +12,18 @@ hero:
     buttonText: "Talk to a Migration Expert"
     buttonLink: "https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation"
     buttonReference: "landing-technology-migration-1"
-sectionTitle: "The Industrial Application Platform for Plant Managers"
+sectionTitle: "Why Industrial Teams Are <span class='text-indigo-600'>Moving Away from ThingWorx to FlowFuse</span>"
 sectionSubtitle: "Unlock Data. Accelerate Results. Scale with Confidence."
 sections:
-    - svgPath: "components/icons/large/connect.svg"
-      title: "Connect your factory systems"
-      description: "Integrate OT, IT, and cloud data for real-time visibility and control."
-    - svgPath: "components/icons/large/launch.svg"
-      title: "Launch industrial apps up to 9x faster"
-      description: "Move from idea to solution in hours, not days."
-    - svgPath: "components/icons/large/reduce.svg"
-      title: "Reduce engineering time by 20%"
-      description: "Free up your team for high-value projects."
-    - svgPath: "components/icons/large/centralized.svg"
-      title: "Centralized management & enterprise security"
-      description: "Deploy and monitor all your applications from one dashboard."
+    - svgPath: "components/icons/cloud.svg"
+      title: "Built for the cloud"
+      description: "Run your automation flows wherever you need: edge, on-prem or cloud."
+    - svgPath: "components/icons/arrows-pointing-out.svg"
+      title: "Open & extensible"
+      description: "Based on open-source Node-RED. No more black boxes."
+    - svgPath: "components/icons/puzzle-piece.svg"
+      title: "Faster integrations"
+      description: "Native support for MQTT, OPC-UA, REST, and custom APIs."
 quotes:
     - icon: ./images/power-workplace-icon.png
       alt: "Power Workplace logo"
@@ -90,26 +87,29 @@ hubspot:
         </div>   
     </div>
 
-    <!-- The Industrial Application Platform for Plant Managers -->  
+    <!-- From ThingWorx to FlowFuse -->  
     <div class="w-full">
         <div class="max-w-screen-lg mx-auto px-6">
-            <h2 class="text-center w-full md:text-left text-indigo-600">{{ sectionTitle }}</h2>
-            <h4 class="text-center w-full md:text-left text-gray-500 font-normal">{{ sectionSubtitle }}</h4>
-            <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
+            <h2 class="text-center w-full md:text-left max-w-4xl">{{ sectionTitle | safe }}</h2>
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
                 {% for section in sections %}
-                    <div class="relative w-full max-md:max-w-md mx-auto bg-indigo-50 rounded-md p-6">
-                        <div class="flex flex-row justify-center items-center gap-8 h-full">
-                            <div class="flex w-1/5 items-center">
+                <div class="relative w-full max-md:max-w-md mx-auto">
+                    <div class="flex flex-col items-center sm:items-start">
+                        <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                            <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
                                 {% include section.svgPath %}
                             </div>
-                            <div class="w-4/5">
-                                <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                                    <h4 class="w-full md:m-0 text-gray-600 font-semibold">{{ section.title }}</h4>
-                                </div>
-                                <p class="font-light mb-0">{{ section.description | safe }}</p>
+                            <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                                <h5 class="w-full md:m-0">
+                                    <div class="text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</div>
+                                </h5>
                             </div>
                         </div>
+                        <div>
+                            <p class="text-center sm:text-left font-light">{{ section.description | safe }}</p>
+                        </div>
                     </div>
+                </div>
                 {% endfor %}
             </div>
         </div>
