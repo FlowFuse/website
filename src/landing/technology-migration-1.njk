@@ -24,22 +24,14 @@ sections:
     - svgPath: "components/icons/puzzle-piece.svg"
       title: "Faster integrations"
       description: "Native support for MQTT, OPC-UA, REST, and custom APIs."
-quotes:
-    - icon: ./images/power-workplace-icon.png
-      alt: "Power Workplace logo"
-      quote: "FlowFuse Cloud is interesting for us because it allows us to focus on growing our business rather than maintaining environments."
-      author: "Alan Yeung, CTO,"
-      company: "Power Workplace"
-    - icon: ./images/abrasive-technology-icon.png
-      alt: "Abrasive Technology logo"
-      quote: "Our search for a better way to host and manage our Node-RED instances is what started our transition to using FlowFuse."
-      author: "Josh Dudley,"
-      company: "Abrasive Technology"
-hubspot:
-    script: "hubspot/hs-form.njk"
-    formId: eef5e79c-74ae-499e-9fa1-9bd9974959d4
-    cta: "download-case-study"
-    reference: "factory-efficiency-landing"
+switch:
+    title: How to Switch from ThingWorx to FlowFuse
+    content:
+        - "<span class='font-semibold'>Migration consultation:</span> We analyze your current setup and challenges."
+        - "<span class='font-semibold'>Try FlowFuse with your data:</span> Build real flows using your industrial environment."
+        - "<span class='font-semibold'>Go live with expert support:</span> From pilot to full rollout, we’ve got your back."
+    cta: BOOK A DEMO
+    ctaUrl: "/book-demo"
 ---
 <!--Hero Content-->
 <div class="nohero w-full">
@@ -115,36 +107,21 @@ hubspot:
         </div>
     </div>
 </div>    
-<!--Second and third section-->
-<div class="max-w-screen-lg mx-auto mt-28 pb-12 px-6 text-lg flex flex-col md:flex-row justify-center gap-12 hover:no-underline">
-    <!-- Quotes -->
-    <div class="md:w-2/3 text-center text-teal-50 mb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-        <ul class="m-auto max-w-screen-lg flex flex-col gap-16">
-            {% for quote in quotes %}
-                <li class="flex flex-col max-md:items-center md:flex-row gap-6 align-items-start">
-                    <div class="w-20 h-20 min-w-20 rounded-full mx-1 bg-black p-2">
-                        {% set icon = quote.icon %}
-                        {% set imageDescription = quote.alt %}
-                        {% image icon, imageDescription, [64] %}
-                    </div>
-                    <div>
-                        <h4 class="md:text-left italic text-gray-500">“{{ quote.quote }}”</h4>
-                        <p class="md:text-right text-gray-500 text-lg">{{ quote.author }} <span class="font-bold">{{ quote.company }}</span></p>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+<!-- Switch Section -->
+<div class="container p-6 md:max-w-screen-lg p-8 border-2 border-indigo-200 rounded-lg bg-white drop-shadow-lg m-auto mt-10 md:mt-20 grid max-sm:grid-cols-1 sm:grid-cols-[minmax(500px,_1fr) 1fr 1fr] sm:grid-flow-col sm:gap-x-6 sm:grid-rows-[[minmax(100px,_1fr)_minmax(20px,_1fr)]">
+    <h3 class="order-1">{{ switch.title | safe }}</h3>
+    <div class="sm:row-span-2 sm:col-span-2 sm:order-3 order-2 flex items-center px-10 m-auto">
+        <ol class="list-decimal mt-2">
+        {% for item in switch.content %}
+        <li class="{% if not loop.last %}mb-4{%endif%}">{{ item | safe}}</li>
+        {% endfor %}
+        </ol>
     </div>
-    <!-- Form -->
-    <div id="form" class="md:w-1/3 w-full max-w-[550px] flex flex-col mx-auto">
-        <div class="px-6 pb-2 max-sm:mt-4">
-            <h4 class="mb-8 max-md:text-center">Download Case Study</h4>
-            {% include hubspot.script %}
-        </div>
+    <div class="flex sm:items-end justify-start sm:order-2 order-3 sm:self-end">
+        <a class="ff-btn ff-btn--primary uppercase items-center text-base"
+        href="{{ hero.buttonLink }}" 
+        onclick="capture('talk-to-migration-expert', {'reference': '{{ hero.buttonReference }}'})">
+        {{ hero.buttonText }}
+        </a>
     </div>
 </div>
-
-<!-- Scroll to anchor -->
-{% include "smooth-scroll.njk" %}
-
-
