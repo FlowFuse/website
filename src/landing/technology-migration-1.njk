@@ -32,14 +32,17 @@ switch:
         - "<span class='font-semibold'>Go live with expert support:</span> From pilot to full rollout, we’ve got your back."
     cta: BOOK A DEMO
     ctaUrl: "/book-demo"
+cta:
+    title: "Ready to Leave ThingWorx Behind?"
+    content: "See how FlowFuse helps teams like yours modernize their industrial automation infrastructure — faster, more flexibly, and at lower cost. <a href='https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation' class='font-semibold'>Book a Demo with a FlowFuse Expert</a>."
 ---
 <!--Hero Content-->
 <div class="nohero w-full">
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
         <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
             <div class="m-auto md:w-1/2">
-                <h1 class="w-full mt-0 px-12 md:px-0 m-auto text-base">
-                    <span class="text-4xl">{{ heroTitle | safe }}</span>
+                <h1 class="w-full mt-0 px-12 md:px-0 m-auto">
+                    {{ heroTitle | safe }}
                 </h1>
                 <p class="mb-10">
                     {{ meta.description }}
@@ -108,7 +111,7 @@ switch:
     </div>
 </div>    
 <!-- Switch Section -->
-<div class="container p-6 md:max-w-screen-lg p-8 border-2 border-indigo-200 rounded-lg bg-white drop-shadow-lg m-auto mt-10 md:mt-20 grid max-sm:grid-cols-1 sm:grid-cols-[minmax(500px,_1fr) 1fr 1fr] sm:grid-flow-col sm:gap-x-6 sm:grid-rows-[[minmax(100px,_1fr)_minmax(20px,_1fr)]">
+<div class="container p-8 md:max-w-screen-lg border-2 border-indigo-200 rounded-lg bg-white drop-shadow-lg m-auto mt-10 md:mt-20 grid max-sm:grid-cols-1 sm:grid-cols-[minmax(500px,_1fr) 1fr 1fr] sm:grid-flow-col sm:gap-x-6 sm:grid-rows-[[minmax(100px,_1fr)_minmax(20px,_1fr)]">
     <h3 class="order-1">{{ switch.title | safe }}</h3>
     <div class="sm:row-span-2 sm:col-span-2 sm:order-3 order-2 flex items-center px-10 m-auto">
         <ol class="list-decimal mt-2">
@@ -123,5 +126,18 @@ switch:
         onclick="capture('talk-to-migration-expert', {'reference': '{{ hero.buttonReference }}'})">
         {{ hero.buttonText }}
         </a>
+    </div>
+</div>
+<div class="w-full px-6">
+    <!-- Social proof -->
+    <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl my-10">
+        <div class="social-proof-logos mx-auto w-full text-center">
+            {% include "social-proof.njk" %}
+        </div>
+    </div>
+    <!-- CTA section -->
+    <div class="text-center w-full md:text-left md:max-w-screen-lg m-auto mb-24 mt-6 flex flex-col gap-6">
+        <h2>{{ cta.title | safe }}</h2>
+        <p>{{ cta.content | safe }}</p>
     </div>
 </div>
