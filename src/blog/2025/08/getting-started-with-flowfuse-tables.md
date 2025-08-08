@@ -2,7 +2,7 @@
 title: "FlowFuse's New Database: The Easiest Way to Store Industrial IoT Data"
 subtitle: "A step-by-step guide to storing, querying, and managing industrial data without leaving your FlowFuse project."
 description: "FlowFuse now includes a built-in PostgreSQL database, making it easier to manage Industrial IoT data directly within your Node-RED projects. Learn how to enable the feature, create tables, run SQL queries, and use dynamic parameters with the Query node."
-date: 2025-08-07
+date: 2025-08-08
 authors: ["sumit-shinde"]
 image: 
 keywords: flowfuse, industrial iot, node-red, postgresql, iot database, flowfuse database, sql queries, query node, dynamic parameters, create tables, edge computing, managed database, node-red-contrib-postgresql, influxdb, timescaledb
@@ -239,6 +239,6 @@ You've now learned how to leverage FlowFuse Tables to simplify database manageme
 
 The combination of FlowFuse Tables and the built-in [MQTT broker](/blog/2024/10/announcement-mqtt-broker/) eliminates the complexity of managing external database and messaging infrastructure, letting you focus on building automation solutions rather than wrestling with DevOps.
 
-Ready to see how FlowFuse Tables can accelerate your next industrial project? [Book a demo with our team](/book-demo) to explore the full platform capabilities.
+Ready to see how FlowFuse Tables can accelerate your next industrial project? [Book a demo with our team](/book-demo/) to explore the full platform capabilities.
 
 *Next up: We'll dive into Query node advanced features including backpressure handling and streaming large datasets—essential techniques for high-volume industrial applications.*
