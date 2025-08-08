@@ -15,6 +15,17 @@ Before you can take time off you should _always_:
   * Deel disallows [overages on the contracted days off](#holiday-policy), if you cannot file the complete length, file up to the allowance.
 * Add an 'Out of office' appointment in your personal Google Calendar, and decline
    all meetings automatically.
+<details>
+<summary>* Add a 'Vacation responder' to your Gmail account, and provide another contact person within your team.</summary>
+ 
+1. Open **Gmail** in your browser.  
+2. Click the **gear icon (⚙️)** in the top-right corner, then choose **“See all settings.”**  
+3. Scroll down to the **“Vacation responder”** section in the **General** tab.  
+4. Set:
+   - **First day** and **Last day**
+   - **Subject** (e.g., _"Out of Office"_)  
+   - **Message** (e.g., _"I am out of the office and without email access through [Day], [Date]. Please contact [team member] in my absence."_)
+</details>
 * Add an event to the shared 'FlowFuse Team Events' calendar showing all the days you will not be working. This makes it easier for our team to understand who is going to be away each week.
 * Inform fellow team members of your time off, and hand over work that's distributed.
 
