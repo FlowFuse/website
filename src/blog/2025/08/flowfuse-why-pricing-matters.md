@@ -10,6 +10,8 @@ tags:
    - flowfuse
 ---
 The automation landscape is evolving rapidly, and recent industry developments have sparked important conversations about how businesses should evaluate their automation platforms. N8N’s recent shift from workflow-based to execution-based pricing — positioned as removing limits — has received mixed reactions from the community, with many growing businesses finding the reality more complex. As pricing models change across the industry, now is the perfect time to reflect on what truly matters when choosing the right automation solution for your needs.
+
+
 <!--more-->
 
 ## The Current State of Automation Pricing
@@ -45,16 +47,16 @@ Rather than complex execution counting, FlowFuse focuses on delivering reliable 
 
 ## Key Advantages of the FlowFuse Approach
 
-### 1. **Enterprise-First Design**
+1. **Enterprise-First Design:**
 FlowFuse is built specifically for mission-critical business applications where reliability isn't optional.
 
-### 2. **True Team Collaboration**
+2. **True Team Collaboration:**
 FlowFuse enables organizations to reliably deliver Node-RED applications in a continuous, collaborative and secure manner, supporting team-based development from the ground up.
 
-### 3. **Flexible Deployment Options**
+3. **Flexible Deployment Options:**
 Whether you need cloud, on-premises, or hybrid deployment, FlowFuse adapts to your infrastructure requirements without artificial constraints.
 
-### 4. **Mature, Battle-Tested Ecosystem**
+4. **Mature, Battle-Tested Ecosystem:**
 Built on Node-RED's proven foundation, FlowFuse leverages years of community development and real-world industrial deployment experience.
 
 ## Evaluating Your Automation Strategy
