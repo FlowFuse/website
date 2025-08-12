@@ -156,10 +156,12 @@ _Time Range Selector form configuration in Node-RED Dashboard_
 
 3.  Next, add a **Date/Time Formatter node**. This is crucial for handling timezones correctly. Configure it as follows:
 
+    
       - Input property: `msg.startDateTime`
-      - Input Timezone: `Asia/Kolkata` (or your local timezone)
-      - Output Timezone: `Etc/UTC` (to match the database `TIMESTAMPTZ` standard)
+      - Input timezone: your local timezone, for example, `Asia/Kolkata`
+      - Output timezone: `Etc/UTC` (to match the database `TIMESTAMPTZ` standard)
       - Output property: `msg.startDateTime`
+
 
 ![Date/Time Formatter node configuration showing timezone conversion settings](./images/moment.png){data-zoomable}
 _Configuring the Date/Time Formatter node to convert from local timezone to UTC_
@@ -187,7 +189,7 @@ _Configuring the Date/Time Formatter node to convert from local timezone to UTC_
     ORDER BY timestamp DESC;
     ```
 
-6.  You can connect a **Debug node** after this query to test your flow. Deploy, select a date, time and window on the dashboard, and verify that you receive the correct data in the debug log.
+6.  You can connect a **Debug node** after this query to test your flow. Deploy the flow, select a **date**, **time**, and **window** on the dashboard, then verify that the correct data appears in the debug panel.
 
 ![Complete time range selector form](./images/form-time-range-selector.png){data-zoomable}
 _Complete time range selector form_
@@ -203,14 +205,15 @@ The final step is to visualize the query result.
       - Group: Create new group for chart.
       - Type: Line
       - X: Set to `timestamp` as a key.
-      - Y: Set to `temperature` as a key and then series to "Temperature" as string.
+      - Y: Set to `temperature` as a key.
+      - Series: Set to "Temperature" as string.
 
 3.  Deploy the flow. Your complete historical data dashboard is now live!
 
 ![historical data dashboard retrieving historical data nd displying it](./images/historical-data-dashboard.gif){data-zoomable}
 _Historical data dashboard retrieving and displaying historical data_
 
-Below is the complete flow that we built in this tutorial, demonstrating how to build historical data with FlowFuse FlowFuse.
+Below is the complete flow we built in this tutorial.
 
 
 {% renderFlow 300 %}
