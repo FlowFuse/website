@@ -1,6 +1,6 @@
 ---
-title: "Advanced OPC UA: Real-Time Subscriptions, Alarms, and Historical Data"
-subtitle: "Build production-ready industrial monitoring with FlowFuse's advanced OPC UA capabilities"
+title: "OPC UA Tutorial: Advanced Monitoring with Subscriptions, Alarms, and Historical Data"
+subtitle: "Master advanced OPC UA features in Node-RED for production-ready industrial automation"
 description: "Learn advanced OPC UA techniques in Node-RED: real-time subscriptions, alarm handling, historical data queries, and method calls for production-ready industrial systems."
 date: 2025-08-12
 keywords: OPC UA subscriptions Node-RED, OPC UA events alarms, OPC UA historical data, OPC UA method calls, real-time monitoring OPC UA, industrial automation advanced, OPC UA HA redundancy, OPC UA performance optimization
@@ -26,8 +26,6 @@ This guide covers four powerful OPC UA features:
 - **Historical Data**: Query past values for trending and analysis
 - **Method Calls**: Execute functions directly on your equipment
 
-These aren't theoretical examples—they're patterns proven in production environments across manufacturing, energy, and process industries.
-
 ## Prerequisites
 
 To follow this guide, you'll need:
@@ -36,13 +34,13 @@ To follow this guide, you'll need:
 - A working OPC UA server connection
 - The basics from our [previous tutorial](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)
 
-Here is the corrected version of the sentence:
 
->FlowFuse makes it easy to manage and scale Node-RED instances, and adds DevOps pipelines, audit logs, snapshots, and high availability. [Start for free](https://app.flowfuse.com/account/create).
+> Managing and scaling Node-RED instances is easy with FlowFuse, offering DevOps pipelines, audit logs, snapshots, high availability, and much more. [Start your free trial today!](https://app.flowfuse.com/account/create)
 
 Before proceeding, check which features your OPC UA server supports—most handle subscriptions and events, but historical data and methods vary by vendor.
 
 Let's get started.
+
 
 ## Real-Time Monitoring with Subscriptions
 
@@ -58,6 +56,9 @@ To create your first subscription:
 
 1. Drag an Inject node onto your canvas. This will trigger the subscription to start.
 
+> Note: This article uses Inject nodes for manual triggering to illustrate key concepts. In production, it is advisable to create interactive dashboards with FlowFuse Dashboard to enable effective monitoring and control. For more information on designing operator interfaces, please refer to our [this article](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/).
+
+
 2. Add an OpcUa-Item node. Double-click it and enter the NodeId of the tag you want to monitor, like `ns=2;i=2007`. Select the correct data type for your tag.
 
 3. Place an OpcUa-Client node on the canvas. Open its Configuration, select your OPC UA server endpoint configuration, and change the Action dropdown to "SUBSCRIBE". Set the interval to how often you want updates.
@@ -70,13 +71,15 @@ To create your first subscription:
 [{"id":"c62e8dab346d62bb","type":"inject","z":"7008401a.b94db","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":490,"y":740,"wires":[["cce9159a656858b9"]]},{"id":"cce9159a656858b9","type":"OpcUa-Item","z":"7008401a.b94db","item":"ns=3;i=1003","datatype":"Int32","value":"","name":"","x":700,"y":740,"wires":[["042a5d016ce879c6"]]},{"id":"1c1d56834b8d3373","type":"debug","z":"7008401a.b94db","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":720,"wires":[]},{"id":"bccca1356626f117","type":"debug","z":"7008401a.b94db","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":760,"wires":[]},{"id":"042a5d016ce879c6","type":"OpcUa-Client","z":"7008401a.b94db","endpoint":"","action":"subscribe","deadbandtype":"a","deadbandvalue":1,"time":"2","timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":940,"y":740,"wires":[["1c1d56834b8d3373"],["bccca1356626f117"],[]]}]
 {% endrenderFlow %}
 
-Once clicked, the OpcUa-Item node will connect to the OpcUa-Client and create the subscription. You'll see the node status change to show "subscribed" and then the subscription becomes active. When values change, they appear in the debug panel. If no values change within the interval time, the status shows "keep alive" to confirm the connection is still working.
+
+When clicked, the OpcUa-Item node sends the tag to the OpcUa-Client and creates the subscription. The node’s status will update to “subscribed” once the subscription is active. When values change, they appear in the debug panel. If no value changes occur within the interval time, the status will show “keep alive” to confirm that the connection is still active.
+
 
 ### Subscribing to Multiple Tags
 
-To monitor multiple tags, simply create multiple OpcUa-Item nodes and connect them all to the same OpcUa-Client node. Each item node should have its own NodeId configured. When you trigger the flow, all tags start updating simultaneously.
+To monitor multiple tags, simply create multiple OpcUa-Item nodes and connect them all to the OpcUa-Client node. Each item node should have its own NodeId configured. When you trigger the flow, all tags start updating simultaneously.
 
-For many tags, you can use a Function node to subscribe to multiple items at once. Connect the Function node directly to the OpcUa-Client node (no OpcUa-Item node needed). Use the "multiple" topic with the following code:
+For many tags, you can also use a Function node to subscribe to multiple tags at once. Connect the Function node directly to the OpcUa-Client node (no OpcUa-Item node needed). Use the "multiple" topic with the following code:
 
 ```javascript
 msg.topic = "multiple";
@@ -88,7 +91,7 @@ msg.payload = [
 return msg;
 ```
 
-Below is flow:
+Below is the complete flow monitoring multiple tags:
 
 {% renderFlow 300 %}
 [{"id":"93d8a766.c57aa8","type":"function","z":"7008401a.b94db","name":"NodeId Array","func":"msg.payload = [];\nmsg.payload.push({ nodeId: \"ns=3;i=1001\"});\nmsg.payload.push({ nodeId: \"ns=3;i=1002\"});\nmsg.payload.push({ nodeId: \"ns=3;i=1003\"});\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":750,"y":520,"wires":[["ba45b808.7ff578"]]},{"id":"2d805dd3.473632","type":"inject","z":"7008401a.b94db","name":"Subscribe multiple","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"multiple","x":550,"y":520,"wires":[["93d8a766.c57aa8"]]},{"id":"ba45b808.7ff578","type":"OpcUa-Client","z":"7008401a.b94db","endpoint":"47a389b3d7d27eeb","action":"subscribe","deadbandtype":"a","deadbandvalue":1,"time":"2","timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":940,"y":520,"wires":[["8d7ef05fbd80d2f9"],["591cb7f46dd507af"],[]]},{"id":"8d7ef05fbd80d2f9","type":"debug","z":"7008401a.b94db","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1110,"y":500,"wires":[]},{"id":"591cb7f46dd507af","type":"debug","z":"7008401a.b94db","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1110,"y":540,"wires":[]},{"id":"47a389b3d7d27eeb","type":"OpcUa-Endpoint","endpoint":"opc.tcp://sumits-MacBook-Pro.local:53530/OPCUA/SimulationServer","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
@@ -139,7 +142,7 @@ Events capture the full context of what happened, when it happened, and what nee
 
 3. Add an OpcUa-Client node with Action set to "EVENTS".
 
-4. Connect the Inject output to the OpcUa-Item input. Connect the OpcUa-Item output to the OpcUa-Client input. Add a Debug node and connect the OpcUa-Client output to the Debug input.
+4. Connect the Inject output to the OpcUa-Item node input. Connect the OpcUa-Item output to the OpcUa-Client input. Add a Debug node and connect the OpcUa-Client output to the Debug input.
 
 Deploy and trigger the flow. The debug panel will show events as they occur on your server.
 
@@ -155,7 +158,7 @@ When alarms trigger, operators often need to acknowledge them to indicate they'v
 
 2. Add a Function node to prepare the acknowledgment message.
 
-3. In the Function node, add this code:
+3. In the Function node, add the following code. Comments within the code explain what needs to be replaced.
 
 ```javascript
 msg.topic = "ns=6;s=MyLevel.Alarm";        // The alarm's NodeId
@@ -164,7 +167,7 @@ msg.comment = "Acknowledged via Node-RED";  // Your acknowledgment message
 return msg;
 ```
 
-4. Add an OpcUa-Client node. Open its configuration and set the Action dropdown to "ACKNOWLEDGE".
+4. Add an OPC UA Client node and configure it with your OPC UA server endpoint. Open the node’s configuration and set the Action dropdown to "ACKNOWLEDGE".
 
 5. Connect the Inject output to the Function input. Connect the Function output to the OpcUa-Client input.
 
@@ -272,6 +275,7 @@ return msg;
 The historical data returns with timestamps and quality codes. Use this for shift reports, compliance documentation, or troubleshooting equipment issues that happened hours or days ago.
 
 You've now mastered the advanced features that make OPC UA essential for industrial systems. With subscriptions, you're monitoring values in real-time without wasting bandwidth. With events and alarms, you're capturing critical alerts the moment they happen. With method calls, you're executing complex operations with a single command. And with historical access, you have the data trail needed for analysis and compliance.
+
 
 ## Scale Your OPC UA Implementation
 
