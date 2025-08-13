@@ -61,7 +61,7 @@ We will create a single table to hold all our sensor data. The key is to use app
 **Schema Breakdown:**
 
   * `TIMESTAMPTZ`: We use this data type to store timestamps with timezone information. This is critical for applications with sensors spread across different geographical locations, ensuring data is always consistent.
-  * **Indexes**: The indexes are vital for query speed. The `DESC` (descending) keyword in our `idx_timestamp` is a specific optimization. It pre-sorts the data from newest to oldest. When you runs a common query like `SELECT * FROM sensor_readings ORDER BY timestamp DESC LIMIT 10` to fetch the latest readings, PostgreSQL can use this index to retrieve the data instantly without performing a costly sort operation.
+  * **Indexes**: The indexes are vital for query speed. The `DESC` (descending) keyword in our `idx_timestamp` is a specific optimization. It pre-sorts the data from newest to oldest. When you run a common query like `SELECT * FROM sensor_readings ORDER BY timestamp DESC LIMIT 10` to fetch the latest readings, PostgreSQL can use this index to retrieve the data instantly without performing a costly sort operation.
 
 > **Important:** The `DESC` index provides a significant performance boost for queries that explicitly use `ORDER BY timestamp DESC`. If you need to process data chronologically from oldest to newest, you would create a standard ascending index (the default).
 
