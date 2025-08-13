@@ -228,4 +228,4 @@ With FlowFuse Tables now part of the platform, you can build complete industrial
 
 This means less complexity and faster time to value for your industrial data initiatives. Your historical dashboards, real-time monitoring, and OEE dashboards can all live in the same ecosystem, managed by the same team, with consistent security and governance controls.
 
-[Start using FlowFuse today](https://app.flowfuse.com/account/create) to make your IIoT data work for you.
+Ready to build your own time-series dashboard? [Get started with FlowFuse Tables] or [explore more industrial blueprints].```
