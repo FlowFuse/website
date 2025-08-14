@@ -1,8 +1,8 @@
 ---
 title: "Building Historical Data Dashboard with FlowFuse Tables"
-subtitle: "Track and visualize your IIoT data over time with your FlowFuse"
+subtitle: "Collect, transform, store and visualize IIoT data using FlowFuse Tables"
 description: "Learn how to Build a powerful historical data dashboard for your Industrial IoT applications using FlowFuse Tables."
-date: 2025-08-13
+date: 2025-08-14
 authors: ["sumit-shinde"]
 image: 
 keywords: flowfuse tables, iiot dashboard, industrial iot, time series data, postgresql optimization, historical data visualization, node-red dashboard, sensor data, batch inserts, data analytics, iot monitoring, flowfuse tutorial, industrial automation, real-time charts, time series database
@@ -20,7 +20,7 @@ This tutorial guides you through building such a dashboard using FlowFuse Tables
 
 You might wonder if PostgreSQL can efficiently handle large volumes of time-series data. The answer is yes—when configured properly. Without optimization, query performance can slow as data grows. However, by using techniques like batch inserts and smart indexing, PostgreSQL delivers fast and reliable access even at an industrial scale.
 
-We chose PostgreSQL as the first database offering in FlowFuse Tables because it is flexible, reliable, and open source. It serves as a solid foundation for FlowFuse Tables. Whether your data comes from IIoT sensors or other sources, PostgreSQL is well equipped to handle it.
+PostgreSQL is selected as the first database offering in FlowFuse Tables because it is flexible, reliable, and open source. It serves as a solid foundation for FlowFuse Tables. Whether your data comes from IIoT sensors or other sources, PostgreSQL is well equipped to handle it.
 
 ## Prerequisites
 
@@ -45,25 +45,35 @@ We will create a single table to hold all our sensor data. The key is to use app
 
 2.  Configure the node with the following SQL statement to create the table and its indexes:
 
-    ```sql
-    CREATE TABLE sensor_readings (
-        id SERIAL PRIMARY KEY,
-        timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-        sensor_id VARCHAR(50) NOT NULL,
-        location VARCHAR(100),
-        temperature DECIMAL(5,2)
-    );
+   ```sql
+   CREATE TABLE "sensor_readings" (
+       "id" SERIAL PRIMARY KEY,
+       "timestamp" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+       "sensor_id" VARCHAR(50) NOT NULL,
+       "location" VARCHAR(100),
+       "temperature" DECIMAL(5,2)
+   );
 
-    CREATE INDEX idx_timestamp ON sensor_readings(timestamp DESC);
-    CREATE INDEX idx_sensor_timestamp ON sensor_readings(sensor_id, timestamp DESC);
-    ```
+   CREATE INDEX "idx_sensor_timestamp" ON "sensor_readings"("sensor_id", "timestamp" DESC);
+   ```
 
 **Schema Breakdown:**
 
-  * `TIMESTAMPTZ`: We use this data type to store timestamps with timezone information. This is critical for applications with sensors spread across different geographical locations, ensuring data is always consistent.
-  * **Indexes**: The indexes are vital for query speed. The `DESC` (descending) keyword in our `idx_timestamp` is a specific optimization. It pre-sorts the data from newest to oldest. When you run a common query like `SELECT * FROM sensor_readings ORDER BY timestamp DESC LIMIT 10` to fetch the latest readings, PostgreSQL can use this index to retrieve the data instantly without performing a costly sort operation.
+* `TIMESTAMPTZ`: We use this data type to store timestamps with timezone information. This is critical for applications with sensors spread across different geographical locations, ensuring data is always consistent.
+* **Index**: The composite index on `sensor_id` and `timestamp` (in descending order) is vital for query speed. It allows PostgreSQL to quickly locate and return results for a specific sensor while already ordering them from newest to oldest. This avoids expensive sorting when fetching the most recent readings for a given sensor.
 
-> **Important:** The `DESC` index provides a significant performance boost for queries that explicitly use `ORDER BY timestamp DESC`. If you need to process data chronologically from oldest to newest, you would create a standard ascending index (the default).
+> **Important:** The `DESC` in the composite index provides a significant performance boost for queries like:
+>
+> ```sql
+> SELECT * 
+> FROM sensor_readings
+> WHERE sensor_id = 'sensor_01'
+> ORDER BY timestamp DESC
+> LIMIT 10;
+> ```
+>
+> If you instead need results in chronological order, you could create an ascending index or let PostgreSQL reverse the order at query time.
+
 
 3.  To execute this one-time setup, connect an **Inject node** to the input of the **Query node** and a **Debug node** to its output.
 4.  Click **Deploy**, then click the button on the **Inject node** to create your table.
@@ -78,58 +88,69 @@ Let's build a flow to simulate sensor data and batch-insert it.
 
 2.  Connect it to a **Change node** that generates a simulated sensor reading. Configure it to set `msg.payload` using the following JSONata expression:
 
-    ```json
+```json
     {
         "sensor_id": "sensor_01",
         "location": "Production Line A",
         "temperature": 20 + $random() * 5
     }
-    ```
+```
 
 3.  Add another **Change node** to add a precise timestamp to each reading.
 
       - Set `msg.payload.timestamp`
       - To the value type **timestamp**.
 
-4.  Now, add a **Function node** named "Batch Accumulator". This node uses the Node-RED context store to collect readings until a specified batch size is met. Paste the following JavaScript code into function node:
+4. Add a **Function node** and name it **"Batch Accumulator"**. Paste the following JavaScript code into the node — it already includes inline comments explaining each step. This function will accumulate incoming readings in batches until the specified batch size is reached, and then create the SQL query to perform batch inserts into the database.
 
-    ```javascript
-    // Store readings in context until batch size is reached
-    const batchSize = 100;
-    const readings = context.get('readings') || [];
+```javascript
+// Set the number of records to collect before triggering a batch insert
+const batchSize = 100;
 
-    readings.push(msg.payload);
+// Retrieve previously stored readings from context (or start with an empty array)
+const readings = context.get('readings') || [];
 
-    // Only proceed if the batch size is met
-    if (readings.length >= batchSize) {
-        // Prepare the parameterized query string for a batch insert
-        const values = readings.map((_, i) =>
-            `($${i * 4 + 1}, $${i * 4 + 2}, $${i * 4 + 3}, $${i * 4 + 4})`
-        ).join(',');
+// Add the new reading (from msg.payload) to the readings array
+readings.push(msg.payload);
 
-        msg.query = `
-            INSERT INTO sensor_readings 
-            (timestamp, sensor_id, location, temperature)
-            VALUES ${values}
-        `;
+// Check if we have enough readings to perform a batch insert
+if (readings.length >= batchSize) {
 
-        // Flatten the array of reading objects into a single array of values
-        msg.params = readings.flatMap(r => [
-            r.timestamp,
-            r.sensor_id,
-            r.location,
-            r.temperature
-        ]);
+    // Generate parameter placeholders for each reading (4 fields per record)
+    // Example: ($1, $2, $3, $4), ($5, $6, $7, $8), ...
+    const values = readings.map((_, i) => 
+        `($${i * 4 + 1}, $${i * 4 + 2}, $${i * 4 + 3}, $${i * 4 + 4})`
+    ).join(',');
 
-        // Clear the context for the next batch
-        context.set('readings', []);
-        return msg;
-    }
+    // Build the SQL insert query with placeholders
+    msg.query = `
+        INSERT INTO sensor_readings
+        (timestamp, sensor_id, location, temperature)
+        VALUES ${values};
+    `;
 
-    // If batch is not full, store it and stop the flow
-    context.set('readings', readings);
-    return null;
-    ```
+    // Flatten the readings into a single array of values matching the placeholders
+    // For each reading, we pass: current timestamp, sensor_id, location, temperature
+    msg.params = readings.flatMap(r => [
+        new Date(),          // Or use r.timestamp if actual reading time is available
+        r.sensor_id,
+        r.location,
+        r.temperature
+    ]);
+
+    // Clear stored readings in context now that they are being inserted
+    context.set('readings', []);
+
+    // Return the msg with the SQL query and parameters for execution
+    return msg;
+}
+
+// If not enough readings collected yet, store them back into context
+context.set('readings', readings);
+
+// Do not send anything forward yet
+return null;
+   ```
 
 5.  Connect the output of the "Batch Accumulator" to a **Query node**. This node will receive the fully formed `msg.query` and execute the batch insert.
 
@@ -143,53 +164,68 @@ With data flowing into our database, let's create a user interface to query and 
 
 We'll start with a form that allows users to select a date, time, and duration to view.
 
-1.  Drag a **ui_form** onto the canvas. Create a new dashboard group for it and add the following form elements:
+1. Drag a **ui\_form** node onto the canvas. Create a new dashboard group for it and add the following form elements:
 
-![Form widget configuration showing date, time, and window duration fields](./images/form-widget.png){data-zoomable}
-_Time Range Selector form configuration in Node-RED Dashboard_
+   ![Form widget configuration showing date, time, and window duration fields](./images/form-widget.png){data-zoomable}
+   *Time Range Selector form configuration in Node-RED Dashboard*
 
+2. Connect the output of the form to a **Change** node to format the input. Add the following rules in the Change node:
 
-2.  Connect the output of the form to a **Change node** to format the input, add these rules to change node:
+   * Set `msg.startDateTime` to the JSONata expression:
 
-      - Set `msg.startDateTime` to the JSONata expression: `payload.start & "T" & payload.time & ":00"`
-      - Set `msg.windowMinutes` to the expression: `payload.window`
+     ```jsonata
+     payload.start & "T" & payload.time & ":00"
+     ```
+   * Set `msg.windowMinutes` to the expression:
 
-3.  Next, add a **Date/Time Formatter node**. This is crucial for handling timezones correctly. Configure it as follows:
+     ```jsonata
+     payload.window
+     ```
 
-    
-      - Input property: `msg.startDateTime`
-      - Input timezone: your local timezone, for example, `Asia/Kolkata`
-      - Output timezone: `Etc/UTC` (to match the database `TIMESTAMPTZ` standard)
-      - Output property: `msg.startDateTime`
+3. Add a **Date/Time Formatter** node. This is crucial for handling timezones correctly. Configure it as follows:
 
+   * **Input property:** `msg.startDateTime`
+   * **Input timezone:** your local timezone, for example, `Asia/Kolkata`
+   * **Output timezone:** `Etc/UTC` (to match the database `TIMESTAMPTZ` standard)
+   * **Output property:** `msg.startDateTime`
 
-![Date/Time Formatter node configuration showing timezone conversion settings](./images/moment.png){data-zoomable}
-_Configuring the Date/Time Formatter node to convert from local timezone to UTC_
+   ![Date/Time Formatter node configuration showing timezone conversion settings](./images/moment.png){data-zoomable}
+   *Configuring the Date/Time Formatter node to convert from local timezone to UTC*
 
+4. Add another **Change** node to set the query parameters for the SQL query. Set `msg.params` to the following JSONata expression:
 
-4.  Add one more **Change node** to set the query parameters for our SQL query. Set `msg.params` to the following JSONata expression:
+   ```
+   [
+       msg.startDateTime,
+       msg.windowMinutes & " minutes"
+   ]
+   ```
 
-    ```json
-    [
-        msg.startDateTime,
-        msg.windowMinutes & " minutes"
-    ]
-    ```
+5. Connect this to a **Query** node with the following parameterized SQL, which fetches data for the selected time window:
 
-5.  Finally, connect this to a **Query node** with the following parameterized SQL. This query fetches the data for the selected time window.
+   ```sql
+   SELECT 
+       "timestamp",
+       "temperature"
+   FROM "sensor_readings"
+   WHERE "sensor_id" = 'sensor_01'
+     AND "timestamp" >= $1::timestamptz
+     AND "timestamp" < ($1::timestamptz + $2::interval) ORDER BY "timestamp" DESC;
+   ```
 
-    ```sql
-    SELECT 
-        timestamp,
-        temperature,
-    FROM sensor_readings
-    WHERE sensor_id = 'sensor_01'
-      AND timestamp >= $1::timestamptz
-      AND timestamp < ($1::timestamptz + $2::interval)
-    ORDER BY timestamp DESC;
-    ```
+6. Connect a **Debug** node after the Query node to test the flow.
 
-6.  You can connect a **Debug node** after this query to test your flow. Deploy the flow, select a **date**, **time**, and **window** on the dashboard, then verify that the correct data appears in the debug panel.
+7. Drag a **Switch** node onto the canvas and add a condition to check whether `msg.payload` is empty. Connect the output of the Query node to the Switch node.
+
+8. Connect the output for the "empty" condition from the Switch node to a **Change** node that sets `msg.payload` to:
+
+   ```
+   No data found for the selected time range.
+   ```
+
+9. Drag a **ui\_notification** node, select the appropriate UI group, and connect it to the output of the Change node.
+
+10. Deploy the flow. On the dashboard, select a **date**, **time**, and **window** using the form. Verify in the debug panel that the correct data is returned, or that a notification appears if no data is found.
 
 ![Complete time range selector form](./images/form-time-range-selector.png){data-zoomable}
 _Complete time range selector form_
@@ -208,16 +244,15 @@ The final step is to visualize the query result.
       - Y: Set to `temperature` as a key.
       - Series: Set to "Temperature" as string.
 
-3.  Deploy the flow. Your complete historical data dashboard is now live!
+3.  Deploy the flow. Your complete historical data dashboard is now live — you can explore it and experiment with different time ranges to see the results
 
 ![historical data dashboard retrieving historical data nd displying it](./images/historical-data-dashboard.gif){data-zoomable}
 _Historical data dashboard retrieving and displaying historical data_
 
 Below is the complete flow we built in this tutorial.
 
-
 {% renderFlow 300 %}
-[{"id":"f6f6bd2c78547168","type":"group","z":"fa9da3f45f949067","name":"Create Table","style":{"label":true},"nodes":["52f82d4aa9a97588","0d98257815fb40e3","65d5d7b8975fc2f0"],"x":34,"y":319,"w":572,"h":82},{"id":"52f82d4aa9a97588","type":"inject","z":"fa9da3f45f949067","g":"f6f6bd2c78547168","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":130,"y":360,"wires":[["0d98257815fb40e3"]]},{"id":"0d98257815fb40e3","type":"tables-query","z":"fa9da3f45f949067","g":"f6f6bd2c78547168","name":"Create Table","query":"    CREATE TABLE sensor_readings (\n        id SERIAL PRIMARY KEY,\n        timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n        sensor_id VARCHAR(50) NOT NULL,\n        location VARCHAR(100),\n        temperature DECIMAL(5,2)\n    );\n\n    CREATE INDEX idx_timestamp ON sensor_readings(timestamp DESC);\n    CREATE INDEX idx_sensor_timestamp ON sensor_readings(sensor_id, timestamp DESC);","split":false,"rowsPerMsg":1,"x":290,"y":360,"wires":[["65d5d7b8975fc2f0"]]},{"id":"65d5d7b8975fc2f0","type":"debug","z":"fa9da3f45f949067","g":"f6f6bd2c78547168","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":500,"y":360,"wires":[]},{"id":"15627074513a2ad7","type":"group","z":"fa9da3f45f949067","name":"Simulate Sensor and perform batch insert","style":{"label":true},"nodes":["eb1bb5193ddde8ba","60315b8ef9fe44ae","c6390c75effe5e20","296d4a80db186ac8","d9be1d81b114f59e","08258bdd680649c5"],"x":34,"y":419,"w":1072,"h":82},{"id":"eb1bb5193ddde8ba","type":"inject","z":"fa9da3f45f949067","g":"15627074513a2ad7","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":150,"y":460,"wires":[["d9be1d81b114f59e"]]},{"id":"60315b8ef9fe44ae","type":"tables-query","z":"fa9da3f45f949067","g":"15627074513a2ad7","name":"Query","query":"qconst batchSize = 100;\nconst readings = context.get('readings') || [];\n\nreadings.push(msg.payload);\n\nif (readings.length >= batchSize) {\n    // Prepare batch insert\n    const values = readings.map((_, i) => \n        `($${i*7+1}, $${i*7+2}, $${i*7+3}, $${i*7+4}, $${i*7+5}, $${i*7+6}, $${i*7+7})`\n    ).join(',');\n    \n    msg.query = `\n        INSERT INTO sensor_readings \n        (timestamp, sensor_id, location, temperature, humidity, pressure, quality_score)\n        VALUES ${values}\n    `;\n    \n    msg.params = readings.flatMap(r => [\n        new Date(),\n        r.sensor_id,\n        r.location,\n        r.temperature,\n        r.humidity,\n        r.pressure,\n        r.quality_score\n    ]);\n    \n    context.set('readings', []);\n    return msg;\n}\n\ncontext.set('readings', readings);\nreturn null;","split":false,"rowsPerMsg":1,"x":870,"y":460,"wires":[["296d4a80db186ac8"]]},{"id":"c6390c75effe5e20","type":"function","z":"fa9da3f45f949067","g":"15627074513a2ad7","name":"Batch Accumulator","func":"// Store readings in context until batch size is reached\nconst batchSize = 100;\nconst readings = context.get('readings') || [];\n\n// Add timestamp to the reading when it arrives\nmsg.payload.timestamp = new Date();\nreadings.push(msg.payload);\n\nif (readings.length >= batchSize) {\n    // Prepare batch insert\n    const values = readings.map((_, i) =>\n        `($${i * 7 + 1}, $${i * 7 + 2}, $${i * 7 + 3}, $${i * 7 + 4}, $${i * 7 + 5}, $${i * 7 + 6}, $${i * 7 + 7})`\n    ).join(',');\n\n    msg.query = `\n        INSERT INTO sensor_readings \n        (timestamp, sensor_id, location, temperature, humidity, pressure, quality_score)\n        VALUES ${values}\n    `;\n\n    msg.params = readings.flatMap(r => [\n        r.timestamp,  // Now each reading has its own timestamp!\n        r.sensor_id,\n        r.location,\n        r.temperature,\n        r.humidity,\n        r.pressure,\n        r.quality_score\n    ]);\n\n    context.set('readings', []);\n    return msg;\n}\n\ncontext.set('readings', readings);\nreturn null;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":710,"y":460,"wires":[["60315b8ef9fe44ae"]]},{"id":"296d4a80db186ac8","type":"debug","z":"fa9da3f45f949067","g":"15627074513a2ad7","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1000,"y":460,"wires":[]},{"id":"d9be1d81b114f59e","type":"change","z":"fa9da3f45f949067","g":"15627074513a2ad7","name":"Simulate Sensor","rules":[{"t":"set","p":"payload","pt":"msg","to":"{\t   \"sensor_id\": \"sensor_01\",\t   \"location\": \"Production Line A\",\t   \"temperature\": 20 + $random() * 5,\t   \"humidity\": 40 + $random() * 20,\t   \"pressure\": 1010 + $random() * 10,\t   \"quality_score\": $floor(85 + $random() * 15)   \t}","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":320,"y":460,"wires":[["08258bdd680649c5"]]},{"id":"08258bdd680649c5","type":"change","z":"fa9da3f45f949067","g":"15627074513a2ad7","name":"Add timestamp","rules":[{"t":"set","p":"payload.timestamp","pt":"msg","to":"iso","tot":"date"}],"action":"","property":"","from":"","to":"","reg":false,"x":520,"y":460,"wires":[["c6390c75effe5e20"]]},{"id":"97ce85da34597712","type":"group","z":"fa9da3f45f949067","name":"Historical data dashboard","style":{"label":true},"nodes":["e4afef5f243c8da0","717eabd27b6fbe18","fc6a0e85d73405a2","876e69e260a0f3bf","0c50224e220917b2","9336c25df2fcbbaa"],"x":34,"y":519,"w":1092,"h":82},{"id":"e4afef5f243c8da0","type":"ui-chart","z":"fa9da3f45f949067","g":"97ce85da34597712","group":"bb833d0dec39ffd7","name":"chart","label":"","order":1,"chartType":"line","category":"Temperature","categoryType":"str","xAxisLabel":"","xAxisProperty":"timestamp","xAxisPropertyType":"property","xAxisType":"time","xAxisFormat":"","xAxisFormatType":"ccc HH:mm","xmin":"","xmax":"","yAxisLabel":"","yAxisProperty":"temperature","yAxisPropertyType":"property","ymin":"","ymax":"","bins":10,"action":"replace","stackSeries":false,"pointShape":"circle","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#a347e1","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"12","height":8,"className":"","interpolation":"linear","x":1050,"y":560,"wires":[[]]},{"id":"717eabd27b6fbe18","type":"ui-form","z":"fa9da3f45f949067","g":"97ce85da34597712","name":"","group":"6d7a8eed50e3a59b","label":"","order":1,"width":0,"height":0,"options":[{"label":"Start","key":"start","type":"date","required":true,"rows":null},{"label":"Time","key":"time","type":"time","required":true,"rows":null},{"label":"Window (minutes)","key":"window","type":"number","required":true,"rows":null}],"formValue":{"start":"","time":"","window":""},"payload":"","submit":"submit","cancel":"clear","resetOnSubmit":true,"topic":"topic","topicType":"msg","splitLayout":"","className":"","passthru":false,"dropdownOptions":[],"x":110,"y":560,"wires":[["fc6a0e85d73405a2"]]},{"id":"fc6a0e85d73405a2","type":"change","z":"fa9da3f45f949067","g":"97ce85da34597712","name":"","rules":[{"t":"set","p":"startDateTime","pt":"msg","to":"payload.start & \"T\" & payload.time & \":00\"","tot":"jsonata"},{"t":"set","p":"windowMinutes","pt":"msg","to":"payload.window","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":320,"y":560,"wires":[["0c50224e220917b2"]]},{"id":"876e69e260a0f3bf","type":"tables-query","z":"fa9da3f45f949067","g":"97ce85da34597712","name":"","query":"    SELECT \n        timestamp,\n        temperature,\n        humidity,\n        pressure\n    FROM sensor_readings\n    WHERE sensor_id = 'sensor_01'\n      AND timestamp >= $1::timestamptz\n      AND timestamp < ($1::timestamptz + $2::interval)\n    ORDER BY timestamp DESC;","split":false,"rowsPerMsg":1,"x":910,"y":560,"wires":[["e4afef5f243c8da0"]]},{"id":"0c50224e220917b2","type":"moment","z":"fa9da3f45f949067","g":"97ce85da34597712","name":"","topic":"","input":"startDateTime","inputType":"msg","inTz":"Asia/Kolkata","adjAmount":0,"adjType":"days","adjDir":"add","format":"","locale":"en-US","output":"startDateTime","outputType":"msg","outTz":"ETC/UTC","x":540,"y":560,"wires":[["9336c25df2fcbbaa"]]},{"id":"9336c25df2fcbbaa","type":"change","z":"fa9da3f45f949067","g":"97ce85da34597712","name":"Set Params","rules":[{"t":"set","p":"params","pt":"msg","to":"[     msg.startDateTime,     msg.windowMinutes & \" minutes\"   ]","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":750,"y":560,"wires":[["876e69e260a0f3bf"]]},{"id":"bb833d0dec39ffd7","type":"ui-group","name":"Historical Chart","page":"d79b42b732ce9e5b","width":"12","height":1,"order":2,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"6d7a8eed50e3a59b","type":"ui-group","name":"Form","page":"d79b42b732ce9e5b","width":"12","height":1,"order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"d79b42b732ce9e5b","type":"ui-page","name":"Historical Data Dashboard","ui":"afea04ce8735c0a6","path":"/historical-data","icon":"home","layout":"grid","theme":"6d8bff5f3fded5c2","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"afea04ce8735c0a6","type":"ui-base","name":"UI Name","path":"/dashboard","includeClientData":true,"acceptsClientConfig":["ui-control","ui-notification"]},{"id":"6d8bff5f3fded5c2","type":"ui-theme","name":"FF Theme","colors":{"surface":"#5046e5","primary":"#5046e5","bgPage":"#ffffff","groupBg":"#ffffff","groupOutline":"#d4d1ff"},"sizes":{"density":"default","pagePadding":"15px","groupGap":"15px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"fe8aa2ddfe955f18","type":"global-config","env":[],"modules":{"@flowfuse/nr-tables-nodes":"0.1.0","@flowfuse/node-red-dashboard":"1.25.0","node-red-contrib-moment":"5.0.0"}}]
+[{"id":"f6f6bd2c78547168","type":"group","z":"a9e721cc8fbe46fe","name":"Create Table","style":{"label":true},"nodes":["52f82d4aa9a97588","0d98257815fb40e3","65d5d7b8975fc2f0"],"x":194,"y":219,"w":572,"h":82},{"id":"52f82d4aa9a97588","type":"inject","z":"a9e721cc8fbe46fe","g":"f6f6bd2c78547168","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":290,"y":260,"wires":[["0d98257815fb40e3"]]},{"id":"0d98257815fb40e3","type":"tables-query","z":"a9e721cc8fbe46fe","g":"f6f6bd2c78547168","name":"Create Table","query":"   CREATE TABLE \"sensor_readings\" (\n       \"id\" SERIAL PRIMARY KEY,\n       \"timestamp\" TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n       \"sensor_id\" VARCHAR(50) NOT NULL,\n       \"location\" VARCHAR(100),\n       \"temperature\" DECIMAL(5,2)\n   );\n\n   CREATE INDEX \"idx_sensor_timestamp\" ON \"sensor_readings\"(\"sensor_id\", \"timestamp\" DESC);","split":false,"rowsPerMsg":1,"x":470,"y":260,"wires":[["65d5d7b8975fc2f0"]]},{"id":"65d5d7b8975fc2f0","type":"debug","z":"a9e721cc8fbe46fe","g":"f6f6bd2c78547168","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":660,"y":260,"wires":[]},{"id":"15627074513a2ad7","type":"group","z":"a9e721cc8fbe46fe","name":"Simulate Sensor and perform batch insert","style":{"label":true},"nodes":["eb1bb5193ddde8ba","60315b8ef9fe44ae","c6390c75effe5e20","296d4a80db186ac8","d9be1d81b114f59e","08258bdd680649c5"],"x":194,"y":319,"w":1092,"h":82},{"id":"eb1bb5193ddde8ba","type":"inject","z":"a9e721cc8fbe46fe","g":"15627074513a2ad7","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":310,"y":360,"wires":[["d9be1d81b114f59e"]]},{"id":"60315b8ef9fe44ae","type":"tables-query","z":"a9e721cc8fbe46fe","g":"15627074513a2ad7","name":"Query","query":"const batchSize = 100;\nconst readings = context.get('readings') || [];\n\nreadings.push(msg.payload);\n\nif (readings.length >= batchSize) {\n    // Prepare batch insert\n    const values = readings.map((_, i) => \n        `($${i*7+1}, $${i*7+2}, $${i*7+3}, $${i*7+4}, $${i*7+5}, $${i*7+6}, $${i*7+7})`\n    ).join(',');\n    \n    msg.query = `\n        INSERT INTO \"sensor_readings\"\n        (\"timestamp\", \"sensor_id\", \"location\", \"temperature\")\n        VALUES ${values}\n    `;\n    \n    msg.params = readings.flatMap(r => [\n        new Date(),\n        r.sensor_id,\n        r.location,\n        r.temperature,\n    ]);\n    \n    context.set('readings', []);\n    return msg;\n}\n\ncontext.set('readings', readings);\nreturn null;","split":false,"rowsPerMsg":1,"x":1030,"y":360,"wires":[["296d4a80db186ac8"]]},{"id":"c6390c75effe5e20","type":"function","z":"a9e721cc8fbe46fe","g":"15627074513a2ad7","name":"Batch Accumulator","func":"const batchSize = 100;\nconst readings = context.get('readings') || [];\n\nreadings.push(msg.payload);\n\nif (readings.length >= batchSize) {\n    // Prepare batch insert\n    const values = readings.map((_, i) => \n        `($${i*7+1}, $${i*7+2}, $${i*7+3}, $${i*7+4}, $${i*7+5}, $${i*7+6}, $${i*7+7})`\n    ).join(',');\n    \n    msg.query = `\n        INSERT INTO \"sensor_readings\"\n        (\"timestamp\", \"sensor_id\", \"location\", \"temperature\")\n        VALUES ${values}\n    `;\n    \n    msg.params = readings.flatMap(r => [\n        new Date(),\n        r.sensor_id,\n        r.location,\n        r.temperature,\n    ]);\n    \n    context.set('readings', []);\n    return msg;\n}\n\ncontext.set('readings', readings);\nreturn null;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":870,"y":360,"wires":[["60315b8ef9fe44ae"]]},{"id":"296d4a80db186ac8","type":"debug","z":"a9e721cc8fbe46fe","g":"15627074513a2ad7","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1180,"y":360,"wires":[]},{"id":"d9be1d81b114f59e","type":"change","z":"a9e721cc8fbe46fe","g":"15627074513a2ad7","name":"Simulate Sensor","rules":[{"t":"set","p":"payload","pt":"msg","to":"{\t   \"sensor_id\": \"sensor_01\",\t   \"location\": \"Production Line A\",\t   \"temperature\": 20 + $random() * 5,\t   \"humidity\": 40 + $random() * 20,\t   \"pressure\": 1010 + $random() * 10,\t   \"quality_score\": $floor(85 + $random() * 15)   \t}","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":480,"y":360,"wires":[["08258bdd680649c5"]]},{"id":"08258bdd680649c5","type":"change","z":"a9e721cc8fbe46fe","g":"15627074513a2ad7","name":"Add timestamp","rules":[{"t":"set","p":"payload.timestamp","pt":"msg","to":"iso","tot":"date"}],"action":"","property":"","from":"","to":"","reg":false,"x":680,"y":360,"wires":[["c6390c75effe5e20"]]},{"id":"97ce85da34597712","type":"group","z":"a9e721cc8fbe46fe","name":"Historical data dashboard","style":{"label":true},"nodes":["e4afef5f243c8da0","717eabd27b6fbe18","fc6a0e85d73405a2","876e69e260a0f3bf","0c50224e220917b2","9336c25df2fcbbaa","efd22abf990fb7a2","d4662e7d33bdb59f","d68234bc2f2b18f2"],"x":194,"y":419,"w":1612,"h":122},{"id":"e4afef5f243c8da0","type":"ui-chart","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","group":"bb833d0dec39ffd7","name":"Historical Data Chart","label":"","order":1,"chartType":"line","category":"Temperature","categoryType":"str","xAxisLabel":"","xAxisProperty":"timestamp","xAxisPropertyType":"property","xAxisType":"time","xAxisFormat":"","xAxisFormatType":"ccc HH:mm","xmin":"","xmax":"","yAxisLabel":"","yAxisProperty":"temperature","yAxisPropertyType":"property","ymin":"","ymax":"","bins":10,"action":"replace","stackSeries":false,"pointShape":"circle","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#a347e1","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"12","height":8,"className":"","interpolation":"linear","x":1680,"y":460,"wires":[[]]},{"id":"717eabd27b6fbe18","type":"ui-form","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","name":"","group":"6d7a8eed50e3a59b","label":"","order":1,"width":0,"height":0,"options":[{"label":"Start","key":"start","type":"date","required":true,"rows":null},{"label":"Time","key":"time","type":"time","required":true,"rows":null},{"label":"Window (minutes)","key":"window","type":"number","required":true,"rows":null}],"formValue":{"start":"","time":"","window":""},"payload":"","submit":"submit","cancel":"clear","resetOnSubmit":true,"topic":"topic","topicType":"msg","splitLayout":"","className":"","passthru":false,"dropdownOptions":[],"x":270,"y":460,"wires":[["fc6a0e85d73405a2"]]},{"id":"fc6a0e85d73405a2","type":"change","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","name":"","rules":[{"t":"set","p":"startDateTime","pt":"msg","to":"payload.start & \"T\" & payload.time & \":00\"","tot":"jsonata"},{"t":"set","p":"windowMinutes","pt":"msg","to":"payload.window","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":480,"y":460,"wires":[["0c50224e220917b2"]]},{"id":"876e69e260a0f3bf","type":"tables-query","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","name":"","query":"   SELECT \n       \"timestamp\",\n       \"temperature\"\n   FROM \"sensor_readings\"\n   WHERE \"sensor_id\" = 'sensor_01'\n     AND \"timestamp\" >= $1::timestamptz\n     AND \"timestamp\" < ($1::timestamptz + $2::interval) ORDER BY \"timestamp\" DESC;","split":false,"rowsPerMsg":1,"x":1070,"y":460,"wires":[["e4afef5f243c8da0","efd22abf990fb7a2"]]},{"id":"0c50224e220917b2","type":"moment","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","name":"","topic":"","input":"startDateTime","inputType":"msg","inTz":"Asia/Kolkata","adjAmount":0,"adjType":"days","adjDir":"add","format":"","locale":"en-US","output":"startDateTime","outputType":"msg","outTz":"ETC/UTC","x":680,"y":460,"wires":[["9336c25df2fcbbaa"]]},{"id":"9336c25df2fcbbaa","type":"change","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","name":"Set Params","rules":[{"t":"set","p":"params","pt":"msg","to":"[     msg.startDateTime,     msg.windowMinutes & \" minutes\"   ]","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":910,"y":460,"wires":[["876e69e260a0f3bf"]]},{"id":"efd22abf990fb7a2","type":"switch","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","name":"Is payload empty?","property":"payload","propertyType":"msg","rules":[{"t":"empty"}],"checkall":"true","repair":false,"outputs":1,"x":1250,"y":500,"wires":[["d4662e7d33bdb59f"]]},{"id":"d4662e7d33bdb59f","type":"change","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","name":"Notification Message","rules":[{"t":"set","p":"payload","pt":"msg","to":"No data found for the selected time range.","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":1460,"y":500,"wires":[["d68234bc2f2b18f2"]]},{"id":"d68234bc2f2b18f2","type":"ui-notification","z":"a9e721cc8fbe46fe","g":"97ce85da34597712","ui":"14350e2db0cc0391","position":"center center","colorDefault":true,"color":"#000000","displayTime":"3","showCountdown":true,"outputs":1,"allowDismiss":true,"dismissText":"Close","allowConfirm":false,"confirmText":"Confirm","raw":false,"className":"","name":"","x":1670,"y":500,"wires":[[]]},{"id":"bb833d0dec39ffd7","type":"ui-group","name":"Historical Chart","page":"d79b42b732ce9e5b","width":"12","height":1,"order":2,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"6d7a8eed50e3a59b","type":"ui-group","name":"Form","page":"d79b42b732ce9e5b","width":"12","height":1,"order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"14350e2db0cc0391","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"headerContent":"page","navigationStyle":"default","titleBarStyle":"default","showReconnectNotification":true,"notificationDisplayTime":1,"showDisconnectNotification":true},{"id":"d79b42b732ce9e5b","type":"ui-page","name":"Historical Data Dashboard","ui":"14350e2db0cc0391","path":"/historical-data","icon":"home","layout":"grid","theme":"6d8bff5f3fded5c2","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":2,"className":"","visible":"true","disabled":"false"},{"id":"6d8bff5f3fded5c2","type":"ui-theme","name":"FF Theme","colors":{"surface":"#5046e5","primary":"#5046e5","bgPage":"#ffffff","groupBg":"#ffffff","groupOutline":"#d4d1ff"},"sizes":{"density":"default","pagePadding":"15px","groupGap":"15px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"a1e6e28bf926d3f8","type":"group","z":"a9e721cc8fbe46fe","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["da0e835628f95a0f","f7dde47e73470bfa"],"x":774,"y":219,"w":392,"h":82},{"id":"da0e835628f95a0f","type":"catch","z":"a9e721cc8fbe46fe","g":"a1e6e28bf926d3f8","name":"","scope":null,"uncaught":false,"x":860,"y":260,"wires":[["f7dde47e73470bfa"]]},{"id":"f7dde47e73470bfa","type":"debug","z":"a9e721cc8fbe46fe","g":"a1e6e28bf926d3f8","name":"debug 6","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1060,"y":260,"wires":[]},{"id":"01fd548fa46a547c","type":"global-config","env":[],"modules":{"@flowfuse/nr-tables-nodes":"0.1.0","@flowfuse/node-red-dashboard":"1.26.0","node-red-contrib-moment":"5.0.0"}}]
 {% endrenderFlow %}
 
 ## Conclusion
@@ -228,4 +263,4 @@ With FlowFuse Tables now part of the platform, you can build complete industrial
 
 This means less complexity and faster time to value for your industrial data initiatives. Your historical dashboards, real-time monitoring, and OEE dashboards can all live in the same ecosystem, managed by the same team, with consistent security and governance controls.
 
-Ready to build your own time-series dashboard? [Get started with FlowFuse Tables] or [explore more industrial blueprints].
+Ready to build your own time-series dashboard? [Get started with FlowFuse Tables](https://app.flowfuse.com/account/create) or [explore our industrial blueprints](/blueprints/)
