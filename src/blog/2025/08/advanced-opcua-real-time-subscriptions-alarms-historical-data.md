@@ -2,7 +2,7 @@
 title: "OPC UA Tutorial: Advanced Monitoring with Subscriptions, Alarms, and Historical Data"
 subtitle: "Master advanced OPC UA features in Node-RED for production-ready industrial automation"
 description: "Learn advanced OPC UA techniques in Node-RED: real-time subscriptions, alarm handling, historical data queries, and method calls for production-ready industrial systems."
-date: 2025-08-12
+date: 2025-08-14
 keywords: OPC UA subscriptions Node-RED, OPC UA events alarms, OPC UA historical data, OPC UA method calls, real-time monitoring OPC UA, industrial automation advanced, OPC UA HA redundancy, OPC UA performance optimization
 authors: ["sumit-shinde"]
 tags:
