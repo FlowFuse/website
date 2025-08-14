@@ -173,12 +173,12 @@ We'll start with a form that allows users to select a date, time, and duration t
 
    * Set `msg.startDateTime` to the JSONata expression:
 
-     ```jsonata
+     ```json
      payload.start & "T" & payload.time & ":00"
      ```
    * Set `msg.windowMinutes` to the expression:
 
-     ```jsonata
+     ```json
      payload.window
      ```
 
