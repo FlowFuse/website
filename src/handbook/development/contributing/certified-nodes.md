@@ -2,6 +2,8 @@
 navTitle: Certified Nodes
 ---
 
+# Certified Nodes
+
 FlowFuse maintains a catalogue of nodes from the community that we put through regular checks
 to ensure they are of high quality and standards for use by our customers.
 
