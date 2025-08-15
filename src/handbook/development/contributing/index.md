@@ -16,11 +16,11 @@ We use [StandardJS](https://standardjs.com/), with one exception - 4 spaces not 
 
 If you're using VSCode, then we recommend using the [ESLint extenstion](https://github.com/Microsoft/vscode-eslint) and setting `all` for the `Eslint › Code Actions On Save: Mode` setting:
 
-<img width="429" alt="ESLint - Action on Save" src="../images/eslint_actiononsave.png">
+<img width="429" alt="ESLint - Action on Save" src="../../images/eslint_actiononsave.png">
 
 In the case of working with `vue` or `njk` files (found in the [frontend](https://github.com/FlowFuse/flowfuse/tree/main/frontend) and [website][website-repo] repositories), then you can add `vue` and `njk` to the `Eslint: Probe` setting in order to enable auto-formatting on save for these file types.
 
-<img width="478" alt="ESLint - Probe" src="../images/eslint_probe.png">
+<img width="478" alt="ESLint - Probe" src="../../images/eslint_probe.png">
 
 ### Editor Config
 
@@ -80,7 +80,7 @@ When reviewing code, consider the following:
 
 ### Test Changes in Staging
 
-For FlowFuse, when changes are merged into the `main` branch, they are [automatically deployed to the production environment](./ops/production#deployment-to-flowfuse-cloud). As such, it is vital a thorough review has been conducted before merging, and that the changes have been tested in a staging environment.
+For FlowFuse, when changes are merged into the `main` branch, they are [automatically deployed to the production environment](../ops/production#deployment-to-flowfuse-cloud). As such, it is vital a thorough review has been conducted before merging, and that the changes have been tested in a staging environment.
 
 When a pull request includes modifications to the source code, a dedicated pre-staging environment is automatically generated. This pre-staging environment is a complete replica of the staging environment, ensuring that it mirrors the conditions and configurations found in staging. The pre-staging environment serves as a testing ground, allowing developers to thoroughly evaluate their changes before they are merged into the main codebase. This ensures that any issues can be identified and addressed in an isolated setting, maintaining the integrity of the staging environment.
 

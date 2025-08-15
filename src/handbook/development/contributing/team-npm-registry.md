@@ -65,4 +65,4 @@ To enable a local development environment for the Team NPM feature follow these 
         password: secret
     ```
 - Update TeamTypes to enable the feature
-![sceen shot of team type features](./images/npm-registry-team-type.png)
+![sceen shot of team type features](../images/npm-registry-team-type.png)
