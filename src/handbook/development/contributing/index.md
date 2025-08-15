@@ -84,7 +84,7 @@ For FlowFuse, when changes are merged into the `main` branch, they are [automati
 
 When a pull request includes modifications to the source code, a dedicated pre-staging environment is automatically generated. This pre-staging environment is a complete replica of the staging environment, ensuring that it mirrors the conditions and configurations found in staging. The pre-staging environment serves as a testing ground, allowing developers to thoroughly evaluate their changes before they are merged into the main codebase. This ensures that any issues can be identified and addressed in an isolated setting, maintaining the integrity of the staging environment.
 
-![Example entry in the PR status to show the "Deploy Staging" job](../images/screenshots/devops-pr-staging.png)
+![Example entry in the PR status to show the "Deploy Staging" job](../../images/screenshots/devops-pr-staging.png)
 
 The environment itself will then be available at: `https://<pr-number>.flowfuse.dev/` . Information about the pre-staging deployment is sent to `gh-pipelines` Slack channel.
 
@@ -106,7 +106,7 @@ To create a customized pre-staging environment, please follow the steps below:
 5. On the right side, click the `Run workflow` button.
 6. Complete the `Pull request number` field and the dependent package feature branch name.
 
-![Create pre-staging environment workflow inputs](../images/screenshots/gh-pre-staging-workflow-inputs.png){data-zoomable}
+![Create pre-staging environment workflow inputs](../../images/screenshots/gh-pre-staging-workflow-inputs.png){data-zoomable}
 
 7. Click the `Run workflow` button and wait for the results. A Slack notification will be sent to the `gh-pipelines` channel with the link to the pre-staging environment.
 

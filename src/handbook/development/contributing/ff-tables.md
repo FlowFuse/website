@@ -6,10 +6,10 @@ navTitle: FF Tables
 
 ## Postgres instance
 
-The following command assumes you are on Liunx.
+FlowFuse Tables relies on a local Postgres instance. The following command assumes you are on Linux.
 
-1. Create a directory to hold the database
-2. Run the following Docker command:
+1. Create a directory to hold the database files
+2. Run the following Docker command (from within that new directory)
 
     ```
     docker run -p 5432:5433 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=password -v `pwd`/db:/var/lib/postgresql/data postgres:17
