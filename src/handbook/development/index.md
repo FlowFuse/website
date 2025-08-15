@@ -20,7 +20,7 @@ This includes, but is not limited to:
 
 - [Security Policy](./security.md)
 - [Packaging](./packaging.md) - how we manage repos and npm packaging
-- [Contributing](./contributing/index.md) - tips & details on how to setup a local development environment.
+- [Contributing](./contributing) - tips & details on how to setup a local development environment.
 - [Project Management](./project-management.md) - details the processes we use to guide product development.
 - [Tools](./tools.md) - the tools we use
 
