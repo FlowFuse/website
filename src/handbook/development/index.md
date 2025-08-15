@@ -24,6 +24,7 @@ This includes, but is not limited to:
 - [Project Management](./project-management.md) - details the processes we use to guide product development.
 - [Tools](./tools.md) - the tools we use
 - [Team NPM Registry](./team-npm-registry.md) - Setting up local development environment
+- [FF Tables](./ff-tables.md) - Setting up local development environment
 
 ## Releases
 
