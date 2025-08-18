@@ -1,20 +1,17 @@
 ---
 title: FlowFuse MQTT
-description: MQTT Simplified
+description: "MQTT Simplified"
 date: 2025-08-18 12:00:00.0
-authors: ['steve-mclaughlin']
+authors: ['stephen-mclaughlin']
 tags:
   - changelog
-issues:
-  - "https://github.com/FlowFuse/flowfuse/issues/4911"
 ---
 
-FlowFuse has offered a built in MQTT [Team Broker]"(/docs/user/teambroker) since FlowFuse v2.10.0 but setting up and using it was less than straightforward.
+FlowFuse has offered a built in MQTT [Team Broker](/docs/user/teambroker) since FlowFuse v2.10.0 but setting up and using it was less than straightforward.
 
-Today, we are adding dedicated MQTT nodes that require no setup to use. Just add a FlowFuse MQTT Node to your Node-RED instance,
-deploy it & go.
+Today, we are adding dedicated MQTT nodes that require no setup to use. Just add a FlowFuse MQTT Node to your Node-RED instance, deploy it & go.
 
-Pretty much all of the capabilities of the Node-RED MQTT Nodes are present making it super simple to get up and running in no time. 
+Pretty much all of the capabilities of the Node-RED MQTT Nodes are present making it very straightforward and to get up and running in no time. 
 
 ![Screenshot of Node-RED with FlowFuse MQTT nodes](./images/mqtt-nodes-1.png){data-zoomable}
 _Screenshot of Node-RED with FlowFuse MQTT Nodes_
