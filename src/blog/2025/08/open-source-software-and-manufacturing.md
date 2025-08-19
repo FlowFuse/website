@@ -4,7 +4,7 @@ subtitle: Manufacturing organisations used to be leading in software but has los
 description:
 date: 2025-08-20
 authors: ["zeger-jan-van-de-weg"]
-image: # TODO
+image: blog/2025/08/images/open-source-software-and-manufacturing.png
 tags:
    - flowfuse
    - node-red
