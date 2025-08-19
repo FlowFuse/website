@@ -1,6 +1,6 @@
 ---
 title: "Winning Through Open-Source Software in Manufacturing Digitalization"
-subtitle: Manufacturing organisations used to be leading in software but has lost the lead. Open Source Software is the way to now catch up"
+subtitle: "Manufacturing organizations used to be leading in software but has lost the lead. Open Source Software is the way to now catch up"
 description:
 date: 2025-08-20
 authors: ["zeger-jan-van-de-weg"]
