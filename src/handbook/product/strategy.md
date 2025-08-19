@@ -116,10 +116,10 @@ Flowfuse users should have trust that their applications will run reliably. This
 
 Our strategic pillars guide investment and innovation efforts toward our [Ideal Customer Profile (ICP)](https://flowfuse.com/handbook/marketing/messaging/#ideal-customer-profile-(icp)) in manufacturing and other data-intensive industrial sectors. In accordance with [our company mission](https://flowfuse.com/handbook/company/strategy/) \- to “fuse the digital realm and physical reality through building bespoke workflows, applications, and integrations, unleashing their creativity so that they can effortlessly leverage their own skills and expertise” \- these initiatives represent our focused commitment, for the next 12 months, to building bespoke workflows, applications, and integrations that deliver measurable value to industrial operations while enabling all application-builders to create. All GTM pricing principles can be found [here](https://flowfuse.com/handbook/product/pricing/).
 
-- Industrial Application Development  
-- Decreasing Time to Value  
-- Improved Visualization and Analytics  
-- Leading Node-RED Adoption
+- [Industrial Application Development](#industrial-application-development)
+- [Decreasing Time to Value](#decreasing-time-to-value)
+- [Improved Visualization and Analytics](#improved-visualization-and-analytics)
+- [Leading Node-RED Adoption](#leading-node-red-adoption)
 
 ### Industrial Application Development
 
