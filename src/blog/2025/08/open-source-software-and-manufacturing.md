@@ -186,5 +186,5 @@ The conversation is therefore shifting from if manufacturing should adopt open
 source, to how it can be implemented to improve operations and deliver a return
 on investment. This transition presents new questions, but it is one that
 companies do not have to approach on their own. At FlowFuse, we work with
-manufacturers to navigate this change, and we would love to explain why an
-open-source strategy is worth considering for the factory of the future.
+manufacturers to navigate this change, and we would love to explain how an
+open-source strategy can transform your factory of the future. Download our comprehensive whitepaper "[Open Source Software for Manufacturing](/whitepaper/open-source-software-for-manufacturing/)," to learn how to transform your factory operations and secure a competitive edge.
