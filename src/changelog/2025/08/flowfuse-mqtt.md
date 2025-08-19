@@ -7,7 +7,7 @@ tags:
   - changelog
 ---
 
-FlowFuse has offered a built in MQTT [Team Broker](/docs/user/teambroker) since FlowFuse v2.10.0 but setting up and using it was less than straightforward.
+FlowFuse has offered a built in MQTT [Team Broker](/docs/user/teambroker) since FlowFuse v2.10.0, but connecting to it still required manual configuration in your Node-RED instances through the core MQTT nodes.
 
 Today, we are adding dedicated MQTT nodes that require no setup to use. Just add a FlowFuse MQTT Node to your Node-RED instance, deploy it & go.
 
