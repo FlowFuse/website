@@ -126,6 +126,7 @@ Our strategic pillars guide investment and innovation efforts toward our [Ideal 
 FlowFuse is positioned to become the leading platform for building custom industrial applications by providing the resources to augment or enable the creation of value provided by Manufacturing Execution Systems (MES), Enterprise Resource Planning (ERP) systems, Supervisory Control and Data Acquisition (SCADA) systems, and Unified Namespace (UNS) architectures. Some roadmap items that fit this theme are:
 
 * Database offering: Database feature in FlowFuse that enables seamless integration with Node-RED, easy read/write/query functionality, and simplifies manufacturing application building by bringing more tools into the secure FlowFuse ecosystem.    
+* MQTT Broker: Managed MQTT broker service that provides reliable, scalable messaging infrastructure for industrial IoT applications, enabling secure communication and supporting Unified Namespace architectures with built-in topic management.
 * UNS schema extension: Further develops FlowFuse UNS capabilities by bringing in data sources that rely on protocols other than MQTT.  
 * MES modules: Provides rapid MES development by providing easy UI views of labor management, regulatory compliance, and quality management.  
 * MES and ERP visualization packages: Enables visualizaton of core charts found in MES and ERP softwares.
