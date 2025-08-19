@@ -6,7 +6,7 @@ navTitle: Pricing Principles
 
 This page sets out the concepts that we license and what units are measured across both FlowFuse Cloud and Self-hosted. Commercial decisions outside the scope of this document.
 
-We have three primary tiers: Starter (Open-Source when self-managed), Team, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organizational chart typically implies different requirements.
+We have three primary tiers: Starter (Open-Source when self-managed), Pro, and Enterprise. The value and features provided within each tier correspond to the specific [persona](./personas/), acknowledging that a higher placement in the organizational chart typically implies different requirements.
 
 ## Buyer-Based Open Core (BBOC) Principle
 
@@ -14,7 +14,7 @@ The [Buyer-Based Open Core (BBOC)](https://opencoreventures.com/blog/2023-01-ope
 development and monetization strategy. It's a framework we employ to discern which features should be open source and which should be proprietary. 
 BBOC aligns features into tiers based on their target users or 'buyers' — individual contributors, management, or executives.
 
-Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter tier. On the other hand, features that have broader organizational relevance, like Edge Device Management or high availability, are offered in our Team tier or Enterprise tiers, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
+Features that are most beneficial to individual contributors, such as PLC engineers and line workers, fall within our Starter tier. On the other hand, features that have broader organizational relevance, like Edge Device Management or high availability, are offered in our Pro tier or Enterprise tiers, targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
 
 This buyer-based approach helps us focus our efforts on the value to the end-user, rather than technical specifications or development effort. It aligns our pricing strategy with the value each tier provides, ensuring that the cost is justified by the capabilities offered and the user persona it serves.
 
@@ -61,7 +61,7 @@ Devices are part of the licensed instances.
 
 ## Licenses
 
-From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowFuse, this can be self-managed or FlowFuse Managed. For FlowFuse managed properties there's 3 tiers; Starter, Team, and Enterprise.
+From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowFuse, this can be self-managed or FlowFuse Managed. For FlowFuse managed properties there's 3 tiers; Starter, Pro, and Enterprise.
 The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
 quantity of instances(5), users(5), teams(5), and devices(5) are available.
 When a license is purchased it provides all of the functionality of the higher
