@@ -2,7 +2,7 @@
 title: "Building Historical Data Dashboard with FlowFuse Tables"
 subtitle: "Collect, transform, store and visualize IIoT data using FlowFuse Tables"
 description: "Learn how to Build a powerful historical data dashboard for your Industrial IoT applications using FlowFuse Tables."
-date: 2025-08-14
+date: 2025-08-19
 authors: ["sumit-shinde"]
 image: 
 keywords: flowfuse tables, iiot dashboard, industrial iot, time series data, postgresql optimization, historical data visualization, node-red dashboard, sensor data, batch inserts, data analytics, iot monitoring, flowfuse tutorial, industrial automation, real-time charts, time series database
