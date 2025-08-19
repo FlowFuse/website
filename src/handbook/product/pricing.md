@@ -23,7 +23,7 @@ This buyer-based approach helps us focus our efforts on the value to the end-use
 | Tier | Objective | Problem it Solves | Persona |
 | ---- | --------- | ----------------- | ------- |
 | Starter | Introduce Node-RED | <ul><li>Hosting Node-RED</li><li>TLS/SSL</li><li>Subdomain</li><li>Backups (snapshots)</li><ul> | <ul><li>Individual contributor</li><li>PLC engineer</li><li>Line worker</li></ul> |
-| Premium | Scale the roll-out of Node-RED | <ul><li>Managing 5 or more Node-RED instances</li><li>Edge Device Management</li><li>Security</li><li>Effective collaboration</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
+| Pro | Scale the roll-out of Node-RED | <ul><li>Managing 5 or more Node-RED instances</li><li>Edge Device Management</li><li>Security</li><li>Effective collaboration</li></ul> | <ul><li>IIoT manager</li><li>Plant manager</li></ul> |
 | Enterprise | Node-RED as a company standard | <ul><li>High availability</li><li>Auditability</li><li>Enterprise intergration</li></ul> | <ul><li>Central IT departments</li><li>Plant manager</li></ul> |
 
 ## Teams
