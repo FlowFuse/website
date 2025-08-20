@@ -5,8 +5,10 @@ description: "Learn advanced OPC UA techniques in Node-RED: real-time subscripti
 date: 2025-08-14
 keywords: OPC UA subscriptions Node-RED, OPC UA events alarms, OPC UA historical data, OPC UA method calls, real-time monitoring OPC UA, industrial automation advanced, OPC UA HA redundancy, OPC UA performance optimization
 authors: ["sumit-shinde"]
+image: /blog/2025/08/images/advanced-opcua-real-time-subscriptions-alarms-historical-data.png
 tags:
   - flowfuse
+  - opcua
 ---
 
 In our [previous tutorial](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), we covered OPC UA basics—connecting to servers, reading tags, and writing values. Now it's time for the features that make OPC UA truly powerful in production.
