@@ -32,6 +32,15 @@ into this [private Google Drive directory](https://drive.google.com/drive/folder
 FlowFuse pays out commissions to sales reps, the terms of which are to be found
 in [this template doc](https://docs.google.com/document/d/14KSf0N5H6vzUPJrpIqQGffgHk-_5OK2HeS-fuRHTSYw).
 
+### Sales Compensation Structure
+
+FlowFuse follows a balanced sales compensation model:
+- **Base/Commission Split**: 50/50 split between base salary and commission opportunity
+- **OTE Target**: FlowFuse targets a 5x OTE (On-Target Earnings) multiple for sales roles
+- **Commission Basis**: Commission is calculated based on booked new Annual Recurring Revenue (ARR)
+
+This structure ensures competitive compensation while aligning sales performance with company growth objectives.
+
 ## Performance Review
 
 Performance reviews will be carried out annually, in September. Any employee or
