@@ -25,6 +25,11 @@ employee should be reimbursed. This includes travel, accommodation, food and dri
 Any activities undertaken by employees outside of the scope of the summit will not be reimbursed,
 and are at the employee's own expense.
 
+FlowFuse will be responsible for booking the accommodation, activities and communal
+dinners and lunches. Each employee is then responsible for booking their own flights
+and travel arrangements. Please check in with the summit organizer on your own personal
+budget, and this will differ person-to-person and be a factor of each employee's location.
+
 ### Alcohol
 
 Expensing of alcohol purchases should be considered on a case-by-case basis, and
@@ -84,6 +89,13 @@ and the logistics they have to undergo in order to get to the summit. There is a
 of expense, and ease of travel to be had, especially as, whilst we explicitly pay for
 flights, we are also then losing time on the travel days when employees would otherwise
 be working.
+
+As the summit organizer, you should research rough flight costs for each employee based
+on their location. Add a 10-15% buffer and set this is a budget for that employee.
+Employees are responsible for booking their own flights. FlowFuse does not expect
+employees to travel at very unsociable hours or taking indirect flights, when it is
+not necessary, just to save money. FlowFuse will not cover business class flights for
+employees.
 
 ### Accommodation
 
