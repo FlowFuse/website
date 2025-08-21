@@ -12,6 +12,8 @@ tags:
 
 Our electric grid is changing. For a century, it operated as a one-way street: large, centralized power plants generated electricity and pushed it downstream to homes and businesses. But today, that model is shifting. Rooftop solar panels, home batteries, and electric vehicles (EVs) are turning that one-way street into a dynamic, two-way intersection.
 
+<!--more-->
+
 These technologies are known as **Distributed Energy Resources (DERs)**. They promise a cleaner, more resilient, and more flexible energy future. However, with that promise comes a challenge: how do we manage this growing web of distributed systems? How do we coordinate them to work seamlessly with the traditional grid? The answer lies in the concept of the **Virtual Power Plant (VPP).**
 
 ## What is a Virtual Power Plant?
