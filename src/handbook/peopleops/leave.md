@@ -6,17 +6,34 @@ navTitle: Holiday & Leave
 
 ## Logging time off
 
-When taking more than 3 days off consecutively, tell (don't ask) your manager. 
+When taking more than 3 days off consecutively, tell (don't ask) your manager.
 This ensure scheduling of work and operations continue to run smoothly without
 you. When taking over 2 weeks of consecutively seek approval from your manager.
 
 Before you can take time off you should _always_:
-* Log your time off [in Deel](https://help.letsdeel.com/hc/en-gb/articles/4409044013201-How-do-I-request-time-off-)
-  * Deel disallows [overages on the contracted days off](#holiday-policy), if you cannot file the complete length, file up to the allowance.
-* Add an 'Out of office' appointment in your personal Google Calendar, and decline
-   all meetings automatically.
-* Add an event to the shared 'FlowFuse Team Events' calendar showing all the days you will not be working. This makes it easier for our team to understand who is going to be away each week.
-* Inform fellow team members of your time off, and hand over work that's distributed.
+
+- Log your time off
+  [in Deel](https://help.letsdeel.com/hc/en-gb/articles/4409044013201-How-do-I-request-time-off-)
+  - Deel disallows [overages on the contracted days off](#holiday-policy), if
+    you cannot file the complete length, file up to the allowance.
+- Add an 'Out of office' appointment in your personal Google Calendar, and
+  decline all meetings automatically.
+- Add a 'Vacation responder' to your Gmail account, and provide another contact
+  person within your team.
+  1. Open **Gmail** in your browser.
+  2. Click the **gear icon (⚙️)** in the top-right corner, then choose **“See
+     all settings.”**
+  3. Scroll down to the **“Vacation responder”** section in the **General** tab.
+  4. Set:
+     - **First day** and **Last day**
+     - **Subject** (e.g., _"Out of Office"_)
+     - **Message** (e.g., _"I am out of the office and without email access
+       through [Day], [Date]. Please contact [team member] in my absence."_)
+- Add an event to the shared 'FlowFuse Team Events' calendar showing all the
+  days you will not be working. This makes it easier for our team to understand
+  who is going to be away each week.
+- Inform fellow team members of your time off, and hand over work that's
+  distributed.
 
 PTO requests in Deel will be routed to your manager.
 
@@ -27,8 +44,8 @@ team members. To prevent an undefined number of vacation days to start a race to
 the bottom, we recommend each team member to take a minimum of 25 days a year,
 and at least 5 days a quarter.
 
-Due to legal limitations, Canadian employees can not be offered unlimited PTO and
-will have the aforementioned 25 days instead.
+Due to legal limitations, Canadian employees can not be offered unlimited PTO
+and will have the aforementioned 25 days instead.
 
 ## Sick leave
 
@@ -42,7 +59,8 @@ understands you're unavailable.
 ## Parental Leave
 
 If you live in a country where a statutory Parental Leave benefit is available,
-you will be required to claim statutory Parental Leave pay (if you are eligible).
+you will be required to claim statutory Parental Leave pay (if you are
+eligible).
 
 Any employee can take up to 6-weeks if they wish without requiring manager
 approval. We recommend a minimum of 4 weeks, but recognize it's a personal
@@ -56,7 +74,7 @@ FlowFuse will abide by this.
 ## Bereavement Leave
 
 Our company understands the profound impact that the loss of a loved one can
-have on an employee, and we are committed to supporting our team members
-during difficult times. Therefore, FlowFuse has a bereavement leave policy.
-Employees who experience the death of an immediate family member, such as a spouse,
-child, parent, or sibling, are eligible for up to five consecutive days of paid leave.
+have on an employee, and we are committed to supporting our team members during
+difficult times. Therefore, FlowFuse has a bereavement leave policy. Employees
+who experience the death of an immediate family member, such as a spouse, child,
+parent, or sibling, are eligible for up to five consecutive days of paid leave.
