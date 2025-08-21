@@ -2,7 +2,7 @@
 title: "Orchestrating Virtual Power Plants: How Low-Code Platforms Bridge the Gap"
 subtitle: "Why low-code tools are the missing link in scaling distributed energy systems"
 description: "learn how low-code platforms like FlowFuse and Node-RED simplify the integration and management of distributed energy resources, making Virtual Power Plants a scalable reality."
-date: 2025-08-20
+date: 2025-08-22
 keywords: virtual power plant, distributed energy resources, low-code energy solutions, Node-RED, FlowFuse, energy grid orchestration, DER integration, smart grid software, energy automation, scalable VPP platform
 authors: ["sumit-shinde"]
 image: 
