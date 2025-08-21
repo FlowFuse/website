@@ -53,3 +53,5 @@ Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack
 | [Webinars](./webinars.md) | Webinars are a key way FlowFuse interacts with the Node-RED community. |
 | [Messaging](./messaging.md) | Marketing messaging |
 | [Emails](./email.md) | How to engage with customers through email |
+| [Growth Strategy](./growth-strategy.md) | Market analysis and growth strategy that will define the upcoming marketing actions. |
+
