@@ -16,12 +16,12 @@ of FlowFuse. This includes:
 1. Growth hacking; always be innovating when finding the audience and engaging with
 them in a cost effective way.
 
-The ultimate goal for the department is to generate sales pipeline for the
-sales team or sign ups for [FlowFuse Cloud](https://app.flowfuse.com).
+The ultimate goal for the department is to [generate sales pipeline](https://app-eu1.hubspot.com/reports-list/26586079/198880430/)
+for the sales team.
 
 ### Marketing KPI
 
-Our North Star metric is pipeline generated, which aligns with the ultimate goal for the department stated above. This North Star is supported by key input metrics that we track and measure:
+Our North Star metric is pipeline generated, the metric is supported by key input metrics that we track and measure:
 
 - [FFC trial signups](https://product-metrics.flowfuse.cloud/dashboard/product)
 - [Contact Sales form completions](https://app-eu1.hubspot.com/submissions/26586079/form/734455e5-4cda-4329-97da-07e40cda791c/performance/)
