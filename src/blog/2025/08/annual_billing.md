@@ -26,7 +26,8 @@ Switching to annual billing is straightforward:
 
 When you switch to annual billing, any unused time from your current bill will be applied as a credit on your new invoice. For example, if you paid for a month and you upgrade to annual billing halfway through the month, that remaining half of a month charge will be deducted from your next invoice.
 
-As your applications grow with additional Node-RED instances, you may wonder what happens if you add or delete instances. Not a problem: additional instances beyond the basic allowance for your plan - one hosted instance for Starter, five instances for Pro - are credited as though they are monthly purchases, so you can add or remove them at any time with no annual commitment.
+As your applications grow with additional Node-RED instances, you may wonder what happens if you add or delete instances. Not a problem: additional instances beyond the basic allowance for your plan - one hosted instance for Starter, five instances for Pro - will be billed yearly as well, but if you remove instances the amount you have already paid will be prorated either toward the next yearly billing cycle or toward any new product subscriptions you add, whichever comes first.
+
 
 Your annual subscription will automatically renew each year unless you choose to cancel, giving you continuous access to FlowFuse's comprehensive Node-RED hosting and development platform.
 
