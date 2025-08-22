@@ -8,11 +8,12 @@ navGroup: Job Descriptions
 ## Job Description
 
 The FlowFuse Dashboard Engineer is a founding engineer role responsible for
-leading the development and evolution of FlowFuse Dashboard, previously known as
-Node-RED Dashboard 2.0. This is not just a traditional software engineering
-position - as a founding engineer, you'll be instrumental in shaping the
-technical direction, building the community, and marketing this dashboard and
-interation solution to industrial automation and IIoT professionals worldwide.
+leading the development and evolution of [FlowFuse Dashboard](https://dashboard.flowfuse.com/),
+previously known as Node-RED Dashboard 2.0. This is not just a traditional
+software engineering position - as a founding engineer, you'll be instrumental
+in shaping the technical direction, building the community, and marketing this
+dashboard and integration solution to industrial automation and IIoT professionals
+worldwide.
 
 This role combines deep technical expertise with community leadership and
 product evangelism. You'll be responsible for advancing the FlowFuse Dashboard
@@ -30,7 +31,7 @@ flexible dashboard solutions.
 Key Responsibilities:
 
 - Lead the architectural decisions and technical roadmap for FlowFuse Dashboard.
-  Contribute high-quality code, conduct thorough code reviews, and establish
+- Contribute high-quality code, conduct thorough code reviews, and establish
   development best practices that will scale as the team grows. Drive
   performance optimization, security enhancements, and feature development.
 - Foster and grow the FlowFuse Dashboard community through active engagement on
@@ -113,12 +114,15 @@ To excel as a FlowFuse Dashboard Engineer, you should bring:
   - **Internal Alignment**: Meet with product, engineering, and marketing teams
     to understand business objectives, technical constraints, and go-to-market
     strategies.
+  - **Initial Development Work**: Begin tackling smaller issues in the Dashboard
+    backlog. This will help you get to know the codebase, and will also help you
+    integrate with the rest of the FlowFuse team.
 
 - Week 5-8:
   - **Active Community Participation**: Begin regular engagement across all
     community channels, providing support, gathering feedback, and identifying
     improvement opportunities.
-  - **Technical Contributions**: Ship your first major feature or improvement to
+  - **Technical Contributions**: Ship your first major features and improvements to
     FlowFuse Dashboard, demonstrating technical leadership and understanding of
     the codebase.
   - **Content Production**: Publish initial technical content including
@@ -127,8 +131,8 @@ To excel as a FlowFuse Dashboard Engineer, you should bring:
   - **Conference Pipeline**: Identify and submit proposals for upcoming
     conferences, webinars, and industry events where you can represent FlowFuse
     Dashboard.
-  - **Partnership Research**: Research potential strategic partnerships and
-    integration opportunities with complementary tools and platforms.
+  - **Success Metrics**: Establish and begin tracking key performance indicators
+    for community growth, product adoption, and developer engagement.
 
 - Week 9-13:
   - **Community Growth Initiatives**: Launch specific initiatives to grow the
@@ -141,8 +145,6 @@ To excel as a FlowFuse Dashboard Engineer, you should bring:
   - **Partnership Development**: Initiate conversations with identified
     strategic partners for technical integrations and co-marketing
     opportunities.
-  - **Success Metrics**: Establish and begin tracking key performance indicators
-    for community growth, product adoption, and developer engagement.
 
 ## Hiring Plan
 
