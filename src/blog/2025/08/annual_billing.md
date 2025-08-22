@@ -21,7 +21,8 @@ Switching to annual billing is straightforward:
 
 **New customers:** Select annual billing when signing up for Starter or Pro plans
 
-**Existing customers:** Switch to annual billing from your Billing settings. Navigate to Billing, then choose Upgrade Team, select your team type, and a toggle will appear to chose Yearly billing.
+**Existing customers:** Switch to annual billing from your Billing settings. Navigate to Billing, then choose Upgrade Team, and a toggle will appear to chose Yearly billing.
+
 
 
 When you switch to annual billing, any unused time from your current bill will be applied as a credit on your new invoice. For example, if you paid for a month and you upgrade to annual billing halfway through the month, that remaining half of a month charge will be deducted from your next invoice.
