@@ -21,7 +21,7 @@ Switching to annual billing is straightforward:
 
 **New customers:** Select annual billing when signing up for Starter or Pro plans
 
-**Existing customers:** Switch to annual billing from your Billing settings. Navigate to Billing, then choose Upgrade Team, and a toggle will appear to chose Yearly billing.
+**Existing customers:** To switch to annual billing, go to **Billing** → **Upgrade Team**. Enable the yearly billing toggle, then click Switch to Yearly Billing.
 
 
 
