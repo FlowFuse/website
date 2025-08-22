@@ -5,7 +5,7 @@ description: "learn how low-code platforms like FlowFuse and Node-RED simplify t
 date: 2025-08-22
 keywords: virtual power plant, distributed energy resources, low-code energy solutions, Node-RED, FlowFuse, energy grid orchestration, DER integration, smart grid software, energy automation, scalable VPP platform
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/08/images/vpp-flowfuse.png
 tags:
   - flowfuse
 ---
