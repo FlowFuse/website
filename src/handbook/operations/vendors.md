@@ -41,6 +41,18 @@ will _never_ make a payment request through direct email or text messages.
 
 If in any doubt, reach out through Slack and request a call to validate.
 
+#### Accepted Payment Methods
+
+For self-service customers, Stripe handles the payments with a variaty of
+methods. For Enterprise customers, FlowFuse accepts the following payment
+methods for vendor payments:
+
+- ACH (Automated Clearing House) bank transfers
+- Credit and debit card payments
+- Wire transfers
+
+FlowFuse does not accept checks or other paper-based payment methods.
+
 ## Legal Review Process
 
 ### Governing Law Requirements
