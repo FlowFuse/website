@@ -5,7 +5,7 @@ sections:
         label: Edge Devices
         cloudValues: [ 'check', 'check', 'check' ]      
         tags: [ 'cloud' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices.</li><li><span class='font-semibold'>Team:</span> Starts with 5, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices.</li><li><span class='font-semibold'>Pro:</span> Starts with 5, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
       - id: nr-hosting
         label: Node-RED Hosting
         cloudValues: [ 'check', 'check', 'check' ]
@@ -16,12 +16,12 @@ sections:
         label: Hosted Instances
         cloudValues: [ 'check', 'check', 'check' ] 
         tags: [ 'cloud' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted/3 remote instances.</li><li><span class='font-semibold'>Team:</span> Starts with 5, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted/3 remote instances.</li><li><span class='font-semibold'>Pro:</span> Starts with 5, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
       - id: self-hosted-instances
         label: Hosted Instances
         selfHostedValues: [ 'check', 'check' ]   
         tags: [ 'self-hosted' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Team:</span> Includes 10 hosted instances, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Pro:</span> Includes 10 hosted instances, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
       - id: self-hosted-devices
         label: Edge Devices  
         selfHostedValues: [ 'check', 'check' ]   
@@ -76,12 +76,12 @@ sections:
         label: MQTT Broker
         cloudValues: [ null, 'check', 'check' ]    
         tags: [ 'cloud' ]
-        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Team Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
+        info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Pro Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
       - id: mqtt-broker-sh
         label: MQTT Broker
         selfHostedValues: [ 'check', 'check' ]    
         tags: [ 'self-hosted' ]
-        info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Team Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
+        info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Pro Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
       - id: device-mgmt
         label: Device Fleet Updates
         cloudValues: [ null, 'check', 'check' ]
@@ -245,7 +245,7 @@ buttons:
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
     - cta: TRY FOR FREE
       url: https://app.flowfuse.com/account/create
-      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-team'})"
+      onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-pro'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"

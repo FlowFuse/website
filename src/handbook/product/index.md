@@ -24,6 +24,7 @@ The product department, and Product Managers (PM) by extend are responsible for:
 
 ## How the product department works
 
+- [Glossary](./glossary.md)
 - [Feedback](./feedback.md)
 - [Product Categories](./verticals.md)
 - [Strategy](./strategy.md)

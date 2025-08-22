@@ -99,7 +99,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
 
 ### Steps for the AE to complete
 
-1. Verify, again, if the quote has all the rigth properties set accounrding to
+1. Verify, again, if the quote has all the right properties set according to
    [Generating a Quote](#generating-a-quote) instructions.
    - Verify the Deal amount is the same a the IACV (Incremental Annual Contract
      Value)
