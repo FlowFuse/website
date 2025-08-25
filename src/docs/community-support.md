@@ -1,0 +1,11 @@
+---
+originalPath: community-support.md
+updated: 2025-08-25 12:45:40 -0400
+version: 2.20.0
+navGroup: Support
+navOrder: 1
+navTitle: Community Support
+redirect: 
+  to: https://discourse.nodered.org/c/vendors/flowfuse/24
+layout: redirect
+---
