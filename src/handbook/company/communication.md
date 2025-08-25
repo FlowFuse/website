@@ -196,17 +196,6 @@ The Strategy call is a chance to team leadership to touchbase on a weekly basis.
 The other topics change and are based on whatever issues are pressing.
 The first 5-10 minutes is [a review of metrics](./achieving-success/#kpi). This call currently occurs on Tuesdays.
 
-## Feedback and Thanks
-
-In FlowFuse, we strongly encourage the sharing of feedback and thank you's. We have
-a custom-built SlackBot (built in Node-RED and hosted in FlowFuse of course), that 
-enables users to message `@Feedback` with:
-
-- `/give-thanks @to_user <message>` - for short thank you messages
-- `/give-feedback` - to be prompted with a more formal template, within which you can provide structured feedback to a particular person. This template contains sections for _"Keep Doing"_, _"Do More Of"_, _"Do Less Of"_ and _"General Comments"_, of which you can complete, and send, the relevant sections.
-
-All feedback is then sent directly to the relevant user via the Slack App, meaning that feedback and thank you messages are all nicely stored in a single place for future review.
-
 ## 1:1 meetings
 
 Each employee at FlowFuse will have weekly one-on-one meetings with their
