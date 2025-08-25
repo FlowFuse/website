@@ -128,6 +128,7 @@ below so you get to decide if you want more channels or not.
 - `#ops-metrics` will output sales and engagement metrics.
 - `#virtual-coffee` to schedule coffee calls with other team members.
 - `#gh-handbook` to follow changes in the handbook.
+- `#thanks` is for sharing appreciation and thanks with team members. Saying thanks often is especially important in remote companies to maintain positive team culture.
 
 #### Channel name structure
 
