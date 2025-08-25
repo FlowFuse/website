@@ -1,16 +1,13 @@
 ---
 title: "Winning Through Open-Source Software in Manufacturing Digitalization"
 subtitle: "Manufacturing organizations used to be leading in software but has lost the lead. Open Source Software is the way to now catch up"
-description:
+description: "Explore how open-source software can help manufacturers overcome vendor lock-in, accelerate digital transformation, and regain competitive advantage in Industry 4.0"
 date: 2025-08-20
 authors: ["zeger-jan-van-de-weg"]
 image: blog/2025/08/images/open-source-software-and-manufacturing.png
 tags:
    - flowfuse
    - node-red
-   - Open Source Software
-   - DX
-   - Digital Transformation
 ---
 
 The manufacturing sector is in an interesting situation. It's caught between a
