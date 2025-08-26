@@ -5,7 +5,7 @@ sitemapPriority: 0.90
 faqTitle: "Frequently Asked <span class='text-indigo-600'>Questions</span>"
 faqSubtitle: "If you have any questions not addressed here, don't hesitate to contact us through our <a href='/contact-us'>Contact Us</a> page"
 meta:
-    description: Discover the pricing options for FlowFuse, featuring Starter, Team, and Enterprise plans. Benefit from volume discounts on Team and Enterprise plans. Get started with a 14-day trial period for the Team plan.
+    description: Discover the pricing options for FlowFuse, featuring Starter, Pro, and Enterprise plans. Benefit from volume discounts on Pro and Enterprise plans. Get started with a 14-day trial period for the Pro plan.
     keywords: FlowFuse pricing, Cost, Plans, Features, Cloud, Self-hosted
     faq:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
@@ -80,7 +80,7 @@ hubspot:
                                     </ul>
                                     <span class="hidden md:inline"><br></span>
                                     <br>
-                                    <note class="font-semibold">Includes 1 hosted instance.
+                                    <note class="font-semibold">Includes 1 hosted instance. Additional instances are $20/month.
                                     </note>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ hubspot:
                                         <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
                                             /month
                                             <br>
-                                            <span class="text-xs text-gray-500">after free trial of Team</span>
+                                            <span class="text-xs text-gray-500">after free trial of Pro</span>
                                         </note>
                                     </div>
                                 </div>
@@ -107,14 +107,14 @@ hubspot:
                                 onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a>
                         </div>
                     </div>
-                    <!-- Team -->
+                    <!-- Pro -->
                     <div class="pricing-tile md:h-full">
                         {% macro team(cloud=true) %}
                         <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
                             <div>
                                 <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
                                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Team</h4>
+                                        <h4 style="display:inline-block;">Pro</h4>
                                     </div>
                                     <p class="mt-7"><span class="inline font-normal">Build bespoke applications collaboratively</span>, manage your Node-RED applications with improved security and control.</p>
                                 </div>
@@ -134,7 +134,7 @@ hubspot:
                                     </ul>
                                     {% if cloud %}<span class="hidden md:inline"><br></span>{% endif %}
                                     <br>
-                                    <note class="font-semibold">Includes {% if cloud %}5{% else %}10{% endif %} hosted instances or remote instances.
+                                    <note class="font-semibold">Includes {% if cloud %}5{% else %}5{% endif %} hosted instances or remote instances. Additional instances start at $35/month.
                                     </note>
                                 </div>
                             </div>
@@ -143,10 +143,18 @@ hubspot:
                                 <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                                     <div class="text-left flex flex-row md:self-end">
                                         <div class="mr-1">
+                                            <note class="note text-sm">Starting at</note>
                                             <h2 class="self-end pb-1">
-                                                Let's Talk
+                                                $425
                                             </h2>
                                         </div>
+                                        <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
+                                            /month
+                                            {% if not cloud %}
+                                            <br>
+                                            <span class="text-xs text-gray-500">Billed annually</span>
+                                            {% endif %}
+                                        </note>
                                     </div>
                                 </div>
                             </div>

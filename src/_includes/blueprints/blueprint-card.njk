@@ -2,7 +2,13 @@
     <div class="mb-2">
         {%- for tag in item.data.tags -%}
         {% if tag !== "blueprints" %}
-        <label class="text-gray-700 text-xs font-light rounded-sm bg-indigo-50 py-1.5 px-2 inline-block w-auto">{{ tag | replace('-', ' ') | replace('20', '2.0') | title }}</label>
+        <label class="text-gray-700 text-xs font-light rounded-sm bg-indigo-50 py-1.5 px-2 inline-block w-auto">
+            {%- if tag == tag.toUpperCase() -%}
+                {{ tag }}
+            {%- else -%}
+                {{ tag | replace('-', ' ') | replace('20', '2.0') | title }}
+            {%- endif -%}
+        </label>
         {% endif %}
         {%- endfor %}
     </div>

@@ -36,6 +36,13 @@ h1 {
     line-height: 3.1rem;
 }
 
+@media (min-width: 1024px) {
+    h1.home {
+        font-size: 3.75rem;
+        line-height: 1.05;
+    }
+}
+
 h2 {
     font-size: 2.25rem;
     line-height: 2.65rem;
@@ -1719,4 +1726,12 @@ input[type="range"] {
 
 .ebook-images > :nth-child(2){
     height: 100%;
+}
+
+lite-youtube::before {
+    display: none !important;
+}
+
+.bg-radial-indigo {
+    background: radial-gradient(ellipse 30% 70% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
 }

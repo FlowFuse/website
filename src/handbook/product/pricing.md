@@ -61,7 +61,7 @@ Devices are part of the licensed instances.
 
 ## Licenses
 
-From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowFuse, this can be self-managed or FlowFuse Managed. For FlowFuse managed properties there's 3 tiers; Starter, Team, and Enterprise.
+From the perspective of licensing the there's an unlicensed edition: open-source. This version is always self-managed. There's also a licensed version of FlowFuse, this can be self-managed or FlowFuse Managed. For FlowFuse managed properties there's 3 tiers; Starter, Pro, and Enterprise.
 The open source edition doesn't require a license key to be uploaded. Without a valid license a basic set of features and
 quantity of instances(5), users(5), teams(5), and devices(5) are available.
 When a license is purchased it provides all of the functionality of the higher
