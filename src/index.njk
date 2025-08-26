@@ -10,33 +10,38 @@ hubspot:
 <!--Hero Content-->
 <div class="w-full px-6">
     <div class="max-w-md sm:max-w-screen-lg mt-12 mx-auto">
-        <div class="container m-auto text-left max-w-screen-lg lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-6">
-            <div class="max-w-xl mx-auto lg:mx-0 lg:my-auto lg:py-10 lg:max-w-[600px]">
-                <h1 class="font-medium leading-tight max-w-xl m-auto lg:m-0 text-center lg:text-left text-indigo-800 text-3xl md:text-4xl">
-                    {{ site.messaging.tagLine | replace('. ', ' <br />') | replace('.', '') | safe }}
+        <div class="container m-auto text-left max-w-screen-lg">
+            <div class="mx-auto">
+                <h1 class="font-medium home m-auto text-4xl sm:max-lg:text-5xl text-center text-indigo-700">
+                    {{ site.messaging.tagLine | replace('. ', '. <br />') | safe }}
                 </h1>
-                <p class="mt-6 text-center lg:text-left">
+                <p class="mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
                     {{ site.messaging.subtitle }}
                 </p>
-                <div class="flex flex-col">
-                    <div class="m-auto lg:mt-3 flex gap-4 items-center justify-center lg:items-start lg:justify-start lg:m-0 flex-row">
-                        <a class="ff-btn ff-btn--highlight flex flex-col max-xl:mb-6" href="{{ site.appURL }}/account/create"
-                        onclick="capture('cta-try-it-now', {'position': 'hero'})">
+                <div class="flex flex-col mt-10 my-6">
+                    <div class="m-auto flex gap-4 items-center justify-center flex-row">
+                        <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hero'})">
                             <span class="text-base uppercase items-center">
-                                TRY IT OUT
+                                BOOK A DEMO
                             </span>
                         </a>
-                        <a class="ff-btn flex flex-col max-xl:mb-6" href="/product/features/" onclick="capture('cta-learn-more', {'position': 'hero'})">
-                            <span class="text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                                LEARN MORE
+                        <a class="ff-btn flex flex-col mb-6" href="{{ site.appURL }}/account/create"
+                        onclick="capture('cta-try-it-now', {'position': 'hero'})">
+                            <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                TRY IT OUT
                                 {% include "components/icons/arrow-right.svg" %}
                             </span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center items-end m-auto lg:mx-0">
-                <lite-youtube videoid="7TPInsyVtlc" params="rel=0" style="width: 500px; overflow: hidden;" class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full lg:max-w-lg lg:max-h-72"></lite-youtube>
+            <div class="flex justify-center items-end m-auto">
+                <lite-youtube 
+                    videoid="7TPInsyVtlc"
+                    params="rel=0" 
+                    style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/7TPInsyVtlc/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                    class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full">
+                </lite-youtube>
             </div>
         </div>
     </div>
@@ -45,7 +50,10 @@ hubspot:
 <!-- Secondary Content -->
 <div class="w-full px-6">
     <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl">
-        <div class="social-proof-logos mx-auto w-full text-center">
+        <div class="w-full text-center min-h-14 flex justify-center items-center mt-12 bg-radial-indigo">
+            <h5 class="text-gray-600">Trusted by industrial leaders driving digital transformation worldwide</h5>
+        </div>
+        <div class="social-proof-logos mx-auto w-full text-center -mt-0.5">
             {% include "social-proof.njk" %}
         </div>
     </div>
