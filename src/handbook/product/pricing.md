@@ -43,7 +43,7 @@ This tier allows users to move beyond local Node-RED development to a cloud-host
 
 ### Pro Tier
 
-The **Pro** tier is built for IIoT managers and plant managers who need to build full-stack applications using Node-RED across multiple instances, manage edge devices effectively, and utilize more advanced Node-RED management features.
+The **Pro** tier is built for central IT, business teams, and SIs who need to build full-stack applications using Node-RED across multiple instances, manage edge devices effectively, and utilize more advanced Node-RED management features.
 
 **Purpose**: Enable organizations to build industrial applications and scale their Node-RED rollout with advanced device management, enhanced security, and team collaboration features for managing 5 or more instances across distributed environments.
 
