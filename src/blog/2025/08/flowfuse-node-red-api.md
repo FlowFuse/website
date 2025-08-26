@@ -47,15 +47,15 @@ Before you can use the API, you need:
    - (Optional) Check **Add Expiry Date** and choose a date if you want the token to automatically expire.  
    - Click **Create Token** to generate it.  
 
-![](./images/token-form.png){data-zoomable}
-**
+![FlowFuse platform token creation form showing fields for token name, expiry date, and create button.](./images/token-form.png){data-zoomable}
+*FlowFuse platform token creation form showing fields for token name, expiry date, and create button.*
 
 
 After creation, a dialog will open showing your **secret token**.  
 Click **Copy to Clipboard** and store this token securely. It will only be shown once and provides full access to your account.
 
-![](./images/copy-token.png){data-zoomable}
-**
+![Dialog showing the generated FlowFuse API token with copy-to-clipboard option.](./images/copy-token.png){data-zoomable}
+*Dialog showing the generated FlowFuse API token with copy-to-clipboard option.*
 
 ### Exploring the FlowFuse API with Swagger
 
@@ -63,8 +63,8 @@ FlowFuse provides **Swagger/OpenAPI documentation** that gives you a complete ov
 
 > **Note:** The Swagger UI is **read-only**. You cannot execute API calls directly from it. Its purpose is to **display all endpoints** after visiting the page, so you can plan and structure your API calls in Node-RED flows, scripts, or other applications.
 
-![](./images/flowfuse-swagger-api-docs.gif){data-zoomable}
-**
+![FlowFuse Swagger/OpenAPI documentation interface displaying endpoints for users, Node-RED instances, devices, deployments, and much more.](./images/flowfuse-swagger-api-docs.gif){data-zoomable}
+*FlowFuse Swagger/OpenAPI documentation interface displaying endpoints for users, Node-RED instances, devices, deployments, and much more.*
 
 #### How to Use the Swagger Docs
 
@@ -108,7 +108,7 @@ A good first step is to fetch your user details to verify that your token works.
 > **Note:** When using API tokens in Node-RED flows, always store them in **environment variables** instead of directly in the node to prevent accidental exposure when sharing flows. See [FlowFuse Environment Variables](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/) for more details.
 
 {% renderFlow 300 %}
-[{"id":"6fa44538b934438b","type":"inject","z":"b9428e6d80c9a692","name":"Get User Details","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":300,"y":460,"wires":[["8c7f13373e29c907"]]},{"id":"8c7f13373e29c907","type":"http request","z":"b9428e6d80c9a692","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/user/","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":510,"y":460,"wires":[["3a54169dc737b475"]]},{"id":"3a54169dc737b475","type":"debug","z":"b9428e6d80c9a692","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":700,"y":460,"wires":[]}]
+[{"id":"6fa44538b934438b","type":"inject","z":"5027784675bcf4ee","name":"Get User Details","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":180,"y":740,"wires":[["8c7f13373e29c907"]]},{"id":"8c7f13373e29c907","type":"http request","z":"5027784675bcf4ee","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/user/","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":390,"y":740,"wires":[["3a54169dc737b475"]]},{"id":"3a54169dc737b475","type":"debug","z":"5027784675bcf4ee","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":570,"y":740,"wires":[]}]
 {% endrenderFlow %}
 
 Once triggered, the debug panel will show your user information as below with status code 200, confirming that your token works and your API connection is successful.
@@ -182,7 +182,7 @@ Before triggering a stage, we first need to retrieve the pipeline details for th
 *The response will return a list of pipelines, each containing a unique **pipelineId**.*
 
 {% renderFlow 300 %}
-[{"id":"7ad2c2d998c60b39","type":"inject","z":"b9428e6d80c9a692","name":"Get Pipelines","props":[],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":320,"y":100,"wires":[["dda168427fc847df"]]},{"id":"dda168427fc847df","type":"http request","z":"b9428e6d80c9a692","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/applications/{applicationID}/pipelines","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":510,"y":100,"wires":[["4a8c8520e2d33e37"]]},{"id":"4a8c8520e2d33e37","type":"debug","z":"b9428e6d80c9a692","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":680,"y":100,"wires":[]}]
+[{"id":"7ad2c2d998c60b39","type":"inject","z":"5027784675bcf4ee","name":"Get Pipelines","props":[],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":240,"y":480,"wires":[["dda168427fc847df"]]},{"id":"dda168427fc847df","type":"http request","z":"5027784675bcf4ee","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/applications/{applicationID}/pipelines","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":430,"y":480,"wires":[["4a8c8520e2d33e37"]]},{"id":"4a8c8520e2d33e37","type":"debug","z":"5027784675bcf4ee","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":590,"y":480,"wires":[]}]
 {% endrenderFlow %}
 
 **Step 3: Identify the Stage**
@@ -192,12 +192,12 @@ Before triggering a stage, we first need to retrieve the pipeline details for th
 
 **Step 4: Trigger the Stage Deployment**
 
-Once you have the `pipelineId` and `stageId`, you can trigger the deployment stage with a `POST` request.
+Once you have the `pipelineId` and `stageId`, you can trigger the deployment stage with a `PUT` request.
 
 1. Add another **Inject** node to trigger the deployment.
 2. Connect it to a new **HTTP Request** node and configure it as follows:
 
-   * **Method:** `POST`
+   * **Method:** `PUT`
    * **URL:**
 
      ```
@@ -219,8 +219,8 @@ If successful, you will receive a JSON response confirming that the deployment s
 The FlowFuse API allows you to deploy a specific stage of a pipeline. While it does not automatically proceed to the next stage, you can set up a workflow that monitors each stage’s status and triggers the next stage once the current one is complete. The following flow demonstrates this: it first deploys the development stage every day at 10 PM, then checks the status of the next stage, the staging instance, before proceeding.
 
 {% renderFlow 300 %}
-[{"id":"1ab940eb2ef10760","type":"http request","z":"5027784675bcf4ee","name":"Deploy Development Stage","method":"PUT","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/pipelines/{PipelineID}/stages/{StageId}/deploy","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":400,"y":180,"wires":[["1c13b0d508913f6d"]]},{"id":"293221e2fafef9ff","type":"http request","z":"5027784675bcf4ee","name":"Check Staging Status","method":"GET","ret":"obj","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/projects/${instanceId}/status","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":360,"y":300,"wires":[["24192bf21e52edd2"]]},{"id":"6f94bfb0d3198597","type":"http request","z":"5027784675bcf4ee","name":"Deploy Staging Stage","method":"PUT","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/pipelines/{PipelineID}/stages/{StageId}/deploy","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":780,"y":300,"wires":[["b267c3b0ecbbf0bd"]]},{"id":"24192bf21e52edd2","type":"switch","z":"5027784675bcf4ee","name":"Is Running?","property":"payload.meta.state","propertyType":"msg","rules":[{"t":"eq","v":"running","vt":"str"}],"checkall":"true","repair":false,"outputs":1,"x":570,"y":300,"wires":[["6f94bfb0d3198597","9cf7ccb7e740b39e"]]},{"id":"7ace2bed48a14cda","type":"inject","z":"5027784675bcf4ee","name":"Trigger Pipeline","props":[],"repeat":"","crontab":"00 00 * * *","once":false,"onceDelay":0.1,"topic":"","x":140,"y":180,"wires":[["1ab940eb2ef10760"]]},{"id":"b267c3b0ecbbf0bd","type":"debug","z":"5027784675bcf4ee","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":740,"y":360,"wires":[]},{"id":"1c13b0d508913f6d","type":"function","z":"5027784675bcf4ee","name":"Wait for Stage Complete","func":"// Check if stage is running\nif (msg.payload.meta.state === \"running\") {\n    clearInterval(context.get('intervalId')); // stop polling\n    node.status({ fill: \"green\", shape: \"dot\", text: \"Stage running\" });\n    return msg; // send the final message\n}\n\n// Start polling if not already started\nif (!context.get('intervalId')) {\n    const id = setInterval(() => {\n        node.send({}); // triggers HTTP Request node to check status\n    }, 20000); // every 20 seconds\n    context.set('intervalId', id);\n    node.status({ fill: \"yellow\", shape: \"ring\", text: \"Waiting for stage...\" });\n}\n\nreturn null; // do not send message yet\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":240,"wires":[["293221e2fafef9ff"]]},{"id":"9cf7ccb7e740b39e","type":"link out","z":"5027784675bcf4ee","name":"link out 1","mode":"link","links":["a58e64a12df0c55e"],"x":695,"y":260,"wires":[]},{"id":"a58e64a12df0c55e","type":"link in","z":"5027784675bcf4ee","name":"link in 1","links":["9cf7ccb7e740b39e"],"x":275,"y":240,"wires":[["1c13b0d508913f6d"]]}]
-{% renderFlow 300 %}
+[{"id":"1ab940eb2ef10760","type":"http request","z":"5027784675bcf4ee","name":"Deploy Development Stage","method":"PUT","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/pipelines/${pipelineID}/stages/${stageId}/deploy","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":400,"y":180,"wires":[["1c13b0d508913f6d"]]},{"id":"293221e2fafef9ff","type":"http request","z":"5027784675bcf4ee","name":"Check Staging Status","method":"GET","ret":"obj","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/projects/${instanceId}/status","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":360,"y":300,"wires":[["24192bf21e52edd2"]]},{"id":"6f94bfb0d3198597","type":"http request","z":"5027784675bcf4ee","name":"Deploy Staging Stage","method":"PUT","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/pipelines/${pipelineID}/stages/${stageId}/deploy","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":780,"y":300,"wires":[["b267c3b0ecbbf0bd"]]},{"id":"24192bf21e52edd2","type":"switch","z":"5027784675bcf4ee","name":"Is Running?","property":"payload.meta.state","propertyType":"msg","rules":[{"t":"eq","v":"running","vt":"str"}],"checkall":"true","repair":false,"outputs":1,"x":570,"y":300,"wires":[["6f94bfb0d3198597","9cf7ccb7e740b39e"]]},{"id":"7ace2bed48a14cda","type":"inject","z":"5027784675bcf4ee","name":"Trigger Pipeline","props":[],"repeat":"","crontab":"00 22 * * *","once":false,"onceDelay":"30","topic":"","x":140,"y":180,"wires":[["1ab940eb2ef10760"]]},{"id":"b267c3b0ecbbf0bd","type":"debug","z":"5027784675bcf4ee","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":360,"wires":[]},{"id":"1c13b0d508913f6d","type":"function","z":"5027784675bcf4ee","name":"Wait for Stage Complete","func":"let id = context.get(\"intervalId\");\n\n// If state is running → stop polling and exit\nif (msg.payload && msg.payload.meta && msg.payload.meta.state === \"running\") {\n    if (id) {\n        clearInterval(id);\n        context.set(\"intervalId\", null);\n    }\n    node.status({ fill: \"green\", shape: \"dot\", text: \"Stage running\" });\n    return null; // stop completely (no further msgs)\n}\n\n// Start polling only if not already started\nif (!id) {\n    id = setInterval(() => {\n        node.send(msg); // keep sending the same msg (or clone if needed)\n    }, 2000); // every 2s\n    context.set(\"intervalId\", id);\n    node.status({ fill: \"yellow\", shape: \"ring\", text: \"Polling...\" });\n}\n\nreturn null;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":240,"wires":[["293221e2fafef9ff"]]},{"id":"9cf7ccb7e740b39e","type":"link out","z":"5027784675bcf4ee","name":"link out 1","mode":"link","links":["a58e64a12df0c55e"],"x":695,"y":260,"wires":[]},{"id":"a58e64a12df0c55e","type":"link in","z":"5027784675bcf4ee","name":"link in 1","links":["9cf7ccb7e740b39e"],"x":275,"y":240,"wires":[["1c13b0d508913f6d"]]}]
+{% endrenderFlow %}
 
 ## Conclusion
 
