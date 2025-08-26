@@ -30,7 +30,7 @@ This buyer-based approach helps us focus our efforts on the value to the end-use
 
 ### Starter Tier
 
-The **Starter** tier is designed to introduce individuals and small teams to Node-RED development with FlowFuse. This tier provides the essential foundation for getting started with professional Node-RED hosting and development workflows.
+The **Starter** tier is designed to introduce individuals to Node-RED development with FlowFuse. This tier provides the essential foundation for getting started with professional Node-RED hosting and development workflows.
 
 **Purpose**: Enable individual contributors, engineers, and line workers to quickly deploy and manage Node-RED applications with professional-grade hosting and basic collaboration features.
 
