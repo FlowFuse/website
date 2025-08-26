@@ -111,7 +111,7 @@ A good first step is to fetch your user details to verify that your token works.
 [{"id":"6fa44538b934438b","type":"inject","z":"5027784675bcf4ee","name":"Get User Details","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":180,"y":740,"wires":[["8c7f13373e29c907"]]},{"id":"8c7f13373e29c907","type":"http request","z":"5027784675bcf4ee","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/user/","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":390,"y":740,"wires":[["3a54169dc737b475"]]},{"id":"3a54169dc737b475","type":"debug","z":"5027784675bcf4ee","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":570,"y":740,"wires":[]}]
 {% endrenderFlow %}
 
-Once triggered, the debug panel will show your user information as below with status code 200, confirming that your token works and your API connection is successful.
+Once triggered, the debug panel will show your user information as shown below with status code 200, confirming that your token works and your API connection is successful.
 
 ```json
 {
