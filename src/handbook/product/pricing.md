@@ -60,7 +60,7 @@ This tier empowers organizations to implement Node-RED as a scalable solution ac
 
 ### Enterprise Tier
 
-The **Enterprise** tier establishes Node-RED as a company-wide standard with enterprise-grade features for high availability, compliance, and integration.
+The **Enterprise** tier, built on Node-RED, is a comprehensive industrial application-building platform that sets a company-wide standard with enterprise-grade features for high availability, compliance, and integration.
 
 **Purpose**: Enable central IT departments and enterprise organizations to deploy full-stack industrial applications using Node-RED at scale with the reliability, security, and integration capabilities required for mission-critical purposes.
 
