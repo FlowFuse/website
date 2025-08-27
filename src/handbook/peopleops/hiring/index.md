@@ -87,7 +87,7 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/Flow
 
 #### Welcome to the Jungle Integration
 
-We have an automated integration setup with [Welcome to the Jungle](https://hire.welcometothejungle.com). When a job is posted to our Greenhouse account, it _should_ appear on Welcome to the Jungle within 24 hours. We have to pay to actually post the role.
+We have an automated integration setup with [Welcome to the Jungle](https://hire.welcometothejungle.com). When a job is posted to our Greenhouse account, it _should_ appear on Welcome to the Jungle within 24 hours. We have to pay to actually post the role. We will only consider paying to post Individual Contributor Eng roles.
 
 ### Referrals
 
