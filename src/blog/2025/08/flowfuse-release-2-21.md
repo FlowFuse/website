@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.21: Enhanced AI Assistant & Snapshot Management"
-subtitle: "Introducing Assistant functionality in Tables nodes, Snapshot Summarization for better version control, and SubFlow Version Control for modular development workflows."
-description: "Introducing Assistant functionality in Tables nodes, Snapshot Summarization for better version control, and SubFlow Version Control for modular development workflows."
+title: "FlowFuse 2.21: Enhanced Enterprise Features & Remote Instance Observability"
+subtitle: "Introducing Assistant functionality in Tables nodes, Remote Instance Observability, Streamlined SSO Authentication, Annual Billing Options, Snapshot Summarization, and SubFlow Version Control."
+description: "Introducing Assistant functionality in Tables nodes, Remote Instance Observability, Streamlined SSO Authentication, Annual Billing Options, Snapshot Summarization, and SubFlow Version Control."
 date: 2025-08-28
 authors: ["greg-stoutenberg"]
 image: /blog/2025/08/images/release-2-21.png
@@ -11,7 +11,7 @@ tags:
    - releases
 ---
 
-This release builds on FlowFuse's AI capabilities and development workflow improvements, introducing enhanced Assistant functionality for Tables, intelligent snapshot management, and advanced SubFlow version control. These features continue to streamline industrial application development while providing better project organization and collaboration tools.
+This release focuses on enterprise capabilities and operational visibility, introducing enhanced AI assistance for Tables, comprehensive remote instance monitoring, streamlined authentication workflows, and flexible billing options. These improvements make FlowFuse more accessible for enterprise adoption while providing better insights into distributed deployments.
 
 <!--more-->
 
@@ -25,6 +25,40 @@ Building on our successful Tables launch in 2.20, we've now integrated AI assist
 - Assist with complex joins and aggregations
 
 This integration makes working with FlowFuse Tables even more accessible, allowing developers to leverage AI guidance for database operations without requiring deep SQL expertise.
+
+## Remote Instance Observability
+
+![Screenshot of remote instance performance monitoring](./images/remote-instance-observability.png){data-zoomable}
+_New performance monitoring capabilities for remote instances provide comprehensive operational insights_
+
+Following the success of our hosted instance performance monitoring, we've extended observability capabilities to remote instances. This highly requested feature provides:
+
+- **Resource Monitoring**: Track CPU, memory, and disk usage across all your remote instances
+- **Performance Analytics**: Historical performance data and trend analysis
+- **Health Dashboards**: Centralized visibility into the operational status of distributed deployments
+- **Alert Integration**: Proactive notifications for performance issues or resource constraints
+
+This enhancement is particularly valuable for industrial deployments where remote instances run critical processes across multiple locations.
+
+## Streamlined SSO Authentication
+
+For organizations with single sign-on requirements, we've simplified the authentication experience. When only one SSO provider is configured, users are now automatically redirected to the SSO login, eliminating unnecessary clicks and reducing friction in the authentication workflow.
+
+This improvement streamlines user onboarding and daily access for enterprise teams using SSO exclusively.
+
+## Annual Billing Options
+
+![Screenshot of annual billing selection interface](./images/annual-billing.png){data-zoomable}
+_New annual billing options provide cost savings and simplified budget planning_
+
+Enterprise customers can now choose annual billing with significant cost savings. The annual billing option includes:
+
+- **Cost Savings**: Reduced pricing compared to monthly subscriptions
+- **Budget Planning**: Simplified yearly budget allocation
+- **Administrative Efficiency**: Reduced billing frequency and paperwork
+- **Account Management**: Streamlined renewal processes
+
+This option is particularly beneficial for organizations looking to optimize their FlowFuse investment while simplifying budget management.
 
 ## Summarize Snapshots
 
@@ -56,7 +90,7 @@ This enhancement is particularly valuable for enterprise teams building complex 
 
 ## What's Next?
 
-Our roadmap continues to focus on AI-enhanced development experiences and enterprise workflow optimization. Upcoming releases will expand AI assistance capabilities across more node types while introducing advanced team collaboration features.
+Our roadmap continues to focus on enterprise-ready features and operational excellence. Upcoming releases will expand our observability capabilities with advanced analytics and alerting, while further enhancing AI assistance across the platform.
 
 We're also working on enhanced Blueprint offerings that leverage the new SubFlow version control capabilities, making it easier to share and maintain reusable patterns across the FlowFuse community.
 
