@@ -6,6 +6,7 @@ navTitle: Hiring
 
 When hiring a new role, the process is generally as follows:
 * Write a job description and add it to the handbook to get it approved by any necessary people
+* The hiring manager is expected to source 20 profiles that we can do outreach to that fit the profile of the candidates we would want to hire
 * Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
 * Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
 
