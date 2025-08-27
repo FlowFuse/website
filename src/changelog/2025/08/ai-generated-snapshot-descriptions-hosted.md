@@ -19,7 +19,7 @@ This makes it easier to understand the purpose of a snapshot at a glance, especi
 When creating a snapshot, you’ll see a new “Generate with AI” option.  
 With one click, a suggested description is created for you, which you can accept as-is or edit before saving.
 
-![Demo of generating snapshot descriptions](./images/snapshot-description-generation.gif){data-zoomable}  
+![Demo of generating snapshot descriptions](./images/snapshot-description-generation-hosted.gif){data-zoomable}  
 _Demo of generating snapshot descriptions_
 
 This feature is currently available for **hosted instances only**. Support for remote instances will follow shortly.
