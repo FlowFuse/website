@@ -2,7 +2,7 @@
 title: "FlowFuse API for Industry: Automating Node-RED Instances, Devices, and CI/CD Tasks"
 subtitle: "Automate Industrial Workflows with the FlowFuse API workflows"
 description: "Use the FlowFuse API to simplify industrial automation, reduce manual tasks, and streamline deployments."
-date: 2025-08-25
+date: 2025-08-27
 keywords: FlowFuse, Node-RED, industrial automation, CI/CD pipelines, edge devices, API automation, DevOps, smart manufacturing, workflow automation
 authors: ["sumit-shinde"]
 tags:
