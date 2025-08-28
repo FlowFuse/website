@@ -10,7 +10,7 @@ Support tickets can be opened via the [FlowFuse Support Portal](/support). FlowF
 
 ## SLAs
 
-For all FlowFuse customers, we have an [SLA](/handbook/sales/subscription-agreement-1.5/#:~:text=APPENDIX%201%3A%20FlowFuse%20Support%20Policies) defined as part of the Subscription Agreement. Initial responses to support tickets must be sent within the SLA time frame defined in the Subscription Agreement.
+For all FlowFuse customers, we have an [SLA](/handbook/sales/subscription-agreement-1.5) defined as part of the Subscription Agreement. Initial responses to support tickets must be sent within the SLA time frame defined in the Subscription Agreement.
 
 ## Troubleshooting
 
