@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.21: Better Integration with Node-RED, AI-Assisted Queries, Subflow Version Control, and Snapshot Summaries"
-subtitle: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
-description: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
+subtitle: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Energy Monitoring Blueprint, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
+description: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Energy Monitoring Blueprint, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
 image: /blog/2025/08/images/release-2.21.png
