@@ -1,7 +1,7 @@
 ---
 title: Generate snapshot descriptions with AI
 description: "AI-powered descriptions to make your snapshots easier to understand"
-date: 2025-08-27 12:00:00.0  
+date: 2025-08-28 12:00:00.0  
 authors: ['serban-costin']
 tags:
   - changelog
