@@ -6,10 +6,6 @@ navTitle: Troubleshooting
 
 This page is a guide for how to deal with incoming support tickets related to FlowFuse.
 
-## SLAs
-
-For all FlowFuse customers, we have an [SLA](https://flowfuse.com/handbook/sales/subscription-agreement-1.5/#:~:text=APPENDIX%201%3A%20FlowFuse%20Support%20Policies) defined as part of the Subscription Agreement. Initial responses to support tickets must be sent within the SLA time frame defined in the Subscription Agreement.
-
 ## Common Issues
 
 Below are sections for common areas that we see in support tickets. Whilst it is not exhaustive, it should provide a good starting point for troubleshooting, and ensuring we have enough details from the customer in order to help them.
