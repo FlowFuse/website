@@ -4,7 +4,7 @@ subtitle: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote 
 description: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
-image: /blog/2025/08/images/energy-monitoring.png
+image: /blog/2025/08/images/release-2.21.png
 tags:
    - flowfuse
    - news
@@ -45,7 +45,7 @@ These nodes make working between Node-RED and the FlowFuse Broker much simpler a
 
 ## SubFlow Version Control
 
-SubFlows now have comprehensive version control capabilities, enabling teams to manage reusable components across multiple applications. With this feature, you can turn a subflow into a new node that is shared in your internal Team Library, providing for easy use and reuse of the same subflow in any Node-RED instance. You can now track changes to SubFlows separately from parent applications and other Node-RED instances.
+With Subflow Version Control, you can now very easily create and manage custom nodes, without writing code or further manual steps. You can now create a custom node from any flows in Node-RED by using our Subflow feature: simply select a flow as a SubFlow, and you can add it to your internal Team Library. As custom nodes, SubFlows have comprehensive version control capabilities, enabling teams to manage reusable components across multiple applications.
 
 Available for Enterprise customers.
 
