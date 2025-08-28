@@ -221,9 +221,17 @@ customer direct to a repo for a 3rd party node question.
 
 #### SLA
 
-Support will be available between during business hours (Berlin time zones)
-Monday to Friday, with anything outside of those hours on a 'best effort' basis
-unless the customer and FlowFuse agreed otherwise.
+Support availability and response times are defined by the customer’s subscription level:
+
+- Team (Standard Support) 
+  - Support available 24 x 5 (Monday to Friday)
+  - First Response SLA: Next business day (within 24 hours)  
+  - Support tickets can be submitted at [https://flowfuse.com/support/](https://flowfuse.com/support/)
+
+- Enterprise (Enterprise Support)
+  - Support available 24 x 5 (Monday to Friday)
+  - First Response SLA: 4 hours  
+  - Support tickets can be submitted at [https://flowfuse.com/support/](https://flowfuse.com/support/)
 
 #### Escalation
 
