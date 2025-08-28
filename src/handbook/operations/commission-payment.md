@@ -57,7 +57,14 @@ and import the CSV just downloaded from Hubspot into the "All Deals" sheet.
 Now "All Deals" have been listed, that adds all the deal closers to the "Team"
 tab. Fill out all the cells for team members with their yearly quota, etc.
 
-Lastly go to the "Commissions" tab and select the employee to calculate the
+You will need to visually inspect that the names to ensure that the mapping 
+from team member to "Deal Closers" is correct. This may be a little bit more
+difficult in months where not everyone closes a deal.
+
+You will also need to update the template if any new sales folks have started
+in the last month.
+
+Finally, go to the "Commissions" tab and select the employee to calculate the
 payment for.
 
 Copy the relevant details for the employee into an email and tell them what
@@ -69,6 +76,7 @@ and Head of GTM both receive a copy by including them in the `cc` on the email.
 
 Here is an email template that can be used:
 
+```
 Dear {{first_name}},
 
 This email is to confirm your estimated commissions for {{Month and Year}}. 
