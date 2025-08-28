@@ -10,19 +10,22 @@ meta:
 Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
 
 1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
-2. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
-3. Create a PR requests with your Blog Content.
-4. Assign yourself as an Assignee.
-5. Convert to Draft
-6. No Reviews shall be done until the PR is “Ready for Review”
-7. Assign two reviewers
+1. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
+1. Create an [art request](/handbook/design/art-requests/#creating-an-art-request) for a blog tile to go with your article and share a deadline for when you're planning it to go live. This image will be used not only on the web, but also when the content is promoted on socials.
+1. Create a PR requests with your Blog Content.
+1. Assign yourself as an Assignee.
+1. Convert to Draft
+1. No Reviews shall be done until the PR is “Ready for Review”
+1. Assign two reviewers
     * One Reviewer for Content (ZJ)
     * One Reviewer for SEO.
-8. Content will be reviewed first.
-9. SEO will be reviewed second.
-10. When both reviews are done, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
-11. Once merged, SEO Reviewer will promote on FlowFuse Social channels. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
+1. If the content is time-sensitive, please make sure everyone involved is aware of this. 
+1. Content will be reviewed first.
+1. SEO will be reviewed second.
+1. When both reviews are done*, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
+1. Once merged, SEO Reviewer will promote on FlowFuse Social channels. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
 
+*It's ok to merge without a blog tile, as long as there's an art request open with a clear deadline and it doesn't get shared on socials without having the image.
 
 ## Blog CMS
 
