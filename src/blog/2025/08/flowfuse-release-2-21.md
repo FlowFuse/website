@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.21: AI-Assisted SQL, Low-Code Custom Nodes, and Remote Instance Performance Insights"
 subtitle: "Introducing FlowFuse Assistant functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow verison control to provide low-code development of custom nodes."
-description: "Introducing FlowFuse Assistant functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow verison control to provide low-code development of custom nodes"
+description: "Introducing FlowFuse Assistant functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes"
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
 image: /blog/2025/08/images/release-2.21.png
