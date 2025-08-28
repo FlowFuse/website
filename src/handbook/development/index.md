@@ -20,14 +20,20 @@ This includes, but is not limited to:
 
 - [Security Policy](./security.md)
 - [Packaging](./packaging.md) - how we manage repos and npm packaging
-- [Contributing](./contributing.md) - tips on our development style to help get started contributing
+- [Contributing](./contributing) - tips & details on how to setup a local development environment.
 - [Project Management](./project-management.md) - details the processes we use to guide product development.
 - [Tools](./tools.md) - the tools we use
-- [Team NPM Registry](./team-npm-registry.md) - Setting up local development environment
 
 ## Releases
 
 - [Release Process](./releases/process.md) - how we ship
+
+## Contributing - Development Environment
+
+These pages help you setup additional infrastructure for local development.
+
+- [Team NPM Registry](./contributing/team-npm-registry.md) - Setting up local development environment
+- [FF Tables](./contributing/ff-tables.md) - Setting up local development environment
 
 ## Front-End
 

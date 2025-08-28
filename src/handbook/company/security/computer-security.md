@@ -63,7 +63,7 @@ All software, from the Operating System to the Browser, must be kept up to date.
 
 ### Secure Browsing
 
-As so much of our work is done in the browser, it is a crucial tool to keep secure. The following guidelines should be followed; specific details will vary depending on the browser being used.
+As so much of our work is done in the browser, it is a crucial tool to keep secure. The following guidelines must be followed; specific details will vary depending on the browser being used.
 
  - Keep the browser up to date
  - Only install trusted extensions and keep them up to date
@@ -72,7 +72,7 @@ As so much of our work is done in the browser, it is a crucial tool to keep secu
 
 ### Secure log retention
 
-Operating system logs should be retained and stored securely. As long as hard drive encryption is enabled, no immediate additional action is currently required.
+Operating system logs must be retained and stored securely according to Operation system defaults. Hard drives encryption must be enabled, no immediate additional action is currently required.
 
 ### Intrusion Detection and Prevention
 

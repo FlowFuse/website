@@ -6,6 +6,7 @@ navTitle: Hiring
 
 When hiring a new role, the process is generally as follows:
 * Write a job description and add it to the handbook to get it approved by any necessary people
+* The hiring manager is expected to source 20 profiles that we can do outreach to that fit the profile of the candidates we would want to hire
 * Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
 * Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
 
@@ -15,15 +16,26 @@ When hiring a new role, the process is generally as follows:
 
 When opening a job post, you'll need a couple of things:
 
-1. A Job Description
-2. Verifying the availability of the approved role.
-3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
+1. The Job Description that is already merged into the handbook [with all of the requisite parts](/handbook/peopleops/job-descriptions/)
+2. Access to the handbook
+3. Access to Greenhouse (our ATS)
 
-### Pipeline design
+The process in Greenhouse is as-follows:
+* On the main screen, in the top nav, select "Add", then "Create a Job".
+* Then, "Copy an Existing Job"
+* Then select, "FlowFuse Sample Job"
+* Add the internal and external job names, and then move to the next screen (Create job and continue on bottom right)
+* Add the key people for the role- hiring managers especially
+* Skip sending the email to the hiring manager for the job kickoff as that process is already done in the process of completing the full job description
+* Pull the Skills & Qualifications for the Candidate Scorecard from the Job Description
+* There is a default interview plan of three calls: Screening call, Hiring Manager Interview, and STAR Interview. If you need to add more, you can do so in the upper right with the "Add Stage" button. Note: DO NOT name multiple stages the same thing. It will break other functionality in the app. Don't do it.
+* On the job post, make sure to change the location type of the role to Remote. Enter the post description (from the handbook) and any additional custom application questions. The handbook question does a really good job of screening out AI applications. If you're obligated to select a location, we usually use "Remote, Oregon, US"
+* Select the default notifications and "Finish" the role.
 
-A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
-For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
-**must** include all values and job requirements.
+Now that you've created the job, you must actually post the role. 
+* From the job page, on the left sidebar, select "Job Setup".
+* Go to the "Job Posts" box, and hit "Edit"
+* Turn on the toggle to see the role on the careers page.
 
 #### Accepting applications
 
@@ -32,45 +44,6 @@ When you open the role on Greenhouse to accept applications, please [follow the 
 Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter.
 Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position.
 These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowfuse.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
-
-#### Initial Review
-
-The initial review will check the aforementioned question for validity, the resume, and the cover letter.
-Check for:
-1. Alignment to [Values](../../company/values.md)
-1. Capabilities align with the requirements for the role
-1. Previous retention at companies
-   - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
-
-For each candidate we'd like to move forward with, a scorecard needs to be filled
-out based on the available information so the interviewer for the next stage can
-prepare and focus if the strengths are indeed strong, and the same for weaknesses or uncertainties.
-
-The resume review should reject **over 50%** of all candidates.
-
-#### Skills assessment
-
-For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
-
-This round will again result in a scorecard, but also an indication what level this candidate would suit in.
-For example `intermediate` vs `senior` for developers.
-
-When in doubt, reject the candidate.
-
-#### Offer stage
-
-First, read about [extending offers](#extending-an-offer).
-
-At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
-Before the peopleops team extends an offer, explicit approval is required from:
-1. A peopleops manager
-   - Check we hire in their location
-   - Notice period aligns with internal processes
-   - Total compensation is in FlowFuse's range
-1. The new manager of the candidate
-1. CEO
-
-When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
 
 #### Rejecting Candidates
 
@@ -114,7 +87,7 @@ the job advert on Greenhouse. This was introduced [here](https://github.com/Flow
 
 #### Welcome to the Jungle Integration
 
-We have an automated integration setup with [Welcome to the Jungle](https://hire.welcometothejungle.com). When a job is posted to our Greenhouse account, it _should_ appear on Otta within 24 hours. If it does not, raise a support ticket with them, and it should be addressed and made public very soon after. We have to pay to actually post the role, but they will email you a friendly prompt to consider the opportunity.
+We have an automated integration setup with [Welcome to the Jungle](https://hire.welcometothejungle.com). When a job is posted to our Greenhouse account, it _should_ appear on Welcome to the Jungle within 24 hours. We have to pay to actually post the role. We will only consider paying to post Individual Contributor Eng roles.
 
 ### Referrals
 
@@ -136,6 +109,30 @@ All candidates will experience a [Screening Call](/handbook/peopleops/hiring/scr
 ### STAR interviews
 
 All candidates will experience a [STAR Interview](/handbook/peopleops/hiring/star-questions/) at some point in the interview process.
+
+#### Skills assessment
+
+For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
+
+This round will again result in a scorecard, but also an indication what level this candidate would suit in.
+For example `intermediate` vs `senior` for developers.
+
+When in doubt, reject the candidate.
+
+#### Offer stage
+
+First, read about [extending offers](#extending-an-offer).
+
+At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
+Before the peopleops team extends an offer, explicit approval is required from:
+1. A peopleops manager
+   - Check we hire in their location
+   - Notice period aligns with internal processes
+   - Total compensation is in FlowFuse's range
+1. The new manager of the candidate
+1. CEO
+
+When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
 
 ## Extending an offer
 

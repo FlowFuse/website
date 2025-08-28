@@ -4,12 +4,10 @@ navTitle: Engagements & Pricing
 
 # Engagements
 
-Pricing is publicly available at [our pricing page](/pricing/).
-
-## Per-site licenses
-
-Self-hosted FlowFuse installations require a minumum of 10 instances per
-location or geographic site.
+Pricing is publicly available at [our pricing page](/pricing/). When discussing
+pricing with enterprise customers, make a copy of
+[our internal pricing template deck](https://docs.google.com/presentation/d/1imkh98wth0naYhXfTEXEXPJAIy2pK3HPvWQ1BsujipY/)
+to discuss.
 
 ## Creating a Deal
 
@@ -23,7 +21,6 @@ To open a deal, be sure to set the correct properties.
    - New Business - For new customers or departments
    - Expansions - Upsells that are to be booked in-term
    - Renewal - Changes to the subscription effective on renewal date
-
 
 ## Generating a Quote
 
@@ -42,11 +39,11 @@ line, with a quantity of 1, and the minimum purchase price for that plan. The
 add-on options should also be added to the product section, as referenced by the
 purchase term template.
 
-| Item & Description                    | Quantity | Unit Price  | Total  |
-| ------------------------------------- | -------- | ----------- | ------ |
-| FlowFuse Enterprise Platform - Cloud  | 1        | $X,000/year | $X,000 |
-| Enterprise - Instance Add-On          | 10       | $X,000/year | $X,000 |
-| Enterprise - Remote Device Add-On     | 10       | $X,000      | $X,000 |
+| Item & Description                   | Quantity | Unit Price  | Total  |
+| ------------------------------------ | -------- | ----------- | ------ |
+| FlowFuse Enterprise Platform - Cloud | 1        | $X,000/year | $X,000 |
+| Enterprise - Instance Add-On         | 10       | $X,000/year | $X,000 |
+| Enterprise - Remote Device Add-On    | 10       | $X,000      | $X,000 |
 
 Annual Subtotal	 $XX,000\
 **Total** $XX,000
@@ -99,7 +96,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
 
 ### Steps for the AE to complete
 
-1. Verify, again, if the quote has all the rigth properties set accounrding to
+1. Verify, again, if the quote has all the right properties set according to
    [Generating a Quote](#generating-a-quote) instructions.
    - Verify the Deal amount is the same a the IACV (Incremental Annual Contract
      Value)

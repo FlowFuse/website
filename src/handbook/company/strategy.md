@@ -117,3 +117,9 @@ with the tools they need to:
 
 FlowFuse uses Open-Source technologies like Node-RED and MQTT to help our
 customers being successful in remedying their problems.
+
+## Growth Strategy
+
+FlowFuse has identified a significant market opportunity in industrial automation through systematic expansion across manufacturing, MQTT modernization, and energy sectors. Our strategic analysis reveals high-growth verticals where current market solutions fall short, creating an opening for FlowFuse to establish leadership.
+[The following document](https://docs.google.com/document/d/1MLvz70OxGldpJoL5M6CSXPANlnvQJKazetdGjlgTAe8/edit?usp=sharing) outlines our growth roadmap, detailing market analysis, competitive positioning, and implementation strategies that will guide FlowFuse's expansion over the coming years. This strategic framework balances immediate revenue opportunities with long-term market positioning to ensure sustainable growth in the industrial automation landscape.
+The complete analysis includes detailed market sizing, customer segmentation, competitive analysis, and tactical execution plans that support our vision for market leadership in underserved industrial sectors.
