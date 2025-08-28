@@ -226,7 +226,7 @@ Support availability and response times are defined by the customer’s subscrip
 - Pro (Standard Support) 
   - Support available 24 x 5 (Monday to Friday)
   - First Response SLA: Next business day (within 24 hours)  
-  - Support tickets can be submitted at [https://flowfuse.com/support/](https://flowfuse.com/support/)
+  - Support tickets can be submitted at [our Support Form](https://flowfuse.com/support/)
 
 - Enterprise (Enterprise Support)
   - Support available 24 x 5 (Monday to Friday)
