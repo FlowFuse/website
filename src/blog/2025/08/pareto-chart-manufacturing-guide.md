@@ -55,32 +55,33 @@ This simple focus typically cuts total defects by 60-70% in just a few months. T
 
 ## Key Applications in Manufacturing
 
-### Quality Control
-Smart manufacturers prioritize defects, not just track them. When teams break down defects into specific categories—particle contamination, dimensional variations, assembly errors, material flaws—each reveals different root causes requiring targeted solutions.
+1. **Quality Control**
+   Smart manufacturers prioritize defects, not just track them. When teams break down defects into specific categories—particle contamination, dimensional variations, assembly errors, material flaws—each reveals different root causes requiring targeted solutions.
 
-The key is specificity. Generic "defect" tracking won't reveal actionable insights. Break them down into meaningful categories that point to specific improvement opportunities.
+The key is specificity. Generic "defect" tracking will not reveal actionable insights. Break them down into meaningful categories that point to specific improvement opportunities.
 
-### Equipment Maintenance
-Traditional maintenance schedules treat all equipment equally, but Pareto analysis reveals this approach wastes resources. Manufacturing studies show that bearing wear and sensor failures often account for nearly 50% of all equipment failure occurrences. By identifying which specific components cause the most downtime, teams can shift from time-based maintenance to condition monitoring on critical equipment.
+2. **Equipment Maintenance**
+   Traditional maintenance schedules treat all equipment equally, but Pareto analysis reveals this approach wastes resources. Manufacturing studies show that bearing wear and sensor failures often account for nearly 50% of all equipment failure occurrences. By identifying which specific components cause the most downtime, teams can shift from time-based maintenance to condition monitoring on critical equipment.
 
 The lesson: focus your predictive maintenance budget where failures hurt most.
 
-### Supply Chain Intelligence
-When supplier issues multiply, Pareto Charts cut through the noise. Manufacturing teams tracking supplier-caused delays often discover that a small fraction of suppliers cause the majority of production stoppages. This data-driven insight enables targeted negotiations for backup agreements and buffer stock arrangements with critical suppliers.
+3. **Supply Chain Intelligence**
+   When supplier issues multiply, Pareto Charts cut through the noise. Manufacturing teams tracking supplier-caused delays often discover that a small fraction of suppliers cause the majority of production stoppages. This data-driven insight enables targeted negotiations for backup agreements and buffer stock arrangements with critical suppliers.
 
-### Safety Management
-Safety teams using Pareto analysis on incident data typically find that specific operations or areas account for the majority of lost-time incidents. This focused view enables targeted ergonomic improvements and specialized training where they'll prevent the most harm.
+4. **Safety Management**
+   Safety teams using Pareto analysis on incident data typically find that specific operations or areas account for the majority of lost-time incidents. This focused view enables targeted ergonomic improvements and specialized training where they will prevent the most harm.
 
-Safety resources are precious. Pareto Charts ensure they go where they'll have maximum impact.
+Safety resources are precious. Pareto Charts ensure they go where they will have maximum impact.
 
-### Cost Reduction
-Not all problems cost the same. Frequency alone can mislead—a defect occurring frequently but costing little to fix might be less important than rare defects causing expensive customer line stops. Cost-weighted Pareto Charts often completely reverse improvement priorities, focusing teams on high-impact issues rather than high-frequency ones.
+5. **Cost Reduction**
+   Not all problems cost the same. Frequency alone can mislead—a defect occurring frequently but costing little to fix might be less important than rare defects causing expensive customer line stops. Cost-weighted Pareto Charts often completely reverse improvement priorities, focusing teams on high-impact issues rather than high-frequency ones.
+
 
 ## Why Pareto Charts Matter Now More Than Ever
 
 Manufacturing has never been more complex. Global supply chains, tighter margins, and rising quality expectations create an environment where every resource must count. Pareto Charts provide three critical advantages:
 
-**Speed of Decision**: In fast-paced manufacturing, delayed decisions cost money. Pareto Charts compress analysis time from days to minutes. One glance tells you where to act.
+**Speed of Decision**: In manufacturing, delayed decisions cost money. Pareto Charts compress analysis time from days to minutes. One glance tells you where to act.
 
 **Universal Understanding**: From operators to executives, everyone understands a Pareto Chart. This shared comprehension accelerates buy-in and action. No statistics degree required.
 
@@ -102,4 +103,4 @@ Start tomorrow. Pick your biggest pain point, collect data, and create your firs
 
 **Ready to transform your manufacturing data into actionable insights?** 
 
-[Start Free Trial](https://app.flowfuse.com/account/create) | [Book a Demo](https://flowfuse.com/book-demo/)
+[Start Free Trial](https://app.flowfuse.com/account/create) or [Book a Demo](https://flowfuse.com/book-demo/)
