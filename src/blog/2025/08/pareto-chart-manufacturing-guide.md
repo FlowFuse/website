@@ -34,7 +34,7 @@ A Pareto Chart combines the best of both worlds—the immediate clarity of a bar
 
 This visualization does something remarkable: it makes the invisible visible. Problems that seemed equally important suddenly reveal their true impact. The path forward becomes clear.
 
-## Example in Real World
+## Real World Example
 
 ![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
@@ -103,4 +103,4 @@ Start tomorrow. Pick your biggest pain point, collect data, and create your firs
 
 **Ready to transform your manufacturing data into actionable insights?** 
 
-[Start Free Trial](https://app.flowfuse.com/account/create) or [Book a Demo](https://flowfuse.com/book-demo/)
+Stop guessing which problems to tackle first. [Try FlowFuse free for 14 days](https://app.flowfuse.com/account/create) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](https://flowfuse.com/book-demo/) of how leading manufacturers identify their vital few problems in real-time.
