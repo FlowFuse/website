@@ -4,7 +4,7 @@ subtitle: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote 
 description: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
-image: /blog/2025/08/images/tables.gif
+image: /blog/2025/08/images/release-2-21.png
 tags:
    - flowfuse
    - news
@@ -50,10 +50,18 @@ SubFlows now have comprehensive version control capabilities, enabling teams to 
 Available for Enterprise customers.
 
 ## Remote Instance Observability
+![Screenshot of remote instance monitoring interface](./images/remote.png)
+_Remote Instance monitoring in the Performance view provides usage insights_
 
 Following the success of our hosted instance performance monitoring, we've extended observability capabilities to remote instances. This extension gives insight into CPU usage, memory usage, and disk usage for your remote instances.
 
 This enhancement is particularly valuable for industrial deployments where remote instances run critical processes across multiple locations.
+
+## Blueprint: Energy Monitoring Dashboard
+![Screenshot of energy monitoring dashboard](./images/energy-monitoring.png)
+_Energy Monitoring Dashboard provides realtime usage and cost insights_
+
+This Blueprint provides a real-time energy monitoring dashboard template for industrial facilities. It features live consumption tracking, cost analytics, spike detection, and historical trending with an integrated energy rate display. Perfect for demonstrating IoT energy management capabilities, and with Node-RED, it is fully customizable.
 
 ## Annual Billing Option
 
