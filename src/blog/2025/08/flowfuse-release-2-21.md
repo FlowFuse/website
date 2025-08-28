@@ -4,7 +4,7 @@ subtitle: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote 
 description: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
-image: /blog/2025/08/images/release-2-21.png
+image: /blog/2025/08/images/energy-monitoring.png
 tags:
    - flowfuse
    - news
