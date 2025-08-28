@@ -2,7 +2,7 @@
 title: "What is a Pareto Chart? A Simple Guide for Manufacturing Teams"
 subtitle: "How the Pareto principle helps manufacturing teams focus where it matters most."
 description: "Learn how Pareto Charts empower manufacturing teams to focus on the issues that matter most. Learn the Pareto principle, see real-world examples, and understand key applications in quality control, maintenance, supply chain, and safety management."
-date: 2025-08-22
+date: 2025-08-28
 keywords: Pareto chart, Pareto analysis, manufacturing quality, defect reduction, quality control tools, root cause analysis, equipment maintenance, supply chain management, manufacturing efficiency
 authors: ["sumit-shinde"]
 image: 
