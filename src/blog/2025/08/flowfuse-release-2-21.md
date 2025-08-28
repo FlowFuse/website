@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.21: Better Integration with Node-RED, AI-Assisted Queries, Subflow Version Control, and Snapshot Summaries"
-subtitle: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Energy Monitoring Blueprint, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
-description: "Introducing FlowFuse Assistant functionality in Tables nodes, Remote Instance Observability, Team Broker nodes, Energy Monitoring Blueprint, Annual Billing for Self-Service, Snapshot Summaries, and SubFlow Version Control."
+title: "FlowFuse 2.21: AI-Assisted SQL, Low-Code Custom Nodes, and Remote Instance Performance Insights"
+subtitle: "Introducing FlowFuse Assistant functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow verison control to provide low-code development of custom nodes."
+description: "Introducing FlowFuse Assistant functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow verison control to provide low-code development of custom nodes"
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
 image: /blog/2025/08/images/release-2.21.png
@@ -11,7 +11,7 @@ tags:
    - releases
 ---
 
-This release is focused on better integrating the Node-RED experience with FlowFuse features and accelerated application-building with AI features. With this release, you can more easily work with the FlowFuse Tables feature from within Node-RED, build a more comprehensive Unified Namespace, get automatically-generated Snapshot summaries, and more! These improvements make FlowFuse more accessible for enterprise adoption while providing better insights into distributed deployments.
+It's been a very busy release and we have many great new features available on FlowFuse that will provide a better Node-RED development experience, makes it easier to develop and interface with your Unified Namespace, provide more insight into Remote Instance performance and new low-code tooling for building your own custom Node-RED nodes.
 
 <!--more-->
 
@@ -19,7 +19,7 @@ This release is focused on better integrating the Node-RED experience with FlowF
 ![Gif showing AI Assistant in Tables](./images/tables.gif)
 _AI Assistant in Tables recognizes table schema and turns natural language prompts into SQL queries_
 
-Building on our successful Tables launch in 2.20, we've now integrated AI assistance directly into Tables nodes, making database operations more intuitive and efficient. With this, you can type a natural language prompt that will be interpreted in light of the structure of tables in your FlowFuse Tables, which enables an AI-supported autocomplete and assists with writing SQL specifically for connected FlowFuse tables. 
+Building on our successful [Tables launch in 2.20](/blog/2025/07/flowfuse-release-2-20/), we've now integrated AI assistance directly into our Tables nodes. This lowers the barrier for working with databases, reducing the dependency on SQL knowledge. With this, you can type a natural language prompt that will be interpreted in light of the structure of tables in your FlowFuse Tables, which enables an AI-supported autocomplete and assists with writing SQL specifically for connected FlowFuse tables. 
 
 This integration makes working with FlowFuse Tables even more accessible, allowing developers to leverage AI guidance for database operations without requiring deep SQL expertise.
 
@@ -28,7 +28,7 @@ This integration makes working with FlowFuse Tables even more accessible, allowi
 ![Screenshot showing snapshot summarization feature](./images/snapshot.png){data-zoomable}
 _New snapshot summarization provides clear, AI-generated descriptions of changes between versions_
 
-Managing instance versions becomes more intuitive with our new Snapshot Summarization feature. When creating snapshots, FlowFuse now automatically generates intelligent summaries that describes which changes were made and when. This makes it much easier for teams to understand project evolution and quickly identify the right version for deployment or rollback scenarios.
+Managing instance versions becomes more intuitive with our new Snapshot Summary feature. When creating snapshots, FlowFuse can now automatically generate intelligent summaries that describes the changes introduced. This saves you time, and makes it much easier for teams to understand project evolution and quickly identify the right version for deployment or rollback scenarios.
 
 Available for Pro and Enterprise.
 
@@ -43,17 +43,21 @@ Easily publish and subscribe to topics in the FlowFuse Broker using new Team Bro
 
 These nodes make working between Node-RED and the FlowFuse Broker much simpler and easier.
 
-## SubFlow Version Control
+## Low-Code Custom Node Development
 
-With Subflow Version Control, you can now very easily create and manage custom nodes, without writing code or further manual steps. You can now create a custom node from any flows in Node-RED by using our Subflow feature: simply select a flow as a SubFlow, and you can add it to your internal Team Library. As custom nodes, SubFlows have comprehensive version control capabilities, enabling teams to manage reusable components across multiple applications.
+[Subflows](https://nodered.org/docs/user-guide/editor/workspace/subflows) are a great way in Node-RED to build custom nodes, all within the Node-RED Editor, and without having to write any code. The limitation of Subflows though is that they're constrained to just one Instance of Node-RED, they cannot be shared across your whole team. That is no longer the case.
 
-Available for Enterprise customers.
+We've now introduced the Subflow exporter which provides a low-code and intuitive way to create and manage custom nodes. 
+
+From the sidebar in your Node-RED Editor, you can now very easily create and manage custom nodes, without writing code or having to create and manage your own version control infrastructure. Simply create a flow in Node-RED, convert it to a subflow, fill out the package details for your new custom node and hit "Publish". Now your new node is available for all to install across your FlowFuse team.
+
+Available for Enterprise customers only.
 
 ## Remote Instance Observability
 ![Screenshot of remote instance monitoring interface](./images/remote.png)
 _Remote Instance monitoring in the Performance view provides usage insights_
 
-Following the success of our hosted instance performance monitoring, we've extended observability capabilities to remote instances. This extension gives insight into CPU usage, memory usage, and disk usage for your remote instances.
+Following the success of our [Hosted Instance performance monitoring](/blog/2025/06/flowfuse-release-2-18/#enhanced-observability-for-better-performance-management), we've extended observability capabilities to include Remote Instances too. This extension gives insight into CPU usage and memory usage for your remote instances.
 
 This enhancement is particularly valuable for industrial deployments where remote instances run critical processes across multiple locations.
 
@@ -68,11 +72,11 @@ This Blueprint provides a real-time energy monitoring dashboard template for ind
 ![Screenshot of annual billing selection interface](./images/annual-billing.png){data-zoomable}
 _New annual billing options provide cost savings and simplified budget planning_
 
-Self-service customers on Starter and Pro plans can now choose to subscribe on a yearly basis and receive a free month for doing so. This allows teams to save money compared to a monthly subscription and lock in current pricing.
+FlowFuse Cloud customers on Starter and Pro plans can now choose to subscribe on a yearly basis and receive a free month for doing so. This allows teams to save money compared to a monthly subscription and lock in current pricing.
 
 ## What's Next?
 
-For the next release, we're working on features that will enable you to connect your own AI models with Node-RED and FlowFuse, paving the way to create AI-supported automations in your applications. We're excited about it -- stay tuned!
+For the next release, we're working on features that will enable you to connect your own AI models with Node-RED and FlowFuse, paving the way to create AI-supported automations in your applications.  We're also planning on pushing a lot of performance updates to Dashboard, and to make it even easier to build your own applications on FlowFuse. We're excited about it -- stay tuned!
 
 ## What else is new?
 
