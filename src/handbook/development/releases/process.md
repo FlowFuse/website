@@ -85,15 +85,15 @@ have been published as needed.
 
  - [`flowfuse/device-agent`](https://github.com/FlowFuse/device-agent)
  - [`flowfuse/device-agent/installer`](https://github.com/FlowFuse/device-agent/tree/main/installer#release-process)
- - `flowfuse/nr-project-nodes` [🔗](https://www.github.com/flowfuse/nr-project-nodes)
- - `flowfuse/nr-file-nodes`[🔗](https://www.github.com/flowfuse/nr-file-nodes)
- - `flowfuse/nr-tools-plugin` [🔗](https://www.github.com/flowfuse/nr-tools-plugin)
- - `flowfuse/nr-assistant` [🔗](https://www.github.com/flowfuse/nr-assistant)
- - `flowfuse/nr-mqtt-nodes` [🔗](https://www.github.com/flowfuse/nr-mqtt-nodes)
- - `flowfuse/nr-tables-nodes` [🔗](https://www.github.com/flowfuse/nr-tables-nodes)
- - `flowfuse/nr-subflow-export` [🔗](https://www.github.com/flowfuse/nr-subflow-export)
- - `flowfuse/verdaccio-ff-auth` [🔗](https://www.github.com/flowfuse/verdaccio-ff-auth) (This is not published to npmjs at this time)
- - `flowfuse/mqtt-schema-agent` [🔗](https://www.github.com/flowfuse/mqtt-schema-agent)
+ - [`flowfuse/nr-project-nodes`](https://www.github.com/flowfuse/nr-project-nodes)
+ - [`flowfuse/nr-file-nodes`](https://www.github.com/flowfuse/nr-file-nodes)
+ - [`flowfuse/nr-tools-plugin`](https://www.github.com/flowfuse/nr-tools-plugin)
+ - [`flowfuse/nr-assistant`](https://www.github.com/flowfuse/nr-assistant)
+ - [`flowfuse/nr-mqtt-nodes`](https://www.github.com/flowfuse/nr-mqtt-nodes)
+ - [`flowfuse/nr-tables-nodes`](https://www.github.com/flowfuse/nr-tables-nodes)
+ - [`flowfuse/nr-subflow-export`](https://www.github.com/flowfuse/nr-subflow-export)
+ - [`flowfuse/verdaccio-ff-auth`](https://www.github.com/flowfuse/verdaccio-ff-auth) (This is not published to npmjs at this time)
+ - [`flowfuse/mqtt-schema-agent`](https://www.github.com/flowfuse/mqtt-schema-agent)
 
 Verify [`flowfuse/flowfuse-nr-launcher`](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
