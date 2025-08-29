@@ -16,6 +16,9 @@ For new vendors not on the list, get CEO approval and add any signed agreements
 to
 [this folder](https://drive.google.com/drive/u/0/folders/1r6u1MNHZFAM1uhHmX-XtQs_bRcFVxQ25){rel="nofollow"}.
 
+For the legal procudures and terms for our own customers, please
+[read the corresponding handbook page](/handbook/sales/legal/).
+
 ### Process
 
 To initiate the approval and payment process for invoices, suppliers should send
@@ -40,18 +43,6 @@ We do not diverge from this process regardless of the urgency of the payment. We
 will _never_ make a payment request through direct email or text messages.
 
 If in any doubt, reach out through Slack and request a call to validate.
-
-#### Accepted Payment Methods
-
-For self-service customers, Stripe handles the payments with a variaty of
-methods. For Enterprise customers, FlowFuse accepts the following payment
-methods for vendor payments:
-
-- ACH (Automated Clearing House) bank transfers
-- Credit and debit card payments
-- Wire transfers
-
-FlowFuse does not accept checks or other paper-based payment methods.
 
 ## Legal Review Process
 
