@@ -51,3 +51,7 @@ FlowFuse's Dun (DUNS number) and Bradstreet ID is: 11-899-4742
 ### Tax ID
 
 FlowFuse's tax ID is stored in 1Password in the Employee folder as a Secure Note.
+
+### Certificate of Good Standing
+
+A [Certificate of Good Standing](https://drive.google.com/file/d/11-gdRk-FNxQidcfZlmL7sDc3nDrLgnmW/view?usp=drivesdk) is available for our customers when requested to their Account executive or Customer Success Manager.
