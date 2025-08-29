@@ -211,4 +211,4 @@ the release day. See also the [peopleops section](../../peopleops/compensation#l
 
 The day after each release, a one hour meeting is conducted which anyone from the company can join. The purpose of this meeting is to reflect on the past four weeks of development effort, the release process and any other thoughts or comments that can help us refine processes moving forward.
 
-In the retrospective, the CTO or Engineering Manager will also cover any new items that have been added to the [Development Board](../project-management#dept-engineeringelopment-board) and any relevant plans for engineering resource to be assigned to that work.
+In the retrospective, the CTO or Engineering Manager will also cover any new items that have been added to the [Development Board](../project-management#development-board) and any relevant plans for engineering resource to be assigned to that work.
