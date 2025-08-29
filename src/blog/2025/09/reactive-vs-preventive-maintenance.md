@@ -92,4 +92,4 @@ The path from reactive to preventive maintenance is clear, and modern platforms 
 
 Ready to transform your maintenance strategy? Our team will show you exactly how FlowFuse works with your specific equipment and use cases.
 
-[Schedule Your FlowFuse Demo](book-demo/)
+[Schedule Your FlowFuse Demo](/book-demo/)
