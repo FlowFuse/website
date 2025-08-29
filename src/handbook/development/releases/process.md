@@ -195,7 +195,7 @@ All release activity should be highlighted in #dept-engineering so the team is a
    script require the `gh` cli to be installed and logged in.
    Update `CHANGELOG.md` with the output of the script.
 1. Run `npm install`
-1. Open a new PR with the `package.json` and `CHANGELOG.md` changes. Get the PR reviewed
+1. Open a new PR with the `package.json`, `package-lock.json` and `CHANGELOG.md` changes. Get the PR reviewed
    by someone else and then merged.
 1. Create a new GitHub Release with the appropriate version number eg `v0.1.1`. It is
    advised to use the "Generate Release Notes" option to create the release notes and title.
