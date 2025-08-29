@@ -8,7 +8,7 @@ image:
 keywords: preventive maintenance, manufacturing ROI, Node-RED, FlowFuse, industrial data collection, OEE optimization, factory monitoring, digital transformation, smart manufacturing, maintenance strategy
 tags:
   - flowfuse
------
+----
 
 Every manufacturing floor operates on a delicate balance between productivity and risk. When a critical machine fails unexpectedly, that balance tips dramatically—production halts, costs spiral, and delivery commitments are jeopardized. Yet despite these well-understood consequences, many manufacturers continue to operate in reactive mode, addressing problems only after they occur.
 
