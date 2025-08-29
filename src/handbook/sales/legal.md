@@ -55,3 +55,5 @@ Details of what insurance we have is available in [an internal-only Google doc](
 
 - [W9 with signature](https://drive.google.com/file/d/1A2_mnPRfc5gWAb4yEYNiViuCHiARkLcD/view){rel="nofollow"}
 - [Certificate of Insurance](https://drive.google.com/file/d/1ZYSMFZxCksvyPLDb9vDBcH41T6_SurPE/view?usp=sharing)
+- [Certificate of Status (California)](https://drive.google.com/file/d/11-gdRk-FNxQidcfZlmL7sDc3nDrLgnmW/view?usp=drive_link)
+- [Charter Admendment, Name Change](https://drive.google.com/file/d/1ol5lviVP7anxVqESebGiW3Ezku6fPAKx/view?usp=drive_link)
