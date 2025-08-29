@@ -229,4 +229,4 @@ Whether you're managing a handful of instances or thousands of edge devices, the
 
 The real value comes from the time you save and the consistency you gain. Let the API handle the routine work while you focus on building great Node-RED applications.
 
-[Sign up for FlowFuse](https://app.flowfuse.com) to start building Node-RED applications, automate workflows, manage and scale your instances and devices, and secure them efficiently.
+Start today by generating your first API token and making a call — you’ll see how quickly FlowFuse can automate your Node-RED operations. [Sign up for free](https://app.flowfuse.com) and put your industrial workflows on autopilot.”
