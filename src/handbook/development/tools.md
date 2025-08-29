@@ -21,13 +21,6 @@ When using AI tools for development, never share:
 
 ### GitHub Copilot
 
-We do not currently provide organization-wide licenses for GitHub Copilot, but if
-team members wish to purchase an individual license they can do so and
-expense the cost.
+GitHub Copilot Business is available to team members by raising an [access request issue](https://github.com/FlowFuse/admin/issues/new?template=access-request.md) and assigning it to the CTO.
 
-As it stands, some of the team already have Copilot access via their Open Source work
-at no cost. To enable it at the organization level will cost almost twice that of
-individual access; and currently the benefits do not justify that increased cost.
-
-We will keep this under review - if you feel we are missing out by not having
-the organization level access, please speak to the CTO.
+Alternatively, individuals can self-purchase Copilot Pro/+ and expense the cost, or qualify for free access due to their role as an Open Source maintainer.
