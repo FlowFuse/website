@@ -89,6 +89,9 @@ evidenced by one of the following:
 - **Signed Company Quote**: A formal, written quotation provided by our company,
   which has been duly signed, indicating their acceptance of the terms and
   conditions outlined therein.
+- **Note**: In the event a customer does not return a signed Company Quote,
+  the PO must include the Company Quote Reference Number found in the upper
+  right corner of the Company Quote (e.g. Reference: 20250820-153746396)
 
 Important Note: Verbal agreements, informal emails, or other non-binding
 expressions of interest do not constitute a closed deal. The legal commitment,
