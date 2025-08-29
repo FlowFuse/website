@@ -2,7 +2,7 @@
 title: "Reactive vs. Preventive: Building Resilient Manufacturing Systems"
 subtitle: "Why smart manufacturers are switching from break-fix to data-driven maintenance for better ROI"
 description: "Discover how manufacturers use FlowFuse's Node-RED platform to collect real-time factory data, build monitoring dashboards, and shift from costly reactive maintenance to profitable preventive strategies. Real examples, proven ROI, actionable steps."
-date: 2025-08-26
+date: 2025-09-01
 authors: ["sumit-shinde"]
 image:
 keywords: preventive maintenance, manufacturing ROI, Node-RED, FlowFuse, industrial data collection, OEE optimization, factory monitoring, digital transformation, smart manufacturing, maintenance strategy
@@ -22,13 +22,13 @@ This transformation is now more accessible than ever, thanks to modern platforms
 
 The distinction between reactive and preventive maintenance approaches fundamentally shapes how manufacturing operations perform, both operationally and financially.
 
-## Reactive Maintenance: The Traditional Approach
+### Reactive Maintenance: The Traditional Approach
 
 Reactive maintenance follows a simple principle: run equipment until it fails, then repair it. While this approach requires minimal upfront planning or investment, it creates significant hidden costs. Emergency repairs cost substantially more than planned maintenance due to overtime labor, expedited parts shipping, and the opportunity cost of lost production. 
 
 Beyond direct costs, reactive maintenance creates a cascade of operational challenges. Maintenance teams operate in constant crisis mode, making it difficult to optimize resource allocation or implement improvements. The unpredictability of failures makes accurate production planning nearly impossible, leading to missed deliveries and damaged customer relationships.
 
-## Preventive Maintenance: The Data-Driven Alternative
+### Preventive Maintenance: The Data-Driven Alternative
 
 Preventive maintenance uses continuous monitoring and data analysis to identify potential failures before they occur. By tracking key performance indicators like vibration, temperature, pressure, and power consumption, maintenance teams can detect early warning signs of equipment degradation and schedule repairs during planned downtime.
 
