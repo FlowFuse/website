@@ -5,6 +5,7 @@ description: "Use the FlowFuse API to simplify industrial automation, reduce man
 date: 2025-08-29
 keywords: FlowFuse, Node-RED, industrial automation, CI/CD pipelines, edge devices, API automation, DevOps, smart manufacturing, workflow automation
 authors: ["sumit-shinde"]
+image: /blog/2025/08/images/flowfuse-api.png
 tags:
   - flowfuse
 ---
