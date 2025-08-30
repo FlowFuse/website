@@ -224,7 +224,7 @@ customer direct to a repo for a 3rd party node question.
 Support availability and response times are defined by the customer’s subscription level:
 
 - Pro (Standard Support) 
-  - Support available 24 x 5 (Monday to Friday)
+  - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
   - First Response SLA: Next business day (within 24 hours)  
   - Support tickets can be submitted at [our Support Form](https://flowfuse.com/support/)
 
