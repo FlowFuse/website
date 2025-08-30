@@ -229,7 +229,7 @@ Support availability and response times are defined by the customer’s subscrip
   - Support tickets can be submitted at [our Support Form](https://flowfuse.com/support/)
 
 - Enterprise (Enterprise Support)
-  - Support available 24 x 5 (Monday to Friday)
+  - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
   - First Response SLA: 4 hours  
   - Support tickets can be submitted at [https://flowfuse.com/support/](https://flowfuse.com/support/)
 
