@@ -1,0 +1,1168 @@
+[
+    {
+        "id": "893bc3c905890ddd",
+        "type": "tab",
+        "label": "OEE Calculator",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "14bf2483e2985301",
+        "type": "group",
+        "z": "893bc3c905890ddd",
+        "name": "Select Machine",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "72ec8115dbe8f519",
+            "76640041f981a289",
+            "02638d2eb0b6305c",
+            "80e1256a442366f3",
+            "6e3c909d6d1c2db4",
+            "65d7e5c330570741",
+            "46ce046970eb46a9",
+            "e1b7b6a68fcced22",
+            "327cafd44f227eae",
+            "54c5f1ea96dab316",
+            "60aa64ca8502d60e",
+            "342f3eb3d2285883",
+            "038ca195b0b352ca",
+            "65e0f2f4658005c2",
+            "7130befdc3b10597",
+            "20c4450d47289911"
+        ],
+        "x": 34,
+        "y": 99,
+        "w": 1052,
+        "h": 322
+    },
+    {
+        "id": "f32e9dba597e9e36",
+        "type": "group",
+        "z": "893bc3c905890ddd",
+        "name": "Log Machine Data",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e0883e81c2f17eeb",
+            "10cc7327994b0c8a",
+            "4e40f3ae45196504",
+            "a7398dbc1160f1e9",
+            "ac3a2eee19fdecdd"
+        ],
+        "x": 34,
+        "y": 439,
+        "w": 822,
+        "h": 142
+    },
+    {
+        "id": "7f7fe03291c16e6b",
+        "type": "group",
+        "z": "893bc3c905890ddd",
+        "name": "View and Submit",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1bf153e50484353a",
+            "a63aa71e35350059",
+            "c17bacbe55753e99",
+            "7d0186456cc2ee49",
+            "29181350cb139743",
+            "7bfac02b5fc791ef",
+            "49a137d68125419b",
+            "13cae19563cc10a0"
+        ],
+        "x": 34,
+        "y": 599,
+        "w": 822,
+        "h": 202
+    },
+    {
+        "id": "5139511e57e2ec7b",
+        "type": "group",
+        "z": "893bc3c905890ddd",
+        "name": "Notification",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "33a67e68a7426acc",
+            "df25950b7bf8d6d0",
+            "966821f8f62ead29",
+            "6167dca2205bbd25",
+            "9e908d3eb04a3831"
+        ],
+        "x": 34,
+        "y": 819,
+        "w": 752,
+        "h": 122
+    },
+    {
+        "id": "afea04ce8735c0a6",
+        "type": "ui-base",
+        "name": "UI Name",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ],
+        "headerContent": "page",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 5,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "6d8bff5f3fded5c2",
+        "type": "ui-theme",
+        "name": "FF Theme",
+        "colors": {
+            "surface": "#1f2937",
+            "primary": "#8ce2e7",
+            "bgPage": "#4b5563",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    },
+    {
+        "id": "f6b6a4e75084de2b",
+        "type": "ui-page",
+        "name": "OEE Calculator",
+        "ui": "afea04ce8735c0a6",
+        "path": "/",
+        "icon": "",
+        "layout": "grid",
+        "theme": "6d8bff5f3fded5c2",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "12f2779fe5020739",
+        "type": "ui-group",
+        "name": "Load Machine",
+        "page": "f6b6a4e75084de2b",
+        "width": 4,
+        "height": "8",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "cd0272ceaa0f78c0",
+        "type": "ui-group",
+        "name": "Log Data",
+        "page": "f6b6a4e75084de2b",
+        "width": 4,
+        "height": "12",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "beadc601e7eb70ce",
+        "type": "ui-group",
+        "name": "Review and Submit",
+        "page": "f6b6a4e75084de2b",
+        "width": 4,
+        "height": "8",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "544c0725d21aede1",
+        "type": "comment",
+        "z": "893bc3c905890ddd",
+        "name": "LICENSE",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 100,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "72ec8115dbe8f519",
+        "type": "ui-text-input",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "",
+        "label": "Machine ID",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": "",
+        "passthru": true,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "machine-id-text",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 610,
+        "y": 180,
+        "wires": [
+            [
+                "65d7e5c330570741",
+                "342f3eb3d2285883",
+                "6e3c909d6d1c2db4"
+            ]
+        ]
+    },
+    {
+        "id": "76640041f981a289",
+        "type": "ui-text-input",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "",
+        "label": "Item Number",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": "",
+        "passthru": true,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "327cafd44f227eae"
+            ]
+        ]
+    },
+    {
+        "id": "02638d2eb0b6305c",
+        "type": "ui-text-input",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "",
+        "label": "Operation Number",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "passthru": true,
+        "className": "",
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "54c5f1ea96dab316"
+            ]
+        ]
+    },
+    {
+        "id": "80e1256a442366f3",
+        "type": "ui-text-input",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "",
+        "label": "Work Order",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "passthru": true,
+        "className": "",
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "60aa64ca8502d60e"
+            ]
+        ]
+    },
+    {
+        "id": "6e3c909d6d1c2db4",
+        "type": "ui-markdown",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "Selected Machine",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "content": "## Selected Machine\n\nMachine: **{{ msg.payload }}**",
+        "className": "",
+        "x": 850,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65d7e5c330570741",
+        "type": "change",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "machineId",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46ce046970eb46a9",
+        "type": "ui-dropdown",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "",
+        "label": "Select Machine:",
+        "tooltip": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Machine A",
+                "value": "Machine A",
+                "type": "str"
+            },
+            {
+                "label": "Machine B",
+                "value": "Machine B",
+                "type": "str"
+            },
+            {
+                "label": "Machine c",
+                "value": "Machine C",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 620,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e1b7b6a68fcced22",
+        "type": "ui-markdown",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "Headline: Load Machine",
+        "order": 1,
+        "width": 0,
+        "height": 2,
+        "content": "## Load Machine\nSelect a machine by the id",
+        "className": "",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "327cafd44f227eae",
+        "type": "change",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "item",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54c5f1ea96dab316",
+        "type": "change",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "OperationNumber",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60aa64ca8502d60e",
+        "type": "change",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "WorkOrder",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0883e81c2f17eeb",
+        "type": "ui-form",
+        "z": "893bc3c905890ddd",
+        "g": "f32e9dba597e9e36",
+        "name": "Log OEE Data",
+        "group": "cd0272ceaa0f78c0",
+        "label": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Shift Length",
+                "key": "shiftLength",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Run Time",
+                "key": "runTime",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Breaks",
+                "key": "breaks",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Setup Time Actual",
+                "key": "setupTimeA",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Setup Time Standard",
+                "key": "setupTimeS",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Down Time",
+                "key": "downtime",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Standard Run Time Per Part",
+                "key": "standardRunTimePerPart",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Good Parts",
+                "key": "IOparts",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Scrap Parts",
+                "key": "NIOparts",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Reason Codes",
+                "key": "scrapCode",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "shiftLength": "",
+            "runTime": "",
+            "breaks": "",
+            "setupTimeA": "",
+            "setupTimeS": "",
+            "downtime": "",
+            "standardRunTimePerPart": "",
+            "IOparts": "",
+            "NIOparts": "",
+            "scrapCode": ""
+        },
+        "payload": "",
+        "submit": "Calculate OEE",
+        "cancel": "Clear",
+        "resetOnSubmit": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "data-form",
+        "dropdownOptions": [],
+        "x": 360,
+        "y": 540,
+        "wires": [
+            [
+                "4e40f3ae45196504"
+            ]
+        ]
+    },
+    {
+        "id": "10cc7327994b0c8a",
+        "type": "ui-markdown",
+        "z": "893bc3c905890ddd",
+        "g": "f32e9dba597e9e36",
+        "group": "cd0272ceaa0f78c0",
+        "name": "Headline: Log Machine Data",
+        "order": 1,
+        "width": 0,
+        "height": 2,
+        "content": "## Log Machine Data\nProvide all time entries in minutes",
+        "className": "",
+        "x": 400,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1bf153e50484353a",
+        "type": "ui-button",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "group": "beadc601e7eb70ce",
+        "name": "",
+        "label": "Submit Data",
+        "order": 4,
+        "width": 0,
+        "height": 1,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "submit-button",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "kpis",
+        "payloadType": "flow",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 650,
+        "y": 760,
+        "wires": [
+            [
+                "7d0186456cc2ee49"
+            ]
+        ]
+    },
+    {
+        "id": "4e40f3ae45196504",
+        "type": "function",
+        "z": "893bc3c905890ddd",
+        "g": "f32e9dba597e9e36",
+        "name": "Calculate KPIs",
+        "func": "// Input parameters\nconst shiftLength = parseFloat(msg.payload[\"shiftLength\"]);\nconst runTime = parseFloat(msg.payload[\"runTime\"]);\nconst breaks = parseFloat(msg.payload[\"breaks\"]);\nconst setupTimeA = parseFloat(msg.payload[\"setupTimeA\"]);\nconst setupTimeS = parseFloat(msg.payload[\"setupTimeS\"]);\nconst downTime = parseFloat(msg.payload[\"downtime\"]);\nconst standardRunTimePerPart = parseFloat(msg.payload[\"standardRunTimePerPart\"]);\nconst IOparts = parseFloat(msg.payload[\"IOparts\"]);\nconst NIOparts = parseFloat(msg.payload[\"NIOparts\"]);\nconst scrapCode = msg.payload[\"scrapCode\"];\n\n// Calculate KPIs\n\n// Availability = (Run Time) / (Shift Length - Breaks)\nlet availability = (runTime / (shiftLength - breaks)) || 0;\n\n// Performance = (Standard Run Time Per Part × IOparts) / Run Time\nlet performance = ((standardRunTimePerPart * IOparts) / runTime) || 0;\n\n// Quality = IOparts / (IOparts + NIOparts)\nlet quality = (IOparts / (IOparts + NIOparts)) || 0;\n\n// OEE = Availability × Performance × Quality\nlet oee = (availability * performance * quality) || 0;\n\n// Multiply by 100 to get the percentages\nlet oeePercentage = (oee * 100).toFixed(2);  // Assuming you want 2 decimal places\nlet availabilityPercentage = (availability * 100).toFixed(2);\nlet performancePercentage = (performance * 100).toFixed(2);\nlet qualityPercentage = (quality * 100).toFixed(2);\n\n// Append '%' to the KPIs\noeePercentage += '%';\navailabilityPercentage += '%';\nperformancePercentage += '%';\nqualityPercentage += '%';\n\n// Output the KPIs\nmsg.payload = {\n    \"OEE\": oeePercentage,\n    \"Availability\": availabilityPercentage,\n    \"Performance\": performancePercentage,\n    \"Quality\": qualityPercentage,\n    \"scrapCode\": scrapCode\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 540,
+        "wires": [
+            [
+                "a7398dbc1160f1e9"
+            ]
+        ]
+    },
+    {
+        "id": "a63aa71e35350059",
+        "type": "ui-markdown",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "group": "beadc601e7eb70ce",
+        "name": "Headline: Review and Submit",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "## Review and Submit\nConfirm the entries below before final submission",
+        "className": "",
+        "x": 410,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49a137d68125419b",
+        "type": "function",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "name": "Transform to table",
+        "func": "// Create an array to hold the table rows\nconst tableData = [];\n\n// Transform the KPIs into table rows\ntableData.push({\n    \"KPI\": \"OEE\",\n    \"Value\": msg.payload.OEE\n});\ntableData.push({\n    \"KPI\": \"Availability\",\n    \"Value\": msg.payload.Availability\n});\ntableData.push({\n    \"KPI\": \"Performance\",\n    \"Value\": msg.payload.Performance\n});\ntableData.push({\n    \"KPI\": \"Quality\",\n    \"Value\": msg.payload.Quality\n});\ntableData.push({\n    \"KPI\": \"Codes\",\n    \"Value\": msg.payload.scrapCode\n});\n\n// Output the table data in the payload\nmsg.payload = tableData;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 720,
+        "wires": [
+            [
+                "c17bacbe55753e99"
+            ]
+        ]
+    },
+    {
+        "id": "c17bacbe55753e99",
+        "type": "ui-table",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "group": "beadc601e7eb70ce",
+        "name": "KPI Table",
+        "label": "",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "maxrows": "20",
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 640,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7bfac02b5fc791ef",
+        "type": "change",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "kpis",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.OEE",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 680,
+        "wires": [
+            [
+                "29181350cb139743"
+            ]
+        ]
+    },
+    {
+        "id": "342f3eb3d2285883",
+        "type": "change",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "msg",
+                "to": "https://upload.wikimedia.org/wikipedia/commons/4/4b/CNC_Wood_Lathe_CNC_Wood_Turning_Machine.jpg",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 180,
+        "wires": [
+            [
+                "038ca195b0b352ca"
+            ]
+        ]
+    },
+    {
+        "id": "038ca195b0b352ca",
+        "type": "ui-template",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "page": "",
+        "ui": "",
+        "name": "Image",
+        "order": 5,
+        "width": 5,
+        "height": 4,
+        "head": "",
+        "format": "<v-img \n    :src=\"msg?.image || 'https://cdn.pixabay.com/photo/2012/04/14/16/26/question-34499_1280.png'\"\n    height=\"190\"\n>\n</v-img>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1010,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d0186456cc2ee49",
+        "type": "link out",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "6167dca2205bbd25"
+        ],
+        "x": 815,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "33a67e68a7426acc",
+        "type": "ui-notification",
+        "z": "893bc3c905890ddd",
+        "g": "5139511e57e2ec7b",
+        "ui": "afea04ce8735c0a6",
+        "position": "center center",
+        "displayTime": "10",
+        "showCountdown": true,
+        "outputs": 0,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 670,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "df25950b7bf8d6d0",
+        "type": "function",
+        "z": "893bc3c905890ddd",
+        "g": "5139511e57e2ec7b",
+        "name": "Collect all submitted data",
+        "func": "msg.kpis = flow.get(\"kpis\");\nmsg.machine = flow.get(\"machineId\");\nmsg.item = flow.get(\"item\");\nmsg.OperationNumber = flow.get(\"OperationNumber\");\nmsg.WorkOrder = flow.get(\"WorkOrder\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 900,
+        "wires": [
+            [
+                "966821f8f62ead29"
+            ]
+        ]
+    },
+    {
+        "id": "966821f8f62ead29",
+        "type": "debug",
+        "z": "893bc3c905890ddd",
+        "g": "5139511e57e2ec7b",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "6167dca2205bbd25",
+        "type": "link in",
+        "z": "893bc3c905890ddd",
+        "g": "5139511e57e2ec7b",
+        "name": "link in 1",
+        "links": [
+            "7d0186456cc2ee49"
+        ],
+        "x": 75,
+        "y": 880,
+        "wires": [
+            [
+                "df25950b7bf8d6d0",
+                "9e908d3eb04a3831"
+            ]
+        ]
+    },
+    {
+        "id": "9e908d3eb04a3831",
+        "type": "change",
+        "z": "893bc3c905890ddd",
+        "g": "5139511e57e2ec7b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "KPIs for machine successfully submitted",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 860,
+        "wires": [
+            [
+                "33a67e68a7426acc"
+            ]
+        ]
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "893bc3c905890ddd",
+        "name": "README",
+        "info": "# OEE Calculator\n\nThe OEE Calculator blueprint allows an end user to input \nproduction information to calculate the \nOverall Equipment Effectiveness (OEE) for a machine, \nif no automatic calculation is possible.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a group on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n### Adjust Styling\n\nYou may need to modify text sizes based on your screen.\nTo do so, click on the corresponding Text nodes and change the font size.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 240,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "29181350cb139743",
+        "type": "ui-text",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "group": "beadc601e7eb70ce",
+        "order": 2,
+        "width": "4",
+        "height": "4",
+        "name": "OEE",
+        "label": "OEE",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "Helvetica, sans-serif",
+        "fontSize": "36",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "",
+        "x": 630,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "a7398dbc1160f1e9",
+        "type": "link out",
+        "z": "893bc3c905890ddd",
+        "g": "f32e9dba597e9e36",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "13cae19563cc10a0"
+        ],
+        "x": 815,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "13cae19563cc10a0",
+        "type": "link in",
+        "z": "893bc3c905890ddd",
+        "g": "7f7fe03291c16e6b",
+        "name": "link in 2",
+        "links": [
+            "a7398dbc1160f1e9"
+        ],
+        "x": 75,
+        "y": 700,
+        "wires": [
+            [
+                "7bfac02b5fc791ef",
+                "49a137d68125419b"
+            ]
+        ]
+    },
+    {
+        "id": "65e0f2f4658005c2",
+        "type": "ui-button",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "group": "12f2779fe5020739",
+        "name": "",
+        "label": "Load Demo Data",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "7130befdc3b10597"
+            ]
+        ]
+    },
+    {
+        "id": "7130befdc3b10597",
+        "type": "function",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "name": "Generate simulated data",
+        "func": "// Constants\nconst shiftLength = 480; // in minutes (8 hours)\nconst breakTime = 60;    // 1 hour break\nconst setupTimeA = Math.floor(Math.random() * 15); // 0–15 mins\nconst setupTimeS = Math.floor(Math.random() * 20); // 0–20 mins\nconst downtime = Math.floor(Math.random() * 30);   // 0–30 mins\n\n// Derived\nconst plannedProductionTime = shiftLength - breakTime;\nconst setupTotal = setupTimeA + setupTimeS;\nconst availableTime = plannedProductionTime - setupTotal - downtime;\nconst standardRunTimePerPart = 1; // 1 minute per part (ideal)\nconst totalParts = Math.floor(availableTime / standardRunTimePerPart * (0.85 + Math.random() * 0.1)); // 85–95% efficiency\nconst NIOparts = Math.floor(totalParts * (0.02 + Math.random() * 0.05)); // 2–7% scrap\nconst IOparts = totalParts - NIOparts;\n\n// Final runtime is slightly more than ideal to simulate losses\nconst runTime = Math.floor(IOparts * standardRunTimePerPart * (1.05 + Math.random() * 0.1)); // 105–115% of ideal\n\n// Messages\nconst machineIdMsg = { payload: \"EA-TL1530T3\" };\nconst Machine = { payload: \"Machine \" + String.fromCharCode(65 + Math.floor(Math.random() * 3)) };\nconst operatorNumberMsg = { payload: \"OP\" + Math.floor(100 + Math.random() * 900) };\nconst itemNumberMsg = { payload: \"ITEM\" + Math.floor(100 + Math.random() * 900) };\nconst workOrderMsg = { payload: \"WO\" + Math.floor(100 + Math.random() * 900) };\n\nlet shiftPerformanceData = {\n    payload: {\n        shiftLength,\n        runTime,\n        breaks: breakTime,\n        setupTimeA,\n        setupTimeS,\n        downtime,\n        standardRunTimePerPart,\n        IOparts,\n        NIOparts,\n        scrapCode: Math.floor(Math.random() * 5).toString()\n    }\n};\n\n// Return the messages as an array to different outputs\nreturn [machineIdMsg, Machine, itemNumberMsg, operatorNumberMsg, workOrderMsg, shiftPerformanceData];\n",
+        "outputs": 6,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "72ec8115dbe8f519"
+            ],
+            [
+                "46ce046970eb46a9"
+            ],
+            [
+                "76640041f981a289"
+            ],
+            [
+                "02638d2eb0b6305c"
+            ],
+            [
+                "80e1256a442366f3"
+            ],
+            [
+                "20c4450d47289911"
+            ]
+        ]
+    },
+    {
+        "id": "ac3a2eee19fdecdd",
+        "type": "link in",
+        "z": "893bc3c905890ddd",
+        "g": "f32e9dba597e9e36",
+        "name": "link in 3",
+        "links": [
+            "20c4450d47289911"
+        ],
+        "x": 75,
+        "y": 540,
+        "wires": [
+            [
+                "e0883e81c2f17eeb"
+            ]
+        ]
+    },
+    {
+        "id": "20c4450d47289911",
+        "type": "link out",
+        "z": "893bc3c905890ddd",
+        "g": "14bf2483e2985301",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "ac3a2eee19fdecdd"
+        ],
+        "x": 555,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "53fabaff6bddbb00",
+        "type": "ui-template",
+        "z": "893bc3c905890ddd",
+        "group": "",
+        "page": "",
+        "ui": "afea04ce8735c0a6",
+        "name": "Position CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "div.v-card {\n    height: 100% !important;\n    /* min-width: 375px; */\n}\n\ndiv.nrdb-ui-widget.nrdb-ui-text-input.machine-id-text {\n    margin-top: 6px;\n}\n\ndiv.nrdb-ui-widget.nrdb-ui-form.data-form > form > div.nrdb-ui-form-actions {\n    margin-top: 60px;\n}\n\ndiv.nrdb-ui-widget.nrdb-ui-button.submit-button {\n    position: absolute;\n    bottom: 18px;\n}\n\ndiv.v-card  div.v-data-table-footer {\n    display: none;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 1010,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    }
+]
