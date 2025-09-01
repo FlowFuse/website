@@ -15,29 +15,26 @@ In the [first part of this series](/blog/2025/08/pareto-chart-manufacturing-guid
 
 <!--more-->
 
-Now, it's time to move from theory to practice. In this guide, we'll walk you through the process of building your first Pareto Chart using FlowFuse, a low-code platform designed to streamline your industrial data workflows. You'll learn how to connect to your production data, process it to calculate frequencies and cumulative percentages, and then visualize it in a chart that empowers your team to make data-driven decisions.
+Now, it’s time to move from theory to practice. This guide will show you how to build your first Pareto Chart in FlowFuse, a low-code platform that simplifies industrial data workflows. You will learn how to connect to your production data, calculate frequencies and format data, and visualize the results in a chart that helps your team make data-driven decisions.
 
 ![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
 
-## Setting Up the Data Flow in FlowFuse
+## Getting Started
 
-Before we can create a Pareto Chart, we need to prepare the data that will feed into it. A Pareto Chart relies on two key components:
-
-1. **Frequencies** – how often each issue, defect, or event occurs.
-2. **Cumulative Percentages** – the running total that shows how much each issue contributes to the whole.
-
-FlowFuse, built on Node-RED, makes this process straightforward by allowing you to visually connect data sources, transformations, and outputs without heavy coding.
+To begin building your first Pareto Chart, make sure a FlowFuse Node-RED instance is running on your local machine or in the cloud. If you do not have an account yet, you can [sign up for a 14-day free trial](https://app.flowfuse.com/).
 
 ### Step 1: Connect to Your Data Source
 
-Most production environments collect machine or process data through [protocols](/node-red/protocol/) like **[OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)**, **[MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/)**, or direct [database](/node-red/database/) queries. In FlowFuse:
+The first step in creating a Pareto Chart is connecting to the data that you want to analyze. Production environments typically collect machine or process data through [protocols](/node-red/protocol/) such as **[OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)**, **[MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/)**, or direct [database](/node-red/database/) queries.
 
-1. Drag in the relevant input node (for example, an OPC-UA Read node).
+In FlowFuse:
+
+1. Drag the relevant input node into your flow (for example, an OPC-UA Read node).
 2. Configure the connection details to point to your production system.
-3. Test the connection to ensure live data is flowing in.
+3. Test the connection to ensure live data is flowing.
 
-If you do not have access to a live PLC or factory dataset, you can start with a simple Inject node in FlowFuse to simulate production data.
+If a live PLC or factory dataset is not available, you can start with a simple Inject node in FlowFuse to simulate production data.
 
 ### Step 2: Format and Aggregate the Data
 
@@ -51,7 +48,7 @@ In FlowFuse, you can achieve this in three steps:
 
 2. **Aggregate in a Function node** – Map each event to a label (such as a machine type, process step, or category) and keep a running count of how many times each one occurs.
 
-   > 💡 **Tip:** You do not need to know JavaScript. Simply describe the outcome you want and provide a sample dataset—the **FlowFuse AI Assistant** will generate the Function node for you. [Learn more](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
+   > **Tip:** You do not need to know JavaScript. Simply describe the outcome you want and provide a sample dataset—the **FlowFuse AI Assistant** will generate the Function node for you. [Learn more](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
 
 3. **Sort the results** – Use a Sort node to arrange the categories so the most frequent ones appear first.
 
@@ -59,11 +56,12 @@ At the end of this step, your events should be transformed into a structure like
 
 ```json
 [
-  { "type": "Machine Jam", "count": 20 },
-  { "type": "Power Outage", "count": 12 },
-  { "type": "Sensor Fault", "count": 10 },
-  { "type": "Packaging Error", "count": 5 },
-  { "type": "Software Glitch", "count": 3 }
+  { type: "Scratch on Surface", value: 12 },
+  { type: "Misaligned Parts", value: 7 },
+  { type: "Paint Defect", value: 5 },
+  { type: "Loose Screws", value: 3 },
+  { type: "Faulty Electronics", value: 2 },
+  { type: "Cracked Housing", value: 1 }
 ]
 ```
 
@@ -90,11 +88,12 @@ The Pareto Chart you just imported expects input data in a **specific JSON forma
 
 ```json
 [
-  { "type": "Machine Jam", "count": 20 },
-  { "type": "Power Outage", "count": 12 },
-  { "type": "Sensor Fault", "count": 10 },
-  { "type": "Packaging Error", "count": 5 },
-  { "type": "Software Glitch", "count": 3 }
+  { name: "Scratch on Surface", value: 5 },
+  { name: "Misaligned Parts", value: 3 },
+  { name: "Paint Defect", value: 8 },
+  { name: "Loose Screws", value: 2 },
+  { name: "Faulty Electronics", value: 6 },
+  { name: "Cracked Housing", value: 1 }
 ]
 ```
 
@@ -104,7 +103,7 @@ To connect your **real production data**:
 2. Wire the output of that flow into the **Pareto Chart (UI Template)** node you imported and deploy the flow.
 3. Each time new data is received, the chart will automatically re-render with the updated bars (frequency) and cumulative percentage line.
 
-now open dashboad, to open it click on the open dashboard button which is on the top-right corner of the dashboard 2.0 sidebar once opened you will see the pareto chart with bars and cumlin line and 80% threshold
+To open the dashboard, click the Open Dashboard button located in the top-right corner of the Dashboard 2.0 sidebar. Once opened, you will see the Pareto Chart with bars, the cumulative line, and the 80% threshold.
 
 ![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
