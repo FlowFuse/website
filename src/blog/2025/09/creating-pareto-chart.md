@@ -56,11 +56,11 @@ At the end of this step, your data should be transformed into a structure like t
 
 ```json
 [
+  { "type": "Paint Defect", "count": 8 },
+  { "type": "Faulty Electronics", "count": 6 },
   { "type": "Scratch on Surface", "count": 5 },
   { "type": "Misaligned Parts", "count": 3 },
-  { "type": "Paint Defect", "count": 8 },
   { "type": "Loose Screws", "count": 2 },
-  { "type": "Faulty Electronics", "count": 6 },
   { "type": "Cracked Housing", "count": 1 }
 ]
 ```
