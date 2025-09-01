@@ -1,6 +1,23 @@
-<ul class="opacity-70">
-    <li class="w-[113px] sm:w-[131px] mix-blend-luminosity saturate-0 opacity-80">{% image "./images/home-logos/walter-logo.svg", "Walter Tools logo", [131] %}</li>
-    <li class="w-[113px] sm:w-[131px]">{% image "./images/home-logos/bosch-logo.png", "Bosch logo", [131] %}</li>
-    <li class="w-[115px] sm:w-[125px] mix-blend-luminosity saturate-0 opacity-80">{% image "./images/home-logos/wenco-logo.svg", "Airship logo", [80] %}</li>
-    <li class="w-[81px] sm:w-[90px]">{% image "./images/home-logos/enexis-logo.png", "Enexis logo", [90] %}</li>
-</ul>
+<div class="social-proof-carousel">
+    <ul class="mix-blend-luminosity opacity-70 saturate-0">
+        <li class="w-[113px] sm:w-[131px] opacity-80">{% image "./images/home-logos/walter-logo.svg", "Walter Tools logo", [131] %}</li>
+        <li class="w-[52px] sm:w-[60px] opacity-90">{% image "./images/home-logos/pem-logo.svg", "PEM logo", [52] %}</li>
+        <li class="w-[113px] sm:w-[131px]">{% image "./images/home-logos/bosch-logo.png", "Bosch logo", [131] %}</li>
+        <li class="w-[115px] sm:w-[125px] opacity-80">{% image "./images/home-logos/wenco-logo.svg", "Wenco logo", [80] %}</li>
+        <li class="w-[48px] sm:w-[55px]">{% image "./images/home-logos/verduyn-logo.png", "Verduyn logo", [48] %}</li>
+        <li class="w-[81px] sm:w-[90px]">{% image "./images/home-logos/enexis-logo.png", "Enexis logo", [90] %}</li>
+        <li class="w-[163px] sm:w-[170px]">{% image "./images/home-logos/knobelsdorff-logo.png", "knobelsdorff logo", [163] %}</li>
+        <li class="w-[115px] sm:w-[132px] opacity-90">{% image "./images/home-logos/laepple-logo.png", "LÄPPLE logo", [115] %}</li>
+        <li class="w-[71px] sm:w-[80px]">{% image "./images/home-logos/wings-logo.png", "Wings logo", [115] %}</li>
+        <li class="w-[81px] sm:w-[90px]">{% image "./images/home-logos/newell-logo.svg", "Newell Brands logo", [81] %}</li>
+        <li class="w-[132px] sm:w-[140px]">{% image "./images/home-logos/energinet-logo.png", "Energinet logo", [132] %}</li>
+    </ul>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".social-proof-carousel");
+    const items = carousel.innerHTML; 
+    carousel.innerHTML += items;
+});
+</script>
