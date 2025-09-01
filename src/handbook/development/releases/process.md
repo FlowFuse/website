@@ -46,14 +46,14 @@ The Release Manager chooses when to start the release process. We usually aim to
 start the release process at 10am/11am (UK/CET) as that gets to the end of Phase
 Two before the team [Launch Lunch](#launch-lunch).
 
-A huddle should be started in the `#dev` channel at the start of the process to
+A huddle should be started in the `#dept-engineering` channel at the start of the process to
 enable others to contribute where needed.
 
 It is also useful for the wider team if the Release Manager posts status updates
-to `#dev` throughout the process.
+to `#dept-engineering` throughout the process.
 
 If at any point a team member identifies a problem that needs checking before the
-release can continue, they should post a message to `#dev` and join the huddle
+release can continue, they should post a message to `#dept-engineering` and join the huddle
 to ensure the Release Manage is aware.
 
 ### Phase One
@@ -143,13 +143,11 @@ Follow these steps to run the script:
 
 Once everything has been published, the Release Manager should:
 
-1. Run the staging CI pipeline [Build for Staging](https://github.com/FlowFuse/CloudProject/actions/workflows/build-kube.yml) against the main branch, to ensure staging is running the latest release.
-  - Once that completes, verify it has deployed cleanly on Staging
-2. Raise a "FlowFuse Cloud Change Requests" Issue in [CloudProject Project](https://github.com/FlowFuse/CloudProject/issues/new/choose) to request Production to be updated to the new version.
-3. Notify the CTO/Senior Engineer that the release is ready to publish to production.
+1. Raise a "FlowFuse Cloud Change Requests" Issue in [CloudProject Project](https://github.com/FlowFuse/CloudProject/issues/new/choose) to request Production to be updated to the new version.
+2. Notify the CTO/Senior Engineer that the release is ready to publish to production.
 
 Once Production has been updated and verified, the Release Manager should announce
-the availability of the release in `#dev`. At this point, the marketing team
+the availability of the release in `#dept-engineering`. At this point, the marketing team
 will take over for Phase Four
 
 ### Phase Four
@@ -184,17 +182,21 @@ staging and one for production to upgrade to the latest version.
 The Unmanaged Repositories have a simpler release process. They are released
 as needed in coordination with the CTO/Senior Engineer.
 
-All release activity should be highlighted in #dev so the team is aware.
+All release activity should be highlighted in #dept-engineering so the team is aware.
 
 1. Check that all changes have been merged to main
 1. Update the `package.json` version number
-1. Run the `generate-changelog` script from `flowfuse/admin` repository. This
+1. `cd` into the directory of the package you want to release
+1. Run the `generate-changelog` script, found in the `flowfuse/admin` repository. Run this
+   whilst in the folder/repository that you are releasing. This
    generates a list of the PRs merged since the last tagged release. Note: this
    script require the `gh` cli to be installed and logged in.
    Update `CHANGELOG.md` with the output of the script.
-1. Open a new PR with the `package.json` and `CHANGELOG.md` changes. Get the PR reviewed
+1. Run `npm install`
+1. Open a new PR with the `package.json`, `package-lock.json` and `CHANGELOG.md` changes. Get the PR reviewed
    by someone else and then merged.
-1. Create a new GitHub Release with the appropriate version number eg `v0.1.1`.
+1. Create a new GitHub Release with the appropriate version number eg `v0.1.1`. It is
+   advised to use the "Generate Release Notes" option to create the release notes and title.
 1. Once the release is created, the GitHub Action will take care of publishing to
    NPM. Check the action to ensure it completes.
 
