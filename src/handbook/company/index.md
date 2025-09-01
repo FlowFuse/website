@@ -26,9 +26,9 @@ As a registering company we have to provide our address to customers and supplie
 
 ```
 FlowFuse Inc
-548 Market Street
-PO Box 7775 #29439
-San Francisco, CA 94120-7775 USA.
+548 Market St
+PMB 24889
+San Francisco, California 94104-5401 US
 ```
 
 ### Official Name Change & Incorporation Document
