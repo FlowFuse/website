@@ -2,7 +2,7 @@
 title: "Building Your First Pareto Chart in FlowFuse for Production Data"
 subtitle: "Transform Raw Production Data into Actionable Insights with a Visual Pareto Analysis"
 description: "Learn how to build a Pareto Chart in FlowFuse to identify the vital few defects in your production data. Step-by-step guide with live data integration, visualization, and actionable insights."
-date: 2025-08-14
+date: 2025-09-01
 keywords: FlowFuse, Pareto Chart, production data analysis, manufacturing analytics, Node-RED dashboard, industrial data visualization, defect tracking, real-time monitoring
 authors: ["sumit-shinde"]
 image: 
