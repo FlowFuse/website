@@ -16,7 +16,7 @@ For new vendors not on the list, get CEO approval and add any signed agreements
 to
 [this folder](https://drive.google.com/drive/u/0/folders/1r6u1MNHZFAM1uhHmX-XtQs_bRcFVxQ25){rel="nofollow"}.
 
-For the legal procudures and terms for our own customers, please
+For the legal procedures and terms for our own customers, please
 [read the corresponding handbook page](/handbook/sales/legal/).
 
 ### Process
