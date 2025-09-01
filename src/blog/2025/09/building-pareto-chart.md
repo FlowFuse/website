@@ -120,6 +120,6 @@ By following the steps outlined above, you have successfully built a **Pareto Ch
 
 The combination of FlowFuse’s low-code interface and the flexibility of the FlowFuse Dashboard provides a powerful way to integrate, process, and visualize real-time industrial data without heavy coding. With this chart in place, you can now monitor trends, track recurring defects, and make data-driven decisions that improve efficiency and product quality.
 
-Next steps: experiment with different datasets, integrate live data from your production floor, and explore other dashboard components to build a comprehensive industrial analytics solution. FlowFuse ensures you dont have to worry about deployment, scalablity as your need grows, security and lots of enterpise feature such team collaboraiton, snapshot, devops tool so you can buiodl and deploy to 1000s - 10000s of instances....
+Next steps: experiment with different datasets, integrate live production data, and explore additional dashboard components to build a complete industrial analytics solution. FlowFuse takes care of deployment, scalability, and security, while offering enterprise features such as team collaboration, snapshots, and DevOps tools—making it easy to build and deploy to thousands of instances without hassle.
 
 > Ready to see FlowFuse in action and learn how other leading manufacturers are using it? **[Book a demo today](/book-demo/)** and discover how your production data can reveal the **vital few** opportunities for improvement.
