@@ -67,3 +67,15 @@ You should also, always ask, the reasons for wanting to delete the account. Unde
 When debugging FlowFuse Dashboard issues a very useful tool is the `_debug` view which is served up with every FlowFuse Dashboard. You can read more about it in the [FlowFuse Dashboard documentation](https://dashboard.flowfuse.com/contributing/widgets/debugging).
 
 Any bugs found for FlowFuse Dashboard should be logged as as an issue in the [FlowFuse Dashboard repository](https://github.com/FlowFuse/node-red-dashboard/issues).
+
+### Support queries about summer 2025 pricing and tier changes
+
+Coupon TRYSTARTER will give a customer a free month of Starter with one hosted instance (included with Starter) and one remote instance (because they're used to this when migrating from Free).
+
+They can get an additional free month by choosing annual billing.
+
+Existing Starter customers were notified of the change via emails on July 28 and August 15 (reminder)
+
+Existing Free users were notified of the change via emails on August 4 and August 19. In that follow-up email, they were given the TRYSTARTER coupon.
+
+Starter now only includes one hosted instance (down from two hosted and two remote instances), but also includes more CPU and RAM than previously.
