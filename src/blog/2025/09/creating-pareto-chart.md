@@ -8,7 +8,7 @@ authors: ["sumit-shinde"]
 image: 
 tags:
   - flowfuse
-  - opcua
+  - dashboard
 ---
 
 In the [first part of this series](/blog/2025/08/pareto-chart-manufacturing-guide/), we explored the foundational principles of the Pareto Chart, understanding how this powerful tool can help manufacturing teams quickly identify and focus on the "vital few" problems that have the biggest impact. We learned that by combining a bar graph and a cumulative percentage line, a Pareto Chart provides a clear visual roadmap to prioritize quality issues, equipment downtime, or other key performance indicators.
