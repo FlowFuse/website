@@ -1533,22 +1533,31 @@ h4:hover .header-anchor::before {
         overflow: hidden;
         @apply py-10;
         white-space: nowrap;
+        position: relative;
         display: flex;
     }
 
-    .social-proof-carousel:hover ul {
+    .social-proof-carousel:hover div {
         animation-play-state: paused;
     }
     
-    .social-proof-carousel ul {
+    .social-proof-carousel div {
         display: flex;
+        flex-shrink: 0;
+        width: auto;
         align-items: center;
         animation: 30s slide infinite linear;
     }
 
-    .social-proof-carousel ul li {
+    .social-proof-carousel div img,
+    .social-proof-carousel div picture {
         flex-shrink: 0;
-        @apply mx-10;
+        max-height: 60px;
+        width: auto;
+        display: inline-block;
+        @apply mx-6;
+        overflow-clip-margin: content-box;
+        overflow: clip;
     }
 }
 
