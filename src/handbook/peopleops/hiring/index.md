@@ -136,6 +136,10 @@ When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-
 
 ## Extending an offer
 
+Before extending any offer, note that any offer when the total compensation package
+exceeds $250000 per annum requires the board to be informed, and approval from the
+majority to be obtained.
+
 When a candidate goes through the full hiring process an offer might be extended
 to them. At such a time it's good to understand that the offer at that time is
 conditional on background checks. If the offer includes an equity component,
