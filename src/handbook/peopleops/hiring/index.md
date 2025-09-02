@@ -138,7 +138,7 @@ When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-
 
 When a candidate goes through the full hiring process an offer might be extended
 to them. At such a time it's good to understand that the offer at that time is
-conditional on background checks. The offer might include an [equity component](/handbook/peopleops/compensation/#equity),
+conditional on background checks. The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
 this part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
