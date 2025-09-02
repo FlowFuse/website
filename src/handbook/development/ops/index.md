@@ -10,6 +10,7 @@ navTitle: Platform Ops
  - [Deployment](./deployment.md)
  - [Incident Response](./incident-response.md)
  - [FlowFuse Dedicated](./dedicated.md)
+ - [Updating Stacks](./production-stack-update.md)
  
 
 ## CI/CD
