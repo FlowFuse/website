@@ -142,8 +142,8 @@ majority to be obtained.
 
 When a candidate goes through the full hiring process an offer might be extended
 to them. At such a time it's good to understand that the offer at that time is
-conditional on background checks. If the offer includes an equity component,
-this part is conditional on board approval of such a grant. Be sure to be
+conditional on background checks. The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
+This part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
 Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
