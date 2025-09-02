@@ -29,9 +29,11 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Ensure the company details are updated, and include an address and country.
 1. On the Deal page, find the Subscription section on the right-hand side, then click Add and Convert Deal to Subscription.
 1. Change the dates, terms, products, discounts, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
-1. Under Invoice Settings, uncheck the box that automatically emails customers. You will want to manually create the invoice next before sending. This is because the converted subscriptions have limitations on what discounts can be applied.
+1. Under Invoice Settings, uncheck the box that automatically emails customers. There will still be an invoice created by Hubspot, but it won't be automatically send to the customer.
+2. If additional information is needed on the invoice, you'll void the invoice and follow the steps mentioned under 'creating an invoice'.
 1. Click the Create button on the top right.
-2. [Structuring Subscriptions and Invoicing in HubSpot](https://docs.google.com/document/d/1UtRYUv7Wjb7CjON4DnNgv-nD-Gt4Bytymgtv1y9eLWY/edit?usp=sharing)
+2. If no additional information is needed on the invoice, directly send the automated invoice to the customer.
+3. [Structuring Subscriptions and Invoicing in HubSpot](https://docs.google.com/document/d/1UtRYUv7Wjb7CjON4DnNgv-nD-Gt4Bytymgtv1y9eLWY/edit?usp=sharing)
 
 ### Creating an invoice
 
@@ -40,7 +42,8 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
 1. Make sure both ACH and Credit Card options are checked for payment.
 1. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
-1. Finalize this manual invoice, then delete the automatically created one from the subscription conversion.
+1. Finalize this manual invoice, then void the automatically created one from the subscription conversion and send an email to accounting.
+1. If you need to void the invoice and send an email with the invoice number and reason to our accounting for their administration. 
 
 ### Creating a PS invoice
 
