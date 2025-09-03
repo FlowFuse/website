@@ -38,8 +38,8 @@ You need to have the following columns enabled:
    * Deal Name
    * Deal Stage
    * Close Date
-   * Amount
    * Deal owner
+   * Amount
    * Is Closed Won
    * Deal Type
    * Annual recurring revenue
