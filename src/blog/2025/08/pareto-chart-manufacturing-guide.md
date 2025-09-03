@@ -36,7 +36,7 @@ This visualization does something remarkable: it makes the invisible visible. Pr
 
 ## Real World Example
 
-![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart.png){data-zoomable}
+![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart-image.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
 
 Look at this real Pareto Chart from a manufacturing facility. The bars show different types of defects found in one month, arranged from most common (scratches) to least common (other defects).
