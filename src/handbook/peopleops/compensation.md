@@ -106,7 +106,7 @@ Retirement and Pension plans are country-specific. If you have questions during 
 
 ##### US - 401K
 
-At FlowFuse, we offer a 401K through [Human Interest](http://humaninterest.com/). 
+At FlowFuse, we offer a 401K through [Human Interest](http://humaninterest.com/). There is not a company match at this time.
 
 All new team members are auto-enrolled at 8% of their salary, with a 1% increase per year. Of course, team members can also make changes by logging into their human interest dashboard. 
 
