@@ -5,7 +5,7 @@ description: "Learn how Pareto Charts empower manufacturing teams to focus on th
 date: 2025-08-28
 keywords: Pareto chart, Pareto analysis, manufacturing quality, defect reduction, quality control tools, root cause analysis, equipment maintenance, supply chain management, manufacturing efficiency
 authors: ["sumit-shinde"]
-image: 
+image: blog/2025/08/images/pareto-chart-manufacturing-guide.png
 tags:
   - flowfuse
 ---
