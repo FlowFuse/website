@@ -106,7 +106,11 @@ Retirement and Pension plans are country-specific. If you have questions during 
 
 ##### US - 401K
 
-At FlowFuse, we offer a 401K through [Human Interest](http://humaninterest.com/). They https://humaninterest.com/solutions/kickstart/
+At FlowFuse, we offer a 401K through [Human Interest](http://humaninterest.com/). 
+
+All new team members are auto-enrolled at 8% of their salary, with a 1% increase per year. Of course, team members can also make changes by logging into their human interest dashboard. 
+
+Human Interest also provides [a reward of 3% cash back to team members who enroll in their 401K plan and meet certain criteria](https://humaninterest.com/solutions/kickstart/). We do not administer this benefit. Questions should be addressed to Human Interest.
 
 #### Health Care
 
