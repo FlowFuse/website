@@ -95,7 +95,7 @@ our brand.
 
 ## 5. Strategic Partnerships
 
-- **[Partner Program](/handbook/sales/partnerships/)**: In close collaboration
+- **[Partner Program](/handbook/sales/gtm-partnerships/)**: In close collaboration
   with the Sales team, this program focuses on building and nurturing
   relationships with technology partners and solution providers to expand our
   reach, enter new markets, and create co-marketing opportunities.
