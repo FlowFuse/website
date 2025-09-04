@@ -5,7 +5,7 @@ description: "Learn how Pareto Charts empower manufacturing teams to focus on th
 date: 2025-08-28
 keywords: Pareto chart, Pareto analysis, manufacturing quality, defect reduction, quality control tools, root cause analysis, equipment maintenance, supply chain management, manufacturing efficiency
 authors: ["sumit-shinde"]
-image: 
+image: blog/2025/08/images/pareto-chart-manufacturing-guide.png
 tags:
   - flowfuse
 ---
@@ -36,7 +36,7 @@ This visualization does something remarkable: it makes the invisible visible. Pr
 
 ## Real World Example
 
-![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart.png){data-zoomable}
+![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart-image.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
 
 Look at this real Pareto Chart from a manufacturing facility. The bars show different types of defects found in one month, arranged from most common (scratches) to least common (other defects).
@@ -99,7 +99,7 @@ Understanding Pareto principles is powerful, but implementing them with real-tim
 
 Start tomorrow. Pick your biggest pain point, collect data, and create your first Pareto Chart. Watch as the path forward becomes crystal clear.
 
-**Next up:** We'll show you how to build interactive Pareto Charts in FlowFuse that connect directly to your production systems.
+**Next up:** read our article on [building interactive Pareto Charts in FlowFuse](/blog/2025/09/creating-pareto-chart/) that connect directly to your production systems.
 
 **Ready to transform your manufacturing data into actionable insights?** 
 

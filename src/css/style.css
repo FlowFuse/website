@@ -1520,38 +1520,47 @@ h4:hover .header-anchor::before {
         Social proof
     */
 
-    .social-proof-common {
-        @apply m-auto pb-10 text-center pt-10 md:mt-6;
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
     }
 
-    .social-proof-logos {
-        @apply social-proof-common max-w-5xl;
+    .social-proof-carousel {
+        overflow: hidden;
+        @apply py-10;
+        white-space: nowrap;
+        position: relative;
+        display: flex;
     }
 
-    .social-proof-logos-smaller {
-        @apply social-proof-common max-w-3xl;
+    .social-proof-carousel:hover div {
+        animation-play-state: paused;
+    }
+    
+    .social-proof-carousel div {
+        display: flex;
+        flex-shrink: 0;
+        width: auto;
+        align-items: center;
+        animation: 30s slide infinite linear;
     }
 
-    .social-proof-ul-common {
-        @apply flex flex-row justify-center flex-wrap gap-[8%] w-full items-center -mb-6;
-    }
-
-    .social-proof-logos ul {
-        @apply social-proof-ul-common md:justify-between md:flex-nowrap md:gap-[5%] md:mb-0;
-    }
-
-    .social-proof-logos ul li {
-        @apply pb-3 sm:pb-6 md:pb-0;
-    }
-
-    .social-proof-logos-smaller ul {
-        @apply social-proof-ul-common gap-[7%];
-    }
-
-    .social-proof-logos-smaller ul li {
-        @apply pb-6;
+    .social-proof-carousel div img,
+    .social-proof-carousel div picture {
+        flex-shrink: 0;
+        max-height: 60px;
+        width: auto;
+        display: inline-block;
+        @apply mx-6;
+        overflow-clip-margin: content-box;
+        overflow: clip;
     }
 }
+
 pre.mermaid {
     background-color: #ffffff
 }
