@@ -68,7 +68,8 @@ When debugging FlowFuse Dashboard issues a very useful tool is the `_debug` view
 
 Any bugs found for FlowFuse Dashboard should be logged as as an issue in the [FlowFuse Dashboard repository](https://github.com/FlowFuse/node-red-dashboard/issues).
 
-### Support queries about summer 2025 pricing and tier changes
+### Pricing
+#### 2025 Pricing & Tier Changes
 
 Coupon TRYSTARTER will give a customer a free month of Starter with one hosted instance (included with Starter) and one remote instance (because they're used to this when migrating from Free).
 
