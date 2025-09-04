@@ -71,12 +71,17 @@ Any bugs found for FlowFuse Dashboard should be logged as as an issue in the [Fl
 ### Pricing
 #### 2025 Pricing & Tier Changes
 
-Coupon TRYSTARTER will give a customer a free month of Starter with one hosted instance (included with Starter) and one remote instance (because they're used to this when migrating from Free).
+In summer of 2025, FlowFuse deprecated the Free tier and changed the pricing structure of the Starter tier. 
 
-They can get an additional free month by choosing annual billing.
+The Free tier was built to enable remote device management and provided for two remote instances, [free of charge.](https://flowfuse.com/blog/2024/12/flowfuse-release-2-12/). As we found that users were looking for cloud-hosted Node-RED instances, the Free tier did not meet this expectation, and was deprecated.
+
+To support users seeking cloud-hosted Node-RED, the Starter tier was revised to provide a more powerful hosted instance, with greater CPU and memory than before. In addition, the tier went from offering two hosted instances and two remote instances, to only a single, more powerful hosted instance.
 
 Existing Starter customers were notified of the change via emails on July 28 and August 15 (reminder)
 
-Existing Free users were notified of the change via emails on August 4 and August 19. In that follow-up email, they were given the TRYSTARTER coupon.
+Existing Free users were notified of the change via emails on August 4 and August 19.
 
-Starter now only includes one hosted instance (down from two hosted and two remote instances), but also includes more CPU and RAM than previously.
+To ease the transition of Free users to Starter, and Starter users to the revised pricing structure, the coupon TRYSTARTER was offered. Coupon TRYSTARTER will give a customer a free month of Starter with one hosted instance (included with Starter) and one remote instance (because they're used to this when migrating from Free).
+
+In addition, users were informed that they could receive an additional free month by choosing Annual billing at checkout.
+
