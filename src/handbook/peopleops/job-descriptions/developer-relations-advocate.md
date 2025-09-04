@@ -13,7 +13,7 @@ The Developer Relations Advocate is responsible for building relationships with 
 
 Key Responsibilities:
 
-* Technical Evangelism & Content Creation: Develop and deliver compelling technical presentations at industry conferences, meetups, hackathons, and webinars focused on Node-RED, industrial automation, and IIoT applications. Create high-quality content including videos, webinars, social media posts, blog articles, tutorials, case studies, and technical documentation that demonstrates FlowFuse's value proposition.
+* Technical Evangelism & Content Creation: Develop and deliver compelling technical presentations at industry conferences, meetups, hackathons, and webinars focused on Node-RED, industrial automation, and IIoT applications. Create high-quality content including videos, webinars, social media posts, articles, tutorials, case studies, and technical documentation that demonstrates FlowFuse's value proposition.
 * Community Engagement & Relationship Building: Actively participate in and contribute to Node-RED, IIoT, and industrial automation communities, forums, and open-source projects. Identify and cultivate relationships with key influencers, community leaders, and potential advocates in the industrial automation space.
 * Business Development & Lead Generation: Identify and qualify business opportunities through community engagement and relationship building activities. Collaborate with sales and marketing teams to develop lead generation strategies targeting developers and technical decision-makers.
 * Product Advocacy & Feedback: Serve as the voice of the developer community within FlowFuse, providing product feedback and feature requests based on community needs. Work closely with product and engineering teams to ensure FlowFuse addresses real-world challenges faced by Node-RED developers and industrial engineers.
@@ -31,7 +31,7 @@ The Developer Relations Advocate skill set includes:
 * Digital Marketing Knowledge: Understanding of engagement and retargeting strategies, as well as experience with platforms like Google Ads, LinkedIn ABM, content marketing, and social media engagement.
 * Results-Driven Approach: Strong project management skills with the ability to manage multiple priorities simultaneously. Experience measuring the impact of developer relations activities through metrics and analytics.
 * Community Involvement: Active participation in online and offline developer communities and ecosystems, including open-source platforms, technical blogs, social channels, forums, and professional networks.
-* Technical Content Creation: Demonstrated ability to create content that resonates with technical buyer personas in the form of blog articles, tutorials, webinars, conference presentations, workshop materials, and documentation.
+* Technical Content Creation: Demonstrated ability to create content that resonates with technical buyer personas in the form of articles, tutorials, webinars, conference presentations, workshop materials, and documentation.
 
 ### Nice to Have
 

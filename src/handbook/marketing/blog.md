@@ -26,7 +26,7 @@ Content creation and blogging are effective ways to communicate with our communi
 
 ## Blog CMS
 
-When creating a blog post there are several headers which are used by the CMS to populate the blog article as well as the blog index page. e.g:
+When creating a blog post there are several headers which are used by the CMS to populate the blogs as well as the blog index page. e.g:
 
 
 ```njk
@@ -122,9 +122,9 @@ The `<!--more-->` tag is used to define the text shown in the blog index from ea
 
 ![Example of how the headers are shown on the blog index](./images/blog-index.png)
 
-### Example blog article based on the header above
+### Example blogs based on the header above
 
-![Example of how the headers are shown on blog articles](./images/blog-article.png)
+![Example of how the headers are shown on blogs](./images/blog-article.png)
 
 ### Rendering Node-RED Flows
 
