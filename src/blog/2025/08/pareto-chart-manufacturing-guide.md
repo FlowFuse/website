@@ -99,7 +99,7 @@ Understanding Pareto principles is powerful, but implementing them with real-tim
 
 Start tomorrow. Pick your biggest pain point, collect data, and create your first Pareto Chart. Watch as the path forward becomes crystal clear.
 
-**Next up:** We'll show you how to build interactive Pareto Charts in FlowFuse that connect directly to your production systems.
+**Next up:** read our article on [building interactive Pareto Charts in FlowFuse](/blog/2025/09/creating-pareto-chart/) that connect directly to your production systems.
 
 **Ready to transform your manufacturing data into actionable insights?** 
 
