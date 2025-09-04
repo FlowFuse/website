@@ -26,6 +26,9 @@ Equipment failures aren't random disasters, they're predictable processes that u
 
 Reliability engineers call this the P-F curve: the measurable interval between when a potential failure (P) becomes detectable and functional failure (F) occurs. For rotating equipment like motors and pumps, this window typically spans 6-12 weeks. For hydraulic systems, 2-8 weeks. For electronic components, days to months.
 
+![P-F Curve.](./images/pf-curve.jpg){data-zoomable}
+_P-F Curve._
+
 During this P-F interval, equipment broadcasts its distress through dozens of measurable parameters:
 
 - **Vibration patterns** shift as bearings wear and alignments drift
