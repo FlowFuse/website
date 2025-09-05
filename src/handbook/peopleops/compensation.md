@@ -121,6 +121,19 @@ added to the list, especially when you're considering a job offer at FlowFuse.
 
 For employees located in the United States, FlowFuse offers health insurance coverage through Deel; since this changes regularly, please see Deel for accurate information.
 
+We commit to offering at least one medical plan, one dental plan, and one vision plan with 100% coverage for team members. We also subsidize some level of coverage for dependants, as well, but specifics are tied to plan details.  
+
+In our health benefits for US employees, we offer:
+* multiple medical plan options, including an HSA-compatible plan
+* multiple dental plan options
+* multiple vision plan options
+* short-term disability options
+* long-term disability options
+* employee FSA
+* employee HSA
+* commuter benefits
+* EAP
+
 For US Employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
 
 ##### Canada
