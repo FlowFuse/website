@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Assistant can help you write code
 description: "The FlowFuse assistant will now offer inline completions when writing functions, SQL and Dashboard templates"
-date: 2025-09-03 12:00:00.0  
+date: 2025-09-05 12:00:00.0
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
@@ -22,4 +22,5 @@ _Demo of tables query node with inline completions
 ![Demo of dashboard template node with inline completions](./images/inline-assist-template-node.gif){data-zoomable}
 _Demo of dashboard template node with inline completions
 
-This will be made availabe to our Pro and Enterprise users in remote and hosted instances in the coming days.
+This will be made availabe to our Pro and Enterprise users in remote and hosted instances in the next update however
+if you want to give it a go right away, you can update the FlowFuse Assistant in the Node-RED Palette Manager today.
