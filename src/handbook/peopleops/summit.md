@@ -74,7 +74,7 @@ It is advised to leave a 1-2% margin for overheads and unexpected costs.
 
 ### Location & Travel
 
-Location will vary from summit to summit, and will be communicated three months
+Location will vary from summit to summit, and will be communicated at least three months
 ahead of time, ensuring everyone has sufficient time to make their travel arrangements.
 
 Past summits have been held in the following locations:
