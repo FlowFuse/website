@@ -14,7 +14,7 @@ subjects.
 Summits normally last for three full days, with an additional day
 allocated either side of the summit designated for travel.
 
-The day before the company summit, senior leadership can assemble for a strategy day,
+The day before the company summit, senior leadership can assemble for a strategy day or board meeting,
 making the most of the time in-person.
 
 ## Expenses
