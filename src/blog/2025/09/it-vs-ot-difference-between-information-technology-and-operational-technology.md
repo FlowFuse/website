@@ -79,4 +79,4 @@ The visual, drag-and-drop interface lets your engineers and technicians build in
 
 FlowFuse adds enterprise features like team collaboration, version control, and secure deployment to the Node-RED foundation, making it suitable for production manufacturing environments.
 
-**[Book a demo today](https://www.google.com/search?q=/book-demo/)** to see how FlowFuse can help connect your IT and OT systems using proven open-source technology.
+**[Book a demo today](/book-demo/)** to see how FlowFuse can help connect your IT and OT systems using proven open-source technology.
