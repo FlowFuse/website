@@ -5,7 +5,7 @@ description: "Learn how to build a Pareto Chart in FlowFuse to identify the vita
 date: 2025-09-02
 keywords: FlowFuse, Pareto Chart, production data analysis, manufacturing analytics, Node-RED dashboard, industrial data visualization, defect tracking, real-time monitoring
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/09/images/creating-pareto-chart.png
 tags:
   - flowfuse
   - dashboard
