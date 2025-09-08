@@ -28,7 +28,7 @@ and are at the employee's own expense.
 FlowFuse will be responsible for booking the accommodation, activities and communal
 dinners and lunches. Each employee is then responsible for booking their own flights
 and travel arrangements. Please check in with the summit organizer on your own personal
-budget, and this will differ person-to-person and be a factor of each employee's location.
+budget, as this will differ person-to-person and be a factor of each employee's location.
 
 ### Alcohol
 
