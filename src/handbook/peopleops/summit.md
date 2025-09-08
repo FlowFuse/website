@@ -4,7 +4,7 @@ navTitle: Summit
 
 # Summit
 
-FlowFuse intends to host a bi-annual summit bringing together all employees in one place.
+FlowFuse intends to host an annual summit bringing together all employees in one place.
 This summit aims to create an occasion where we can gather the company in person,
 fostering connections, and facilitating collaborative discussions on a range of
 subjects. 
@@ -90,14 +90,17 @@ of expense, and ease of travel to be had, especially as, whilst we explicitly pa
 flights, we are also then losing time on the travel days when employees would otherwise
 be working.
 
-The Organizer should also factor in the ease of getting Visas for team members who need to travel outside of their country. 
+The Organizer should also factor in the ease of getting Visas for team members who need
+to travel outside of their country. 
 
 As the summit organizer, you should research rough flight costs for each employee based
 on their location. Add a 10-15% buffer and set this is a budget for that employee.
-Employees are responsible for booking their own flights. FlowFuse does not expect
-employees to travel at very unsociable hours or taking indirect flights, when it is
-not necessary, just to save money. FlowFuse will not cover business class flights for
-employees.
+Employees are responsible for booking their own flights. 
+
+FlowFuse intends to accommodate a reasonable journey in terms of duration and
+departure time.
+
+FlowFuse will not cover business class flights for employees.
 
 ### Accommodation
 
@@ -121,7 +124,7 @@ reduced cost, the feedback was that in the future we should avoid this where pos
 Traveling is a privilege that we should not take for granted. Many employees will
 get to visit places around the world they otherwise would not have had the
 opportunity to visit, and as such, FlowFuse fully encourages employees extending
-their stay either side of the summit, whether this to be working remotely or as paid-leave.
+their stay either side of the summit, whether this to be working remotely or as [paid-leave](./leave).
 Any costs during this time though, will be at the employee's own expense.
 
 #### Bringing Family
@@ -212,11 +215,15 @@ Past swag has included:
 - Notepads & Pens
 - Drones
 
+When packing, please do keep in mind that will likely go home with more than you brought!
+
 ### Designing an Agenda
 
 The agenda should represent a balance of work, and fun, they should be designed
 to be as inclusive as possible, and to ensure that all employees have the
-opportunity to participate in the summit.
+opportunity to participate in the summit. As the company grows, running multiple, adjacent
+activities in parallel can be a great way to ensure that everyone has the opportunity to
+participate in the summit, and so that employees can have more choice over what they do.
 
 One key thing, that can easily be overlooked is to account fo travel between events.
 Don't pack the agenda too full, account for time to get from A to B with spare time.
