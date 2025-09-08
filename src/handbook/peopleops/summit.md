@@ -90,6 +90,8 @@ of expense, and ease of travel to be had, especially as, whilst we explicitly pa
 flights, we are also then losing time on the travel days when employees would otherwise
 be working.
 
+The Organizer should also factor in the ease of getting Visas for team members who need to travel outside of their country. 
+
 As the summit organizer, you should research rough flight costs for each employee based
 on their location. Add a 10-15% buffer and set this is a budget for that employee.
 Employees are responsible for booking their own flights. FlowFuse does not expect
