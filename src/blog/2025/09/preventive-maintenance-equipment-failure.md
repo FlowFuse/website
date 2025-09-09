@@ -1,5 +1,5 @@
 ---
-title: "The $2 Million Equipment Failure: Why Preventive Maintenance is Manufacturing's New Competitive Weapon"
+title: "Preventive Maintenance in Manufacturing: Avoid Multi-Million Dollar Equipment Failures"
 subtitle: "How industrial data platforms are turning equipment failures from crisis events into predictable, manageable costs"
 description: "Unplanned downtime costs manufacturers millions. Learn how preventive maintenance software and data platforms like FlowFuse cut failures, boost OEE, and deliver lasting ROI."
 date: 2025-09-04
