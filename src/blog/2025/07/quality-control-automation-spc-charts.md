@@ -1,10 +1,10 @@
 ---
-title: "How Leading Manufacturers Save Thousands of Dollars/Year with Real-Time SPC"
+title: "Statistical Process Control (SPC): Benefits and Implementation Guide"
 subtitle: "A practical guide to implementing Statistical Process Control with FlowFuse"
 description: "Learn how to build real-time SPC charts using Node-RED and FlowFuse for manufacturing quality control."
 date: 2025-07-24
 authors: ["sumit-shinde",stephen-mclaughlin]
-image: /blog/2025/07/images/spc-flowfuse.png
+image: /blog/2025/07/images/spc-chart.png
 keywords: SPC, statistical process control, manufacturing quality, defect prevention, Node-RED, FlowFuse, control charts, I-MR charts, real-time monitoring, scrap reduction, quality control, manufacturing ROI, process monitoring
 tags:
     - posts
