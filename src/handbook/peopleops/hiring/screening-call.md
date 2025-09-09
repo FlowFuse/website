@@ -21,6 +21,7 @@ During this call FlowFuse should understand:
 1. The candidate's current location
    * Timezone and any overlap information
    * Any visa requirements to work in their current location
+   * If they service customers, can they travel to the full geography they serve?
    * Any plans to change location in the near future
 1. Notice period, or time from offer to start
 1. How do you manage your todo list?
