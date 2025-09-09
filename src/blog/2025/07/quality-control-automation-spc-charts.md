@@ -1,5 +1,5 @@
 ---
-title: "How Leading Manufacturers Save Thousands of Dollars/Year with Real-Time SPC"
+title: "How to Implement Real-Time SPC Charts in Manufacturing"
 subtitle: "A practical guide to implementing Statistical Process Control with FlowFuse"
 description: "Learn how to build real-time SPC charts using Node-RED and FlowFuse for manufacturing quality control."
 date: 2025-07-24
