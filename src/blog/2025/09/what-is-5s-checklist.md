@@ -2,7 +2,7 @@
 title: "What is 5S Checklist: Definition, Benefits, Implementation, and Template"
 subtitle: "Understand 5S Checklists, Improve Work Area Efficiency, and Start with a Ready-to-Use FlowFuse Template"
 description: "Learn what a 5S checklist is, how it improves work area organization, and how to implement it easily with FlowFuse, plus get a ready-to-use template."
-date: 2025-09-09
+date: 2025-09-10
 keywords: 5s checklist, 5s audit checklist, 5s audit, 5s audit scorecard, 5s checklist template, check list 5s, manufacturing 5s checklist, 5s audit template, 5s cleaning checklist, 5s audit form, 5s audit sheet, 5s daily checklist, daily 5s checklist for manufacturing excel, 5s audit checklist for manufacturing
 authors: ["sumit-shinde"]
 image:
