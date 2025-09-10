@@ -1,8 +1,8 @@
 ---
-title: "Poka Yoke: The Japanese Method That Eliminates Manufacturing Defects"
+title: "What is Poka Yoke? The Ultimate Guide to Manufacturing Mistake-Proofing"
 subtitle: "How to mistake-proof your manufacturing processes"
 description: "Learn how Poka Yoke prevents manufacturing defects before they happen. Discover the four types of mistake-proofing and how to implement them in your factory."
-date: 2025-09-04
+date: 2025-09-11
 authors: ["sumit-shinde"]
 image:
 keywords: poka yoke", mistake proofing, poka yoke examples, lean manufacturing, poka yoke manufacturing, mistake proofing poka yoke, poka yoke in lean manufacturing, lean six sigma poka yoke, kaizen poka yoke, poka yoke technique, poka yoke method, poka yoke system, quality control, defect prevention, manufacturing quality
