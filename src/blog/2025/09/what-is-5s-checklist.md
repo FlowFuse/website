@@ -5,7 +5,7 @@ description: "Learn what a 5S checklist is, how it improves work area organizati
 date: 2025-09-10
 keywords: 5s checklist, 5s audit checklist, 5s audit, 5s audit scorecard, 5s checklist template, check list 5s, manufacturing 5s checklist, 5s audit template, 5s cleaning checklist, 5s audit form, 5s audit sheet, 5s daily checklist, daily 5s checklist for manufacturing excel, 5s audit checklist for manufacturing
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/09/images/what-is-5s-checklist.png
 tags:
   - flowfuse
   - dashboard
