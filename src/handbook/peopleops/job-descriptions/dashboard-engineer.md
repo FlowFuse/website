@@ -1,19 +1,20 @@
 ---
-navTitle: FlowFuse Dashboard Engineer
+navTitle: Dashboard Engineer
 navGroup: Job Descriptions
 ---
 
-# FlowFuse Dashboard Engineer
+# Dashboard Engineer
 
 ## Job Description
 
-The FlowFuse Dashboard Engineer is a founding engineer role responsible for
+The FlowFuse Dashboard Engineer is a autonomous engineering role responsible for
 leading the development and evolution of [FlowFuse Dashboard](https://dashboard.flowfuse.com/),
 previously known as Node-RED Dashboard 2.0. This is not just a traditional
-software engineering position - as a founding engineer, you'll be instrumental
-in shaping the technical direction, building the community, and marketing this
-dashboard and integration solution to industrial automation and IIoT professionals
-worldwide.
+software engineering position. As the Dashboard Engineer, you’ll be empowered to take 
+ownership of the technical direction of our dashboard and integration platform, guiding
+its evolution while fostering adaptation and engagement among industrial automation 
+and IIoT professionals worldwide.
+
 
 This role combines deep technical expertise with community leadership and
 product evangelism. You'll be responsible for advancing the FlowFuse Dashboard
@@ -23,10 +24,11 @@ relationships with users, contributors, and partners while driving adoption
 across diverse industries.
 
 The FlowFuse Dashboard represents the next generation of visualization and
-control interfaces for Node-RED applications. As the founding engineer, you'll
-have the opportunity to define its future while working directly with industrial
-engineers, automation professionals, and developers who rely on powerful,
-flexible dashboard solutions.
+control interfaces for Node-RED applications. As the Dashboard Engineer, 
+you’ll shape the long-term vision of our dashboard ecosystem, operating with
+the autonomy to set direction and drive innovation while partnering closely 
+with our industrial engineers, automation professionals, and developers who
+depend on powerful, flexible dashboard solutions.
 
 Key Responsibilities:
 
