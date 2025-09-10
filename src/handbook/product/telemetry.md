@@ -24,9 +24,9 @@ A new section can be added to the [Main](https://main.flowfuse.cloud) Hosted Ins
 
 ## Week on Week Growth
 
-An important metric for product adoption is week-on-week growth. This is a simple metric that shows the percentage change in the number of teams or instances from the previous week.
+An important metric for product adoption is week-on-week growth. This is a simple metric that shows the percentage tracks growth of adoption or provisioning of resources (e.g. number of hosted instances, number of teams).
 
-We have a week-on-week growth calculator as part of the Product Metrics Dashboard that you can use.
+We have a [week-on-week growth calculator](https://product-metrics.flowfuse.cloud/dashboard/growth-calculator) as part of the Product Metrics Dashboard that you can use.
 
 Given our current size, growth should be assessed as:
 
