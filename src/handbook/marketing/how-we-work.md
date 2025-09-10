@@ -28,17 +28,17 @@ If you would like to see the Marketing team create and publish content as a demo
 
 The Product Marketing Manager will validate timelines and deliverables.
 
-# Monthly Marketing Performance Tracking
+## Monthly Marketing Performance Tracking
 
-## Overview
+### Overview
 
 Every first Thursday of the month, FlowFuse's CEO and product marketing manager conduct a monthly performance review to track progress, optimize campaigns, and ensure alignment with our marketing plan objectives. This systematic approach enables data-driven decision-making and continuous improvement of our marketing efforts.
 
-## Review Process
+### Review Process
 
 The monthly marketing performance review is conducted through a structured two-part assessment combining automated dashboard metrics with manual campaign and channel analysis.
 
-### Part 1: Dashboard Metrics (HubSpot Dynamic Dashboard)
+#### Part 1: Dashboard Metrics (HubSpot Dynamic Dashboard)
 
 We utilize our HubSpot dynamic dashboard to track core marketing performance indicators:
 
@@ -50,11 +50,11 @@ We utilize our HubSpot dynamic dashboard to track core marketing performance ind
 
 These metrics provide real-time visibility into our marketing funnel performance and help identify trends and anomalies requiring attention.
 
-### Part 2: Manual Performance Analysis
+#### Part 2: Manual Performance Analysis
 
 The second component involves a detailed manual analysis across multiple marketing channels and activities in a Spreadsheet:
 
-#### Paid Campaign Performance
+##### Paid Campaign Performance
 - **Campaign-by-campaign analysis**: Detailed review of each active paid campaign's performance
 - **ROI assessment**: Evaluation of campaign return on investment and cost-effectiveness
 - **Resource allocation decisions**: Data-driven recommendations on whether to:
@@ -63,32 +63,31 @@ The second component involves a detailed manual analysis across multiple marketi
   - Increase budget allocation for high-performing campaigns
   - Optimize targeting or creative elements
 
-#### Community and Social Media Evolution
+##### Community and Social Media Evolution
 - **Growth metrics**: Follower count, engagement rates, and community expansion
 - **Content performance**: Analysis of post reach, engagement, and conversion
 - **Platform-specific insights**: Performance breakdown across different social channels
 - **Community health**: Assessment of community engagement quality and sentiment
 
-#### Content Performance Tracking
+##### Content Performance Tracking
 - **Content calendar adherence**: Progress against planned content creation and publication
 - **Cross-channel analysis**: Performance measurement across all content distribution channels
 - **Reach and engagement metrics**: Individual post performance and audience response
 - **Content type effectiveness**: Analysis of which content formats drive best results
 
-#### SEO Performance Monitoring
+##### SEO Performance Monitoring
 - **Monthly SEO evolution**: Tracking organic search performance trends
 - **Keyword ranking changes**: Monitoring target keyword position movements
 - **Technical SEO health**: Assessment of site performance and technical issues
 - **Actionable insights**: Identification of specific optimization opportunities
 
-#### Budget Management
+##### Budget Management
 - **Spend tracking**: Monthly expenditure against approved marketing budget
 - **Budget allocation efficiency**: Analysis of spend distribution across channels and campaigns
 - **Variance analysis**: Identification and explanation of budget deviations
 - **Future planning**: Budget reallocation recommendations based on performance data
 
-
-## Success Metrics
+### Success Metrics
 
 The effectiveness of our monthly tracking process is measured by:
 
