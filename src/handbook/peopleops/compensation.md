@@ -59,7 +59,7 @@ FlowFuse intends to offers equity for key roles. The level of stock compensation
 can vary based on when an employee joined, their performance, and the variables
 that decide salary. Equity is offered as stock options, which upon
 execution will be transformed in the underlying stock. Stock compensation is
-awarded on a 4 year vesting schedule with a 1 year cliff.
+awarded on a 5-year monthly vesting schedule with a 1 year cliff.
 
 Employees might be taxed personally when accepting or executing stock options.
 FlowFuse does not provide any advice on financial decisions for employees. For
