@@ -1,7 +1,7 @@
 ---
 title: AI Snapshot Descriptions Now Work with Remote Instances
 description: "AI-powered snapshot descriptions now available for remote instances"
-date: 2025-09-01 12:00:00.0
+date: 2025-09-11 12:00:00.0
 authors: ['serban-costin']
 tags:
   - changelog
@@ -17,10 +17,10 @@ Whether your remote instance is linked to an application or a hosted instance, y
 
 Depending on how your remote instance is owned, the flow is slightly different:
 
-![AI for application-owned remote instances](./images/application-owned-device_snapshot-description.gif){data-zoomable}  
+![AI for application-owned remote instances](./images/device-llm-snapshot-description_application-owned.gif){data-zoomable}  
 _AI for application-owned remote instances_
 
-![AI for hosted-instance-owned remote](./images/instance-owned-device_snapshot-description.gif){data-zoomable}  
+![AI for hosted-instance-owned remote](./images/device-llm-snapshot-description_instance-owned.gif){data-zoomable}  
 _AI for hosted-instance-owned remote instances_
 
 This rounds out our support for AI-generated snapshot descriptions.
