@@ -38,8 +38,8 @@ You need to have the following columns enabled:
    * Deal Name
    * Deal Stage
    * Close Date
-   * Amount
    * Deal owner
+   * Amount
    * Is Closed Won
    * Deal Type
    * Annual recurring revenue
@@ -76,27 +76,29 @@ and Head of GTM both receive a copy by including them in the `cc` on the email.
 
 Here is an email template that can be used:
 
+Subject line: `Commission for [Month] [YYYY]`.
+
 ```
-Dear {{first_name}},
+Dear [first_name],
 
 This email is to confirm your estimated commissions for {{Month and Year}}. 
 Your commission percentage for this quarter is {{X}}. 
 
 In the aforementioned period, you closed:
 
-- {{Y}} number of deals
-- {{ARR}} new Contracted ARR
+- [Y] number of deals
+- [cARR] new Contracted ARR
 
-Your commission is {{USD XX}}.
+Your commission is USD $[XX].
 
 Please remember: FlowFuse might withhold commission payments, or claw back
 payments if payments aren't made within 60 days after the quote is signed.
 
 Please confirm the numbers in this email for the commission payment to be issued.
 
-Best, 
-{{Manager sending email}}
+Best,
 
+{{Manager sending email}}
 ```
 
 ### Wiring the money

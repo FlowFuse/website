@@ -136,10 +136,14 @@ When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-
 
 ## Extending an offer
 
+Before extending any offer, note that any offer when the total compensation package
+exceeds $250000 per annum requires the board to be informed, and approval from the
+majority to be obtained.
+
 When a candidate goes through the full hiring process an offer might be extended
 to them. At such a time it's good to understand that the offer at that time is
-conditional on background checks. If the offer includes an equity component,
-this part is conditional on board approval of such a grant. Be sure to be
+conditional on background checks. The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
+This part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
 Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
@@ -153,7 +157,7 @@ date for a new employee should be at least 7 working days out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
-1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening). Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. 
+1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening). Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. (The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.) 
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review. 
 1. Add their stock options to the stock option request spreadsheets

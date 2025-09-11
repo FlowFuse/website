@@ -52,13 +52,13 @@ Those products are:
 - FlowFuse Cloud - Starter
 - Starter - Small Instance Add-On
 - Starter - Remote Instance Add-On
-- FlowFuse Team Platform - Cloud
-- Team - Small Instance Add-On
-- Team - Medium Instance Add-On
-- Team - Large Instance Add-On
-- Team - Remote Instance Add-On
+- FlowFuse Pro Platform - Cloud
+- Pro - Small Instance Add-On
+- Pro - Medium Instance Add-On
+- Pro - Large Instance Add-On
+- Pro - Remote Instance Add-On
 
-For Starter, we calculate MRR by multiplying the total number of subscriptions by the cost of the subscription. This helps keep the focus on growing the number of Starter subscriptions rather than being distracted by noise introduced by short-term discounts, like promotional coupons.
+The current sum of these subscriptions is found in the Billing Overview area in Stripe. The number there is considered to be the single source of truth for self-service revenue.
 
 ## OKRs
 

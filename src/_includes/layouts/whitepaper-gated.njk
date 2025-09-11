@@ -16,13 +16,13 @@
     </div>
     <div class="w-full md:bg-white md:pt-8">
     <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg md:gap-14 items-stretch">
-        <div class="ff-prose whitepaper w-full mt-3">
+        <div class="ff-prose whitepaper w-full mt-3 md:w-2/3">
             <label class="text-red-600 font-medium mb-2">Whitepaper</label>
             <h3 class="text-gray-600 leading-snug">{% block whitepaperTitle %}Whitepaper Title{% endblock %}</span></h3>
             <h4 class="text-gray-400">{% block whitepaperSubtitle %}{% endblock %}</h4> 
             {% block description %}Whitepaper description{% endblock %}
                 <!-- Social proof logos -->
-            <div class="social-proof-logos-smaller border-t border-gray-200 mt-16">
+            <div class="border-t border-gray-200 mt-16">
                 {% include "social-proof.njk" %}
             </div>
         </div>

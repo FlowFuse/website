@@ -59,7 +59,7 @@ FlowFuse intends to offers equity for key roles. The level of stock compensation
 can vary based on when an employee joined, their performance, and the variables
 that decide salary. Equity is offered as stock options, which upon
 execution will be transformed in the underlying stock. Stock compensation is
-awarded on a 4 year vesting schedule with a 1 year cliff.
+awarded on a 5-year monthly vesting schedule with a 1 year cliff.
 
 Employees might be taxed personally when accepting or executing stock options.
 FlowFuse does not provide any advice on financial decisions for employees. For
@@ -100,16 +100,43 @@ The company wide goal for closed business per month is set by the CEO. When the
 growth target is met a $100 bonus is awarded to be expensed for a dinner out.
 The bonus is awarded per quarter.
 
+#### Retirement or Pension Plans
+
+Retirement and Pension plans are country-specific. If you have questions during the interview process, reach out to the hiring manager for clarity.
+
+##### US - 401K
+
+At FlowFuse, we offer a 401K through [Human Interest](http://humaninterest.com/). There is not a company match at this time.
+
+All new team members are auto-enrolled at 8% of their salary, with a 1% increase per year. Of course, team members can also make changes by logging into their human interest dashboard. 
+
+Human Interest also provides [a reward of 3% cash back to team members who enroll in their 401K plan and meet certain criteria](https://humaninterest.com/solutions/kickstart/). We do not administer this benefit. Questions should be addressed to Human Interest.
+
 #### Health Care
 
 FlowFuse offers a health care package for all employees in the United States, Canada, and India. Reach out to the hiring manager if you believe your country should be
 added to the list, especially when you're considering a job offer at FlowFuse.
 
-##### USA and Canada
+##### US
 
-For employees located in the United States, FlowFuse offer health insurance coverage through Deel, since this changes regularly, please see Deel for accurate information.
+For employees located in the United States, FlowFuse offers health insurance coverage through Deel; since this changes regularly, please see Deel for accurate information.
+
+We commit to offering at least one medical plan, one dental plan, and one vision plan with 100% coverage for team members. We also subsidize some level of coverage for dependants, as well, but specifics are tied to plan details.  
+
+In our health benefits for US employees, we offer:
+* multiple medical plan options, including an HSA-compatible plan
+* multiple dental plan options
+* multiple vision plan options
+* short-term disability options
+* long-term disability options
+* employee FSA
+* employee HSA
+* commuter benefits
+* EAP
 
 For US Employees who choose not to participate in the health insurance provided by FlowFuse have the option to opt out. This can be done by declining coverage during the enrollment process on the platform. It is important to note that if an employee decides to opt out, they must have alternative qualified coverage to ensure compliance with the ACA (Affordable Care Act).
+
+##### Canada
 
 For employees located in the Canada, FlowFuse offer health insurance coverage through Deel, since this changes regularly, please see Deel for accurate information.
 

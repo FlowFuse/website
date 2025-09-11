@@ -81,7 +81,7 @@ Planning a trade show well in advance is crucial. From aligning on the goals and
 
 After the decision has been made to attend an event, the first thing that's needed is a budget. This will guide the next steps in the event planning. The CEO is responsible for setting the budget and it should be tracked in a spreadsheet alongside all the logistic details, such as hotel details, team arrival and departure times, plus any related matter and added to the relevant folder in the Drive inside [Fairs](https://drive.google.com/drive/folders/1kfbJy6H3DXYlKDd0RZx-psK7ghDmN4BI?usp=drive_link).
 
-**The planning should start at least six months in advance**, so there's enough time to book hotels and for the team to block their agendas. The on-site team should be proposed by the CEO and CTO. Team size will depend on factors such as the event itself, the number of passes included, booth size, and duration. For a team of 4–5 members, consider:
+**Ideally the planning should start at least six months in advance**, so there's enough time to book hotels and for the team to block their agendas. This may vary in the event that a last minute event or trade show is found that represents a relevant business opportunity and it is agreed internally to make the effort to attend. The on-site team should be proposed by the CEO and CTO. Team size will depend on factors such as the event itself, the number of passes included, booth size, and duration. For a team of 4–5 members, consider:
 - Two sales representatives or Customer Success.
 - A technically skilled member that will be responsible for setting up and dismantling the demo at the booth.
 - Someone from any other area that will attend to learn or bring support where needed.

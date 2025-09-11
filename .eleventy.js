@@ -643,6 +643,15 @@ module.exports = function(eleventyConfig) {
         return nav;
     });
 
+    eleventyConfig.addCollection("homeLogos", function () {
+        const logosDir = path.join(__dirname, "src/images/home-logos");
+        const logos = fs.readdirSync(logosDir)
+            .filter(file => file.endsWith(".svg") || file.endsWith(".png"))
+            .map(file => path.join("images/home-logos", file));
+    
+        return logos;
+    });
+
     eleventyConfig.addCollection("publications", function(collectionApi) {
         return collectionApi.getAll().filter(item => {
             return item.data.tags && (item.data.tags.includes("whitepaper") || item.data.tags.includes("ebook"));
