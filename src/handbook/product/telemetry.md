@@ -6,21 +6,30 @@ navTitle: Product Growth
 
 It is important to track the growth and adoption of our product. Having our finger on the pulse of this data is critical to success, and driving conversation about product priorities and long term direction.
 
-## Product Metrics Dashboard
+We track two major datasets on the adoption of FlowFuse and it's features:
 
-We have a [dashboard](https://product-metrics.flowfuse.cloud/dashboard) that shows the summaries of the snapshot data. This is all running in a single Node-RED instance, and uses FlowFuse Dashboard for the reporting.
+- **FlowFuse Installations:** This is telemetry that is emitted by each instance of FlowFuse, including our own FlowFuse Cloud, and then any self-hosted installations users are running in their own infrastructure.
+- **FlowFuse Cloud Meta Snapshots:** For FlowFuse Cloud specifically, we then get daily "Meta Snapshots". These snapshots capture usage data within FlowFuse Cloud of major features. The data gathered is controlled in a Node-RED flow and can be updated to icnlude more metrics as we need them, and as new features are released.
 
-## Telemetry Snapshots
+## FlowFuse Installations
+
+The [Telemetry Data Dashboard](https://product-metrics.flowfuse.cloud/dashboard/telemetry) displays insights into how many instances of FlowFuse are running (with telemetry enabled), and then a sum of the number of Hosted and Remote Instances ech of these instances run. We can see breakdowns by the driver these instances are using, which operating system they're running on and the number of platforms added/removed on a given day.
+
+## FlowFuse Cloud Meta Snapshots
 
 Daily, we take snapshots that detail usage data for FlowFuse Cloud, tracking elements like the number of teams and Instances running on FlowFuse Cloud. This data allows us to gain insights into the usage of our product and how it is being used, and monitor the health of our product over time.
 
-This is the data that is used to populate the Product Metrics Dashboard. The data collected can be modified in the [Main](https://main.flowfuse.cloud) Hosted Instance in the FlowFuse team on FlowFuse Cloud.
+This is the data that is used to populate the Product Metrics Dashboard. The data collected can be modified in the [Main Hosted Instance](https://main.flowforge.cloud) in the FlowFuse team on FlowFuse Cloud.
 
-## Feature Adoption
+### Generating Snapshots
+
+These snapshots are generated inside a Node-RED flow running on FlowFuse Cloud. If you wat to update the data captured in a Snapshot, it can be added to the [Main Hosted Instance](https://main.flowforge.cloud) and when deployed, the relevant data will be collected and added to the daily meta snapshots from the next day.
 
 For major feature releases, e.g. MQTT Team Broker or FlowFuse Tables, it is useful to add usage/adoption data to the daily meta snapshots. This data is important to track the adoption of new features and how they are being used, especially in the earlier stages as this will impact follow-on iterations, and short-term product planning.
 
-A new section can be added to the [Main](https://main.flowfuse.cloud) Hosted Instance and when deployed, the relevant data will be collected and added to the daily meta snapshots from the next day.
+### Product Metrics Dashboard
+
+We have a [dashboard](https://product-metrics.flowfuse.cloud/dashboard) that shows the summaries of the Installations and FlowFuse Cloud Meta Snapshots datasets. This is all running in a single Node-RED instance, and uses FlowFuse Dashboard for the reporting.
 
 ## Week on Week Growth
 
