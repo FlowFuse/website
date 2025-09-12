@@ -59,4 +59,4 @@ While calculating takt time is straightforward, monitoring it consistently and v
 
 With FlowFuse, you can automatically collect production data and customer demand, calculate takt time in real-time, and create visual displays that keep your team aligned with customer demand. The platform integrates with existing manufacturing systems to provide accurate, up-to-date insights without complex coding.
 
-**Ready to optimize your production planning?** [Book a demo](https://flowfuse.com/demo) to see how FlowFuse can help you implement effective takt time monitoring and visualization for your manufacturing operations.
+**Ready to optimize your production planning?** [Book a demo](/book-demo/) to see how FlowFuse can help you implement effective takt time monitoring and visualization for your manufacturing operations.
