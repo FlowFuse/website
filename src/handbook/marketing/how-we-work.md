@@ -42,7 +42,7 @@ The monthly marketing performance review is conducted through a structured two-p
 
 We utilize our HubSpot dynamic dashboard to track core marketing performance indicators:
 
-**Key Metrics Tracked:**
+**[Key Metrics Tracked](/handbook/marketing/#marketing-kpi ):**
 - **Pipeline Generated**: Monthly pipeline value created through marketing activities
 - **Website Traffic**: Overall traffic trends and source attribution
 - **Marketing Qualified Leads (MQLs)**: Quality lead generation performance  
