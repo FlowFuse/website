@@ -40,7 +40,7 @@ The monthly marketing performance review is conducted through a structured two-p
 
 #### Part 1: Dashboard Metrics (HubSpot Dynamic Dashboard)
 
-We utilize our HubSpot dynamic dashboard to track core marketing performance indicators:
+We utilize our [HubSpot dashboard](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/105576103) to track core marketing performance indicators:
 
 **[Key Metrics Tracked](/handbook/marketing/#marketing-kpi ):**
 - **Pipeline Generated**: Monthly pipeline value created through marketing activities
