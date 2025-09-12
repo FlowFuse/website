@@ -2,7 +2,7 @@
 title: "What is Takt Time? Definition, Formula and Benefits for Manufacturing"
 subtitle: "The essential lean manufacturing metric that aligns production pace with customer demand"
 description: "Learn what takt time is, how to calculate it, and why it's essential for lean manufacturing. Use the simple formula to optimize production pace, reduce waste, and align operations with customer demand."
-date: 2025-09-10
+date: 2025-09-12
 keywords: takt time, takt time calculation, takt time formula, takt manufacturing solutions, calculate takt time example, customer takt time, formula of takt time, manufacturing takt time, meaning of takt time, take time lean manufacturing, takt time is, to calculate takt time
 authors: ["sumit-shinde"]
 image: 
@@ -21,9 +21,6 @@ Takt time is the rate at which you need to complete products to meet customer de
 This concept originated in Germany's aircraft industry during the 1930s and became a key element of lean manufacturing principles. Today, companies worldwide use takt time to create efficient, customer-focused production systems.
 
 ## The Simple Formula
-
-**Takt Time = Available Production Time ÷ Average Customer Demand**
-
 
 ![Takt Time Formula](./images/takt-time-formula.png){data-zoomable}
 _Takt Time Formula_
