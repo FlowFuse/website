@@ -41,10 +41,10 @@ If the assembly process takes 5 minutes per unit, the manufacturer will fall sho
 
 Takt time provides several critical benefits for manufacturing operations:
 
-• **Production Balance**: Ensures each workstation operates at the right pace to meet customer demand
-• **Waste Elimination**: Prevents overproduction by aligning output with actual orders
-• **Resource Planning**: Guides decisions on staffing levels and equipment capacity
-• **Cost Control**: Reduces inventory holding costs and storage requirements
+- **Production Balance**: Ensures each workstation operates at the right pace to meet customer demand
+- **Waste Elimination**: Prevents overproduction by aligning output with actual orders
+- **Resource Planning**: Guides decisions on staffing levels and equipment capacity
+- **Cost Control**: Reduces inventory holding costs and storage requirements
 
 The concept also guides staffing decisions effectively. If your current cycle time exceeds takt time, you need additional workers or process improvements. If cycle time is significantly faster than takt time, you may have excess capacity that could be redirected elsewhere.
 
