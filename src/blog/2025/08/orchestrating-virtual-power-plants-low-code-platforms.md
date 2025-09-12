@@ -1,5 +1,5 @@
 ---
-title: "Orchestrating Virtual Power Plants: How Low-Code Platforms Bridge the Gap"
+title: "What is a Virtual Power Plant and How to Build One with Low-Code"
 subtitle: "Why low-code tools are the missing link in scaling distributed energy systems"
 description: "learn how low-code platforms like FlowFuse and Node-RED simplify the integration and management of distributed energy resources, making Virtual Power Plants a scalable reality."
 date: 2025-08-22

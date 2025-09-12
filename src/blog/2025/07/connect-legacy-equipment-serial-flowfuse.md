@@ -1,5 +1,5 @@
 ---
-title: "Connecting Manufacturing Equipment via Serial Port"
+title: "Serial Port Connection Guide: Connect Manufacturing Equipment with Node-RED"
 subtitle: "Learn how to bring serial-connected equipment online using Node-RED and FlowFuse"
 description: "Learn how to connect manufacturing equipment using serial interfaces like RS-232/422/485 in Node-RED with FlowFuse. Enable monitoring, data collection, and automation—no hardware changes required"
 date: 2025-07-09
