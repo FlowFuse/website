@@ -123,6 +123,6 @@ With your ability to create a Pareto Chart established, you've built a foundatio
 * Monitor supplier performance to strengthen the supply chain.
 * Identify training gaps by analyzing operator errors.
 
-Learning how to create a Pareto Chart opens up possibilities to replicate this success across your organization. The same approach can be deployed to multiple lines, shared with other teams, and adapted for different use cases—while maintaining security and control through enterprise-grade features.
+FowFuse makes it simple to replicate this success across your organization. The same flow can be deployed to multiple lines, shared with other teams, and adapted for different use cases—while maintaining security and control through enterprise-grade features.
 
 Ready to see how FlowFuse can help your team make better decisions with production data? [Book a demo](/book-demo/) to discover how manufacturers are using visual analytics to drive continuous improvement and operational excellence.
