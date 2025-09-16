@@ -27,7 +27,7 @@ The system has three main parts:
 
 [The Things Network (TTN)](https://www.thethingsnetwork.org/) is a free, global LoRaWAN network with thousands of gateways around the world. It's perfect for getting started with LoRaWAN projects and provides easy-to-use tools for managing your devices.
 
-We'll show you how to connect The Things Network (TTN) to FlowFuse Node-RED, turning your LoRaWAN proof-of-concept into a scalable, production-ready IoT application.
+We’ll show you how to connect The Things Network (TTN) to FlowFuse Node-RED for monitoring sensor data and building scalable industrial applications.
 
 ## Getting Started
 
