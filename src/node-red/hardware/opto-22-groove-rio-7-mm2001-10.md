@@ -41,17 +41,3 @@ This guide will walk you through setting up Node-RED on the Groov Rio R7 using t
 {% include "hardware/system/opto-22-groove-rio.md" %}
 
 {% include "hardware/device-registration.md" %}
-
-### Configuring FlowFuse Device Agent to use the older Node-RED version
-
-Since our device uses an older version of Node.js, we need to ensure that a well-supported version of Node-RED is running on our device. By default, the device agent installs the latest Node-RED version, which we need to configure and update to a compatible version. According to the [official Node-RED documentation](https://nodered.org/docs/faq/node-versions), if the device uses Node.js 14, it will support Node-RED version 3.x well.
-
-1. To configure your device to use a compatible version of Node-RED:
-
-2. Open the FlowFuse platform and navigate to the groov RIO 7 remote instance that you added.
-3. Switch to the **Settings** tab and then to the **Editor** section.
-4. Enter "3.1.15" in the Node-RED Version field, click **Save Settings**, and **restart** the device.
-
-{% include "hardware/starting-device-agent-as-service-sysv.md" %}
-
-{% include "hardware/accessing-node-red-editor.md" %}
