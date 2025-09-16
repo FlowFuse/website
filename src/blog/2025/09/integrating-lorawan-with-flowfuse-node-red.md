@@ -1,8 +1,8 @@
 ---
 title: "Integrating LoRaWAN with FlowFuse Node-RED"
-subtitle: "Connect your IoT sensors to the cloud with ease"
+subtitle: Easily Connect and Communicate with LoRaWAN Devices using FlowFuse Node-RED
 description: "Learn how to seamlessly integrate LoRaWAN devices with FlowFuse Node-RED using The Things Network. This comprehensive guide covers MQTT setup, data processing methods, and real-time sensor data visualization for scalable IoT applications."
-date: 2025-09-16
+date: 2025-09-17
 authors: ["sumit-shinde"]
 image:
 keywords: LoRaWAN", FlowFuse", Node-RED, IoT integration, The Things Network, TTN, MQTT
@@ -10,7 +10,7 @@ tags:
 - flowfuse
 ---
 
-LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed for IoT devices that need to transmit small amounts of data over long distances. FlowFuse Node-RED is a cloud-based platform that provides a visual programming interface for connecting IoT devices and services.
+LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed for IoT devices that need to transmit small amounts of data over long distances. FlowFuse Node-RED is a platform that provides a visual programming interface for connecting IoT devices and services.
 
 <!--more-->
 
@@ -31,7 +31,7 @@ We’ll show you how to connect The Things Network (TTN) to FlowFuse Node-RED fo
 
 ## Getting Started
 
-Now that we understand the basics of LoRaWAN and TTN, let's set up the integration with FlowFuse Node-RED.
+Now that we understand the basics of LoRaWAN, let's set up the integration with FlowFuse Node-RED.
 
 ### Prerequisites
 
@@ -40,7 +40,7 @@ Before we begin, make sure you have the following components ready:
 1. Node-RED instance – Ensure you have a running Node-RED instance. The quickest way to set one up is through FlowFuse. [Sign up](https://app.flowfuse.com/account/create), create your instance, and you can manage, deploy, and scale your flows easily.
 2. LoRaWAN device and gateway registered on TTN – You need a sensor or device connected to The Things Network (TTN) and a gateway that can receive its uplinks.
 
-If you do not have a LoRaWAN device, you can simulate one using available tools. For this guide, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
+If you do not have a LoRaWAN device, you can simulate one using available tools. For this article, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
 
 ## Setting Up TTN MQTT Connection
 
@@ -52,7 +52,7 @@ The Things Network provides MQTT integration that allows external applications t
 2. Navigate to your application
 3. Go to the Other Integrations tab and select MQTT
 4. Note down the following connection details:
-   - Server Address: nam1.cloud.thethings.network (for North America region)
+   - Server Address: Depends on your cluster, for example: `nam1.cloud.thethings.network`
    - Port: 1883 (for non-TLS) or 8883 (for TLS)
    - Username: Your application ID
    - Password: Your API key
@@ -62,7 +62,7 @@ The Things Network provides MQTT integration that allows external applications t
 
 ### Configure MQTT Node and Receiving Uplink Messages
 
-Uplink messages are data transmissions sent from your LoRaWAN devices to The Things Network and then forwarded to your applications. These messages contain sensor readings, status updates, or any other data your devices collect. Let's configure Node-RED to receive these uplink messages from TTN.
+Uplink messages are data transmissions sent from your LoRaWAN sensors and devices to Network and then forwarded to your applications. These messages contain sensor readings, status updates, or any other data your devices collect. Let's configure Node-RED to receive these uplink messages.
 
 1. Open your FlowFuse Node-RED instance Editor.
 2. Drag an MQTT In node from the palette onto your workspace
@@ -89,24 +89,20 @@ The messages you receive will be in JSON format and contain various fields as fo
 | received_at | Timestamp when TTN received the message |
 | uplink_message.f_port | LoRaWAN port number (used to separate types of payloads) |
 | uplink_message.f_cnt | Frame counter for tracking uplinks |
-| uplink_message.frm_payload | Raw payload in Base64 format |
+| uplink_message.frm_payload | Raw payload |
 | uplink_message.decoded_payload | Decoded values (requires a payload formatter in TTN) |
 | uplink_message.rx_metadata | Metadata per gateway (includes RSSI, SNR, gateway ID, etc.) |
 | uplink_message.settings | Radio parameters (frequency, data rate, spreading factor, etc.) |
 | uplink_message.received_at | Timestamp when TTN processed the uplink |
 | correlation_ids | IDs used internally to correlate events across the TTN stack |
 
-## Processing Sensor Data
+## Processing Data
 
-Let's add some processing to extract and format the sensor data. Choose one of these two methods:
-
-### Method 1: Using Nodes (Visual Approach)
-
-This approach uses pre-built nodes and requires minimal coding. Install node-red-node-base64 and node-red-contrib-buffer-parser.
+Let's add some processing to extract and format the received data. This approach uses community-contributed nodes and requires minimal coding. Install the `node-red-node-base64` and `node-red-contrib-buffer-parser` nodes.
 
 1. Drag a Change node and set `msg.payload` to `msg.payload.uplink_message.frm_payload`
 2. Drag a base64 node and set the action to "Decode" (converts Base64 string to Buffer)
-3. Drag the buffer parser node and configure elements based on your sensor's data format
+3. Drag the buffer parser node and configure elements based on your data format
 4. Click the "+" button to add each element and fill in the following fields for each data point you want to extract:
 
 **Example Configuration for Temperature/Humidity Sensor:**
@@ -117,6 +113,7 @@ This approach uses pre-built nodes and requires minimal coding. Install node-red
 | 2 | int16be | humidity | 2 | 2 | 0.01 |
 
 **Quick Parameter Guide:**
+
 - Type: How to read the bytes (int16be = 2-byte big-endian signed integer, uint8 = 1-byte unsigned integer)
 - Name: What to call it in your output (becomes msg.payload.temperature)
 - Length: Number of bytes to read (2 for int16be, 1 for uint8)
@@ -125,49 +122,6 @@ This approach uses pre-built nodes and requires minimal coding. Install node-red
 
 5. Connect the MQTT in node to the input of change node, change node output to base64 node and base64 node output to the input of buffer parser and add the debug node at the end to see the output.
 6. Deploy the flow.
-
-### Method 2: Using Function Node (Code Approach)
-
-This method gives you full control over the data processing using JavaScript. It's ideal when you need custom logic, complex calculations, or want to handle multiple payload formats dynamically.
-
-1. Drag a Function node onto your workspace
-2. Double-click to open the editor and paste the following code:
-
-```javascript
-// Extract the Base64 encoded payload
-const base64Payload = msg.payload.uplink_message.frm_payload;
-if (!base64Payload) {
-    node.warn("No payload found in message");
-    return null;
-}
-
-// Convert Base64 to Buffer
-const buffer = Buffer.from(base64Payload, 'base64');
-
-// Parse the buffer based on your sensor's data format
-// Example: Temperature/Humidity sensor with 2 bytes each, big-endian, scaled by 0.01
-const parsedData = {
-    temperature: buffer.readInt16BE(0) * 0.01, // Read bytes 0-1
-    humidity: buffer.readInt16BE(2) * 0.01,    // Read bytes 2-3
-};
-
-// Add payload validation
-if (parsedData.temperature < -40 || parsedData.temperature > 85) {
-    node.warn(`Temperature out of range: ${parsedData.temperature}`);
-}
-if (parsedData.humidity < 0 || parsedData.humidity > 100) {
-    node.warn(`Humidity out of range: ${parsedData.humidity}`);
-}
-
-// Set the processed data as the new payload
-msg.payload = parsedData;
-return msg;
-```
-
-3. Connect the MQTT in node to the input of function node and add the debug node at the end to see the output.
-4. Deploy the flow.
-
-**Tip:** You don't need to know JavaScript! [FlowFuse Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) can generate JavaScript code for you. Just describe what you want in plain English and it will generate the function node code for you.
 
 Now you will see the object with the parsed sensor data in the debug panel. The output will show something like:
 
@@ -178,19 +132,17 @@ Now you will see the object with the parsed sensor data in the debug panel. The 
 }
 ```
 
-As you can see in the image below, The Things Network console shows live data with uplink message on the left side, and FlowFuse Node-RED successfully reads and processes it on the right side, demonstrating the complete integration working in real-time.
+As you can see in the image below, The Things Network console shows live data with uplink message on the left side, and FlowFuse Node-RED successfully reads and processes it on the right side.
 
 ![Image showing The Things Network console with live uplink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right](./images/live-data-ttn-ff1.gif){data-zoomable}
 *Image showing The Things Network console with live uplink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right*
 
 ## Sending Commands to Devices (Downlink)
 
-Downlink messages are commands sent from your application back to LoRaWAN devices through The Things Network. These messages allow you to remotely control your devices, update their configuration, trigger specific actions, or send firmware updates. LoRaWAN devices can only receive downlink messages during their receive windows after sending an uplink, making this communication asynchronous but highly power-efficient.
-
-While most LoRaWAN applications focus on collecting sensor data, you can also send commands back to your devices. This is useful for remote configuration, actuator control, or triggering specific actions.
+Downlink messages are commands sent from your application back to LoRaWAN devices through the network. These messages allow you to remotely control your devices, update their configuration, trigger specific actions, or send firmware updates. LoRaWAN devices can only receive downlink messages during their receive windows after sending an uplink, making this communication asynchronous but highly power-efficient.
 
 1. Drag the Inject node onto the canvas.
-2. Drag a function node and add the following JavaScript to format downlink messages. You can also use the change node with base64 node to do that in a low-code way:
+2. Drag a Function node and add JavaScript to format the downlink message with the data you want to send. Alternatively, you can use a Change node with a Base64 node for a low-code approach.
 
 ```javascript
 // Example: Send a command to turn on LED or change sensor interval
@@ -214,11 +166,11 @@ return msg;
 
 3. Add an MQTT Out node to your workspace
 4. Configure it with the same TTN broker settings as your MQTT In node
-5. Set the topic to: `v3/{application-id}/devices/{device-id}/down/push`
-6. Connect the inject node to function node and function node to MQTT out node.
+5. Set the topic to: `v3/{application-id}/devices/{device-id}/down/push` (replace with your actual application and device IDs)
+6. Connect the Inject node to Function node and Function node to MQTT out node.
 7. Deploy the flow.
 
-As you can see in the image below, The Things Network console shows live data with downlink message on the left side, and FlowFuse Node-RED successfully sends and processes it on the right side, demonstrating the complete bidirectional integration working in real-time.
+In the image below, you can see FlowFuse Node-RED sending and processing the downlink message, while The Things Network console displays the live data on the left.
 
 ![Image showing The Things Network console with live Downlink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right](./images/live-data-ttn-downlink.gif){data-zoomable}
 *Image showing The Things Network console with live Downlink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right*
