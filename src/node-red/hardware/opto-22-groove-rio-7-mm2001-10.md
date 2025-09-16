@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: GRV-R7-MM2001-10
+  key: Opto-22 Groov Epic
   parent: Hardware
 meta:
   title: Setting up Node-RED on Opto-22 Groov Rio R7
