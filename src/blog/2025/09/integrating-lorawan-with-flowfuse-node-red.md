@@ -5,7 +5,7 @@ description: "Learn how to seamlessly integrate LoRaWAN devices with FlowFuse No
 date: 2025-09-16
 authors: ["sumit-shinde"]
 image:
-keywords: "LoRaWAN", "FlowFuse", "Node-RED", "IoT integration", "The Things Network", "TTN", "MQTT", "sensor data", "IoT dashboard", "wireless sensors"
+keywords: LoRaWAN", FlowFuse", Node-RED, IoT integration, The Things Network, TTN, MQTT
 tags:
 - flowfuse
 ---
@@ -16,6 +16,7 @@ LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed
 
 By combining LoRaWAN with FlowFuse Node-RED, you can easily collect data from remote sensors, process it, and integrate it with other systems or dashboards—all without writing complex code. In this article, we will guide you through setting up the integration and creating your first data processing flows.
 
+## What is LoRaWAN and How Does It Work?
 ## What is LoRaWAN and How Does It Work?
 
 LoRaWAN is designed for devices that need to send small amounts of data over long distances while using very little battery power. Your sensors can communicate up to 15 kilometers away and run for years on a single battery.
@@ -30,9 +31,11 @@ The system has three main parts:
 In this article, we'll leverage The Things Network as our LoRaWAN infrastructure, demonstrating how to connect TTN with FlowFuse Node-RED to create powerful IoT applications that can scale from proof-of-concept to production deployments.
 
 ## Getting Started
+## Getting Started
 
 Now that we understand the basics of LoRaWAN and TTN, let's set up the integration with FlowFuse Node-RED.
 
+### Prerequisites
 ### Prerequisites
 
 Before we begin, make sure you have the following components ready:
@@ -42,6 +45,7 @@ Before we begin, make sure you have the following components ready:
 
 If you do not have a LoRaWAN device, you can simulate one using available tools. For this guide, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
 
+## Setting Up TTN MQTT Connection
 ## Setting Up TTN MQTT Connection
 
 The Things Network provides MQTT integration that allows external applications to receive uplink messages from your devices. We'll use this to connect TTN with FlowFuse Node-RED.
@@ -96,6 +100,7 @@ The messages you receive will be in JSON format and contain various fields as fo
 | uplink_message.received_at | Timestamp when TTN processed the uplink |
 | correlation_ids | IDs used internally to correlate events across the TTN stack |
 
+## Processing Sensor Data
 ## Processing Sensor Data
 
 Let's add some processing to extract and format the sensor data. Choose one of these two methods:
