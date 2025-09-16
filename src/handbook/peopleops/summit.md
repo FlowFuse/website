@@ -55,7 +55,7 @@ generally competitive, team-building focussed or tourism-focussed activities.
 workshops, presentations, etc.
 - **Food:** Costs associated to lunches and dinners should be considered. Generally,
 breakfast costs are included in the hotel rates.
-- **Swag:** Flowfuse-branded goodies should be distributed to attendees. Take
+- **Swag:** FlowFuse-branded goodies should be distributed to attendees. Take
 consideration of the last time the swag was distributed, and ensure there is limited
 overlap.
 
