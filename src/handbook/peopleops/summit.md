@@ -18,17 +18,12 @@ The day before the company summit, senior leadership can assemble for a strategy
 making the most of the time in-person.
 
 ## Expenses
-
-Any expenses undertaken by employees whilst performing their duties as a FlowFuse
-employee should be reimbursed. This includes travel, accommodation, food and drink.
-
-Any activities undertaken by employees outside of the scope of the summit will not be reimbursed,
-and are at the employee's own expense.
-
 FlowFuse will be responsible for booking the accommodation, activities and communal
 dinners and lunches. Each employee is then responsible for booking their own flights
 and travel arrangements. Please check in with the summit organizer on your own personal
 budget, as this will differ person-to-person and be a factor of each employee's location.
+
+Other expenses whilst performing duties as employee [are reimbursed](/handbook/peopleops/expenses/#expenses) if within the scope of the summit.
 
 ### Alcohol
 
