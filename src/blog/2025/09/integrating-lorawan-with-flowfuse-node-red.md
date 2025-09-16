@@ -16,7 +16,7 @@ LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed
 
 By combining LoRaWAN with FlowFuse Node-RED, you can easily collect data from remote sensors, process it, and integrate it with other systems or dashboards—all without writing complex code. In this article, we will guide you through setting up the integration and creating your first data processing flows.
 
-## **What is LoRaWAN and How Does It Work?**
+## What is LoRaWAN and How Does It Work?
 
 LoRaWAN is designed for devices that need to send small amounts of data over long distances while using very little battery power. Your sensors can communicate up to 15 kilometers away and run for years on a single battery.
 
@@ -29,11 +29,11 @@ The system has three main parts:
 
 In this article, we'll leverage The Things Network as our LoRaWAN infrastructure, demonstrating how to connect TTN with FlowFuse Node-RED to create powerful IoT applications that can scale from proof-of-concept to production deployments.
 
-## **Getting Started**
+## Getting Started
 
 Now that we understand the basics of LoRaWAN and TTN, let's set up the integration with FlowFuse Node-RED.
 
-### **Prerequisites**
+### Prerequisites
 
 Before we begin, make sure you have the following components ready:
 
@@ -43,7 +43,7 @@ Before we begin, make sure you have the following components ready:
 
 If you do not have a LoRaWAN device, you can simulate one using available tools. For this guide, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
 
-## **Setting Up TTN MQTT Connection**
+## Setting Up TTN MQTT Connection
 
 The Things Network provides MQTT integration that allows external applications to receive uplink messages from your devices. We'll use this to connect TTN with FlowFuse Node-RED.
 
@@ -96,11 +96,11 @@ The messages you receive will be in JSON format and contain various fields as fo
 | `uplink_message.received_at`     | Timestamp when TTN processed the uplink                         |
 | `correlation_ids`                | IDs used internally to correlate events across the TTN stack    |
 
-## **Processing Sensor Data**
+## Processing Sensor Data
 
 Let's add some processing to extract and format the sensor data. Choose one of these two methods:
 
-### **Method 1: Using Nodes (Visual Approach)**
+### Method 1: Using Low-Code Nodes
 
 This approach uses pre-built nodes and requires minimal coding. Install `node-red-node-base64` and `node-red-contrib-buffer-parser`.
 
@@ -125,7 +125,7 @@ This approach uses pre-built nodes and requires minimal coding. Install `node-re
 5. Connect the MQTT in node to the input of change node, change node output to base64 node and base64 node output to the input of buffer parser and add the debug node at the end to see the output.
 6. Deploy the flow.
 
-### **Method 2: Using Function Node (Code Approach)**
+### Method 2: Using Function Node
 
 This method gives you full control over the data processing using JavaScript. It's ideal when you need custom logic, complex calculations, or want to handle multiple payload formats dynamically.
 
@@ -185,7 +185,7 @@ As you can see in the image below, The Things Network console shows live data on
 ![Image showing The Things Network console with live uplink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right"](./images/live-data-ttn-ff1.gif){data-zoomable}
 _Image showing The Things Network console with live uplink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right_
 
-## **Next Steps**
+## Next Steps
 
 Next, you can store this data in a database. With FlowFuse, a managed PostgreSQL database is already provided—so you do not need to install or configure one manually. FlowFuse also offers a **Query node** that is automatically configured for your instance. Inside the Query node, you can use **FlowFuse Assistant**, which allows you to write natural language prompts instead of SQL queries. The assistant will generate SQL automatically based on your table schema.
 
