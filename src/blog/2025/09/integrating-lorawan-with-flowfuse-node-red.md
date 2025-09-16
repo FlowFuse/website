@@ -17,7 +17,6 @@ LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed
 By combining LoRaWAN with FlowFuse Node-RED, you can easily collect data from remote sensors, process it, and integrate it with other systems or dashboards—all without writing complex code. In this article, we will guide you through setting up the integration and creating your first data processing flows.
 
 ## What is LoRaWAN and How Does It Work?
-## What is LoRaWAN and How Does It Work?
 
 LoRaWAN is designed for devices that need to send small amounts of data over long distances while using very little battery power. Your sensors can communicate up to 15 kilometers away and run for years on a single battery.
 
@@ -28,14 +27,12 @@ The system has three main parts:
 
 [The Things Network (TTN)](https://www.thethingsnetwork.org/) is a free, global LoRaWAN network with thousands of gateways around the world. It's perfect for getting started with LoRaWAN projects and provides easy-to-use tools for managing your devices.
 
-In this article, we'll leverage The Things Network as our LoRaWAN infrastructure, demonstrating how to connect TTN with FlowFuse Node-RED to create powerful IoT applications that can scale from proof-of-concept to production deployments.
+We'll show you how to connect The Things Network (TTN) to FlowFuse Node-RED, turning your LoRaWAN proof-of-concept into a scalable, production-ready IoT application.
 
-## Getting Started
 ## Getting Started
 
 Now that we understand the basics of LoRaWAN and TTN, let's set up the integration with FlowFuse Node-RED.
 
-### Prerequisites
 ### Prerequisites
 
 Before we begin, make sure you have the following components ready:
@@ -45,7 +42,6 @@ Before we begin, make sure you have the following components ready:
 
 If you do not have a LoRaWAN device, you can simulate one using available tools. For this guide, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
 
-## Setting Up TTN MQTT Connection
 ## Setting Up TTN MQTT Connection
 
 The Things Network provides MQTT integration that allows external applications to receive uplink messages from your devices. We'll use this to connect TTN with FlowFuse Node-RED.
@@ -100,7 +96,6 @@ The messages you receive will be in JSON format and contain various fields as fo
 | uplink_message.received_at | Timestamp when TTN processed the uplink |
 | correlation_ids | IDs used internally to correlate events across the TTN stack |
 
-## Processing Sensor Data
 ## Processing Sensor Data
 
 Let's add some processing to extract and format the sensor data. Choose one of these two methods:
@@ -234,4 +229,6 @@ Next, you can store this data in a database. With FlowFuse, a managed PostgreSQL
 
 For a complete guide on storing and visualizing data, see the article on [Building Historical Data Dashboards with FlowFuse Tables](https://flowfuse.com/blog/2025/08/time-series-dashboard-flowfuse-postgresql/). It also includes step-by-step instructions for creating dashboards using [FlowFuse Dashboard](https://dashboard.flowfuse.com/)—a low-code way to build powerful industrial dashboards that also allows you to send downlink data to devices interactively.
 
-If you're interested in exploring FlowFuse further for your industrial IoT applications, you can visit us at our booth at upcoming Things Network conferences to see live manufacturing demos, [book a demo](/book-demo/) to discover how FlowFuse can streamline your industrial IoT development and deployment processes, or [start your free trial](https://app.flowfuse.com/account/create) to build your first LoRaWAN-enabled manufacturing dashboard today.
+With FlowFuse, you get a complete enterprise-grade platform built around Node-RED—perfect for production-ready IoT deployments. It adds powerful capabilities like centralized management of Node-RED instances, DevOps tools, snapshots, real-time team collaboration, audit logs, RBAC, SSO, Built mqtt broker and database service and more—all designed to help you scale and manage your applications with ease.
+
+If you're interested in exploring FlowFuse further for your industrial IoT applications, come visit us at our booth at upcoming Things Network conferences to see live manufacturing demos. You can also [book a demo](/book-demo/) to see how FlowFuse can streamline your development and deployment workflows, or [start your free trial](https://app.flowfuse.com/account/create) and build your first LoRaWAN-enabled dashboard today.
