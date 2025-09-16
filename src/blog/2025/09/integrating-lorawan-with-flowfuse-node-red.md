@@ -5,7 +5,7 @@ description: "Learn how to seamlessly integrate LoRaWAN devices with FlowFuse No
 date: 2025-09-16
 authors: ["sumit-shinde"]
 image:
-keywords: "LoRaWAN", "FlowFuse", "Node-RED", "IoT integration", "The Things Network", "TTN", "MQTT", "sensor data", "IoT dashboard", "wireless sensors"
+keywords: LoRaWAN", FlowFuse", Node-RED, IoT integration, The Things Network, TTN, MQTT
 tags:
     - flowfuse
 ---
