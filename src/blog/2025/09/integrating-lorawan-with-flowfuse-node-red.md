@@ -166,8 +166,8 @@ msg.payload = parsedData;
 return msg;
 ```
 
-1. Connect the MQTT in node to the input of change node, change node output to the input of function node and add the debug node at the end to see the output.
-2. Deploy the flow.
+3. Connect the MQTT in node to the input of change node, change node output to the input of function node and add the debug node at the end to see the output.
+4. Deploy the flow.
 
 *Tip: You don't need to know JavaScript! [FlowFuse Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) can generate JavaScript code for you. Just describe what you want in plain English and it will generate the function node code for you.*
 
