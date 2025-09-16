@@ -1,5 +1,5 @@
 ---
-title: "Integrating LoRaWAN the things network with FlowFuse Node-RED"
+title: "Integrating LoRaWAN with FlowFuse Node-RED"
 subtitle: "Connect your IoT sensors to the cloud with ease"
 description: "Learn how to seamlessly integrate LoRaWAN devices with FlowFuse Node-RED using The Things Network. This comprehensive guide covers MQTT setup, data processing methods, and real-time sensor data visualization for scalable IoT applications."
 date: 2025-09-16
