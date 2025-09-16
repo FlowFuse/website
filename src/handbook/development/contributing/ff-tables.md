@@ -12,7 +12,7 @@ FlowFuse Tables relies on a local Postgres instance. The following command assum
 2. Run the following Docker command (from within that new directory)
 
     ```
-    docker run -p 5432:5433 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=password -v `pwd`/db:/var/lib/postgresql/data postgres:17
+    docker run -p 5433:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=password -v `pwd`/db:/var/lib/postgresql/data postgres:17
     ```
 
     The port has been mapped to 5433 to ensure it doesn't clash with a different postgres instance
