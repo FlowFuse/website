@@ -96,6 +96,7 @@
 .ff-prose .prose img {
     margin-top: initial;
     margin-bottom: initial;
+    margin: auto;
 }
 
 .ff-prose .prose > img {
