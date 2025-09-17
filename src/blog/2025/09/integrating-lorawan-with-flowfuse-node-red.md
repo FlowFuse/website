@@ -4,7 +4,7 @@ subtitle: Connect and Communicate with LoRaWAN Devices using FlowFuse
 description: "Learn how to easily integrate LoRaWAN devices with FlowFuse using TTN. This comprehensive guide covers MQTT setup, data processing methods, and real-time sensor data visualization for scalable IoT applications."
 date: 2025-09-17
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/09/images/lorawan-flowfuse.png
 keywords: LoRaWAN", FlowFuse", Node-RED, IoT integration, The Things Network, TTN, MQTT
 tags:
 - flowfuse
