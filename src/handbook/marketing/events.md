@@ -1,45 +1,41 @@
 ---
-navTitle: Trade Shows
-navGroup: Sales & Marketing
+navTitle: Events
 ---
 
-# Trade Shows
+# Events
 
-Trade shows are valuable opportunities to connect face-to-face with our industry—customers, partners, and potential users alike. They give us the chance to showcase our product in action, gather feedback, and build relationships that don’t always happen through online calls. Participating in a trade show is both a marketing initiative and a team effort, and often represents a significant investment.
+Events, or sometimes called trade shows, are valuable opportunities to connect
+face-to-face with our industry—customers, partners, and potential customers
+alike. They give us the chance to showcase our product in action, gather
+feedback, and build relationships that don’t always happen through online calls.
+Participating in these events is both a marketing initiative and a team effort,
+and often represents a significant investment.
 
-## Trade Show Strategy Evolution
+## Event Strategy
 
-### From Marketing Initiative to Marketing Platform
+Traditionally, having a booth at trade shows was viewed as a standalone marketing
+initiative focused on brand awareness and lead capture.
 
-#### Traditional Approach
-Previously, having a booth at trade shows was viewed as a standalone marketing initiative focused on:
+We now view trade shows as comprehensive marketing platforms with three primary
+goals:
 
-- **Brand awareness:** Reaching new audiences (trade-show attendees)
-- **Product demonstration:** Showcasing our product to gather feedback and spark interest
-- **Lead capture:** Building our database and providing sales contacts with known use cases
-- **Partner networking:** Opportunities to collaborate with partners for social proof
-
-#### New Strategic Approach
-We now view trade shows as comprehensive marketing platforms with three primary goals:
-
-##### 1. Thought Leadership
-- Establish FlowFuse as an industry thought leader through a structured daily content agenda
-- Deliver scheduled talks, roundtables, and demos throughout the event
-- Create memorable demo experiences that showcase our expertise
-- Ensure all booth staff can deliver a well-crafted pitch consistently
-
-##### 2. Highly Qualified Leads
-- Run targeted pre-event online campaigns focused on our Ideal Customer Profile (ICP)
-- Drive advance registrations to exclusive on-site events
-- Enable advance meeting bookings with team members
-- Attract quality prospects seeking valuable content, not just coffee
-
-##### 3. Sales and POC Opportunities
-- Convert qualified leads into sales conversations and proof-of-concept opportunities
-- Focus on meaningful business outcomes rather than just lead volume
+1. Thought Leadership
+    - Establish FlowFuse as an industry thought leader through a structured daily content agenda
+    - Deliver scheduled talks, roundtables, and demos throughout the event
+    - Create memorable demo experiences that showcase our expertise
+    - Ensure all booth staff can deliver a well-crafted pitch consistently
+2. Highly Qualified Leads
+    - Run targeted pre-event online campaigns focused on our Ideal Customer Profile (ICP)
+    - Drive advance registrations to exclusive on-site events
+    - Enable advance meeting bookings with team members
+    - Attract quality prospects seeking valuable content
+3. Sales and POC Opportunities
+    - Convert qualified leads into sales conversations and proof-of-concept opportunities
+    - Focus on meaningful business outcomes rather than just lead volume
 
 ### Partner Strategy Considerations
-Partners can dilute our brand presence. If we include partners in our strategy, their participation must align with our goals through:
+Partners can dilute our brand presence. If we include partners in our strategy,
+their participation must align with our goals through:
 
 - **Cost-Effective Partnership Model:** Joint events where partners sponsor daily agenda/content with FlowFuse case studies at no cost to us
 - **Content Partnerships:** Limited to case studies or roundtable participation only
@@ -79,9 +75,11 @@ Planning a trade show well in advance is crucial. From aligning on the goals and
 
 ### Logistics
 
-After the decision has been made to attend an event, the first thing that's needed is a budget. This will guide the next steps in the event planning. The CEO is responsible for setting the budget and it should be tracked in a spreadsheet alongside all the logistic details, such as hotel details, team arrival and departure times, plus any related matter and added to the relevant folder in the Drive inside [Fairs](https://drive.google.com/drive/folders/1kfbJy6H3DXYlKDd0RZx-psK7ghDmN4BI?usp=drive_link).
+After the decision has been made to attend an event, the first thing that's needed is a budget. This will guide the next steps in the event planning. The CEO is responsible for setting the budget and the budget will be tracked
+using the [Campaigns feature on Hubspot (internal)](https://app-eu1.hubspot.com/marketing/26586079/campaigns/views/all)
+alongside all the logistic details, such as hotel details, team arrival and departure times, plus any related matter and added to the relevant folder in the Drive inside [Fairs](https://drive.google.com/drive/folders/1kfbJy6H3DXYlKDd0RZx-psK7ghDmN4BI?usp=drive_link).
 
-**Ideally the planning should start at least six months in advance**, so there's enough time to book hotels and for the team to block their agendas. This may vary in the event that a last minute event or trade show is found that represents a relevant business opportunity and it is agreed internally to make the effort to attend. The on-site team should be proposed by the CEO and CTO. Team size will depend on factors such as the event itself, the number of passes included, booth size, and duration. For a team of 4–5 members, consider:
+Ideally the planning should start at least **six months in advance**, so there's enough time to book hotels and for the team to block their agendas. This may vary in the event that a last minute event or trade show is found that represents a relevant business opportunity and it is agreed internally to make the effort to attend. The on-site team should be proposed by the CEO and CTO. Team size will depend on factors such as the event itself, the number of passes included, booth size, and duration. For a team of 4–5 members, consider:
 - Two sales representatives or Customer Success.
 - A technically skilled member that will be responsible for setting up and dismantling the demo at the booth.
 - Someone from any other area that will attend to learn or bring support where needed.
