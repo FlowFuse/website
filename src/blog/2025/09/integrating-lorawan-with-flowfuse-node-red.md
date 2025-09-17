@@ -1,7 +1,7 @@
 ---
-title: "Integrating LoRaWAN with FlowFuse Node-RED"
-subtitle: Easily Connect and Communicate with LoRaWAN Devices using FlowFuse Node-RED
-description: "Learn how to seamlessly integrate LoRaWAN devices with FlowFuse Node-RED using The Things Network. This comprehensive guide covers MQTT setup, data processing methods, and real-time sensor data visualization for scalable IoT applications."
+title: "Integrating LoRaWAN with FlowFuse"
+subtitle: Connect and Communicate with LoRaWAN Devices using FlowFuse
+description: "Learn how to easily integrate LoRaWAN devices with FlowFuse using TTN. This comprehensive guide covers MQTT setup, data processing methods, and real-time sensor data visualization for scalable IoT applications."
 date: 2025-09-17
 authors: ["sumit-shinde"]
 image:
@@ -10,11 +10,11 @@ tags:
 - flowfuse
 ---
 
-LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed for IoT devices that need to transmit small amounts of data over long distances. FlowFuse Node-RED is a platform that provides a visual programming interface for connecting IoT devices and services.
+LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed for IoT devices that need to transmit small amounts of data over long distances. FlowFuse is a platform that provides a visual programming interface for connecting IoT devices and services.
 
 <!--more-->
 
-By combining LoRaWAN with FlowFuse Node-RED, you can easily collect data from remote sensors, process it, and integrate it with other systems or dashboards—all without writing complex code. In this article, we will guide you through setting up the integration and creating your first data processing flows.
+By combining LoRaWAN with FlowFuse, you can easily collect data from remote sensors, process it, and integrate it with other systems or dashboards—all without writing complex code. In this article, we will guide you through setting up the integration and creating your first data processing flows.
 
 ## What is LoRaWAN and How Does It Work?
 
@@ -27,28 +27,28 @@ The system has three main parts:
 
 [The Things Network (TTN)](https://www.thethingsnetwork.org/) is a free, global LoRaWAN network with thousands of gateways around the world. It's perfect for getting started with LoRaWAN projects and provides easy-to-use tools for managing your devices.
 
-We’ll show you how to connect The Things Network (TTN) to FlowFuse Node-RED for monitoring sensor data and building scalable industrial applications.
+We'll show you how to connect TTN to FlowFuse for monitoring sensor data and building scalable industrial applications.
 
 ## Getting Started
 
-Now that we understand the basics of LoRaWAN, let's set up the integration with FlowFuse Node-RED.
+Now that we understand the basics of LoRaWAN, let's set up the integration with FlowFuse.
 
 ### Prerequisites
 
 Before we begin, make sure you have the following components ready:
 
-1. Node-RED instance – Ensure you have a running Node-RED instance. The quickest way to set one up is through FlowFuse. [Sign up](https://app.flowfuse.com/account/create), create your instance, and you can manage, deploy, and scale your flows easily.
-2. LoRaWAN device and gateway registered on TTN – You need a sensor or device connected to The Things Network (TTN) and a gateway that can receive its uplinks.
+1. Node-RED instance – Ensure you have a running Node-RED instance. The quickest way to set one up is through FlowFuse. [Sign up](https://app.flowfuse.com/account/create), create your instance, and you will be able to manage, deploy, scale, and secure your flows with ease. FlowFuse also provides enterprise-ready features out of the box.
+2. LoRaWAN device and gateway registered on TTN – You need a sensor or device connected to TTN and a gateway that can receive its uplinks.
 
 If you do not have a LoRaWAN device, you can simulate one using available tools. For this article, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
 
 ## Setting Up TTN MQTT Connection
 
-The Things Network provides MQTT integration that allows external applications to receive uplink messages from your devices. We'll use this to connect TTN with FlowFuse Node-RED.
+TTN provides MQTT integration that allows external applications to receive uplink messages from your devices. We'll use this to connect TTN with FlowFuse.
 
 ### Getting TTN Connection Details
 
-1. Log into your The Things Network Console (https://console.thethingsnetwork.org)
+1. Log into your TTN Console (https://console.thethingsnetwork.org)
 2. Navigate to your application
 3. Go to the Other Integrations tab and select MQTT
 4. Note down the following connection details:
@@ -57,14 +57,14 @@ The Things Network provides MQTT integration that allows external applications t
    - Username: Your application ID
    - Password: Your API key
 
-![Screenshot of The Things Network console showing MQTT integration details including server address, port, username, and API key](./images/mqtt-connection-details.png){data-zoomable}
-*Screenshot of The Things Network console showing MQTT integration details including server address, port, username, and API key*
+![Screenshot of TTN console showing MQTT integration details including server address, port, username, and API key](./images/mqtt-connection-details.png){data-zoomable}
+*Screenshot of TTN console showing MQTT integration details including server address, port, username, and API key*
 
 ### Configure MQTT Node and Receiving Uplink Messages
 
-Uplink messages are data transmissions sent from your LoRaWAN sensors and devices to Network and then forwarded to your applications. These messages contain sensor readings, status updates, or any other data your devices collect. Let's configure Node-RED to receive these uplink messages.
+Uplink messages are data transmissions sent from your LoRaWAN sensors and devices to Network and then forwarded to your applications. These messages contain sensor readings, status updates, or any other data your devices collect. Let's configure FlowFuse to receive these uplink messages.
 
-1. Open your FlowFuse Node-RED instance Editor.
+1. Open your FlowFuse instance Editor.
 2. Drag an MQTT In node from the palette onto your workspace
 3. Double-click the node to configure it:
    - Server: Add a new MQTT broker configuration
@@ -132,10 +132,10 @@ Now you will see the object with the parsed sensor data in the debug panel. The 
 }
 ```
 
-As you can see in the image below, The Things Network console shows live data with uplink message on the left side, and FlowFuse Node-RED successfully reads and processes it on the right side.
+As you can see in the image below, TTN console shows live data with uplink message on the left side, and FlowFuse successfully reads and processes it on the right side.
 
-![Image showing The Things Network console with live uplink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right](./images/live-data-ttn-ff1.gif){data-zoomable}
-*Image showing The Things Network console with live uplink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right*
+![Image showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right](./images/live-data-ttn-ff1.gif){data-zoomable}
+*Image showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right*
 
 ## Sending Commands to Devices (Downlink)
 
@@ -170,10 +170,10 @@ return msg;
 6. Connect the Inject node to Function node and Function node to MQTT out node.
 7. Deploy the flow.
 
-In the image below, you can see FlowFuse Node-RED sending and processing the downlink message, while The Things Network console displays the live data on the left.
+In the image below, you can see FlowFuse sending and processing the downlink message, while TTN console displays the live data on the left.
 
-![Image showing The Things Network console with live Downlink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right](./images/live-data-ttn-downlink.gif){data-zoomable}
-*Image showing The Things Network console with live Downlink messages on the left and FlowFuse Node-RED debug panel with processed sensor data on the right*
+![Image showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right](./images/live-data-ttn-downlink.gif){data-zoomable}
+*Image showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right*
 
 ## Next Steps
 
@@ -181,6 +181,6 @@ Next, you can store this data in a database. With FlowFuse, a managed PostgreSQL
 
 For a complete guide on storing and visualizing data, see the article on [Building Historical Data Dashboards with FlowFuse Tables](https://flowfuse.com/blog/2025/08/time-series-dashboard-flowfuse-postgresql/). It also includes step-by-step instructions for creating dashboards using [FlowFuse Dashboard](https://dashboard.flowfuse.com/)—a low-code way to build powerful industrial dashboards that also allows you to send downlink data to devices interactively.
 
-With FlowFuse, you get a complete enterprise-grade platform built around Node-RED—perfect for production-ready IoT deployments. It adds powerful capabilities like centralized management of Node-RED instances, DevOps tools, snapshots, real-time team collaboration, audit logs, RBAC, SSO, Built mqtt broker and database service and more—all designed to help you scale and manage your applications with ease.
+With FlowFuse, you get a complete enterprise-grade platform built around visual programming—perfect for production-ready IoT deployments. It adds powerful capabilities like centralized management of Node-RED instances, DevOps tools, snapshots, real-time team collaboration, audit logs, RBAC, SSO, Built mqtt broker and database service and more—all designed to help you scale and manage your applications with ease.
 
-If you're interested in exploring FlowFuse further for your industrial IoT applications, come visit us at our booth at upcoming Things Network conferences to see live manufacturing demos. You can also [book a demo](/book-demo/) to see how FlowFuse can streamline your development and deployment workflows, or [start your free trial](https://app.flowfuse.com/account/create) and build your first LoRaWAN-enabled dashboard today.
+If you're interested in exploring FlowFuse further for your industrial IoT applications, come visit us at our booth at upcoming TTN conferences to see live manufacturing demos. You can also [book a demo](/book-demo/) to see how FlowFuse can streamline your development and deployment workflows, or [start your free trial](https://app.flowfuse.com/account/create) and build your first LoRaWAN-enabled dashboard today.
