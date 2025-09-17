@@ -12,7 +12,7 @@ of FlowFuse. This includes:
 1. Generating brand awareness.
 1. Publishing high-quality content such as blog posts, video, and infographics.
 1. Engaging with the Node-RED and nascent FlowFuse communities
-1. Event planning, such as [trade shows](/handbook/marketing/tradeshow/)
+1. Event planning, such as [trade shows](/handbook/marketing/events/)
 1. Growth hacking; always be innovating when finding the audience and engaging with
 them in a cost effective way.
 
@@ -47,7 +47,7 @@ Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack
 |:----|:----|
 | [Blog](./blog.md) | How to write new content for the FlowFuse Blog |
 | [Social Media](./social-media.md) | Our online presence and how we engage with our community on various platforms |
-| [Trade shows](./tradeshow.md) | How to get the most out of visiting a trade fair |
+| [Trade shows](./events.md) | How to get the most out of visiting a trade fair |
 | [Videos](./videos.md) | To produce quality content in video, follow these guidelines |
 | [Website](./website.md) | How to contribute to the FlowFuse marketing website |
 | [Webinars](./webinars.md) | Webinars are a key way FlowFuse interacts with the Node-RED community. |

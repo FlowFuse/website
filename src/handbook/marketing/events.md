@@ -143,7 +143,7 @@ Alongside sales and the CTO, define the booth messaging considering the demo and
 
 #### Two months before the event
 
-Choose the giveaways that align better with the messaging, audience, storage space, budget and that might be useful on a day to day basis. Remember to consider the weight when deciding the amount of items, specially if a team member will be bringing those items as part of their luggage. Check the [logistics](/handbook/marketing/tradeshow/#logistics) section to decide when to order the items.
+Choose the giveaways that align better with the messaging, audience, storage space, budget and that might be useful on a day to day basis. Remember to consider the weight when deciding the amount of items, specially if a team member will be bringing those items as part of their luggage. Check the [logistics](/handbook/marketing/events/#logistics) section to decide when to order the items.
 
 The on-site team should have some branded attire and business cards, don't forget to include those in the artwork requests and the orders alongside the giveaways.
 
