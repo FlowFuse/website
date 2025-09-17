@@ -106,8 +106,11 @@ as evidenced by a PO or signed quote, is the sole determinant.
    - On the Hubspot Deal view, check and update:
      - Hosting Environment
      - Contract Start Date
+     - Company address
      - Renewal Date
-     - Amount in USD to the IACV (Incremental Annual Contract Value)
+     - Use Case
+     - Spiced
+     - Amount in USD to the IACV (Incremental Annual Contract Value) & ARR
    - Under contract management; check the box for MSA if a custom subscription
      agreement is agreed upon.
 1. Upload the documents to the Google Drive in the correct directory
