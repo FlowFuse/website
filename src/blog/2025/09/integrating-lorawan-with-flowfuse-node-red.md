@@ -5,7 +5,7 @@ description: "Learn how to easily integrate LoRaWAN devices with FlowFuse using 
 date: 2025-09-17
 authors: ["sumit-shinde"]
 image:
-keywords: LoRaWAN", FlowFuse", IoT integration, The Things Network, TTN, MQTT
+keywords: LoRaWAN", FlowFuse", Node-RED, IoT integration, The Things Network, TTN, MQTT
 tags:
 - flowfuse
 ---
