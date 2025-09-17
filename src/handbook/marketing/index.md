@@ -12,7 +12,7 @@ of FlowFuse. This includes:
 1. Generating brand awareness.
 1. Publishing high-quality content such as blog posts, video, and infographics.
 1. Engaging with the Node-RED and nascent FlowFuse communities
-1. Event planning, such as [trade shows](/handbook/marketing/tradeshow/)
+1. Event planning, such as [trade shows](/handbook/marketing/events/)
 1. Growth hacking; always be innovating when finding the audience and engaging with
 them in a cost effective way.
 

@@ -25,7 +25,7 @@ qualified leads.
   webinars to educate our audience, showcase our product, and generate new
   leads. They also serve as a valuable touchpoint for existing prospects and
   customers.
-- **[Trade Shows & Industry Events](/handbook/marketing/tradeshow/)**: We
+- **[Trade Shows & Industry Events](/handbook/marketing/events/)**: We
   participate in key industry events to build brand presence, network with
   potential customers and partners, and generate leads.
 
@@ -47,7 +47,7 @@ community through valuable content and engagement.
 - **Podcast "Industrial Visionaries"**: Our podcast features conversations with
   industry leaders to explore key trends, provide unique insights, and expand
   our brand's reach to new audiences.
-- **[Community Engagement & Sponsorships](/handbook/marketing/community/event-and-webinars/)**:
+- **[Community Engagement & Sponsorships](/handbook/marketing/community/)**:
   We actively support and participate in the broader community, including
   sponsoring key events like the Node-RED conference, to strengthen our
   connection with developers and users.
