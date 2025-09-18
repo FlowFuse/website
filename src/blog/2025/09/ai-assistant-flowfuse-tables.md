@@ -5,10 +5,9 @@ description: "Learn the easiest way to connect to your database and get data—n
 date: 2025-09-09
 keywords: FlowFuse Tables, SQL natural language, database queries, Tables node, Node-RED, sensor data, temperature monitoring, industrial automation, low-code platform, data analysis
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/09/images/flowfuse-assistant-query-node.png
 tags:
   - flowfuse
-  - dashboard
 ---
 
 Getting data from your database used to mean writing SQL queries. Not anymore. FlowFuse Tables now lets you ask for what you want in plain English and automatically generates the SQL for you.
