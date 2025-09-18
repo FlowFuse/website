@@ -8,4 +8,5 @@ We provide comprehensive details in this section of our handbook regarding our c
 
 - [Community Guidelines](./community-guidelines/)
 - [Forums and Support](./forums-and-support/)
-- [Events and Webinars](./event-and-webinars/)
+- [Events](../events/)
+- [Webinars](../webinars/)
