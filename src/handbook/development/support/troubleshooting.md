@@ -81,7 +81,7 @@ Existing Starter customers were notified of the change via emails on July 28 and
 
 Existing Free users were notified of the change via emails on August 4 and August 19.
 
-To ease the transition of Free users to Starter, and Starter users to the revised pricing structure, the coupon TRYSTARTER was offered. Coupon TRYSTARTER will give a customer a free month of Starter with one hosted instance (included with Starter) and one remote instance (because they're used to this when migrating from Free).
+To ease the transition of Free users to Starter, and Starter users to the revised pricing structure, [a coupon](https://dashboard.stripe.com/acct_1KJbS4J6VWAujNoL/coupons/n9TR0YgU) was offered. The coupon will give a customer a free month of Starter with one hosted instance (included with Starter) and one remote instance (because they're used to this when migrating from Free).
 
 In addition, users were informed that they could receive an additional free month by choosing Annual billing at checkout.
 
