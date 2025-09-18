@@ -2,7 +2,7 @@
 title: "Download and Install Node-RED for Production"
 subtitle: Scale Node-RED from prototype to production with centralized management and 24/7 reliability
 description: "Learn how to install and run Node-RED on various platforms, such as local computer, Raspberry Pi, Mac, Linux, or Cloud."
-date: 2025-09-18
+date: 2025-09-19
 authors: ["sumit-shinde"]
 image: 
 keywords: "download node-red, download nodered, install nodered, install node-red, getting started with node-red"
