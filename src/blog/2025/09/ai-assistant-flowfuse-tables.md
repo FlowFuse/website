@@ -2,7 +2,7 @@
 title: "Query Your Database with Natural Language in FlowFuse AI Assistant"
 subtitle: "A faster, more intuitive way to get data from your tables without writing a single line of SQL."
 description: "Learn the easiest way to connect to your database and get data—no coding knowledge required."
-date: 2025-09-16
+date: 2025-09-18
 keywords: FlowFuse Tables, SQL natural language, database queries, Query node, Node-RED, sensor data, temperature monitoring, industrial automation, low-code platform, data analysis
 authors: ["sumit-shinde"]
 image: 
