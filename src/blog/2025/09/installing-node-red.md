@@ -43,7 +43,7 @@ Managing dozens of industrial PCs running Node-RED? You need centralized updates
 
 Production Node-RED needs enterprise reliability, security, and management capabilities that the basic installation simply can't provide.
 
-## **FlowFuse for Production**
+## FlowFuse for Production
 
 FlowFuse makes Node-RED production-ready with centralized management across industrial infrastructure.
 
