@@ -35,27 +35,25 @@ Open `http://localhost:1880` in your browser and start connecting nodes. You can
 
 ## Production Requirements
 
-In production, Node-RED connects to PLCs, Modbus devices, OPC servers, and legacy equipment across your facility. When these systems fail, production stops and costs accumulate quickly.
+Local Node-RED works great for testing, but production is different. When your flows control PLCs and critical equipment, downtime costs thousands per minute.
 
-Your equipment operates continuously, processing high message volumes with strict timing requirements. Power outages occur, networks fail, and hardware breaks. When failures happen, Node-RED must restart automatically, preserve data integrity, and handle intermittent connectivity without manual intervention.
+Hardware fails. Networks drop. Power cuts out. Your Node-RED instance must restart automatically, handle connectivity issues, and keep production running without manual intervention. Deploying, managing and scaling must be easy and quick in such environments.
 
-Operators need visibility into system status but should not modify flows controlling critical equipment. This requires proper authentication, audit logging, and secure remote access with role-based permissions for engineering teams.
+Managing dozens of industrial PCs running Node-RED? You need centralized updates, secure remote access, proper backups, and role-based permissions. Your engineering team's months of flow development can't be lost to a hardware failure.
 
-Your flows represent significant engineering investment - safety interlocks, quality control logic, and production optimizations that took months to develop and refine. Hardware failures can destroy this work without proper backup and recovery procedures in place.
+Production Node-RED needs enterprise reliability, security, and management capabilities that the basic installation simply can't provide.
 
-Managing Node-RED across hundreds of industrial PCs introduces complexity. Coordinating updates, maintaining configurations, monitoring performance, and deploying flows across multiple sites requires management tools that scale with your infrastructure.
+## **FlowFuse for Production**
 
-## FlowFuse for Production
+FlowFuse makes Node-RED production-ready with centralized management across industrial infrastructure.
 
-FlowFuse transforms Node-RED into an enterprise-ready platform with centralized management across industrial infrastructure.
+When hardware fails, FlowFuse keeps operations running through High Availability mode that distributes processing across multiple instances. Device Agents monitor system health and provide secure remote access for engineering teams.
 
-When hardware fails, FlowFuse maintains operational continuity. High Availability mode distributes processing across multiple Node-RED instances, ensuring hardware failures do not interrupt operations. The Device Agent monitors system health - CPU usage, memory consumption, network connectivity - while providing secure remote access for engineering teams.
+Engineering teams get proper DevOps workflows that move flows through development, testing, and production with automated deployments. Device grouping makes updates reach thousands of devices possible while version control and rapid rollbacks keep projects on track.
 
-Engineering teams require proper development workflows. FlowFuse provides DevOps pipelines that move flows through development, testing, and production stages with automated deployments. Device grouping allows updates to thousands of devices with single-click deployment. Teams can collaborate effectively with version control and rapid rollback capabilities when issues arise.
+Enterprise security comes built-in with single sign-on, role-based access control, comprehensive audit logging, and encrypted communications. Automated snapshots protect engineering work with rapid recovery when needed.
 
-Enterprise integration requirements are addressed comprehensively. Single sign-on integrates with existing identity providers. Role-based access control prevents unauthorized modifications to production flows. Comprehensive audit logging tracks all changes. All communications remain encrypted in transit. Automated snapshots protect engineering work, with rapid recovery when hardware failures occur.
-
-These capabilities represent the foundation - FlowFuse includes numerous additional features designed specifically for industrial environments.
+These core capabilities are just the foundation—FlowFuse includes dozens of additional features designed specifically for industrial environments.
 
 ## Setting Up FlowFuse
 
@@ -88,21 +86,23 @@ FlowFuse shows you a device configuration window with two options. The **One-Lin
 
 The **NPM Installation** method provides manual instructions for Windows, Mac, or Linux.
 
-![FlowFuse Device Configuration Window](./images/device-config-window.gif){data-zoomable}
+![FlowFuse Device Configuration Window](./images/device-configuration-window-2.gif){data-zoomable}
 *Device configuration window showing installation options for the FlowFuse Device Agent*
+
+Follow the steps given within the window, which takes less than a minute to connect your device.
 
 ### Step 3: Manage Your Device
 
 Once registered, you get complete control over your remote Node-RED instance through FlowFuse's management interface:
 
-![FlowFuse Device Management Tools](./images/instance-tool.gif){data-zoomable}
+![FlowFuse Device Management Tools](./images/ff-instance-tools.gif){data-zoomable}
 *Tools for managing Node-RED instance remotely via FlowFuse*
 
 There are even more features available at the application level and team level that you can explore. To remove infrastructure management complexity of required services such as MQTT and PostgreSQL, they are built-in and available for use.
 
 ### Step 4: Start Building
 
-To create automation flows:
+To start building flows:
 
 1. Enable **Developer Mode** from the top right
 
@@ -116,7 +116,7 @@ To create automation flows:
 
 Your automation flows now run with production reliability. Remote access works securely, and your team can collaborate while production continues running.
 
-![Developer Mode Option](./images/node-red-editor.gif){data-zoomable}
+![Developer Mode Option](./images/node-red-editor.png){data-zoomable}
 *Developer Mode Option*
 
 ## Up Next
