@@ -2,7 +2,7 @@
 navTitle: Sales Compensation Plan
 ---
 
-# FY 2025 SALES COMPENSATION PLAN** 
+# FY 2025 SALES COMPENSATION PLAN
 
 ## 1. Introduction**
 
