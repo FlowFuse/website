@@ -15,27 +15,9 @@ Installing Node-RED is straightforward. Install Node.js, run a command, and youâ
 
 <!--more-->
 
-## Local Setup
-
-Testing Node-RED locally takes minutes. First, make sure you have Node.js installed:
-
-```bash
-sudo npm install -g --unsafe-perm node-red
-node-red
-```
-
-If you are using Windows, do not start the command with sudo:
-
-```bash
-npm install -g --unsafe-perm node-red
-node-red
-```
-
-Open `http://localhost:1880` in your browser and start connecting nodes. You can quickly build flows that read sensors, control actuators, and process data. While this setup is perfect for development and small projects, a true production environment has far greater requirements.
-
 ## Production Requirements
 
-Local Node-RED works great for testing, but production is different. When your flows control PLCs and critical equipment, downtime costs thousands per minute.
+Standalone Node-RED works great for testing, but production is different. When your flows control PLCs and critical equipment, downtime costs thousands per minute.
 
 Hardware fails. Networks drop. Power cuts out. Your Node-RED instance must restart automatically, handle connectivity issues, and keep production running without manual intervention. Deploying, managing and scaling must be easy and quick in such environments.
 
