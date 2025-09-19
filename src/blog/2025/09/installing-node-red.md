@@ -112,12 +112,12 @@ To start building flows:
 2. Click **Open Editor**
 
 ![Developer Mode Option](./images/open-editor.png){data-zoomable}
-*Developer Mode Option*
+*Open Editor Option*
 
 Your automation flows now run with production reliability. Remote access works securely, and your team can collaborate while production continues running.
 
 ![Developer Mode Option](./images/node-red-editor.png){data-zoomable}
-*Developer Mode Option*
+*Node-RED Editor*
 
 ## Up Next
 
