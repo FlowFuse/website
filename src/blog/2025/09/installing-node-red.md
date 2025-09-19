@@ -47,12 +47,12 @@ Once the platform opens:
 
 1. Click on **Remote Instances** from the left sidebar
 
-![FlowFuse Platform Dashboard](./images/platform-ff.png){data-zoomable}
+![FlowFuse Platform Dashboard](./images/add-remote-instance.png){data-zoomable}
 *FlowFuse platform dashboard showing Remote Instances option*
 
 2. Click **Add Remote Instance**
 
-![Add Remote Instance Button](./images/add-remote-instance.png){data-zoomable}
+![Add Remote Instance Button](./images/platform-ff.png){data-zoomable}
 *Button to add a new remote Node-RED instance*
 
 3. Give it a name and select the device type
