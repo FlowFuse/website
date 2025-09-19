@@ -4,7 +4,7 @@ subtitle: Scale Node-RED from prototype to production with centralized managemen
 description: "Learn how to install and run Node-RED on various platforms, such as local computer, Raspberry Pi, Mac, Linux, or Cloud."
 date: 2025-09-19
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/09/images/installing-node-red.png
 keywords: "download node-red, download nodered, install nodered, install node-red, getting started with node-red"
 tags:
     - flowfuse
