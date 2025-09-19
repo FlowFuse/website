@@ -4,7 +4,7 @@ navTitle: Sales Compensation Plan
 
 # FY 2025 SALES COMPENSATION PLAN
 
-## 1. Introduction**
+## 1. Introduction
 
 The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to establish a sales incentive program that rewards the performance of eligible sales employees in return for meeting pre-established sales goals.  Specific sales territory, quotas, bonus, and commission rates are set forth in Exhibit A.
 
