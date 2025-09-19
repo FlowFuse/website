@@ -11,7 +11,7 @@ tags:
     - node-red
 ---
 
-Installing Node-RED is straightforward. install Node.js, run a command, and you’re ready for visual programming in industrial automation. The real challenge begins when it must run across production lines, connect to PLCs, and stay operational 24/7.
+Installing Node-RED is straightforward. Install Node.js, run a command, and you’re ready for visual programming in industrial automation. The real challenge begins when it must run across production lines, connect to PLCs, and stay operational 24/7.
 
 <!--more-->
 
