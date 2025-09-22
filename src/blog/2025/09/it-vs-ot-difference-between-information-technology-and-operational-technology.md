@@ -4,7 +4,7 @@ subtitle: "IT vs OT: Bridging the Divide for Smarter Manufacturing"
 description: "A clear breakdown of the difference between Information Technology (IT) and Operational Technology (OT) and why connecting them is the key to creating a more efficient, intelligent, and profitable manufacturing"
 date: 2025-09-08
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/09/images/it-vs-ot-difference-between-information-technology-and-operational-technology.png
 keywords: it vs ot, difference between it and ot, what is ot vs it, it versus ot, it vs ot definition, it vs ot meaning, difference between ot and it, what is the difference between it and ot, it vs ot systems, what is it vs ot, what's the difference between it and ot, what is difference between it and ot, what is the difference between ot and it
 tags:
   - flowfuse
@@ -79,4 +79,4 @@ The visual, drag-and-drop interface lets your engineers and technicians build in
 
 FlowFuse adds enterprise features like team collaboration, version control, and secure deployment to the Node-RED foundation, making it suitable for production manufacturing environments.
 
-**[Book a demo today](https://www.google.com/search?q=/book-demo/)** to see how FlowFuse can help connect your IT and OT systems using proven open-source technology.
+**[Book a demo today](/book-demo/)** to see how FlowFuse can help connect your IT and OT systems using proven open-source technology.

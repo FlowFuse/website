@@ -29,7 +29,7 @@ Core Tasks and Responsibilities:
 
 - Technical decisions on how the product is built or architected. 
 - A team of engineers: The PM will take the lead in decisions about the product, but not manage the people implementing it.
-- Shipping in time
+- Shipping in time.
 - Effort estimations, the Product Manager provides effort estimation when creating issues. However, the DRI for this process is the CTO.
 
 ## Skills
