@@ -20,7 +20,7 @@ Takt time is the rate at which you need to complete products to meet customer de
 
 The definition of takt time can be understood as the available production time divided by customer demand - it's the heartbeat of manufacturing. This concept originated in Germany's aircraft industry during the 1930s and became an element of lean manufacturing principles. Today, companies worldwide use takt time to create production systems.
 
-## The Takt Time Formula
+## Takt Time Formula
 
 ![Takt Time Formula](./images/takt-time-formula.png){data-zoomable}
 _Takt Time Formula_
