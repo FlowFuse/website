@@ -30,6 +30,9 @@ it down again. Get the minimal amount of work down, but no less, find the [golde
 1. Everything is a Draft: Today won’t be perfect, tomorrow will be better. Perfection is the death of progress.
 1. Decide where good is good enough; understand where excellence is our company's
 edge. Apply the [pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
+1. Innovate: Be willing to try new things, and be willing to fail. Learn from your mistakes,
+and be willing to try again. This covers innovation for new features and public-facing projects, but also
+innovation for how we do things internally, and always seeking to improve our own processes and procedures.
 
 ## 👥 Collaborative Community
 
@@ -42,6 +45,8 @@ Allow others to understand you and your decisions.
 Allow progress being made by anyone. Keep an agenda for meetings, write down decisions.
 1. Think big picture: It’s not “your” issue/bug, the whole community can have
 opinions and provide suggestions.
+1. Knowledge is Power: Share your knowledge with others. This can be through
+writing documentation, creating tutorials, or running workshops with others.
 
 ## ⛑️ Constructive Candor
 
