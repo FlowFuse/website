@@ -21,7 +21,7 @@ As AI adoption grows, developers need consistent ways to integrate models into r
 
 ### Screenshots
 
-![New MCP Nodes](./images/mcp-nodes){data-zoomable}  
+![New MCP Nodes](./images/mcp-nodes.png){data-zoomable}  
 _New MCP Nodes_
 
 The FlowFuse MCP Nodes package will be available alongside the FlowFuse **2.22.0** release. You can also install it today in the Node-RED Palette Manager from the FlowFuse catalog.
