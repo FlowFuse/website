@@ -32,8 +32,6 @@ To connect Node-RED with Firebase, you need to install the required Node-RED nod
 4. Click **Install** next to each package.
 5. After installation, the Firebase nodes will appear in your palette, ready to use in your flows.
 
-> Note: These nodes are community-contributed packages and allow Node-RED to interact with Firebase services. Ensure you have a valid Firebase project and credentials before using them.
-
 ## Step 2: Configure the Firebase Node
 
 Once the Firebase nodes are installed, you need to configure them with your Firebase project credentials.
@@ -52,7 +50,7 @@ Once the Firebase nodes are installed, you need to configure them with your Fire
    * Specify the database type (Realtime Database or Firestore) if applicable.
 6. Click **Done** to save the configuration.
 
-> Note: Keep your credentials secure. Avoid sharing the API key, email, or password publicly.
+> Note: Keep your credentials secure. Avoid exposing your API key, email, or password publicly. When sharing flows, use [environment variables](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/) to keep sensitive information safe.
 
 ## Step 3: Create a Collection
 
