@@ -42,11 +42,15 @@ checking account. Wiring instructions to be shared by the rep are found in
 
 ### Dun & Bradstreet
 
-FlowFuse's Dun (DUNS number) and Bradstreet ID is: 11-899-4742
+FlowFuse's Dun (DUNS number) and Bradstreet ID is: `11-899-4742`
 
 ### NAICS code
 
 54151 - Computer Systems Design and Related Services
+
+### SOC2 Type 2 report
+
+Our 2025, and at this time latest, SOC2 Type 2 report can be found [on our internal Google Drive](https://drive.google.com/file/d/1uBzNvSMaJXZLA24bjJmoDO8mOoUdZG4t/view?usp=sharing).
 
 ### Tax ID
 
