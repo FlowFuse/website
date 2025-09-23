@@ -222,7 +222,7 @@ Notes: Commissions will be paid on multi-year deals at the base rate according t
 New Incremental Annual Contract Value Quota of $ for Q1 2025 through Q4 2025 assigned quarterly as follows: 
 
 Q1	$  [Quota Q1]
-Q2	$  
+Q2	$  [Quota Q2]
 Q3	$  [Quota Q3]
 Q4	$
 
