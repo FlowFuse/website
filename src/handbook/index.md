@@ -33,7 +33,7 @@ shared in this handbook.
 
 [data-class]: /handbook/company/security/data-management/#data-classification
 
-## Contributing and staying up to date
+## Contributing
 
 The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook)
 and contributions can be made through pull-requests. How to contribute
