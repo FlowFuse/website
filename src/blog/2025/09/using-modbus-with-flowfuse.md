@@ -1,24 +1,26 @@
 ---
-title: "Using Modbus RTU with FlowFuse"
+title: "Modbus RTU (RS485/RS422/RS232) Communications with FlowFuse"
 subtitle: "Step-by-step guide to using Modbus RTU with FlowFuse for industrial automation."
 description: "Learn how to connect Modbus RTU devices to Node-RED with FlowFuse. This guide covers Modbus basics, serial setup, register mapping, and reading/writing data for industrial automation and IIoT."
 date: 2025-09-25
 authors: ["sumit-shinde"]
 image: 
-keywords: 
+keywords: modbus rtu, modbus 485, modbus rs485, modbus 485 rtu, modbus communications, rs232, rs485, node-red, flowfuse, industrial automation, iiot
 tags:
   - flowfuse
 ---
 
-Modbus RTU is one of the most widely used communication protocols in industrial automation. It allows you to read sensor data, monitor equipment status, and control devices through a simple master-slave architecture. This guide will walk you through everything you need to know to start reading and writing industrial data with FlowFuse (Node-RED with enterprise-level capabilities).
+Modbus RTU is one of the most widely used communication protocols in industrial automation. It allows you to read sensor data, monitor equipment status, and control devices through a simple master-slave architecture. This guide will walk you through everything you need to know to start reading and writing industrial data with FlowFuse—Node-RED with enterprise-level capabilities.
 
 <!--more-->
 
-Unlike its TCP counterpart, Modbus RTU operates over serial connections, making it extremely reliable in industrial environments where network connectivity may be unstable. The protocol has been proven in harsh conditions for decades, which explains why it is found in everything from simple temperature sensors to complex manufacturing equipment.  
+Whether you're connecting a single sensor or building a comprehensive industrial monitoring system, this step-by-step guide will show you how to leverage FlowFuse's powerful capabilities to bridge the gap between legacy industrial devices and modern data systems.  
 
 ## Understanding Modbus RTU Basics
 
-Modbus RTU operates on a **master-slave system**. FlowFuse Instance acts as the master, initiating all communication, while devices like sensors, meters, and controllers act as slaves, responding only when addressed. Each slave has a unique address from 1 to 247, with 0 reserved for broadcast messages. Communication follows a simple pattern: the master sends a request, the addressed slave responds, and the master processes the response before moving to the next device.
+Modbus RTU operates on a **master–slave system**. Unlike its TCP counterpart, it runs over serial connections (RS485/RS422/RS232), making it extremely reliable in environments where network connectivity may be unstable. The protocol has been battle-tested in harsh conditions for decades, which is why it is still used in everything from simple temperature sensors to complex PLCs.  
+
+In a FlowFuse setup, the instance acts as the master, initiating all communication. Devices such as sensors, meters, and controllers act as slaves, responding only when addressed. Each slave has a unique address from 1 to 247, with 0 reserved for broadcast messages. Communication follows a simple pattern: the master sends a request, the addressed slave responds, and the master processes the response before moving to the next device.
 
 ### Device Data Types
 
