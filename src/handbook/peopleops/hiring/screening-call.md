@@ -22,6 +22,7 @@ During this call FlowFuse should understand:
    * Timezone and any overlap information
    * Any visa requirements to work in their current location
    * If they service customers, can they travel to the full geography they serve? (Note that any roles with significant travel requirements will have specific details in the job posting.)
+   * Can travel to the US and EU with one week notice? (For events, get togethers, etc)
    * Any plans to change location in the near future
 1. Notice period, or time from offer to start
 1. How do you manage your todo list?
