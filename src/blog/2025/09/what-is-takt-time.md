@@ -56,7 +56,7 @@ The first step is to gather customer order information. FlowFuse can connect to 
 
 To **simulate customer orders** for testing, use an **Inject node** with the following JSONata expression for `msg.payload.customer_order`. Set the interval to trigger automatically:
 
-```jsonata
+```json
 $round($random() * 50 + 50)
 ```
 
@@ -68,7 +68,7 @@ Add a **Change node** to calculate available production time:
 
 * Set `msg.payload.availableTime` using this JSONata expression:
 
-```jsonata
+```json
 (8 * 60) - 60
 ```
 
@@ -83,7 +83,7 @@ Add another **Change node** to calculate takt time:
 
 * Set `msg.payload.taktTime` using this JSONata expression:
 
-```jsonata
+```json
 $round(($number(msg.payload.availableTime) / $number(msg.payload.customer_order)) * 100)/100
 ```
 
