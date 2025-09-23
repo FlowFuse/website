@@ -223,7 +223,7 @@ New Incremental Annual Contract Value Quota of $ for Q1 2025 through Q4 2025 ass
 
 Q1	$  
 Q2	$  
-Q3	$  
+Q3	$  [Quota Q3]
 Q4	$
 
 ### 10. Multi-year Bookings
