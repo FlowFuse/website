@@ -2,7 +2,7 @@
 title: "What is Takt Time? Definition, Formula and Benefits for Manufacturing"
 subtitle: "The lean manufacturing metric that aligns production pace with customer demand"
 description: "Learn what takt time is, how to calculate it, and why it's used in lean manufacturing. Use the formula to optimize production pace, reduce waste, and align operations with customer demand."
-date: 2025-09-22
+date: 2025-09-23
 keywords: takt time, takt time calculation, takt time formula, takt manufacturing solutions, calculate takt time example, customer takt time, formula of takt time, manufacturing takt time, meaning of takt time, take time lean manufacturing, takt time is, to calculate takt time
 authors: ["sumit-shinde"]
 image: /blog/2025/09/images/takt-time-flowfuse.png
@@ -48,16 +48,64 @@ Takt time provides several benefits for manufacturing operations:
 
 The concept also guides staffing decisions. If your current cycle time exceeds takt time, you need workers or process improvements. If cycle time is faster than takt time, you may have excess capacity that could be redirected elsewhere.
 
-## The Strategic Impact
+## Calculate and Visualize Takt Time with FlowFuse (Using Change Nodes)
 
-Implementing takt time thinking extends beyond the factory floor. It influences supply chain decisions, equipment purchases, and facility layout. When you know your required production rhythm, you can design systems around that beat.
+### Step 1: Collect Customer Orders Data
 
-Sales teams benefit from understanding takt time because they can make delivery promises. Quality departments use it to plan inspection schedules. Maintenance teams schedule work around takt time requirements. The organization operates with a shared understanding of production reality.
+The first step is to gather customer order information. FlowFuse can connect to almost all industrial [protocols](/node-red/protocol/) and [databases](/node-red/database/) using FlowFuse Protocols and database nodes. Additionally, it can [integrate with ERP systems](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/) to pull order data directly from your business applications.
 
-## Calculate and Visualize Takt Time with FlowFuse
+To **simulate customer orders** for testing, use an **Inject node** with the following JSONata expression for `msg.payload.customer_order`. Set the interval to trigger automatically:
 
-While the takt time formula is straightforward, monitoring it and visualizing performance against targets requires data management. FlowFuse makes this process easier with its platform that connects to various data sources and builds dashboards.
+```jsonata
+$round($random() * 50 + 50)
+```
 
-With FlowFuse, you can collect production data and customer demand, perform takt time calculation in real time, and create visual displays that keep your team aligned with customer demand. Implement the calculation using nodes such as the **Change** and **Function** nodes — drag and drop the nodes into your flow and configure their properties to compute takt time from production output and available production time. The platform integrates with manufacturing systems and does not require coding.
+This generates random customer orders between 50 and 100 units.
 
-**Ready to optimize your production planning?** [Book a demo](/book-demo/) to see how FlowFuse can help you implement takt time monitoring and visualization for your manufacturing operations.
+### Step 2: Calculate Available Production Time
+
+Add a **Change node** to calculate available production time:
+
+* Set `msg.payload.availableTime` using this JSONata expression:
+
+```jsonata
+(8 * 60) - 60
+```
+
+**Explanation:**
+
+* `8 * 60` → total shift time in minutes (8 hours)
+* `- 60` → subtract break time (1 hour)
+
+### Step 3: Calculate Takt Time
+
+Add another **Change node** to calculate takt time:
+
+* Set `msg.payload.taktTime` using this JSONata expression:
+
+```jsonata
+$round(($number(msg.payload.availableTime) / $number(msg.payload.customer_order)) * 100)/100
+```
+
+This calculates takt time in minutes per unit.
+
+### Step 4: Dashboard
+
+To visualize the takt time, use the **FlowFuse Dashboard**: [FlowFuse Dashboard](https://dashboard.flowfuse.com). Install the dashboard package via Palette: `@flowfuse/node-red-dashboard`.
+
+* Use **ui\_text** to display the current takt time.
+* For custom components, use the **Template widget**. You do not need to write Vue code; with **[FlowFuse AI](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/)**, simply describe in plain English what you want.
+
+Below is the complete example flow we built. Remember, this is just a demonstration of what is possible—you can replace the Inject node with any protocol or database nodes you want to connect, calculate takt time, and tailor the UI components to your needs.
+
+{% renderFlow 300 %}
+[{"id":"d5e580f48a9299a6","type":"inject","z":"c2c694c911f786fe","name":"Simulate Customer Order","props":[{"p":"payload.customer_order","v":"$round($random() * 50 + 50)","vt":"jsonata"}],"repeat":"5","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":400,"y":300,"wires":[["518dbc1ac72f7c21"]]},{"id":"518dbc1ac72f7c21","type":"change","z":"c2c694c911f786fe","name":"Calculate total available time","rules":[{"t":"set","p":"payload.availableTime","pt":"msg","to":"(8 * 60) - 60","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":660,"y":300,"wires":[["3d35535dbb06fc86"]]},{"id":"3d35535dbb06fc86","type":"change","z":"c2c694c911f786fe","name":"Calculate Takt Time","rules":[{"t":"set","p":"payload","pt":"msg","to":"$round(($number(msg.payload.availableTime) / $number(msg.payload.customer_order)) * 100)/100","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":910,"y":300,"wires":[["de044b9204a9b248"]]},{"id":"de044b9204a9b248","type":"ui-template","z":"c2c694c911f786fe","group":"79d59adc1e8219b7","page":"","ui":"","name":"Display: Takt Time","order":1,"width":0,"height":0,"head":"","format":"<template>\n  <v-sheet class=\"d-flex justify-center align-center led-background\" height=\"150\" elevation=\"4\" rounded>\n    <div class=\"led-display\">\n      {{ taktTime }}\n    </div>\n  </v-sheet>\n</template>\n\n<script>\n  export default {\n  data() {\n    return {\n      taktTime: this.msg?.payload ?? '00:00.0'\n    }\n  },\n  watch: {\n    msg(newMsg) {\n      if (newMsg?.payload) {\n        this.taktTime = newMsg.payload;\n      }\n    }\n  }\n}\n</script>\n\n<style scoped>\n  .led-background {\n    background: #0a0a0a;\n    /* Dark black background */\n    background-image: radial-gradient(circle, #111 1px, #0a0a0a 1px);\n    background-size: 20px 20px;\n    /* Carbon-like grid */\n  }\n\n  .led-display {\n    font-family: 'Digital-7', monospace;\n    font-size: 96px;\n    color: #0f0;\n    text-shadow:\n      0 0 5px #0f0,\n      0 0 10px #0f0,\n      0 0 20px #0f0,\n      0 0 30px #0f0;\n  }\n</style>\n\n<!-- Include Digital-7 font from CDN -->\n<link href=\"https://fonts.googleapis.com/css2?family=Orbitron&display=swap\" rel=\"stylesheet\">","storeOutMessages":true,"passthru":true,"resendOnRefresh":true,"templateScope":"local","className":"","x":1110,"y":300,"wires":[[]]},{"id":"79d59adc1e8219b7","type":"ui-group","name":"Takt Time","page":"9b1c640ccc6a665e","width":6,"height":1,"order":1,"showTitle":true,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"9b1c640ccc6a665e","type":"ui-page","name":"FlowFuse Dashboard","ui":"d44eab3a91dda8d9","path":"/","icon":"home","layout":"grid","theme":"2278e18670b606b7","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"d44eab3a91dda8d9","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"headerContent":"page","navigationStyle":"default","titleBarStyle":"default","showReconnectNotification":true,"notificationDisplayTime":1,"showDisconnectNotification":true,"allowInstall":true},{"id":"2278e18670b606b7","type":"ui-theme","name":"Default Theme","colors":{"surface":"#2e073e","primary":"#0094ce","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"density":"default","pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"da2b78557435736b","type":"global-config","env":[],"modules":{"@flowfuse/node-red-dashboard":"1.27.2"}}]
+{% endrenderFlow %}
+
+## Conclusion
+
+Takt time is essential for keeping production in sync with customer demand, minimizing waste, and making the most of available resources.
+
+FlowFuse makes it easy to connect to your hardware devices and business systems, process and transform data, calculate key production metrics like takt time, and visualize performance in real time—all without complex coding.
+
+**[Start using FlowFuse today](https://app.flowfuse.com/account/create) to track takt time, cycle time, OEE, and optimize your manufacturing operations.**
