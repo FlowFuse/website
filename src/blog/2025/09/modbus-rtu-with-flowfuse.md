@@ -51,10 +51,10 @@ Let’s start by setting up the basics before connecting Modbus RTU devices to F
 
 Before diving in, make sure you have the following ready:
 
-- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up](https://app.flowfuse.com/account/create), and you’ll have a managed Node-RED environment up and running in minutes.  
+- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up](https://app.flowfuse.com/account/create) and [create and set up a remote instance](/blog/2025/09/installing-node-red/), and you’ll have a managed Node-RED environment running in minutes. 
 - **Node-RED Modbus nodes** – Installable via the Palette Manager (`node-red-contrib-modbus`).  
 - **Modbus-enabled device** – Such as a sensor, PLC, or meter, along with its register map documentation.  
-- **Serial interface** – For example, a USB-to-RS485 converter to physically connect your Modbus devices. Connect the **A (+)** and **B (–)** terminals of the RS485 adapter to the device, add termination resistors if the line is long or has multiple devices, and note the serial port path (e.g., `/dev/ttyUSB0` on Linux or `COM3` on Windows).  
+- **Serial interface** – For example, a USB-to-RS485 converter to physically connect your Modbus devices. Connect the **A (+)** and **B (–)** terminals of the RS485 adapter to the device, add termination resistors if the line is long or has multiple devices, and note the serial port path (e.g., `/dev/ttyUSB0` on Linux or `COM1` on Windows).  
 
 ## Reading Data
 
@@ -62,12 +62,15 @@ Reading data from Modbus slaves in FlowFuse is straightforward. The process is t
 
 1. Drag the **Modbus Read** node onto the FlowFuse canvas. Double-click it to open the configuration. Enter the **Unit ID** (slave address), select the **data type** you want to read, specify the **starting address**, set the **quantity** of values to read, and define the **poll rate** (how often data should be read).
 
+  ![Modbus Read node configured to read data from a slave device.](./images/modbus-read.png){data-zoomable}
+  _Modbus Read node configured to read data from a slave device._
+
 2. Click the **+** icon next to the *Server* field to add Modbus connection details.
 
 3. In the server configuration window:
 
    * Set **Type** to *Serial*.
-   * In the **Serial Port** field, use the dropdown or search option to see all available ports (e.g., `/dev/ttyUSB0` on Linux or `COM3` on Windows). Select the port to which your Modbus device is connected.
+   * In the **Serial Port** field, use the dropdown or search option to see all available ports (e.g., `/dev/ttyUSB0` on Linux or `COM1` on Windows). Select the port to which your Modbus device is connected.
    * Configure the communication settings to match your device:
 
      * **Baud Rate**
@@ -77,35 +80,50 @@ Reading data from Modbus slaves in FlowFuse is straightforward. The process is t
 
    These values must match exactly with the Modbus device’s configuration; otherwise, the communication will fail.
 
+  ![Serial port and communication settings for the Modbus device.](./images/modbus-configuration.png){data-zoomable}
+  _Serial port and communication settings for the Modbus device._
+
 4. Connect the Modbus Read node to a **Debug** node and deploy your flow. If everything is set up correctly, you will start seeing live data from your Modbus device in the debug sidebar.
 
 ## Writing Data
 
-Reading is only half the story, Modbus RTU also lets you **write data back to devices**. This is how you control the real world: switching motors, adjusting setpoints, or toggling relays directly from your FlowFuse flow.
+Modbus RTU allows you to **write data back to devices**, enabling control of motors, relays, setpoints, and other outputs directly from FlowFuse.
 
-1. Drag the **Modbus Write** node onto the canvas.
-2. Double-click it to configure:
+Follow these steps to configure and test writing:
 
-   * Enter the **Unit ID** of the target device (must match the slave address).
-   * Select the **data type**:
+1. Drag the **Modbus Write** node onto the canvas. This node will send data to your Modbus device.
 
-     * **Coil** → ON/OFF control (motors, pumps, alarms).
-     * **Holding Register** → numeric values (setpoints, timers, configuration).
-   * Enter the **address** to which you want to write.
-3. Connect the Modbus Write node to an **Inject** node. This lets you quickly test by sending a value.
+2. Double-click the node and set:
 
-   * For Coils: send `true` or `false`.
-   * For Registers: send a number (e.g., `25` for 25 °C).
-4. Deploy the flow. Press the Inject button and watch the device respond.
+   * **Unit ID** – the slave address of your device.
+   * **Data type** – choose one of:
+
+     * *Force Single Coil* – write one digital output.
+     * *Force Multiple Coils* – write several digital outputs at once.
+     * *Preset Single Register* – write one analog/config value.
+     * *Force Multiple Registers* – write several analog values at once.
+   * **Address** – the target coil or register.
+   * **Quantity** – only for multiple writes, set the number of values you will send.
+
+   ![Writing a single coil using the Modbus Write node.](./images/write-single-coil.png){data-zoomable}
+   _Writing a single coil using the Modbus Write node._
+
+   ![Writing multiple coils using the Modbus Write node.](./images/write-multi-coils.png){data-zoomable}
+    _Writing multiple coils using the Modbus Write node._
+
+3. Connect an **Inject** node to the Modbus Write node to send values:
+
+   * **Single Coil/Register:** send a boolean (`true`/`false`) for coils or a number for registers.
+   * **Multiple Coils/Registers:** send an array corresponding to each value.
+
+   **Examples:**
+
+   * `[true, false, true]` → Coils 0, 1, 2
+   * `[25, 50, 75]` → Holding Registers 0, 1, 2
+
+4. Deploy the flow and press **Inject**. The Modbus device should update immediately.
 
 **Tip:** Use a **UI input (slider, switch, or numeric box)** from the [FlowFuse Dashboard](https://dashboard.flowfuse.com/) instead of an Inject node for real-time control via a web interface.
-
-**Example:**
-
-* Writing `true` to Coil 0 might start a pump.
-* Writing `100` to Holding Register 2 could adjust the flow rate on a PLC.
-
-This ability to *control devices remotely* is what makes Modbus and FlowFuse such a powerful combo.
 
 ## Scaling and Interpreting Values
 
@@ -128,7 +146,7 @@ return msg;
 
 This takes the raw register, divides it by 10, and gives you a clean, human-readable temperature.
 
-**Tip:** You do not need to know JavaScript — simply use the **FlowFuse AI Assistant**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse AI Assistant for Manufacturing](https://flowfuse.com/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
+**Tip:** You do not need to know JavaScript — simply use the **FlowFuse AI Assistant**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse AI Assistant for Manufacturing](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
 
 **Best Practice:** Always keep a copy of the device’s **Register Map documentation** handy. It tells you which addresses map to which variables, and how to interpret them.
 
