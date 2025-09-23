@@ -48,7 +48,7 @@ Takt time provides several benefits for manufacturing operations:
 
 The concept also guides staffing decisions. If your current cycle time exceeds takt time, you need workers or process improvements. If cycle time is faster than takt time, you may have excess capacity that could be redirected elsewhere.
 
-## Calculate and Visualize Takt Time with FlowFuse (Using Change Nodes)
+## Calculate and Visualize Takt Time with FlowFuse
 
 ### Step 1: Collect Customer Orders Data
 
@@ -91,9 +91,12 @@ This calculates takt time in minutes per unit.
 
 ### Step 4: Dashboard
 
-To visualize the takt time, use the **FlowFuse Dashboard**: [FlowFuse Dashboard](https://dashboard.flowfuse.com). Install the dashboard package via Palette: `@flowfuse/node-red-dashboard`.
+To visualize the takt time, use the **FlowFuse Dashboard**: [FlowFuse Dashboard](https://dashboard.flowfuse.com). Install the dashboard package via Palette Manager: `@flowfuse/node-red-dashboard`.
 
-* Use **ui\_text** to display the current takt time.
+![Simple takt time display dashboard built with FlowFuse](./images/takt-time-flowfuse.gif){data-zoomable}
+_Simple takt time display dashboard built with FlowFuse_
+
+* Use **ui_text** to display the current takt time.
 * For custom components, use the **Template widget**. You do not need to write Vue code; with **[FlowFuse AI](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/)**, simply describe in plain English what you want.
 
 Below is the complete example flow we built. Remember, this is just a demonstration of what is possible—you can replace the Inject node with any protocol or database nodes you want to connect, calculate takt time, and tailor the UI components to your needs.
@@ -108,4 +111,4 @@ Takt time is essential for keeping production in sync with customer demand, mini
 
 FlowFuse makes it easy to connect to your hardware devices and business systems, process and transform data, calculate key production metrics like takt time, and visualize performance in real time—all without complex coding.
 
-**[Start using FlowFuse today](https://app.flowfuse.com/account/create) to track takt time, cycle time, OEE, and optimize your manufacturing operations.**
+*[Start using FlowFuse today](https://app.flowfuse.com/account/create) to track takt time, cycle time, OEE, and optimize your manufacturing operations.*
