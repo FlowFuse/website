@@ -180,7 +180,7 @@ I acknowledge that I have read, understand, and agree to this FY 2025 SALES COMP
 
 ### 1. Effective Date
 
-This Plan is effective through  and is subject to the terms and conditions in the “FlowFuse FY 2025 Sales Compensation Plan”.
+This Plan is effective through [start date] and [end date] is subject to the terms and conditions in the “FlowFuse FY 2025 Sales Compensation Plan”.
 
 ### 2. Job Title/Role
 
