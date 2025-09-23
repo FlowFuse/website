@@ -1,6 +1,6 @@
 ---
-title: "What is Takt Time? Definition, Formula and Benefits for Manufacturing"
-subtitle: "The lean manufacturing metric that aligns production pace with customer demand"
+title: "What is Takt Time: Formula, Calculation, and Benefits with FlowFuse"
+subtitle: "Align your production pace with customer demand using FlowFuse and lean manufacturing principles"
 description: "Learn what takt time is, how to calculate it, and why it's used in lean manufacturing. Use the formula to optimize production pace, reduce waste, and align operations with customer demand."
 date: 2025-09-23
 keywords: takt time, takt time calculation, takt time formula, takt manufacturing solutions, calculate takt time example, customer takt time, formula of takt time, manufacturing takt time, meaning of takt time, take time lean manufacturing, takt time is, to calculate takt time
