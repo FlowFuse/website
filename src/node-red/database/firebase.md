@@ -1,71 +1,66 @@
 ---
 eleventyNavigation:
-  key: Firebase
+  key: Cloud Firestore
   parent: Database
 meta:
-  title: Using Firebase with Node-RED
-  description: Learn how to integrate Firebase with Node-RED to build real-time event-driven applications. This guide covers Firebase setup, reading, writing, and listening to Firestore data using Node-RED.
-  keywords: node-red, flowfuse, integration, firebase, google firebase
+  title: Using Cloud Firestore with Node-RED
+  description: Learn how to integrate Cloud Firestore with Node-RED to build real-time event-driven applications. This guide covers Firestore setup, reading, writing, and listening to data using Node-RED.
+  keywords: node-red, flowfuse, integration, firebase, cloud firestore, google firebase
 ---
 
-Firebase is a powerful cloud platform by Google that provides real-time databases, authentication, and a variety of backend services. When integrated with Node-RED, Firebase allows developers to build event-driven flows that interact with data in real time, enabling applications such as IoT dashboards, notifications, and synchronized state management across devices.
+# {{meta.title}}
 
-This guide covers the essential steps to connect Node-RED with Firebase, explaining how to read, write, and listen to data changes.
+Cloud Firestore is a NoSQL document database that's part of Google's Firebase platform. It provides real-time synchronization, offline support, and scalable backend services. When integrated with Node-RED, Firestore enables developers to build event-driven flows that interact with data in real time, making it ideal for IoT dashboards, notifications, and synchronized state management across devices.
+
+Firebase offers two database options: Realtime Database** (RTDB) and Cloud Firestore. This guide focuses specifically on Cloud Firestore, which is Firebase's newer, more scalable document database with richer queries, better performance, and multi-regional support.
 
 ## Prerequisites
 
 Before you start, ensure you have the following:
 
 - **Node-RED instance**: Ensure you have a running Node-RED instance. The quickest and easiest way to set up Node-RED is via FlowFuse. [Sign up](https://app.flowforge.com/account/create/) to get started. Once you have a FlowFuse instance, you can easily manage, deploy, scale, and collaborate with your team on flows securely.
-- **Firebase account**: You will need a Firebase account with the necessary configuration details to create projects and access the Realtime Database or Firestore.
+- **Firebase account**: You will need a Firebase account with the necessary configuration details to create projects and access Cloud Firestore.
 
-## Step 1: Install the Firebase Node-RED Package
+## Step 1: Install the Cloud Firestore Node-RED Package
 
-To connect Node-RED with Firebase, you need to install the required Node-RED nodes.
+To connect Node-RED with Cloud Firestore, you need to install the required Node-RED node.
 
 1. Open your Node-RED editor.
 2. Go to **Menu → Manage palette → Install**.
-3. In the search box, enter the Firebase-related nodes you want to install:
+3. In the search box, enter: `@gogovega/node-red-contrib-cloud-firestore`
+4. Click **Install** next to the package.
+5. After installation, restart your Node-RED instance to ensure the configuration node loads properly.
+6. The Firestore nodes will appear in your palette, ready to use in your flows.
 
-   * `@gogovega/node-red-contrib-cloud-firestore` – for connecting with Firestore.
-   * `@gogovega/firebase-config-node` – to configure Firebase credentials in Node-RED.
-4. Click **Install** next to each package.
-5. After installation, the Firebase nodes will appear in your palette, ready to use in your flows.
+## Step 2: Configure the Firestore Node
 
-## Step 2: Configure the Firebase Node
+Once the Firestore nodes are installed, you need to configure them with your Firebase project credentials.
 
-Once the Firebase nodes are installed, you need to configure them with your Firebase project credentials.
-
-1. Drag a Firebase node (e.g., Firestore node) onto the Node-RED canvas.
+1. Drag a Firestore node (e.g., Firestore Out node) onto the Node-RED canvas.
 2. Double-click the node to open its configuration panel.
-3. Click the **+** icon next to the **Database** field to add a new Firebase configuration.
+3. Click the **+** icon next to the **Database** field to add a new configuration.
 4. In the **Authentication** tab:
-
    * Select **Email/Password** as the authentication type.
-   * Enter your Firebase **API key** (from your project’s web app settings).
-   * Enter the **email** and **password** of a Firebase user with access to the database.
+   * Enter your Firebase **API key** (from your project's web app settings).
+   * Enter the **email** and **password** of a Firebase user with access to Firestore.
 5. In the **Database** section:
-
    * Enter your **Firebase Project ID**.
-   * Specify the database type (Realtime Database or Firestore) if applicable.
 6. Click **Done** to save the configuration.
 
-> Note: Keep your credentials secure. Avoid exposing your API key, email, or password publicly. When sharing flows, use [environment variables](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/) to keep sensitive information safe.
+> **Security Note**: Keep your credentials secure. Avoid exposing your API key, email, or password publicly. When sharing flows, use [environment variables](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/) to keep sensitive information safe.
 
-## Step 3: Create a Collection
+## Step 3: Create a Document
 
-Before sending data from Node-RED, you need a collection (for Firestore) or a path (for Realtime Database) where the data will be stored.
+Before sending data from Node-RED, you need a collection where the data will be stored. Firestore organizes data in documents within collections.
 
 1. Drag a **Firestore Out** node onto the Node-RED canvas.
 2. Double-click the node to open its configuration panel.
-3. Select the **Firebase configuration** you created in Step 2.
+3. Select the **Firestore configuration** you created in Step 2.
 4. Set the **Operation** to `Set / Create Document`.
 5. Enter the **Collection** name and **Document ID**:
-
    * You can enter them as static strings, e.g., `devices` and `raspberry_pi_5_01`.
    * Or you can set them dynamically using `msg.collection` and `msg.document`.
-
-6. Drag an **Inject** node onto the canvas and connect it to the Firestore node. Map the payload or data you want to store in the **Message Payload** field of the Firestore node. For example, set `msg.payload` to:
+6. Drag an **Inject** node onto the canvas and connect it to the Firestore node. Configure the payload data you want to store. For example, set `msg.payload` to:
 
 ```json
 {
@@ -79,9 +74,9 @@ Before sending data from Node-RED, you need a collection (for Firestore) or a pa
 7. Click **Done** to save the configuration.
 8. Deploy the flow.
 
-Once Done, to test Click the **Inject** button on the Inject node to send the data to Firebase. You should see the Firestore node update its status:
+To test, click the **Inject** button on the Inject node to send the data to Firestore. You should see the Firestore node update its status:
 
-* **Querying…** – Node-RED is sending the data to Firebase.
+* **Querying…** – Node-RED is sending the data to Firestore.
 * **Done** – Data has been successfully written to your collection.
 
 ## Step 4: Updating a Document
@@ -93,7 +88,6 @@ Updating an existing document in Firestore lets you change one or more fields wi
 3. Select the **Firebase configuration** you created earlier.
 4. Set the **Operation** to `Update Document`.
 5. Specify the **Collection** name and the **Document ID** you want to update.
-
    * Example: `devices` and `raspberry_pi_5_01`.
 6. Connect an **Inject** node to provide the updated data. For example, set `msg.payload` to:
 
@@ -107,7 +101,7 @@ Updating an existing document in Firestore lets you change one or more fields wi
 7. Deploy the flow.
 8. Click the **Inject** button. The Firestore node will update the specified fields in the document.
 
-> Note: Fields not included in `msg.payload` will remain unchanged.
+> **Note**: Fields not included in `msg.payload` will remain unchanged.
 
 ## Step 5: Deleting a Document
 
@@ -118,46 +112,34 @@ To remove a document from a Firestore collection:
 3. Select your Firebase configuration.
 4. Set the **Operation** to `Delete Document`.
 5. Enter the **Collection** and **Document ID** to delete.
-
    * Example: `devices` and `raspberry_pi_5_01`.
 6. Connect an **Inject** node to trigger the deletion.
 7. Deploy the flow and click the **Inject** button.
 
 Once executed, the specified document will be permanently removed from the collection.
 
-## Step 6: Reading Data from Firebase
+## Step 6: Reading Data from Firestore
 
-The **Firestore Get** node allows Node-RED to read data from a Firestore collection or document and receive updates in real time. This is useful for dashboards, alerts, or synchronized state management across devices.
+The **Firestore Get** node allows Node-RED to read data from a Firestore collection or document. This is useful for dashboards, data processing, or one-time data retrieval.
 
 1. Drag a **Firestore Get** node onto the Node-RED canvas.
-
 2. Double-click the node to open its configuration panel.
-
 3. Select the **Firebase configuration** you created in Step 2.
-
 4. Choose the **Type**:
-
    * **Collection** – Reads all documents within a single collection.
-
    * **Collection Group** – Reads documents across multiple collections with the same name.
-
      > If **Collection** or **Collection Group** is selected, specify the name in the **Collection / Group** field.
-
    * **Document** – Reads a single document.
-
      > If **Document** is selected, specify the **Collection** and **Document ID**. You can also enter them together in a single field using the format `collectionName/documentName`.
-
-5. To sort or filter your data, check the option **“Do you want to sort and order your data?”**. Then configure the query constraints, such as:
-
+5. To sort or filter your data, check the option **"Do you want to sort and order your data?"**. Then configure the query constraints, such as:
    * `limitToFirst` or `limitToLast` – Limit the number of results returned.
    * `startAt` / `startAfter` – Start the query at a specific value.
    * `endAt` / `endBefore` – End the query at a specific value.
    * `orderBy` – Sort documents by a specific field.
    * `where` – Apply filters to select specific documents.
-
 6. Connect a Debug node to the Firestore node to monitor the output and deploy the flow.
 
-## Step 7: Listening from Firebase
+## Step 7: Listening for Real-time Changes
 
 Unlike the **Firestore Get** node, which retrieves data only once, the **Firestore In** node establishes a real-time listener. This means Node-RED will continuously receive updates whenever documents are **added**, **modified**, or **removed** in the specified collection, collection group, or document.
 
@@ -165,31 +147,26 @@ This capability is particularly useful for building live dashboards, sending not
 
 1. Drag a **Firestore In** node onto the Node-RED canvas.
 2. Double-click the node to open its configuration panel.
-3. Select the **Firebase configuration** you created in Step 2.
+3. Select the **Firebase configuration** you created in Step 2.
 4. Choose the **Type**:
-
    * **Collection** – Listens to all documents within a single collection.
    * **Collection Group** – Listens to documents across multiple collections with the same name.
-
      > If **Collection** or **Collection Group** is selected, specify the name in the **Collection / Group** field.
    * **Document** – Listens to changes in a single document.
-
      > If **Document** is selected, specify the **Collection** and **Document ID**. You can also enter them together in a single field using the format `collectionName/documentName`.
-
-5. When **Collection** or **Collection Group** is selected, choose the type of changes you want to listen for with **filter** feild:
-
+5. When **Collection** or **Collection Group** is selected, choose the type of changes you want to listen for with the **filter** field:
    * **Added documents**
    * **Modified documents**
    * **Removed documents**
-6. To refine your listener, enable **“Do you want to sort and order your data?”** and configure query constraints such as:
-
+6. To refine your listener, enable **"Do you want to sort and order your data?"** and configure query constraints such as:
    * `limitToFirst` or `limitToLast` – Limit the number of results returned.
    * `startAt` / `startAfter` – Start the query at a specific value.
    * `endAt` / `endBefore` – End the query at a specific value.
    * `orderBy` – Sort documents by a specific field.
    * `where` – Apply filters to select specific documents.
-
 7. Connect a Debug node to the Firestore node to monitor the output and deploy the flow.
+
+## Example Flow
 
 The flow below demonstrates all the concepts covered in this guide. You can explore and modify it as needed.
 
