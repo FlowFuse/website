@@ -4,7 +4,7 @@ subtitle: "AI Co-Pilot for node editing, FlowFuse Broker schema autodetection, I
 description: "AI Co-Pilot for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 date: 2025-09-25
 authors: ["greg-stoutenburg"]
-image: /blog/2025/09/images/2.22-release.png
+image: blog/2025/09/images/2.22-release.png
 tags:
    - flowfuse
    - news
@@ -17,7 +17,7 @@ FlowFuse 2.22 provides more powerful development by bringing the FlowFuse Assist
 
 ## AI Co-Pilot for Node Editing
 ![Gif showing AI Assistant in Function node](./images/inline-assist-function.gif)
-_[FlowFuse Assistant at work]_
+_FlowFuse Assistant at work_
 
 We've enhanced the capabilities of the FlowFuse AI Assistant, which now provides automatic suggestions to draft and edit your code that extends to Tables nodes, Dashboard Template nodes (ui-template), and Function nodes. You can now simply start typing, and the FlowFuse Assistant will provide code for you based on your context, making the FlowFuse Assistant your AI co-pilot in Node-RED.
 
@@ -46,6 +46,7 @@ Which charts would you like to see added first? [Check out these examples of wha
 
 ## Updated Snapshots UI
 ![Image of updated Snapshots user interface](./images/snapshots-ui.png)
+_Manage Snapshots in the new panel_
 
 Snapshots are now much easier to manage and interact with.
 
