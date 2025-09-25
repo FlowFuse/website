@@ -23,7 +23,7 @@ Below are some sample questions that can be used.
       3. Collaborative Community  
       4. Constructive candor  
       5. Customer Empathy  
-3. What do you need from your manager?  
+3. If you take one element from your past managers to shape your ideal manager -- What properties do you pick from your past managers?  
    1. Look for:  
       1. Results  
       2. Iterative Improvement  

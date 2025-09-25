@@ -143,6 +143,10 @@ To make it easier to find your way around in Slack, we have some rules for namin
 
 All team members are advised to put prefix type channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
 
+There are also channels for specific subsets of people. For example, there is `#people-managers` for people managers and `#us-hr` HR-specific topics to US-team members.
+
+Channel creators should include a description of the channel so that all employees are able to browse channels and select the ones that are relevant to their work.
+
 ### GitHub
 
 All code at FlowFuse is stored in Git, and GitHub hosts our repositories. As
