@@ -89,6 +89,7 @@ Until now, all user permissions in FlowFuse are set at the team level, where eac
 
 Now, permissions can be set at the application level. If you're a team running many different applications and need to organize who can access what, you are able to do that for each individual appication, significantly increasing the security and management abilities of FlowFuse.
 
+This feature will be available in the next few days - keep an eye on our [ChangeLog](https://flowfuse.com/changelog/) for updates on when its available.
 ## AI and Machine Vision
 
 Be on the lookout for some very cool applications of AI to machine vision! 
