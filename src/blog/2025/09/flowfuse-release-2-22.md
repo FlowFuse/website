@@ -42,7 +42,7 @@ We've enabled the use of Apache eCharts. It used to take 8.3 seconds to render 1
 
 While the primary work for Apache eCharts has been to enable the addition of new chart types, we did add one new type of chart: categorical line charts.
 
-Which charts would you like to see added first? [Check out these examples of what is now possible](https://echarts.apache.org/examples/en/index.html), and reach out on GitHub! 
+Which charts would you like to see added first? [Check out these examples of what is now possible](https://echarts.apache.org/examples/en/index.html), and reach out on [GitHub](https://github.com/flowfuse/node-red-dashboard)!
 
 
 ## [Updated Snapshots UI]
