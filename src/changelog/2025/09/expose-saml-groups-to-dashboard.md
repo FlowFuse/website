@@ -36,4 +36,4 @@ The new key `SSOGroups` includes the list of Groups passed to the SSO configurat
 
 More details about how to create mutli-user Node-RED Dashboards can be found [here](https://dashboard.flowfuse.com/user/multi-tenancy)
 
-To enable this in your SSO configuration on FlowFuse Cloud please contact support.
+SSO is available to Enterprise teams on FlowFuse Cloud. Contact support if you would like this feature to be enable for your team.
