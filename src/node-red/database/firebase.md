@@ -85,7 +85,7 @@ Updating an existing document in Firestore lets you change one or more fields wi
 
 1. Drag a **Firestore Out** node onto the Node-RED canvas.
 2. Double-click the node to open its configuration panel.
-3. Select the **Firebase configuration** you created earlier.
+3. Select the **Firestore configuration** you created earlier.
 4. Set the **Operation** to `Update Document`.
 5. Specify the **Collection** name and the **Document ID** you want to update.
    * Example: `devices` and `raspberry_pi_5_01`.
@@ -109,7 +109,7 @@ To remove a document from a Firestore collection:
 
 1. Drag another **Firestore Out** node onto the Node-RED canvas.
 2. Double-click the node to open its configuration panel.
-3. Select your Firebase configuration.
+3. Select your Firestore configuration.
 4. Set the **Operation** to `Delete Document`.
 5. Enter the **Collection** and **Document ID** to delete.
    * Example: `devices` and `raspberry_pi_5_01`.
@@ -124,7 +124,7 @@ The **Firestore Get** node allows Node-RED to read data from a Firestore collect
 
 1. Drag a **Firestore Get** node onto the Node-RED canvas.
 2. Double-click the node to open its configuration panel.
-3. Select the **Firebase configuration** you created in Step 2.
+3. Select the **Firestore configuration** you created in Step 2.
 4. Choose the **Type**:
    * **Collection** – Reads all documents within a single collection.
    * **Collection Group** – Reads documents across multiple collections with the same name.
@@ -147,7 +147,7 @@ This capability is particularly useful for building live dashboards, sending not
 
 1. Drag a **Firestore In** node onto the Node-RED canvas.
 2. Double-click the node to open its configuration panel.
-3. Select the **Firebase configuration** you created in Step 2.
+3. Select the **Firestore configuration** you created in Step 2.
 4. Choose the **Type**:
    * **Collection** – Listens to all documents within a single collection.
    * **Collection Group** – Listens to documents across multiple collections with the same name.
