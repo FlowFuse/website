@@ -148,7 +148,8 @@ explicit about these conditions.
 
 Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
 Equity in the company is offered to some roles, the CEO has access to [the calculator](https://docs.google.com/spreadsheets/d/1M5zN9S4LoMOhz6cubj1VXY0trvKPMFXxCb4_7otQDnA)
-determining how many options to offer.
+determining how many options to offer. 
+If by any circumstances (i.e. after negotiation the offer has changed) the new offer email can be personalized according to the negotiations with the candidate and/or recruiter and approved by the CEO. 
 
 ## After an offer is accepted
 
