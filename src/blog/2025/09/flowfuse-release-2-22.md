@@ -56,11 +56,9 @@ While the features available for managing Snapshots remain, this update brings t
 
 ## SAML Group Assertions for Dashboard Development
 
-Managing Dashboard permissions when building flows just got easier.
+Managing Dashboard permissions when building flows just got easier for Enterprise teams using SSO.
 
-Our SSO users have permissions set by their SAML provider, but until now those permissions weren't surfaced in the Node-RED editor when building Dashboard flows. Instead, users had to manually set permissions while building flows.
-
-Now, SAML group assertions are surfaced in the _client.user object in Dashboard flows. The Dashboard developer experience is less complicated and more secure with this change.
+We've added an new option so that a users SSO Group memberships can be included in the `user` object Dashboard flows receive when a user is logged in. This makes it much easier to build custom permissions into your FlowFuse Dashboard applications, giving you far more flexibility.
 
 ## [Remote Instance Snapshot Summaries]
 
