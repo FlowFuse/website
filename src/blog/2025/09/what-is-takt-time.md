@@ -3,7 +3,7 @@ title: "What is Takt Time: Formula, Calculation, and Benefits with FlowFuse"
 subtitle: "Align your production pace with customer demand using FlowFuse and lean manufacturing principles"
 description: "Learn what takt time is, how to calculate it, and why it's used in lean manufacturing. Use the formula to optimize production pace, reduce waste, and align operations with customer demand."
 date: 2025-09-25
-keywords: takt time, takt time calculation, takt time formula, takt manufacturing solutions, calculate takt time example, customer takt time, formula of takt time, manufacturing takt time, meaning of takt time, take time lean manufacturing, takt time is, to calculate takt time
+keywords: takt time, takt time calculation, takt time formula, takt manufacturing solutions, calculate takt time example, customer takt time, formula of takt time, manufacturing takt time, meaning of takt time, takt time lean manufacturing, takt time is, to calculate takt time
 authors: ["sumit-shinde"]
 image: /blog/2025/09/images/takt-time-flowfuse.png
 tags:
@@ -64,7 +64,7 @@ The foundation of accurate takt time calculation is reliable data. FlowFuse supp
 
 **Set up simulated order data:**
 
-For demonstration, we will simulate customer orders using Inject node. In a real implementation, this would be replaced with actual data connections to your systems.
+For demonstration purpose, we will simulate customer orders using Inject node. In a real implementation, this would be replaced with actual data connections to your systems.
 
 1. Add an **Inject** node.
 2. Configure the payload with this JSONata expression:
