@@ -66,7 +66,7 @@
         "eleventy-plugin-toc": "^1.1.5",
         "js-yaml": "^4.1.0",
         "markdown-it-attrs": "^4.1.6",
-        "netlify-cli": "^22.4.0",
+        "netlify-cli": "^23.7.3",
         "xml-js": "^1.6.11"
     }
 }
