@@ -140,6 +140,8 @@ etc.) Justify why these channels are most appropriate for this campaign
 approximate) Identify what human resources would be needed Specify if external
 tools, services, or vendors are required
 
+**f. Campaigns performance tracking** All campaigns will be trackes using the [Campaigns feature on Hubspot (internal)](https://app-eu1.hubspot.com/marketing/26586079/campaigns/views/all). 
+
 **Submission Process**
 
 Complete the proposal template with all required elements above. Then submit
