@@ -54,17 +54,17 @@ The Snapshots user interface now provides a centralized place to manage your sna
 
 While the features available for managing Snapshots remain, this update brings those features to the surface in a much cleaner and more intuitive way.
 
-## SAML Group Assertions for Dashboard Development
-
-Managing Dashboard permissions when building flows just got easier for Enterprise teams using SSO.
-
-We've added an new option so that a users SSO Group memberships can be included in the `user` object Dashboard flows receive when a user is logged in. This makes it much easier to build custom permissions into your FlowFuse Dashboard applications, giving you far more flexibility.
-
 ## [Remote Instance Snapshot Summaries]
 
 Speaking of Snapshots: until this release, our automatic snapshot summary feature only worked with hosted instances. As of today, you can now get AI-generated summaries of snapshots of your remote instances as well.
 
 This is especially important for users with large remote instance deployments, and provides an important step forward in enabling FlowFuse users to manage and scale their deployments.
+
+## SAML Group Assertions for Dashboard Development
+
+Managing Dashboard permissions when building flows just got easier for Enterprise teams using SSO.
+
+We've added an new option so that a users SSO Group memberships can be included in the `user` object Dashboard flows receive when a user is logged in. This makes it much easier to build custom permissions into your FlowFuse Dashboard applications, giving you far more flexibility.
 
 ## [Device Agent Installer handles Multiple Remote Instances]
 
