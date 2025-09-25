@@ -52,7 +52,7 @@ The concept also guides staffing decisions. If your current cycle time exceeds t
 
 ## Implementing Takt Time Monitoring with FlowFuse
 
-While understanding the theory behind takt time is important, putting it into practice requires the right tools and approach. FlowFuse provides an industrial automation platform that connects seamlessly to your existing systems—whether that's PLCs, databases, or ERP software—to automatically calculate and monitor takt time in real-time.
+While understanding the theory behind takt time is important, putting it into practice requires the right tools and approach. FlowFuse provides an industrial automation platform that connects seamlessly to your existing systems—whether that's PLCs, databases, or ERP software—to automatically calculate and monitor takt time in real-time. Let’s see how it works, but before we begin, make sure you have a FlowFuse instance running. You can [create an account here](https://app.flowfuse.com/account/create) and get it set up quickly.
 
 Instead of manually calculating takt time on spreadsheets or relying on static reports, you can build a dynamic monitoring system that updates continuously as customer orders and production conditions change. Follow the steps below to set up automated takt time tracking using FlowFuse.
 
@@ -64,7 +64,7 @@ The foundation of accurate takt time calculation is reliable data. FlowFuse supp
 
 **Set up simulated order data:**
 
-For demonstration purposes, we will simulate customer orders using inject node. In a real implementation, this would be replaced with actual data connections to your systems.
+For demonstration, we will simulate customer orders using Inject node. In a real implementation, this would be replaced with actual data connections to your systems.
 
 1. Add an **Inject** node.
 2. Configure the payload with this JSONata expression:
@@ -104,12 +104,12 @@ This ensures takt time updates dynamically with each new order and produces clea
 
 ### Step 4: Create Real-Time Dashboards
 
-Data is most valuable when it is easy to understand on the shop floor. FlowFuse’s dashboard let you build real-time displays.
+Data is most valuable when operators can interpret it instantly on the shop floor. FlowFuse’s dashboard lets you create real-time displays using the same intuitive drag-and-drop interface.
 
 1. Install the FlowFuse Dashboard package via the Palette Manager (`@flowfuse/node-red-dashboard`).
 2. For basic displays, use text widgets to show current takt time values. For more sophisticated interfaces, the Template widget allows you to create custom components. With [FlowFuse AI](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/), you can describe your desired interface in plain English and let the AI generate the appropriate code.
 3. Connect the output of the Inject node to the input of the Change node that calculates available production time. Next, connect the output of this Change node to the input of the Change node that calculates takt time. Finally, connect the output of the takt time Change node to the input of the UI Template node.
-4. Next, Deploy the flow and open the dashboard to see real-time takt time updates.
+4. Next, deploy the flow and open the dashboard to see real-time takt time updates.
 
 ![Simple takt time display dashboard built with FlowFuse](./images/takt-time-flowfuse.gif){data-zoomable}
 *Real-time takt time monitoring dashboard in FlowFuse*
@@ -128,4 +128,4 @@ FlowFuse simplifies the implementation of takt time monitoring by enabling seaml
 
 Whether you're tracking takt time, cycle time, OEE, or other critical manufacturing metrics, FlowFuse provides the tools needed to optimize your operations and maintain alignment between production capacity and customer demand.
 
-*[Start using FlowFuse today](https://app.flowfuse.com/account/create) to implement takt time monitoring and optimize your manufacturing operations.*
+*[Book your demo](/book-demo/) today to see how FlowFuse can help you track production metrics and build industrial applications to improve efficiency and reduce waste*
