@@ -12,7 +12,7 @@ meta:
 
 Cloud Firestore is a NoSQL document database that's part of Google's Firebase platform. It provides real-time synchronization, offline support, and scalable backend services. When integrated with Node-RED, Firestore enables developers to build event-driven flows that interact with data in real time, making it ideal for IoT dashboards, notifications, and synchronized state management across devices.
 
-Firebase offers two database options: Realtime Database** (RTDB) and Cloud Firestore. This guide focuses specifically on Cloud Firestore, which is Firebase's newer, more scalable document database with richer queries, better performance, and multi-regional support.
+Firebase offers two database options: Realtime Database (RTDB) and Cloud Firestore. This guide focuses specifically on Cloud Firestore, which is Firebase's newer, more scalable document database with richer queries, better performance, and multi-regional support.
 
 ## Prerequisites
 
