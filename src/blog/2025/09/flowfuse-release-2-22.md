@@ -4,7 +4,7 @@ subtitle: "AI Co-Pilot for node editing, FlowFuse Broker schema autodetection, I
 description: "AI Co-Pilot for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 date: 2025-09-25
 authors: ["greg-stoutenburg"]
-image: ./images/2.22-release.png
+image: /blog/2025/09/images/2.22-release.png
 tags:
    - flowfuse
    - news
