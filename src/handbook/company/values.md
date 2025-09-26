@@ -30,7 +30,7 @@ it down again. Get the minimal amount of work down, but no less, find the [golde
 1. Everything is a Draft: Today won’t be perfect, tomorrow will be better. Perfection is the death of progress.
 1. Decide where good is good enough; understand where excellence is our company's
 edge. Apply the [pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
-1. Innovate: Be willing to try new things, and be willing to fail. Learn from your mistakes,
+1. Innovate: Be willing to try new things that could help the company, and be willing to fail. Learn from your mistakes,
 and be willing to try again. This covers innovation for new features and public-facing projects, but also
 innovation for how we do things internally, and always seeking to improve our own processes and procedures.
 
