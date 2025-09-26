@@ -4,7 +4,7 @@ subtitle: "Step-by-step guide to using Modbus RTU with FlowFuse for industrial a
 description: "Learn how to connect Modbus RTU devices to Node-RED with FlowFuse. This guide covers Modbus basics, serial setup, register mapping, and reading/writing data for industrial automation and IIoT."
 date: 2025-09-25
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/09/images/modbus-rtu.png
 keywords: modbus rtu, modbus 485, modbus rs485, modbus 485 rtu, modbus communications, rs232, rs485, node-red, flowfuse, industrial automation, iiot
 tags:
   - flowfuse
