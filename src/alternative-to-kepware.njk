@@ -143,17 +143,17 @@ cta:
                     <tbody>
                         {% for item in table %}
                         <tr class="even:bg-indigo-50/50">
-                            <th scope="row" class="px-6 py-4 font-medium">
+                            <th scope="row" class="px-6 py-4 font-medium text-right">
                                 {{ item.feature }}
                             </th>
                             <td class="px-6 py-4">
-                                <div class="flex gap-3 items-center justify-center">
+                                <div class="flex gap-3 items-center">
                                     <div class="w-6 h-6 sm:w-8 sm:h-8 shrink-0 text-indigo-600">{% include "components/icons/check-circle.svg" %}</div>
                                     {{ item.flowFuse }}
                                 </div>
                             </td>
                             <td class="px-6 py-4">
-                                <div class="flex gap-3 items-center justify-center">
+                                <div class="flex gap-3 items-center">
                                     <div class="w-6 h-6 sm:w-8 sm:h-8 shrink-0 text-red-600">{% include "components/icons/x-circle.svg" %}</div>
                                     {{ item.Kepware }}
                                 </div>
