@@ -64,8 +64,12 @@ This workflow will ensure any opened issues are automatically added to the [Prod
 
 #### Release Publish
 
-For any repositories that contain modules to be published to npm, they should also
+For any repositories that contain modules to be published to public npm, they should also
 have a copy of [`.github/workflows/release-publish.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/release-publish.yml).
+
+For modules being published to the Certified Nodes npm registry this `release-publish.yml` file should be edited to point to the `https://registry.flowfuse.com` registry and to make use of the correct token.
+
+An example can be in the [flowfuse/nr-mcp-server-nodes](https://github.com/Flowfuse/nr-mcp-server-nodes/blob/main/.github/workflose/release-publish.yml) project. The `CERTIFIED_NODES_PUBLISH_TOKEN` should be added to the projects Secrets and can be found in 1Password.
 
 This workflow will publish to npm whenever the repository is tagged with a `vX.Y.Z` format
 tag.
@@ -112,7 +116,7 @@ and then the [Synchronize Labels](https://github.com/FlowFuse/.github/actions/wo
 *Note:* we are migrating to the `@flowfuse` scope of packages. See [this issue](https://github.com/FlowFuse/admin/issues/211)
 for details. This section of the handbook will be updated as part of the migration.
 
-- All packages should be scoped to `@flowforge`
+- npm packages should be scoped as either `@flowfuse/` (pubilc) `@flowfuse-nodes/` (restricted) or `@flowfuse-certified-nodes/` (certified nodes)
 
 Node-RED plugins should start with `nr-` e.g.
  - @flowforge/nr-storage
@@ -161,6 +165,14 @@ The `package.json` must contain the following keys
       "node": ">=16.x"
     }
     ```
+
+Packages with `@flowfuse-nodes/` or `@flowfuse-certified-nodes/` scopes should also contain the `registry` section.
+- publishConfig
+   ```
+   "publishConfig": {
+      "registry": "https://registry.flowfuse.com"
+   }
+   ```
 
 ### Package Version Numbering
 
