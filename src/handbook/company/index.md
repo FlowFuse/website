@@ -54,4 +54,5 @@ Our 2025, and at this time latest, SOC2 Type 2 report can be found [on our inter
 
 ### Tax ID
 
-FlowFuse's tax ID is stored in 1Password in the Employee folder as a Secure Note.
+FlowFuse's tax ID (Employer Identification Number or EIN)
+Ask the CEO for Federal EIN 
