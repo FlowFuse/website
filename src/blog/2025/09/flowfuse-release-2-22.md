@@ -68,7 +68,7 @@ We've added an new option so that a users SSO Group memberships can be included 
 
 ## Device Agent Installer handles Multiple Remote Instances
 
-We're continuing to work on making the process for installing the Device Agent as simple, easy, fast, and reliable as possible. With this release, the Device Agent Installer can install the Device Agent on multiple remote instances within the same operating system is now possible, by allowing you to install the Device Agent in a non-default directory and specify a non-default port. In addition, clearer installation summaries, documentation links, and improved installer output have improved the overall usability of the installer.
+We're continuing to work on making the process for installing the Device Agent as simple, easy, fast, and reliable as possible. With this release, the Device Agent Installer can install multiple Device Agents on a single remote device, by allowing you to install the Device Agent in a non-default directory and specify a non-default port. In addition, clearer installation summaries, documentation links, and improved installer output have improved the overall usability of the installer.
 
 ## Dashboard Fixes
 
