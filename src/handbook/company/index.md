@@ -54,5 +54,5 @@ Our 2025, and at this time latest, SOC2 Type 2 report can be found [on our inter
 
 ### Tax ID
 
-FlowFuse's tax ID (Employer Identification Number or EIN)
+FlowFuse's tax ID (Employer Identification Number or EIN) is in the Finance vault in 1Password. Ask the CEO for our Federal EIN.
 Ask the CEO for Federal EIN 
