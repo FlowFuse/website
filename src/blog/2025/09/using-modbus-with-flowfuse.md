@@ -10,7 +10,7 @@ tags:
   - flowfuse
 ---
 
-Modbus RTU is one of the most widely used communication protocols in industrial automation. It allows you to read sensor data, monitor equipment status, and control devices through a simple master-slave architecture. This guide will walk you through everything you need to know to start reading and writing industrial data with FlowFuse—Node-RED with enterprise-level capabilities.
+Modbus RTU is one of the most widely used communication protocols in industrial automation. It allows you to read sensor data, monitor equipment status, and control devices through a simple master-slave architecture. This guide will walk you through everything you need to know to start reading and writing industrial data with FlowFuse (a platform built around Node-RED with enterprise-level capabilities).
 
 <!--more-->
 
