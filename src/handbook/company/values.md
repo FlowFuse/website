@@ -46,7 +46,7 @@ Allow progress being made by anyone. Keep an agenda for meetings, write down dec
 1. Think big picture: It’s not “your” issue/bug, the whole community can have
 opinions and provide suggestions.
 1. Knowledge is Power: Share your knowledge with others. This can be through
-writing documentation, creating tutorials, or running workshops with others.
+writing documentation, handbook entries, creating tutorials, or running workshops with others.
 
 ## ⛑️ Constructive Candor
 
