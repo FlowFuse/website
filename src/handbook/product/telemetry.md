@@ -37,17 +37,9 @@ An important metric for product adoption is week-on-week growth. This is a simpl
 
 We have a [week-on-week growth calculator](https://product-metrics.flowfuse.cloud/dashboard/growth-calculator) as part of the Product Metrics Dashboard that you can use.
 
-For product lines that are mature, growth should be assessed as:
-
-- 6+% week-on-week is exceptional
-- 4-6% week-on-week is strong
-- 2-4% week-on-week is sustainable
-- 1-2% is okay but needs improvement
-- 1% or less is not acceptable
-
 ### Example Growth
 
-To give some examples, if we assume a metric to be at "100" as of January 1st, after 12 months, with the following, sustained, week-on-week growths, the metric would be as follows:
+To give some context, if we assume a metric to be at "100" as of January 1st, after 12 months, with the following, sustained, week-on-week growths, the metric would be as follows:
 
 - 10%: 14,204 (~142x)
 - 7%: 3,372 (~34x)
