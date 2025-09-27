@@ -1,0 +1,1404 @@
+[
+    {
+        "id": "e09c0c19df41c454",
+        "type": "tab",
+        "label": "Andon Alert System",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9be7d4cfe3852028",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Station Overview",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f3963d42a535ccfa",
+            "bbb3bf2fb18e0beb",
+            "a3cc6f2c0b023661"
+        ],
+        "x": 34,
+        "y": 99,
+        "w": 492,
+        "h": 122
+    },
+    {
+        "id": "e4c45e8aa307ff37",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "ANDON Event Details",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6324b08d4991ffc2",
+            "0ea0f62b6804d399",
+            "364ff65ba4d1f6b2",
+            "31e7b00e2d39a972",
+            "743c129c06133e4c",
+            "376478530d9186ac",
+            "b2162f50b1ef5868",
+            "461f10b0bae330ac",
+            "f0509cd709aa6bda",
+            "6bebbc618135a318",
+            "5f17fada84caa8bd",
+            "5ad46f62f9d0d8ab",
+            "4f34b097ece65f30",
+            "00dfd19edd3ad849",
+            "6619f9fa9a991d74",
+            "db6e58c74e1fadf4",
+            "b463009e9afbf547",
+            "bb3034953f9e9260",
+            "c9765aee28b70500",
+            "f941cc4e9a9e2eb6",
+            "88a559734d553c40",
+            "f44699ae524a8f52"
+        ],
+        "x": 34,
+        "y": 599,
+        "w": 932,
+        "h": 402
+    },
+    {
+        "id": "0171a3e5c855325d",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Log Events",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "05b35da45abec8b1",
+            "012488ceb5195712",
+            "537417446e6bacd4",
+            "59fa8457a4dd21c5",
+            "75a8121da94ab983",
+            "d9568ab8edefb599",
+            "d796c8403917b403",
+            "ee4901619db4daa8",
+            "a11e43c33fb0a5d6",
+            "a676eb8c10d8ecd7",
+            "429d524b7add1662",
+            "8aa0f354affd1aca",
+            "e3b432b8db70b87e",
+            "31da052cc9cf3e01",
+            "71e68695c13fd1e1",
+            "9cc86a918241bdb8",
+            "2b285d32eeed0566"
+        ],
+        "x": 34,
+        "y": 259,
+        "w": 932,
+        "h": 302
+    },
+    {
+        "id": "7fbffdbfc19264a0",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Notification",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "90a767ed66993a7e",
+            "c41382aa948332d7",
+            "0436f8858b9b25b1",
+            "99cb67b7aa4aff14",
+            "861f6f5c6d9e52aa"
+        ],
+        "x": 34,
+        "y": 1039,
+        "w": 932,
+        "h": 122
+    },
+    {
+        "id": "6bebbc618135a318",
+        "type": "junction",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "x": 440,
+        "y": 920,
+        "wires": [
+            [
+                "31e7b00e2d39a972",
+                "f44699ae524a8f52"
+            ]
+        ]
+    },
+    {
+        "id": "88a559734d553c40",
+        "type": "junction",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "x": 400,
+        "y": 960,
+        "wires": [
+            [
+                "6bebbc618135a318"
+            ]
+        ]
+    },
+    {
+        "id": "afea04ce8735c0a6",
+        "type": "ui-base",
+        "name": "UI Name",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ]
+    },
+    {
+        "id": "6d8bff5f3fded5c2",
+        "type": "ui-theme",
+        "name": "FF Theme",
+        "colors": {
+            "surface": "#1f2937",
+            "primary": "#8ce2e7",
+            "bgPage": "#4b5563",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    },
+    {
+        "id": "f6b6a4e75084de2b",
+        "type": "ui-page",
+        "name": "Andon Operator Terminal",
+        "ui": "afea04ce8735c0a6",
+        "path": "/",
+        "icon": "",
+        "layout": "grid",
+        "theme": "6d8bff5f3fded5c2",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "6b96e8c6c1b15215",
+        "type": "ui-group",
+        "name": "Andon Event",
+        "page": "f6b6a4e75084de2b",
+        "width": "12",
+        "height": "5",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ce5222c5901ff88e",
+        "type": "ui-group",
+        "name": "Station Status",
+        "page": "f6b6a4e75084de2b",
+        "width": "6",
+        "height": "7",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "79fd0cb6fda055c3",
+        "type": "ui-group",
+        "name": "Log Event",
+        "page": "f6b6a4e75084de2b",
+        "width": "6",
+        "height": "7",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f3963d42a535ccfa",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "group": "ce5222c5901ff88e",
+        "page": "",
+        "ui": "",
+        "name": "Display Workstation Status",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div class=\"workstation\">\n    <!-- Display the image -->\n    <v-img\n    class=\"station-image\"\n      :src=\"msg?.image || 'https://upload.wikimedia.org/wikipedia/commons/5/57/Tesla_auto_bots.jpg'\"\n      height=\"380px\"\n      cover\n    ></v-img>\n\n    <!-- Display the name of the workstation -->\n    <v-row class=\"mt-4 justify-center\">\n      <v-col class=\"text-center\">\n        <h1 class=\"title-text\">Workstation 1</h1>\n      </v-col>\n    </v-row>\n\n    <!-- Display the status -->\n    <v-row class=\"mt-4 justify-center\">\n      <v-col class=\"text-center\">\n        <h3 class=\"subtitle-text\">Status</h3>\n        <div v-if=\"msg?.status === 'Running'\" class=\"status-box running\">\n          <strong>RUNNING</strong>\n        </div>\n        <div v-else-if=\"msg?.status === 'Stopped'\" class=\"status-box stopped\">\n          <strong>DOWN</strong>\n        </div>\n        <div v-else class=\"status-box unknown\">\n          <strong>UNKNOWN</strong>\n        </div>\n      </v-col>\n    </v-row>\n  </div>\n</template>\n\n<script>\nexport default {\n  name: 'WorkstationStatus',\n  props: {\n    msg: {\n      type: Object,\n      required: true\n    }\n  }\n}\n</script>\n\n<style scoped>\n\n.workstation .station-image {\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: 50% 50%;\n}\n\n.title-text {\n  font-size: 32px;\n  font-weight: bold;\n}\n\n.subtitle-text {\n  font-size: 20px;\n  margin-bottom: 10px;\n}\n\n.status-box {\n  display: inline-block;\n  padding: 10px 20px;\n  font-size: 18px;\n  border-radius: 6px;\n  color: #fff;\n  margin-top: 10px;\n}\n\n.running {\n  background-color: #4caf50; /* green */\n}\n\n.stopped {\n  background-color: #f44336; /* red */\n}\n\n.unknown {\n  background-color: #9e9e9e; /* grey */\n}\n</style>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "overflow-hidden",
+        "x": 380,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "05b35da45abec8b1",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "group": "79fd0cb6fda055c3",
+        "name": "Headline",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "# Log Event\nLog critical events by simply filling out this form.",
+        "className": "overflow-hidden",
+        "x": 120,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbb3bf2fb18e0beb",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "name": "State Changed",
+        "links": [
+            "429d524b7add1662"
+        ],
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "f3963d42a535ccfa"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "52c2d87ec8091311",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "name": "LICENSE",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6324b08d4991ffc2",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Event Logged",
+        "links": [
+            "a11e43c33fb0a5d6"
+        ],
+        "x": 150,
+        "y": 700,
+        "wires": [
+            [
+                "4f34b097ece65f30"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "0ea0f62b6804d399",
+        "type": "ui-button",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "name": "",
+        "label": "Clear Event",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "center-elements",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 330,
+        "y": 920,
+        "wires": [
+            [
+                "6bebbc618135a318"
+            ]
+        ]
+    },
+    {
+        "id": "364ff65ba4d1f6b2",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "page": "",
+        "ui": "",
+        "name": "Headline",
+        "order": 1,
+        "width": "12",
+        "height": "2",
+        "head": "",
+        "format": "<!-- Display the name of the workstation -->\n<v-row class=\"mt-5 justify-center event-header\">\n  <v-col class=\"text-center\">\n    <h1 class=\"title-text\">Andon Event</h1>\n  </v-col>\n</v-row>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "overflow-hidden",
+        "x": 120,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "31e7b00e2d39a972",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Set Status to Running",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "Running",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "loggedEvent",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 920,
+        "wires": [
+            [
+                "743c129c06133e4c"
+            ]
+        ]
+    },
+    {
+        "id": "743c129c06133e4c",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Event Cleared",
+        "mode": "link",
+        "links": [
+            "a3cc6f2c0b023661",
+            "b463009e9afbf547",
+            "2b285d32eeed0566"
+        ],
+        "x": 840,
+        "y": 920,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "name": "README",
+        "info": "# Andon Operator Terminal\n\nThe Andon Operator Terminal is designed to be at the start of an Andon process, \nallowing end-users to report any issues with the cell to the station supervisor.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a group on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 240,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "012488ceb5195712",
+        "type": "ui-radio-group",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "group": "79fd0cb6fda055c3",
+        "name": "",
+        "label": "Select Reason:",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Material",
+                "value": "Material",
+                "type": "str"
+            },
+            {
+                "label": "Quality",
+                "value": "Quality",
+                "type": "str"
+            },
+            {
+                "label": "Maintenance",
+                "value": "Maintenance",
+                "type": "str"
+            },
+            {
+                "label": "Other",
+                "value": "Other",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 560,
+        "y": 400,
+        "wires": [
+            [
+                "59fa8457a4dd21c5"
+            ]
+        ]
+    },
+    {
+        "id": "537417446e6bacd4",
+        "type": "ui-text-input",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "group": "79fd0cb6fda055c3",
+        "name": "",
+        "label": "Comment",
+        "order": 4,
+        "width": "8",
+        "height": "3",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "textarea",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 540,
+        "y": 440,
+        "wires": [
+            [
+                "75a8121da94ab983"
+            ]
+        ]
+    },
+    {
+        "id": "59fa8457a4dd21c5",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "loggedEvent.reason",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75a8121da94ab983",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "loggedEvent.comment",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d9568ab8edefb599",
+        "type": "ui-text-input",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "group": "79fd0cb6fda055c3",
+        "name": "",
+        "label": "Your Name",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": "",
+        "passthru": false,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "d796c8403917b403"
+            ]
+        ]
+    },
+    {
+        "id": "d796c8403917b403",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "loggedEvent.name",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee4901619db4daa8",
+        "type": "ui-button",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "group": "79fd0cb6fda055c3",
+        "name": "",
+        "label": "Log Event",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "9cc86a918241bdb8"
+            ]
+        ]
+    },
+    {
+        "id": "376478530d9186ac",
+        "type": "ui-table",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "name": "Events Table",
+        "label": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "click",
+        "columns": [
+            {
+                "title": "ID",
+                "key": "id",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Timestamp",
+                "key": "timestamp",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Responsible Department",
+                "key": "reason",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Created By",
+                "key": "name",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Comment",
+                "key": "comment",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 830,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b2162f50b1ef5868",
+        "type": "function",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Processed Event Data",
+        "func": "const loggedEvent = flow.get(\"loggedEvent\");\n\nconst transformedEvent = {\n    id: Math.random().toString(36).substr(2, 9),\n    timestamp: new Date().toISOString(),\n    reason: loggedEvent.reason,\n    name: loggedEvent.name,\n    comment: loggedEvent.comment\n};\n\nmsg.payload = transformedEvent;\nmsg.ui_update = {\n    class: \"\"\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 700,
+        "wires": [
+            [
+                "376478530d9186ac",
+                "c9765aee28b70500"
+            ]
+        ]
+    },
+    {
+        "id": "461f10b0bae330ac",
+        "type": "ui-text",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "group": "6b96e8c6c1b15215",
+        "order": 2,
+        "width": "12",
+        "height": "3",
+        "name": "",
+        "label": "No Active Events",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "21",
+        "color": "#4dcb6d",
+        "wrapText": false,
+        "className": "warning-text",
+        "x": 850,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "a11e43c33fb0a5d6",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Event Logged",
+        "mode": "link",
+        "links": [
+            "6324b08d4991ffc2",
+            "6619f9fa9a991d74"
+        ],
+        "x": 560,
+        "y": 520,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "a676eb8c10d8ecd7",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Set Status to Stopped",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "Stopped",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 480,
+        "wires": [
+            [
+                "429d524b7add1662"
+            ]
+        ]
+    },
+    {
+        "id": "429d524b7add1662",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "State Changed (stop)",
+        "mode": "link",
+        "links": [
+            "8aa0f354affd1aca",
+            "bbb3bf2fb18e0beb"
+        ],
+        "x": 840,
+        "y": 480,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "8aa0f354affd1aca",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "State Changed (stop)",
+        "links": [
+            "429d524b7add1662"
+        ],
+        "x": 180,
+        "y": 380,
+        "wires": [
+            [
+                "e3b432b8db70b87e"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "e3b432b8db70b87e",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "clear",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [
+                "012488ceb5195712",
+                "d9568ab8edefb599",
+                "537417446e6bacd4"
+            ]
+        ]
+    },
+    {
+        "id": "f0509cd709aa6bda",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "initialise",
+        "props": [
+            {
+                "p": "status",
+                "v": "Running",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "str",
+        "x": 160,
+        "y": 960,
+        "wires": [
+            [
+                "88a559734d553c40"
+            ]
+        ]
+    },
+    {
+        "id": "5f17fada84caa8bd",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Hide Cleared",
+        "mode": "link",
+        "links": [
+            "5ad46f62f9d0d8ab",
+            "f941cc4e9a9e2eb6"
+        ],
+        "x": 830,
+        "y": 960,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "5ad46f62f9d0d8ab",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Hide Cleared",
+        "links": [
+            "5f17fada84caa8bd"
+        ],
+        "x": 550,
+        "y": 740,
+        "wires": [
+            [
+                "376478530d9186ac"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "f941cc4e9a9e2eb6",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Clear Logged",
+        "links": [
+            "00dfd19edd3ad849",
+            "5f17fada84caa8bd"
+        ],
+        "x": 150,
+        "y": 920,
+        "wires": [
+            [
+                "0ea0f62b6804d399"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "4f34b097ece65f30",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "unhide",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ui_update.class",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 700,
+        "wires": [
+            [
+                "b2162f50b1ef5868",
+                "00dfd19edd3ad849"
+            ]
+        ]
+    },
+    {
+        "id": "00dfd19edd3ad849",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Event Logged",
+        "mode": "link",
+        "links": [
+            "f941cc4e9a9e2eb6"
+        ],
+        "x": 375,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "6619f9fa9a991d74",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Event Logged",
+        "links": [
+            "a11e43c33fb0a5d6"
+        ],
+        "x": 150,
+        "y": 800,
+        "wires": [
+            [
+                "db6e58c74e1fadf4"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "db6e58c74e1fadf4",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "hide",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ui_update.class",
+                "pt": "msg",
+                "to": "d-none",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 800,
+        "wires": [
+            [
+                "461f10b0bae330ac"
+            ]
+        ]
+    },
+    {
+        "id": "b463009e9afbf547",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Event Cleared",
+        "links": [
+            "743c129c06133e4c"
+        ],
+        "x": 150,
+        "y": 840,
+        "wires": [
+            [
+                "bb3034953f9e9260"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "bb3034953f9e9260",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "unhide",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ui_update.class",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 840,
+        "wires": [
+            [
+                "461f10b0bae330ac"
+            ]
+        ]
+    },
+    {
+        "id": "31da052cc9cf3e01",
+        "type": "switch",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "",
+        "property": "loggedEvent.comment",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 335,
+        "y": 500,
+        "wires": [
+            [
+                "71e68695c13fd1e1"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "71e68695c13fd1e1",
+        "type": "switch",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "",
+        "property": "loggedEvent.reason",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 395,
+        "y": 500,
+        "wires": [
+            [
+                "a11e43c33fb0a5d6",
+                "a676eb8c10d8ecd7"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "9cc86a918241bdb8",
+        "type": "switch",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "",
+        "property": "loggedEvent.name",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 275,
+        "y": 500,
+        "wires": [
+            [
+                "31da052cc9cf3e01"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "c9765aee28b70500",
+        "type": "link out",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "Notification",
+        "mode": "link",
+        "links": [
+            "861f6f5c6d9e52aa"
+        ],
+        "x": 830,
+        "y": 700,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "a3cc6f2c0b023661",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "9be7d4cfe3852028",
+        "name": "Event Cleared",
+        "links": [
+            "743c129c06133e4c"
+        ],
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "f3963d42a535ccfa"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "f44699ae524a8f52",
+        "type": "change",
+        "z": "e09c0c19df41c454",
+        "g": "e4c45e8aa307ff37",
+        "name": "hide",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ui_update.class",
+                "pt": "msg",
+                "to": "d-none",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 960,
+        "wires": [
+            [
+                "5f17fada84caa8bd"
+            ]
+        ]
+    },
+    {
+        "id": "77cea7f6cf18ad8e",
+        "type": "ui-template",
+        "z": "e09c0c19df41c454",
+        "group": "",
+        "page": "f6b6a4e75084de2b",
+        "ui": "",
+        "name": "CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "div.v-card {\n    height: 100%;\n}\n\n.warning-text{\n    margin-left: auto;\n    margin-right: auto;\n}\n\ndiv.v-card.overflow-hidden {\n    overflow: hidden;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 450,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "90a767ed66993a7e",
+        "type": "ui-notification",
+        "z": "e09c0c19df41c454",
+        "g": "7fbffdbfc19264a0",
+        "ui": "afea04ce8735c0a6",
+        "position": "center center",
+        "colorDefault": false,
+        "color": "#000000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 0,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "",
+        "raw": true,
+        "className": "",
+        "name": "",
+        "x": 850,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "c41382aa948332d7",
+        "type": "function",
+        "z": "e09c0c19df41c454",
+        "g": "7fbffdbfc19264a0",
+        "name": "Change notification",
+        "func": "if (msg.payload.reason == \"Quality\"){\n    msg.payload = \"Notification has been sent to the Quality department.\";\n} else if (msg.payload.reason == \"Material\") {\n    msg.payload = \"Notification has been sent to the Material department.\";\n} else if (msg.payload.reason == \"Maintenance\") {\n    msg.payload = \"Notification has been sent to the Maintenance department.\";\n} else {\n    return null\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1120,
+        "wires": [
+            [
+                "90a767ed66993a7e"
+            ]
+        ]
+    },
+    {
+        "id": "0436f8858b9b25b1",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "7fbffdbfc19264a0",
+        "name": " Inform the department additionally, for example, via email or SMS.",
+        "info": "",
+        "x": 710,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "99cb67b7aa4aff14",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "7fbffdbfc19264a0",
+        "name": "In addition ... ",
+        "info": "In addition, you can send the event to a database or message broker.",
+        "x": 290,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "861f6f5c6d9e52aa",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "7fbffdbfc19264a0",
+        "name": "Notification",
+        "links": [
+            "c9765aee28b70500"
+        ],
+        "x": 120,
+        "y": 1120,
+        "wires": [
+            [
+                "c41382aa948332d7"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "2b285d32eeed0566",
+        "type": "link in",
+        "z": "e09c0c19df41c454",
+        "g": "0171a3e5c855325d",
+        "name": "Event Cleared",
+        "links": [
+            "743c129c06133e4c"
+        ],
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "e3b432b8db70b87e"
+            ]
+        ],
+        "l": true
+    }
+]
