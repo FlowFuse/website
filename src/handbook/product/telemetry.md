@@ -41,6 +41,7 @@ We have a [week-on-week growth calculator](https://product-metrics.flowfuse.clou
 
 To give some context, if we assume a metric to be at "100" as of January 1st, after 12 months, with the following, sustained, week-on-week growths, the metric would be as follows:
 
+20%: 1,310,463 (~1310x)
 - 10%: 14,204 (~142x)
 - 7%: 3,372 (~34x)
 - 6%: 2,070 (~20x)
