@@ -152,6 +152,6 @@ as evidenced by a PO or signed quote, is the sole determinant.
 1. Check if a new deal is automatically generated under the correct terms and closing date.
 1. Add the following to the deal: 
 - Hosting Environment
--  Contract Start Date
--  Company address
--  Renewal Date
+- Contract Start Date
+- Company address
+- Renewal Date
