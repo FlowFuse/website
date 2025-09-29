@@ -8,7 +8,7 @@ hubspot:
     formId: 
 story:
     brand: Arch Systems
-    url: https://https://archsys.io/
+    url: https://archsys.io/
     logo: /images/stories/logos/arch-systems-logo.png
     quote: FlowFuse’s enterprise features complement our broader platform strategy, helping us scale automation and streamline deployments across complex manufacturing environments. The ability to edit once and deploy everywhere has added real efficiency to how we manage integrations.
     challenge: Automate live production data from multiple MES systems at scale.
