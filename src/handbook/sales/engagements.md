@@ -149,7 +149,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
 1. If Professional Services are included, inform the PS team of deal.
 1. Add customer to onboarding stage in the CSM tracking document.
 1. Move the deal to `Closed Won` stage.
-1. Check if a new deal is automatically generated under the correct terms and closing date.
+1. Check if a new renewal deal is automatically generated under the correct terms and closing date.
 1. Add the following to the deal: 
 - Hosting Environment
 - Contract Start Date
