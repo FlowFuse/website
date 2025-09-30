@@ -260,7 +260,7 @@ mutation DeactivateDevice($id: ID!) {
 
 *Soft deletes allow you to retain historical device data for audits and compliance.*
 
-## Advanced Techniques for Production Use
+## Advanced Techniques
 
 ### Custom Headers for Authentication and Metadata
 
