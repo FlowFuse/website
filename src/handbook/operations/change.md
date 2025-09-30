@@ -39,7 +39,6 @@ If a new repository is required within our GitHub organisation, a `New Repositor
 
 # Onboarding/Offboarding
 
-When bringing a new employee into the company, or saying goodbye to an existing one, the appropriate `Onboarding` or `Offboarding` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new/choose)
+When bringing a new employee into the company, or saying goodbye to an existing one, the appropriate `Onboarding` or `Offboarding` issue should be created in the [admin repository](https://github.com/FlowFuse/admin/issues/new/choose).
 
 More details around Onboarding is available in the [Hiring and Onboarding](/handbook/peopleops/hiring/#onboarding) section of the handbook.
-

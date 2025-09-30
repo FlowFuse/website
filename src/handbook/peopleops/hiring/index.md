@@ -10,6 +10,8 @@ When hiring a new role, the process is generally as follows:
 * Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
 * Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
 
+For information about working with external recruiters, see [Working with Recruiters](/handbook/peopleops/hiring/recruiters/).
+
 ## Greenhouse
 
 ### Opening a Job
@@ -157,6 +159,7 @@ date for a new employee should be at least 7 working days out. When a
 [conditional offer](#extending-an-offer) has been accepted you should immediately:
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
+1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
 1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening). Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. (The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.) 
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review. 
@@ -194,6 +197,7 @@ Additionally, your manager will assign tasks for you to begin working on during 
 As part of your onboarding, you'll be assigned an onboarding buddy who is there to help make you successful. 
 The onboarding buddy should be a person outside of your team. This helps ensure we're building a culture across the company.
 You should reach out to your onboarding buddy regularly in your first 90 days.
+
 
 ## Greenhouse
 
