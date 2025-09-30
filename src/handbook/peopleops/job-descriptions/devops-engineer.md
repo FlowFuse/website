@@ -30,7 +30,7 @@ The DevOps Engineer skill set includes:
 
 * **Cloud Infrastructure Expertise**: 4-6 years of hands-on experience with AWS services including EC2, EKS, RDS, S3, CloudFront, and IAM. Strong understanding of cloud architecture patterns and best practices.
 * **Kubernetes Proficiency**: Experience with Kubernetes API, container orchestration, and managing containerized applications in production environments.
-* **Node.js & JavaScript**: Solid experience with Node.js development and JavaScript ecosystem, enabling effective collaboration with our engineering teams.
+* **Node.JS & JavaScript**: Solid experience with Node.JS development and JavaScript ecosystem, enabling effective collaboration with our engineering teams.
 * **CI/CD & Automation**: Proven experience building and maintaining CI/CD pipelines using tools like GitHub Actions, Jenkins, or similar platforms.
 * **Infrastructure as Code**: Experience with Terraform, CloudFormation, or similar IaC tools for managing cloud infrastructure.
 * **Monitoring & Observability**: Experience implementing monitoring solutions using tools like Prometheus, Grafana, ELK stack, or similar observability platforms.
