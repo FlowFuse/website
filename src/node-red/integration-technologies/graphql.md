@@ -77,10 +77,9 @@ Let's create a practical example using a public GraphQL API to fetch country inf
 
 **Step-by-Step Flow Creation:**
 
-1. Add an Inject node to trigger the query.
-2. Set the Inject node payload to `{}` and choose "Inject once after 0.1 seconds."
-3. Configure the GraphQL node with the endpoint `https://countries.trevorblades.com`.
-4. Use the following query in the GraphQL node:
+1. Drag an **Inject** node onto the canvas to trigger the query.
+2. Drag a **GraphQL** node onto the canvas and configure it with the endpoint `https://countries.trevorblades.com`.
+3. Use the following query in the GraphQL node:
 
    ```graphql
    query GetCountries {
@@ -92,9 +91,9 @@ Let's create a practical example using a public GraphQL API to fetch country inf
      }
    }
    ```
-5. Add a Debug node to view the results.
-6. Set the Debug node to display `msg.payload.graphql`.
-7. Deploy the flow and check the debug panel for output.
+4. Drag a **Debug** node onto the canvas and set it to display `msg.payload`.
+5. **Connect the Inject node to the GraphQL node, and then connect the GraphQL node to the Debug node.**
+6. Deploy the flow and click the **Inject** button. Check the **Debug** panel for the output.
 
 The debug panel will display an array of country objects, each containing exactly the fields you requested. This demonstrates GraphQL's precision in data fetching.
 
@@ -126,7 +125,7 @@ msg.payload = {
 
 *When to use: Simple queries with one or two variables that don't need type checking.*
 
-### Method 2: GraphQL Variables (Recommended)
+### Method 2: GraphQL Variables
 
 For production applications, GraphQL variables provide better security and maintainability:
 
@@ -186,7 +185,7 @@ msg.variables = {
 return msg;
 ```
 
-## Real-World Example: Complete Device Management System
+## Example: Complete Device Management System
 
 Here's how you might structure a comprehensive **device management** in GraphQL:
 
@@ -304,21 +303,3 @@ query GetDeviceProfile($deviceId: ID!) {
 ```
 
 *Here, `DeviceBasicInfo` is reused inside `DeviceOperationalInfo`, so you can easily expand or maintain your schema without duplicating fields.*
-
-### Working with Subscriptions (Real-time Data)
-
-In manufacturing environments, it’s critical to react the moment a device changes state—whether it goes offline, reports an error, or completes a task. GraphQL subscriptions provide that real-time stream of updates.
-
-```graphql
-subscription DeviceStatusUpdates {
-  deviceStatusChanged {
-    id
-    name
-    location
-    lastSeenStatus
-    timestamp
-  }
-}
-```
-
-*With subscriptions, your Node-RED flow can instantly respond to events like downtime, status changes, or operational alerts—enabling proactive monitoring instead of manual checks.*
