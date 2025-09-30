@@ -7,7 +7,7 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-The DevOps Engineer at FlowFuse plays a critical role in building and maintaining the infrastructure that powers FlowFuse, ensuring reliability, scalability, and security for our customers' industrial automation and IIoT solutions. Additionally, a DevOps Engineer at FlowFuse should always be practicing our [Iterative Improvement](../../../company/values.md#iterative-improvement) value, seeking areas for automation and refinement in our own internal practices and processes. 
+The DevOps Engineer at FlowFuse plays a critical role in building and maintaining the infrastructure that powers FlowFuse, ensuring reliability, scalability, and security for our customers' industrial automation and IIoT solutions. Additionally, a DevOps Engineer at FlowFuse should always be practicing our [Iterative Improvement](../../company/values.md#iterative-improvement) value, seeking areas for automation and refinement in our own internal practices and processes. 
 
 This role combines deep technical expertise, with a customer-focused mindset, to ensure reliable infrastructure and automation, as well as establishing a close relationship and collaboration with our engineering teams to create robust, automated systems that enable our engineering teams to deliver value quickly and reliably.
 
