@@ -39,7 +39,6 @@ The DevOps Engineer skill set includes:
 
 ### Nice to Have
 
-* **Observability Tools**: Experience deploying and managing observability tools like DataDog, Sentry, or similar APM and Monitoring solutions.
 * **Database Management**: Experience with PostgreSQL, MySQL, or other database systems including backup, recovery, and performance optimization.
 * **Security Best Practices**: Knowledge of security frameworks, vulnerability management, and compliance requirements (SOC 2, ISO 27001).
 * **Multi-cloud Experience**: Experience with other cloud providers (Azure, GCP) or hybrid cloud environments.
