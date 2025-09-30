@@ -38,8 +38,9 @@ value empathy, courtesy, and respect for each other.
 1. [Information wants to be free](https://en.wikipedia.org/wiki/Information_wants_to_be_free):
 Store information in public places by default: our Handbook and GitHub issues.
 Allow others to understand you and your decisions.
-1. <a name="writethingsdown">Write things down</a>: information stuck in calls or private conversations is lost.
-Allow progress being made by anyone. Keep an agenda for meetings, write down decisions.
+1. <a name="knowledgeispower">Knowledge is Power</a>: Share your knowledge with others. This can be through
+writing documentation, handbook entries, creating tutorials, keeping a meeting agenda,
+or running workshops with others.
 1. <a name="thinkbigpicture">Think big picture</a>: It's not "your" issue/bug, the whole community can have
 opinions and provide suggestions.
 
