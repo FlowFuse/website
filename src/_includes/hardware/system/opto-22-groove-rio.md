@@ -20,5 +20,5 @@ e.g.
 
 ```
 /bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)" && \
-./flowfuse-device-agent-installer -o aloud-swing-prevent -u http://localhost:3000 --port 1881
+./flowfuse-device-agent-installer -o aloud-swing-prevent -u https://app.flowfuse.com --port 1881
 ```
