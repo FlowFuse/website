@@ -10,6 +10,8 @@ When hiring a new role, the process is generally as follows:
 * Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
 * Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
 
+For information about working with external recruiters, see [Working with Recruiters](/handbook/peopleops/hiring/recruiters/).
+
 ## Greenhouse
 
 ### Opening a Job

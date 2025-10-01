@@ -1,9 +1,9 @@
 ---
 eleventyNavigation:
-  key: Cloud Firestore
+  key: Firebase
   parent: Database
 meta:
-  title: Using Cloud Firestore with Node-RED
+  title: Using Firebase with Node-RED
   description: Learn how to integrate Cloud Firestore with Node-RED to build real-time event-driven applications. This guide covers Firestore setup, reading, writing, and listening to data using Node-RED.
   keywords: node-red, flowfuse, integration, firebase, cloud firestore, google firebase
 ---
