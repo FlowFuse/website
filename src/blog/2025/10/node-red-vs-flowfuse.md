@@ -36,7 +36,7 @@ That question exposes the limitations of standalone Node-RED:
 
 You need to deploy to 50 sites across three continents without manual setup at each location. Five engineers need to work on improvements without conflicts. You need alerts when any instance goes down because downtime stops production. Your security team requires SSO integration, role-based access control, and audit trails. You need to push updates to all sites at once, not travel to each location over weeks. When someone deploys a breaking change on Friday afternoon, you need to roll it back in seconds.
 
-This is where Node-RED ends and FlowFuse begins.
+That question highlights the limitations of standalone Node-RED:
 
 **Node-RED gives you the tools to build. FlowFuse provides the infrastructure to deploy, manage, and scale what you've built.**
 
