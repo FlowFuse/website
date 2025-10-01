@@ -7,19 +7,19 @@ image: /images/webinars/simplifying-opc-ua.jpg
 date: 2025-09-30
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: 
+video: U4PYmsWTya4
 hosts: ["klaus-landsdorf"]
 hubspot:
     formId: de06fa19-3096-4776-ad11-557b13f43e54
-    downloadFormId: 
+    downloadFormId: eaf2abf2-96b8-4eab-9165-aa36efd1cf9b
 ---
 
 Fragmented data architectures, incompatible protocols, and complex security requirements create major challenges for modern industrial systems. OPC UA has become a reliable standard for connecting devices, ensuring data integrity, and creating flexible architectures that both human operators and AI systems can rely on.
 
 <!--more-->
-In this hands-on workshop, we'll explore the technical complexities of enterprise OPC UA deployment and demonstrate practical approaches using Node-RED, leveraging FlowFuse’s features to help scale and manage these deployments effectively, and specialized B2B packages. Join us and learn how to construct OPC UA information models, implement certificate-based authentication, and build architect robust data flow management systems.
+Explore the technical complexities of enterprise OPC UA deployment and see practical approaches using Node-RED, leveraging FlowFuse’s features to help scale and manage these deployments effectively, with specialized B2B packages. Learn how to construct OPC UA information models, implement certificate-based authentication, and build architect robust data flow management systems.
 
-Expect to see practical demonstrations, including connecting machines to dashboards and integrating MQTT for bridging OT and IT domains.
+See practical demonstrations, including connecting machines to dashboards and integrating MQTT for bridging OT and IT domains.
 
 ## What You'll Learn
 
@@ -33,24 +33,6 @@ Gain practical understanding of:
     - X.509 certificate authentication
     - Enterprise workflow patterns
     - Security profile configuration
-
-
-## Session Structure
-
-1. **Theoretical Foundation**
-    - OPC UA architecture and its role in modern automation
-    - Comparison with alternative OPC UA implementations
-    - Security models and data handling principles
-1. **Technical Deep-Dive**
-    - Package architecture and installation procedures
-    - Configuration strategies for enterprise environments
-    - Performance optimization techniques
-    - Error handling and diagnostic approaches
-1. **Hands-on Demonstration**
-    - Building OPC UA flows
-    - Implementing certificate-based security
-    - Troubleshooting common integration issues
-1. **Discussion & Questions**
 
 
 ## Technical Topics Covered
@@ -67,4 +49,6 @@ Automation engineers, system integrators, and developers working with industrial
 
 By the end of this session, you’ll know how to securely connect things to a Node-RED instance and Dashboard by using OPC UA and MQTT, and understand when this approach makes sense for your industrial projects.
 
-Don’t miss the chance to join this live, hands-on workshop. You’ll be able to ask questions directly, see real-world demonstrations, and walk away with practical insights to apply in your industrial projects. **Register today and save your spot!**
+If you'd like to dig deeper, Klaus has shared the [flows he built for the demo](./opc-ua-webinar-flows.zip). Keep in mind that he used the [P4NR (PLUS for Node-RED)](https://p4nr.com/) package for many of them. 
+
+Talk to our expert team at FlowFuse, [pick a date and time](/book-demo/), and get tailored advice and recommendations to implement OPC UA solutions in your industrial environment.
