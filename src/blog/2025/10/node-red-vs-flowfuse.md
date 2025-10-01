@@ -36,79 +36,73 @@ That question exposes the limitations of standalone Node-RED:
 
 You need to deploy to 50 sites across three continents without manual setup at each location. Five engineers need to work on improvements without conflicts. You need alerts when any instance goes down because downtime stops production. Your security team requires SSO integration, role-based access control, and audit trails. You need to push updates to all sites at once, not travel to each location over weeks. When someone deploys a breaking change on Friday afternoon, you need to roll it back in seconds.
 
-That question highlights the limitations of standalone Node-RED:
+This is where Node-RED ends and FlowFuse begins.
 
 **Node-RED gives you the tools to build. FlowFuse provides the infrastructure to deploy, manage, and scale what you've built.**
 
 ## What FlowFuse Adds
 
-FlowFuse doesn't replace Node-RED. You use the same visual editor, the same nodes, and build the same flows. FlowFuse adds the operational capabilities your team will eventually need.
+FlowFuse doesn't replace Node-RED. You use the same visual editor, nodes, and flows. FlowFuse adds the operational layer that transforms Node-RED from a development tool into a production platform.
 
 ### Security and Compliance
 
-Standard Node-RED has no built-in user management. Authentication is whatever you implement yourself—usually basic auth or custom middleware. For personal use, this works. For platforms controlling industrial equipment, your security team will reject it.
+Standard Node-RED leaves authentication to you—typically basic auth or custom middleware. For personal projects, this suffices. Production environments controlling industrial systems need more.
 
-FlowFuse includes role-based access control]. Define who edits flows, and who gets read-only access. SSO via SAML, LDAP means Node-RED authenticates against your existing identity provider. Audit logs capture who deployed what and when. When compliance requests access records from Q2, you have them.
+FlowFuse provides role-based access control (RBAC) to define who edits flows versus who views them. Single Sign-On via SAML, LDAP, and OIDC integrates with your existing identity systems. Audit logs capture every deployment with details on who made changes and when. Database credentials and API tokens are managed through encrypted secrets storage, keeping them out of flow exports and version control.
 
-FlowFuse handles secrets management. Your flows need database credentials, API token. FlowFuse allows to stores them with environment variables which prevents them from ending up in flow exports.
-
-For software supply chain security, FlowFuse generates a Software Bill of Materials (SBOM). This inventory of every node and dependency across all of your team's instances allows security teams to scan for vulnerabilities and check for available updates.
+For supply chain security, FlowFuse generates a Software Bill of Materials (SBOM) listing every node and dependency across your instances. Security teams can scan for vulnerabilities and track what needs updating.
 
 ### Team Collaboration and Version Control
 
-Node-RED offers basic multiplayer awareness in its latest versions, but it was not designed for full team collaboration. When multiple users edit the same instance, the last save still overwrites previous changes. It lacks built-in version control, change review before deployment, and mechanisms for branching or merging.
+Node-RED was built for individual developers. When two people edit the same instance, the last save wins. No version history exists. No way to review changes before deployment. No rollback option.
 
-FlowFuse addresses these limitations. Teams can work on the same project without conflicts. Each deployment automatically creates a snapshot of your flows at that moment. Snapshots let you compare changes over time—see what was modified between Tuesday and Thursday—and if a deployment causes issues, roll back in seconds.
+FlowFuse enables multi-user teams working on shared projects with proper permissions. Every deployment creates a snapshot—a complete record of your flows at that point in time. Compare snapshots to track changes or restore previous versions when deployments break production.
 
-### Remote Device Management and Monitoring
+### Remote Device Management
 
-Managing a single Node-RED instance is simple. Managing ten is tedious. Managing hundreds across factories, edge gateways, and cloud regions is an operational nightmare. How do you update them, monitor their health, or troubleshoot issues without being on-site?
+Node-RED instances running on edge devices in remote factories, warehouses, or hard-to-reach locations create operational challenges. Troubleshooting means traveling on-site or configuring complex VPN access.
 
-FlowFuse solves this with its Device Agent and a centralized management platform. The Device Agent is a lightweight service installed on your remote devices that establishes a secure, persistent connection back to your FlowFuse instance. This gives you a single pane of glass to see and control your entire fleet of devices.
+FlowFuse provides centralized management through its Device Agent—a lightweight service installed on remote devices that establishes secure connections back to your FlowFuse instance. From one dashboard, you see and control your entire fleet. Open any device's editor or view its logs through secure tunnels without exposing ports or setting up VPNs. Push updates over-the-air to individual devices or groups.
 
-This architecture unlocks critical capabilities. You can remotely access a device's editor and logs through a secure tunnel, eliminating the need for risky open ports or complex VPNs. You can monitor the health and status of every device in real-time. Pushing updates, which you define in your DevOps pipeline, becomes a reliable over-the-air (OTA) process managed from the central platform. This transforms remote management from a reactive, time-consuming challenge into a proactive, scalable operation.
+### Deployment Pipelines and Scalability
 
-### DevOps Pipelines and Device Groups
+Standalone Node-RED moves code from development to production through manual export and import. This doesn't scale and introduces errors with each manual step. Managing one instance is simple. Managing hundreds requires standardization.
 
-With standalone Node-RED, moving from development to production is often a manual process of exporting and importing flows—an approach that doesn't scale and is prone to error. FlowFuse introduces a structured DevOps workflow directly into the platform.
+FlowFuse builds structured deployment into the platform. Create Development, Staging, and Production environments for each project. Promote snapshots between stages with single clicks. Organize devices into groups by location or function, then target updates to specific groups. Deploy to all North American packaging lines while leaving European facilities on their current version. The platform organizes work through teams and projects, giving each group isolated resources while maintaining central oversight.
 
-FlowFuse allows you to create deployment pipelines. You can set up distinct environments—such as Development, Staging, and Production—for each project. Once a flow is tested and validated in a lower environment, you can promote its snapshot to the next stage with a single click. This ensures that only trusted, version-controlled code reaches your critical systems.
+### Observability and Monitoring
 
-This is complemented by powerful device management. You can organize your remote instances (devices) into logical groups based on location, function, or any other criteria. Need to roll out an update to all the packaging lines in your North American factories? Simply push the new snapshot to that specific device group. This combination of pipelines and grouping transforms Node-RED deployment from a manual task into an automated, reliable, and scalable process.
+Standalone Node-RED displays logs from a single instance. When you're running multiple instances across different locations, you need centralized visibility. Building this yourself means integrating Prometheus, configuring exporters, creating Grafana dashboards, and setting up alerting—weeks of specialized work.
 
-### Built-in Observability
-
-Standalone Node-RED shows logs. For centralized monitoring, you integrate Prometheus, configure exporters, build Grafana dashboards, and set up alerts. This takes weeks.
-
-FlowFuse includes observability as a core platform feature. It automatically aggregates logs from all instances into a single, searchable interface. Comprehensive health monitoring tracks every instance, providing real-time insights into its status, as well as its CPU and memory usage, without any manual setup.
-
-You get deployment visibility. Which instances run which versions? When were they updated? What's the rollout history? Questions are answered without investigating across distributed systems.
+FlowFuse provides centralized observability. View logs from any instance, check audit logs for specific deployments, monitor real-time status showing when each instance was last seen, and track CPU and memory usage across your entire fleet—all from one interface.
 
 ### Managed Infrastructure
 
-Running Node-RED means managing infrastructure—servers or edge devices, installation procedures, update mechanisms, backup strategies, and disaster recovery plans. For a few instances, this is manageable. For dozens or hundreds, it becomes someone's job.
+Running Node-RED means managing servers or edge devices, handling installations, planning updates, configuring backups, and preparing disaster recovery. At scale, this becomes a full-time responsibility.
 
-FlowFuse offers two options: FlowFuse Cloud is managed—they run everything, you build applications. FlowFuse Self-Hosted runs on your infrastructure but handles orchestration, updates, and management.
+FlowFuse Cloud is fully managed—they handle infrastructure, you build applications. FlowFuse Self-Hosted runs on your infrastructure but manages orchestration, updates, and monitoring. Both options deliver over-the-air updates for Node-RED versions, security patches, and configuration changes without downtime.
 
-Both provide over-the-air updates. you can roll out Node-RED versions, security patches, and configuration changes quickly. Maintenance that required coordinated downtime happens without interruption.
+### Certified Nodes
 
-### Certified Nodes and Blueprint Library
+The Node-RED community has built thousands of nodes covering most use cases. Production environments need assurance about maintenance, security vulnerabilities, and long-term support.
 
-While the real power of Node-RED is its open-source, the real fear in the professional world is relying on that same open source. You're not always sure if nodes are well-maintained or free of vulnerabilities.
+FlowFuse's Certified Nodes program vets community contributions for quality, security, and maintenance. FlowFuse takes ongoing responsibility for certified nodes and accepts certification requests for nodes you need.
 
-FlowFuse addresses this with the Certified Nodes program. We vet community nodes for quality, maintenance, and security. Authors can register for certification, and from there, we take responsibility. If you don't find a certified node you need, you can request it, and we will work to certify it. This provides a trusted palette of tools you can use with confidence.
+### Development Acceleration
 
-Beyond trusted nodes, FlowFuse accelerates development with a Blueprint Library. Blueprints are pre-built, reusable flow templates that solve common industrial and IoT problems. Instead of starting from scratch, your team can deploy a proven solution for tasks like building an OEE dashboard, implementing an Andon system, creating a performance terminal for operators, or providing a simple CRUD operations example. This not only saves hundreds of development hours but also enforces best practices and standardization across your organization, ensuring that solutions are both robust and consistent.
+Node-RED's visual programming is fast, but real-world development has friction points. Complex function nodes and UI templates require time and coding skill. Understanding teammates' flows isn't always straightforward. Building the same patterns across projects becomes repetitive.
 
-## FlowFuse Ai Assisntant
+FlowFuse's AI Assistant tackles these challenges directly in the editor. Describe your need in plain language—it generates function nodes or UI templates, explains existing flows, writes SQL queries, suggests relevant nodes, and creates documentation. This speeds up experienced developers while making Node-RED accessible to those still learning.
 
-To accelerate development and lower the barrier to entry, FlowFuse integrates an AI Assistant directly into the editor. This intelligent co-pilot supports you at every stage of the development lifecycle, acting as a partner to your engineering team. It can generate function nodes, create UI templates for the FlowFuse dashboard using natural language, explain complex flows, quickly generate documentation, provide auto-suggestions for the next node, and assist in writing SQL queries from natural language.
+The Blueprint Library provides tested and proven templates for common industrial scenarios—OEE dashboards, Andon systems, operator terminals. Instead of building from scratch, start with working solutions and customize them for your needs.
 
-### Support with SLAs
+Team Library enables reusability within your organization. Export a flow to your Team Library once, and it's available across all team instances. Your team maintains consistent patterns without recreating the same work.
 
-Node-RED's community support works well for learning and troubleshooting. When production is down and costing money per minute, you need more than forum posts.
+### Commercial Support
 
-FlowFuse provides support with SLAs. You talk to engineers who know Node-RED internals and FlowFuse architecture. They've seen edge cases, understand failure modes, and can help architect solutions that scale.
+Node-RED's community provides excellent support for learning and troubleshooting through forums and discussions. Production outages costing money per minute require faster resolution and guaranteed response times.
+
+FlowFuse offers commercial support with Service Level Agreements. Work directly with engineers who understand Node-RED internals, have encountered your problems before, and can architect solutions that scale.
 
 ## When to Choose What
 
