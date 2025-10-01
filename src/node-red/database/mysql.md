@@ -199,8 +199,6 @@ Additionally, if you want to explore the integration of other databases with Nod
 
 <div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
 
-<div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
-
 ### Try FlowFuse's Built-In Database Service
 
 [FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to write SQL manually—the node configures itself automatically.
