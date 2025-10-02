@@ -24,10 +24,3 @@ most relevant sales teammate.
 
 To make this easy, we’ve prepared a simple playbook with a step-by-step guide on how to handle these calls: [Discovery Call Playbook](https://docs.google.com/document/d/1mzv1c7qEHQ_Pg6tJVuMrRRxNTiDx_aeEW9052aSJVeo/edit?usp=sharing).
 
-**Low Latency Chatflow
-**
-We’ve set up a low-latency chatflow on our website to make sure we don’t miss potential customers. When someone requests a quick call, it connects directly to our team’s calendars — meaning any of us may end up speaking with an interested prospect within minutes. Like if we were in an actual office and the phone rings, someone has to pick it up. 
-
-These calls are short (10–15 minutes) and are not about closing a deal. The goal is simply to have a friendly first conversation, capture key information, and then pass the lead to the most relevant sales teammate.
-
-To make this easy, we’ve prepared a simple playbook with a step-by-step guide on how to handle these calls: [Discovery Call Playbook](https://docs.google.com/document/d/1mzv1c7qEHQ_Pg6tJVuMrRRxNTiDx_aeEW9052aSJVeo/edit?usp=sharing).
