@@ -117,31 +117,89 @@ hubspot:
         </div>
     </div>
 </div>
-<!-- Status Quo section -->
+<!-- Industrial Data Platform section -->
 <div class="about w-full pt-16 px-6">
     <div class="text-center md:text-left max-w-screen-lg mx-auto pb-16 bg-radial-indigo-small mb-16">
-        <h2 class=" w-full">Why Traditional Industrial Integration Can't Scale <span class="text-indigo-600">(And How We Use AI to Fix It)</span></h2>
-        <p>Most large manufacturers try to solve connectivity challenges with approaches that create enterprise-wide bottlenecks. Here’s how FlowFuse provides a smarter, AI-driven alternative:</p>
-        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
-            {% for section in sections %}
-            <div class="relative w-full max-md:max-w-md mx-auto">
-                <div class="flex flex-col items-center sm:items-start">
-                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                        <div class="w-8 h-8 m-auto sm:m-0 text-red-400">
-                            {% include section.svgPath %}
-                        </div>
-                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                            <p class="w-full font-semibold md:m-0 text-gray-600">
-                            {{ section.title }}
-                            </p>
-                        </div>
+        <h2 class="w-full text-center">The End-to-End Platform for <span class="text-indigo-600">Industrial Data</span></h2>
+        <p class="text-center text-gray-600 mt-4">From the shopfloor to the cloud, FlowFuse handles every step of your industrial data journey</p>
+
+        <!-- Four-step process cards -->
+        <div class="w-full flex flex-col md:flex-row gap-6 mt-12 items-center justify-center">
+            <!-- Connect Machines -->
+            <div class="bg-white rounded-lg p-6 border-2 border-indigo-200 flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 text-indigo-600">
+                        {% include "components/icons/wifi.svg" %}
                     </div>
-                    <div>
-                        <p class="font-light">{{ section.description | safe }}</p>
-                    </div>
+                    <h3 class="text-lg font-semibold text-purple-600">Connect Machines</h3>
                 </div>
+                <p class="text-sm text-gray-600">Universal connectivity to any industrial protocol - OPC UA, Modbus, MQTT, and more. Connect legacy and modern equipment seamlessly.</p>
             </div>
-            {% endfor %}
+
+            <!-- Arrow -->
+            <div class="hidden md:flex justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <!-- Collect Data -->
+            <div class="bg-white rounded-lg p-6 border-2 border-indigo-200 flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 text-indigo-600">
+                        {% include "components/icons/circle-stack.svg" %}
+                    </div>
+                    <h3 class="text-lg font-semibold text-purple-600">Collect Data</h3>
+                </div>
+                <p class="text-sm text-gray-600">Real-time data acquisition from sensors, PLCs, and machines. Automatic data validation and quality checks powered by AI.</p>
+            </div>
+
+            <!-- Arrow -->
+            <div class="hidden md:flex justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <!-- Transport & Process -->
+            <div class="bg-white rounded-lg p-6 border-2 border-indigo-200 flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 text-indigo-600 [&>svg]:w-full [&>svg]:h-full">
+                        {% include "components/icons/rocket-launch.svg" %}
+                    </div>
+                    <h3 class="text-lg font-semibold text-purple-600">Transport & Process</h3>
+                </div>
+                <p class="text-sm text-gray-600">Secure data pipelines with edge processing. Transform, filter, and enrich data before it reaches your systems.</p>
+            </div>
+
+            <!-- Arrow -->
+            <div class="hidden md:flex justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <!-- Visualize & Analyze -->
+            <div class="bg-white rounded-lg p-6 border-2 border-indigo-200 flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 flex-shrink-0 text-indigo-600">
+                        {% include "components/icons/chart.svg" %}
+                    </div>
+                    <h3 class="text-lg font-semibold text-purple-600">Visualize & Analyze</h3>
+                </div>
+                <p class="text-sm text-gray-600">Interactive dashboards and real-time monitoring. AI-powered insights and anomaly detection to optimize operations.</p>
+            </div>
+        </div>
+
+        <!-- AI-Powered Integration card -->
+        <div class="w-full mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-8 border-2 border-indigo-300">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="w-10 h-10 flex-shrink-0 text-indigo-600">
+                    {% include "components/icons/light-bulb.svg" %}
+                </div>
+                <h3 class="text-2xl font-semibold text-purple-600">AI-Powered Integration</h3>
+            </div>
+            <p class="text-gray-700 text-center max-w-4xl mx-auto">FlowFuse integrates seamlessly with your existing IT systems - ERP, MES, SCADA, and cloud platforms. Our AI assistant helps configure connections, map data fields, and optimize data flows automatically, reducing integration time from weeks to hours.</p>
         </div>
     </div>
     <!-- Cost of inaction section -->
