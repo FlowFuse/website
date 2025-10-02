@@ -196,6 +196,50 @@ Additionally, your manager will assign tasks for you to begin working on during 
 
 ### Onboarding Buddy
 
-As part of your onboarding, you'll be assigned an onboarding buddy who is there to help make you successful. 
+As part of your onboarding, you'll be assigned an onboarding buddy who is there to help make you successful.
 The onboarding buddy should be a person outside of your team. This helps ensure we're building a culture across the company.
 You should reach out to your onboarding buddy regularly in your first 90 days.
+
+## Offboarding
+
+The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowFuse to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowFuse.
+
+When a team member or contractor decides to leave FlowFuse, they will receive a detailed email before their final date of employment. The email will include information regarding the impact on benefits coverage, stocks, final pay, and the process for returning any company assets.
+
+### Voluntary Resignation
+
+If a team member decides to leave FlowFuse, they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
+
+If you are considering resigning from your position at FlowFuse, we highly recommend discussing your reasons with your manager or the People Ops manager. We are always open to improving and making changes that benefit our team members. While we understand that sometimes leaving is the best option, we encourage you to explore all possible solutions before making a final decision.
+
+Once you have discussed your concerns with your manager and the People Ops team and determined that resigning from FlowFuse is the only option, please notify both your manager and the People Ops team of your intention to resign via email. Afterward, we will commence a discussion to establish the steps required to ensure a seamless handover.
+
+### Involuntary Resignation
+
+When a team member is being let go, it is usually due to either performance issues or a change in the company's needs that no longer justifies their role. If the decision is due to performance issues, we will have already provided feedback and given the team member an opportunity to improve. Unfortunately, if the issues cannot be resolved, termination of employment may be necessary. In most cases, we will ask the team member to stop working immediately. The final payment will be made according to the terms of their employment contract.
+
+### Communicating Departures
+
+When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary, reasons of the departure will be at the sole discretion of the FlowFuse management.
+
+## Offboarding process
+
+We will send an email to the departing employee covering the following points:
+
+1. Final payment
+1. Return of company property
+1. Reimbursement of business expenses
+
+At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. Their manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
+
+### Offboarding Issue
+
+The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
+
+### Final Pay
+
+Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
+
+### Business expense
+
+We will reimburse any outstanding expenses that comply with our handbook's reimbursement section.
