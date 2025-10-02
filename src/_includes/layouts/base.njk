@@ -65,7 +65,7 @@ eleventyComputed:
     {% if extractedTitle and page.url != '/' %}
     <title>{{ extractedTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowFuse &#x2022; {{ site.messaging.tagLine }}</title>
+    <title>FlowFuse &#x2022; {{ site.messaging.tagLine | replace('<br />', ' ' ) }}</title>
     {% endif %}
     {% endif %}
 
