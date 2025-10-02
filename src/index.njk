@@ -10,7 +10,7 @@ sections:
       description: "Isolated solutions for each facility are a maintenance nightmare. Our platform enables you to build standardized, scalable solutions that can be deployed and managed centrally."
     - svgPath: "components/icons/puzzle-piece.svg"
       title: "IT Department Bottlenecks"
-      description: "Every operational change requires IT approval, creating 6-month delays for simple tasks. With our AI Co-Pilot, OT teams can now build, test, and deploy solutions independently and in record time, turning months into minutes."
+      description: "Every operational change requires IT approval, creating 6-month delays for simple tasks. With our AI Copilot, OT teams can now build, test, and deploy solutions independently and in record time, turning months into minutes."
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -72,7 +72,7 @@ hubspot:
     {% set metrics = [
     {
         number: "10x",
-        text: "Faster development with our AI Co-Pilot"
+        text: "Faster development with our AI Copilot"
     },
     {
         number: "50%",
@@ -103,7 +103,7 @@ hubspot:
         <div class="sm:flex sm:flex-row gap-12 my-4 m-auto">
             <div class="sm:w-1/3 flex-grow relative">
                 <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full max-sm:max-h-60">
-                    {% image "./images/home/data-silos.png", "FlowFuse hosting Node-RED connected to many devices", [308] %}        
+                    {% image "./images/home/data-silos.png", "Trapped industrial data", [308] %}        
                 </div>
             </div>
             <div class="sm:w-2/3 my-auto flex flex-col">
@@ -145,7 +145,7 @@ hubspot:
         </div>
     </div>
     <!-- Cost of inaction section -->
-    <div class="text-center sm:text-left max-w-screen-lg mx-auto py-6 mb-6 flex flex-col sm:flex-row gap-10 max-md:max-w-md">
+    <div class="text-center sm:text-left max-w-screen-lg mx-auto py-6 mb-6 flex flex-col sm:flex-row gap-10">
         <div class="sm:w-1/2">
             <h3>The enterprise cost of fragmented industrial architecture</h3>
             <p>Without integrated industrial data monitoring and control, large manufacturers face significant operational losses:</p>
@@ -159,63 +159,26 @@ hubspot:
             <p>Average equipment downtime per year experienced by manufacturers (over 15 hours per week)</p>
         </div>
     </div>
-
-    <!-- Unlock data -->
-    <div class="max-w-md sm:max-w-screen-lg mx-auto">
-        <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
-            <h2 class="text-center w-full md:text-left">Empowering you to <span class="text-indigo-600">unlock data and build applications faster</span></h2>
-            <p class="text-center w-full md:text-left">
-                Supporting your OT and IT teams with the tools and safeguards they need to drive operational efficiency and deliver real business value.
-            </p>
-            <!-- Wheel section -->
-            {% set sections = [
-            {
-            title: "Manage",
-            text: "Gain a centralized view of your instances, monitor performance and ensure seamless operations.",
-            svgPath: "components/icons/cog.svg",
-            mdOrder: "md:order-0"
-            },
-            {
-            title: "Scale",
-            text: "Democratize innovation; simplified updates, remote access capabilities, and version control for your deployments.",
-            svgPath: "components/icons/arrows-pointing-out.svg",
-            mdOrder: "md:order-1"
-            },
-            {
-            title: "Secure",
-            text: "Integrate seamlessly with your existing security infrastructure, and maintain comprehensive audit logs to adhere to industry standards.",
-            svgPath: "components/icons/lock-closed.svg",
-            mdOrder: "md:order-6"
-            },
-            {
-            title: "Collaborate",
-            text: "Share and collaborate across teams for rapid improvements and innovation, along with role-based user access controls.",
-            svgPath: "components/icons/user-group.svg",
-            mdOrder: "md:order-7"
-            }]
-            %}
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 md:grid-flow-col gap-6 mt-10">
-                <div class="sm:col-span-2 md:row-span-2 md:order-2 self-center m-auto">
-                    <div class="md:max-w-none h-auto max-w-md">
-                        {% image "./images/home/ff_circle.png", "FlowFuse hosting Node-RED connected to many devices", [440] %}
-                    </div>
+    <!-- How FF solves the problem section -->
+    <div class="text-center sm:text-left max-w-screen-lg mx-auto p-9 rounded-xl border-2 border-indigo-600 drop-shadow-md bg-white">
+        <h2><span class="text-indigo-600">Intelligently Scale</span> Your Industrial Applications with AI</h2>
+        <div class="md:hidden flex ff-image-rounded max-w-[500px] m-auto mt-6">
+            {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [500] %}
+        </div>
+        <div class="w-full md:flex md:flex-row gap-6 justify-between items-center m-auto">
+            <div class="md:w-7/12">
+                <p>FlowFuse transforms how organizations deploy and manage industrial applications using Node-RED. Our platform, now enhanced with an AI Copilot, empowers IT and OT teams to collaborate more effectively than ever before. Standardize deployments across multiple facilities and accelerate innovation, all while maintaining the governance, security, and scalability your digital transformation demands.</p>
+                <div class="flex gap-3 max-sm:max-w-sm max-md:mx-auto max-sm:flex-col max-sm:justify-center mt-6">
+                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-contact-us', {'position': 'secondary'})">CONTACT US</a>
+                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-try-it-out', {'position': 'secondary'})">TRY IT OUT</a>
                 </div>
-                {% for section in sections %}
-                <div class="{{ section.mdOrder }}">
-                    <div class="max-sm:mx-auto w-8 h-8 text-red-300 mb-3">
-                        {% set svgPath = section.svgPath %}
-                        {% include svgPath %}
-                    </div>
-                    <h4 class="max-sm:text-center font-semibold">{{ section.title }}</h4>
-                    <p class="max-sm:text-center">{{ section.text }}</p>
-                </div>
-                {% endfor %}
+            </div>
+            <div class="max-md:hidden flex ff-image-rounded md:max-w-[350px] m-auto">
+                {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [350] %}
             </div>
         </div>
     </div>
 </div>
-    
 <!-- Blueprints -->
 <div class="max-w-md sm:max-w-xl md:max-w-screen-lg mx-auto mt-24 mb-20">
     <h2 class="text-center w-full md:text-left"><span class="text-indigo-600">Drive industrial innovation</span> with Node-RED and FlowFuse</h2>
