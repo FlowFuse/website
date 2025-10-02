@@ -23,8 +23,6 @@ We've enhanced the capabilities of the FlowFuse AI Assistant, which now provides
 
 With this change, the FlowFuse assistant can now write HTML, CSS, SQL, Javascript, and JSON, all based on your words, and with awareness of your FlowFuse environment (like your Tables structure), cursor position, and where in your code you are editing.
 
-Available for Pro and Enterprise.
-
 ## FlowFuse Team Broker Automatic Schema Detection
 
 ![Image showing schema detection](./images/schema-autodetect.png)
