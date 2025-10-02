@@ -66,9 +66,8 @@ FlowFuse does not provide any advice on financial decisions for employees. For
 details on the Stock Options like the 409A valuation or otherwise, please consult
 Carta.
 
-FlowFuse offers employees ISOs to US full time employees. Contractors and other
-forms of employments for US personel will receive NSOs. Non-US employees will
-also receive NSOs.
+FlowFuse offers ISOs to US employees. Contractors and other forms of employment
+for US personnel will receive NSOs. Non-US employees will also receive NSOs.
 
 Equity grants are subject to board approval. Grants are presented to the Board
 four times per year at official Board Meetings. 

@@ -93,7 +93,11 @@ We have an automated integration setup with [Welcome to the Jungle](https://hire
 
 ### Referrals
 
-To participate in FlowFuse's employee referral program, kindly send all referral resumes to the People Ops Manager. If your recommended candidate gets hired and successfully completes 3 months, you will receive a $100 reward. Alternatively, you can choose a charitable foundation of your liking, and we will double the referral amount donated to that organization.
+To participate in FlowFuse's employee referral program, kindly send all referral
+resumes to the People Ops Manager. If your recommended candidate gets hired and
+successfully completes 3 months, you will receive a $1000 reward. Alternatively,
+you can choose a charitable foundation of your liking, and we will double the
+referral amount donated to that organization.
 
 ### Sharing an Existing Role
 
@@ -123,18 +127,7 @@ When in doubt, reject the candidate.
 
 #### Offer stage
 
-First, read about [extending offers](#extending-an-offer).
-
-At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
-Before the peopleops team extends an offer, explicit approval is required from:
-1. A peopleops manager
-   - Check we hire in their location
-   - Notice period aligns with internal processes
-   - Total compensation is in FlowFuse's range
-1. The new manager of the candidate
-1. CEO
-
-When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
+Read about [extending offers](#extending-an-offer).
 
 ## Extending an offer
 
@@ -147,6 +140,15 @@ to them. At such a time it's good to understand that the offer at that time is
 conditional on background checks. The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
 This part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
+
+At the offer stage all scorecards will be re-evaluated to understand what the
+candidate strengths and challenges are. Before the hiring manager extends an offer,
+explicit approval is required from the CEO to:
+- Check we hire in their location
+- Confirm candidate is seeking full-time employment (FlowFuse only offers full-time positions)
+- Notice period aligns with internal processes
+- Total compensation is in FlowFuse's range
+- The new manager of the candidate agrees with extending this offer to the candidate
 
 Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
 Equity in the company is offered to some roles, the CEO has access to [the calculator](https://docs.google.com/spreadsheets/d/1M5zN9S4LoMOhz6cubj1VXY0trvKPMFXxCb4_7otQDnA)
@@ -197,141 +199,3 @@ Additionally, your manager will assign tasks for you to begin working on during 
 As part of your onboarding, you'll be assigned an onboarding buddy who is there to help make you successful. 
 The onboarding buddy should be a person outside of your team. This helps ensure we're building a culture across the company.
 You should reach out to your onboarding buddy regularly in your first 90 days.
-
-
-## Greenhouse
-
-### Opening a Job
-
-When opening a job post, you'll need a couple of things:
-
-1. A Job Description
-2. Verifying the availability of the approved role.
-3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
-
-### Pipeline design
-
-A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
-For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
-**must** include all values and job requirements.
-
-#### Accepting applications
-
-When you open the role on Greenhouse to accept applications, please [follow the advertisement instructions](/handbook/peopleops/hiring/#advertising-a-role).
-
-Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter.
-Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position.
-These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowfuse.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
-
-#### Initial Review
-
-The initial review will check the aforementioned question for validity, the resume, and the cover letter.
-Check for:
-1. Alignment to [Values](../../company/values.md)
-1. Capabilities align with the requirements for the role
-1. Previous retention at companies
-   - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
-
-For each candidate we'd like to move forward with, a scorecard needs to be filled
-out based on the available information so the interviewer for the next stage can
-prepare and focus if the strengths are indeed strong, and the same for weaknesses or uncertainties.
-
-The resume review should reject **over 50%** of all candidates.
-
-#### Skills assessment
-
-For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
-
-This round will again result in a scorecard, but also an indication what level this candidate would suit in.
-For example `intermediate` vs `senior` for developers.
-
-When in doubt, reject the candidate.
-
-#### Offer stage
-
-First, read about [extending offers](#extending-an-offer).
-
-At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
-Before the peopleops team extends an offer, explicit approval is required from:
-1. A peopleops manager
-   - Check we hire in their location
-   - Notice period aligns with internal processes
-   - Total compensation is in FlowFuse's range
-1. The new manager of the candidate
-1. CEO
-
-When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
-
-#### Rejecting Candidates
-
-We will interview candidates at every stage of the interviewing process. When we reject candidates, there are three kinds of rejections: 
-* pre-interview
-* post-screen
-* after candidates have done multiple interviews
-
-Pre-interview, we use the template in Greenhouse to reject candidates. We want candidates to know that we are not moving forward with them. 
-Note: Some candidates who apply through LinkedIn do not attach valid emails to their application, in which case we reject without emailing, but otherwise we always try to let them know. 
-
-Post-screen, we use a different template in Greenhouse to reject candidates. This template recognizes that candidates have spent time with us. 
-
-After candidates have done multiple interviews, we may want to write a more personal email letting them move on. This is up to hiring manager's discretion. In this case, we should make sure to reject via Greenhouse but not send emails. 
-
-##### Candidate Feedback
-
-At times candidates may request feedback on why we are not moving forward with their candidacy. By default, we do not provide feedback, but in some circumstances a hiring manager may be open to discussing further with the candidate.
-
-### Closing a job
-
-As soon as there's a pipeline that would support at least three strong candidates
-for the open position, take the job posting offline. Candidates applying for a job
-that's no longer available is a waste of their time, a bad experience with
-FlowFuse, and hurts our reputation.
-
-## Offboarding
-
-The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowFuse to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowFuse.
-
-When a team member or contractor decides to leave FlowFuse, they will receive a detailed email before their final date of employment. The email will include information regarding the impact on benefits coverage, stocks, final pay, and the process for returning any company assets.
-
-### Voluntary Resignation
-
-If a team member decides to leave FlowFuse, they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
-
-If you are considering resigning from your position at FlowFuse, we highly recommend discussing your reasons with your manager or the People Ops manager. We are always open to improving and making changes that benefit our team members. While we understand that sometimes leaving is the best option, we encourage you to explore all possible solutions before making a final decision.
-
-Once you have discussed your concerns with your manager and the People Ops team and determined that resigning from FlowFuse is the only option, please notify both your manager and the People Ops team of your intention to resign via email. Afterward, we will commence a discussion to establish the steps required to ensure a seamless handover.
-
-### Involuntary Resignation
-
-When a team member is being let go, it is usually due to either performance issues or a change in the company's needs that no longer justifies their role. If the decision is due to performance issues, we will have already provided feedback and given the team member an opportunity to improve. Unfortunately, if the issues cannot be resolved, termination of employment may be necessary. In most cases, we will ask the team member to stop working immediately. The final payment will be made according to the terms of their employment contract.
-
-### Communicating Departures
-
-When a team member voluntarily departs, we may ask if they would like to share their plans with the team. If the departure is involuntary, reasons of the departure will be at the sole discretion of the FlowFuse management.
-
-## Offboarding process
-
-We will send an email to the departing employee covering the following points:
-
-1. Final payment
-1. Return of company property
-1. Reimbursement of business expenses
-
-At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. Their manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
-
-### Offboarding Issue
-
-The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
-
-### Final Pay
-
-Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
-
-### Business expense
-
-We will reimburse any outstanding expenses that comply with our handbook's reimbursement section.
-
-## Contractors
-
-All new contractors are to be employed through Deel to standardize contracts and aid with providing a consistent experience for all contractors. Either milestone based payments
-or being paid for month is supported.
