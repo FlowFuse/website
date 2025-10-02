@@ -4,7 +4,7 @@ This document explains the process of delivering a sales demo of the features of
 
 ## Setup - Before the Demo
 
-We have a team prepared on FlowFuse Cloud called 'Acme Manufacturing Corp' which includes everything you will need to complete this demo.
+We have a team prepared on FlowFuse Cloud called [Acme Manufacturing Corp](https://app.flowfuse.com/team/acme-man-corp/overview) which includes everything you will need to complete this demo.
 
 ## Script for FlowFuse Demo
 
