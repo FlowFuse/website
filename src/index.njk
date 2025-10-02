@@ -1,6 +1,16 @@
 ---
 layout: default
 sitemapPriority: 1.0
+sections:
+    - svgPath: "components/icons/lock-closed.svg"
+      title: "Vendor-Locked SCADA Ecosystems"
+      description: "Proprietary platforms tie your strategy to a single vendor, creating expensive risks. FlowFuse offers a flexible, open-source-based alternative that puts you in control."
+    - svgPath: "components/icons/point-to-point.svg"
+      title: "Custom Point-to-Point Integrations"
+      description: "Isolated solutions for each facility are a maintenance nightmare. Our platform enables you to build standardized, scalable solutions that can be deployed and managed centrally."
+    - svgPath: "components/icons/puzzle-piece.svg"
+      title: "IT Department Bottlenecks"
+      description: "Every operational change requires IT approval, creating 6-month delays for simple tasks. With our AI Co-Pilot, OT teams can now build, test, and deploy solutions independently and in record time, turning months into minutes."
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -9,10 +19,10 @@ hubspot:
 ---
 <!--Hero Content-->
 <div class="w-full px-6">
-    <div class="max-w-md sm:max-w-screen-lg mt-12 mx-auto">
+    <div class="sm:max-w-screen-lg mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
-                <h1 class="font-medium home m-auto text-4xl sm:max-lg:text-5xl text-center text-indigo-700">
+                <h1 class="font-medium home m-auto text-4xl text-center text-indigo-700">
                     {{ site.messaging.tagLine | safe }}
                 </h1>
                 <p class="mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
@@ -74,9 +84,9 @@ hubspot:
     }]
     %}
     <div class="max-w-md sm:max-w-screen-lg mx-auto">
-        <div class="grid sm:grid-cols-3 gap-12 mt-4 max-sm:max-w-[300px] m-auto">
+        <div class="grid sm:grid-cols-3 gap-12 mt-4 max-sm:w-full m-auto">
             {% for metric in metrics %}
-                <div class="m-auto gradient-roi-bottom-right from-indigo-100 rounded-lg pb-3 px-4 pt-6">
+                <div class="w-full m-auto gradient-roi-bottom-right from-indigo-100 rounded-lg pb-3 px-4 pt-6">
                     <div class="flex">
                         <h3 class="text-4xl font-normal text-indigo-600">{{ metric.number }}</h3>
                     </div>
@@ -90,27 +100,52 @@ hubspot:
 <!-- Problem section -->
 <div class="bg-indigo-50/50 w-full py-12 px-6 mt-20">
     <div class="sm:max-w-screen-lg mx-auto">
-        <div class="sm:flex sm:flex-row gap-12 mt-4 m-auto">
+        <div class="sm:flex sm:flex-row gap-12 my-4 m-auto">
             <div class="sm:w-1/3 flex-grow relative">
                 <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full max-sm:max-h-60">
                     {% image "./images/home/data-silos.png", "FlowFuse hosting Node-RED connected to many devices", [308] %}        
                 </div>
             </div>
-            <div class="sm:w-2/3 my-auto">
+            <div class="sm:w-2/3 my-auto flex flex-col">
                 <h2 class="max-sm:mt-10">Your Industrial Data is Trapped. <span class="text-indigo-600">Our AI Unlocks It</span></h2>
                 <p>
                     Large manufacturing organizations struggle to unlock the full potential of their operational data. Your current infrastructure creates information silos between IT and OT systems, preventing the scalable digitalization initiatives that drive competitive advantage. <span class="font-semibold">FlowFuse's AI-powered platform intelligently bridges this gap</span>, enabling true operational excellence across all your facilities.
                 </p>
-                <a class="mt-4 mb-6 sm:mb-0 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
+                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
                 href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'secondary'})">BOOK A DEMO</a>
             </div>
         </div>
     </div>
 </div>
-
-
-<!-- Unlock data -->
+<!-- Status Quo section -->
 <div class="about w-full pt-16 px-6">
+    <div class="text-center md:text-left max-w-screen-lg mx-auto pb-16 bg-radial-indigo-small mb-16">
+        <h2 class=" w-full">Why Traditional Industrial Integration Can't Scale <span class="text-indigo-600">(And How We Use AI to Fix It)</span></h2>
+        <p>Most large manufacturers try to solve connectivity challenges with approaches that create enterprise-wide bottlenecks. Here’s how FlowFuse provides a smarter, AI-driven alternative:</p>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
+            {% for section in sections %}
+            <div class="relative w-full max-md:max-w-md mx-auto">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <div class="w-8 h-8 m-auto sm:m-0 text-red-400">
+                            {% include section.svgPath %}
+                        </div>
+                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                            <p class="w-full font-semibold md:m-0 text-gray-600">
+                            {{ section.title }}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-light">{{ section.description | safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Unlock data -->
     <div class="max-w-md sm:max-w-screen-lg mx-auto">
         <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
             <h2 class="text-center w-full md:text-left">Empowering you to <span class="text-indigo-600">unlock data and build applications faster</span></h2>

@@ -1752,3 +1752,7 @@ lite-youtube::before {
 .bg-radial-indigo {
     background: radial-gradient(ellipse 30% 70% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
 }
+
+.bg-radial-indigo-small {
+    background: radial-gradient(ellipse 50% 5% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
+}
