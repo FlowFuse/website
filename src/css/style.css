@@ -553,6 +553,10 @@ h4:hover .header-anchor::before {
 .ff-image-cover.right picture {
     @apply object-right;
 }
+.ff-image-cover.center img,
+.ff-image-cover.center picture {
+    @apply object-center;
+}
 
 .ff-image-cover.blueprint img,
 .ff-image-cover.blueprint picture {
