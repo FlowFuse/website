@@ -178,6 +178,10 @@ h1, h2, h3, h4 {
     background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
 }
 
+.gradient-roi-bottom-right {
+    background: radial-gradient(farthest-side at 100% 100%, theme(colors.indigo.100), transparent);
+}
+
 .pricing .gradient-bg {
     background: radial-gradient(circle 70vw at 50% 0%, theme(colors.indigo.50), transparent);
 }
