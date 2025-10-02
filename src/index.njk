@@ -47,14 +47,42 @@ hubspot:
     </div>
 </div>
 
-<!-- Secondary Content -->
 <div class="w-full px-6">
+    <!-- Social Proof -->
     <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl">
         <div class="w-full text-center min-h-14 flex justify-center items-center mt-12 bg-radial-indigo">
             <h5 class="text-gray-600">Trusted by industrial leaders driving digital transformation worldwide</h5>
         </div>
         <div class="mx-auto text-center -mt-0.5">
             {% include "social-proof.njk" %}
+        </div>
+    </div>
+
+    <!-- Metrics -->
+    {% set metrics = [
+    {
+        number: "10x",
+        text: "Faster development with our AI Co-Pilot"
+    },
+    {
+        number: "50%",
+        text: "Reduction in scrap rate with real-time monitoring"
+    },
+    {
+        number: "9x",
+        text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services"
+    }]
+    %}
+    <div class="max-w-md sm:max-w-screen-lg mx-auto">
+        <div class="grid sm:grid-cols-3 gap-12 mt-4 max-sm:max-w-[300px] m-auto">
+            {% for metric in metrics %}
+                <div class="m-auto gradient-roi-bottom-right from-indigo-100 rounded-lg pb-3 px-4 pt-6">
+                    <div class="flex">
+                        <h3 class="text-4xl font-normal text-indigo-600">{{ metric.number }}</h3>
+                    </div>
+                    <p class="mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -66,31 +94,6 @@ hubspot:
                 <p class="text-center w-full md:text-left">
                     Supporting your OT and IT teams with the tools and safeguards they need to drive operational efficiency and deliver real business value.
                 </p>
-                <!-- Metrics -->
-                {% set metrics = [
-                {
-                    number: "20x",
-                    text: "Increase in DevOps pipeline speed with automation"
-                },
-                {
-                    number: "20%",
-                    text: "Reduction in developer time spent on new solutions"
-                },
-                {
-                    number: "9x",
-                    text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services"
-                }]
-                %}
-                <div class="grid sm:grid-cols-3 gap-6 bg-indigo-50 rounded-lg mt-10 pb-3 px-4 pt-6 max-sm:max-w-[300px] m-auto">
-                    {% for metric in metrics %}
-                        <div class="max-w-[230px] m-auto">
-                            <div class="flex justify-center">
-                                <h3 class="text-4xl font-normal text-indigo-400">{{ metric.number }}</h3>
-                            </div>
-                            <p class="text-center mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
-                        </div>
-                    {% endfor %}
-                </div>
                 <!-- Wheel section -->
                 {% set sections = [
                 {
