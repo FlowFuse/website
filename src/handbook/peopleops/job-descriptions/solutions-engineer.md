@@ -71,7 +71,7 @@ Nice to Haves:
 * Final Interview: A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
 * Offer: Extend an offer to the selected candidate.
 
-### Screning Questions 
+### Screening Questions 
 * Can you briefly walk me through your recent experience in a customer-facing engineering or solutions role?
    * Goal: Confirm they have relevant experience in pre-sales or post-sales technical roles (e.g., Solutions Engineer, Sales Engineer, Customer Success Engineer).
 * Have you worked with industrial technologies like SCADA, PLCs, MQTT, or Node-RED?

@@ -37,7 +37,7 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
       - name: Install jq
         run: sudo apt-get -qy install jq
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'
@@ -60,7 +60,7 @@ jobs:
           git add src/blueprints/* -A -f
           git commit -a -m "Bot: update blueprints"
       - name: Push to 'live' branch
-        uses: ad-m/github-push-action@d91a481090679876dfc4178fef17f286781251df # v0.8.0
+        uses: ad-m/github-push-action@77c5b412c50b723d2a4fbc6d71fb5723bcd439aa # v1.0.0
         with:
           directory: './website'
           branch: live
