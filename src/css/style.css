@@ -182,6 +182,10 @@ h1, h2, h3, h4 {
     background: radial-gradient(farthest-side at 100% 100%, theme(colors.indigo.100), transparent);
 }
 
+.hard-shadow-indigo300 {
+    box-shadow: 4px 4px 0 0 theme(colors.indigo.300);
+}
+
 .pricing .gradient-bg {
     background: radial-gradient(circle 70vw at 50% 0%, theme(colors.indigo.50), transparent);
 }

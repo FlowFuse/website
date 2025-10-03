@@ -11,6 +11,22 @@ sections:
     - svgPath: "components/icons/puzzle-piece.svg"
       title: "IT Department Bottlenecks"
       description: "Every operational change requires IT approval, creating 6-month delays for simple tasks. With our AI Copilot, OT teams can now build, test, and deploy solutions independently and in record time, turning months into minutes."
+capabilities:
+    - capability: "Edge data acquisition"
+      feature: "Device agent for streamlined connectivity"
+      description: "Easily and securely collect data from all your industrial devices and sensors. Our platform enables scalable agent deployment to unify data from diverse sources and protocols, ensuring a consistent and reliable flow of information."
+      imagePath: "images/home/home-remote-instances.png"
+      imageAlt: "FlowFuse UI"
+    - capability: "Organize and Analyze"
+      feature: "AI-Assisted platform for data transformation"
+      description: " Transform raw data into a structured and unified information model. Our AI Copilot accelerates this process, allowing your teams to generate complex data transformation logic, from SQL queries to JavaScript functions, using simple natural language prompts. Cleanse, contextualize, and normalize data faster than ever before."
+      imagePath: "images/home/home-node-red.png"
+      imageAlt: "Node-RED UI"
+    - capability: "Interact with the Data"
+      feature: "Interactive, real-time dashboards built with AI assistance"
+      description: "Give your teams the tools to visualize and interact with real-time operational data. With our AI Copilot, you can create custom dashboards and sophisticated UI elements in record time, empowering you to monitor KPIs, optimize production, and innovate without limits."
+      imagePath: "images/home/home-dashboard.png"
+      imageAlt: "FlowFuse Dashboard"
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -119,7 +135,7 @@ hubspot:
 </div>
 <!-- Status Quo section -->
 <div class="about w-full pt-16 px-6">
-    <div class="text-center md:text-left max-w-screen-lg mx-auto pb-16 bg-radial-indigo-small mb-16">
+    <div class="text-center sm:text-left max-w-screen-lg mx-auto pb-16 bg-radial-indigo-small mb-16">
         <h2 class=" w-full">Why Traditional Industrial Integration Can't Scale <span class="text-indigo-600">(And How We Use AI to Fix It)</span></h2>
         <p>Most large manufacturers try to solve connectivity challenges with approaches that create enterprise-wide bottlenecks. Here’s how FlowFuse provides a smarter, AI-driven alternative:</p>
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
@@ -180,6 +196,28 @@ hubspot:
     </div>
 </div>
 <div class="w-full px-6">
+    <!-- Capabilities & Features -->
+    <div class="md:max-w-screen-lg mx-auto mt-24">
+        {% for item in capabilities %}
+        <div class="max-md:text-center md:flex md:flex-row gap-8 my-4 m-auto {% if loop.index is even %}md:flex-row-reverse{% endif %} mb-24">
+            <div class="max-md:hidden md:w-[45%] max-md:mb-12 flex items-center">
+                <div class="ff-image-rounded w-full border-2 border-indigo-300 hard-shadow-indigo300 m-auto">
+                    {% image item.imagePath, item.imageAlt, [440] %}
+                </div>
+            </div>
+            <div class="md:w-[55%] my-auto flex flex-col">
+                <h5 class="text-indigo-400 mb-3">{{ item.feature }}</h5>
+                <h2>{{ item.capability }}</h2>
+                <div class="md:hidden ff-image-rounded w-full border-2 border-indigo-300 hard-shadow-indigo300 max-w-[500px] mx-auto my-6">
+                    {% image item.imagePath, item.imageAlt, [440] %}
+                </div>
+                <p>
+                    {{ item.description }}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
     <!-- Blueprints -->
     <div class="max-w-md sm:max-w-xl md:max-w-screen-lg mx-auto mt-24 mb-20">
         <h2 class="text-center w-full md:text-left"><span class="text-indigo-600">Drive industrial innovation</span> with Node-RED and FlowFuse</h2>
