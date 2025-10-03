@@ -17,6 +17,7 @@ This screening call serves as a filter for both the company to align with the ca
 During this call FlowFuse should understand:
 1. Alignment to [Values](../../company/values.md)
 1. The candidate is enthusiastic about the company and the open role
+1. The candidate is seeking full-time employment (FlowFuse only offers full-time positions)
 1. Compensation range for the candidate
 1. The candidate's current location
    * Timezone and any overlap information

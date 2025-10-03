@@ -178,6 +178,10 @@ h1, h2, h3, h4 {
     background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
 }
 
+.gradient-roi-bottom-right {
+    background: radial-gradient(farthest-side at 100% 100%, theme(colors.indigo.100), transparent);
+}
+
 .pricing .gradient-bg {
     background: radial-gradient(circle 70vw at 50% 0%, theme(colors.indigo.50), transparent);
 }
@@ -548,6 +552,10 @@ h4:hover .header-anchor::before {
 .ff-image-cover.right img,
 .ff-image-cover.right picture {
     @apply object-right;
+}
+.ff-image-cover.center img,
+.ff-image-cover.center picture {
+    @apply object-center;
 }
 
 .ff-image-cover.blueprint img,
@@ -1743,4 +1751,8 @@ lite-youtube::before {
 
 .bg-radial-indigo {
     background: radial-gradient(ellipse 30% 70% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
+}
+
+.bg-radial-indigo-small {
+    background: radial-gradient(ellipse 50% 5% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
 }

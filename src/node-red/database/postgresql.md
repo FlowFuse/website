@@ -218,10 +218,16 @@ Our Inventory Management System is now complete and ready for deployment. To ini
 
 3. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access.
 
-## Using FlowFuse Persistent Context Storage for Small Data
+<div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
 
-When managing small datasets, using a full database can feel like overkill. [FlowFuse’s persistent context storage](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/#flowfuse-persistent-storage) offers a streamlined solution, letting you store and retrieve lightweight data directly within your Node-RED instance. This approach simplifies data management and reduces overhead.
+### Try FlowFuse's Built-In Database Service
 
-[FlowFuse](/) is a powerful platform that enhances IoT and application development with advanced features for secure, scalable, and collaborative Node-RED deployments. 
+[FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually—the node sets itself up automatically.
 
-**Try [FlowFuse](https://app.flowfuse.com/account/create/) today and see how it simplifies Node-RED application development.**
+Even better, the [FlowFuse AI Assistant allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
+
+Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
+
+[**Start with FlowFuse today**](https://app.flowfuse.com/) 
+
+</div>
