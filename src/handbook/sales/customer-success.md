@@ -54,7 +54,7 @@ as follows:
 | ---------- | -------------------------------------------------------------- |
 | Trial      | Not paying for services                                        |
 | Starter    | Low number of Node-RED instances                               |
-| Team       | Team of users, collaboration on applications                   |
+| Pro        | Smaller applications, collaboration on applications            |
 | Enterprise | Large scale applications, extensive use of FlowFuse's features |
 
 You can view our current customer-base and their cohorts in
@@ -71,7 +71,7 @@ however important to consider that some customers would not benefit from our
 broadest offerings of services. Appropriate resources should be put into
 customers who have found lasting value further up the cohorts table.
 
-To ensure a smooth onboarding experience and long-term success for our customers, we follow a structured [Customer Success Playbook](https://docs.google.com/document/d/1LqttB5AWueJfahdCciqloS4MSRhDZQRVHjla5xR4toU/edit?tab=t.0#heading=h.rwalcx5xuqez) for our Premium and Enterprise customers. This playbook outlines key activities, engagement points, and best practices that guide our Customer Success team in supporting each customer’s goals throughout their journey with FlowFuse.
+To ensure a smooth onboarding experience and long-term success for our customers, we follow a structured [Customer Success Playbook](https://docs.google.com/document/d/1LqttB5AWueJfahdCciqloS4MSRhDZQRVHjla5xR4toU/edit?tab=t.0#heading=h.rwalcx5xuqez) for our Pro and Enterprise customers. This playbook outlines key activities, engagement points, and best practices that guide our Customer Success team in supporting each customer’s goals throughout their journey with FlowFuse.
 
 ## Playbooks
 
@@ -89,6 +89,7 @@ our customers need from us to succeed. the main platforms we use are as follows:
 | FlowFuse Cloud's Database | Current usage of the platform and uptake of features                        |
 | Stripe                    | Expenditure                                                                 |
 | Hubspot                   | Interaction with support and marketing content on our website and in emails |
+| GitHub                    | Record of upcoming and shipped features                                     |
 
 ### Useful Customer Data
 
@@ -109,6 +110,16 @@ platforms then append it to a customer's record in Hubspot. The integration as
 well as any other CS resources built in Node-RED are hosted on FlowFuse Cloud
 and can be
 [accessed in this application](https://main.flowforge.cloud/){rel="nofollow}.
+
+## Shipped Feature Updates
+
+Customer success contacts FlowFuse customers and prospective customers (anyone we have had in a sales cycle who has requested a feature) when a requested feature is shipped. To facilitate this, there is a view in the Development board on GitHub called []"CS View"](https://github.com/orgs/FlowFuse/projects/1/views/61). It filters to all issues marked Done by the Engineering team, and those with the label Sales Request or Customer Request. The Customer Success Manager will review this board upon each release and contact customers or prospects who requested a feature to inform them that it has shipped, and invite a conversation or feedback.
+
+All team members are asked to identify customer and prospect requests in the following way:
+- On a GitHub issue, use the label Sales Request or Customer Request, as appropriate. (A request is a Sales Request when a member of the Sales team learns that a prospect is interested in a feature. It is a Customer Request when an existing customer makes a request. An issue can be both a Customer Request and a Sales Request.)
+- On the main issue, list the customer record in HubSpot. Do this on the main issue rather than a comment, as these can be lost.
+- If an issue already exists and a new request is made, add this information to the existing issue. This helps keep a comprehensive record of how many requests of a feature there are, and by whom.
+
 
 ### Hubspot Properties
 
