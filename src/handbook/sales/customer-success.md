@@ -113,7 +113,7 @@ and can be
 
 ## Shipped Feature Updates
 
-Customer success contacts FlowFuse customers and prospective customers (anyone we have had in a sales cycle who has requested a feature) when a requested feature is shipped. To facilitate this, there is a view in the Development board on GitHub called []"CS View"](https://github.com/orgs/FlowFuse/projects/1/views/61). It filters to all issues marked Done by the Engineering team, and those with the label Sales Request or Customer Request. The Customer Success Manager will review this board upon each release and contact customers or prospects who requested a feature to inform them that it has shipped, and invite a conversation or feedback.
+Customer success contacts FlowFuse customers and prospective customers (anyone we have had in a sales cycle who has requested a feature) when a requested feature is shipped. To facilitate this, there is a view in the Development board on GitHub called ["CS View"](https://github.com/orgs/FlowFuse/projects/1/views/61). It filters to all issues marked Done by the Engineering team, and those with the label Sales Request or Customer Request. The Customer Success Manager will review this board upon each release and contact customers or prospects who requested a feature to inform them that it has shipped, and invite a conversation or feedback.
 
 All team members are asked to identify customer and prospect requests in the following way:
 - On a GitHub issue, use the label Sales Request or Customer Request, as appropriate. (A request is a Sales Request when a member of the Sales team learns that a prospect is interested in a feature. It is a Customer Request when an existing customer makes a request. An issue can be both a Customer Request and a Sales Request.)
