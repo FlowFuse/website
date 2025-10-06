@@ -224,22 +224,18 @@ When a team member voluntarily departs, we may ask if they would like to share t
 
 ## Offboarding process
 
-We will send an email to the departing employee covering the following points:
-
-1. Final payment
-1. Return of company property
-1. Reimbursement of business expenses
-
-At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. Their manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
+At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily.
+This provides us with valuable feedback on their experience, reasons for leaving, and areas for
+improvement. Their manager schedules these interviews during the employee's last week to ensure
+they have an opportunity to share their insights. Our aim is to use this feedback to enhance our
+workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
 
 ### Offboarding Issue
 
-The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
+After announcing the departure in Slack, the manager will create a new offboarding issue for each instance of a team member leaving.
+The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
 
-### Final Pay
+Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package.
+Such a package might be dependent on on business requirements, standing of the employee, among other factors.
 
-Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
-
-### Business expense
-
-We will reimburse any outstanding expenses that comply with our handbook's reimbursement section.
+The company will reimburse any outstanding expenses that comply with [our handbook](/handbook/peopleops/expenses/#reimbursement)
