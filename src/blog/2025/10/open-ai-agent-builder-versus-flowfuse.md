@@ -57,7 +57,7 @@ for being is to provide the "nervous system" that connects those brains to the
 real world. It's all about managing edge deployments and ensuring a reliable flow
 of data from the edge.
 
-The FlowFuse AI Assistant is a powerful tool that helps engineers, even those
+The [FlowFuse AI Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) is a powerful tool that helps engineers, even those
 who aren't expert coders, to build and manage their Node-RED flows. For instance,
 you can describe what you need in plain English and the assistant will generate
 the necessary code. It can also analyze a complex flow and explain what it does,
