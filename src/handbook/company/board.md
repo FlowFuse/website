@@ -144,13 +144,13 @@ Dear FlowFuse Investors,
 <Progress made over the past month in 4 sentences max>
 
 KPIs (Per end of May)
-* ARR:  $<XX>M, up from $<XX>M end of <Previous Month> and up from $<X>M last year (<Y>x YoY growth)
-* Burn 3m AVG: $<XXX>k/mo
-* Runway until: <YYYY-MM> (Cash at hand / 3m average burn)
+* ARR:  $[XX]M, up from $[XX]M end of [Previous Month] and up from $[X]M last year ([Y]x YoY growth)
+* Burn 3m AVG: $[XXX]k/mo
+* Runway until: [YYYY-MM] (Cash at hand / 3m average burn)
 
-<Topic one>
-<Topic two>
-<Topic three>
+[Topic one]
+[Topic two]
+[Topic three]
 
 Best,
 
