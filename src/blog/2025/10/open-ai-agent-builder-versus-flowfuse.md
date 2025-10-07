@@ -85,3 +85,17 @@ In the end, these are two powerful but very different tools. AgentKit is for the
 AI developer, while FlowFuse is for the industrial engineer who wants to bring
 the power of AI to the edge. We're looking forward to how these technologies can
 be combined in future!
+
+## Ready to Connect Your Physical World?
+
+While AgentKit is perfect for building AI agents in the digital realm, FlowFuse 
+is built for the challenges of industrial and IoT data: managing edge 
+deployments at scale, connecting to diverse industrial protocols, and ensuring 
+reliable data flow from thousands of physical devices.
+
+Whether you're monitoring production lines, building predictive maintenance 
+systems, or implementing Industry 4.0 initiatives, FlowFuse provides the 
+infrastructure to collect, transform, and act on data from the edge.
+
+**Start building today:** [Try FlowFuse free](https://app.flowfuse.com/account/create) or  [book a demo](https://flowfuse.com/book-demo/) to 
+see how we help teams manage industrial data at scale.
