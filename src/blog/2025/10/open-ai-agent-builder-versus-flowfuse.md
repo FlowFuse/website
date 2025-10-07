@@ -23,7 +23,7 @@ right fit for your needs.
 
 [OpenAI's AgentKit](https://openai.com/index/introducing-agentkit/) is a toolkit for developers who want to build and deploy AI
 agents. Key features of AgentKit include the Agent Builder, a low-code visual environment
-(sounds familiar?) for designing multi-agent workflows, and a Connector Registry
+for designing multi-agent workflows, and a Connector Registry
 for managing data and tool connections.
 It also provides ChatKit for embedding chat-based agent experiences,
 Expanded Evals for measuring agent performance, and reinforcement fine-tuning (RFT)
