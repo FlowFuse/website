@@ -10,6 +10,7 @@
 @import "./algolia-theme.css";
 @import "./roadmap.css";
 @import "./zoom-style.css";
+@import "./node-red-style.css";
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 
