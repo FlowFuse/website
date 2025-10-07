@@ -5,7 +5,7 @@ description: "Learn how OpenAI's AgentKit and FlowFuse differ in their approach 
 date: 2025-10-07
 keywords: OpenAI AgentKit, FlowFuse, AI agents, Node-RED, edge computing, IoT, industrial automation, AI Assistant, low-code platform, edge data extraction
 authors: ["zeger-jan-van-de-weg"]
-image:
+image: /blog/2025/10/images/open-ai-agent-builder-versus-flowfuse.png
 tags:
   - flowfuse
   - posts
