@@ -189,11 +189,12 @@ Example Standup:
 
 #### Monday Team Catchup
 
-Weekly a meeting is held to announce company wide updates, get to know each
+Weekly an optional meeting is held to announce company wide updates, get to know each
 other, and share things you want to share both professionally and personally.
 
-Personal updates don't have to be documented in the agenda, but please do keep a
-list of names in the agenda so everyone gets the opportunity to share.
+On the agenda you might want to add what you did the past weekend, and what kept
+you busy. It's also great for setting the order of the chatting and ensuring
+everyone gets the opportunity to share.
 
 #### Strategy Call
 
