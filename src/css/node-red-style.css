@@ -21,9 +21,13 @@ body.node-red-con p {
 
 body.node-red-con .container.main {
     z-index: 1;
-    @apply bg-gray-800/50;
+    @apply bg-black/30;
 }
 
-.z-50 {
-    z-index: 50;
+/* Cookie banner */
+body.node-red-con #cc-main {
+    --cc-btn-primary-bg: theme(colors.white);
+    --cc-btn-primary-hover-bg: theme(colors.gray.50);
+    --cc-btn-secondary-bg: theme(colors.gray.400);
+    --cc-btn-secondary-hover-bg: theme(colors.gray.400);
 }
