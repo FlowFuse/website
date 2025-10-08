@@ -1,6 +1,6 @@
 ---
 title: Application-level access control for Enterprise teams
-description: "Given you finer grained control over who can do what in your team"
+description: "Giving you finer-grained control over who can do what in your team"
 date: 2025-10-08 12:00:00.0  
 authors: ['nick-oleary']
 tags:
