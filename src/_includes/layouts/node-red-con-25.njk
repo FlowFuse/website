@@ -66,15 +66,25 @@
             </div>
         </div>
         <!--Main-->
-        <div class="h-full max-w-2xl mx-auto">
+        <div class="h-full w-full max-w-2xl mx-auto flex flex-col mx-auto items-center justify-center">
             <div id="content" class="container main px-8 pt-8 sm:pt-10 mx-auto space-y-12 pb-24 bg-gray-800">
                 <div class="flex flex-col mx-auto justify-center items-center">
-                    <div class="w-24 mx-auto mb-6">
+                    <div class="w-24 mx-auto mb-3">
                         <img src="https://nodered.org/about/resources/media/node-red-hexagon.svg" />
                     </div>
-                    <div class="space-y-1 md:space-y-2 text-center">
+                    <div class="space-y-1 md:space-y-2 text-center mb-6">
                         <h1 class="text-2xl sm:text-4xl text-white">Node-RED Con 2025</h1>
                         <h2 class="text-2xl text-white">Tuesday, November 4, 2025 | Online</h1>
+                    </div>
+                    <div class="w-full">
+                        <div class="container m-auto text-left max-w-screen-lg flex justify-center items-end m-auto">
+                            <lite-youtube 
+                                videoid="O-zLuLGjBd4"
+                                params="rel=0" 
+                                style="width: 608px; overflow: hidden; background-image: url('https://img.youtube.com/vi/O-zLuLGjBd4/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                                class="rounded-xl sm:max-w-none sm:max-h-full">
+                            </lite-youtube>
+                        </div>
                     </div>
                 </div>
                 <div class="mx-4 md:mx-auto items-center text-white max-w-2xl text-lg space-y-8 text-white">
@@ -128,6 +138,10 @@
         classes.toggle("mobile-open");
     }
 </script>
+
+<!-- Youtube Facade -->
+<script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- PostHog -->
 <script type="text/javascript">
