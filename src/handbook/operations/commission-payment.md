@@ -81,8 +81,8 @@ Subject line: `Commission for [Month] [YYYY]`.
 ```
 Dear [first_name],
 
-This email is to confirm your estimated commissions for {{Month and Year}}. 
-Your commission percentage for this quarter is {{X}}. 
+This email is to confirm your estimated commissions for [Month and Year]. 
+Your commission percentage for this quarter is [X]. 
 
 In the aforementioned period, you closed:
 
@@ -98,7 +98,7 @@ Please confirm the numbers in this email for the commission payment to be issued
 
 Best,
 
-{{Manager sending email}}
+[Manager sending email]
 ```
 
 ### Wiring the money
