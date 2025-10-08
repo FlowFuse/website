@@ -104,3 +104,9 @@ Best,
 ### Wiring the money
 
 If the employee agrees to the commission, process the payment in Deel as USD payment.
+Sign into Deel and browse to the profile of the commission receiver. For contractors
+the commission or bonux is a **Payment Adjustment**. For EOR team members, you'll
+need to add an item under "Payments and Submissions" manually.
+
+In both cases be explicit about this being a bonus for achievements for a certain 
+time period and what the achievement was.
