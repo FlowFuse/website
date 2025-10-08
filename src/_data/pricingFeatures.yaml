@@ -50,7 +50,7 @@ sections:
         info: "<p>Access your Node-RED application via your own domain name.</p>"
       - id: persistent-files
         label: Persistent files
-        cloudValues: [ null, '10 GB', '100 GB' ]    
+        cloudValues: [ '1 GB', '10 GB', '100 GB' ]    
         tags: [ 'cloud' ]
         info: "<p>FlowFuse allows Node-RED instances to store files persistently to local file system. This is the space limit for these files.</p>"
       - id: persistent-context
