@@ -5,7 +5,7 @@ meta:
     description: Learn how Node-RED and FlowFuse power heavy-duty IT/OT integration, automation, and real-time visibility in container terminals and beyond.
 image: /images/webinars/from-node-red-to-flowfuse-it-ot-integration-and-automation-in-container-terminals.jpg
 date: 2025-10-30
-time: 14:00 CET (11:00am ET)
+time: 16:00 CET (11:00am ET)
 duration: 60
 video: 
 hosts: ["raymond-macaisa"]
