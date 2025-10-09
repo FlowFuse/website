@@ -162,12 +162,16 @@ date for a new employee should be at least 7 working days out. When a
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
 1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
-1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening). Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. (The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.) 
+1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening).
+   * Create or add the their job title to Deel.
+   * Copy the "Job Description" from the handbook as "Scope of work" on Deel (and save it as a template for this role).
+   * Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.
+   * Add Equity to the offer according to [the Equity guidelines](/handbook/peopleops/compensation/#equity)
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review. 
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
-1. Close the role in Greenhouse as filled
+1. [Close the role](/handbook/peopleops/hiring/#closing-a-job)
 1. Update the handbooks so that the role isn't listed as an opening on the website ([Reference PR](https://github.com/FlowFuse/website/pull/3300)) 
 
 ### Background Screening
@@ -224,22 +228,18 @@ When a team member voluntarily departs, we may ask if they would like to share t
 
 ## Offboarding process
 
-We will send an email to the departing employee covering the following points:
-
-1. Final payment
-1. Return of company property
-1. Reimbursement of business expenses
-
-At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. Their manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
+At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily.
+This provides us with valuable feedback on their experience, reasons for leaving, and areas for
+improvement. Their manager schedules these interviews during the employee's last week to ensure
+they have an opportunity to share their insights. Our aim is to use this feedback to enhance our
+workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
 
 ### Offboarding Issue
 
-The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
+After announcing the departure in Slack, the manager will create a new offboarding issue for each instance of a team member leaving.
+The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
 
-### Final Pay
+Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package.
+Such a package might be dependent on on business requirements, standing of the employee, among other factors.
 
-Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
-
-### Business expense
-
-We will reimburse any outstanding expenses that comply with our handbook's reimbursement section.
+The company will reimburse any outstanding expenses that comply with [our handbook](/handbook/peopleops/expenses/#reimbursement)
