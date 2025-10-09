@@ -137,7 +137,8 @@ majority to be obtained.
 
 When a candidate goes through the full hiring process an offer might be extended
 to them. At such a time it's good to understand that the offer at that time is
-conditional on background checks. The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
+conditional on [background checks](/handbook/peopleops/hiring/#background-screening).
+The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
 This part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
@@ -156,9 +157,10 @@ determining how many options to offer.
 
 ## After an offer is accepted
 
-Onboarding on our EOR provider, Deel, takes at least 1 to 3 weeks. The start
-date for a new employee should be at least 7 working days out. When a
-[conditional offer](#extending-an-offer) has been accepted you should immediately:
+Onboarding on our EOR provider, Deel, takes up to 3 weeks. For contractors or US
+employees the start date can be within 48 hours. Otherwise, do not offer anything
+within 2 weeks. When a [conditional offer](#extending-an-offer) has been accepted
+you should immediately:
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
 1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
@@ -176,14 +178,17 @@ date for a new employee should be at least 7 working days out. When a
 
 ### Background Screening
 
-FlowFuse will utilize Deel to conduct background checks on individuals in the United States. These checks are essential for compliance purposes, particularly for employees located in the US.
+FlowFuse will utilize Deel to conduct background checks on individuals in the
+United States. These checks are essential for compliance purposes, particularly
+for employees located in the US.
 
 ### Tax Residency
+
 During the onboarding process on our EOR provider platform, candidates must either be citizens of the country where they will be working or possess a valid visa. Any requests for changes in tax residency should be communicated to the HR department and CEO at least 2 months in advance. This includes changing States within the US.
 
 ## Onboarding
 
-Just before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
+Before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
 and preferred company email address. An issue will be created on our [internal issue tracker](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} with steps for you and
 the team to complete once you start.
 
@@ -196,7 +201,8 @@ Once your FlowFuse email is set up, you will have access to invitations to other
 
 On your first day, once your email and 1Password accounts are set up, it is important to prioritize
 gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
-Additionally, your manager will assign tasks for you to begin working on during your first week. Further details on Onboarding will be available in your Onboarding issue. 
+Additionally, your manager will assign tasks for you to begin working on during
+your first week. Further details on Onboarding will be available in your Onboarding issue. 
 
 ### Onboarding Buddy
 
