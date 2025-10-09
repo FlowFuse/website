@@ -5,7 +5,7 @@ description: "Looking back on where Node-RED came from to understand the impact 
 date: 2025-10-09
 keywords: 
 authors: ["nick-oleary"]
-image:
+image: /blog/2025/10/images/node-red-revolution.png
 tags:
   - flowfuse
   - node-red
