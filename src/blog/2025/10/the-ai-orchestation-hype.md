@@ -37,10 +37,6 @@ But if you need to bring intelligence to your factory floors, your supply chains
 ## Ready to Build the Future of Industrial AI?
 FlowFuse is built for the challenges of industrial and IoT data. Whether you're implementing Industry 4.0 initiatives or building predictive maintenance systems, we provide the platform to deploy and manage intelligence at the edge.
 
-
-## Join us at Node-RED Con
-
-Next month we’re sponsoring the Node-RED Con virtual event - a free day of talks from the Node-RED community all about how it’s being used in industry. There are lots of fascinating talks scheduled and I’d urge you to [register to attend](https://events.zoom.us/ev/AqhqiQ8mTK2lnAoOEH8c8TA1a_9MzVhZq_T7d1-kMHlHDt2_Qh_0~AtAGpC_uhX5LxGrRFYeO63TLtQlUXVUdpy3DY5mEZFgC79PyUeKZzgp8njVUDVZdS3SBo8HS1wGVPdosNhe2VVxCpw).
-
+[[Start building today: Try FlowFuse free]](https://app.flowfuse.com/account/create) or [[Book a demo]](https://flowfuse.com/book-demo/)
 
 
