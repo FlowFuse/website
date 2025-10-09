@@ -10,7 +10,7 @@ meta:
 
 # {{meta.title}}
 
-GraphQL is transforming the way APIs are designed. Unlike traditional REST APIs, which often require multiple requests to different endpoints, GraphQL provides a single, flexible endpoint that allows you to fetch exactly the data you need—nothing more, nothing less. In this article, you will learn how to integrate GraphQL with Node-RED and build APIs that efficiently serve your application’s data requirements.
+GraphQL is transforming the way APIs are designed. Unlike traditional REST APIs, which often require multiple requests to different endpoints, GraphQL provides a single, flexible endpoint that allows you to fetch exactly the data you need—nothing more, nothing less. In this article, you will learn how to integrate GraphQL with Node-RED and build APIs that efficiently serve your application's data requirements.
 
 ## Getting Started
 
@@ -95,7 +95,39 @@ Let's create a practical example using a public GraphQL API to fetch country inf
 5. **Connect the Inject node to the GraphQL node, and then connect the GraphQL node to the Debug node.**
 6. Deploy the flow and click the **Inject** button. Check the **Debug** panel for the output.
 
-The debug panel will display an array of country objects, each containing exactly the fields you requested. This demonstrates GraphQL's precision in data fetching.
+### What to Expect in Debug Output
+
+The debug panel will display an array of country objects. Here's a trimmed example of what you should see:
+
+```json
+{
+  "data": {
+    "countries": [
+      {
+        "code": "AD",
+        "name": "Andorra",
+        "capital": "Andorra la Vella",
+        "currency": "EUR"
+      },
+      {
+        "code": "AE",
+        "name": "United Arab Emirates",
+        "capital": "Abu Dhabi",
+        "currency": "AED"
+      },
+      {
+        "code": "US",
+        "name": "United States",
+        "capital": "Washington D.C.",
+        "currency": "USD,USN,USS"
+      }
+      // ... more countries
+    ]
+  }
+}
+```
+
+Each country object contains exactly the fields you requested. This demonstrates GraphQL's precision in data fetching.
 
 ## Working with Dynamic Data
 
@@ -151,6 +183,28 @@ msg.variables = {
 };
 ```
 
+### What to Expect in Debug Output
+
+When querying a single country with variables, you'll see:
+
+```json
+{
+  "data": {
+    "country": {
+      "name": "Japan",
+      "capital": "Tokyo",
+      "currency": "JPY",
+      "languages": [
+        {
+          "name": "Japanese",
+          "native": "日本語"
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Modifying Data with Mutations
 
 While queries retrieve data, mutations allow you to **create, update, or delete data**—similar to POST, PUT, and DELETE operations in REST APIs.
@@ -185,6 +239,44 @@ msg.variables = {
 return msg;
 ```
 
+### What to Expect in Debug Output
+
+When a device is successfully created, you'll see:
+
+```json
+{
+  "data": {
+    "createDevice": {
+      "id": "7",
+      "name": "Raspberry Pi 4A",
+      "model": "Raspberry Pi 4",
+      "location": "Factory Floor 1",
+      "createdAt": "2024-03-21T12:30:45.123Z",
+      "success": true
+    }
+  }
+}
+```
+
+If validation fails, the error structure helps you identify the issue:
+
+```json
+{
+  "data": {
+    "createDevice": {
+      "id": null,
+      "success": false,
+      "errors": [
+        {
+          "field": "name",
+          "message": "Name is required"
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Example: Complete Device Management System
 
 Here's how you might structure a comprehensive **device management** in GraphQL:
@@ -210,6 +302,36 @@ query GetDevicesPaginated($limit: Int = 10, $offset: Int = 0, $searchTerm: Strin
 
 *This query supports pagination and search, useful when managing large fleets of devices. Note that some GraphQL APIs use **cursor-based pagination** instead of `limit` and `offset`, so you may need to adapt your query accordingly.*
 
+#### Expected Output
+
+```json
+{
+  "data": {
+    "devices": [
+      {
+        "id": "1",
+        "name": "Raspberry Pi 4A",
+        "type": "Sensor",
+        "location": "Factory Floor 1",
+        "lastSeenStatus": "Online",
+        "createdAt": "2024-01-15T10:30:00Z",
+        "lastSeenAt": "2024-03-20T14:22:00Z"
+      },
+      {
+        "id": "2",
+        "name": "Temperature Monitor A1",
+        "type": "Sensor",
+        "location": "Warehouse Section B",
+        "lastSeenStatus": "Online",
+        "createdAt": "2024-02-10T08:15:00Z",
+        "lastSeenAt": "2024-03-21T09:10:00Z"
+      }
+    ],
+    "deviceCount": 6
+  }
+}
+```
+
 ### Creating New Devices
 
 ```graphql
@@ -231,6 +353,24 @@ mutation CreateDevice($input: DeviceInput!) {
 
 *Always return `success` and any validation errors to confirm the device was created properly.*
 
+#### Expected Output (Success)
+
+```json
+{
+  "data": {
+    "createDevice": {
+      "id": "7",
+      "name": "Smart Thermostat",
+      "type": "Controller",
+      "location": "Office Area",
+      "createdAt": "2024-03-21T12:30:00Z",
+      "success": true,
+      "errors": []
+    }
+  }
+}
+```
+
 ### Updating Existing Devices
 
 ```graphql
@@ -243,6 +383,24 @@ mutation UpdateDevice($id: ID!, $input: DeviceUpdateInput!) {
     lastSeenStatus
     updatedAt
     success
+  }
+}
+```
+
+#### Expected Output
+
+```json
+{
+  "data": {
+    "updateDevice": {
+      "id": "1",
+      "name": "Raspberry Pi 4A",
+      "type": "Sensor",
+      "location": "Factory Floor 3",
+      "lastSeenStatus": "Maintenance",
+      "updatedAt": "2024-03-21T13:45:00Z",
+      "success": true
+    }
   }
 }
 ```
@@ -262,6 +420,21 @@ mutation DeactivateDevice($id: ID!) {
 
 *Soft deletes allow you to retain historical device data for audits and compliance.*
 
+#### Expected Output
+
+```json
+{
+  "data": {
+    "deactivateDevice": {
+      "id": "4",
+      "isActive": false,
+      "deactivatedAt": "2024-03-21T14:00:00Z",
+      "success": true
+    }
+  }
+}
+```
+
 ## Advanced Techniques
 
 ### Custom Headers for Authentication and Metadata
@@ -279,7 +452,7 @@ return msg;
 
 ### Using Fragments for Code Reusability
 
-When queries start to grow, you’ll often find yourself requesting the same fields across multiple operations. **Fragments** let you define those fields once and reuse them, keeping queries clean and consistent.
+When queries start to grow, you'll often find yourself requesting the same fields across multiple operations. Fragments let you define those fields once and reuse them, keeping queries clean and consistent.
 
 ```graphql
 fragment DeviceBasicInfo on Device {
@@ -304,8 +477,35 @@ query GetDeviceProfile($deviceId: ID!) {
 }
 ```
 
-![Fragment usage in Node-RED GraphQL node](./images/fragments.png)
-*Example of using GraphQL fragments in Node-RED. `DeviceBasicInfo` fragment is reused inside `DeviceOperationalInfo` for consistent field selection across queries.*
+*Here, `DeviceBasicInfo` is reused inside `DeviceOperationalInfo`, so you can easily expand or maintain your schema without duplicating fields.*
 
-![GraphQL query output with fragments](./images/output.png)
-*Example output in the Node-RED Debug panel when querying a device with fragments. Only the requested fields defined in the fragments are returned, showing concise and reusable data structure.*
+#### Expected Output with Fragments
+
+The output includes all fields from both fragments combined:
+
+```json
+{
+  "data": {
+    "device": {
+      "id": "1",
+      "name": "Raspberry Pi 4A",
+      "type": "Sensor",
+      "location": "Factory Floor 1",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "lastSeenStatus": "Online",
+      "lastSeenAt": "2024-03-20T14:22:00Z",
+      "maintenanceDue": "2024-06-15T00:00:00Z"
+    }
+  }
+}
+```
+
+Notice how the response includes all fields from `DeviceBasicInfo` (id, name, type, location, createdAt) plus the additional fields from `DeviceOperationalInfo` (lastSeenStatus, lastSeenAt, maintenanceDue). This demonstrates how fragments compose together to build the complete response.
+
+## Complete Example Flow
+
+The following example flow demonstrates creating, reading, updating, and deleting data using GraphQL, including performing queries with fragments for reusable field selections. This flow and the GraphQL node are for demonstration purposes only and do not include a demo API.
+
+{% renderFlow %}
+[{"id":"9a0c28902989b739","type":"group","z":"98a60b6dd0896e47","style":{"stroke":"#999999","stroke-opacity":"1","fill":"none","fill-opacity":"1","label":true,"label-position":"nw","color":"#a4a4a4"},"nodes":["7cb18349cfb7f014","6ac3b625b7e6e954","66d017b14ed8c60d","572aa9e659f5e27e","6d4f9a2cb159d8e5","e0b89bf0a47dbae3","fdcc15f68872b4d0","beb63abd92f155ce","1515cbad98355c5f","0c4068bd1821923b","f5527e179e1c8911","9fc70e8f8715f994","e0d2739c55386644","b45422c8bffaa52d","f5c2e0346b4979aa","597bac49938cd7bc","dae18c118b5a7d25","06e715476d4a05a1","8372c53fd374ca0c","81ee27d5d002cdf7","b59476221e135579","2f45ba641ea8d272","bc0b5067c9b64b4a","9bcd78c44b2d304a","7d7e6689f0c42fac","ac37b7540e536255","e818060c00087930","621b732245671f2f","f99baa69918d2a9a","509af177c480ed03","368fbd3d4f756b6a","cc1ef9d881065082"],"x":174,"y":119,"w":612,"h":822},{"id":"7cb18349cfb7f014","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Get Single Device By ID","graphql":"fd163a325aa21cdb","format":"text","template":"query GetDevice($id: ID!) {\n  device(id: $id) {\n    id\n    name\n    type\n    model\n    location\n    lastSeenStatus\n    maintenanceDue\n  }\n}","syntax":"mustache","token":"","showDebug":false,"x":490,"y":280,"wires":[["1515cbad98355c5f"],["0c4068bd1821923b"]]},{"id":"6ac3b625b7e6e954","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[{"p":"variables","v":"{\"id\":\"1\"}","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":280,"wires":[["7cb18349cfb7f014"]]},{"id":"66d017b14ed8c60d","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Get Devicies","graphql":"fd163a325aa21cdb","format":"text","template":"query GetDevices {\n  devices {\n    id\n    name\n    type\n    location\n    lastSeenStatus\n    createdAt\n  }\n}","syntax":"mustache","token":"","showDebug":false,"x":450,"y":180,"wires":[["fdcc15f68872b4d0"],["beb63abd92f155ce"]]},{"id":"572aa9e659f5e27e","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":180,"wires":[["66d017b14ed8c60d"]]},{"id":"6d4f9a2cb159d8e5","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Create Device","graphql":"fd163a325aa21cdb","format":"text","template":"mutation CreateDevice($input: DeviceInput!) {\n  createDevice(input: $input) {\n    id\n    name\n    type\n    model\n    location\n    createdAt\n    success\n    errors {\n      field\n      message\n    }\n  }\n}","syntax":"mustache","token":"","showDebug":false,"x":460,"y":380,"wires":[["f5527e179e1c8911"],["9fc70e8f8715f994"]]},{"id":"e0b89bf0a47dbae3","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[{"p":"variables","v":"{\"input\":{\"name\":\"Smart Thermostat\",\"type\":\"Controller\",\"model\":\"Nest V3\",\"location\":\"Office Area\"}}","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":380,"wires":[["6d4f9a2cb159d8e5"]]},{"id":"fdcc15f68872b4d0","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":160,"wires":[]},{"id":"beb63abd92f155ce","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":200,"wires":[]},{"id":"1515cbad98355c5f","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":260,"wires":[]},{"id":"0c4068bd1821923b","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":300,"wires":[]},{"id":"f5527e179e1c8911","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":360,"wires":[]},{"id":"9fc70e8f8715f994","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":400,"wires":[]},{"id":"e0d2739c55386644","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Create Device","graphql":"fd163a325aa21cdb","format":"text","template":"mutation CreateDevice($input: DeviceInput!) {\n  createDevice(input: $input) {\n    id\n    name\n    type\n    model\n    location\n    createdAt\n    success\n    errors {\n      field\n      message\n    }\n  }\n}","syntax":"mustache","token":"","showDebug":false,"x":460,"y":480,"wires":[["f5c2e0346b4979aa"],["597bac49938cd7bc"]]},{"id":"b45422c8bffaa52d","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[{"p":"variables","v":"{\"input\":{\"name\":\"Smart Thermostat\",\"type\":\"Controller\",\"model\":\"Nest V3\",\"location\":\"Office Area\"}}","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":480,"wires":[["e0d2739c55386644"]]},{"id":"f5c2e0346b4979aa","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":460,"wires":[]},{"id":"597bac49938cd7bc","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":500,"wires":[]},{"id":"dae18c118b5a7d25","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Update Device","graphql":"fd163a325aa21cdb","format":"text","template":"mutation UpdateDevice($id: ID!, $input: DeviceUpdateInput!) {\n  updateDevice(id: $id, input: $input) {\n    id\n    name\n    location\n    lastSeenStatus\n    updatedAt\n    success\n  }\n}","syntax":"mustache","token":"","showDebug":false,"x":460,"y":580,"wires":[["8372c53fd374ca0c"],["81ee27d5d002cdf7"]]},{"id":"06e715476d4a05a1","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[{"p":"variables","v":"{   \"id\": \"1\",   \"input\": {     \"location\": \"Factory Floor 3\",     \"lastSeenStatus\": \"Maintenance\"   } }","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":580,"wires":[["dae18c118b5a7d25"]]},{"id":"8372c53fd374ca0c","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":560,"wires":[]},{"id":"81ee27d5d002cdf7","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":600,"wires":[]},{"id":"b59476221e135579","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Deactivate Device","graphql":"fd163a325aa21cdb","format":"text","template":"mutation DeactivateDevice($id: ID!) {\n  deactivateDevice(id: $id) {\n    id\n    isActive\n    deactivatedAt\n    success\n  }\n}","syntax":"mustache","token":"","showDebug":false,"x":470,"y":680,"wires":[["bc0b5067c9b64b4a"],["9bcd78c44b2d304a"]]},{"id":"2f45ba641ea8d272","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[{"p":"variables","v":"{   \"id\": \"4\" }","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":680,"wires":[["b59476221e135579"]]},{"id":"bc0b5067c9b64b4a","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":660,"wires":[]},{"id":"9bcd78c44b2d304a","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":700,"wires":[]},{"id":"7d7e6689f0c42fac","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"fragment","graphql":"fd163a325aa21cdb","format":"text","template":"fragment DeviceBasicInfo on Device {\n  id\n  name\n  type\n  location\n  createdAt\n}\n\nfragment DeviceOperationalInfo on Device {\n  ...DeviceBasicInfo\n  lastSeenStatus\n  lastSeenAt\n  maintenanceDue\n}\n\nquery GetDeviceProfile($deviceId: ID!) {\n  device(id: $deviceId) {\n    ...DeviceOperationalInfo\n  }\n}","syntax":"mustache","token":"","showDebug":false,"x":440,"y":780,"wires":[["e818060c00087930"],["621b732245671f2f"]]},{"id":"ac37b7540e536255","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[{"p":"variables","v":"{   \"deviceId\": \"4\" }","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":780,"wires":[["7d7e6689f0c42fac"]]},{"id":"e818060c00087930","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":760,"wires":[]},{"id":"621b732245671f2f","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":800,"wires":[]},{"id":"f99baa69918d2a9a","type":"graphql","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Pagination","graphql":"fd163a325aa21cdb","format":"text","template":"query GetDevicesPaginated($limit: Int = 10, $offset: Int = 0, $searchTerm: String) {\n  devices(limit: $limit, offset: $offset, search: $searchTerm) {\n    id\n    name\n    type\n    location\n    lastSeenStatus\n    createdAt\n    lastSeenAt\n  }\n  deviceCount(search: $searchTerm)\n}","syntax":"mustache","token":"","showDebug":false,"x":450,"y":880,"wires":[["368fbd3d4f756b6a"],["cc1ef9d881065082"]]},{"id":"509af177c480ed03","type":"inject","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"","props":[{"p":"variables","v":"{   \"deviceId\": \"4\" }","vt":"json"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":880,"wires":[["f99baa69918d2a9a"]]},{"id":"368fbd3d4f756b6a","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":860,"wires":[]},{"id":"cc1ef9d881065082","type":"debug","z":"98a60b6dd0896e47","g":"9a0c28902989b739","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":900,"wires":[]},{"id":"fd163a325aa21cdb","type":"graphql-server","name":"","endpoint":"","token":""},{"id":"f062d8bac6406897","type":"global-config","env":[],"modules":{"node-red-contrib-graphql":"2.2.0"}}]
+{% endrenderFlow %}
