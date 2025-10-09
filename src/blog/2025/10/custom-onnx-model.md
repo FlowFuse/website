@@ -311,12 +311,29 @@ if __name__ == "__main__":
 
 ```
 
+
 #### Run the fruit_classifier.py Python script
 Now you can run the script that will train the model, export it to ONNX format, and run a quick classification test using the ONNX Runtime:
 
 ```bash
 python fruit_classifier.py
 ```
+
+What you should see:
+```log
+Class mapping: {'apple': 0, 'kiwi': 1, 'mango': 2}
+Epoch 1, Loss: 0.7811
+Epoch 2, Loss: 0.1383
+Epoch 3, Loss: 0.0671
+Epoch 4, Loss: 0.0399
+Epoch 5, Loss: 0.0184
+Validation Accuracy: 80.95%
+Model exported to fruit_classifier.onnx
+ONNX Prediction: apple
+```
+
+If you changed the data set from fruit to your use own images and classifications, it will output a different `Class mapping` that you will need to use in the Node-RED flow on the next step - make a note of this.
+
 
 ### Using your newly generated ONNX Model with the FlowFuse ONNX Node
 
@@ -331,8 +348,9 @@ python fruit_classifier.py
    - Click the **Import** Button
 3. Double click the ONNX node to open the configuration dialog
 4. Enter the path to your ONNX model in the **Path** field
-5. Deploy the flow
-6. Click the inject button on the left of the flow to trigger an inference
+5. If necessary, update the classifications (labels) in the Function node named **load labels** as noted in the previous section
+6. Deploy the flow
+7. Click the inject button on the left of the flow to trigger an inference
 
 
 ![Image showing how to import demo flow](./images/custom-onnx-mode--import-flow.png){data-zoomable}
