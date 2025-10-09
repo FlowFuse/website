@@ -188,7 +188,7 @@ During the onboarding process on our EOR provider platform, candidates must eith
 
 ## Onboarding
 
-Before your first day of work at FlowFuse, you will receive an email requestingyour GitHub username
+Before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
 and preferred company email address. An issue will be created on our [internal issue tracker](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} with steps for you and
 the team to complete once you start.
 
