@@ -37,15 +37,15 @@ A natural consequence of the Open Source path the project took was to make it ea
 
 Whilst we see Node-RED used in many industries, it finds a natural home in the Industrial automation space. Being able to run anywhere from edge-of-network devices to the cloud gives a lot of flexibility in the types of solutions it can be applied to. At its heart, Node-RED is all about accessing data, wherever it may be and doing something meaningful with that data.
  
-We see it being used alongside traditional PLCs, providing an easier point of integration - pulling data from many different systems in one place, providing a dashboard visualization in situ, and making the data available to the wider organisation. Having a consistent developer experience for all those tasks makes Node-RED a natural choice.
+We see it being used alongside traditional PLCs, providing an easier point of integration - pulling data from many different systems in one place, providing a dashboard visualization in situ, and making the data available to the wider organization. Having a consistent developer experience for all those tasks makes Node-RED a natural choice.
 
 ## Scaling Node-RED within your organization
 
 Through the early life of the project, we focussed on the core of Node-RED being a high-quality, reliable, low-code development tool. Through the community, we knew there were companies beginning to adopt Node-RED at scale, but some of the challenges they were facing were out of scope of what the core project could address.
 
-The flexibility of Node-RED comes at a cost of how you scale and manage your Node-RED infrastructure. All organisations have a responsibility to keep their IT infrastructure secured and well-maintained - and that has to be considered when adopting any technology.
+The flexibility of Node-RED comes at a cost of how you scale and manage your Node-RED infrastructure. All organizations have a responsibility to keep their IT infrastructure secured and well-maintained - and that has to be considered when adopting any technology.
 
-For all of its strengths, the choice of Open Source at the core does pose some questions that should not be overlooked. For example, who can be relied on to fix issues if you don’t have the engineering capacity within your own organisation? How do you manage all of those Node-RED instances throughout your organization?
+For all of its strengths, the choice of Open Source at the core does pose some questions that should not be overlooked. For example, who can be relied on to fix issues if you don’t have the engineering capacity within your own organization? How do you manage all of those Node-RED instances throughout your organization?
 
 These were the questions that motivated me to start FlowFuse - and is where we elevate Node-RED to be a robust enterprise-ready platform. Just as the early development of Node-RED was driven by our own requirements, FlowFuse has been built based on first-hand experience of what’s needed to scale Node-RED.
 
@@ -55,7 +55,7 @@ This is a common pattern we see; FlowFuse solves the operational challenges that
 
 ## Join us at Node-RED Con
 
-Next month we’re sponsoring the Node-RED Con virtual event - a free day of talks from the Node-RED community all about how it’s being used in industry. There are lots of fascinating talks scheduled and I’d urge you to register to attend.
+Next month we’re sponsoring the Node-RED Con virtual event - a free day of talks from the Node-RED community all about how it’s being used in industry. There are lots of fascinating talks scheduled and I’d urge you to [register to attend](https://events.zoom.us/ev/AqhqiQ8mTK2lnAoOEH8c8TA1a_9MzVhZq_T7d1-kMHlHDt2_Qh_0~AtAGpC_uhX5LxGrRFYeO63TLtQlUXVUdpy3DY5mEZFgC79PyUeKZzgp8njVUDVZdS3SBo8HS1wGVPdosNhe2VVxCpw).
 
 
 
