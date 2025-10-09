@@ -2,7 +2,7 @@
 title: "Running custom trained models with FlowFuse AI Nodes"
 subtitle: "Using ONNX runtime to run inference in Node-RED"
 description: "Learn how to train and export an image classifier model, and integrate it with FlowFuse AI Nodes for low-code inference in Node-RED."
-date: 2025-10-09
+date: 2025-10-10
 keywords: FlowFuse, Node-RED, industrial automation, low-code platform, data analysis, vision systems, inference, AI, object detection, image classification, depth estimation, transfer learning, PyTorch, ONNX, ResNet
 authors: ["stephen-mclaughlin"]
 image: /blog/2025/10/images/flowfuse-ai-nodes.png
