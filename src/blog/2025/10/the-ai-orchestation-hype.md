@@ -5,7 +5,7 @@ description: "Why today's cloud-centric AI models fall short for the industrial 
 date: 2025-10-09
 keywords: 
 authors: ["pablo-filomeno"]
-image: 
+image: /blog/2025/10/images/the-ai-orchestation-hype.png
 tags:
   - flowfuse
   - node-red
