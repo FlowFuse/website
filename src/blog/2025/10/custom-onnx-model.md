@@ -49,7 +49,7 @@ This tutorial was tested on Ubuntu using Python 3 and `pyenv` for environment ma
 For the sake of brevity, from this point forward, the tutorial will assume you are using a debian based operating system and `pyenv`.
 Instructions will need to be adapted if you are using something else.
 
-##### `pyenv` and `pyenv-virtualenv`
+##### Python tools
 
 Ensure you have `pyenv` and `pyenv-virtualenv` installed.
 
@@ -60,7 +60,7 @@ pyenv virtualenv --version
 
 If you don't have them installed, this [Medium article](https://medium.com/@aashari/easy-to-follow-guide-of-how-to-install-pyenv-on-ubuntu-a3730af8d7f0) worked well in our case.
 
-##### `bz2` support
+##### Sub dependencies
 
 During setup and testing, my installation failed at the last step due to missing `bz2` support (a TorchVision dependency).
 If you encounter this, you would need to install `libbz2` then you would need to rebuild your python environment.
