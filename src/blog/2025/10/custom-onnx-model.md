@@ -114,7 +114,7 @@ pip freeze > requirements.txt
 ### Organizing your dataset
 
 For this example, I have created a simple dataset of images of apples, kiwis, and mangos.
-You can use your own dataset or download a dataset from the internet e.g. [this one](https://www.kaggle.com/datasets/) or [this one](https://images.cv/search-labeled-image-dataset). 
+You can use your own dataset or download a dataset from the internet (e.g. [this one](https://www.kaggle.com/datasets/) or [this one](https://images.cv/search-labeled-image-dataset)). 
 Just make sure to organize the images in the following structure:
 
 ```bash
