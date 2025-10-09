@@ -53,7 +53,7 @@ A great example is one of our early customers who is a large manufacturer in the
 
 This is a common pattern we see; FlowFuse solves the operational challenges that slow down digital transformation; engineers are able to focus on solving real business problems with confidence.
 
-## Find out more
+## Join us at Node-RED Con
 
 Next month we’re sponsoring the Node-RED Con virtual event - a free day of talks from the Node-RED community all about how it’s being used in industry. There are lots of fascinating talks scheduled and I’d urge you to register to attend.
 
