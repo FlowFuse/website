@@ -1,3 +1,11 @@
+// Detects if we're on any Node-RED Con 2025 landing
+const isNodeRedLanding = window.location.pathname.includes('landing/node-red-con-2025');
+
+if (isNodeRedLanding) {
+    // Activates dark mode
+    document.documentElement.classList.add('cc--darkmode');
+}
+
 CookieConsent.run({
     guiOptions: {
         consentModal: {

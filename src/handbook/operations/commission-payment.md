@@ -81,8 +81,8 @@ Subject line: `Commission for [Month] [YYYY]`.
 ```
 Dear [first_name],
 
-This email is to confirm your estimated commissions for {{Month and Year}}. 
-Your commission percentage for this quarter is {{X}}. 
+This email is to confirm your estimated commissions for [Month and Year]. 
+Your commission percentage for this quarter is [X]. 
 
 In the aforementioned period, you closed:
 
@@ -98,9 +98,15 @@ Please confirm the numbers in this email for the commission payment to be issued
 
 Best,
 
-{{Manager sending email}}
+[Manager sending email]
 ```
 
 ### Wiring the money
 
 If the employee agrees to the commission, process the payment in Deel as USD payment.
+Sign into Deel and browse to the profile of the commission receiver. For contractors
+the commission or bonux is a **Payment Adjustment**. For EOR team members, you'll
+need to add an item under "Payments and Submissions" manually.
+
+In both cases be explicit about this being a bonus for achievements for a certain 
+time period and what the achievement was.
