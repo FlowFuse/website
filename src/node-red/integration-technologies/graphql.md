@@ -33,7 +33,7 @@ Once installed, you'll configure your first GraphQL endpoint. This is where you 
 4. Fill in these essential settings:
    - **Name**: Use a descriptive name like "User Management API" or "Countries Database"
    - **Endpoint**: Your GraphQL server URL (e.g., `https://api.example.com/graphql`)
-   - **Token**: Add authentication if required (Bearer tokens are most common)
+   - **Token**: Add authentication if required (Bearer tokens are the most common)
 
 *Important: For sensitive credentials such as tokens, use environment variables to prevent them from being exposed when sharing flows. Learn more about using environment variables in Node-RED [here](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).*
 
@@ -99,7 +99,7 @@ The debug panel will display an array of country objects, each containing exactl
 
 ## Working with Dynamic Data
 
-Static queries are useful for learning, but real applications need dynamic data. GraphQL provides two excellent approaches for this.
+Before writing dynamic queries, note that the GraphQL node has a Syntax setting. You can select GraphQL (default) for standard queries and mutations, or Plain to send raw GraphQL payloads. This is useful for advanced or dynamic queries.
 
 ### Method 1: Mustache Templates (Simple Approach)
 
@@ -116,7 +116,7 @@ query GetSpecificCountry {
 }
 ```
 
-**Setup your input message:**
+**Set up your input message:**
 ```javascript
 msg.payload = {
   countryCode: "FR"
@@ -189,6 +189,8 @@ return msg;
 
 Here's how you might structure a comprehensive **device management** in GraphQL:
 
+*Note: The Device examples are illustrative. The specific types and fields such as DeviceInput, updateDevice, and deactivateDevice must exist in the target GraphQL schema, which can vary depending on the API you are working with.*
+
 ### Fetching Devices with Pagination
 
 ```graphql
@@ -206,7 +208,7 @@ query GetDevicesPaginated($limit: Int = 10, $offset: Int = 0, $searchTerm: Strin
 }
 ```
 
-*This query supports pagination and search, useful when managing large fleets of devices.*
+*This query supports pagination and search, useful when managing large fleets of devices. Note that some GraphQL APIs use **cursor-based pagination** instead of `limit` and `offset`, so you may need to adapt your query accordingly.*
 
 ### Creating New Devices
 
