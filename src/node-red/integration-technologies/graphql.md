@@ -5,7 +5,7 @@ eleventyNavigation:
 meta:
    title: Integrating GraphQL APIs in Node-RED
    description: Learn how to integrate GraphQL APIs in Node-RED. This guide covers setting up endpoints, executing queries, handling variables, and using mutations for dynamic data.
-   keywords: node-red, flowfuse, graphql api, queries, mutations
+   keywords: node-red, flowfuse, graphql apis, queries, mutations
 ---
 
 # {{meta.title}}
