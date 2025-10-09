@@ -279,7 +279,7 @@ return msg;
 
 ### Using Fragments for Code Reusability
 
-When queries start to grow, you’ll often find yourself requesting the same fields across multiple operations. Fragments let you define those fields once and reuse them, keeping queries clean and consistent.
+When queries start to grow, you’ll often find yourself requesting the same fields across multiple operations. **Fragments** let you define those fields once and reuse them, keeping queries clean and consistent.
 
 ```graphql
 fragment DeviceBasicInfo on Device {
@@ -304,4 +304,8 @@ query GetDeviceProfile($deviceId: ID!) {
 }
 ```
 
-*Here, `DeviceBasicInfo` is reused inside `DeviceOperationalInfo`, so you can easily expand or maintain your schema without duplicating fields.*
+![Fragment usage in Node-RED GraphQL node](./images/fragments.png)
+*Example of using GraphQL fragments in Node-RED. `DeviceBasicInfo` fragment is reused inside `DeviceOperationalInfo` for consistent field selection across queries.*
+
+![GraphQL query output with fragments](./images/output.png)
+*Example output in the Node-RED Debug panel when querying a device with fragments. Only the requested fields defined in the fragments are returned, showing concise and reusable data structure.*
