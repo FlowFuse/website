@@ -1,7 +1,7 @@
 ---
 title: FlowFuse MCP Nodes
 description: "New FlowFuse nodes for creating MCP Tools, Resources and Prompts"
-date: 2025-09-25 12:00:00.0
+date: 2025-10-10 12:00:00.0
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
@@ -24,4 +24,4 @@ As AI adoption grows, developers need consistent ways to integrate models into r
 ![New MCP Nodes](./images/mcp-nodes.png){data-zoomable}  
 _New MCP Nodes_
 
-The FlowFuse MCP Nodes package will be available alongside the FlowFuse **2.22.0** release. You can also install it today in the Node-RED Palette Manager from the FlowFuse catalog.
+FlowFuse customers can install the MCP Server nodes today via the Node-RED Palette Manager from the FlowFuse catalog.
