@@ -16,7 +16,7 @@ EtherNet/IP is one of the most widely used industrial communication protocols fo
 
 <!--more-->
 
-In this guide, you'll learn how to integrate your Allen-Bradley PLCs with FlowFuse using EtherNet/IP. We'll explore both connected and unconnected messaging modes, helping you understand which approach works best for your setup. By the end, you'll have learned to get your PLCs talking to FlowFuse and start building powerful industrial automation workflows.
+In this guide, you'll learn how to integrate your Allen-Bradley PLCs with FlowFuse using EtherNet/IP. We'll explore both connected and unconnected messaging modes, helping you understand which approach works best for your setup. By the end, you'll have learned to get your PLCs talking to FlowFuse (Node-RED with enterprise capabilities) and start building powerful industrial automation workflows.
 
 ## Prerequisites
 
