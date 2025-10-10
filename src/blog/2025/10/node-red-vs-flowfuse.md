@@ -3,9 +3,9 @@ title: "What's the Difference Between Node-RED and FlowFuse"
 subtitle: "Understanding how FlowFuse extends Node-RED from a powerful development tool to a scalable enterprise platform"
 description: "Learn the key differences between Node-RED and FlowFuse. Discover how FlowFuse adds enterprise security, team collaboration, device management, and observability to Node-RED, making it ready for production at scale."
 date: 2025-10-08
-keywords: 
+keywords: node-red vs flowfuse, difference between node-red and flowfuse, enterprise node-red
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/10/images/diffrence-between-node-red-flowfuse.png
 tags:
   - flowfuse
 ---
