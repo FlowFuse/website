@@ -5,7 +5,8 @@ description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using Ethe
 date: 2025-10-08
 authors: ["sumit-shinde"]
 image: 
-keywords: 
+keywords: "EtherNet/IP", "Allen-Bradley PLC", "FlowFuse", "Node-RED", "industrial automation", "connected messaging", "PLC integration"
+
 tags:
   - flowfuse
 ---
@@ -104,10 +105,12 @@ Now that you have installed the EtherNet/IP node, it is time to configure the co
    * **Standard (Unconnected)** — This is the default option supported by most PLCs.
    * **Connected (With Routing)** — Use this option if you want to enable connected messaging with routing.
 
-This node does not currently support connected messaging (without routing). I have developed an enhanced version — **`@sumit_shinde_84/node-red-contrib-cip-ethernet-ip-enhanced`** — which supports connected messaging (without routing) but is still under development. In cases where you need connected messaging without routing, you can use that node.
-
 ![EtherNet/IP Node Configuration](./images/eth-ip-config.png){data-zoomable}
 _EtherNet/IP Node Configuration_
+
+This node does not currently support connected messaging (without routing). I have developed an enhanced version — @sumit_shinde_84/node-red-contrib-cip-ethernet-ip-enhanced — which supports connected messaging (without routing) but is still under development.
+
+If you need connected messaging without routing, you can use that node. To enable connected messaging without routing, select Connected (no routing) from the communication mode dropdown in the configuration dialog.
 
 ### Adding Tags to Read or Write
 
@@ -142,9 +145,10 @@ Before we start, I'd like to show you what I've prepared—a flow where I'm send
 
 That’s the program I have downloaded to the PLC
 
-<TASK>
+![Program downloaded to the PLC](./images/plc-program.png){data-zoomable}
+_Program downloaded to the PLC_
 
-Now let's learn how to build something similar by reading and writing data to your PLC.
+Now let’s learn how to build a flow that can both read and write data to your PLC.
 
 ### Writing Data to Your PLC
 
