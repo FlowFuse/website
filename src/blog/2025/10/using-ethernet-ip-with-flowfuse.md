@@ -41,16 +41,18 @@ Before integrating your Allen-Bradley PLC with FlowFuse, ensure you have the fol
 
 ## Understanding EtherNet/IP Communication Modes
 
-EtherNet/IP supports two primary communication modes: connected and unconnected messaging. Your choice depends on how frequently you need to communicate with the PLC, how many connection resources are available, and—importantly—what your PLC actually supports. Not all PLCs support both modes. For example, Allen-Bradley Micro800 series PLCs only support connected messaging, while ControlLogix and CompactLogix typically support both.
+EtherNet/IP is an industrial network protocol widely used to communicate with Allen-Bradley and other PLCs over Ethernet. It allows devices to exchange data efficiently and reliably, making it a common choice for industrial automation systems.
+
+EtherNet/IP supports two primary communication modes: **connected** and **unconnected** messaging. Your choice depends on how frequently you need to communicate with the PLC, the number of available connection resources, and—most importantly—what your PLC actually supports. Not all PLCs support both modes. For example, Allen-Bradley Micro800 series PLCs only support connected messaging, while ControlLogix and CompactLogix typically support both.
 
 ### Connected Messaging
 
-Connected messaging establishes a persistent session between Node-RED and the PLC using the Forward Open protocol. Once connected, data flows continuously with minimal overhead, making it ideal for real-time monitoring and high-frequency updates.
+Connected messaging establishes a persistent session between Node-RED and the PLC using the Forward Open protocol. Once connected, data flows continuously with minimal overhead, making it ideal for real-time monitoring and high-frequency updates. The advantage is speed—after the initial handshake, communication is fast and efficient. The tradeoff is that each session consumes one of the PLC's limited connection slots, typically ranging from 8 to 32 depending on the model.
 
-The advantage is speed—after the initial handshake, communication is fast and efficient. The tradeoff is that each session consumes one of the PLC's limited connection slots, typically ranging from 8 to 32 depending on the model.
+Connected messaging itself can operate in two ways:
 
 **Without Routing (Direct Connection):**
-For PLCs that connect directly via Ethernet without backplane routing, like Allen-Bradley Micro800/850/870 series. Only the IP address is needed—no slot number or routing path required.
+Used for PLCs that connect directly via Ethernet without backplane routing, such as the Allen-Bradley Micro800/850/870 series. Only the IP address is needed—no slot number or routing path is required.
 
 **With Routing:**
 Used for chassis-based PLCs like ControlLogix and CompactLogix, where the processor sits in a backplane slot. In this case, the slot number must be specified, as it automatically creates a routing path through the backplane to reach the processor.
@@ -65,7 +67,7 @@ In practice, use connected mode for frequent polling and unconnected mode for oc
 
 ## Installing the EtherNet/IP Node
 
-To communicate with Allen-Bradley PLCs from FlowFuse, we'll use `node-red-contrib-cip-ethernet-ip`. This node supports both connected and unconnected messaging modes for Allen-Bradley PLCs.
+To communicate with Allen-Bradley PLCs from FlowFuse, use the popular node-red-contrib-cip-ethernet-ip node, which supports both connected and unconnected messaging modes.
 
 1. Open your FlowFuse Instance Node-RED editor in a web browser.
 
@@ -79,23 +81,23 @@ To communicate with Allen-Bradley PLCs from FlowFuse, we'll use `node-red-contri
 
 6. Wait for the installation to complete.
 
-Once installed, you'll find the EtherNet/IP nodes in your palette under the "network" category. The main nodes are `ethernet-ip in` for reading data and `ethernet-ip out` for writing data to the PLC.
+Once installed, you'll find the EtherNet/IP nodes in your palette under the "plc" category. The main nodes are `ethernet-ip in` for reading data and `ethernet-ip out` for writing data to the PLC.
 
 ## Configuring the EtherNet/IP Node
 
 Now that you have installed the EtherNet/IP node, it is time to configure the connection to your Allen-Bradley PLC.
 
-1. Drag an EtherNet/IP node onto the canvas — use **`ethernet-ip in`** for reading or **`ethernet-ip out`** for writing.
+1. Drag any EtherNet/IP node onto the canvas.
 
 2. Double-click the node to open its configuration panel.
 
-3. Click the pencil icon next to the **"PLC"** dropdown to add a new PLC configuration.
+3. Click the "+" icon next to the **"PLC"** dropdown to add a new PLC configuration.
 
 4. Enter the basic connection details:
 
    * Give your connection a descriptive name, such as **"Line 1 PLC"**, for easy identification.
    * Enter your PLC’s **IP address**.
-   * Specify the **slot number** where your processor is located — typically **0** for CompactLogix. For ControlLogix, check your hardware configuration.
+   * Specify the **slot number** where your processor is located.
 
 5. Configure the communication parameters:
 
@@ -109,7 +111,7 @@ Now that you have installed the EtherNet/IP node, it is time to configure the co
 ![EtherNet/IP Node Configuration](./images/eth-ip-config.png){data-zoomable}
 _EtherNet/IP Node Configuration_
 
-This node does not currently support connected messaging (without routing). I have developed an enhanced version — @sumit_shinde_84/node-red-contrib-cip-ethernet-ip-enhanced — which supports connected messaging (without routing) but is still under development.
+This node does not currently support connected messaging (without routing). I have developed node — `@sumit_shinde_84/node-red-contrib-cip-ethernet-ip-enhanced` — which supports connected messaging (without routing) but is still under development.
 
 If you need connected messaging without routing, you can use that node. To enable connected messaging without routing, select Connected (no routing) from the communication mode dropdown in the configuration dialog.
 
@@ -130,13 +132,11 @@ After configuring the endpoint, you need to specify which tags you want to read 
 ![Adding tags to read and write](./images/adding-tags.gif){data-zoomable}
 _Adding tags to read and write_
 
-If your tag belongs to a different scope, click the “+ Add” button at the top to create a new scope. Then, under that scope, add the tags in the same way.
+If your tag belongs to a different scope, click the “+ Add” button at the top to create a new scope. Then, within that scope, add the tags in the same manner.
 
-5. Once you've added all your tags, click "Add" to save the configuration, then "Done" to close the editor.
+5. Once you've added all your tags, click "Add" to save the configuration, then "Done".
 
 6. Finally, deploy the flow by clicking the "Deploy" button in the top-right corner.
-
-After deploying, check the connection status displayed below the node. A green dot with "online" means you're successfully communicating with your PLC. If you see an error, verify your IP address, slot number, and network connectivity.
 
 **Important:** Tag names must match exactly as they appear in your PLC program—they are case-sensitive. Make sure to select the correct data type for each tag to ensure proper communication.
 
@@ -165,18 +165,16 @@ Writing to a PLC is where things get exciting—this is where you move from moni
 
 4. Select the scope under which you added the tag, choose the tag that you want to write to.
 
-5. From the **Tag** dropdown, select the tag you want to write to.
-
 ![Configuring the EtherNet/IP out node to write data to a PLC tag](./images/eth-out-node.png){data-zoomable}
 _Configuring the EtherNet/IP out node to write data to a PLC tag_
 
-6. Click "Done".
+5. Click "Done".
 
-7. Connect an **`inject`** node or any other input node to send data.
+6. Connect an **`inject`** node or any other input node to send data.
 
-8. Deploy the flow and click inject button to test it.
+7. Deploy the flow and click inject button to test it.
 
-The node expects the incoming message payload to contain the value you want to write to the tag. Make sure the type of value matches the data type you configured when adding the tag.
+The node expects the incoming message payload to contain the value you want to write to the tag. Ensure that the value type matches the data type you configured when adding the tag and what the PLC expects.
 
 ### Reading Single Tag from Your PLC
 
@@ -190,18 +188,16 @@ Here's how to set it up:
 
 3. Select the PLC configuration you created earlier from the dropdown.
 
-4. Select the scope under which you added the tag, choose the tag that you want to write to, and set the mode to "Single Tag".
-
-5. From the **Tag** dropdown, select the tag you want to read.
+4. Select the scope under which you added the tag, select the mode to "Single Tag" and choose the tag that you want to read.
 
 ![Configuring the EtherNet/IP in node to read a single tag from the PLC](./images/read-plc-tag.png){data-zoomable}
 _Configuring the EtherNet/IP in node to read a single tag from the PLC_
 
-6. Click "Done".
+5. Click "Done".
 
-7. Connect a **`debug`** node to view the data.
+6. Connect a **`debug`** node to view the data.
 
-8. Deploy the flow.
+7. Deploy the flow.
 
 The node will automatically read data based on your configured cycle time and output it.
 
@@ -233,10 +229,16 @@ _Reading all tags together in a single message object_
 
 7. Deploy the flow.
 
+You're right, let me try again with something much cleaner:
+
 ## Next Steps
 
 Now that you've learned how to read and write data with your Allen-Bradley PLC, you can build interactive dashboards to monitor and control your industrial processes. FlowFuse Dashboard makes it easy to create professional interfaces with buttons, gauges, charts, and controls—all without writing complex code.
 
-Start experimenting with your PLC data, build visualizations, and create the automation workflows your process needs. Check out our [Getting Started with Dashboard guide](https://flowfuse.com/blueprints/getting-started/dashboard/) to learn how to build your first dashboard.
+Check out our [Getting Started with Dashboard guide](/blog/2024/03/dashboard-getting-started/) to learn how to build your first dashboard.
 
-Want to see how FlowFuse fits into your operations? [Book a demo](https://flowfuse.com/book-demo/) to discover how our platform helps you connect, collect, transform, and visualize data at scale with AI-powered tools and the power of Node-RED.
+### Beyond Allen-Bradley
+
+FlowFuse isn't limited to EtherNet/IP. Connect Siemens PLCs via S7, use OPC UA for vendor-neutral communication, integrate Modbus devices, or connect IoT sensors with MQTT. Mix protocols as needed—your factory floor probably isn't single-vendor anyway.
+
+[Book a demo](/book-demo/) to see how FlowFuse connects your entire operation.
