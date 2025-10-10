@@ -2,7 +2,7 @@
 title: "EtherNet/IP Integration with FlowFuse: Communicating with Allen-Bradley PLCs"
 subtitle: "A guide to connected and unconnected EtherNet/IP communication with FlowFuse"
 description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using EtherNet/IP. This guide covers connected and unconnected messaging, reading and writing tags, and building industrial automation workflows in Node-RED."
-date: 2025-10-08
+date: 2025-10-10
 authors: ["sumit-shinde"]
 image: 
 keywords: EtherNet/IP, Allen-Bradley PLC, FlowFuse, Node-RED, industrial automation, connected messaging, PLC integration
