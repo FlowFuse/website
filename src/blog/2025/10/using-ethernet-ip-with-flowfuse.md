@@ -5,10 +5,11 @@ description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using Ethe
 date: 2025-10-08
 authors: ["sumit-shinde"]
 image: 
-keywords: "EtherNet/IP", "Allen-Bradley PLC", "FlowFuse", "Node-RED", "industrial automation", "connected messaging", "PLC integration"
-
+keywords: EtherNet/IP, Allen-Bradley PLC, FlowFuse, Node-RED, industrial automation, connected messaging, PLC integration
 tags:
   - flowfuse
+  - node-red
+  - post
 ---
 
 EtherNet/IP is one of the most widely used industrial communication protocols for connecting PLCs, sensors, and controllers across manufacturing environments. If you're working with Allen-Bradley PLCs—whether it's ControlLogix, CompactLogix, or MicroLogix—you're using some of the most trusted automation hardware in the industry.
@@ -129,6 +130,8 @@ After configuring the endpoint, you need to specify which tags you want to read 
 ![Adding tags to read and write](./images/adding-tags.gif){data-zoomable}
 _Adding tags to read and write_
 
+If your tag belongs to a different scope, click the “+ Add” button at the top to create a new scope. Then, under that scope, add the tags in the same way.
+
 5. Once you've added all your tags, click "Add" to save the configuration, then "Done" to close the editor.
 
 6. Finally, deploy the flow by clicking the "Deploy" button in the top-right corner.
@@ -171,7 +174,7 @@ _Configuring the EtherNet/IP out node to write data to a PLC tag_
 
 7. Connect an **`inject`** node or any other input node to send data.
 
-8. Deploy the flow.
+8. Deploy the flow and click inject button to test it.
 
 The node expects the incoming message payload to contain the value you want to write to the tag. Make sure the type of value matches the data type you configured when adding the tag.
 
