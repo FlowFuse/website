@@ -140,7 +140,11 @@ Before we start, I'd like to show you what I've prepared—a flow where I'm send
 
 <lite-youtube videoid="6X9HXJLKPyo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-Now let's learn how to build something similar by reading and writing data to your PLC.RetryClaude does not have the ability to run the code it generates yet.
+That’s the program I have downloaded to the PLC
+
+<TASK>
+
+Now let's learn how to build something similar by reading and writing data to your PLC.
 
 ### Writing Data to Your PLC
 
