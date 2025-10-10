@@ -1,5 +1,5 @@
 ---
-title: "Running custom trained models with FlowFuse AI Nodes"
+title: "Deploy Custom-Trained AI Models: Using ONNX with Node-RED and FlowFuse"
 subtitle: "Using ONNX runtime to run inference in Node-RED"
 description: "Learn how to train and export an image classifier model, and integrate it with FlowFuse AI Nodes for low-code inference in Node-RED."
 date: 2025-10-10
@@ -10,8 +10,8 @@ tags:
   - flowfuse
 ---
 
-FlowFuse is making it easier than ever to integrate AI and machine learning into your Node-RED workflows.
-In this guide, you will learn how to train an image classifier model, and use it with FlowFuse AI Nodes to recognise your own products, components - or anything else you can imagine.
+FlowFuse is introducing a new set of AI nodes to make it easier than ever to integrate AI and machine learning into your Node-RED workflows.
+In this guide, you will learn how to train an image classifier model, and use it with the new FlowFuse AI Nodes to recognise your own products, components - or anything else you can imagine.
 
 <!--more-->
 
