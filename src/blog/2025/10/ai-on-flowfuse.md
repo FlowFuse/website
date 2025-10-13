@@ -4,7 +4,7 @@ subtitle: "Create your own AI agents and deploy trained models in Node-RED"
 description: "Create your own AI agents and deploy trained models in Node-RED"
 date: 2025-10-13
 authors: ["greg-stoutenburg"]
-image: /blog/2025/10/images/
+image: 
 keywords: 
 tags:
   - flowfuse
