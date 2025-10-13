@@ -43,7 +43,7 @@ FlowFuse communicates in a tone that reflects clarity, competence, and collabora
 
 **Our tone is *not*:**
 
-- ❌ Overly casual or humorous  
+- ❌ **Overly** casual ("Yo, wazzup!") or humorous
 - ❌ Marketing-speak (“synergy”, “transformative”, “next-gen”)  
 - ❌ Boastful or arrogant  
 - ❌ Ambiguous or vague  
@@ -138,5 +138,6 @@ Tone should be:
 
 Our voice flexes with the context, but never breaks character.  
 We stay approachable, helpful, and professional — everywhere we show up.
+
 
 This section should evolve as our brand evolves. Keep it close when creating content or communicating with prospects. Consistency builds trust, and personality builds connection.
