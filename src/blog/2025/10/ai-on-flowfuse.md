@@ -17,12 +17,12 @@ We have a VERY exciting announcement today: you can now build an MCP server and 
 ## AI on FlowFuse
 Node-RED is already the most capable and flexible low-code development environment out there. FlowFuse makes it secure, robust, and scalable.
 
-As of today, you can now create your own MCP server in Node-RED, and use custom-trained AI models that are purpose-built for your application. 
+As of today, you can now create your own MCP server in Node-RED and use custom-trained AI models that are purpose-built for your application. 
 
 Build an MCP server to create an AI agent that will do whatever you've design it to do. And add a training model that you've built using your own training data, so data processing works exactly the way you want it to.
 
 ## Model Context Protocol
-LLMs were trained by scraping data from the internet to build data models that can complete task (like answering a question or writing a blog article -- but not this one) given some input prompt. When you rely on an LLM to answer questions that are very general or perform operations that are rather straightforward, standard LLMs can generally do so with ease.
+LLMs were trained by scraping data from the internet to build data models that can complete a task (like answering a question or writing a blog article -- but not this one!) given some input prompt. When you rely on an LLM to answer questions that are very general or perform operations that are rather straightforward, LLMs can generally do so with ease.
 
 However, if you want to do something more sophisticated, or create an AI agent that will rely on specific data, that data needs to be presented to the AI somehow. MCP is what enables that.
 
@@ -40,7 +40,7 @@ The flexibility of Node-RED, the reliability of FlowFuse, and the customizabilit
 
 And this week, we're going to tell you all about it. Stay tuned for a demo or three, some tutorials, and overall plenty of instructional content goodness that will demonstrate the power that is now available with these AI releases!
 
-While we're at it, we are also going to unveil a new feature right on our home page: a trained FlowFuse Expert (AI) that will teach you how to build applications in FlowFuse and Node-RED.
+While we're at it, we are also going to unveil a new feature right on our home page: a trained FlowFuse Expert (AI) that will teach you how to build applications in FlowFuse and Node-RED!
 
 ## Try it Now
 Ready to try out these new nodes? If you're new to FlowFuse, [create a trial team](https://app.flowfuse.com/account/create). Then, head to Manage Palette (in the hamburger menu on the right side of the Node-RED editor), click Install, and in the dropdown menu, choose FlowFuse Nodes to see the catalog of nodes that are exclusive to FlowFuse customers. From here, you can install both the MCP nodes and AI ONNX nodes.
