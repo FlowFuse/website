@@ -1,0 +1,36 @@
+<div class="ai-chat-container">
+    <div class="ai-chat-box">
+        <div class="relative mb-4">
+            <textarea 
+                placeholder="Describe your workflow to the FlowFuse expert assistant to get up and running quick!"
+                class="w-full h-40 px-4 py-3 pr-32 rounded-lg focus:outline-none text-gray-600 placeholder-gray-400 resize-none"
+                aria-label="Describe your workflow"
+                rows="6"
+            ></textarea>
+            <button class="absolute bottom-3 right-3 ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3" onclick="capture('cta-ai-tell-me-how', {'position': 'hero'})">
+                Tell Me How
+            </button>
+        </div>
+        
+        <div class="text-xs sm:text-sm text-gray-500 mb-3 text-center sm:text-left">
+            Uses OpenAI GPT-4 | We respect your <a href="/privacy" class="text-indigo-600 hover:text-indigo-700 underline">privacy</a> and do not train or use your data in any way. See our <a href="/product/flowfuse-ai/" class="text-indigo-600 hover:text-indigo-700 underline">FlowFuse AI Knowledge base</a>
+        </div>
+    </div>
+    
+    <div class="ai-prompts mt-4">
+        <div class="flex flex-wrap gap-2 mb-3">
+            <button class="prompt-pill text-left px-4 py-2 bg-white/90 backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-gray-100">
+                Create a dashboard for machine data
+            </button>
+            <button class="prompt-pill text-left px-4 py-2 bg-white/90 backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-gray-100">
+                Publish modbus to UNS
+            </button>
+            <button class="prompt-pill text-left px-4 py-2 bg-white/90 backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-gray-100">
+                Convert OPC-UA to MQTT
+            </button>
+            <button class="prompt-pill text-left px-4 py-2 bg-white/90 backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-gray-100">
+                See more
+            </button>
+        </div>
+    </div>
+</div>
