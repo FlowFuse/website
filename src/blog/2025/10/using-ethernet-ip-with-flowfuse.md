@@ -229,7 +229,7 @@ _Reading all tags together in a single message object_
 
 7. Deploy the flow.
 
-You're right, let me try again with something much cleaner:
+The node will automatically read all configured tags based on your cycle time, giving you full visibility into your PLC data.
 
 ## Next Steps
 
