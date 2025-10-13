@@ -13,7 +13,7 @@ tags:
 ---
 
 We have a VERY exciting announcement today: you can now build an MCP server and upload custom-trained AI models to FlowFuse! 
-
+<!--more-->
 ## AI on FlowFuse
 Node-RED is already the most capable and flexible low-code development environment out there. FlowFuse makes it secure, robust, and scalable.
 
