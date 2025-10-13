@@ -33,7 +33,7 @@ You are now able to create your own, custom AI agent using FlowFuse.
 ## Custom Data Models
 When creating an AI agent or getting AI assistance with some task, one component is the data that is surfaced to the model. That part is handled by MCP. Another part is how the model interacts with that data. That part is handled with our new AI nodes.
 
-Instead of relying on a standard LLM, even one that has been set up to connect with an MCP server, it is possible to train the model itself. The new AI nodes allow you to train a custom model, put it in [ONNX](onnx.ai) format, and connect it to Node-RED, where it can be deployed to run any operation you wish with your new, personally-trained AI.
+Instead of relying on a standard LLM, even one that has been set up to connect with an MCP server, it is possible to train the model itself. The new AI nodes allow you to train a custom model, put it in [ONNX](https://onnx.ai) format, and connect it to Node-RED, where it can be deployed to run any operation you wish with your new, personally-trained AI.
 
 ## The Sky Is the Limit
 The flexibility of Node-RED, the reliability of FlowFuse, and the customizability enabled by these MCP and AI nodes means you can build just about any AI application you wish!
