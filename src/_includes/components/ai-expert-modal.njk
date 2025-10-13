@@ -1,0 +1,197 @@
+<!-- AI Expert Assistant Modal -->
+<div id="ai-expert-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 md:px-8 md:py-8 z-[9999]">
+    <!-- Modal Content -->
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between p-4 border-b border-gray-200 rounded-t-lg bg-white" style="border-bottom: 1px solid #da3e0b;">
+            <div class="flex items-center gap-3">
+                <!-- FlowFuse Logo -->
+                <div class="w-24 h-6">
+                    {% include "components/ff-logo--wordmark--grey.svg" %}
+                </div>
+                <h2 class="text-lg font-semibold text-gray-700">Expert Assistant</h2>
+            </div>
+            <button id="close-modal" class="text-gray-400 hover:text-gray-600 p-1">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Chat Content -->
+        <div class="flex-1 p-4 overflow-y-auto">
+            <!-- Info Message -->
+            <div class="bg-indigo-100 p-4 rounded-lg mb-6">
+                <p class="text-indigo-700 text-sm">
+                    Uses OpenAI GPT-4.1 Mini with access to all FlowFuse 
+                    <a href="/docs" class="underline">documentation</a> 
+                    and our Get Started 
+                    <a href="https://www.youtube.com/watch?v=K4xw09DbSdI&list=PLpcyqc7kNgp1dCDliNM4WOPf6d42Qmjvf" class="underline">YouTube playlist</a>
+                </p>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div id="chat-messages" class="space-y-4">
+                <!-- Messages will be added here dynamically -->
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="hidden">
+                <div class="flex justify-start mb-4">
+                    <div class="bg-indigo-100 px-4 py-2 rounded-full">
+                        <p class="text-indigo-700 text-sm">Setting up your Guide...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="px-4 py-3 border-t border-gray-200">
+            <div class="flex items-center justify-between mb-2">
+                <div></div>
+                <button id="stop-generation" class="bg-white border border-indigo-300 px-6 py-2 rounded-full text-sm flex items-center gap-2">
+                    <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
+                    Stop
+                </button>
+            </div>
+            <!-- Gradient Progress Bar -->
+            <div class="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                <div id="progress-bar" class="h-full bg-gradient-to-r from-red-600 via-indigo-600 to-red-600 w-0 transition-all duration-1000"></div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 bg-white rounded-b-lg">
+            <div class="relative">
+                <textarea 
+                    id="modal-input"
+                    placeholder="Setup FlowFuse on a Siemens IOT2050"
+                    class="w-full h-20 p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500"
+                ></textarea>
+            </div>
+            <div class="flex justify-between mt-2 text-xs text-gray-500">
+                <span>Powered by OpenAI</span>
+                <span>Protected by reCAPTCHA</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- JavaScript for Modal Functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('ai-expert-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const tellMeHowBtn = document.querySelector('[onclick*="cta-ai-tell-me-how"]');
+    const chatMessages = document.getElementById('chat-messages');
+    const loadingState = document.getElementById('loading-state');
+    const progressBar = document.getElementById('progress-bar');
+    const modalInput = document.getElementById('modal-input');
+    const stopBtn = document.getElementById('stop-generation');
+
+    // Open modal
+    if (tellMeHowBtn) {
+        tellMeHowBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const userText = document.querySelector('textarea[aria-label="Describe your workflow"]').value;
+            openModal(userText);
+        });
+    }
+
+    // Close modal
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+
+    function openModal(userText) {
+        // Move modal to document.body to ensure it's at root DOM level
+        document.body.appendChild(modal);
+        
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        
+        if (userText) {
+            modalInput.value = userText;
+            startChat(userText);
+        }
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        
+        // Reset state
+        chatMessages.innerHTML = '';
+        loadingState.classList.add('hidden');
+        progressBar.style.width = '0%';
+        modalInput.value = '';
+    }
+
+    function startChat(message) {
+        // Add user message
+        addMessage(message, 'user');
+        
+        // Show loading state
+        loadingState.classList.remove('hidden');
+        
+        // Simulate progress
+        let progress = 0;
+        const progressInterval = setInterval(() => {
+            progress += Math.random() * 15;
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(progressInterval);
+                setTimeout(() => {
+                    loadingState.classList.add('hidden');
+                    addMessage('I can help you set up FlowFuse on a Siemens IOT2050. Here\'s a comprehensive guide...', 'assistant');
+                    progressBar.style.width = '0%';
+                }, 500);
+            }
+            progressBar.style.width = progress + '%';
+        }, 200);
+    }
+
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} mb-4`;
+        
+        const messageBubble = document.createElement('div');
+        messageBubble.className = `max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+            sender === 'user' 
+                ? 'bg-indigo-600 text-white rounded-br-sm' 
+                : 'bg-gray-100 text-gray-800 rounded-bl-sm'
+        }`;
+        messageBubble.textContent = text;
+        
+        messageDiv.appendChild(messageBubble);
+        chatMessages.appendChild(messageDiv);
+        
+        // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Stop generation
+    stopBtn.addEventListener('click', function() {
+        loadingState.classList.add('hidden');
+        progressBar.style.width = '0%';
+    });
+
+    // Enter key to send message
+    modalInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            const message = modalInput.value.trim();
+            if (message) {
+                startChat(message);
+                modalInput.value = '';
+            }
+        }
+    });
+});
+</script>
