@@ -1,19 +1,17 @@
 <div class="ai-chat-container mx-auto" style="max-width: 800px;">
     <div class="ai-chat-box">
-        <div class="relative mb-4">
+        <div class="textarea-wrapper relative mb-4 h-40 p-4 pb-12 rounded-lg overflow-hidden">
             <textarea 
                 placeholder="Describe your workflow to the FlowFuse expert assistant to get up and running quick!"
-                class="w-full h-40 px-4 py-3 pr-32 rounded-lg focus:outline-none text-gray-600 placeholder-gray-400 resize-none"
+                class="w-full h-full bg-transparent border-0 focus:outline-none text-gray-600 placeholder-gray-400 resize-none"
                 aria-label="Describe your workflow"
-                rows="6"
             ></textarea>
-            <button class="absolute bottom-3 right-3 ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3" onclick="capture('cta-ai-tell-me-how', {'position': 'hero'})">
+            <div class="absolute bottom-3 left-4 text-[10px] font-light text-gray-500">
+                Uses OpenAI GPT-4.1 Mini trained on FlowFuse's knowledge base
+            </div>
+            <button class="absolute bottom-3 right-4 ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3" onclick="capture('cta-ai-tell-me-how', {'position': 'hero'})">
                 Tell Me How
             </button>
-        </div>
-        
-        <div class="text-xs sm:text-sm text-gray-500 mb-3 text-center sm:text-left">
-            Uses OpenAI GPT-4 | We respect your <a href="/privacy" class="text-indigo-600 hover:text-indigo-700 underline">privacy</a> and do not train or use your data in any way. See our <a href="/product/flowfuse-ai/" class="text-indigo-600 hover:text-indigo-700 underline">FlowFuse AI Knowledge base</a>
         </div>
     </div>
     

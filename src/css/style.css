@@ -1799,8 +1799,7 @@ lite-youtube::before {
     z-index: 1;
 }
 
-.ai-chat-box textarea {
-    height: 160px;
+.ai-chat-box .textarea-wrapper {
     background: linear-gradient(white, white) padding-box,
                 linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
     border: 1px solid transparent;
@@ -1869,14 +1868,16 @@ lite-youtube::before {
     
     /* Mask using the gradient - grid fades in/out */
     mask: linear-gradient(to top, 
-        transparent 26.9%,     /* invisible at bottom */
-        black 51.9%,           /* fully visible in middle */  
-        transparent 91.8%      /* invisible at top */
+        transparent 35%,       /* invisible at bottom */
+        black 56%,             /* fully visible starts */  
+        black 78%,             /* fully visible ends */
+        transparent 97%        /* invisible at top */
     );
     -webkit-mask: linear-gradient(to top, 
-        transparent 26.9%, 
-        black 51.9%, 
-        transparent 91.8%
+        transparent 35%, 
+        black 56%, 
+        black 78%,
+        transparent 97%
     );
     
     pointer-events: none;
