@@ -17,7 +17,7 @@ We have a VERY exciting announcement today: you can now build an MCP server and 
 ## AI on FlowFuse
 Node-RED is already the most capable and flexible low-code development environment out there. FlowFuse makes it secure, robust, and scalable.
 
-As of today, you can now create your own MCP server in Node-RED and use custom-trained AI models that are purpose-built for your application. 
+As of today, you can now use FlowFuse to create your own MCP server and use custom-trained AI models that you've built for any application. 
 
 Build an MCP server to create an AI agent that will do whatever you've design it to do. And add a training model that you've built using your own training data, so data processing works exactly the way you want it to.
 
