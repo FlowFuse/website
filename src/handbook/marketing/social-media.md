@@ -36,7 +36,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 #### Frequency
 
-- Once a work day.
+- Our standard practice is a single post per day, though we can increase this frequency to cover timely and urgent events.
 
 #### Type of content
 
