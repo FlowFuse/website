@@ -1,9 +1,9 @@
 ---
-navTitle: VP, Sales
+navTitle: VP of Sales
 navGroup: Job Descriptions
 ---
 
-# VP, Sales
+# VP of Sales
 
 ## Job Description
 
