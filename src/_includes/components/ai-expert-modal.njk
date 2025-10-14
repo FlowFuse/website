@@ -47,6 +47,11 @@
                     Stop
                 </button>
             </div>
+            <div id="summarize-button-container" class="pb-4 flex justify-end hidden">
+                <button id="summarize-conversation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3">
+                    Summarize this conversation
+                </button>
+            </div>
             <div class="relative">
                 <textarea 
                     id="modal-input"
@@ -71,6 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const tellMeHowBtn = document.querySelector('[onclick*="cta-ai-tell-me-how"]');
     const chatMessages = document.getElementById('chat-messages');
     const modalInput = document.getElementById('modal-input');
+    
+    // Message storage array
+    let messages = [];
 
     // Open modal
     if (tellMeHowBtn) {
@@ -206,12 +214,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Reset modal state
-                chatMessages.innerHTML = '';
+                clearMessages();
                 modalInput.value = '';
                 
-                // Hide stop button container
+                // Hide both button containers
                 const stopButtonContainer = document.getElementById('stop-button-container');
+                const summarizeButtonContainer = document.getElementById('summarize-button-container');
                 stopButtonContainer.classList.add('hidden');
+                summarizeButtonContainer.classList.add('hidden');
             });
         } else {
             // Fallback for browsers without View Transitions
@@ -225,12 +235,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Reset state
-            chatMessages.innerHTML = '';
+            clearMessages();
             modalInput.value = '';
             
-            // Hide stop button container
+            // Hide both button containers
             const stopButtonContainer = document.getElementById('stop-button-container');
+            const summarizeButtonContainer = document.getElementById('summarize-button-container');
             stopButtonContainer.classList.add('hidden');
+            summarizeButtonContainer.classList.add('hidden');
         }
         
     }
@@ -241,25 +253,43 @@ document.addEventListener('DOMContentLoaded', function() {
         stopButtonContainer.classList.remove('hidden');
         
         // Add user message
-        addMessage(message, 'user');
+        addMessage(message, 'human');
         
-        // Add assistant response immediately
+        // Start AI response with progressive enhancement
         setTimeout(() => {
-            addMessage('I can help you set up FlowFuse on a Siemens IOT2050. Here\'s a comprehensive guide...', 'assistant');
+            // Start with initial response
+            const aiMessageIndex = addProgressiveMessage('I can help you set up FlowFuse on a Siemens IOT2050.', 'ai');
+            
+            // Progressive enhancement after 1 second
+            setTimeout(() => {
+                appendToMessage(aiMessageIndex, ' Here\'s a comprehensive guide tailored to your specific requirements and use case.');
+                
+                // Hide stop button and show summarize button after another 1 second
+                setTimeout(() => {
+                    stopButtonContainer.classList.add('hidden');
+                    const summarizeButtonContainer = document.getElementById('summarize-button-container');
+                    summarizeButtonContainer.classList.remove('hidden');
+                }, 1000);
+            }, 1000);
         }, 500);
     }
 
-    function addMessage(text, sender) {
+    function addMessage(content, type) {
+        // Add to messages array
+        const message = { content, type };
+        messages.push(message);
+        
+        // Create DOM element
         const messageDiv = document.createElement('div');
-        messageDiv.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} mb-4`;
+        messageDiv.className = `flex ${type === 'human' ? 'justify-end' : 'justify-start'} mb-4`;
         
         const messageBubble = document.createElement('div');
         messageBubble.className = `max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
-            sender === 'user' 
+            type === 'human' 
                 ? 'bg-indigo-600 text-white rounded-br-sm' 
                 : 'bg-gray-100 text-gray-800 rounded-bl-sm'
         }`;
-        messageBubble.textContent = text;
+        messageBubble.textContent = content;
         
         messageDiv.appendChild(messageBubble);
         chatMessages.appendChild(messageDiv);
@@ -268,9 +298,105 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
+    function renderMessages() {
+        // Clear existing messages in DOM
+        chatMessages.innerHTML = '';
+        
+        // Rebuild from messages array
+        messages.forEach(message => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex ${message.type === 'human' ? 'justify-end' : 'justify-start'} mb-4`;
+            
+            const messageBubble = document.createElement('div');
+            messageBubble.className = `max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                message.type === 'human' 
+                    ? 'bg-indigo-600 text-white rounded-br-sm' 
+                    : 'bg-gray-100 text-gray-800 rounded-bl-sm'
+            }`;
+            messageBubble.textContent = message.content;
+            
+            messageDiv.appendChild(messageBubble);
+            chatMessages.appendChild(messageDiv);
+        });
+        
+        // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function clearMessages() {
+        // Clear messages array
+        messages = [];
+        
+        // Clear DOM
+        chatMessages.innerHTML = '';
+    }
+
+    function updateMessage(messageIndex, newContent) {
+        // Update the message in the array
+        if (messageIndex >= 0 && messageIndex < messages.length) {
+            messages[messageIndex].content = newContent;
+            
+            // Update the corresponding DOM element
+            const messageElements = chatMessages.children;
+            if (messageElements[messageIndex]) {
+                const messageBubble = messageElements[messageIndex].querySelector('div');
+                messageBubble.textContent = newContent;
+            }
+        }
+    }
+
+    function addProgressiveMessage(content, type) {
+        // Add initial message and return its index
+        addMessage(content, type);
+        return messages.length - 1; // Return index of the newly added message
+    }
+
+    function appendToMessage(messageIndex, additionalContent) {
+        // Append content to existing message
+        if (messageIndex >= 0 && messageIndex < messages.length) {
+            messages[messageIndex].content += additionalContent;
+            
+            // Update the corresponding DOM element
+            const messageElements = chatMessages.children;
+            if (messageElements[messageIndex]) {
+                const messageBubble = messageElements[messageIndex].querySelector('div');
+                messageBubble.textContent = messages[messageIndex].content;
+            }
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
     // Stop generation
     document.getElementById('stop-generation').addEventListener('click', function() {
         // Stop functionality can be implemented here if needed
+    });
+
+    // Summarize conversation
+    document.getElementById('summarize-conversation').addEventListener('click', function() {
+        // Add a summarization message
+        addMessage('Please provide a summary of our conversation.', 'human');
+        
+        // Hide summarize button and show stop button temporarily
+        const summarizeButtonContainer = document.getElementById('summarize-button-container');
+        const stopButtonContainer = document.getElementById('stop-button-container');
+        summarizeButtonContainer.classList.add('hidden');
+        stopButtonContainer.classList.remove('hidden');
+        
+        // Simulate AI summarization after a brief delay
+        setTimeout(() => {
+            const summaryIndex = addProgressiveMessage('Here\'s a summary of our conversation: ', 'ai');
+            
+            setTimeout(() => {
+                appendToMessage(summaryIndex, 'We discussed setting up FlowFuse on a Siemens IOT2050 device with a comprehensive implementation guide.');
+                
+                // Hide stop button after summary is complete
+                setTimeout(() => {
+                    stopButtonContainer.classList.add('hidden');
+                }, 1000);
+            }, 1000);
+        }, 500);
     });
 
     // Enter key to send message
