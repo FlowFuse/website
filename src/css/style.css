@@ -1806,7 +1806,7 @@ lite-youtube::before {
     animation: gradient-border-rotate 4s linear;
 }
 
-/* View transition names will be set dynamically via JavaScript */
+/* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */
 
 /* View Transition styles for smooth morphing */
 ::view-transition-old(morphing-content),
@@ -1870,6 +1870,14 @@ lite-youtube::before {
 
 .ai-chat-box .ff-btn {
     z-index: 2;
+}
+
+.ai-chat-box .textarea-wrapper.modal-header {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    border: none;
+    border-bottom: 1px solid transparent;
+    animation: gradient-border-rotate 4s linear;
 }
 
 .prompt-pill {

@@ -4,21 +4,21 @@
     <div class="bg-white rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
         
         <!-- Header -->
-        <div class="flex items-center justify-between p-4 border-b border-gray-200 rounded-t-lg bg-white" style="border-bottom: 1px solid #da3e0b;">
-            <div class="flex items-center gap-3">
+        <div class="ai-chat-box"><div class="textarea-wrapper modal-header flex items-center justify-between px-4 py-3 rounded-t-lg h-auto rounded-b-none mb-0">
+            <div class="flex items-center gap-1">
                 <!-- FlowFuse Logo -->
                 <div class="w-24 h-6">
                     {% include "components/flowfuse-wordmark.njk" %}
                 </div>
-                <h2 class="text-lg font-semibold text-gray-700">Expert Assistant</h2>
+                <h2 class="text-base font-semibold text-gray-700" style="margin-bottom: -3px;">Expert Assistant</h2>
             </div>
-            <button id="close-modal" class="text-gray-400 hover:text-gray-600 p-1">
+            <button id="close-modal" class="text-gray-400 hover:text-gray-600">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-        </div>
+        </div></div>
 
         <!-- Chat Content -->
         <div class="flex-1 p-4 overflow-y-auto">
@@ -37,17 +37,9 @@
                 <!-- Messages will be added here dynamically -->
             </div>
 
-            <!-- Loading State -->
-            <div id="loading-state" class="hidden">
-                <div class="flex justify-start mb-4">
-                    <div class="bg-indigo-100 px-4 py-2 rounded-full">
-                        <p class="text-indigo-700 text-sm">Setting up your Guide...</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- Progress Bar -->
+        <!-- Stop Button -->
         <div class="px-4 py-3 border-t border-gray-200">
             <div class="flex items-center justify-between mb-2">
                 <div></div>
@@ -56,10 +48,6 @@
                     Stop
                 </button>
             </div>
-            <!-- Gradient Progress Bar -->
-            <div class="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                <div id="progress-bar" class="h-full bg-gradient-to-r from-red-600 via-indigo-600 to-red-600 w-0 transition-all duration-1000"></div>
-            </div>
         </div>
 
         <!-- Input Area -->
@@ -67,7 +55,7 @@
             <div class="relative">
                 <textarea 
                     id="modal-input"
-                    placeholder="Setup FlowFuse on a Siemens IOT2050"
+                    placeholder="Give more details to modify the guide and tailor it further to your use case"
                     class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500"
                     style="height: 100px; font-size: 14px;"
                 ></textarea>
@@ -88,10 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.getElementById('close-modal');
     const tellMeHowBtn = document.querySelector('[onclick*="cta-ai-tell-me-how"]');
     const chatMessages = document.getElementById('chat-messages');
-    const loadingState = document.getElementById('loading-state');
-    const progressBar = document.getElementById('progress-bar');
     const modalInput = document.getElementById('modal-input');
-    const stopBtn = document.getElementById('stop-generation');
 
     // Open modal
     if (tellMeHowBtn) {
@@ -111,20 +96,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function openModal(userText) {
         // Check if View Transitions API is supported
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
-            console.log('View Transitions API detected and available');
             
             // Get elements for transition
             const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
             const homeTextareaWrapper = homeTextarea.closest('.textarea-wrapper');
             // Target the entire input area div that contains textarea and footer text
             const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-lg');
-            console.log('Home wrapper found:', homeTextareaWrapper);
-            console.log('Modal input section found:', modalInputSection);
             
-            // Copy text before transition
-            if (userText) {
-                modalInput.value = userText;
-            }
             
             // Set transition name on home wrapper BEFORE starting transition (for "before" snapshot)
             homeTextareaWrapper.style.viewTransitionName = 'morphing-content';
@@ -132,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Use View Transitions API for smooth morphing
             try {
                 const transition = document.startViewTransition(() => {
-                    console.log('Inside transition callback');
                     
                     // Remove transition name from home wrapper
                     homeTextareaWrapper.style.viewTransitionName = '';
@@ -148,13 +125,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Give the modal input section the transition name (for "after" snapshot)
                     modalInputSection.style.viewTransitionName = 'morphing-content';
                     
-                    console.log('Transition state updated');
                 });
                 
-                console.log('Transition started:', transition);
             
             transition.finished.then(() => {
-                console.log('Transition finished');
                 
                 // Prevent body scroll
                 document.body.style.overflow = 'hidden';
@@ -184,15 +158,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         } else {
-            console.log('View Transitions API not supported, using fallback');
             // Fallback for browsers without View Transitions support
             const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
             const homeTextareaWrapper = homeTextarea.closest('.textarea-wrapper');
             
-            // Copy text
-            if (userText) {
-                modalInput.value = userText;
-            }
             
             // Hide home textarea to avoid duplication
             homeTextareaWrapper.style.display = 'none';
@@ -244,8 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Reset modal state
                 chatMessages.innerHTML = '';
-                loadingState.classList.add('hidden');
-                progressBar.style.width = '0%';
                 modalInput.value = '';
             });
         } else {
@@ -261,37 +228,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Reset state
             chatMessages.innerHTML = '';
-            loadingState.classList.add('hidden');
-            progressBar.style.width = '0%';
             modalInput.value = '';
         }
         
-        modal.style.backgroundColor = '';
-        modal.style.transition = '';
     }
 
     function startChat(message) {
         // Add user message
         addMessage(message, 'user');
         
-        // Show loading state
-        loadingState.classList.remove('hidden');
-        
-        // Simulate progress
-        let progress = 0;
-        const progressInterval = setInterval(() => {
-            progress += Math.random() * 15;
-            if (progress >= 100) {
-                progress = 100;
-                clearInterval(progressInterval);
-                setTimeout(() => {
-                    loadingState.classList.add('hidden');
-                    addMessage('I can help you set up FlowFuse on a Siemens IOT2050. Here\'s a comprehensive guide...', 'assistant');
-                    progressBar.style.width = '0%';
-                }, 500);
-            }
-            progressBar.style.width = progress + '%';
-        }, 200);
+        // Add assistant response immediately
+        setTimeout(() => {
+            addMessage('I can help you set up FlowFuse on a Siemens IOT2050. Here\'s a comprehensive guide...', 'assistant');
+        }, 500);
     }
 
     function addMessage(text, sender) {
@@ -314,9 +263,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Stop generation
-    stopBtn.addEventListener('click', function() {
-        loadingState.classList.add('hidden');
-        progressBar.style.width = '0%';
+    document.getElementById('stop-generation').addEventListener('click', function() {
+        // Stop functionality can be implemented here if needed
     });
 
     // Enter key to send message
