@@ -1874,10 +1874,20 @@ lite-youtube::before {
 
 .ai-chat-box .textarea-wrapper.modal-header {
     background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+                linear-gradient(90deg, theme(colors.red.600), #5048e5, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
     border: none;
     border-bottom: 1px solid transparent;
-    animation: gradient-border-rotate 4s linear;
+    background-size: 200% 100%;
+    animation: gradient-flow-lr 4s linear;
+}
+
+@keyframes gradient-flow-lr {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
 }
 
 .prompt-pill {

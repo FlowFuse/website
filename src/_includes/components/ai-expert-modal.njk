@@ -40,14 +40,11 @@
         </div>
 
         <!-- Stop Button -->
-        <div class="px-4 py-3 border-t border-gray-200">
-            <div class="flex items-center justify-between mb-2">
-                <div></div>
-                <button id="stop-generation" class="bg-white border border-indigo-300 px-6 py-2 rounded-full text-sm flex items-center gap-2">
-                    <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
-                    Stop
-                </button>
-            </div>
+        <div id="stop-button-container" class="px-4 pt-4 border-t border-gray-200 flex justify-end hidden">
+            <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2" style="padding: 8px 10px;">
+                <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
+                Stop
+            </button>
         </div>
 
         <!-- Input Area -->
@@ -56,13 +53,13 @@
                 <textarea 
                     id="modal-input"
                     placeholder="Give more details to modify the guide and tailor it further to your use case"
-                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500"
+                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500 text-gray-900"
                     style="height: 100px; font-size: 14px;"
                 ></textarea>
             </div>
             <div class="flex justify-between mt-2 text-xs text-gray-500">
                 <span>Powered by OpenAI</span>
-                <span>Protected by reCAPTCHA</span>
+                <span>Rate limited. Fair use only</span>
             </div>
         </div>
 
@@ -214,6 +211,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset modal state
                 chatMessages.innerHTML = '';
                 modalInput.value = '';
+                
+                // Hide stop button container
+                const stopButtonContainer = document.getElementById('stop-button-container');
+                stopButtonContainer.classList.add('hidden');
             });
         } else {
             // Fallback for browsers without View Transitions
@@ -229,11 +230,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset state
             chatMessages.innerHTML = '';
             modalInput.value = '';
+            
+            // Hide stop button container
+            const stopButtonContainer = document.getElementById('stop-button-container');
+            stopButtonContainer.classList.add('hidden');
         }
         
     }
 
     function startChat(message) {
+        // Show stop button container when chat starts
+        const stopButtonContainer = document.getElementById('stop-button-container');
+        stopButtonContainer.classList.remove('hidden');
+        
         // Add user message
         addMessage(message, 'user');
         
