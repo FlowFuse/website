@@ -70,7 +70,7 @@ Now let's start by defining a Resource. In MCP, a Resource represents a data sou
 
 1. Drag the MCP Resource node from the palette onto your workspace.
 2. Double-click the node to open its configuration panel and select the added mcp server configuration.
-3. Enter the unique id for the rsource for example : "all-production-lines"
+3. Enter the unique id for the resource, for example : "all-production-lines"
 4. Provide a unique URI for this specific resource, for example, `mcp://monitor-all-production-lines` Make sure your every resource must have a unique URI.
 5. Enter a clear, human-readable title, like "Monitoring All production lines". This is the name the AI agent or client that will connect will see, so make it descriptive.
 6. Give the node a descriptive name for your flow, such as Production Lines Resource, and enter a brief description.
