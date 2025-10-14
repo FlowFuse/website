@@ -115,45 +115,53 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get elements for transition
             const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
-            const transitionId = 'main-textarea-' + Date.now();
-            console.log('Home textarea found:', homeTextarea);
-            console.log('Modal input found:', modalInput);
+            const homeTextareaWrapper = homeTextarea.closest('.textarea-wrapper');
+            // Target the entire input area div that contains textarea and footer text
+            const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-lg');
+            console.log('Home wrapper found:', homeTextareaWrapper);
+            console.log('Modal input section found:', modalInputSection);
+            
+            // Copy text before transition
+            if (userText) {
+                modalInput.value = userText;
+            }
+            
+            // Set transition name on home wrapper BEFORE starting transition (for "before" snapshot)
+            homeTextareaWrapper.style.viewTransitionName = 'morphing-content';
             
             // Use View Transitions API for smooth morphing
             try {
                 const transition = document.startViewTransition(() => {
                     console.log('Inside transition callback');
                     
-                    // Set home textarea name first
-                    homeTextarea.style.viewTransitionName = transitionId;
+                    // Remove transition name from home wrapper
+                    homeTextareaWrapper.style.viewTransitionName = '';
                     
-                    // Move modal to document.body 
+                    // Hide the home wrapper
+                    homeTextareaWrapper.style.display = 'none';
+                    
+                    // Move modal to document.body and show it
                     document.body.appendChild(modal);
-                    
-                    // Clear the home textarea name before setting modal name
-                    homeTextarea.style.viewTransitionName = '';
-                    
-                    // Now show modal and set its textarea name
                     modal.classList.remove('hidden');
                     modal.classList.add('flex');
-                    modalInput.style.viewTransitionName = transitionId;
                     
-                    if (userText) {
-                        modalInput.value = userText;
-                    }
-                    console.log('Modal positioned for transition with sequential naming');
+                    // Give the modal input section the transition name (for "after" snapshot)
+                    modalInputSection.style.viewTransitionName = 'morphing-content';
+                    
+                    console.log('Transition state updated');
                 });
                 
                 console.log('Transition started:', transition);
             
             transition.finished.then(() => {
                 console.log('Transition finished');
-                // Ensure modal stays visible and prevent body scroll
+                
+                // Prevent body scroll
                 document.body.style.overflow = 'hidden';
                 
                 // Clean up transition names after animation
-                homeTextarea.style.viewTransitionName = '';
-                modalInput.style.viewTransitionName = '';
+                homeTextareaWrapper.style.viewTransitionName = '';
+                modalInputSection.style.viewTransitionName = '';
                 
                 // Start chat after transition completes
                 if (userText) {
@@ -165,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 console.error('Error starting transition:', error);
                 // Fallback to immediate modal show
+                homeTextareaWrapper.style.display = 'none';
                 document.body.appendChild(modal);
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
@@ -177,34 +186,88 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.log('View Transitions API not supported, using fallback');
             // Fallback for browsers without View Transitions support
-            document.body.appendChild(modal);
+            const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+            const homeTextareaWrapper = homeTextarea.closest('.textarea-wrapper');
             
+            // Copy text
+            if (userText) {
+                modalInput.value = userText;
+            }
+            
+            // Hide home textarea to avoid duplication
+            homeTextareaWrapper.style.display = 'none';
+            
+            // Show modal immediately (no animation)
+            document.body.appendChild(modal);
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
             
             if (userText) {
-                modalInput.value = userText;
                 startChat(userText);
             }
         }
     }
 
     function closeModal() {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.style.overflow = '';
-        
-        // Reset state
-        chatMessages.innerHTML = '';
-        loadingState.classList.add('hidden');
-        progressBar.style.width = '0%';
-        modalInput.value = '';
-        
-        // Clear any leftover view transition names
         const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
-        if (homeTextarea) homeTextarea.style.viewTransitionName = '';
-        modalInput.style.viewTransitionName = '';
+        const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
+        const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-lg');
+        
+        // Check if View Transitions API is supported
+        if (document.startViewTransition && typeof document.startViewTransition === 'function') {
+            // Set transition name on modal input section (for "before" snapshot)
+            modalInputSection.style.viewTransitionName = 'morphing-content';
+            
+            // Use View Transitions for smooth reverse morph
+            const transition = document.startViewTransition(() => {
+                // Remove transition name from modal
+                modalInputSection.style.viewTransitionName = '';
+                
+                // Hide modal
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                
+                // Show home wrapper with transition name (for "after" snapshot)
+                if (homeTextareaWrapper) {
+                    homeTextareaWrapper.style.display = '';
+                    homeTextareaWrapper.style.viewTransitionName = 'morphing-content';
+                }
+            });
+            
+            transition.finished.then(() => {
+                // Clean up after transition
+                document.body.style.overflow = '';
+                if (homeTextareaWrapper) {
+                    homeTextareaWrapper.style.viewTransitionName = '';
+                }
+                
+                // Reset modal state
+                chatMessages.innerHTML = '';
+                loadingState.classList.add('hidden');
+                progressBar.style.width = '0%';
+                modalInput.value = '';
+            });
+        } else {
+            // Fallback for browsers without View Transitions
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+            
+            // Restore home textarea
+            if (homeTextareaWrapper) {
+                homeTextareaWrapper.style.display = '';
+            }
+            
+            // Reset state
+            chatMessages.innerHTML = '';
+            loadingState.classList.add('hidden');
+            progressBar.style.width = '0%';
+            modalInput.value = '';
+        }
+        
+        modal.style.backgroundColor = '';
+        modal.style.transition = '';
     }
 
     function startChat(message) {
