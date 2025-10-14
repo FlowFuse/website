@@ -19,7 +19,7 @@ This article explains how to build an MCP server with FlowFuse and connect AI to
 
 ### What Is MCP?
 
-The Model Context Protocol (MCP) bridges the gap between AI and your industrial systems. It provides a structured way for AI to understand your operations, access the right data, and take appropriate actions when needed.
+The Model Context Protocol (MCP) is an open standard that enables AI assistants to access data and execute actions across external systems.
 
 MCP works through three key components. Resources give AI visibility into your operations through read-only access to sensor data, database records, SCADA tags, and equipment logs. This real-time information helps AI understand what's actually happening on your factory floor or in your IIoT environment.
 
