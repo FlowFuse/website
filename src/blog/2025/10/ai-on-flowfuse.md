@@ -4,12 +4,13 @@ subtitle: "Create your own AI agents and deploy trained models in Node-RED"
 description: "Create your own AI agents and deploy trained models in Node-RED"
 date: 2025-10-13
 authors: ["greg-stoutenburg"]
-image: 
+image: /blog/2025/10/images/ai-on-flowfuse.png
 keywords: 
 tags:
   - flowfuse
   - node-red
   - post
+  - AI
 ---
 
 We have a VERY exciting announcement today: you can now build an MCP server and upload custom-trained AI models to FlowFuse! 
