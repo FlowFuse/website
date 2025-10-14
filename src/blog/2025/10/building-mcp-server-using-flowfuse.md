@@ -8,6 +8,7 @@ image:
 keywords: Node-RED MCP Server, Node-RED AI, Model Context Protocol, AI agents within Node-RED
 tags:
   - flowfuse
+  - AI
 ---
 
 FlowFuse released MCP nodes for Node-RED, allowing AI to directly interact with the flows you have built. These nodes let AI read sensor data, query databases, and control equipment. You use FlowFuse to collect and manage data in your flows, while AI agents determines what actions to take and why, enabling intelligent monitoring and automated control of factory and IIoT/IoT systems.
