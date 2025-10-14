@@ -1803,6 +1803,54 @@ lite-youtube::before {
     background: linear-gradient(white, white) padding-box,
                 linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
     border: 1px solid transparent;
+    animation: gradient-border-rotate 4s linear;
+}
+
+@keyframes gradient-border-rotate {
+    0% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(0deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    10% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(36deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    20% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(72deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    30% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(108deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    40% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(144deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    50% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(180deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    60% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(216deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    70% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(252deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    80% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(288deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    90% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(324deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    100% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(360deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
 }
 
 .ai-chat-box .ff-btn {

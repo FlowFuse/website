@@ -8,7 +8,7 @@
             <div class="flex items-center gap-3">
                 <!-- FlowFuse Logo -->
                 <div class="w-24 h-6">
-                    {% include "components/ff-logo--wordmark--grey.svg" %}
+                    {% include "components/flowfuse-wordmark.njk" %}
                 </div>
                 <h2 class="text-lg font-semibold text-gray-700">Expert Assistant</h2>
             </div>
@@ -23,8 +23,8 @@
         <!-- Chat Content -->
         <div class="flex-1 p-4 overflow-y-auto">
             <!-- Info Message -->
-            <div class="bg-indigo-100 p-4 rounded-lg mb-6">
-                <p class="text-indigo-700 text-sm">
+            <div class="bg-indigo-100 rounded-lg mb-6" style="padding: 10px 16px;">
+                <p class="text-indigo-700 text-sm m-0">
                     Uses OpenAI GPT-4.1 Mini with access to all FlowFuse 
                     <a href="/docs" class="underline">documentation</a> 
                     and our Get Started 
@@ -68,7 +68,8 @@
                 <textarea 
                     id="modal-input"
                     placeholder="Setup FlowFuse on a Siemens IOT2050"
-                    class="w-full h-20 p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500"
+                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500"
+                    style="height: 100px; font-size: 14px;"
                 ></textarea>
             </div>
             <div class="flex justify-between mt-2 text-xs text-gray-500">
