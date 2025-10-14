@@ -1806,6 +1806,46 @@ lite-youtube::before {
     animation: gradient-border-rotate 4s linear;
 }
 
+/* View transition names will be set dynamically via JavaScript */
+
+/* View Transition styles for smooth morphing */
+::view-transition-old(main-textarea),
+::view-transition-new(main-textarea) {
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Make the transition more visible with custom keyframes */
+::view-transition-old(main-textarea) {
+    animation-name: slide-out;
+}
+
+::view-transition-new(main-textarea) {
+    animation-name: slide-in;
+}
+
+@keyframes slide-out {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 @keyframes gradient-border-rotate {
     0% {
         background: linear-gradient(white, white) padding-box,

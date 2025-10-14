@@ -1,4 +1,4 @@
-<div class="ai-chat-container mx-auto" style="max-width: 800px;">
+<div class="ai-chat-container mx-auto mt-10" style="max-width: 800px;">
     <div class="ai-chat-box">
         <div class="textarea-wrapper relative mb-4 h-40 p-4 pb-12 rounded-lg overflow-hidden">
             <textarea 
@@ -9,7 +9,7 @@
             <div class="absolute bottom-3 left-4 text-[10px] font-light text-gray-500">
                 Uses OpenAI GPT-4.1 Mini trained on FlowFuse's knowledge base
             </div>
-            <button class="absolute bottom-3 right-4 ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3" onclick="capture('cta-ai-tell-me-how', {'position': 'hero'})">
+            <button class="absolute bottom-3 right-4 ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3" onclick="if(typeof capture === 'function') capture('cta-ai-tell-me-how', {'position': 'hero'})">
                 Tell Me How
             </button>
         </div>

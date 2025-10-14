@@ -109,16 +109,84 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function openModal(userText) {
-        // Move modal to document.body to ensure it's at root DOM level
-        document.body.appendChild(modal);
-        
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.style.overflow = 'hidden';
-        
-        if (userText) {
-            modalInput.value = userText;
-            startChat(userText);
+        // Check if View Transitions API is supported
+        if (document.startViewTransition && typeof document.startViewTransition === 'function') {
+            console.log('View Transitions API detected and available');
+            
+            // Get elements for transition
+            const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+            const transitionId = 'main-textarea-' + Date.now();
+            console.log('Home textarea found:', homeTextarea);
+            console.log('Modal input found:', modalInput);
+            
+            // Use View Transitions API for smooth morphing
+            try {
+                const transition = document.startViewTransition(() => {
+                    console.log('Inside transition callback');
+                    
+                    // Set home textarea name first
+                    homeTextarea.style.viewTransitionName = transitionId;
+                    
+                    // Move modal to document.body 
+                    document.body.appendChild(modal);
+                    
+                    // Clear the home textarea name before setting modal name
+                    homeTextarea.style.viewTransitionName = '';
+                    
+                    // Now show modal and set its textarea name
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    modalInput.style.viewTransitionName = transitionId;
+                    
+                    if (userText) {
+                        modalInput.value = userText;
+                    }
+                    console.log('Modal positioned for transition with sequential naming');
+                });
+                
+                console.log('Transition started:', transition);
+            
+            transition.finished.then(() => {
+                console.log('Transition finished');
+                // Ensure modal stays visible and prevent body scroll
+                document.body.style.overflow = 'hidden';
+                
+                // Clean up transition names after animation
+                homeTextarea.style.viewTransitionName = '';
+                modalInput.style.viewTransitionName = '';
+                
+                // Start chat after transition completes
+                if (userText) {
+                    startChat(userText);
+                }
+            }).catch(err => {
+                console.error('Transition failed:', err);
+            });
+            } catch (error) {
+                console.error('Error starting transition:', error);
+                // Fallback to immediate modal show
+                document.body.appendChild(modal);
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                if (userText) {
+                    modalInput.value = userText;
+                    startChat(userText);
+                }
+            }
+        } else {
+            console.log('View Transitions API not supported, using fallback');
+            // Fallback for browsers without View Transitions support
+            document.body.appendChild(modal);
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            if (userText) {
+                modalInput.value = userText;
+                startChat(userText);
+            }
         }
     }
 
@@ -132,6 +200,11 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingState.classList.add('hidden');
         progressBar.style.width = '0%';
         modalInput.value = '';
+        
+        // Clear any leftover view transition names
+        const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+        if (homeTextarea) homeTextarea.style.viewTransitionName = '';
+        modalInput.style.viewTransitionName = '';
     }
 
     function startChat(message) {

@@ -76,26 +76,11 @@ hubspot:
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
                 <h1 class="font-medium home m-auto text-4xl md:text-5xl text-center text-indigo-700 mb-6">
-                    Deploy and scale<br/>in under 2 minutes
+                    {{ site.messaging.tagLine | safe }}
                 </h1>
-                <p class="text-center text-gray-500 text-sm mb-6">
-                    FlowFuse is the Industrial Application platform that brings the exclusive AI-enhanced Node-RED to the<br class="hidden md:block">
-                    market, empowering teams to build, deploy, and manage solutions that optimize operations.
+                <p class="mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
+                    {{ site.messaging.subtitle }}
                 </p>
-                
-                <!-- Status Badges -->
-                
-                <div class="flex justify-center gap-4 mb-8">
-                    <span class="px-4 py-2 rounded text-sm text-indigo-600 bg-indigo-50 border border-indigo-200/50">
-                        Secure
-                    </span>
-                    <span class="px-4 py-2 rounded text-sm text-indigo-600 bg-indigo-50 border border-indigo-200/50">
-                        Observable
-                    </span>
-                    <span class="px-4 py-2 rounded text-sm text-indigo-600 bg-indigo-50 border border-indigo-200/50">
-                        Trusted
-                    </span>
-                </div>
                 
                 <!-- AI Chat Interface -->
                 {% include "components/ai-chat-interface.njk" %}
