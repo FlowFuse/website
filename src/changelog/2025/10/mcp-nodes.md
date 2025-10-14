@@ -1,15 +1,15 @@
 ---
-title: FlowFuse MCP Nodes
-description: "New FlowFuse nodes for creating MCP Tools, Resources and Prompts"
-date: 2025-10-10 12:00:00.0
+title: FlowFuse MCP Server Nodes
+description: "New FlowFuse nodes for creating MCP Server Tools, Resources and Prompts"
+date: 2025-10-14 12:00:00.0
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
 ---
 
-We’re excited to introduce **FlowFuse MCP Nodes** — a new contrib package that brings MCP Tools, Resources, and Prompts straight into Node-RED. With just a few nodes, you can design custom MCP-powered automations, connect dynamic resources, and return responses seamlessly in your flows. Whether you’re prototyping or extending integrations, these nodes make it faster than ever to put MCP to work in your applications.
+We’re excited to introduce **FlowFuse MCP Server Nodes** — a new contrib package that brings MCP Tools, Resources, and Prompts straight into Node-RED. With just a few nodes, you can design custom MCP-powered automations, connect dynamic resources, and return responses seamlessly in your flows. Whether you’re prototyping or extending integrations, these nodes make it faster than ever to put MCP to work in your applications.
 
-Over the coming weeks, we’ll share use cases and demos to inspire you, but in the meantime, we’ve included some sample flows you can access directly in Node-RED via the import menu (`CTRL`+`I`).
+Over the coming weeks, we’ll share use cases and demos to inspire you, but in the meantime, we’ve included some sample flows you can access directly in Node-RED via the import menu (`CTRL`+`I`) and some additional links below.
 
 ### What is MCP?
 
@@ -24,4 +24,12 @@ As AI adoption grows, developers need consistent ways to integrate models into r
 ![New MCP Nodes](./images/mcp-nodes.png){data-zoomable}  
 _New MCP Nodes_
 
-FlowFuse customers can install the MCP Server nodes today via the Node-RED Palette Manager from the FlowFuse catalog.
+FlowFuse customers can install the MCP Server nodes today via the Node-RED Palette Manager from the **FlowFuse Nodes** catalog
+
+![alt text](./images/mcp-nodes-in-catalog.png)
+
+### Additional links
+
+- [Blog article](https://flowfuse.com/blog/2025/10/building-mcp-server-using-flowfuse/) 
+- [Youtube demonstration video](https://www.youtube.com/watch?v=troUvaF8V68)
+
