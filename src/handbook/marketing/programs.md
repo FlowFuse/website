@@ -17,7 +17,9 @@ qualified leads.
 
 - **Paid Advertising Campaigns**: We run targeted digital ad campaigns (e.g.,
   ABM on LinkedIn, Google Ads) to reach specific audiences, drive traffic to our
-  key content, and generate MQLs (Marketing Qualified Leads).
+  key content, and generate MQLs (Marketing Qualified Leads). See [Lead
+  Activation](/handbook/marketing/lead-activation/) for definitions of inbound
+  vs. outbound lead sources.
 - **[Gated Resources](/handbook/marketing/leads/)**: We create and promote
   in-depth content such as whitepapers, ebooks, and guides. This content is
   gated, serving as a key tool for capturing new marketing qualified leads.
@@ -95,10 +97,21 @@ our brand.
 
 ## 5. Strategic Partnerships
 
-- **[Partner Program](/handbook/sales/partnerships/)**: In close collaboration
-  with the Sales team, this program focuses on building and nurturing
-  relationships with technology partners and solution providers to expand our
-  reach, enter new markets, and create co-marketing opportunities.
+We engage in strategic partnerships to expand our reach, validate our solutions, and create co-marketing opportunities that align with [FlowFuse’s strategy](/handbook/company/strategy/).  
+
+Strategic partnerships can take different forms:
+ - **Technology and solution partners** led by sales through the [Partners Program](/handbook/sales/partnerships/). This program focuses on building and nurturing relationships with technology partners and solution providers to expand our reach, enter new markets, and create co-marketing opportunities.
+ - **Customers**, where joint marketing initiatives are occasionally included as part of a sales negotiation. These initiatives are aimed at demonstrating that FlowFuse provides a suited solution for our [ICP](/handbook/marketing/messaging/#ideal-customer-profile-(icp)).
+ - **Influencers or vendors** with whom we may collaborate for sponsored content to reach audiences that value their expertise on topics relevant to our ICP.
+
+When evaluating co-marketing opportunities, we consider:
+- Relevance: Alignment with FlowFuse’s editorial calendar, strategic themes, and target audience.
+- Value exchange: Clear deliverables such as published articles, videos, webinars, or social media posts, with measurable outcomes (reach, engagement, leads).
+- Ownership: The Product Marketing Manager leads assessment and planning of co-marketing initiatives, in collaboration with the Marketing team and Sales as needed.
+- Execution: DevRel validates externally created content to ensure quality, accuracy and consistency of deliverables.
+- Measurement: Success is measured through defined KPIs such as reach, engagement, and lead generation.
+
+All inbound proposals for co-marketing or sponsored content must be shared with the Product Marketing Manager for assessment before any commitments are made.
 
 ## 6. New Marketing Campaigns Process
 
@@ -128,6 +141,8 @@ etc.) Justify why these channels are most appropriate for this campaign
 **e. Resources and Budget Estimate** Provide an estimated budget (can be
 approximate) Identify what human resources would be needed Specify if external
 tools, services, or vendors are required
+
+**f. Campaigns performance tracking** All campaigns will be trackes using the [Campaigns feature on Hubspot (internal)](https://app-eu1.hubspot.com/marketing/26586079/campaigns/views/all). 
 
 **Submission Process**
 

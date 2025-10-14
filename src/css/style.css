@@ -10,6 +10,7 @@
 @import "./algolia-theme.css";
 @import "./roadmap.css";
 @import "./zoom-style.css";
+@import "./node-red-style.css";
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 
@@ -176,6 +177,14 @@ h1, h2, h3, h4 {
 
 .gradient-bg {
     background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
+}
+
+.gradient-roi-bottom-right {
+    background: radial-gradient(farthest-side at 100% 100%, theme(colors.indigo.100), transparent);
+}
+
+.hard-shadow-indigo300 {
+    box-shadow: 4px 4px 0 0 theme(colors.indigo.300);
 }
 
 .pricing .gradient-bg {
@@ -549,6 +558,10 @@ h4:hover .header-anchor::before {
 .ff-image-cover.right picture {
     @apply object-right;
 }
+.ff-image-cover.center img,
+.ff-image-cover.center picture {
+    @apply object-center;
+}
 
 .ff-image-cover.blueprint img,
 .ff-image-cover.blueprint picture {
@@ -882,6 +895,10 @@ h4:hover .header-anchor::before {
     position: absolute;
     width: 0%;
     transform: translateX(20px);
+}
+
+.testimonial #container {
+    @apply md:min-h-[284px] min-h-[650px];
 }
 
 .testimonial.active {
@@ -1743,4 +1760,8 @@ lite-youtube::before {
 
 .bg-radial-indigo {
     background: radial-gradient(ellipse 30% 70% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
+}
+
+.bg-radial-indigo-small {
+    background: radial-gradient(ellipse 50% 5% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
 }

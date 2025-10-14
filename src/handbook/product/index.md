@@ -33,3 +33,4 @@ The product department, and Product Managers (PM) by extend are responsible for:
 - [Versioning](./versioning.md)
 - [Metrics](./metrics.md)
 - [Node-RED Dashboard](./dashboard.md)
+- [Product Growth](./telemetry.md)

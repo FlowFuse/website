@@ -53,5 +53,6 @@ Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack
 | [Webinars](./webinars.md) | Webinars are a key way FlowFuse interacts with the Node-RED community. |
 | [Messaging](./messaging.md) | Marketing messaging |
 | [Emails](./email.md) | How to engage with customers through email |
+| [Lead Activation](./lead-activation.md) | Definitions of inbound vs. outbound lead sources and MQL activation process |
 | [Growth Strategy](/handbook/company/strategy/#growth-strategy) | Market analysis and growth strategy that will define the upcoming marketing actions. |
 

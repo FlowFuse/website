@@ -65,7 +65,7 @@ eleventyComputed:
     {% if extractedTitle and page.url != '/' %}
     <title>{{ extractedTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowFuse &#x2022; {{ site.messaging.tagLine }}</title>
+    <title>FlowFuse &#x2022; {{ site.messaging.tagLine | replace('<br />', ' ' ) }}</title>
     {% endif %}
     {% endif %}
 
@@ -337,6 +337,12 @@ eleventyComputed:
                             <a href="https://discord.gg/2RrvW8dkrF" class="block px-3 py-3 md:p-0">
                                 <span class="sr-only">Join our Discord</span>
                                 {% include "components/discord.njk" %}
+                            </a>
+                        </li>
+                        <li class="inline md:m-0 md:block">
+                            <a href="https://www.reddit.com/r/flowfuse" class="block px-3 py-3 md:p-0">
+                                <span class="sr-only">Visit our Reddit community</span>
+                                {% include "components/reddit.njk" %}
                             </a>
                         </li>
                         <li class="inline md:m-0 md:block">
