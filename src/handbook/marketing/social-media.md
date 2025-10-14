@@ -82,7 +82,7 @@ Each content type has channels which are appropriate, this table sets out which 
 - In general, everyone is encouraged to post on social media, as long as they follow our proposed [guidelines and tone](/handbook/marketing/brand-voice/). [The HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar) serves as our central planning hub for publishing content.
 - If you prefer not to post yourself and would like to delegate, you can do so [Requesting a Social Post](/handbook/marketing/social-media/#requesting-a-social-post). The Social Media owner will manage it following the regular posting track. 
 - This is to ensure we never block or delay a post that could be urgent or highly relevant in the moment. While our handbook provides structure, it should not prevent us from responding quickly to breaking news or important events.
-- Social media posts do not need to be reviewed by another person before posting.
+- When an author posts to social media, posts do not need to be reviewed by another person before posting.
 
 #### Posts format
 
