@@ -78,7 +78,7 @@ Now let's start by defining a Resource. In MCP, a Resource represents a data sou
 
 At this point, your MCP server is live and resource is discoverable. However, it doesn't contain any data yet.
 
-To expose data you will need to connect the MCP Resource node to any data-producing node in your flow. This could be an HTTP Request node for retrieving data from an API, a FlowFuse Query node for fetching records from a database table, or industrial connectors such as OPC UA Client, Modbus Read, or MQTT In nodes to access live operational data.
+To expose data you will need to connect the MCP Resource node to any data-producing node in your flow. This could be an HTTP Request node retrieving data from an API, a FlowFuse Query node for fetching records from a FlowFuse data table, industrial connectors such as OPC UA Read, Modbus Read, PLC Read nodes.
 
 8. Next, drag the MCP Response node and connect its input to the output of the upstream data source node. 
 
