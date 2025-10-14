@@ -23,7 +23,7 @@
         <!-- Chat Content -->
         <div class="flex-1 p-4 overflow-y-auto">
             <!-- Info Message -->
-            <div class="bg-indigo-100 rounded-lg mb-6" style="padding: 10px 16px;">
+            <div class="bg-indigo-100 rounded-lg mb-6 py-3 px-4">
                 <p class="text-indigo-700 text-sm m-0">
                     Uses OpenAI GPT-4.1 Mini with access to all FlowFuse 
                     <a href="/docs" class="underline">documentation</a> 
@@ -39,22 +39,19 @@
 
         </div>
 
-        <!-- Stop Button -->
-        <div id="stop-button-container" class="px-4 pt-4 border-t border-gray-200 flex justify-end hidden">
-            <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2" style="padding: 8px 10px;">
-                <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
-                Stop
-            </button>
-        </div>
-
         <!-- Input Area -->
-        <div class="p-4 bg-white rounded-b-lg">
+        <div class="p-4 bg-white rounded-b-lg border-t border-gray-200">
+            <div id="stop-button-container" class="pb-4 flex justify-end hidden">
+                <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3">
+                    <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
+                    Stop
+                </button>
+            </div>
             <div class="relative">
                 <textarea 
                     id="modal-input"
                     placeholder="Give more details to modify the guide and tailor it further to your use case"
-                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500 text-gray-900"
-                    style="height: 100px; font-size: 14px;"
+                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500 text-gray-900 h-24 text-sm"
                 ></textarea>
             </div>
             <div class="flex justify-between mt-2 text-xs text-gray-500">
