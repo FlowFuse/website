@@ -18,20 +18,15 @@ This article explains how to build an MCP server with FlowFuse and connect AI to
 
 ### What Is MCP?
 
-The **Model Context Protocol (MCP)** is the bridge between AI and your industrial systems. It defines a clear, structured way for AI to understand your factory or IIoT/IoT flows, know what it can read, and safely perform actions. With MCP, AI doesn’t just access data—it interacts intelligently with your systems.
+The Model Context Protocol (MCP) bridges the gap between AI and your industrial systems. It provides a structured way for AI to understand your operations, access the right data, and take appropriate actions when needed.
 
-MCP is built around three key components:
+MCP works through three key components. Resources give AI visibility into your operations through read-only access to sensor data, database records, SCADA tags, and equipment logs. This real-time information helps AI understand what's actually happening on your factory floor or in your IIoT environment.
 
-* **Resources**
-  Think of resources as the eyes and ears of your AI. They provide read-only access to data like sensor readings, database tables, SCADA tags, or historical logs. Resources give AI the real-time context it needs to make informed decisions.
+Tools let AI perform specific actions in your systems. These might include adjusting equipment parameters, triggering maintenance alerts, or generating operational reports. Each tool clearly defines what it needs as input and what it will produce as output, which keeps operations predictable and safe.
 
-* **Tools**
-  Tools are the hands of your AI. They are actions that AI can perform, from controlling equipment to adjusting system setpoints or generating reports. Each tool clearly defines what inputs it requires and what outputs it produces, so AI knows exactly how to act.
+Prompts are workflow templates that guide AI through more complex tasks. They show AI how to use multiple resources and tools together to complete multi-step operations. This is particularly valuable when you need AI to follow established procedures rather than improvising solutions.
 
-* **Prompts**
-  Prompts are optional guides or recipes that show AI how to combine resources and tools to complete more complex tasks. They help AI follow multi-step workflows without guessing, making operations safer and more reliable.
-
-When an AI agent connects to your MCP server, it instantly discovers all available resources and tools. The protocol handles all the technical details, so AI knows exactly how to request data, interpret responses, and take action.
+When you connect an AI agent to your MCP server, it discovers all available resources and tools automatically. The protocol handles the technical details of data requests and action execution, so AI can start working with your industrial systems right away. You build your flows in Node-RED, and AI learns how to interact with them intelligently through the MCP interface.
 
 ## Getting Started
 
