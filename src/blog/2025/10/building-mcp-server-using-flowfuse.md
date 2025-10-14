@@ -39,7 +39,7 @@ Before you begin, ensure you have the following:
 
 * **A running FlowFuse instance.** If you do not have one, a 14-day free trial is available. [Sign up now](https://app.flowfuse.com/account/create) to set up your instance quickly and get started.
 
-* **Ensure the `@flowfuse/nr-mcp-nodes` package is installed** in your Node-RED palette. These nodes are available on all FlowFuse tiers.
+* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed** in your Node-RED palette. These nodes are available on all FlowFuse tiers.
 
 ### Configuring the MCP Server
 
