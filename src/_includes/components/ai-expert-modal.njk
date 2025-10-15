@@ -82,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Session ID for chat isolation
     let sessionId = null;
+    
+    // Variables for stopping generation
+    let currentAbortController = null;
+    let isGenerating = false;
 
     // Open modal
     if (tellMeHowBtn) {
@@ -96,6 +100,15 @@ document.addEventListener('DOMContentLoaded', function() {
     closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal();
+    });
+
+    // Handle prompt pill clicks
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('prompt-pill') && e.target.dataset.prompt) {
+            e.preventDefault();
+            const promptText = e.target.dataset.prompt;
+            openModal(promptText);
+        }
     });
 
     function openModal(userText) {
@@ -269,6 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show stop button container when chat starts
         const stopButtonContainer = document.getElementById('stop-button-container');
         stopButtonContainer.classList.remove('hidden');
+        isGenerating = true;
         
         // Add user message
         addMessage(message, 'human');
@@ -276,20 +290,39 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start AI response
         const aiMessageIndex = addProgressiveMessage('', 'ai');
         
-        // Make API call
-        const response = await sendChatMessage(message);
-        
-        // Simulate progressive text display
-        const words = response.split(' ');
-        let currentText = '';
-        
-        for (let i = 0; i < words.length; i++) {
-            currentText += (i > 0 ? ' ' : '') + words[i];
-            updateMessage(aiMessageIndex, currentText);
+        try {
+            // Make API call
+            const response = await sendChatMessage(message);
             
-            // Small delay between words for streaming effect
-            await new Promise(resolve => setTimeout(resolve, 50));
+            // Simulate progressive text display
+            const words = response.split(' ');
+            let currentText = '';
+            
+            for (let i = 0; i < words.length; i++) {
+                // Check if generation was stopped
+                if (!isGenerating) {
+                    break;
+                }
+                
+                currentText += (i > 0 ? ' ' : '') + words[i];
+                updateMessage(aiMessageIndex, currentText);
+                
+                // Small delay between words for streaming effect
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                // Update message to show it was stopped
+                updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' [Generation stopped]');
+            } else {
+                // Handle other errors
+                updateMessage(aiMessageIndex, 'Sorry, an error occurred while generating the response.');
+            }
         }
+        
+        // Mark generation as complete
+        isGenerating = false;
+        currentAbortController = null;
         
         // Hide stop button and show summarize button after response is complete
         setTimeout(() => {
@@ -358,6 +391,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function sendChatMessage(query) {
         try {
+            // Create abort controller for this request
+            currentAbortController = new AbortController();
+            
             // Note: This API may only work in production (flowfuse.com domain)
             // For local development, we'll get simulated responses
             const response = await fetch('https://flowfuse-chatbot.flowfuse.dev/v1/expert', {
@@ -367,7 +403,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Origin': window.location.origin,
                     'X-Chat-Session-ID': sessionId
                 },
-                body: JSON.stringify({ query })
+                body: JSON.stringify({ query }),
+                signal: currentAbortController.signal
             });
             
             if (!response.ok) {
@@ -377,6 +414,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
             return data.answer;
         } catch (error) {
+            // Handle abort error (user clicked stop)
+            if (error.name === 'AbortError') {
+                throw error; // Re-throw abort errors to be handled by caller
+            }
+            
             console.warn('Chat API not available (likely due to CORS in development):', error);
             
             // Fallback to simulated response for local development
@@ -433,7 +475,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Stop generation
     document.getElementById('stop-generation').addEventListener('click', function() {
-        // Stop functionality can be implemented here if needed
+        // Stop the current generation
+        isGenerating = false;
+        
+        // Abort the current API request if it exists
+        if (currentAbortController) {
+            currentAbortController.abort();
+        }
+        
+        // Hide stop button and show summarize button
+        const stopButtonContainer = document.getElementById('stop-button-container');
+        const summarizeButtonContainer = document.getElementById('summarize-button-container');
+        stopButtonContainer.classList.add('hidden');
+        summarizeButtonContainer.classList.remove('hidden');
     });
 
     // Summarize conversation
@@ -453,22 +507,42 @@ document.addEventListener('DOMContentLoaded', function() {
         const stopButtonContainer = document.getElementById('stop-button-container');
         summarizeButtonContainer.classList.add('hidden');
         stopButtonContainer.classList.remove('hidden');
+        isGenerating = true;
         
         // Start AI response
         const aiMessageIndex = addProgressiveMessage('', 'ai');
         
-        // Make API call for summarization
-        const response = await sendChatMessage(summaryPrompt);
-        
-        // Display response progressively
-        const words = response.split(' ');
-        let currentText = '';
-        
-        for (let i = 0; i < words.length; i++) {
-            currentText += (i > 0 ? ' ' : '') + words[i];
-            updateMessage(aiMessageIndex, currentText);
-            await new Promise(resolve => setTimeout(resolve, 30));
+        try {
+            // Make API call for summarization
+            const response = await sendChatMessage(summaryPrompt);
+            
+            // Display response progressively
+            const words = response.split(' ');
+            let currentText = '';
+            
+            for (let i = 0; i < words.length; i++) {
+                // Check if generation was stopped
+                if (!isGenerating) {
+                    break;
+                }
+                
+                currentText += (i > 0 ? ' ' : '') + words[i];
+                updateMessage(aiMessageIndex, currentText);
+                await new Promise(resolve => setTimeout(resolve, 30));
+            }
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                // Update message to show it was stopped
+                updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' [Generation stopped]');
+            } else {
+                // Handle other errors
+                updateMessage(aiMessageIndex, 'Sorry, an error occurred while generating the summary.');
+            }
         }
+        
+        // Mark generation as complete
+        isGenerating = false;
+        currentAbortController = null;
         
         // Hide stop button after summary is complete
         setTimeout(() => {
@@ -492,22 +566,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 const summarizeButtonContainer = document.getElementById('summarize-button-container');
                 stopButtonContainer.classList.remove('hidden');
                 summarizeButtonContainer.classList.add('hidden');
+                isGenerating = true;
                 
                 // Start AI response
                 const aiMessageIndex = addProgressiveMessage('', 'ai');
                 
-                // Make API call
-                const response = await sendChatMessage(message);
-                
-                // Display response progressively
-                const words = response.split(' ');
-                let currentText = '';
-                
-                for (let i = 0; i < words.length; i++) {
-                    currentText += (i > 0 ? ' ' : '') + words[i];
-                    updateMessage(aiMessageIndex, currentText);
-                    await new Promise(resolve => setTimeout(resolve, 30));
+                try {
+                    // Make API call
+                    const response = await sendChatMessage(message);
+                    
+                    // Display response progressively
+                    const words = response.split(' ');
+                    let currentText = '';
+                    
+                    for (let i = 0; i < words.length; i++) {
+                        // Check if generation was stopped
+                        if (!isGenerating) {
+                            break;
+                        }
+                        
+                        currentText += (i > 0 ? ' ' : '') + words[i];
+                        updateMessage(aiMessageIndex, currentText);
+                        await new Promise(resolve => setTimeout(resolve, 30));
+                    }
+                } catch (error) {
+                    if (error.name === 'AbortError') {
+                        // Update message to show it was stopped
+                        updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' [Generation stopped]');
+                    } else {
+                        // Handle other errors
+                        updateMessage(aiMessageIndex, 'Sorry, an error occurred while generating the response.');
+                    }
                 }
+                
+                // Mark generation as complete
+                isGenerating = false;
+                currentAbortController = null;
                 
                 // Hide stop button and show summarize button
                 setTimeout(() => {
