@@ -79,6 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Message storage array
     let messages = [];
+    
+    // Session ID for chat isolation
+    let sessionId = null;
 
     // Open modal
     if (tellMeHowBtn) {
@@ -96,6 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function openModal(userText) {
+        // Generate new session ID for this chat session
+        sessionId = crypto.randomUUID();
+        
         // Check if View Transitions API is supported
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
             
@@ -103,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
             const homeTextareaWrapper = homeTextarea.closest('.textarea-wrapper');
             // Target the entire input area div that contains textarea and footer text
-            const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-lg');
+            const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
             
             
             // Set transition name on home wrapper BEFORE starting transition (for "before" snapshot)
@@ -125,7 +131,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     modal.classList.add('flex');
                     
                     // Give the modal input section the transition name (for "after" snapshot)
-                    modalInputSection.style.viewTransitionName = 'morphing-content';
+                    if (modalInputSection) {
+                        modalInputSection.style.viewTransitionName = 'morphing-content';
+                    }
                     
                 });
                 
@@ -136,8 +144,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = 'hidden';
                 
                 // Clean up transition names after animation
-                homeTextareaWrapper.style.viewTransitionName = '';
-                modalInputSection.style.viewTransitionName = '';
+                if (homeTextareaWrapper) {
+                    homeTextareaWrapper.style.viewTransitionName = '';
+                }
+                if (modalInputSection) {
+                    modalInputSection.style.viewTransitionName = '';
+                }
                 
                 // Start chat after transition completes
                 if (userText) {
@@ -183,17 +195,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeModal() {
         const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
         const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
-        const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-lg');
+        const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
         
         // Check if View Transitions API is supported
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
             // Set transition name on modal input section (for "before" snapshot)
-            modalInputSection.style.viewTransitionName = 'morphing-content';
+            if (modalInputSection) {
+                modalInputSection.style.viewTransitionName = 'morphing-content';
+            }
             
             // Use View Transitions for smooth reverse morph
             const transition = document.startViewTransition(() => {
                 // Remove transition name from modal
-                modalInputSection.style.viewTransitionName = '';
+                if (modalInputSection) {
+                    modalInputSection.style.viewTransitionName = '';
+                }
                 
                 // Hide modal
                 modal.classList.add('hidden');
@@ -216,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset modal state
                 clearMessages();
                 modalInput.value = '';
+                sessionId = null;  // Clear session ID
                 
                 // Hide both button containers
                 const stopButtonContainer = document.getElementById('stop-button-container');
@@ -237,6 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset state
             clearMessages();
             modalInput.value = '';
+            sessionId = null;  // Clear session ID
             
             // Hide both button containers
             const stopButtonContainer = document.getElementById('stop-button-container');
@@ -247,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
 
-    function startChat(message) {
+    async function startChat(message) {
         // Show stop button container when chat starts
         const stopButtonContainer = document.getElementById('stop-button-container');
         stopButtonContainer.classList.remove('hidden');
@@ -255,22 +273,29 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add user message
         addMessage(message, 'human');
         
-        // Start AI response with progressive enhancement
-        setTimeout(() => {
-            // Start with initial response
-            const aiMessageIndex = addProgressiveMessage('I can help you set up FlowFuse on a Siemens IOT2050.', 'ai');
+        // Start AI response
+        const aiMessageIndex = addProgressiveMessage('', 'ai');
+        
+        // Make API call
+        const response = await sendChatMessage(message);
+        
+        // Simulate progressive text display
+        const words = response.split(' ');
+        let currentText = '';
+        
+        for (let i = 0; i < words.length; i++) {
+            currentText += (i > 0 ? ' ' : '') + words[i];
+            updateMessage(aiMessageIndex, currentText);
             
-            // Progressive enhancement after 1 second
-            setTimeout(() => {
-                appendToMessage(aiMessageIndex, ' Here\'s a comprehensive guide tailored to your specific requirements and use case.');
-                
-                // Hide stop button and show summarize button after another 1 second
-                setTimeout(() => {
-                    stopButtonContainer.classList.add('hidden');
-                    const summarizeButtonContainer = document.getElementById('summarize-button-container');
-                    summarizeButtonContainer.classList.remove('hidden');
-                }, 1000);
-            }, 1000);
+            // Small delay between words for streaming effect
+            await new Promise(resolve => setTimeout(resolve, 50));
+        }
+        
+        // Hide stop button and show summarize button after response is complete
+        setTimeout(() => {
+            stopButtonContainer.classList.add('hidden');
+            const summarizeButtonContainer = document.getElementById('summarize-button-container');
+            summarizeButtonContainer.classList.remove('hidden');
         }, 500);
     }
 
@@ -331,6 +356,44 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.innerHTML = '';
     }
 
+    async function sendChatMessage(query) {
+        try {
+            // Note: This API may only work in production (flowfuse.com domain)
+            // For local development, we'll get simulated responses
+            const response = await fetch('https://flowfuse-chatbot.flowfuse.dev/v1/expert', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Origin': window.location.origin,
+                    'X-Chat-Session-ID': sessionId
+                },
+                body: JSON.stringify({ query })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            return data.answer;
+        } catch (error) {
+            console.warn('Chat API not available (likely due to CORS in development):', error);
+            
+            // Fallback to simulated response for local development
+            const simulatedResponses = {
+                default: "I'm here to help you get started with FlowFuse and Node-RED. While the API is not available in development mode, I can still provide guidance on setting up your workflows, creating dashboards, and integrating with industrial systems.",
+                summary: "We discussed FlowFuse implementation strategies and Node-RED workflow development."
+            };
+            
+            // Check if this is a summary request
+            if (query.includes('summary')) {
+                return simulatedResponses.summary;
+            }
+            
+            return simulatedResponses.default;
+        }
+    }
+
     function updateMessage(messageIndex, newContent) {
         // Update the message in the array
         if (messageIndex >= 0 && messageIndex < messages.length) {
@@ -374,7 +437,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Summarize conversation
-    document.getElementById('summarize-conversation').addEventListener('click', function() {
+    document.getElementById('summarize-conversation').addEventListener('click', async function() {
+        // Build conversation context for summarization
+        const conversationContext = messages.map(m => 
+            `${m.type === 'human' ? 'User' : 'Assistant'}: ${m.content}`
+        ).join('\n');
+        
+        const summaryPrompt = `Please provide a concise summary of the following conversation:\n\n${conversationContext}`;
+        
         // Add a summarization message
         addMessage('Please provide a summary of our conversation.', 'human');
         
@@ -384,29 +454,66 @@ document.addEventListener('DOMContentLoaded', function() {
         summarizeButtonContainer.classList.add('hidden');
         stopButtonContainer.classList.remove('hidden');
         
-        // Simulate AI summarization after a brief delay
+        // Start AI response
+        const aiMessageIndex = addProgressiveMessage('', 'ai');
+        
+        // Make API call for summarization
+        const response = await sendChatMessage(summaryPrompt);
+        
+        // Display response progressively
+        const words = response.split(' ');
+        let currentText = '';
+        
+        for (let i = 0; i < words.length; i++) {
+            currentText += (i > 0 ? ' ' : '') + words[i];
+            updateMessage(aiMessageIndex, currentText);
+            await new Promise(resolve => setTimeout(resolve, 30));
+        }
+        
+        // Hide stop button after summary is complete
         setTimeout(() => {
-            const summaryIndex = addProgressiveMessage('Here\'s a summary of our conversation: ', 'ai');
-            
-            setTimeout(() => {
-                appendToMessage(summaryIndex, 'We discussed setting up FlowFuse on a Siemens IOT2050 device with a comprehensive implementation guide.');
-                
-                // Hide stop button after summary is complete
-                setTimeout(() => {
-                    stopButtonContainer.classList.add('hidden');
-                }, 1000);
-            }, 1000);
+            stopButtonContainer.classList.add('hidden');
         }, 500);
     });
 
     // Enter key to send message
-    modalInput.addEventListener('keydown', function(e) {
+    modalInput.addEventListener('keydown', async function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             const message = modalInput.value.trim();
             if (message) {
-                startChat(message);
                 modalInput.value = '';
+                
+                // Add user message
+                addMessage(message, 'human');
+                
+                // Show stop button
+                const stopButtonContainer = document.getElementById('stop-button-container');
+                const summarizeButtonContainer = document.getElementById('summarize-button-container');
+                stopButtonContainer.classList.remove('hidden');
+                summarizeButtonContainer.classList.add('hidden');
+                
+                // Start AI response
+                const aiMessageIndex = addProgressiveMessage('', 'ai');
+                
+                // Make API call
+                const response = await sendChatMessage(message);
+                
+                // Display response progressively
+                const words = response.split(' ');
+                let currentText = '';
+                
+                for (let i = 0; i < words.length; i++) {
+                    currentText += (i > 0 ? ' ' : '') + words[i];
+                    updateMessage(aiMessageIndex, currentText);
+                    await new Promise(resolve => setTimeout(resolve, 30));
+                }
+                
+                // Hide stop button and show summarize button
+                setTimeout(() => {
+                    stopButtonContainer.classList.add('hidden');
+                    summarizeButtonContainer.classList.remove('hidden');
+                }, 500);
             }
         }
     });
