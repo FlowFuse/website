@@ -1,10 +1,10 @@
 <!-- AI Expert Assistant Modal -->
-<div id="ai-expert-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 md:px-8 md:py-8 z-[9999]">
+<div id="ai-expert-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-0 md:p-4 md:px-8 md:py-8 z-[9999]">
     <!-- Modal Content -->
-    <div class="bg-white rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
+    <div class="bg-white rounded-none md:rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
         
         <!-- Header -->
-        <div class="ai-chat-box"><div class="textarea-wrapper modal-header flex items-center justify-between px-4 py-3 rounded-t-lg h-auto rounded-b-none mb-0">
+        <div class="ai-chat-box"><div class="textarea-wrapper modal-header flex items-center justify-between px-4 py-3 rounded-t-none md:rounded-t-lg h-auto rounded-b-none mb-0">
             <div class="flex items-center gap-1">
                 <!-- FlowFuse Logo -->
                 <div class="w-24 h-6">
@@ -40,7 +40,7 @@
         </div>
 
         <!-- Input Area -->
-        <div class="p-4 bg-white rounded-b-lg border-t border-gray-200">
+        <div class="p-4 bg-white rounded-b-none md:rounded-b-lg border-t border-gray-200">
             <div id="stop-button-container" class="pb-4 flex justify-end hidden">
                 <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3">
                     <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
