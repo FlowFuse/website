@@ -55,7 +55,7 @@
             <div class="relative">
                 <textarea 
                     id="modal-input"
-                    placeholder="Give more details to modify the guide and tailor it further to your use case"
+                    placeholder="Give more details in regards to your intended workflow to tailor it to your use case"
                     class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500 text-gray-900 h-24 text-sm"
                 ></textarea>
             </div>
@@ -92,7 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
         tellMeHowBtn.addEventListener('click', function(e) {
             e.preventDefault();
             const userText = document.querySelector('textarea[aria-label="Describe your workflow"]').value;
-            openModal(userText);
+            // If no text is provided, use "Hello" as the initial message
+            const promptText = userText.trim() || "Hello";
+            openModal(promptText);
         });
     }
 
