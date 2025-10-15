@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentAbortController = null;
     let isGenerating = false;
     
+    // Transaction ID for preventing race conditions
+    let lastTransactionId = null;
+    
     // Auto-scroll management
     let autoScrollEnabled = true;
     const scrollThreshold = 50; // pixels from bottom to consider "at bottom"
@@ -324,6 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearMessages();
                 modalInput.value = '';
                 sessionId = null;  // Clear session ID
+                lastTransactionId = null;  // Clear transaction ID
                 
                 // Hide both button containers
                 const stopButtonContainer = document.getElementById('stop-button-container');
@@ -346,6 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clearMessages();
             modalInput.value = '';
             sessionId = null;  // Clear session ID
+            lastTransactionId = null;  // Clear transaction ID
             
             // Hide both button containers
             const stopButtonContainer = document.getElementById('stop-button-container');
@@ -370,14 +375,27 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Make API call
             const response = await sendChatMessage(message);
+            console.debug('Received response in startChat:', response);
+            
+            // Check if response is valid
+            if (!response || !response.answer) {
+                console.error('Invalid response from server:', response);
+                throw new Error('Invalid response from server');
+            }
+            
+            // Check if this response is from the most recent transaction
+            if (response.transactionId !== lastTransactionId) {
+                // Ignore response from cancelled/outdated request
+                return;
+            }
             
             // Simulate progressive text display
-            const words = response.split(' ');
+            const words = response.answer.split(' ');
             let currentText = '';
             
             for (let i = 0; i < words.length; i++) {
-                // Check if generation was stopped
-                if (!isGenerating) {
+                // Check if generation was stopped or transaction changed
+                if (!isGenerating || response.transactionId !== lastTransactionId) {
                     break;
                 }
                 
@@ -497,6 +515,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         isGenerating = false;
         
+        // Clear transaction ID to ignore any subsequent responses
+        lastTransactionId = null;
+        
         // Clear all messages
         clearMessages();
         
@@ -520,29 +541,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function sendChatMessage(query) {
+        // Generate unique transaction ID for this request
+        const transactionId = crypto.randomUUID();
+        lastTransactionId = transactionId;
+        
         try {
             // Create abort controller for this request
             currentAbortController = new AbortController();
             
             // Note: This API may only work in production (flowfuse.com domain)
             // For local development, we'll get simulated responses
-            const response = await fetch('https://flowfuse-chatbot.flowfuse.dev/v1/expert', {
+            const response = await fetch('https://flowfuse-chatbot.flowfuse.dev/v2/expert', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Origin': window.location.origin,
-                    'X-Chat-Session-ID': sessionId
+                    'X-Chat-Session-ID': sessionId,
+                    'X-Chat-Transaction-ID': transactionId
                 },
                 body: JSON.stringify({ query }),
                 signal: currentAbortController.signal
             });
             
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                // Treat HTTP errors as API unavailable - fall through to simulation
+                throw new Error(`API unavailable: ${response.status}`);
             }
             
             const data = await response.json();
-            return data.answer;
+            
+            // Extract transaction ID from response header (if available)
+            const responseTransactionId = response.headers.get('X-Chat-Transaction-ID') || transactionId;
+            
+            return {
+                answer: data.answer,
+                transactionId: responseTransactionId
+            };
         } catch (error) {
             // Handle abort error (user clicked stop)
             if (error.name === 'AbortError') {
@@ -550,6 +584,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             console.warn('Chat API not available (likely due to CORS in development):', error);
+            console.debug('Falling back to simulated response');
             
             // Fallback to simulated response for local development
             const simulatedResponses = {
@@ -558,11 +593,14 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             // Check if this is a summary request
-            if (query.includes('summary')) {
-                return simulatedResponses.summary;
-            }
+            const simulatedAnswer = query.includes('summary') ? simulatedResponses.summary : simulatedResponses.default;
             
-            return simulatedResponses.default;
+            const simulatedResult = {
+                answer: simulatedAnswer,
+                transactionId: transactionId
+            };
+            console.debug('Returning simulated response:', simulatedResult);
+            return simulatedResult;
         }
     }
 
@@ -616,6 +654,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Stop the current generation
         isGenerating = false;
         
+        // Clear transaction ID to ignore any subsequent responses
+        lastTransactionId = null;
+        
         // Abort the current API request if it exists
         if (currentAbortController) {
             currentAbortController.abort();
@@ -647,13 +688,24 @@ document.addEventListener('DOMContentLoaded', function() {
             // Make API call for summarization
             const response = await sendChatMessage(summaryPrompt);
             
+            // Check if response is valid
+            if (!response || !response.answer) {
+                throw new Error('Invalid response from server');
+            }
+            
+            // Check if this response is from the most recent transaction
+            if (response.transactionId !== lastTransactionId) {
+                // Ignore response from cancelled/outdated request
+                return;
+            }
+            
             // Display response progressively
-            const words = response.split(' ');
+            const words = response.answer.split(' ');
             let currentText = '';
             
             for (let i = 0; i < words.length; i++) {
-                // Check if generation was stopped
-                if (!isGenerating) {
+                // Check if generation was stopped or transaction changed
+                if (!isGenerating || response.transactionId !== lastTransactionId) {
                     break;
                 }
                 
@@ -703,13 +755,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Make API call
                     const response = await sendChatMessage(message);
                     
+                    // Check if response is valid
+                    if (!response || !response.answer) {
+                        throw new Error('Invalid response from server');
+                    }
+                    
+                    // Check if this response is from the most recent transaction
+                    if (response.transactionId !== lastTransactionId) {
+                        // Ignore response from cancelled/outdated request
+                        return;
+                    }
+                    
                     // Display response progressively
-                    const words = response.split(' ');
+                    const words = response.answer.split(' ');
                     let currentText = '';
                     
                     for (let i = 0; i < words.length; i++) {
-                        // Check if generation was stopped
-                        if (!isGenerating) {
+                        // Check if generation was stopped or transaction changed
+                        if (!isGenerating || response.transactionId !== lastTransactionId) {
                             break;
                         }
                         
