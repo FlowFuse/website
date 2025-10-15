@@ -14,8 +14,6 @@ meta:
 
 Here you will find all the resources you need to help you get started with Node-RED, understand Node-RED Core Nodes, familiarize yourself with terminologies, and tutorials on integrating Node-RED with different databases, technologies, and protocols. Additionally, we cover how to run Node-RED on various hardware platforms. 
 
-*Note: We will be continuously adding new topics of content so be sure to bookmark and check back in.*
-
 ## Common Terminology
 
 A good starting point is understanding the common terms used in Node-RED. You should be able to confidently navigate through most Node-RED-related resources and participate in Node-RED forum discussions.
