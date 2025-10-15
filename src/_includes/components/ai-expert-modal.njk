@@ -71,6 +71,76 @@
     </div>
 </div>
 
+<!-- CSS for Loading Animation -->
+<style>
+.ai-loading-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #6366f1;
+    font-style: italic;
+}
+
+.ai-loading-dots::after {
+    content: '';
+    display: inline-flex;
+    gap: 2px;
+    margin-left: 8px;
+}
+
+.ai-loading-dots::after {
+    content: '●●●';
+    animation: loading-dots 1.5s infinite;
+    letter-spacing: 2px;
+}
+
+@keyframes loading-dots {
+    0% { opacity: 0.2; }
+    20% { opacity: 1; }
+    40% { opacity: 0.2; }
+    60% { opacity: 0.2; }
+    80% { opacity: 0.2; }
+    100% { opacity: 0.2; }
+}
+
+.ai-loading-dots[data-dot="1"]::after {
+    animation-delay: 0s;
+}
+
+.ai-loading-dots[data-dot="2"]::after {
+    animation-delay: 0.2s;
+}
+
+.ai-loading-dots[data-dot="3"]::after {
+    animation-delay: 0.4s;
+}
+
+.loading-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #6366f1;
+    animation: bounce-dot 1.4s infinite ease-in-out;
+    margin: 0 1px;
+}
+
+.loading-dot:nth-child(1) { animation-delay: -0.32s; }
+.loading-dot:nth-child(2) { animation-delay: -0.16s; }
+.loading-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes bounce-dot {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+</style>
+
 <!-- JavaScript for Modal Functionality -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -96,6 +166,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-scroll management
     let autoScrollEnabled = true;
     const scrollThreshold = 50; // pixels from bottom to consider "at bottom"
+    
+    // Loading messages system
+    const loadingMessages = [
+        "Please wait, this can take a little while to gather facts...",
+        "Shouldn't be long now...",
+        "Almost there...",
+        "Gathering the latest information...",
+        "Thinking through your question...",
+        "Searching through our documentation..."
+    ];
+    let currentLoadingMessageIndex = 0;
+    let loadingMessageInterval = null;
 
     // Centralized function to manage input state based on isGenerating
     function updateInputState() {
@@ -438,7 +520,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 ? 'bg-indigo-600 text-white rounded-br-sm' 
                 : 'bg-gray-100 text-gray-800 rounded-bl-sm'
         }`;
-        messageBubble.textContent = content;
+        
+        // If it's an AI message with empty content, show loading animation
+        if (type === 'ai' && content === '') {
+            messageBubble.innerHTML = `
+                <div class="ai-loading-message">
+                    <span class="loading-text" style="display: none;"></span>
+                    <div class="inline-flex">
+                        <span class="loading-dot"></span>
+                        <span class="loading-dot"></span>
+                        <span class="loading-dot"></span>
+                    </div>
+                </div>
+            `;
+            messageBubble.classList.add('ai-loading');
+            
+            // Start loading sequence: dots first, then messages
+            startLoadingSequence(messageBubble);
+        } else {
+            messageBubble.textContent = content;
+        }
         
         messageDiv.appendChild(messageBubble);
         chatMessages.appendChild(messageDiv);
@@ -517,6 +618,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Clear transaction ID to ignore any subsequent responses
         lastTransactionId = null;
+        
+        // Stop loading message rotation
+        stopLoadingMessageRotation();
         
         // Clear all messages
         clearMessages();
@@ -641,11 +745,57 @@ document.addEventListener('DOMContentLoaded', function() {
             const messageElements = chatMessages.children;
             if (messageElements[messageIndex]) {
                 const messageBubble = messageElements[messageIndex].querySelector('div');
+                
+                // If this is the first real content being added to an AI message, stop loading animation
+                if (messageBubble.classList.contains('ai-loading') && additionalContent.trim() !== '') {
+                    stopLoadingMessageRotation();
+                    messageBubble.classList.remove('ai-loading');
+                    messageBubble.innerHTML = ''; // Clear loading content
+                }
+                
                 messageBubble.textContent = messages[messageIndex].content;
             }
             
             // Scroll to bottom using auto-scroll function
             scrollToBottom();
+        }
+    }
+    
+    function startLoadingSequence(messageBubble) {
+        // Clear any existing interval
+        if (loadingMessageInterval) {
+            clearInterval(loadingMessageInterval);
+        }
+        
+        // Show just dots for the first 5 seconds
+        setTimeout(() => {
+            // After 5 seconds, start showing messages with dots
+            const loadingTextElement = messageBubble.querySelector('.loading-text');
+            if (loadingTextElement && messageBubble.classList.contains('ai-loading')) {
+                // Show the first message
+                currentLoadingMessageIndex = 0;
+                loadingTextElement.textContent = loadingMessages[currentLoadingMessageIndex];
+                loadingTextElement.style.display = 'inline';
+                loadingTextElement.style.marginRight = '8px';
+                
+                // Start rotating messages every 5 seconds
+                loadingMessageInterval = setInterval(() => {
+                    if (messageBubble.classList.contains('ai-loading')) {
+                        currentLoadingMessageIndex = (currentLoadingMessageIndex + 1) % loadingMessages.length;
+                        const textElement = messageBubble.querySelector('.loading-text');
+                        if (textElement) {
+                            textElement.textContent = loadingMessages[currentLoadingMessageIndex];
+                        }
+                    }
+                }, 5000);
+            }
+        }, 5000);
+    }
+    
+    function stopLoadingMessageRotation() {
+        if (loadingMessageInterval) {
+            clearInterval(loadingMessageInterval);
+            loadingMessageInterval = null;
         }
     }
 
@@ -656,6 +806,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Clear transaction ID to ignore any subsequent responses
         lastTransactionId = null;
+        
+        // Stop loading message rotation
+        stopLoadingMessageRotation();
         
         // Abort the current API request if it exists
         if (currentAbortController) {
