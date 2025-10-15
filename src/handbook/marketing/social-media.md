@@ -28,7 +28,7 @@ Each content type has channels which are appropriate, this table sets out which 
     - Respond promptly to comments and messages.
     - Like and share relevant content from other sources.
 - Leverage trending topics and holidays.
-- Leverage our team network.
+- [Leverage our team network](/handbook/marketing/social-media/#leveraging-the-team-network-on-linkedin).
 
 ### Scope
 
