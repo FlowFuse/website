@@ -86,7 +86,38 @@ document.addEventListener('DOMContentLoaded', function() {
     // Variables for stopping generation
     let currentAbortController = null;
     let isGenerating = false;
+    
+    // Auto-scroll management
+    let autoScrollEnabled = true;
+    const scrollThreshold = 50; // pixels from bottom to consider "at bottom"
 
+    // Check if user is at bottom of scroll container
+    function isAtBottom() {
+        const container = chatMessages.parentElement; // Get the scrollable container
+        return container.scrollHeight - container.scrollTop - container.clientHeight < scrollThreshold;
+    }
+    
+    // Scroll to bottom if auto-scroll is enabled
+    function scrollToBottom() {
+        if (autoScrollEnabled) {
+            const container = chatMessages.parentElement;
+            container.scrollTop = container.scrollHeight;
+        }
+    }
+    
+    // Set up scroll detection on the chat container
+    const chatContainer = chatMessages.parentElement;
+    chatContainer.addEventListener('scroll', function() {
+        // Check if user is at bottom
+        if (isAtBottom()) {
+            // Re-enable auto-scroll when user scrolls to bottom
+            autoScrollEnabled = true;
+        } else {
+            // Disable auto-scroll when user scrolls up
+            autoScrollEnabled = false;
+        }
+    });
+    
     // Open modal
     if (tellMeHowBtn) {
         tellMeHowBtn.addEventListener('click', function(e) {
@@ -116,6 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function openModal(userText) {
         // Generate new session ID for this chat session
         sessionId = crypto.randomUUID();
+        
+        // Reset auto-scroll to enabled when opening modal
+        autoScrollEnabled = true;
         
         // Check if View Transitions API is supported
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
@@ -354,8 +388,8 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.appendChild(messageBubble);
         chatMessages.appendChild(messageDiv);
         
-        // Scroll to bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        // Scroll to bottom using auto-scroll function
+        scrollToBottom();
     }
 
     function renderMessages() {
@@ -379,8 +413,8 @@ document.addEventListener('DOMContentLoaded', function() {
             chatMessages.appendChild(messageDiv);
         });
         
-        // Scroll to bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        // Scroll to bottom using auto-scroll function
+        scrollToBottom();
     }
 
     function clearMessages() {
@@ -449,6 +483,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const messageBubble = messageElements[messageIndex].querySelector('div');
                 messageBubble.textContent = newContent;
             }
+            
+            // Scroll to bottom during streaming updates
+            scrollToBottom();
         }
     }
 
@@ -470,8 +507,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 messageBubble.textContent = messages[messageIndex].content;
             }
             
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            // Scroll to bottom using auto-scroll function
+            scrollToBottom();
         }
     }
 
@@ -559,6 +596,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = modalInput.value.trim();
             if (message) {
                 modalInput.value = '';
+                
+                // Re-enable auto-scroll when user sends a new message
+                autoScrollEnabled = true;
                 
                 // Add user message
                 addMessage(message, 'human');
