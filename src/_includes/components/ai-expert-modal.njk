@@ -56,7 +56,7 @@
                 <textarea 
                     id="modal-input"
                     placeholder="Give more details in regards to your intended workflow to tailor it to your use case"
-                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500 text-gray-900 h-24 text-sm"
+                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500 text-gray-900 h-24 text-sm disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
                 ></textarea>
             </div>
             <div class="flex justify-between mt-2 text-xs text-gray-500">
@@ -90,6 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Auto-scroll management
     let autoScrollEnabled = true;
     const scrollThreshold = 50; // pixels from bottom to consider "at bottom"
+
+    // Centralized function to manage input state based on isGenerating
+    function updateInputState() {
+        if (isGenerating) {
+            modalInput.disabled = true;
+        } else {
+            modalInput.disabled = false;
+            modalInput.focus();
+        }
+    }
 
     // Check if user is at bottom of scroll container
     function isAtBottom() {
@@ -150,6 +160,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset auto-scroll to enabled when opening modal
         autoScrollEnabled = true;
+        
+        // Ensure input is enabled when modal opens
+        isGenerating = false;
+        updateInputState();
         
         // Check if View Transitions API is supported
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
@@ -319,6 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const stopButtonContainer = document.getElementById('stop-button-container');
         stopButtonContainer.classList.remove('hidden');
         isGenerating = true;
+        updateInputState();
         
         // Add user message
         addMessage(message, 'human');
@@ -359,6 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mark generation as complete
         isGenerating = false;
         currentAbortController = null;
+        updateInputState();
         
         // Hide stop button and show summarize button after response is complete
         setTimeout(() => {
@@ -522,6 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
             currentAbortController.abort();
         }
         
+        updateInputState();
+        
         // Hide stop button and show summarize button
         const stopButtonContainer = document.getElementById('stop-button-container');
         const summarizeButtonContainer = document.getElementById('summarize-button-container');
@@ -547,6 +565,7 @@ document.addEventListener('DOMContentLoaded', function() {
         summarizeButtonContainer.classList.add('hidden');
         stopButtonContainer.classList.remove('hidden');
         isGenerating = true;
+        updateInputState();
         
         // Start AI response
         const aiMessageIndex = addProgressiveMessage('', 'ai');
@@ -582,6 +601,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mark generation as complete
         isGenerating = false;
         currentAbortController = null;
+        updateInputState();
         
         // Hide stop button after summary is complete
         setTimeout(() => {
@@ -609,6 +629,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 stopButtonContainer.classList.remove('hidden');
                 summarizeButtonContainer.classList.add('hidden');
                 isGenerating = true;
+                updateInputState();
                 
                 // Start AI response
                 const aiMessageIndex = addProgressiveMessage('', 'ai');
@@ -644,6 +665,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Mark generation as complete
                 isGenerating = false;
                 currentAbortController = null;
+                updateInputState();
                 
                 // Hide stop button and show summarize button
                 setTimeout(() => {
