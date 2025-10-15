@@ -357,12 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
 
-    async function startChat(message) {
-        // If there's a welcome message but no real messages, clear everything first
-        if (messages.length === 0 && chatMessages.children.length > 0) {
-            clearMessages();
-        }
-        
+    async function startChat(message) {        
         // Mark as generating and update UI
         isGenerating = true;
         updateInputState();
@@ -691,10 +686,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (message) {
                 modalInput.value = '';
                 
-                // If there's a welcome message but no real messages, clear everything first
-                if (messages.length === 0 && chatMessages.children.length > 0) {
-                    clearMessages();
-                }
                 
                 // Re-enable auto-scroll when user sends a new message
                 autoScrollEnabled = true;
