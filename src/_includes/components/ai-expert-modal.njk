@@ -41,16 +41,19 @@
 
         <!-- Input Area -->
         <div class="p-4 bg-white rounded-b-none md:rounded-b-lg border-t border-gray-200">
-            <div id="stop-button-container" class="pb-4 flex justify-end hidden">
-                <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3">
-                    <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
-                    Stop
+            <div id="action-buttons-container" class="pb-4 flex justify-between">
+                <button id="clear-conversation" class="bg-white border border-indigo-300 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    Clear
                 </button>
-            </div>
-            <div id="summarize-button-container" class="pb-4 flex justify-end hidden">
-                <button id="summarize-conversation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3">
-                    Summarize this conversation
-                </button>
+                <div id="right-buttons" class="flex gap-2">
+                    <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3 hidden">
+                        <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
+                        Stop
+                    </button>
+                    <button id="summarize-conversation" class="bg-white border border-indigo-300 rounded-full text-sm py-2 px-3 hidden">
+                        Summarize this conversation
+                    </button>
+                </div>
             </div>
             <div class="relative">
                 <textarea 
@@ -93,11 +96,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Centralized function to manage input state based on isGenerating
     function updateInputState() {
+        const clearBtn = document.getElementById('clear-conversation');
+        const stopBtn = document.getElementById('stop-generation');
+        const summarizeBtn = document.getElementById('summarize-conversation');
+        
         if (isGenerating) {
             modalInput.disabled = true;
+            // Disable clear button during generation
+            if (clearBtn) clearBtn.disabled = true;
+            // Show stop button, hide summarize button
+            if (stopBtn) stopBtn.classList.remove('hidden');
+            if (summarizeBtn) summarizeBtn.classList.add('hidden');
         } else {
             modalInput.disabled = false;
             modalInput.focus();
+            // Enable clear button only if there are messages
+            const hasMessages = messages.length > 0;
+            if (clearBtn) clearBtn.disabled = !hasMessages;
+            // Hide stop button, show summarize button if there are messages
+            if (stopBtn) stopBtn.classList.add('hidden');
+            if (summarizeBtn) {
+                if (hasMessages) {
+                    summarizeBtn.classList.remove('hidden');
+                } else {
+                    summarizeBtn.classList.add('hidden');
+                }
+            }
         }
     }
 
@@ -163,6 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Ensure input is enabled when modal opens
         isGenerating = false;
+        
+        // Only show welcome message if there are no messages yet AND no user text provided
+        if (messages.length === 0 && !userText) {
+            showWelcomeMessage();
+        }
         updateInputState();
         
         // Check if View Transitions API is supported
@@ -214,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalInputSection.style.viewTransitionName = '';
                 }
                 
-                // Start chat after transition completes
+                // Start chat if user provided text
                 if (userText) {
                     startChat(userText);
                 }
@@ -329,9 +358,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function startChat(message) {
-        // Show stop button container when chat starts
-        const stopButtonContainer = document.getElementById('stop-button-container');
-        stopButtonContainer.classList.remove('hidden');
+        // If there's a welcome message but no real messages, clear everything first
+        if (messages.length === 0 && chatMessages.children.length > 0) {
+            clearMessages();
+        }
+        
+        // Mark as generating and update UI
         isGenerating = true;
         updateInputState();
         
@@ -376,12 +408,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentAbortController = null;
         updateInputState();
         
-        // Hide stop button and show summarize button after response is complete
-        setTimeout(() => {
-            stopButtonContainer.classList.add('hidden');
-            const summarizeButtonContainer = document.getElementById('summarize-button-container');
-            summarizeButtonContainer.classList.remove('hidden');
-        }, 500);
+        // Button visibility is now handled by updateInputState()
     }
 
     function addMessage(content, type) {
@@ -441,6 +468,63 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.innerHTML = '';
     }
 
+    async function showWelcomeMessage() {
+        // Add welcome message container (this doesn't count as a real conversation message)
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'flex justify-start mb-4';
+        
+        const messageBubble = document.createElement('div');
+        messageBubble.className = 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm';
+        messageBubble.textContent = '';
+        
+        messageDiv.appendChild(messageBubble);
+        chatMessages.appendChild(messageDiv);
+        scrollToBottom();
+        
+        // Animate the typing of the welcome message
+        const welcomeText = 'Hello! I am here to help you get started with FlowFuse and Node-RED. Please tell me what you are hoping to achieve.';
+        const words = welcomeText.split(' ');
+        let currentText = '';
+        
+        for (let i = 0; i < words.length; i++) {
+            currentText += (i > 0 ? ' ' : '') + words[i];
+            messageBubble.textContent = currentText;
+            scrollToBottom();
+            
+            // Small delay between words for typing effect
+            await new Promise(resolve => setTimeout(resolve, 50));
+        }
+    }
+
+    async function clearConversation() {
+        // Stop any ongoing generation
+        if (currentAbortController) {
+            currentAbortController.abort();
+        }
+        isGenerating = false;
+        
+        // Clear all messages
+        clearMessages();
+        
+        // Reset session ID for fresh conversation
+        sessionId = crypto.randomUUID();
+        
+        // Reset auto-scroll
+        autoScrollEnabled = true;
+        
+        // Show welcome message with typing animation
+        await showWelcomeMessage();
+        
+        // Hide right buttons
+        const stopBtn = document.getElementById('stop-generation');
+        const summarizeBtn = document.getElementById('summarize-conversation');
+        if (stopBtn) stopBtn.classList.add('hidden');
+        if (summarizeBtn) summarizeBtn.classList.add('hidden');
+        
+        // Update input state (clear button will be disabled since messages array is empty)
+        updateInputState();
+    }
+
     async function sendChatMessage(query) {
         try {
             // Create abort controller for this request
@@ -493,10 +577,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (messageIndex >= 0 && messageIndex < messages.length) {
             messages[messageIndex].content = newContent;
             
+            // Find the correct DOM element index
+            // If there's a welcome message, we need to offset by 1
+            const hasWelcomeMessage = chatMessages.children.length > messages.length;
+            const domIndex = hasWelcomeMessage ? messageIndex + 1 : messageIndex;
+            
             // Update the corresponding DOM element
             const messageElements = chatMessages.children;
-            if (messageElements[messageIndex]) {
-                const messageBubble = messageElements[messageIndex].querySelector('div');
+            if (messageElements[domIndex]) {
+                const messageBubble = messageElements[domIndex].querySelector('div');
                 messageBubble.textContent = newContent;
             }
             
@@ -539,12 +628,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         updateInputState();
-        
-        // Hide stop button and show summarize button
-        const stopButtonContainer = document.getElementById('stop-button-container');
-        const summarizeButtonContainer = document.getElementById('summarize-button-container');
-        stopButtonContainer.classList.add('hidden');
-        summarizeButtonContainer.classList.remove('hidden');
     });
 
     // Summarize conversation
@@ -559,11 +642,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add a summarization message
         addMessage('Please provide a summary of our conversation.', 'human');
         
-        // Hide summarize button and show stop button temporarily
-        const summarizeButtonContainer = document.getElementById('summarize-button-container');
-        const stopButtonContainer = document.getElementById('stop-button-container');
-        summarizeButtonContainer.classList.add('hidden');
-        stopButtonContainer.classList.remove('hidden');
+        // Mark as generating and update UI
         isGenerating = true;
         updateInputState();
         
@@ -602,11 +681,6 @@ document.addEventListener('DOMContentLoaded', function() {
         isGenerating = false;
         currentAbortController = null;
         updateInputState();
-        
-        // Hide stop button after summary is complete
-        setTimeout(() => {
-            stopButtonContainer.classList.add('hidden');
-        }, 500);
     });
 
     // Enter key to send message
@@ -617,17 +691,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (message) {
                 modalInput.value = '';
                 
+                // If there's a welcome message but no real messages, clear everything first
+                if (messages.length === 0 && chatMessages.children.length > 0) {
+                    clearMessages();
+                }
+                
                 // Re-enable auto-scroll when user sends a new message
                 autoScrollEnabled = true;
                 
                 // Add user message
                 addMessage(message, 'human');
                 
-                // Show stop button
-                const stopButtonContainer = document.getElementById('stop-button-container');
-                const summarizeButtonContainer = document.getElementById('summarize-button-container');
-                stopButtonContainer.classList.remove('hidden');
-                summarizeButtonContainer.classList.add('hidden');
+                // Mark as generating and update UI
                 isGenerating = true;
                 updateInputState();
                 
@@ -666,14 +741,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 isGenerating = false;
                 currentAbortController = null;
                 updateInputState();
-                
-                // Hide stop button and show summarize button
-                setTimeout(() => {
-                    stopButtonContainer.classList.add('hidden');
-                    summarizeButtonContainer.classList.remove('hidden');
-                }, 500);
             }
         }
     });
+
+    // Clear conversation event listener
+    document.getElementById('clear-conversation').addEventListener('click', clearConversation);
 });
 </script>
