@@ -1,7 +1,7 @@
 ---
 title: FlowFuse AI Nodes
 description: "New FlowFuse nodes for ONNX Models running Inference in your flows"
-date: 2025-10-10 12:00:00.0
+date: 2025-10-15 12:00:00.0
 authors: ['stephen-mclaughlin']
 tags:
   - changelog
@@ -30,7 +30,7 @@ With FlowFuse AI Nodes, you can easily integrate ONNX models into your Node-RED 
 
 ### How to Get Started
 
-FlowFuse customers can install the new AI nodes today via the Node-RED Palette Manager from the FlowFuse catalog.
+FlowFuse customers can install the new AI nodes today via the Node-RED Palette Manager from the FlowFuse Nodes catalog
 
 We have included example flows directly inside the package to help you get started quickly.
 Just hit `CTRL-I` in the Node-RED editor to import the example flows from the FlowFuse AI Nodes package.
