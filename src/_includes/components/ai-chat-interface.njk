@@ -29,3 +29,13 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-focus the homepage textarea when page loads
+    const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+    if (homeTextarea) {
+        homeTextarea.focus();
+    }
+});
+</script>
