@@ -539,14 +539,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Handle rich vs fallback responses differently
-            if (response.isRichResponse) {
-                // For rich responses, render immediately without streaming
-                const richHtml = renderRichContent(response.answer);
-                updateMessageWithHTML(aiMessageIndex, richHtml);
+            // Handle multi-message vs single message responses
+            if (response.isMultiMessage && Array.isArray(response.answer)) {
+                // Remove the initial empty AI message since we'll add multiple messages
+                messages.pop();
+                const aiMessageElements = chatMessages.children;
+                const lastElement = aiMessageElements[aiMessageElements.length - 1];
+                if (lastElement) {
+                    chatMessages.removeChild(lastElement);
+                }
+                
+                // Add each message from the array
+                response.answer.forEach(messageObj => {
+                    addAIMessageFromObject(messageObj);
+                });
             } else {
-                // For fallback responses, use word-by-word streaming
-                const words = response.answer.split(' ');
+                // Fallback for old single message format - treat as single chat message
+                const messageText = typeof response.answer === 'string' ? response.answer : response.answer[0]?.content || 'No response';
+                const words = messageText.split(' ');
                 let currentText = '';
                 
                 for (let i = 0; i < words.length; i++) {
@@ -761,7 +771,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return {
                 answer: data.answer,
                 transactionId: responseTransactionId,
-                isRichResponse: typeof data.answer === 'object' && data.answer !== null
+                isMultiMessage: Array.isArray(data.answer)
             };
         } catch (error) {
             // Handle abort error (user clicked stop)
@@ -774,72 +784,74 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Fallback to simulated response for local development
             const simulatedResponses = {
-                default: "I'm here to help you get started with FlowFuse and Node-RED. While the API is not available in development mode, I can still provide guidance on setting up your workflows, creating dashboards, and integrating with industrial systems.",
+                default: "This is a test response as the API is not available right now",
                 summary: "We discussed FlowFuse implementation strategies and Node-RED workflow development."
             };
             
             // Check if query contains "rich" to test rich response format
             if (query.toLowerCase().includes('rich') || query.toLowerCase().includes('test')) {
-                const simulatedRichAnswer = {
-                    intent: "how_to",
-                    title: "Convert MQTT raw values to voltage and save in FlowFuse Tables",
-                    summary: "This guide explains how to convert raw MQTT values (0-4096) to voltage values (0-12V) and save them in FlowFuse Tables with an ID derived from the MQTT topic using Node-RED in FlowFuse.",
-                    steps: [
-                        {
-                            title: "Subscribe to MQTT topic",
-                            detail: "Use the MQTT input node in Node-RED to subscribe to the relevant MQTT topic that provides raw values."
-                        },
-                        {
-                            title: "Extract ID from MQTT topic",
-                            detail: "Use a Function node to parse the MQTT topic string and compute an ID. For example, extract a unique part of the topic to use as the ID."
-                        },
-                        {
-                            title: "Convert raw value to voltage",
-                            detail: "In the same or a subsequent Function node, convert the raw value (0-4096) to voltage (0-12V) using the formula: voltage = (raw_value / 4096) * 12."
-                        },
-                        {
-                            title: "Save data in FlowFuse Tables",
-                            detail: "Use the FlowFuse Tables node to insert the data object into a table. Configure the node with the appropriate table name and ensure the ID is used as a key."
-                        }
-                    ],
-                    resources: [
-                        {
-                            title: "Using MQTT with Node-RED",
-                            url: "https://flowfuse.com/blog/2024/06/how-to-use-mqtt-in-node-red/",
-                            type: "docs"
-                        },
-                        {
-                            title: "FlowFuse Tables for Industrial IoT",
-                            url: "https://flowfuse.com/blog/2025/08/time-series-dashboard-flowfuse-postgresql/",
-                            type: "blog"
-                        },
-                        {
-                            title: "Latest Features Changelog",
-                            url: "https://flowfuse.com/changelog/",
-                            type: "changelog"
-                        },
-                        {
-                            title: "External Resource Example",
-                            url: "https://example.com/resource",
-                            type: "other"
-                        }
-                    ],
-                    nodePackages: [
-                        {
-                            name: "@flowfuse/node-red-dashboard"
-                        },
-                        {
-                            name: "node-red-contrib-mqtt-broker"
-                        }
-                    ]
-                };
+                const simulatedMessagesArray = [
+                    {
+                        kind: "guide",
+                        title: "Convert MQTT raw values to voltage and save in FlowFuse Tables",
+                        summary: "This guide explains how to convert raw MQTT values (0-4096) to voltage values (0-12V) and save them in FlowFuse Tables with an ID derived from the MQTT topic using Node-RED in FlowFuse.",
+                        steps: [
+                            {
+                                title: "Subscribe to MQTT topic",
+                                detail: "Use the MQTT input node in Node-RED to subscribe to the relevant MQTT topic that provides raw values."
+                            },
+                            {
+                                title: "Extract ID from MQTT topic",
+                                detail: "Use a Function node to parse the MQTT topic string and compute an ID. For example, extract a unique part of the topic to use as the ID."
+                            },
+                            {
+                                title: "Convert raw value to voltage",
+                                detail: "In the same or a subsequent Function node, convert the raw value (0-4096) to voltage (0-12V) using the formula: voltage = (raw_value / 4096) * 12."
+                            },
+                            {
+                                title: "Save data in FlowFuse Tables",
+                                detail: "Use the FlowFuse Tables node to insert the data object into a table. Configure the node with the appropriate table name and ensure the ID is used as a key."
+                            }
+                        ],
+                        resources: [
+                            {
+                                title: "Using MQTT with Node-RED",
+                                url: "https://flowfuse.com/blog/2024/06/how-to-use-mqtt-in-node-red/",
+                                type: "docs"
+                            },
+                            {
+                                title: "FlowFuse Tables for Industrial IoT",
+                                url: "https://flowfuse.com/blog/2025/08/time-series-dashboard-flowfuse-postgresql/",
+                                type: "blog"
+                            },
+                            {
+                                title: "Latest Features Changelog",
+                                url: "https://flowfuse.com/changelog/",
+                                type: "changelog"
+                            }
+                        ],
+                        nodePackages: [
+                            {
+                                name: "@flowfuse/node-red-dashboard"
+                            },
+                            {
+                                name: "node-red-contrib-mqtt-broker"
+                            }
+                        ]
+                    },
+                    {
+                        kind: "chat",
+                        title: "Additional Information",
+                        content: "I hope this guide helps you get started! Let me know if you have any questions about implementing this workflow or need clarification on any of the steps."
+                    }
+                ];
                 
                 const simulatedResult = {
-                    answer: simulatedRichAnswer,
+                    answer: simulatedMessagesArray,
                     transactionId: transactionId,
-                    isRichResponse: true
+                    isMultiMessage: true
                 };
-                console.debug('Returning simulated RICH response:', simulatedResult);
+                console.debug('Returning simulated multi-message response:', simulatedResult);
                 return simulatedResult;
             }
             
@@ -847,9 +859,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const simulatedAnswer = query.includes('summary') ? simulatedResponses.summary : simulatedResponses.default;
             
             const simulatedResult = {
-                answer: simulatedAnswer,
+                answer: [{
+                    kind: "chat",
+                    content: simulatedAnswer
+                }],
                 transactionId: transactionId,
-                isRichResponse: false
+                isMultiMessage: true
             };
             console.debug('Returning simulated response:', simulatedResult);
             return simulatedResult;
@@ -918,6 +933,39 @@ document.addEventListener('DOMContentLoaded', function() {
         return messages.length - 1; // Return index of the newly added message
     }
 
+    function addAIMessageFromObject(messageObj) {
+        // Add to messages array
+        const message = { content: '', type: 'ai', isHTML: true };
+        messages.push(message);
+        
+        // Create DOM element
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'flex justify-start mb-4';
+        
+        const messageBubble = document.createElement('div');
+        messageBubble.className = 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content';
+        
+        // Render content based on message kind
+        let htmlContent = '';
+        if (messageObj.kind === 'guide') {
+            htmlContent = renderRichContent(messageObj);
+        } else if (messageObj.kind === 'chat') {
+            htmlContent = renderChatContent(messageObj);
+        }
+        
+        // Update message content and DOM
+        message.content = htmlContent;
+        messageBubble.innerHTML = htmlContent;
+        
+        messageDiv.appendChild(messageBubble);
+        chatMessages.appendChild(messageDiv);
+        
+        // Scroll to bottom
+        scrollToBottom();
+        
+        return messages.length - 1; // Return index of the newly added message
+    }
+
     function appendToMessage(messageIndex, additionalContent) {
         // Append content to existing message
         if (messageIndex >= 0 && messageIndex < messages.length) {
@@ -981,8 +1029,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function renderChatContent(chatMessage) {
+        let html = '';
+        
+        // Title (if present)
+        if (chatMessage.title) {
+            html += `<h4 class="text-md font-medium text-gray-900 mb-2">${chatMessage.title}</h4>`;
+        }
+        
+        // Content
+        if (chatMessage.content) {
+            html += `<p class="text-gray-700">${chatMessage.content}</p>`;
+        }
+        
+        return html;
+    }
+
     function renderRichContent(richAnswer) {
         let html = '';
+        
+        // Setup Guide label for guide messages
+        html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-1 rounded-full inline-block mb-3">Setup Guide</div>`;
         
         // Title
         if (richAnswer.title) {
@@ -1124,14 +1191,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Handle rich vs fallback responses differently
-            if (response.isRichResponse) {
-                // For rich responses, render immediately without streaming
-                const richHtml = renderRichContent(response.answer);
-                updateMessageWithHTML(aiMessageIndex, richHtml);
+            // Handle multi-message vs single message responses
+            if (response.isMultiMessage && Array.isArray(response.answer)) {
+                // Remove the initial empty AI message since we'll add multiple messages
+                messages.pop();
+                const aiMessageElements = chatMessages.children;
+                const lastElement = aiMessageElements[aiMessageElements.length - 1];
+                if (lastElement) {
+                    chatMessages.removeChild(lastElement);
+                }
+                
+                // Add each message from the array
+                response.answer.forEach(messageObj => {
+                    addAIMessageFromObject(messageObj);
+                });
             } else {
-                // For fallback responses, use word-by-word streaming
-                const words = response.answer.split(' ');
+                // Fallback for old single message format - treat as single chat message
+                const messageText = typeof response.answer === 'string' ? response.answer : response.answer[0]?.content || 'No response';
+                const words = messageText.split(' ');
                 let currentText = '';
                 
                 for (let i = 0; i < words.length; i++) {
@@ -1203,14 +1280,24 @@ document.addEventListener('DOMContentLoaded', function() {
                         return;
                     }
                     
-                    // Handle rich vs fallback responses differently
-                    if (response.isRichResponse) {
-                        // For rich responses, render immediately without streaming
-                        const richHtml = renderRichContent(response.answer);
-                        updateMessageWithHTML(aiMessageIndex, richHtml);
+                    // Handle multi-message vs single message responses
+                    if (response.isMultiMessage && Array.isArray(response.answer)) {
+                        // Remove the initial empty AI message since we'll add multiple messages
+                        messages.pop();
+                        const aiMessageElements = chatMessages.children;
+                        const lastElement = aiMessageElements[aiMessageElements.length - 1];
+                        if (lastElement) {
+                            chatMessages.removeChild(lastElement);
+                        }
+                        
+                        // Add each message from the array
+                        response.answer.forEach(messageObj => {
+                            addAIMessageFromObject(messageObj);
+                        });
                     } else {
-                        // For fallback responses, use word-by-word streaming
-                        const words = response.answer.split(' ');
+                        // Fallback for old single message format - treat as single chat message
+                        const messageText = typeof response.answer === 'string' ? response.answer : response.answer[0]?.content || 'No response';
+                        const words = messageText.split(' ');
                         let currentText = '';
                         
                         for (let i = 0; i < words.length; i++) {
