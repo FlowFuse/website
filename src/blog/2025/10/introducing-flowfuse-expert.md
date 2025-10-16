@@ -11,7 +11,7 @@ tags:
  - AI
 ---
 
-We've had an exciting week launching MCP and ONNX nodes, and now we’ve added something else we're really excited about: our new **FlowFuse Expert**. It helps you build flows by providing step-by-step recipe in plain language.
+We've had an exciting week launching MCP and ONNX nodes, and now we’ve added something else we're really excited about: **FlowFuse Expert**. It helps you build flows by providing a step-by-step recipe to build an application in FlowFuse and Node-RED, in plain language.
 
 <!--more-->
 
