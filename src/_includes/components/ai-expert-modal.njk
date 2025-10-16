@@ -10,7 +10,7 @@
                 <div class="w-24 h-6">
                     {% include "components/flowfuse-wordmark.njk" %}
                 </div>
-                <h2 class="text-base font-semibold text-gray-700" style="margin-bottom: -3px;">Expert Assistant</h2>
+                <h2 class="text-base font-semibold text-gray-700 -mb-1">Expert Assistant</h2>
             </div>
             <button id="close-modal" class="text-gray-400 hover:text-gray-600">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -77,7 +77,7 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    color: #6366f1;
+    color: theme(colors.indigo.500);
     font-style: italic;
 }
 
@@ -120,7 +120,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #6366f1;
+    background-color: theme(colors.indigo.500);
     animation: bounce-dot 1.4s infinite ease-in-out;
     margin: 0 1px;
 }
@@ -140,61 +140,41 @@
     }
 }
 
-/* Rich content styles */
+/* Rich content styles - using Tailwind theme values */
 .rich-content {
-    max-width: 90% !important;
+    max-width: 90%;
 }
 
 .rich-content h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #111827;
+    @apply mb-2 text-lg font-semibold text-gray-900;
 }
 
 .rich-content h4 {
-    margin: 1rem 0 0.75rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #111827;
+    @apply mt-4 mb-3 text-base font-medium text-gray-900;
 }
 
 .rich-content h5 {
-    margin: 0 0 0.25rem 0;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #111827;
+    @apply mb-1 text-base font-medium text-gray-900;
 }
 
 .rich-content h6 {
-    margin: 0 0 0.25rem 0;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #111827;
+    @apply mb-1 text-sm font-medium text-gray-900;
 }
 
 .rich-content p {
-    margin: 0 0 1rem 0;
-    line-height: 1.5;
-    color: #374151;
+    @apply mt-0 mb-4 leading-relaxed text-gray-700;
 }
 
 .rich-content ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    @apply m-0 p-0 list-none;
 }
 
 .rich-content li {
-    margin: 0 0 0.75rem 0;
+    @apply mb-3;
 }
 
 .rich-content code {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    background-color: #f3f4f6;
-    padding: 0.125rem 0.25rem;
-    border-radius: 0.25rem;
-    font-size: 0.875rem;
+    @apply font-mono bg-gray-100 px-1 py-0.5 rounded text-sm;
 }
 
 .rich-content a {
@@ -212,6 +192,10 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+.rich-content button {
+    transition: var(--tdur, 0.15s) transform, var(--tdur, 0.15s) box-shadow;
+}
+
 /* Remove bottom margin from last element in rich content */
 .rich-content > *:last-child {
     margin-bottom: 0;
@@ -220,6 +204,11 @@
 /* Remove bottom margin from paragraphs inside resource links */
 .rich-content a p {
     margin-bottom: 0;
+}
+
+/* Remove all margins from chat message paragraphs */
+.rich-content > p:only-child {
+    margin: 0;
 }
 
 </style>
@@ -552,18 +541,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Handle multi-message vs single message responses
             if (response.isMultiMessage && Array.isArray(response.answer)) {
-                // Remove the initial empty AI message since we'll add multiple messages
-                messages.pop();
-                const aiMessageElements = chatMessages.children;
-                const lastElement = aiMessageElements[aiMessageElements.length - 1];
-                if (lastElement) {
-                    chatMessages.removeChild(lastElement);
-                }
-                
-                // Add each message from the array
+                // Add each message from the array, keeping the loading message until the end
                 response.answer.forEach(messageObj => {
                     addAIMessageFromObject(messageObj);
                 });
+                
+                // Now remove the initial loading message
+                messages.splice(aiMessageIndex, 1); // Remove from messages array
+                const aiMessageElements = chatMessages.children;
+                if (aiMessageElements[aiMessageIndex]) {
+                    chatMessages.removeChild(aiMessageElements[aiMessageIndex]);
+                }
             } else {
                 // Fallback for old single message format - treat as single chat message
                 const messageText = typeof response.answer === 'string' ? response.answer : response.answer[0]?.content || 'No response';
@@ -621,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (type === 'ai' && content === '') {
             messageBubble.innerHTML = `
                 <div class="ai-loading-message">
-                    <span class="loading-text" style="display: none;"></span>
+                    <span class="loading-text hidden"></span>
                     <div class="inline-flex">
                         <span class="loading-dot"></span>
                         <span class="loading-dot"></span>
@@ -1017,8 +1005,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show the first message
                 currentLoadingMessageIndex = 0;
                 loadingTextElement.textContent = loadingMessages[currentLoadingMessageIndex];
-                loadingTextElement.style.display = 'inline';
-                loadingTextElement.style.marginRight = '8px';
+                loadingTextElement.classList.remove('hidden');
+                loadingTextElement.classList.add('inline', 'mr-2');
                 
                 // Start rotating messages every 5 seconds
                 loadingMessageInterval = setInterval(() => {
@@ -1092,15 +1080,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Node Packages
         if (richAnswer.nodePackages && richAnswer.nodePackages.length > 0) {
             html += '<div class="mb-4">';
-            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Required Node Packages:</h4>';
-            html += '<div class="space-y-2">';
+            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Required Node Packages</h4>';
+            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
             
             richAnswer.nodePackages.forEach(pkg => {
+                const npmUrl = `https://www.npmjs.com/package/${pkg.name}`;
+                const faviconUrl = `https://www.google.com/s2/favicons?domain=npmjs.com`;
+                
                 html += `
-                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <code class="text-sm font-mono text-gray-800">${pkg.name}</code>
+                <div class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors h-16">
+                    <div class="flex items-center gap-2 flex-1 min-w-0">
+                        <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0" alt="">
+                        <div class="flex-1 min-w-0">
+                            <h6 class="font-mono text-gray-900 text-sm truncate">${pkg.name}</h6>
+                            <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${npmUrl}</p>
+                        </div>
+                    </div>
                     <button onclick="copyToClipboard('${pkg.name}')" 
-                            class="text-xs px-2 py-1 bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200 transition-colors">
+                            class="text-xs px-2 py-1 bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200 transition-colors ml-2 flex-shrink-0">
                         Copy
                     </button>
                 </div>`;
@@ -1113,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Resources
         if (richAnswer.resources && richAnswer.resources.length > 0) {
             html += '<div>';
-            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Related Resources:</h4>';
+            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Related Resources</h4>';
             html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
             
             richAnswer.resources.forEach(resource => {
@@ -1200,18 +1197,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Handle multi-message vs single message responses
             if (response.isMultiMessage && Array.isArray(response.answer)) {
-                // Remove the initial empty AI message since we'll add multiple messages
-                messages.pop();
-                const aiMessageElements = chatMessages.children;
-                const lastElement = aiMessageElements[aiMessageElements.length - 1];
-                if (lastElement) {
-                    chatMessages.removeChild(lastElement);
-                }
-                
-                // Add each message from the array
+                // Add each message from the array, keeping the loading message until the end
                 response.answer.forEach(messageObj => {
                     addAIMessageFromObject(messageObj);
                 });
+                
+                // Now remove the initial loading message
+                messages.splice(aiMessageIndex, 1); // Remove from messages array
+                const aiMessageElements = chatMessages.children;
+                if (aiMessageElements[aiMessageIndex]) {
+                    chatMessages.removeChild(aiMessageElements[aiMessageIndex]);
+                }
             } else {
                 // Fallback for old single message format - treat as single chat message
                 const messageText = typeof response.answer === 'string' ? response.answer : response.answer[0]?.content || 'No response';
