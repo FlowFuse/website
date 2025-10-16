@@ -17,6 +17,7 @@ Each content type has channels which are appropriate, this table sets out which 
 |Long format videos   |         |*        |*        |        |       |              |                  |
 |Downloadable content |*        |*        |         |*       |       |*             |                  |
 |New roles opening    |*        |*        |         |*       |*      |*             |*                 |
+|New hires            |*        |         |         |*       |       |              |                  |
 
 ## Strategy for increasing reach
 
@@ -27,6 +28,7 @@ Each content type has channels which are appropriate, this table sets out which 
     - Respond promptly to comments and messages.
     - Like and share relevant content from other sources.
 - Leverage trending topics and holidays.
+- [Leverage our team network](/handbook/marketing/social-media/#leveraging-the-team-network-on-linkedin).
 
 ### Scope
 
@@ -94,6 +96,24 @@ Each content type has channels which are appropriate, this table sets out which 
 - Only one CTA
 - Hashtags, ideally three.
 - Link to article / website.
+
+#### Leveraging the team network on LinkedIn
+
+##### Page admins*
+
+- Use the **“Invite to follow”** feature on the company page. Each admin can send up to **250 invitations per month**. Make sure to use your full quota every month, as this directly contributes to growing our audience.  
+- When selecting people to invite, focus on relevant industries and roles. This ensures new followers are more likely to engage with our content and convert into qualified leads.  
+    - To identify industries where FlowFuse already has traction, go to **Analytics → Followers → Follower demographics**, and filter by *Industry*.  
+    - Also see our [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-(icp)) to prioritize the right contacts.  
+- This activity should be completed **monthly** as part of our ongoing LinkedIn growth strategy.
+
+*If you're not a page admin but have a strong network within our ICP industries, reach out to the Social Media Manager.  
+You can be granted temporary admin access once a month to send your invites.
+
+##### Entire team
+
+LinkedIn’s algorithm currently rewards **comments** over reposts or likes.  
+Team members are encouraged to leave **insightful comments** on FlowFuse posts — this significantly increases visibility and helps us reach new audiences through personal networks.
 
 ## Requesting a social post
 
