@@ -1059,7 +1059,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Steps
         if (richAnswer.steps && richAnswer.steps.length > 0) {
             html += '<div class="mb-4">';
-            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Steps:</h4>';
+            html += '<h4 class="text-base font-medium text-gray-900 mb-3">Steps:</h4>';
             html += '<ol class="space-y-3">';
             
             richAnswer.steps.forEach((step, index) => {
@@ -1080,27 +1080,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Node Packages
         if (richAnswer.nodePackages && richAnswer.nodePackages.length > 0) {
             html += '<div class="mb-4">';
-            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Required Node Packages</h4>';
+            html += '<h4 class="text-base font-medium text-gray-900 mb-3">Required Node Packages</h4>';
             html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
             
             richAnswer.nodePackages.forEach(pkg => {
-                const npmUrl = `https://www.npmjs.com/package/${pkg.name}`;
-                const faviconUrl = `https://www.google.com/s2/favicons?domain=npmjs.com`;
+                const nodeRedUrl = `https://flows.nodered.org/node/${pkg.name}`;
+                const faviconUrl = `https://www.google.com/s2/favicons?domain=flows.nodered.org`;
                 
                 html += `
-                <div class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors h-16">
-                    <div class="flex items-center gap-2 flex-1 min-w-0">
-                        <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0" alt="">
-                        <div class="flex-1 min-w-0">
-                            <h6 class="font-mono text-gray-900 text-sm truncate">${pkg.name}</h6>
-                            <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${npmUrl}</p>
-                        </div>
+                <a href="${nodeRedUrl}" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors h-16">
+                    <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0" alt="">
+                    <div class="flex-1 min-w-0">
+                        <h6 class="font-mono text-gray-900 text-sm truncate">${pkg.name}</h6>
+                        <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${nodeRedUrl}</p>
                     </div>
-                    <button onclick="copyToClipboard('${pkg.name}')" 
-                            class="text-xs px-2 py-1 bg-indigo-100 text-indigo-700 rounded hover:bg-indigo-200 transition-colors ml-2 flex-shrink-0">
-                        Copy
-                    </button>
-                </div>`;
+                </a>`;
             });
             
             html += '</div>';
@@ -1110,7 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Resources
         if (richAnswer.resources && richAnswer.resources.length > 0) {
             html += '<div>';
-            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Related Resources</h4>';
+            html += '<h4 class="text-base font-medium text-gray-900 mb-3">Related Resources</h4>';
             html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
             
             richAnswer.resources.forEach(resource => {
@@ -1136,12 +1131,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return html;
     }
     
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            // Could add a toast notification here
-            console.log('Copied to clipboard:', text);
-        });
-    }
 
     // Stop generation
     document.getElementById('stop-generation').addEventListener('click', function() {
