@@ -43,7 +43,7 @@
         <div class="p-4 bg-white rounded-b-none md:rounded-b-lg border-t border-gray-200">
             <div id="action-buttons-container" class="pb-4 flex justify-between">
                 <button id="clear-conversation" class="bg-white border border-indigo-300 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                    Start again
+                    Start over
                 </button>
                 <div id="right-buttons" class="flex gap-2">
                     <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3 hidden">
@@ -211,6 +211,17 @@
     transform: translateY(-1px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
+/* Remove bottom margin from last element in rich content */
+.rich-content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Remove bottom margin from paragraphs inside resource links */
+.rich-content a p {
+    margin-bottom: 0;
+}
+
 </style>
 
 <!-- JavaScript for Modal Functionality -->
@@ -943,7 +954,8 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.className = 'flex justify-start mb-4';
         
         const messageBubble = document.createElement('div');
-        messageBubble.className = 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content';
+        let paddingClass = messageObj.kind === 'guide' ? 'py-4' : 'py-2';
+        messageBubble.className = `max-w-xs lg:max-w-md px-4 ${paddingClass} rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content`;
         
         // Render content based on message kind
         let htmlContent = '';
@@ -1032,12 +1044,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderChatContent(chatMessage) {
         let html = '';
         
-        // Title (if present)
-        if (chatMessage.title) {
-            html += `<h4 class="text-md font-medium text-gray-900 mb-2">${chatMessage.title}</h4>`;
-        }
-        
-        // Content
+        // Content (no title for chat messages)
         if (chatMessage.content) {
             html += `<p class="text-gray-700">${chatMessage.content}</p>`;
         }
@@ -1049,7 +1056,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let html = '';
         
         // Setup Guide label for guide messages
-        html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-1 rounded-full inline-block mb-3">Setup Guide</div>`;
+        html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-2 rounded-full inline-block mb-3">Setup Guide</div>`;
         
         // Title
         if (richAnswer.title) {
@@ -1082,32 +1089,6 @@ document.addEventListener('DOMContentLoaded', function() {
             html += '</div>';
         }
         
-        // Resources
-        if (richAnswer.resources && richAnswer.resources.length > 0) {
-            html += '<div class="mb-4">';
-            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Related Resources:</h4>';
-            html += '<div class="space-y-2">';
-            
-            richAnswer.resources.forEach(resource => {
-                const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(resource.url).hostname}`;
-                
-                html += `
-                <a href="${resource.url}" target="_blank" rel="noopener noreferrer" 
-                   class="block p-3 border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors">
-                    <div class="flex items-start gap-2">
-                        <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0 mt-0.5" alt="">
-                        <div class="flex-1 min-w-0">
-                            <h6 class="font-medium text-gray-900 text-sm truncate">${resource.title}</h6>
-                            <p class="text-xs text-gray-500 mt-1">${resource.url}</p>
-                        </div>
-                    </div>
-                </a>`;
-            });
-            
-            html += '</div>';
-            html += '</div>';
-        }
-        
         // Node Packages
         if (richAnswer.nodePackages && richAnswer.nodePackages.length > 0) {
             html += '<div class="mb-4">';
@@ -1123,6 +1104,32 @@ document.addEventListener('DOMContentLoaded', function() {
                         Copy
                     </button>
                 </div>`;
+            });
+            
+            html += '</div>';
+            html += '</div>';
+        }
+        
+        // Resources
+        if (richAnswer.resources && richAnswer.resources.length > 0) {
+            html += '<div>';
+            html += '<h4 class="text-md font-medium text-gray-900 mb-3">Related Resources:</h4>';
+            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
+            
+            richAnswer.resources.forEach(resource => {
+                const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(resource.url).hostname}`;
+                
+                html += `
+                <a href="${resource.url}" target="_blank" rel="noopener noreferrer" 
+                   class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors">
+                    <div class="flex items-start gap-2">
+                        <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0 mt-0.5" alt="">
+                        <div class="flex-1 min-w-0">
+                            <h6 class="font-medium text-gray-900 text-sm truncate">${resource.title}</h6>
+                            <p class="text-xs text-gray-500 mt-1 truncate">${resource.url}</p>
+                        </div>
+                    </div>
+                </a>`;
             });
             
             html += '</div>';
