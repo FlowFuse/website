@@ -101,11 +101,11 @@ Each content type has channels which are appropriate, this table sets out which 
 
 ##### Page admins*
 
-- Use the **“Invite to follow”** feature — you can send up to **250 invites per month**.
-- LinkedIn allows you to filter your contacts by industry. Prioritize contacts in industries where FlowFuse already has traction:  
-    - Go to **Analytics → Followers → Follower demographics**, and filter by *Industry*.
-    - Also see our [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-(icp)).
-- This should be a regular activity.
+- Use the **“Invite to follow”** feature on the company page. Each admin can send up to **250 invitations per month**. Make sure to use your full quota every month, as this directly contributes to growing our audience.  
+- When selecting people to invite, focus on relevant industries and roles. This ensures new followers are more likely to engage with our content and convert into qualified leads.  
+    - To identify industries where FlowFuse already has traction, go to **Analytics → Followers → Follower demographics**, and filter by *Industry*.  
+    - Also see our [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-(icp)) to prioritize the right contacts.  
+- This activity should be completed **monthly** as part of our ongoing LinkedIn growth strategy.
 
 *If you're not a page admin but have a strong network within our ICP industries, reach out to the Social Media Manager.  
 You can be granted temporary admin access once a month to send your invites.
