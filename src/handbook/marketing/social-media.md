@@ -101,7 +101,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 ##### Page admins*
 
-- Use the **“Invite to follow”** feature on the company page. Each admin can send up to **250 invitations per month**. Make sure to use your full quota every month, as this directly contributes to growing our audience.  
+- Use the **“Invite to follow”** feature on the company page. The page has a **monthly pool of 250 invitation credits**. Each admin can send invitations to their connections using these credits, but the total number of invitations sent by all admins cannot exceed 250 per month. We should make sure to use our full quota every month, as this directly contributes to growing our audience.  
 - When selecting people to invite, focus on relevant industries and roles. This ensures new followers are more likely to engage with our content and convert into qualified leads.  
     - To identify industries where FlowFuse already has traction, go to **Analytics → Followers → Follower demographics**, and filter by *Industry*.  
     - Also see our [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-(icp)) to prioritize the right contacts.  
