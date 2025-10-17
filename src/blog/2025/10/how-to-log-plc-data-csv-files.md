@@ -5,9 +5,9 @@ description: "Learn how to reliably log PLC data to CSV files using FlowFuse, ha
 date: 2025-10-21
 keywords:
 authors: ["sumit-shinde"]
-image: png
+image:
 tags:
-- flowfuse
+    - flowfuse
 ---
 
 CSV files have been recording manufacturing data since the mid-1980s — over 40 years of continuous use across every industry. They’ve outlasted proprietary databases, specialized historians, and expensive SCADA extensions. Every plant still uses them because they’re universally compatible, and if you’re reading this, you probably need to do the same.
