@@ -203,7 +203,7 @@ Salesperson is authorized to sell the following products and/or services, unless
 
 ### 6. Quota Credit
 
-Except as otherwise stated herein, quota credit will be based on the Incremental Annual Contract Value for the authorized territory or authorized Accounts.
+Except as otherwise stated herein, quota credit will be based on net new Annual Recurring Revenue (ARR) plus services sold on New Business deals for the authorized territory or authorized Accounts.
 
 ### 7. Credit For Partner Bookings
 
@@ -219,7 +219,7 @@ Notes: Commissions will be paid on multi-year deals at the base rate according t
 
 ### 9. Quota
 
-New Incremental Annual Contract Value Quota of $ for Q1 2025 through Q4 2025 assigned quarterly as follows: 
+New net Annual Recurring Revenue (ARR) plus services sold on New Business deals Quota of $ for Q1 2025 through Q4 2025 assigned quarterly as follows: 
 
 Q1	$  [Quota Q1]
 Q2	$  [Quota Q2]
