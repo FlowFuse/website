@@ -2,7 +2,7 @@
 title: "How to Log PLC Data to CSV Files"
 subtitle: "Building a reliable, hands-off CSV logging setup with FlowFuse"
 description: "Learn how to reliably log PLC data to CSV files using FlowFuse, handling connection drops, file corruption, and timestamp drift."
-date: 2025-10-09
+date: 2025-10-21
 keywords:
 authors: ["sumit-shinde"]
 image: png
@@ -10,13 +10,16 @@ tags:
 - flowfuse
 ---
 
-CSV files have been recording manufacturing data since the mid-1980s — over 40 years of continuous use across every industry. They’ve outlasted proprietary databases, specialized historians, and expensive SCADA extensions. Every plant still uses them because they’re universally compatible — and if you’re reading this, you probably need to do the same.
+CSV files have been recording manufacturing data since the mid-1980s — over 40 years of continuous use across every industry. They’ve outlasted proprietary databases, specialized historians, and expensive SCADA extensions. Every plant still uses them because they’re universally compatible, and if you’re reading this, you probably need to do the same.
 
 Any system can read CSV. Excel opens it instantly, databases import it natively, and analysis tools expect it. No licensing, no vendor tie-ins, no format obsolescence. Data captured decades ago is still perfectly readable today.
 
 But building reliable PLC-to-CSV logging that runs automatically without breaking is harder than it looks. Small issues that can consume days of troubleshooting.  
 
-This guide shows how to implement PLC data logging with **FlowFuse** in a way that keeps running — stable, resilient, and production-ready.
+This guide shows how to implement PLC data logging with **FlowFuse** in a way that keeps running, stable, resilient, and production-ready.
+
+![Image showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file.](./images/plc-to-csv.gif){data-zoomable}
+_Image showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file._
 
 ## Prerequisites
 
@@ -118,11 +121,14 @@ The CSV node handles all the formatting work—proper escaping, column ordering,
 1. Drag a CSV node onto your canvas
 2. Connect it to your function node
 3. Double-click to configure:
-   - Set the columns: `timestamp,temperature,pressure,flowRate`
+   - Set the columns: `timestamp,temperature`
    - Enable "first row contains column names"
    - Choose comma as the separator
    - Choose RFC 4180 as parser (this handles commas in your data—like alarm messages or status text—by wrapping them in quotes so they don't break the CSV structure)
 4. Click Done
+
+![Image showing CSV node configuration](./images/csv-config.png){data-zoomable}
+_Image showing CSV node configuration_
 
 The CSV node converts your data object into a properly formatted CSV line with headers included automatically when a new file is created.
 
@@ -139,6 +145,9 @@ The file node writes your formatted CSV data to disk.
 4. Click Done
 5. Deploy your flow
 
+![Image showing Write node configuration](./images/write-file-config.png){data-zoomable}
+_Image showing Write node configuration_
+
 Let it run. Each day at midnight, the system automatically starts a new file. Old files stay untouched, new data goes to today's file.
 
 This daily rotation keeps file sizes manageable and makes it easy to find data from specific dates. But there are still edge cases to handle—what happens when disk space runs low or file writes fail? The next step addresses these reliability issues.
@@ -153,72 +162,61 @@ Add disk space monitoring to prevent unexpected failures.
 2. Add a function node with this code:
 
 ```javascript
-const os = require('os');
-const fs = require('fs');
+try {
+    // Get disk usage information
+    const stats = fs.statfsSync('./');
 
-// Get disk usage information
-const stats = fs.statfsSync('./');
-const totalSpace = stats.blocks * stats.bsize;
-const freeSpace = stats.bfree * stats.bsize;
-const usedSpace = totalSpace - freeSpace;
-const percentUsed = (usedSpace / totalSpace) * 100;
+    const totalSpace = stats.blocks * stats.bsize;
+    const freeSpace = stats.bfree * stats.bsize;
+    const usedSpace = totalSpace - freeSpace;
+    const percentUsed = (usedSpace / totalSpace) * 100;
 
-msg.payload = {
-    totalGB: (totalSpace / (1024**3)).toFixed(2),
-    freeGB: (freeSpace / (1024**3)).toFixed(2),
-    usedGB: (usedSpace / (1024**3)).toFixed(2),
-    percentUsed: percentUsed.toFixed(2)
-};
+    msg.payload = {
+        totalGB: (totalSpace / (1024 ** 3)).toFixed(2),
+        freeGB: (freeSpace / (1024 ** 3)).toFixed(2),
+        usedGB: (usedSpace / (1024 ** 3)).toFixed(2),
+        percentUsed: percentUsed.toFixed(2)
+    };
 
-// Warning threshold
-if (percentUsed > 90) {
-    msg.warning = `Disk space critical: ${percentUsed.toFixed(1)}% used`;
+    // Warning threshold
+    if (percentUsed > 90) {
+        msg.warning = `Disk space critical: ${percentUsed.toFixed(1)}% used`;
+    }
+
+    return msg;
+
+} catch (err) {
+    msg.payload = { error: err.message };
+    return msg;
 }
-
-return msg;
 ```
 
-3. Add a switch node to check for the warning property
-4. Connect it to your notification system to alert when space is critical
-5. Deploy the flow
+3. Connect it to your notification system to alert when space is critical, for notification you can use [email](/node-red/notification/email/), [telegram](/node-red/notification/telegram/), discord with [FlowFuse](/node-red/notification/discord/).
+4. Deploy the flow
 
 Now you'll get warnings before disk space becomes critical, giving you time to archive old data or expand storage.
 
 ## Step 5: Handling Connection Interruptions
 
-Network issues, PLC restarts, and equipment maintenance cause connection drops. Your logging system needs to handle these gracefully and resume automatically.
+Network issues, PLC restarts, or equipment maintenance can cause connection drops. Your logging system should handle these gracefully and automatically resume when the connection is restored.
 
-### Detecting Connection Loss
+Most PLC nodes emit error events when a connection fails. Add error handling to detect and log these events.
 
-Most PLC nodes emit error events when connections fail. Add error handling to detect and log these events.
-
-1. Add a catch node configured for your PLC input node
-2. Connect it to a function node that logs connection failures
-3. Add logic to track how long the connection has been down
-
-### Implementing Automatic Reconnection
-
-Your PLC node should be configured to reconnect automatically. Most nodes have this built in—verify it's enabled in your node configuration.
-
-Add a status node to monitor connection state:
-
-1. Drag a status node onto your canvas
-2. Configure it to monitor your PLC input node
-3. Connect to a debug node to see connection state changes
-4. Deploy and verify it shows "connected" status
-
-When connection drops, the node will attempt to reconnect based on its retry settings. You'll see status changes in your debug output.
+1. Add a Catch node configured to monitor your PLC input node and Write File node.
+2. Drag a Function or Change node to format the error messages according to your chosen notification method, and connect it to the Catch node.
+3. Connect the node that formats the error message to your selected Notification node.
+4. Deploy the flow.
 
 ## Conclusion
 
-You now have a production-ready PLC data logging system built on FlowFuse. It handles the critical reliability issues—connection drops, write failures, disk space management, and daily rotation—that turn a basic logging flow into something that runs hands-off for months.
+You now have a production-ready PLC data logging system built on FlowFuse. It addresses the key reliability issues that typically cause downtime — connection drops, write failures, disk space limits, and daily file rotation — turning a simple flow into one that can run unattended for months.
 
-The CSV format ensures your data remains accessible regardless of future system changes. Every tool can read it, and it'll still be readable decades from now.
+The use of CSV ensures long-term data accessibility. Every analytics platform, database, and spreadsheet can read it, and it will remain usable decades from now — regardless of what tools or systems you adopt in the future.
 
-Start simple. Get one PLC connected, verify clean data, and deploy the basic logging flow. Add error handling and disk management as you gain confidence. The system will prove itself over time.
+Start small: connect one PLC, verify data quality, and deploy your first logging flow. Then gradually add error handling, storage monitoring, and redundancy as needed. Over time, this setup becomes a foundation for scalable, dependable industrial data collection.
 
-FlowFuse makes this practical because it gives you Node-RED's flexibility with professional deployment infrastructure. You can update flows remotely, manage multiple sites from one dashboard, and scale from one PLC to hundreds without rebuilding everything.
+FlowFuse makes this process straightforward by combining Node-RED’s flexibility with enterprise-grade management and monitoring. You can deploy updates remotely, manage devices across multiple sites, and standardize data collection — all from a single platform.
 
-The patterns shown here apply to any industrial data logging project—adapt them to your specific equipment and requirements. Once you have reliable CSV logging in place, you can build analytics, dashboards, and reports on top of data you know is captured consistently.
+And while CSV is a reliable starting point, FlowFuse also integrates seamlessly with modern databases and historians like InfluxDB, TimescaleDB, and MySQL. Even better, FlowFuse Cloud includes a built-in PostgreSQL service and an AI Query Node that lets you explore your data conversationally — turning raw logs into actionable insights.
 
-Your manufacturing data is too valuable to lose. Build logging that doesn't break.
+> [Book a demo](/book-demo/) today to see how FlowFuse helps you connect, collect, transform, and visualize your industrial data — reliably and intelligently.
