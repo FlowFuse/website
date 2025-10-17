@@ -27,32 +27,32 @@ Content creation and blogging are effective ways to communicate with our communi
 
 ### Temporary Blog Tile Image Process
 
-**When no designer is available and the content is time-sensitive**, you may create a temporary blog tile so we can publish without delay. Please still open an art request so a designer can update the image later.
+**When no designer is available or the content is time-sensitive**, you may create a temporary blog tile so we can publish without delay. Please still open an art request so a designer can update the image later.
 
 Options and steps:
 
-1. **Default Image**  
+1. Default Image  
    Useful when urgency is driven by SEO/indexing and social sharing can happen later, once a proper tile is available.  
    If you don’t add an image to the article front matter, a default branded image will be automatically applied.
 
-1. **Use existing assets from the article**  
+1. Use existing assets from the article  
    Useful when it’s fine for the article to use the default image, and you just need something quick for the social post.  
    If the article already contains screenshots, diagrams, or videos, you can reuse one of those for the post.
 
-1. **Create a quick tile from a template**  
+1. Create a quick tile from a template  
    - If no other assets are available, this is how you can create a custom one for your article.  
-   - Go to the [Google Slides Template Gallery](https://docs.google.com/presentation/u/0/?ftv=1&folder=1FlyDcmraih3uJ-D__v9qoHrBsNw8phkY&tgif=d) and pick any template that starts with **“Blog Post”** — this will create a copy in your Google Drive.  
+   - Go to the [Google Slides Template Gallery](https://docs.google.com/presentation/u/0/?ftv=1&folder=1FlyDcmraih3uJ-D__v9qoHrBsNw8phkY&tgif=d) and pick any template that starts with “Blog Post” — this will create a copy in your Google Drive.  
    - Move the copy to a folder named after the article inside [this shared Drive folder](https://drive.google.com/open?id=1w99oFeCCcbVVkOxkzmwKlrwjWzAJFOWM&usp=drive_fs).  
-   - Edit the title and visuals, then **export the slide as a .png** and add it to your article.  
+   - Edit the title and visuals, then export the slide as a .png and add it to your article.  
    - Templates are available in three styles: text-only, text + icons, and full-image.
 
-1. **If you choose a full-image approach**  
+1. If you choose a full-image approach  
    - Use a royalty-free stock photo (recommended sources):  
      - [Adobe Stock (Free)](https://stock.adobe.com/es/search/free) (if you have corporate access)  
      - [Pexels](https://www.pexels.com/)  
      - [Unsplash](https://unsplash.com/)  
    - You can also use AI-generated images, but avoid artworks or graphics. Stick to realistic, photo-style images such as shop floors, people, or equipment. Current AI tools aren’t yet reliable for producing artwork aligned with our visual identity.  
-   - Stock and AI-generated images are often high-resolution and in different aspect ratios. **Always place or import the image into the Google Slides template and export from there** to match FlowFuse’s required tile dimensions. Make sure your original image is at least **1600px wide** for optimal quality.
+   - Stock and AI-generated images are often high-resolution and in different aspect ratios. Always place or import the image into the Google Slides template and export from there to match FlowFuse’s required tile dimensions. Make sure your original image is at least 1600px wide for optimal quality.
 
 
 ## Blog CMS
