@@ -27,7 +27,7 @@ Content creation and blogging are effective ways to communicate with our communi
 
 ### Temporary Blog Tile Image Process
 
-**When no designer is available or the content is time-sensitive**, you may create a temporary blog tile so we can publish without delay. Please still open an art request so a designer can update the image later.
+When no designer is available or the content is time-sensitive, you may create a temporary blog tile so we can publish without delay. Please still open an art request so a designer can update the image later.
 
 Options and steps:
 
