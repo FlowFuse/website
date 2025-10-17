@@ -18,6 +18,7 @@ Each content type has channels which are appropriate, this table sets out which 
 |Downloadable content |*        |*        |         |*       |       |*             |                  |
 |New roles opening    |*        |*        |         |*       |*      |*             |*                 |
 |New hires            |*        |         |         |*       |       |              |                  |
+|Memes                |*        |*        |*        |*       |*      |              |                  |
 
 ## Strategy for increasing reach
 
@@ -61,6 +62,7 @@ Each content type has channels which are appropriate, this table sets out which 
         - Include our POV in the post.
         - Tag the original source.
     - Follow partners and customers on each channel for shareable content.
+- **Memes:** 1x every other week. Saturdays.
 - **Other content types:** 1x week. Any day.
     - Quick tips, clips of longer video formats, customer stories, surveys, events, downloads, FAQs, best practices, testimonials, quizzes, challenges.
 - [Detailed list here](https://docs.google.com/spreadsheets/d/1Ifz6f7D_ZxCxJkAS9LbdvdnEAae0tGFEqkGVHcnn2TU/edit?usp=sharing).
@@ -78,15 +80,7 @@ Each content type has channels which are appropriate, this table sets out which 
     - USA before work (6:00 am EDT - 12 pm CEST).
     - USA lunch hours (11:30 am EDT -  5:30 pm CEST).
 - While we have a planned schedule, it's crucial to remain flexible. If more impactful or relevant content emerges, we'll adapt our plan accordingly to ensure the best possible engagement.
-
-#### Content Ownership & Real-Time Decisions
-
-- In general, everyone is encouraged to post on social media, as long as they follow our proposed [guidelines and tone](/handbook/marketing/brand-voice/). [The HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar) serves as our central planning hub for publishing content. If you choose to publish on your own, please make sure to follow the guidelines and refer to the [recommended publishing times](/handbook/marketing/social-media/#planning-and-posting).
-- If you prefer not to post yourself and would like to delegate, you can do so [Requesting a Social Post](/handbook/marketing/social-media/#requesting-a-social-post). The Social Media owner will manage it following the regular posting track. 
-- This is to ensure we never block or delay a post that could be urgent or highly relevant in the moment. While our handbook provides structure, it should not prevent us from responding quickly to breaking news or important events.
-- When an author posts to social media, posts do not need to be reviewed by another person before posting.
-- The [Social Media Manager](https://github.com/Yndira-E) remains ultimately responsible for both the distribution and the content published across FlowFuse channels.
-- Any publication made by someone outside the marketing team must always be communicated to the Social Media Manager. This allows them to keep the post in the established (https://app-eu1.hubspot.com/social/26586079/manage/calendar) and review it if any stylistic adjustments are needed to align with [our tone and brand voice](https://flowfuse.com/handbook/marketing/brand-voice/#brand-personality) — something they may do whenever considered necessary.
+- If the post is part of a campaign, add it as a campaign asset in HubSpot. If the campaign doesn't exist yet, create it with a descriptive name for easy identification.
 
 #### Posts format
 
@@ -98,6 +92,8 @@ Each content type has channels which are appropriate, this table sets out which 
 - Only one CTA
 - Hashtags, ideally three.
 - Link to article / website.
+    - In HubSpot, delete the link from the "Add media" section to keep full-size image.
+- Select the corresponding campaign if applicable.
 
 #### Leveraging the team network on LinkedIn
 
@@ -116,6 +112,16 @@ You can be granted temporary admin access once a month to send your invites.
 
 LinkedIn’s algorithm currently rewards **comments** over reposts or likes.  
 Team members are encouraged to leave **insightful comments** on FlowFuse posts — this significantly increases visibility and helps us reach new audiences through personal networks.
+
+## Content Ownership & Real-Time Decisions
+
+- In general, everyone is encouraged to post on social media, as long as they follow our proposed [guidelines and tone](/handbook/marketing/brand-voice/). [The HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar) serves as our central planning hub for publishing content. If you choose to publish on your own, please make sure to follow the guidelines and refer to the [recommended publishing times](/handbook/marketing/social-media/#planning-and-posting).
+- If you prefer not to post yourself and would like to delegate, you can do so [Requesting a Social Post](/handbook/marketing/social-media/#requesting-a-social-post). The Social Media owner will manage it following the regular posting track. 
+- This is to ensure we never block or delay a post that could be urgent or highly relevant in the moment. While our handbook provides structure, it should not prevent us from responding quickly to breaking news or important events.
+- When an author posts to social media, posts do not need to be reviewed by another person before posting.
+- The [Social Media Manager](https://github.com/Yndira-E) remains ultimately responsible for both the distribution and the content published across FlowFuse channels.
+- Any publication made by someone outside the marketing team must always be communicated to the Social Media Manager. This allows them to keep the post in the established (https://app-eu1.hubspot.com/social/26586079/manage/calendar) and review it if any stylistic adjustments are needed to align with [our tone and brand voice](https://flowfuse.com/handbook/marketing/brand-voice/#brand-personality) — something they may do whenever considered necessary.
+
 
 ## Requesting a social post
 
