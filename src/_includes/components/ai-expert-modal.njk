@@ -71,147 +71,6 @@
     </div>
 </div>
 
-<!-- CSS for Loading Animation -->
-<style>
-.ai-loading-dots {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: theme(colors.indigo.500);
-    font-style: italic;
-}
-
-.ai-loading-dots::after {
-    content: '';
-    display: inline-flex;
-    gap: 2px;
-    margin-left: 8px;
-}
-
-.ai-loading-dots::after {
-    content: '●●●';
-    animation: loading-dots 1.5s infinite;
-    letter-spacing: 2px;
-}
-
-@keyframes loading-dots {
-    0% { opacity: 0.2; }
-    20% { opacity: 1; }
-    40% { opacity: 0.2; }
-    60% { opacity: 0.2; }
-    80% { opacity: 0.2; }
-    100% { opacity: 0.2; }
-}
-
-.ai-loading-dots[data-dot="1"]::after {
-    animation-delay: 0s;
-}
-
-.ai-loading-dots[data-dot="2"]::after {
-    animation-delay: 0.2s;
-}
-
-.ai-loading-dots[data-dot="3"]::after {
-    animation-delay: 0.4s;
-}
-
-.loading-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: theme(colors.indigo.500);
-    animation: bounce-dot 1.4s infinite ease-in-out;
-    margin: 0 1px;
-}
-
-.loading-dot:nth-child(1) { animation-delay: -0.32s; }
-.loading-dot:nth-child(2) { animation-delay: -0.16s; }
-.loading-dot:nth-child(3) { animation-delay: 0s; }
-
-@keyframes bounce-dot {
-    0%, 80%, 100% {
-        transform: scale(0.8);
-        opacity: 0.5;
-    }
-    40% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Rich content styles - using Tailwind theme values */
-.rich-content {
-    max-width: 90%;
-}
-
-.rich-content h3 {
-    @apply mb-2 text-lg font-semibold text-gray-900;
-}
-
-.rich-content h4 {
-    @apply mt-4 mb-3 text-base font-medium text-gray-900;
-}
-
-.rich-content h5 {
-    @apply mb-1 text-base font-medium text-gray-900;
-}
-
-.rich-content h6 {
-    @apply mb-1 text-sm font-medium text-gray-900;
-}
-
-.rich-content p {
-    @apply mt-0 mb-4 leading-relaxed text-gray-700;
-}
-
-.rich-content ol {
-    @apply m-0 p-0 list-none;
-}
-
-.rich-content li {
-    @apply mb-3;
-}
-
-.rich-content code {
-    @apply font-mono bg-gray-100 px-1 py-0.5 rounded text-sm;
-}
-
-.rich-content a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.rich-content a:hover {
-    text-decoration: none;
-}
-
-/* Button hover effects */
-.rich-content button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.rich-content button {
-    transition: var(--tdur, 0.15s) transform, var(--tdur, 0.15s) box-shadow;
-}
-
-/* Remove bottom margin from last element in rich content */
-.rich-content > *:last-child {
-    margin-bottom: 0;
-}
-
-/* Remove bottom margin from paragraphs inside resource links */
-.rich-content a p {
-    margin-bottom: 0;
-}
-
-/* Remove all margins from chat message paragraphs */
-.rich-content > p:only-child {
-    margin: 0;
-}
-
-</style>
 
 <!-- JavaScript for Modal Functionality -->
 <script>
@@ -541,17 +400,29 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Handle multi-message vs single message responses
             if (response.isMultiMessage && Array.isArray(response.answer)) {
-                // Add each message from the array, keeping the loading message until the end
-                response.answer.forEach(messageObj => {
-                    addAIMessageFromObject(messageObj);
-                });
+                // Stop loading animation first
+                const loadingElement = chatMessages.children[aiMessageIndex];
+                if (loadingElement) {
+                    const loadingBubble = loadingElement.querySelector('.ai-loading');
+                    if (loadingBubble) {
+                        stopLoadingMessageRotation();
+                    }
+                }
                 
-                // Now remove the initial loading message
-                messages.splice(aiMessageIndex, 1); // Remove from messages array
+                // Wait a bit to ensure loading dots are visible
+                await new Promise(resolve => setTimeout(resolve, 300));
+                
+                // Remove the loading message from DOM and array
+                messages.splice(aiMessageIndex, 1);
                 const aiMessageElements = chatMessages.children;
                 if (aiMessageElements[aiMessageIndex]) {
                     chatMessages.removeChild(aiMessageElements[aiMessageIndex]);
                 }
+                
+                // Now add each message from the response
+                response.answer.forEach(messageObj => {
+                    addAIMessageFromObject(messageObj);
+                });
             } else {
                 // Fallback for old single message format - treat as single chat message
                 const messageText = typeof response.answer === 'string' ? response.answer : response.answer[0]?.content || 'No response';
@@ -1185,17 +1056,29 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Handle multi-message vs single message responses
             if (response.isMultiMessage && Array.isArray(response.answer)) {
-                // Add each message from the array, keeping the loading message until the end
-                response.answer.forEach(messageObj => {
-                    addAIMessageFromObject(messageObj);
-                });
+                // Stop loading animation first
+                const loadingElement = chatMessages.children[aiMessageIndex];
+                if (loadingElement) {
+                    const loadingBubble = loadingElement.querySelector('.ai-loading');
+                    if (loadingBubble) {
+                        stopLoadingMessageRotation();
+                    }
+                }
                 
-                // Now remove the initial loading message
-                messages.splice(aiMessageIndex, 1); // Remove from messages array
+                // Wait a bit to ensure loading dots are visible
+                await new Promise(resolve => setTimeout(resolve, 300));
+                
+                // Remove the loading message from DOM and array
+                messages.splice(aiMessageIndex, 1);
                 const aiMessageElements = chatMessages.children;
                 if (aiMessageElements[aiMessageIndex]) {
                     chatMessages.removeChild(aiMessageElements[aiMessageIndex]);
                 }
+                
+                // Now add each message from the response
+                response.answer.forEach(messageObj => {
+                    addAIMessageFromObject(messageObj);
+                });
             } else {
                 // Fallback for old single message format - treat as single chat message
                 const messageText = typeof response.answer === 'string' ? response.answer : response.answer[0]?.content || 'No response';
@@ -1273,15 +1156,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Handle multi-message vs single message responses
                     if (response.isMultiMessage && Array.isArray(response.answer)) {
-                        // Remove the initial empty AI message since we'll add multiple messages
-                        messages.pop();
-                        const aiMessageElements = chatMessages.children;
-                        const lastElement = aiMessageElements[aiMessageElements.length - 1];
-                        if (lastElement) {
-                            chatMessages.removeChild(lastElement);
+                        // Stop loading animation first
+                        const loadingElement = chatMessages.children[aiMessageIndex];
+                        if (loadingElement) {
+                            const loadingBubble = loadingElement.querySelector('.ai-loading');
+                            if (loadingBubble) {
+                                stopLoadingMessageRotation();
+                            }
                         }
                         
-                        // Add each message from the array
+                        // Wait a bit to ensure loading dots are visible
+                        await new Promise(resolve => setTimeout(resolve, 300));
+                        
+                        // Remove the loading message from DOM and array
+                        messages.splice(aiMessageIndex, 1);
+                        const aiMessageElements = chatMessages.children;
+                        if (aiMessageElements[aiMessageIndex]) {
+                            chatMessages.removeChild(aiMessageElements[aiMessageIndex]);
+                        }
+                        
+                        // Now add each message from the response
                         response.answer.forEach(messageObj => {
                             addAIMessageFromObject(messageObj);
                         });
