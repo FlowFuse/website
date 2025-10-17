@@ -12,9 +12,11 @@ tags:
 
 CSV files have been recording manufacturing data since the mid-1980s — over 40 years of continuous use across every industry. They’ve outlasted proprietary databases, specialized historians, and expensive SCADA extensions. Every plant still uses them because they’re universally compatible, and if you’re reading this, you probably need to do the same.
 
+<!--more-->
+
 Any system can read CSV. Excel opens it instantly, databases import it natively, and analysis tools expect it. No licensing, no vendor tie-ins, no format obsolescence. Data captured decades ago is still perfectly readable today.
 
-But building reliable PLC-to-CSV logging that runs automatically without breaking is harder than it looks. Small issues that can consume days of troubleshooting.  
+But building reliable PLC-to-CSV logging that runs automatically without interruptions is harder than it looks. Small issues can silently stop your data collection or logging without warning.
 
 This guide shows how to implement PLC data logging with **FlowFuse** in a way that keeps running, stable, resilient, and production-ready.
 
@@ -219,4 +221,4 @@ FlowFuse makes this process straightforward by combining Node-RED’s flexibilit
 
 And while CSV is a reliable starting point, FlowFuse also integrates seamlessly with modern databases and historians like InfluxDB, TimescaleDB, and MySQL. Even better, FlowFuse Cloud includes a built-in PostgreSQL service and an AI Query Node that lets you explore your data conversationally — turning raw logs into actionable insights.
 
-> [Book a demo](/book-demo/) today to see how FlowFuse helps you connect, collect, transform, and visualize your industrial data — reliably and intelligently.
+> You can [talk to our team](/book-demo/), they’ll walk you through a live demo showing how FlowFuse helps you connect, collect, transform, and visualize your industrial data reliably and intelligently.
