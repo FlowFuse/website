@@ -254,10 +254,6 @@
 }
 
 /* Rich content styles - using Tailwind theme values */
-.rich-content {
-    max-width: 90%;
-}
-
 .rich-content h3 {
     @apply mb-2 text-lg font-semibold text-gray-900;
 }

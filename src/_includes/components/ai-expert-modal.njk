@@ -813,7 +813,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const messageBubble = document.createElement('div');
         let paddingClass = messageObj.kind === 'guide' ? 'py-4' : 'py-2';
-        messageBubble.className = `max-w-xs lg:max-w-md px-4 ${paddingClass} rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content`;
+        messageBubble.className = `max-w-[90%] px-4 ${paddingClass} rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content`;
         
         // Render content based on message kind
         let htmlContent = '';
