@@ -1,0 +1,3967 @@
+[
+    {
+        "id": "7810301b631d5f97",
+        "type": "tab",
+        "label": "Line-1 OEE",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "29930d82ce6c2a9f",
+        "type": "tab",
+        "label": "Dashboard Header Elements and style",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fa7147e04d4d5ec3",
+        "type": "tab",
+        "label": "Simulated Data Generation",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c4edc9bdf4b571a9",
+        "type": "subflow",
+        "name": "OEE Dashboard",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "68dace46520cd422"
+                    },
+                    {
+                        "id": "339fdc6ae03f4790"
+                    },
+                    {
+                        "id": "ffb1f84eda8b895b"
+                    },
+                    {
+                        "id": "5fcd9b319d6b4d9b"
+                    },
+                    {
+                        "id": "268de90e83591fd4"
+                    },
+                    {
+                        "id": "cee1bf3f07b0f4ca"
+                    },
+                    {
+                        "id": "7a4d6d58e97cdcdd"
+                    },
+                    {
+                        "id": "fb4a33e78d4075ac"
+                    },
+                    {
+                        "id": "aeda24e8b362cb2c"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [
+            {
+                "name": "Group_Quality",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "Quality group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_Availibility",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "Availibility group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_Performance",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "Performance group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_OEE",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "OEE group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_Production_Data",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "Production data group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_Recent_Downtime",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "Recent downtime group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_Downtime_Summery",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "Downtime summery group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_Top_Underperforming_Machine",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "Top underperforming machine group"
+                    },
+                    "type": "conf-types"
+                }
+            },
+            {
+                "name": "Group_OEE_Over_Time",
+                "type": "ui-group",
+                "value": "",
+                "ui": {
+                    "icon": "font-awesome/fa-object-group",
+                    "label": {
+                        "en-US": "OEE trend over time group"
+                    },
+                    "type": "conf-types"
+                }
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "font-awesome/fa-dashboard"
+    },
+    {
+        "id": "d0cb8faefe632f7c",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Retrieve production and downtime data from the last X hours for only the specified line.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "9546e15176174a76",
+            "8e0a212b471cb0bf",
+            "a936543ae4108ee1",
+            "a87115a4cf77de61",
+            "faed086a5c589511",
+            "d46acdae29661dbd",
+            "d28c1c181430c79f",
+            "7a8913d9c44c22d4",
+            "39918dbee86e4e29"
+        ],
+        "x": 34,
+        "y": 319,
+        "w": 1522,
+        "h": 142
+    },
+    {
+        "id": "76e474c5f2dcf891",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Calculate the total of the required properties from 'production data'  and 'downtime data' to calculate OEE",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6ce82c43f4a30e3c",
+            "8ad0b35029d48dea",
+            "e5e340ff8badc22d",
+            "9526d48aff450509",
+            "f5efe4b173f7ceb5",
+            "05e5cc3d35586866",
+            "243746c59c2e51a7",
+            "bb196e219281f038",
+            "68a93425859d1099",
+            "ea80033903771933",
+            "12088c7a09dcbfa3",
+            "9e6d83e151c43397",
+            "c010ac881e399426",
+            "5543f321d4f79096",
+            "b7f79d3d46fbe9b9",
+            "a16ffe97ecc3a38a"
+        ],
+        "x": 34,
+        "y": 479,
+        "w": 1522,
+        "h": 322
+    },
+    {
+        "id": "7b8aa75ee697ae35",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Calculate OEE and other metrics, then store them in the context.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "173bfc9f02a42edd",
+            "4911c37c28517e3c",
+            "c3036f2520f703da",
+            "c24488e0bf2b79ad",
+            "52c558dea7038e2b",
+            "ec079aea91d587c6",
+            "998bca813b897d48"
+        ],
+        "x": 34,
+        "y": 819,
+        "w": 1072,
+        "h": 262
+    },
+    {
+        "id": "0be9ae6306c21325",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Calculate and display OEE for each day.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6f1ba0057ffef987",
+            "f558d50c2aa7a810",
+            "3ed6e8f9faa248c7",
+            "cac8f326d0b2a35a"
+        ],
+        "x": 24,
+        "y": 1539,
+        "w": 1532,
+        "h": 82
+    },
+    {
+        "id": "3f2126c3c00b9e0d",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "853fb3a395d833bb",
+            "a96ffd171bf11823",
+            "3d30995a4329eb71",
+            "0f466ba2a885e22a",
+            "f8229c651706b162",
+            "2ceebc93d54adba4",
+            "0c927abd3b139e97",
+            "8222855bc32e9240"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 1112,
+        "h": 182
+    },
+    {
+        "id": "07a3d5b9075ff846",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "aa7bd867fa7daca5",
+            "234aef8a999cb8d9",
+            "d7641c9327f295f8",
+            "c3e96b73cd6ec586",
+            "13f2e851e3f28ec6",
+            "9a444655c076d5a7",
+            "e1fe1b1a4f1ef2e5",
+            "2beb68abc5da93bc",
+            "b83d517fae3c7bbf",
+            "50ebbbfb159a3cbe",
+            "8873774ad339b67e",
+            "77e22b20d1862c7e"
+        ],
+        "x": 34,
+        "y": 299,
+        "w": 1112,
+        "h": 282
+    },
+    {
+        "id": "c0550db87d6fb947",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "b1f773f4cc2266c6",
+            "cce91928076adb23",
+            "d853a554ecd152b1",
+            "45628fb0ca0a4672",
+            "36ae627ad694fc09",
+            "69afd49e2ceb191b",
+            "808db5612ba1aedc",
+            "6dcd69acd5990793"
+        ],
+        "x": 34,
+        "y": 639,
+        "w": 1112,
+        "h": 142
+    },
+    {
+        "id": "fa1fa51afa53d1c7",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "OEE Dashboard Subflow",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2c68d3b512d92b31",
+            "5f37ed3c389894dc"
+        ],
+        "x": 24,
+        "y": 1679,
+        "w": 382,
+        "h": 82
+    },
+    {
+        "id": "dbaab1cc01a6d373",
+        "type": "group",
+        "z": "29930d82ce6c2a9f",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "79013afc824923e3",
+            "3e60e1fa5132df1f"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 412,
+        "h": 142
+    },
+    {
+        "id": "b07c193b8eadeb60",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Retrieve production and downtime data from only the specified line.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5308313195ab95cc",
+            "fdb819f519cb4fed",
+            "2e08bc667c2651b6",
+            "0bf8726953baaf83",
+            "e891b387b8aa7618",
+            "8ef8af2f5998a1be",
+            "3d6ef3e45461f1e0",
+            "869040a31284b145",
+            "c5f552a65eaf3697"
+        ],
+        "x": 24,
+        "y": 1399,
+        "w": 1532,
+        "h": 122
+    },
+    {
+        "id": "c9808c8faba83c4f",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Prepare Downtime Summary, Recent Downtime Events, Top Underperforming Machines",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "217ebedf00f1ef49",
+            "c61908489e1e770e",
+            "b003a8597a83d3aa",
+            "6b3f2432c97b19fb",
+            "f8992a44b2d7052a",
+            "4f3d607fe60784db",
+            "9343f2d8e32a0fa9",
+            "fecfaf4b3f82b954",
+            "28bb0a7345e33903",
+            "8f9354352703f598",
+            "469e5311e62d5bba",
+            "286830dd36535984",
+            "4ca59946ccac4fe2",
+            "319b9b889816d182",
+            "3201fc934a75160c",
+            "bda552133f52e509",
+            "35074e09bee22e98",
+            "5e1d4452cc063a25",
+            "3b2e9cc52b436e11"
+        ],
+        "x": 24,
+        "y": 1099,
+        "w": 1532,
+        "h": 282
+    },
+    {
+        "id": "6c3fccae834cc4d4",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Configuration",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "84f9e4edcdd0bc50",
+            "67cdf0de4f722bfb",
+            "efeeeeaac639bc8e"
+        ],
+        "x": 34,
+        "y": 179,
+        "w": 842,
+        "h": 122
+    },
+    {
+        "id": "541dd3a074de735c",
+        "type": "group",
+        "z": "7810301b631d5f97",
+        "name": "Documentation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "53716ffe8c008a9a",
+            "7c5e59811d8c51f8"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 312,
+        "h": 82
+    },
+    {
+        "id": "396ed5ba2e5a83d1",
+        "type": "group",
+        "z": "c4edc9bdf4b571a9",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "3095f943766158da",
+            "77f4fd497be942d6",
+            "2655202ff5cebfc1",
+            "3608ddac1dafd8ff",
+            "00e3ca0250c49f49",
+            "e39d166b8ca9a795",
+            "a35f368cbf15f989",
+            "7f017e20e194a415",
+            "43b85cee870831fa",
+            "370789e445fcc15e",
+            "a5267b0e9e439e08",
+            "fb5481cb4cc8b413",
+            "5b7740f402d05b0d",
+            "8de9d67caa9f3034",
+            "630308f08b160050",
+            "4872af4f2b0b7a7d",
+            "268de90e83591fd4",
+            "cee1bf3f07b0f4ca",
+            "7a4d6d58e97cdcdd",
+            "fb4a33e78d4075ac",
+            "aeda24e8b362cb2c",
+            "68dace46520cd422",
+            "339fdc6ae03f4790",
+            "ffb1f84eda8b895b",
+            "5fcd9b319d6b4d9b",
+            "3d202637838a5e8e",
+            "dbe536ab22d09b77"
+        ],
+        "x": 154,
+        "y": 59,
+        "w": 1352,
+        "h": 442
+    },
+    {
+        "id": "35074e09bee22e98",
+        "type": "junction",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "x": 1420,
+        "y": 1280,
+        "wires": [
+            [
+                "28bb0a7345e33903"
+            ]
+        ]
+    },
+    {
+        "id": "5e1d4452cc063a25",
+        "type": "junction",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "x": 1420,
+        "y": 1140,
+        "wires": [
+            [
+                "28bb0a7345e33903"
+            ]
+        ]
+    },
+    {
+        "id": "3b2e9cc52b436e11",
+        "type": "junction",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "x": 1420,
+        "y": 1340,
+        "wires": [
+            [
+                "28bb0a7345e33903"
+            ]
+        ]
+    },
+    {
+        "id": "1ae6d7f7fdb60191",
+        "type": "sqlitedb",
+        "db": "oee-dash-demo.sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "14350e2db0cc0391",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true
+    },
+    {
+        "id": "24f5d1edea2c6d98",
+        "type": "ui-theme",
+        "name": "OEE Blueprint Theme",
+        "colors": {
+            "surface": "#1a1c24",
+            "primary": "#4f7a28",
+            "bgPage": "#000000",
+            "groupBg": "#1a1c24",
+            "groupOutline": "#1a1c24"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "bbbb2e233469d64c",
+        "type": "ui-page",
+        "name": "Line-1",
+        "ui": "14350e2db0cc0391",
+        "path": "/line-1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "24f5d1edea2c6d98",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "8dc69ebb70be1ec2",
+        "type": "ui-group",
+        "name": "Performance Group",
+        "page": "bbbb2e233469d64c",
+        "width": "3",
+        "height": "3",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "aeebc2e4b2cb12dc",
+        "type": "ui-group",
+        "name": "Availability Group",
+        "page": "bbbb2e233469d64c",
+        "width": 3,
+        "height": "2",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f47501505b50b771",
+        "type": "ui-group",
+        "name": "Quality Group",
+        "page": "bbbb2e233469d64c",
+        "width": 3,
+        "height": "2",
+        "order": 4,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "bd81d70bd6038b8b",
+        "type": "ui-group",
+        "name": "OEE Group",
+        "page": "bbbb2e233469d64c",
+        "width": 3,
+        "height": "2",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "8b1b764c92f76ea8",
+        "type": "ui-group",
+        "name": "Top Underperforming Machines ",
+        "page": "bbbb2e233469d64c",
+        "width": 6,
+        "height": "2",
+        "order": 7,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c16bea4d876b87f9",
+        "type": "ui-group",
+        "name": "Production",
+        "page": "bbbb2e233469d64c",
+        "width": "6",
+        "height": "2",
+        "order": 6,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "fe6535f9ca0a79e9",
+        "type": "ui-group",
+        "name": "Downtime summery",
+        "page": "bbbb2e233469d64c",
+        "width": "6",
+        "height": "2",
+        "order": 5,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5613ef1fc2760eb8",
+        "type": "ui-group",
+        "name": "Recent Downtime",
+        "page": "bbbb2e233469d64c",
+        "width": "6",
+        "height": "2",
+        "order": 8,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6b752dfe512bc419",
+        "type": "ui-group",
+        "name": "OEE Trend Over Time",
+        "page": "bbbb2e233469d64c",
+        "width": "12",
+        "height": 1,
+        "order": 9,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "3095f943766158da",
+        "type": "ui-gauge",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Quality",
+        "group": "${Group_Quality}",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "6",
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "Quality",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#7c2a00"
+            },
+            {
+                "from": "50",
+                "color": "#ff4013"
+            },
+            {
+                "from": "70",
+                "color": "#d29d00"
+            },
+            {
+                "from": "85",
+                "color": "#669c35"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": "32",
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "77f4fd497be942d6",
+        "type": "ui-gauge",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Availability",
+        "group": "${Group_Availibility}",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "",
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "Availability",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#7c2a00"
+            },
+            {
+                "from": "50",
+                "color": "#ff4013"
+            },
+            {
+                "from": "70",
+                "color": "#d29d00"
+            },
+            {
+                "from": "85",
+                "color": "#669c35"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": "32",
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1290,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2655202ff5cebfc1",
+        "type": "ui-gauge",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Performance",
+        "group": "${Group_Performance}",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "3",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "Performance",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#7c2a00"
+            },
+            {
+                "from": "50",
+                "color": "#ff4013"
+            },
+            {
+                "from": "70",
+                "color": "#d29d00"
+            },
+            {
+                "from": "85",
+                "color": "#669c35"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": "32",
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1290,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "3608ddac1dafd8ff",
+        "type": "ui-gauge",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "OEE",
+        "group": "${Group_OEE}",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "",
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "OEE",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#7c2a00"
+            },
+            {
+                "from": "50",
+                "color": "#ff4013"
+            },
+            {
+                "from": "70",
+                "color": "#d29d00"
+            },
+            {
+                "from": "85",
+                "color": "#669c35"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": "32",
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1270,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "00e3ca0250c49f49",
+        "type": "ui-chart",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "group": "${Group_Production_Data}",
+        "name": "Production Data",
+        "label": "Production Data",
+        "order": 1,
+        "chartType": "bar",
+        "category": "reason",
+        "categoryType": "property",
+        "xAxisLabel": "",
+        "xAxisProperty": "reason",
+        "xAxisPropertyType": "property",
+        "xAxisType": "category",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "units",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": true,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#669c35",
+            "#ff4013",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#ffffff"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#606060"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "6",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1300,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e39d166b8ca9a795",
+        "type": "ui-chart",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "group": "${Group_OEE_Over_Time}",
+        "name": "",
+        "label": "Daily OEE Trend Over 24 Hours",
+        "order": 1,
+        "chartType": "line",
+        "category": "OEE",
+        "categoryType": "str",
+        "xAxisLabel": "",
+        "xAxisProperty": "date",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "y-L-d",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "oee",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#c4bc00",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#ffffff"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#606060"
+        ],
+        "gridColorDefault": false,
+        "width": "12",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1350,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a35f368cbf15f989",
+        "type": "ui-chart",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "group": "${Group_Downtime_Summery}",
+        "name": "",
+        "label": "Downtime Summary (minutes)",
+        "order": 1,
+        "chartType": "bar",
+        "category": "downtime_reason",
+        "categoryType": "property",
+        "xAxisLabel": "",
+        "xAxisProperty": "downtime_reason",
+        "xAxisPropertyType": "property",
+        "xAxisType": "category",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "downtime_duration_minutes",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": true,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#ffffff"
+        ],
+        "textColorDefault": false,
+        "gridColor": [
+            "#606060"
+        ],
+        "gridColorDefault": false,
+        "width": "6",
+        "height": "6",
+        "className": "",
+        "interpolation": "linear",
+        "x": 1350,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f017e20e194a415",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve and structure the production data (good parts and defects).",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "productionData",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 260,
+        "wires": [
+            [
+                "00e3ca0250c49f49"
+            ]
+        ]
+    },
+    {
+        "id": "43b85cee870831fa",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'OEE'",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "oee",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 220,
+        "wires": [
+            [
+                "3608ddac1dafd8ff"
+            ]
+        ]
+    },
+    {
+        "id": "370789e445fcc15e",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'Performance' ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "performance",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "2655202ff5cebfc1"
+            ]
+        ]
+    },
+    {
+        "id": "a5267b0e9e439e08",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'Availability' ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "availability",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 140,
+        "wires": [
+            [
+                "77f4fd497be942d6"
+            ]
+        ]
+    },
+    {
+        "id": "fb5481cb4cc8b413",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'Quality'",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "quality",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 100,
+        "wires": [
+            [
+                "3095f943766158da"
+            ]
+        ]
+    },
+    {
+        "id": "5b7740f402d05b0d",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'Recent Downtime'",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "recentDowntime",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 380,
+        "wires": [
+            [
+                "dbe536ab22d09b77"
+            ]
+        ]
+    },
+    {
+        "id": "8de9d67caa9f3034",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'Downtime Summery'",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "downtimeSummery",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "a35f368cbf15f989"
+            ]
+        ]
+    },
+    {
+        "id": "630308f08b160050",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'Top Under Performing Machines'",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "topUnderPerformingMachines",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 420,
+        "wires": [
+            [
+                "3d202637838a5e8e"
+            ]
+        ]
+    },
+    {
+        "id": "4872af4f2b0b7a7d",
+        "type": "change",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Retrieve 'OEE Trend'",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "oeeTrend",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "e39d166b8ca9a795"
+            ]
+        ]
+    },
+    {
+        "id": "268de90e83591fd4",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is productionData null?",
+        "property": "productionData",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 280,
+        "y": 260,
+        "wires": [
+            [
+                "7f017e20e194a415"
+            ]
+        ]
+    },
+    {
+        "id": "cee1bf3f07b0f4ca",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is downtimeSummery null?",
+        "property": "downtimeSummery",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "8de9d67caa9f3034"
+            ]
+        ]
+    },
+    {
+        "id": "7a4d6d58e97cdcdd",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is recentDowntime null?",
+        "property": "recentDowntime",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "5b7740f402d05b0d"
+            ]
+        ]
+    },
+    {
+        "id": "fb4a33e78d4075ac",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is topUnderPerformingMachines null?",
+        "property": "topUnderPerformingMachines",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 420,
+        "wires": [
+            [
+                "630308f08b160050"
+            ]
+        ]
+    },
+    {
+        "id": "aeda24e8b362cb2c",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is oeeTrend null?",
+        "property": "oeeTrend",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 460,
+        "wires": [
+            [
+                "4872af4f2b0b7a7d"
+            ]
+        ]
+    },
+    {
+        "id": "68dace46520cd422",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is quality null?",
+        "property": "quality",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 260,
+        "y": 100,
+        "wires": [
+            [
+                "fb5481cb4cc8b413"
+            ]
+        ]
+    },
+    {
+        "id": "339fdc6ae03f4790",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is availability null?",
+        "property": "availability",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "a5267b0e9e439e08"
+            ]
+        ]
+    },
+    {
+        "id": "ffb1f84eda8b895b",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is performance null?",
+        "property": "performance",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "370789e445fcc15e"
+            ]
+        ]
+    },
+    {
+        "id": "5fcd9b319d6b4d9b",
+        "type": "switch",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "name": "Is oee null?",
+        "property": "oee",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "43b85cee870831fa"
+            ]
+        ]
+    },
+    {
+        "id": "3d202637838a5e8e",
+        "type": "ui-table",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "group": "${Group_Top_Underperforming_Machine}",
+        "name": "Top Underperforming Machines ",
+        "label": "Top Underperforming Machines ",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": "5",
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Machine",
+                "key": "machine_name",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Area",
+                "key": "area",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "OEE",
+                "key": "oee",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 1350,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbe536ab22d09b77",
+        "type": "ui-table",
+        "z": "c4edc9bdf4b571a9",
+        "g": "396ed5ba2e5a83d1",
+        "group": "${Group_Recent_Downtime}",
+        "name": "Recent Downtime",
+        "label": "Recent Downtime",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": "5",
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Machine",
+                "key": "machine_name",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Downtime Start At",
+                "key": "downtime_start",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Downtime Duration (minutes)",
+                "key": "downtime_duration_minutes",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Downtime Reason",
+                "key": "downtime_reason",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 1310,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ce82c43f4a30e3c",
+        "type": "split",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "8ad0b35029d48dea",
+                "68a93425859d1099",
+                "bb196e219281f038"
+            ]
+        ]
+    },
+    {
+        "id": "8ad0b35029d48dea",
+        "type": "join",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Calculate the total produced units today",
+        "mode": "reduce",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "$A+payload.total_produced_units",
+        "reduceInit": "0",
+        "reduceInitType": "num",
+        "reduceFixup": "$A",
+        "x": 850,
+        "y": 520,
+        "wires": [
+            [
+                "9526d48aff450509"
+            ]
+        ]
+    },
+    {
+        "id": "e5e340ff8badc22d",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "total_good_units",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1310,
+        "y": 560,
+        "wires": [
+            [
+                "f5efe4b173f7ceb5"
+            ]
+        ]
+    },
+    {
+        "id": "9526d48aff450509",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "total_produced_units",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5efe4b173f7ceb5",
+        "type": "link out",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "4911c37c28517e3c"
+        ],
+        "x": 1515,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "6f1ba0057ffef987",
+        "type": "function",
+        "z": "7810301b631d5f97",
+        "g": "0be9ae6306c21325",
+        "name": "calculate OEE  for each day",
+        "func": "let productionData = msg.production_data;\nlet downtimeData = msg.downtime_data;\nlet line = flow.get('line')\nlet shiftDuration = flow.get('shiftDuration24h') * 3600\n\nlet groupedData = {};\n\nproductionData.forEach(entry => {\n    if (entry.line === line) {\n        let date = entry.timestamp.split(\" \")[0];\n\n        if (!groupedData[date]) {\n            groupedData[date] = {\n                totalShiftDuration: shiftDuration,\n                totalGoodUnits: 0,\n                totalProducedUnits: 0,\n                totalDowntimeSeconds: 0,\n                totalCycleTime: 0,\n                cycleCount: 0,\n                totalTargetOutput: 0,\n                timestamp: entry.timestamp // Store full timestamp for sorting\n            };\n        }\n\n        groupedData[date].totalGoodUnits += entry.good_units;\n        groupedData[date].totalProducedUnits += entry.total_produced_units;\n        groupedData[date].totalCycleTime += entry.cycle_time;\n        groupedData[date].cycleCount++;\n        groupedData[date].totalTargetOutput += entry.target_output;\n    }\n});\n\ndowntimeData.forEach(downtime => {\n    if (downtime.line === line) {\n        let date = downtime.timestamp.split(\" \")[0];\n        if (groupedData[date]) {\n            groupedData[date].totalDowntimeSeconds += downtime.downtime_duration_minutes * 60;\n        }\n    }\n});\n\nlet oeeResults = Object.entries(groupedData).map(([date, data]) => {\n    let avgCycleTime = data.cycleCount > 0 ? data.totalCycleTime / data.cycleCount : 0;\n    let availableTime = data.totalShiftDuration - data.totalDowntimeSeconds;\n    let availability = availableTime / data.totalShiftDuration;\n    let performance = data.totalTargetOutput > 0 ? data.totalProducedUnits / data.totalTargetOutput : 0;\n    let quality = data.totalProducedUnits > 0 ? data.totalGoodUnits / data.totalProducedUnits : 0;\n    let oee = (availability * performance * quality * 100).toFixed(2);\n\n    return { date, availability, performance, quality, oee, timestamp: data.timestamp };\n});\n\n// Sort data by timestamp (oldest to most recent)\noeeResults.sort((a, b) => new Date(a.timestamp).valueOf() - new Date(b.timestamp).valueOf());\nmsg.payload = oeeResults;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1580,
+        "wires": [
+            [
+                "3ed6e8f9faa248c7"
+            ]
+        ]
+    },
+    {
+        "id": "173bfc9f02a42edd",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "7b8aa75ee697ae35",
+        "name": "Calculate OEE and other metrics, then store them in the context.",
+        "rules": [
+            {
+                "t": "set",
+                "p": "quality",
+                "pt": "msg",
+                "to": "$round(($flowContext(\"total_good_units\") / $flowContext(\"total_produced_units\")) * 100, 2)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "availability",
+                "pt": "msg",
+                "to": "$round((($flowContext(\"shift_duration\") - $flowContext(\"total_downtime\")) / $flowContext(\"shift_duration\")) * 100, 2)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "performance",
+                "pt": "msg",
+                "to": "$round(($flowContext(\"total_produced_units\") / $flowContext(\"target_output\")) * 100, 2)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "oee",
+                "pt": "msg",
+                "to": "$round(((availability / 100) * (performance / 100) * (quality / 100)) * 100, 2)\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "productionData",
+                "pt": "msg",
+                "to": "[\t   {\t       \"reason\": \"Total Good Units Produced\",\t       \"units\": $flowContext(\"total_good_units\")     \t   },\t   {\t       \"reason\": \"Total Defective Units Produced\",\t       \"units\": $number($flowContext(\"total_produced_units\")) - $number($flowContext(\"total_good_units\"))     \t   } \t]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 860,
+        "wires": [
+            [
+                "c3036f2520f703da"
+            ]
+        ]
+    },
+    {
+        "id": "4911c37c28517e3c",
+        "type": "link in",
+        "z": "7810301b631d5f97",
+        "g": "7b8aa75ee697ae35",
+        "name": "link in 1",
+        "links": [
+            "f5efe4b173f7ceb5"
+        ],
+        "x": 75,
+        "y": 860,
+        "wires": [
+            [
+                "173bfc9f02a42edd"
+            ]
+        ]
+    },
+    {
+        "id": "05e5cc3d35586866",
+        "type": "link in",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "link in 3",
+        "links": [
+            "9546e15176174a76"
+        ],
+        "x": 75,
+        "y": 640,
+        "wires": [
+            [
+                "9e6d83e151c43397",
+                "c010ac881e399426"
+            ]
+        ]
+    },
+    {
+        "id": "9546e15176174a76",
+        "type": "link out",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "05e5cc3d35586866",
+            "6b3f2432c97b19fb"
+        ],
+        "x": 1515,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "243746c59c2e51a7",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "target_output",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb196e219281f038",
+        "type": "join",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Calculate the total target output of today.",
+        "mode": "reduce",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "$A+payload.target_output",
+        "reduceInit": "0",
+        "reduceInitType": "num",
+        "reduceFixup": "$A",
+        "x": 850,
+        "y": 600,
+        "wires": [
+            [
+                "243746c59c2e51a7"
+            ]
+        ]
+    },
+    {
+        "id": "68a93425859d1099",
+        "type": "join",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Calculate the total good units produced today.",
+        "mode": "reduce",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "$A+payload.good_units",
+        "reduceInit": "0",
+        "reduceInitType": "num",
+        "reduceFixup": "$A",
+        "x": 870,
+        "y": 560,
+        "wires": [
+            [
+                "e5e340ff8badc22d"
+            ]
+        ]
+    },
+    {
+        "id": "8e0a212b471cb0bf",
+        "type": "inject",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "name": "",
+        "props": [],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "a87115a4cf77de61"
+            ]
+        ]
+    },
+    {
+        "id": "c3036f2520f703da",
+        "type": "link out",
+        "z": "7810301b631d5f97",
+        "g": "7b8aa75ee697ae35",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "2c68d3b512d92b31"
+        ],
+        "x": 1065,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "c24488e0bf2b79ad",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "7b8aa75ee697ae35",
+        "name": "Quality = Total Good Units  Produced / Total Target Units ",
+        "info": "",
+        "x": 460,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "52c558dea7038e2b",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "7b8aa75ee697ae35",
+        "name": "Performance = Total Produced Units / Total Target Units ",
+        "info": "",
+        "x": 460,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "ec079aea91d587c6",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "7b8aa75ee697ae35",
+        "name": "Availavity = (Total Shift Duration - Total Downtime) / Total Shift Duration",
+        "info": "",
+        "x": 510,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "998bca813b897d48",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "7b8aa75ee697ae35",
+        "name": "OEE = (Availability) * (Performance) * (Quality)",
+        "info": "",
+        "x": 430,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a936543ae4108ee1",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "name": "Key Instructions: Read Before Proceeding",
+        "info": "The SQL query provided retrieves production data.  \n\n#### What You Need to Do:\n\n- If your field names are different, only change the field names in the query.  \n- Do not change the alias names inside, as they define the structure of the returned data and its properties.\n- Replace table names with the actual table names used in your database.  \n- Do not change the parameters that start with $, as they are used for dynamic values in the query.\n\n#### Following is the query with placeholders to help you  \n\n```SELECT\n    your_timestamp_field AS timestamp,\n    your_machine_name_field AS machine_name,\n    your_area_field AS area,\n    your_line_field AS line,\n    your_total_produced_units_field AS total_produced_units,\n    your_good_units_field AS good_units,\n    your_defect_units_field AS defect_units,\n    your_target_output_field AS target_output\nFROM your_table_name\nWHERE \n    your_timestamp_field BETWEEN $startTime AND $endTime AND your_line_field = $line;\n```\n\n",
+        "x": 600,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f558d50c2aa7a810",
+        "type": "link out",
+        "z": "7810301b631d5f97",
+        "g": "0be9ae6306c21325",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "2c68d3b512d92b31"
+        ],
+        "x": 1515,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "2c68d3b512d92b31",
+        "type": "link in",
+        "z": "7810301b631d5f97",
+        "g": "fa1fa51afa53d1c7",
+        "name": "link in 7",
+        "links": [
+            "c3036f2520f703da",
+            "f558d50c2aa7a810",
+            "28bb0a7345e33903"
+        ],
+        "x": 65,
+        "y": 1720,
+        "wires": [
+            [
+                "5f37ed3c389894dc"
+            ]
+        ]
+    },
+    {
+        "id": "3ed6e8f9faa248c7",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "0be9ae6306c21325",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "oeeTrend",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 1580,
+        "wires": [
+            [
+                "f558d50c2aa7a810"
+            ]
+        ]
+    },
+    {
+        "id": "cac8f326d0b2a35a",
+        "type": "link in",
+        "z": "7810301b631d5f97",
+        "g": "0be9ae6306c21325",
+        "name": "link in 2",
+        "links": [
+            "5308313195ab95cc"
+        ],
+        "x": 65,
+        "y": 1580,
+        "wires": [
+            [
+                "6f1ba0057ffef987"
+            ]
+        ]
+    },
+    {
+        "id": "5308313195ab95cc",
+        "type": "link out",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "cac8f326d0b2a35a"
+        ],
+        "x": 1515,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "fdb819f519cb4fed",
+        "type": "inject",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "name": "",
+        "props": [],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 1480,
+        "wires": [
+            [
+                "0bf8726953baaf83"
+            ]
+        ]
+    },
+    {
+        "id": "2e08bc667c2651b6",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "name": "Key Instructions: Read Before Proceeding",
+        "info": "The SQL query provided retrieves production data.  \n\n#### What You Need to Do:\n\n- If your field names are different, only change the field names in the query.  \n- Do not change the alias names inside, as they define the structure of the returned data and its properties.\n- Replace table names with the actual table names used in your database.  \n- Do not change the parameters that start with $, as they are used for dynamic values in the query.\n\n#### Following is the query with placeholders to help you  \n\n```SELECT\n    your_timestamp_field AS timestamp,\n    your_machine_name_field AS machine_name,\n    your_area_field AS area,\n    your_line_field AS line,\n    your_total_produced_units_field AS total_produced_units,\n    your_good_units_field AS good_units,\n    your_defect_units_field AS defect_units,\n    your_target_output_field AS target_output\nFROM your_table_name\nWHERE your_line_field = $line;\n```\n\n",
+        "x": 620,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "ea80033903771933",
+        "type": "split",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 820,
+        "y": 680,
+        "wires": [
+            [
+                "12088c7a09dcbfa3"
+            ]
+        ]
+    },
+    {
+        "id": "12088c7a09dcbfa3",
+        "type": "join",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Calculate the total downtime duration",
+        "mode": "reduce",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "$A+payload.downtime_duration_minutes",
+        "reduceInit": "0",
+        "reduceInitType": "num",
+        "reduceFixup": "$A",
+        "x": 1070,
+        "y": 680,
+        "wires": [
+            [
+                "b7f79d3d46fbe9b9"
+            ]
+        ]
+    },
+    {
+        "id": "217ebedf00f1ef49",
+        "type": "function",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "Calculate Downtime Summery",
+        "func": "function calculateDowntimeByReason(downtimeData) {\n    if (!Array.isArray(downtimeData) || downtimeData.length === 0) {\n        return [];  // Ensure it's an array and return [] if empty or invalid\n    }\n\n    const summary = {};\n\n    downtimeData.forEach(({ downtime_reason, downtime_duration_minutes }) => {\n        summary[downtime_reason] = (summary[downtime_reason] || 0) + downtime_duration_minutes;\n    });\n\n    return Object.entries(summary).map(([reason, duration]) => ({\n        downtime_reason: reason,\n        downtime_duration_minutes: duration\n    }));\n}\n\n// Example usage\nmsg.payload = calculateDowntimeByReason(msg.payload) || [];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1140,
+        "wires": [
+            [
+                "b003a8597a83d3aa"
+            ]
+        ]
+    },
+    {
+        "id": "c61908489e1e770e",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "Retrieve Downtime Data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "downtime_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 1220,
+        "wires": [
+            [
+                "3201fc934a75160c"
+            ]
+        ]
+    },
+    {
+        "id": "b003a8597a83d3aa",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "downtimeSummery",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 1140,
+        "wires": [
+            [
+                "5e1d4452cc063a25"
+            ]
+        ]
+    },
+    {
+        "id": "6b3f2432c97b19fb",
+        "type": "link in",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "link in 8",
+        "links": [
+            "9546e15176174a76"
+        ],
+        "x": 65,
+        "y": 1280,
+        "wires": [
+            [
+                "8f9354352703f598",
+                "c61908489e1e770e"
+            ]
+        ]
+    },
+    {
+        "id": "f8992a44b2d7052a",
+        "type": "split",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 710,
+        "y": 1200,
+        "wires": [
+            [
+                "4f3d607fe60784db"
+            ]
+        ]
+    },
+    {
+        "id": "4f3d607fe60784db",
+        "type": "sort",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "Sort data newest to oldest",
+        "order": "descending",
+        "as_num": false,
+        "target": "",
+        "targetType": "seq",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload.downtime_start",
+        "seqKeyType": "msg",
+        "x": 910,
+        "y": 1200,
+        "wires": [
+            [
+                "9343f2d8e32a0fa9"
+            ]
+        ]
+    },
+    {
+        "id": "9343f2d8e32a0fa9",
+        "type": "join",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": true,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1110,
+        "y": 1200,
+        "wires": [
+            [
+                "fecfaf4b3f82b954"
+            ]
+        ]
+    },
+    {
+        "id": "fecfaf4b3f82b954",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "recentDowntime",
+                "pt": "msg",
+                "to": "payload^(10)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1310,
+        "y": 1200,
+        "wires": [
+            [
+                "28bb0a7345e33903"
+            ]
+        ]
+    },
+    {
+        "id": "28bb0a7345e33903",
+        "type": "link out",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "link out 10",
+        "mode": "link",
+        "links": [
+            "2c68d3b512d92b31"
+        ],
+        "x": 1515,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "8f9354352703f598",
+        "type": "function",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "Calculate OEE for each machine",
+        "func": "const productionData = msg.production_data;\nconst downtimeEvents = msg.downtime_data;\nconst shiftDuration = (flow.get('shift_duration') || 1) * 60; // Convert hours to minutes\n\n// Group production data by machine (including area)\nlet machineData = {};\nproductionData.forEach(data => {\n    if (!machineData[data.machine_name]) {\n        machineData[data.machine_name] = {\n            total_produced_units: 0,\n            good_units: 0,\n            target_output: 0,\n            count: 0,\n            area: data.area // Store area\n        };\n    }\n    machineData[data.machine_name].total_produced_units += data.total_produced_units;\n    machineData[data.machine_name].good_units += data.good_units;\n    machineData[data.machine_name].target_output += data.target_output;\n    machineData[data.machine_name].count += 1;\n});\n\nlet oeeResults = Object.keys(machineData).map(machineName => {\n    let data = machineData[machineName];\n\n    let machineDowntime = downtimeEvents.filter(event => event.machine_name === machineName);\n\n    function calculateOEE(data, downtime) {\n        if (data.target_output === 0) {\n            return { availability: 0, performance: 0, quality: 0, oee: 0 };\n        }\n\n        let totalDowntime = downtime.reduce((acc, event) =>\n            typeof event.downtime_duration_minutes === 'number' ? acc + event.downtime_duration_minutes : acc\n            , 0);\n\n        let availability = (shiftDuration - totalDowntime) / shiftDuration;\n        availability = Math.max(0, Math.min(1, availability));\n\n        let performance = data.target_output > 0 ? data.total_produced_units / data.target_output : 0;\n        let quality = data.total_produced_units > 0 ? data.good_units / data.total_produced_units : 0;\n\n        let oee = availability * performance * quality;\n\n        return {\n            availability: parseFloat((availability * 100).toFixed(2)),\n            performance: parseFloat((performance * 100).toFixed(2)),\n            quality: parseFloat((quality * 100).toFixed(2)),\n            oee: parseFloat((oee * 100).toFixed(2))\n        };\n    }\n\n    let metrics = calculateOEE(data, machineDowntime);\n\n    return {\n        machine_name: machineName,\n        area: data.area,\n        oee: metrics.oee\n    };\n});\n\n// Filter only machines with OEE < 85\nmsg.payload = oeeResults.filter(machine => machine.oee < 85);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1340,
+        "wires": [
+            [
+                "469e5311e62d5bba"
+            ]
+        ]
+    },
+    {
+        "id": "469e5311e62d5bba",
+        "type": "split",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 510,
+        "y": 1340,
+        "wires": [
+            [
+                "286830dd36535984"
+            ]
+        ]
+    },
+    {
+        "id": "286830dd36535984",
+        "type": "sort",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "Sort OEE from worst to best",
+        "order": "ascending",
+        "as_num": false,
+        "target": "",
+        "targetType": "seq",
+        "msgKey": "payload",
+        "msgKeyType": "elem",
+        "seqKey": "payload.oee",
+        "seqKeyType": "msg",
+        "x": 780,
+        "y": 1340,
+        "wires": [
+            [
+                "4ca59946ccac4fe2"
+            ]
+        ]
+    },
+    {
+        "id": "4ca59946ccac4fe2",
+        "type": "join",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": true,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 990,
+        "y": 1340,
+        "wires": [
+            [
+                "319b9b889816d182"
+            ]
+        ]
+    },
+    {
+        "id": "319b9b889816d182",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topUnderPerformingMachines",
+                "pt": "msg",
+                "to": "$count(payload) > 0 ? payload : []",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 1340,
+        "wires": [
+            [
+                "3b2e9cc52b436e11"
+            ]
+        ]
+    },
+    {
+        "id": "9e6d83e151c43397",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Retrieve Production Data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "production_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 580,
+        "wires": [
+            [
+                "6ce82c43f4a30e3c"
+            ]
+        ]
+    },
+    {
+        "id": "c010ac881e399426",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Retrieve Downtime Data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "downtime_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 720,
+        "wires": [
+            [
+                "5543f321d4f79096"
+            ]
+        ]
+    },
+    {
+        "id": "5543f321d4f79096",
+        "type": "switch",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Is Downtime Data Empty?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 720,
+        "wires": [
+            [
+                "ea80033903771933"
+            ],
+            [
+                "a16ffe97ecc3a38a"
+            ]
+        ]
+    },
+    {
+        "id": "b7f79d3d46fbe9b9",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "total_downtime",
+                "pt": "flow",
+                "to": "payload / 60",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1410,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a16ffe97ecc3a38a",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "76e474c5f2dcf891",
+        "name": "Set Total Downtime to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "total_downtime",
+                "pt": "flow",
+                "to": "0",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3201fc934a75160c",
+        "type": "switch",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "Has Downtime Data \\n No Downtime Data",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 500,
+        "y": 1220,
+        "wires": [
+            [
+                "217ebedf00f1ef49",
+                "f8992a44b2d7052a"
+            ],
+            [
+                "bda552133f52e509"
+            ]
+        ]
+    },
+    {
+        "id": "bda552133f52e509",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "c9808c8faba83c4f",
+        "name": "Set Recent Downtime & Downtime summery to []",
+        "rules": [
+            {
+                "t": "set",
+                "p": "recentDowntime",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "downtimeSummery",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 1280,
+        "wires": [
+            [
+                "35074e09bee22e98"
+            ]
+        ]
+    },
+    {
+        "id": "84f9e4edcdd0bc50",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "6c3fccae834cc4d4",
+        "name": "Key Instructions: Read Before Proceeding",
+        "info": "Update the line name to match the line you are building the OEE dashboard for, and set the shift duration according the actual shift duration of the line for the last \"X hours\" that you want to calculate OEE for and Update the \"shiftDuration24h\" value to represent the total shift duration within a 24-hour period. ",
+        "x": 580,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "67cdf0de4f722bfb",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "6c3fccae834cc4d4",
+        "name": "Set and store the current line and shift duration in context.",
+        "rules": [
+            {
+                "t": "set",
+                "p": "line",
+                "pt": "flow",
+                "to": "Line-1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "shift_duration",
+                "pt": "flow",
+                "to": "12",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "shiftDuration24h",
+                "pt": "flow",
+                "to": "24",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "efeeeeaac639bc8e",
+        "type": "inject",
+        "z": "7810301b631d5f97",
+        "g": "6c3fccae834cc4d4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "67cdf0de4f722bfb"
+            ]
+        ]
+    },
+    {
+        "id": "a87115a4cf77de61",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$startTime",
+                "pt": "msg",
+                "to": "$moment($millis() - ($number($flowContext('shift_duration')) * 60 * 60 * 1000)).format(\"YYYY-MM-DD HH:mm:ss\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "params.$endTime",
+                "pt": "msg",
+                "to": "$moment($millis()).format(\"YYYY-MM-DD HH:mm:ss\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "params.$line",
+                "pt": "msg",
+                "to": "line",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "faed086a5c589511"
+            ]
+        ]
+    },
+    {
+        "id": "d28c1c181430c79f",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "name": "store in msg.production_data",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "production_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 420,
+        "wires": [
+            [
+                "d46acdae29661dbd"
+            ]
+        ]
+    },
+    {
+        "id": "7a8913d9c44c22d4",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "name": "store in msg.downtime_data",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "downtime_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 420,
+        "wires": [
+            [
+                "9546e15176174a76"
+            ]
+        ]
+    },
+    {
+        "id": "0bf8726953baaf83",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$line",
+                "pt": "msg",
+                "to": "line",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 1480,
+        "wires": [
+            [
+                "e891b387b8aa7618"
+            ]
+        ]
+    },
+    {
+        "id": "3d6ef3e45461f1e0",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "name": "store in msg.ProductionData",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "production_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 1480,
+        "wires": [
+            [
+                "8ef8af2f5998a1be"
+            ]
+        ]
+    },
+    {
+        "id": "869040a31284b145",
+        "type": "change",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "name": "store in msg.DowntimeData",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "downtime_data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 1480,
+        "wires": [
+            [
+                "5308313195ab95cc"
+            ]
+        ]
+    },
+    {
+        "id": "39918dbee86e4e29",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "name": "Key Instructions: Read Before Proceeding",
+        "info": "The SQL query provided retrieves downtime data.  \n\n#### What You Need to Do:\n\n- If your field names are different, only change the field names in the query.  \n- Do not change the alias names inside, as they define the structure of the returned data and its properties.\n- Replace table names with the actual table names used in your database.  \n- Do not change the parameters that start with $, as they are used for dynamic values in the query.\n\n#### Following is the query with placeholders to help you  \n\n```sql\nSELECT\n    your_timestamp_field as timestamp,\n    your_machine_name_field as machine_name,\n    your_downtime_start_field as downtime_start,\n    your_ddowntime_duration_minutes_field as downtime_duration_minutes,\n    your_downtime_reason_field as downtime_reason\nFROM your_table_name \nWHERE timestamp BETWEEN $startTime AND $endTime AND your_line_field = $line\n```\n\n\n",
+        "x": 1140,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c5f552a65eaf3697",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "name": "Key Instructions: Read Before Proceeding",
+        "info": "The SQL query provided retrieves downtime data.  \n\n#### What You Need to Do:\n\n- If your field names are different, only change the field names in the query.  \n- Do not change the alias names inside, as they define the structure of the returned data and its properties.\n- Replace table names with the actual table names used in your database.  \n- Do not change the parameters that start with $, as they are used for dynamic values in the query.\n\n#### Following is the query with placeholders to help you  \n\n```sql\nSELECT\n    your_timestamp_field as timestamp,\n    your_machine_name_field as machine_name,\n    your_downtime_start_field as downtime_start,\n    your_ddowntime_duration_minutes_field as downtime_duration_minutes,\n    your_downtime_reason_field as downtime_reason\nFROM your_table_name \nWHERE your_line_field = $line\n```\n\n\n",
+        "x": 1140,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "faed086a5c589511",
+        "type": "sqlite",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n            timestamp as timestamp,\n            machine_name as machine_name,\n            area as area,\n            line as line,\n            total_produced_units as total_produced_units,\n            good_units as good_units,\n            defect_units as defect_units,\n            target_output as target_output\n        FROM ProductionData \n        WHERE \n            timestamp BETWEEN $startTime AND $endTime AND line = $line;\n\n\n",
+        "name": "ProductionData",
+        "x": 520,
+        "y": 420,
+        "wires": [
+            [
+                "d28c1c181430c79f"
+            ]
+        ]
+    },
+    {
+        "id": "d46acdae29661dbd",
+        "type": "sqlite",
+        "z": "7810301b631d5f97",
+        "g": "d0cb8faefe632f7c",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n           timestamp as timestamp,\n                machine_name as machine_name,\n                downtime_start as downtime_start,\n                downtime_duration_minutes as downtime_duration_minutes,\n                downtime_reason as downtime_reason\n        FROM DowntimeData \n        WHERE \n           timestamp BETWEEN $startTime AND $endTime AND line = $line\n\n\n",
+        "name": "DowntimeData",
+        "x": 1060,
+        "y": 420,
+        "wires": [
+            [
+                "7a8913d9c44c22d4"
+            ]
+        ]
+    },
+    {
+        "id": "e891b387b8aa7618",
+        "type": "sqlite",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n            timestamp as timestamp,\n            machine_name as machine_name,\n            area as area,\n            line as line,\n            total_produced_units as total_produced_units,\n            good_units as good_units,\n            defect_units as defect_units,\n            target_output as target_output\n        FROM ProductionData \n        WHERE line = $line;\n\n\n",
+        "name": "ProductionData",
+        "x": 540,
+        "y": 1480,
+        "wires": [
+            [
+                "3d6ef3e45461f1e0"
+            ]
+        ]
+    },
+    {
+        "id": "8ef8af2f5998a1be",
+        "type": "sqlite",
+        "z": "7810301b631d5f97",
+        "g": "b07c193b8eadeb60",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n           timestamp as timestamp,\n                machine_name as machine_name,\n                downtime_start as downtime_start,\n                downtime_duration_minutes as downtime_duration_minutes,\n                downtime_reason as downtime_reason\n        FROM DowntimeData \n        WHERE \n           timestamp BETWEEN $startTime AND $endTime AND line = $line\n\n\n",
+        "name": "DowntimeData",
+        "x": 1060,
+        "y": 1480,
+        "wires": [
+            [
+                "869040a31284b145"
+            ]
+        ]
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "541dd3a074de735c",
+        "name": "README",
+        "info": "# OEE Dashboard Blueprint\n\nThe OEE (Overall Equipment Effectiveness) Dashboard Blueprint provides a structured framework for visualizing and monitoring equipment performance, availability, and quality in manufacturing environments. This blueprint helps teams track key real-time metrics to improve efficiency and reduce downtime.\n\n## Features\n\n- **Real-time OEE Calculation:** Tracks Availability, Performance, and Quality metrics at the line level.\n- **Visualization of Production Efficiency:** Displays good and defective product counts.\n- **Downtime Summary:** Shows the duration for each downtime reason.\n- **Top Underperforming Machines:** Identifies the lowest-performing machines in a production line based on OEE.\n- **Recent Downtime Events:** Provides insights into the latest downtime incidents.\n- **Historical Chart:** Displays daily OEE trends for production lines.\n- **Customizable Dashboards:** Users can modify layouts and visualizations with a low-code Node-RED interface.\n\n## Getting Started with OEE Dashboard Blueprint\n\n### Prerequisites\n\nBefore moving forward, ensure you have the following prepared:\n\n- A FlowFuse account with the Starter, Team, or Enterprise tier.\n\n### Setting Up the Blueprint\n\n1. To get started with the blueprint, click the \"Start\" button at the bottom. This will redirect you to the FlowFuse platform instance creation interface with the blueprint pre-selected.\n2. Select the appropriate settings based on your preferences, such as instance type, application, and Node-RED version.\n3. Click the “Create Instance” button.\n\nOnce the instance is successfully created, you can:\n\n- Click the “Open Editor” button in the top-right corner to navigate to the Node-RED Editor.\n\n### Testing the Blueprint with Simulated Data  \n\nTo test and explore the blueprint, use the simulated data. A flow is available in the blueprint to generate and insert simulated production and downtime data into an SQLite table, which is automatically created upon deployment. \n\nTo use this flow:  \n\n1. Switch to the **\"Simulated Data Generation\"** flow tab. \n2. To start the process, click the inject node labeled **\"Click to generate and insert demo data\"**.  \n3. Wait for a minute while the data is generated and inserted.  \n\nThis will populate the database with production and downtime records for the last 30 days, allowing you to analyze and test the dashboard effectively.\n\n### Setting Up the Blueprint in the Real World\n\nTo implement the blueprint in a production environment, replace the **SQLite** node with the database where your production and downtime data is persisted. This can be **TimescaleDB**, **InfluxDB**, or any other suitable database.  \n\nIf you use **TimescaleDB** or another SQL-based database, the transition will be straightforward, as they share similar query structures. However, additional modifications will be required for **InfluxDB**, which is not SQL-based.  \n\nFor detailed instructions, refer to [how to set up and use different databases with Node-RED](/node-red/database/).\n\n### Blueprint Flexibility with Data  \n\nThe OEE Dashboard Blueprint is designed to be adaptable to various manufacturing setups. Users can integrate it with different data sources and customize dashboard elements according to specific needs.  \n\n## **Customizing SQL Queries to Fit Your Database**  \n\nThe blueprint includes two SQLite nodes connected to a **Template** node containing SQL queries:  \n\n1. One SQLite flow retrieves data from the last X hours for a specified production line, combining results from both tables.\n2. The other SQLite flow retrieves all data from both tables, combining results from both tables.\n\n### Modifying SQL Queries for Your Setup:  \n\nTo adapt the queries to your database structure:  \n\n1. If your field names are different, only update the field names in the query—do not change the alias names inside, as they define the structure of the returned data and its properties.\n2. Replace table names with the actual table names used in your database.\n3. Do not change the parameters that start with $, as they are used for dynamic values in the query.\n\nFor example, we have the following query to retrieve the production data:\n\n```sql\nSELECT\n    timestamp as timestamp,\n    machine_name as machine_name,\n    area as area,\n    line as line,\n    total_produced_units as total_produced_units,\n    good_units as good_units,\n    defect_units as defect_units,\n    target_output as target_output\nFROM ProductionData \nWHERE \n    timestamp BETWEEN $startTime AND $endTime AND line = $line;\n```\n\nIf your database uses different field names, such as `time` instead of `timestamp`, `machine` instead of `machine_name`, `section` instead of `area`, `production_line` instead of `line`, `produced_units` instead of `total_produced_units`, `quality_units` instead of `good_units`, `faulty_units` instead of `defect_units`, or `planned_output` instead of `target_output`, you should update the query accordingly. After modification, it should look like this:\n\n```sql\nSELECT\n    time AS timestamp,\n    machine AS machine_name,\n    section AS area,\n    production_line AS line,\n    produced_units AS total_produced_units,\n    quality_units AS good_units,\n    faulty_units AS defect_units,\n    planned_output AS target_output\nFROM YourTableName \nWHERE \n    time BETWEEN $startTime AND $endTime AND production_line = $line;\n```\n\nTo help you update them easily, I have added the SQL query with placeholders, along with instructions in the comment node named \"Key Instructions: Read Before Proceeding.\" Make sure to read and follow them before proceeding.\n\n### Configuring Dashboard for Your Production Line \n\nThe blueprint includes a single page that calculates and visualizes OEE for \"Line-1\" by default. You can modify this by following these steps:  \n\n1. Locate the Change node labeled **\"Set and store the current line and shift duration in context.\"**  \n2. Update the **\"line\"** value to match your actual production line name.  \n3. Set the **\"shift_duration\"** value to specify the actual shift duration of the line for the last **X hours** that you want to calculate OEE for.  \n4. Update the **\"shiftDuration24h\"** value to represent the total shift duration within a **24-hour period**.  \n\n### Creating Additional Dashboard Pages for Other Lines  \n\nIf you need to create dashboard pages for additional production lines, follow these steps:  \n\n1. **Copy the existing flow** from the current flow tab.  \n2. **Create a new flow tab** in Node-RED and paste the copied flow.  \n3. Update the configuration node values for the new line.\n4. Locate the **\"OEE Dashboard for Line 1.\"** Subflow and configure it accordingly.\n5. Add new pages and groups for each dashboard element.  \n\n## Conclusion\n\nThe OEE Dashboard Blueprint provides a comprehensive and adaptable solution for tracking and improving manufacturing efficiency. By offering real-time insights into production performance, downtime events, and quality metrics, this dashboard helps teams make data-driven decisions to optimize operations. With its low-code Node-RED integration, users can easily customize queries, dashboard layouts, and data sources to fit their specific manufacturing environment. Whether using simulated data for testing or integrating with live production databases, this blueprint serves as a powerful tool to enhance Overall Equipment Effectiveness.\n",
+        "x": 260,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7c5e59811d8c51f8",
+        "type": "comment",
+        "z": "7810301b631d5f97",
+        "g": "541dd3a074de735c",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 110,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5f37ed3c389894dc",
+        "type": "subflow:c4edc9bdf4b571a9",
+        "z": "7810301b631d5f97",
+        "g": "fa1fa51afa53d1c7",
+        "name": "",
+        "env": [
+            {
+                "name": "Group_Quality",
+                "value": "f47501505b50b771",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_Availibility",
+                "value": "aeebc2e4b2cb12dc",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_Performance",
+                "value": "8dc69ebb70be1ec2",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_OEE",
+                "value": "bd81d70bd6038b8b",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_Production_Data",
+                "value": "c16bea4d876b87f9",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_Recent_Downtime",
+                "value": "5613ef1fc2760eb8",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_Downtime_Summery",
+                "value": "fe6535f9ca0a79e9",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_Top_Underperforming_Machine",
+                "value": "8b1b764c92f76ea8",
+                "type": "conf-type"
+            },
+            {
+                "name": "Group_OEE_Over_Time",
+                "value": "6b752dfe512bc419",
+                "type": "conf-type"
+            },
+            {
+                "key": "DB2_SF_ORDER",
+                "value": "1",
+                "type": "str"
+            }
+        ],
+        "x": 300,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "79013afc824923e3",
+        "type": "ui-template",
+        "z": "29930d82ce6c2a9f",
+        "g": "dbaab1cc01a6d373",
+        "group": "",
+        "page": "",
+        "ui": "14350e2db0cc0391",
+        "name": "Header Elements (Logo, OEE Dashboard Title)",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div>\n    <!-- Only teleport when both target elements are available -->\n    <Teleport v-if=\"ready\" to=\"#app-bar-title\">\n      <h3 style=\"color: white; margin-left: auto; margin-right: auto;\">OEE Dashboard</h3>\n    </Teleport>\n\n    <Teleport v-if=\"ready\" to=\"#app-bar-actions\">\n      <div style=\"display: flex; align-items: center;\">\n        <img\n          height=\"30px\"\n          src=\"https://flowfuse.com/handbook/images/logos/ff-logo--wordmark--white.png\"\n          style=\"margin-right: 25px;\"\n        />\n      </div>\n    </Teleport>\n  </div>\n</template>\n\n<script>\n  export default {\n  data() {\n    return {\n      ready: false\n    };\n  },\n  mounted() {\n    this.waitForTargets(['#app-bar-title', '#app-bar-actions'], () => {\n      this.ready = true;\n    });\n  },\n  methods: {\n    waitForTargets(selectors, callback) {\n      const interval = setInterval(() => {\n        const allExist = selectors.every(sel => document.querySelector(sel));\n        if (allExist) {\n          clearInterval(interval);\n          callback();\n        }\n      }, 100);\n    }\n  }\n};\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 240,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e60e1fa5132df1f",
+        "type": "ui-template",
+        "z": "29930d82ce6c2a9f",
+        "g": "dbaab1cc01a6d373",
+        "group": "",
+        "page": "",
+        "ui": "14350e2db0cc0391",
+        "name": "CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".nrdb-ui-group > .v-card {\n    height: 100% !important;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a96ffd171bf11823",
+        "type": "template",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "Create ProductionData table",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "CREATE TABLE IF NOT EXISTS ProductionData (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    timestamp DATETIME NOT NULL,\n    area VARCHAR(255) NOT NULL,\n    line VARCHAR(100) NOT NULL,  \n    machine_name VARCHAR(255) NOT NULL,\n    shift VARCHAR(50) NOT NULL,\n    shift_duration DECIMAL(5,2) NOT NULL,\n    good_units INT NOT NULL,\n    defect_units INT NOT NULL,\n    total_produced_units INT NOT NULL,\n    cycle_time DECIMAL(5,2) NOT NULL,\n    ideal_cycle_time DECIMAL(5,2) NOT NULL,\n    target_output INT NOT NULL DEFAULT 0,\n    operating_time INT NOT NULL\n);\n",
+        "output": "str",
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "853fb3a395d833bb"
+            ]
+        ]
+    },
+    {
+        "id": "3d30995a4329eb71",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "a96ffd171bf11823"
+            ]
+        ]
+    },
+    {
+        "id": "0f466ba2a885e22a",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2ceebc93d54adba4",
+        "type": "template",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "Create Downtime table",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "CREATE TABLE IF NOT EXISTS DowntimeData (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    timestamp DATETIME NOT NULL,\n    area VARCHAR(255) NOT NULL,\n    line VARCHAR(100) NOT NULL,  \n    machine_name VARCHAR(255) NOT NULL,\n    shift VARCHAR(50) NOT NULL,\n    downtime_start DATETIME NOT NULL,\n    downtime_end DATETIME NOT NULL,\n    downtime_duration_minutes INTEGER NOT NULL,\n    downtime_type VARCHAR(50) NOT NULL CHECK (downtime_type IN ('Planned', 'Unplanned')),\n    downtime_reason TEXT NOT NULL\n);\n",
+        "output": "str",
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "f8229c651706b162"
+            ]
+        ]
+    },
+    {
+        "id": "0c927abd3b139e97",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2.2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "2ceebc93d54adba4"
+            ]
+        ]
+    },
+    {
+        "id": "8222855bc32e9240",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "234aef8a999cb8d9",
+        "type": "template",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Insert production data record",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO ProductionData (\n    timestamp, \n    area, \n    line, \n    machine_name, \n    shift, \n    shift_duration, \n    good_units, \n    defect_units, \n    total_produced_units, \n    cycle_time, \n    ideal_cycle_time,  \n    target_output,\n    operating_time  \n) \nVALUES (\n    '{{payload.timestamp}}', \n    '{{payload.area}}', \n    '{{payload.line}}', \n    '{{payload.machine_name}}', \n    '{{payload.shift}}', \n    '{{payload.shift_duration}}',  \n    '{{payload.good_units}}',  \n    '{{payload.defect_units}}',  \n    '{{payload.total_produced_units}}',  \n    '{{payload.cycle_time}}',  \n    '{{payload.ideal_cycle_time}}',  \n    '{{payload.target_output}}',  \n    '{{payload.operating_time}}'  \n);\n",
+        "output": "str",
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "aa7bd867fa7daca5"
+            ]
+        ]
+    },
+    {
+        "id": "d7641c9327f295f8",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "cce91928076adb23",
+        "type": "template",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "Drop demo downtime data",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "Drop table DowntimeData;",
+        "output": "str",
+        "x": 430,
+        "y": 740,
+        "wires": [
+            [
+                "b1f773f4cc2266c6"
+            ]
+        ]
+    },
+    {
+        "id": "d853a554ecd152b1",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 740,
+        "wires": [
+            [
+                "cce91928076adb23"
+            ]
+        ]
+    },
+    {
+        "id": "45628fb0ca0a4672",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "c3e96b73cd6ec586",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Click to generate and insert demo data.",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 340,
+        "wires": [
+            [
+                "13f2e851e3f28ec6"
+            ]
+        ]
+    },
+    {
+        "id": "13f2e851e3f28ec6",
+        "type": "function",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Create simulated production & downtime data",
+        "func": "function generateProductionData() {\n    const areas = {\n        \"Pressing\": [\"Hydraulic Press\", \"CNC Press Brake\", \"Stamping Press\", \"Power Press\"],\n        \"Assembly\": [\"Robotic Arm\", \"Screw Insertion Machine\", \"Pick-and-Place Machine\"],\n        \"Packaging\": [\"Carton Sealing Machine\", \"Shrink Wrapping Machine\", \"Bottle Filling and Capping Machine\", \"Flow Wrapper\"]\n    };\n\n    const shifts = [\"Shift 1\", \"Shift 2\", \"Shift 3\"];\n    const shiftStartTimes = {\n        \"Shift 1\": \"00:00:00\",\n        \"Shift 2\": \"08:00:00\",\n        \"Shift 3\": \"16:00:00\"\n    };\n\n    const uniqueShortCodes = {\n        \"Pressing\": [\"HP\", \"PB\", \"SP\", \"PP\"],\n        \"Assembly\": [\"RA\", \"SIM\", \"P and P\"],\n        \"Packaging\": [\"CSM\", \"SWM\", \"BFCM\", \"FW\"]\n    };\n\n    const downtimeTypes = [\"Planned\", \"Unplanned\"];\n    const plannedDowntimeReasons = [\n        \"Scheduled Maintenance\", \"Equipment Upgrades\", \"Shift Changeover\",\n        \"Tool Changeover\", \"Calibration and Quality Checks\", \"Cleaning and Sanitation\", \"Planned Power Outage\"\n    ];\n    const unplannedDowntimeReasons = [\n        \"Power Failure\", \"Material Shortage\", \"Technical Fault\", \"Operator Unavailable\"\n    ];\n\n    const data = [];\n    const downtimeData = [];\n    const now = new Date();\n\n    const normalizeTimestamp = (timestamp) => timestamp.toISOString().split(\"T\").join(\" \").slice(0, 19);\n\n    for (let i = 0; i < 30; i++) {\n        const date = new Date();\n        date.setDate(now.getDate() - i);\n        const formattedDate = date.toISOString().split(\"T\")[0];\n\n        shifts.forEach(shift => {\n            const shiftStart = shiftStartTimes[shift];\n            const shiftTimestamp = new Date(`${formattedDate}T${shiftStart}`);\n\n            Object.entries(areas).forEach(([area, machines]) => {\n                machines.forEach((_, index) => {\n                    const randomCode = uniqueShortCodes[area][Math.floor(Math.random() * uniqueShortCodes[area].length)];\n                    const uniqueID = Math.floor(10000 + Math.random() * 90000);\n                    const shortMachineName = `${randomCode}-${uniqueID}`;\n\n                    const shiftDuration = 8;\n                    let downtimeMinutes = 0;\n                    if (Math.random() < 0.25) {\n                        downtimeMinutes = Math.floor(shiftDuration * 60 * Math.random() * 0.2);\n                    }\n                    const operatingTime = (shiftDuration * 60 - downtimeMinutes) * 60;\n\n                    let efficiency = Math.random() * 0.2 + 0.75;\n                    let targetOutput = Math.floor(operatingTime / 3) || 1;\n                    let totalProduced = Math.floor(targetOutput * efficiency);\n                    totalProduced = Math.min(totalProduced, targetOutput);\n\n                    const defectRate = Math.random() * 0.02 + 0.01;\n                    const defectUnits = Math.floor(totalProduced * defectRate);\n                    const goodUnits = totalProduced - defectUnits;\n\n                    const line = `Line-${index + 1}`;\n                    const timestamp = normalizeTimestamp(shiftTimestamp);\n\n                    if (downtimeMinutes > 0) {\n                        const downtimeStartMinutes = Math.floor(Math.random() * (shiftDuration * 60 - downtimeMinutes));\n                        const downtimeStart = new Date(shiftTimestamp);\n                        downtimeStart.setMinutes(downtimeStart.getMinutes() + downtimeStartMinutes);\n\n                        const downtimeEnd = new Date(downtimeStart);\n                        downtimeEnd.setMinutes(downtimeEnd.getMinutes() + downtimeMinutes);\n\n                        const downtimeType = downtimeTypes[Math.floor(Math.random() * downtimeTypes.length)];\n                        const downtimeReason = downtimeType === \"Planned\"\n                            ? plannedDowntimeReasons[Math.floor(Math.random() * plannedDowntimeReasons.length)]\n                            : unplannedDowntimeReasons[Math.floor(Math.random() * unplannedDowntimeReasons.length)];\n\n                        downtimeData.push({\n                            timestamp,\n                            area,\n                            machine_name: shortMachineName,\n                            shift,\n                            downtime_start: normalizeTimestamp(downtimeStart),\n                            downtime_end: normalizeTimestamp(downtimeEnd),\n                            downtime_duration_minutes: downtimeMinutes,\n                            downtime_reason: downtimeReason,\n                            downtime_type: downtimeType,\n                            line\n                        });\n                    }\n\n                    data.push({\n                        timestamp,\n                        area,\n                        machine_name: shortMachineName,\n                        shift,\n                        shift_duration: shiftDuration,\n                        operating_time: operatingTime - downtimeMinutes * 60,\n                        good_units: goodUnits,\n                        defect_units: defectUnits,\n                        total_produced_units: totalProduced,\n                        target_output: targetOutput,\n                        line\n                    });\n                });\n            });\n        });\n    }\n\n    return [\n        { payload: data },\n        { payload: downtimeData }\n    ];\n}\n\nconst productionDataSet = generateProductionData();\n\nreturn [\n    { payload: productionDataSet[0].payload },\n    { payload: productionDataSet[1].payload }\n];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "9a444655c076d5a7"
+            ],
+            [
+                "8873774ad339b67e"
+            ]
+        ]
+    },
+    {
+        "id": "9a444655c076d5a7",
+        "type": "split",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "e1fe1b1a4f1ef2e5"
+            ]
+        ]
+    },
+    {
+        "id": "e1fe1b1a4f1ef2e5",
+        "type": "delay",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "10 msg/s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "10",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [
+                "234aef8a999cb8d9"
+            ]
+        ]
+    },
+    {
+        "id": "b83d517fae3c7bbf",
+        "type": "template",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Insert downtime data record",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO DowntimeData ( timestamp, area, line, machine_name, shift, \n    downtime_start, downtime_end, downtime_duration_minutes, \n    downtime_type, downtime_reason\n)  \nVALUES (\n    '{{payload.timestamp}}',  \n    '{{payload.area}}', \n    '{{payload.line}}', \n    '{{payload.machine_name}}', \n    '{{payload.shift}}', \n    '{{payload.downtime_start}}',\n    '{{payload.downtime_end}}',  \n    {{payload.downtime_duration_minutes}},  \n    '{{payload.downtime_type}}',  \n    '{{payload.downtime_reason}}'  \n);\n",
+        "output": "str",
+        "x": 980,
+        "y": 480,
+        "wires": [
+            [
+                "2beb68abc5da93bc"
+            ]
+        ]
+    },
+    {
+        "id": "50ebbbfb159a3cbe",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "8873774ad339b67e",
+        "type": "split",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 590,
+        "y": 480,
+        "wires": [
+            [
+                "77e22b20d1862c7e"
+            ]
+        ]
+    },
+    {
+        "id": "77e22b20d1862c7e",
+        "type": "delay",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "10 msg/s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "10",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "b83d517fae3c7bbf"
+            ]
+        ]
+    },
+    {
+        "id": "69afd49e2ceb191b",
+        "type": "template",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "Drop demo production data",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "Drop table ProductionData;",
+        "output": "str",
+        "x": 430,
+        "y": 680,
+        "wires": [
+            [
+                "36ae627ad694fc09"
+            ]
+        ]
+    },
+    {
+        "id": "808db5612ba1aedc",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "69afd49e2ceb191b"
+            ]
+        ]
+    },
+    {
+        "id": "6dcd69acd5990793",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "853fb3a395d833bb",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 760,
+        "y": 100,
+        "wires": [
+            [
+                "0f466ba2a885e22a"
+            ]
+        ]
+    },
+    {
+        "id": "f8229c651706b162",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 760,
+        "y": 200,
+        "wires": [
+            [
+                "8222855bc32e9240"
+            ]
+        ]
+    },
+    {
+        "id": "aa7bd867fa7daca5",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [
+                "d7641c9327f295f8"
+            ]
+        ]
+    },
+    {
+        "id": "b1f773f4cc2266c6",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 740,
+        "y": 740,
+        "wires": [
+            [
+                "45628fb0ca0a4672"
+            ]
+        ]
+    },
+    {
+        "id": "2beb68abc5da93bc",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 760,
+        "y": 540,
+        "wires": [
+            [
+                "50ebbbfb159a3cbe"
+            ]
+        ]
+    },
+    {
+        "id": "36ae627ad694fc09",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 740,
+        "y": 680,
+        "wires": [
+            [
+                "6dcd69acd5990793"
+            ]
+        ]
+    }
+]

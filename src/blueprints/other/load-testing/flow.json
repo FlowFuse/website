@@ -1,0 +1,2894 @@
+[
+    {
+        "id": "05c10ea2d1a09570",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8d3d74e9316db46e",
+        "type": "tab",
+        "label": "Initial Setup",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "70f2f192c6a0b7c7",
+        "type": "group",
+        "z": "05c10ea2d1a09570",
+        "name": "API Operation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "959c0b09823a58cb",
+            "3aa6997c8a4ede87",
+            "83c41497d3fb6fd9",
+            "9173ae1a22e4be0f",
+            "88442ce246da4603",
+            "a1d52ecb0058c3b8",
+            "819839ce152a22d9",
+            "8d5dfc08f320e137",
+            "1ded29f9454aad2d",
+            "11c1e902a6a33118",
+            "941683588bddf077",
+            "1bd781f868030783",
+            "1496855b96d14b8b",
+            "2e484f8f374d1c48",
+            "47bc7b4e9b4c987b",
+            "779c4e97237345f7",
+            "67890772.e9adf",
+            "7ac537f1976bd1ca",
+            "ecc8c694ddd71d6d",
+            "851d5491b0e82335",
+            "23174efc5e2d08e6",
+            "07d9caa9725ee366",
+            "c72e43fb1b8c7c23",
+            "67b6bab5a03c380f",
+            "77e30922203425be",
+            "f3d2c8e3f701439d",
+            "7719d52549549961"
+        ],
+        "x": 14,
+        "y": 239,
+        "w": 772,
+        "h": 582
+    },
+    {
+        "id": "3505d4b74f6c30c6",
+        "type": "group",
+        "z": "05c10ea2d1a09570",
+        "name": "File Operation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e0d45fb1a3bc0ccf",
+            "286784af92e23c29",
+            "9701338133fdc97f",
+            "e7a8ad667d793dfc",
+            "489cca7a044170c8",
+            "d5dbd6a882752cac",
+            "72b53c16ed294622",
+            "6be71d567af3ba41",
+            "a7687f3fca811742",
+            "de89ef3834babfe5",
+            "b09acd001e300ba8",
+            "cb94f170c4b7b40a",
+            "f26296e09ace2286",
+            "4b03b4887c5783e0",
+            "0a5af7f48d79bf16"
+        ],
+        "x": 14,
+        "y": 839,
+        "w": 732,
+        "h": 342
+    },
+    {
+        "id": "aa247fb1ef163c92",
+        "type": "group",
+        "z": "8d3d74e9316db46e",
+        "name": "Create Demo file",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "bfb2903869157e1f",
+            "01503f5a493d03cc",
+            "2537ebc276403591",
+            "8ad766e1d67466f4"
+        ],
+        "x": 14,
+        "y": 319,
+        "w": 812,
+        "h": 162
+    },
+    {
+        "id": "7587359be110b25b",
+        "type": "group",
+        "z": "05c10ea2d1a09570",
+        "name": "Database Operation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "acb3d27325d4e738",
+            "ed58fe0d72276825",
+            "0bb743a7b3da7b18",
+            "5552169f73f2e141",
+            "a157478e5ec50c60",
+            "d123f831c91ac8cf",
+            "9a9ebfa1fbc4b628",
+            "17d384897de4ca36",
+            "fcb23e70c1c15fd1",
+            "a2bde6a82dfc58c5",
+            "a9413763e1b50733",
+            "fe9db1abf24cf0e9",
+            "480c4931e6137556",
+            "659c546569dfc207",
+            "287eecfba5784360",
+            "23a04ea1173a2ff2",
+            "5a77beb6776fe826",
+            "b23761733a79d3aa",
+            "28f1806bb79bd3ec",
+            "747dcb557455fbbb",
+            "38a6e9e6a9319c49",
+            "db8d69bdb2976bd9",
+            "568a4851d442a480",
+            "0ac1f7e166e162f6"
+        ],
+        "x": 14,
+        "y": 1199,
+        "w": 752,
+        "h": 522
+    },
+    {
+        "id": "3f4b8ae62447ebaf",
+        "type": "group",
+        "z": "05c10ea2d1a09570",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "3385334e4c863ccd",
+            "849812d68a769d47",
+            "3cc8bef99fc09e4a",
+            "0cc9e96a26c45ff3",
+            "4cfea56b18b2baeb",
+            "8fdd75a699887fbc",
+            "70df197172e07df5",
+            "e6cecc9506e0f00a",
+            "af3471363a4f3870",
+            "b5347ef70876b01f",
+            "7b1bf2b0ed6a4307",
+            "a418fcc7c7dae96a",
+            "275fe55aa03dd50b",
+            "610419886a64f45e",
+            "1ceb4b434be17923"
+        ],
+        "x": 14,
+        "y": 1739,
+        "w": 712,
+        "h": 362
+    },
+    {
+        "id": "e285c098a1565bd0",
+        "type": "group",
+        "z": "05c10ea2d1a09570",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "d725d5cca4973651"
+        ],
+        "x": 14,
+        "y": 139,
+        "w": 252,
+        "h": 82
+    },
+    {
+        "id": "9ca87ad7944c0dff",
+        "type": "group",
+        "z": "8d3d74e9316db46e",
+        "name": "Demo APIs",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "8f7717a16d3031f6",
+            "90b631d9dcc56ceb",
+            "14ce588ea29f0561",
+            "09d8c4ac45c41910",
+            "34f8e197e0177b6f",
+            "374bb865816299de",
+            "e3621e7859517c29",
+            "fb30099ddf670431",
+            "36808a9502d79fda",
+            "fefe668b9ad695cd",
+            "931ccfd4cf165fae",
+            "aad59a4b2dd6d0b3",
+            "db823dfe5016eb3f"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 812,
+        "h": 262
+    },
+    {
+        "id": "80c61aec1fd5d0af",
+        "type": "group",
+        "z": "05c10ea2d1a09570",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "e22aaf48d523bfe0",
+            "0a541c069aeda82e"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 312,
+        "h": 82
+    },
+    {
+        "id": "fe1f8c2ab27513b8",
+        "type": "group",
+        "z": "8d3d74e9316db46e",
+        "name": "Create demo table with some demo records",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c78b4d5a3c6c9210",
+            "7bd58ef5f25ced76",
+            "14f4c86283758999",
+            "92069b6e2c3f5bb1",
+            "7034862eed7b74b1",
+            "6e918bfc6fa9cff7",
+            "87460ffb08a24dcc",
+            "b5f49c247ba9b8ff",
+            "e3ab911fd7d6799d"
+        ],
+        "x": 14,
+        "y": 499,
+        "w": 832,
+        "h": 262
+    },
+    {
+        "id": "46de808d763294c2",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "636f3025f138f2ee",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#062a74",
+            "primary": "#062a74",
+            "bgPage": "#e9e8e9",
+            "groupBg": "#ffffff",
+            "groupOutline": "#b18cfe"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "1e7573a42d9b229f",
+        "type": "ui-page",
+        "name": "Instance Load Testing",
+        "ui": "46de808d763294c2",
+        "path": "/load-testing",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "636f3025f138f2ee",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "d23c332f1bd14eca",
+        "type": "ui-group",
+        "name": "API Operations",
+        "page": "1e7573a42d9b229f",
+        "width": "12",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e4a3f22c41785050",
+        "type": "ui-group",
+        "name": "Database Operation",
+        "page": "1e7573a42d9b229f",
+        "width": "12",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "fd2927bef48a4354",
+        "type": "ui-group",
+        "name": "File Operations",
+        "page": "1e7573a42d9b229f",
+        "width": "12",
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "af8181435967f101",
+        "type": "sqlitedb",
+        "db": "machines.sqlite3",
+        "mode": "RWC"
+    },
+    {
+        "id": "d13309efc8ebbf79",
+        "type": "ui-page",
+        "name": "Document",
+        "ui": "46de808d763294c2",
+        "path": "/document",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "636f3025f138f2ee",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "71444ca48889ecd5",
+        "type": "ui-group",
+        "name": "Document",
+        "page": "d13309efc8ebbf79",
+        "width": "12",
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "959c0b09823a58cb",
+        "type": "ui-form",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "API Ops",
+        "group": "d23c332f1bd14eca",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Operation",
+                "key": "Operation",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Operation Load",
+                "key": "Load",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Operation": "",
+            "Load": ""
+        },
+        "payload": "",
+        "submit": "START",
+        "cancel": "",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [
+            {
+                "dropdown": "Operation",
+                "value": "GET",
+                "label": "GET"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "POST",
+                "label": "POST"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "PUT",
+                "label": "PUT"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "DELETE",
+                "label": "DELETE"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "ALL",
+                "label": "ALL"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Low",
+                "label": "Low: 30 Messages, 1 msg every 2 second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Medium",
+                "label": "Medium: 120 Messages, 2 msgs per second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "High",
+                "label": "High: 300 Messages, 5 msgs per second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Extreme",
+                "label": "Extreme: 600 Messages, 10 msgs per second"
+            }
+        ],
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "83c41497d3fb6fd9"
+            ]
+        ]
+    },
+    {
+        "id": "3aa6997c8a4ede87",
+        "type": "http request",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "GET",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 600,
+        "wires": [
+            [
+                "77e30922203425be"
+            ]
+        ]
+    },
+    {
+        "id": "83c41497d3fb6fd9",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "Store API Operation Configurations",
+        "rules": [
+            {
+                "t": "set",
+                "p": "API_OPS_CONFIG",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "9173ae1a22e4be0f"
+            ]
+        ]
+    },
+    {
+        "id": "9173ae1a22e4be0f",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "7ac537f1976bd1ca"
+        ],
+        "x": 575,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "88442ce246da4603",
+        "type": "switch",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "",
+        "property": "API_OPS_CONFIG.Operation",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "GET",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "POST",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "PUT",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "DELETE",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ALL",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 450,
+        "y": 440,
+        "wires": [
+            [
+                "ecc8c694ddd71d6d"
+            ],
+            [
+                "8d5dfc08f320e137"
+            ],
+            [
+                "1ded29f9454aad2d"
+            ],
+            [
+                "11c1e902a6a33118"
+            ],
+            [
+                "941683588bddf077"
+            ]
+        ]
+    },
+    {
+        "id": "a1d52ecb0058c3b8",
+        "type": "http request",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "POST",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 660,
+        "wires": [
+            [
+                "67b6bab5a03c380f"
+            ]
+        ]
+    },
+    {
+        "id": "819839ce152a22d9",
+        "type": "http request",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "PUT",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 720,
+        "wires": [
+            [
+                "c72e43fb1b8c7c23"
+            ]
+        ]
+    },
+    {
+        "id": "8d5dfc08f320e137",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "2e484f8f374d1c48"
+        ],
+        "x": 575,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1ded29f9454aad2d",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "47bc7b4e9b4c987b",
+            "851d5491b0e82335"
+        ],
+        "x": 575,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "11c1e902a6a33118",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [],
+        "x": 575,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "941683588bddf077",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "1bd781f868030783",
+            "2e484f8f374d1c48",
+            "47bc7b4e9b4c987b",
+            "851d5491b0e82335"
+        ],
+        "x": 575,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "1bd781f868030783",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link in 4",
+        "links": [
+            "941683588bddf077",
+            "ecc8c694ddd71d6d"
+        ],
+        "x": 55,
+        "y": 600,
+        "wires": [
+            [
+                "f3d2c8e3f701439d"
+            ]
+        ]
+    },
+    {
+        "id": "1496855b96d14b8b",
+        "type": "function",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "Genrate Data",
+        "func": "// Generate a single product with unique dummy data\nlet i = Math.floor(Math.random() * 200) + 1;  // Random index for variety\nlet timestamp = Date.now();  // Current time in milliseconds\nlet instanceName = env.get(\"FF_INSTANCE_NAME\")\n\nlet product = {\n    productID: `P${timestamp}`,  // Unique ID based on timestamp\n    productName: `Product-${i}`,\n    quantity: Math.floor(Math.random() * 500) + 1,  // Random quantity between 1 and 500\n    location: `Factory ${String.fromCharCode(65 + (i % 3))}`,  // Factory A, B, or C\n    productionDate: new Date().toISOString(),\n    status: i % 2 === 0 ? \"In Production\" : \"Completed\"  // Alternating status\n};\n\n// Set the payload to the single product\nmsg.payload = product;\n\n// Set the url \nmsg.url = `https://${instanceName}.flowfuse.cloud/api/manufacturing/products/`\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 660,
+        "wires": [
+            [
+                "a1d52ecb0058c3b8"
+            ]
+        ]
+    },
+    {
+        "id": "2e484f8f374d1c48",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link in 5",
+        "links": [
+            "941683588bddf077",
+            "8d5dfc08f320e137"
+        ],
+        "x": 55,
+        "y": 660,
+        "wires": [
+            [
+                "1496855b96d14b8b"
+            ]
+        ]
+    },
+    {
+        "id": "47bc7b4e9b4c987b",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link in 7",
+        "links": [
+            "941683588bddf077",
+            "1ded29f9454aad2d"
+        ],
+        "x": 55,
+        "y": 720,
+        "wires": [
+            [
+                "779c4e97237345f7"
+            ]
+        ]
+    },
+    {
+        "id": "779c4e97237345f7",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$random()* 100\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "https://${FF_INSTANCE_NAME}.flowfuse.cloud/api/manufacturing/products/P10001",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 720,
+        "wires": [
+            [
+                "819839ce152a22d9"
+            ]
+        ]
+    },
+    {
+        "id": "67890772.e9adf",
+        "type": "function",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "Counter",
+        "func": "if (context.get('isRunning')) {\n    node.warn(\"Test already running, skipping...\");\n    return null;\n}\n\ncontext.set('isRunning', true);\n\nlet load = msg.payload.Load;\nlet numTriggers = 0;\nlet delay = 0;\n\nswitch (load) {\n    case \"Low\":\n        numTriggers = 30;\n        delay = 2000;\n        break;\n    case \"Medium\":\n        numTriggers = 120;\n        delay = 500;\n        break;\n    case \"High\":\n        numTriggers = 300;\n        delay = 200;\n        break;\n    case \"Extreme\":\n        numTriggers = 600;\n        delay = 100;\n        break;\n    default:\n        node.warn(\"Unknown load level\");\n        context.set('isRunning', false);\n        return null;\n}\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: `Testing` });\n\nfor (let count = 0; count < numTriggers; count++) {\n    setTimeout(() => {\n        let clonedMsg = RED.util.cloneMessage(msg);\n        clonedMsg.payload.triggerCount = count + 1;\n        node.send(clonedMsg); // Use node.send\n\n        if (count + 1 === numTriggers) {\n            node.status({ fill: \"green\", shape: \"ring\", text: \"Completed\" });\n            context.set('isRunning', false); // Ensure it's reset\n        }\n    }, count * delay);\n}\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 440,
+        "wires": [
+            [
+                "88442ce246da4603"
+            ]
+        ]
+    },
+    {
+        "id": "7ac537f1976bd1ca",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link in 2",
+        "links": [
+            "9173ae1a22e4be0f"
+        ],
+        "x": 55,
+        "y": 440,
+        "wires": [
+            [
+                "67890772.e9adf"
+            ]
+        ]
+    },
+    {
+        "id": "ecc8c694ddd71d6d",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "1bd781f868030783"
+        ],
+        "x": 575,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "851d5491b0e82335",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "link in 1",
+        "links": [
+            "941683588bddf077",
+            "1ded29f9454aad2d"
+        ],
+        "x": 55,
+        "y": 780,
+        "wires": [
+            [
+                "7719d52549549961"
+            ]
+        ]
+    },
+    {
+        "id": "23174efc5e2d08e6",
+        "type": "http request",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "DELETE",
+        "method": "DELETE",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 460,
+        "y": 780,
+        "wires": [
+            [
+                "07d9caa9725ee366"
+            ]
+        ]
+    },
+    {
+        "id": "e0d45fb1a3bc0ccf",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "Store File Operation Configurations",
+        "rules": [
+            {
+                "t": "set",
+                "p": "FILE_OPS_CONFIG",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 880,
+        "wires": [
+            [
+                "286784af92e23c29"
+            ]
+        ]
+    },
+    {
+        "id": "286784af92e23c29",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "6be71d567af3ba41"
+        ],
+        "x": 575,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "9701338133fdc97f",
+        "type": "switch",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "",
+        "property": "FILE_OPS_CONFIG.Operation",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "WRITE",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "READ",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ALL",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 450,
+        "y": 980,
+        "wires": [
+            [
+                "e7a8ad667d793dfc"
+            ],
+            [
+                "a7687f3fca811742"
+            ],
+            [
+                "489cca7a044170c8"
+            ]
+        ]
+    },
+    {
+        "id": "e7a8ad667d793dfc",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "d5dbd6a882752cac"
+        ],
+        "x": 575,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "489cca7a044170c8",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "d5dbd6a882752cac",
+            "0a5af7f48d79bf16"
+        ],
+        "x": 575,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "d5dbd6a882752cac",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "link in 3",
+        "links": [
+            "489cca7a044170c8",
+            "a7687f3fca811742",
+            "e7a8ad667d793dfc"
+        ],
+        "x": 55,
+        "y": 1080,
+        "wires": [
+            [
+                "cb94f170c4b7b40a"
+            ]
+        ]
+    },
+    {
+        "id": "72b53c16ed294622",
+        "type": "function",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "Counter",
+        "func": "if (context.get('isRunning')) {\n    node.warn(\"Test already running, skipping...\");\n    return null;\n}\n\ncontext.set('isRunning', true);\n\nlet load = msg.payload.Load;\nlet numTriggers = 0;\nlet delay = 0;\n\nswitch (load) {\n    case \"Low\":\n        numTriggers = 30;\n        delay = 2000;\n        break;\n    case \"Medium\":\n        numTriggers = 120;\n        delay = 500;\n        break;\n    case \"High\":\n        numTriggers = 300;\n        delay = 200;\n        break;\n    case \"Extreme\":\n        numTriggers = 600;\n        delay = 100;\n        break;\n    default:\n        node.warn(\"Unknown load level\");\n        context.set('isRunning', false);\n        return null;\n}\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: `Testing` });\n\nfor (let count = 0; count < numTriggers; count++) {\n    setTimeout(() => {\n        let clonedMsg = RED.util.cloneMessage(msg);\n        clonedMsg.payload.triggerCount = count + 1;\n        node.send(clonedMsg); // Use node.send\n\n        if (count + 1 === numTriggers) {\n            node.status({ fill: \"green\", shape: \"ring\", text: \"Completed\" });\n            context.set('isRunning', false); // Ensure it's reset\n        }\n    }, count * delay);\n}\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 980,
+        "wires": [
+            [
+                "9701338133fdc97f"
+            ]
+        ]
+    },
+    {
+        "id": "6be71d567af3ba41",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "link in 6",
+        "links": [
+            "286784af92e23c29"
+        ],
+        "x": 55,
+        "y": 980,
+        "wires": [
+            [
+                "72b53c16ed294622"
+            ]
+        ]
+    },
+    {
+        "id": "a7687f3fca811742",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "0a5af7f48d79bf16",
+            "d5dbd6a882752cac"
+        ],
+        "x": 575,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "de89ef3834babfe5",
+        "type": "ui-form",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "File Ops",
+        "group": "fd2927bef48a4354",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Operation",
+                "key": "Operation",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Operation Load",
+                "key": "Load",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Operation": "",
+            "Load": ""
+        },
+        "payload": "",
+        "submit": "START",
+        "cancel": "",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [
+            {
+                "dropdown": "Operation",
+                "value": "READ",
+                "label": "READ"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "WRITE",
+                "label": "WRITE"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "ALL",
+                "label": "ALL"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Low",
+                "label": "Low: 30 Messages, 1 msg every 2 second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Medium",
+                "label": "Medium: 120 Messages, 2 msgs per second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "High",
+                "label": "High: 300 Messages, 5 msgs per second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Extreme",
+                "label": "Extreme: 600 Messages, 10 msgs per second"
+            }
+        ],
+        "x": 100,
+        "y": 880,
+        "wires": [
+            [
+                "e0d45fb1a3bc0ccf"
+            ]
+        ]
+    },
+    {
+        "id": "b09acd001e300ba8",
+        "type": "file",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "WRITE",
+        "filename": "./myfile.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 450,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb94f170c4b7b40a",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 1080,
+        "wires": [
+            [
+                "b09acd001e300ba8"
+            ]
+        ]
+    },
+    {
+        "id": "f26296e09ace2286",
+        "type": "file in",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "READ",
+        "filename": "./myfile.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 270,
+        "y": 1140,
+        "wires": [
+            [
+                "4b03b4887c5783e0"
+            ]
+        ]
+    },
+    {
+        "id": "4b03b4887c5783e0",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "File Content",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "0a5af7f48d79bf16",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "3505d4b74f6c30c6",
+        "name": "link in 8",
+        "links": [
+            "489cca7a044170c8",
+            "a7687f3fca811742"
+        ],
+        "x": 55,
+        "y": 1140,
+        "wires": [
+            [
+                "f26296e09ace2286"
+            ]
+        ]
+    },
+    {
+        "id": "07d9caa9725ee366",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "DELETE Response",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "c72e43fb1b8c7c23",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "PUT Response",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "67b6bab5a03c380f",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "POST Response",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "77e30922203425be",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "GET Response",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3385334e4c863ccd",
+        "type": "status",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "API OPS Status",
+        "scope": [
+            "67890772.e9adf"
+        ],
+        "x": 120,
+        "y": 1800,
+        "wires": [
+            [
+                "849812d68a769d47"
+            ]
+        ]
+    },
+    {
+        "id": "849812d68a769d47",
+        "type": "switch",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Completed",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Testing",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 1800,
+        "wires": [
+            [
+                "3cc8bef99fc09e4a"
+            ],
+            [
+                "0cc9e96a26c45ff3"
+            ]
+        ]
+    },
+    {
+        "id": "3cc8bef99fc09e4a",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"groups\": {     \"enable\": [\"API Operations\"]} }",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 1780,
+        "wires": [
+            [
+                "4cfea56b18b2baeb"
+            ]
+        ]
+    },
+    {
+        "id": "0cc9e96a26c45ff3",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"groups\": {     \"disable\": [\"API Operations\"] } }",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 1820,
+        "wires": [
+            [
+                "4cfea56b18b2baeb"
+            ]
+        ]
+    },
+    {
+        "id": "4cfea56b18b2baeb",
+        "type": "ui-control",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "ui": "46de808d763294c2",
+        "events": "all",
+        "x": 640,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8fdd75a699887fbc",
+        "type": "status",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "File Ops Status",
+        "scope": [
+            "72b53c16ed294622"
+        ],
+        "x": 120,
+        "y": 1920,
+        "wires": [
+            [
+                "70df197172e07df5"
+            ]
+        ]
+    },
+    {
+        "id": "70df197172e07df5",
+        "type": "switch",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Completed",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Testing",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 1920,
+        "wires": [
+            [
+                "e6cecc9506e0f00a"
+            ],
+            [
+                "af3471363a4f3870"
+            ]
+        ]
+    },
+    {
+        "id": "e6cecc9506e0f00a",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"groups\": {     \"enable\": [\"File Operations\"]  } }",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 1900,
+        "wires": [
+            [
+                "b5347ef70876b01f"
+            ]
+        ]
+    },
+    {
+        "id": "af3471363a4f3870",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"groups\": {     \"disable\": [\"File Operations\"]} }",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 1940,
+        "wires": [
+            [
+                "b5347ef70876b01f"
+            ]
+        ]
+    },
+    {
+        "id": "b5347ef70876b01f",
+        "type": "ui-control",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "ui": "46de808d763294c2",
+        "events": "all",
+        "x": 640,
+        "y": 1920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "acb3d27325d4e738",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "Store DB Operation Configurations",
+        "rules": [
+            {
+                "t": "set",
+                "p": "DB_OPS_CONFIG",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1240,
+        "wires": [
+            [
+                "ed58fe0d72276825"
+            ]
+        ]
+    },
+    {
+        "id": "ed58fe0d72276825",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "17d384897de4ca36"
+        ],
+        "x": 575,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "0bb743a7b3da7b18",
+        "type": "switch",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "",
+        "property": "DB_OPS_CONFIG.Operation",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "READ",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "WRITE",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "UPDATE",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "DELETE",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ALL",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 450,
+        "y": 1360,
+        "wires": [
+            [
+                "fcb23e70c1c15fd1"
+            ],
+            [
+                "5552169f73f2e141"
+            ],
+            [
+                "0ac1f7e166e162f6"
+            ],
+            [
+                "568a4851d442a480"
+            ],
+            [
+                "a157478e5ec50c60"
+            ]
+        ]
+    },
+    {
+        "id": "5552169f73f2e141",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link out 10",
+        "mode": "link",
+        "links": [
+            "a9413763e1b50733"
+        ],
+        "x": 575,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "a157478e5ec50c60",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link out 11",
+        "mode": "link",
+        "links": [
+            "5a77beb6776fe826",
+            "a9413763e1b50733",
+            "d123f831c91ac8cf",
+            "b23761733a79d3aa"
+        ],
+        "x": 575,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "d123f831c91ac8cf",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link in 9",
+        "links": [
+            "a157478e5ec50c60",
+            "fcb23e70c1c15fd1"
+        ],
+        "x": 55,
+        "y": 1500,
+        "wires": [
+            [
+                "fe9db1abf24cf0e9"
+            ]
+        ]
+    },
+    {
+        "id": "9a9ebfa1fbc4b628",
+        "type": "function",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "Counter",
+        "func": "if (context.get('isRunning')) {\n    node.warn(\"Test already running, skipping...\");\n    return null;\n}\n\ncontext.set('isRunning', true);\n\nlet load = msg.payload.Load;\nlet numTriggers = 0;\nlet delay = 0;\n\nswitch (load) {\n    case \"Low\":\n        numTriggers = 30;\n        delay = 2000;\n        break;\n    case \"Medium\":\n        numTriggers = 120;\n        delay = 500;\n        break;\n    case \"High\":\n        numTriggers = 300;\n        delay = 200;\n        break;\n    case \"Extreme\":\n        numTriggers = 600;\n        delay = 100;\n        break;\n    default:\n        node.warn(\"Unknown load level\");\n        context.set('isRunning', false);\n        return null;\n}\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: `Testing` });\n\nfor (let count = 0; count < numTriggers; count++) {\n    setTimeout(() => {\n        let clonedMsg = RED.util.cloneMessage(msg);\n        clonedMsg.payload.triggerCount = count + 1;\n        node.send(clonedMsg); // Use node.send\n\n        if (count + 1 === numTriggers) {\n            node.status({ fill: \"green\", shape: \"ring\", text: \"Completed\" });\n            context.set('isRunning', false); // Ensure it's reset\n        }\n    }, count * delay);\n}\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1360,
+        "wires": [
+            [
+                "0bb743a7b3da7b18"
+            ]
+        ]
+    },
+    {
+        "id": "17d384897de4ca36",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link in 10",
+        "links": [
+            "ed58fe0d72276825"
+        ],
+        "x": 55,
+        "y": 1360,
+        "wires": [
+            [
+                "9a9ebfa1fbc4b628"
+            ]
+        ]
+    },
+    {
+        "id": "fcb23e70c1c15fd1",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "d123f831c91ac8cf"
+        ],
+        "x": 575,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "a2bde6a82dfc58c5",
+        "type": "ui-form",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "DB Ops",
+        "group": "e4a3f22c41785050",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Operation",
+                "key": "Operation",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Operation Load",
+                "key": "Load",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Operation": "",
+            "Load": ""
+        },
+        "payload": "",
+        "submit": "START",
+        "cancel": "",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [
+            {
+                "dropdown": "Operation",
+                "value": "READ",
+                "label": "READ"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "WRITE",
+                "label": "WRITE"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "UPDATE",
+                "label": "UPDATE"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "DELETE",
+                "label": "DELETE"
+            },
+            {
+                "dropdown": "Operation",
+                "value": "ALL",
+                "label": "ALL"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Low",
+                "label": "Low: 30 Messages, 1 msg every 2 second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Medium",
+                "label": "Medium: 120 Messages, 2 msgs per second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "High",
+                "label": "High: 300 Messages, 5 msgs per second"
+            },
+            {
+                "dropdown": "Load",
+                "value": "Extreme",
+                "label": "Extreme: 600 Messages, 10 msgs per second"
+            }
+        ],
+        "x": 100,
+        "y": 1240,
+        "wires": [
+            [
+                "acb3d27325d4e738"
+            ]
+        ]
+    },
+    {
+        "id": "a9413763e1b50733",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link in 11",
+        "links": [
+            "5552169f73f2e141",
+            "a157478e5ec50c60"
+        ],
+        "x": 55,
+        "y": 1560,
+        "wires": [
+            [
+                "659c546569dfc207"
+            ]
+        ]
+    },
+    {
+        "id": "7b1bf2b0ed6a4307",
+        "type": "status",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "DB Ops Status",
+        "scope": [
+            "9a9ebfa1fbc4b628"
+        ],
+        "x": 120,
+        "y": 2040,
+        "wires": [
+            [
+                "a418fcc7c7dae96a"
+            ]
+        ]
+    },
+    {
+        "id": "a418fcc7c7dae96a",
+        "type": "switch",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Completed",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Testing",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 2040,
+        "wires": [
+            [
+                "275fe55aa03dd50b"
+            ],
+            [
+                "610419886a64f45e"
+            ]
+        ]
+    },
+    {
+        "id": "275fe55aa03dd50b",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"groups\": {     \"enable\": [\"Database Operation\"] } }",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 2020,
+        "wires": [
+            [
+                "1ceb4b434be17923"
+            ]
+        ]
+    },
+    {
+        "id": "610419886a64f45e",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"groups\": {  \"disable\": [\"Database Operation\"] } }",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 2060,
+        "wires": [
+            [
+                "1ceb4b434be17923"
+            ]
+        ]
+    },
+    {
+        "id": "1ceb4b434be17923",
+        "type": "ui-control",
+        "z": "05c10ea2d1a09570",
+        "g": "3f4b8ae62447ebaf",
+        "name": "",
+        "ui": "46de808d763294c2",
+        "events": "all",
+        "x": 640,
+        "y": 2040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d725d5cca4973651",
+        "type": "ui-markdown",
+        "z": "05c10ea2d1a09570",
+        "g": "e285c098a1565bd0",
+        "group": "71444ca48889ecd5",
+        "name": "Markdwon Document",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "# Node-RED Load Testing Blueprint\n\nThis blueprint helps you easily understand your Node-RED instance's capacity for handling heavy loads. It generates internal message traffic that simulates real-world scenarios across key areas such as API communication, database interactions, and file input/output. This allows you to effectively measure and evaluate your instance’s performance under varying stress levels when managing these essential operations.\n\nWith the [recent addition of the Performance view](https://flowfuse.com/changelog/2025/06/instance-performance-view/) in FlowFuse Cloud, you can now monitor CPU usage in real time while running load tests. This makes it easier to visualize how your Node-RED instance responds under different load conditions and helps identify performance bottlenecks more effectively.\n\n## Key Operation Categories\n\nThe test covers three primary categories, each including key operation types commonly used in real-world Node-RED applications:\n\n| Category            | Operations                                              |\n|---------------------|---------------------------------------------------------|\n| **API Operations**  | `GET`, `POST`, `PUT`, `DELETE`, `All` (GET + POST + PUT + DELETE) |\n| **Database Ops**    | `Read`, `Write`, `Update`, `Delete`, `All` (Read + Write + Update + Delete) |\n| **File Operations** | `Read`, `Write`, `All` (Read + Write)                  |\n\n## Load Levels and Message Frequency\n\nEach test can be executed at one of four predefined load levels. The table below outlines the number of messages and the delay between each message at each level:\n\n| Load Level | Total request | Delay (ms) | Messages per Second (approx.) | Duration (approx.) |\n|------------|----------------|------------|-------------------------------|---------------------|\n| **Low**    | 30             | 2000       | 0.5 msg/sec (1 message every 2 seconds)   | ~1 minute           |\n| **Medium** | 120            | 500        | 2 msg/sec (1 message every 0.5 seconds)   | ~1 minute           |\n| **High**   | 300            | 200        | 5 msg/sec (1 message every 0.2 seconds)   | ~1 minute           |\n| **Extreme** | 600            | 100        | 10 msg/sec (1 message every 0.1 seconds)  | ~1 minute          |\n\nWhen you select the 'All' option, the total number of requests is the Requests per Operation multiplied by the number of operations in that category.\n\n- Example: The 'All' API test (4 operations) at the 'Extreme' level will run 600 times 4 = 2,400 total requests.\n\n## Getting Started with Node-RED Instance Load Testing\n\n### Prerequisites\n\nBefore moving forward, ensure you have the following prepared:\n\n- A FlowFuse account with the Starter, Team, or Enterprise tier.\n\n### Setting Up the Blueprint\n\n1. To get started with the blueprint, click the \"Start\" button at the bottom. This will redirect you to the FlowFuse platform instance creation interface with the blueprint pre-selected.\n2. Select the appropriate settings based on your preferences, such as instance type, application, and Node-RED version.\n3. Click the “Create Instance” button.\n\nOnce the instance is successfully created, you can:\n\n- Click the “Open Editor” button in the top-right corner to navigate to the Node-RED Editor.\n\n### Running the Load Test\n\n1. Open the **FlowFuse Dashboard**.  \n   To access it, switch to the **Dashboard 2.0** view using the sidebar, then click the **Open Dashboard** button located at the top-right.\n\n2. Once the dashboard opens, you will see three separate forms—one for each operation category: **API Operations**, **Database Operations**, and **File Operations**.\n\n2. For each category:\n   - Select the **operation type** (e.g., GET, POST, Read, Write).\n   - Select the **load level** (Low, Medium, High, or Extreme).\n   - Click **Start** to begin the test.\n\n> **Note:** Only one test per category can run at a time. While a test is in progress, its corresponding form will be disabled until the test completes.\n\n### Monitoring the Performance of the Instance\n\nTo evaluate how your Node-RED instance performs under load:\n\n1. Go back to your FlowFuse instance on the platform.\n2. Switch to the **Performance** tab by clicking on **Performance** at the top.\n\n![Option to open the instance performance view](./performance-button.png)  \n*Option to open the instance performance view*\n\n3. Monitor the **CPU usage** graph to see how the load test is affecting your instance's processing capacity.\n\n> **Tip:** A consistently high CPU load during lower stress levels may indicate upgrade the instance type.\n\n## Load Test Considerations\n\n- The test defines different load levels by increasing how often messages are sent. This helps identify when performance starts to drop and when the Node-RED instance reaches its limit.\n- To set up the test, the blueprint creates demo REST APIs, a sample database table with demo data, and a temporary file.\n- Data is created using function nodes, and the message frequency is controlled using setTimeout.",
+        "className": "",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe9db1abf24cf0e9",
+        "type": "sqlite",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "mydb": "af8181435967f101",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM manufacturing_data;",
+        "name": "READ",
+        "x": 270,
+        "y": 1500,
+        "wires": [
+            [
+                "480c4931e6137556"
+            ]
+        ]
+    },
+    {
+        "id": "480c4931e6137556",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "Read Result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "659c546569dfc207",
+        "type": "function",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "Generate Data",
+        "func": "msg.params = {\n    $part_number: \"PN-\" + Math.floor(1000 + Math.random() * 9000),\n    $machine_id: \"MCH-\" + (Math.floor(Math.random() * 10) + 1),\n    $quantity_produced: Math.floor(Math.random() * 200) + 1,\n    $shift: Math.random() < 0.5 ? \"Day\" : \"Night\",\n    $operator_name: \"Operator \" + String.fromCharCode(65 + Math.floor(Math.random() * 5)),\n    $status: [\"OK\", \"Rework\", \"Reject\"][Math.floor(Math.random() * 3)]\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1560,
+        "wires": [
+            [
+                "287eecfba5784360"
+            ]
+        ]
+    },
+    {
+        "id": "287eecfba5784360",
+        "type": "sqlite",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "mydb": "af8181435967f101",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO manufacturing_data (\n    part_number,\n    machine_id,\n    quantity_produced,\n    shift,\n    operator_name,\n    status\n  ) VALUES (\n    $part_number,\n    $machine_id,\n    $quantity_produced,\n    $shift,\n    $operator_name,\n    $status\n  );",
+        "name": "WRITE",
+        "x": 450,
+        "y": 1560,
+        "wires": [
+            [
+                "23a04ea1173a2ff2"
+            ]
+        ]
+    },
+    {
+        "id": "23a04ea1173a2ff2",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "Write Result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "5a77beb6776fe826",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link in 12",
+        "links": [
+            "0ac1f7e166e162f6",
+            "a157478e5ec50c60"
+        ],
+        "x": 55,
+        "y": 1620,
+        "wires": [
+            [
+                "28f1806bb79bd3ec"
+            ]
+        ]
+    },
+    {
+        "id": "b23761733a79d3aa",
+        "type": "link in",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link in 13",
+        "links": [
+            "568a4851d442a480",
+            "a157478e5ec50c60"
+        ],
+        "x": 55,
+        "y": 1680,
+        "wires": [
+            [
+                "db8d69bdb2976bd9"
+            ]
+        ]
+    },
+    {
+        "id": "28f1806bb79bd3ec",
+        "type": "sqlite",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "mydb": "af8181435967f101",
+        "sqlquery": "fixed",
+        "sql": "UPDATE manufacturing_data\nSET status = 'OK'\nWHERE operator_name <> 'Eve';\n",
+        "name": "UPDATE",
+        "x": 280,
+        "y": 1620,
+        "wires": [
+            [
+                "747dcb557455fbbb"
+            ]
+        ]
+    },
+    {
+        "id": "747dcb557455fbbb",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "Update Result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "38a6e9e6a9319c49",
+        "type": "debug",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "Delete Result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "db8d69bdb2976bd9",
+        "type": "sqlite",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "mydb": "af8181435967f101",
+        "sqlquery": "fixed",
+        "sql": "DELETE FROM manufacturing_data\nWHERE id = (SELECT MAX(id) FROM manufacturing_data);\n",
+        "name": "DELETE",
+        "x": 280,
+        "y": 1680,
+        "wires": [
+            [
+                "38a6e9e6a9319c49"
+            ]
+        ]
+    },
+    {
+        "id": "568a4851d442a480",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "b23761733a79d3aa"
+        ],
+        "x": 575,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "0ac1f7e166e162f6",
+        "type": "link out",
+        "z": "05c10ea2d1a09570",
+        "g": "7587359be110b25b",
+        "name": "link out 14",
+        "mode": "link",
+        "links": [
+            "5a77beb6776fe826"
+        ],
+        "x": 575,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "e22aaf48d523bfe0",
+        "type": "comment",
+        "z": "05c10ea2d1a09570",
+        "g": "80c61aec1fd5d0af",
+        "name": "README",
+        "info": "# Node-RED Load Testing Blueprint\n\n## Overview\n\nThis blueprint helps you easily understand your Node-RED instance's capacity for handling heavy loads. How? It generates internal message traffic that mimics real-world scenarios across key areas like API communication, database interactions, and file input/output. This allows you to effectively measure and understand your instance's performance under various stress levels when managing these essential functions.\n\n## Key Operation Categories\n\nThe test covers three primary categories, each including key operation types commonly used in real-world Node-RED applications:\n\n| Category            | Operations                                              |\n|---------------------|---------------------------------------------------------|\n| **API Operations**  | `GET`, `POST`, `PUT`, `DELETE`, `All` (GET + POST + PUT + DELETE) |\n| **Database Ops**    | `Read`, `Write`, `Update`, `Delete`, `All` (Read + Write + Update + Delete) |\n| **File Operations** | `Read`, `Write`, `All` (Read + Write)                  |\n\n## Load Levels and Message Frequency\n\nEach test can be executed at one of four predefined load levels. The table below outlines the number of messages and the delay between each message at each level:\n\n| Load Level | Total Messages | Delay (ms) | Messages per Second (approx.) | Duration (approx.) |\n|------------|----------------|------------|-------------------------------|---------------------|\n| **Low**    | 30             | 2000       | 0.5 msg/sec (1 message every 2 seconds)   | ~1 minute           |\n| **Medium** | 120            | 500        | 2 msg/sec (1 message every 0.5 seconds)   | ~1 minute           |\n| **High**   | 300            | 200        | 5 msg/sec (1 message every 0.2 seconds)   | ~1 minute           |\n| **Extreme** | 600            | 100        | 10 msg/sec (1 message every 0.1 seconds)  | ~1 minute           |\n\n## Notes\n\n- For this load testing, we are using an SQLite database, which is a local database within the Node-RED instance.\n- The defined load levels and their corresponding message frequencies are set to provide clear thresholds for observing performance changes. These frequencies allow for a progressive increase in stress, making it easier to identify bottlenecks and the breaking point of the Node-RED instance under simulated real-world conditions. To enable these operations, the blueprint initially creates demo REST APIs, sets up a sample database table with demo records, and generates a temporary file. It's important to note that when performing operations, data is generated using function nodes, and the precise message frequency for each load level is managed using setTimeout calls. Both these actions—data generation and frequency control—contribute to the overall CPU load and should be considered part of the test's impact on the instance's performance.",
+        "x": 100,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0a541c069aeda82e",
+        "type": "comment",
+        "z": "05c10ea2d1a09570",
+        "g": "80c61aec1fd5d0af",
+        "name": "LICENSE",
+        "info": "The FlowFuse Software may only be used in production with a valid FlowFuse Subscription and agreement to the Subscription Terms.\n\nYou may modify and publish patches to the Software only if you hold a valid Subscription and comply with the Terms.\n\nFlowFuse and its licensors retain all rights, titles, and interest in any modifications or patches to the Software.\n\nModifications and patches may only be used or distributed with a valid Subscription.\n\nYou are allowed to copy and modify the Software for development and testing without a Subscription.\n\nNo other rights are granted beyond those explicitly stated in the license.\n\nIt is prohibited to copy, merge, publish, distribute, sublicense, or sell the Software except as permitted under the license terms.\n\nThe Software is provided \"as is\", without any warranties, express or implied, including merchantability or fitness for a particular purpose.\n\nFlowFuse and its authors are not liable for any damages arising from the use of the Software.\n\nThird-party components used in FlowFuse are licensed under their original licenses provided by their respective owners.\n",
+        "x": 240,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f3d2c8e3f701439d",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "https://${FF_INSTANCE_NAME}.flowfuse.cloud/api/manufacturing/products",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 600,
+        "wires": [
+            [
+                "3aa6997c8a4ede87"
+            ]
+        ]
+    },
+    {
+        "id": "7719d52549549961",
+        "type": "change",
+        "z": "05c10ea2d1a09570",
+        "g": "70f2f192c6a0b7c7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "https://${FF_INSTANCE_NAME}.flowfuse.cloud/api/manufacturing/products/P10001",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 780,
+        "wires": [
+            [
+                "23174efc5e2d08e6"
+            ]
+        ]
+    },
+    {
+        "id": "8f7717a16d3031f6",
+        "type": "http in",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "url": "/api/manufacturing/products",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "34f8e197e0177b6f"
+            ]
+        ]
+    },
+    {
+        "id": "90b631d9dcc56ceb",
+        "type": "http response",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 740,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "14ce588ea29f0561",
+        "type": "http in",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "url": "/api/manufacturing/products/",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "374bb865816299de"
+            ]
+        ]
+    },
+    {
+        "id": "09d8c4ac45c41910",
+        "type": "http response",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 740,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "34f8e197e0177b6f",
+        "type": "change",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "Retrive products from context",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "products",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "90b631d9dcc56ceb"
+            ]
+        ]
+    },
+    {
+        "id": "374bb865816299de",
+        "type": "function",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "Push product to context",
+        "func": "const products = global.get(\"products\") || []\nconst data = msg.payload\nproducts.push(data)\nglobal.set(\"products\",products)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "09d8c4ac45c41910"
+            ]
+        ]
+    },
+    {
+        "id": "e3621e7859517c29",
+        "type": "http in",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "url": "/api/manufacturing/products/:id",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "fb30099ddf670431"
+            ]
+        ]
+    },
+    {
+        "id": "fb30099ddf670431",
+        "type": "function",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "Update product to context",
+        "func": "const products = global.get(\"products\") || [];\nconst productId = msg.req.params.id;\nconst newQuantity = msg.payload\n\n// Find and update the product\nfor (let i = 0; i < products.length; i++) {\n    if (products[i].productID == productId) {\n        products[i].quantity = newQuantity;\n        break;\n    }\n}\n\n// Save the updated products back to global context\nglobal.set(\"products\", products);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 220,
+        "wires": [
+            [
+                "36808a9502d79fda"
+            ]
+        ]
+    },
+    {
+        "id": "36808a9502d79fda",
+        "type": "http response",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 740,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "fefe668b9ad695cd",
+        "type": "http in",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "url": "/api/manufacturing/products/:id",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "931ccfd4cf165fae"
+            ]
+        ]
+    },
+    {
+        "id": "931ccfd4cf165fae",
+        "type": "function",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "Delete product to context",
+        "func": "const products = global.get(\"products\") || [];\nconst productId = msg.req.params.id;\n\n// Find and remove the product by ID\nfor (let i = 0; i < products.length; i++) {\n    if (products[i].productID == productId) {\n        products.splice(i, 1); // Remove the matched product\n        break;\n    }\n}\n\n// Save the updated products back to global context\nglobal.set(\"products\", products);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "aad59a4b2dd6d0b3"
+            ]
+        ]
+    },
+    {
+        "id": "aad59a4b2dd6d0b3",
+        "type": "http response",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 740,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "bfb2903869157e1f",
+        "type": "file",
+        "z": "8d3d74e9316db46e",
+        "g": "aa247fb1ef163c92",
+        "name": "",
+        "filename": "./myfile.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 450,
+        "y": 440,
+        "wires": [
+            [
+                "2537ebc276403591"
+            ]
+        ]
+    },
+    {
+        "id": "01503f5a493d03cc",
+        "type": "inject",
+        "z": "8d3d74e9316db46e",
+        "g": "aa247fb1ef163c92",
+        "name": "Write into file",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "bfb2903869157e1f"
+            ]
+        ]
+    },
+    {
+        "id": "2537ebc276403591",
+        "type": "debug",
+        "z": "8d3d74e9316db46e",
+        "g": "aa247fb1ef163c92",
+        "name": "Result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8ad766e1d67466f4",
+        "type": "comment",
+        "z": "8d3d74e9316db46e",
+        "g": "aa247fb1ef163c92",
+        "name": "Create myfile.txt on deploy if it does not exist, so that it is already present when performing operations.",
+        "info": "",
+        "x": 390,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "db823dfe5016eb3f",
+        "type": "comment",
+        "z": "8d3d74e9316db46e",
+        "g": "9ca87ad7944c0dff",
+        "name": "Set up REST API endpoints during deploy to support API operation testing",
+        "info": "",
+        "x": 300,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c78b4d5a3c6c9210",
+        "type": "inject",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "name": "Write into file",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 600,
+        "wires": [
+            [
+                "7bd58ef5f25ced76"
+            ]
+        ]
+    },
+    {
+        "id": "7bd58ef5f25ced76",
+        "type": "sqlite",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "mydb": "af8181435967f101",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE manufacturing_data (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    part_number TEXT NOT NULL,\n    machine_id TEXT NOT NULL,\n    quantity_produced INTEGER NOT NULL,\n    production_time DATETIME DEFAULT CURRENT_TIMESTAMP,\n    shift TEXT, -- e.g., \"Day\", \"Night\"\n    operator_name TEXT,\n    status TEXT CHECK(status IN ('OK', 'Rework', 'Reject')) DEFAULT 'OK'\n);",
+        "name": "Create Table",
+        "x": 310,
+        "y": 600,
+        "wires": [
+            [
+                "87460ffb08a24dcc"
+            ]
+        ]
+    },
+    {
+        "id": "14f4c86283758999",
+        "type": "debug",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "name": "Insert result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "92069b6e2c3f5bb1",
+        "type": "comment",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "name": "Ensure the manufacturing_data table is created and populated with sample records automatically on deploy.",
+        "info": "",
+        "x": 410,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7034862eed7b74b1",
+        "type": "catch",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "name": "",
+        "scope": [
+            "7bd58ef5f25ced76"
+        ],
+        "uncaught": false,
+        "x": 290,
+        "y": 660,
+        "wires": [
+            [
+                "6e918bfc6fa9cff7"
+            ]
+        ]
+    },
+    {
+        "id": "6e918bfc6fa9cff7",
+        "type": "debug",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "name": "ignore error",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "87460ffb08a24dcc",
+        "type": "sqlite",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "mydb": "af8181435967f101",
+        "sqlquery": "fixed",
+        "sql": "INSERT INTO manufacturing_data (\n    part_number,\n    machine_id,\n    quantity_produced,\n    shift,\n    operator_name,\n    status\n) VALUES\n('PN-1001', 'MCH-1', 10, 'Day', 'Bob', 'OK'),\n('PN-1002', 'MCH-2', 15, 'Night', 'Alice', 'Rework'),\n('PN-1003', 'MCH-3', 20, 'Day', 'John', 'Reject'),\n('PN-1004', 'MCH-4', 25, 'Night', 'Eve', 'OK'),\n('PN-1005', 'MCH-5', 30, 'Day', 'Bob', 'OK'),\n('PN-1006', 'MCH-1', 35, 'Night', 'Alice', 'Rework'),\n('PN-1007', 'MCH-2', 40, 'Day', 'John', 'Reject'),\n('PN-1008', 'MCH-3', 45, 'Night', 'Eve', 'OK'),\n('PN-1009', 'MCH-4', 50, 'Day', 'Bob', 'OK'),\n('PN-1010', 'MCH-5', 55, 'Night', 'Alice', 'Rework'),\n('PN-1011', 'MCH-1', 60, 'Day', 'John', 'Reject'),\n('PN-1012', 'MCH-2', 65, 'Night', 'Eve', 'OK'),\n('PN-1013', 'MCH-3', 70, 'Day', 'Bob', 'OK'),\n('PN-1014', 'MCH-4', 75, 'Night', 'Alice', 'Rework'),\n('PN-1015', 'MCH-5', 80, 'Day', 'John', 'Reject'),\n('PN-1016', 'MCH-1', 85, 'Night', 'Eve', 'OK'),\n('PN-1017', 'MCH-2', 90, 'Day', 'Bob', 'OK'),\n('PN-1018', 'MCH-3', 95, 'Night', 'Alice', 'Rework'),\n('PN-1019', 'MCH-4', 100, 'Day', 'John', 'Reject'),\n('PN-1020', 'MCH-5', 105, 'Night', 'Eve', 'OK'),\n('PN-1021', 'MCH-1', 110, 'Day', 'Bob', 'OK'),\n('PN-1022', 'MCH-2', 115, 'Night', 'Alice', 'Rework'),\n('PN-1023', 'MCH-3', 120, 'Day', 'John', 'Reject'),\n('PN-1024', 'MCH-4', 125, 'Night', 'Eve', 'OK'),\n('PN-1025', 'MCH-5', 130, 'Day', 'Bob', 'OK'),\n('PN-1026', 'MCH-1', 135, 'Night', 'Alice', 'Rework'),\n('PN-1027', 'MCH-2', 140, 'Day', 'John', 'Reject'),\n('PN-1028', 'MCH-3', 145, 'Night', 'Eve', 'OK'),\n('PN-1029', 'MCH-4', 150, 'Day', 'Bob', 'OK'),\n('PN-1030', 'MCH-5', 155, 'Night', 'Alice', 'Rework'),\n('PN-1031', 'MCH-1', 160, 'Day', 'John', 'Reject'),\n('PN-1032', 'MCH-2', 165, 'Night', 'Eve', 'OK'),\n('PN-1033', 'MCH-3', 170, 'Day', 'Bob', 'OK'),\n('PN-1034', 'MCH-4', 175, 'Night', 'Alice', 'Rework'),\n('PN-1035', 'MCH-5', 180, 'Day', 'John', 'Reject'),\n('PN-1036', 'MCH-1', 185, 'Night', 'Eve', 'OK'),\n('PN-1037', 'MCH-2', 190, 'Day', 'Bob', 'OK'),\n('PN-1038', 'MCH-3', 195, 'Night', 'Alice', 'Rework'),\n('PN-1039', 'MCH-4', 200, 'Day', 'John', 'Reject'),\n('PN-1040', 'MCH-5', 205, 'Night', 'Eve', 'OK'),\n('PN-1041', 'MCH-1', 210, 'Day', 'Bob', 'OK'),\n('PN-1042', 'MCH-2', 215, 'Night', 'Alice', 'Rework'),\n('PN-1043', 'MCH-3', 220, 'Day', 'John', 'Reject'),\n('PN-1044', 'MCH-4', 225, 'Night', 'Eve', 'OK'),\n('PN-1045', 'MCH-5', 230, 'Day', 'Bob', 'OK'),\n('PN-1046', 'MCH-1', 235, 'Night', 'Alice', 'Rework'),\n('PN-1047', 'MCH-2', 240, 'Day', 'John', 'Reject'),\n('PN-1048', 'MCH-3', 245, 'Night', 'Eve', 'OK'),\n('PN-1049', 'MCH-4', 250, 'Day', 'Bob', 'OK'),\n('PN-1050', 'MCH-5', 255, 'Night', 'Alice', 'Rework'),\n('PN-1051', 'MCH-1', 260, 'Day', 'John', 'Reject'),\n('PN-1052', 'MCH-2', 265, 'Night', 'Eve', 'OK'),\n('PN-1053', 'MCH-3', 270, 'Day', 'Bob', 'OK'),\n('PN-1054', 'MCH-4', 275, 'Night', 'Alice', 'Rework'),\n('PN-1055', 'MCH-5', 280, 'Day', 'John', 'Reject'),\n('PN-1056', 'MCH-1', 285, 'Night', 'Eve', 'OK'),\n('PN-1057', 'MCH-2', 290, 'Day', 'Bob', 'OK'),\n('PN-1058', 'MCH-3', 295, 'Night', 'Alice', 'Rework'),\n('PN-1059', 'MCH-4', 300, 'Day', 'John', 'Reject'),\n('PN-1060', 'MCH-5', 305, 'Night', 'Eve', 'OK'),\n('PN-1061', 'MCH-1', 310, 'Day', 'Bob', 'OK'),\n('PN-1062', 'MCH-2', 315, 'Night', 'Alice', 'Rework'),\n('PN-1063', 'MCH-3', 320, 'Day', 'John', 'Reject'),\n('PN-1064', 'MCH-4', 325, 'Night', 'Eve', 'OK'),\n('PN-1065', 'MCH-5', 330, 'Day', 'Bob', 'OK'),\n('PN-1066', 'MCH-1', 335, 'Night', 'Alice', 'Rework'),\n('PN-1067', 'MCH-2', 340, 'Day', 'John', 'Reject'),\n('PN-1068', 'MCH-3', 345, 'Night', 'Eve', 'OK'),\n('PN-1069', 'MCH-4', 350, 'Day', 'Bob', 'OK'),\n('PN-1070', 'MCH-5', 355, 'Night', 'Alice', 'Rework'),\n('PN-1071', 'MCH-1', 360, 'Day', 'John', 'Reject'),\n('PN-1072', 'MCH-2', 365, 'Night', 'Eve', 'OK'),\n('PN-1073', 'MCH-3', 370, 'Day', 'Bob', 'OK'),\n('PN-1074', 'MCH-4', 375, 'Night', 'Alice', 'Rework'),\n('PN-1075', 'MCH-5', 380, 'Day', 'John', 'Reject'),\n('PN-1076', 'MCH-1', 385, 'Night', 'Eve', 'OK'),\n('PN-1077', 'MCH-2', 390, 'Day', 'Bob', 'OK'),\n('PN-1078', 'MCH-3', 395, 'Night', 'Alice', 'Rework'),\n('PN-1079', 'MCH-4', 400, 'Day', 'John', 'Reject'),\n('PN-1080', 'MCH-5', 405, 'Night', 'Eve', 'OK'),\n('PN-1081', 'MCH-1', 410, 'Day', 'Bob', 'OK'),\n('PN-1082', 'MCH-2', 415, 'Night', 'Alice', 'Rework'),\n('PN-1083', 'MCH-3', 420, 'Day', 'John', 'Reject'),\n('PN-1084', 'MCH-4', 425, 'Night', 'Eve', 'OK'),\n('PN-1085', 'MCH-5', 430, 'Day', 'Bob', 'OK'),\n('PN-1086', 'MCH-1', 435, 'Night', 'Alice', 'Rework'),\n('PN-1087', 'MCH-2', 440, 'Day', 'John', 'Reject'),\n('PN-1088', 'MCH-3', 445, 'Night', 'Eve', 'OK'),\n('PN-1089', 'MCH-4', 450, 'Day', 'Bob', 'OK'),\n('PN-1090', 'MCH-5', 455, 'Night', 'Alice', 'Rework'),\n('PN-1091', 'MCH-1', 460, 'Day', 'John', 'Reject'),\n('PN-1092', 'MCH-2', 465, 'Night', 'Eve', 'OK'),\n('PN-1093', 'MCH-3', 470, 'Day', 'Bob', 'OK'),\n('PN-1094', 'MCH-4', 475, 'Night', 'Alice', 'Rework'),\n('PN-1095', 'MCH-5', 480, 'Day', 'John', 'Reject'),\n('PN-1096', 'MCH-1', 485, 'Night', 'Eve', 'OK'),\n('PN-1097', 'MCH-2', 490, 'Day', 'Bob', 'OK'),\n('PN-1098', 'MCH-3', 495, 'Night', 'Alice', 'Rework'),\n('PN-1099', 'MCH-4', 500, 'Day', 'John', 'Reject'),\n('PN-1100', 'MCH-5', 505, 'Night', 'Eve', 'OK'),\n('PN-1101', 'MCH-1', 510, 'Day', 'Bob', 'OK'),\n('PN-1102', 'MCH-2', 515, 'Night', 'Alice', 'Rework'),\n('PN-1103', 'MCH-3', 520, 'Day', 'John', 'Reject'),\n('PN-1104', 'MCH-4', 525, 'Night', 'Eve', 'OK'),\n('PN-1105', 'MCH-5', 530, 'Day', 'Bob', 'OK'),\n('PN-1106', 'MCH-1', 535, 'Night', 'Alice', 'Rework'),\n('PN-1107', 'MCH-2', 540, 'Day', 'John', 'Reject'),\n('PN-1108', 'MCH-3', 545, 'Night', 'Eve', 'OK'),\n('PN-1109', 'MCH-4', 550, 'Day', 'Bob', 'OK'),\n('PN-1110', 'MCH-5', 555, 'Night', 'Alice', 'Rework'),\n('PN-1111', 'MCH-1', 560, 'Day', 'John', 'Reject'),\n('PN-1112', 'MCH-2', 565, 'Night', 'Eve', 'OK'),\n('PN-1113', 'MCH-3', 570, 'Day', 'Bob', 'OK'),\n('PN-1114', 'MCH-4', 575, 'Night', 'Alice', 'Rework'),\n('PN-1115', 'MCH-5', 580, 'Day', 'John', 'Reject'),\n('PN-1116', 'MCH-1', 585, 'Night', 'Eve', 'OK'),\n('PN-1117', 'MCH-2', 590, 'Day', 'Bob', 'OK'),\n('PN-1118', 'MCH-3', 595, 'Night', 'Alice', 'Rework'),\n('PN-1119', 'MCH-4', 600, 'Day', 'John', 'Reject'),\n('PN-1120', 'MCH-5', 605, 'Night', 'Eve', 'OK');\n",
+        "name": "Insert Demo Record",
+        "x": 520,
+        "y": 600,
+        "wires": [
+            [
+                "14f4c86283758999"
+            ]
+        ]
+    },
+    {
+        "id": "b5f49c247ba9b8ff",
+        "type": "sqlite",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "mydb": "af8181435967f101",
+        "sqlquery": "fixed",
+        "sql": "DROP TABLE manufacturing_data;",
+        "name": "Delete Table",
+        "x": 310,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3ab911fd7d6799d",
+        "type": "inject",
+        "z": "8d3d74e9316db46e",
+        "g": "fe1f8c2ab27513b8",
+        "name": "Clean up",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 720,
+        "wires": [
+            [
+                "b5f49c247ba9b8ff"
+            ]
+        ]
+    }
+]
