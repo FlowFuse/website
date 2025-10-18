@@ -69,7 +69,7 @@ Guidelines for including images:
 
 If you need to include things other than images, e.g. Video or resource bundles (zip files), these should be uploaded to the `website-data` S3 bucket in the Production AWS account.
 
-This can be done by Ben, Nick, Piotr or ZJ.
+This can be done by [Ben](/team#ben-hardill), [Nick](/team#nick-oleary), [Piotr](/team#piotr-pawlowski) or [ZJ](/team#zeger-jan-van-de-weg).
 
 A URL will be made available to include in the post.
 
