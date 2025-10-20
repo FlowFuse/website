@@ -513,6 +513,33 @@ h4:hover .header-anchor::before {
     z-index: 1000;
 }
 
+@media (max-width: 640px) {
+    body.node-red-con {
+        background-size: 250% auto;
+        background-position: center top;
+    }
+
+    body.node-red-con h1 {
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+
+    body.node-red-con h2 {
+        font-size: 1.75rem;
+        line-height: 2.1rem;
+    }
+
+    body.node-red-con h3 {
+        font-size: 1.5rem;
+        line-height: 1.9rem;
+    }
+
+    body.node-red-con .container.main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 .story .ff-tooltip:after {
     transform: translate(-50%, 100%);
     top: auto;
