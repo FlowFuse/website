@@ -507,37 +507,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return messages.length - 1;
     }
 
-    function renderMessages() {
-        // Clear existing messages in DOM
-        chatMessages.innerHTML = '';
-        
-        // Rebuild from messages array
-        messages.forEach(message => {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `flex ${message.type === 'human' ? 'justify-end' : 'justify-start'} mb-4`;
-            
-            const messageBubble = document.createElement('div');
-            messageBubble.className = `max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
-                message.type === 'human' 
-                    ? 'bg-indigo-600 text-white rounded-br-sm' 
-                    : 'bg-gray-100 text-gray-800 rounded-bl-sm'
-            }`;
-            
-            if (message.isHTML) {
-                messageBubble.innerHTML = message.content;
-                messageBubble.classList.add('rich-content');
-            } else {
-                messageBubble.textContent = message.content;
-            }
-            
-            messageDiv.appendChild(messageBubble);
-            chatMessages.appendChild(messageDiv);
-        });
-        
-        // Scroll to bottom using auto-scroll function
-        scrollToBottom();
-    }
-
     function clearMessages() {
         // Clear messages array
         messages = [];
@@ -762,40 +731,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function updateMessageWithHTML(messageIndex, htmlContent) {
-        // Update the message in the array
-        if (messageIndex >= 0 && messageIndex < messages.length) {
-            messages[messageIndex].content = htmlContent;
-            messages[messageIndex].isHTML = true;
-            
-            // Find the correct DOM element index
-            // If there's a welcome message, we need to offset by 1
-            const hasWelcomeMessage = chatMessages.children.length > messages.length;
-            const domIndex = hasWelcomeMessage ? messageIndex + 1 : messageIndex;
-            
-            // Update the corresponding DOM element
-            const messageElements = chatMessages.children;
-            if (messageElements[domIndex]) {
-                const messageBubble = messageElements[domIndex].querySelector('div');
-                
-                // Stop loading animation first
-                if (messageBubble.classList.contains('ai-loading')) {
-                    stopLoadingMessageRotation();
-                    messageBubble.classList.remove('ai-loading');
-                }
-                
-                // Set HTML content
-                messageBubble.innerHTML = htmlContent;
-                
-                // Update styles for rich content
-                messageBubble.classList.add('rich-content');
-            }
-            
-            // Scroll to bottom
-            scrollToBottom();
-        }
-    }
-
     function addProgressiveMessage(content, type) {
         // Add initial message and return its index
         addMessage(content, type);
@@ -836,31 +771,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return messages.length - 1; // Return index of the newly added message
     }
 
-    function appendToMessage(messageIndex, additionalContent) {
-        // Append content to existing message
-        if (messageIndex >= 0 && messageIndex < messages.length) {
-            messages[messageIndex].content += additionalContent;
-            
-            // Update the corresponding DOM element
-            const messageElements = chatMessages.children;
-            if (messageElements[messageIndex]) {
-                const messageBubble = messageElements[messageIndex].querySelector('div');
-                
-                // If this is the first real content being added to an AI message, stop loading animation
-                if (messageBubble.classList.contains('ai-loading') && additionalContent.trim() !== '') {
-                    stopLoadingMessageRotation();
-                    messageBubble.classList.remove('ai-loading');
-                    messageBubble.innerHTML = ''; // Clear loading content
-                }
-                
-                messageBubble.textContent = messages[messageIndex].content;
-            }
-            
-            // Scroll to bottom using auto-scroll function
-            scrollToBottom();
-        }
-    }
-    
     function startLoadingSequence(messageBubble) {
         // Clear any existing interval
         if (loadingMessageInterval) {
