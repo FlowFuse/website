@@ -168,14 +168,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (tellMeHowBtn) {
         tellMeHowBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const userText = document.querySelector('textarea[aria-label="Describe your workflow"]').value;
+            const textarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+            const userText = textarea ? textarea.value : '';
             const promptText = userText.trim();
             openModal(promptText);
         });
     }
 
     // Close modal
-    closeBtn.addEventListener('click', closeModal);
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
     modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal();
     });
@@ -210,13 +213,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get elements for transition
             const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
-            const homeTextareaWrapper = homeTextarea.closest('.textarea-wrapper');
+            const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
             // Target the entire input area div that contains textarea and footer text
             const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
             
             
             // Set transition name on home wrapper BEFORE starting transition (for "before" snapshot)
-            homeTextareaWrapper.style.viewTransitionName = 'morphing-content';
+            if (homeTextareaWrapper) {
+                homeTextareaWrapper.style.viewTransitionName = 'morphing-content';
+            }
             
             // Use View Transitions API for smooth morphing
             try {
@@ -264,7 +269,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 console.error('Error starting transition:', error);
                 // Fallback to immediate modal show
-                homeTextareaWrapper.style.display = 'none';
+                if (homeTextareaWrapper) {
+                    homeTextareaWrapper.style.display = 'none';
+                }
                 document.body.appendChild(modal);
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
@@ -277,11 +284,13 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Fallback for browsers without View Transitions support
             const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
-            const homeTextareaWrapper = homeTextarea.closest('.textarea-wrapper');
+            const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
             
             
             // Hide home textarea to avoid duplication
-            homeTextareaWrapper.style.display = 'none';
+            if (homeTextareaWrapper) {
+                homeTextareaWrapper.style.display = 'none';
+            }
             
             // Show modal immediately (no animation)
             document.body.appendChild(modal);
@@ -1007,7 +1016,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     // Stop generation
-    document.getElementById('stop-generation').addEventListener('click', function() {
+    const stopGenerationBtn = document.getElementById('stop-generation');
+    if (stopGenerationBtn) {
+        stopGenerationBtn.addEventListener('click', function() {
         // Stop the current generation
         isGenerating = false;
         
@@ -1023,10 +1034,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         updateInputState();
-    });
+        });
+    }
 
     // Send message
-    document.getElementById('send-message').addEventListener('click', async function() {
+    const sendMessageBtn = document.getElementById('send-message');
+    if (sendMessageBtn) {
+        sendMessageBtn.addEventListener('click', async function() {
         const message = modalInput.value.trim();
         if (!message) return; // Don't send empty messages
         
@@ -1114,7 +1128,8 @@ document.addEventListener('DOMContentLoaded', function() {
         isGenerating = false;
         currentAbortController = null;
         updateInputState();
-    });
+        });
+    }
 
     // Update send button when typing
     modalInput.addEventListener('input', function() {
@@ -1219,6 +1234,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Clear conversation event listener
-    document.getElementById('clear-conversation').addEventListener('click', clearConversation);
+    const clearConversationBtn = document.getElementById('clear-conversation');
+    if (clearConversationBtn) {
+        clearConversationBtn.addEventListener('click', clearConversation);
+    }
 });
 </script>
