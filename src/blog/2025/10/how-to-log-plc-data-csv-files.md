@@ -3,21 +3,22 @@ title: "How to Log PLC Data to CSV Files"
 subtitle: "Building a reliable, hands-off CSV logging setup with FlowFuse"
 description: "Learn how to reliably log PLC data to CSV files using FlowFuse, handling connection drops, file corruption, and timestamp drift."
 date: 2025-10-21
-keywords:
+keywords: PLC data logging, CSV file logging, Node-RED industrial automation, OPC UA data collection, FlowFuse, manufacturing data logging, SCADA data export, industrial IoT, Modbus logging, time-series data, edge device data collection, shop floor data collection
 authors: ["sumit-shinde"]
 image:
 tags:
     - flowfuse
 ---
 
-CSV files have been recording manufacturing data since the mid-1980s — over 40 years of continuous use across every industry. They’ve outlasted proprietary databases, specialized historians, and expensive SCADA extensions. Every plant still uses them because they’re universally compatible, and if you’re reading this, you probably need to do the same.
+CSV files have been recording manufacturing data since the mid-1980s, over 40 years of continuous use across every industry. Logging to databases like InfluxDB, TimescaleDB, or PostgreSQL is excellent for real-time analytics, complex queries, and large-scale operations. But many organizations still rely on CSV files for good reasons: regulatory compliance, legacy system integration, offline analysis, or simply because it's the format their teams know and trust. If you're reading this, you're likely one of them and need a reliable solution.
 
-<!--more-->
+CSV files offer something databases can't always guarantee: universal compatibility and permanence. Excel opens them instantly, databases import them natively, and analysis tools expect them. No licensing, no vendor tie-ins, no format obsolescence. Data captured decades ago is still perfectly readable today and will be readable decades from now, regardless of what systems you're using.
 
-Any system can read CSV. Excel opens it instantly, databases import it natively, and analysis tools expect it. No licensing, no vendor tie-ins, no format obsolescence. Data captured decades ago is still perfectly readable today.
+The truth is, most manufacturers use both for distinct purposes. CSVs remain the standard on the shop floor for data loggers that write locally during network outages, regulatory submissions requiring immutable audit trails, batch documentation archived for decades, and data exchange with suppliers and auditors.
 
-But building reliable PLC-to-CSV logging that runs automatically without interruptions is harder than it looks. Small issues can silently stop your data collection or logging without warning.
+Meanwhile, databases handle real-time monitoring and automated alerts, cross-functional analytics, high-frequency sensor queries, and dynamic relationships across materials and equipment.
 
+This isn't an either/or choice. It's a dual-track system where databases provide operational speed and CSVs provide the permanence layer, ensuring your compliance records and critical data outlive any technology stack.
 This guide shows how to implement PLC data logging with **FlowFuse** in a way that keeps running, stable, resilient, and production-ready.
 
 ![Image showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file.](./images/plc-to-csv.gif){data-zoomable}
@@ -27,7 +28,7 @@ _Image showing FlowFuse collecting data from a PLC using OPC UA and logging it t
 
 Before getting started, make sure you have:
 
-- **A running FlowFuse instance** – If you do not have one yet, sign up for FlowFuse and deploy an instance on your edge device. This device will handle data collection and logging from your PLC using Node-RED.
+- **A running FlowFuse instance** – If you don’t have one yet, [sign up](https://app.flowfuse.com/account/create) for FlowFuse and set up an instance on your edge device. This device will manage data collection and logging from your PLC using Node-RED.
 
 ## Step 1: Setting Up PLC Communication in FlowFuse
 
@@ -154,7 +155,7 @@ Let it run. Each day at midnight, the system automatically starts a new file. Ol
 
 This daily rotation keeps file sizes manageable and makes it easy to find data from specific dates. But there are still edge cases to handle—what happens when disk space runs low or file writes fail? The next step addresses these reliability issues.
 
-## Step 4: Monitoring Disk Usage
+## Step 3: Monitoring Disk Usage
 
 Running a logging system continuously means files accumulate. Monitor disk space to prevent unexpected failures when storage runs low.
 
@@ -198,7 +199,7 @@ try {
 
 Now you'll get warnings before disk space becomes critical, giving you time to archive old data or expand storage.
 
-## Step 5: Handling Connection Interruptions
+## Step 4: Handling Connection Interruptions
 
 Network issues, PLC restarts, or equipment maintenance can cause connection drops. Your logging system should handle these gracefully and automatically resume when the connection is restored.
 
@@ -208,6 +209,12 @@ Most PLC nodes emit error events when a connection fails. Add error handling to 
 2. Drag a Function or Change node to format the error messages according to your chosen notification method, and connect it to the Catch node.
 3. Connect the node that formats the error message to your selected Notification node.
 4. Deploy the flow.
+
+Below is the complete flow we have built throughout this article.
+
+{% renderFlow 300 %}
+[{"id":"66776385db5794bc","type":"group","z":"8ddda9732c79c2e9","name":"","style":{"fill":"#ffcf3f","label":true,"fill-opacity":"0.57"},"nodes":["ac0d35a6466cfcb4","4aff5b57cbb63b8f","a5c5746934670306","d796d3aee8ea0343","23ebc0da4315ac46","181ed86f9c11d1f7","b34d440897108110","575ed67714072973","d08353a9c90b0396","e719ae6fee22c812","2518dc909d447655"],"x":-6,"y":211.5,"w":1092,"h":269.5},{"id":"ac0d35a6466cfcb4","type":"csv","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"","spec":"rfc","sep":",","hdrin":true,"hdrout":"once","multi":"one","ret":"\\r","temp":"timestamp,temperature","skip":"0","strings":true,"include_empty_strings":"","include_null_values":"","x":650,"y":260,"wires":[["a5c5746934670306"]]},{"id":"4aff5b57cbb63b8f","type":"function","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"Daily PLC Logger","func":"const now = new Date();\nconst dateStr = now.toISOString().split('T')[0];\nconst timestamp = now.toISOString();\n\nconst filename = `./plc_data_${dateStr}.csv`;\n\nmsg.payload = {\n    timestamp: timestamp,\n    temperature: msg.payload,\n};\n\nmsg.filename = filename;\n\n// Track last date in flow context\nconst lastDate = flow.get('lastDate') || '';\nif (lastDate !== dateStr) {\n    msg.reset = true; // Will trigger CSV node to write headers\n    flow.set('lastDate', dateStr);\n} \n\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":490,"y":260,"wires":[["ac0d35a6466cfcb4"]]},{"id":"a5c5746934670306","type":"file","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"Log Data to CSV file","filename":"filename","filenameType":"msg","appendNewline":true,"createDir":true,"overwriteFile":"false","encoding":"none","x":820,"y":260,"wires":[["2518dc909d447655"]]},{"id":"d796d3aee8ea0343","type":"OpcUa-Client","z":"8ddda9732c79c2e9","g":"66776385db5794bc","endpoint":"","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":300,"y":260,"wires":[["4aff5b57cbb63b8f"],[],[]]},{"id":"23ebc0da4315ac46","type":"inject","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"ns=3;i=1004","x":110,"y":260,"wires":[["d796d3aee8ea0343"]]},{"id":"181ed86f9c11d1f7","type":"catch","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"","scope":["a5c5746934670306"],"uncaught":false,"x":90,"y":360,"wires":[["b34d440897108110"]]},{"id":"b34d440897108110","type":"debug","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"Errrors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":270,"y":360,"wires":[]},{"id":"575ed67714072973","type":"function","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"Check Disk Space","func":"try {\n    // Get disk usage information\n    const stats = fs.statfsSync('./');\n\n    const totalSpace = stats.blocks * stats.bsize;\n    const freeSpace = stats.bfree * stats.bsize;\n    const usedSpace = totalSpace - freeSpace;\n    const percentUsed = (usedSpace / totalSpace) * 100;\n\n    msg.payload = {\n        totalGB: (totalSpace / (1024 ** 3)).toFixed(2),\n        freeGB: (freeSpace / (1024 ** 3)).toFixed(2),\n        usedGB: (usedSpace / (1024 ** 3)).toFixed(2),\n        percentUsed: percentUsed.toFixed(2)\n    };\n\n    // Warning threshold\n    if (percentUsed > 90) {\n        msg.warning = `Disk space critical: ${percentUsed.toFixed(1)}% used`;\n    }\n\n    return msg;\n\n} catch (err) {\n    msg.payload = { error: err.message };\n    return msg;\n}","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[{"var":"fs","module":"fs"}],"x":310,"y":440,"wires":[["e719ae6fee22c812"]]},{"id":"d08353a9c90b0396","type":"inject","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"1800","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":130,"y":440,"wires":[["575ed67714072973"]]},{"id":"e719ae6fee22c812","type":"debug","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"Disk Full Warning !","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":510,"y":440,"wires":[]},{"id":"2518dc909d447655","type":"debug","z":"8ddda9732c79c2e9","g":"66776385db5794bc","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":990,"y":260,"wires":[]},{"id":"6e2a451247520f46","type":"global-config","env":[],"modules":{"node-red-contrib-opcua":"0.2.342"}}]
+{% endrenderFlow %}
 
 ## Conclusion
 
