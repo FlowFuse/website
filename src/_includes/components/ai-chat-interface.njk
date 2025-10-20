@@ -32,10 +32,29 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Auto-focus the homepage textarea when page loads
     const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
     if (homeTextarea) {
+        // Auto-focus the homepage textarea when page loads
         homeTextarea.focus();
+        
+        // Responsive placeholder text
+        const fullPlaceholder = "Tell us what you are trying to build and the FlowFuse Expert Assistant will create a guide to get you up and running quickly";
+        const shortPlaceholder = "Tell us what you are trying to build";
+        
+        function updatePlaceholder() {
+            // Use 480px breakpoint to target mobile phones
+            if (window.innerWidth < 480) {
+                homeTextarea.placeholder = shortPlaceholder;
+            } else {
+                homeTextarea.placeholder = fullPlaceholder;
+            }
+        }
+        
+        // Set initial placeholder
+        updatePlaceholder();
+        
+        // Update on window resize
+        window.addEventListener('resize', updatePlaceholder);
     }
 });
 </script>
