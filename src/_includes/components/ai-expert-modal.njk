@@ -445,18 +445,18 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             if (error.name === 'AbortError') {
                 // Update message to show it was stopped
-                updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' [Generation stopped]');
+                updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' Stopped your request');
             } else {
                 // Handle other errors
                 updateMessage(aiMessageIndex, 'Sorry, an error occurred while generating the response.');
             }
         }
-        
+
         // Mark generation as complete
         isGenerating = false;
         currentAbortController = null;
         updateInputState();
-        
+
         // Button visibility is now handled by updateInputState()
     }
 
@@ -1099,13 +1099,13 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             if (error.name === 'AbortError') {
                 // Update message to show it was stopped
-                updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' [Generation stopped]');
+                updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' Stopped your request');
             } else {
                 // Handle other errors
                 updateMessage(aiMessageIndex, 'Sorry, an error occurred while generating the response.');
             }
         }
-        
+
         // Mark generation as complete
         isGenerating = false;
         currentAbortController = null;
@@ -1199,13 +1199,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 } catch (error) {
                     if (error.name === 'AbortError') {
                         // Update message to show it was stopped
-                        updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' [Generation stopped]');
+                        updateMessage(aiMessageIndex, messages[aiMessageIndex].content + ' Stopped your request');
                     } else {
                         // Handle other errors
                         updateMessage(aiMessageIndex, 'Sorry, an error occurred while generating the response.');
                     }
                 }
-                
+
                 // Mark generation as complete
                 isGenerating = false;
                 currentAbortController = null;
