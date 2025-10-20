@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Enable clear button only if there are messages
             const hasMessages = messages.length > 0;
             if (clearBtn) clearBtn.disabled = !hasMessages;
-            // Hide stop button, show summarize button if there are messages
+            // Hide stop button, show send button if there are messages
             if (stopBtn) stopBtn.classList.add('hidden');
             if (sendBtn) {
                 // Enable/disable send button based on textarea content
@@ -338,11 +338,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sessionId = null;  // Clear session ID
                 lastTransactionId = null;  // Clear transaction ID
                 
-                // Hide both button containers
-                const stopButtonContainer = document.getElementById('stop-button-container');
-                const summarizeButtonContainer = document.getElementById('summarize-button-container');
-                stopButtonContainer.classList.add('hidden');
-                summarizeButtonContainer.classList.add('hidden');
+                // Clean up - removed references to non-existent button containers
             });
         } else {
             // Fallback for browsers without View Transitions
@@ -361,11 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionId = null;  // Clear session ID
             lastTransactionId = null;  // Clear transaction ID
             
-            // Hide both button containers
-            const stopButtonContainer = document.getElementById('stop-button-container');
-            const summarizeButtonContainer = document.getElementById('summarize-button-container');
-            stopButtonContainer.classList.add('hidden');
-            summarizeButtonContainer.classList.add('hidden');
+            // Clean up - removed references to non-existent button containers
         }
         
     }
