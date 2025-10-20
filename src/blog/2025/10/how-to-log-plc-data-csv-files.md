@@ -39,9 +39,9 @@ The right protocol depends on what your PLC supports.
 
 Modern PLCs typically offer open standards like OPC UA, Modbus TCP, or EtherNet/IP. These protocols work across different manufacturers and give you the most flexibility.
 
-If your PLC supports OPC UA, that's probably your best option. It's becoming the common language across industrial equipment—Siemens, Rockwell, Schneider, and most other manufacturers support it, and thats the option i have used in demo i prepared for the this article 
+If your PLC supports OPC UA, that is likely your best option. It is becoming the common language across industrial equipment—Siemens, Rockwell, Schneider, and most other manufacturers support it. This is also the option I used in the demo I prepared for this article. For more information on how to use OPC UA with your PLC, you can refer to [this article](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 
-Legacy systems use vendor-specific protocols: S7 for Siemens, MC Protocol for Mitsubishi, FINS for Omron, and EtherNet/IP for Allen-Bradley. If your PLC only speaks its native language, Node-RED has dedicated nodes for each one.
+Legacy systems use vendor-specific protocols: [S7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) for Siemens, MC Protocol for Mitsubishi, FINS for Omron, and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) for Allen-Bradley. If your PLC only speaks its native language, Node-RED has dedicated nodes for each one.
 
 ### Installing the Right Node
 
