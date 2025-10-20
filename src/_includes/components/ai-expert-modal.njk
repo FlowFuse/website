@@ -909,28 +909,39 @@ document.addEventListener('DOMContentLoaded', function() {
         return html;
     }
 
+    function addUTMParameters(url) {
+        try {
+            const urlObj = new URL(url);
+            urlObj.searchParams.set('utm_campaign', '215266513-FlowFuse Expert');
+            return urlObj.toString();
+        } catch (e) {
+            // If URL parsing fails, return original URL
+            return url;
+        }
+    }
+
     function renderRichContent(richAnswer) {
         let html = '';
-        
+
         // Setup Guide label for guide messages
         html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-2 rounded-full inline-block mb-3">Setup Guide</div>`;
-        
+
         // Title
         if (richAnswer.title) {
             html += `<h3 class="text-lg font-semibold text-gray-900 mb-2">${richAnswer.title}</h3>`;
         }
-        
+
         // Summary
         if (richAnswer.summary) {
             html += `<p class="text-gray-700 mb-4">${richAnswer.summary}</p>`;
         }
-        
+
         // Steps
         if (richAnswer.steps && richAnswer.steps.length > 0) {
             html += '<div class="mb-4">';
             html += '<h4 class="text-base font-medium text-gray-900 mb-3">Steps:</h4>';
             html += '<ol class="space-y-3">';
-            
+
             richAnswer.steps.forEach((step, index) => {
                 html += `
                 <li class="flex">
@@ -941,23 +952,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </li>`;
             });
-            
+
             html += '</ol>';
             html += '</div>';
         }
-        
+
         // Node Packages
         if (richAnswer.nodePackages && richAnswer.nodePackages.length > 0) {
             html += '<div class="mb-4">';
             html += '<h4 class="text-base font-medium text-gray-900 mb-3">Required Node Packages</h4>';
             html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
-            
+
             richAnswer.nodePackages.forEach(pkg => {
                 const nodeRedUrl = `https://flows.nodered.org/node/${pkg.name}`;
+                const nodeRedUrlWithUTM = addUTMParameters(nodeRedUrl);
                 const faviconUrl = `https://www.google.com/s2/favicons?domain=flows.nodered.org`;
-                
+
                 html += `
-                <a href="${nodeRedUrl}" target="_blank" rel="noopener noreferrer" 
+                <a href="${nodeRedUrlWithUTM}" target="_blank" rel="noopener noreferrer"
                    class="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors h-16">
                     <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0" alt="">
                     <div class="flex-1 min-w-0">
@@ -966,22 +978,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </a>`;
             });
-            
+
             html += '</div>';
             html += '</div>';
         }
-        
+
         // Resources
         if (richAnswer.resources && richAnswer.resources.length > 0) {
             html += '<div>';
             html += '<h4 class="text-base font-medium text-gray-900 mb-3">Related Resources</h4>';
             html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
-            
+
             richAnswer.resources.forEach(resource => {
                 const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(resource.url).hostname}`;
-                
+                const resourceUrlWithUTM = addUTMParameters(resource.url);
+
                 html += `
-                <a href="${resource.url}" target="_blank" rel="noopener noreferrer" 
+                <a href="${resourceUrlWithUTM}" target="_blank" rel="noopener noreferrer"
                    class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors">
                     <div class="flex items-start gap-2">
                         <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0 mt-0.5" alt="">
@@ -992,11 +1005,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </a>`;
             });
-            
+
             html += '</div>';
             html += '</div>';
         }
-        
+
         return html;
     }
     
