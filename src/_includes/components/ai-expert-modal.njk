@@ -501,6 +501,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Scroll to bottom using auto-scroll function
         scrollToBottom();
+        
+        // Return the index of the newly added message
+        return messages.length - 1;
     }
 
     function renderMessages() {
@@ -543,17 +546,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function showWelcomeMessage() {
-        // Add welcome message container (this doesn't count as a real conversation message)
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'flex justify-start mb-4';
+        // Add welcome message using addMessage to maintain array/DOM sync
+        const messageIndex = addMessage('', 'ai');
         
-        const messageBubble = document.createElement('div');
-        messageBubble.className = 'max-w-xs lg:max-w-md px-4 py-2 rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm';
-        messageBubble.textContent = '';
-        
-        messageDiv.appendChild(messageBubble);
-        chatMessages.appendChild(messageDiv);
-        scrollToBottom();
+        // Get the message bubble element that was just created
+        const messageDiv = chatMessages.children[messageIndex];
+        const messageBubble = messageDiv.querySelector('div:last-child');
         
         // Animate the typing of the welcome message
         const welcomeText = 'Hello! I am here to help you get started with FlowFuse and Node-RED. Please tell me what you are hoping to achieve.';
@@ -563,6 +561,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < words.length; i++) {
             currentText += (i > 0 ? ' ' : '') + words[i];
             messageBubble.textContent = currentText;
+            messages[messageIndex].content = currentText; // Update the messages array too
             scrollToBottom();
             
             // Small delay between words for typing effect
