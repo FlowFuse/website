@@ -9,7 +9,7 @@ issues:
   - "https://github.com/FlowFuse/flowfuse/issues/6006"
 ---
 
-Managing which device group your Remote Instances belong to just got a lot easier. Previously, if you wanted to move a device to a different group, you had to navigate through all the available groups to find and reassign it - a time-consuming process when dealing with multiple device groups.
+Managing which device group your Remote Instance belong to just got a easier. Previously, if you wanted to move a device to a different group, you had to identify the group the Remote Instance belongs to, remove it, then find the group to assign it to, edit that group and add it. This was not optimal.
 
 With this update, you can now see which group a Remote Instance belongs to directly from the overview page, and easily reassign it to a different group from the settings page without the hassle of searching through your entire group structure.
 
