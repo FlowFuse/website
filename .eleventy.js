@@ -180,13 +180,14 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('dictsortBy', function(val, reverse, attr) {
         let array = [];
         for (let k in val) {
-            array.push(val[k]);
+            // Preserve the key (slug) by adding it to the object
+            array.push({...val[k], _key: k});
         }
 
         array.sort((t1, t2) => {
             var a = t1[attr];
             var b = t2[attr];
-        
+
             return a > b ? 1 : (a === b ? 0 : -1); // eslint-disable-line no-nested-ternary
         });
 

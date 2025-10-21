@@ -17,7 +17,7 @@ Content creation and blogging are effective ways to communicate with our communi
 1. Convert to Draft
 1. No Reviews shall be done until the PR is “Ready for Review”
 1. Assign two reviewers
-    * One Reviewer for Content (ZJ)
+    * One Reviewer for Content ([ZJ](/team#zeger-jan-van-de-weg))
     * One Reviewer for SEO.
 1. If the content is time-sensitive, please make sure everyone involved is aware of this. 
 1. Content will be reviewed first.

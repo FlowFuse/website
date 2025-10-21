@@ -6,7 +6,7 @@
                 class="w-full h-full bg-transparent border-0 focus:outline-none text-gray-600 placeholder-gray-400 resize-none"
                 aria-label="Describe your workflow"
             ></textarea>
-            <div class="absolute bottom-3 left-4 text-[10px] font-light text-gray-500 pr-36">
+            <div class="absolute bottom-3 left-4 text-[10px] font-light text-gray-500 pr-36 line-clamp-2">
                 Uses OpenAI GPT-4.1 Mini trained on FlowFuse's knowledge base
             </div>
             <button class="absolute bottom-3 right-4 ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3" onclick="if(typeof capture === 'function') capture('cta-ai-tell-me-how', {'position': 'hero'})">
@@ -32,10 +32,29 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Auto-focus the homepage textarea when page loads
     const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
     if (homeTextarea) {
+        // Auto-focus the homepage textarea when page loads
         homeTextarea.focus();
+        
+        // Responsive placeholder text
+        const fullPlaceholder = "Tell us what you are trying to build and the FlowFuse Expert Assistant will create a guide to get you up and running quickly";
+        const shortPlaceholder = "Tell us what you are trying to build";
+        
+        function updatePlaceholder() {
+            // Use 480px breakpoint to target mobile phones
+            if (window.innerWidth < 480) {
+                homeTextarea.placeholder = shortPlaceholder;
+            } else {
+                homeTextarea.placeholder = fullPlaceholder;
+            }
+        }
+        
+        // Set initial placeholder
+        updatePlaceholder();
+        
+        // Update on window resize
+        window.addEventListener('resize', updatePlaceholder);
     }
 });
 </script>

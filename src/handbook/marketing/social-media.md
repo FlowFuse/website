@@ -52,7 +52,7 @@ Each content type has channels which are appropriate, this table sets out which 
         - More collaborative: Engineers only need 1–2 minutes to hand off the content. Marketing takes care of the rest.
 
         These posts help us share fast-moving progress, spark community interest, and highlight how FlowFuse evolves day-to-day.
-
+- **New hire:** On Monday's during their first or second week working at FlowFuse.
 - **Curated content from other sources:** 1x week. Fridays.
     - Articles relevant to our ideal customer / industry related / news / posts.
         - Avoid competitor mentions.
@@ -84,6 +84,8 @@ Each content type has channels which are appropriate, this table sets out which 
 
 #### Posts format
 
+##### Regular
+
 - Descriptive text: 
     - Align with post purpose and audience goals.
     - Must reflect our [Brand Voice](/handbook/marketing/brand-voice/).
@@ -94,6 +96,17 @@ Each content type has channels which are appropriate, this table sets out which 
 - Link to article / website.
     - In HubSpot, delete the link from the "Add media" section to keep full-size image.
 - Select the corresponding campaign if applicable.
+
+##### New Hire
+
+- Welcome message highlighting the new team member's role
+- Tag the new team member
+- Brief background (2-3 key points about their experience or expertise)
+- What they'll be working on at FlowFuse
+- Include a photo they feel comfortable with (professional or casual, their choice)
+- Emoji
+- A message encouraging community to say hi in the comments
+- 2-3 relevant hashtags
 
 #### Leveraging the team network on LinkedIn
 
@@ -110,8 +123,14 @@ You can be granted temporary admin access once a month to send your invites.
 
 ##### Entire team
 
-LinkedIn’s algorithm currently rewards **comments** over reposts or likes.  
-Team members are encouraged to leave **insightful comments** on FlowFuse posts — this significantly increases visibility and helps us reach new audiences through personal networks.
+
+**Team member engagement**
+
+LinkedIn's algorithm currently rewards **comments** over reposts or likes. Team members are encouraged to leave **insightful comments** on FlowFuse posts — this significantly increases visibility and helps us reach new audiences through personal networks.
+
+**Company account actions**
+
+We'll share a [new hire post](/handbook/marketing/social-media/#new-hire) when new members join the team and encourage them to share, comment, and engage with responses. This aims to welcome them, expand reach through their networks, and showcase company culture.
 
 ## Content Ownership & Real-Time Decisions
 

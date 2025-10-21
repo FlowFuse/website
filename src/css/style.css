@@ -1645,6 +1645,29 @@ div.content section.footnotes ol li p {
     border: none !important;
 }
 
+@media (max-width: 640px) {
+    body #cc-main .cm__desc {
+        font-size: .8em;
+    }
+
+    body #cc-main .cm__btns {
+        padding: .25rem 1.1rem .5rem;
+    }
+    body #cc-main .cm__btn-group {
+        display: flex;
+        flex-direction: row !important;
+        gap: 1rem;
+    }
+
+    body #cc-main .pm__btn,
+    body #cc-main .cm__btn {
+        border: none;
+        align-self: end;
+        flex: 1;
+        padding: .4em 1em;
+    }
+}
+
 /*
     Overwrite range slider default styles
 */
