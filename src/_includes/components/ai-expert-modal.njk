@@ -346,8 +346,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalInput.value = '';
                 sessionId = null;  // Clear session ID
                 lastTransactionId = null;  // Clear transaction ID
-                
-                // Clean up - removed references to non-existent button containers
             });
         } else {
             // Fallback for browsers without View Transitions
@@ -365,8 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
             modalInput.value = '';
             sessionId = null;  // Clear session ID
             lastTransactionId = null;  // Clear transaction ID
-            
-            // Clean up - removed references to non-existent button containers
         }
         
     }
@@ -457,8 +453,6 @@ document.addEventListener('DOMContentLoaded', function() {
         isGenerating = false;
         currentAbortController = null;
         updateInputState();
-
-        // Button visibility is now handled by updateInputState()
     }
 
     function addMessage(content, type) {
