@@ -22,6 +22,16 @@ The flows import step seamlessly integrates with the existing multi-step instanc
 
 This enhancement is particularly valuable for teams looking to migrate existing Node-RED projects to FlowFuse or developers who want to quickly prototype with flows they've developed elsewhere.
 
+## Important considerations
+
+When importing flows, keep these key points in mind:
+- **Flow validation**: Imported flows aren't checked for validity, so invalid nodes may prevent your instance from starting
+- **Third-party nodes**: External nodes aren't installed automatically but can be added once the instance is running
+- **Credentials and secrets**: These aren't imported with flows but can be reconfigured after deployment
+- **Environment variables**: Any required variables must be manually added to your environment after setup
+
+Always verify the reliability of imported flows and avoid copying flows from untrusted sources.
+
 To try it out, simply create a new instance and look for the new "Flows" step in the creation wizard!
 
 ![Demo importing flows when creating a Hosted Instance](./images/import-flows-on-instance-creation.png){data-zoomable}  
