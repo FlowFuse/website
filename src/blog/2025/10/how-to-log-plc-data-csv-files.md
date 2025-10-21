@@ -46,7 +46,7 @@ Legacy systems use vendor-specific protocols: [S7](/blog/2025/01/integrating-sie
 
 ### Installing the Right Node
 
-Node-RED's package ecosystem includes nodes for virtually every industrial protocol. The most common ones:
+Node-RED's package ecosystem includes nodes for virtually every industrial protocol. The most common ones are:
 
 - `node-red-contrib-modbus` – Modbus RTU/TCP devices
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
