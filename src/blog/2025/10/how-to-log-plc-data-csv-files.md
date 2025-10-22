@@ -5,7 +5,7 @@ description: "Learn how to reliably log PLC data to CSV files using FlowFuse, ha
 date: 2025-10-22
 keywords: PLC data logging, CSV file logging, Node-RED industrial automation, OPC UA data collection, FlowFuse, manufacturing data logging, SCADA data export, industrial IoT, Modbus logging, time-series data, edge device data collection, shop floor data collection
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/10/images/log-plc-data-to-csv.png
 tags:
     - flowfuse
 ---
