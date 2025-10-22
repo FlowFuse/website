@@ -18,7 +18,8 @@ also being written down for others to share. We could do that all on the interna
 Google Drive, but by publishing in the handbook it allows for an open and honest
 conversation about what we do.
 
-Our handbook is more than just a collection of policies; it is the living embodiment of our core values. We believe that documenting our work and culture is essential to our success, and this handbook is how we put our values into practice every single day.  It's how we ensure that information wants to be free, and that our collaborative community can thrive.
+Our handbook is more than just a collection of policies; it is the living embodiment of our core values. We believe that documenting our work and culture is essential to our success, and this handbook is how we put our values into practice every single day.
+It's how we ensure that information wants to be free, and that our collaborative community can thrive.
 
 ## Why the Handbook Matters
 It's All About Our Values.
