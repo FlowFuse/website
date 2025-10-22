@@ -168,3 +168,6 @@ The company must deliver the following deliverables to all Major Investors:
 - Cap table is available through Carta
 - Approved annual budget and business plan for the next fiscal year as soon as
   practicable, at most within 30 days of each fiscal year.
+
+One investor in particular wants [this worksheet](https://docs.google.com/spreadsheets/d/10K12_RdNOu81-Ooxh1Vca6dF_EN3VWl2/edit?gid=1113941930#gid=1113941930) to be updated
+every quarter. It's set up to be mostly automatically imported from the Ops Plan.
