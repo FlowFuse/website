@@ -12,6 +12,8 @@ tags:
 
 CSV files have been recording manufacturing data since the mid-1980s, over 40 years of continuous use across every industry. Logging to databases like InfluxDB, TimescaleDB, or PostgreSQL is excellent for real-time analytics, complex queries, and large-scale operations. But many organizations still rely on CSV files for good reasons: regulatory compliance, legacy system integration, offline analysis, or simply because it's the format their teams know and trust. If you're reading this, you're likely one of them and need a reliable solution.
 
+<!--more-->
+
 CSV files offer something databases can't always guarantee: universal compatibility and permanence. Excel opens them instantly, databases import them natively, and analysis tools expect them. No licensing, no vendor tie-ins, no format obsolescence. Data captured decades ago is still perfectly readable today and will be readable decades from now, regardless of what systems you're using.
 
 The truth is, most manufacturers use both for distinct purposes. CSVs remain the standard on the shop floor for data loggers that write locally during network outages, regulatory submissions requiring immutable audit trails, batch documentation archived for decades, and data exchange with suppliers and auditors.
