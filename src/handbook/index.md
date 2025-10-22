@@ -39,7 +39,7 @@ The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/
 and contributions can be made through pull-requests. How to contribute
 is capture [in a guide](https://github.com/FlowFuse/website#flowfuse-website).
 
-The handbook is here for the whole company to help maintain. Pull-requests are welcome and [strongly encouraged](#contributing).
+The handbook is here for the whole company to help maintain. **Pull-requests are welcome and strongly encouraged**.
 
 To follow the latest changes in the Handbook, join the `#gh-handbook` channel on Slack.
 
