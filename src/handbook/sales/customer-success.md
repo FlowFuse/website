@@ -294,17 +294,16 @@ For each meeting, the goals are:
 
 ## Procedure for Handling a Churned Customer
 
-The Assigned Account Executive is responsible for executing the following steps
+The Customer Success manager is responsible for executing the following steps
 when an annually-billed customer chooses not to renew their subscription:
 
 1. **Update Contracted Customer Tracker** Access the
-   [Contracted Customer Tracker](https://docs.google.com/spreadsheets/d/1QcGVeiO_RXwYHCZvGcuBW3oYgR5NMsQ22yi3cOFY73o/edit?gid=1852075496#gid=1852075496)
-   and move the churned customer to the "Churned" tab.
+   [CS Customer tracking](https://docs.google.com/spreadsheets/d/1R7OpMxg-PzXiU1gbh17QaquiQ6bQRQ3gpK1M2LNeVac/edit?gid=0#gid=0)
+   and move the churned customer to the "Churned" tab. Add the churn date and the reason for churning. 
 
-2. **Cancel Subscription in Stripe** Use the Stripe link provided in the Tracker
-   to log into Stripe. Cancel the subscription to ensure no further invoices are
-   sent and effectively close the customer's account on the platform.
-
+2. **Cancel Subscription in Hubspot** Cancel the subscription on their account page in Hubspot, to ensure no further invoices are
+   sent.
+   
 3. **Close Opportunities in Hubspot** In Hubspot, locate any open Growth and
    Renewal opportunities related to the churned customer. Move these
    opportunities to "Closed Lost" to reflect the customer's decision not to
