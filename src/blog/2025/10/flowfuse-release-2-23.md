@@ -4,7 +4,7 @@ subtitle: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-l
 description: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Assistant for Self-Hosted, and more!"
 date: 2025-10-23
 authors: ["greg-stoutenburg"]
-image: 
+image: /blog/2025/10/images/flowfuse-release-2-23.png
 tags:
    - flowfuse
    - news
