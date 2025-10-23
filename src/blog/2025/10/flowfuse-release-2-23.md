@@ -25,6 +25,8 @@ With this release, you can now create a Model Context Protocol server using Node
 
 While MCP makes it possible to create AI agents to rely on the data you have chosen, the new FlowFuse AI nodes allow you to connect AI models of your choosing--including ones that you have trained yourself--to Node-RED to create any workflow you like. The ONNX (Open Neural Network Exchange) format lets you connect a model for whatever purpose you have in mind. This package ships with nodes for running your own custom-trained model, for classifying images, for object detection, and for image depth estimation. This is a huge step in the direction of fully-controlled AI automation inside of Node-RED on FlowFuse.
 
+For self-hosted customers, once you've upgraded, contact [FlowFuse Support](https://flowfuse.com/support) to get access to these exciting new nodes.
+
 ## Application-Level Role-Based Access Control
 ![Image of application-level permissions](./images/rbac2.png)
 _[Control permissions at the application level]_
