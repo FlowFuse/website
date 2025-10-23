@@ -43,7 +43,7 @@ Head over to [flowfuse.com](https://flowfuse.com) to check it out! We have big p
 
 ## FlowFuse Assistant for Self Hosted Deployments
 
-Speaking of AI assistance, self-hosted FlowFuse deployments have until now not had access to the FlowFuse Assistant inside of Node-RED, helping to complete flows using natural language for explanation of flows, creation of Dashboard, Function, and Tables nodes, and Snapshot descriptions. These had been available only to FlowFuse Cloud customers. I'm happy to say that our many self-hosted customers now (finally) have access to this tool, which helps speed flow creation exponentially. Give it a go and let us know what you think!
+Speaking of AI assistance, self-hosted FlowFuse deployments have until now not had access to the FlowFuse Assistant inside of Node-RED, helping to complete flows using natural language for explanation of flows, creation of Dashboard, Function, and Tables nodes, and Snapshot descriptions. These had been available only to FlowFuse Cloud customers. I'm happy to say that our many self-hosted customers now (finally) can get access to this tool, which helps speed flow creation exponentially. Contact [FlowFuse Support](https://flowfuse.com/support) to help get you setup.
 
 ## Import JSON at Instance Creation
 
