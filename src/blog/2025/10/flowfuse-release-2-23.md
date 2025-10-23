@@ -16,7 +16,7 @@ In this exciting release, we've shipped several features that accelerate develop
 <!--more-->
 
 ## MCP Nodes
-![Image of MCP nodes](./images/mcp-nodes-pcqIPFV84r-162.avif)
+![Image of MCP nodes](./images/mcp-nodes.png)
 _[MCP nodes in the Node-RED palette, ready for use]_
 
 With this release, you can now create a Model Context Protocol server using Node-RED. The new MCP nodes enable the creation of a MCP server so that you can create AI agents that will rely on the exact data that you want to surface to an LLM. As AI services rely upon data presented to them, whether it's anything available on the world wide web (as with LLMs generically) or more focused information, our MCP nodes provide the ability to expose specific resources so that an AI service will rely upon the right data without making all of your information public. It's a really exciting development. Check out [the Changelog entry](https://flowfuse.com/changelog/2025/10/mcp-nodes/) for more.
