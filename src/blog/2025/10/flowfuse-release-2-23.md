@@ -55,7 +55,7 @@ What if you could surface your FlowFuse Tables data outside of the FlowFuse envi
 
 ## Don't Miss Node-RED Con 2025!
 
-While not exactly a release item, I'd be remiss if I failed to mention Node-RED Conference 2025! We've got a great lineup of speakers who will cover a broad and deep variety of topics on the use of Node-RED. Check out the website and register here: https://nrcon.nodered.org/.
+While not exactly a release item, I'd be remiss if I failed to mention Node-RED Conference 2025! We've got a great lineup of speakers who will cover a broad and deep variety of topics on the use of Node-RED. Check out the website and register here: [https://nrcon.nodered.org/.](https://nrcon.nodered.org/.)
 
 ## What else is new?
 
