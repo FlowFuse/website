@@ -5,7 +5,7 @@ description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mits
 date: 2025-10-24
 keywords: 
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/10/images/plc-to-mqtt.png
 tags:
   - flowfuse
 ---
@@ -20,23 +20,17 @@ This guide cuts through that complexity. You'll learn how to connect PLCs using 
 
 ## Why PLC-to-Cloud Gets So Complicated
 
-But before we dive into the solution, it's worth understanding why this is so difficult in the first place. Here's what usually goes wrong.
+Before diving into the solution, it's worth understanding why this is so difficult.
 
-First, people underestimate the protocol mess. Your factory floor has PLCs from different manufacturers, each speaking their own language—Modbus, OPC-UA, Ethernet/IP, Profinet. Getting data out means dealing with all of them at once. Suddenly you're maintaining multiple drivers, connections, and troubleshooting different failure modes for each protocol.
+First, there's the protocol mess. Factory floors have PLCs from different manufacturers, each speaking their own language: Modbus, OPC-UA, Ethernet/IP, Profinet. Getting data out means dealing with all of them at once, maintaining multiple drivers and troubleshooting different failure modes.
 
-Then there's the networking challenge. Factory networks weren't built for internet connectivity. You've got isolated subnets, strict firewalls, and IT departments (rightfully) worried about security. Getting approval to connect production systems to the cloud means security reviews, change control meetings, and architecture decisions that can drag on for months.
+Then there's the networking challenge. Factory networks weren't built for internet connectivity. Isolated subnets, strict firewalls, and security-conscious IT departments mean getting approval for gateways (whether edge devices or software platforms) involves security reviews and architecture decisions that can drag on for months.
 
-The costs sneak up on you too. Cloud platforms charge per message. When you're streaming data every few seconds from dozens of machines, those pennies add up fast. Before you know it, you're looking at thousands per month just for data transmission—and that's before factoring in gateway hardware and proprietary software licenses.
+The costs add up quickly. Cloud platforms charge per message, and streaming data from dozens of machines easily reaches thousands per month, before gateway hardware and licenses.
 
-And finally, there's the expertise gap. This work sits in the valley between OT and IT. Your plant engineers know the PLCs inside out but might not be comfortable with cloud APIs and message brokers. Your IT team knows cloud infrastructure but doesn't understand industrial protocols or what "holding register" means. You end up needing expensive consultants to bridge that gap, turning what should be a straightforward integration into a six-figure project.
+And there's the expertise gap. Plant engineers know PLCs but not cloud APIs. IT teams know infrastructure but not industrial protocols. You end up needing expensive consultants, turning what should be straightforward into a six-figure project.
 
-So how do you overcome all these challenges? The solution lies in low-code integration platforms that consolidate protocol handling, edge computing, and cloud connectivity into a single system. This guide demonstrates one such approach using FlowFuse—a platform built on Node-RED that addresses each challenge we've outlined.
-
-But before you start following the steps, take a look at this demo with the flow I've built where my FlowFuse instance is collecting data from four different sources: [Siemens S7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) and [Allen-Bradley](blog/2025/10/using-ethernet-ip-with-flowfuse/) PLCs, an [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) server, and [Modbus](/node-red/protocol/modbus/) devices. Each source monitors different equipment across the facility. 
-
-<!-- video -->
-
-The flow extracts data from each protocol, transforms it into a consistent JSON format, adds contextual metadata, and publishes everything to the cloud via MQTT—all running on a single FlowFuse instance. This is exactly what you'll be able to build by following the steps in this guide.
+The solution lies in low-code integration platforms that consolidate protocol handling, edge computing, and cloud connectivity into a single system. This guide demonstrates one approach using FlowFuse, a platform built on Node-RED that addresses each challenge outlined above.
 
 ## Prerequisites
 
@@ -44,6 +38,14 @@ Before you start, make sure you have the following:
 
 - A properly configured and fully operational PLCs, located on the same network as the edge device that will be reading its data.
 - A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](https://flowfuse.com/blog/2025/09/installing-node-red/) and set up your instance following the instructions in this article.
+
+# Getting Started
+
+Now, let’s get started. First, watch this demo, where I have built a FlowFuse flow that collects data from four sources: Siemens S7 and Allen-Bradley PLCs, an OPC UA server, and a Modbus simulator.
+
+<lite-youtube videoid="vptAoDR78Cc" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
+
+This flow standardizes data from each protocol into a consistent JSON format, enriches it with contextual metadata, and publishes everything to the FlowFuse MQTT Broker — all within a single instance. The following guide explains how to replicate this setup for any PLC on your factory floor.
 
 ## Step 1: Extract Data from Your PLC
 
@@ -107,10 +109,7 @@ Function nodes provide full JavaScript access for complex requirements. Write cu
 
 Before building custom solutions, check the palette manager. The Node-RED ecosystem includes thousands of nodes for data aggregation, statistical analysis, time-series buffering, and unit conversions. Many common transformation tasks already have ready-made solutions.
 
-For example, a popular node for parsing and transforming binary data is node-red-contrib-buffer-parser. This node is especially useful for Modbus or PLC outputs, converting raw buffers into structured formats that can be easily processed further. In my demo, it is used to handle tank level data from Modbus devices, where tank level (1–100%), the Buffer Parser node reads a 16-bit integer starting at the first byte of the buffer, applies no mask, uses a scale of 1, and outputs the value as `tank_level`, The exact configuration of the Buffer Parser will depend on the specific device and Modbus data format.
-
-![Buffer Parser node configuration for tank level data](./images/buffer-parser-node-tank-level.png){data-zoomable}
-*Buffer Parser node configuration for tank level data*
+For example, a popular node I’m using in my demo for parsing and transforming data is `node-red-contrib-buffer-parser`. This node is especially useful when working with Modbus or PLC outputs, as it converts raw buffers into structured formats that can be easily processed further.
 
 ## Step 3: Set Up MQTT with FlowFuse
 
@@ -160,10 +159,16 @@ _Configure MQTT Client Access Control_
 
 8. Click the client **edit**, select **Publish**, and then click **Confirm**.
 
-![Configuring Client Access Control](./images/client-access-control.png){data-zoomable}
+![Configuring Client Access Control](./images/client-access-control.jpg){data-zoomable}
 _Configure MQTT Client Access Control_
 
-That's it. You now have PLC data flowing to MQTT with proper access controls configured.
+That's it. You now have PLC data flowing to MQTT with proper access controls configured. To view the topic hierarchy and the schema for your topics, go to the FlowFuse Broker section. Here, you’ll see all the topics within your MQTT broker. By clicking **Open Schema**, you can view the auto-generated schema document created by FlowFuse.
+
+![FlowFuse Topic Hierarchy View](./images/topic-hierarchy.png){data-zoomable}
+_FlowFuse Topic Hierarchy View_
+
+![Topic schema auto-generated by FlowFuse](./images/schema-document.png){data-zoomable}
+_Topic schema auto-generated by FlowFuse_
 
 ## Bridging the Expertise Gap and Cutting Costs
 
