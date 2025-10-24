@@ -3,7 +3,7 @@ title: "How to Connect Any PLC to MQTT in Under an Hour"
 subtitle: "Connect any PLC to MQTT without the typical complexity, costs, and expertise requirements"
 description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, OPC UA, and Modbus, transform it, and publish to MQTT using FlowFuse—without expensive gateways or consultants."
 date: 2025-10-24
-keywords: 
+keywords: PLC to MQTT, Siemens S7 to MQTT, Allen-Bradley to MQTT, Omron to MQTT, Mitsubishi to MQTT, Modbus to MQTT, OPC UA to MQTT, PLC to MQTT, FlowFuse, Node-RED, industrial IoT
 authors: ["sumit-shinde"]
 image: /blog/2025/10/images/plc-to-mqtt.png
 tags:
@@ -180,7 +180,7 @@ The AI assistant fills remaining gaps—describe what you need in plain English,
 
 This eliminates the consultant dependency that inflates project costs. Your team handles implementation and maintenance without external help at $150-$250 per hour, saving $12,000 to $30,000 on setup alone. The managed MQTT broker includes unlimited messaging with no per-message fees. Protocol drivers are free and open-source with no per-tag licensing. Deploy on existing industrial hardware instead of buying $10,000 proprietary gateways.
 
-Manufacturers typically see 70-85% cost reduction in the first year, with better economics as you scale since hardware and licensing costs stay eliminated. Most engineers ship production flows in their first session.
+Manufacturers typically see substantial cost reduction in the first year, with improving economics as you scale since hardware and licensing costs stay eliminated. Most engineers ship production flows in their first session.
 
 ## Get Started
 
