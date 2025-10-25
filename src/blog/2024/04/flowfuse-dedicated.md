@@ -26,4 +26,4 @@ Here’s what sets FlowFuse Dedicated apart:
 - **Enterprise-Grade Features:** Enjoy access to all enterprise features and configurations as your own FlowFuse Administrator, enabling you to manage multiple teams effectively.
 - **Comprehensive Compliance:** Meet complex compliance standards with ease, thanks to full data and source code IP isolation.
 
-FlowFuse Dedicated represents a paradigm shift in Node-RED offerings, a solution that not only meets the demanding requirements of today's enterprises in terms of speed, efficiency, and productivity but also navigates the complex terrain of compliance and data security with unparalleled finesse. [Learn more about FlowFuse Dedicated](https://flowfuse.com/dedicated/).
+FlowFuse Dedicated represents a paradigm shift in Node-RED offerings, a solution that not only meets the demanding requirements of today's enterprises in terms of speed, efficiency, and productivity but also navigates the complex terrain of compliance and data security with unparalleled finesse. [Contact us to learn more](https://flowfuse.com/contact-us/).
