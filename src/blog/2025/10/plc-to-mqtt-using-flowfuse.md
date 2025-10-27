@@ -137,7 +137,7 @@ company/site/area/line/cell/device/measurement
 For Example:
 
 ```
-acme/chicago/assembly/line2/cell3/temp01/celsius
+acme/plant-a/assembly/line1/press-1/pressure01/bar
 ```
 
 **Why ISA-95 for MQTT Topics**
