@@ -41,7 +41,7 @@ Before you start, make sure you have the following:
 
 # Getting Started
 
-Now, let’s get started. First, watch this demo, where I have built a FlowFuse flow that collects data from four sources: Siemens S7 and Allen-Bradley PLCs, an OPC UA server, and a Modbus simulator.
+Now, let's get started. First, watch this demo, where I have built a FlowFuse flow that collects data from four sources: Siemens S7 and Allen-Bradley PLCs, an OPC UA server, and a Modbus simulator.
 
 <lite-youtube videoid="vptAoDR78Cc" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
@@ -53,7 +53,7 @@ As mentioned earlier, extracting data is the first and most complex step. Get th
 
 This is not just theory—Fortune 500 manufacturers are already running production systems on FlowFuse. Their consistent feedback? Massive cost savings compared to legacy systems, especially when deployed across multiple facilities. The enterprise features of FlowFuse handle the scale and security requirements large operations demand.
 
-The Node-RED ecosystem that powers FlowFuse offers comprehensive protocol support. You’ll find nodes available for every major PLC manufacturer, including:
+The Node-RED ecosystem that powers FlowFuse offers comprehensive protocol support. You'll find nodes available for every major PLC manufacturer, including:
 
 - `node-red-contrib-modbus` – Modbus RTU/TCP PLCs and devices
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
@@ -110,7 +110,7 @@ Function nodes provide full JavaScript access for complex requirements. Write cu
 
 Before building custom solutions, check the palette manager. The Node-RED ecosystem includes thousands of nodes for data aggregation, statistical analysis, time-series buffering, and unit conversions. Many common transformation tasks already have ready-made solutions.
 
-For example, a popular node I’m using in my demo for parsing and transforming data is `node-red-contrib-buffer-parser`. This node is especially useful when working with Modbus or PLC outputs, as it converts raw buffers into structured formats that can be easily processed further.
+For example, a popular node I'm using in my demo for parsing and transforming data is `node-red-contrib-buffer-parser`. This node is especially useful when working with Modbus or PLC outputs, as it converts raw buffers into structured formats that can be easily processed further.
 
 ## Step 3: Set Up MQTT with FlowFuse
 
@@ -120,7 +120,7 @@ Traditional PLC-to-cloud setups typically involve several moving parts: edge gat
 
 FlowFuse consolidates those layers into a single integrated platform. It provides enterprise-grade features for management, scaling, deployment, and security—all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
 
-To use the FlowFuse MQTT broker, you’ll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
+To use the FlowFuse MQTT broker, you'll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
 
 ![Enabling FlowFuse MQTT Broker](./images/set-broker.png){data-zoomable}
 _Enabling FlowFuse MQTT Broker_
@@ -129,23 +129,32 @@ _Enabling FlowFuse MQTT Broker_
 
 1. Drag a **FlowFuse MQTT Out** node onto your canvas.
 2. Open the node configuration. You do not need to manually configure the node — it will automatically pick up its configuration.
-3. Set the topic to something like:
+3. Set the topic following ISA-95 hierarchy standards:
 
 ```
-plant_a/assembly/line_1/temperature
+company/site/area/line/cell/device/measurement
 ```
+
+For example:
+```
+acme/chicago/assembly/line2/cell3/temp01/celsius
+```
+
 **Structure Your Topics**
 
-Use hierarchical topics that match your facility organization:
+Use hierarchical topics that match ISA-95 standards and your facility organization:
 
 ```
-{site}/{area}/{line}/{metric}
+company/site/area/line/cell/device/measurement
 ```
 
 This structure supports flexible subscriptions:
-- `plant_a/#` - all data from plant A
-- `+/+/+/temperature` - temperature from all locations
-- `plant_a/assembly/#` - all assembly area metrics
+- `acme/#` - all data from Acme company
+- `acme/chicago/#` - all data from Chicago site
+- `+/+/assembly/#` - assembly data from all sites
+- `acme/chicago/assembly/line2/#` - all metrics from Line 2
+
+Use lowercase with hyphens (not underscores) for multi-word names to ensure compatibility across platforms
 
 4. Set **QoS** to **1**.
 5. Click **Deploy**.
@@ -153,7 +162,7 @@ This structure supports flexible subscriptions:
 After deploying the flow, the MQTT client for your device will be automatically created. To configure access:
 
 6. Double-click the MQTT Out node.
-7. Click **Configure Access Control**. You will be redirected to the platform’s broker client management section, filtered to show the client created for this instance.
+7. Click **Configure Access Control**. You will be redirected to the platform's broker client management section, filtered to show the client created for this instance.
 
 ![Configure MQTT Client Access Control](./images/mqtt-configure-access.png){data-zoomable}
 _Configure MQTT Client Access Control_
@@ -163,7 +172,7 @@ _Configure MQTT Client Access Control_
 ![Configuring Client Access Control](./images/client-access-control.jpg){data-zoomable}
 _Configure MQTT Client Access Control_
 
-That's it. You now have PLC data flowing to MQTT with proper access controls configured. To view the topic hierarchy and the schema for your topics, go to the FlowFuse Broker section. Here, you’ll see all the topics within your MQTT broker. By clicking **Open Schema**, you can view the auto-generated schema document created by FlowFuse.
+That's it. You now have PLC data flowing to MQTT with proper access controls configured and a topic structure that scales with your organization. To view the topic hierarchy and the schema for your topics, go to the FlowFuse Broker section. Here, you'll see all the topics within your MQTT broker. By clicking **Open Schema**, you can view the auto-generated schema document created by FlowFuse.
 
 ![FlowFuse Topic Hierarchy View](./images/topic-hierarchy.png){data-zoomable}
 _FlowFuse Topic Hierarchy View_
