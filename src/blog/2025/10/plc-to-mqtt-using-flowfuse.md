@@ -10,7 +10,7 @@ tags:
   - flowfuse
 ---
 
-Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is in MQTT Broker, it can flow to any system—cloud platforms, analytics tools, dashboards. MQTT creates a common pipeline that IT systems understand, eliminating the protocol translation headaches.
+Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand—flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
 
 <!--more-->
 
@@ -127,33 +127,34 @@ _Enabling FlowFuse MQTT Broker_
 **Configure Publishing**
 
 1. Drag a **FlowFuse MQTT Out** node onto your canvas.
-2. Open the node configuration. You do not need to manually configure the node — it will automatically pick up its configuration.
-3. Set the topic following ISA-95 hierarchy standards:
+2. Open the node configuration. It will automatically pick up its configuration.
+3. Set the topic following ISA-95 hierarchy:
 
 ```
 company/site/area/line/cell/device/measurement
 ```
 
-For example:
+For Example:
+
 ```
 acme/chicago/assembly/line2/cell3/temp01/celsius
 ```
 
-**Structure Your Topics**
+**Why ISA-95 for MQTT Topics**
 
-Use hierarchical topics that match ISA-95 standards and your facility organization:
+The ISA-95 Equipment Hierarchy Model is an international standard that defines how to organize manufacturing operations into logical layers. When you structure MQTT topics using this model, you're building toward a Unified Namespace (UNS)—a single, consistent way to organize all operational data across your entire organization.
 
-```
-company/site/area/line/cell/device/measurement
-```
+The goal of UNS is to eliminate data silos. Instead of each system maintaining its own proprietary structure, everything publishes to one shared namespace using a common hierarchy. Applications subscribe to exactly the data they need without knowing where it physically comes from or how it was collected.
 
-This structure supports flexible subscriptions:
-- `acme/#` - all data from Acme company
-- `acme/chicago/#` - all data from Chicago site
-- `+/+/assembly/#` - assembly data from all sites
-- `acme/chicago/assembly/line2/#` - all metrics from Line 2
+ISA-95 makes this possible because it maps to how factories actually operate. `company/site/area/line/cell` matches your organizational structure. When you expand to new facilities or add equipment, the hierarchy extends naturally. Analytics tools can compare performance across sites. MES systems subscribe to production line data. Dashboards pull from specific cells. Everything uses the same addressing scheme.
 
-Use lowercase with hyphens (not underscores) for multi-word names to ensure compatibility across platforms
+This enables powerful wildcard subscriptions:
+- `acme/#` - all company data
+- `acme/chicago/#` - single site  
+- `+/+/assembly/#` - assembly operations everywhere
+- `acme/chicago/assembly/line2/#` - one production line
+
+*Note: Use lowercase with hyphens for multi-word names.*
 
 4. Set **QoS** to **1**.
 5. Click **Deploy**.
