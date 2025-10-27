@@ -55,7 +55,7 @@ We're not just saying this works—Fortune 500 manufacturers are running product
 
 The Node-RED ecosystem that powers FlowFuse comes with protocol support. You'll find nodes available for every major PLC manufacturer:
 
-- `node-red-contrib-modbus` – Modbus RTU/TCP devices
+- `node-red-contrib-modbus` – Modbus RTU/TCP PLCs and devices
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
 - `node-red-contrib-opcua` – OPC UA servers
 - `node-red-contrib-cip-ethernet-ip` – Allen-Bradley PLCs
