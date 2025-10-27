@@ -120,6 +120,8 @@ added to the list, especially when you're considering a job offer at FlowFuse.
 
 For employees located in the United States, FlowFuse offers health insurance coverage through Deel; since this changes regularly, please see Deel for accurate information.
 
+Health insurance benefits begin on the employee’s **first day of employment**.
+
 We commit to offering at least one medical plan, one dental plan, and one vision plan with 100% coverage for team members. We also subsidize some level of coverage for dependants, as well, but specifics are tied to plan details.  
 
 In our health benefits for US employees, we offer:
