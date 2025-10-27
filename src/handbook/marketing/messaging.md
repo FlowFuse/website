@@ -112,7 +112,7 @@ easy for your OT-engineers to quickly connect, collect, transform, and visualize
 data for interacting with industrial processes. Node-RED seamlessly integrates
 with thousands of industrial devices and 100s of protocols and data services.
 
-Founded in 2021 by Nick O’Leary, co-creator of Node-RED, companies use FlowFuse
+Founded in 2021 by [Nick O'Leary](/team#nick-oleary), co-creator of Node-RED, companies use FlowFuse
 to manage, scale and secure their industrial Node-RED solutions.
 
 ## FlowFuse in-depth
