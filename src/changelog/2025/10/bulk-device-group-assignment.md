@@ -1,7 +1,7 @@
 ---
 title: Easier Access to Bulk Device Group Management
 description: Bulk device group management is now more accessible, with clearer controls and faster organization of multiple Remote Instances.
-date: 2025-10-22 12:00:00.0
+date: 2025-10-27 12:00:00.0
 authors: [ 'serban-costin' ]
 tags:
   - changelog
