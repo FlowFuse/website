@@ -274,7 +274,7 @@
 /* toggle btn bg */
 .btnToggle {
     position: absolute;
-    width: 300px;
+    width: 220px;
     height: 36px;
     margin: 0rem;
     border-radius: 18px;
@@ -288,7 +288,7 @@
 
 .selector {
     position: absolute;
-    width: 33%;
+    width: 50%;
     height: 88%;
     top: 2px;
     left: 2px;
