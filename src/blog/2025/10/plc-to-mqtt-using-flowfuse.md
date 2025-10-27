@@ -49,11 +49,11 @@ This flow standardizes data from each protocol into a consistent JSON format, en
 
 ## Step 1: Extract Data from Your PLC
 
-As mentioned earlier, extracting data is the first and most complex step. Get this wrong, and the complexity and costs spiral out of control. FlowFuse changes this. Its pre-built connectors handle Modbus, OPC-UA, Ethernet/IP, and other protocols out of the box. No custom coding, no expensive proprietary gateways, no per-tag licensing fees. You'll configure your connections visually and have data flowing in minutes.
+As mentioned earlier, extracting data is the first and most complex step. Get this wrong, and the complexity and costs can spiral out of control. FlowFuse simplifies this process. Its pre-built connectors handle Modbus, OPC UA, EtherNet/IP, and other protocols right out of the box—no custom coding, expensive proprietary gateways, or per-tag licensing fees required. You can configure your connections visually and have data flowing within minutes.
 
-We're not just saying this works—Fortune 500 manufacturers are running production systems on FlowFuse right now. The consistent feedback? Massive cost savings compared to legacy systems, especially when rolling out across multiple facilities. The enterprise features handle the scale and security requirements that large operations demand.
+This is not just theory—Fortune 500 manufacturers are already running production systems on FlowFuse. Their consistent feedback? Massive cost savings compared to legacy systems, especially when deployed across multiple facilities. The enterprise features of FlowFuse handle the scale and security requirements large operations demand.
 
-The Node-RED ecosystem that powers FlowFuse comes with protocol support. You'll find nodes available for every major PLC manufacturer:
+The Node-RED ecosystem that powers FlowFuse offers comprehensive protocol support. You’ll find nodes available for every major PLC manufacturer, including:
 
 - `node-red-contrib-modbus` – Modbus RTU/TCP PLCs and devices
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
@@ -61,8 +61,9 @@ The Node-RED ecosystem that powers FlowFuse comes with protocol support. You'll 
 - `node-red-contrib-cip-ethernet-ip` – Allen-Bradley PLCs
 - `node-red-contrib-mcprotocol` – Mitsubishi PLCs
 - `node-red-contrib-omron-fins` – Omron PLCs
+- and many more
 
-Adding a protocol node to your FlowFuse instance takes just a few clicks. Access the palette manager from the hamburger menu, click "Manage palette," find the Install section, and search for what you need.
+Adding a protocol node to your FlowFuse instance takes just a few clicks. Open the palette manager from the hamburger menu, select **Manage palette**, go to the **Install** tab, and search for the node you need.
 
 ## Convincing the IT Team
 
