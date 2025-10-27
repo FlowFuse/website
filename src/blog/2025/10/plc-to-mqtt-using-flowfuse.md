@@ -109,7 +109,7 @@ Function nodes provide full JavaScript access for complex requirements. Write cu
 
 Before building custom solutions, check the palette manager. The Node-RED ecosystem includes thousands of nodes for data aggregation, statistical analysis, time-series buffering, and unit conversions. Many common transformation tasks already have ready-made solutions.
 
-For example, a popular node I'm using in my demo for parsing and transforming data is `node-red-contrib-buffer-parser`. This node is especially useful when working with Modbus or PLC outputs, as it converts raw buffers into structured formats that can be easily processed further.
+For example, a popular node I'm using in my demo for parsing and transforming data is `node-red-contrib-buffer-parser`. This node is especially useful when working with Modbus or PLC outputs, as it converts raw data into structured formats that can be easily processed further.
 
 ## Step 3: Set Up MQTT with FlowFuse
 
