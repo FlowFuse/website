@@ -22,7 +22,7 @@ This guide cuts through that complexity. You'll learn how to connect PLCs using 
 
 Before diving into the solution, it's worth understanding why this is so difficult.
 
-First, there's the protocol mess. Factory floors have PLCs from different manufacturers, each speaking their own language: Modbus, OPC-UA, Ethernet/IP, Profinet. Getting data out means dealing with all of them at once, maintaining multiple drivers and troubleshooting different failure modes.
+First, there's the proprietary protocols. Factory floors have PLCs from different manufacturers, each speaking their own language: Modbus, OPC-UA, Ethernet/IP, Profinet, FINS, etc. Getting data out means dealing with all of them at once, maintaining multiple drivers and troubleshooting different failure modes.
 
 Then there's the networking challenge. Factory networks weren't built for internet connectivity. Isolated subnets, strict firewalls, and security-conscious IT departments mean getting approval for gateways (whether edge devices or software platforms) involves security reviews and architecture decisions that can drag on for months.
 
