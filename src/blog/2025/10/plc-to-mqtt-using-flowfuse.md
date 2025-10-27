@@ -59,7 +59,7 @@ The Node-RED ecosystem that powers FlowFuse comes with protocol support. You'll 
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
 - `node-red-contrib-opcua` – OPC UA servers
 - `node-red-contrib-cip-ethernet-ip` – Allen-Bradley PLCs
-- `node-red-contrib-mcprotocol` – Mitsubishi Q/L series
+- `node-red-contrib-mcprotocol` – Mitsubishi PLCs
 - `node-red-contrib-omron-fins` – Omron PLCs
 
 Adding a protocol node to your FlowFuse instance takes just a few clicks. Access the palette manager from the hamburger menu, click "Manage palette," find the Install section, and search for what you need.
