@@ -40,15 +40,7 @@ The monthly marketing performance review is conducted through a structured two-p
 
 #### Part 1: Dashboard Metrics (HubSpot Dynamic Dashboard)
 
-We utilize our [HubSpot dashboard](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/105576103) to track core marketing performance indicators:
-
-**[Key Metrics Tracked](/handbook/marketing/#marketing-kpi ):**
-- **Pipeline Generated**: Monthly pipeline value created through marketing activities
-- **Website Traffic**: Overall traffic trends and source attribution
-- **Marketing Qualified Leads (MQLs)**: Quality lead generation performance  
-- **FF Cloud Sign-ups**: User acquisition and conversion tracking
-
-These metrics provide real-time visibility into our marketing funnel performance and help identify trends and anomalies requiring attention.
+We utilize our [HubSpot dashboard](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/105576103) to track [core marketing performance indicators](/handbook/marketing/#marketing-kpi)
 
 #### Part 2: Manual Performance Analysis
 
