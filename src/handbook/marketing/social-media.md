@@ -155,7 +155,7 @@ This process helps ensure we can create content that matches your intent and our
 
 ## Other Social Channels and Community Forums
 
-Team members are encouraged to actively participate in discussions related to Node-RED and FlowFuse` across social media platforms and community forums. By answering questions and sharing helpful insights, you help build trust, establish thought leadership, and enable potential users to discover FlowFuse organically.
+Team members are encouraged to actively participate in discussions related to Node-RED and FlowFuse across social media platforms and community forums. By answering questions and sharing helpful insights, you help build trust, establish thought leadership, and enable potential users to discover FlowFuse organically.
 
 **Key Channels:**
 
@@ -186,7 +186,7 @@ Focus on content that genuinely interests you:
 - [Product releases and features you're excited about](/blog/releases/)
 - Events you're attending or speaking at
 - [Job openings relevant to your network](https://job-boards.greenhouse.io/flowfuse)
-- C[ustomer success stories](/customer-stories/)
+- [Customer success stories](/customer-stories/)
 - Behind-the-scenes moments and team culture
 
 ### How to Share Effectively
