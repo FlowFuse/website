@@ -33,9 +33,6 @@ The Product Marketing Manager will validate timelines and deliverables.
 ### Overview
 
 Every first Thursday of the month, FlowFuse's CEO and product marketing manager conduct a monthly performance review to track progress, optimize campaigns, and ensure alignment with our marketing plan objectives. This systematic approach enables data-driven decision-making and continuous improvement of our marketing efforts.
-
-### Review Process
-
 The monthly marketing performance review is conducted through a structured two-part assessment combining automated dashboard metrics with manual campaign and channel analysis.
 
 #### Part 1: Dashboard Metrics (HubSpot Dynamic Dashboard)
