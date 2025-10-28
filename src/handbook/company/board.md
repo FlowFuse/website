@@ -52,10 +52,12 @@ The 120 minutes of each meeting are structured in the following time blocks:
   discussion. Prior context is shared through the prewatch.
 - 30 minutes "Routine business" (Closed portion of meeting) - Providing an open
   forum for board members and observers to raise additional topics. In this
-  Closed portion of the meeting, we will always cover: Stock Option Approvals,
-  Approval of previous meeting's minutes, Compensation matters related to team
-  members over 200K USD. It would be highly appreciated if topics to be
-  discussed are shared in advance with the rest of the board.
+  Closed portion of the meeting, we will always cover:
+     - Stock Option Approvals.
+     - Approval of previous meeting's minutes.
+     - Compensation matters related to team members over 200K USD.
+
+It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
 
 It is the CEO's responsibility to manage time in the meeting.
 
