@@ -187,10 +187,3 @@ A strong title can make the difference between a scroll-past and a click. When c
 - **Keep it concise:** Aim for 8-12 words on LinkedIn. The title should intrigue without giving everything away, encouraging people to read your full post or click through.
 
 - **Make it personal:** Phrases like "Here's what I learned..." or "I just discovered..." feel authentic and relatable compared to generic announcements.
-
-### What to Avoid
-
-- Unannounced features or confidential information
-- Overly salesy language - focus on value
-- Sharing everything - quality over quantity
-- Competitor comparisons or negative commentary
