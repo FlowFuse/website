@@ -170,7 +170,7 @@ Team members are encouraged to actively participate in discussions related to No
 - Lead with helpful, technical answers first
 - Mention FlowFuse naturally when it’s genuinely relevant to the solution
 - Link to documentation, blog posts, or tutorials that add value or context
-- Always follow the [Community Guidelines](/handbook/community-guidelines/)
+- Always follow the [Community Guidelines](/handbook/marketing/community/community-guidelines/)
 - Use your own voice — you represent yourself while reflecting FlowFuse values
 - Keep your responses factual, honest, and useful; avoid sounding promotional
 - Respect the rules and norms of each community or platform
