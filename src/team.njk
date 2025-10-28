@@ -6,9 +6,9 @@ layout: layouts/nohero.njk
     <div class="container m-auto text-left max-w-4xl">
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {%- for member in team | dictsortBy(false, 'order') -%}
-            <div class="team-headshot w-full max-w-xs m-auto">
+            <div id="{{ member._key }}" class="team-headshot w-full max-w-xs m-auto">
                 {% set imageSrc = ["./images/team/headshot-", member.headshot ] | join %}
-                {% set imageAlt = ["Photo of ", member.name ] | join %}                
+                {% set imageAlt = ["Photo of ", member.name ] | join %}
                 {% image imageSrc, imageAlt, [256] %}
                 <ul class="member-facts">
                     {%- for fact in member.facts -%}

@@ -17,7 +17,7 @@ Content creation and blogging are effective ways to communicate with our communi
 1. Convert to Draft
 1. No Reviews shall be done until the PR is “Ready for Review”
 1. Assign two reviewers
-    * One Reviewer for Content (ZJ)
+    * One Reviewer for Content ([ZJ](/team#zeger-jan-van-de-weg))
     * One Reviewer for SEO.
 1. If the content is time-sensitive, please make sure everyone involved is aware of this. 
 1. Content will be reviewed first.
@@ -39,6 +39,8 @@ subtitle: The subtitle
 description: The description
 date: 2022-12-20
 authors: ["rob-marcer"]
+image: /blog/2022/12/images/tile-image.png
+video: dteXgcBXUnk  # Optional: YouTube video ID to use instead of image in hero section
 tags:
     - posts
     - node-red
@@ -77,6 +79,25 @@ authors: ["rob-marcer", "joe-pavitt"]
 If the authors are FlowFuse team members, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/src/_data/team)
 
 If they're not FlowFuse team members, they need to be added to the [guests list](https://github.com/FlowFuse/website/tree/main/src/_data/guests). Duplicate any of the files already in that folder, proceed to change the name of the file and update the info inside the `json` file. You'll also need to add a headshot in the images/team [folder](https://github.com/FlowFuse/website/tree/main/src/images/team) following the same name convention as the rest of the files.
+
+### Video
+
+You can include a YouTube video as the hero content instead of an image by adding a `video` field with the YouTube video ID:
+
+```njk
+---
+title: The title
+video: dteXgcBXUnk
+---
+```
+
+The video ID is the part after `v=` in a YouTube URL. For example:
+- URL: `https://www.youtube.com/watch?v=dteXgcBXUnk`
+- Video ID: `dteXgcBXUnk`
+
+When a `video` field is present, it takes precedence over the `image` field in the hero section of the blog post. The video will be embedded using the `lite-youtube` component for better performance and faster page load times.
+
+**Note:** You should still provide an `image` field as a fallback for social media previews and RSS feeds.
 
 ### Tags
 
