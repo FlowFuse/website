@@ -126,13 +126,71 @@ If you’d like something shared on FlowFuse’s social channels, please follow 
 
 This process helps ensure we can create content that matches your intent and our audience’s expectations.
 
-## Other social channels recommendations 
+## Other Social Channels and Community Forums
 
-For Reddit, Node-RED Slack, and Node-RED Discourse:
+Team members are encouraged to actively participate in discussions related to Node-RED and FlowFuse` across social media platforms and community forums. By answering questions and sharing helpful insights, you help build trust, establish thought leadership, and enable potential users to discover FlowFuse organically.
 
+**Key Channels:**
 
-- Follow the tone and behaviour defined in our [Community Guidelines](/handbook/marketing/community/community-guidelines/).
-- Use your own voice, you're talking from a personal account after all, but also remember that you represent the brand and company values. Blend your tone with our [Brand Voice](/handbook/marketing/brand-voice/#participating-in-community-spaces-(e.g.-node-red-forum%2C-github%2C-discord)).
-- Copy should remain informal, honest, and useful — without sounding like a sales pitch.
+- Reddit ([r/nodered](https://www.reddit.com/r/nodered/), [r/flowfuse](https://www.reddit.com/r/FlowFuse/), [r/plc](https://www.reddit.com/r/PLC/), [r/scada](https://www.reddit.com/r/SCADA/), etc.)
+- [Node-RED Slack](https://node-red.slack.com/archives/C024S4W7M8D)
+- [Node-RED Discourse](https://discourse.nodered.org)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/node-red)
+- Industry-specific forums relevant to your expertise
 
-Keep it factual. Keep it human.
+**Best Practices:**
+
+- Lead with helpful, technical answers first
+- Mention FlowFuse naturally when it’s genuinely relevant to the solution
+- Link to documentation, blog posts, or tutorials that add value or context
+- Always follow the [Community Guidelines](/handbook/community-guidelines/)
+- Use your own voice — you represent yourself while reflecting FlowFuse values
+- Keep your responses factual, honest, and useful; avoid sounding promotional
+- Respect the rules and norms of each community or platform
+
+## Team Member Content Distribution on Personal Social Channels
+
+In addition to engaging in community forums and social platforms, sharing FlowFuse content through your personal social media accounts can greatly amplify its reach. Personal posts typically perform up to 10x better than company page posts due to platform algorithms, and content shared by employees is perceived as more authentic and trustworthy.
+
+### What to Share
+
+Focus on content that genuinely interests you:
+- [Blog posts and articles](/blog/) (add your personal perspective)
+- [Product releases and features you're excited about](/blog/releases/)
+- Events you're attending or speaking at
+- [Job openings relevant to your network](https://job-boards.greenhouse.io/flowfuse)
+- C[ustomer success stories](/customer-stories/)
+- Behind-the-scenes moments and team culture
+
+### How to Share Effectively
+
+Add your voice. Don't just repost, share why it matters to you in 2-3 sentences. Write naturally, not in corporate speak.
+
+Make it easy for engagement. Tag @FlowFuse and relevant people. Reply to comments to build conversations.
+
+Share on your schedule. Post when it fits your routine, no need to follow company posting times. Aim for 1-2x per week on LinkedIn when you have something meaningful to add.
+
+Keep it authentic. Use 1-2 hashtags if relevant. Balance FlowFuse content with your own professional insights and industry posts.
+
+### Choosing Titles for Your Posts
+
+A strong title can make the difference between a scroll-past and a click. When crafting titles for your social media posts:
+
+- **Be specific and clear:** Instead of "New feature released," try "How dashboard templates cut my deployment time in half." Specificity creates curiosity and sets clear expectations.
+
+- **Lead with value or outcome:** Focus on what the reader will gain. "3 ways to debug Node-RED flows faster" works better than "Tips for Node-RED."
+
+- **Use numbers when relevant:** Posts with numbers (like "5 lessons from...") tend to perform well because they promise digestible, structured content.
+
+- **Ask questions to spark engagement:** "What's your biggest Node-RED challenge?" invites conversation and can boost visibility through comments.
+
+- **Keep it concise:** Aim for 8-12 words on LinkedIn. The title should intrigue without giving everything away, encouraging people to read your full post or click through.
+
+- **Make it personal:** Phrases like "Here's what I learned..." or "I just discovered..." feel authentic and relatable compared to generic announcements.
+
+### What to Avoid
+
+- Unannounced features or confidential information
+- Overly salesy language - focus on value
+- Sharing everything - quality over quantity
+- Competitor comparisons or negative commentary
