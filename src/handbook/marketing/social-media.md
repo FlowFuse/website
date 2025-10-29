@@ -182,7 +182,7 @@ In addition to engaging in community forums and social platforms, sharing FlowFu
 ### What to Share
 
 Focus on content that genuinely interests you:
-- [Blog posts and articles](/blog/) (add your personal perspective)
+- [Blog posts and articles](/blog/) with your personal perspective
 - [Product releases and features you're excited about](/blog/releases/)
 - Events you're attending or speaking at
 - [Job openings relevant to your network](https://job-boards.greenhouse.io/flowfuse)
