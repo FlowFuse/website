@@ -157,7 +157,7 @@ This process helps ensure we can create content that matches your intent and our
 
 All Team members are encouraged to actively participate in discussions related to Node-RED and FlowFuse across social media platforms and community forums. By answering questions and sharing helpful insights, you help build trust, establish thought leadership, and enable potential users to discover FlowFuse organically. For Developer Relations Advocates and Technical Writers, engagement is a requirement.
 
-**Key Channels:**
+Key Channels:
 
 - Reddit ([r/nodered](https://www.reddit.com/r/nodered/), [r/flowfuse](https://www.reddit.com/r/FlowFuse/), [r/plc](https://www.reddit.com/r/PLC/), [r/scada](https://www.reddit.com/r/SCADA/), etc.)
 - [Node-RED Slack](https://node-red.slack.com/archives/C024S4W7M8D)
