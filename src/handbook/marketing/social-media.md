@@ -155,13 +155,12 @@ This process helps ensure we can create content that matches your intent and our
 
 ## Team Member Content Distribution on Personal Social Channels
 
-All team members are **required** to actively share FlowFuse content through their personal social media accounts and engage in relevant community discussions. Personal posts perform up to 10x better than company page posts due to platform algorithms, and content shared by employees is perceived as more authentic and trustworthy. **This is not optional; it's essential to our growth strategy.**
-
-### Sharing Requirements
+All team members are highly encouraged to actively share FlowFuse content through their personal social media accounts and engage in relevant community discussions. Personal posts perform up to 10x better than company page posts due to platform algorithms, and content shared by employees is perceived as more authentic and trustworthy. **This is not optional; it's essential to our growth strategy.**
 
 **Minimum commitment:** Share **2-3 pieces of FlowFuse content per week** on LinkedIn (primary platform). Developer Relations Advocates and Technical Writers should aim for **3-5 shares per week** across multiple platforms.
 
-**What to share:**
+What to share:
+
 - [Blog posts and articles](/blog/) 
 - [Product releases and features](/blog/releases/)
 - Events you're attending or speaking at
