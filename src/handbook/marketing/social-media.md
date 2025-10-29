@@ -195,9 +195,7 @@ Add your voice. Don't just repost, share why it matters to you in 2-3 sentences.
 
 Make it easy for engagement. Tag `@FlowFuse` or similar and relevant people. Reply to comments to build conversations.
 
-Share on your schedule. Post when it fits your routine, no need to follow company posting times. Aim for 1-2x per week on LinkedIn when you have something meaningful to add.
-
-Keep it authentic. Use 1-2 hashtags if relevant. Balance FlowFuse content with your own professional insights and industry posts.
+Share on your schedule. Post when it fits your routine, no need to follow company posting times. Aim for 1-2x per week on LinkedIn when you have something meaningful to add. Keep it authentic. Use 1-2 hashtags if relevant. Balance FlowFuse content with your own professional insights and industry posts.
 
 ### Choosing Titles for Your Posts
 
