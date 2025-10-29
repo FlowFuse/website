@@ -153,62 +153,63 @@ If you’d like something shared on FlowFuse’s social channels, please follow 
 
 This process helps ensure we can create content that matches your intent and our audience’s expectations.
 
-## Other Social Channels and Community Forums
-
-All Team members are encouraged to actively participate in discussions related to Node-RED and FlowFuse across social media platforms and community forums. By answering questions and sharing helpful insights, you help build trust, establish thought leadership, and enable potential users to discover FlowFuse organically. For Developer Relations Advocates and Technical Writers, engagement is a requirement.
-
-Key Channels:
-
-- Reddit ([r/nodered](https://www.reddit.com/r/nodered/), [r/flowfuse](https://www.reddit.com/r/FlowFuse/), [r/plc](https://www.reddit.com/r/PLC/), [r/scada](https://www.reddit.com/r/SCADA/), etc.)
-- [Node-RED Slack](https://node-red.slack.com/archives/C024S4W7M8D)
-- [Node-RED Discourse](https://discourse.nodered.org)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/node-red)
-- Industry-specific forums relevant to your expertise
-
-Best Practices:
-
-- Lead with helpful, technical answers first
-- Mention FlowFuse naturally when it’s genuinely relevant to the solution
-- Link to documentation, blog posts, or tutorials that add value or context
-- Always follow the [Community Guidelines](/handbook/marketing/community/community-guidelines/)
-- Use your own voice — you represent yourself while reflecting FlowFuse values
-- Keep your responses factual, honest, and useful; avoid sounding promotional
-- Respect the rules and norms of each community or platform
-
 ## Team Member Content Distribution on Personal Social Channels
 
-In addition to engaging in community forums and social platforms, sharing FlowFuse content through your personal social media accounts will greatly amplify its reach. Personal posts typically perform up to 10x better than company page posts due to platform algorithms, and content shared by employees is perceived as more authentic and trustworthy.
+All team members are **required** to actively share FlowFuse content through their personal social media accounts and engage in relevant community discussions. Personal posts perform up to 10x better than company page posts due to platform algorithms, and content shared by employees is perceived as more authentic and trustworthy. **This is not optional; it's essential to our growth strategy.**
 
-### What to Share
+### Sharing Requirements
 
-Focus on content that genuinely interests you:
-- [Blog posts and articles](/blog/) with your personal perspective
-- [Product releases and features you're excited about](/blog/releases/)
+**Minimum commitment:** Share **2-3 pieces of FlowFuse content per week** on LinkedIn (primary platform). Developer Relations Advocates and Technical Writers should aim for **3-5 shares per week** across multiple platforms.
+
+**What to share:**
+- [Blog posts and articles](/blog/) 
+- [Product releases and features](/blog/releases/)
 - Events you're attending or speaking at
-- [Job openings relevant to your network](https://job-boards.greenhouse.io/flowfuse)
+- [Job openings](/customer-stories/) relevant to your network
 - [Customer success stories](/customer-stories/)
-- Behind-the-scenes moments and team culture
+- Team achievements and culture moments
 
 ### How to Share Effectively
 
 Add your voice. Don't just repost, share why it matters to you in 2-3 sentences. Write naturally, not in corporate speak.
 
-Make it easy for engagement. Tag `@FlowFuse` or similar and relevant people. Reply to comments to build conversations.
+Make it easy for engagement. Tag @FlowFuse or similar and relevant people. Reply to comments to build conversations.
 
 Share on your schedule. Post when it fits your routine, no need to follow company posting times. Aim for 1-2x per week on LinkedIn when you have something meaningful to add. Keep it authentic. Use 1-2 hashtags if relevant. Balance FlowFuse content with your own professional insights and industry posts.
 
 ### Choosing Titles for Your Posts
 
-A strong title can make the difference between a scroll-past and a click. When crafting titles for your social media posts:
+When crafting your post introduction:
 
-- **Be specific and clear:** Instead of "New feature released," try "How dashboard templates cut my deployment time in half." Specificity creates curiosity and sets clear expectations.
+- **Be specific and clear:** "How dashboard templates cut my deployment time in half" vs. "New feature released"
+- **Lead with value or outcome:** "3 ways to debug Node-RED flows faster" promises actionable insight
+- **Use numbers when relevant:** Lists and numbered insights perform well
+- **Ask questions to spark engagement:** "What's your biggest Node-RED challenge?" invites conversation
+- **Keep it concise:** 8-12 words for the hook, then 2-3 sentences of context
+- **Make it personal:** "Here's what I learned..." feels authentic vs. generic announcements
 
-- **Lead with value or outcome:** Focus on what the reader will gain. "3 ways to debug Node-RED flows faster" works better than "Tips for Node-RED."
+### Community Engagement Requirements
 
-- **Use numbers when relevant:** Posts with numbers (like "5 lessons from...") tend to perform well because they promise digestible, structured content.
+In addition to sharing content, **all team members must regularly engage** in Node-RED and FlowFuse community discussions. This is a core responsibility for Developer Relations Advocates and Technical Writers, and an important part of every team member's role.
 
-- **Ask questions to spark engagement:** "What's your biggest Node-RED challenge?" invites conversation and can boost visibility through comments.
+Key channels:
 
-- **Keep it concise:** Aim for 8-12 words on LinkedIn. The title should intrigue without giving everything away, encouraging people to read your full post or click through.
+- Reddit ([r/nodered](https://www.reddit.com/r/nodered/), [r/flowfuse](https://www.reddit.com/r/FlowFuse/), [r/plc](https://www.reddit.com/r/PLC/), [r/scada](https://www.reddit.com/r/SCADA/), etc)
+- [Node-RED Slack](https://node-red.slack.com/archives/C024S4W7M8D)
+- [Node-RED Discourse](https://discourse.nodered.org)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/node-red)
+- Industry-specific forums relevant to your expertise
 
-- **Make it personal:** Phrases like "Here's what I learned..." or "I just discovered..." feel authentic and relatable compared to generic announcements.
+Engagement best practices:
+
+- Lead with helpful, technical answers first
+- Mention FlowFuse naturally when it's genuinely relevant to the solution
+- Link to documentation, blog posts, or tutorials that add value
+- Always follow the [Community Guidelines](/handbook/marketing/community/community-guidelines/)
+- Use your own voice; you represent yourself while reflecting FlowFuse values
+- Keep responses factual, honest, and useful; avoid sounding promotional
+- Respect the rules and norms of each community
+
+### Why This Matters
+
+Our reach depends on **every team member** amplifying our message. Company pages alone won't cut through the noise; personal networks, authentic voices, and consistent engagement are what drive discovery, trust, and growth. When you share and engage, you're not just marketing FlowFuse; you're building your own professional brand while helping us reach the customers who need what we've built.
