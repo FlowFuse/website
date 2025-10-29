@@ -155,7 +155,7 @@ This process helps ensure we can create content that matches your intent and our
 
 ## Other Social Channels and Community Forums
 
-Team members are encouraged to actively participate in discussions related to Node-RED and FlowFuse across social media platforms and community forums. By answering questions and sharing helpful insights, you help build trust, establish thought leadership, and enable potential users to discover FlowFuse organically.
+All Team members are encouraged to actively participate in discussions related to Node-RED and FlowFuse across social media platforms and community forums. By answering questions and sharing helpful insights, you help build trust, establish thought leadership, and enable potential users to discover FlowFuse organically. For Developer Relations Advocates and Technical Writers, engagement is a requirement.
 
 **Key Channels:**
 
