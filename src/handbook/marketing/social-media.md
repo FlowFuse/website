@@ -177,7 +177,7 @@ Best Practices:
 
 ## Team Member Content Distribution on Personal Social Channels
 
-In addition to engaging in community forums and social platforms, sharing FlowFuse content through your personal social media accounts can greatly amplify its reach. Personal posts typically perform up to 10x better than company page posts due to platform algorithms, and content shared by employees is perceived as more authentic and trustworthy.
+In addition to engaging in community forums and social platforms, sharing FlowFuse content through your personal social media accounts will greatly amplify its reach. Personal posts typically perform up to 10x better than company page posts due to platform algorithms, and content shared by employees is perceived as more authentic and trustworthy.
 
 ### What to Share
 
