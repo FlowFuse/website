@@ -193,7 +193,7 @@ Focus on content that genuinely interests you:
 
 Add your voice. Don't just repost, share why it matters to you in 2-3 sentences. Write naturally, not in corporate speak.
 
-Make it easy for engagement. Tag @FlowFuse and relevant people. Reply to comments to build conversations.
+Make it easy for engagement. Tag `@FlowFuse` or similar and relevant people. Reply to comments to build conversations.
 
 Share on your schedule. Post when it fits your routine, no need to follow company posting times. Aim for 1-2x per week on LinkedIn when you have something meaningful to add.
 
