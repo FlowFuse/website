@@ -165,7 +165,7 @@ Key Channels:
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/node-red)
 - Industry-specific forums relevant to your expertise
 
-**Best Practices:**
+Best Practices:
 
 - Lead with helpful, technical answers first
 - Mention FlowFuse naturally when it’s genuinely relevant to the solution
