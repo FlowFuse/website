@@ -60,6 +60,7 @@
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
         "@flowfuse/flow-renderer": "^0.5.0",
+        "@netlify/blobs": "^10.3.0",
         "@quasibit/eleventy-plugin-schema": "^1.11.0",
         "@xmldom/xmldom": "^0.8.10",
         "codeowners": "^5.1.1",
