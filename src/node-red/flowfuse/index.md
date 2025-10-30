@@ -3,7 +3,7 @@ eleventyNavigation:
   key: FlowFuse Nodes
   order: 5
 meta:
-  title: FlowFuse Exlusive Nodes
+  title: FlowFuse Nodes
   description: A detailed overview of the Node-RED nodes that are exclusive to FlowFuse, including their purpose, usage, and benefits for building integrations and automations.
 ---
 
