@@ -85,57 +85,23 @@ FlowFuse is the open-source Industrial Application Platform.
 
 ### FlowFuse in one sentence - Under 150 characters
 
-FlowFuse empowers teams to integrate digital systems with their physical environments, automating workflows through a low-code, end-to-end platform.
+FlowFuse is the fastest, most secure way to build industrial applications and operate at scale.
 
 ### About FlowFuse - 50 Words
 
-FlowFuse is the platform for building and operating industrial applications. It
-connects your IT and OT systems using Node-RED, helping teams collect,
-transform, and visualize data. FlowFuse empower teams to develop and scale
-self-built industrial solutions, enabling better operational decisions and
-improving performance and processes.
+FlowFuse is the modern platform for building and operating industrial applications at scale. It unifies IT and OT through Node-RED, helping teams connect and transform data across systems. With enterprise-grade security, governance, and AI-assisted development tools, FlowFuse enables faster, safer innovation and ensures reliable operations across industrial environments.
 
 ### About FlowFuse - 150 Words
 
-For industrial companies, competition is more intense than ever. Achieving
-growth targets while maintaining profits takes continuous commitment to process
-improvement. But to innovate, your team needs seamless access to data, and the
-ability to rapidly build applications that can transform data into operational
-insights. The faster your team can collect and transform data directly from your
-operations, the faster you can make process adjustments that create true
-business value and profit.
-
-FlowFuse is the leading open source platform for building and operating
-self-built industrial data solutions that digitalize processes and operations.
-The platform leverages Node-RED, a low-code programming technology that makes it
-easy for your OT-engineers to quickly connect, collect, transform, and visualize
-data for interacting with industrial processes. Node-RED seamlessly integrates
-with thousands of industrial devices and 100s of protocols and data services.
-
-Founded in 2021 by [Nick O'Leary](/team#nick-oleary), co-creator of Node-RED, companies use FlowFuse
-to manage, scale and secure their industrial Node-RED solutions.
+FlowFuse helps industrial organizations accelerate their digital transformation by providing the fastest and most secure way to build and operate industrial applications. Built on the trusted Node-RED open-source foundation, FlowFuse connects IT and OT systems to transform raw operational data into actionable insights that improve efficiency and performance.
+The platform brings structure, governance, and automation to industrial software development. Its secure, low-code environment allows engineers to create, deploy, and manage industrial applications across facilities and devices. With AI-assisted features, FlowFuse simplifies complex configuration, change tracking, and deployment management—helping teams innovate faster without compromising reliability or control.
+FlowFuse scales from pilot projects to global operations with built-in version control, audit trails, and enterprise-grade security. Trusted by industrial teams worldwide, FlowFuse makes it possible to develop, deploy, and operate smarter industrial systems with unmatched speed, stability, and scalability.
 
 ## FlowFuse in-depth
 
-FlowFuse is a software platform that helps companies manage and scale
-applications built with Node-RED, a popular visual programming tool used to
-automate tasks and connect systems. While Node-RED allows users to quickly
-create powerful applications by wiring together different building blocks, it
-becomes difficult to manage once used across many devices, teams, or
-environments. That’s where FlowFuse comes in.
-
-FlowFuse adds the structure, tools, and safety needed to use Node-RED in
-professional and industrial settings. It allows companies to organize and
-control multiple Node-RED instances, whether they’re running on the cloud or on
-physical machines like factory equipment. With FlowFuse, users can develop
-applications, test them safely, and deploy them to different environments
-without fear of breaking things. Teams can work together more effectively thanks
-to user access controls, audit logs, and centralized monitoring. It supports
-both SaaS and self-hosted models, so companies can keep full control when
-needed, especially in industries with strict security or privacy requirements.
-
-Ultimately, FlowFuse transforms the speed and flexibility of Node-RED into
-something reliable, scalable, and secure — making it suitable not just for
-individual developers or hobbyists, but for entire organizations running
-critical systems. It gives companies the confidence to innovate quickly while
-staying in control.
+FlowFuse is the industrial-grade platform designed to empower teams building and managing applications on Node-RED at scale. Founded in 2021 by [Nick O'Leary](/team#nick-oleary), the co-creator of Node-RED, FlowFuse extends and enhances the open-source Node-RED environment that revolutionized low-code programming for data integration and automation.
+While Node-RED is widely recognized for its flexibility and ease of use in wiring together diverse systems and data streams, its original design wasn’t built for complex industrial scale or enterprise governance. FlowFuse addresses these gaps by providing an advanced, secure, and scalable framework that industrial teams need to confidently deploy and operate mission-critical applications.
+With FlowFuse, organizations can unify IT and OT environments, orchestrating multiple Node-RED instances seamlessly across cloud, edge, and on-premises devices. The platform’s comprehensive governance model includes role-based access controls, audit logging, centralized monitoring, and automated deployment pipelines—ensuring operational reliability and compliance at all times.
+AI-assisted features in FlowFuse accelerate development workflows by simplifying data transformation, process modeling, and change management. These capabilities reduce the expertise barrier and speed up application delivery without compromising stability or security.
+FlowFuse supports both SaaS and self-hosted deployment models, providing ultimate flexibility. Whether managing a handful of devices or thousands, FlowFuse scales effortlessly, safeguarding industrial operations with enterprise-level security and performance.
+By combining the pioneering vision of Node-RED’s creator with industry demands for speed, security, and scale, FlowFuse delivers a trusted, future-proof platform that transforms industrial application development and operations — making it the fastest, most secure way to build and run industrial applications at scale.
