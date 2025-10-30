@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: MCP
-  parent: FlowFuse
+  parent: FlowFuse Nodes
   order: 1
 meta:
   title: MCP Nodes

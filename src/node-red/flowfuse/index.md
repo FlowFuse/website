@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: FlowFuse
+  key: FlowFuse Nodes
   order: 5
 meta:
   title: FlowFuse Exlusive Nodes
