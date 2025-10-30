@@ -70,3 +70,17 @@ In our "FlowFuse Templates" Adobe Premiere Pro library we have three "UI Preview
 ### Marketing Videos
 
 Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our [branding guidelines](/handbook/design/branding.md).
+
+## Content Production
+For our Developer Relations content, we align behind production best standards. This means that we have three phases of production - pre-production, production, and post-production, each with their own steps and processes.
+### Pre-Production Phase
+In this phase of production, we generate scripts, review content for accuracy, and validate fit and function of the content piece. Whenever possible, we aim for a 24 hour review cycle for scripts, meaning that content should be reviewed by stakeholders with at least a 24 hour lead-time for production.
+### Production Phase
+In this phase, content is filmed. Whenever possible, we default to 4k at either 60FPS or 120FPS, and generate either .mp4 or .mov containers in HEVC or H.264 codecs. When filming content, try as best as you can to ensure audio is free of echo, reverb, bass resonance, and other audio artifacts. When this cannot be done, try to capture audio as close to the source as possible.
+### Post-Production
+During this phase, video content is edited, mixed, and finalised. The specific flow is down to each editor and production, but the following best practises are advised:
+
+* Audio should be filtered and cleaned up. In editors like Davinci, you may have an AI isolation option - please use these techniques to reduce room noise, but balance it with natural sound and EQ to make sure that the audio is not overly compressed or otherwise fatigueing for the listener.
+* Solutions like Adobe podcast can be used to clean up audio from noisy sources - but as with AI isolation, make sure you use it sparingly to not overwhelm the listener with artifacting or over-compression.
+* Video edits should be professional and focused on the content at hand. Jump cuts are fine, but should be used only to emphasise a point or to cleanly transition between video - it should not be frentic or distracting.
+* Video effects can be applied, but again, sparingly. Try not to be too visually loud or over-stimulating - Developer Relations content is somewhere between educational and entertainment, but we're not trying to go for frentic YouTube here.
