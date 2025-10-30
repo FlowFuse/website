@@ -114,7 +114,7 @@ time period and what the achievement was.
 
 ## Processing non-commission Bonuses
 
-FlowFuse processes marketing bonuses on a quarterly basis. These bonuses are agreed upon between the employee and their manager.
+FlowFuse processes other bonuses on a quarterly basis. These bonuses are agreed upon between the employee and their manager.
 
 At the start of each quarter, the employee should send an email to both their manager and the CEO outlining the agreed goals and bonus structure. The manager must reply to that email confirming the agreement. This ensures that all parties have written confirmation of the goals and conditions.
 
