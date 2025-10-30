@@ -9,4 +9,6 @@ issues:
   - "https://github.com/FlowFuse/flowfuse/issues/5785"
 ---
 
-You can now select any application within your team when duplicating an instance, making it easier to replicate workflows across different projects or environments.
+As of today, you can now duplicate a hosted instance into a different application within your team.
+
+It is a small (but important) improvement that just just makes things that little bit easier.
