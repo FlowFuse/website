@@ -19,6 +19,14 @@ The marketing team creates tasks, stories, and epics just like our engineering
 team. The CEO currently does planning in 1:1s with each individual
 contributor.
 
+## Team Performance and Collaboration
+
+The marketing team holds a weekly meeting focused on performance review and KPIs. These sessions emphasize each team member’s needs and provide visibility into ongoing work, ensuring that individual contributions are recognized even in a fast-paced environment. They also serve as a space to identify where teammates can support one another when workloads become challenging.  
+
+Additionally, the Product Marketing Manager and the CEO host a monthly meeting to review overall departmental performance based on HubSpot dashboards and other ad hoc reports.  
+
+When required, the marketing team also leverages external vendors to maintain quality and momentum. Engaging vendors can be especially valuable when additional resources are needed to meet deadlines, sustain output levels, or enhance the team’s effectiveness with CEO approval.
+
 ## Requesting Marketing support
 
 If you would like to see the Marketing team create and publish content as a demo, blog post, or social media post, follow these steps:
