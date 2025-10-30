@@ -4,7 +4,7 @@ eleventyNavigation:
   order: 5
 meta:
   title: FlowFuse Nodes
-  description: A detailed overview of the Node-RED nodes that are exclusive to FlowFuse, including their purpose, usage, and benefits for building integrations and automations.
+  description: An overview of the Node-RED nodes provided by FlowFuse, explaining their purpose, usage, and benefits for building integrations and automations.
 ---
 
 # {{ meta.title }}
@@ -15,6 +15,6 @@ In Node-RED on the FlowFuse platform, you have access to additional Node-RED nod
 
 ## Nodes
 
-This documents link that covers FlowFuse-exclusive nodes:
+The following documents provide details about the FlowFuse nodes:
 
 {% include "navigation-items-list.njk" %}
