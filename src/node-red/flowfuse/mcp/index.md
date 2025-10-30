@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 1
 meta:
   title: MCP Nodes
-  description: A detailed reference for MCP (Model Context Protocol) nodes in FlowFuse, explaining their purpose, configuration, and use in building AI-integrated Node-RED flows.
+  description: A set of nodes that enable the creation of MCP (Model Context Protocol) servers in your Node-RED flows for AI-integration.
 ---
 
 # {{ meta.title }}
