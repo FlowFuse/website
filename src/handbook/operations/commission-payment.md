@@ -112,7 +112,7 @@ In both cases be explicit about this being a bonus for achievements for a certai
 time period and what the achievement was.
 
 
-## Processing Marketing Bonuses
+## Processing non-commission Bonuses
 
 FlowFuse processes marketing bonuses on a quarterly basis. These bonuses are agreed upon between the employee and their manager.
 
