@@ -9,6 +9,4 @@ issues:
   - "https://github.com/FlowFuse/flowfuse/issues/5785"
 ---
 
-Duplicating instances across different applications is now supported. Previously, you could only duplicate instances within the same application.
-
 You can now select any application within your team when duplicating an instance, making it easier to replicate workflows across different projects or environments.
