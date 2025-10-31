@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: MQTT In
-  parent: MQTT
+  parent: FlowFuse MQTT Nodes
 meta:
   title: MQTT In
   description: Enhanced MQTT In node for FlowFuse with automatic broker setup, dynamic subscriptions, wildcard topic support, and full MQTT v5 compatibility.

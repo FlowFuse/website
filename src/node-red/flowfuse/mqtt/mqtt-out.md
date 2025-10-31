@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: MQTT Out
-  parent: MQTT
+  parent: FlowFuse MQTT Nodes
 meta:
   title: MQTT Out
   description: Enhanced MQTT Out node for FlowFuse with automatic broker setup, dynamic topic control, and full MQTT v5 support.

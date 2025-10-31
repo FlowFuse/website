@@ -1,8 +1,9 @@
 ---
 eleventyNavigation:
-  key: MQTT 
+  key: FlowFuse MQTT Nodes 
   parent: FlowFuse Nodes
   order: 2
+  title: MQTT
 meta:
   title: MQTT Nodes
   description: MQTT In and Out nodes designed for FlowFuse users with automatic configuration.
