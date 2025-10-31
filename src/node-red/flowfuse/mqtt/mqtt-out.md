@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: FF MQTT Out
+  key: MQTT Out
   parent: MQTT
 meta:
   title: MQTT Out
