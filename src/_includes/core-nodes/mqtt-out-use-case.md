@@ -37,7 +37,7 @@ You can enter a fixed topic or leave it blank to use `msg.topic` dynamically.
 Defines the message delivery quality level:
 - 0 – fire and forget  
 - 1 – at least once  
-- 2 – once and once only  
+- 2 – once and once only (default)
 
 The QoS can be overridden at runtime using `msg.qos`.
 
