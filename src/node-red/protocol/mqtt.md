@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: MQTT Tutorial
+  key: MQTT
   parent: "Communication Protocols"
   title: MQTT
 meta:
