@@ -19,7 +19,7 @@ This node is ideal for computer vision tasks such as **image labeling**, **conte
 ### General
 
 - **Property:** `input`
-- **Type:** object, buffer, or tensor
+- **Type:** `object`, `buffer`, `string` or tensor. 
 - **Description:** The input image or tensor to classify. See the **Details** section for supported input formats.
 
 ### Model Selection
@@ -49,7 +49,7 @@ The node supports multiple input formats depending on the model’s requirements
 
 - **Buffer** — Binary image data, typically from a file or camera input.
 - **Base64 string** — Base64-encoded image data.
-- **Jimp Image Object** — An image processed using the [Jimp](https://www.npmjs.com/package/jimp) library.
+- **Jimp Image Object** — An image object (e.g, output from `node-red-contrib-image-tools`).
 - **Tensor** — A pre-processed tensor object in the following format:
 
   ```json
@@ -60,7 +60,7 @@ The node supports multiple input formats depending on the model’s requirements
   }
   ```
 
-If the model supports batching, the input can also be an **array** of any of these formats.
+> TIP: If the model supports batching, the input can be an array of images in one of the supported formats.
 
 ### Model Selection
 
