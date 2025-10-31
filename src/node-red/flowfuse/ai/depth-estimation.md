@@ -15,13 +15,17 @@ The **Depth Estimation** node allows you to estimate the relative distance of ob
 
 ### General
 
-##### Image input
+- **Property:** `input`
+- **Type:** `object`, `buffer`, `string` or tensor. 
+- **Description:** The input image or tensor to classify. See the **Details** section for supported input formats.
+
+##### Supported Input Formats
 Typically, the input would be an image which could be:
 - A `Buffer` object containing the binary image data (e.g. from a `file` node or `http request` node)
 - A base64-encoded string.
 - A Jimp image object (e.g, output from `node-red-contrib-image-tools`).
 
-##### Tesnor input
+##### Tensor input
 Alternatively, you can supply a pre-processed tensor in the following format:
 
 ```json
