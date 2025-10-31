@@ -21,7 +21,7 @@ Specifies the message delivery guarantee level:
 
 * 0: Fire and forget
 * 1: At least once
-* 2: Once and once only
+* 2: Once and once only (default)
 
 If not defined, the default value is 0.
 
