@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
-  key: MQTT
+  key: MQTT Tutorial
   parent: "Communication Protocols"
+  title: MQTT
 meta:
   title: Using MQTT with Node-RED
   description: Learn how to use MQTT with Node-RED.
