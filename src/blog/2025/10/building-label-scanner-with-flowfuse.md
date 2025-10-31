@@ -30,35 +30,33 @@ This tutorial shows you how you can build a OCR system using FlowFuse that can c
 
 ## Getting Started
 
-Before we dive in, let's make sure you have a running FlowFuse instance. If you don't have one yet, you can [sign up for the 14-day free trial](https://app.flowfuse.com/) and get a hosted instance spin up, which will take less than 2 minutes.
+Before we dive in, make sure you have a running FlowFuse instance.
+If you do not have one yet, you can [sign up for the 14-day free trial](https://app.flowfuse.com/) and get a hosted instance running in under two minutes.
 
-### Installing the OCR Node
+### Installing Required Nodes
 
-To perform text extraction from images, you will need to install the `@sumit_shinde_84/node-red-contrib-simple-ocr` node in your FlowFuse (or Node-RED) instance. This node uses the Tesseract OCR engine under the hood to recognize text from image files or image buffers.
+To perform text extraction from images, you’ll need to install the `@sumit_shinde_84/node-red-contrib-simple-ocr` node in your FlowFuse instance.
+This node uses the Tesseract OCR engine under the hood to recognize text from image files or image buffers.
+To capture images and build a dashboard, you’ll also need the **FlowFuse Dashboard** and **Webcam** packages.
 
-1. Open your **FlowFuse editor**.
+1. Open your **FlowFuse** editor.
 2. From the main menu, select **Manage palette → Install**.
-3. Search for **`@sumit_shinde_84/node-red-contrib-simple-ocr`**.
-4. Click **Install** to add it to your workspace.
+3. Search for and install the following packages one by one:
 
-Once installed, you will see the **simple-ocr** node under the **Function** category in the left sidebar.
+   * `@sumit_shinde_84/node-red-contrib-simple-ocr`
+   * `@flowfuse/node-red-dashboard`
+   * `@sumit_shinde_84/node-red-dashboard-2-ui-webcam`
 
-This node accepts image data in `msg.payload` as a buffer.
+Once installed, you’ll see the **simple-ocr** node under the **Function** category and the **Webcam** widget under the **dashboard 2.0** category in the left sidebar.
 
-### Building the OCR Flow
+### Building the Scanner
 
-Now, let’s build a dashboard that you can open on a mobile device, allowing the phone to act as a scanner for capturing product labels and serial numbers.
+Now, let’s build a scanner dashboard that you can open on a mobile device, allowing the phone to act as a scanner for capturing product labels and serial numbers.
 
 ![Label Scanner Built with FlowFuse](./images/flowfuse-scanner.gif)
 _[Label Scanner Built with FlowFuse]_
 
 To capture images directly from your browser, you can use the **FlowFuse Dashboard** along with the **Webcam widget**, lets install them first.
-
-1. In your **FlowFuse editor**, go to **Manage palette → Install**.
-2. Search for **`@flowfuse/node-red-dashboard`** (if not already installed).
-3. Then search for **@sumit_shinde_84/node-red-dashboard-2-ui-webcam** and click **Install**.
-
-Once installed, you will find a **Webcam** node under the **dashboard 2.0** category.
 
 #### Configuring the Webcam Node
 
@@ -102,16 +100,17 @@ This function strips the data URI prefix (e.g., `data:image/png;base64,`) from t
 
 #### Adding the OCR Node
 
-Now, let’s add the OCR node to extract text from the captured images:
+Now, let’s add the OCR node to extract text from the captured images, The node accepts image data in `msg.payload` as a buffer:
 
 1. Drag the **simple-ocr** node onto the canvas.
 2. Connect the output of the **Function** node to the input of the **simple-ocr** node.
 3. Add a **Debug** node and connect it to the **simple-ocr** node to view the results.
-4. Click **Done and Deploy**.
+4. Click **Done**, then **Deploy**.
 
-Now, open the dashboard by clicking the **Dashboard 2.0** button in the right sidebar. Then click the **Scan Label** button — the first click will activate your camera (make sure to give the browser permission to allow the dashboard to access it).
+Next, open the dashboard by clicking the **Dashboard 2.0** button in the right sidebar. Then, click the **Scan Label** button — the first click will activate your camera (make sure to grant your browser permission to access it).
 
-Position the label in front of the camera, focus on it, and click **Scan** again. The recognized text will appear in the **Debug** panel. Now, you need to validate and trim the recognized text. Additionally, you should add a successful scan visual indicator. Let’s set that up next.
+Position the label in front of the camera, focus on it, and click **Scan** again. The recognized text will appear in the **Debug** panel.
+Now, you need to validate and trim the recognized text, and add a visual indicator to show a successful scan. Let’s set that up next.
 
 #### Validating and Parsing the Extracted Text
 
