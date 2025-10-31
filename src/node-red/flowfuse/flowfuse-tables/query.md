@@ -32,14 +32,14 @@ SQL queries can be configured directly in the node or passed dynamically via `ms
 
 Pass parameters as an array via `msg.params`:
 
-#### Input Data
+##### Input Data
 {% raw %}
 ```javascript
 msg.params = [ msg.id ];
 ```
 {% endraw %}
 
-#### Query defined in the node
+##### Query defined in the node
 {% raw %}
 ```sql
 SELECT * FROM table WHERE id = $1
@@ -52,14 +52,14 @@ SELECT * FROM table WHERE id = $1
 
 Pass parameters as an object via `msg.queryParameters`:
 
-#### Input Data
+##### Input Data
 {% raw %}
 ```javascript
 msg.queryParameters.id = msg.id;
 ```
 {% endraw %}
 
-#### Query defined in the node
+##### Query defined in the node
 {% raw %}
 ```sql
 SELECT * FROM table WHERE id = $id;
@@ -70,7 +70,7 @@ SELECT * FROM table WHERE id = $id;
 
 Reference message properties using Mustache syntax:
 
-#### Query defined in the node
+##### Query defined in the node
 {% raw %}
 ```sql
 SELECT * FROM table WHERE id = {{{ msg.id }}}
@@ -78,7 +78,7 @@ SELECT * FROM table WHERE name = '{{{ msg.name }}}'
 ```
 {% endraw %}
 
-> Note: Care must be taken to ensure incoming string data is properly escaped (e.g., single quotes must be doubled: ' to '') to prevent syntax errors and SQL injection.
+> Note: Care must be taken to ensure incoming string data is properly escaped (e.g., single quotes must be doubled: `'` to `''`) to prevent syntax errors and SQL injection.
  
 > Note: Inserting dynamic values into SQL statements using Mustache templates exposes your data to SQL Injection risks if the input is untrusted. We strongly recommend using Parameterized Queries or Named Parameters instead; these features are designed to safely separate data from the SQL command.
 
