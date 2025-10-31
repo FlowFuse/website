@@ -28,29 +28,18 @@ For multiple queries, `msg.pgsql` is returned as an array.
 
 SQL queries can be configured directly in the node or passed dynamically via `msg.query`.
 
-### Mustache Templates
-
-Reference message properties using Mustache syntax:
-
-{% raw %}
-```sql
-SELECT * FROM table WHERE id = {{{ msg.id }}}
-SELECT * FROM table WHERE name = '{{{ msg.name }}}'
-```
-{% endraw %}
-
-> Note : Mustache templates allow dynamic values to be inserted directly into SQL statements. If any of these values come from untrusted input, it could expose your flow to SQL injection
-
 ### Parameterized Queries (Recommended)
 
 Pass parameters as an array via `msg.params`:
 
+#### Input Data
 {% raw %}
 ```javascript
 msg.params = [ msg.id ];
 ```
 {% endraw %}
 
+#### Query defined in the node
 {% raw %}
 ```sql
 SELECT * FROM table WHERE id = $1
@@ -63,22 +52,42 @@ SELECT * FROM table WHERE id = $1
 
 Pass parameters as an object via `msg.queryParameters`:
 
+#### Input Data
 {% raw %}
 ```javascript
 msg.queryParameters.id = msg.id;
 ```
 {% endraw %}
 
+#### Query defined in the node
 {% raw %}
 ```sql
 SELECT * FROM table WHERE id = $id;
 ```
 {% endraw %}
 
+### Mustache Templates
+
+Reference message properties using Mustache syntax:
+
+#### Query defined in the node
+{% raw %}
+```sql
+SELECT * FROM table WHERE id = {{{ msg.id }}}
+SELECT * FROM table WHERE name = '{{{ msg.name }}}'
+```
+{% endraw %}
+
+> Note: Care must be taken to ensure incoming string data is properly escaped (e.g., single quotes must be doubled: ' to '') to prevent syntax errors and SQL injection.
+ 
+> Note: Inserting dynamic values into SQL statements using Mustache templates exposes your data to SQL Injection risks if the input is untrusted. We strongly recommend using Parameterized Queries or Named Parameters instead; these features are designed to safely separate data from the SQL command.
+
 ## Important Details
 
 ### Case Sensitivity
-Table and column names are case-sensitive. Wrap them in double quotes to avoid errors.
+By default, PostgreSQL converts unquoted table and column names to lowercase, making them case-insensitive (e.g., `SELECT DataVal FROM MyTable` is the same as `SELECT dataval FROM  mytable`).
+To avoid errors and ensure portability, it is common to use only lowercase, unquoted identifiers. 
+However, where required, you can wrap names in double quotes (e.g., `SELECT "DataVal" FROM "MyTable"`) to explicitly force them to be case-sensitive if the names were defined that way.
 
 ### Security Best Practices
 Parameterized queries are **strongly recommended** for production use over Mustache templates for security and maintainability.
