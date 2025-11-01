@@ -1,0 +1,12 @@
+{
+    "name": "Node-RED Instance Load Testing",
+    "version": "1.0.0",
+    "description": "SEE README",
+    "main": "flow.json",
+    "license": "SEE LICENSE IN /blueprint-library/LICENSE",
+    "dependencies": {
+      "@flowfuse/node-red-dashboard": "^1.23.0",
+      "node-red-node-sqlite": "^1.1.0"
+
+ }
+}
