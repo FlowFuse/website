@@ -101,8 +101,9 @@ as evidenced by a PO or signed quote, is the sole determinant.
 
 1. Verify, again, if the quote has all the right properties set according to
    [Generating a Quote](#generating-a-quote) instructions.
-   - Verify the Deal amount is the same a the IACV (Incremental Annual Contract
-     Value)
+   - Verify the Deal amount is set correctly based on Deal Type:
+     - New Business: ACV (Annual Contract Value)
+     - Expansions/Renewals: Incremental ARR
    - On the Hubspot Deal view, check and update:
      - Hosting Environment
      - Contract Start Date
@@ -110,7 +111,9 @@ as evidenced by a PO or signed quote, is the sole determinant.
      - Renewal Date
      - Use Case
      - Spiced
-     - Amount in USD to the IACV (Incremental Annual Contract Value) & ARR
+     - Amount in USD based on Deal Type:
+       - New Business: ACV (Annual Contract Value)
+       - Expansions/Renewals: Incremental ARR
    - Under contract management; check the box for MSA if a custom subscription
      agreement is agreed upon.
 1. Upload the documents to the Google Drive in the correct directory
