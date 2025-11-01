@@ -85,7 +85,7 @@ FlowFuse is the open-source Industrial Application Platform.
 
 ### FlowFuse in one sentence - Under 150 characters
 
-FlowFuse is the fastest, most secure way to build industrial applications and operate at scale.
+FlowFuse empowers teams to integrate digital systems with their physical environments, automating workflows through a low-code, end-to-end platform.
 
 ### About FlowFuse - 50 Words
 
