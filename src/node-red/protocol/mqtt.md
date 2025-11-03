@@ -1,4 +1,15 @@
-# Using MQTT with Node-RED
+-
+eleventyNavigation:
+  key: MQTT
+  parent: "Communication Protocols"
+meta:
+  title: Using MQTT with Node-RED
+  description: Learn how to use MQTT with Node-RED.
+  keywords: node red mqtt in, nodered mqtt, mqtt node red, node-red mqtt, node-red mqtt broker, node red mqtt dynamic subscription, mqtt broker node red, nodered mqtt broker, node red mqtt out, mqtt in node red
+image: /node-red/protocol/images/flowforge-nodered-mqtt-hivemq.png
+---
+
+# {{meta.title}}
 
 Getting devices to talk to each other in industrial environments isn't trivial. You're dealing with spotty networks, power constraints, and devices that need to share data without constant back-and-forth polling. MQTT solves these problems by keeping communication lightweight and flexible. This guide walks you through what MQTT is, why it works well for IIoT, and how to get it running with Node-RED.
 
