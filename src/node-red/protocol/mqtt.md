@@ -46,7 +46,7 @@ _Setting up the broker connection_
 
 Let's start by sending data to an MQTT broker.
 
-1. Add an **[MQTT Out](/node-red/core-nodes/mqtt-out/)** node.
+1. Add an **MQTT Out** node.
 2. Connect your data source node’s output (use an Inject node to simulate data if you don’t have one) to the **MQTT Out** node.
 3. Double-click the **MQTT Out** node.
 4. Select your configured broker from the **Server** dropdown (or create a new one by following the steps above).
@@ -68,7 +68,7 @@ _Green status means you're connected_
 
 Now let's receive messages from the MQTT broker.
 
-1. Add an **[MQTT In](/node-red/core-nodes/mqtt-in/)** node to the canvas.
+1. Add an **MQTT In** node to the canvas.
 2. Add a **Debug** node.
 3. Connect the **MQTT In** node to the **Debug** node.
 4. Double-click the **MQTT In** node.
