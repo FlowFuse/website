@@ -2,6 +2,7 @@
 eleventyNavigation:
   key: MQTT
   parent: "Communication Protocols"
+  title: MQTT
 meta:
   title: Using MQTT with Node-RED
   description: Learn how to use MQTT with Node-RED.
@@ -90,4 +91,5 @@ MQTT supports wildcards for subscribing to multiple topics at once:
 
 - **Multi-level wildcard (#)**: Matches multiple levels. `enterprise/site/area/#` matches everything under that area, including `enterprise/site/area/line1/cell/temperature` and `enterprise/site/area/line1/cell/station1/pressure`
 
-To subscribe to multiple topics, configure separate MQTT in nodes or use wildcards strategically.
+When deployed you should again see the status bubble turn green, and have a
+timestamp appear in the sidebar every second!
