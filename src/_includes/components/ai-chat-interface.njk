@@ -1,7 +1,7 @@
 <div class="ai-chat-container mx-auto mt-10" style="max-width: 800px;">
     <div class="ai-chat-box">
         <div class="textarea-wrapper relative mb-4 h-40 p-4 pb-12 rounded-lg overflow-hidden">
-            <textarea 
+            <textarea
                 placeholder="Tell us what you are trying to build and the FlowFuse Expert Assistant will create a guide to get you up and running quickly"
                 class="w-full h-full bg-transparent border-0 focus:outline-none text-gray-600 placeholder-gray-400 resize-none"
                 aria-label="Describe your workflow"
@@ -14,7 +14,7 @@
             </button>
         </div>
     </div>
-    
+
     <div class="ai-prompts mt-4">
         <div class="flex flex-wrap gap-2 mb-3">
             <button class="prompt-pill text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600" data-prompt="Create a dashboard for machine data">
@@ -28,6 +28,7 @@
             </button>
         </div>
     </div>
+    <button id="qwe">qwe</button>
 </div>
 
 <script>
@@ -36,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (homeTextarea) {
         // Auto-focus the homepage textarea when page loads
         homeTextarea.focus();
-        
+
         // Responsive placeholder text
         const fullPlaceholder = "Tell us what you are trying to build and the FlowFuse Expert Assistant will create a guide to get you up and running quickly";
         const shortPlaceholder = "Tell us what you are trying to build";
-        
+
         function updatePlaceholder() {
             // Use 480px breakpoint to target mobile phones
             if (window.innerWidth < 480) {
@@ -49,12 +50,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 homeTextarea.placeholder = fullPlaceholder;
             }
         }
-        
+
         // Set initial placeholder
         updatePlaceholder();
-        
+
         // Update on window resize
         window.addEventListener('resize', updatePlaceholder);
+    }
+});
+
+document.getElementById('qwe').addEventListener('click', function() {
+    let target = window.open('http://localhost:8080', 'target');
+
+// Listen for messages on the current window, not the target window
+window.addEventListener('message', function(event) {
+    // Verify the origin for security
+    //if (event.origin !== 'http://localhost:8080') {
+    //        return;
+    //  }
+
+    console.log('Received message:', event.data);
+
+    // Check if it's the ready message
+    if (event.data.type === 'onLoad' && event.data.status === 'ready') {
+        console.log('App is ready');
+        // Now you can send messages to the target
+        target.postMessage({ type: 'flowfuse-expert', action: 'ping' }, 'http://localhost:8080');
     }
 });
 </script>
