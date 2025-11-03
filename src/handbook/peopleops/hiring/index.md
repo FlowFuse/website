@@ -75,7 +75,7 @@ FlowFuse, and hurts our reputation.
 ## Internal Communication of the job
 
 Once a new headcount request has been approved, it must be announced in the company’s Slack channel [#announcements](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3) so that the entire team is aware of the open position and our current hiring needs. This ensures transparency and encourages involvement in the hiring process.
-Team members are invited to share the job posting within their personal networks if they know someone who matches the role’s requirements and embodies the FlowFuse culture. Referrals are highly encouraged and, if the recommended candidate is hired and successfully completes three months in the role, the referring employee [will earn a bonus](https://flowfuse.com/handbook/peopleops/hiring/#referrals). 
+Team members are invited to share the job posting within their personal networks if they know someone who matches the role’s requirements and embodies the FlowFuse culture. Referrals are highly encouraged and, if the recommended candidate is hired and successfully completes three months in the role, the referring employee [will earn a bonus](/handbook/peopleops/hiring/#referrals). 
 
 ## Advertising a Role
 
