@@ -6,7 +6,6 @@ meta:
   title: Using MQTT with Node-RED
   description: Learn how to use MQTT with Node-RED.
   keywords: node red mqtt in, nodered mqtt, mqtt node red, node-red mqtt, node-red mqtt broker, node red mqtt dynamic subscription, mqtt broker node red, nodered mqtt broker, node red mqtt out, mqtt in node red
-image: /node-red/protocol/images/flowforge-nodered-mqtt-hivemq.png
 ---
 
 # {{meta.title}}
