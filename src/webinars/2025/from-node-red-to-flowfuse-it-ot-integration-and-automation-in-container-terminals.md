@@ -7,11 +7,11 @@ image: /images/webinars/from-node-red-to-flowfuse-it-ot-integration-and-automati
 date: 2025-10-30
 time: 16:00 CET (11:00am ET)
 duration: 60
-video: 
+video: Lvq7BjRp2vg
 hosts: ["raymond-macaisa"]
 hubspot:
     formId: 9da50e41-ee51-4450-af59-89eb63d313ef
-    downloadFormId: 
+    downloadFormId: 90ed1000-616c-40c3-8e97-42d86191a92b
 ---
 Heavy-duty industries depend on real-time visibility and connected systems to stay efficient, safe, and resilient.  
 
@@ -34,7 +34,7 @@ The terminal further enhanced operational visibility by integrating Node-RED flo
 
 ## Demo
 
-The session will include a live demonstration of:
+The session includes a live demonstration of:
 
 - **FlowFuse Dashboard 2.0** for operational monitoring.
 - **Automated ticket printing** using TCP nodes for thermal receipt printers.
@@ -46,4 +46,6 @@ The session will include a live demonstration of:
 - Industrial Automation Professionals interested in scalable and open-source integration solutions.
 - Developers and Engineers exploring real-world use of Node-RED and FlowFuse in mission-critical environments.
 
-Don’t miss this opportunity to see how Red Sea Gateway Terminal transformed container terminal operations, leveraging FlowFuse to achieve greater efficiency, visibility, and resilience through IT/OT integration and automation.
+See how Red Sea Gateway Terminal transformed container terminal operations, leveraging FlowFuse to achieve greater efficiency, visibility, and resilience through IT/OT integration and automation. 
+
+Ready to bridge your IT and OT systems? [Book a demo](/book-demo) with our team today!

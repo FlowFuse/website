@@ -28,9 +28,11 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **“Commissions”** means Incentive Compensation relating to a Salesperson’s sale of qualifying products and services on authorized accounts in his or her sales territories.  As described in Section 9, Commissions are not deemed Earned until the satisfaction of a number of conditions, including the customer’s payment of the invoice in full.  However, except as provided by Section 9 or Section 15 of the Plan, Commissions will be advanced when the applicable sale or order is Booked (a “**Booking** **Advance**”). 
 
-**“Incentive Compensation”** means the compensation, in excess of Base Salary, earned upon meeting specific individual and/or Company performance goals. Incentive Compensation for a particular Salesperson is set forth in Exhibit A.
+**"Incentive Compensation"** means the compensation, in excess of Base Salary, earned upon meeting specific individual and/or Company performance goals. Incentive Compensation for a particular Salesperson is set forth in Exhibit A.
 
-**“Draw Payment”** means advance payments made against anticipated future Commissions.
+**"Incremental ARR"** means the incremental Annual Recurring Revenue generated from a sale. For new business, this is the total Annual Contract Value (ACV) of the first contract. For upsells and renewals, this is only the incremental new ARR (the increase in annual contract value compared to the previous contract).
+
+**"Draw Payment"** means advance payments made against anticipated future Commissions.
 
 **“Recoverable Draw”** is a Draw Payment offset by Earned Commissions.  Once Commissions are calculated, there will be a true up to recover the Draw Payment and pay the balance due (if any). If the value of the Draw Payment exceeds the Earned Commissions, the Company reserves the right to continue to deduct the value of Draw Payments from future Commissions until the full Draw Payment amount is recovered. This is referred to as a negative carry forward balance.
 

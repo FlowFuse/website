@@ -2,12 +2,15 @@
 navTitle: Board & Investors
 ---
 
-## Board meetings
+# Board meetings
 
 There are Board Meeting Cadence with 4 official 120-minute meetings per year
 (once per quarter) about 1 month after the quarter closes, interspersed with 4
 60-minute informal meetings that are focused on metrics and cover one strategic
 topic for a deep dive.
+
+Scheduling is done by sending out a [Doodle](https://doodle.com/en/) to ensure
+it's low friction for all participants.
 
 ## Calendar invites
 
@@ -52,10 +55,12 @@ The 120 minutes of each meeting are structured in the following time blocks:
   discussion. Prior context is shared through the prewatch.
 - 30 minutes "Routine business" (Closed portion of meeting) - Providing an open
   forum for board members and observers to raise additional topics. In this
-  Closed portion of the meeting, we will always cover: Stock Option Approvals,
-  Approval of previous meeting's minutes, Compensation matters related to team
-  members over 200K USD. It would be highly appreciated if topics to be
-  discussed are shared in advance with the rest of the board.
+  Closed portion of the meeting, we will always cover:
+     - Stock Option Approvals.
+     - Approval of previous meeting's minutes.
+     - Compensation matters related to team members over 200K USD.
+
+It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
 
 It is the CEO's responsibility to manage time in the meeting.
 
@@ -168,3 +173,6 @@ The company must deliver the following deliverables to all Major Investors:
 - Cap table is available through Carta
 - Approved annual budget and business plan for the next fiscal year as soon as
   practicable, at most within 30 days of each fiscal year.
+
+One investor in particular wants [this worksheet](https://docs.google.com/spreadsheets/d/10K12_RdNOu81-Ooxh1Vca6dF_EN3VWl2/edit?gid=1113941930#gid=1113941930) to be updated
+every quarter. It's set up to be mostly automatically imported from the Ops Plan.
