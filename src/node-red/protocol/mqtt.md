@@ -59,7 +59,7 @@ _MQTT Out node — publishing data to a topic_
 
 9.  Click Deploy
 
-The MQTT out node should show "connected" with a green dot. Click the Inject node's button to send a message.
+The MQTT out node should show "connected" with a green dot.
 
 ![Connected MQTT node showing green status](./images/connected-mqtt-node.png)
 _Green status means you're connected_
