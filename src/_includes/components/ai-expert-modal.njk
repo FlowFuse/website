@@ -53,6 +53,9 @@
                     <button id="send-message" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors" disabled>
                         Send
                     </button>
+                    <button id="continue-to-app" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors" hidden>
+                        Continue conversation in app
+                    </button>
                 </div>
             </div>
             <div class="relative">
@@ -76,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tellMeHowBtn = document.querySelector('[onclick*="cta-ai-tell-me-how"]');
     const chatMessages = document.getElementById('chat-messages');
     const modalInput = document.getElementById('modal-input');
+    let transferPayload = []
 
     // Message storage array
     let messages = [];
@@ -191,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function openModal(userText) {
         // Generate new session ID for this chat session
         sessionId = crypto.randomUUID();
+        transferPayload = []
 
         // Reset auto-scroll to enabled when opening modal
         autoScrollEnabled = true;
@@ -341,6 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearMessages();
                 modalInput.value = '';
                 sessionId = null;  // Clear session ID
+                transferPayload = []
                 lastTransactionId = null;  // Clear transaction ID
             });
         } else {
@@ -358,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clearMessages();
             modalInput.value = '';
             sessionId = null;  // Clear session ID
+            transferPayload = []
             lastTransactionId = null;  // Clear transaction ID
         }
 
@@ -578,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Origin': window.location.origin,
+                    'Origin': 'https://flowfuse.com',
                     'X-Chat-Session-ID': sessionId,
                     'X-Chat-Transaction-ID': transactionId
                 },
@@ -590,8 +597,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Treat HTTP errors as API unavailable - fall through to simulation
                 throw new Error(`API unavailable: ${response.status}`);
             }
-
+            transferPayload.push({query})
             const data = await response.json();
+            console.log(data);
+
+            transferPayload.push(data)
 
             // Extract transaction ID from response header (if available)
             const responseTransactionId = response.headers.get('X-Chat-Transaction-ID') || transactionId;
@@ -1138,5 +1148,45 @@ document.addEventListener('DOMContentLoaded', function() {
     if (clearConversationBtn) {
         clearConversationBtn.addEventListener('click', clearConversation);
     }
+
+    document.getElementById('continue-to-app').addEventListener('click', function handler() {
+        // Reuse existing target window or create new one if it doesn't exist or was closed
+        if (!target || target.closed) {
+            target = window.open('http://localhost:8080', 'target');
+        } else {
+            // If window exists and is open, bring it to focus
+            target.focus();
+        }
+
+        // Only create the messageHandler if it doesn't exist
+        if (!messageHandler) {
+            messageHandler = function(event) {
+                // Verify the origin for security
+                //if (event.origin !== 'http://localhost:8080') {
+                //        return;
+                //  }
+
+                console.log('Received message:', event.data);
+
+                // Check if it's the ready message
+                if (event.data.type === 'onLoad' && event.data.status === 'ready') {
+                    // Now you can send messages to the target
+                    target.postMessage({
+                            source : 'flowfuse-website',
+                            scope  : 'flowfuse-expert',
+                            action : 'set-context',
+                            payload: transferPayload
+                        },
+                        'http://localhost:8080'
+                    )
+                    // Only remove the message handler, keep the click handler for future clicks
+                    window.removeEventListener('message', messageHandler);
+                    messageHandler = null; // Reset for potential future use
+                }
+            };
+            // Add the event listener only once
+            window.addEventListener('message', messageHandler);
+        }
+    });
 });
 </script>
