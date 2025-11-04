@@ -53,7 +53,7 @@
                     <button id="send-message" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors" disabled>
                         Send
                     </button>
-                    <button id="continue-to-app" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors" hidden>
+                    <button id="continue-to-app" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors">
                         Continue conversation in app
                     </button>
                 </div>
@@ -585,7 +585,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Origin': 'https://flowfuse.com',
                     'X-Chat-Session-ID': sessionId,
                     'X-Chat-Transaction-ID': transactionId
                 },
@@ -1149,10 +1148,14 @@ document.addEventListener('DOMContentLoaded', function() {
         clearConversationBtn.addEventListener('click', clearConversation);
     }
 
+    let target
+    let messageHandler
+    const appURL = {% if not DEV_MODE %}"{{ site.appURL }}"{% else %}"http://localhost:8080"{% endif %};
+
     document.getElementById('continue-to-app').addEventListener('click', function handler() {
         // Reuse existing target window or create new one if it doesn't exist or was closed
         if (!target || target.closed) {
-            target = window.open('http://localhost:8080', 'target');
+            target = window.open(appURL, 'flowfuse-app');
         } else {
             // If window exists and is open, bring it to focus
             target.focus();
@@ -1162,9 +1165,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!messageHandler) {
             messageHandler = function(event) {
                 // Verify the origin for security
-                //if (event.origin !== 'http://localhost:8080') {
-                //        return;
-                //  }
+                if (event.origin !== appURL) {
+                       return;
+                 }
 
                 console.log('Received message:', event.data);
 
