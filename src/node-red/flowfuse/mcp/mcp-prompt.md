@@ -67,7 +67,7 @@ JSON schema defining the template variables that users can customize. This follo
 
 ### Basic Example
 
-```
+```text
 Hello {{ name }}! Welcome to {{ location }}.
 ```
 
@@ -75,7 +75,7 @@ Hello {{ name }}! Welcome to {{ location }}.
 
 ### Complex Example
 
-```
+```text
 You are a holiday planning agent.
 You should provide information about {{ location }}.
 You should also provide rough budget ideas for visiting this place in {{ time_of_year }} for {{ duration }} days.
@@ -86,7 +86,7 @@ Please breakdown rough ideas for hotels and local tourist hot spots to visit.
 
 ### Multi-Section Example
 
-```
+```text
 # Code Review Request
 
 ## File: {{ filename }}
