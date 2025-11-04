@@ -28,7 +28,6 @@
             </button>
         </div>
     </div>
-    <button id="qwe">qwe</button>
 </div>
 
 <script>
@@ -56,50 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update on window resize
         window.addEventListener('resize', updatePlaceholder);
-    }
-});
-
-let target;
-let messageHandler; // Declare messageHandler outside the click handler
-
-document.getElementById('qwe').addEventListener('click', function handler() {
-    // Reuse existing target window or create new one if it doesn't exist or was closed
-    if (!target || target.closed) {
-        target = window.open('http://localhost:8080', 'target');
-    } else {
-      // If window exists and is open, bring it to focus
-      target.focus();
-  }
-
-    // Only create the messageHandler if it doesn't exist
-    if (!messageHandler) {
-        messageHandler = function(event) {
-            // Verify the origin for security
-            //if (event.origin !== 'http://localhost:8080') {
-            //        return;
-            //  }
-
-            console.log('Received message:', event.data);
-
-            // Check if it's the ready message
-            if (event.data.type === 'onLoad' && event.data.status === 'ready') {
-                console.log('App is ready');
-                // Now you can send messages to the target
-                target.postMessage({
-                        source: 'flowfuse-website',
-                        scope: 'flowfuse-expert',
-                        action: 'set-context',
-                        payload: 'Hello, I am a FlowFuse Expert Assistant.'
-                    },
-                    'http://localhost:8080'
-                )
-                // Only remove the message handler, keep the click handler for future clicks
-                window.removeEventListener('message', messageHandler);
-                messageHandler = null; // Reset for potential future use
-            }
-        };
-        // Add the event listener only once
-        window.addEventListener('message', messageHandler);
     }
 });
 </script>
