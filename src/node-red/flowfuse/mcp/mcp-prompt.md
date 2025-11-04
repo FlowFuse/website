@@ -67,26 +67,31 @@ JSON schema defining the template variables that users can customize. This follo
 
 ### Basic Example
 
-```text
+{% raw %}
+```
 Hello {{ name }}! Welcome to {{ location }}.
 ```
+{% endraw %}
 
 **Variables:** `name`, `location`
 
 ### Complex Example
 
-```text
+{% raw %}
+```
 You are a holiday planning agent.
 You should provide information about {{ location }}.
 You should also provide rough budget ideas for visiting this place in {{ time_of_year }} for {{ duration }} days.
 Please breakdown rough ideas for hotels and local tourist hot spots to visit.
 ```
+{% endraw %}
 
 **Variables:** `location`, `time_of_year`, `duration`
 
 ### Multi-Section Example
 
-```text
+{% raw %}
+```
 # Code Review Request
 
 ## File: {{ filename }}
@@ -103,6 +108,7 @@ Focus on:
 
 Provide feedback on code quality, potential bugs, and suggestions for improvement.
 ```
+{% endraw %}
 
 **Variables:** `filename`, `language`, `code`, `focus_area_1`, `focus_area_2`, `focus_area_3`
 
