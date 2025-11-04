@@ -2,12 +2,15 @@
 navTitle: Board & Investors
 ---
 
-## Board meetings
+# Board meetings
 
 There are Board Meeting Cadence with 4 official 120-minute meetings per year
 (once per quarter) about 1 month after the quarter closes, interspersed with 4
 60-minute informal meetings that are focused on metrics and cover one strategic
 topic for a deep dive.
+
+Scheduling is done by sending out a [Doodle](https://doodle.com/en/) to ensure
+it's low friction for all participants.
 
 ## Calendar invites
 
