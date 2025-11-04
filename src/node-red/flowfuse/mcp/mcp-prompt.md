@@ -71,7 +71,7 @@ JSON schema defining the template variables that users can customize. This follo
 Hello {{ name }}! Welcome to {{ location }}.
 ```
 
-Variables: `name`, `location`
+**Variables:** `name`, `location`
 
 ### Complex Example
 
@@ -79,10 +79,10 @@ Variables: `name`, `location`
 You are a holiday planning agent.
 You should provide information about {{ location }}.
 You should also provide rough budget ideas for visiting this place in {{ time_of_year }} for {{ duration }} days.
-Please break down rough ideas for hotels and local tourist hot spots to visit.
+Please breakdown rough ideas for hotels and local tourist hot spots to visit.
 ```
 
-Variables: `location`, `time_of_year`, `duration`
+**Variables:** `location`, `time_of_year`, `duration`
 
 ### Multi-Section Example
 
@@ -104,7 +104,7 @@ Focus on:
 Provide feedback on code quality, potential bugs, and suggestions for improvement.
 ```
 
-Variables: `filename`, `language`, `code`, `focus_area_1`, `focus_area_2`, `focus_area_3`
+**Variables:** `filename`, `language`, `code`, `focus_area_1`, `focus_area_2`, `focus_area_3`
 
 ## Argument Schema Examples
 
