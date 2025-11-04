@@ -46,15 +46,15 @@
                     Start over
                 </button>
                 <div id="right-buttons" class="flex gap-2">
+                    <button id="continue-to-app" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors hidden">
+                        Continue conversation in app
+                    </button>
                     <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3 hidden">
                         <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
                         Stop
                     </button>
                     <button id="send-message" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors" disabled>
                         Send
-                    </button>
-                    <button id="continue-to-app" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors">
-                        Continue conversation in app
                     </button>
                 </div>
             </div>
@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const clearBtn = document.getElementById('clear-conversation');
         const stopBtn = document.getElementById('stop-generation');
         const sendBtn = document.getElementById('send-message');
+        const exportBtn = document.getElementById('continue-to-app');
 
         if (isGenerating) {
             modalInput.disabled = true;
@@ -134,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sendBtn.disabled = !hasContent;
                 sendBtn.classList.remove('hidden');
             }
+            exportBtn.disabled= false;
         }
     }
 
@@ -571,6 +573,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function sendChatMessage(query) {
+        const exportBtn = document.getElementById('continue-to-app');
+        exportBtn.disabled = true
+
         // Generate unique transaction ID for this request
         const transactionId = crypto.randomUUID();
         lastTransactionId = transactionId;
@@ -596,9 +601,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Treat HTTP errors as API unavailable - fall through to simulation
                 throw new Error(`API unavailable: ${response.status}`);
             }
+
             transferPayload.push({query})
             const data = await response.json();
-            console.log(data);
+
+            if (data.kind === 'guide') {
+                exportBtn.classList.remove('hidden')
+            }
 
             transferPayload.push(data)
 
