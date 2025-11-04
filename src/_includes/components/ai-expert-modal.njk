@@ -1187,7 +1187,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             source : 'flowfuse-website',
                             scope  : 'flowfuse-expert',
                             action : 'set-context',
-                            payload: transferPayload
+                            payload: {
+                                data: transferPayload,
+                                sessionId
+                            }
                         },
                         'http://localhost:8080'
                     )
