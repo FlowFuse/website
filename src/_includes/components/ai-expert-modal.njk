@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Render content based on message kind
         let htmlContent = '';
-        if (messageObj.kind === 'guide') {
+        if (messageObj.kind === 'guide' || messageObj.kind === 'resources') {
             htmlContent = renderRichContent(messageObj);
         } else if (messageObj.kind === 'chat') {
             htmlContent = renderChatContent(messageObj);
@@ -843,16 +843,26 @@ document.addEventListener('DOMContentLoaded', function() {
         let html = '';
 
         // Setup Guide label for guide messages
-        html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-2 rounded-full inline-block mb-3">Setup Guide</div>`;
+        let headerText = 'Result'
+        
+        if (richAnswer.kind === 'guide') headerText = 'Setup Guide'
+        if (richAnswer.kind === 'resources') headerText = 'Resources';
+
+        html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-2 rounded-full inline-block mb-3">${headerText}</div>`;
 
         // Title
         if (richAnswer.title) {
             html += `<h3 class="text-lg font-semibold text-gray-900 mb-2">${richAnswer.title}</h3>`;
         }
 
-        // Summary
-        if (richAnswer.summary) {
+        // Summary text (if any)
+        if (richAnswer.summary) { // typically a guide has a summary
             html += `<p class="text-gray-700 mb-4">${richAnswer.summary}</p>`;
+        }
+
+        // Content text (if any)
+        if (richAnswer.content) { // typically a resources response has this field
+            html += `<p class="text-gray-700 mb-4">${richAnswer.content}</p>`;
         }
 
         // Steps
