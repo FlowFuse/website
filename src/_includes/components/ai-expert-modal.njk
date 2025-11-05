@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Note: This API may only work in production (flowfuse.com domain)
             // For local development, we'll get simulated responses
-            const response = await fetch('https://flowfuse-chatbot.flowfuse.dev/v2/expert', {
+            const response = await fetch('https://flowfuse-expert-api.flowfuse.dev/v3/website-chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1169,7 +1169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let target
     let messageHandler
-    const appURL = {% if not DEV_MODE %}"{{ site.appURL }}"{% else %}"http://localhost:8080"{% endif %};
+    const appURL = {% if not DEV_MODE %}"{{ site.appURL }}"{% else %}"http://localhost:3000"{% endif %};
 
     document.getElementById('continue-to-app').addEventListener('click', function handler() {
         // Reuse existing target window or create new one if it doesn't exist or was closed
@@ -1199,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             action : 'set-context',
                             payload: transferPayload
                         },
-                        'http://localhost:8080'
+                        'http://localhost:3000'
                     )
                     // Only remove the message handler, keep the click handler for future clicks
                     window.removeEventListener('message', messageHandler);
