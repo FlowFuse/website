@@ -85,17 +85,16 @@ FlowFuse is the open-source Industrial Application Platform.
 
 ### FlowFuse in one sentence - Under 150 characters
 
-FlowFuse helps manufacturers and IoT teams connect every machine to the Cloud and AI. Enabling confident and the right response that keep operations running smoothly.
+FlowFuse helps manufacturers and IoT teams connect _every_ machine to the Cloud
+and AI. Providing confidence in decisions and your organisations response to
+keep operations running smoothly.
 
-### About FlowFuse - 50 Words
+### About FlowFuse - Short form
 
-FlowFuse empowers teams to create and operate industrial applications faster and safer, integrating advanced AI assistance for rapid development and reliable scaling. Unifying real-time data, workflows, and operations across any environment, FlowFuse gives organizations the confidence to innovate, adapt, and unlock new value in industrial automation.
-
-### About FlowFuse - 150 Words
-
-In today’s industrial landscape, success depends on how quickly you can turn ideas into reliable, scalable applications. FlowFuse is the all-in-one platform that transforms how industrial teams design, deploy, and operate digital solutions—removing complexity, maximizing security, and accelerating delivery with built-in AI.
-With FlowFuse, teams break down barriers between IT and OT, unifying disparate systems and real-time data flows under a single collaborative environment. Next-generation AI tools empower specialists and engineers alike to build workflows, transform and structure data, and deploy applications at unprecedented speed—all with complete governance and enterprise-grade protection.
-Designed for demanding industries, FlowFuse centralizes operations and future-proofs investments. It delivers everything teams need to automate, analyze, and scale—without locking you into rigid processes or outdated architectures. FlowFuse is the industrial innovation engine for organizations ready to lead in the era of intelligent automation.
+FlowFuse is the enterprise platform that bridges the gap between physical assets
+and enterprise IT. Powered by Node-RED, teams now unify real-time data through
+workflows, AI agents, and industrial applications. FlowFuse gives organizations
+the confidence to innovate, adapt, and unlock new value in industrial automation.
 
 ## FlowFuse in-depth
 
