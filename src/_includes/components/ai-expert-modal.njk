@@ -1188,8 +1188,6 @@ document.addEventListener('DOMContentLoaded', function() {
                        return;
                  }
 
-                console.log('Received message:', event.data);
-
                 // Check if it's the ready message
                 if (event.data.type === 'onLoad' && event.data.status === 'ready') {
                     // Now you can send messages to the target
@@ -1197,13 +1195,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             source : 'flowfuse-website',
                             scope  : 'flowfuse-expert',
                             action : 'set-context',
-                            payload: transferPayload
+                            payload: {
+                                data: transferPayload,
+                                sessionId
+                            }
                         },
-                        'http://localhost:3000'
+                        appURL
                     )
-                    // Only remove the message handler, keep the click handler for future clicks
-                    window.removeEventListener('message', messageHandler);
-                    messageHandler = null; // Reset for potential future use
                 }
             };
             // Add the event listener only once
