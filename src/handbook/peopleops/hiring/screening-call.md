@@ -26,7 +26,7 @@ During this call FlowFuse should understand:
    * Can travel to the US and EU with one week's notice? (For events, get-togethers, etc.)
    * Any plans to change location in the near future.
 1. Notice period, or time from offer to start.
-1. How do you manage your to-do list?
+1. What's the biggest hot-take you have about the field of your job role?
 1. How are you using Generative AI in your workflows today?
 1. Do you have experience at start ups? What does it mean for you to operate in a start up?
 1. Do you have experience with Industrial or Manufacturing sectors of the market?
