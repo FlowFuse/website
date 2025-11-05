@@ -1159,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let target
     let messageHandler
-    const appURL = {% if not DEV_MODE %}"{{ site.appURL }}"{% else %}"http://localhost:8080"{% endif %};
+    const appURL = {% if not DEV_MODE %}"{{ site.appURL }}"{% else %}"http://localhost:3000"{% endif %};
 
     document.getElementById('continue-to-app').addEventListener('click', function handler() {
         // Reuse existing target window or create new one if it doesn't exist or was closed
@@ -1178,8 +1178,6 @@ document.addEventListener('DOMContentLoaded', function() {
                        return;
                  }
 
-                console.log('Received message:', event.data);
-
                 // Check if it's the ready message
                 if (event.data.type === 'onLoad' && event.data.status === 'ready') {
                     // Now you can send messages to the target
@@ -1192,11 +1190,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 sessionId
                             }
                         },
-                        'http://localhost:8080'
+                        appURL
                     )
-                    // Only remove the message handler, keep the click handler for future clicks
-                    window.removeEventListener('message', messageHandler);
-                    messageHandler = null; // Reset for potential future use
                 }
             };
             // Add the event listener only once
