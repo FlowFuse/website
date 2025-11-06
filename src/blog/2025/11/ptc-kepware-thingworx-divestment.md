@@ -4,7 +4,7 @@ subtitle: "Understanding the bigger picture behind the $600M Kepware and ThingWo
 description: "PTC's $600M divestment of Kepware and ThingWorx to TPG raises critical questions for industrial organizations. Learn what this means for your data strategy and why open-source alternatives like FlowFuse offer a path forward."
 date: 2025-11-06
 authors: ["pablo-filomeno"]
-image: /blog/2025/11/images/ptc-kepware-thingworx-divestment.png
+image:
 keywords:
 tags:
     - flowfuse
