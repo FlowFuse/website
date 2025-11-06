@@ -1,8 +1,8 @@
 ---
-title: "How to Ingest CSV Logs into MQTT, Databases, and Dashboards "
+title: "How to Ingest CSV Logs into MQTT, Databases, and Dashboards"
 subtitle: "Turn old CSV logs into live data streams using FlowFuse."
 description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards. Build real-time and batch processing pipelines with Node-RED and FlowFuse."
-date: 2025-11-06
+date: 2025-11-07
 authors: ["sumit-shinde"]
 image: 
 keywords: CSV ingestion, MQTT broker, Node-RED, FlowFuse, industrial data, PLC logging, SCADA systems, real-time data pipeline, batch processing, database integration, data visualization, manufacturing data, Node-RED dashboard, sensor data, time-series data, industrial IoT, data orchestration, legacy systems integration
@@ -20,16 +20,14 @@ If you're using FlowFuse to log data, you can send to MQTT and databases as data
 
 This guide shows you how to read CSV files—whether real-time or historical—and route them to MQTT brokers, databases, and dashboards.
 
-## Prerequisites & Setup
-
 ### Prerequisites
 
 Before starting, ensure you have:
 
-- A running FlowFuse instance. If you don't have one, [sign up for free](https://flowfuse.com)
-- Sample CSV log files with industrial data (we'll provide example data if needed)
-- Access to an MQTT broker (for real-time pipeline)
-- Access to a database (for batch processing pipeline)
+- A running FlowFuse instance. If you don't have one, [sign up for free](https://app.flowfuse.com/)
+- CSV log files with industrial data
+- Access to an MQTT broker
+- Access to a database
 
 **Note:** If you have a FlowFuse Enterprise account, you won't need to set up external MQTT brokers or databases, FlowFuse provides these services built into the platform.
 
@@ -53,12 +51,12 @@ The Watch node continuously monitors a directory and triggers whenever a file is
 
 2. Drag a **Change node** onto the canvas to set the correct filename. Configure it to set `msg.filename` using a JSONata expression: `"plc_data_" & $moment().format("YYYY-MM-DD") & ".csv"` which dynamically constructs the filename based on today's date. If your files use a different naming convention, adjust the expression accordingly.
 
-3. Drag a **File In node** onto the canvas to read the file contents. Set the Filename field to `msg.filename` as a message property. Configure the Output as "a utf8 string" and leave Encoding at Default.
+3. Drag a **Read File node** onto the canvas to read the file contents. Set the Filename field to `msg.filename` as a message property. Configure the Output as "a single utf8 string" and leave Encoding at Default.
 
-![Configuration screen of the File In node showing filename set to msg.filename, output format as utf8 string, and default encoding](./images/read-file-node.png){data-zoomable}
+![Configuration screen of the Read File node showing filename set to msg.filename, output format as utf8 string, and default encoding](./images/read-file-node.png){data-zoomable}
 *Configuration of the File In node to read CSV file contents*
 
-4. Connect the nodes in sequence: Watch → Change → File In.
+4. Connect the output of the **Watch node** to the input of the **Change node**, and the output of the **Change node** to the input of the **Read File** node.
 
 5. Deploy the flow.
 
@@ -68,21 +66,20 @@ At this point, whenever a CSV file in your monitored directory is created or mod
 
 Now we'll convert the raw CSV text into structured data.
 
-1. Drag a **CSV node** onto the canvas and connect it to the File In node output. Double-click to configure it.
+1. Drag a **CSV node** onto the canvas and connect it to the File In node output. Double-click to configure it to set:
+   - Separator: Comma
+   - Parser: RFC4180
+   - Check "First row contains column names" and "Parse numerical values"
+   - Output: "a single message [array]"
 
-2. Set the **Separator** to Comma.
-
-3. Choose **RFC4180** as the Parser to ensure proper handling of quoted fields, embedded commas, and line breaks.
-
-4. In the Input section, check "**First row contains column names**" and "**Parse numerical values**".
-
-5. Set the **Output** to "a single message [array]" to receive all rows at once.
+![CSV node configuration showing comma separator, RFC4180 parser, first row as column names, parse numerical values enabled, and output as single message array](./images/csv-node-config.png){data-zoomable}
+*CSV parser configuration for batch processing with RFC4180 standard*
 
 The CSV node now converts the raw text into an array of objects, where each object represents a row with named properties from the column headers.
 
 ### Step 3: Extracting the Latest Record
 
-Since we're reading the entire file each time it changes, we only need the most recent data point for real-time applications.
+Since we’re reading the entire file each time it changes, we only need to publish the most recent data point to MQTT.
 
 1. Drag a **Function node** onto the canvas and connect it to the CSV node output.
 
@@ -108,13 +105,13 @@ Your parsed data now flows through as individual records, ready to be published 
 
 ### Step 4: Publishing to MQTT
 
-Now we'll publish the parsed CSV data to an MQTT broker for real-time distribution. If you have FlowFuse Team or Enterprise tier, enable the MQTT broker within your FlowFuse team.
+Now we'll publish the parsed CSV data to an MQTT broker for real-time distribution. If you have FlowFuse Team or Enterprise tier, [enable the MQTT broker within your FlowFuse team](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-3%3A-set-up-mqtt-with-flowfuse).
 
 #### Adding Context to Your Data
 
-1. Drag a **Change node** onto the canvas and connect it to the Function node output. This adds context for better data traceability.
+1. Drag a **Change node** onto the canvas and connect it to the output of the **Function node**. This step adds useful context for better data traceability.
 
-2. Configure it to set `msg.payload` to:
+2. Configure the node to set `msg.payload` to a structured object—customize it based on your data and application needs:
 
 ```javascript
 {
@@ -128,15 +125,14 @@ Now we'll publish the parsed CSV data to an MQTT broker for real-time distributi
 }
 ```
 
-Adjust the site, line, and device names to match your facility's structure.
-
 #### Configuring the MQTT Publisher
 
-1. Drag the **ff-mqtt-out node** onto the canvas and connect it to the Change node. When you drag the node, it will be automatically configured with the FlowFuse MQTT broker—you do not need to manually add configuration.
+1. Drag the **ff-mqtt-out node** onto the canvas and connect it to the **Change node**. When you drag the node, it will be automatically configured with the FlowFuse MQTT broker—you do not need to manually add configuration.
 
-2. By default, the client created automatically for your instance only has subscribe permissions. Click "**Configure Access Control**" next to the server in the configuration window. You'll be redirected to the platform's broker client management section, filtered to show the client created for this instance. Click the edit button and select both publish and subscribe actions.
+2. By default, the client automatically created for your instance only has **subscribe** permissions. Click **Configure Access Control** next to the server in the node configuration window. This will redirect you to the platform’s broker client management page, filtered to show the client associated with this instance. Click the **Edit** button, enable both **Publish** and **Subscribe** actions, and then restart your instance.
 
 3. Set the **topic** following ISA-95 hierarchy:
+
 ```
 company/site/area/line/cell/device/measurement
 ```
@@ -149,8 +145,8 @@ acme/tokyo/assembly/line-a/press-01/temperature
 
 4. Configure the **QoS level** in the MQTT node. Set it to QoS 1 for reliable delivery—this ensures your data reaches subscribers even if there are brief network issues, or choose according to your reliability requirements (QoS 0 for high-frequency non-critical data, QoS 2 for critical data).
 
-![Complete Node-RED flow showing Watch, Change, File In, CSV, Function, Change, and MQTT Out nodes connected in sequence for real-time CSV to MQTT pipeline](./images/csv-to-mqtt.png){data-zoomable}
-*Complete real-time pipeline from CSV monitoring to MQTT publishing*
+![Configuring the MQTT Out node](./images/csv-to-mqtt.png){data-zoomable}
+*Configuring the MQTT Out node*
 
 5. Deploy the flow.
 
@@ -164,16 +160,14 @@ Unlike the real-time pipeline that watches for file changes, batch processing ru
 
 1. Drag an **Inject node** onto the canvas. Configure it to trigger on your desired schedule:
    - For hourly batches: Set repeat interval to "interval" and enter 1 hour
-   - For shift-based batches: Add multiple inject nodes, each set to trigger "at a specific time" - one at 08:00 for night shift end, another at 16:00 for day shift end, and a third at 00:00 for evening shift end
+   - For shift-based batches: Add multiple inject nodes, For example, one at 08:00 for night shift end, another at 16:00 for day shift end, and a third at 00:00 for evening shift end.
    - For daily batches: Set to trigger "at a specific time" once per day
 
-**Note:** For shift-based processing, use multiple inject nodes (one for each shift) all connected to the same flow. Each inject node can be set to fire at a specific time that matches your shift schedule.
+2. Drag a **Change node** and configure it to set `msg.filename` to your CSV file path. Use a JSONata expression if you need dynamic filenames: `"plc_data_" & $moment().format("YYYY-MM-DD") & ".csv"`. If your files use a different naming convention, adjust the expression accordingly.
 
-2. Drag a **Change node** and configure it to set `msg.filename` to your CSV file path. Use a JSONata expression if you need dynamic filenames: `"plc_data_" & $moment().format("YYYY-MM-DD") & ".csv"`
+3. Drag a **Read File node** onto the canvas to read the file contents. Set the Filename field to `msg.filename` as a message property. Configure the Output as "a single utf8 string" and leave Encoding at Default.
 
-3. Drag a **File In node** and set the Filename to `msg.filename`. Configure Output as "a utf8 string".
-
-4. Connect: Inject → Change → File In.
+4. Connect the output of the **Inject node** to the input of the **Change node**, and the output of the **Change node** to the input of the **Read File** node.
 
 ### Step 2: Parsing All Records
 
@@ -185,14 +179,11 @@ Unlike the real-time pipeline that watches for file changes, batch processing ru
    - Check "First row contains column names" and "Parse numerical values"
    - Output: "a single message [array]"
 
-![CSV node configuration showing comma separator, RFC4180 parser, first row as column names, parse numerical values enabled, and output as single message array](./images/csv-node-config.png){data-zoomable}
-*CSV parser configuration for batch processing with RFC4180 standard*
-
 ### Step 3: Filtering New Records
 
-Since we're reading the entire CSV file each time, we need to track which rows have already been written to the database.
+Since we’re reading the entire CSV file each time, we need to track which rows have already been written to the database to avoid duplicates.
 
-1. Drag a **Function node** and connect it to the CSV node output. Add this code:
+1. Drag a **Function node** and connect it to the **CSV node** output. Add this code:
 
 ```javascript
 const allRows = msg.payload;
@@ -216,49 +207,43 @@ if (newRows.length > 0) {
 }
 ```
 
-This will track the total number of rows processed and only send new rows to the database, preventing duplicates.
-
 ### Step 4: Inserting to Database
 
 Now we'll configure the database insertion to write batched data efficiently.
 
 #### Enabling FlowFuse Database
 
-If you have a FlowFuse Team or Enterprise account, you can use the built-in PostgreSQL database service instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](https://flowfuse.com/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
+If you have a Enterprise account, you can use the built-in PostgreSQL database service instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](https://flowfuse.com/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
 
-Once enabled, you'll have access to a fully managed PostgreSQL database that's automatically configured and ready to use with your Node-RED flows.
+Once enabled, you'll have access to a fully managed PostgreSQL database that's automatically configured and ready to use with your FlowFuse flows.
 
 #### Creating the Database Table
 
 Before inserting data, you need to create a table to store your sensor readings.
 
-1. In your Node-RED editor, drag a **Query node** onto the canvas.
+1. In your Node-RED editor, drag a **Query node** onto the canvas. Just like the FlowFuse MQTT nodes, it will automatically configure itself when added to the canvas.
 
 2. Double-click to open it and click **"Ask the FlowFuse assistant"** at the top of the configuration dialog.
 
-3. In the assistant prompt, type: "Create a new table named `sensor_data` to store sensor readings, with the following fields: `timestamp`, `site`, `line`, `device`, `measurement`, `value`, and `unit`.
+3. In the assistant prompt, enter:
+   *“Create a new table named `sensor_data` to store sensor readings with the following columns: `timestamp`, `site`, `line`, `device`, `measurement`, `value`, and `unit`.”*, Modify the table name and columns as needed to match your specific data and application requirements.
 
 4. Click the **"Ask the FlowFuse assistant"** button. The assistant will generate the SQL query for you and automatically populate it in the Query field.
 
-5. Click the pencil icon next to the Database field and select your FlowFuse database from the dropdown (or enter your external database credentials).
+6. Drag an **Inject node** onto the canvas, set it to trigger once, and connect it to the **Query node**.
 
-6. Click **Add** to save the configuration, then click **Done** to close the node.
+7. Add a **Debug node** connected to the **Query node** output to see the result.
 
-7. Drag an **Inject node** onto the canvas, set it to trigger once, and connect it to the Query node.
-
-8. Add a **Debug node** connected to the Query node output to see the result.
-
-9. Deploy the flow and click the inject button to create the table.
-
-10. Once the table is created successfully (check the debug panel), you can delete or disable the inject and Query nodes used for table creation.
+8. Deploy the flow and click the Inject button to create the table.
 
 #### Preparing Data for Batch Insert
 
 Instead of writing each CSV row individually to the database, we'll use batch inserts for much better performance. A single transaction with many rows is far more efficient than many separate transactions.
 
-1. Drag a **Function node** onto the canvas and connect it to the previous Function node (the one that filters new records).
+1. Drag a **Function node** onto the canvas and connect it to the previous **Function node** (the one that filters new records).
 
 2. Name this node "Prepare Batch Insert" and add the following code:
+
 ```javascript
 // msg.payload contains the new rows from CSV
 const newRows = msg.payload;
@@ -281,7 +266,7 @@ const values = formattedData.map((_, i) =>
     `($${i * 7 + 1}, $${i * 7 + 2}, $${i * 7 + 3}, $${i * 7 + 4}, $${i * 7 + 5}, $${i * 7 + 6}, $${i * 7 + 7})`
 ).join(',');
 
-// Build the SQL insert query with placeholders
+// Build the SQL insert query with placeholders, modify the query according to your table name and schema.
 msg.query = `
     INSERT INTO sensor_data 
     (timestamp, site, line, device, measurement, value, unit)
@@ -325,8 +310,8 @@ Now that we've ingested CSV data into MQTT and databases, let's visualize it on 
 2. Configure the Topic to match your publisher: `acme/tokyo/assembly/line-a/press-01/temperature`
 3. Set **Output** to "auto-detect (string or buffer)".
 
-![Node-RED flow showing MQTT In node connected to UI Chart widget for real-time dashboard visualization](./images/mqtt-to-dashboard.png){data-zoomable}
-*MQTT subscription flow connected to dashboard chart widget*
+![Configuring the MQTT Out node](./images/mqtt-to-dashboard.png){data-zoomable}
+*Configuring the MQTT Out node*
 
 #### Step 3: Creating the Dashboard Widgets
 
@@ -341,9 +326,9 @@ Now we'll add a chart to visualize the temperature data in real-time.
 
 4. Click **Deploy**.
 
-Once deployed, you should see a real-time line chart showing temperature values over time, with each device appearing as a separate series on the chart. Data points will be appended automatically as new MQTT messages arrive, giving you live visibility into your industrial equipment's performance.
+Once deployed, open the dashboard — you should see a real-time line chart displaying temperature values over time, with each device shown as a separate series. Data points will automatically update as new MQTT messages arrive.
 
-![Animated dashboard showing real-time line chart with temperature data updating as new MQTT messages arrive](./images/flowfuse-dashboard.gif){data-zoomable}
+![Dashboard showing real-time line chart with temperature data updating as new MQTT messages arrive](./images/flowfuse-dashboard.gif){data-zoomable}
 *Live dashboard displaying real-time temperature readings from CSV data stream*
 
 ## What's Next
