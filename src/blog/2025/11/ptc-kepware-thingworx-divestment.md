@@ -17,6 +17,7 @@ tags:
 
 
 The news of PTC selling Kepware and ThingWorx to TPG for $600 million has caused a significant impact across the industrial automation sector. For anyone working in manufacturing, OT data integration, or industrial IoT, this divestment raises important questions about the future direction of these widely-used platforms, and what it means for organizations relying on them.
+<!--more-->
 
 But here's the thing: this isn't an isolated event. Back in July 2024, there were rumors that Autodesk might acquire PTC for $20+ billion. Those talks ultimately fell through when Autodesk walked away from the deal. Now, just months later, PTC has decided to divest two of its major industrial IoT assets. The pattern is clear: PTC is refocusing its strategy.
 
