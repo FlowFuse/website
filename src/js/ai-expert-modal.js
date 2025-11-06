@@ -1100,9 +1100,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let target
     let messageHandler
     // Determine app URL based on hostname
-    const appURL = window.location.hostname === 'localhost' || window.location.hostname.includes('tailscale')
-        ? 'http://100.80.244.55:3000'
-        : 'https://app.flowfuse.com';
+    const appURL = 'https://6253.flowfuse.dev'
+    // const appURL = window.location.hostname === 'localhost' || window.location.hostname.includes('tailscale')
+    //     // ? 'http://100.80.244.55:3000'
+    //     ? 'http://localhost:3000'
+    //     : 'https://app.flowfuse.com';
 
     document.getElementById('continue-to-app').addEventListener('click', function handler() {
         // Reuse existing target window or create new one if it doesn't exist or was closed
