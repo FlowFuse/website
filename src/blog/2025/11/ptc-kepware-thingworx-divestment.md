@@ -36,7 +36,7 @@ For organizations using Kepware or ThingWorx, this transition will bring uncerta
 
 This is precisely why, back in July when the Autodesk acquisition rumors started, we launched our migration landing page at flowfuse.com/vs/kepware. To leave things clear. To make a clear statement. We saw what was coming. Organizations that had built their OT data strategies on these platforms would soon be re-evaluating their options. And for many, this is the perfect moment to ask a more fundamental question: what should a modern industrial data integration platform actually look like?
 
-The Open-Source Alternative: Built by Node-RED's Founder
+## The Open-Source Alternative: Built by Node-RED's Founder
 
 At FlowFuse, we take a fundamentally different approach to industrial data integration. We're not a closed, proprietary platform tied to a single vendor's roadmap or business priorities. Instead, we're built on Node-RED, the truly open-source, low-code programming tool created by Nick O'Leary, who is also the founder of FlowFuse.
 
