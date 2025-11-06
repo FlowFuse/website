@@ -20,7 +20,7 @@ The news of PTC selling Kepware and ThingWorx to TPG for $600 million has caused
 
 But here's the thing: this isn't an isolated event. Back in July 2024, there were rumors that Autodesk might acquire PTC for $20+ billion. Those talks ultimately fell through when Autodesk walked away from the deal. Now, just months later, PTC has decided to divest two of its major industrial IoT assets. The pattern is clear: PTC is refocusing its strategy.
 
-A Strategic Realignment, Not a Surprise
+## A Strategic Realignment, Not a Surprise
 
 PTC has been under strategic pressure for some time. The company operates across multiple domains: CAD and PLM (with Creo and Windchill), Application Lifecycle Management (ALM) with Codebeamer, and Industrial IoT with Kepware and ThingWorx. While this portfolio diversity has value, it also creates complexity, and when Autodesk considered acquiring PTC earlier this year, that complexity likely played a role in their decision to walk away.
 
