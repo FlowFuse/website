@@ -68,13 +68,13 @@ Node-RED has over 5,000 community-contributed nodes, covering virtually every in
 
 And because it's open source, if a connector doesn't exist, you or the community can build it. This level of connectivity is unmatched. Kepware is powerful for protocol translation, sure, but it's primarily focused on moving data from OT systems to IT systems. Node-RED, by contrast, is a full data orchestration platform. You're not just collecting data, you're transforming, routing, analyzing, and acting on it, all in one place.
 
-No Vendor Lock-In, Ever
+### No Vendor Lock-In, Ever
 
 With proprietary platforms, your data integration strategy is tied to the vendor's business decisions. Pricing changes? You adapt. Features deprecated? You work around it. Company gets acquired? You hope for the best.
 
 With Node-RED and FlowFuse, you're in control. The core technology is open source, maintained by a thriving global community. FlowFuse adds the enterprise-grade management, security, and scalability that industrial organizations need, but you're never locked in. If you ever decide FlowFuse isn't the right fit, your Node-RED flows are yours to take and run elsewhere. That's the power of true open source.
 
-Enterprise-Ready from Day One
+### Enterprise-Ready from Day One
 
 One of the challenges with open-source tools is that they often require significant effort to operationalize at scale. That's where FlowFuse comes in. We provide:
 
@@ -87,13 +87,13 @@ In short, FlowFuse gives you the flexibility and openness of Node-RED with the o
 
 To learn more take a quick look at this video and learn about these 5 reasons you should migrate to FlowFuse. https://youtu.be/fUqfA521Iqg
 
-Simple, Visual, and Incredibly Powerful
+## Simple, Visual, and Incredibly Powerful
 
 Node-RED's low-code, visual programming interface makes it accessible to engineers who aren't developers, while still being powerful enough for complex industrial applications. You wire together nodes to create data flows, connecting sources, transforming data, triggering actions, and building dashboards. It's intuitive, fast to prototype, and easy to maintain.
 
 This means faster time-to-value. Instead of waiting months for vendor implementations or custom development, your team can build and deploy solutions in days or weeks. And because everything is visual, it's easier to document, troubleshoot, and hand off to other team members.
 
-What This Means for You
+## What This Means for You
 
 If you're currently using Kepware or ThingWorx, this transaction isn't necessarily bad news. TPG may very well invest in these platforms and accelerate their development. But it's also a reminder of a fundamental truth in enterprise software: when you build on proprietary platforms, you are always subject to the strategic priorities of the company that owns them.
 
@@ -106,17 +106,17 @@ This is a good time to ask some strategic questions:
 
 For organizations re-evaluating their options, open-source platforms like Node-RED and FlowFuse offer a compelling alternative. You get the connectivity, flexibility, and control to build exactly the data strategy you need, without being tied to a single vendor’s roadmap or business model.
 
-The Path Forward
+## The Path Forward
 
 The industrial automation market is evolving rapidly. As companies like PTC realign their portfolios, the organizations that thrive will be the ones that build on flexible, future-proof foundations.
 
 At FlowFuse, we believe that foundation is open source. It's why we've built our platform on Node-RED, created by our founder Nick O'Leary. And it's why we're committed to giving industrial organizations the tools they need to take control of their data strategies, with the flexibility to adapt, the power to innovate, and the freedom to choose their own path.
 
-Ready to Explore Your Options?
+## Ready to Explore Your Options?
 
-If you're evaluating your options, whether you're currently on Kepware, ThingWorx, or another platform, we'd love to talk.
+If you're evaluating your options, whether you're currently on Kepware, ThingWorx, or another platform, [we'd love to talk](/book-demo/).
 
-Visit https://flowfuse.com/vs/kepware/ to learn more about how FlowFuse compares to traditional industrial connectivity platforms, or contact our team (https://flowfuse.com/contact-us/) to speak with one of our Migration Experts. We can help you understand your options, plan a migration strategy, and show you how open-source industrial data integration can transform your operations.
+See [how we stack up against Kepware](https://flowfuse.com/vs/kepware/) to learn more about how FlowFuse compares to traditional industrial connectivity platforms, or [contact our team](/contact-us/) to speak with one of our Migration Experts. We can help you understand your options, plan a migration strategy, and show you how open-source industrial data integration can transform your operations.
 
 The industrial IoT market is shifting. Make sure your data strategy is built to adapt.
 
