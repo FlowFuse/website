@@ -61,7 +61,7 @@ For organizations evaluating their options, the differences between FlowFuse and
 You can explore these differences in detail at https://flowfuse.com/vs/kepware.
 
 
-Connect to Anything, Collect Everything
+## Connect to Anything, Collect Everything
 
 Node-RED has over 5,000 community-contributed nodes, covering virtually every industrial protocol, database, cloud service, and API you can imagine. Whether you need to pull data from a Siemens S7 PLC, a Modbus device, an OPC UA server, push it to AWS IoT Core, Azure, or your own database, transform it in real-time, and visualize it on a custom dashboard. Node-RED can do it all.
 
