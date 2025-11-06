@@ -30,7 +30,7 @@ For PTC, this makes sense. Kepware and ThingWorx solve different problems than t
 
 But for customers, this introduces uncertainty: What does life under TPG ownership look like?
 
-The Customer Reality: Uncertainty and Opportunity
+## The Customer Reality: Uncertainty and Opportunity
 
 For organizations using Kepware or ThingWorx, this transition will bring uncertainty. Product roadmaps may shift. Pricing structures could change. Integration strategies may no longer make sense in the same way. Even if TPG commits to investing in these platforms, the reality is that customers are now operating in a period of transition (and transitions often, if not always, bring risk).
 
