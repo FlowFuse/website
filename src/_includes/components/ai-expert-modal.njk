@@ -1177,8 +1177,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (event.origin !== appURL) {
                        return;
                  }
-
-                // Check if it's the ready message
+                // Check message type
                 if (event.data.type === 'onLoad' && event.data.status === 'ready') {
                     // Now you can send messages to the target
                     target.postMessage({
@@ -1192,6 +1191,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         },
                         appURL
                     )
+                } else if (event.data.type === 'flowfuse-expert-response' && event.data.action === 'confirm') {
+                    // Remove message handler after successful context response
+                    window.removeEventListener('message', messageHandler)
+                    messageHandler = null
+                    closeModal()
                 }
             };
             // Add the event listener only once
