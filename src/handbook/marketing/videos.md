@@ -79,6 +79,21 @@ Developer Relations content is developed principally for three audiences:
 * Lapsed consumers, e.g. those who are familiar with FlowFuse or Node-RED but have not stayed up to date with news or product evolutions.
 
 Accordingly, content should always be planned around answering a question or advocating an offering. This content is then synchronised across a few different channels to ensure wide engagement opportunity.
+### Tools
+While Developer Relations production should leverage common tools and processes, native content creation for each Advocate can originate in different ways. This area documents how each Developer Relations Advocate generates and edits content.
+#### Kristopher Sandoval
+Kristopher uses the following tools for content generation and editing.
+##### Filming
+- Content is filmed on an iPhone 17 Pro Max in 120FPS at 4K.
+- Key lights: 2 LED panels (2800-6500K) at a 45° angle to the subject.
+- Ambient lights: 2 P96L SMallRig LED lights (2500-8000K) behind the subject.
+- Fill lights: Govee RGBIC (2700k-6500k) at a 22.5° angle to the projection surface.
+- Primary audio: DJI Mic Mini (2 TX + 1 RX).
+- Prompter: Elgato Prompter.
+##### Editing
+- DaVinci Resolve with exports to convertible formats for Premiere Pro and After Effects.
+- Music, SFX, and Foley from [Epidemic Sound](https://www.epidemicsound.com/).
+- Blackmagic Design DaVinci Resolve Speed Editor for rapid editing.
 ### Distribution Channels
 ### Content Production
 For our Developer Relations content, we align behind production best standards. This means that we have three phases of production - pre-production, production, and post-production, each with their own steps and processes.
