@@ -1100,7 +1100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let target
     let messageHandler
     // Determine app URL based on hostname
-    const appURL = window.location.hostname === 'localhost' || window.location.hostname.includes('tailscale')
+    const appURL = window.location.hostname === 'localhost'
         ? 'http://localhost:3000'
         : 'https://app.flowfuse.com';
 
