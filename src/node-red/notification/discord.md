@@ -15,7 +15,7 @@ This guide explains how to integrate Discord with Node-RED to send and receive m
 
 Discord is commonly used for notifications in IoT applications. This document covers the setup process and includes troubleshooting steps for common integration issues.
 
-For information on integrating other notification services, see the guides on [Email](/node-red/email/) and [Telegram](/node-red/telegram/).
+For information on integrating other notification services, see the guides on [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/).
 
 <!--more-->
 
