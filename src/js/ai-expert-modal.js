@@ -316,7 +316,6 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Make API call
             const response = await sendChatMessage(message);
-            console.debug('Received response in startChat:', response);
 
             // Check if response is valid
             if (!response || !response.answer) {
@@ -556,7 +555,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             console.warn('Chat API not available (likely due to CORS in development):', error);
-            console.debug('Falling back to simulated response');
 
             // Fallback to simulated response for local development
             const simulatedResponses = {
@@ -627,7 +625,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     transactionId: transactionId,
                     isMultiMessage: true
                 };
-                console.debug('Returning simulated multi-message response:', simulatedResult);
                 return simulatedResult;
             }
 
@@ -642,7 +639,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 transactionId: transactionId,
                 isMultiMessage: true
             };
-            console.debug('Returning simulated response:', simulatedResult);
             return simulatedResult;
         }
     }
