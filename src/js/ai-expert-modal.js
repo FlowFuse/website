@@ -534,9 +534,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transferPayload.push({query})
             const data = await response.json();
 
-            if (data.kind === 'guide') {
-                exportBtn.classList.remove('hidden')
-            }
+            exportBtn.classList.remove('hidden')
 
             transferPayload.push(data)
 
