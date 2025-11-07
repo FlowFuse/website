@@ -774,7 +774,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Setup Guide label for guide messages
         let headerText = 'Result'
-        
+
         if (richAnswer.kind === 'guide') headerText = 'Setup Guide'
         if (richAnswer.kind === 'resources') headerText = 'Resources';
 
@@ -831,7 +831,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="${nodeRedUrlWithUTM}" target="_blank" rel="noopener noreferrer"
                    class="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors h-16">
                     <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0" alt="">
-                    <div class="flex-1 min-w-0">
+                    <div class="flex-1 min-w-0 overflow-hidden">
                         <h6 class="font-mono text-gray-900 text-sm truncate">${pkg.name}</h6>
                         <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${nodeRedUrl}</p>
                     </div>
@@ -857,7 +857,7 @@ document.addEventListener('DOMContentLoaded', function() {
                    class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors">
                     <div class="flex items-start gap-2">
                         <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0 mt-0.5" alt="">
-                        <div class="flex-1 min-w-0">
+                        <div class="flex-1 min-w-0 overflow-hidden">
                             <h6 class="font-medium text-gray-900 text-sm truncate">${resource.title}</h6>
                             <p class="text-xs text-gray-500 mt-1 truncate">${resource.url}</p>
                         </div>
