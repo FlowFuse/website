@@ -26,7 +26,7 @@ For example, take a look at the image above. When processed with OCR, it returns
 Serial No: XYZ123456789
 ```
 
-This tutorial shows you how you can build a OCR system using FlowFuse that can capture images from cameras, extract text from product labels, lot codes, and serial numbers, validate and parse the extracted data, store results in a database or trigger downstream workflows.
+This tutorial shows you how you can build an OCR system using FlowFuse that can capture images from cameras, extract text from product labels, lot codes, and serial numbers, validate and parse the extracted data, store results in a database or trigger downstream workflows.
 
 ## Getting Started
 
