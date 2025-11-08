@@ -56,20 +56,20 @@ Now, let’s build a scanner dashboard that you can open on a mobile device, all
 ![Label Scanner Built with FlowFuse](./images/flowfuse-scanner.gif)
 _[Label Scanner Built with FlowFuse]_
 
-To capture images directly from your browser, you can use the **FlowFuse Dashboard** along with the **Webcam widget**, lets install them first.
+To capture images directly from your browser, you can use the **FlowFuse Dashboard** along with the **Webcam widget**, let's install them first.
 
 #### Configuring the Webcam Node
 
 1. Drag the **Webcam** widget onto your canvas.
 2. Double-click the node to open its configuration.
-3. Create new ui group for it to render the feed (for example, *OCR Scanner*).
+3. Create a new ui group for it to render the feed (for example, *OCR Scanner*).
 4. Drag the **Button** widget onto the canvas and set its label to **Scan**. Select the appropriate **group**, check **Enable pointerdown event**, and set the **payload** to `"capture"`. 
 5. Click **Done**. When the button is clicked, it will send the `"capture"` payload, which will trigger the **Webcam** widget to capture an image.
 
 ![Scan Label Button Widget Configuration](./images/scan-label-button.png){data-zoomable}
 _Scan Label Button Widget Configuration_
 
-5. Deploy the flow
+6. Deploy the flow
 
 When deployed, this flow creates a dashboard interface with a live camera preview and a large Scan Label button. Each time you click Scan Label, the captured image is sent as a `msg.payload.image` containing a base64-encoded image.
 
@@ -100,7 +100,7 @@ This function strips the data URI prefix (e.g., `data:image/png;base64,`) from t
 
 #### Adding the OCR Node
 
-Now, let’s add the OCR node to extract text from the captured images, The node accepts image data in `msg.payload` as a buffer:
+Now, let’s add the OCR node to extract text from the captured images. The node accepts image data in `msg.payload` as a buffer:
 
 1. Drag the **simple-ocr** node onto the canvas.
 2. Connect the output of the **Function** node to the input of the **simple-ocr** node.
@@ -188,7 +188,7 @@ You've just built a working OCR system that turns any mobile device into a label
 
 This is just the starting point. Your system can grow with your needs: connect it to your inventory database, add support for different label formats, set up multiple scanning stations, or integrate it with your existing ERP system. The foundation is there.
 
-Also, This OCR scanner is just one piece of what's possible with FlowFuse. Imagine connecting all your manufacturing systems—machine data, quality checks, inventory tracking, production metrics—into a unified industrial data platform where everything flows together seamlessly.
+Also, this OCR scanner is just one piece of what's possible with FlowFuse. Imagine connecting all your manufacturing systems—machine data, quality checks, inventory tracking, production metrics—into a unified industrial data platform where everything flows together seamlessly.
 
 FlowFuse helps manufacturers like you break down data silos and build connected, intelligent operations. From shop floor to top floor, your data works together.
 
