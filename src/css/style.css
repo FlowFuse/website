@@ -1913,6 +1913,13 @@ lite-youtube::before {
     }
 }
 
+#continue-to-app.textarea-wrapper {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    border: 1px solid transparent;
+    animation: gradient-border-rotate 4s linear;
+}
+
 .prompt-pill {
     cursor: pointer;
     transition: all 0.2s ease;
