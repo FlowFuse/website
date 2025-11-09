@@ -180,7 +180,7 @@ Your OCR scanning system is now complete! You can test it by opening the dashboa
 
 If you want to fully automate this process, you can set up a fixed camera positioned where products pass through on the production line. This approach eliminates manual scanning, but it will require proper camera mounting, lighting setup, and trigger mechanisms to capture images at the right moment as products move past the camera.
 
-Furthermore, you can push scanned label data to a database. The easiest way to do this is using [FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which is a built-in database service managed by FlowFuse. You'll find query node in the palette that automatically connect to the database and include FlowFuse Assistant integration, allowing you to [query the database with natural language](/blog/2025/09/ai-assistant-flowfuse-tables/)—no extra skills required.
+Furthermore, you can push scanned label data to a database. The easiest way to do this is using [FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which is a built-in database service managed by FlowFuse. You'll find the **query** node in the palette that not only simplifies setup by connecting to the FlowFuse Tables database without any setup, it also has access to the integrated FlowFuse Assistant, allowing you to [generate queries using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/) — no SQL skills required!
 
 ## What's Next?
 
