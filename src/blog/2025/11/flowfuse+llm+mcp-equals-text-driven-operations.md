@@ -124,3 +124,7 @@ The combination of LLMs, MCP, and Node-RED provides operators with super powers.
 The operational floor is transforming from a place where experts write complex
 code for singular machines, to a conversational environment where high-level, natural
 language queries drive intelligent, scalable actions across the entire enterprise.
+
+Ready to experience text-driven operations in your own facility?
+[Try FlowFuse for free](https://app.flowfuse.com/account/create) or request a personalized demo to see how LLM-powered automation can transform your industrial processes.
+[Contact us today](https://flowfuse.com/contact-us/) or sign up for our upcoming webinar to stay ahead in the Industry 4.0 revolution.
