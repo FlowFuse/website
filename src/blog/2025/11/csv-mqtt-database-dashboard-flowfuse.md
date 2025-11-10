@@ -333,12 +333,8 @@ Once deployed, open the dashboard — you should see a real-time line chart disp
 
 ## What's Next
 
-You've successfully turned static CSV files into live data streams flowing through MQTT, databases, and dashboards. Your legacy systems can now communicate with modern infrastructure without any hardware changes.
+You've transformed static CSV files into live data streams that flow through MQTT, databases, and dashboards. Your legacy equipment now communicates with modern systems without any hardware changes.
 
-This tutorial showed you how to build these pipelines in Node-RED, but what happens when you need to deploy this same solution across multiple production lines? Or when your team needs to collaborate without overwriting each other's flows? Or when you need to update hundreds of edge devices without visiting each machine?
+This tutorial walked you through building a data pipeline. FlowFuse takes it further by handling both development and production deployment. When you need to scale across multiple production lines, manage team collaboration, deploy to hundreds of devices remotely, or maintain infrastructure like MQTT brokers and databases, FlowFuse provides the platform to do it all. As you saw, it also includes an AI Assistant to speed up your workflow.
 
-FlowFuse solves these operational challenges. It gives you a centralized platform to deploy and manage Node-RED instances across your entire facility—or across multiple facilities worldwide. Push updates to edge devices instantly and roll back if needed. Your team gets secure access with proper permissions, no more sharing credentials. Built-in MQTT brokers and PostgreSQL databases eliminate separate infrastructure to maintain. And the AI Assistant helps your team build faster by generating code and queries in plain English.
-
-From a single CSV ingestion flow to enterprise-wide data orchestration, FlowFuse scales with your needs while keeping Node-RED's simplicity intact.
-
-[Book a demo](/book-demo/) to see how manufacturing teams are managing Node-RED at scale, or [start free](https://app.flowfuse.com/) to try it yourself.
+If you want to see more on how FlowFuse helps with scaling and production deployments, [book a demo](/book-demo/) today.
