@@ -14,7 +14,7 @@ If you work in manufacturing, you likely have gigabytes of data in CSV files—t
 
 <!--more-->
 
-PLCs log directly to CSV through proprietary software. Legacy SCADA systems write flat files. Custom applications generate daily reports. These systems work reliably, but they weren't built to integrate with MQTT brokers or databases.
+PLCs log directly to CSV through proprietary software. Legacy SCADA systems write flat files. Custom applications generate daily reports. These systems are reliable, but they weren't built to integrate with MQTT brokers or databases.
 
 If you're using FlowFuse to log data, you can send to MQTT and databases as data flows through FlowFuse. But if your CSV files come from PLCs, SCADA systems, or other external tools, you need to read and ingest them after they're written.
 
@@ -29,7 +29,7 @@ Before starting, ensure you have:
 - Access to an MQTT broker
 - Access to a database
 
-**Note:** If you have a FlowFuse Enterprise account, you won't need to set up external MQTT brokers or databases, FlowFuse provides these services built into the platform.
+**Note:** If you have an Enterprise account, you won't need to set up external MQTT brokers or databases, FlowFuse provides these services built into the platform.
 
 ### Sample Data
 
