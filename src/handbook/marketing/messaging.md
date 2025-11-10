@@ -102,3 +102,48 @@ FlowFuse is the industrial platform built for speed, intelligence, and operation
 FlowFuse’s platform puts advanced automation and artificial intelligence at the heart of industrial innovation—empowering teams to connect any machine or system, unify diverse data streams, and deploy automated logic and visualizations in record time. With AI Copilot tools, domain experts and engineers can transform, structure, and analyze industrial data—simply and intuitively—accelerating solution development beyond traditional approaches.
 Security and reliability are never compromised: from audit trails and access controls to blueprint-driven deployments and version automation, FlowFuse is engineered for mission-critical, production environments. Whether you choose cloud, self-hosted, or hybrid, FlowFuse gives you complete control while driving the agility you need to lead the market.
 By blending trusted open-source roots with relentless product innovation and a clear focus on tangible outcomes, FlowFuse is the competitive advantage for industrial teams ready to deliver results faster, more securely, and smarter than ever before.
+
+## Seleciton Criteria: Our 11 messaging-commandments
+
+This captures how we believe an ICP team is thinking about how to choose their next generation software platform for digitalizing their industrial process. This captures the following questions and our answers.
+
+These are the 11 FlowFuse Messaging Commandments. 
+Every message that comes out from the team has to stick to one or many of these commandments. Otherwise it is wrong, because it’s not really helping sales. 
+
+1. Can I connect to any machines in my industrial process and collect data
+   - Node-RED supports 5,000 plugs-ins for collecting data
+   - FlowFuse enables scalable agent deployment to unify data from diverse sources and protocols across industrial edge devices
+2. Can I transport data across any protocol
+   - Connect separate systems and industrial protocols with a unified platform for real-time data flow
+      · You can connect disparate systems and industrial protocols with a unified platform. Our low-code environment, accelerated by an AI Copilot, makes it faster than ever to build the logic for real-time data flow between any source and destination.
+3. Can I easily tag and store data I am collecting in any data platform
+   - Transform raw data into a structured and unified information model with low-code data transformation tools
+      · Transform raw data into a structured and unified information model with our AI-assisted low-code tools. Simply describe the data transformation you need in plain English, and our platform will help generate the necessary logic, from SQL queries to JavaScript functions.
+4. Can I build a new application quickly without needing software developers
+   - Bridge the gap between IT and OT teams enabling domain experts to build solutions while maintaining IT oversight
+      · We bridge the gap between IT and OT, enabling domain experts to build solutions while maintaining IT oversight. Our AI Copilot acts as a development partner, empowering your team to build more sophisticated applications independently, reducing reliance on specialized developers.
+5. Is it easy to build interactive dashboards
+   - Create custom dashboards and applications to monitor KPIs, optimize production, and adapt quickly to new business requirements
+      · Create custom dashboards and applications to monitor KPIs and optimize production. Our AI assistant helps you build these visualizations faster by generating the necessary code for custom UI components based on your descriptions.
+6. Can I version control, update and deploy applications across my environment
+   - Deploy standardized applications across multiple facilities with centralized version control and remote management
+   - Scale from pilot projects to organization-wide digital initiatives with consistent governance and security policies
+      · ​​Our platform even uses AI to automatically summarize the changes between versions, making it easier to track updates and maintain control.
+7. Does the application system come with a security framework
+   - Built-in monitoring, audit trails, and role-based access controls ensure production-ready deployments at scale
+8. Does the system have any pre-built applications that model my processes
+   - Comprehensive solutions including IT/OT Middleware, Unified Namespace, SCADA, MES, and Edge Connectivity modules
+   - Yes, we offer comprehensive solution blueprints including IT/OT Middleware, Unified Namespace (UNS), SCADA, and MES. These blueprints provide a powerful starting point, and our AI Copilot helps you customize and extend them to fit your exact needs in record time.
+9. How long can I use this tech stack before it becomes obsolete and can I trust it
+   - The underpinning technology of FlowFuse is Node-RED, a large and self-sustaining open source community under the OpenJS Foundation.
+   - Built on Node-RED open-source foundation with enterprise-grade reliability, high availability, and automated backups
+      · FlowFuse builds on this with enterprise-grade reliability, high availability, and automated backups. Furthermore, we are constantly innovating, evolving the platform with cutting-edge capabilities like our AI Copilot to ensure your investment is future-proof.
+10. Does the platform include AI assistance to accelerate application development and reduce technical barriers?
+   - AI-Assisted Node-RED with Smart Suggestions offers intelligent flow completion for next-node recommendations
+11. Can I access enterprise-grade, professionally maintained integrations and custom components?
+   - FlowFuse Certified Nodes v2.0 partners with developers who demonstrate deep expertise in their domains, focusing on reliability, security, and professional implementation standards
+
+
+**Flowfuse = the fastest, most secure way to build industrial applications and operate at scale.**
+
+
