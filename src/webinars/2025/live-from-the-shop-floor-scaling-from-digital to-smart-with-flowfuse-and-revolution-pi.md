@@ -7,7 +7,7 @@ image: /images/webinars/live-from-the-shop-floor-scaling-from-digital to-smart-w
 date: 2025-11-20
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: 
+video: 06p0d2JgzsE
 hosts: ["boris-crismancich"]
 hubspot:
     formId: e1c58c10-fb00-46f4-81b3-4f253bb24640
