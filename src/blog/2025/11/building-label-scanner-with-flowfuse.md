@@ -13,7 +13,7 @@ In production environments, labels are everywhere! Products have Serial Numbers 
 
 <!--more-->
 
-Most companies still do this manually. Someone scans or types in each code as products move through the line. It's repetitive, time-consuming work—and mistakes are inevitable.
+Many companies still do this manually. Someone types in each code as products move through the line. It's repetitive, time-consuming work - mistakes are inevitable.
 
 That's where OCR comes in. Optical Character Recognition (OCR) uses cameras to automatically read and extract text from labels and product markings. Instead of manual data entry, a camera simply captures the image and the system pulls out the information you need. It's a straightforward solution that's already being deployed in modern manufacturing facilities worldwide.
 
@@ -73,7 +73,7 @@ _Scan Label Button Widget Configuration_
 
 When deployed, this flow creates a dashboard interface with a live camera preview and a large Scan Label button. Each time you click Scan Label, the captured image is sent as a `msg.payload.image` containing a image buffer.
 
-> *Tip: To correct a flipped or mirrored camera preview, open the three-dot menu (⋮) on the webcam widget and enable “Mirror Image.*
+> *Tip: To correct a flipped or mirrored camera preview, open the three-dot menu (⋮) on the webcam widget and enable "Mirror Image".*
 
 ##### Handling High-Resolution Images
 
