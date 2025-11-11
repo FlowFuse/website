@@ -425,13 +425,14 @@
 }
 
 .team-headshot img {
+    width: 100%;
+    aspect-ratio: 512 / 647;
+    object-fit: cover;
+    object-position: center top;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     border-width: var(--border-width);
     border-color: theme(colors.indigo.200);
-}
-
-.team-headshot img {
     background: linear-gradient(to bottom, theme(colors.indigo.50), theme(colors.indigo.200));
     border-bottom: 0;
     background-size: cover;
