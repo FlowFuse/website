@@ -4,12 +4,13 @@ subtitle: "A practical guide to automating text recognition in manufacturing wor
 description: "Step-by-step guide to building an OCR system in FlowFuse for scanning product labels, extracting text, and validating serial numbers using Node-RED flows."
 date: 2025-11-11
 authors: ["sumit-shinde"]
+image: /blog/2025/11/images/building-label-scanner-with-flowfuse.png
 keywords: flowfuse, node-red, ocr, label scanner, serial number recognition, product label automation, text extraction, manufacturing automation, industrial iot, machine vision, flowfuse dashboard, tesseract ocr, image processing, barcode scanning, smart factory, production line automation, quality control, flowfuse tables, database integration, ai in manufacturing, low-code automation
 tags:
   - flowfuse
 ---
 
-In production environments, labels are everywhere! Products have Serial Numbers and Lot Codes, Packages have Batch IDs and Dates. These are often critical to the processes for packaging, tracking, logging, inventory and so on. They need to be reliably read...
+In production environments, labels are everywhere! Products have Serial Numbers and Lot Codes, Packages have Batch IDs and Dates. These are often critical to the processes for packaging, tracking, logging, inventory and so on.
 
 <!--more-->
 
