@@ -4,7 +4,7 @@ subtitle: "Moving from a Code driven interface to LLMs interpreting humans."
 description: "Discover how FlowFuse combines LLMs and Model Context Protocol (MCP) with Node-RED to enable text-driven operations, transforming industrial data into actionable insights through natural language queries."
 date: 2025-11-12
 authors: ["zeger-jan-van-de-weg"]
-image:
+image: /blog/2025/11/images/flowfuse+llm+mcp-equals-text-driven-operations.png
 video: vaesYCyEESY
 keywords: MCP, Node-RED MCP, LLM
 tags:
