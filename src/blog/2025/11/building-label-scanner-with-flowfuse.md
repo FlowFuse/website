@@ -9,7 +9,7 @@ tags:
   - flowfuse
 ---
 
-In any production facility, there are labels on everything. Products have serial numbers and lot codes. Packages have batch IDs and dates. All of it needs to be tracked.
+In production environments, labels are everywhere! Products have Serial Numbers and Lot Codes, Packages have Batch IDs and Dates. These are often critical to the processes for packaging, tracking, logging, inventory and so on. They need to be reliably read...
 
 <!--more-->
 
