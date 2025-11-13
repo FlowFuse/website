@@ -70,3 +70,41 @@ In our "FlowFuse Templates" Adobe Premiere Pro library we have three "UI Preview
 ### Marketing Videos
 
 Much more creative license and freedom in terms of content and approach. If we are using iconography and pictograms, then they should be stylized and animated as per our [branding guidelines](/handbook/design/branding.md).
+
+## Developer Relations Content
+Developer Relations content is developed principally for three audiences:
+
+* Core consumers, e.g. those who already use FlowFuse and want to be informed, educated, or entertained;
+* New consumers, e.g. those who are unfamiliar with FlowFuse and want to understand what it can offer or what it does differently; and
+* Lapsed consumers, e.g. those who are familiar with FlowFuse or Node-RED but have not stayed up to date with news or product evolutions.
+
+Accordingly, content should always be planned around answering a question or advocating an offering. This content is then synchronised across a few different channels to ensure wide engagement opportunity.
+### Tools
+While Developer Relations production should leverage common tools and processes, native content creation for each Advocate can originate in different ways. This area documents how each Developer Relations Advocate generates and edits content.
+#### Kristopher Sandoval
+Kristopher uses the following tools for content generation and editing.
+##### Filming
+- Content is filmed on an iPhone 17 Pro Max in 120FPS at 4K.
+- Key lights: 2 LED panels (2800-6500K) at a 45° angle to the subject.
+- Ambient lights: 2 P96L SMallRig LED lights (2500-8000K) behind the subject.
+- Fill lights: Govee RGBIC (2700k-6500k) at a 22.5° angle to the projection surface.
+- Primary audio: DJI Mic Mini (2 TX + 1 RX).
+- Prompter: Elgato Prompter.
+##### Editing
+- DaVinci Resolve with exports to convertible formats for Premiere Pro and After Effects.
+- Music, SFX, and Foley from [Epidemic Sound](https://www.epidemicsound.com/).
+- Blackmagic Design DaVinci Resolve Speed Editor for rapid editing.
+### Distribution Channels
+### Content Production
+For our Developer Relations content, we align behind production best standards. This means that we have three phases of production - pre-production, production, and post-production, each with their own steps and processes.
+#### Pre-Production Phase
+In this phase of production, we generate scripts, review content for accuracy, and validate fit and function of the content piece. Whenever possible, we aim for a 24 hour review cycle for scripts, meaning that content should be reviewed by stakeholders with at least a 24 hour lead-time for production.
+#### Production Phase
+In this phase, content is filmed. Whenever possible, we default to 4k at either 60FPS or 120FPS, and generate either .mp4 or .mov containers in HEVC or H.264 codecs. When filming content, try as best as you can to ensure audio is free of echo, reverb, bass resonance, and other audio artifacts. When this cannot be done, try to capture audio as close to the source as possible.
+#### Post-Production
+During this phase, video content is edited, mixed, and finalised. The specific flow is down to each editor and production, but the following best practises are advised:
+
+* Audio should be filtered and cleaned up. In editors like Davinci, you may have an AI isolation option - please use these techniques to reduce room noise, but balance it with natural sound and EQ to make sure that the audio is not overly compressed or otherwise fatigueing for the listener.
+* Solutions like Adobe podcast can be used to clean up audio from noisy sources - but as with AI isolation, make sure you use it sparingly to not overwhelm the listener with artifacting or over-compression.
+* Video edits should be professional and focused on the content at hand. Jump cuts are fine, but should be used only to emphasise a point or to cleanly transition between video - it should not be frentic or distracting.
+* Video effects can be applied, but again, sparingly. Try not to be too visually loud or over-stimulating - Developer Relations content is somewhere between educational and entertainment, but we're not trying to go for frentic YouTube here.
