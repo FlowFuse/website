@@ -348,7 +348,14 @@ should happen without customers even noticing.
    particularly important or has many instances left to migrate, consider
    providing personalized help to ensure a smooth process.
 
-4. **Handle Final Restarts on Deadline Day:**\
+## Handling Requests from Self-Hosted Customers to Enable FlowFuse Assistant
+The [FlowFuse Assistant](https://flowfuse.com/docs/user/assistant/#flowfuse-assistant-plugin) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
+
+When a customer requests access to the FlowFuse Assistant, do the following:
+1. Route the request to Engineering
+2. Note in the customer's page on HubSpot that the customer is using the FlowFuse Assistant. This will enable Customer Success to discuss the feature with the customer and adds to our holistic understanding of the customer.
+
+5. **Handle Final Restarts on Deadline Day:**\
    On the deadline day, go through the remaining instances and restart them.
    Check that each one comes back online properly, and assist customers with any
    issues that come up.
