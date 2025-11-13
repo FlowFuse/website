@@ -103,7 +103,7 @@ FlowFuse’s platform puts advanced automation and artificial intelligence at th
 Security and reliability are never compromised: from audit trails and access controls to blueprint-driven deployments and version automation, FlowFuse is engineered for mission-critical, production environments. Whether you choose cloud, self-hosted, or hybrid, FlowFuse gives you complete control while driving the agility you need to lead the market.
 By blending trusted open-source roots with relentless product innovation and a clear focus on tangible outcomes, FlowFuse is the competitive advantage for industrial teams ready to deliver results faster, more securely, and smarter than ever before.
 
-## Selection Criteria: Our 11 messaging-commandments
+## Selection Criteria: Our messaging commandments
 
 This captures how we believe an ICP team is thinking about how to choose their next generation software platform for digitalizing their industrial process. This captures the following questions and our answers.
 
