@@ -1,0 +1,42 @@
+<div class="social-share">
+    <h3 class="mb-3">Share This</h3>
+    <div class="flex flex-col gap-3">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://flowfuse.com{{ page.url | urlencode }}&title={{ title | urlencode }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+            <span class="flex-shrink-0">
+                {% include "components/linkedin.njk" %}
+            </span>
+            <span class="text-sm font-medium">LinkedIn</span>
+        </a>
+
+        <a href="https://www.facebook.com/sharer.php?u=https://flowfuse.com{{ page.url | urlencode }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+            <span class="flex-shrink-0">
+                {% include "components/facebook.njk" %}
+            </span>
+            <span class="text-sm font-medium">Facebook</span>
+        </a>
+
+        <a href="https://www.reddit.com/submit?url=https://flowfuse.com{{ page.url | urlencode }}&title={{ title | urlencode }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+            <span class="flex-shrink-0">
+                {% include "components/reddit.njk" %}
+            </span>
+            <span class="text-sm font-medium">Reddit</span>
+        </a>
+
+        <a href="mailto:?subject={{ title | urlencode }}&body=Check out this article: https://flowfuse.com{{ page.url | urlencode }}"
+           class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+            <span class="flex-shrink-0 w-6 flex items-center justify-center">
+                {% include "components/mail.njk" %}
+            </span>
+            <span class="text-sm font-medium">Email</span>
+        </a>
+    </div>
+</div>
