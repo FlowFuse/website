@@ -157,7 +157,7 @@ explicit approval is required from the CEO to:
 - The new manager of the candidate agrees with extending this offer to the candidate
 
 Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
-Equity in the company is offered to some roles, the CEO has access to [the calculator](https://docs.google.com/spreadsheets/d/1M5zN9S4LoMOhz6cubj1VXY0trvKPMFXxCb4_7otQDnA)
+Equity in the company is offered to some roles, the CEO has access to [the calculator](https://docs.google.com/spreadsheets/d/1iFf7D-_6lzyYiC0_e3BKxzn3TGjyHMIiG3bZ-jChgoE/){rel="nofollow"}
 determining how many options to offer.
 
 ## After an offer is accepted
