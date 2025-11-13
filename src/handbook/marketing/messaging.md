@@ -110,6 +110,6 @@ This captures how we believe an ICP team is thinking about how to choose their n
 These are the 11 FlowFuse Messaging Commandments. 
 Every message that comes out from the team has to stick to one or many of these commandments. Otherwise it is wrong, because it’s not really helping sales. 
 
-1. Can I connect to any machines in my industrial process and collect data
-   - Node-RED supports 5,000 plugs-ins for collecting data
-   - FlowFuse enables scalable agent deployment to unify data from diverse sources and protocols across industrial edge devices
+1. Connect all your machines and assets in my industrial process to make it _fully observable_.
+   - FlowFuse can be extended with over 5,000 plug-ins for collecting data from any machine, protocol, ERP, MES, or other services.
+   - FlowFuse enables scalable agent deployment to unify data from any source or protocol across the industrial edge.
