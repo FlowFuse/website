@@ -20,7 +20,7 @@ This tutorial shows you how to build one using FlowFuse. We'll work through a mo
 
 Here's what you'll build—an equipment control interface that works on any device. The dashboard responds instantly to button presses and shows near real-time status updates:
 
-[VIDEO EMBED HERE]
+<lite-youtube videoid="NQZ_u25sy1Q" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 Let's build it.
 
