@@ -335,6 +335,4 @@ Once deployed, open the dashboard — you should see a real-time line chart disp
 
 You've transformed static CSV files into live data streams that flow through MQTT, databases, and dashboards. Your legacy equipment now communicates with modern systems without any hardware changes.
 
-This tutorial walked you through building a data pipeline. FlowFuse takes it further by handling both development and production deployment. When you need to scale across multiple production lines, manage team collaboration, deploy to hundreds of devices remotely, or maintain infrastructure like MQTT brokers and databases, FlowFuse provides the platform to do it all. As you saw, it also includes an AI Assistant to speed up your workflow.
-
-If you want to see more on how FlowFuse helps with scaling and production deployments, [book a demo](/book-demo/) today.
+{% include "cta-template.njk" %}
