@@ -2,7 +2,7 @@
 title: "Building a Web HMI for Factory Equipment Control"
 subtitle: "Create web-based operator interfaces for industrial equipment"
 description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser"
-date: 2025-11-14
+date: 2025-11-17
 keywords: FlowFuse, web HMI, PLC control, Node-RED dashboard, industrial automation, edge device, MQTT, factory monitoring, SCADA alternative, remote equipment control
 authors: ["sumit-shinde"]
 image: 
@@ -10,19 +10,15 @@ tags:
   - flowfuse
 ---
 
-Most factory HMIs are still stuck in one place. You've got dedicated panels mounted next to your equipment, or maybe a SCADA workstation in the control room. Either way, if you need to check on something or make a change, you're walking over to it.
-
+Most factory HMIs are still stuck in one place. Dedicated panels mounted next to equipment, or SCADA workstations in the control room. Need to check something? You're walking over there.
 <!--more-->
+Web-based HMIs change that. Build your interface once in FlowFuse, and it runs anywhere—desktop, tablet, phone. Your operators can monitor and control equipment from wherever they need to be.
 
-Web-based HMIs work differently. Build the interface once, and it runs in any browser—desktop, tablet, phone, whatever. Your operators can monitor and control equipment from wherever they need to be.
+This tutorial walks you through building a simple motor control interface: two buttons and a status display. You'll learn connecting to PLCs, building dashboards, and enabling remote access. From there, you can scale up to production lines with multiple sensors and actuators, live charts, gauges, sliders, and interactive controls.
 
-This tutorial shows you how to build one using FlowFuse. We'll work through a motor control interface, but the same steps apply to any equipment connected to a PLC.
-
-Here's what you'll build—an equipment control interface that works on any device. The dashboard responds instantly to button presses and shows near real-time status updates:
+Here's what you'll build:
 
 <lite-youtube videoid="NQZ_u25sy1Q" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
-
-Let's build it.
 
 ## Prerequisites
 
@@ -192,6 +188,8 @@ _Motor status text widget configuration_
 _CSS template for status display styling_
 
 3. Click **Done** and deploy the flow
+
+You've just built a basic motor control interface. FlowFuse Dashboard includes gauges, charts, sliders, and other widgets that work the same way—drag, configure, connect. See the [widget reference](https://dashboard.flowfuse.com/nodes/widgets.html) for the full list.
 
 ### Accessing Your Dashboard
 
