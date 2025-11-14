@@ -67,15 +67,12 @@ Design Engineers at FlowFuse set the standard and vision for user-centered desig
 
 - **Week 1-4: Foundation and First Contribution**
   - **Deep Product Immersion:** Become an expert user of FlowFuse and Node-RED, understanding target audience, and all user journeys, features, limitations, and architectural decisions.
+  - **Internal Alignment:** Meet with product, engineering, and market teams to understand business objectives, technical constraints, release cadence, and go-to-market strategies. Ensure you know where to get what information and who to loop in where, and you are part of engineering meetings, and product-planning meetings.
   - **Community Assessment:** Audit existing community channels across Node-RED and FlowFuse, user feedback, and contribution patterns.
-  - **Design and user research alignment:** Study the existing design work and design system and contribute your first improvements. Participate in and review user-research, inteview or monitoring sessions, and customer calls, and experimentation initiatives.
-  - **Internal Alignment:** Meet with product, engineering, and marketing teams to understand business objectives, technical constraints, release cadence, and go-to-market strategies. Ensure you know where to get what information and who to loop in where, and you are part of engineering meetings, and product-planning meetings.
+  - **Design and user research alignment:** Study the existing design artifacts and design system, and contribute your first improvements. Participate in and review user-research, inteview or monitoring sessions, and partake in experimentation initiatives.
   - **Code familiarity:** Set up comprehensive development environment and contribute your first improvements to the application and website.
   - **Initial journey development:** Participate in designing and delivering on improving user journeys with your team.
-
-  - Understand where gaps exist and how design engineers fill them
-  - Journey understanding
-  - Develop an understanding of the backlog and how
+  - **Backlog familiarity**: Develop an understanding of the backlog and how it pertains to the various user journeys
 
 
 - **Week 5-8: Integration and Collaboration**
@@ -86,12 +83,10 @@ Design Engineers at FlowFuse set the standard and vision for user-centered desig
   - **Product development**: Lead design and solution validation through prototyping for an epic, collaborating cross-functionally with potential of implementing the front-end code yourself.
   - **AI acceleration**: Demonstrate AI-accelerated iterative workflow to reach your team's goals.
   - **Cross-functional review**: Participate in design critiques, product planning, and code reviews
-  
-  
-  - Document patterns and best practices you've established
+  - **Journey Architecture**: Start participating in creating and maintaining the user journey architecture of the application and how it relates to the backlog and product vision. This will be a vital framework and tool to use to push forward the product and bring together the cross-functional disciplines. 
 
 - **Week 9-13: Leadership and Impact**
-  - Lead design and user advocacy for a feature, rapidly iterating with AI tools and implementing when needed
+  - Lead design and user advocacy for experiences, rapidly iterating with AI tools and implementing when needed
   - Contribute to product roadmapping and feature prioritization discussions
   - Share learnings on AI-assisted workflows to improve team velocity
   - Demonstrate measurable velocity improvements from AI-accelerated iteration
@@ -99,13 +94,13 @@ Design Engineers at FlowFuse set the standard and vision for user-centered desig
   - Propose and implement improvements to team processes or tooling
   - Show measurable impact on design quality, user outcomes, and development speed
   - Take ownership of specific areas of the product or design system
-  
-  
+
+
   - Product maturity initiatives: Launch strategic initiatives to mature the product holistically in alignment with business needs.
-  
+
   - Blogposts and other design evangalisation: Deliver your first blogposts or presentations evangalising FlowFuse's and Node-RED's product design internally and externally.
-  
-  
+
+
   Technical Roadmap: Contribute to the long-term technical roadmap based on user feedback, community input, and market analysis.
   Partnership Development: Initiate conversations with identified strategic partners for technical integrations and co-marketing opportunities.
 
