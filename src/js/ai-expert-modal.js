@@ -330,7 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Handle multi-message vs single message responses
-            if (response.isMultiMessage && Array.isArray(response.answer)) {
+            const answers = Array.isArray(response.answer) ? response.answer : [response.answer];
+            if (answers.length >= 1) {
                 // Stop loading animation first
                 const loadingElement = chatMessages.children[aiMessageIndex];
                 if (loadingElement) {
@@ -351,8 +352,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 // Now add each message from the response
-                response.answer.forEach(messageObj => {
-                    addAIMessageFromObject(messageObj);
+                answers.forEach(answer => {
+                    addAIMessageFromObject(answer);
                 });
             } else {
                 // Fallback for old single message format - treat as single chat message
@@ -515,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Note: This API may only work in production (flowfuse.com domain)
             // For local development, we'll get simulated responses
-            const response = await fetch('https://flowfuse-expert-api-dev.flowfuse.cloud/v3/website-chat', {
+            const response = await fetch('https://flowfuse-expert-api-dev.flowfuse.cloud/v4/website-chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -669,7 +670,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return messages.length - 1; // Return index of the newly added message
     }
 
-    function addAIMessageFromObject(messageObj) {
+    function addAIMessageFromObject(aiMessage) {
+        if (typeof aiMessage === 'string') {
+            aiMessage = { kind: 'chat', content: aiMessage };
+        }
         // Add to messages array
         const message = { content: '', type: 'ai', isHTML: true };
         messages.push(message);
@@ -679,20 +683,21 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.className = 'flex justify-start mb-4';
 
         const messageBubble = document.createElement('div');
-        let paddingClass = messageObj.kind === 'guide' ? 'py-4' : 'py-2';
+        let paddingClass = aiMessage.kind === 'guide' ? 'py-4' : 'py-2';
         messageBubble.className = `max-w-[90%] px-4 ${paddingClass} rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content`;
 
         // Render content based on message kind
         let htmlContent = '';
-        if (messageObj.kind === 'guide' || messageObj.kind === 'resources') {
-            htmlContent = renderRichContent(messageObj);
-        } else if (messageObj.kind === 'chat') {
-            htmlContent = renderChatContent(messageObj);
+        if (aiMessage.kind === 'guide' || aiMessage.kind === 'resources') {
+            htmlContent = renderRichContent(aiMessage);
+        } else if (aiMessage.kind === 'chat') {
+            htmlContent = renderChatContent(aiMessage);
         }
 
         // Update message content and DOM
-        message.content = htmlContent;
-        messageBubble.innerHTML = htmlContent;
+        const sanitizedHtml = DOMPurify.sanitize(htmlContent, { ADD_ATTR: ['target'] });
+        message.content = sanitizedHtml;
+        messageBubble.innerHTML = sanitizedHtml;
 
         messageDiv.appendChild(messageBubble);
         chatMessages.appendChild(messageDiv);
@@ -746,7 +751,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Content (no title for chat messages)
         if (chatMessage.content) {
-            html += `<p class="text-gray-700">${chatMessage.content}</p>`;
+            const sanitizedContent = DOMPurify.sanitize(chatMessage.content, { ADD_ATTR: ['target'] });
+            html += `<p class="text-gray-700">${sanitizedContent}</p>`;
         }
 
         return html;
@@ -769,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Setup Guide label for guide messages
         let headerText = 'Result'
 
-        if (richAnswer.kind === 'guide') headerText = 'Setup Guide'
+        if (richAnswer.kind === 'guide') headerText = 'Guide'
         if (richAnswer.kind === 'resources') headerText = 'Resources';
 
         html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-2 rounded-full inline-block mb-3">${headerText}</div>`;
@@ -815,19 +821,21 @@ document.addEventListener('DOMContentLoaded', function() {
             html += '<div class="mb-4">';
             html += '<h4 class="text-base font-medium text-gray-900 mb-3">Required Node Packages</h4>';
             html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
-
             richAnswer.nodePackages.forEach(pkg => {
-                const nodeRedUrl = `https://flows.nodered.org/node/${pkg.name}`;
-                const nodeRedUrlWithUTM = addUTMParameters(nodeRedUrl);
-                const faviconUrl = `https://www.google.com/s2/favicons?domain=flows.nodered.org`;
+                const url = pkg.url || pkg.metadata?.source;
+                const defLocation = 'https://flows.nodered.org/search?type=node';
+                const packageName = pkg.name || pkg.id || pkg.metadata?.id;
+                const nodeUrl = url || (packageName ? `https://flows.nodered.org/node/${packageName}` : defLocation);
+                const nodeUrlWithUTM = addUTMParameters(nodeUrl);
+                const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(nodeUrl).hostname}`;
 
                 html += `
-                <a href="${nodeRedUrlWithUTM}" target="_blank" rel="noopener noreferrer"
+                <a href="${nodeUrlWithUTM}" target="_blank" rel="noopener noreferrer"
                    class="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors h-16">
                     <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0" alt="">
                     <div class="flex-1 min-w-0 overflow-hidden">
-                        <h6 class="font-mono text-gray-900 text-sm truncate">${pkg.name}</h6>
-                        <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${nodeRedUrl}</p>
+                        <h6 class="font-mono text-gray-900 text-sm truncate">${packageName || nodeUrl}</h6>
+                        <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${nodeUrl}</p>
                     </div>
                 </a>`;
             });
@@ -843,8 +851,10 @@ document.addEventListener('DOMContentLoaded', function() {
             html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
 
             richAnswer.resources.forEach(resource => {
-                const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(resource.url).hostname}`;
-                const resourceUrlWithUTM = addUTMParameters(resource.url);
+                const url = resource.url || resource.metadata?.source;
+                const title = resource.title || resource.metadata?.title || url;
+                const faviconUrl = `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}`;
+                const resourceUrlWithUTM = addUTMParameters(url);
 
                 html += `
                 <a href="${resourceUrlWithUTM}" target="_blank" rel="noopener noreferrer"
@@ -852,14 +862,37 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="flex items-start gap-2">
                         <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0 mt-0.5" alt="">
                         <div class="flex-1 min-w-0 overflow-hidden">
-                            <h6 class="font-medium text-gray-900 text-sm truncate">${resource.title}</h6>
-                            <p class="text-xs text-gray-500 mt-1 truncate">${resource.url}</p>
+                            <h6 class="font-medium text-gray-900 text-sm truncate">${title}</h6>
+                            <p class="text-xs text-gray-500 mt-1 truncate">${url}</p>
                         </div>
                     </div>
                 </a>`;
             });
 
             html += '</div>';
+            html += '</div>';
+        }
+
+        // Example flows (will copy richAnswer.flows[x].metadata.flows to clipboard when clicked)
+        if (richAnswer.flows && richAnswer.flows.length > 0) {
+            html += '<div>';
+            html += '<h4 class="text-base font-medium text-gray-900 mb-3">Example Flows</h4>';
+            html += '<ul class="list-disc list-inside space-y-2">';
+
+            richAnswer.flows.forEach(flow => {
+                if (!flow || typeof flow !== 'object' || !flow.metadata || !Array.isArray(flow.metadata.flows) || flow.metadata.flows.length === 0) return;
+                const flowJson = JSON.stringify(flow.metadata.flows, null, 2);
+                html += `
+                <div class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors">
+                    <div class="flex items-start gap-2">
+                        <button class="text-indigo-600 hover:underline" onclick="copyToClipboard('${flowJson}')">
+                            ${flow.title || flow.metadata.title || 'Copy Flow to Clipboard'}
+                        </button>
+                    </div>
+                </div>`;
+            });
+
+            html += '</ul>';
             html += '</div>';
         }
 
