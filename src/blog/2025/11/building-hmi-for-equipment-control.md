@@ -14,7 +14,7 @@ Most factory HMIs are still stuck in one place. Dedicated panels mounted next to
 <!--more-->
 Web-based HMIs change that. Build your interface once in FlowFuse, and it runs anywhere—desktop, tablet, phone. Your operators can monitor and control equipment from wherever they need to be.
 
-This tutorial walks you through building a simple motor control interface: two buttons and a status display. You'll learn connecting to PLCs, building dashboards, and enabling remote access. From there, you can scale up to production lines with multiple sensors and actuators, live charts, gauges, sliders, and interactive controls.
+This tutorial walks you through building a simple motor control interface: two buttons and a status display. You will learn how to connect to PLCs, build HMI dashboards, and enable remote access. From there, you can scale up to production lines with multiple sensors and actuators, live charts, gauges, sliders, and interactive controls.
 
 Here's what you'll build:
 
