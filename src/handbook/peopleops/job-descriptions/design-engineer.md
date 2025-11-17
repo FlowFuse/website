@@ -75,34 +75,31 @@ Design Engineers at FlowFuse set the standard and vision for user-centered desig
   - **Backlog familiarity**: Develop an understanding of the backlog and how it pertains to the various user journeys
 
 
-- **Week 5-8: Integration and Collaboration**
+- **Week 5-8: Integration and Ownership**
   - **Success Metrics:** Establish and begin tracking key performance indicators for product growth, product adoption, and developer engagement.
   - **Contributions:** Ship your first major improvements to FlowFuse and Node-RED, demonstrating journey ownership from concept, to design, prototyping, implementation, and finished delivery.
   - **Dedicated research**: Conduct dedicated user research to aid in vision setting and/or improving product areas.
   - **Vision development**: Make significant pro-active contributions to the product strategy through defining vision designs in collaboration with your team.
   - **Product development**: Lead design and solution validation through prototyping for an epic, collaborating cross-functionally with potential of implementing the front-end code yourself.
   - **AI acceleration**: Demonstrate AI-accelerated iterative workflow to reach your team's goals.
-  - **Cross-functional review**: Participate in design critiques, product planning, and code reviews
+  - **Cross-functional review**: Participate in design critiques, product planning, and code reviews.
   - **Journey Architecture**: Start participating in creating and maintaining the user journey architecture of the application and how it relates to the backlog and product vision. This will be a vital framework and tool to use to push forward the product and bring together the cross-functional disciplines. 
 
-- **Week 9-13: Leadership and Impact**
-  - Lead design and user advocacy for experiences, rapidly iterating with AI tools and implementing when needed
-  - Contribute to product roadmapping and feature prioritization discussions
-  - Share learnings on AI-assisted workflows to improve team velocity
-  - Demonstrate measurable velocity improvements from AI-accelerated iteration
-  - Mentor team members on design-engineering collaboration and user advocacy
-  - Propose and implement improvements to team processes or tooling
-  - Show measurable impact on design quality, user outcomes, and development speed
-  - Take ownership of specific areas of the product or design system
+- **Week 9-13: Impact and Strategic Influence**
+  - **Design leadership**: Lead design and user advocacy for experiences, rapidly iterating with AI tools and implementing when needed.
+  - **Team efficiency:** Propose and implement improvements to team processes or tooling to continuously improve the quality and efficiency mindset and implementation.
+  - **Measurability:** Contribute and demonstrate measurable impact towards business KPIs regarding initiatives you are part of.
+  - **Product ownership:** Take ownership of specific areas of the product, including tools such as the design system to increase efficiency across the organisation.
+  - **Strategic contribution:** Actively contribute to strategic product maturity initiatives in alignment with business needs.
+  - **Product evangelization:** Begin contributing to evangelization of Node-RED's and FlowFuse's product design, roadmap, and vision internally and externally.
+  - **Continuous external input**: Participate and define workflows to incorporate user feedback, community input, and market analysis on a continuous basis aiding the product roadmap.
 
+## Beyond 90 Days
 
-  - Product maturity initiatives: Launch strategic initiatives to mature the product holistically in alignment with business needs.
-
-  - Blogposts and other design evangalisation: Deliver your first blogposts or presentations evangalising FlowFuse's and Node-RED's product design internally and externally.
-
-
-  Technical Roadmap: Contribute to the long-term technical roadmap based on user feedback, community input, and market analysis.
-  Partnership Development: Initiate conversations with identified strategic partners for technical integrations and co-marketing opportunities.
+- **Hiring and mentoring**: Lead efforts to recommend and hire new team members. Mentor existing team members on design-engineering collaboration, user advocacy, and best practices.
+- **Product evangelization leadership**: Deliver blog posts, presentations, and external speaking engagements to evangelize Node-RED's and FlowFuse's product design, roadmap, and vision.
+- **Strategic initiative ownership**: Launch and own strategic product maturity initiatives that mature the product holistically in alignment with business needs.
+- **Design system leadership**: Establish and evolve the design system as a critical organizational efficiency tool, driving adoption and standards.
 
 ## Hiring Plan
 
