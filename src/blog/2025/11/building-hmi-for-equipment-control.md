@@ -42,7 +42,7 @@ When an operator clicks a button, FlowFuse writes the command to the PLC. When t
 
 Before diving into the build, it's helpful to understand what makes industrial HMIs effective. Our tutorial keeps things simple, but these principles are worth knowing as you get more comfortable with FlowFuse and expand your system.
 
-Good HMIs let operators quickly assess what's happening at a glance. Status should be immediately obvious—what's running, what's stopped, what needs attention. Color coding helps with this: green for running, red for stopped, yellow for warnings. Following standards like [ISA-101](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards) ensures your color choices are consistent with what operators expect across different systems. We'll use this approach in our motor control example.
+Good HMIs let operators quickly assess what's happening at a glance. Status should be immediately obvious: what is running, what is stopped, what needs attention. Color coding helps with this: green for running, red for stopped, yellow for warnings. Following standards like [ISA-101](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards) ensures your color choices are consistent with what operators expect across different systems. We'll use this approach in our motor control example.
 
 Your PLC handles real-time control—your HMI just reflects what's happening. Polling intervals between 500-1000ms work well for most applications. Faster polling doesn't improve control, it just increases network traffic. Status indicators should be large and clear, with critical information immediately visible and text readable from a reasonable distance.
 
@@ -67,7 +67,6 @@ Choose the node that matches your PLC:
 - **[node-red-contrib-mcprotocol](https://flows.nodered.org/node/node-red-contrib-mcprotocol)** – Mitsubishi PLCs
 - **[node-red-contrib-omron-fins](https://flows.nodered.org/node/node-red-contrib-omron-fins)** – Omron PLCs
 - **[node-red-contrib-bacnet](https://flows.nodered.org/node/node-red-contrib-bacnet)** – BACnet building automation devices
-- **[node-red-contrib-profinet](https://flows.nodered.org/node/node-red-contrib-profinet)** – PROFINET devices
 
 **Installing Protocol Nodes:**
 
@@ -209,7 +208,7 @@ _Enabling offline access in instance security settings_
 ![Web browser displaying the completed motor control HMI with start/stop buttons and status display](./images/flowfuse-dashboard-hmi.png){data-zoomable}
 _Completed HMI dashboard running in browser_
 
-*Note: Offline access is convenient for testing, but not recommended for production. Use a FlowFuse hosted instance for your dashboard instead — setup steps are given below.*
+> **Note:** While offline access is convenient for testing purposes, it should be avoided in production environments. Running the dashboard locally may bypass secure authentication, potentially exposing sensitive controls and data. For production deployments, we recommend using a FlowFuse-hosted instance, which provides proper security. Setup instructions are available below.
 
 **Remote Access:**
 
