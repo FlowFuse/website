@@ -131,7 +131,7 @@ hubspot:
     }]
     %}
     <div class="max-w-md sm:max-w-screen-lg mx-auto">
-        <div class="grid sm:grid-cols-3 gap-12 mt-4 max-sm:w-full m-auto">
+        <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
             {% for metric in metrics %}
                 <div class="w-full m-auto gradient-roi-bottom-right from-indigo-100 rounded-lg pb-3 px-4 pt-6">
                     <div class="flex">
@@ -142,10 +142,32 @@ hubspot:
             {% endfor %}
         </div>
     </div>
+    <!-- Solutions section -->
+    <div class="w-full py-10 md:py-16 px-6">
+        <div class="sm:max-w-screen-lg mx-auto max-sm:text-center">
+            <h2 class="max-sm:mt-10"><span class="text-indigo-600">Unlock Powerful Solutions</span> for Your Industrial Operations</h2>
+            <p class="my-6">FlowFuse provides a comprehensive set of solutions designed to bridge the gap between IT and OT, streamline device management, and integrate data with unprecedented speed and intelligence.</p>
+            <div class="grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 mt-6 w-full">
+                {% for item in solutions %}
+                <a class="my-2 group hover:no-underline" href="{{ item.href }}">
+                    <div class="sm:max-h-none max-h-[250px] max-sm:max-w-[500px] ff-image-cover ff-image-rounded scale mx-auto mb-6">
+                        {% image item.image, item.imageAlt, [500] %}
+                    </div>
+                    <div class="flex flex-row gap-2 my-3 items-center max-sm:justify-center text-indigo-700 group hover:text-indigo-900">
+                        <div class="w-6 h-6 my-auto">
+                            {% include item.icon %}
+                        </div>
+                        <h4 class="text-xl text-indigo-700 hover:text-indigo-900">{{ item.title }}</h4>
+                    </div>
+                    <p class="leading-6 sm:pr-3">{{ item.description }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>    
-
 <!-- Problem section -->
-<div class="bg-indigo-50/50 w-full py-12 px-6 mt-20">
+<div class="bg-indigo-50/50 w-full py-12 px-6">
     <div class="sm:max-w-screen-lg mx-auto">
         <div class="sm:flex sm:flex-row gap-12 my-4 m-auto max-sm:text-center">
             <div class="sm:w-1/3 flex-grow relative">
@@ -248,29 +270,6 @@ hubspot:
             </div>
         </div>
         {% endfor %}
-    </div>
-</div>
-<!-- Solutions section -->
-<div class="bg-indigo-50/50 w-full py-10 md:py-16 px-6">
-    <div class="sm:max-w-screen-lg mx-auto max-sm:text-center">
-        <h2 class="max-sm:mt-10"><span class="text-indigo-600">Unlock Powerful Solutions</span> for Your Industrial Operations</h2>
-        <p class="my-6">FlowFuse provides a comprehensive set of solutions designed to bridge the gap between IT and OT, streamline device management, and integrate data with unprecedented speed and intelligence.</p>
-        <div class="grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 mt-6 w-full">
-            {% for item in solutions %}
-            <a class="my-2 group hover:no-underline" href="{{ item.href }}">
-                <div class="sm:max-h-none max-h-[250px] max-sm:max-w-[500px] ff-image-cover ff-image-rounded scale mx-auto mb-6">
-                    {% image item.image, item.imageAlt, [500] %}
-                </div>
-                <div class="flex flex-row gap-2 my-3 items-center max-sm:justify-center text-indigo-700 group hover:text-indigo-900">
-                    <div class="w-6 h-6 my-auto">
-                        {% include item.icon %}
-                    </div>
-                    <h4 class="text-xl text-indigo-700 hover:text-indigo-900">{{ item.title }}</h4>
-                </div>
-                <p class="leading-6 sm:pr-3">{{ item.description }}</p>
-            </a>
-            {% endfor %}
-        </div>
     </div>
 </div>
 <div class="w-full px-6">
