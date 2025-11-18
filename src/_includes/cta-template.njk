@@ -1,0 +1,23 @@
+<div class="ff-blue-card">
+    <h2 class="w-full text-center text-3xl font-medium">
+        {% if ctaTitle %}{{ ctaTitle }}{% else %}Ready to Scale This Across Your Operations?{% endif %}
+    </h2>
+
+    <p class="text-center">
+        {% if message %}
+            {{ message }}
+        {% else %}
+        What you've just built is only the beginning. FlowFuse takes your solution from one device to thousands—with enterprise security, centralized management, team collaboration, version snapshots, and AI-powered assistance built right in. 
+        
+        Deploy with confidence, Roll back instantly with snapshots. Collaborate in real-time. Manage everything from one platform. Let AI Copilot help you build flows faster.
+        {% endif %}
+    </p>
+    <div class="flex justify-center gap-4">
+        <a href="{{ site.appURL }}/account/create" class="ff-btn ff-btn--primary uppercase no-underline">
+            Start Your Free Trial
+        </a>
+        <a href="/book-demo/" class="ff-btn ff-btn--primary-outlined uppercase no-underline">
+            Book a Demo
+        </a>
+    </div>
+</div>
