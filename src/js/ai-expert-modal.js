@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatMessages = document.getElementById('chat-messages');
     const modalInput = document.getElementById('modal-input');
     let transferPayload = []
+    let flowsStore = {}
 
     // Debug: Check if button was found
     if (!tellMeHowBtn) {
@@ -36,6 +37,44 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     let currentLoadingMessageIndex = 0;
     let loadingMessageInterval = null;
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text)
+                 .then(() => {
+                     console.log('copied');
+                 })
+                 .catch(err => {
+                    console.error('Failed to copy text:', err);
+                 });
+    }
+
+    let flowInteractionHandler = function (e) {
+        if (e.target.closest('.copy')) {
+            const flowTarget = e.target.closest('[data-flow-id]')?.getAttribute('data-flow-id');
+            if (flowTarget && flowsStore[flowTarget]) {
+                copyToClipboard(flowsStore[flowTarget]);
+                const copyButton = e.target.closest('.copy');
+                const copySvg = copyButton.querySelector('#copy-svg');
+                const checkSvg = copyButton.querySelector('#check-svg');
+                copySvg.classList.add('hidden');
+                checkSvg.classList.remove('hidden');
+                setTimeout(() => {
+                    copySvg.classList.remove('hidden');
+                    checkSvg.classList.add('hidden');
+                }, 2000);
+            }
+        }
+
+        if (e.target.closest('.expand')) {
+            const flowSection = e.target.closest('[data-flow-id]');
+            if (flowSection) {
+                const preElement = flowSection.querySelector('pre');
+                if (preElement) {
+                    preElement.classList.toggle('hidden');
+                }
+            }
+        }
+    };
 
     // Centralized function to manage input state based on isGenerating
     function updateInputState() {
@@ -299,6 +338,8 @@ document.addEventListener('DOMContentLoaded', function() {
             transferPayload = []
             lastTransactionId = null;  // Clear transaction ID
         }
+        flowsStore = {}
+        document.removeEventListener('click', flowInteractionHandler)
 
     }
 
@@ -397,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Create DOM element
         const messageDiv = document.createElement('div');
-        messageDiv.className = `flex ${type === 'human' ? 'justify-end' : 'justify-start'} mb-4`;
+        messageDiv.className = `flex ${type === 'human' ? 'justify-end' : 'justify-start'} mb-4 overflow-auto`;
 
         const messageBubble = document.createElement('div');
         messageBubble.className = `max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
@@ -500,6 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update input state (clear button will be disabled since messages array is empty)
         updateInputState();
+        flowsStore = {}
     }
 
     async function sendChatMessage(query) {
@@ -684,7 +726,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const messageBubble = document.createElement('div');
         let paddingClass = aiMessage.kind === 'guide' ? 'py-4' : 'py-2';
-        messageBubble.className = `max-w-[90%] px-4 ${paddingClass} rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content`;
+        messageBubble.className = `max-w-[90%] px-4 ${paddingClass} rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content overflow-auto`;
 
         // Render content based on message kind
         let htmlContent = '';
@@ -873,23 +915,52 @@ document.addEventListener('DOMContentLoaded', function() {
             html += '</div>';
         }
 
-        // Example flows (will copy richAnswer.flows[x].metadata.flows to clipboard when clicked)
+        // Flows
         if (richAnswer.flows && richAnswer.flows.length > 0) {
-            html += '<div>';
+            html += '<div class="overflow-auto">';
             html += '<h4 class="text-base font-medium text-gray-900 mb-3">Example Flows</h4>';
-            html += '<ul class="list-disc list-inside space-y-2">';
+            html += '<ul class="space-y-2 overflow-auto">';
 
             richAnswer.flows.forEach(flow => {
+                console.log(flow);
                 if (!flow || typeof flow !== 'object' || !flow.metadata || !Array.isArray(flow.metadata.flows) || flow.metadata.flows.length === 0) return;
-                const flowJson = JSON.stringify(flow.metadata.flows, null, 2);
+                const flowId = `flow-${crypto.randomUUID()}`
+                let flowsJSON = JSON.stringify(flow.metadata.flows, null, 2);
+                flowsStore[flowId] = flowsJSON;
                 html += `
-                <div class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors">
-                    <div class="flex items-start gap-2">
-                        <button class="text-indigo-600 hover:underline" onclick="copyToClipboard('${flowJson}')">
-                            ${flow.title || flow.metadata.title || 'Copy Flow to Clipboard'}
-                        </button>
+                <li class="overflow-auto">
+                    <div class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors overflow-auto">
+                        <div class="flex flex-col overflow-auto" data-flow-id="${flowId}">
+                            <div class="flex items-start justify-between gap-2">
+                                <h6>${flow.title}</h6>
+                                <div class="actions flex items-start gap-4">
+                                    <button class="text-indigo-600 expand flex items-center">
+                                        <span>JSON</span>
+                                        <svg class="inline-block w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M6 9l6 6 6-6"/>
+                                        </svg>
+                                    </button>
+                                    <button class="text-indigo-600 copy">
+                                      <svg  width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="copy-svg">
+                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                      </svg>
+                                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden" id="check-svg">
+                                        <path d="M20 6L9 17l-5-5"></path>
+                                      </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-xs" style="margin-bottom: 0;">
+                                <span>Category: </span>
+                                <span>${flow.metadata?.category}</span>
+                            </p>
+                            <div class="overflow-auto" style="max-height: 300px;">
+                                <pre class="overflow-auto hidden mt-5">${flowsJSON}</pre>
+                            </div>
+                        </div>
                     </div>
-                </div>`;
+               </li>`
             });
 
             html += '</ul>';
@@ -898,7 +969,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return html;
     }
-
 
     // Stop generation
     const stopGenerationBtn = document.getElementById('stop-generation');
@@ -1117,6 +1187,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // Add click handler for flow copy buttons & code blocks
+    document.addEventListener('click', flowInteractionHandler);
+
 
     // Clear conversation event listener
     const clearConversationBtn = document.getElementById('clear-conversation');
