@@ -2,7 +2,7 @@
 title: "Building a Web HMI for Factory Equipment Control"
 subtitle: "Create web-based operator interfaces for industrial equipment"
 description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser"
-date: 2025-11-17
+date: 2025-11-18
 keywords: FlowFuse, web HMI, PLC control, Node-RED dashboard, industrial automation, edge device, MQTT, factory monitoring, SCADA alternative, remote equipment control
 authors: ["sumit-shinde"]
 image: 
@@ -11,7 +11,9 @@ tags:
 ---
 
 Most factory HMIs are still stuck in one place. Dedicated panels mounted next to equipment, or SCADA workstations in the control room. Need to check something? You're walking over there.
+
 <!--more-->
+
 Web-based HMIs change that. Build your interface once in FlowFuse, and it runs anywhere—desktop, tablet, phone. Your operators can monitor and control equipment from wherever they need to be.
 
 This tutorial walks you through building a simple motor control interface: two buttons and a status display. You will learn how to connect to PLCs, build HMI dashboards, and enable remote access. From there, you can scale up to production lines with multiple sensors and actuators, live charts, gauges, sliders, and interactive controls.
