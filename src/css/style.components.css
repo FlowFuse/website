@@ -178,7 +178,7 @@
         box-shadow: inset 0px 2px 5px #00000052;
     }
 
-    .webinar-tile a.webinar-tile-img img, 
+    .webinar-tile a.webinar-tile-img img,
     .webinar-tile a.webinar-tile-img svg {
         transition: transform 0.3s;
     }
@@ -303,6 +303,11 @@
 
 .rich-content button {
     transition: var(--tdur, 0.15s) transform, var(--tdur, 0.15s) box-shadow;
+}
+
+.rich-content button.plain {
+    transform: none;
+    box-shadow: none;
 }
 
 /* Remove bottom margin from last element in rich content */
