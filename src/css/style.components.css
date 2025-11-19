@@ -324,3 +324,8 @@
 .rich-content > p:only-child {
     margin: 0;
 }
+
+/* Remove bottom margin from single list item */
+.rich-content li:only-child {
+    margin-bottom: 0;
+}

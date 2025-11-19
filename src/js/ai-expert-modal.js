@@ -877,11 +877,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 html += `
                 <a href="${nodeUrlWithUTM}" target="_blank" rel="noopener noreferrer"
-                   class="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors h-16">
-                    <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0" alt="">
-                    <div class="flex-1 min-w-0 overflow-hidden">
-                        <h6 class="font-mono text-gray-900 text-sm truncate">${packageName || nodeUrl}</h6>
-                        <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${nodeUrl}</p>
+                   class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 active:bg-indigo-100 active:border-indigo-500 transition-all duration-200">
+                    <div class="flex items-start gap-2">
+                        <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0 mt-0.5" alt="">
+                        <div class="flex-1 min-w-0 overflow-hidden">
+                            <h6 class="font-mono text-gray-900 text-sm truncate">${packageName || nodeUrl}</h6>
+                            <p class="text-xs text-gray-500 mt-1 mb-0 truncate">${nodeUrl}</p>
+                        </div>
                     </div>
                 </a>`;
             });
@@ -932,7 +934,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowsStore[flowId] = flowsJSON;
                 html += `
                 <li class="overflow-auto" data-flow-id="${flowId}">
-                    <div class="flex flex-col p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors overflow-auto">
+                    <div class="flex flex-col p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 active:bg-indigo-100 active:border-indigo-500 transition-all duration-200 overflow-auto">
                         <div class="flex items-start gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24">
                                   <rect width="24" height="24" fill="gray" rx="4"/>

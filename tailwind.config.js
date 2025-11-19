@@ -23,7 +23,16 @@ module.exports = {
       'rounded-lg',
       'px-4',
       'mb-4',
-      'flex'
+      'flex',
+      'hover:border-indigo-400',
+      'hover:bg-indigo-50',
+      'active:bg-indigo-100',
+      'active:border-indigo-500',
+      'transition-all',
+      'duration-200',
+      'text-gray-600',
+      'hover:text-indigo-600',
+      'transition-colors'
     ],
     theme: {
         extend: {
