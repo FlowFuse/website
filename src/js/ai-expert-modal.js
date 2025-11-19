@@ -932,7 +932,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowsStore[flowId] = flowsJSON;
                 html += `
                 <li class="overflow-auto" data-flow-id="${flowId}">
-                    <div class="flex flex-col gap-3 p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors overflow-auto">
+                    <div class="flex flex-col p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors overflow-auto">
                         <div class="flex gap-3">
                             <div class="icon content-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
