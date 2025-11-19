@@ -1,8 +1,8 @@
 ---
-title: "Store-and-Forward at the Edge: Buffering PLC Data During Network Outages"
+title: "Store-and-Forward at the Edge: Buffering Production Data During Network Outages"
 subtitle: "Keep collecting data when your network goes down"
-description: Learn how to implement store-and-forward buffering for PLC data collection. This guide shows you how to build an edge system with FlowFuse that maintains complete data continuity during network outages, preventing production data loss and compliance gaps.
-date: 
+description: Learn how to implement store-and-forward buffering for data collection. This guide shows you how to build an edge system with FlowFuse that maintains complete data continuity during network outages, preventing production data loss and compliance gaps.
+date: 2025-11-20
 authors: ["sumit-shinde"]
 image: 
 keywords: store-and-forward, edge computing, PLC data buffering, network resilience, industrial IoT, data continuity, FlowFuse, SQLite buffering, SCADA data collection, network outage recovery
@@ -14,39 +14,37 @@ Network outages happen. A fiber cut, a switch failure, or infrastructure mainten
 
 The problem is that all the data they generate during that outage has nowhere to go. Production metrics, quality measurements, and alarm events accumulate with no path to your historian or cloud platform. When connectivity returns, you're left with gaps in your operational records. Those gaps create real problems: incomplete batch records for quality audits, missing data for troubleshooting production issues, and compliance documentation that doesn't hold up under review.
 
-Store-and-forward solves this. This guide walks through building a store-and-forward system with FlowFuse that maintains complete data continuity during network failures.
+Store-and-forward solves this. This article walks through building a store-and-forward system with FlowFuse that maintains complete data continuity during network failures.
 
 ## What is Store-and-Forward?
 
-Store-and-forward is a pattern where data is saved locally before transmission, then forwarded when network connectivity is available. Your edge device writes every PLC data point to local SQLite storage first. If the network is up, the data transmits to your destination—MQTT broker, historian, cloud platform, or database. If the network is down, the data stays in storage until connectivity returns.
+Store-and-forward is a pattern where data is saved locally before transmission, then forwarded when network connectivity is available. Your edge device writes every data point to local SQLite storage first. If the network is up, the data transmits to your destination—MQTT broker, historian, cloud platform, or database. If the network is down, the data stays in storage until connectivity returns.
 
 The edge device operates in three states. During normal operation, data writes to the buffer and forwards successfully—the buffer stays near-empty. During a network outage, data continues writing to the buffer but cannot forward—the buffer grows. When connectivity returns, the device forwards the buffered backlog in chronological order while continuing to collect new data—the buffer drains back to empty.
 
-This solves the core problem in industrial data collection: network failures creating gaps in your time-series data. A four-hour outage would normally mean four hours of missing production data, incomplete quality records, and compliance issues. With store-and-forward, that same outage causes zero data loss. Your destination system receives complete chronological data with only a delivery delay.
-
-The implementation needs four components: persistent storage with transaction support, connectivity health checks, batch transmission with retry logic, and buffer management for storage limits. Build these correctly and network outages stop destroying data.
+This solves the core problem in industrial data collection: network failures creating gaps in your time-series data. A four-hour outage would normally mean four hours of missing production data. With store-and-forward, that same outage causes zero data loss. Your destination system receives complete chronological data with only a delivery delay.
 
 ## Getting Started
 
-Let's build a store-and-forward system that keeps your PLC data safe during network outages.
+Let's build a store-and-forward system to protect your data during network outages.
 
-We'll build this in six steps: first, set up data collection from your PLC. Second, create local storage to buffer that data. Third, store incoming data in the buffer. Fourth, implement connectivity monitoring. Fifth, build forwarding logic that sends buffered data to your destination when the network is available. Sixth, handle errors, retry logic, and buffer cleanup to make the system production-ready.
+We'll approach this in six steps: establish a connection to collect data, set up a local buffer to temporarily store that data, write incoming data to the buffer, monitor network connectivity status, create forwarding logic to transmit buffered data when connectivity returns, and finally add error handling, retry mechanisms, and buffer management to ensure reliable operation.
 
 ### Prerequisites
 
 You'll need the following before implementing store-and-forward:
 
-- **FlowFuse Edge Device**: A running FlowFuse instance deployed on your edge hardware or gateway device.
+- **Edge Device Running FlowFuse Agent**: A running FlowFuse instance deployed on your edge hardware or gateway device.
 - **node-red-contrib-sqlite**: SQLite node for local data storage.
 - **node-red-contrib-ping**: Ping node for connectivity monitoring.
 
-### Step 1: Set Up PLC Data Collection
+### Step 1: Set Up Data Collection
 
-Data collection is the foundation of store-and-forward. Your edge device needs reliable connectivity to your PLCs before you can buffer and forward their data.
+Data collection is the foundation of store-and-forward. Your edge device needs reliable connectivity to your data sources before you can buffer and forward their data.
 
-FlowFuse handles this through Node-RED's 5,000+ community nodes, which support virtually every PLC protocol—Siemens, Allen-Bradley, Modbus, OPC UA, and more. You collect data from your PLCs, transform it into the format you need, and prepare it for buffering.
+FlowFuse handles this through Node-RED's 5,000+ community nodes, which support virtually every industrial protocol and interface—Modbus, OPC UA, MQTT, Ethernet/IP, GPIO pins, serial connections, and more. You collect data from your sources, transform it into the format you need, and prepare it for buffering.
 
-For this guide, we'll assume you already have PLC data flowing into FlowFuse. The store-and-forward pattern works the same regardless of which PLCs or data source you're connected to.
+For this guide, we'll assume you already have data flowing into FlowFuse. The store-and-forward pattern works the same regardless of which data sources or protocols you're using.
 
 For more information on how FlowFuse can help you connect, collect, transform, and contextualize your data, and how it simplifies deployment, management, scaling, and security with enterprise features for production environments, [book a demo](/book-demo/).
 
@@ -65,8 +63,7 @@ Follow these steps to set up your SQLite buffer:
 ```sql
 CREATE TABLE IF NOT EXISTS data_buffer (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    timestamp INTEGER NOT NULL,
-    topic TEXT,
+    timestamp TEXT NOT NULL,
     sent INTEGER DEFAULT 0,
     payload TEXT,
     retry_count INTEGER DEFAULT 0,
@@ -74,20 +71,22 @@ CREATE TABLE IF NOT EXISTS data_buffer (
 );
 ```
 
-This table buffers data for any destination. The `topic` field defines where the data will be sent (e.g., MQTT topic, API URL, database target). The `payload` stores the serialized PLC data as JSON. The `sent` flag indicates whether the record is still pending (0) or successfully delivered (1). The `retry_count` tracks failed attempts to support retry logic and prevent endlessly stuck records.
+The payload stores the serialized data as JSON. The `sent` flag indicates whether the record is still pending (0) or has been successfully delivered (1) — this acts as a safety marker to prevent cleanup of unsent data. The `retry_count` tracks failed attempts to support retry logic and prevent records from getting stuck indefinitely.
 
-1. Connect an **Inject** node to **Sqlite** node
-2. Deploy your flow and click the inject node button to create the table.
+4. Connect an **Inject** node to **Sqlite** node
+5. Deploy your flow and click the inject node button to create the table.
 
-Your SQLite buffer is now ready to store PLC data during network outages. The next step implements the logic to write incoming data to this buffer.
+Your SQLite buffer is now ready to store data during network outages. The next step implements the logic to write incoming data to this buffer.
 
 ### Step 3: Store Incoming Data in Buffer
 
 With your SQLite buffer ready, implement the logic to write incoming PLC data to storage.
 
-1. Drag a **JSON** node onto the canvas and connect it to your PLC data input source.
+1. Drag a **JSON** node onto the canvas and connect it to your data input source.
 
 2. Double-click the node to open its configuration. Set the Action to `Always convert to JSON String` and set the Property to `msg.payload`, then click **Done** to save.
+
+> **Note**: JSON converts your data object into a text string for storage. If your data source already provides a JSON string (not an object), you must delete this node.
 
 3. Drag a **Change** node onto the canvas and connect it to the **JSON** node.
 
@@ -95,24 +94,19 @@ With your SQLite buffer ready, implement the logic to write incoming PLC data to
    - **Rule 1**: Set `msg.params` to `{}` (JSONata expression)
    - **Rule 2**: Set `msg.params.$timestamp` to `msg.timestamp`
    - **Rule 3**: Set `msg.params.$payload` to `msg.payload`
-   - **Rule 4**: Set `msg.params.$topic` to your topic string, for example: `acme_manufacturing/plant_01/floor_2/cell_a/machine_A12/measurements`
-
-The topic field stores your routing information. It could be an MQTT topic for publishing to a broker, an API endpoint URL for HTTP services, a database table name for historians, or any identifier that tells the forwarding logic where this data needs to go.
 
 5. Drag another **Sqlite** node onto the canvas and connect it to the **Change** node.
 
 6. Double-click the node to configure it. Select your existing **Sqlite** database, set the SQL Query mode to `Prepared Statement`, and in the SQL Query field, enter:
 
 ```sql
-INSERT INTO data_buffer (timestamp, topic, payload, sent, retry_count)
-VALUES ($timestamp, $topic, $payload, 0, 0);
+INSERT INTO data_buffer (timestamp, payload, sent, retry_count)
+VALUES ($timestamp, $payload, 0, 0);
 ```
 
 7. Click **Done** to save the configuration and deploy your flow.
 
-Your buffer now accumulates all incoming PLC data. Each data point is serialized to JSON, structured into parameters, and written to SQLite with `sent=0` (not yet forwarded) and `retry_count=0` (no transmission attempts). The prepared statement approach prevents SQL injection issues and handles special characters correctly.
-
-The next step implements connectivity monitoring to determine when your system can forward buffered data.
+Your buffer now accumulates all incoming data. Each data point is serialized to JSON, structured into parameters, and written to SQLite with `sent=0` (not yet forwarded) and `retry_count=0` (no transmission attempts). The prepared statement approach prevents SQL injection issues and handles special characters correctly.
 
 ### Step 4: Monitor Network Connectivity
 
@@ -122,7 +116,7 @@ Follow these steps to implement connectivity monitoring:
 
 1. Drag a **Ping** node onto the canvas.
 
-2. Double-click the node to configure it. Enter the IP address or hostname of your destination system in the Target field (e.g., `https://broker.flowfuse.cloud`), select mode to "Triggered", set "Ping every" to `30` seconds (adjust based on your requirements), name it "Network Health Check", and click **Done** to save.
+2. Double-click the node to configure it. Enter the IP address or hostname of your destination system in the Target field (e.g., `https://app.flowfuse.com`), select mode to "Automatic", set "Ping every" to `30` seconds (adjust based on your requirements), name it "Network Health Check", and click **Done** to save.
 
 3. Drag a **Switch** node onto the canvas and connect it to the **Ping** node.
 
@@ -147,7 +141,6 @@ The switch node routes messages based on ping results. When ping fails, `msg.pay
    - Click **Done** to save.
 
 4. Drag another **change** node onto the canvas and configure it:
-
     - **Rule 1**: Set `flow.flowError` to **false** (this resets the error state triggered in the [Handle Errors and Disconnections](#handle-errors-and-disconnections) section).
 
 5. Drag a **Link Out** node onto the canvas and connect it to the "Set Network Online" node. Name it "Trigger Forward".
@@ -160,41 +153,34 @@ The forwarding logic retrieves unsent data from the buffer, prepares it for tran
 
 #### Retrieve and Prepare Unsent Records
 
-1. Drag a **Link In** node onto the canvas.
+1. Drag a **Link In** node onto the canvas and name it "Trigger Forward". Link this to the **Link Out** node from Step 4.
 
-2. Name it "Trigger Forward" and link this to the **Link Out** node from Step 4.
-
-3. Drag an **SQLite** node onto the canvas and connect it to the Link In node.
-
-4. Name it "Get Unsent Data" and configure it by selecting your database, setting "SQL Query" to **Fixed statement**, and entering the following SQL:
-
+2. Drag an **SQLite** node onto the canvas and connect it to the **Link In** node. Name it "Get Unsent Data" and configure it by selecting your database, setting SQL Query mode to **Fixed statement**, and entering the following SQL:
 ```sql
-SELECT * FROM data_buffer 
-WHERE sent = 0 
-ORDER BY timestamp ASC 
-LIMIT 50;
+   SELECT * FROM data_buffer 
+   WHERE sent = 0 
+   ORDER BY timestamp ASC 
+   LIMIT 50;
 ```
 
-5. Click **Done** to save.
+3. Click **Done** to save.
 
-6. Drag a **Split** node onto the canvas and connect it to the SQLite node.
+4. Drag a **Split** node onto the canvas and connect it to the SQLite node. Configure it to split **msg.payload** and click **Done**.
 
-7. Configure it to split **msg.payload** and click **Done**.
+5. Drag a **Change** node onto the canvas and connect it to the **Split** node. Name it "Prepare Forward Message" and add the following rules:
+   - **Rule 1**: Set `msg.record_id` to `msg.payload.id`
+   - **Rule 2**: Set `msg.payload` to `msg.payload.payload`
 
-8. Drag a **Change** node onto the canvas and connect it to the Split node.
+6. Click **Done** to save.
 
-9. Name it "Prepare Forward Message" and add the following rules:
-   - **Rule 1**: Set **msg.topic** to **msg.payload.topic**
-   - **Rule 2**: Set **msg.id** to **msg.payload.id**
-   - **Rule 3**: Set **msg.payload** to **msg.payload.payload**
+7. Drag a **JSON** node onto the canvas and connect it to the **Change** node. Configure it by setting Action to **Always Convert to JSON Object** and Property to `msg.payload`, then click **Done**.
 
-10. Click **Done** to save.
+8. Drag a **Change** node onto the canvas and connect it to the **JSON** node. Name it "Store Record ID" (this will be used for retry_count updates in [Handle Errors and Disconnections](#handle-errors-and-disconnections) section ) and configure the following rule:
+   - **Rule 1**: Set `flow.record_id` to `msg.record_id`
 
-11. Drag a **JSON** node onto the canvas and connect it to the **Change** node.
+9. Click **Done** to save.
 
-12. Configure it by setting "Action" to **Always Convert to JSON Object** and setting "Property" to **msg.payload**, then click **Done**.
-
-13. Drag a **Link Out** node onto the canvas and connect it to the **JSON** node. Name it "Send to Destination".
+10. Drag a **Link Out** node onto the canvas and connect it to the **Change** node. Name it "Send to Destination".
 
 Your forwarding logic now retrieves unsent records, prepares them for transmission, and passes them to the next stage for sending.
 
@@ -210,59 +196,58 @@ This step implements data transmission to your destination with comprehensive er
 
 3. Drag another **Switch** node onto the canvas and connect it to the first switch node's output. Name it "Check Flow Error", set the Property to `flow.flowError`, add a condition `is false`, and click **Done** to save.
 
-4. Drag an **MQTT Out** node onto the canvas and connect it to the second switch node's output, and click **Done** to save, the topic will be dynamically set from `msg.topic`
+4. Drag a **Change** node onto the canvas and connect it to the second switch node's output. Configure it to append the record ID into the payload for transmission confirmation:
+   - Rule 1: Set `msg.record_id` to `msg.payload.record_id`
 
-**Note:** This guide uses FlowFuse's built-in MQTT broker with the ff-mqtt-out node. Simply drag the node onto your canvas—it automatically connects to FlowFuse's MQTT broker without any manual setup. This feature is available on Team tier and above.
+5. Drag a **Project Out** node onto the canvas and connect it to the **Change** node. Double-click the node to open its configuration. Select "Send to specified node" as the mode, then enter select target "broadcast message" and enter topic (for example: `acme_manufacturing/plant_01/floor_2/cell_a/machine_A12/measurements`). Click **Done** to save the configuration.
 
-5. Click **Configure Access Control**. You will be redirected to the platform's broker client management section, filtered to show the client created for this instance, Click the client **edit**, select **Publish**, and then click **Confirm**.
+> **Note:** you can use any output node that suits your architecture instead of Project Out, such as **MQTT Out** for publishing to MQTT brokers, **HTTP Request** for sending data to REST APIs, **Database** nodes for writing directly to databases or other protocol-specific nodes depending on your destination requirements.
 
-6. Go back to the editor and deploy the flow.
+
+6. Deploy the flow.
 
 #### Mark Records as Sent and Clear Buffer
 
-1. Drag a **Change** node onto the canvas and connect it to the second switch node's output.
+1. Drag a **Project In** node onto the canvas, double-click the node to configure it with source set to "Listen for broadcast messages", and configure it to listen on all instances and devices with the topic that should match the same topic you configured in the Project Out node earlier to subscribe to your data that was sent before.
 
-2. Name it "Prepare Record ID" and add the following rules:
-   - **Rule 1**: Set `msg.params` to `{}` (JSONata expression)
-   - **Rule 2**: Set `msg.params.$record_id` to `msg.id`
+> **Note:** The Project In node is used here to confirm successful transmission when using Project Out nodes. If you are using other output nodes such as MQTT Out, HTTP Request, or database nodes, replace the Project In node with the corresponding confirmation mechanism for your chosen protocol. For example, if your output node such as HTTP Request responds with a status code or success message, you can use that response directly for confirmation instead of the Project In node.
+
+2. Drag a **Change** node onto the canvas and connect it to the **Project In** node. Name it "Prepare Record ID" and configure the following rules:
+   - **Rule 1**: Set `msg.params` to `{}` (JSONata expression: `{}`)
+   - **Rule 2**: Set `msg.params.$record_id` to `msg.record_id`
 
 3. Click **Done** to save.
 
-4. Drag an **SQLite** node onto the canvas and connect it to the **Change** node.
-
-5. Name it "Mark as Sent", double-click it and select your database, set SQL Query mode to **Prepared Statement**, and enter the following SQL:
-
+4. Drag an **SQLite** node onto the canvas and connect it to the **Change** node. Name it "Mark as Sent", then double-click it to configure. Select your database, set SQL Query mode to **Prepared Statement**, and enter the following SQL:
 ```sql
-UPDATE data_buffer 
-SET sent = 1 
-WHERE id = $record_id;
+   UPDATE data_buffer 
+   SET sent = 1 
+   WHERE id = $record_id;
 ```
 
-6. Click **Done** to save.
+5. Click **Done** to save.
 
-7. Drag another **SQLite** node onto the canvas and connect it to the previous SQLite node.
-
-8. Name it "Delete Record", double-click it and select your database, set SQL Query mode to **Prepared Statement**, and enter the following SQL:
-
+6. Drag another **SQLite** node onto the canvas and connect it to the previous SQLite node. Name it "Delete Record", then double-click it to configure. Select database, set SQL Query mode to **Prepared Statement**, and enter the following SQL:
 ```sql
-DELETE FROM data_buffer 
-WHERE id = $record_id;
+   DELETE FROM data_buffer
+   WHERE id = $record_id
+   AND sent = 1;
 ```
 
-9. Click **Done** to save.
+7. Click **Done** to save and deploy the flow.
 
 #### Handle Errors and Disconnections
 
-1. Drag a **Catch** node onto the canvas. Configure it to catch errors from all nodes (or scope it to specific nodes if preferred).
+1. Drag a **Catch** node onto the canvas. Configure it to catch errors from all nodes.
 
-2. Drag a **Change** node onto the canvas and connect it to the catch node.
+2. Drag a **Change** node onto the canvas and connect it to the **Catch** node.
 
 3. Name it "Set Flow Error" and configure it:
    - **Rule 1**: Set `flow.flowError` to `true` (boolean)
 
 4. Click **Done** to save.
 
-5. Drag a **Status** node onto the canvas and configure it to monitor the MQTT Out node's status.
+5. Drag a **Status** node onto the canvas and configure it to monitor the **Project** node's status.
 
 6. Drag a **Switch** node onto the canvas and connect it to the status node.
 
@@ -274,7 +259,7 @@ WHERE id = $record_id;
 
 10. Name it "Prepare Retry Update" and configure it:
     - **Rule 1**: Set `msg.params` to `{}` (JSONata expression)
-    - **Rule 2**: Set `msg.params.$record_id` to `msg.id`
+    - **Rule 2**: Set `msg.params.$record_id` to `flow.record_id`
 
 11. Click **Done** to save.
 
@@ -290,10 +275,15 @@ WHERE id = $record_id;
 
 14. Click **Done** to save and deploy your flow.
 
+
 ## Conclusion
 
-Your store-and-forward system is now complete. PLC data writes to the local buffer, forwards to your destination when the network is available, and accumulates safely during outages without data loss.
+You now have a working store-and-forward system that protects your data during network failures.
 
-The system operates autonomously: during normal operation, data flows through the buffer with minimal latency. During network outages, data accumulates in SQLite storage with no loss. When connectivity returns, the system automatically forwards the backlog in chronological order while continuing to collect new data.
+When the network is up, data flows through the buffer and transmits immediately. When the network goes down, data accumulates in SQLite. When connectivity returns, the buffered data forwards automatically while new data continues collecting. No data is lost, regardless of how long the outage lasts.
 
-This implementation provides the foundation for production-grade industrial data collection with complete continuity during network failures.
+This pattern solves a common problem in industrial environments: maintaining complete time-series data when network infrastructure fails. Your production systems can now operate independently of network reliability.
+
+The system you've built is production-ready as-is, but you can extend it based on your requirements—add monitoring for buffer capacity, implement data validation rules, or configure forwarding to multiple destinations. The core mechanism remains the same.
+
+If you want to get the flow template that you can use directly and modify according to your needs, check out our [latest blueprint]().
