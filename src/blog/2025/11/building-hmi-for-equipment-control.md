@@ -5,7 +5,7 @@ description: "Build a modern HMI using FlowFuse to monitor and control factory e
 date: 2025-11-19
 keywords: FlowFuse, web HMI, PLC control, Node-RED dashboard, industrial automation, edge device, MQTT, factory monitoring, SCADA alternative, remote equipment control
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/11/images/building-a-web-hmi-for-factory.png
 tags:
   - flowfuse
 ---
