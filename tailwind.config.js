@@ -1,10 +1,29 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-    content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','.eleventy.js'],
+    content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','src/**/*.js','.eleventy.js'],
     safelist: [
       'ml-4',
-      'ml-8'
+      'ml-8',
+      'ml-6',
+      'max-w-[90%]',
+      'py-4',
+      'py-2',
+      'bg-indigo-600',
+      'text-white',
+      'rounded-br-sm',
+      'bg-gray-100',
+      'text-gray-800',
+      'rounded-bl-sm',
+      'justify-end',
+      'justify-start',
+      'max-w-xs',
+      'lg:max-w-md',
+      'overflow-auto',
+      'rounded-lg',
+      'px-4',
+      'mb-4',
+      'flex'
     ],
     theme: {
         extend: {
