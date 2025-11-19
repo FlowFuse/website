@@ -729,7 +729,7 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.className = 'flex justify-start mb-4';
 
         const messageBubble = document.createElement('div');
-        let paddingClass = aiMessage.kind === 'guide' ? 'py-4' : 'py-2';
+        let paddingClass = (aiMessage.kind === 'guide' || aiMessage.kind === 'resources') ? 'py-4' : 'py-2';
         messageBubble.className = `max-w-[90%] px-4 ${paddingClass} rounded-lg bg-gray-100 text-gray-800 rounded-bl-sm rich-content overflow-auto`;
 
         // Render content based on message kind
@@ -953,7 +953,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="flex items-start justify-between gap-2">
                                     <h6>${flow.title}</h6>
                                     <div class="actions flex items-start gap-4">
-                                        <button class="text-gray-600 expand flex items-center plain">
+                                        <button class="text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 expand flex items-center plain transition-colors duration-200 rounded px-2 py-1">
                                             <span>JSON</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 down-arrow" viewBox="0 0 20 20" fill="currentColor">
                                               <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -962,7 +962,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                               <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
                                             </svg>
                                         </button>
-                                        <button class="text-gray-600 copy plain">
+                                        <button class="text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 copy plain transition-colors duration-200 rounded p-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="h-6 w-6 copy-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                               <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                                             </svg>
