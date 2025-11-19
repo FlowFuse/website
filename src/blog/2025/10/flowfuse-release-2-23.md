@@ -39,7 +39,7 @@ We've solved it. You can now manage permissions at the Application level. Now on
 ![Image of FlowFuse Expert](./images/expert.png)
 _[The FlowFuse Expert gives step-by-step instructions for building flows]_
 
-You can now get complete instructions to build a Node-RED flow on [flowfuse.com](https://flowfuse.com) using the FlowFuse Expert! The newest feature in the FlowFuse AI toolkit, the FlowFuse Expert provides detailed guidance on building a Node-RED flow for any purpose you have in mind. 
+You can now get complete instructions for building a Node-RED flow on [flowfuse.com](https://flowfuse.com) using the FlowFuse Expert! This newest feature in the FlowFuse AI toolkit provides detailed guidance on creating Node-RED flows for any purpose you have in mind.
 
 Head over to [flowfuse.com](https://flowfuse.com) to check it out! We have big plans in mind for this feature, but can't say much yet. For now, it's enough to say that low code development is headed toward a whole new level with FlowFuse.
 
