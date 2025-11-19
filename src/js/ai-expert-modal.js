@@ -69,10 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const flowSection = e.target.closest('[data-flow-id]');
             if (flowSection) {
                 const preElement = flowSection.querySelector('pre');
+                const preContainer = preElement?.parentElement;
                 const downChevron = flowSection.querySelector('.down-arrow');
                 const upChevron = flowSection.querySelector('.up-arrow');
-                if (preElement) {
+                if (preElement && preContainer) {
                     preElement.classList.toggle('hidden');
+                    preContainer.classList.toggle('mt-3');
                     downChevron.classList.toggle('hidden');
                     upChevron.classList.toggle('hidden');
                 }
@@ -934,7 +936,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 flowsStore[flowId] = flowsJSON;
                 html += `
                 <li class="overflow-auto" data-flow-id="${flowId}">
-                    <div class="flex flex-col p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 active:bg-indigo-100 active:border-indigo-500 transition-all duration-200 overflow-auto">
+                    <div class="flex flex-col p-3 bg-white border border-gray-200 rounded-lg overflow-auto">
                         <div class="flex items-start gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24">
                                   <rect width="24" height="24" fill="gray" rx="4"/>
@@ -979,7 +981,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                         <div class="overflow-auto rounded-md text-gray-300 ml-6" style="max-height: 300px; background-color: #404040;">
-                            <pre class="overflow-auto hidden mt-3 py-2 px-4">${flowsJSON}</pre>
+                            <pre class="overflow-auto hidden py-2 px-4">${flowsJSON}</pre>
                         </div>
                     </div>
                </li>`
