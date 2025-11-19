@@ -5,10 +5,11 @@ title: Security Statement - FlowFuse
 
 <div class="prose prose-blue container m-auto max-w-4xl px-6 pb-24">
 
-Security aspects of FlowFuse are divided up into three sections;
+Security aspects of FlowFuse are divided up into four sections;
 1. [Application level](#application)
 1. [FlowFuse configuration](#flowfuse-configuration)
 1. [Organization](#organization)
+1. [GxP Readiness](#gxp-readiness)
 
 ## Application
 
