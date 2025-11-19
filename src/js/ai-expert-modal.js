@@ -904,7 +904,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 html += `
                 <a href="${resourceUrlWithUTM}" target="_blank" rel="noopener noreferrer"
-                   class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors">
+                   class="block p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 active:bg-indigo-100 active:border-indigo-500 transition-all duration-200">
                     <div class="flex items-start gap-2">
                         <img src="${faviconUrl}" class="w-4 h-4 flex-shrink-0 mt-0.5" alt="">
                         <div class="flex-1 min-w-0 overflow-hidden">
@@ -933,9 +933,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 html += `
                 <li class="overflow-auto" data-flow-id="${flowId}">
                     <div class="flex flex-col p-3 bg-white border border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-gray-50 transition-colors overflow-auto">
-                        <div class="flex gap-3">
-                            <div class="icon content-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <div class="flex items-start gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24">
                                   <rect width="24" height="24" fill="gray" rx="4"/>
                                   <g clip-path="url(#a)">
                                     <path fill="#fff" d="M0 12v-1.647c5.09 0 5.81-.9 6.44-1.695.72-.9 1.46-1.6 3.88-1.6v1.648c-1.76 0-2.04.354-2.51.948C6.79 10.937 5.5 12 0 12Z"/>
@@ -947,8 +946,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                       <path fill="#fff" d="M0 5h20v14H0z"/>
                                     </clipPath>
                                   </defs>
-                                </svg>
-                            </div>
+                            </svg>
                             <div class="flex flex-1 flex-col overflow-auto">
                                 <div class="flex items-start justify-between gap-2">
                                     <h6>${flow.title}</h6>
@@ -978,7 +976,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </p>
                             </div>
                         </div>
-                        <div class="overflow-auto rounded-md text-gray-300 ml-8" style="max-height: 300px; background-color: #404040;">
+                        <div class="overflow-auto rounded-md text-gray-300 ml-6" style="max-height: 300px; background-color: #404040;">
                             <pre class="overflow-auto hidden mt-3 py-2 px-4">${flowsJSON}</pre>
                         </div>
                     </div>
