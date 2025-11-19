@@ -77,15 +77,17 @@ Choose the node that matches your PLC:
 3. Search for your protocol node (e.g., `node-red-contrib-s7` for Siemens).
 4. Click **Install**.
 
-**Configuring Your Connection:**
+**Configuring Your Connection**
 
-After installation, drag the protocol node onto your canvas. You'll need two types of nodes: one for reading PLC status and one for sending commands.
+After installation, drag the protocol node onto your canvas. You’ll need two types of nodes: one for reading equipment status and one for sending commands.
 
-Start with an input node for reading PLC status (motor running, faults, sensor values)—use S7 In for Siemens, Modbus Read for Modbus devices, or OPC UA Client for OPC UA servers. Open the node configuration and click the pencil icon next to the Server/Connection dropdown to create a new connection configuration. Here you'll enter your PLC's connection details such as IP address, port, credentials, and polling interval. The specific parameters vary by protocol—if you need help understanding what to configure, refer to the documentation links in the protocol nodes list above. Each protocol node link includes detailed setup guides. After saving this connection configuration, specify the variable addresses you want to monitor. If available, enable efficiency features like "emit only on change" or "subscribe mode" to avoid unnecessary updates.
+Start with an input node for reading status (motor running, faults, sensor values). Use **S7 In** for Siemens, **Modbus Read** for Modbus devices, or **OPC UA Client** for OPC UA servers, etc. Open the node configuration and click the pencil icon next to the **Server/Connection** dropdown to create a new connection configuration. Here, enter the connection details for your PLC or server — such as IP address, port, credentials, and polling interval. The exact parameters vary by protocol; if you need help understanding what to configure, refer to the documentation links in the protocol node list above. Each link includes detailed setup guidance.
 
-For sending commands (start motor, stop motor, setpoints), drag the corresponding output node onto your canvas. When you open its configuration, you'll see the Server/Connection dropdown now shows your existing connection, select it instead of creating a new one. This shared connection approach means you configure the IP address, port, and credentials just once, then reuse that configuration across all your PLC nodes. You only need to specify the variable addresses that control your equipment for each node, then connect these nodes to your dashboard buttons.
+After saving the connection configuration, specify the **variable addresses that provide the status information** you want to read (tags/registers such as motor state, faults, and sensor values). If available, enable efficiency features like **“emit only on change”** or **“subscribe mode”** to minimize unnecessary updates.
 
-**Important Note:** Some PLCs require configuration in their programming software before accepting external connections. For example, Siemens S7 needs "PUT/GET" communication enabled in TIA Portal, and Allen-Bradley may need explicit messaging configured in Studio 5000. Check your PLC documentation for connection prerequisites.
+For sending commands (start motor, stop motor, setpoints), drag the corresponding output node onto your canvas. When configuring it, select the **same Server/Connection** from the dropdown instead of creating a new one. This shared connection approach means the IP address, port, and credentials only need to be configured once and can be reused across all your PLC/server nodes. You then only need to specify the variable addresses that control your equipment, and connect those nodes to your dashboard buttons or automation logic.
+
+**Important Note:** Some PLCs require configuration in their engineering software before allowing external access. For example, Siemens S7 requires **PUT/GET communication** enabled in TIA Portal, and Allen-Bradley controllers may need **explicit messaging** enabled in Studio 5000. Refer to your PLC’s documentation for any communication prerequisites.
 
 **Test Your Connection:**
 
