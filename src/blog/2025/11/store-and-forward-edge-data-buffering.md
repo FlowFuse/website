@@ -12,6 +12,8 @@ tags:
 
 Network outages happen. A fiber cut, a switch failure, or infrastructure maintenance can take your connectivity offline without warning. When it does, your PLCs continue operating normally—they don't wait for the network to recover.
 
+<!--more-->
+
 The problem is that all the data they generate during that outage has nowhere to go. Production metrics, quality measurements, and alarm events accumulate with no path to your historian or cloud platform. When connectivity returns, you're left with gaps in your operational records. Those gaps create real problems: incomplete batch records for quality audits, missing data for troubleshooting production issues, and compliance documentation that doesn't hold up under review.
 
 Store-and-forward solves this. This article walks through building a store-and-forward system with FlowFuse that maintains complete data continuity during network failures.
