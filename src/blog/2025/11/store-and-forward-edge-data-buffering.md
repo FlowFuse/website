@@ -28,7 +28,7 @@ This solves the core problem in industrial data collection: network failures cre
 
 Let's build a store-and-forward system to protect your data during network outages.
 
-We'll approach this in six steps: establish a connection to collect data, set up a local buffer to temporarily store that data, write incoming data to the buffer, monitor network connectivity status, create forwarding logic to transmit buffered data when connectivity returns, and finally add error handling, retry mechanisms, and buffer management to ensure reliable operation.
+We'll approach this in six steps: establish a connection to collect data, set up a local buffer to temporarily store that data, write incoming data to the buffer, monitor network connectivity status, create forwarding logic to transmit buffered data when connectivity returns, and finally add error handling and buffer management to ensure reliable operation.
 
 ### Prerequisites
 
@@ -69,15 +69,14 @@ CREATE TABLE IF NOT EXISTS data_buffer (
     timestamp TEXT NOT NULL,
     sent INTEGER DEFAULT 0,
     payload TEXT,
-    retry_count INTEGER DEFAULT 0,
     created_at INTEGER DEFAULT (strftime('%s','now') * 1000)
 );
 ```
 
-The payload stores the serialized data as JSON. The `sent` flag indicates whether the record is still pending (0) or has been successfully delivered (1) — this acts as a safety marker to prevent cleanup of unsent data. The `retry_count` tracks failed attempts to support retry logic and prevent records from getting stuck indefinitely.
+The payload stores the serialized data as JSON. The `sent` flag indicates whether the record is still pending (0) or has been successfully delivered (1) — this acts as a safety marker to prevent cleanup of unsent data.
 
-4. Connect an **Inject** node to **Sqlite** node
-5. Deploy your flow and click the inject node button to create the table.
+1. Connect an **Inject** node to **Sqlite** node
+2. Deploy your flow and click the inject node button to create the table.
 
 Your SQLite buffer is now ready to store data during network outages. The next step implements the logic to write incoming data to this buffer.
 
@@ -109,13 +108,13 @@ _Change node rules for preparing SQLite insert parameters_
 6. Double-click the node to configure it. Select your existing **Sqlite** database, set the SQL Query mode to `Prepared Statement`, and in the SQL Query field, enter:
 
 ```sql
-INSERT INTO data_buffer (timestamp, payload, sent, retry_count)
-VALUES ($timestamp, $payload, 0, 0);
+INSERT INTO data_buffer (timestamp, payload, sent)
+VALUES ($timestamp, $payload, 0);
 ```
 
 7. Click **Done** to save the configuration and deploy your flow.
 
-Your buffer now accumulates all incoming data. Each data point is serialized to JSON, structured into parameters, and written to SQLite with `sent=0` (not yet forwarded) and `retry_count=0` (no transmission attempts). The prepared statement approach prevents SQL injection issues and handles special characters correctly.
+Your buffer now accumulates all incoming data. Each data point is serialized to JSON, structured into parameters, and written to SQLite with `sent=0` (not yet forwarded). The prepared statement approach prevents SQL injection issues and handles special characters correctly.
 
 ### Step 4: Monitor Network Connectivity
 
@@ -205,15 +204,9 @@ _Change node extracting record ID and payload for forwarding_
 ![JSON node configured to parse stored JSON string back to object](./images/parse-json.png){data-zoomable}
 _JSON node configured to parse stored JSON string back to object_
 
-8. Drag a **Change** node onto the canvas and connect it to the **JSON** node. Name it "Store Record Id" (this will be used for retry_count updates in [Handle Errors and Disconnections](#handle-errors-and-disconnections) section ) and configure the following rule:
-   - **Rule 1**: Set `flow.record_id` to `msg.record_id`
+8. Click **Done** to save.
 
-![Change node storing current record ID for error handling](./images/store-record-id.png){data-zoomable}
-_Change node storing current record ID for error handling_
-
-9. Click **Done** to save.
-
-10.  Drag a **Link Out** node onto the canvas and connect it to the **Change** node. Name it "Send to Destination".
+9. Drag a **Link Out** node onto the canvas and connect it to the **JSON** node. Name it "Send to Destination".
 
 Your forwarding logic now retrieves unsent records, prepares them for transmission, and passes them to the next stage for sending.
 
@@ -305,28 +298,7 @@ _Change node setting error flag when transmission fails_
 9. Name it "Set Network Failure Flag" and configure it:
    - **Rule 1**: Set `flow.networkOnline` to `false` (boolean)
 
-10. Drag another **Change** node onto the canvas and connect it to the "Set Network Failure Flag" and "Set Flow Error" change node's output.
-
-11.  Name it "Set Params" and configure it:
-    - **Rule 1**: Set `msg.params` to `{}` (JSONata expression)
-    - **Rule 2**: Set `msg.params.$record_id` to `flow.record_id`
-
-![Change node preparing parameters for retry count increment](./images/set-params-step-6.png){data-zoomable}
-_Change node preparing parameters for retry count increment_
-
-12.  Click **Done** to save.
-
-13.  Drag an **SQLite** node onto the canvas and connect it to the "Prepare Retry Update" change node.
-
-14.  Name it "Increment Retry Count", double-click it and select your database, set SQL Query mode to **Prepared Statement**, and enter the following SQL:
-
-```sql
-UPDATE data_buffer 
-SET retry_count = retry_count + 1 
-WHERE id = $record_id;
-```
-
-15. Click **Done** to save and deploy your flow.
+10. Click **Done** to save and deploy your flow.
 
 ## Conclusion
 
