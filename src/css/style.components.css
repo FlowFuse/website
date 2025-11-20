@@ -178,7 +178,7 @@
         box-shadow: inset 0px 2px 5px #00000052;
     }
 
-    .webinar-tile a.webinar-tile-img img, 
+    .webinar-tile a.webinar-tile-img img,
     .webinar-tile a.webinar-tile-img svg {
         transition: transform 0.3s;
     }
@@ -305,6 +305,11 @@
     transition: var(--tdur, 0.15s) transform, var(--tdur, 0.15s) box-shadow;
 }
 
+.rich-content button.plain {
+    transform: none;
+    box-shadow: none;
+}
+
 /* Remove bottom margin from last element in rich content */
 .rich-content > *:last-child {
     margin-bottom: 0;
@@ -318,4 +323,9 @@
 /* Remove all margins from chat message paragraphs */
 .rich-content > p:only-child {
     margin: 0;
+}
+
+/* Remove bottom margin from single list item */
+.rich-content li:only-child {
+    margin-bottom: 0;
 }
