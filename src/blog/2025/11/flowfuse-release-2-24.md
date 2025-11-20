@@ -23,11 +23,16 @@ You are no longer limited in your interactions with the FlowFuse Expert by the l
 
 Even better, when you're working in the Immersive Editor, the Expert will recommend flows based on your inputs, and you can copy and paste them directly into the Node-RED Editor, once again saving you time and reducing the effort needed to develop in Node-RED.
 
-## Scheduled Updates and Restarts
+## Automatic Updates of Instances
 
-Until now, when Node-RED instances have needed a restart, they had to be restarted manually. Same for updates: updates had to be applied by you, taking time away from your critical operations.
+When there are new updates to Node-RED, or the FlowFuse components, it has been a manual task for users to spot the update and trigger the upgrade to get the latest fixes and features applied to their instances.
 
-Now, restarts can be scheduled at a time that is convenient for you. What's more, you can choose to have an update applied automatically when it is available. Schedule your updates and restarts and worry less about managing them manually.
+We're here to make your tasks easier, not to give you more maintenance burdens. So with this release, we've introduced the ability to automatically apply any updates that are available to Node-RED or the FlowFuse stack around it. You get to pick a maintenance window during the week for when the updates should get applied.
+
+For Starter tier teams, we will apply a default schedule for overnight at the weekend to minimise disruption. For Pro and Enterprise tiers, users can configure their own schedule via the Instance's Maintenance settings tab.
+
+Keeping your software up to date is important, and this features gives you one less thing to worry about.
+
 
 ## Simpler Edge Device Addition
 
