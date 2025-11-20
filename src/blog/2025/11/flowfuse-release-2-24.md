@@ -16,6 +16,8 @@ This release unlocks several new abilities for our users, speeding your developm
 <!--more-->
 
 ## FlowFuse Expert
+![Image of FlowFuse Expert UI](./images/ff-expert-ui.png)
+_[FlowFuse Expert UI]_
 
 The FlowFuse Expert used to live only on flowfuse.com, where you could use an LLM trained on FlowFuse and Node-RED documentation, and trained by the Node-RED experts at FlowFuse. Now, we've taken it a step further. The FlowFuse Expert is now available inside of the FlowFuse UI, and even in the Immersive Editor in Node-RED! 
 
@@ -24,6 +26,8 @@ You are no longer limited in your interactions with the FlowFuse Expert by the l
 Even better, when you're working in the Immersive Editor, the Expert will recommend flows based on your inputs, and you can copy and paste them directly into the Node-RED Editor, once again saving you time and reducing the effort needed to develop in Node-RED.
 
 ## Automatic Updates of Instances
+![Image of Scheduled Updates UI](./images/scheduler.png)
+_[Scheduled Updates Interface]_
 
 When there are new updates to Node-RED, or the FlowFuse components, it has been a manual task for users to spot the update and trigger the upgrade to get the latest fixes and features applied to their instances.
 
@@ -35,6 +39,8 @@ Keeping your software up to date is important, and this features gives you one l
 
 
 ## Simpler Edge Device Addition
+![Image of UI for provisioning token](./images/token.png)
+_[Provisioning Token Interface]_
 
 Many of our customers make use of large fleets of edge devices. Through the use of provisioning tokens it's easy to get lots of devices setup quickly - but there were still some additional steps needed to get the devices properly named and organised. Now, when setting up a new device with a provisioning token, it is possible to name it at the same time, reducing the complexity of the workflow. We want you to be able to scale up your edge device count quickly and easily, and this represents a significant step in that direction. 
 
@@ -50,7 +56,7 @@ FlowFuse MCP nodes allow you to surface information to an LLM to create custom A
 
 FlowFuse Assistant is our collection of AI-enhancements within the Node-RED editor - assisted creation of Function nodes, autocompleting flows and documentation generation amongst other features. Currently it's an exclusive feature of the FlowFuse platform, but we're hard at work to bring it to standalone Node-RED instances.
 
-Coming soon you'll be able to experience the power of AI-enhanced development within Node-RED wherever its running.
+Coming soon you'll be able to experience the power of AI-enhanced development within Node-RED wherever it's running.
 
 
 ## What else is new?
