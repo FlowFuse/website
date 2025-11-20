@@ -22,21 +22,25 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **“Chargeback”** means the Company’s recovery of previously paid but unearned incentive payments from a Salesperson.
 
+**“Commissionable Value”** means the amount upon which a Salesperson’s commission is calculated. For all Qualifying Sales, the Commissionable Value is: Commissionable Value = Incremental ARR + (5% × Non-Recurring Revenue)
+
 **“Company”** or “**FlowFuse**” means FlowFuse Inc and any of its affiliates, subsidiaries, successors, or assigns.
 
 **“Customer”** means a customer that purchases products or services from the Company pursuant to the terms of an Agreement.
 
 **“Commissions”** means Incentive Compensation relating to a Salesperson’s sale of qualifying products and services on authorized accounts in his or her sales territories.  As described in Section 9, Commissions are not deemed Earned until the satisfaction of a number of conditions, including the customer’s payment of the invoice in full.  However, except as provided by Section 9 or Section 15 of the Plan, Commissions will be advanced when the applicable sale or order is Booked (a “**Booking** **Advance**”). 
 
+**"Draw Payment"** means advance payments made against anticipated future Commissions.
+
 **"Incentive Compensation"** means the compensation, in excess of Base Salary, earned upon meeting specific individual and/or Company performance goals. Incentive Compensation for a particular Salesperson is set forth in Exhibit A.
 
-**"Incremental ARR"** means the incremental Annual Recurring Revenue generated from a sale. For new business, this is the total Annual Contract Value (ACV) of the first contract. For upsells and renewals, this is only the incremental new ARR (the increase in annual contract value compared to the previous contract).
-
-**"Draw Payment"** means advance payments made against anticipated future Commissions.
+**"Incremental ARR"** means the incremental Annual Recurring Revenue generated from a sale. For new business, this is the total Annual Recurring Revenue (ARR) of the first contract. For upsells and renewals, this refers onlly to the increase in the annual recurring revenue relative to the prior contract.
 
 **“Recoverable Draw”** is a Draw Payment offset by Earned Commissions.  Once Commissions are calculated, there will be a true up to recover the Draw Payment and pay the balance due (if any). If the value of the Draw Payment exceeds the Earned Commissions, the Company reserves the right to continue to deduct the value of Draw Payments from future Commissions until the full Draw Payment amount is recovered. This is referred to as a negative carry forward balance.
 
 **“Non-Recoverable Draw”** is a Draw Payment offset by Earned Commissions.  However, if the Non-Recoverable Draw Payment exceeds the value of Earned Commissions, the difference is not recovered by the Company. If Earned Commissions exceed the value of the Non-Recoverable Draw, the Company will pay the greater of the two.
+
+**"Non-Recurring Revenue"** means revenue from one-time or non-renewing products or services, including but not limited to professional services, onboarding fees, training packages, and any other non-subscription charges.
 
 **“Salesperson”** means an employee of the Company who works in the position identified in Exhibit A.
 
@@ -190,7 +194,7 @@ The Salesperson holds the job title/role of: Sales Representative
 
 ### 3. Authorized Sales/Territory
 
-The Salesperson will be authorized to sell to any customer with an Annual Contract Value in excess of $5,000 per year. The Salesperson recognizes that the Territory will be redistributed when additional Salespersons join the Company.
+The Salesperson will be authorized to sell to any customer with an Annual Recurring Revenue in excess of $5,000 per year. The Salesperson recognizes that the Territory will be redistributed when additional Salespersons join the Company.
 
 ### 4. Authorized Accounts
 
@@ -205,13 +209,25 @@ Salesperson is authorized to sell the following products and/or services, unless
 
 ### 6. Quota Credit
 
-Except as otherwise stated herein, quota credit will be based on net new Annual Recurring Revenue (ARR) plus services sold on New Business deals for the authorized territory or authorized Accounts.
+Except as otherwise stated herein, quota credit will be based on the following:
+1. Net new Annual Recurring Revenue (ARR) generated from New Business deals within the Salesperson’s authorized territory or accounts; plus
+2. Five percent (5%) of any Non-Recurring Revenue (NRR) associated with the New Business transaction.
+
+Quota credit for upsells and renewals will continue to be based on Incremental ARR only.
 
 ### 7. Credit For Partner Bookings
 
 Bookings completed through partners will receive a 20% uplift in the value of the deal for commission purposes. For example, a $100,000 booking sold through a partner where the partner receives a 30% margin, the net value to FlowFuse would be $70,000. The deal would get a 20% uplift for commission credit purposes, the net deal amount for commission purposes would be 84,000.
 
 ### 8\. Commission and Quota Credit
+
+Commission will be calculated based on the Commissionable Value of each Qualifying Sale, defined as:
+
+Incremental ARR + 5% of Non-Recurring Revenue
+
+The Base Rate and Accelerated Rate listed in the table below apply directly to this Commissionable Value. All commissions are earned only upon recognition of a Qualifying Sale according to the terms of this Plan.
+
+If a multi-year contract includes non-recurring components, only the ARR portion is recognized annually for quota credit and commission. The Non-Recurring Revenue component is recognized once at the time of booking, at the 5% rate defined above.
 
 | Transaction Type | Base Rate | Accelerated Rate |
 | :---: | :---: | ----- |
