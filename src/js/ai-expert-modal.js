@@ -823,7 +823,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Setup Guide label for guide messages
         let headerText = 'Result'
 
-        if (richAnswer.kind === 'guide') headerText = 'Guide'
+        if (richAnswer.kind === 'guide') headerText = 'Setup Guide'
         if (richAnswer.kind === 'resources') headerText = 'Resources';
 
         html += `<div class="bg-indigo-100 text-indigo-700 text-sm px-3 py-2 rounded-full inline-block mb-3">${headerText}</div>`;
