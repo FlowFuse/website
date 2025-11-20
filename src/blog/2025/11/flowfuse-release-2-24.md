@@ -4,7 +4,7 @@ subtitle: "FlowFuse 2.24: FlowFuse Expert in the Node-RED Editor, Scheduled Upda
 description: "FlowFuse 2.24: FlowFuse Expert in the Node-RED Editor, Scheduled Updates, Simpler Edge Device Addition, Store and Forward Blueprint, and what's next!"
 date: 2025-11-20
 authors: ["greg-stoutenburg"]
-image: 
+image: ./images/2.24-release.png
 tags:
    - flowfuse
    - news
