@@ -22,6 +22,29 @@ Store-and-forward is a pattern where data is saved locally before transmission, 
 
 The edge device operates in three states. During normal operation, data writes to the buffer and forwards successfully—the buffer stays near-empty. During a network outage, data continues writing to the buffer but cannot forward—the buffer grows. When connectivity returns, the device forwards the buffered backlog in chronological order while continuing to collect new data—the buffer drains back to empty.
 
+```mermaid
+flowchart TD
+    Start[Data] --> Save[Store in Local Buffer]
+    Save --> Check{Check Network}
+    
+    Check -->|Connected| Send[Send to Cloud/Server]
+    Check -->|Disconnected| Wait[Data Stays in Buffer]
+    
+    Send --> Clear[Remove from Buffer]
+    Clear --> Start
+    
+    Wait --> CheckAgain[Keep Checking Network]
+    CheckAgain --> Check
+    
+    style Save fill:#818CF8,color:#fff
+    style Send fill:#60A5FA,color:#fff
+    style Wait fill:#A5B4FC,color:#fff
+    style Check fill:#6366F1,color:#fff
+    style Start fill:#3B82F6,color:#fff
+    style Clear fill:#93C5FD
+    style CheckAgain fill:#BFDBFE
+```
+
 This solves the core problem in industrial data collection: network failures creating gaps in your time-series data. A four-hour outage would normally mean four hours of missing production data. With store-and-forward, that same outage causes zero data loss. Your destination system receives complete chronological data with only a delivery delay.
 
 ## Getting Started
