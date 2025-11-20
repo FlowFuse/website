@@ -43,9 +43,10 @@ FlowFuse MCP nodes allow you to surface information to an LLM to create custom A
 
 ## FlowFuse Assistant for Open-Source Node-RED
 
-Big news: the FlowFuse Assistant -- the Node-RED feature that uses AI to create Function nodes, Template nodes, and autocomplete for Tables -- will be shipped with open-source Node-RED!
+FlowFuse Assistant is our collection of AI-enhancements within the Node-RED editor - assisted creation of Function nodes, autocompleting flows and documentation generation amongst other features. Currently it's an exclusive feature of the FlowFuse platform, but we're hard at work to bring it to standalone Node-RED instances.
 
-We're excited to bring the power of AI-enhanced development to all Node-RED users, whatever their project, across the globe.
+Coming soon you'll be able to experience the power of AI-enhanced development within Node-RED wherever its running.
+
 
 ## What else is new?
 
