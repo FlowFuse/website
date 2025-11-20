@@ -31,7 +31,7 @@ Now, restarts can be scheduled at a time that is convenient for you. What's more
 
 ## Simpler Edge Device Addition
 
-Many of our customers make use of large fleets of edge devices. The workflow for setting up these fleets has involved several steps, and we wanted to improve that. Now, when provisioning a new device, it is possible to name it at the same time, reducing the complexity of the workflow. We want you to be able to scale up your edge device count quickly and easily, and this represents a signficant step in that direction. 
+Many of our customers make use of large fleets of edge devices. Through the use of provisioning tokens it's easy to get lots of devices setup quickly - but there were still some additional steps needed to get the devices properly named and organised. Now, when setting up a new device with a provisioning token, it is possible to name it at the same time, reducing the complexity of the workflow. We want you to be able to scale up your edge device count quickly and easily, and this represents a significant step in that direction. 
 
 ## Blueprint: Store and Forward
 
