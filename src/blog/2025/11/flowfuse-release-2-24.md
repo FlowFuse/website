@@ -50,7 +50,7 @@ Coming soon you'll be able to experience the power of AI-enhanced development wi
 
 ## What else is new?
 
-For a complete list of everything included in our 2.23 release, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases/tag/v2.24.0).
+For a complete list of everything included in our 2.24 release, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases/tag/v2.24.0).
 
 Your feedback continues to be invaluable in shaping FlowFuse's development. We'd love to hear your thoughts on these new features and any suggestions for future improvements. Please share your experiences or report any [issues on GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose).
 
