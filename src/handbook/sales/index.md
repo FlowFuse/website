@@ -35,6 +35,7 @@ Questions can be asked in the [#dept-sales](https://flowforgeworkspace.slack.com
 
 ## How we work
 
+ - [Sales Team Operating Principples](./operating-principles.md)
  - [Demo](./meetings/demo.md)
  - [Sales Deck](https://docs.google.com/presentation/d/13r9pRNikgEgkim9M9UuyhT2Xvr3aA7FK9rHhICIINDI/)
  - [Engagements & Pricing](./engagements.md)
