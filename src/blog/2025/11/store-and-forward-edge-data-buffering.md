@@ -18,6 +18,10 @@ The problem is that all the data they generate during that outage has nowhere to
 
 Store-and-forward solves this. This article walks through building a store-and-forward system with FlowFuse that maintains complete data continuity during network failures.
 
+Below is the demo video where I show how production data can be lost without buffering, and how buffering prevents that from happening.
+
+<lite-youtube videoid="J1gDj6S-ijI" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
+
 ## What is Store-and-Forward?
 
 Store-and-forward is a pattern where data is saved locally before transmission, then forwarded when network connectivity is available. Your edge device writes every data point to local SQLite storage first. If the network is up, the data transmits to your destination—MQTT broker, historian, cloud platform, or database. If the network is down, the data stays in storage until connectivity returns.
