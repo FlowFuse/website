@@ -3,7 +3,7 @@ title: "The PTC/TPG Deal: What It Means for the Industry (And Your Next Move)"
 subtitle: 
 meta:
     description: Join this team of industrial automation experts as they discuss the recent acquisition of PTC’s Kepware and ThingWorx platforms by private equity group TPG - diving into the reasons for the purchase, how it affects current customers, and what it means for the future of Industry 4.0 connectivity.
-image: /images/webinars/live-from-the-shop-floor-scaling-from-digital to-smart-with-flowfuse-and-revolution-pi.jpg
+image: /images/webinars/the-ptc-tpg-deal.jpg
 date: 2025-12-16
 time: 17:00 CET (11:00am ET)
 duration: 60
