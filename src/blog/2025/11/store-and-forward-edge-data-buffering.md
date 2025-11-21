@@ -13,6 +13,7 @@ tags:
 Network outages happen. A fiber cut, a switch failure, or infrastructure maintenance can take your connectivity offline without warning. When it does, your PLCs continue operating normally—they don't wait for the network to recover.
 
 <!--more-->
+
 The problem is that all the data they generate during that outage has nowhere to go. Production metrics, quality measurements, and alarm events accumulate with no path to your historian or cloud platform. When connectivity returns, you're left with gaps in your operational records. Those gaps create real problems: incomplete batch records for quality audits, missing data for troubleshooting production issues, and compliance documentation that doesn't hold up under review.
 
 Store-and-forward solves this. This article walks through building a store-and-forward system with FlowFuse that maintains complete data continuity during network failures.
@@ -59,7 +60,7 @@ We'll approach this in six steps: establish a connection to collect data, set up
 You'll need the following before implementing store-and-forward:
 
 - **Edge Device Running FlowFuse Agent**: A running FlowFuse instance deployed on your edge hardware or gateway device.
-- **node-red-contrib-sqlite**: SQLite node for local data storage.
+- **node-red-node-sqlite**: SQLite node for local data storage.
 - **node-red-contrib-ping**: Ping node for connectivity monitoring.
 
 ### Step 1: Set Up Data Collection
@@ -90,7 +91,7 @@ _SQLite database configuration with read-write-create mode enabled_
 ```sql
 CREATE TABLE IF NOT EXISTS data_buffer (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    timestamp TEXT NOT NULL,
+    timestamp INTEGER NOT NULL,
     sent INTEGER DEFAULT 0,
     payload TEXT,
     created_at INTEGER DEFAULT (strftime('%s','now') * 1000)
@@ -133,7 +134,7 @@ _Change node rules for preparing SQLite insert parameters_
 
 ```sql
 INSERT INTO data_buffer (timestamp, payload, sent)
-VALUES ($timestamp, $payload, 0);
+VALUES ($ts, $payload, 0);
 ```
 
 7. Click **Done** to save the configuration and deploy your flow.
@@ -317,7 +318,7 @@ _Change node setting error flag when transmission fails_
 
 7. Name it "Check Disconnected", set the Property to `msg.status.text`, add a condition `==` with value `disconnected`, and click **Done** to save.
 
-8. Drag a **Change** node onto the canvas and connect it **Switch** node
+8. Drag a **Change** node onto the canvas and connect it to the **Switch** node.
 
 9. Name it "Set Network Failure Flag" and configure it:
    - **Rule 1**: Set `flow.networkOnline` to `false` (boolean)
