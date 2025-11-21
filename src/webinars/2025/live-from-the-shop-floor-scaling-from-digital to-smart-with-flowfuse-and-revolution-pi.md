@@ -7,7 +7,7 @@ image: /images/webinars/live-from-the-shop-floor-scaling-from-digital to-smart-w
 date: 2025-11-20
 time: 17:00 CET (11:00am ET)
 duration: 60
-video:
+video: qQRhJizAQKs
 hosts: ["boris-crismancich"]
 hubspot:
     formId: e1c58c10-fb00-46f4-81b3-4f253bb24640
@@ -46,4 +46,4 @@ If you're exploring how to:
 
 FlowFuse can help you move from isolated processes to fully connected operations with reliability, security, and scale.
 
-**Talk to our team about your industrial projects:** [Contact us](https://flowfuse.com/contact-us/) • [Book a demo](https://flowfuse.com/book-demo)
+**Talk to our team about your industrial projects:** [Contact us](/contact-us/) • [Book a demo](/book-demo)
