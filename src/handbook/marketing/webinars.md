@@ -14,7 +14,7 @@ The following are the steps to produce a montly webinar.
 ## Webinar Preparation
 
    1. Identify the webinar topic and speaker as close as possible to the previous webinar.
-   1. Confirm the date with the speaker and send a calendar invite to block calendars.
+   1. Confirm the date with the speaker and send calendar invites to block time for the event and for a dry run (recommended one week before the event).
    1. The speaker creates the draft title and abstract using [this template](https://docs.google.com/document/d/1Ovh-X87OW5uFFFQXlCob3KMoLybLhL1h3qKLLyIe9FY/edit?usp=sharing) (please duplicate the document and save it in the corresponding folder). The host then reviews it to ensure it aligns with our messaging.
    1. When there's a demo involved, provide the speaker with a non-trial FlowFuse account so they can work on it with an official account
    1. [Create a webinar page](#creating-a-webinar-page) for the website
