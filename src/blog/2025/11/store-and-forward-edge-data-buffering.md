@@ -26,25 +26,31 @@ The edge device operates in three states. During normal operation, data writes t
 
 ```mermaid
 flowchart TD
-    Start[Data] --> Save[Store in Local Buffer]
-    Save --> Check{Check Network}
-    
-    Check -->|Connected| Send[Send to Cloud/Server]
-    Check -->|Disconnected| Wait[Data Stays in Buffer]
-    
-    Send --> Clear[Remove from Buffer]
-    Clear --> Start
-    
-    Wait --> CheckAgain[Keep Checking Network]
-    CheckAgain --> Check
-    
-    style Save fill:#818CF8,color:#fff
-    style Send fill:#60A5FA,color:#fff
-    style Wait fill:#A5B4FC,color:#fff
-    style Check fill:#6366F1,color:#fff
+    Source[PLC / Sensor]
+    Destination[Cloud / Broker / Server]
+
+    Source --> Start[Data Arrives at Edge]
+    Start --> Save[Store in Local Buffer]
+    Save --> Check{Network Available?}
+
+    Check -->|Connected| Send[Send Data]
+    Send --> Destination
+    Destination --> Clear[Remove Data from Buffer]
+
+    Check -->|Disconnected| Wait[Keep Data in Buffer]
+    Wait --> Retry[Retry Until Network Restored]
+    Retry --> Check
+
+    %% Styling (consistent theme)
+    style Source fill:#3B82F6,color:#fff
     style Start fill:#3B82F6,color:#fff
-    style Clear fill:#93C5FD
-    style CheckAgain fill:#BFDBFE
+    style Save fill:#818CF8,color:#fff
+    style Check fill:#6366F1,color:#fff
+    style Send fill:#60A5FA,color:#fff
+    style Destination fill:#60A5FA,color:#fff
+    style Clear fill:#93C5FD,color:#000
+    style Wait fill:#A5B4FC,color:#fff
+    style Retry fill:#BFDBFE,color:#000
 ```
 
 This solves the core problem in industrial data collection: network failures creating gaps in your time-series data. A four-hour outage would normally mean four hours of missing production data. With store-and-forward, that same outage causes zero data loss. Your destination system receives complete chronological data with only a delivery delay.
