@@ -1,4 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.0/dist/purify.min.js"></script>
 <!-- FlowFuse Expert Modal -->
+
 <div id="ai-expert-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-0 md:p-4 md:px-8 md:py-8 z-[9999]">
     <!-- Modal Content -->
     <div class="bg-white rounded-none md:rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
@@ -32,7 +34,7 @@
             </div>
 
             <!-- Chat Messages Container -->
-            <div id="chat-messages" class="space-y-4">
+            <div id="chat-messages" class="space-y-4 overflow-auto">
                 <!-- Messages will be added here dynamically -->
             </div>
 
