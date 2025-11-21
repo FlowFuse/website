@@ -34,13 +34,13 @@
 
 
 .team-card--sm:nth-child(3n+2) .ff-headshot {
-    background-color: theme(colors.indigo.700);
+    background-color: theme(colors.indigo.600);
 }
 .team-card--sm:nth-child(3n) .ff-headshot {
     background-color: theme(colors.indigo.300);
 }
 .team-card--sm:nth-child(3n+1) .ff-headshot {
-    background-color: theme(colors.gray.600);
+    background-color: theme(colors.indigo.900);
 }
 
 /*
