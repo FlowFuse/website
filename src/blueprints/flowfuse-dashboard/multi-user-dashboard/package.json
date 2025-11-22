@@ -1,0 +1,12 @@
+{
+    "name": "multi-user-dashboard",
+    "version": "1.0.0",
+    "description": "SEE README",
+    "main": "flow.json",
+    "license": "SEE LICENSE IN /blueprint-library/LICENSE",
+    "dependencies": {
+      "@flowfuse/node-red-dashboard": "^1.2.0",
+      "@flowfuse/node-red-dashboard-2-user-addon": "^1.0.0"
+    }
+  }
+  
