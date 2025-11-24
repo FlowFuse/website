@@ -2,6 +2,7 @@
 navTitle: Product Manager
 navGroup: Job Descriptions
 ---
+
 # Product Manager
 
 ## Job Description
@@ -42,3 +43,11 @@ What the Product Manager brings to the table:
 * Competitive Drive: A natural ambition to push boundaries, innovate, and ensure FlowFuse's product leads the market.
 * Cross-Functional Leader: Proven experience collaborating effectively with engineering, sales, marketing, and customer success teams to deliver outstanding products.
 
+## Hiring Plan
+
+1. Resume Screening: Review resumes and cover letters to assess candidate qualifications, experience, and domain expertise. Done by the hiring manager.
+1. First Interview (Technical & Role Fit): Conduct a video interview to evaluate technical knowledge relevant to industrial automation, IIoT, and Product Management, as well as communication skills. Discuss the [screening questions](/handbook/peopleops/hiring/screening-call/). Conducted by the hiring manager.
+1. Product Presentation / Case Study: Candidate will be discussing the future of FlowFuse product and deliver ideas for the next years roadmap. The company will discuss and judge this based on how the ideas were formed, put forward, and defended against probing -- not on validity of the ideas.
+1. STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
+1. Final Interview (**optional**): A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
+1. Offer: Extend an offer to the selected candidate.
