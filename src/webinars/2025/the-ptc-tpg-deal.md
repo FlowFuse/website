@@ -13,7 +13,7 @@ hubspot:
     formId: e53b364a-d463-4484-b861-cb4c06b49bf8
     downloadFormId: 
 ---
-Join this team of industrial automation experts as they discuss the recent acquisition of PTC’s Kepware and ThingWorx platforms by private equity group TPG - diving into the reasons for the purchase, how it affects current customers, and what it means for the future of Industry 4.0 connectivity.
+Join this team of industrial automation experts for a round-table discussion on the recent acquisition of PTC’s Kepware and ThingWorx platforms by private equity group TPG - diving into the reasons for the purchase, how it affects current customers, and what it means for the future of Industry 4.0 connectivity.
 
 <!--more-->
 
