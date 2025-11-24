@@ -14,19 +14,31 @@ The following are the steps to produce a montly webinar.
 ## Webinar Preparation
 
    1. Identify the webinar topic and speaker as close as possible to the previous webinar.
-   2. Create a draft webinar title and abstract that is reviewed and approved by the speaker. 
-   3. Confirm the date with the speaker and send a calendar invite to block calendars
-   4. [Create a webinar page](#creating-a-webinar-page) for the website
-   5. Create a Zoom webinar page
+   1. Confirm the date with the speaker and send calendar invites to block time for the event and for a dry run (recommended one week before the event).
+   1. The speaker creates the draft title and abstract using [this template](https://docs.google.com/document/d/1Ovh-X87OW5uFFFQXlCob3KMoLybLhL1h3qKLLyIe9FY/edit?usp=sharing) (please duplicate the document and save it in the corresponding folder). The host then reviews it to ensure it aligns with our messaging.
+   1. When there's a demo involved, provide the speaker with a non-trial FlowFuse account so they can work on it with an official account
+   1. [Create a webinar page](#creating-a-webinar-page) for the website
+   1. Create a Zoom webinar page
         * Login to zoom and select the Webinars tab. There is a webinar template that will help getting going.
         * Use the same description and topic that was used for the web page. 
         * Turn on Q&A, Enable Practice Session and Automatically record webinar to the cloud, require registration. 
+        * Under Branding, for the banner add the graphic created for the web site.
         * Under Invitations, invite the speaker as a Panelist.
             - Panelist receive a unique url to join the webinar that grants them access before the webinar starts. It is important the speaker knows to use this url.
         * Under Email Setting ensure the following: Confirmation email sent to panelist, Reminder sent 1 hour and 1 day before.  Turn off email for follow-up since we do that inside Hubspot.
-        * Under Branding, for the banner add the graphic created for the web site.
         * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in Hubspot.
-   6. Setting up the survey on HubSpot.  
+   1. Setup HubSpot to accept webinar registrations.
+        * Create a marketing campaign for the webinar. Name it like this: *‘Webinar [year month keyword]’*, resulting in something like *Webinar 2025 11 Rev Pi* and **add every related asset to it**.
+        * Create a new static segment (list) called ‘Webinar Registrations [&lt;month> Edition]
+        * Create a new form - clone an existing webinar registration form and rename it. Under **options** make sure to update the thank you message with the event date.
+        * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Three changes are required:
+            * Edit enrollment criteria to the new registration form submission. Make sure to check the box next to the form name under the 'Settings' tab to allow contacts to re-enroll in this workflow, otherwise, previous webinar attendees won’t be able to register.
+            * Edit ‘Add Contact to Zoom Webinar’ to update the new Webinar ID. Replace the current number with the number from the webinar you just created for this month. You find the Webinar ID on the main page of the Zoom webinar. NOTE: you need to  hyphens to replace the spaces in the ID number.
+            * Edit ‘Add to static list’ to change the list to the new list for this month’s webinar.
+            * Remember to Save the changes.
+   1. Test the web page for the webinar to see if a new registrant gets added to the Hubspot list.
+   1. Page is now ready to be published.
+   1. Setting up the survey on HubSpot.  
         * Under **Service > Feedback Surveys**, you'll find the latest one called *‘Webinar Survey - [&lt;month> &lt;year>]’*.  
         * Clone it, update the survey name to match the month and year of the upcoming webinar, and update the header to match the webinar's name.  
         * Publish the survey and copy the shareable link.  
@@ -34,16 +46,6 @@ The following are the steps to produce a montly webinar.
         * Look for the group with the criteria: *‘Contact is associated to: Any Feedback submission’* and update the survey name to the one you just created.  
         * Save the change and when it asks *'Do you want to enroll existing contacts?'* click on the button that says **'Save and don't enroll existing contacts'**. You should pay close attention to this step, because if you choose the other option, all of the contacts that have ever requested to be contacted will re-enroll and sales will get notifications and tasks to contact all of them again.  
         * Go to **Zoom**, and in the **Webinars** section, under **Survey**, choose *'Use a 3rd party survey'* and paste the shareable link you obtained when the survey was published.
-   7. Setup HubSpot to accept webinar registrations.
-        * Create a new static list called ‘Webinar Registrations [&lt;month> Edition]
-        * Create a new form - clone an existing webinar registration form and rename it
-        * Edit Workflow called ‘Webinar Registration Integration with Zoom’. Three changes are required:
-         * Edit enrollment criteria to the new registration form submission. Make sure to check the box next to the form name under the 'Settings' tab to allow contacts to re-enroll in this workflow, otherwise, previous webinar attendees won’t be able to register.
-         * Edit ‘Add Contact to Zoom Webinar’ to update the new Webinar ID. Replace the current number with the number from the webinar you just created for this month. You find the Webinar ID on the main page of the Zoom webinar. NOTE: you need to  hyphens to replace the spaces in the ID number.
-        * Edit ‘Add to static list’ to change the list to the new list for this month’s webinar.
-        * Remember to Save the changes.
-   8. Test the web page for the webinar to see if a new registrant gets added to the Hubspot list.
-   9. Page is now ready to be published.
 
 ## Webinar Promotion
 
@@ -58,8 +60,11 @@ The following are the steps to produce a montly webinar.
     * Typically this is sent 1 day before the webinar as a reminder that its not too late to join.
 
 ### Promo video
+
+This asset allow us to post on YouTube and it gives the audience a chance to see who's going to present. 
+
 #### Technical specifications
-* Use a solid, contrasting background to make it easier to crop the video and remove the background later.
+* If the presenter has an interesting background, like a shop floor, or a wall with devices, use that for the video. Otherwise, use a solid, contrasting background to make it easier to crop the video and replace the background in post-production.
 * Frame the speaker from the chest up with space around the head and shoulders for both landscape and portrait formats.
 ![Video framing examples](./images/video-framing.png){ width=600 }
 * Ensure the video is in HD quality or higher.
@@ -83,8 +88,9 @@ Don’t miss out, register now and join me as we dive into [What You’ll Learn 
 I look forward to seeing you there!
 ```
 
-And [here's](https://youtube.com/shorts/RCT-_m_NVbM) a sample of one of our past promo videos.
+And here are a couple of samples of our past promo videos:
 
+<iframe width="560" height="315" class="mb-6" src="https://www.youtube.com/embed//mfihdh336bw?rel=0" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bgJNk0x_sMs?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Post Webinar
