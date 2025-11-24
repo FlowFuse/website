@@ -4,7 +4,7 @@ subtitle: "Keep collecting data when your network goes down"
 description: Learn how to implement store-and-forward buffering for data collection. This guide shows you how to build an edge system with FlowFuse that maintains complete data continuity during network outages, preventing production data loss and compliance gaps.
 date: 2025-11-21
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/11/images/store-and-forward.png
 keywords: store-and-forward, edge computing, PLC data buffering, network resilience, industrial IoT, data continuity, FlowFuse, SQLite buffering, SCADA data collection, network outage recovery
 tags:
     - flowfuse
