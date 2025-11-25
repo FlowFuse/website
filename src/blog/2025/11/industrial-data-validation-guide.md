@@ -185,7 +185,7 @@ Now test with bad data:
 This fails because temp is a string instead of a number, routing to your error handler. The `msg.error` output shows exactly what's wrong:
 
 ```json
-{
+[{
   "keyword": "type",
   "dataPath": ".temp",
   "schemaPath": "#/properties/temp/type",
@@ -193,7 +193,7 @@ This fails because temp is a string instead of a number, routing to your error h
     "type": "number"
   },
   "message": "should be number"
-}
+}]
 ```
 
 These detailed error messages eliminate guesswork. You see the field, the problem, and where validation failed.
@@ -239,12 +239,12 @@ Now that your validator is catching bad data on Output 2, let's set up Telegram 
 
 First, install the Telegram node from the palette:
 
-1. Click the **hamburger menu** (three horizontal lines) in the top right
-2. Select **Manage palette**
-3. Go to the **Install** tab
-4. Search for `node-red-contrib-telegrambot`
-5. Click **Install** next to the node
-6. Wait for installation to complete
+1. Click the **hamburger menu** (three horizontal lines) in the top right.
+2. Select **Manage palette**.
+3. Go to the **Install** tab.
+4. Search for `node-red-contrib-telegrambot`.
+5. Click **Install** next to the node.
+6. Wait for installation to complete.
 
 Once installed, you'll find the "telegram sender" and "telegram receiver" nodes in your palette.
 
@@ -258,11 +258,11 @@ Once you have your **bot token** and **Chat ID**, come back here to continue wit
 
 Now we'll format the error information into a clear Telegram message.
 
-1. Find your validator node (the JSON Schema Validator)
-2. Look at its **second output** (the bottom one),  this is where bad data with error comes out
-3. Drag a **function** node onto the canvas
+1. Find your validator node (the JSON Schema Validator).
+2. Look at its **second output** (the bottom one), This is where bad data with error comes out
+3. Drag a **function** node onto the canvas.
 4. Connect it to the validator's **second output**.
-5. Double-click the function node to open it
+5. Double-click the function node to open it.
 6. Change the **Name** at the top to: `Format Alert` and add following javascript:
 
 ```javascript
@@ -299,17 +299,17 @@ ${JSON.stringify(badData, null, 2)}`
 return msg;
 ```
 
-1. Find the line `chatId: "PUT_YOUR_CHAT_ID_HERE"`
+1. Find the line `chatId: "PUT_YOUR_CHAT_ID_HERE"`.
 2. Replace `PUT_YOUR_CHAT_ID_HERE` with your actual Chat ID.
-3. Click **Done**
-4. Drag **telegram sender** node onto the canvas
-5. Connect your **Format Alert** function node to the **telegram sender** node
-6. Double-click the **telegram sender** node
-7. Click the **+** icon next to **Bot** to add your bot configuration
-8. Paste your **Bot Token** that you got from BotFather
-9. Give it a name like "Factory Alert Bot"
-10. Click **Add**, then **Done**
-11. Click **Deploy**
+3. Click **Done**.
+4. Drag **telegram sender** node onto the canvas.
+5. Connect your **Format Alert** function node to the **telegram sender** node.
+6. Double-click the **telegram sender** node.
+7. Click the **+** icon next to **Bot** to add your bot configuration.
+8. Paste your **Bot Token** that you got from BotFather.
+9. Give it a name like "Factory Alert Bot".
+10. Click **Add**, then **Done**.
+11. Click **Deploy**.
 
 Now test your setup by triggering a validation failure. You should receive an instant Telegram message showing exactly what went wrong.
 
@@ -323,4 +323,4 @@ Pay attention to your validation metrics. High failure rates from specific senso
 
 The validation patterns you build today make your automation trustworthy tomorrow.
 
-Want to learn how FlowFuse helps you collect, transform, and visualize industrial data while bridging IT and OT systems, reducing costs, and improving operational efficiency? [Contact us](/contact-us/) or [Book Demo](/book-demo/)
+Want to discover how FlowFuse helps you collect, validate, enrich, and use machine data to reduce costs and improve operational efficiency — along with powerful enterprise features? [Contact us](/) or [Book a demo](/book-demo/) to get started.
