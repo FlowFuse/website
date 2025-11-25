@@ -25,34 +25,81 @@ Content creation and blogging are effective ways to communicate with our communi
 1. When both reviews are done*, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
 1. Once merged, SEO Reviewer will promote on FlowFuse Social channels. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
 
-### Temporary Blog Tile Image Process
+## Temporary Blog Tile Image Process
 
-When no designer is available or the content is time-sensitive, you may create a temporary blog tile so we can publish without delay. Please still open an art request so a designer can update the image later.
+When no designer is available or the content is time-sensitive, you may create a temporary blog tile so we can publish without delay.  
+Please still open an art request so a designer can update the tile later.
 
-Options and steps:
+Below are the approved scenarios.
 
-1. Default Image  
-   Useful when urgency is driven by SEO/indexing and social sharing can happen later, once a proper tile is available.  
-   If you don’t add an image to the article front matter, a default branded image will be automatically applied.
+### 1. Use the Default Blog Tile (Recommended for Speed)
 
-1. Use existing assets from the article  
-   Useful when it’s fine for the article to use the default image, and you just need something quick for the social post.  
-   If the article already contains screenshots, diagrams, or videos, you can reuse one of those for the post.
+If you don’t add an image to the article front matter, a default branded blog tile will be applied automatically.  
+This is always the fastest way to publish an article.
 
-1. Create a quick tile from a template  
-   - If no other assets are available, this is how you can create a custom one for your article.  
-   - Go to the [Google Slides Template Gallery](https://docs.google.com/presentation/u/0/?ftv=1&folder=1FlyDcmraih3uJ-D__v9qoHrBsNw8phkY&tgif=d) and pick any template that starts with “Blog Post” — this will create a copy in your Google Drive.  
-   - Move the copy to a folder named after the article inside [this shared Drive folder](https://drive.google.com/open?id=1w99oFeCCcbVVkOxkzmwKlrwjWzAJFOWM&usp=drive_fs).  
-   - Edit the title and visuals, then export the slide as a .png and add it to your article.  
-   - Templates are available in three styles: text-only, text + icons, and full-image.
+There are two possible variations depending on whether a social post is needed:
 
-1. If you choose a full-image approach  
-   - Use a royalty-free stock photo (recommended sources):  
-     - [Adobe Stock (Free)](https://stock.adobe.com/es/search/free) (if you have corporate access)  
-     - [Pexels](https://www.pexels.com/)  
-     - [Unsplash](https://unsplash.com/)  
-   - You can also use AI-generated images, but avoid artworks or graphics. Stick to realistic, photo-style images such as shop floors, people, or equipment. Current AI tools aren’t yet reliable for producing artwork aligned with our visual identity.  
-   - Stock and AI-generated images are often high-resolution and in different aspect ratios. Always place or import the image into the Google Slides template and export from there to match FlowFuse’s required tile dimensions. Make sure your original image is at least 1600px wide for optimal quality.
+#### 1.1 Article Only (No Social Post Needed)
+
+Use this when urgency is driven mainly by SEO/indexing or internal timelines.
+
+- The default branded tile is enough for the initial publication.  
+- No additional assets are required at this stage.  
+
+#### 1.2 Article + Quick Social Post (Reuse Existing Assets)
+
+Use this when the article can publish with the default tile, but you need something quick for the social post.
+
+- If the article already contains screenshots, diagrams, or videos, you may reuse those assets for the social post.  
+- This keeps the blog tile simple (default) while allowing you to attach something relevant and fast for social sharing.
+
+
+### 2. Generate a Quick Tile With Nano Banana Pro
+
+Use this only when:
+
+- You need to publish a social post urgently **and**  
+- The article does not contain any usable assets.
+
+In that case, generate a temporary tile using Nano Banana Pro.
+
+#### Requirements
+
+- Enable both modes: **thinking** and **Nano Banana**.  
+- Always attach at least three **PNG or JPG** reference images from [this folder](https://drive.google.com/open?id=1w99oFeCCcbVVkOxkzmwKlrwjWzAJFOWM&usp=drive_fs)
+- All reference images should use the same background color (light indigo or dark indigo).  
+- To decide which background color to use next, check the [most recently published article](/blog/).
+  - If the latest published tile uses a light background, choose a dark one for the new image, and vice versa.
+
+#### Basic Prompt (Recommended for Speed)
+
+```
+Create a 1600 × 900 px image for this article:  
+[insert the article’s Netlify preview URL]
+
+Use the attached images as a style reference. It should include:
+
+- A background using the same colour palette  
+- The image title, using Heebo Regular and the same colour used for titles in the reference images  
+- An image, diagram, or isometric illustration that represents the content of the article  
+```
+
+#### Optional Prompt Refinement
+
+- You may refine the prompt if you already know the desired visual direction.  
+- For example, if you want a diagram-style tile:  
+  - Attach only diagram-based reference images.  
+  - Provide a description of the diagram or include Mermaid code.
+
+#### About the Watermark
+
+Images generated with Nano Banana Pro will include the Gemini watermark.  
+This is acceptable for temporary tiles and supports fast publishing as well as quick newsjacking.
+
+### Final Note: Designer Update Required
+
+These temporary tiles are intended only to unblock fast publication.  
+Once the article is live, a designer will replace the temporary tile with a final version as part of the open art request.
 
 
 ## Blog CMS
