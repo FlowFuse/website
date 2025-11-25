@@ -18,7 +18,7 @@ This article shows you how to build a data validation gateway using FlowFuse tha
 
 Below is a short video demonstration of the data validation gateway we'll be building together.
 
-<!-- todo -->
+<lite-youtube videoid="_yThV3eurhw" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 ## The Problem with Trusting Your Data
 
