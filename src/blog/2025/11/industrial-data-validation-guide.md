@@ -142,7 +142,7 @@ Now let's build the flow:
 
 3. Double-click the validator node and paste your JSON schema into the schema field.
 
-![JSON Schema Validator node configured with schema rules](./images/json-validator.png){data-zoomable}
+![JSON Schema Validator node configured with schema rules](./images/json-schema-validator.png){data-zoomable}
 _JSON Schema Validator node configured with schema rules_
 
 4. The validator node has two outputs:
