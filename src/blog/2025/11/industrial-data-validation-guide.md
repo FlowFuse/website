@@ -2,7 +2,7 @@
 title: "How to Protect Your Factory From Bad Data: A Must-Have Read for IIOT"
 subtitle: "How to validate industrial data before it enters your systems."
 description: Build a bulletproof data validation gateway that catches corrupted sensor readings, malformed MQTT payloads, and drifting PLC data before they wreak havoc on your factory floor. 
-date: 2025-11-26
+date: 2025-11-27
 authors: ["sumit-shinde"]
 image: 
 keywords: industrial data validation, IIoT data quality, sensor data validation, JSON Schema validation, MQTT data validation, Node-RED data validation, manufacturing data integrity, industrial IoT
@@ -26,7 +26,7 @@ Most industrial applications assume incoming data is valid—temperature sensors
 
 This works until it doesn't. Sensors drift out of calibration. Network issues corrupt packets. Firmware updates change data formats without warning. When these things happen, bad data flows straight through unchecked.
 
-Consider a temperature sensor sending `{"temperature": 72.5, "unit": "Celcius"}`. Then electromagnetic interference corrupts transmission, and your system receives `{"temperature": "ERR", "unit": "Celcius"}`. Your code tries to do math with "ERR"—it fails silently, throws an exception, or worse, coerces "ERR" to NaN or 0. Now you're making decisions based on garbage data without realizing it.
+Consider a temperature sensor sending `{"temperature": 72.5, "unit": "Celsius"}`. Then electromagnetic interference corrupts transmission, and your system receives `{"temperature": "ERR", "unit": "Celsius"}`. Your code tries to do math with "ERR"—it fails silently, throws an exception, or worse, coerces "ERR" to NaN or 0. Now you're making decisions based on garbage data without realizing it.
 
 Scale makes this worse. With hundreds of sensors, multiple PLCs, edge gateways, and third-party integrations sending data continuously, quality issues aren't occasional—they're constant. You spend more time troubleshooting data problems than actual equipment problems. Reports contain incorrect numbers. Predictive models make bad predictions from corrupted training data.
 
@@ -65,13 +65,13 @@ For our validation system, we'll use [JSON Schema](https://json-schema.org/), a 
 
 JSON Schema lets you specify exactly what fields should exist, what types they should be, what ranges are acceptable, and what formats are required. Instead of writing dozens of if-statements to check each condition, you define the rules once in a schema, and the validator does the heavy lifting.
 
-To get started, install the `node-red-contrib-json-full-schema-validator` node in your FlowFuse instance:
+To get started, install the `node-red-contrib-full-msg-json-schema-validation` node in your FlowFuse instance:
 
 1. Open your FlowFuse instance
 2. Click the hamburger menu (three horizontal lines) in the top right
 3. Select **Manage palette**
 4. Go to the **Install** tab
-5. Search for `node-red-contrib-json-full-schema-validator`
+5. Search for `node-red-contrib-full-msg-json-schema-validation`
 6. Click **Install** next to the node
 
 Once installed, you'll find the "json full schema validator" node in your palette under the function category.
@@ -83,7 +83,7 @@ Let's start with a practical example—validating temperature sensor data. Here'
 ```json
 {
     "temperature": 72.5,
-    "unit": "Celcius",
+    "unit": "Celsius",
     "sensor_id": "TEMP_LINE_01",
     "timestamp": "2025-11-21T10:30:00Z"
 }
@@ -104,8 +104,8 @@ Now let's create a JSON Schema that validates this structure:
         },
         "unit": {
             "type": "string",
-                "enum": ["Celcius"],
-                    "description": "Temperature unit (Celcius only)"
+                "enum": ["Celsius"],
+                    "description": "Temperature unit (Celsius only)"
         },
         "sensor_id": {
             "type": "string",
@@ -127,7 +127,7 @@ Let's break down what this schema validates:
 - **Type Safety:** temperature must be a number (catches `"ERR"`, null, undefined)
 - **Required Fields:** all 4 must exist (catches incomplete messages)
 - **Range Limits:** temperature must be between 0–100°C.
-- **Value Constraints:** unit must match the enum "Celcius" (enforces consistent units)
+- **Value Constraints:** unit must match the enum "Celsius" (enforces consistent units)
 - **Format Rules:** ISO 8601 timestamps and `TEMP_LINE_*` naming (catches config/naming errors)
 
 The `additionalProperties: false` line is particularly important—it rejects any data with unexpected fields, preventing schema drift over time.
@@ -153,9 +153,7 @@ When validation fails, the node adds a `msg.error` property as an array, where e
 
 5. Connect Output 1 to your normal processing pipeline (database writes, dashboards, automation logic)
 
-6. Connect Output 2 to an error handler that, Logs the error details (check `msg.error` for specific validation failures)
-
-Perfect! Here's the corrected version with that important connection instruction:
+6. Connect Output 2 to an error handler that logs the error details.
 
 ### Testing Your Validator
 
@@ -166,7 +164,7 @@ Add an **Inject** node with this valid payload, and connect it to your JSON Sche
 ```json
 {
     "temperature": 72.5,
-    "unit": "Celcius",
+    "unit": "Celsius",
     "sensor_id": "TEMP_LINE_01",
     "timestamp": "2025-11-21T10:30:00Z"
 }
@@ -179,7 +177,7 @@ Now test with bad data:
 ```json
 {
     "temperature": "ERR",
-    "unit": "Celcius",
+    "unit": "Celsius",
     "sensor_id": "TEMP_LINE_01",
     "timestamp": "2025-11-21T10:30:00Z"
 }
@@ -191,7 +189,7 @@ This fails because `temperature` is a string instead of a number (as defined in 
 [{
   "keyword": "type",
   "dataPath": ".temperature",
-  "schemaPath": "#/properties/temp/type",
+  "schemaPath": "#/properties/temperature/type",
   "params": {
     "type": "number"
   },
@@ -206,8 +204,8 @@ Test additional scenarios to see how the validator catches different issues:
 **Missing required field:**
 ```json
 {
-  "temp": 72.5,
-  "unit": "Celcius",
+  "temperature": 72.5,
+  "unit": "Celsius",
   "timestamp": "2025-11-21T10:30:00Z"
 }
 ```
@@ -215,8 +213,8 @@ Test additional scenarios to see how the validator catches different issues:
 **Out of range value:**
 ```json
 {
-  "temp": 150,
-  "unit": "Celcius",
+  "temperature": 150,
+  "unit": "Celsius",
   "sensor_id": "TEMP_LINE_01",
   "timestamp": "2025-11-21T10:30:00Z"
 }
@@ -225,7 +223,7 @@ Test additional scenarios to see how the validator catches different issues:
 **Invalid enum value:**
 ```json
 {
-  "temp": 72.5,
+  "temperature": 72.5,
   "unit": "F",
   "sensor_id": "TEMP_LINE_01",
   "timestamp": "2025-11-21T10:30:00Z"
@@ -262,11 +260,11 @@ Once you have your **bot token** and **Chat ID**, come back here to continue wit
 Now we'll format the error information into a clear Telegram message.
 
 1. Find your validator node (the JSON Schema Validator).
-2. Look at its **second output** (the bottom one), This is where bad data with error comes out
+2. Look at its **second output** (the bottom one). This is where bad data with errors comes out.
 3. Drag a **function** node onto the canvas.
 4. Connect it to the validator's **second output**.
 5. Double-click the function node to open it.
-6. Change the **Name** at the top to: `Format Alert` and add following javascript:
+6. Change the **Name** at the top to: `Format Alert` and add following JavaScript:
 
 ```javascript
 // Get error information
@@ -319,7 +317,7 @@ Now test your setup by triggering a validation failure. You should receive an in
 Below is the complete flow that demonstrates the entire validation pipeline—from receiving sensor data to catching errors and sending Telegram alerts.
 
 {% renderFlow 300 %}
-[{"id":"9b9f55548911ac66","type":"inject","z":"FFF0000000000001","name":"Invalid Data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temp\":\"ERR\",\"unit\":\"Celcius\",\"sensor_id\":\"TEMP_LINE_01\",\"timestamp\":\"2025-11-21T10:30:00Z\"}","payloadType":"json","x":870,"y":1120,"wires":[["93c2895e93507e19"]]},{"id":"ae110e07ad7685d7","type":"debug","z":"FFF0000000000001","name":"Data","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1370,"y":1000,"wires":[]},{"id":"df3cea6a5e793d66","type":"function","z":"FFF0000000000001","name":"Format Alert","func":"// Get error information\nconst errors = msg.error || [];\nconst badData = msg.payload || {};\n\n// Build error list\nlet errorText = \"\";\nerrors.forEach((err, index) => {\n    errorText += `${index + 1}. Field: ${err.dataPath || 'unknown'}\\n`;\n    errorText += `   Problem: ${err.message}\\n\\n`;\n});\n\n// Get current time\nconst time = new Date().toLocaleString();\n\n// Build the alert message\nmsg.payload = {\n    chatId: \"PUT_YOUR_CHAT_ID_HERE\",\n    type: \"message\",\n    content: `🚨 DATA VALIDATION FAILED\n\nTime: ${time}\nSensor: ${badData.sensor_id || 'Unknown'}\n\nERRORS FOUND:\n${errorText}\n\nBAD DATA:\n${JSON.stringify(badData, null, 2)}`\n};\n\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":1360,"y":1140,"wires":[["73c2d99fc1d7025a"]]},{"id":"c97a4811cf6d94ec","type":"inject","z":"FFF0000000000001","name":"Valid Data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temp\":72.5,\"unit\":\"Celcius\",\"sensor_id\":\"TEMP_LINE_01\",\"timestamp\":\"2025-11-21T10:30:00Z\"}","payloadType":"json","x":860,"y":1040,"wires":[["93c2895e93507e19"]]},{"id":"b82034c189d13fd5","type":"comment","z":"FFF0000000000001","name":"Data Simulation","info":"","x":870,"y":980,"wires":[]},{"id":"93c2895e93507e19","type":"json-full-schema-validator","z":"FFF0000000000001","name":"","property":"payload","propertyType":"msg","func":"{\n    \"type\": \"object\",\n        \"required\": [\"temp\", \"unit\", \"sensor_id\", \"timestamp\"],\n            \"properties\": {\n        \"temp\": {\n            \"type\": \"number\",\n                \"minimum\": 0,\n                    \"maximum\": 100,\n                        \"description\": \"Temperature reading in Celsius\"\n        },\n        \"unit\": {\n            \"type\": \"string\",\n                \"enum\": [\"Celcius\"],\n                    \"description\": \"Temperature unit (Celcius only)\"\n        },\n        \"sensor_id\": {\n            \"type\": \"string\",\n                \"pattern\": \"^TEMP_LINE_[0-9]+$\",\n                    \"description\": \"Sensor identifier following the required naming convention\"\n        },\n        \"timestamp\": {\n            \"type\": \"string\",\n                \"format\": \"date-time\",\n                    \"description\": \"ISO 8601 formatted timestamp\"\n        }\n    },\n    \"additionalProperties\": false\n}","x":1130,"y":1060,"wires":[["ae110e07ad7685d7"],["df3cea6a5e793d66","30dce9e4816b95a9"]]},{"id":"73c2d99fc1d7025a","type":"telegram sender","z":"FFF0000000000001","name":"","bot":"c588ce99d237a64a","haserroroutput":false,"outputs":1,"x":1380,"y":1200,"wires":[[]]},{"id":"30dce9e4816b95a9","type":"debug","z":"FFF0000000000001","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1370,"y":1080,"wires":[]},{"id":"c588ce99d237a64a","type":"telegram bot","botname":"Quality Check Bot","usernames":"","chatids":"","baseapiurl":"","testenvironment":false,"updatemode":"polling","pollinterval":300,"usesocks":false,"sockshost":"","socksprotocol":"socks5","socksport":6667,"socksusername":"anonymous","sockspassword":"","bothost":"","botpath":"","localbothost":"0.0.0.0","localbotport":8443,"publicbotport":8443,"privatekey":"","certificate":"","useselfsignedcertificate":false,"sslterminated":false,"verboselogging":false},{"id":"9c5951461ef2af0b","type":"global-config","env":[],"modules":{"node-red-contrib-full-msg-json-schema-validation":"1.1.0","node-red-contrib-telegrambot":"17.0.3"}}]
+[{"id":"9b9f55548911ac66","type":"inject","z":"d7101f3a4d45deed","name":"Invalid Data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":\"ERR\",\"unit\":\"Celsius\",\"sensor_id\":\"TEMP_LINE_01\",\"timestamp\":\"2025-11-21T10:30:00Z\"}","payloadType":"json","x":260,"y":480,"wires":[["93c2895e93507e19"]]},{"id":"ae110e07ad7685d7","type":"debug","z":"d7101f3a4d45deed","name":"Data","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":760,"y":360,"wires":[]},{"id":"df3cea6a5e793d66","type":"function","z":"d7101f3a4d45deed","name":"Format Alert","func":"// Get error information\nconst errors = msg.error || [];\nconst badData = msg.payload || {};\n\n// Build error list\nlet errorText = \"\";\nerrors.forEach((err, index) => {\n    errorText += `${index + 1}. Field: ${err.dataPath || 'unknown'}\\n`;\n    errorText += `   Problem: ${err.message}\\n\\n`;\n});\n\n// Get current time\nconst time = new Date().toLocaleString();\n\n// Build the alert message\nmsg.payload = {\n    chatId: \"PUT_YOUR_CHAT_ID_HERE\",\n    type: \"message\",\n    content: `🚨 DATA VALIDATION FAILED\n\nTime: ${time}\nSensor: ${badData.sensor_id || 'Unknown'}\n\nERRORS FOUND:\n${errorText}\n\nBAD DATA:\n${JSON.stringify(badData, null, 2)}`\n};\n\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":750,"y":500,"wires":[["73c2d99fc1d7025a"]]},{"id":"c97a4811cf6d94ec","type":"inject","z":"d7101f3a4d45deed","name":"Valid Data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":72.5,\"unit\":\"Celsius\",\"sensor_id\":\"TEMP_LINE_01\",\"timestamp\":\"2025-11-21T10:30:00Z\"}","payloadType":"json","x":250,"y":400,"wires":[["93c2895e93507e19"]]},{"id":"b82034c189d13fd5","type":"comment","z":"d7101f3a4d45deed","name":"Data Simulation","info":"","x":260,"y":340,"wires":[]},{"id":"93c2895e93507e19","type":"json-full-schema-validator","z":"d7101f3a4d45deed","name":"","property":"payload","propertyType":"msg","func":"{\n    \"type\": \"object\",\n        \"required\": [\"temperature\", \"unit\", \"sensor_id\", \"timestamp\"],\n            \"properties\": {\n        \"temperature\": {\n            \"type\": \"number\",\n                \"minimum\": 0,\n                    \"maximum\": 100,\n                        \"description\": \"Temperature reading in Celsius\"\n        },\n        \"unit\": {\n            \"type\": \"string\",\n                \"enum\": [\"Celsius\"],\n                    \"description\": \"Temperature unit (Celsius only)\"\n        },\n        \"sensor_id\": {\n            \"type\": \"string\",\n                \"pattern\": \"^TEMP_LINE_[0-9]+$\",\n                    \"description\": \"Sensor identifier following the required naming convention\"\n        },\n        \"timestamp\": {\n            \"type\": \"string\",\n                \"format\": \"date-time\",\n                    \"description\": \"ISO 8601 formatted timestamp\"\n        }\n    },\n    \"additionalProperties\": false\n}","x":520,"y":420,"wires":[["ae110e07ad7685d7"],["df3cea6a5e793d66","30dce9e4816b95a9"]]},{"id":"73c2d99fc1d7025a","type":"telegram sender","z":"d7101f3a4d45deed","name":"","bot":"c588ce99d237a64a","haserroroutput":false,"outputs":1,"x":770,"y":560,"wires":[[]]},{"id":"30dce9e4816b95a9","type":"debug","z":"d7101f3a4d45deed","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":760,"y":440,"wires":[]},{"id":"c588ce99d237a64a","type":"telegram bot","botname":"Quality Check Bot","usernames":"","chatids":"","baseapiurl":"","testenvironment":false,"updatemode":"polling","pollinterval":300,"usesocks":false,"sockshost":"","socksprotocol":"socks5","socksport":6667,"socksusername":"anonymous","sockspassword":"","bothost":"","botpath":"","localbothost":"0.0.0.0","localbotport":8443,"publicbotport":8443,"privatekey":"","certificate":"","useselfsignedcertificate":false,"sslterminated":false,"verboselogging":false},{"id":"e1abd01699c129df","type":"global-config","env":[],"modules":{"node-red-contrib-full-msg-json-schema-validation":"1.1.0","node-red-contrib-telegrambot":"17.0.3"}}]
 {% endrenderFlow %}
 
 ## Wrapping Up
@@ -328,7 +326,7 @@ You now have a working validator that stops corrupted data before it reaches you
 
 Pick one critical data source and deploy your validator there first. Watch how it performs, adjust your schema based on real patterns, then roll it out to additional sources. Apply this approach everywhere data enters your system—MQTT streams, API endpoints, PLC connections. You'll shift from constantly troubleshooting mysterious failures to preventing them entirely.
 
-Pay attention to your validation metrics. High failure rates from specific sensors signal equipment problems. Recurring error patterns reveal network issues or configuration drift. Your validator becomes can also be an early warning system for operational problems.
+Pay attention to your validation metrics. High failure rates from specific sensors signal equipment problems. Recurring error patterns reveal network issues or configuration drift. Your validator becomes an early warning system for operational problems.
 
 The validation patterns you build today make your automation trustworthy tomorrow.
 
