@@ -95,6 +95,7 @@ Each content type has channels which are appropriate, this table sets out which 
 - Hashtags, ideally three.
 - Link to article / website.
     - In HubSpot, delete the link from the "Add media" section to keep full-size image.
+- If you're attaching a video to the post, click the “Edit Thumbnail” button and choose a frame from the video or select/upload an image that better reflects what the content is about. Otherwise, the first frame of the video will be used by default.
 - Select the corresponding campaign if applicable.
 
 ##### New Hire
