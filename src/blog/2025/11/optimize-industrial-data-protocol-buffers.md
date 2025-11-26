@@ -2,7 +2,7 @@
 title: "How to Optimize Industrial Data Communication with Protocol Buffers"
 subtitle: "Cut network traffic by 60% with binary serialization—three nodes, one file, no complexity"
 description: "Stop transmitting waste. Learn how Protocol Buffers reduces industrial IoT data size by 60% using FlowFuse. Implementation takes one afternoon with three nodes and a schema file—no coding required."
-date: 2025-11-21
+date: 2025-11-28
 authors: ["sumit-shinde"]
 image:
 keywords: protocol buffers, protobuf, industrial IoT, data optimization, binary serialization, sensor data, edge computing, FlowFuse, Node-RED, MQTT, network bandwidth, cloud costs, data compression, IIoT
