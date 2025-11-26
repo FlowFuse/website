@@ -345,33 +345,17 @@ Always include it in external emails (clients, partners, vendors, community memb
 
 #### Gmail (Browser)
 
-If you're using Gmail in your browser, simply copy the signature below, paste it into your Gmail signature settings, and update it with your personal information.
+If you're using Gmail in your browser:
 
-Instructions for setting up your signature: [Configure Gmail signature](https://support.google.com/mail/answer/8395?hl=en&co=GENIE.Platform%3DDesktop)
-
-##### Copy the signature below:
-
-<table cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; color:#333; width:auto; margin-top:0; margin-bottom:0">
-    <tr>
-        <td style="padding-right:10px; vertical-align:middle;">
-            <img src="https://flowfuse.com/images/flowfuse-icon.png" alt="FlowFuse icon" width="48" height="48" style="display:block;border:0;border-radius:0;outline:none;width:65px;height:65px;">
-        </td>
-        <td style="padding-left:4px; vertical-align:middle;">
-            <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:15.6px;color:#1F2937;line-height:1.1;">Full Name</div>
-            <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:400;font-size:13.2px;color:#6B7280;line-height:1.2;margin-top:2px;">Job Title – FlowFuse</div>
-            <!-- spacer -->
-            <div style="height:8px;font-size:1px;line-height:1px;">&nbsp;</div>
-            <div style="font-size:12px;line-height:14px;">
-                <a href="https://flowfuse.com/" style="color:rgb(17,85,204);text-decoration:none;">https://flowfuse.com/</a>
-            </div>
-        </td>
-    </tr>
-</table>
-  
+1. Go to [flowfuse.com/email-signature/](/email-signature/)
+2. Copy the signature displayed on the page
+3. Paste it into your Gmail signature settings following [these instructions](https://support.google.com/mail/answer/8395?hl=en&co=GENIE.Platform%3DDesktop)
+4. Update the placeholder text with your personal information
+ 
 
 #### Apple Mail
 
-If you're using the Apple Mail app, you can follow [this video tutorial](https://www.youtube.com/watch?v=Gb4dbik1YPI) which covers most of the steps below. The main difference is that we're providing you with the [signature code](https://drive.google.com/open?id=1D7lXkfpG1p1BKR22E9mwmrs-zDnBXpKE&usp=drive_fs) directly, so you can skip the HTML generation part.
+If you're using the Apple Mail app, you can follow [this video tutorial](https://www.youtube.com/watch?v=Gb4dbik1YPI) which covers most of the steps below. The main difference is that we're providing you with the [signature code](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk) directly, so you can skip the HTML generation part.
 
 Here are the detailed steps:
 
@@ -383,7 +367,7 @@ Here are the detailed steps:
 
 4. Find the file with the `*.mailsignature` extension and open it in a text editor.
 
-5. Replace everything below the line `Mime-Version: [version]` with the code from [this Drive file](https://drive.google.com/open?id=1D7lXkfpG1p1BKR22E9mwmrs-zDnBXpKE&usp=drive_fs).
+5. Replace everything below the line `Mime-Version: [version]` with the code from [email-signature.njk](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk).
 
 6. Save the file, then press **Command + I** to open the Info window and check **Locked**.
 
