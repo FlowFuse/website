@@ -351,7 +351,7 @@ Instructions for setting up your signature: [Configure Gmail signature](https://
 
 ##### Copy the signature below:
 
-<table cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; color:#333; width:auto;">
+<table cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; color:#333; width:auto; margin-top:0; margin-bottom:0">
     <tr>
         <td style="padding-right:10px; vertical-align:middle;">
             <img src="https://flowfuse.com/images/flowfuse-icon.png" alt="FlowFuse icon" width="48" height="48" style="display:block;border:0;border-radius:0;outline:none;width:65px;height:65px;">
