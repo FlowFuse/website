@@ -4,7 +4,7 @@ subtitle: "How to validate industrial data before it enters your systems."
 description: Build a bulletproof data validation gateway that catches corrupted sensor readings, malformed MQTT payloads, and drifting PLC data before they wreak havoc on your factory floor. 
 date: 2025-11-27
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/11/images/industrial-data-validation-guide.png
 keywords: industrial data validation, IIoT data quality, sensor data validation, JSON Schema validation, MQTT data validation, Node-RED data validation, manufacturing data integrity, industrial IoT
 tags:
     - flowfuse
