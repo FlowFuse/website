@@ -1,10 +1,10 @@
 ---
-title: "How to Protect Your Factory From Bad Data: A Must-Have Read for IIOT"
+title: "How to Protect Your Factory From Bad Data: A Must-Have Read for IIoT"
 subtitle: "How to validate industrial data before it enters your systems."
 description: Build a bulletproof data validation gateway that catches corrupted sensor readings, malformed MQTT payloads, and drifting PLC data before they wreak havoc on your factory floor. 
 date: 2025-11-27
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/11/images/industrial-data-validation-guide.png
 keywords: industrial data validation, IIoT data quality, sensor data validation, JSON Schema validation, MQTT data validation, Node-RED data validation, manufacturing data integrity, industrial IoT
 tags:
     - flowfuse
@@ -330,4 +330,4 @@ Pay attention to your validation metrics. High failure rates from specific senso
 
 The validation patterns you build today make your automation trustworthy tomorrow.
 
-Want to discover how FlowFuse helps you collect, validate, enrich, and use machine data to reduce costs and improve operational efficiency, along with powerful enterprise features? [Contact us](/) or [Book a demo](/book-demo/) to get started.
+Want to discover how FlowFuse helps you collect, validate, enrich, and use machine data to reduce costs and improve operational efficiency, along with powerful enterprise features? [Contact us](/contact-us/) or [Book a demo](/book-demo/) to get started.
