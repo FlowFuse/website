@@ -86,7 +86,7 @@ FlowFuse is the open-source Industrial Application Platform.
 ### FlowFuse in one sentence - Under 150 characters
 
 FlowFuse helps manufacturers and IoT teams connect _every_ machine to the Cloud
-and AI. Providing confidence in decisions and your organisations response to
+and AI. Providing confidence in decisions and your organisation's response to
 keep operations running smoothly.
 
 ### About FlowFuse - Short form
