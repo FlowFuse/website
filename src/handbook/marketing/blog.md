@@ -98,7 +98,7 @@ This is acceptable for temporary tiles and supports fast publishing as well as q
 
 ### Final Note: Designer Update Required
 
-These temporary tiles are intended only to unblock fast publication.  
+These temporary tiles are intended to unblock writers before publication. 
 Once the article is live, a designer will replace the temporary tile with a final version as part of the open art request.
 
 
