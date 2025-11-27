@@ -330,4 +330,4 @@ Pay attention to your validation metrics. High failure rates from specific senso
 
 The validation patterns you build today make your automation trustworthy tomorrow.
 
-Want to discover how FlowFuse helps you collect, validate, enrich, and use machine data to reduce costs and improve operational efficiency, along with powerful enterprise features? [Contact us](/) or [Book a demo](/book-demo/) to get started.
+Want to discover how FlowFuse helps you collect, validate, enrich, and use machine data to reduce costs and improve operational efficiency, along with powerful enterprise features? [Contact us](/contact-us/) or [Book a demo](/book-demo/) to get started.
