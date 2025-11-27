@@ -163,7 +163,7 @@ Once data passes through the Encode node, it will automatically encode it into P
 
 ### Decoding Protocol Buffers Data
 
-Now that you're encoding and transmitting binary data, you need to decode it on the receiving end. This is where the matching .proto schema comes into play.
+Now that you're encoding and transmitting binary data, you need to decode it on the receiving end. This is where the matching `.proto` schema comes into play.
 
 On your receiving FlowFuse instance (or wherever you're processing the data):
 
