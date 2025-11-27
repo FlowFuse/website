@@ -11,10 +11,10 @@ Content creation and blogging are effective ways to communicate with our communi
 
 1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
 1. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
-1. Create an [art request](/handbook/design/art-requests/#creating-an-art-request) for a blog tile to go with your article and share a deadline for when you're planning it to go live. This image will be used not only on the web, but also when the content is promoted on socials. If the content is time sensitive, a [temporary tile](/handbook/marketing/blog/#temporary-blog-tile-image-process) can be used instead. 
 1. Create a PR requests with your Blog Content.
 1. Assign yourself as an Assignee.
 1. Convert to Draft
+1. Generate a temporary, [AI-generated blog tile](/handbook/marketing/blog/#blog-tile-creation-process) for your article to ensure the content is publish-ready from the start.
 1. No Reviews shall be done until the PR is “Ready for Review”
 1. Assign two reviewers
     * One Reviewer for Content ([ZJ](/team#zeger-jan-van-de-weg))
@@ -23,53 +23,29 @@ Content creation and blogging are effective ways to communicate with our communi
 1. Content will be reviewed first.
 1. SEO will be reviewed second.
 1. When both reviews are done*, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
-1. Once merged, SEO Reviewer will promote on FlowFuse Social channels. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
+1. Once merged, the article can be promoted on FlowFuse social channels by either the author or the Social Media Manager. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
 
-## Temporary Blog Tile Image Process
+## Blog Tile Creation Process
 
-When no designer is available or the content is time-sensitive, you may create a temporary blog tile so we can publish without delay.  
-Please still open an art request so a designer can update the tile later.
+The blog tile is generated with AI to ensure fast, unblocked publishing and visual consistency across all articles.  
 
-Below are the approved scenarios.
+This allows every post to move through review and publication without depending on design availability.
 
-### 1. Use the Default Blog Tile (Recommended for Speed)
+### Generate a Tile With Nano Banana Pro
 
-If you don’t add an image to the article front matter, a default branded blog tile will be applied automatically.  
-This is always the fastest way to publish an article.
+By generating a tile immediately, we ensure:
 
-There are two possible variations depending on whether a social post is needed:
-
-#### 1.1 Article Only (No Social Post Needed)
-
-Use this when urgency is driven mainly by SEO/indexing or internal timelines.
-
-- The default branded tile is enough for the initial publication.  
-- No additional assets are required at this stage.  
-
-#### 1.2 Article + Quick Social Post (Reuse Existing Assets)
-
-Use this when the article can publish with the default tile, but you need something quick for the social post.
-
-- If the article already contains screenshots, diagrams, or videos, you may reuse those assets for the social post.  
-- This keeps the blog tile simple (default) while allowing you to attach something relevant and fast for social sharing.
-
-
-### 2. Generate a Quick Tile With Nano Banana Pro
-
-Use this only when:
-
-- You need to publish a social post urgently **and**  
-- The article does not contain any usable assets.
-
-In that case, generate a temporary tile using Nano Banana Pro.
+- Fast turnaround  
+- Asynchronous, non-blocking content flow  
+- Consistent visual completeness across all new posts  
 
 #### Requirements
 
 - Enable both modes: **thinking** and **Nano Banana**.  
 - Always attach at least three **PNG or JPG** reference images from [this folder](https://drive.google.com/open?id=1w99oFeCCcbVVkOxkzmwKlrwjWzAJFOWM&usp=drive_fs)
-- All reference images should use the same background color (light indigo or dark indigo).  
-- To decide which background color to use next, check the [most recently published article](/blog/).
-  - If the latest published tile uses a light background, choose a dark one for the new image, and vice versa.
+- All attached reference images must use the same background color (light indigo or dark indigo).  
+- To choose the correct background color, check the [most recently published article](/blog/):
+  - If the latest tile uses a light background, generate a dark one next, and vice versa.
 
 #### Basic Prompt (Recommended for Speed)
 
@@ -94,13 +70,14 @@ Use the attached images as a style reference. It should include:
 #### About the Watermark
 
 Images generated with Nano Banana Pro will include the Gemini watermark.  
-This is acceptable for temporary tiles and supports fast publishing as well as quick newsjacking.
 
-### Final Note: Designer Update Required
+This is acceptable and supports fast publishing.
 
-These temporary tiles are intended to unblock writers before publication. 
-Once the article is live, a designer will replace the temporary tile with a final version as part of the open art request.
+### Design Team Visibility
 
+After generating the temporary tile, be sure to open an [art request](/handbook/design/art-requests/#creating-an-art-request) and attach the generated tile, so the design team is aware of the asset.  
+
+This does **not** block publishing — it simply allows designers to review the temporary tile later and update it if a final, on-brand version is needed.
 
 ## Blog CMS
 
