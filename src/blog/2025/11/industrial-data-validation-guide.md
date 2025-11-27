@@ -264,7 +264,7 @@ Now we'll format the error information into a clear Telegram message.
 3. Drag a **function** node onto the canvas.
 4. Connect it to the validator's **second output**.
 5. Double-click the function node to open it.
-6. Change the **Name** at the top to: `Format Alert` and add following JavaScript:
+6. Change the **Name** at the top to: `Format Alert` and add the following JavaScript:
 
 ```javascript
 // Get error information
