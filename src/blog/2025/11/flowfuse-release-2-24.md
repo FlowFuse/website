@@ -44,11 +44,11 @@ _[Provisioning Token Interface]_
 
 Many of our customers make use of large fleets of edge devices. Through the use of provisioning tokens it's easy to get lots of devices setup quickly - but there were still some additional steps needed to get the devices properly named and organised. Now, when setting up a new device with a provisioning token, it is possible to name it at the same time, reducing the complexity of the workflow. We want you to be able to scale up your edge device count quickly and easily, and this represents a significant step in that direction. 
 
-## Blueprint: Messaging Buffering
+## Blueprint: Store and Forward
 
 When data acquisition and processing at the edge is mission critical, it is vital that data received at the edge can be stored and protected until it can be forwarded to its destination. Having heard from customers that an easy way to execute a store and forward structure is needed, we have created this Blueprint to speed your development of this data-preserving flow.
 
-Find out more on the [blueprint page](https://flowfuse.com/blueprints/other/remote-buffering/).
+Find out more on the [blueprint page](/blueprints/getting-started/store-and-forward/).
 
 
 # Sneak Peek
