@@ -175,7 +175,13 @@ you should immediately:
    * Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.
    * Add Equity to the offer according to [the Equity guidelines](/handbook/peopleops/compensation/#equity)
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
-1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review. 
+1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review.
+   * Contractors who DO NOT need PIIAA:
+     *   Direct contractors with FlowFuse
+     *   Their existing contract already includes IP assignment
+   * Contractors who DO need PIIAA:
+     *   Contractors hired through Deel Shield
+     *   Because their IP assignment is NOT automatically transferred
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
 1. [Close the role](/handbook/peopleops/hiring/#closing-a-job)
