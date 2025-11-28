@@ -34,68 +34,17 @@ Every new email should receive an appropriate label before any action is taken. 
 Label Guide
 
 
-<table>
-  <tr>
-   <td>Label
-   </td>
-   <td>Description
-   </td>
-  </tr>
-  <tr>
-   <td>Board of Director
-   </td>
-   <td>Communication related to Board members or Board activity.
-   </td>
-  </tr>
-  <tr>
-   <td>GCal Meetings
-   </td>
-   <td>Emails requiring meeting creation, rescheduling, coordination, or confirmation.
-   </td>
-  </tr>
-  <tr>
-   <td>Meeting Notes
-   </td>
-   <td>Agendas, decks, minutes, prewatch materials, or supporting documents.
-   </td>
-  </tr>
-  <tr>
-   <td>Receipts/Finance
-   </td>
-   <td>Expense items, reimbursements, finance documentation.
-   </td>
-  </tr>
-  <tr>
-   <td>Recruitment
-   </td>
-   <td>Candidates, scheduling, assessments, or hiring-related communication.
-   </td>
-  </tr>
-  <tr>
-   <td>Events
-   </td>
-   <td>All communication tied to event planning and logistics.
-   </td>
-  </tr>
-  <tr>
-   <td>Stock Options
-   </td>
-   <td>Equity information, grant documents, or signature requests.
-   </td>
-  </tr>
-  <tr>
-   <td>Visa
-   </td>
-   <td>Travel, immigration, or visa-related documentation.
-   </td>
-  </tr>
-  <tr>
-   <td>Other_Update
-   </td>
-   <td>Older updates or ticket references stored for historical context; no action required.
-   </td>
-  </tr>
-</table>
+| Label | Description |
+|-------|-------------|
+| Board of Director | Communication related to Board members or Board activity. |
+| GCal Meetings | Emails requiring meeting creation, rescheduling, coordination, or confirmation. |
+| Meeting Notes | Agendas, decks, minutes, prewatch materials, or supporting documents. |
+| Receipts/Finance | Expense items, reimbursements, finance documentation. |
+| Recruitment | Candidates, scheduling, assessments, or hiring-related communication. |
+| Events | All communication tied to event planning and logistics. |
+| Stock Options | Equity information, grant documents, or signature requests. |
+| Visa | Travel, immigration, or visa-related documentation. |
+| Other_Update | Older updates or ticket references stored for historical context; no action required. |
 
 
 *Applying labels first ensures the inbox remains navigable and that pending work is visible at a glance.*
