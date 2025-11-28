@@ -1,12 +1,15 @@
-<div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
-    <div class="px-2 flex items-end gap-12 justify-between">
-        <div class="mb-0">
-            <h1 class="mb-0">Changelog</h1>
+<div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full px-6">
+    <div class="w-full sm:flex justify-between">
+        <h1 class="mb-0">Changelog</h1>
+        <div class="flex flex-row max-sm:mt-4 justify-between sm:justify-end gap-4 items-end">
             <p class="my-0">Getting all the news on new features we ship</p>
+            <a href="/changelog/index.xml" class="mb-2 hover:text-blue-800 hover:cursor-pointer" title="View the changelog RSS feed">
+                {% include "components/rss.njk" %}
+            </a>
         </div>
-        <a href="/changelog/index.xml" class="mb-2 hover:text-blue-800 hover:cursor-pointer" title="View the changelog RSS feed">
-            {% include "components/rss.njk" %}
-        </a>
+    </div> 
+    <div class="w-full my-4 grid">
+        <div id="algolia-search" class="border rounded w-full justify-self-end"></div>
     </div>
     <ul class="flex flex-wrap border-t">
         {%- asyncEach item in posts -%}
@@ -15,3 +18,4 @@
     </ul>
     {% include "blog/pagination.njk" %}
 </div>
+{% include "layouts/common-js.njk" %}
