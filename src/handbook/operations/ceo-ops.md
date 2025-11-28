@@ -120,7 +120,7 @@ If an email remains in the inbox, it requires attention. This includes:
 An email in the inbox is considered an open item.
 
 
-## **Items in Archive**
+### Items in Archive
 
 An archived email is considered fully resolved. This means:
 
@@ -134,7 +134,7 @@ An archived email is considered fully resolved. This means:
 
 Archiving reflects our commitment to maintaining a clear, trustworthy system of record. This practice enables the CEO inbox to operate with an Inbox Zero mindset, minimizing noise and ensuring focus remains on the work that matters.
 
-**Items to Delete \
+### Items to Delete
 ** Some items don’t need to be kept and will only create noise long term. These can be deleted rather than archived. Examples include:
 
 
