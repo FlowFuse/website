@@ -7,7 +7,7 @@ meta:
 
 ## Blogging Process
 
-Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
+Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance (that we track in this [dedicated dashboard](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/110361885?appliedIlsFilters=JTdCJTIyMTEwMzYxODg1JTIyJTNBJTdCJTIyMC0xJTIyJTNBJTdCJTIyZmlsdGVycyUyMiUzQSU1QiU3QiUyMnByb3BlcnR5TmFtZSUyMiUzQSUyMmNyZWF0ZWRhdGUlMjIlMkMlMjJwcm9wZXJ0eVR5cGUlMjIlM0ElMjJkYXRldGltZSUyMiUyQyUyMm9wZXJhdG9yJTIyJTNBJTIySVNfQkVUV0VFTiUyMiUyQyUyMnZhbHVlJTIyJTNBJTdCJTIycHJvcGVydHlUeXBlJTIyJTNBJTIyZGF0ZXRpbWUtcmFuZ2VkJTIyJTJDJTIyb3BlcmF0b3IlMjIlM0ElMjJJU19CRVRXRUVOJTIyJTJDJTIybG93ZXJCb3VuZFRpbWVzdGFtcCUyMiUzQTE3NTkwMTc2MDAwMDAlMkMlMjJ1cHBlckJvdW5kVGltZXN0YW1wJTIyJTNBMTc2MTUyMzIwMDAwMCU3RCU3RCU1RCUyQyUyMmRhdGFTb3VyY2VOYW1lJTIyJTNBJTIyQ09OVEFDVCUyMiU3RCU3RCU3RA%3D%3D)) and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
 
 1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
 1. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
@@ -17,7 +17,7 @@ Content creation and blogging are effective ways to communicate with our communi
 1. Convert to Draft
 1. No Reviews shall be done until the PR is “Ready for Review”
 1. Assign two reviewers
-    * One Reviewer for Content ([ZJ](/team#zeger-jan-van-de-weg))
+    * One Reviewer for Content 
     * One Reviewer for SEO.
 1. If the content is time-sensitive, please make sure everyone involved is aware of this. 
 1. Content will be reviewed first.
