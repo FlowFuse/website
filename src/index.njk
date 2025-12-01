@@ -61,7 +61,7 @@ hubspot:
                     {{ site.messaging.tagLine | safe }}
                 </h1>
                 <p class="mt-6 sm:mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
-                    {{ site.messaging.subtitle }}
+                    {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
                 </p>
                 
                 <!-- AI Chat Interface -->
