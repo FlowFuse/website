@@ -10,9 +10,9 @@ meta:
 Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
 
 1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
-1. Issues should be assigned a date, which should be posted here in this [Github projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
+1. Issues should be assigned a date, which should be posted here in this [GitHub projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
 1. Create an [art request](/handbook/design/art-requests/#creating-an-art-request) for a blog tile to go with your article and share a deadline for when you're planning it to go live. This image will be used not only on the web, but also when the content is promoted on socials.
-1. Create a PR requests with your Blog Content.
+1. Create a Pull Request on the [website repository](https://github.com/FlowFuse/website) with your Blog Content.
 1. Assign yourself as an Assignee.
 1. Convert to Draft
 1. No Reviews shall be done until the PR is “Ready for Review”
