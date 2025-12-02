@@ -163,7 +163,7 @@ All code at FlowFuse is stored in Git, and GitHub hosts our repositories. As
 such all our changes, feature ideas/requests, etc. are stored there. It also
 holds task lists for onboarding, [art requests](../design/art-requests.md), and
 other projects not necessarily code related. It's important to stay in the loop
-on GitHub and it's notifications.
+on GitHub and its notifications.
 
 Recommended views to keep track of items requiring your attention:
 - [PRs that mention you](https://github.com/pulls/mentioned)
