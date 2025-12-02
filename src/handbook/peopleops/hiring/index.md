@@ -221,6 +221,13 @@ As part of your onboarding, you'll be assigned an onboarding buddy who is there 
 The onboarding buddy should be a person outside of your team. This helps ensure we're building a culture across the company.
 You should reach out to your onboarding buddy regularly in your first 90 days.
 
+The onboarding buddy’s responsibilities are:
+- Welcome the new team member and act as a primary point of contact during the first 90 days.
+- Introduce themselves in Slack on the new team member’s first day to establish an immediate connection.
+- Help the team member navigate internal tools, processes, and communication channels.
+- Check in periodically to ensure the team member is settling in and answer basic questions.
+- Direct the team member to the right documentation or people when needed.
+
 ## Offboarding
 
 The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowFuse to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowFuse.
