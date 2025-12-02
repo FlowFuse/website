@@ -1,5 +1,5 @@
 ---
-title: "How to Read S7-1200/1500 Optimized Data Blocks with FlowFuse"
+title: "How to Read S7-1200/1500 Optimized Data Blocks"
 subtitle: "Use OPC UA to read optimized data blocks by name instead of fighting with memory addresses"
 description: "Learn how to read Siemens S7-1200/1500 optimized data blocks using OPC UA and FlowFuse. Step-by-step guide with symbolic addressing for reliable PLC integration."
 date: 2025-12-03
