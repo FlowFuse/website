@@ -3,7 +3,7 @@ title: "How to Read S7-1200/1500 Optimized Data Blocks with FlowFuse"
 subtitle: "Use OPC UA to read optimized data blocks by name instead of fighting with memory addresses"
 description: "Learn how to read Siemens S7-1200/1500 optimized data blocks using OPC UA and FlowFuse. Step-by-step guide with symbolic addressing for reliable PLC integration."
 date: 2025-12-03
-keywords:
+keywords: Siemens S7-1200, Siemens S7-1500, optimized data blocks, TIA Portal, OPC UA, symbolic addressing, FlowFuse, Node-RED, PLC data access, S7 protocol, OPC UA client, industrial automation, PLC integration, S7-1200 OPC UA, S7-1500 OPC UA, Siemens PLC communication, reading optimized DB, Industry 4.0 connectivity, edge computing, FlowFuse Agent, Node-RED OPC UA, PLC data reading, industrial IoT, automation engineering
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -66,6 +66,10 @@ First, you need to activate the OPC UA server that's built into your S7-1200/150
 2. In the project tree on the left, select your PLC and double-click it
 3. Find **OPC UA** in the device properties (usually under General or Properties section)
 4. Check **Enable OPC UA Server**
+
+![Enable OPC UA server option in TIA Portal](./images/enable-server-interface.png){data-zoomable}
+_Enable OPC UA server option in TIA Portal_
+
 5. Set **Port** to `4840` (the standard OPC UA port)
 6. Set **Security Policy** to **None** (for testing only)
 7. Enable **Guest authentication**.
@@ -87,6 +91,10 @@ For S7-1200 PLCs, you must manually create a server interface and add the tags y
 1. In TIA Portal, navigate to **OPC UA communication** in the project tree
 2. Right-click on **Server interfaces**
 3. Select **Add new server interface**
+
+![Adding OPC UA server interface in TIA Portal](./images/add-server-interface.png){data-zoomable}
+_Adding OPC UA server interface in TIA Portal_
+
 4. Leave the default settings and click OK
 5. The server interface will be created (you can rename it if needed)
 
@@ -102,8 +110,11 @@ For OPC UA to access your data blocks, you need to mark them as accessible.
 2. Right-click on the data block name in the project tree
 3. Select **Properties**
 4. Go to the **Attributes** tab
-5. Check **Accessible from HMI/OPC UA**
+5. Check **Accessible from HMI/OPC UA** and **Optimized Block Access**
 6. Click **OK**
+
+![Attributes settings for optimized and OPC UA accessible data blocks](./images/optimized-db-and-accessbile-via-opcua-option.png){data-zoomable}
+_Attributes settings for optimized and OPC UA accessible data blocks_
 
 **If using S7-1500 with standard SIMATIC server interface:**
 
@@ -113,15 +124,18 @@ You're done. All variables in data blocks marked as accessible are now automatic
 
 You need one more step to add specific variables to your server interface:
 
-7. In the project tree, expand **OPC UA communication**
-8. Expand your server interface
-9. Drag and drop variables from the **OPC UA elements** panel (on the right) into your server interface table
-10. Alternatively, right-click **Variables** and select **Add new variable**, then browse to select them
+1. In the project tree, expand **OPC UA communication**
+2. Expand your server interface
+3. Drag and drop variables from the **OPC UA elements** panel (on the right) into your server interface table
+4.  Alternatively, right-click **Variables** and select **Add new variable**, then browse to select them
+
+![Tags added inside OPC UA server interface](./images/tags-added-in-the-server-interface.png){data-zoomable}
+_Tags added inside OPC UA server interface_
 
 **Compile and download:**
 
-11. Click **Compile** in TIA Portal
-12. Download the program to your PLC
+5.  Click **Compile** in TIA Portal
+6.  Download the program to your PLC
 
 Your OPC UA server is now running with the exposed variables ready for access.
 
@@ -182,7 +196,7 @@ Let's prove this actually works by reading real data from your PLC.
 2. Double-click the Inject node to configure it
 3. Change **Repeat** from "none" to **interval**
 4. Set it to repeat **every 5 seconds**
-5. In the **Topic** field, enter the NodeId you copied (e.g., `ns=3;s="DataBlock_1"."Temperature"`)
+5. In the **Topic** field, enter the NodeId you copied (e.g., `ns=3;s="Demo_Datablock"."Temperature"`)
 6. Click **Done**
 7. Drag an **OpcUa-Client** node onto the canvas
 8. Double-click the OpcUa-Client node to open its configuration
@@ -198,7 +212,7 @@ Let's prove this actually works by reading real data from your PLC.
 18.  Open the Debug panel on the right side
 19.  You'll see messages appearing every 5 seconds with your variable's value in `msg.payload`
 
-Try changing the value in your PLC through TIA Portal or a connected HMI and watch the updates appear in FlowFuse. No memory addresses, no offset calculations, just the variable name.
+Try changing the value in your PLC through TIA Portal watch the updates appear in FlowFuse. No memory addresses, no offset calculations, just the variable name.
 
 To explore more OPC UA capabilities like subscribing to value changes, writing data back to your PLC, and working with complex data types, check out our [article](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 
