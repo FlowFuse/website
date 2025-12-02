@@ -67,8 +67,8 @@ First, you need to activate the OPC UA server that's built into your S7-1200/150
 3. Find **OPC UA** in the device properties (usually under General or Properties section)
 4. Check **Enable OPC UA Server**
 
-![Enable OPC UA server option in TIA Portal](./images/enable-server-interface.png){data-zoomable}
-_Enable OPC UA server option in TIA Portal_
+![Enable OPC UA server option in TIA Portal](./images/enable-opcua-server.png){data-zoomable}
+_UAble OPC UA server option in TIA Portal_
 
 5. Set **Port** to `4840` (the standard OPC UA port)
 6. Set **Security Policy** to **None** (for testing only)
