@@ -64,10 +64,7 @@ To enable this for all future events you create:
 
 ### Coffee calls
 
-Coffee calls are social of nature and thus are the exception to the rule that
-each meeting should have an agenda. If you want to be matched to a random team
-member every two weeks for a coffee call, join the #virtual-coffee channel on
-Slack to be matched automatically.
+Coffee calls are social and do not require an agenda. If you want to be matched with a random team member every two weeks for a coffee chat, join the `#virtual-coffee` channel on Slack.
 
 ## Asynchronous communication
 
