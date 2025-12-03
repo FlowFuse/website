@@ -20,22 +20,17 @@ Remember that communication is always between humans. We are responsible for the
 
 ### Use UTC for times
 
-Unless explicitly stated otherwise, communicate times in UTC. This allows each
-team member to remember just their offset to UTC and makes communication around
-timezones less error-prone (e.g. misremembering your own offset to a colleagues
-timezone) and more efficient. **Exception**: When communicating to meet in 
-physical locations, the timezone of that location will be assumed as default.
+Unless stated otherwise, communicate times in UTC. This helps everyone avoid timezone mistakes and makes coordination easier. Each person only needs to [remember their own offset from UTC](https://en.wikipedia.org/wiki/List_of_UTC_offsets).
+
+**Exception:** When planning to meet in a physical location, use that location’s timezone.
 
 ### Time of day
 
-A 24 hour clock is assumed in time notations like `10:00`, when referencing a
-time in the afternoon either use e.g. `15:00` or explicitly `3 PM`.
+Use the 24 hour clock for all times. For example, write `10:00` or `15:00`. If you need to include a 12 hour format for clarity, write it explicitly, such as `3 PM`.
 
 ### Formatting dates
 
-As there's varying standard on how to format dates, please be explicit and use
-`YYYY-MM-DD` by default. This format is unambiguous, and standardized with ISO
-8601, meaning it can be used in tools like Google Sheets too.
+Different countries use different date formats, so be explicit. Use the YYYY-MM-DD format by default. This format is unambiguous, follows the ISO 8601 standard, and works well in tools like Google Sheets.
 
 ## Meetings
 
