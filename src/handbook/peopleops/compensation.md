@@ -139,5 +139,4 @@ For US Employees who choose not to participate in the health insurance provided 
 
 ##### Canada
 
-For employees located in the Canada, FlowFuse offer health insurance coverage through Deel, since this changes regularly, please see Deel for accurate information.
-
+For employees located in Canada, FlowFuse hires through Deel as Employer of Record (EOR), with benefits that may change over time. Canadian employees currently receive Manulife Bronze health coverage and a Wealthsimple pension; for the most up-to-date details, please refer to Deel.
