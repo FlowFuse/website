@@ -8,10 +8,7 @@ As a distributed company, we rely on clear, consistent, and intentional communic
 
 ## Company-wide announcements
 
-Company-wide announcements are made in the #announcements channel in Slack. All team
-members are expected to follow all announcements made in this channel. Depending on the 
-kind of announcment, it will be accompanied with a video recording by the person making 
-the announcement and a link to the PR where the change was made. 
+We post company-wide announcements in the `#announcements` channel in Slack. Everyone should follow this channel. Some announcements include a short video to give extra context or to explain the change in a more personal way. If the change requires a Handbook update, we include the pull request link so you can review the source of truth.
 
 ## AI-Assisted Communication
 
