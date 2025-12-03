@@ -68,17 +68,15 @@ Coffee calls are social and do not require an agenda. If you want to be matched 
 
 ## Asynchronous communication
 
-Communication through different timezones or due to differences in availability
-requires knowledge to be persistent in sources that are approachable to others
-and non-ephemeral.
+Working across timezones and different schedules can be challenging. It helps to organize information so it is easy to find later. Important information should live in places that are persistent and searchable.
 
 Information should thus be stored in:
-1. Handbook
+1. The handbook
 1. GitHub issues
-1. Git Repositories pushed to GitHub
-1. Google Drive (Docs / Sheets / etc.)
+1. GitHub repositories
+1. Google Drive (Docs, Sheets, and similar)
 
-Don't store information in:
+Do not store information in:
 1. Slack
 2. Figma
 
