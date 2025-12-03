@@ -20,15 +20,13 @@ Before you begin, make sure you have the following:
 
 - Ensure you have a running Node-RED instance. The quickest and easiest way to have a manageable and scalable Node-RED instance is by [signing up on FlowFuse](https://app.flowfuse.com/) and creating an instance.
 - Install the `node-red-node-sqlite` package using the **Palette Manager**. This is the official Node-RED SQLite node maintained by the Node-RED team, ensuring reliability and compatibility.  
-- Choose a database file path (e.g., `./mydb.sqlite`). SQLite will automatically create the file if it does not exist.  
-- Ensure Node-RED has the necessary read and write permissions for the chosen file location.
 
 ### Configuring SQLite in Node-RED
 
 1. Drag the **sqlite** node onto the Node-RED canvas and double-click it.  
-2. In the **Database** field, click the **+** icon to add a new configuration. Enter the database file path.  
-   - Example: `./yourdbname`  
-   - For a temporary database, you can use a path such as `/tmp/yourdbname.sqlite`.  
+2. In the **Database** field, click the **+** icon to add a new configuration. Enter the database name.  
+   - Example: `yourdbname`  
+   - For a temporary database `/tmp/yourdbname`.  
 3. Select the appropriate **Mode/Permissions**:  
    - **Read-Write-Create**  
    - **Read-Write**  
