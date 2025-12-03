@@ -62,7 +62,7 @@ Each content type has channels which are appropriate, this table sets out which 
         - Include our POV in the post.
         - Tag the original source.
     - Follow partners and customers on each channel for shareable content.
-- **Memes:** 1x every other week. Saturdays.
+- **Memes:** Once per month, during the first week, on Saturdays.
 - **Other content types:** 1x week. Any day.
     - Quick tips, clips of longer video formats, customer stories, surveys, events, downloads, FAQs, best practices, testimonials, quizzes, challenges.
 - [Detailed list here](https://docs.google.com/spreadsheets/d/1Ifz6f7D_ZxCxJkAS9LbdvdnEAae0tGFEqkGVHcnn2TU/edit?usp=sharing).
