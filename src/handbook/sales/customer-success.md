@@ -54,7 +54,7 @@ as follows:
 | ---------- | -------------------------------------------------------------- |
 | Trial      | Not paying for services                                        |
 | Starter    | Low number of Node-RED instances                               |
-| Team       | Team of users, collaboration on applications                   |
+| Pro        | Smaller applications, collaboration on applications            |
 | Enterprise | Large scale applications, extensive use of FlowFuse's features |
 
 You can view our current customer-base and their cohorts in
@@ -71,11 +71,14 @@ however important to consider that some customers would not benefit from our
 broadest offerings of services. Appropriate resources should be put into
 customers who have found lasting value further up the cohorts table.
 
-To ensure a smooth onboarding experience and long-term success for our customers, we follow a structured [Customer Success Playbook](https://docs.google.com/document/d/1LqttB5AWueJfahdCciqloS4MSRhDZQRVHjla5xR4toU/edit?tab=t.0#heading=h.rwalcx5xuqez) for our Premium and Enterprise customers. This playbook outlines key activities, engagement points, and best practices that guide our Customer Success team in supporting each customer’s goals throughout their journey with FlowFuse.
+To ensure a smooth onboarding experience and long-term success for our customers, we follow a structured [Customer Success Playbook](https://docs.google.com/document/d/1LqttB5AWueJfahdCciqloS4MSRhDZQRVHjla5xR4toU/edit?tab=t.0#heading=h.rwalcx5xuqez) for our Pro and Enterprise customers. This playbook outlines key activities, engagement points, and best practices that guide our Customer Success team in supporting each customer’s goals throughout their journey with FlowFuse.
 
 ## Playbooks
 
+- [Onboarding Playbook](https://docs.google.com/document/d/1yxO53QHwBChNAoERLlB0kGRCNdPJzzHV9X0aLZKX8HU/edit?tab=t.0)
+- [CS health score](https://docs.google.com/document/d/1zdbhuljqM9AU5ok9Mq24xOiD7-YUHJunO3NNYLcdtZM/edit?tab=t.0)
 - [Churn Playbook](https://docs.google.com/document/d/1jrtTNEFgiY3NTHMBMm67y2P1Pm3qeIsxy8mckOEg9s4/)
+- [Expansion & Growth](https://docs.google.com/document/d/1MPgtKuI3pSD5yIgWaSfywxP8YrqAdFjgmfLPB7V9sGE/edit?tab=t.0)
 
 ## Customer Success Tools
 
@@ -89,6 +92,7 @@ our customers need from us to succeed. the main platforms we use are as follows:
 | FlowFuse Cloud's Database | Current usage of the platform and uptake of features                        |
 | Stripe                    | Expenditure                                                                 |
 | Hubspot                   | Interaction with support and marketing content on our website and in emails |
+| GitHub                    | Record of upcoming and shipped features                                     |
 
 ### Useful Customer Data
 
@@ -110,27 +114,28 @@ well as any other CS resources built in Node-RED are hosted on FlowFuse Cloud
 and can be
 [accessed in this application](https://main.flowforge.cloud/){rel="nofollow}.
 
+## Shipped Feature Updates
+
+Customer success contacts FlowFuse customers and prospective customers (anyone we have had in a sales cycle who has requested a feature) when a requested feature is shipped. To facilitate this, there is a view in the Development board on GitHub called ["CS View"](https://github.com/orgs/FlowFuse/projects/1/views/61). It filters to all issues marked Done by the Engineering team, and those with the label Sales Request or Customer Request. The Customer Success Manager will review this board upon each release and contact customers or prospects who requested a feature to inform them that it has shipped, and invite a conversation or feedback.
+
+All team members are asked to identify customer and prospect requests in the following way:
+- On a GitHub issue, use the label Sales Request or Customer Request, as appropriate. (A request is a Sales Request when a member of the Sales team learns that a prospect is interested in a feature. It is a Customer Request when an existing customer makes a request. An issue can be both a Customer Request and a Sales Request.)
+- On the main issue, list the customer record in HubSpot. Do this on the main issue rather than a comment, as these can be lost.
+- If an issue already exists and a new request is made, add this information to the existing issue. This helps keep a comprehensive record of how many requests of a feature there are, and by whom.
+
+
 ### Hubspot Properties
 
 For FlowFuse Cloud customers, we add various useful data to our CRM records to
 help us better understand who each customer is and how they are using FlowFuse.
 They are as follows:
 
-| Field name  | Description                                                                                                                                                                                                                                                                                                                                                         |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field name  | Description | 
+|----------- | ---- |
 | FFC-Tier    | This links each contact on Hubspot to the tier their team is currently associated with. Where a contact is in more than one team with different tiers we will show the tier which is expected to deliver the highest ARR. You can view the current contacts by tier in [this report](https://app-eu1.hubspot.com/reports-list/26586079/182668969/){rel="nofollow"}. |
-| FFC-Actions | This shows actions which have been taken by someone on a team this contact is on. To see a full list of available actions view [this report](https://app-eu1.hubspot.com/reports-list/26586079/182831966/){rel="nofollow"} in Hubspot                                                                                                                               |
-
-| | FFC-Usage | This field shows a contact's answer to how they are planning to
-use FlowFuse Cloud, you can view the options and current data on
-[this report](https://app-eu1.hubspot.com/reports-list/26586079/182851924/){rel="nofollow"}.
-| | FFC-Events (deprecated) | This legacy field showed email campaigns which had
-been triggered to be sent to each contact. For example, after 24 hours if a user
-had not used out snapshots feature the integration between FlowFuse Cloud and
-Hubspot would add the relevant tag to this user. Hubspot would in turn send the
-email to the contact. This way of working is being replaced by FFC-Actions as
-that field can triggered email campaigns based on action or inaction as well as
-adding value to our CRM. |
+| FFC-Actions | This shows actions which have been taken by someone on a team this contact is on. To see a full list of available actions view [this report](https://app-eu1.hubspot.com/reports-list/26586079/182831966/){rel="nofollow"} in Hubspot |                                                                                                                               |
+| FFC-Usage | This field shows a contact's answer to how they are planning to use FlowFuse Cloud, you can view the options and current data on [this report](https://app-eu1.hubspot.com/reports-list/26586079/182851924/){rel="nofollow"}.|
+| FFC-Events (deprecated) | This legacy field showed email campaigns which had been triggered to be sent to each contact. For example, after 24 hours if a user had not used out snapshots feature the integration between FlowFuse Cloud and Hubspot would add the relevant tag to this user. Hubspot would in turn send the email to the contact. This way of working is being replaced by FFC-Actions as that field can triggered email campaigns based on action or inaction as well as adding value to our CRM. |
 
 ## Inbound Support
 
@@ -289,17 +294,16 @@ For each meeting, the goals are:
 
 ## Procedure for Handling a Churned Customer
 
-The Assigned Account Executive is responsible for executing the following steps
+The Customer Success manager is responsible for executing the following steps
 when an annually-billed customer chooses not to renew their subscription:
 
 1. **Update Contracted Customer Tracker** Access the
-   [Contracted Customer Tracker](https://docs.google.com/spreadsheets/d/1QcGVeiO_RXwYHCZvGcuBW3oYgR5NMsQ22yi3cOFY73o/edit?gid=1852075496#gid=1852075496)
-   and move the churned customer to the "Churned" tab.
+   [CS Customer tracking](https://docs.google.com/spreadsheets/d/1R7OpMxg-PzXiU1gbh17QaquiQ6bQRQ3gpK1M2LNeVac/edit?gid=0#gid=0)
+   and move the churned customer to the "Churned" tab. Add the churn date and the reason for churning. 
 
-2. **Cancel Subscription in Stripe** Use the Stripe link provided in the Tracker
-   to log into Stripe. Cancel the subscription to ensure no further invoices are
-   sent and effectively close the customer's account on the platform.
-
+2. **Cancel Subscription in Hubspot** Cancel the subscription on their account page in Hubspot, to ensure no further invoices are
+   sent.
+   
 3. **Close Opportunities in Hubspot** In Hubspot, locate any open Growth and
    Renewal opportunities related to the churned customer. Move these
    opportunities to "Closed Lost" to reflect the customer's decision not to
@@ -344,7 +348,14 @@ should happen without customers even noticing.
    particularly important or has many instances left to migrate, consider
    providing personalized help to ensure a smooth process.
 
-4. **Handle Final Restarts on Deadline Day:**\
+## Handling Requests from Self-Hosted Customers to Enable FlowFuse Assistant
+The [FlowFuse Assistant](https://flowfuse.com/docs/user/assistant/#flowfuse-assistant-plugin) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
+
+When a customer requests access to the FlowFuse Assistant, do the following:
+1. Route the request to Engineering
+2. Note in the customer's page on HubSpot that the customer is using the FlowFuse Assistant. This will enable Customer Success to discuss the feature with the customer and adds to our holistic understanding of the customer.
+
+5. **Handle Final Restarts on Deadline Day:**\
    On the deadline day, go through the remaining instances and restart them.
    Check that each one comes back online properly, and assist customers with any
    issues that come up.

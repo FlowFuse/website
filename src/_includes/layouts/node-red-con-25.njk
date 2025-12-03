@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Node-RED Con 2025 - November 4, 2025" />
+    <meta property="og:type" content="Conference" />
+    <meta property="og:url" content="https://nrcon.nodered.org" />
+    <meta property="og:image" content="https://nrcon.nodered.org/images/nrcon.png" />
+    <meta property="og:site_name" content="Node-RED Con 2025 - November 4" />
+    <meta property="og:description" content="Node-RED Con is our conference that brings the community together to hear all the latest news about the project, inspiring stories about how Node-RED is used to solve real problems, and lots more." />
+    <meta name="twitter:title" content="Node-RED Con 2025 - November 4, 2025">
+    <meta name="twitter:description" content="Node-RED Con is our conference that brings the community together to hear all the latest news about the project, inspiring stories about how Node-RED is used to solve real problems, and lots more.">
+    <meta name="twitter:image" content="https://nrcon.nodered.org/images/nrcon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="https://nrcon.nodered.org/favicon.ico">
+    <title>Node-RED Con</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+    <link href="/css/style.css" rel="stylesheet">
+    <script type="module" src="/js/flowrenderer.min.js"></script>
+
+    <!-- Google Consent -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Set cookies to denied by default in EU countries, California, Brazil, Canada and Australia
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU']
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-55L36797');</script>
+    <!-- End Google Tag Manager -->
+    <!-- warmly.ai -->
+    <script id="warmly-script-loader" src="https://opps-widget.getwarmly.com/warmly.js?clientId=3657ad04e55b92ef0b5972fcfb0802d1" defer></script>
+    <!-- End warmly.ai -->
+</head>
+<body class="node-red-con font-sans ff-website leading-normal tracking-normal text-gray-500 min-h-screen flex flex-col">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55L36797" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="flex flex-col h-full flex-grow base">
+        <!--Nav-->
+        <div class="w-full bg-gray-800 sticky top-0 z-50">
+            <div class="container mx-auto">
+                <div class="flex items-center justify-between">
+                    <a class="inline-block text-gray-100 no-underline hover:text-red-400 hover:text-underline text-center h-10 p-2 sm:h-auto sm:text-2xl"
+                        href="#">
+                        Node-RED Con
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--Main-->
+        <div class="h-full w-full max-w-2xl mx-auto flex flex-col mx-auto items-center justify-center">
+            <div id="content" class="container main px-8 pt-8 sm:pt-10 mx-auto space-y-12 pb-24 bg-gray-800">
+                <div class="flex flex-col mx-auto justify-center items-center">
+                    <div class="w-24 mx-auto mb-3">
+                        <img src="https://nodered.org/about/resources/media/node-red-hexagon.svg" />
+                    </div>
+                    <div class="space-y-1 md:space-y-2 text-center mb-6">
+                        <h1 class="text-2xl sm:text-4xl text-white">Node-RED Con 2025</h1>
+                        <h2 class="text-xl sm:text-2xl text-white">November 4, 2025 • Free Virtual Conference</h2>
+                    </div>
+                    <div class="w-full">
+                        <div class="container m-auto text-left max-w-screen-lg flex justify-center items-end m-auto">
+                            <lite-youtube videoid="O-zLuLGjBd4" params="rel=0"
+                                style="width: 608px; overflow: hidden; background-image: url('https://img.youtube.com/vi/O-zLuLGjBd4/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                                class="rounded-xl sm:max-w-none sm:max-h-full">
+                            </lite-youtube>
+                        </div>
+                        <div class="text-center">
+                            <a class="inline-block px-8 py-4 mt-6 border-2 border-white rounded-lg bg-red-600 text-xl sm:text-2xl font-bold hover:bg-red-700 text-white shadow-lg transition-all"
+                                target="_blank" href="{{ zoomUrl }}">
+                                Secure Your Free Spot →
+                            </a>
+                            <p class="text-gray-300 text-sm mt-3">✓ Free event &nbsp;•&nbsp; ✓ Get
+                                updates &nbsp;•&nbsp; ✓ No spam</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="mx-4 md:mx-auto items-center text-white max-w-2xl space-y-6">
+                    <div class="bg-gray-700 rounded-lg p-6 border-l-4 border-red-600">
+                        <h3 class="text-2xl font-bold mb-4 text-center">See How Node-RED Powers Production Systems at Intel,
+                            Victron Energy & City Utilities</h3>
+                        <p class="text-lg mb-4">
+                            Stop wondering if Node-RED is production-ready. See it in action:
+                        </p>
+                        <ul class="space-y-3 text-lg">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-3 flex-shrink-0">✓</span>
+                                <span><strong>Semiconductor manufacturing at scale</strong> — Intel's 4-engineer panel on OT
+                                    systems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-3 flex-shrink-0">✓</span>
+                                <span><strong>Energy systems integration</strong> — Victron Energy's production
+                                    deployment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-3 flex-shrink-0">✓</span>
+                                <span><strong>Municipal utilities infrastructure</strong> — City of Morro Bay's real-world
+                                    use</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-3 flex-shrink-0">✓</span>
+                                <span><strong>Finance sector automation</strong> and more industrial use cases</span>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="text-center bg-red-900 bg-opacity-40 rounded-lg p-4 border border-red-600">
+                        <p class="text-xl font-bold">1,000+ registered • Don't miss out!</p>
+                        <p class="text-gray-300 mt-2">Full day of technical talks + live Q&A with speakers</p>
+                    </div>
+        
+                    <div class="text-center">
+                        <a class="inline-block px-8 py-4 border-2 border-white rounded-lg bg-red-600 text-xl sm:text-2xl font-bold hover:bg-red-700 text-white shadow-lg transition-all"
+                            target="_blank" href="{{ zoomUrl }}">
+                            Register Free — 2 Minutes →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <div class="w-full bg-gray-800 sticky bottom-0 mb-0 z-50">
+            <div class="container mx-auto">
+                <div class="flex flex-col items-center justify-between">
+                    <div class="flex lg:justify-end items-center">
+                        <span class="inline-block text-gray-100 text-center h-10 p-2 md:h-auto md:p-4">Sponsored
+                            by:</span>
+                        <a class="inline-block text-gray-100 no-underline hover:text-red-400 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4"
+                            target="_blank" href="https://flowfuse.com"><img
+                                src="https://nrcon.nodered.org/images/ff.svg" /></a>
+                        <a class="inline-block text-gray-100 no-underline hover:text-red-400 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4"
+                            target="_blank" href="https://openjsf.org/"><img
+                                src="https://nrcon.nodered.org/images/openjsf.svg" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('nav-toggle').onclick = function(){
+        // self
+        document.getElementById("nav-toggle").classList.toggle("mobile-open");
+        
+        let classes = document.getElementById("ff-header").classList;
+        classes.toggle("mobile-open");
+    }
+</script>
+
+<!-- Youtube Facade -->
+<script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- PostHog -->
+<script type="text/javascript">
+    const getMyCookieValue = (name) => (
+        document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+    )
+
+    function decodeCookie (cookie) {
+        return JSON.parse(decodeURIComponent(cookie))
+    }
+
+    var phBootstrap = {}
+
+    if (!!(getMyCookieValue("ff-distinctid"))) {
+        phBootstrap['distinctID'] = getMyCookieValue("ff-distinctid")
+    }
+
+    if (!!(getMyCookieValue("ff-feats"))) {
+        phBootstrap['featureFlags'] = decodeCookie(getMyCookieValue("ff-feats"))
+    } else {
+        console.log("No feature flags found - falling back to 'control' content")
+    }
+
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    let optOutByDefault = false;
+
+    fetch('/country')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch country code from edge function');
+            }
+            return response.text();
+        })
+        .then(countryCode => {
+            const optOutCountries = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU'];
+            optOutByDefault = optOutCountries.includes(countryCode);
+        })
+        .catch(error => {
+            console.error('Initializing PostHog with opt_out_capturing_by_default set to true due to Fetch failed by:', error);
+            optOutByDefault = true;
+        })
+
+        .finally(() => {
+            posthog.init('{{ POSTHOG_APIKEY }}', {
+                api_host: 'https://eu.i.posthog.com',
+                person_profiles: 'always',
+                bootstrap: phBootstrap,
+                capture_pageleave: false,
+                opt_out_capturing_by_default: optOutByDefault
+            });
+        });
+    /*
+        Custom pageleave handler to track scroll
+    */
+    // when the page first loads, how much content can the visitor see?
+    const NO_SCROLL_HEIGHT = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+    // what's the maximum amount of content they've seen so far?
+    var MAX_CONTENT_VIEWED = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+
+    addEventListener("scroll", (event) => {
+        // Math.min here catches an oddity where sometimes this creeps over 1
+        const contentViewed = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+        // Have they viewed more content than they've seen prior?
+        if (contentViewed > MAX_CONTENT_VIEWED) {
+            MAX_CONTENT_VIEWED = contentViewed
+        }
+    });
+
+    function emitPageLeave () {
+        // viewed:
+        // min: the content shown on pageload
+        // max: 1
+        // gives a decimal value from 0 -> 1 of the
+        // amount of content visible to the user within
+        // the pageview before they leave
+        var viewed 
+
+        // scrolled:
+        // scale these value to exist between 0 and 1
+        // 0 -> Didn't scroll, just viewed the page as it loaded
+        // 1 -> Scrolled all the way to the bottom
+
+        var scrolled
+        if (NO_SCROLL_HEIGHT === 1) {
+            // didn't need to scroll, so they've seen everything
+            viewed = 1
+            // couldn't scroll, so set to 0
+            scrolled = 0
+        } else { 
+            viewed = MAX_CONTENT_VIEWED
+            scrolled = (MAX_CONTENT_VIEWED - NO_SCROLL_HEIGHT) / (1 - NO_SCROLL_HEIGHT)
+        }
+        
+        capture('$pageleave', {
+            content_scrolled: scrolled,
+            content_viewed: viewed
+        })
+    }
+
+    window.addEventListener &&
+            window.addEventListener('onpagehide' in self ? 'pagehide' : 'unload', emitPageLeave)
+
+    /*
+        Get User Agent String
+    */
+    window.addEventListener('load', () => {
+        if (posthog && typeof posthog.register === 'function') {
+            const phUA = {
+                "user_agent_string": window.navigator.userAgent
+            };
+            posthog.register(phUA);
+        } else {
+            console.error('PostHog is not fully initialized.');
+        }
+    });
+
+    function capture (eventName, props) {
+        if (posthog) {
+            posthog.capture(eventName, props);
+        }
+    }
+</script>
+
+<!-- PostHog - cookie banner update -->
+<script type="text/plain" data-category="analytics">
+    posthog.opt_in_capturing();
+</script>
+
+<script type="text/plain" data-category="!analytics">
+    posthog.opt_out_capturing();
+</script>
+
+<!-- HubSpot Tracking -->
+{% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
+<script>{{ hubspotJS | jsmin | safe }}</script>
+
+<!-- Cookie banner -->
+<script async type="text/javascript" src="/js/cc.min.js"></script>
+
+<!-- HS script -->
+<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+
+<!-- HubSpot Consent Listener -->
+<script type="text/javascript">
+    function addHubSpotConsentListener() {
+        var _hsp = window._hsp = window._hsp || [];
+
+        _hsp.push(['addPrivacyConsentListener', function(consent) {
+            // Check if the HubSpot cookie banner is enabled
+            var isBannerEnabled = document.querySelector('#hs-banner-parent') !== null;
+
+            if (isBannerEnabled) {
+                if (CookieConsent.acceptedCategory('analytics')) {
+                    // The user has accepted analytics cookies
+                    // Enable HubSpot analytics cookies
+                    consent.categories.analytics = true;
+                } else {
+                    // The user has rejected analytics cookies
+                    // Disable HubSpot analytics cookies
+                    consent.categories.analytics = false;
+                }
+
+                if (CookieConsent.acceptedCategory('ads')) {
+                    // The user has accepted ads cookies
+                    // Enable HubSpot ads cookies
+                    consent.categories.advertisement = true;
+                } else {
+                    // The user has rejected ads cookies
+                    // Disable HubSpot ads cookies
+                    consent.categories.advertisement = false;
+                }
+                // Enable HubSpot functionality cookies by default
+                consent.categories.functionality = true;
+            }
+        }]);
+    }
+
+    window.addEventListener('load', (event) => {
+        addHubSpotConsentListener();
+    });
+</script>
+</html>

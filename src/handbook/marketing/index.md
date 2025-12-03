@@ -33,9 +33,9 @@ Each of these metrics is reported on weekly during our Marketing Team Meeting to
 
 | Role | Contributors |
 |------|--------------|
-| Marketing Manager, Product | [@PabloFilomeno83](https://github.com/PabloFilomeno83) |
-| Marketing Manager, Website & Social Media | [Yndira](https://www.linkedin.com/in/yndira-escobar-es/) [@Yndira-E](https://github.com/Yndira-E) |
-| Technical Writer | [Sumit](https://in.linkedin.com/in/shindesumit84) [@sumitshinde-88](https://github.com/sumitshinde-84) |
+| Marketing Manager, Product | [Pablo Filomeno](/team#pablo-filomeno) [@PabloFilomeno83](https://github.com/PabloFilomeno83) |
+| Marketing Manager, Website & Social Media | [Yndira Escobar](/team#yndira-escobar) [@Yndira-E](https://github.com/Yndira-E) |
+| Technical Writer | [Sumit Shinde](/team#sumit-shinde) [@sumitshinde-88](https://github.com/sumitshinde-84) |
 
 ## Contact us
 
@@ -53,5 +53,6 @@ Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack
 | [Webinars](./webinars.md) | Webinars are a key way FlowFuse interacts with the Node-RED community. |
 | [Messaging](./messaging.md) | Marketing messaging |
 | [Emails](./email.md) | How to engage with customers through email |
+| [Lead Activation](./lead-activation.md) | Definitions of inbound vs. outbound lead sources and MQL activation process |
 | [Growth Strategy](/handbook/company/strategy/#growth-strategy) | Market analysis and growth strategy that will define the upcoming marketing actions. |
 

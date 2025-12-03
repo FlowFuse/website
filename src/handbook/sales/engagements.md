@@ -101,8 +101,9 @@ as evidenced by a PO or signed quote, is the sole determinant.
 
 1. Verify, again, if the quote has all the right properties set according to
    [Generating a Quote](#generating-a-quote) instructions.
-   - Verify the Deal amount is the same a the IACV (Incremental Annual Contract
-     Value)
+   - Verify the Deal amount is set correctly based on Deal Type:
+     - New Business: ACV (Annual Contract Value)
+     - Expansions/Renewals: Incremental ARR
    - On the Hubspot Deal view, check and update:
      - Hosting Environment
      - Contract Start Date
@@ -110,7 +111,9 @@ as evidenced by a PO or signed quote, is the sole determinant.
      - Renewal Date
      - Use Case
      - Spiced
-     - Amount in USD to the IACV (Incremental Annual Contract Value) & ARR
+     - Amount in USD based on Deal Type:
+       - New Business: ACV (Annual Contract Value)
+       - Expansions/Renewals: Incremental ARR
    - Under contract management; check the box for MSA if a custom subscription
      agreement is agreed upon.
 1. Upload the documents to the Google Drive in the correct directory
@@ -132,6 +135,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
    - Is an MSA agreed upon, and stored in the Google Drive?
 1. Create the
    [subscription](/handbook/operations/billing/#creating-a-subscription)
+1. If the signed quote is either an upsell or renewal, update the subscription with the line items and new pricing.
 1. If a P.O. number has to filed on the invoice, create invoice manually
 1. Provide access to the agreed upon line items
    - _Cloud_
@@ -147,4 +151,10 @@ as evidenced by a PO or signed quote, is the sole determinant.
        [Hubspot Template](https://app-eu1.hubspot.com/templates/26586079/edit/135404737?q=welco&page=1).
 1. If Professional Services are included, inform the PS team of deal.
 1. Add customer to onboarding stage in the CSM tracking document.
-1. Ask the VP of Sales or CEO to move the Deal the the `Closed Won` stage.
+1. Move the deal to `Closed Won` stage.
+1. Check if a new renewal deal is automatically generated under the correct terms and closing date.
+1. Add the following to the deal: 
+- Hosting Environment
+- Contract Start Date
+- Company address
+- Renewal Date

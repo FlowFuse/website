@@ -4,7 +4,7 @@ subtitle: "How industrial data platforms are turning equipment failures from cri
 description: "Unplanned downtime costs manufacturers millions. Learn how preventive maintenance software and data platforms like FlowFuse cut failures, boost OEE, and deliver lasting ROI."
 date: 2025-09-04
 authors: ["sumit-shinde"]
-image: /blog/2025/09/images/preventive-maintenance-equipment-failure.png
+image: /blog/2025/09/images/preventive-maintenance-blog.png
 keywords: preventive maintenance, predictive maintenance, maintenance software, equipment monitoring, industrial data platforms, manufacturing downtime, OEE improvement
 tags:
   - flowfuse

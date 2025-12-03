@@ -11,98 +11,95 @@ image: /node-red/notification/images/telegram_node-red.png
 
 # {{meta.title}}
 
-Integrating messaging applications or services in home automation is becoming common. Telegram is a popular choice among those messaging platforms.In this documentation, we will demonstrate how to integrate Telegram with Node-RED applications for sending and receiving messages
+Telegram has become a popular choice for messaging in home automation applications. This guide shows you how to integrate Telegram with Node-RED, covering bot creation, chat ID retrieval, and both sending and receiving messages.
 
+## Creating a Bot in Telegram
 
-## Creating a bot in Telegram
-
-1. Navigate to your Telegram application and click on the top right search icon, make sure you have a Telegram account and are logged in with it.
-2. Then type “botFather” and you'll see many accounts. Make sure to select the one with the blue verified tick.
+1. Open your Telegram application and click the search icon in the top-right corner.
+2. Search for "BotFather" and select the account with the blue verified checkmark.
 
 !["screenshot displaying searching for botFather bot for creating custom bot"](./images/sending-telegram-with-node-red-botfather.png "screenshot displaying searching for botFather bot for creating custom bot"){data-zoomable}
 
-3. After that, you'll see the chat interface. Type `/newbot` and press enter to send the command.
+3. In the chat interface, type `/newbot` and press Enter to send the command.
 4. The bot will ask for a name, which will be the display name of your bot. You can choose any name you like.
-5. Next, it will ask for a unique username for your bot. The username should not include spaces and must end with 'bot' for example telegram_bot or telegrambot
-6. Once you have entered a correct and unique username, you’ll receive a message confirming that you have successfully created the bot. It will contain the secret access token and a link to initiate your bot.
-7. Click on the provided link. You'll be directed to the chat interface between you and the created bot, with a start button at the bottom. Click on that button to activate your bot.
+5. Next, it will ask for a unique username for your bot. The username cannot include spaces and must end with 'bot' (for example: `telegram_bot` or `telegrambot`).
+6. Once you've entered a valid and unique username, you'll receive a confirmation message with your bot's secret access token and a link to start your bot.
+7. Click the provided link to open the chat interface with your bot, then click the Start button at the bottom to activate it.
 
 !["screenshot displaying chat interface with start button for activating your bot"](./images/sending-telegram-with-node-red-activating-bot.png "screenshot displaying chat interface with start button for activating your bot"){data-zoomable}
 
-## Obtaining your Telegram Chat ID
+## Obtaining Your Telegram Chat ID
 
-Telegram chat ID is a unique identifier for a chat or a group in Telegram, which is required for sending and receiving messages. In this section, you'll learn how to obtain your own and your group's Telegram chat IDs.
+The Telegram chat ID is a unique identifier for a chat or group in Telegram, which is required for sending and receiving messages. This section covers how to obtain both your personal chat ID and group chat IDs.
 
-### Obtaining your Telegram Chat ID
+### Obtaining Your Personal Chat ID
 
-1. Open your Telegram app Click on the top right search icon and type “Get My ID”
+1. Open your Telegram app, click the search icon in the top-right corner, and search for "Get My ID".
 
 !["screenshot displaying searching 'Get My ID' bot for obtaining chat id"](./images/sending-telegram-with-node-red-getmyid.png "screenshot displaying searching 'Get My ID' bot for obtaining chat id"){data-zoomable}
 
-2. Click on the first account you'll see, the chat interface will open, and type `/start` and press enter. After that, you’ll receive a message containing your Chat ID and User ID.
+2. Select the first result to open the chat interface, type `/start`, and press Enter. You'll receive a message containing your Chat ID and User ID.
 
-### Obtaining your Telegram group Chat ID
+### Obtaining Your Telegram Group Chat ID
 
-1. Add `@getmyid_bot` to the group on which you want to send or receive messages using Node-RED.
-2. Once the bot joins the group, the bot will send the chat ID.
+1. Add `@getmyid_bot` to the group where you want to send or receive messages using Node-RED.
+2. Once the bot joins the group, it will automatically send the group's chat ID.
 
-## Installing custom node
+## Installing the Custom Node
 
-1. Log into FlowFuse with your username and password.
-2. Create a new application and Node-RED instance, then open the editor.
-3. Click the Node-RED Settings (top-right)
-4. Click "Manage Palette"
-5. Switch to the "Install" tab
-6. Search for "node-red-contrib-telegrambot"
-7. Click "Install"
+1. Click Node-RED Settings (top-right menu).
+2. Select "Manage Palette".
+3. Switch to the "Install" tab.
+4. Search for `node-red-contrib-telegrambot`.
+5. Click "Install".
 
-## Adding environment variables
+## Adding Environment Variables
 
-Utilizing environment variables is crucial while doing any configuration in your application as they contain sensitive information. Environment variables enable you to configure nodes or applications without exposing such information in the flow.json. For more details refer to [Using Environment Variables with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
+Environment variables keep your sensitive information secure by preventing it from being exposed in your flow.json file. This is especially important when configuring nodes with credentials like access tokens. For more details, see [Using Environment Variables with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 
-1. Go to Instance settings, and switch to the “Environment” tab.
-2. Click the top right “Add variable” button.
-3. Add variables for a secret access token and chat ID.
-4. Click on the "Save settings" button and restart the instance by clicking on the top "action" button and selecting the "Restart" option.
+!["Screenshot displaying flowfuse instance settings for adding environment variable"](./images/sending-telegram-with-node-red-flowfue-instance-settings.png "Screenshot displaying flowfuse instance settings for adding environment variable"){data-zoomable}
 
-!["Screenshot displaying flowfuse instance settings for adding environment varible"](./images/sending-telegram-with-node-red-flowfue-instance-settings.png "Screenshot displaying flowfuse instance settings for adding environment variable"){data-zoomable}
+1. Navigate to Instance Settings and switch to the "Environment" tab.
+2. Click the "Add variable" button (top-right).
+3. Add variables for your bot's secret access token and chat ID.
+4. Click "Save settings" and restart the instance by clicking Actions (top-right) and selecting "Restart".
 
-## Configuring custom node
+## Configuring the Custom Node
 
-1. Drag a Sender node onto the canvas.
-2. Click on it, then enable the "send error on second output" option. By doing this, you can separate the error message from the output that confirms your message has been sent successfully.
+1. Drag a **Sender** node onto the canvas and double-click it.
+2. Enable the "Send error to second output" option. This separates error messages from successful send confirmations, making it easier to handle different outcomes.
 
 !["Screenshot displaying 'Send error to second output' option"](./images/sending-telegram-with-node-red-enabling-send-error-to-second-option.png "Screenshot displaying 'Send error to second output' option"){data-zoomable}
 
-3. Then click on the edit icon next to the Bot input field.
-4. Enter your bot name and the environment variable name set for the access token into the Token field, and enter the environment name set for the chat ID into the chatIds input field as shown below, and keep other settings unchanged.
+3. Click the edit icon next to the Bot field.
+4. Enter your bot name and add the environment variable for your access token in the Token field, then add the environment variable for your chat ID in the chatIds field as shown below.
 
 !["Screenshot displaying telegram custom node configuration"](./images/sending-telegram-with-node-red-telegram-node-configuration.png "Screenshot displaying telegram custom node configuration"){data-zoomable}
 
-## Sending a message to telegram
+## Sending a Message to Telegram
 
-1. Drag an Inject node onto the canvas.
-2. Drag a Change node onto the canvas. Set msg.payload.type as "message". To explore other types, refer to the [node readme](https://flows.nodered.org/node/node-red-contrib-telegrambot), set msg.payload.chatId as the environment variable added for the chat ID, and then set msg.payload.content as the message you want to send.
+1. Drag an **Inject** node onto the canvas.
+2. Drag a **Change** node onto the canvas and configure it to set `msg.payload.type` as "message". To explore other message types, refer to the [node readme](https://flows.nodered.org/node/node-red-contrib-telegrambot). Set `msg.payload.chatId` to the environment variable you added for the chat ID, and set `msg.payload.content` to the message you want to send.
 
 !["Screenshot displaying the change node setting payload for sending message"](./images/sending-telegram-with-node-red-change-node.png "Screenshot displaying the change node setting payload for sending message"){data-zoomable}
 
-3. Drag two debug nodes onto the canvas.
-4. Connect the Inject node's output to the change node's input, and the change node's output to the sender node's input which you have dragged while adding configurations.
-5. Connect one Debug node's input to the first output of the Sender node and the second Debug node's input to the Sender node's second output.
+3. Drag two **Debug** nodes onto the canvas.
+4. Connect the Inject node's output to the Change node's input, then connect the Change node's output to the Sender node's input.
+5. Connect one Debug node's input to the first output of the Sender node, and the second Debug node's input to the Sender node's second output.
 
-## Receiving a message from a telegram 
+## Receiving a Message from Telegram
 
-1. Drag a Receiver node onto the canvas.
-2. Click on the node, and ensure you have selected the correct bot configuration that you have added.
-3. For the Receiver node, you'll see two outputs: one for receiving messages from authorized users, and another for receiving messages from unauthorized users.
-4. To add users to your authorized user list, click on the receiver node and click on the edit icon next to the bot input field, then add users separated by commas into the users input field.
-5. Drag two Debug nodes onto the canvas.
-6. Connect the first Debug node’s input to the first output of the Receiver node and the second Debug node’s input to the second output of the Receiver node.
+1. Drag a **Receiver** node onto the canvas.
+2. Double-click the node and make sure you've selected the correct bot configuration.
+3. The Receiver node has two outputs: one for messages from authorized users, and another for messages from unauthorized users.
+4. To add users to your authorized list, click the Receiver node, click the edit icon next to the Bot field, and add usernames separated by commas in the users field.
+5. Drag two **Debug** nodes onto the canvas.
+6. Connect the first Debug node's input to the first output of the Receiver node, and the second Debug node's input to the second output of the Receiver node.
 
-## Deploying the flow
+## Deploying the Flow
 
 !["Screenshot displaying Node-RED flow for sending and receiving telegram messages"](./images/sending-telegram-with-node-red-flow.png "Screenshot displaying Node-RED flow for sending and receiving telegram messages"){data-zoomable}
 
-1. Deploy the flow by clicking the top right Deploy button.
+1. Deploy the flow by clicking the Deploy button in the top-right corner.
 
-Now that we're set up to send messages with our Telegram bot, simply click 'Inject' to send a message. You'll receive a notification from Telegram. Alternatively, check your bot's account on Telegram to see messages sent via Node-RED. To test receiving messages, send a message to your bot, and you'll see an object printed on debug containing the message along with other information.
+Your Telegram bot is now ready to use. Click the Inject button to send a message, and you'll receive a notification in Telegram. You can also check your bot's chat to see messages sent via Node-RED. To test receiving messages, send a message to your bot and watch the Debug panel display the message object containing the message content and additional information.

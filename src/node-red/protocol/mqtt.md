@@ -1,51 +1,95 @@
----
+-
 eleventyNavigation:
   key: MQTT
   parent: "Communication Protocols"
+  title: MQTT
 meta:
   title: Using MQTT with Node-RED
   description: Learn how to use MQTT with Node-RED.
   keywords: node red mqtt in, nodered mqtt, mqtt node red, node-red mqtt, node-red mqtt broker, node red mqtt dynamic subscription, mqtt broker node red, nodered mqtt broker, node red mqtt out, mqtt in node red
-image: /node-red/protocol/images/flowforge-nodered-mqtt-hivemq.png
 ---
 
 # {{meta.title}}
 
-In the realm of IIoT (Industrial Internet of Things), effective communication between devices is crucial. One protocol that has gained significant popularity for its lightweight and scalable nature is MQTT (Message Queuing Telemetry Transport). This guide explains MQTT, its relevance in IIoT, and walks you through connecting a broker HiveMQ with Node-RED in FlowFuse.
+Getting devices to talk to each other in industrial environments isn't trivial. You're dealing with spotty networks, power constraints, and devices that need to share data without constant back-and-forth polling. MQTT solves these problems by keeping communication lightweight and flexible. This guide walks you through what MQTT is, why it works well for IIoT, and how to get it running with Node-RED.
 
 ## Understanding MQTT
 
-[MQTT](https://en.wikipedia.org/wiki/MQTT), with development starting in 1999, is a publish-subscribe-based messaging protocol designed for efficient communication between IoT devices. It operates on top of TCP/IP, like HTTP, providing a lightweight approach to messaging. MQTT follows a client-server model, where devices (clients) publish messages to a central server called the broker. Other clients interested in receiving those messages subscribe to specific topics on the broker.
+[MQTT](https://en.wikipedia.org/wiki/MQTT) is a messaging protocol that's been around since 1999. It uses a publish-subscribe model, which is different from the request-response pattern you see with HTTP.
 
-## Advantages of MQTT in IIoT
+Here's the basic setup: devices/systems (clients) connect to a central server called a broker. When a device has data to share, it publishes a message to a specific topic. Other devices/systems subscribe to topics they care about and automatically receive messages when they're published. The broker handles all the routing.
 
-MQTT has become a preferred choice for IoT and industrial IoT applications due to several reasons:
-1. **Low Overhead**: MQTT uses small packet sizes, minimizing bandwidth consumption and reducing network traffic, suitable for low-power devices and networks.
-2. **Reliability**: MQTT incorporates Quality of Service (QoS) mechanisms for message delivery, ideal for applications requiring reliable data transmission.
-3. **Asynchronous Communication**: MQTT enables asynchronous communication, allowing devices to operate independently, reducing latency and increasing system responsiveness.
+This architecture means devices/systems don't need to know about each other or maintain direct connections. A temperature sensor can publish readings to `enterprise/site/area/line/cell/temperature` without caring who's listening.
 
-## Sending Messages to an MQTT Broker with Node-RED
+## Setting Up MQTT in Node-RED
 
-Using a [Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/) provided by HiveMQ, we'll host and manage the Node-RED instance in FlowFuse. The MQTT nodes are pre-installed as "Core Nodes" in Node-RED.
+Node-RED comes with MQTT nodes built in, so you don't need to install anything extra. You'll need access to an MQTT broker - you can use a cloud service, run your own with Mosquitto, use a public test broker for experimenting, or if you're using FlowFuse, it provides a [built-in MQTT broker service](/blog/2024/10/announcement-mqtt-broker/).
 
-1. Drag in the "Inject" node and the "MQTT out" node, connecting the Inject node's output to the MQTT out node.
-2. Configure the MQTT node to connect to the broker, using the username, password, and server details from HiveMQ.
-3. Save the config, deploy the changes, and ensure the MQTT node status is green, indicating successful connection and configuration.
+## Configuring the MQTT Broker Connection
 
-![Configure the MQTT broker in Node-RED](./images/node-red-config-mqtt-server.png "Configuring a MQTT broker in Node-RED")
+Before you can publish or subscribe to messages, you need to configure the broker connection. You only need to do this once - the same broker configuration can be reused across multiple MQTT nodes.
 
-After saving the config, and deploying the changes, the flow should tell display a green
-status bubble under the MQTT node which tells you it's connected and configured properly.
+1. Add either an **MQTT out** or **MQTT in** node to your canvas
+2. Double-click the node to open its configuration
+3. Click the pencil icon next to "Server" to add a new broker connection
+4. Enter your broker's address (e.g., `broker.flowfuse.cloud`)
+5. Add the port (usually 1883 for unencrypted, 8883 for TLS)
+6. If your broker requires authentication, switch to the Security tab in the same configuration dialog by clicking on it "Security", then enter your username and password
+7. Give the connection a name and click Add
 
-![Connected MQTT node in Node-RED"](./images/connected-mqtt-node.png "Connected MQTT node in Node-RED")
+Once configured, this broker connection will appear in the Server dropdown for all MQTT nodes in your flow.
 
-## Receiving Messages from an MQTT Broker with Node-RED
+![Configuring an MQTT broker in Node-RED](./images/mqtt-broker-config.png)
+_Setting up the broker connection_
 
-1. Drag in the "mqtt in" node and connect it to the "Debug" node.
-2. Open the MQTT in node, select the configured server, and ensure the topic matches the previous selection.
-3. Deploy the flow, and the Debug node should display received messages.
+## Publishing Messages to a Broker
 
-![Receiving MQTT messages in Node-RED](./images/mqtt-in-config-node-red.png "Receiving MQTT messages in Node-RED")
+Let's start by sending data to an MQTT broker.
+
+1. Add an **MQTT Out** node.
+2. Connect your data source node’s output (use an Inject node to simulate data if you don’t have one) to the **MQTT Out** node.
+3. Double-click the **MQTT Out** node.
+4. Select your configured broker from the **Server** dropdown (or create a new one by following the steps above).
+5. Enter a topic such as `enterprise/site/area/line1/cell/temperature` (topics use forward slashes as separators, similar to file paths).
+6. Set the **QoS** level if needed for message reliability, and enable **Retain** if you want the broker to store the last published message for new subscribers.
+7. Click **Done**.
+
+![MQTT Out node — publishing data to a topic](./images/mqtt-out.png)
+_MQTT Out node — publishing data to a topic_
+
+9.  Click Deploy
+
+The MQTT out node should show "connected" with a green dot.
+
+![Connected MQTT node showing green status](./images/connected-mqtt-node.png)
+_Green status means you're connected_
+
+## Subscribing to Messages from a Broker
+
+Now let's receive messages from the MQTT broker.
+
+1. Add an **MQTT In** node to the canvas.
+2. Add a **Debug** node.
+3. Connect the **MQTT In** node to the **Debug** node.
+4. Double-click the **MQTT In** node.
+5. Select your configured broker from the **Server** dropdown (or create a new one if needed).
+6. Set the **Action** to **Subscribe to a single topic**.
+7. Enter the topic you want to subscribe to, for example: `enterprise/site/area/+/cell/temperature` (the `+` symbol acts as a wildcard for one level).
+8. Set the **QoS** level based on your reliability requirements.
+9. Click **Done**, then **Deploy** your flow.
+
+Once deployed, you should see the messages appear in the **Debug** sidebar.
+
+![MQTT In node — subscribing to a topic](./images/mqtt-in-config.png)
+*MQTT In node — subscribing to a topic*
+
+## Using Wildcards in Topics
+
+MQTT supports wildcards for subscribing to multiple topics at once:
+
+- **Single-level wildcard (+)**: Matches one level. `enterprise/site/area/+/cell/temperature` matches `enterprise/site/area/line1/cell/temperature` and `enterprise/site/area/line2/cell/temperature` but not `enterprise/site/area/line1/cell/station1/temperature`
+
+- **Multi-level wildcard (#)**: Matches multiple levels. `enterprise/site/area/#` matches everything under that area, including `enterprise/site/area/line1/cell/temperature` and `enterprise/site/area/line1/cell/station1/pressure`
 
 When deployed you should again see the status bubble turn green, and have a
 timestamp appear in the sidebar every second!

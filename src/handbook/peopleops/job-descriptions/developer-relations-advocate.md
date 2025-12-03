@@ -23,15 +23,16 @@ Key Responsibilities:
 
 The Developer Relations Advocate skill set includes:
 
-* Node-RED Experience: Hands-on experience with Node-RED, ideally in industrial settings with deep understanding of its capabilities and limitations in real-world applications.
+* Technical Content Creation: Demonstrated ability to create content that resonates with technical buyer personas in the form of articles, tutorials, webinars, conference presentations, workshop materials, and documentation.
 * Communication & Content Creation Excellence: Experience communicating with diverse audiences using various media formats. Proven ability to create engaging content through video, audio, and written formats that resonates with technical and business stakeholders.
 * Business Development Experience: Demonstrated experience in business relationship development or lead generation, preferably in technology or B2B SaaS environments. Understanding of sales processes and ability to identify and nurture business opportunities.
-* Domain Expertise: Firsthand experience as a user, project lead, or decision-maker in roles similar to FlowFuse's core buyer personas (e.g., IIoT Project Lead, IT Operations Manager, Manufacturing Engineer, Plant Manager). Must have faced the pain points FlowFuse solves in deploying, managing, or scaling Node-RED-based solutions in industrial environments.
 * Cross-functional Collaboration: Proven ability to collaborate closely with digital marketing, sales, product, and engineering teams to optimize campaigns, processes, and product development initiatives.
 * Digital Marketing Knowledge: Understanding of engagement and retargeting strategies, as well as experience with platforms like Google Ads, LinkedIn ABM, content marketing, and social media engagement.
 * Results-Driven Approach: Strong project management skills with the ability to manage multiple priorities simultaneously. Experience measuring the impact of developer relations activities through metrics and analytics.
 * Community Involvement: Active participation in online and offline developer communities and ecosystems, including open-source platforms, technical blogs, social channels, forums, and professional networks.
-* Technical Content Creation: Demonstrated ability to create content that resonates with technical buyer personas in the form of articles, tutorials, webinars, conference presentations, workshop materials, and documentation.
+* Node-RED Experience: Hands-on experience with Node-RED, ideally in industrial settings with deep understanding of its capabilities and limitations in real-world applications.
+* Domain Expertise: Firsthand experience as a user, project lead, or decision-maker in roles similar to FlowFuse's core buyer personas (e.g., IIoT Project Lead, IT Operations Manager, Manufacturing Engineer, Plant Manager). Must have faced the pain points FlowFuse solves in deploying, managing, or scaling Node-RED-based solutions in industrial environments.
+
 
 ### Nice to Have
 
@@ -41,8 +42,6 @@ The Developer Relations Advocate skill set includes:
 * Industrial Protocol Knowledge: Understanding of industrial communication protocols such as OPC-UA, Modbus, MQTT, or similar technologies used in manufacturing and automation
 * Technical Background: Software development experience in JavaScript/Node.js, Python, or other relevant programming languages
 * CRM & Analytics Proficiency: Ability to identify and qualify business opportunities using CRM tools such as HubSpot, Salesforce, or similar platforms. Experience with lead scoring, pipeline management, and opportunity tracking.
-
-
 
 ## 90-Day Plan
 
@@ -70,14 +69,13 @@ The Developer Relations Advocate skill set includes:
    * **Marketing Campaign Support:** Collaborate on multi-channel marketing campaigns that integrate developer relations activities with broader marketing initiatives
    * **Success Metrics Establishment:** Develop and implement tracking systems for DevRel-specific KPIs including community growth, content engagement, and qualified lead generation
 
-
 ## Hiring Plan
 
-1. Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
-2. First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
-3. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
-4. Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample.
-5. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
-6. Offer: Extend an offer to the selected candidate.
+1. Screening: Review resumes and cover letters to assess candidate qualifications and experience.
+2. Technical Depth & Case study:
+   * Conduct a video interview to assess technical proficiency -  experience scaling teams, and alignment with FlowFuse's "sports team" culture.
+   * Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample.
+3. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
+4. Offer: Extend an offer to the selected candidate.
 
 

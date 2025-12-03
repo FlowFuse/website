@@ -63,7 +63,7 @@ Following are some of the most commonly used protocol nodes:
 - **Modbus:** <https://flows.nodered.org/node/node-red-contrib-modbus>
 - **OPC UA:** <https://flows.nodered.org/node/node-red-contrib-opcua>
 - **OPC DA:** <https://flows.nodered.org/node/node-red-contrib-opc-da>
-- **MQTT:** <https://flowfuse.com/node-red/core-nodes/mqtt/>
+- **MQTT:** <https://flowfuse.com/node-red/core-nodes/mqtt-in/>
 - **Ethernet/IP:** <https://flows.nodered.org/node/node-red-contrib-ethernet-ip>
 - **Siemens S7:** <https://flows.nodered.org/node/node-red-contrib-s7comm>
 - **MITSUBISHI MC:** <https://flows.nodered.org/node/node-red-contrib-mcprotocol>

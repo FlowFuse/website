@@ -11,13 +11,13 @@ image: /node-red/hardware/images/webhooks-node-red.png
 
 # {{meta.title}}
 
-Webhooks play an integral role in streamlining operations, facilitating fast communication and seamless integration between disparate systems and devices. In this documentation, we cover everything you need to get started with webhooks, from basics to practical implementation. We provide detailed, step-by-step instructions on integrating systems through webhooks using Node-RED.
+Webhooks let different systems talk to each other automatically when something happens. Instead of constantly asking "anything new?", one system just tells the other "hey, this just happened." This guide shows you how to set up webhooks in Node-RED, using a real manufacturing example where temperature sensors trigger maintenance alerts.
 
 ## What are Webhooks?
 
-Webhooks are a mechanism that allows fast communication between two different applications or services. They are essentially HTTP requests triggered by events in a source system and sent to a destination system, often with a payload of data. Webhooks are automated, meaning they are automatically sent out when their corresponding event is fired in the source system. 
+A webhook is basically an automated HTTP request that fires when a specific event occurs. Think of it like setting up a notification system between two apps—when something happens in App A, it immediately sends a message to App B with all the relevant details.
 
-In simple terms, Webhooks are "user-defined HTTP callbacks.” This callback is triggered after a specific event occurs in the source system, prompting the system to automatically send an HTTP request to the designated destination system.
+The technical term is "user-defined HTTP callbacks," but here's what that means in practice: you tell a system "when X happens, send this data to this URL." From then on, it handles everything automatically.
 
 ## How Webhook works 
 

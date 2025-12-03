@@ -153,7 +153,7 @@ While Sparkplug B provides a standardized topic model, its hierarchy may not alw
 
 ### Step 5: Sending Collected metrics to UNS
 
-With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/node-red/core-nodes/mqtt/) node to send the transformed data to the broker.
+With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/node-red/core-nodes/mqtt-in/) node to send the transformed data to the broker.
 
 1. Drag an MQTT out node into your flow.  
 2. Configure the node to connect to the FlowFuse MQTT Broker using the client credentials generated earlier.

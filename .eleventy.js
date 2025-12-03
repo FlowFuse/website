@@ -102,6 +102,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
     eleventyConfig.addPassthroughCopy("src/blueprints/**/flow.json");
     eleventyConfig.addPassthroughCopy("src/events/hm25-invite.ics");
+    eleventyConfig.addPassthroughCopy("src/webinars/2025/simplifying-opc-ua/opc-ua-webinar-flows.zip");
+    eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
@@ -179,13 +181,14 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('dictsortBy', function(val, reverse, attr) {
         let array = [];
         for (let k in val) {
-            array.push(val[k]);
+            // Preserve the key (slug) by adding it to the object
+            array.push({...val[k], _key: k});
         }
 
         array.sort((t1, t2) => {
             var a = t1[attr];
             var b = t2[attr];
-        
+
             return a > b ? 1 : (a === b ? 0 : -1); // eslint-disable-line no-nested-ternary
         });
 

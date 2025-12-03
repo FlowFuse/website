@@ -155,8 +155,8 @@ When generating PDFs for your specific data, start by creating a flow to collect
 [{"id":"1e73fef718bb4876","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["5169b96ad66dcff6","b75fde37ea431d84","a571bbd7b0c0cb25"],"x":14,"y":59,"w":812,"h":82},{"id":"5169b96ad66dcff6","type":"inject","z":"b37428694e90b2c5","g":"1e73fef718bb4876","name":"Create Table","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":130,"y":100,"wires":[["b75fde37ea431d84"]]},{"id":"b75fde37ea431d84","type":"sqlite","z":"b37428694e90b2c5","g":"1e73fef718bb4876","mydb":"1ae6d7f7fdb60191","sqlquery":"fixed","sql":"CREATE TABLE IF NOT EXISTS production_report (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    date TEXT NOT NULL,\n    shift TEXT NOT NULL,\n    product TEXT NOT NULL,\n    units_produced INTEGER NOT NULL,\n    defective_units INTEGER NOT NULL,\n    operator TEXT NOT NULL\n);","name":"","x":440,"y":100,"wires":[["a571bbd7b0c0cb25"]]},{"id":"a571bbd7b0c0cb25","type":"debug","z":"b37428694e90b2c5","g":"1e73fef718bb4876","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":720,"y":100,"wires":[]},{"id":"1ae6d7f7fdb60191","type":"sqlitedb","db":"productiondata.sqlite","mode":"RWC"},{"id":"ccca7810c6b3db41","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["19ad08d3015ef8f2","b706e4aa8a2d0740","f32cdc1dd16b56b7","3708b00ae17defa5","c4464e3454a8805e","2df338e18c9a60d5"],"x":14,"y":179,"w":1332,"h":82},{"id":"19ad08d3015ef8f2","type":"sqlite","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","mydb":"1ae6d7f7fdb60191","sqlquery":"prepared","sql":"INSERT INTO production_report (\n    date,\n    shift,\n    product,\n    units_produced,\n    defective_units,\n    operator\n) VALUES (\n    $date,\n    $shift,\n    $product,\n    $units_produced,\n    $defective_units,\n    $operator\n);\n","name":"","x":1060,"y":220,"wires":[["2df338e18c9a60d5"]]},{"id":"b706e4aa8a2d0740","type":"inject","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"Click to generate and insert data","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":190,"y":220,"wires":[["f32cdc1dd16b56b7"]]},{"id":"f32cdc1dd16b56b7","type":"function","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"Generate Simulated Production Data","func":"const products = [\"Widget A\", \"Widget B\", \"Gadget X\", \"Component Z\"];\nconst operators = [\"John Matthews\", \"Sarah Lee\", \"Amit Kumar\", \"Rita Patel\"];\nconst shifts = [\"A\", \"B\", \"C\"];\n\nfunction getRandomInt(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nconst data = [];\n\nfor (let i = 0; i < 10; i++) {\n    const date = new Date();\n    date.setDate(date.getDate() - i); // Last 10 days\n\n    data.push({\n        date: date.toISOString().split('T')[0],\n        shift: shifts[getRandomInt(0, shifts.length - 1)],\n        product: products[getRandomInt(0, products.length - 1)],\n        units_produced: getRandomInt(400, 600),\n        defective_units: getRandomInt(0, 10),\n        operator: operators[getRandomInt(0, operators.length - 1)]\n    });\n}\n\nmsg.payload = data;\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":490,"y":220,"wires":[["3708b00ae17defa5"]]},{"id":"3708b00ae17defa5","type":"split","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"","splt":"\\n","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload","x":710,"y":220,"wires":[["c4464e3454a8805e"]]},{"id":"c4464e3454a8805e","type":"change","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"","rules":[{"t":"set","p":"params","pt":"msg","to":"{}","tot":"json"},{"t":"set","p":"params.$date","pt":"msg","to":"payload.date","tot":"msg"},{"t":"set","p":"params.$shift","pt":"msg","to":"payload.shift","tot":"msg"},{"t":"set","p":"params.$product","pt":"msg","to":"payload.product","tot":"msg"},{"t":"set","p":"params.$units_produced","pt":"msg","to":"payload.units_produced","tot":"msg"},{"t":"set","p":"params.$defective_units","pt":"msg","to":"payload.defective_units","tot":"msg"},{"t":"set","p":"params.$operator","pt":"msg","to":"payload.operator","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":860,"y":220,"wires":[["19ad08d3015ef8f2"]]},{"id":"2df338e18c9a60d5","type":"debug","z":"b37428694e90b2c5","g":"ccca7810c6b3db41","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1240,"y":220,"wires":[]}]
 {% endrenderFlow %}
 
-3. Drag an **Inject** node onto the canvas.
-4. Drag an **SQLite** node and connect it to the Inject node. Configure the **SQLite** node with the same database to generate the simulated data. Set the SQL Query type to "fixed statement" and use the following query:
+2. Drag an **Inject** node onto the canvas.
+3. Drag an **SQLite** node and connect it to the Inject node. Configure the **SQLite** node with the same database to generate the simulated data. Set the SQL Query type to "fixed statement" and use the following query:
 
 ```sql
 SELECT * FROM production_report;
@@ -260,13 +260,13 @@ msg.payload = docDefinition;
 return msg;
 ```
 
-6. Drag a **pdfbuilder** node onto the canvas. Set the input property to `msg.payload`, set output type to Buffer, and output property to `msg.payload`.
-7. Drag a **Write File** node, configure it with:
+5. Drag a **pdfbuilder** node onto the canvas. Set the input property to `msg.payload`, set output type to Buffer, and output property to `msg.payload`.
+6. Drag a **Write File** node, configure it with:
    - Filename: test.pdf
    - Action: Overwrite file
    - Add newline (\n) to each payload?: Checked
-8. Connect the **SQLite** node to the **Function** node, then to the **pdfbuilder** node, and finally to the **Write File** node.
-9. Deploy the flow and click inject node to generate the pdf.
+7. Connect the **SQLite** node to the **Function** node, then to the **pdfbuilder** node, and finally to the **Write File** node.
+8. Deploy the flow and click inject node to generate the pdf.
 
 Once the PDF is generated, you can find it in the `.node-red` directory.
 
@@ -278,8 +278,8 @@ In this step, we’ll make the generated PDF accessible through a web interface.
 
 #### Exposing the PDF via HTTP
 
-1. Drag the ** http-in ** node onto the canvas. Set the method to 'GET' and the URL to `/report.pdf`. This will create an HTTP endpoint for retrieving the generated PDF.
-2. Connect the ** http-in ** node to the ** SQLite ** node. This ensures that when a request is made to this endpoint, the necessary data is fetched from the database.
+1. Drag the **http-in** node onto the canvas. Set the method to 'GET' and the URL to `/report.pdf`. This will create an HTTP endpoint for retrieving the generated PDF.
+2. Connect the **http-in** node to the **SQLite** node. This ensures that when a request is made to this endpoint, the necessary data is fetched from the database.
 3. After the **Write File** node in your flow, add a **Change** node. Connect it to the **Write File** node, and configure it to set the following headers for the HTTP response:
    
    - Set `msg.headers` to:

@@ -10,9 +10,7 @@ meta:
 
 # {{meta.title}}
 
-A REST API (Representational State Transfer Application Programming Interface) is a type of web service that follows the principles of REST, which are guidelines for building scalable and efficient networked applications. It enables different software applications to communicate and interact with each other over the internet using standard HTTP methods (GET, POST, PUT, DELETE, etc.) and formats (JSON, XML, etc.).
-
-In this documentation, we will show you how to create REST APIs in Node-RED and how to fetch data from API. To create APIs, we will utilize the HTTP nodes.
+REST APIs are how applications talk to each other over the web. They use standard HTTP methods (GET, POST, PUT, DELETE) to send and receive data, usually in JSON format. This guide shows you how to build your own REST APIs in Node-RED and how to pull data from existing APIs.
 
 ## Creating a GET API
 
@@ -45,6 +43,65 @@ In this documentation, we will show you how to create REST APIs in Node-RED and 
 {% endrenderFlow %}
 
 For more details, refer to the [CRUD API Blueprint](https://flowfuse.com/blueprints/getting-started/crud/), where we have created CRUD APIs to store, retrieve, delete, and update the data from MongoDB database.
+
+## Securing Your APIs
+
+APIs without security are open doors to your application. Here are essential practices for protecting your endpoints:
+
+### Authentication
+
+The simplest approach is HTTP Basic Authentication. Add authentication to your http-in nodes:
+
+1. Open your **http-in** node
+2. Enable "Use authentication"
+3. Set a username and password
+
+Node-RED will reject requests without valid credentials. For production systems, consider more robust options like:
+
+- **API Keys**: Send a secret key in headers that your flow validates
+- **OAuth 2.0**: Industry-standard authorization for third-party access
+- **JWT Tokens**: Stateless authentication tokens that carry user information
+
+### Rate Limiting
+
+Prevent abuse by limiting how often someone can hit your endpoints. Use the `node-red-contrib-rate-limit` node to throttle requests:
+
+```
+npm install node-red-contrib-rate-limit
+```
+
+Place it after your http-in node to block excessive requests from the same source.
+
+### HTTPS Only
+
+Never expose APIs over plain HTTP in production. Always use HTTPS to encrypt data in transit. If you're using FlowFuse, HTTPS is handled automatically. For self-hosted instances, configure Node-RED behind a reverse proxy (nginx, Apache) with SSL certificates.
+
+### Input Validation
+
+Always validate incoming data. Don't trust anything users send:
+
+```javascript
+// In a function node
+if (!msg.payload.id || typeof msg.payload.id !== 'string') {
+    msg.statusCode = 400;
+    msg.payload = { error: "Invalid ID" };
+    return msg;
+}
+```
+
+Check data types, required fields, and acceptable values before processing.
+
+### CORS Configuration
+
+If your API is called from web browsers, configure CORS properly. Add an **http response** node and set headers:
+
+```
+Access-Control-Allow-Origin: https://yourdomain.com
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+Access-Control-Allow-Headers: Content-Type, Authorization
+```
+
+Never use `*` for `Allow-Origin` in production—specify exact domains.
 
 ## Example: Reading Data
 

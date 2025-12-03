@@ -51,10 +51,9 @@ You:
    * Develop a deeper understanding of the company's financial health and strategic partnerships
 
 ## Hiring Plan
-* Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience
-* First Interview: Conduct a phone or video interview to further evaluate candidate skills, experience, and cultural fit with the Chief of Staff role
-* Second Interview: In-depth interview with the hiring manager (likely the CEO) to discuss specific experience, strategic thinking, and alignment with the leader's working style
-* STAR Interview: Behavioral interview focusing on past situations, tasks, actions, and results to understand problem-solving abilities and value alignment
+* Resume Screening: Review resumes and cover letters to assess candidate qualifications and experience
+* [Screening Interview](/handbook/peopleops/hiring/screening-call/): Conduct a video interview to further evaluate candidate skills, experience, and cultural fit with the Chief of Staff role
+* Second Interview: In-depth interview with the hiring manager to discuss specific experience, strategic thinking, and alignment with the leader's working style
+   * STAR Interview: Behavioral interview focusing on past situations, tasks, actions, and results to understand problem-solving abilities and value alignment
 * Assessment/Presentation: Candidates may be asked to complete a case study, analyze a business problem, or prepare a brief presentation to demonstrate strategic thinking and communication skills
-* Final Interview: A final interview with key stakeholders or other members of the leadership team
 * Offer: Extend an offer to the selected candidate

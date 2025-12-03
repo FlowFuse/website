@@ -78,6 +78,16 @@ Most meetings are scheduled to discuss items and make decisions. There's meeting
 that just shouldn't take place when there's nothing to discuss on the agenda
 5 minutes prior to the meeting.
 
+### Google Calendar Delegation
+
+You can allow other team members to manage created events on your calendar by adjusting the modify permissions on a per event basis or have it enabled by default. Having it enabled by default allows co-management of your created events which is particularly helpful if the person who created the event is unable to edit it when needed. Allowing broader permissions works well for most events in an async remote work environment.
+
+To enable it by default for all your future created events:
+1. Sign in to https://calendar.google.com with your FlowFuse email address.
+1. In the top right click on the Gear icon to go into the [pGoogle Calendar Settings](https://support.google.com/calendar/answer/6084644?hl=en&co=GENIE.Platform%3DDesktop&oco=0)
+1. Go to `Event settings`
+1. Adjust `Guest permissions` to include `Modify event`
+
 ### Coffee calls
 
 Coffee calls are social of nature and thus are the exception to the rule that
@@ -189,11 +199,12 @@ Example Standup:
 
 #### Monday Team Catchup
 
-Weekly a meeting is held to announce company wide updates, get to know each
+Weekly an optional meeting is held to announce company wide updates, get to know each
 other, and share things you want to share both professionally and personally.
 
-Personal updates don't have to be documented in the agenda, but please do keep a
-list of names in the agenda so everyone gets the opportunity to share.
+On the agenda you might want to add what you did the past weekend, and what kept
+you busy. It's also great for setting the order of the chatting and ensuring
+everyone gets the opportunity to share.
 
 #### Strategy Call
 

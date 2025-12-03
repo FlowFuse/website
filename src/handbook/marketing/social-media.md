@@ -17,6 +17,8 @@ Each content type has channels which are appropriate, this table sets out which 
 |Long format videos   |         |*        |*        |        |       |              |                  |
 |Downloadable content |*        |*        |         |*       |       |*             |                  |
 |New roles opening    |*        |*        |         |*       |*      |*             |*                 |
+|New hires            |*        |         |         |*       |       |              |                  |
+|Memes                |*        |*        |*        |*       |*      |              |                  |
 
 ## Strategy for increasing reach
 
@@ -27,6 +29,7 @@ Each content type has channels which are appropriate, this table sets out which 
     - Respond promptly to comments and messages.
     - Like and share relevant content from other sources.
 - Leverage trending topics and holidays.
+- [Leverage our team network](/handbook/marketing/social-media/#leveraging-the-team-network-on-linkedin).
 
 ### Scope
 
@@ -36,7 +39,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 #### Frequency
 
-- Once a work day.
+- Our standard practice is a single post per day, though we can increase this frequency to cover timely and urgent events.
 
 #### Type of content
 
@@ -49,7 +52,7 @@ Each content type has channels which are appropriate, this table sets out which 
         - More collaborative: Engineers only need 1–2 minutes to hand off the content. Marketing takes care of the rest.
 
         These posts help us share fast-moving progress, spark community interest, and highlight how FlowFuse evolves day-to-day.
-
+- **New hire:** On Monday's during their first or second week working at FlowFuse.
 - **Curated content from other sources:** 1x week. Fridays.
     - Articles relevant to our ideal customer / industry related / news / posts.
         - Avoid competitor mentions.
@@ -59,6 +62,7 @@ Each content type has channels which are appropriate, this table sets out which 
         - Include our POV in the post.
         - Tag the original source.
     - Follow partners and customers on each channel for shareable content.
+- **Memes:** 1x every other week. Saturdays.
 - **Other content types:** 1x week. Any day.
     - Quick tips, clips of longer video formats, customer stories, surveys, events, downloads, FAQs, best practices, testimonials, quizzes, challenges.
 - [Detailed list here](https://docs.google.com/spreadsheets/d/1Ifz6f7D_ZxCxJkAS9LbdvdnEAae0tGFEqkGVHcnn2TU/edit?usp=sharing).
@@ -76,8 +80,11 @@ Each content type has channels which are appropriate, this table sets out which 
     - USA before work (6:00 am EDT - 12 pm CEST).
     - USA lunch hours (11:30 am EDT -  5:30 pm CEST).
 - While we have a planned schedule, it's crucial to remain flexible. If more impactful or relevant content emerges, we'll adapt our plan accordingly to ensure the best possible engagement.
+- If the post is part of a campaign, add it as a campaign asset in HubSpot. If the campaign doesn't exist yet, create it with a descriptive name for easy identification.
 
 #### Posts format
+
+##### Regular
 
 - Descriptive text: 
     - Align with post purpose and audience goals.
@@ -87,6 +94,54 @@ Each content type has channels which are appropriate, this table sets out which 
 - Only one CTA
 - Hashtags, ideally three.
 - Link to article / website.
+    - In HubSpot, delete the link from the "Add media" section to keep full-size image.
+- If you're attaching a video to the post, click the “Edit Thumbnail” button and choose a frame from the video or select/upload an image that better reflects what the content is about. Otherwise, the first frame of the video will be used by default.
+- Select the corresponding campaign if applicable.
+
+##### New Hire
+
+- Welcome message highlighting the new team member's role
+- Tag the new team member
+- Brief background (2-3 key points about their experience or expertise)
+- What they'll be working on at FlowFuse
+- Include a photo they feel comfortable with (professional or casual, their choice)
+- Emoji
+- A message encouraging community to say hi in the comments
+- 2-3 relevant hashtags
+
+#### Leveraging the team network on LinkedIn
+
+##### Page admins*
+
+- Use the **“Invite to follow”** feature on the company page. The page has a **monthly pool of 250 invitation credits**. Each admin can send invitations to their connections using these credits, but the total number of invitations sent by all admins cannot exceed 250 per month. We should make sure to use our full quota every month, as this directly contributes to growing our audience.  
+- When selecting people to invite, focus on relevant industries and roles. This ensures new followers are more likely to engage with our content and convert into qualified leads.  
+    - To identify industries where FlowFuse already has traction, go to **Analytics → Followers → Follower demographics**, and filter by *Industry*.  
+    - Also see our [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-(icp)) to prioritize the right contacts.  
+- This activity should be completed **monthly** as part of our ongoing LinkedIn growth strategy.
+
+*If you're not a page admin but have a strong network within our ICP industries, reach out to the Social Media Manager.  
+You can be granted temporary admin access once a month to send your invites.
+
+##### Entire team
+
+
+**Team member engagement**
+
+LinkedIn's algorithm currently rewards **comments** over reposts or likes. Team members are encouraged to leave **insightful comments** on FlowFuse posts — this significantly increases visibility and helps us reach new audiences through personal networks.
+
+**Company account actions**
+
+We'll share a [new hire post](/handbook/marketing/social-media/#new-hire) when new members join the team and encourage them to share, comment, and engage with responses. This aims to welcome them, expand reach through their networks, and showcase company culture.
+
+## Content Ownership & Real-Time Decisions
+
+- In general, everyone is encouraged to post on social media, as long as they follow our proposed [guidelines and tone](/handbook/marketing/brand-voice/). [The HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar) serves as our central planning hub for publishing content. If you choose to publish on your own, please make sure to follow the guidelines and refer to the [recommended publishing times](/handbook/marketing/social-media/#planning-and-posting).
+- If you prefer not to post yourself and would like to delegate, you can do so [Requesting a Social Post](/handbook/marketing/social-media/#requesting-a-social-post). The Social Media owner will manage it following the regular posting track. 
+- This is to ensure we never block or delay a post that could be urgent or highly relevant in the moment. While our handbook provides structure, it should not prevent us from responding quickly to breaking news or important events.
+- When an author posts to social media, posts do not need to be reviewed by another person before posting.
+- The [Social Media Manager](https://github.com/Yndira-E) remains ultimately responsible for both the distribution and the content published across FlowFuse channels.
+- Any publication made by someone outside the marketing team must always be communicated to the Social Media Manager. This allows them to keep the post in the established (https://app-eu1.hubspot.com/social/26586079/manage/calendar) and review it if any stylistic adjustments are needed to align with [our tone and brand voice](https://flowfuse.com/handbook/marketing/brand-voice/#brand-personality) — something they may do whenever considered necessary.
+
 
 ## Requesting a social post
 

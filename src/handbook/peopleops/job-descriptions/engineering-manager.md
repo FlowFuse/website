@@ -6,7 +6,7 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-At FlowFuse, an Engineering Manager is not just a lead to our team of engineers. An Engineering Manager is someone comfortable contributing to our codebase and can lead from the front, as well as guiding their engineering team to higher performance and faster innovation.
+At FlowFuse, an Engineering Manager leads and grows our team of engineers. You'll need a strong technical background to effectively guide the team and make informed decisions, but your primary focus will be on leadership, coaching, and scaling the team to drive higher performance and faster innovation.
 
 We believe in running our engineering team like a sports team. You'll be responsible for fostering a culture of high performance, continuous improvement, and a relentless drive to win.
 
@@ -15,12 +15,12 @@ As an Engineering Manager, you'll be shaping our engineering culture and driving
 * **Drive Performance and Velocity**: You’ll do whatever is in your power to increase team performance and velocity. You'll establish clear goals and metrics, track progress, and implement strategies to help the team move faster and more efficiently without sacrificing quality. You will analyze the team's current performance, identify bottlenecks, and implement solutions to optimize our development processes.
 * **Build a Winning Culture**: You will cultivate a high-performance, results-oriented environment. This means fostering a sense of ownership, accountability, and a shared commitment to our goals.
 * **Strategize and Execute**: You'll work closely with other stakeholders to translate business objectives into a clear technical roadmap. You will be responsible for the successful and timely delivery of user-valuable software.
-* **Lead from the Front**: You're not afraid to get your hands dirty. You'll be expected to contribute to the codebase, conduct code reviews, and provide technical guidance to the team. Your technical expertise will be crucial in making architectural decisions and solving our most challenging problems.
+* **Provide Technical Leadership**: Your engineering background enables you to guide technical decisions, conduct code reviews, and mentor the team effectively. While writing code isn't your primary responsibility, your hands-on experience allows you to understand the technical challenges your team faces and make informed architectural decisions.
 
 ## Skills
 To be successful in this role, you'll need a blend of technical prowess and leadership skills. You should bring to the table:
 
-* **A Proven Engineer**: You have a strong background in software development and an understanding of modern technologies and best practices. You are proficient in Node.JS, understand Node-RED and its ecosystem, VueJS, and modern DevOps tooling.
+* **Solid Engineering Background**: You've walked the walk and have hands-on experience building software. Your background in software development gives you credibility with the team and enables you to make informed technical decisions. Familiarity with our tech stack (Node.js, Node-RED, Vue.js, DevOps tooling) is valuable but not essential—what matters most is that you've been in the trenches and understand what engineers face daily.
 * **A Growth-Oriented Leader**: You have startup experience, and a track record of building and scaling high-performing engineering teams.
 * **A Performance-Driven Mindset**: You are data-driven and have experience implementing and tracking metrics to improve team performance. You're constantly looking for ways to optimize processes and increase efficiency.
 * **An Excellent Communicator**: You can clearly articulate technical concepts to both technical and non-technical audiences. You are a great listener and can build strong relationships with your team and other stakeholders.
@@ -36,7 +36,7 @@ To be successful in this role, you'll need a blend of technical prowess and lead
 * Week 5-8: Assess and Plan
    * Begin to analyze team performance metrics and identify potential bottlenecks or areas for improvement in velocity and quality. Set goals for expected improvements.
    * Collaborate with product and other engineering leads to refine the immediate technical roadmap and priorities.
-   * Start contributing to the codebase through code reviews and tackling a minor feature or bug fix to understand the developer workflow.
+   * Participate in code reviews and observe the developer workflow to understand the team's technical processes and challenges.
    * Implement initial process improvements to increase team efficiency and output.
    * Begin to define and track key performance indicators (KPIs) for your team, regularly reviewing progress.
 * Week 9-13: Execute and Optimize
@@ -46,9 +46,9 @@ To be successful in this role, you'll need a blend of technical prowess and lead
 
 ## Hiring Plan
 1. Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
-1. First Interview (Technical Depth & Leadership): Conduct a video interview to assess technical proficiency in Node.js, Node-RED, Vue.js, and DevOps tooling, as well as initial leadership and management experience.
+1. First Interview (Technical Background & Leadership): Conduct a video interview to assess technical background, understanding of software development practices, and leadership/management experience. Past hands-on engineering experience is essential for credibility and decision-making.
 1. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
-1. Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample. 
+1. Leadership Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges (e.g., team scaling, performance optimization, technical decision-making) and asked to propose solutions. 
 1. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
 1. Offer: Extend an offer to the selected candidate.
 

@@ -65,6 +65,14 @@ Guidelines for including images:
     - Where 150 is the maximum width the image will be displayed on the page (source image should be two times this width)
 - GIFs can grow incredibly large, consider using a video in a modern format if the animation is longer than a few seconds
 
+## Non-Image Assets
+
+If you need to include things other than images, e.g. Video or resource bundles (zip files), these should be uploaded to the `website-data` S3 bucket in the Production AWS account.
+
+This can be done by [Ben](/team#ben-hardill), [Nick](/team#nick-oleary), [Piotr](/team#piotr-pawlowski) or [ZJ](/team#zeger-jan-van-de-weg).
+
+A URL will be made available to include in the post.
+
 ## Meta Keywords
 
 Meta keywords are a type of metadata that provide information about the content of a webpage. They are commonly used by search engines to understand the topics covered in a page and improve its visibility in search results.

@@ -36,7 +36,6 @@ eleventyComputed:
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
@@ -65,7 +64,7 @@ eleventyComputed:
     {% if extractedTitle and page.url != '/' %}
     <title>{{ extractedTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% else %}
-    <title>FlowFuse &#x2022; {{ site.messaging.tagLine }}</title>
+    <title>FlowFuse &#x2022; {{ site.messaging.tagLine | replace('<br />', ' ' ) }}</title>
     {% endif %}
     {% endif %}
 
@@ -210,9 +209,9 @@ eleventyComputed:
 
                     <!-- Nav -->
                     <ul id="nav-content" class="">
-                        {% navoption "Product", null, 0 %}
+                        {% navoption "Platform", null, 0 %}
                         <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-5 sm:pr-1 align-left sm:auto-rows-auto items-center">
-                            {% navoption "Platform", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
+                            {% navoption "Product", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
                                 {% navoption "Features", "/product/features/", 2, "star" %}{% endnavoption %}
                                 {% navoption "Integrations", "/integrations/", 1, "squares-plus" %}{% endnavoption %}
@@ -308,43 +307,41 @@ eleventyComputed:
                     </ul>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="flex flex-row w-full -mx-3 md:mx-0 text-base justify-between sm:justify-start sm:gap-x-4 lg:gap-x-6 md:justify-end">
-                        <li class="inline md:m-0 md:block">
-                            <a href="https://www.facebook.com/FlowFuse/" class="block px-3 py-3 md:p-0">
-                                <span class="sr-only">Visit our Facebook page</span>
-                                {% include "components/facebook.njk" %}
-                            </a>
-                        </li>                          
-                        <li class="inline md:m-0 md:block">
-                            <a href="https://www.linkedin.com/company/flowfuse" class="block px-3 py-3 md:p-0">
-                                <span class="sr-only">Visit our LinkedIn page</span>
-                                {% include "components/linkedin.njk" %}
-                            </a>
-                        </li>                          
-                        <li class="inline md:m-0 md:block">
-                            <a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g" class="block px-3 py-3 md:p-0">
-                                <span class="sr-only">Visit our YouTube channel</span>
-                                {% include "components/youtube.njk" %}
-                            </a>
-                        </li>    
-                        <li class="inline md:m-0 md:block">
-                            <a href="https://github.com/FlowFuse" class="block px-3 py-3 md:p-0">
-                              <span class="sr-only">Visit our GitHub page</span>
-                              {% include "components/github.njk" %}
-                            </a>
-                        </li>      
-                        <li class="inline md:m-0 md:block">
-                            <a href="https://discord.gg/2RrvW8dkrF" class="block px-3 py-3 md:p-0">
-                                <span class="sr-only">Join our Discord</span>
-                                {% include "components/discord.njk" %}
-                            </a>
-                        </li>
-                        <li class="inline md:m-0 md:block">
-                            <a href="/blog/index.xml" class="block px-3 py-3 md:p-0">
-                                <span class="sr-only">Subscribe to our RSS feed</span>
-                                {% include "components/rss.njk" %}
-                            </a>
-                        </li>
+                    <ul class="flex flex-col gap-y-4 md:gap-y-6 w-full -mx-3 md:mx-0 text-base md:items-end">
+                      <!-- Follow us buttons -->
+                      <li class="flex flex-wrap gap-y-4 gap-x-4 lg:gap-x-5 px-3 md:px-0 justify-start md:justify-end">
+                        <div class="min-w-max h-6 flex items-end">
+                          <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                          <script type="IN/FollowCompany" data-id="71968747" data-counter="none"></script>
+                        </div>
+                        <div class="min-w-max h-6 flex items-end">
+                          <script src="https://apis.google.com/js/platform.js"></script>
+                          <div class="g-ytsubscribe" data-channelid="UCbBzP8NZbv3WDtlt4UouA-g" data-layout="default" data-count="default"></div>
+                        </div>
+                      </li>
+                      <!-- Social Icons -->
+                      <li class="flex flex-wrap gap-x-4 lg:gap-x-6 px-3 md:px-0 justify-between sm:justify-start md:justify-end">
+                        <a href="https://www.facebook.com/FlowFuse/" class="block">
+                          <span class="sr-only">Visit our Facebook page</span>
+                          {% include "components/facebook.njk" %}
+                        </a>
+                        <a href="https://github.com/FlowFuse" class="block">
+                          <span class="sr-only">Visit our GitHub page</span>
+                          {% include "components/github.njk" %}
+                        </a>
+                        <a href="https://discord.gg/2RrvW8dkrF" class="block">
+                          <span class="sr-only">Join our Discord</span>
+                          {% include "components/discord.njk" %}
+                        </a>
+                        <a href="https://www.reddit.com/r/flowfuse" class="block">
+                          <span class="sr-only">Visit our Reddit community</span>
+                          {% include "components/reddit.njk" %}
+                        </a>
+                        <a href="/blog/index.xml" class="block">
+                          <span class="sr-only">Subscribe to our RSS feed</span>
+                          {% include "components/rss.njk" %}
+                        </a>
+                      </li>
                     </ul>
                 </div>
             </div>

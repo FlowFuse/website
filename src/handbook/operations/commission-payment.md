@@ -8,7 +8,7 @@ FlowFuse has some employees that are compensated through a bonus or commission
 structure. This structure reduces their base compensation, and rewards them when
 goals are met and for taking a risk with their base compensation.
 
-## Processesing Sales Commission
+## Processing Sales Commission
 
 The company processes the commission payment for sales reps on a monthly basis
 to create a short feedback loop between closing and the reward. Currently that's
@@ -81,8 +81,8 @@ Subject line: `Commission for [Month] [YYYY]`.
 ```
 Dear [first_name],
 
-This email is to confirm your estimated commissions for {{Month and Year}}. 
-Your commission percentage for this quarter is {{X}}. 
+This email is to confirm your estimated commissions for [Month and Year]. 
+Your commission percentage for this quarter is [X]. 
 
 In the aforementioned period, you closed:
 
@@ -98,9 +98,28 @@ Please confirm the numbers in this email for the commission payment to be issued
 
 Best,
 
-{{Manager sending email}}
+[Manager sending email]
 ```
 
 ### Wiring the money
 
 If the employee agrees to the commission, process the payment in Deel as USD payment.
+Sign into Deel and browse to the profile of the commission receiver. For contractors
+the commission or bonux is a **Payment Adjustment**. For EOR team members, you'll
+need to add an item under "Payments and Submissions" manually.
+
+In both cases be explicit about this being a bonus for achievements for a certain 
+time period and what the achievement was.
+
+
+## Processing non-commission Bonuses
+
+FlowFuse processes other bonuses on a quarterly basis. These bonuses are agreed upon between the employee and their manager.
+
+At the start of each quarter, the employee should send an email to both their manager and the CEO outlining the agreed goals and bonus structure. The manager must reply to that email confirming the agreement. This ensures that all parties have written confirmation of the goals and conditions.
+
+All goals must be achieved within the agreed quarter. Data or outcomes generated outside of the quarter will not be counted toward the results, even if reports need to be finalized or generated after the quarter has ended. Some reporting may require data collection after the quarter, but this does not extend the performance period.
+
+When the goal has been fully achieved or the quarter has ended with results within the agreed performance threshold, the employee should send a follow-up email to both their manager and the CEO summarizing the achieved outcome.
+
+The bonus payment will be included in the next payroll after the goal completion or report is submitted.

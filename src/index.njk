@@ -1,6 +1,51 @@
 ---
 layout: default
 sitemapPriority: 1.0
+sections:
+    - svgPath: "components/icons/lock-closed.svg"
+      title: "Vendor-Locked SCADA Ecosystems"
+      description: "Proprietary platforms tie your strategy to a single vendor, creating expensive risks. FlowFuse offers a flexible, open-source-based alternative that puts you in control."
+    - svgPath: "components/icons/point-to-point.svg"
+      title: "Custom Point-to-Point Integrations"
+      description: "Isolated solutions for each facility are a maintenance nightmare. Our platform enables you to build standardized, scalable solutions that can be deployed and managed centrally."
+    - svgPath: "components/icons/puzzle-piece.svg"
+      title: "IT Department Bottlenecks"
+      description: "Every operational change requires IT approval, creating 6-month delays for simple tasks. With our AI Copilot, OT teams can now build, test, and deploy solutions independently and in record time, turning months into minutes."
+capabilities:
+    - capability: "Edge data acquisition"
+      feature: "Device agent for streamlined connectivity"
+      description: "Easily and securely collect data from all your industrial devices and sensors. Our platform enables scalable agent deployment to unify data from diverse sources and protocols, ensuring a consistent and reliable flow of information."
+      imagePath: "images/home/home-remote-instances.png"
+      imageAlt: "FlowFuse UI"
+    - capability: "Organize and Analyze"
+      feature: "AI-Assisted platform for data transformation"
+      description: " Transform raw data into a structured and unified information model. Our AI Copilot accelerates this process, allowing your teams to generate complex data transformation logic, from SQL queries to JavaScript functions, using simple natural language prompts. Cleanse, contextualize, and normalize data faster than ever before."
+      imagePath: "images/home/home-node-red.png"
+      imageAlt: "Node-RED UI"
+    - capability: "Interact with the Data"
+      feature: "Interactive, real-time dashboards built with AI assistance"
+      description: "Give your teams the tools to visualize and interact with real-time operational data. With our AI Copilot, you can create custom dashboards and sophisticated UI elements in record time, empowering you to monitor KPIs, optimize production, and innovate without limits."
+      imagePath: "images/home/home-dashboard.png"
+      imageAlt: "FlowFuse Dashboard"
+solutions:
+    - href: "/solutions/it-ot-middleware/"
+      image: "./images/home/home-itot-middleware.png"
+      imageAlt: "Image of workers on a factory shop floor with desks, computers and dashboards on the screen"
+      icon: "components/icons/cog.svg"
+      title: "IT/OT Middleware"
+      description: "Connect disparate systems and industrial protocols with a unified platform. Accelerate development and enable seamless collaboration between IT and OT teams to optimize real-time data flow."
+    - href: "/solutions/scada/"
+      image: "./images/home/home-scada.png"
+      imageAlt: "Image of a woman working on a computer with industrial dashboards on the screen in industrial environment"
+      icon: "components/icons/adjustments-horizontal.svg"
+      title: "SCADA"
+      description: "Modernize your SCADA systems with a modular and flexible platform. Build custom interfaces and control logic in a fraction of the time, gaining full visibility of your operations in an agile and secure way."
+    - href: "/solutions/mes/"
+      image: "./images/home/home-mes.png"
+      imageAlt: "A factory centrally connected with various devices and systems"
+      icon: "components/icons/chart.svg"
+      title: "MES"
+      description: "Implement custom Manufacturing Execution Systems (MES) with greater speed. Rapidly develop and deploy the specific workflows you need, connecting the production plan to the plant floor with ultimate efficiency."
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -8,47 +53,41 @@ hubspot:
   reference: "homepage"
 ---
 <!--Hero Content-->
-<div class="w-full px-6">
-    <div class="max-w-md sm:max-w-screen-lg mt-12 mx-auto">
+<div class="w-full px-6 raster-gradient-bg">
+    <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
-                <h1 class="font-medium home m-auto text-4xl sm:max-lg:text-5xl text-center text-indigo-700">
-                    {{ site.messaging.tagLine | replace('. ', '. <br />') | safe }}
+                <h1 class="font-medium home m-auto text-3xl sm:text-4xl md:text-5xl text-center text-indigo-700 mb-6">
+                    {{ site.messaging.tagLine | safe }}
                 </h1>
-                <p class="mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
+                <p class="mt-6 sm:mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
                     {{ site.messaging.subtitle }}
                 </p>
-                <div class="flex flex-col mt-10 my-6">
-                    <div class="m-auto flex gap-4 items-center justify-center flex-row">
-                        <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hero'})">
-                            <span class="text-base uppercase items-center">
-                                BOOK A DEMO
-                            </span>
-                        </a>
-                        <a class="ff-btn flex flex-col mb-6" href="{{ site.appURL }}/account/create"
-                        onclick="capture('cta-try-it-now', {'position': 'hero'})">
-                            <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                                TRY IT OUT
-                                {% include "components/icons/arrow-right.svg" %}
-                            </span>
-                        </a>
+                
+                <!-- AI Chat Interface -->
+                {% include "components/ai-chat-interface.njk" %}
+
+                <!-- AI Expert Modal -->
+                {% include "components/ai-expert-modal.njk" %}
+
+                <div class="text-center mt-16 mb-8">
+                    <h5 class="text-gray-600 mb-12">Or get a quick look at FlowFuse’s features in 90 seconds</h5>
+                    <div class="flex justify-center items-end m-auto">
+                        <lite-youtube 
+                            videoid="bcZddES23k4"
+                            params="rel=0" 
+                            style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/bcZddES23k4/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                            class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full">
+                        </lite-youtube>
                     </div>
                 </div>
-            </div>
-            <div class="flex justify-center items-end m-auto">
-                <lite-youtube 
-                    videoid="nTWbpt0ysu8"
-                    params="rel=0" 
-                    style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/nTWbpt0ysu8/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                    class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full">
-                </lite-youtube>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Secondary Content -->
 <div class="w-full px-6">
+    <!-- Social Proof -->
     <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl">
         <div class="w-full text-center min-h-14 flex justify-center items-center mt-12 bg-radial-indigo">
             <h5 class="text-gray-600">Trusted by industrial leaders driving digital transformation worldwide</h5>
@@ -58,102 +97,164 @@ hubspot:
         </div>
     </div>
 
-    <!-- Unlock data -->
-    <div class="about w-full pt-16">
-        <div class="max-w-md sm:max-w-screen-lg mx-auto">
-            <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
-                <h2 class="text-center w-full md:text-left">Empowering you to <span class="text-indigo-600">unlock data and build applications faster</span></h2>
-                <p class="text-center w-full md:text-left">
-                    Supporting your OT and IT teams with the tools and safeguards they need to drive operational efficiency and deliver real business value.
-                </p>
-                <!-- Metrics -->
-                {% set metrics = [
-                {
-                    number: "20x",
-                    text: "Increase in DevOps pipeline speed with automation"
-                },
-                {
-                    number: "20%",
-                    text: "Reduction in developer time spent on new solutions"
-                },
-                {
-                    number: "9x",
-                    text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services"
-                }]
-                %}
-                <div class="grid sm:grid-cols-3 gap-6 bg-indigo-50 rounded-lg mt-10 pb-3 px-4 pt-6 max-sm:max-w-[300px] m-auto">
-                    {% for metric in metrics %}
-                        <div class="max-w-[230px] m-auto">
-                            <div class="flex justify-center">
-                                <h3 class="text-4xl font-normal text-indigo-400">{{ metric.number }}</h3>
-                            </div>
-                            <p class="text-center mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
-                        </div>
-                    {% endfor %}
-                </div>
-                <!-- Wheel section -->
-                {% set sections = [
-                {
-                title: "Manage",
-                text: "Gain a centralized view of your instances, monitor performance and ensure seamless operations.",
-                svgPath: "components/icons/cog.svg",
-                mdOrder: "md:order-0"
-                },
-                {
-                title: "Scale",
-                text: "Democratize innovation; simplified updates, remote access capabilities, and version control for your deployments.",
-                svgPath: "components/icons/arrows-pointing-out.svg",
-                mdOrder: "md:order-1"
-                },
-                {
-                title: "Secure",
-                text: "Integrate seamlessly with your existing security infrastructure, and maintain comprehensive audit logs to adhere to industry standards.",
-                svgPath: "components/icons/lock-closed.svg",
-                mdOrder: "md:order-6"
-                },
-                {
-                title: "Collaborate",
-                text: "Share and collaborate across teams for rapid improvements and innovation, along with role-based user access controls.",
-                svgPath: "components/icons/user-group.svg",
-                mdOrder: "md:order-7"
-                }]
-                %}
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 md:grid-flow-col gap-6 mt-10">
-                    <div class="sm:col-span-2 md:row-span-2 md:order-2 self-center m-auto">
-                        <div class="md:max-w-none h-auto max-w-md">
-                            {% image "./images/home/ff_circle.png", "FlowFuse hosting Node-RED connected to many devices", [440] %}
-                        </div>
+    <!-- Metrics -->
+    {% set metrics = [
+    {
+        number: "10x",
+        text: "Faster development with our AI Copilot"
+    },
+    {
+        number: "50%",
+        text: "Reduction in scrap rate with real-time monitoring"
+    },
+    {
+        number: "9x",
+        text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services"
+    }]
+    %}
+    <div class="max-w-md sm:max-w-screen-lg mx-auto">
+        <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
+            {% for metric in metrics %}
+                <div class="w-full m-auto gradient-roi-bottom-right from-indigo-100 rounded-lg pb-3 px-4 pt-6">
+                    <div class="flex">
+                        <h3 class="text-4xl font-normal text-indigo-600">{{ metric.number }}</h3>
                     </div>
-                    {% for section in sections %}
-                    <div class="{{ section.mdOrder }}">
-                        <div class="max-sm:mx-auto w-8 h-8 text-red-300 mb-3">
-                            {% set svgPath = section.svgPath %}
-                            {% include svgPath %}
-                        </div>
-                        <h4 class="max-sm:text-center font-semibold">{{ section.title }}</h4>
-                        <p class="max-sm:text-center">{{ section.text }}</p>
-                    </div>
-                    {% endfor %}
+                    <p class="mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
                 </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Solutions section -->
+    <div class="w-full py-10 md:py-16 px-6">
+        <div class="sm:max-w-screen-lg mx-auto max-sm:text-center">
+            <h2 class="max-sm:mt-10"><span class="text-indigo-600">Unlock Powerful Solutions</span> for Your Industrial Operations</h2>
+            <p class="my-6">FlowFuse provides a comprehensive set of solutions designed to bridge the gap between IT and OT, streamline device management, and integrate data with unprecedented speed and intelligence.</p>
+            <div class="grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 mt-6 w-full">
+                {% for item in solutions %}
+                <a class="my-2 group hover:no-underline" href="{{ item.href }}">
+                    <div class="sm:max-h-none max-h-[250px] max-sm:max-w-[500px] ff-image-cover ff-image-rounded scale mx-auto mb-6">
+                        {% image item.image, item.imageAlt, [500] %}
+                    </div>
+                    <div class="flex flex-row gap-2 my-3 items-center max-sm:justify-center text-indigo-700 group hover:text-indigo-900">
+                        <div class="w-6 h-6 my-auto">
+                            {% include item.icon %}
+                        </div>
+                        <h4 class="text-xl text-indigo-700 hover:text-indigo-900">{{ item.title }}</h4>
+                    </div>
+                    <p class="leading-6 sm:pr-3">{{ item.description }}</p>
+                </a>
+                {% endfor %}
             </div>
         </div>
     </div>
-    
-    <!-- Blueprints -->
-    <div class="max-w-md sm:max-w-xl md:max-w-screen-lg mx-auto mt-24 mb-20">
-        <h2 class="text-center w-full md:text-left"><span class="text-indigo-600">Drive industrial innovation</span> with Node-RED and FlowFuse</h2>
-        <p class="text-center w-full md:text-left">Create powerful industrial applications — from real-time monitoring to complex automation — all in one platform. Whether you're optimising production, tracking performance, or visualising data, FlowFuse makes it easy to turn ideas into reality. And to help you get started faster, explore our library of ready-made blueprints for quick, customisable solutions.</p>
-        <div class="container m-auto text-left max-w-sm md:max-w-none pt-8 w-full gap-4">
-            <ul class="flex flex-col sm:grid md:grid-cols-3 gap-x-6 gap-y-12">
-                {% include "homepage_blueprints.njk" %}
-            </ul>
-            <a href="/blueprints/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1 mt-6">
-                See all
-                {% include "components/icons/arrow-long-right.svg" %}
-            </a>
+</div>    
+<!-- Problem section -->
+<div class="bg-indigo-50/50 w-full py-12 px-6">
+    <div class="sm:max-w-screen-lg mx-auto">
+        <div class="sm:flex sm:flex-row gap-12 my-4 m-auto max-sm:text-center">
+            <div class="sm:w-1/3 flex-grow relative">
+                <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full max-sm:max-h-60">
+                    {% image "./images/home/data-silos.jpg", "Trapped industrial data", [308] %}        
+                </div>
+            </div>
+            <div class="sm:w-2/3 my-auto flex flex-col">
+                <h2 class="max-sm:mt-10">Your Industrial Data is Trapped. <span class="text-indigo-600">Our AI Unlocks It</span></h2>
+                <p>
+                    Large manufacturing organizations struggle to unlock the full potential of their operational data. Your current infrastructure creates information silos between IT and OT systems, preventing the scalable digitalization initiatives that drive competitive advantage. <span class="font-semibold">FlowFuse's AI-powered platform intelligently bridges this gap</span>, enabling true operational excellence across all your facilities.
+                </p>
+                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
+                href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'secondary'})">BOOK A DEMO</a>
+            </div>
         </div>
     </div>
+</div>
+<!-- Status Quo section -->
+<div class="about w-full pt-16 px-6">
+    <div class="max-sm:text-center max-w-screen-lg mx-auto pb-16 bg-radial-indigo-small mb-16">
+        <h2 class=" w-full">Why Traditional Industrial Integration Can't Scale <span class="text-indigo-600">(And How We Use AI to Fix It)</span></h2>
+        <p>Most large manufacturers try to solve connectivity challenges with approaches that create enterprise-wide bottlenecks. Here’s how FlowFuse provides a smarter, AI-driven alternative:</p>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
+            {% for section in sections %}
+            <div class="relative w-full max-md:max-w-md mx-auto">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <div class="w-8 h-8 m-auto sm:m-0 text-red-400">
+                            {% include section.svgPath %}
+                        </div>
+                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                            <p class="w-full font-semibold md:m-0 text-gray-600">
+                            {{ section.title }}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-light">{{ section.description | safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Cost of inaction section -->
+    <div class="text-center sm:text-left max-w-screen-lg mx-auto py-6 mb-6 flex flex-col sm:flex-row gap-10">
+        <div class="sm:w-1/2">
+            <h3>The enterprise cost of fragmented industrial architecture</h3>
+            <p>Without integrated industrial data monitoring and control, large manufacturers face significant operational losses:</p>
+        </div>    
+        <div class="sm:w-1/4">
+            <h5 class="text-4xl text-indigo-600 font-semibold">$50B</h5>
+            <p>Annual cost of unplanned downtime across industrial manufacturers globally</p>
+        </div>
+        <div class="sm:w-1/4">
+            <h5 class="text-4xl text-indigo-600">800h</h5>
+            <p>Average equipment downtime per year experienced by manufacturers (over 15 hours per week)</p>
+        </div>
+    </div>
+    <!-- How FF solves the problem section -->
+    <div class="text-center sm:text-left max-w-screen-lg mx-auto p-9 rounded-xl border-2 border-indigo-600 drop-shadow-md bg-white">
+        <h2><span class="text-indigo-600">Intelligently Scale</span> Your Industrial Applications with AI</h2>
+        <div class="md:hidden flex ff-image-rounded max-w-[500px] m-auto mt-6">
+            {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [500] %}
+        </div>
+        <div class="w-full md:flex md:flex-row gap-6 justify-between items-center m-auto">
+            <div class="md:w-7/12">
+                <p>FlowFuse transforms how organizations deploy and manage industrial applications using Node-RED. Our platform, now enhanced with an AI Copilot, empowers IT and OT teams to collaborate more effectively than ever before. Standardize deployments across multiple facilities and accelerate innovation, all while maintaining the governance, security, and scalability your digital transformation demands.</p>
+                <div class="flex gap-3 max-sm:max-w-sm max-md:mx-auto max-sm:flex-col max-sm:justify-center mt-6">
+                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-contact-us', {'position': 'secondary'})">CONTACT US</a>
+                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-try-it-out', {'position': 'secondary'})">TRY IT OUT</a>
+                </div>
+            </div>
+            <div class="max-md:hidden flex ff-image-rounded md:max-w-[350px] m-auto">
+                {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [350] %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full px-6">
+    <!-- Capabilities & Features -->
+    <div class="md:max-w-screen-lg mx-auto mt-24">
+        {% for item in capabilities %}
+        <div class="max-md:text-center md:flex md:flex-row gap-8 my-4 m-auto{% if loop.index is even %} md:flex-row-reverse{% endif %} mb-12 md:mb-24">
+            <div class="max-md:hidden md:w-[45%] max-md:mb-12 flex items-center">
+                <div class="ff-image-rounded w-full border-2 border-indigo-300 hard-shadow-indigo300 m-auto">
+                    {% image item.imagePath, item.imageAlt, [440] %}
+                </div>
+            </div>
+            <div class="md:w-[55%] my-auto flex flex-col">
+                <h5 class="text-indigo-400 mb-3">{{ item.feature }}</h5>
+                <h2>{{ item.capability }}</h2>
+                <div class="md:hidden ff-image-rounded w-full border-2 border-indigo-300 hard-shadow-indigo300 max-w-[500px] mx-auto my-6">
+                    {% image item.imagePath, item.imageAlt, [440] %}
+                </div>
+                <p>
+                    {{ item.description }}
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="w-full px-6">
     <!-- Testimonials -->
     <div class="w-full mt-24 md:px-0">
         <div class="sm:max-w-screen-lg mx-auto">
@@ -162,22 +263,6 @@ hubspot:
     </div>
 </div>
 <div class="pb-10 md:pb-12 pt-14 px-6">
-
-    <!-- IT/OT Graphic -->
-    <div class="about w-full pb-10">
-        <div class="max-w-md sm:max-w-screen-lg mx-auto">
-            <div class="mx-auto w-full md:max-w-screen-lg gap-x-8 gap-y-14">
-                <h2 class="text-center w-full md:text-left mb-6"><span class="text-indigo-600">Bridging OT and IT</span> in Manufacturing</h2>
-                <p class="text-center w-full md:text-left">
-                    Integrate data between OT and IT systems efficiently. With low-code solutions and seamless integration, FlowFuse empowers engineers to collect, visualize, and act on data rapidly, maintaining compliance and security standards. Achieve operational excellence by enabling faster innovation and smoother data flow across your organization.
-                </p>
-                <div class="flex justify-center mt-10 max-w-2xl mx-auto">
-                    {% image "./images/home/ff_ot_it.png", "FlowFuse IT/OT Integration", [800] %}
-                </div>
-                <p class="text-center mt-6 text-base font-light w-full italic">FlowFuse: <a href="/solutions/it-ot-middleware/" class="underline" onclick="capture('cta-ot-it-solution', {'reference': 'homepage'})">The IT/OT Middleware Solution</a></p>
-            </div>
-        </div>
-    </div>
     <!-- Get Started -->
     <div class="ff-blue-card">
         {% include "get-started.njk" %}
@@ -193,4 +278,3 @@ hubspot:
             </div>
     </div>
 </div>
-

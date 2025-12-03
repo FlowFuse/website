@@ -10,6 +10,7 @@
 @import "./algolia-theme.css";
 @import "./roadmap.css";
 @import "./zoom-style.css";
+@import "./node-red-style.css";
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 
@@ -176,6 +177,14 @@ h1, h2, h3, h4 {
 
 .gradient-bg {
     background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
+}
+
+.gradient-roi-bottom-right {
+    background: radial-gradient(farthest-side at 100% 100%, theme(colors.indigo.100), transparent);
+}
+
+.hard-shadow-indigo300 {
+    box-shadow: 4px 4px 0 0 theme(colors.indigo.300);
 }
 
 .pricing .gradient-bg {
@@ -549,6 +558,10 @@ h4:hover .header-anchor::before {
 .ff-image-cover.right picture {
     @apply object-right;
 }
+.ff-image-cover.center img,
+.ff-image-cover.center picture {
+    @apply object-center;
+}
 
 .ff-image-cover.blueprint img,
 .ff-image-cover.blueprint picture {
@@ -882,6 +895,10 @@ h4:hover .header-anchor::before {
     position: absolute;
     width: 0%;
     transform: translateX(20px);
+}
+
+.testimonial #container {
+    @apply md:min-h-[284px] min-h-[650px];
 }
 
 .testimonial.active {
@@ -1628,6 +1645,29 @@ div.content section.footnotes ol li p {
     border: none !important;
 }
 
+@media (max-width: 640px) {
+    body #cc-main .cm__desc {
+        font-size: .8em;
+    }
+
+    body #cc-main .cm__btns {
+        padding: .25rem 1.1rem .5rem;
+    }
+    body #cc-main .cm__btn-group {
+        display: flex;
+        flex-direction: row !important;
+        gap: 1rem;
+    }
+
+    body #cc-main .pm__btn,
+    body #cc-main .cm__btn {
+        border: none;
+        align-self: end;
+        flex: 1;
+        padding: .4em 1em;
+    }
+}
+
 /*
     Overwrite range slider default styles
 */
@@ -1743,4 +1783,214 @@ lite-youtube::before {
 
 .bg-radial-indigo {
     background: radial-gradient(ellipse 30% 70% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
+}
+
+.bg-radial-indigo-small {
+    background: radial-gradient(ellipse 50% 5% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
+}
+
+/* AI Chat Interface Styles */
+.bg-gradient-purple {
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+}
+
+.bg-raster-pattern {
+    position: relative;
+}
+
+.bg-raster-pattern::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.ai-chat-container {
+    position: relative;
+}
+
+.ai-chat-box {
+    position: relative;
+    z-index: 1;
+}
+
+.ai-chat-box .textarea-wrapper {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    border: 1px solid transparent;
+    animation: gradient-border-rotate 4s linear;
+}
+
+/* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */
+
+/* View Transition styles for smooth morphing */
+::view-transition-old(morphing-content),
+::view-transition-new(morphing-content) {
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Let the browser handle the natural morph animation */
+::view-transition-group(morphing-content) {
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes gradient-border-rotate {
+    0% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(0deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    10% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(36deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    20% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(72deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    30% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(108deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    40% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(144deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    50% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(180deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    60% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(216deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    70% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(252deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    80% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(288deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    90% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(324deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+    100% {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(360deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    }
+}
+
+.ai-chat-box .ff-btn {
+    z-index: 2;
+}
+
+.ai-chat-box .textarea-wrapper.modal-header {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(90deg, theme(colors.red.600), #5048e5, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background-size: 200% 100%;
+    animation: gradient-flow-lr 4s linear;
+}
+
+@keyframes gradient-flow-lr {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+#continue-to-app.textarea-wrapper {
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    border: 1px solid transparent;
+    animation: gradient-border-rotate 4s linear;
+}
+
+.prompt-pill {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.prompt-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    background: white;
+    border: 1px solid theme(colors.gray.200);
+    color: theme(colors.gray.700);
+}
+
+.status-pill--secure {
+    border-color: theme(colors.green.200);
+    background: theme(colors.green.50);
+    color: theme(colors.green.700);
+}
+
+.status-pill--observable {
+    border-color: theme(colors.blue.200);
+    background: theme(colors.blue.50);
+    color: theme(colors.blue.700);
+}
+
+.status-pill--trusted {
+    border-color: theme(colors.purple.200);
+    background: theme(colors.purple.50);
+    color: theme(colors.purple.700);
+}
+
+.raster-gradient-bg {
+    background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
+    position: relative;
+}
+
+.raster-gradient-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+    
+    /* Mask using the gradient - grid fades in/out */
+    mask: linear-gradient(to top, 
+        transparent 35%,       /* invisible at bottom */
+        black 56%,             /* fully visible starts */  
+        black 78%,             /* fully visible ends */
+        transparent 97%        /* invisible at top */
+    );
+    -webkit-mask: linear-gradient(to top, 
+        transparent 35%, 
+        black 56%, 
+        black 78%,
+        transparent 97%
+    );
+    
+    pointer-events: none;
+    border-radius: inherit;
 }

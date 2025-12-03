@@ -7,7 +7,7 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-We’re hiring an experienced Solutions Engineer to work across the full customer lifecycle - from pre-sales discovery to long-term customer success. This is a senior, customer-facing role requiring strong domain expertise in industrial automation and a proven ability to guide both technical implementation and strategic solution expansion.
+This is a senior, customer-facing role requiring strong domain expertise in industrial automation and a proven ability to guide both technical implementation and strategic solution expansion.
 
 We’re looking for someone who not only enables the initial deployment but also identifies additional opportunities to expand value across the customer’s organization - be it new use cases, integrations, or system-wide architecture improvements.
 
@@ -71,7 +71,7 @@ Nice to Haves:
 * Final Interview: A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
 * Offer: Extend an offer to the selected candidate.
 
-### Screning Questions 
+### Screening Questions 
 * Can you briefly walk me through your recent experience in a customer-facing engineering or solutions role?
    * Goal: Confirm they have relevant experience in pre-sales or post-sales technical roles (e.g., Solutions Engineer, Sales Engineer, Customer Success Engineer).
 * Have you worked with industrial technologies like SCADA, PLCs, MQTT, or Node-RED?

@@ -10,7 +10,7 @@ All employees at FlowFuse will find PeopleOps policies in this section of the ha
 
 We're all about making FlowFuse an great place to work for everyone. However, if you ever run into any concerns while you're here, these guidelines are here to help you out in raising a grievance. 
 
-This procedure applies to all employees and full-time contractors regardless of length of service. It does not apply to ad-hoc freelancers.
+This procedure applies to all employees and contractors regardless of length of service. It does not apply to ad-hoc freelancers.
 
 ### Step 1: Informal Resolution
 

@@ -10,6 +10,8 @@ When hiring a new role, the process is generally as follows:
 * Add the role to [Greenhouse](/handbook/peopleops/hiring/#greenhouse)
 * Create a private slack channel for key people on the interview loop called #hiring-role (e.g. #hiring-ae for hiring an account executive)
 
+For information about working with external recruiters, see [Working with Recruiters](/handbook/peopleops/hiring/recruiters/).
+
 ## Greenhouse
 
 ### Opening a Job
@@ -70,6 +72,11 @@ for the open position, take the job posting offline. Candidates applying for a j
 that's no longer available is a waste of their time, a bad experience with
 FlowFuse, and hurts our reputation.
 
+## Internal Communication of the job
+
+Once a new headcount request has been approved, it must be announced in the company’s Slack channel [#announcements](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3) so that the entire team is aware of the open position and our current hiring needs. This ensures transparency and encourages involvement in the hiring process.
+Team members are invited to share the job posting within their personal networks if they know someone who matches the role’s requirements and embodies the FlowFuse culture. Referrals are highly encouraged and, if the recommended candidate is hired and successfully completes three months in the role, the referring employee [will earn a bonus](/handbook/peopleops/hiring/#referrals). 
+
 ## Advertising a Role
 
 When advertising for a role on Social Media, engagement is improved (and therefore,
@@ -91,7 +98,11 @@ We have an automated integration setup with [Welcome to the Jungle](https://hire
 
 ### Referrals
 
-To participate in FlowFuse's employee referral program, kindly send all referral resumes to the People Ops Manager. If your recommended candidate gets hired and successfully completes 3 months, you will receive a $100 reward. Alternatively, you can choose a charitable foundation of your liking, and we will double the referral amount donated to that organization.
+To participate in FlowFuse's employee referral program, kindly send all referral
+resumes to the People Ops Manager. If your recommended candidate gets hired and
+successfully completes 3 months, you will receive a $1000 reward. Alternatively,
+you can choose a charitable foundation of your liking, and we will double the
+referral amount donated to that organization.
 
 ### Sharing an Existing Role
 
@@ -121,18 +132,7 @@ When in doubt, reject the candidate.
 
 #### Offer stage
 
-First, read about [extending offers](#extending-an-offer).
-
-At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
-Before the peopleops team extends an offer, explicit approval is required from:
-1. A peopleops manager
-   - Check we hire in their location
-   - Notice period aligns with internal processes
-   - Total compensation is in FlowFuse's range
-1. The new manager of the candidate
-1. CEO
-
-When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
+Read about [extending offers](#extending-an-offer).
 
 ## Extending an offer
 
@@ -142,39 +142,64 @@ majority to be obtained.
 
 When a candidate goes through the full hiring process an offer might be extended
 to them. At such a time it's good to understand that the offer at that time is
-conditional on background checks. The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
+conditional on [background checks](/handbook/peopleops/hiring/#background-screening).
+The offer might include an [equity component](/handbook/peopleops/compensation/#equity).
 This part is conditional on board approval of such a grant. Be sure to be
 explicit about these conditions.
 
+At the offer stage all scorecards will be re-evaluated to understand what the
+candidate strengths and challenges are. Before the hiring manager extends an offer,
+explicit approval is required from the CEO to:
+- Check we hire in their location
+- Confirm candidate is seeking full-time employment (FlowFuse only offers full-time positions)
+- Notice period aligns with internal processes
+- Total compensation is in FlowFuse's range
+- The new manager of the candidate agrees with extending this offer to the candidate
+
 Please use [this template](https://docs.google.com/document/d/1rY0gLLpkOPBVGlMy7PVhnVjmRF53MhkeDET4TkfPJIs){rel="nofollow"} to stage an email.
-Equity in the company is offered to some roles, the CEO has access to [the calculator](https://docs.google.com/spreadsheets/d/1M5zN9S4LoMOhz6cubj1VXY0trvKPMFXxCb4_7otQDnA)
+Equity in the company is offered to some roles, the CEO has access to [the calculator](https://docs.google.com/spreadsheets/d/1iFf7D-_6lzyYiC0_e3BKxzn3TGjyHMIiG3bZ-jChgoE/){rel="nofollow"}
 determining how many options to offer.
 
 ## After an offer is accepted
 
-Onboarding on our EOR provider, Deel, takes at least 1 to 3 weeks. The start
-date for a new employee should be at least 7 working days out. When a
-[conditional offer](#extending-an-offer) has been accepted you should immediately:
+Onboarding on our EOR provider, Deel, takes up to 3 weeks. For contractors or US
+employees the start date can be within 48 hours. Otherwise, do not offer anything
+within 2 weeks. When a [conditional offer](#extending-an-offer) has been accepted
+you should immediately:
 
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
-1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening). Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. (The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.) 
+1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
+1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening).
+   * Create or add the their job title to Deel.
+   * Copy the "Job Description" from the handbook as "Scope of work" on Deel (and save it as a template for this role).
+   * Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.
+   * Add Equity to the offer according to [the Equity guidelines](/handbook/peopleops/compensation/#equity)
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
-1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review. 
+1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review.
+   * Contractors who DO NOT need PIIAA:
+     *   Direct contractors with FlowFuse
+     *   Their existing contract already includes IP assignment
+   * Contractors who DO need PIIAA:
+     *   Contractors hired through Deel Shield
+     *   Because their IP assignment is NOT automatically transferred
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
-1. Close the role in Greenhouse as filled
+1. [Close the role](/handbook/peopleops/hiring/#closing-a-job)
 1. Update the handbooks so that the role isn't listed as an opening on the website ([Reference PR](https://github.com/FlowFuse/website/pull/3300)) 
 
 ### Background Screening
 
-FlowFuse will utilize Deel to conduct background checks on individuals in the United States. These checks are essential for compliance purposes, particularly for employees located in the US.
+FlowFuse will utilize Deel to conduct background checks on individuals in the
+United States. These checks are essential for compliance purposes, particularly
+for employees located in the US.
 
 ### Tax Residency
+
 During the onboarding process on our EOR provider platform, candidates must either be citizens of the country where they will be working or possess a valid visa. Any requests for changes in tax residency should be communicated to the HR department and CEO at least 2 months in advance. This includes changing States within the US.
 
 ## Onboarding
 
-Just before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
+Before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
 and preferred company email address. An issue will be created on our [internal issue tracker](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} with steps for you and
 the team to complete once you start.
 
@@ -187,101 +212,21 @@ Once your FlowFuse email is set up, you will have access to invitations to other
 
 On your first day, once your email and 1Password accounts are set up, it is important to prioritize
 gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
-Additionally, your manager will assign tasks for you to begin working on during your first week. Further details on Onboarding will be available in your Onboarding issue. 
+Additionally, your manager will assign tasks for you to begin working on during
+your first week. Further details on Onboarding will be available in your Onboarding issue. 
 
 ### Onboarding Buddy
 
-As part of your onboarding, you'll be assigned an onboarding buddy who is there to help make you successful. 
+As part of your onboarding, you'll be assigned an onboarding buddy who is there to help make you successful.
 The onboarding buddy should be a person outside of your team. This helps ensure we're building a culture across the company.
 You should reach out to your onboarding buddy regularly in your first 90 days.
 
-## Greenhouse
-
-### Opening a Job
-
-When opening a job post, you'll need a couple of things:
-
-1. A Job Description
-2. Verifying the availability of the approved role.
-3. Set up the role within Greenhouse. The CEO will provide support in case any custom alterations to the job post are required.
-
-### Pipeline design
-
-A pipeline needs to be designed, meaning; you'll need to define all stages of the hiring process.
-For each stage of the hiring pipeline scoresheets **must** be filled out. Each scorecard
-**must** include all values and job requirements.
-
-#### Accepting applications
-
-When you open the role on Greenhouse to accept applications, please [follow the advertisement instructions](/handbook/peopleops/hiring/#advertising-a-role).
-
-Applicants for a job are required to submit their resume, and it is optional for them to include a cover letter.
-Additionally, it is recommended to include one or two acceptance questions that are relevant to the specific position.
-These questions should be thought-provoking, yet not overly time-consuming, and they should allow skilled candidates to provide a response within a minute or two. For example, for a developer position, a question could be: "What happens if someone types 'https://flowfuse.com' in their browser and presses enter?" The intention is to engage candidates and assess their problem-solving skills.
-
-#### Initial Review
-
-The initial review will check the aforementioned question for validity, the resume, and the cover letter.
-Check for:
-1. Alignment to [Values](../../company/values.md)
-1. Capabilities align with the requirements for the role
-1. Previous retention at companies
-   - We'd like people to join the company for the long term, if their previous roles suggest the candidate will not join for the long term please reject them
-
-For each candidate we'd like to move forward with, a scorecard needs to be filled
-out based on the available information so the interviewer for the next stage can
-prepare and focus if the strengths are indeed strong, and the same for weaknesses or uncertainties.
-
-The resume review should reject **over 50%** of all candidates.
-
-#### Skills assessment
-
-For each role a skills assessment will be performed. This stage will be different for most roles. This is the main stage to asses the capabilities.
-
-This round will again result in a scorecard, but also an indication what level this candidate would suit in.
-For example `intermediate` vs `senior` for developers.
-
-When in doubt, reject the candidate.
-
-#### Offer stage
-
-First, read about [extending offers](#extending-an-offer).
-
-At the offer stage all scorecards will be re-evaluated to understand what the candidate strengths and challenges are.
-Before the peopleops team extends an offer, explicit approval is required from:
-1. A peopleops manager
-   - Check we hire in their location
-   - Notice period aligns with internal processes
-   - Total compensation is in FlowFuse's range
-1. The new manager of the candidate
-1. CEO
-
-When a candidate accepts an offer, proceed to [onboard them](#after-an-offer-is-accepted).
-
-#### Rejecting Candidates
-
-We will interview candidates at every stage of the interviewing process. When we reject candidates, there are three kinds of rejections: 
-* pre-interview
-* post-screen
-* after candidates have done multiple interviews
-
-Pre-interview, we use the template in Greenhouse to reject candidates. We want candidates to know that we are not moving forward with them. 
-Note: Some candidates who apply through LinkedIn do not attach valid emails to their application, in which case we reject without emailing, but otherwise we always try to let them know. 
-
-Post-screen, we use a different template in Greenhouse to reject candidates. This template recognizes that candidates have spent time with us. 
-
-After candidates have done multiple interviews, we may want to write a more personal email letting them move on. This is up to hiring manager's discretion. In this case, we should make sure to reject via Greenhouse but not send emails. 
-
-##### Candidate Feedback
-
-At times candidates may request feedback on why we are not moving forward with their candidacy. By default, we do not provide feedback, but in some circumstances a hiring manager may be open to discussing further with the candidate.
-
-### Closing a job
-
-As soon as there's a pipeline that would support at least three strong candidates
-for the open position, take the job posting offline. Candidates applying for a job
-that's no longer available is a waste of their time, a bad experience with
-FlowFuse, and hurts our reputation.
+The onboarding buddy’s responsibilities are:
+- Welcome the new team member and act as a primary point of contact during the first 90 days.
+- Introduce themselves in Slack on the new team member’s first day to establish an immediate connection.
+- Help the team member navigate internal tools, processes, and communication channels.
+- Check in periodically to ensure the team member is settling in and answer basic questions.
+- Direct the team member to the right documentation or people when needed.
 
 ## Offboarding
 
@@ -307,27 +252,18 @@ When a team member voluntarily departs, we may ask if they would like to share t
 
 ## Offboarding process
 
-We will send an email to the departing employee covering the following points:
-
-1. Final payment
-1. Return of company property
-1. Reimbursement of business expenses
-
-At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily. This provides us with valuable feedback on their experience, reasons for leaving, and areas for improvement. Their manager schedules these interviews during the employee's last week to ensure they have an opportunity to share their insights. Our aim is to use this feedback to enhance our workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
+At FlowFuse, we conduct Exit Interviews for employees who choose to leave the company voluntarily.
+This provides us with valuable feedback on their experience, reasons for leaving, and areas for
+improvement. Their manager schedules these interviews during the employee's last week to ensure
+they have an opportunity to share their insights. Our aim is to use this feedback to enhance our
+workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
 
 ### Offboarding Issue
 
-The People Ops manager will create a new off boarding issue for each instance of a team member leaving. The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
+After announcing the departure in Slack, the manager will create a new offboarding issue for each instance of a team member leaving.
+The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
 
-### Final Pay
+Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package.
+Such a package might be dependent on on business requirements, standing of the employee, among other factors.
 
-Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package. Such a package might be dependent on on business requirements, standing of the employee, among other factors.
-
-### Business expense
-
-We will reimburse any outstanding expenses that comply with our handbook's reimbursement section.
-
-## Contractors
-
-All new contractors are to be employed through Deel to standardize contracts and aid with providing a consistent experience for all contractors. Either milestone based payments
-or being paid for month is supported.
+The company will reimburse any outstanding expenses that comply with [our handbook](/handbook/peopleops/expenses/#reimbursement)

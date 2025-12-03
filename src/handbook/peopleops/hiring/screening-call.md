@@ -15,17 +15,18 @@ The structure of this call is as follows:
 This screening call serves as a filter for both the company to align with the candidate on mutual expectations and the details of the role. 
 
 During this call FlowFuse should understand:
-1. Alignment to [Values](../../company/values.md)
-1. The candidate is enthusiastic about the company and the open role
-1. Compensation range for the candidate
-1. The candidate's current location
-   * Timezone and any overlap information
-   * Any visa requirements to work in their current location
+1. Alignment to [Values](/handbook/company/values.md).
+1. The candidate is enthusiastic about the company and the open role.
+1. The candidate is seeking full-time employment (FlowFuse only offers full-time positions).
+1. Compensation range for the candidate.
+1. The candidate's current location.
+   * Timezone and any overlap information.
+   * Any visa requirements to work in their current location.
    * If they service customers, can they travel to the full geography they serve? (Note that any roles with significant travel requirements will have specific details in the job posting.)
-   * Can travel to the US and EU with one week notice? (For events, get togethers, etc)
-   * Any plans to change location in the near future
-1. Notice period, or time from offer to start
-1. How do you manage your todo list?
+   * Can travel to the US and EU with one week's notice? (For events, get-togethers, etc.)
+   * Any plans to change location in the near future.
+1. Notice period, or time from offer to start.
+1. What's the biggest hot-take you have about the field of your job role?
 1. How are you using Generative AI in your workflows today?
 1. Do you have experience at start ups? What does it mean for you to operate in a start up?
 1. Do you have experience with Industrial or Manufacturing sectors of the market?

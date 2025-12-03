@@ -197,6 +197,16 @@ After deploying the flow, you can test each operation—such as creating, deleti
 
 Additionally, if you want to explore the integration of other databases with Node-RED, you can refer to our [database section](/node-red/database/) in the Node-RED learning resources, where we cover databases such as PostgreSQL, MongoDB, InfluxDB, DynamoDB, and more.
 
-## Conclusion
+<div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
 
-This guide has equipped you with essential skills for integrating MySQL with Node-RED. You've learned how to set up and manage MySQL nodes, perform crucial database operations, and leverage MySQL's capabilities within Node-RED for efficient data handling and automation.
+### Try FlowFuse's Built-In Database Service
+
+[FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually—the node sets itself up automatically.
+
+Even better, the [FlowFuse AI Assistant allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
+
+Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
+
+[**Start with FlowFuse today**](https://app.flowfuse.com/) 
+
+</div>

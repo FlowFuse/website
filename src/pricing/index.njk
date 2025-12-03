@@ -24,9 +24,6 @@ hubspot:
     selfHosted:
         formId: 41e858e1-6756-45be-9082-3980237fa229
         cta: "cta-request-trial-license"
-    dedicated:
-        formId: 5a9939ee-899a-46b7-ab16-6376e310381d
-        cta: "cta-contact-us-for-pricing"
     reference: "pricing"
 ---
 
@@ -47,9 +44,6 @@ hubspot:
                             </div>
                             <div class="divSelfHosted">
                                 <span class="selfHostedText">SELF HOSTED</span>
-                            </div>
-                            <div class="divDedicated">
-                                <span class="dedicatedText">DEDICATED</span>
                             </div>
                         </div>
                     </button>
@@ -228,55 +222,6 @@ hubspot:
                     </div>
                 </div>
             </div>
-            <!-- Dedicated -->
-            <div class="contentDedicated hide m-auto transition duration-1000 md:min-h-[500px] w-full mb-12">
-                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-lg mt-4 md:mt-0">
-                    <!-- Card -->
-                    <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid">
-                            <section class="flex md:flex-row gap-2">
-                                <div class="md:w-2/3">
-                                    <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                            <h4 style="display:inline-block;">FlowFuse Dedicated</h4>
-                                        </div>
-                                        <p class="mt-7">Tailored for businesses prioritizing data security, compliance, and regional flexibility, ideal for demanding efficiency and productivity in strict regulatory environments.</p>
-                                    </div>
-                                    <div class="flex flex-col content-start features md:mt-3 mt-10 mb-10 w-full">
-                                        <note class="font-bold" style="display: inline-block;">Top features:
-                                        </note>
-                                        <ul class="ff-checklist font-light leading-7 mt-2 flex flex-col md:flex-row md:gap-2">
-                                            <div class="w-full md:w-3/5">
-                                                <li>Fully managed by FlowFuse</li>
-                                                <li>Data residency in region of your choice</li>
-                                                <li>Full data and source code isolation</li>
-                                            </div>
-                                            <div class="w-full md:w-2/5">
-                                                <li>Enterprise grade security</li>
-                                                <li>Regular upgrade cadence</li>
-                                            </div>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="justify-center items-center m-auto md:w-1/3 max-w-[347px] w-full hidden md:flex lg:mt-3">
-                                    {% image "./images/dedicated/flowfuse-dedicated.png", "FlowFuse and Node-RED logos in a double shield", [347] %}
-                                </div>
-                            </section>
-                            <div class="md:container text-center w-full md:max-w-4xl flex flex-col gap-x-8 gap-y-4 items-center justify-center md:items-start md:justify-start md:flex-row">
-                                <a onclick="scrollToAnchor(event, 'contact-us-dedicated'); capture('cta-contact-us-for-pricing', {'position': 'primary'}, {'plan': 'dedicated'});" class="ff-btn ff-btn--primary flex flex-col max-md:w-full">
-                                  <span class="text-base uppercase no-underline md:px-4">
-                                    CONTACT US FOR PRICING
-                                  </span>
-                                </a>
-                                <a href="/dedicated/" onclick="capture('cta-learn-more', {'position': 'primary'}, {'plan': 'dedicated'})" class="max-md:w-full py-2 flex flex-row text-center justify-center md:text-left items-center md:justify-end md:self-end md:justify-self-end gap-1">
-                                    Learn more about dedicated
-                                    {% include "components/icons/arrow-long-right.svg" %}
-                                </a>
-                            </div>
-                        </div>
-                    </div>    
-                </div>
-            </div>
         </div>
         <!-- Feature Comparison -->
         <div id="feature-comparison" class="product w-full px-6 md:px-0 md:pt-6">
@@ -349,17 +294,6 @@ hubspot:
         </div>
     </div>
 </div>
-<!-- Dedicated contact us -->
-<div class="contentDedicated hide w-full px-6" id="contact-us-dedicated">
-    <div class="flex flex-col m-auto max-w-2xl mt-10 pb-12 gap-12">
-        <h2 class="w-full text-center"><span class="text-indigo-600">Contact us</span> for pricing
-        </h2>
-        <div>
-            {% hubspotForm hubspot.dedicated.formId, hubspot.dedicated.cta, hubspot.reference, 'dedicatedPricingForm' %}
-        </div>
-    </div>
-</div>
-
 <!-- Frequently Asked Questions -->
 <div class="px-6 md:px-14 max-w-screen-lg mx-auto">
     {% include "faq.njk" %}
@@ -377,42 +311,29 @@ hubspot:
     const btns = document.querySelectorAll(".mainToggle");
     const cloud = document.querySelectorAll(".contentCloud");
     const selfHosted = document.querySelectorAll(".contentSelfHosted");
-    const dedicated = document.querySelectorAll(".contentDedicated"); // New dedicated elements
     const cloudText = document.querySelector(".cloudText");
     const selfHostedText = document.querySelector(".selfHostedText");
-    const dedicatedText = document.querySelector(".dedicatedText");
     const selector = document.querySelector(".selector");
     const featureComparison = document.querySelector("#feature-comparison");
 
     function updateContentAndUrl(hosting) {
         cloudText.classList.remove('active');
         selfHostedText.classList.remove('active');
-        dedicatedText.classList.remove('active');
 
         if (hosting === 'cloud') {
             selector.style.left = "0.8%";
             cloud.forEach((item) => item.classList.remove("hide"));
             selfHosted.forEach((item) => item.classList.add("hide"));
-            dedicated.forEach((item) => item.classList.add("hide"));
             urlParams.delete('hosting');
             cloudText.classList.add('active');
             featureComparison.classList.remove("hide");
         } else if (hosting === 'self-hosted') {
-            selector.style.left = "33%";
+            selector.style.left = "49%";
             cloud.forEach((item) => item.classList.add("hide"));
             selfHosted.forEach((item) => item.classList.remove("hide"));
-            dedicated.forEach((item) => item.classList.add("hide"));
             urlParams.set('hosting', hosting);
             selfHostedText.classList.add('active');
             featureComparison.classList.remove("hide");
-        } else {
-            selector.style.left = "66.2%";
-            cloud.forEach((item) => item.classList.add("hide"));
-            selfHosted.forEach((item) => item.classList.add("hide"));
-            dedicated.forEach((item) => item.classList.remove("hide"));
-            urlParams.set('hosting', hosting);
-            dedicatedText.classList.add('active');
-            featureComparison.classList.add("hide");
         }
 
         // Update the history
@@ -436,13 +357,6 @@ hubspot:
         hosting = 'self-hosted';
         updateContentAndUrl(hosting);
         capture('self-hosted');
-    });
-
-    dedicatedText.addEventListener("click", function() {
-        if (hosting === 'dedicated') return;
-        hosting = 'dedicated';
-        updateContentAndUrl(hosting);
-        capture('dedicated');
     });
 </script>
 

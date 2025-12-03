@@ -1,0 +1,76 @@
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.0/dist/purify.min.js"></script>
+<!-- FlowFuse Expert Modal -->
+
+<div id="ai-expert-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-0 md:p-4 md:px-8 md:py-8 z-[9999]">
+    <!-- Modal Content -->
+    <div class="bg-white rounded-none md:rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
+
+        <!-- Header -->
+        <div class="ai-chat-box"><div class="textarea-wrapper modal-header flex items-center justify-between px-4 py-3 rounded-t-none md:rounded-t-lg h-auto rounded-b-none mb-0">
+            <div class="flex items-center gap-1">
+                <!-- FlowFuse Logo -->
+                <div class="w-24 h-6">
+                    {% include "components/flowfuse-wordmark.njk" %}
+                </div>
+                <h2 class="text-base font-semibold text-gray-700 -mb-1">Expert</h2>
+            </div>
+            <button id="close-modal" class="text-gray-400 hover:text-gray-600">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div></div>
+
+        <!-- Chat Content -->
+        <div class="flex-1 p-4 overflow-y-auto">
+            <!-- Info Message -->
+            <div class="bg-indigo-100 rounded-lg mb-6 py-3 px-4">
+                <p class="text-indigo-700 text-sm m-0">
+                    AI agent has access to all of FlowFuse's
+                    <a href="/docs" class="underline">documentation and knowledge</a>,
+                    <a href="/blog" class="underline">blogposts</a>, and more.
+                </p>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div id="chat-messages" class="space-y-4 overflow-auto">
+                <!-- Messages will be added here dynamically -->
+            </div>
+
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 bg-white rounded-b-none md:rounded-b-lg border-t border-gray-200">
+            <div id="action-buttons-container" class="pb-4 flex justify-between">
+                <button id="clear-conversation" class="bg-white border border-indigo-300 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    Start over
+                </button>
+                <div id="right-buttons" class="flex gap-2">
+                    <button id="continue-to-app" class="textarea-wrapper bg-white rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed transition-colors hidden inline-flex items-center gap-1">
+                        Continue chat in <img src="/images/ff-minimal-red.svg" alt="FlowFuse" class="w-5 h-5 inline-block">
+                    </button>
+                    <button id="stop-generation" class="bg-white border border-indigo-300 rounded-full text-sm flex items-center gap-2 py-2 px-3 hidden">
+                        <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
+                        Stop
+                    </button>
+                    <button id="send-message" class="bg-indigo-600 text-white border border-indigo-600 rounded-full text-sm py-2 px-3 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors" disabled>
+                        Send
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <textarea
+                    id="modal-input"
+                    placeholder="Give more details in regards to your intended workflow to tailor it to your use case"
+                    class="w-full p-4 border-2 border-gray-300 rounded-lg resize-none focus:outline-none focus:border-indigo-500 text-gray-900 h-24 text-sm disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
+                ></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- JavaScript for Modal Functionality -->
+<script src="/js/ai-expert-modal.js"></script>

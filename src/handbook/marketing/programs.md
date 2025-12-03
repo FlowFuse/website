@@ -17,7 +17,9 @@ qualified leads.
 
 - **Paid Advertising Campaigns**: We run targeted digital ad campaigns (e.g.,
   ABM on LinkedIn, Google Ads) to reach specific audiences, drive traffic to our
-  key content, and generate MQLs (Marketing Qualified Leads).
+  key content, and generate MQLs (Marketing Qualified Leads). See [Lead
+  Activation](/handbook/marketing/lead-activation/) for definitions of inbound
+  vs. outbound lead sources.
 - **[Gated Resources](/handbook/marketing/leads/)**: We create and promote
   in-depth content such as whitepapers, ebooks, and guides. This content is
   gated, serving as a key tool for capturing new marketing qualified leads.

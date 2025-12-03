@@ -28,9 +28,11 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **“Commissions”** means Incentive Compensation relating to a Salesperson’s sale of qualifying products and services on authorized accounts in his or her sales territories.  As described in Section 9, Commissions are not deemed Earned until the satisfaction of a number of conditions, including the customer’s payment of the invoice in full.  However, except as provided by Section 9 or Section 15 of the Plan, Commissions will be advanced when the applicable sale or order is Booked (a “**Booking** **Advance**”). 
 
-**“Incentive Compensation”** means the compensation, in excess of Base Salary, earned upon meeting specific individual and/or Company performance goals. Incentive Compensation for a particular Salesperson is set forth in Exhibit A.
+**"Incentive Compensation"** means the compensation, in excess of Base Salary, earned upon meeting specific individual and/or Company performance goals. Incentive Compensation for a particular Salesperson is set forth in Exhibit A.
 
-**“Draw Payment”** means advance payments made against anticipated future Commissions.
+**"Incremental ARR"** means the incremental Annual Recurring Revenue generated from a sale. For new business, this is the total Annual Contract Value (ACV) of the first contract. For upsells and renewals, this is only the incremental new ARR (the increase in annual contract value compared to the previous contract).
+
+**"Draw Payment"** means advance payments made against anticipated future Commissions.
 
 **“Recoverable Draw”** is a Draw Payment offset by Earned Commissions.  Once Commissions are calculated, there will be a true up to recover the Draw Payment and pay the balance due (if any). If the value of the Draw Payment exceeds the Earned Commissions, the Company reserves the right to continue to deduct the value of Draw Payments from future Commissions until the full Draw Payment amount is recovered. This is referred to as a negative carry forward balance.
 
@@ -203,7 +205,7 @@ Salesperson is authorized to sell the following products and/or services, unless
 
 ### 6. Quota Credit
 
-Except as otherwise stated herein, quota credit will be based on the Incremental Annual Contract Value for the authorized territory or authorized Accounts.
+Except as otherwise stated herein, quota credit will be based on net new Annual Recurring Revenue (ARR) plus services sold on New Business deals for the authorized territory or authorized Accounts.
 
 ### 7. Credit For Partner Bookings
 
@@ -219,7 +221,7 @@ Notes: Commissions will be paid on multi-year deals at the base rate according t
 
 ### 9. Quota
 
-New Incremental Annual Contract Value Quota of $ for Q1 2025 through Q4 2025 assigned quarterly as follows: 
+New net Annual Recurring Revenue (ARR) plus services sold on New Business deals Quota of $ for Q1 2025 through Q4 2025 assigned quarterly as follows: 
 
 Q1	$  [Quota Q1]
 Q2	$  [Quota Q2]

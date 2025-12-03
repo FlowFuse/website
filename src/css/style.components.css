@@ -34,13 +34,13 @@
 
 
 .team-card--sm:nth-child(3n+2) .ff-headshot {
-    background-color: theme(colors.indigo.700);
+    background-color: theme(colors.indigo.600);
 }
 .team-card--sm:nth-child(3n) .ff-headshot {
     background-color: theme(colors.indigo.300);
 }
 .team-card--sm:nth-child(3n+1) .ff-headshot {
-    background-color: theme(colors.gray.600);
+    background-color: theme(colors.indigo.900);
 }
 
 /*
@@ -178,7 +178,7 @@
         box-shadow: inset 0px 2px 5px #00000052;
     }
 
-    .webinar-tile a.webinar-tile-img img, 
+    .webinar-tile a.webinar-tile-img img,
     .webinar-tile a.webinar-tile-img svg {
         transition: transform 0.3s;
     }
@@ -229,4 +229,103 @@
     .webinar-tile p:first-child {
         @apply mt-0;
     }
+}
+
+/*
+    AI EXPERT MODAL - Loading Dots and Content Styles
+*/
+.loading-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: theme(colors.indigo.500);
+    animation: bounce-dot 1.4s infinite ease-in-out;
+    margin: 0 1px;
+}
+
+.loading-dot:nth-child(1) { animation-delay: -0.32s; }
+.loading-dot:nth-child(2) { animation-delay: -0.16s; }
+.loading-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes bounce-dot {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* Rich content styles - using Tailwind theme values */
+.rich-content h3 {
+    @apply mb-2 text-lg font-semibold text-gray-900;
+}
+
+.rich-content h4 {
+    @apply mt-4 mb-3 text-base font-medium text-gray-900;
+}
+
+.rich-content h5 {
+    @apply mb-1 text-base font-medium text-gray-900;
+}
+
+.rich-content h6 {
+    @apply mb-1 text-sm font-medium text-gray-900;
+}
+
+.rich-content p {
+    @apply mt-0 mb-4 leading-relaxed text-gray-700;
+}
+
+.rich-content ol {
+    @apply m-0 p-0 list-none;
+}
+
+.rich-content li {
+    @apply mb-3;
+}
+
+.rich-content code {
+    @apply font-mono bg-gray-100 px-1 py-0.5 rounded text-sm;
+}
+
+.rich-content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.rich-content a:hover {
+    text-decoration: none;
+}
+
+/* Button hover effects */
+.rich-content button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.rich-content button {
+    transition: var(--tdur, 0.15s) transform, var(--tdur, 0.15s) box-shadow;
+}
+
+.rich-content button.plain {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove bottom margin from last element in rich content */
+.rich-content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Remove bottom margin from paragraphs inside resource links */
+.rich-content a p {
+    margin-bottom: 0;
+}
+
+/* Remove all margins from chat message paragraphs */
+.rich-content > p:only-child {
+    margin: 0;
+}
+
+/* Remove bottom margin from single list item */
+.rich-content li:only-child {
+    margin-bottom: 0;
 }

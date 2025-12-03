@@ -1,0 +1,16 @@
+{
+    "order": 99,
+    "name": "Drew Gatti",
+    "title": "Solutions Engineer",
+    "github": "dgatti0213",
+    "linkedin": "drew-gatti-28899a138",
+    "country": "US",
+    "email": "drew@flowfuse.com",
+    "headshot": "drew-gatti.png",
+    "bio": "Drew is a Solutions Engineer at FlowFuse with more than 15 years of hands-on experience across automation, industrial controls, and full-stack systems integration. Before joining FlowFuse, he led projects in PLC and SCADA development, electrical design, and process optimization for manufacturing, energy, and biogas facilities. His work bridges industrial automation with modern software architecture to deliver reliable, scalable solutions.",
+    "facts": [
+        "Has engineered and deployed automation systems across energy, manufacturing, and aviation sectors",
+        "Enjoys blending industrial control systems with modern software and cloud technologies",
+        "Thinks negotiating with his 3 toddlers should count as professional-level conflict resolution training"
+    ]
+}

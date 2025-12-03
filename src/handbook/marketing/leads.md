@@ -4,7 +4,9 @@ navTitle: Lead Generation
 
 # Lead Generation
 
-Lead generation helps expand FlowFuse's user base and drive revenue. By providing useful content, you can convert website visitors to leads for nurturing. Leads also provide a focused audience for marketing efforts, allowing for more effective communication and conversion strategies. Lead generation content includes whitepapers, ebooks, webinar slides, guides etc. 
+Lead generation helps expand FlowFuse's user base and drive revenue. By providing useful content, you can convert website visitors to leads for nurturing. Leads also provide a focused audience for marketing efforts, allowing for more effective communication and conversion strategies. Lead generation content includes whitepapers, ebooks, webinar slides, guides etc.
+
+For definitions of inbound vs. outbound lead sources and the MQL activation process, see [Lead Activation](/handbook/marketing/lead-activation/). 
 
 ## Setting up
 

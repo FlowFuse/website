@@ -83,59 +83,33 @@ FlowFuse is the open-source Industrial Application Platform.
 
 {{ site.messaging.tagLine }}
 
-### FlowFuse in one sentence
+### FlowFuse in one sentence - Under 150 characters
 
-FlowFuse empowers teams to integrate digital systems with their physical ecosystems, to create and automate workflows through a low-code, end-to-end platform.
+FlowFuse helps manufacturers and IoT teams connect _every_ machine to the Cloud
+and AI. Providing confidence in decisions and your organisation's response to
+keep operations running smoothly.
 
-### About FlowFuse - 50 Words
+### About FlowFuse - Short form
 
-FlowFuse is the platform for building and operating industrial applications. It
-connects your IT and OT systems using Node-RED, helping teams collect,
-transform, and visualize data. FlowFuse empower teams to develop and scale
-self-built industrial solutions, enabling better operational decisions and
-improving performance and processes.
-
-### About FlowFuse - 150 Words
-
-For industrial companies, competition is more intense than ever. Achieving
-growth targets while maintaining profits takes continuous commitment to process
-improvement. But to innovate, your team needs seamless access to data, and the
-ability to rapidly build applications that can transform data into operational
-insights. The faster your team can collect and transform data directly from your
-operations, the faster you can make process adjustments that create true
-business value and profit.
-
-FlowFuse is the leading open source platform for building and operating
-self-built industrial data solutions that digitalize processes and operations.
-The platform leverages Node-RED, a low-code programming technology that makes it
-easy for your OT-engineers to quickly connect, collect, transform, and visualize
-data for interacting with industrial processes. Node-RED seamlessly integrates
-with thousands of industrial devices and 100s of protocols and data services.
-
-Founded in 2021 by Nick O’Leary, co-creator of Node-RED, companies use FlowFuse
-to manage, scale and secure their industrial Node-RED solutions.
+FlowFuse is the enterprise platform that bridges the gap between physical assets
+and enterprise IT. Powered by Node-RED, teams now unify real-time data through
+workflows, AI agents, and industrial applications. FlowFuse gives organizations
+the confidence to innovate, adapt, and unlock new value in industrial automation.
 
 ## FlowFuse in-depth
 
-FlowFuse is a software platform that helps companies manage and scale
-applications built with Node-RED, a popular visual programming tool used to
-automate tasks and connect systems. While Node-RED allows users to quickly
-create powerful applications by wiring together different building blocks, it
-becomes difficult to manage once used across many devices, teams, or
-environments. That’s where FlowFuse comes in.
+FlowFuse is the industrial platform built for speed, intelligence, and operational confidence—enabling organizations to orchestrate their most critical applications, data, and automation at scale. Founded in 2021 by Nick O’Leary, the visionary behind Node-RED, FlowFuse takes the best of low-code integration and supercharges it with enterprise governance, robust security, and built-in AI.
+FlowFuse’s platform puts advanced automation and artificial intelligence at the heart of industrial innovation—empowering teams to connect any machine or system, unify diverse data streams, and deploy automated logic and visualizations in record time. With AI Copilot tools, domain experts and engineers can transform, structure, and analyze industrial data—simply and intuitively—accelerating solution development beyond traditional approaches.
+Security and reliability are never compromised: from audit trails and access controls to blueprint-driven deployments and version automation, FlowFuse is engineered for mission-critical, production environments. Whether you choose cloud, self-hosted, or hybrid, FlowFuse gives you complete control while driving the agility you need to lead the market.
+By blending trusted open-source roots with relentless product innovation and a clear focus on tangible outcomes, FlowFuse is the competitive advantage for industrial teams ready to deliver results faster, more securely, and smarter than ever before.
 
-FlowFuse adds the structure, tools, and safety needed to use Node-RED in
-professional and industrial settings. It allows companies to organize and
-control multiple Node-RED instances, whether they’re running on the cloud or on
-physical machines like factory equipment. With FlowFuse, users can develop
-applications, test them safely, and deploy them to different environments
-without fear of breaking things. Teams can work together more effectively thanks
-to user access controls, audit logs, and centralized monitoring. It supports
-both SaaS and self-hosted models, so companies can keep full control when
-needed, especially in industries with strict security or privacy requirements.
+## Selection Criteria: Our messaging commandments
 
-Ultimately, FlowFuse transforms the speed and flexibility of Node-RED into
-something reliable, scalable, and secure — making it suitable not just for
-individual developers or hobbyists, but for entire organizations running
-critical systems. It gives companies the confidence to innovate quickly while
-staying in control.
+This captures how we believe an ICP team is thinking about how to choose their next generation software platform for digitalizing their industrial process. This captures the following questions and our answers.
+
+These are the 11 FlowFuse Messaging Commandments. 
+Every message that comes out from the team has to stick to one or many of these commandments. Otherwise it is wrong, because it’s not really helping sales. 
+
+1. Connect all your machines and assets in my industrial process to make it _fully observable_.
+   - FlowFuse can be extended with over 5,000 plug-ins for collecting data from any machine, protocol, ERP, MES, or other services.
+   - FlowFuse enables scalable agent deployment to unify data from any source or protocol across the industrial edge.

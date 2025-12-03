@@ -156,18 +156,6 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    .contentDedicated .pricing-tiles {
-        grid-template-columns: 1fr;
-    }
-    
-    .contentDedicated .pricing-tiles .pricing-tile {
-        @apply max-w-sm md:max-w-[976px] w-full m-auto;
-    }
-
-    .contentDedicated .pricing-tile-background {
-        @apply md:px-10 md:py-6;
-    }
-
     .pricing-tile {
         position: relative;
         border-radius: 12px;
@@ -286,7 +274,7 @@
 /* toggle btn bg */
 .btnToggle {
     position: absolute;
-    width: 300px;
+    width: 220px;
     height: 36px;
     margin: 0rem;
     border-radius: 18px;
@@ -300,7 +288,7 @@
 
 .selector {
     position: absolute;
-    width: 33%;
+    width: 50%;
     height: 88%;
     top: 2px;
     left: 2px;
@@ -322,7 +310,7 @@
 }
 
 /* container */
-.divCloud, .divSelfHosted, .divDedicated {
+.divCloud, .divSelfHosted {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -330,21 +318,21 @@
 }
 
 .hosting div {
-    @apply w-1/3;
+    @apply w-1/2;
 }
 
 /* words */
-.cloudText, .selfHostedText, .dedicatedText {
+.cloudText, .selfHostedText {
     font-size: 12px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
 
-.cloudText, .selfHostedText, .dedicatedText {
+.cloudText, .selfHostedText {
     color: theme(colors.indigo.400);
 }
 
-.cloudText.active, .selfHostedText.active, .dedicatedText.active {
+.cloudText.active, .selfHostedText.active {
     color: theme(colors.indigo.700);
 }
 .hide {
@@ -437,13 +425,14 @@
 }
 
 .team-headshot img {
+    width: 100%;
+    aspect-ratio: 512 / 647;
+    object-fit: cover;
+    object-position: center top;
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
     border-width: var(--border-width);
     border-color: theme(colors.indigo.200);
-}
-
-.team-headshot img {
     background: linear-gradient(to bottom, theme(colors.indigo.50), theme(colors.indigo.200));
     border-bottom: 0;
     background-size: cover;

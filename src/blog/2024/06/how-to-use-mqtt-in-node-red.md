@@ -43,7 +43,7 @@ For Node-RED, we will be using FlowFuse, which enhances Node-RED usage with mana
 
 ## Configuring MQTT Node in Node-RED
 
-When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are part of Node-RED core nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking the mqtt node, clicking on the edit icon next to the Server field, and entering the following details of your MQTT broker into the MQTT broker config node; for more information about mqtt nodes, refer to the [MQTT core node docs](/node-red/core-nodes/mqtt/).
+When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are part of Node-RED core nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking the mqtt node, clicking on the edit icon next to the Server field, and entering the following details of your MQTT broker into the MQTT broker config node; for more information about mqtt nodes, refer to the [MQTT core node docs](/node-red/core-nodes/mqtt-in/).
 
 ## Connection Tab
 

@@ -5,10 +5,11 @@ title: Security Statement - FlowFuse
 
 <div class="prose prose-blue container m-auto max-w-4xl px-6 pb-24">
 
-Security aspects of FlowFuse are divided up into three sections;
+Security aspects of FlowFuse are divided up into four sections;
 1. [Application level](#application)
 1. [FlowFuse configuration](#flowfuse-configuration)
 1. [Organization](#organization)
+1. [GxP Readiness](#gxp-readiness)
 
 ## Application
 
@@ -144,5 +145,13 @@ Most notably for (prospective) customers assessing FlowFuse:
 1. [Information Security Policy and Acceptable Use Policy](/handbook/company/security/information-security/)
 1. [Data Management Policy](/handbook/company/security/data-management/)
 1. [Information security awareness training](/handbook/company/security/human-resources/#information-security-awareness%2C-education-%26-training)
+
+## GxP Readiness
+
+FlowFuse is built with enterprise-grade architecture and controls that support deployment in regulated environments. 
+
+Features such as role-based access control, audit logging of flow changes and user actions, versioning and snapshotting of Node-RED instances, configuration via infrastructure-as-code and containerized deployments, and integration with SSO/LDAP align with many of the security, traceability and change-control expectations found in GxP systems (e.g., FDA 21 CFR Part 11, EU GMP Annex 11).
+
+FlowFuse itself is designed to be validation-ready: we provide the necessary architecture, documentation, and controls to enable our customers to perform their own validation and supplier qualification in accordance with their GxP obligations.
 
 </div>
