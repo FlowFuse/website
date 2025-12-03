@@ -12,6 +12,8 @@ tags:
 
 A weather dashboard is honestly the best first project if you're getting into Node-RED. Takes about 10-15 minutes from start to finish, and by the end you'll understand how the whole thing works - connecting to APIs, processing data, and displaying it visually.
 
+<!--more-->
+
 This isn't one of our typical deep-dive industrial posts - it's a straightforward starter tutorial that we think everyone getting into Node-RED should have access to. You're building something real: calling an actual weather API, handling live JSON responses, and watching data update on your screen. Once you've done it, the whole flow-based approach just clicks.
 
 We'll use FlowFuse Dashboard for the UI since it's modern and easier to work with. If you know how to drag nodes around and hit the deploy button, you're ready to start.
