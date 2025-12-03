@@ -14,11 +14,11 @@ This policy describes how FlowFuse controls access to information and systems. I
 
 ## Scope 
 
-This policy applies to all FlowFuse information systems that process, store, or
-transmit confidential data as defined in the FlowFuse [Data Management Policy](./data-management.md).
+## Scope
 
-It applies to all employees of FlowFuse and to all external parties with access
-to FlowFuse system resources.
+This policy applies to all FlowFuse information systems that process, store, or transmit confidential data, as defined in the FlowFuse [Data Management Policy](./data-management.md).
+
+It also applies to all FlowFuse employees and to any external parties who access FlowFuse systems or resources.
 
 ## Access Control Policy
 
