@@ -44,12 +44,9 @@ Record customer-facing meetings with Fathom. See the [Sales Meetings guide](/han
 
 ### During the meeting
 
-Meetings start on time by the person with the first item on the agenda, verbalize
-and discuss the item. Once done, hand over to the owner of the next agenda item.
+Meetings start on time, and the initiator is the person who owns the first agenda item. When they finish, they hand over to the owner of the next item.
 
-During the meeting notes should be taken in an inline fashion. Non-participants
-can then read the agenda after the meeting and are up-to-date without having to
-scroll to a notes section.
+Take notes directly in the agenda during the meeting. This improves readability and flow, and it removes the need to scroll to a separate notes section.
 
 ### No Agenda, No Attenda
 
