@@ -86,11 +86,9 @@ Use email for internal communication only when you need a written record. This i
 
 ### Slack
 
-When using Slack, prefer to keep discussions in a thread. This reduces scroll
-back, and focusses channels.
+Use threads in Slack whenever possible. Threads keep conversations organized and reduce the need to scroll through long channels.
 
-To keep everyone on the same page and to allow others to collaborate you should favour
-public channels over DMs.
+Prefer public channels over direct messages. Public channels help everyone stay informed and make it easier for others to join or support the conversation.
 
 Our recommended Slack (light) theme is:
 `#F2F2F2,#FFC806,#779FA1,#FFFFFF,#F0D36C,#111111,#2AB052,#FD0B00,#AA4444,#FFFFFF`
