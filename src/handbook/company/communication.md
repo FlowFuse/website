@@ -95,15 +95,14 @@ Our recommended Slack (light) theme is:
 
 #### Recommended channels
 
-Not all channels are joined by default when you join Slack. We've added a bunch
-below so you get to decide if you want more channels or not.
+You will not automatically join every Slack channel when you start. Below are some helpful channels you may want to join depending on your interests and work.
 
-- `#announcements` is for company-wide announcements.
-- `#feature-demos` is where product updates are shared. All team members should keep a pulse of product changes, independent of their roles.
-- `#ops-metrics` will output sales and engagement metrics.
-- `#virtual-coffee` to schedule coffee calls with other team members.
-- `#gh-handbook` to follow changes in the handbook.
-- `#thanks` is for sharing appreciation and thanks with team members. Saying thanks often is especially important in remote companies to maintain positive team culture.
+- `#announcements` for company-wide announcements.
+- `#feature-demos` for product updates. Everyone should stay aware of product changes, no matter their role.
+- `#ops-metrics` for sales and engagement metrics.
+- `#virtual-coffee` to join the coffee call rotation.
+- `#gh-handbook` to follow updates to the handbook.
+- `#thanks` for sharing appreciation with teammates. Expressing thanks often is especially important in remote teams to help maintain a positive culture.
 
 #### Channel name structure
 
