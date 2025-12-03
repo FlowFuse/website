@@ -4,7 +4,7 @@ navTitle: Communications
 
 # Communication
 
-As a distributed company we should be mindful of how we communicate.
+As a distributed company, we rely on clear, consistent, and intentional communication so teams can stay aligned, make effective decisions, and collaborate smoothly across timezones.
 
 ## Company-wide announcements
 
