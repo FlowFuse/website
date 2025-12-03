@@ -54,13 +54,13 @@ Most meetings exist to discuss items and make decisions. If a meeting has no age
 
 ### Google Calendar Delegation
 
-You can allow other team members to manage created events on your calendar by adjusting the modify permissions on a per event basis or have it enabled by default. Having it enabled by default allows co-management of your created events which is particularly helpful if the person who created the event is unable to edit it when needed. Allowing broader permissions works well for most events in an async remote work environment.
+You can allow other team members to manage events you create on your calendar. You can set this permission for each event or enable it by default. Enabling it by default is especially helpful in an async remote work environment.
 
-To enable it by default for all your future created events:
+To enable this for all future events you create:
 1. Sign in to https://calendar.google.com with your FlowFuse email address.
-1. In the top right click on the Gear icon to go into the [pGoogle Calendar Settings](https://support.google.com/calendar/answer/6084644?hl=en&co=GENIE.Platform%3DDesktop&oco=0)
-1. Go to `Event settings`
-1. Adjust `Guest permissions` to include `Modify event`
+1. In the top right, click the Gear icon and open [Google Calendar Settings](https://calendar.google.com/calendar/u/0/r/settings).
+1. Go to `Event settings`.
+1. Under `Guest permissions`, enable `Modify event`.
 
 ### Coffee calls
 
