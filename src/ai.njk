@@ -1,0 +1,169 @@
+---
+layout: page
+nohero: true
+imageDescription: "Plant worker interacting with an HMI"
+meta:
+    title: "FlowFuse Expert: LLMs for Industrial Teams"
+    description: "Turn natural language into reliable industrial applications with an LLM-powered copilot deeply integrated into FlowFuse and Node-RED, designed for the constraints, protocols, and governance your plants require."
+hero:
+    title: "<span class='text-indigo-300'>FlowFuse Expert:</span> LLMs for Industrial Teams"
+    description:
+        - "Turn natural language into reliable industrial applications with an LLM&#8209;powered copilot deeply integrated into FlowFuse and Node-RED, designed for the constraints, protocols, and governance your plants require."
+        - "Scale Your Industrial Applications with AI."
+    buttonText: "Request a Demo"
+    buttonLink: "/book-demo/"
+    buttonReference: "ai"
+    img: ./images/ai/ai-hero.png
+    imgAlt: "FlowFuse Expert AI icon with connecting lines flowing out"
+platform:
+    title: "Meet your new <span class='text-indigo-600'>AI&#8209;Copilot</span>"
+    subtitle: "Ask what you need. Let it build the application."
+    description:
+        - "FlowFuse Expert is the fastest, most secure way to build industrial applications and operate at scale—now with AI that understands your processes, data, and governance needs."
+        - "FlowFuse combines Node-RED's 5,000+ community nodes with LLM-powered copilots and enterprise governance, so IT and OT teams can collaborate and deploy across plants without waiting on scarce developers—making FlowFuse the fastest, most secure way to build industrial applications and operate at scale."
+    image: images/ai/ai-ui.png
+    imgAlt: "FlowFuse Expert showing AI-generated flow suggestions"
+solution:
+    title: "AI for Real <span class='text-indigo-600'>Industrial Workflows</span>"
+    benefits:
+        - svgPath: "components/icons/sparkles.svg"
+          title: "AI-Generated Industrial Flows"
+          description: "Generate Node-RED flows, JavaScript, and SQL from natural language using an industrial-tuned LLM, so you can connect machines, transform data, and build dashboards in minutes instead of months."
+        - svgPath: "components/icons/squares-plus.svg"
+          title: "Reusable Industrial Blueprints"
+          description: "Turn OT know-how into reusable blueprints for UNS, SCADA, MES, and middleware that your teams can deploy across plants with full version control and governance."
+        - svgPath: "components/icons/shield-check.svg"
+          title: "Governance You Trust"
+          description: "Keep humans in control with approval workflows, role-based access, audit trails, and the same enterprise-grade governance you use for all FlowFuse applications."
+ctaSection:
+    title: "With <span class='text-indigo-600'>FlowFuse AI,</span> teams can:"
+    list:
+        - "<span class='font-medium'>Generate Node-RED flows from natural language descriptions</span> of a workflow or integration, so you can connect any machine and protocol faster."
+        - "<span class='font-medium'>Draft and edit Function node code</span> (JavaScript), UI templates (HTML/CSS/JS), SQL queries, and JSON configurations using the Copilot in the editor, so you can transform and model data in any platform without starting from scratch."
+        - "<span class='font-medium'>Empower Operations and Process Engineers</span> to quickly build new dashboards, widgets, and queries using plain-language descriptions of the desired views or KPIs, reducing reliance on IT support."
+        - "<span class='font-medium'>Spin up LLM blueprints</span> that expose industrial data to a chat agent so operators and engineers can query systems in natural language."
+---
+<!--Hero Content-->
+<div class="w-full px-6">
+    <div class="md:max-w-screen-lg m-auto rounded-lg bg-indigo-700 mt-20 overflow-hidden">
+        <div class="relative ff-image-contain ai ff-image-rounded mb-12 min-h-[390px]">
+            {% image hero.img, hero.imgAlt, [528] %}
+            
+            <!-- Content -->
+            <div class="absolute inset-0 md:max-w-[55%] h-full p-8 flex flex-col">
+                <h1 class="text-white">{{ hero.title | safe }}</h1>
+                {% for p in hero.description %}
+                    <p class="text-white">{{ p | safe }}</p>
+                {% endfor %}
+                
+                <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">
+                    {% macro freeDemoButton(desktop=true, highlight=true) %}
+                        <a class="ff-btn {% if highlight %}ff-btn--highlight{% else %}ff-btn--primary{% endif %} text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
+                           href="{{ hero.buttonLink }}"
+                           onclick="capture('cta-demo', {'reference': '{{ hero.buttonReference }}'})">
+                            {{ hero.buttonText }}
+                        </a>
+                    {% endmacro %}
+                    {{freeDemoButton() }}
+                    
+                    {% macro tryItOutButton(desktop=true) %}
+                        <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}"
+                           href="{{ site.appURL }}/account/create"
+                           onclick="capture('cta-try-now', {'reference': '{{ hero.buttonReference }}'})">
+                            <span class="flex gap-2 uppercase items-center text-white hover:text-indigo-800">
+                                Start Free Trial
+                                {% include "components/icons/arrow-right.svg" %}
+                            </span>
+                        </a>
+                    {% endmacro %}
+                    {{ tryItOutButton() }}
+                </div>
+                
+                <div class="flex flex-col sm:flex-row md:hidden gap-3">
+                    {{ freeDemoButton(false, true) }}
+                    {{ tryItOutButton(false) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Platform-->
+    <div class="w-full py-12 md:pt-6 mt-6">
+        <div class="md:flex md:my-12 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+            <div class="m-auto md:w-[40%]">
+                <h1 class="w-full mt-0 m-auto">
+                    {{ platform.title | safe }}
+                </h1>
+                <h4 class="font-grey-500 mt-3">{{ platform.subtitle }}</h4>
+                {% for p in platform.description %}
+                <p>
+                    {{ p | safe }}
+                </p>
+                {% endfor %}
+            </div>
+            <div class="md:w-[60%] flex-grow relative">
+                <div class="ff-image-cover ff-image-rounded left w-full h-full border-2 border-indigo-300">
+                    {% set imageSrc = ["./", platform.image ] | join %}
+                    {% image imageSrc, imageDescription, [496] %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Solution -->
+<div class="w-full bg-indigo-50/60 pb-20 pt-16 mb-16 px-6">
+    <div class="md:max-w-screen-lg m-auto">
+        <h2 class="text-center w-full md:text-left max-w-4xl">{{ solution.title | safe }}</h2>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
+            {% for benefit in solution.benefits %}
+            <div class="relative w-full max-md:max-w-md mx-auto bg-gradient-to-br from-white to-transparent border-2 border-white p-4 rounded-lg">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
+                            {% include benefit.svgPath %}
+                        </div>
+                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                            <h5 class="w-full md:m-0">
+                                <div class="text-xl font-medium text-indigo-600 text-center sm:text-left">{{ benefit.title }}
+                                </div>
+                            </h5>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-center sm:text-left font-light">{{ benefit.description | safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--CTA-->
+<div class="w-full px-6 pt-8 pb-20">
+    <div class="md:flex items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+        <div class="md:w-1/3 flex-grow relative">
+            <div class="ff-image-cover ff-image-rounded w-full h-full">
+                {% set imageSrc = ["./", platform.image ] | join %}
+                {% image imageSrc, imageDescription, [496] %}
+            </div>
+        </div>
+        <div class="md:2/3">
+            <h2>{{ ctaSection.title | safe }}</h2>
+            <div class="ff-prose prose mt-8">
+                <ul class="list-disc text-left">
+                    {% for item in ctaSection.list %}
+                    <li>
+                        {{ item | safe }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="flex max-sm:flex-col max-md:mx-auto gap-3 mt-4">
+                    <a class="ff-btn ff-btn--primary no-underline text-base flex inline uppercase md:min-h-[40px] max-md:w-full max-md:m-auto"
+                    href="{{ hero.buttonLink }}"
+                    onclick="capture('cta-demo', {'reference': '{{ hero.buttonReference }}'})">
+                    {{ hero.buttonText }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
