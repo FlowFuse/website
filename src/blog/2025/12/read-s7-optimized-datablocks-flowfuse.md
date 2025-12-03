@@ -12,6 +12,8 @@ tags:
 
 When working with Siemens S7-1200 and S7-1500 PLCs, you'll notice that TIA Portal creates optimized data blocks by default. These optimized blocks arrange data differently than the classic S7-300/400 controllers, which makes reading data through FlowFuse or Node-RED more challenging.
 
+<!--more-->
+
 You can disable optimization in TIA Portal by unchecking the "Optimized block access" option in your data block properties. This gives you the old-style addressing where you can read data using fixed offsets like `DB1.DBW0`. However, this approach has several drawbacks. Optimized blocks run faster, use less memory, and follow Siemens current best practices. If you're working on existing projects with thousands of tags, converting everything to standard blocks isn't practical. Many companies also require optimized blocks as part of their coding standards.
 
 This guide shows you how to read optimized data blocks directly without disabling optimization. You'll learn to use symbolic addressing, which is the proper way to access data from modern Siemens PLCs.
