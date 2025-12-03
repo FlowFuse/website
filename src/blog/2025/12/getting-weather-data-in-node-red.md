@@ -33,7 +33,7 @@ First thing, get the dashboard package installed:
 4. Type `@flowfuse/node-red-dashboard` in the search box
 5. Click the install button next to it
 
-Wait for it to finish. You'll see a bunch of new dashboard nodes pop up in your left sidebar - things like ui-gauge, ui-text, ui-chart. That's how you know it worked.
+Wait for it to finish. You'll see a bunch of new dashboard nodes pop up in your left sidebar, things like ui-gauge, ui-text, ui-chart. That's how you know it worked.
 
 ## Getting Your API Key
 
@@ -54,6 +54,10 @@ First, we need to connect to the weather API and make sure it's working.
 4. Set it to repeat every 5 minutes (or whatever interval you prefer)
 5. Check the box for **Inject once after** and set it to 0.1 seconds - this will trigger the flow immediately when you deploy
 6. Click Done
+
+![Inject node configured to trigger the weather API every 5 minutes](./images/trigger-weather-api.png){data-zoomable}
+_Inject node configured to trigger the weather API every 5 minutes_
+
 7. Drag an **http request node** to the right of it
 8. Drag a **debug node** to the right of the http request node
 
@@ -64,7 +68,11 @@ Double-click the http request node to open its settings:
 11. Replace `YOUR_API_KEY` with the actual API key you copied from OpenWeatherMap
 12. Replace `London` with your city if you want
 13. Select the Return as parsed JSON.
-14. Click Done
+
+![HTTP request node configured to fetch weather data from OpenWeatherMap API](./images/http-request.png){data-zoomable}
+_HTTP request node configured to fetch weather data from OpenWeatherMap API_
+
+14.  Click Done
 
 The `units=metric` gives you Celsius. Change it to `units=imperial` for Fahrenheit. For more details on what parameters you can use, check out the [OpenWeatherMap API documentation](https://openweathermap.org/current).
 
@@ -101,6 +109,10 @@ return [
 ```
 
 2. Set the Function node’s **Outputs** (in the Setup tab) to 5, since the function will return five separate messages.
+
+![Function node configured with 5 outputs to split weather data](./images/function-setup-tab.png){data-zoomable}
+_Function node configured with 5 outputs to split weather data_
+
 3. Click Done
 
 This function node splits the API response into separate outputs - one for temperature, one for humidity, and so on. Each output gets its own topic label so you can track what's what.
@@ -116,9 +128,12 @@ Start by displaying which city you're tracking:
 1. Drag a **ui-text** node onto the canvas
 2. Connect it to **output 1** of your function node (the city output)
 3. Double-click the ui-text node to open its settings
-4. Set **Label** to "Location"
+4. Set **Label** to "City"
 5. For **Group**, click the pencil icon to create a new group called "Weather Overview"
 6. Click Add, then Done
+
+![UI text node configured to display city name in Weather Overview group](./images/city-display.png){data-zoomable}
+_UI text node configured to display city name in Weather Overview group_
 
 You've just created your first dashboard element and dashboard group. Groups organize widgets on the page and function as containers.
 
@@ -132,6 +147,9 @@ Add a text field to show current conditions:
 4. Set **Label** to "Conditions"
 5. Use the same "Weather Overview" group
 6. Click Done
+
+![UI text node configured to display weather conditions](./images/condition-display.png){data-zoomable}
+_UI text node configured to display weather conditions_
 
 The API returns descriptions like "scattered clouds" or "light rain" - human-readable conditions.
 
@@ -151,6 +169,9 @@ Next, add a circular gauge for temperature:
 10. Under the **Appearance** tab, you can select a color scheme if desired
 11. Click Done
 
+![Temperature gauge configured with color-coded segments in Temperature & Humidity group](./images/temperature-gauge.png){data-zoomable}
+_Temperature gauge configured with color-coded segments in Temperature & Humidity group_
+
 The gauge will automatically color-code based on the value - cooler temperatures display in blue tones, warmer in orange/red.
 
 ### Configuring the Humidity Gauge
@@ -166,6 +187,9 @@ Add the humidity gauge to the same group:
 7. Use the same "Temperature & Humidity" group from the dropdown
 8. Set **Size** to 3x3 to match the temperature gauge
 9. Click Done
+
+![Humidity gauge configured to display percentage values with color coding](./images/humidity-gauge.png){data-zoomable}
+_Humidity gauge configured to display percentage values with color coding_
 
 The two gauges will display side by side in the same group, making it easy to compare both metrics at once.
 
@@ -184,6 +208,9 @@ Next, create a dedicated chart to display wind speed trends over time:
 9. Under **Group**, click the pencil icon and create a **new group** named **"Wind Speed"**.
 10. Click **Add**, then **Done** to save the configuration.
 
+![Wind speed chart configured as a line chart to show trends over time](./images/wind-speed-chart.png){data-zoomable}
+_Wind speed chart configured as a line chart to show trends over time_
+
 The chart will begin plotting once data starts flowing in. It will appear empty at first, which is normal.
 
 ## Viewing Your Dashboard
@@ -192,3 +219,21 @@ Hit the Deploy button in the top right corner.
 
 Then, open the Dashboard 2.0 sidebar and click the Open Dashboard button. You should now see a dashboard similar to the one shown below.
 
+![Complete weather dashboard displaying real-time weather data](./images/weather-dashboard.png){data-zoomable}
+_Complete weather dashboard displaying real-time weather data_
+
+Below is the complete flow. Import it, enter your API key in the HTTP request node, and deploy the flow:
+
+{% renderFlow 300 %}
+[{"id":"1f897de2dd34d325","type":"inject","z":"9cf82b68bb89e8ce","name":"Trigger Weather API","props":[],"repeat":"5","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":500,"y":160,"wires":[["470d26cc0a678aea"]]},{"id":"470d26cc0a678aea","type":"http request","z":"9cf82b68bb89e8ce","name":"OpenWeather Request","method":"GET","ret":"obj","paytoqs":"ignore","url":"","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"","senderr":false,"headers":[],"x":720,"y":160,"wires":[["fdd6b4bf9fc370a1"]]},{"id":"fdd6b4bf9fc370a1","type":"function","z":"9cf82b68bb89e8ce","name":"Process Weather Data","func":"// Extract the data we need\nconst temp = msg.payload.main.temp;\nconst humidity = msg.payload.main.humidity;\nconst description = msg.payload.weather[0].description;\nconst windSpeed = msg.payload.wind.speed;\nconst city = msg.payload.name;\n\n// Create separate messages for each value\nreturn [\n    { payload: city, topic: \"city\" },\n    { payload: description, topic: \"description\" },\n    { payload: temp, topic: \"temperature\" },\n    { payload: humidity, topic: \"humidity\" },\n    { payload: windSpeed, topic: \"wind\" },\n];","outputs":5,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":940,"y":160,"wires":[["d803f3fcdd167905"],["fa8b5d863370d82e"],["522af7b49eaecd9e"],["6bd3603e028b38c4"],["e53716c9cd34c57d"]]},{"id":"522af7b49eaecd9e","type":"ui-gauge","z":"9cf82b68bb89e8ce","name":"Temperature","group":"9470e51a8ec86d8e","order":1,"value":"payload","valueType":"msg","width":"3","height":"3","gtype":"gauge-half","gstyle":"needle","title":"Temperature","alwaysShowTitle":false,"floatingTitlePosition":"top-left","units":"°C","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#008cb4","text":"","textType":"value"},{"from":"15","color":"#00a3d7","text":"","textType":"value"},{"from":"25","color":"#fec700","text":"","textType":"value"},{"from":"35","color":"#ffaa00","text":"","textType":"value"},{"from":"50","color":"#ff6251","text":"","textType":"value"}],"min":0,"max":"50","sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":1170,"y":160,"wires":[[]]},{"id":"d803f3fcdd167905","type":"ui-text","z":"9cf82b68bb89e8ce","group":"5a89ac7171f51cc3","order":1,"width":"0","height":"0","name":"City Display","label":"City:","format":"{{msg.payload}}","layout":"row-spread","style":true,"font":"Arial,Arial,Helvetica,sans-serif","fontSize":"21","color":"#000000","wrapText":false,"className":"","value":"payload","valueType":"msg","x":1170,"y":80,"wires":[]},{"id":"fa8b5d863370d82e","type":"ui-text","z":"9cf82b68bb89e8ce","group":"5a89ac7171f51cc3","order":3,"width":"0","height":"0","name":"Conditions Display","label":"Conditions:","format":"{{msg.payload}}","layout":"row-spread","style":true,"font":"Arial,Arial,Helvetica,sans-serif","fontSize":"21","color":"#000000","wrapText":false,"className":"","value":"payload","valueType":"msg","x":1190,"y":120,"wires":[]},{"id":"6bd3603e028b38c4","type":"ui-gauge","z":"9cf82b68bb89e8ce","name":"Humidity Gauge","group":"9470e51a8ec86d8e","order":2,"value":"payload","valueType":"msg","width":"3","height":"3","gtype":"gauge-half","gstyle":"needle","title":"Humidity","alwaysShowTitle":false,"floatingTitlePosition":"top-left","units":"%","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#d95000","text":"","textType":"value"},{"from":"30","color":"#6f7608","text":"","textType":"value"},{"from":"80","color":"#fec700","text":"","textType":"value"},{"from":"100","color":"#d95000","text":"","textType":"value"}],"min":0,"max":"100","sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":1200,"y":200,"wires":[[]]},{"id":"e53716c9cd34c57d","type":"ui-chart","z":"9cf82b68bb89e8ce","group":"7b2025c104cd506e","name":"Wind Speed","label":"Wind Speed (m/s)","order":1,"chartType":"line","category":"topic","categoryType":"msg","xAxisLabel":"","xAxisProperty":"","xAxisPropertyType":"timestamp","xAxisType":"time","xAxisFormat":"","xAxisFormatType":"auto","xmin":"","xmax":"","yAxisLabel":"","yAxisProperty":"payload","yAxisPropertyType":"msg","ymin":"","ymax":"","bins":10,"action":"append","stackSeries":false,"pointShape":"circle","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#a347e1","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"12","height":"4","className":"","interpolation":"linear","x":1170,"y":240,"wires":[[]]},{"id":"9470e51a8ec86d8e","type":"ui-group","name":"Temperature & Humidity","page":"f1eb99b1e714d411","width":6,"height":1,"order":2,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"5a89ac7171f51cc3","type":"ui-group","name":"Weather Info","page":"f1eb99b1e714d411","width":"6","height":"4","order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"7b2025c104cd506e","type":"ui-group","name":"Wind Speed","page":"f1eb99b1e714d411","width":"12","height":1,"order":3,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"f1eb99b1e714d411","type":"ui-page","name":"Weather Dashboard","ui":"afea04ce8735c0a6","path":"/weather","icon":"home","layout":"grid","theme":"93822a7b43673c58","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":true,"disabled":false},{"id":"afea04ce8735c0a6","type":"ui-base","name":"UI Name","path":"/dashboard","includeClientData":true,"acceptsClientConfig":["ui-control","ui-notification"],"headerContent":"page","titleBarStyle":"default","showReconnectNotification":true,"notificationDisplayTime":5,"showDisconnectNotification":true,"allowInstall":true},{"id":"93822a7b43673c58","type":"ui-theme","name":"Default Theme","colors":{"surface":"#00a3d7","primary":"#0094ce","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"density":"default","pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"272cd1bb7597c907","type":"global-config","env":[],"modules":{"@flowfuse/node-red-dashboard":"1.29.0"}}]
+{% endrenderFlow %}
+
+## What's Next?
+
+That's it! You've built a real-time weather dashboard and learned the basics of Node-RED - connecting to APIs, processing data, and building visual interfaces.
+
+Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashboard for the UI. If you're just starting out, FlowFuse makes things easier - no server setup, no port forwarding, and your dashboard works everywhere. Plus, when you're ready to build bigger projects, features like team collaboration and DevOps pipelines are already there.
+
+Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same - you're just swapping data sources and visualizations.
+
+[Start your free FlowFuse trial](https://app.flowfuse.com/account/create) and keep building.
