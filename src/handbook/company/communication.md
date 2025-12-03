@@ -36,14 +36,11 @@ Different countries use different date formats, so be explicit. Use the YYYY-MM-
 
 ### General guidance
 
-Each meeting should have an agenda. This allows potential participants to prepare
-and decide whether attendance is required. Any participant can add items to the
-agenda, please prefix your item with your name or initials to communicate who's
-going to talk and lead the discussion. Adding new items to the agenda while the
-meeting is started is good practice and can be leveraged to keep the currently
-discussed item focussed and on-rails.
+Each meeting should have an agenda. An agenda helps participants prepare and decide whether they need to attend. Any participant may add items to the agenda. Please prefix your item with your name or initials so it is clear who will introduce and lead that topic.
 
-Customer-facing meetings should be recorded using Fathom (see [Sales Meetings guide](/handbook/sales/meetings/) for details).
+It is fine to add new items while the meeting is happening. Doing this can keep the discussion focused and help the group stay on track.
+
+Record customer-facing meetings with Fathom. See the [Sales Meetings guide](/handbook/sales/meetings/) for details) for details.
 
 ### During the meeting
 
