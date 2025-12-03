@@ -82,9 +82,7 @@ Do not store information in:
 
 ### Email
 
-Email for internal communication is only used for discussions that need
-a 'paper'-trail. Compensation, underperformance, and other made decisions.
-In _all_ other cases, use [Slack](#slack).
+Use email for internal communication only when you need a written record. This is helpful for topics like compensation, underperformance, or other formal decisions where clarity and traceability matter. For everything else, use [Slack](#slack) so conversations stay quick, open, and easy to follow.
 
 ### Slack
 
