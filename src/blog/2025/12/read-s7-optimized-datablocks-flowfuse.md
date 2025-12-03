@@ -14,7 +14,7 @@ When working with Siemens S7-1200 and S7-1500 PLCs, you'll notice that TIA Porta
 
 <!--more-->
 
-You can disable optimization in TIA Portal by unchecking the "Optimized block access" option in your data block properties. This gives you the old-style addressing where you can read data using fixed offsets like `DB1.DBW0`. However, this approach has several drawbacks. Optimized blocks run faster, use less memory, and follow Siemens current best practices. If you're working on existing projects with thousands of tags, converting everything to standard blocks isn't practical. Many companies also require optimized blocks as part of their coding standards.
+You can disable optimization in TIA Portal by unchecking the "Optimized block access" option in your data block properties. This gives you the old-style addressing where you can read data using fixed offsets like `DB1.DBW0`. However, this approach has several drawbacks. Optimized blocks run faster, use less memory, and follow Siemens' current best practices. If you're working on existing projects with thousands of tags, converting everything to standard blocks isn't practical. Many companies also require optimized blocks as part of their coding standards.
 
 This guide shows you how to read optimized data blocks directly without disabling optimization. You'll learn to use symbolic addressing, which is the proper way to access data from modern Siemens PLCs.
 
@@ -47,7 +47,7 @@ You're stuck guessing at memory locations that keep changing.
 
 OPC UA reads variables by name, not memory address. Instead of asking "what's at byte 10?" it asks "what's the value of Temperature_Sensor_01?"
 
-Siemens S7-1200 and S7-1500 PLCs have built-in OPC UA servers. Enable it in TIA Portal, mark which variables to expose, and the PLC handles all memory mapping internally. FlowFuse connects and reads data by variable name, regardless of how the PLC organizes memory.
+Siemens S7-1200 and S7-1500 PLCs have built-in OPC UA server. Activate it in TIA Portal, mark which variables to expose, and the PLC handles all memory mapping internally. FlowFuse connects and reads data by variable name, regardless of how the PLC organizes memory.
 
 When you modify your data block or recompile, your flows keep working because they reference variable names, not memory locations that might shift.
 
@@ -60,17 +60,17 @@ Before you begin, make sure you have:
 - A [FlowFuse Agent](/blog/2025/09/installing-node-red/) running on your edge device
 - The PLC and edge device connected to the same network
 
-## Step 1: Enable OPC UA Server on Your PLC
+## Step 1: Activate OPC UA Server on Your PLC
 
 First, you need to activate the OPC UA server that's built into your S7-1200/1500 PLC.
 
 1. Launch TIA Portal and open your project
 2. In the project tree on the left, select your PLC and double-click it
 3. Find **OPC UA** in the device properties (usually under General or Properties section)
-4. Check **Enable OPC UA Server**
+4. Check **Activate OPC UA Server**
 
-![Enable OPC UA server option in TIA Portal](./images/enable-opcua-server.png){data-zoomable}
-_UAble OPC UA server option in TIA Portal_
+![Activate OPC UA server option in TIA Portal](./images/enable-opcua-server.png){data-zoomable}
+_Activate OPC UA server option in TIA Portal_
 
 5. Set **Port** to `4840` (the standard OPC UA port)
 6. Set **Security Policy** to **None** (for testing only)
@@ -84,7 +84,7 @@ Before exposing variables, you need to create an OPC UA server interface in your
 
 **For S7-1500 PLCs (firmware V2.5 or higher):**
 
-If you're using an S7-1500 PLC with firmware version 2.5 or higher, you have the option to enable the standard SIMATIC server interface . Simply check **Enable standard SIMATIC server interface** in the OPC UA settings. This automatically makes all PLC tags that are marked as accessible available through OPC UA .
+If you're using an S7-1500 PLC with firmware version 2.5 or higher, you have the option to enable the standard SIMATIC server interface. Simply check **Enable standard SIMATIC server interface** in the OPC UA settings. This automatically makes all PLC tags that are marked as accessible available through OPC UA.
 
 **For S7-1200 PLCs (or manual configuration for S7-1500):**
 
@@ -115,8 +115,8 @@ For OPC UA to access your data blocks, you need to mark them as accessible.
 5. Check **Accessible from HMI/OPC UA** and **Optimized Block Access**
 6. Click **OK**
 
-![Attributes settings for optimized and OPC UA accessible data blocks](./images/optimized-db-and-accessbile-via-opcua-option.png){data-zoomable}
-_Attributes settings for optimized and OPC UA accessible data blocks_
+![Attribute settings for optimized and OPC UA accessible data blocks](./images/optimized-db-and-accessbile-via-opcua-option.png){data-zoomable}
+_Attribute settings for optimized and OPC UA accessible data blocks_
 
 **If using S7-1500 with standard SIMATIC server interface:**
 
@@ -214,7 +214,7 @@ Let's prove this actually works by reading real data from your PLC.
 18.  Open the Debug panel on the right side
 19.  You'll see messages appearing every 5 seconds with your variable's value in `msg.payload`
 
-Try changing the value in your PLC through TIA Portal watch the updates appear in FlowFuse. No memory addresses, no offset calculations, just the variable name.
+Try changing the value in your PLC through TIA Portal and watch the updates appear in FlowFuse. No memory addresses, no offset calculations, just the variable name.
 
 To explore more OPC UA capabilities like subscribing to value changes, writing data back to your PLC, and working with complex data types, check out our [article](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 
