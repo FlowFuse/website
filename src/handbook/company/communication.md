@@ -167,33 +167,23 @@ This call takes place on Tuesdays.
 
 ## 1:1 meetings
 
-Each employee at FlowFuse will have weekly one-on-one meetings with their
-manager. It is the responsibility of the direct report to set the agenda for the 
-meeting. This is a great opportunity to communicate with your manager on how to 
-set you up for success. Topics might include changes in one's personal life, how 
-one is feeling, or ongoing challenges.
+## 1:1 meetings
 
-An agenda is kept in a closed off Google Doc for this meeting to which both parties 
-should add items to the discussion list. It's generally recommended to add items to 
-the agenda as they come to your mind, rather than wait to prep the agenda the day before. 
-During the meeting, the direct report can filter through relevant discussion topics. 
+Each employee at FlowFuse has a weekly one-on-one meeting with their manager. The direct report owns the agenda. Use this time to talk about anything that helps you succeed, such as personal updates, challenges, feedback, or decisions you need support with.
 
-It is important for 1:1s to not turn into a status update meeting. Statuses are best shared
-in the issue where work is being done, in regular standup, or in other async updates. 
-Projects are discussed in 1:1s when there needs to be alignment, a difficulty needs to be 
-discussed, or a solution needs to be brainstormed
+Keep your agenda in a shared Google Doc. Both you and your manager should add items as they come to mind, instead of waiting until the day before. During the meeting, you can walk through the topics in whatever order is most useful.
 
-When preparing an agenda for a 1:1, consider the following questions:
-- What has changed in the last few weeks that worked out well?
-- What has changed in the last few weeks that didn't work out?
-- Were there difficult problems to be solved last week? What would've made it easier to solve?
-- What's important but not urgent that's left undone?
-- How did you receive feedback and was that the best way?
-- Where do you feel there is an area to improve? Do you want to work with your manager on brainstorming a plan to improve it? 
+A 1:1 should not turn into a status update meeting. Share status updates in GitHub issues, standups, or other async channels. Use your 1:1 to get alignment, talk through difficulties, or brainstorm solutions.
 
-Your 1:1 agenda should include an "Action Items" list to track what follow on actions 
-were committed to by each of the different parties. It is also helpful include a
-timeline if one was committed.
+When preparing your agenda, you can reflect on questions like:
+- What went well in the last few weeks?
+- What did not go well?
+- Which problems were difficult, and what would have made them easier?
+- What important but not urgent tasks need attention?
+- How did you receive feedback, and did that approach work for you?
+- Where do you want to improve, and do you want help creating a plan?
+
+Include an “Action Items” section in your agenda to track follow-up tasks from the meeting. Add timelines when they are helpful.
 
 ## Skip level meetings
 
