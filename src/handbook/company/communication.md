@@ -50,9 +50,7 @@ Take notes directly in the agenda during the meeting. This improves readability 
 
 ### No Agenda, No Attenda
 
-Most meetings are scheduled to discuss items and make decisions. There's meetings
-that just shouldn't take place when there's nothing to discuss on the agenda
-5 minutes prior to the meeting.
+Most meetings exist to discuss items and make decisions. If a meeting has no agenda items five minutes before the meeting, don't have it.
 
 ### Google Calendar Delegation
 
