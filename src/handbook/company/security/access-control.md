@@ -10,8 +10,7 @@ navTitle: Access Control Policy
 
 ## Purpose
 
-To limit access to information and systems to authorized parties in accordance
-with business objectives.
+This policy describes how FlowFuse controls access to information and systems. Its purpose is to ensure only authorized parties can access data and systems in line with business objectives.
 
 ## Scope 
 
