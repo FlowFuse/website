@@ -106,20 +106,20 @@ You will not automatically join every Slack channel when you start. Below are so
 
 #### Channel name structure
 
-To make it easier to find your way around in Slack, we have some rules for naming channels. This will help give everything some context and implicit sense of purpose.
+We use a simple naming structure in Slack to make channels easier to find and understand. These prefixes help show the purpose of each channel.
 
 |Type | Slack prefix | Purpose |
 |:--- |:--- |:---|
-| Department           | `#dept-` | For each company department and ask them questions |
-| Project based work   | `#proj-` | Work scoped to a project with an finite horizon |
-| GitHub notifications | `#gh-`   | For many updates around the website and product development a notification is sent to the corresponding channel |
-| Ops notifications    | `#ops-`  | Channels receiving notifications from operations-related services |
+| Department           | `#dept-` | Conversations for each company department |
+| Project based work   | `#proj-` | Work related to a project with a clear end point |
+| GitHub notifications | `#gh-`   | Automated updates from our GitHub repositories |
+| Ops notifications    | `#ops-`  | Alerts and notifications from operations tools |
 
-All team members are advised to put prefix type channels into [their own section](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections).
+We recommend organizing these channels into [custom Slack sections](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections) for easier navigation.
 
-There are also channels for specific subsets of people. For example, there is `#people-managers` for people managers and `#us-hr` HR-specific topics to US-team members.
+We also have channels for specific groups, such as `#people-managers` for managers and `#us-hr` for HR topics specific to US team members.
 
-Channel creators should include a description of the channel so that all employees are able to browse channels and select the ones that are relevant to their work.
+When you create a new channel, add a clear description. This helps everyone browse channels and decide which ones are relevant to their work.
 
 ### GitHub
 
