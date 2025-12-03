@@ -134,21 +134,17 @@ Please respond to mentions and review requests within two business days.
 
 ### Standup meetings
 
-Standup meetings are hard to scale across multiple timezones. To make stand-ups
-async, we're using [Geekbot](https://geekbot.com/). Geekbot will trigger each
-workday morning at 9:00 local time, when online in Slack. Everyone who's a
-member of the #standup channel in Slack will be prompted.
+Standup meetings are difficult to run across many timezones, so we use [Geekbot](https://geekbot.com/) to make standups async. Geekbot sends a prompt each workday at 9:00 in your local timezone when you are active in Slack. Everyone in the `#standup` channel will receive the prompt.
 
-A good standup message reduces the need for status updates in live meetings.
-When writing a standup message, please mind the following:
-1. Bridge the gap between high-level strategies and actionable daily tasks. Explain what you do today and how it helps the strategic objectives of the company.
-2. Focus on specific, measurable actions for the day, providing clarity and accountability, instead of vague updates.
+A good standup update reduces the need for status updates in live meetings. When writing your update, keep the following in mind:
+1.	Connect your work to our broader goals. Explain what you plan to do today and how it supports the company’s priorities.
+1.	Focus on clear, specific actions rather than vague updates. This helps with accountability and shared understanding.
 
-Pro-tips:
-- When a questions doesn't need answering, fill in `-` to skip
-- When you want to report earlier that day, message Geekbot `report`
+Pro tips:
+- If a question does not apply to you, enter `-` to skip.
+- If you want to submit your update earlier in the day, message Geekbot with `report`.
 
-Example Standup: 
+Example standup messages: 
 * Bad: "More work on the special feature"
 * Better: "Align on plan for building special feature with Manny and work on it"
 * Best:
