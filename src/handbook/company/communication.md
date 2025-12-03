@@ -187,11 +187,6 @@ Include an “Action Items” section in your agenda to track follow-up tasks fr
 
 ## Skip level meetings
 
-Meetings between levels of the organization happen in regular 1:1s, usually held
-weekly between the manager and report. The report however might want to
-also communicate with the manager's manager to keep in touch with the strategy and
-communicate feedback on what they observe directly.
+Skip level meetings give team members a chance to speak directly with their manager's manager. These meetings help you stay connected to broader strategy and give space to share feedback based on your own experience.
 
-The advised cadance to have these meetings depends on the wants of the report,
-but generally advised once every 6-8 weeks. As FlowFuse scales, the number of
-weeks between these meetings is likely increasing.
+The frequency of skip level meetings depends on your needs, but a good guideline is once every 6 to 8 weeks. As FlowFuse grows, these meetings may happen less often.
