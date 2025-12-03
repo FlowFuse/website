@@ -123,18 +123,14 @@ When you create a new channel, add a clear description. This helps everyone brow
 
 ### GitHub
 
-All code at FlowFuse is stored in Git, and GitHub hosts our repositories. As
-such all our changes, feature ideas/requests, etc. are stored there. It also
-holds task lists for onboarding, [art requests](../design/art-requests.md), and
-other projects not necessarily code related. It's important to stay in the loop
-on GitHub and its notifications.
+All code at FlowFuse is stored in Git, and GitHub hosts our repositories. All changes, feature ideas, and requests are tracked there. GitHub also holds task lists for onboarding, [art requests](../design/art-requests.md), and other work that is not code related. It is important to stay up to date with GitHub and its notifications.
 
-Recommended views to keep track of items requiring your attention:
-- [PRs that mention you](https://github.com/pulls/mentioned)
-- [Questions and comments that need your attention](https://github.com/issues/mentioned)
-- [Reviews of PRs](https://github.com/pulls/review-requested)
+You can use the following views to keep track of items that need your attention:
+- [Pull requests that mention you](https://github.com/pulls/mentioned)
+- [Issues that mention you](https://github.com/issues/mentioned)
+- [Pull requests that need your review](https://github.com/pulls/review-requested)
 
-Please respond to mentions, review requests, etc within 2 business days.
+Please respond to mentions and review requests within two business days.
 
 ### Standup meetings
 
