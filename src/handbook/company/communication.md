@@ -155,12 +155,9 @@ Example standup messages:
 
 #### Monday Team Catchup
 
-Weekly an optional meeting is held to announce company wide updates, get to know each
-other, and share things you want to share both professionally and personally.
+We hold an optional team catchup every Monday. This meeting is a chance to share company updates, get to know each other, and talk about anything you want to share, both professionally and personally.
 
-On the agenda you might want to add what you did the past weekend, and what kept
-you busy. It's also great for setting the order of the chatting and ensuring
-everyone gets the opportunity to share.
+You can add simple items to the agenda, such as what you did over the weekend or anything that kept you busy. Adding items also helps set the order of conversation and makes sure everyone has space to speak.
 
 #### Strategy Call
 
