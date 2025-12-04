@@ -12,9 +12,9 @@ tags:
 
 You're generating terabytes of sensor data every day. Most of it is waste, I mean..
 
-<!--more-->
-
 Not the measurements—those are fine. It's the packaging. Text formats wrap every reading in field names, quotes, and brackets. You're moving more formatting characters than actual data across your network.
+
+<!--more-->
 
 Protocol Buffers eliminates this. It's binary serialization that transmits only what matters—no overhead, no bloat. This article shows you how to implement it and what happens when you stop paying to transmit garbage.
 
@@ -70,7 +70,7 @@ Before we dive into implementation, let's understand what makes Protocol Buffers
 
 Protocol Buffers (protobuf) is a serialization format developed by Google. Unlike JSON, which describes data with every message, protobuf separates the schema from the data. You define your message structure once in a `.proto` file:
 
-```
+```proto
 syntax = "proto3";
 
 // Temperature sensor reading
@@ -106,7 +106,7 @@ Let's start by defining your data structure. This will be the foundation of your
 
 Create a file named `temperature-sensor.proto` ( or you can give it any name you want ). Make sure it ends with the `.proto` extension:
 
-```
+```proto
 syntax = "proto3";
 
 message TemperatureSensorReading {
