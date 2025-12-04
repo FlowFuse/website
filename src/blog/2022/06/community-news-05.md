@@ -21,7 +21,7 @@ If you've got something that you'd like us to share please email [contact@flowfu
 We've had two releases since our last newsletter, there are a lot of related features between them. 
 We introduced a new design for the forge application which aligns with the branding on our website.
 We've added [Devices](/docs/user/concepts/#device), allowing you to run and manage your Node-RED projects on your own hardware, this is ideal for applications that need to connect to either sensor data or specialist hardware deployed outside the cloud.
-We added a new concept as part of this work, [Snapshots](/docs/user/concepts/#instance-snapshot) allow you to take a point in time copy of your project, today that can then be deployed to one or more devices but we have plans to expand this concept for things like [rolling back](https://github.com/FlowFuse/flowfuse/issues/587) a project to a previous point in time.
+We added a new concept as part of this work, [Snapshots](/docs/user/concepts/#snapshot) allow you to take a point in time copy of your project, today that can then be deployed to one or more devices but we have plans to expand this concept for things like [rolling back](https://github.com/FlowFuse/flowfuse/issues/587) a project to a previous point in time.
 [0.5](/blog/2022/05/flowforge-05-released/) Introduced the capabilities of copying a project or certain parts of it, allowing for scenarios like having multiple environments for Development and Production.
 
 [Node-RED 3.0.0-beta-3](https://discourse.nodered.org/t/node-red-3-0-0-beta-3-released/64027)  
