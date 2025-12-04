@@ -70,7 +70,7 @@ Before we dive into implementation, let's understand what makes Protocol Buffers
 
 Protocol Buffers (protobuf) is a serialization format developed by Google. Unlike JSON, which describes data with every message, protobuf separates the schema from the data. You define your message structure once in a `.proto` file:
 
-```proto
+```protobuf
 syntax = "proto3";
 
 // Temperature sensor reading
@@ -106,7 +106,7 @@ Let's start by defining your data structure. This will be the foundation of your
 
 Create a file named `temperature-sensor.proto` ( or you can give it any name you want ). Make sure it ends with the `.proto` extension:
 
-```proto
+```protobuf
 syntax = "proto3";
 
 message TemperatureSensorReading {
