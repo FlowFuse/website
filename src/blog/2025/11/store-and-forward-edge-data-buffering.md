@@ -20,7 +20,7 @@ Store-and-forward solves this. This article walks through building a store-and-f
 
 Below is the demo video where I show how production data can be lost without buffering, and how buffering prevents that from happening.
 
-<lite-youtube videoid="mRY0ndqvWW0" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="J1gDj6S-ijI" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 ## What is Store-and-Forward?
 
