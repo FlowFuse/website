@@ -167,15 +167,17 @@ employees the start date can be within 48 hours. Otherwise, do not offer anythin
 within 2 weeks. When a [conditional offer](#extending-an-offer) has been accepted
 you should immediately:
 
-1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
-1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
 1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening).
    * Create or add the their job title to Deel.
    * Copy the "Job Description" from the handbook as "Scope of work" on Deel (and save it as a template for this role).
    * Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.
    * Add Equity to the offer according to [the Equity guidelines](/handbook/peopleops/compensation/#equity)
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
-1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review.
+1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
+1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
+1. Send the candidates the Modified PIIAA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review.
+  
+   Signing Requirements: The PIIAA must be signed on or before the candidate's first day. Use the template that corresponds to their state/country. After execution, save the signed document in Legal → IP → Signed PIIAA.
    * Contractors who DO NOT need PIIAA:
      *   Direct contractors with FlowFuse
      *   Their existing contract already includes IP assignment
