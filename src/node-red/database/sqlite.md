@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Sqlite
+  key: SQLite
   parent: Database
 meta:
   title: Using SQLite with Node-RED
