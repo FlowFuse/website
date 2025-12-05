@@ -120,7 +120,7 @@ proposals are evaluated consistently and that approved campaigns align with our
 strategic objectives.
 
 **Required Elements for All Campaign Proposals** Every campaign proposal must
-include the following 5 components that will complete using [this GitHub issue template](https://github.com/FlowFuse/admin/issues/476):
+include the following 5 components that will complete using [this GitHub issue template](https://github.com/FlowFuse/customer/issues/new?template=06-marketing-campaign.yaml):
 
 **a. Objective and Rationale** Clearly define what you want to achieve with this
 campaign Explain why this campaign is needed now Connect the proposal to current
