@@ -18,6 +18,7 @@ them in a cost effective way.
 
 The ultimate goal for the department is to [generate sales pipeline](https://app-eu1.hubspot.com/reports-list/26586079/198880430/)
 for the sales team.
+The monthly budget of the department including headcount and program budget should be equal to 50-60% of monthly pipeline generated. 
 
 ### Marketing KPI
 
