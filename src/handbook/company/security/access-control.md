@@ -10,16 +10,13 @@ navTitle: Access Control Policy
 
 ## Purpose
 
-To limit access to information and systems to authorized parties in accordance
-with business objectives.
+This policy describes how FlowFuse controls access to information and systems. Its purpose is to ensure only authorized parties can access data and systems in line with business objectives.
 
 ## Scope 
 
-This policy applies to all FlowFuse information systems that process, store, or
-transmit confidential data as defined in the FlowFuse [Data Management Policy](./data-management.md).
+This policy applies to all FlowFuse systems that handle confidential data. The [Data Management Policy](./data-management.md) defines what counts as confidential data.
 
-It applies to all employees of FlowFuse and to all external parties with access
-to FlowFuse system resources.
+It also applies to all FlowFuse employees and to any external partners who have access to FlowFuse systems or resources.
 
 ## Access Control Policy
 
