@@ -5,7 +5,7 @@ description: "Learn how to read Siemens S7-1200/1500 optimized data blocks using
 date: 2025-12-04
 keywords: Siemens S7-1200, Siemens S7-1500, optimized data blocks, TIA Portal, OPC UA, symbolic addressing, FlowFuse, Node-RED, PLC data access, S7 protocol, OPC UA client, industrial automation, PLC integration, S7-1200 OPC UA, S7-1500 OPC UA, Siemens PLC communication, reading optimized DB
 authors: ["sumit-shinde"]
-image: /blog/2025/11/images/reading-s7-optimize-data-block.png
+image: /blog/2025/12/images/reading-s7-optimize-data-block.png
 tags:
   - flowfuse
 ---
