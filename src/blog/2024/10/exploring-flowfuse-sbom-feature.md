@@ -42,7 +42,7 @@ To support the effective monitoring and assessment of your dependencies, FlowFus
 
 ### Accessing FlowFuse SBoM Interface
 
-The Software Bill of Materials (SBoM) interface is available at the application level. For more information on the application, refer to the [Documentation](https://flowfuse.com/docs/user/concepts/#application). To access it:
+The Software Bill of Materials (SBoM) interface is available at the application level. For more information on the application, refer to the [Documentation](/docs/user/concepts/#application). To access it:
 
 1. Navigate to your Node-RED application within the FlowFuse platform.
 

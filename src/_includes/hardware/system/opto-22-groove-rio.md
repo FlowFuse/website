@@ -8,17 +8,3 @@ instructions on how to update the system, [watch this video](https://www.opto22.
 This guide is written for the firmware version of: `4.0.2-b.194`. Node.JS 20 is
 available on the device, and you should be good to go to register the edge device
 on FlowFuse.
-
-
-### Firewall consideration
-
-By default the Opto-22 firewall only allows access to port 1880 (default Node-RED port) by a very restricted list of users, 
-to avoid this problem please append `--port 1881` to the end of the one line install instructions presented in the FlowFuse 
-application when provisioning a new device.
-
-e.g.
-
-```
-/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)" && \
-./flowfuse-device-agent-installer -o aloud-swing-prevent -u https://app.flowfuse.com --port 1881
-```
