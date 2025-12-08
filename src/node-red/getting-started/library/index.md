@@ -31,7 +31,7 @@ Our catalog covers databases, communication protocols, IoT devices, and automati
 
 To strengthen the ecosystem and ensure high-quality nodes, FlowFuse launched the **Certified Nodes 2.0** program, which partners with expert node developers and provides financial rewards for maintaining enterprise-grade nodes.
 
-FlowFuse takes full responsibility for maintaining and supporting these integrations. If you need a specific integration or feature added to the catalog, [reach out to us](/contact/)—we're here to help ensure you have the tools needed for your production deployments.
+FlowFuse takes full responsibility for maintaining and supporting these integrations. If you need a specific integration or feature added to the catalog, [reach out to us](/contact-us/)—we're here to help ensure you have the tools needed for your production deployments.
 
 ## Installing Nodes from the Library
 
