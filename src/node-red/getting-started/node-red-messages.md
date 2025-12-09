@@ -13,8 +13,6 @@ meta:
 
 Node-RED operates by passing messages between nodes to create dynamic IoT, automation, and data-processing workflows. Each message transports data that nodes read, modify, process, or analyze. Understanding message structure and handling is essential for building reliable flows. Poor message management can cause subtle bugs like data overwrites, infinite loops, or system crashes.
 
-<!--more-->
-
 This guide explores Node-RED message mechanics, common pitfalls, and best practices for maintaining smooth, error-free data flow.
 
 ## What Are Node-RED Messages?
@@ -80,14 +78,14 @@ Cloning creates an independent copy of a message or its properties, allowing mod
 
 ### Using the Change Node
 
-The **Change** node provides a visual interface for modifying and cloning message properties. Note that you cannot clone the entire `msg` object at once—properties must be copied individually. The Change node can clone properties to other `msg` properties, or to flow/global context.
+The **Change** node provides a visual interface for modifying and cloning message properties. Note that you cannot clone the entire `msg` object in change node at once—properties must be copied individually. The Change node can clone properties to other `msg` properties, or to flow/global context.
 
 Steps to clone using the Change node:
 
-1. Double-click the **Change** node to open configuration.
-2. Select an action: **Set**, **Change**, **Delete**, or **Move**.
-3. To clone `msg.payload` to `flow.data`, choose **Set**. Enter `payload` in the first field, then select **flow** and enter `data` in the value field.
-4. For cloning between `msg` properties, select **msg** in the second field and specify the destination property name.
+1. Double-click on the **Change** node to open its configuration dialogue.
+2. You will see an interface with an existing item added by default.
+3. On the left side of the field, you will see options like **"Set"**, **"Change"**, **"Delete"**, and **"Move"**. You can use these options to perform the corresponding operations on the message.
+4. To clone the property `msg.payload` to `flow.data`, select the **"Set"** action. In the first **"Property"** field, enter `payload`, and in the **"to the value"** field, select **flow** and enter `data`. For cloning `msg` properties to new `msg` properties, select **msg** in the second field and specify the new property name.
 
 For comprehensive information on Change node capabilities, including Delete, Move, and Change actions, refer to the [Change Node documentation](https://nodered.org/docs/user-guide/nodes).
 
@@ -157,6 +155,74 @@ msg.customData = {
 // Return the enhanced message
 return msg;
 ```
+
+## Deleting and Moving Message Properties
+
+In addition to adding and cloning properties, you may need to remove or relocate properties within messages. 
+
+### Deleting Properties
+
+#### Using the Change Node
+
+Use the **Delete** action to remove unwanted properties from messages:
+
+1. Double-click on the **Change** node to open its configuration dialogue.
+2. Select the **"Delete"** action from the dropdown.
+3. In the **"Property"** field, specify the property to remove (e.g., `msg.tempData`).
+
+#### Using the Function Node
+
+To delete properties programmatically in a Function node, use the `delete` operator:
+```js
+// Delete a single property
+delete msg.tempData;
+
+// Delete multiple properties
+delete msg.tempData;
+delete msg.oldPayload;
+delete msg.metadata;
+
+return msg;
+```
+
+### Moving Properties
+
+#### Using the Change Node
+
+Use the **Move** action to relocate a property to a new location while removing it from the original location:
+
+1. Double-click on the **Change** node to open its configuration dialogue.
+2. Select the **"Move"** action from the dropdown.
+3. In the first **"Property"** field, specify the source property (e.g., `msg.payload`).
+4. In the **"to"** field, specify the destination property (e.g., `msg.oldPayload`).
+
+#### Using the Function Node
+
+To move a property programmatically in a Function node, copy the property to its new location and then delete it from the original:
+```js
+// Move msg.payload to msg.oldPayload
+msg.oldPayload = msg.payload;
+delete msg.payload;
+
+// Or move a nested property
+msg.backup = {
+    data: msg.tempData
+};
+delete msg.tempData;
+
+return msg;
+```
+
+**Important Note:** Just like with cloning, if you need to move a property that contains an object or array and want to ensure the original is completely removed from memory, you should clone it first:
+```js
+// Move with cloning (for objects/arrays)
+msg.oldPayload = RED.util.cloneMessage(msg.payload);
+delete msg.payload;
+
+return msg;
+```
+
+This ensures that the moved property is independent and modifications to the new location won't affect any lingering references to the old location.
 
 ## Handling JSON Messages
 
