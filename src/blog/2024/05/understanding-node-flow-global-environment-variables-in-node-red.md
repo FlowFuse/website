@@ -14,6 +14,8 @@ tags:
 
 Variables are essential for building anything beyond basic message routing in Node-RED. They let you store state, share data across your application, and manage configuration—capabilities you'll need for almost any real-world project.
 
+<!--more-->
+
 Node-RED provides four types of variables, each with different visibility and use cases. This guide walks through each one, showing you exactly how to set, retrieve, and delete them, along with practical guidance on which type to use in different situations.
 
 ## What Are Node-RED Variables?
@@ -43,6 +45,8 @@ Using the change node:
 2. Enter your variable name
 3. Set the value or expression
 
+!["Screenshot showing how to set global variable using the change node"](./images/variables-in-node-red-setting-global-variable-using-change-node.png "Screenshot showing how to set global variable using the change node"){data-zoomable}
+
 Using a function node:
 ```javascript
 global.set('userName', 'John');
@@ -53,6 +57,8 @@ global.set('systemMode', 'active');
 
 In change, inject, or switch nodes, simply select "global" and specify the variable name.
 
+!["Screenshot showing how to retrieve global variables using the change node"](./images/variables-in-node-red-retrieving-global-variable-using-change-node.png "Screenshot showing how to retrieve global variables using the change node"){data-zoomable}
+
 In function nodes:
 ```javascript
 const userName = global.get('userName');
@@ -60,6 +66,8 @@ const mode = global.get('systemMode');
 ```
 
 **Deleting global variables** can be accomplished through the change node by selecting "delete" from the action dropdown, or via the Context Data sidebar panel, which provides a comprehensive view of all variables.
+
+!["Screenshot showing how to delete global variable using the change node"](./images/variables-in-node-red-deleting-global-variable-using-change-node.png "Screenshot showing how to delete global variable using the change node"){data-zoomable}
 
 ## Flow Variables: Tab-Scoped Data
 
@@ -73,6 +81,8 @@ Flow variables exist within a single tab or flow in your Node-RED editor. They'r
 
 Using the change node, select "flow" as the variable type and configure your variable.
 
+!["Screenshot showing how to set flow variable using the change node"](./images/variables-in-node-red-setting-flow-variable-using-change-node.png "Screenshot showing how to set flow variable using the change node"){data-zoomable}
+
 In function nodes:
 ```javascript
 flow.set('currentTemp', 72.5);
@@ -83,6 +93,8 @@ flow.set('alertThreshold', 85);
 
 In visual nodes, select "flow" and specify the variable name.
 
+!["Screenshot showing how to retrieve flow variable using the change node"](./images/variables-in-node-red-retrieving-flow-variable-using-change-node.png "Screenshot showing how to retrieve flow variable using the change node"){data-zoomable}
+
 In function nodes:
 ```javascript
 const temp = flow.get('currentTemp');
@@ -90,6 +102,8 @@ const threshold = flow.get('alertThreshold');
 ```
 
 **Deleting flow variables** works the same way as global variables—use the change node's delete action or the Context Data panel.
+
+!["Screenshot showing how to delete flow variable using the change node"](./images/variables-in-node-red-deleting-flow-variable-using-change-node.png "Screenshot showing how to delete flow variable using the change node"){data-zoomable}
 
 ## Node Variables: Node-Level Isolation
 
@@ -128,6 +142,8 @@ FlowFuse provides persistent storage that survives restarts, redeployments, and 
 
 In the change node, select "persistent" from the store dropdown instead of "memory".
 
+!["Screenshot showing how to set global variable using the change node"](./images/variables-in-node-red-change-node-persistent-store-option-for-while-setting-variable.gif "Screenshot showing how to set global variable using the change node"){data-zoomable}
+
 In function nodes, add "persistent" as a third parameter:
 ```javascript
 global.set('userData', userData, 'persistent');
@@ -138,6 +154,8 @@ context.set('processedCount', count, 'persistent');
 **Retrieving persistent variables:**
 
 In visual nodes, ensure you're selecting from the "persistent" store.
+
+!["Screenshot showing how to retrieve global variable using the change node"](./images/variables-in-node-red-change-node-persistent-store-option.gif "Screenshot showing how to retrieve global variable using the change node"){data-zoomable}
 
 In function nodes:
 ```javascript
@@ -152,6 +170,8 @@ Persistent storage is crucial for applications that need to maintain state acros
 
 Node-RED includes a dedicated Context Data panel in the sidebar that provides visibility into all your variables. This panel is invaluable for debugging and understanding your application's state.
 
+!["Screenshot showing Node-RED Context data tab"](./images/variables-in-node-red-context-data-tab.png "Screenshot showing Node-RED Context data tab"){data-zoomable}
+
 **Features of the Context Data panel:**
 - View all node, flow, and global variables in organized sections
 - See when each variable was last updated
@@ -160,6 +180,10 @@ Node-RED includes a dedicated Context Data panel in the sidebar that provides vi
 - Delete variables directly from the interface
 
 To access this panel, click the sidebar icon and select "Context Data" from the dropdown menu. Use the refresh icon in each section to update the display with the latest values.
+
+!["Screenshot showing Node-RED Context data tab options for managing variables"](./images/variables-in-node-red-context-data-tab-options-for-varrables.png "Screenshot showing Node-RED Context data tab options for managing variables"){data-zoomable}
+
+In this tab, you'll also find information about when each variable was set or updated, along with additional options on the right side of each variable. The first option allows you to copy the variable's name, the second option lets you copy the variable's value, the third option refreshes the variable to show the most recent value, and the fourth option allows you to delete the variable.
 
 ## Environment Variables: Secure Configuration
 
@@ -179,11 +203,15 @@ Node-RED supports environment variables at two levels:
 3. Add your variables as name-value pairs
 4. Click Done and deploy
 
+!["Screenshot showing how to set flow level environment variables"](./images/variables-in-node-red-setting-flow-scope-enviroment-variable.gif "Screenshot showing how to set flow level environment variables"){data-zoomable}
+
 For global-level environment variables, see [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for detailed instructions.
 
 **Accessing environment variables:**
 
 In change, inject, or switch nodes, select "env variable" and specify the name.
+
+!["Screenshot showing how to retrieve environment variable in the change node"](./images/variables-in-node-red-retrieving-environment-variable-using-change-node.png "Screenshot showing how to retrieve environment variable in the change node"){data-zoomable}
 
 In function nodes:
 ```javascript
