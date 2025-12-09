@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Getting Started
+  key: Programming
   order: 1
 meta:
   title: Node-RED Programming
