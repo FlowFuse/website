@@ -20,9 +20,7 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 ## Access Control Policy
 
-1. Access to all computing resources, including servers, end-user computing
-  devices, network equipment, services and applications, must be protected by
-  strong authentication, authorization, and auditing.
+1. Protect all computing resources—such as servers, user devices, network equipment, services, and applications—with strong authentication, authorization, and auditing.
 
 2. Interactive user access must be associated to an account or login unique to
 each user.
