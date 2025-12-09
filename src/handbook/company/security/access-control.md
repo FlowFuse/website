@@ -28,8 +28,7 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 4. The organization requires the use of strong passwords and multi-factor authentication (MFA) wherever supported.
 
-5. MFA is required to access any critical system or resource, including but not
-limited to resources in production environments.
+5. The organization requires MFA for all critical systems and resources, including all production environments.
 
 6. Unused accounts, passwords, access keys must be removed within 30 days.
 
