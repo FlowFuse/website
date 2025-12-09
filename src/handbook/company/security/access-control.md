@@ -22,8 +22,7 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 1. Protect all computing resources—such as servers, user devices, network equipment, services, and applications—with strong authentication, authorization, and auditing.
 
-2. Interactive user access must be associated to an account or login unique to
-each user.
+2. Each user is responsible for using their own unique account for interactive access. Users must not share accounts.
 
 3. All credentials, including user passwords, service accounts, and access
 keys, must meet the length, complexity, age, and rotation requirements defined
