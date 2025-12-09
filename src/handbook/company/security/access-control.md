@@ -32,8 +32,7 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 6. The organization removes unused accounts, passwords, and access keys within 30 days.
 
-7. A unique access key or service account must be used for different
-application or user access.
+7. The organization assigns unique access keys or service accounts for each application or system process.
 
 8. Authenticated sessions must time out after a defined period of inactivity.
 
