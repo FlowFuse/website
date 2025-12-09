@@ -26,7 +26,7 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 3. The organization enforces industry best practices for passwords, service accounts, and access keys, including requirements for length, complexity, and rotation. See the [Password Policy[(#password-policy) for details.
 
-4. Use strong passwords and multi-factor authentication (MFA) whenever possible.
+4. The organization requires the use of strong passwords and multi-factor authentication (MFA) wherever supported.
 
 5. MFA is required to access any critical system or resource, including but not
 limited to resources in production environments.
