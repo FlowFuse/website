@@ -38,7 +38,9 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 ### How to Request Access or Permission to a System
 
-If you require access or permissions (e.g., for AWS, GitHub, HubSpot), please [raise a Ticket/Issue](https://github.com/FlowFuse/admin/issues/new?assignees=ZJvandeWeg%2C+knolleary&labels=&projects=&template=access-request.md) in our admin repository.
+### How to Request Access or Permissions
+
+To request access or permissions (for example: AWS, GitHub, or HubSpot), open an [Access Request issue](https://github.com/FlowFuse/admin/issues/new?assignees=ZJvandeWeg%2C+knolleary&labels=&projects=&template=access-request.md) in the admin repository.
 
 ### Access Authorization and Termination
 
