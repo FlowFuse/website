@@ -9,6 +9,8 @@ meta:
 image: /node-red/getting-started/images/filtering-mapping-sorting-reducing-with-node-red.png
 ---
 
+# {{meta.title}}
+
 Data transformation is at the heart of most Node-RED applications, whether you're processing IoT sensor readings, cleaning API responses, or preparing data for visualization. While you could write JavaScript functions to handle these operations, Node-RED's visual, low-code approach offers a more maintainable and accessible alternative that anyone on your team can understand and modify.
 
 This guide demonstrates how to perform four fundamental data operations—filtering, mapping, sorting, and reducing—using Node-RED's built-in nodes instead of custom code. Through a practical example of processing temperature sensor data, you'll learn to:
