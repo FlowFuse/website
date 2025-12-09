@@ -76,12 +76,7 @@ To request access or permissions (for example: AWS, GitHub, or HubSpot), open an
 
 ## Access to Source Code
 
-FlowFuse defaults to developing in the open, without restriction on who can
-view the source code.
-
-Exceptions will be made for business reasons to keep particular repositories
-private. Access to private repositories on GitHub will be based on business need
-and role.
+Develop source code in the open by default. Restrict access only when required for business reasons. Grant access to private repositories based on business need and job role.
 
 ## Password Policy
 
