@@ -4,8 +4,8 @@ eleventyNavigation:
   order: 1
 meta:
   title: Node-RED Programming
-  description:  
-  keywords: 
+  description: Master Node-RED programming fundamentals including flows, nodes, messages, conditional logic, and data manipulation. Learn essential concepts for building sophisticated visual programming solutions.
+  keywords: Node-RED programming, visual programming, Node-RED flows, Node-RED nodes, message passing, conditional logic, data manipulation, flow-based programming, Node-RED tutorial, IoT programming
 ---
 
 # {{ meta.title }}
