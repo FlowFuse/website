@@ -1,10 +1,10 @@
 ---
-title: "Building Your Node-RED Industrial MCP Server with FlowFuse"
+title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED with FlowFuse, enabling AI agents like Claude, Gemini, and GPT to access data, perform actions, and streamline industrial operations using a low-code approach."
 date: 2025-10-14
 authors: ["sumit-shinde"]
-image: /blog/2025/10/images/building-mcp-server-node-red.png
+image: /blog/2025/10/images/building-mcp-server-node-red-with-ff.png
 keywords: Node-RED MCP Server, Node-RED AI, Model Context Protocol, AI agents within Node-RED
 tags:
   - flowfuse
