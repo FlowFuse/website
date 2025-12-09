@@ -66,18 +66,13 @@ To request access or permissions (for example: AWS, GitHub, or HubSpot), open an
 
 ## Privileged Access Management
 
-1. Users must not log in directly to systems as a privileged user.
+1. Prevent direct login to systems using privileged accounts.
 
-  * A privileged user is someone who has administrative access to critical
-    systems, such as a Active Directory Domain Administrator, root user to a
-    Linux/Unix system, and Administrator or Root User to an AWS account.
+   * A privileged account provides administrative access to critical systems, such as an Active Directory Domain Administrator, a root user on a Linux or Unix system, or an Administrator or Root User on an AWS account.
 
-2. Privilege access must only be gained through a proxy, or equivalent, that
-supports strong authentication (such as MFA) using a unique individual account
-with full auditing of user activities.
+2. Require privileged access to be obtained only through a proxy or equivalent mechanism that uses strong authentication (such as MFA), a unique individual account, and full auditing of user activity.
 
-3. Direct administrative access to production systems must be kept to an
-absolute minimum.
+3. Keep direct administrative access to production systems to an absolute minimum.
 
 ## Access to Source Code
 
