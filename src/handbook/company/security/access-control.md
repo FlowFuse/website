@@ -30,7 +30,7 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 5. The organization requires MFA for all critical systems and resources, including all production environments.
 
-6. Unused accounts, passwords, access keys must be removed within 30 days.
+6. The organization removes unused accounts, passwords, and access keys within 30 days.
 
 7. A unique access key or service account must be used for different
 application or user access.
