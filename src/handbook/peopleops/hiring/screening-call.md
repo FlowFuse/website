@@ -18,6 +18,9 @@ During this call FlowFuse should understand:
 1. Alignment to [Values](/handbook/company/values.md).
 1. The candidate is enthusiastic about the company and the open role.
 1. The candidate is seeking full-time employment (FlowFuse only offers full-time positions).
+1. To get that information and make the candidate feels comfortable, use ice-braker questions like:
+   * "What did you think of the job posting? Is this what you're looking for in your next career move?"
+   * "I'd love to hear about your journey, especially the last 3-5 years. What led you here and what have you learned along the way?"
 1. Compensation range for the candidate.
 1. The candidate's current location.
    * Timezone and any overlap information.
