@@ -1,5 +1,5 @@
 ---
-title: Node-RED Variables: Global, Flow, Context & Environment Variables Complete Guide
+title: "Node-RED Variables: Global, Flow, Context & Environment Variables Complete Guide"
 subtitle: Guide to Understanding and Managing Node-RED Variables for Efficient Workflows
 description: Learn how to use Node-RED global, flow, context, and environment variables. Master setting, retrieving, and persistent storage with practical examples.
 date: 2024-05-06
