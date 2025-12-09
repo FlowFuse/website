@@ -22,20 +22,19 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 1. Protect all computing resources—such as servers, user devices, network equipment, services, and applications—with strong authentication, authorization, and auditing.
 
-2. Each user is responsible for using their own unique account for interactive access. Users must not share accounts.
+2. Each user must use their own unique account for interactive access. Accounts must not be shared.
 
-3. The organization enforces industry best practices for passwords, service accounts, and access keys, including requirements for length, complexity, and rotation. See the [Password Policy[(#password-policy) for details.
+3. Enforce industry best practices for passwords, service accounts, and access keys, including requirements for length, complexity, and rotation. See the Password Policy for details.
 
-4. The organization requires the use of strong passwords and multi-factor authentication (MFA) wherever supported.
+4. Require the use of strong passwords and multi-factor authentication (MFA) wherever supported.
 
-5. The organization requires MFA for all critical systems and resources, including all production environments.
+5. Require MFA for all critical systems and resources, including all production environments.
 
-6. The organization removes unused accounts, passwords, and access keys within 30 days.
+6. Remove unused accounts, passwords, and access keys within 30 days.
 
-7. The organization assigns unique access keys or service accounts for each application or system process.
+7. Assign unique access keys or service accounts for each application or system process.
 
-8. Authenticated sessions must time out after a defined period of inactivity.
-
+8. Configure authenticated sessions to time out after a defined period of inactivity.
 
 ### How to Request Access or Permission to a System
 
