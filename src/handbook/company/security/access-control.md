@@ -24,9 +24,7 @@ It also applies to all FlowFuse employees and to any external partners who have 
 
 2. Each user is responsible for using their own unique account for interactive access. Users must not share accounts.
 
-3. All credentials, including user passwords, service accounts, and access
-keys, must meet the length, complexity, age, and rotation requirements defined
-by industry best practice. Specific requires are described in the [password policy](#password-policy).
+3. 3. All passwords, service accounts, and access keys must follow industry best practices for length, complexity, and rotation. For specific rules, read the [Password Policy](#password-policy).
 
 4. Use strong password and multi-factor authentication (MFA) whenever possible
 to authenticate to all computing resources.
