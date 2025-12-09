@@ -115,5 +115,9 @@ Every message that comes out from the team has to stick to one or many of these 
    - FlowFuse enables scalable agent deployment to unify data from any source or protocol across the industrial edge.
   
 2. Convert all data across any protocol so separate systems work as a cohesive unit.
-  - FlowFuse unifies separate systems and industrial protocols on a single, low-code platform.
-  - Accelerated by an AI assistant, FlowFuse makes it faster than ever to build and deploy logic for real-time data transport between any source and destination.
+   - FlowFuse unifies separate systems and industrial protocols on a single, low-code platform.
+   - Accelerated by an AI assistant, FlowFuse makes it faster than ever to build and deploy logic for real-time data transport between any source and destination.
+
+3. Easy tag and store data collected in any data platform
+   - Transform raw data into a structured and unified information model with low-code data transformation tools.
+      - Transform raw data into a structured and unified information model with our AI-assisted low-code tools. Simply describe the data transformation you need in plain English, and our platform will help generate the necessary logic, from SQL queries to JavaScript functions.
