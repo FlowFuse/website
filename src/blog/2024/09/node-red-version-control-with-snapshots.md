@@ -37,7 +37,7 @@ Creating snapshots in FlowFuse is straightforward and can be done in just a few 
 
 ### Creating Snapshots for Cloud and Device Instances
 
-Before we begin, it’s essential to understand the differences between a cloud instance and a device instance. For more information, refer to the [Documentation](/docs/user/concepts/#what-is-the-difference-between-an-instance-and-a-device%3F).
+Before we begin, it’s essential to understand the differences between a cloud instance and a device instance. For more information, refer to the [Documentation](/docs/user/concepts/#instance).
 
 Additionally, let’s discuss the two types of device assignments available in FlowFuse:
 
