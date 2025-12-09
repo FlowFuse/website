@@ -44,24 +44,17 @@ To request access or permissions (for example: AWS, GitHub, or HubSpot), open an
 
 ### Access Authorization and Termination
 
-1. Access authorization shall be implemented using role-based access control
-(RBAC) or similar mechanism.
+1. Use role-based access control (RBAC) or a similar method to manage access permissions.
 
-2. Standard access based on a user's job role may be pre-provisioned during
-employee onboarding. All subsequent access requests to computing resources must
-be approved by the requestor’s manager, prior to granting and provisioning of
-access.
+2. Provision standard access during employee onboarding based on the user’s job role. All additional access requests must be approved by the requester’s manager before access is granted.
 
-3. Access to critical resources, such as production environments, must be
-approved by the CTO in addition to the requestor’s manager.
+3. Require CTO approval for access to critical resources, including production environments.
 
-4. Access must be reviewed on a regular basis and revoked if no longer needed.
+4. Review access on a regular basis and revoke permissions when they are no longer needed.
 
-5. Upon termination of employment, all system access must be revoked and user
-accounts terminated within 24 hours or one business day.
+5. Revoke all system access and disable accounts within 24 hours (one business day) after employment ends.
 
-6. All system access must be reviewed at least annually and whenever a user's
-job role changes.
+6. Review all user access at least annually and whenever a user’s job role changes.
 
 ### Shared Secrets Management
 
