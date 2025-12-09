@@ -58,14 +58,11 @@ To request access or permissions (for example: AWS, GitHub, or HubSpot), open an
 
 ### Shared Secrets Management
 
-1. Use of shared credentials/secrets must be minimized and approved on an
-exception basis.
+1. Minimize the use of shared credentials and allow them only as an approved exception.
 
-2. If required by business operations, secrets/credentials must be shared
-securely and stored in the company provided password manager, 1Password.
+2. When shared credentials are required, store and share them securely using the company-provided password manager, 1Password.
 
-3. Usage of a shared secret to access a critical system or resource must be
-supported by a complimenting solution to uniquely identify the user.
+3. Support any shared access to critical systems with a method that uniquely identifies the individual user.
 
 ## Privileged Access Management
 
