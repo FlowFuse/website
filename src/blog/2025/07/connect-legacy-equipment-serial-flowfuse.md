@@ -5,7 +5,7 @@ description: "Learn how to connect manufacturing equipment using serial interfac
 date: 2025-07-09
 authors: ["sumit-shinde"]
 keywords: node-red, serial communication, rs232, rs485, rs422, modbus, industrial automation, flowfuse, legacy equipment, machine data collection, manufacturing connectivity, serial port integration, factory floor monitoring, serial devices, equipment integration
-image: blog/2025/07/images/connect-serial-port-node-red.png
+image: blog/2025/07/images/connect-serial-port-node-red-ff.png
 tags:
    - flowfuse
    - opcua
@@ -33,7 +33,7 @@ Many factories rely on machines, both new and old, that communicate via traditio
 
 <!--more-->
 
-This blog shows how to use FlowFuse to connect manufacturing equipment to collect data and enable monitoring without modifying the original hardware.
+This guide shows you how to use FlowFuse (Node-RED with enterprise capabilities) to connect manufacturing equipment, collect data, and enable real-time monitoring—without modifying your original hardware.
 
 ## Making Sense of Serial Communication
 
