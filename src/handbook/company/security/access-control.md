@@ -91,23 +91,16 @@ Enforce industry best practices for passwords and configure systems to support t
 When programmatic access to resources is required, the following guidelines must
 be followed:
 
-1. Use of API keys or access tokens (secrets) is preferred over username/password
-combinations
+## Programmatically Accessible Resources
 
-2. Whenever possible, secrets shouldn't be shared between environments
-
-3. Secrets must be stored securely in 1Password and not shared in
-plaintext
-
-4. Secrets must be rotated on a regular basis - at least annually, follow [internal 
-guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo)
-for details
-
-5. Secrets should follow least privilege principle - only provide access to the
-resources that are required for the application to function
-
-6. Secrets must not be hardcoded in the source code 
-
+When programmatic access is required, follow these guidelines:
+1. Use API keys or access tokens instead of username and password combinations.
+2. Avoid sharing secrets across environments unless required for operational reasons.
+3. Store all secrets securely in 1Password and never share them in plaintext.
+4. Rotate secrets on a regular basis—at least annually—and follow [internal 
+guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo) for rotation.
+5. Apply the principle of least privilege by granting only the access required for the application to function.
+6. Do not hardcode secrets in source code.
 
 --- 
 Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
