@@ -52,15 +52,17 @@ All mobile devices shall be handled in accordance with the [Information Security
 
 ## Exceptions
 
-Requests for an exception to this policy must be submitted via email to the
-CEO or CTO for approval.
+Submit requests for exceptions to this policy by email to the CEO or CTO for approval.
 
 ## Violations & Enforcement
 
-Any known violations of this policy should be reported to the CEO or CTO.
-Violations of this policy can result in immediate withdrawal or suspension of
-system access and/or disciplinary action in accordance with company procedures
-up to and including termination of employment.
+Report any violations of this policy to the CEO or CTO immediately.
+
+Violations may result in suspension of system access and disciplinary action in accordance with company procedures, up to and including termination of employment.
 
 --- 
-Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
+
+This policy is adapted from the following sources:
+
+- [JupiterOne Security Policy Templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/))
+- [Vanta](https://vanta.com)
