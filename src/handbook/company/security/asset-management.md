@@ -24,8 +24,7 @@ Identify all assets that store, process, or transmit confidential information, a
 
 ### Ownership of Assets
 
-Assets maintained in the inventory shall be owned by a specific individual or
-group within the company.
+Assign each asset in the inventory to a specific individual or group responsible for its management and protection.
 
 ### Acceptable Use of Assets
 
