@@ -21,7 +21,7 @@ This guide will walk you through integrating Redis with Node-RED, from basic set
 Before you begin, make sure you have the following:
 
 - Ensure you have a running Node-RED instance. The quickest and easiest way to have a manageable and scalable Node-RED instance is by [signing up on FlowFuse](https://app.flowfuse.com/) and creating an instance.
-- Install the node-red-contrib-redis package using the Palette Manager.
+- Install the `node-red-contrib-redis` package using the Palette Manager.
 - Make sure you have your Redis server details ready. 
 
 ### Configuring the Redis Connection
