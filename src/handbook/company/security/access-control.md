@@ -103,4 +103,8 @@ guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilC
 6. Do not hardcode secrets in source code.
 
 --- 
-Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
+This policy is adapted from the following sources:
+
+- [JupiterOne Security Policy Templates](https://github.com/JupiterOne/security-policy-templates) 
+- ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/))
+- [Vanta](https://vanta.com)
