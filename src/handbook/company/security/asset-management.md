@@ -14,7 +14,7 @@ This policy establishes how the organization identifies, manages, and protects i
 
 ## Scope 
 
-This policy applies to all FlowFuse owned or managed information systems.
+This policy applies to all organizational assets owned or managed by FlowFuse, including information, equipment, and devices. It also applies to all employees and third parties who use or handle these assets.
 
 ## Policy
 
