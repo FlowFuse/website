@@ -36,9 +36,7 @@ Report the loss or theft of any device that stores FlowFuse data or provides acc
 
 ### Return of Assets
 
-All employees and third-party users of FlowFuse equipment shall return all of
-the organizational assets within their possession upon termination of their
-employment, contract, or agreement in accordance with the [off-boarding process](../../peopleops/hiring.md#offboarding).
+Return all FlowFuse assets in your possession when your employment or contract ends, following the [off-boarding process](../../peopleops/hiring.md#offboarding).
 
 ### Handling of Assets
 
