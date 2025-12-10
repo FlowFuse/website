@@ -80,13 +80,11 @@ Develop source code in the open by default. Restrict access only when required f
 
 ## Password Policy
 
-All FlowFuse system passwords must meet industry standards and best practices.
-Where possible, systems shall be configured to enforce these standards.
+Enforce industry best practices for passwords and configure systems to support these requirements wherever possible.
 
- - Minimum length of 8 characters, with a mix of letters, numbers, symbols and case.
- - Passwords must not be reused between systems
- - Passwords may only be stored in the company provided password vault, 1Password.
-
+- Use a minimum password length of 8 characters with a mix of letters, numbers, symbols, and cases.
+- Do not reuse passwords across different systems.
+- Store passwords only in the company-provided password vault, 1Password.
 
 ## Programmaticaly Accessible Resources
 
