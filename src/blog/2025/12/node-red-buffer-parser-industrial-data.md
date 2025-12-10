@@ -3,14 +3,14 @@ title: "Node-RED Buffer Parser: How to Decode Modbus and Industrial Device Raw D
 subtitle: "A practical guide to visual buffer parsing in Node-RED"
 description: "Learn how to parse Modbus and industrial device buffers in Node-RED using the Buffer Parser node. Visual configuration, no coding required. Handle endianness and scaling easily."
 date: 2025-12-10
-keywords: 
+keywords: node-red, buffer parser, modbus, modbus rtu, modbus tcp, industrial automation, plc, raw data parsing, binary data, payload decoding, node-red tutorial, node-red buffer parser, node-red modbus parsing, industrial endianness, byte order, bitmask, byte offset, data decoding, data acquisition, serial communication, legacy devices, industrial sensors, modbus registers, buffer parsing guide
 authors: ["sumit-shinde"]
 image: 
 tags:
   - flowfuse
 ---
 
-Legacy industrial devices communicate in bytes. Your temperature sensor doesn't send you `{"temp": 23.5}` - it sends you `[1, 3, 4, 1, 44, 0, 200, 190, 125]`. Those numbers are meaningless until you know how to decode them.
+Legacy industrial devices communicate in bytes. Your temperature sensor doesn't send you `{"temp": 23.5}` - it sends you `[1, 3, 4, 1, 44, 0, 200, 190, 125]`. Those numbers are meaningless unless you know how to decode them.
 
 <!--more-->
 
@@ -26,7 +26,7 @@ When your Modbus sensor responds to a query, Node-RED shows you something like t
 [1, 3, 4, 1, 44, 0, 200, 190, 125]
 ```
 
-Nine bytes. Each one is a number between 0 and 255. Completely meaningless without context.
+Nine bytes. Each one is a number between 0 and 255. This data is completely meaningless without context.
 
 Byte 0 might be a device address. Bytes 3 and 4 together might encode temperature. But the buffer itself doesn't tell you any of this - you need the device manual to figure out what goes where.
 
@@ -38,7 +38,7 @@ That JSON message takes 21 bytes. The same information in binary takes 2 bytes. 
 
 More importantly, this is how industrial hardware has worked since 1979. Modbus was designed when PLCs had kilobytes of memory. Modern factories still run equipment from the 90s. The protocol isn't going to change because it would be more convenient for us.
 
-You work with what's on the factory floor. Which means you need to parse buffers.
+You work with what's on the factory floor, this means you need to parse buffers.
 
 ## Example: Temperature and Humidity Sensor
 
@@ -75,7 +75,7 @@ msg.payload = { temperature, humidity };
 return msg;
 ```
 
-This works. It's also fragile. When you need to add a pressure reading next month, you're editing code and hoping you don't break the offset calculations. When someone else looks at this flow, they have no idea what's happening without reading the function and if they don't understand JavaScript, they're stuck.
+This works, but it's also fragile. When you need to add a pressure reading next month, you're editing code and hoping you don't break the offset calculations. When someone else looks at this flow, they have no idea what's happening without reading the function and if they don't understand JavaScript, they're stuck.
 
 Buffer Parser turns this into configuration you can see and modify without touching code. Let's walk through a practical example.
 
@@ -207,7 +207,7 @@ If you're seeing negative numbers when you know the value should be positive, yo
 
 If your values are exactly 256 times too large or too small, you're using the wrong data type size. If you're using `int8` but the device sends 16-bit values, change it to `int16be` or `int16le`. If you're using `int16` but the device sends 32-bit values, change it to `int32be` or `int32le`. Check your device manual for the correct bit size.
 
-If you're getting raw values instead of scaled values—like 300 instead of 30.0—you forgot to set the Scale field or set it incorrectly. If the device manual says "divide by 10," enter `0.1` in the Scale field (not `10`). Remember: Buffer Parser multiplies by the scale, so to divide by 10, multiply by 0.1.
+If you're getting raw values instead of scaled values (for example, 300 instead of 30.0), it means you either forgot to set the Scale field or set it incorrectly. If the device manual says ‘divide by 10,’ enter 0.1 in the Scale field (not 10). Remember: the Buffer Parser multiplies by the scale, so to divide by 10, you must multiply by 0.1
 
 If every number looks completely wrong, recount your offsets carefully. Check each Offset value and verify against your device manual. Remember that byte 0 is first, byte 1 is second, byte 3 is fourth, and so on. The most common mistake is being off by one byte.
 
@@ -229,7 +229,7 @@ Buffer Parser handles most industrial protocols, but not everything.
 
 If you need conditional parsing where the structure changes based on values in the buffer itself, you'll need JavaScript. For example, if byte 2 tells you how many temperature readings follow and that number varies, Buffer Parser can't handle variable-length structures dynamically.
 
-If you're dealing with bit-packed data where individual bits within bytes have meaning (common in PLC memory maps), you can use the bool type with Offset Bit, but extracting many bits gets tedious. Sometimes a function node doing bitwise operations is cleaner.
+If you're dealing with bit-packed data where individual bits within bytes have meaning (common in PLC memory maps), you can use the `bool` type with Bit Offset, but extracting many bits gets tedious. Sometimes a function node doing bitwise operations is cleaner.
 
 > If you're using FlowFuse, you don’t even need to write JavaScript yourself. You can simply ask the [FlowFuse Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) in plain English, paste what your device manual says, and it will generate the Function node directly on your Node-RED canvas.
 
