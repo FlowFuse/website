@@ -20,9 +20,7 @@ This policy applies to all organizational assets owned or managed by FlowFuse, i
 
 ### Inventory of Assets
 
-Assets associated with information and information processing facilities that
-store, process, or transmit classified information shall be identified and an
-inventory of these assets shall be created and maintained.
+Identify all assets that store, process, or transmit confidential information, and maintain an up-to-date inventory of these assets.
 
 ### Ownership of Assets
 
