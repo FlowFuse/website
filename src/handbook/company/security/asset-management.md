@@ -32,11 +32,7 @@ Follow the acceptable use rules defined in the [Information Security Policy](./i
 
 ### Loss or Theft of Assets
 
-All personnel must immediately report the loss of any information systems,
-including portable or laptop computers, smartphones, PDAs, authentication tokens
-(keyfobs, one-time-password generators, or personally owned smartphones or
-devices with access to FlowFuse systems) or other devices that can store and
-process or help grant access to FlowFuse data.
+Report the loss or theft of any device that stores FlowFuse data or provides access to FlowFuse systems immediately. This includes devices such as computers, hardware tokens, and personal mobile phones.
 
 ### Return of Assets
 
