@@ -10,11 +10,7 @@ navTitle: Asset Management Policy
 
 ## Purpose
 
-To identify organizational assets and define appropriate protection responsibilities.
-To ensure that information receives an appropriate level of protection in accordance
-with its importance to the organization. To prevent unauthorized disclosure,
-modification, removal, or destruction of information stored on media.
-
+This policy establishes how the organization identifies, manages, and protects its assets. Its purpose is to ensure that information and equipment receive appropriate protection and to prevent unauthorized disclosure, modification, removal, or destruction of organizational data.
 
 ## Scope 
 
