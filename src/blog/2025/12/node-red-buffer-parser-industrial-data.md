@@ -1,5 +1,5 @@
 ---
-title: "Node-RED Buffer Parser: How to Decode Modbus and Industrial Device Raw Data"
+title: "Node-RED Buffer Parser Guide: Decode Modbus and Industrial Device Data"
 subtitle: "A practical guide to visual buffer parsing in Node-RED"
 description: "Learn how to parse Modbus and industrial device buffers in Node-RED using the Buffer Parser node. Visual configuration, no coding required. Handle endianness and scaling easily."
 date: 2025-12-10
