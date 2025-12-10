@@ -28,8 +28,7 @@ Assign each asset in the inventory to a specific individual or group responsible
 
 ### Acceptable Use of Assets
 
-Rules for the acceptable use of information, assets, and information processing
-facilities shall be identified and documented in the [Information Security Policy](./information-security.md).
+Follow the acceptable use rules defined in the [Information Security Policy](./information-security.md).
 
 ### Loss or Theft of Assets
 
