@@ -46,8 +46,7 @@ equipment.
 
 Employees are responsible for ensuring that company equipment is secured and
 properly attended to whenever it is transported or stored. Equipment must be
-secured in accordance with the [Access Control](./access-control.md) policy and
-must not be left unattended in public locations.
+secured in accordance with the [Access Control policy](./access-control.md) and must not be left unattended in public locations.
 
 All mobile devices shall be handled in accordance with the [Information Security Policy](./information-security.md).
 
