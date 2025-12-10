@@ -2,6 +2,7 @@
 title: "Node-RED Serial Port Tutorial: Connect RS232/RS485 Manufacturing Equipment"
 subtitle: "Learn how to bring serial-connected equipment online using Node-RED and FlowFuse"
 description: "Learn how to connect manufacturing equipment using serial interfaces like RS-232/422/485 in Node-RED with FlowFuse. Enable monitoring, data collection, and automation—no hardware changes required"
+lastUpdated: 2025-12-10
 date: 2025-07-09
 authors: ["sumit-shinde"]
 keywords: node-red, serial communication, rs232, rs485, rs422, modbus, industrial automation, flowfuse, legacy equipment, machine data collection, manufacturing connectivity, serial port integration, factory floor monitoring, serial devices, equipment integration
