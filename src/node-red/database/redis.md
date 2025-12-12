@@ -107,7 +107,11 @@ Redis stores values as strings, so you need to convert JSON objects before stori
    - Set `msg.payload` to
 
   ```json
-     {"temperature":22.5,"humidity":65,"timestamp":0}
+  {
+  "temperature": 22.5,
+  "humidity": 65,
+  "timestamp": Date.now()
+  }
   ```
 3. Drag a **JSON** node, This will **stringify** the JSON object so it can be stored in Redis.
 4. Drag a **redis-command** node and set the command to `set`.
