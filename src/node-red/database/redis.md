@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: Database
 meta:
   title: Using Redis with Node-RED
-  description: 
+  description: Learn how to integrate Redis with Node-RED for fast data storage, pub/sub messaging, JSON handling, Lua scripting, and advanced Redis operations in Node-RED flows.
   keywords: nodered redis, node red redis, node-red-node-redis, redis nodered, redis node red
 ---
 
