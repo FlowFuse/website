@@ -89,7 +89,7 @@ Once installed, you’ll see two new nodes in the palette: **Date/Time Formatter
 #### Your First Format
 
 1.  Drag a **Date/Time Formatter** node onto the canvas and double-click to open its configuration.
-2.  Look at the three key fields: **Input** (where your date lives, usually `msg.payload`), **Format** (your pattern), and **Output** (where the result goes, usually `msg.payload`).
+2.  Look at the three key fields: **Input** (where your date lives, usually `msg.payload`), **Output Format** (your pattern), and **Output** (where the result goes, usually `msg.payload`).
 3.  Type this into the **Format** field: `MMMM D, YYYY`.
 4.  Connect an inject node (set to timestamp) to the **Date/Time Formatter** node, then connect the **Date/Time Formatter** node to a debug node.
 5.  Click the inject button.
@@ -173,10 +173,10 @@ This takes the timestamp in `msg.payload` and converts it to **"12/11/2024"**.
 JSONata uses square brackets, but the codes are different from the **Date/Time Formatter** node.
 
   - `[Y]` or `[Y0001]` → 2024 (Year)
-  - `[M]` or `[M01]` → 12 (Month, with leading zero)
-  - `[D]` or `[D01]` → 11 (Day, with leading zero)
+  - `[M]` or `[M01]` → 12 (Month; use [M01] to force a leading zero)
+  - `[D]` or `[D01]` → 11 (Day of month; use [D01] to force a leading zero)
   - `[h]` or `[h01]` → 3 (12-hour)
-  - `[m01]` → 45 (Minutes)
+  - `[m01]` → 45 (Minutes, with leading zero for 0–9)
   - `[P]` → AM or PM
 
 **Common Patterns:**
