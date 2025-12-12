@@ -1,7 +1,8 @@
 ---
 eleventyNavigation:
   key: Programming
-  order: 1
+  order: 5
+  parent: Getting Started
 meta:
   title: Node-RED Programming
   description: Master Node-RED programming fundamentals including flows, nodes, messages, conditional logic, and data manipulation. Learn essential concepts for building sophisticated visual programming solutions.
