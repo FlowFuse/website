@@ -1,11 +1,12 @@
 ---
 eleventyNavigation:
   key: Date & Time
+  order: 4
   parent: Getting Started
 meta:
   title: Working with Dates and Times in Node-RED
   description: Learn how to handle dates and times in Node-RED without coding. Master timestamps, formatting, timezones, calculations, and time-based automation with visual nodes. 
-  keywords: 
+  keywords: Node-RED, dates, times, timestamps, JSONata, Moment.js, Date/Time Formatter, timezones, date formatting, time calculations, inject node, change node, human-readable dates, relative time, time-based automation, date math, date difference, ISO 8601, flow automation, Node-RED tutorial, date manipulation, scheduling, event logging, time conversion, time adjustment, visual programming
 ---
 
 # {{meta.title}}
