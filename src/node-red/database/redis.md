@@ -104,13 +104,13 @@ Redis stores values as strings, so you need to convert JSON objects before stori
 2. Drag a **change** node onto the canvas and configure it to:
 
    - Set `msg.topic` to `sensor:data`
-   - Set `msg.payload` to
+   - Set `msg.payload` to the following JSONata expression:
 
   ```json
   {
   "temperature": 22.5,
   "humidity": 65,
-  "timestamp": Date.now()
+  "timestamp": $now()
   }
   ```
 3. Drag a **JSON** node, This will **stringify** the JSON object so it can be stored in Redis.
