@@ -17,8 +17,6 @@ This guide walks you through everything you need to know about working with date
 
 ## Getting the Current Time in Node-RED
 
-Node-RED doesn't enforce a single way to handle dates. Look at flows from different developers and you'll see different approaches—some prefer timestamps, others use ISO strings, and many format dates in their own custom ways. This flexibility means you can choose what works best for your project.
-
 The most straightforward way to get the current time is with the **inject** node or **change** node.
 
 ### Using Inject and Change Nodes
