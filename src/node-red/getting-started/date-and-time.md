@@ -11,9 +11,7 @@ meta:
 
 # {{meta.title}}
 
-Working with dates and times comes up constantly in Node-RED. Whether you're logging events, scheduling tasks, checking business hours, displaying the current time, or pulling historical data, it all relies on handling timestamps correctly.
-
-The best part is that you can manage all of this using visual nodes, without writing any code.
+Working with dates and times comes up constantly in Node-RED. Whether you're logging events, scheduling tasks, checking business hours, displaying the current time, or pulling historical data, it all relies on handling timestamps correctly. The best part is that you can manage all of this using visual nodes, without writing any code.
 
 This guide walks you through everything you need to know about working with dates and times in Node-RED. You'll learn how to generate timestamps, format them for display, work with different timezones, and perform time-based calculations.
 
