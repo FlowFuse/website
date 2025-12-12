@@ -12,7 +12,7 @@ meta:
 
 Redis is a powerful in-memory data structure store that can be used as a database, cache, message broker, and streaming engine. When combined with Node-RED, Redis provides a fast and efficient way to store and retrieve data, manage session states, implement pub/sub messaging patterns, and share data across multiple Node-RED instances.
 
-This guide will walk you through integrating Redis with Node-RED, from basic setup to advanced use cases.
+This documentation will walk you through integrating Redis with Node-RED, from basic setup to advanced use cases.
 
 ## Getting Started
 
