@@ -13,7 +13,7 @@ meta:
 
 Working with dates and times comes up constantly in Node-RED. Whether you're logging events, scheduling tasks, checking business hours, displaying the current time, or pulling historical data, it all relies on handling timestamps correctly. The best part is that you can manage all of this using visual nodes, without writing any code.
 
-This guide walks you through everything you need to know about working with dates and times in Node-RED. You'll learn how to generate timestamps, format them for display, work with different timezones, and perform time-based calculations.
+This documentation walks you through everything you need to know about working with dates and times in Node-RED. You'll learn how to generate timestamps, format them for display, work with different timezones, and perform time-based calculations.
 
 ## Getting the Current Time in Node-RED
 
@@ -72,7 +72,7 @@ The Moment node handles formatting, timezones, relative time, and date math. It 
 4.  Search for `node-red-contrib-moment`.
 5.  Click **Install** next to the package.
 
-Once installed, you’ll see two new nodes in the palette: **Date/Time Formatter** and **Humanizer**. For this guide, we’ll be using the **Date/Time Formatter** node.
+Once installed, you’ll see two new nodes in the palette: **Date/Time Formatter** and **Humanizer**. For this documentation, we’ll be using the **Date/Time Formatter** node.
 
 #### Your First Format
 
