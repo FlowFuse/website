@@ -64,7 +64,7 @@ Let's create a simple flow that stores and retrieves data from Redis.
 
 ### Storing Data
 
-1. Drag an **inject** node onto the canvas
+1. Drag an **inject** node onto the canvas and clear the Inject node so it has no `msg.payload` or `msg.topic` set.
 2. Drag a **redis-command** node next to it
 3. Double-click the redis-command node and configure:
    - **Command**: `set`
@@ -82,7 +82,7 @@ You should see "OK" in the debug panel, which means your data has been successfu
 
 Now let's retrieve the data we just stored:
 
-1. Add another **inject** node to the canvas
+1. Add another cleared **inject** node to the canvas
 2. Add a **redis-command** node and configure:
    - **Command**: `get`
    - **Server**: Your Redis configuration
@@ -155,7 +155,7 @@ Now create another flow that listens for these alerts (this could be on the same
 
    - **Method**: `SUBSCRIBE`
    - **Topic**: `alerts:temperature`
-   - **Timeout**: *(optional)* Set a timeout if you want the subscription to stop after a given number of seconds.
+   - **Timeout**: *(optional)* How long the node should listen for messages before automatically stopping.
    - **Server**: Your Redis connection
 2. Drag a **debug** node
 3. Connect the **redis-in** node to the **debug** node
@@ -175,10 +175,14 @@ Let's create an inventory system that atomically checks stock and decrements it 
 2. Drag a **function** node to prepare the script arguments:
 
 ```javascript
-msg.productId = "product:SKU-12345";
+msg.productId = "inventory:product:SKU-12345";
 msg.quantityRequested = 3;
-msg.keys = ["inventory:product:SKU-12345"];
-msg.argv = [msg.quantityRequested];
+
+msg.payload = [
+    msg.productId,  
+    msg.quantityRequested
+];
+
 return msg;
 ```
 
@@ -229,7 +233,7 @@ return msg;
 6. Connect the inject node to the first function node, then to the redis-lua-script node, then to the second function node, and finally to the debug node
 7. Click **Deploy**
 
-Before testing, set initial inventory using a redis-command node with command `set`, key `inventory:product:SKU-12345`, and value `[10]`. Then click the inject button to process orders atomically.
+Before testing, set the initial inventory using a redis-command node: Command = `SET`, Topic/Key = `inventory:product:SKU-12345`, Params = `10`. Then trigger the Inject node to initialize the value and process orders atomically.
 
 ## Direct Redis Client Access with redis-instance
 
@@ -238,8 +242,9 @@ The redis-instance node provides direct access to the IORedis client API in func
 ### Setting Up Redis Instance in Context
 
 1. Drag a **redis-instance** node onto the canvas and configure:
-   - **Name**: `myRedisClient`
+   - **Name**: `redis`
    - **Server**: Your Redis configuration
+   - **Topic**: Enter a topic name to identify the Redis instance in the chosen context (e.g., `redis`). This is the name you will use in function nodes to access the client.
    - **Context**: `flow` (makes it available to all nodes in the flow)
 2. Click **Deploy**
 
@@ -253,7 +258,7 @@ Pipelines allow you to send multiple commands to Redis in a single network round
 2. Drag a **function** node with this code:
 
 ```javascript
-const redis = flow.get('myRedisClient');
+const redis = flow.get('redis'); // Replace 'redis' with your topic if different
 
 // Create a pipeline
 const pipeline = redis.pipeline();
@@ -305,7 +310,7 @@ When you need to find keys matching a pattern without blocking Redis (important 
 2. Drag a **function** node with this code:
 
 ```javascript
-const redis = flow.get('myRedisClient');
+const redis = flow.get('redis'); // Replace 'redis' with your topic if different
 
 async function scanKeys() {
     const matchPattern = 'sensor:*:latest';
