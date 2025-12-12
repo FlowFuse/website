@@ -29,7 +29,7 @@ Now access Node-RED at `http://localhost:8080`. This change only lasts for the c
 
 ### Permanent Port Change
 
-To make a permanent change, edit your Node-RED settings file located at `~/.node-red/settings.js`:
+To make the port change permanent, edit your Node-RED settings file (`settings.js`) located in the Node-RED user directory (commonly `~/.node-red/settings.js` on Linux/macOS; on Windows it’s typically under your user profile at `.node-red\settings.js`).
 
 ```javascript
 uiPort: process.env.PORT || 8080,
@@ -39,7 +39,7 @@ Save the file and restart Node-RED. The new port setting will persist across all
 
 ## Securing Your Node-RED Installation
 
-**Critical Security Note:** By default, Node-RED has no authentication or authorization. Anyone who can access your port can view and modify your flows, access your data, and control your connected devices. Always secure Node-RED before exposing it to any network beyond your local development machine.
+**Critical Security Note:** By default, Node-RED has no authentication or authorization. Anyone with network access to this port can view and modify your flows, access your data, and control your connected devices. Always secure Node-RED before exposing it to any network beyond your local development machine.
 
 ### Enable Authentication
 
@@ -64,9 +64,11 @@ node-red admin hash-pw
 
 Enter your desired password when prompted, then copy the generated hash into your settings file.
 
+> **Note**: adminAuth secures the editor/admin UI (and admin API), but it doesn’t protect http in endpoints by default.
+
 ### Firewall Protection
 
-Restrict network access using a firewall. This example allows only devices on your local network (192.168.1.x) to access Node-RED:
+Restrict network access using a firewall. For Linux users, this example allows only devices on your local network (192.168.1.x) to access Node-RED:
 
 ```bash
 sudo ufw allow from 192.168.1.0/24 to any port 1880
@@ -76,7 +78,23 @@ Adjust the IP range to match your network configuration.
 
 ## Accessing Node-RED Remotely
 
-When you want to access your Node-RED instance from outside your local network, manual setup requires significant technical expertise and ongoing maintenance. The manual approach involves configuring port forwarding on your router, setting up and maintaining SSL/TLS certificates for HTTPS, configuring proper authentication and authorization, implementing rate limiting and DDoS protection, keeping security patches up to date, monitoring for suspicious access attempts, managing firewall rules and network security, and much more.
+When you want to access your Node-RED instance from outside your local network. The manual approach is complex and requires ongoing maintenance. You would need 
+
+- Configure port forwarding on your router
+
+- Set up and maintain SSL/TLS certificates for HTTPS
+
+- Configure proper authentication and authorization
+
+- Implement rate limiting and DDoS protection
+
+- Keep security patches up to date
+
+- Monitor suspicious access attempts
+
+- Manage firewall rules and security patches
+
+- And much more
 
 ### The Easy Way
 
