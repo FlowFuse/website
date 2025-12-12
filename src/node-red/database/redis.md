@@ -106,9 +106,9 @@ Redis stores values as strings, so you need to convert JSON objects before stori
    - Set `msg.topic` to `sensor:data`
    - Set `msg.payload` to
 
-     ```json
+  ```json
      {"temperature":22.5,"humidity":65,"timestamp":0}
-     ```
+  ```
 3. Drag a **JSON** node, This will **stringify** the JSON object so it can be stored in Redis.
 4. Drag a **redis-command** node and set the command to `set`.
 5. Connect the **inject** node to the **change** node, then the **change** node to the **JSON** node, and finally the **JSON** node to the **redis-command** node.
