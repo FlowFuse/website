@@ -15,15 +15,6 @@ Working with dates and times comes up constantly in Node-RED. Whether you're log
 
 This guide walks you through everything you need to know about working with dates and times in Node-RED. You'll learn how to generate timestamps, format them for display, work with different timezones, and perform time-based calculations.
 
-## What We'll Cover
-
-We'll start with the absolute basics and work our way up:
-
-  - Getting the current time in Node-RED
-  - Formatting Dates for Display
-  - Handling time zones
-  - Doing math with dates (adding days, calculating differences)
-
 ## Getting the Current Time in Node-RED
 
 Node-RED doesn't enforce a single way to handle dates. Look at flows from different developers and you'll see different approaches—some prefer timestamps, others use ISO strings, and many format dates in their own custom ways. This flexibility means you can choose what works best for your project.
