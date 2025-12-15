@@ -114,6 +114,7 @@ We use a simple naming structure in Slack to make channels easier to find and un
 | Project based work   | `#proj-` | Work related to a project with a clear end point |
 | GitHub notifications | `#gh-`   | Automated updates from our GitHub repositories |
 | Ops notifications    | `#ops-`  | Alerts and notifications from operations tools |
+| Customer discussion  | `#cust-` | Discuss deals and continued adoption for customers |
 
 We recommend organizing these channels into [custom Slack sections](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections) for easier navigation.
 
