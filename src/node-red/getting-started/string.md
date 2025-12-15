@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: String
-  order: 2
+  order: 5
   parent: Getting Started
 meta:
   title: Working with Strings in Node-RED
