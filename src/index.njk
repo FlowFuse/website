@@ -46,13 +46,6 @@ solutions:
       icon: "components/icons/chart.svg"
       title: "MES"
       description: "Implement custom Manufacturing Execution Systems (MES) with greater speed. Rapidly develop and deploy the specific workflows you need, connecting the production plan to the plant floor with ultimate efficiency."
-ai:
-    title: "<span class='text-indigo-300'>Meet</span> FlowFuse Expert"
-    imgPath: "./images/home/home-flowfuse-ai.jpg"
-    imgAlt: "Abstract visual of AI powering connected systems and data pipelines."
-    description:
-        - "An <span class='font-medium'>industrial-tuned LLM</span> uses FlowFuse's knowledge base and your data schemas to <span class='font-medium'>turn your plain-language description into Node-RED flows</span>, data mappings, dashboards, and queries—so you can <span class='font-medium'>build faster without waiting on scarce developers.</span>"
-        - "FlowFuse does not bolt a generic LLM onto the side of your stack; LLMs are wired directly into how teams design, build, and operate Node-RED applications via Model Context Protocol (MCP). <span class='font-medium'>FlowFuse Expert is the AI copilot</span> that understands your flows, data structures, and environment in real time—so it can <span class='font-medium'>generate and refine real, deployable artifacts instead of isolated snippets.</span>"
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -159,20 +152,21 @@ hubspot:
         <div class="sm:max-w-screen-lg mx-auto">
             <!-- Header with bg image -->
             <div class="relative ff-image-cover right ff-image-rounded mb-12 h-[100px] sm:h-[130px]">
-                {% image ai.imgPath, ai.imgAlt, [1024] %}
+                {% image "./images/home/home-flowfuse-ai.jpg", "Abstract visual of AI powering connected systems and data pipelines.", [1024] %}
                 <!-- Gradient overlay -->
                 <div class="absolute inset-0 bg-gradient-to-r from-indigo-900 to-indigo-700 sm:hidden"></div>
                 <!-- Content -->
                 <div class="absolute inset-0 max-w-2xl h-full flex items-center sm:pl-10">
-                    <h2 class="text-white w-full max-sm:text-center mb-0">{{ ai.title | safe }}</h2>
+                    <h2 class="text-white w-full max-sm:text-center mb-0"><span class='text-indigo-300'>Meet</span> FlowFuse Expert</h2>
                 </div>
             </div>
             <!-- Content - Description paragraphs -->
-            {% for paragraph in ai.description %}
             <p class="max-sm:text-center">
-                {{ paragraph | safe }}
+                An <span class='font-medium'>industrial-tuned LLM</span> uses FlowFuse's knowledge base and your data schemas to <span class='font-medium'>turn your plain-language description into Node-RED flows</span>, data mappings, dashboards, and queries—so you can <span class='font-medium'>build faster without waiting on scarce developers.</span>
             </p>
-            {% endfor %}
+            <p class="max-sm:text-center">
+                FlowFuse does not bolt a generic LLM onto the side of your stack; LLMs are wired directly into how teams design, build, and operate Node-RED applications via Model Context Protocol (MCP). <span class='font-medium'>FlowFuse Expert is the AI copilot</span> that understands your flows, data structures, and environment in real time—so it can <span class='font-medium'>generate and refine real, deployable artifacts instead of isolated snippets.</span>
+            </p>
             <a href="/ai/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1 mt-6">
                 Learn more about FlowFuse AI
                 {% include "components/icons/arrow-long-right.svg" %}
