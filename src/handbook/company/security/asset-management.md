@@ -36,7 +36,7 @@ Report the loss or theft of any device that stores FlowFuse data or provides acc
 
 ### Return of Assets
 
-Return all FlowFuse assets in your possession when your employment or contract ends, following the [off-boarding process](../../peopleops/hiring.md#offboarding).
+Return all FlowFuse assets in your possession when your employment or contract ends, following the [off-boarding process](/handbook/peopleops/hiring/#offboarding).
 
 ### Handling of Assets
 
