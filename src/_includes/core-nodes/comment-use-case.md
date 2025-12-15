@@ -1,40 +1,39 @@
-## What's the Comment node in Node-RED used for?
+Adds documentation and explanatory notes directly within your flows.
 
-When maintaining flows over longer periods of time it can save you time and
-interpretation errors if you add the comment node to your flows.
+## Where and why do we use the Comment node?
 
-There's 4 core benefits to adding the Comment node to your Node-RED flows:
+The Comment node helps document your flows by adding explanatory text that appears on the canvas. This is essential for maintaining flows over time, especially when working in teams or returning to flows after extended periods. By documenting the purpose, requirements, and logic of flow sections, you make flows more understandable, reduce interpretation errors, and speed up troubleshooting and modifications. Comments are particularly valuable for complex flows with link nodes, multi-tab workflows, or business logic that isn't obvious from the nodes alone.
 
-1. Improved readability: Comments can help to make flows easier to understand, especially when adding
-easy to miss context and explanation like implicit requirements of the flow. This can be especially
-helpful for complex flows with link nodes, or when you're editing in many tabs.
-1. Enhanced maintainability: Comments can help to make flows easier to maintain
-by providing a record of the flows purpose and functionality. This can be helpful
-when making changes to the flow or when troubleshooting problems, particularly
-if you collaborate with multiple team members.
-1. Improved debugging: Comments can help to make debugging easier by providing
-information about the expected behavior. This can be helpful when tracking down
-errors and identifying the source of problems, or reasoning errors when previously
-developing the flow.
-1. Increased documentation: Comments can be used to document the code, providing
-additional information about the code's purpose, functionality, and usage. Beyond
-what the flow or nodes do in the sequence, business logic and requirements documented
-next to the flow increased developer effeciency.
+> If you need help documenting your flows, [FlowFuse Assistant](/docs/user/assistant/) can automatically generate documentation with Comment nodes. Simply select your flow and click the "Explain Flow" button, the AI will analyze your flow and create comprehensive documentation that you can add directly to your canvas.
 
-The comment node can be added to any open space in the editor, and it's advised
-to add a comment to all [flow groups](/blog/2023/03/3-quick-node-red-tips-5/#3.-group-nodes-together-to-make-your-flows-easier-to-read).
+## Modes of operation
 
-As the comment node will not take up more space if your write a larger comment,
-Node-RED allows you to be more explicit and elaborate further in your comments.
-ASCII diagrams or so do not distract from your flow, and as such you're encouraged
-to add these.
+The Comment node provides flexible documentation capabilities:
 
-### Examples
+### Canvas Labels
+
+Display brief explanatory text directly on the canvas. The node shows a single line of text in its name field, providing quick context without cluttering the visual layout. This is useful for labeling flow sections, marking decision points, or highlighting important considerations.
+
+### Detailed Documentation
+
+Store longer explanations in the node's info panel. Double-clicking the Comment node reveals a WYSIWYG editor where you can write detailed documentation, including formatting, lists, and even ASCII diagrams. This detailed content doesn't take up canvas space but remains accessible when needed.
+
+### Group Annotations
+
+Place Comment nodes within flow groups to document the group's purpose and functionality. This creates self-contained, well-documented sections of your flow that are easier to understand and maintain. It's recommended to add comments to all flow groups for comprehensive documentation.
+
+## How the node handles messages
+
+The Comment node is purely documentary and doesn't participate in message flows. It has no input or output connections and doesn't process, modify, or generate messages. You can place Comment nodes anywhere on the canvas without affecting flow execution or performance.
+
+Because Comment nodes don't impact runtime behavior, you can be as detailed and explicit as needed in your documentation. Multiple Comment nodes can be used throughout a flow to explain different sections, decision logic, or implementation details.
+
+## Examples
+
+### Documenting flow sections
+
+Add comments to explain what groups of nodes accomplish and why they're structured that way. This example shows a comment documenting an input validation section, helping future developers understand the requirements and logic.
 
 {% renderFlow %}
-[{"id":"fc32e2266a87c07d","type":"comment","z":"1adbd550af387f9c","name":"Flow Explanation","info":"This comment can explain what nodes near to\nthis one are intended to do.\n\nComments are written in a WYSIWYG editor.","x":500,"y":320,"wires":[]}]
+[{"id":"comment-validation","type":"comment","z":"a1b2c3d4e5f6g7h8","name":"Input Validation Section","info":"This section validates incoming sensor data before processing.\n\nRequirements:\n- Temperature must be between -50 and 100°C\n- Humidity must be between 0 and 100%\n- Both values must be present\n\nInvalid data is logged and discarded to prevent\ndownstream processing errors.","x":210,"y":140,"wires":[]},{"id":"input-inject","type":"inject","z":"a1b2c3d4e5f6g7h8","name":"Sensor Data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":22,\"humidity\":65}","payloadType":"json","x":190,"y":200,"wires":[["validate-temp"]]},{"id":"validate-temp","type":"switch","z":"a1b2c3d4e5f6g7h8","name":"Check Temperature","property":"payload.temperature","propertyType":"msg","rules":[{"t":"btwn","v":"-50","vt":"num","v2":"100","vt2":"num"}],"checkall":"true","repair":false,"outputs":1,"x":400,"y":200,"wires":[["validate-humidity"]]},{"id":"validate-humidity","type":"switch","z":"a1b2c3d4e5f6g7h8","name":"Check Humidity","property":"payload.humidity","propertyType":"msg","rules":[{"t":"btwn","v":"0","vt":"num","v2":"100","vt2":"num"}],"checkall":"true","repair":false,"outputs":1,"x":620,"y":200,"wires":[["output-debug"]]},{"id":"output-debug","type":"debug","z":"a1b2c3d4e5f6g7h8","name":"Valid Data","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":810,"y":200,"wires":[]}]
 {% endrenderFlow %}
-
-When you double click the node, the full text is revealed:
-
-![Comment node editor](./images/comment-node-full-text.png)
