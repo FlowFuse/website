@@ -25,6 +25,10 @@ One of the most frequent operations is converting string values to numbers for m
 
 If your payload contains the string `"42"`, it becomes the number `42`. You can now use this in calculations or comparisons.
 
+{% renderFlow %}
+[{"id":"2ac68ed1d9a7b380","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"42","payloadType":"str","x":530,"y":200,"wires":[["a14a67ac6574ae82"]]},{"id":"a14a67ac6574ae82","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"String to Number","rules":[{"t":"set","p":"payload","pt":"msg","to":"$number(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":710,"y":200,"wires":[["225f4c6a47df2d3c"]]},{"id":"225f4c6a47df2d3c","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":200,"wires":[]}]
+{% endrenderFlow %}
+
 ## Converting Number to String
 
 Converting numbers to strings is useful for displaying values, building messages, or formatting output.
@@ -37,6 +41,10 @@ Converting numbers to strings is useful for displaying values, building messages
 
 A number like `42` becomes the string `"42"`, ready for text operations.
 
+{% renderFlow %}
+[{"id":"38b9110190ddba53","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"42","payloadType":"num","x":530,"y":260,"wires":[["06a4b6591a791f8d"]]},{"id":"06a4b6591a791f8d","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Number to String","rules":[{"t":"set","p":"payload","pt":"msg","to":"$string(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":710,"y":260,"wires":[["c560426627a56137"]]},{"id":"c560426627a56137","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":260,"wires":[]}]
+{% endrenderFlow %}
+
 ## Splitting Strings
 
 Splitting strings is essential when parsing CSV data, breaking apart delimited values, or extracting specific parts of text.
@@ -48,6 +56,10 @@ Splitting strings is essential when parsing CSV data, breaking apart delimited v
 5. Connect the Split node to processing nodes that will handle each piece
 
 The Split node creates separate messages for each segment. For example, if you receive a log entry `"2024-12-15 14:30:45 ERROR Database connection failed"` and you split using spaces, it produces separate messages: first `"2024-12-15"`, then `"14:30:45"`, then `"ERROR"`, then `"Database"`, and so on. Each piece flows through your subsequent nodes one at a time, allowing you to extract the timestamp, severity level, and message separately.
+
+{% renderFlow %}
+[{"id":"6a5c13d2e5bf152f","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"2024-12-15 14:30:45 ERROR Database connection failed","payloadType":"str","x":530,"y":320,"wires":[["4d3e4c715e94572b"]]},{"id":"9e90b663c08067fc","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":320,"wires":[]},{"id":"4d3e4c715e94572b","type":"split","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Split String","splt":" ","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload","x":690,"y":320,"wires":[["9e90b663c08067fc"]]}]
+{% endrenderFlow %}
 
 ## Concatenating Strings
 
@@ -63,6 +75,10 @@ Combining strings is common when building messages, URLs, or formatted output.
 
 Each `{{variable}}` is replaced with actual data. For example, the template `Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.` with data containing name "Sarah", orderId "12345", and city "Portland" produces: `Hello Sarah, your order #12345 has shipped to Portland.`
 
+{% renderFlow %}
+[{"id":"60cb0a1d79b095a3","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"name\":\"Sarah\",\"orderId\":\"12345\",\"city\":\"Portland\"}","payloadType":"json","x":530,"y":380,"wires":[["88d113db79d20417"]]},{"id":"9ed0bd64daa0cf35","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":380,"wires":[]},{"id":"88d113db79d20417","type":"template","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Concatenating Strings","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.","output":"str","x":720,"y":380,"wires":[["9ed0bd64daa0cf35"]]}]
+{% endrenderFlow %}
+
 ## Parsing JSON Strings
 
 API responses and stored data often arrive as JSON strings—text that looks like JSON but isn't yet usable as an object.
@@ -74,6 +90,10 @@ API responses and stored data often arrive as JSON strings—text that looks lik
 5. Connect to your next node in your flow
 
 The JSON node detects your data type automatically. String `'{"temperature":22,"humidity":65}'` becomes object `{temperature: 22, humidity: 65}` so you can access `msg.payload.temperature`. 
+
+{% renderFlow %}
+[{"id":"987d6b5ce96f863e","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":22,\"humidity\":65}","payloadType":"str","x":530,"y":440,"wires":[["b92eb17c8dac49d8"]]},{"id":"b92eb17c8dac49d8","type":"json","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Parsing JSON Strings","property":"payload","action":"","pretty":false,"x":720,"y":440,"wires":[["a34030e2d9a085fe"]]},{"id":"a34030e2d9a085fe","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":440,"wires":[]}]
+{% endrenderFlow %}
 
 ## Extracting Substrings
 
@@ -92,6 +112,10 @@ Getting specific parts of a string is useful for parsing fixed-format data, extr
 - `$substring(payload, 6, 5)` on `"Hello World"` gives `"World"`
 - `$substring(payload, 6)` (no length) on `"Hello World"` gives `"World"` (all remaining characters)
 
+{% renderFlow %}
+[{"id":"1505bbcdda1ef70f","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello World","payloadType":"str","x":510,"y":500,"wires":[["7e13b90c9b8e48de"]]},{"id":"7b985161f48aaf74","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":500,"wires":[]},{"id":"7e13b90c9b8e48de","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Extracting Substrings","rules":[{"t":"set","p":"payload","pt":"msg","to":"$substring(payload, 0, 5)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":720,"y":500,"wires":[["7b985161f48aaf74"]]}]
+{% endrenderFlow %}
+
 ## Trimming Whitespace
 
 Removing unwanted spaces, tabs, or line breaks from strings prevents comparison errors and formatting issues.
@@ -103,6 +127,10 @@ Removing unwanted spaces, tabs, or line breaks from strings prevents comparison 
 5. Connect to your next node in your flow
 
 Whitespace from both ends is removed. `"  Hello World  "` becomes `"Hello World"`. The space between words stays—only edge spaces are removed.
+
+{% renderFlow %}
+[{"id":"f43fff4b7a32185d","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"  Hello World  ","payloadType":"str","x":510,"y":560,"wires":[["9ed2f66a591cefab"]]},{"id":"603d7024f06979bc","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":560,"wires":[]},{"id":"9ed2f66a591cefab","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Trimming Whitespace","rules":[{"t":"set","p":"payload","pt":"msg","to":"$trim(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":720,"y":560,"wires":[["603d7024f06979bc"]]}]
+{% endrenderFlow %}
 
 ## Changing Case
 
@@ -116,6 +144,14 @@ Converting string case helps with standardization and comparison since computers
 
 Using `$uppercase(payload)`, the string `"hello world"` becomes `"HELLO WORLD"`. Using `$lowercase(payload)`, the string `"Hello World"` becomes `"hello world"`.
 
+{% renderFlow %}
+[{"id":"9b39fb9d0a75e5c2","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello World","payloadType":"str","x":510,"y":620,"wires":[["04389bee4b520eb3"]]},{"id":"3390eac6826821a7","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":620,"wires":[]},{"id":"04389bee4b520eb3","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Changing Case : Lowercase","rules":[{"t":"set","p":"payload","pt":"msg","to":"$lowercase(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":740,"y":620,"wires":[["3390eac6826821a7"]]}]
+{% endrenderFlow %}
+
+{% renderFlow %}
+[{"id":"2bee50ed8273a7d7","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":680,"wires":[]},{"id":"b2d16a456b083325","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Changing Case : Uppercase","rules":[{"t":"set","p":"payload","pt":"msg","to":"$uppercase(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":740,"y":680,"wires":[["2bee50ed8273a7d7"]]},{"id":"2f20f09b8146b397","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello World","payloadType":"str","x":510,"y":680,"wires":[["b2d16a456b083325"]]}]
+{% endrenderFlow %}
+
 ## Replacing Text
 
 Finding and replacing text within strings lets you correct values, standardize formats, or update content.
@@ -127,6 +163,10 @@ Finding and replacing text within strings lets you correct values, standardize f
 5. Connect to your next node in your flow
 
 All occurrences change. `"I love apples and apples are great"` with `$replace(payload, "apples", "oranges")` gives `"I love oranges and oranges are great"`.
+
+{% renderFlow %}
+[{"id":"dfbb9d1ce41c8672","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":740,"wires":[]},{"id":"33d81d6a0d2d0f0c","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Replacing Text","rules":[{"t":"set","p":"payload","pt":"msg","to":"$replace(payload, \"apples\", \"oranges\")","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":700,"y":740,"wires":[["dfbb9d1ce41c8672"]]},{"id":"a8e1a932d619fa33","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"I love apples and apples are great","payloadType":"str","x":530,"y":740,"wires":[["33d81d6a0d2d0f0c"]]}]
+{% endrenderFlow %}
 
 ## Checking String Length
 
@@ -140,6 +180,10 @@ Determining string length helps with validation or conditional processing.
 
 The string `"Hello"` returns `5`. Use this value in conditions or validation logic.
 
+{% renderFlow %}
+[{"id":"3791a3fac7be4833","type":"debug","z":"b446dfa04d79d359","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"length","targetType":"msg","statusVal":"","statusType":"auto","x":1110,"y":1260,"wires":[]},{"id":"fca2213c932b1fea","type":"change","z":"b446dfa04d79d359","name":"Checking String Length","rules":[{"t":"set","p":"length","pt":"msg","to":"$length(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":910,"y":1260,"wires":[["3791a3fac7be4833"]]},{"id":"706d864345a0c62c","type":"inject","z":"b446dfa04d79d359","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello","payloadType":"str","x":710,"y":1260,"wires":[["fca2213c932b1fea"]]}]
+{% endrenderFlow %}
+
 ## Checking if String Contains Text
 
 Testing whether a string contains specific text helps with filtering and conditional logic.
@@ -152,12 +196,12 @@ Testing whether a string contains specific text helps with filtering and conditi
 
 Returns `true` if found, `false` if not. `"The quick brown fox"` with `$contains(payload, "quick")` returns `true`. Use in Switch nodes to route messages differently based on content.
 
+{% renderFlow %}
+[{"id":"eb5fe8fe6e00e603","type":"debug","z":"b446dfa04d79d359","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1070,"y":1500,"wires":[]},{"id":"daba355f3ca9693f","type":"change","z":"b446dfa04d79d359","name":"Checking if String Contains Text","rules":[{"t":"set","p":"payload","pt":"msg","to":"$contains(payload, \"quick\")","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":870,"y":1500,"wires":[["eb5fe8fe6e00e603"]]},{"id":"ca2ab085f8edec8c","type":"inject","z":"b446dfa04d79d359","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"The quick brown fox","payloadType":"str","x":610,"y":1500,"wires":[["daba355f3ca9693f"]]}]
+{% endrenderFlow %}
+
 ## Complex String Operation
 
 For complex string operations that combine multiple steps or require custom logic, you can use a Function node with JavaScript.
 
 If you're not familiar with JavaScript, but you're using FlowFuse, you can use the [FlowFuse Assistant's](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) function node generator. Simply describe what you want to accomplish, and the assistant will generate the function node code for you.
-
-{% renderFlow %}
-[{"id":"5f919bac157bbaba","type":"group","z":"b446dfa04d79d359","name":"Working with Strings in Node-RED","style":{"label":true},"nodes":["434214c441322bbe","fcf34eca7f2b8785","f8d54cb7cf0b91f0","c31e127da8c573fd","44f5de6d92496632","bef98b5d30b8e170","7de4ff738ab83a0b","f98bf55bcc922107","50f03e780bc187ab","a28cc2d7835c6756","4391af8fa4530fa2","282d7d326108526e","0142012763201904","94f3970a8081b7a1","5774d51849ab54b4","e0e6c51d15321b96","cd91adeef7400e4a","078b7024f496984f","d07aace938b2e5e1","71b85740bc407b10","3648f523e83f2e65","b19ab237b23dd875","581f3e7f35247e0a","8807191ae001803c","687e3d5a8812d8b7","e17b21f0ac93d721","fad94fd411088d64","c0adf3a0c71e6d93","e8596731d3d1f63b","d3dcb7e80be71a40","aa0a4d81c492183c","57631b1fb1fb4752","583c56ca26a78c42"],"x":534,"y":419,"w":692,"h":682},{"id":"434214c441322bbe","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"42","payloadType":"str","x":710,"y":460,"wires":[["fcf34eca7f2b8785"]]},{"id":"fcf34eca7f2b8785","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"String to Number","rules":[{"t":"set","p":"payload","pt":"msg","to":"$number(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":890,"y":460,"wires":[["f8d54cb7cf0b91f0"]]},{"id":"f8d54cb7cf0b91f0","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":460,"wires":[]},{"id":"c31e127da8c573fd","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"42","payloadType":"num","x":710,"y":520,"wires":[["44f5de6d92496632"]]},{"id":"44f5de6d92496632","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Number to String","rules":[{"t":"set","p":"payload","pt":"msg","to":"$string(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":890,"y":520,"wires":[["bef98b5d30b8e170"]]},{"id":"bef98b5d30b8e170","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":520,"wires":[]},{"id":"7de4ff738ab83a0b","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"2024-12-15 14:30:45 ERROR Database connection failed","payloadType":"str","x":710,"y":580,"wires":[["50f03e780bc187ab"]]},{"id":"f98bf55bcc922107","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":580,"wires":[]},{"id":"50f03e780bc187ab","type":"split","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Split String","splt":" ","spltType":"str","arraySplt":1,"arraySpltType":"len","stream":false,"addname":"","property":"payload","x":870,"y":580,"wires":[["f98bf55bcc922107"]]},{"id":"a28cc2d7835c6756","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"name\":\"Sarah\",\"orderId\":\"12345\",\"city\":\"Portland\"}","payloadType":"json","x":710,"y":640,"wires":[["282d7d326108526e"]]},{"id":"4391af8fa4530fa2","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":640,"wires":[]},{"id":"282d7d326108526e","type":"template","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Concatenating Strings","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.","output":"str","x":900,"y":640,"wires":[["4391af8fa4530fa2"]]},{"id":"0142012763201904","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":22,\"humidity\":65}","payloadType":"str","x":710,"y":700,"wires":[["94f3970a8081b7a1"]]},{"id":"94f3970a8081b7a1","type":"json","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Parsing JSON Strings","property":"payload","action":"","pretty":false,"x":900,"y":700,"wires":[["5774d51849ab54b4"]]},{"id":"5774d51849ab54b4","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":700,"wires":[]},{"id":"e0e6c51d15321b96","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello World","payloadType":"str","x":690,"y":760,"wires":[["078b7024f496984f"]]},{"id":"cd91adeef7400e4a","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":760,"wires":[]},{"id":"078b7024f496984f","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Extracting Substrings","rules":[{"t":"set","p":"payload","pt":"msg","to":"$substring(payload, 0, 5)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":760,"wires":[["cd91adeef7400e4a"]]},{"id":"d07aace938b2e5e1","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"  Hello World  ","payloadType":"str","x":690,"y":820,"wires":[["3648f523e83f2e65"]]},{"id":"71b85740bc407b10","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":820,"wires":[]},{"id":"3648f523e83f2e65","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Trimming Whitespace","rules":[{"t":"set","p":"payload","pt":"msg","to":"$trim(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":820,"wires":[["71b85740bc407b10"]]},{"id":"b19ab237b23dd875","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello World","payloadType":"str","x":690,"y":880,"wires":[["8807191ae001803c"]]},{"id":"581f3e7f35247e0a","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":880,"wires":[]},{"id":"8807191ae001803c","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Changing Case : Lowercase","rules":[{"t":"set","p":"payload","pt":"msg","to":"$lowercase(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":920,"y":880,"wires":[["581f3e7f35247e0a"]]},{"id":"687e3d5a8812d8b7","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":940,"wires":[]},{"id":"e17b21f0ac93d721","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Changing Case : Uppercase","rules":[{"t":"set","p":"payload","pt":"msg","to":"$uppercase(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":920,"y":940,"wires":[["687e3d5a8812d8b7"]]},{"id":"fad94fd411088d64","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"Hello World","payloadType":"str","x":690,"y":940,"wires":[["e17b21f0ac93d721"]]},{"id":"c0adf3a0c71e6d93","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":1000,"wires":[]},{"id":"e8596731d3d1f63b","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Replacing Text","rules":[{"t":"set","p":"payload","pt":"msg","to":"$replace(payload, \"apples\", \"oranges\")","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":880,"y":1000,"wires":[["c0adf3a0c71e6d93"]]},{"id":"d3dcb7e80be71a40","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"I love apples and apples are great","payloadType":"str","x":710,"y":1000,"wires":[["e8596731d3d1f63b"]]},{"id":"aa0a4d81c492183c","type":"debug","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"length","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":1060,"wires":[]},{"id":"57631b1fb1fb4752","type":"change","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"Checking if String Contains Text","rules":[{"t":"set","p":"length","pt":"msg","to":"$contains(payload, \"quick\")","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":1060,"wires":[["aa0a4d81c492183c"]]},{"id":"583c56ca26a78c42","type":"inject","z":"b446dfa04d79d359","g":"5f919bac157bbaba","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"The quick brown fox","payloadType":"str","x":670,"y":1060,"wires":[["57631b1fb1fb4752"]]}]
-{% endrenderFlow %}
