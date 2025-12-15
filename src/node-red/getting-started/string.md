@@ -71,8 +71,6 @@ The Split node creates separate messages for each segment. For example, if you r
 
 Combining strings is common when building messages, URLs, or formatted output.
 
-**How to concatenate:**
-
 1. Add a **Template** node after the nodes containing your data
 2. Double-click to open the Template configuration
 3. Write your text and insert variables using `{{variableName}}` syntax
