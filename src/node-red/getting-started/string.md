@@ -17,11 +17,11 @@ Strings are one of the most common data types in Node-RED. Whether you're conver
 
 One of the most frequent operations is converting string values to numbers for mathematical calculations or comparisons.
 
-1. Connect your data source (like an Inject node or MQTT input) to a **Change** node
-2. In the Change node, set the rule to **"Set"** `msg.payload`
+1. Connect your data source to a **Change** node
+2. In the **Change** node, set the rule to **"Set"** `msg.payload`
 3. Select **"to the value of"** and choose **JSONata expression**
 4. Enter: `$number(payload)`
-5. Connect the Change node to your destination.
+5.Connect to where you need the processed data
 
 If your payload contains the string `"42"`, it becomes the number `42`. You can now use this in calculations or comparisons.
 
@@ -33,11 +33,11 @@ If your payload contains the string `"42"`, it becomes the number `42`. You can 
 
 Converting numbers to strings is useful for displaying values, building messages, or formatting output.
 
-1. Place a **Change** node after your calculation or number source
+1. Connect your data source to a **Change** node
 2. Set the rule to **"Set"** `msg.payload`
 3. Select **JSONata expression**
 4. Enter: `$string(payload)`
-5. Connect to your output (like a Template node for formatting)
+5. Connect to where you need the processed data
 
 A number like `42` becomes the string `"42"`, ready for text operations.
 
@@ -51,9 +51,15 @@ Splitting strings is essential when parsing CSV data, breaking apart delimited v
 
 1. Connect your string data source to a **Split** node
 2. Double-click the Split node to open its configuration
-3. In the **"Split using"** field, enter your delimiter character (`,` for commas, a space for words, or `\n` for new lines)
+3. In the **"Split using"** field, enter your delimiter character:
+   - `,` for comma-separated values (CSV)
+   - ` ` (space) for splitting words
+   - `\n` for splitting by lines
+   - `\t` for tab-separated values (TSV)
+   - `;` for semicolon-separated data
+   - `|` for pipe-delimited data
 4. Click **Done**
-5. Connect the Split node to processing nodes that will handle each piece
+5. Connect to where you need the processed data
 
 The Split node creates separate messages for each segment. For example, if you receive a log entry `"2024-12-15 14:30:45 ERROR Database connection failed"` and you split using spaces, it produces separate messages: first `"2024-12-15"`, then `"14:30:45"`, then `"ERROR"`, then `"Database"`, and so on. Each piece flows through your subsequent nodes one at a time, allowing you to extract the timestamp, severity level, and message separately.
 
@@ -71,7 +77,7 @@ Combining strings is common when building messages, URLs, or formatted output.
 2. Double-click to open the Template configuration
 3. Write your text and insert variables using `{{variableName}}` syntax
 4. Click **Done**
-5. Connect to your output destination
+5. Connect to where you need the processed data
 
 Each `{{variable}}` is replaced with actual data. For example, the template `Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.` with data containing name "Sarah", orderId "12345", and city "Portland" produces: `Hello Sarah, your order #12345 has shipped to Portland.`
 
@@ -87,7 +93,7 @@ API responses and stored data often arrive as JSON strings—text that looks lik
 2. Double-click to open its configuration
 3. Set the **Action** to **"Convert between JSON String & Object"**
 4. Click **Done**
-5. Connect to your next node in your flow
+5. Connect to where you need the processed data
 
 The JSON node detects your data type automatically. String `'{"temperature":22,"humidity":65}'` becomes object `{temperature: 22, humidity: 65}` so you can access `msg.payload.temperature`. 
 
@@ -105,7 +111,7 @@ Getting specific parts of a string is useful for parsing fixed-format data, extr
 4. Enter: `$substring(payload, start, length)` where:
    - `start` is the position (0 is first character)
    - `length` is how many characters to take
-5. Connect to your next processing step
+5. Connect to where you need the processed data
 
 **Examples:**
 - `$substring(payload, 0, 5)` on `"Hello World"` gives `"Hello"`
@@ -124,7 +130,7 @@ Removing unwanted spaces, tabs, or line breaks from strings prevents comparison 
 2. Set the rule to **"Set"** `msg.payload`
 3. Select **JSONata expression**
 4. Enter: `$trim(payload)`
-5. Connect to your next node in your flow
+5. Connect to where you need the processed data
 
 Whitespace from both ends is removed. `"  Hello World  "` becomes `"Hello World"`. The space between words stays—only edge spaces are removed.
 
@@ -140,7 +146,7 @@ Converting string case helps with standardization and comparison since computers
 2. Set the rule to **"Set"** `msg.payload`
 3. Select **JSONata expression**
 4. If you want to convert to uppercase, enter: `$uppercase(payload)`. If you want to convert to lowercase, enter: `$lowercase(payload)`
-5. Connect to your next node in your flow
+5. Connect to where you need the processed data
 
 Using `$uppercase(payload)`, the string `"hello world"` becomes `"HELLO WORLD"`. Using `$lowercase(payload)`, the string `"Hello World"` becomes `"hello world"`.
 
@@ -160,7 +166,7 @@ Finding and replacing text within strings lets you correct values, standardize f
 2. Set the rule to **"Set"** `msg.payload`
 3. Select **JSONata expression**
 4. Enter: `$replace(payload, "old", "new")` where "old" is text to find and "new" is the replacement
-5. Connect to your next node in your flow
+5. Connect to where you need the processed data
 
 All occurrences change. `"I love apples and apples are great"` with `$replace(payload, "apples", "oranges")` gives `"I love oranges and oranges are great"`.
 
@@ -176,7 +182,7 @@ Determining string length helps with validation or conditional processing.
 2. Set the rule to **"Set"** `msg.length` (or another property)
 3. Select **JSONata expression**
 4. Enter: `$length(payload)`
-5. Connect to your next node in your flow
+5. Connect to where you need the processed data
 
 The string `"Hello"` returns `5`. Use this value in conditions or validation logic.
 
@@ -192,7 +198,7 @@ Testing whether a string contains specific text helps with filtering and conditi
 2. Set the rule to **"Set"** `msg.contains` (or another property)
 3. Select **JSONata expression**
 4. Enter: `$contains(payload, "search term")`
-5. Connect to a Switch node to route based on true/false
+5. Connect to where you need the processed data
 
 Returns `true` if found, `false` if not. `"The quick brown fox"` with `$contains(payload, "quick")` returns `true`. Use in Switch nodes to route messages differently based on content.
 
