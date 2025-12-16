@@ -193,7 +193,7 @@ the Handbook. With approval from the CEO and CTO you can proceed with the
 acquisition of the licenses.
 
 When seeking an additional license for existing software we pay for, file an
-issue in the [flowforge/admin][gh-admin]{rel="nofollow"} project to request it
+issue in the [flowfuse/admin][gh-admin]{rel="nofollow"} project to request it
 to be provisioned with a justification on the expenditure. Assign this issue to
 the CEO or CTO.
 
