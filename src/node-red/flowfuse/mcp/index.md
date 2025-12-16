@@ -14,7 +14,7 @@ This document lists and explains the **MCP nodes** available in FlowFuse. MCP (M
 
 ## Video introduction
 
-https://youtu.be/troUvaF8V68
+<lite-youtube videoid="troUvaF8V68" params="rel=0" style="width: 100%; height: 480px; margin-top: 20px; margin-bottom: 20px;" title="YouTube video player with FlowFuse introduction video to MCP server nodes"></lite-youtube>
 
 ## Nodes
 
