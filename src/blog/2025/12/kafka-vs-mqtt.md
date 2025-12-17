@@ -70,7 +70,7 @@ Kafka writes everything to disk based on your retention policy. Producers pick a
 
 ### Running This Stuff in Production
 
-Setting up an MQTT broker is straightforward. Mosquitto or HiveMQ, configure authentication, maybe add clustering for high availability. Monitor connection counts, message rates, queue depths. Most brokers have REST APIs for metrics.
+Setting up an MQTT broker is straightforward. You can use Mosquitto, configure authentication, and add clustering or redundancy for high availability if needed. Monitor connection counts, message rates, and queue depths—most brokers expose metrics via REST APIs or monitoring endpoints.
 
 Kafka demands more. You need at least three brokers plus coordination services. Monitor partition distribution, replication lag, consumer group status, disk usage. Plan capacity for both storage and network bandwidth. Rolling upgrades require care. Partition reassignment needs coordination. The learning curve is real, but the system handles failures gracefully once you understand it.
 
@@ -114,9 +114,7 @@ Most teams write custom bridge services or deploy Kafka Connect with MQTT source
 
 FlowFuse takes a different approach using Node-RED's visual programming model. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) and [Kafka](/blog/2024/03/using-kafka-with-node-red/) nodes connect through flows that define routing and transformation logic. The platform manages protocol connections and flow execution without separate bridge infrastructure.
 
-If you need managed MQTT brokers, FlowFuse provides them directly in the platform. Beyond MQTT and Kafka, it supports industrial protocols like Modbus, OPC UA, and HTTP. Device connections, message processing, and Kafka integration all happen in one environment. You get version control, deployment management, and team collaboration built in.
-
-Flow-based integration works well when routing requirements change frequently or when multiple teams contribute to pipeline logic.
+If you need managed MQTT brokers, FlowFuse provides them directly in the platform. Beyond MQTT and Kafka, it supports industrial protocols like Modbus, OPC UA, and HTTP. Device connections, message processing, and Kafka integration all happen in one environment. You get built-in version control, deployment management, team collaboration, and much more.
 
 FlowFuse offers a free trial for testing MQTT-Kafka workflows. [Start building](https://app.flowfuse.com/) or [schedule a consultation](/contact-us/) to discuss your specific needs.
 
