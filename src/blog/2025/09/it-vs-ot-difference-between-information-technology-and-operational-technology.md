@@ -2,8 +2,10 @@
 title: "IT vs OT: The Difference Between Information Technology and Operational Technology"
 subtitle: "IT vs OT: Bridging the Divide for Smarter Manufacturing"
 description: "A clear breakdown of the difference between Information Technology (IT) and Operational Technology (OT) and why connecting them is the key to creating a more efficient, intelligent, and profitable manufacturing"
+lastUpdated: 2025-12-17
 date: 2025-09-08
 authors: ["sumit-shinde"]
+video: gA-zR1XbBDI
 image: /blog/2025/09/images/it-vs-ot-difference-between-information-technology-and-operational-technology.png
 keywords: it vs ot, difference between it and ot, what is ot vs it, it versus ot, it vs ot definition, it vs ot meaning, difference between ot and it, what is the difference between it and ot, it vs ot systems, what is it vs ot, what's the difference between it and ot, what is difference between it and ot, what is the difference between ot and it
 tags:
