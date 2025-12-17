@@ -110,7 +110,7 @@ As mentioned, real production systems don’t choose between these—they use bo
 
 Most teams write custom bridge services or deploy Kafka Connect with MQTT source connectors. Custom bridges give you complete control but require development and maintenance. Kafka Connect reduces code but adds configuration complexity, especially when you need transformation logic beyond simple field mapping.
 
-FlowFuse takes a different approach using Node-RED's visual programming model. [MQTT](blog/2024/06/how-to-use-mqtt-in-node-red/) and [Kafka](/blog/2024/03/using-kafka-with-node-red/) nodes connect through flows that define routing and transformation logic. The platform manages protocol connections and flow execution without separate bridge infrastructure.
+FlowFuse takes a different approach using Node-RED's visual programming model. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) and [Kafka](/blog/2024/03/using-kafka-with-node-red/) nodes connect through flows that define routing and transformation logic. The platform manages protocol connections and flow execution without separate bridge infrastructure.
 
 If you need managed MQTT brokers, FlowFuse provides them directly in the platform. Beyond MQTT and Kafka, it supports industrial protocols like Modbus, OPC UA, and HTTP. Device connections, message processing, and Kafka integration all happen in one environment. You get version control, deployment management, and team collaboration built in.
 
