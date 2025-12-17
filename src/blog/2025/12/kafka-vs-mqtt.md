@@ -12,6 +12,8 @@ tags:
 
 Building IoT systems means making hard choices about how messages flow through your infrastructure. Apache Kafka and MQTT couldn't be more different in their approaches. MQTT came from the world of sensors and resource-constrained devices. Kafka was designed to push massive data streams between backend systems. Getting this choice right early determines whether your architecture scales smoothly or hits a wall.
 
+<!--more-->
+
 ## What Makes MQTT Different
 
 MQTT (Message Queuing Telemetry Transport) showed up in 1999 when engineers needed to monitor oil pipelines with SCADA systems over sketchy satellite links. The whole point was squeezing messages through terrible networks without killing battery life.
