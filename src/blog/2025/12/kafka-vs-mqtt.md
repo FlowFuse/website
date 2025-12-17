@@ -22,7 +22,7 @@ The protocol uses binary encoding with headers as small as 2 bytes. That's it. T
 
 ![Image: How MQTT Works](./images/mqtt.png)
 
-Here's how it works: A central broker sits in the middle. Devices publish messages to topics like `factory/line-1/temperature`. Other devices subscribe to those topics. The broker figures out who gets what. Topics use forward slashes to create hierarchies, so you can subscribe to `factory/#` and catch everything happening in the factory.
+Here's how it works: A central broker sits in the middle. Devices publish messages to topics like `factory/line-1/temperature`. Other devices subscribe to those topics. The broker figures out who gets what. Topics use forward slashes to create hierarchies, so you can subscribe to `factory/#` and catch everything happening in the factory. You can also use wildcards: `#` matches multiple levels (like `factory/# `for everything under factory), while `+` matches exactly one level (like `sensors/+/temperature` for temperature readings from any single sensor).
 
 MQTT has three Quality of Service levels:
 
@@ -54,7 +54,7 @@ Early Kafka needed Apache Zookeeper for cluster coordination, which added comple
 
 MQTT keeps things simple with a central broker. Devices connect, the broker routes messages, everyone's happy. You can get started with a single Raspberry Pi running Mosquitto. The 2-byte headers and compact binary format mean your sensor data flows efficiently even on constrained networks.
 
-Kafka is distributed by design. Topics partition across brokers. Consumers track offsets themselves. Everything replicates for fault tolerance. You need coordination infrastructure (Zookeeper or KRaft), multiple brokers for production, and someone who knows distributed systems. But this complexity buys you throughput that makes single-broker systems look silly.
+Kafka is distributed by design. Topics partition across brokers. Consumers track offsets themselves. Everything replicates for fault tolerance. You need coordination infrastructure (Zookeeper or KRaft), multiple brokers for production, and someone who knows distributed systems. But this complexity buys you throughput that single-broker systems simply can't match.
 
 ### Performance Reality
 
@@ -70,7 +70,9 @@ Kafka writes everything to disk based on your retention policy. Producers pick a
 
 ### Running This Stuff in Production
 
-Setting up an MQTT broker is straightforward. You can use Mosquitto, configure authentication, and add clustering or redundancy for high availability if needed. Monitor connection counts, message rates, and queue depths—most brokers expose metrics via REST APIs or monitoring endpoints.
+Setting up an MQTT broker is straightforward. You can start with something like Mosquitto for development, or choose from production-ready brokers that support clustering and high availability. Configure authentication, add redundancy as needed, and monitor connection counts, message rates, and queue depths—most brokers expose metrics via REST APIs or monitoring endpoints.
+
+> FlowFuse includes a managed MQTT broker built right into the platform—no separate infrastructure to set up or maintain. It connects directly with your Node-RED flows, so you can publish and subscribe to topics without leaving the environment. Check out the [details](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-3%3A-set-up-mqtt-with-flowfuse) to see how it works.
 
 Kafka demands more. You need at least three brokers plus coordination services. Monitor partition distribution, replication lag, consumer group status, disk usage. Plan capacity for both storage and network bandwidth. Rolling upgrades require care. Partition reassignment needs coordination. The learning curve is real, but the system handles failures gracefully once you understand it.
 
@@ -114,7 +116,7 @@ Most teams write custom bridge services or deploy Kafka Connect with MQTT source
 
 FlowFuse takes a different approach using Node-RED's visual programming model. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) and [Kafka](/blog/2024/03/using-kafka-with-node-red/) nodes connect through flows that define routing and transformation logic. The platform manages protocol connections and flow execution without separate bridge infrastructure.
 
-If you need managed MQTT brokers, FlowFuse provides them directly in the platform. Beyond MQTT and Kafka, it supports industrial protocols like Modbus, OPC UA, and HTTP. Device connections, message processing, and Kafka integration all happen in one environment. You get built-in version control, deployment management, team collaboration, and much more.
+As mentioned before, FlowFuse includes a managed MQTT broker built directly into the platform. Beyond MQTT and Kafka, it supports industrial protocols like Modbus, OPC UA, and HTTP. Device connections, message processing, and Kafka integration all happen in one environment. You get built-in version control, deployment management, team collaboration, and much more.
 
 FlowFuse offers a free trial for testing MQTT-Kafka workflows. [Start building](https://app.flowfuse.com/) or [schedule a consultation](/contact-us/) to discuss your specific needs.
 
