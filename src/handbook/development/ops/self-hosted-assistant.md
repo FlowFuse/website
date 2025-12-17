@@ -42,4 +42,4 @@ The feature is enabled by adding the token to the values passed to the Helm char
 
  - `forge.assistant.enabled` should be set to `true`
  - `forge.assistant.service.url` should be set to `https://flow-gen.flowfuse.cloud/v1/openai`
- - `forge.assistant.service.token` should be set to the provied Token
+ - `forge.assistant.service.token` should be set to the provided Token
