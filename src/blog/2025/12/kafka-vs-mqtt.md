@@ -16,7 +16,7 @@ Building IoT systems means making hard choices about how messages flow through y
 
 ## What Makes MQTT Different
 
-MQTT (Message Queuing Telemetry Transport) showed up in 1999 when engineers needed to monitor oil pipelines with SCADA systems over sketchy satellite links. The whole point was squeezing messages through terrible networks without killing battery life.
+MQTT (Message Queuing Telemetry Transport) showed up in 1999 when engineers needed to monitor oil pipelines with SCADA systems over unreliable satellite links. The whole point was squeezing messages through terrible networks without killing battery life.
 
 The protocol uses binary encoding with headers as small as 2 bytes. That's it. This matters when you're running on an ESP32 with 520KB of RAM or sending data over a 2G connection that costs per kilobyte. MQTT runs over TCP/IP and supports TLS when you need encryption.
 
