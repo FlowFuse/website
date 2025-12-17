@@ -7,7 +7,7 @@ image: /images/webinars/the-ptc-tpg-deal.jpg
 date: 2025-12-16
 time: 17:00 CET (11:00am ET)
 duration: 60
-video:
+video: vHLmnpbZ6QQ
 hosts: ["zeger-jan-van-de-weg", "nick-oleary", "drew-gatti", "kristopher-sandoval"]
 hubspot:
     formId: e53b364a-d463-4484-b861-cb4c06b49bf8
