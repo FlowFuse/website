@@ -1,9 +1,9 @@
 ---
-title: "TEEP in Manufacturing: Definition, Calculation, and TEEP vs OEE"
+title: "What Is TEEP? Definition, Calculation, and TEEP vs OEE"
 subtitle: "If you're tracking OEE, you're only seeing half the picture."
 description: "Your equipment sits idle 16+ hours daily. TEEP in 2026 measures this, OEE ignores it. Get the formula, learn when 35% TEEP beats 60%, and turn hidden capacity into profit without capital investment."
 date: 2025-12-18
-keywords: TEEP, total effective equipment performance, TEEP calculation, TEEP vs OEE, OEE vs TEEP, equipment utilization, capacity planning, TEEP formula, TEEP benchmark, TEEP monitoring, overall equipment effectiveness, TEEP dashboard,
+keywords: TEEP, total effective equipment performance, TEEP calculation, TEEP vs OEE, OEE vs TEEP, equipment utilization, capacity planning, TEEP formula, TEEP benchmark, TEEP monitoring, overall equipment effectiveness, TEEP dashboard
 authors: ["sumit-shinde"]
 image:
 tags:
@@ -24,6 +24,8 @@ meta:
 ---
 
 Total Effective Equipment Performance (TEEP) measures how much of total calendar time equipment uses to make good parts. Manufacturing companies have used [Overall Equipment Effectiveness (OEE)](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/#what-is-oee%3F) for years to measure production performance. But OEE has a major weakness: it only looks at the time when equipment is scheduled to run. It ignores all the time when equipment sits idle because of planning decisions, low customer demand, or other operational reasons. TEEP fixes this problem by measuring equipment use against all available time.
+
+<!--more-->
 
 ## What is TEEP?
 
