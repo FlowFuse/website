@@ -54,7 +54,7 @@ Click the pencil icon next to **Server**. You'll see two tabs: Connection and Se
 
 **Connection Tab**
 
-![MQTT broker connection configuration screen showing server address, port, and protocol settings](./images/mqtt-configuration-connection-tab.png "MQTT Connection Tab - Configure broker address, port, and TLS settings"){data-zoomable}
+![MQTT broker connection configuration screen showing server address, port, and protocol settings](./images/mqtt-broker-config.png "MQTT Connection Tab - Configure broker address, port, and TLS settings"){data-zoomable}
 
 1. **Server**: Enter your broker address (`broker.hivemq.com` for testing, or your broker's hostname)
 2. **Port**: Use `8883` for encrypted connections, `1883` for unencrypted
