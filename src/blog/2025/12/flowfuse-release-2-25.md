@@ -4,29 +4,22 @@ subtitle: "FlowFuse 2.25: FlowFuse Expert in Open-Source Node-RED, Interact with
 description: "FlowFuse 2.25: FlowFuse Expert in Open-Source Node-RED, Interact with MCP Resources in FlowFuse, Improved Update Scheduling, and lots of UI improvements!"
 date: 2025-12-18
 authors: ["greg-stoutenburg"]
-image: (./images/release-2-25.png)
+image: /blog/2025/12/images/Release-2-25.png
 tags:
    - flowfuse
    - news
    - releases
 ---
 
-This release comes with lots of exciting improvements and one very big announcement: the FlowFuse Expert is now available for free, in open-source Node-RED!
+This release comes with some big updates for the FlowFuse Expert.
 
 <!--more-->
-
-## FlowFuse Expert in Open-Source Node-RED
-
-_[FlowFuse Expert UI]_
-
-We're very excited to announce that all Node-RED users can now use the FlowFuse Expert! The Expert will help you create Function nodes, Template nodes, and explain highlighted flows using the Flow Explainer. 
-
-Now everyone using Node-RED, whether they are a FlowFuse user or not, can make use of this technology and speed the development of their Node-RED workflows.
 
 ## Interact with MCP Resources in FlowFuse Expert
 ![Image of MCP in FlowFuse](./images/mcp-in-flowfuse.png)
 _[FlowFuse Expert Interface]_
-You can now select MCP resources and interact with them directly in the FlowFuse Expert. 
+
+Our [MCP nodes](https://flowfuse.com/node-red/flowfuse/mcp/) make is super easy to extend AI Agents with tools and resources in your environment. With this release, we're introducing the ability to interact your MCP servers directly within the FlowFuse Expert.
 
 Previously, when setting up an MCP server in FlowFuse, you would first designate your tools, resources, and servers in side of Node-RED using the MCP nodes. Then, to interact with them, you needed a separate tool like VSCode to query and perform operations.
 
@@ -34,22 +27,30 @@ We want you to be able to access your resources as quickly and easily as possibl
 
 We've greatly simplified this process. You can now set everything up in Node-RED and then use the FlowFuse expert to designate your tools and interact with them, without ever leaving FlowFuse. This will speed you up and simplify your operations.
 
+## FlowFuse Expert Assistant in Node-RED
+
+![FlowFuse Expert Assistant in Node-RED](./images/ff-assistant-nr.png)
+_[FlowFuse Expert UI]_
+
+We're very excited to announce that all Node-RED users can now use our FlowFuse Expert Assistant. The ASsistant will help you create Function nodes, Template nodes, and explain highlighted flows using the Flow Explainer.
+
+Previously, this was only available in Node-RED managed directly by the FlowFuse platform. Now everyone using Node-RED, whether they are a FlowFuse user or not, can make use of this technology and speed the development of their Node-RED workflows.
+
+You will need an account on FlowFuse Cloud to connect it to, but for this release, it does *not* require a paid subscription to use.
+
+Check the FlowFuse Expert Assistant docs for [how to get started](https://flowfuse.com/docs/user/assistant/#flowfuse-assistant-plugin).
+
 ## Improved Update Scheduling
 ![Image of Scheduled Updates UI](./images/updates.png)
 _[Scheduled Updates Interface]_
 
-Scheduling instance updates and restarts is now simpler and more intuitive.
+We added the ability to schedule updates for your instances in the last release. Based on user feedback, we've now also added the ability to schedule restarting of your instance regardless of whether an update is available.
 
-You can now designate that your instances will restart whether or not there is an update available, which adds to your ability to manage your instances and schedule maintenance windows.
+## Lots of small updates for a better user experience
 
-## Lots of UI Updates
+When we plan our releases, we look for what will make good headlines in our release annoucements - the big, shiny features that can get lots of attention. Sometimes we also take an opportunity to clear lots of little issues that ultimately are less headline-worthy, but all make for a better user experience.
 
-_[Scheduled Updates Interface]_
-
-# Sneak Peek
-
-FlowFuse MCP nodes allow you to surface information to an LLM to create custom AI agents. We're working on enabling FlowFuse to identify anything you have surfaced to an MCP, paving the way for creating massively powerful agents, enabled by everything you've connected to FlowFuse.
-
+For example, this release sees lots of small improvements to the FlowFuse Tables user experience; adding the ability to refresh the displayed data, more accessible column table names, an improved layout. Nothing to set the socials buzzing, but genuine quality of life improvements to our users.
 
 
 ## What else is new?
