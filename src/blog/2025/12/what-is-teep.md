@@ -11,7 +11,7 @@ tags:
 meta:
   faq:
   - question: "How does TEEP differ from OEE and OOE?"
-    answer: "TEEP measures equipment productivity against all available time (24/7/365), while OEE only measures against scheduled production time. OEE tells you how efficiently equipment runs during planned shifts; TEEP tells you how much of total calendar time the equipment actually produces. For example, a line running one 8-hour shift daily might have 85% OEE but only 20% TEEP because it's idle the other 16 hours each day."
+    answer: "TEEP measures equipment productivity against all available time (24/7/365), while OEE only measures against scheduled production time. OEE tells you how efficiently equipment runs during planned shifts; TEEP tells you how much of total calendar time the equipment actually produces. OOE (Overall Operations Effectiveness) sits between OEE and TEEP by including planned downtime, but still excludes total calendar time."
 
   - question: "Why is my TEEP score so much lower than my OEE?"
     answer: "Lower TEEP compared to OEE is completely normal and expected. TEEP counts all 168 hours in a week, including nights, weekends, and any time equipment isn't scheduled. If you run two 8-hour shifts five days per week, your maximum possible TEEP is only 48% even with perfect operations. The gap between OEE and TEEP reflects intentional business decisions about shift schedules, maintenance windows, and capacity planning—not poor performance."
@@ -29,7 +29,7 @@ Total Effective Equipment Performance (TEEP) measures how much of total calendar
 
 ## What is TEEP?
 
-TEEP shows what percentage of total available time your equipment spends producing quality parts at optimal speed. The key word here is "total", TEEP counts every single hour, whether you planned to run production or not. That's 168 hours per week, 8,760 hours per year.
+TEEP shows what percentage of total calendar time your equipment spends producing good parts at optimal speed. The key word here is "total". TEEP counts every single hour, whether you planned to run production or not. That's 168 hours per week, 8,760 hours per year.
 
 This differs fundamentally from OEE. OEE only measures performance during scheduled production time. TEEP measures against the complete calendar. If your factory runs one shift per day, OEE ignores the other 16 hours. TEEP counts them all.
 
@@ -43,7 +43,20 @@ But availability now means operating time divided by total calendar time, not ju
 
 ## Why TEEP Matters
 
-TEEP answers a different question than OEE. OEE tells you "How well are we using our scheduled production time?" TEEP tells you "How much value are we getting from the money we spent on equipment?" This matters most when companies have spent millions of dollars on production equipment.
+TEEP matters because it connects operational performance to **business value**, not just shop-floor efficiency. While OEE shows how well equipment runs during scheduled shifts, it says nothing about how much of the asset you’re actually using relative to what you paid for it. TEEP fills that gap.
+
+For capital-intensive manufacturing, this difference is critical. Equipment often represents millions in investment, yet much of that capacity may sit idle due to scheduling choices, demand patterns, labor availability, or maintenance strategy. TEEP makes this visible. It answers the executive-level question: **“Are we getting a return on our equipment, or is capacity hiding in plain sight?”**
+
+TEEP is especially valuable when:
+
+- Customer demand is increasing and capacity feels tight
+- Management is considering adding shifts or buying new equipment
+- Capital expenditure decisions need justification
+- Different plants or lines need to be compared at a high level
+
+In many cases, TEEP reveals that the fastest and cheapest way to increase output is not buying new machines—but better utilizing the ones already installed. A modest TEEP improvement can unlock significant production capacity without additional capital investment.
+
+Importantly, TEEP is not about pushing equipment to run 24/7 at all costs. Instead, it provides the data needed to make **intentional, informed decisions** about scheduling, staffing, maintenance, and growth.
 
 ## TEEP vs OEE: Key Differences
 
@@ -57,7 +70,7 @@ OEE and TEEP both measure equipment performance, but they look at different thin
 | **Typical numbers** | 60-85% is good | 30-80% depending on shifts |
 | **Main question answered** | "How efficiently did we use our scheduled time?" | "How much are we actually using this equipment?" |
 
-**Here's a another simple example:**
+**Here’s another simple example:**
 
 Your packaging line runs one 8-hour shift per day, Monday through Friday. In one week:
 
@@ -103,12 +116,6 @@ Finally, many companies make the mistake of treating TEEP as a fixed target. TEE
 TEEP helps most when planning capacity. When customer demand gets close to what you can produce, companies face a big decision: spend money to expand capacity or accept slower growth. TEEP analysis clarifies this choice by showing how much extra capacity exists in current equipment.
 
 A factory with 65% TEEP across major equipment could theoretically increase production by 54% without buying new equipment, assuming customer demand exists and operational problems can be solved. Whether this capacity can actually be used depends on shift schedules, worker availability, maintenance needs, and product mix—but TEEP shows the theoretical maximum.
-
-## Setting Up TEEP Measurement
-
-Companies that want accurate TEEP need good data collection systems. Writing down times by hand produces unreliable results. Automated data capture from equipment computers, control systems, or manufacturing software provides the foundation for accurate calculations.
-
-The money spent on measurement systems should match decision-making needs. Companies making frequent capacity investment decisions benefit from real-time TEEP monitoring. Organizations with stable capacity and clear bottlenecks might find quarterly manual calculations work fine.
 
 ## Setting Up TEEP Measurement
 
