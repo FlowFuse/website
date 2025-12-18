@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.25: FlowFuse Expert in Open-Source Node-RED, Interact with MCP Resources in FlowFuse, Improved Update Scheduling, and lots of UI improvements!"
-subtitle: "FlowFuse 2.25: FlowFuse Expert in Open-Source Node-RED, Interact with MCP Resources in FlowFuse, Improved Update Scheduling, and lots of UI improvements!"
-description: "FlowFuse 2.25: FlowFuse Expert in Open-Source Node-RED, Interact with MCP Resources in FlowFuse, Improved Update Scheduling, and lots of UI improvements!"
+title: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
+subtitle: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
+description: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
 date: 2025-12-18
 authors: ["greg-stoutenburg"]
 image: /blog/2025/12/images/Release-2-25.png
