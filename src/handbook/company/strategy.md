@@ -122,12 +122,12 @@ improvement.
 
 ### KPI
 
-A KPI, or Key Performance Indicator, is used as a heuristic metric for company-wide
+A KPI, or Key Performance Indicator, is a heuristic metric for company-wide
 success. At FlowFuse we're engaged in many initiatives to grow our offering and
 assess product-market fit.
 
 We review KPIs every Tuesday as part of our recurring strategy meeting.
-At this point in time, we review the following KPIs:
+At this time, we review the following KPIs:
 * Product & Engineering
    * [Engineering Throughput](../development/project-management.md#engineering-throughput)
    * Active Node-RED Instances
@@ -140,19 +140,18 @@ At this point in time, we review the following KPIs:
 
 #### Annual Recurring Revenue (ARR)
 
-Now FlowFuse has a stable and maturing product, we're trying to verify product
-market fit. The market verification requires sales, and ARR is a good metric to
-track this.
+Now that FlowFuse has a stable and maturing product, we're trying to verify
+product-market fit. This requires sales, and ARR is a good metric to track this.
 
-Incidental revenue, that's not recurring, doesn't factor into this metric as it's
-hard to build a business with products with unpredictable revenue streams. Furthermore,
-it's usually harder to scale.
+Incidental revenue that's _not_ recurring does not factor into this metric, as it's
+hard to build a business on unpredictable revenue streams. Furthermore, it's usually
+harder to scale.
 
 ## Strategy Meeting
 
 To maintain high velocity and accountability, the strategy team gathers every two weeks. This meeting is not for status updates; it is strictly for decision-making, unblocking strategic initiatives, and translating strategy into immediate tactics.
 
-Meeting rules
+**Meeting rules**
 1.  Pre-Read Mandatory: KPIs and the agenda must be in the doc 24 hours prior.
 2.  Exception-Based Reporting: We only discuss "Red/Yellow" metrics (blockers/risks).
 3.  [Disagree & Commit](/handbook/company/values/#disagreeandcommit): Strong debate is encouraged,
