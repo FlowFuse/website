@@ -275,7 +275,7 @@ _MQTT Out node configuration for temperature data_
 
 **Using FlowFuse MQTT Nodes**
 
-If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas—no manual setup of server address, Client ID, username, or password required. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](https://flowfuse.com/node-red/flowfuse/mqtt/).
+If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas—no manual setup of server address, Client ID, username, or password required. You also won't need to manually create clients in the broker; they're automatically created when you use these nodes. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](https://flowfuse.com/node-red/flowfuse/mqtt/).
 
 **Step 3.3: Configure MQTT Nodes for Remaining Metrics**
 
