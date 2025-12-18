@@ -5,7 +5,7 @@ description: "Complete MQTT Node-RED tutorial: configure brokers, implement pub/
 date: 2024-06-05
 lastUpdated: 2025-12-18
 authors: ["sumit-shinde"]
-image: /blog/2024/06/images/working-with-mqtt.png
+image: /blog/2024/06/images/working-with-mqtt-in-nr.png
 keywords: node red mqtt, mqtt node red, mqtt in node red, node red mqtt in, node red mqtt out, node red mqtt broker, mqtt broker node red, node-red-contrib-mqtt-broker, node red mqtt dynamic subscription, node red mqtt example,, mqtt dynamic subscription, mqtt in/out nodes, mqtt broker setup
 tags:
    - posts
