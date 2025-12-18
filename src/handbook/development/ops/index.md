@@ -11,6 +11,7 @@ navTitle: Platform Ops
  - [Incident Response](./incident-response.md)
  - [FlowFuse Dedicated](./dedicated.md)
  - [Updating Stacks](./production-stack-update.md)
+ - [Self Hosted Assistant](./self-hosted-assistant.md)
  
 
 ## CI/CD
