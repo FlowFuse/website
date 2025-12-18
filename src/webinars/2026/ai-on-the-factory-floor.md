@@ -10,7 +10,7 @@ duration: 60
 video: 
 hosts: ["drew-gatti", "kristopher-sandoval"]
 hubspot:
-    formId: 
+    formId: 3de0fc9a-8ed0-4c27-94da-0fff6c3d79ec
     downloadFormId: 
 ---
 As AI rapidly enters industrial platforms, teams are left asking an uncomfortable question: is this solving real problems, or just adding complexity?
