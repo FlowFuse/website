@@ -52,4 +52,5 @@ What the Product Manager brings to the table:
 1. GTM Interview (Role fit, GTM compatibility) for 30m: Understand how the candidate thinks they can influence GTM and create more growth. Done by the VP of Sales.
 1. 90 day play Presentation: Candidate will be discussing the future of FlowFuse's product and deliver ideas for their first 90 days. The company will discuss and judge this based on how the ideas were formed, put forward, and defended against probing.
 1. Final Interview (**optional**): A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
+1. [Reference Checks](/handbook/peopleops/hiring/reference-check/): Request 3 professional references from the candidate and conduct 1-2 reference check calls to validate performance and cultural fit. Conducted by the hiring manager.
 1. Offer: Extend an offer to the selected candidate.
