@@ -1,0 +1,123 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://flowfuse.com/#organization",
+      "name": "FlowFuse",
+      "url": "https://flowfuse.com",
+      "description": "{{ messaging.title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png"
+      },
+      "sameAs": [
+        "https://www.g2.com/products/flowfuse/reviews"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://flowfuse.com/#website",
+      "url": "https://flowfuse.com",
+      "name": "FlowFuse",
+      "publisher": {
+        "@id": "https://flowfuse.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://flowfuse.com{{ page.url }}#webpage",
+      "url": "https://flowfuse.com{{ page.url }}",
+
+      {% if type == "post" %}
+      "name": "{{ site.messaging.title }}",
+      "headline": "{{ site.messaging.title }}",
+      "description": "{{ site.messaging.subtitle }}",
+      {% else %}
+      "name": "{{ title or site.messaging.title }}",
+      "headline": "{{ title or site.messaging.title }}",
+      "description": "{{ description or site.messaging.subtitle }}",
+      {% endif %}
+
+      "isPartOf": {
+        "@id": "https://flowfuse.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://flowfuse.com{{ image }}"
+      },
+      "publisher": {
+        "@id": "https://flowfuse.com/#organization"
+      }
+
+      {% if type == "post" %}
+      ,
+      "mainEntity": {
+        "@id": "https://flowfuse.com{{ page.url }}#blogposting"
+      }
+      {% endif %}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://flowfuse.com/#software",
+      "name": "FlowFuse",
+      "url": "https://flowfuse.com",
+      "applicationCategory": "DeveloperApplication",
+      "publisher": {
+        "@id": "https://flowfuse.com/#organization"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "3",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    {% if type == "post" %}
+    ,
+    {
+      "@type": "BlogPosting",
+      "@id": "https://flowfuse.com{{ page.url }}#blogposting",
+      "mainEntityOfPage": {
+        "@id": "https://flowfuse.com{{ page.url }}#webpage"
+      },
+      "headline": "{{ title }}",
+      "description": "{{ description }}",
+      "image": "https://flowfuse.com{{ image }}",
+      "datePublished": "{{ date | dateToRfc3339 }}",
+      "dateModified": "{{ (lastUpdated or date) | dateToRfc3339 }}",
+
+      "author": {
+        "@type": "Person",
+        "name": "{{ authors }}",
+        "url": "https://flowfuse.com/team/#{{ authors }}}"
+      },
+      "publisher": {
+        "@id": "https://flowfuse.com/#organization"
+      }
+    }
+    {% endif %}
+    {% if meta.faq %}
+    ,
+    {
+      "@type": "FAQPage",
+      "@id": "https://flowfuse.com{{ page.url }}#faq",
+      "mainEntity": [
+        {% for item in meta.faq %}
+        {
+          "@type": "Question",
+          "name": "{{ item.question }}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ item.answer }}"
+          }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    {% endif %}
+  ]
+}
+</script>

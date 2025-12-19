@@ -148,7 +148,8 @@ eleventyComputed:
 
     {% set js %}{% include "base.js" %}{% endset %}
     <script>{{ js | jsmin | safe }}</script>
-    {% jsonLdScript meta, type, tags %}
+    
+    {% include "jsonld.njk" %}
 
     <script type="module" src="/js/flowrenderer.min.js"></script>
 
