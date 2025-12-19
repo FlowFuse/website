@@ -25,21 +25,14 @@
         "@id": "https://flowfuse.com/#organization"
       }
     },
+    {% if type != "post" %}
     {
       "@type": "WebPage",
       "@id": "https://flowfuse.com{{ page.url }}#webpage",
       "url": "https://flowfuse.com{{ page.url }}",
-
-      {% if type == "post" %}
-      "name": "{{ site.messaging.title }}",
-      "headline": "{{ site.messaging.title }}",
-      "description": "{{ site.messaging.subtitle }}",
-      {% else %}
       "name": "{{ title or site.messaging.title }}",
       "headline": "{{ title or site.messaging.title }}",
       "description": "{{ description or site.messaging.subtitle }}",
-      {% endif %}
-
       "isPartOf": {
         "@id": "https://flowfuse.com/#website"
       },
@@ -50,14 +43,8 @@
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
       }
-
-      {% if type == "post" %}
-      ,
-      "mainEntity": {
-        "@id": "https://flowfuse.com{{ page.url }}#blogposting"
-      }
-      {% endif %}
     },
+    {% endif %}
     {
       "@type": "SoftwareApplication",
       "@id": "https://flowfuse.com/#software",
@@ -88,13 +75,11 @@
       "image": "https://flowfuse.com{{ image }}",
       "datePublished": "{{ date | dateToRfc3339 }}",
       "dateModified": "{{ (lastUpdated or date) | dateToRfc3339 }}",
-
       "author": {
         "@type": "Person",
         "name": "{{ authors }}",
         "url": "https://flowfuse.com/team/#{{ authors }}}"
       },
-
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
       }
