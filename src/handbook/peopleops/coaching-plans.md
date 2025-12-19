@@ -4,35 +4,25 @@ navTitle: Coaching Plans
 
 # Coaching Plans
 
-A Coaching Plan is tool for managers to aid in development of their team
-members, helping them grow in their role and improve their performance through a
-structured plan to be completed with the managers mentorship. Unlike
-[Performance Improvement Plans (PIPs)][pip], coaching plans are proactive, focus
-on growth, and come without the formal burden of a PIP. 
+A Coaching Plan is a tool for managers to support the development of their team members, helping them grow in their role and improve performance through a structured plan completed with the manager’s mentorship. Coaching plans are proactive, growth-focused, and intentionally lighter-weight than a formal Performance Support Plan.
 
 ## Purpose and Philosophy
 
-Coaching plans are built on the principle that all team members have potential
-for growth. Either in their job skills, company value alignment, or the
-operational execution of their role. Coaching plans are a positive force that
-will be deployed for team members to prepare them for career advancement, job
-role changes, and other changes.
+Coaching plans are built on the belief that all team members have potential for growth—whether in job skills, alignment with company values, or operational execution of their role. Coaching plans are a positive mechanism used to prepare team members for career advancement, role evolution, or to address emerging issues before they become performance concerns.
 
 ## When to Use a Coaching Plan
 
-A coaching plan should be initiated by a team members manager when:
+A coaching plan should be initiated by a team member’s manager when:
 
-- A team member shows potential for growth
+- A team member shows clear potential for growth
 - The growth area is specific and coachable
-- The identified area for growth isn't a role deficiency, and a [PIP][pip] is in
-  order
-  - Minor performance areas need attention but don't warrant formal PIP
-    intervention
-- A team member expresses interest in expanding their responsibilities or transitioning to a new role with additional responsibilities
-- The team member is to be prepared for future role progression
-- You observe behaviors or skills that could benefit from focused development
+- The identified area is not a core role deficiency requiring formal intervention
+- Minor performance gaps need attention but do not warrant a formal Performance Support Plan
+- A team member expresses interest in expanding responsibilities or transitioning into a new role
+- A team member is being prepared for future role progression
+- Behaviors or skills are observed that would benefit from focused development
 
-## Coaching Plan vs. Performance Improvement Plan
+## Coaching Plan vs. Performance Support Plan
 
 **Coaching Plans** are:
 
@@ -44,7 +34,7 @@ A coaching plan should be initiated by a team members manager when:
   advancement or addressing problems before they grow too big
 - **Collaborative** - Employee actively participates in goal-setting
 
-**Performance Improvement Plans** are:
+**Performance Support Plans** are:
 
 - **Reactive** - Address existing performance deficiencies
 - **Formal** - Structured process with documented consequences
@@ -80,7 +70,7 @@ The coaching plan should include:
 
 ## Documentation and Tracking
 
-While coaching plans are less formal than PIPs, it's important to:
+While coaching plans are less formal than Performance Support Plans, it is still important to:
 
 - Document the coaching plan and goals
 - Track progress and development activities
