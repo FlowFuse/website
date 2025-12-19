@@ -7,7 +7,7 @@
       "@id": "https://flowfuse.com/#organization",
       "name": "FlowFuse",
       "url": "https://flowfuse.com",
-      "description": "{{ messaging.title }}",
+      "description": "{{ site.messaging.title }}",
       "logo": {
         "@type": "ImageObject",
         "url": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png"
@@ -21,11 +21,11 @@
       "@id": "https://flowfuse.com/#website",
       "url": "https://flowfuse.com",
       "name": "FlowFuse",
+      "description": "{{ site.messaging.title }}",
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
       }
     },
-    {% if type != "post" %}
     {
       "@type": "WebPage",
       "@id": "https://flowfuse.com{{ page.url }}#webpage",
@@ -36,15 +36,16 @@
       "isPartOf": {
         "@id": "https://flowfuse.com/#website"
       },
+      {% if image %}
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://flowfuse.com{{ image }}"
+        "url": "{% if image.startsWith('http') %}{{ image }}{% else %}https://flowfuse.com{{ image }}{% endif %}"
       },
+      {% endif %}
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
       }
     },
-    {% endif %}
     {
       "@type": "SoftwareApplication",
       "@id": "https://flowfuse.com/#software",
@@ -72,13 +73,15 @@
       },
       "headline": "{{ title }}",
       "description": "{{ description }}",
-      "image": "https://flowfuse.com{{ image }}",
+      {% if image %}
+      "image": "{% if image.startsWith('http') %}{{ image }}{% else %}https://flowfuse.com{{ image }}{% endif %}",
+      {% endif %}
       "datePublished": "{{ date | dateToRfc3339 }}",
       "dateModified": "{{ (lastUpdated or date) | dateToRfc3339 }}",
       "author": {
         "@type": "Person",
         "name": "{{ authors }}",
-        "url": "https://flowfuse.com/team/#{{ authors }}}"
+        "url": "https://flowfuse.com/team/#{{ authors }}"
       },
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
