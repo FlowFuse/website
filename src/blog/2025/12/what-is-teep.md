@@ -1,8 +1,8 @@
 ---
-title: "What Is TEEP? Definition, Calculation, and TEEP vs OEE"
+title: "What is TEEP? Calculation, Benchmarks & TEEP vs OEE (2026)"
 subtitle: "If you're tracking OEE, you're only seeing half the picture."
 description: "Your equipment sits idle 16+ hours daily. TEEP in 2026 measures this, OEE ignores it. Get the formula, learn when 35% TEEP beats 60%, and turn hidden capacity into profit without capital investment."
-date: 2025-12-18
+date: 2025-12-19
 keywords: TEEP, total effective equipment performance, TEEP calculation, TEEP vs OEE, OEE vs TEEP, equipment utilization, capacity planning, TEEP formula, TEEP benchmark, TEEP monitoring, overall equipment effectiveness, TEEP dashboard
 authors: ["sumit-shinde"]
 image:
@@ -11,29 +11,33 @@ tags:
 meta:
   faq:
   - question: "How does TEEP differ from OEE and OOE?"
-    answer: "TEEP measures equipment productivity against all available time (24/7/365), while OEE only measures against scheduled production time. OEE tells you how efficiently equipment runs during planned shifts; TEEP tells you how much of total calendar time the equipment actually produces. OOE (Overall Operations Effectiveness) sits between OEE and TEEP by including planned downtime, but still excludes total calendar time."
+    answer: "OEE measures performance during scheduled production time, while OOE extends measurement to all operating time including planned downtime. TEEP uses total calendar time (24/7/365) as the baseline, making it the most comprehensive measure of equipment utilization."
 
   - question: "Why is my TEEP score so much lower than my OEE?"
-    answer: "Lower TEEP compared to OEE is completely normal and expected. TEEP counts all 168 hours in a week, including nights, weekends, and any time equipment isn't scheduled. If you run two 8-hour shifts five days per week, your maximum possible TEEP is only 48% even with perfect operations. The gap between OEE and TEEP reflects intentional business decisions about shift schedules, maintenance windows, and capacity planning—not poor performance."
+    answer: "This is completely normal. TEEP counts all 168 hours in a week, including nights, weekends, and unscheduled time, while OEE only measures scheduled production hours. Even with perfect operations, a two-shift, five-day operation can only achieve 48% TEEP maximum."
   
   - question: "What is a 'good' TEEP benchmark?"
-    answer: "Good TEEP varies dramatically by industry and business model. Continuous process industries like paper mills or chemical plants may target 80-90% TEEP for critical equipment. Batch manufacturers running two shifts typically see 40-60% TEEP. Single-shift operations might have 25-35% TEEP. Context matters more than the number itself—compare TEEP across similar equipment in your facility or track trends over time rather than chasing arbitrary targets."
+    answer: "Most plants see 30-80% TEEP depending on shift patterns and industry. Continuous process industries target 80-90%, two-shift manufacturers typically see 40-60%, and single-shift operations run 25-35%. Good TEEP depends on your business context, not arbitrary targets."
   
   - question: "How should I handle planned maintenance in a TEEP calculation?"
-    answer: "Planned maintenance counts as non-productive time in TEEP calculations since TEEP measures total equipment utilization against all available hours. This is intentional—TEEP reveals the full cost of maintenance decisions. If maintenance windows significantly impact TEEP, it highlights opportunities to optimize maintenance scheduling, reduce maintenance frequency through better practices, or evaluate whether equipment capacity meets business needs. Don't exclude planned maintenance from TEEP; instead, use the data to make better maintenance and capacity decisions."
+    answer: "Planned maintenance counts against total calendar time in TEEP calculations. The key is categorizing it correctly so stakeholders understand whether low TEEP results from maintenance strategy, insufficient demand, or operational losses. This transparency drives better capacity and maintenance decisions."
 ---
 
-Total Effective Equipment Performance (TEEP) measures how much of total calendar time equipment uses to make good parts. Manufacturing companies have used [Overall Equipment Effectiveness (OEE)](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/#what-is-oee%3F) for years to measure production performance. But OEE has a major weakness: it only looks at the time when equipment is scheduled to run. It ignores all the time when equipment sits idle because of planning decisions, low customer demand, or other operational reasons. TEEP fixes this problem by measuring equipment use against all available time.
+Total Effective Equipment Performance (TEEP) is a manufacturing KPI used to understand how much of an equipment investment is actually being utilized. While most manufacturers rely on [Overall Equipment Effectiveness (OEE)](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/#what-is-oee%3F) to assess shop-floor performance, years of real-world use have revealed a critical blind spot: OEE only measures how well equipment runs *when it is scheduled to run*. It says nothing about the many hours assets sit idle due to planning decisions, demand patterns, labor availability, or maintenance strategy.
 
 <!--more-->
 
+This gap matters. In many factories, equipment represents the largest capital investment on the balance sheet, yet significant capacity remains unused outside scheduled production hours. TEEP addresses this gap by extending measurement beyond scheduled production and into total calendar time—providing visibility into both operational performance and unused capacity.
+
+To understand how TEEP does this, it’s important to be precise about what the metric actually measures.
+
 ## What is TEEP?
 
-TEEP shows what percentage of total calendar time your equipment spends producing good parts at optimal speed. The key word here is "total". TEEP counts every single hour, whether you planned to run production or not. That's 168 hours per week, 8,760 hours per year.
+TEEP measures the percentage of **total calendar time** that equipment spends producing good parts at the correct speed. Unlike OEE, which evaluates performance only during planned production, TEEP includes **every hour of the day**, whether production was scheduled or not. That means all 168 hours in a week and all 8,760 hours in a year are part of the calculation.
 
-This differs fundamentally from OEE. OEE only measures performance during scheduled production time. TEEP measures against the complete calendar. If your factory runs one shift per day, OEE ignores the other 16 hours. TEEP counts them all.
+This distinction is fundamental. If a factory operates a single shift per day, OEE evaluates only those eight scheduled hours and ignores the remaining sixteen. TEEP counts them all. As a result, TEEP reveals how much of the equipment’s full potential is actually being used—not just how well it performs during active shifts.
 
-## How to Calculate TEEP
+## TEEP Formula and Calculation
 
 The math works the same way as OEE:
 
@@ -43,9 +47,9 @@ But availability now means operating time divided by total calendar time, not ju
 
 ## Why TEEP Matters
 
-TEEP matters because it connects operational performance to **business value**, not just shop-floor efficiency. While OEE shows how well equipment runs during scheduled shifts, it says nothing about how much of the asset you’re actually using relative to what you paid for it. TEEP fills that gap.
+TEEP matters because it connects operational performance to **business value**, not just shop-floor efficiency. While OEE shows how well equipment runs during scheduled shifts, it says nothing about how much of the asset you're actually using relative to what you paid for it. TEEP fills that gap.
 
-For capital-intensive manufacturing, this difference is critical. Equipment often represents millions in investment, yet much of that capacity may sit idle due to scheduling choices, demand patterns, labor availability, or maintenance strategy. TEEP makes this visible. It answers the executive-level question: **“Are we getting a return on our equipment, or is capacity hiding in plain sight?”**
+For capital-intensive manufacturing, this difference is critical. Equipment often represents millions in investment, yet much of that capacity may sit idle due to scheduling choices, demand patterns, labor availability, or maintenance strategy. TEEP makes this visible. It answers the executive-level question: **"Are we getting a return on our equipment, or is capacity hiding in plain sight?"**
 
 TEEP is especially valuable when:
 
@@ -70,7 +74,7 @@ OEE and TEEP both measure equipment performance, but they look at different thin
 | **Typical numbers** | 60-85% is good | 30-80% depending on shifts |
 | **Main question answered** | "How efficiently did we use our scheduled time?" | "How much are we actually using this equipment?" |
 
-**Here’s another simple example:**
+**Here's another simple example:**
 
 Your packaging line runs one 8-hour shift per day, Monday through Friday. In one week:
 
@@ -80,6 +84,28 @@ Your packaging line runs one 8-hour shift per day, Monday through Friday. In one
 - **Your TEEP: 20%** - The equipment was productive for 34 out of 168 total hours in the week.
 
 Both numbers are correct and useful. OEE shows your production team is doing their job well. TEEP shows the equipment sits unused most of the time. Whether that's okay depends on customer demand, labor costs, and your business strategy.
+
+## What Is a Good TEEP Score?
+
+One of the most common questions manufacturers ask is: "What TEEP score should we target?" The answer depends entirely on your industry, shift strategy, and business model.
+
+**Industry-Specific TEEP Benchmarks:**
+
+- **Continuous process industries** (paper mills, chemical plants, refineries): 80-90% TEEP for critical equipment. These operations are designed for 24/7 production, and high TEEP reflects the economics of continuous processing.
+
+- **Two-shift batch manufacturers** (automotive parts, packaging, electronics): 40-60% TEEP is typical. Even with excellent operational performance, running two 8-hour shifts five days per week caps theoretical maximum TEEP at 48%.
+
+- **Single-shift operations** (job shops, specialized manufacturing): 25-35% TEEP is common and often optimal. Running one 8-hour shift per day limits maximum TEEP to about 24% even with perfect execution.
+
+The key insight: **good TEEP is relative, not absolute**. A 35% TEEP might represent world-class performance for a single-shift custom manufacturer, while 65% TEEP could indicate serious underutilization for a continuous process line.
+
+**What matters most is:**
+
+1. **Trend analysis**: Is your TEEP improving or declining over time?
+2. **Internal benchmarking**: How does similar equipment compare within your facility?
+3. **Business alignment**: Does your TEEP support your capacity strategy and customer demand patterns?
+
+Don't chase arbitrary TEEP targets. Instead, use TEEP to understand whether your equipment utilization matches your business strategy, identify capacity constraints before they become critical, and make informed decisions about shift additions or capital investments.
 
 ## How to Use Both Metrics
 
@@ -123,7 +149,7 @@ Companies that want accurate TEEP need good data collection systems. Writing dow
 
 The money spent on measurement systems should match decision-making needs. Companies making frequent capacity investment decisions benefit from real-time TEEP monitoring. Organizations with stable capacity and clear bottlenecks might find quarterly manual calculations work fine.
 
-Building TEEP dashboards has become much simpler with modern tools. FlowFuse offers a practical solution for companies that want real-time equipment monitoring without complex programming. The platform bridges the gap between OT (Operational Technology) on the factory floor and IT systems in the office. It connects directly to your equipment—whether through PLCs, SCADA systems, or machine controllers—and creates visual dashboards that track performance metrics. You can see how straightforward the process is by looking at their [OEE dashboard blueprint](https://flowfuse.com/blueprints/manufacturing/oee-dashboard/). The same approach works for TEEP—connect your data sources, set up the calculations, and view your equipment utilization in real-time. This makes professional-grade monitoring accessible even for smaller manufacturers or companies without dedicated programming staff.
+Building TEEP dashboards has become much simpler with modern tools. FlowFuse offers a practical solution for companies that want real-time equipment monitoring without complex programming. The platform bridges the gap between OT (Operational Technology) on the factory floor and IT systems in the office. It connects directly to your equipment—whether through [PLCs, SCADA systems](/solutions/scada/), or [machine controllers and MES platforms](/solutions/mes/)—and creates visual dashboards that track performance metrics. You can see how straightforward the process is by looking at their [OEE dashboard blueprint](https://flowfuse.com/blueprints/manufacturing/oee-dashboard/). The same approach works for TEEP—connect your data sources, set up the calculations, and view your equipment utilization in real-time. This makes professional-grade monitoring accessible even for smaller manufacturers or companies without dedicated programming staff.
 
 ***Want to see how TEEP monitoring would work for your specific equipment and production environment? [Book a demo](/book-demo/) with FlowFuse to explore how you can track equipment utilization, identify capacity opportunities, and make data-driven decisions about your manufacturing assets.***
 
