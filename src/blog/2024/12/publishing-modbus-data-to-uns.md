@@ -3,7 +3,7 @@ title: "How to Bridge Modbus to MQTT: Step-by-Step Guide"
 subtitle: Build a Production-Ready Modbus to MQTT Bridge with Node-RED
 description: Learn how to bridge Modbus data to MQTT in 2026 and publish it to a Unified Namespace (UNS) using FlowFuse for real-time monitoring and cloud integration.
 date: 2024-12-04
-lastUpdated: 2025-12-18
+lastUpdated: 2025-12-19
 authors: ["sumit-shinde"]
 image: /blog/2024/12/images/how-to-bridge-modbus-to-mqtt.png
 keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt, modbus to uns, modbus data to unified namespace
