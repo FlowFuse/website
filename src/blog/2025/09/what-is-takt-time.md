@@ -1,5 +1,5 @@
 ---
-title: "Takt Time Explained: Formula, Calculation, Implementation & Best Practices"
+title: "What is Takt Time? Definition, Calculation, & More"
 subtitle: "Master takt time to synchronize production with customer demand using lean manufacturing principles"
 description: "[2026 Edition] Complete guide to takt time in manufacturing. Learn the formula, calculation methods, implementation strategies, and how to overcome common challenges. Includes real-world examples and troubleshooting tips."
 date: 2025-09-25
