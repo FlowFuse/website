@@ -91,9 +91,10 @@
 
       "author": {
         "@type": "Person",
-        "name": "{{ authors }}",
-        "url": "https://flowfuse.com/team/#{{ authors }}}"
+        "name": "{{ author.name }}",
+        "url": "https://flowfuse.com/author/{{ author.slug }}"
       },
+
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
       }
