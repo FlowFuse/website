@@ -260,6 +260,17 @@ improvement. Their manager schedules these interviews during the employee's last
 they have an opportunity to share their insights. Our aim is to use this feedback to enhance our
 workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
 
+### Equipment return or buyback
+All company-issued devices must either be returned or may be purchased by the employee. Devices remain company property for the first three (3) years of an employee’s tenure and must be returned unless the employee chooses to purchase them. A buyback amount will be established by the team. Once the buyback amount is confirmed, the employee may choose to purchase the device.
+
+If the employee chooses to buy the device:
+- Share the [SVB wiring](https://drive.google.com/file/d/1943zVMYXA7B-EfjM4GRwN_lsAGQFHQj5/view?usp=sharing) details with the employee:
+- Notify Finance in advance by emailing billing@flowfuse.com that a wire transfer is expected.
+- Instruct the employee to send a copy of the wire transfer confirmation once the payment has been completed.
+
+If the employee chooses to return the device:
+- This should be discussed with their manager.
+
 ### Offboarding Issue
 
 After announcing the departure in Slack, the manager will create a new offboarding issue for each instance of a team member leaving.
