@@ -126,7 +126,7 @@ For more information on using Modbus with Node-RED, please read our tutorial on 
 
 If you prefer a video explanation, [Kurt Braun](https://www.linkedin.com/in/wago-kurt-braun/) from WAGO demonstrates how to collect Modbus data using Node-RED in FlowFuse:
 
-<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="Bridging Modbus to MQTT with Node-RED"></lite-youtube>
+<lite-youtube videoid="PdVdGg__zUM" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="Bridging Modbus to MQTT with Node-RED"></lite-youtube>
 
 ### Step 2: Transforming Modbus Data for UNS
 
