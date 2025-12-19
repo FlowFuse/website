@@ -692,10 +692,7 @@ module.exports = function(eleventyConfig) {
     }
 
     const markdownItAnchorOptions = {
-        permalink: markdownItAnchor.permalink.linkInsideHeader({
-            symbol: ``,
-            placement: 'before'
-        })
+        permalink: markdownItAnchor.permalink.headerLink()
     }
 
     const markdownLib = markdownIt(markdownItOptions)
