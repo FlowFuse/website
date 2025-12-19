@@ -99,24 +99,15 @@ All cases of underperformance must be documented by the manager through email to
 the CEO and CTO with the timespan of a potential plan created by the employee's
 manager.
 
-### Performance Improvement Plan (PIP)
+### Performance Support & Coaching Plans
 
-After the plan formulated by the manager has not returned the employee to performance
-that is considered on par with the expectations of their role the CEO and manager
-will create a PIP for the employee.
+When initial management support and feedback have not returned a team member to performance that is considered on par with the expectations of their role, the CEO and manager may move forward with a formal [Performance Support & Coaching Plans](https://flowfuse.com/handbook/peopleops/coaching-plans/).
 
-**A PIP is a genuine opportunity from FlowFuse to the employee to get where they need to be.** While other companies
-use PIPs solely to provide the legal documentation for termination, at FlowFuse a
-PIP is intended to set the bar for both the manager and employee and have transparency
-around expected performance.
+A Performance Support Plan is a genuine opportunity from FlowFuse for the team member to get where they need to be. While other companies may use formal plans solely as documentation for termination, at FlowFuse this plan is intended to clearly set expectations for both the manager and the team member, provide transparency around performance standards, and create a shared path toward improvement.
 
-The PIP will outline the specific areas of underperformance, the specific steps
-the employee must take to improve, and the timeline for improvement. The employee
-will be required to sign the PIP and agree to its terms.
+The Performance Support Plan will outline the specific areas of underperformance, the concrete steps the team member must take to improve, and a clear timeline for improvement. The team member will be required to review and acknowledge the plan and agree to its terms.
 
-If an employee has been on a PIP before and for the same reasons enters this stage
-of the underperformance policy again the CEO and manager can opt for not providing
-a PIP. This ensures that a PIP is a genuine change.
+If a team member has previously completed a Performance Support Plan for the same reasons and re-enters this stage of the underperformance policy, the CEO and manager may choose not to issue another plan. This ensures that formal support plans remain a genuine opportunity for change.
 
 ### Termination
 
