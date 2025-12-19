@@ -10,18 +10,80 @@ on:
       - '**.webp'
 
 jobs:
-  build:
-    name: calibreapp/image-actions
+  compress:
+    name: Optimize images
     runs-on: ubuntu-latest
     if: github.repository == 'FlowFuse/website' && github.event.pull_request.head.repo.full_name == github.repository
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-      - name: Compress Images
-        id: calibre
+      - name: Get changed image files from PR
+        id: pr-files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get changed files from PR via GitHub API
+          files=$(gh pr view ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --json files -q '.files[].path' | grep -E '\.(png|jpg|jpeg|webp)$' || true)
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$files" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+          # Check which types exist
+          has_png=false
+          has_other=false
+          while IFS= read -r file; do
+            if [[ -n "$file" ]]; then
+              if [[ "$file" == *.png ]]; then
+                has_png=true
+              elif [[ "$file" == *.jpg ]] || [[ "$file" == *.jpeg ]] || [[ "$file" == *.webp ]]; then
+                has_other=true
+              fi
+            fi
+          done <<< "$files"
+          echo "has_png=$has_png" >> $GITHUB_OUTPUT
+          echo "has_other=$has_other" >> $GITHUB_OUTPUT
+
+      - name: Checkout only changed images
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sparse-checkout: ${{ steps.pr-files.outputs.files }}
+          sparse-checkout-cone-mode: false
+
+      # PNG optimization with oxipng (lossless)
+      - name: Cache Oxipng
+        if: steps.pr-files.outputs.has_png == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/
+          key: ${{ runner.os }}-cargo-oxipng
+
+      - name: Install Oxipng
+        if: steps.pr-files.outputs.has_png == 'true'
+        run: which oxipng || cargo install oxipng
+
+      - name: Optimize PNGs (lossless)
+        if: steps.pr-files.outputs.has_png == 'true'
+        run: |
+          while IFS= read -r file; do
+            if [[ -n "$file" ]] && [[ "$file" == *.png ]] && [[ -f "$file" ]]; then
+              oxipng -o 4 -i 0 --strip safe "$file" || true
+            fi
+          done <<< "${{ steps.pr-files.outputs.files }}"
+
+      # JPEG/WebP optimization with calibreapp
+      - name: Compress JPEG/WebP
+        if: steps.pr-files.outputs.has_other == 'true'
         uses: calibreapp/image-actions@f32575787d333b0579f0b7d506ff03be63a669d1 # 1.4.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # For non-Pull Requests, run in compressOnly mode and we'll PR after.
-          compressOnly: ${{ github.event_name != 'pull_request' }}
-          pngQuality: '80'
+          compressOnly: true
+          ignorePaths: '**.png'
+
+      # Commit all changes
+      - name: Commit optimized images
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff --staged --quiet || git commit -m "Optimize images"
+          git push
