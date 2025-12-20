@@ -1,5 +1,5 @@
 ---
-title: "Pareto Chart: Definition, Formula, Examples & Applications in Manufacturing"
+title: "Pareto Chart: What It Is, Formula, Examples & Manufacturing Applications"
 subtitle: "How the Pareto principle helps manufacturing teams focus where it matters most."
 description: "Learn how Pareto Charts help manufacturing teams reduce defects by 80%. Includes formula, real examples, and applications in quality control & maintenance."
 date: 2025-08-28
