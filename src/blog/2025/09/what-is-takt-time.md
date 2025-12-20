@@ -57,7 +57,6 @@ In this comprehensive guide, I'll walk you through everything you need to master
         <li><strong>Formula:</strong> Takt Time = Available Production Time ÷ Customer Demand</li>
         <li><strong>Why It Matters:</strong> Synchronizes production pace with actual demand, eliminates overproduction waste, and reveals capacity constraints.</li>
         <li><strong>Ideal Relationship:</strong> Cycle Time should be ≤ Takt Time (aim for 90-95% of takt time for a buffer).</li>
-        <li><strong>Common Example:</strong> 420 minutes available ÷ 210 units demand = 2.0 minutes per unit takt time.</li>
         <li><strong>When NOT to Use:</strong> Highly variable demand (>200% fluctuation), continuous process operations, one-of-a-kind production, or early-stage development.</li>
         <li><strong>Implementation Success:</strong> Requires accurate data, visual management systems, and real-time monitoring tools for immediate corrective action.</li>
     </ul>
