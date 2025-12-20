@@ -143,7 +143,6 @@ But knowing the principle and applying it in real-time are two different challen
 The first step is always the hardest—and the most important. Choose one persistent problem area this week. Gather the data. Build your first Pareto Chart. You'll be surprised how quickly priorities become obvious and how fast your team aligns around them.
 
 **Next up:** read our article on [building interactive Pareto Charts in FlowFuse](/blog/2025/09/creating-pareto-chart/) that connect directly to your production systems.
-
 **Ready to transform your manufacturing data into actionable insights?** 
 
 Stop guessing which problems to tackle first. [Try FlowFuse free for 14 days](https://app.flowfuse.com/account/create) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](https://flowfuse.com/book-demo/) of how leading manufacturers identify their vital few problems in real-time.
