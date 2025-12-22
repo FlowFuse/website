@@ -5,9 +5,11 @@ description: "MQTT vs Kafka comparison guide: Discover the key differences betwe
 date: 2025-12-17
 keywords: Kafka vs MQTT, MQTT vs Kafka, Apache Kafka, MQTT protocol, IoT messaging, message broker comparison, pub-sub messaging, event streaming, industrial IoT, real-time messaging, IoT protocols, messaging protocol comparison, Kafka MQTT differences
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/12/images/kafka-vs-mqtt.png
 tags:
   - flowfuse
+  - mqtt
+  - kafka
 meta:
   faq:
   - question: "Can MQTT and Kafka be used together?"
