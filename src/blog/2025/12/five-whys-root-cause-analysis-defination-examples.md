@@ -1,5 +1,5 @@
 ---
-title: "What Is the five Whys (5 Whys)? Root Cause Analysis Explained with Examples"
+title: "Five Whys (5 Whys): Root Cause Analysis with Examples"
 subtitle: "A proven root cause analysis technique for solving recurring problems in manufacturing, operations, and continuous improvement."
 description: "Learn the five Whys root cause analysis method in 2026: step-by-step process, real examples from Toyota, templates, and best practices to solve recurring problems permanently."
 date: 2025-12-22
