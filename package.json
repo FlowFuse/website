@@ -52,7 +52,7 @@
         "seedrandom": "^3.0.5",
         "should": "^13.2.3",
         "spacetime": "^7.4.7",
-        "tailwindcss": "^3.4.16",
+        "tailwindcss": "^3.4.19",
         "terser": "^5.9.0",
         "vanilla-cookieconsent": "^3.0.0",
         "xpath": "^0.0.32"
