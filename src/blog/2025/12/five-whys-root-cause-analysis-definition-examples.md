@@ -1,5 +1,5 @@
 ---
-title: "Five Whys (5 Whys): Root Cause Analysis with Examples"
+title: "Five Whys (5 Whys) Root Cause Analysis: Definition, Steps & Examples (2026)"
 subtitle: "A proven root cause analysis technique for solving recurring problems in manufacturing, operations, and continuous improvement."
 description: "Learn the five Whys root cause analysis method in 2026: step-by-step process, real examples from Toyota, templates, and best practices to solve recurring problems permanently."
 date: 2025-12-22
@@ -7,6 +7,7 @@ authors: ["sumit-shinde"]
 image: 
 keywords: 
 tags:
+  - flowfuse
 ---
 
 Your equipment fails on Tuesday. The maintenance team fixes it. It fails again on Friday. They fix it again. Three weeks later, same failure. This cycle continues because everyone treats the symptom—the broken part—instead of asking why it broke.
