@@ -9,6 +9,36 @@ image: /blog/2025/09/images/poka-yoke-mistake-proofing-2.png
 keywords: poka yoke, mistake proofing, poka yoke examples, lean manufacturing, poka yoke manufacturing, mistake proofing poka yoke, poka yoke in lean manufacturing, lean six sigma poka yoke, kaizen poka yoke, poka yoke technique, poka yoke method, poka yoke system, quality control, defect prevention, manufacturing quality
 tags:
   - flowfuse
+faq:
+  - question: "What does poka-yoke mean in English?"
+    answer: "Poka-yoke translates to 'mistake-proofing' or 'error prevention' in English. The term comes from the Japanese words 'poka' (inadvertent mistakes) and 'yokeru' (to avoid). It was originally called 'baka-yoke' (idiot-proofing) but was renamed to poka-yoke to use a more respectful term."
+
+  - question: "What is the difference between poka-yoke and jidoka?"
+    answer: "Both are concepts from the Toyota Production System, but they serve different purposes. Poka-yoke focuses on preventing errors or making them immediately visible. Jidoka, also known as autonomation, enables machines to detect abnormalities and stop automatically so workers can focus on value-added tasks. Poka-yoke techniques are often used within jidoka systems."
+
+  - question: "Can poka-yoke be applied to service industries?"
+    answer: "Yes, poka-yoke principles apply to any environment where human errors can occur. Service industry examples include online forms that prevent submission with missing fields, appointment reminders to reduce no-shows, color-coded filing systems in healthcare, pilot checklists, and restaurant order confirmation screens."
+
+  - question: "How much does it cost to implement poka-yoke?"
+    answer: "Poka-yoke implementation costs range from virtually free to more significant investments. Many effective solutions are low-cost or no-cost, such as workstation reorganization, visual guides, and simple counting systems. Most organizations start with inexpensive solutions and see quick returns through reduced defects, rework, and waste."
+
+  - question: "What is the difference between warning and control poka-yoke?"
+    answer: "Warning poka-yoke alerts operators when an error occurs or is about to occur and relies on human intervention, such as a seatbelt warning chime. Control poka-yoke physically prevents the error by stopping the process until conditions are correct, like a car that won't start unless it is in Park. Control methods are generally more effective but can be more costly."
+
+  - question: "How do you measure poka-yoke effectiveness?"
+    answer: "Effectiveness is measured by tracking metrics before and after implementation, including defect rates, rework, scrap costs, cycle time, and customer complaints. The most accurate measure is the reduction in frequency of the specific error being targeted. Baseline data should be collected before implementation and monitored continuously."
+
+  - question: "What are common mistakes when implementing poka-yoke?"
+    answer: "Common mistakes include designing overly complex solutions, skipping root cause analysis, slowing production excessively, ignoring operator feedback, failing to test before full deployment, and focusing on detection instead of prevention. Successful poka-yoke systems are simple, operator-informed, and prevention-focused."
+
+  - question: "Is poka-yoke only for manufacturing?"
+    answer: "No, poka-yoke is not limited to manufacturing. It is widely used in healthcare, software development, food service, construction, and office environments. Any process involving human actions can benefit from mistake-proofing techniques."
+
+  - question: "How does poka-yoke relate to Six Sigma?"
+    answer: "Poka-yoke is a core tool within Lean Six Sigma. While Six Sigma reduces process variation using data and statistics, poka-yoke provides practical methods to prevent defects. It is typically applied during the Improve phase of the DMAIC framework to eliminate root causes identified during analysis."
+
+  - question: "What skills do employees need to develop poka-yoke solutions?"
+    answer: "Key skills include strong observation, creative problem-solving, deep process knowledge, and empathy for human limitations. While formal training in lean manufacturing and root cause analysis helps, the most effective poka-yoke solutions often come from operators who understand the work firsthand."
 ---
 
 Every day, skilled operators make mistakes that cost thousands. A component installed backwards. A critical step skipped during rush orders. A measurement misread at shift's end. 
