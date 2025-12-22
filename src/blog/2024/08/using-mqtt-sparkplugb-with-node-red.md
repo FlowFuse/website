@@ -44,7 +44,7 @@ Connected devices can generate a lot of data, but without a standardized format,
 
 ## What is MQTT Sparkplug?
 
-MQTT Sparkplug B is an open-source specification governed by the [Eclipse Foundation Specification Process (EFSP)](https://www.eclipse.org/projects/efsp/). It defines a standardized MQTT topic namespace and payload format specifically designed for Industrial IoT (IIoT), with particular focus on real-time [SCADA](/scada/), control systems, and [HMI](/blog/2025/11/building-hmi-for-equipment-control/) solutions.
+MQTT Sparkplug B is an open-source specification governed by the [Eclipse Foundation Specification Process (EFSP)](https://www.eclipse.org/projects/efsp/). It defines a standardized MQTT topic namespace and payload format specifically designed for Industrial IoT (IIoT), with particular focus on real-time [SCADA](/solutions/scada/), control systems, and [HMI](/blog/2025/11/building-hmi-for-equipment-control/) solutions.
 
 At its core, Sparkplug B extends MQTT 3.1.1 by adding structured topic namespace conventions, Google Protocol Buffer encoded payloads, state-aware birth and death certificates, metric aliasing for bandwidth optimization, and store-and-forward capabilities for intermittent connectivity. These additions transform MQTT from a simple messaging protocol into a complete industrial communication framework.
 
