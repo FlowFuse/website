@@ -11,10 +11,11 @@ Once complete the Release Manager should post to the #dev slack chanel to ask so
 Digital Ocean access to do the following steps.
 
  1. Log into the FlowFuse team on Digital Ocean
- 2. Navigate to the "Images" section, from the "Manage" options in the left hand menu
+ 2. Navigate to the "Backups & Snapshots" section, from the "Manage" options in the left hand menu
  3. Select the new image from the "Droplets" list and click on "More"
     ![Digital Ocean Images view](../../images/releases/do-update-market-place.png)
  4. Select the "Update Marketplace 1-Click App"
- 5. Update the version numbers and any documentation in the Marketplace form
- 6. Submit the new image for review, this will take 3-4 days before the new version is on 
+ 5. Select the FlowFuse entry, not the old FlowForge entry
+ 6. Update the version numbers and any documentation in the Marketplace form
+ 7. Submit the new image for review, this will take 3-4 days before the new version is on 
  the Market Place
