@@ -424,6 +424,14 @@ video, iframe {
 h1,h2,h3,h4 {
     position: relative;
 }
+a.header-anchor {
+    text-decoration: none !important;
+    color: var(--tw-prose-headings);
+    font-weight: 400
+}
+a.header-anchor:hover {
+    text-decoration: inherit !important;
+}
 .header-anchor::before {
     content: '#';
     display: none;

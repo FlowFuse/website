@@ -162,7 +162,7 @@ You can add simple items to the agenda, such as what you did over the weekend or
 
 #### Strategy Call
 
-The Strategy Call brings team leadership together each week to check in and discuss important topics. We spend the first 5-10 minutes reviewing [key metrics](./achieving-success/#kpi). The rest of the agenda changes based on current priorities.
+The Strategy Call brings team leadership together each week to check in and discuss important topics. We spend the first 5-10 minutes reviewing [key metrics](./strategy/#kpi). The rest of the agenda changes based on current priorities.
 
 This call takes place on Tuesdays.
 
