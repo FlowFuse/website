@@ -104,7 +104,7 @@ For example, a temperature sensor in a manufacturing facility might publish to `
 
 ### Protocol Buffer Payloads
 
-Rather than using JSON or other text-based formats, Sparkplug B employs [Google Protocol Buffers](blog/2025/12/node-red-buffer-parser-industrial-data/) for message encoding. This choice delivers several advantages in industrial environments. The compact binary format produces significantly smaller messages than JSON, reducing bandwidth consumption on constrained networks. Protocol Buffers provide strongly typed data fields, eliminating parsing ambiguities. The format supports backward compatibility, allowing older clients to work with newer message versions. Finally, efficient parsing performance matters when handling thousands of messages per second.
+Rather than using JSON or other text-based formats, Sparkplug B employs [Google Protocol Buffers](/blog/2025/12/node-red-buffer-parser-industrial-data/) for message encoding. This choice delivers several advantages in industrial environments. The compact binary format produces significantly smaller messages than JSON, reducing bandwidth consumption on constrained networks. Protocol Buffers provide strongly typed data fields, eliminating parsing ambiguities. The format supports backward compatibility, allowing older clients to work with newer message versions. Finally, efficient parsing performance matters when handling thousands of messages per second.
 
 ### State Management System
 
