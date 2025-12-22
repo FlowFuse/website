@@ -38,6 +38,10 @@ The poka-yoke meaning extends beyond simple error prevention. Rather than treati
 
 Traditional quality control detects defects after they occur, requiring inspection, rework, and often scrapping of materials. The poka-yoke approach prevents defects during production by making errors physically impossible or immediately visible. This prevention-first approach creates a cascading effect: quality control teams focus on complex issues rather than basic errors, workers gain confidence in their processes, customer satisfaction improves through consistent product quality, and excellence becomes the natural outcome rather than a heroic achievement.
 
+If you prefer a video format, watch this short and clear video explaining what Poka-Yoke is:
+
+<lite-youtube videoid="JTI_-xwIIg8" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
+
 ## Why Is Poka-Yoke Important for Manufacturers?
 
 The impact of mistake-proofing extends far beyond just catching errors. By designing assembly processes that are mistake-proof, poka-yoke prevents defects from occurring in the first place rather than inspecting quality issues later. Companies achieve defect rates measured in parts per million rather than percentages.
