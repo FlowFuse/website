@@ -37,9 +37,9 @@ Your equipment fails on Tuesday. The maintenance team fixes it. It fails again o
 
 The Five Whys breaks this pattern. Developed by Sakichi Toyoda at Toyota in the 1930s, it's become the standard root cause analysis method across manufacturing, healthcare, software development, and anywhere recurring problems drain productivity. The technique works through systematic questioning that strips away symptoms to expose fixable failures in your systems—the process gaps, training deficiencies, and procedural weaknesses that allow problems to persist. When applied correctly, it takes under an hour and prevents problems from returning.
 
-## What Is the Five Whys Method?
+## What Is the Five Whys Root Cause Analysis Method?
 
-The Five Whys is a questioning technique where you ask "why" a problem occurred, then ask "why" that condition existed, then keep asking until you hit something you can actually fix at a systemic level. It was developed by Sakichi Toyoda in the 1930s and became a core tool in the Toyota Production System. Today it's used across manufacturing, healthcare, software development, and anywhere else people need to solve recurring problems.
+The Five Whys root cause analysis is a questioning technique where you ask "why" a problem occurred, then ask "why" that condition existed, then keep asking until you hit something you can actually fix at a systemic level. It was developed by Sakichi Toyoda in the 1930s and became a core tool in the Toyota Production System. Today it's used across manufacturing, healthcare, software development, and anywhere else people need to solve recurring problems.
 
 The technique is deceptively simple. You start with a specific problem. You ask why it happened. You take that answer and ask why again. You keep going until asking "why" one more time would just be splitting hairs or rehashing what you already know. Usually that takes about five iterations—the number comes from the observation that five whys is typically sufficient to reveal the root cause—but I've seen effective analyses that stopped at three and others that went to eight.
 
