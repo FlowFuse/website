@@ -15,6 +15,7 @@ Content creation and blogging are effective ways to communicate with our communi
 1. Create a Pull Request on the [website repository](https://github.com/FlowFuse/website) with your Blog Content.
 1. Assign yourself as an Assignee.
 1. Convert to Draft
+1. Generate a temporary, [AI-generated blog tile](/handbook/marketing/blog/#blog-tile-creation-process) for your article to ensure the content is publish-ready from the start.
 1. No Reviews shall be done until the PR is “Ready for Review”
 1. Assign two reviewers
     * One Reviewer for Content 
@@ -23,9 +24,61 @@ Content creation and blogging are effective ways to communicate with our communi
 1. Content will be reviewed first.
 1. SEO will be reviewed second.
 1. When both reviews are done*, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
-1. Once merged, SEO Reviewer will promote on FlowFuse Social channels. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
+1. Once merged, the article can be promoted on FlowFuse social channels by either the author or the Social Media Manager. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
 
-*It's ok to merge without a blog tile, as long as there's an art request open with a clear deadline and it doesn't get shared on socials without having the image.
+## Blog Tile Creation Process
+
+The blog tile is generated with AI to ensure fast, unblocked publishing and visual consistency across all articles.  
+
+This allows every post to move through review and publication without depending on design availability.
+
+### Generate a Tile With Nano Banana Pro
+
+By generating a tile immediately, we ensure:
+
+- Fast turnaround  
+- Asynchronous, non-blocking content flow  
+- Consistent visual completeness across all new posts  
+
+#### Requirements
+
+- Enable both modes: **thinking** and **Nano Banana**.  
+- Always attach at least three **PNG or JPG** reference images from [this folder](https://drive.google.com/open?id=1w99oFeCCcbVVkOxkzmwKlrwjWzAJFOWM&usp=drive_fs)
+- All attached reference images must use the same background color (light indigo or dark indigo).  
+- To choose the correct background color, check the [most recently published article](/blog/):
+  - If the latest tile uses a light background, generate a dark one next, and vice versa.
+
+#### Basic Prompt (Recommended for Speed)
+
+```
+Create a 1600 × 900 px image for this article:  
+[insert the article’s Netlify preview URL]
+
+Use the attached images as a style reference. It should include:
+
+- A background using the same colour palette  
+- The image title, using Heebo Regular and the same colour used for titles in the reference images  
+- An image, diagram, or isometric illustration that represents the content of the article  
+```
+
+#### Optional Prompt Refinement
+
+- You may refine the prompt if you already know the desired visual direction.  
+- For example, if you want a diagram-style tile:  
+  - Attach only diagram-based reference images.  
+  - Provide a description of the diagram or include Mermaid code.
+
+#### About the Watermark
+
+Images generated with Nano Banana Pro will include the Gemini watermark.  
+
+This is acceptable and supports fast publishing.
+
+### Design Team Visibility
+
+After generating the temporary tile, be sure to open an [art request](/handbook/design/art-requests/#creating-an-art-request) and attach the generated tile, so the design team is aware of the asset.  
+
+This does **not** block publishing — it simply allows designers to review the temporary tile later and update it if a final, on-brand version is needed.
 
 ## Blog CMS
 

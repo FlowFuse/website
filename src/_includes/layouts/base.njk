@@ -148,7 +148,8 @@ eleventyComputed:
 
     {% set js %}{% include "base.js" %}{% endset %}
     <script>{{ js | jsmin | safe }}</script>
-    {% jsonLdScript meta, type, tags %}
+    
+    {% include "jsonld.njk" %}
 
     <script type="module" src="/js/flowrenderer.min.js"></script>
 
@@ -213,15 +214,15 @@ eleventyComputed:
                         <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-5 sm:pr-1 align-left sm:auto-rows-auto items-center">
                             {% navoption "Product", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
-                                {% navoption "Features", "/product/features/", 2, "star" %}{% endnavoption %}
+                                {% navoption "Features", "/platform/features/", 2, "star" %}{% endnavoption %}
                                 {% navoption "Integrations", "/integrations/", 1, "squares-plus" %}{% endnavoption %}
                                 {% navoption "Blueprint Library", "/blueprints/", 1, "building-library" %}{% endnavoption %}
-                                {% navoption "Security Statement", "/product/security/", 1, "lock-closed" %}{% endnavoption %}
+                                {% navoption "Security Statement", "/platform/security/", 1, "lock-closed" %}{% endnavoption %}
                             </ul>
                             {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2">
-                                {% navoption "FlowFuse Dashboard", "/product/dashboard/", 2, "dashboard" %}{% endnavoption %}
-                                {% navoption "Device Agent", "/product/device-agent/", 2, "device-agent" %}{% endnavoption %}
+                                {% navoption "FlowFuse Dashboard", "/platform/dashboard/", 2, "dashboard" %}{% endnavoption %}
+                                {% navoption "Device Agent", "/platform/device-agent/", 2, "device-agent" %}{% endnavoption %}
                             </ul>
                         </ul>
                         {% endnavoption %}

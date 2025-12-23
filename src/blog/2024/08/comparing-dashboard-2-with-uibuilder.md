@@ -46,7 +46,7 @@ UI-Builder can be more challenging to start with, as it does not follow a low-co
 
 FlowFuse Dashboard is developed to replace the the deprecated standard Node-RED Dashboard. It retains the core concepts and UI elements but introduces more advanced options and configurations.
 
-To facilitate the transition, FlowFuse, the creator of FlowFuse Dashboard, provides a [migration service](/product/dashboard/#migration-service) that simplifies migration of flows or projects from the Node-RED Dashboard to FlowFuse Dashboard. This service helps ensure a smoother migration process with minimal disruption.
+To facilitate the transition, FlowFuse, the creator of FlowFuse Dashboard, provides a [migration service](/platform/dashboard/#migration-service) that simplifies migration of flows or projects from the Node-RED Dashboard to FlowFuse Dashboard. This service helps ensure a smoother migration process with minimal disruption.
 
 ### UI-Builder
 

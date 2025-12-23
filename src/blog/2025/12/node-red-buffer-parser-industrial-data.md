@@ -5,7 +5,7 @@ description: "Learn how to parse Modbus and industrial device buffers in Node-RE
 date: 2025-12-10
 keywords: node-red, buffer parser, modbus, modbus rtu, modbus tcp, industrial automation, plc, raw data parsing, binary data, payload decoding, node-red tutorial, node-red buffer parser, node-red modbus parsing, industrial endianness, byte order, bitmask, byte offset, data decoding, data acquisition, serial communication, legacy devices, industrial sensors, modbus registers, buffer parsing guide
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/12/images/node-red-buffer-parser-industrial-data.png
 tags:
   - flowfuse
 ---

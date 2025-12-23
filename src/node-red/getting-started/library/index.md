@@ -54,7 +54,7 @@ Installed nodes appear in your palette immediately and are ready for use in your
 
 For automated deployments or when working directly on the server, you can install nodes using npm. 
 
-Navigate to your Node-RED user directory (typically `~/.node-red` or `/opt/flowfuse-device` if using [flowfuse agent](/product/device-agent/)) and run:
+Navigate to your Node-RED user directory (typically `~/.node-red` or `/opt/flowfuse-device` if using [flowfuse agent](/platform/device-agent/)) and run:
 
 ```bash
 npm install node-red-contrib-example
