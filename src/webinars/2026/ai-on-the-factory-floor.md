@@ -1,37 +1,30 @@
 ---
 title: "AI on the Factory Floor: Real Value or Marketing Gimmick?"
-subtitle: 
+subtitle: A roundtable discussion on the reality of AI in the industrial space.
 meta:
-    description: 
+    description: A roundtable discussion featuring four experts - Drew Gatti, Kristopher Sandoval, Kin Lane, Michael Palmer - on AI implementation and architecture.
 image: /images/webinars/ai-on-the-factory-floor.jpg
 date: 2026-01-27
 time: 17:00 CET (11:00am ET)
 duration: 60
 video: 
-hosts: ["drew-gatti", "kristopher-sandoval"]
+hosts: ["drew-gatti", "kristopher-sandoval", "kin-lane", "michael-palmer"]
 hubspot:
     formId: 3de0fc9a-8ed0-4c27-94da-0fff6c3d79ec
     downloadFormId: 
 ---
-As AI rapidly enters industrial platforms, teams are left asking an uncomfortable question: is this solving real problems, or just adding complexity?
+As AI rapidly enters industrial platforms, teams are left asking an uncomfortable question: is Artificial Intelligence solving real problems, or just adding complexity? 
 
 <!--more-->
 
-This webinar takes a critical look at how AI is being applied across manufacturing, energy, and industrial IoT systems. We will discuss where AI meaningfully augments human expertise, where traditional rules, statistics, or automation still win, and how data quality, context, and domain knowledge determine success or failure. Rather than selling a silver bullet, this talk focuses on practical decision-making so industrial teams can invest in AI with confidence and avoid solutions that look impressive but fail in production.
+This roundtable webinar takes a critical look at how AI is currently being marketed, how it’s actually being applied across manufacturing, energy, and IoT systems, and how the API landscape is evolving to support it.
 
-Over the past few years, artificial intelligence has rapidly made its way into industrial platforms, automation software, and operational workflows. From predictive maintenance and anomaly detection to AI copilots and natural language interfaces, vendors are racing to position AI as the next essential layer of Industry 4.0. 
+This discussion will focus on practical design and architectural decisions that industrial teams can make to invest in AI with confidence - avoiding solutions that look impressive but fail in production.
 
-At the same time, many industrial teams are questioning whether these capabilities are delivering real operational value or simply adding cost, complexity, and risk to already fragile systems. 
+As artificial intelligence rapidly enters industrial platforms, engineering and operations teams are facing a critical question: is AI genuinely solving real-world industrial problems, or simply introducing new layers of complexity? With AI increasingly positioned as a default feature rather than a carefully considered capability, many organizations are struggling to separate meaningful innovation from marketing-driven hype.
 
-In this webinar session, we’ll take a clear-eyed look at AI in industrial environments and ask a simple but critical question: where does AI actually help, and where is it being forced into processes that do not need it? We’ll examine how AI is being applied across manufacturing, industrial IoT, and OT systems, what successful deployments have in common, and why many initiatives fail to move beyond demos and pilots. We’ll also look at why AI has so much push-back in the industrial space - and how to bridge the gap between AI as interesting gimmick and AI as human augmentation superpower.
- 
-## What’s covered in this session
+This roundtable webinar takes a grounded look at how AI is being promoted versus how it is actually deployed across manufacturing, energy, and industrial IoT environments. Join our panel of speakers as we dive into this complex problem.
 
-Our panel of experts will demo implementations of AI in industrial flows and look at:
+This discussion explores how the supporting API and integration landscape is evolving, what architectural patterns are emerging, and where common implementation gaps continue to surface.
 
-- Examples where AI works well, such as MCP-augmented discovery and problem solving
-- Systems in which AI integration would be a huge negative
-- The current state of AI marketing and the hype cycle surrounding it
-
-
-Whether you are actively deploying AI, considering it for the first time, or skeptical of the promises being made, join us for an honest conversation focused on outcomes, not marketing. Let’s separate real industrial intelligence from expensive buzzwords and talk about what actually works.
+Focusing on practical design and decision-making, the panel will examine how industrial teams can invest in AI with confidence by prioritizing reliability, interoperability, and long-term maintainability. Attendees will gain insight into how to identify solutions that deliver measurable value in production environments, while avoiding systems that appear impressive in demos but break down under real operational demands.
