@@ -336,6 +336,46 @@ Sizings:
 
 ## Branded Templates
 
+### Email Signature
+
+Using a consistent email signature helps people outside FlowFuse understand who we are and what we do. Including your job title gives context to your role, and the link to our website makes it easy for recipients to learn more about us. It also reinforces our brand and makes every interaction look professional and cohesive.
+
+##### When to use your signature
+Always include it in external emails (clients, partners, vendors, community members) and when starting or joining a new email thread. For ongoing replies within the same thread, it's optional. Many email clients have settings to automatically include your signature only in new emails, which can help streamline this.
+
+#### Gmail (Browser)
+
+If you're using Gmail in your browser:
+
+1. Go to [flowfuse.com/email-signature/](/email-signature/)
+2. Copy the signature displayed on the page
+3. Paste it into your Gmail signature settings following [these instructions](https://support.google.com/mail/answer/8395?hl=en&co=GENIE.Platform%3DDesktop)
+4. Update the placeholder text with your personal information
+ 
+
+#### Apple Mail
+
+If you're using the Apple Mail app, you can follow [this video tutorial](https://www.youtube.com/watch?v=Gb4dbik1YPI) which covers most of the steps below. The main difference is that we're providing you with the [signature code](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk) directly, so you can skip the HTML generation part.
+
+Here are the detailed steps:
+
+1. Create a new signature following [these instructions](https://support.apple.com/en-gb/guide/mail/mail11943/mac). Name it and leave it empty. If any content is added automatically, delete it. Close the Mail app.
+
+2. In Finder, go to the menu bar and select **Go > Go to Folder**, then enter: `~/Library/Mail`
+
+3. Navigate to the folder that starts with "V" followed by a number (this indicates your Mail version and will vary by user), then go to **MailData > Signatures**.
+
+4. Find the file with the `*.mailsignature` extension and open it in a text editor.
+
+5. Replace everything below the line `Mime-Version: [version]` with the code from [email-signature.njk](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk).
+
+6. Save the file, then press **Command + I** to open the Info window and check **Locked**.
+
+7. Reopen the Mail app, return to the Signatures menu, and edit the placeholder data with your personal information.
+
+Your signature is now ready to use.
+
+> **Note:** Please preserve the typography, colors, and formatting in the signature template to maintain brand consistency.
 ### Presentations
 
 There's a **branded theme** for Google Slides presentations available in the [FlowFuse template gallery](https://docs.google.com/presentation/u/0/?tgif=d&ftv=1). To access it, you need to be logged in to your FlowFuse account. Look for a theme called "FlowFuse Template".
@@ -353,8 +393,6 @@ Feel free to edit the content, delete or add slides as needed. Any changes you m
 A **branded Google Docs letterhead** is also available in the [FlowFuse template gallery](https://docs.google.com/document/u/0/?ftv=1&folder=16xMKKQxonSD4IkdLJjVuACTrQInZ_-Zr&tgif=d), titled "FlowFuse Letterhead – Template." Make sure you're logged into your FlowFuse account to see it.
 
 Clicking the template will create an editable copy in your Drive — just like with the presentation template. You can customize this copy freely without affecting the original.
-
----
 
 > **Note:** Both templates include predefined typography, colors, and margins. Please preserve these elements to maintain consistency across all branded materials.
 

@@ -167,15 +167,23 @@ employees the start date can be within 48 hours. Otherwise, do not offer anythin
 within 2 weeks. When a [conditional offer](#extending-an-offer) has been accepted
 you should immediately:
 
-1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
-1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
 1. Create the contract in Deel, and purchase the [background check](/handbook/company/security/human-resources/#screening).
    * Create or add the their job title to Deel.
    * Copy the "Job Description" from the handbook as "Scope of work" on Deel (and save it as a template for this role).
    * Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.
    * Add Equity to the offer according to [the Equity guidelines](/handbook/peopleops/compensation/#equity)
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
-1. Send the candidates the Modified PIIA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review. 
+1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
+1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
+1. Send the candidates the Modified PIIAA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review.
+  
+   Signing Requirements: The PIIAA must be signed on or before the candidate's first day. Use the template that corresponds to their state/country. After execution, save the signed document in Legal → IP → Signed PIIAA.
+   * Contractors who DO NOT need PIIAA:
+     *   Direct contractors with FlowFuse
+     *   Their existing contract already includes IP assignment
+   * Contractors who DO need PIIAA:
+     *   Contractors hired through Deel Shield
+     *   Because their IP assignment is NOT automatically transferred
 1. Add their stock options to the stock option request spreadsheets
    * Copy or create a new monthly request sheet from [this template](https://docs.google.com/spreadsheets/d/1AG75qONjObto3g2oJH_SC4gjgRsYJmKUI3fjrZuktm0/edit#gid=1970623412){rel="nofollow"}
 1. [Close the role](/handbook/peopleops/hiring/#closing-a-job)
@@ -215,6 +223,13 @@ As part of your onboarding, you'll be assigned an onboarding buddy who is there 
 The onboarding buddy should be a person outside of your team. This helps ensure we're building a culture across the company.
 You should reach out to your onboarding buddy regularly in your first 90 days.
 
+The onboarding buddy’s responsibilities are:
+- Welcome the new team member and act as a primary point of contact during the first 90 days.
+- Introduce themselves in Slack on the new team member’s first day to establish an immediate connection.
+- Help the team member navigate internal tools, processes, and communication channels.
+- Check in periodically to ensure the team member is settling in and answer basic questions.
+- Direct the team member to the right documentation or people when needed.
+
 ## Offboarding
 
 The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowFuse to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowFuse.
@@ -244,6 +259,17 @@ This provides us with valuable feedback on their experience, reasons for leaving
 improvement. Their manager schedules these interviews during the employee's last week to ensure
 they have an opportunity to share their insights. Our aim is to use this feedback to enhance our
 workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
+
+### Equipment return or buyback
+All company-issued devices must either be returned or may be purchased by the employee. Devices remain company property for the first three (3) years of an employee’s tenure and must be returned unless the employee chooses to purchase them. A buyback amount will be established by the team. Once the buyback amount is confirmed, the employee may choose to purchase the device.
+
+If the employee chooses to buy the device:
+- Share the [SVB wiring](https://drive.google.com/file/d/1943zVMYXA7B-EfjM4GRwN_lsAGQFHQj5/view?usp=sharing) details with the employee:
+- Notify Finance in advance by emailing billing@flowfuse.com that a wire transfer is expected.
+- Instruct the employee to send a copy of the wire transfer confirmation once the payment has been completed.
+
+If the employee chooses to return the device:
+- This should be discussed with their manager.
 
 ### Offboarding Issue
 

@@ -16,7 +16,6 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
-const schema = require("@quasibit/eleventy-plugin-schema");
 const pluginTOC = require('eleventy-plugin-toc');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
@@ -677,7 +676,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight)
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
-    eleventyConfig.addPlugin(schema);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(EleventyEdgePlugin);
     eleventyConfig.addPlugin(pluginTOC, {
@@ -692,10 +690,7 @@ module.exports = function(eleventyConfig) {
     }
 
     const markdownItAnchorOptions = {
-        permalink: markdownItAnchor.permalink.linkInsideHeader({
-            symbol: ``,
-            placement: 'before'
-        })
+        permalink: markdownItAnchor.permalink.headerLink()
     }
 
     const markdownLib = markdownIt(markdownItOptions)

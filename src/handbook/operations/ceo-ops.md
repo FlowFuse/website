@@ -1,0 +1,289 @@
+---
+---
+
+# **CEO Inbox Management**
+
+This section describes how we manage the CEO’s inbox to ensure information remains organized, actionable, and consistently trending toward Inbox Zero. Maintaining a structured inbox supports clarity, reduces unnecessary follow-up, and enables efficient, asynchronous decision-making.
+
+
+## Daily Workflow
+
+At the start of each workday — and again later in the afternoon — we follow the steps below to review the CEO’s inbox **twice** a day. This ensures urgent items are surfaced, discussions retain context, and all pending work remains visible.
+
+
+### 1. Review the Inbox
+
+Begin by opening the CEO’s inbox and scanning all new messages. The aim is to establish situational awareness rather than take immediate action. During this review:
+
+
+
+* Identify urgent or time-sensitive items.
+* Note any messages that require a direct CEO response.
+* Identify items that can be delegated or require coordination.
+* Prepare a short summary for the daily touch-base, including all emails that contain meeting requests.
+
+**Please note:** When creating meetings, always include the agenda in the calendar invite to maintain clarity and preserve context. Add any relevant background information, and ensure the agenda is shared with external participants.
+
+
+### 2. Applying Labels to New Messages
+
+Every new email should receive an appropriate label before any action is taken. This ensures a structured overview of pending work and supports our value of keeping information accessible and well-organized.
+
+*Note: Some messages do not require labeling — see the guide below for exceptions.*
+
+Label Guide
+
+
+| Label | Description |
+|-------|-------------|
+| Board of Director | Communication related to Board members or Board activity. |
+| GCal Meetings | Emails requiring meeting creation, rescheduling, coordination, or confirmation. |
+| Meeting Notes | Agendas, decks, minutes, prewatch materials, or supporting documents. |
+| Receipts/Finance | Expense items, reimbursements, finance documentation. |
+| Recruitment | Candidates, scheduling, assessments, or hiring-related communication. |
+| Events | All communication tied to event planning and logistics. |
+| Stock Options | Equity information, grant documents, or signature requests. |
+| Visa | Travel, immigration, or visa-related documentation. |
+| Other_Update | Older updates or ticket references stored for historical context; no action required. |
+
+
+*Applying labels first ensures the inbox remains navigable and that pending work is visible at a glance.*
+
+
+## Inbox Logic
+
+FlowFuse uses a simple, transparent system to distinguish between active and completed work within the CEO inbox.
+
+
+## **Items in the Inbox**
+
+If an email remains in the inbox, it requires attention. This includes:
+
+
+
+* Pending actions
+* Replies still needed
+* Follow-ups awaiting confirmation
+* Tasks not yet completed or delegated
+
+An email in the inbox is considered an open item.
+
+
+### Items in Archive
+
+An archived email is considered fully resolved. This means:
+
+
+
+* All required actions were completed
+* Replies were sent
+* Follow-ups were delegated or closed
+* No further attention is required
+* Meeting invites have been accepted
+
+Archiving reflects our commitment to maintaining a clear, trustworthy system of record. This practice enables the CEO inbox to operate with an Inbox Zero mindset, minimizing noise and ensuring focus remains on the work that matters.
+
+### Items to Delete
+** Some items don’t need to be kept and will only create noise long term. These can be deleted rather than archived. Examples include:
+
+
+
+* Cold outbound emails
+* Generic marketing or sales blasts
+* Auto-generated notifications with no relevance
+* Duplicate messages
+* System alerts that require no action
+* Thank-you confirmations or acknowledgments with no follow-up needed
+
+Delete anything that provides no lasting value, does not inform future decisions, and does not need to be part of the CEO’s system of record.
+
+
+# **Drafting Messages**
+
+This section outlines how to draft messages on behalf of the CEO in a consistent, accurate, and efficient manner.
+
+
+### Guidelines for Drafting Messages
+
+When drafting any email for CEO review:
+
+
+
+* Use a short, clear, and appropriate subject line that reflects the purpose of the email.
+* Ensure all recipient email addresses are accurate and verified.
+* Keep the message concise, clear, and straight to the point.
+* Include proper links where necessary (documents, calendar invites, reference materials, etc.).
+* Itemize key points to make messages easier to read and act upon.
+* Maintain a professional and context-preserving tone consistent with FlowFuse standards.
+
+
+# 
+
+
+# CEO Calendar Management \
+
+
+This guide outlines how we manage the CEO’s calendar to ensure clarity, efficiency, and alignment with priorities. The goal is to maintain a predictable schedule, reduce unnecessary context switching, and support effective asynchronous work.
+
+Note: The CEO’s calendar operates in CET, and all scheduling should default to CET unless explicitly stated otherwise.
+
+
+---
+
+
+## Core Principles
+
+
+
+* **Accuracy:** The calendar must always reflect the CEO’s true availability.
+* **Clarity:** Every meeting requires a purpose, agenda, and supporting context.
+* **Protection of time:** Buffers, OOO blocks, and focus periods must be respected.
+* **Prioritization:** The calendar is optimized around the CEO’s highest-impact work.
+* **Timezone-aware:** All scheduling must account for CET.
+
+
+---
+
+
+## CEO Availability & Working Hours (CET)
+
+The following availability rules must always be reflected accurately on the CEO’s calendar: \
+
+
+
+
+* Core working hours: Monday–Friday, 09:00–17:00 CET. \
+ If a slot is open during this window, it is generally bookable. \
+
+* Evening working blocks: Tuesday, Wednesday, Thursday, 19:00–22:00 CET. \
+ Aim to keep one evening per week free whenever possible. \
+
+* Protected family time: 17:00–19:00 CET on weekdays. \
+ Not bookable except for urgent matters involving current investors. \
+ This exception does not apply to new investors. \
+
+* Fridays: The CEO aims to finish by 17:00 CET. \
+ Occasional exceptions may be made for important calls with a current investor (Cota). \
+
+* Known unavailability (e.g., commuting or travel transitions) must be blocked on the calendar.
+
+
+---
+
+
+### Review the Calendar (Start of Day)
+
+
+
+* Review the CEO’s calendar to ensure accuracy and CET alignment.
+* Confirm no meeting overlaps; escalate conflicts as needed.
+* Verify each meeting includes a purpose, agenda, and relevant links.
+* Identify any sessions requiring CEO approval or rescheduling.
+* Check the week ahead for high-effort, investor-related, or time-sensitive commitments. \
+
+
+
+---
+
+Using the Correct Booking Process
+
+
+
+* **Hiring Booking Link**
+
+All applicant bookings **must be done through Greenhouse** to keep the hiring workflow fully centralized. Ensure both the **interviewer’s email** and the **candidate’s email** are accurate before scheduling.
+
+Always **book the interview inside Greenhouse** and send the meeting invite **through Greenhouse** so Google Calendar events and email notifications are automatically generated for both parties.
+
+When creating interview events, make sure the calendar title clearly indicates:
+
+
+
+* The position the candidate is applying for
+* The stage of the interview (simple numbering is fine: 1, 2, etc.)
+
+**Event title examples:**
+
+
+
+* **[Candidate] x [Interviewer] – Frontend Engineer – Stage 1**
+* **[Candidate] x [Interviewer] – Customer Success Manager – Stage 2**
+
+This helps the CEO or next interviewer quickly understand the context and prepare.
+
+
+* **1:1 Request Link**
+
+Available on request to the P.A. from the CEO.
+
+**Important:**
+
+* All **1:1 meeting requests** must first be raised during the **daily touch-base**.
+* Send the link **only after** the CEO gives **explicit approval**.
+
+
+---
+
+
+### 3. Honor OOO Blocks
+
+OOO blocks are non-negotiable and must not be overridden except for:
+
+
+
+* urgent matters
+* board-related requirements
+
+Any exception must be surfaced to the CEO immediately.
+
+
+---
+
+
+### 4. Maintain Calendar Structure
+
+Use the following event types consistently:
+
+
+
+* Meeting – confirmed sessions with a documented agenda
+* Buffer – reserved time following every meeting
+* Focus / Deep Work – protected concentration time
+* Travel – clearly marked with expected duration
+* OOO – fixed availability boundaries
+
+
+---
+
+
+## Rescheduling Protocol
+
+When a meeting needs to be moved:
+
+
+
+* Notify all participants.
+* Provide alternative time options (in CET).
+* Ensure buffer times remain intact.
+* Investor or board meetings may not be moved without direct CEO approval.
+* OOO boundaries must be respected unless the matter is urgent or board-related.
+
+
+---
+
+
+## Weekly Review
+
+Once per week, complete a structured audit:
+
+
+
+* Validate agendas and materials for all major meetings.
+* Confirm hiring blocks, recurring syncs, and investor meetings are correctly placed.
+* Ensure all OOO blocks remain intact.
+* Flag days that appear overloaded and raise concerns with the CEO.
+* Remove unused holds and outdated calendar blocks. \
+
+
+ \
+

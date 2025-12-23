@@ -1,0 +1,191 @@
+---
+layout: page
+nohero: true
+---
+<!--Hero Content-->
+<div class="w-full px-6">
+    <div class="w-full py-12 md:pt-6">
+        <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+            <div class="m-auto md:w-3/5">
+                <h1 class="w-full mt-0 m-auto">
+                    {{ heroTitle | safe }}
+                </h1>
+                <div class="ff-prose prose my-10">
+                    <p>
+                        {{ meta.description | safe }}
+                    </p>
+                    <ul class="list-disc text-left">
+                        {% for value in values %}
+                        <li>{{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">
+                    {% macro freeDemoButton(desktop=true) %}
+                    <a class="ff-btn ff-btn--primary text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
+                        href="{{ hero.buttonLink }}"
+                        onclick="capture('cta-demo', {'reference': '{{ hero.buttonReference }}'})">
+                        {{ hero.buttonText }}
+                    </a>
+                    {% endmacro %}
+                    {{freeDemoButton() }}
+                    {% macro tryItOutButton(desktop=true) %}
+                    <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}"
+                        href="{{ site.appURL }}/account/create"
+                        onclick="capture('cta-try-now', {'reference': '{{ hero.buttonReference }}'})">
+                        <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                            Start Free Trial
+                            {% include "components/icons/arrow-right.svg" %}
+                        </span>
+                    </a>
+                    {% endmacro %}
+                    {{ tryItOutButton() }}
+                </div>
+            </div>
+            <div class="md:w-2/5 flex-grow relative">
+                <div class="ff-image-cover ff-image-rounded w-full h-full">
+                    {% set imageSrc = ["./", image ] | join %}
+                    {% image imageSrc, imageDescription, [496] %}
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row md:hidden gap-3">
+                {{ freeDemoButton(false) }}
+                {{ tryItOutButton(false) }}
+            </div>
+        </div>
+    </div>
+    <div class="max-w-screen-lg mx-auto mb-4">
+        <!-- Problem -->
+        <h2 class="text-center w-full md:text-left max-w-4xl">{{ problem.title | safe }}</h2>
+        {% for paragraph in problem.description %}
+        <p>{{ paragraph | safe }}</p>
+        {% endfor %}
+    </div>
+</div>
+<!-- Solution -->
+<div class="w-full bg-indigo-50/50 py-16 my-16 px-6">
+    <div class="md:max-w-screen-lg m-auto">
+        <h2 class="text-center w-full md:text-left max-w-4xl">{{ solution.title | safe }}</h2>
+        <p>{{ solution.description | safe }}</p>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-8 gap-y-14 mt-16">
+            {% for benefit in solution.benefits %}
+            <div class="relative w-full max-md:max-w-md mx-auto">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
+                            {% include benefit.svgPath %}
+                        </div>
+                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                            <h5 class="w-full md:m-0">
+                                <div class="text-xl font-medium text-gray-600 text-center sm:text-left">{{ benefit.title }}
+                                </div>
+                            </h5>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-center sm:text-left font-light">{{ benefit.description | safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="w-full px-6 pt-6">
+    <div class="max-w-screen-lg mx-auto mb-4">
+        <!-- Testimonials -->
+        <h2 class="text-center w-full md:text-left max-w-4xl">{{ testimonialsTitle | safe }}</h2>
+        <div class="w-full mt-12 md:px-0">
+            <div class="sm:max-w-screen-lg mx-auto">
+                {% include "testimonials.njk" %}
+            </div>
+        </div>
+        <!-- Social proof -->
+        <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl my-10">
+            <div class="mx-auto w-full">
+                {% include "social-proof.njk" %}
+            </div>
+        </div>
+        <!-- Use cases -->
+        <h2 class="text-center w-full md:text-left max-w-4xl">{{ useCases.title | safe }}</h2>
+        <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl my-10">
+            <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {% for item in useCases.case %}
+                        <div class="bg-indigo-50 rounded-lg p-6 pb-2">
+                            <h5 class="mb-3">{{ item.title }}</h5>
+                            <p class="text-gray-600">{{ item.description }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Image -->
+                <div class="flex-grow relative hidden lg:block">
+                    <div class="ff-image-cover ff-image-rounded w-full h-full">
+                        {% set imageSrc = ["./", useCases.image ] | join %}
+                        {% image imageSrc, useCases.imgAlt, [496] %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+<!-- How -->
+<div class="w-full bg-indigo-50/50 py-16 my-16 px-6">
+    <div class="md:max-w-screen-lg m-auto">
+        <h2 class="text-center w-full md:text-left max-w-4xl">{{ how.title | safe }}</h2>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-14 mt-16">
+            {% for step in how.steps %}
+            <div class="relative w-full max-md:max-w-md mx-auto">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <h5 class="max-sm:text-center text-indigo-400">Step {{ loop.index }}</h5>
+                        <div class="w-full mx-auto md:m-0">
+                            <h4 class="w-full md:m-0 text-gray-600 max-sm:text-center">{{ step.title }}</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="max-sm:text-center font-light">{{ step.description | safe }}</p>
+                    </div>
+                </div>
+                <!-- Chevron -->
+                {% if not loop.last %}
+                <div class="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 text-gray-400">
+                    {% include "components/icons/chevron-right.svg" %}
+                </div>
+                <div class="sm:hidden absolute left-1/2 -translate-x-1/2 -bottom-7 text-gray-400">
+                    {% include "components/icons/chevron-down.svg" %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Features -->
+<div class="w-full px-6">
+    <div class="max-w-screen-lg mx-auto mb-4">
+        <h2 class="text-center w-full md:text-left max-w-4xl mb-10">{{ features.title | safe }}</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% for feature in features.features %}
+            <div class="flex items-center gap-3 p-4 border border-indigo-200 rounded-lg bg-white hover:border-indigo-300 transition-colors">
+                <div class="flex-shrink-0 text-indigo-600 w-6">
+                    {% include feature.svgPath %}
+                </div>
+                <span class="text-gray-700">{{ feature.title }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="w-full px-6 pt-10 pb-20">
+    <!--CTA-->
+    <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto max-sm:text-center pt-16 pb-10 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+        <h3 class="mb-6 w-full text-center">{{ ctaSection.title }}</h3>
+        <p class="text-center">{{ ctaSection.description }}</p>
+        <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center mt-8">
+            <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="{{ hero.buttonLink }}" onclick="capture('cta-demo', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ ctaSection.primaryCta }}</a>
+            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-now', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ ctaSection.secondaryCta }}</a>
+        </div>
+    </div>
+</div>

@@ -1,18 +1,18 @@
 ---
 eleventyNavigation:
-  key: Learning Resources
+  key: Node-RED Documentation
   order: 0
 meta:
-   title: Node-RED Learning Resources
-   description: Explore this comprehensive set of Node-RED learning resources, including how to set up Node-RED on various hardware platforms, its basic terminologies, integration of different databases, and more.
-   keywords: node-red, node red, tutorial, learning resources, guide, node-red basics, node-red foundation. 
+   title: Node-RED Documentation
+   description: Node-RED documentation covering setup guides, core nodes, database integration, communication protocols, and hardware implementations for industrial IoT applications.
+   keywords: node-red, node red, documentation, guide, core nodes, database integration, hardware setup, protocols, industrial iot
 ---
 
-# Node-RED Learning Resources
+# Node-RED Documentation
 
 [Node-RED](/node-red/), the low-code visual programming platform, is becoming increasingly popular for optimizing and automating industrial processes. Enabling the integration of different hardware devices, API services, and technologies, it's exceptionally suited for a variety of industrial IoT applications.
 
-Here you will find all the resources you need to help you get started with Node-RED, understand Node-RED Core Nodes, familiarize yourself with terminologies, and tutorials on integrating Node-RED with different databases, technologies, and protocols. Additionally, we cover how to run Node-RED on various hardware platforms. 
+This documentation provides comprehensive guidance for working with Node-RED, from foundational concepts to advanced implementations. You'll find detailed explanations of core nodes, terminology references, integration guides for databases and communication protocols, and platform-specific setup instructions for various hardware devices.
 
 ## Common Terminology
 
