@@ -19,7 +19,7 @@ Through my work as a technical writer covering IIoT, building industrial applica
 ![Performance Operator Terminal](./images/performance-operator-terminal.png){data-zoomable}
 _Performance operator terminal displaying real-time production metrics with timer functionality_
 
-If you want to explore this interface yourself, you can [deploy this blueprint](/blueprint/performance-operator-terminal) to your FlowFuse instance and start experimenting immediately.
+If you want to explore this interface yourself, you can [deploy this blueprint](/blueprints/manufacturing/performance-operator-terminal/) to your FlowFuse instance and start experimenting immediately.
 
 In this article, we'll build two types of timers in [Node-RED](/): stopwatches that measure elapsed time and countdowns that trigger actions after a set duration. Both are straightforward to implement and essential for most automation projects.
 
