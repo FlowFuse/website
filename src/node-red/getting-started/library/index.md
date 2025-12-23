@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: Node-RED Library
   parent: Getting Started
-  order: 2
+  order: 3
 meta:
    title: Node-RED Library – A Curated and Actively Maintained List of Nodes
    description: Browse the Node-RED Library for community-built nodes and integrations. FlowFuse's curated catalog offers tested, documented, enterprise-ready solutions with professional support for critical deployments.
