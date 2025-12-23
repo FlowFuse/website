@@ -168,9 +168,9 @@ This call takes place on Tuesdays.
 
 ## 1:1 meetings
 
-## 1:1 meetings
+Each employee at FlowFuse has regular one-on-one meetings with their manager. For individual contributors, 1:1s should happen at least once a month. Depending on role, tenure, and current needs, a biweekly (every two weeks) or weekly cadence may be more appropriate and should be agreed upon by the manager and direct report.
 
-Each employee at FlowFuse has a weekly one-on-one meeting with their manager. The direct report owns the agenda. Use this time to talk about anything that helps you succeed, such as personal updates, challenges, feedback, or decisions you need support with.
+The direct report owns the agenda. Use this time to talk about anything that helps you succeed, such as personal updates, challenges, feedback, or decisions you need support with.
 
 Keep your agenda in a shared Google Doc. Both you and your manager should add items as they come to mind, instead of waiting until the day before. During the meeting, you can walk through the topics in whatever order is most useful.
 
