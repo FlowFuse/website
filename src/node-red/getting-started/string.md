@@ -21,7 +21,7 @@ One of the most frequent operations is converting string values to numbers for m
 2. In the **Change** node, set the rule to **"Set"** `msg.payload`
 3. Select **"to the value of"** and choose **JSONata expression**
 4. Enter: `$number(payload)`
-5.Connect to where you need the processed data
+5. Connect to where you need the processed data
 
 If your payload contains the string `"42"`, it becomes the number `42`. You can now use this in calculations or comparisons.
 
@@ -73,11 +73,11 @@ Combining strings is common when building messages, URLs, or formatted output.
 
 1. Add a **Template** node after the nodes containing your data
 2. Double-click to open the Template configuration
-3. Write your text and insert variables using `{{variableName}}` syntax
+3. Write your text and insert variables using {% raw %}`{{variableName}}`{% endraw %} syntax
 4. Click **Done**
 5. Connect to where you need the processed data
 
-Each `{{variable}}` is replaced with actual data. For example, the template `Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.` with data containing name "Sarah", orderId "12345", and city "Portland" produces: `Hello Sarah, your order #12345 has shipped to Portland.`
+Each {% raw %}`{{variableName}}`{% endraw %} is replaced with actual data. For example, the template `Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.` with data containing name "Sarah", orderId "12345", and city "Portland" produces: `Hello Sarah, your order #12345 has shipped to Portland.`
 
 {% renderFlow %}
 [{"id":"60cb0a1d79b095a3","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"name\":\"Sarah\",\"orderId\":\"12345\",\"city\":\"Portland\"}","payloadType":"json","x":530,"y":380,"wires":[["88d113db79d20417"]]},{"id":"9ed0bd64daa0cf35","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":380,"wires":[]},{"id":"88d113db79d20417","type":"template","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Concatenating Strings","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.","output":"str","x":720,"y":380,"wires":[["9ed0bd64daa0cf35"]]}]
@@ -93,7 +93,7 @@ API responses and stored data often arrive as JSON strings—text that looks lik
 4. Click **Done**
 5. Connect to where you need the processed data
 
-The JSON node detects your data type automatically. String `'{"temperature":22,"humidity":65}'` becomes object `{temperature: 22, humidity: 65}` so you can access `msg.payload.temperature`. 
+The JSON node detects your data type automatically. String `'{"temperature":22,"humidity":65}'` becomes an object `{temperature: 22, humidity: 65}` so you can access `msg.payload.temperature`. 
 
 {% renderFlow %}
 [{"id":"987d6b5ce96f863e","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":22,\"humidity\":65}","payloadType":"str","x":530,"y":440,"wires":[["b92eb17c8dac49d8"]]},{"id":"b92eb17c8dac49d8","type":"json","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Parsing JSON Strings","property":"payload","action":"","pretty":false,"x":720,"y":440,"wires":[["a34030e2d9a085fe"]]},{"id":"a34030e2d9a085fe","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":440,"wires":[]}]
@@ -166,7 +166,7 @@ Finding and replacing text within strings lets you correct values, standardize f
 4. Enter: `$replace(payload, "old", "new")` where "old" is text to find and "new" is the replacement
 5. Connect to where you need the processed data
 
-All occurrences change. `"I love apples and apples are great"` with `$replace(payload, "apples", "oranges")` gives `"I love oranges and oranges are great"`.
+All occurrences are replaced. `"I love apples and apples are great"` with `$replace(payload, "apples", "oranges")` gives `"I love oranges and oranges are great"`.
 
 {% renderFlow %}
 [{"id":"dfbb9d1ce41c8672","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":740,"wires":[]},{"id":"33d81d6a0d2d0f0c","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Replacing Text","rules":[{"t":"set","p":"payload","pt":"msg","to":"$replace(payload, \"apples\", \"oranges\")","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":700,"y":740,"wires":[["dfbb9d1ce41c8672"]]},{"id":"a8e1a932d619fa33","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"I love apples and apples are great","payloadType":"str","x":530,"y":740,"wires":[["33d81d6a0d2d0f0c"]]}]
@@ -201,10 +201,10 @@ Testing whether a string contains specific text helps with filtering and conditi
 Returns `true` if found, `false` if not. `"The quick brown fox"` with `$contains(payload, "quick")` returns `true`. Use in Switch nodes to route messages differently based on content.
 
 {% renderFlow %}
-[{"id":"eb5fe8fe6e00e603","type":"debug","z":"b446dfa04d79d359","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1070,"y":1500,"wires":[]},{"id":"daba355f3ca9693f","type":"change","z":"b446dfa04d79d359","name":"Checking if String Contains Text","rules":[{"t":"set","p":"payload","pt":"msg","to":"$contains(payload, \"quick\")","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":870,"y":1500,"wires":[["eb5fe8fe6e00e603"]]},{"id":"ca2ab085f8edec8c","type":"inject","z":"b446dfa04d79d359","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"The quick brown fox","payloadType":"str","x":610,"y":1500,"wires":[["daba355f3ca9693f"]]}]
+[{"id":"eb5fe8fe6e00e603","type":"debug","z":"b446dfa04d79d359","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":710,"y":1740,"wires":[]},{"id":"daba355f3ca9693f","type":"change","z":"b446dfa04d79d359","name":"Checking if String Contains Text","rules":[{"t":"set","p":"contains","pt":"msg","to":"$contains(payload, \"quick\")","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":510,"y":1740,"wires":[["eb5fe8fe6e00e603"]]},{"id":"ca2ab085f8edec8c","type":"inject","z":"b446dfa04d79d359","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"The quick brown fox","payloadType":"str","x":270,"y":1740,"wires":[["daba355f3ca9693f"]]}]
 {% endrenderFlow %}
 
-## Complex String Operation
+## Complex String Operations
 
 For complex string operations that combine multiple steps or require custom logic, you can use a Function node with JavaScript.
 
