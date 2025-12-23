@@ -7,7 +7,7 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-We are seeking a highly motivated and strategic Demand Generation Specialist to join our marketing team. In this role, you will be responsible for nurturing leads throughout the funnel, activating marketing qualified leads (MQLs), and converting warm prospects into sales opportunities. You will work closely with the product marketing, sales, and content teams to create engagement strategies that move prospects through the buyer journey and accelerate pipeline velocity.
+We are extending the team with a motivated Demand Generation Specialist to join our marketing team. In this role, you will be responsible for nurturing leads throughout the funnel, activating marketing qualified leads (MQLs), and converting warm prospects into sales opportunities. Initially a tactical role, in which you'll grow to set the strategy for demand gen. You will work closely with the product marketing, sales, and content teams to create engagement strategies that move prospects through the buyer journey and accelerate pipeline velocity.
 
 
 This role works in close collaboration with our Growth Manager (external partner managing paid media execution) but focuses on what happens after the lead comes in - nurturing, qualifying, and converting.
