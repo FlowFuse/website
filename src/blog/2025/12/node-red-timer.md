@@ -14,7 +14,12 @@ Timers are everywhere in industrial automation. You need them to track how long 
 
 <!--more-->
 
-After building numerous industrial applications, writing technical content around IIoT, and watching automation systems, I've noticed that timers consistently appear on operator screens and dashboards. Whether it's a production floor display showing machine runtime, a maintenance terminal counting down to the next service window, or an operator interface tracking downtime by reason code—timers are foundational to industrial visibility.
+Through my work as a technical writer covering IIoT, building industrial applications, and being part of a company where our customers deploy real-world automation systems, I've observed that timers are ubiquitous in production environments. Whether it's a production floor display showing machine runtime, a maintenance terminal counting down to the next service window, or an operator interface tracking downtime by reason code—timers are foundational to industrial visibility. Here's an example of a performance operator terminal with timer functionality:
+
+![Performance Operator Terminal](./images/performance-operator-terminal.png){data-zoomable}
+_Performance operator terminal displaying real-time production metrics with timer functionality_
+
+If you want to explore this interface yourself, you can [deploy this blueprint](/blueprint/performance-operator-terminal) to your FlowFuse instance and start experimenting immediately.
 
 In this article, we'll build two types of timers in [Node-RED](/): stopwatches that measure elapsed time and countdowns that trigger actions after a set duration. Both are straightforward to implement and essential for most automation projects.
 
