@@ -26,7 +26,7 @@ FlowFuse functions as an orchestration tool that allows the deployment and manag
 
 ## Deploying Node-RED Next to Devices
 
-One common issue in IoT deployments is that device instances of Node-RED often communicate with unsecure devices or networks. To mitigate security risks and ensure data protection, it's common to deploy Node-RED in close proximity to these devices. The FlowFuse platform uses [device agents](/product/device-agent/) that communicate back to the platform via a reverse tunnel over port 443. This setup requires only one firewall rule: allowing outbound connections from the [device agent](/product/device-agent/) running Node-RED to the FlowFuse platform, significantly minimizing security risks while enabling remote monitoring, flow editing, and configuration deployment at scale.
+One common issue in IoT deployments is that device instances of Node-RED often communicate with unsecure devices or networks. To mitigate security risks and ensure data protection, it's common to deploy Node-RED in close proximity to these devices. The FlowFuse platform uses [device agents](/platform/device-agent/) that communicate back to the platform via a reverse tunnel over port 443. This setup requires only one firewall rule: allowing outbound connections from the [device agent](/platform/device-agent/) running Node-RED to the FlowFuse platform, significantly minimizing security risks while enabling remote monitoring, flow editing, and configuration deployment at scale.
 
 ## Deploying Node-RED Instances Within the FlowFuse Platform
 

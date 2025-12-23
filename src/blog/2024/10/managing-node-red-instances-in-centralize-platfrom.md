@@ -53,7 +53,7 @@ With FlowFuse, you can organize your Node-RED instances into teams for improved 
 ![Immersive Editor](./images/imersive-editor.png)  
 *Image showing how FlowFuse's immersive editor simplifies managing settings and configuration within the Node-RED editor.*
 
-FlowFuse also simplifies the [monitoring and controlling of edge devices](/solutions/edge-connectivity/) through the [FlowFuse Device Agent](/product/device-agent/), which quickly connects your devices to the cloud platform and allows you to build and monitor applications remotely.
+FlowFuse also simplifies the [monitoring and controlling of edge devices](/solutions/edge-connectivity/) through the [FlowFuse Device Agent](/platform/device-agent/), which quickly connects your devices to the cloud platform and allows you to build and monitor applications remotely.
 
 ![Device Management](./images/devices.png)  
 *Image showing remote edge devices connected through the FlowFuse platform for remote monitoring and control.*

@@ -261,7 +261,7 @@ This implements the takt time formula automatically: Available Production Time Ã
 
 Data is most valuable when operators can interpret the meaning of takt time instantly on the shop floor. FlowFuse's dashboard lets you create real-time displays showing calculated takt time using the same intuitive drag-and-drop interface.
 
-1. Install the [FlowFuse Dashboard](/product/dashboard/) package via the Palette Manager (`@flowfuse/node-red-dashboard`)
+1. Install the [FlowFuse Dashboard](/platform/dashboard/) package via the Palette Manager (`@flowfuse/node-red-dashboard`)
 2. For basic displays, use text widgets to show current takt time values calculated using the takt formula. For more sophisticated interfaces, the Template widget allows you to create custom components. With [FlowFuse AI](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/), you can describe your desired interface in plain English and let the AI generate the appropriate code
 3. Connect the output of the Inject node to the input of the Change node that calculates available production time. Next, connect the output of this Change node to the input of the Change node that calculates takt time using the formula. Finally, connect the output of the takt time Change node to the input of the UI Template node
 4. Next, deploy the flow and open the dashboard to see real-time takt time updates

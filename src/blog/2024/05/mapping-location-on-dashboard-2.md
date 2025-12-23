@@ -110,7 +110,7 @@ To render worlmap webpage on dashboard 2.0 we will use **iframe** custom widget 
 1. With your flow updated to include the above, click the **Deploy** button in the top-right of the Node-RED Editor.
 2. Locate the **Open Dashboard** button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
-Now you can view the live location of Edinburgh public transport vehicles on the dashboard. Additionally, clicking on each vehicle reveals further details such as its name, speed, and other properties you've included. Moreover, if you wish to track the live locations of your own vehicles instead of Edinburgh's public transport vehicles, you can connect your devices and access GPS and sensor data using the [Flowfuse device agent](/product/device-agent/).
+Now you can view the live location of Edinburgh public transport vehicles on the dashboard. Additionally, clicking on each vehicle reveals further details such as its name, speed, and other properties you've included. Moreover, if you wish to track the live locations of your own vehicles instead of Edinburgh's public transport vehicles, you can connect your devices and access GPS and sensor data using the [Flowfuse device agent](/platform/device-agent/).
 
 ## Conclusion 
 
