@@ -12,11 +12,9 @@ concerns, always with a focus on growth, support, and clear expectations.
 
 ## Purpose and Philosophy
 
-Coaching plans are built on the principle that all team members have potential
-for growth. Either in their job skills, company value alignment, or the
-operational execution of their role. Coaching plans are a positive force that
-will be deployed for team members to prepare them for career advancement, job
-role changes, and other changes.
+Coaching Plans are built on the belief that all team members have potential for growth — in their job skills, alignment with company values, or execution of their role.
+
+Coaching Plans are a positive, intentional investment. They are used to help team members prepare for career advancement, role changes, and evolving expectations as the company grows.
 
 ## When to Use a Coaching Plan
 
