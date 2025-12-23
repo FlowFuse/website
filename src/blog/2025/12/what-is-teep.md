@@ -5,7 +5,7 @@ description: "Your equipment sits idle 16+ hours daily. TEEP in 2026 measures th
 date: 2025-12-19
 keywords: TEEP, total effective equipment performance, TEEP calculation, TEEP vs OEE, OEE vs TEEP, equipment utilization, capacity planning, TEEP formula, TEEP benchmark, TEEP monitoring, overall equipment effectiveness, TEEP dashboard
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/12/images/what-is-teep.png
 tags:
   - flowfuse
 meta:
