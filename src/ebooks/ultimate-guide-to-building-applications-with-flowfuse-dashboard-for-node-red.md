@@ -23,6 +23,6 @@ contentTable:
   - Displaying Logged-in Users
 ---
 
-The [FlowFuse Dashboard for Node-RED](/product/dashboard/), a complete rebuild of the original, aims to make dashboard creation easy, yet powerful. Based on the philosophy of "easy things should be easy, and hard things should be possible," it combines the best of its predecessor with new features that foster team collaboration and enable users to build full-stack applications within the Node-RED ecosystem. 
+The [FlowFuse Dashboard for Node-RED](/platform/dashboard/), a complete rebuild of the original, aims to make dashboard creation easy, yet powerful. Based on the philosophy of "easy things should be easy, and hard things should be possible," it combines the best of its predecessor with new features that foster team collaboration and enable users to build full-stack applications within the Node-RED ecosystem. 
 
 Whether you're a seasoned developer or just getting started with your industrial IoT, our low-code platform helps create stunning and useful UIs quickly.  This ebook will guide you through building powerful dashboards that elevate your applications and unlocks the true potential of your data.   

@@ -10,7 +10,7 @@ tags:
     - news
 ---
 
-As part of an on-going security [review](/product/security/#data-at-rest) of the FlowFuse Cloud offering we discovered that the backend database was not using encrypted storage. In keeping with industry best practices we plan to migrate the database to a new instance using encrypted at rest storage.
+As part of an on-going security [review](/platform/security/#data-at-rest) of the FlowFuse Cloud offering we discovered that the backend database was not using encrypted storage. In keeping with industry best practices we plan to migrate the database to a new instance using encrypted at rest storage.
 <!--more-->
 
 ## Impact
