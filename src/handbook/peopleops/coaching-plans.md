@@ -4,11 +4,11 @@ navTitle: Coaching Plans
 
 # Coaching Plans
 
-A Coaching Plan is tool for managers to aid in development of their team
+A Coaching Plan is a tool for managers to aid in development of their team
 members, helping them grow in their role and improve their performance through a
-structured plan to be completed with the managers mentorship. Unlike
-[Performance Improvement Plans (PIPs)][pip], coaching plans are proactive, focus
-on growth, and come without the formal burden of a PIP. 
+structured plan to be completed with the manager's mentorship. Coaching plans can
+be used both proactively for career development and when addressing performance
+concerns, always with a focus on growth, support, and clear expectations. 
 
 ## Purpose and Philosophy
 
@@ -20,37 +20,26 @@ role changes, and other changes.
 
 ## When to Use a Coaching Plan
 
-A coaching plan should be initiated by a team members manager when:
+A coaching plan should be initiated by a team member's manager when:
 
 - A team member shows potential for growth
 - The growth area is specific and coachable
-- The identified area for growth isn't a role deficiency, and a [PIP][pip] is in
-  order
-  - Minor performance areas need attention but don't warrant formal PIP
-    intervention
+- Performance issues need to be addressed with clear expectations and support
+- Minor performance areas need attention and structured improvement
 - A team member expresses interest in expanding their responsibilities or transitioning to a new role with additional responsibilities
 - The team member is to be prepared for future role progression
 - You observe behaviors or skills that could benefit from focused development
 
-## Coaching Plan vs. Performance Improvement Plan
+## Coaching Plan Characteristics
 
-**Coaching Plans** are:
+FlowFuse's Coaching Plans are designed to be:
 
-- **Proactive** - Focused on development and growth
-- **Supportive** - Emphasize mentorship and guidance
-- **Opportunity-based** - Address areas for improvement before they become
-  problems
-- **Growth-oriented** - Aimed at expanding capabilities and preparing for
-  advancement or addressing problems before they grow too big
-- **Collaborative** - Employee actively participates in goal-setting
-
-**Performance Improvement Plans** are:
-
-- **Reactive** - Address existing performance deficiencies
-- **Formal** - Structured process with documented consequences
-- **Problem-focused** - Correct performance that falls below standards
-- **Corrective** - Aimed at bringing performance up to acceptable levels
-- **Prescriptive** - Clear expectations with defined outcomes
+- **Development-focused** - Centered on growth and improvement, whether proactive or addressing performance concerns
+- **Supportive** - Emphasize mentorship and guidance from managers
+- **Opportunity-based** - Address areas for improvement with a positive, forward-looking approach
+- **Growth-oriented** - Aimed at expanding capabilities and bringing performance to expected levels
+- **Collaborative** - Employee actively participates in goal-setting and development activities
+- **Clear and structured** - Defined expectations with documented goals and timelines
 
 ## Creating a Coaching Plan
 
@@ -91,5 +80,4 @@ While coaching plans are less formal than PIPs, it's important to:
   - Coaching plans are only shared with: the team member, manager, the managers'
     manager, and HR
 
-[pip]: /handbook/peopleops/organization/#performance-improvement-plan-(pip)
 [smart]: https://www.atlassian.com/blog/productivity/how-to-write-smart-goals
