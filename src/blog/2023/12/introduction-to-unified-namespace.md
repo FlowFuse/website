@@ -5,7 +5,6 @@ description: Explore how the Unified Namespace (UNS) empowers Industry 4.0 with 
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-12-20
 lastUpdated: 2025-12-24
-video: z62O5RrOK8o
 image: "/blog/2023/12/images/introduction-to-uns.png"
 tags:
     - posts
@@ -71,6 +70,10 @@ Node-RED excels in implementing a Unified Namespace with its flexible and powerf
 Node-RED also supports structured data through its support for JSON, XML, and other standard formats, allowing for clear and consistent data schemas. With its built-in nodes for MQTT, HTTP, and other protocols, Node-RED can seamlessly integrate with existing systems, enabling real-time data exchange and visualization. This makes it an ideal tool for operationalizing the Unified Namespace, ensuring that data flows efficiently and is readily available to all relevant stakeholders.
 
 Read this article to learn how you can build your Unified Namespace using Node-RED and FlowFuse: [Building a Unified Namespace with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/)
+
+You can also watch this webinar that explores the core concepts of the Unified Namespace, explains why it is essential for Industry 4.0, and demonstrates how FlowFuse and HiveMQ can be used together to build a scalable Unified Namespace.
+
+<lite-youtube videoid="z62O5RrOK8o" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 ### How FlowFuse Can Help
 
