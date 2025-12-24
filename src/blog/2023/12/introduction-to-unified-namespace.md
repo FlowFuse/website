@@ -1,9 +1,11 @@
 ---
-title: "Introduction to the Unified Namespace"
+title: "Introduction to the Unified Namespace (UNS) – 2026 Updated Guide"
 subtitle: "Making data available for Industry 4.0 use-cases"
 description: Explore how the Unified Namespace (UNS) empowers Industry 4.0 with seamless data exchange, maximizing organizational potential.
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-12-20
+lastUpdated: 2025-12-24
+video: z62O5RrOK8o
 image: "/blog/2023/12/images/introduction-to-uns.png"
 tags:
     - posts
@@ -13,7 +15,7 @@ tags:
 
 As your organization is generating more data there’s key architectural
 decisions to be made to ensure the full value can be unlocked and you’re
-leveraging not just the tip of the iceberg. The Unified Namespace (UNS)
+leveraging not just the tip of the iceberg. The [Unified Namespace (UNS)](/solutions/uns/)
 provides a blueprint to allow data to be consumed by many data-consumers.
 FlowFuse helps you manage this migration and the operationalization of your
 data.
@@ -40,7 +42,8 @@ need your data. Some machines are built and placed years before another machine
 would like to interact with the generated data. There might be many consumers
 for the same data set. Lastly; consumers might not know when to fetch new data
 points, and thus will try on a cycle or need another mechanism to understand if
-new data is available.
+new data is available. Also, there are many challenges in point-to-point connections. 
+For a deeper explanation, read [Why point-to-point connection is dead](/blog/2024/11/why-point-to-point-connection-is-dead/).
 
 This is why a hub and spoke model should be employed. For each data source or
 data producer, a connection is made to a central hub; generally called a broker.
@@ -66,6 +69,8 @@ also what it means for the developer.
 Node-RED excels in implementing a Unified Namespace with its flexible and powerful capabilities. It can act as both a central hub and a data consumer within a hub-and-spokes model, simplifying the integration of various data sources and consumers. By leveraging Node-RED's extensive library of nodes and its easy-to-use flow-based programming interface, organizations can efficiently manage data ingestion, transformation, and distribution.
 
 Node-RED also supports structured data through its support for JSON, XML, and other standard formats, allowing for clear and consistent data schemas. With its built-in nodes for MQTT, HTTP, and other protocols, Node-RED can seamlessly integrate with existing systems, enabling real-time data exchange and visualization. This makes it an ideal tool for operationalizing the Unified Namespace, ensuring that data flows efficiently and is readily available to all relevant stakeholders.
+
+Read this article to learn how you can build your Unified Namespace using FlowFuse: [Building a Unified Namespace with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/)
 
 ### How FlowFuse Can Help
 
