@@ -3,9 +3,9 @@ title: "Poka-Yoke (bokayoke) Explained: Definition, Examples, Types, and more (2
 subtitle: "How to mistake-proof your manufacturing processes"
 description: "Learn how Poka Yoke prevents manufacturing defects before they happen. Discover the four types of mistake-proofing and how to implement them in your factory."
 date: 2025-09-11
-lastUpdated: 2025-12-23
+lastUpdated: 2025-12-24
 authors: ["sumit-shinde"]
-image: /blog/2025/09/images/poka-yoke.png
+image: /blog/2025/09/images/what-is-poka-yoke.png
 keywords: poka yoke, mistake proofing, poka yoke examples, lean manufacturing, poka yoke manufacturing, mistake proofing poka yoke, poka yoke in lean manufacturing, lean six sigma poka yoke, kaizen poka yoke, poka yoke technique, poka yoke method, poka yoke system, quality control, defect prevention, manufacturing quality
 tags:
   - flowfuse
@@ -50,7 +50,7 @@ The shocking truth? Human errors account for nearly 23% of manufacturing defects
 
 What if the problem isn't your people—but your processes?
 
-## What Does Poka-Yoke Mean and Where Did It Come From?
+## What Does Poka-Yoke (Bokayoke) Mean and Where Did It Come From?
 
 Poka-Yoke (pronounced "POH-kah YOH-kay") is a Japanese term meaning "mistake-proofing" or "error prevention." The phrase derives from "poka o yokeru" (ポカを避ける)—avoiding an unthinkably bad move in the game of shogi. You might sometimes see it misspelled as "boka yoke" or "bokayoke," but the correct term is poka-yoke.
 
