@@ -70,7 +70,7 @@ Node-RED excels in implementing a Unified Namespace with its flexible and powerf
 
 Node-RED also supports structured data through its support for JSON, XML, and other standard formats, allowing for clear and consistent data schemas. With its built-in nodes for MQTT, HTTP, and other protocols, Node-RED can seamlessly integrate with existing systems, enabling real-time data exchange and visualization. This makes it an ideal tool for operationalizing the Unified Namespace, ensuring that data flows efficiently and is readily available to all relevant stakeholders.
 
-Read this article to learn how you can build your Unified Namespace using FlowFuse: [Building a Unified Namespace with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/)
+Read this article to learn how you can build your Unified Namespace using Node-RED and FlowFuse: [Building a Unified Namespace with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/)
 
 ### How FlowFuse Can Help
 
