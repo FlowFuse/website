@@ -3,8 +3,8 @@ eleventyNavigation:
   key: Node-RED Documentation
   order: 0
 meta:
-   title: Node-RED Documentation: Complete Guide + 100+ Tutorials (2026 Updated)
-   description: Master Node-RED visual programming with comprehensive documentation covering core nodes, database integration, hardware setup, communication protocols, and real-world industrial IoT examples.
+   title: "Node-RED Documentation: Complete Guide + 100+ Tutorials (2026 Updated)"
+   description: "Master Node-RED visual programming with comprehensive documentation covering core nodes, database integration, hardware setup, communication protocols, and real-world industrial IoT examples."
    keywords: node-red, node red, documentation, guide, core nodes, database integration, hardware setup, protocols, industrial iot
 ---
 
