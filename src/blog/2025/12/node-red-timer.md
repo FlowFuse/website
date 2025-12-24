@@ -128,11 +128,11 @@ Create a **countdown timer flow** in Node-RED:
 3. Drag a **Countdown** node onto the canvas and configure it with the following settings:
 
    - **Timer On payload**: The message payload sent when the countdown starts (for example, `true`).
-   - Timer Off payload: The message payload sent when the countdown completes (for example, `false`).
+   - **Timer Off payload**: The message payload sent when the countdown completes (for example, `false`).
    - **Restart countdown if message is received while running**: Enable this to restart the countdown if a new control message is received.
-   - Send output message on Reset: Enable this to send a message when the countdown is reset.
+   - **Send output message on Reset**: Enable this to send a message when the countdown is reset.
    - **Set time to new duration if control message is received while running**: Enable this to update the countdown duration while it is running.
-   - Start countdown if control message is received while not running: Enable this to start the countdown using a control message, enable it for this example to allow starting countdown when control message recived 
+   - **Start countdown if control message is received while not running**: Enable this to start the countdown using a control message, enable it for this example to allow starting countdown when control message recived 
 
 4. Connect the Change node to the **Countdown** node.
 5. Add a **Debug** node and connect it to the Countdown node output.
