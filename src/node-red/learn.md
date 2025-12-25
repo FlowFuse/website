@@ -3,12 +3,12 @@ eleventyNavigation:
   key: Node-RED Documentation
   order: 0
 meta:
-   title: "Node-RED Documentation: Complete Guide + 100+ Tutorials (2026 Updated)"
+   title: "Node-RED Documentation: 100+ Tutorials (2026)"
    description: "Master Node-RED visual programming with comprehensive documentation covering core nodes, database integration, hardware setup, communication protocols, and real-world industrial IoT examples."
    keywords: node-red, node red, documentation, guide, core nodes, database integration, hardware setup, protocols, industrial iot
 ---
 
-# Node-RED Documentation
+# Node-RED Documentation: 100+ Tutorials (2026)
 
 [Node-RED](/node-red/), the low-code visual programming platform, is becoming increasingly popular for optimizing and automating industrial processes. Enabling the integration of different hardware devices, API services, and technologies, it's exceptionally suited for a variety of industrial IoT applications.
 
