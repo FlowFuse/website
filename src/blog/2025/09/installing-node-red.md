@@ -5,7 +5,7 @@ description: "Learn how to install and run Node-RED on various platforms, such a
 date: 2025-09-19
 lastUpdated: 2025-12-26
 authors: ["sumit-shinde"]
-image: /blog/2025/09/images/installing-node-red.png
+image: /blog/2025/09/images/download-node-red.png
 keywords: "download node-red, download nodered, install nodered, install node-red, getting started with node-red"
 tags:
     - flowfuse
