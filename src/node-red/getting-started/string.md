@@ -4,7 +4,7 @@ eleventyNavigation:
   order: 5
   parent: Getting Started
 meta:
-  title: Working with Strings in Node-RED
+  title: "Strings in Node-RED: Convert String to Number, Split, Concatenate, Trim, and More"
   description: Learn essential string operations in Node-RED including converting between strings and numbers, splitting and concatenating text, parsing JSON, extracting substrings, trimming whitespace, and more. Step-by-step guide with practical examples.
   keywords: node-red strings, working with strings in node-red, node-red string operations, node-red string manipulation, node-red text processing, node-red change node strings, node-red jsonata string functions, node-red template node strings, node-red function node strings, node-red parsing strings, node-red string conversion, node-red split string, node-red concatenate strings
 ---
