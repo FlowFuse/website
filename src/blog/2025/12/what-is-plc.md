@@ -11,7 +11,7 @@ tags:
 meta:
   faq:
     - question: "What is a PLC in simple terms?"
-      answer: "A PLC (Programmable Logic Controller) is a rugged industrial computer used to control machines and processes. In simple terms, it reads signals from sensors, makes decisions based on a program, and turns equipment like motors, valves, or lights on and off automatically."
+      answer: "A PLC (Programmable Logic Controller) is a rugged industrial computer used to control machines and processes. It reads signals from sensors, makes decisions based on a program, and turns equipment like motors, valves, or lights on and off automatically."
 
     - question: "Who invented PLC?"
       answer: "The PLC was invented in 1969 by a team led by Dick Morley at Bedford Associates. They developed the first PLC, known as the Modicon 084, in response to General Motors’ need for a programmable replacement for relay-based control systems."
@@ -21,9 +21,17 @@ meta:
 
     - question: "Why use a PLC instead of a PC?"
       answer: "PLCs are used instead of PCs because they are built for real-time control and extreme industrial environments. They are more reliable, deterministic, resistant to heat, vibration, and electrical noise, and can run continuously for decades without crashes or unexpected updates."
+
+    - question: "Where are PLCs used?"
+      answer: "PLCs are used across a wide range of industries including automotive assembly, pharmaceuticals, food and beverage processing, water treatment, power generation, chemical plants, mining, distribution centers, and airport baggage systems. Essentially, any place where machines and processes need reliable, real-time automation relies on PLCs."
+
+    - question: "What are the 7 main parts of a PLC?"
+      answer: "The 7 main parts of a PLC are: 1) Power Supply – provides stable power; 2) Central Processing Unit (CPU) – executes the control program; 3) Input Modules – read signals from sensors and switches; 4) Output Modules – control actuators like motors and valves; 5) Programming Device – used to write and upload programs; 6) Communication Interface – allows the PLC to connect with other PLCs, HMIs, or SCADA systems; 7) Memory – stores the program and runtime data."
 ---
 
-On New Year's Day 1968, [Dick Morley](https://en.wikipedia.org/wiki/Dick_Morley) woke up with a brutal hangover and did what any reasonable engineer would do: he invented the future of manufacturing. That morning, nursing what he later confirmed was "a wicked headache," Morley wrote the complete specifications for the Programmable Logic Controller—a device that would eliminate an entire industry of relay-based control systems and become the invisible brain running modern civilization.
+
+On New Year's Day 1968, [Dick Morley](https://en.wikipedia.org/wiki/Dick_Morley), also known as the “Father of the PLC,” woke up with a brutal hangover and did what any reasonable engineer might do: he invented the future of manufacturing. That morning, nursing what he later described as "a wicked headache," Morley wrote the complete specifications for the Programmable Logic Controller—a device that would replace entire relay-based control systems and become the invisible brain running modern industry.
+
 
 <!--more-->
 
@@ -50,7 +58,7 @@ This design has barely changed since Morley's 1968 specifications, and there's a
 Before PLCs, factories were wired nightmares. Control logic lived in walls of electromagnetic relays—thousands of mechanical switches wired together to define how a machine behaved. Changing a production process meant physically rewiring control panels. Every model change brought weeks of downtime, armies of electricians, and staggering costs. One wrong wire could halt an entire plant.
 
 ![Pre-PLC industrial relay control cabinet used in factories before programmable logic controllers replaced hard-wired relay logic
-](./images/pre-plc-relay-cabinet.jpg)
+](./images/pre-plc-relay-cabinet.jpg){data-zoomable}
 _Pre-PLC industrial relay control cabinet used in factories before programmable logic controllers replaced hard-wired relay logic_
 
 By the late 1960s, this inflexibility was becoming fatal—especially for automotive manufacturers. General Motors was bleeding money on production line retooling. Meanwhile, a young engineer named Dick Morley was running a small consulting company called Bedford Associates, helping machine tool firms upgrade to solid-state controls. The work paid well, but it was monotonous—each project essentially the same as the last.
@@ -64,7 +72,7 @@ To commercialize the design, they needed investors. The team formed a new compan
 General Motors heard about Modicon's work and placed a million-dollar order. In November 1969, GM's Hydramatic Division took delivery of the first batch. General Electric followed with their own million-dollar order, planning to rebrand and sell the controllers as OEM units. Within a year of Modicon's founding, the PLC had gone from hungover memo to production deployment at the world's largest automaker.
 
 ![PLC Pioneers Richard Morley, Tom Bossevain, George Schwenk and Jonas Landau
-](./images/First-modicon-084.png)
+](./images/First-modicon-084.png){data-zoomable}
 _PLC Pioneers Richard Morley, Tom Bossevain, George Schwenk and Jonas Landau_
 
 Morley always called himself the "Father" of the PLC rather than its "Inventor"—he knew others were working on similar solutions and believed the technology "invented itself out of necessity." Bedford Associates eventually dissolved to avoid tax complications after Modicon's success. Modicon was later acquired and is now owned by Schneider Electric, which still occasionally uses the number 84 on products as a tribute.
