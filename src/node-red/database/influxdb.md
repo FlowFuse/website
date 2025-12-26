@@ -3,7 +3,7 @@ eleventyNavigation:
   key: InfluxDB
   parent: Database
 meta:
-  title: Using InfluxDB with Node-RED
+  title: Using InfluxDB with Node-RED (2026 Updated)
   description: Node-RED has great support for InfluxDB. In this guide, we'll explain how to get your data flowing into one of the most popular time-series databases.
   keywords: node-red, databases, integration, influxdb, time-series database
 image: /node-red/core-nodes/images/node-red-influxdb.png
@@ -98,17 +98,3 @@ Great, our data has arrived correctly and is ready to be used.
 1. Set the correct tags and fields. Tags are used to identify the data points, while fields are used to store the actual data values. It is important to set the correct tags and fields for your data so that you can easily query and analyse it later.
 1. Set the correct timestamp. The timestamp is the time at which the data point was recorded. It is important to set the correct timestamp so that you can track the evolution of your data over time.
 1. Use the correct precision. The precision is the number of decimal places that are stored for each data value. It is important to use the correct precision so that your data is easy to use.
-
-<div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
-
-### Try FlowFuse's Built-In Database Service
-
-[FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually—the node sets itself up automatically.
-
-Even better, the [FlowFuse AI Assistant allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
-
-Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
-
-[**Start with FlowFuse today**](https://app.flowfuse.com/) 
-
-</div>
