@@ -3,6 +3,7 @@ title: "What is a PLC ? History, How It Works, Types & Applications (2026)"
 subtitle: "How Dick Morley's New Year's Day Hangover Changed Manufacturing Forever"
 description: "Discover what PLCs are, how they work, and why 80% of global manufacturing still runs on Dick Morley's 1968 hungover invention. Plus: solving vendor lock-in"
 date: 2025-12-26
+lastUpdate: 2025-12-27
 keywords: what is plc, programmable logic controller, history of plc, father of plc, plc inventor, plc communication, 
 authors: ["sumit-shinde"]
 image: 
@@ -92,10 +93,6 @@ The entire operating model fits in one sentence: read sensors, run program, cont
 **Output modules** control physical equipment. The CPU decides a motor should run, and the output module closes a relay or sends a signal to a motor starter. It translates digital logic into the industrial voltages needed to activate contactors, solenoids, and valves. Like inputs, isolation protects the CPU from the electrical violence of switching inductive loads.
 
 **The power supply** handles whatever garbage voltage the plant feeds it—sags during motor starts, spikes from switching, harmonics from variable frequency drives—and outputs clean DC. It's rated for abuse because industrial power is chaos.
-
-If you’re curious what this looks like in practice, this short video walks through it.
-
-<lite-youtube videoid="ygd7JICvYYo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="What's Inside PLC"></lite-youtube>
 
 ### The Scan Cycle
 
