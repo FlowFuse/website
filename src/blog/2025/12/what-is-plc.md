@@ -93,10 +93,6 @@ The entire operating model fits in one sentence: read sensors, run program, cont
 
 **The power supply** handles whatever garbage voltage the plant feeds it—sags during motor starts, spikes from switching, harmonics from variable frequency drives—and outputs clean DC. It's rated for abuse because industrial power is chaos.
 
-If you’re curious what this looks like in practice, this short video walks through it.
-
-<lite-youtube videoid="ygd7JICvYYo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="What's Inside PLC"></lite-youtube>
-
 ### The Scan Cycle
 
 Every PLC runs the same four-step loop:
