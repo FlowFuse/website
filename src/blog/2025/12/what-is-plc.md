@@ -3,6 +3,7 @@ title: "What is a PLC ? History, How It Works, Types & Applications (2026)"
 subtitle: "How Dick Morley's New Year's Day Hangover Changed Manufacturing Forever"
 description: "Discover what PLCs are, how they work, and why 80% of global manufacturing still runs on Dick Morley's 1968 hungover invention. Plus: solving vendor lock-in"
 date: 2025-12-26
+lastUpdate: 2025-12-27
 keywords: what is plc, programmable logic controller, history of plc, father of plc, plc inventor, plc communication, 
 authors: ["sumit-shinde"]
 image: 
@@ -92,10 +93,6 @@ The entire operating model fits in one sentence: read sensors, run program, cont
 **Output modules** control physical equipment. The CPU decides a motor should run, and the output module closes a relay or sends a signal to a motor starter. It translates digital logic into the industrial voltages needed to activate contactors, solenoids, and valves. Like inputs, isolation protects the CPU from the electrical violence of switching inductive loads.
 
 **The power supply** handles whatever garbage voltage the plant feeds it—sags during motor starts, spikes from switching, harmonics from variable frequency drives—and outputs clean DC. It's rated for abuse because industrial power is chaos.
-
-If you’re curious what this looks like in practice, this short video walks through it.
-
-<lite-youtube videoid="ygd7JICvYYo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="What's Inside PLC"></lite-youtube>
 
 ### The Scan Cycle
 
@@ -196,6 +193,10 @@ The cost isn't just technical debt. It's strategic paralysis. Companies stick wi
 ## FlowFuse: Breaking the Integration Barrier
 
 [FlowFuse](/), built on [Node-RED](/node-red/), solves the protocol chaos that vendor lock-in created. Node-RED emerged from IBM in 2013, created by [Nick O'Leary](https://www.linkedin.com/in/nickoleary/) (now CTO of FlowFuse) and [Dave Conway-Jones](https://github.com/dceejay) as a visual programming tool for connecting devices and APIs—drag nodes onto a canvas, wire them together, deploy. The industrial community built protocol nodes for Modbus, Profinet, EtherNet/IP, S7comm, OPC UA, and more. It became the universal translator for industrial systems.
+
+![FlowFuse platform for industrial data integration connecting PLCs, Node-RED, and enterprise systems
+](./images/flowfuse-platform.png){data-zoomable}
+_FlowFuse platform for industrial data integration connecting PLCs, Node-RED, and enterprise systems_
 
 A single Node-RED instance can simultaneously communicate with Siemens S7 PLCs, Rockwell ControlLogix systems, Modbus devices, MQTT brokers, and IT systems like databases, APIs, and cloud platforms. The data flows visually. Changes deploy instantly. No compilation. No downtime. It bridges the operational technology (OT) on the factory floor with information technology (IT) systems—connecting PLCs not just to each other, but to ERP systems, historians, dashboards, and analytics platforms.
 
