@@ -30,11 +30,11 @@ meta:
       answer: "The 7 main parts of a PLC are: 1) Power Supply – provides stable power; 2) Central Processing Unit (CPU) – executes the control program; 3) Input Modules – read signals from sensors and switches; 4) Output Modules – control actuators like motors and valves; 5) Programming Device – used to write and upload programs; 6) Communication Interface – allows the PLC to connect with other PLCs, HMIs, or SCADA systems; 7) Memory – stores the program and runtime data."
 ---
 
-
-On New Year's Day 1968, [Dick Morley](https://en.wikipedia.org/wiki/Dick_Morley), also known as the “Father of the PLC,” woke up with a brutal hangover and did what any reasonable engineer might do: he invented the future of manufacturing. That morning, nursing what he later described as "a wicked headache," Morley wrote the complete specifications for the Programmable Logic Controller—a device that would replace entire relay-based control systems and become the invisible brain running modern industry.
-
+***A PLC (Programmable Logic Controller) is an industrial computer that continuously monitors sensors, executes control logic, and operates motors, valves, and equipment in real-time, serving as the reliable backbone of modern manufacturing and industrial automation.***
 
 <!--more-->
+
+On New Year's Day 1968, [Dick Morley](https://en.wikipedia.org/wiki/Dick_Morley), also known as the “Father of the PLC,” woke up with a brutal hangover and did what any reasonable engineer might do: he invented the future of manufacturing. That morning, nursing what he later described as "a wicked headache," Morley wrote the complete specifications for the Programmable Logic Controller—a device that would replace entire relay-based control systems and become the invisible brain running modern industry.
 
 Before that hungover epiphany, changing how a factory operated meant physically rewiring thousands of electromagnetic relays. General Motors was bleeding money—weeks of downtime and millions in labor costs every time they needed to retool a production line. Morley's Modicon 084 replaced 20,000 mechanical components with a single box that could be reprogrammed in hours.
 
