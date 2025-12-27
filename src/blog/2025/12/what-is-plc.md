@@ -197,6 +197,10 @@ The cost isn't just technical debt. It's strategic paralysis. Companies stick wi
 
 [FlowFuse](/), built on [Node-RED](/node-red/), solves the protocol chaos that vendor lock-in created. Node-RED emerged from IBM in 2013, created by [Nick O'Leary](https://www.linkedin.com/in/nickoleary/) (now CTO of FlowFuse) and [Dave Conway-Jones](https://github.com/dceejay) as a visual programming tool for connecting devices and APIs—drag nodes onto a canvas, wire them together, deploy. The industrial community built protocol nodes for Modbus, Profinet, EtherNet/IP, S7comm, OPC UA, and more. It became the universal translator for industrial systems.
 
+![FlowFuse platform for industrial data integration connecting PLCs, Node-RED, and enterprise systems
+](./images/flowfuse-platform.png){data-zoomable}
+_FlowFuse platform for industrial data integration connecting PLCs, Node-RED, and enterprise systems_
+
 A single Node-RED instance can simultaneously communicate with Siemens S7 PLCs, Rockwell ControlLogix systems, Modbus devices, MQTT brokers, and IT systems like databases, APIs, and cloud platforms. The data flows visually. Changes deploy instantly. No compilation. No downtime. It bridges the operational technology (OT) on the factory floor with information technology (IT) systems—connecting PLCs not just to each other, but to ERP systems, historians, dashboards, and analytics platforms.
 
 FlowFuse adds the enterprise infrastructure: centralized management across hundreds of edge devices, version control and rollback, role-based access, audit logging, and security at every layer. Build one flow that reads from Siemens PLCs and deploy it to every facility. When something changes, update once and push the change everywhere. Edge instances run locally even if network connections drop.
