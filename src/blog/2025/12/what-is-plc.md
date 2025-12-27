@@ -3,6 +3,7 @@ title: "What is a PLC ? History, How It Works, Types & Applications (2026)"
 subtitle: "How Dick Morley's New Year's Day Hangover Changed Manufacturing Forever"
 description: "Discover what PLCs are, how they work, and why 80% of global manufacturing still runs on Dick Morley's 1968 hungover invention. Plus: solving vendor lock-in"
 date: 2025-12-26
+lastUpdate: 2025-12-27
 keywords: what is plc, programmable logic controller, history of plc, father of plc, plc inventor, plc communication, 
 authors: ["sumit-shinde"]
 image: 
