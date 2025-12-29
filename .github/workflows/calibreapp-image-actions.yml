@@ -24,4 +24,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # For non-Pull Requests, run in compressOnly mode and we'll PR after.
           compressOnly: ${{ github.event_name != 'pull_request' }}
-          pngQuality: '80'
+          pngQuality: '100'
