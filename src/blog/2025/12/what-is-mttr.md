@@ -2,7 +2,7 @@
 title: "Mean Time to Failure (MTTF): Formula, Calculation, MTTF vs MTBF vs MTTR, and More"
 subtitle: "Understanding equipment reliability and predicting failure patterns"
 description: "Learn what Mean Time to Failure (MTTF) means, how to calculate it with real examples, industry benchmarks, and how to use MTTF data to improve equipment reliability and maintenance planning."
-date: 2025-12-25
+date: 2025-12-29
 authors: ["sumit-shinde"]
 image:
 keywords: MTTF, mean time to failure, MTTF formula, MTTF calculation, how to calculate MTTF, MTTF vs MTBF, MTTF vs MTTR, equipment reliability, failure prediction, reliability metrics, asset management
