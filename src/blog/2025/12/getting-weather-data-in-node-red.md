@@ -1,11 +1,12 @@
 ---
-title: "Building a Weather Dashboard in Node-RED"
+title: "Building a Weather Dashboard in Node-RED (2026)"
 subtitle: "Build a live weather dashboard in Node-RED with FlowFuse"
 description: Learn how to build a real-time weather dashboard in Node-RED using the OpenWeather API and FlowFuse Dashboard.
 date: 2025-12-05
+lastUpdated: 2025-12-29
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/building-a-weather-dashboard.png
-keywords: 
+keywords: nodered weather, weather dashboard node-red, node-red weather dashboard
 tags:
     - node-red
 ---
