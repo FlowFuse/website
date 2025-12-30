@@ -3,7 +3,7 @@ title: "Poka Yoke (Poke Yoke, Bokayoke) Explained: Definition, Examples, Types (
 subtitle: "How to mistake-proof your manufacturing processes"
 description: "Learn how poka yoke prevents manufacturing defects before they happen. Discover the four types of mistake-proofing and how to implement poka yoke in your factory."
 date: 2025-09-11
-lastUpdated: 2025-12-29
+lastUpdated: 2025-12-30
 authors: ["sumit-shinde"]
 image: /blog/2025/09/images/what-is-poka-yoke.png
 keywords: poka yoke, mistake proofing, poka yoke examples, lean manufacturing, poka yoke manufacturing, mistake proofing poka yoke, poka yoke in lean manufacturing, lean six sigma poka yoke, kaizen poka yoke, poka yoke technique, poka yoke method, poka yoke system, poka-yoke, quality control, defect prevention, manufacturing quality
