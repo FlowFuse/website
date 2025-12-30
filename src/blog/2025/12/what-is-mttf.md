@@ -4,7 +4,7 @@ subtitle: "Understanding equipment reliability and predicting failure patterns"
 description: "Learn what Mean Time to Failure (MTTF) means, how to calculate it with real examples, industry benchmarks, and how to use MTTF data to improve equipment reliability and maintenance planning."
 date: 2025-12-29
 authors: ["sumit-shinde"]
-image:
+image: /blog/2025/12/images/what-is-mttf.png
 keywords: MTTF, mean time to failure, MTTF formula, MTTF calculation, how to calculate MTTF, MTTF vs MTBF, MTTF vs MTTR, equipment reliability, failure prediction, reliability metrics, asset management
 tags:
     - flowfuse

@@ -5,7 +5,7 @@ description: "Node-RED timer tutorial showing how to implement stopwatch and cou
 date: 2025-12-24
 lastUpdated: 2025-12-29
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/12/images/node-red-timer.png
 keywords: node-red timers, node-red stopwatch, node-red countdown timer, node-red industrial automation, node-red iiot, node-red process control, node-red hourglass, node-red contrib countdown, flowfuse node-red  
 tags:
     - node-red
