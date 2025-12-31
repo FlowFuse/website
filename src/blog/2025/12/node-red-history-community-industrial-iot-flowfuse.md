@@ -25,9 +25,6 @@ For every new experiment at IBM's Emerging Technology lab, Nick found himself wr
 
 By early 2013, Nick had had enough. Over a single weekend, he built something different—a visual programming tool that would let him drag boxes and draw wires instead of writing endless integration code. No more boilerplate. No more repetitive plumbing. Just connect things and make them work.
 
-![IBM Emerging Technology Demo Lab showcasing multiple demonstrations built on Node-RED](./images/ibm-lab-node-red-demo.png){data-zoomable}
-_The IBM Emerging Technology Demo Lab - many of the demos were built on Node-RED_
-
 When he showed it to his colleague Dave Conway-Jones on Monday morning, Dave looked at the screen, thought for a moment, and said two words that would change everything: "Go on then."
 
 ![Nick O'Leary and Dave Conway-Jones, co-creators of Node-RED](./images/nick-and-dave.png){data-zoomable}
