@@ -120,35 +120,6 @@ Look for your IP address (typically starting with 192.168.x.x or 10.x.x.x)
 http://YOUR_ANDROID_IP:1880
 ```
 
-**Security Note:** Only do this on trusted networks. Consider adding authentication if exposing Node-RED to your network.
-
-## Common Issues and Solutions
-
-### Installation Fails
-
-If the installation fails, try:
-
-```bash
-pkg install nodejs-lts
-npm install -g --unsafe-perm node-red
-```
-
-### Cannot Access Editor
-
-- Ensure Node-RED is running in Termux
-- Check that you're using the correct URL: `http://127.0.0.1:1880`
-- Try restarting Node-RED
-
-### Out of Memory Errors
-
-If you encounter memory issues:
-
-```bash
-node-red --max-old-space-size=256
-```
-
-This limits Node.js memory usage to 256MB, suitable for most Android devices.
-
 ## Device Access
 
 You can get direct access to various hardware on the device by using the extra Termux device plugins - which can then be accessed via Node-RED using the `exec` node.
@@ -188,11 +159,3 @@ Running Node-RED on Android has some limitations:
 - Some nodes may not work due to Android/Termux limitations
 - Battery consumption can be significant for long-running instances
 - Background execution may be restricted by Android's power management
-
-## Updating Node-RED
-
-To update Node-RED to the latest version:
-
-```bash
-npm update -g node-red
-```
