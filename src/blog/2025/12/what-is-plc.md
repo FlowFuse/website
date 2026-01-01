@@ -6,7 +6,7 @@ date: 2025-12-26
 lastUpdate: 2025-12-29
 keywords: what is plc, programmable logic controller, history of plc, father of plc, plc inventor, plc communication, 
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/12/images/what-is-plc.png
 tags:
   - flowfuse
 meta:
