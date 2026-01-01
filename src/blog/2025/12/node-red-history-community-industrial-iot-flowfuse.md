@@ -134,7 +134,7 @@ That commitment extended to the ecosystem itself. Through the [Certified Nodes p
 
 Education and community came next. FlowFuse launched [Node-RED Academy](https://node-red-academy.learnworlds.com), the first official Node-RED Academy offering Node-RED certification, providing a clear path from learning flows to building production-ready systems. This was followed by major investment in [modernizing the Node-RED editor UI](https://discourse.nodered.org/t/node-red-survey-shaping-the-future-of-node-reds-user-experience/98346/95) through an open, community-driven process. The journey culminated in the Node-RED Conference, bringing together over 1,000 live attendees worldwide and transforming a distributed user base into a connected industrial community.
 
-Five years into its journey, FlowFuse stands as a rare example of open source scaling into industrial reality without losing its soul. What started as a way to operate Node-RED at scale is now a production platform deployed in some of the world's largest factories—increasingly taking on responsibilities once dominated by legacy industrial platforms like Kepware. It demonstrates that when community stewardship, engineering rigor, and long-term vision align, open source can form the backbone of modern industrial systems. 
+Five years into its journey, FlowFuse stands as a rare example of open source scaling into industrial reality without losing its soul. What started as a way to operate Node-RED at scale is now a production platform deployed in some of the world's largest factories—increasingly taking on responsibilities once dominated by legacy industrial platforms. It demonstrates that when community stewardship, engineering rigor, and long-term vision align, open source can form the backbone of modern industrial systems. 
 
 This vision has translated into explosive market adoption, with the company multiplying its annual recurring revenue and customer base by nearly 5x in the last year alone.
 
@@ -142,36 +142,34 @@ This vision has translated into explosive market adoption, with the company mult
 
 Node-RED won because it was simple when everyone else was complicated.
 
-The smart home industry sold subscriptions and proprietary hubs. Industrial automation sold certifications and consulting contracts. Both pretended that connecting systems was harder than it actually is.
+The smart home industry sold subscriptions and proprietary hubs. Industrial automation sold certifications and consulting contracts. Both pretended connecting systems required expertise only they could provide.
 
 Node-RED proved them wrong. Drag a box. Draw a line. Done.
 
-A homeowner connecting their thermostat to weather data is using the same concepts as an engineer connecting factory equipment to a data lake. Input. Logic. Output. The scale changes. The principles don't.
+The same principles work everywhere. A homeowner connecting a thermostat to weather data uses the exact concepts an engineer uses connecting factory equipment to a data lake. Input. Logic. Output. The scale changes. The principles don't.
 
-The visual interface removed the gatekeepers. You didn't need to understand APIs or write integration code. You could see the logic, understand it, and modify it—all on one screen. When both the factory floor worker and the IT manager can look at the same flow and understand what it does, you've eliminated the translation layer that created vendor dependency.
+The visual interface removed the gatekeepers. You didn't need to understand APIs or write integration code. You could see the logic, understand it, and modify it—all on one screen. When both the factory floor worker and the IT manager can look at the same flow and grasp what it does, you've eliminated the translation layer that created vendor dependency.
 
 ## Today and Tomorrow
 
-Today, Node-RED powers both worlds completely, and FlowFuse has made it enterprise-ready.
+Today, Node-RED spans from living rooms to factory floors. FlowFuse has made it enterprise-ready.
 
-Millions of homes still use Node-RED to make incompatible smart devices work together. But in industry, FlowFuse has transformed how thousands of factories deploy it—turning a powerful tool into production infrastructure with fleet management, enterprise security, and DevOps pipelines that Fortune 500 companies depend on.
+Home users still rely on Node-RED to make incompatible smart devices work together. But FlowFuse has transformed industrial adoption—turning a powerful tool into production infrastructure with fleet management, enterprise security, and DevOps pipelines that Fortune 500 companies trust.
 
-The scale is real. Manufacturing plants run FlowFuse across thousands of remote sites. Energy companies trust it for critical infrastructure monitoring. What started as visual programming for hobbyists now handles mission-critical operations where downtime costs millions per hour.
+The scale is substantial. Manufacturing plants run FlowFuse across thousands of remote sites. Energy companies depend on it for critical infrastructure monitoring. What started as visual programming for hobbyists now handles mission-critical operations where downtime costs millions per hour.
 
-And the momentum is accelerating. FlowFuse is pushing Node-RED into new territory—AI-powered flow generation, advanced analytics, and industrial IoT capabilities that didn't exist even two years ago. As AI reshapes manufacturing and operational technology, FlowFuse is positioning Node-RED at the center of that transformation.
+The momentum continues building. FlowFuse is pushing Node-RED into new territory—AI-powered flow generation, advanced analytics, and capabilities that didn't exist two years ago. As AI reshapes manufacturing and operations, Node-RED is positioned at the center of that transformation.
 
-The revolution that began in living rooms and reached factory floors isn't finished. With FlowFuse, it's entering its next phase.
+The revolution that began in living rooms and reached factory floors is entering its next phase.
 
-## A Final Note from Sumit Shinde
+## Final Note
 
-Writing this story reminded me why I fell in love with Node-RED. But the real story isn't in these words—it's unfolding right now in someone's garage project, on a factory floor halfway around the world, in a student's first "it works!" moment.
+Writing this reminded me why I fell in love with Node-RED. But the real story isn't in these words—it's unfolding right now in someone's garage, on a factory floor, in a student's first "it works!" moment.
 
-I've experienced Node-RED from both sides—first as a community member tinkering late into the night, now as part of the FlowFuse team. What amazes me most is the generosity that flows through this community. People don't just solve problems—they document them, share them, celebrate each other's wins. There's something beautiful about a space where curiosity matters more than credentials, where "I don't know, but let's figure it out together" is the standard response, and where kindness is the foundation.
+What amazes me most is the community's generosity. People don't just solve problems—they share them, celebrate each other's wins. Curiosity matters more than credentials. "I don't know, but let's figure it out together" is the standard response.
 
-That spirit—from Nick and Dave's first collaboration to the thousands contributing today—is what makes Node-RED feel like home.
+If this story touched you, please share it. Someone out there might need the reminder that the impossible is usually just the not-yet-possible.
 
-If this story touched you or reminded you why you love building things, please share it. Those buttons on the right connect to people who might need to read this today—someone stuck on a problem, someone considering their first flow, someone who needs to remember that the impossible is usually just the not-yet-possible.
+Thank you for reading, and happy New Year!
 
-Thank you for reading, and happy New Year! Here's to more connections, more creativity, and more "wait, I can actually do that!" moments.
-
-If you're facing the same scaling challenges that led to FlowFuse's creation, we'd love to hear your story—[reach out to us](/contact-us/).
+If you're facing scaling challenges that led to FlowFuse's creation, [reach out to us](/contact-us/).
