@@ -2,7 +2,7 @@
 title: "The Node-RED Story: How Visual Programming Escaped the Lab and Conquered Industry"
 subtitle: "From a single weekend hack to millions of deployments across homes and industry."
 description: "Read how Node-RED evolved from Nick O'Leary's weekend IBM project into a global phenomenon—powering millions of home assistance setups, sparking a Raspberry Pi revolution, building a 4,300+ node community, and conquering industrial IoT with FlowFuse's enterprise platform."
-date: 2025-12-01
+date: 2025-12-31
 authors: ["sumit-shinde"]
 image: 
 keywords:
@@ -54,7 +54,7 @@ The first external validation happened just a week after the GitHub release at t
 
 While the hardware community was the first to adopt it, the **London Node.js User Group (LNUG)** was where the project faced its first true technical trial. Standing before a room of seasoned JavaScript developers, Nick had a 30-minute slot to prove that Node-RED wasn't just a visual toy—it was a powerful tool built on the very event-driven architecture they loved. The talk was a massive success, generating immediate buzz across social media and solidifying Node-RED’s reputation within the developer community.
 
-<lite-youtube videoid="fBW9AnE_tV4" params="rel=0&start=1740" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="LNUG October 2013: Node-RED - Nick O'Leary"></lite-youtube>
+<lite-youtube videoid="CF7BGDj2_G8" params="rel=0&start=1740" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="LNUG October 2013: Node-RED - Nick O'Leary"></lite-youtube>
 
 ### The Big Stage: ThingMonk 2013
 
