@@ -23,7 +23,7 @@ You can run Node-RED on Android devices using Termux, a terminal emulator and Li
 
 ### 1. Install Termux
 
-Download and install Termux from [F-Droid](https://f-droid.org/packages/com.termux/). Note that the Google Play Store version is outdated and no longer maintained.
+Download and install Termux from [F-Droid](https://f-droid.org). Note that the Google Play Store version is outdated and no longer maintained.
 
 ***Note: Node-RED and FlowFuse are not affiliated with Termux or F-Droid. These are independent third-party applications that enable running Node-RED on Android devices. Use them at your own discretion.***
 
