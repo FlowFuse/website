@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Update Node-RED
-  order: 2
+  order: 3
   parent: Getting Started
 meta:
   title: How to Update Node-RED
