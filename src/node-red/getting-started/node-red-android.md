@@ -9,7 +9,7 @@ meta:
   keywords: node-red android, termux, android installation, mobile node-red
 ---
 
-# {{ meta.title }}
+# Installing Node-RED on Android
 
 You can run Node-RED on Android devices using Termux, a terminal emulator and Linux environment app. This guide walks you through the installation process and helps you get Node-RED running on your Android phone or tablet.
 
@@ -23,9 +23,11 @@ You can run Node-RED on Android devices using Termux, a terminal emulator and Li
 
 ### 1. Install Termux
 
-Download and install Termux from [F-Droid](https://f-droid.org). Note that the Google Play Store version is outdated and no longer maintained.
+Download and install Termux from [F-Droid](https://f-droid.org/packages/com.termux/). Note that the Google Play Store version is outdated and no longer maintained.
 
-***Note: Node-RED and FlowFuse are not affiliated with Termux or F-Droid. These are independent third-party applications that enable running Node-RED on Android devices. Use them at your own discretion.***
+**Important:** Do not install Termux from the Google Play Store. Use F-Droid instead.
+
+**Note:** Node-RED and FlowFuse are not affiliated with Termux or F-Droid. These are independent third-party applications that enable running Node-RED on Android devices. Use them at your own discretion.
 
 ### 2. Update Termux Packages
 
@@ -112,39 +114,13 @@ ifconfig
 
 Look for your IP address (typically starting with 192.168.x.x or 10.x.x.x)
 
-2. Start Node-RED with the `-a` flag to bind to all network interfaces:
-
-```bash
-node-red -a 0.0.0.0
-```
-
-3. Access Node-RED from another device using:
+2. Access Node-RED from another device using:
 
 ```
 http://YOUR_ANDROID_IP:1880
 ```
 
 **Security Note:** Only do this on trusted networks. Consider adding authentication if exposing Node-RED to your network.
-
-## Autostart Node-RED on Termux Launch
-
-To automatically start Node-RED when you open Termux:
-
-1. Create a `.bashrc` file:
-
-```bash
-nano ~/.bashrc
-```
-
-2. Add the following line:
-
-```bash
-node-red
-```
-
-3. Save and exit (Ctrl+X, then Y, then Enter)
-
-Now Node-RED will start automatically whenever you open Termux.
 
 ## Common Issues and Solutions
 
@@ -163,14 +139,6 @@ npm install -g --unsafe-perm node-red
 - Check that you're using the correct URL: `http://127.0.0.1:1880`
 - Try restarting Node-RED
 
-### Termux Closes and Stops Node-RED
-
-Android's battery optimization may kill Termux. To prevent this:
-
-1. Go to Android Settings → Apps → Termux
-2. Disable battery optimization for Termux
-3. Enable "Run in background" permission
-
 ### Out of Memory Errors
 
 If you encounter memory issues:
@@ -181,6 +149,37 @@ node-red --max-old-space-size=256
 
 This limits Node.js memory usage to 256MB, suitable for most Android devices.
 
+## Device Access
+
+You can get direct access to various hardware on the device by using the extra Termux device plugins - which can then be accessed via Node-RED using the `exec` node.
+
+Note: you need to install both the add-on app, and also the add-on API in Termux.
+
+1. Install add-on app - [Termux:API](https://f-droid.org/en/packages/com.termux.api/) from the same source you got Termux
+2. Install add-on access into Termux:
+
+```bash
+pkg install termux-api
+```
+
+3. Use the [node-red-contrib-termux-api](https://flows.nodered.org/node/node-red-contrib-termux-api) node to access device features like camera, GPS, sensors, and more
+
+Learn more about [how to use Termux API](https://wiki.termux.com/wiki/Termux:API).
+
+## Autostarting Node-RED
+
+The recommended way of starting applications running in Termux is using the [Termux:Boot](https://f-droid.org/en/packages/com.termux.boot/) application (available from F-Droid - note that the Play Store version may not be maintained, and it's recommended to use the same source that you installed Termux from).
+
+We have found this other app useful for autostarting Termux on boot - [Autostart - No Root](https://play.google.com/store/apps/details?id=com.autostart) (Note: with Termux:Boot, use of other autoboot apps does not seem to be required).
+
+Note that the shebang in the Node-RED script is incompatible with Termux:Boot scripts. The workaround is to start Node-RED using a Termux:Boot startup script like:
+
+```bash
+#!/data/data/com.termux/files/usr/bin/sh
+termux-wake-lock
+node /data/data/com.termux/files/usr/bin/node-red
+```
+
 ## Limitations
 
 Running Node-RED on Android has some limitations:
@@ -189,3 +188,11 @@ Running Node-RED on Android has some limitations:
 - Some nodes may not work due to Android/Termux limitations
 - Battery consumption can be significant for long-running instances
 - Background execution may be restricted by Android's power management
+
+## Updating Node-RED
+
+To update Node-RED to the latest version:
+
+```bash
+npm update -g node-red
+```
