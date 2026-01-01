@@ -9,7 +9,7 @@ meta:
   keywords: node-red android, termux, android installation, mobile node-red
 ---
 
-# Installing Node-RED on Android
+# {{ meta.title }}
 
 You can run Node-RED on Android devices using Termux, a terminal emulator and Linux environment app. This guide walks you through the installation process and helps you get Node-RED running on your Android phone or tablet.
 
