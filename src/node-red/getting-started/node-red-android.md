@@ -118,7 +118,7 @@ You can get direct access to various hardware on the device by using the extra T
 
 Note: you need to install both the add-on app, and also the add-on API in Termux.
 
-1. Install add-on app - [Termux:API](https://f-droid.org/en/packages/com.termux.api/) from the same source you got Termux
+1. Install add-on app - Termux:API from the same source you got Termux
 2. Install add-on access into Termux:
 
 ```bash
