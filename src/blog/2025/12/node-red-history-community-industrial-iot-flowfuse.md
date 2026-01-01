@@ -11,7 +11,7 @@ tags:
  - node-red
 ---
 
-In late 2011, Nick O'Leary (one of the “computer geeks” recognized by Prince Charles many years earlier) was a “plumber” of the digital age. As part of IBM's Emerging Technology Group, he had just showcased a mind-controlled taxi on the [BBC’s Bang Goes the Theory](https://knolleary.net/2010/04/22/how-i-got-onto-prime-time-bbc-one/). It was a feat of engineering—but the back-end “wiring” required to make brainwaves talk to car pedals was grueling, manual work.
+In late 2011, Nick O'Leary (one of the "computer geeks" recognized by Prince Charles many years earlier) was a "plumber" of the digital age. As part of IBM's Emerging Technology Group, he had just showcased a mind-controlled taxi on the [BBC's Bang Goes the Theory](https://knolleary.net/2010/04/22/how-i-got-onto-prime-time-bbc-one/). It was a feat of engineering—but the back-end "wiring" required to make brainwaves talk to car pedals was grueling, manual work.
 
 <!--more-->
 
@@ -30,6 +30,8 @@ When he showed it to his colleague Dave Conway-Jones on Monday morning, Dave loo
 ![Nick O'Leary and Dave Conway-Jones, co-creators of Node-RED](./images/nick-and-dave.png){data-zoomable}
 _Nick and Dave_
 
+Those two words meant everything. Dave didn't just approve—he joined in. Together, they started refining the tool, adding features, testing it on real IBM projects. What began as Nick's weekend hack became their shared mission. Within weeks, they had transformed a rough prototype into something that actually worked in production. The tool that was supposed to save Nick time on one project was now saving their entire team hours every week.
+
 Node-RED offered something different: freedom. Drag boxes. Connect wires. Make anything talk to anything. No permission required.
 
 ![Early version of Node-RED interface showing visual flow-based programming with connected nodes](./images/early-node-red-screenshot.png){data-zoomable}
@@ -47,10 +49,14 @@ The buzz didn't stop there. Nick and Node-RED appeared in numerous interviews, p
 
 ## The Explosion: The Raspberry Pi Milestone
 
-By November 2015, Node-RED was officially integrated into the Raspbian Jessie image, marking its transition from a manual install to a core component of the Raspberry Pi ecosystem. The [announcement was made by Simon Long](https://www.raspberrypi.com/news/latest-raspbian-update/), the Raspberry Pi Foundation’s UX Engineer, who detailed the update in a blog post on December 2, 2015. This milestone meant that millions of $35 computers suddenly shipped with a visual programming tool built specifically for the "Internet of Things," sitting prominently in the application menu alongside educational staples like Scratch and Python.
+By November 2015, Node-RED was officially integrated into the Raspbian Jessie image, marking its transition from a manual install to a core component of the Raspberry Pi ecosystem. The [announcement was made by Simon Long](https://www.raspberrypi.com/news/latest-raspbian-update/), the Raspberry Pi Foundation's UX Engineer, who detailed the update in a blog post on December 2, 2015. This milestone meant that millions of $35 computers suddenly shipped with a visual programming tool built specifically for the "Internet of Things," sitting prominently in the application menu alongside educational staples like Scratch and Python.
 
 ![Screenshot of the Raspbian Jessie desktop menu showing Node-RED included by default with Scratch and Python on Raspberry Pi](./images/node-red-on-pi.jpg){data-zoomable}
 _Screenshot of the Raspbian Jessie desktop menu showing Node-RED included by default with Scratch and Python on Raspberry Pi_
+
+The impact was immediate and massive. Students learning to code on Raspberry Pi discovered Node-RED next to Python. Hobbyists building weekend projects found it pre-installed. Educators teaching IoT concepts had a visual tool ready to use. What had required hunting through forums and installation guides was now just a click away in the menu. The barrier to entry dropped to zero, and the community exploded.
+
+Within months, Node-RED flows for Raspberry Pi projects flooded online forums. Home automation guides assumed you had it installed. The "install Node-RED" step disappeared from tutorials—it was just there. This wasn't just about convenience. It was about legitimacy. Being bundled with Scratch and Python signaled that Node-RED wasn't a niche hack—it was essential infrastructure for the IoT era.
 
 ## A Home for the Future: The OpenJS Foundation
 
@@ -58,19 +64,23 @@ By 2016, Node-RED had outgrown its "side project" status at IBM. To ensure the t
 
 This was a pivotal moment for industrial adoption. By moving the project to a neutral foundation, Node-RED was no longer just an "IBM tool"—it became a public utility. Large-scale industrial players like Hitachi and Siemens could now contribute to the code and build their own products on top of it without fear of "vendor lock-in." It signaled that Node-RED was a stable, world-class piece of software infrastructure, governed by the same community standards as jQuery and Node.js.
 
+The foundation move unlocked something crucial: trust at scale. When a Fortune 500 manufacturer evaluates tools, vendor neutrality isn't optional—it's mandatory. The OpenJS Foundation gave Node-RED the governance structure, intellectual property protections, and community oversight that enterprises require. Companies that would never bet their production lines on an IBM internal tool could now build on Node-RED with confidence. The path from hobbyist workshops to factory floors was open.
+
 ## The Community Takes Over
 
 The community didn't just use Node-RED—they built it. By 2023, the library contained over 4,300 nodes. Every new smart device gets a Node-RED node within weeks. Every protocol got wrapped. Forums filled with shared flows. Someone in Germany would solve a lighting problem at 2 AM, share the solution, and someone in California would adapt it for their garage door an hour later.
 
-This wasn’t just a user base—it was a movement. Makers, hobbyists, and tinkerers around the world were solving problems and sharing solutions freely. The barrier to contribution was low—anyone could create a node and publish it. The barrier to adoption was even lower—anyone could install a node with a single click.
+This wasn't just a user base—it was a movement. Makers, hobbyists, and tinkerers around the world were solving problems and sharing solutions freely. The barrier to contribution was low—anyone could create a node and publish it. The barrier to adoption was even lower—anyone could install a node with a single click.
 
-The community’s creativity extended across domains. Nodes were built for popular platforms, industrial protocols, cloud services, databases, messaging systems, AI services, and thousands of integrations beyond. If a technology existed, someone had already made it work in Node-RED.
+The community's creativity extended across domains. Nodes were built for popular platforms, industrial protocols, cloud services, databases, messaging systems, AI services, and thousands of integrations beyond. If a technology existed, someone had already made it work in Node-RED.
 
-And movements don't stay contained. This one was about to reach factory floors, power plants, and industrial control rooms worldwide.
+But something unexpected was happening beneath the surface. While the community shared home automation flows in forums, engineers in factories were quietly watching. They saw the same drag-and-drop simplicity that connected smart lights could connect production equipment. They saw the protocol-agnostic approach that worked for hobbyists could work for industrial systems. They saw a tool that both IT and operations teams could actually understand.
+
+The movement that began in living rooms was about to reach factory floors.
 
 ## The Bridge Nobody Planned
 
-The movement unexpectedly reached Hitachi's factory floors. Node-RED emerged as a crucial communication tool bridging the gap between IT and factory engineers. Its intuitive interface allowed the entire flow to be visible on screen, facilitating discussions and collaborative efforts seamlessly.
+The movement reached Hitachi's factory floors in a way nobody anticipated. Node-RED emerged as a crucial communication tool bridging the gap between IT and factory engineers. Its intuitive interface allowed the entire flow to be visible on screen, facilitating discussions and collaborative efforts seamlessly.
 
 For decades, IT and OT spoke different languages. IT managed databases and networks. OT ran machines and production lines. They needed each other but couldn't understand each other. Node-RED gave them a shared vocabulary—visual flows that both sides could read.
 
@@ -101,13 +111,13 @@ Together, they have raised $14.5 million to build the infrastructure enterprises
 
 Between 2021 and 2025, FlowFuse evolved into a full industrial ecosystem through deliberate focus on operational maturity. The journey began with team collaboration and scaling—introducing version control, team permissions, and DevOps pipelines that let engineering teams work together on flows like software projects, then deploy updates across thousands of remote Node-RED instances with discipline. With collaboration and scale established, the focus shifted to enterprise security, adding SSO, RBAC, and SOC 2 compliance to meet strict governance requirements. Next came infrastructure independence, integrating a built-in MQTT broker and FlowFuse Tables to reduce reliance on external services. By 2025, as AI began reshaping industry, FlowFuse entered the intelligence era with AI assistance, MCP nodes, and FlowFuse Expert—an AI copilot that converts plain-English industrial problems directly into working Node-RED flows.
 
-FlowFuse’s mission went beyond enterprise features. It invested continuously in Node-RED core development and community sustainability. When the original [Node-RED Dashboard was deprecated](https://discourse.nodered.org/t/announcement-node-red-dashboard-v1-deprecation-notice/89006/2), FlowFuse rebuilt [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com) from the ground up.
+FlowFuse's mission went beyond enterprise features. It invested continuously in Node-RED core development and community sustainability. When the original [Node-RED Dashboard was deprecated](https://discourse.nodered.org/t/announcement-node-red-dashboard-v1-deprecation-notice/89006/2), FlowFuse rebuilt [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com) from the ground up.
 
 That commitment extended to the ecosystem itself. Through the [Certified Nodes program](/blog/2025/07/certified-nodes-v2/), FlowFuse identifies critical community nodes and subjects them to rigorous security and quality testing. To ensure long-term reliability, FlowFuse supports maintainers financially or assumes maintenance responsibility—an approach aligned with the expectations of large industrial organizations.
 
 Education and community came next. FlowFuse launched [Node-RED Academy](https://node-red-academy.learnworlds.com), the first official Node-RED Academy offering Node-RED certification, providing a clear path from learning flows to building production-ready systems. This was followed by major investment in [modernizing the Node-RED editor UI](https://discourse.nodered.org/t/node-red-survey-shaping-the-future-of-node-reds-user-experience/98346/95) through an open, community-driven process. The journey culminated in the Node-RED Conference, bringing together over 1,000 live attendees worldwide and transforming a distributed user base into a connected industrial community.
 
-Five years into its journey, FlowFuse stands as a rare example of open source scaling into industrial reality without losing its soul. What started as a way to operate Node-RED at scale is now a production platform deployed in some of the world’s largest factories—increasingly taking on responsibilities once dominated by legacy industrial platforms like Kepware. It demonstrates that when community stewardship, engineering rigor, and long-term vision align, open source can form the backbone of modern industrial systems. 
+Five years into its journey, FlowFuse stands as a rare example of open source scaling into industrial reality without losing its soul. What started as a way to operate Node-RED at scale is now a production platform deployed in some of the world's largest factories—increasingly taking on responsibilities once dominated by legacy industrial platforms like Kepware. It demonstrates that when community stewardship, engineering rigor, and long-term vision align, open source can form the backbone of modern industrial systems. 
 
 This vision has translated into explosive market adoption, with the company multiplying its annual recurring revenue and customer base by nearly 5x in the last year alone.
 
@@ -137,10 +147,14 @@ The revolution that began in living rooms and reached factory floors isn't finis
 
 ## A Final Note from Sumit Shinde
 
-Writing this article, I realized I’ve only scratched the surface. While I’ve covered the major milestones, the true story isn't just in the code—it’s written every day by thousands of community members who solve flow puzzles, share solutions, and champion Node-RED.
+Writing this story reminded me why I fell in love with Node-RED. But the real story isn't in these words—it's unfolding right now in someone's garage project, on a factory floor halfway around the world, in a student's first "it works!" moment.
 
-Having a foot in both worlds—as a long-time community member and a FlowFuse team member—I’ve seen a side of this movement that many don’t. It is an environment that truly encourages people to speak up, share their thoughts, learn, innovate, and lead with kindness.
+I've experienced Node-RED from both sides—first as a community member tinkering late into the night, now as part of the FlowFuse team. What amazes me most is the generosity that flows through this community. People don't just solve problems—they document them, share them, celebrate each other's wins. There's something beautiful about a space where curiosity matters more than credentials, where "I don't know, but let's figure it out together" is the standard response, and where kindness is the foundation.
 
-And on that note, I’ll wrap it up here, happy New Year!
+That spirit—from Nick and Dave's first collaboration to the thousands contributing today—is what makes Node-RED feel like home.
 
-If you're facing the same scaling challenges that led to FlowFuse's creation, learn how others solved them by [contacting us](/contact-us/)
+If this story touched you or reminded you why you love building things, please share it. Those buttons on the right connect to people who might need to read this today—someone stuck on a problem, someone considering their first flow, someone who needs to remember that the impossible is usually just the not-yet-possible.
+
+Thank you for reading, and happy New Year! Here's to more connections, more creativity, and more "wait, I can actually do that!" moments.
+
+If you're facing the same scaling challenges that led to FlowFuse's creation, we'd love to hear your story—[reach out to us](/contact-us/).
