@@ -9,7 +9,7 @@ meta:
   keywords: node-red android, termux, android installation, mobile node-red
 ---
 
-# Installing Node-RED on Android
+# {{ meta.title }}
 
 You can run Node-RED on Android devices using Termux, a terminal emulator and Linux environment app. This guide walks you through the installation process and helps you get Node-RED running on your Android phone or tablet.
 
@@ -24,8 +24,6 @@ You can run Node-RED on Android devices using Termux, a terminal emulator and Li
 ### 1. Install Termux
 
 Download and install Termux from [F-Droid](https://f-droid.org/packages/com.termux/). Note that the Google Play Store version is outdated and no longer maintained.
-
-**Important:** Do not install Termux from the Google Play Store. Use F-Droid instead.
 
 **Note:** Node-RED and FlowFuse are not affiliated with Termux or F-Droid. These are independent third-party applications that enable running Node-RED on Android devices. Use them at your own discretion.
 
@@ -88,20 +86,6 @@ http://127.0.0.1:1880
 
 You should see the Node-RED editor interface.
 
-## Running Node-RED in the Background
-
-To keep Node-RED running when you close Termux, you can use `nohup`:
-
-```bash
-nohup node-red &
-```
-
-To stop Node-RED when running in the background:
-
-```bash
-pkill -f node-red
-```
-
 ## Accessing Node-RED from Other Devices
 
 To access Node-RED from other devices on your local network:
@@ -120,6 +104,14 @@ Look for your IP address (typically starting with 192.168.x.x or 10.x.x.x)
 http://YOUR_ANDROID_IP:1880
 ```
 
+## Security Considerations
+
+**Important:** By default, Node-RED runs without any authentication or encryption. This means anyone who can access the editor URL can view and modify your flows.
+
+Before accessing Node-RED from other devices on your network, make sure to secure your installation by enabling authentication and following security best practices.
+
+For detailed instructions on securing Node-RED, including enabling authentication, HTTPS, and other security features, refer to the official [Node-RED Security documentation](https://nodered.org/docs/user-guide/runtime/securing-node-red).
+
 ## Device Access
 
 You can get direct access to various hardware on the device by using the extra Termux device plugins - which can then be accessed via Node-RED using the `exec` node.
@@ -136,20 +128,6 @@ pkg install termux-api
 3. Use the [node-red-contrib-termux-api](https://flows.nodered.org/node/node-red-contrib-termux-api) node to access device features like camera, GPS, sensors, and more
 
 Learn more about [how to use Termux API](https://wiki.termux.com/wiki/Termux:API).
-
-## Autostarting Node-RED
-
-The recommended way of starting applications running in Termux is using the [Termux:Boot](https://f-droid.org/en/packages/com.termux.boot/) application (available from F-Droid - note that the Play Store version may not be maintained, and it's recommended to use the same source that you installed Termux from).
-
-We have found this other app useful for autostarting Termux on boot - [Autostart - No Root](https://play.google.com/store/apps/details?id=com.autostart) (Note: with Termux:Boot, use of other autoboot apps does not seem to be required).
-
-Note that the shebang in the Node-RED script is incompatible with Termux:Boot scripts. The workaround is to start Node-RED using a Termux:Boot startup script like:
-
-```bash
-#!/data/data/com.termux/files/usr/bin/sh
-termux-wake-lock
-node /data/data/com.termux/files/usr/bin/node-red
-```
 
 ## Limitations
 
