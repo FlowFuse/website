@@ -1,6 +1,6 @@
 ---
 title: "Integrating Git within Node-RED Workflow with FlowFuse"
-subtitle: ""
+subtitle: "How FlowFuse connects Node-RED pipelines with Git for traceable, production-grade workflows"
 description: "Learn how to integrate Git version control into your Node-RED workflows using FlowFuse's DevOps pipeline stages for better collaboration and change management."
 date: 2026-01-02
 keywords: node-red, git, version-control, flowfuse, github, devops
@@ -11,6 +11,8 @@ tags:
 ---
 
 If you've been using Node-RED in production, you already know the pain points. Flows get complex. Teams grow. Someone makes a change that breaks production at 2 AM. You need to roll back, but which version was working? Who approved this deployment? How do you keep your dev environment in sync with production?
+
+<!--more-->
 
 Traditional Node-RED doesn't have answers to these questions. But modern software development solved these problems decades ago with version control, DevOps pipelines, and automated deployments.
 
