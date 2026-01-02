@@ -115,7 +115,7 @@ This is where it comes together. You'll configure a pipeline stage to push snaps
 6. Give the stage a name
 7. Select the token you created earlier
 8. Enter your repository URL (e.g., `https://github.com/your-username/nodered-flows.git`)
-9. Enter the snapshot file name (e.g., `flow.json`). This is the name your flows will be saved as in the Git repository. When pulling changes back from Git, you must enter the exact same file name that exists in your repository to retrieve the correct flows.
+9. Enter the snapshot file name (e.g., `flow.json`). Leaving this blank will use the original snapshot name. This is the name your flows will be saved as in the Git repository. When pulling changes back from Git, you must enter the exact same file name that exists in your repository to retrieve the correct flows.
 10. Specify a branch name for pushing changes (like `main`). Make sure the branch already exists in your repository.
 11. Optionally, specify a branch name for pulling changes (like `main`). Make sure the branch already exists in your repository.
 12. Enter a secret credential key. This can be any strong passphrase. You'll need to re-enter it when pulling changes through the DevOps pipeline in FlowFuse.
