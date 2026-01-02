@@ -119,7 +119,7 @@ This is where it comes together. You'll configure a pipeline stage to push snaps
 ![Screenshot showing the Git Repository stage configuration with fields for stage name, token, repository URL, and branch names](./images/git-stage-adding.png){data-zoomable}
 _Configuring a Git Repository stage in a DevOps pipeline_
 
-12. Click **Add Stage**
+13. Click **Add Stage**
 
 ![Screenshot showing a DevOps pipeline with multiple stages including a Git repository stage successfully added](./images/dev-pipeline.png){data-zoomable}
 _DevOps pipeline with Git repository stage added_
