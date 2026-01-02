@@ -5,7 +5,7 @@ description: "Learn the five Whys root cause analysis method in 2026: step-by-st
 date: 2025-12-22
 lastUpdated: 2025-12-23
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/12/images/five-whys-analysis.png
 keywords: 
 tags:
   - flowfuse

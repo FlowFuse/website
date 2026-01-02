@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: String
-  order: 5
+  order: 6
   parent: Getting Started
 meta:
   title: "Strings in Node-RED: Convert String to Number, Split, Concatenate, Trim, and More"
