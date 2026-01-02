@@ -14,33 +14,27 @@ If you've been using Node-RED in production, you already know the pain points. F
 
 <!--more-->
 
-Traditional Node-RED doesn't have answers to these questions. But modern software development solved these problems decades ago with version control, DevOps pipelines, and automated deployments.
+Traditional Node-RED doesn't have answers to these questions. But modern software development solved these problems decades ago with version control and DevOps pipelines.
 
 That's the gap FlowFuse fills.
 
 ## FlowFuse: DevOps for Node-RED
 
-FlowFuse is a platform built specifically for running Node-RED at scale. It handles deployment, management, security, and collaboration so you can focus on building flows instead of managing infrastructure.
+FlowFuse is a platform built specifically for running Node-RED at scale. It handles deployment, management, security, team collaboration, and more so you can focus on building flows instead of managing infrastructure.
 
 Every FlowFuse instance automatically captures snapshots of your flows as you work. These snapshots let you track changes over time and roll back when needed. You can also create manual snapshots to mark important milestones.
 
 The real power comes from DevOps pipeline stages. You set up stages like development, staging, and production, then push snapshots through them. Make changes in dev, test in staging, promote to production. Everything's tracked and auditable.
 
-This works great for most teams. But our customers kept asking for one more thing.
-
 ## Why Git Integration Matters
 
-Our customers were clear about what they needed: their Node-RED workflows had to fit into their existing Git-based infrastructure. Their CI/CD pipelines run on Git commits. Their backup systems rely on Git repositories. Their compliance tools track changes through Git history. FlowFuse's snapshots and pipelines were powerful, but they needed those flows in Git too.
+We realized that many organizations already use Git as their central version control system. Their CI/CD pipelines run on Git commits. Their backup systems rely on Git repositories. Their compliance tools track changes through Git history too. To fit seamlessly into these existing workflows, Node-RED flows needed to be in Git too.
 
-So we built it. FlowFuse pipeline stages now connect directly to Git repositories—GitHub, GitLab, Bitbucket, or whatever you use. Push your snapshots to Git and pull changes back when you need them.
+That's why we built Git integration for FlowFuse. FlowFuse pipeline stages now connect directly to Git repositories. Push your snapshots to Git and pull changes back when you need them.
 
-Here's what this gives you:
+**Note:** Git integration currently supports GitHub repositories.
 
-**Backup and disaster recovery**: Your flows are version-controlled in Git, backed up wherever you store your repositories. Lose a FlowFuse instance? Your flows are safe in Git.
-
-**Audit trail**: Every change gets a Git commit with a message, timestamp, and author. Your compliance team gets the immutable history they need.
-
-**Centralized visibility**: Developers, ops teams, and managers can all see flow changes in the same Git repository where your application code lives.
+Git integration brings several key advantages. Your flows are backed up in Git repositories alongside your other code, so if an instance is accidentally deleted, your flows remain safe and recoverable. For some companies, having all code assets version-controlled in Git repositories is a compliance requirement they must meet.
 
 Git integration works alongside FlowFuse's DevOps features—snapshots, pipelines, rollbacks—giving you the full power of both systems.
 
@@ -52,7 +46,7 @@ Let's walk through connecting your FlowFuse instances to a Git repository.
 
 Before you begin, make sure you have:
 
-- **FlowFuse Team Account**: Git integration is available exclusively to FlowFuse Team and Enterprise users. If you don't have a Team account, visit the [FlowFuse pricing page](/pricing) or contact sales@flowfuse.com to upgrade.
+- **FlowFuse Team Account**: Git integration is available exclusively to FlowFuse Team and Enterprise users. If you don't have a Team account, visit the [FlowFuse pricing page](/pricing) or contact [sales@flowfuse.com](sales@flowfuse.com) to upgrade.
 
 - **GitHub Account**: You'll need a GitHub account with permission to create repositories and generate personal access tokens.
 
@@ -161,4 +155,4 @@ This bidirectional workflow solves several common challenges. Teams can commit f
 
 FlowFuse simplifies everything about running Node-RED at scale—deployment, security, scaling, and team management. Git integration bridges the gap between FlowFuse's DevOps features and your existing development infrastructure. Your flows stay version-controlled, your team stays synchronized, and your operations stay simple.
 
-Want to see how FlowFuse makes Node-RED production-ready? [Book a demo](/book-demo/) and we'll walk you through it.
+Want to see how FlowFuse makes Node-RED production-ready? [Book a demo](/book-demo/) and we'll walk you through the entire platform and all its features.
