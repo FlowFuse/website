@@ -25,8 +25,9 @@ customer expansion, and customer success. This includes:
 | Role | Contributors |
 |------|--------------|
 | CEO  | [ZJ van de Weg](/team#zeger-jan-van-de-weg) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
-| GTM | [Michael Davis](/team#michael-davis) [@MichaelBDavis](https://github.com/MichaelBDavis) |
-| Sales | [Omar Ahmed](/team#omar-ahmed) [@omarazizahmed](https://github.com/omarazizahmed) | [Kasheef Mohammed](/team#kasheef-mohammed) [@Kasheef](https://github.com/Kasheef13) |
+| VP of Sales | [Michael Davis](/team#michael-davis) [@MichaelBDavis](https://github.com/MichaelBDavis) |
+| AE | [Omar Ahmed](/team#omar-ahmed) [@omarazizahmed](https://github.com/omarazizahmed) | 
+| AE |[Kasheef Mohammed](/team#kasheef-mohammed) [@Kasheef](https://github.com/Kasheef13) |
 | CSM | [Esmé Wieringa](/team#esme-wieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
 
 ## Contact us
@@ -37,7 +38,7 @@ Questions can be asked in the [#dept-sales](https://flowforgeworkspace.slack.com
 
  - [Sales Team Operating Principples](./operating-principles.md)
  - [Demo](./meetings/demo.md)
- - [Sales Deck](https://docs.google.com/presentation/d/13r9pRNikgEgkim9M9UuyhT2Xvr3aA7FK9rHhICIINDI/)
+ - [Sales Deck](https://docs.google.com/presentation/d/1aK87jBFXP9ElvJz_b2U_sBmQqpqFD5ddCyjeuVVnnVs/)
  - [Engagements & Pricing](./engagements.md)
  - [Deal Board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/board)
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
