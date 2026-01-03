@@ -6,7 +6,7 @@ navTitle: Engagements & Pricing
 
 Pricing is publicly available at [our pricing page](/pricing/). When discussing
 pricing with enterprise customers, make a copy of
-[our internal pricing template deck](https://docs.google.com/presentation/d/1imkh98wth0naYhXfTEXEXPJAIy2pK3HPvWQ1BsujipY/)
+[our internal pricing template deck](https://docs.google.com/presentation/d/1kaW6aZxpnCaVuQVdVsi0RTulhRMbeqglhZHkzSP-2kM/)
 to discuss.
 
 ## Creating a Deal
