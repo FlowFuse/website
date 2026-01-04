@@ -424,6 +424,14 @@ video, iframe {
 h1,h2,h3,h4 {
     position: relative;
 }
+a.header-anchor {
+    text-decoration: none !important;
+    color: var(--tw-prose-headings);
+    font-weight: 400
+}
+a.header-anchor:hover {
+    text-decoration: inherit !important;
+}
 .header-anchor::before {
     content: '#';
     display: none;
@@ -538,20 +546,12 @@ h4:hover .header-anchor::before {
     width: 100%;
 }
 
-.ff-image-contain.ai {
-    position: relative;
-}
-
-.ff-image-contain.ai img,
-.ff-image-contain.ai picture {
-    position: absolute;
-    top: 0;
-    right: 0;
-    object-fit: contain;
-    object-position: right center;
-    height: 100%;
+.ff-image-contain.right img,
+.ff-image-contain.right picture {
+    object-position: right;
     width: auto;
-    max-width: 50%; /* Ocupa máximo el 50% del ancho */
+    height: 100%;
+    @apply border-4 border-red-600;
 }
 
 .ff-image-cover {
