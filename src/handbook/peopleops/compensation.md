@@ -12,6 +12,21 @@ determination during the hiring process. FlowFuse typically pays in the local
 currency, unless there are explicit discussions stating otherwise, taking
 into account location and company context.
 
+## Pay Frequency
+
+FlowFuse uses different pay schedules depending on the employee's region. This ensures payroll, taxation, and benefits deductions follow local standards.
+
+### United States
+Employees in the United States are paid **semi-monthly**, meaning **twice per month** for a total of **24 pay periods per year**.
+
+### Europe
+Employees in Europe are paid **monthly**, on a schedule aligned with local payroll requirements.
+
+### Canada
+Pay frequency for Canadian employees is managed through Deel and may vary depending on provincial requirements. Team members in Canada should refer to Deel for the most current information.
+
+All payroll deductions—including taxes, retirement contributions, and voluntary benefit premiums—are taken according to the employee’s regional pay schedule.
+
 ## Compensation Increase Cycle
 
 FlowFuse follows a single-point increase cycle for salary adjustments. These
@@ -139,5 +154,4 @@ For US Employees who choose not to participate in the health insurance provided 
 
 ##### Canada
 
-For employees located in the Canada, FlowFuse offer health insurance coverage through Deel, since this changes regularly, please see Deel for accurate information.
-
+For employees located in Canada, FlowFuse hires through Deel as Employer of Record (EOR), with benefits that may change over time. Canadian employees currently receive Manulife Bronze health coverage and a Wealthsimple pension; for the most up-to-date details, please refer to Deel.

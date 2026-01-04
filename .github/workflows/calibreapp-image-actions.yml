@@ -16,7 +16,7 @@ jobs:
     if: github.repository == 'FlowFuse/website' && github.event.pull_request.head.repo.full_name == github.repository
     steps:
       - name: Checkout Branch
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Compress Images
         id: calibre
         uses: calibreapp/image-actions@f32575787d333b0579f0b7d506ff03be63a669d1 # 1.4.1
@@ -24,4 +24,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # For non-Pull Requests, run in compressOnly mode and we'll PR after.
           compressOnly: ${{ github.event_name != 'pull_request' }}
-          pngQuality: '80'
+          pngQuality: '100'

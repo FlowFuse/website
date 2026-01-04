@@ -52,7 +52,7 @@
         "seedrandom": "^3.0.5",
         "should": "^13.2.3",
         "spacetime": "^7.4.7",
-        "tailwindcss": "^3.4.16",
+        "tailwindcss": "^3.4.19",
         "terser": "^5.9.0",
         "vanilla-cookieconsent": "^3.0.0",
         "xpath": "^0.0.32"
@@ -61,13 +61,12 @@
         "@11ty/eleventy-fetch": "^4.0.0",
         "@flowfuse/flow-renderer": "^0.5.0",
         "@netlify/blobs": "^10.3.0",
-        "@quasibit/eleventy-plugin-schema": "^1.11.0",
         "@xmldom/xmldom": "^0.8.10",
         "codeowners": "^5.1.1",
         "eleventy-plugin-toc": "^1.1.5",
         "js-yaml": "^4.1.1",
         "markdown-it-attrs": "^4.1.6",
-        "netlify-cli": "^23.9.5",
+        "netlify-cli": "^23.12.2",
         "xml-js": "^1.6.11"
     }
 }

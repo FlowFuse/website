@@ -1,11 +1,13 @@
 ---
-title: "Building Your Node-RED Industrial MCP Server with FlowFuse"
+title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED with FlowFuse, enabling AI agents like Claude, Gemini, and GPT to access data, perform actions, and streamline industrial operations using a low-code approach."
 date: 2025-10-14
+lastUpdated: 2025-12-18
 authors: ["sumit-shinde"]
-image: /blog/2025/10/images/building-mcp-server-node-red.png
+image: /blog/2025/10/images/building-mcp-server-node-red-with-ff.png
 keywords: Node-RED MCP Server, Node-RED AI, Model Context Protocol, AI agents within Node-RED
+video: troUvaF8V68
 tags:
   - flowfuse
   - AI
@@ -37,9 +39,11 @@ This section guides you through setting up an MCP server, defining resources, an
 
 Before you begin, ensure you have the following:
 
-* **A running FlowFuse instance.** If you do not have one, a 14-day free trial is available. [Sign up now](https://app.flowfuse.com/account/create) to set up your instance quickly and get started.
+* **A running FlowFuse Enterprise instance.** If you do not have one, [contact us](/contact-us/) to discuss Enterprise options and get started.
 
-* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed** in your Node-RED palette. These nodes are available on all FlowFuse tiers.
+* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed** in your Node-RED palette.
+
+> **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are only available on the Enterprise tier.
 
 ### Configuring the MCP Server
 

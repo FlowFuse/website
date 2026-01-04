@@ -37,7 +37,7 @@ We will begin by monitoring a single device, such as a Raspberry Pi, collecting 
 
 Before you begin, ensure you have the following:
 
-1. **Running Node-RED Instance:** You need a running Node-RED instance on the device you want to monitor. The easiest way to set this up is with the [FlowFuse Device Agent](/product/device-agent/), which provides secure remote access, real-time collaboration, snapshots for quick recovery, DevOps tools, and device group management. With it, you can push updates to multiple devices with a single click.  
+1. **Running Node-RED Instance:** You need a running Node-RED instance on the device you want to monitor. The easiest way to set this up is with the [FlowFuse Device Agent](/platform/device-agent/), which provides secure remote access, real-time collaboration, snapshots for quick recovery, DevOps tools, and device group management. With it, you can push updates to multiple devices with a single click.  
 
 For a step-by-step installation guide, refer to the [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/).  
 

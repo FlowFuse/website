@@ -8,10 +8,21 @@ meta:
   keywords: how to filter data in node-red, how to map array in node-red, how to map data in node-red, how to sort data in node-red, how to reduce data in node-red, data transformation in node-red
 image: /node-red/getting-started/images/filtering-mapping-sorting-reducing-with-node-red.png
 ---
-   
-[Node-RED](/node-red/) is a visual programming platform known for its user-friendly interface and low-code approach widely used for IoT application developement. In IoT applications, efficient data processing is crucial, and operations such as filter, map, sort, and reduce are essential for simplifying data transformations. However, many users struggle to implement these operations while sticking to a low-code approach, often relying on function nodes, which can introduce unnecessary complexity. In this guide, we will show you how to filter, map, sort, and reduce data with Node-RED for efficient data tranformation while sticking to low-code approach.
 
-<!--more-->
+# {{meta.title}}
+
+Data transformation is at the heart of most Node-RED applications, whether you're processing IoT sensor readings, cleaning API responses, or preparing data for visualization. While you could write JavaScript functions to handle these operations, Node-RED's visual, low-code approach offers a more maintainable and accessible alternative that anyone on your team can understand and modify.
+
+This guide demonstrates how to perform four fundamental data operations—filtering, mapping, sorting, and reducing—using Node-RED's built-in nodes instead of custom code. Through a practical example of processing temperature sensor data, you'll learn to:
+
+- Transform data values (converting Kelvin to Celsius)
+- Filter datasets by specific criteria (selecting date ranges)
+- Sort data chronologically or by any field
+- Aggregate values to calculate metrics like averages
+
+The low-code techniques covered here not only accelerate development but also make your Node-RED flows more transparent and easier to maintain. When your entire team can read and modify data transformations visually, collaboration becomes simpler and debugging becomes faster.
+
+Let's explore why mastering these data operations matters and how Node-RED makes them straightforward.
 
 ## What is Low-Code
 
