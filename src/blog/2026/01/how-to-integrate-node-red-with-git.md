@@ -5,7 +5,7 @@ description: "Learn how to integrate Git version control into your Node-RED work
 date: 2026-01-05
 keywords: node-red, git, version-control, flowfuse, github, devops
 authors: ["sumit-shinde"]
-image: /blog/2025/12/images/integrate-nr-with-git.png
+image: /blog/2026/01/images/integrate-nr-with-git.png
 tags:
   - flowfuse
 ---
