@@ -22,7 +22,7 @@ In late 2011, Nick O'Leary was a "plumber" of the digital age. As part of IBM's 
 
 For every new experiment at IBM's Emerging Technology lab, Nick found himself writing the same boilerplate code over and over. He had previously experimented with a visual tool built in Lua for a project called "Liquid Reality," but it felt too constrained.
 
-On a "wet January day in 2013," Nick decided to try something new. He wanted a way to visualize mapping messages across an MQTT infrastructure. He turned to Node.js—then a relatively new technology—as the foundation.
+On a "wet January day in 2013," Nick decided to try something new. He wanted a way to visualize mapping messages across an MQTT infrastructure. He turned to Node.js — then a relatively new technology — as the foundation.
 
 Over a single weekend, he built a rough prototype that allowed him to drag boxes and draw wires instead of writing endless integration code. When he showed it to his colleague Dave Conway-Jones on Monday morning, Dave’s response was immediate and world-changing: "Go on then."
 
