@@ -2,9 +2,9 @@
 title: "The Node-RED Story: How Visual Programming Escaped the Lab and Conquered Industry"
 subtitle: "From a single weekend hack to millions of deployments across homes and industry."
 description: "Read how Node-RED evolved from Nick O'Leary's weekend IBM project into a global phenomenon—powering millions of home assistance setups, sparking a Raspberry Pi revolution, building a 4,300+ node community, and conquering industrial IoT with FlowFuse's enterprise platform."
-date: 2025-12-31
+date: 2026-01-05
 authors: ["sumit-shinde"]
-image: /blog/2025/12/images/node-red-story.png
+image: /blog/2026/01/images/node-red-story.png
 keywords:
 tags:
  - node-red
