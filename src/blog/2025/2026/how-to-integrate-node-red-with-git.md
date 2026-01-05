@@ -14,7 +14,7 @@ If you've been using Node-RED in production, you already know the pain points. F
 
 <!--more-->
 
-Traditional Node-RED doesn't have answers to these questions. But modern software development solved these problems decades ago with version control and DevOps pipelines.
+Traditional Node-RED doesn't have answers to these questions. But modern software development has solved these problems decades ago with version control and DevOps pipelines.
 
 That's the gap FlowFuse fills.
 
@@ -22,7 +22,7 @@ That's the gap FlowFuse fills.
 
 FlowFuse is a platform built specifically for running Node-RED at scale. It handles deployment, management, security, team collaboration, and more so you can focus on building flows instead of managing infrastructure.
 
-Every FlowFuse instance automatically captures snapshots of your flows as you work. These snapshots let you track changes over time and roll back when needed. You can also create manual snapshots to mark important milestones.
+Every FlowFuse can automatically create snapshots whenever flows are deployed. These snapshots let you track changes over time and roll back when needed. You can also create manual snapshots to mark important milestones.
 
 The real power comes from DevOps pipeline stages. You set up stages like development, staging, and production, then push snapshots through them. Make changes in dev, test in staging, promote to production. Everything's tracked and auditable.
 
@@ -46,7 +46,7 @@ Let's walk through connecting your FlowFuse instances to a Git repository.
 
 Before you begin, make sure you have:
 
-- **FlowFuse Team Account**: Git integration is available exclusively to FlowFuse Team and Enterprise users. If you don't have a Team account, visit the [FlowFuse pricing page](/pricing) or contact `sales@flowfuse.com` to upgrade.
+- **FlowFuse Team Account**: Git integration is available exclusively to Enterprise users. If you don't have a Enterprise account, visit the [FlowFuse pricing page](/pricing) or contact `sales@flowfuse.com` to upgrade.
 
 - **GitHub Account**: You'll need a GitHub account with permission to create repositories and generate personal access tokens.
 
@@ -68,12 +68,12 @@ Keep this repository URL handy—you'll need it later.
 FlowFuse needs permission to push and pull from your repository. GitHub uses Personal Access Tokens for this:
 
 1. Go to [GitHub Personal Access Tokens Settings](https://github.com/settings/tokens)
-2. Click **Generate new token** and select **Generate new token (classic)**
+2. Click **Generate new token** and select **Generate new token (fine-grained)**
 3. Give your token a descriptive name like "FlowFuse Node-RED Integration"
 4. Set an expiration date (we recommend 90 days for security)
-5. Under **Select scopes**, find **Repository permissions**
-6. For the **Contents** permission, select **Read and write**
-7. Optionally, under **Repository access**, choose **Only select repositories** and pick which repos FlowFuse can access
+5. Under **Repository access**, choose **Only select repositories** and pick which repos FlowFuse can access
+6. Under **Permissions**, expand **Repository permissions**
+7. Find **Contents** and set it to **Read and write**
 8. Click **Generate token** at the bottom
 
 **Critical**: GitHub shows this token only once. Copy it immediately and store it somewhere secure. You'll paste it into FlowFuse in the next step.
@@ -101,7 +101,9 @@ Your token is now available to all Node-RED instances in your FlowFuse team.
 
 ### Step 4: Configure a Pipeline Stage for Git
 
-This is where it comes together. You'll configure a pipeline stage to push snapshots to your Git repository:
+This is where it comes together. You'll configure a pipeline stage to push snapshots to your Git repository.
+
+**Important**: A Git repository stage needs something to push. Make sure your pipeline has at least one stage before the Git stage—typically a Node-RED instance stage. The pipeline will take snapshots from that source stage and push them to Git.
 
 1. In FlowFuse, navigate to your application
 2. Go to the **DevOps Pipelines** section
@@ -111,7 +113,7 @@ This is where it comes together. You'll configure a pipeline stage to push snaps
 6. Give the stage a name
 7. Select the token you created earlier
 8. Enter your repository URL (e.g., `https://github.com/your-username/nodered-flows.git`)
-9. Enter the snapshot file name (e.g., `flow.json`). Leaving this blank will use the original snapshot name. This is the name your flows will be saved as in the Git repository. When pulling changes back from Git, you must enter the exact same file name that exists in your repository to retrieve the correct flows.
+9. Enter the snapshot file name (e.g., `flow.json`). Leaving this blank will use the instance name. This is the name your flows will be saved as in the Git repository. When pulling changes back from Git, you must enter the exact same file name that exists in your repository to retrieve the correct flows.
 10. Specify a branch name for pushing changes (like `main`). Make sure the branch already exists in your repository.
 11. Optionally, specify a branch name for pulling changes (like `main`). Make sure the branch already exists in your repository.
 12. Enter a secret credential key. This can be any strong passphrase. You'll need to re-enter it when pulling changes through the DevOps pipeline in FlowFuse.
