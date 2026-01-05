@@ -4,7 +4,7 @@ subtitle: "From a single weekend hack to millions of deployments across homes an
 description: "Read how Node-RED evolved from Nick O'Leary's weekend IBM project into a global phenomenon—powering millions of home assistance setups, sparking a Raspberry Pi revolution, building a 4,300+ node community, and conquering industrial IoT with FlowFuse's enterprise platform."
 date: 2025-12-31
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2025/12/images/node-red-story.png
 keywords:
 tags:
  - node-red
@@ -117,7 +117,7 @@ The movement had conquered two worlds simultaneously.
 
 ## FlowFuse: Conquering Industrial IoT
 
-By 2021, the challenge had shifted. Node-RED worked brilliantly for individual developers, but enterprises needed more: how do you scale it across tens of thousands of factory instances? How do you secure it? How do you make teams collaborate on flows without stepping on each other's work? To solve these problems, Node-RED creator Nick O'Leary founded FlowFuse (formerly FlowForge).
+By 2021, the challenge had shifted. Node-RED worked brilliantly for individual developers, but enterprises needed more: how do you scale it across tens of thousands of factory instances? How do you secure it? How do you make teams collaborate on flows without stepping on each other's work? To solve these problems, Nick founded FlowFuse (formerly FlowForge).
 
 But a technical revolution needs both an inventor and an architect. In January 2022, Zeger-Jan van de Weg (ZJ) joined as CEO. Drawing on his experience as an early GitLab employee, ZJ knew how to turn a successful open-source project into an enterprise-grade platform. While Nick continues to guide the technical direction as CTO, ZJ leads the effort to scale industrial automation for Fortune 500 companies.
 
