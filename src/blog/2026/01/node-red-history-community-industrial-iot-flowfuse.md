@@ -10,7 +10,7 @@ tags:
  - node-red
 ---
 
-In late 2011, Nick O'Leary (one of the "computer geeks" recognized by Prince Charles many years earlier) was a "plumber" of the digital age. As part of IBM's Emerging Technology Group, he had just showcased a mind-controlled taxi on the [BBC's Bang Goes the Theory](https://knolleary.net/2010/04/22/how-i-got-onto-prime-time-bbc-one/). It was a feat of engineering—but the back-end "wiring" required to make brainwaves talk to car pedals was grueling, manual work.
+In late 2011, Nick O'Leary was a "plumber" of the digital age. As part of IBM's Emerging Technology Group, he had just showcased a mind-controlled taxi on the [BBC's Bang Goes the Theory](https://knolleary.net/2010/04/22/how-i-got-onto-prime-time-bbc-one/). It was a feat of engineering—but the back-end "wiring" required to make brainwaves talk to car pedals was grueling, manual work.
 
 <!--more-->
 
