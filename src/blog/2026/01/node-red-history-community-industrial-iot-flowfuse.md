@@ -34,7 +34,7 @@ Those two words meant everything. Dave didn't just approve — he joined in. Tog
 
 Node-RED offered something different: freedom. Drag boxes. Connect wires. Make anything talk to anything. No permission required.
 
-## The Public Spark: September 2013
+## The Public Spark
 
 The transition from a lab tool to a public project wasn't a corporate rollout; it was a grassroots explosion. By late 2013, Nick and Dave had seen enough: Node-RED was too useful to keep locked inside the walls of IBM.
 
@@ -46,7 +46,7 @@ The public story of Node-RED began with a push, not a press release. On **Septem
 
 The first external validation happened just a week after the GitHub release at the **Wuthering Bytes** technology festival. After Nick gave a brief, unprepared lightning talk, he walked into a workshop the following day and was stunned to see **Node-RED on every single screen.** A workshop facilitator had discovered the code on GitHub just days earlier and immediately scrapped his original plan. He realized that instead of teaching students how to troubleshoot line-by-line syntax, he could use Node-RED to let them actually *build* something. In thirty minutes, the class had achieved what usually took an entire day. It was the first time Nick saw people he had never met using his creation to solve real problems.
 
-### The London Node.js User Group (LNUG): September 25, 2013
+### The London Node.js User Group (LNUG)
 
 While the hardware community was the first to adopt it, the **London Node.js User Group (LNUG)** was where the project faced its first true technical trial. Standing before a room of seasoned JavaScript developers, Nick had a 30-minute slot to prove that Node-RED wasn't just a visual toy — it was a powerful tool built on the very event-driven architecture they loved. The talk was a massive success, generating immediate buzz across social media and solidifying Node-RED’s reputation within the developer community.
 
@@ -59,6 +59,19 @@ While the September meetups provided the spark, **ThingMonk on December 3, 2013*
 In his presentation, "Wiring the Internet of Things," Nick showed that visual programming wasn't just a shortcut for beginners; it was a professional-grade solution for the most complex integration problems on the planet.
 
 <lite-youtube videoid="zUoCJb0jzuo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="ThingMonk 2013: Wiring The Internet of Things"></lite-youtube>
+
+### 2014: Proving the Concept
+
+If 2013 was the spark, 2014 was the foundation. This was the year Node-RED moved from a lab experiment to a professional tool.
+
+**IBM's launch of Bluemix** (now IBM Cloud) marked a pivotal moment — Node-RED became a flagship starter app, validating that visual programming could power enterprise-grade cloud applications. The year also saw multiple major version releases that enhanced the platform's capabilities.
+
+![Node-RED featured as a flagship starter app on IBM Bluemix in 2014](./images/ibm-bluemix.png){data-zoomable}
+_Node-RED featured as a flagship starter app on IBM Bluemix in 2014_
+
+During this period, Nick took the project on the road — speaking at conferences and meetups to actively build the community around Node-RED. A major milestone came at QCon London 2014, a moment Nick has often described as especially meaningful. The talk marked a turning point, demonstrating to the professional software industry that visual programming could be a serious, scalable solution for complex data integration.
+
+<video controls style="width:100%"><source src="https://videoh.infoq.com/presentations/14-mar-nodered-2.mp4" type="video/mp4"></video>
 
 ## The Explosion: The Raspberry Pi Milestone
 
