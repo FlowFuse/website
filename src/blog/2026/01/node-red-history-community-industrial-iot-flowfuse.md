@@ -131,8 +131,8 @@ By 2021, the challenge had shifted. Node-RED worked brilliantly for individual d
 
 But a technical revolution needs both an inventor and an architect. In January 2022, Zeger-Jan van de Weg (ZJ) joined as CEO. Drawing on his experience as an early GitLab employee, ZJ knew how to turn a successful open-source project into an enterprise-grade platform. While Nick continues to guide the technical direction as CTO, ZJ leads the effort to scale industrial automation for Fortune 500 companies.
 
-![ZJ and Nick"](./images/zj-and-nick.png){data-zoomable}
-_ZJ and Nick"_
+![ZJ and Nick](./images/zj-and-nick.png){data-zoomable}
+_ZJ and Nick_
 
 Together, they have raised $14.5 million to build the infrastructure enterprises demand. With this funding, they assembled a talented team spanning engineering, product, customer success, marketing, sales, and community, each member contributing their unique expertise to drive FlowFuse's growth across every aspect of the business.
 
