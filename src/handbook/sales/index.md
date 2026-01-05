@@ -24,7 +24,6 @@ customer expansion, and customer success. This includes:
 
 | Role | Contributors |
 |------|--------------|
-| CEO  | [ZJ van de Weg](/team#zeger-jan-van-de-weg) [@ZJvandeWeg](https://github.com/ZJvandeWeg) |
 | VP of Sales | [Michael Davis](/team#michael-davis) [@MichaelBDavis](https://github.com/MichaelBDavis) |
 | AE | [Omar Ahmed](/team#omar-ahmed) [@omarazizahmed](https://github.com/omarazizahmed) | 
 | AE |[Kasheef Mohammed](/team#kasheef-mohammed) [@Kasheef](https://github.com/Kasheef13) |
