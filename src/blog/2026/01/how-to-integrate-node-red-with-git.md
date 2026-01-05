@@ -72,8 +72,7 @@ FlowFuse needs permission to push and pull from your repository. GitHub uses Per
 3. Give your token a descriptive name like "FlowFuse Node-RED Integration"
 4. Set an expiration date (we recommend 90 days for security)
 5. Under **Repository access**, choose **Only select repositories** and pick which repos FlowFuse can access
-6. Under **Permissions**, expand **Repository permissions**
-7. Find **Contents** and set it to **Read and write**
+6. Under Permissions, expand **Add permissions**, then locate **Contents** and set it to **Read and write**
 8. Click **Generate token** at the bottom
 
 **Critical**: GitHub shows this token only once. Copy it immediately and store it somewhere secure. You'll paste it into FlowFuse in the next step.
