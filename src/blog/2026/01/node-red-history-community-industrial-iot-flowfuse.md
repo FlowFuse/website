@@ -71,7 +71,8 @@ _Node-RED featured as a flagship starter app on IBM Bluemix in 2014_
 
 During this period, Nick took the project on the road — speaking at conferences and meetups to actively build the community around Node-RED. A major milestone came at QCon London 2014, a moment Nick has often described as especially meaningful. The talk marked a turning point, demonstrating to the professional software industry that visual programming could be a serious, scalable solution for complex data integration.
 
-<video controls style="width:100%"><source src="https://videoh.infoq.com/presentations/14-mar-nodered-2.mp4" type="video/mp4"></video>
+![Nick O’Leary presenting Node-RED at QCon London 2014](./images/Q-CON-2014.png){data-zoomable}
+_Nick O’Leary presenting Node-RED at QCon London 2014_
 
 ## The Explosion: The Raspberry Pi Milestone
 
