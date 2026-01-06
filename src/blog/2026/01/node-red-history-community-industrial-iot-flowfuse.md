@@ -22,8 +22,8 @@ On a "wet January day in 2013," Nick decided to try something new. He wanted a w
 
 Over a single weekend, he built a rough prototype that allowed him to drag boxes and draw wires instead of writing endless integration code. When he showed it to his colleague Dave Conway-Jones on Monday morning, Dave’s response was immediate and world-changing: "Go on then."
 
-![Nick O'Leary and Dave Conway-Jones, co-creators of Node-RED](./images/nick-and-dave.png){data-zoomable}
-_Nick and Dave_
+![Dave Conway-Jones and Nick O'Leary, co-creators of Node-RED](./images/nick-and-dave.png){data-zoomable}
+_Dave and Nick_
 
 The name was a light-hearted play on words. "Node" reflected the Node.js runtime and the flow-based model, while "RED" was a cheeky nod to "Code Red." While some later suggested it stood for "Rapid Event Developer," Nick and Dave never felt the need to formalize it. It was simply a vibrant alternative to the "Big Blue" corporate standard.
 
@@ -131,8 +131,8 @@ By 2021, the challenge had shifted. Node-RED worked brilliantly for individual d
 
 But a technical revolution needs both an inventor and an architect. In January 2022, Zeger-Jan van de Weg (ZJ) joined as CEO. Drawing on his experience as an early GitLab employee, ZJ knew how to turn a successful open-source project into an enterprise-grade platform. While Nick continues to guide the technical direction as CTO, ZJ leads the effort to scale industrial automation for Fortune 500 companies.
 
-![ZJ and Nick](./images/zj-and-nick.png){data-zoomable}
-_ZJ and Nick_
+![Nick and ZJ](./images/zj-and-nick.png){data-zoomable}
+_Nick and ZJ_
 
 Together, they have raised $14.5 million to build the infrastructure enterprises demand. With this funding, they assembled a talented team spanning engineering, product, customer success, marketing, sales, and community, each member contributing their unique expertise to drive FlowFuse's growth across every aspect of the business.
 
