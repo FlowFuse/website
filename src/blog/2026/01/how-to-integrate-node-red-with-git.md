@@ -2,7 +2,7 @@
 title: "Integrating Git within Node-RED Workflow with FlowFuse"
 subtitle: "How FlowFuse connects Node-RED pipelines with Git for traceable, production-grade workflows"
 description: "Learn how to integrate Git version control into your Node-RED workflows using FlowFuse's DevOps pipeline stages for better collaboration and change management."
-date: 2026-01-05
+date: 2026-01-06
 keywords: node-red, git, version-control, flowfuse, github, devops
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/integrate-nr-with-git.png
