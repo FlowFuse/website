@@ -33,13 +33,28 @@ All Git Repositories must contain the following files:
 
 ### Linting
 
-All code repositories should adopt our standard linting rules by copying the
-`.eslintrc` from the [FlowFuse/.github repository](https://github.com/FlowFuse/.github/blob/main/.eslintrc).
+All code repositories should be using ESLint V9 or greater and adopt our standard linting rules by copying
+`eslint.config.mjs` from the [FlowFuse/.github repository](https://github.com/FlowFuse/.github/blob/main/eslint.config.mjs).
 
 If a repository has any additional requirements for linting, such as handling Vue
 code, then additional plugins can be added.
 
-We use [StandardJS](https://standardjs.com/), with one exception - 4 spaces not 2.
+We stick closely to the [StandardJS](https://standardjs.com/), with one exception - 4 spaces not 2.
+
+#### Scripts for linting in package.json
+
+We add 2 common scripts for linting:
+1. `lint`
+2. `lint:fix`
+
+Below is a typical example: 
+```json
+    "scripts": {
+        // ...other scripts...
+        "lint": "eslint -c eslint.config.mjs",
+        "lint:fix": "eslint -c eslint.config.mjs --fix"
+    },
+```
 
 ### Notifications
 
