@@ -5,8 +5,18 @@ module.exports = async () => {
     console.log("Loading Integrations...");
     const api = "https://ff-integrations.flowfuse.cloud/api/nodes";
 
+    // Use longer cache durations to avoid heavy API calls on every build
+    // In development: 1 day cache (can be overridden with ELEVENTY_ENV)
+    // In production: 1 week cache for stability
+    const isDev = process.env.ELEVENTY_ENV !== "production";
+    const catalogueCacheDuration = isDev ? "1d" : "1w";
+    const npmCacheDuration = isDev ? "1d" : "1w";
+    const githubCacheDuration = isDev ? "3d" : "2w";
+
+    console.log(`Cache durations - Catalogue: ${catalogueCacheDuration}, NPM: ${npmCacheDuration}, GitHub: ${githubCacheDuration}`);
+
     const response = await EleventyFetch(api, {
-        duration: "4h",
+        duration: catalogueCacheDuration,
         type: "json"
     });
 
@@ -68,7 +78,7 @@ module.exports = async () => {
                 const nodeDetails = await EleventyFetch(
                     `https://registry.npmjs.org/${node._id}`,
                     {
-                        duration: "4h", // Cache for 4 hours to prevent memory exhaustion during dev
+                        duration: npmCacheDuration,
                         type: "json"
                     }
                 );
@@ -100,7 +110,7 @@ module.exports = async () => {
                         try {
                             const examplesUrl = `https://api.github.com/repos/${node.githubOwner}/${node.githubRepo}/contents/examples`;
                             const examplesResponse = await EleventyFetch(examplesUrl, {
-                                duration: "1d", // Cache for 1 day
+                                duration: githubCacheDuration,
                                 type: "json",
                                 fetchOptions: {
                                     headers: {
@@ -120,7 +130,7 @@ module.exports = async () => {
                                         try {
                                             // Fetch the raw flow JSON content
                                             const flowContent = await EleventyFetch(file.download_url, {
-                                                duration: "1d",
+                                                duration: githubCacheDuration,
                                                 type: "text",
                                                 fetchOptions: {
                                                     headers: {

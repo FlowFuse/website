@@ -125,7 +125,7 @@ eleventyComputed:
             
             <!-- Documentation Content -->
             <div class="prose prose-lg prose-indigo max-w-none mb-12 overflow-hidden">
-                {{ integration.readme | md | safe }}
+                {{ integration.readme | md | rewriteIntegrationLinks(integration) | safe }}
             </div>
 
             

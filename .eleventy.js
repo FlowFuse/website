@@ -210,6 +210,48 @@ new FlowRenderer().renderFlows(JSON.parse(flow${flowId}.replace(/&gt;/g,'>').rep
         return md.render(content);
     });
 
+    eleventyConfig.addFilter('rewriteIntegrationLinks', (content, integration) => {
+        if (!content || !integration) return content;
+        
+        // Get the repository URL
+        let repoUrl = null;
+        if (integration.repository && integration.repository.url) {
+            repoUrl = integration.repository.url
+                .replace('git+', '')
+                .replace('.git', '')
+                .replace('git://', 'https://');
+        }
+        
+        // If no valid repo URL, return content as-is
+        if (!repoUrl || !repoUrl.includes('github.com')) {
+            return content;
+        }
+        
+        // Rewrite relative links to point to GitHub repository
+        // Match href attributes with relative paths
+        const linkRegex = /href="(\.\/|\.\.\/|[^/"#:]+\/)[^"]*"/g;
+        
+        return content.replace(linkRegex, (match, prefix) => {
+            const hrefMatch = match.match(/href="([^"]*)"/);
+            if (!hrefMatch) return match;
+            
+            const href = hrefMatch[1];
+            
+            // Skip if it's already an absolute URL or anchor
+            if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('#') || href.startsWith('mailto:')) {
+                return match;
+            }
+            
+            // Clean up the href and build GitHub URL
+            let cleanHref = href.replace(/^\.\//, '').replace(/^\.\.\//, '');
+            
+            // Build the GitHub blob URL
+            const githubUrl = `${repoUrl}/blob/master/${cleanHref}`;
+            
+            return `href="${githubUrl}"`;
+        });
+    });
+
     eleventyConfig.addFilter('duration', mins => {
         if (mins > 60) {
             const hrs = Math.floor(mins/60)
