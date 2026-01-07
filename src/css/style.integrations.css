@@ -1,0 +1,287 @@
+/* Integration Node Page Layout Protection */
+/* Ensures the layout never breaks regardless of content */
+
+/* Protect main container from overflow */
+.node-header,
+.node-header * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Ensure package names and titles break appropriately */
+.node-header h1 {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+/* Protect certified badge from breaking layout */
+.ff-certified-badge {
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+/* Ensure header metadata items wrap properly */
+.node-header .flex-wrap {
+    min-width: 0;
+}
+
+.node-header .flex-wrap > span {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+/* Protect prose content from layout breaks */
+.prose {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Handle long URLs and code in prose */
+.prose a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.prose code {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* Inline code should break */
+.prose p code,
+.prose li code,
+.prose td code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+
+/* Code blocks with horizontal scroll */
+.prose pre {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+.prose pre code {
+    word-break: normal;
+    overflow-wrap: normal;
+    white-space: pre;
+}
+
+/* Tables should scroll horizontally if needed */
+.prose table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+/* Images should never exceed container */
+.prose img,
+.prose picture,
+.prose video,
+.prose iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* SVG images */
+.prose svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Protect sidebar from overflow */
+.lg\:w-80 {
+    min-width: 0;
+}
+
+/* Sidebar cards should contain overflow */
+.lg\:w-80 .bg-white,
+.lg\:w-80 .bg-gradient-to-br {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Package name in installation section */
+.lg\:w-80 code {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* NPM install command should break appropriately */
+.bg-gray-900 code {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+/* Links in sidebar */
+.lg\:w-80 a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+/* Repository URLs and long links */
+.lg\:w-80 .space-y-2 a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* GitHub badge images */
+.lg\:w-80 img[src*="shields.io"] {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Stats section values */
+.lg\:w-80 .space-y-3 span {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+/* Maintainer names */
+.lg\:w-80 .space-y-2 span {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Flow visualization */
+.flow-visualization {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Examples section */
+.space-y-8 .border {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Ensure flex containers don't cause overflow */
+.flex-grow {
+    min-width: 0;
+}
+
+.flex-shrink-0 {
+    min-width: 0;
+}
+
+/* Main content grid */
+.flex-col.lg\:flex-row {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Container max-width protection */
+.container.m-auto.max-w-6xl {
+    overflow: hidden;
+}
+
+/* Specific protection for long package names in header */
+.node-header .flex.items-center.gap-3 {
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+/* Description text wrapping */
+.node-header p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Metadata icons should not shrink */
+.node-header svg {
+    flex-shrink: 0;
+}
+
+/* Button text should wrap if needed */
+.lg\:w-80 button,
+.lg\:w-80 a.inline-flex {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+/* Certified node info box */
+.bg-indigo-50.border-l-4 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+/* Examples info box */
+.bg-blue-50.border-l-4 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+    /* Force all text to wrap on mobile */
+    .node-header h1 {
+        font-size: 1.875rem; /* text-3xl */
+        line-height: 2.25rem;
+    }
+    
+    /* Make buttons full width on mobile */
+    .lg\:w-80 a.flex {
+        width: 100%;
+    }
+    
+    /* Reduce padding on small screens */
+    .node-header .container,
+    .container.m-auto.max-w-6xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+    /* Ensure sidebar doesn't break on tablet */
+    .lg\:w-80 {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Prevent any element from causing horizontal scroll */
+* {
+    max-width: 100%;
+}
+
+/* Allow specific elements to use full width of their container */
+.container,
+.container * {
+    max-width: none;
+}
+
+/* But constrain them to container bounds */
+.container {
+    overflow-x: hidden;
+}
+
+/* Ensure main layout grid respects boundaries */
+.flex.flex-col.lg\:flex-row.gap-8 {
+    overflow-x: hidden;
+}
+
+/* Final safety net - prevent body overflow */
+body {
+    overflow-x: hidden;
+}

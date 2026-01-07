@@ -67,12 +67,36 @@
     stroke: theme(colors.white);
 }
 
+.integration-card {
+    min-width: 0;
+}
+
 .integration-card a {
     color: theme(colors.gray.600);
+    min-width: 0;
 }
 
 .integration-card a:hover {
     text-decoration: none;
+}
+
+.integration-card--details {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.integration-card--details label {
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.integration-card--details p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .integration-card--meta {

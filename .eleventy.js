@@ -133,8 +133,9 @@ module.exports = function(eleventyConfig) {
         flowId++; // Increment the flowId to allow multiple flows on the same page
 
         return `<div id="nr-flow-${flowId}" style="height: ${height}px" data-grid-lines="true" data-zoom="true" data-images="true" data-link-lines="false" data-labels="true"></div>
-        <script type="module">const flow${flowId} = ${JSON.stringify(flow).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
-        new FlowRenderer().renderFlows(JSON.parse(flow${flowId}.replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&')), { container: document.getElementById('nr-flow-${flowId}') })</script>`
+        <script type="module">import FlowRenderer from '/js/flowrenderer.min.js';
+const flow${flowId} = ${JSON.stringify(flow).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+new FlowRenderer().renderFlows(JSON.parse(flow${flowId}.replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&')), { container: document.getElementById('nr-flow-${flowId}') })</script>`
     });
 
     eleventyConfig.addGlobalData("coreNodesArray", () => {
@@ -196,6 +197,17 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter('shortDate', dateObj => {
         return spacetime(new Date(dateObj)).format('{date} {month-short}, {year}')
+    });
+
+    eleventyConfig.addFilter('formatNumber', (num) => {
+        if (num === null || num === undefined) return '0';
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    });
+
+    eleventyConfig.addFilter('md', (content) => {
+        if (!content) return '';
+        const md = new markdownIt({ html: true });
+        return md.render(content);
     });
 
     eleventyConfig.addFilter('duration', mins => {
@@ -684,6 +696,16 @@ module.exports = function(eleventyConfig) {
         wrapperClass: 'toc',
         ul: true,
     });
+    
+    // Create a safe wrapper for dateToRfc3339 that handles string dates
+    eleventyConfig.addFilter("dateToRfc3339Safe", (dateObj) => {
+        // Ensure dateObj is a Date object
+        if (dateObj && !(dateObj instanceof Date)) {
+            dateObj = new Date(dateObj);
+        }
+        // Call the original RSS plugin function
+        return pluginRSS.dateToRfc3339(dateObj);
+    })
 
     const markdownItOptions = {
         html: true,
