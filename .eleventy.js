@@ -242,8 +242,13 @@ module.exports = function(eleventyConfig) {
         const matcher = /((href|src)="([^"]*))"/g;
         let match;
         const result = str.replace(matcher, (fullMatch, group1, attr, url) => {
-            // Skip absolute URLs, anchors, and mailto links
-            if (/^(http|https|#|mailto:)/.test(url)) {
+            // Skip absolute URLs and mailto links
+            if (/^(http|https|mailto:)/.test(url)) {
+                return fullMatch;
+            }
+            
+            // Skip pure anchors (same-page links)
+            if (url.startsWith('#')) {
                 return fullMatch;
             }
             
@@ -258,7 +263,12 @@ module.exports = function(eleventyConfig) {
                 if (url.startsWith('./') || url.startsWith('../')) {
                     const cleanUrl = url.replace(/^\.\.?\//, '');
                     return `${attr}="${repoUrl}/blob/master/${cleanUrl}"`;
-                } else if (!url.startsWith('/')) {
+                } else if (url.startsWith('/')) {
+                    // Repository-relative paths (e.g., /CHANGELOG.md)
+                    const cleanUrl = url.replace(/^\//, '');
+                    return `${attr}="${repoUrl}/blob/master/${cleanUrl}"`;
+                } else if (!url.startsWith('#')) {
+                    // Simple relative paths without prefix
                     return `${attr}="${repoUrl}/blob/master/${url}"`;
                 }
             }
