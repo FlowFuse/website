@@ -6,14 +6,25 @@ navGroup: Job Descriptions
 # Product Marketer
 
 ## Job Description
-We are seeking a highly motivated and experienced Product Marketer to join our team. In this role, you will be responsible for developing and executing marketing strategies that drive adoption and growth of the FlowFuse platform. You will work closely with product, engineering, and sales to understand and shape our product roadmap, target audience, and market trends. Your primary focus will be to effectively communicate the value of FlowFuse to our target audience, drive demand, and support our overall business growth.
+We are seeking a highly motivated and experienced Product Marketer to join our team. In this role, you will be responsible for developing and executing marketing strategies that drive adoption and growth of the FlowFuse platform. You will work closely with product, engineering, and sales to understand and shape our product roadmap, target audience, and market trends. Your primary focus will be to effectively communicate the value of FlowFuse to our target audience, drive demand, and support our overall business growth through both strategic product marketing and tactical demand generation execution.
+
+As we scale, this role will evolve to include demand generation responsibilities, covering the full marketing funnel from awareness to conversion. Initially focused on product marketing fundamentals, you will eventually take ownership of lead generation programs, email nurture campaigns, webinar management, and funnel optimization.
+
 
 * Develop and execute comprehensive product marketing strategies to drive product adoption and achieve revenue targets.
 * Clearly articulate the value proposition of FlowFuse and its features to target audiences.
 * Increase market awareness and generate demand for FlowFuse solutions.
 * Support the sales team with effective marketing collateral and tools.
 * Gather and analyze market and customer insights to inform product development and marketing strategies.
-* Join a team that includes a content writer and marketing generalist, reporting directly to the CEO, and set the vision for what Product Marketing a FlowFuse looks like.
+* Design and execute multi-channel email nurture campaigns to move prospects through the buyer journey
+* Build and manage webinar programs from concept to execution, including promotion, delivery, and follow-up sequences
+* Develop and optimize lead scoring models and qualification frameworks in HubSpot
+* Build and maintain lead lifecycle workflows, including automated triggers, scoring adjustments, and sales notifications
+* Manage content syndication partnerships and evaluate ROI of third-party lead generation programs
+* Analyze campaign performance data to identify trends, optimize programs, and provide recommendations for improving lead-to-opportunity conversion rates
+* Work closely with sales to gather feedback on lead quality, refine qualification criteria, and improve sales-marketing alignment
+* Coordinate event follow-up campaigns to maximize ROI from conference attendance, sponsorships, and webinars
+
 
 ## Skills
 * Proven experience in product marketing, preferably in a B2B SaaS environment. 
@@ -24,6 +35,13 @@ We are seeking a highly motivated and experienced Product Marketer to join our t
 * Analytical skills to measure marketing effectiveness and optimize campaigns.
 * Collaborative and able to work effectively across different teams.
 * Requirement to be familiar with the industrial sector, IIoT, Iot or similar
+* Experience in B2B demand generation, marketing operations, or funnel management
+* Proficiency with HubSpot, including workflows, lead scoring, email automation, and reporting
+* Strong understanding of lead lifecycle management, funnel optimization, and conversion rate optimization
+* Experience designing and executing email nurture campaigns with proven results in improving lead-to-opportunity conversion
+* Strong analytical skills with ability to analyze funnel metrics, identify bottlenecks, and make data-driven recommendations
+* Experience with lead scoring models and qualification frameworks
+* Strong written communication skills for email campaigns and nurture content
    * Node-RED knowledge and familiarity is a plus.
 
 ## 90-Day Plan
