@@ -22,7 +22,7 @@ const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const { EleventyEdgePlugin } = require("@11ty/eleventy");
+
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
@@ -677,7 +677,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
-    eleventyConfig.addPlugin(EleventyEdgePlugin);
+
     eleventyConfig.addPlugin(pluginTOC, {
         tags: ['h2', 'h3', 'h4'],
         wrapper: 'div',
@@ -776,9 +776,7 @@ module.exports = function(eleventyConfig) {
                     conservativeCollapse: true,
                     preserveLineBreaks: true,
                     removeComments: true,
-                    ignoreCustomComments: [
-                        /ELEVENTYEDGE.*/
-                    ],
+
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
