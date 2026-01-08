@@ -142,7 +142,7 @@ Explore the list of integrations and modules available for your Node-RED project
             return;
         }
         pagination.currentPage += diff;
-        updateUI(catalogue);
+        filterCatalogue();
     }
 
     function showPage (catalogue) {
@@ -191,7 +191,8 @@ Explore the list of integrations and modules available for your Node-RED project
             if (!a.ffCertified && b.ffCertified) {
                 return 1
             }
-            return new Date(b.updatedAt) - new Date(a.updatedAt);
+            // Then by weekly downloads (descending)
+            return b.downloads.week - a.downloads.week;
         });
         pagination.maxPage = Math.ceil(filtered.length / pagination.perPage);
         
@@ -295,7 +296,7 @@ Explore the list of integrations and modules available for your Node-RED project
             const certified = integration.ffCertified || false;
             this.innerHTML = `
                 <li class="integration-card group border border-gray-300 rounded-xl bg-white drop-shadow-md">
-                    <a href="https://flows.nodered.org/node/${integration._id}" class="h-48 flex flex-col">
+                    <a href="/integrations/${integration._id}" class="h-48 flex flex-col">
                         <div class="integration-card--details p-3 grow min-h-0">
                             <div class="flex justify-between text-sm items-center">
                                 <span>@${integration.npmScope || integration.npmOwners[0]}</span>
