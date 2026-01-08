@@ -223,6 +223,9 @@ module.exports = function(eleventyConfig) {
         if (!content) return '';
         const md = new markdownIt({
             html: true,
+        })
+        .use(markdownItAnchor, {
+            permalink: markdownItAnchor.permalink.headerLink()
         });
         return md.render(content);
     });
