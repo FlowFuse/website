@@ -92,6 +92,7 @@ module.exports = async () => {
                 node.maintainers = nodeDetails.maintainers || [];
                 node.homepage = nodeDetails.homepage;
                 node.bugs = nodeDetails.bugs;
+                node.repository = nodeDetails.repository;
                 node.time = nodeDetails.time;
                 node.lastUpdated = nodeDetails.time?.modified || nodeDetails.time?.[node.version];
                 node.created = nodeDetails.time?.created;
