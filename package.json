@@ -25,8 +25,8 @@
         "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js"
     },
     "devDependencies": {
-        "@11ty/eleventy": "^2.0.1",
-        "@11ty/eleventy-img": "^3.1.8",
+        "@11ty/eleventy": "^3.1.2",
+        "@11ty/eleventy-img": "^6.0.4",
         "@11ty/eleventy-navigation": "^0.3.5",
         "@11ty/eleventy-plugin-rss": "^1.2.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
@@ -35,13 +35,13 @@
         "@kevingimbel/eleventy-plugin-mermaid": "^2.0.0",
         "@tailwindcss/typography": "^0.5.10",
         "autoprefixer": "^10.4.17",
-        "del-cli": "^5.0.0",
+        "del-cli": "^7.0.0",
         "dotenv-cli": "^7.4.4",
         "eleventy-plugin-code-clipboard": "git+https://github.com/joepavitt/eleventy-plugin-code-clipboard.git",
         "html-minifier": "^4.0.0",
         "markdown-it-anchor": "^8.6.7",
         "markdown-it-footnote": "^3.0.3",
-        "mocha": "^10.8.2",
+        "mocha": "^11.7.5",
         "netlify-plugin-cache": "^1.0.3",
         "nodemon": "^2.0.20",
         "npm-run-all2": "^7.0.1",
@@ -58,7 +58,7 @@
         "xpath": "^0.0.32"
     },
     "dependencies": {
-        "@11ty/eleventy-fetch": "^4.0.0",
+        "@11ty/eleventy-fetch": "^5.1.1",
         "@flowfuse/flow-renderer": "^0.5.0",
         "@netlify/blobs": "^10.3.0",
         "@xmldom/xmldom": "^0.8.10",
@@ -67,5 +67,8 @@
         "js-yaml": "^4.1.1",
         "markdown-it-attrs": "^4.1.6",
         "xml-js": "^1.6.11"
+    },
+    "overrides": {
+        "glob": "^10.0.0"
     }
 }
