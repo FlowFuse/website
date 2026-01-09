@@ -74,9 +74,6 @@ module.exports = async () => {
                 node.categories.push("catalogue");
             }
 
-            // Default to having a page, will be set to false if load fails
-            node.hasPage = true;
-
             // Fetch full npm node details (readme, etc.)
             try {
                 const nodeDetails = await EleventyFetch(
@@ -217,25 +214,12 @@ module.exports = async () => {
                     console.error(`Failed to load readme for ${node._id}`, err);
                 }
                 node.readme = "";
-                // Mark node as failed so we can skip it during page generation
-                node.loadFailed = true;
-                // Mark that this node doesn't have a generated page
-                node.hasPage = false;
             }
 
             return node;
         })
     ).then((nodes) =>
         nodes
-            // Filter out nodes that failed to load (404 errors, etc.) only for page generation
-            // But keep them in the overall list for the index page
-            .map(node => {
-                // If node failed to load, mark it for frontend to use fallback link
-                if (node.loadFailed) {
-                    node.hasPage = false;
-                }
-                return node;
-            })
             .sort((a, b) => {
                 // Certified nodes first
                 if (a.ffCertified && !b.ffCertified) return -1;
