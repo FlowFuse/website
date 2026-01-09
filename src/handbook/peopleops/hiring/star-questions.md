@@ -7,7 +7,7 @@ Every candidate hiring plan includes at least one STAR Interview.
 A [STAR interview](https://www.themuse.com/advice/star-interview-method) is aimed at discussing the candidates past performance in certain situations and is meant to given an indication if the way they have behaved in the past is in line with FlowFuse expectations.
 
 ## Questions
-Below are some sample questions that can be used. 
+Below are some questions that can be used and how answers are evaluated.
 
 ## STAR Interview Questions
 
