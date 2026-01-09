@@ -99,29 +99,30 @@ All cases of underperformance must be documented by the manager through email to
 the CEO and CTO with the timespan of a potential plan created by the employee's
 manager.
 
-### Performance Improvement Plan (PIP)
+### Coaching Plan for Performance Issues
 
 After the plan formulated by the manager has not returned the employee to performance
-that is considered on par with the expectations of their role the CEO and manager
-will create a PIP for the employee.
+that is considered on par with the expectations of their role, the CEO and manager
+will create a formal [Coaching Plan](/handbook/peopleops/coaching-plans/) for the employee.
 
-**A PIP is a genuine opportunity from FlowFuse to the employee to get where they need to be.** While other companies
-use PIPs solely to provide the legal documentation for termination, at FlowFuse a
-PIP is intended to set the bar for both the manager and employee and have transparency
-around expected performance.
+**A Coaching Plan is a genuine opportunity from FlowFuse to the employee to get where they need to be.**
+FlowFuse believes in supporting team members through structured development and clear expectations.
+A Coaching Plan is intended to set the bar for both the manager and employee and have transparency
+around expected performance, while providing the support and mentorship needed to succeed.
 
-The PIP will outline the specific areas of underperformance, the specific steps
-the employee must take to improve, and the timeline for improvement. The employee
-will be required to sign the PIP and agree to its terms.
+The Coaching Plan will outline the specific areas of underperformance, the specific steps
+the employee must take to improve, the support and resources provided, and the timeline
+for improvement. The employee will be required to sign the Coaching Plan and agree to its terms.
 
-If an employee has been on a PIP before and for the same reasons enters this stage
-of the underperformance policy again the CEO and manager can opt for not providing
-a PIP. This ensures that a PIP is a genuine change.
+If an employee has been on a Coaching Plan before for performance issues and for the same
+reasons enters this stage of the underperformance policy again, the CEO and manager can opt
+for not providing another Coaching Plan. This ensures that a Coaching Plan is a genuine
+opportunity for change.
 
 ### Termination
 
 If an employee's performance does not improve, or if they violate the terms of
-their PIP, they may be terminated. Termination will be based on a documented
+their Coaching Plan, they may be terminated. Termination will be based on a documented
 pattern of underperformance or unacceptable behavior.
 
 ## CEO underperformance
