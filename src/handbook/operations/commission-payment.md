@@ -102,7 +102,8 @@ Best,
 ```
 
 ### Update Sales Representative Productivity
-Sales Representative productivity must be updated only after commissions have been fully calculated and confirmed. Once commission numbers are finalized for the month, rep productivity should be updated in the Ops Plan spreadsheet using the finalized data.
+
+Once commission numbers are finalized for the month, rep productivity should be updated in the Ops Plan spreadsheet using the finalized data.
 
 ### Wiring the money
 
