@@ -135,7 +135,11 @@ Please respond to mentions and review requests within two business days.
 
 ### Standup meetings
 
-Standup meetings are difficult to run across many timezones, so we use [Geekbot](https://geekbot.com/) to make standups async. Geekbot sends a prompt each workday at 9:00 in your local timezone when you are active in Slack. Everyone in the `#standup` channel will receive the prompt.
+Standup meetings are difficult to run across many time zones, so we run standups asynchronously using [Geekbot](https://geekbot.com/). Geekbot sends a prompt each workday at 9:00 in your local time, or when you first become active in Slack after that time.
+
+Previously, all standups were posted in a single #standup channel. That channel is now archived, and standups live in departmental channels (Sales, Marketing, BizOps, and Engineering, which currently includes Product).
+
+This keeps signal-to-noise healthy as we grow and ensures updates are shared where the most relevant stakeholders can easily find them, without scrolling through standups from other teams.
 
 A good standup update reduces the need for status updates in live meetings. When writing your update, keep the following in mind:
 1.	Connect your work to our broader goals. Explain what you plan to do today and how it supports the company’s priorities.
