@@ -5,7 +5,7 @@ meta:
 
 # Strategy
 
-Please alo review:
+Please also review:
 * our [company values](/handbook/company/values/).
 * our [Messaging Framework](/handbook/marketing/messaging/).
 
