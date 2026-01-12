@@ -74,7 +74,7 @@ Below are some questions that can be used and how answers are evaluated.
 - Iterative Improvement
 - Collaborative Community
 
-#### 10. If you take one element from your past managers to shape your ideal manager, what is it?
+#### 10. Think of your past managers. What qualities did you appreciate about them?
 
 **Values**
 - Collaborative Community
