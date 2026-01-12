@@ -13,90 +13,107 @@ Below are some questions that can be used and how answers are evaluated.
 
 ### 1. What’s the best team Slack or async culture you’ve been part of? What made it work?
 
-**Assesses**
-- Remote / async maturity
-- Written communication
-- Culture contribution (not just fit)
-- Emotional intelligence
-- Fun with boundaries
+**Values**
+- Collaborative Community
+- Constructive Candor
+- Results
 
 ---
 
 ### 2. Tell me about a recent time async communication went wrong.
 
-**Assesses**
-- Ownership & accountability
-- Written communication
-- Systems thinking
-- Process improvement
-- Learning from failure
+**Values**
+- Results
+- Iterative Improvement
+- Collaborative Community
 
 ---
 
-### 3. Tell me about the last time you changed your mind during a discussion.
+### 3. Tell me about a time you needed to move fast to get something shipped or resolved.
 
-**Assesses**
-- Intellectual humility
-- Learning mindset
-- Critical thinking without ego
-- Constructive pushback
-
----
-
-### 4. Tell me about a time you helped someone get unblocked.
-
-**Assesses**
-- Mentorship instincts
-- Team-first behavior
-- Leadership without authority
-- Empathy + effectiveness
+**Values**
+- Results
+- Iterative Improvement
+- Customer Empathy
 
 ---
 
-### 5. Tell me about a recent conflict or disagreement you had at work.
+### 4. Tell me about something you shipped that wasn’t right the first time. What happened next?
 
-**Assesses**
-- Conflict resolution
-- Communication under tension
-- Emotional maturity
-- Perspective-taking
+**Values**
+- Iterative Improvement
+- Results
+- Constructive Candor
 
 ---
 
-### 6. Tell me about a time you gave or received difficult feedback.
+### 5. Tell me about a time you had to understand a customer’s perspective to solve a problem.
 
-**Assesses**
-- Feedback maturity
-- Directness with care
-- Growth mindset
-- Self-awareness
+**Values**
+- Customer Empathy
+- Constructive Candor
+- Iterative Improvement
+
+---
+
+### 6. Tell me about the last time you changed your mind during a discussion.
+
+**Values**
+- Constructive Candor
+- Collaborative Community
+- Iterative Improvement
 
 ---
 
 ### 7. Tell me about a time you noticed a problem and decided to take action.
 
-**Assesses**
-- Initiative
-- Judgment (what’s worth acting on)
-- Ownership & accountability
-- Collaboration vs heroics
+**Values**
+- Results
+- Iterative Improvement
+- Collaborative Community
 
 ---
 
-### 8. Can you share an example of making a decision without complete data?
+### 8. Tell me about a time you helped someone get unblocked.
 
-**Assesses**
-- Comfort with ambiguity
-- Bias toward action
-- Risk awareness
-- Iterative thinking
+**Values**
+- Collaborative Community
+- Results
+- Customer Empathy
 
 ---
 
-### 9. If you take one element from your past managers to shape your ideal manager, what is it?
+### 9. Tell me about a recent conflict or disagreement you had at work.
 
-**Assesses**
-- Values clarity
-- Expectations of leadership
-- Self-reflection
-- How they want to be led
+**Values**
+- Constructive Candor
+- Collaborative Community
+- Results
+
+---
+
+### 10. Tell me about a time you gave or received difficult feedback.
+
+**Values**
+- Constructive Candor
+- Iterative Improvement
+- Collaborative Community
+
+---
+
+### 11. Can you share an example of making a decision without complete data?
+
+**Values**
+- Results
+- Iterative Improvement
+- Customer Empathy
+
+---
+
+### 12. If you take one element from your past managers to shape your ideal manager, what is it?
+
+
+**Values**
+- Collaborative Community
+- Constructive Candor
+- Results
