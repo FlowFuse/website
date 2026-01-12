@@ -31,7 +31,7 @@ customer expansion, and customer success. This includes:
 
 ## Contact us
 
-Questions can be asked in the [#dept-sales](https://flowforgeworkspace.slack.com/archives/C05GYH95NJZ).
+Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/C05GYH95NJZ).
 
 ## How we work
 
