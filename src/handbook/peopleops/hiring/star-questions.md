@@ -25,13 +25,6 @@ Below are some questions that can be used and how answers are evaluated.
 - Iterative Improvement
 - Collaborative Community
 
-#### 3. Tell me about a time you needed to move fast to get something shipped or resolved.
-
-**Values**
-- Results
-- Iterative Improvement
-- Customer Empathy
-
 #### 4. Tell me about something you shipped that wasn’t right the first time. What happened next?
 
 **Values**
