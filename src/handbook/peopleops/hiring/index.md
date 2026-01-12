@@ -210,7 +210,7 @@ This process ensures that all new joiners receive access either on their first d
 
 Upon setting up your password, it is essential to [turn on the 2-Step Verification](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop). Failure to do so may result in being locked out of your account after a few days, requiring assistance from an admin to regain access.
 
-Once your FlowFuse email is set up, you will have access to invitations to other services and platforms, including 1Password. [Set this up](https://support.1password.com/explore/team-member/) as soon as possible to add a security layer to all your FlowFuse accounts.
+Once your FlowFuse email is set up, you will have access to invitations to other services and platforms, including 1Password. [Set this up](https://support.1password.com/explore/team-member/) as soon as possible to add a security layer to all your FlowFuse accounts. [Use this link](https://flowfuse.1password.com/teamjoin/invitation/WQYIVEIMHJF43IHHS2LALG4SKQ) to get access to your 1Password account by entering your new flowfuse email. 
 
 On your first day, once your email and 1Password accounts are set up, it is important to prioritize
 gaining access to Slack, the FlowFuse GitHub organization, and completing your onboarding issue.
