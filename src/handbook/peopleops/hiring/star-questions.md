@@ -7,52 +7,113 @@ Every candidate hiring plan includes at least one STAR Interview.
 A [STAR interview](https://www.themuse.com/advice/star-interview-method) is aimed at discussing the candidates past performance in certain situations and is meant to given an indication if the way they have behaved in the past is in line with FlowFuse expectations.
 
 ## Questions
-Below are some sample questions that can be used. 
+Below are some questions that can be used and how answers are evaluated.
 
-1. What’s the highlight of your career so far?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-2. What’s the low-light of your career so far?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-3. If you take one element from your past managers to shape your ideal manager -- What properties do you pick from your past managers?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-4. Can you explain how you deal with underperforming peers when working together?  
-   1. Look for:  
-      1. Iterative Improvement  
-      2. Collaboration  
-      3. Constructive Candor
-      4. Customer Empathy  
-5. Can you share an example of making a decision that didn’t have complete data to make a decision?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-6. Can you share a time when you’ve had to juggle multiple priorities at work?   
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-7. Please tell me about the time you’ve advocated and lobbied for a change that turned out to be the wrong decision?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Constructive Candor
-      4. Customer Empathy
+## STAR Interview Questions
+
+### 1. What’s the best team Slack or async culture you’ve been part of? What made it work?
+
+**Values**
+- Collaborative Community
+- Constructive Candor
+- Results
+
+---
+
+### 2. Tell me about a recent time async communication went wrong.
+
+**Values**
+- Results
+- Iterative Improvement
+- Collaborative Community
+
+---
+
+### 3. Tell me about a time you needed to move fast to get something shipped or resolved.
+
+**Values**
+- Results
+- Iterative Improvement
+- Customer Empathy
+
+---
+
+### 4. Tell me about something you shipped that wasn’t right the first time. What happened next?
+
+**Values**
+- Iterative Improvement
+- Results
+- Constructive Candor
+
+---
+
+### 5. Tell me about a time you had to understand a customer’s perspective to solve a problem.
+
+**Values**
+- Customer Empathy
+- Constructive Candor
+- Iterative Improvement
+
+---
+
+### 6. Tell me about the last time you changed your mind during a discussion.
+
+**Values**
+- Constructive Candor
+- Collaborative Community
+- Iterative Improvement
+
+---
+
+### 7. Tell me about a time you noticed a problem and decided to take action.
+
+**Values**
+- Results
+- Iterative Improvement
+- Collaborative Community
+
+---
+
+### 8. Tell me about a time you helped someone get unblocked.
+
+**Values**
+- Collaborative Community
+- Results
+- Customer Empathy
+
+---
+
+### 9. Tell me about a recent conflict or disagreement you had at work.
+
+**Values**
+- Constructive Candor
+- Collaborative Community
+- Results
+
+---
+
+### 10. Tell me about a time you gave or received difficult feedback.
+
+**Values**
+- Constructive Candor
+- Iterative Improvement
+- Collaborative Community
+
+---
+
+### 11. Can you share an example of making a decision without complete data?
+
+**Values**
+- Results
+- Iterative Improvement
+- Customer Empathy
+
+---
+
+### 12. If you take one element from your past managers to shape your ideal manager, what is it?
+
+
+**Values**
+- Collaborative Community
+- Constructive Candor
+- Results
