@@ -74,13 +74,6 @@ Below are some questions that can be used and how answers are evaluated.
 - Iterative Improvement
 - Collaborative Community
 
-#### 11. Can you share an example of making a decision without complete data?
-
-**Values**
-- Results
-- Iterative Improvement
-- Customer Empathy
-
 #### 12. If you take one element from your past managers to shape your ideal manager, what is it?
 
 **Values**
