@@ -11,7 +11,7 @@ Below are some questions that can be used and how answers are evaluated.
 
 ## STAR Interview Questions
 
-#### 1. What’s the best team Slack or async culture you’ve been part of? What made it work?
+#### 1. How can you build rapport with teammates if you don't work in the same physical location?
 
 **Values**
 - Collaborative Community
