@@ -40,6 +40,7 @@ During the reference check, aim to understand:
 1. If they were managing the candidate again, what would you focus on developing?
 1. Would they hire the candidate again if you had the opportunity? Why or why not?
 
+Backdoor or informal references are optional and should be used sparingly. They should never involve a candidate’s current employer and should be treated as directional context rather than definitive signal.
 
 ## Making the Decision
 
