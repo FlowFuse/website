@@ -54,7 +54,28 @@ As we scale, this role will evolve to include demand generation responsibilities
    * Develop a deep understanding of our target personas and their needs.
    * Start developing key messaging and positioning for FlowFuse.
    * Begin working on content for upcoming product launches or feature releases.
-   * Analyze current marketing performance and identify key metrics for tracking success.
+* Week 1-4:
+   * Immerse yourself in FlowFuse's product, strategy, and market.
+      * Watch 15+ sales calls (Fathom) to hear from prospects where the product marketing can improve.
+      * Inverview 5 prospects or customers to lean what the problems is they're solving and what they like about Flowfuse.
+   * Familiarize yourself with the Node-RED ecosystem and competitive landscape.
+      * Set up a team of FlowFuse, and go through the onboarding and build a small application 
+   * Meet with key stakeholders across product, sales, and engineering.
+   * Review existing marketing materials, map them to sales stages, and identify areas for improvement.
+   * Deliverables:
+       1. Update the sales deck to reflect your findings and improve first meeting conversion
+       2. Create "Cheat Sheets" for the second sales meeting, handle the top 3 objections, and the current pricing. 
+* Week 5-8:
+   * Develop a deep understanding of our target personas and their needs.
+   * Start developing key messaging and positioning for FlowFuse.
+      * Update the handbook as you learn on messaging and positioning. Communicate changes with Sales, Marketing, and Product.
+   * Begin working on content for upcoming product launches or feature releases.
+      * Take a 30 minute session per release to train Sales and CSM roles on them
+      * Write and maintain documention, blogs, and other customer communication
+   * Analyze current marketing & sales performance.
+* Deliverables:
+   1. 2 Battlecards against our main competition
+   2. Create a plan to reduce sales cycle length, increase win rate, and conversions.
 * Week 9-13:
    * Develop and begin executing on initial marketing campaigns.
    * Create sales enablement materials to support the sales team.
