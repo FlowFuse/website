@@ -1,11 +1,12 @@
 ---
-title: "Serial Port Connection Guide: Connect Manufacturing Equipment with Node-RED"
+title: "Node-RED Serial Port Tutorial: Connect RS232/RS485 Manufacturing Equipment"
 subtitle: "Learn how to bring serial-connected equipment online using Node-RED and FlowFuse"
 description: "Learn how to connect manufacturing equipment using serial interfaces like RS-232/422/485 in Node-RED with FlowFuse. Enable monitoring, data collection, and automation—no hardware changes required"
+lastUpdated: 2025-12-10
 date: 2025-07-09
 authors: ["sumit-shinde"]
 keywords: node-red, serial communication, rs232, rs485, rs422, modbus, industrial automation, flowfuse, legacy equipment, machine data collection, manufacturing connectivity, serial port integration, factory floor monitoring, serial devices, equipment integration
-image: blog/2025/07/images/connect-serial-port-node-red.png
+image: blog/2025/07/images/connect-serial-port-node-red-ff.png
 tags:
    - flowfuse
    - opcua
@@ -33,7 +34,7 @@ Many factories rely on machines, both new and old, that communicate via traditio
 
 <!--more-->
 
-This blog shows how to use FlowFuse to connect manufacturing equipment to collect data and enable monitoring without modifying the original hardware.
+This guide shows you how to use FlowFuse (Node-RED with enterprise capabilities) to connect manufacturing equipment, collect data, and enable real-time monitoring—without modifying your original hardware.
 
 ## Making Sense of Serial Communication
 
@@ -84,7 +85,7 @@ Let's walk through how to set this up.
 Before we start, ensure the following prerequisites are met:
 
   * **Hardware Connection:** The machine must be physically connected to your system using a serial interface.
-  * **Node-RED Instance:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via FlowFuse. If you don't have an account, check out our free trial.
+  * **Node-RED Instance:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via FlowFuse. If you don't have an account, check out our [free trial](https://app.flowfuse.com/).
   * **Serialport Node:** Install the [node-red-node-serialport](https://flows.nodered.org/node/node-red-node-serialport) package if it is not already available in your palette.
 
 ### Configuring the Serial Port Node

@@ -12,7 +12,7 @@ tags:
  - self hosted
 ---
 
-With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored platform for deploying production Node-RED applications. It offers [extensive features](/product/features/) at a low cost, reducing operational overhead. However, the cloud is not the only option we provide; we also offer a self-hosted option for users who prefer to deploy FlowFuse on their servers. This guide demonstrates how to deploy FlowFuse on your Ubuntu server using Docker, covering key aspects such as domain setup, email, SSL, and more for real-world production scenarios
+With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored platform for deploying production Node-RED applications. It offers [extensive features](/platform/features/) at a low cost, reducing operational overhead. However, the cloud is not the only option we provide; we also offer a self-hosted option for users who prefer to deploy FlowFuse on their servers. This guide demonstrates how to deploy FlowFuse on your Ubuntu server using Docker, covering key aspects such as domain setup, email, SSL, and more for real-world production scenarios
 
 <!--more-->
 

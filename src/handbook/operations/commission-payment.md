@@ -101,6 +101,10 @@ Best,
 [Manager sending email]
 ```
 
+### Update Sales Representative Productivity
+
+Once commission numbers are finalized for the month, rep productivity should be updated in the Ops Plan spreadsheet using the finalized data.
+
 ### Wiring the money
 
 If the employee agrees to the commission, process the payment in Deel as USD payment.

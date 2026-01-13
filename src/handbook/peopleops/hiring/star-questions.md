@@ -7,52 +7,72 @@ Every candidate hiring plan includes at least one STAR Interview.
 A [STAR interview](https://www.themuse.com/advice/star-interview-method) is aimed at discussing the candidates past performance in certain situations and is meant to given an indication if the way they have behaved in the past is in line with FlowFuse expectations.
 
 ## Questions
-Below are some sample questions that can be used. 
+Below are some questions that can be used and how answers are evaluated.
 
-1. What’s the highlight of your career so far?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-2. What’s the low-light of your career so far?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-3. If you take one element from your past managers to shape your ideal manager -- What properties do you pick from your past managers?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-4. Can you explain how you deal with underperforming peers when working together?  
-   1. Look for:  
-      1. Iterative Improvement  
-      2. Collaboration  
-      3. Constructive Candor
-      4. Customer Empathy  
-5. Can you share an example of making a decision that didn’t have complete data to make a decision?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-6. Can you share a time when you’ve had to juggle multiple priorities at work?   
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Collaborative Community  
-      4. Constructive Candor
-      5. Customer Empathy  
-7. Please tell me about the time you’ve advocated and lobbied for a change that turned out to be the wrong decision?  
-   1. Look for:  
-      1. Results  
-      2. Iterative Improvement  
-      3. Constructive Candor
-      4. Customer Empathy
+## STAR Interview Questions
+
+#### 1. How do you build rapport with teammates if you don't work in the same physical location?
+
+**Values**
+- Collaborative Community
+
+#### 2. In an async environment, we rely heavily on written communication. Have you ever had written communication go wrong?
+
+**Values**
+- Constructive Candor
+- Iterative Improvement
+
+#### 3. Walk me through a situation where you shipped something that wasn’t right the first time. What happened next?
+
+**Values**
+- Iterative Improvement
+- Results
+
+#### 4. When did understanding the customer’s perspective change how you approached a problem? What happened as a result?
+
+**Values**
+- Customer Empathy
+- Results
+
+#### 5. Has someone’s input changed your perspective during a discussion?
+
+**Values**
+- Constructive Candor
+- Collaborative Community
+
+#### 6. Have you ever noticed a problem and decided to jump in? What happened?
+
+**Values**
+- Results
+- Iterative Improvement
+
+#### 7. What’s an example of helping someone through a blocker rather than solving it for them?
+
+**Values**
+- Collaborative Community
+- Iterative Improvement
+
+#### 8. When was the last time you disagreed with someone at work, and how did you handle it?
+
+**Values**
+- Constructive Candor
+- Collaborative Community
+
+#### 9. What’s a situation where you had to navigate difficult feedback, either giving or receiving it?
+
+**Values**
+- Constructive Candor
+- Iterative Improvement
+
+#### 10. When have you acted quickly and been wrong? What did you do afterward?
+
+**Values**
+- Results
+- Iterative Improvement
+- Constructive Candor
+
+#### 11. Think of your past managers. What qualities did you appreciate about them?
+
+**Values**
+- Collaborative Community
+- Constructive Candor

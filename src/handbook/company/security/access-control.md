@@ -10,136 +10,100 @@ navTitle: Access Control Policy
 
 ## Purpose
 
-To limit access to information and systems to authorized parties in accordance
-with business objectives.
+This policy describes how FlowFuse controls access to information and systems. Its purpose is to ensure only authorized parties can access data and systems in line with business objectives.
 
 ## Scope 
 
-This policy applies to all FlowFuse information systems that process, store, or
-transmit confidential data as defined in the FlowFuse [Data Management Policy](./data-management.md).
+This policy applies to all FlowFuse systems that handle confidential data. The [Data Management Policy](./data-management.md) defines what counts as confidential data.
 
-It applies to all employees of FlowFuse and to all external parties with access
-to FlowFuse system resources.
+It also applies to all FlowFuse employees and to any external partners who have access to FlowFuse systems or resources.
 
 ## Access Control Policy
 
-1. Access to all computing resources, including servers, end-user computing
-  devices, network equipment, services and applications, must be protected by
-  strong authentication, authorization, and auditing.
+1. Protect all computing resources—such as servers, user devices, network equipment, services, and applications—with strong authentication, authorization, and auditing.
 
-2. Interactive user access must be associated to an account or login unique to
-each user.
+2. Each user must use their own unique account for interactive access. Accounts must not be shared.
 
-3. All credentials, including user passwords, service accounts, and access
-keys, must meet the length, complexity, age, and rotation requirements defined
-by industry best practice. Specific requires are described in the [password policy](#password-policy).
+3. Enforce industry best practices for passwords, service accounts, and access keys, including requirements for length, complexity, and rotation. See the Password Policy for details.
 
-4. Use strong password and multi-factor authentication (MFA) whenever possible
-to authenticate to all computing resources.
+4. Require the use of strong passwords and multi-factor authentication (MFA) wherever supported.
 
-5. MFA is required to access any critical system or resource, including but not
-limited to resources in production environments.
+5. Require MFA for all critical systems and resources, including all production environments.
 
-6. Unused accounts, passwords, access keys must be removed within 30 days.
+6. Remove unused accounts, passwords, and access keys within 30 days.
 
-7. A unique access key or service account must be used for different
-application or user access.
+7. Assign unique access keys or service accounts for each application or system process.
 
-8. Authenticated sessions must time out after a defined period of inactivity.
-
+8. Configure authenticated sessions to time out after a defined period of inactivity.
 
 ### How to Request Access or Permission to a System
 
-If you require access or permissions (e.g., for AWS, GitHub, HubSpot), please [raise a Ticket/Issue](https://github.com/FlowFuse/admin/issues/new?assignees=ZJvandeWeg%2C+knolleary&labels=&projects=&template=access-request.md) in our admin repository.
+### How to Request Access or Permissions
+
+To request access or permissions (for example: AWS, GitHub, or HubSpot), open an [Access Request issue](https://github.com/FlowFuse/admin/issues/new?assignees=ZJvandeWeg%2C+knolleary&labels=&projects=&template=access-request.md) in the admin repository.
 
 ### Access Authorization and Termination
 
-1. Access authorization shall be implemented using role-based access control
-(RBAC) or similar mechanism.
+1. Use role-based access control (RBAC) or a similar method to manage access permissions.
 
-2. Standard access based on a user's job role may be pre-provisioned during
-employee onboarding. All subsequent access requests to computing resources must
-be approved by the requestor’s manager, prior to granting and provisioning of
-access.
+2. Provision standard access during employee onboarding based on the user’s job role. All additional access requests must be approved by the requester’s manager before access is granted.
 
-3. Access to critical resources, such as production environments, must be
-approved by the CTO in addition to the requestor’s manager.
+3. Require CTO approval for access to critical resources, including production environments.
 
-4. Access must be reviewed on a regular basis and revoked if no longer needed.
+4. Review access on a regular basis and revoke permissions when they are no longer needed.
 
-5. Upon termination of employment, all system access must be revoked and user
-accounts terminated within 24 hours or one business day.
+5. Revoke all system access and disable accounts within 24 hours (one business day) after employment ends.
 
-6. All system access must be reviewed at least annually and whenever a user's
-job role changes.
+6. Review all user access at least annually and whenever a user’s job role changes.
 
 ### Shared Secrets Management
 
-1. Use of shared credentials/secrets must be minimized and approved on an
-exception basis.
+1. Minimize the use of shared credentials and allow them only as an approved exception.
 
-2. If required by business operations, secrets/credentials must be shared
-securely and stored in the company provided password manager, 1Password.
+2. When shared credentials are required, store and share them securely using the company-provided password manager, 1Password.
 
-3. Usage of a shared secret to access a critical system or resource must be
-supported by a complimenting solution to uniquely identify the user.
+3. Support any shared access to critical systems with a method that uniquely identifies the individual user.
 
 ## Privileged Access Management
 
-1. Users must not log in directly to systems as a privileged user.
+1. Prevent direct login to systems using privileged accounts.
 
-  * A privileged user is someone who has administrative access to critical
-    systems, such as a Active Directory Domain Administrator, root user to a
-    Linux/Unix system, and Administrator or Root User to an AWS account.
+   * A privileged account provides administrative access to critical systems, such as an Active Directory Domain Administrator, a root user on a Linux or Unix system, or an Administrator or Root User on an AWS account.
 
-2. Privilege access must only be gained through a proxy, or equivalent, that
-supports strong authentication (such as MFA) using a unique individual account
-with full auditing of user activities.
+2. Require privileged access to be obtained only through a proxy or equivalent mechanism that uses strong authentication (such as MFA), a unique individual account, and full auditing of user activity.
 
-3. Direct administrative access to production systems must be kept to an
-absolute minimum.
+3. Keep direct administrative access to production systems to an absolute minimum.
 
 ## Access to Source Code
 
-FlowFuse defaults to developing in the open, without restriction on who can
-view the source code.
-
-Exceptions will be made for business reasons to keep particular repositories
-private. Access to private repositories on GitHub will be based on business need
-and role.
+Develop source code in the open by default. Restrict access only when required for business reasons. Grant access to private repositories based on business need and job role.
 
 ## Password Policy
 
-All FlowFuse system passwords must meet industry standards and best practices.
-Where possible, systems shall be configured to enforce these standards.
+Enforce industry best practices for passwords and configure systems to support these requirements wherever possible.
 
- - Minimum length of 8 characters, with a mix of letters, numbers, symbols and case.
- - Passwords must not be reused between systems
- - Passwords may only be stored in the company provided password vault, 1Password.
-
+- Use a minimum password length of 8 characters with a mix of letters, numbers, symbols, and cases.
+- Do not reuse passwords across different systems.
+- Store passwords only in the company-provided password vault, 1Password.
 
 ## Programmaticaly Accessible Resources
 
 When programmatic access to resources is required, the following guidelines must
 be followed:
 
-1. Use of API keys or access tokens (secrets) is preferred over username/password
-combinations
+## Programmatically Accessible Resources
 
-2. Whenever possible, secrets shouldn't be shared between environments
+When programmatic access is required, follow these guidelines:
+1. Use API keys or access tokens instead of username and password combinations.
+2. Avoid sharing secrets across environments unless required for operational reasons.
+3. Store all secrets securely in 1Password and never share them in plaintext.
+4. Rotate secrets on a regular basis—at least annually—and follow [internal 
+guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo) for rotation.
+5. Apply the principle of least privilege by granting only the access required for the application to function.
+6. Do not hardcode secrets in source code.
 
-3. Secrets must be stored securely in 1Password and not shared in
-plaintext
+---
+This policy is adapted from the following sources:
 
-4. Secrets must be rotated on a regular basis - at least annually, follow [internal 
-guidelines](https://docs.google.com/document/d/1bFBaVWNYKjPSMefn5drkElwM-nk06ilCrtH88ZtTjAo)
-for details
-
-5. Secrets should follow least privilege principle - only provide access to the
-resources that are required for the application to function
-
-6. Secrets must not be hardcoded in the source code 
-
-
---- 
-Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
+- [JupiterOne Security Policy Templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/))
+- [Vanta](https://vanta.com)

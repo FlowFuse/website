@@ -1,36 +1,34 @@
 ---
 eleventyNavigation:
   key: Working with Messages
-  order: 2
+  order: 5
   parent: Getting Started
 meta:
   title: Understanding Node-RED Messages
-  description: A practical guide to working with Node-RED messages, ensuring error-free flows and optimized data handling.
+  description: A comprehensive guide to working with Node-RED messages, ensuring error-free flows and optimized data handling.
   keywords: msg.payload node red, node red message structure, node-red messages, node red msg.payload, msg.payload, node red msg.payload array
 ---
 
 # {{ meta.title }}
 
-Node-RED relies on passing messages between nodes to build dynamic IoT, automation, and data-processing workflows. Each message carries data that nodes modify, process, or analyze, so understanding how these messages are structured and handled is crucial. Mismanaging messages can lead to subtle bugs, such as overwriting data, infinite loops, or crashes. To prevent errors and build reliable flows, it’s essential to know how to work with messages efficiently.
+Node-RED operates by passing messages between nodes to create dynamic IoT, automation, and data-processing workflows. Each message transports data that nodes read, modify, process, or analyze. Understanding message structure and handling is essential for building reliable flows. Poor message management can cause subtle bugs like data overwrites, infinite loops, or system crashes.
 
-<!--more-->
-
-In this guide, we’ll explore the inner workings of Node-RED messages, common mistakes, and best practices for ensuring smooth data flow without errors.
+This guide explores Node-RED message mechanics, common pitfalls, and best practices for maintaining smooth, error-free data flow.
 
 ## What Are Node-RED Messages?
 
-In Node-RED, messages are packets of data that travel between nodes in your flow. Node-RED is event-driven, meaning an event emitter triggers events, and a listener reacts to them. In this context, nodes in Node-RED act as both event emitters and listeners, with messages serving as the medium through which these events are communicated. These messages represent the information that nodes read, modify, and act upon. Each node processes these messages and passes them along to the next node in the sequence.
+Messages in Node-RED are data packets that flow between nodes in your workflow. Node-RED follows an event-driven architecture where nodes act as both event emitters and listeners, with messages serving as the communication medium between them.
 
 ![Node-RED message passing animation](./images/node-red-message-passing.gif){data-zoomable}
-_Node-RED message passing animation_
+_Node-RED message passing visualization_
 
-Messages are crucial because they carry the data that powers your workflows—whether it’s sensor readings, user inputs, or responses from an API. Essentially, Node-RED messages are JavaScript objects, which are simple yet powerful structures for managing and transferring data throughout your flows.
+Messages carry the data that powers your workflows—sensor readings, user inputs, API responses, and more. Fundamentally, Node-RED messages are JavaScript objects, providing a flexible structure for managing and transferring data throughout your flows.
 
-### Understanding JavaScript Objects
+### JavaScript Objects Primer
 
-A [JavaScript object](https://www.youtube.com/watch?v=BRSg22VacUA) is a data structure used to store multiple values in a single variable. It consists of key-value pairs, where each key (or property) is associated with a specific value. This organization allows you to group and access related data easily.
+A [JavaScript object](https://www.youtube.com/watch?v=BRSg22VacUA) is a data structure that stores multiple values in key-value pairs. Each key (property) associates with a specific value, allowing organized access to related data.
 
- For example: 
+Example:
 
 ```javascript
 {
@@ -40,182 +38,290 @@ A [JavaScript object](https://www.youtube.com/watch?v=BRSg22VacUA) is a data str
 }
 ```
 
-In this example, `name`, `age`, and `married` are properties of the object. Similarly, Node-RED messages use this structure to organize and transport data within your flows.
+Here, `name`, `age`, and `married` are object properties. Node-RED messages use this same structure to organize and transport data within flows.
 
 ## Anatomy of Node-RED Messages
 
-In Node-RED, messages are by default referred to as `msg`, and nodes are designed to work with this naming convention.
+Node-RED messages are referenced as `msg` by default, and nodes are designed around this convention.
 
-Node-RED messages consist of several key properties essential for data handling and communication between nodes:
+Key message properties include:
 
-- **`msg._msgid`**: A unique identifier for the message, automatically assigned by Node-RED. It helps in tracking and debugging messages within the flow.
-- **`msg.payload`**: This is the primary data of the message. It contains the main information that nodes process and act upon, such as sensor readings or user input. 
-- **`msg.topic`**: An optional property used to categorize or identify the message. It can be useful for routing or filtering messages based on their context.
+- **`msg._msgid`**: A unique identifier automatically assigned by Node-RED for tracking and debugging messages within flows.
+- **`msg.payload`**: The primary data container. This holds the main information that nodes process—sensor readings, user input, computed results, etc.
+- **`msg.topic`**: An optional property for categorizing or identifying messages, useful for routing or filtering based on context.
 
-These are the most common properties you'll encounter in Node-RED, Also additional properties can be added as needed.
+These are the most frequently used properties, though additional custom properties can be added as needed.
 
-The `_msgid` property is always present, even if you send an empty object from one node to another. This property is automatically appended by Node-RED to track messages within the flow. However, it's important to note that the `payload` and `topic` properties are not always present in every message. Their inclusion depends on whether the node appends them. Most nodes in Node-RED, including contributed nodes, use the `payload` property as a standard for communication.
+The `_msgid` property appears automatically, even when sending an empty object between nodes. However, `payload` and `topic` are not always present—their inclusion depends on whether nodes append them. Most Node-RED nodes, including community-contributed ones, use `payload` as the standard communication property.
 
 ## Data Types in Node-RED Messages
 
-When working with Node-RED messages, it’s essential to understand the data types you'll encounter. Since messages are always JavaScript objects, the message itself must be an object, or Node-RED will throw an error.
+Understanding data types is crucial when working with Node-RED messages. Messages themselves must always be JavaScript objects, or Node-RED will throw an error.
 
-It is possible, however, to send `null` as a message. This is often used when you don't want to send any data further along the flow, as `null` effectively stops the message from propagating to subsequent nodes.
+One exception: you can send `null` as a message. This effectively stops message propagation, preventing data from flowing to subsequent nodes.
 
-Talking about message properties, their values can be any type of javascript supported data such as [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean), [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [buffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) and other complex datatypes.
+Message property values can be any JavaScript-supported data type:
+- [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+- [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+- [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- [Buffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
+- Other complex data types
 
 ![Inject node sending different data types](./images/node-red-data-types.gif){data-zoomable}
-_Image showing the some data types that are supported by Node-RED_
+_Various data types supported by Node-RED_
 
-## How to Clone Messages or Message properties
+## How to Clone Messages and Properties
 
-Cloning in Node-RED involves creating a copy of a message or its properties so that you can work with the copy independently of the original. This is useful when you need to modify data without affecting the original message, or when you need to send a modified version of the message to different parts of your flow.
+Cloning creates an independent copy of a message or its properties, allowing modifications without affecting the original. This is essential when sending different versions of data to multiple flow branches or when preserving original data for comparison.
 
-### Using the Change Node 
+### Using the Change Node
 
-The **Change** node in Node-RED provides a user-friendly way to modify and clone message properties. However, it's important to note that you cannot clone the entire `msg` object at once; you need to copy its properties one by one. Additionally, the Change node can only clone properties to `msg` another property, or the flow/global context property.
+The **Change** node provides a visual interface for modifying and cloning message properties. Note that you cannot clone the entire `msg` object in change node at once—properties must be copied individually. The Change node can clone properties to other `msg` properties, or to flow/global context.
 
-Here's how you can use the Change node to handle message properties:
+Steps to clone using the Change node:
 
 1. Double-click on the **Change** node to open its configuration dialogue.
 2. You will see an interface with an existing item added by default.
 3. On the left side of the field, you will see options like **"Set"**, **"Change"**, **"Delete"**, and **"Move"**. You can use these options to perform the corresponding operations on the message.
 4. To clone the property `msg.payload` to `flow.data`, select the **"Set"** action. In the first **"Property"** field, enter `payload`, and in the **"to the value"** field, select **flow** and enter `data`. For cloning `msg` properties to new `msg` properties, select **msg** in the second field and specify the new property name.
 
-For more information on the Change node and to explore other actions such as **Delete**, **Move**, and **Change**, refer to the comprehensive documentation of the [Change Node](https://nodered.org/docs/user-guide/node-red-dashboard/).
+For comprehensive information on Change node capabilities, including Delete, Move, and Change actions, refer to the [Change Node documentation](https://nodered.org/docs/user-guide/nodes).
 
-### Using Function node
+### Using the Function Node
 
-In the function node, you can clone messages or specific properties using JavaScript. Here's how you can do it:
+The Function node offers programmatic control over message cloning using JavaScript:
 
 ```js
 // Clone the entire message
 var newMsg = RED.util.cloneMessage(msg);
-// Modify the clone if needed and changing the clone will not affect orignal one
+
+// Modify the clone safely (original remains unchanged)
 newMsg.payload = "Modified data";
-// Return the original 
-return msg
-```
 
-*Important Note: Direct assignment like let newMsg = msg; does not create a true clone. Instead, it creates a new reference to the same object. This means that changes to newMsg will also affect msg, as both refer to the same data.*
-
-
-```js
-// Clone the entire message
-var newMsg = msg;
-// Modification if needed of newMsg will affect orignal one
-newMsg.payload = "Modified data";
-// Return the original 
-return msg
-```
-
-If you only need to clone specific properties of a message, you can do this by manually copying the properties you need:
-
-```js
-// Clone specific properties of the message
-var newMsg = {};
-newMsg.payload = msg.payload; // Copy payload
-newMsg.topic = msg.topic;     // Copy topic
-// Return the new message with cloned properties
-return newMsg;
-```
-
-### Adding New Properties to Messages
-
-Node-RED messages, as mentioned earlier, are JavaScript objects, making them highly flexible for customization. You can add as many properties as needed to a message, allowing you to carry additional data through your flow. This can be particularly useful for enhancing the information available to downstream nodes, like including metadata, tags, or extra configuration details.
-
-To add new properties to a message, you can use either the **Change** node or the **Function** node.
-
-The **Change** node allows you to easily append new properties to the `msg` object without writing any code. Here's how to do it:
-
-1. Drag a **Change** node into your flow and double-click it to open the configuration.
-2. Select the **"Set"** action from the left dropdown menu.
-3. In the **"Property"** field, enter the new property name (e.g., `msg.customData`).
-4. In the **"To"** field, enter the value you want to assign to this property. This can be a string, number, boolean, or even an expression.
-
-If you prefer more control, you can add new properties directly through the **Function** node using JavaScript.
-
-```js
-// Add a new custom property to the message
-msg.customData = {
-    description: "This is description",
-    timestamp: new Date().toISOString()
-};
-// Return the updated message
+// Return the original message
 return msg;
 ```
 
-### Handling JSON Messages
+**Critical Note:** Direct assignment like `let newMsg = msg;` does **not** create a true clone. It creates a reference to the same object, meaning changes to `newMsg` will affect `msg` as both point to the same data.
 
-In Node-RED, working with [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) is common, especially when dealing with APIs, and IoT data. JSON (JavaScript Object Notation) is a lightweight format for data exchange, and Node-RED simplifies the process of sending and receiving JSON objects.
+```js
+// This creates a reference, NOT a clone
+var newMsg = msg;
 
-There are two forms of JSON that you may encounter when working with Node-RED:
+// Modifying newMsg also modifies the original msg
+newMsg.payload = "Modified data";
 
-1. **JSON Object**: This is a simple, structured JavaScript object that can be easily manipulated in Node-RED. You can access its properties, modify its values, and pass it through various nodes in your flow.
+return msg; // The original is now changed!
+```
 
-2. **JSON String**: A JSON string is a serialized version of a JSON object, commonly used when transmitting data between systems. Unlike a normal object, you cannot manipulate a JSON string directly in the same way you would with a JavaScript object.
+To clone specific properties only:
 
-#### Converting JSON String to JSON Object
+```js
+// Clone selective properties
+var newMsg = {};
+newMsg.payload = msg.payload;  // Copy payload
+newMsg.topic = msg.topic;      // Copy topic
 
-To handle a JSON string as a normal JavaScript object, you first need to convert it into a JSON object. Node-RED provides a `JSON` node that simplifies this process. The `JSON` node parses the string and converts it into an object, allowing you to handle it like any other structured data within your flow.
+return newMsg;
+```
 
-Here are the steps to achieve this:
+## Adding New Properties to Messages
 
-1. Drag the JSON node onto the Node-RED canvas.
-2. Double-click on the JSON node to configure it.
-3. Set the action to "Always convert to a JSON object" and click "Done."
-4. Connect the input of the JSON node to the output of the node that is sending the JSON string.
-5. Connect the output of the JSON node to the input of the next node in your flow that needs the parsed JSON object.
+Node-RED messages are JavaScript objects, making them highly flexible for customization. You can add unlimited properties to carry additional data through your flow—metadata, tags, timestamps, configuration details, and more.
 
-By following these steps, the JSON node will convert the incoming JSON string into a usable JavaScript object within your Node-RED flow, for more information refer to [JSON node documentation](/node-red/core-nodes/json/).
+### Using the Change Node
 
-## Common Mistakes to Avoid with Node-RED Messages
+The Change node allows property addition without coding:
 
-When working with messages in Node-RED, avoiding these common mistakes can help ensure your flows run smoothly and as expected:
+1. Drag a **Change** node into your flow and open configuration.
+2. Select the **Set** action.
+3. In the **Property** field, enter the new property name (e.g., `msg.customData`).
+4. In the **To** field, enter the value—this can be a string, number, boolean, JSONata expression, or reference to another property.
 
-- **Adding Properties to Non-Object Property**: Attempting to add properties to a non-object property (like a string or number) can lead to errors or unexpected behavior. Always ensure you're working with objects when adding properties.
+### Using the Function Node
 
-  **Incorrect Example:**
-  ```javascript
-  msg.payload = 'stringValue';
-  msg.payload.newProperty = 'value';  // Error: 'stringValue' is not an object
-  return msg;
-  ```
+For programmatic control, add properties in a Function node:
 
-  **Correct Example:**
-  ```javascript
-  msg.payload = {};  // Initialize as an object
-  msg.payload.newProperty = 'value';  // Safe to add properties now
-  return msg;
-  ```
+```js
+// Add custom properties to the message
+msg.customData = {
+    description: "Sensor reading from device A",
+    timestamp: new Date().toISOString(),
+    location: "Building 3, Floor 2"
+};
 
-This mistake often occurs in the change node where an inject node sends `msg.payload` as a `string` or `number` (e.g., 'hello world'), and the change node attempts to add a property to `msg.payload` as if it were an object.
+// Return the enhanced message
+return msg;
+```
 
-![Showing the common mistake done in change: adding property to non-object](./images/mistake1.gif){data-zoomable}
-  _Incorrect: Adding a property to a non-object type (e.g., string)_
+## Deleting and Moving Message Properties
 
-  **Correct Approach:**
-  ![how to prevent it](./images/mistake-1-solution.gif){data-zoomable}
-  _Correct: Initialize the property as an object before adding properties_
+In addition to adding and cloning properties, you may need to remove or relocate properties within messages. 
 
-- **Overwriting the Message Object (`msg`)**: Some users mistakenly overwrite the entire `msg` object rather than modifying specific properties. This can result in losing important context or properties.
+### Deleting Properties
 
-  Example of an incorrect overwrite:
-  ```javascript
-  msg = { newProperty: 'value' };  // Overwrites the whole msg object
-  return msg;
-  ```
+#### Using the Change Node
 
-  Instead, modify specific properties:
-  ```javascript
-  msg.newProperty = 'value';
-  return msg;
-  ```
+Use the **Delete** action to remove unwanted properties from messages:
 
-- **Returning an Incorrect Data Type**: Node-RED flows expect messages to be passed along as objects. Returning an incorrect data type, such as a string or number break the flow and will throw an error.
+1. Double-click on the **Change** node to open its configuration dialogue.
+2. Select the **"Delete"** action from the dropdown.
+3. In the **"Property"** field, specify the property to remove (e.g., `msg.tempData`).
 
-- **Forgetting to Return the Message**: In function nodes, if you modify a message but forget to return it, the flow will stop at that node.
+#### Using the Function Node
 
-By mastering the intricacies of Node-RED message objects and avoiding common pitfalls, you can build more robust and efficient workflows. Understanding how to work with JSON data, cloning messages, and correctly handling properties ensures that your data flows smoothly between nodes.
+To delete properties programmatically in a Function node, use the `delete` operator:
+```js
+// Delete a single property
+delete msg.tempData;
 
-As you continue exploring and building with Node-RED, keep these best practices in mind to maintain error-free and high-performance flows.
+// Delete multiple properties
+delete msg.tempData;
+delete msg.oldPayload;
+delete msg.metadata;
+
+return msg;
+```
+
+### Moving Properties
+
+#### Using the Change Node
+
+Use the **Move** action to relocate a property to a new location while removing it from the original location:
+
+1. Double-click on the **Change** node to open its configuration dialogue.
+2. Select the **"Move"** action from the dropdown.
+3. In the first **"Property"** field, specify the source property (e.g., `msg.payload`).
+4. In the **"to"** field, specify the destination property (e.g., `msg.oldPayload`).
+
+#### Using the Function Node
+
+To move a property programmatically in a Function node, copy the property to its new location and then delete it from the original:
+```js
+// Move msg.payload to msg.oldPayload
+msg.oldPayload = msg.payload;
+delete msg.payload;
+
+// Or move a nested property
+msg.backup = {
+    data: msg.tempData
+};
+delete msg.tempData;
+
+return msg;
+```
+
+**Important Note:** Just like with cloning, if you need to move a property that contains an object or array and want to ensure the original is completely removed from memory, you should clone it first:
+```js
+// Move with cloning (for objects/arrays)
+msg.oldPayload = RED.util.cloneMessage(msg.payload);
+delete msg.payload;
+
+return msg;
+```
+
+This ensures that the moved property is independent and modifications to the new location won't affect any lingering references to the old location.
+
+## Handling JSON Messages
+
+Working with [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) is common in Node-RED, especially with APIs and IoT data. JSON (JavaScript Object Notation) is a lightweight data-exchange format.
+
+Two forms of JSON exist in Node-RED:
+
+1. **JSON Object**: A structured JavaScript object that can be directly manipulated—access properties, modify values, pass through nodes seamlessly.
+
+2. **JSON String**: A serialized JSON representation, commonly used when transmitting data between systems. Unlike objects, JSON strings cannot be directly manipulated as structured data.
+
+### Converting JSON String to JSON Object
+
+To work with a JSON string as a JavaScript object, convert it using the **JSON** node. This node parses the string into a usable object structure.
+
+Steps:
+
+1. Drag the **JSON** node onto the canvas.
+2. Double-click to configure.
+3. Set the action to "Always convert to JavaScript Object" and click Done.
+4. Connect the JSON node between the source node (sending the JSON string) and the destination node (requiring the parsed object).
+
+The JSON node automatically converts incoming JSON strings into JavaScript objects. For more details, see the [JSON node documentation](/node-red/core-nodes/json/).
+
+## Common Mistakes to Avoid
+
+Avoiding these pitfalls ensures smooth flow operation:
+
+### 1. Adding Properties to Non-Object Types
+
+Attempting to add properties to primitive types (strings, numbers) causes errors.
+
+**Incorrect:**
+```javascript
+msg.payload = 'stringValue';
+msg.payload.newProperty = 'value';  // Error: Cannot add property to string
+return msg;
+```
+
+**Correct:**
+```javascript
+msg.payload = {};  // Initialize as object
+msg.payload.newProperty = 'value';
+return msg;
+```
+
+This commonly occurs when an Inject node sends `msg.payload` as a string or number, then a Change node attempts to add properties to it.
+
+![Showing the common mistake: adding property to non-object](./images/mistake1.gif){data-zoomable}
+_Incorrect: Adding properties to a non-object type_
+
+![Correct approach to prevent the error](./images/mistake-1-solution.gif){data-zoomable}
+_Correct: Initialize as object before adding properties_
+
+### 2. Overwriting the Entire Message Object
+
+Accidentally replacing the entire `msg` object loses important properties like `_msgid`, `topic`, and custom metadata.
+
+**Incorrect:**
+```javascript
+msg = { newProperty: 'value' };  // Destroys existing msg structure
+return msg;
+```
+
+**Correct:**
+```javascript
+msg.newProperty = 'value';  // Preserves existing properties
+return msg;
+```
+
+### 3. Returning Incorrect Data Types
+
+Node-RED expects function nodes to return message objects. Returning primitives breaks the flow.
+
+**Incorrect:**
+```javascript
+return "some string";  // Error: Not a valid message
+```
+
+**Correct:**
+```javascript
+msg.payload = "some string";
+return msg;
+```
+
+### 4. Forgetting to Return the Message
+
+In Function nodes, forgetting the return statement halts the flow at that node.
+
+**Incorrect:**
+```javascript
+msg.payload = msg.payload * 2;
+// Missing return statement - flow stops here
+```
+
+**Correct:**
+```javascript
+msg.payload = msg.payload * 2;
+return msg;  // Flow continues
+```
+
+By mastering Node-RED message handling and avoiding common mistakes, you can build robust, efficient workflows. Understanding JSON conversion, message cloning, and proper property management ensures smooth data flow between nodes and maintainable, error-free applications.

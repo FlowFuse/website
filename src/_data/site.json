@@ -6,8 +6,9 @@
         "em": "https://job-boards.greenhouse.io/flowfuse/jobs/5566913004"
     },
     "messaging": {
-        "tagLine": "Get Connected. Collect Data.<br />Start Building. Scale It.<br />With FlowFuse AI.",
-        "subtitle": "FlowFuse is the Industrial Application Platform that brings the exclusive AI-enhanced Node-RED to the market, empowering teams to build, deploy, and manage solutions that optimize operations.",
+        "tagLine": "Connect, Collect, Build, and Scale with FlowFuse",
+        "subtitle": "FlowFuse is the Industrial Application Platform that connects any machine, moves data across any protocol, models it in any data platform, and operates industrial applications at scale—accelerated by an LLM-powered copilot that uses Model Context Protocol (MCP) to connect AI directly to your live industrial data."
+,
         "title": "Build workflows and integrations that optimize your industrial operations",
         "keywords": "Node-RED, Application Development, IoT, IIoT, Low-Code, open source, Integration, Workflow, Automation, Data Processing, Data Integration, Data Transformation, Data Visualization, Industrial Automation, Industrial IoT, Industry 4.0"
     }

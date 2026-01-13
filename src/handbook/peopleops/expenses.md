@@ -117,8 +117,7 @@ recommended:
 
 | Operating System | Recommended Device                                                                                                                                                    |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MacOS            | [MacBook Air 15" - 16 GB RAM](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-16gb-memory-256gb) (~$1200 ex VAT) |
-| Windows/Linux    | [Dell XPS 14](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-14-laptop/spd/xps-14-9440-laptop/cn94001cc) (~$1,800)                                            |
+| MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/13-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-16gb-memory-512gb) (~$1200 ex VAT) |
 
 Unless circumstances require otherwise, laptops will only be considered for a
 refresh after 4 years. Please discuss with your manager if you need to refresh
@@ -194,7 +193,7 @@ the Handbook. With approval from the CEO and CTO you can proceed with the
 acquisition of the licenses.
 
 When seeking an additional license for existing software we pay for, file an
-issue in the [flowforge/admin][gh-admin]{rel="nofollow"} project to request it
+issue in the [flowfuse/admin][gh-admin]{rel="nofollow"} project to request it
 to be provisioned with a justification on the expenditure. Assign this issue to
 the CEO or CTO.
 

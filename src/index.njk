@@ -57,11 +57,11 @@ hubspot:
     <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
-                <h1 class="font-medium home m-auto text-3xl sm:text-4xl md:text-5xl text-center text-indigo-700 mb-6">
+                <h1 class="font-medium home m-auto text-3xl sm:text-4xl md:text-5xl text-center text-indigo-700 mb-6 max-w-2xl">
                     {{ site.messaging.tagLine | safe }}
                 </h1>
                 <p class="mt-6 sm:mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
-                    {{ site.messaging.subtitle }}
+                    {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
                 </p>
                 
                 <!-- AI Chat Interface -->
@@ -71,12 +71,12 @@ hubspot:
                 {% include "components/ai-expert-modal.njk" %}
 
                 <div class="text-center mt-16 mb-8">
-                    <h5 class="text-gray-600 mb-12">Or get a quick look at FlowFuse’s features in 90 seconds</h5>
+                    <h5 class="text-gray-600 mb-12">Or get a quick look at FlowFuse in 90 seconds</h5>
                     <div class="flex justify-center items-end m-auto">
                         <lite-youtube 
-                            videoid="bcZddES23k4"
+                            videoid="9i-EKcNksvk"
                             params="rel=0" 
-                            style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/bcZddES23k4/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                            style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/9i-EKcNksvk/maxresdefault.jpg'); background-size: cover; background-position: center;"
                             class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full">
                         </lite-youtube>
                     </div>
@@ -125,7 +125,7 @@ hubspot:
         </div>
     </div>
     <!-- Solutions section -->
-    <div class="w-full py-10 md:py-16 px-6">
+    <div class="w-full py-10 md:py-16">
         <div class="sm:max-w-screen-lg mx-auto max-sm:text-center">
             <h2 class="max-sm:mt-10"><span class="text-indigo-600">Unlock Powerful Solutions</span> for Your Industrial Operations</h2>
             <p class="my-6">FlowFuse provides a comprehensive set of solutions designed to bridge the gap between IT and OT, streamline device management, and integrate data with unprecedented speed and intelligence.</p>
@@ -145,6 +145,32 @@ hubspot:
                 </a>
                 {% endfor %}
             </div>
+        </div>
+    </div>
+    <!-- AI section -->
+    <div class="w-full pt-2 pb-14">
+        <div class="sm:max-w-screen-lg mx-auto">
+            <!-- Header with bg image -->
+            <div class="relative ff-image-cover right ff-image-rounded mb-12 h-[100px] sm:h-[130px]">
+                {% image "./images/home/home-flowfuse-ai.jpg", "Abstract visual of AI powering connected systems and data pipelines.", [1024] %}
+                <!-- Gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-indigo-900 to-indigo-700 sm:hidden"></div>
+                <!-- Content -->
+                <div class="absolute inset-0 max-w-2xl h-full flex items-center sm:pl-10">
+                    <h2 class="text-white w-full max-sm:text-center mb-0"><span class='text-indigo-300'>Meet</span> FlowFuse Expert</h2>
+                </div>
+            </div>
+            <!-- Content - Description paragraphs -->
+            <p class="max-sm:text-center">
+                An <span class='font-medium'>industrial-tuned LLM</span> uses FlowFuse's knowledge base and your data schemas to <span class='font-medium'>turn your plain-language description into Node-RED flows</span>, data mappings, dashboards, and queries—so you can <span class='font-medium'>build faster without waiting on scarce developers.</span>
+            </p>
+            <p class="max-sm:text-center">
+                FlowFuse does not bolt a generic LLM onto the side of your stack; LLMs are wired directly into how teams design, build, and operate Node-RED applications via Model Context Protocol (MCP). <span class='font-medium'>FlowFuse Expert is the AI copilot</span> that understands your flows, data structures, and environment in real time—so it can <span class='font-medium'>generate and refine real, deployable artifacts instead of isolated snippets.</span>
+            </p>
+            <a href="/ai/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1 mt-6">
+                Learn more about FlowFuse AI
+                {% include "components/icons/arrow-long-right.svg" %}
+            </a>
         </div>
     </div>
 </div>    

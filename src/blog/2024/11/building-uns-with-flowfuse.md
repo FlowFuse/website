@@ -33,7 +33,7 @@ Fortunately, Node-RED provides support for a wide range of industrial protocols,
 
 By leveraging Node-RED, you can collect data from these legacy systems, process and transform the data using low-code workflows, and then seamlessly send it to the cloud via modern protocols such as MQTT, Kafka, AMQP, and more.
 
-In our example, Node-RED can directly collect metrics from sensor using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/product/device-agent/), This agent enables you to remotely monitor, manage, and build Node-RED flows securely through the FlowFuse platform remotely. [See here](/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
+In our example, Node-RED can directly collect metrics from sensor using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/platform/device-agent/), This agent enables you to remotely monitor, manage, and build Node-RED flows securely through the FlowFuse platform remotely. [See here](/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
 
 ### Step 2: Transform and Process the Collected metrics
 
@@ -183,7 +183,7 @@ _Monitoring your mqtt topic hierarchy within FlowFuse_
 
 Once your data is in the UNS, you have a centralized, real-time view of your operations. This unified structure enables easier access, sharing, and analysis of data across systems, helping you drive better decisions, improve efficiency, and gain valuable insights to optimize your processes.
 
-With real-time data access, you can create monitoring dashboards using the [FlowFuse Dashboard](/product/dashboard/) with a low-code approach, integrate with other cloud solutions, or leverage it further for enhanced analytics or automation.
+With real-time data access, you can create monitoring dashboards using the [FlowFuse Dashboard](/platform/dashboard/) with a low-code approach, integrate with other cloud solutions, or leverage it further for enhanced analytics or automation.
 
 ![FlowFuse Dashboard Monitoring Vibrations](./images/flowfuse-dashboard.png){data-zoomable}
 _FlowFuse Dashboard Monitoring Vibrations_

@@ -74,7 +74,7 @@ FlowFuse, and hurts our reputation.
 
 ## Internal Communication of the job
 
-Once a new headcount request has been approved, it must be announced in the company’s Slack channel [#announcements](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3) so that the entire team is aware of the open position and our current hiring needs. This ensures transparency and encourages involvement in the hiring process.
+Once a new headcount request has been approved, it must be announced in the company’s Slack channel [#announcements](https://flowfuse.slack.com/archives/C06EQCXUGA3) so that the entire team is aware of the open position and our current hiring needs. This ensures transparency and encourages involvement in the hiring process.
 Team members are invited to share the job posting within their personal networks if they know someone who matches the role’s requirements and embodies the FlowFuse culture. Referrals are highly encouraged and, if the recommended candidate is hired and successfully completes three months in the role, the referring employee [will earn a bonus](/handbook/peopleops/hiring/#referrals). 
 
 ## Advertising a Role
@@ -173,7 +173,7 @@ you should immediately:
    * Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.
    * Add Equity to the offer according to [the Equity guidelines](/handbook/peopleops/compensation/#equity)
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
-1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowforgeworkspace.slack.com/archives/C06EQCXUGA3)
+1. Announce it to the rest of the team on Slack in the [#announcements channel](https://flowfuse.slack.com/archives/C06EQCXUGA3)
 1. [Create an onboarding issue](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} on the admin GitHub project
 1. Send the candidates the Modified PIIAA Agreement. It is stored in the FlowFuse Admin Drive in the Legal > IP Folder. There are different templates for different countries. If it is the first time hiring in the country, we will need to engage Legal to create the template. Make sure to ask them to have local counsel review.
   
@@ -259,6 +259,20 @@ This provides us with valuable feedback on their experience, reasons for leaving
 improvement. Their manager schedules these interviews during the employee's last week to ensure
 they have an opportunity to share their insights. Our aim is to use this feedback to enhance our
 workplace culture and practices. Please follow the [predefined questions](https://docs.google.com/document/d/1az9PddrvVk1TH1TPXJGXmavxBpo9OpcWbylN4gQBoe8/edit){rel="nofollow"} to guide the conversation.
+
+### Equipment return or buyback
+All company-issued devices must either be returned or may be purchased by the employee. Devices remain company property for the first three (3) years of an employee’s tenure and must be returned unless the employee chooses to purchase them. A buyback amount will be established by the team. Once the buyback amount is confirmed, the employee may choose to purchase the device.
+
+If the employee chooses to buy the device:
+- Share the [SVB wiring](https://drive.google.com/file/d/1943zVMYXA7B-EfjM4GRwN_lsAGQFHQj5/view?usp=sharing) details with the employee:
+- Notify Finance in advance by emailing billing@flowfuse.com that a wire transfer is expected.
+- Instruct the employee to send a copy of the wire transfer confirmation once the payment has been completed.
+
+US employees should follow these instructions:
+If they would prefer to send a check instead of a wire transfer, mail the check to the SVB address as shown in the wire instructions, with Attn: Branch Operations. In the memo line for the check, include FlowFuse and the FlowFuse account number. Mail the check via Certified Mail, and message the CEO with the tracking number.
+
+If the employee chooses to return the device:
+- This should be discussed with their manager.
 
 ### Offboarding Issue
 

@@ -3,7 +3,7 @@ eleventyNavigation:
   key: TimescaleDB
   parent: Database
 meta:
-  title: Using TimescaleDB with Node-RED
+  title: Using TimescaleDB with Node-RED (2026 Updated)
   description: Learn how to integrate TimescaleDB with Node-RED for storing and managing time-series data efficiently.
   keywords: node-red timescaledb, nodered postgresql, nodered time-series database
 image: /node-red/database/images/timescaledb-with-node-red.png
@@ -266,17 +266,3 @@ DROP TABLE IF EXISTS sensor_data;
 1. To test the imported flows, you need to deploy them. To do that, click on the deploy button located in the top right corner.
 
 After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. If you want to learn any additional information about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](/node-red/database/postgresql/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.
-
-<div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
-
-### Try FlowFuse's Built-In Database Service
-
-[FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually—the node sets itself up automatically.
-
-Even better, the [FlowFuse AI Assistant allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
-
-Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
-
-[**Start with FlowFuse today**](https://app.flowfuse.com/) 
-
-</div>
