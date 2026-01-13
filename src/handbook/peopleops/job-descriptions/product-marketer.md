@@ -25,6 +25,19 @@ As we scale, this role will evolve to include demand generation responsibilities
 * Work closely with sales to gather feedback on lead quality, refine qualification criteria, and improve sales-marketing alignment
 * Coordinate event follow-up campaigns to maximize ROI from conference attendance, sponsorships, and webinars
 
+Define and refine product positioning and messaging for FlowFuse and key use cases, grounded in customer and market insights.
+Translate complex, technical capabilities into clear, outcome‑oriented narratives that resonate with target personas in industrial and IoT contexts.
+Coordinate cross‑functional launch execution with Product, Engineering, Sales, and Marketing (content, website, email, campaigns, enablement assets).
+Measure launch performance, capture learnings, and iterate on GTM playbooks.
+Design and execute multi-channel email nurture campaigns to move prospects through the buyer journey
+Use data from tools like HubSpot and Posthog to understand funnel performance and optimize messaging, offers, and channels.
+Create and maintain high‑impact assets such as product pages, one‑pagers, decks, case studies, demos, and release notes.
+Enable Sales with talk tracks, battlecards, objection‑handling guides, and competitive positioning that support opportunity creation and progression.
+Partner with Content to plan thought‑leadership and educational content that supports awareness, consideration, and expansion.
+Develop a deep understanding of target personas, segments, and buying journeys through customer conversations, analytics, and research.
+Maintain a view of the competitive landscape and adjacent tools, and ensure these insights are reflected in messaging and enablement.
+Feed structured insights back into Product and Sales to refine strategy, ICPs, and GTM plays.
+
 
 ## Skills
 * Proven experience in product marketing, preferably in a B2B SaaS environment. 
