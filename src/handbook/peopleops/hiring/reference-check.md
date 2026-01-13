@@ -30,15 +30,13 @@ These questions are intended to surface working style, strengths, and growth are
 
 During the reference check, aim to understand:
 
-1. Their working relationship; In what capacity did they collaborate? How long did you work together, and in what time period?
-1. What's their one trait you remember really well?
-1. How does the candidate prefer to work?
-   - Does this person work best in fully autonomous settings, or as part of a team?
-1. How would you place this person compared to everyone you've worked with? (top 0.1%, 1%, 10%, ...)
-1. What should the candidate's new manager / team know to help them be successful in their next role?
-1. Is there anyone else who might be helpful to speak with, if the hiring team chooses to seek additional context?
-1. If they were managing the candidate again, what would you focus on developing?
-1. Would they hire the candidate again if you had the opportunity? Why or why not?
+1. Can you describe how you worked with [Candidate Name] and how long you worked together?
+2. What is one trait or quality that stands out most to you?
+3. How does [Candidate Name] typically prefer to work day to day?
+   - For example, do they tend to do best in highly autonomous environments, or in more collaborative team settings?
+4. Compared to others you’ve worked with in similar roles, how does [Candidate Name] stand out?
+5. What would you want [Candidate Name]’s new manager or team to know to help them be successful?
+6. (Optional) Is there anyone else you think might be helpful for us to speak with if we want additional context?
 
 Backdoor or informal references are optional and should be used sparingly. They should never involve a candidate’s current employer and should be treated as directional context rather than definitive signal.
 
