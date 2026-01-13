@@ -65,7 +65,9 @@ Forecast stage: Forecast
 
 Next Step: Confirm the deal viability.
 
-Resource: Sales Demo
+Resource: 
+- [Sales Deck](https://docs.google.com/presentation/d/1aK87jBFXP9ElvJz_b2U_sBmQqpqFD5ddCyjeuVVnnVs/edit)
+- [Sales Demo](https://flowfuse.com/handbook/sales/meetings/demo/)
 
 ## **Meeting 2b:** Stakeholder Demo / Workshop (60–90 min)**
 
@@ -98,7 +100,8 @@ Forecast stage: Forecast
 - Confirm timeline & checkpoints (10 min)
 -  Next Step: Schedule PoC review.
 
-Resource: FlowFuse Enterprise POC Template
+Resource: 
+FlowFuse Enterprise POC Template
 
 ## **Meeting 4:** PoC Review (45–60 min)
 
@@ -116,6 +119,9 @@ Forecast stage: Forecast
 
 Next Step: Proposal & pricing review.
 
+Resource: 
+[Enterprise pricing model](https://docs.google.com/document/d/11XLqfBeIgaOMCuH4Er15lu9duwGh5qlnUWskHkV7aeM/edit)
+
 ## **Meeting 5:** Proposal & Timeline Review (45 min)
 
 **Goal:** Confirm alignment on commercial terms, contractual structure, and implementation timeline in order to enable executive and procurement approval.
@@ -130,8 +136,6 @@ Forecast stage: Commit
 - Timeline & implementation planning (10 min)
 
 Next Step: Move into executive/procurement review.
-
-Resource: Enterprise pricing model
 
 ## **Meeting(s) 6:** Executive / Procurement Review + Close (30–45 min)
 
