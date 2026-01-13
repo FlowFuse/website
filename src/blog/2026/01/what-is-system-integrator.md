@@ -4,7 +4,7 @@ subtitle: "The specialists who make your factory equipment talk to your business
 description: "System integrators connect factory equipment to business systems, turning separate technologies into integrated solutions. Learn what they do, why they matter, and how modern tools are changing industrial integration."
 date: 2026-01-13
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/01/images/sytem-integrator.png
 keywords:
 tags:
   - flowfuse 
