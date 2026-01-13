@@ -6,7 +6,7 @@ navTitle: Support
 
 ## Support Tickets 
 
-Support tickets can be opened via the [FlowFuse Support Portal](/support). FlowFuse employees will be notified of support ticket and chat traffic via the [FlowFuse Support Slack channel](https://flowforgeworkspace.slack.com/archives/C031K13FLDD).
+Support tickets can be opened via the [FlowFuse Support Portal](/support). FlowFuse employees will be notified of support ticket and chat traffic via the [FlowFuse Support Slack channel](https://flowfuse.slack.com/archives/C031K13FLDD).
 
 ## SLAs
 
