@@ -2,10 +2,7 @@
 navTitle: Reference Check
 ---
 
-Reference checks are a much needed final stage in the hiring process, conducted
-after the interview stages but before extending an offer. These conversations
-provide valuable insights into a candidate's past performance, work style, and
-potential fit with FlowFuse.
+Reference checks are a late-stage input in the hiring process, conducted after the interview stages but before extending an offer. These conversations are primarily used to validate interview signals and provide context to support onboarding and early management.
 
 ## When to Conduct Reference Checks
 
