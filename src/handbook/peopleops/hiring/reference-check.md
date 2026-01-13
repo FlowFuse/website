@@ -47,6 +47,8 @@ Reference checks should confirm what you learned during the interview process.
 Discrepancies between interview impressions and reference feedback warrant
 further investigation, also when the feedback was positive but diverges from what was expected.
 
-Positive reference checks that align with interview performance give confidence
-to proceed with an offer. If significant concerns arise during reference checks,
-discuss them with the hiring team before making a final decision.
+Positive reference checks that align with interview performance give confidence to proceed with an offer.
+
+Reference checks are not intended to independently veto a hire. When feedback materially contradicts interview signals, the hiring team should pause, investigate further, and align on next steps before making a final decision.
+
+Insights from reference checks should be carried into onboarding conversations and early manager check-ins to support the candidate’s success.
