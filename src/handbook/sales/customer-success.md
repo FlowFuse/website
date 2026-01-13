@@ -163,7 +163,7 @@ platform. We can give each FlowFuse team member access to HubSpot by assigning
 them a seat.
 
 If you wish to be granted access to HubSpot please post in the FlowFuse
-[#support-tickets](https://flowforgeworkspace.slack.com/archives/C031K13FLDD)
+[#support-tickets](https://flowfuse.slack.com/archives/C031K13FLDD)
 Slack channel.
 
 Whenever a customer raises a new ticket, a message is posted into slack
