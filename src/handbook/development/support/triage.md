@@ -18,7 +18,7 @@ Both appear in the [HubSpot helpdesk](https://app-eu1.hubspot.com/help-desk/2658
 ## Monitoring
 
 - **HubSpot**: Keep the helpdesk open in a browser tab
-- **Slack**: New tickets trigger a notification in [#support-tickets](https://flowforgeworkspace.slack.com/archives/C031K13FLDD)
+- **Slack**: New tickets trigger a notification in [#support-tickets](https://flowfuse.slack.com/archives/C031K13FLDD)
 
 ## Triage Categories
 
@@ -26,9 +26,9 @@ When a new ticket comes in, categorize it, answer the question directly, or rout
 
 | Category | Action |
 |----------|--------|
-| Sales inquiry | Route to [#dept-sales](https://flowforgeworkspace.slack.com/archives/C05GYH95NJZ) team |
+| Sales inquiry | Route to [#dept-sales](https://flowfuse.slack.com/archives/C05GYH95NJZ) team |
 | Billing inquiry | Route to DRI for Finance |
-| Product support | Route to [#dept-engineering](https://flowforgeworkspace.slack.com/archives/C032Q63FGG1) team |
+| Product support | Route to [#dept-engineering](https://flowfuse.slack.com/archives/C032Q63FGG1) team |
 | Spam (e.g., booth design offers) | Close ticket without responding, delete Slack notification |
 
 ## Key Points

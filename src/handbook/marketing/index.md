@@ -40,7 +40,7 @@ Each of these metrics is reported on weekly during our Marketing Team Meeting to
 
 ## Contact us
 
-Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack.com/archives/C05GYH95NJZ).
+Questions can be asked in the [#dept-marketing](https://flowfuse.slack.com/archives/C05GYH95NJZ).
 
 ## Further Reading
 
