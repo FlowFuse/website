@@ -11,66 +11,43 @@ We are seeking a highly motivated and experienced Product Marketer to join our t
 As we scale, this role will evolve to include demand generation responsibilities, covering the full marketing funnel from awareness to conversion. Initially focused on product marketing fundamentals, you will eventually take ownership of lead generation programs, email nurture campaigns, webinar management, and funnel optimization.
 
 
-* Develop and execute comprehensive product marketing strategies to drive product adoption and achieve revenue targets.
-* Clearly articulate the value proposition of FlowFuse and its features to target audiences.
-* Increase market awareness and generate demand for FlowFuse solutions.
-* Support the sales team with effective marketing collateral and tools.
-* Gather and analyze market and customer insights to inform product development and marketing strategies.
+* Define and refine product positioning and messaging for FlowFuse and key use cases, grounded in customer and market insights
+* Translate complex technical capabilities into clear, outcome-oriented narratives that resonate with target personas in industrial and IoT contexts
+* Develop and execute comprehensive product marketing strategies to drive product adoption and achieve revenue targets
+* Coordinate cross-functional launch execution with Product, Engineering, Sales, and Marketing teams
+* Measure launch performance, capture learnings, and iterate on GTM playbooks
+* Create and maintain high-impact assets such as product pages, one-pagers, decks, case studies, demos, and release notes
+* Enable Sales with talk tracks, battlecards, objection-handling guides, and competitive positioning materials
 * Design and execute multi-channel email nurture campaigns to move prospects through the buyer journey
 * Build and manage webinar programs from concept to execution, including promotion, delivery, and follow-up sequences
 * Develop and optimize lead scoring models and qualification frameworks in HubSpot
 * Build and maintain lead lifecycle workflows, including automated triggers, scoring adjustments, and sales notifications
 * Manage content syndication partnerships and evaluate ROI of third-party lead generation programs
-* Analyze campaign performance data to identify trends, optimize programs, and provide recommendations for improving lead-to-opportunity conversion rates
-* Work closely with sales to gather feedback on lead quality, refine qualification criteria, and improve sales-marketing alignment
+* Analyze campaign and funnel performance data to optimize programs and improve lead-to-opportunity conversion rates
 * Coordinate event follow-up campaigns to maximize ROI from conference attendance, sponsorships, and webinars
-
-Define and refine product positioning and messaging for FlowFuse and key use cases, grounded in customer and market insights.
-Translate complex, technical capabilities into clear, outcome‑oriented narratives that resonate with target personas in industrial and IoT contexts.
-Coordinate cross‑functional launch execution with Product, Engineering, Sales, and Marketing (content, website, email, campaigns, enablement assets).
-Measure launch performance, capture learnings, and iterate on GTM playbooks.
-Design and execute multi-channel email nurture campaigns to move prospects through the buyer journey
-Use data from tools like HubSpot and Posthog to understand funnel performance and optimize messaging, offers, and channels.
-Create and maintain high‑impact assets such as product pages, one‑pagers, decks, case studies, demos, and release notes.
-Enable Sales with talk tracks, battlecards, objection‑handling guides, and competitive positioning that support opportunity creation and progression.
-Partner with Content to plan thought‑leadership and educational content that supports awareness, consideration, and expansion.
-Develop a deep understanding of target personas, segments, and buying journeys through customer conversations, analytics, and research.
-Maintain a view of the competitive landscape and adjacent tools, and ensure these insights are reflected in messaging and enablement.
-Feed structured insights back into Product and Sales to refine strategy, ICPs, and GTM plays.
+* Develop a deep understanding of target personas, segments, and buying journeys through customer conversations, analytics, and research
+* Maintain a view of the competitive landscape and adjacent tools, and ensure insights are reflected in messaging and enablement
+* Partner with Content to plan thought-leadership and educational content that supports awareness, consideration, and expansion
+* Feed structured insights back into Product and Sales to refine strategy, ICPs, and GTM plays
 
 
 ## Skills
-* Proven experience in product marketing, preferably in a B2B SaaS environment. 
-* Strong understanding of software development, deployment, and management.
-* Excellent written and verbal communication skills, with the ability to create compelling content.
-* Ability to translate technical product features into clear and concise benefits for users.
-* Experience with various marketing channels and tools, including digital marketing, content marketing, and social media.
-* Analytical skills to measure marketing effectiveness and optimize campaigns.
-* Collaborative and able to work effectively across different teams.
-* Requirement to be familiar with the industrial sector, IIoT, Iot or similar
+* Proven experience in product marketing, preferably in a B2B SaaS environment
+* Familiarity with the industrial sector, IIoT, IoT or similar domains
+* Strong understanding of software development, deployment, and management
+* Excellent written and verbal communication skills, with the ability to translate technical features into clear benefits
 * Experience in B2B demand generation, marketing operations, or funnel management
 * Proficiency with HubSpot, including workflows, lead scoring, email automation, and reporting
-* Strong understanding of lead lifecycle management, funnel optimization, and conversion rate optimization
-* Experience designing and executing email nurture campaigns with proven results in improving lead-to-opportunity conversion
-* Strong analytical skills with ability to analyze funnel metrics, identify bottlenecks, and make data-driven recommendations
-* Experience with lead scoring models and qualification frameworks
-* Strong written communication skills for email campaigns and nurture content
-   * Node-RED knowledge and familiarity is a plus.
+* Strong analytical skills to measure effectiveness, analyze funnel metrics, identify bottlenecks, and optimize campaigns
+* Experience designing and executing email nurture campaigns with proven lead-to-opportunity conversion results
+* Collaborative and able to work effectively across different teams
+* Node-RED knowledge and familiarity is a plus
 
 ## 90-Day Plan
 * Week 1-4:
    * Immerse yourself in FlowFuse's product, strategy, and market.
-   * Familiarize yourself with the Node-RED ecosystem and competitive landscape.
-   * Meet with key stakeholders across product, sales, and engineering.
-   * Review existing marketing materials and identify areas for improvement.
-* Week 5-8:
-   * Develop a deep understanding of our target personas and their needs.
-   * Start developing key messaging and positioning for FlowFuse.
-   * Begin working on content for upcoming product launches or feature releases.
-* Week 1-4:
-   * Immerse yourself in FlowFuse's product, strategy, and market.
       * Watch 15+ sales calls (Fathom) to hear from prospects where the product marketing can improve.
-      * Inverview 5 prospects or customers to lean what the problems is they're solving and what they like about Flowfuse.
+      * Interview 5 prospects or customers to learn what problems they're solving and what they like about FlowFuse.
    * Familiarize yourself with the Node-RED ecosystem and competitive landscape.
       * Set up a team of FlowFuse, and go through the onboarding and build a small application 
    * Meet with key stakeholders across product, sales, and engineering.
