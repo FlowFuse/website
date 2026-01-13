@@ -11,72 +11,68 @@ Below are some questions that can be used and how answers are evaluated.
 
 ## STAR Interview Questions
 
-#### 1. What’s the best team Slack or async culture you’ve been part of? What made it work?
+#### 1. How do you build rapport with teammates if you don't work in the same physical location?
 
 **Values**
 - Collaborative Community
+
+#### 2. In an async environment, we rely heavily on written communication. Have you ever had written communication go wrong?
+
+**Values**
 - Constructive Candor
-- Results
-
-#### 2. Tell me about a recent time async communication went wrong.
-
-**Values**
-- Results
 - Iterative Improvement
-- Collaborative Community
 
-#### 3. Tell me about something you shipped that wasn’t right the first time. What happened next?
+#### 3. Walk me through a situation where you shipped something that wasn’t right the first time. What happened next?
 
 **Values**
 - Iterative Improvement
 - Results
-- Constructive Candor
 
-#### 4. Tell me about a time you had to understand a customer’s perspective to solve a problem.
+#### 4. When did understanding the customer’s perspective change how you approached a problem? What happened as a result?
 
 **Values**
 - Customer Empathy
-- Constructive Candor
-- Iterative Improvement
+- Results
 
-#### 5. Tell me about the last time you changed your mind during a discussion.
+#### 5. Has someone’s input changed your perspective during a discussion?
 
 **Values**
 - Constructive Candor
 - Collaborative Community
-- Iterative Improvement
 
-#### 6. Tell me about a time you noticed a problem and decided to take action.
+#### 6. Have you ever noticed a problem and decided to jump in? What happened?
 
 **Values**
 - Results
 - Iterative Improvement
-- Collaborative Community
 
-#### 7. Tell me about a time you helped someone get unblocked.
+#### 7. What’s an example of helping someone through a blocker rather than solving it for them?
 
 **Values**
 - Collaborative Community
-- Results
-- Customer Empathy
+- Iterative Improvement
 
-#### 8. Tell me about a recent conflict or disagreement you had at work.
+#### 8. When was the last time you disagreed with someone at work, and how did you handle it?
 
 **Values**
 - Constructive Candor
 - Collaborative Community
-- Results
 
-#### 9. Tell me about a time you gave or received difficult feedback.
+#### 9. What’s a situation where you had to navigate difficult feedback, either giving or receiving it?
 
 **Values**
 - Constructive Candor
 - Iterative Improvement
-- Collaborative Community
 
-#### 10. If you take one element from your past managers to shape your ideal manager, what is it?
+#### 10. When have you acted quickly and been wrong? What did you do afterward?
+
+**Values**
+- Results
+- Iterative Improvement
+- Constructive Candor
+
+#### 11. Think of your past managers. What qualities did you appreciate about them?
 
 **Values**
 - Collaborative Community
 - Constructive Candor
-- Results
