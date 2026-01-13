@@ -13,7 +13,7 @@ layout: layouts/base.njk
                     {% if integration.ffCertified %}
                     <div class="ff-certified-badge flex items-center gap-2 bg-indigo-100 border-2 border-indigo-600 text-indigo-700 px-4 py-2 rounded-lg font-semibold text-sm whitespace-nowrap flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 2.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 2.387a2.99 2.99 0 0 0-3.9 0A2.99 2.99 0 0 0 12 9.75a2.99 2.99 0 0 0 .29 1.28l-.688.687a1.5 1.5 0 0 0 0 2.121l3.536 3.536a1.5 1.5 0 0 0 2.121 0l.687-.688a2.99 2.99 0 0 0 1.28.29 2.99 2.99 0 0 0 3.564-3.21 2.99 2.99 0 0 0-.29-1.28l.688-.687a1.5 1.5 0 0 0 0-2.121l-3.536-3.536a1.5 1.5 0 0 0-2.121 0l-.687.688A2.99 2.99 0 0 0 15.61 6.186Z" clip-rule="evenodd" />
                         </svg>
                         <span>FlowFuse Certified</span>
                     </div>
@@ -73,14 +73,12 @@ layout: layouts/base.njk
             <button 
                 class="tab-button py-3 px-1 border-b-2 border-indigo-600 font-medium text-indigo-600 focus:outline-none"
                 data-tab="overview"
-                onclick="switchTab('overview')"
             >
                 Overview
             </button>
             <button 
                 class="tab-button py-3 px-1 border-b-2 border-transparent font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none"
                 data-tab="examples"
-                onclick="switchTab('examples')"
             >
                 Examples ({{ integration.examples.length }})
             </button>
@@ -88,199 +86,67 @@ layout: layouts/base.njk
     </div>
     {% endif %}
 
-    <div class="flex flex-col lg:flex-row gap-8 min-w-0">
-        <!-- Documentation Content -->
-        <div class="flex-grow min-w-0 overflow-hidden">
-            {% if hasExamples %}
-            <!-- Overview Tab Content -->
-            <div id="overview-content" class="tab-content">
-            {% endif %}
-                {% if integration.ffCertified %}
-                <div class="mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg overflow-hidden">
-                    <h3 class="text-indigo-900 font-bold mb-2 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 2.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                        </svg>
-                        FlowFuse Certified Node
-                    </h3>
-                    <p class="text-indigo-800 mb-0">This node has been certified by FlowFuse, ensuring it meets our standards for quality, security, and support. <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="font-semibold underline hover:text-indigo-900" target="_blank">Learn more about certified nodes</a>.</p>
+    <div class="prose max-w-none">
+        {% if hasExamples %}
+        <!-- Overview Tab Content -->
+        <div id="overview-content" class="tab-content">
+            {{ content | safe }}
+        </div>
+
+        <!-- Examples Tab Content -->
+        <div id="examples-content" class="tab-content hidden">
+            <h2 class="text-2xl font-bold mb-4">Example Flows</h2>
+            <p class="text-gray-600 mb-6">The following example flows are available for this node.</p>
+            
+            {% for example in integration.examples %}
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+                <h3 class="text-lg font-semibold mb-4">{{ example.name }}</h3>
+                
+                {% if example.flow %}
+                <div class="bg-white border border-gray-300 rounded overflow-hidden mb-4">
+                    <div id="flow-renderer-{{ loop.index0 }}" style="height: 400px;" class="flow-renderer-container"></div>
                 </div>
                 {% else %}
-                <div class="mb-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-r-lg overflow-hidden">
-                    <h3 class="text-blue-900 font-bold mb-2 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                        </svg>
-                        Get Your Node Certified
-                    </h3>
-                    <p class="text-blue-800 mb-3">Boost your node's credibility and reach by becoming FlowFuse Certified. Certification demonstrates quality, security, and reliability to the Node-RED community.</p>
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/#contact-us-to-discuss-your-node-certification" class="ff-btn ff-btn--primary" target="_blank" rel="noopener noreferrer">
-                            START CERTIFICATION PROCESS
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                            </svg>
-                        </a>
-                        <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="ff-btn ff-btn--primary-outlined" target="_blank" rel="noopener noreferrer">
-                            LEARN MORE
-                        </a>
-                    </div>
-                </div>
+                <p class="text-gray-500 mb-4">Flow content not available</p>
                 {% endif %}
-                
-                <!-- Documentation Content -->
-                <div class="prose prose-lg prose-indigo max-w-none mb-12 overflow-hidden">
-                    {{ integration.readme | md | stripFirstH1 | rewriteIntegrationLinks(integration) | safe }}
-                </div>
-            {% if hasExamples %}
             </div>
-
-            <!-- Examples Tab Content -->
-            <div id="examples-content" class="tab-content hidden">
-                <h2 class="text-2xl font-bold mb-4">Example Flows</h2>
-                <p class="text-gray-600 mb-6">The following example flows are available for this node. You can copy them and import directly into Node-RED.</p>
-                
-                {% for example in integration.examples %}
-                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-                    <h3 class="text-lg font-semibold mb-2">{{ example.name }}</h3>
-                    
-                    {% if example.flow %}
-                    <div class="bg-white border border-gray-300 rounded p-4 mb-4 overflow-x-auto">
-                        <pre class="text-xs m-0"><code>{{ example.flow }}</code></pre>
-                    </div>
-                    
-                    <div class="flex gap-3">
-                        <button 
-                            onclick="copyFlowToClipboard(this, {{ loop.index0 }})" 
-                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors"
-                            data-flow="{{ example.flow | replace('\"', '&quot;') | replace('\n', '&#10;') }}"
-                        >
-                            Copy Flow
-                        </button>
-                        {% if example.url %}
-                        <a 
-                            href="{{ example.url }}" 
-                            target="_blank" 
-                            rel="noopener" 
-                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm font-medium transition-colors inline-block no-underline"
-                        >
-                            View on GitHub
-                        </a>
-                        {% endif %}
-                    </div>
-                    {% else %}
-                    <p class="text-gray-500 mb-4">Flow content not available</p>
-                    {% if example.downloadUrl %}
-                    <div class="flex gap-3">
-                        <a 
-                            href="{{ example.downloadUrl }}" 
-                            target="_blank" 
-                            rel="noopener" 
-                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors inline-block no-underline"
-                        >
-                            Download Flow
-                        </a>
-                        {% if example.url %}
-                        <a 
-                            href="{{ example.url }}" 
-                            target="_blank" 
-                            rel="noopener" 
-                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm font-medium transition-colors inline-block no-underline"
-                        >
-                            View on GitHub
-                        </a>
-                        {% endif %}
-                    </div>
-                    {% endif %}
-                    {% endif %}
-                </div>
-                {% endfor %}
-            </div>
-            {% endif %}
+            {% endfor %}
         </div>
-
-        <!-- Sidebar -->
-        <div class="lg:w-80 flex-shrink-0 min-w-0">
-            <div class="space-y-6">
-                <!-- Installation -->
-                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
-                    <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                        </svg>
-                        Installation
-                    </h3>
-                    <p class="text-sm text-gray-600 mb-3">Install via <a href="https://flowfuse.com/node-red/getting-started/library/#using-command-line-(npm)" class="text-indigo-600 hover:text-indigo-800 font-semibold" target="_blank">npm</a> or use the <a href="https://flowfuse.com/node-red/getting-started/library/#using-the-palette-manager" class="text-indigo-600 hover:text-indigo-800 font-semibold" target="_blank">Node-RED palette manager</a>:</p>
-                    <div class="bg-gray-900 text-gray-100 p-3 rounded font-mono text-sm overflow-x-auto">
-                        <code class="!bg-transparent !border-0 !p-0 text-gray-100 break-all whitespace-pre-wrap">npm install {{ integration._id }}</code>
-                    </div>
-                </div>
-
-                <!-- Quick Stats -->
-                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
-                    <h3 class="text-lg font-bold mb-4">Quick Stats</h3>
-                    <div class="space-y-3 text-sm">
-                        <div class="flex justify-between items-center pb-2 border-b">
-                            <span class="text-gray-600">Current Version</span>
-                            <span class="font-semibold">{{ integration.version }}</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-2 border-b">
-                            <span class="text-gray-600">Weekly Downloads</span>
-                            <span class="font-semibold">{{ integration.downloads.week | formatNumber }}</span>
-                        </div>
-                        {% if integration.created %}
-                        <div class="flex justify-between items-center pb-2 border-b">
-                            <span class="text-gray-600">Published</span>
-                            <span class="font-semibold">{{ integration.created | shortDate }}</span>
-                        </div>
-                        {% endif %}
-                        {% if integration.lastUpdated %}
-                        <div class="flex justify-between items-center pb-2 border-b">
-                            <span class="text-gray-600">Last Updated</span>
-                            <span class="font-semibold">{{ integration.lastUpdated | shortDate }}</span>
-                        </div>
-                        {% endif %}
-                        {% if integration.license %}
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">License</span>
-                            <span class="font-semibold">{{ integration.license }}</span>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-
-                <!-- External Links -->
-                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-hidden">
-                    <h3 class="text-sm font-semibold mb-3 text-gray-600 uppercase">External Resources</h3>
-                    <div class="space-y-2 text-sm">
-                        <a href="https://www.npmjs.com/package/{{ integration._id }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                            </svg>
-                            View on NPM
-                        </a>
-                        {% if integration.repository and integration.repository.url %}
-                        <a href="{{ integration.repository.url | replace('git+', '') | replace('.git', '') }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                            </svg>
-                            View Repository
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% else %}
+        {{ content | safe }}
+        {% endif %}
     </div>
 </div>
 
 {% if hasExamples %}
-<script>
+<!-- Flow Renderer Script -->
+<script type="module">
+    import FlowRenderer from '/js/flowrenderer.min.js';
+
+    // Store flow data
+    const flowData = [
+        {% for example in integration.examples %}
+        {% if example.flow %}
+        {
+            index: {{ loop.index0 }},
+            flow: {{ example.flow | safe }}
+        }{% if not loop.last %},{% endif %}
+        {% endif %}
+        {% endfor %}
+    ];
+
+    // Add event listeners to tab buttons
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            switchTab(button.getAttribute('data-tab'));
+        });
+    });
+
+    // Tab switching function
     function switchTab(tabName) {
         // Update tab buttons
         document.querySelectorAll('.tab-button').forEach(button => {
-            const isActive = button.dataset.tab === tabName;
-            if (isActive) {
+            if (button.getAttribute('data-tab') === tabName) {
                 button.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
                 button.classList.add('border-indigo-600', 'text-indigo-600');
             } else {
@@ -295,26 +161,37 @@ layout: layouts/base.njk
         });
         document.getElementById(`${tabName}-content`).classList.remove('hidden');
 
+        // Render flows when examples tab is opened
+        if (tabName === 'examples') {
+            setTimeout(() => renderFlows(), 100);
+        }
+
         // Update URL hash without scrolling
         history.replaceState(null, null, `#${tabName}`);
     }
 
-    function copyFlowToClipboard(button, index) {
-        const flowText = button.getAttribute('data-flow');
-        navigator.clipboard.writeText(flowText).then(() => {
-            const originalText = button.textContent;
-            button.textContent = 'Copied!';
-            button.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
-            button.classList.add('bg-green-600', 'hover:bg-green-700');
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.classList.remove('bg-green-600', 'hover:bg-green-700');
-                button.classList.add('bg-indigo-600', 'hover:bg-indigo-700');
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy:', err);
-            alert('Failed to copy to clipboard');
+    // Render flows function
+    function renderFlows() {
+        const renderer = new FlowRenderer();
+        
+        flowData.forEach(item => {
+            const container = document.getElementById(`flow-renderer-${item.index}`);
+            if (container && !container.hasAttribute('data-rendered')) {
+                try {
+                    renderer.renderFlows(item.flow, {
+                        container: container,
+                        direction: 'LR',
+                        gridLines: true,
+                        zoom: true,
+                        labels: true,
+                        autoZoom: true
+                    });
+                    container.setAttribute('data-rendered', 'true');
+                } catch (error) {
+                    console.error('Error rendering flow:', error);
+                    container.innerHTML = '<div class="p-4 text-gray-500">Error rendering flow visualization</div>';
+                }
+            }
         });
     }
 
