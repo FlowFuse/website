@@ -34,7 +34,7 @@ During the reference check, aim to understand:
    - Does this person work best in fully autonomous settings, or as part of a team?
 1. How would you place this person compared to everyone you've worked with? (top 0.1%, 1%, 10%, ...)
 1. What should the candidate's new manager / team know to help them be successful in their next role?
-1. Who else should the company speak with (if you're looking to run backdoor references).
+1. Is there anyone else who might be helpful to speak with, if the hiring team chooses to seek additional context?
 1. If they were managing the candidate again, what would you focus on developing?
 1. Would they hire the candidate again if you had the opportunity? Why or why not?
 
