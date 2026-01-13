@@ -268,6 +268,9 @@ If the employee chooses to buy the device:
 - Notify Finance in advance by emailing billing@flowfuse.com that a wire transfer is expected.
 - Instruct the employee to send a copy of the wire transfer confirmation once the payment has been completed.
 
+US employees should follow these instructions:
+If they would prefer to send a check instead of a wire transfer, mail the check to the SVB address as shown in the wire instructions, with Attn: Branch Operations. In the memo line for the check, include FlowFuse and the FlowFuse account number. Mail the check via Certified Mail, and message the CEO with the tracking number.
+
 If the employee chooses to return the device:
 - This should be discussed with their manager.
 
