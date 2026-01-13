@@ -9,9 +9,7 @@ potential fit with FlowFuse.
 
 ## When to Conduct Reference Checks
 
-Reference checks should be conducted after all interviews are complete and the
-hiring team has identified a preferred candidate. We request 3 professional
-references from the candidate, preferably including:
+Reference checks should be conducted after all interviews are complete and the hiring team has identified a preferred candidate. We typically request three professional references from the candidate, preferably including:
 - A former direct manager
 - A peer or colleague
 - A direct report (if applicable for the role)
