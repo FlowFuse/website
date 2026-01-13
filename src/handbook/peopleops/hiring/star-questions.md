@@ -11,7 +11,7 @@ Below are some questions that can be used and how answers are evaluated.
 
 ## STAR Interview Questions
 
-#### 1. How do you build rapport with teammates if you don't work in the same physical location?
+#### 1. How do you build connection and strengthen relationships on a distributed team, beyond just getting the work done?
 
 **Values**
 - Collaborative Community
