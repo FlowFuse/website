@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 ---
+{% set hasExamples = integration.examples and integration.examples.length > 0 %}
+
 <!-- Node Details Header -->
 <div class="node-header bg-gradient-to-br from-indigo-50 to-white border-b border-gray-200 py-8 min-h-[280px] w-full">
     <div class="container m-auto max-w-6xl px-6 overflow-hidden w-full">
@@ -11,7 +13,7 @@ layout: layouts/base.njk
                     {% if integration.ffCertified %}
                     <div class="ff-certified-badge flex items-center gap-2 bg-indigo-100 border-2 border-indigo-600 text-indigo-700 px-4 py-2 rounded-lg font-semibold text-sm whitespace-nowrap flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 2.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
                         </svg>
                         <span>FlowFuse Certified</span>
                     </div>
@@ -64,48 +66,137 @@ layout: layouts/base.njk
 
 <!-- Main Content -->
 <div class="container m-auto max-w-6xl px-6 py-8">
+    {% if hasExamples %}
+    <!-- Tab Navigation -->
+    <div class="border-b border-gray-300 mb-6">
+        <nav class="flex gap-8" aria-label="Tabs">
+            <button 
+                class="tab-button py-3 px-1 border-b-2 border-indigo-600 font-medium text-indigo-600 focus:outline-none"
+                data-tab="overview"
+                onclick="switchTab('overview')"
+            >
+                Overview
+            </button>
+            <button 
+                class="tab-button py-3 px-1 border-b-2 border-transparent font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none"
+                data-tab="examples"
+                onclick="switchTab('examples')"
+            >
+                Examples ({{ integration.examples.length }})
+            </button>
+        </nav>
+    </div>
+    {% endif %}
+
     <div class="flex flex-col lg:flex-row gap-8 min-w-0">
         <!-- Documentation Content -->
         <div class="flex-grow min-w-0 overflow-hidden">
-            {% if integration.ffCertified %}
-            <div class="mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg overflow-hidden">
-                <h3 class="text-indigo-900 font-bold mb-2 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                    </svg>
-                    FlowFuse Certified Node
-                </h3>
-                <p class="text-indigo-800 mb-0">This node has been certified by FlowFuse, ensuring it meets our standards for quality, security, and support. <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="font-semibold underline hover:text-indigo-900" target="_blank">Learn more about certified nodes</a>.</p>
-            </div>
-            {% else %}
-            <div class="mb-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-r-lg overflow-hidden">
-                <h3 class="text-blue-900 font-bold mb-2 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                    </svg>
-                    Get Your Node Certified
-                </h3>
-                <p class="text-blue-800 mb-3">Boost your node's credibility and reach by becoming FlowFuse Certified. Certification demonstrates quality, security, and reliability to the Node-RED community.</p>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/#contact-us-to-discuss-your-node-certification" class="ff-btn ff-btn--primary" target="_blank" rel="noopener noreferrer">
-                        START CERTIFICATION PROCESS
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                    </a>
-                    <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="ff-btn ff-btn--primary-outlined" target="_blank" rel="noopener noreferrer">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
+            {% if hasExamples %}
+            <!-- Overview Tab Content -->
+            <div id="overview-content" class="tab-content">
             {% endif %}
-            
-            <!-- Documentation Content -->
-            <div class="prose prose-lg prose-indigo max-w-none mb-12 overflow-hidden">
-                {{ integration.readme | md | stripFirstH1 | rewriteIntegrationLinks(integration) | safe }}
+                {% if integration.ffCertified %}
+                <div class="mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg overflow-hidden">
+                    <h3 class="text-indigo-900 font-bold mb-2 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 2.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                        </svg>
+                        FlowFuse Certified Node
+                    </h3>
+                    <p class="text-indigo-800 mb-0">This node has been certified by FlowFuse, ensuring it meets our standards for quality, security, and support. <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="font-semibold underline hover:text-indigo-900" target="_blank">Learn more about certified nodes</a>.</p>
+                </div>
+                {% else %}
+                <div class="mb-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-r-lg overflow-hidden">
+                    <h3 class="text-blue-900 font-bold mb-2 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                        </svg>
+                        Get Your Node Certified
+                    </h3>
+                    <p class="text-blue-800 mb-3">Boost your node's credibility and reach by becoming FlowFuse Certified. Certification demonstrates quality, security, and reliability to the Node-RED community.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/#contact-us-to-discuss-your-node-certification" class="ff-btn ff-btn--primary" target="_blank" rel="noopener noreferrer">
+                            START CERTIFICATION PROCESS
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                        <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="ff-btn ff-btn--primary-outlined" target="_blank" rel="noopener noreferrer">
+                            LEARN MORE
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- Documentation Content -->
+                <div class="prose prose-lg prose-indigo max-w-none mb-12 overflow-hidden">
+                    {{ integration.readme | md | stripFirstH1 | rewriteIntegrationLinks(integration) | safe }}
+                </div>
+            {% if hasExamples %}
             </div>
 
-            
+            <!-- Examples Tab Content -->
+            <div id="examples-content" class="tab-content hidden">
+                <h2 class="text-2xl font-bold mb-4">Example Flows</h2>
+                <p class="text-gray-600 mb-6">The following example flows are available for this node. You can copy them and import directly into Node-RED.</p>
+                
+                {% for example in integration.examples %}
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+                    <h3 class="text-lg font-semibold mb-2">{{ example.name }}</h3>
+                    
+                    {% if example.flow %}
+                    <div class="bg-white border border-gray-300 rounded p-4 mb-4 overflow-x-auto">
+                        <pre class="text-xs m-0"><code>{{ example.flow }}</code></pre>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button 
+                            onclick="copyFlowToClipboard(this, {{ loop.index0 }})" 
+                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors"
+                            data-flow="{{ example.flow | replace('\"', '&quot;') | replace('\n', '&#10;') }}"
+                        >
+                            Copy Flow
+                        </button>
+                        {% if example.url %}
+                        <a 
+                            href="{{ example.url }}" 
+                            target="_blank" 
+                            rel="noopener" 
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm font-medium transition-colors inline-block no-underline"
+                        >
+                            View on GitHub
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <p class="text-gray-500 mb-4">Flow content not available</p>
+                    {% if example.downloadUrl %}
+                    <div class="flex gap-3">
+                        <a 
+                            href="{{ example.downloadUrl }}" 
+                            target="_blank" 
+                            rel="noopener" 
+                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors inline-block no-underline"
+                        >
+                            Download Flow
+                        </a>
+                        {% if example.url %}
+                        <a 
+                            href="{{ example.url }}" 
+                            target="_blank" 
+                            rel="noopener" 
+                            class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm font-medium transition-colors inline-block no-underline"
+                        >
+                            View on GitHub
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
 
         <!-- Sidebar -->
@@ -149,77 +240,13 @@ layout: layouts/base.njk
                             <span class="font-semibold">{{ integration.lastUpdated | shortDate }}</span>
                         </div>
                         {% endif %}
+                        {% if integration.license %}
                         <div class="flex justify-between items-center">
                             <span class="text-gray-600">License</span>
-                            <span class="font-semibold">{{ integration.license or 'N/A' }}</span>
+                            <span class="font-semibold">{{ integration.license }}</span>
                         </div>
+                        {% endif %}
                     </div>
-                </div>
-
-
-                {% if integration.githubOwner and integration.githubRepo %}
-                <!-- GitHub Stats -->
-                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
-                    <h3 class="text-lg font-bold mb-3">GitHub Stats</h3>
-                    <div class="space-y-2">
-                        <a href="https://github.com/{{ integration.githubOwner }}/{{ integration.githubRepo }}/issues" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded transition-colors">
-                            <span class="text-sm text-gray-600 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                                </svg>
-                                Open Issues
-                            </span>
-                            <img src="https://img.shields.io/github/issues/{{ integration.githubOwner }}/{{ integration.githubRepo }}.svg?style=flat-square" alt="GitHub Issues" />
-                        </a>
-                        <a href="https://github.com/{{ integration.githubOwner }}/{{ integration.githubRepo }}/stargazers" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded transition-colors">
-                            <span class="text-sm text-gray-600 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                                </svg>
-                                Stars
-                            </span>
-                            <img src="https://img.shields.io/github/stars/{{ integration.githubOwner }}/{{ integration.githubRepo }}.svg?style=flat-square" alt="GitHub Stars" />
-                        </a>
-                        <a href="https://github.com/{{ integration.githubOwner }}/{{ integration.githubRepo }}/network/members" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded transition-colors">
-                            <span class="text-sm text-gray-600 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
-                                </svg>
-                                Forks
-                            </span>
-                            <img src="https://img.shields.io/github/forks/{{ integration.githubOwner }}/{{ integration.githubRepo }}.svg?style=flat-square" alt="GitHub Forks" />
-                        </a>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if integration.maintainers and integration.maintainers.length > 0 %}
-                <!-- Maintainers -->
-                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
-                    <h3 class="text-lg font-bold mb-3">Maintainers</h3>
-                    <div class="space-y-2">
-                        {% for maintainer in integration.maintainers %}
-                        <a href="https://www.npmjs.com/~{{ maintainer.name | urlencode }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 hover:bg-gray-50 rounded transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-600">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            </svg>
-                            <span class="text-sm text-indigo-600 hover:text-indigo-800">{{ maintainer.name }}</span>
-                        </a>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-
-                <!-- Support -->
-                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200 rounded-lg p-6 overflow-hidden">
-                    <h3 class="text-lg font-bold mb-3 text-indigo-900">Need Help?</h3>
-                    <p class="text-sm text-gray-700 mb-4">Get professional support for your Node-RED projects with FlowFuse.</p>
-                    <a href="/contact-us/" class="ff-btn ff-btn--primary">
-                        CONTACT US
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                    </a>
                 </div>
 
                 <!-- External Links -->
@@ -246,3 +273,57 @@ layout: layouts/base.njk
         </div>
     </div>
 </div>
+
+{% if hasExamples %}
+<script>
+    function switchTab(tabName) {
+        // Update tab buttons
+        document.querySelectorAll('.tab-button').forEach(button => {
+            const isActive = button.dataset.tab === tabName;
+            if (isActive) {
+                button.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                button.classList.add('border-indigo-600', 'text-indigo-600');
+            } else {
+                button.classList.remove('border-indigo-600', 'text-indigo-600');
+                button.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+            }
+        });
+
+        // Update tab content
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+        });
+        document.getElementById(`${tabName}-content`).classList.remove('hidden');
+
+        // Update URL hash without scrolling
+        history.replaceState(null, null, `#${tabName}`);
+    }
+
+    function copyFlowToClipboard(button, index) {
+        const flowText = button.getAttribute('data-flow');
+        navigator.clipboard.writeText(flowText).then(() => {
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
+            button.classList.add('bg-green-600', 'hover:bg-green-700');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-600', 'hover:bg-green-700');
+                button.classList.add('bg-indigo-600', 'hover:bg-indigo-700');
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy to clipboard');
+        });
+    }
+
+    // Handle initial hash on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash.slice(1);
+        if (hash === 'examples') {
+            switchTab('examples');
+        }
+    });
+</script>
+{% endif %}
