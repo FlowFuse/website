@@ -35,16 +35,16 @@ While there are a number of email aliases and google groups used throughout the 
 
 ## GitHub
 
-We use GitHub for use task management, planning and code development across the company. The following is a high-level guide to the core repositories.
+We use GitHub for task management, planning and code development across the company. The following is a high-level guide to the core repositories.
 
-The Engineering team maintain a large number of other repositories related to individual components of the product.
+The Engineering team maintains a large number of repositories related to individual components of the product.
 
 | Repository | Purpose | Public/Private |
 | -- | -- | -- |
 | FlowFuse/admin | Company Admin tasks; onboarding/offboarding employees, access requests, release checklists | private |
 | FlowFuse/website | The FlowFuse Website, including handbook | public |
 | FlowFuse/CloudProject | Task management for FlowFuse Cloud platform | private |
-| FlowFuse/customer | Task management for the marketing team; webinars, artwork requests | private |
+| FlowFuse/customer | Task management for events and customer-specific work; webinars, artwork requests | private |
 | FlowFuse/dev-env | FlowFuse development environment tooling | public |
 | FlowFuse/flowfuse | The core product code repository| public |
 | FlowFuse/node-red | A planning repository for upstream Node-RED tasks | private |
