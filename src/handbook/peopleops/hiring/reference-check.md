@@ -17,7 +17,7 @@ We do not expect candidates to provide references from their current employer un
 
 ## Structure of a Reference Check Call
 
-The reference check is typically a 20-30 minute conversation conducted over the phone or video call. The structure should be:
+The reference check is typically a 20–30 minute conversation conducted over the phone or video call. Live conversations are preferred over async forms to allow for nuance, follow-up questions, and contextual understanding. The flow should be:
 
 1. Introduce yourself and FlowFuse, and explain the purpose of the call.
 2. Confirm the reference's relationship to the candidate and time worked together.
