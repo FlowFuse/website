@@ -11,8 +11,9 @@ Reference checks should be conducted after all interviews are complete and the h
 - A peer or colleague
 - A direct report (if applicable for the role)
 
-FlowFuse will conduct 1 or 2 reference check calls, typically prioritizing
-conversations with former managers who can speak to the candidate's performance.
+We request references to ensure a range of perspectives. In cases where providing three references is not feasible (for example, candidates who are currently employed or early in their career), the hiring team may proceed with fewer references and treat this as contextual information rather than a blocker.
+
+We do not expect candidates to provide references from their current employer unless they explicitly offer to do so.
 
 ## Structure of a Reference Check Call
 
