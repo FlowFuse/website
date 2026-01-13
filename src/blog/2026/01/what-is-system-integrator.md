@@ -7,6 +7,25 @@ authors: ["sumit-shinde"]
 image: 
 keywords:
 tags:
+  - flowfuse 
+meta:
+  faq:
+    - question: "What is a system integrator in manufacturing?"
+      answer: "A system integrator is a partner that connects separate pieces of technology—from factory floor equipment to business software—and makes them work as one system. They bridge operational technology (OT) like PLCs and SCADA with information technology (IT) like ERP and MES platforms, enabling data flow and coordination across your entire operation."
+    - question: "What does a system integrator actually do?"
+      answer: "System integrators diagnose integration problems, design system architectures, implement connections between equipment and software, and commission complete systems. They program PLCs, configure SCADA, deploy industrial networks, write middleware, and build dashboards that turn raw data into decisions. Their work spans discovery, design, implementation, testing, and ongoing support."
+    - question: "How much does a system integrator cost?"
+      answer: "System integrator costs vary widely based on project complexity, industry requirements, and technical scope. While the cheapest bid may seem attractive, it often becomes the most expensive option once delays, rework, and maintenance issues are factored in. Focus on value—thorough documentation, proper testing, and reliable support typically cost less over five years than hiring someone who cuts corners."
+    - question: "How do I choose the right system integrator?"
+      answer: "Look for relevant industry experience, technical depth in both OT and IT, strong documentation standards, and modern tooling approaches. Check references from projects two to three years old to understand long-term system performance. Watch for red flags like reluctance to use standard protocols, lack of disaster recovery plans, or one-size-fits-all solutions. Good integrators set realistic expectations and communicate clearly."
+    - question: "What is the difference between a system integrator and an automation company?"
+      answer: "While automation companies focus primarily on installing and programming factory equipment, system integrators work across both operational technology (factory floor) and information technology (business systems). System integrators connect equipment to enterprise software, manage data flow between incompatible systems, and ensure factory operations align with business goals—not just automate individual processes."
+    - question: "Why is system integration more complex than it appears?"
+      answer: "System integration requires working across multiple technical domains simultaneously—factory protocols, enterprise systems, cybersecurity, real-time control, and data analytics. Integrators must make equipment from different decades and vendors work together, meet industry-specific compliance requirements, coordinate across multiple organizational stakeholders, and implement changes without stopping production."
+    - question: "What tools do modern system integrators use?"
+      answer: "Modern system integrators use platforms like Node-RED for visual, flow-based integration and tools like FlowFuse for enterprise management at scale. These enable faster development, support multiple protocols without custom drivers, provide centralized control across deployments, and make systems easier to maintain and modify compared to traditional custom-coded point-to-point integrations."
+    - question: "How long does a typical system integration project take?"
+      answer: "Project timelines vary significantly based on scope and complexity. Simple integrations connecting a few machines to a cloud platform might take weeks, while comprehensive facility-wide projects integrating legacy equipment with modern enterprise systems can take months. Good integrators provide realistic timelines during planning and account for potential delays from equipment availability, testing windows, and unforeseen technical challenges."  
 ---
 
 Most factories don't get built all at once. They evolve. Someone buys a robot in 2018. A conveyor system gets added when production ramps up. Last year, a vision system showed up because quality was slipping. Every piece from a different vendor, every piece with its own manual, its own software, its own way of doing things.
