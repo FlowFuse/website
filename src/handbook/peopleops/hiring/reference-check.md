@@ -26,6 +26,8 @@ The reference check is typically a 20–30 minute conversation conducted over th
 
 ## Reference Check Questions
 
+These questions are intended to surface working style, strengths, and growth areas to support onboarding and early management. When speaking with peers or colleagues, ask for concrete examples and specific situations rather than general impressions.
+
 During the reference check, aim to understand:
 
 1. Their working relationship; In what capacity did they collaborate? How long did you work together, and in what time period?
