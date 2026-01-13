@@ -31,7 +31,8 @@ Forecast stage: Best case
 
 Next Step: Schedule Impact Analysis / Technical Deep Dive.
 
-Resource: Edge Connectivity Discovery Playbook
+Resource: 
+[Edge Connectivity Discovery Playbook](https://docs.google.com/document/d/1rH1cYQqUg3HTt8a0_kKOWyaClvlAgVjXLmF0jqb3yqY/edit)
 
 ## **Meeting 1b:** Impact / Technical Deep Dive (45–60 min)
 
