@@ -1,0 +1,24 @@
+---
+pagination:
+    data: integrations
+    size: 1
+    alias: integration
+layout: layouts/integration.njk
+eleventyComputed:
+    permalink: /integrations/{{ integration._id }}/
+    title: "{{ integration._id }}"
+    description: "{{ integration.description }}"
+    certified: "{{ integration.ffCertified }}"
+    npmPackage: "{{ integration._id }}"
+    version: "{{ integration.version }}"
+    weeklyDownloads: "{{ integration.downloads.week }}"
+    npmScope: "{{ integration.npmScope or integration.npmOwners[0] }}"
+    repository: "{{ integration.repository }}"
+    authorName: "{{ integration.author.name or integration.author }}"
+    authorUrl: "{{ integration.author.url }}"
+    lastUpdated: "{{ integration.lastUpdated }}"
+    created: "{{ integration.created }}"
+    githubOwner: "{{ integration.githubOwner }}"
+    githubRepo: "{{ integration.githubRepo }}"
+---
+{{ integration.readme | md | rewriteIntegrationLinks(integration) | safe }}

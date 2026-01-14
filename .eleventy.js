@@ -162,6 +162,15 @@ module.exports = function(eleventyConfig) {
         return JSON.stringify(content)
     });
 
+    eleventyConfig.addFilter("fromJson", (content) => {
+        try {
+            return JSON.parse(content);
+        } catch (e) {
+            console.error("Error parsing JSON:", e);
+            return content;
+        }
+    });
+
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
@@ -196,6 +205,81 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter('shortDate', dateObj => {
         return spacetime(new Date(dateObj)).format('{date} {month-short}, {year}')
+    });
+
+    // Filter to safely convert values to Date objects
+    eleventyConfig.addFilter('toDate', value => {
+        if (!value) return new Date();
+        if (value instanceof Date) return value;
+        return new Date(value);
+    });
+
+    eleventyConfig.addFilter('formatNumber', num => {
+        if (num === undefined || num === null) return '0';
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    });
+
+    eleventyConfig.addFilter('md', (content) => {
+        if (!content) return '';
+        const md = new markdownIt({
+            html: true,
+        })
+        .use(markdownItAnchor, {
+            permalink: markdownItAnchor.permalink.headerLink()
+        });
+        return md.render(content);
+    });
+
+    eleventyConfig.addFilter('stripFirstH1', (str) => {
+        if (!str) return str;
+        
+        // Remove the first h1 heading from the content to avoid duplicate h1 tags
+        // This is typically the package name which is already shown in the page header
+        return str.replace(/<h1[^>]*>.*?<\/h1>/, '');
+    });
+
+    eleventyConfig.addFilter('rewriteIntegrationLinks', (str, integration) => {
+        if (!str) return str;
+        
+        // Convert relative links in README to absolute links
+        const matcher = /((href|src)="([^"]*))"/g;
+        let match;
+        const result = str.replace(matcher, (fullMatch, group1, attr, url) => {
+            // Skip absolute URLs and mailto links
+            if (/^(http|https|mailto:)/.test(url)) {
+                return fullMatch;
+            }
+            
+            // Skip pure anchors (same-page links)
+            if (url.startsWith('#')) {
+                return fullMatch;
+            }
+            
+            // Convert relative links to repository links if available
+            if (integration.repository && integration.repository.url) {
+                const repoUrl = integration.repository.url
+                    .replace('git+', '')
+                    .replace('.git', '')
+                    .replace('git://', 'https://');
+                
+                // Handle different types of relative paths
+                if (url.startsWith('./') || url.startsWith('../')) {
+                    const cleanUrl = url.replace(/^\.\.?\//, '');
+                    return `${attr}="${repoUrl}/blob/master/${cleanUrl}"`;
+                } else if (url.startsWith('/')) {
+                    // Repository-relative paths (e.g., /CHANGELOG.md)
+                    const cleanUrl = url.replace(/^\//, '');
+                    return `${attr}="${repoUrl}/blob/master/${cleanUrl}"`;
+                } else if (!url.startsWith('#')) {
+                    // Simple relative paths without prefix
+                    return `${attr}="${repoUrl}/blob/master/${url}"`;
+                }
+            }
+            
+            return fullMatch;
+        });
+        
+        return result;
     });
 
     eleventyConfig.addFilter('duration', mins => {
