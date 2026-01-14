@@ -13,7 +13,8 @@ layout: layouts/base.njk
                     {% if integration.ffCertified %}
                     <div class="ff-certified-badge flex items-center gap-2 bg-indigo-100 border-2 border-indigo-600 text-indigo-700 px-4 py-2 rounded-lg font-semibold text-sm whitespace-nowrap flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 2.387a2.99 2.99 0 0 0-3.9 0A2.99 2.99 0 0 0 12 9.75a2.99 2.99 0 0 0 .29 1.28l-.688.687a1.5 1.5 0 0 0 0 2.121l3.536 3.536a1.5 1.5 0 0 0 2.121 0l.687-.688a2.99 2.99 0 0 0 1.28.29 2.99 2.99 0 0 0 3.564-3.21 2.99 2.99 0 0 0-.29-1.28l.688-.687a1.5 1.5 0 0 0 0-2.121l-3.536-3.536a1.5 1.5 0 0 0-2.121 0l-.687.688A2.99 2.99 0 0 0 15.61 6.186Z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="m9 16.17 4.95-4.95 1.41 1.42L9 18.97l-4.95-4.95L5.47 12.6 9 16.17Z" clip-rule="evenodd" />
                         </svg>
                         <span>FlowFuse Certified</span>
                     </div>
@@ -66,55 +67,127 @@ layout: layouts/base.njk
 
 <!-- Main Content -->
 <div class="container m-auto max-w-6xl px-6 py-8">
-    {% if hasExamples %}
-    <!-- Tab Navigation -->
-    <div class="border-b border-gray-300 mb-6">
-        <nav class="flex gap-8" aria-label="Tabs">
-            <button 
-                class="tab-button py-3 px-1 border-b-2 border-indigo-600 font-medium text-indigo-600 focus:outline-none"
-                data-tab="overview"
-            >
-                Overview
-            </button>
-            <button 
-                class="tab-button py-3 px-1 border-b-2 border-transparent font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none"
-                data-tab="examples"
-            >
-                Examples ({{ integration.examples.length }})
-            </button>
-        </nav>
-    </div>
-    {% endif %}
+    <div class="flex flex-col lg:flex-row gap-8 min-w-0">
+        <!-- Documentation Content -->
+        <div class="flex-grow min-w-0 overflow-hidden">
+            {% if hasExamples %}
+            <!-- Tab Navigation -->
+            <div class="border-b border-gray-300 mb-6">
+                <nav class="flex gap-8" aria-label="Tabs">
+                    <button 
+                        class="tab-button py-3 px-1 border-b-2 border-indigo-600 font-medium text-indigo-600 focus:outline-none"
+                        data-tab="overview"
+                    >
+                        Overview
+                    </button>
+                    <button 
+                        class="tab-button py-3 px-1 border-b-2 border-transparent font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none"
+                        data-tab="examples"
+                    >
+                        Examples ({{ integration.examples.length }})
+                    </button>
+                </nav>
+            </div>
+            {% endif %}
 
-    <div class="prose max-w-none">
-        {% if hasExamples %}
-        <!-- Overview Tab Content -->
-        <div id="overview-content" class="tab-content">
-            {{ content | safe }}
-        </div>
+            <div class="prose max-w-none">
+                {% if hasExamples %}
+                <!-- Overview Tab Content -->
+                <div id="overview-content" class="tab-content">
+                    {{ content | safe }}
+                </div>
 
-        <!-- Examples Tab Content -->
-        <div id="examples-content" class="tab-content hidden">
-            <h2 class="text-2xl font-bold mb-4">Example Flows</h2>
-            <p class="text-gray-600 mb-6">The following example flows are available for this node.</p>
-            
-            {% for example in integration.examples %}
-            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-                <h3 class="text-lg font-semibold mb-4">{{ example.name }}</h3>
-                
-                {% if example.flow %}
-                <div class="bg-white border border-gray-300 rounded overflow-hidden mb-4">
-                    <div id="flow-renderer-{{ loop.index0 }}" style="height: 400px;" class="flow-renderer-container"></div>
+                <!-- Examples Tab Content -->
+                <div id="examples-content" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold mb-4">Example Flows</h2>
+                    <p class="text-gray-600 mb-6">The following example flows are available for this node.</p>
+                    
+                    {% for example in integration.examples %}
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+                        <h3 class="text-lg font-semibold mb-4">{{ example.name }}</h3>
+                        
+                        {% if example.flow %}
+                        <div class="bg-white border border-gray-300 rounded overflow-hidden mb-4">
+                            <div id="flow-renderer-{{ loop.index0 }}" style="height: 400px;" class="flow-renderer-container"></div>
+                        </div>
+                        {% else %}
+                        <p class="text-gray-500 mb-4">Flow content not available</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
                 </div>
                 {% else %}
-                <p class="text-gray-500 mb-4">Flow content not available</p>
+                {{ content | safe }}
                 {% endif %}
             </div>
-            {% endfor %}
         </div>
-        {% else %}
-        {{ content | safe }}
-        {% endif %}
+
+        <!-- Sidebar -->
+        <div class="lg:w-80 flex-shrink-0 min-w-0">
+            <div class="space-y-6">
+                <!-- Installation -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
+                    <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                        </svg>
+                        Installation
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">Install via <a href="https://flowfuse.com/node-red/getting-started/library/#using-command-line-(npm)" class="text-indigo-600 hover:text-indigo-800 font-semibold" target="_blank">npm</a> or use the <a href="https://flowfuse.com/node-red/getting-started/library/#using-the-palette-manager" class="text-indigo-600 hover:text-indigo-800 font-semibold" target="_blank">Node-RED palette manager</a>:</p>
+                    <div class="bg-gray-900 text-gray-100 p-3 rounded font-mono text-sm overflow-x-auto">
+                        <code class="!bg-transparent !border-0 !p-0 text-gray-100 break-all whitespace-pre-wrap">npm install {{ integration._id }}</code>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
+                    <h3 class="text-lg font-bold mb-4">Quick Stats</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center pb-2 border-b">
+                            <span class="text-gray-600">Current Version</span>
+                            <span class="font-semibold">{{ integration.version }}</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b">
+                            <span class="text-gray-600">Weekly Downloads</span>
+                            <span class="font-semibold">{{ integration.downloads.week | formatNumber }}</span>
+                        </div>
+                        {% if integration.created %}
+                        <div class="flex justify-between items-center pb-2 border-b">
+                            <span class="text-gray-600">First Published</span>
+                            <span class="font-semibold">{{ integration.created | shortDate }}</span>
+                        </div>
+                        {% endif %}
+                        {% if integration.lastUpdated %}
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Last Updated</span>
+                            <span class="font-semibold">{{ integration.lastUpdated | shortDate }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- External Links -->
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-hidden">
+                    <h3 class="text-sm font-semibold mb-3 text-gray-600 uppercase">External Resources</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="https://www.npmjs.com/package/{{ integration._id }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                            </svg>
+                            View on NPM
+                        </a>
+                        {% if integration.repository and integration.repository.url %}
+                        <a href="{{ integration.repository.url | replace('git+', '') | replace('.git', '') }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                            </svg>
+                            View Repository
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
