@@ -74,20 +74,22 @@ meta:
                     <p><span class="font-semibold">FlowFuse takes that power further</span>—enabling secure, governed, and AI-accelerated scale for your most critical operations.</p>                   
                 </div>
                 <!-- Mobile image -->  
-                <div class="flex md:hidden justify-center m-auto mb-10 ff-image-rounded rounded-lg border-2 border-indigo-300 drop-shadow-lg"> 
-                    {% set image = ["./", heroSection.imageMobile ] | join %}
-                    {% set imageAlt = heroSection.imgAlt %}
-                    {% image image, imageAlt, [400] %}
+                <div class="flex md:hidden justify-center m-auto mb-10 ff-image-rounded rounded-lg drop-shadow-lg"> 
+                    <lite-youtube videoid="n9HhZCh0Ndg" params="rel=0"
+                        style="width: 472px; overflow: hidden; background-image: url('https://img.youtube.com/vi/n9HhZCh0Ndg/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                        class="rounded-xl sm:max-w-none sm:max-h-full">
+                    </lite-youtube>
                 </div>
                 <div class="flex gap-3 max-md:mx-auto max-sm:flex-col max-md:justify-center">
                     <a class="ff-btn ff-btn--primary min-h-[40px]" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'primary'}, {'page': 'why-flowfuse'})">GET A FREE DEMO</a>
                     <a class="ff-btn min-h-[40px] flex gap-2" href="https://app.flowfuse.com/account/create" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'why-flowfuse'})">GET STARTED {% include "components/icons/arrow-right.svg" %}</a>
                 </div>
             </div>
-            <div class="flex max-md:hidden justify-center m-auto max-w-[550px] ff-image-rounded rounded-lg border-2 border-indigo-300 drop-shadow-lg w-full">
-                {% set image = ["./", heroSection.image ] | join %}
-                {% set imageAlt = heroSection.imgAlt %}
-                {% image image, imageAlt, [550] %}
+            <div class="flex max-md:hidden justify-center m-auto max-w-[550px] ff-image-rounded rounded-lg drop-shadow-lg w-full">
+                <lite-youtube videoid="n9HhZCh0Ndg" params="rel=0"
+                    style="width: 472px; overflow: hidden; background-image: url('https://img.youtube.com/vi/n9HhZCh0Ndg/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                    class="rounded-xl sm:max-w-none sm:max-h-full">
+                </lite-youtube>
             </div>
         </div>   
     </div>
