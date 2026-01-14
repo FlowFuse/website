@@ -50,10 +50,10 @@ ctaSection:
     <div class="md:max-w-screen-lg m-auto rounded-lg mt-20 overflow-hidden relative bg-gradient-to-br from-indigo-700 to-indigo-900">
 
         <div class="absolute flex ff-image-cover left left-0 md:hidden top-0 h-full">
-            {% image hero.img, hero.imgAlt, [1200] %}
+            {% image hero.img, hero.imgAlt, [2100] %}
         </div>
         <div class="absolute flex ff-image-cover right right-0 max-md:hidden top-0 h-full">
-            {% image hero.img, hero.imgAlt, [1200] %}
+            {% image hero.img, hero.imgAlt, [2100] %}
         </div>
         <div class="relative p-8 md:max-w-[55%] max-md:text-center">
             <h1 class="text-white mb-8">{{ hero.title | safe }}</h1>
@@ -106,7 +106,7 @@ ctaSection:
                 <div class="w-full h-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
                     <div class="w-full h-full bg-white ff-image-cover ff-image-rounded left">
                     {% set imageSrc = ["./", platform.image ] | join %}
-                    {% image imageSrc, imageDescription, [496] %}
+                    {% image imageSrc, imageDescription, [1200] %}
                 </div>
             </div>
         </div>
