@@ -1,0 +1,175 @@
+---
+layout: page
+nohero: true
+meta:
+    title: "Start with a Personalized Onboarding Session"
+    description: "Skip the trial and error. Our onboarding specialists will help you configure FlowFuse for your specific use case, connect your first devices, and deploy your first flow—all in one focused session."
+    faq:
+      - question: "Can I start using FlowFuse immediately after the demo?"
+        answer: >
+          Absolutely! We'll create your account during the session and you can start building right away. Most customers deploy their first application within 24 hours.
+      - question: "Do I need technical knowledge for the session?"    
+        answer: >
+          It helps if you're familiar with Node-RED basics, but our team can adapt the session to your experience level. We've onboarded everyone from Node-RED experts to complete beginners.
+      - question: "What if I need more help after the onboarding?"
+        answer: >
+          You'll have access to our documentation, community forum, and support team. Pro and Enterprise customers also get dedicated support channels. 
+      - question: "How long is the free trial?"
+        answer: >
+          After your onboarding session, you can explore FlowFuse for 14 days with no credit card required. 
+hero:
+    buttonText: "Schedule My Demo"
+    buttonLink: "https://meetings-eu1.hubspot.com/zeger-jan/quick-flowfuse-chat?uuid=bf81b397-e5c3-49af-8f3a-5bc1e14f1cd9"
+    buttonReference: "sign-up-schedule-demo"
+why:
+  - svgPath: "components/icons/bolt.svg"
+    title: "Get Started Faster"
+    description: "Go from zero to deployed in your first session. We'll handle the setup complexities so you can focus on building."
+  - svgPath: "components/icons/puzzle-piece.svg"
+    title: "Customized to Your Use Case"
+    description: "Whether you're managing IoT devices, building data pipelines, or automating workflows, we'll configure FlowFuse specifically for your needs."
+  - svgPath: "components/icons/shield-check.svg"
+    title: "Best Practices from Day One"
+    description: "Learn security configurations, team collaboration features, and deployment strategies directly from our experts."
+  - svgPath: "components/icons/lifebuoy.svg"
+    title: "Ongoing Support Included"
+    description: "After your onboarding session, you'll have access to documentation, resources, and our support team whenever you need help."
+what:
+  - title: "Connect Your Devices"
+    description: "Use Node-RED's massive protocol library to connect PLCs, sensors, controllers, and equipment – visually, with no code."
+  - title: "Build Your Flows"
+    description: "Drag, drop, and configure data pipelines that collect, transform, and route edge data exactly where you need it."
+  - title: "Deploy & Scale"
+    description: "Push your flows to edge devices with one click. Monitor, update, and scale across your entire operation from FlowFuse's central platform."
+---
+<!--Hero Content-->
+<div class="w-full px-6">
+    <div class="w-full pt-6">
+        <div class="md:flex my-10 md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+            <div class="m-auto md:w-3/5">
+                <h1 class="w-full mt-0 m-auto">
+                  Start with a <span class='text-indigo-600'>Personalized Onboarding Session</span>
+                </h1>
+                <h5 class="mt-4 text-gray-600">Get set up and running with FlowFuse in just 15 minutes with expert guidance from our team</h5>
+                <div class="ff-prose prose my-10">
+                    <p>
+                        {{ meta.description | safe }}
+                    </p>
+                </div>
+                <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">
+                  {% macro freeDemoButton(desktop=true) %}
+                  <a class="ff-btn ff-btn--primary text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
+                      href="{{ hero.buttonLink }}"
+                      onclick="capture('cta-demo', {'reference': '{{ hero.buttonReference }}'})">
+                      {{ hero.buttonText }}
+                  </a>
+                  {% endmacro %}
+                  {{freeDemoButton() }}
+                </div>
+                <p class="hidden md:flex text-indigo-400 font-medium max-md:text-center">15-minute session • No credit card required • Available this week</p>
+            </div>
+            <div class="md:w-2/5 flex-grow relative">
+                <div class="ff-image-cover left w-full h-full ff-image-rounded">
+                    {% image "./images/signup.png", "Plant manager with a laptop in a factory setting", [376] %}
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row md:hidden gap-3">
+                {{ freeDemoButton(false) }}
+            </div>
+            <p class="md:hidden text-indigo-400 font-medium max-md:text-center">15-minute session • No credit card required • Available this week</p>
+        </div>
+    </div>
+</div>
+<!-- Why -->
+<div class="w-full py-10 px-6">
+    <div class="md:max-w-screen-lg m-auto">
+        <h2 class="text-center w-full md:text-left max-w-4xl">Why Start with a <span class='text-indigo-600'>Guided Session?</span></h2>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-8 gap-y-14 mt-16">
+            {% for reason in why %}
+            <div class="relative w-full max-md:max-w-md mx-auto">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
+                            {% include reason.svgPath %}
+                        </div>
+                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                            <h5 class="w-full md:m-0">
+                                <div class="text-xl font-medium text-gray-600 text-center sm:text-left">{{ reason.title }}
+                                </div>
+                            </h5>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-center sm:text-left font-light">{{ reason.description | safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- What -->
+<div class="w-full bg-indigo-50/50 py-16 my-16 px-6">
+    <div class="md:max-w-screen-lg m-auto">
+        <h2 class="text-center w-full md:text-left max-w-4xl">What Happens in <span class='text-indigo-600'>Your Onboarding Session?</span></h2>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-14 mt-16">
+            {% for step in what %}
+            <div class="relative w-full max-md:max-w-md mx-auto">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <h5 class="max-sm:text-center text-indigo-400">Step {{ loop.index }}</h5>
+                        <div class="w-full mx-auto md:m-0">
+                            <h4 class="w-full md:m-0 text-gray-600 max-sm:text-center">{{ step.title }}</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="max-sm:text-center font-light">{{ step.description | safe }}</p>
+                    </div>
+                </div>
+                <!-- Chevron -->
+                {% if not loop.last %}
+                <div class="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 text-gray-400">
+                    {% include "components/icons/chevron-right.svg" %}
+                </div>
+                <div class="sm:hidden absolute left-1/2 -translate-x-1/2 -bottom-7 text-gray-400">
+                    {% include "components/icons/chevron-down.svg" %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="w-full px-6 pt-6">
+    <div class="max-w-screen-lg mx-auto mb-4">
+        <!-- Testimonials -->
+        <h2 class="text-center w-full md:text-left max-w-4xl">Trusted by <span class='text-indigo-600'>Engineering Teams Worldwide</span></h2>
+        <div class="w-full mt-12 md:px-0">
+            <div class="sm:max-w-screen-lg mx-auto">
+                {% include "testimonials.njk" %}
+            </div>
+        </div>
+        <!-- Social proof -->
+        <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl my-10">
+            <div class="mx-auto w-full">
+                {% include "social-proof.njk" %}
+            </div>
+        </div>
+        <!-- FAQ -->
+        <h2 class="max-md:text-center mt-20"><span class="text-indigo-600">Why upgrade</span> to FlowFuse?</h2>
+        <div class="-mt-20">
+        {% include "faq.njk" %}
+        </div>
+    </div>    
+</div>
+<div class="w-full px-6 pb-20">
+    <!--CTA-->
+    <div class="ff-blue-card md:max-w-screen-lg mx-auto max-sm:text-center pt-16 pb-10 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
+        <h3 class="mb-6 w-full text-center">Ready to Get Started?</h3>
+        <p class="text-center">Book your personalized onboarding session today and start building with FlowFuse this week.</p>
+        <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center mt-8">
+            <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="{{ hero.buttonLink }}" onclick="capture('cta-demo', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ hero.buttonText }}</a>
+            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="/contact-us/">Contact our sales team</a>
+        </div>
+    </div>
+</div>
