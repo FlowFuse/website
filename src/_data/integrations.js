@@ -199,7 +199,7 @@ module.exports = async () => {
                     node.readme = "";
                 }
 
-                console.log(`Loaded readme for ${node._id}`);
+                // console.log(`Loaded readme for ${node._id}`);
             } catch (err) {
                 // Only log non-404 errors to avoid cluttering console with missing packages
                 if (!err.message || !err.message.includes('404')) {
