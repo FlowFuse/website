@@ -4,7 +4,7 @@ subtitle: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
 description: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
 date: 2026-01-15
 authors: ["nick-oleary"]
-#image: /blog/2026/01/images/release-2-26.png
+image: /blog/2026/01/images/release-2-26.png
 tags:
    - flowfuse
    - news
