@@ -27,7 +27,7 @@ These annotations are not exclusive to FlowFuse or FlowFuse Roles, they also are
 
 _Note: Hints do not enforce behavior. The actual behavior of the tool depends on how it is used in your flows_
 
-![MCP Server Tool Node with new annotations](mcp-annotations.png){data-zoomable}
+![MCP Server Tool Node with new annotations](./images/mcp-annotations.png){data-zoomable}
 _MCP Server Tool Node with new annotations_
 
 _Note: This feature is currently in Beta. We are actively expanding these capabilities and would love to hear how you are using MCP to extend your systems._
