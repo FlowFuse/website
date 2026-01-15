@@ -38,7 +38,7 @@ This release also brings some new abilities for the FlowFuse Expert to help you 
 * **Streamlined Node Installation:** When the Expert suggests a node module, it can now automatically open the Palette Manager and filter for the correct package, leaving you just one click away from installation.
 * **Direct Flow Imports:** When the Expert provides demo flows, you no longer need to copy-paste JSON. The Expert can now inject those flows directly into your editor, ready for deployment.
 
-Make sure you've updated the `@flowfuse/nr-assistant` module inside your instance to unlock these new capabilties.
+Make sure you've updated the `@flowfuse/nr-assistant` module inside your instance to unlock these new capabilities.
 
 ![FlowFuse Expert Install Node](./images/ff-expert-install-node.gif){data-zoomable}
 *FlowFuse Expert integration with the Palette Manager*
