@@ -59,4 +59,4 @@ Head to [Node-RED Academy](https://node-red-academy.learnworlds.com/) and sign u
 ![Screenshot of the Node-RED Academy home page](./images/academy-home-page.png){data-zoomable}
 _Screenshot of the Node-RED Academy home page_
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Announcing%20Node-RED%20Academy%21", cta_type: "signup", cta_text: "The courses include everything you need to learn Node-RED, but you will also need access to an instance of Node-RED to follow along with exercises and apply your new knowledge. The easiest way to get access to Node-RED is with the FlowFuse Starter Plan." %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Announcing%20Node-RED%20Academy%21", cta_type: "signup", cta_text: "The courses include everything you need to learn Node-RED, but you will also need access to an instance of Node-RED to follow along with exercises and apply your new knowledge. The easiest way to get access to Node-RED is with the FlowFuse Starter Plan." %}
