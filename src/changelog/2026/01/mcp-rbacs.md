@@ -7,7 +7,7 @@ tags:
   - changelog
 ---
 
-Following on the the introduction of [FlowFuse Expert MCP-Powered Insights](../../2025/12/ff-expert-mcp-insights.md) we have added annotations to the FlowFuse MCP nodes and linked them up with the FlowFuse roles.
+Following on the the introduction of [FlowFuse Expert MCP-Powered Insights](/changelog/2025/12/ff-expert-mcp-insights/) we have added annotations to the FlowFuse MCP nodes and linked them up with the FlowFuse roles.
 This permits a level of control over who can access what. This is just a first step, we will be working in the area over the next few iterations.
 
 ### MCP Tools Node
