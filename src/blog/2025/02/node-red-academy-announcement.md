@@ -50,7 +50,7 @@ This list will likely grow beyond this too. We will be evolving our courses base
 
 There are many great resources for Node-RED education out there, but the Node-RED Academy has been curated by the authors and developers behind Node-RED and covers everything you'll need to know from building your first flow to integrating with industrial hardware.
 
-FlowFuse is an enterprise-grade industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. You can sign up for free [here](https://app.flowfuse.com/account/create) to give it a go.
+FlowFuse is an enterprise-grade industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. You can sign up for free [here]({{ site.onboardingURL }}) to give it a go.
 
 ## How Do I Get Started?
 
