@@ -13,11 +13,6 @@ Recently, we introduced [MCP Server nodes](/changelog/2025/10/mcp-nodes/) which 
 By switching to the new Insights mode, the Expert gains the ability to use the MCP tools and resources you’ve built using FlowFuse MCP Server Nodes. This means you can now ask the Expert to analyze real-time data from your flows, query external databases, or trigger specific actions across your infrastructure.
 
 ### How to get started:
-- Add some MCP Tools and Resources to your Hosted Instances
-- Open the FlowFuse Expert interface.
-- Use the new Mode Selector to switch from "Chat" to "Insights".
-- Select the MCP Server you want to include in your session.
-- Ask questions about your ?????
 
 - **Deploy MCP Nodes**: Add MCP Tools or Resources to your Node-RED flows using our MCP Server nodes.
 - **Switch to Insights**: Open the FlowFuse Expert interface and use the Mode Selector to switch from "Chat" to "Insights."
