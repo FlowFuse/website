@@ -1,6 +1,7 @@
 {
     "baseURL": "https://flowfuse.com",
     "appURL": "https://app.flowfuse.com",
+    "onboardingURL": "/get-started/",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "openings": {
         "em": "https://job-boards.greenhouse.io/flowfuse/jobs/5566913004"

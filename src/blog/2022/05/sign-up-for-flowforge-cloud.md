@@ -22,7 +22,7 @@ new Node-RED project in under a minute!
 <!--more-->
 
 <div class="max-w-md m-auto">
-  <a class="ff-btn ff-btn--primary" href="{{ site.appURL }}/account/create">Sign up</a>
+  <a class="ff-btn ff-btn--primary" href="{{ site.onboardingURL }}">Sign up</a>
 </div>
 
 ## What we offer

@@ -34,5 +34,5 @@ FlowFuse is a fully remote team, we currently have a strong skew towards western
 [**FlowFuse Team News**](/team/)    
 We are currently recruiting a [Product Manager](https://boards.greenhouse.io/flowfuse/jobs/4717778004), and a [Senior Community Manager](https://boards.greenhouse.io/flowfuse/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse).
     
-[**Try FlowFuse for Free**]({{ site.appURL }}/account/create?code=RELEASE11)  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link]({{ site.appURL }}/account/create?code=RELEASE11) or use the code RELEASE11 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](/docs/install/) for free, forever.
+[**Try FlowFuse for Free**]({{ site.onboardingURL }}?code=RELEASE11)  
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link]({{ site.onboardingURL }}?code=RELEASE11) or use the code RELEASE11 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](/docs/install/) for free, forever.
