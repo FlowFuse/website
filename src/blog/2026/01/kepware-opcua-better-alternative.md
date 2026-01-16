@@ -32,7 +32,7 @@ $15,000 for the initial license seemed reasonable. Then came additional tags for
 
 Here's what actually happened: Kepware didn't win on technical merit. It won on timing and driver ubiquity.
 
-In the early 2000s, industrial connectivity was genuinely hard. Proprietary PLC protocols. Sparse documentation. Vendors actively hostile to third-party integration. Kepware invested aggressively in driver development, by 2010, if a PLC existed in North America, Kepware supported it. That created a network effect system integrators couldn't ignore. Standardization followed. Equipment vendors tested against it. PTC's $100 million acquisition in 2016 cemented the strategy.
+In the early 2000s, industrial connectivity was genuinely hard. Proprietary PLC protocols. Sparse documentation. Vendors actively hostile to third-party integration. Kepware invested aggressively in driver development, by 2010, if a PLC existed in North America, Kepware almost certainly supported it. That created a network effect system integrators couldn't ignore. Standardization followed. Equipment vendors tested against it. PTC's $100 million acquisition in 2016 cemented the strategy.
 
 You didn't get tricked. Lock-in happened through entirely normal operations.
 
@@ -70,7 +70,7 @@ Five years ago, questioning Kepware meant gambling with production reliability. 
 
 Today they are. And fundamental shifts made the old calculation obsolete.
 
-**Protocol secrecy collapsed.** Kepware's advantage rested entirely on PLC manufacturers hiding their communication protocols. Documentation was unavailable. Reverse engineering was mandatory. Now every significant protocol specification is publicly published. Manufacturers provide detailed technical guides. Industry bodies standardized everything. What once demanded rare expertise is now freely available knowledge. The technical moat dried up completely. The pricing hasn't acknowledged it.
+**Protocol secrecy collapsed.** Kepware's advantage rested entirely on PLC manufacturers hiding their communication protocols. Documentation was unavailable. Reverse engineering was mandatory. Now every significant protocol specification is publicly published. Manufacturers provide detailed technical guides. Industry bodies standardized everything. What once demanded rare expertise is now freely available knowledge. The technical moat largely dried up. The pricing hasn't acknowledged it.
 
 **Infrastructure economics flipped.** Handling 50,000 tags used to mean purchasing dedicated servers, implementing redundant hardware, staffing IT personnel. Real capital expenditure. Today that same capacity runs on $200 monthly cloud compute. The underlying cost dropped 90%. Kepware's licensing model operates as though nothing changed.
 
@@ -78,7 +78,7 @@ Today they are. And fundamental shifts made the old calculation obsolete.
 
 **Fragmented purchases became unified platforms.** Kepware moved data. Full stop. You still needed separate historians, visualization tools, cloud gateways, middleware, analytics platforms. Five vendors. Five contracts. Five integration projects. Modern platforms ship unified, not assembled from parts, designed as integrated systems. The integration tax evaporated.
 
-**And private equity bought Kepware for $600 million.** TPG's deal closes early 2026. Private equity doesn't maintain operations, it maximizes returns. That means price increases, forced product bundles, or operational restructuring designed to extract more from existing customers. It's the same playbook every time.
+**And private equity bought Kepware for $600 million.** TPG's deal closes early 2026. Private equity doesn't maintain operations, it maximizes returns. That often means price increases, forced product bundles, or operational restructuring designed to extract more from existing customers. It's the same playbook every time.
 
 You're not evaluating Kepware as it is. You're evaluating what it becomes under new ownership carrying $600 million in return expectations.
 
