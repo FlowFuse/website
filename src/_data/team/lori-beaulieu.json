@@ -1,0 +1,15 @@
+{
+    "order": 5,
+    "name": "Lori Beaulieu",
+    "title": "Director of Product",
+    "github": "lbeau",
+    "linkedin": "beaulieulori",
+    "blog": "",
+    "country": "US",
+    "email": "lori@flowfuse.com",
+    "headshot": "lori.png",
+    "bio": "Lori leads product management at FlowFuse, focused on product strategy and creating an award-winning product for our customers.",
+    "facts": [
+        "Builds features based on data, not opinion. Lover of the natural world, especially mountains, birds and fungi."
+    ]
+}
