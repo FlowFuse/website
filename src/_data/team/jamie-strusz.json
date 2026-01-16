@@ -8,6 +8,7 @@
     "country": "US",
     "email": "jamie@flowfuse.com",
     "headshot": "jamie.png",
+    "reports_to": "ZJ van de Weg",
     "bio": "Jamie leads engineering at FlowFuse, focusing on developer experience, clarity, and building systems and teams that scale.",
     "facts": [
         "Builder of high-trust engineering orgs, specializing in turning chaotic systems into scalable ones (and creating themed Slack rituals no one asked for but everyone ends up using)",
