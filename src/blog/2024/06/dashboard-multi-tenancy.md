@@ -99,4 +99,4 @@ A huge thanks to Fred Loucks ([@fullmetal-fred](https://github.com/fullmetal-fre
 
 Start by following our [Getting Started Guide](https://dashboard.flowfuse.com/user/multi-tenancy.html#building-multi-tenant-dashboards).
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Multi-Tenancy%20available%20for%20everyone%20with%20FlowFuse%27s%20Dashboard%202.0", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Multi-Tenancy%20available%20for%20everyone%20with%20FlowFuse%27s%20Dashboard%202.0", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

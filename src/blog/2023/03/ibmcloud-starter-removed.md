@@ -23,7 +23,7 @@ As an ex-IBM Employee myself, over the years, I've been very dependant upon the 
 
 If you're now looking for somewhere to rely on in order to easily spin up new instance of Node-RED, then FlowFuse is the obvious answer. If you're completely new for Node-RED too, we can also help you there with our [Getting Started](/blog/2023/01/getting-started-with-node-red/) guide.
 
-You can sign up for a [free FlowFuse Cloud Account]({{ site.appURL }}/account/create) where you'll be given one small Node-RED instance for free, for your first month.
+You can sign up for a [free FlowFuse Cloud Account]({{ site.onboardingURL }}) where you'll be given one small Node-RED instance for free, for your first month.
 
 ## Integrations
 

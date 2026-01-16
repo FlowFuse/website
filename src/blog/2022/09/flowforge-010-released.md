@@ -62,7 +62,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Try it out
 
-[Sign up for FlowFuse Cloud]({{ site.appURL }}/account/create?code=RELEASE010) with this link  or at the checkout enter the code **RELEASE010** to get your first project free for a month.
+[Sign up for FlowFuse Cloud]({{ site.onboardingURL }}?code=RELEASE010) with this link  or at the checkout enter the code **RELEASE010** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 

@@ -34,5 +34,5 @@ We’d like to welcome two new members to the FlowFuse team. [Ian Skerrett](http
 
 Would you like to work for FlowFuse? We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse). 
     
-[**Try FlowFuse for Free**]({{ site.appURL }}/account/create?code=FF12)  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link]({{ site.appURL }}/account/create?code=FF12) or use the code FF12 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](/docs/install/) for free, forever.
+[**Try FlowFuse for Free**]({{ site.onboardingURL }}?code=FF12)  
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link]({{ site.onboardingURL }}?code=FF12) or use the code FF12 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](/docs/install/) for free, forever.

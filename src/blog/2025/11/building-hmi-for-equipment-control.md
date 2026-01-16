@@ -54,7 +54,7 @@ If operators will use tablets, design for touch targets (minimum 44x44 pixels) a
 
 You need the FlowFuse agent running on an edge device that can reach your PLC over the network. 
 
-Start by creating a [FlowFuse account](https://app.flowfuse.com/account/create). Once logged in, install and register the FlowFuse agent on your edge device by following this guide: [Installing Node-RED on Your Edge Device](/blog/2025/09/installing-node-red/)
+Start by creating a [FlowFuse account]({{ site.onboardingURL }}). Once logged in, install and register the FlowFuse agent on your edge device by following this guide: [Installing Node-RED on Your Edge Device](/blog/2025/09/installing-node-red/)
 
 ## Step 2: Connect to Your PLC
 

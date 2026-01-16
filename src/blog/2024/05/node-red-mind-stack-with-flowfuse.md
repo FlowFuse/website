@@ -64,5 +64,5 @@ FlowFuse provides built-in features, such as MQTT, backups, deployment pipelines
 
 While we believe that the MING stack is here to stay, we believe as the market matures, it should offer many different variations suitable for each customer's needs.  However, we find that the MIND offering does fill a niche in the market that may better suit your needs.  None the less, choosing FlowFuse to manage your Node-RED runtimes will ensure that your applications will be secure, scalable, and easily manageable.  Allowing your domain experts to take control and extend their knowledge bringing increased value to industrial facilities around the world.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20MIND%20stack%20with%20Node-RED%20and%20FlowFuse%20Dashboard%202.0", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20MIND%20stack%20with%20Node-RED%20and%20FlowFuse%20Dashboard%202.0", cta_type: "signup", cta_text: "" %}
 

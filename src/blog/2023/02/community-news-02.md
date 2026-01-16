@@ -27,8 +27,8 @@ Do you have any questions about Node-RED or need some advice on a tricky issue u
 
 Nick O'Leary, co-founder of Node-RED & CTO of FlowFuse, and Rob Marcer, Node-RED community member & Developer Educator at FlowFuse, will be hosting an interactive Ask Me Anything session. This is a great opportunity to ask questions of the Node-RED experts. If you have any questions for Nick and Rob you can send them in before the session using [this form](https://docs.google.com/forms/d/e/1FAIpQLSdfPq4lAQjdvqhTpoYtKiMNgP8vcMhZsAf_AG0MHuVMRK83_Q/viewform).
 
-### [Free FlowFuse project for 30 days, no catches]({{ site.appURL }}/account/create)
-To make it easy for everyone to experience FlowFuse, we are introducing a new [free 30-day trial]({{ site.appURL }}/account/create). With this trial, you can experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowFuse team]({{ site.appURL }}/account/create).
+### [Free FlowFuse project for 30 days, no catches]({{ site.onboardingURL }})
+To make it easy for everyone to experience FlowFuse, we are introducing a new [free 30-day trial]({{ site.onboardingURL }}). With this trial, you can experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowFuse team]({{ site.onboardingURL }}).
 
 ### [1.3 Released](/blog/2023/01/flowforge-1-3-0-released)
 Version 1.3 of FlowFuse was released on 19th January. Our first release of 2023 included some great new features such as the ability to share flows via a [team library](https://www.youtube.com/watch?v=B7XK3TUklUU), [control access to your Node-RED dashboards](https://www.youtube.com/watch?v=JRk-Cf7eNIo) using FlowFuse credentials, and [filtering on your audit logs](https://www.youtube.com/watch?v=p0Vuy5x42Go) for easier reading. We also added the ability to use FlowFuse on devices which cannot access npm, we think this will be really valuable to users of networks with limited access to the internet.

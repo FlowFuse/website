@@ -98,4 +98,4 @@ Get started with this article [Building UNS with FlowFuse](/blog/2024/11/buildin
 
 Integrating Pub/Sub with a Unified Namespace enhances manufacturing operations by enabling real-time data flow, reducing latency, and improving scalability. This combination ensures efficient, resilient, and future-ready systems, empowering manufacturers to stay competitive in the IIoT era.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Why%20UNS%20needs%20Pub%2FSub", cta_type: "signup", cta_text: "Curious about how FlowFuse can simplify building your Unified Namespace?" %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Why%20UNS%20needs%20Pub%2FSub", cta_type: "signup", cta_text: "Curious about how FlowFuse can simplify building your Unified Namespace?" %}

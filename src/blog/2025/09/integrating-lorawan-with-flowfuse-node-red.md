@@ -37,7 +37,7 @@ Now that we understand the basics of LoRaWAN, let's set up the integration with 
 
 Before we begin, make sure you have the following components ready:
 
-1. Node-RED instance – Ensure you have a running Node-RED instance. The quickest way to set one up is through FlowFuse. [Sign up](https://app.flowfuse.com/account/create), create your instance, and you will be able to manage, deploy, scale, and secure your flows with ease. FlowFuse also provides enterprise-ready features out of the box.
+1. Node-RED instance – Ensure you have a running Node-RED instance. The quickest way to set one up is through FlowFuse. [Sign up]({{ site.onboardingURL }}), create your instance, and you will be able to manage, deploy, scale, and secure your flows with ease. FlowFuse also provides enterprise-ready features out of the box.
 2. LoRaWAN device and gateway registered on TTN – You need a sensor or device connected to TTN and a gateway that can receive its uplinks.
 
 If you do not have a LoRaWAN device, you can simulate one using available tools. For this article, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
@@ -183,4 +183,4 @@ For a complete guide on storing and visualizing data, see the article on [Buildi
 
 With FlowFuse, you get a complete enterprise-grade platform built around visual programming—perfect for production-ready IoT deployments. It adds powerful capabilities like centralized management of Node-RED instances, DevOps tools, snapshots, real-time team collaboration, audit logs, RBAC, SSO, Built mqtt broker and database service and more—all designed to help you scale and manage your applications with ease.
 
-If you're interested in exploring FlowFuse further for your industrial IoT applications, come visit us at our booth at upcoming TTN conferences to see live manufacturing demos. You can also [book a demo](/book-demo/) to see how FlowFuse can streamline your development and deployment workflows, or [start your free trial](https://app.flowfuse.com/account/create) and build your first LoRaWAN-enabled dashboard today.
+If you're interested in exploring FlowFuse further for your industrial IoT applications, come visit us at our booth at upcoming TTN conferences to see live manufacturing demos. You can also [book a demo](/book-demo/) to see how FlowFuse can streamline your development and deployment workflows, or [start your free trial]({{ site.onboardingURL }}) and build your first LoRaWAN-enabled dashboard today.

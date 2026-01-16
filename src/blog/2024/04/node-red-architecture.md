@@ -59,4 +59,4 @@ These [Project Links](/docs/user/projectnodes/) are more than just communication
 
 By employing a unified namespace approach and strategically positioning Node-RED and FlowFuse within the network, we enable a seamless flow of data from the shopfloor to the enterprise level. This multilayered approach not only enhances communication between operational technology and information technology but also empowers real-time monitoring, predictive maintenance, and strategic decision-making. 
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Node-RED%20Manufacturing%20Architecture", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Node-RED%20Manufacturing%20Architecture", cta_type: "signup", cta_text: "" %}

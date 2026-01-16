@@ -47,4 +47,4 @@ There’s no situation where a vendor provided, off-the-shelf solution handles p
 
 While Node-RED is powerful for implementing UNS, its management and deployment can be complex. FlowFuse simplifies this process with a unified platform that offers one-click deployment, secure management, and scalability for Node-RED applications. It enhances collaboration through centralized management of all Node-RED instances, ensuring streamlined operations and increased efficiency.
 
-**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and explore how FlowFuse can transform your Node-RED experience.**
+**[Sign up]({{ site.onboardingURL }}) now for a free trial and explore how FlowFuse can transform your Node-RED experience.**

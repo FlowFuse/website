@@ -141,4 +141,4 @@ Setting a device target will ensure that the snapshot will be deployed on all of
 
 Migrating from a self-managed Node-RED setup to FlowFuse is simple and offers significant benefits. By transitioning, you’ll reduce operational complexity, enhance security, and improve scalability. FlowFuse handles the infrastructure, so you can focus on building and optimizing your IIoT solutions—whether on edge devices or in the cloud.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Migrating%20from%20Self-Managed%20Node-RED%20to%20FlowFuse-Managed%20Node-RED", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Migrating%20from%20Self-Managed%20Node-RED%20to%20FlowFuse-Managed%20Node-RED", cta_type: "signup", cta_text: "" %}

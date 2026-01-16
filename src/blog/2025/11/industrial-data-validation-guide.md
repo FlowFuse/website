@@ -57,7 +57,7 @@ These aren't rigid categories—they're lenses through which you examine your da
 
 Now that we understand what "good data" looks like, let's build guardrails to enforce it.
 
-> Before we start, make sure you have a running FlowFuse instance that is collecting data. If you don't have a real data source, don't worry—we'll provide a simulated setup as well. Just make sure you have a FlowFuse account and instance running. If you don't have an account, create one now with our [free trial](https://app.flowfuse.com/account/create/).
+> Before we start, make sure you have a running FlowFuse instance that is collecting data. If you don't have a real data source, don't worry—we'll provide a simulated setup as well. Just make sure you have a FlowFuse account and instance running. If you don't have an account, create one now with our [free trial]({{ site.onboardingURL }}).
 
 ### Installing the JSON Schema Validator Node
 

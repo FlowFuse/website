@@ -34,7 +34,7 @@ Embedding external content into your FlowFuse dashboard is straightforward and f
 
 Before you begin embedding webpages on FlowFuse Dashboard, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial]({{ site.onboardingURL }}).
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
 - **@flowfuse/node-red-dashboard-2-ui-iframe:** Ensure you have [node-red-dashboard-2-ui-iframe](https://flows.nodered.org/node/@flowfuse/node-red-dashboard-2-ui-iframe) installed.
 
