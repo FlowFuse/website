@@ -7,6 +7,7 @@
     "email": "sumit@flowfuse.com",
     "country": "IN",
     "headshot": "sumit.png",
+    "reports_to": "Pablo Filomeno",
     "bio": "Sumit is a Technical Writer at FlowFuse who helps engineers adopt Node-RED for industrial automation projects. He has authored over 100 articles covering industrial protocols (OPC UA, MQTT, Modbus), Unified Namespace architectures, and practical manufacturing solutions. Through his writing, he makes complex industrial concepts accessible, helping teams connect legacy equipment, build real-time dashboards, and implement Industry 4.0 strategies.",
     "facts": [
         "Enjoys contributing to open-source projects.",

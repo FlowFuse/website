@@ -7,6 +7,7 @@
     "email": "rob@flowfuse.com",
     "country": "GB",
     "headshot": "rob.png",
+    "reports_to": "Michael Davis",
     "bio": "Rob is the Head of Professional Services at FlowFuse, he helps FlowFuse customers plan, build, and deploy large scale Internet of Things projects. He has worked with customers in various industries including automotive, life sciences, logistics, utilities, and smart buildings.",
     "facts": [
         "6 years experience in building and deploying Node-RED applications across many industries",

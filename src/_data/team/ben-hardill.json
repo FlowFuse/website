@@ -7,6 +7,7 @@
     "blog": "https://blog.hardill.me.uk/",
     "country": "GB",
     "headshot": "ben.png",
+    "reports_to": "Jamie Strusz",
     "bio": "Ben is the Lead Backend Developer and one of the founding employees at FlowFuse. As well as being a Node-RED core contributor he enjoys tinkering at lowest levels of the Internet",
     "facts": [
         "Reformed triathlete (stil swim and ride)",
