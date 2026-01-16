@@ -38,7 +38,7 @@ You didn't get tricked. Lock-in happened through entirely normal operations.
 
 But here's what the sales process never highlights: escalating switching costs aren't a side effect. They're the business model.
 
-Your goal was never "buy Kepware." Your goal was to move OT data where it matters—fast, reliably, without unnecessary drama. The question worth asking now: can you achieve that without the overhead, the per-tag fees, and the compounding costs?
+Your goal was never "buy Kepware." Your goal was to move OT data where it matters—fast, reliably, without unnecessary drama.
 
 ## The Bill That Keeps Growing
 
@@ -68,7 +68,7 @@ You thought you bought connectivity. What you actually got was a billing structu
 
 Five years ago, questioning Kepware meant gambling with production reliability. The alternatives weren't proven.
 
-Today they are. And four fundamental shifts made the old calculation obsolete.
+Today they are. And fundamental shifts made the old calculation obsolete.
 
 **Protocol secrecy collapsed.** Kepware's advantage rested entirely on PLC manufacturers hiding their communication protocols. Documentation was unavailable. Reverse engineering was mandatory. Now every significant protocol specification is publicly published. Manufacturers provide detailed technical guides. Industry bodies standardized everything. What once demanded rare expertise is now freely available knowledge. The technical moat dried up completely. The pricing hasn't acknowledged it.
 
