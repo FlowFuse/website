@@ -6,6 +6,7 @@
   "country": "PL",
   "email": "piotr@flowfuse.com",
   "headshot": "piotr.png",
+  "reports_to": "Jamie Strusz",
   "facts": [
     "DevOps/Cloud Engineer with 10+ years of experience and solid background in Linux/Unix administration",
     "Huge automation enthusiast, automate all the boring stuff around me",
