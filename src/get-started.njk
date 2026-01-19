@@ -55,7 +55,7 @@ what:
                 </div>
                 <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">
                   {% macro freeDemoButton(desktop=true) %}
-                  <a class="ff-btn ff-btn--primary text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
+                  <a class="ff-btn ff-btn--highlight text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
                       href="{{ hero.buttonLink }}"
                       onclick="capture('cta-demo', {'reference': '{{ hero.buttonReference }}'})">
                       {{ hero.buttonText }}
