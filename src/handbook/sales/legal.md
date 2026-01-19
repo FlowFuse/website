@@ -85,10 +85,10 @@ Clauses we cannot agree to:
 
 ## Insurance Coverage
 
-The company maintains insurance for a wide range of events, the full list can be
-found on [the operations handbook](/handbook/operations/). Details of what
-insurance we have is available in
-[an internal-only Google doc](https://docs.google.com/document/d/1ZhhI8PNsp8QmyX4qHwLBGJ89GsnfmUYjau0qNZzSig0/edit?tab=t.0){rel="nofollow"}.
+FlowFuse maintains required insurance policies for operational and commercial purposes.
+
+Authorized personnel may access insurance documents via the internal Google Drive.
+Requests for insurance documentation should be directed to Operations or PeopleOps.
 
 ## Miscellaneous
 
