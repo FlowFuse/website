@@ -27,10 +27,10 @@ graph TD
         {{ managerId }} --> {{ nodeId }}
     {% endif %}
 {% endfor %}
-    classDef executive fill:#e1f5ff,stroke:#0066cc,stroke-width:2px,rx:6,ry:6
-    classDef head fill:#fff4e6,stroke:#ff9800,stroke-width:2px,rx:6,ry:6
-    classDef employee fill:#f5f5f5,stroke:#757575,stroke-width:1px,rx:6,ry:6
-    classDef board fill:#ffebee,stroke:#d32f2f,stroke-width:2px,rx:6,ry:6
+    classDef executive fill:#EFF6FF,stroke:#60A5FA,stroke-width:2px,rx:6,ry:6
+    classDef head fill:#EEF2FF,stroke:#818CF8,stroke-width:2px,rx:6,ry:6
+    classDef employee fill:#F3F4F6,stroke:#9CA3AF,stroke-width:1px,rx:6,ry:6
+    classDef board fill:#FFEFEA,stroke:#FA9170,stroke-width:2px,rx:6,ry:6
 
     class Board board
 {% for member in team | dictsortBy(false, 'order') %}{% set nodeId = member.name | replace(" ", "") | replace("'", "") | replace("-", "") %}{% if not member.reports_to %}    class {{ nodeId }} executive
