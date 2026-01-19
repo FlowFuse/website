@@ -12,16 +12,25 @@ This page provides an overview of FlowFuse's organizational structure and report
 ```mermaid
 graph TD
     Board[Board of Directors]
-{% for member in team | dictsortBy(false, 'order') %}{% set nodeId = member.name | replace(" ", "") | replace("'", "") | replace("-", "") %}{% set displayName = member.name | replace(" ", "<br/>") %}{% if not member.reports_to %}    {{ nodeId }}[{{ displayName }}<br/>{{ member.title }}]
-    Board --> {{ nodeId }}
-{% endif %}{% endfor %}
-{% for member in team | dictsortBy(false, 'order') %}{% if member.reports_to %}{% set nodeId = member.name | replace(" ", "") | replace("'", "") | replace("-", "") %}{% set displayName = member.name | replace(" ", "<br/>") %}{% set managerId = member.reports_to | replace(" ", "") | replace("'", "") | replace("-", "") %}    {{ nodeId }}[{{ displayName }}<br/>{{ member.title }}]
-    {{ managerId }} --> {{ nodeId }}
-{% endif %}{% endfor %}
-    classDef executive fill:#e1f5ff,stroke:#0066cc,stroke-width:2px
-    classDef head fill:#fff4e6,stroke:#ff9800,stroke-width:2px
-    classDef employee fill:#f5f5f5,stroke:#757575,stroke-width:1px
-    classDef board fill:#ffebee,stroke:#d32f2f,stroke-width:2px
+{% for member in team | dictsortBy(false, 'order') %}
+    {% set nodeId = member.name | replace(" ", "") | replace("'", "") | replace("-", "") %}
+    {% if not member.reports_to %}
+        {{ nodeId }}[{{ member.name }}<br/>{{ member.title }}]
+        Board --> {{ nodeId }}
+    {% endif %}
+{% endfor %}
+{% for member in team | dictsortBy(false, 'order') %}
+    {% if member.reports_to %}
+        {% set nodeId = member.name | replace(" ", "") | replace("'", "") | replace("-", "") %}
+        {% set managerId = member.reports_to | replace(" ", "") | replace("'", "") | replace("-", "") %}
+        {{ nodeId }}[{{ member.name }}<br/>{{ member.title }}]
+        {{ managerId }} --> {{ nodeId }}
+    {% endif %}
+{% endfor %}
+    classDef executive fill:#e1f5ff,stroke:#0066cc,stroke-width:2px,rx:6,ry:6
+    classDef head fill:#fff4e6,stroke:#ff9800,stroke-width:2px,rx:6,ry:6
+    classDef employee fill:#f5f5f5,stroke:#757575,stroke-width:1px,rx:6,ry:6
+    classDef board fill:#ffebee,stroke:#d32f2f,stroke-width:2px,rx:6,ry:6
 
     class Board board
 {% for member in team | dictsortBy(false, 'order') %}{% set nodeId = member.name | replace(" ", "") | replace("'", "") | replace("-", "") %}{% if not member.reports_to %}    class {{ nodeId }} executive
