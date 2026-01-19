@@ -34,7 +34,7 @@ graph TD
 
     class Board board
 {% for member in team | dictsortBy(false, 'order') %}{% set nodeId = member.name | replace(" ", "") | replace("'", "") | replace("-", "") %}{% if not member.reports_to %}    class {{ nodeId }} executive
-{% elif member.title == "CTO" or member.title == "Engineering Manager" or member.title == "Head of Customer Teams" or member.title == "Product Marketing Manager" %}    class {{ nodeId }} head
+{% elif member.title == "CTO" or member.title == "Engineering Manager" or member.title == "VP of Sales" or member.title == "Product Marketing Manager" or member.title == "Director of Product" %}    class {{ nodeId }} head
 {% else %}    class {{ nodeId }} employee
 {% endif %}{% endfor %}
 ```
