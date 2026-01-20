@@ -99,31 +99,27 @@ All cases of underperformance must be documented by the manager through email to
 the CEO and CTO with the timespan of a potential plan created by the employee's
 manager.
 
-### Coaching Plan for Performance Issues
+### Coaching Plan for Performance Support
 
-After the plan formulated by the manager has not returned the employee to performance
-that is considered on par with the expectations of their role, the CEO and manager
-will create a formal [Coaching Plan](/handbook/peopleops/coaching-plans/) for the employee.
+When additional structure or support is needed to help a team member meet the
+expectations of their role, the manager may create a [Coaching Plan](/handbook/peopleops/coaching-plans/) in partnership
+with the employee.
 
-**A Coaching Plan is a genuine opportunity from FlowFuse to the employee to get where they need to be.**
-FlowFuse believes in supporting team members through structured development and clear expectations.
-A Coaching Plan is intended to set the bar for both the manager and employee and have transparency
-around expected performance, while providing the support and mentorship needed to succeed.
+**A Coaching Plan is a genuine investment by FlowFuse in supporting a team member’s success.**
+FlowFuse believes in supporting team members through structured development and clear expectations. 
+A Coaching Plan sets shared expectations for both the manager and team member, while providing the support, feedback, and mentorship needed to succeed.
 
-The Coaching Plan will outline the specific areas of underperformance, the specific steps
-the employee must take to improve, the support and resources provided, and the timeline
-for improvement. The employee will be required to sign the Coaching Plan and agree to its terms.
+The Coaching Plan will outline the areas for improvement, the actions to be taken, the support and resources provided, and the expected review timeline.
 
-If an employee has been on a Coaching Plan before for performance issues and for the same
-reasons enters this stage of the underperformance policy again, the CEO and manager can opt
-for not providing another Coaching Plan. This ensures that a Coaching Plan is a genuine
-opportunity for change.
+If an employee has previously completed a Coaching Plan for the same concerns and re-enters
+this stage, the company may determine that a different approach is appropriate.
+This helps ensure Coaching Plans remain a meaningful tool for growth.
 
 ### Termination
 
-If an employee's performance does not improve, or if they violate the terms of
-their Coaching Plan, they may be terminated. Termination will be based on a documented
-pattern of underperformance or unacceptable behavior.
+If performance does not improve despite sustained coaching and support, or if serious
+policy violations occur, termination may be considered.
+Termination will be based on a documented pattern of underperformance or unacceptable behavior.
 
 ## CEO underperformance
 
