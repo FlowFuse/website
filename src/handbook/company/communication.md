@@ -160,9 +160,30 @@ Example standup messages:
 
 #### Monday Team Catchup
 
-We hold an optional team catchup every Monday. This meeting is a chance to share company updates, get to know each other, and talk about anything you want to share, both professionally and personally.
+1. Purpose & Attendance
+Our Monday meeting serves a dual purpose: maintaining organizational alignment as we scale and fostering a connected team culture.
+* First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals.
+* Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities.
 
-You can add simple items to the agenda, such as what you did over the weekend or anything that kept you busy. Adding items also helps set the order of conversation and makes sure everyone has space to speak.
+2. Format: Department Spotlights
+Each Monday, one department will lead a 5–10 minute presentation. These briefings are intended to be concise, high-level, and focused on information that impacts the broader organization.
+The rotation will follow a four-week cycle:
+* Week 1: Company Update – Focusing on organizational health and "big picture" goals by ZJ
+* Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by Lori, Jamie, and Nick
+* Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Michael
+* Week 4: Marketing – Highlighting how we are communicating our value to the market by Pablo
+
+3. Presenter Guidelines 
+To maintain a high-energy pace and respect the team's time:
+
+* Content: Focus on three pillars: Recent Wins, Current Challenges, and Upcoming Milestones.
+* Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
+* Visuals: Keep to 3–5 high-impact, data-informed slides.
+* Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
+
+4. Open Agenda (Optional Segment)
+For the latter portion of the meeting, team members are encouraged to add items to the agenda. This is an informal space to share weekend highlights, personal news, or professional updates that keep you busy.
+Effective Date: This new format begins Monday, February 2nd, 2026.
 
 #### Strategy Call
 
