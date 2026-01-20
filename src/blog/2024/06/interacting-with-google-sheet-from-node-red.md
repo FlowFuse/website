@@ -147,4 +147,4 @@ Below I have provided the complete flow that we have built through the guide, ma
 
 This guide demonstrated how to integrate Google Sheets with Node-RED for streamlined data management. We covered setting up the Google Sheets API, configuring Node-RED to interact with sheets, and performing actions like writing, reading, updating, and deleting data.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20Google%20Sheets%20from%20Node-RED", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20Google%20Sheets%20from%20Node-RED", cta_type: "signup", cta_text: "" %}

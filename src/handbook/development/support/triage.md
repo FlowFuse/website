@@ -19,6 +19,16 @@ Both appear in the [HubSpot helpdesk](https://app-eu1.hubspot.com/help-desk/2658
 
 - **HubSpot**: Keep the helpdesk open in a browser tab
 - **Slack**: New tickets trigger a notification in [#support-tickets](https://flowfuse.slack.com/archives/C031K13FLDD)
+  - **Note**: To get badge notifications (like mentions) for this channel, configure it in the channel's notification preferences—not just the bell icon button
+
+## Slack Emoji Reactions
+
+When you see a ticket notification in [#support-tickets](https://flowfuse.slack.com/archives/C031K13FLDD), use emoji reactions to indicate status:
+
+- 👀 (`:eyes:`) - You're on it
+- ✅ (`:white_check_mark:`) - Issue has been dealt with
+
+This helps the team quickly see which tickets are being handled without cluttering the channel with status messages.
 
 ## Triage Categories
 
@@ -37,6 +47,7 @@ When a new ticket comes in, categorize it, answer the question directly, or rout
 - **Ticket ownership**: Whoever replies first becomes the ticket owner and receives future notifications for that ticket.
 - **Already assigned tickets**: If a ticket already has an owner, you don't need to intervene—unless it's been unresponded for 24+ hours, then give the owner a nudge.
 - **When unsure**: Ask in #engineering or #support-tickets for guidance.
+- **Do NOT merge tickets in HubSpot**: Merged tickets become unsearchable and disappear from the inbox. They're only accessible via direct URL afterward. This is a [known HubSpot limitation](https://community.hubspot.com/t5/HubSpot-Ideas/Search-the-MERGED-Ticket-Data/idi-p/330641). Keep tickets separate to maintain searchability and visibility.
 
 ## Handling Spam
 

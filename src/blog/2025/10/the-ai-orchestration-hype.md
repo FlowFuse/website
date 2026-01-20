@@ -51,4 +51,4 @@ Choosing the right approach comes down to understanding your requirements. For d
 ## Ready to Build the Future of Industrial AI?
 FlowFuse is built for the challenges of industrial and IoT data. Whether you're implementing Industry 4.0 initiatives or building predictive maintenance systems, we provide the platform to deploy and manage intelligence across both cloud and edge environments.
 
-[Start building today: Try FlowFuse free](https://app.flowfuse.com/account/create) or [Book a demo](https://flowfuse.com/book-demo/)
+[Start building today: Try FlowFuse free]({{ site.onboardingURL }}) or [Book a demo](https://flowfuse.com/book-demo/)

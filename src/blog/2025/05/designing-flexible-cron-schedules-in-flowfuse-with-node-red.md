@@ -29,7 +29,7 @@ The magic of cron lies in its ability to express complex time logic in a simple,
 
 Before we start building flexible cron schedules in FlowFuse, make sure you have the following in place:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create) and learn how to create an instance in FlowFuse.
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial]({{ site.onboardingURL }}) and learn how to create an instance in FlowFuse.
 - **node-red-contrib-cron-plus:** Ensure you have [node-red-contrib-cron-plus](https://flows.nodered.org/node/node-red-contrib-cron-plus) installed, It’s developed by Steve, a software engineer here at FlowFuse and one of the core maintainers of Node-RED.
 
 ## Building Scheduled Automations with cron-plus

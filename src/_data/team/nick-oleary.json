@@ -7,6 +7,7 @@
     "blog": "https://knolleary.net",
     "country": "GB",
     "headshot": "nick.png",
+    "reports_to": "ZJ van de Weg",
     "bio": "Nick is the founder/CTO of FlowFuse. He created Node-RED in 2013 and continues to lead the project today. He has worked on projects ranging from smart meter energy monitoring to retrofitting sensors to industrial manufacturing lines with Raspberry Pis and Arduinos.",
     "facts": [
         "Created Node-RED in 2013 and continues to lead the Open Source project",
