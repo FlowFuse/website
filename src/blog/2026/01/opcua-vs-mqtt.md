@@ -12,9 +12,9 @@ tags:
 
 The question is broken.
 
-<!--more-->
-
 MQTT moves messages. OPC UA defines meaning. They operate at different layers of the stack. Comparing them is like comparing TCP to JSON.
+
+<!--more-->
 
 Yet the debate persists. Vendors position them as competitors. Consultants bill by the complexity. Your procurement department demands a choice.
 
