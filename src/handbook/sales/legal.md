@@ -87,8 +87,7 @@ Clauses we cannot agree to:
 
 FlowFuse maintains required insurance policies for operational and commercial purposes.
 
-Authorized personnel may access insurance documents via the internal Google Drive.
-Requests for insurance documentation should be directed to Operations or PeopleOps.
+Authorized personnel may access insurance documents via the internal [Google Drive folder](https://drive.google.com/drive/folders/1Q2UqEmusDIpBD4-4Km1eFksHaRkVzl7O?usp=drive_link). Requests for insurance documentation should be directed to Operations or PeopleOps.
 
 ## Miscellaneous
 
