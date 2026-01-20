@@ -70,11 +70,11 @@ Key Metrics to include:
 
 - Revenue
   - Current ARR
-    - Sales Led CARR
+    - [Sales Led cARR](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/111119975)
     - (Self-Serve MRR * 12) aka Self-Serve ARR
   - Current YoY Growth
   - End of Quarter Projections
-    - Sales Led CARR (Closed & Goal)
+    - Sales Led cARR (Closed & Goal)
     - (Self-Serve MRR * 12) aka Self-Serve ARR
   - Churned revenue
 - Customers
