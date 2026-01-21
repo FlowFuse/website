@@ -4,7 +4,7 @@ subtitle: "Why comparing MQTT and OPC UA is a category error, and how to choose 
 description: "MQTT vs OPC UA isn't a real choice; they solve different problems. Learn when to use each protocol based on your actual requirements, not vendor marketing."
 date: 2026-01-21
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/01/images/opcua-vs-mqtt.png
 keywords: MQTT vs OPC UA, MQTT protocol, OPC UA protocol, industrial communication, IIoT architecture, OPC UA PubSub, MQTT Sparkplug
 tags:
  - flowfuse
