@@ -130,7 +130,16 @@ eleventyComputed:
     <meta property="article:section" content="{{ nav }}" />
     {% endif %}
 
-    {% if type == 'post' %}
+    <!-- Open Graph Type -->
+    {% if page.url and page.url.match('\/handbook\/.+') %}
+    <meta property="og:type" content="article" />
+    {% elif type == 'post' %}
+    <meta property="og:type" content="article" />
+    {% else %}
+    <meta property="og:type" content="website" />
+    {% endif %}
+
+    {% if type == 'post' or (page.url and page.url.match('\/handbook\/.+')) %}
     <!-- Article dates -->
     {% if date %}
     <meta property="article:published_time" content="{{ date | dateToRfc3339 }}" />
