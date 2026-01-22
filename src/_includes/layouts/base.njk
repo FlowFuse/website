@@ -139,7 +139,7 @@ eleventyComputed:
     <meta property="og:type" content="website" />
     {% endif %}
 
-    {% if type == 'post' or (page.url and page.url.match('\/handbook\/.+')) %}
+    {% if type == 'post' %}
     <!-- Article dates -->
     {% if date %}
     <meta property="article:published_time" content="{{ date | toDate | dateToRfc3339 }}" />
