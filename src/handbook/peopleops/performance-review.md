@@ -14,7 +14,7 @@ While this performance review is written down, each manager should be communicat
 feedback regularly to minimize the chance for surprises during the written review.
 
 The performance review process will be skipped in the following circumstances: new employees who have been with the company for fewer than 6 months at the time of the review cycle, employees who have been on extended leave, and employees who are currently engaged in a  [Coaching Plan](/handbook/peopleops/coaching-plans/) where focused development work is already underway.
-or employees who are in the middle of role transitions or organizational changes that would make a standard review inappropriate. In cases where the formal review is skipped, managers should still provide informal feedback and check-ins to ensure ongoing communication and support.
+In cases where the formal review is skipped, managers should still provide informal feedback and check-ins to ensure ongoing communication and support.
 
 ## Structure
 
