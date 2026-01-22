@@ -37,7 +37,7 @@ Before you can take time off you should _always_:
 We use team-specific calendars for tracking availability and Out of Office time
 - [Engineering](https://calendar.google.com/calendar/u/0?cid=Y19iMTZjMTdjYzlmNmZiMTYyZmI0NmUxMDIyNzNkNTFmMWQ4ZjI0MThkMzVmZTc5ZmExNGU0NTE3M2NkMDE5NTVlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 - [Marketing](https://calendar.google.com/calendar/u/0?cid=Y19iY2UwZjY2NzE3ZTQ3YjAzZjgxZjliNTdjNWNhYTkyYTZlOTM1ZTg5NGU5MDdiOTZjNmY5N2I4ODA3MjllMDQ5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
-- [Sale](https://calendar.google.com/calendar/u/0?cid=Y19lNThhNThlZDlmNjMyOGQ2YzcwN2VmMWM1MWYxMGU0MzAwMWY4NzhlY2Y0MTI2NTRmY2QzNDYyY2QwMjhiYzFlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
+- [Sales](https://calendar.google.com/calendar/u/0?cid=Y19lNThhNThlZDlmNjMyOGQ2YzcwN2VmMWM1MWYxMGU0MzAwMWY4NzhlY2Y0MTI2NTRmY2QzNDYyY2QwMjhiYzFlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 - [BizOps](https://calendar.google.com/calendar/u/0?cid=Y18wMGU5ZjcyZDE2ZTg0YzU1OTY2ODYxMTAxNmVlMjY2YmRlNzlmMDU3ZjAyMWJjNmU4ZTQ3ZjE0YzE2YjYyZGZiQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 
 If you own a recurring event, place it on the most appropriate calendar for visibility. In some cases, this may still be the FlowFuse Team Events calendar.
