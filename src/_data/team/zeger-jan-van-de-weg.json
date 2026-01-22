@@ -8,6 +8,7 @@
     "country": "NL",
     "email": "zj@flowfuse.com",
     "headshot": "zj.png",
+    "reports_to": null,
     "bio": "ZJ is the CEO of FlowFuse. As an engineer-turned-CEO with a career built on open-source software, his mission is to empower engineers to build better, more efficient software solutions.",
     "facts": [
         "Early GitLab employee, still knows too much about Git for his own good",

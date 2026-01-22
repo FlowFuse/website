@@ -1,11 +1,12 @@
 ---
-title: "Building a Weather Dashboard in Node-RED"
+title: "Building a Weather Dashboard in Node-RED (2026)"
 subtitle: "Build a live weather dashboard in Node-RED with FlowFuse"
 description: Learn how to build a real-time weather dashboard in Node-RED using the OpenWeather API and FlowFuse Dashboard.
 date: 2025-12-05
+lastUpdated: 2025-12-29
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/building-a-weather-dashboard.png
-keywords: 
+keywords: nodered weather, weather dashboard node-red, node-red weather dashboard
 tags:
     - node-red
 ---
@@ -22,7 +23,7 @@ We'll use FlowFuse Dashboard for the UI since it's modern and easier to work wit
 
 Before you start, make sure you have:
 
-- **Node-RED Instance:** You need Node-RED running somewhere. Easiest option is FlowFuse, [grab a free trial](https://app.flowfuse.com/account/create) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
+- **Node-RED Instance:** You need Node-RED running somewhere. Easiest option is FlowFuse, [grab a free trial]({{ site.onboardingURL }}) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
 - **OpenWeatherMap Account:** Sign up at `openweathermap.org`. The free tier gives you enough API calls for this project.
 
 ## Installing FlowFuse Dashboard
@@ -234,4 +235,4 @@ Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashbo
 
 Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same—you're just swapping data sources and visualizations.
 
-[Start your free FlowFuse trial](https://app.flowfuse.com/account/create) and keep building.
+[Start your free FlowFuse trial]({{ site.onboardingURL }}) and keep building.

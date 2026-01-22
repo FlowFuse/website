@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
   {%- if page.data.skipIndex != true %}
   <url>
     <loc>{{ page.url | url | toAbsoluteUrl }}</loc>
-    <lastmod>{{ (page.data.lastUpdated or page.date) | dateToRfc3339 }}</lastmod>
+    <lastmod>{{ (page.data.lastUpdated or page.date) | toDate | dateToRfc3339 }}</lastmod>
     <priority>{{ page.data.sitemapPriority | default(0.6) }}</priority>
   </url>
   {%- endif %}

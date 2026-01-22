@@ -76,7 +76,7 @@ cta:
                     {{ migrationExpertButton() }}
                     {% macro tryItOutButton(desktop=true) %}
                     <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}" 
-                    href="{{ site.appURL }}/account/create" 
+                    href="{{ site.onboardingURL }}" 
                     onclick="capture('try-it-out', {'reference': '{{ hero.buttonReference }}'})">
                         <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
                             TRY IT OUT
@@ -87,11 +87,11 @@ cta:
                     {{ tryItOutButton() }}
                 </div>
             </div>
-            <div class="md:w-1/2 flex-grow relative">
-                <div class="ff-image-cover ff-image-rounded w-full h-full">
-                    {% set imageSrc = ["./", image ] | join %}
-                    {% image imageSrc, imageDescription, [496] %}           
-                </div>
+            <div class="md:w-1/2 flex justify-center items-end m-auto relative">
+                <lite-youtube videoid="rWcfYX_0_8U" params="rel=0"
+                    style="width: 472px; overflow: hidden; background-image: url('https://img.youtube.com/vi/rWcfYX_0_8U/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                    class="rounded-xl sm:max-w-none sm:max-h-full">
+                </lite-youtube>
             </div>
             <div class="flex flex-col sm:flex-row md:hidden gap-3">
                 {{ migrationExpertButton(false) }}

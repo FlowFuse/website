@@ -57,7 +57,7 @@ hubspot:
     <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
-                <h1 class="font-medium home m-auto text-3xl sm:text-4xl md:text-5xl text-center text-indigo-700 mb-6">
+                <h1 class="font-medium home m-auto text-3xl sm:text-4xl md:text-5xl text-center text-indigo-700 mb-6 max-w-2xl">
                     {{ site.messaging.tagLine | safe }}
                 </h1>
                 <p class="mt-6 sm:mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
@@ -71,12 +71,12 @@ hubspot:
                 {% include "components/ai-expert-modal.njk" %}
 
                 <div class="text-center mt-16 mb-8">
-                    <h5 class="text-gray-600 mb-12">Or get a quick look at FlowFuse’s features in 90 seconds</h5>
+                    <h5 class="text-gray-600 mb-12">Or get a quick look at FlowFuse in 90 seconds</h5>
                     <div class="flex justify-center items-end m-auto">
                         <lite-youtube 
-                            videoid="bcZddES23k4"
+                            videoid="9i-EKcNksvk"
                             params="rel=0" 
-                            style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/bcZddES23k4/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                            style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/9i-EKcNksvk/maxresdefault.jpg'); background-size: cover; background-position: center;"
                             class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full">
                         </lite-youtube>
                     </div>
@@ -247,7 +247,7 @@ hubspot:
                 <p>FlowFuse transforms how organizations deploy and manage industrial applications using Node-RED. Our platform, now enhanced with an AI Copilot, empowers IT and OT teams to collaborate more effectively than ever before. Standardize deployments across multiple facilities and accelerate innovation, all while maintaining the governance, security, and scalability your digital transformation demands.</p>
                 <div class="flex gap-3 max-sm:max-w-sm max-md:mx-auto max-sm:flex-col max-sm:justify-center mt-6">
                     <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-contact-us', {'position': 'secondary'})">CONTACT US</a>
-                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-try-it-out', {'position': 'secondary'})">TRY IT OUT</a>
+                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{{ site.onboardingURL }}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">TRY IT OUT</a>
                 </div>
             </div>
             <div class="max-md:hidden flex ff-image-rounded md:max-w-[350px] m-auto">

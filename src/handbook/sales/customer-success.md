@@ -79,6 +79,7 @@ To ensure a smooth onboarding experience and long-term success for our customers
 - [CS health score](https://docs.google.com/document/d/1zdbhuljqM9AU5ok9Mq24xOiD7-YUHJunO3NNYLcdtZM/edit?tab=t.0)
 - [Churn Playbook](https://docs.google.com/document/d/1jrtTNEFgiY3NTHMBMm67y2P1Pm3qeIsxy8mckOEg9s4/)
 - [Expansion & Growth](https://docs.google.com/document/d/1MPgtKuI3pSD5yIgWaSfywxP8YrqAdFjgmfLPB7V9sGE/edit?tab=t.0)
+- [Meeting structures](https://docs.google.com/document/d/1_s9JW-cD9yuRKS1Ztcc29wtxGIrdmhKjwZyoDIkkMRE/edit?tab=t.5xzj4a2p6zxn)
 
 ## Customer Success Tools
 
@@ -163,7 +164,7 @@ platform. We can give each FlowFuse team member access to HubSpot by assigning
 them a seat.
 
 If you wish to be granted access to HubSpot please post in the FlowFuse
-[#support-tickets](https://flowforgeworkspace.slack.com/archives/C031K13FLDD)
+[#support-tickets](https://flowfuse.slack.com/archives/C031K13FLDD)
 Slack channel.
 
 Whenever a customer raises a new ticket, a message is posted into slack

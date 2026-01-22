@@ -3,7 +3,7 @@ eleventyNavigation:
   key: SQLite
   parent: Database
 meta:
-  title: Using SQLite with Node-RED
+  title: Using SQLite with Node-RED (2026 Updated)
   description: Learn how to seamlessly integrate SQLite with Node-RED for efficient data management and application development.
   keywords: nodered sqlite, node red sqlite, node-red-node-sqlite, sqlite nodered, sqlite node red
 ---

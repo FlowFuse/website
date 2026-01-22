@@ -3,7 +3,7 @@ eleventyNavigation:
   key: MongoDB
   parent: Database
 meta:
-  title: Using MongoDB With Node-RED
+  title: Using MongoDB With Node-RED (2026 Updated)
   description: Learn how to seamlessly integrate MongoDB, a NoSQL database, into your Node-RED applications with this step-by-step documentation.
   keywords: node-red, databases, integration, mongodb, no-sql database
 image: /node-red/core-nodes/images/using-Mongo-with-nr.png
@@ -11,277 +11,283 @@ image: /node-red/core-nodes/images/using-Mongo-with-nr.png
 
 # {{ meta.title }}
 
-MongoDB, a popular NoSQL database, is a favored choice among developers. As MongoDB continuously releases updates to enhance efficiency and suitability for manufacturing purposes, we find providing content around MongoDB for our Node-RED users essential. In this documentation, we will cover everything from MongoDB foundations to setup, providing you with step-by-step instructions for integration into your Node-RED applications.
+This guide provides implementation procedures for integrating MongoDB with Node-RED. It covers configuration requirements, operational patterns, and a complete implementation example using a customer relationship management system.
 
-## What is MongoDB
+## Understanding MongoDB
 
-MongoDB is an open-source, NoSQL database system designed for flexibility and scalability in handling data for modern applications. It stores data in documents, which are JSON-like structures. MongoDB offers a schema-less approach where each document can have its unique structure. This flexibility allows for easy schema evolution and dynamic querying. MongoDB is widely used in web and mobile applications for its ability to handle large volumes of data and support real-time applications efficiently.
+MongoDB is an open-source NoSQL database that stores data in flexible, JSON-like documents rather than rigid table structures. Each document can maintain its own schema, which allows for data model evolution without requiring database-wide migrations. This architectural approach suits applications where data structures change frequently or vary between records.
 
-In MongoDB, instead of tables, rows, and columns as in SQL databases, we have collections, documents, and fields.
+The database uses a distributed architecture that supports horizontal scaling across multiple nodes. It handles high-volume workloads and provides query performance suitable for real-time operations.
+
+### Data Organization
+
+MongoDB structures data into three hierarchical components, which differ from traditional relational databases:
+
+- **Collections** replace tables
+- **Documents** replace rows  
+- **Fields** replace columns
 
 !["Annotomy of MongoDB document"](./images/using-mongodb-with-node-red-annotomy-of-mongodb-document.png "Annotomy of MongoDB document"){data-zoomable}
 
-## Why choose MongoDB?
+## Technical Considerations
 
-- MongoDB's schema-less approach fosters agile development without predefined structures, contrasting with SQL databases.
-- MongoDB's distributed architecture facilitates seamless horizontal scaling across multiple nodes, ensuring consistent performance. Although some SQL databases, such as PostgreSQL, can also be scaled horizontally, the process may be more complex.
-- MongoDB's query language and document-oriented data model are aligned with modern programming paradigms, which boosts developer efficiency.
-- MongoDB a fully managed cloud database service, provides tools like Atlas Data Explorer, Real-Time Performance Metrics, Atlas Search, and Atlas Data Lake. These simplify database management with automated backups, point-in-time recovery, security features, and seamless scalability, which enhances operational efficiency for developers and administrators. Additionally, MongoDB has released Atlas specialized in manufacturing. For more information, refer to  [MongoDB Launches Atlas for Manufacturing and Automotive](https://www.mongodb.com/company/newsroom/press-releases/mongodb-atlas-for-manufacturing-and-automotive)
-- More Importantly, MongoDB's native support for JSON documents simplifies data storage and retrieval, making it perfect for integration with Node-RED.
+Several factors make MongoDB appropriate for Node-RED integration:
 
-## Setting Up MongoDB with Node-RED
+MongoDB's document model aligns directly with JSON data structures, which eliminates transformation overhead between Node-RED message objects and database records. The schema-less architecture supports rapid iteration without requiring schema migrations for each data model change.
 
-To kickstart the MongoDB integration with Node-RED, let's begin by installing the MongoDB custom node and familiarizing ourselves with MongoDB configuration details:
+The database scales horizontally by distributing data across multiple servers. While some SQL databases support horizontal scaling, MongoDB's architecture implements this pattern natively. The query language uses a document-based syntax that matches common programming patterns.
 
-### Installing MongoDB custom node
+MongoDB Atlas provides managed database services with automated backups, security controls, and monitoring tools. The platform includes specialized implementations for industrial applications. Additional information is available at [MongoDB Atlas for Manufacturing and Automotive](https://www.mongodb.com/company/newsroom/press-releases/mongodb-atlas-for-manufacturing-and-automotive).
 
-1. Click the Node-RED Settings (top-right)
-2. Click "Manage Palette"
-3. Switch to the "Install" tab
+## Configuration Procedures
+
+### Installing the MongoDB Node
+
+1. Open Node-RED Settings (top-right menu)
+2. Select "Manage Palette"
+3. Navigate to the "Install" tab
 4. Search for `node-red-contrib-mongodb4`
+5. Install the package
 
-### Understanding MongoDB Configuration
+### Connection Parameters
 
-Before you begin, gather the following configuration details:
+Collect the following configuration values before proceeding:
 
-- `Host`: IP address or hostname of your MongoDB server.
-- `Port`: By default, MongoDB uses port 27017. ( If you're using a managed MongoDB service like MongoDB Atlas, this information may not be required.)
-- `Database`: The name of the MongoDB database you want to connect to.
-- `User`: Username with the necessary privileges to access the specified database.
-- `Password`: Corresponding password for the username.
+- `Host`: Server IP address or hostname
+- `Port`: Connection port (default: 27017; may not be required for managed services)
+- `Database`: Target database name
+- `User`: Account username with appropriate database privileges
+- `Password`: Account password
 
-To learn about advanced configurations such as TLS/SSL, please refer to the [node's readme](https://flows.nodered.org/node/node-red-contrib-mongodb4).
+For TLS/SSL configuration and other advanced options, consult the [node documentation](https://flows.nodered.org/node/node-red-contrib-mongodb4).
 
-### Adding Environment variables
+### Environment Variable Configuration
 
-Using environment variables during configuration is crucial to prevent exposing sensitive information directly within the flow. To learn more about it refer to [Using Environment Variables in Node-RED.](/blog/2023/01/environment-variables-in-node-red/)
+Store connection credentials in environment variables rather than embedding them directly in flows. This prevents credential exposure in version control and exported flow definitions. Reference the guide [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for additional context.
 
 !["Screenshot displaying FlowFuse instance settings"](./images/using-mongodb-with-node-red-flowfuse-instance-setting.png "Screenshot displaying FlowFuse instance settings"){data-zoomable}
 
-1. Navigate to the instance's “setting” and then go to the “environment” tab.
-2. Click on the add variable button and “add variables” for each of the configuration data that we discussed in the above section.
-3. Click on the save button and restart the instance by clicking on the top right Action button and selecting the restart option.
+1. Navigate to instance settings
+2. Select the "Environment" tab
+3. Add variables for each configuration parameter
+4. Save the configuration
+5. Restart the instance using the Actions menu
 
-### Configuring MongoDB node
+### Configuring the MongoDB Node
 
-Now let's configure the MongoDB4 node using added environment variables 
+Configure the node to use the environment variables:
 
-1. Drag the MongoDB4 node onto the canvas.
-2. Click on the node to select it, Then, click on the edit icon next to the connection input field.
-3. Add your environment variables as shown in the image below.
+1. Add a MongoDB4 node to the canvas
+2. Open the node configuration
+3. Click the edit icon next to the connection field
+4. Reference environment variables as shown below
 
 !["Screenshot displaying connection configuration of MongoDB 4 node."](./images/using-mongodb-with-node-red-mongodb-node-connection-configuration.png "Screenshot displaying connection configuration of MongoDB 4 node."){data-zoomable}
 
-## Using MongoDB with Node-RED
+## Implementation Example: Customer Management System
 
-In this section, we'll explore how to use MongoDB to perform operations such as storing, retrieving, updating, and deleting data within Node-RED. To enhance understanding and engagement, we'll develop a basic customer relationship management system using MongoDB and Node-RED.
+This section demonstrates MongoDB operations through a functional customer relationship management system. The implementation covers create, read, update, and delete operations using a representative data structure.
 
-For the CRM system we will develop, the data structure will be as follows:
+### Data Schema
+
+The customer records use the following structure:
 
 ```json
 {
-"_id": "NXaxeFEK"
-"firstname": "alice"
-"lastname": "demo"
-"email": "userdemo601@gmail.com"
-"phone": "+19876543561"
-"company": "self"
-"status": "Prospect"
-"source": "website"
+  "_id": "NXaxeFEK",
+  "firstname": "alice",
+  "lastname": "demo",
+  "email": "userdemo601@gmail.com",
+  "phone": "+19876543561",
+  "company": "self",
+  "status": "Prospect",
+  "source": "website"
 }
-
 ```
 
-### Understanding MongoDB Operations
+### MongoDB Operations
 
-Before we move to practical implementation, we need to gain an understanding of the MongoDB operations that will be used in this documentation.
+The implementation uses five core operations:
 
-MongoDB operations refer to the actions or commands executed on a MongoDB database to perform various tasks such as inserting, querying, updating, and deleting data.
+- **InsertOne**: Adds a single document to a collection
+- **Find**: Retrieves documents matching specified criteria
+- **UpdateOne**: Modifies a single document based on query parameters
+- **DeleteOne**: Removes a single document matching query criteria
+- **Drop**: Deletes an entire collection
 
-#### MongoDB Operations used in this documentation
+Refer to the [MongoDB CRUD documentation](https://www.mongodb.com/basics/crud) for the complete operation set.
 
-- InsertOne: Adds a single document to a MongoDB collection.
-- Find: Retrieves documents based on specified criteria.
-- UpdateOne: Updates a single document based on specified criteria.
-- DeleteOne: Deletes a single document based on specified criteria.
-- Drop: Deletes an entire MongoDB collection.
+### Additional Dependencies
 
-MongoDB provides a rich set of operations to learn more about them refer to their [official documentation](https://www.mongodb.com/basics/crud).
+#### NanoID Generator
 
-### Installing Nanoid custom node
+Install `node-red-contrib-friendly-id` through the palette manager. This package generates compact, URL-safe unique identifiers for customer records. The implementation uses NanoID instead of manual ID entry or sequential numbering.
 
-NanoID is a small, secure, URL-friendly unique string ID generator for JavaScript. It's designed to generate compact IDs ideal for usage in URLs, short IDs, or other situations where a concise yet unique identifier is needed. We will use it to generate a user-friendly customer ID instead of manually entering or generating them using random numbers.
+#### Dashboard Interface
 
-Install `node-red-contrib-friendly-id` via the palette manager which is a node that will allow us to use NanoID in Node-RED. 
+The example uses Node-RED Dashboard 2.0 for the user interface. Follow the [Dashboard setup instructions](/blog/2024/03/dashboard-getting-started/) to install and configure the dashboard nodes.
 
-### Installing Dashboard 2.0 
+### Creating Customer Records
 
-To build a user-friendly interactive UI for our CRM system, we will utilize Node-RED Dashboard 2.0 by following these [instructions](/blog/2024/03/dashboard-getting-started/) to quickly set up and get started.
-
-### Inserting Customer Data into the Database
-
-1. Drag a ui-form widget onto the canvas, select ui-group for it, and add the form elements for `firstname`, `lastname`, `email`, `phone`, `company`, `status` and `source`.
+1. Add a ui-form widget to the canvas
+2. Configure form elements for `firstname`, `lastname`, `email`, `phone`, `company`, `status`, and `source`
 
 !["Screenshot displaying form widget configuration to insert data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to insert data in MongoDB"){data-zoomable}
 
-2. Drag the friendly-id node onto Canvas, click on and select and select mode as “Generate a random FriendlyId (nanoid)”, set the size according to your need, and output-to `msg.payload._id`.
+3. Add a friendly-id node
+4. Configure it to generate a random ID with your preferred length
+5. Set output destination to `msg.payload._id`
 
 !["Screenshot displaying friend-id node configuration"](./images/using-mongodb-with-node-red-friend-id-node.png "Screenshot displaying friend-id node configuration"){data-zoomable}
 
-3. Drag the change node onto the canvas.
-4. In the change node Set `msg.payload` to `[msg.payload]` as a JSON expression. This will insert the `msg.payload` containing the customer (data received by the insert form) into the database.
+6. Add a change node
+7. Set `msg.payload` to `[msg.payload]` using JSONata expression type
+8. This wraps the payload in an array as required by the insertOne operation
 
 !["Screenshot displaying change node setting payload containing data that needs to be inserted in the database."](./images/using-mongodb-with-node-red-change-node-to-insert-data.png "Screenshot displaying change node setting payload containing data that needs to be inserted in the database."){data-zoomable}
 
-5. Click on the MongoDB4 node that we have added while configuring the MongoDB4 node.
-6. Select the connection which we have added, and enter the collection name as “customers”. The collection will be created if it does not exist already in your MongoDB database.
-7. Set the operation as “insertOne” and keep the other things unchanged.
+9. Configure the MongoDB4 node:
+   - Select the previously configured connection
+   - Set collection name to "customers"
+   - Set operation to "insertOne"
 
 !["Screenshot displaying configuration of MongoDB 4 node for inserting data"](./images/using-mongodb-with-node-red-mongodb-insertone-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for inserting data"){data-zoomable}
 
-8. Connect the nodes' wires as shown in the below image.
+10. Wire the nodes as shown:
 
 !["Screenshot displaying connections of wires in the 'Insert Data into Database' flow"](./images/using-mongodb-with-node-red-mongodb-insertone-flow.png "Screenshot displaying connections of wires in the 'Insert Data into Database' flow"){data-zoomable}
 
-### Retrieving Customer Data from Database
+### Retrieving Customer Records
 
-1. Drag the inject node onto the canvas. In the inject node, set `msg.payload` as an empty object. Additionally, set the inject node to send the payload after a specific interval of time to update the data in the table.
-2. Drag the MongoDB4 node onto canvas, make sure you have selected the connection, and enter “find” into the operation input field.
+1. Add an inject node
+2. Configure it to send an empty object `{}`
+3. Set the node to repeat at your preferred interval for automatic table updates
+4. Add a MongoDB4 node
+5. Select your connection and set operation to "find"
 
 !["Screenshot displaying configuration of MongoDB 4 node for retrieving data"](./images/using-mongodb-with-node-red-mongodb-find-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for retrieving data"){data-zoomable}
 
-3. Drag the ui-table widget onto the canvas, create a new ui-group for it, and set max rows according to your preference.
+6. Add a ui-table widget
+7. Configure the maximum rows according to your requirements
 
 !["Screenshot displaying ui-table widget configuration"](./images/using-mongodb-with-node-red-table-widget.png "Screenshot displaying ui-table widget configuration"){data-zoomable}
 
-4. Connect the nodes' wires as shown in the below image.
+8. Wire the nodes as shown:
 
 !["Screenshot displaying connections of wires in the 'Retrive Data from Database' flow"](./images/using-mongodb-with-node-red-mongodb-find-flow.png "Annotomy of MongoDB document"){data-zoomable}
 
-### Updating Customer Data to Database
+### Updating Customer Records
 
-1. Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for "id" and "status".
+1. Add a ui-form widget with fields for "id" and "status"
 
 !["Screenshot displaying form widget configuration to update data in MongoDB"](./images/using-mongodb-with-node-red-insert-data-form.png "Screenshot displaying form widget configuration to update data in MongoDB"){data-zoomable}
 
-2. Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
+2. Add a change node
+3. Set `msg.payload` to the following JSON structure:
 
-Note:- *Please note that the comments provided are for explanation purposes only and should not be copied along with the code*
-
-```yml
+```json
 [
-    // Specifying the criteria to identify the document to update, based on its _id field
- { "_id": msg.payload._id },
-    // Setting the "status" field of the identified document to the new value received from msg.payload.status
- { "$set": { "status": msg.payload.status } }
+  { "_id": msg.payload._id },
+  { "$set": { "status": msg.payload.status } }
 ]
 ```
+
+The first object specifies the query criteria (which document to update). The second object defines the update operation using MongoDB's `$set` operator.
 
 !["Screenshot displaying the change node setting payload as an array containing a query and operation to perform an update operation in the database"](./images/using-mongodb-with-node-red-change-node-to-update-data.png "Screenshot displaying the change node setting payload as an array containing a query and operation to perform an update operation in the database"){data-zoomable}
 
-3. Drag the MongoDB4 node onto canvas, make sure to select the connection, and enter “updateOne” into the operation input field.
+4. Add a MongoDB4 node and set operation to "updateOne"
 
 !["Screenshot displaying configuration of MongoDB 4 node for updating data"](./images/using-mongodb-with-node-red-mongodb-update-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for updating data"){data-zoomable}
 
-4. Connect the nodes' wires as shown in the below image.
+5. Wire the nodes as shown:
 
 !["Screenshot displaying connections of wires in the 'Update Data from Database' flow"](./images/using-mongodb-with-node-red-mongodb-updateone-flow.png "Screenshot displaying connections of wires in the 'Update Data from Database' flow"){data-zoomable}
 
-### Deleting Customer Data to Database
+### Deleting Customer Records
 
-1. Drag the ui-form widget onto the canvas, create a new ui-group for it, and add form elements for id and name.
+1. Add a ui-form widget with fields for "id" and "firstname"
 
 !["Screenshot displaying form widget configuration to delete data in MongoDB"](./images/using-mongodb-with-node-red-delete-data-form.png "Screenshot displaying form widget configuration to delete data in MongoDB"){data-zoomable}
 
-2. Drag the change node onto the canvas. In the change node, set `msg.payload` as the following JSON object:
+2. Add a change node
+3. Set `msg.payload` to the following structure:
 
-```yaml
+```json
 [
-    // Specify the criteria to identify the document to delete, based on its _id field and firstname
- {
-        "_id": msg.payload._id,         // Document ID to identify the document to delete
-        "firstname": msg.payload.firstname // Additional criteria (e.g., firstname) to narrow down the deletion operation for accuracy
- },
-    // Perform the delete operation
- {
-        "$delete": "" // Indicates the delete operation to be performed
- }
+  {
+    "_id": msg.payload._id,
+    "firstname": msg.payload.firstname
+  },
+  {
+    "$delete": ""
+  }
 ]
 ```
 
+The query includes both ID and firstname to provide additional verification before deletion.
+
 !["Screenshot displaying the change node setting payload as an array containing a query and operation to perform an delete operation in the database"](./images/using-mongodb-with-node-red-change-node-to-delete-data.png "Screenshot displaying the change node setting payload as an array containing a query and operation to perform an delete operation in the database"){data-zoomable}
 
-3. Drag the MongoDB4 node onto canvas, make sure to select the connection, and enter “deleteOne” into the operation input field.
+4. Add a MongoDB4 node and set operation to "deleteOne"
 
 !["Screenshot displaying configuration of MongoDB 4 node for deleting data"](./images/using-mongodb-with-node-red-mongodb-update-node-configuration.png "Screenshot displaying configuration of MongoDB 4 node for deleting data"){data-zoomable}
 
-4. Connect the nodes' wires as shown in the below image.
+5. Wire the nodes as shown:
 
 !["Screenshot displaying connections of wires in the 'Delete Data from Database' flow"](./images/using-mongodb-with-node-red-mongodb-updateone-flow.png "Screenshot displaying connections of wires in the 'Delete Data from Database' flow"){data-zoomable}
 
-### Dropping the collection 
+### Removing Collections
 
-1. Drag the inject node onto canvas, and set msg.payload as an empty object.
-2. Drag the MongoDB4 node onto canvas, make sure you have selected the added connection, Enter the collection name that you want to drop from the database, and enter “drop” into the operation input field.
+1. Add an inject node configured to send an empty object
+2. Add a MongoDB4 node
+3. Specify the collection name to remove
+4. Set operation to "drop"
 
 !["Screenshot displaying configuration of MongoDB4 node for droping collection from database"](./images/using-mongodb-with-node-red-mongodb-drop-node-configuration.png "Screenshot displaying configuration of MongoDB4 node for droping collection from database"){data-zoomable}
 
-3. Connect the nodes' wires as shown in the below image.
+5. Wire the nodes as shown:
 
 !["Screenshot displaying connections of wires in the 'Drop collecton from Database' flow"](./images/using-mongodb-with-node-red-mongodb-drop-flow.png "Screenshot displaying connections of wires in the 'Drop collecton from Database' flow"){data-zoomable}
 
-## Debugging MongoDB Operations
+## Verification and Troubleshooting
 
-To debug MongoDB operations in Node-RED, simply add a debug node after the MongoDB4 node. This enables you to monitor the execution of operations and diagnose any errors that may occur. Below are example debug messages indicating successful operations for each operation we have covered in this documentation.
+Connect a debug node to the output of any MongoDB4 node to monitor operation results and diagnose errors. The following examples show successful operation responses:
 
-### Example Debug Messages
+### Operation Response Messages
 
 ```js
-// Message received after insert operation successful
+// Insert operation
 {
-    "acknowledged": true,
-    "insertedId": "BKoIzMuW" // ID of inserted data
+  "acknowledged": true,
+  "insertedId": "BKoIzMuW"
 }
 
-// Message received after update operation successful
+// Update operation
 {
-    "acknowledged": true,
-    "modifiedCount": 1, // Indicates that one document is updated
-    "upsertedId": null,
-    "upsertedCount": 0,
-    "matchedCount": 1 // Indicates one document is matched for the provided query
+  "acknowledged": true,
+  "modifiedCount": 1,
+  "upsertedId": null,
+  "upsertedCount": 0,
+  "matchedCount": 1
 }
 
-// Message received after delete operation successful
+// Delete operation
 {
-    "acknowledged": true,
-    "deletedCount": 1 // Indicates that one document is deleted
+  "acknowledged": true,
+  "deletedCount": 1
 }
 
-// To indicate collection is dropped successfully and true value will be returned
+// Drop operation returns boolean true
 ```
 
-### Deploying the flow
+### Deployment
 
 !["Screenshot displaying flow of CRM System"](./images/using-mongodb-with-node-red-crm-system-node-red-flow.png "Screenshot displaying flow of CRM System"){data-zoomable}
 
-1. With your flow updated to include the above, click the "Deploy" button in the top-right of the Node-RED Editor.
-2. Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
-
-Now To drop tables, and retrieve table data, click on the 'Inject Node' button. For customer data insertion, updates, and deletions, navigate to fill in the corresponding forms and submit.
+1. Deploy the flow using the Deploy button
+2. Open the dashboard using the button in the Dashboard 2.0 sidebar
+3. Use inject nodes for retrieval and drop operations
+4. Use the forms for create, update, and delete operations
 
 !["Screenshot displaying dashboard view of CRM System"](./images/using-mongodb-with-node-red-crm-system-node-red-dashboard-view.png "Screenshot displaying dashboard view of CRM System"){data-zoomable}
-
-<div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
-
-### Try FlowFuse's Built-In Database Service
-
-[FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually—the node sets itself up automatically.
-
-Even better, the [FlowFuse AI Assistant allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
-
-Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
-
-[**Start with FlowFuse today**](https://app.flowfuse.com/) 
-
-</div>

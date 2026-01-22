@@ -14,6 +14,7 @@ and contains department agnostic details.
 | [Communication](/handbook/company/communication/) | How we communicate and keep everyone informed |
 | [Decisions](/handbook/company/decisions/) | Decision making in an async ready fashion is harder than in person, learn how FlowFuse does it |
 | [Board meetings](/handbook/company/board/) | Board meetings, and how they work for us |
+| [Organizational Structure](./organizational-structure.md) | Company org chart and reporting relationships |
 | [Principles](./principles.md) | |
 | [Remote work](./remote.md) | |
 | [Security](/handbook/company/security/) | |
@@ -46,7 +47,7 @@ FlowFuse's Dun (DUNS number) and Bradstreet ID is: `11-899-4742`
 
 ### NAICS code
 
-54151 - Computer Systems Design and Related Services
+541511 - Computer Systems Design and Related Services
 
 ### SOC2 Type 2 report
 

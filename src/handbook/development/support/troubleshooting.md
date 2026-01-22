@@ -14,7 +14,7 @@ Below are sections for common areas that we see in support tickets. Whilst it is
 
 #### FlowFuse Cloud
 
-Any outages or major issues on FlowFuse Cloud are tracked, and automatically logged in the [#ops-cloud](https://flowforgeworkspace.slack.com/archives/C03BXLH9HP1) Slack channel. You can then consult the [FlowFuse Cloud Incident Playbook](https://docs.google.com/document/d/1NMPWEFgHkVNN7RqHXUgijEGdNwZH-SlaAspOQr9Vg9k/edit?tab=t.0#heading=h.a7jq4bkz66hv) in order to take the relevant actions in debugging the raised issues.
+Any outages or major issues on FlowFuse Cloud are tracked, and automatically logged in the [#ops-cloud](https://flowfuse.slack.com/archives/C03BXLH9HP1) Slack channel. You can then consult the [FlowFuse Cloud Incident Playbook](https://docs.google.com/document/d/1NMPWEFgHkVNN7RqHXUgijEGdNwZH-SlaAspOQr9Vg9k/edit?tab=t.0#heading=h.a7jq4bkz66hv) in order to take the relevant actions in debugging the raised issues.
 
 #### FlowFuse Self-Hosted
 

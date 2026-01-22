@@ -3,7 +3,7 @@ eleventyNavigation:
   key: PostgreSQL
   parent: Database
 meta:
-  title: Using PostgreSQL with Node-RED
+  title: Using PostgreSQL with Node-RED (2026 Updated)
   description: Learn how to seamlessly integrate PostgreSQL with Node-RED for efficient data management and application development.
   keywords: node-red, databases, integration, PostgreSQL, SQL database
 image: /node-red/core-nodes/images/postgresql_with_node-red.png
@@ -217,17 +217,3 @@ Our Inventory Management System is now complete and ready for deployment. To ini
 2. Environment Variables: The [Twelve Factors](https://12factor.net/) emphasize the importance of separating configuration details from the code (flow) to ensure better security. Storing database credentials within the codebase can pose a security risk. Instead, expose the configuration details, as environment variables. This ensures that sensitive information remains secure and can be managed separately from the codebase.
 
 3. Credential Rotation: Regularly rotating database credentials is essential for maintaining robust security practices. This includes changing login information for managed databases and other database access points. Implementing a scheduled credential rotation process, such as quarterly 'rotation days,' streamlines the task and reduces the risk of unauthorized access.
-
-<div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
-
-### Try FlowFuse's Built-In Database Service
-
-[FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually—the node sets itself up automatically.
-
-Even better, the [FlowFuse AI Assistant allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
-
-Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
-
-[**Start with FlowFuse today**](https://app.flowfuse.com/) 
-
-</div>

@@ -1,8 +1,9 @@
 ---
-title: "How to Read S7-1200/1500 Optimized Data Blocks"
+title: "How to Access Optimized Data Blocks in TIA Portal (S7-1200/1500)"
 subtitle: "Use OPC UA to read optimized data blocks by name instead of fighting with memory addresses"
 description: "Learn how to read Siemens S7-1200/1500 optimized data blocks using OPC UA and FlowFuse. Step-by-step guide with symbolic addressing for reliable PLC integration."
 date: 2025-12-04
+lastUpdated : 2025-12-31
 keywords: Siemens S7-1200, Siemens S7-1500, optimized data blocks, TIA Portal, OPC UA, symbolic addressing, FlowFuse, Node-RED, PLC data access, S7 protocol, OPC UA client, industrial automation, PLC integration, S7-1200 OPC UA, S7-1500 OPC UA, Siemens PLC communication, reading optimized DB
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/reading-s7-optimize-data-block.png
@@ -10,9 +11,11 @@ tags:
   - flowfuse
 ---
 
-When working with Siemens S7-1200 and S7-1500 PLCs, you'll notice that TIA Portal creates optimized data blocks by default. These optimized blocks arrange data differently than the classic S7-300/400 controllers, which makes reading data through FlowFuse or Node-RED more challenging.
+When working with Siemens S7-1200 and S7-1500 PLCs, you’ll notice that TIA Portal creates optimized data blocks by default. Unlike the classic S7-300/400 controllers, optimized blocks do not use fixed memory offsets. Instead, the PLC compiler reorganizes the data internally for better performance and memory efficiency. This architectural change often creates confusion when trying to read PLC data from external systems.
 
 <!--more-->
+
+FlowFuse simplifies this challenge by providing a modern way to connect OT and IT systems and build industrial applications using a low-code, drag-and-drop approach. However, reading optimized data blocks still requires a different access method than traditional S7 communication.
 
 You can disable optimization in TIA Portal by unchecking the "Optimized block access" option in your data block properties. This gives you the old-style addressing where you can read data using fixed offsets like `DB1.DBW0`. However, this approach has several drawbacks. Optimized blocks run faster, use less memory, and follow Siemens' current best practices. If you're working on existing projects with thousands of tags, converting everything to standard blocks isn't practical. Many companies also require optimized blocks as part of their coding standards.
 
