@@ -1,0 +1,140 @@
+---
+title: Markdown Guide
+---
+
+This is a very short reference guide for those trying to write Markdown. For more
+comprehensive guides, we recommend looking at:
+
+ - [Markdown Guide's Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+ - [GitHub's Getting Started with Markdown Guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+## Header
+
+```md
+# First-Tier Header
+## Second-Tier Header
+### Third-Tier Header
+#### Fourth-Tier Header
+```
+
+## Paragraph
+
+Hello There, this is a paragraph that is split over
+multiple lines in the source, but displays as a single
+formatted paragraph.
+
+To start a new paragraph, we separate it with a blank line
+from the previous paragraph.
+
+```md
+Hello There, this is a paragraph that is split over
+multiple lines in the source, but displays as a single
+formatted paragraph.
+
+To start a new paragraph, we separate it with a blank line
+from the previous paragraph.
+```
+
+## List - Bullet Points
+
+- this is a bullet point list
+- this is another item in the list
+
+```md
+- this is a bullet point list
+- this is another item in the list
+```
+
+
+## List - Numbered
+
+1. this is a numbered list
+2. this is another item in the list
+
+```md
+1. this is a numbered list
+2. this is another item in the list
+```
+
+To prevent reordering and keeping count, Markdown allows you to use non-sequencial numbers:
+
+```
+1. Item one
+1. Item two
+```
+
+1. Item one
+1. Item two
+
+## Text Format - Italic
+
+*this will be italic*
+
+```md
+*this will be italic*
+```
+
+## Text Format - Italic
+
+**this will be bold**
+
+```md
+**this will be bold**
+```
+
+## Links
+
+[this will be a link](http://example.com/)
+
+```md
+[this will be a link](http://example.com/)
+```
+
+## Images
+
+A picture speaks a thousand words, to include an image in your content it's like a link
+but with an `!` in front of it.
+
+```md
+![Image Name](image.jpg "alt text when you hover the image")
+```
+
+## Quoting
+
+> this will quote some text
+
+```md
+> this will quote some text
+```
+
+## Code Example
+
+For `inline` quoting, use single backticks:
+
+```md
+For `inline` quoting, use single backticks.
+```
+
+For block quotes, use tripple backticks:
+
+```
+this will write the content as if it is code
+```
+
+````md
+```
+this will write the content as if it is code
+```
+````
+
+Add syntax highlighting by defining the language, for example:
+
+```js
+console.log("Hello, world!")
+```
+
+````md
+```js
+console.log("Hello, world!")
+```
+````

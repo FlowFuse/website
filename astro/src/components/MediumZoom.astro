@@ -1,0 +1,17 @@
+<script>
+  import mediumZoom from 'medium-zoom';
+  
+  // Initialize on page load
+  mediumZoom('[data-zoomable]', {
+    margin: 24,
+    background: 'rgba(0, 0, 0, 0.9)',
+  });
+
+  // Re-initialize on Astro page transitions
+  document.addEventListener('astro:page-load', () => {
+    mediumZoom('[data-zoomable]', {
+      margin: 24,
+      background: 'rgba(0, 0, 0, 0.9)',
+    });
+  });
+</script>

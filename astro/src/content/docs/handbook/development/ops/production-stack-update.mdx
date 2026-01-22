@@ -1,0 +1,23 @@
+---
+title: Update Stacks on Production
+---
+
+As part of a FlowFuse Release the Stack definitions need updating
+to use the latest container images.
+
+## Process
+
+1. Login as a FlowFuse Cloud Admin user
+2. Navigate to Admin Settings -> Stacks
+    <img src="../../images/ops/stacks-list.png" alt="Screenshot of Stacks list" data-zoomable />
+    _Screenshot of Stacks list_
+3. For each Stack in the "Active Stacks" section select "Create New Version" from the 3 dot menu and then follow Steps 4,5,6
+4. Edit the Stack Name to remove the "-copy" and update the semver number
+    <img src="../../images/ops/stack-name.png" alt="Screenshot of Stack Name" data-zoomable />
+    _Screenshot of Stack Name_
+5. Edit the "Container Location" to edit the container tag, update just the semver of FlowFuse, not the Node-RED version suffix
+    <img src="../../images/ops/stack-location.png" alt="Screenshot of Stack Location" data-zoomable />
+    _Screenshot of Stack Location_
+6. Complete this step with the "Create" button
+
+A new version of the Stack will appear in the "Active Stacks" list and the old one should move to the "Inactive Stacks" list.
