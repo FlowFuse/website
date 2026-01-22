@@ -148,7 +148,7 @@ return msg;
 
 This takes the raw register, divides it by 10, and gives you a clean, human-readable temperature.
 
-**Tip:** You do not need to know JavaScript — simply use the **FlowFuse AI Assistant**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse AI Assistant for Manufacturing](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
+**Tip:** You do not need to know JavaScript — simply use the **FlowFuse Expert**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse Expert for Manufacturing](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
 
 **Best Practice:** Always keep a copy of the device’s **Register Map documentation** handy. It tells you which addresses map to which variables, and how to interpret them.
 

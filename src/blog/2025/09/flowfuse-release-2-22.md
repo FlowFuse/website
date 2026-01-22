@@ -11,17 +11,17 @@ tags:
    - releases
 ---
 
-FlowFuse 2.22 provides more powerful development by bringing the FlowFuse Assistant to more nodes, supports operational maturity with automatic FlowFuse Broker schema detection, and enhances the developer experience with an improved Snapshots interface, support for more powerful visualizations, a better Device Agent Installer experience, Dashboard updates, and more! Take a look:
+FlowFuse 2.22 provides more powerful development by bringing the FlowFuse Expert to more nodes, supports operational maturity with automatic FlowFuse Broker schema detection, and enhances the developer experience with an improved Snapshots interface, support for more powerful visualizations, a better Device Agent Installer experience, Dashboard updates, and more! Take a look:
 
 <!--more-->
 
 ## AI Copilot for Node Editing
-![Gif showing AI Assistant in Function node](./images/inline-assist-function.gif)
-_FlowFuse Assistant at work_
+![Gif showing FlowFuse Expert in Function node](./images/inline-assist-function.gif)
+_FlowFuse Expert at work_
 
-We've enhanced the capabilities of the FlowFuse AI Assistant, which now provides automatic suggestions to draft and edit your code that extends to Tables nodes, Dashboard Template nodes (ui-template), and Function nodes. You can now simply start typing, and the FlowFuse Assistant will provide code for you based on your context, making the FlowFuse Assistant your AI copilot in Node-RED.
+We've enhanced the capabilities of the FlowFuse Expert, which now provides automatic suggestions to draft and edit your code that extends to Tables nodes, Dashboard Template nodes (ui-template), and Function nodes. You can now simply start typing, and the FlowFuse Expert will provide code for you based on your context, making the FlowFuse Expert your AI copilot in Node-RED.
 
-With this change, the FlowFuse assistant can now write HTML, CSS, SQL, Javascript, and JSON, all based on your words, and with awareness of your FlowFuse environment (like your Tables structure), cursor position, and where in your code you are editing.
+With this change, the FlowFuse Expert can now write HTML, CSS, SQL, Javascript, and JSON, all based on your words, and with awareness of your FlowFuse environment (like your Tables structure), cursor position, and where in your code you are editing.
 
 ## FlowFuse Team Broker Automatic Schema Detection
 
@@ -95,7 +95,7 @@ Be on the lookout for some very cool applications of AI to machine vision!
 
 ## What's Next?
 
-In the next release, we'll provide support for building AI agents, real-time streaming protocol, a far more flexible Dashboard, bringing the FlowFuse Assistant to all self-hosted customers, and more! Stay tuned!
+In the next release, we'll provide support for building AI agents, real-time streaming protocol, a far more flexible Dashboard, bringing the FlowFuse Expert to all self-hosted customers, and more! Stay tuned!
 
 ## What else is new?
 
