@@ -60,9 +60,22 @@ module.exports = {
             return data.image;
         }
 
-        // For handbook pages without an image, use handbook logo
+        // For handbook pages without an image, generate dynamic OG image
         if (data.page.url && data.page.url.match(/\/handbook\/.+/)) {
-            return '/handbook/images/logos/ff-logo--square--dark.png';
+            const title = encodeURIComponent(data.navTitle || data.title || 'Handbook');
+            const description = encodeURIComponent(
+                data.description ||
+                data.meta?.description ||
+                extractFirstParagraph(data.content) ||
+                ''
+            );
+
+            // Extract section from URL (e.g., "product", "sales", "design")
+            const pathParts = data.page.url.split('/').filter(p => p && p !== 'handbook');
+            const section = pathParts.length > 0 ? encodeURIComponent(pathParts[0]) : '';
+
+            // Construct edge function URL
+            return `/og-image?title=${title}&description=${description}&section=${section}`;
         }
 
         // Otherwise, let base.njk handle the fallback
