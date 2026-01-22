@@ -79,8 +79,8 @@
       {% if image %}
       "image": "{% if image.startsWith('http') %}{{ image }}{% else %}https://flowfuse.com{{ image }}{% endif %}",
       {% endif %}
-      "datePublished": "{{ date | dateToRfc3339 }}",
-      "dateModified": "{{ (lastUpdated or date) | dateToRfc3339 }}",
+      "datePublished": "{{ date | toDate | dateToRfc3339 }}",
+      "dateModified": "{{ (lastUpdated or date) | toDate | dateToRfc3339 }}",
       "author": {
         "@type": "Person",
         "name": "{{ authors }}",
