@@ -34,7 +34,8 @@ Before you can take time off you should _always_:
   who is going to be away each week.
   
 ### Team Calendars
-We use team-specific calendars for tracking availability and Out of Office time
+
+We use team-specific calendars to track availability and Out of Office time.
 - [Engineering](https://calendar.google.com/calendar/u/0?cid=Y19iMTZjMTdjYzlmNmZiMTYyZmI0NmUxMDIyNzNkNTFmMWQ4ZjI0MThkMzVmZTc5ZmExNGU0NTE3M2NkMDE5NTVlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 - [Marketing](https://calendar.google.com/calendar/u/0?cid=Y19iY2UwZjY2NzE3ZTQ3YjAzZjgxZjliNTdjNWNhYTkyYTZlOTM1ZTg5NGU5MDdiOTZjNmY5N2I4ODA3MjllMDQ5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 - [Sales](https://calendar.google.com/calendar/u/0?cid=Y19lNThhNThlZDlmNjMyOGQ2YzcwN2VmMWM1MWYxMGU0MzAwMWY4NzhlY2Y0MTI2NTRmY2QzNDYyY2QwMjhiYzFlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
