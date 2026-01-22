@@ -4,53 +4,39 @@ navTitle: Coaching Plans
 
 # Coaching Plans
 
-A Coaching Plan is tool for managers to aid in development of their team
+A Coaching Plan is a tool managers use to support a team member’s development.
+It helps them grow in their role through a structured plan, built and completed together with their manager’s mentorship.
 members, helping them grow in their role and improve their performance through a
-structured plan to be completed with the managers mentorship. Unlike
-[Performance Improvement Plans (PIPs)][pip], coaching plans are proactive, focus
-on growth, and come without the formal burden of a PIP. 
+Coaching Plans can be used proactively for career development and role growth, and they can also be used to address performance concerns with support and clear expectations.
 
 ## Purpose and Philosophy
 
-Coaching plans are built on the principle that all team members have potential
-for growth. Either in their job skills, company value alignment, or the
-operational execution of their role. Coaching plans are a positive force that
-will be deployed for team members to prepare them for career advancement, job
-role changes, and other changes.
+Coaching Plans are built on the belief that all team members have potential for growth — in their job skills, alignment with company values, or execution of their role.
+
+Coaching Plans are a positive, intentional investment. They are used to help team members prepare for career advancement, role changes, and evolving expectations as the company grows.
 
 ## When to Use a Coaching Plan
 
-A coaching plan should be initiated by a team members manager when:
+A Coaching Plan may be initiated by a team member’s manager when:
 
-- A team member shows potential for growth
-- The growth area is specific and coachable
-- The identified area for growth isn't a role deficiency, and a [PIP][pip] is in
-  order
-  - Minor performance areas need attention but don't warrant formal PIP
-    intervention
-- A team member expresses interest in expanding their responsibilities or transitioning to a new role with additional responsibilities
-- The team member is to be prepared for future role progression
-- You observe behaviors or skills that could benefit from focused development
+- A team member shows potential for growth or expanded impact
+- The growth area is specific, observable, and coachable
+- Expectations need to be clarified and supported through structured development
+- One or more performance areas would benefit from focused improvement
+- A team member expresses interest in expanding responsibilities or transitioning to a role with additional scope
+- A team member is preparing for future role progression
+- A manager observes behaviors or skills that could benefit from intentional development
 
-## Coaching Plan vs. Performance Improvement Plan
+## Coaching Plan Characteristics
 
-**Coaching Plans** are:
+FlowFuse's Coaching Plans are designed to be:
 
-- **Proactive** - Focused on development and growth
-- **Supportive** - Emphasize mentorship and guidance
-- **Opportunity-based** - Address areas for improvement before they become
-  problems
-- **Growth-oriented** - Aimed at expanding capabilities and preparing for
-  advancement or addressing problems before they grow too big
-- **Collaborative** - Employee actively participates in goal-setting
-
-**Performance Improvement Plans** are:
-
-- **Reactive** - Address existing performance deficiencies
-- **Formal** - Structured process with documented consequences
-- **Problem-focused** - Correct performance that falls below standards
-- **Corrective** - Aimed at bringing performance up to acceptable levels
-- **Prescriptive** - Clear expectations with defined outcomes
+- **Development-focused** — Centered on growth and learning, whether proactive or in response to changing expectations
+- **Supportive** — Emphasize mentorship, guidance, and partnership from managers
+- **Opportunity-based** — Frame areas for improvement as opportunities for growth and skill-building
+- **Growth-oriented** — Aimed at expanding capabilities and supporting team members in meeting and exceeding role expectations
+- **Collaborative** — Team members actively participate in goal-setting and development activities
+- **Clear and structured** — Shared expectations with documented goals, milestones, and review points
 
 ## Creating a Coaching Plan
 
@@ -88,8 +74,6 @@ While coaching plans are less formal than PIPs, it's important to:
 - Record achievements and milestones
 - Maintain confidentiality while sharing appropriate updates with HR and
   management
-  - Coaching plans are only shared with: the team member, manager, the managers'
-    manager, and HR
+  - Coaching Plans are only shared with the team member, their manager, the manager’s manager, and HR
 
-[pip]: /handbook/peopleops/organization/#performance-improvement-plan-(pip)
 [smart]: https://www.atlassian.com/blog/productivity/how-to-write-smart-goals
