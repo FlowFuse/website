@@ -168,10 +168,10 @@ Our Monday meeting serves a dual purpose: maintaining organizational alignment a
 2. Format: Department Spotlights
 Each Monday, one department will lead a 5–10 minute presentation. These briefings are intended to be concise, high-level, and focused on information that impacts the broader organization.
 The rotation will follow a four-week cycle:
-* Week 1: Company Update – Focusing on organizational health and "big picture" goals by ZJ
-* Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by Lori, Jamie, and Nick
-* Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Michael
-* Week 4: Marketing – Highlighting how we are communicating our value to the market by Pablo
+* Week 1: Company Update – Focusing on organizational health and "big picture" goals by the CEO
+* Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by the Engineering & Product leadership
+* Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Sales leadership
+* Week 4: Marketing – Highlighting how we are communicating our value to the market by marketing leadership
 
 3. Presenter Guidelines 
 To maintain a high-energy pace and respect the team's time:
