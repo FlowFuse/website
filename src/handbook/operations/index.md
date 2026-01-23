@@ -29,6 +29,19 @@ or go bankrupt a table is maintained with where to go in case of service disrupt
 | AWS | Hosting for FlowFuse Cloud | ? | - |
 | GitHub | Task management, planning and code development | - | - |
 
+## Calendar Conventions
+
+To help team members quickly identify meeting types in calendar apps and menubar tools, use these emoji conventions when creating calendar entries:
+
+- 🎥 - Google Meet meetings (add this emoji to the event title for quick visual identification)
+
+This convention is particularly helpful for:
+- Quick visual scanning in menubar calendar apps
+- Distinguishing Google Meet from Slack Huddles at a glance
+- Identifying external-facing meetings quickly
+
+**Note:** For internal face-to-face discussions, prefer Slack Huddles in public channels over Google Meet when possible, as noted in the services table above.
+
 ## Email
 
 While there are a number of email aliases and google groups used throughout the organization, there is some activities across operations, people operations, and finance management that requires that activities be done with external parties. As a redundancy, rather than use a person's individual email (e.g. zj@), we use a google group to avoid the risk of information getting lost. For example, for some government filings, we use ops@.
