@@ -81,6 +81,17 @@ It would be highly appreciated if topics to be discussed are shared in advance w
 
 It is the CEO's responsibility to manage time in the meeting.
 
+#### Stock Options Approval
+Board approval is required for every new employee's options grant. For each applicable employee, the slide must include:
+
+- Employee name
+- Title
+- Current option allocation (if applicable)
+- Options to be offered
+- Fully diluted total ownership post-grant
+- Vesting schedule
+All information must be based on the final, executed offer letter. Employees included on this slide must have completed onboarding prior to the board meeting.
+
 ## Metrics
 
 Key Metrics to include:
