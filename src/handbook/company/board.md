@@ -130,7 +130,7 @@ Drive.
 
 #### Sending out the deck
 
-2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review.
+2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. 
 
 #### Managing the Two Slide Decks
 
