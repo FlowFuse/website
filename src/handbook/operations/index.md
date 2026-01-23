@@ -60,6 +60,7 @@ The Engineering team maintains a large number of repositories related to individ
 | FlowFuse/customer | Task management for events and customer-specific work; webinars, artwork requests | private |
 | FlowFuse/dev-env | FlowFuse development environment tooling | public |
 | FlowFuse/flowfuse | The core product code repository| public |
+| FlowFuse/product | A higher level planning and strategising repository for FlowFuse | private |
 | FlowFuse/node-red | A planning repository for upstream Node-RED tasks | private |
 
 To create a new repository, first open an issue in the [Admin](https://github.com/FlowFuse/admin) repository using the New Repository checklist. This ensures all required security controls are applied.
