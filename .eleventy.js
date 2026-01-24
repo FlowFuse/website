@@ -241,6 +241,14 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('rewriteIntegrationLinks', (str, integration) => {
         if (!str) return str;
         
+        // First pass: collect all actual anchor IDs from the HTML
+        const anchorIds = new Set();
+        const anchorIdRegex = /id="([^"]+)"/g;
+        let anchorMatch;
+        while ((anchorMatch = anchorIdRegex.exec(str)) !== null) {
+            anchorIds.add(anchorMatch[1]);
+        }
+        
         // Convert relative links in README to absolute links
         const matcher = /((href|src)="([^"]*))"/g;
         let match;
@@ -250,8 +258,24 @@ module.exports = function(eleventyConfig) {
                 return fullMatch;
             }
             
-            // Handle same-page anchor links - normalize version numbers
+            // Handle same-page anchor links - try to fix broken anchors
             if (url.startsWith('#')) {
+                const targetAnchor = url.substring(1);
+                
+                // If the anchor doesn't exist, try to find a close match
+                if (!anchorIds.has(targetAnchor)) {
+                    // Try to find anchors that match if we add periods back
+                    // e.g., "migration-from-012-or-earlier" -> "migration-from-0.1.2-or-earlier"
+                    for (const existingAnchor of anchorIds) {
+                        // Remove all periods from existing anchor and compare
+                        const normalizedExisting = existingAnchor.replace(/\./g, '');
+                        if (normalizedExisting === targetAnchor) {
+                            // Found a match! Use the correct anchor
+                            return `${attr}="#${existingAnchor}"`;
+                        }
+                    }
+                }
+                
                 return fullMatch;
             }
             
