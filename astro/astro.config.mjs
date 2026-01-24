@@ -26,6 +26,11 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'FlowFuse Handbook',
+			description: 'How we run FlowFuse, from engineering practices to team rituals.',
+			logo: {
+    		src: '../src/images/ff-logo--wordmark--light.svg',
+  		},
+			favicon: '/favicon.ico',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/FlowFuse/website' }],
 			head: [
 				{
