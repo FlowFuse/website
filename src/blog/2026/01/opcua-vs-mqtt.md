@@ -2,6 +2,7 @@
 title: "MQTT vs OPC UA: Why This Question Never Has a Straight Answer"
 subtitle: "Why comparing MQTT and OPC UA is a category error, and how to choose based on requirements rather than marketing"
 description: "MQTT vs OPC UA isn't a real choice; they solve different problems. Learn when to use each protocol based on your actual requirements, not vendor marketing."
+lastUpdated: 2026-01-24
 date: 2026-01-21
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/opcua-vs-mqtt.png
@@ -62,7 +63,7 @@ MQTT is deliberately minimal. This simplicity at the transport layer enables its
 
 OPC UA (Unified Architecture) isn't primarily about moving data; it's about describing what data means, how it relates to other data, and what operations are valid.
 
-Released in 2008, OPC UA replaced a fragmented collection of Windows-only industrial protocols with a platform-independent standard. Where MQTT is minimal, OPC UA is comprehensive. The specification spans 14 parts covering everything from information modeling to historical data access to alarm conditions.
+Released in 2008, OPC UA replaced a fragmented collection of Windows-only industrial protocols with a platform-independent standard. Where MQTT is minimal, OPC UA is comprehensive. The specification spans 37 parts in the core specification covering everything from information modeling to historical data access to alarm conditions
 
 **At its core is the address space, a hierarchical graph of nodes:**
 
