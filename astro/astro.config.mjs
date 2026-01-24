@@ -31,7 +31,15 @@ export default defineConfig({
     		src: '../src/images/ff-logo--wordmark--light.svg',
   		},
 			favicon: '/favicon.ico',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/FlowFuse/website' }],
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/FlowFuse' },
+				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/2RrvW8dkrF' },
+				{ icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/flowfuse' },
+				{ icon: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/@FlowFuseInc' },
+				{ icon: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/FlowFuse/' },
+				{ icon: 'reddit', label: 'Reddit', href: 'https://www.reddit.com/r/flowfuse' },
+				{ icon: 'rss', label: 'RSS', href: '/blog/index.xml' },
+			],
 			head: [
 				{
 					tag: 'script',
