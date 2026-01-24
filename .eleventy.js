@@ -252,8 +252,7 @@ module.exports = function(eleventyConfig) {
             
             // Handle same-page anchor links - normalize version numbers
             if (url.startsWith('#')) {
-                let normalizedUrl = url.replace(/(\d)(\d)(\d)/g, '$1.$2.$3');
-                return `${attr}="${normalizedUrl}"`;
+                return fullMatch;
             }
             
             // Convert relative links to repository links if available
