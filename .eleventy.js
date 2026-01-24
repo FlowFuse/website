@@ -250,9 +250,10 @@ module.exports = function(eleventyConfig) {
                 return fullMatch;
             }
             
-            // Skip pure anchors (same-page links)
+            // Handle same-page anchor links - normalize version numbers
             if (url.startsWith('#')) {
-                return fullMatch;
+                let normalizedUrl = url.replace(/(\d)(\d)(\d)/g, '$1.$2.$3');
+                return `${attr}="${normalizedUrl}"`;
             }
             
             // Convert relative links to repository links if available
@@ -281,6 +282,7 @@ module.exports = function(eleventyConfig) {
         
         return result;
     });
+
 
     eleventyConfig.addFilter('duration', mins => {
         if (mins > 60) {
