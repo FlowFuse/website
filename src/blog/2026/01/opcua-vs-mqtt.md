@@ -62,7 +62,7 @@ MQTT is deliberately minimal. This simplicity at the transport layer enables its
 
 OPC UA (Unified Architecture) isn't primarily about moving data; it's about describing what data means, how it relates to other data, and what operations are valid.
 
-Released in 2008, OPC UA replaced a fragmented collection of Windows-only industrial protocols with a platform-independent standard. Where MQTT is minimal, OPC UA is comprehensive. The specification spans 14 parts covering everything from information modeling to historical data access to alarm conditions.
+Released in 2008, OPC UA replaced a fragmented collection of Windows-only industrial protocols with a platform-independent standard. Where MQTT is minimal, OPC UA is comprehensive. The specification spans 37 parts in the core specification covering everything from information modeling to historical data access to alarm conditions
 
 **At its core is the address space, a hierarchical graph of nodes:**
 
