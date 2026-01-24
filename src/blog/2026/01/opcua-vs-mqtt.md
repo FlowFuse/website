@@ -2,6 +2,7 @@
 title: "MQTT vs OPC UA: Why This Question Never Has a Straight Answer"
 subtitle: "Why comparing MQTT and OPC UA is a category error, and how to choose based on requirements rather than marketing"
 description: "MQTT vs OPC UA isn't a real choice; they solve different problems. Learn when to use each protocol based on your actual requirements, not vendor marketing."
+lastUpdated: 2026-01-24
 date: 2026-01-21
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/opcua-vs-mqtt.png
