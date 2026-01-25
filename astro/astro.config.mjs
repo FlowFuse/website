@@ -64,6 +64,8 @@ export default defineConfig({
 				},
 				...handbookFolders,
 			],
+			lastUpdated: true,
+      pagination: false
 		}),
 	],
 });
