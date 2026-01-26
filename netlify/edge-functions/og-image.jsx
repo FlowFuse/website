@@ -19,7 +19,7 @@ export default async (request) => {
           height: '100%',
           backgroundColor: '#ffffff',
           padding: '60px',
-          fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+          fontFamily: 'Heebo, system-ui, -apple-system, sans-serif',
         }}
       >
         {/* Header with logo and badge */}
@@ -43,18 +43,18 @@ export default async (request) => {
           <div
             style={{
               fontSize: '48px',
-              color: '#666',
+              color: '#6B7280',
               fontWeight: '600',
               display: 'flex',
               alignItems: 'center',
               gap: '16px',
             }}
           >
-            <span style={{ color: '#1a1a1a' }}>Handbook</span>
+            <span style={{ color: '#111827' }}>Handbook</span>
             {section && (
               <>
-                <span style={{ color: '#ccc' }}>•</span>
-                <span style={{ textTransform: 'capitalize', color: '#999' }}>{section}</span>
+                <span style={{ color: '#D1D5DB' }}>•</span>
+                <span style={{ textTransform: 'capitalize', color: '#9CA3AF' }}>{section}</span>
               </>
             )}
           </div>
@@ -65,7 +65,7 @@ export default async (request) => {
           style={{
             fontSize: '64px',
             fontWeight: 'bold',
-            color: '#1a1a1a',
+            color: '#111827',
             lineHeight: 1.1,
             marginBottom: '30px',
             maxWidth: '100%',
@@ -90,7 +90,7 @@ export default async (request) => {
             <div
               style={{
                 fontSize: '38px',
-                color: '#666',
+                color: '#6B7280',
                 lineHeight: 1.4,
                 maxWidth: '100%',
                 overflow: 'hidden',
