@@ -27,8 +27,9 @@ export default async (request) => {
   // Combine all text for font loading
   const allText = `${title} ${description} ${section} Handbook`;
 
-  // Load Heebo font (regular weight - 400)
-  const heeboFontData = await loadGoogleFont('Heebo', allText);
+  // Load Heebo fonts (regular and semibold)
+  const heeboRegular = await loadGoogleFont('Heebo:wght@400', allText);
+  const heeboSemibold = await loadGoogleFont('Heebo:wght@600', allText);
 
   return new ImageResponse(
     (
@@ -145,7 +146,14 @@ export default async (request) => {
       fonts: [
         {
           name: 'Heebo',
-          data: heeboFontData,
+          data: heeboRegular,
+          weight: 400,
+          style: 'normal',
+        },
+        {
+          name: 'Heebo',
+          data: heeboSemibold,
+          weight: 600,
           style: 'normal',
         },
       ],
