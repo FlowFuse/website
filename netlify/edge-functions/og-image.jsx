@@ -1,5 +1,5 @@
 import React from "https://esm.sh/react@18.2.0";
-import { ImageResponse } from "https://esm.sh/og_edge";
+import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
 
 export default async (request) => {
   const { searchParams } = new URL(request.url);
