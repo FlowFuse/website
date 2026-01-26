@@ -1,6 +1,21 @@
 import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
 
+async function loadGoogleFont(font, text) {
+  const url = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text)}`;
+  const css = await (await fetch(url)).text();
+  const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
+
+  if (resource) {
+    const response = await fetch(resource[1]);
+    if (response.status == 200) {
+      return await response.arrayBuffer();
+    }
+  }
+
+  throw new Error('failed to load font data');
+}
+
 export default async (request) => {
   const { searchParams } = new URL(request.url);
 
@@ -8,6 +23,12 @@ export default async (request) => {
   const title = searchParams.get('title') || 'Handbook';
   const description = searchParams.get('description') || '';
   const section = searchParams.get('section') || '';
+
+  // Combine all text for font loading
+  const allText = `${title} ${description} ${section} Handbook`;
+
+  // Load Heebo font
+  const heeboFontData = await loadGoogleFont('Heebo:wght@400;600', allText);
 
   return new ImageResponse(
     (
@@ -19,7 +40,7 @@ export default async (request) => {
           height: '100%',
           backgroundColor: '#ffffff',
           padding: '60px',
-          fontFamily: 'Heebo, system-ui, -apple-system, sans-serif',
+          fontFamily: 'Heebo',
         }}
       >
         {/* Header with logo and badge */}
@@ -121,6 +142,13 @@ export default async (request) => {
     {
       width: 1200,
       height: 630,
+      fonts: [
+        {
+          name: 'Heebo',
+          data: heeboFontData,
+          style: 'normal',
+        },
+      ],
       headers: {
         'Cache-Control': 'public, max-age=604800, immutable', // 1 week cache
       },
