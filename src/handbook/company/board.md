@@ -24,7 +24,24 @@ alternating succession.
 Calendar invites include all the folks expected to be at the board meeting,
 including our legal counsel.
 
+## The Strategic Timeline
+
+Working from the meeting date, follow these milestones:
+* T-minus 2 Weeks: Draft the agenda and create the deck or decks
+* T-minus 1 Week: The Dry Run. First draft of slides complete. Present to internal stakeholders/executives.
+* T-minus 2-4 Days: Final Board Package distributed (allows directors time to read).
+* Meeting Day: Execution and note-taking.
+
 ## The Meeting
+
+### The Dry Run: One Week out
+
+Schedule a dry run meeting with all internal stakeholders a week prior to the actual meeting date. 
+Key Objectives:
+- Finalize slides: Which slides require more support 
+- Audit the Data: Double-check the numbers
+- Time Management: Ensure the presentation fits within 60-70% of the allotted time, leaving the rest for Q&A.
+- Craft storyline and identify focussed discussions to resolve key challenges for the company.
 
 ### Prewatch
 
@@ -63,6 +80,17 @@ The 120 minutes of each meeting are structured in the following time blocks:
 It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
 
 It is the CEO's responsibility to manage time in the meeting.
+
+#### Stock Options Approval
+Board approval is required for every new employee's options grant. For each applicable employee, the slide must include:
+
+- Employee name
+- Title
+- Current option allocation (if applicable)
+- Options to be offered
+- Fully diluted total ownership post-grant
+- Vesting schedule
+All information must be based on the final, executed offer letter. Employees included on this slide must have completed onboarding prior to the board meeting.
 
 ## Metrics
 
@@ -111,6 +139,35 @@ The template is updated to fit the FlowFuse business.
 Slides are stored in the "Investors" folder in the "FlowFuse Admin" Shared
 Drive.
 
+#### Sending out the deck
+
+2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. 
+
+#### Managing the Two Slide Decks
+
+**1. The Open Session Deck (General Team)**
+
+This deck focuses on transparency, high-level performance, and culture.
+- Purpose: Celebrate wins, align on company goals, and share the "vibe" of the business.
+  - Highlights/Challenges/Focus
+- Content: 
+  - OKR updates
+  - Marketing highlights
+  - New hires
+  - Product roadmaps
+
+**2. The Closed Session Deck (Executive/Board Only)**
+
+This contains sensitive "Closed Matters" that require legal privilege or high-level strategic oversight.
+- Purpose: Deep-dive into governance, sensitive financials, and high-risk decisions.
+- Content:
+  - Compensation: Exec salaries, equity grants, and bonus structures.
+  - Legal: Pending litigation or regulatory updates.
+  - Strategic Moves: M&A discussions, fundraising details, or layoffs.
+  - Financials: Detailed burn rates and runway audits.
+  - Approval of minutes of the last BoD
+     - Link to the finalized minutes from the previous board meeting which are stored in the FlowFuse Admin Shared Drive, under Investors, in the appropriate year folder.
+
 ### Post meeting action items
 
 Within a week after the board meeting, the CEO will distribute assets related to
@@ -121,6 +178,8 @@ Assets will always include:
 1. A link to the final board deck with metrics in the shared Google Drive
 2. A link to the pre-shared materials for the Strategic Discussion
 3. List of action items
+
+Once everything has been finalized, share the high-level wins and strategic direction from the Open Session with your broader leadership team at the next Strategy meeting.
 
 ### Meeting Minutes
 
