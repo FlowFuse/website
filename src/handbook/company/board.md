@@ -165,6 +165,8 @@ This contains sensitive "Closed Matters" that require legal privilege or high-le
   - Legal: Pending litigation or regulatory updates.
   - Strategic Moves: M&A discussions, fundraising details, or layoffs.
   - Financials: Detailed burn rates and runway audits.
+  - Approval of minutes of the last BoD
+     - Link to the finalized minutes from the previous board meeting which are stored in the FlowFuse Admin Shared Drive, under Investors, in the appropriate year folder.
 
 ### Post meeting action items
 
