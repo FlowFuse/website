@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.37.3",
+    "@lorenzo_lewis/starlight-utils": "^0.3.2",
     "astro": "^5.6.1",
     "medium-zoom": "^1.1.0",
     "node-addon-api": "^8.5.0",

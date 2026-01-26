@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightUtils from '@lorenzo_lewis/starlight-utils';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -31,6 +32,16 @@ export default defineConfig({
     		src: '../src/images/ff-logo--wordmark--light.svg',
   		},
 			favicon: '/favicon.ico',
+			plugins: [
+				starlightUtils({
+					multiSidebar: {
+						switcherStyle: 'hidden',
+					},
+				}),
+			],
+			components: {
+				Footer: './src/components/Footer.astro',
+			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/FlowFuse' },
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/2RrvW8dkrF' },
