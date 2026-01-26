@@ -1,8 +1,8 @@
 ---
 title: "Why Modbus Refuses to Die"
-subtitle: "Why your factory's newest equipment still speaks a 46-year-old language"
-description: "Learn why Modbus, a 46-year-old protocol with zero security, still dominates industrial automation despite billions invested in modern alternatives"
-date: 2026-01-23
+subtitle: "Why your factory's newest equipment still speaks a 47-year-old language"
+description: "Learn why Modbus, a 47-year-old protocol with zero security, still dominates industrial automation despite billions invested in modern alternatives"
+date: 2026-01-26
 authors: ["sumit-shinde"]
 image: 
 keywords: Modbus, industrial automation, PLC, OPC UA, EtherNet/IP, MQTT, legacy systems, industrial protocols, factory automation, FlowFuse
@@ -10,11 +10,11 @@ tags:
  - flowfuse
 ---
 
-Modbus is 46 years old and has no built-in security. By every measure, it should have been obsolete a decade ago. OPC UA, EtherNet/IP, MQTT, Profinet: modern protocols with semantic modeling, encryption, and real-time capabilities arrived backed by billions in vendor investment and industry standardization efforts.
+Modbus is 47 years old and has no built-in security. By every measure, it should have been obsolete a decade ago. OPC UA, EtherNet/IP, MQTT, Profinet: modern protocols with semantic modeling, encryption, and real-time capabilities arrived backed by billions in vendor investment and industry standardization efforts.
 
 <!--more-->
 
-Yet in 2026, new equipment still ships with Modbus as the primary interface. Not tucked away for backwards compatibility: front and center as the deliberate first choice.
+Yet in 2026, new equipment still ships with Modbus as the primary interface. Not tucked away for backward compatibility, but front and center as the deliberate first choice.
 
 What's keeping a protocol from 1979 alive when everything about industrial automation has changed?
 
