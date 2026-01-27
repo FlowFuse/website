@@ -30,6 +30,9 @@ It is up to the contact owner to ensure their contacts have the appropriate life
 | Closed Won | Customer | CSM / Sales | Customer | 100% | N/A | N/A | N/A |
 
 </div>
+#### MQL follow-up expectations
+
+Marketing Qualified Leads (MQLs) should be engaged by a Sales Representative, according with the appropriate geographic region of the contact. Sales reps are encouraged to reserve time on a daily basis to review new and existing MQLs, reach out to them, and understand the nature of their interest in FlowFuse. The primary goals of this engagement are to clarify context, identify potential opportunities early, and, where appropriate, manually update lifecycle stage and lead status so that only genuine opportunities move forward in the pipeline within the first 24hours since the MQL has landed.
 
 #### Lifecycle changes
 
