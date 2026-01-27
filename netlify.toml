@@ -58,6 +58,12 @@ to = "https://flowfuse.com/:splat"
 status = 301
 force = true
 
+[[redirects]]
+from = "/handbook/*"
+to = "http://localhost:4321/handbook/:splat"
+status = 200
+force = true
+
 [dev]
 port = 8080
 framework = "#static"
