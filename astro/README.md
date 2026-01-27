@@ -44,6 +44,27 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## 📝 Content Management with Keystatic
+
+This project uses [Keystatic](https://keystatic.com/) as a Git-based CMS for editing handbook content.
+
+### Using the CMS locally
+
+1. Start the development server:
+   ```
+   npm run dev
+   ```
+
+2. Open the Keystatic admin interface at `http://localhost:4321/keystatic`
+
+3. Edit handbook pages through the visual editor
+
+4. Changes are saved directly to your local filesystem in `src/content/docs/handbook/`
+
+5. Commit and push your changes to Git as usual
+
+The CMS configuration is in `keystatic.config.ts`.
+
 ## 👀 Want to learn more?
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+Check out [Starlight's docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).

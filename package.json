@@ -18,6 +18,7 @@
         "dev:blueprints": "node scripts/watch_blueprints.js",
         "dev:netlify": "npx netlify dev -c \"dotenv -- npx @11ty/eleventy --serve --quiet --incremental\"",
         "dev:postcss": "dotenv -v TAILWIND_MODE=watch -- npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
+        "dev:astro": "npm --prefix astro run dev",
         "docs": "node scripts/copy_docs.js",
         "blueprints": "node scripts/copy_blueprints.js",
         "old_dev:eleventy": "dotenv -v NODE_ENV=development -- ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",

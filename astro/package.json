@@ -10,12 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.5.2",
+    "@astrojs/react": "^4.4.2",
     "@astrojs/starlight": "^0.37.3",
+    "@keystatic/astro": "^5.0.6",
+    "@keystatic/core": "^0.5.48",
     "@lorenzo_lewis/starlight-utils": "^0.3.2",
     "astro": "^5.6.1",
     "medium-zoom": "^1.1.0",
     "node-addon-api": "^8.5.0",
     "node-gyp": "^12.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "sharp": "^0.34.2"
   }
 }

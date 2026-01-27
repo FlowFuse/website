@@ -2,6 +2,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightUtils from '@lorenzo_lewis/starlight-utils';
+import keystatic from '@keystatic/astro';
+import react from '@astrojs/react';
+import node from '@astrojs/node';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -15,6 +18,7 @@ const handbookFolders = fs.readdirSync(handbookDir, { withFileTypes: true })
 
 // https://astro.build/config
 export default defineConfig({
+	adapter: node({ mode: 'standalone' }),
 	image: {
 		// Don't process GIFs - they can be too large
 		service: {
@@ -78,5 +82,7 @@ export default defineConfig({
 			lastUpdated: true,
       pagination: false
 		}),
+		react(),
+		keystatic(),
 	],
 });
