@@ -58,17 +58,19 @@ to = "https://flowfuse.com/:splat"
 status = 301
 force = true
 
+# Proxy to Astro dev server in development (when static files don't exist)
+# In production, static files in _site/handbook/ take precedence (force = false)
 [[redirects]]
 from = "/handbook/*"
 to = "http://localhost:4321/handbook/:splat"
 status = 200
-force = true
+force = false
 
 [[redirects]]
 from = "/keystatic/*"
-to = "https://localhost:4321/keystatic/:splat"
+to = "http://localhost:4321/keystatic/:splat"
 status = 200
-force = true
+force = false
 
 [dev]
 port = 8080

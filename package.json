@@ -23,7 +23,8 @@
         "blueprints": "node scripts/copy_blueprints.js",
         "old_dev:eleventy": "dotenv -v NODE_ENV=development -- ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
         "prod:eleventy": "npx @11ty/eleventy",
-        "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js"
+        "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js",
+        "prod:astro": "npm --prefix astro run build && mkdir -p _site/handbook && cp -r astro/dist/* _site/handbook/"
     },
     "devDependencies": {
         "@11ty/eleventy": "^2.0.1",

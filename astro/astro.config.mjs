@@ -19,6 +19,7 @@ const handbookFolders = fs.readdirSync(handbookDir, { withFileTypes: true })
 // https://astro.build/config
 export default defineConfig({
 	adapter: node({ mode: 'standalone' }),
+	base: '/handbook',
 	image: {
 		// Don't process GIFs - they can be too large
 		service: {
