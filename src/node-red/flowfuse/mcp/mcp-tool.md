@@ -4,12 +4,12 @@ eleventyNavigation:
   parent: MCP
 meta:
   title: MCP Tool
-  description: MCP Tool node allows you to create custom tools that AI assistants can invoke to perform specific tasks.
+  description: MCP Tool node allows you to create custom tools that FlowFuse Expert can invoke to perform specific tasks.
 ---
 
 # {{ meta.title }}
 
-MCP Tool node allows you to create custom tools that AI assistants can invoke to perform specific tasks. These tools can do anything a Node-RED flow can do - from querying databases and calling APIs to controlling IoT devices and processing data. The AI assistant decides when to call your tool based on the description and input schema you provide.
+MCP Tool node allows you to create custom tools that FlowFuse Expert can invoke to perform specific tasks. These tools can do anything a Node-RED flow can do - from querying databases and calling APIs to controlling IoT devices and processing data. The FlowFuse Expert decides when to call your tool based on the description and input schema you provide.
 
 ## Flow Requirements
 
@@ -50,12 +50,12 @@ Human-readable name shown to users in MCP clients. This is what users see when b
 ### Description
 `string` - Required
 
-Detailed description of what this tool does and when to use it. Be specific to help AI assistants understand when to invoke this tool.
+Detailed description of what this tool does and when to use it. Be specific to help FlowFuse Expert understand when to invoke this tool.
 
 ### Input Schema
 `JSON` - Required
 
-JSON schema defining the expected arguments for this tool. This tells the AI assistant what parameters to provide when calling your tool.
+JSON schema defining the expected arguments for this tool. This tells the FlowFuse Expert what parameters to provide when calling your tool.
 
 ## Input Schema
 
@@ -128,7 +128,7 @@ If your input schema defines:
 }
 ```
 
-The AI assistant calls your tool with:
+The FlowFuse Expert calls your tool with:
 ```json
 {
   "city": "London",

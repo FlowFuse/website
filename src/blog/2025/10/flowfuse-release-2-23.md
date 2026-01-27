@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.23: MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Assistant for Self-Hosted, and more!"
-subtitle: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Assistant for Self-Hosted, and more!"
-description: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Assistant for Self-Hosted, and more!"
+title: "FlowFuse 2.23: MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Expert for Self-Hosted, and more!"
+subtitle: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Expert for Self-Hosted, and more!"
+description: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Expert for Self-Hosted, and more!"
 date: 2025-10-23
 authors: ["greg-stoutenburg"]
 image: /blog/2025/10/images/flowfuse-release-2-23.png
@@ -43,9 +43,9 @@ You can now get complete instructions for building a Node-RED flow on [flowfuse.
 
 Head over to [flowfuse.com](https://flowfuse.com) to check it out! We have big plans in mind for this feature, but can't say much yet. For now, it's enough to say that low code development is headed toward a whole new level with FlowFuse.
 
-## FlowFuse Assistant for Self Hosted Deployments
+## FlowFuse Expert for Self Hosted Deployments
 
-Speaking of AI assistance, self-hosted FlowFuse deployments have until now not had access to the FlowFuse Assistant inside of Node-RED, helping to complete flows using natural language for explanation of flows, creation of Dashboard, Function, and Tables nodes, and Snapshot descriptions. These had been available only to FlowFuse Cloud customers. I'm happy to say that our many self-hosted customers now (finally) can get access to this tool, which helps speed flow creation exponentially. Contact [FlowFuse Support](https://flowfuse.com/support) to help get you setup.
+Speaking of AI assistance, self-hosted FlowFuse deployments have until now not had access to the FlowFuse Expert inside of Node-RED, helping to complete flows using natural language for explanation of flows, creation of Dashboard, Function, and Tables nodes, and Snapshot descriptions. These had been available only to FlowFuse Cloud customers. I'm happy to say that our many self-hosted customers now (finally) can get access to this tool, which helps speed flow creation exponentially. Contact [FlowFuse Support](https://flowfuse.com/support) to help get you setup.
 
 ## Import JSON at Instance Creation
 

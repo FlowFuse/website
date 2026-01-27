@@ -4,7 +4,7 @@ Adds documentation and explanatory notes directly within your flows.
 
 The Comment node helps document your flows by adding explanatory text that appears on the canvas. This is essential for maintaining flows over time, especially when working in teams or returning to flows after extended periods. By documenting the purpose, requirements, and logic of flow sections, you make flows more understandable, reduce interpretation errors, and speed up troubleshooting and modifications. Comments are particularly valuable for complex flows with link nodes, multi-tab workflows, or business logic that isn't obvious from the nodes alone.
 
-> If you need help documenting your flows, [FlowFuse Assistant](/docs/user/assistant/) can automatically generate documentation with Comment nodes. Simply select your flow and click the "Explain Flow" button, the AI will analyze your flow and create comprehensive documentation that you can add directly to your canvas.
+> If you need help documenting your flows, [FlowFuse Expert](/docs/user/assistant/) can automatically generate documentation with Comment nodes. Simply select your flow and click the "Explain Flow" button, the AI will analyze your flow and create comprehensive documentation that you can add directly to your canvas.
 
 ## Modes of operation
 

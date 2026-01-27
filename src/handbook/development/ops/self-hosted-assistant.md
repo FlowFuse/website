@@ -2,9 +2,9 @@
 navTitle: Self Hosted Assistant
 ---
 
-# FlowFuse Assistant
+# FlowFuse Expert
 
-FlowFuse Assistant is a collection of LLM based resources provided on FlowFuse Cloud.
+FlowFuse Expert is a collection of LLM based resources provided on FlowFuse Cloud.
 
 Access to these features is also available to Enterprise Licensed Self Hosted and Dedicated Customers.
 

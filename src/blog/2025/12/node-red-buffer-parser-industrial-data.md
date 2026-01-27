@@ -231,7 +231,7 @@ If you need conditional parsing where the structure changes based on values in t
 
 If you're dealing with bit-packed data where individual bits within bytes have meaning (common in PLC memory maps), you can use the `bool` type with Bit Offset, but extracting many bits gets tedious. Sometimes a function node doing bitwise operations is cleaner.
 
-> If you're using FlowFuse, you don’t even need to write JavaScript yourself. You can simply ask the [FlowFuse Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) in plain English, paste what your device manual says, and it will generate the Function node directly on your Node-RED canvas.
+> If you're using FlowFuse, you don’t even need to write JavaScript yourself. You can simply ask the [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) in plain English, paste what your device manual says, and it will generate the Function node directly on your Node-RED canvas.
 
 For standard Modbus registers, serial sensor protocols, and fixed-structure PLC memory layouts - which covers most industrial data, Buffer Parser does exactly what you need.
 
@@ -241,4 +241,4 @@ Binary data from industrial devices isn’t going anywhere. Modbus isn’t disap
 
 The Buffer Parser makes that reality manageable. You don't need to be a buffer expert or master bitwise operations. You just need your device manual, a few minutes to configure the node, and—occasionally—the patience to flip the endianness when a value looks strange. The buffers are still just arrays of bytes, but now you have a tool that turns them into meaningful data without rewriting JavaScript every time you add a new sensor. That's worth something.
 
-And if you’re managing industrial devices at scale—handling remote Node-RED instances, deploying updates across fleets of edge hardware, or keeping everything secure and consistent—FlowFuse can remove much of the daily friction. With features like remote deployment, snapshots, secure device connectivity, and the AI Assistant built right into the editor, you can **[book a free demo](/book-demo/)**. Our team will understand your requirements, show you exactly how FlowFuse fits into your workflow, and guide you on getting the most out of your industrial data pipelines.
+And if you’re managing industrial devices at scale—handling remote Node-RED instances, deploying updates across fleets of edge hardware, or keeping everything secure and consistent—FlowFuse can remove much of the daily friction. With features like remote deployment, snapshots, secure device connectivity, and the FlowFuse AI Expert built right into the editor, you can **[book a free demo](/book-demo/)**. Our team will understand your requirements, show you exactly how FlowFuse fits into your workflow, and guide you on getting the most out of your industrial data pipelines.

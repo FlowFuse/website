@@ -115,7 +115,7 @@ While resources are useful for providing access to data, tools enable an AI agen
 
 5. Define the input schema in JSON format. This schema helps the AI understand what data is required to perform the action and also validates incoming requests. For detailed guidance, refer to the [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step).
 
-   > Tip: You can also use the FlowFuse AI Assistant to generate the JSON schema automatically. Just click **Ask FlowFuse Assistant** in the input schema field and describe the expected input in plain English.
+   > Tip: You can also use the FlowFuse Expert to generate the JSON schema automatically. Just click **Ask FlowFuse Expert** in the input schema field and describe the expected input in plain English.
 
 Below is an example schema for a Tool node. It shows how data is defined, its type, and which fields are required along with minimum lengths:
 

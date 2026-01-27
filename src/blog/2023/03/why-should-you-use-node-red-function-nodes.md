@@ -48,15 +48,15 @@ Function nodes are an essential part of Node-RED. They allow you to write custom
 
 FlowFuse offers a robust platform for building, scaling, and securing your Node-RED applications. 
 
-We are constantly adding new features to make it easy to use in the enterprise where you can rapidly improve your industrial processes. The **"FlowFuse Assistant."** for example is an AI-powered tool that simplifies the creation of Function nodes. You only need to provide a prompt, and the assistant generates the Function nodes for you.
+We are constantly adding new features to make it easy to use in the enterprise where you can rapidly improve your industrial processes. The **"FlowFuse Expert"** for example is an AI-powered tool that simplifies the creation of Function nodes. You only need to provide a prompt, and the assistant generates the Function nodes for you.
 
-For more details on using the FlowFuse Assistant, visit [the Assistants Documentation](/docs/user/assistant/).
+For more details on using the FlowFuse Expert, visit [the FlowFuse Expert Documentation](/docs/user/assistant/).
 
-## Conclusion:
+## Conclusion
 
 Function nodes are particularly valuable for users who possess JavaScript programming skills. They allow for complex tasks, advanced data manipulation, and integration with external APIs, providing a high level of customization and flexibility. However, they require a good understanding of JavaScript to implement effectively and can be more challenging to manage and debug compared to standard Node-RED nodes.
 
 On the other hand, standard Node-RED nodes offer a simpler and more accessible approach, making it easy for users without programming expertise to create and maintain flows. They are designed for straightforward tasks and provide modularity, benefiting from a supportive community for troubleshooting and knowledge sharing.
 
-Ultimately, the choice between using function nodes and standard nodes will depend on your project's requirements and your familiarity with JavaScript. If you seek deep customization and flexibility, function nodes—enhanced by tools like FlowFuse Assistant—might be the best choice. For those who value simplicity and ease of use, standard Node-RED nodes are a great fit.
+Ultimately, the choice between using function nodes and standard nodes will depend on your project's requirements and your familiarity with JavaScript. If you seek deep customization and flexibility, function nodes—enhanced by tools like FlowFuse Expert—might be the best choice. For those who value simplicity and ease of use, standard Node-RED nodes are a great fit.
 

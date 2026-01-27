@@ -139,7 +139,7 @@ msg.payload = {
 return msg;
 ```
 
-> Tip: You don’t need to know JavaScript to create a function for validating and extracting the label text you’re scanning — just tell the [FlowFuse Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) what you want, and it will generate it for you.
+> Tip: You don’t need to know JavaScript to create a function for validating and extracting the label text you’re scanning — just tell the [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) what you want, and it will generate it for you.
 
 4. Click **Done**.
 
@@ -171,7 +171,7 @@ Your OCR scanning system is now complete! You can test it by opening the dashboa
 
 If you want to fully automate this process, you can set up a fixed camera positioned where products pass through on the production line. This approach eliminates manual scanning, but it will require proper camera mounting, lighting setup, and trigger mechanisms to capture images at the right moment as products move past the camera.
 
-Furthermore, you can push scanned label data to a database. The easiest way to do this is using [FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which is a built-in database service managed by FlowFuse. You'll find the **query** node in the palette that not only simplifies setup by connecting to the FlowFuse Tables database without any setup, it also has access to the integrated FlowFuse Assistant, allowing you to [generate queries using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/) — no SQL skills required!
+Furthermore, you can push scanned label data to a database. The easiest way to do this is using [FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which is a built-in database service managed by FlowFuse. You'll find the **query** node in the palette that not only simplifies setup by connecting to the FlowFuse Tables database without any setup, it also has access to the integrated FlowFuse Expert, allowing you to [generate queries using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/) — no SQL skills required!
 
 ## What's Next?
 
