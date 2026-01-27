@@ -53,5 +53,5 @@ When a new ticket comes in, categorize it, answer the question directly, or rout
 
 Common spam includes booth design offers and unsolicited sales pitches. 
 
-For these, simple click "Mark as spam" in the orange "Actions" dropdown located top-right.  They will disapear from the ticket list after a short while, but you can also simply delete the ticket.
+For these, click "Mark as spam" in the orange "Actions" dropdown located top-right.  They will disappear from the ticket list after a short while, but you can also simply delete the ticket.
 
