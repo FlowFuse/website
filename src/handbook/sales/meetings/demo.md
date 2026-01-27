@@ -47,6 +47,13 @@ We have a team prepared on FlowFuse Cloud called [Acme Manufacturing Corp](https
     *   Emphasize how the platform can help organizations streamline their industrial automation and IoT initiatives by providing a centralized, secure, and scalable solution for managing their Node-RED deployments.
     *   Encourage the audience to explore the FlowFuse platform further and consider how it could benefit their own use cases, whether in manufacturing, energy, transportation, or other industries.
 
+## White-Glove Onboarding Flow
+
+We've launched a new sign-up flow where we offer white-glove onboarding to all customers. It’s designed to provide a tailored experience based on a lead’s specific operational needs and technical maturity.
+The process is triggered immediately when a customer signs up via the website, with HubSpot automatically handling contact creation.
+It also includes steps through a live demo on how to provision the customer with the correct license and start their trial. 
+The entire flow, associated scripts, and documents can be [found here](https://docs.google.com/presentation/d/12-Jqi5I9J62L94lBa-Ddi6QATqEzHk4J1qvpfHKeGN4/edit?slide=id.p#slide=id.p). 
+
 ## More Resources
 
 A video recording of this demo can be [accessed here](https://drive.google.com/file/d/1cHSSQVFol-EyfhHUYtJxSZp4_O7KMYhp/view?usp=sharing).

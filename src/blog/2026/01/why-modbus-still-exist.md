@@ -4,7 +4,7 @@ subtitle: "Why your factory's newest equipment still speaks a 47-year-old langua
 description: "Learn why Modbus, a 47-year-old protocol with zero security, still dominates industrial automation despite billions invested in modern alternatives"
 date: 2026-01-26
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/01/images/why-modbus-wont-dia.png
 keywords: Modbus, industrial automation, PLC, OPC UA, EtherNet/IP, MQTT, legacy systems, industrial protocols, factory automation, FlowFuse
 tags:
  - flowfuse
