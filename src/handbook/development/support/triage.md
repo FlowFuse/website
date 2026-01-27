@@ -51,8 +51,7 @@ When a new ticket comes in, categorize it, answer the question directly, or rout
 
 ## Handling Spam
 
-Common spam includes booth design offers and unsolicited sales pitches. For these:
+Common spam includes booth design offers and unsolicited sales pitches. 
 
-1. Do not reply
-2. Close the ticket in HubSpot
-3. Delete the notification from #support-tickets to reduce noise
+For these, simple click "Mark as spam" in the orange "Actions" dropdown located top-right.  They will disapear from the ticket list after a short while, but you can also simply delete the ticket.
+
