@@ -68,3 +68,9 @@ The CMS configuration is in `keystatic.config.ts`.
 ## 👀 Want to learn more?
 
 Check out [Starlight's docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+
+### Migration from Astro
+
+As we migrate away from 11ty to Astro, there's a couple of things to note.
+
+- [ ] `npm run start` starts 2 dev servers and netlify.toml joins the servers's output

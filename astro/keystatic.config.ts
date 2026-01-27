@@ -4,13 +4,12 @@ export default config({
   storage: {
     kind: 'github',
     repo: 'flowfuse/website',
-    branchPrefix: 'handbook/',
   },
   collections: {
     docs: collection({
       label: 'Handbook Pages',
       slugField: 'title',
-      path: 'src/content/docs/handbook/**',
+      path: 'astro/src/content/docs/handbook/**',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {

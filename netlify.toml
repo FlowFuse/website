@@ -64,6 +64,12 @@ to = "http://localhost:4321/handbook/:splat"
 status = 200
 force = true
 
+[[redirects]]
+from = "/keystatic/*"
+to = "https://localhost:4321/keystatic/:splat"
+status = 200
+force = true
+
 [dev]
 port = 8080
 framework = "#static"
