@@ -1,5 +1,5 @@
 ---
-title: Device Agent Docker Containers
+title: Device Agent Docker Containers updated
 description: Expanding the available NodeJS versions available
 date: 2026-01-27 12:00:00.0
 authors: ['ben-hardill']
@@ -8,16 +8,13 @@ tags:
 issues:
   - "https://github.com/FlowFuse/device-agent/issues/555"
 ---
+We have started to see some Node-RED nodes dropping support for NodeJS v18. This is causing problems for users of our Device Agent docker container as that is still based on NodeJS v18.
 
-Starting with v3.7.2 of the Device Agent we are now producing 2 versions of the Docker container allowing a wider selection of NodeJS versions.
+To help move things forward, with the v3.7.2 release of the Device Agent, we are now publishing separate container images for both v18 and v20 under different tags.
 
-The change adds a NodeJS v20 container along side the existing NodeJS v18. This is to support Node-RED nodes that are starting to drop NodeJS v18 support.
+The `latest` tag will continue to point to the NodeJS v18 version for now for backwards compatibility. The next major release of the device agent will update the `latest` tag to a newer NodeJS version - and may require a migration step if you are using the module cache feature. We'll share more details when that release arrives.
 
-You can tell them apart as the tag will have either a `-18` or `-20` suffix.
-
-For now the `latest` tag will continue to point to the NodeJS v18 version but we will be looking to switch this to the NodeJS v20 build at some point in the future as well as adding more of the LTS NodeJS releases.
-
-List of current tags:
+With this update, the following tags are now available:
 
 ## NodeJS 18
 
