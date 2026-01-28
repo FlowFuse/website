@@ -9,11 +9,13 @@ issues:
   - "https://github.com/FlowFuse/device-agent/issues/555"
 ---
 
-Starting with v3.7.2 of the Device Agent we are now producing 2 versions of the Docker container.
+Starting with v3.7.2 of the Device Agent we are now producing 2 versions of the Docker container allowing a wider selection of NodeJS versions.
 
-The change adds a NodeJS v20 container along side the NodeJS v18. You can tell them apart as the tag will have either a `-18` or `-20` suffix.
+The change adds a NodeJS v20 container along side the existing NodeJS v18. This is to support Node-RED nodes that are starting to drop NodeJS v18 support.
 
-For now the `latest` tag will continue to point to the NodeJS v18 version but we will be looking to switch this to the NodeJS v20 build at some point in the future.
+You can tell them apart as the tag will have either a `-18` or `-20` suffix.
+
+For now the `latest` tag will continue to point to the NodeJS v18 version but we will be looking to switch this to the NodeJS v20 build at some point in the future as well as adding more of the LTS NodeJS releases.
 
 List of current tags:
 
