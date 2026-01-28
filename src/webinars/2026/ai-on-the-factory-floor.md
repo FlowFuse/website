@@ -7,7 +7,7 @@ image: /images/webinars/ai-on-the-factory-floor.jpg
 date: 2026-01-27
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: TdED5bCP8cs
+video: 8gYyl5SdU-s
 hosts: ["drew-gatti", "kristopher-sandoval", "kin-lane", "michael-palmer"]
 hubspot:
     formId: 3de0fc9a-8ed0-4c27-94da-0fff6c3d79ec
