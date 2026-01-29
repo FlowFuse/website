@@ -162,15 +162,7 @@ FlowFuse compensates some employees through bonuses tied to role-specific goals,
 ## Bonus Tracking
 All active bonuses must be listed in the [Employee Bonus Tracker](https://docs.google.com/spreadsheets/d/1VI3iaqkOtLGYKJ_dNshjjyYJPCxDg3pnNJT46X1URFI/edit?usp=sharing).
 
-## The tracker must include:
-* Employee name
-* Role
-* Bonus cadence (quarterly, yearly, or period-specific)
-* Bonus triggers and thresholds
-* Manager
-* Maximum or fixed bonus amount
-
-Managers are responsible for ensuring bonus triggers and MBOs are clear, measurable, and time-bound.
+Managers are responsible for ensuring bonus triggers and MBOs are updated, clear, measurable, and time-bound.
 
 ## Quarterly & Period-Based Bonuses (MBOs)
 For bonuses tied to quarterly or period-based MBOs:
@@ -183,7 +175,7 @@ For bonuses tied to quarterly or period-based MBOs:
 Bonuses will not be processed if MBOs are defined or changed after the period has started.
 
 ## Bonus Review (End of Period)
-* Within 5 business days after period end, the employee sends a final MBO summary to the Manager and CEO covering:
+* Within 5 business days after period end, the employee sends a final MBO summary to the Manager covering:
   * Bonus period (quarter or dates)
   * Agreed MBO goals
   * Results achieved per goal
