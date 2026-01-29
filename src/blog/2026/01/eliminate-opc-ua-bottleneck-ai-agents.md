@@ -1,7 +1,8 @@
 ---
 title: "Agentic AI Reads OPC UA Servers So You Don't Have To"
 subtitle: "Why manual OPC UA investigation is the bottleneck, and how agentic AI eliminates it"
-date: 2026-01-06
+description: "Learn how agentic AI transforms OPC UA server investigations—automating data access, analysis, and root cause detection to turn hours of manual work into minutes."
+date: 2026-01-29
 keywords: OPC UA, AI Agents, MCP, FlowFuse, Industrial IoT, Root Cause Analysis, Node-RED.
 authors: ["sumit-shinde"]
 image: 
@@ -80,11 +81,11 @@ The video below shows an AI agent generating complete OPC UA server documentatio
 
 Connecting agents to OPC UA infrastructure delivers capabilities manual investigation can't match at scale.
 
-**Autonomous navigation across address spaces.** Agents read node hierarchies, examine metadata—DisplayNames, EngineeringUnits, data types, access levels—follow references between nodes, build structural understanding of systems. You describe what you need, agent locates relevant nodes. No memorizing namespace paths or node IDs. Looking for a pump's discharge pressure sensor buried five levels deep in your hierarchy? Agent finds it by understanding equipment relationships, not because someone documented the exact path.
+- **Autonomous navigation across address spaces.** Agents read node hierarchies, examine metadata—DisplayNames, EngineeringUnits, data types, access levels—follow references between nodes, build structural understanding of systems. You describe what you need, agent locates relevant nodes. No memorizing namespace paths or node IDs. Looking for a pump's discharge pressure sensor buried five levels deep in your hierarchy? Agent finds it by understanding equipment relationships, not because someone documented the exact path.
 
-**Automated data analysis across historians.** Agents pull historical data, run statistical tests, calculate correlations, detect anomalies, compare time periods, validate significance. Ask "How does ambient temperature affect motor current draw on Line 2?" and get months of historian data analyzed—variables correlated, confounding factors accounted for, confidence intervals calculated. Manual approach means days of Excel work: extraction, cleaning, statistical analysis, validation. Agent returns analyzed results in minutes while you're still drinking your coffee.
+- **Automated data analysis across historians.** Agents pull historical data, run statistical tests, calculate correlations, detect anomalies, compare time periods, validate significance. Ask "How does ambient temperature affect motor current draw on Line 2?" and get months of historian data analyzed—variables correlated, confounding factors accounted for, confidence intervals calculated. Manual approach means days of Excel work: extraction, cleaning, statistical analysis, validation. Agent returns analyzed results in minutes while you're still drinking your coffee.
 
-**Pattern recognition at operational scale.** Agents analyze patterns across days, weeks, months of continuous operation—patterns humans miss because they require simultaneous analysis of thousands of variables. "Show me every instance where Variable_A spiked within ten minutes of Variable_B changing" becomes a query you actually ask instead of a question you abandon. Finding subtle leading indicators of equipment degradation across hundreds of sensors? Agent correlates every variable combination, identifies statistically significant patterns, surfaces predictions. Doing this manually would take months of dedicated work. Nobody attempts it because nobody has months to spare.
+- **Pattern recognition at operational scale.** Agents analyze patterns across days, weeks, months of continuous operation—patterns humans miss because they require simultaneous analysis of thousands of variables. "Show me every instance where Variable_A spiked within ten minutes of Variable_B changing" becomes a query you actually ask instead of a question you abandon. Finding subtle leading indicators of equipment degradation across hundreds of sensors? Agent correlates every variable combination, identifies statistically significant patterns, surfaces predictions. Doing this manually would take months of dedicated work. Nobody attempts it because nobody has months to spare.
 
 Investigation capabilities that previously required dedicated data science teams become natural language queries. Complex analyses finish in minutes instead of weeks. Questions you'd skip because the investigation wasn't worth the effort become routine operational intelligence you actually use.
 
