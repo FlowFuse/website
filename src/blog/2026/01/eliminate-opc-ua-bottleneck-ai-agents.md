@@ -22,15 +22,17 @@ OPC UA gave machines a common language. It solved connectivity. But it created a
 
 The solution isn't better visualization or more dashboards. It's removing humans from the navigation process entirely. AI agents can browse OPC UA servers, pull historian data, run correlations, and surface answers while you're still typing the question.
 
-# The Investigation Bottleneck
+# Why Investigation Remains the Bottleneck
 
-Implementation isn’t the problem anymore. Industrial teams connect devices, configure historians, and establish data flows with remarkable efficiency using modern platforms like FlowFuse. The bottleneck emerges when someone needs to actually use that data.
+Implementation problems in industrial IoT are largely solved. Teams connect devices, configure historians, and establish data flows with impressive efficiency, especially on platforms like FlowFuse. The wheels fall off when someone actually needs to *use* that data.
 
-Your dashboard flags a reject rate spike on Line 3. That's the easy part—monitoring works. But dashboards show symptoms, not causes. Finding the cause means pulling data for dozens of variables, checking what changed in the hours before the spike, testing correlations between temperature sensors and quality metrics, comparing this week's patterns against baseline operations. What should take minutes consumes your morning because every step requires manual work.
+Your monitoring dashboard flags a reject rate spike on Line 3. That's the easy part—alerts work. But dashboards show you *symptoms*, not *causes*. Finding the cause means reconstructing what happened in the hours leading up to the spike. Which of the seventy-three variables on Line 3 changed? What correlations exist between the temperature sensors and quality metrics? How does this week's pattern compare to normal operations?
 
-Here's what makes this a systemic problem rather than an isolated inconvenience: Every operational question follows this same investigative pattern. Why did energy consumption jump last Tuesday? Which sensor readings predict motor failures? What operating conditions maximize throughput on the packaging line? Different questions, identical process—navigate namespaces, extract data, analyze patterns, interpret results. The data exists. The infrastructure works. But accessing meaningful insights requires hours of manual effort each time.
+Every operational question follows this pattern. Why did energy consumption spike Tuesday? Which sensor readings predict motor failures? What operating conditions maximize packaging throughput? The questions change. The investigative workflow doesn't—navigate namespaces, extract data, analyze patterns, interpret results. Manual. Every. Single. Time.
 
-Standard solutions miss the point. Hiring more analysts just distributes the same manual work across more people. Building more dashboards only helps when you already know what to monitor—they don't help with exploration, with unexpected questions, with the kind of investigation that drives real operational improvement.
+Here's what makes this a systemic crisis rather than an annoyance: the data exists. The infrastructure works. But converting data into operational intelligence requires hours of skilled labor *per question*. So people stop asking questions. They stick to pre-configured dashboards showing metrics someone decided to monitor six months ago. They don't explore. They don't investigate unexpected patterns. They definitely don't do the kind of exploratory analysis that actually drives improvement.
+
+The standard solutions miss the fundamental problem. Hiring more analysts scales linearly at best—you get three people doing manual work instead of one. Building more dashboards only helps when you already know what to monitor. Neither solves for the unexpected question, the one-off investigation, the "something doesn't look right" hunch that requires pulling data you've never looked at before.
 
 ## What AI Changes
 
