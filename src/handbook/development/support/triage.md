@@ -6,7 +6,27 @@ navTitle: Triage Duty
 
 ## Overview
 
-Support triage duty is a first-line monitoring role to ensure incoming support requests are promptly categorized and routed to the right person. The goal is not to solve every issue yourself, but to make sure nothing falls through the cracks and customers receive timely responses.
+Support triage duty is a first-line monitoring role to ensure incoming support requests are promptly categorized and routed to the right person. The goal is not to solve every issue yourself, but to make sure nothing falls through the cracks and customers receive timely responses. To keep every department connected to our users and share the support load, we are moving to a Full Company Triage Rotation starting on Feb 9th.
+
+## The Why
+
+Historically, HubSpot triage was a collection of miscellaneous tickets with no formal caregiver, making it difficult to track department-specific needs. Departments checked in as needed, but there was a risk of technical, sales, and marketing questions falling through the cracks. To ensure a successful and fair triage role, we are moving to a Full Company Rotation to ensure every ticket gets a clear onward journey.
+
+## The Flow: How it works
+
+- **The Schedule**: Each Friday, the Support Coordinator will name the next Triage Lead in #support-tickets in Slack to confirm who is on duty for the week ahead.
+- **The Shift**: Your rotation lasts one week (Monday to Friday).
+- **The Goal**: You aren't expected to solve every technical issue. Your job is to identify, label, and route the ticket so it gets to the right human.
+
+### Weekly Responsibilities
+
+- **Monitor HubSpot**: Check the [Unassigned Triage](https://app-eu1.hubspot.com/help-desk/26586079/view/236761036/list-view) view daily. 
+- **Tag & Route**: Categorize tickets based on the handbook guidelines.
+- **Communicate**: Ping the relevant team in Slack if a ticket is urgent.
+
+### Vacation & OOO
+
+The Support Coordinator will cross-reference the rotation with Deel each week to identify OOO conflicts and proactively swap any unavailable team members with an active colleague.
 
 ## Where Tickets Come From
 
