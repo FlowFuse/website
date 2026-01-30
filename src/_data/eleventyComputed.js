@@ -1,15 +1,40 @@
-// Generate a description from the handbook page path
-function handbookDescriptionFromPath(data) {
-    if (!data.page.url || !data.page.url.match(/\/handbook\/.+/)) return null;
+const fs = require('fs');
 
-    const pathParts = data.page.url.split('/').filter(p => p && p !== 'handbook');
-    if (pathParts.length > 0) {
-        const section = pathParts[0];
-        const pageName = data.navTitle || data.title || pathParts[pathParts.length - 1];
-        return `${pageName} - FlowFuse ${section.charAt(0).toUpperCase() + section.slice(1)} Handbook`;
+// Extract the first meaningful paragraph from a markdown file's raw source
+function extractFirstParagraph(inputPath) {
+    try {
+        const content = fs.readFileSync(inputPath, 'utf-8');
+        // Strip frontmatter
+        const withoutFrontMatter = content.replace(/^---[\s\S]*?---/, '').trim();
+        // Split into blocks by double newlines
+        const blocks = withoutFrontMatter.split(/\n\n+/);
+        // Find the first block that looks like a paragraph (not a heading, list, image, code fence, or nunjucks tag)
+        const paragraph = blocks.find(b => {
+            const trimmed = b.trim();
+            return trimmed &&
+                !trimmed.startsWith('#') &&
+                !trimmed.startsWith('- ') &&
+                !trimmed.startsWith('* ') &&
+                !trimmed.match(/^\d+\.\s/) &&
+                !trimmed.startsWith('![') &&
+                !trimmed.startsWith('```') &&
+                !trimmed.startsWith('{%') &&
+                !trimmed.startsWith('|');
+        });
+        if (!paragraph) return null;
+        // Strip markdown syntax
+        return paragraph
+            .replace(/!\[.*?\]\(.*?\)/g, '')
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+            .replace(/(\*\*|__)(.*?)\1/g, '$2')
+            .replace(/(\*|_)(.*?)\1/g, '$2')
+            .replace(/`([^`]+)`/g, '$1')
+            .replace(/\n/g, ' ')
+            .trim()
+            .substring(0, 200);
+    } catch (e) {
+        return null;
     }
-
-    return null;
 }
 
 module.exports = {
@@ -28,9 +53,9 @@ module.exports = {
                 return data.description || data.meta?.description;
             }
 
-            // For handbook pages, generate from page path
+            // For handbook pages, extract first paragraph from markdown source
             if (data.page.url && data.page.url.match(/\/handbook\/.+/)) {
-                return handbookDescriptionFromPath(data);
+                return extractFirstParagraph(data.page.inputPath);
             }
 
             // Return null to let base.njk use site subtitle
@@ -48,7 +73,7 @@ module.exports = {
             const title = encodeURIComponent(data.navTitle || data.title || 'Handbook');
             const description = encodeURIComponent(
                 data.description ||
-                handbookDescriptionFromPath(data) ||
+                extractFirstParagraph(data.page.inputPath) ||
                 ''
             );
 
