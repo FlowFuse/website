@@ -410,8 +410,12 @@ module.exports = function(eleventyConfig) {
                 // Do not rewrite absolute urls, in-page anchors or emails
                 continue
             }
-            // */abc.md#anchor => */abc/#anchor
-            url = url.replace(/.md(#.*)?$/, '$1')
+            // */abc.md => */abc/ and */abc.md#anchor => */abc/#anchor
+            if (url.endsWith('.md')) {
+                url = url.slice(0, -3) + '/';
+            } else if (url.match(/\.md#/)) {
+                url = url.replace(/\.md(#.*)$/, '/$1');
+            }
             // */README#anchor => */#anchor
             url = url.replace(/README(#.*)?$/, '$1')
             if (url[0] !== '/' && !isIndexPage) {
