@@ -418,7 +418,7 @@ module.exports = function(eleventyConfig) {
                 url = '../'+url
             }
 
-            str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[1].length)
+            str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[0].length)
         }
         return str;
     })
