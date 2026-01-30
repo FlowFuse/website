@@ -162,7 +162,7 @@ FlowFuse compensates some employees through bonuses tied to role-specific goals,
 ## Bonus Tracking
 All active bonuses must be listed in the [Employee Bonus Tracker](https://docs.google.com/spreadsheets/d/1VI3iaqkOtLGYKJ_dNshjjyYJPCxDg3pnNJT46X1URFI/edit?usp=sharing) (🔒 access only for BizzOps team members).
 
-Managers are responsible for ensuring bonus triggers and MBOs are updated, clear, measurable, and time-bound.
+Each manager is responsible for ensuring the BizzOps team is informed timely, before the start of a quarter, what bonus triggers and MBOs are in play, clear, measurable, and time-bound. Explicit approval from the CEO is required for each bonus structure.
 
 ## Quarterly & Period-Based Bonuses (MBOs)
 For bonuses tied to quarterly or period-based MBOs:
