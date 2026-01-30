@@ -2,7 +2,7 @@
 title: "Agentic AI Reads OPC UA Servers So You Don't Have To"
 subtitle: "Why manual OPC UA investigation is the bottleneck, and how agentic AI eliminates it"
 description: "Learn how agentic AI transforms OPC UA server investigations—automating data access, analysis, and root cause detection to turn hours of manual work into minutes."
-date: 2026-01-29
+date: 2026-01-30
 keywords: OPC UA, AI Agents, MCP, FlowFuse, Industrial IoT, Root Cause Analysis, Node-RED.
 authors: ["sumit-shinde"]
 image: 
