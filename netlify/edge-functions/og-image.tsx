@@ -1,7 +1,7 @@
 import React from "https://esm.sh/react@18.2.0";
 import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
 
-async function loadGoogleFont(font, text) {
+async function loadGoogleFont(font: string, text: string) {
   const url = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text)}`;
   const css = await (await fetch(url)).text();
   const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
@@ -16,7 +16,7 @@ async function loadGoogleFont(font, text) {
   throw new Error('failed to load font data');
 }
 
-export default async (request) => {
+export default async (request: Request) => {
   const { searchParams } = new URL(request.url);
 
   // Get parameters from URL
@@ -25,7 +25,7 @@ export default async (request) => {
   const section = searchParams.get('section') || '';
 
   // Combine all text for font loading
-  const allText = `${title} ${description} ${section} Handbook`;
+  const allText = `${title} ${description} ${section} Handbook •`;
 
   // Load Heebo fonts (regular and semibold)
   const heeboRegular = await loadGoogleFont('Heebo:wght@400', allText);
@@ -58,7 +58,6 @@ export default async (request) => {
             src="https://flowfuse.com/handbook/images/logos/ff-icon--light.png"
             width="80"
             height="80"
-            alt="FlowFuse"
           />
 
           {/* Handbook badge with section */}
@@ -74,10 +73,10 @@ export default async (request) => {
           >
             <span style={{ color: '#111827' }}>Handbook</span>
             {section && (
-              <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <span style={{ color: '#D1D5DB' }}>•</span>
                 <span style={{ textTransform: 'capitalize', color: '#9CA3AF' }}>{section}</span>
-              </>
+              </div>
             )}
           </div>
         </div>
@@ -93,9 +92,8 @@ export default async (request) => {
             maxWidth: '100%',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
+            lineClamp: 2,
+            display: 'flex',
           }}
         >
           {title}
@@ -106,7 +104,11 @@ export default async (request) => {
           <div
             style={{
               position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
               maxWidth: '100%',
+              overflow: 'hidden',
+              maxHeight: '270px',
             }}
           >
             <div
@@ -117,9 +119,8 @@ export default async (request) => {
                 maxWidth: '100%',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
-                display: '-webkit-box',
-                WebkitLineClamp: 5,
-                WebkitBoxOrient: 'vertical',
+                lineClamp: 5,
+                display: 'flex',
               }}
             >
               {description}
@@ -132,8 +133,7 @@ export default async (request) => {
                 left: 0,
                 right: 0,
                 height: '80px',
-                background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)',
-                pointerEvents: 'none',
+                backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)',
               }}
             />
           </div>
