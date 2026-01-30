@@ -160,7 +160,7 @@ For employees located in Canada, FlowFuse hires through Deel as Employer of Reco
 FlowFuse compensates some employees through bonuses tied to role-specific goals, quarterly MBOs, or company performance. Bonus eligibility and maximum amounts are defined in the employee’s contract. This guide outlines how bonuses are tracked, reviewed, approved, and paid.
 
 ## Bonus Tracking
-All active bonuses must be listed in the [Employee Bonus Tracker](https://docs.google.com/spreadsheets/d/1VI3iaqkOtLGYKJ_dNshjjyYJPCxDg3pnNJT46X1URFI/edit?usp=sharing).
+All active bonuses must be listed in the [Employee Bonus Tracker](https://docs.google.com/spreadsheets/d/1VI3iaqkOtLGYKJ_dNshjjyYJPCxDg3pnNJT46X1URFI/edit?usp=sharing) (🔒 access only for BizzOps team members).
 
 Managers are responsible for ensuring bonus triggers and MBOs are updated, clear, measurable, and time-bound.
 
