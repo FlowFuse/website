@@ -285,6 +285,10 @@ The board has the following states:
  - `Review` - items that are ready to be reviewed (PR open & [feature demo](#feature-demos) created)
  - `Done` - items that are [Done](#defining-done)
 
+##### PR Preview Deployments
+
+PRs to the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse) repository automatically receive preview deployment URLs posted to the [`#gh-pipelines`](https://flowfuse.slack.com/archives/C067BD0377F) Slack channel. Use these to test changes in a live environment during review.
+
 ##### In Design Deliverables
 
 Both UX/UI work and engineering work can be "In Design". For both instances there should still be defined deliverables. 

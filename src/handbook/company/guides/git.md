@@ -108,6 +108,15 @@ Once you press the 'Create pull request' button an alert will be sent to one of 
 
 ![Request a review from a specific colleague](../../images/git-how-to/nominate-a-reviewer-1.gif "@skip")
 
+#### Preview URLs
+
+After creating a Pull Request, you can preview your changes before they go live:
+
+- **[FlowFuse/website](https://github.com/FlowFuse/website)**: Look for the Netlify bot comment on your PR with a preview link
+- **[FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)**: Preview URLs are posted to the [`#gh-pipelines`](https://flowfuse.slack.com/archives/C067BD0377F) Slack channel
+
+These preview links let you and your reviewer see exactly how your changes will look.
+
 ### Requesting a review of your work
 
 Once a colleague has [reviewed](#review) your work you will receive an email alert. They can provide feedback on your work in three ways, sometimes a [review](#review) will include more than one type of feedback.
