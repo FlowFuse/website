@@ -162,24 +162,23 @@ Example standup messages:
 
 1. Purpose & Attendance
 Our Monday meeting serves a dual purpose: maintaining organizational alignment as we scale and fostering a connected team culture.
-* First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals.
-* Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities.
+   * First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals.
+   * Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities.
 
 2. Format: Department Spotlights
 Each Monday, one department will lead a 5–10 minute presentation. These briefings are intended to be concise, high-level, and focused on information that impacts the broader organization.
 The rotation will follow a four-week cycle:
-* Week 1: Company Update – Focusing on organizational health and "big picture" goals by the CEO
-* Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by the Engineering & Product leadership
-* Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Sales leadership
-* Week 4: Marketing – Highlighting how we are communicating our value to the market by marketing leadership
+   * Week 1: Company Update – Focusing on organizational health and "big picture" goals by the CEO
+   * Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by the Engineering & Product leadership
+   * Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Sales leadership
+   * Week 4: Marketing – Highlighting how we are communicating our value to the market by marketing leadership
 
 3. Presenter Guidelines 
 To maintain a high-energy pace and respect the team's time:
-
-* Content: Focus on three pillars: Recent Wins, Current Challenges, and Upcoming Milestones.
-* Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
-* Visuals: Keep to 3–5 high-impact, data-informed slides.
-* Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
+   * Content: Focus on three pillars: Recent Wins, Current Challenges, and Upcoming Milestones.
+   * Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
+   * Visuals: Keep to 3–5 high-impact, data-informed slides.
+   * Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
 
 4. Open Agenda (Optional Segment)
 For the latter portion of the meeting, team members are encouraged to add items to the agenda. This is an informal space to share weekend highlights, personal news, or professional updates that keep you busy.
