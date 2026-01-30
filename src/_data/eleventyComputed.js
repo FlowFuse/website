@@ -70,19 +70,25 @@ module.exports = {
 
         // For handbook pages without an image, generate dynamic OG image
         if (data.page.url && data.page.url.match(/\/handbook\/.+/)) {
-            const title = encodeURIComponent(data.navTitle || data.title || 'Handbook');
+            // Extract section from URL (e.g., "product", "sales", "design")
+            const pathParts = data.page.url.split('/').filter(p => p && p !== 'handbook');
+            const section = pathParts.length > 0 ? pathParts[0] : '';
+            const pageName = data.navTitle || data.title || pathParts[pathParts.length - 1] || 'Handbook';
+
+            // Title: path-based like "People Ops - FlowFuse Peopleops Handbook"
+            const title = encodeURIComponent(
+                `${pageName} - FlowFuse ${section.charAt(0).toUpperCase() + section.slice(1)} Handbook`
+            );
+
+            // Description: first paragraph from the page content
             const description = encodeURIComponent(
                 data.description ||
                 extractFirstParagraph(data.page.inputPath) ||
                 ''
             );
 
-            // Extract section from URL (e.g., "product", "sales", "design")
-            const pathParts = data.page.url.split('/').filter(p => p && p !== 'handbook');
-            const section = pathParts.length > 0 ? encodeURIComponent(pathParts[0]) : '';
-
             // Construct edge function URL
-            return `/og-image?title=${title}&description=${description}&section=${section}`;
+            return `/og-image?title=${title}&description=${description}&section=${encodeURIComponent(section)}`;
         }
 
         // Otherwise, let base.njk handle the fallback
