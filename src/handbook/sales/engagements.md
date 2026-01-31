@@ -162,7 +162,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
 ## Deal Approval Process (Deal Desk)
 To ensure consistency and efficiency in our deal cycles, all proposals must follow the established Deal Desk workflow. This process covers the end-to-end journey from initial proposal creation through security review and final legal/contract execution.
 
-### Overview of the Flow:
+### Overview of the Flow
 
 **Proposal Stage**: Sales reps create proposals and determine if the deal structure (discounts, terms, payment schedules) is standard. Non-standard deals are routed to the CEO via Slack for approval.
 **Security Review**: If a customer requires a security review, the AE coordinates between the customer's questionnaire and the CTO/Engineering team to provide approved answers.
