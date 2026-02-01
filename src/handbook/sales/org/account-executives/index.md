@@ -37,7 +37,7 @@ Account Executives own the following customer-facing sales processes. These proc
 
 - **Edge Connectivity Sales Process**
   Used when customers are evaluating how to standardize or modernize edge connectivity across systems or sites.
-  → [View process](../../processes/index.md)
+  → [View process](/handbook/sales/processes/)
 
 - **Node-RED Scale Sales Process**
   Used when customers are already using Node-RED and need governance, security, and scale.
