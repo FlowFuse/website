@@ -157,7 +157,7 @@ For US Employees who choose not to participate in the health insurance provided 
 For employees located in Canada, FlowFuse hires through Deel as Employer of Record (EOR), with benefits that may change over time. Canadian employees currently receive Manulife Bronze health coverage and a Wealthsimple pension; for the most up-to-date details, please refer to Deel.
 
 # Bonus Processing
-FlowFuse compensates some employees through bonuses tied to role-specific goals, quarterly MBOs, or company performance. Bonus eligibility and maximum amounts are defined in the employee’s contract. This guide outlines how bonuses are tracked, reviewed, approved, and paid.
+FlowFuse compensates some employees through bonuses tied to role-specific goals, quarterly MBOs (Management By Objectives), or company performance. Bonus eligibility and maximum amounts are defined in the employee’s contract. This guide outlines how bonuses are tracked, reviewed, approved, and paid.
 
 ## Bonus Tracking
 All active bonuses must be listed in the [Employee Bonus Tracker](https://docs.google.com/spreadsheets/d/1VI3iaqkOtLGYKJ_dNshjjyYJPCxDg3pnNJT46X1URFI/edit?usp=sharing) (🔒 access only for BizzOps team members).
