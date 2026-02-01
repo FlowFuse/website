@@ -21,29 +21,10 @@
         const searchContainer = document.getElementById('pagefind-search');
         if (!searchContainer) return;
 
-        const searchScope = document.head.querySelector('[property="article:section"][content]')?.content ?? '';
-        const scopeTitles = {
-            'ama': 'Ask Me Anything',
-            'blog': 'Blog',
-            'changelog': 'Changelog',
-            'customer-stories': 'Customer Stories',
-            'docs': 'Docs',
-            'ebooks': 'E-Books',
-            'handbook': 'Handbook',
-            'node-red': 'Node-RED',
-            'webinars': 'Webinars',
-        };
-        const placeholder = Object.prototype.hasOwnProperty.call(scopeTitles, searchScope)
-            ? `Search in ${scopeTitles[searchScope]}...`
-            : 'Search...';
-
         new PagefindUI({
             element: "#pagefind-search",
             showSubResults: true,
-            showImages: false,
-            translations: {
-                placeholder: placeholder
-            }
+            showImages: true
         });
     });
 </script>
