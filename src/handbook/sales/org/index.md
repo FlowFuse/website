@@ -1,8 +1,13 @@
+---
+navTitle: Commercial Organization
+navGroup: Sales department
+---
+
 # Commercial Organization
 
 ## Purpose
 
-The Commercial Organization at FlowFuse is responsible for guiding customers from initial engagement through adoption, expansion, and long-term success.  
+The Commercial Organization at FlowFuse is responsible for guiding customers from initial engagement through adoption, expansion, and long-term success.
 It owns the customer-facing commercial motions that turn product capability into realized business value.
 
 This organization balances revenue responsibility with customer outcomes, ensuring that growth is durable, scalable, and aligned with how customers actually adopt and operate FlowFuse.
@@ -27,19 +32,19 @@ While individual functions own specific processes, the Commercial Organization o
 
 The Commercial Organization is composed of the following functions:
 
-- **Sales Department**  
+- **Account Executives**
   Owns opportunity qualification, deal progression, and commercial close.
 
-- **Solution Engineering**  
+- **Solution Engineering**
   Owns technical discovery, validation, demos, and proof-of-concept delivery.
 
-- **Customer Success**  
+- **Customer Success**
   Owns onboarding, adoption, health monitoring, renewal readiness, and expansion signals.
 
-- **Professional Services**  
+- **Professional Services**
   Owns scoped delivery, enablement engagements, and post-engagement handoff.
 
-- **Sales Partnerships**  
+- **Sales Partnerships**
   Owns partner identification, enablement, co-sell motions, and partner performance.
 
 Each function has clear ownership while operating in close collaboration with the others across the customer lifecycle.
