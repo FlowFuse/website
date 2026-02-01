@@ -76,7 +76,7 @@ user at the time of the call.
 
 ## FlowFuse Assistant - No API Keys Required!
 
-Great news! You no longer need to manage OpenAI API keys or configure ChatGPT nodes. The [FlowFuse Assistant](/docs/user/assistant/) is now built directly into Node-RED on FlowFuse Cloud, making AI-powered development even easier.
+Great news! You no longer need to manage OpenAI API keys or configure ChatGPT nodes. The [FlowFuse Assistant](/docs/user/expert/) is now built directly into Node-RED on FlowFuse Cloud, making AI-powered development even easier.
 
 Available on FlowFuse Cloud, the Assistant offers:
 
