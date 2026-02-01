@@ -49,4 +49,4 @@ Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/
 
 ### Sales Processes
 
- - [Edge Connect Process](./v2/edge-connect-process.md)
+ - [Edge Connect Process](./edge-connect-process.md)
