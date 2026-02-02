@@ -14,7 +14,7 @@ When it comes to debugging application flows in Node-RED, the tool most Node-RED
 
 In these cases, using the **Node-RED Debugger** becomes invaluable. The debugger allows you to trace the execution of your flows interactively, set breakpoints, and gain deeper insights beyond what the Debug node offers. This Documentation will show you how to effectively use the Node-RED Debugger to pinpoint issues and fine-tune your applications.
 
-> **Tip:** If your flows aren’t named or formatted properly and you're finding it difficult to understand what they do, you can use the **[FlowFuse Expert – Flow Explainer](/docs/user/assistant/#flow-explainer)** to automatically analyse the flow and generate clear documentation.
+> **Tip:** If your flows aren’t named or formatted properly and you're finding it difficult to understand what they do, you can use the **[FlowFuse Assistant – Flow Explainer](/docs/user/expert/#flow-explainer)** to automatically analyse the flow and generate clear documentation.
 
 ## What is Debugging, and Why is it crucial in Node-RED Flows?
 

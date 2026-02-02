@@ -25,7 +25,7 @@ meta:
     - question: "When should I use the serial request node instead of serial in/out nodes?"
       answer: "Use the serial request node for devices that follow a command-response pattern (you send a command and wait for a reply). This node handles the request-response cycle automatically and processes commands sequentially. Use serial in/out nodes for continuous data streams or when you need separate control over reading and writing."
     - question: "How do I parse binary data from serial devices in Node-RED?"
-      answer: "For binary data, configure the serial node to output as Buffer instead of String. Then use a function node to parse the buffer using Node.js Buffer methods like readInt16BE(), readFloatLE(), etc. FlowFuse users can leverage the FlowFuse Expert to generate parsing code by providing a sample of the data format."
+      answer: "For binary data, configure the serial node to output as Buffer instead of String. Then use a function node to parse the buffer using Node.js Buffer methods like readInt16BE(), readFloatLE(), etc. FlowFuse users can leverage the AI Assistant to generate parsing code by providing a sample of the data format."
     - question: "What's the best practice for handling serial connection failures in production?"
       answer: "Implement error handling with catch nodes to detect connection failures. Use the serial control node to attempt reconnection after failures. Add status nodes to monitor connection state and trigger alerts. Consider implementing a watchdog timer that checks for data timeouts and automatically restarts the connection if needed."
 ---
@@ -175,7 +175,7 @@ This transforms the string into a JSON object like:
 ```
 
 > **Tip**: You do not need to know JavaScript to use the **function** node.
-> If you are using FlowFuse, the built-in [FlowFuse Expert](https://www.google.com/search?q=/docs/user/assistant/) can help you write function code using natural language. Simply provide a sample of the data received from your machine and describe the output you expect — the Assistant will generate the function for you.
+> If you are using FlowFuse, the built-in [FlowFuse Assistant](https://www.google.com/search?q=/docs/user/expert/) can help you write function code using natural language. Simply provide a sample of the data received from your machine and describe the output you expect — the Assistant will generate the function for you.
 
 ### Handling Request-Response Serial Communication
 

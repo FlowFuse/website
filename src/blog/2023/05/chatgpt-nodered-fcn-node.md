@@ -74,9 +74,9 @@ protect your API key), so Node-RED needs that in the runtime first, before a cal
 we'd be smarter here and pass client-side creds along with the call such that we can use any changes made by the
 user at the time of the call.
 
-## FlowFuse Expert - No API Keys Required!
+## FlowFuse Assistant - No API Keys Required!
 
-Great news! You no longer need to manage OpenAI API keys or configure ChatGPT nodes. The [FlowFuse Expert](/docs/user/assistant/) is now built directly into Node-RED on FlowFuse Cloud, making AI-powered development even easier.
+Great news! You no longer need to manage OpenAI API keys or configure ChatGPT nodes. The [FlowFuse Assistant](/docs/user/expert/) is now built directly into Node-RED on FlowFuse Cloud, making AI-powered development even easier.
 
 Available on FlowFuse Cloud, the Assistant offers:
 
@@ -84,4 +84,4 @@ Available on FlowFuse Cloud, the Assistant offers:
 - **In-line Code Generation**: Generate JavaScript code for function nodes, JSON for JSON editors, and Vue.js for FlowFuse Dashboard ui-template widgets
 - **Flow Explainer**: Select nodes and click "Explain Flows" to understand what they do
 
-FlowFuse Expert helps developers work faster and smarter with Node-RED. [Start your free trial]({{ site.onboardingURL }}) to experience AI-powered Node-RED development on FlowFuse Cloud.
+FlowFuse Assistant helps developers work faster and smarter with Node-RED. [Start your free trial]({{ site.onboardingURL }}) to experience AI-powered Node-RED development on FlowFuse Cloud.
