@@ -128,7 +128,7 @@ What problem does the persona want to solve, or which benefit does the character
 <div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
     <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/paul.jpg">
+            <img class="w-full rounded-md border-2 border-white m-auto" src="../../../images/personas/paul.jpg">
             <label class="block mt-2 font-medium text-2xl">Paul</label>
             <label class="block">Plant Manager</label>
         </div>
@@ -204,7 +204,7 @@ What problem does the persona want to solve, or which benefit does the character
 <div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
     <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/steve.jpg">
+            <img class="w-full rounded-md border-2 border-white m-auto" src="../../../images/personas/steve.jpg">
             <label class="block mt-2 font-medium text-2xl">Steve</label>
             <label class="block">Plant Engineer</label>
         </div>
@@ -280,7 +280,7 @@ What problem does the persona want to solve, or which benefit does the character
 <div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
     <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/sarah.jpg">
+            <img class="w-full rounded-md border-2 border-white m-auto" src="../../../images/personas/sarah.jpg">
             <label class="block mt-2 font-medium text-2xl">Sarah</label>
             <label class="block">Process Engineer</label>
         </div>
@@ -357,7 +357,7 @@ What problem does the persona want to solve, or which benefit does the character
 <div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
     <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/isabella.jpg">
+            <img class="w-full rounded-md border-2 border-white m-auto" src="../../../images/personas/isabella.jpg">
             <label class="block mt-2 font-medium text-2xl">Isabella</label>
         <label class="block">IIoT Project Lead & Industrial IT Architect</label>
         </div>
@@ -446,7 +446,7 @@ What problem does the persona want to solve, or which benefit does the character
 <div class="persona-card rounded-md bg-gray-900 text-white p-4 border-2 border-black flex flex-col">
     <div class="flex gap-6 border-b-2 border-red-400 pb-3 w-full">
         <div class="w-48 py-2 pr-6 text-center border-r-2 border-teal-400">
-            <img class="w-full rounded-md border-2 border-white m-auto" src="../../images/personas/peter.jpg">
+            <img class="w-full rounded-md border-2 border-white m-auto" src="../../../images/personas/peter.jpg">
             <label class="block mt-2 font-medium text-2xl">Peter</label>
             <label class="block">Automation and Controls Engineer</label>
         </div>

@@ -17,7 +17,7 @@ tags:
    - Node-RED
 ---
 
-FlowFuse 2.6 is packed with great new features, and in this release we've had a heavy focus on improving the development experience of Node-RED, lowering the barrier to entry for new users and aligning to our [Simplified Hosting](https://flowfuse.com/handbook/product/strategy/#simplified-hosting) and [Low-Code](https://flowfuse.com/handbook/product/strategy/#low-code) plans from our [Product Strategy](https://flowfuse.com/handbook/product/strategy/).
+FlowFuse 2.6 is packed with great new features, and in this release we've had a heavy focus on improving the development experience of Node-RED, lowering the barrier to entry for new users and aligning to our [Simplified Hosting](https://flowfuse.com/handbook/engineering/product/strategy/#simplified-hosting) and [Low-Code](https://flowfuse.com/handbook/engineering/product/strategy/#low-code) plans from our [Product Strategy](https://flowfuse.com/handbook/engineering/product/strategy/).
 
 <!--more-->
 

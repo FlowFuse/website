@@ -54,7 +54,7 @@ Our market positioning is underpinned by two pivotal hypotheses that address pre
 1. The prevailing landscape of IIoT software solutions is full of off-the-shelf products that seldom meet the unique demands of specific use cases. This gap underscores a pressing need for flexible, adaptable solutions that can be tailored to fit the intricate requirements of diverse operational environments, ensuring a glove-like fit rather than a one-size-fits-all approach.
 2. The notion that true innovation within a manufacturing landscape should emanate from a bottom-up approach is central to our philosophy. Engineers and frontline workers, immersed in the day-to-day challenges and intricacies of manufacturing processes, are uniquely positioned to identify areas ripe for innovation and improvement. By empowering these individuals with the tools and platforms to implement their insights, we can unlock a wellspring of transformative ideas and solutions that drive the industry forward.
 
-[Here](https://flowfuse.com/handbook/product/personas/#common-use-cases) you can find the demands of specific personas and their classic use cases.
+[Here](https://flowfuse.com/handbook/engineering/product/personas/#common-use-cases) you can find the demands of specific personas and their classic use cases.
 
 ## Low-Code Tools
 

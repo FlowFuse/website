@@ -129,7 +129,7 @@ assess product-market fit.
 We review KPIs every Tuesday as part of our recurring strategy meeting.
 At this time, we review the following KPIs:
 * Product & Engineering
-   * [Engineering Throughput](../development/project-management.md#engineering-throughput)
+   * [Engineering Throughput](../engineering/project-management.md#engineering-throughput)
    * Active Node-RED Instances
 * Marketing
    * Pipeline Generated

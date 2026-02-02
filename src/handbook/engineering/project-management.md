@@ -34,7 +34,7 @@ Week 4: The team prepares for the release that occurs during the same week. The 
 
 ## Hierarchy
 
-As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](../product/strategy.md#product-pillars).
+As per our [Product Strategy](/handbook/engineering/product/strategy/), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](/handbook/engineering/product/strategy/#product-pillars).
 
 Beneath the areas, we then utilize the standard GitHub hierarchy of Epics, Stories, and Tasks. As such, the hierarchy is as follows:
 
@@ -242,7 +242,7 @@ by the Product Manager (PM) and CTO. It is the main entry point for all issues. 
 
 #### Area (for Epics)
 
-As per our [Product Strategy](../product/strategy.md), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](../product/strategy.md#product-pillars).
+As per our [Product Strategy](/handbook/engineering/product/strategy/), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](/handbook/engineering/product/strategy/#product-pillars).
 
 When we create Epics in GitHub, we assign them to an Area. This helps us to understand where the work fits into our overall product strategy, and what fundamental area of the product will be improved by the work.
 
