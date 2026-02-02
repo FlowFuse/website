@@ -12,6 +12,20 @@ There are no extra charges associated with the utilization of Preview Features. 
 
 Preview Features exemplify our commitment to expedited innovation and iterative development, underpinned by a strong customer-centric approach. Although these features might not always be entirely complete during this phase, user feedback plays a crucial role in our efforts to enhance them, ensuring we consistently deliver high-quality and valuable solutions to meet customer needs.
 
+## Latest Version
+
+The latest version will always be tagged on GitHub [here](https://github.com/FlowFuse/flowfuse/releases/tag/v2.26.1)
+
+## 2.x.y
+
+The 2.0.0 release happened as part of the naming transition from FlowForge to FlowFuse, with the Minor version incrementing every 4 week release 
+cycle.
+
+Patch releases are generated if fixes need to be delivered ahead of the next scheduled Minor release. 
+
+- As part of this release the Major version link between the Device Agent and the Flowfuse application is no longer guaranteed. The latest version of the Device Agent should continue to work with previous versions of the Forge app, but new features will require the latest version and feature announcements should include the minimum Forge App and Device Agent versions.
+
+
 ## 1.0
 
 The 1.0 Release of FlowFuse represents a significant milestone, we are making a statement to our customers about the product.
@@ -31,5 +45,3 @@ Once 1.0 has been released the 0.x line will become deprecated. In general no fi
 
 After 1.0 each major release will be supported for at least 12 months. Customers may need to update through minor releases in order to receive fixes and new features. After a new major release the latest minor release will receive back ported fixes for the duration of the support period.
 
-## 2.0
-The 2.0 release may happen within the period that 1.0 is still supported, timing and scope for 2.0 is to be determined.
