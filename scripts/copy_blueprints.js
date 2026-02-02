@@ -1,9 +1,26 @@
 const fs = require('fs/promises');
 const { existsSync, readdirSync } = require('fs');
-
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+
+async function ensureBlueprintLibrary() {
+    const blueprintsDir = '../blueprint-library';
+    
+    if (!existsSync(blueprintsDir)) {
+        console.log('Blueprint library not found locally - cloning...');
+        
+        try {
+            await exec(`git clone --depth 1 https://github.com/FlowFuse/blueprint-library.git ${blueprintsDir}`);
+            console.log('Successfully cloned blueprint library');
+        } catch (error) {
+            console.error('Failed to clone blueprint library:', error.message);
+            process.exit(-1);
+        }
+    }
+    
+    return blueprintsDir;
+}
 
 async function copyFiles(src, dest) {
     const files = await fs.readdir(src, { withFileTypes: true });
@@ -18,7 +35,6 @@ async function copyFiles(src, dest) {
             } else {
                 const srcFile = path.join(src, file.name);
                 const destFile = path.join(dest, file.name.replace(/README/, 'index'));
-
                 if (!file.name.endsWith('.md')) {
                     await fs.copyFile(srcFile, destFile);
                 } else {
@@ -39,7 +55,6 @@ async function copyFiles(src, dest) {
                     // Use a regular expression to find the "image" key in the front matter
                     // that is not commented out and has a non-space value
                     const imageRegex = /^image:\s*(\S.+)$/m;
-
                     // If the "image" key is found, replace its value with the new relative path
                     if (imageRegex.test(body)) {
                         body = body.replace(imageRegex, (match, p1) => {
@@ -54,7 +69,7 @@ async function copyFiles(src, dest) {
             }
         }
     }
-};
+}
 
 (async () => {
     // Check we are in the root of the website repo
@@ -63,25 +78,19 @@ async function copyFiles(src, dest) {
         process.exit(-1);
     }
 
-    // Go find the blueprint-library folder
-    const blueprintsDir = '../blueprint-library'; // Blueprints repository
-    if (!existsSync(blueprintsDir)) {
-        console.log(`Blueprint library not found ${blueprintsDir} - skipping`);
-        process.exit();
-    }
+    const blueprintsDir = await ensureBlueprintLibrary();
 
-      readdirSync(blueprintsDir, { withFileTypes: true })
+    const directories = readdirSync(blueprintsDir, { withFileTypes: true })
         .filter(dirent => dirent.isDirectory() && !dirent.name.startsWith('.'))
-        .map(dirent => path.join (blueprintsDir, dirent.name))
-        .forEach(async element => {
-            console.log(element);
-            try {
-                const packFile = await fs.readFile('package.json');
-                const dest = 'src/blueprints';
-                await copyFiles(element, path.join(dest, path.basename(element)));
-            } catch (error) {
-                console.error('Error reading or copying files:', error);
-            }
-        });
+        .map(dirent => path.join(blueprintsDir, dirent.name));
 
+    for (const element of directories) {
+        console.log(element);
+        try {
+            const dest = 'src/blueprints';
+            await copyFiles(element, path.join(dest, path.basename(element)));
+        } catch (error) {
+            console.error('Error reading or copying files:', error);
+        }
+    }
 })();
