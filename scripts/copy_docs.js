@@ -7,6 +7,28 @@ const exec = util.promisify(require('child_process').exec)
 
 const watched = {}
 
+async function ensureFlowFuseRepo() {
+    const repoPaths = ['../dev-env/packages/flowfuse', '../flowfuse', '../flowforge'];
+    
+    let ffRepo = repoPaths.find(p => existsSync(path.join(p, 'docs')))
+    
+    if (!ffRepo) {
+        console.log('FlowFuse repository not found locally - cloning...')
+        const clonePath = '../flowfuse'
+        
+        try {
+            await exec(`git clone --depth 1 https://github.com/FlowFuse/flowfuse.git ${clonePath}`)
+            ffRepo = clonePath
+            console.log('Successfully cloned FlowFuse repository')
+        } catch (error) {
+            console.error('Failed to clone FlowFuse repository:', error.message)
+            process.exit(-1)
+        }
+    }
+    
+    return ffRepo
+}
+
 async function copyFile(src, dest, filename, version) {
     const srcFile = path.join(src, filename)
     const destFile = path.join(dest, filename.replace(/README/,"index"))
@@ -55,14 +77,7 @@ async function copyFiles (src, dest, version) {
         process.exit(-1)
     }
 
-    const repoPaths = ['../dev-env/packages/flowfuse', '../flowfuse', '../flowforge'];
-
-    // For the first repoPath to exist, we will use that one
-    const ffRepo = repoPaths.find(p => existsSync(path.join(p, 'docs')))
-    if (!ffRepo) {
-        console.log(`FlowFuse repository not found (${repoPaths}) - skipping`)
-        process.exit(-1)
-    }
+    const ffRepo = await ensureFlowFuseRepo()
 
     const docsDir = path.join(ffRepo, 'docs')
     if (!existsSync(docsDir)) {
