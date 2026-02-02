@@ -45,7 +45,7 @@ That distinction fundamentally shapes how these protocols behave under network p
 
 With these philosophical differences established, we can now examine where CoAP's architectural choices translate into measurable advantages. Three areas stand out with demonstrable impact.
 
-### First: Constrained Environments Where Every Byte and Every Milliwatt Matters
+### Constrained Environments Where Every Byte and Every Milliwatt Matters
 
 CoAP was designed explicitly for devices operating under severe resource limitations: sensors running on coin cell batteries for years, microcontrollers with kilobytes of RAM, networks where transmission costs are measured in both energy and money. In these contexts, MQTT's TCP dependency and broker requirement introduce overhead that is not just inefficient but operationally prohibitive.
 
@@ -55,7 +55,7 @@ CoAP's use of UDP, its smaller message headers (as compact as 4 bytes), and its 
 
 The math is simple: fewer transmissions, smaller packets, no connection state to maintain. When your device budget is measured in microwatts and your network budget is measured in bytes per day, CoAP is often the only viable option.
 
-### Second: Edge-Native Architectures Where Broker Dependency Becomes a Liability
+### Edge-Native Architectures Where Broker Dependency Becomes a Liability
 
 Beyond individual device constraints, CoAP's advantages become even more pronounced when we zoom out to system-level architecture. As more processing moves to the edge, whether for latency reasons, bandwidth constraints, or regulatory requirements, the value proposition of a centralized broker weakens considerably. Edge gateways coordinating local sensor clusters. Device-to-device communication in industrial settings. Deployments where internet connectivity is intermittent or non-existent.
 
@@ -65,7 +65,7 @@ With CoAP, those devices can communicate directly. The gateway can still aggrega
 
 This architectural distinction becomes even more pronounced in mobile or disconnected scenarios. Autonomous vehicles coordinating with roadside infrastructure. Offshore drilling platforms where satellite bandwidth is expensive and latency is measured in seconds. Emergency response networks operating in environments with degraded or non-existent connectivity.
 
-### Third: Interoperability with Existing Web Infrastructure
+### Interoperability with Existing Web Infrastructure
 
 The architectural advantages extend beyond the edge. When these distributed systems need to communicate with backend infrastructure, CoAP offers another significant benefit: semantic alignment with the web.
 
@@ -79,7 +79,7 @@ None of this is insurmountable. Organizations bridge MQTT and HTTP systems succe
 
 These CoAP advantages are real and measurable. Yet if we stop here, we miss half the story. MQTT is not being rapidly displaced, and the reason goes far deeper than inertia or incumbency. In the majority of production IoT deployments today, MQTT's architectural choices are not limitations they are precisely engineered features that solve problems CoAP cannot.
 
-### The Power of Decoupling: Why Brokers Are Not Just Middlemen
+### The Power of Decoupling
 
 The publish/subscribe model is a fundamental decoupling mechanism that enables architectural properties difficult or impossible to achieve with request/response models.
 
@@ -91,7 +91,7 @@ With CoAP, this becomes significantly more complex. If sensors are servers, how 
 
 This is why MQTT dominates in cloud ingestion pipelines. When your architecture is fundamentally about collecting data from many devices and distributing it to many consumers, the broker model is the correct abstraction.
 
-### Quality of Service Guarantees: Not All Networks Are Created Equal
+### Quality of Service Guarantees
 
 The broker's value extends beyond routing and decoupling. It also provides something CoAP struggles to match: robust delivery guarantees across unreliable networks.
 
@@ -101,7 +101,7 @@ CoAP, being UDP-based, provides optional confirmable messages with retransmissio
 
 Moreover, MQTT's QoS guarantees are end-to-end through the broker. Messages can be persisted to disk. Sessions can be resumed after disconnection. Client state is maintained. This makes MQTT significantly more resilient to network instability and device mobility.
 
-### Ecosystem Maturity: The Network Effect Is Real
+### Ecosystem Maturity
 
 These technical advantages are amplified by a decade of real-world deployment and community investment.
 
@@ -111,7 +111,7 @@ CoAP has matured significantly, but its ecosystem is smaller. The ecosystem diff
 
 Network effects matter. When MQTT is the default choice, more effort goes into improving MQTT tooling, which makes MQTT more attractive, which reinforces its position.
 
-### The Session State Problem: Why Persistent Connections Matter
+### The Session State Problem
 
 Beyond the ecosystem, MQTT provides another architectural capability that CoAP implementers often underestimate until they need it: stateful session management.
 
