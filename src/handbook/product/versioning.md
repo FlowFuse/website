@@ -16,7 +16,7 @@ Preview Features exemplify our commitment to expedited innovation and iterative 
 
 The latest version will always be tagged on GitHub [here](https://github.com/FlowFuse/flowfuse/releases/tag/v2.26.1)
 
-## 2.x.y
+## 2.0
 
 The 2.0.0 release happened as part of the naming transition from FlowForge to FlowFuse, with the Minor version incrementing every 4 week release 
 cycle.
