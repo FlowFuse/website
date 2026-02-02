@@ -10,7 +10,7 @@
         "start": "npm-run-all2 clean:dev build:js docs blueprints --parallel dev:*",
         "test": "mocha",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js _site/js/flowrenderer.min.js",
-        "build": "dotenv -v NODE_ENV=production -- npm-run-all2 clean build:js --parallel prod:*",
+        "build": "dotenv -v NODE_ENV=production -- npm-run-all2 clean build:js --parallel prod:* docs blueprints",
         "build:skip-images": "dotenv -v SKIP_IMAGES=true -- npm run build",
         "clean:dev": "dotenv -- npx del-cli '_site/!(img)' 'src/docs/**/*.md' 'src/blueprints/**/!(*submit.njk)' && dotenv -- npx mkdirp '_site/js/flows'",
         "clean": "dotenv -- npx del-cli '_site/!(img)' && dotenv -- mkdir -p '_site/js'",
