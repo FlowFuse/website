@@ -272,3 +272,50 @@ This keeps work small, explicit, and intentional.
 * Async-first collaboration supports day-to-day execution.
 
 Together, these create a system that favors clarity over urgency, small work over heroic effort, and shared understanding over silent assumptions.
+
+## Engineering KPIs
+
+These metrics help us observe how well the engineering system described above is functioning over time.
+
+They are used to understand trends and surface constraints, not to evaluate individual performance or enforce targets.
+
+### Engineering Time to Value (Median)
+
+**TL;DR**  
+How long a typical piece of engineering work takes to go from started to done.
+
+**What it tells us**  
+The baseline speed of delivery once work begins.
+
+**Why we track it**  
+To understand whether our system is improving or degrading at turning intent into shipped product.
+
+---
+
+### Engineering Time to Value (P75)
+
+**TL;DR**  
+How long the slowest 25% of engineering work takes to go from started to done.
+
+**What it tells us**  
+Where delivery slows due to complexity, dependencies, or process friction.
+
+**Why we track it**  
+To surface bottlenecks that median metrics do not reveal and to improve delivery predictability over time.
+
+---
+
+### Ticket Type Distribution (Contextual Metric)
+
+**TL;DR**  
+The ratio of feature work to other work (bugs, chores, maintenance).
+
+**What it tells us**  
+How engineering effort is distributed across different categories of work.
+
+**How we use it**  
+This is a contextual metric, not a KPI. We do not set goals or targets for this ratio.  
+It exists to provide context for Time to Value metrics and to support planning and prioritization conversations.
+
+**Why we track it**  
+To ensure tradeoffs between new product development and system health are visible and intentional.
