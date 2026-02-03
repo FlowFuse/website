@@ -2,7 +2,7 @@
 title: "Turning Industrial Data into Knowledge with FlowFuse AI and MCP"
 subtitle: Building and Deploying MCP Applications with FlowFuse
 meta:
-    description: 
+    description: Learn how FlowFuse leverages AI and MCP to convert industrial data into knowledge in this exclusive webinar!
 image: /images/webinars/turning-data-into-knowledge.jpg
 date: 2026-02-24
 time: 17:00 CET (11:00am ET)
