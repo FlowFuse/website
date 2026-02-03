@@ -12,7 +12,6 @@ At FlowFuse, we do not currently have a dedicated support team. To share the sup
 
 The goal of triage is not to solve every issue yourself, but to act as a connector and create forward motion.
 
----
 
 ## How Triage Reflects Our Values
 
@@ -40,7 +39,6 @@ Support triage duty is not just an operational practice. It is an expression of 
 
 Triage exists as a practical extension of how we work together at FlowFuse.
 
----
 
 ## The Flow: How It Works
 
@@ -56,7 +54,6 @@ Triage exists as a practical extension of how we work together at FlowFuse.
 
 You are not expected to be an expert, only a connector.
 
----
 
 ## Where Tickets Come From
 
@@ -65,7 +62,6 @@ You are not expected to be an expert, only a connector.
 
 All tickets appear in the [HubSpot Helpdesk](https://app-eu1.hubspot.com/help-desk/26586079/).
 
----
 
 ## What to Monitor
 
@@ -79,7 +75,6 @@ New tickets trigger notifications in `#support-tickets`.
 
 > Tip: To receive badge notifications, configure the channel’s notification settings rather than relying on the bell icon.
 
----
 
 ## SLA Awareness (Important)
 
@@ -95,7 +90,6 @@ When triaging:
 - Prioritize routing and visibility for time-sensitive issues
 - When unsure whether an SLA applies, escalate early in `#support-tickets`
 
----
 
 ## Severity Guide
 
@@ -108,7 +102,6 @@ A ticket is considered **urgent** if it involves:
 
 When in doubt, escalate rather than waiting.
 
----
 
 ## Categorization & Routing
 
@@ -121,7 +114,6 @@ When in doubt, escalate rather than waiting.
 | Product support (OSS or Community) | Route to community or documentation |
 | Spam (e.g. booth design offers) | Mark as spam or delete |
 
----
 
 ## Replying vs Routing
 
@@ -138,7 +130,6 @@ If a ticket stalls after assignment, responsibility for follow-up and resolution
 
 Triage exists to create initial clarity and forward motion, not to monitor or enforce ongoing progress.
 
----
 
 ## Slack Workflow
 
@@ -152,13 +143,11 @@ Use emoji reactions on ticket notifications in `#support-tickets`:
 
 This keeps the channel readable and avoids unnecessary status messages.
 
----
 
 ## Vacation & OOO Coverage
 
 The Support Coordinator reviews the rotation against Deel each week and proactively swaps anyone who is out of office.
 
----
 
 ## Rules of Engagement
 
@@ -168,7 +157,6 @@ The Support Coordinator reviews the rotation against Deel each week and proactiv
 - Internal emails may still represent customer requests. Read carefully.
 - When unsure, ask in `#support-tickets` or the relevant department channel.
 
----
 
 ## Handling Spam
 
