@@ -20,7 +20,7 @@ The Director of Marketing will work closely with Sales, Product, and Leadership 
 - Ensure marketing efforts are tightly aligned with Sales, Product, and GTM priorities.
 
 ### KPI Ownership & Performance Management
-- Define, track, and report on core marketing KPIs (pipeline contribution, MQLs, CAC, conversion rates, ROI).
+- Define, track, and report on core marketing KPIs.
 - Use data to prioritize initiatives, adjust campaigns, and improve overall marketing effectiveness.
 - Establish clear accountability for results across all marketing programs.
 
