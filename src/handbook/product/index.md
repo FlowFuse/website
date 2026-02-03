@@ -29,7 +29,7 @@ The product department, and Product Managers (PM) by extend are responsible for:
 - [Product Categories](./verticals.md)
 - [Strategy](./strategy.md)
 - [Pricing Principles](./pricing.md)
-- [Feature Demos](/handbook/development/project-management#feature-demos)
+- [Feature Demos](/handbook/development/how-engineering-gets-work-done#feature-demos)
 - [Versioning](./versioning.md)
 - [Metrics](./metrics.md)
 - [Node-RED Dashboard](./dashboard.md)
