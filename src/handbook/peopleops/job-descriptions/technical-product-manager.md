@@ -9,7 +9,7 @@ navGroup: Job Descriptions
 
 At FlowFuse, the Technical Product Manager (TPM) bridges product strategy and technical execution. They turn complex technical challenges into measurable product outcomes, ensuring engineering delivers solutions that meet customer needs and quality standards.
 
-This role blends technical depth and product leadership. The TPM dives into architecture, weighs trade-offs, and uses data to guide decisions on debt, scalability, and performance.
+This role blends technical depth and product acumen. The TPM dives into architecture, weighs trade-offs, and uses data to guide decisions on debt, scalability, and performance.
 
 The Technical Product Manager reports to the Director of Product and is primarily responsible for:
 * Bridging strategy and execution: Translate product strategy into clear, measurable technical outcomes and objectives.
