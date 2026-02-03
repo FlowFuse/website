@@ -6,9 +6,9 @@ navTitle: Job Descriptions
 
 ## Job Description
 
-At FlowFuse, the Director of Marketing is responsible for building and executing a measurable, outcome-driven marketing engine that directly supports company growth. This role is not purely strategic — it is delivery-oriented, KPI-led, and deeply connected to revenue, pipeline, and product adoption.
+The Director of Marketing is responsible for building and executing a measurable, outcome-driven marketing engine that directly supports company growth. This role is not purely strategic — it is delivery-oriented, KPI-led, and deeply connected to revenue, pipeline, and product adoption.
 
-We’re looking for a leader who understands how to translate complex industrial and technical products into compelling narratives, while also owning execution across content, campaigns, and events. This person will balance strategic direction with hands-on leadership, ensuring marketing initiatives are delivered on time, measured rigorously, and continuously improved.
+A leader who understands how to translate complex industrial and technical products into compelling narratives, while also owning execution across content, campaigns, and events. This person will balance strategic direction with hands-on leadership, ensuring marketing initiatives are delivered on time, measured rigorously, and continuously improved.
 
 The Director of Marketing will work closely with Sales, Product, and Leadership to align go-to-market execution with FlowFuse’s growth objectives, supporting the full funnel from awareness through expansion.
 
@@ -42,49 +42,49 @@ The Director of Marketing will work closely with Sales, Product, and Leadership 
 ## Skills
 
 ### What We’re Looking For
-- Proven experience leading marketing in a B2B SaaS or technology-driven startup environment.
-- Strong KPI orientation with experience owning and reporting on funnel and revenue-related metrics.
-- Demonstrated success in content-based marketing and event-led growth.
-- Experience marketing to industrial, technical, or complex B2B audiences.
-- Ability to balance strategic thinking with hands-on execution and delivery.
-- Strong communication skills and comfort working across Sales, Product, and Leadership teams.
-- Experience building and evolving marketing processes in a scaling organization.
+- Proven experience leading marketing in a B2B SaaS or technology startup environment.
+- Strong KPIs orientation and ability to drive measurable impact on funnel and revenue metrics.
+- Demonstrated success with content-based marketing, GTM campaigns, and event execution.
+- Experience managing a small team with a focus on execution, mentorship, and performance.
+- Excellent communication skills, with ability to influence cross-functional partners.
+- Comfortable iterating rapidly and adjusting tactics based on data and real-time feedback.
+
 
 ### Nice to Haves
-- Background in industrial automation, IIoT, manufacturing, or adjacent technical domains.
-- Experience supporting enterprise or mid-market GTM motions.
-- Familiarity with product-led or developer-focused communities.
-- Experience working in a fully remote startup environment.
+- Background in industrial automation, IIoT, manufacturing, or complex technical domains.
+- Deep familiarity with HubSpot (Marketing & Sales Hubs) for workflows, lead scoring, campaigns, and reporting.
+- Experience with long sales cycles, multi-stakeholder buying journeys, and enterprise GTM.
+- Experience working in fully remote startup environments.
+- Familiarity with developer communities or technical content ecosystems.
+
 
 ## 90-Day Plan (13-Week Plan)
 
 ### Week 1–4
-- Develop a deep understanding of the FlowFuse product, platform, and target customers.
-- Review existing marketing materials, campaigns, and performance metrics.
-- Meet with key stakeholders across Sales, Product, Engineering, and Leadership.
-- Audit current content, events, and GTM activities against company goals.
-- Establish a baseline view of funnel performance and existing KPIs.
+- Immerse in the FlowFuse product, customer personas, market landscape, and existing marketing KPIs.
+- Audit HubSpot setup (lead lifecycle, scoring, automation, dashboards) and key marketing workflows.
+- Meet with core stakeholders across Sales, Product, and Leadership to align on priorities.
+- Identify quick wins and define Day 1 content and campaign optimizations.
 
 **Deliverables**
 - Summary of marketing gaps, opportunities, and quick wins.
 - Initial KPI framework aligned with Sales and Leadership.
 
 ### Week 5–8
-- Define clear marketing priorities aligned with revenue and pipeline objectives.
-- Begin refining messaging and positioning based on customer and market insights.
-- Take ownership of ongoing campaigns, content initiatives, and event planning.
-- Partner with Sales to improve alignment on lead quality, enablement, and follow-up.
-- Introduce improvements to reporting and performance tracking.
+- Refine messaging, positioning, and content strategy based on audit insights.
+- Optimize content production pipelines and collaboration with internal contributors.
+- Establish weekly KPI monitoring cadence and HubSpot dashboards for visibility.
+- Launch initial campaign experiments and iterative tests.
 
 **Deliverables**
 - Updated marketing plan with clear KPIs and ownership.
 - Initial improvements to content, campaigns, or events based on data.
 
 ### Week 9–13
-- Execute and iterate on key marketing initiatives with measurable outcomes.
-- Establish repeatable processes for campaign execution, event follow-up, and reporting.
-- Contribute structured insights into GTM strategy and future planning.
-- Begin shaping longer-term marketing roadmap aligned with company growth goals.
+- Take ownership of pipeline targets with clear execution plans to hit them.
+- Scale and iterate on successful campaigns, experiments, and content formats.
+- Strengthen processes for event follow-up, lead qualification, and sales handoffs.
+- Draft a long-term marketing roadmap tied to company growth goals.
 
 **Deliverables**
 - Demonstrable impact on pipeline, engagement, or conversion metrics.
