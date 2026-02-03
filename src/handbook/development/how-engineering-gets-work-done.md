@@ -26,6 +26,15 @@ Meetings, boards, and labels exist to support this workflow, not replace judgmen
 * Issue labels make work visible and sprint-ready; anything in a sprint must be fully labeled.
 * We are async-first, but pragmatic about using sync time when it helps.
 
+## Cadence
+
+Engineering work follows a consistent weekly cadence designed to create alignment and focus.
+
+That cadence is anchored by two core meetings:
+
+* the Monday Engineering Meeting
+* Sprint Planning on Friday
+
 ## Weekly Engineering Meeting (Monday)
 
 The Monday engineering meeting is the highest-level forum for alignment and discussion.
@@ -90,6 +99,14 @@ We review:
 
 The project board is updated to reflect reality. This is about accuracy and learning, not blame.
 
+## Development Board
+
+We use a GitHub Project board to make work visible and to reflect sprint reality.
+
+The board shows what work is in progress, what is blocked, and what has shipped.
+
+It is updated during sprint planning and throughout the week as work progresses.
+
 ### Prioritization Happens Outside Sprint Planning
 
 Sprint planning is not a prioritization meeting.
@@ -152,13 +169,7 @@ Engineering shares release highlights through the standing Product ↔ Marketing
 
 The Engineering Manager represents engineering in this meeting.
 
-Issue labels are used to help Engineering Managers identify which completed or in-flight items may be relevant to share, including:
-
-* user-facing value
-* notable improvements or fixes
-* work that benefits from additional context or promotion
-
-Labels are signals, not guarantees. They help ensure important work is visible and discussed at the right time.
+Issue labels are used to help Engineering Managers identify which completed or in-flight items may be relevant to share.
 
 ## Issue Labels (How We Make Work Visible)
 
@@ -187,44 +198,21 @@ Timeboxes indicate expected effort, not complexity or importance.
 * Work larger than a few hours must be broken down.
 * Unclear work is marked explicitly.
 
-#### time:TBD
+## Defining Done
 
-time:TBD means the work is not yet understood well enough to timebox.
+An issue is considered done when it is merged and deployed, and any required follow-up (documentation, validation, or release communication) is complete.
 
-Issues may enter sprint planning with time:TBD, but:
-
-* if a concrete timebox cannot be agreed
-* the issue is removed from the sprint
-* refined outside the sprint
-* and reconsidered later
+If work is not shipped or not validated, it is not done.
 
 ## Ad Hoc Collaboration (Async-First, Flexible)
 
 Engineering at FlowFuse is async-first by default.
 
-We prefer:
-
-* written context
-* Slack threads
-* issues and docs
-* preserving focus time
+We prefer written context, Slack threads, issues, and docs that preserve focus time.
 
 At the same time, we are pragmatic and flexible.
 
-Engineers are encouraged to use:
-
-* quick Slack huddles
-* pairing sessions
-* short syncs
-
-when they are the fastest way to:
-
-* unblock work
-* answer a question
-* align on a decision
-* collaborate on something tricky
-
-The goal is not to avoid synchronous time. It is to use it intentionally.
+Engineers are encouraged to use quick Slack huddles, pairing sessions, or short syncs when they are the fastest way to unblock work or align.
 
 ## Worked Example
 
@@ -279,43 +267,23 @@ These metrics help us observe how well the engineering system described above is
 
 They are used to understand trends and surface constraints, not to evaluate individual performance or enforce targets.
 
+## Engineering Throughput
+
+We no longer use Engineering Throughput as a primary metric.
+
+Instead, we track Engineering Time to Value (median and P75) and ticket type distribution to understand delivery speed and bottlenecks.
+
 ### Engineering Time to Value (Median)
 
 **TL;DR**  
 How long a typical piece of engineering work takes to go from started to done.
-
-**What it tells us**  
-The baseline speed of delivery once work begins.
-
-**Why we track it**  
-To understand whether our system is improving or degrading at turning intent into shipped product.
-
----
 
 ### Engineering Time to Value (P75)
 
 **TL;DR**  
 How long the slowest 25% of engineering work takes to go from started to done.
 
-**What it tells us**  
-Where delivery slows due to complexity, dependencies, or process friction.
-
-**Why we track it**  
-To surface bottlenecks that median metrics do not reveal and to improve delivery predictability over time.
-
----
-
-### Ticket Type Distribution (Contextual Metric)
+### Ticket Type Distribution
 
 **TL;DR**  
 The ratio of feature work to other work (bugs, chores, maintenance).
-
-**What it tells us**  
-How engineering effort is distributed across different categories of work.
-
-**How we use it**  
-This is a contextual metric, not a KPI. We do not set goals or targets for this ratio.  
-It exists to provide context for Time to Value metrics and to support planning and prioritization conversations.
-
-**Why we track it**  
-To ensure tradeoffs between new product development and system health are visible and intentional.
