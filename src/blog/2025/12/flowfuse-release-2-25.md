@@ -38,7 +38,7 @@ Previously, this was only available in Node-RED managed directly by the FlowFuse
 
 You will need an account on FlowFuse Cloud to connect it to, but for this release, it does *not* require a paid subscription to use.
 
-Check the FlowFuse Expert Assistant docs for [how to get started](https://flowfuse.com/docs/user/assistant/#flowfuse-assistant-plugin).
+Check the FlowFuse Expert Assistant docs for [how to get started](https://flowfuse.com/handbook/development/ops/self-hosted-assistant/#flowfuse-assistant-plugin).
 
 ## Improved Update Scheduling
 ![Image of Scheduled Updates UI](./images/updates.png)

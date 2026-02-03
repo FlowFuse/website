@@ -175,7 +175,7 @@ This transforms the string into a JSON object like:
 ```
 
 > **Tip**: You do not need to know JavaScript to use the **function** node.
-> If you are using FlowFuse, the built-in [FlowFuse Assistant](https://www.google.com/search?q=/docs/user/assistant/) can help you write function code using natural language. Simply provide a sample of the data received from your machine and describe the output you expect — the Assistant will generate the function for you.
+> If you are using FlowFuse, the built-in [FlowFuse Assistant](/handbook/development/ops/self-hosted-assistant/#flowfuse-assistant) can help you write function code using natural language. Simply provide a sample of the data received from your machine and describe the output you expect — the Assistant will generate the function for you.
 
 ### Handling Request-Response Serial Communication
 
