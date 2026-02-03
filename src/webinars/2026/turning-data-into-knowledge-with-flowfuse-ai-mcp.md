@@ -1,5 +1,5 @@
 ---
-title: "Turning Industrial Data into Knowledge with FlowFuse AI (MCP)"
+title: "Turning Industrial Data into Knowledge with FlowFuse AI and MCP"
 subtitle: Building and Deploying MCP Applications with FlowFuse
 meta:
     description: 
