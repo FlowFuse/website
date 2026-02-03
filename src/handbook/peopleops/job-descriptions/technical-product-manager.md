@@ -18,7 +18,7 @@ The Technical Product Manager reports to the Director of Product and is primaril
 
 ### Core Tasks and Responsibilities:
 * Own metrics: Define, track, and report adoption, performance, reliability, and business impact.
-* Plan releases: Align roadmap, priorities, debt, and infrastructure with product strategy.
+* Plan sprints and releases: Align roadmap, priorities, debt, and infrastructure with product strategy.
 * Shape specs/architecture: Co-create technical specs and provide architectural input.
 * Translate across teams: Bridge product, engineering, sales, and customer success.
 * Prioritize with data: Use usage data, customer feedback, and capacity signals.
