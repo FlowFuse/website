@@ -120,7 +120,7 @@ We recommend organizing these channels into [custom Slack sections](https://slac
 
 We also have channels for specific groups, such as `#people-managers` for managers and `#us-hr` for HR topics specific to US team members.
 
-##### `#proj-` channels
+##### Project channels
 
 Project channels are created for continuous work discussion within a product lane with a clear scope. Use them for day-to-day coordination, intermediate demos, design feedback, and scope discussions among the directly involved stakeholders. When a feature is ready to be delivered, the final demo should be posted to [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK) instead. This keeps `#feature-demos` focused on what is ready for a wider audience, and `#proj-` channels focused on what is still in progress.
 
