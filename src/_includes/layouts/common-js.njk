@@ -14,181 +14,20 @@
 <!-- Syntax Highlighting CSS -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.5.1/themes/reset-min.css" integrity="sha256-KvFgFCzgqSErAPu6y9gz/AhZAvzK48VJASu3DpNLCEQ=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.6.1"/>
-
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
 <script type="text/javascript">
-    const searchScope = document.head.querySelector('[property="article:section"][content]')?.content ?? '';
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchContainer = document.getElementById('pagefind-search');
+        if (!searchContainer) return;
 
-    function initSearchBar() {
-        const {autocomplete, getAlgoliaResults} = window['@algolia/autocomplete-js'];
-        const searchClient = algoliasearch('F3E37N84X4', '2e982df3f654e132b76a671c55c048df');
-        const scopeTitles = {
-            'ama': 'Ask Me Anything',
-            'blog': 'Blog',
-            'changelog': 'Changelog',
-            'customer-stories': 'Customer Stories',
-            'docs': 'Docs',
-            'ebooks': 'E-Books',
-            'handbook': 'Handbook',
-            'node-red': 'Node-RED',
-            'webinars': 'Webinars',
-        }
-        const placeholder = Object.prototype.hasOwnProperty.call(scopeTitles, searchScope) ? `Search in ${scopeTitles[searchScope]}...` : 'Search...'
-        
-        // Initial configuration
-        const initialHitsPerPage = 5;
-        // Use a Map to store hits per page for EACH scope independently
-        const hitsPerPageMap = {}; 
-        let initialQuery = ''; 
-        
-        const createSource = (searchClient, query, scope) => {
-            let totalHits = 0;
-            
-            // Ensure we have a default value for this scope in the map
-            if (!hitsPerPageMap[scope]) {
-                hitsPerPageMap[scope] = initialHitsPerPage;
-            }
-
-            let filters;
-            if (scope.length === 0) {
-                filters = undefined;
-            } else {
-                filters = `category:${scope}`;
-            }
-            
-            return {
-                sourceId : scope,
-                getItems : () => getAlgoliaResults({
-                    searchClient,
-                    queries: [
-                        {
-                            indexName            : 'netlify_00f8cf60-997f-4c4d-9427-a97924358648_live_all',
-                            params               : {
-                                query,
-                                hitsPerPage: hitsPerPageMap[scope], // Read specific count
-                                attributesToSnippet: ['content:50']
-                            },
-                            attributesToHighlight: '*',
-                            filters: filters
-                        },
-                    ],
-                    transformResponse({ hits, results }) {
-                        totalHits = results[0].nbHits;
-                        return hits;
-                    }
-                }),
-                templates: {
-                    header({html}) {
-                        if (!Object.prototype.hasOwnProperty.call(scopeTitles, scope)) {
-                            return null;
-                        }
-
-                        return html`
-                            <span class="aa-SourceHeaderTitle">In ${scopeTitles[scope]}</span>
-                            <div class="aa-SourceHeaderLine"/>
-                        `;
-                    },
-                    item({item, components, html}) {
-                        return html`
-                            <a href="#" data-href="${item.url}" class="aa-ItemWrapper">
-                                <div class="aa-ItemContent">
-                                    <div class="aa-ItemIcon aa-ItemIcon--alignTop">
-                                        <img
-                                                src="#"
-                                                data-src="${item.image}"
-                                                alt="${item.name}"
-                                                width="40"
-                                                height="40"
-                                        />
-                                    </div>
-                                    <div class="aa-ItemContentBody">
-                                        <div class="aa-ItemContentTitle">
-                                            ${components.Highlight({ hit: item, attribute: ['hierarchy', 'lvl0'] })}
-                                        </div>
-                                        <div class="aa-ItemContentSubTitle ${item.type === 'lvl0' ? 'hidden' : ''}">
-                                            ${components.Highlight({ hit: item, attribute: ['hierarchy', item.type] })}
-                                        </div>
-                                        <div class="aa-ItemContentDescription">
-                                            ${components.Snippet({
-                                                hit      : item,
-                                                attribute: 'content',
-                                            })}
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>`;
-                    },
-                    footer({items, html}) {
-                        // Logic: Hide button if we are showing all available hits
-                        if (items.length === 0 || items.length >= totalHits) {
-                            return null;
-                        }
-                        // Add data-scope so we know WHICH button was clicked
-                        return html`<button type="button" data-scope="${scope}" id="load-more" class="aa-LoadMore load-more-btn">Load more...</button>`;
-                    }
-                }
-            };
-        }
-
-        autocomplete({
-            debug: false,
-            container: '#algolia-search',
-            placeholder,
-            getSources({query}) {
-                // Update initialQuery when getSources runs to track changes
-                if (query !== initialQuery) {
-                    initialQuery = query;
-                    // CHANGE 4: Reset ALL counters in the map on new search
-                    // We can simply clear the object or reset specific keys
-                    for (const key in hitsPerPageMap) {
-                        hitsPerPageMap[key] = initialHitsPerPage;
-                    }
-                }
-
-                if (searchScope === 'docs') {
-                    return [
-                        createSource(searchClient, query, 'docs'),
-                        createSource(searchClient, query, 'node-red')
-                    ];
-                }
-                return [ createSource(searchClient, query, searchScope) ]
-            },
-            onStateChange({ state, refresh }) {
-                // Link Fix
-                document.querySelectorAll('.aa-Panel a').forEach(item => {
-                    item.href = item.getAttribute('data-href');
-                });
-                document.querySelectorAll('.aa-Panel img').forEach(img => {
-                    img.src = img.getAttribute('data-src');
-                });
-                
-                // Logic for "Load More" buttons
-                const loadMoreBtns = document.querySelectorAll('.load-more-btn');
-                
-                loadMoreBtns.forEach(btn => {
-                    btn.onclick = (e) => {
-                        e.preventDefault(); 
-                        e.stopPropagation();
-                        
-                        // CHANGE 5: Identify scope and increment ONLY that scope
-                        const scope = e.target.getAttribute('data-scope');
-                        if (scope) {
-                            hitsPerPageMap[scope] = (hitsPerPageMap[scope] || initialHitsPerPage) + initialHitsPerPage;
-                        }
-
-                        // Trigger the refresh
-                        refresh(); 
-                    };
-                });
-            }
+        new PagefindUI({
+            element: "#pagefind-search",
+            showSubResults: true,
+            showImages: true
         });
-    }
+    });
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js"
-        integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.6.1" onload="initSearchBar()"></script>
 
 <!-- medium-zoom 1.1.0 | MIT License | https://github.com/francoischalifour/medium-zoom -->
 {% include "medium-zoom.min.njk" %}

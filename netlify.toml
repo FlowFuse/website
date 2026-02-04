@@ -69,12 +69,6 @@ command = "npm run build"
 publish = "_site"
 
 [[plugins]]
-package = "@algolia/netlify-plugin-crawler"
-  [plugins.inputs]
-  branches = ['live']
-  template = "hierarchical"
-
-[[plugins]]
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [

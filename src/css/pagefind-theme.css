@@ -1,0 +1,117 @@
+#pagefind-search {
+    border-color: #dedede;
+    flex: auto;
+}
+
+#pagefind-search .pagefind-ui__form {
+    position: relative;
+}
+
+#pagefind-search .pagefind-ui__search-input {
+    height: 42px;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0 1rem 0 2.5rem;
+    font-size: 1rem;
+    width: 100%;
+    background-color: white;
+}
+
+#pagefind-search .pagefind-ui__search-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#pagefind-search .pagefind-ui__search-input::placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #777;
+}
+
+#pagefind-search .pagefind-ui__search-clear {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+}
+
+#pagefind-search .pagefind-ui__search-clear:hover {
+    color: #333;
+}
+
+#pagefind-search .pagefind-ui__drawer {
+    z-index: 999;
+    min-width: 350px;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-top: 0.5rem;
+}
+
+#pagefind-search .pagefind-ui__result {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+#pagefind-search .pagefind-ui__result:last-child {
+    border-bottom: none;
+}
+
+#pagefind-search .pagefind-ui__result:hover {
+    background-color: #f9fafb;
+}
+
+#pagefind-search .pagefind-ui__result-link {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#pagefind-search .pagefind-ui__result-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+#pagefind-search .pagefind-ui__result-title {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+#pagefind-search .pagefind-ui__result-excerpt {
+    font-size: 0.875rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+#pagefind-search mark {
+    background-color: #fef08a;
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+#pagefind-search .pagefind-ui__message {
+    padding: 1rem;
+    color: #777;
+    text-align: center;
+}
+
+#pagefind-search .pagefind-ui__button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #777;
+    padding: 10px 0 5px;
+    font-size: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#pagefind-search .pagefind-ui__button:hover {
+    color: #2563eb;
+}
