@@ -109,7 +109,7 @@ return [
 ];
 ```
 
-> **Tip:** If you're using FlowFuse, you don't need to write this JavaScript manually. You can use the FlowFuse Assistant to generate the function code for you—just describe what you want the **function** node to do. Check out the [article](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) for more details.
+> **Tip:** If you're using FlowFuse, you don't need to write this JavaScript manually. You can use the FlowFuse Expert to generate the function code for you—just describe what you want the **function** node to do. Check out the [article](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) for more details.
 
 2. Set the **function** node's **Outputs** (in the Setup tab) to 5, since the function will return five separate messages.
 

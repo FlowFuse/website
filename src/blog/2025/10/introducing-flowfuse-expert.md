@@ -24,7 +24,7 @@ Head over to [flowfuse.com](https://flowfuse.com) and you'll see it right on the
 ![FlowFuse Expert: Providing Recipe for Connecting Serial Devices](./images/flowfuse-expert.gif){data-zoomable}
 _FlowFuse Expert: Providing a Recipe for Connecting Serial Devices_
 
-Down the road, we plan to integrate it directly into the FlowFuse environment. So if you're already using [FlowFuse Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to speed up your development, FlowFuse Expert will be right there alongside it, answering questions and providing recipes for whatever you're trying to build.
+Down the road, we plan to integrate it directly into the FlowFuse environment. So if you're already using [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to speed up your development, FlowFuse Expert will be right there alongside it, answering questions and providing recipes for whatever you're trying to build.
 
 ## Why We Built This
 
