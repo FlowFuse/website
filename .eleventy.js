@@ -103,6 +103,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/events/hm25-invite.ics");
     eleventyConfig.addPassthroughCopy("src/webinars/2025/simplifying-opc-ua/opc-ua-webinar-flows.zip");
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
+    eleventyConfig.addPassthroughCopy("src/js/bending-grid.js");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
