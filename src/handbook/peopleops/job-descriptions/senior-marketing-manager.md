@@ -2,7 +2,7 @@
 navTitle: Job Descriptions
 ---
 
-# Senior Marketing Manager
+# Head of Marketing
 
 ## Job Description
 
