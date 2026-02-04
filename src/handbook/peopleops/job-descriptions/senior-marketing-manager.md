@@ -6,11 +6,11 @@ navTitle: Job Descriptions
 
 ## Job Description
 
-The Senior Marketing Manager is responsible for building and executing a measurable, outcome-driven marketing engine that directly supports company growth. This role is not purely strategic — it is delivery-oriented, KPI-led, and deeply connected to revenue, pipeline, and product adoption.
+The Head of Marketing is responsible for building and executing a measurable, outcome-driven marketing engine that directly supports company growth. This role is not purely strategic — it is delivery-oriented, KPI-led, and deeply connected to revenue, pipeline, and product adoption.
 
 A leader who understands how to translate complex industrial and technical products into compelling narratives, while also owning execution across content, campaigns, and events. This person will balance strategic direction with hands-on leadership, ensuring marketing initiatives are delivered on time, measured rigorously, and continuously improved.
 
-The Senior Marketing Manager will work closely with Sales, Product, and Leadership to align go-to-market execution with FlowFuse’s growth objectives, supporting the full funnel from awareness through expansion.
+The Head of Marketing will work closely with Sales, Product, and Leadership to align go-to-market execution with FlowFuse’s growth objectives, supporting the full funnel from awareness through expansion.
 
 ## Core Responsibilities
 
