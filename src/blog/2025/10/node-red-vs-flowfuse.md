@@ -92,7 +92,7 @@ FlowFuse's Certified Nodes program vets community contributions for quality, sec
 
 Node-RED's visual programming is fast, but real-world development has friction points. Complex function nodes and UI templates require time and coding skill. Understanding teammates' flows isn't always straightforward. Building the same patterns across projects becomes repetitive.
 
-FlowFuse's AI Assistant tackles these challenges directly in the editor. Describe your need in plain language—it generates function nodes or UI templates, explains existing flows, writes SQL queries, suggests relevant nodes, and creates documentation. This speeds up experienced developers while making Node-RED accessible to those still learning.
+FlowFuse Expert tackles these challenges directly in the editor. Describe your need in plain language—it generates function nodes or UI templates, explains existing flows, writes SQL queries, suggests relevant nodes, and creates documentation. This speeds up experienced developers while making Node-RED accessible to those still learning.
 
 The Blueprint Library provides tested and proven templates for common industrial scenarios—OEE dashboards, Andon systems, operator terminals. Instead of building from scratch, start with working solutions and customize them for your needs.
 

@@ -208,4 +208,4 @@ Returns `true` if found, `false` if not. `"The quick brown fox"` with `$contains
 
 For complex string operations that combine multiple steps or require custom logic, you can use a Function node with JavaScript.
 
-If you're not familiar with JavaScript, but you're using FlowFuse, you can use the [FlowFuse Assistant's](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) function node generator. Simply describe what you want to accomplish, and the assistant will generate the function node code for you.
+If you're not familiar with JavaScript, but you're using FlowFuse, you can use the [FlowFuse Expert's](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) function node generator. Simply describe what you want to accomplish, and the assistant will generate the function node code for you.

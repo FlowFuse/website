@@ -49,7 +49,7 @@ When you make a Pareto Chart, this can be done in three steps:
 
 2. **Aggregate in a Function node** – Map each data point to a type (e.g., machine type, process step, defect category) and keep a running count of occurrences.
 
-   > **Tip:** You do not need to know JavaScript. Simply describe the desired outcome and provide a sample dataset—the **FlowFuse AI Assistant** will generate the Function node for you. [Learn more](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
+   > **Tip:** You do not need to know JavaScript. Simply describe the desired outcome and provide a sample dataset—the **FlowFuse Expert** will generate the Function node for you. [Learn more](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
 
 3. **Sort the results** – Use a Sort node to arrange categories so the most frequent appear first.
 
