@@ -5,7 +5,7 @@ description: "Learn whether MQTT or CoAP fits your IoT deployment. Learn how dev
 date: 2026-02-04
 keywords: MQTT, CoAP, IoT protocols, constrained devices, edge computing, message broker, pub/sub, request/response, IoT architecture
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/02/images/coap-vs-mqtt.png
 tags:
 - flowfuse
 ---
