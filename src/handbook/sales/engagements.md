@@ -194,7 +194,89 @@ graph TD
 
     CEO -- Reject --> Negotiate
     CEO -- Accept --> Security
-**Security Review**: If a customer requires a security review, the AE coordinates between the customer's questionnaire and the CTO/Engineering team to provide approved answers.
-**Legal & Contract Process**: This stage handles the Master Subscription Agreement (MSA). Depending on whether the customer accepts our standard MSA or requests minor/major redlines, the contract is routed to Legal (Amy) and/or the CEO for cost and term approval before final signature.
+```
 
-Please follow the detailed step-by-step routing and decision points outlined in the [Deal Desk Flow Document](https://docs.google.com/presentation/d/1dnv-x9YMHirI3ctVLl2paRScoTwgwWXdLn1rG3rlFbc/edit?usp=sharing)
+#### Security Review
+
+If a customer requires a security review, the AE coordinates between the
+customer's questionnaire and the CTO/Engineering team to provide approved answers.
+
+```mermaid
+flowchart TD
+    %% Nodes
+    Start[Sales Rep Reviews Security]
+    ReqReview{Requires Security Review?}
+    
+    %% Happy Path Steps
+    ShareQ[Customer Shares Questionnaire]
+    SendToEng[AE sends to CTO/Eng]
+    EngAnswers[CTO/Eng sends answers to AE]
+    Forward[AE forwards to Customer]
+    
+    %% Approval Decision
+    Accepts{Customer Accepts?}
+    Rework[AE reviews notes/Meeting with CTO]
+    
+    %% End State
+    EndProcess((Go to Contract/Legal))
+
+    %% Connections
+    Start --> ReqReview
+    
+    %% No Review Path
+    ReqReview -- No --> EndProcess
+    
+    %% Review Needed Path
+    ReqReview -- Yes --> ShareQ
+    ShareQ --> SendToEng
+    SendToEng --> EngAnswers
+    EngAnswers --> Forward
+    Forward --> Accepts
+    
+    %% Outcome Logic
+    Accepts -- Approve --> EndProcess
+    
+    %% Rejection Loop
+    Accepts -- Reject --> Rework
+    Rework --> EngAnswers
+```
+
+
+#### Legal & Contract Process
+
+This stage handles the Master Subscription Agreement (MSA).
+Depending on whether the customer accepts our standard MSA or requests minor/major
+redlines, the contract is routed to Legal (Scale) and/or the CEO for cost and term
+approval before final signature.
+
+```mermaid
+flowchart TD
+    %% Nodes
+    IsStd{Standard MSA?}
+    IsRed{Redlines?}
+    NonStd[Legal Review + Cost Approval]
+    Major[Legal Review - Major/IP]
+    CEO[CEO Approval]
+    Send[Send to Customer]
+    Approved{Customer Approve?}
+    Sign((Sign Contract))
+    
+    %% Non-Standard Path
+    IsStd -- No --> NonStd
+    NonStd --> CEO
+
+    %% Standard Path
+    IsStd -- Yes --> IsRed
+    IsRed -- No --> Sign
+    
+    %% Redline Paths
+    IsRed -- "Yes (Minor/Payment)" --> CEO
+    IsRed -- "Yes (Major/Liability)" --> Major
+    Major --> CEO
+
+    %% Unified Loop
+    CEO --> Send
+    Send --> Approved
+    Approved -- Yes --> Sign
+    Approved -- No --> CEO
+```
