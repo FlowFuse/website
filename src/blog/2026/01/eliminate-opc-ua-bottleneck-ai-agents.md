@@ -5,7 +5,7 @@ description: "Learn how agentic AI transforms OPC UA server investigations—aut
 date: 2026-01-30
 keywords: OPC UA, AI Agents, MCP, FlowFuse, Industrial IoT, Root Cause Analysis, Node-RED.
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/01/images/opcua-ai.png
 tags:
 - flowfuse
 ---
