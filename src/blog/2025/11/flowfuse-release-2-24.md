@@ -55,9 +55,9 @@ Find out more on the [blueprint page](/blueprints/getting-started/store-and-forw
 
 FlowFuse MCP nodes allow you to surface information to an LLM to create custom AI agents. We're working on enabling FlowFuse to identify anything you have surfaced to an MCP, paving the way for creating massively powerful agents, enabled by everything you've connected to FlowFuse.
 
-## FlowFuse Assistant for Open-Source Node-RED
+## FlowFuse Expert for Open-Source Node-RED
 
-FlowFuse Assistant is our collection of AI-enhancements within the Node-RED editor - assisted creation of Function nodes, autocompleting flows and documentation generation amongst other features. Currently it's an exclusive feature of the FlowFuse platform, but we're hard at work to bring it to standalone Node-RED instances.
+FlowFuse Expert is our collection of AI-enhancements within the Node-RED editor - assisted creation of Function nodes, autocompleting flows and documentation generation amongst other features. Currently it's an exclusive feature of the FlowFuse platform, but we're hard at work to bring it to standalone Node-RED instances.
 
 Coming soon you'll be able to experience the power of AI-enhanced development within Node-RED wherever it's running.
 
@@ -76,7 +76,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({{ site.appURL }}/account/create) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free]({{ site.onboardingURL }}) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

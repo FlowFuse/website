@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.21: AI-Assisted SQL, Low-Code Custom Nodes, and Remote Instance Performance Insights"
-subtitle: "Introducing FlowFuse Assistant functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes."
-description: "Introducing FlowFuse Assistant functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes"
+subtitle: "Introducing FlowFuse Expert functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes."
+description: "Introducing FlowFuse Expert functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes"
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
 image: /blog/2025/08/images/release-2.21.png
@@ -16,8 +16,8 @@ It's been a very busy release and we have many great new features available on F
 <!--more-->
 
 ## Assistant Functionality in Tables Nodes
-![Gif showing AI Assistant in Tables](./images/tables.gif)
-_AI Assistant in Tables recognizes table schema and turns natural language prompts into SQL queries_
+![Gif showing FlowFuse Expert in Tables](./images/tables.gif)
+_FlowFuse Expert in Tables recognizes table schema and turns natural language prompts into SQL queries_
 
 Building on our successful [Tables launch in 2.20](/blog/2025/07/flowfuse-release-2-20/), we've now integrated AI assistance directly into our Tables nodes. This lowers the barrier for working with databases, reducing the dependency on SQL knowledge. With this, you can type a natural language prompt that will be interpreted in light of the structure of tables in your FlowFuse Tables, which enables an AI-supported autocomplete and assists with writing SQL specifically for connected FlowFuse tables. 
 
@@ -93,7 +93,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({{ site.appURL }}/account/create) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free]({{ site.onboardingURL }}) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

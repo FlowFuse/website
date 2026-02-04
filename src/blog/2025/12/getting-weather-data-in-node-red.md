@@ -23,7 +23,7 @@ We'll use FlowFuse Dashboard for the UI since it's modern and easier to work wit
 
 Before you start, make sure you have:
 
-- **Node-RED Instance:** You need Node-RED running somewhere. Easiest option is FlowFuse, [grab a free trial](https://app.flowfuse.com/account/create) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
+- **Node-RED Instance:** You need Node-RED running somewhere. Easiest option is FlowFuse, [grab a free trial]({{ site.onboardingURL }}) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
 - **OpenWeatherMap Account:** Sign up at `openweathermap.org`. The free tier gives you enough API calls for this project.
 
 ## Installing FlowFuse Dashboard
@@ -109,7 +109,7 @@ return [
 ];
 ```
 
-> **Tip:** If you're using FlowFuse, you don't need to write this JavaScript manually. You can use the FlowFuse Assistant to generate the function code for you—just describe what you want the **function** node to do. Check out the [article](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) for more details.
+> **Tip:** If you're using FlowFuse, you don't need to write this JavaScript manually. You can use the FlowFuse Expert to generate the function code for you—just describe what you want the **function** node to do. Check out the [article](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) for more details.
 
 2. Set the **function** node's **Outputs** (in the Setup tab) to 5, since the function will return five separate messages.
 
@@ -235,4 +235,4 @@ Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashbo
 
 Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same—you're just swapping data sources and visualizations.
 
-[Start your free FlowFuse trial](https://app.flowfuse.com/account/create) and keep building.
+[Start your free FlowFuse trial]({{ site.onboardingURL }}) and keep building.

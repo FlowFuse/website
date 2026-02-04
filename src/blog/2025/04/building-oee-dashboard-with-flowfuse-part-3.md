@@ -281,4 +281,4 @@ This final part completes our series on building a real-time OEE dashboard with 
 By the end of this journey, you have built a dashboard and created a foundation for continuous improvement in your manufacturing environment using open-source, low-code tools.
 We hope this series helped you understand how FlowFuse and Node-RED can quickly prototype and deploy powerful industrial applications. Thank you for following along!
 
-Suppose you have not built your OEE dashboard yet or are facing issues. In that case, you can get started instantly—[sign up](https://app.flowfuse.com/account/create) now and use our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to accelerate your deployment.
+Suppose you have not built your OEE dashboard yet or are facing issues. In that case, you can get started instantly—[sign up]({{ site.onboardingURL }}) now and use our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to accelerate your deployment.

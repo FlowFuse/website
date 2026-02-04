@@ -19,9 +19,9 @@ This release focuses on speeding time to value with more powerful AI functionali
 ![GIF of AI Flow Explainer](./images/assistant-0-3-0-flow-explainer-3tbNoRlb4T-1089.gif)
 _GIF of AI Flow Explainer_
 
-The FlowFuse Assistant can now do more than create a Function node based on your text instructions. With this release, you can highlight a flow in the Node-RED editor and ask the FlowFuse Assistant to explain the purpose of the flow. This new functionality is perfect for learning and collaboration.
+The FlowFuse Expert can now do more than create a Function node based on your text instructions. With this release, you can highlight a flow in the Node-RED editor and ask the FlowFuse Expert to explain the purpose of the flow. This new functionality is perfect for learning and collaboration.
 
-You can also use the FlowFuse assistant to create Dashboard templates with HTML, VUE, Vuetify, and CSS, allowing you to build even faster.
+You can also use the FlowFuse Expert to create Dashboard templates with HTML, VUE, Vuetify, and CSS, allowing you to build even faster.
 
 Stay tuned for more developments as we continue to add enhancements to the Node-RED editor in FlowFuse to enable even faster development.
 
@@ -102,7 +102,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({{ site.appURL }}/account/create) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free]({{ site.onboardingURL }}) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

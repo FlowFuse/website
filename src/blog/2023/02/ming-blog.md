@@ -43,4 +43,4 @@ If you’re concerned about managing multiple components in your IoT stack, Flow
 
 With the FlowFuse [MIND stack](/blog/2024/05/node-red-mind-stack-with-flowfuse/), you get a unified platform that integrates MQTT for efficient communication, Node-RED for seamless integration and data transformation, and [Dashboard 2.0](/platform/dashboard/) for powerful visualizations—all from one place. This integration reduces configuration and maintenance overhead while ensuring consistent performance and security across your deployments. Explore the MIND stack now.
 
-**Want an easier, more secure, and scalable IoT stack? Start your [free trial](https://app.flowfuse.com/account/create/) of FlowFuse today.**
+**Want an easier, more secure, and scalable IoT stack? Start your [free trial]({{ site.onboardingURL }}) of FlowFuse today.**

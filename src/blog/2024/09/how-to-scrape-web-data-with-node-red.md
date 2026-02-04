@@ -68,7 +68,7 @@ When you click the **inject** button, you will see the array containing the text
 
 ### Transforming Data into Structured Objects
 
-You can use JavaScript in a Node-RED function node to transform data into structured objects. If you are familiar with JavaScript, this process will be straightforward. However, if you are not, you can use FlowFuse Assistant to generate the necessary function. For more details, refer to our [LinkedIn Post](https://www.linkedin.com/posts/flowfuse_flowfuse-nodered-automation-activity-7226171132796637184-vKKt/?utm_source=share&utm_medium=member_desktop) for a quick guide. However, in this section, we will use a low-code approach to transform the data.
+You can use JavaScript in a Node-RED function node to transform data into structured objects. If you are familiar with JavaScript, this process will be straightforward. However, if you are not, you can use FlowFuse Expert to generate the necessary function. For more details, refer to our [LinkedIn Post](https://www.linkedin.com/posts/flowfuse_flowfuse-nodered-automation-activity-7226171132796637184-vKKt/?utm_source=share&utm_medium=member_desktop) for a quick guide. However, in this section, we will use a low-code approach to transform the data.
 
 1. Drag a **Split** node onto the canvas and connect it to the **HTML** node. This **Split** node will split the input array into individual string messages.
 2. Drag a **Change** node onto the canvas and connect it to the **Split** node. Set `msg.name` to the following JSONata expression to extract the country name:
@@ -129,4 +129,4 @@ Web scraping can be a valuable tool for gathering data, but it's crucial to navi
 
 You’ve now learned to use Node-RED for web scraping, from sending requests and parsing HTML to transforming data into practical formats. This approach streamlines data collection from websites, making it easier to manage and analyze information efficiently.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Scrape%20Data%20from%20Websites%20Using%20Node-RED", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Scrape%20Data%20from%20Websites%20Using%20Node-RED", cta_type: "signup", cta_text: "" %}

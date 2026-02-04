@@ -6,6 +6,7 @@
     "github": "steve-mcl",
     "country": "GB",
     "headshot": "steve.png",
+    "reports_to": "Jamie Strusz",
     "bio": "Steve is a Senior Software Engineer at FlowFuse. Prior to joining FlowFuse, he worked as an Engineer in the Automotive Industry and has extensive production environment experience. Steve is also a Node-RED core contributor and has written several popular contribution nodes for Node-RED including drivers for communicating with PLC Hardware",
     "facts": [
         "Programming since I was teenager. Lets just say a 'long time'",

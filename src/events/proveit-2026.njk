@@ -1,0 +1,119 @@
+---
+layout: layouts/base.njk
+tags:
+    - trade-show
+title: FlowFuse at ProveIt! 2026
+meta: 
+    description: Visit us at Hall 15, Stand H71 and experience live demos, explore real-time data visualisations, and see how open source innovation is shaping the future of industrial operations.
+demoHighlights:
+    - Live demonstrations connected to the ProveIt! Virtual Factory
+    - Real-time data flow across the complete ISA-95 architecture
+    - Seamless integration with your existing systems
+    - AI-powered development capabilities with FlowFuse Expert
+    - Hands-on demos that put you in control of your operation
+sessionHighlights: 
+    - How we move data through the complete ISA-95 industrial stack (Levels 0-4)
+    - Why FlowFuse is essential for scalable, future-proof data management
+    - How our platform enables low-code integration, edge/cloud connectivity, and real-time event processing
+    - Real-world integration with the ProveIt! ecosystem showcasing efficiency gains
+    - Practical steps to implement unified industrial architectures
+---
+<!-- Hero Section -->
+<div class="w-full nohero py-20">
+    <div class="w-full px-6">
+        <div class="container flex flex-col m-auto text-left md:max-w-screen-lg items-stretch">
+            <div class="w-full flex flex-col max-md:justify-center md:flex-row md:gap-10 mt-3 pb-8 md:pb-12">
+                <div class="md:max-w-[390px] flex flex-grow relative ff-image-cover ff-image-rounded w-full max-md:mb-6">
+                    <div class="event bg-indigo-50 max-md:max-h-[300px] w-full flex-grow ff-image-cover left">
+                        {% image "./events/images/pi26/proveit26-hero.png", "Image of people at the FlowFuse booth", [644] %}
+                    </div>
+                    <div class="absolute top-5 left-5 w-[170px] h-auto">
+                        {% image "./events/images/pi26/pi_logo.png", "ProveIt! 2026 Logo", [170] %}
+                    </div>
+                </div>
+                <div class="main-content sm:2/3">
+                    <label class="text-red-600 font-medium mb-2 capitalize">Trade Show</label>
+                    <h1 class="md:max-w-screen-md">{{ title | safe }}</h1>
+                    <p>Discover how FlowFuse empowers you to build, deploy, and scale industrial automation — your way.</p>
+                    <p>Visit us at <span class="font-semibold">Booth #17</span> and experience live demonstrations of FlowFuse connecting to the ProveIt! Virtual Factory, showcasing real-time industrial connectivity, data integration, and AI-powered operations.</p>
+                    <p><span class="font-semibold">Let's prove it together — live, integrated, and in real-time.</span></p>
+                    <div class="flex items-start justify-start mt-10">
+                        <a class="ff-btn ff-btn--primary uppercase items-center text-base"
+                            href="https://www.proveitconference.com/offers/GVr8MysP?coupon_code=FLOWFUSE"
+                            target="_blank">
+                            GET YOUR DISCOUNTED TICKETS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Join us Section -->
+    <div class="w-full md:bg-white pt-12 md:pt-20 px-6">
+        <div class="container flex flex-col md:flex-row m-auto text-left md:max-w-screen-lg m-auto md:gap-14 items-stretch">
+            <div class="ff-prose mt-3 sm:1/3 flex-grow flex flex-col justify-center">
+                <h3 class="text-gray-600 leading-snug">Join Us at Booth #17 and Experience Industrial Connectivity in Action</h3>
+                <p>Join Us at Booth #17 and Experience Industrial Connectivity in Action</p>
+                <div class="prose">
+                    <ul>
+                        {% for highlight in demoHighlights %}
+                            <li>{{ highlight | safe }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <p>At FlowFuse, we believe in empowering engineers to take charge — designing, adapting, and scaling solutions to meet unique operational challenges.</p>
+                <p>Visit us at Booth #17 and unlock the potential of smarter, more efficient manufacturing.</p>
+            </div>
+            <div class="md:max-w-[390px] flex flex-grow relative ff-image-cover ff-image-rounded w-full max-md:mb-6">
+                <div class="max-md:max-h-[300px] w-full flex-grow ff-image-cover left">
+                    {% image "./events/images/pi26/proveit26-booth.png", "Image of people attending the FlowFuse demo.", [644] %}
+                </div>
+            </div>
+        </div>
+        <div id="livesession" class="flex flex-col m-auto text-left md:max-w-screen-lg m-auto items-stretch mt-6 md:mt-20">
+            <!-- Live Session Section -->
+            <div class="ff-image-rounded w-full mt-6 mb-12">
+                {% image "./events/images/pi26/proveit-session.jpg", "Banner indicating place and time of the live session", [1024] %}
+            </div>
+            <!-- Live Demo Section -->
+            <div class="mt-6">
+                <h3 class="text-gray-600 leading-snug"><span class='text-indigo-600'>On-Site Live Demonstrations:</span></br>Intelligence and Connectivity Across Every Layer</h3>
+                <p>Join us at our booth on <span class="font-semibold">from February 16–20, 2026</span> or exclusive live demonstrations featuring FlowFuse's complete industrial connectivity stack.</p>
+                <p>Our demonstrations showcase how FlowFuse integrates with the ProveIt! Virtual Factory, demonstrating real-world industrial interoperability.</p>
+            </div>
+            <div class="flex max-md:flex-col w-full gap-4">
+                <div class="ff-prose prose w-full md:2/3">
+                    <p>In these sessions, you'll see:</p>
+                    <ul>
+                        {% for highlight in sessionHighlights %}
+                            <li>{{ highlight | safe }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="bg-indigo-50/50 rounded-lg p-6 w-full md:max-w-[390px] flex flex-col justify-center max-md:mb-6">
+                    <h4>Don't miss out!</h4>
+                    <p>Stop by our booth, meet our leadership team and technical experts throughout the event, including Zeger-Jan van de Weg (CEO), Michael Davis, Kristopher Sandoval, Drew Gatti, and Omar Ahmed.</p>
+                    <div class="flex sm:order-2 order-3 mt-4">
+                        <a class="ff-btn ff-btn--primary-outlined uppercase items-center text-base mx-auto" href="https://meetings-eu1.hubspot.com/michael-davis/in-person-proveit-meeting?utm_campaign=proveit_2026&utm_source=website&utm_medium=events-page&utm_content=hero-cta">
+                            SCHEDULE A MEETING
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Book a Demo Section -->
+        <div class="container md:max-w-screen-lg p-8 border-2 border-indigo-200 rounded-lg bg-white drop-shadow-lg m-auto mt-10 md:mt-20 grid grid-cols-1 sm:grid-cols-3 sm:grid-flow-col sm:gap-x-6 sm:py-0 sm:grid-rows-[100px_minmax(20px,_1fr)]">
+            <h3 class="order-1 sm:mt-6">Can't make it to ProveIt! 2026?</h3>
+            <div class="sm:row-span-2 sm:col-span-2 sm:order-3 order-2">
+                <p>No problem! You can still experience FlowFuse's cutting-edge industrial connectivity solution from the comfort of your own space. Book a personalised online demo with us and see how our flexible, real-time industrial software can optimise your operations.</p>
+                <p>Our team is ready to walk you through the features that matter most to your business and answer any questions you may have.</p>
+                <p>Take control of your industrial data and improve efficiency across your operations.</p>
+            </div>
+            <div class="flex items-start justify-start sm:order-2 order-3 sm:self-end sm:pb-6 max-sm:mt-6">
+                <a class="ff-btn ff-btn--primary uppercase items-center text-base" href="/book-demo/">
+                    BOOK A DEMO
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

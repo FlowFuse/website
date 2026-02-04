@@ -24,7 +24,7 @@ Head over to [flowfuse.com](https://flowfuse.com) and you'll see it right on the
 ![FlowFuse Expert: Providing Recipe for Connecting Serial Devices](./images/flowfuse-expert.gif){data-zoomable}
 _FlowFuse Expert: Providing a Recipe for Connecting Serial Devices_
 
-Down the road, we plan to integrate it directly into the FlowFuse environment. So if you're already using [FlowFuse Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to speed up your development, FlowFuse Expert will be right there alongside it, answering questions and providing recipes for whatever you're trying to build.
+Down the road, we plan to integrate it directly into the FlowFuse environment. So if you're already using [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to speed up your development, FlowFuse Expert will be right there alongside it, answering questions and providing recipes for whatever you're trying to build.
 
 ## Why We Built This
 
@@ -40,4 +40,4 @@ FlowFuse Expert is built on and runs entirely using FlowFuse technology itself. 
 
 FlowFuse Expert is just one of the many powerful tools we’ve made available to everyone. With FlowFuse, you can deploy, scale, and manage Node-RED effortlessly, accelerate development with FlowFuse AI-assistance, and build your own MCP server. Let AI agents monitor and control industrial applications using MCP nodes—or run your custom AI models in Node-RED with ONNX nodes.
 
-[Start your free FlowFuse trial today](https://app.flowfuse.com/account/create) and see how you can deploy, manage, and scale secure Node-RED to build powerful industrial applications while exploring the new AI tools we’ve made available for FlowFuse users within Platform.
+[Start your free FlowFuse trial today]({{ site.onboardingURL }}) and see how you can deploy, manage, and scale secure Node-RED to build powerful industrial applications while exploring the new AI tools we’ve made available for FlowFuse users within Platform.

@@ -135,7 +135,11 @@ Please respond to mentions and review requests within two business days.
 
 ### Standup meetings
 
-Standup meetings are difficult to run across many timezones, so we use [Geekbot](https://geekbot.com/) to make standups async. Geekbot sends a prompt each workday at 9:00 in your local timezone when you are active in Slack. Everyone in the `#standup` channel will receive the prompt.
+Standup meetings are difficult to run across many time zones, so we run standups asynchronously using [Geekbot](https://geekbot.com/). Geekbot sends a prompt each workday at 9:00 in your local time, or when you first become active in Slack after that time.
+
+Previously, all standups were posted in a single #standup channel. That channel is now archived, and standups live in departmental channels (Sales, Marketing, BizOps, and Engineering, which currently includes Product).
+
+This keeps signal-to-noise healthy as we grow and ensures updates are shared where the most relevant stakeholders can easily find them, without scrolling through standups from other teams.
 
 A good standup update reduces the need for status updates in live meetings. When writing your update, keep the following in mind:
 1.	Connect your work to our broader goals. Explain what you plan to do today and how it supports the company’s priorities.
@@ -156,9 +160,29 @@ Example standup messages:
 
 #### Monday Team Catchup
 
-We hold an optional team catchup every Monday. This meeting is a chance to share company updates, get to know each other, and talk about anything you want to share, both professionally and personally.
+1. Purpose & Attendance
+Our Monday meeting serves a dual purpose: maintaining organizational alignment as we scale and fostering a connected team culture.
+   * First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals.
+   * Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities.
 
-You can add simple items to the agenda, such as what you did over the weekend or anything that kept you busy. Adding items also helps set the order of conversation and makes sure everyone has space to speak.
+2. Format: Department Spotlights
+Each Monday, one department will lead a 5–10 minute presentation. These briefings are intended to be concise, high-level, and focused on information that impacts the broader organization.
+The rotation will follow a four-week cycle:
+   * Week 1: Company Update – Focusing on organizational health and "big picture" goals by the CEO
+   * Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by the Engineering & Product leadership
+   * Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Sales leadership
+   * Week 4: Marketing – Highlighting how we are communicating our value to the market by marketing leadership
+
+3. Presenter Guidelines 
+To maintain a high-energy pace and respect the team's time:
+   * Content: Focus on three pillars: Recent Wins, Current Challenges, and Upcoming Milestones.
+   * Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
+   * Visuals: Keep to 3–5 high-impact, data-informed slides.
+   * Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
+
+4. Open Agenda (Optional Segment)
+For the latter portion of the meeting, team members are encouraged to add items to the agenda. This is an informal space to share weekend highlights, personal news, or professional updates that keep you busy.
+Effective Date: This new format begins Monday, February 2nd, 2026.
 
 #### Strategy Call
 
@@ -168,9 +192,9 @@ This call takes place on Tuesdays.
 
 ## 1:1 meetings
 
-## 1:1 meetings
+Each employee at FlowFuse has regular one-on-one meetings with their manager. For individual contributors, 1:1s should happen at least once a month. Depending on role, tenure, and current needs, a biweekly (every two weeks) or weekly cadence may be more appropriate and should be agreed upon by the manager and direct report.
 
-Each employee at FlowFuse has a weekly one-on-one meeting with their manager. The direct report owns the agenda. Use this time to talk about anything that helps you succeed, such as personal updates, challenges, feedback, or decisions you need support with.
+The direct report owns the agenda. Use this time to talk about anything that helps you succeed, such as personal updates, challenges, feedback, or decisions you need support with.
 
 Keep your agenda in a shared Google Doc. Both you and your manager should add items as they come to mind, instead of waiting until the day before. During the meeting, you can walk through the topics in whatever order is most useful.
 
