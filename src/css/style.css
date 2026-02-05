@@ -1981,36 +1981,103 @@ lite-youtube::before {
 }
 
 .raster-gradient-bg {
-    background: radial-gradient(circle 80vw at 100% 0%, theme(colors.indigo.50), transparent);
     position: relative;
+    min-height: 100vh;
 }
 
-.raster-gradient-bg::before {
-    content: "";
+/* Grid Container - Extends beyond hero with bottom fade */
+.bending-grid-container {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px);
-    background-size: 20px 20px;
-    
-    /* Mask using the gradient - grid fades in/out */
-    mask: linear-gradient(to top, 
-        transparent 35%,       /* invisible at bottom */
-        black 56%,             /* fully visible starts */  
-        black 78%,             /* fully visible ends */
-        transparent 97%        /* invisible at top */
-    );
-    -webkit-mask: linear-gradient(to top, 
-        transparent 35%, 
-        black 56%, 
-        black 78%,
-        transparent 97%
-    );
-    
+    width: 100%;
+    height: 120%; /* Extends 20% beyond hero */
     pointer-events: none;
-    border-radius: inherit;
+    z-index: 1;
+    perspective: 1540px;
+    perspective-origin: 60% 25%;
+    /* Fade out at bottom - starts at 70%, transparent at 100% */
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        rgba(0, 0, 0, 0.8) 80%,
+        rgba(0, 0, 0, 0.5) 90%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        rgba(0, 0, 0, 0.8) 80%,
+        rgba(0, 0, 0, 0.5) 90%,
+        transparent 100%
+    );
+}
+
+/* Grid - Position adjusted for 120% container, with top fade */
+.bending-grid {
+    position: absolute;
+    width: 250%;
+    height: 800%;
+    left: -75%;
+    top: 25%;  /* Positioned just below AI text input */
+    background-image:
+        linear-gradient(rgba(99, 102, 241, 0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.25) 1px, transparent 1px);
+    background-size: 20px 20px;
+    transform-origin: center top;
+    /* Fade out top edge of grid pattern */
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 1%,
+        rgba(0, 0, 0, 0.3) 2%,
+        rgba(0, 0, 0, 0.6) 3%,
+        rgba(0, 0, 0, 0.9) 4%,
+        black 5%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 1%,
+        rgba(0, 0, 0, 0.3) 2%,
+        rgba(0, 0, 0, 0.6) 3%,
+        rgba(0, 0, 0, 0.9) 4%,
+        black 5%
+    );
+}
+
+/* Top fade - Absolute positioning within hero */
+.grid-fade-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(
+        to bottom,
+        white 0%,
+        white 20%,
+        rgba(255, 255, 255, 0.98) 40%,
+        rgba(255, 255, 255, 0.92) 55%,
+        rgba(255, 255, 255, 0.8) 70%,
+        rgba(255, 255, 255, 0.5) 85%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Side fades - Absolute positioning within hero */
+.grid-fade-sides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(to right, white 0%, transparent 20%, transparent 80%, white 100%);
+    pointer-events: none;
+    z-index: 2;
 }

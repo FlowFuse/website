@@ -54,6 +54,12 @@ hubspot:
 ---
 <!--Hero Content-->
 <div class="w-full px-6 raster-gradient-bg">
+    <!-- Bending Grid Background (hero section only) -->
+    <div class="bending-grid-container" id="hero-grid-container">
+        <div class="bending-grid" id="hero-grid"></div>
+        <div class="grid-fade-top" id="grid-fade-top"></div>
+        <div class="grid-fade-sides"></div>
+    </div>
     <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
@@ -63,7 +69,7 @@ hubspot:
                 <p class="mt-6 sm:mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
                     {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
                 </p>
-                
+
                 <!-- AI Chat Interface -->
                 {% include "components/ai-chat-interface.njk" %}
 
@@ -73,9 +79,9 @@ hubspot:
                 <div class="text-center mt-16 mb-8">
                     <h5 class="text-gray-600 mb-12">Or get a quick look at FlowFuse in 90 seconds</h5>
                     <div class="flex justify-center items-end m-auto">
-                        <lite-youtube 
+                        <lite-youtube
                             videoid="9i-EKcNksvk"
-                            params="rel=0" 
+                            params="rel=0"
                             style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/9i-EKcNksvk/maxresdefault.jpg'); background-size: cover; background-position: center;"
                             class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full">
                         </lite-youtube>
