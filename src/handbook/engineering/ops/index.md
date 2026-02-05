@@ -26,6 +26,6 @@ As part of our CI/CD pipeline in our [@flowfuse/flowfuse](https://github.com/Flo
 
 You can read more about our various environments here:
 
-- [Pre Staging](https://flowfuse.com/handbook/development/contributing/#test-changes-in-staging) - used for each individual pull request as part of the code review process.
+- [Pre Staging](https://flowfuse.com/handbook/engineering/contributing/#test-changes-in-staging) - used for each individual pull request as part of the code review process.
 - [Staging](./staging.md) - triggered by merge to `main` branch, used for testing the full application, without fear of damaging the production environment.
 - [Production](./production.md) - the live environment that our customers use.

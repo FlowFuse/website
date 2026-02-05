@@ -8,7 +8,7 @@ tags:
 ---
 
 As part of our dedication to providing a secure platform for our customers, we
-operate a [Bug Bounty programme](https://flowfuse.com/handbook/development/security/)
+operate a [Bug Bounty programme](https://flowfuse.com/handbook/engineering/security/)
 to encourage responsible disclosure of potential issues.
 
 With all disclosures we evaluate their severity in terms of their direct impact,
@@ -34,7 +34,7 @@ the relevant API responses.
 We value the effort people put into making responsible disclosures to us and look
 to reward the work where it meets our criteria.
 
-Find out more about our [Bug Bounty programme](https://flowfuse.com/handbook/development/security/).
+Find out more about our [Bug Bounty programme](https://flowfuse.com/handbook/engineering/security/).
 
 
 

@@ -1,14 +1,13 @@
 ---
 navTitle: Product
-navGroup: Company
 ---
 # Product
 
-The product department, and Product Managers (PM) by extend are responsible for:
+The product function, and Product Managers (PM) by extension, are responsible for:
 
 1. Understanding and communicating the problem of our users and customers.
 2. Defining requirements for a solution that is loved by our users, customers and the community.
-3. Continuously aligning the product strategy with FlowFuse's core [strategic objectives](../company/strategy.md), ensuring not only that the product meets current market demands but also anticipates future trends.
+3. Continuously aligning the product strategy with FlowFuse's core [strategic objectives](../../company/strategy.md), ensuring not only that the product meets current market demands but also anticipates future trends.
 
 ## Core tasks and responsibilities
 
@@ -22,14 +21,14 @@ The product department, and Product Managers (PM) by extend are responsible for:
 | Determine Pricing Tier for Features                            | While the CEO and Sales team handle pricing, the PM is responsible for determining which features belong to specific [tiers](./pricing.md).                                                                                                                       |
 | Product-Related Decisions                                      | The PM is responsible for making strategic decisions that shape the overall direction of the product.                                                                                                                                                                                                         |
 
-## How the product department works
+## How product works
 
 - [Glossary](./glossary.md)
 - [Feedback](./feedback.md)
 - [Product Categories](./verticals.md)
 - [Strategy](./strategy.md)
 - [Pricing Principles](./pricing.md)
-- [Feature Demos](/handbook/development/project-management#feature-demos)
+- [Feature Demos](/handbook/engineering/project-management#feature-demos)
 - [Versioning](./versioning.md)
 - [Metrics](./metrics.md)
 - [Node-RED Dashboard](./dashboard.md)

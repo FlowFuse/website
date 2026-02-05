@@ -20,7 +20,7 @@ These three pillars ensure we are aligned with our product mission statement and
 
 Any new feature requests, product improvements, or other changes to our product can be reflected back to these pillars to ensure they are in line with our product strategy.
 
-We can break down our product pillars into smaller "Areas", which are more specific focus areas on how to optimize the product pillar. You can see how these Areas are used in our product planning [here](../development/project-management.md).
+We can break down our product pillars into smaller "Areas", which are more specific focus areas on how to optimize the product pillar. You can see how these Areas are used in our product planning [here](../project-management.md).
 
 | Build | Manage | Deploy |
 |-------|--------|--------|

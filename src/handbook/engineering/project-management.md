@@ -247,8 +247,12 @@ The issue is visible but intentionally not sprint-ready.
 
 ### Execution
 
+<<<<<<< HEAD:src/handbook/engineering/project-management.md
+As per our [Product Strategy](/handbook/engineering/product/strategy/), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](/handbook/engineering/product/strategy/#product-pillars).
+=======
 * The investigation task is worked.
 * Any additional work discovered is brought back through planning.
+>>>>>>> origin/main:src/handbook/development/project-management.md
 
 This keeps work small, explicit, and intentional.
 
