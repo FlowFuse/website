@@ -2,7 +2,7 @@
 title: "MQTT vs CoAP: Measure Your Constraints or Pick Wrong"
 subtitle: "The only protocol debate that matters is the one you measure."
 description: "Learn whether MQTT or CoAP fits your IoT deployment. Learn how device constraints, power budgets, and network architecture determine the right protocol for reliable, efficient IoT systems."
-date: 2026-02-04
+date: 2026-02-05
 keywords: MQTT, CoAP, IoT protocols, constrained devices, edge computing, message broker, pub/sub, request/response, IoT architecture
 authors: ["sumit-shinde"]
 image: /blog/2026/02/images/coap-vs-mqtt.png
