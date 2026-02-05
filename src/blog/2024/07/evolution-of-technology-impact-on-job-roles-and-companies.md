@@ -43,7 +43,7 @@ The strategic adoption of AI and low-code tools is critical for maintaining comp
 FlowFuse is a cloud-based platform for Node-RED, a popular low-code tool. It enhances Node-RED with real-time collaboration, version control, and remote edge device programming. 
 
 With the capability to integrate over 5000 applications, protocols, and technologies, FlowFuse empowers businesses to innovate and streamline operations.
-Recently, FlowFuse has integrated AI features like the [Function GPT](/blog/2023/05/chatgpt-nodered-fcn-node/) and [Node-RED Builder](/blog/2023/11/chatgpt-gpt/) and the [FlowFuse AI Assistant](/changelog/2024/07/flowfuse-assistant/). These tools allow users to automate flow creation, significantly boosting productivity. This combination of low-code development and AI positions FlowFuse as a transformative tool for modern businesses.
+Recently, FlowFuse has integrated AI features like the [Function GPT](/blog/2023/05/chatgpt-nodered-fcn-node/) and [Node-RED Builder](/blog/2023/11/chatgpt-gpt/) and the [FlowFuse Expert](/changelog/2024/07/flowfuse-assistant/). These tools allow users to automate flow creation, significantly boosting productivity. This combination of low-code development and AI positions FlowFuse as a transformative tool for modern businesses.
 
 Manufacturing companies are already adopting these advanced features to optimize their operations and stay competitive. Tech professionals should also prepare to leverage these tools to harness the full potential of AI and low-code development.
 
