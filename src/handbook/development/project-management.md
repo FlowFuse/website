@@ -267,7 +267,38 @@ These metrics help us observe how well the engineering system described above is
 
 They are used to understand trends and surface constraints, not to evaluate individual performance or enforce targets.
 
-## Engineering Throughput
+- **UI/UX Work:** This is generally work in Figma for product, website or the components library. Deliverables should be well-defined as an MVP prototype, or at least enough for engineering to get started, on which we can iterate.
+- **Engineering:**  Questions that need answers should be formulated up front, and answered as the deliverable. Questions around what technology to use, how to scope down the feature set, and how to deliver the results
+are thus required before the design sprint start.
+
+##### Defining Done
+
+An item should only be marked as 'Done' on the Development board when the following
+criteria are met:
+
+ - All related code changes have been merged
+ - Suitable unit/system level tests have been added
+ - Documentation has been updated
+ - Acceptance criteria identified in the Story have been met
+ - Feature Demo
+
+##### Feature Demos
+
+Part of finishing an item is being able to demonstrate it in action. This allows
+others to see it in action, generate material for the release announcement and
+help identify any gaps or places for improvement.
+
+Each feature demo is recorded by the developer responsible for the feature, detailing its functions and operations. If problems, challenges, or improvement ideas arise during the review of the demo, everyone is encouraged to post a comment under the video within the Slack channel. Additionally, a corresponding GitHub issue should be opened to track and prioritize these points for further discussion and action.
+
+Demos must be done in good time and as early as possible to allow for any follow-up action.
+
+Demos should consist of:
+
+ - A short (< 5 minute where possible) screen capture walk through of the feature with commentary.
+ - It should cover the feature from a users perspective - what value do they get from it.
+ - The video should be uploaded to, or linked to, in the relevant issue.
+ - A post in the [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK) Slack channel once work is ready to be delivered. 
+ - Intermediate demos used to refine scope or gather feedback during a sprint should be shared in the relevant `#proj-` channel instead (see [Communication](/handbook/company/communication/#project-channels)).
 
 We no longer use Engineering Throughput as a primary metric.
 
