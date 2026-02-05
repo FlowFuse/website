@@ -11,7 +11,7 @@ meta:
 
 The Query node allows you to write and run queries against database tables managed by [FlowFuse Tables](/docs/user/ff-tables/). The node is pre-configured to connect automatically when used within a FlowFuse Node-RED instance.
 
-With **FlowFuse AI Assistant** integration, queries can be generated from natural language prompts, making database operations accessible without SQL expertise.
+With **FlowFuse Expert** integration, queries can be generated from natural language prompts, making database operations accessible without SQL expertise.
 
 ## Outputs
 
@@ -117,10 +117,10 @@ FlowFuse Tables requires **Enterprise tier** and must be enabled for your team.
 {% endraw %}
 {% endrenderFlow %}
 
-## Generate Queries with AI Assistant
+## Generate Queries with FlowFuse Expert
 
 In the Query node, click **"Assistant"**, enter plain English like *"Show me all readings from today"*, and the AI automatically generates the SQL query.
 
-![Query Node AI Assistant](./src/blog/2025/09/images/flowfuse-ai-assistance-table-demo.gif)
+![Query Node FlowFuse Expert](./src/blog/2025/09/images/flowfuse-ai-assistance-table-demo.gif)
 
-For more detailed information on natural language queries with the Query node, read this article: [AI Assistant for FlowFuse Tables](https://flowfuse.com/blog/2025/09/ai-assistant-flowfuse-tables/).
+For more detailed information on natural language queries with the Query node, read this article: [FlowFuse Expert for FlowFuse Tables](https://flowfuse.com/blog/2025/09/ai-assistant-flowfuse-tables/).
