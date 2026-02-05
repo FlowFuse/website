@@ -111,3 +111,7 @@ When creating a PR and requesting a review from a FlowFuse team member, please c
 the content is ready to be released ASAP or if its release should be to a particular schedule. If you
 don't want the reviewer to merge the content (in effect put it live on the website) mark the PR as a draft in GitHub.
 If you are reviewing a website PR and it is not marked as draft you can merge it, otherwise simply review and where appropriate approve the PR.
+
+### Preview URLs
+
+[FlowFuse/website](https://github.com/FlowFuse/website) PRs automatically receive Netlify preview deployment URLs. Look for the Netlify bot comment on the PR with the preview link to review your changes before merging.
