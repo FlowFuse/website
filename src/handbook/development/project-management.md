@@ -297,7 +297,8 @@ Demos should consist of:
  - A short (< 5 minute where possible) screen capture walk through of the feature with commentary.
  - It should cover the feature from a users perspective - what value do they get from it.
  - The video should be uploaded to, or linked to, in the relevant issue.
- - To be posted to the [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK) channel in Slack for work that is ready to be delivered. Intermediate demos for fine-tuning current sprint scope should be shared in the relevant `#proj-` channel instead (see [Communication](/handbook/company/communication/#project-channels)).
+ - A post in the [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK) Slack channel once work is ready to be delivered. 
+ - Intermediate demos used to refine scope or gather feedback during a sprint should be shared in the relevant `#proj-` channel instead (see [Communication](/handbook/company/communication/#project-channels)).
 
 We no longer use Engineering Throughput as a primary metric.
 
