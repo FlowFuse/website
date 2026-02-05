@@ -12,6 +12,8 @@ tags:
 
 Most manufacturing facilities run MTConnect agents on their CNC machines, but the XML data these agents produce isn't directly usable. You receive streams of timestamped measurements, state changes, and condition flags wrapped in hierarchical XML structures. Converting this into a functional dashboard means solving three problems: retrieving the data reliably, parsing it correctly, and routing specific values to the right display components.
 
+<!--more-->
+
 This article walks through the implementation. You'll connect FlowFuse to an MTConnect agent, extract data items from the XML response, and build dashboard widgets that update in real time.
 
 ## What MTConnect Is and Why It Matters
