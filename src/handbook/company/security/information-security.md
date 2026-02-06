@@ -62,7 +62,7 @@ In your email please describe the incident or observation along with any relevan
 details.
 
 Any security issue related to vulnerabilities in the product should be reported
-via our [disclosure policy](../../development/security.md).
+via our [disclosure policy](../../engineering/security.md).
 
 ## Device Policy
 

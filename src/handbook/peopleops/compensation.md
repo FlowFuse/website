@@ -87,7 +87,7 @@ Please note that the benefits offered may be subject to change during your emplo
 #### For everyone
 
 - [Unlimited PTO](./leave#holiday-policy)
-- [Launch Lunch](../development/releases/process#launch-lunch)
+- [Launch Lunch](../engineering/releases/process#launch-lunch)
 - [Dinner Bonus](#dinner-bonus)
 
 ##### 1Password Family
