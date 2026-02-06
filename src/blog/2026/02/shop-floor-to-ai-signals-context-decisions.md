@@ -2,7 +2,7 @@
 title: "Shop Floor to AI: From Signals, to Context, to Decisions"
 subtitle: "Why signals alone will never be enough for industrial AI to work"
 description: "Industrial AI doesn't fail because of bad models—it fails because of bad architecture. Discover why signals need context and how a Unified Namespace makes AI work on the shop floor."
-date: 2026-02-04
+date: 2026-02-06
 keywords: 
 authors: ["sumit-shinde"]
 image: 
