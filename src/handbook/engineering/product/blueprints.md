@@ -16,7 +16,7 @@ FlowFuse host a public version of our [Blueprint Library here](https://flowfuse.
 
 We have a [GitHub Project Board](https://github.com/orgs/FlowFuse/projects/28/views/1) used to track the state of each idea recorded in the private `blueprint-library` repository ([link](https://github.com/FlowFuse/blueprint-library/issues)).
 
-![Screenshot of the Blueprint Project Board](../images/development/screenshot-blueprints-pm.png){data-zoomable}
+![Screenshot of the Blueprint Project Board](../../images/development/screenshot-blueprints-pm.png){data-zoomable}
 _Screenshot of the Blueprint Project Board_
 
 ## Submitting a Blueprint
@@ -142,7 +142,7 @@ Once the Blueprint is reviewed and approved, someone with admin access to FlowFu
 
 #### Creating the Blueprint
 
-![Screenshot of the Blueprint Admin Panel in FlowFuse](../images/development/screenshot-blueprints-admin.png){data-zoomable}
+![Screenshot of the Blueprint Admin Panel in FlowFuse](../../images/development/screenshot-blueprints-admin.png){data-zoomable}
 _Screenshot of the Blueprint Admin Panel in FlowFuse_
 
 1. Make sure the Blueprint is published to the `blueprint-library` repository.
