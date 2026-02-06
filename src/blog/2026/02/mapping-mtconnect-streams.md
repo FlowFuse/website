@@ -3,9 +3,9 @@ title: "Mapping MTConnect Streams for Dashboard Visualization"
 subtitle: "Connect FlowFuse to MTConnect agents and build real-time CNC machine dashboards without custom code."
 description: "Learn how to connect FlowFuse to MTConnect agents, parse machine data streams, and build real-time manufacturing dashboards without custom code."
 date: 2026-02-06
-keywords: 
+keywords: MTConnect, FlowFuse, CNC machines, dashboard, real-time data, machine monitoring, Node-RED, spindle speed, axis position, program execution, tool number, pallet number
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/02/images/mtconnect.png
 tags:
 - flowfuse
 ---

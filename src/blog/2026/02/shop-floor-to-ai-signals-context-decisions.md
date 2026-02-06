@@ -3,9 +3,9 @@ title: "Shop Floor to AI: From Signals, to Context, to Decisions"
 subtitle: "Why signals alone will never be enough for industrial AI to work"
 description: "Industrial AI doesn't fail because of bad models—it fails because of bad architecture. Discover why signals need context and how a Unified Namespace makes AI work on the shop floor."
 date: 2026-02-06
-keywords: 
+keywords: industrial AI, Unified Namespace, shop floor, signals, context, human decision layer, FlowFuse, Node-RED, operational data, real-time insights, factory automation, manufacturing AI
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/02/images/shopfloor-to-ai.png
 tags:
 - flowfuse
 ---
