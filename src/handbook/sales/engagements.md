@@ -199,7 +199,7 @@ graph TD
 #### Security Review
 
 If a customer requires a security review, the AE coordinates between the
-customer's questionnaire and the CTO/Engineering team to provide approved answers.
+customer's questionnaire and the Engineering team to provide approved answers.
 
 ```mermaid
 flowchart TD
@@ -209,13 +209,13 @@ flowchart TD
     
     %% Happy Path Steps
     ShareQ[Customer Shares Questionnaire]
-    SendToEng[AE sends to CTO/Eng]
-    EngAnswers[CTO/Eng sends answers to AE]
+    SendToEng[AE sends to Eng]
+    EngAnswers[Eng sends answers to AE]
     Forward[AE forwards to Customer]
     
     %% Approval Decision
     Accepts{Customer Accepts?}
-    Rework[AE reviews notes/Meeting with CTO]
+    Rework[AE reviews notes/Meeting with Engineering]
     
     %% End State
     EndProcess((Go to Contract/Legal))
