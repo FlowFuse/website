@@ -18,7 +18,7 @@ It wasn't.
 
 We instrumented everything: motors, conveyors, bearings, valves, streaming thousands of data points per second. Historians filled to capacity. Dashboards displayed every metric. Yet despite this data visibility, we couldn't see what was happening until something broke.
 
-This article reveals the missing link from shop floor to AI: why raw signals create noise, not understanding, how context transforms that noise into meaning, and why meaning is the prerequisite for decisions anyone will trust.
+This article reveals the missing link from shop floor to AI: why raw signals create noise instead of understanding, how context transforms that noise into meaning, and why meaning is the prerequisite for decisions anyone will trust.
 
 Twenty years ago, a skilled operator could diagnose a failing machine by sound, smell, or vibration. Today's machines still communicate just as clearly. They've simply switched languages. They produce numbers that nobody understands. A temperature spike, a current drift, a vibration anomaly: each is meaningless without knowing which product is running, under what conditions, with which maintenance history, and how this system typically behaves.
 
@@ -74,7 +74,7 @@ The decision remains human. The insight becomes instant.
 
 You can't fix a three-layer problem with a one-layer solution.
 
-Companies repeatedly make the same mistake: they drop AI models directly onto the signal layer (pure time-series analysis on raw sensor data) then wonder why predictions are worthless. The model identifies a pattern, but it's blind to the fact that context just changed. It flags anomalies that are actually normal for this product recipe. It misses failures because the signal appeared fine while the context indicated problems.
+Companies repeatedly make the same mistake: they drop AI models directly into the signal layer (pure time-series analysis on raw sensor data) then wonder why predictions are worthless. The model identifies a pattern, but it's blind to the fact that context just changed. It flags anomalies that are actually normal for this product recipe. It misses failures because the signal appeared fine while the context indicated problems.
 
 But here's what's crucial to understand: AI is ready for the factory floor right now. Not ready to take autonomous action, but ready to be the most knowledgeable assistant your operators and engineers have ever had.
 
@@ -100,7 +100,7 @@ A Unified Namespace is a shared, real-time, event-driven structure where operati
 
 In a UNS, a motor current is no longer just a number stored in a historian. It's published as *Line 3 / Conveyor 2B / Motor Current*, alongside the active recipe, operating mode, ambient conditions, and relevant maintenance history. Every system sees the same structured truth, continuously updated.
 
-This architectural shift is what makes AI viable on the factory floor.
+This shift in architecture is what makes AI viable on the factory floor.
 
 Building a Unified Namespace requires three things:
 
@@ -121,6 +121,8 @@ That enriched information is then published into a shared MQTT-based Namespace. 
 Through [FlowFuse MCP nodes](/node-red/flowfuse/mcp/), AI systems connect directly to the namespace, querying live operational context instead of pulling raw time-series data from isolated historians and attempting to reconstruct meaning after the fact.
 
 [FlowFuse AI Expert](/ai/) operates on the same MCP-backed context layer. Operators and engineers can ask questions in natural language (*"Is Line 3 behaving normally?"*, *"Have we seen this vibration pattern before?"*, *"What changed before the last failure?"*) and receive answers grounded in the live Unified Namespace.
+
+To learn how to build your own Unified Namespace with FlowFuse, [see our comprehensive guide](https://flowfuse.com/blog/2024/11/building-uns-with-flowfuse/).
 
 The result is immediate insight without additional tooling, custom integrations, or fragile data pipelines. The architecture already exists. The context is already there. The questions can finally be asked at the speed decisions are made.
 
