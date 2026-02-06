@@ -3,7 +3,7 @@ title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED with FlowFuse, enabling AI agents like Claude, Gemini, and GPT to access data, perform actions, and streamline industrial operations using a low-code approach."
 date: 2025-10-14
-lastUpdated: 2025-12-18
+lastUpdated: 2025-02-06
 authors: ["sumit-shinde"]
 image: /blog/2025/10/images/building-mcp-server-node-red-with-ff.png
 keywords: Node-RED MCP Server, Node-RED AI, Model Context Protocol, AI agents within Node-RED
@@ -41,7 +41,7 @@ Before you begin, ensure you have the following:
 
 * **A running FlowFuse Enterprise instance.** If you do not have one, [contact us](/contact-us/) to discuss Enterprise options and get started.
 
-* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed** in your Node-RED palette.
+* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed**. This will add the [MCP nodes](/node-red/flowfuse/mcp/) to your Node palette in your instance editor.
 
 > **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are only available on the Enterprise tier.
 
@@ -68,7 +68,7 @@ Once the server is configured, clients can connect using a URL. The URL to conne
 https://your-instance.flowfuse.cloud/mcp
 ```
 
-or if you are running Node-RED instance locally, use the host, port, and MCP path of your instance, for example:
+or if you are running FlowFuse Node-RED instance locally, use the host, port, and MCP path of your instance, for example:
 
 ```
 http://localhost:1880/mcp
@@ -80,7 +80,7 @@ or
 http://192.168.1.100:1880/mcp
 ```
 
-This URL allows MCP Tool nodes and AI agents to discover resources, execute tools, and interact with your flows.
+This URL allows AI agents to discover resources, execute tools, and interact with your flows.
 
 ### Securing Your MCP Server
 
@@ -101,7 +101,7 @@ When connecting to your MCP server from a client, include the token in the reque
 ```json
 {
   "node-red-mcp-server": {
-    "url": "http://:1880/mcp",
+    "url": "http://localhost:1880/mcp",
     "type": "http",
     "headers": {
       "Authorization": "Bearer ffhttp_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -117,7 +117,7 @@ Replace `ffhttp_xxxxxxxxxxxxxxxxxxxxxxxxxxxx` with your actual token. This ensur
     
     <p>You'll need to select the MCP server you want to connect to in the FlowFuse Expert Insights tab. Once connected, FlowFuse Expert will automatically query your Resources and execute your Tools based on your team role and your instructions. The annotations you configure in the <a href="#defining-an-mcp-tool">MCP Tool node</a> (read-only, destructive, idempotent, open-world) integrate with FlowFuse's role-based access control to ensure secure, appropriate access for every team member.</p>
     
-    ![FlowFuse Expert interacting with MCP Resources and Tools](./images/mcp-in-flowfuse.png){data-zoomable}
+    ![FlowFuse Expert](./images/mcp-in-flowfuse.png){data-zoomable}
 </div>
 
 ### Defining an MCP Resource
