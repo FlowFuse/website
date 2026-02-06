@@ -60,7 +60,7 @@ FlowFuse is an industrial application platform built on Node-RED that brings dat
 
 Before you begin, you need:
 
-- **FlowFuse instance** – An active FlowFuse account with an instance created and access to the Node-RED Editor. Sign up at https://app.flowfuse.com and follow the FlowFuse getting started guide at https://flowfuse.com/docs/user/introduction/#getting-started-with-flowfuse. If you are new to Node-RED, you can also check out the our [course](https://node-red-academy.learnworlds.com/) on Node-RED.
+- **FlowFuse instance** – An active FlowFuse account with an instance created and access to the Node-RED Editor. Sign up at https://app.flowfuse.com and follow the FlowFuse getting started guide at https://flowfuse.com/docs/user/introduction/#getting-started-with-flowfuse. If you are new to Node-RED, you can also check out our [course](https://node-red-academy.learnworlds.com/) on Node-RED.
 - MTConnect agent – A CNC machine running an MTConnect agent or an MTConnect simulator such as the public agent at `agent.mtconnect.org` or a locally hosted agent
 - Network access – Connectivity from the FlowFuse instance to the MTConnect agent's HTTP endpoint, with the FlowFuse Remote Device Agent installed when connecting from cloud-hosted FlowFuse to on-premises machines
 
