@@ -204,24 +204,20 @@ customer's questionnaire and the CTO/Engineering team to provide approved answer
 ```mermaid
 flowchart TD
     %% Nodes
-    Start[Sales Rep Reviews Security]
     ReqReview{Requires Security Review?}
     
     %% Happy Path Steps
     ShareQ[Customer Shares Questionnaire]
-    SendToEng[AE sends to CTO/Eng]
-    EngAnswers[CTO/Eng sends answers to AE]
+    SendToEng[AE sends to Engineering]
+    EngAnswers[Engineering sends answers to AE]
     Forward[AE forwards to Customer]
     
     %% Approval Decision
     Accepts{Customer Accepts?}
-    Rework[AE reviews notes/Meeting with CTO]
+    Rework[AE reviews notes/Meeting with Engineering]
     
     %% End State
     EndProcess((Go to Contract/Legal))
-
-    %% Connections
-    Start --> ReqReview
     
     %% No Review Path
     ReqReview -- No --> EndProcess
