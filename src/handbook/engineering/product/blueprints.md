@@ -3,7 +3,7 @@ navTitle: Blueprints
 ---
 # Blueprints
 
-![Screenshot of the Blueprint selection UI in FlowFuse](../images/development/screenshot-blueprints.png){data-zoomable}
+![Screenshot of the Blueprint selection UI in FlowFuse](../../images/development/screenshot-blueprints.png){data-zoomable}
 _Screenshot of the Blueprint selection UI in FlowFuse_
 
 As part of the FlowFuse platform, it is possible to define "Blueprints".
