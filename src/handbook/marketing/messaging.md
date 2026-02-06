@@ -120,3 +120,30 @@ Every message that comes out from the team has to stick to one or many of these 
 
 3. Easy tag and store data collected in any data platform
    - Transform raw data into a structured and unified information model with our AI-assisted low-code tools. Simply describe the data transformation you need in plain English, and our platform will help generate the necessary logic, from SQL queries to JavaScript functions.
+
+4. Build new applications quickly without needing software developers
+   - We bridge the gap between IT and OT, enabling domain experts to build solutions while maintaining IT oversight. Our AI Copilot acts as a development partner, empowering your team to build more sophisticated applications independently, reducing reliance on specialized developers.
+
+5. Build interactive dashboards effortlessly
+   - Create custom dashboards and applications to monitor KPIs and optimize production. Our AI assistant accelerates development by generating the necessary code for custom UI components based on your descriptions, enabling you to build these visualizations faster.
+
+7. Version control, update and deploy applications across your environment
+   - Deploy standardized applications across multiple facilities with centralized version control and remote management.
+   - Scale from pilot projects to organization-wide digital initiatives with consistent governance and security policies. Our platform uses AI to automatically summarize changes between versions, making it easier to track updates and maintain control.
+
+8. Enterprise-grade security framework included
+   - Built-in monitoring, audit trails, and role-based access controls ensure production-ready deployments at scale.
+
+9. Pre-built applications and solution blueprints model your processes
+   - We offer comprehensive solution blueprints including IT/OT Middleware, Unified Namespace (UNS), SCADA, and MES. These blueprints provide a powerful starting point, and our AI Copilot helps you customize and extend them to fit your exact needs in record time.
+
+10. Future-proof technology stack you can trust
+   - FlowFuse is built on Node-RED, a large and self-sustaining open-source community under the OpenJS Foundation, ensuring long-term viability.
+   - We enhance this foundation with enterprise-grade reliability, high availability, and automated backups.
+   - Furthermore, we constantly innovate and evolve the platform with cutting-edge capabilities like our AI Copilot to ensure your investment remains future-proof.
+
+11. AI assistance accelerates development and reduces technical barriers
+   - Our AI-Assisted Node-RED with Smart Suggestions provides intelligent flow completion and next-node recommendations, empowering your team to build sophisticated applications faster.
+
+12. Enterprise-grade, professionally maintained integrations and custom components
+   - FlowFuse Certified Nodes v2.0 partners with developers who demonstrate deep expertise in their domains, focusing on reliability, security, and professional implementation standards.
