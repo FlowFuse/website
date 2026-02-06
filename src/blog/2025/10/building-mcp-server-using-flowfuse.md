@@ -3,7 +3,7 @@ title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED with FlowFuse, enabling AI agents like Claude, Gemini, and GPT to access data, perform actions, and streamline industrial operations using a low-code approach."
 date: 2025-10-14
-lastUpdated: 2025-12-18
+lastUpdated: 2025-02-06
 authors: ["sumit-shinde"]
 image: /blog/2025/10/images/building-mcp-server-node-red-with-ff.png
 keywords: Node-RED MCP Server, Node-RED AI, Model Context Protocol, AI agents within Node-RED
@@ -41,7 +41,7 @@ Before you begin, ensure you have the following:
 
 * **A running FlowFuse Enterprise instance.** If you do not have one, [contact us](/contact-us/) to discuss Enterprise options and get started.
 
-* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed** in your Node-RED palette.
+* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed**. This will add the [MCP nodes](/node-red/flowfuse/mcp/) to your Node palette in your instance editor.
 
 > **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are only available on the Enterprise tier.
 
@@ -53,7 +53,7 @@ Before defining resources or tools, the MCP Server must be configured. This serv
 
 2. Define the server properties:
 
-   * **Name**: Enter a descriptive name, e.g., `Factory MCP Server`.
+   * **Name**: Enter a descriptive name, e.g., `Node-RED MCP Server`.
    * **Protocol**: Leave the default `http/sse` (currently the only option).
    * **Path**: Specify the endpoint path for the server, e.g., `/mcp`.
 
@@ -62,7 +62,63 @@ Before defining resources or tools, the MCP Server must be configured. This serv
 
 3. **Click Done** to save the server configuration.
 
-Once configured, this server is available for all subsequent Resources and Tools, providing a unified and discoverable endpoint for AI agents.
+Once the server is configured, clients can connect using a URL. The URL to connect with is your instance URL plus the MCP path you configured, for example:
+
+```
+https://your-instance.flowfuse.cloud/mcp
+```
+
+or if you are running FlowFuse Node-RED instance locally, use the host, port, and MCP path of your instance, for example:
+
+```
+http://localhost:1880/mcp
+```
+
+or
+
+```
+http://192.168.1.100:1880/mcp
+```
+
+This URL allows AI agents to discover resources, execute tools, and interact with your flows.
+
+### Securing Your MCP Server
+
+To ensure your MCP server is protected from unauthorized access, enable FlowFuse User Authentication.
+
+1. Navigate to your instance **Settings → Security** tab
+2. Select **FlowFuse User Authentication**, click **Save Changes**, and in the popup, click **Restart** to apply the changes.
+
+![FlowFuse User Authentication settings screenshot](./images/ff-auth.png){data-zoomable}
+*FlowFuse User Authentication settings screenshot*
+
+3. Click **Add Token** and provide a descriptive name for identification
+4. Set an expiry date (recommended for enhanced security)
+5. Click **Create** and copy the generated token
+
+When connecting to your MCP server from a client, include the token in the request headers:
+
+```json
+{
+  "node-red-mcp-server": {
+    "url": "http://localhost:1880/mcp",
+    "type": "http",
+    "headers": {
+      "Authorization": "Bearer ffhttp_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    }
+  }
+}
+```
+
+Replace `ffhttp_xxxxxxxxxxxxxxxxxxxxxxxxxxxx` with your actual token. This ensures that only authorized clients can access your MCP server resources and tools.
+
+<div class="blog-update-notes">
+    <p><strong>UPDATE:</strong> <a href="/blog/2025/12/flowfuse-release-2-25/#interact-with-mcp-resources-in-flowfuse-expert">FlowFuse Expert now allows you to connect directly with your MCP Resources and Tools</a>, so you don't need to connect external AI agents anymore.</p>
+    
+    <p>You'll need to select the MCP server you want to connect to in the FlowFuse Expert Insights tab. Once connected, FlowFuse Expert will automatically query your Resources and execute your Tools based on your team role and your instructions. The annotations you configure in the <a href="#defining-an-mcp-tool">MCP Tool node</a> (read-only, destructive, idempotent, open-world) integrate with FlowFuse's role-based access control to ensure secure, appropriate access for every team member.</p>
+    
+    ![FlowFuse Expert](./images/mcp-in-flowfuse.png){data-zoomable}
+</div>
 
 ### Defining an MCP Resource
 
@@ -111,58 +167,74 @@ While resources are useful for providing access to data, tools enable an AI agen
 
 3. Enter a tool name that will be visible to clients connecting to the MCP server, such as *Maintenance* or *Maintenance Scheduler*.
 
-4. Provide a clear description of the tool’s purpose, and assign a descriptive name to the node within your flow.
+4. Next, set annotations. Annotations help AI clients understand your tool's behavior and control which FlowFuse team members can access it based on their role (Viewer, Member, or Owner).
 
-5. Define the input schema in JSON format. This schema helps the AI understand what data is required to perform the action and also validates incoming requests. For detailed guidance, refer to the [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step).
+   - **Read-Only Hint**: Tool only reads data, doesn't modify anything. Safe for exploratory queries.
+     * **Access**: Viewer role and above
+   
+   - **Destructive Hint**: Tool may delete or irreversibly modify data. Use with caution.
+     * **Access**: Owner role only
+   
+   - **Idempotent Hint**: Calling the tool multiple times with same parameters has the same effect as calling it once. Safe to retry.
+     * **Access**: No effect on roles (only relevant for writing tools, which require Member minimum)
+   
+   - **Open-World Hint**: Tool interacts with external systems or data sources that may change unpredictably.
+     * **Access**: Member role and above
+
+   > **Note:** These are hints only and do not enforce behavior. The actual behavior of a tool is determined by your Node-RED flow implementation. Annotations are used by FlowFuse for role-based access control (RBAC) and FlowFuse Expert. They are also part of the standard MCP specification and can be consumed by external agents, but their effect ultimately depends on the client's implementation.
+
+5. Provide a clear description of the tool's purpose, and assign a descriptive name to the node within your flow.
+
+6. Define the input schema in JSON format. This schema helps the AI understand what data is required to perform the action and also validates incoming requests. For detailed guidance, refer to the [Getting Started Guide](https://json-schema.org/learn/getting-started-step-by-step).
 
    > Tip: You can also use the FlowFuse Expert to generate the JSON schema automatically. Just click **Ask FlowFuse Expert** in the input schema field and describe the expected input in plain English.
 
-Below is an example schema for a Tool node. It shows how data is defined, its type, and which fields are required along with minimum lengths:
+   Below is an example schema for a Tool node. It shows how data is defined, its type, and which fields are required along with minimum lengths:
 
-```json
-{
-  "type": "object",
-  "properties": {
-    "line": {
-      "type": "string",
-      "description": "The production line where maintenance is required",
-      "minLength": 1
-    },
-    "description": {
-      "type": "string",
-      "description": "Description of the maintenance task",
-      "minLength": 1
-    },
-    "priority": {
-      "type": "string",
-      "description": "Priority of the task",
-      "enum": [
-        "Low",
-        "Medium",
-        "High"
-      ]
-    }
-  },
-  "required": [
-    "line",
-    "description",
-    "priority"
-  ]
-}
-```
+   ```json
+   {
+     "type": "object",
+     "properties": {
+       "line": {
+         "type": "string",
+         "description": "The production line where maintenance is required",
+         "minLength": 1
+       },
+       "description": {
+         "type": "string",
+         "description": "Description of the maintenance task",
+         "minLength": 1
+       },
+       "priority": {
+         "type": "string",
+         "description": "Priority of the task",
+         "enum": [
+           "Low",
+           "Medium",
+           "High"
+         ]
+       }
+     },
+     "required": [
+       "line",
+       "description",
+       "priority"
+     ]
+   }
+   ```
 
-![MCP Tool Node Configuration](./images/mcp-tools.png){data-zoomable}
-*Setting up an MCP Tool in FlowFuse*
+   ![MCP Tool Node Configuration](./images/mcp-tools.png){data-zoomable}
+   *Setting up an MCP Tool in FlowFuse*
 
-6. Click *Done*, then deploy your flow.
+7. Click *Done*, then deploy your flow.
 
 At this stage, the tool becomes discoverable by connected AI clients. However, it will not perform any action until it is linked to a flow that executes a task, such as an HTTP Request node performing a POST operation, a Query node inserting data into a database, or an OPC UA Write node controlling a device.
 
-7. Drag the MCP Response node and connect its input to the output of the final node in your action flow. 
+8. Drag the MCP Response node and connect its input to the output of the final node in your action flow. 
 
-> The MCP Response node is necessary because the AI needs to receive the outcome of the action—whether it was successful. Errors are also fed back to the MCP Response node, enabling the AI to handle them appropriately.
+   > The MCP Response node is necessary because the AI needs to receive the outcome of the action—whether it was successful or not. Errors are also fed back to the MCP Response node, enabling the AI to handle them appropriately.
 
-8.  Deploy the flow once again.
+9. Deploy the flow once again.
 
 Your MCP Tool is now active. When an AI agent invokes it, the connected flow executes the defined action and returns the result to the agent.
 
