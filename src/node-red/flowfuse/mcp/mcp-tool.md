@@ -52,6 +52,25 @@ Human-readable name shown to users in MCP clients. This is what users see when b
 
 Detailed description of what this tool does and when to use it. Be specific to help FlowFuse Expert understand when to invoke this tool.
 
+### Annotations
+`checkboxes` - Optional
+
+Annotations help AI clients understand your tool's behavior and control which FlowFuse team members can access it based on their role (Viewer, Member, or Owner).
+
+- **Read-Only Hint**: Tool only reads data, doesn't modify anything. Safe for exploratory queries.
+  * **Access**: Viewer role and above
+  
+- **Destructive Hint**: Tool may delete or irreversibly modify data. Use with caution.
+  * **Access**: Owner role only
+  
+- **Idempotent Hint**: Calling the tool multiple times with same parameters has the same effect as calling it once. Safe to retry.
+  * **Access**: No effect on roles (only relevant for writing tools, which require Member minimum)
+  
+- **Open-World Hint**: Tool interacts with external systems or data sources that may change unpredictably.
+  * **Access**: Member role and above
+
+> **Note:** These are hints only and do not enforce behavior. The actual behavior of a tool is determined by your Node-RED flow implementation. Annotations are used by FlowFuse for role-based access control (RBAC) and FlowFuse Expert. They are also part of the standard MCP specification and can be consumed by external agents, but their effect ultimately depends on the client's implementation.
+
 ### Input Schema
 `JSON` - Required
 
