@@ -2,7 +2,7 @@
 title: "Mapping MTConnect Streams for Dashboard Visualization"
 subtitle: "Connect FlowFuse to MTConnect agents and build real-time CNC machine dashboards without custom code."
 description: "Learn how to connect FlowFuse to MTConnect agents, parse machine data streams, and build real-time manufacturing dashboards without custom code."
-date: 2026-01-30
+date: 2026-02-06
 keywords: 
 authors: ["sumit-shinde"]
 image: 
@@ -30,21 +30,25 @@ MTConnect organizes data into three categories:
 
 - Samples - Continuous numeric measurements like spindle speed, axis position, temperature, power consumption. These values change smoothly and have units.
 - Events - Discrete state changes like mode switches, program starts, door opens. Values are strings or enumerations.
-- Condition - Equipment health at component level: normal, warning, fault, unavailable. Multiple conditions can be active simultaneously.
+- Condition - Equipment health at the component level: normal, warning, fault, unavailable. Multiple conditions can be active simultaneously.
 
 Agents expose this through HTTP endpoints. /current returns latest values for all data items. /sample?from=X&count=Y returns time-series data.
 
 ## XML Response Structure
 
-Query `/current` and you get XML structured around machine hierarchy. A `Streams` container holds `DeviceStream` elements for each device. Each device contains `ComponentStream` elements for components like spindles and axes. Inside components sit the actual data—`Samples`, `Events`, and `Condition` elements.
+When you query an MTConnect agent, the response is an XML document rooted in the `Streams` element, which contains one or more `DeviceStream` elements—each representing a device or machine.
 
-Every data item has a `dataItemId` attribute for identification, a `timestamp` for when it was recorded, and the value as text content:
+Within each `DeviceStream`, `ComponentStream` elements describe individual machine components such as spindles, axes, or controllers. Each component reports its data using three categories: `Samples`, `Events`, and `Conditions`.
+
+Samples represent continuously measured values, while Events represent discrete or state-based changes. Conditions are reported inside a `Conditions` container and use state-specific elements—such as `Normal`, `Warning`, or `Fault`—rather than a generic condition element. Multiple condition states may be active at the same time, as long as they represent different condition data items.
+
+Each reported data item includes a `dataItemId` for identification, a `timestamp` indicating when the value was recorded, and the value itself provided as text content, for example:
 
 ```xml
 <SpindleSpeed dataItemId="S1spd" timestamp="2026-01-30T14:23:17.492Z">2847</SpindleSpeed>
 ```
 
-This hierarchy represents machines comprehensively but creates work for dashboard builders. You navigate multiple nesting levels, match data item IDs to values you need, and handle items missing from responses when they haven't updated since the last poll.
+While this hierarchical structure provides a complete and standardized view of the machine, dashboard implementations must traverse multiple levels of nesting and correlate `dataItemId` values with their definitions in the Devices model to extract and display the data they care about.
 
 ## Getting Started
 
@@ -56,7 +60,7 @@ FlowFuse is an industrial application platform built on Node-RED that brings dat
 
 Before you begin, you need:
 
-- FlowFuse instance – An active FlowFuse account with an instance created and access to the Instance Editor (sign up at [https://app.flowfuse.com](https://app.flowfuse.com) and follow [/docs/user/introduction/#getting-started-with-flowfuse](https://flowfuse.com/docs/user/introduction/#getting-started-with-flowfuse))
+- **FlowFuse instance** – An active FlowFuse account with an instance created and access to the Node-RED Editor. Sign up at https://app.flowfuse.com and follow the FlowFuse getting started guide at https://flowfuse.com/docs/user/introduction/#getting-started-with-flowfuse. If you are new to Node-RED, you can also check out the our [course](https://node-red-academy.learnworlds.com/) on Node-RED.
 - MTConnect agent – A CNC machine running an MTConnect agent or an MTConnect simulator such as the public agent at `agent.mtconnect.org` or a locally hosted agent
 - Network access – Connectivity from the FlowFuse instance to the MTConnect agent's HTTP endpoint, with the FlowFuse Remote Device Agent installed when connecting from cloud-hosted FlowFuse to on-premises machines
 
