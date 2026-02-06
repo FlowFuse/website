@@ -98,7 +98,7 @@ Our recommended Slack (light) theme is:
 You will not automatically join every Slack channel when you start. Below are some helpful channels you may want to join depending on your interests and work.
 
 - `#announcements` for company-wide announcements.
-- `#feature-demos` for product updates. Everyone should stay aware of product changes, no matter their role.
+- [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK) for product demos of sprint and release deliveries, showcased to a wide audience (marketing, sales, product strategy, leadership). Everyone should stay aware of product changes, no matter their role.
 - `#ops-metrics` for sales and engagement metrics.
 - `#virtual-coffee` to join the coffee call rotation.
 - `#gh-handbook` to follow updates to the handbook.
@@ -119,6 +119,12 @@ We use a simple naming structure in Slack to make channels easier to find and un
 We recommend organizing these channels into [custom Slack sections](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections) for easier navigation.
 
 We also have channels for specific groups, such as `#people-managers` for managers and `#us-hr` for HR topics specific to US team members.
+
+##### Project channels
+
+Project channels are created for ongoing work within a product lane with a clear scope. Use them for day-to-day coordination, intermediate demos, design feedback, and scope discussions among the directly involved stakeholders. 
+
+When a feature is ready to be delivered, post the final demo in [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK). This keeps `#feature-demos` focused on what is ready for a wider audience, and `#proj-` channels focused on what is still in progress.
 
 When you create a new channel, add a clear description. This helps everyone browse channels and decide which ones are relevant to their work.
 

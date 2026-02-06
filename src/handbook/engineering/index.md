@@ -5,16 +5,26 @@ navGroup: Engineering & Design Practices
 
 # Engineering
 
-The Engineering team is responsible for writing and maintaining the code for
-FlowFuse's product and infrastructure.
+The Engineering department combines product management and software development
+to build and maintain FlowFuse's product and infrastructure.
 
 This includes, but is not limited to:
 
- - Developing new product features in accordance to the Product plan
- - Providing technical input into the Product planning process - assisting with
-   scoping of items, technical prioritization and sizing.
+ - Defining and prioritizing product requirements based on user and customer needs
+ - Developing new product features in accordance with the product strategy
+ - Providing technical input into the planning process - assisting with
+   scoping of items, technical prioritization and sizing
  - Providing technical support to our customers and community members
  - Ensuring the ongoing operations of FlowFuse Cloud
+
+## Product
+
+The product function defines what we build and why.
+
+- [Product Overview](./product/) - how product management works
+- [Strategy](./product/strategy.md) - where the product is headed
+- [Feedback](./product/feedback.md) - how we collect and process feedback
+- [Pricing Principles](./product/pricing.md) - how we decide feature tiers
 
 ## General
 

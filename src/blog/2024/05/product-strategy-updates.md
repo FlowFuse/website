@@ -64,4 +64,4 @@ In the mean time, please do reach out if there are any features you'd like to se
 If you're interested in learning more about our company and product strategies, you can read more detail in our Handbook:
 
 - [Company Strategy](/handbook/company/strategy)
-- [Product Mission Statement](/handbook/product/strategy)
+- [Product Mission Statement](/handbook/engineering/product/strategy)
