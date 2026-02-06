@@ -66,7 +66,9 @@ Before you begin, you need:
 
 ### Collecting MTConnect Data
 
-Bringing MTConnect data into FlowFuse is the first step toward a live dashboard. The Solution Engine node (`node-red-contrib-solution-engine`) makes this easy because it lets you access any data point directly by its `dataItemId`, without having to worry about parsing XML or navigating nested structures.
+Bringing MTConnect data into FlowFuse is the first step toward a live dashboard. While you could use the standard HTTP Request node to query MTConnect agents, which is the most common approach, that method requires manually parsing XML responses and navigating through large nested objects to extract specific data points. In this article, I'll show you an easier way.
+
+The Solution Engine node (`node-red-contrib-solution-engine`) makes this straightforward because it lets you access any data point directly by its dataItemId, without having to worry about parsing XML or navigating nested structures.
 
 You can install the node by following the instructions in the FlowFuse documentation: [Using the Palette Manager](https://flowfuse.com/node-red/getting-started/library/#using-the-palette-manager).
 
