@@ -1,0 +1,2766 @@
+[
+    {
+        "id": "7999b8ed81405755",
+        "type": "tab",
+        "label": "Text Parsing",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4da1a65b84c4d217",
+        "type": "tab",
+        "label": "Scrape Sitemap.XML",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ada62d45e5b5cf5c",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "Reset Vector Store",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5e6a4debcab9af32",
+            "e6f79d0f87242442"
+        ],
+        "x": 54,
+        "y": 399,
+        "w": 392,
+        "h": 82
+    },
+    {
+        "id": "bcbc3fa4243ad0c4",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "Load & Parse Webpage. Store information in an in-memory Vector Store",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "941e2f5cd2ae1e2d",
+            "f058175c015c4e24",
+            "8acc90d7a634e49b",
+            "71e760ea44c94715",
+            "57422798f296a833",
+            "28ed4522aa067ae5",
+            "8ea2292f06788463"
+        ],
+        "x": 54,
+        "y": 499,
+        "w": 932,
+        "h": 122
+    },
+    {
+        "id": "b50f20339086c705",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "FlowFuse Dashboard UI Elements",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0c7122ce4762d7b4",
+            "d334bef3b4a4635e",
+            "967aab960ee8c69a",
+            "5ec9319a12c1d2c4",
+            "c2e7febe9c8221a8",
+            "c09d0760ac0e443b",
+            "c7d2a018bbf47944",
+            "5a85ac820afca92b",
+            "9b1c7c695c044212",
+            "b455923d2213dd1c",
+            "6258cc34d45971dd",
+            "252367ba621a213a",
+            "efc7ce0ff76dfee1",
+            "d314a427e206e020",
+            "b8f6fe1acfc53876"
+        ],
+        "x": 54,
+        "y": 639,
+        "w": 832,
+        "h": 262
+    },
+    {
+        "id": "6bbb54bf8cd76acc",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "Load & Scan Sitemap for /docs",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "cd95b6f929e4bbe8",
+            "c2c49814908a553a",
+            "eccf2867ce27eb2b",
+            "7d72b8fc80cb25c3",
+            "530ae83b714072e0",
+            "6e61ec9c2d6347c9",
+            "b0c8475f213f112b",
+            "27cfd65eb92a7a69",
+            "9f3c17708a91d89c",
+            "d240f9cb9812bb23",
+            "75f52da49a84bf40",
+            "9cc0da39ec656d8c",
+            "5d37875eca5dd30d",
+            "71468283df4fb54f",
+            "62d09ed9e598da5c",
+            "4170937ce73d86fe",
+            "602961cde29f9fdb",
+            "19dca2e109986697",
+            "0a1315e5037fc3a8",
+            "2be29d814e9dac68",
+            "d34d3890782183cc",
+            "15933aac27ee7393",
+            "a1dc7b8f2c6f5b2e",
+            "740761d8d12b4586",
+            "95fbb17a95c7074e",
+            "464dccce218d66e9"
+        ],
+        "x": 54,
+        "y": 19,
+        "w": 2132,
+        "h": 222
+    },
+    {
+        "id": "507146d5546d0c11",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "Update \"Documents Loaded\" Count",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "78804d909ce0087a",
+            "34fa0226c5267247",
+            "30fe1a31107a4a44"
+        ],
+        "x": 834,
+        "y": 399,
+        "w": 412,
+        "h": 82
+    },
+    {
+        "id": "ab592de7f84ebd2a",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "UI to set Sitemap URL",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "92a360194616ac03",
+            "3befa2d7407a7a53",
+            "ca78909195ebab72",
+            "e44410e5c7f3e8cd"
+        ],
+        "x": 834,
+        "y": 259,
+        "w": 732,
+        "h": 122
+    },
+    {
+        "id": "05946ca8dc4aa0e0",
+        "type": "group",
+        "z": "7999b8ed81405755",
+        "name": "Data Ingestion Pipeline",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a8a8f090e3ad5552",
+            "d162323725050feb",
+            "b7de234f28b9d8d0",
+            "00657b269b1f9316",
+            "499be4f5e34e05b6",
+            "6e0467d90da09315",
+            "64330b6b541fedd6",
+            "374a3133f17627ae",
+            "02d4e4f845581429",
+            "46d727b17ec68d77",
+            "8fe3e8a3bd77d870"
+        ],
+        "x": 54,
+        "y": 179,
+        "w": 1092,
+        "h": 222
+    },
+    {
+        "id": "42256c1acf74a9da",
+        "type": "group",
+        "z": "7999b8ed81405755",
+        "name": "FlowFuse Dashboard",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "593dd456d3f86bd3",
+            "25da8e3283e6b9e0",
+            "9296f46f3ed0da91",
+            "5d8fe0bf82e5cca4",
+            "f0dd2d10f86e2f3a",
+            "b22034bac77b983f",
+            "52826625c2f5af39",
+            "61170d04449cd0b4",
+            "4f299126d95fd116",
+            "285d269fddfbd3f0",
+            "5d721fd62d282a64",
+            "09ea9319879d0605"
+        ],
+        "x": 54,
+        "y": 439,
+        "w": 782,
+        "h": 242
+    },
+    {
+        "id": "d8f723cbcdd6b85d",
+        "type": "group",
+        "z": "7999b8ed81405755",
+        "name": "Documentation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b438d4e1bcb50613",
+            "1340085391e77755"
+        ],
+        "x": 54,
+        "y": 59,
+        "w": 312,
+        "h": 82
+    },
+    {
+        "id": "bd839e3acf759dde",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "Error Handling",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b33615712a4fae95",
+            "0e8624b6baf2ada9",
+            "8ce4147a0a1e6c80",
+            "5b248d81786186f5",
+            "926a4bddefee4fc2",
+            "51882c821c85afbe"
+        ],
+        "x": 54,
+        "y": 939,
+        "w": 632,
+        "h": 162
+    },
+    {
+        "id": "68aa9eda4cdd6a94",
+        "type": "group",
+        "z": "4da1a65b84c4d217",
+        "name": "Set Default Values",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "018bf1b4c8acf2eb",
+            "765db0aa083b0923",
+            "62a9de90539c7b1d",
+            "193fa17f9c9edbca",
+            "c7879db6b2db03a0",
+            "b2e4e2a7963483b9"
+        ],
+        "x": 54,
+        "y": 259,
+        "w": 752,
+        "h": 122
+    },
+    {
+        "id": "285d269fddfbd3f0",
+        "type": "junction",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "x": 300,
+        "y": 520,
+        "wires": [
+            [
+                "5d8fe0bf82e5cca4"
+            ]
+        ]
+    },
+    {
+        "id": "03482f22997a66ac",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "33d634ca6b053e0f",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "12472a9a5eeabbce",
+        "type": "ui-page",
+        "name": "Local File",
+        "ui": "03482f22997a66ac",
+        "path": "/local-file",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "33d634ca6b053e0f",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "bb06117738022f09",
+        "type": "ui-group",
+        "name": "Chat Window",
+        "page": "12472a9a5eeabbce",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "fa967812efe5b440",
+        "type": "ui-group",
+        "name": "Source Material",
+        "page": "12472a9a5eeabbce",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a4115eb2570112de",
+        "type": "ui-theme",
+        "name": "FlowFuse",
+        "colors": {
+            "surface": "#283457",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "c3e37afa5b4aea8f",
+        "type": "ui-page",
+        "name": "Web Content",
+        "ui": "03482f22997a66ac",
+        "path": "/webcontent-rag",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "a4115eb2570112de",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "556dbf3c204ec468",
+        "type": "ui-group",
+        "name": "RAG Agent Chat Interface",
+        "page": "c3e37afa5b4aea8f",
+        "width": "6",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a4a3e39fa9fcefb6",
+        "type": "ui-group",
+        "name": "Configuration",
+        "page": "c3e37afa5b4aea8f",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a8a8f090e3ad5552",
+        "type": "function",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "Chunk Contents",
+        "func": "\n// Function to split a document into smaller chunks\nconst splitDocument = async (text) => {\n    // Create a text splitter with specified chunk size and overlap\n    // Different splitters: https://pguso.medium.com/rag-in-javascript-how-to-build-an-open-source-indexing-pipeline-1675e9cc6650#3097\n    const splitter = new langchain.RecursiveCharacterTextSplitter({\n        chunkSize: 250, // Each chunk will have 250 characters\n        chunkOverlap: 40 // 40 characters from the end of one chunk will overlap with the start of the next\n    });\n\n    // Split the text into chunks\n    const output = await splitter.createDocuments([text]);\n\n    output.forEach((document) => {\n        document.metadata.source = 'handbook'\n    })\n\n    // Return only the content of each chunk (pageContent contains the actual text)\n    return output\n};\n\n// Example usage: Split a document called 'handbook.txt'\nconst chunks = await splitDocument(msg.payload);\n\nmsg.payload = chunks\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "langchain",
+                "module": "langchain/text_splitter"
+            }
+        ],
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "b7de234f28b9d8d0"
+            ]
+        ]
+    },
+    {
+        "id": "d162323725050feb",
+        "type": "inject",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "Trigger Ingestion",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "6e0467d90da09315"
+            ]
+        ]
+    },
+    {
+        "id": "b7de234f28b9d8d0",
+        "type": "function",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "Add to Vector Store",
+        "func": "\nconst embeddings = new langchainOpenAI.OpenAIEmbeddings({\n    model: \"text-embedding-3-large\"\n});\nconst vectorStore = new langchainVectorstoresMemory.MemoryVectorStore(embeddings);\n\nawait vectorStore.addDocuments(msg.payload)\n\nmsg.payload = vectorStore\n\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "langchainVectorstoresMemory",
+                "module": "langchain/vectorstores/memory"
+            },
+            {
+                "var": "langchainOpenAI",
+                "module": "@langchain/openai"
+            }
+        ],
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "499be4f5e34e05b6"
+            ]
+        ]
+    },
+    {
+        "id": "593dd456d3f86bd3",
+        "type": "function",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "Process Input",
+        "func": "const promptTemplate = await langchainHub.pull(\"rlm/rag-prompt\");\n\n// Example:\n// const example_prompt = await promptTemplate.invoke({\n//   context: \"(context goes here)\",\n//   question: \"(question goes here)\",\n// });\n// const example_messages = example_prompt.messages;\n\n// node.send({\n//   payload: example_messages[0].content\n// });\n\n\n/**\n * Define \"State\"\n * The state of our application controls what data is input to the application, transferred between steps,\n * and output by the application. For a simple RAG application, we can just keep track of the input question,\n * retrieved context, and generated answer.\n */\n\nconst InputStateAnnotation = langchainLanggraph.Annotation.Root({\n  question: langchainLanggraph.Annotation,\n});\n\nconst StateAnnotation = langchainLanggraph.Annotation.Root({\n  question: langchainLanggraph.Annotation,\n  context: langchainLanggraph.Annotation,\n  answer: langchainLanggraph.Annotation,\n});\n\n/**\n * Define \"Nodes\"\n * These are the application steps, let's start with Retrieval & Generation\n*/\nconst llm = new langchainOpenai.ChatOpenAI({\n  model: \"gpt-4o-mini\",\n  temperature: 0\n});\n\nconst vectorStore = flow.get('vectorStore')\n\nif (!vectorStore) {\n  throw new Error('Unable to process. Rag is not initialized')\n}\n\nconst retrieve = async (state) => {\n  const retrievedDocs = await vectorStore.similaritySearch(state.question);\n  return { context: retrievedDocs };\n};\n\nconst generate = async (state) => {\n  const docsContent = state.context.map((doc) => doc.pageContent).join(\"\\n\");\n  const messages = await promptTemplate.invoke({\n    question: state.question,\n    context: docsContent,\n  });\n  const response = await llm.invoke(messages);\n  return { answer: response.content };\n};\n\n/** \n * Control Flow\n * Finally, we compile our application into a single graph object. In this case, we are just\n * connecting the retrieval and generation steps into a single sequence.\n */\n\nconst graph = new langchainLanggraph.StateGraph(StateAnnotation)\n  .addNode(\"retrieve\", retrieve)\n  .addNode(\"generate\", generate)\n  .addEdge(\"__start__\", \"retrieve\")\n  .addEdge(\"retrieve\", \"generate\")\n  .addEdge(\"generate\", \"__end__\")\n  .compile();\n\nlet inputs = { question: msg.payload };\n\nconst result = await graph.invoke(inputs);\n\nmsg.payload = {\n  context: result.context,\n  answer: result[\"answer\"]\n}\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "langchainHub",
+                "module": "langchain/hub"
+            },
+            {
+                "var": "langchainCoreDocuments",
+                "module": "@langchain/core/documents"
+            },
+            {
+                "var": "langchainOpenai",
+                "module": "@langchain/openai"
+            },
+            {
+                "var": "langchainLanggraph",
+                "module": "@langchain/langgraph"
+            }
+        ],
+        "x": 380,
+        "y": 480,
+        "wires": [
+            [
+                "9296f46f3ed0da91"
+            ]
+        ]
+    },
+    {
+        "id": "9296f46f3ed0da91",
+        "type": "change",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.answer",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 480,
+        "wires": [
+            [
+                "f0dd2d10f86e2f3a"
+            ]
+        ]
+    },
+    {
+        "id": "00657b269b1f9316",
+        "type": "ui-markdown",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "group": "fa967812efe5b440",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "{{ msg.payload }}",
+        "className": "",
+        "x": 570,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "499be4f5e34e05b6",
+        "type": "change",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "Save to Flow Context",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vectorStore",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d8fe0bf82e5cca4",
+        "type": "change",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "_typing",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 520,
+        "wires": [
+            [
+                "f0dd2d10f86e2f3a"
+            ]
+        ]
+    },
+    {
+        "id": "f0dd2d10f86e2f3a",
+        "type": "link out",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "b22034bac77b983f"
+        ],
+        "x": 795,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "b22034bac77b983f",
+        "type": "link in",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "link in 1",
+        "links": [
+            "f0dd2d10f86e2f3a"
+        ],
+        "x": 95,
+        "y": 480,
+        "wires": [
+            [
+                "25da8e3283e6b9e0"
+            ]
+        ]
+    },
+    {
+        "id": "6e0467d90da09315",
+        "type": "template",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "Handbook",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "FlowFuse Company Handbook\n1. Introduction\n\nWelcome to FlowFuse! This handbook is designed to provide\nemployees with essential information regarding company policies, benefits, and\nprocedures.\n\nIt serves as a guide to help you navigate workplace expectations and make the\nmost of the resources available to you.\n\n2. Workplace Guidelines\n\n2.1 Attendance and Punctuality\nEmployees are expected to be present and ready to work during their assigned hours.\nConsistent tardiness or absenteeism may result in disciplinary action.\n\n2.2 Code of Conduct All employees must adhere to the highest standards of professionalism,\nrespect, and integrity. Discrimination, harassment, or any form of misconduct will\nnot be tolerated.\n\n2.3 Dress Code Our dress code is business casual, except on Fridays, which are\ndesignated as casual days. Clothing should be neat and appropriate for a professional\nenvironment.\n\n3. Procedures\n3.1 Requesting Time Off\nEmployees must submit time-off requests at least two weeks in advance through the\ncompany's HR portal. Approval is based on staffing needs and seniority.",
+        "output": "str",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "a8a8f090e3ad5552",
+                "00657b269b1f9316"
+            ]
+        ]
+    },
+    {
+        "id": "64330b6b541fedd6",
+        "type": "ui-button",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "group": "fa967812efe5b440",
+        "name": "",
+        "label": "Load Material",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "6e0467d90da09315"
+            ]
+        ]
+    },
+    {
+        "id": "25da8e3283e6b9e0",
+        "type": "ui-chat",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "",
+        "group": "bb06117738022f09",
+        "order": 1,
+        "width": "6",
+        "height": "8",
+        "showAuthor": false,
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "593dd456d3f86bd3",
+                "285d269fddfbd3f0"
+            ]
+        ]
+    },
+    {
+        "id": "374a3133f17627ae",
+        "type": "catch",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "46d727b17ec68d77",
+                "8fe3e8a3bd77d870"
+            ]
+        ]
+    },
+    {
+        "id": "02d4e4f845581429",
+        "type": "ui-notification",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "ui": "03482f22997a66ac",
+        "position": "top right",
+        "colorDefault": false,
+        "color": "#ff0000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 590,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46d727b17ec68d77",
+        "type": "change",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "02d4e4f845581429"
+            ]
+        ]
+    },
+    {
+        "id": "52826625c2f5af39",
+        "type": "catch",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "61170d04449cd0b4",
+                "5d721fd62d282a64"
+            ]
+        ]
+    },
+    {
+        "id": "61170d04449cd0b4",
+        "type": "change",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 600,
+        "wires": [
+            [
+                "4f299126d95fd116",
+                "09ea9319879d0605"
+            ]
+        ]
+    },
+    {
+        "id": "4f299126d95fd116",
+        "type": "ui-notification",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "ui": "03482f22997a66ac",
+        "position": "top right",
+        "colorDefault": false,
+        "color": "#ff0000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 590,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d721fd62d282a64",
+        "type": "debug",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": false,
+        "complete": "error",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "8fe3e8a3bd77d870",
+        "type": "debug",
+        "z": "7999b8ed81405755",
+        "g": "05946ca8dc4aa0e0",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": false,
+        "complete": "error",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "09ea9319879d0605",
+        "type": "change",
+        "z": "7999b8ed81405755",
+        "g": "42256c1acf74a9da",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "I am unable to answer you at this time.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 560,
+        "wires": [
+            [
+                "f0dd2d10f86e2f3a"
+            ]
+        ]
+    },
+    {
+        "id": "b438d4e1bcb50613",
+        "type": "comment",
+        "z": "7999b8ed81405755",
+        "g": "d8f723cbcdd6b85d",
+        "name": "README",
+        "info": "## About\n\nTrain your own LLM Agents by parsing text-based content with Node-RED, and\nfeeding it to an OpenAI Agent in a Retrieval Augmented Generation (RAG) workflow.\n\nThis Blueprint contains two example flows:\n\n1. **Text-Based Source Material:** We chunk and store hardcoded text into\nNode-RED's flow context store, and use it to train an OpenAI Agent, enabling\nnatural language querying on it's content.\n2. **Website Scraping:** We scrape a website, using it's `sitemap.xml` to\nfind all the pages to scrape, and then use the content to train an OpenAI Agent,\nenabling natural language querying on it's content.\n\n## Prerequisites\n\n### OpenAI API Key\n\nThis Blueprint uses [OpenAI](https://platform.openai.com/docs/overview) to run\nand train an LLM. An OpenAI API key is required to use the OpenAI agent. To get\nan API key, you can sign up to OpenAI and create a new API key [here](https://platform.openai.com/api-keys).\n\nOnce you have an API key, set an environment variable called `OPENAI_API_KEY` with\nyour API key. \n\nTo do this in FlowFuse, you can go to `Instance` > `Settings` > `Environment Variables`,\nand add a new variable with the name `OPENAI_API_KEY` and the value of your API key.",
+        "x": 280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1340085391e77755",
+        "type": "comment",
+        "z": "7999b8ed81405755",
+        "g": "d8f723cbcdd6b85d",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 130,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "941e2f5cd2ae1e2d",
+        "type": "http request",
+        "z": "4da1a65b84c4d217",
+        "g": "bcbc3fa4243ad0c4",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 230,
+        "y": 560,
+        "wires": [
+            [
+                "57422798f296a833",
+                "28ed4522aa067ae5"
+            ]
+        ]
+    },
+    {
+        "id": "f058175c015c4e24",
+        "type": "function",
+        "z": "4da1a65b84c4d217",
+        "g": "bcbc3fa4243ad0c4",
+        "name": "Add to Vector Store",
+        "func": "const embeddings = new langchainOpenAI.OpenAIEmbeddings({\n    model: \"text-embedding-3-large\"\n});\n\nlet vectorStore = flow.get('vectorStore')\n\nif (!vectorStore) {\n    vectorStore = new langchainVectorstoresMemory.MemoryVectorStore(embeddings);\n}\n\nvectorStore.addDocuments(msg.payload)\n\nmsg.payload = vectorStore\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "langchainVectorstoresMemory",
+                "module": "langchain/vectorstores/memory"
+            },
+            {
+                "var": "langchainOpenAI",
+                "module": "@langchain/openai"
+            }
+        ],
+        "x": 630,
+        "y": 580,
+        "wires": [
+            [
+                "8acc90d7a634e49b"
+            ]
+        ]
+    },
+    {
+        "id": "8acc90d7a634e49b",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "bcbc3fa4243ad0c4",
+        "name": "Save to Flow Context",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vectorStore",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c7122ce4762d7b4",
+        "type": "function",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "Process Message & Get Response",
+        "func": "const promptTemplate = await langchainHub.pull(\"rlm/rag-prompt\");\n\n// if true, show break down of \"tools\" invoked to retrieve data \nconst DEBUG_ACTIVE = flow.get('debugMode')\nconst SYSTEM_PROMPT = flow.get('systemPrompt')\n\n/**\n * Define \"Nodes\"\n * These are the application steps, let's start with Retrieval & Generation\n*/\nconst llm = new langchainOpenai.ChatOpenAI({\n  model: \"gpt-4o-mini\",\n  temperature: 0\n});\n\n// load our vector store of documents\nconst vectorStore = flow.get('vectorStore')\n\n// tell OpenAI how to retrive documents from our store\nconst retrieveSchema = zod.z.object({ query: zod.z.string() });\nconst retrieve = langchainCoreTools.tool(\n  async ({ query }) => {\n    const retrievedDocs = await vectorStore.similaritySearch(query);\n    const serialized = retrievedDocs\n      .map(\n        (doc) => `Source: ${doc.metadata.source}\\nContent: ${doc.pageContent}`\n      )\n      .join(\"\\n\");\n    return [serialized, retrievedDocs];\n  }, {\n    name: \"retrieve\",\n    description: \"Retrieve information related to a query.\",\n    schema: retrieveSchema,\n    responseFormat: \"content_and_artifact\",\n  }\n)\n\n// Step 1: Generate an AIMessage that may include a tool-call to be sent.\nasync function queryOrRespond(state) {\n  const llmWithTools = llm.bindTools([retrieve]);\n  const response = await llmWithTools.invoke(state.messages);\n  // MessagesState appends messages to state instead of overwriting\n  return { messages: [response] };\n}\n\n// Step 2: Execute the retrieval.\nconst tools = new langchainLanggraphPrebuilt.ToolNode([retrieve]);\n\n// Generate a response using the retrieved content\nconst generate = async (state) => {\n  // Get generated ToolMessages\n  let recentToolMessages = [];\n  for (let i = state[\"messages\"].length - 1; i >= 0; i--) {\n    let message = state[\"messages\"][i];\n    if (message instanceof langchainCoreMessages.ToolMessage) {\n      recentToolMessages.push(message);\n    } else {\n      break;\n    }\n  }\n  let toolMessages = recentToolMessages.reverse();\n\n  // provide the system prompt & docs content for the assistant\n  const docsContent = toolMessages.map((doc) => doc.content).join(\"\\n\");\n  const systemMessageContent = SYSTEM_PROMPT + `\\n\\n${docsContent}`;\n\n  let context = []\n  toolMessages.forEach((doc) => {\n    context = context.concat(doc.artifact)\n  })\n  \n  const conversationMessages = state.messages.filter(\n    (message) =>\n      message instanceof langchainCoreMessages.HumanMessage ||\n      message instanceof langchainCoreMessages.SystemMessage ||\n      (message instanceof langchainCoreMessages.AIMessage && message.tool_calls.length == 0)\n  );\n\n  // merge the system prompt, docs content & user input to send to LLM\n  const prompt = [\n    new langchainCoreMessages.SystemMessage(systemMessageContent),\n    ...conversationMessages,\n  ];\n\n  const response = await llm.invoke(prompt);\n  return {\n    messages: [response],\n    context\n  };\n};\n\n/** \n * Control Flow\n */\n\nconst graph = new langchainLanggraph.StateGraph(langchainLanggraph.MessagesAnnotation)\n  .addNode(\"queryOrRespond\", queryOrRespond)\n  .addNode(\"tools\", tools)\n  .addNode(\"generate\", generate)\n  .addEdge(\"__start__\", \"queryOrRespond\")\n  .addConditionalEdges(\"queryOrRespond\", langchainLanggraphPrebuilt.toolsCondition, {\n    __end__: \"__end__\",\n    tools: \"tools\",\n  })\n  .addEdge(\"tools\", \"generate\")\n  .addEdge(\"generate\", \"__end__\")\n  .compile();\n\n// roles: system, user & assistant\nlet inputs = { messages: [{ role: 'user', content: msg.payload}]};\n\n/** Return Step Breakdown */\nasync function sendQuestion(conversation) {\n  const finalResponse = {}\n\n  for await (const step of await graph.stream(conversation, {\n    streamMode: \"values\",\n  })) {\n    const latestMessage = step.messages[step.messages.length - 1];\n    if (langchainCoreMessages.isToolMessage(latestMessage)) {\n      // this data contains the context used to generate the response\n      if (latestMessage.artifact) {\n        finalResponse.context = latestMessage.artifact\n      }\n    }\n    if (langchainCoreMessages.isAIMessage(latestMessage)) {\n      // used tools?\n      if (latestMessage.tool_calls?.length > 0 && DEBUG_ACTIVE) {\n        // Provide detail about the Tool call used\n        node.send({\n          topic: 'Debug: Tool',\n          payload: {\n            answer: latestMessage.tool_calls.map((tc) => `${tc.name}(${JSON.stringify(tc.args)})`).join(\"\\n\")\n          }\n        })\n        // set \"typing state\" on the Chat Window\n        node.send({\n          topic: '_typing'\n        })\n      } else {\n        finalResponse.answer = latestMessage.content\n        // send the final response from the AI\n        node.send({\n          topic: 'Response',\n          payload: finalResponse\n        })\n        node.done()\n      }      \n    }\n  }\n}\n\nawait sendQuestion(inputs)",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "langchainHub",
+                "module": "langchain/hub"
+            },
+            {
+                "var": "langchainCoreDocuments",
+                "module": "@langchain/core/documents"
+            },
+            {
+                "var": "langchainOpenai",
+                "module": "@langchain/openai"
+            },
+            {
+                "var": "langchainLanggraph",
+                "module": "@langchain/langgraph"
+            },
+            {
+                "var": "langchainCoreTools",
+                "module": "@langchain/core/tools"
+            },
+            {
+                "var": "zod",
+                "module": "zod"
+            },
+            {
+                "var": "langchainLanggraphPrebuilt",
+                "module": "@langchain/langgraph/prebuilt"
+            },
+            {
+                "var": "langchainCoreMessages",
+                "module": "@langchain/core/messages"
+            }
+        ],
+        "x": 440,
+        "y": 680,
+        "wires": [
+            [
+                "967aab960ee8c69a",
+                "b8f6fe1acfc53876"
+            ]
+        ]
+    },
+    {
+        "id": "d334bef3b4a4635e",
+        "type": "ui-chat",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "",
+        "group": "556dbf3c204ec468",
+        "order": 1,
+        "width": "6",
+        "height": "8",
+        "showAuthor": true,
+        "x": 190,
+        "y": 720,
+        "wires": [
+            [
+                "0c7122ce4762d7b4",
+                "5ec9319a12c1d2c4"
+            ]
+        ]
+    },
+    {
+        "id": "967aab960ee8c69a",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.answer",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 680,
+        "wires": [
+            [
+                "c7d2a018bbf47944"
+            ]
+        ]
+    },
+    {
+        "id": "5ec9319a12c1d2c4",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "_typing",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 720,
+        "wires": [
+            [
+                "c2e7febe9c8221a8"
+            ]
+        ]
+    },
+    {
+        "id": "c2e7febe9c8221a8",
+        "type": "link out",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "c09d0760ac0e443b"
+        ],
+        "x": 495,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "c09d0760ac0e443b",
+        "type": "link in",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "link in 2",
+        "links": [
+            "c2e7febe9c8221a8",
+            "c7d2a018bbf47944",
+            "926a4bddefee4fc2"
+        ],
+        "x": 95,
+        "y": 720,
+        "wires": [
+            [
+                "d334bef3b4a4635e"
+            ]
+        ]
+    },
+    {
+        "id": "c7d2a018bbf47944",
+        "type": "link out",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "c09d0760ac0e443b"
+        ],
+        "x": 835,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "e6f79d0f87242442",
+        "type": "inject",
+        "z": "4da1a65b84c4d217",
+        "g": "ada62d45e5b5cf5c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 440,
+        "wires": [
+            [
+                "5e6a4debcab9af32"
+            ]
+        ]
+    },
+    {
+        "id": "5e6a4debcab9af32",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "ada62d45e5b5cf5c",
+        "name": "Clear Vector Store",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "vectorStore",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd95b6f929e4bbe8",
+        "type": "http request",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Get Sitemap",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 140,
+        "wires": [
+            [
+                "c2c49814908a553a"
+            ]
+        ]
+    },
+    {
+        "id": "c2c49814908a553a",
+        "type": "xml",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 870,
+        "y": 140,
+        "wires": [
+            [
+                "530ae83b714072e0"
+            ]
+        ]
+    },
+    {
+        "id": "eccf2867ce27eb2b",
+        "type": "split",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1170,
+        "y": 140,
+        "wires": [
+            [
+                "7d72b8fc80cb25c3"
+            ]
+        ]
+    },
+    {
+        "id": "7d72b8fc80cb25c3",
+        "type": "switch",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Apply Filter",
+
+        "property": "payload.loc",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "urlFilter",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1310,
+        "y": 140,
+        "wires": [
+            [
+                "0a1315e5037fc3a8"
+            ]
+        ]
+    },
+    {
+        "id": "530ae83b714072e0",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Extract URLs",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.urlset.url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1010,
+        "y": 140,
+        "wires": [
+            [
+                "eccf2867ce27eb2b",
+                "740761d8d12b4586"
+            ]
+        ]
+    },
+    {
+        "id": "6e61ec9c2d6347c9",
+        "type": "delay",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "5",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1430,
+        "y": 200,
+        "wires": [
+            [
+                "b0c8475f213f112b"
+            ]
+        ]
+    },
+    {
+        "id": "b0c8475f213f112b",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "payload.loc[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1590,
+        "y": 200,
+        "wires": [
+            [
+                "27cfd65eb92a7a69"
+            ]
+        ]
+    },
+    {
+        "id": "71e760ea44c94715",
+        "type": "link in",
+        "z": "4da1a65b84c4d217",
+        "g": "bcbc3fa4243ad0c4",
+        "name": "link in 3",
+        "links": [
+            "8770419e6d2c8455",
+            "27cfd65eb92a7a69"
+        ],
+        "x": 95,
+        "y": 560,
+        "wires": [
+            [
+                "941e2f5cd2ae1e2d"
+            ]
+        ]
+    },
+    {
+        "id": "27cfd65eb92a7a69",
+        "type": "link out",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "71e760ea44c94715"
+        ],
+        "x": 1695,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5a85ac820afca92b",
+        "type": "ui-switch",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "",
+        "label": "Debug Mode:",
+        "group": "556dbf3c204ec468",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 560,
+        "y": 860,
+        "wires": [
+            [
+                "6258cc34d45971dd"
+            ]
+        ]
+    },
+    {
+        "id": "9b1c7c695c044212",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "debugMode",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 860,
+        "wires": [
+            [
+                "5a85ac820afca92b"
+            ]
+        ]
+    },
+    {
+        "id": "b455923d2213dd1c",
+        "type": "inject",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "Trigger on Start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 840,
+        "wires": [
+            [
+                "9b1c7c695c044212",
+                "252367ba621a213a"
+            ]
+        ]
+    },
+    {
+        "id": "6258cc34d45971dd",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "debugMode",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "252367ba621a213a",
+        "type": "template",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "Set System prompt",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "You are an assistant for question-answering tasks about the software, FlowFuse.\nUse the following pieces of retrieved context to answer the question.\nAssume all questions are related to the FlowFuse documentation with which you have been provided access via a tool.\nIf you don't know the answer, say that you don't know.\nUse three sentences maximum and keep the answer concise.",
+        "output": "str",
+        "x": 390,
+        "y": 820,
+        "wires": [
+            [
+                "efc7ce0ff76dfee1"
+            ]
+        ]
+    },
+    {
+        "id": "efc7ce0ff76dfee1",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "systemPrompt",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f3c17708a91d89c",
+        "type": "comment",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Apply appropriate filters to sitemap content",
+        "info": "",
+        "x": 830,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "57422798f296a833",
+        "type": "function",
+        "z": "4da1a65b84c4d217",
+        "g": "bcbc3fa4243ad0c4",
+        "name": "Chunk Website",
+        "func": "/**\n * Splits HTML into semantic chunks, preserving tag structure.\n * @param {string} html - The HTML string to split.\n * @param {number} maxChunkLength - The maximum length (in characters) for each chunk.\n * @param {string[]} ignoreTags - Tags to split on (e.g., ['p', 'h1', 'h2', 'li']).\n * @returns {string[]} Array of HTML chunks.\n */\nfunction htmlSemanticPreservingSplitter(html, maxChunkLength = 1000, ignoreTags = ['script', 'style', 'header', 'footer', 'svg', 'path', 'rect', 'circle', 'button'], baseMetadata = {}) {\n    const dom = new jsdom.JSDOM(html);\n    const { document } = dom.window;\n    const body = document.body;\n\n    let chunks = [];\n    let currentChunk = '';\n\n    // Helper to serialize a node back to HTML\n    function nodeToHtml(node) {\n        const container = document.createElement('div');\n        container.appendChild(node.cloneNode(true));\n        return container.innerHTML;\n    }\n\n    // Walk the DOM and split at semantic boundaries\n    function walk(node) {\n        // is an Element Node, and not one of the \"ignoreTags\"\n        if (node.nodeType === 1 && !ignoreTags.includes(node.tagName.toLowerCase())) {\n            const htmlPart = nodeToHtml(node).trim();\n            if ((currentChunk.length + htmlPart.length) > maxChunkLength && currentChunk.trim().length > 0) {\n                if (currentChunk.trim().length > 0) {\n                    chunks.push(currentChunk);\n                }\n                currentChunk = '';\n            }\n            if (htmlPart.length > maxChunkLength) {\n                // If a single element is too big, split its children recursively\n                Array.from(node.childNodes).forEach(walk);\n            } else {\n                currentChunk += htmlPart;\n            }\n        } else if (node.nodeType === 3) { // TEXT_NODE\n            if ((currentChunk.length + node.textContent.length) > maxChunkLength && currentChunk.trim().length > 0) {\n                if (currentChunk.trim().length > 0) {\n                    chunks.push(currentChunk);\n                }\n                currentChunk = '';\n            }\n            currentChunk += node.textContent.trim();\n        }\n    }\n\n    Array.from(body.childNodes).forEach(walk);\n\n    if (currentChunk.trim().length > 0) {\n        chunks.push(currentChunk);\n    }\n\n    return chunks.map((chunk, i) => ({\n        pageContent: chunk,\n        metadata: { chunk: i, ...baseMetadata }\n    }));\n}\n\n// Function to split a document into smaller chunks\nconst splitDocument = async (html) => {\n    // Create a text splitter with specified chunk size and overlap\n    // Different splitters: https://pguso.medium.com/rag-in-javascript-how-to-build-an-open-source-indexing-pipeline-1675e9cc6650#3097\n    const output = htmlSemanticPreservingSplitter(html, 100)\n\n    // Split the text into chunks\n    // const output = await splitter.createDocuments([text]);\n\n    output.forEach((document) => {\n        document.metadata.source = msg.url\n    })\n\n    // Return only the content of each chunk (pageContent contains the actual text)\n    return output\n};\n\nnode.status({fill:\"grey\",shape:\"ring\",text:\"Splitting Document...\"});\n\n// Example usage: Split a document called 'handbook.txt'\nconst chunks = await splitDocument(msg.payload);\n\nnode.status({fill:\"green\", shape:\"ring\", text:\"Document Split\"});\n\nmsg.payload = chunks\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "langchain",
+                "module": "langchain/text_splitter"
+            },
+            {
+                "var": "fs",
+                "module": "fs"
+            },
+            {
+                "var": "jsdom",
+                "module": "jsdom"
+            }
+        ],
+        "x": 420,
+        "y": 580,
+        "wires": [
+            [
+                "f058175c015c4e24"
+            ]
+        ]
+    },
+    {
+        "id": "d314a427e206e020",
+        "type": "comment",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "Define the general behaviour of your agent here",
+        "info": "",
+        "x": 400,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b8f6fe1acfc53876",
+        "type": "debug",
+        "z": "4da1a65b84c4d217",
+        "g": "b50f20339086c705",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d240f9cb9812bb23",
+        "type": "ui-button",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "group": "a4a3e39fa9fcefb6",
+        "name": "",
+        "label": "Load Content",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "75f52da49a84bf40",
+                "62d09ed9e598da5c"
+            ]
+        ]
+    },
+    {
+        "id": "75f52da49a84bf40",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Reset \"Documents Loaded\" Count",
+        "rules": [
+            {
+                "t": "set",
+                "p": "documentsLoaded",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "9cc0da39ec656d8c"
+            ]
+        ]
+    },
+    {
+        "id": "28ed4522aa067ae5",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "bcbc3fa4243ad0c4",
+        "name": "Increase \"Documents Loaded\" Count",
+        "rules": [
+            {
+                "t": "set",
+                "p": "documentsLoaded",
+                "pt": "flow",
+                "to": "$flowContext(\"documentsLoaded\") + 1",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 540,
+        "wires": [
+            [
+                "8ea2292f06788463"
+            ]
+        ]
+    },
+    {
+        "id": "8ea2292f06788463",
+        "type": "link out",
+        "z": "4da1a65b84c4d217",
+        "g": "bcbc3fa4243ad0c4",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "78804d909ce0087a"
+        ],
+        "x": 685,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9cc0da39ec656d8c",
+        "type": "link out",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "78804d909ce0087a"
+        ],
+        "x": 595,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "78804d909ce0087a",
+        "type": "link in",
+        "z": "4da1a65b84c4d217",
+        "g": "507146d5546d0c11",
+        "name": "link in 4",
+        "links": [
+            "8ea2292f06788463",
+            "9cc0da39ec656d8c"
+        ],
+        "x": 875,
+        "y": 440,
+        "wires": [
+            [
+                "34fa0226c5267247"
+            ]
+        ]
+    },
+    {
+        "id": "34fa0226c5267247",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "507146d5546d0c11",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$round(100 * $flowContext(\"documentsLoaded\") / $flowContext(\"documentsTotal\"))",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "ui_update.label",
+                "pt": "msg",
+                "to": "$flowContext(\"documentsLoaded\") & \"/\" & $flowContext(\"documentsTotal\")",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 440,
+        "wires": [
+            [
+                "30fe1a31107a4a44"
+            ]
+        ]
+    },
+    {
+        "id": "5d37875eca5dd30d",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "sitemap",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 100,
+        "wires": [
+            [
+                "cd95b6f929e4bbe8",
+                "19dca2e109986697"
+            ]
+        ]
+    },
+    {
+        "id": "71468283df4fb54f",
+        "type": "ui-notification",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "ui": "03482f22997a66ac",
+        "position": "top right",
+        "colorDefault": false,
+        "color": "#cc0000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "Show Warning",
+        "x": 740,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62d09ed9e598da5c",
+        "type": "switch",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "URL Defined?",
+        "property": "sitemap",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "4170937ce73d86fe"
+            ],
+            [
+                "4170937ce73d86fe"
+            ],
+            [
+                "5d37875eca5dd30d"
+            ]
+        ]
+    },
+    {
+        "id": "4170937ce73d86fe",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Set Message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "No Sitemap URL Specified",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 60,
+        "wires": [
+            [
+                "71468283df4fb54f"
+            ]
+        ]
+    },
+    {
+        "id": "92a360194616ac03",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "ab592de7f84ebd2a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sitemap",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1460,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3befa2d7407a7a53",
+        "type": "ui-text-input",
+        "z": "4da1a65b84c4d217",
+        "g": "ab592de7f84ebd2a",
+        "group": "a4a3e39fa9fcefb6",
+        "name": "",
+        "label": "Sitemap URL:",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 1280,
+        "y": 300,
+        "wires": [
+            [
+                "92a360194616ac03"
+            ]
+        ]
+    },
+    {
+        "id": "ca78909195ebab72",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "ab592de7f84ebd2a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "sitemap",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 340,
+        "wires": [
+            [
+                "3befa2d7407a7a53"
+            ]
+        ]
+    },
+    {
+        "id": "e44410e5c7f3e8cd",
+        "type": "ui-event",
+        "z": "4da1a65b84c4d217",
+        "g": "ab592de7f84ebd2a",
+        "ui": "03482f22997a66ac",
+        "name": "",
+        "x": 920,
+        "y": 340,
+        "wires": [
+            [
+                "ca78909195ebab72"
+            ]
+        ]
+    },
+    {
+        "id": "602961cde29f9fdb",
+        "type": "ui-notification",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "ui": "03482f22997a66ac",
+        "position": "top right",
+        "colorDefault": false,
+        "color": "#03c200",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "Show Confirmation",
+        "x": 970,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19dca2e109986697",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Set Message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Loading Website Content",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 100,
+        "wires": [
+            [
+                "602961cde29f9fdb",
+                "15933aac27ee7393"
+            ]
+        ]
+    },
+    {
+        "id": "0a1315e5037fc3a8",
+        "type": "join",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": false,
+        "timeout": "0.2",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1450,
+        "y": 140,
+        "wires": [
+            [
+                "2be29d814e9dac68"
+            ]
+        ]
+    },
+    {
+        "id": "2be29d814e9dac68",
+        "type": "function",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Count Filtered Pages",
+        "func": "flow.set('documentsTotal', msg.payload.length)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 140,
+        "wires": [
+            [
+                "d34d3890782183cc",
+                "95fbb17a95c7074e"
+            ]
+        ]
+    },
+    {
+        "id": "d34d3890782183cc",
+        "type": "split",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1290,
+        "y": 200,
+        "wires": [
+            [
+                "6e61ec9c2d6347c9"
+            ]
+        ]
+    },
+    {
+        "id": "30fe1a31107a4a44",
+        "type": "ui-progress",
+        "z": "4da1a65b84c4d217",
+        "g": "507146d5546d0c11",
+        "group": "a4a3e39fa9fcefb6",
+        "name": "",
+        "label": "Progress",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "color": "#62e667",
+        "className": "",
+        "x": 1160,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "15933aac27ee7393",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Set Flow Context",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sitemap",
+                "pt": "flow",
+                "to": "url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b33615712a4fae95",
+        "type": "catch",
+        "z": "4da1a65b84c4d217",
+        "g": "bd839e3acf759dde",
+        "name": "",
+        "scope": null,
+        "uncaught": true,
+        "x": 160,
+        "y": 1020,
+        "wires": [
+            [
+                "0e8624b6baf2ada9",
+                "8ce4147a0a1e6c80",
+                "51882c821c85afbe"
+            ]
+        ]
+    },
+    {
+        "id": "0e8624b6baf2ada9",
+        "type": "debug",
+        "z": "4da1a65b84c4d217",
+        "g": "bd839e3acf759dde",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "8ce4147a0a1e6c80",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "bd839e3acf759dde",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1020,
+        "wires": [
+            [
+                "5b248d81786186f5"
+            ]
+        ]
+    },
+    {
+        "id": "5b248d81786186f5",
+        "type": "ui-notification",
+        "z": "4da1a65b84c4d217",
+        "g": "bd839e3acf759dde",
+        "ui": "03482f22997a66ac",
+        "position": "top right",
+        "colorDefault": false,
+        "color": "#ff0000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 570,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "926a4bddefee4fc2",
+        "type": "link out",
+        "z": "4da1a65b84c4d217",
+        "g": "bd839e3acf759dde",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "c09d0760ac0e443b"
+        ],
+        "x": 495,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "51882c821c85afbe",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "bd839e3acf759dde",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Something went wrong...",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 980,
+        "wires": [
+            [
+                "926a4bddefee4fc2"
+            ]
+        ]
+    },
+    {
+        "id": "a1dc7b8f2c6f5b2e",
+        "type": "ui-text",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "group": "a4a3e39fa9fcefb6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Pages Found",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 1350,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "740761d8d12b4586",
+        "type": "function",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "Count Pages",
+        "func": "msg.payload = msg.payload.length\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 100,
+        "wires": [
+            [
+                "a1dc7b8f2c6f5b2e"
+            ]
+        ]
+    },
+    {
+        "id": "95fbb17a95c7074e",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "documentsTotal",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1840,
+        "y": 140,
+        "wires": [
+            [
+                "464dccce218d66e9"
+            ]
+        ]
+    },
+    {
+        "id": "464dccce218d66e9",
+        "type": "ui-text",
+        "z": "4da1a65b84c4d217",
+        "g": "6bbb54bf8cd76acc",
+        "group": "a4a3e39fa9fcefb6",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Filtered Pages Found",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 2060,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "018bf1b4c8acf2eb",
+        "type": "inject",
+        "z": "4da1a65b84c4d217",
+        "g": "68aa9eda4cdd6a94",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "/docs/",
+        "payloadType": "str",
+        "x": 230,
+        "y": 340,
+        "wires": [
+            [
+                "765db0aa083b0923"
+            ]
+        ]
+    },
+    {
+        "id": "765db0aa083b0923",
+        "type": "switch",
+        "z": "4da1a65b84c4d217",
+        "g": "68aa9eda4cdd6a94",
+        "name": "Filter Set?",
+        "property": "urlFilter",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "62a9de90539c7b1d"
+            ]
+        ]
+    },
+    {
+        "id": "62a9de90539c7b1d",
+        "type": "ui-text-input",
+        "z": "4da1a65b84c4d217",
+        "g": "68aa9eda4cdd6a94",
+        "group": "a4a3e39fa9fcefb6",
+        "name": "",
+        "label": "URL FIlter",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 540,
+        "y": 340,
+        "wires": [
+            [
+                "193fa17f9c9edbca"
+            ]
+        ]
+    },
+    {
+        "id": "193fa17f9c9edbca",
+        "type": "change",
+        "z": "4da1a65b84c4d217",
+        "g": "68aa9eda4cdd6a94",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "urlFilter",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7879db6b2db03a0",
+        "type": "inject",
+        "z": "4da1a65b84c4d217",
+        "g": "68aa9eda4cdd6a94",
+        "name": "FlowFuse Sitemap",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "https://flowfuse.com/sitemap.xml",
+        "payloadType": "str",
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "b2e4e2a7963483b9"
+            ]
+        ]
+    },
+    {
+        "id": "b2e4e2a7963483b9",
+        "type": "switch",
+        "z": "4da1a65b84c4d217",
+        "g": "68aa9eda4cdd6a94",
+        "name": "URL Set?",
+        "property": "sitemap",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 300,
+        "wires": [
+            [
+                "3befa2d7407a7a53"
+            ]
+        ]
+    },
+    {
+        "id": "fffa4d0ab60e9a21",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.25.0",
+            "@flowfuse/node-red-dashboard-2-ui-chat": "1.1.0"
+        }
+    }
+]
