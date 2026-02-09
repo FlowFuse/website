@@ -49,7 +49,7 @@ To be successful in this role, you'll need a blend of technical prowess and lead
 1. First Interview (Technical Background & Leadership): Conduct a video interview to assess technical background, understanding of software development practices, and leadership/management experience. Past hands-on engineering experience is essential for credibility and decision-making.
 1. Second Interview (Team Leadership & Culture Fit): In-depth interview with the CEO and other relevant team leads to discuss leadership philosophy, experience scaling teams, and alignment with FlowFuse's "sports team" culture.
 1. Leadership Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges (e.g., team scaling, performance optimization, technical decision-making) and asked to propose solutions. 
-1. STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
+1. STAR Interview (45mins): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 1. Offer: Extend an offer to the selected candidate.
 
 ### First interview
