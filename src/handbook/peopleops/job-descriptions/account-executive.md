@@ -60,7 +60,7 @@ We are seeking a highly motivated, driven, and self-sufficient Account Executive
 * Initial Screening: Review resumes and cover letters to assess candidate qualifications and experience.
 * First Interview: Conduct a phone or video interview to further evaluate candidate skills, experience, and cultural fit.
 * Second Interview: In-depth interview with the hiring manager and other team members to discuss specific experience, skills, and how the candidate aligns with the product strategy and pillars.
-* STAR interview - Behaviour interview to understand if there’s value alignment.
+* STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 * Assessment/Presentation: May require a work sample, case study, or presentation to demonstrate the candidate's abilities. 
 * Final Interview: A final interview with key stakeholders.
 * Offer: Extend an offer to the selected candidate.
