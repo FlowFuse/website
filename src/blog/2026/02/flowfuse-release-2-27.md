@@ -60,7 +60,7 @@ If your team relies on FlowFuse to run systems that cannot afford surprises, thi
 
 For a complete list of everything included in FlowFuse 2.27, check out the [release notes](https://flowfuse.com/changelog/).
 
-Your feedback continues to shape how FlowFuse evolves. If something in this release makes your day easier—or still feels rough around the edges—we want to hear about it. Please share feedback or report issues on [GitHub](https://github.com/FlowFuse/flowfuse/issues/new/choose).
+Your feedback continues to shape how FlowFuse evolves. If something in this release makes your day easier—or still feels rough around the edges—we want to hear about it. Please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.27) to us.
 
 ## Try FlowFuse
 
