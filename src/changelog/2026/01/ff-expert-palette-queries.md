@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse Expert: Palette Queries"
 description: "The FlowFuse Expert can now answer questions about your Node-RED palette."
-date: 2026-02-06 13:00:00.0
+date: 2026-02-10 13:00:00.0
 authors: ['steve-mclaughlin']
 tags:
   - changelog
