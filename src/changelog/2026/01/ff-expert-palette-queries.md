@@ -12,7 +12,9 @@ We are continuing to evolve the FlowFuse Expert by giving it deeper integration 
 You can now ask the Expert about your installed nodes, versions, and available updates without leaving the chat interface or needing to manually input said context. For example:
 
 - Do I have any nodes installed that can send Emails?
-- Are my nodes up to date?
+- Are my palette nodes up to date?
+- Are any nodes on my palette disabled?
+- Can you suggest a node package that would replace this complex function code?
 - or any question related to your palette.
 
 This is one of several steps we are taking to bring additional context directly into your FlowFuse Expert to augment its capabilities and improve your workflow.
