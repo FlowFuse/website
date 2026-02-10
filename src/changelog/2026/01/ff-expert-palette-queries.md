@@ -9,7 +9,7 @@ tags:
 
 We are continuing to evolve the FlowFuse Expert by giving it deeper integration into your Node-RED environment. Starting today, the Expert has **Palette Awareness**.
 
-You can now ask the Expert about your installed nodes, versions, and available updates without leaving the chat interface. For example:
+You can now ask the Expert about your installed nodes, versions, and available updates without leaving the chat interface or needing to manually input said context. For example:
 
 - Do I have any nodes installed that can send Emails?
 - Are my nodes up to date?
