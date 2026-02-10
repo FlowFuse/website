@@ -2,8 +2,8 @@
 title: "Event-Driven Architecture: 99% of Your System Requests Are Worthless"
 subtitle: "What Happens When Your Factory Stops Asking and Starts Listening"
 description: "Learn how Event-Driven Architecture enables real-time responsiveness in manufacturing by allowing systems to react instantly to production events, replacing traditional request-response models with automated, parallel processing."
-date: 2026-02-11
-keywords: 
+date: 2026-02-10
+keywords: event-driven architecture, manufacturing systems, real-time manufacturing, industrial automation, polling vs event-driven, MES integration, ERP integration, SCADA, industrial IoT, OT IT integration, manufacturing downtime
 authors: ["sumit-shinde"]
 image: 
 tags:
