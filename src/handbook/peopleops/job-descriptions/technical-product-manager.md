@@ -162,6 +162,7 @@ What the Technical Product Manager brings to the table:
 1. Director of Product interview (45m): product, technical fit, outcomes, communication.
 1. CTO interview (45m): technical depth, collaboration, trade-offs.
 1. Engineering Manager interview (30m): technical collaboration and requirements clarity.
+1. STAR Interview (45m): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 1. Technical case study presentation with metrics and lessons learned.
 1. Final interview (**optional**) with VP of Sales or stakeholder.
 1. Offer.
