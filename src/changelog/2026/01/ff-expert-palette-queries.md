@@ -17,6 +17,6 @@ You can now ask the Expert about your installed nodes, versions, and available u
 
 This is one of several steps we are taking to bring additional context directly into your FlowFuse Expert to augment its capabilities and improve your workflow.
 
-![FlowFuse Expert integration with the Palette](./images/ff-expert-palette-context.png){data-zoomable}
+![FlowFuse Expert integration with the Palette](./images/ff-expert-palette-context.gif){data-zoomable}
 *FlowFuse Expert integration with the Palette*
 
