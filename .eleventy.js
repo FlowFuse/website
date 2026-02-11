@@ -134,6 +134,10 @@ module.exports = function(eleventyConfig) {
         return match?.[1] || "";
     }
 
+    function extractArticleSection(html) {
+        return extractMetaTag(html, 'property=["\\\']article:section["\\\']').trim();
+    }
+
 
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
@@ -925,6 +929,7 @@ module.exports = function(eleventyConfig) {
                 extractMetaTag(html, 'property=["\\\']og:description["\\\']');
             const htmlImage = extractMetaTag(html, 'property=["\\\']og:image["\\\']');
             const htmlKeywords = extractMetaKeywords(html);
+            const htmlCategory = extractArticleSection(html);
             const datePublishedIso =
                 extractDateFromJsonLd(html, "datePublished") ||
                 extractMetaTag(html, 'property=["\\\']article:published_time["\\\']');
@@ -948,6 +953,7 @@ module.exports = function(eleventyConfig) {
                 ...extractHeadingRecords({
                     url,
                     html: searchableHtml,
+                    category: htmlCategory,
                     pageTitle: decodeEntities(htmlTitle),
                     pageDescription,
                     pageImage,
