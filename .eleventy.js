@@ -779,6 +779,20 @@ module.exports = function(eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection("searchIndex", function (collectionApi) {
+        return collectionApi
+            .getAll()
+            .filter((item) => {
+                return (
+                    item.url &&
+                    item.outputPath &&
+                    item.data?.eleventyExcludeFromCollections !== true &&
+                    item.data?.excludeFromSearch !== true
+                );
+            })
+            .sort((a, b) => a.url.localeCompare(b.url));
+    });
+
     // Plugins
     eleventyConfig.addPlugin(EleventyRenderPlugin)
     eleventyConfig.addPlugin(pluginRSS)
