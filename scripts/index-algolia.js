@@ -17,20 +17,45 @@ function chunk(arr, size) {
 function normalizeRecord(record) {
     return {
         objectID: String(record.objectID),
-        title: record.title || "",
-        url: record.url || "",
+        hierarchy: {
+            lvl0: record.hierarchy?.lvl0 || null,
+            lvl1: record.hierarchy?.lvl1 || null,
+            lvl2: record.hierarchy?.lvl2 || null,
+            lvl3: record.hierarchy?.lvl3 || null,
+            lvl4: record.hierarchy?.lvl4 || null,
+            lvl5: record.hierarchy?.lvl5 || null,
+            lvl6: record.hierarchy?.lvl6 || null,
+        },
         content: record.content || "",
+        urlDepth: Number.isFinite(record.urlDepth) ? record.urlDepth : 0,
+        position: Number.isFinite(record.position) ? record.position : 0,
+        dateModified: Number.isFinite(record.dateModified) ? record.dateModified : null,
+        datePublished: Number.isFinite(record.datePublished) ? record.datePublished : null,
+        keywords: Array.isArray(record.keywords) ? record.keywords : [],
+        lang: record.lang || "en",
+        url: record.url || "",
+        origin: record.origin || "",
+        pathname: record.pathname || "",
+        title: record.title || "",
+        description: record.description || "",
+        image: record.image || "",
+        type: record.type || "",
+        hierarchicalCategories: {
+            lvl0: record.hierarchicalCategories?.lvl0 || null,
+            lvl1: record.hierarchicalCategories?.lvl1 || null,
+            lvl2: record.hierarchicalCategories?.lvl2 || null,
+            lvl3: record.hierarchicalCategories?.lvl3 || null,
+            lvl4: record.hierarchicalCategories?.lvl4 || null,
+            lvl5: record.hierarchicalCategories?.lvl5 || null,
+            lvl6: record.hierarchicalCategories?.lvl6 || null,
+        },
+        contentLength: Number.isFinite(record.contentLength) ? record.contentLength : 0,
         category: record.category || "",
     };
 }
 
 function sameRecord(a, b) {
-    return (
-        a.title === b.title &&
-        a.url === b.url &&
-        a.content === b.content &&
-        a.category === b.category
-    );
+    return JSON.stringify(a) === JSON.stringify(b);
 }
 
 async function main() {
@@ -67,7 +92,27 @@ async function main() {
     const existingById = new Map();
     await index.browseObjects({
         query: "",
-        attributesToRetrieve: ["objectID", "title", "url", "content", "category"],
+        attributesToRetrieve: [
+            "objectID",
+            "hierarchy",
+            "content",
+            "urlDepth",
+            "position",
+            "dateModified",
+            "datePublished",
+            "keywords",
+            "lang",
+            "url",
+            "origin",
+            "pathname",
+            "title",
+            "description",
+            "image",
+            "type",
+            "hierarchicalCategories",
+            "contentLength",
+            "category",
+        ],
         batch(hits) {
             for (const hit of hits) {
                 const normalized = normalizeRecord(hit);
