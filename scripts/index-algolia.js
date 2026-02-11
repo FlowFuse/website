@@ -58,6 +58,19 @@ function sameRecord(a, b) {
     return JSON.stringify(a) === JSON.stringify(b);
 }
 
+function getTaskIDs(response) {
+    if (!response) {
+        return [];
+    }
+    if (Array.isArray(response.taskIDs)) {
+        return response.taskIDs.filter((taskID) => taskID !== undefined && taskID !== null);
+    }
+    if (response.taskID !== undefined && response.taskID !== null) {
+        return [response.taskID];
+    }
+    return [];
+}
+
 async function main() {
     const {
         ALGOLIA_APP_ID,
@@ -138,12 +151,16 @@ async function main() {
 
     for (const saveBatch of chunk(toSave, BATCH_SIZE)) {
         const response = await index.saveObjects(saveBatch);
-        await index.waitTask(response.taskID);
+        for (const taskID of getTaskIDs(response)) {
+            await index.waitTask(taskID);
+        }
     }
 
     for (const deleteBatch of chunk(toDelete, BATCH_SIZE)) {
         const response = await index.deleteObjects(deleteBatch);
-        await index.waitTask(response.taskID);
+        for (const taskID of getTaskIDs(response)) {
+            await index.waitTask(taskID);
+        }
     }
 
     console.log(
