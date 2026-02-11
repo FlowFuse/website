@@ -2,6 +2,7 @@
 title: "Shop Floor AI: Dead on Arrival Without This"
 subtitle: "Why your industrial AI fails before it even starts - and the missing architecture that fixes it"
 description: "Industrial AI doesn't fail because of bad models - it fails because of bad architecture. Discover why signals need context and how a Unified Namespace makes AI work on the shop floor."
+lastUpdated: 2026-02-11
 date: 2026-02-06
 keywords: industrial AI, Unified Namespace, shop floor, signals, context, human decision layer, FlowFuse, Node-RED, operational data, real-time insights, factory automation, manufacturing AI
 authors: ["sumit-shinde"]
