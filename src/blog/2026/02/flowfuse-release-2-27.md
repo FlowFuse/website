@@ -17,8 +17,6 @@ FlowFuse 2.27 tightens the development loop for Remote instances and makes FlowF
 
 ## A More Integrated Remote Development Workflow
 
-### Why it matters
-
 Teams run production and edge workloads in Remote instances. When tooling behaves differently across environments, it slows debugging and increases risk during active changes.
 
 ### What changed in 2.27
@@ -34,8 +32,6 @@ Device Agent v3.8.0 also allows you to restore snapshots while remaining in deve
 - You reduce friction while iterating on live systems  
 
 ## FlowFuse Expert Uses Live Flow and Palette Context
-
-### Why it matters
 
 AI guidance is only useful when it reflects what is actually running in your environment. Manually describing flows or installed nodes slows troubleshooting and introduces gaps in context.
 
@@ -59,8 +55,6 @@ FlowFuse Expert surfaces context and performs actions only when initiated by the
 - You move between chat, palette manager, and editor without unnecessary clicks or context switching  
 
 ## High Availability Improvements for Hosted Instances
-
-### Why it matters
 
 Parallel restarts in HA environments can introduce avoidable service interruption during deploys or manual restarts.
 
