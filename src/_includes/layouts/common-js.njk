@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.5.1/themes/reset-min.css" integrity="sha256-KvFgFCzgqSErAPu6y9gz/AhZAvzK48VJASu3DpNLCEQ=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.6.1"/>
 
+<!-- Algolia -->
 <script type="text/javascript">
     const searchScope = document.head.querySelector('[property="article:section"][content]')?.content ?? '';
 
@@ -63,7 +64,7 @@
                     searchClient,
                     queries: [
                         {
-                            indexName            : 'netlify_00f8cf60-997f-4c4d-9427-a97924358648_live_all',
+                            indexName            : 'netlify_prod',
                             params               : {
                                 query,
                                 hitsPerPage: hitsPerPageMap[scope], // Read specific count
@@ -110,10 +111,15 @@
                                             ${components.Highlight({ hit: item, attribute: ['hierarchy', item.type] })}
                                         </div>
                                         <div class="aa-ItemContentDescription">
-                                            ${components.Snippet({
-                                                hit      : item,
-                                                attribute: 'content',
-                                            })}
+                                            ${item.content && item.content.trim().length > 0
+                                                ? components.Snippet({
+                                                    hit      : item,
+                                                    attribute: 'content',
+                                                })
+                                                : components.Snippet({
+                                                    hit      : item,
+                                                    attribute: 'description',
+                                                })}
                                         </div>
                                     </div>
                                 </div>

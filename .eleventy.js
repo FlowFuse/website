@@ -20,6 +20,7 @@ const pluginTOC = require('eleventy-plugin-toc');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
+const { isSearchPage, isSearchUrl, extractHeadingRecords } = require("./lib/search-index.js");
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
@@ -29,6 +30,115 @@ const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEX
 const DEPLOY_PREVIEW = process.env.CONTEXT === "deploy-preview";
 
 module.exports = function(eleventyConfig) {
+    let searchIndexItems = [];
+
+    function extractMetaTag(html, selector) {
+        const regex = new RegExp(`<meta[^>]*${selector}[^>]*content=(["'])(.*?)\\1[^>]*>`, "i");
+        const match = html.match(regex);
+        return match?.[2] || "";
+    }
+
+    function extractHtmlTitle(html) {
+        const match = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+        return match ? match[1].replace(/\s+/g, " ").trim() : "";
+    }
+
+    function normalizeImage(value, fallback) {
+        if (!value) {
+            return fallback;
+        }
+        if (typeof value === "string") {
+            return value;
+        }
+        if (typeof value === "object" && typeof value.src === "string") {
+            return value.src;
+        }
+        return fallback;
+    }
+
+    function extractSearchHtml(url, html = "") {
+        const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+        let searchable = mainMatch ? mainMatch[1] : html;
+
+        if (url.startsWith("/blog/")) {
+            searchable = searchable.split("<!-- Author Bio Section -->")[0];
+        }
+
+        return searchable;
+    }
+
+    function toUnixTimestampSeconds(value) {
+        if (!value) {
+            return null;
+        }
+        const date = value instanceof Date ? value : new Date(value);
+        if (Number.isNaN(date.getTime())) {
+            return null;
+        }
+        return Math.floor(date.getTime() / 1000);
+    }
+
+    async function listHtmlFiles(rootDir) {
+        const files = [];
+        async function walk(currentDir) {
+            const entries = await fs.promises.readdir(currentDir, { withFileTypes: true });
+            for (const entry of entries) {
+                const fullPath = path.join(currentDir, entry.name);
+                if (entry.isDirectory()) {
+                    await walk(fullPath);
+                } else if (entry.isFile() && entry.name.endsWith(".html")) {
+                    files.push(fullPath);
+                }
+            }
+        }
+        await walk(rootDir);
+        return files;
+    }
+
+    function outputPathToUrl(outputRoot, outputPath) {
+        const rel = path.relative(outputRoot, outputPath).replace(/\\/g, "/");
+        if (!rel.endsWith(".html")) {
+            return "";
+        }
+        if (rel === "index.html") {
+            return "/";
+        }
+        if (rel.endsWith("/index.html")) {
+            return `/${rel.slice(0, -"index.html".length)}`;
+        }
+        return `/${rel}`;
+    }
+
+    function decodeEntities(text = "") {
+        return text
+            .replace(/&nbsp;/gi, " ")
+            .replace(/&amp;/gi, "&")
+            .replace(/&lt;/gi, "<")
+            .replace(/&gt;/gi, ">")
+            .replace(/&#39;/gi, "'")
+            .replace(/&quot;/gi, "\"")
+            .replace(/&#x2022;/gi, "•");
+    }
+
+    function extractMetaKeywords(html) {
+        const raw = extractMetaTag(html, 'name=["\\\']keywords["\\\']');
+        if (!raw) {
+            return [];
+        }
+        return raw.split(",").map((keyword) => decodeEntities(keyword.trim()));
+    }
+
+    function extractDateFromJsonLd(html, fieldName) {
+        const regex = new RegExp(`\"${fieldName}\"\\\\s*:\\\\s*\"([^\"]+)\"`, "i");
+        const match = html.match(regex);
+        return match?.[1] || "";
+    }
+
+    function extractArticleSection(html) {
+        return extractMetaTag(html, 'property=["\\\']article:section["\\\']').trim();
+    }
+
+
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
@@ -777,6 +887,88 @@ module.exports = function(eleventyConfig) {
             });
             return item;
         });
+    });
+
+    eleventyConfig.addCollection("searchIndex", function (collectionApi) {
+        searchIndexItems = collectionApi
+            .getAll()
+            .filter((item) => isSearchPage(item))
+            .sort((a, b) => a.url.localeCompare(b.url));
+        return searchIndexItems;
+    });
+
+    eleventyConfig.on("eleventy.after", async ({ dir }) => {
+        const defaultKeywords = (site.messaging?.keywords || "")
+            .split(",")
+            .map((item) => item.trim());
+        const defaultDescription = site.messaging?.subtitle || "";
+        const defaultImage = `${site.baseURL || ""}/images/og-social-tile.jpg`;
+        const defaultOrigin = process.env.DEPLOY_PRIME_URL || process.env.URL || site.baseURL || "";
+
+        const records = [];
+
+        const htmlFiles = await listHtmlFiles(dir.output);
+
+        for (const outputPath of htmlFiles) {
+            const url = outputPathToUrl(dir.output, outputPath);
+            if (!isSearchUrl(url)) {
+                continue;
+            }
+
+            let html = "";
+            try {
+                html = await fs.promises.readFile(outputPath, "utf8");
+            } catch (error) {
+                continue;
+            }
+
+            const searchableHtml = extractSearchHtml(url, html);
+            const htmlTitle = extractHtmlTitle(html);
+            const htmlDescription =
+                extractMetaTag(html, 'name=["\\\']description["\\\']') ||
+                extractMetaTag(html, 'property=["\\\']og:description["\\\']');
+            const htmlImage = extractMetaTag(html, 'property=["\\\']og:image["\\\']');
+            const htmlKeywords = extractMetaKeywords(html);
+            const htmlCategory = extractArticleSection(html);
+            const datePublishedIso =
+                extractDateFromJsonLd(html, "datePublished") ||
+                extractMetaTag(html, 'property=["\\\']article:published_time["\\\']');
+            const dateModifiedIso =
+                extractDateFromJsonLd(html, "dateModified") ||
+                extractMetaTag(html, 'property=["\\\']article:modified_time["\\\']') ||
+                datePublishedIso;
+
+            const pageDescription =
+                decodeEntities(htmlDescription) ||
+                defaultDescription;
+            const pageImage = normalizeImage(
+                normalizeImage(htmlImage, "") ||
+                defaultImage
+            );
+            const pageKeywords = htmlKeywords.length > 0 ? htmlKeywords : defaultKeywords;
+            const datePublished = toUnixTimestampSeconds(datePublishedIso);
+            const dateModified = toUnixTimestampSeconds(dateModifiedIso);
+
+            records.push(
+                ...extractHeadingRecords({
+                    url,
+                    html: searchableHtml,
+                    category: htmlCategory,
+                    pageTitle: decodeEntities(htmlTitle),
+                    pageDescription,
+                    pageImage,
+                    origin: defaultOrigin,
+                    lang: "en",
+                    keywords: pageKeywords,
+                    datePublished,
+                    dateModified,
+                })
+            );
+        }
+
+        const outputPath = path.join(dir.output, "search-index.json");
+        await fs.promises.writeFile(outputPath, JSON.stringify(records, null, 2));
+        console.log(`[11ty] Wrote ${records.length} search records to ${outputPath}`);
     });
 
     // Plugins
