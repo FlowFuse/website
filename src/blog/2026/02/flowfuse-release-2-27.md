@@ -4,7 +4,7 @@ subtitle: "FlowFuse 2.27 focuses on clarity, confidence, and operating Node-RED 
 description: "FlowFuse 2.27 reduces operational friction for teams running Node-RED in production, with improvements focused on clarity, confidence, and control."
 date: 2026-02-12
 authors: ["jamie-strusz"]
-image: /blog/2026/02/images/Release-2-27.png
+image: 
 tags:
    - flowfuse
    - news
