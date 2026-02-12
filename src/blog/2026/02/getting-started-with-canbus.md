@@ -2,7 +2,7 @@
 title: "How to Set Up SocketCAN on Linux for CAN Bus Communication"
 subtitle: "Build vehicle and industrial automation systems without low-level drivers or proprietary tools"
 description: "Learn how to set up SocketCAN on Linux, configure CAN interfaces, and build CAN bus applications using FlowFuse's visual programming platform."
-date: 2026-02-06
+date: 2026-02-13
 keywords: 
 authors: ["sumit-shinde"]
 image:
