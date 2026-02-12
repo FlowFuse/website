@@ -65,14 +65,14 @@ command = "npx @11ty/eleventy --quiet --watch"
 autoLaunch = false
 
 [build]
-command = "npm run build"
+command = "npm run build:indexed"
 publish = "_site"
 
-[[plugins]]
-package = "@algolia/netlify-plugin-crawler"
-  [plugins.inputs]
-  branches = ['live']
-  template = "hierarchical"
+[context.deploy-preview]
+command = "npm run build"
+
+[context.branch-deploy]
+command = "npm run build"
 
 [[plugins]]
 package = "netlify-plugin-cache"
@@ -81,5 +81,4 @@ package = "netlify-plugin-cache"
     "_site/img", # Eleventy Image Disk Cache
     ".cache" # Remote asset cache
   ]
-
 
