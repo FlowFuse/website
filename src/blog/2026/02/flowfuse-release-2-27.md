@@ -62,7 +62,7 @@ The Expert now:
 - You no longer copy JSON or manually describe your Node-RED workflow setup  
 - You identify missing or outdated nodes faster, or get suggested replacements
 - You troubleshoot flows with context tied to what you are editing  
-- You move between chat, palette manager, and editor with fewer clicks  
+- You move between chat, palette manager, and editor with fewer clicks and less context switching
 
 FlowFuse Expert surfaces context and performs actions only when you initiate them. It does not modify your system autonomously.
 
