@@ -70,7 +70,7 @@ FlowFuse Expert surfaces context and performs actions only when you initiate the
 
 FlowFuse now restarts HA-enabled Hosted Node-RED instances sequentially instead of in parallel.
 
-When you trigger a restart, whether manually or through a pipeline deploy, FlowFuse restarts instances one at a time. This approach reduces downtime and in many cases eliminates it entirely.
+When you trigger a restart, whether manually or through a pipeline deploy, FlowFuse restarts instances one at a time. This approach significantly reduces downtime.
 
 Enterprise licensed self-hosted users and Enterprise tier users of FlowFuse Cloud can use this improvement.
 
