@@ -23,7 +23,7 @@
 
     function initSearchBar() {
         const {autocomplete, getAlgoliaResults} = window['@algolia/autocomplete-js'];
-        const searchClient = algoliasearch('F3E37N84X4', '2e982df3f654e132b76a671c55c048df');
+        const searchClient = algoliasearch('ISKYOHIT7D', '68d4032f487d66423c37e6483e067272');
         const scopeTitles = {
             'ama': 'Ask Me Anything',
             'blog': 'Blog',
@@ -64,7 +64,7 @@
                     searchClient,
                     queries: [
                         {
-                            indexName            : 'netlify_prod',
+                            indexName            : 'prod_netlify',
                             params               : {
                                 query,
                                 hitsPerPage: hitsPerPageMap[scope], // Read specific count
