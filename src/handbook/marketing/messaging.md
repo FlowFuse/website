@@ -120,3 +120,6 @@ Every message that comes out from the team has to stick to one or many of these 
 
 3. Easy tag and store data collected in any data platform
    - Transform raw data into a structured and unified information model with our AI-assisted low-code tools. Simply describe the data transformation you need in plain English, and our platform will help generate the necessary logic, from SQL queries to JavaScript functions.
+  
+4. Build new applications quickly without needing software developers
+   - We bridge the gap between IT and OT, enabling domain experts to build solutions while maintaining IT oversight. Our AI Copilot acts as a development partner, empowering your team to build more sophisticated applications independently, reducing reliance on specialized developers.
