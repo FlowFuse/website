@@ -5,6 +5,7 @@ const path = require("path");
 const algoliasearch = require("algoliasearch");
 
 const BATCH_SIZE = 1000;
+const MAX_RECORD_BYTES = 9800;
 
 function chunk(arr, size) {
     const chunks = [];
@@ -15,7 +16,7 @@ function chunk(arr, size) {
 }
 
 function normalizeRecord(record) {
-    return {
+    const normalized = {
         objectID: String(record.objectID),
         hierarchy: {
             lvl0: record.hierarchy?.lvl0 || null,
@@ -52,10 +53,78 @@ function normalizeRecord(record) {
         contentLength: Number.isFinite(record.contentLength) ? record.contentLength : 0,
         category: record.category || "",
     };
+
+    // Algolia hard-limits record size to 10KB. Keep a small safety margin.
+    return shrinkRecordToByteLimit(normalized, MAX_RECORD_BYTES);
 }
 
 function sameRecord(a, b) {
     return JSON.stringify(a) === JSON.stringify(b);
+}
+
+function recordBytes(record) {
+    return Buffer.byteLength(JSON.stringify(record), "utf8");
+}
+
+function trimToLength(value, targetLength) {
+    if (typeof value !== "string") {
+        return "";
+    }
+    if (targetLength <= 0) {
+        return "";
+    }
+    if (value.length <= targetLength) {
+        return value;
+    }
+    return value.slice(0, targetLength);
+}
+
+function shrinkRecordToByteLimit(record, maxBytes) {
+    if (recordBytes(record) <= maxBytes) {
+        return record;
+    }
+
+    const candidate = { ...record };
+
+    // First and most impactful: trim content.
+    if (candidate.content) {
+        let low = 0;
+        let high = candidate.content.length;
+        while (low < high) {
+            const mid = Math.floor((low + high + 1) / 2);
+            candidate.content = trimToLength(record.content, mid);
+            candidate.contentLength = candidate.content.length;
+            if (recordBytes(candidate) <= maxBytes) {
+                low = mid;
+            } else {
+                high = mid - 1;
+            }
+        }
+        candidate.content = trimToLength(record.content, low);
+        candidate.contentLength = candidate.content.length;
+    }
+
+    if (recordBytes(candidate) <= maxBytes) {
+        return candidate;
+    }
+
+    // Fallback: trim description if still over limit.
+    if (candidate.description) {
+        let low = 0;
+        let high = candidate.description.length;
+        while (low < high) {
+            const mid = Math.floor((low + high + 1) / 2);
+            candidate.description = trimToLength(record.description, mid);
+            if (recordBytes(candidate) <= maxBytes) {
+                low = mid;
+            } else {
+                high = mid - 1;
+            }
+        }
+        candidate.description = trimToLength(record.description, low);
+    }
+
+    return candidate;
 }
 
 function getTaskIDs(response) {
