@@ -5,7 +5,7 @@ description: "Learn how Event-Driven Architecture enables real-time responsivene
 date: 2026-02-10
 keywords: event-driven architecture, manufacturing systems, real-time manufacturing, industrial automation, polling vs event-driven, MES integration, ERP integration, SCADA, industrial IoT, OT IT integration, manufacturing downtime
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/02/images/event-driven-architecture.png
 tags:
 - flowfuse
 ---
