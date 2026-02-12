@@ -13,7 +13,7 @@ You can now access **Immersive Mode** when working with **Remote Instances**.
 
 Immersive Mode gives you **at-a-glance instance stats** alongside the editor, while also enabling the **FlowFuse Expert** to help speed up development and debugging, especially when you’re working on the edge with remote devices.
 
-Prefer the classic experience? The existing **plain** connection flow is still available: clicking the **Open Editor** selector will continue to open the editor in the original (non-immersive) mode.
+Prefer the classic experience? The existing **plain** connection flow is still available: clicking the **Open Editor** dropdown selector includes an alternative option to be able to open the editor in the non-immersive mode.
 
 ![Immersive Mode on a Remote Instance](./images/remote-instance-immersive.gif){data-zoomable}
 _Immersive Mode accessed from a remote instance_
