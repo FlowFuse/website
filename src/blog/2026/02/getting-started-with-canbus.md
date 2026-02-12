@@ -233,6 +233,12 @@ When frames are received, FlowFuse outputs them as JavaScript objects containing
 
 This makes it easy to filter, decode, or route messages using standard FlowFuse nodes.
 
+<lite-youtube
+  videoid="MoL3vw9x5eg"
+  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/receiving-can.png'); background-size: cover; background-position: center;"
+  title="Receiving CAN Frames">
+</lite-youtube>
+
 #### Transmitting CAN Frames
 
 Transmitting CAN frames means sending messages onto the CAN bus from FlowFuse. This allows you to control devices, trigger actions, or communicate with other ECUs on the network.
@@ -255,6 +261,12 @@ For example, a message object could look like this:
 ```
 
 This would send a standard CAN frame with ID `0x200` and 4 bytes of data onto the bus.
+
+<lite-youtube
+  videoid="oWI3Fs9_gyI"
+  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/transmitting-can.png'); background-size: cover; background-position: center;"
+  title="Transmitting CAN Frames">
+</lite-youtube>
 
 ##### String-Formatted Messages
 
