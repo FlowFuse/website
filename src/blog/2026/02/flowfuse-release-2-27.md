@@ -17,7 +17,7 @@ It delivers a consistent editor experience across environments and gives FlowFus
 
 <!--more-->
 
-## A more integrated Remote Development Workflow
+## A More Integrated Remote Development Workflow
 
 Teams run real systems in Remote instances. Your tooling should feel consistent and safe while you actively edit flows.
 
