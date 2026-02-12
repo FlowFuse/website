@@ -10,23 +10,23 @@ tags:
 - flowfuse
 ---
 
-If you work with vehicles, industrial automation, or embedded systems, you've likely encountered **CAN bus**—the communication backbone that connects ECUs, sensors, controllers, and actuators in real-world environments. The challenge isn't just reading CAN data; it's getting that data into your dashboards, cloud platforms, databases, or industrial control systems.
+If you work with vehicles, industrial automation, or embedded systems, you've likely encountered **CAN bus**, the communication backbone that connects ECUs, sensors, controllers, and actuators in real-world environments. The challenge isn't just reading CAN data; it's getting that data into your dashboards, cloud platforms, databases, or industrial control systems.
 
 <!--more-->
 
 Traditionally, this meant dealing with vendor-specific drivers, proprietary gateway hardware, and low-level C code just to bridge CAN bus to modern IT infrastructure. **SocketCAN** and **FlowFuse** offer a better approach.
 
-SocketCAN brings CAN bus support directly into the Linux networking stack, treating CAN interfaces like Ethernet or Wi-Fi. Combined with FlowFuse's visual flow-based programming (built on Node-RED), you can connect CAN bus devices to virtually any system—building real-time dashboards, streaming data to cloud platforms, integrating with SCADA systems, or bridging to MQTT, databases, REST APIs, and industrial protocols—all without writing low-level code or relying on proprietary tools.
+SocketCAN brings CAN bus support directly into the Linux networking stack, treating CAN interfaces like Ethernet or Wi-Fi. Combined with FlowFuse's visual flow-based programming (built on Node-RED), you can connect CAN bus devices to virtually any system, building real-time dashboards, streaming data to cloud platforms, integrating with SCADA systems, or bridging to MQTT, databases, REST APIs, and industrial protocols, all without writing low-level code or relying on proprietary tools.
 
-In this tutorial, you'll set up SocketCAN on Linux, integrate it with FlowFuse, and learn how to send and receive CAN frames—establishing the foundation for connecting your CAN infrastructure to the broader industrial ecosystem.
+In this tutorial, you'll set up SocketCAN on Linux, integrate it with FlowFuse, and learn how to send and receive CAN frames, establishing the foundation for connecting your CAN infrastructure to the broader industrial ecosystem.
 
 ## Understanding CAN Bus
 
-CAN (Controller Area Network) is a robust communication protocol that allows multiple devices—such as sensors, controllers, and actuators—to share data over a two-wire bus. Commonly used in automotive, industrial, and embedded systems, CAN broadcasts all messages to every device on the network, with each message identified by an ID that devices use to filter relevant data.
+CAN (Controller Area Network) is a robust communication protocol that allows multiple devices, such as sensors, controllers, and actuators, to share data over a two-wire bus. Commonly used in automotive, industrial, and embedded systems, CAN broadcasts all messages to every device on the network, with each message identified by an ID that devices use to filter relevant data.
 
 ## What Is SocketCAN?
 
-SocketCAN is a Linux kernel feature that integrates CAN bus support directly into the networking stack. It exposes CAN hardware as standard network interfaces (like `can0` or `vcan0`), allowing you to configure and interact with CAN using familiar Linux networking commands. This abstraction means your application code remains the same whether you're using a USB-to-CAN adapter, an embedded controller, or a virtual interface—making development, testing, and hardware changes significantly simpler.
+SocketCAN is a Linux kernel feature that integrates CAN bus support directly into the networking stack. It exposes CAN hardware as standard network interfaces (like `can0` or `vcan0`), allowing you to configure and interact with CAN using familiar Linux networking commands. This abstraction means your application code remains the same whether you're using a USB-to-CAN adapter, an embedded controller, or a virtual interface, making development, testing, and hardware changes significantly simpler.
 
 ## Getting Started
 
@@ -61,7 +61,7 @@ Before FlowFuse can interact with a CAN bus, a CAN network interface must be ava
 
 The setup differs slightly depending on your environment.
 
-#### Option A: Virtual CAN (vcan) — Development and Testing
+#### Option A: Virtual CAN (vcan) for Development and Testing
 
 A virtual CAN interface allows CAN frames to be exchanged entirely in software. It is useful for development, testing, and learning, but it does not model physical bus timing or electrical behavior.
 
@@ -96,7 +96,7 @@ ip link show vcan0
 
 At this point, `vcan0` is ready to be used by SocketCAN applications such as FlowFuse.
 
-#### Option B: Physical CAN Hardware — Production Systems
+#### Option B: Physical CAN Hardware for Production Systems
 
 When using real CAN hardware, the interface is exposed by a hardware driver, but it still must be explicitly configured and enabled.
 
@@ -141,7 +141,7 @@ If the interface is up, it can be used immediately by FlowFuse.
 
 ### Using SocketCAN in FlowFuse
 
-Once a CAN interface (vcan0 or can0) is enabled at the operating system level, FlowFuse can interact with it like any other SocketCAN-compatible application. At this stage, no CAN frames are flowing yet—FlowFuse simply gains access to the interface.
+Once a CAN interface (vcan0 or can0) is enabled at the operating system level, FlowFuse can interact with it like any other SocketCAN-compatible application. At this stage, no CAN frames are flowing yet. FlowFuse simply gains access to the interface.
 
 In this section, we'll focus on how FlowFuse connects to SocketCAN and what that means conceptually, before building any actual flows.
 
@@ -151,12 +151,12 @@ The flow looks like this:
 
 FlowFuse does not communicate directly with CAN hardware. Instead, it relies on SocketCAN, which exposes CAN interfaces through the Linux networking stack.
 
-Once a CAN interface is enabled at the operating system level—whether a virtual interface like vcan0 or a physical interface like can0—it becomes available to any SocketCAN-compatible application. FlowFuse simply opens this interface and exchanges CAN frames using standard socket operations.
+Once a CAN interface is enabled at the operating system level, whether a virtual interface like vcan0 or a physical interface like can0, it becomes available to any SocketCAN-compatible application. FlowFuse simply opens this interface and exchanges CAN frames using standard socket operations.
 
 This design has two important advantages:
 
 - FlowFuse remains hardware-agnostic. The same flows work with virtual CAN interfaces, USB-to-CAN adapters, or embedded CAN controllers.
-- All hardware-specific configuration—such as driver loading and bitrate setup—is handled by the operating system, not by FlowFuse.
+- All hardware-specific configuration, such as driver loading and bitrate setup, is handled by the operating system, not by FlowFuse.
 
 As a result, the application logic in FlowFuse stays the same across development, testing, and production environments. The only requirement is that the appropriate CAN interface is created and enabled before FlowFuse starts
 
@@ -210,24 +210,22 @@ Receiving CAN frames means listening to all messages that appear on the CAN bus 
 4. Connect the output of the `socketcan-out` node to a **Debug** node.
 5. Deploy the flow to begin receiving CAN frames.
 
-Once connected, the node will show a **green status box** with the text:
+Once connected, the `socketcan-out` node will show a green status box with text. The same applies to the `socketcan-in` node:
 
 ```
 connected <your-interface-name>
 ```
 
-This indicates that the `socketcan-out` node is successfully linked to your CAN interface and ready to send messages.
-
 When frames are received, FlowFuse outputs them as JavaScript objects containing fields such as:
 
-- `timestamp` — the time the frame was received (in milliseconds since epoch)
-- `ext` — indicates whether the frame uses an **extended CAN ID** (true/false)
-- `canid` — the **CAN identifier** for the message
-- `dlc` — the **Data Length Code**, i.e., the number of data bytes in the frame
-- `rtr` — **Remote Transmission Request** flag (true if the frame requests data)
-- `data` — an array of bytes representing the **payload** of the frame
-- `err` — indicates whether the frame contains an **error** (true/false)
-- `rawData` — a copy of the data payload in its **raw byte form**
+- `timestamp`: the time the frame was received (in milliseconds since epoch)
+- `ext`: indicates whether the frame uses an **extended CAN ID** (true/false)
+- `canid`: the **CAN identifier** for the message
+- `dlc`: the **Data Length Code**, i.e., the number of data bytes in the frame
+- `rtr`: **Remote Transmission Request** flag (true if the frame requests data)
+- `data`: an array of bytes representing the **payload** of the frame
+- `err`: indicates whether the frame contains an **error** (true/false)
+- `rawData`: a copy of the data payload in its **raw byte form**
 
 ![Debug output showing a received CAN message in FlowFuse](./images/debug-output-can-message.png "Debug output showing a received CAN message in FlowFuse")
 
@@ -277,9 +275,9 @@ Alternatively, CAN messages can be defined as strings using a compact format:
 ```
 
 Where:
-- **canid** — The CAN identifier in hexadecimal format. Must be less than `0x7ff` (2047) and specified with fewer than three digits for a standard ID.
-- **data** — The data payload for the CAN frame, specified in hexadecimal format.
-- **R** — Indicates a Remote Transmission Request (RTR) frame instead of a data frame.
+- **canid**: The CAN identifier in hexadecimal format. Must be less than `0x7ff` (2047) and specified with fewer than three digits for a standard ID.
+- **data**: The data payload for the CAN frame, specified in hexadecimal format.
+- **R**: Indicates a Remote Transmission Request (RTR) frame instead of a data frame.
 
 For example:
 
@@ -303,6 +301,6 @@ By combining SocketCAN with FlowFuse, you've eliminated much of the complexity t
 
 The real power of this approach becomes clear when you consider scalability. The same FlowFuse flows work identically whether you're testing with a virtual CAN interface on your laptop or deploying to production hardware with physical CAN controllers. The abstraction layer provided by SocketCAN means your application logic remains stable even as your hardware requirements evolve.
 
-Once you've connected to your CAN bus, the possibilities expand significantly. You can build real-time monitoring dashboards to visualize CAN data, send telemetry to cloud platforms for analytics and storage, or bridge CAN networks with virtually any other protocol or system. FlowFuse's extensive ecosystem of nodes and integrations supports connections to databases, MQTT brokers, REST APIs, industrial protocols, and more—making it straightforward to integrate your CAN infrastructure into larger IoT and automation workflows.
+Once you've connected to your CAN bus, the possibilities expand significantly. You can build real-time monitoring dashboards to visualize CAN data, send telemetry to cloud platforms for analytics and storage, or bridge CAN networks with virtually any other protocol or system. FlowFuse's extensive ecosystem of nodes and integrations supports connections to databases, MQTT brokers, REST APIs, industrial protocols, and more, making it straightforward to integrate your CAN infrastructure into larger IoT and automation workflows.
 
 *Managing Node-RED across multiple edge devices or looking for a platform that makes connecting and scaling easier? FlowFuse makes it simple to deploy, monitor, and maintain your infrastructure at scale. [Get in touch](/contact-us/) to discuss your project and see how we can help.*
