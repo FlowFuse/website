@@ -1,72 +1,99 @@
 ---
-title: "FlowFuse 2.27: Fewer Unknowns. Safer Changes."
-subtitle: "FlowFuse 2.27 focuses on clarity, confidence, and operating Node-RED in production."
-description: "FlowFuse 2.27 reduces operational friction for teams running Node-RED in production, with improvements focused on clarity, confidence, and control."
+title: "FlowFuse 2.27: Integrated Editor in Remote Instances & Context-Aware FlowFuse Expert"
+subtitle: "A more consistent Node-RED experience across environments and deeper live context for FlowFuse Expert."
+description: "FlowFuse 2.27 improves Remote workflows, simplifies rollback in developer mode, enhances FlowFuse Expert with live context, and introduces rolling restarts for HA Hosted instances."
 date: 2026-02-12
 authors: ["jamie-strusz"]
-image: 
+image:
 tags:
    - flowfuse
    - news
    - releases
 ---
 
-If you run Node-RED in production, you already know the hard part is not building flows.
+FlowFuse 2.27 removes friction from two places that matter most: working in Remote instances and debugging real flows.
 
-It is knowing what is running.  
-It is understanding what changed.  
-It is making improvements without breaking something people rely on.
-
-FlowFuse 2.27 is about reducing those unknowns.
+It delivers a consistent editor experience across environments and makes FlowFuse Expert aware of your live Node-RED context. The result is fewer manual steps and faster iteration on production systems.
 
 <!--more-->
 
-## Built for Production Reality
+## A Smoother Remote Development Workflow
 
-As Node-RED environments grow, complexity creeps in quietly. Flows live longer. Teams change. Context fades.
+Remote instances are where real systems run. The tooling needs to feel consistent and safe when you are actively editing flows.
 
-FlowFuse 2.27 focuses on making live systems easier to understand and operate, so confidence does not depend on tribal knowledge or guesswork.
+With 2.27, the integrated editor experience is now available in Remote instances. Clicking **Open Editor** provides the same tools and FlowFuse capabilities regardless of where your instance runs.
 
-You spend less time digging for context or second-guessing changes, and more time making deliberate, safe improvements.
+### In practice, this means:
 
+- You no longer adapt your workflow based on deployment type  
+- Teams can move between hosted and remote environments without losing tooling  
+- Feature parity reduces confusion when debugging distributed systems  
 
-## Clearer Systems, Lower Cognitive Load
+### Also in 2.27: Restore snapshots without leaving developer mode
 
-Running automation in production carries responsibility. Every change has weight.
+Previously, if you were editing a Remote instance in developer mode and needed to roll back changes, you had to exit developer mode, restore a snapshot, and then re-enter developer mode.
 
-This release improves how FlowFuse helps teams stay oriented inside real, running systems, reducing the mental overhead of day-to-day operations.
+With Device Agent v3.8.0, snapshots can now be manually restored without leaving developer mode. Pipeline protections remain in place, but manual rollback is simpler and more direct.
 
-When something goes wrong, you can reason about it faster.  
-When nothing is wrong, you can still change things without fear.
+### In practice, this means:
 
-That is what production tooling should enable.
+- Faster recovery during active debugging  
+- Fewer steps when testing changes remotely  
+- Less disruption while iterating on live systems  
 
+Together, these changes make Remote development more predictable and less frustrating.
 
-## FlowFuse Expert: Help Without Giving Up Control
+## FlowFuse Expert Now Uses Live Flow and Palette Context
 
-FlowFuse Expert continues to mature as a way to get faster insight into complex systems. It uses AI to surface explanations and context based on what is actually running, while keeping users firmly in control. FlowFuse Expert does not make changes or decisions without user intent.
+FlowFuse Expert becomes more useful when it understands what is actually running in your environment.
 
-You get help understanding your system. You keep ownership of it.
+In 2.27, the Expert is deeply integrated into your Node-RED workflow.
 
+It can now:
 
-## Why 2.27 Matters
+- Understand your currently selected flows as troubleshooting context  
+- Detect installed custom nodes automatically  
+- Answer questions about your Node-RED palette, including versions, updates, and disabled nodes  
+- Suggest node packages and link directly to manage them  
+- Install suggested nodes and import flows with a single click  
 
-FlowFuse 2.27 is not about flash. It is about making production automation calmer, clearer, and safer to operate.
+### In practice, this means:
 
-If your team relies on FlowFuse to run systems that cannot afford surprises, this release is for you.
+- No more copying JSON or manually describing your setup  
+- Faster identification of missing or outdated nodes  
+- Smarter troubleshooting tied to the flows you are actively editing  
+- Fewer clicks between chat, palette manager, and editor  
 
+FlowFuse Expert surfaces context and performs actions only when initiated by the user. It does not autonomously modify your system.
+
+## High Availability Improvements for Hosted Instances
+
+For Hosted Node-RED instances with High Availability enabled, restarts now happen sequentially rather than in parallel.
+
+Any action that triggers a restart, whether manual or pipeline-driven, will restart instances one at a time. This significantly reduces downtime and in many cases eliminates it entirely.
+
+This improvement is available to Enterprise licensed self-hosted users and Enterprise tier users of FlowFuse Cloud.
+
+## Why This Matters
+
+Most production systems run in Remote instances. That is where teams iterate, test, debug, and recover.
+
+FlowFuse 2.27 tightens that development loop and improves resilience for hosted environments. The editor is consistent. Rollback is simpler. The Expert understands what you are working on. HA deployments are more resilient.
+
+Less friction. Faster feedback. More confidence when changing live systems.
 
 ## What else is new?
 
-For a complete list of everything included in FlowFuse 2.27, check out the [release notes](https://flowfuse.com/changelog/).
+For a complete list of everything included in FlowFuse 2.27, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
-Your feedback continues to shape how FlowFuse evolves. If something in this release makes your day easier—or still feels rough around the edges—we want to hear about it. Please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.27) to us.
+If something in this release improves your workflow, or if there is still friction we can remove, please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.27) to us.
 
 ## Try FlowFuse
 
 ### FlowFuse Cloud
 
-The fastest way to get started is with FlowFuse Cloud. [Get started for free](https://flowfuse.com/get-started/) and have your Node-RED instances running in minutes.
+The fastest way to get started is with FlowFuse Cloud.  
+[Get started for free](https://flowfuse.com/get-started/) and have your Node-RED instances running in minutes.
 
 ### Self-Hosted
 
