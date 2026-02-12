@@ -1,5 +1,5 @@
 ---
-title: "How to Set Up SocketCAN on Linux for CAN Bus Communication"
+title: "How to Connect CAN Bus to Dashboards, Cloud, and Industrial Systems"
 subtitle: "Build vehicle and industrial automation systems without low-level drivers or proprietary tools"
 description: "Learn how to set up SocketCAN on Linux, configure CAN interfaces, and build CAN bus applications using FlowFuse's visual programming platform."
 date: 2026-02-13
@@ -10,15 +10,15 @@ tags:
 - flowfuse
 ---
 
-If you work with vehicles, industrial automation, or embedded systems, you've likely encountered **CAN bus**, the communication backbone that allows ECUs, sensors, and controllers to talk to each other in real-world environments.
+If you work with vehicles, industrial automation, or embedded systems, you've likely encountered **CAN bus**—the communication backbone that connects ECUs, sensors, controllers, and actuators in real-world environments. The challenge isn't just reading CAN data; it's getting that data into your dashboards, cloud platforms, databases, or industrial control systems.
 
 <!--more-->
 
-Traditionally, working with CAN meant dealing with vendor-specific drivers, proprietary tools, and low-level C code. **SocketCAN** and **FlowFuse** offer a better approach.
+Traditionally, this meant dealing with vendor-specific drivers, proprietary gateway hardware, and low-level C code just to bridge CAN bus to modern IT infrastructure. **SocketCAN** and **FlowFuse** offer a better approach.
 
-SocketCAN brings CAN bus support directly into the Linux networking stack, treating CAN interfaces like Ethernet or Wi-Fi. Combined with FlowFuse's visual flow-based programming (built on top of Node-RED), you can build, monitor, and control CAN systems without diving into kernel drivers or embedded toolchains.
+SocketCAN brings CAN bus support directly into the Linux networking stack, treating CAN interfaces like Ethernet or Wi-Fi. Combined with FlowFuse's visual flow-based programming (built on Node-RED), you can connect CAN bus devices to virtually any system—building real-time dashboards, streaming data to cloud platforms, integrating with SCADA systems, or bridging to MQTT, databases, REST APIs, and industrial protocols—all without writing low-level code or relying on proprietary tools.
 
-In this tutorial, you'll set up SocketCAN on Linux, integrate it with FlowFuse, and send and receive CAN frames.
+In this tutorial, you'll set up SocketCAN on Linux, integrate it with FlowFuse, and learn how to send and receive CAN frames—establishing the foundation for connecting your CAN infrastructure to the broader industrial ecosystem.
 
 ## Understanding CAN Bus
 
@@ -303,6 +303,6 @@ By combining SocketCAN with FlowFuse, you've eliminated much of the complexity t
 
 The real power of this approach becomes clear when you consider scalability. The same FlowFuse flows work identically whether you're testing with a virtual CAN interface on your laptop or deploying to production hardware with physical CAN controllers. The abstraction layer provided by SocketCAN means your application logic remains stable even as your hardware requirements evolve.
 
-From here, you can build on this foundation to create monitoring dashboards, diagnostic tools, or control systems. The pattern of receiving frames, processing them with FlowFuse's rich ecosystem of nodes, and transmitting responses gives you a flexible framework for any CAN-based project.
+Once you've connected to your CAN bus, the possibilities expand significantly. You can build real-time monitoring dashboards to visualize CAN data, send telemetry to cloud platforms for analytics and storage, or bridge CAN networks with virtually any other protocol or system. FlowFuse's extensive ecosystem of nodes and integrations supports connections to databases, MQTT brokers, REST APIs, industrial protocols, and more—making it straightforward to integrate your CAN infrastructure into larger IoT and automation workflows.
 
-*Managing Node-RED across multiple edge devices or looking for platform that amkees connecting it and ot easier, FlowFuse makes it simple to deploy, monitor, and maintain your infrastructure at scale. [Get in touch](/contact-us/) to discuss your project and see how we can help.*
+*Managing Node-RED across multiple edge devices or looking for a platform that makes connecting and scaling easier? FlowFuse makes it simple to deploy, monitor, and maintain your infrastructure at scale. [Get in touch](/contact-us/) to discuss your project and see how we can help.*
