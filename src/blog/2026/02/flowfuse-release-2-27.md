@@ -59,7 +59,7 @@ The Expert now:
 
 ### In practice, this means:
 
-- You no longer copy JSON or manually describe your setup  
+- You no longer copy JSON or manually describe your Node-RED workflow setup  
 - You identify missing or outdated nodes faster  
 - You troubleshoot flows with context tied to what you are editing  
 - You move between chat, palette manager, and editor with fewer clicks  
