@@ -19,7 +19,7 @@ It delivers a consistent editor experience across environments and gives FlowFus
 
 ## A More Integrated Remote Development Workflow
 
-Teams run real systems in Remote instances. Your tooling should feel consistent and safe while you actively edit flows.
+Teams often run production and edge workloads in Remote instances. Your tooling should feel consistent and safe while you actively edit flows.
 
 With 2.27, FlowFuse brings the integrated editor to Remote instances. When you click **Open Editor**, you access the same tools and capabilities regardless of where your instance runs.
 
