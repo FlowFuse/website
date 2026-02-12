@@ -47,7 +47,7 @@ Together, these improvements make Remote development more predictable and less f
 
 FlowFuse Expert delivers the most value when it understands what runs in your environment.
 
-In 2.27, FlowFuse deeply integrates the Expert into your Node-RED workflow.
+In 2.27, FlowFuse deeply integrates the Expert into your Node-RED development workflow.
 
 The Expert now:
 
