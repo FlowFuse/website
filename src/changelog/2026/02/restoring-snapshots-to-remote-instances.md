@@ -11,7 +11,7 @@ issues:
 
 Device Agent version 3.8.0 has been released which brings a significant workflow improvement when editing your flows.
 
-When the ability to remotely edit flows was introduced - known as 'developer mode' - we blocked the ability to push snapshots to a remote instance in whilst in this mode. This protection made sense when you're working on a remote instance, but still need to push updates out to the rest of your fleet through a pipeline deployment - you don't want the deployment from overwriting the work you're in the middle of.
+When the ability to remotely edit flows was introduced - known as 'developer mode' - we blocked the ability to push snapshots to a remote instance whilst in this mode. This protection makes sense when you're working on a remote instance, but still need to push updates out to the rest of your fleet through a pipeline deployment - you don't want the deployment from overwriting the work you're in the middle of.
 
 However, there are cases where you want to rollback changes you've been making to a remote instance. Previously that would involve taking the instance out of developer mode, restoring the snapshot, then putting it back into developer mode to continue working. This is a lot of unnecessary steps and not an obvious workflow.
 
