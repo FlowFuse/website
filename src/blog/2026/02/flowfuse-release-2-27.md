@@ -4,7 +4,7 @@ subtitle: "A more consistent Node-RED experience across environments and deeper 
 description: "FlowFuse 2.27 improves Remote workflows, simplifies rollback in developer mode, enhances FlowFuse Expert with live context, and introduces rolling restarts for HA Hosted instances."
 date: 2026-02-12
 authors: ["jamie-strusz"]
-image:
+image: /blog/2026/02/images/flowfuse-release-2-27.png
 tags:
    - flowfuse
    - news
