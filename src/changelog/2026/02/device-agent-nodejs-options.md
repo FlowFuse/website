@@ -11,7 +11,7 @@ issues:
 
 FlowFuse Device Agent v3.8.1 adds support for setting Node.js command line arguments for Remote Instances.
 
-This allows:
+This allows things like:
 
 - Setting the Node.js heap size for memory-intensive flows
 - Enabling `--use-openssl-ca` (Linux) or `--use-system-ca` (Windows and macOS) to use private CA certificates
