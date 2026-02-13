@@ -5,7 +5,7 @@ description: "Learn how to set up SocketCAN on Linux, configure CAN interfaces, 
 date: 2026-02-13
 keywords: 
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/02/images/canbus-tutorial.png
 tags:
 - flowfuse
 ---
@@ -141,7 +141,7 @@ If the interface is up, it can be used immediately by FlowFuse.
 
 ### Using SocketCAN in FlowFuse
 
-Once a CAN interface (vcan0 or can0) is enabled at the operating system level, FlowFuse can interact with it like any other SocketCAN-compatible application. At this stage, no CAN frames are flowing yet. FlowFuse simply gains access to the interface.
+Once a CAN interface (`vcan0` or `can0`) is enabled at the operating system level, FlowFuse can interact with it like any other SocketCAN-compatible application. At this stage, no CAN frames are flowing yet. FlowFuse simply gains access to the interface.
 
 In this section, we'll focus on how FlowFuse connects to SocketCAN and what that means conceptually, before building any actual flows.
 
@@ -275,14 +275,14 @@ Alternatively, CAN messages can be defined as strings using a compact format:
 ```
 
 Where:
-- **canid**: The CAN identifier in hexadecimal format. Must be less than `0x7ff` (2047) and specified with fewer than three digits for a standard ID.
+- **canid**: The CAN identifier in hexadecimal format. For standard IDs using this string format, specify 1-2 hex digits (e.g., `5A`, `FF`). For extended IDs, use 3 or more hex digits (e.g., `7FF`, `1F334455`).
 - **data**: The data payload for the CAN frame, specified in hexadecimal format.
 - **R**: Indicates a Remote Transmission Request (RTR) frame instead of a data frame.
 
 For example:
 
 ```
-200#16 2D AA FF
+200#162DAAFF
 ```
 
 This sends a CAN frame with ID `0x200` and data bytes `[0x16, 0x2D, 0xAA, 0xFF]`.
