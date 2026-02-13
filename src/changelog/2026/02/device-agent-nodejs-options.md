@@ -9,13 +9,13 @@ issues:
   - https://github.com/FlowFuse/device-agent/issues/571
 ---
 
-With the release of FlowFuse Device Agent v3.8.1 NodeJS command line arguments can now be set.
+FlowFuse Device Agent v3.8.1 adds support for setting Node.js command line arguments for Remote Instances.
 
 This for example allows for the NodeJS Heap Size to be set for flows that use large amounts of memory.
 
 It also allows the `--use-openssl-ca` on Linux and `--use-system-ca` on Windows and OSx to pick up private CA certificates.
 
-Options can be set 2 ways
+Node.js options can be configured in two ways:
 
 - On the device agent command line with the `--node-options` argument. This argument can be used multiple times. e.g.
 
@@ -23,9 +23,11 @@ Options can be set 2 ways
     flowfuse-device-agent -c /opt/flowfuse-device-agent/device.yml --node-options='--max_old_space_size=256' --node-options='--use-openssl-ca'
     ```
 
-- Options can be added to the `device.yml` file e.g.
+### 2. Via the `device.yml` file
 
-    ```
+Add a `nodeOptions` section:
+
+    ```yaml
     deviceId: xxxxxxx
     forgeURL: https://app.flowfuse.com
     token: xxxxxxxx
