@@ -5,7 +5,7 @@ description: "Learn how to set up SocketCAN on Linux, configure CAN interfaces, 
 date: 2026-02-13
 keywords: 
 authors: ["sumit-shinde"]
-image: /blog/2026/02/images/can-bus-tutorial.png
+image: /blog/2026/02/images/canbus-tutorial.png
 tags:
 - flowfuse
 ---
