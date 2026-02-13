@@ -38,7 +38,7 @@ hubspot:
                             {% renderTeamMember people[author] %}
                         {% endif %}
                     {% endfor %}
-                    <p>Published on: <time value="{{ date | dateToRfc3339 }}">{{ date  | shortDate }}</time></p>
+                    <p>Published on: <time value="{{ date | toDate | dateToRfc3339 }}">{{ date  | shortDate }}</time></p>
                     {% if issues and issues.length > 0 %}
                     <div class="py-6 border-t-2">
                         <h3 class="mb-3">Related GitHub Issues</h3>
