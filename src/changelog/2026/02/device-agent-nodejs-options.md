@@ -17,10 +17,14 @@ It also allows the `--use-openssl-ca` on Linux and `--use-system-ca` on Windows 
 
 Node.js options can be configured in two ways:
 
-- On the device agent command line with the `--node-options` argument. This argument can be used multiple times. e.g.
+### 1. Via the device agent command line
 
-    ```
-    flowfuse-device-agent -c /opt/flowfuse-device-agent/device.yml --node-options='--max_old_space_size=256' --node-options='--use-openssl-ca'
+Use the --node-options argument. This argument may be specified multiple times:
+
+    ```bash
+    flowfuse-device-agent -c /opt/flowfuse-device-agent/device.yml \
+    --node-options='--max_old_space_size=256' \
+    --node-options='--use-openssl-ca'
     ```
 
 ### 2. Via the `device.yml` file
