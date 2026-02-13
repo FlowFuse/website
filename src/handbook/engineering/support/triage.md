@@ -67,7 +67,7 @@ All tickets appear in the [HubSpot Helpdesk](https://app-eu1.hubspot.com/help-de
 
 ### HubSpot
 
-Keep the [**Unassigned Triage**](https://app-eu1.hubspot.com/help-desk/26586079/view/236761036/list-view) view open during the day.  
+Keep the [**Unassigned Triage**](https://app-eu1.hubspot.com/help-desk/26586079/view/236761036/list-view) view open during the day. If you don't have access to HubSpot, only focus on the Slack Channel noted below. 
 
 ### Slack
 
@@ -105,28 +105,29 @@ When in doubt, escalate rather than waiting.
 
 ## Categorization & Routing
 
+To route the Slack message, the triage person should follow the instructions below. 
+
 | Category | Action |
 |--------|-------|
-| Sales inquiry | Route to `#dept-sales` |
-| Billing inquiry | Route to `#dept-sales` |
-| Product support (Enterprise) | Route to `#dept-engineering` immediately |
-| Product support (Team) | Route to `#dept-engineering` |
-| Product support (OSS or Community) | Route to community or documentation |
-| Spam (e.g. booth design offers) | Mark as spam or delete |
-
+| Sales inquiry | Tag @sales in the Slack thread of the ticket | 
+| Billing inquiry | Tag @sales in the Slack thread of the ticket |
+| Product support (Enterprise) | Tag @engineering in the Slack thread of the ticket |
+| Product support (Team) | Tag @engineering in the Slack thread of the ticket |
+| Product support (OSS or Community) | Tag @product in the Slack thread of the ticket |
+| Spam (e.g. booth design offers) | Comment spam in the Slack thread of the ticket |
 
 ## Replying vs Routing
 
-- If you can confidently answer a simple question, or you are part of the team the ticket would be routed to, you may reply directly.
+- If you can confidently answer a simple question, or you are part of the team the ticket would be routed to, you may reply directly in HubSpot if you have access.
 - If the issue requires investigation or follow-up, route it to the appropriate team.
 
-Whoever replies first becomes the ticket owner and will receive future notifications for that ticket. The owner can be re-assigned when appropriate.
+Whoever replies first in HubSpot becomes the ticket owner and will receive future notifications for that ticket. The owner can be re-assigned when appropriate.
 
 ## Ownership After Routing
 
-Once a ticket has been replied to or routed, ownership sits with the assigned ticket owner or team.
+Once a ticket has been replied to in HubSpot or routed in Slack, ownership sits with the assigned ticket owner or team.
 
-If a ticket stalls after assignment, responsibility for follow-up and resolution lies with the owner or owning team, not the triage role.
+If a ticket stalls after assignment/triage, responsibility for follow-up and resolution lies with the owner or owning team, not the triage role.
 
 Triage exists to create initial clarity and forward motion, not to monitor or enforce ongoing progress.
 
@@ -135,10 +136,10 @@ Triage exists to create initial clarity and forward motion, not to monitor or en
 
 Use emoji reactions on ticket notifications in `#support-tickets`:
 
-- 👀 `:eyes:`  
+- Add 👀 `:eyes:` on the main Slack message to let the team know that:
   You are on it
 
-- ✅ `:white_check_mark:`  
+- Add ✅ `:white_check_mark:` on the main Slack message to let the team know that:
   Issue has been dealt with
 
 This keeps the channel readable and avoids unnecessary status messages.
