@@ -126,8 +126,8 @@ Once your pre-staging environment is created, you can create a new instance that
 **NOTES:**
 - If you need to update the branch used in your custom stack, you will need to re-run the "Custom Pre-Staging Environment" action.
 - Before you re-run the "Custom Pre-Staging Environment" action, you must do one of the following:
-    - Delete all instances using the custom stack
-    - Change all instances using the custom stack to a non-custom stack
+    - Delete all Hosted Instances using the custom stack
+    - Change all Hosted Instances using the custom stack to a non-custom stack
 
 ### Community Contributions
 
