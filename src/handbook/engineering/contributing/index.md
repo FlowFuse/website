@@ -123,6 +123,12 @@ Once your pre-staging environment is created, you can create a new instance that
 6. Press Next until you reach the last step of the instance creation wizard
 7. Press "Create Instance" to create your instance
 
+**NOTES:**
+- If you need to update the branch used in your custom stack, you will need to re-run the "Custom Pre-Staging Environment" action.
+- Before you re-run the "Custom Pre-Staging Environment" action, you must do one of the following:
+    - Delete all instances using the custom stack
+    - Change all instances using the custom stack to a non-custom stack
+
 ### Community Contributions
 
 As an open-core project, FlowFuse welcomes community contributions to the project. If you are, as a FlowFuse employee, conducting a review of a community contribution, please consider these additional guidelines:
