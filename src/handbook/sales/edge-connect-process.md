@@ -1,10 +1,15 @@
+---
+navTitle: Edge Connectivity Sales Process
+navGroup: Sales department
+---
+
 # Edge Connectivity Sales Process
 
-**Owning function:** Sales  
+**Owning function:** Sales
 **Contributing functions:** Solution Engineering, Customer Success, Professional Services
 
-**Typical deal profile:**  
-- Duration: 3–6 months  
+**Typical deal profile:**
+- Duration: 3–6 months
 - Meetings: 6–10
 
 **Deal Characteristics:**
@@ -18,9 +23,9 @@
 
 **Goal:** Determine whether the customer has a meaningful, organization-level problem that warrants a standardized edge connectivity approach, and whether it is worth deeper technical and business evaluation.
 
-Sales stage: 1-Discovery  
-Lifecycle stage: SQL  
-Forecast stage: Best case  
+Sales stage: 1-Discovery
+Lifecycle stage: SQL
+Forecast stage: Best case
 
 **Agenda:**
 - Introductions & context (5 min)
@@ -31,16 +36,16 @@ Forecast stage: Best case
 
 Next Step: Schedule Impact Analysis / Technical Deep Dive.
 
-Resource: 
+Resource:
 [Edge Connectivity Discovery Playbook](https://docs.google.com/document/d/1rH1cYQqUg3HTt8a0_kKOWyaClvlAgVjXLmF0jqb3yqY/edit)
 
 ## **Meeting 1b:** Impact / Technical Deep Dive (45–60 min)
 
 **Goal:** Validate that the identified problems have material operational and business impact, establish a credible business case, and confirm a time-bound trigger that justifies deeper evaluation and stakeholder involvement.
 
-Sales stage: 1-Discovery  
-Lifecycle stage: SQL  
-Forecast stage: Best case  
+Sales stage: 1-Discovery
+Lifecycle stage: SQL
+Forecast stage: Best case
 
 **Agenda:**
 - Review problems identified in Discovery (5 min)
@@ -54,9 +59,9 @@ Next Step: Prepare tailored demo for champion.
 
 **Goal:** Equip the champion with a clear narrative and concrete evidence to confidently represent the Edge Connectivity approach internally and secure alignment for broader stakeholder evaluation.
 
-Sales stage: 2-Diagnose  
-Lifecycle stage: SQO  
-Forecast stage: Forecast  
+Sales stage: 2-Diagnose
+Lifecycle stage: SQO
+Forecast stage: Forecast
 
 **Agenda:**
 - Context: Discovery & Impact recap (5 min)
@@ -66,7 +71,7 @@ Forecast stage: Forecast
 
 Next Step: Confirm the deal viability.
 
-Resource: 
+Resource:
 - [Sales Deck](https://docs.google.com/presentation/d/1aK87jBFXP9ElvJz_b2U_sBmQqpqFD5ddCyjeuVVnnVs/edit)
 - [Sales Demo](https://flowfuse.com/handbook/sales/meetings/demo/)
 
@@ -74,9 +79,9 @@ Resource:
 
 **Goal:** Align cross-functional stakeholders on the problem, proposed Edge Connectivity approach, and expected impact, while identifying and addressing risks or objections that must be resolved before committing to a PoC.
 
-Sales stage: 2-Diagnose (possibly later)  
-Lifecycle stage: SQO  
-Forecast stage: Forecast  
+Sales stage: 2-Diagnose (possibly later)
+Lifecycle stage: SQO
+Forecast stage: Forecast
 
 **Agenda:**
 - Executive alignment (5–10 min)
@@ -90,9 +95,9 @@ Next Step: PoC kickoff.
 
 **Goal:** Establish shared success criteria, ownership, and execution plan for the PoC in order to reduce delivery risk and enable a confident go/no-go decision.
 
-Sales stage: 3-Solution  
-Lifecycle stage: SQO  
-Forecast stage: Forecast  
+Sales stage: 3-Solution
+Lifecycle stage: SQO
+Forecast stage: Forecast
 
 **Agenda:**
 - Review PoC objectives (10 min)
@@ -101,16 +106,16 @@ Forecast stage: Forecast
 - Confirm timeline & checkpoints (10 min)
 -  Next Step: Schedule PoC review.
 
-Resource: 
+Resource:
 FlowFuse Enterprise POC Template
 
 ## **Meeting 4:** PoC Review (45–60 min)
 
 **Goal:** Confirm that the PoC has met agreed success criteria, validate solution fit and business impact, and establish readiness to proceed to a commercial proposal.
 
-Sales Stage: 4-Validate  
-Lifecycle stage: SQO  
-Forecast stage: Forecast  
+Sales Stage: 4-Validate
+Lifecycle stage: SQO
+Forecast stage: Forecast
 
 **Agenda:**
 - Present PoC results (15–20 min)
@@ -120,16 +125,16 @@ Forecast stage: Forecast
 
 Next Step: Proposal & pricing review.
 
-Resource: 
+Resource:
 [Enterprise pricing model](https://docs.google.com/document/d/11XLqfBeIgaOMCuH4Er15lu9duwGh5qlnUWskHkV7aeM/edit)
 
 ## **Meeting 5:** Proposal & Timeline Review (45 min)
 
 **Goal:** Confirm alignment on commercial terms, contractual structure, and implementation timeline in order to enable executive and procurement approval.
 
-Sales Stage: 5-Commit  
-Lifecycle stage: SQO  
-Forecast stage: Commit  
+Sales Stage: 5-Commit
+Lifecycle stage: SQO
+Forecast stage: Commit
 
 **Agenda:**
 - Walkthrough proposal & pricing (20 min)
@@ -142,9 +147,9 @@ Next Step: Move into executive/procurement review.
 
 **Goal:** Confirm executive and procurement approval by resolving any remaining commercial, legal, or risk considerations and authorizing contract execution.
 
-Sales Stage: 6-Closing  
-Lifecycle stage: SQO  
-Forecast stage: Commit  
+Sales Stage: 6-Closing
+Lifecycle stage: SQO
+Forecast stage: Commit
 
 **Agenda:**
 - Final review of solution & ROI (10 min)
