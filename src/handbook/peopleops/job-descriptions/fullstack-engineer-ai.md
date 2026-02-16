@@ -59,5 +59,6 @@ What a Fullstack Engineer (AI-Focused) brings to the table:
    - Option B: Contribute a small, scoped AI-related pull request or prototype demonstrating applied AI integration in an existing codebase.
    - Note: AI tools are explicitly allowed and encouraged where appropriate.
 1. Technical Interview (60m): Review the take-home work with 2–3 team members. The discussion focuses on problem understanding, AI design decisions and tradeoffs, system structure, reliability considerations, and how the solution would evolve over time rather than feature completeness. There will be explicit discussion of where AI was used, how it was used, and why those choices were made.
+1. STAR Interview (45mins): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 1. Team Interview (45m): Conversation focused on collaboration, communication style, and working cross-functionally.
 1. Offer: Extend an offer to the selected candidate.
