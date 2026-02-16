@@ -13,17 +13,23 @@ hubspot:
     formId: b21f2b32-c47c-4099-91fc-9a90c6dcf612
     downloadFormId: 
 ---
-In the industrial space, we are often flooded with data - but while data only tells you the state and outcomes of a system, what operators and managers really need is knowledge and context. Getting that knowledge and context has been an incredibly heavy process, requiring untold hours and manual effort - until now.
+Most AI pilots don’t stall because of modeling. They stall because production deployment is hard.
+
+Turning industrial data into contextual knowledge requires more than dashboards and pipelines — it requires architecture designed for security, scalability, and long-term maintenance.
 
 <!--more-->
 
-MCP (Model Context Protocol) offers a powerful solution for deploying industrial applications which convert data into knowledge - but in order to leverage it effectively, you need a platform that gives you this benefit alongside security, ease of use, and long-term maintenance. This webinar focuses on how to move beyond raw data and build systems that deliver real operational knowledge — context-rich, reliable, and ready to use across your existing IT and OT stack, diving deep into:
+This webinar focuses on what that deployment actually looks like using MCP, Node-RED, and FlowFuse — **including a live build connecting FlowFuse Expert to an MCP system in about an hour.**
+
+MCP (Model Context Protocol) offers a powerful way to deploy industrial applications that convert data into contextual knowledge. But leveraging it effectively requires the right platform — one that supports security, ease of use, and long-term maintainability.
+
+In this session, we’ll dive into:
 
 - The core technology behind the MCP stack and how it’s used to connect context to agentic deployments;
 - The difference between data and knowledge - and how they must be treated differently and as first-class elements in your system;
-- How Node-RED and FlowFuse can deliver agentic solutions at scale; and
+- How Node-RED and FlowFuse enable secure, scalable agentic deployments; and
 - A build process in FlowFuse to connect the FlowFuse Expert to MCP systems in as little as an hour.
 
-This session will give you the ability to understand, deploy, and leverage MCP data to knowledge pipelines in your org the same day you leave it - and will help you understand the tech as well as the deployment modalities it requires. This is a highly interactive webinar with demos and deep dives, so bring your questions, challenges, and notes and take advantage of this one-of-a-kind expert crash course!
+You’ll leave with a clearer understanding of both the technology and the deployment patterns required to implement MCP-based systems in production.
 
-If you’re working with data of any kind - industrial or otherwise - and you want to get smarter, faster, and more efficient, you don’t want to miss this exclusive webinar!
+If you're responsible for industrial data pipelines, AI initiatives, or enterprise Node-RED environments, this session is designed for you.
