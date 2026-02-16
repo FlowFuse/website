@@ -110,16 +110,18 @@ To create a customized pre-staging environment, please follow the steps below:
 
 7. Click the `Run workflow` button and wait for the results. A Slack notification will be sent to the `gh-pipelines` channel with the link to the pre-staging environment.
 
-##### Using the custom Pre-Staging Environment
+##### Using the custom Node-RED stack
 
-Once your pre-staging environment is created, you can create a new instance that uses your custom stack: 
-1. Select the desired team
-2. Select an application
-3. Click "Add Instance"
-4. Select the "Custom" entry in the "Node-RED Version" dropdown
-5. Press Next until you reach the last step of the instance creation wizard
-6. Press "Create Instance" to create your instance
+If you decide to create a pre-staging environment using the `nr-launcher` feature branch (or its dependencies), a custom Node-RED stack will be created to allow you to test the changes.
 
+Once your pre-staging environment is created, you can create a new instance that uses the custom stack: 
+1. Log in to your pre-staging environment
+2. Select the desired team
+3. Select an application
+4. Click "Add Instance"
+5. Select the "Custom" entry in the "Node-RED Version" dropdown
+6. Press Next until you reach the last step of the instance creation wizard
+7. Press "Create Instance" to create your instance
 
 ### Community Contributions
 
