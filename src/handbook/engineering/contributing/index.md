@@ -110,6 +110,17 @@ To create a customized pre-staging environment, please follow the steps below:
 
 7. Click the `Run workflow` button and wait for the results. A Slack notification will be sent to the `gh-pipelines` channel with the link to the pre-staging environment.
 
+##### Using the custom Pre-Staging Environment
+
+Once your pre-staging environment is created, you can create a new instance that uses your custom stack: 
+1. Select the desired team
+2. Select an application
+3. Click "Add Instance"
+4. Select the "Custom" entry in the "Node-RED Version" dropdown
+5. Press Next until you reach the last step of the instance creation wizard
+6. Press "Create Instance" to create your instance
+
+
 ### Community Contributions
 
 As an open-core project, FlowFuse welcomes community contributions to the project. If you are, as a FlowFuse employee, conducting a review of a community contribution, please consider these additional guidelines:
