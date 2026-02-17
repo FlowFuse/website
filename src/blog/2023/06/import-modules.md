@@ -64,4 +64,4 @@ Within two minutes, we could wire up a node to retrieve data from our API, and t
 
 With the FlowFuse Assistant, you can leverage AI to generate Function nodes effortlessly. Just input your prompt, and the Assistant will handle the creation for you, saving time and reducing manual coding.
 
-To explore how to make the most of the FlowFuse Assistant and its capabilities, check out the [Assistants Documentation](/docs/user/assistant/).
+To explore how to make the most of the FlowFuse Assistant and its capabilities, check out the [Assistants Documentation](/docs/user/expert/).

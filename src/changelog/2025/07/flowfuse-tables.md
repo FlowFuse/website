@@ -28,4 +28,4 @@ The database is a Postgres instance and you will be able to connect 3rd party cl
 
 This feature will be available to FlowFuse Cloud Enterprise Tier customers and to Enterprise Licensed Self Hosted customers on Kubernetes to start with, we hope to make it available to Docker Compose users in a future release.
 
-It is currently marked as a [Beta Feature](https://flowfuse.com/handbook/development/releases/#beta-release) while we continue to iterate on adding new features and observe how it is used.
+It is currently marked as a [Beta Feature](https://flowfuse.com/handbook/engineering/releases/#beta-release) while we continue to iterate on adding new features and observe how it is used.

@@ -20,7 +20,7 @@ It is up to the contact owner to ensure their contacts have the appropriate life
 | Stage Name | Lifecycle Stage | Owner | Deal Stage | Deal Probability | Requirements for this Stage | Supporting Materials | KPIs |
 | :---- | :---: | :---: | :---: | :---: | :---- | :---- | :---- |
 | Subscriber | Subscriber | Marketing | N/A | 0% | <ul><li>Email known in Hubspot</li><li> Aware of FlowFuse</li></ul> | N/A | <ul><li> Total contacts in Database </li><li>Social Media Company Followers</li></ul> |
-| Lead | Lead | Marketing | N/A | 0% | <ul><li>Demonstrated insterest in FlowFuse</li><li>Started trial on FlowFuse Cloud OR filled another form on the marketing website</li></ul> | N/A | N/A | # new leads |
+| Lead | Lead | Marketing | N/A | 0% | <ul><li>Demonstrated interested in FlowFuse</li><li>Started trial on FlowFuse Cloud OR filled another form on the marketing website</li></ul> | N/A | N/A | # new leads |
 | Marketing Qualified Lead | MQL | Sales | N/A | 0% | <ul><li>Requested a quote or trial license through the website</li><li>Is a business user on FlowFuse Cloud</li><li>Requested to be contacted via a website or other marketing activity</li><li>Confirmation for First Meeting</li><li>Technical Fit and Pain is very probable</li></ul><br>See [Lead Activation](/handbook/marketing/lead-activation/) for inbound vs. outbound definitions. | <ul><li>Lead Scoring</li><li>Sequences & Templates</li></ul> | # new MQLs |
 | Sales Qualified Lead | SQL | Sales | N/A | 0% | <ul><li>SPICED Discovery done</li><li>Customer Pain Identified</li><li>Confirmed Critical Event</li><li>Timeline PoC and Purchase known</li><li>Stakeholders Identified</li></ul> | <ul><li>Intro meeting Deck</li><li>Customer Success Stories</li></ul> | # New SQLs & # First Meetings Occurred |
 | Opportunity | Opportunity | Sales | Opportunity | 10% | <ul><li>Poc / Trial Requestments Documented</li><li>Deal Sheet Completed</li></ul> | <ul><li>PoC Document</li><li>Deal Sheet Template</li></ul> | Pipeline Forecast Sheet |
@@ -30,6 +30,10 @@ It is up to the contact owner to ensure their contacts have the appropriate life
 | Closed Won | Customer | CSM / Sales | Customer | 100% | N/A | N/A | N/A |
 
 </div>
+
+#### MQL follow-up expectations
+
+MQLs will be engaged by a Sales Representative, according with the appropriate geographic region of the contact (or who is available in the time frame). Sales should reserve time on a daily basis to review new and existing MQLs, reach out to them, and understand the nature of their interest in FlowFuse. The primary goals of this engagement are to clarify context, identify potential opportunities early, and manually update lifecycle stage and lead status so that only genuine opportunities move forward in the pipeline within the first business day since the MQL has landed.
 
 #### Lifecycle changes
 

@@ -103,7 +103,7 @@ You can use a **Change** node to:
 
 Function nodes provide full JavaScript access for complex requirements. Write custom logic, install npm packages, and access the complete JavaScript standard library when Change nodes and JSONata reach their limits.
 
-*Tip: Use the [FlowFuse assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to generate function nodes. Describe the transformation you need in plain English, and it will create the code for you. For best results, provide sample input data to ensure the output matches your requirements.*
+*Tip: Use the [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to generate function nodes. Describe the transformation you need in plain English, and it will create the code for you. For best results, provide sample input data to ensure the output matches your requirements.*
 
 **Pre-built Community Nodes**
 
@@ -186,7 +186,7 @@ Now let's talk about the remaining problems: the expertise gap and cost. FlowFus
 
 Plant engineers configure PLC connections, transform data, contextualize it, and send it to MQTT through drag-and-drop interfaces without writing code—that's what you saw in the steps above. IT teams manage security and access controls through standard web tools. Neither needs expertise in the other's domain.
 
-The AI assistant fills remaining gaps—describe what you need in plain English, and it generates function nodes, database queries, or dashboard components. Click "Explain" on any flow to get instant documentation.
+The FlowFuse Expert fills remaining gaps—describe what you need in plain English, and it generates function nodes, database queries, or dashboard components. Click "Explain" on any flow to get instant documentation.
 
 This eliminates the consultant dependency that inflates project costs. Your team handles implementation and maintenance without external help at $150-$250 per hour, saving $12,000 to $30,000 on setup alone. The managed MQTT broker includes unlimited messaging with no per-message fees. Protocol drivers are free and open-source with no per-tag licensing. Deploy on existing industrial hardware instead of buying $10,000 proprietary gateways.
 

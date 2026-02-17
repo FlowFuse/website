@@ -10,7 +10,7 @@ tags:
    - flowfuse
 ---
 
-FlowFuse recently introduced a [beta release](/handbook/development/releases/#beta-release) built-in database service to their platform, making it easier than ever to store Industrial IoT data. In a typical setup, you would need to provision a database, manage connection strings and credentials, configure nodes, and handle security settings. The goal of this new feature is to simplify or even eliminate those steps entirely. In this article, you will learn how it works and how to get started.
+FlowFuse recently introduced a [beta release](/handbook/engineering/releases/#beta-release) built-in database service to their platform, making it easier than ever to store Industrial IoT data. In a typical setup, you would need to provision a database, manage connection strings and credentials, configure nodes, and handle security settings. The goal of this new feature is to simplify or even eliminate those steps entirely. In this article, you will learn how it works and how to get started.
 
 <!--more-->
 

@@ -350,7 +350,7 @@ should happen without customers even noticing.
    providing personalized help to ensure a smooth process.
 
 ## Handling Requests from Self-Hosted Customers to Enable FlowFuse Assistant
-The [FlowFuse Assistant](https://flowfuse.com/docs/user/assistant/#flowfuse-assistant-plugin) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
+The [FlowFuse Assistant](https://flowfuse.com/docs/user/expert/#flowfuse-assistant-plugin) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
 
 When a customer requests access to the FlowFuse Assistant, do the following:
 1. Route the request to Engineering
