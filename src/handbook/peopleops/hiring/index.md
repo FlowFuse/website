@@ -151,6 +151,7 @@ At the offer stage all scorecards will be re-evaluated to understand what the
 candidate strengths and challenges are. Before the hiring manager extends an offer,
 explicit approval is required from the CEO to:
 - Check we hire in their location
+  - If we haven't hired in their location, alert Business Operations to do a review before extending the offer
 - Confirm candidate is seeking full-time employment (FlowFuse only offers full-time positions)
 - Notice period aligns with internal processes
 - Total compensation is in FlowFuse's range
