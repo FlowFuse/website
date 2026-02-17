@@ -53,7 +53,7 @@ Let’s start by setting up the basics before connecting Modbus RTU devices to F
 
 Before diving in, make sure you have the following ready:
 
-- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up]({{ site.onboardingURL }}) and [create and set up a remote instance](/blog/2025/09/installing-node-red/), and you’ll have a managed Node-RED environment running in minutes. 
+- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up]({% include "main-cta-url.njk" %}) and [create and set up a remote instance](/blog/2025/09/installing-node-red/), and you’ll have a managed Node-RED environment running in minutes. 
 - **Node-RED Modbus nodes** – Installable via the Palette Manager (`node-red-contrib-modbus`).  
 - **Modbus-enabled device** – Such as a sensor, PLC, or meter, along with its register map documentation.  
 - **Serial interface** – For example, a USB-to-RS485 converter to physically connect your Modbus devices. Connect the **A (+)** and **B (–)** terminals of the RS485 adapter to the device, add termination resistors if the line is long or has multiple devices, and note the serial port path (e.g., `/dev/ttyUSB0` on Linux or `COM1` on Windows).  

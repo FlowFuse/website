@@ -20,7 +20,7 @@ This article will show you an easy way to gather data via a form entry. We'll lo
 
 Before you begin, make sure you have the following:
 
-- **Node-RED:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via FlowFuse. If you don't have an account, check out our [free trial]({{ site.onboardingURL }}).
+- **Node-RED:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via FlowFuse. If you don't have an account, check out our [free trial]({% include "main-cta-url.njk" %}).
 
 Then you'll need to add two more sets of nodes to your palette:
 

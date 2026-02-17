@@ -17,4 +17,4 @@ What's new:
 - A name that better represents professional Node-RED application development
 - Clearer positioning for organizations ready to scale their Node-RED implementations
 
-Ready to build professional Node-RED applications? [Get started with Pro]({{ site.onboardingURL }}) or [contact us](/contact-us) to learn more.
+Ready to build professional Node-RED applications? [Get started with Pro]({% include "main-cta-url.njk" %}) or [contact us](/contact-us) to learn more.

@@ -70,7 +70,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Try it out
 
-[Sign up for FlowFuse Cloud]({{ site.onboardingURL }}) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
+[Sign up for FlowFuse Cloud]({% include "main-cta-url.njk" %}) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 

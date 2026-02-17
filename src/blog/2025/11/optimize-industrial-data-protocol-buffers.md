@@ -98,7 +98,7 @@ Now let's implement this in FlowFuse.
 
 We'll build a complete protobuf pipeline: define your data schema, encode sensor readings, transmit them, and decode on the receiving end.
 
-> Before you start, Make sure you have a FlowFuse instance running on your edge device. If you don't have an account yet, [create one with our free trial]({{ site.onboardingURL }}). FlowFuse simplifies connecting devices and systems—transform, validate, contextualize, and visualize data while building industrial applications, all in a low-code environment. It includes enterprise features that accelerate management, development, deployment, and scaling with built-in security.
+> Before you start, Make sure you have a FlowFuse instance running on your edge device. If you don't have an account yet, [create one with our free trial]({% include "main-cta-url.njk" %}). FlowFuse simplifies connecting devices and systems—transform, validate, contextualize, and visualize data while building industrial applications, all in a low-code environment. It includes enterprise features that accelerate management, development, deployment, and scaling with built-in security.
 
 ### Preparing Your Protocol Buffers Schema
 
@@ -203,4 +203,4 @@ The same platform you use to connect devices, systems and build dashboards now o
 
 Pick one data flow. Implement it this afternoon. Scale it tomorrow.
 
-[Start your free FlowFuse trial]({{ site.onboardingURL }}) and stop paying to transmit field names.
+[Start your free FlowFuse trial]({% include "main-cta-url.njk" %}) and stop paying to transmit field names.

@@ -79,4 +79,4 @@ You can also watch this webinar that explores the core concepts of the Unified N
 
 While Node-RED is highly effective for implementing UNS, managing and deploying it can be complex. FlowFuse provides a unified platform that simplifies deployment with one-click operations, secure management, and scalable Node-RED applications. It also includes features that enhance collaboration, alongside offering centralized management of all Node-RED instances to ensure streamlined operations and increased efficiency.
 
-**[Sign up]({{ site.onboardingURL }}) now for a free trial and experience FlowFuse's features**
+**[Sign up]({% include "main-cta-url.njk" %}) now for a free trial and experience FlowFuse's features**

@@ -162,7 +162,7 @@ Now that we understand what Sparkplug B is and how it structures industrial data
 
 To run Node-RED reliably in production—especially for industrial and edge deployments, [FlowFuse](/) provides a managed platform for deploying, scaling, and managing Node-RED instances. FlowFuse also includes a built-in MQTT broker, making it simple to get started with Sparkplug B without additional infrastructure.
 
-[Create a free FlowFuse account]({{ site.onboardingURL }}) to deploy Node-RED, connect devices, and start working with MQTT Sparkplug B in minutes.
+[Create a free FlowFuse account]({% include "main-cta-url.njk" %}) to deploy Node-RED, connect devices, and start working with MQTT Sparkplug B in minutes.
 
 In the following example, we’ll configure a Node-RED flow where a factory machine publishes temperature and humidity data using Sparkplug B, and then consumes that data downstream.
 
@@ -318,4 +318,4 @@ MQTT Sparkplug B transforms MQTT from a simple messaging protocol into a robust,
 
 Following best practices—clear naming, birth/death messages, metric aliasing, buffering, security, and deliberate testing—ensures your system runs smoothly in production and avoids costly downtime.
 
-For teams looking to get Sparkplug B up and running quickly, [FlowFuse]({{ site.onboardingURL }}) provides a production-ready, easy-to-use platform. With minimal setup and no advanced skills required, you can deploy, scale, and monitor industrial flows in minutes. Start building your reliable, standardized IIoT solution today.
+For teams looking to get Sparkplug B up and running quickly, [FlowFuse]({% include "main-cta-url.njk" %}) provides a production-ready, easy-to-use platform. With minimal setup and no advanced skills required, you can deploy, scale, and monitor industrial flows in minutes. Start building your reliable, standardized IIoT solution today.

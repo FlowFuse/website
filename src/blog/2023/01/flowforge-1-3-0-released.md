@@ -18,7 +18,7 @@ Share your flows via team libraries, control access to your Node-RED dashboards 
 
 We're pleased to announce version 1.3 is now available! Due to the recent holiday season, most of our team have been away from their desks but we still have some great new features to share. Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
-To make it easy for everyone to experience FlowFuse, we are introducing a new [free 30-day trial]({{ site.onboardingURL }}). With this trial, you can experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowFuse team]({{ site.onboardingURL }}).
+To make it easy for everyone to experience FlowFuse, we are introducing a new [free 30-day trial]({% include "main-cta-url.njk" %}). With this trial, you can experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your trial simply [sign up for a new FlowFuse team]({% include "main-cta-url.njk" %}).
 
 ## Features
 
@@ -64,7 +64,7 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({{ site.onboardingURL }}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({% include "main-cta-url.njk" %}) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

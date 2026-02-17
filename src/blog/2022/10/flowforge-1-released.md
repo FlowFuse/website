@@ -64,7 +64,7 @@ As an open-source project, we welcome community involvement in what we're buildi
 
 ### Try it out
 
-[Sign up for FlowFuse-Managed Premium]({{ site.onboardingURL }}?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
+[Sign up for FlowFuse-Managed Premium]({% include "main-cta-url.njk" %}?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
 
 
 ### Upgrading FlowFuse

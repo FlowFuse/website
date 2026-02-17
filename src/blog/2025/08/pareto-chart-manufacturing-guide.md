@@ -185,4 +185,4 @@ The first step is always the hardest—and the most important. Choose one persis
 
 **Ready to transform your manufacturing data into actionable insights?** 
 
-Stop guessing which problems to tackle first. [Try FlowFuse free for 14 days]({{ site.onboardingURL }}) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.
+Stop guessing which problems to tackle first. [Try FlowFuse free for 14 days]({% include "main-cta-url.njk" %}) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.

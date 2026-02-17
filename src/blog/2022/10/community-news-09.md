@@ -31,5 +31,5 @@ We are also looking for a [PeopleOps Manager](https://boards.greenhouse.io/flowf
 [**Forest Fire Alerts Using ML, IOT and Node-RED**](https://hackster.io/user102774/fight-fire-wild-fire-prediction-using-tinyml-df7572)  
 This fascinating project came up a few days ago and we wanted to share it with you all. The concept is to use a mesh network of IoT devices to monitor various indicators of potential and current wildfires and report data back to the relevant authorities. The system will use ML to predict wildfire risk levels and hopefully send warnings before a fire actually starts. The two developers [Muhammed](https://linkedin.com/in/zainmfd/) and [Salman](https://linkedin.com/in/salmanfarisvp/) are planning to use Node-RED to manage the reporting of fires to the authorities.
     
-[**Try FlowFuse for Free**]({{ site.onboardingURL }})  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowFuse when you create a new team. To get this discount please follow [this link]({{ site.onboardingURL }}?code=RELEASE010) or use the code RELEASE010 when on the payment page after creating a new team.
+[**Try FlowFuse for Free**]({% include "main-cta-url.njk" %})  
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowFuse when you create a new team. To get this discount please follow [this link]({% include "main-cta-url.njk" %}?code=RELEASE010) or use the code RELEASE010 when on the payment page after creating a new team.
