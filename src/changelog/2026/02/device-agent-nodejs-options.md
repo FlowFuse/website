@@ -24,7 +24,7 @@ Use the --node-options argument. This argument may be specified multiple times:
 
     ```bash
     flowfuse-device-agent -c /opt/flowfuse-device-agent/device.yml \
-    --node-options='--max_old_space_size=256' \
+    --node-options='--max-old-space-size=256' \
     --node-options='--use-openssl-ca'
     ```
 
@@ -38,6 +38,6 @@ Add a `nodeOptions` section:
     token: xxxxxxxx
     credentialSecret: xxxxx
     nodeOptions:
-      - '--max_old_space_size=256'
+      - '--max-old-space-size=256'
       - '--use-openssl-ca'
     ```
