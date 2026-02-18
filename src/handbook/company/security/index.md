@@ -24,6 +24,7 @@ in this area, which includes prompt reporting and resolution of any issues ident
  - [Incident Response Plan](./incident-response.md)
  - [Business Continuity and Disaster Recover Policy](./business-continuity.md)
  - [Computer Security](./computer-security.md)
+ - [AI Development and Customer Data Policy](./ai-development-and-customer-data.md)
 
 ## Credentials
 
