@@ -31,7 +31,7 @@ The Opto-22 Groov Rio R7 is a rugged edge I/O module designed for industrial app
 Before proceeding with the installation, ensure you have the following:
 
 - **Opto-22 Groov Rio R7** – A functioning device with internet access.
-- **FlowFuse Account** - You need an active FlowFuse account to access the platform and configure your instance. If you do not have one, please visit the FlowFuse website and [sign up]({% include "main-cta-url.njk" %}) for a new account before proceeding.
+- **FlowFuse Account** - You need an active FlowFuse account to access the platform and configure your instance. If you do not have one, please visit the FlowFuse website and [sign up]({% include "sign-up-url.njk" %}) for a new account before proceeding.
 - **Sudo Privileges** – Administrator access to install required packages.
 
 ## Getting Started

@@ -68,8 +68,8 @@
             <label class="align-baseline w-full text-center"></label>
             {% for button in buttons %}
                 {% set buttonUrl = button.url %}
-                {% if button.url == 'main-cta-url' %}
-                    {% set buttonUrl %}{% include "main-cta-url.njk" %}{% endset %}
+                {% if button.url == 'sign-up-url' %}
+                    {% set buttonUrl %}{% include "sign-up-url.njk" %}{% endset %}
                 {% endif %}
                 <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
             {% endfor %}

@@ -49,7 +49,7 @@ Node-RED provides a powerful and flexible way to integrate with various brokers,
 
 However, using Node-RED alone in production environments requires additional considerations, such as server deployment, instance management, security implementation, and scalability. This is where FlowFuse enhances Node-RED's capabilities by adding production-ready features. FlowFuse simplifies managing and deploying Node-RED applications, providing essential functionalities like scalability, robust security, and efficient collaboration tools.
 
-**[Sign up]({% include "main-cta-url.njk" %}) now for a free trial and experience how FlowFuse can streamline your Node-RED deployments and management.**
+**[Sign up]({% include "sign-up-url.njk" %}) now for a free trial and experience how FlowFuse can streamline your Node-RED deployments and management.**
 
 ## Conclusion
 

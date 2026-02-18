@@ -92,4 +92,4 @@ _OEE Dashboard_
 
 ## What Next
 
-Here’s [Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/) on the next steps to build your OEE dashboard with FlowFuse. But if you rather skip the tutorials and dive straight in, just [register for a FlowFuse account]({% include "main-cta-url.njk" %}) and start using our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to optimize your operations and boost efficiency right away!
+Here’s [Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/) on the next steps to build your OEE dashboard with FlowFuse. But if you rather skip the tutorials and dive straight in, just [register for a FlowFuse account]({% include "sign-up-url.njk" %}) and start using our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to optimize your operations and boost efficiency right away!

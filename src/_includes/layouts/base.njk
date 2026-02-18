@@ -259,7 +259,7 @@ eleventyComputed:
                     <!-- CTAs -->
                     <ul class="hidden cta top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
 			            <li class="flex"><a href="{{ site.appURL }}">Sign In</a></li>
-			            <li class="flex"><a href="{% include "main-cta-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
+			            <li class="flex"><a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
                         <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
                             Contact Us
                         </a>
@@ -269,7 +269,7 @@ eleventyComputed:
                 <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
                     <div class="grid grid-cols-2 gap-2">
                         <a href="{{ site.appURL }}" class="ff-btn ff-btn--primary-outlined">Sign In</a>
-                        <a href="{% include "main-cta-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
+                        <a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
                     </div>
                     <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
                 </div>    

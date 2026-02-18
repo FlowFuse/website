@@ -84,4 +84,4 @@ Available on FlowFuse Cloud, the Assistant offers:
 - **In-line Code Generation**: Generate JavaScript code for function nodes, JSON for JSON editors, and Vue.js for FlowFuse Dashboard ui-template widgets
 - **Flow Explainer**: Select nodes and click "Explain Flows" to understand what they do
 
-FlowFuse Assistant helps developers work faster and smarter with Node-RED. [Start your free trial]({% include "main-cta-url.njk" %}) to experience AI-powered Node-RED development on FlowFuse Cloud.
+FlowFuse Assistant helps developers work faster and smarter with Node-RED. [Start your free trial]({% include "sign-up-url.njk" %}) to experience AI-powered Node-RED development on FlowFuse Cloud.

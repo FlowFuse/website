@@ -71,7 +71,7 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 In 1.2 we've continued to improve the experience of running your own self managed FlowFuse installation. We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](/docs/contribute/local/), through [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud]({% include "main-cta-url.njk" %}?code=FF12)
+If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud]({% include "sign-up-url.njk" %}?code=FF12)
 with the coupon **FF12** to get your first project free for a month.
 
 ### Upgrading FlowFuse

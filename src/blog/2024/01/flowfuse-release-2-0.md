@@ -41,7 +41,7 @@ At FlowFuse, our mission is to empower bottom-up innovation and enable organizat
 
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "main-cta-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

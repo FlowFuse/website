@@ -76,7 +76,7 @@ cta:
                     {{ migrationExpertButton() }}
                     {% macro tryItOutButton(desktop=true) %}
                     <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}" 
-                    href="{% include "main-cta-url.njk" %}" 
+                    href="{% include "sign-up-url.njk" %}" 
                     onclick="capture('try-it-out', {'reference': '{{ hero.buttonReference }}'})">
                         <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
                             TRY IT OUT

@@ -31,7 +31,7 @@ nohero: true
                     {{freeDemoButton() }}
                     {% macro tryItOutButton(desktop=true) %}
                     <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}"
-                        href="{% include "main-cta-url.njk" %}"
+                        href="{% include "sign-up-url.njk" %}"
                         onclick="capture('cta-try-now', {'reference': '{{ hero.buttonReference }}'})">
                         <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
                             Start Free Trial
@@ -185,7 +185,7 @@ nohero: true
         <p class="text-center">{{ ctaSection.description }}</p>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center mt-8">
             <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="{{ hero.buttonLink }}" onclick="capture('cta-demo', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ ctaSection.primaryCta }}</a>
-            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "main-cta-url.njk" %}" onclick="capture('cta-try-now', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ ctaSection.secondaryCta }}</a>
+            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-now', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ ctaSection.secondaryCta }}</a>
         </div>
     </div>
 </div>

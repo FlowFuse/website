@@ -100,7 +100,7 @@ As an industrial data platform, FlowFuse enables seamless integration of 5S chec
 
 Mobile access transforms team interaction with the evaluation process. Workers complete checklists on tablets or smartphones directly in work areas, take photos documenting conditions, and immediately see how current scores compare to previous evaluations. This real-time feedback creates engagement impossible with paper forms.
 
-[Sign up]({% include "main-cta-url.njk" %}) for FlowFuse now and get started building your individual 5S checklist.
+[Sign up]({% include "sign-up-url.njk" %}) for FlowFuse now and get started building your individual 5S checklist.
 
 ## Up next
 

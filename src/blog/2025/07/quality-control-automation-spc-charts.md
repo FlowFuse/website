@@ -60,7 +60,7 @@ Walter Shewhart developed this method at Bell Labs in the 1920s, proving its eff
 
 Let's build a real example. This guide shows you how to create a SPC control chart for individual measurements - perfect for monitoring critical dimensions in real-time.
 
-First, open your FlowFuse Node-RED instance. If you don't have one yet, you can [sign up for a free account]({% include "main-cta-url.njk" %}) and have an instance running in minutes.
+First, open your FlowFuse Node-RED instance. If you don't have one yet, you can [sign up for a free account]({% include "sign-up-url.njk" %}) and have an instance running in minutes.
 
 ### What We're Building
 
@@ -336,7 +336,7 @@ Every day without SPC is money left on the table. Those 16,000 scrapped parts pe
 
 Here's your path to production-ready SPC:
 
-1. **[Start Free with FlowFuse]({% include "main-cta-url.njk" %})** - Get your instance running in minutes
+1. **[Start Free with FlowFuse]({% include "sign-up-url.njk" %})** - Get your instance running in minutes
 2. **Follow this tutorial** - Build your first SPC chart today
 3. **Connect one machine** - Start with your most critical measurement
 4. **Expand gradually** - Add more parameters as you prove value
@@ -345,7 +345,7 @@ Don't wait for the perfect plan. Don't form another committee. Pick one measurem
 
 Because somewhere right now, one of your machines is drifting out of spec. The only question is whether you'll catch it in time.
 
-**[Build Your First SPC Dashboard Now →]({% include "main-cta-url.njk" %})**
+**[Build Your First SPC Dashboard Now →]({% include "sign-up-url.njk" %})**
 
 ## References
 

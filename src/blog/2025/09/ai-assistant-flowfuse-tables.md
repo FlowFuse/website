@@ -98,4 +98,4 @@ The FlowFuse Expert now brings natural language capabilities to database queries
 
 FlowFuse's mission has always been to democratize industrial automation and reduce complexity for engineers and operational teams. As part of this commitment, more AI-powered features are on the roadmap to simplify industrial workflows even further.
 
-Ready to transform how your team works with data? [Book a demo]({% include "main-cta-url.njk" %}) and see how FlowFuse makes building industrial applications simple and accessible.
+Ready to transform how your team works with data? [Book a demo]({% include "sign-up-url.njk" %}) and see how FlowFuse makes building industrial applications simple and accessible.

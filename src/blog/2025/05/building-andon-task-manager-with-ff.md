@@ -107,4 +107,4 @@ By using both SQLite for structured request data and context storage for dynamic
 
 In the next part of this series, we will focus on developing the Lines view for regular users, along with the navigation menu for switching between different line sections. Later, we will cover the development of the lines view and Admin interface.
 
-But if you can't wait to get started right away, don’t worry! You can [register]({% include "main-cta-url.njk" %}) for FlowFuse and get started with our ready-made [Andon Task Manager blueprint](/blueprints/manufacturing/andon-system/), which is pre-configured for easy deployment. Stay tuned for the next installment to continue your journey toward building a comprehensive, real-time Andon Task Manager solution.
+But if you can't wait to get started right away, don’t worry! You can [register]({% include "sign-up-url.njk" %}) for FlowFuse and get started with our ready-made [Andon Task Manager blueprint](/blueprints/manufacturing/andon-system/), which is pre-configured for easy deployment. Stay tuned for the next installment to continue your journey toward building a comprehensive, real-time Andon Task Manager solution.
