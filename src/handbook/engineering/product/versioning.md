@@ -6,7 +6,7 @@ navTitle: Versioning
 
 ## Preview Features
 
-As part of our [continuous improvement](/handbook/values/#🔁-iterative-improvement) process at FlowFuse, we may designate certain functionalities as Preview Features. During this phase, all of our customers are given the unique opportunity to trial and test these features. While we ensure the provision of support services, it's important to understand that standard service-level agreements do not apply to these Preview Features. We highly value [customer feedback](./feedback.md) during this period; it not only contributes to our feature refinement process, but also shapes the future development of our offerings.
+As part of our [continuous improvement](/handbook/company/values/#🔁-iterative-improvement) process at FlowFuse, we may designate certain functionalities as Preview Features. During this phase, all of our customers are given the unique opportunity to trial and test these features. While we ensure the provision of support services, it's important to understand that standard service-level agreements do not apply to these Preview Features. We highly value [customer feedback](./feedback.md) during this period; it not only contributes to our feature refinement process, but also shapes the future development of our offerings.
 
 There are no extra charges associated with the utilization of Preview Features. Nevertheless, we want to clarify that as these features transition from their preview status to being generally available, they may become subject to changes in pricing in subsequent releases.
 
