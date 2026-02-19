@@ -1,12 +1,13 @@
 {
     "order": 16,
     "name": "Michael Davis",
-    "title": "Head of Customer Teams",
+    "title": "VP of Sales",
     "github": "MichaelBDavis",
     "linkedin": "michaelbdavis",
     "country": "US",
     "email": "michael@flowfuse.com",
     "headshot": "michael.png",
+    "reports_to": "ZJ van de Weg",
     "facts": [
         "20+ years in go-to-market leadership, scaling SaaS ventures and building high-performing teams",
         "Passionate about wine-fueled adventures—trekking vineyard hillsides and unearthing hidden cellars across Europe",

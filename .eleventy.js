@@ -16,20 +16,132 @@ const markdownItAttrs = require('markdown-it-attrs');
 const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
-const schema = require("@quasibit/eleventy-plugin-schema");
 const pluginTOC = require('eleventy-plugin-toc');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
+const { isSearchPage, isSearchUrl, extractHeadingRecords } = require("./lib/search-index.js");
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const { EleventyEdgePlugin } = require("@11ty/eleventy");
+
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
 const DEPLOY_PREVIEW = process.env.CONTEXT === "deploy-preview";
+const IMAGE_BUILD_PROFILE = process.env.IMAGE_BUILD_PROFILE || "full";
+
+console.info(`[11ty] Image build profile: ${IMAGE_BUILD_PROFILE}`)
 
 module.exports = function(eleventyConfig) {
+    let searchIndexItems = [];
+
+    function extractMetaTag(html, selector) {
+        const regex = new RegExp(`<meta[^>]*${selector}[^>]*content=(["'])(.*?)\\1[^>]*>`, "i");
+        const match = html.match(regex);
+        return match?.[2] || "";
+    }
+
+    function extractHtmlTitle(html) {
+        const match = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+        return match ? match[1].replace(/\s+/g, " ").trim() : "";
+    }
+
+    function normalizeImage(value, fallback) {
+        if (!value) {
+            return fallback;
+        }
+        if (typeof value === "string") {
+            return value;
+        }
+        if (typeof value === "object" && typeof value.src === "string") {
+            return value.src;
+        }
+        return fallback;
+    }
+
+    function extractSearchHtml(url, html = "") {
+        const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+        let searchable = mainMatch ? mainMatch[1] : html;
+
+        if (url.startsWith("/blog/")) {
+            searchable = searchable.split("<!-- Author Bio Section -->")[0];
+        }
+
+        return searchable;
+    }
+
+    function toUnixTimestampSeconds(value) {
+        if (!value) {
+            return null;
+        }
+        const date = value instanceof Date ? value : new Date(value);
+        if (Number.isNaN(date.getTime())) {
+            return null;
+        }
+        return Math.floor(date.getTime() / 1000);
+    }
+
+    async function listHtmlFiles(rootDir) {
+        const files = [];
+        async function walk(currentDir) {
+            const entries = await fs.promises.readdir(currentDir, { withFileTypes: true });
+            for (const entry of entries) {
+                const fullPath = path.join(currentDir, entry.name);
+                if (entry.isDirectory()) {
+                    await walk(fullPath);
+                } else if (entry.isFile() && entry.name.endsWith(".html")) {
+                    files.push(fullPath);
+                }
+            }
+        }
+        await walk(rootDir);
+        return files;
+    }
+
+    function outputPathToUrl(outputRoot, outputPath) {
+        const rel = path.relative(outputRoot, outputPath).replace(/\\/g, "/");
+        if (!rel.endsWith(".html")) {
+            return "";
+        }
+        if (rel === "index.html") {
+            return "/";
+        }
+        if (rel.endsWith("/index.html")) {
+            return `/${rel.slice(0, -"index.html".length)}`;
+        }
+        return `/${rel}`;
+    }
+
+    function decodeEntities(text = "") {
+        return text
+            .replace(/&nbsp;/gi, " ")
+            .replace(/&amp;/gi, "&")
+            .replace(/&lt;/gi, "<")
+            .replace(/&gt;/gi, ">")
+            .replace(/&#39;/gi, "'")
+            .replace(/&quot;/gi, "\"")
+            .replace(/&#x2022;/gi, "•");
+    }
+
+    function extractMetaKeywords(html) {
+        const raw = extractMetaTag(html, 'name=["\\\']keywords["\\\']');
+        if (!raw) {
+            return [];
+        }
+        return raw.split(",").map((keyword) => decodeEntities(keyword.trim()));
+    }
+
+    function extractDateFromJsonLd(html, fieldName) {
+        const regex = new RegExp(`\"${fieldName}\"\\\\s*:\\\\s*\"([^\"]+)\"`, "i");
+        const match = html.match(regex);
+        return match?.[1] || "";
+    }
+
+    function extractArticleSection(html) {
+        return extractMetaTag(html, 'property=["\\\']article:section["\\\']').trim();
+    }
+
+
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
@@ -163,6 +275,15 @@ module.exports = function(eleventyConfig) {
         return JSON.stringify(content)
     });
 
+    eleventyConfig.addFilter("fromJson", (content) => {
+        try {
+            return JSON.parse(content);
+        } catch (e) {
+            console.error("Error parsing JSON:", e);
+            return content;
+        }
+    });
+
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
@@ -198,6 +319,106 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('shortDate', dateObj => {
         return spacetime(new Date(dateObj)).format('{date} {month-short}, {year}')
     });
+
+    // Filter to safely convert values to Date objects
+    eleventyConfig.addFilter('toDate', value => {
+        if (!value) return new Date();
+        if (value instanceof Date) return value;
+        return new Date(value);
+    });
+
+    eleventyConfig.addFilter('formatNumber', num => {
+        if (num === undefined || num === null) return '0';
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    });
+
+    eleventyConfig.addFilter('md', (content) => {
+        if (!content) return '';
+        const md = new markdownIt({
+            html: true,
+        })
+        .use(markdownItAnchor, {
+            permalink: markdownItAnchor.permalink.headerLink()
+        });
+        return md.render(content);
+    });
+
+    eleventyConfig.addFilter('stripFirstH1', (str) => {
+        if (!str) return str;
+        
+        // Remove the first h1 heading from the content to avoid duplicate h1 tags
+        // This is typically the package name which is already shown in the page header
+        return str.replace(/<h1[^>]*>.*?<\/h1>/, '');
+    });
+
+    eleventyConfig.addFilter('rewriteIntegrationLinks', (str, integration) => {
+        if (!str) return str;
+        
+        // First pass: collect all actual anchor IDs from the HTML
+        const anchorIds = new Set();
+        const anchorIdRegex = /id="([^"]+)"/g;
+        let anchorMatch;
+        while ((anchorMatch = anchorIdRegex.exec(str)) !== null) {
+            anchorIds.add(anchorMatch[1]);
+        }
+        
+        // Convert relative links in README to absolute links
+        const matcher = /((href|src)="([^"]*))"/g;
+        let match;
+        const result = str.replace(matcher, (fullMatch, group1, attr, url) => {
+            // Skip absolute URLs and mailto links
+            if (/^(http|https|mailto:)/.test(url)) {
+                return fullMatch;
+            }
+            
+            // Handle same-page anchor links - try to fix broken anchors
+            if (url.startsWith('#')) {
+                const targetAnchor = url.substring(1);
+                
+                // If the anchor doesn't exist, try to find a close match
+                if (!anchorIds.has(targetAnchor)) {
+                    // Try to find anchors that match if we add periods back
+                    // e.g., "migration-from-012-or-earlier" -> "migration-from-0.1.2-or-earlier"
+                    for (const existingAnchor of anchorIds) {
+                        // Remove all periods from existing anchor and compare
+                        const normalizedExisting = existingAnchor.replace(/\./g, '');
+                        if (normalizedExisting === targetAnchor) {
+                            // Found a match! Use the correct anchor
+                            return `${attr}="#${existingAnchor}"`;
+                        }
+                    }
+                }
+                
+                return fullMatch;
+            }
+            
+            // Convert relative links to repository links if available
+            if (integration.repository && integration.repository.url) {
+                const repoUrl = integration.repository.url
+                    .replace('git+', '')
+                    .replace('.git', '')
+                    .replace('git://', 'https://');
+                
+                // Handle different types of relative paths
+                if (url.startsWith('./') || url.startsWith('../')) {
+                    const cleanUrl = url.replace(/^\.\.?\//, '');
+                    return `${attr}="${repoUrl}/blob/master/${cleanUrl}"`;
+                } else if (url.startsWith('/')) {
+                    // Repository-relative paths (e.g., /CHANGELOG.md)
+                    const cleanUrl = url.replace(/^\//, '');
+                    return `${attr}="${repoUrl}/blob/master/${cleanUrl}"`;
+                } else if (!url.startsWith('#')) {
+                    // Simple relative paths without prefix
+                    return `${attr}="${repoUrl}/blob/master/${url}"`;
+                }
+            }
+            
+            return fullMatch;
+        });
+        
+        return result;
+    });
+
 
     eleventyConfig.addFilter('duration', mins => {
         if (mins > 60) {
@@ -671,15 +892,96 @@ module.exports = function(eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection("searchIndex", function (collectionApi) {
+        searchIndexItems = collectionApi
+            .getAll()
+            .filter((item) => isSearchPage(item))
+            .sort((a, b) => a.url.localeCompare(b.url));
+        return searchIndexItems;
+    });
+
+    eleventyConfig.on("eleventy.after", async ({ dir }) => {
+        const defaultKeywords = (site.messaging?.keywords || "")
+            .split(",")
+            .map((item) => item.trim());
+        const defaultDescription = site.messaging?.subtitle || "";
+        const defaultImage = `${site.baseURL || ""}/images/og-social-tile.jpg`;
+        const defaultOrigin = process.env.DEPLOY_PRIME_URL || process.env.URL || site.baseURL || "";
+
+        const records = [];
+
+        const htmlFiles = await listHtmlFiles(dir.output);
+
+        for (const outputPath of htmlFiles) {
+            const url = outputPathToUrl(dir.output, outputPath);
+            if (!isSearchUrl(url)) {
+                continue;
+            }
+
+            let html = "";
+            try {
+                html = await fs.promises.readFile(outputPath, "utf8");
+            } catch (error) {
+                continue;
+            }
+
+            const searchableHtml = extractSearchHtml(url, html);
+            const htmlTitle = extractHtmlTitle(html);
+            const htmlDescription =
+                extractMetaTag(html, 'name=["\\\']description["\\\']') ||
+                extractMetaTag(html, 'property=["\\\']og:description["\\\']');
+            const htmlImage = extractMetaTag(html, 'property=["\\\']og:image["\\\']');
+            const htmlKeywords = extractMetaKeywords(html);
+            const htmlCategory = extractArticleSection(html);
+            const datePublishedIso =
+                extractDateFromJsonLd(html, "datePublished") ||
+                extractMetaTag(html, 'property=["\\\']article:published_time["\\\']');
+            const dateModifiedIso =
+                extractDateFromJsonLd(html, "dateModified") ||
+                extractMetaTag(html, 'property=["\\\']article:modified_time["\\\']') ||
+                datePublishedIso;
+
+            const pageDescription =
+                decodeEntities(htmlDescription) ||
+                defaultDescription;
+            const pageImage = normalizeImage(
+                normalizeImage(htmlImage, "") ||
+                defaultImage
+            );
+            const pageKeywords = htmlKeywords.length > 0 ? htmlKeywords : defaultKeywords;
+            const datePublished = toUnixTimestampSeconds(datePublishedIso);
+            const dateModified = toUnixTimestampSeconds(dateModifiedIso);
+
+            records.push(
+                ...extractHeadingRecords({
+                    url,
+                    html: searchableHtml,
+                    category: htmlCategory,
+                    pageTitle: decodeEntities(htmlTitle),
+                    pageDescription,
+                    pageImage,
+                    origin: defaultOrigin,
+                    lang: "en",
+                    keywords: pageKeywords,
+                    datePublished,
+                    dateModified,
+                })
+            );
+        }
+
+        const outputPath = path.join(dir.output, "search-index.json");
+        await fs.promises.writeFile(outputPath, JSON.stringify(records, null, 2));
+        console.log(`[11ty] Wrote ${records.length} search records to ${outputPath}`);
+    });
+
     // Plugins
     eleventyConfig.addPlugin(EleventyRenderPlugin)
     eleventyConfig.addPlugin(pluginRSS)
     eleventyConfig.addPlugin(syntaxHighlight)
     eleventyConfig.addPlugin(codeClipboard)
     eleventyConfig.addPlugin(pluginMermaid)
-    eleventyConfig.addPlugin(schema);
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
-    eleventyConfig.addPlugin(EleventyEdgePlugin);
+
     eleventyConfig.addPlugin(pluginTOC, {
         tags: ['h2', 'h3', 'h4'],
         wrapper: 'div',
@@ -692,10 +994,7 @@ module.exports = function(eleventyConfig) {
     }
 
     const markdownItAnchorOptions = {
-        permalink: markdownItAnchor.permalink.linkInsideHeader({
-            symbol: ``,
-            placement: 'before'
-        })
+        permalink: markdownItAnchor.permalink.headerLink()
     }
 
     const markdownLib = markdownIt(markdownItOptions)
@@ -781,9 +1080,7 @@ module.exports = function(eleventyConfig) {
                     conservativeCollapse: true,
                     preserveLineBreaks: true,
                     removeComments: true,
-                    ignoreCustomComments: [
-                        /ELEVENTYEDGE.*/
-                    ],
+
                     removeEmptyAttributes: true,
                     removeRedundantAttributes: true,
                     useShortDoctype: true,

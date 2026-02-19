@@ -20,6 +20,14 @@ Explore the list of integrations and modules available for your Node-RED project
 
 {% block content %}
 <script>
+    // List of nodes that have generated pages on this site
+    // These nodes (certified + top 50) have full detail pages
+    const generatedNodeIds = new Set([
+        {%- for integration in integrations -%}
+        "{{ integration._id }}"{%- if not loop.last -%},{%- endif -%}
+        {%- endfor -%}
+    ]);
+
     const pagination = {
         perPage: 30,
         currentPage: 0,
@@ -142,7 +150,7 @@ Explore the list of integrations and modules available for your Node-RED project
             return;
         }
         pagination.currentPage += diff;
-        updateUI(catalogue);
+        filterCatalogue();
     }
 
     function showPage (catalogue) {
@@ -191,45 +199,38 @@ Explore the list of integrations and modules available for your Node-RED project
             if (!a.ffCertified && b.ffCertified) {
                 return 1
             }
-            return new Date(b.updatedAt) - new Date(a.updatedAt);
+            // Then by weekly downloads (descending)
+            return b.downloads.week - a.downloads.week;
         });
         pagination.maxPage = Math.ceil(filtered.length / pagination.perPage);
         
         if (pagination.currentPage > pagination.maxPage) {
             pagination.currentPage = pagination.maxPage;
         }
+
         updateUI(filtered);
     }
 
-    function truncate (words, amount) {
-        // split the description
-        const tokens = words?.split(' ') || []
-        const trimmed = tokens?.slice(0, amount) || []
-        return trimmed.join(' ') + (tokens.length > amount ? '...' : '')
+    function truncate (str, words) {
+        return str?.split(' ').splice(0,words).join(' ') + (str?.split(' ').length > words ? '...' : '');
     }
 
-    class CertifiedIcon extends HTMLElement {
+    function getCertifiedIcon () {
+        return `<svg class="certified-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+        </svg>`;
+    }
 
-        constructor() {
-            super();
-        }
-        
+    class CertifiedIcon extends HTMLElement {        
         connectedCallback () {
-            const integration = this.integration || {};
-            const description = truncate(integration.description, 15) || '';
-            const certified = integration.ffCertified || false;
-            this.innerHTML = `<svg class="certified-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" /></svg>`;
+            this.innerHTML = getCertifiedIcon();
         }
     }
     customElements.define('certified-icon', CertifiedIcon);
 
-    class PlaceholderBar extends HTMLElement {
-        constructor() {
-            super();
-        }
-
+    class PlaceholderBar extends HTMLElement {        
         connectedCallback () {
-            this.innerHTML = `<div class="placeholder-bar"><div class="placeholder-gradient"></div></div>`;
+            this.innerHTML = `<span class="ff-placeholder-bar"></span>`;
         }
     }
     customElements.define('placeholder-bar', PlaceholderBar);
@@ -293,12 +294,33 @@ Explore the list of integrations and modules available for your Node-RED project
             const integration = this.integration || {};
             const description = truncate(integration.description, 15) || '';
             const certified = integration.ffCertified || false;
+            
+            // Determine if this node has a generated page on our site
+            const hasGeneratedPage = generatedNodeIds.has(integration._id);
+            
+            // Use internal link for generated pages, external link for others
+            const nodeUrl = hasGeneratedPage 
+                ? `/integrations/${integration._id}` 
+                : `https://flows.nodered.org/node/${integration._id}`;
+            
+            // Add target and rel attributes for external links
+            const linkAttrs = hasGeneratedPage 
+                ? '' 
+                : ' target="_blank" rel="noopener noreferrer"';
+            
+            // Add external link icon for flows.nodered.org links
+            const externalIcon = hasGeneratedPage 
+                ? '' 
+                : `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block ml-1 opacity-60">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>`;
+            
             this.innerHTML = `
                 <li class="integration-card group border border-gray-300 rounded-xl bg-white drop-shadow-md">
-                    <a href="https://flows.nodered.org/node/${integration._id}" class="h-48 flex flex-col">
+                    <a href="${nodeUrl}"${linkAttrs} class="h-48 flex flex-col">
                         <div class="integration-card--details p-3 grow min-h-0">
                             <div class="flex justify-between text-sm items-center">
-                                <span>@${integration.npmScope || integration.npmOwners[0]}</span>
+                                <span>@${integration.npmScope || integration.npmOwners[0]}${externalIcon}</span>
                                 <span class="ff-certified-tag" style="display: ${certified ? 'flex' : 'none'}">
                                     <certified-icon />
                                 </span>
@@ -321,7 +343,6 @@ Explore the list of integrations and modules available for your Node-RED project
     }
     customElements.define('integration-tile', IntegrationTile);
 </script>
-
 <div class="container m-auto text-left md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4 flex">
     <div class="catalogue-filters w-52 shrink-0 hidden md:block">
         <label>Filters</label>
@@ -351,11 +372,11 @@ Explore the list of integrations and modules available for your Node-RED project
         <ul id="integration-tiles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></ul>
         <nav id="catalog-pagination" style="display: none;" aria-labelledby="pagination" class="pagination mt-4">
             <ol class="flex flex-row w-full justify-between text-gray-600">
-                <li id="pagination-previous" class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p" onclick="changePage(-1)">Previous</li>
+                <li id="pagination-previous" class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p" onclick="changePage(-1)">PREVIOUS</li>
                 <li>
                     <span id="pagination-current">X</span> of <span id="pagination-max">Y</span>
                 </li>
-                <li id="pagination-next" class="flex md:flex-initial w-40 justify-end pr-2 ff-nav-blog-n" onclick="changePage(1)">Next</li>
+                <li id="pagination-next" class="flex md:flex-initial w-40 justify-end pr-2 ff-nav-blog-n" onclick="changePage(1)">NEXT</li>
             </ol>
         </nav>
     </div>

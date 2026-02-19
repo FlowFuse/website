@@ -247,4 +247,4 @@ This is where **FlowFuse** comes in. It takes your existing Node-RED flows and a
 
 Your flows continue to work just as they are—FlowFuse simply makes them production-ready.
 
-[Try FlowFuse free for 30 days](https://app.flowfuse.com/account/create) and see how it transforms Node-RED into a scalable, enterprise-ready platform.
+[Try FlowFuse free for 30 days]({% include "sign-up-url.njk" %}) and see how it transforms Node-RED into a scalable, enterprise-ready platform.

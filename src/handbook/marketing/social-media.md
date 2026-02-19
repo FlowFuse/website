@@ -22,7 +22,7 @@ Each content type has channels which are appropriate, this table sets out which 
 
 ## Strategy for increasing reach
 
-- Share quality content aligned with the [company strategy](/handbook/company/strategy/) and of interest to our [personas](/handbook/product/personas/#personas) and [ideal customer profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl). 
+- Share quality content aligned with the [company strategy](/handbook/company/strategy/) and of interest to our [personas](/handbook/engineering/product/personas/#personas) and [ideal customer profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl). 
 - Position ourselves as thought leaders.
 - Adapt content frequency and type to each channel.
 - Be social:

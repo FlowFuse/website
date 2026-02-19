@@ -20,7 +20,7 @@ This post gives you a vital solution. We'll show you how to connect your factory
 
 ## Basic Demo: Automating Production Data from the Shop Floor to Odoo with FlowFuse
 
-Before we start diving into how you can connect your shop floor to ERP, let's first see a simple demo. This basic demo shows how FlowFuse acts as a smart link, making sure your production line data is always accurate in your ERP. We're doing this with a Raspberry Pi running the [FlowFuse Agent](/product/device-agent/), which talks to a Siemens S7 PLC. A counter in the PLC, which ticks up every second to act like products being made, is precisely read using the [S7 protocol](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) through FlowFuse. This accurate count is then automatically sent to Odoo as the quantity for a "table leg product," keeping your inventory data always up-to-date.
+Before we start diving into how you can connect your shop floor to ERP, let's first see a simple demo. This basic demo shows how FlowFuse acts as a smart link, making sure your production line data is always accurate in your ERP. We're doing this with a Raspberry Pi running the [FlowFuse Agent](/platform/device-agent/), which talks to a Siemens S7 PLC. A counter in the PLC, which ticks up every second to act like products being made, is precisely read using the [S7 protocol](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) through FlowFuse. This accurate count is then automatically sent to Odoo as the quantity for a "table leg product," keeping your inventory data always up-to-date.
 
 This is just a simple example of what FlowFuse can do. But it has much more power! Imagine FlowFuse also checking your production orders (MOs) in your ERP to see what you need to make. It can look at your Bills of Material (BOMs) in your ERP to figure out all the parts required. If it sees you're short on something, it can automatically create purchase orders in your ERP to buy the missing parts. It can even make new manufacturing orders for components you need to build.
 
@@ -40,7 +40,7 @@ In this section, we will show you how you can connect your ERP (Odoo) with your 
 
 Before you begin, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial]({% include "sign-up-url.njk" %}).
 - **node-red-contrib-odoo-xmlrpc-filters-fields:** Ensure you have [node-red-contrib-odoo-xmlrpc-filters-fields](https://flows.nodered.org/node/node-red-contrib-odoo-xmlrpc-filters-fields) installed. This package will enable operations like reading, creating, updating, and searching data, with specific capabilities for filtering records and selecting precise fields.
 
 ### Configuring the Odoo Connection Node

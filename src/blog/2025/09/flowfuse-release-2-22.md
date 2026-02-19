@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.22: AI Copilot for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
-subtitle: "AI Copilot for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
-description: "AI Copilot for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
+title: "FlowFuse 2.22: FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
+subtitle: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
+description: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 date: 2025-09-25
 authors: ["greg-stoutenburg"]
 image: blog/2025/09/images/2.22-release.png
@@ -15,11 +15,11 @@ FlowFuse 2.22 provides more powerful development by bringing the FlowFuse Assist
 
 <!--more-->
 
-## AI Copilot for Node Editing
-![Gif showing AI Assistant in Function node](./images/inline-assist-function.gif)
-_FlowFuse Assistant at work_
+## AI Expert for Node Editing
+![Gif showing FlowFuse Expert in Function node](./images/inline-assist-function.gif)
+_FlowFuse Expert at work_
 
-We've enhanced the capabilities of the FlowFuse AI Assistant, which now provides automatic suggestions to draft and edit your code that extends to Tables nodes, Dashboard Template nodes (ui-template), and Function nodes. You can now simply start typing, and the FlowFuse Assistant will provide code for you based on your context, making the FlowFuse Assistant your AI copilot in Node-RED.
+We've enhanced the capabilities of the FlowFuse Expert, which now provides automatic suggestions to draft and edit your code that extends to Tables nodes, Dashboard Template nodes (ui-template), and Function nodes. You can now simply start typing, and the FlowFuse Assistant will provide code for you based on your context, making the FlowFuse Assistant your AI copilot in Node-RED.
 
 With this change, the FlowFuse assistant can now write HTML, CSS, SQL, Javascript, and JSON, all based on your words, and with awareness of your FlowFuse environment (like your Tables structure), cursor position, and where in your code you are editing.
 
@@ -112,7 +112,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({{ site.appURL }}/account/create) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

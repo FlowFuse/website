@@ -5,13 +5,9 @@ meta:
 
 # Strategy
 
-## Core Values
-
-Please see our [company values](/handbook/company/values/).
-
-## Messaging and communication
-
-Please see our [Messaging Framework](/handbook/marketing/messaging/).
+Please also review:
+* our [company values](/handbook/company/values/).
+* our [Messaging Framework](/handbook/marketing/messaging/).
 
 ## FlowFuse's Mission
 
@@ -118,8 +114,56 @@ with the tools they need to:
 FlowFuse uses Open-Source technologies like Node-RED and MQTT to help our
 customers being successful in remedying their problems.
 
-## Growth Strategy
+## Measuring Success
 
-FlowFuse has identified a significant market opportunity in industrial automation through systematic expansion across manufacturing, MQTT modernization, and energy sectors. Our strategic analysis reveals high-growth verticals where current market solutions fall short, creating an opening for FlowFuse to establish leadership.
-[The following document](https://docs.google.com/document/d/1MLvz70OxGldpJoL5M6CSXPANlnvQJKazetdGjlgTAe8/edit?usp=sharing) outlines our growth roadmap, detailing market analysis, competitive positioning, and implementation strategies that will guide FlowFuse's expansion over the coming years. This strategic framework balances immediate revenue opportunities with long-term market positioning to ensure sustainable growth in the industrial automation landscape.
-The complete analysis includes detailed market sizing, customer segmentation, competitive analysis, and tactical execution plans that support our vision for market leadership in underserved industrial sectors.
+There's multiple ways to align a company around business goals, and at FlowFuse
+we've identified [KPIs](#kpi). A KPI is a tool to identify problems and areas for
+improvement.
+
+### KPI
+
+A KPI, or Key Performance Indicator, is a heuristic metric for company-wide
+success. At FlowFuse we're engaged in many initiatives to grow our offering and
+assess product-market fit.
+
+We review KPIs every Tuesday as part of our recurring strategy meeting.
+At this time, we review the following KPIs:
+* Product & Engineering
+   * Engineering Time to Value (Median)
+   * Engineering Time to Value (P75)
+   * Active Node-RED Instances
+* Marketing
+   * Pipeline Generated
+* Sales
+   * cARR Projected (This Q)
+   * cARR Closed (This Q)
+   * cARR Goal (This Q)
+
+#### Annual Recurring Revenue (ARR)
+
+Now that FlowFuse has a stable and maturing product, we're trying to verify
+product-market fit. This requires sales, and ARR is a good metric to track this.
+
+Incidental revenue that's _not_ recurring does not factor into this metric, as it's
+hard to build a business on unpredictable revenue streams. Furthermore, it's usually
+harder to scale.
+
+## Strategy Meeting
+
+To maintain high velocity and accountability, the strategy team gathers every two weeks. This meeting is not for status updates; it is strictly for decision-making, unblocking strategic initiatives, and translating strategy into immediate tactics.
+
+**Meeting rules**
+1.  Pre-Read Mandatory: KPIs and the agenda must be in the doc 24 hours prior.
+2.  Exception-Based Reporting: We only discuss "Red/Yellow" metrics (blockers/risks).
+3.  [Disagree & Commit](/handbook/company/values/#disagreeandcommit): Strong debate is encouraged,
+    but once a decision is made, it's made and everyone executes as one.
+4.  The Kill List: To add a new initiative, we must explicitly define what we are stopping to free up capacity.
+
+### Meeting agenda
+
+| Time | Agenda Item | Goal | Owner |
+| :--- | :--- | :--- | :--- |
+| 00:00 - 00:05 | Quarterly OKR | Re-anchor on Quarterly OKR. | CEO |
+| 00:05 - 00:15 | [KPI](#kpi) Scoreboard | Review *only* off-track numbers (The Brutal Facts). | CEO |
+| 00:15 - 00:40 | Strategic Topic | Discuss *one* major strategic topic or signal. | Topic Owner |
+| 00:40 - 00:55 | Tactics & Kill List| Update the action list, and assign owners. Review open list of last meeting, review Say vs Do ratio. | Chief of Staff |

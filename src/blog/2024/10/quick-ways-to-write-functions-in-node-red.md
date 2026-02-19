@@ -63,12 +63,12 @@ _Image showing collection of blockly blocks that are calculating UCL and LCL_
 
 Using Blockly-based Function Nodes simplifies the creation of complex logic in Node-RED. However, a basic understanding of JavaScript is still beneficial, especially as your logic becomes more complicated. While beginners may appreciate the visual interface initially, it can become confusing when trying to implement more advanced features. Additionally, the Blockly Function Node is a modified version of the original Function Node, which may lead to differences in behavior and functionality. Nevertheless, it remains a valuable node for users looking to simplify writing function logics in Node-RED.
 
-### Using FlowFuse Assistant
+### Using FlowFuse Expert
 
-![Image showing the quick function node generation with FlowFuse Assistant](./images/flowfuse-assistant.gif){data-zoomable}
-_Image showing the quick function node generation with FlowFuse Assistant_
+![Image showing the quick function node generation with FlowFuse Expert](./images/flowfuse-ai-assistant.gif){data-zoomable}
+_Image showing the quick function node generation with FlowFuse Expert_
 
-The FlowFuse Assistant is an AI-based plugin integrated into the FlowFuse platform within the Node-RED editor, making it incredibly easy to generate complex functions using prompts.
+The FlowFuse Expert is an AI-based plugin integrated into the FlowFuse platform within the Node-RED editor, making it incredibly easy to generate complex functions using prompts.
 
 For this example, let’s use the same logic we demonstrated with Blockly:
 
@@ -83,10 +83,10 @@ Before proceeding, ensure you have updated Node-RED to the latest version on the
 6. To test it, connect an inject node containing an array of simulated temperature data, then drag two debug nodes onto the canvas. Connect one debug node to output 1 of the function node (this will display the UCL) and the other debug node to output 2 (this will display the LCL).
 7. Deploy the flow and click the inject button; both UCL and LCL will be displayed on the debug panel.
 
-Using the FlowFuse Assistant is significantly easier than Blockly, as it streamlines the process and saves you valuable time. You can articulate your goals in plain English or other languages, such as Spanish or Dutch, and the assistant generates your Function Node seamlessly. This allows you to focus more on your project objectives rather than getting bogged down in coding or block arrangements. Additionally, it provides you with the original Function Node, maintaining standard functionality.
+Using the FlowFuse Expert is significantly easier than Blockly, as it streamlines the process and saves you valuable time. You can articulate your goals in plain English or other languages, such as Spanish or Dutch, and the assistant generates your Function Node seamlessly. This allows you to focus more on your project objectives rather than getting bogged down in coding or block arrangements. Additionally, it provides you with the original Function Node, maintaining standard functionality.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Exploring%20Quick%20Ways%20to%20Write%20Complex%20Logic%20in%20Function%20Nodes%20in%20Node-RED", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Exploring%20Quick%20Ways%20to%20Write%20Complex%20Logic%20in%20Function%20Nodes%20in%20Node-RED", cta_type: "signup", cta_text: "" %}
 
 ## Conclusion 
 
-In summary, both Blockly and FlowFuse Assistant simplify writing complex logic in Node-RED, but FlowFuse is easier to use. Blockly’s visual approach can be confusing, while FlowFuse allows you to generate code by stating your goals in plain English or other languages. Although Blockly can be helpful, it often requires JavaScript knowledge. FlowFuse Assistant simplifies the process, allowing you to focus on your project.
+In summary, both Blockly and FlowFuse Expert simplify writing complex logic in Node-RED, but FlowFuse is easier to use. Blockly’s visual approach can be confusing, while FlowFuse allows you to generate code by stating your goals in plain English or other languages. Although Blockly can be helpful, it often requires JavaScript knowledge. FlowFuse Expert simplifies the process, allowing you to focus on your project.

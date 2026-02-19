@@ -20,7 +20,7 @@ FlowFuse now makes it possible to deploy business critical applications built in
 
 Additionally, we're pleased to offer a 30-day premium trial license for self-managed installs on Kubernetes. To avail of this offer, book a demo at [flowforge.com/book-demo](/book-demo).
 
-High Availability is our first [preview feature](/handbook/product/versioning/#preview-features), and your feedback is crucial. We encourage you to try out HA in your Node-RED instances and share your experiences with us. Your feedback will help us refine this feature and make it even better.
+High Availability is our first [preview feature](/handbook/engineering/product/versioning/#preview-features), and your feedback is crucial. We encourage you to try out HA in your Node-RED instances and share your experiences with us. Your feedback will help us refine this feature and make it even better.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mbDkjKhVwIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -83,7 +83,7 @@ HOME env var not set within Node-RED process [#117](https://github.com/FlowFuse/
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({{ site.appURL }}/account/create) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

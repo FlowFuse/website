@@ -201,4 +201,4 @@ What truly stands out is FlowFuse's ability to handle both legacy and modern ind
 
 FlowFuse doesn’t just help you manage topics—it streamlines collaboration, enhances system performance, and accelerates your journey toward a fully integrated, future-proof UNS.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Designing%20a%20Clear%20Topic%20Structure%20for%20Your%20UNS", cta_type: "signup", cta_text: "Looking to simplify your UNS management? Unlock the full potential of your data architecture with FlowFuse." %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Designing%20a%20Clear%20Topic%20Structure%20for%20Your%20UNS", cta_type: "signup", cta_text: "Looking to simplify your UNS management? Unlock the full potential of your data architecture with FlowFuse." %}

@@ -37,11 +37,11 @@ We will begin by monitoring a single device, such as a Raspberry Pi, collecting 
 
 Before you begin, ensure you have the following:
 
-1. **Running Node-RED Instance:** You need a running Node-RED instance on the device you want to monitor. The easiest way to set this up is with the [FlowFuse Device Agent](/product/device-agent/), which provides secure remote access, real-time collaboration, snapshots for quick recovery, DevOps tools, and device group management. With it, you can push updates to multiple devices with a single click.  
+1. **Running Node-RED Instance:** You need a running Node-RED instance on the device you want to monitor. The easiest way to set this up is with the [FlowFuse Device Agent](/platform/device-agent/), which provides secure remote access, real-time collaboration, snapshots for quick recovery, DevOps tools, and device group management. With it, you can push updates to multiple devices with a single click.  
 
 For a step-by-step installation guide, refer to the [FlowFuse Device Agent Quickstart](/docs/device-agent/quickstart/).  
 
-If you haven’t yet signed up for a FlowFuse account, [sign up now](https://app.flowfuse.com/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Monitoring%20Device%20Health%20and%20Performance%20at%20Scale%20with%20FlowFuse).
+If you haven’t yet signed up for a FlowFuse account, [sign up now]({% include "sign-up-url.njk" %}?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Monitoring%20Device%20Health%20and%20Performance%20at%20Scale%20with%20FlowFuse).
 
 1. **Required Node-RED Nodes:** To collect system data and display it on a dashboard, install the following Node-RED nodes via the [Node-RED Palette Manager](https://nodered.org/docs/user-guide/editor/palette/manager):  
 

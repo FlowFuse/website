@@ -57,7 +57,7 @@ for being is to provide the "nervous system" that connects those brains to the
 real world. It's all about managing edge deployments and ensuring a reliable flow
 of data from the edge.
 
-The [FlowFuse AI Assistant](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) is a powerful tool that helps engineers, even those
+The [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) is a powerful tool that helps engineers, even those
 who aren't expert coders, to build and manage their Node-RED flows. For instance,
 you can describe what you need in plain English and the assistant will generate
 the necessary code. It can also analyze a complex flow and explain what it does,
@@ -65,7 +65,7 @@ making it easier to maintain. Furthermore, the assistant is a huge time-saver as
 it can create realistic test data and even help you build custom dashboards to
 visualize your data.
 
-So, while AgentKit is a toolkit for building AI agents, the FlowFuse AI Assistant
+So, while AgentKit is a toolkit for building AI agents, the FlowFuse Expert
 is a tool that helps you build the applications that connect to the physical world.
 It empowers any engineer to fuse the physical with the digital by making it easier
 than ever to create the logic needed to collect, transform, and act on data from
@@ -85,7 +85,7 @@ to achieve. If your goal is to build sophisticated, AI-powered agents for your
 applications and your focus is on the digital realm, then OpenAI's AgentKit is
 the clear choice. However, if you need to connect to, manage, and extract data
 from physical devices in the real world, and you want to empower your engineers
-with an AI assistant that makes this process easier, then FlowFuse is the
+with an FlowFuse Expert that makes this process easier, then FlowFuse is the
 platform for you.
 
 In the end, these are two powerful but very different tools. AgentKit is for the
@@ -104,5 +104,5 @@ Whether you're monitoring production lines, building predictive maintenance
 systems, or implementing Industry 4.0 initiatives, FlowFuse provides the 
 infrastructure to collect, transform, and act on data from the edge.
 
-**Start building today:** [Try FlowFuse free](https://app.flowfuse.com/account/create) or  [book a demo](https://flowfuse.com/book-demo/) to 
+**Start building today:** [Try FlowFuse free]({% include "sign-up-url.njk" %}) or  [book a demo](https://flowfuse.com/book-demo/) to 
 see how we help teams manage industrial data at scale.

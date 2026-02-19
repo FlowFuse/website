@@ -53,7 +53,7 @@ With FlowFuse, you can organize your Node-RED instances into teams for improved 
 ![Immersive Editor](./images/imersive-editor.png)  
 *Image showing how FlowFuse's immersive editor simplifies managing settings and configuration within the Node-RED editor.*
 
-FlowFuse also simplifies the [monitoring and controlling of edge devices](/solutions/edge-connectivity/) through the [FlowFuse Device Agent](/product/device-agent/), which quickly connects your devices to the cloud platform and allows you to build and monitor applications remotely.
+FlowFuse also simplifies the [monitoring and controlling of edge devices](/solutions/edge-connectivity/) through the [FlowFuse Device Agent](/platform/device-agent/), which quickly connects your devices to the cloud platform and allows you to build and monitor applications remotely.
 
 ![Device Management](./images/devices.png)  
 *Image showing remote edge devices connected through the FlowFuse platform for remote monitoring and control.*
@@ -88,7 +88,7 @@ FlowFuse also enhances security with advanced settings, keeping your systems saf
 
 By simplifying system management, FlowFuse cuts costs, keeps production running smoothly, and lets your team focus on growth and innovation.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Transform%20Chaos%20into%20Control%3A%20Centralize%20Node-RED%20Management%20with%20FlowFuse", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Transform%20Chaos%20into%20Control%3A%20Centralize%20Node-RED%20Management%20with%20FlowFuse", cta_type: "signup", cta_text: "" %}
 
 ## Conclusion
 

@@ -1,5 +1,5 @@
 ---
-title: "Query Your Database with Natural Language in FlowFuse AI Assistant"
+title: "Query Your Database with Natural Language Using FlowFuse Expert"
 subtitle: "A faster, more intuitive way to get data from your tables without writing a single line of SQL."
 description: "Learn the easiest way to connect to your database and get data—no coding knowledge required."
 date: 2025-09-18
@@ -10,7 +10,7 @@ tags:
   - flowfuse
 ---
 
-Getting data from your database used to mean writing SQL queries. Not anymore. The FlowFuse AI Assistant now lets you ask for what you want in plain English and automatically generates the SQL for you in query node.
+Getting data from your database used to mean writing SQL queries. Not anymore. The FlowFuse Expert now lets you ask for what you want in plain English and automatically generates the SQL for you in query node.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ Industrial operations generate massive amounts of valuable data from sensors, eq
 
 FlowFuse already makes it simple to connect to databases and build data flows using its Query nodes. However, the need to manually write SQL queries has remained a significant barrier for many users.
 
-To address this, FlowFuse continues its mission of making industrial automation accessible to everyone, regardless of coding expertise. Features like the FlowFuse AI Assistant have already reduced complexity by enabling users to create custom functions and UI components using natural language.
+To address this, FlowFuse continues its mission of making industrial automation accessible to everyone, regardless of coding expertise. Features like the FlowFuse Expert have already reduced complexity by enabling users to create custom functions and UI components using natural language.
 
 With FlowFuse [2.21](/blog/2025/08/flowfuse-release-2-21/), this ease of use extends to database queries as well. Users can now ask questions in plain English and have SQL automatically generated, removing the last major hurdle and empowering a broader audience to gain actionable insights quickly and easily.
 
@@ -29,7 +29,7 @@ With FlowFuse [2.21](/blog/2025/08/flowfuse-release-2-21/), this ease of use ext
 Let's see how this works with a practical example. This feature combines two FlowFuse components:
 
 - **FlowFuse Tables** provides the database connectivity and Query nodes
-- **FlowFuse AI Assistant** adds the natural language processing capability that converts plain English into SQL
+- **FlowFuse Expert** adds the natural language processing capability that converts plain English into SQL
 
 Before you begin, make sure FlowFuse Tables is activated in your FlowFuse team. For more information, refer to [Getting Started with FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/). Then, import the following flow and deploy it to create a `sensor_readings` table for practice:
 
@@ -41,17 +41,17 @@ After deployment, press the "Insert simulated Data" inject button to populate yo
 
 > **Note:** FlowFuse Tables is currently available for Enterprise users only.
 
-Now, let us test the natural language querying powered by the FlowFuse AI Assistant:  
+Now, let us test the natural language querying powered by the FlowFuse Expert:  
 1. Add an Inject node to your flow  
 2. Connect it to your Query node  
 3. Open the Query node and locate the new "Assistant" codelens  
 4. Enter: "Show me all readings from today"  
-5. Click **Ask the FlowFuse AI Assistant**. The AI Assistant will process your natural language request and automatically generate the corresponding SQL query in the Query node's SQL field. Click Done.  
+5. Click **Ask the FlowFuse Expert**. The FlowFuse Expert will process your natural language request and automatically generate the corresponding SQL query in the Query node's SQL field. Click Done.  
 6. Connect a Debug node to see the results  
 7. Deploy the flow and click the Inject button to test it.
 
-![FlowFuse AI Assistant in Query Node](./images/flowfuse-ai-assistance-table-demo.gif){data-zoomable}  
-_FlowFuse AI Assistant in Query Node_
+![FlowFuse Expert in Query Node](./images/flowfuse-ai-assistance-table-demo.gif){data-zoomable}  
+_FlowFuse Expert in Query Node_
 
 ## Practical Query Examples
 
@@ -78,7 +78,7 @@ Prompt: "Average temperature per hour today"
 
 ## Advanced Query Capabilities
 
-Beyond basic queries, the FlowFuse AI Assistant can handle sophisticated analysis:
+Beyond basic queries, the FlowFuse Expert can handle sophisticated analysis:
 
 **Complex filtering:**  
 Prompt: "Show readings where temperature > 20, temperature < 25, and temperature ≠ 22"
@@ -90,12 +90,12 @@ Prompt: "Calculate standard deviation of temperature readings this month"
 
 <lite-youtube videoid="aJ8znXOn9Hc" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-These examples demonstrate how the FlowFuse AI Assistant simplifies advanced analysis, turning complex database operations into easy, natural-language requests.
+These examples demonstrate how the FlowFuse Expert simplifies advanced analysis, turning complex database operations into easy, natural-language requests.
 
 ## What's Next
 
-The FlowFuse AI Assistant now brings natural language capabilities to database queries in FlowFuse Tables. This removes the complexity of SQL, allowing industrial teams to extract insights using simple conversational commands.
+The FlowFuse Expert now brings natural language capabilities to database queries in FlowFuse Tables. This removes the complexity of SQL, allowing industrial teams to extract insights using simple conversational commands.
 
 FlowFuse's mission has always been to democratize industrial automation and reduce complexity for engineers and operational teams. As part of this commitment, more AI-powered features are on the roadmap to simplify industrial workflows even further.
 
-Ready to transform how your team works with data? [Book a demo](https://app.flowfuse.com/account/create) and see how FlowFuse makes building industrial applications simple and accessible.
+Ready to transform how your team works with data? [Book a demo]({% include "sign-up-url.njk" %}) and see how FlowFuse makes building industrial applications simple and accessible.

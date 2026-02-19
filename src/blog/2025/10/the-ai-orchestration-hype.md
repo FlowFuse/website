@@ -39,7 +39,7 @@ While the market builds excellent tools for cloud-based AI orchestration, FlowFu
 
 FlowFuse Cloud enables centralized management and coordination, while our edge capabilities allow thousands of Node-RED instances to operate intelligently at remote locations. This hybrid architecture lets you seamlessly integrate the physical and digital worlds—leveraging cloud orchestration for enterprise workflows while maintaining real-time edge intelligence where it matters most.
 
-Our FlowFuse AI Assistant simplifies the creation and management of complex logic across both cloud and edge environments, democratizing advanced automation without requiring specialized data science skills. Soon, with our upcoming AI Agent nodes, FlowFuse will enable powerful AI agents to operate seamlessly across the entire hybrid architecture, from cloud coordination to edge execution.
+Our FlowFuse Expert simplifies the creation and management of complex logic across both cloud and edge environments, democratizing advanced automation without requiring specialized data science skills. Soon, with our upcoming AI Agent nodes, FlowFuse will enable powerful AI agents to operate seamlessly across the entire hybrid architecture, from cloud coordination to edge execution.
 
 ## Conclusion: The Power of Hybrid Intelligence
 The rise of AI orchestration platforms represents an important evolution in automation technology. These tools excel in their domain and will continue to play a crucial role in digital transformation initiatives.
@@ -51,4 +51,4 @@ Choosing the right approach comes down to understanding your requirements. For d
 ## Ready to Build the Future of Industrial AI?
 FlowFuse is built for the challenges of industrial and IoT data. Whether you're implementing Industry 4.0 initiatives or building predictive maintenance systems, we provide the platform to deploy and manage intelligence across both cloud and edge environments.
 
-[Start building today: Try FlowFuse free](https://app.flowfuse.com/account/create) or [Book a demo](https://flowfuse.com/book-demo/)
+[Start building today: Try FlowFuse free]({% include "sign-up-url.njk" %}) or [Book a demo](https://flowfuse.com/book-demo/)

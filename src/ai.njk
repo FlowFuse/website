@@ -4,11 +4,11 @@ nohero: true
 imageDescription: "Plant worker interacting with an HMI"
 meta:
     title: "FlowFuse Expert: LLMs for Industrial Teams"
-    description: "Turn natural language into reliable industrial applications with an LLM-powered copilot deeply integrated into FlowFuse and Node-RED, designed for the constraints, protocols, and governance your plants require."
+    description: "Turn natural language into reliable industrial applications with FlowFuse Expert, or LLM-powered copilot, deeply integrated into FlowFuse and Node-RED, designed for the constraints, protocols, and governance your plants require."
 hero:
     title: "<span class='text-indigo-200'>FlowFuse Expert:</span> LLMs for Industrial Teams"
     description:
-        - "Turn natural language into reliable industrial applications with an LLM&#8209;powered copilot deeply integrated into FlowFuse and Node-RED. Built on Model Context Protocol (MCP), it connects AI directly to your machines, databases, and brokers—so it understands your constraints, protocols, and governance, not generic templates."
+        - "Turn natural language into reliable industrial applications with with FlowFuse Expert, our LLM-powered copilot, deeply integrated into FlowFuse and Node-RED. Built on Model Context Protocol (MCP), it connects AI directly to your machines, databases, and brokers—so it understands your constraints, protocols, and governance, not generic templates."
         - "Scale Your Industrial Applications with AI."
     buttonText: "Request a Demo"
     buttonLink: "/book-demo/"
@@ -16,11 +16,11 @@ hero:
     img: ./images/ai/ai-hero.png
     imgAlt: "FlowFuse Expert AI icon with connecting lines flowing out"
 platform:
-    title: "Meet your new <span class='text-indigo-600'>AI&#8209;Copilot</span>"
+    title: "Meet your <span class='text-indigo-600'>AI-powered</span> FlowFuse Expert"
     subtitle: "Ask what you need. Let it build the application."
     description:
         - "FlowFuse Expert is the fastest, most secure way to build industrial applications and operate at scale—now with AI powered by Model Context Protocol (MCP) that grounds every suggestion in live plant data, so it  understands your processes, systems, and governance needs in real time."
-        - "FlowFuse combines Node-RED's 5,000+ community nodes with LLM-powered copilots built on MCP and enterprise governance, so IT and OT teams can collaborate and deploy across plants without waiting on scarce developers. MCP connects AI to your live industrial data, making FlowFuse the fastest, most secure way to build industrial applications and operate at scale."
+        - "FlowFuse combines Node-RED's 5,000+ community nodes with with FlowFuse Expert, our LLM-powered copilot,  built on MCP and enterprise governance, so IT and OT teams can collaborate and deploy across plants without waiting on scarce developers. MCP connects AI to your live industrial data, making FlowFuse the fastest, most secure way to build industrial applications and operate at scale."
     image: images/ai/ai-ui.png
     imgAlt: "FlowFuse Expert showing AI-generated flow suggestions"
 solution:
@@ -36,10 +36,10 @@ solution:
           title: "Governance You Trust"
           description: "Keep humans in control with approval workflows, role-based access, audit trails, and the same enterprise-grade governance you use for all FlowFuse applications."
 ctaSection:
-    title: "With <span class='text-indigo-600'>FlowFuse AI,</span> teams can:"
+    title: "With <span class='text-indigo-600'>FlowFuse Expert,</span> teams can:"
     list:
         - "<span class='font-medium'>Generate Node-RED flows from natural language descriptions</span> of a workflow or integration, so you can connect any machine and protocol faster."
-        - "<span class='font-medium'>Draft and edit Function node code</span> (JavaScript), UI templates (HTML/CSS/JS), SQL queries, and JSON configurations using the Copilot in the editor, so you can transform and model data in any platform without starting from scratch."
+        - "<span class='font-medium'>Draft and edit Function node code</span> (JavaScript), UI templates (HTML/CSS/JS), SQL queries, and JSON configurations using the FlowFuse Expert in the editor, so you can transform and model data in any platform without starting from scratch."
         - "<span class='font-medium'>Empower Operations and Process Engineers</span> to quickly build new dashboards, widgets, and queries using plain-language descriptions of the desired views or KPIs, reducing reliance on IT support."
         - "<span class='font-medium'>Spin up LLM blueprints</span> that expose industrial data to a chat agent via Model Context Protocol (MCP), so operators and engineers can query systems in natural language and get answers grounded in live machine state, alarms, and logs—not stale documentation."
     img: ./images/ai/ai-cta.png
@@ -50,10 +50,10 @@ ctaSection:
     <div class="md:max-w-screen-lg m-auto rounded-lg mt-20 overflow-hidden relative bg-gradient-to-br from-indigo-700 to-indigo-900">
 
         <div class="absolute flex ff-image-cover left left-0 md:hidden top-0 h-full">
-            {% image hero.img, hero.imgAlt, [1200] %}
+            {% image hero.img, hero.imgAlt, [2100] %}
         </div>
         <div class="absolute flex ff-image-cover right right-0 max-md:hidden top-0 h-full">
-            {% image hero.img, hero.imgAlt, [1200] %}
+            {% image hero.img, hero.imgAlt, [2100] %}
         </div>
         <div class="relative p-8 md:max-w-[55%] max-md:text-center">
             <h1 class="text-white mb-8">{{ hero.title | safe }}</h1>
@@ -71,7 +71,7 @@ ctaSection:
                 {{freeDemoButton() }}
                 {% macro tryItOutButton(desktop=true) %}
                     <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-6{% endif %}"
-                       href="{{ site.appURL }}/account/create"
+                       href="{% include "sign-up-url.njk" %}"
                        onclick="capture('cta-try-now', {'reference': '{{ hero.buttonReference }}'})">
                         <span class="flex gap-2 uppercase items-center text-white hover:text-indigo-200">
                             Start Free Trial
@@ -106,7 +106,7 @@ ctaSection:
                 <div class="w-full h-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
                     <div class="w-full h-full bg-white ff-image-cover ff-image-rounded left">
                     {% set imageSrc = ["./", platform.image ] | join %}
-                    {% image imageSrc, imageDescription, [496] %}
+                    {% image imageSrc, imageDescription, [1200] %}
                 </div>
             </div>
         </div>
@@ -169,3 +169,4 @@ ctaSection:
         </div>
     </div>
 </div>
+

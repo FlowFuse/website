@@ -29,7 +29,7 @@ It often makes sense to deploy a full MING stack, but in some deployments, it mi
 
 FlowFuse has a built-in feature called [project link nodes](/docs/user/projectnodes/), which leverages MQTT, that allows the communication of data between FlowFuse runtimes of Node-RED. One caveat is that this MQTT broker is only available within the FlowFuse platform. What this means is there needs to be some form of translation to be done within Node-RED.  This isn’t a big deal for small deployments, because often Node-RED runtimes at the edger are collecting data from various sources that aren’t MQTT. The flow of data is as follows: 
 
-Sensor > Node-RED([FlowFuse Device Agent](/product/device-agent/)) > [MQTT Encapsulated by FlowFuse](/docs/user/projectnodes/) > Node-RED(FlowFuse Platform) > InfluxDB
+Sensor > Node-RED([FlowFuse Device Agent](/platform/device-agent/)) > [MQTT Encapsulated by FlowFuse](/docs/user/projectnodes/) > Node-RED(FlowFuse Platform) > InfluxDB
 
 !["Screenshot showing the flow of data: Sensor > Node-RED(FlowFuse Device Agent) > MQTT Encapsulated by FlowFuse > Node-RED(FlowFuse Platform) > InfluxDB"](./images/sensor-data-mqtt-node-red-dashboard-influxdb.png ""){data-zoomable}
 
@@ -64,5 +64,5 @@ FlowFuse provides built-in features, such as MQTT, backups, deployment pipelines
 
 While we believe that the MING stack is here to stay, we believe as the market matures, it should offer many different variations suitable for each customer's needs.  However, we find that the MIND offering does fill a niche in the market that may better suit your needs.  None the less, choosing FlowFuse to manage your Node-RED runtimes will ensure that your applications will be secure, scalable, and easily manageable.  Allowing your domain experts to take control and extend their knowledge bringing increased value to industrial facilities around the world.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20MIND%20stack%20with%20Node-RED%20and%20FlowFuse%20Dashboard%202.0", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20MIND%20stack%20with%20Node-RED%20and%20FlowFuse%20Dashboard%202.0", cta_type: "signup", cta_text: "" %}
 

@@ -3,7 +3,7 @@ eleventyNavigation:
   key: Firebase
   parent: Database
 meta:
-  title: Using Firebase with Node-RED
+  title: Using Firebase with Node-RED (2026 Updated)
   description: Learn how to integrate Cloud Firestore with Node-RED to build real-time event-driven applications. This guide covers Firestore setup, reading, writing, and listening to data using Node-RED.
   keywords: node-red, flowfuse, integration, firebase, cloud firestore, google firebase
 ---
@@ -180,7 +180,7 @@ The flow below demonstrates all the concepts covered in this guide. You can expl
 
 [FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually—the node sets itself up automatically.
 
-Even better, the [FlowFuse AI Assistant allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
+Even better, the [FlowFuse Expert allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
 
 Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
 

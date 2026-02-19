@@ -45,16 +45,7 @@ into this [private Google Drive directory](https://drive.google.com/drive/folder
 ## Sales Commissions
 
 FlowFuse pays out commissions to sales reps, the terms of which are to be found
-in [this template doc](https://docs.google.com/document/d/14KSf0N5H6vzUPJrpIqQGffgHk-_5OK2HeS-fuRHTSYw).
-
-### Sales Compensation Structure
-
-FlowFuse follows a balanced sales compensation model:
-- **Base/Commission Split**: 50/50 split between base salary and commission opportunity
-- **OTE Target**: FlowFuse targets a 5x OTE (On-Target Earnings) multiple for sales roles
-- **Commission Basis**: Commission is calculated based on booked new Annual Recurring Revenue (ARR)
-
-This structure ensures competitive compensation while aligning sales performance with company growth objectives.
+in the [Sales Compensation Plan](/handbook/sales/commission-plan/).
 
 ## Performance Review
 
@@ -96,7 +87,7 @@ Please note that the benefits offered may be subject to change during your emplo
 #### For everyone
 
 - [Unlimited PTO](./leave#holiday-policy)
-- [Launch Lunch](../development/releases/process#launch-lunch)
+- [Launch Lunch](../engineering/releases/process#launch-lunch)
 - [Dinner Bonus](#dinner-bonus)
 
 ##### 1Password Family
@@ -155,3 +146,123 @@ For US Employees who choose not to participate in the health insurance provided 
 ##### Canada
 
 For employees located in Canada, FlowFuse hires through Deel as Employer of Record (EOR), with benefits that may change over time. Canadian employees currently receive Manulife Bronze health coverage and a Wealthsimple pension; for the most up-to-date details, please refer to Deel.
+
+# Bonus Processing
+FlowFuse compensates some employees through bonuses tied to role-specific goals, quarterly MBOs (Management By Objectives), or company performance. Bonus eligibility and maximum amounts are defined in the employee’s contract. This guide outlines how bonuses are tracked, reviewed, approved, and paid.
+
+## Bonus Tracking
+All active bonuses must be listed in the [Employee Bonus Tracker](https://docs.google.com/spreadsheets/d/1VI3iaqkOtLGYKJ_dNshjjyYJPCxDg3pnNJT46X1URFI/edit?usp=sharing) (🔒 access only for BizzOps team members).
+
+Each manager is responsible for ensuring the BizzOps team is informed timely, before the start of a quarter, what bonus triggers and MBOs are in play, clear, measurable, and time-bound. Explicit approval from the CEO is required for each bonus structure.
+
+## Quarterly & Period-Based Bonuses (MBOs)
+For bonuses tied to quarterly or period-based MBOs:
+* MBOs must be defined at the start of the period.
+* MBOs must be communicated in writing (email is sufficient) between:
+* The manager
+* The employee
+* The CEO (cc)
+
+Bonuses will not be processed if MBOs are defined or changed after the period has started.
+
+## Bonus Review (End of Period)
+* Within 5 business days after period end, the employee sends a final MBO summary to the Manager covering:
+  * Bonus period (quarter or dates)
+  * Agreed MBO goals
+  * Results achieved per goal
+  * Completion status
+  * Supporting artifacts or links
+* The Manager sends reminders at period end and 2 business days before the deadline, if needed.
+* The Manager reviews the submission and confirms:
+  * Thresholds met
+  * Attainment percentage (if applicable)
+  * Final bonus amount for CEO approval
+
+## CEO Confirmation
+Before any bonus is processed, the manager must email the CEO confirming:
+* Employee name
+* Performance period
+* Results achieved
+* Final bonus amount
+
+Only results achieved within the defined period are considered, even if reporting is finalized later.
+
+## Processing the Bonus Payment
+Once approved in writing by the CEO:
+* Process the bonus in Deel:
+  * Contractors: add as Bonuses and Incentives
+  * EOR employees: add under Payments and Submissions
+
+* Clearly label the payment as a Bonus, including:
+  * Performance period (e.g. “Q4 2025”)
+  * Reason for payment (e.g. “Quarterly MBO attainment”)
+
+Bonuses are paid in the next payroll cycle after approval.
+
+## Sample Email — Bonus Confirmation to Employee
+
+Subject: Bonus Confirmation for [Period]
+
+Hi [Name],
+
+This email is to confirm your bonus outcome for [Quarter / Year / Period], based on the goals agreed at the start of the period.
+
+Summary:
+Agreed goals / MBOs: [brief summary]
+Results achieved: [brief summary]
+Bonus attainment: [percentage or threshold met]
+
+Based on this, your approved bonus for this period is [currency + amount]. Please reply to confirm so we can include this in the next payroll run.
+
+Best,
+[Manager Name]
+
+CC: CEO
+
+## Controls & Reminders
+Bonus processing is strictly time-bound. Managers are responsible for ensuring bonuses are defined, reviewed, approved, and submitted on time.
+
+### Mandatory Manager Reminders
+Managers must set two recurring calendar reminders for each quarter.
+
+1. Start of Quarter — Define MBOs
+Due dates:
+  * Q1: January 1
+  * Q2: April 1
+  * Q3: July 1
+  * Q4: October 1
+
+Purpose:
+* Define bonus MBOs
+* Email employee + CEO
+* Update Bonus Tracker
+
+
+2. End of Quarter — Review & Process Bonuses
+Performance period ends:
+  * Q1: March 31
+  * Q2: June 30
+  * Q3: September 30
+  * Q4: December 31
+
+Review start dates (mandatory):
+  * Q1: April 1
+  * Q2: July 1
+  * Q3: October 1
+  * Q4: January 1
+
+### Review & approval window:
+Bonus review and CEO approval must be completed within 5 business days from the review start date.
+
+Purpose:
+* Review results
+* Confirm final bonus amount
+* Email CEO for approval
+
+## Enforcement Rules
+* Bonuses not submitted by the payroll cutoff will be deferred to the next cycle or rejected.
+* Any bonus issue discovered after the period ends must be flagged as a process gap, not resolved retroactively.
+* Delays in review or approval do not justify retroactive changes to bonus criteria or amounts.
+
+
+

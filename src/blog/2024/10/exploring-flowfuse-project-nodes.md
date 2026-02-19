@@ -205,4 +205,4 @@ Now that you understand how to use FlowFuse project nodes, you can significantly
 
 FlowFuse project nodes streamline communication between Node-RED instances. By using these nodes, you can easily monitor performance, request data, and more. This makes your workflows smoother and more efficient. 
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Using%20FlowFuse%20Project%20Nodes%20for%20Faster%20and%20More%20Efficient%20Communication", cta_type: "signup", cta_text: "Streamline communication between your Node-RED instances—manage, scale, and secure them with ease to enhance industrial efficiency." %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Using%20FlowFuse%20Project%20Nodes%20for%20Faster%20and%20More%20Efficient%20Communication", cta_type: "signup", cta_text: "Streamline communication between your Node-RED instances—manage, scale, and secure them with ease to enhance industrial efficiency." %}

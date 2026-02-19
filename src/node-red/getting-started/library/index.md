@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: Node-RED Library
   parent: Getting Started
-  order: 2
+  order: 3
 meta:
    title: Node-RED Library – A Curated and Actively Maintained List of Nodes
    description: Browse the Node-RED Library for community-built nodes and integrations. FlowFuse's curated catalog offers tested, documented, enterprise-ready solutions with professional support for critical deployments.
@@ -54,7 +54,7 @@ Installed nodes appear in your palette immediately and are ready for use in your
 
 For automated deployments or when working directly on the server, you can install nodes using npm. 
 
-Navigate to your Node-RED user directory (typically `~/.node-red` or `/opt/flowfuse-device` if using [flowfuse agent](/product/device-agent/)) and run:
+Navigate to your Node-RED user directory (typically `~/.node-red` or `/opt/flowfuse-device` if using [flowfuse agent](/platform/device-agent/)) and run:
 
 ```bash
 npm install node-red-contrib-example

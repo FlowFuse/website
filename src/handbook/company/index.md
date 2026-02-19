@@ -14,6 +14,7 @@ and contains department agnostic details.
 | [Communication](/handbook/company/communication/) | How we communicate and keep everyone informed |
 | [Decisions](/handbook/company/decisions/) | Decision making in an async ready fashion is harder than in person, learn how FlowFuse does it |
 | [Board meetings](/handbook/company/board/) | Board meetings, and how they work for us |
+| [Organizational Structure](./organizational-structure.md) | Company org chart and reporting relationships |
 | [Principles](./principles.md) | |
 | [Remote work](./remote.md) | |
 | [Security](/handbook/company/security/) | |
@@ -46,7 +47,7 @@ FlowFuse's Dun (DUNS number) and Bradstreet ID is: `11-899-4742`
 
 ### NAICS code
 
-54151 - Computer Systems Design and Related Services
+541512 - Computer Systems Design and Related Services
 
 ### SOC2 Type 2 report
 
@@ -56,3 +57,8 @@ Our 2025, and at this time latest, SOC2 Type 2 report can be found [on our inter
 
 FlowFuse's tax ID (Employer Identification Number or EIN) is in the Finance vault in 1Password. Ask the CEO for our Federal EIN.
 Ask the CEO for Federal EIN 
+
+### Companies Ultimate Beneficiaries
+
+FlowFuse's Ultimate Beneficiaries is in the Company Info vault in 1Password. Ask the CEO for our Ultimate Beneficiaries list.
+

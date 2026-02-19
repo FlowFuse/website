@@ -54,6 +54,6 @@ Ready to start saving with annual billing? Log into your FlowFuse account to mak
 
 Questions about annual billing or need help choosing the right plan? Our support team is ready to help.
 
-[Try FlowFuse free →](https://app.flowfuse.com/account/create)
+[Try FlowFuse free →]({% include "sign-up-url.njk" %})
 
 

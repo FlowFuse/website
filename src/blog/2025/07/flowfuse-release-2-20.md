@@ -40,7 +40,7 @@ _GIF of Smart Suggestions in Action_
 
 Development in Node-RED is now even faster with Smart Suggestions, an agent that runs in-browser and offers intelligent flow completion for next-node recommendations. With Smart Suggestions, as you place a node, the agent will automatically calculate the most likely next node to place, and will offer suggestions for the node's configuration. It present up to 5 options, so even if the first suggestion isn't correct, it's very likely that the correct choice is only a quick keyboard shortcut away.
 
-This work extends the functionality of the in-built FlowFuse Assistant and it's MCP server that runs behind the Node-RED Editor to provide power additional development enhancements.
+This work extends the functionality of the in-built FlowFuse Expert and it's MCP server that runs behind the Node-RED Editor to provide power additional development enhancements.
  
 
 ## New Blueprint: Agentic AI with Retrieval Augmented Generation
@@ -73,7 +73,7 @@ Based on user feedback and our own review of instance performance, we have incre
 
 ## What's Next?
 
-Our development roadmap continues to focus on AI integration and enterprise data management. Upcoming releases will expand FlowFuse Tables with additional database types and analytics capabilities, while our AI Assistant will gain more sophisticated workflow automation features.
+Our development roadmap continues to focus on AI integration and enterprise data management. Upcoming releases will expand FlowFuse Tables with additional database types and analytics capabilities, while our FlowFuse Expert will gain more sophisticated workflow automation features.
 
 We're also working on enhanced Blueprint offerings and deeper integration between our AI capabilities and industrial data sources, with several exciting announcements planned for the coming months!
 
@@ -92,7 +92,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({{ site.appURL }}/account/create) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

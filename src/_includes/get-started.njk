@@ -12,7 +12,7 @@
             <p class="font-light mt-6">Our managed hosted solution, maintained and supported by the FlowFuse team. Experience flexibility, scalability, and expert assistance to drive your business forward.</p>
         </div>
         <a class="mt-4 ff-btn ff-btn--highlight uppercase inline-block self-center sm:self-start"
-            href="{{ site.appURL }}/account/create"
+            href="{% include "sign-up-url.njk" %}"
             onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>
     </div>
     <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">

@@ -53,7 +53,7 @@ Let’s start by setting up the basics before connecting Modbus RTU devices to F
 
 Before diving in, make sure you have the following ready:
 
-- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up](https://app.flowfuse.com/account/create) and [create and set up a remote instance](/blog/2025/09/installing-node-red/), and you’ll have a managed Node-RED environment running in minutes. 
+- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up]({% include "sign-up-url.njk" %}) and [create and set up a remote instance](/blog/2025/09/installing-node-red/), and you’ll have a managed Node-RED environment running in minutes. 
 - **Node-RED Modbus nodes** – Installable via the Palette Manager (`node-red-contrib-modbus`).  
 - **Modbus-enabled device** – Such as a sensor, PLC, or meter, along with its register map documentation.  
 - **Serial interface** – For example, a USB-to-RS485 converter to physically connect your Modbus devices. Connect the **A (+)** and **B (–)** terminals of the RS485 adapter to the device, add termination resistors if the line is long or has multiple devices, and note the serial port path (e.g., `/dev/ttyUSB0` on Linux or `COM1` on Windows).  
@@ -148,7 +148,7 @@ return msg;
 
 This takes the raw register, divides it by 10, and gives you a clean, human-readable temperature.
 
-**Tip:** You do not need to know JavaScript — simply use the **FlowFuse AI Assistant**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse AI Assistant for Manufacturing](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
+**Tip:** You do not need to know JavaScript — simply use the **FlowFuse Expert**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse Expert for Manufacturing](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
 
 **Best Practice:** Always keep a copy of the device’s **Register Map documentation** handy. It tells you which addresses map to which variables, and how to interpret them.
 

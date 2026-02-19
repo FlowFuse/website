@@ -44,6 +44,6 @@ And this week, we're going to tell you all about it. Stay tuned for a demo or th
 While we're at it, we are also going to unveil a new feature right on our home page: a trained FlowFuse Expert (AI) that will teach you how to build applications in FlowFuse and Node-RED!
 
 ## Try it Now
-Ready to try out these new nodes? If you're new to FlowFuse, [create a trial team](https://app.flowfuse.com/account/create). Then, head to Manage Palette (in the hamburger menu on the right side of the Node-RED editor), click Install, and in the dropdown menu, choose FlowFuse Nodes to see the catalog of nodes that are exclusive to FlowFuse customers. From here, you can install both the MCP nodes and AI ONNX nodes.
+Ready to try out these new nodes? If you're new to FlowFuse, [create a trial team]({% include "sign-up-url.njk" %}). Then, head to Manage Palette (in the hamburger menu on the right side of the Node-RED editor), click Install, and in the dropdown menu, choose FlowFuse Nodes to see the catalog of nodes that are exclusive to FlowFuse customers. From here, you can install both the MCP nodes and AI ONNX nodes.
 
 If you're an existing FlowFuse user, begin by restarting the Node-RED instance where you want to use the nodes, then follow the same instructions as above.

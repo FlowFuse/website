@@ -4,7 +4,7 @@ eleventyNavigation:
   order: 2
   parent: Getting Started
 meta:
-  title: Node-RED Port
+  title: Node-RED Port (localhost:1880)
   description: Learn how to configure Node-RED ports, change default settings, secure your installation, and set up remote access with FlowFuse.
   keywords: Node-RED port, port 1880, change Node-RED port, Node-RED security, remote access, FlowFuse, port configuration
 ---

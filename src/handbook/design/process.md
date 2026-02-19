@@ -9,7 +9,7 @@ If you want something designed or drawn, then please follow the details in
 
 ### Product design
 
-The Design process is bound by the [Development Cadence](../development/project-management#cadence).
+The Design process is bound by the [Development Cadence](../engineering/project-management#cadence).
 Work begins on formal design (mid and high-fidelity UX and visual design assets)
 two weeks prior to a release cycle beginning.
 

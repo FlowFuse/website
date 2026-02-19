@@ -241,10 +241,10 @@ sections:
 buttons: 
   cloud:
     - cta: TRY FOR FREE
-      url: https://app.flowfuse.com/account/create
+      url: sign-up-url
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-starter'})"
     - cta: TRY FOR FREE
-      url: https://app.flowfuse.com/account/create
+      url: sign-up-url
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-pro'})"
     - cta: Request a Quote
       url: /pricing/request-quote/

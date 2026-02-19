@@ -1,7 +1,8 @@
 ---
-title: "Designing Flexible Cron Schedules in FlowFuse with Node-RED"
+title: "Building a Flexible Node-RED Scheduler with Cron-Plus"
 subtitle: "Go Beyond Inject Nodes: Automate Smarter with Flexible Cron Schedules in Node-RED"
 description: Learn how to create powerful, flexible cron schedules in Node-RED using the cron-plus node within FlowFuse. Go beyond Inject nodes for smarter, time-based automation.
+lastUpdated: 2025-12-31
 date: 2025-05-15
 authors: ["sumit-shinde","stephen-mclaughlin"]
 image:  /blog/2025/05/images/cron-node-red.png
@@ -28,7 +29,7 @@ The magic of cron lies in its ability to express complex time logic in a simple,
 
 Before we start building flexible cron schedules in FlowFuse, make sure you have the following in place:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create) and learn how to create an instance in FlowFuse.
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial]({% include "sign-up-url.njk" %}) and learn how to create an instance in FlowFuse.
 - **node-red-contrib-cron-plus:** Ensure you have [node-red-contrib-cron-plus](https://flows.nodered.org/node/node-red-contrib-cron-plus) installed, It’s developed by Steve, a software engineer here at FlowFuse and one of the core maintainers of Node-RED.
 
 ## Building Scheduled Automations with cron-plus

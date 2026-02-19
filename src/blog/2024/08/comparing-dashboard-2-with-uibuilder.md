@@ -46,7 +46,7 @@ UI-Builder can be more challenging to start with, as it does not follow a low-co
 
 FlowFuse Dashboard is developed to replace the the deprecated standard Node-RED Dashboard. It retains the core concepts and UI elements but introduces more advanced options and configurations.
 
-To facilitate the transition, FlowFuse, the creator of FlowFuse Dashboard, provides a [migration service](/product/dashboard/#migration-service) that simplifies migration of flows or projects from the Node-RED Dashboard to FlowFuse Dashboard. This service helps ensure a smoother migration process with minimal disruption.
+To facilitate the transition, FlowFuse, the creator of FlowFuse Dashboard, provides a [migration service](/platform/dashboard/#migration-service) that simplifies migration of flows or projects from the Node-RED Dashboard to FlowFuse Dashboard. This service helps ensure a smoother migration process with minimal disruption.
 
 ### UI-Builder
 
@@ -236,4 +236,4 @@ FlowFuse Dashboard is well-suited for users seeking a user-friendly, low-code so
 
 UI-Builder, however, offers nice performance and customization, benefiting users with coding expertise who need highly tailored UIs. Despite its flexibility and faster load times, it requires more complex setup and migration.
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Dashboard%20vs%20UI-Builder%3A%20A%20Comprehensive%20Comparison", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Dashboard%20vs%20UI-Builder%3A%20A%20Comprehensive%20Comparison", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

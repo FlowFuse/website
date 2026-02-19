@@ -40,7 +40,7 @@ Each of these metrics is reported on weekly during our Marketing Team Meeting to
 
 ## Contact us
 
-Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack.com/archives/C05GYH95NJZ).
+Questions can be asked in the [#dept-marketing](https://flowfuse.slack.com/archives/C05GYH95NJZ).
 
 ## Further Reading
 
@@ -49,11 +49,9 @@ Questions can be asked in the [#dept-marketing](https://flowforgeworkspace.slack
 | [Blog](./blog.md) | How to write new content for the FlowFuse Blog |
 | [Social Media](./social-media.md) | Our online presence and how we engage with our community on various platforms |
 | [Trade shows](./events.md) | How to get the most out of visiting a trade fair |
-| [Videos](./videos.md) | To produce quality content in video, follow these guidelines |
 | [Website](./website.md) | How to contribute to the FlowFuse marketing website |
 | [Webinars](./webinars.md) | Webinars are a key way FlowFuse interacts with the Node-RED community. |
 | [Messaging](./messaging.md) | Marketing messaging |
 | [Emails](./email.md) | How to engage with customers through email |
 | [Lead Activation](./lead-activation.md) | Definitions of inbound vs. outbound lead sources and MQL activation process |
-| [Growth Strategy](/handbook/company/strategy/#growth-strategy) | Market analysis and growth strategy that will define the upcoming marketing actions. |
 

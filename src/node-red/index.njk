@@ -16,7 +16,7 @@ meta:
             Yes, Node-RED is widely used in real-world production environments across industries like manufacturing, energy, smart buildings, and more. While Node-RED provides a powerful low-code runtime, FlowFuse makes it easier and safer to use in professional settings. Many companies are already using FlowFuse to run Node-RED in production. FlowFuse adds everything needed to manage and scale Node-RED reliably, including user access control, version control for flows, automated deployments, remote device management, and secure team collaboration. This gives organizations the confidence to build and maintain robust industrial applications using Node-RED. 
         - question: "How do I deploy Node-RED online or in the Cloud?"    
           answer: >
-            <a href='https://app.flowfuse.com/account/create/'>FlowFuse Cloud</a> is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don't need to install it locally.
+            <a href='/get-started/'>FlowFuse Cloud</a> is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don't need to install it locally.
         - question: "What is Node-RED used for?"
           answer: >
             Node-RED can be used for a wide variety of use cases, including:
@@ -70,12 +70,12 @@ sitemapPriority: 0.8
             </p>
             <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
             <p class="md:mb-10">Ready to <span class="font-semibold">get started building with Node-RED</span>?</p>
-            <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+            <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
         </div>
         <div class="max-w-md md:w-1/2 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
             {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
         </div>
-        <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md" href="{{ site.appURL }}/account/create" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+        <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
     </div>   
 </div>
 

@@ -147,7 +147,7 @@ By default, the Node-RED editor is secured using your FlowFuse user credentials.
 
 All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates, so you can spend time on your flows rather than configuring security. Additionally, remote device access is secured through encrypted tunnels, providing comprehensive protection for your deployments.
 
-FlowFuse has a [free trial]({{ site.appURL }}/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
+FlowFuse has a [free trial]({% include "sign-up-url.njk" %}) if you'd like to see how we've made secure hosting of Node-RED easy.
 
 ## Conclusion
 

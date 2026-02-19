@@ -169,6 +169,250 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    const prompts = [
+        {
+            "title": "Build Unified Namespace Architecture",
+            "prompt": "Create a Unified Namespace (UNS) architecture using MQTT that organizes industrial data by ISA-95 hierarchy (Enterprise > Site > Area > Line > Cell), subscribe to data from multiple sources (PLCs, OPC-UA servers, REST APIs), transform it into a standardized topic structure, and publish to a central MQTT broker for use by dashboards, MES systems, and analytics platforms."
+        },
+        {
+            "title": "Convert Data to Sparkplug B",
+            "prompt": "Subscribe to industrial data from MQTT, OPC-UA servers, or PLCs, transform it into Sparkplug B format with proper namespace, data types, and birth/death certificates, and publish to MQTT broker for consumption by historians, SCADA systems like Ignition, or cloud analytics platforms."
+        },
+        {
+            "title": "Track Machine Downtime & Reasons",
+            "prompt": "Monitor PLC tags or machine signals to detect when equipment transitions to stopped state, capture downtime start/end timestamps, prompt operators to categorize downtime reasons (maintenance, changeover, material shortage, etc.), calculate total downtime duration, and log events to database or publish to MQTT for OEE analysis and reporting."
+        },
+        {
+            "title": "Calculate OEE Metrics",
+            "prompt": "Read production count, machine state, and target rate from PLC tags or MQTT topics, calculate Overall Equipment Effectiveness (OEE) using the formula: Availability × Performance × Quality, track good parts vs total parts produced, identify downtime periods, aggregate metrics by shift or day, and display results on dashboard or send to MES system for reporting."
+        },
+        {
+            "title": "Monitor PLCs & Alert on Issues",
+            "prompt": "Continuously monitor PLC connections, OPC-UA server availability, and critical machine tags, detect connection failures or tag value anomalies, send immediate notifications via email, Slack, Microsoft Teams, or SMS when issues occur, log all alerts to database with timestamps, and create recovery workflows to attempt reconnection or escalate to maintenance teams."
+        },
+        {
+            "title": "Send PLC/SCADA Data to Cloud",
+            "prompt": "Connect to PLCs via Modbus TCP, OPC-UA, or SCADA systems, read process variables and machine states at regular intervals (e.g., every 10-30 seconds), transform and batch the data, send to cloud platforms (AWS IoT Core, Azure IoT Hub, or Azure Event Hub) via MQTT or HTTPS, with local caching to handle network outages and ensure no data loss."
+        },
+        {
+            "title": "Build Production Dashboard",
+            "prompt": "Query production data from PLCs, databases, or MQTT topics, display real-time metrics including current production count, target vs actual, cycle time, machine status, and downtime, create visualizations using gauges, trend charts, and status indicators, organize by production line or cell, and deploy to operator terminals or hallway monitors for shop floor visibility."
+        },
+        {
+            "title": "Track Cycle Time per Machine",
+            "prompt": "Monitor machine cycle start and cycle complete signals from PLCs, calculate time duration for each cycle, track setup time separately from run time, aggregate cycle times by part number or production order, calculate machine utilization percentage, log data to SQL database with timestamps, and use for cost of goods sold (COGS) calculations and ERP accuracy improvement."
+        },
+        {
+            "title": "Monitor Errors & Notify Team",
+            "prompt": "Subscribe to error tags from PLCs, OPC-UA servers, or application logs, detect when error conditions occur or error codes change, parse error details and severity levels, send formatted notifications to appropriate channels (email for low priority, Slack or Teams for medium, SMS for critical), log all errors to database for trend analysis, and integrate with ticketing systems like JIRA for automated work order creation."
+        },
+        {
+            "title": "Sync MES & ERP Systems",
+            "prompt": "Query production data from MES system (work orders, production counts, quality results, downtime events), transform to match ERP data schema (SAP, Microsoft Dynamics, or other), push updates to ERP via REST API or database writes, handle bi-directional sync for work order status and inventory levels, implement error handling and retry logic, and maintain audit trail of all synchronization events."
+        },
+        {
+            "title": "Sync Database to Cloud APIs",
+            "prompt": "Poll local SQL database (PostgreSQL, MySQL, SQL Server) for new or updated records, extract production data, quality metrics, or inventory changes, transform to JSON format, send via HTTPS POST to cloud REST APIs or Azure Event Hub, use Project Link nodes to securely connect cloud FlowFuse instance to on-premise database, implement change detection to avoid duplicate sends, and handle API rate limits with queuing."
+        },
+        {
+            "title": "Display OEE Dashboard",
+            "prompt": "Subscribe to production count, downtime events, and quality data from MQTT or database, calculate real-time OEE metrics (Availability, Performance, Quality), display current OEE percentage with gauge widget, show trend charts for OEE over time (last hour, shift, day), break down OEE components to identify bottlenecks, add shift selection and date range filters, and enable PDF report generation for end-of-shift summaries."
+        },
+        {
+            "title": "Stream to AWS/Azure IoT Hub",
+            "prompt": "Connect to industrial data sources (Modbus, OPC-UA, MQTT), sample data at configured intervals, format as JSON payloads with device metadata and timestamps, publish to AWS IoT Core or Azure IoT Hub via MQTT with TLS encryption, implement device twin synchronization for configuration management, trigger cloud-side Lambda or Azure Functions for serverless data processing, and store in cloud time-series database."
+        },
+        {
+            "title": "Write PLC Data to Database",
+            "prompt": "Connect to PLC via Modbus TCP, OPC-UA, or Ethernet/IP protocol, read specified tags (temperatures, pressures, production counts, machine states), poll at regular intervals (e.g., every 10 seconds or on change), transform tag values to database-friendly format, write to SQL database (PostgreSQL, MySQL, SQL Server) using INSERT or UPSERT operations, create time-series table structure with timestamps, and implement connection pooling for performance."
+        },
+        {
+            "title": "Connect SCADA to MES",
+            "prompt": "Subscribe to SCADA system data points via OPC-UA or MQTT, extract real-time process variables, alarms, and batch data, transform to MES-compatible format (ISA-95 model), push production events to MES system (work order progress, downtime, quality checks) via REST API or database writes, enable bi-directional communication for MES to update SCADA setpoints or recipe parameters, and handle state synchronization."
+        },
+        {
+            "title": "Convert OPC-UA to MQTT",
+            "prompt": "Connect to OPC-UA server as client, browse available nodes or configure specific NodeIDs to monitor, subscribe to data changes, extract tag name, value, quality, and timestamp, map OPC-UA node hierarchy to MQTT topic structure (e.g., site/area/line/device/tag), publish to MQTT broker with QoS 1 for guaranteed delivery, preserve data types and units, and implement reconnection logic for reliability."
+        },
+        {
+            "title": "Publish PLC Data to MQTT",
+            "prompt": "Read PLC tags via Modbus, OPC-UA, or proprietary protocol, sample values at defined intervals or on change of value, format as JSON payloads with metadata (device ID, location, timestamp), publish to MQTT broker organized by topic hierarchy (enterprise/site/area/cell/tag), use retained messages for current state values, implement MQTT birth/death messages to indicate connection status, and ensure secure TLS connection."
+        },
+        {
+            "title": "Create OPC-UA Server Gateway",
+            "prompt": "Connect to devices using Modbus TCP, Modbus RTU, Ethernet/IP, or serial protocols, read device data points and map to OPC-UA address space, configure OPC-UA server node with proper namespace and node structure, expose PLC data as OPC-UA server for SCADA systems or historians to connect to, implement security (username/password or certificates), and provide standardized interface to legacy equipment."
+        },
+        {
+            "title": "Store REST API Data in Database",
+            "prompt": "Poll REST API endpoints at scheduled intervals (e.g., every 5 minutes), parse JSON or XML responses, extract relevant fields (order status, inventory levels, customer data), transform to match database schema, write to SQL database tables using INSERT or UPDATE operations, handle pagination for large datasets, implement error handling for API failures, and log API response times for monitoring."
+        },
+        {
+            "title": "Store MQTT Data in InfluxDB/Historian",
+            "prompt": "Subscribe to MQTT topics containing sensor data, production metrics, or machine states, parse message payloads (JSON or binary), extract timestamp and tag values, write to time-series database (InfluxDB, TimescaleDB, or proprietary historian) with proper tags for filtering (site, line, machine), implement batching for write efficiency, handle backpressure during high data rates, and configure retention policies for data lifecycle management."
+        },
+        {
+            "title": "Display Real-Time Sensor Dashboard",
+            "prompt": "Subscribe to temperature, pressure, flow, vibration, or other sensor data from MQTT or database queries, display real-time values with gauge widgets showing current readings and min/max ranges, create trend charts showing last hour or shift of data, add threshold indicators and color-coded alerts when values exceed limits, organize by sensor location or equipment, and update displays every 1-5 seconds for true real-time visibility."
+        },
+        {
+            "title": "Send Data to Azure Event Hub",
+            "prompt": "Collect telemetry, alerts, and production events from edge devices and PLCs, batch messages to optimize throughput, format as JSON with event metadata, publish to Azure Event Hub partition using AMQP or HTTPS protocol, implement local caching to queue messages during network outages, configure retry logic with exponential backoff, and integrate with downstream Azure services like Stream Analytics or Azure Functions for processing."
+        },
+        {
+            "title": "Build Operator Terminal Display",
+            "prompt": "Query current machine status, active work order, production count, and cycle progress from PLC or MES system, display on tablet or HMI screens at operator workstations, show work instructions that automatically advance based on production step, provide buttons for operators to log downtime reasons or quality issues, display real-time alerts and notifications, and update every few seconds to keep operators informed of production state."
+        },
+        {
+            "title": "Monitor Energy Consumption",
+            "prompt": "Read energy meter data via Modbus TCP or BACnet protocol, collect kWh consumption, power factor, current, and voltage measurements every 30-60 seconds, calculate energy usage by time period (hour, shift, day), display consumption trends with line charts, compare energy usage across machines or production lines, calculate cost based on utility rates, set threshold alerts for unusual consumption spikes, and export data for sustainability reporting."
+        },
+        {
+            "title": "Alert When Thresholds Exceeded",
+            "prompt": "Monitor sensor values (temperature, pressure, vibration, current) or KPIs (OEE, cycle time, downtime) from MQTT topics or database queries, compare against configured threshold limits (high/low warning and critical levels), detect when values exceed thresholds for sustained duration to avoid false alarms, send formatted notifications to Slack channels or Microsoft Teams with alert details, severity level, and current value, and include links to dashboards for troubleshooting."
+        },
+        {
+            "title": "Upload Data Files to S3/Azure Blob",
+            "prompt": "Export production data from local database to CSV or JSON files on scheduled intervals (hourly, daily), compress files to reduce transfer size, upload to AWS S3 bucket or Azure Blob Storage using secure credentials, organize by date-based folder structure (year/month/day), verify successful upload with checksums, delete local files after confirmed cloud storage, and trigger downstream cloud analytics pipelines or data lake ingestion."
+        },
+        {
+            "title": "Combine PLC Tags to Machine State",
+            "prompt": "Read multiple PLC tags (motor running, conveyor active, door closed, e-stop status, alarm active), apply business logic to determine overall machine state (running, idle, setup, maintenance, fault), create derived 'machine state' tag published to MQTT or written to database, implement state transition rules with minimum duration to avoid flapping, log all state changes with timestamps, and use aggregated state for OEE calculations and dashboards."
+        },
+        {
+            "title": "Track Production vs Target",
+            "prompt": "Retrieve production target from MES, ERP, or manual entry for current shift and part number, monitor actual production count from PLC trigger or part counter, calculate real-time percentage of target achieved (actual/target × 100), display on dashboard with progress bar and numeric indicator, calculate projected end-of-shift count based on current rate, alert supervisors when falling behind target (e.g., <90% by midshift), and log performance metrics to database."
+        },
+        {
+            "title": "Sync Edge to Cloud Database",
+            "prompt": "Run FlowFuse instance on edge device or factory network, collect production data locally to SQL database or InfluxDB, use FlowFuse Project Link to establish secure connection to cloud instance, periodically sync new or updated records from edge database to cloud database (AWS RDS, Azure SQL, or cloud-hosted PostgreSQL), implement incremental sync with change tracking to minimize data transfer, handle bi-directional sync if cloud sends configuration or setpoints back to edge."
+        },
+        {
+            "title": "Push ERP Data to MES",
+            "prompt": "Connect to ERP system (SAP, Microsoft Dynamics, Oracle) via REST API or database connector, query work orders, bill of materials, routing steps, and production schedules, transform ERP data structure to match MES system requirements (ISA-95 format), push to MES via API calls or database inserts, handle data mapping for part numbers, operations, and resource assignments, implement scheduled sync (every 5-15 minutes) or event-driven triggers, and log all transfers for audit trail."
+        },
+        {
+            "title": "Convert Modbus to MQTT",
+            "prompt": "Connect to Modbus TCP or Modbus RTU devices (PLCs, sensors, drives), configure register addresses to read (holding registers, input registers, coils), poll devices at regular intervals (1-10 seconds), parse register values and apply scaling/offsets to engineering units, map each register to MQTT topic using hierarchical naming (site/line/device/register), publish to MQTT broker with JSON payloads including value, unit, timestamp, and quality status, and implement device offline detection."
+        },
+        {
+            "title": "Dashboard for Multiple Production Lines",
+            "prompt": "Query production status for all machines or lines from MQTT topics or database, display grid layout with one card per machine showing current status (running/stopped/fault), production count, cycle time, and last downtime reason, color-code machines by state (green=running, yellow=idle, red=fault), auto-refresh every 5-10 seconds, provide drill-down to individual machine details, filter by department or production area, and deploy to large monitors visible from shop floor."
+        },
+        {
+            "title": "Monitor Vibration for Maintenance",
+            "prompt": "Collect vibration sensor data from IIoT gateways or data loggers via MQTT, analyze vibration frequency and amplitude, compare against baseline and threshold values to detect anomalies indicating bearing wear or imbalance, use FFT analysis or machine learning models to identify failure patterns, create alerts when vibration exceeds warning thresholds, automatically generate work orders in CMMS system, and log all vibration trends to InfluxDB for historical analysis."
+        },
+        {
+            "title": "Generate PDF Production Reports",
+            "prompt": "At end of shift, query production database for shift metrics (total production, downtime events, OEE, quality results, operator notes), populate PDF template with charts, tables, and summary statistics, include shift identifier (day/night, A/B/C crew), add company branding and formatting, generate PDF file with timestamp in filename, save to network share or send via email to supervisors and management, and archive reports to cloud storage (S3) for long-term retention."
+        },
+        {
+            "title": "Connect SCADA to Cloud",
+            "prompt": "Subscribe to SCADA system data via OPC-UA server or MQTT publish, extract process values, alarms, batch events, and operator actions, buffer data locally to handle network interruptions, transform to cloud-compatible JSON format, push to cloud platform (AWS, Azure, GCP) via HTTPS REST API or cloud-specific IoT services, implement security with TLS encryption and token-based authentication, and enable cloud-based analytics and long-term storage without impacting SCADA performance."
+        },
+        {
+            "title": "Manage Production Recipes",
+            "prompt": "Store production recipes (setpoints, parameters, steps) in database or MES system, provide UI for operators to select recipe by part number or product SKU, retrieve recipe parameters (temperatures, speeds, pressures, times), send setpoints to PLC via OPC-UA writes or Modbus register writes, verify PLC confirms receipt and parameters are applied, log recipe changes and timestamps, implement version control for recipe updates, and track which recipe was used for each production batch."
+        },
+        {
+            "title": "Monitor OPC-UA Connection Health",
+            "prompt": "Continuously monitor OPC-UA server connections, detect when client connection drops or server becomes unavailable, implement automatic reconnection with exponential backoff, send alerts via email or Slack when connection lost for more than configured threshold (e.g., 5 minutes), log connection status changes with timestamps to database, track connection uptime percentage for SLA reporting, and create dashboard showing status of all OPC-UA connections across the facility."
+        },
+        {
+            "title": "Structure Data Using ISA-95",
+            "prompt": "Organize industrial data according to ISA-95 hierarchical model: Enterprise > Site > Area > Production Line > Work Cell > Equipment, map data sources (PLCs, OPC-UA, databases) to appropriate hierarchy levels, create MQTT topic structure or database schema following ISA-95 naming (e.g., Enterprise/Site/Area/Line/Cell/Equipment/Tag), ensure production events, work orders, and material flows align with model, enable consistent data access across MES, ERP, and analytics systems."
+        },
+        {
+            "title": "Track Quality & Calculate Yield",
+            "prompt": "Monitor quality inspection results from vision systems, CMMs, or operator input terminals, log good parts count and reject count with failure codes, calculate first-pass yield (good parts / total parts × 100%), track defects by category (dimensional, cosmetic, functional), correlate quality issues with production parameters (speed, temperature) to identify root causes, display quality trends on dashboard, alert when yield drops below threshold (e.g., <95%), and integrate with MES for batch genealogy."
+        },
+        {
+            "title": "Build Andon/Alert Board",
+            "prompt": "Subscribe to machine fault signals, operator call buttons, and material shortage alerts, display active alerts on large screen visible across production floor, prioritize by severity (critical red, warning yellow, info green), show alert location (line, cell, machine), include timestamp and duration, enable operators to acknowledge or close alerts via touch interface, log all alerts to database with response times, and send notifications to supervisors for unacknowledged alerts older than threshold time."
+        },
+        {
+            "title": "Gateway Modbus to OPC-UA",
+            "prompt": "Connect to Modbus TCP or RTU devices, read holding registers and input registers, create OPC-UA server with namespace matching device type, map Modbus registers to OPC-UA nodes with proper data types and engineering units, enable SCADA systems and historians to connect via standardized OPC-UA client, implement security (username/password or certificates), and provide modern OPC-UA interface to legacy Modbus equipment without device replacement."
+        },
+        {
+            "title": "Collect LoRaWAN Sensor Data",
+            "prompt": "Receive LoRaWAN gateway data via MQTT or HTTP webhook, decode sensor payloads (temperature, humidity, pressure, GPS, battery level), validate data quality and timestamp, calculate derived values (leak detection, environmental conditions), publish processed data to central MQTT broker or write to time-series database, set up alerts for out-of-range values or low battery warnings, and create dashboard for remote monitoring of distributed sensors across facility or outdoor sites."
+        },
+        {
+            "title": "Bridge Serial Devices to MQTT",
+            "prompt": "Connect to serial devices (RS-232, RS-485) using USB-to-serial adapters or serial ports, configure baud rate, parity, and protocol (ASCII, binary), parse incoming serial data streams, extract sensor values or device status, format as JSON payloads, publish to MQTT broker organized by device ID and data type, handle bi-directional communication to send commands to serial devices, and implement error handling for communication timeouts or checksum failures."
+        },
+        {
+            "title": "Track Production Costs & Margins",
+            "prompt": "Capture actual cycle time and setup time from PLC signals, retrieve labor rates and machine hour rates from ERP, calculate actual production cost per part (labor cost + machine cost + material cost), compare against standard cost from ERP, identify variances and margin impact, track by work order or part number, aggregate costs by shift or day, display on dashboard showing profitability by product line, and export cost data to finance systems for accurate COGS calculation."
+        },
+        {
+            "title": "Bridge Bluetooth Devices to MQTT",
+            "prompt": "Scan for Bluetooth Low Energy (BLE) devices broadcasting sensor data or beacon signals, connect and pair with devices using device IDs, subscribe to BLE characteristics for temperature, humidity, proximity, or custom data, parse BLE advertisement packets or notification data, convert to JSON format with device metadata, publish to MQTT broker for integration with broader IoT platform, handle device reconnection when out of range, and manage battery-powered device sleep cycles."
+        }
+    ]
+    const INITIAL_SUGGESTIONS_COUNT = 5
+    const ADDITIONAL_SUGGESTIONS_COUNT = 10
+
+    // Populate prompt pills dynamically - pick 5 random prompts
+    const promptsWrapper = document.querySelector('.ai-prompts > .wrapper');
+    if (promptsWrapper) {
+        // Randomly select 5 prompts
+        const shuffled = [...prompts].sort(() => 0.5 - Math.random());
+        const selectedPrompts = shuffled.slice(0, INITIAL_SUGGESTIONS_COUNT);
+        function createPromptButton({appendClass, attr, text, title}) {
+            const button = document.createElement('button');
+            button.className = `${appendClass} text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600 whitespace-nowrap overflow-hidden text-ellipsis`;
+            if (attr) {
+                button.setAttribute('data-prompt', attr);
+            }
+            if (title) {
+                button.title = title;
+            }
+            button.textContent = text;
+
+            return button
+        }
+
+        selectedPrompts.forEach(prompt => {
+            promptsWrapper.appendChild(createPromptButton({
+                appendClass: 'prompt-pill',
+                attr: prompt.prompt,
+                text: prompt.title,
+                title: prompt.title
+            }));
+        });
+
+        // add the show more button
+        const showMoreButton = createPromptButton({
+            appendClass: 'show-more-pill',
+            text: 'Show more...',
+        })
+        promptsWrapper.appendChild(showMoreButton);
+
+        showMoreButton.addEventListener('click', () => {
+            // Get the remaining prompts that weren't in the initial selection
+            const remainingPrompts = prompts.filter(p => !selectedPrompts.includes(p));
+
+            // Randomly select 8 from the remaining prompts
+            const shuffledRemaining = [...remainingPrompts].sort(() => 0.5 - Math.random());
+            const additionalPrompts = shuffledRemaining.slice(0, ADDITIONAL_SUGGESTIONS_COUNT);
+
+            // Add the 8 new prompts before the "Show more..." button
+            additionalPrompts.forEach(prompt => {
+                const additionalPromptButton = createPromptButton({
+                    appendClass: 'prompt-pill',
+                    attr: prompt.prompt,
+                    text: prompt.title,
+                    title: prompt.title
+                });
+                promptsWrapper.insertBefore(additionalPromptButton, showMoreButton);
+            });
+
+            showMoreButton.classList.add('hidden');
+        })
+    }
+
     function openModal(userText) {
         // Generate new session ID for this chat session
         sessionId = crypto.randomUUID();

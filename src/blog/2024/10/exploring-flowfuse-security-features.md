@@ -25,7 +25,7 @@ Securing your Node-RED applications is essential to protect sensitive data, prop
 
 Here’s the best part- we don’t just offer default protections; we empower you to fine-tune your security defences. FlowFuse features a user-friendly interface that allows you to customize your security settings and design a strategy tailored to your needs. Rest easy knowing that we've laid a solid security foundation while giving you the flexibility to enhance your defences.
 
-If you're interested in learning more about how we safeguard your data privacy and security, we invite you to read our detailed [security statement](/product/security/). Additionally, we are proud to announce that [FlowFuse has achieved SOC 2 Type 1 compliance](/blog/2024/01/soc2/), demonstrating our commitment to maintaining the highest standards in security and data protection.
+If you're interested in learning more about how we safeguard your data privacy and security, we invite you to read our detailed [security statement](/platform/security/). Additionally, we are proud to announce that [FlowFuse has achieved SOC 2 Type 1 compliance](/blog/2024/01/soc2/), demonstrating our commitment to maintaining the highest standards in security and data protection.
 
 ### Single Sign-On (SSO) Integration
 
@@ -150,4 +150,4 @@ In conclusion, FlowFuse offers a comprehensive suite of security features design
 
 ## Get Started with FlowFuse Today!
 
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Security%20Features%20You%20Didn%E2%80%99t%20Know%20You%20Needed", cta_type: "signup", cta_text: "Ready to secure and scale your Node-RED applications?" %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Security%20Features%20You%20Didn%E2%80%99t%20Know%20You%20Needed", cta_type: "signup", cta_text: "Ready to secure and scale your Node-RED applications?" %}

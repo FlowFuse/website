@@ -1,0 +1,45 @@
+name: Sync Netlify Deployments to GitHub
+
+on:
+  status
+
+permissions:
+  deployments: write
+  statuses: read
+  contents: read
+
+jobs:
+  sync-deployment:
+    # Only run for Netlify deploy-preview status on success
+    if: |
+      github.event.context == 'netlify/flowforge-website/deploy-preview' &&
+      github.event.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub Deployment
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            // Create deployment object
+            const deployment = await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: '${{ github.event.sha }}',
+              environment: 'Preview',
+              description: 'Netlify Preview Deployment',
+              auto_merge: false,
+              required_contexts: [],
+              transient_environment: true,
+              production_environment: false
+            });
+
+            // Update deployment status
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: deployment.data.id,
+              state: 'success',
+              environment_url: '${{ github.event.target_url }}',
+              description: 'Deployed to Netlify',
+              auto_inactive: true
+            });

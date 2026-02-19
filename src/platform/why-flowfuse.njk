@@ -1,0 +1,195 @@
+---
+layout: page
+nohero: true
+heroSection:
+    image: images/why-flowfuse/flowfuse-homepage.png
+    imageMobile: images/why-flowfuse/flowfuse-homepage-mobile.png
+    imgAlt: "FlowFuse platform"
+sinergySection:
+    image: images/why-flowfuse/node-red+flowfuse.png
+    imgAlt: "Node-RED and FlowFuse sinergy"
+useCases:
+    - svgPath: "components/icons/building-office-2.svg"
+      copy: "My Node-RED flows are no longer side projects – they run real operations."
+    - svgPath: "components/icons/shield-check.svg"
+      copy: "I need security, access control, and versioning I can trust."
+    - svgPath: "components/icons/squares-2x2.svg"
+      copy: "I am tired of managing scattered Node-RED instances manually."
+    - svgPath: "components/icons/sparkles.svg"
+      copy: "I wish I had an AI copilot that actually understands my Node-RED flows."
+table:
+    - feature: "Low-code Integration"
+      flowfuse: "Yes (enhanced, AI-assisted)"
+      nodered: "Yes"
+    - feature: "Community Support"
+      flowfuse: "Enterprise Support & Community"
+      nodered: "Vibrant Community"
+    - feature: "Security & Compliance"
+      flowfuse: "Enterprise-grade, audit trails, RBAC"
+      nodered: "Basic, OS governed"
+    - feature: "Orchestration"
+      flowfuse: "Automated, centralized at scale"
+      nodered: "Manual"
+    - feature: "Application Versioning"
+      flowfuse: "Built-in, AI-summarized changes"
+      nodered: "Manual"
+    - feature: "Data Transformation & Modeling"
+      flowfuse: "AI-accelerated, structure/unify any format"
+      nodered: "Yes"
+    - feature: "Deployment & Management"
+      flowfuse: "Cloud, Edge, Hybrid—centralized"
+      nodered: "Manual"
+    - feature: "Blueprints & Prebuilt Solutions"
+      flowfuse: "Certified, customizable for production"
+      nodered: "Community driven"
+    - feature: "Support & Upgrades"
+      flowfuse: "Professional, future-proof"
+      nodered: "Community"
+meta:
+    title: "FlowFuse for your own MES"
+    description: "FlowFuse provides everything you need to build the robust Manufacturing Execution System (MES) you want, providing everything from production tracking to data analysis, with the components you need and the flexibility to customize as you see fit. Powered by Node-RED."
+    keywords: "FlowFuse, manufacturing, MES, Industry 4.0, Siemens S7, PLC, Sentron"
+    faq:
+        - question: "Is FlowFuse open source?"
+          answer: >
+            FlowFuse leverages and contributes to the open-source Node-RED community building on its foundation while delivering enterprise-ready innovation for demanding environments.
+        - question: "Why pay for FlowFuse if Node-RED is free?"    
+          answer: >
+            FlowFuse is about rapid, safe industrial scale: AI acceleration, automated governance, security, multi-team collaboration, future-proof operations.
+        - question: "Will my Node-RED flows work in FlowFuse?"
+          answer: >
+            Yes! FlowFuse is designed for seamless migration, fully compatible with existing Node-RED logic and integrations. 
+---
+<div class="nohero w-full px-6">
+    <!--Hero Content-->
+    <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
+        <div class="md:flex md:my-16 items-center md:flex-row md:justify-between mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
+            <div class="my-auto max-md:mx-auto md:w-1/2 lg:w-5/12">
+                <h1 class="w-full mt-0 md:px-0 m-auto font-medium">
+                    Why <span class='text-red-600'>FlowFuse</span>
+                </h1>
+                <div class="mb-10 flex-grow">
+                    <p>FlowFuse is the easiest, fastest, most sustainable way to build and operate applications that help you optimize industrial processes. </p>
+                    <p>From pilot to production, innovation in industry starts with the right foundation. <span class="font-semibold">Node-RED, pioneered by our own CTO Nick O’Leary,</span> empowers thousands to connect data, automate, and build ideas rapidly.</p>
+                    <p><span class="font-semibold">FlowFuse takes that power further</span>—enabling secure, governed, and AI-accelerated scale for your most critical operations.</p>                   
+                </div>
+                <!-- Mobile image -->  
+                <div class="flex md:hidden justify-center m-auto mb-10 ff-image-rounded rounded-lg drop-shadow-lg"> 
+                    <lite-youtube videoid="n9HhZCh0Ndg" params="rel=0"
+                        style="width: 472px; overflow: hidden; background-image: url('https://img.youtube.com/vi/n9HhZCh0Ndg/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                        class="rounded-xl sm:max-w-none sm:max-h-full">
+                    </lite-youtube>
+                </div>
+                <div class="flex gap-3 max-md:mx-auto max-sm:flex-col max-md:justify-center">
+                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'primary'}, {'page': 'why-flowfuse'})">GET A FREE DEMO</a>
+                    <a class="ff-btn min-h-[40px] flex gap-2" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'why-flowfuse'})">GET STARTED {% include "components/icons/arrow-right.svg" %}</a>
+                </div>
+            </div>
+            <div class="flex max-md:hidden justify-center m-auto max-w-[550px] ff-image-rounded rounded-lg drop-shadow-lg w-full">
+                <lite-youtube videoid="n9HhZCh0Ndg" params="rel=0"
+                    style="width: 472px; overflow: hidden; background-image: url('https://img.youtube.com/vi/n9HhZCh0Ndg/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                    class="rounded-xl sm:max-w-none sm:max-h-full">
+                </lite-youtube>
+            </div>
+        </div>   
+    </div>
+    <!-- Beyond the prototype -->
+    <div class="md:max-w-screen-lg mx-auto">
+        <h2 class="text-center w-full md:text-left max-w-4xl">Ready to move <span class="text-indigo-600">beyond the prototype?</span></h2>
+        <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl my-10">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6">
+                <!-- Image -->
+                <div class="flex-grow relative hidden lg:block">
+                    <div class="ff-image-cover left ff-image-rounded w-full h-full">
+                        {% image "./images/why-flowfuse/from-prototype-to-production.png", "Shop floor office", [496] %}
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {% for case in useCases %}
+                    <div class="relative w-full max-md:max-w-md mx-auto bg-indigo-50 rounded-md p-6">
+                        <div class="flex flex-row justify-center items-center gap-8 h-full">
+                            <div class="flex w-16 items-center justify-center text-indigo-600">
+                                {% include case.svgPath %}
+                            </div>
+                            <p class="w-full md:m-0 text-gray-600 font-medium mx-auto">"{{ case.copy }}"</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Node-RED + FlowFuse -->    
+<div class="w-full bg-indigo-50/50 py-12 mt-20 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <div class="md:flex items-center md:flex-row md:justify-between mx-auto max-md:text-center gap-8">
+            <div class="my-auto max-md:mx-auto md:w-1/2 lg:w-5/12">
+                <h2 class="w-full mt-0 md:px-0 m-auto">From Pilot to Production</h2>
+                <h5 class="text-indigo-600">Supercharge your Node-RED experience</h5>
+                <div class="flex mt-8 md:hidden justify-center m-auto mb-10 drop-shadow-lg max-w-lg"> 
+                    {% set image = ["./", sinergySection.image ] | join %}
+                    {% set imageAlt = sinergySection.imgAlt %}
+                    {% image image, imageAlt, [400] %}
+                </div>
+                <div class="flex-grow">
+                    <p>FlowFuse and Node-RED form a seamless continuum: start with the creativity and agility of Node-RED, and scale with enterprise-ready security, audit trails, versioning, and FlowFuse AI Expert tools FlowFuse offers.</p>
+                    <p>FlowFuse bridges the gap between what’s possible and what’s reliable at scale, empowering teams to innovate faster, build smarter, and automate with confidence—all with complete governance and operational control.</p>
+                    <p class="mb-0">Our platform is 100% compatible with Node-RED, backed by the original creator, ensuring you invest in a future-proof solution.</p>                   
+                </div>
+            </div>
+            <div class="flex max-md:hidden justify-center m-auto max-w-[550px] drop-shadow-lg w-full"> 
+                {% set image = ["./", sinergySection.image ] | join %}
+                {% set imageAlt = sinergySection.imgAlt %}
+                {% image image, imageAlt, [550] %}
+            </div>
+        </div>   
+    </div>
+</div>
+<div class="w-full px-6 pt-6">
+    <!-- FAQs -->    
+    <div class="md:max-w-screen-lg mx-auto max-sm:text-center pt-16 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap mb-12">
+        <h2 class="max-md:text-center"><span class="text-indigo-600">Why upgrade</span> to FlowFuse?</h2>
+        <!-- Table Section -->
+        <div class="relative overflow-x-auto rounded-lg mt-10 mb-20">
+            <table class="w-full">
+                <thead class="bg-indigo-100 text-left">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Feature/Capability
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Node-RED (Open Source)
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            FlowFuse (Built on Node-RED)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in table %}
+                    <tr class="even:bg-indigo-50/50 text-left">
+                        <th scope="row" class="px-6 py-4 font-medium text-indigo-400">
+                            {{ item.feature }}
+                        </th>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center">
+                                {{ item.nodered }}
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center">
+                                {{ item.flowfuse }}
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <h2 class="max-md:text-center -mb-12">
+            Frequently Asked <span class="text-indigo-600">Questions</span>
+        </h2>
+        {% include "faq.njk" %}
+    </div>    
+</div>

@@ -39,7 +39,7 @@ ctaSection:
     title: "Ready to unlock SCADA for your organization?"
     primaryUrl: "/book-demo/"
     primaryCta: "Contact us for Demo"
-    secondaryUrl: "https://app.flowfuse.com/account/create"
+    secondaryUrl: "sign-up-url"
     secondaryCta: "Try FlowFuse Now"
 meta:
     title: "FlowFuse for SCADA"
@@ -64,7 +64,7 @@ meta:
                 </div>
                 <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                     <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'scada'})">TALK TO AN EXPERT</a>
-                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="https://app.flowfuse.com/account/create" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'scada'})">GET STARTED</a>
+                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'scada'})">GET STARTED</a>
                 </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[450px]">
@@ -122,7 +122,7 @@ meta:
         <h4 class="mb-6 w-full text-center">{{ ctaSection.title }}</h4>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
             <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="{{ ctaSection.primaryUrl }}" onclick="capture('cta-contact-us-for-demo', {'position': 'secondary'}, {'page': 'scada'})">{{ ctaSection.primaryCta }}</a>
-            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{{ ctaSection.secondaryUrl }}" onclick="capture('cta-try-flowfuse-now', {'position': 'secondary'}, {'page': 'scada'})">{{ ctaSection.secondaryCta }}</a>
+            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% if ctaSection.secondaryUrl == 'sign-up-url' %}{% include "sign-up-url.njk" %}{% else %}{{ ctaSection.secondaryUrl }}{% endif %}" onclick="capture('cta-try-flowfuse-now', {'position': 'secondary'}, {'page': 'scada'})">{{ ctaSection.secondaryCta }}</a>
         </div>
     </div>
 </div>

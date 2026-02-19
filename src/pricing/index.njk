@@ -97,7 +97,7 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.appURL }}/account/create"
+                                href="{% include "sign-up-url.njk" %}"
                                 onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a>
                         </div>
                     </div>
@@ -153,7 +153,7 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{% if cloud %}{{ site.appURL }}/account/create{% else %}/contact-us{% endif %}"
+                                href="{% if cloud %}{% include "sign-up-url.njk" %}{% else %}/contact-us{% endif %}"
                                 onclick="{% if cloud %}capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'}){% else %}capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'}){% endif %}">
                                 {% if cloud %}TRY FOR FREE{% else %}CONTACT US{% endif %}
                             </a>
@@ -249,7 +249,7 @@ hubspot:
             </div>
             <p class="max-w-screen-lg m-auto mt-12 text-center md:px-9 pb-12 border-b">
                 At FlowFuse we understand that the security practises of our product
-                are important to your company. We've prepared a <a href="/product/security/">security statement</a>
+                are important to your company. We've prepared a <a href="/platform/security/">security statement</a>
                 for you to understand the choices we've made.
             </p>
         </div>

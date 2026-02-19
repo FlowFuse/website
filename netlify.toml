@@ -65,24 +65,22 @@ command = "npx @11ty/eleventy --quiet --watch"
 autoLaunch = false
 
 [build]
-command = "npm run build"
+command = "npm run build:indexed"
 publish = "_site"
 
-[[plugins]]
-package = "@algolia/netlify-plugin-crawler"
-  [plugins.inputs]
-  branches = ['live']
-  template = "hierarchical"
+[context.deploy-preview]
+command = "npm run build"
+
+[context.branch-deploy]
+command = "npm run build"
+
+[context.production.environment]
+IMAGE_BUILD_PROFILE = "warm"
 
 [[plugins]]
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
     "_site/img", # Eleventy Image Disk Cache
-    ".cache" # Remote asset cache
+    ".cache/images" # Eleventy image processing cache
   ]
-
-[[edge_functions]]
-function = "eleventy-edge"
-path = "/*"
-excludedPath = ["/*.css", "/*.png", "/*.jpg", "/*.svg", "/*.webmanifest", "/*.js", "/*.htm", "/*.html"]

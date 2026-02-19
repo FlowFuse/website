@@ -20,6 +20,8 @@
         "dev:postcss": "dotenv -v TAILWIND_MODE=watch -- npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
         "docs": "node scripts/copy_docs.js",
         "blueprints": "node scripts/copy_blueprints.js",
+        "index:algolia": "node scripts/index-algolia.js",
+        "build:indexed": "npm run build && npm run index:algolia",
         "old_dev:eleventy": "dotenv -v NODE_ENV=development -- ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
         "prod:eleventy": "npx @11ty/eleventy",
         "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js"
@@ -30,7 +32,6 @@
         "@11ty/eleventy-navigation": "^0.3.5",
         "@11ty/eleventy-plugin-rss": "^1.2.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-        "@algolia/netlify-plugin-crawler": "^1.0.15",
         "@flowforge/forge-ui-components": "^0.2.2",
         "@kevingimbel/eleventy-plugin-mermaid": "^2.0.0",
         "@tailwindcss/typography": "^0.5.10",
@@ -52,7 +53,7 @@
         "seedrandom": "^3.0.5",
         "should": "^13.2.3",
         "spacetime": "^7.4.7",
-        "tailwindcss": "^3.4.16",
+        "tailwindcss": "^3.4.19",
         "terser": "^5.9.0",
         "vanilla-cookieconsent": "^3.0.0",
         "xpath": "^0.0.32"
@@ -61,13 +62,12 @@
         "@11ty/eleventy-fetch": "^4.0.0",
         "@flowfuse/flow-renderer": "^0.5.0",
         "@netlify/blobs": "^10.3.0",
-        "@quasibit/eleventy-plugin-schema": "^1.11.0",
         "@xmldom/xmldom": "^0.8.10",
+        "algoliasearch": "^4.25.3",
         "codeowners": "^5.1.1",
         "eleventy-plugin-toc": "^1.1.5",
         "js-yaml": "^4.1.1",
         "markdown-it-attrs": "^4.1.6",
-        "netlify-cli": "^23.12.2",
         "xml-js": "^1.6.11"
     }
 }

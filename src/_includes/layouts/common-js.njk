@@ -17,12 +17,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.5.1/themes/reset-min.css" integrity="sha256-KvFgFCzgqSErAPu6y9gz/AhZAvzK48VJASu3DpNLCEQ=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.6.1"/>
 
+<!-- Algolia -->
 <script type="text/javascript">
     const searchScope = document.head.querySelector('[property="article:section"][content]')?.content ?? '';
 
     function initSearchBar() {
         const {autocomplete, getAlgoliaResults} = window['@algolia/autocomplete-js'];
-        const searchClient = algoliasearch('KWE0727TZS', '595ee07f069991380e9c3036cfad8e5e');
+        const searchClient = algoliasearch('ISKYOHIT7D', '68d4032f487d66423c37e6483e067272');
         const scopeTitles = {
             'ama': 'Ask Me Anything',
             'blog': 'Blog',
@@ -35,13 +36,27 @@
             'webinars': 'Webinars',
         }
         const placeholder = Object.prototype.hasOwnProperty.call(scopeTitles, searchScope) ? `Search in ${scopeTitles[searchScope]}...` : 'Search...'
+        
+        // Initial configuration
         const initialHitsPerPage = 5;
+        // Use a Map to store hits per page for EACH scope independently
+        const hitsPerPageMap = {}; 
+        let initialQuery = ''; 
         
-        let hitsPerPage = initialHitsPerPage
-        let initialQuery = '';
-        
-        const searchQuery = (searchClient, query, scope) => {
-            initialQuery = query
+        const createSource = (searchClient, query, scope) => {
+            let totalHits = 0;
+            
+            // Ensure we have a default value for this scope in the map
+            if (!hitsPerPageMap[scope]) {
+                hitsPerPageMap[scope] = initialHitsPerPage;
+            }
+
+            let filters;
+            if (scope.length === 0) {
+                filters = undefined;
+            } else {
+                filters = `category:${scope}`;
+            }
             
             return {
                 sourceId : scope,
@@ -49,16 +64,20 @@
                     searchClient,
                     queries: [
                         {
-                            indexName            : 'netlify_00f8cf60-997f-4c4d-9427-a97924358648_live_all',
+                            indexName            : 'prod_netlify',
                             params               : {
                                 query,
-                                hitsPerPage,
+                                hitsPerPage: hitsPerPageMap[scope], // Read specific count
                                 attributesToSnippet: ['content:50']
                             },
                             attributesToHighlight: '*',
-                            filters: scope.length === 0 ?  undefined : `category:${scope}`
+                            filters: filters
                         },
                     ],
+                    transformResponse({ hits, results }) {
+                        totalHits = results[0].nbHits;
+                        return hits;
+                    }
                 }),
                 templates: {
                     header({html}) {
@@ -86,29 +105,33 @@
                                     </div>
                                     <div class="aa-ItemContentBody">
                                         <div class="aa-ItemContentTitle">
-                                            ${components.Highlight({
-                                                hit      : item,
-                                                attribute: ['hierarchy', 'lvl0'],
-                                            })}
+                                            ${components.Highlight({ hit: item, attribute: ['hierarchy', 'lvl0'] })}
                                         </div>
-                                          <div class="aa-ItemContentSubTitle ${item.type === 'lvl0' ? 'hidden' : ''}">
-                                            ${components.Highlight({
-                                                hit      : item,
-                                                attribute: ['hierarchy', item.type],
-                                            })}
-                                          </div>
+                                        <div class="aa-ItemContentSubTitle ${item.type === 'lvl0' ? 'hidden' : ''}">
+                                            ${components.Highlight({ hit: item, attribute: ['hierarchy', item.type] })}
+                                        </div>
                                         <div class="aa-ItemContentDescription">
-                                            ${components.Snippet({
-                                                hit      : item,
-                                                attribute: 'content',
-                                            })}
+                                            ${item.content && item.content.trim().length > 0
+                                                ? components.Snippet({
+                                                    hit      : item,
+                                                    attribute: 'content',
+                                                })
+                                                : components.Snippet({
+                                                    hit      : item,
+                                                    attribute: 'description',
+                                                })}
                                         </div>
                                     </div>
                                 </div>
                             </a>`;
                     },
-                    footer({html}) {
-                        return html`<button id="load-more" class="aa-LoadMore">Load more...</button>`;
+                    footer({items, html}) {
+                        // Logic: Hide button if we are showing all available hits
+                        if (items.length === 0 || items.length >= totalHits) {
+                            return null;
+                        }
+                        // Add data-scope so we know WHICH button was clicked
+                        return html`<button type="button" data-scope="${scope}" id="load-more" class="aa-LoadMore load-more-btn">Load more...</button>`;
                     }
                 }
             };
@@ -119,37 +142,51 @@
             container: '#algolia-search',
             placeholder,
             getSources({query}) {
-                return [
-                    searchQuery(searchClient, query, searchScope)
-                ]
+                // Update initialQuery when getSources runs to track changes
+                if (query !== initialQuery) {
+                    initialQuery = query;
+                    // CHANGE 4: Reset ALL counters in the map on new search
+                    // We can simply clear the object or reset specific keys
+                    for (const key in hitsPerPageMap) {
+                        hitsPerPageMap[key] = initialHitsPerPage;
+                    }
+                }
+
+                if (searchScope === 'docs') {
+                    return [
+                        createSource(searchClient, query, 'docs'),
+                        createSource(searchClient, query, 'node-red')
+                    ];
+                }
+                return [ createSource(searchClient, query, searchScope) ]
             },
-            onStateChange({ state, prevState }) {
-                // this is a fix or workaround for untitaker/hyperlink static broken link checker plugin
-                //      the plugin can't resolve dynamic (${item.xxx}) src or href values
-                //      the plugin can't escape/ignore files, code blocks, scripts etc
+            onStateChange({ state, refresh }) {
+                // Link Fix
                 document.querySelectorAll('.aa-Panel a').forEach(item => {
                     item.href = item.getAttribute('data-href');
                 });
                 document.querySelectorAll('.aa-Panel img').forEach(img => {
                     img.src = img.getAttribute('data-src');
                 });
-
-                // reset the number of results per page if the query changes
-                if (state.query !== initialQuery) {
-                    hitsPerPage = initialHitsPerPage
-                }
                 
-                const loadMoreBtn = document.querySelector('#load-more');
-                if (loadMoreBtn) {
-                    loadMoreBtn.onclick = () => {
-                        hitsPerPage += initialHitsPerPage;
+                // Logic for "Load More" buttons
+                const loadMoreBtns = document.querySelectorAll('.load-more-btn');
+                
+                loadMoreBtns.forEach(btn => {
+                    btn.onclick = (e) => {
+                        e.preventDefault(); 
+                        e.stopPropagation();
+                        
+                        // CHANGE 5: Identify scope and increment ONLY that scope
+                        const scope = e.target.getAttribute('data-scope');
+                        if (scope) {
+                            hitsPerPageMap[scope] = (hitsPerPageMap[scope] || initialHitsPerPage) + initialHitsPerPage;
+                        }
 
-                        const input = document.querySelector('#algolia-search input');
-
-                        // Trick Autocomplete into refreshing and retrieving more hits per page
-                        input.dispatchEvent(new Event('input', { bubbles: true }));
+                        // Trigger the refresh
+                        refresh(); 
                     };
-                }
+                });
             }
         });
     }
