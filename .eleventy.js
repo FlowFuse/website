@@ -28,6 +28,9 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
 const DEPLOY_PREVIEW = process.env.CONTEXT === "deploy-preview";
+const IMAGE_BUILD_PROFILE = process.env.IMAGE_BUILD_PROFILE || "full";
+
+console.info(`[11ty] Image build profile: ${IMAGE_BUILD_PROFILE}`)
 
 module.exports = function(eleventyConfig) {
     let searchIndexItems = [];
