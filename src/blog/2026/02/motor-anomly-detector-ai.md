@@ -17,7 +17,7 @@ The problem isn't that these faults are invisible. They show up in vibration pat
 This guide walks through building a custom AI model that monitors vibration continuously, learns what normal motor behavior looks like, and flags deviations before they turn into failures deployed directly in Node-RED using FlowFuse.
 
 <lite-youtube
-  videoid=""
+  videoid="Fkv2x3Kv0lY"
   style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
   title="Motor Anomaly Detection System Built Using FlowFuse">
 </lite-youtube>
