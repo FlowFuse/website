@@ -8,13 +8,13 @@ tags:
 - flowfuse
 ---
 
-Most industrial motors don't fail suddenly. Bearings wear gradually, shafts drift out of alignment, and imbalance develops over weeks. By the time you hear the grinding noise or feel the heat, the damage is already done and you're looking at an unplanned shutdown.
+Bearing wear, shaft misalignment, and imbalance don't appear overnight. They develop over days or weeks, leaving a clear trail in vibration data long before any audible or thermal symptoms emerge. By the time a technician hears grinding or feels heat, the window for low-cost intervention has already closed.
 
 <!--more-->
 
-The problem isn't that these faults are invisible. They show up in vibration patterns long before anything breaks. The problem is that nobody's watching. Manual checks catch maybe 10% of issues, and by then you're already in reactive mode.
+The challenge isn't visibility: it's continuity. Manual spot-checks capture a fraction of developing faults, and only if the timing is lucky. What's needed is something that watches constantly, understands what normal looks like, and flags the moment something shifts.
 
-This guide walks through building a custom AI model that monitors vibration continuously, learns what normal motor behavior looks like, and flags deviations before they turn into failures deployed directly in Node-RED using FlowFuse.
+This guide walks through building exactly that: a custom AI model that learns the healthy vibration signature of your motor, detects deviations in real time, and integrates directly into Node-RED using FlowFuse with no separate ML infrastructure required.
 
 <lite-youtube
   videoid="Fkv2x3Kv0lY"
@@ -24,74 +24,105 @@ This guide walks through building a custom AI model that monitors vibration cont
 
 ## How It Works
 
-An accelerometer on the motor continuously captures vibration across three axes and publishes batches of raw readings to an MQTT broker every half-second. A Node-RED flow picks these up and extracts 33 statistical features per batch — covering energy, peak forces, shape, and distribution across all three axes — then feeds them into a trained autoencoder.
+An accelerometer mounted on the motor captures vibration across three axes (X, Y, Z) and publishes batches of raw readings to an MQTT broker every half-second. A Node-RED flow subscribes to those readings, extracts 33 statistical features per batch (covering energy, peak forces, shape, and distribution across all three axes) and passes them to a trained autoencoder.
 
-An [autoencoder](https://en.wikipedia.org/wiki/Autoencoder) compresses input through a bottleneck layer and reconstructs it on the other side (`Input(33) → Dense(16) → Dense(8) → Dense(16) → Output(33)`). Trained exclusively on healthy motor data, it learns to reconstruct normal vibration patterns with low error. When something changes — a bearing starts to wear, alignment drifts, imbalance builds — the pattern shifts, reconstruction error rises, and the system flags an anomaly. This approach works because you almost certainly don't have examples of every fault mode, but you do have examples of normal operation.
+### Why an Autoencoder?
+
+An [autoencoder](https://en.wikipedia.org/wiki/Autoencoder) is a neural network trained to compress its input and then reconstruct it. The architecture used here is:
+
+```
+Input (33) → Dense (16) → Dense (8) → Dense (16) → Output (33)
+```
+
+The bottleneck layer (8 nodes) forces the model to learn a compact representation of the input. When trained exclusively on healthy motor data, the model learns to reconstruct normal vibration patterns with very low error. When conditions change (a bearing begins to wear, alignment drifts, imbalance develops) the vibration signature shifts, reconstruction error rises, and the system flags an anomaly.
+
+This approach is well-suited to industrial use because you almost certainly have abundant examples of normal operation, but few or no labeled examples of specific fault modes. You don't need to know what failure looks like; you only need to define what normal looks like.
 
 ## Building the System
 
-The implementation has three main stages: setting up the hardware to collect vibration data, training the autoencoder model on normal operation, and deploying the trained model in Node-RED for real-time inference.
+The implementation has three stages: setting up hardware to collect vibration data, training the autoencoder on normal operation, and deploying the trained model in Node-RED for real-time inference.
 
-### Part 1: Data Requirements
+## Part 1: Hardware and Data Requirements
 
-This guide assumes you already have a vibration sensor publishing batches of acceleration readings (x, y, z axes) at regular intervals. For this guide, we used an ESP32 wired to an ADXL345 accelerometer if your setup differs, the rest of the steps remain the same as long as your sensor publishes the same payload format.
+This guide assumes you already have a vibration sensor publishing batches of acceleration readings across X, Y, and Z axes at regular intervals. The examples were built using an ESP32 wired to an ADXL345 accelerometer. If your hardware differs, the rest of the steps remain unchanged as long as your sensor publishes the same payload format.
 
-#### Expected Payload Format
+### Expected Payload Format
 
-Each message contains a half-second snapshot of motor vibration. The sensor captures 256 measurements per axis and packages them into a single JSON payload:
+Each MQTT message contains a half-second snapshot of motor vibration. The sensor captures 256 measurements per axis and packages them into a single JSON payload:
 
 ```json
 {
   "motor_id": "motor-01",
   "ts": 1718000000000,
-  "x": [0.12, 0.11, 0.13, 0.14, ...],   // 256 acceleration readings
-  "y": [0.04, 0.05, 0.04, 0.03, ...],   // 256 acceleration readings
-  "z": [0.98, 0.97, 0.99, 0.96, ...]    // 256 acceleration readings
+  "x": [0.12, 0.11, 0.13, 0.14, ...],
+  "y": [0.04, 0.05, 0.04, 0.03, ...],
+  "z": [0.98, 0.97, 0.99, 0.96, ...]
 }
 ```
 
-At 500 Hz sampling, those 256 values represent roughly half a second of continuous vibration data across three axes. This batching approach is important because it gives the AI model enough context to detect patterns. A single data point means nothing, but 256 points reveal the signature of how the motor is actually behaving.
+At 500 Hz sampling, 256 values represent roughly half a second of continuous vibration. This batching approach matters because it gives the AI model enough context to detect patterns: a single data point is meaningless, but 256 points reveal the behavioral signature of how the motor is actually running.
 
-> **If your sensor uses different settings:** The feature extraction math works regardless of sample count or sampling rate — just update the number of samples per batch in your sensor firmware to match what you publish. If your sensor samples at 200 Hz and sends 128 values per batch, each window represents 640 ms instead of 500 ms. The model doesn't care about absolute timing, only the shape of the vibration signature.
+The `motor_id` and `ts` fields are ignored by the model and can be omitted or renamed without effect.
 
-#### MQTT Broker
+> **If your sensor uses different settings:** The feature extraction math works regardless of sample count or sampling rate. If your sensor samples at 200 Hz and sends 128 values per batch, each window represents 640 ms instead of 500 ms; the model doesn't care about absolute timing, only the shape of the vibration signature. Aim for at least 100–200 ms of data per window; anything shorter may not carry enough signal for reliable detection.
 
-You'll need an MQTT broker to route messages between the sensor, the training script, and Node-RED. Make sure your sensor is publishing to a consistent MQTT topic so Node-RED can subscribe and process the incoming data.
+### MQTT Broker
 
-> **Tip:** If you're using [FlowFuse](/) for enterprise Node-RED, a built-in MQTT broker is available on **Pro** and **Enterprise** tiers no external setup required. [Contact us](/contact-us) for more information.
+You'll need an MQTT broker to route messages between the sensor, the training script, and Node-RED. Make sure your sensor is publishing to a consistent topic so all three can stay in sync.
 
-### Part 2: Training the Autoencoder
+> **Tip:** If you're using [FlowFuse](/) for enterprise Node-RED, a built-in MQTT broker is available on **Pro** and **Enterprise** tiers with no external setup required. [Contact us](/contact-us) for more information.
 
-Before deploying anything in Node-RED, you need a trained model that understands what normal motor vibration looks like. This is done using a single Python script that connects to your MQTT broker, collects vibration data while the motor runs normally, and automatically trains and exports the model when you're done.
+## Part 2: Training the Autoencoder
 
-#### Prerequisites
+Before deploying anything in Node-RED, you need a trained model that understands what normal motor vibration looks like. This is done with a single Python script that connects to your MQTT broker, collects vibration data while the motor runs normally, then automatically trains and exports the model when you're done.
 
-Create and activate a virtual environment. The steps below were tested on a Mac (Apple Silicon) running Python 3.11 adapt as needed for your system:
+### Prerequisites
+
+**System requirements:** Python 3.11 or later. The steps below were tested on macOS (Apple Silicon); adapt as needed for Linux or Windows.
+
+Create and activate a virtual environment:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-> **Note:** On Windows, replace `source venv/bin/activate` with `venv\Scripts\activate`.
+> **Windows:** Replace `source venv/bin/activate` with `venv\Scripts\activate`.
 
-Then install the dependencies:
+Install dependencies:
 
 ```bash
 pip3 install numpy paho-mqtt torch onnx onnxruntime scikit-learn
 ```
 
-#### Collect and Train
+### Configuration
 
-Create a file called `train_model.py`. This script subscribes to your MQTT broker, collects vibration data while the motor runs normally, and automatically trains the autoencoder when you press Ctrl+C.
+All setup lives in a single configuration block at the top of the script. Before running, update these variables to match your environment:
 
-> **Important:** Start the motor first, then run the script. The model needs to learn what normal running vibration looks like — collecting data with the motor stopped or barely running will produce a model that scores idle conditions as normal and fails to detect anomalies.
+| Variable | Description |
+|---|---|
+| `BROKER` | Hostname or IP of your MQTT broker |
+| `PORT` | `1883` for plain MQTT, `8883` for TLS |
+| `USERNAME` | Broker username. Leave empty `""` if not required |
+| `PASSWORD` | Broker password. Leave empty `""` if not required |
+| `CLIENT_ID` | Any unique string identifying this client |
+| `TOPIC` | The MQTT topic your sensor publishes to |
+| `MIN_WINDOWS` | Minimum samples to collect before training (default: 300) |
+| `MIN_STD` | Minimum standard deviation floor that prevents near-constant features from skewing normalisation (default: 0.1) |
+| `CLIP` | Hard clamp applied after normalisation to prevent extreme values (default: 5.0) |
+| `EPOCHS` | Number of training epochs (default: 200) |
+| `LEARNING_RATE` | Adam optimizer learning rate (default: 0.001) |
+| `THRESHOLD_SIGMA` | Multiplier for threshold calculation: `mean + N × std` of training errors (default: 3) |
 
-Before running, update the six variables at the top of the script to match your broker and sensor topic. The comments next to each variable explain what to set.
+> **Threshold tuning:** The default `mean + 3σ` threshold is a solid starting point, but every motor environment is different. If you see too many false positives during normal operation, increase `THRESHOLD_SIGMA`. If faults are being missed, decrease it. You can also edit `threshold.json` directly after training without rerunning the script.
+
+### Collect and Train
+
+Create a file called `train_model.py` and paste the following. **Start the motor first, then run the script.** The model needs to learn what running vibration looks like. Collecting data with the motor stopped or barely loaded will produce a model that treats idle conditions as normal and misses real anomalies.
 
 ```python
 """
-Motor Vibration Anomaly Detection — Data Collection + Training
+Motor Vibration Anomaly Detection: Data Collection and Training
 """
 
 import json
@@ -106,18 +137,22 @@ from onnx import numpy_helper, TensorProto, helper
 import paho.mqtt.client as mqtt
 from paho.mqtt.client import CallbackAPIVersion
 
-# ── Update these to match your setup ────────────────────────────────────────
-BROKER    = "broker.flowfuse.cloud"          # Your MQTT broker address or IP
-PORT      = 1883                             # 1883 for plain MQTT, 8883 for TLS
-USERNAME  = "aimodel@yeONmjGYBj"            # Leave as "" if broker has no auth
-PASSWORD  = "30304499"                       # Leave as "" if broker has no auth
-CLIENT_ID = "aimodel@yeONmjGYBj"            # Any unique string for this client
-TOPIC     = "factory/motor-01/vibration/raw" # Must match the topic your sensor publishes to
-# ────────────────────────────────────────────────────────────────────────────
+# ── Configuration ────────────────────────────────────────────────────────────
+BROKER         = "broker.example.com"            # Your MQTT broker address or IP
+PORT           = 1883                            # 1883 for plain MQTT, 8883 for TLS
+USERNAME       = ""                              # Leave as "" if broker has no auth
+PASSWORD       = ""                              # Leave as "" if broker has no auth
+CLIENT_ID      = "motor-trainer-01"             # Any unique string for this client
+TOPIC          = "factory/motor-01/vibration/raw" # Must match your sensor's publish topic
 
-MIN_WINDOWS = 300   # Minimum samples before training
-MIN_STD     = 0.1   # Prevents near-constant features from exploding normalisation
-CLIP        = 5.0   # Hard clip after normalisation
+# ── Training parameters ───────────────────────────────────────────────────────
+MIN_WINDOWS    = 300    # Minimum samples before training is allowed
+MIN_STD        = 0.1    # Prevents near-constant features from exploding normalisation
+CLIP           = 5.0    # Hard clip applied after normalisation
+EPOCHS         = 200    # Number of training epochs
+LEARNING_RATE  = 1e-3   # Adam optimiser learning rate
+THRESHOLD_SIGMA = 3     # Threshold = mean + N * std of training reconstruction errors
+# ─────────────────────────────────────────────────────────────────────────────
 
 training_data = []
 stop_flag = [False]
@@ -168,16 +203,16 @@ def on_message(client, userdata, msg):
         payload = json.loads(msg.payload.decode())
         training_data.append(featurize(payload))
         n = len(training_data)
-        print(f"  Collected {n} windows")
+        print(f"  Collected {n} windows", end="\r")
     except Exception as e:
-        print(f"\nError: {e}")
+        print(f"\nError parsing message: {e}")
 
 def train_and_export():
     N = 33
     print(f"\n\nCollected {len(training_data)} windows. Starting training...")
     X = np.array(training_data, dtype=np.float32)
 
-    # Scaler with minimum std floor to prevent normalisation explosion
+    # Normalisation with minimum std floor
     mean = X.mean(axis=0)
     std  = X.std(axis=0)
 
@@ -194,7 +229,7 @@ def train_and_export():
         json.dump(scaler, f, indent=2)
     print("  Saved scaler_params.json")
 
-    # Autoencoder
+    # Autoencoder definition
     class Autoencoder(nn.Module):
         def __init__(self, n):
             super().__init__()
@@ -210,32 +245,33 @@ def train_and_export():
             return self.decoder(self.encoder(x))
 
     model   = Autoencoder(N)
-    opt     = torch.optim.Adam(model.parameters(), lr=1e-3)
+    opt     = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
     loss_fn = nn.MSELoss()
     data_t  = torch.tensor(X_norm, dtype=torch.float32)
 
     model.train()
-    for epoch in range(1, 201):
+    for epoch in range(1, EPOCHS + 1):
         opt.zero_grad()
         loss = loss_fn(model(data_t), data_t)
         loss.backward()
         opt.step()
-        if epoch % 40 == 0:
-            print(f"  Epoch {epoch}/200  loss={loss.item():.6f}")
+        if epoch % (EPOCHS // 5) == 0:
+            print(f"  Epoch {epoch}/{EPOCHS}  loss={loss.item():.6f}")
 
-    # Calculate threshold as mean + 3 standard deviations of training errors
+    # Calculate threshold
     model.eval()
     with torch.no_grad():
         recon  = model(data_t).numpy()
         errors = np.mean((recon - X_norm) ** 2, axis=1)
-        thresh = float(errors.mean() + 3 * errors.std())
+        thresh = float(errors.mean() + THRESHOLD_SIGMA * errors.std())
 
     with open("threshold.json", "w") as f:
         json.dump({"threshold": thresh}, f, indent=2)
-    print(f"  Threshold (mean+3σ): {thresh:.6f}")
+    print(f"  Threshold (mean+{THRESHOLD_SIGMA}σ): {thresh:.6f}")
     print("  Saved threshold.json")
 
-    # Export to ONNX (manual build to avoid version conflicts)
+    # Export to ONNX
+    # Built manually to avoid version conflicts between PyTorch and ONNX exporters
     layers   = [("encoder.0","enc0"),("encoder.2","enc2"),
                 ("decoder.0","dec0"),("decoder.2","dec2")]
     has_relu = [True, True, True, False]
@@ -268,15 +304,15 @@ def train_and_export():
     onnx.save(proto, "motor_autoencoder.onnx")
     print("  Exported motor_autoencoder.onnx")
 
-    # Sanity check — verify normal data scores below threshold
+    # Sanity check
     sess = ort.InferenceSession("motor_autoencoder.onnx")
     out  = sess.run(None, {"features": X_norm[:5].astype(np.float32)})[0]
     mse  = float(np.mean((out - X_norm[:5]) ** 2))
     print(f"\n  Sanity MSE (5 normal samples): {mse:.6f}  threshold: {thresh:.6f}")
     if mse < thresh:
-        print("  ✓ Model correct — normal data below threshold.")
+        print("  ✓ Model correct , normal data scores below threshold.")
     else:
-        print("  ⚠ Sanity MSE above threshold — collect more data and retrain.")
+        print("  ⚠ Sanity MSE above threshold , collect more data and retrain.")
 
     print("\nDone. Copy these 3 files to your Node-RED server:")
     print("  motor_autoencoder.onnx  scaler_params.json  threshold.json")
@@ -300,33 +336,39 @@ client.connect(BROKER, PORT, keepalive=60)
 client.loop_forever()
 ```
 
-Let it collect for 5–10 minutes (aim for 300+ windows), then press **Ctrl+C once** and wait. The script will automatically train the model and export three files:
+Let it collect for 5–10 minutes (aim for 300+ windows), then press **Ctrl+C once** and wait. The script will train the model and export three files:
 
-- `motor_autoencoder.onnx` — the trained model in a portable format
-- `scaler_params.json` — the scaling parameters used to normalise input data
-- `threshold.json` — the reconstruction error threshold above which a reading is flagged as anomalous
+- `motor_autoencoder.onnx` , the trained model in a portable, runtime-agnostic format
+- `scaler_params.json` , the scaling parameters used to normalise input features
+- `threshold.json` , the reconstruction error value above which a reading is flagged as anomalous
 
-> **Tip:** Watch for the sanity check output at the end. If it shows `✓ Model correct`, the model is working. If it shows a warning, collect more data with the motor running and retrain.
+> **Sanity check:** Watch the output at the end. `✓ Model correct` means the model correctly scores normal data below the threshold. A warning means you should collect more data with the motor under its typical load and retrain.
 
-### Part 3: Deploying in Node-RED
+### When to Retrain
 
-The hard part is done. The model knows what healthy looks like now it's time to put it on watch duty. This section builds the Node-RED flow that runs continuously, scoring every vibration payload in real time and raising the alarm the moment something looks wrong.
+The model captures what normal looks like at the time of training. Plan to retrain after any significant change to the motor's operating conditions: a maintenance overhaul, a change in load profile, a new mounting position, or seasonal temperature shifts that affect the vibration baseline. The process is identical , run the script again with the motor under its new normal conditions, replace the three output files, and restart the Node-RED flow.
 
-#### Installing the AI Nodes
+## Part 3: Deploying in Node-RED
 
-FlowFuse provides a dedicated AI nodes package for Node-RED that includes ONNX runtime support, exactly what you need to load and run your trained model. Install it from the palette manager:
+The model now knows what healthy looks like. This section builds the Node-RED flow that runs continuously, scores every incoming vibration batch in real time, and raises an alert the moment something shifts.
 
-1. Open Node-RED Editor and go to **Menu → Manage Palette**
+### Installing the AI Nodes
+
+FlowFuse provides a dedicated AI nodes package for Node-RED that includes ONNX runtime support.
+
+> **Note:** These nodes are only available to FlowFuse users. If you don't have an account, [get started here](/get-started/) and follow the steps to [run the device agent](/blog/2025/09/installing-node-red/).
+
+1. Open the Node-RED editor and go to **Menu → Manage Palette**
 2. Search for `@flowfuse-nodes/nr-ai-nodes`
 3. Click **Install**
 
-Once installed, you will see new nodes added to the palette under the FlowFuse AI category. For this guide, we will be using the ONNX node.
+Once installed, you will see new nodes in the palette under the FlowFuse AI category. This guide uses the **onnx** node.
 
 ![FlowFuse AI nodes visible in the Node-RED palette under the FlowFuse AI category](./images/ai-nodes.png "FlowFuse AI nodes visible in the Node-RED palette under the FlowFuse AI category")
 
-#### Loading the Model Files
+### Loading the Model Files
 
-Before building the flow, place your three model files somewhere Node-RED can access them. The path below is the default for FlowFuse Device Agent deployments:
+Place your three model files in the FlowFuse Device Agent directory before building the flow:
 
 ```bash
 sudo mkdir -p /opt/flowfuse-device/models
@@ -335,25 +377,19 @@ sudo cp scaler_params.json /opt/flowfuse-device/models/
 sudo cp threshold.json /opt/flowfuse-device/models/
 ```
 
-> **If you're running plain Node-RED** (not via FlowFuse Device Agent), choose any directory your Node-RED process can read, such as `/home/pi/models/` on a Raspberry Pi or `C:\nodered\models\` on Windows. Just update the file paths in the function node and ONNX node configuration to match wherever you place the files.
+### Building the Inference Flow
 
-#### Building the Inference Flow
-
-The flow has five stages: receive the payload, extract features, scale and prepare, run inference, and score the result. Function nodes are used only where the math genuinely requires it.
+The flow has five stages: receive the payload, extract features, scale and prepare, run inference, and score the result.
 
 **1. Subscribe to MQTT**
 
-Add an mqtt-in node and configure it with the broker where your data is being published. Subscribe to the same topic that your sensor is publishing to — this must match the `TOPIC` value you used in `train_model.py`.
+Add an **mqtt-in** node and configure it to connect to the same broker and topic used during training. Set the output to auto-detect so the JSON payload is parsed automatically.
 
-Set the output to auto-detect so the JSON payload is parsed automatically. No separate JSON node is required.
-
-If you are using the built-in FlowFuse MQTT broker, use the [FlowFuse MQTT nodes](/node-red/flowfuse/mqtt/). These nodes automatically connect to the broker when you drag them into the flow. Just enter the topic to subscribe.
+If you are using the built-in FlowFuse MQTT broker, use the [FlowFuse MQTT nodes](/node-red/flowfuse/mqtt/) , these connect automatically when dragged into the flow.
 
 **2. Extract Features**
 
 Add a **function** node. In the **Setup** tab, add the module `fs`. Then paste the following into the **On Message** tab:
-
-> **If you changed the model file path**, update the two `readFileSync` paths in this function to match your chosen directory.
 
 ```javascript
 function extractFeatures(sig) {
@@ -377,6 +413,8 @@ function extractFeatures(sig) {
     ];
 }
 
+// Scaler and threshold are cached in flow context after the first message.
+// If you update the model files, restart the Node-RED flow to reload them.
 if (!flow.get('scaler')) {
     const sc = JSON.parse(fs.readFileSync('/opt/flowfuse-device/models/scaler_params.json'));
     const th = JSON.parse(fs.readFileSync('/opt/flowfuse-device/models/threshold.json'));
@@ -410,22 +448,22 @@ msg.threshold = flow.get('threshold');
 return msg;
 ```
 
-This function extracts 11 time-domain features per axis (33 total), loads the scaler on first run, and normalises the feature vector before passing it to the model. The `MIN_STD` floor and `±CLIP` clamp prevent near-constant features from producing extreme values when they vary slightly — a common cause of false positives with vibration sensors.
+This function extracts 11 time-domain features per axis (33 total), loads the scaler on first run, and normalises the feature vector. The `MIN_STD` floor and `±CLIP` clamp mirror the values used during training and prevent near-constant features from producing extreme values, which are a common source of false positives with vibration sensors.
 
-> **Note:** The scaler and threshold are cached in flow context after the first message, so the files are only read once. If you update the model files, restart the Node-RED flow to reload them.
+> **If you changed the model file path**, update the two `readFileSync` paths to match your chosen directory.
 
 **3. Run the Model**
 
 Add an **onnx** node and configure it:
 
-- **Model path:** `/opt/flowfuse-device/models/motor_autoencoder.onnx` (update this if you used a different directory)
+- **Model path:** `/opt/flowfuse-device/models/motor_autoencoder.onnx`
 - **Input:** `msg.payload`
 
-The autoencoder compresses the 33-feature input through its bottleneck and reconstructs it on the other side. The output tensor is accessible in the next node as `msg.payload.add_dec2`.
+The autoencoder compresses the 33-feature input through the bottleneck and reconstructs it on the output side. The result tensor is accessible in the next node as `msg.payload.add_dec2`.
 
 **4. Score the Reconstruction Error**
 
-Add a second **function** node and paste the following:
+Add a second **function** node:
 
 ```javascript
 if (!context.get('initialized')) {
@@ -453,21 +491,21 @@ msg.payload       = { anomaly_score: smoothed, threshold, is_anomaly: msg.is_ano
 return msg;
 ```
 
-This function computes the mean squared error between the model's reconstruction and the original normalised input, applies a 10-window rolling average to reduce sensitivity to transient spikes, and classifies the result as `NORMAL`, `WARNING`, or `CRITICAL`.
+This function computes mean squared error between the model's reconstruction and the normalised input, applies a 10-window rolling average to reduce sensitivity to transient spikes, then classifies the result as `NORMAL`, `WARNING`, or `CRITICAL`.
 
-> **Recovery time:** After an anomaly clears, the score returns to normal once the rolling window fills with healthy readings — typically 10 × your publish interval. If your sensor publishes every 500 ms, recovery takes around 5 seconds. Reduce the history window size for faster recovery, or increase it for fewer false alarms.
+> **Recovery time:** After an anomaly clears, the score returns to normal once the rolling window fills with healthy readings , typically 10 × your publish interval. At 500 ms publishing, that's roughly 5 seconds. Reduce the history window size for faster recovery; increase it to suppress false alarms.
 
-Once done, deploy the flow. After deployment, it should look like the image below:
+Once deployed, the flow should look like this:
 
 ![Completed Node-RED inference flow showing MQTT input, feature extraction function node, ONNX node, and anomaly scoring function node](./images/flow.png "Completed Node-RED inference flow showing MQTT input, feature extraction function node, ONNX node, and anomaly scoring function node")
 
 **5. Act on the Result**
 
-Connect the output of the flow to whatever fits your operation. For simple testing or troubleshooting, attach a debug node to see results in real time. For production, use an mqtt-out node to publish anomaly alerts downstream, or build a live dashboard using the [FlowFuse Dashboard](https://dashboard.flowfuse.com) package to visualise the anomaly score over time and clearly indicate motor state.
+Connect the scoring output to whatever suits your operation. For testing, a debug node shows results in real time. For production, an mqtt-out node can publish anomaly alerts downstream, and the [FlowFuse Dashboard](https://dashboard.flowfuse.com) package can visualise the anomaly score over time with a clear motor state indicator.
 
-#### What the Output Looks Like
+### What the Output Looks Like
 
-Each message that passes through the flow produces a structured result like this:
+Each message produces a structured result:
 
 ```json
 {
@@ -478,26 +516,18 @@ Each message that passes through the flow produces a structured result like this
 }
 ```
 
-When `is_anomaly` is `false`, the motor is behaving exactly as the model expects. When it changes to `true`, the vibration pattern has shifted beyond the acceptable range — giving you time to act before the problem becomes a failure. A severity of `CRITICAL` means the score has crossed twice the threshold, indicating a more significant deviation.
+When `is_anomaly` is `false`, the motor is behaving within the expected range. When it flips to `true`, the vibration pattern has shifted beyond the acceptable boundary, giving you time to act before the problem becomes a failure. A severity of `CRITICAL` means the score has crossed twice the threshold, signalling a more significant deviation that warrants immediate attention.
 
-## Adapting This to Your Environment
+## What This System Won't Tell You
 
-This guide was built around a specific hardware and software stack, but the system is designed to be portable. Here's a reference for the most common things you'll need to change.
+This approach works well, but it's worth being clear about where it stops.
 
-### Sensor Hardware
+The autoencoder learns a statistical boundary around the vibration patterns it was trained on. It doesn't understand physics, it doesn't know the difference between a worn bearing and a loose mounting bolt, and it has no concept of severity beyond the reconstruction error score. When it flags an anomaly, it's telling you that something has changed, not what changed or why. Diagnosing the root cause still requires a technician with domain knowledge.
 
-Any accelerometer that can publish x, y, z arrays over MQTT will work. The payload field names (`x`, `y`, `z`) are referenced in both the training script's `featurize()` function and the Node-RED feature extraction function — update both if your sensor uses different key names. The `motor_id` and `ts` fields are ignored by the model and can be omitted or renamed without effect.
+Training data quality matters more than model architecture. A model trained on data collected while the motor was lightly loaded, recently serviced, or running in cool ambient conditions will treat those as "normal." If real operating conditions differ, the threshold may be poorly calibrated from day one, generating either chronic false positives or, worse, missing genuine faults. There's no substitute for collecting training data under representative, sustained, real-world load.
 
-### Sampling Rate and Window Size
+False positives are inevitable in early deployment. External vibration from nearby equipment, transient load spikes, or sensor cable movement can all push the score above threshold momentarily. The rolling average window helps, but it doesn't eliminate them. Treat the first few weeks as a calibration period: log alerts, investigate them, and adjust `THRESHOLD_SIGMA` or the window size based on what you learn. The system improves with attention.
 
-The guide assumes 256 samples per batch at 500 Hz. If your sensor uses different settings, the feature extraction math still works unchanged — the features are statistics of whatever array you pass in. What does change is the timing: recovery time, publish interval descriptions, and how much vibration context each window captures. Aim for at least 100–200 ms of data per window; anything shorter may not carry enough signature for reliable detection.
+Finally, anomaly detection is an early warning layer, not a maintenance strategy on its own. It tells you to look sooner, not what to do when you get there. Pair it with regular physical inspection, lubrication schedules, and, where possible, a domain expert who can interpret the alerts in context. Used that way, it earns its place. Used as a replacement for those things, it will eventually let you down.
 
-### Threshold Tuning
-
-The `mean + 3σ` threshold calculated during training is a solid starting point, but every motor environment is different. If you're seeing too many false positives — the score regularly spikes above the threshold during normal operation — collect more training data or increase the multiplier by editing `threshold.json` directly. If faults are being missed, reduce it. You can also tune the rolling window size in the scoring function: a window of 5 is more responsive, a window of 20 is more stable.
-
-### When to Retrain
-
-The model captures what normal looks like at the time you collect training data. You should retrain if the motor's operating conditions change significantly — for example, after a maintenance overhaul, a change in load profile, a new mounting position, or seasonal temperature shifts that affect vibration baseline. Retraining is the same process: run `train_model.py` with the motor operating under the new normal conditions, then replace the three model files and restart the Node-RED flow.
-
-Most motor failures are predictable. The vibration signature is there weeks before the damage is done. FlowFuse, the industrial data platform that helps you connect, collect, and act on machine data, brings the entire pipeline together in one place: sensor ingestion, feature extraction, and custom-trained AI inference, all without managing separate infrastructure. [Try it free](/contact-us).
+*Most motor failures are predictable. The vibration signature is there weeks before the damage is done. This guide shows how to capture that signal and act on it. FlowFuse brings the full pipeline together in one place: sensor ingestion, feature extraction, and custom-trained AI inference, without managing separate infrastructure. [Try it free](/get-started/).*
