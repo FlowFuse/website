@@ -38,7 +38,7 @@ Before proceeding, a basic understanding of Node-RED is recommended. If you are 
 
 Before you begin building the Andon Task Manager with FlowFuse, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out the [free trial]({{ site.onboardingURL }}) and [learn](/docs/user/introduction/#creating-a-node-red-instance) how to create an instance.
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out the [free trial]({% include "sign-up-url.njk" %}) and [learn](/docs/user/introduction/#creating-a-node-red-instance) how to create an instance.
 - **@flowfuse/node-red-dashboard:** Ensure you have FlowFuse Dashboard (also known as Node-RED Dashboard 2.0 in the community) installed.
 - **SQLite Contrib Node:** Install `node-red-contrib-sqlite` to handle local data storage.
 - **FlowFuse Multi-user Andon:** Install `@flowfuse/node-red-dashboard-2-user-addon` to enable multi-user support.

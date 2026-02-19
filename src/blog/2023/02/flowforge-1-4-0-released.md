@@ -18,7 +18,7 @@ Deploy Node-RED to many devices quickly, and allow a staged development process 
 
 Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
-To make it easy for everyone to experience FlowFuse, we are introducing a new free 30-day trial. You can now experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowFuse Cloud;]({{ site.onboardingURL }}) no credit card is required!
+To make it easy for everyone to experience FlowFuse, we are introducing a new free 30-day trial. You can now experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowFuse Cloud;]({% include "sign-up-url.njk" %}) no credit card is required!
 
 ## New User Features
 
@@ -79,7 +79,7 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({{ site.onboardingURL }}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

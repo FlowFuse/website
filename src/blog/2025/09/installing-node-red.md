@@ -52,7 +52,7 @@ As the official enterprise solution developed by Node-RED's creator, FlowFuse re
 
 ## Setting Up FlowFuse
 
-Sign up for the [14-day trial]({{ site.onboardingURL }}) at FlowFuse, and you can get started immediately.
+Sign up for the [14-day trial]({% include "sign-up-url.njk" %}) at FlowFuse, and you can get started immediately.
 
 ### Step 1: Add Remote Instance
 
