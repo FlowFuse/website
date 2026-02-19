@@ -151,6 +151,7 @@ At the offer stage all scorecards will be re-evaluated to understand what the
 candidate strengths and challenges are. Before the hiring manager extends an offer,
 explicit approval is required from the CEO to:
 - Check we hire in their location
+  - If we haven't hired in their location, alert Business Operations to do a review before extending the offer
 - Confirm candidate is seeking full-time employment (FlowFuse only offers full-time positions)
 - Notice period aligns with internal processes
 - Total compensation is in FlowFuse's range
@@ -171,6 +172,7 @@ you should immediately:
    * Create or add the their job title to Deel.
    * Copy the "Job Description" from the handbook as "Scope of work" on Deel (and save it as a template for this role).
    * Important note: If the EOR with Deel is a new one, we need to ask Deel to initiate the IP Transfer process. The existing EORs include: India, Germany, Canada, UK, and Spain. We also have it in place in the US, but as of October 1, 2025 US team members are employed via a PEO.
+   * Note: If we are hiring via PEO in a state where we do not currently have any employees, notify Operations immediately to begin the registered agent filing through CorpNet. Corpnet login information can be found in 1Password in the finance Vault. 
    * Add Equity to the offer according to [the Equity guidelines](/handbook/peopleops/compensation/#equity)
 1. Invite the prospective employee to join Deel, assign them to their designated department, and deliver their offer letters through the Deel platform.
 2. If the hire is an independent contractor located outside the US, send the PDF [“Working Together: Your Guide to Joining FlowFuse as an Independent Contractor”](https://drive.google.com/file/d/16nyoUMyCO-VebGAaJCKJ9VCzr8k7m9yB/view?usp=sharing) via email prior to the start date.
