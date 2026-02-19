@@ -24,7 +24,7 @@ First, you'll need to get an installation of Node-RED up and running. There are 
 
 #### FlowFuse
 
-To get Node-RED running on FlowFuse [sign up as a new user]({{ site.onboardingURL }}). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
+To get Node-RED running on FlowFuse [sign up as a new user]({% include "sign-up-url.njk" %}). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
 
 Once that instance has booted up you can access Node-RED by pressing "Open Editor".
 

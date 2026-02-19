@@ -40,7 +40,7 @@ In this section, we will show you how you can connect your ERP (Odoo) with your 
 
 Before you begin, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial]({{ site.onboardingURL }}).
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial]({% include "sign-up-url.njk" %}).
 - **node-red-contrib-odoo-xmlrpc-filters-fields:** Ensure you have [node-red-contrib-odoo-xmlrpc-filters-fields](https://flows.nodered.org/node/node-red-contrib-odoo-xmlrpc-filters-fields) installed. This package will enable operations like reading, creating, updating, and searching data, with specific capabilities for filtering records and selecting precise fields.
 
 ### Configuring the Odoo Connection Node

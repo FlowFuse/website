@@ -40,4 +40,4 @@ FlowFuse Expert is built on and runs entirely using FlowFuse technology itself. 
 
 FlowFuse Expert is just one of the many powerful tools we’ve made available to everyone. With FlowFuse, you can deploy, scale, and manage Node-RED effortlessly, accelerate development with FlowFuse AI-assistance, and build your own MCP server. Let AI agents monitor and control industrial applications using MCP nodes—or run your custom AI models in Node-RED with ONNX nodes.
 
-[Start your free FlowFuse trial today]({{ site.onboardingURL }}) and see how you can deploy, manage, and scale secure Node-RED to build powerful industrial applications while exploring the new AI tools we’ve made available for FlowFuse users within Platform.
+[Start your free FlowFuse trial today]({% include "sign-up-url.njk" %}) and see how you can deploy, manage, and scale secure Node-RED to build powerful industrial applications while exploring the new AI tools we’ve made available for FlowFuse users within Platform.

@@ -158,4 +158,4 @@ Watch this short video to learn how to bring your own brokers for topic monitori
 
 FlowFuse makes it easy to deploy Node-RED flows while ensuring each stage connects to the right MQTT broker. By using environment variables at both the instance and device group levels, you can automate MQTT configurations, reducing manual setup and ensuring consistency.
 
-[Get Started Now]({{ site.onboardingURL }})
+[Get Started Now]({% include "sign-up-url.njk" %})

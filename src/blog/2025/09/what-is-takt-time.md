@@ -219,7 +219,7 @@ Understanding the true meaning of takt time shows it's about sustainable pace. T
 
 While understanding the theory behind the definition of takt time is important, putting it into practice requires the right tools and approach. [FlowFuse](/) provides an industrial automation platform that connects to your existing systems—whether that's [PLCs](/blog/2025/10/plc-to-mqtt-using-flowfuse/), [databases](/node-red/database/), or ERP software—to automatically calculate takt time in real-time using the takt time formula.
 
-Instead of manually calculating takt time on spreadsheets or relying on static reports, you can build a dynamic monitoring system that updates continuously as customer orders and production conditions change. Let's see how to calculate takt time automatically, but before we begin, make sure you have a FlowFuse instance running. You can [create an account here]({{ site.onboardingURL }}) and get it set up quickly.
+Instead of manually calculating takt time on spreadsheets or relying on static reports, you can build a dynamic monitoring system that updates continuously as customer orders and production conditions change. Let's see how to calculate takt time automatically, but before we begin, make sure you have a FlowFuse instance running. You can [create an account here]({% include "sign-up-url.njk" %}) and get it set up quickly.
 
 ### Step 1: Connect to Your Data Sources
 

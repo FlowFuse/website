@@ -208,4 +208,4 @@ You now know how to connect Node-RED to MQTT brokers, publish data to topics, su
 
 Go build something. Connect a sensor, route the data, display it somewhere useful. The patterns you've learned here scale from a single device to entire factory floors.
 
-When you hit the limits of managing individual instances—tracking deployments, coordinating updates, maintaining uptime across sites—that's when tools like [FlowFuse]({{ site.onboardingURL }}) become relevant. Until then, you have everything you need.
+When you hit the limits of managing individual instances—tracking deployments, coordinating updates, maintaining uptime across sites—that's when tools like [FlowFuse]({% include "sign-up-url.njk" %}) become relevant. Until then, you have everything you need.

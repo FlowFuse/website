@@ -87,4 +87,4 @@ You can read our previous Node-RED tips here.
 
 With FlowFuse [Team Library](/docs/user/shared-library/#shared-team-library), sharing flows across different Node-RED instances is effortless. This Library feature allows you to organize and share flows among team members without the need for manual copying, making collaboration more efficient and effective.
 
-**[Sign up]({{ site.onboardingURL }}) for a free trial today and discover how FlowFuse can enhance your Node***
+**[Sign up]({% include "sign-up-url.njk" %}) for a free trial today and discover how FlowFuse can enhance your Node***

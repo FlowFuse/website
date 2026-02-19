@@ -97,7 +97,7 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.onboardingURL }}"
+                                href="{% include "sign-up-url.njk" %}"
                                 onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a>
                         </div>
                     </div>
@@ -153,7 +153,7 @@ hubspot:
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{% if cloud %}{{ site.onboardingURL }}{% else %}/contact-us{% endif %}"
+                                href="{% if cloud %}{% include "sign-up-url.njk" %}{% else %}/contact-us{% endif %}"
                                 onclick="{% if cloud %}capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'}){% else %}capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'}){% endif %}">
                                 {% if cloud %}TRY FOR FREE{% else %}CONTACT US{% endif %}
                             </a>
