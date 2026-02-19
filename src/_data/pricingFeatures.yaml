@@ -165,7 +165,7 @@ sections:
       - id: security
         label: Endpoint Security
         cloudValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
-        selfHostedValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
+        selfHostedValues: [ 'None<br>HTTP Basic Auth<br>FlowFuse Authentication', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Use FlowFuse credentials to secure HTTP endpoints for hosted instances.</p>"
       - id: 2fa
