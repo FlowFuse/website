@@ -153,7 +153,7 @@
     }
 
     .contentSelfHosted .pricing-tiles {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .pricing-tile {
