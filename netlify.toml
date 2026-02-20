@@ -74,9 +74,6 @@ command = "npm run build"
 [context.branch-deploy]
 command = "npm run build"
 
-[context.production.environment]
-IMAGE_BUILD_PROFILE = "warm"
-
 [[plugins]]
 package = "netlify-plugin-cache"
   [plugins.inputs]
