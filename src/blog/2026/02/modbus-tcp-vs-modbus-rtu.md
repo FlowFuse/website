@@ -62,7 +62,7 @@ Locating it is the hard part. RS-485 is a shared medium, which means a single ba
 
 TCP failures are quieter and more varied. The physical layer is more robust: Ethernet cable is forgiving, switches regenerate signals, and a single bad port does not take down the network. But the failure surface is much broader.
 
-A device can be electrically healthy, passing traffic, and still behaving badly. Connection state gets out of sync. A TCP socket on a cheap embedded device does not close cleanly after a timeout, leaving the master waiting on a half-open connection that looks alive but delivers nothing. A managed switch renegotiating link speed during a firmware update introduces 30 seconds of elevated latency that looks, from the application's perspective, like a slow device.
+A device can be electrically healthy and passing traffic, yet still behave badly. Connection state gets out of sync. A TCP socket on a cheap embedded device does not close cleanly after a timeout, leaving the master waiting on a half-open connection that looks alive but delivers nothing. A managed switch renegotiating link speed during a firmware update introduces 30 seconds of elevated latency that looks, from the application's perspective, like a slow device.
 
 The worst TCP failures are the ones that are almost working. Partial connectivity. Occasional dropped transactions. Response times elevated but not elevated enough to trip a timeout threshold.
 
