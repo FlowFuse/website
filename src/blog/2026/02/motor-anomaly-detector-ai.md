@@ -459,7 +459,7 @@ Add an **onnx** node and configure it:
 - **Model path:** `/opt/flowfuse-device/models/motor_autoencoder.onnx`
 - **Input:** `msg.payload`
 
-The autoencoder compresses the 33-feature input through the bottleneck and reconstructs it on the output side. The result tensor is accessible in the next node as `msg.payload.add_dec2`.
+The autoencoder compresses the 33-feature input through the bottleneck and reconstructs it on the output side. The reconstructed tensor is accessible in the next node via `msg.payload`. Since the output key name depends on how the ONNX graph was exported, the scoring node retrieves it dynamically rather than relying on a hardcoded name.
 
 **4. Score the Reconstruction Error**
 
@@ -471,7 +471,10 @@ if (!context.get('initialized')) {
     context.set('initialized', true);
 }
 
-const reconstructed = msg.payload.add_dec2.cpuData;
+// Generic output key lookup — works regardless of tensor name
+const outputKey = Object.keys(msg.payload)[0];
+const reconstructed = msg.payload[outputKey].cpuData;
+
 const input = Array.from(msg.input.data);
 const threshold = msg.threshold;
 
