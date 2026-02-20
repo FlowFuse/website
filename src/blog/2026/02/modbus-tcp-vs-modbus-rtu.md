@@ -6,7 +6,7 @@ date: 2026-02-20
 keywords: "modbus", "modbus rtu", "modbus tcp", "industrial networking", "rs-485", "scada", "plc"
 authors: ["sumit-shinde"]
 tags:
-- flowfuse
+  - flowfuse
 ---
 
 Modbus shipped in 1979. It has outlasted every protocol that was meant to replace it, survived the transition from relay logic to microprocessors and modern SCADA systems, and is still running production lines today. That kind of longevity does not happen by accident. It exists because the protocol is simple, deterministic, and unambiguous, at least in its original form, a point I have discussed in more detail in a [separate article](/blog/2026/01/why-modbus-still-exist/).
