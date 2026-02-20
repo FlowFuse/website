@@ -68,6 +68,7 @@ All tickets appear in the [HubSpot Helpdesk](https://app-eu1.hubspot.com/help-de
 ### HubSpot
 
 Keep the [**Unassigned Triage**](https://app-eu1.hubspot.com/help-desk/26586079/view/236761036/list-view) view open during the day. If you don't have access to HubSpot, only focus on the Slack Channel noted below. 
+> To note: Chatbot tickets don’t go into triage and don't appear in Slack. Only in HubSpot. 
 
 ### Slack
 
@@ -75,6 +76,11 @@ New tickets trigger notifications in `#support-tickets`.
 
 > Tip: To receive badge notifications, configure the channel’s notification settings rather than relying on the bell icon.
 
+Configuration steps:
+- Open the Slack channel #support-tickets
+- Click on the channel name
+- Click on the second icon at the top of the screen (bell icon)
+- Choose "All new posts" 
 
 ## SLA Awareness (Important)
 
