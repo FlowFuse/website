@@ -346,7 +346,7 @@ Let it collect for 5–10 minutes (aim for 300+ windows), then press **Ctrl+C on
 
 ### When to Retrain
 
-The model captures what normal looks like at the time of training. Plan to retrain after any significant change to the motor's operating conditions: a maintenance overhaul, a change in load profile, a new mounting position, or seasonal temperature shifts that affect the vibration baseline. The process is identical , run the script again with the motor under its new normal conditions, replace the three output files, and restart the Node-RED flow.
+The model captures what normal looks like at the time of training. Plan to retrain after any significant change to the motor's operating conditions: a maintenance overhaul, a change in load profile, a new mounting position, or seasonal temperature shifts that affect the vibration baseline. The process is identical, run the script again with the motor under its new normal conditions, replace the three output files, and restart the Node-RED flow.
 
 ## Part 3: Deploying in Node-RED
 
