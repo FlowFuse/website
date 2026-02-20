@@ -12,7 +12,7 @@ Modbus shipped in 1979. It has outlasted every protocol that was meant to replac
 
 <!--more-->
 
-Then TCP came along. The data model stayed the same, identical function codes and identical register maps. But the assumptions underneath changed completely, including expectations about the network, failure modes, and what happens when things go wrong. The industry gained real capability, but it also inherited an entirely new class of problems, ones that look nothing like the challenges Modbus engineers spent forty seven years learning to solve.
+Then TCP came along. The data model stayed the same, identical function codes and identical register maps. But the assumptions underneath changed completely, including expectations about the network, failure modes, and what happens when things go wrong. The industry gained real capability, but it also inherited an entirely new class of problems, ones that look nothing like the challenges Modbus engineers spent forty-seven years learning to solve.
 
 That gap is what most people miss. And it is exactly what this post is about.
 
