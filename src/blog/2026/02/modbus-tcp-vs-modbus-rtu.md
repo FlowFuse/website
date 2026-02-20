@@ -3,7 +3,6 @@ title: "Modbus TCP vs Modbus RTU: Reliability, Latency, and Failure Modes"
 subtitle: "What nobody tells you until the line goes down"
 description: "A practical engineering guide to choosing between Modbus RTU and Modbus TCP, covering real latency numbers, failure modes that hide in plain sight, and how each protocol behaves when things go wrong."
 date: 2026-02-20
-keywords: "modbus", "modbus rtu", "modbus tcp", "industrial networking", "rs-485", "scada", "plc"
 authors: ["sumit-shinde"]
 tags:
   - flowfuse
