@@ -2,7 +2,7 @@
 title: "Building an AI Vibration Anomaly Detector for Industrial Motors"
 subtitle: "Detect motor faults early using AI-driven vibration analysis and anomaly detection."
 description: "Learn how to monitor industrial motors continuously, train a custom autoencoder on healthy vibration data, and deploy real-time anomaly detection in Node-RED."
-date: 2026-02-19
+date: 2026-02-20
 authors: ["sumit-shinde"]
 tags:
 - flowfuse
