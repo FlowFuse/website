@@ -8,7 +8,6 @@
     "author": "Nick O'Leary",
     "scripts": {
         "start": "npm-run-all2 clean:dev build:js docs blueprints --parallel dev:*",
-        "test": "mocha",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js _site/js/flowrenderer.min.js",
         "build": "dotenv -v NODE_ENV=production -- npm-run-all2 clean build:js --parallel prod:*",
         "build:skip-images": "dotenv -v SKIP_IMAGES=true -- npm run build",
@@ -42,7 +41,6 @@
         "html-minifier": "^4.0.0",
         "markdown-it-anchor": "^8.6.7",
         "markdown-it-footnote": "^3.0.3",
-        "mocha": "^10.8.2",
         "netlify-plugin-cache": "^1.0.3",
         "nodemon": "^2.0.20",
         "npm-run-all2": "^7.0.1",
@@ -51,12 +49,10 @@
         "postcss-import": "^14.0.2",
         "postcss-minify": "^1.1.0",
         "seedrandom": "^3.0.5",
-        "should": "^13.2.3",
         "spacetime": "^7.4.7",
         "tailwindcss": "^3.4.19",
         "terser": "^5.9.0",
-        "vanilla-cookieconsent": "^3.0.0",
-        "xpath": "^0.0.32"
+        "vanilla-cookieconsent": "^3.0.0"
     },
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
@@ -68,6 +64,6 @@
         "eleventy-plugin-toc": "^1.1.5",
         "js-yaml": "^4.1.1",
         "markdown-it-attrs": "^4.1.6",
-        "xml-js": "^1.6.11"
+        "xpath": "^0.0.34"
     }
 }
