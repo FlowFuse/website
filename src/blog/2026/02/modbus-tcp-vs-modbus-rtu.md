@@ -3,13 +3,15 @@ title: "Modbus TCP vs Modbus RTU: Reliability, Latency, and Failure Modes"
 subtitle: "What nobody tells you until the line goes down"
 description: "A practical engineering guide to choosing between Modbus RTU and Modbus TCP, covering real latency numbers, failure modes that hide in plain sight, and how each protocol behaves when things go wrong."
 date: 2026-02-20
-keywords: ["modbus", "modbus rtu", "modbus tcp", "industrial networking", "rs-485", "scada", "plc"]
+keywords: "modbus", "modbus rtu", "modbus tcp", "industrial networking", "rs-485", "scada", "plc"
 authors: ["sumit-shinde"]
 tags:
 - flowfuse
 ---
 
 Modbus shipped in 1979. It has outlasted every protocol that was meant to replace it, survived the transition from relay logic to microprocessors and modern SCADA systems, and is still running production lines today. That kind of longevity does not happen by accident. It exists because the protocol is simple, deterministic, and unambiguous, at least in its original form, a point I have discussed in more detail in a [separate article](/blog/2026/01/why-modbus-still-exist/).
+
+<!--more-->
 
 Then TCP came along. The data model stayed the same, identical function codes and identical register maps. But the assumptions underneath changed completely, including expectations about the network, failure modes, and what happens when things go wrong. The industry gained real capability, but it also inherited an entirely new class of problems, ones that look nothing like the challenges Modbus engineers spent forty seven years learning to solve.
 
@@ -101,4 +103,4 @@ If you are maintaining a hybrid gateway architecture, resist the urge to rationa
 
 The two protocols make different guarantees, fail differently, and require different diagnostic skills when something goes wrong. Understanding that distinction before the system is designed costs nothing. Understanding it for the first time during an incident costs considerably more.
 
-*If you are working with either protocol in production, FlowFuse supports both [Modbus RTU](/blog/2025/09/using-modbus-with-flowfuse/) and [Modbus TCP](/node-red/protocol/modbus/) across the full OT/IT stack — so the protocol layer does not become another thing to solve. [Get started here.](/get-started)*
+*If you are working with either protocol in production, FlowFuse supports both [Modbus RTU](/blog/2025/09/using-modbus-with-flowfuse/) and [Modbus TCP](/node-red/protocol/modbus/) across the full OT/IT stack, so the protocol layer does not become another thing to solve. [Get started here.](/get-started)*
