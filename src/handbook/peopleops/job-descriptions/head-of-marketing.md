@@ -1,5 +1,5 @@
 ---
-navTitle: Job Descriptions
+navTitle: Head of Marketing
 ---
 
 # Head of Marketing
