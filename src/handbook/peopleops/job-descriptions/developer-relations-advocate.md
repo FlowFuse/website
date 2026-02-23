@@ -75,7 +75,7 @@ The Developer Relations Advocate skill set includes:
 2. Technical Depth & Case study:
    * Conduct a video interview to assess technical proficiency -  experience scaling teams, and alignment with FlowFuse's "sports team" culture.
    * Technical Assessment / Case Study: Candidates will be presented with a real-world scenario or problem relevant to FlowFuse's engineering challenges and asked to propose solutions or provide a code sample.
-3. STAR Interview (Behavioral Alignment): A behavioral interview focusing on past experiences to understand how the candidate has handled challenges, collaborated, and driven performance.
+3. STAR Interview (45mins): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 4. Offer: Extend an offer to the selected candidate.
 
 
