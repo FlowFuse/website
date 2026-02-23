@@ -79,7 +79,7 @@ sections:
         info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Pro Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
       - id: mqtt-broker-sh
         label: MQTT Broker
-        selfHostedValues: [ null, 'check', 'check' ]    
+        selfHostedValues: [ null, null, 'check' ]    
         tags: [ 'self-hosted' ]
         info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Pro Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
       - id: device-mgmt
@@ -115,7 +115,7 @@ sections:
       - id: private-npm-registry
         label: Private NPM Registry
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ null, 'check', 'check' ]
+        selfHostedValues: [ null, null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info:
       - id: device-groups
@@ -165,7 +165,7 @@ sections:
       - id: security
         label: Endpoint Security
         cloudValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
-        selfHostedValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
+        selfHostedValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Use FlowFuse credentials to secure HTTP endpoints for hosted instances.</p>"
       - id: 2fa
@@ -177,7 +177,7 @@ sections:
       - id: certified-nodes
         label: Certified Nodes
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ null, 'check', 'check' ]
+        selfHostedValues: [ null, null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse Certified Nodes a selection of certfied Node-RED nodes, enhancing efficiency and security.</p>"
       - id: instance-monitoring
@@ -225,7 +225,7 @@ sections:
       - id: multi-user-dashboard
         label: Personalised Multi-user Dashboards
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ null, 'check', 'check' ]
+        selfHostedValues: [ null, null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Personalised Multi-user Dashboard allow you to build applications that provide unique data to each user <a href='https://flowfuse.com/blog/2024/01/dashboard-2-multi-user' target='blank'>Learn more</a></p>"
       - id: blueprints-sh
