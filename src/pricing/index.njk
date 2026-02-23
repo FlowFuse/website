@@ -50,56 +50,82 @@ hubspot:
                 </div>
             </div>
             <!-- Plans -->
+            {% macro starter(cloud=true) %}
+            <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
+                <div>
+                    <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
+                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                            <h4 style="display:inline-block;">Starter</h4>
+                        </div>
+                        {% if cloud %}
+                        <p class="mt-7"><span class="inline font-normal">Cloud-hosted Node-RED</span> with FlowFuse development enhancements. The fastest way to <span class="inline font-normal">get started building </span>with Node-RED.</p>
+                        {% else %}
+                        <p class="mt-7">Download and self-host the <span class="inline font-normal">open-source edition</span> of FlowFuse. Ideal for evaluation and small deployments.</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
+                        {% if cloud %}
+                        <ul class="ff-checklist font-light leading-7 mt-2">
+                            <li>Faster, more powerful, AI-enhanced Node&#8209;RED</li>
+                            <li>2 team members</li>
+                            <li>Blueprints</li>
+                            <li>Option to upgrade up to 3 hosted/3 remote instances</li>
+                        </ul>
+                        <span class="hidden md:inline"><br></span>
+                        <br>
+                        <note class="font-semibold">Includes 1 hosted instance. Additional instances are $20/month.
+                        </note>
+                        {% else %}
+                        <ul class="ff-checklist font-light leading-7 mt-2">
+                            <li>Open-source FlowFuse platform</li>
+                            <li>Self-hosted deployment</li>
+                            <li>Core instance & device management</li>
+                            <li>5 team members</li>
+                            <li>Community edition</li>
+                        </ul>
+                        <br>
+                        <note class="font-semibold">Includes up to 5 hosted instances or remote instances.
+                        </note>
+                        {% endif %}
+                    </div>
+                </div>
+                <div data-nosnippet class="flex">
+                    {% if cloud %}
+                    <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                        <div class="text-left flex flex-row md:self-end">
+                            <div class="mr-1">
+                                <note class="note text-sm">Starting at</note>
+                                <h2 class="self-end pb-1">
+                                    $20
+                                </h2>
+                            </div>
+                            <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
+                                /month
+                                <br>
+                                <span class="text-xs text-gray-500">after free trial of Pro</span>
+                            </note>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                        <h2 class="self-end pb-1">Free</h2>
+                    </div>
+                    {% endif %}
+                </div>
+                <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
+                    href='{% if cloud %}{% include "sign-up-url.njk" %}{% else %}https://flowfuse.com/docs/install/introduction/{% endif %}'
+                    {% if cloud %}onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})"{% else %}onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})"{% endif %}>
+                    {% if cloud %}TRY FOR FREE{% else %}INSTALL NOW{% endif %}
+                </a>
+            </div>
+            {% endmacro %}
             <!-- Cloud -->
             <div class="contentCloud m-auto transition duration-1000 md:min-h-[502px]">
                 <div class="pricing-tiles flex flex-col md:grid md:max-lg lg:max-w-screen-xl mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Starter</h4>
-                                    </div>
-                                    <p class="mt-7"><span class="inline font-normal">Cloud-hosted Node-RED</span> with FlowFuse development enhancements. The fastest way to <span class="inline font-normal">get started building </span>with Node-RED.</p>
-                                </div>
-                                
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                
-                                        <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>Faster, more powerful, AI-enhanced Node&#8209;RED</li>
-                                        <li>2 Team members</li>
-                                        <li>Blueprints</li>
-                                        <li>Option to upgrade up to 3 hosted/3 remote instances</li>
-                                    </ul>
-                                    <span class="hidden md:inline"><br></span>
-                                    <br>
-                                    <note class="font-semibold">Includes 1 hosted instance. Additional instances are $20/month.
-                                    </note>
-                                </div>
-                            </div>
-                            <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
-                                    <div class="text-left flex flex-row md:self-end">
-                                        <div class="mr-1">
-                                            <note class="note text-sm">Starting at</note>
-                                            <h2 class="self-end pb-1">
-                                                $20
-                                            </h2>
-                                        </div>
-                                        <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
-                                            /month
-                                            <br>
-                                            <span class="text-xs text-gray-500">after free trial of Pro</span>
-                                        </note>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{% include "sign-up-url.njk" %}"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a>
-                        </div>
+                        {{ starter() }}
                     </div>
                     <!-- Pro -->
                     <div class="pricing-tile md:h-full">
@@ -154,7 +180,7 @@ hubspot:
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                                 href="{% if cloud %}{% include "sign-up-url.njk" %}{% else %}/contact-us{% endif %}"
-                                onclick="{% if cloud %}capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'}){% else %}capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'}){% endif %}">
+                                {% if cloud %}onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})"{% else %}onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'})"{% endif %}>
                                 {% if cloud %}TRY FOR FREE{% else %}CONTACT US{% endif %}
                             </a>
                         </div>
@@ -211,7 +237,11 @@ hubspot:
             </div>
             <!-- Self-Hosted -->
             <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[502px]">
-                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-md mt-4 md:mt-0">
+                <div class="pricing-tiles flex flex-col md:grid md:max-lg lg:max-w-screen-xl mt-4 md:mt-0">
+                    <!-- Starter -->
+                    <div class="pricing-tile md:h-full">
+                        {{ starter(false) }}
+                    </div>
                     <!-- Team -->
                     <div class="pricing-tile md:h-full">
                         {{ team(false) }}

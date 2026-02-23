@@ -9,7 +9,7 @@ sections:
       - id: nr-hosting
         label: Node-RED Hosting
         cloudValues: [ 'check', 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse hosts Node-RED instances.</p>"
       - id: cloud-instances
@@ -19,33 +19,33 @@ sections:
         info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted/3 remote instances.</li><li><span class='font-semibold'>Pro:</span> Starts with 5, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
       - id: self-hosted-instances
         label: Hosted Instances
-        selfHostedValues: [ 'check', 'check' ]   
+        selfHostedValues: [ '5', 'check', 'check' ]   
         tags: [ 'self-hosted' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Pro:</span> Includes 10 hosted instances, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 hosted instances, shared with edge device count.</li><li><span class='font-semibold'>Pro:</span> Includes 10 hosted instances, shared with edge device count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with edge device count.</li></ul>"
       - id: self-hosted-devices
         label: Edge Devices  
-        selfHostedValues: [ 'check', 'check' ]   
+        selfHostedValues: [ '5', 'check', 'check' ]   
         tags: [ 'self-hosted' ]
-        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices, shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
+        info: "<ul class='py-4'><li><span class='font-semibold'>Starter:</span> Includes 5 edge devices, shared with hosted instance count.</li><li><span class='font-semibold'>Pro:</span> Shared with hosted instance count.</li><li><span class='font-semibold'>Enterprise:</span> Starts with 20, shared with hosted instance count.</li></ul>"
       - id: self-hosted-installation-support
         label: Installation Support  
-        selfHostedValues: [ 'check', 'check' ]   
+        selfHostedValues: [ null, 'check', 'check' ]   
         tags: [ 'self-hosted' ]
         info:
       - id: self-hosted-enterprise-support
         label: Enterprise Support  
-        selfHostedValues: [ 'check', 'check' ]   
+        selfHostedValues: [ null, 'check', 'check' ]   
         tags: [ 'self-hosted' ]
         info:
       - id: self-hosted-dedicated-support
         label: Dedicated Success Management  
-        selfHostedValues: [ 'check', 'check' ]   
+        selfHostedValues: [ null, 'check', 'check' ]   
         tags: [ 'self-hosted' ]
         info:
       - id: custom-hostname
         label: Custom Hostnames
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]    
+        selfHostedValues: [ null, null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Access your Node-RED application via your own domain name.</p>"
       - id: persistent-files
@@ -61,13 +61,13 @@ sections:
       - id: live-chat-support
         label: Live Chat Support
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ null, 'check' ]
+        selfHostedValues: [ null, null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info:
       - id: workflow-executions
         label: Workflow Executions
         cloudValues: [ 'Unlimited', 'Unlimited', 'Unlimited' ]
-        selfHostedValues: [ 'Unlimited', 'Unlimited' ]
+        selfHostedValues: [ 'Unlimited', 'Unlimited', 'Unlimited' ]
         tags: [ 'cloud', 'self-hosted' ]
         info:
   - label: Scale
@@ -79,73 +79,73 @@ sections:
         info: "<p>Easily manage and create MQTT clients to transport data for efficient messaging and communication within your applications. The Pro Tier includes 5 clients, and the Enterprise Tier includes 20 clients as part of your existing plan. Additional clients can be purchased as needed in the future.</p>"
       - id: mqtt-broker-sh
         label: MQTT Broker
-        selfHostedValues: [ 'check', 'check' ]    
+        selfHostedValues: [ null, 'check', 'check' ]    
         tags: [ 'self-hosted' ]
         info: "<p>Easily manage and create MQTT clients to transport data efficiently within your applications. The Pro Tier includes 8 clients for free as part of your existing plan, and the Enterprise Tier includes 20. You can purchase additional clients as needed in the future.</p>"
       - id: device-mgmt
         label: Device Fleet Updates
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]    
+        selfHostedValues: [ 'check', 'check', 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes. All securely without requiring full device access for your whole organization.</p>"
       - id: volume-pricing
         label: Volume Pricing
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ null, 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Scaling to hundreds or thousands of Node-RED instances? <a href='/contact-us'>Contact us</a> for customized volume discounts!</p>"
       - id: edge-development
         label: Edge Development
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]    
+        selfHostedValues: [ 'check', 'check', 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Connect to an edge device and develop your flows.</p>"
       - id: pipelines
         label: DevOps Pipelines
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>DevOps pipelines allows for you to setup different environments for development, testing and production Node-RED instances.</p>"
       - id: project-nodes
         label: Seamless Data Stream
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ null, 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p><a href='https://github.com/FlowFuse/nr-project-nodes' target='blank'>FlowFuse Project Nodes</a> enable the passing of data and messages between your Node-RED projects, included with all FlowFuse Projects by default.</p>"
       - id: private-npm-registry
         label: Private NPM Registry
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ null, 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info:
       - id: device-groups
         label: Device Group Management
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]    
+        selfHostedValues: [ null, null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Device Groups enables users to logically group their devices assigned to an application. Additionally, Device Groups can be integrated into the DevOps Pipeline.</p>"    
       - id: git-integration
         label: Git Integration
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]    
+        selfHostedValues: [ null, null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Backup your flows to a remote git repository through a DevOps Pipeline.</p>"
       - id: ha
         label: High Availability
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]    
+        selfHostedValues: [ null, null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Leverage horizontal scaling for reliable and scalible processing of your data through Node-RED.</p>"      
       - id: performance
         label: Performance Monitoring
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]    
+        selfHostedValues: [ null, null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Monitoring of CPU and memory usage at the team level and instance level.</p>"
       - id: tables
         label: FlowFuse Tables
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]    
+        selfHostedValues: [ null, null, 'check' ]    
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Integrated database feature for storing, reading, writing, and querying data, within FlowFuse.</p>"
   - label: Secure
@@ -153,49 +153,49 @@ sections:
       - id: audit-log
         label: Audit Log
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Keep track of everything going on in your Node-RED instances and FlowFuse.</p><p>Audit Logs provide details on what actions have taken place, when they happened, and who did them.</p>"
       - id: rbac
         label: Role-Based Access Control
         cloudValues: [ 'check', 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse's intuitive team management tooling makes it easy for you to control whom has access to what.</p>"
       - id: security
         label: Endpoint Security
         cloudValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
-        selfHostedValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
+        selfHostedValues: [ 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth', 'None<br>HTTP Basic Auth<br>FlowFuse Authentication' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Use FlowFuse credentials to secure HTTP endpoints for hosted instances.</p>"
       - id: 2fa
         label: Two-factor authentication
         cloudValues: [ 'check', 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p><a href='https://flowfuse.com/docs/user/user-settings/#two-factor-authentication' target='blank'>Two-factor authentication</a> adds an extra layer of security to your account.</p>"
       - id: certified-nodes
         label: Certified Nodes
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ null, 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse Certified Nodes a selection of certfied Node-RED nodes, enhancing efficiency and security.</p>"
       - id: instance-monitoring
         label: Instance Monitoring
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ null, 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>You can enable alerts to be sent to you via email. <a href='https://flowfuse.com/docs/user/instance-settings/#alerts' target='blank'>Learn more</a></p>"
       - id: sso
         label: Single Sign-On (SSO)
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]
+        selfHostedValues: [ null, null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse can be configured to run with your own Single Sign-On (SSO) provider. Allow users to access FlowFuse with a single set of login credentials, improving security, user experience, and save them time.</p>"
       - id: hipaa
         label: BAA for HIPAA
         cloudValues: [ null, null, 'check' ]
-        selfHostedValues: [ null, 'check' ]
+        selfHostedValues: [ null, null, 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Ensure FlowFuse properly safeguards protected health information (PHI) they handle on your business's behalf, mitigating the risk of data breaches and potential HIPAA violations.</p>"
   - label: Collaborate
@@ -208,7 +208,7 @@ sections:
       - id: team-members
         label: Team Members
         cloudValues: [ '2', '20', 'Unlimited' ]
-        selfHostedValues: [ '20', 'Unlimited' ]        
+        selfHostedValues: [ '5', '20', 'Unlimited' ]        
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>FlowFuse allows multiple team members to collaborate on the same Node-RED flows.</p>"
       - id: blueprints-cloud
@@ -219,23 +219,23 @@ sections:
       - id: dashboard
         label: Node-RED Dashboard
         cloudValues: [ 'check', 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ 'check', 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Visualize your data with the powerful and intuitive <a href='https://dashboard.flowfuse.com' target='blank'>Node-RED Dashboard</a></p>"
       - id: multi-user-dashboard
         label: Personalised Multi-user Dashboards
         cloudValues: [ null, 'check', 'check' ]
-        selfHostedValues: [ 'check', 'check' ]
+        selfHostedValues: [ null, 'check', 'check' ]
         tags: [ 'cloud', 'self-hosted' ]
         info: "<p>Personalised Multi-user Dashboard allow you to build applications that provide unique data to each user <a href='https://flowfuse.com/blog/2024/01/dashboard-2-multi-user' target='blank'>Learn more</a></p>"
       - id: blueprints-sh
         label: Access to Blueprints
-        selfHostedValues: [ null, 'check' ]
+        selfHostedValues: [ null, null, 'check' ]
         tags: [ 'self-hosted' ]
         info: "<p><a href='https://flowfuse.com/blog/2023/10/blueprints/' target='blank'>FlowFuse's Blueprints</a> simplify Node-RED deployments by offering pre-built, customizable flows for specific use cases.</p>"
       - id: team-library
         label: Team Library
-        selfHostedValues: [ null, 'check' ]        
+        selfHostedValues: [ null, null, 'check' ]        
         tags: [ 'self-hosted' ]
         info: "<p>Setup standard nodes and flows that can be shared with all team members.</p>"
 buttons: 
@@ -251,8 +251,11 @@ buttons:
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
   selfHosted:
     - cta: INSTALL NOW
-      url: /docs/install/introduction/
+      url: https://flowfuse.com/docs/install/introduction/
       onclick: "capture('cta-install', {'position': 'secondary'}, {'plan': 'sh-starter'})"
+    - cta: CONTACT US
+      url: /contact-us
+      onclick: "capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'sh-team'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
