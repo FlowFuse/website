@@ -2,6 +2,7 @@
 title: Node-RED Dashboard Formally Deprecated
 subtitle: It has just been announced that the predecessor to FlowFuse's Dashboard, Node-RED Dashboard, has been formally deprecated. Find out how FlowFuse Dashboard can help you build your Dashboards, and what we have planned in the near future.
 description: It has just been announced that the predecessor to FlowFuse's Dashboard, Node-RED Dashboard, has been formally deprecated. Find out what this means for your Node-RED instances, see how you can get started with FlowFuse's Dashboard, and what we have planned in the near future.
+lastUpdated: 2026-02-23
 date: 2024-06-27
 authors: ["joe-pavitt"]
 image: /blog/2024/06/images/dashboard1-deprecated.png
@@ -40,7 +41,6 @@ We are actively investing into the development of FlowFuse Dashboard, and releas
 
 If there are any other features you'd like to see, please do open a [Feature Request](https://github.com/FlowFuse/node-red-dashboard/issues/new/choose), and we'll do our best to accommodate.
 
-
 ## Getting Started with FlowFuse Dashboard
 
 If you're ready to get started with FlowFuse Dashboard, you can install it directly from the Node-RED Palette Manager. Simply search for `@flowfuse/node-red-dashboard` and install the latest version.
@@ -59,7 +59,6 @@ We have a comprehensive [Getting Started Guide](https://dashboard.flowfuse.com/g
 We'll running a [Workshop](/webinars/2024/workshop-dashboard) on July 2nd, where we will be covering a collection of useful tips and design patterns to help you get the most out of Dashboard.
 
 The recording will also be available on the [FlowFuse YouTube channel](https://www.youtube.com/@FlowFuseInc) after the event.
-
 
 ## Migrating to FlowFuse Dashboard
 
