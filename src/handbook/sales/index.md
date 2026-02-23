@@ -46,3 +46,7 @@ Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/
  - [Ideal Customer Profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl)
  - [Sales Regions](./regions.md)
  - [Customer Success](./customer-success.md)
+
+### Sales Processes
+
+ - [Edge Connect Process](./edge-connect-process.md)
