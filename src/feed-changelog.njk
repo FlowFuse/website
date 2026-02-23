@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
     <title>FlowFuse - Changelog</title>
     <link href="https://flowfuse.com/changelog/index.xml" rel="self"/>
     <link href="https://flowfuse.com/changelog"/>
-    <updated>{{ collections.changelog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+    <updated>{{ collections.changelog | getNewestCollectionItemDate | toDate | dateToRfc3339 }}</updated>
     <id>https://flowfuse.com/changelog</id>
     {%- for post in collections.changelog | reverse %}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl("https://flowfuse.com/changelog/") }}{% endset %}
@@ -15,7 +15,7 @@ eleventyExcludeFromCollections: true
         <id>{{ absolutePostUrl }}</id>
         <title>{{ post.data.title }}</title>
         <summary>{{ post.data.subtitle }}</summary>
-        <updated>{{ post.date | dateToRfc3339 }}</updated>
+        <updated>{{ post.date | toDate | dateToRfc3339 }}</updated>
         <link href="{{ absolutePostUrl }}"/>
         {%- for author in post.data.authors %}
         <author><name>{{team[author].name}}</name></author>
