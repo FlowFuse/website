@@ -782,6 +782,9 @@ module.exports = function(eleventyConfig) {
                             'order': page.data.navOrder || Number.MAX_SAFE_INTEGER,
                             'children': {}
                         }
+                    }
+                    // Only update navTitle and navGroup for the last segment (the actual page)
+                    if (i === hierarchy.length - 1) {
                         if (page.data.navTitle) {
                             accumulator[currentValue].name = page.data.navTitle
                         }
