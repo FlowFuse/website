@@ -4,6 +4,7 @@ subtitle: "Detect motor faults early using AI-driven vibration analysis and anom
 description: "Learn how to monitor industrial motors continuously, train a custom autoencoder on healthy vibration data, and deploy real-time anomaly detection in Node-RED."
 date: 2026-02-20
 authors: ["sumit-shinde"]
+image: /blog/2026/02/images/motor-anomaly-detection-ai.png
 tags:
 - flowfuse
 ---

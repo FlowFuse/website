@@ -4,6 +4,7 @@ subtitle: "What nobody tells you until the line goes down"
 description: "A practical engineering guide to choosing between Modbus RTU and Modbus TCP, covering real latency numbers, failure modes that hide in plain sight, and how each protocol behaves when things go wrong."
 date: 2026-02-20
 authors: ["sumit-shinde"]
+image: /blog/2026/02/images/modbus-rtu-vs-tcp.png
 tags:
   - flowfuse
 ---
