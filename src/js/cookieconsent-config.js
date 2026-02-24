@@ -28,6 +28,18 @@ CookieConsent.run({
             gtag('consent', 'update', {
                 'analytics_storage': 'granted'
             });
+            // GTM's consent-queue mechanism doesn't reliably re-fire blocked tags
+            // when consent is updated mid-session. Re-pushing 'gtm.js' re-triggers
+            // GTM's "All Pages" trigger, firing ALL analytics tags that have
+            // "Require additional consent: analytics_storage" — no custom trigger
+            // needed per tag, works for any tag added to GTM in the future.
+            // Guards prevent duplicate page_views:
+            //   _ffNonPrivacyRegion          → GA4 already fired via All Pages (no regional deny)
+            //   _ffHadStoredAnalyticsConsent → GA4 already fired via All Pages (consent granted in <head>)
+            if (!window._ffNonPrivacyRegion && !window._ffHadStoredAnalyticsConsent) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'gtm.js' });
+            }
             // Send event to Google Analytics
             gtag('event', 'cookie_consent', {
                 'event_category': 'analytics',
@@ -87,6 +99,11 @@ CookieConsent.run({
                 gtag('consent', 'update', {
                     'analytics_storage': 'granted'
                 });
+                // The All Pages trigger already fired for this page load — re-push
+                // 'gtm.js' to re-trigger it now that consent has changed. This fires
+                // all analytics tags generically without any custom GTM trigger.
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'gtm.js' });
                 // Send event to Google Analytics
                 gtag('event', 'cookie_consent', {
                     'event_category': 'analytics',

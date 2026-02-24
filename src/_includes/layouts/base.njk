@@ -162,10 +162,12 @@ eleventyComputed:
         // Used by Google Consent Mode, PostHog, and any future consent checks
         window.ffPrivacyCountries = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU'];
 
-        // Set cookies to denied by default for privacy-required regions.
-        // Additionally, if the user has previously stored a rejection in cc_cookie,
-        // deny globally so GTM doesn't fire analytics before CookieConsent restores
-        // the stored preference on the next page load (applies to all regions).
+        // Set consent defaults before GTM fires any tags.
+        // - If cc_cookie records a prior ACCEPTANCE: grant immediately so GTM's
+        //   "All Pages" trigger fires GA4 on page load without relying on the
+        //   broken consent-queue mechanism.
+        // - If cc_cookie records a prior REJECTION: deny globally.
+        // - No stored decision: deny only for privacy-required regions.
         (function() {
             var deniedConsent = {
                 'ad_storage': 'denied',
@@ -177,14 +179,29 @@ eleventyComputed:
                 var ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]+)/);
                 if (ccMatch) {
                     var stored = JSON.parse(decodeURIComponent(ccMatch[1]));
-                    if (stored && Array.isArray(stored.categories) && !stored.categories.includes('analytics')) {
-                        // User previously rejected analytics — deny for all regions
-                        gtag('consent', 'default', deniedConsent);
+                    if (stored && Array.isArray(stored.categories)) {
+                        if (!stored.categories.includes('analytics')) {
+                            // Analytics explicitly rejected — deny globally
+                            gtag('consent', 'default', deniedConsent);
+                            return;
+                        }
+                        // Analytics was previously accepted — grant it immediately.
+                        // Set a flag so onConsent skips the dataLayer push (GA4 will
+                        // already fire via the "All Pages" trigger).
+                        window._ffHadStoredAnalyticsConsent = true;
+                        var consentState = Object.assign({}, deniedConsent);
+                        consentState['analytics_storage'] = 'granted';
+                        if (stored.categories.includes('ads')) {
+                            consentState['ad_storage'] = 'granted';
+                            consentState['ad_user_data'] = 'granted';
+                            consentState['ad_personalization'] = 'granted';
+                        }
+                        gtag('consent', 'default', consentState);
                         return;
                     }
                 }
             } catch(e) {}
-            // No stored rejection — deny only for privacy-required regions
+            // No stored decision — deny for privacy-required regions only
             deniedConsent['region'] = window.ffPrivacyCountries;
             gtag('consent', 'default', deniedConsent);
         })();
@@ -430,6 +447,9 @@ eleventyComputed:
             // validConsent() returns true once any banner choice (accept or reject) has
             // been stored — this prevents overriding a deliberate "Reject All" choice.
             if (!window.ffPrivacyCountries.includes(countryCode)) {
+                // Flag used by onConsent to avoid a duplicate GA4 page_view push
+                // (GA4 fires normally via the All Pages trigger for non-privacy regions)
+                window._ffNonPrivacyRegion = true;
                 const hasDecided = typeof window.CookieConsent !== 'undefined' && CookieConsent.validConsent();
                 if (!hasDecided) {
                     posthog.opt_in_capturing();
