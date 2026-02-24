@@ -162,14 +162,32 @@ eleventyComputed:
         // Used by Google Consent Mode, PostHog, and any future consent checks
         window.ffPrivacyCountries = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU'];
 
-        // Set cookies to denied by default for privacy-required regions
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'region': window.ffPrivacyCountries
-        });
+        // Set cookies to denied by default for privacy-required regions.
+        // Additionally, if the user has previously stored a rejection in cc_cookie,
+        // deny globally so GTM doesn't fire analytics before CookieConsent restores
+        // the stored preference on the next page load (applies to all regions).
+        (function() {
+            var deniedConsent = {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied'
+            };
+            try {
+                var ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]+)/);
+                if (ccMatch) {
+                    var stored = JSON.parse(decodeURIComponent(ccMatch[1]));
+                    if (stored && Array.isArray(stored.categories) && !stored.categories.includes('analytics')) {
+                        // User previously rejected analytics — deny for all regions
+                        gtag('consent', 'default', deniedConsent);
+                        return;
+                    }
+                }
+            } catch(e) {}
+            // No stored rejection — deny only for privacy-required regions
+            deniedConsent['region'] = window.ffPrivacyCountries;
+            gtag('consent', 'default', deniedConsent);
+        })();
     </script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -407,14 +425,20 @@ eleventyComputed:
             return response.text();
         })
         .then(countryCode => {
-            // Auto opt-in and enable consent-gated scripts for non-privacy-region users
+            // Auto opt-in and enable consent-gated scripts for non-privacy-region users,
+            // but only if the user has not already made an explicit consent decision.
+            // validConsent() returns true once any banner choice (accept or reject) has
+            // been stored — this prevents overriding a deliberate "Reject All" choice.
             if (!window.ffPrivacyCountries.includes(countryCode)) {
-                posthog.opt_in_capturing();
-                // Flag for hubspot.js so chat auto-loads when hs-scripts.com is ready
-                window._ffLoadChat = true;
-                // Accept CookieConsent categories to enable Warmly + HubSpot chat
-                if (typeof window.CookieConsent !== 'undefined' && !CookieConsent.acceptedCategory('analytics')) {
-                    CookieConsent.acceptCategory(['analytics', 'functional', 'ads']);
+                const hasDecided = typeof window.CookieConsent !== 'undefined' && CookieConsent.validConsent();
+                if (!hasDecided) {
+                    posthog.opt_in_capturing();
+                    // Flag for hubspot.js so chat auto-loads when hs-scripts.com is ready
+                    window._ffLoadChat = true;
+                    // Accept CookieConsent categories to enable Warmly + HubSpot chat
+                    if (typeof window.CookieConsent !== 'undefined') {
+                        CookieConsent.acceptCategory(['analytics', 'functional', 'ads']);
+                    }
                 }
             }
         })

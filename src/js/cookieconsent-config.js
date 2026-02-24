@@ -202,10 +202,11 @@ CookieConsent.run({
     }
 });
 
-// Auto-accept analytics + functional + ads for non-privacy-region users.
-// Covers the race condition where the /country fetch resolved before cc.min.js loaded —
-// in that case base.njk already set window._ffLoadChat = true but CookieConsent wasn't
-// ready yet, so we check here once CookieConsent.run() has finished initialising.
-if (window._ffLoadChat && !CookieConsent.acceptedCategory('analytics')) {
+// Auto-accept all categories for non-privacy-region users, but ONLY if the user
+// has not already made an explicit consent decision (accept or reject).
+// validConsent() returns true once any decision has been stored — this prevents
+// the auto-accept from overriding a user's deliberate "Reject All" choice.
+// Covers the race condition where /country fetch resolved before cc.min.js loaded.
+if (window._ffLoadChat && !CookieConsent.validConsent()) {
     CookieConsent.acceptCategory(['analytics', 'functional', 'ads']);
 }
