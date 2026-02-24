@@ -357,7 +357,7 @@ The model now knows what healthy looks like. This section builds the Node-RED fl
 
 FlowFuse provides a dedicated AI nodes package for Node-RED that includes ONNX runtime support.
 
-> **Note:** These nodes are only available to FlowFuse users. If you don't have an account, [get started here](/get-started/) and follow the steps to [run the device agent](/blog/2025/09/installing-node-red/).
+> **Note:** These nodes are only available to FlowFuse users. If you don't have an account, [get started here]({% include "sign-up-url.njk" %}) and follow the steps to [run the device agent](/blog/2025/09/installing-node-red/).
 
 1. Open the Node-RED editor and go to **Menu → Manage Palette**
 2. Search for `@flowfuse-nodes/nr-ai-nodes`
@@ -534,4 +534,4 @@ False positives are inevitable in early deployment. External vibration from near
 
 Finally, anomaly detection is an early warning layer, not a maintenance strategy on its own. It tells you to look sooner, not what to do when you get there. Pair it with regular physical inspection, lubrication schedules, and, where possible, a domain expert who can interpret the alerts in context. Used that way, it earns its place. Used as a replacement for those things, it will eventually let you down.
 
-*Most motor failures are predictable. The vibration signature is there weeks before the damage is done. This guide shows how to capture that signal and act on it. FlowFuse brings the full pipeline together in one place: sensor ingestion, feature extraction, and custom-trained AI inference, without managing separate infrastructure. [Try it free](/get-started/).*
+*Most motor failures are predictable. The vibration signature is there weeks before the damage is done. This guide shows how to capture that signal and act on it. FlowFuse brings the full pipeline together in one place: sensor ingestion, feature extraction, and custom-trained AI inference, without managing separate infrastructure. [Try it free]({% include "sign-up-url.njk" %}).*
