@@ -153,19 +153,22 @@ eleventyComputed:
 
     <script type="module" src="/js/flowrenderer.min.js"></script>
 
-    {%- if not DEV_MODE -%}
     <!-- Google Consent -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
 
-        // Set cookies to denied by default in EU countries, California, Brazil, Canada and Australia
+        // Single source of truth for all privacy/consent-required regions
+        // Used by Google Consent Mode, PostHog, and any future consent checks
+        window.ffPrivacyCountries = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU'];
+
+        // Set cookies to denied by default for privacy-required regions
         gtag('consent', 'default', {
             'ad_storage': 'denied',
             'analytics_storage': 'denied',
             'ad_user_data': 'denied',
             'ad_personalization': 'denied',
-            'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU']
+            'region': window.ffPrivacyCountries
         });
     </script>
     <!-- Google Tag Manager -->
@@ -178,10 +181,11 @@ eleventyComputed:
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-55L36797');</script>
     <!-- End Google Tag Manager -->
-    <!-- warmly.ai -->
-    <script id="warmly-script-loader" src="https://opps-widget.getwarmly.com/warmly.js?clientId=3657ad04e55b92ef0b5972fcfb0802d1" defer></script>
-    <!-- End warmly.ai -->
-    {%- endif -%}
+    <!-- HubSpot - block tracking by default until consent -->
+    <script>
+        var _hsq = window._hsq = window._hsq || [];
+        _hsq.push(['doNotTrack']);
+    </script>
 </head>
 <body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <!-- Google Tag Manager (noscript) -->
@@ -311,19 +315,8 @@ eleventyComputed:
                 </div>
                 <div class="w-full md:row-span-2">
                     <ul class="flex flex-col gap-y-4 md:gap-y-6 w-full -mx-3 md:mx-0 text-base md:items-end">
-                      <!-- Follow us buttons -->
-                      <li class="flex flex-wrap gap-y-4 gap-x-4 lg:gap-x-5 px-3 md:px-0 justify-start md:justify-end">
-                        <div class="min-w-max h-6 flex items-end">
-                          <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-                          <script type="IN/FollowCompany" data-id="71968747" data-counter="none"></script>
-                        </div>
-                        <div class="min-w-max h-6 flex items-end">
-                          <script src="https://apis.google.com/js/platform.js"></script>
-                          <div class="g-ytsubscribe" data-channelid="UCbBzP8NZbv3WDtlt4UouA-g" data-layout="default" data-count="default"></div>
-                        </div>
-                      </li>
                       <!-- Social Icons -->
-                      <li class="flex flex-wrap gap-x-4 lg:gap-x-6 px-3 md:px-0 justify-between sm:justify-start md:justify-end">
+                      <li class="flex flex-wrap gap-x-4 gap-y-2 lg:gap-x-6 px-3 md:px-0 justify-between sm:justify-start md:justify-end">
                         <a href="https://www.facebook.com/FlowFuse/" class="block">
                           <span class="sr-only">Visit our Facebook page</span>
                           {% include "components/facebook.njk" %}
@@ -343,6 +336,14 @@ eleventyComputed:
                         <a href="/blog/index.xml" class="block">
                           <span class="sr-only">Subscribe to our RSS feed</span>
                           {% include "components/rss.njk" %}
+                        </a>
+                        <a href="https://www.linkedin.com/company/flowfuse" class="block">
+                          <span class="sr-only">Visit our LinkedIn page</span>
+                          {% include "components/linkedin.njk" %}
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g" class="block">
+                          <span class="sr-only">Visit our YouTube channel</span>
+                          {% include "components/youtube.njk" %}
                         </a>
                       </li>
                     </ul>
@@ -364,7 +365,6 @@ eleventyComputed:
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-{%- if not DEV_MODE -%}
 <!-- PostHog -->
 <script type="text/javascript">
     const getMyCookieValue = (name) => (
@@ -388,8 +388,17 @@ eleventyComputed:
     }
 
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    let optOutByDefault = false;
-
+    // Initialise PostHog immediately so that opt_in/opt_out_capturing are available
+    // as stub functions before any CookieConsent callbacks fire. Always start opted
+    // out — the /country fetch below opts-in non-privacy-region users, and the
+    // onConsent/onChange callbacks in cookieconsent-config.js handle explicit consent.
+    posthog.init('{{ POSTHOG_APIKEY }}', {
+        api_host: 'https://eu.i.posthog.com',
+        person_profiles: 'always',
+        bootstrap: phBootstrap,
+        capture_pageleave: false,
+        opt_out_capturing_by_default: true
+    });
     fetch('/country')
         .then(response => {
             if (!response.ok) {
@@ -398,22 +407,20 @@ eleventyComputed:
             return response.text();
         })
         .then(countryCode => {
-            const optOutCountries = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'ES', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'SE', 'GB', 'US-CA', 'BR', 'CA', 'AU'];
-            optOutByDefault = optOutCountries.includes(countryCode);
+            // Auto opt-in and enable consent-gated scripts for non-privacy-region users
+            if (!window.ffPrivacyCountries.includes(countryCode)) {
+                posthog.opt_in_capturing();
+                // Flag for hubspot.js so chat auto-loads when hs-scripts.com is ready
+                window._ffLoadChat = true;
+                // Accept CookieConsent categories to enable Warmly + HubSpot chat
+                if (typeof window.CookieConsent !== 'undefined' && !CookieConsent.acceptedCategory('analytics')) {
+                    CookieConsent.acceptCategory(['analytics', 'functional', 'ads']);
+                }
+            }
         })
         .catch(error => {
-            console.error('Initializing PostHog with opt_out_capturing_by_default set to true due to Fetch failed by:', error);
-            optOutByDefault = true;
-        })
-
-        .finally(() => {
-            posthog.init('{{ POSTHOG_APIKEY }}', {
-                api_host: 'https://eu.i.posthog.com',
-                person_profiles: 'always',
-                bootstrap: phBootstrap,
-                capture_pageleave: false,
-                opt_out_capturing_by_default: optOutByDefault
-            });
+            // fetch failed — PostHog already initialised with opt_out_capturing_by_default: true, nothing more to do
+            console.error('Country fetch failed, defaulting to opt-out capturing:', error);
         });
     /*
         Custom pageleave handler to track scroll
@@ -500,11 +507,15 @@ eleventyComputed:
 {% set hubspotJS %}{% include "hubspot.js" %}{% endset %}
 <script>{{ hubspotJS | jsmin | safe }}</script>
 
-<!-- Cookie banner -->
+<!-- Cookie banner (must load before any consent-gated scripts) -->
 <script async type="text/javascript" src="/js/cc.min.js"></script>
 
-<!-- HS script -->
-<script async type="text/javascript" id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+<!-- warmly.ai - consent-gated -->
+<script id="warmly-script-loader" type="text/plain" data-category="analytics" src="https://opps-widget.getwarmly.com/warmly.js?clientId=3657ad04e55b92ef0b5972fcfb0802d1"></script>
+<!-- End warmly.ai -->
+
+<!-- HS tracker - consent-gated (functional: enables chat support widget) -->
+<script type="text/plain" data-category="functional" async id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
 <!-- HubSpot Consent Listener -->
 <script type="text/javascript">
@@ -512,32 +523,9 @@ eleventyComputed:
         var _hsp = window._hsp = window._hsp || [];
 
         _hsp.push(['addPrivacyConsentListener', function(consent) {
-            // Check if the HubSpot cookie banner is enabled
-            var isBannerEnabled = document.querySelector('#hs-banner-parent') !== null;
-
-            if (isBannerEnabled) {
-                if (CookieConsent.acceptedCategory('analytics')) {
-                    // The user has accepted analytics cookies
-                    // Enable HubSpot analytics cookies
-                    consent.categories.analytics = true;
-                } else {
-                    // The user has rejected analytics cookies
-                    // Disable HubSpot analytics cookies
-                    consent.categories.analytics = false;
-                }
-
-                if (CookieConsent.acceptedCategory('ads')) {
-                    // The user has accepted ads cookies
-                    // Enable HubSpot ads cookies
-                    consent.categories.advertisement = true;
-                } else {
-                    // The user has rejected ads cookies
-                    // Disable HubSpot ads cookies
-                    consent.categories.advertisement = false;
-                }
-                // Enable HubSpot functionality cookies by default
-                consent.categories.functionality = true;
-            }
+            consent.categories.analytics = CookieConsent.acceptedCategory('analytics');
+            consent.categories.advertisement = CookieConsent.acceptedCategory('ads');
+            consent.categories.functionality = true;
         }]);
     }
 
@@ -545,5 +533,4 @@ eleventyComputed:
         addHubSpotConsentListener();
     });
 </script>
-{%- endif -%}
 </html>

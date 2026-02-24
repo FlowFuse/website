@@ -33,6 +33,11 @@ CookieConsent.run({
                 'event_category': 'analytics',
                 'event_label': 'accepted'
             });
+            // Enable PostHog
+            posthog.opt_in_capturing();
+            // Enable HubSpot tracking
+            window._hsq = window._hsq || [];
+            window._hsq.push(['doNotTrack', {track: true}]);
         }else{
             // Disable Google Analytics
             gtag('consent', 'update', {
@@ -43,6 +48,11 @@ CookieConsent.run({
                 'event_category': 'analytics',
                 'event_label': 'denied'
             });
+            // Disable PostHog
+            posthog.opt_out_capturing();
+            // Keep HubSpot tracking blocked
+            window._hsq = window._hsq || [];
+            window._hsq.push(['doNotTrack']);
         }
 
         if(CookieConsent.acceptedCategory('ads')){
@@ -84,6 +94,9 @@ CookieConsent.run({
                 });
                 // Enable PostHog
                 posthog.opt_in_capturing();
+                // Enable HubSpot tracking
+                window._hsq = window._hsq || [];
+                window._hsq.push(['doNotTrack', {track: true}]);
             }else{
                 // Disable Google Analytics
                 gtag('consent', 'update', {
@@ -96,6 +109,9 @@ CookieConsent.run({
                 });
                 // Disable PostHog
                 posthog.opt_out_capturing();
+                // Block HubSpot tracking
+                window._hsq = window._hsq || [];
+                window._hsq.push(['doNotTrack']);
             }
         }
 
@@ -130,6 +146,7 @@ CookieConsent.run({
         necessary: {
             readOnly: true
         },
+        functional: {},
         analytics: {},
         ads: {}
     },
@@ -164,6 +181,11 @@ CookieConsent.run({
                             linkedCategory: "necessary"
                         },
                         {
+                            title: "Functional Cookies",
+                            description: "These cookies enable functional features on our website, such as the live chat support widget. Enabling these cookies allows you to use the chat to get help from our team.",
+                            linkedCategory: "functional"
+                        },
+                        {
                             title: "Analytics Cookies",
                             description: "We use Google Analytics, HubSpot, PostHog and Reo.Dev for analytics. These services use cookies to collect data that helps us understand how you interact with our website. These insights allow us to improve our content and build better features that enhance your experience.",
                             linkedCategory: "analytics"
@@ -179,3 +201,11 @@ CookieConsent.run({
         }
     }
 });
+
+// Auto-accept analytics + functional + ads for non-privacy-region users.
+// Covers the race condition where the /country fetch resolved before cc.min.js loaded —
+// in that case base.njk already set window._ffLoadChat = true but CookieConsent wasn't
+// ready yet, so we check here once CookieConsent.run() has finished initialising.
+if (window._ffLoadChat && !CookieConsent.acceptedCategory('analytics')) {
+    CookieConsent.acceptCategory(['analytics', 'functional', 'ads']);
+}
