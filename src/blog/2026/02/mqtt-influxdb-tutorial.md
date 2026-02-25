@@ -2,7 +2,7 @@
 title: "How to Build an MQTT-to-InfluxDB Data Pipeline"
 subtitle: "From MQTT broker to InfluxDB bucket, the right way."
 description: "Learn how to build a reliable MQTT-to-InfluxDB data pipeline using FlowFuse and Node-RED. No custom scripts, no glue code, just a visual flow that is easy to maintain and hand off."
-date: 2026-02-25
+date: 2026-02-26
 keywords: 
 authors: ["sumit-shinde"]
 image: 
@@ -10,7 +10,7 @@ tags:
 - flowfuse
 ---
 
-MQTT to InfluxDB is one of the most common and most critical pipelines in IIoT. Every timestamped telemetry event that drives decisions on the floor needs to land somewhere it can be queried, trended, and acted on.
+An MQTT to InfluxDB is one of the most common and most critical pipelines in IIoT. Every timestamped telemetry event that drives decisions on the floor needs to land somewhere it can be queried, trended, and acted on.
 
 <!--more-->
 
@@ -56,7 +56,7 @@ Drag an MQTT in node onto the canvas and double-click it to open its settings. C
 1. Enter your broker host in the Server field and set the Port.
 2. Select `MQTT 3.1.1` as the protocol version.
 3. Leave the Client ID blank to let Node-RED generate one automatically.
-4. Keep alive is set to 60 seconds by default, no need to change it.
+4. The keepalive is 60 seconds by default, so there’s no need to change it.
 5. Check `Automatically unsubscribe when disconnecting`.
 
 ![MQTT broker connection settings in Node-RED showing server, port, protocol version, and client ID fields.](./images/mqtt-in-config.png "MQTT broker connection settings in Node-RED showing server, port, protocol version, and client ID fields.")
@@ -71,7 +71,7 @@ If you are on FlowFuse Pro or Enterprise, the built-in broker details will alrea
 Once the broker is configured:
 
 1. Set the Topic to `acme-motors/detroit/welding/line-1/robot-3/temperature`.
-2. Set QoS to 2 to ensure every message is delivered exactly once, so no readings are lost or duplicated in your pipeline.
+2. Set QoS to 2 to minimize message loss and reduce duplicates between the broker and Node-RED. For true end-to-end de-duplication, add an idempotency strategy (for example, a unique key or timestamp handling) before writing to InfluxDB.
 3. Give the node the name `robot 3 temperature` and click Done.
 
 ![MQTT in node configured in Node-RED with topic set to the ISA-95 hierarchy and QoS set to 2.](./images/mqtt-in.png "MQTT in node configured in Node-RED with topic set to the ISA-95 hierarchy and QoS set to 2.")
@@ -81,7 +81,7 @@ Once the broker is configured:
 When the MQTT in node receives a message, `msg.payload` will look like this:
 ```json
 {
-  "timestamp": "2026-02-06T08:32:15Z",
+  "timestamp": 1738830735000,
   "value": 187.6,
   "unit": "celsius",
   "sensor_id": "temp-robot-3",
@@ -89,30 +89,18 @@ When the MQTT in node receives a message, `msg.payload` will look like this:
 }
 ```
 
-The InfluxDB out node does not accept this structure directly. It expects the payload as an array of two objects, the first containing the fields to write and the second containing the tags. In InfluxDB, fields hold the actual measured values you want to query and trend, while tags are metadata you filter and group by. Getting this split right matters because you cannot aggregate or perform math on tags, only on fields.
+The InfluxDB out node does not accept this structure directly. With `node-red-contrib-influxdb`, the easiest pattern is to pass `msg.payload` as an array, the first containing the fields to write and the second containing the tags. In InfluxDB, fields are the values you aggregate and query over, while tags are metadata used mainly for filtering and grouping. Getting this split right matters because you cannot aggregate or perform math on tags, only on fields.
 
 1. Drag a change node onto the canvas and connect it to the MQTT in node.
 2. Double-click it to open its settings and add the following rules:
    - Set `msg.measurement` to the string value `temperature`. If your payload already contains the measurement name, you can set `msg.measurement` dynamically from `msg.payload.measurement` instead, making the flow reusable across multiple sensors without any changes. Otherwise, you can configure the measurement name directly in the InfluxDB out node.
    - Set `msg.payload` to the JSONata expression:
 ```
-     [{"value": payload.value, "status": payload.status}, {"sensor_id": payload.sensor_id, "unit": payload.unit}]
+     [{"value": payload.value, "status": payload.status, "time": payload.timestamp}, {"sensor_id": payload.sensor_id, "unit": payload.unit}]
 ```
 3. Give the node the name `transform for influxdb` and click Done.
 
-After the transformation, `msg.payload` will look like this:
-```json
-[
-  { "value": 187.6, "status": "normal" },
-  { "sensor_id": "temp-robot-3", "unit": "celsius" }
-]
-```
-
-You can verify this by attaching a debug node to the output of the change node before deploying.
-
-This is where FlowFuse gives you real flexibility. The change node we used here covers the most common case, but you are not limited to it. If your sensor publishes a raw string or a Buffer instead of JSON, you can add a JSON node before the change node to parse it first. If you want to enrich the data before writing it, for example adding a shift name, a machine model, or a calculated OEE value, you can insert additional change or function nodes in between. You can even split the flow and write to multiple buckets or route specific readings to different measurements, all without touching any external code.
-
-![Change node in Node-RED configured with rules to transform the MQTT payload into the InfluxDB structure.](./images/change-node.png "Change node in Node-RED configured with rules to transform the MQTT payload into the InfluxDB structure.")
+![Change node in Node-RED configured with rules to transform the MQTT payload into the InfluxDB structure.](./images/change-node-influxdb-influxdb-transform.png "Change node in Node-RED configured with rules to transform the MQTT payload into the InfluxDB structure.")
 
 ### Step 4: Configure the InfluxDB Out Node
 
