@@ -36,7 +36,7 @@ Before you start, make sure you have the following in place.
 
 The flow has three stages. An MQTT in node subscribes to your broker and receives incoming sensor payloads. A change node transforms that payload into the structure InfluxDB expects. An InfluxDB out node takes that structured data and writes it to your bucket. That's the entire pipeline. Let's build it.
 
-![MQTT to InfluxDB architecture illustrating sensor data ingestion via MQTT, transformation in FlowFuse, and storage in an InfluxDB bucket](./images/mqtt-to-influxdb-architecture.png "MQTT to InfluxDB architecture illustrating sensor data ingestion via MQTT, transformation in FlowFuse, and storage in an InfluxDB bucket")
+![MQTT to InfluxDB architecture illustrating sensor data ingestion via MQTT, transformation in FlowFuse, and storage in an InfluxDB bucket](./images/mqtt-to--influxdb-architecture.png "MQTT to InfluxDB architecture illustrating sensor data ingestion via MQTT, transformation in FlowFuse, and storage in an InfluxDB bucket")
 
 ### Step 1: Install the InfluxDB Node
 
@@ -59,12 +59,12 @@ Drag an MQTT in node onto the canvas and double-click it to open its settings. C
 4. The keepalive is 60 seconds by default, so there’s no need to change it.
 5. Check `Automatically unsubscribe when disconnecting`.
 
-![MQTT broker connection settings in Node-RED showing server, port, protocol version, and client ID fields.](./images/mqtt-in-config.png "MQTT broker connection settings in Node-RED showing server, port, protocol version, and client ID fields.")
+![MQTT broker connection settings in Node-RED showing server, port, protocol version, and client ID fields.](./images/mqtt-in--config.png "MQTT broker connection settings in Node-RED showing server, port, protocol version, and client ID fields.")
 
 6. Switch to the Security tab and enter your broker username and password.
 7. Click Add to save the broker configuration.
 
-![MQTT broker security tab in Node-RED showing username and password fields.](./images/mqtt-in-security.png "MQTT broker security tab in Node-RED showing username and password fields.")
+![MQTT broker security tab in Node-RED showing username and password fields.](./images/mqtt-in--security.png "MQTT broker security tab in Node-RED showing username and password fields.")
 
 If you are on FlowFuse Pro or Enterprise, the built-in broker details will already be picked up by the node and you can skip the above.
 
@@ -74,7 +74,7 @@ Once the broker is configured:
 2. Set QoS to 2 to minimize message loss and reduce duplicates between the broker and Node-RED. For true end-to-end de-duplication, add an idempotency strategy (for example, a unique key or timestamp handling) before writing to InfluxDB.
 3. Give the node the name `robot 3 temperature` and click Done.
 
-![MQTT in node configured in Node-RED with topic set to the ISA-95 hierarchy and QoS set to 2.](./images/mqtt-in.png "MQTT in node configured in Node-RED with topic set to the ISA-95 hierarchy and QoS set to 2.")
+![MQTT in node configured in Node-RED with topic set to the ISA-95 hierarchy and QoS set to 2.](./images/mqtt--in.png "MQTT in node configured in Node-RED with topic set to the ISA-95 hierarchy and QoS set to 2.")
 
 ### Step 3: Transform the Payload with a Change Node
 
@@ -111,7 +111,7 @@ The InfluxDB out node does not accept this structure directly. With `node-red-co
    - Enter your API token.
 3. Click Add to save the connection.
 
-![InfluxDB server configuration in Node-RED showing version, URL, and API token fields.](./images/influxdb-config.png "InfluxDB server configuration in Node-RED showing version, URL, and API token fields.")
+![InfluxDB server configuration in Node-RED showing version, URL, and API token fields.](./images/influxdb--config.png "InfluxDB server configuration in Node-RED showing version, URL, and API token fields.")
 
 4. Set the Organization to your organization name.
 5. Set the Bucket to the bucket you want to write data into.
