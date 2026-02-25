@@ -7,7 +7,7 @@ image: /images/webinars/turning-data-into-knowledge.jpg
 date: 2026-02-24
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: 
+video: K5bybdNxBOU
 hosts: ["kristopher-sandoval"]
 hubspot:
     formId: b21f2b32-c47c-4099-91fc-9a90c6dcf612
