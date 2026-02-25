@@ -103,4 +103,4 @@ If you are maintaining a hybrid gateway architecture, resist the urge to rationa
 
 The two protocols make different guarantees, fail differently, and require different diagnostic skills when something goes wrong. Understanding that distinction before the system is designed costs nothing. Understanding it for the first time during an incident costs considerably more.
 
-*If you are working with either protocol in production, FlowFuse supports both [Modbus RTU](/blog/2025/09/using-modbus-with-flowfuse/) and [Modbus TCP](/node-red/protocol/modbus/) across the full OT/IT stack, so the protocol layer does not become another thing to solve. [Get started here.](/get-started)*
+*If you are working with either protocol in production, FlowFuse supports both [Modbus RTU](/blog/2025/09/using-modbus-with-flowfuse/) and [Modbus TCP](/node-red/protocol/modbus/) across the full OT/IT stack, so the protocol layer does not become another thing to solve. [Get started here.]({% include "sign-up-url.njk" %})*
