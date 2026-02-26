@@ -17,7 +17,7 @@ Edge devices are everywhere, and their numbers are skyrocketing—from 2.7 billi
 
 Tracking CPU usage, memory, and system performance helps detect potential issues early, preventing downtime and optimizing operations. In this post, we will explore how to monitor devices using Node-RED and scale this process efficiently with FlowFuse.  
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/43te5aD1RRw?si=5X2XbER_-ZQMLZOb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="43te5aD1RRw" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## What is Device Health Monitoring, and Why is it Important?  
 
@@ -323,7 +323,7 @@ To learn more about DevOps pipelines, read the article: [Creating and Automating
 
 Now, you have the system data of all devices broadcasted on the topic and the device name. To monitor each device, go to the dashboard instance, copy the flow, and create copies for each device. Ensure that you replace the topic with the corresponding device name. Additionally, create a separate page for each device, assign them to separate groups, and correctly move all copied widgets into the appropriate groups. Alternatively, follow [these steps](#visualizing-data-with-the-flowfuse-dashboard) again for each device, and you will have a centralized dashboard monitoring thousands of devices live.
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/43te5aD1RRw?si=5X2XbER_-ZQMLZOb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="43te5aD1RRw" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Conclusion
 

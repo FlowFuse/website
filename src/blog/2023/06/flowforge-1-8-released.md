@@ -22,7 +22,7 @@ Additionally, we're pleased to offer a 30-day premium trial license for self-man
 
 High Availability is our first [preview feature](/handbook/engineering/product/versioning/#preview-features), and your feedback is crucial. We encourage you to try out HA in your Node-RED instances and share your experiences with us. Your feedback will help us refine this feature and make it even better.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mbDkjKhVwIw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="mbDkjKhVwIw" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## DevOps Pipelines
 
@@ -30,7 +30,7 @@ FlowFuse 1.8 introduces the concept of Pipelines to better organize your Node-RE
 
 The new Pipelines feature builds upon the Staged Development support that we introduced in[FlowFuse Version 1.4](../../02/flowforge-1-4-0-released). We highly recommend that development teams avoid developing their flows directly in production instances. This approach fosters a more reliable and robust development process, reducing the risks associated with production environment modifications. Instead, start your development in a dedicated development or test instance and then deploy your Node-RED instance to production once they have been thoroughly tested and reviewed. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Pbql22f3vqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="Pbql22f3vqY" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## User interface for Device Agent
 
