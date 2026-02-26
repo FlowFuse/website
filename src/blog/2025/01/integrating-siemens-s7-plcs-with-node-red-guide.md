@@ -163,7 +163,7 @@ _Configuring S7-out Node to write data to plc_
 
 6. Once your flow is set up and the s7-out node for each variable is configured, click Deploy in the top-right corner to activate the flow.
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/AilWMNPzP1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="AilWMNPzP1Q" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 In the video above, the dashboard interface is built to control the stack light. At the end of this article, I will provide the complete flow for you to download.
 
@@ -204,7 +204,7 @@ Now that you have the desired format for your output data, you may want to build
 
 The video below shows the updated dashboard interface used to monitor the stack light LED status:
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="Nlyk_BATKGE" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 Here is the flow you can import into your FlowFuse remote instance and deploy. Ensure that you have installed `node-red-contrib-s7` and `node-red-contrib-buffer-parser`. This flow includes S7 nodes for interacting with the S7 PLC and Project nodes for communicating with the FlowFuse hosted instance, where you will build the dashboard.
 

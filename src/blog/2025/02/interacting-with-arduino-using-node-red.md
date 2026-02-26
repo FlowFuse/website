@@ -17,7 +17,7 @@ Arduino is a popular open-source platform that lets you build cool electronics p
 
 In this guide, I’ll show you how to control and automate your Arduino remotely using Node-RED and FlowFuse, all without writing any code. We’ll use the Firmata protocol to make it easy to send commands and get data from your Arduino. By the end of this tutorial, you’ll have a simple automation setup that you can control from anywhere. Just keep in mind, the Arduino will need to be connected to the device running Node-RED!
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/FTuxOy16nwo?si=i7wds6zH0Hpo0TTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="FTuxOy16nwo" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Prerequisites
 
@@ -176,7 +176,7 @@ Below, I have provided the complete flow of how we read the IR object detection 
 [{"id":"2b871fb5d0923355","type":"arduino in","z":"FFF0000000000001","name":"Read Sensor Data","pin":"9","state":"INPUT","arduino":"d7663aaf.47194","x":130,"y":460,"wires":[["8ad3d1504ba05942"]]},{"id":"49b04d8b6f015846","type":"change","z":"FFF0000000000001","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"true","tot":"bool"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":480,"wires":[["d6e251e983f908ac"]]},{"id":"8f56a3d6ac64e87c","type":"change","z":"FFF0000000000001","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"false","tot":"bool"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":440,"wires":[["d6e251e983f908ac"]]},{"id":"8ad3d1504ba05942","type":"switch","z":"FFF0000000000001","name":"","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"num"},{"t":"else"}],"checkall":"true","repair":false,"outputs":2,"x":330,"y":460,"wires":[["8f56a3d6ac64e87c"],["49b04d8b6f015846"]]},{"id":"d6e251e983f908ac","type":"arduino out","z":"FFF0000000000001","name":"Control LED","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":770,"y":460,"wires":[]},{"id":"d7663aaf.47194","type":"arduino-board","device":"COM5"}]
 {% endrenderFlow %}
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/FTuxOy16nwo?si=i7wds6zH0Hpo0TTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="FTuxOy16nwo" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Conclusion
 
