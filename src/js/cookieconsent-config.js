@@ -71,8 +71,17 @@ CookieConsent.run({
             gtag('consent', 'update', {
                 'ad_storage': 'granted',
                 'ad_user_data': 'granted',
-                'ad_personalization': 'granted'
+                'ad_personalization': 'granted',
+                'personalization_storage': 'granted'
             });
+            // Re-trigger GTM All Pages so ads tags held on page load can fire now.
+            // Guards prevent duplicates:
+            //   _ffNonPrivacyRegion       → ads tags already fired via All Pages (no regional deny)
+            //   _ffHadStoredAdsConsent    → ad_storage was granted in <head> and tags already fired
+            if (!window._ffNonPrivacyRegion && !window._ffHadStoredAdsConsent) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'gtm.js' });
+            }
             // Send event to Google Analytics
             gtag('event', 'cookie_consent', {
                 'event_category': 'ads',
@@ -82,7 +91,8 @@ CookieConsent.run({
             gtag('consent', 'update', {
                 'ad_storage': 'denied',
                 'ad_user_data': 'denied',
-                'ad_personalization': 'denied'
+                'ad_personalization': 'denied',
+                'personalization_storage': 'denied'
             });
             // Send event to Google Analytics
             gtag('event', 'cookie_consent', {
@@ -92,10 +102,17 @@ CookieConsent.run({
         }
 
         if(CookieConsent.acceptedCategory('functional')){
+            gtag('consent', 'update', {
+                'functionality_storage': 'granted'
+            });
             // Load HubSpot meetings embed if present on this page
             if (typeof window._ffLoadMeetings === 'function') {
                 window._ffLoadMeetings();
             }
+        }else{
+            gtag('consent', 'update', {
+                'functionality_storage': 'denied'
+            });
         }
     },
 
@@ -144,8 +161,16 @@ CookieConsent.run({
                 gtag('consent', 'update', {
                     'ad_storage': 'granted',
                     'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
+                    'ad_personalization': 'granted',
+                    'personalization_storage': 'granted'
                 });
+                // Re-trigger GTM All Pages so ads tags held on this page load can fire now.
+                // Guard: if analytics also just changed, that block already pushed gtm.js
+                // and all held tags (including ads) will re-fire from that single push.
+                if (!changedCategories.includes('analytics')) {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ event: 'gtm.js' });
+                }
                 // Send event to Google Analytics
                 gtag('event', 'cookie_consent', {
                     'event_category': 'ads',
@@ -155,7 +180,8 @@ CookieConsent.run({
                 gtag('consent', 'update', {
                     'ad_storage': 'denied',
                     'ad_user_data': 'denied',
-                    'ad_personalization': 'denied'
+                    'ad_personalization': 'denied',
+                    'personalization_storage': 'denied'
                 });
                 // Send event to Google Analytics
                 gtag('event', 'cookie_consent', {
@@ -167,10 +193,17 @@ CookieConsent.run({
 
         if(changedCategories.includes('functional')){
             if(CookieConsent.acceptedCategory('functional')){
+                gtag('consent', 'update', {
+                    'functionality_storage': 'granted'
+                });
                 // Load HubSpot meetings embed if present on this page
                 if (typeof window._ffLoadMeetings === 'function') {
                     window._ffLoadMeetings();
                 }
+            }else{
+                gtag('consent', 'update', {
+                    'functionality_storage': 'denied'
+                });
             }
         }
     },

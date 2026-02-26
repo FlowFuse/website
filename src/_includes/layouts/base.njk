@@ -171,31 +171,39 @@ eleventyComputed:
         // - No stored decision: deny only for privacy-required regions.
         (function() {
             var deniedConsent = {
-                'ad_storage': 'denied',
                 'analytics_storage': 'denied',
+                'ad_storage': 'denied',
                 'ad_user_data': 'denied',
-                'ad_personalization': 'denied'
+                'ad_personalization': 'denied',
+                'functionality_storage': 'denied',
+                'personalization_storage': 'denied',
+                'security_storage': 'granted'
             };
             try {
                 var ccMatch = document.cookie.match(/(?:^|;\s*)cc_cookie=([^;]+)/);
                 if (ccMatch) {
                     var stored = JSON.parse(decodeURIComponent(ccMatch[1]));
                     if (stored && Array.isArray(stored.categories)) {
-                        if (!stored.categories.includes('analytics')) {
-                            // Analytics explicitly rejected — deny globally
-                            gtag('consent', 'default', deniedConsent);
-                            return;
-                        }
-                        // Analytics was previously accepted — grant it immediately.
-                        // Set a flag so onConsent skips the dataLayer push (GA4 will
-                        // already fire via the "All Pages" trigger).
-                        window._ffHadStoredAnalyticsConsent = true;
                         var consentState = Object.assign({}, deniedConsent);
-                        consentState['analytics_storage'] = 'granted';
+                        if (stored.categories.includes('analytics')) {
+                            // Analytics was previously accepted — grant it immediately.
+                            // Set a flag so onConsent skips the dataLayer re-push (GA4 will
+                            // already fire via the "All Pages" trigger).
+                            window._ffHadStoredAnalyticsConsent = true;
+                            consentState['analytics_storage'] = 'granted';
+                        }
                         if (stored.categories.includes('ads')) {
+                            // Ads was previously accepted — grant it immediately.
+                            // Set a flag so onConsent skips the dataLayer re-push (ads tags
+                            // will already fire via the "All Pages" trigger).
+                            window._ffHadStoredAdsConsent = true;
                             consentState['ad_storage'] = 'granted';
                             consentState['ad_user_data'] = 'granted';
                             consentState['ad_personalization'] = 'granted';
+                            consentState['personalization_storage'] = 'granted';
+                        }
+                        if (stored.categories.includes('functional')) {
+                            consentState['functionality_storage'] = 'granted';
                         }
                         gtag('consent', 'default', consentState);
                         return;
