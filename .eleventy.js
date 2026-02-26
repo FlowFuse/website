@@ -849,16 +849,20 @@ module.exports = function(eleventyConfig) {
                     return (a.order - b.order) || a.name.localeCompare(b.name)
                 }
 
+                function sortTree (node) {
+                    if (!node || !node.children || !Array.isArray(node.children)) {
+                        return
+                    }
+
+                    node.children.sort(sortChildren)
+                    node.children.forEach(sortTree)
+                }
+
                 nav[tag].groups = Object.values(groups).sort(sortChildren)
 
                 nav[tag].groups.forEach((group) => {
                     if (group.children) {
-                        group.children.forEach((child) => {
-                            if (child.children) {
-                                child.children.sort(sortChildren)
-                            }
-                        })
-                        group.children.sort(sortChildren)
+                        sortTree(group)
                     }
                 })
             }

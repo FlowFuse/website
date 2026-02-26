@@ -53,5 +53,6 @@ What a Fullstack Engineer brings to the table:
    - Option B: Build a small fullstack application (pizza ordering app).
    - Note: AI tools are explicitly allowed and encouraged where appropriate.
 1. Technical Interview (60m): Review the take-home work with 2–3 team members from engineering and, where relevant, product or design. The discussion focuses on problem understanding, decisions and tradeoffs, structure and clarity, and how the solution would evolve over time rather than feature completeness. There will be explicit discussion of where AI was used, how it was used, and why those choices were made.
+1. STAR Interview (45mins): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 1. Team Interview (45m): Conversation focused on team collaboration, communication style, and culture fit.
 1. Offer: Extend an offer to the selected candidate.

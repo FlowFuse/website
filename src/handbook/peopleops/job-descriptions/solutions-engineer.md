@@ -67,7 +67,7 @@ Nice to Haves:
 * First Interview (Technical & Role Fit): Conduct a phone or video interview to evaluate technical knowledge relevant to industrial automation, IIoT, and solutions engineering, as well as communication skills. Conducted by the hiring manager. 
 * Second Interview (Deep Dive & Customer Experience): In-depth interview with the hiring manager and other team members to discuss specific experience in customer-facing technical roles, complex problem-solving, and managing customer lifecycles. Conducted by the Head of Professional Services.
 * Technical Presentation / Case Study: Candidate will prepare and deliver a presentation on a technical solution or a case study of a past customer engagement demonstrating their problem-solving and communication skills.
-* STAR Interview (Behavioral Alignment): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
+* STAR Interview (45mins): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
 * Final Interview: A final interview with key stakeholders, potentially including a sales leader or executive, to assess strategic alignment and executive presence.
 * Offer: Extend an offer to the selected candidate.
 
