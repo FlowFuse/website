@@ -1,0 +1,42 @@
+{#
+  Renders a grid of FlowFuse features relevant to a specific solution page.
+
+  Usage (set solutionSlug before including):
+    {% set solutionSlug = "mes" %}
+    {% include "components/solution-features.njk" %}
+
+  Valid slugs: mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration
+#}
+
+{% set hasFeatures = false %}
+{% for section in featureCatalog.sections %}
+  {% for feature in section.features %}
+    {% if solutionSlug in feature.solutions %}
+      {% set hasFeatures = true %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% if hasFeatures %}
+<div class="w-full max-w-screen-lg mx-auto px-6 py-16">
+    <h2 class="text-center mb-2">Key <span class="text-indigo-600">Features</span></h2>
+    <p class="text-center text-gray-500 mb-10">Everything you need to get started.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for section in featureCatalog.sections %}
+        {% for feature in section.features %}
+        {% if solutionSlug in feature.solutions %}
+        <div class="border border-gray-200 rounded-lg p-5">
+            <h3 class="text-base font-semibold mb-2">{{ feature.label }}</h3>
+            {% if feature.description %}
+            <p class="text-sm text-gray-600 mb-3">{{ feature.description }}</p>
+            {% endif %}
+            {% if feature.docsLink %}
+            <a href="{{ feature.docsLink }}" class="text-indigo-600 text-sm font-medium" target="_blank" rel="noopener">Learn more →</a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
