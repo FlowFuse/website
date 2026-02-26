@@ -393,7 +393,7 @@ hubspot:
 <!-- Features info -->
 <script>
     function openInfo(id, hosting) {
-        capture('info-feature', { feature: id }, { hosting: hosting })
+        if (typeof capture === 'function') { capture('info-feature', { feature: id }, { hosting: hosting }) }
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
     }
     function closeInfo(id, hosting) {
