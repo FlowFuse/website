@@ -5,7 +5,7 @@ description: "Learn how to build a reliable MQTT-to-InfluxDB data pipeline using
 date: 2026-02-26
 keywords: MQTT, InfluxDB, IIoT, FlowFuse, Node-RED, Sensor telemetry, Time-series database
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/02/images/mqtt-to-influxdb.png
 tags:
 - flowfuse
 ---
