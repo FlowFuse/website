@@ -16,7 +16,7 @@ An MQTT to InfluxDB is one of the most common and most critical pipelines in IIo
 
 The typical approach is a custom Python script that subscribes to the broker, parses the payload, and writes to InfluxDB. It works until a sensor changes its payload format, or the script quietly dies over a weekend and nobody notices until Monday. Now you're debugging a process nobody else fully understands, with no visibility into what failed or when. Others stitch together multiple tools, each with its own config, its own failure modes, and its own logs to dig through at 2am. The complexity ends up hidden in places that are hard to see, hard to debug, and hard to hand off.
 
-This article takes a different approach. Using FlowFuse (the enterprise platform built on [Node-RED](/), you'll build the entire pipeline as a visual flow covering MQTT subscription, payload transformation, and InfluxDB write. Every step is visible, editable, and easy to hand off.
+This article takes a different approach. Using FlowFuse (the enterprise platform built on [Node-RED](/)), you'll build the entire pipeline as a visual flow covering MQTT subscription, payload transformation, and InfluxDB write. Every step is visible, editable, and easy to hand off.
 
 ## TL;DR
 
