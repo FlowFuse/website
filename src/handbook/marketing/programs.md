@@ -185,3 +185,56 @@ Date: [Submission date]
 5. Resources and Budget Estimate
 [Your response here]
 ```
+
+## 7. Analytics & Tag Management
+
+### Adding Tags in Google Tag Manager (GTM)
+
+When creating or updating tags in GTM, always configure the **Consent Settings** for each tag before publishing. Without this, a tag may fire as soon as the page loads — before the user has had a chance to accept or decline cookies — which is a GDPR compliance issue.
+
+Consent settings are found in the **Advanced Settings → Consent Settings** section of each tag in GTM.
+
+#### Required consent type by tag category
+
+| Tag category | Required consent type |
+|---|---|
+| Analytics (e.g. Google Analytics, HubSpot, PostHog) | `analytics_storage` |
+| Advertising & remarketing (e.g. LinkedIn InsightTag, Conversion Linker, Meta Pixel) | `ad_storage` |
+| Functional tools (e.g. live chat widgets, booking calendars, embedded support tools) | `functionality_storage` |
+| Personalization & A/B testing (e.g. tools that remember user preferences or show tailored content) | `personalization_storage` |
+| Security (e.g. fraud prevention, bot detection) | `security_storage` — typically strictly necessary; no consent required in most cases |
+| Google Tag AW (Google Ads base tag) | **No consent requirement** — this tag uses Google Consent Mode v2 natively. It must fire on all page loads, including for users who have denied consent, to enable cookieless conversion modeling. Adding a consent requirement here will break that functionality. |
+
+#### Trigger selection
+
+- **Google Tag type tags (Google Tag AW, Google Analytics 4)**: use `Initialization - All Pages`. These must fire before any other tags so that Consent Mode v2 can establish default consent state early. Both AW and GA4 fall into this category.
+- **Base tracking/pixel tags (e.g. LinkedIn InsightTag)**: use `All Pages` (Page View) — **not** `Initialization - All Pages`. Set the appropriate consent requirement and GTM will hold the tag until consent is granted.
+- **Conversion tracking tags** (e.g. Google Ads Conversion Tracking for specific actions): use a specific event or page-view trigger scoped to the conversion event (e.g. a thank-you page, a button click). These should also have the relevant consent requirement set.
+
+> If you're unsure which consent type applies to a new tag, check with the team before publishing.
+
+### Adding new third-party tracking tools
+
+To avoid compliance gaps, all third-party tracking scripts, pixels, and analytics tools must follow this process before being deployed.
+
+**Rule: GTM is the single point of control.**
+No tracking scripts should be added directly to HTML templates, `<head>` tags, layout files, or JavaScript bundles. GTM is the only approved deployment path for third-party tracking tools. This ensures every tool is subject to consent enforcement and can be audited or disabled without a code deployment.
+
+This also applies to integrations available inside third-party platforms. For example, HubSpot offers a built-in pixel integration (under Marketing → Ads → Settings → Pixels) that can deploy scripts like the Meta Pixel directly through HubSpot's own script. **Do not use this.** Pixels deployed through HubSpot fire outside of GTM's consent mode, making it impossible to enforce the correct consent type or audit them independently. Always deploy pixels through GTM instead.
+
+**Before adding any new tool, answer these questions:**
+
+1. **What data does it collect?** Does it collect personal data (IP addresses, user IDs, behavioral data)?
+2. **Does it set cookies?** Check the tool's privacy policy or cookie documentation. If the answer is yes — or unclear — assume it requires user consent.
+3. **What consent type applies?** Use the table above to determine whether the tool requires `analytics_storage`, `ad_storage`, or another consent type.
+4. **Is it strictly necessary?** Only tools that are essential for the site to function (e.g. security, authentication) may be exempt from consent — and these are rare. If in doubt, require consent.
+
+**Checklist before publishing a new tag in GTM:**
+
+- Tag is deployed via GTM — not hardcoded in any template or layout file
+- Consent requirement is set in **Advanced Settings → Consent Settings**
+- Trigger type follows the guidance in the [Trigger selection](#trigger-selection) section above
+- The tool and its consent category are documented in the table above in this handbook section
+- A team member with context on GDPR has reviewed the setup before the first publish
+
+> Any new tracking tool that cannot be deployed through GTM (e.g. it requires a code-level integration) must be reviewed and approved before implementation. Reach out in the marketing Slack channel before proceeding.
