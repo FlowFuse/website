@@ -90,8 +90,15 @@ CookieConsent.run({
                 'event_label': 'denied'
             });
         }
+
+        if(CookieConsent.acceptedCategory('functional')){
+            // Load HubSpot meetings embed if present on this page
+            if (typeof window._ffLoadMeetings === 'function') {
+                window._ffLoadMeetings();
+            }
+        }
     },
-    
+
     onChange: function({changedCategories}){
         if(changedCategories.includes('analytics')){
             if(CookieConsent.acceptedCategory('analytics')){
@@ -157,6 +164,15 @@ CookieConsent.run({
                 });
             }
         }
+
+        if(changedCategories.includes('functional')){
+            if(CookieConsent.acceptedCategory('functional')){
+                // Load HubSpot meetings embed if present on this page
+                if (typeof window._ffLoadMeetings === 'function') {
+                    window._ffLoadMeetings();
+                }
+            }
+        }
     },
 
     categories: {
@@ -199,7 +215,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Functional Cookies",
-                            description: "These cookies enable functional features on our website, such as the live chat support widget. Enabling these cookies allows you to use the chat to get help from our team.",
+                            description: "These cookies enable functional features on our website, such as the live chat support widget and the booking calendar. Enabling these cookies allows you to chat with our team and schedule meetings directly on our site.",
                             linkedCategory: "functional"
                         },
                         {

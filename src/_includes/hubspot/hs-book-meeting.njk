@@ -1,2 +1,33 @@
-<div class="meetings-iframe-container -mb-20 md:-mb-6" data-src="{{ hubspot.dataSrc }}"></div>
-<script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js" onerror="hsFallback(this)"></script>
+<div id="meetings-consent-placeholder" class="text-center border border-indigo-300 rounded-lg bg-white px-4 py-10">
+    <p style="color: #6366f1;"><strong>Enable cookies to book a meeting</strong></p>
+    <p class="text-gray-600">To load the booking calendar, please accept <strong>Functional cookies</strong>.</p>
+    <p class="mt-4">
+        <button
+            onclick="CookieConsent.showPreferences()"
+            class="inline-block px-4 py-2 rounded-lg border border-indigo-400 text-indigo-600 hover:bg-indigo-50 transition-colors cursor-pointer bg-transparent text-sm font-medium"
+        >
+            Open cookie settings
+        </button>
+    </p>
+</div>
+<script>
+    window._ffLoadMeetings = function () {
+        var placeholder = document.getElementById('meetings-consent-placeholder');
+        if (!placeholder) return;
+
+        var parent = placeholder.parentNode;
+
+        var container = document.createElement('div');
+        container.className = 'meetings-iframe-container -mb-20 md:-mb-6';
+        container.setAttribute('data-src', '{{ hubspot.dataSrc }}');
+        parent.insertBefore(container, placeholder);
+
+        var script = document.createElement('script');
+        script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
+        script.onerror = function () { hsFallback(script); };
+        parent.insertBefore(script, placeholder);
+
+        placeholder.remove();
+        window._ffLoadMeetings = null;
+    };
+</script>
