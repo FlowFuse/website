@@ -2,7 +2,7 @@
 title: "Edge AI Is 80% Plumbing, 20% Intelligence"
 subtitle: "Why your Edge AI pilot is still a pilot."
 description: "Learn how manufacturers are turning Edge AI pilots into production reality — and why the plumbing matters more than the model."
-date: 2026-02-13
+date: 2026-02-27
 keywords: 
 authors: ["sumit-shinde"]
 image: 
