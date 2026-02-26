@@ -3,7 +3,7 @@ title: "How to Build an MQTT-to-InfluxDB Data Pipeline"
 subtitle: "From MQTT broker to InfluxDB bucket, the right way."
 description: "Learn how to build a reliable MQTT-to-InfluxDB data pipeline using FlowFuse and Node-RED. No custom scripts, no glue code, just a visual flow that is easy to maintain and hand off."
 date: 2026-02-26
-keywords: 
+keywords: MQTT, InfluxDB, IIoT, FlowFuse, Node-RED, Sensor telemetry, Time-series database
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -16,7 +16,7 @@ An MQTT to InfluxDB is one of the most common and most critical pipelines in IIo
 
 The typical approach is a custom Python script that subscribes to the broker, parses the payload, and writes to InfluxDB. It works until a sensor changes its payload format, or the script quietly dies over a weekend and nobody notices until Monday. Now you're debugging a process nobody else fully understands, with no visibility into what failed or when. Others stitch together multiple tools, each with its own config, its own failure modes, and its own logs to dig through at 2am. The complexity ends up hidden in places that are hard to see, hard to debug, and hard to hand off.
 
-This article takes a different approach. Using FlowFuse (the enterprise platform built on Node-RED), you'll build the entire pipeline as a visual flow covering MQTT subscription, payload transformation, and InfluxDB write. Every step is visible, editable, and easy to hand off.
+This article takes a different approach. Using FlowFuse (the enterprise platform built on [Node-RED](/), you'll build the entire pipeline as a visual flow covering MQTT subscription, payload transformation, and InfluxDB write. Every step is visible, editable, and easy to hand off.
 
 ## TL;DR
 
@@ -29,7 +29,7 @@ This article takes a different approach. Using FlowFuse (the enterprise platform
 Before you start, make sure you have the following in place.
 
 - A running FlowFuse instance. If you don't have one yet, [sign up]({% include "sign-up-url.njk" %}) to get started.
-- An MQTT broker. FlowFuse Pro and Enterprise include a built-in broker, and the MQTT nodes configure themselves automatically. If you are using an external broker, keep your host, port, and credentials handy.
+- An MQTT broker. FlowFuse Pro and Enterprise include a [built-in broker](/docs/user/teambroker/), and the [MQTT nodes](/node-red/flowfuse/mqtt/) configure themselves automatically. If you are using an external broker, keep your host, port, and credentials handy.
 - A running InfluxDB instance, either local or on InfluxDB Cloud. Keep your URL, token, organization, and bucket name handy.
 
 ## Building the Pipeline
@@ -44,7 +44,7 @@ Node-RED does not include an InfluxDB node out of the box, so you will need to i
 
 1. Open the Node-RED editor in your FlowFuse instance.
 2. Click the main menu in the top right corner and select Manage Palette.
-3. Go to the Install tab and search for `node-red-contrib-influxdb`.
+3. Go to the Install tab and search for [node-red-contrib-influxdb](/integrations/node-red-contrib-influxdb/).
 4. Click Install. Once complete, the InfluxDB nodes will appear in your palette on the left side.
 
 ![Node-RED editor palette displaying the InfluxDB nodes added via the node-red-contrib-influxdb package.](./images/influxdb-nodes.png "Node-RED editor palette displaying the InfluxDB nodes added via the node-red-contrib-influxdb package.")
