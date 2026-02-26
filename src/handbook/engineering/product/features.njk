@@ -1,0 +1,75 @@
+---
+navTitle: Feature Catalog
+---
+
+<h1>Feature Catalog</h1>
+
+<p>Complete reference of all FlowFuse features across Cloud and Self-Hosted deployments. Not all features are shown on the public pricing page — this is the full list.</p>
+
+{% set tiers = ['starter', 'pro', 'enterprise'] %}
+
+{% for section in featureCatalog.sections %}
+<h2>{{ section.label }}</h2>
+
+<table class="w-full border-collapse text-sm mb-10">
+    <thead>
+        <tr>
+            <th class="text-left py-2 pr-4 w-1/4">Feature</th>
+            <th class="text-left py-2 pr-2">Cloud Starter</th>
+            <th class="text-left py-2 pr-2">Cloud Pro</th>
+            <th class="text-left py-2 pr-2">Cloud Enterprise</th>
+            <th class="text-left py-2 pr-2">SH Starter</th>
+            <th class="text-left py-2 pr-2">SH Pro</th>
+            <th class="text-left py-2 pr-2">SH Enterprise</th>
+            <th class="text-left py-2">Solutions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for feature in section.features %}
+    <tr class="border-t border-gray-200">
+        <td class="py-2 pr-4 align-top">
+            <strong>{{ feature.label }}</strong>
+            {% if feature.description %}<br><span class="text-gray-500">{{ feature.description }}</span>{% endif %}
+            {% if feature.docsLink %}<br><a href="{{ feature.docsLink }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Docs</a>{% endif %}
+            {% if feature.changelog %}<br><a href="{{ feature.changelog }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Changelog</a>{% endif %}
+        </td>
+
+        {# Cloud tiers #}
+        {% if feature.cloud %}
+            {% for tier in tiers %}
+            {% set cell = feature.cloud[tier] %}
+            <td class="py-2 pr-2 align-top text-center">
+                {% if cell and cell.value === true %}✓
+                {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
+                {% elif cell and cell.value %}{{ cell.value }}
+                {% else %}–{% endif %}
+                {% if cell and cell.note %}<br><span class="text-gray-400 text-xs">{{ cell.note }}</span>{% endif %}
+            </td>
+            {% endfor %}
+        {% else %}
+            <td class="py-2 text-center text-gray-300" colspan="3">Cloud N/A</td>
+        {% endif %}
+
+        {# Self-hosted tiers #}
+        {% if feature.selfHosted %}
+            {% for tier in tiers %}
+            {% set cell = feature.selfHosted[tier] %}
+            <td class="py-2 pr-2 align-top text-center">
+                {% if cell and cell.value === true %}✓
+                {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
+                {% elif cell and cell.value %}{{ cell.value }}
+                {% else %}–{% endif %}
+                {% if cell and cell.note %}<br><span class="text-gray-400 text-xs">{{ cell.note }}</span>{% endif %}
+            </td>
+            {% endfor %}
+        {% else %}
+            <td class="py-2 text-center text-gray-300" colspan="3">Self-Hosted N/A</td>
+        {% endif %}
+
+        <td class="py-2 align-top text-xs text-gray-500">{{ feature.solutions | join(', ') }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endfor %}
