@@ -136,7 +136,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
 1. Create the
    [subscription](/handbook/operations/billing/#creating-a-subscription)
 1. If the signed quote is either an upsell or renewal, update the subscription with the line items and new pricing.
-1. If a P.O. number has to filed on the invoice, create invoice manually
+1. If a P.O. number has to be filed on the invoice, update the Deal Object with the corresponding PO number. The workflow in the backend will then push the PO number to the subscription and the invoice should now be generated with a PO. Don't manually create invoices or void them going through the workflow first. 
 1. Provide access to the agreed upon line items
    - _Cloud_
      - Set up a team on FlowFuse Cloud for the customer in the right tier
