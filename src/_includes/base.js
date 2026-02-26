@@ -72,8 +72,9 @@ function hsFallback (element) {
         errorSection.innerHTML = `
                 <p style="color: #6366f1;"><strong>Hmm… there was supposed to be a form here.</strong></p>
                 <p>
-                    If you’re using strict privacy settings or navigating in private mode, it might be blocked.
-                    Try adjusting your settings or switching browsers to continue.
+                    It might be blocked by your browser or privacy settings. Try
+                    <button onclick="if(window.CookieConsent){CookieConsent.showPreferences()}" style="background:none;border:none;color:#6366f1;cursor:pointer;padding:0;font-size:inherit;text-decoration:underline;">updating your cookie preferences</button>,
+                    adjusting your privacy settings, or switching browsers to continue.
                 </p>
             `;
         element.parentNode.insertBefore(errorSection, element.nextSibling);

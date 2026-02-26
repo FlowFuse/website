@@ -40,7 +40,7 @@ This new feature also integrates seamlessly ith our [Bill of Materials](https://
 
 ### Smart Schema Suggestions
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/bNeTDJUZ1So?si=LFKiLrCrH6JUq3DH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin-bottom: 12px;"></iframe>
+<lite-youtube videoid="bNeTDJUZ1So" params="rel=0" style="margin-bottom: 12px; width: 100%; height: 400px;" title="YouTube video player"></lite-youtube>
 
 We are very pleased to announce our new "Smart Suggestions" feature. When working with an MQTT Broker for live data, it can be difficult to understand the structure of the data and topics that are being used. We recently released the new "Hierarchy" view, showing the topic structure present on a Broker, and we've now evolved that even further.
 
