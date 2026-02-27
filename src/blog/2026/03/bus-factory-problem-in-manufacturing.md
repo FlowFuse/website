@@ -2,10 +2,10 @@
 title: "The Bus Factor Problem in Integration Systems"
 subtitle: "Your integration system works great. Does anyone else know how"
 description: "Learn how integration systems quietly become one-person knowledge traps — and what it actually takes to fix it."
-date: 2026-02-27
+date: 2026-02-02
 keywords: bus factor, Node-RED, FlowFuse, industrial automation, OT IT integration, knowledge management, IIoT integration, PLC integration
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/03/images/bus-factor-problem.png
 tags:
 - flowfuse
 ---
