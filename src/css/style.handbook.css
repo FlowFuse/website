@@ -3,9 +3,9 @@
 
 @layer components {
     .handbook {
-        grid-template-columns: 230px auto 260px;
+        grid-template-columns: 230px minmax(0, 1fr) 260px;
         margin-top: -3rem;
-        @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] 2xl:grid-cols-[300px,auto,270px];
+        @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] 2xl:grid-cols-[300px,minmax(0,1fr),270px];
     }
 
     .handbook .prose {
