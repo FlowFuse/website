@@ -55,8 +55,8 @@ navTitle: Feature Catalog
         </tr>
         {% for feature in section.features %}
         <tr class="border-t border-gray-100 hover:bg-gray-50">
-            <td class="py-3 px-4 align-top border-r border-gray-100">
-                <strong>{{ feature.label }}</strong>
+            <td class="py-3 px-4 align-top border-r border-gray-100{% if feature.subfeature %} pl-8{% endif %}">
+                {% if feature.subfeature %}<span class="text-gray-400 mr-1">└</span><span class="text-gray-600 font-medium">{{ feature.label }}</span>{% else %}<strong>{{ feature.label }}</strong>{% endif %}
                 {% if feature.description %}<br><span class="text-gray-500">{{ feature.description }}</span>{% endif %}
                 {% if feature.docsLink %}<br><a href="{{ feature.docsLink }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Docs</a>{% endif %}
                 {% if feature.changelog %}<br><a href="{{ feature.changelog }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Changelog</a>{% endif %}
@@ -69,6 +69,7 @@ navTitle: Feature Catalog
                 {% set isFirst = loop.first %}
                 <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}">
                     {% if cell and cell.value === true %}✓
+                    {% elif cell and cell.value === 'contact' %}<a href="/contact-us" class="ff-btn ff-btn--primary uppercase text-xs">Contact Us</a>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
                     {% elif cell and cell.value %}{{ cell.value }}
                     {% else %}–{% endif %}
@@ -86,6 +87,7 @@ navTitle: Feature Catalog
                 {% set isFirst = loop.first %}
                 <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}">
                     {% if cell and cell.value === true %}✓
+                    {% elif cell and cell.value === 'contact' %}<a href="/contact-us" class="ff-btn ff-btn--primary uppercase text-xs">Contact Us</a>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
                     {% elif cell and cell.value %}{{ cell.value }}
                     {% else %}–{% endif %}

@@ -25,8 +25,8 @@
         {% if row.showOnPricing and hosting in row.tags %}
         {% set hostingData = row[hostingKey] %}
         <li class="ff-feature-row">
-            <label {% if row.description %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}', '{{ hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
-                {{ row.label }}
+            <label {% if row.description %}class="sticky left-0 h-full{% if row.subfeature %} pl-5 text-gray-500{% endif %}" onclick="openInfo('{{ row.id }}', '{{ hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none{% if row.subfeature %} pl-5 text-gray-500{% endif %}"{% endif %}>
+                {% if row.subfeature %}└ {% endif %}{{ row.label }}
                 {% if row.description %}
                 <i id="ff-info--{{ row.id }}-{{ hosting }}" class="ff-icon min-w-[20px]">{% include "components/icons/info.svg" %}</i>
                 {% endif %}
@@ -44,6 +44,8 @@
                     {% include "components/feature-optional.svg" %}
                 {% elif cell and cell.value === 'addon' %}
                     {% include "components/feature-addon.svg" %}
+                {% elif cell and cell.value === 'contact' %}
+                    <a href="/contact-us" class="ff-btn ff-btn--primary uppercase">Contact Us</a>
                 {% elif cell and cell.value === 'list' %}
                     {% for opt in cell.options %}{{ opt }}{% if not loop.last %}<br>{% endif %}{% endfor %}
                 {% elif cell and cell.value %}

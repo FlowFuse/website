@@ -1,4 +1,108 @@
 sections:
+  - id: empower
+    label: Empower
+    features:
+      - id: ff-expert
+        label: FlowFuse Expert
+        description: "AI-powered assistant that supports, enables, and speeds up workflows across FlowFuse and Node-RED, with access to MCP servers defined in your Node-RED instances through a single interface."
+        docsLink: /ai/
+        changelog: null
+        subfeature: false
+        solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
+        showOnPricing: true
+        showOnFeaturesPage: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: contact
+            note: "Available on request"
+
+      - id: ff-expert-support
+        label: Support Mode
+        description: "Chat-based assistance for FlowFuse and Node-RED, including Node-RED instance management through natural language."
+        docsLink: /ai/
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
+        showOnPricing: true
+        showOnFeaturesPage: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: null
+
+      - id: ff-expert-insights
+        label: Insights Mode
+        description: "Connects FlowFuse Expert to MCP servers in your Node-RED instances, enabling real-time data queries and actions through a single chat interface."
+        docsLink: /ai/
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
+        showOnPricing: true
+        showOnFeaturesPage: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: null
+
+      - id: nr-mcp-servers
+        label: Node-RED MCP Servers
+        description: "Build and expose MCP servers directly from Node-RED instances, making your data and actions available to FlowFuse Expert and other AI agents."
+        docsLink: /node-red/flowfuse/mcp/
+        changelog: null
+        subfeature: false
+        solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
+        showOnPricing: true
+        showOnFeaturesPage: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+
   - id: manage
     label: Manage
     features:
