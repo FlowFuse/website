@@ -487,12 +487,45 @@ eleventyComputed:
     if (window.posthog) {
         posthog.opt_out_capturing();
         posthog.reset();
-        // posthog.reset() anonymises the identity (new UUID, user_state: anonymous)
-        // but does NOT delete the cookie. Remove it explicitly to honour withdrawal.
-        // Read the name from document.cookie rather than hardcoding the project token,
-        // so this works correctly in all environments (dev, staging, prod).
-        var phCookie = document.cookie.match(/(ph_[^;=\s]+_posthog)=/);
-        if (phCookie) { document.cookie = phCookie[1] + '=; Max-Age=0; path=/;'; }
+        // Switch to memory mode to avoid any new persistence after withdrawal.
+        posthog.set_config({ persistence: 'memory' });
+
+        // Purge PostHog browser persistence for GDPR-compliant withdrawal.
+        // This includes cross-subdomain cookies and opt-in/out markers.
+        var posthogCookiePattern = /^(ph_[^=\s]+_posthog|ph_phc_[^=\s]+_posthog|__ph_opt_in_out_[^=\s]+)$/;
+        var cookieNames = document.cookie.split(';').map(function (part) {
+            return part.split('=')[0].trim();
+        }).filter(function (name) {
+            return posthogCookiePattern.test(name);
+        });
+
+        var host = window.location.hostname;
+        var hostParts = host.split('.');
+        var rootDomain = hostParts.length > 2 ? hostParts.slice(1).join('.') : host;
+        var domains = ['', host, '.' + host, rootDomain, '.' + rootDomain];
+
+        cookieNames.forEach(function (name) {
+            domains.forEach(function (domain) {
+                var domainPart = domain ? '; domain=' + domain : '';
+                document.cookie = name + '=; Max-Age=0; path=/' + domainPart + '; SameSite=Lax';
+            });
+        });
+
+        var posthogStorageKeyPattern = /^(ph_[^\s]+_posthog|__ph_opt_in_out_[^\s]+)$/;
+        try {
+            for (var i = localStorage.length - 1; i >= 0; i--) {
+                var localKey = localStorage.key(i);
+                if (localKey && posthogStorageKeyPattern.test(localKey)) {
+                    localStorage.removeItem(localKey);
+                }
+            }
+            for (var j = sessionStorage.length - 1; j >= 0; j--) {
+                var sessionKey = sessionStorage.key(j);
+                if (sessionKey && posthogStorageKeyPattern.test(sessionKey)) {
+                    sessionStorage.removeItem(sessionKey);
+                }
+            }
+        } catch (e) {}
     }
 </script>
 
@@ -507,8 +540,8 @@ eleventyComputed:
 <script id="warmly-script-loader" type="text/plain" data-category="analytics" src="https://opps-widget.getwarmly.com/warmly.js?clientId=3657ad04e55b92ef0b5972fcfb0802d1"></script>
 <!-- End warmly.ai -->
 
-<!-- HS tracker - consent-gated (functional: enables chat support widget) -->
-<script type="text/plain" data-category="functional" async id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+<!-- HS tracker - consent-gated (analytics: tracking + chat widget runtime) -->
+<script type="text/plain" data-category="analytics" async id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
 
 <!-- HubSpot Consent Listener -->
 <script type="text/javascript">

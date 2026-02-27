@@ -6,6 +6,42 @@ if (isNodeRedLanding) {
     document.documentElement.classList.add('cc--darkmode');
 }
 
+function clearHubSpotCookiesFallback () {
+    var hubspotCookiePattern = /^(__hstc|hubspotutk|__hssrc|__hssc|__hs_do_not_track|__hs_cookie_cat_pref)$/;
+    var cookieNames = document.cookie.split(';').map(function (part) {
+        return part.split('=')[0].trim();
+    }).filter(function (name) {
+        return hubspotCookiePattern.test(name);
+    });
+
+    var host = window.location.hostname;
+    var hostParts = host.split('.');
+    var rootDomain = hostParts.length > 2 ? hostParts.slice(1).join('.') : host;
+    var domains = ['', host, '.' + host, rootDomain, '.' + rootDomain];
+
+    cookieNames.forEach(function (name) {
+        domains.forEach(function (domain) {
+            var domainPart = domain ? '; domain=' + domain : '';
+            document.cookie = name + '=; Max-Age=0; path=/' + domainPart + '; SameSite=Lax';
+        });
+    });
+}
+
+function syncHubSpotConsent (allowTracking) {
+    window._hsq = window._hsq || [];
+    window._hsp = window._hsp || [];
+
+    if (allowTracking) {
+        window._hsq.push(['doNotTrack', {track: true}]);
+        return;
+    }
+
+    // Stop new tracking and revoke/remove HubSpot cookies already created.
+    window._hsq.push(['doNotTrack']);
+    window._hsp.push(['revokeCookieConsent']);
+    clearHubSpotCookiesFallback();
+}
+
 CookieConsent.run({
     guiOptions: {
         consentModal: {
@@ -46,8 +82,16 @@ CookieConsent.run({
                 'event_label': 'accepted'
             });
             // Enable HubSpot tracking
-            window._hsq = window._hsq || [];
-            window._hsq.push(['doNotTrack', {track: true}]);
+            syncHubSpotConsent(true);
+            // Load HubSpot meetings embed if present on this page
+            if (typeof window._ffLoadMeetings === 'function') {
+                window._ffLoadMeetings();
+            }
+            // Enable HubSpot chat widget
+            window._ffLoadChat = true;
+            if (window.HubSpotConversations) {
+                window.HubSpotConversations.widget.load();
+            }
         }else{
             // Disable Google Analytics
             gtag('consent', 'update', {
@@ -59,8 +103,8 @@ CookieConsent.run({
                 'event_label': 'denied'
             });
             // Keep HubSpot tracking blocked
-            window._hsq = window._hsq || [];
-            window._hsq.push(['doNotTrack']);
+            syncHubSpotConsent(false);
+            window._ffLoadChat = false;
         }
 
         if(CookieConsent.acceptedCategory('ads')){
@@ -100,15 +144,6 @@ CookieConsent.run({
             gtag('consent', 'update', {
                 'functionality_storage': 'granted'
             });
-            // Load HubSpot meetings embed if present on this page
-            if (typeof window._ffLoadMeetings === 'function') {
-                window._ffLoadMeetings();
-            }
-            // Enable HubSpot chat widget
-            window._ffLoadChat = true;
-            if (window.HubSpotConversations) {
-                window.HubSpotConversations.widget.load();
-            }
         }else{
             gtag('consent', 'update', {
                 'functionality_storage': 'denied'
@@ -134,8 +169,16 @@ CookieConsent.run({
                     'event_label': 'accepted'
                 });
                 // Enable HubSpot tracking
-                window._hsq = window._hsq || [];
-                window._hsq.push(['doNotTrack', {track: true}]);
+                syncHubSpotConsent(true);
+                // Load HubSpot meetings embed if present on this page
+                if (typeof window._ffLoadMeetings === 'function') {
+                    window._ffLoadMeetings();
+                }
+                // Enable HubSpot chat widget
+                window._ffLoadChat = true;
+                if (window.HubSpotConversations) {
+                    window.HubSpotConversations.widget.load();
+                }
             }else{
                 // Disable Google Analytics
                 gtag('consent', 'update', {
@@ -147,8 +190,8 @@ CookieConsent.run({
                     'event_label': 'denied'
                 });
                 // Block HubSpot tracking
-                window._hsq = window._hsq || [];
-                window._hsq.push(['doNotTrack']);
+                syncHubSpotConsent(false);
+                window._ffLoadChat = false;
             }
         }
 
@@ -192,15 +235,6 @@ CookieConsent.run({
                 gtag('consent', 'update', {
                     'functionality_storage': 'granted'
                 });
-                // Load HubSpot meetings embed if present on this page
-                if (typeof window._ffLoadMeetings === 'function') {
-                    window._ffLoadMeetings();
-                }
-                // Enable HubSpot chat widget
-                window._ffLoadChat = true;
-                if (window.HubSpotConversations) {
-                    window.HubSpotConversations.widget.load();
-                }
             }else{
                 gtag('consent', 'update', {
                     'functionality_storage': 'denied'
@@ -214,7 +248,25 @@ CookieConsent.run({
             readOnly: true
         },
         functional: {},
-        analytics: {},
+        analytics: {
+            autoClear: {
+                cookies: [
+                    {
+                        name: /^(_ga|_gid|_gat|_gcl)/
+                    },
+                    {
+                        name: /^(__hstc|hubspotutk|__hssrc|__hssc|__hs_do_not_track|__hs_cookie_cat_pref)$/
+                    },
+                    {
+                        name: /^(ph_[^=\s]+_posthog|ph_phc_[^=\s]+_posthog|__ph_opt_in_out_[^=\s]+)$/
+                    },
+                    {
+                        name: /^warmly_/
+                    }
+                ],
+                reloadPage: false
+            }
+        },
         ads: {}
     },
     
@@ -249,12 +301,12 @@ CookieConsent.run({
                         },
                         {
                             title: "Functional Cookies",
-                            description: "These cookies enable functional features on our website, such as the live chat support widget and the booking calendar. Enabling these cookies allows you to chat with our team and schedule meetings directly on our site.",
+                            description: "These cookies support optional site functionality that is not strictly necessary to run the website.",
                             linkedCategory: "functional"
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "We use tools including Google Analytics, HubSpot, and PostHog to understand how visitors interact with our website. These cookies help us improve our content and build a better experience.",
+                            description: "We use tools including Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. This category also enables HubSpot meeting embeds and the chat widget.",
                             linkedCategory: "analytics"
                         },
                         {
@@ -268,4 +320,3 @@ CookieConsent.run({
         }
     }
 });
-
