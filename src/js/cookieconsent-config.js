@@ -30,13 +30,13 @@ CookieConsent.run({
             });
             // GTM's consent-queue mechanism doesn't reliably re-fire blocked tags
             // when consent is updated mid-session. Re-pushing 'gtm.js' re-triggers
-            // GTM's "All Pages" trigger, firing ALL analytics tags that have
-            // "Require additional consent: analytics_storage" — no custom trigger
-            // needed per tag, works for any tag added to GTM in the future.
-            // Guards prevent duplicate page_views:
-            //   _ffNonPrivacyRegion          → GA4 already fired via All Pages (no regional deny)
-            //   _ffHadStoredAnalyticsConsent → GA4 already fired via All Pages (consent granted in <head>)
-            if (!window._ffNonPrivacyRegion && !window._ffHadStoredAnalyticsConsent) {
+            // the "All Pages" page-view trigger, so any tag using that trigger with
+            // analytics_storage required will fire without a custom trigger per tag.
+            // Tags using click or other interaction triggers don't need this — they
+            // fire naturally when the interaction happens, after consent is already set.
+            // Guard prevents a duplicate page_view:
+            //   _ffHadStoredAnalyticsConsent → consent was granted in <head>, GTM already fired on load
+            if (!window._ffHadStoredAnalyticsConsent) {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({ event: 'gtm.js' });
             }
@@ -45,8 +45,6 @@ CookieConsent.run({
                 'event_category': 'analytics',
                 'event_label': 'accepted'
             });
-            // Enable PostHog
-            posthog.opt_in_capturing();
             // Enable HubSpot tracking
             window._hsq = window._hsq || [];
             window._hsq.push(['doNotTrack', {track: true}]);
@@ -60,8 +58,6 @@ CookieConsent.run({
                 'event_category': 'analytics',
                 'event_label': 'denied'
             });
-            // Disable PostHog
-            posthog.opt_out_capturing();
             // Keep HubSpot tracking blocked
             window._hsq = window._hsq || [];
             window._hsq.push(['doNotTrack']);
@@ -74,11 +70,10 @@ CookieConsent.run({
                 'ad_personalization': 'granted',
                 'personalization_storage': 'granted'
             });
-            // Re-trigger GTM All Pages so ads tags held on page load can fire now.
-            // Guards prevent duplicates:
-            //   _ffNonPrivacyRegion       → ads tags already fired via All Pages (no regional deny)
-            //   _ffHadStoredAdsConsent    → ad_storage was granted in <head> and tags already fired
-            if (!window._ffNonPrivacyRegion && !window._ffHadStoredAdsConsent) {
+            // Re-trigger the "All Pages" trigger so ads tags held on page load can fire now.
+            // Guard prevents duplicates:
+            //   _ffHadStoredAdsConsent → ad_storage was granted in <head> and tags already fired
+            if (!window._ffHadStoredAdsConsent) {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({ event: 'gtm.js' });
             }
@@ -109,6 +104,11 @@ CookieConsent.run({
             if (typeof window._ffLoadMeetings === 'function') {
                 window._ffLoadMeetings();
             }
+            // Enable HubSpot chat widget
+            window._ffLoadChat = true;
+            if (window.HubSpotConversations) {
+                window.HubSpotConversations.widget.load();
+            }
         }else{
             gtag('consent', 'update', {
                 'functionality_storage': 'denied'
@@ -123,9 +123,9 @@ CookieConsent.run({
                 gtag('consent', 'update', {
                     'analytics_storage': 'granted'
                 });
-                // The All Pages trigger already fired for this page load — re-push
-                // 'gtm.js' to re-trigger it now that consent has changed. This fires
-                // all analytics tags generically without any custom GTM trigger.
+                // The "All Pages" trigger already fired for this page load — re-push
+                // 'gtm.js' to re-trigger it now that consent has changed. Tags using
+                // click or interaction triggers will fire naturally when they occur.
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({ event: 'gtm.js' });
                 // Send event to Google Analytics
@@ -133,8 +133,6 @@ CookieConsent.run({
                     'event_category': 'analytics',
                     'event_label': 'accepted'
                 });
-                // Enable PostHog
-                posthog.opt_in_capturing();
                 // Enable HubSpot tracking
                 window._hsq = window._hsq || [];
                 window._hsq.push(['doNotTrack', {track: true}]);
@@ -148,8 +146,6 @@ CookieConsent.run({
                     'event_category': 'analytics',
                     'event_label': 'denied'
                 });
-                // Disable PostHog
-                posthog.opt_out_capturing();
                 // Block HubSpot tracking
                 window._hsq = window._hsq || [];
                 window._hsq.push(['doNotTrack']);
@@ -164,7 +160,7 @@ CookieConsent.run({
                     'ad_personalization': 'granted',
                     'personalization_storage': 'granted'
                 });
-                // Re-trigger GTM All Pages so ads tags held on this page load can fire now.
+                // Re-trigger the "All Pages" trigger so ads tags held on page load can fire now.
                 // Guard: if analytics also just changed, that block already pushed gtm.js
                 // and all held tags (including ads) will re-fire from that single push.
                 if (!changedCategories.includes('analytics')) {
@@ -199,6 +195,11 @@ CookieConsent.run({
                 // Load HubSpot meetings embed if present on this page
                 if (typeof window._ffLoadMeetings === 'function') {
                     window._ffLoadMeetings();
+                }
+                // Enable HubSpot chat widget
+                window._ffLoadChat = true;
+                if (window.HubSpotConversations) {
+                    window.HubSpotConversations.widget.load();
                 }
             }else{
                 gtag('consent', 'update', {
@@ -268,11 +269,3 @@ CookieConsent.run({
     }
 });
 
-// Auto-accept all categories for non-privacy-region users, but ONLY if the user
-// has not already made an explicit consent decision (accept or reject).
-// validConsent() returns true once any decision has been stored — this prevents
-// the auto-accept from overriding a user's deliberate "Reject All" choice.
-// Covers the race condition where /country fetch resolved before cc.min.js loaded.
-if (window._ffLoadChat && !CookieConsent.validConsent()) {
-    CookieConsent.acceptCategory(['analytics', 'functional', 'ads']);
-}

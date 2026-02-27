@@ -1,6 +1,6 @@
 // Flag to load HubSpot chat widget when hs-scripts.com is ready.
-// Set to true when user interacts with the page (before hs-scripts.com has loaded),
-// or set by base.njk for non-privacy-region users who get chat auto-loaded.
+// Set to true when the user accepts functional cookies (cookieconsent-config.js)
+// or when the user opens the chat widget before hs-scripts.com has finished loading.
 window._ffLoadChat = false
 
 // Set HubSpot Chat to wait a bit so it does not block page load if user has never started a conversation
