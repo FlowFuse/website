@@ -5,7 +5,7 @@ description: "Learn how manufacturers are turning Edge AI pilots into production
 date: 2026-02-27
 keywords: 
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/02/images/edge-ai-is-80-20.png
 tags:
 - flowfuse
 ---
