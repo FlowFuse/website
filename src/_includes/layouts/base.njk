@@ -153,7 +153,7 @@ eleventyComputed:
 
     <script type="module" src="/js/flowrenderer.min.js"></script>
 
-
+    {%- if not DEV_MODE -%}
     <!-- Google Consent -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -224,7 +224,7 @@ eleventyComputed:
         var _hsq = window._hsq = window._hsq || [];
         _hsq.push(['doNotTrack']);
     </script>
-
+    {%- endif -%}
 </head>
 <body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <!-- Google Tag Manager (noscript) -->
@@ -404,7 +404,7 @@ eleventyComputed:
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+{%- if not DEV_MODE -%}
 <!-- Scroll depth + pageleave tracking.
      These are local calculations only — no data leaves the browser.
      capture() is a no-op when PostHog is not loaded (no analytics consent). -->
@@ -559,5 +559,5 @@ eleventyComputed:
         addHubSpotConsentListener();
     });
 </script>
-
+{%- endif -%}
 </html>
