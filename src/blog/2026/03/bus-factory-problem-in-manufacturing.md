@@ -5,7 +5,7 @@ description: "Learn how integration systems quietly become one-person knowledge 
 date: 2026-03-02
 keywords: bus factor, Node-RED, FlowFuse, industrial automation, OT IT integration, knowledge management, IIoT integration, PLC integration
 authors: ["sumit-shinde"]
-image: /blog/2026/03/images/bus-factor-problem.png
+image: /blog/2026/03/images/bus-factor-problem-tile.png
 tags:
 - flowfuse
 ---
