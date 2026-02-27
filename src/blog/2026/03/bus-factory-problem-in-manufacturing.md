@@ -72,7 +72,7 @@ The Flow Explainer feature is the most direct answer to the knowledge concentrat
 
 <lite-youtube
   videoid="YRc1DwkghRs"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/ff-expert-explaining-flow.jpeg'); background-size: cover; background-position: center;"
+  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/03/images/ff-expert-explaining-flow.jpeg'); background-size: cover; background-position: center;"
   title="FlowFuse Expert Explaining Selected Flow">
 </lite-youtube>
 
