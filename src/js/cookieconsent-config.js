@@ -28,11 +28,28 @@ CookieConsent.run({
             gtag('consent', 'update', {
                 'analytics_storage': 'granted'
             });
+            // GTM's consent-queue mechanism doesn't reliably re-fire blocked tags
+            // when consent is updated mid-session. Re-pushing 'gtm.js' re-triggers
+            // GTM's "All Pages" trigger, firing ALL analytics tags that have
+            // "Require additional consent: analytics_storage" — no custom trigger
+            // needed per tag, works for any tag added to GTM in the future.
+            // Guards prevent duplicate page_views:
+            //   _ffNonPrivacyRegion          → GA4 already fired via All Pages (no regional deny)
+            //   _ffHadStoredAnalyticsConsent → GA4 already fired via All Pages (consent granted in <head>)
+            if (!window._ffNonPrivacyRegion && !window._ffHadStoredAnalyticsConsent) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'gtm.js' });
+            }
             // Send event to Google Analytics
             gtag('event', 'cookie_consent', {
                 'event_category': 'analytics',
                 'event_label': 'accepted'
             });
+            // Enable PostHog
+            posthog.opt_in_capturing();
+            // Enable HubSpot tracking
+            window._hsq = window._hsq || [];
+            window._hsq.push(['doNotTrack', {track: true}]);
         }else{
             // Disable Google Analytics
             gtag('consent', 'update', {
@@ -43,6 +60,11 @@ CookieConsent.run({
                 'event_category': 'analytics',
                 'event_label': 'denied'
             });
+            // Disable PostHog
+            posthog.opt_out_capturing();
+            // Keep HubSpot tracking blocked
+            window._hsq = window._hsq || [];
+            window._hsq.push(['doNotTrack']);
         }
 
         if(CookieConsent.acceptedCategory('ads')){
@@ -68,8 +90,15 @@ CookieConsent.run({
                 'event_label': 'denied'
             });
         }
+
+        if(CookieConsent.acceptedCategory('functional')){
+            // Load HubSpot meetings embed if present on this page
+            if (typeof window._ffLoadMeetings === 'function') {
+                window._ffLoadMeetings();
+            }
+        }
     },
-    
+
     onChange: function({changedCategories}){
         if(changedCategories.includes('analytics')){
             if(CookieConsent.acceptedCategory('analytics')){
@@ -77,6 +106,11 @@ CookieConsent.run({
                 gtag('consent', 'update', {
                     'analytics_storage': 'granted'
                 });
+                // The All Pages trigger already fired for this page load — re-push
+                // 'gtm.js' to re-trigger it now that consent has changed. This fires
+                // all analytics tags generically without any custom GTM trigger.
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'gtm.js' });
                 // Send event to Google Analytics
                 gtag('event', 'cookie_consent', {
                     'event_category': 'analytics',
@@ -84,6 +118,9 @@ CookieConsent.run({
                 });
                 // Enable PostHog
                 posthog.opt_in_capturing();
+                // Enable HubSpot tracking
+                window._hsq = window._hsq || [];
+                window._hsq.push(['doNotTrack', {track: true}]);
             }else{
                 // Disable Google Analytics
                 gtag('consent', 'update', {
@@ -96,6 +133,9 @@ CookieConsent.run({
                 });
                 // Disable PostHog
                 posthog.opt_out_capturing();
+                // Block HubSpot tracking
+                window._hsq = window._hsq || [];
+                window._hsq.push(['doNotTrack']);
             }
         }
 
@@ -124,12 +164,22 @@ CookieConsent.run({
                 });
             }
         }
+
+        if(changedCategories.includes('functional')){
+            if(CookieConsent.acceptedCategory('functional')){
+                // Load HubSpot meetings embed if present on this page
+                if (typeof window._ffLoadMeetings === 'function') {
+                    window._ffLoadMeetings();
+                }
+            }
+        }
     },
 
     categories: {
         necessary: {
             readOnly: true
         },
+        functional: {},
         analytics: {},
         ads: {}
     },
@@ -141,7 +191,7 @@ CookieConsent.run({
             en: {
                 consentModal: {
                     title: "This site uses cookies",
-                    description: "We use cookies to ensure this site's proper operation and, if you approve, tracking cookies to understand how you interact with it.",
+                    description: "We use cookies to ensure this site works properly and, with your permission, to improve your experience and enable features like analytics and live chat support.",
                     acceptAllBtn: "Accept all",
                     showPreferencesBtn: "Settings",
                     footer: "<a href=\"/privacy-policy/\">Privacy Policy</a>\n"
@@ -164,13 +214,18 @@ CookieConsent.run({
                             linkedCategory: "necessary"
                         },
                         {
+                            title: "Functional Cookies",
+                            description: "These cookies enable functional features on our website, such as the live chat support widget and the booking calendar. Enabling these cookies allows you to chat with our team and schedule meetings directly on our site.",
+                            linkedCategory: "functional"
+                        },
+                        {
                             title: "Analytics Cookies",
-                            description: "We use Google Analytics, HubSpot, PostHog and Reo.Dev for analytics. These services use cookies to collect data that helps us understand how you interact with our website. These insights allow us to improve our content and build better features that enhance your experience.",
+                            description: "We use tools including Google Analytics, HubSpot, and PostHog to understand how visitors interact with our website. These cookies help us improve our content and build a better experience.",
                             linkedCategory: "analytics"
                         },
                         {
                             title: "Advertisement Cookies",
-                            description: "Google uses cookies for advertising, including serving and rendering ads, personalizing ads, limiting the number of times an ad is shown to a user, muting ads you have chosen to stop seeing, and measuring the effectiveness of ads.",
+                            description: "We use advertising cookies from Google, Meta, and LinkedIn to measure the effectiveness of our campaigns, show relevant ads, and limit how often you see the same ad.",
                             linkedCategory: "ads"
                         }
                     ]
@@ -179,3 +234,12 @@ CookieConsent.run({
         }
     }
 });
+
+// Auto-accept all categories for non-privacy-region users, but ONLY if the user
+// has not already made an explicit consent decision (accept or reject).
+// validConsent() returns true once any decision has been stored — this prevents
+// the auto-accept from overriding a user's deliberate "Reject All" choice.
+// Covers the race condition where /country fetch resolved before cc.min.js loaded.
+if (window._ffLoadChat && !CookieConsent.validConsent()) {
+    CookieConsent.acceptCategory(['analytics', 'functional', 'ads']);
+}

@@ -21,13 +21,13 @@ We are excited to introduce a new feature that will simplify the process of debu
 
 This update is a part of our ongoing commitment to making FlowFuse the best possible solution for developing your Node-RED flows, no matter where they're running. In fact, as part of our last release 1.6, we already introduced the feature: ["Access Node-RED logs from remote devices"](../../04/flowforge-1-6-released/#access-node-red-logs-from-remote-devices). This feature made it easy for users to troubleshoot and debug. Building on that, we've taken the next step, and it's now possible to access the Device Editor.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zS6P3RR86vE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="zS6P3RR86vE" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Device Status Visualisation
 
 This FlowFuse version upgrades device monitoring. It's made easier to manage your devices effectively, especially when there's many of them. Now we offer an intuitive, user-friendly method for users to keep an eye on their devices' status and evaluate the health of their team's devices overall. Creating an overview of your fleet's health, however large your fleet might be.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S--viuPhrS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="S--viuPhrS8" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Auto Restart for Hung Node-RED Instances
 

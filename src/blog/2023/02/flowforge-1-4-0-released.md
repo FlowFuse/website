@@ -28,14 +28,14 @@ To make it easy for everyone to experience FlowFuse, we are introducing a new fr
 Most prominently, FlowFuse 1.4 features automatic device onboarding for fleets. Simply download a FlowFuse device provisioning credential to allow quick roll-out to a whole fleet, without the need to have device specific configuration. When the agent starts, the FlowFuse agent and the Node-RED snapshot will automatically be provisioned to the device and start operations. [Issue #1212](https://github.com/FlowFuse/flowfuse/issues/1212)
 
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/XTVw4O4-Crg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><lite-youtube videoid="XTVw4O4-Crg" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 **Support for Staged Development**
 
 A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery. [Issue #1580](https://github.com/FlowFuse/flowfuse/issues/1580)
 
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/6QOmotlrwWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><lite-youtube videoid="6QOmotlrwWw" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Improvements
 
