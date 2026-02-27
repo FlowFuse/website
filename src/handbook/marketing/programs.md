@@ -200,10 +200,12 @@ Consent settings are found in the **Advanced Settings → Consent Settings** sec
 |---|---|
 | Analytics (e.g. Google Analytics, HubSpot, PostHog) | `analytics_storage` |
 | Advertising & remarketing (e.g. LinkedIn InsightTag, Conversion Linker, Meta Pixel) | `ad_storage` |
-| Functional tools (e.g. live chat widgets, booking calendars, embedded support tools) | `functionality_storage` |
+| Functional tools (non-essential UX features that do not perform analytics/advertising tracking) | `functionality_storage` |
 | Personalization & A/B testing (e.g. tools that remember user preferences or show tailored content) | `personalization_storage` |
 | Security (e.g. fraud prevention, bot detection) | `security_storage` — typically strictly necessary; no consent required in most cases |
 | Google Tag AW (Google Ads base tag) | **No consent requirement** — this tag uses Google Consent Mode v2 natively. It must fire on all page loads, including for users who have denied consent, to enable cookieless conversion modeling. Adding a consent requirement here will break that functionality. |
+
+> Current website implementation note: HubSpot chat and HubSpot meetings embeds are treated as analytics and require `analytics_storage`.
 
 #### Trigger selection
 
