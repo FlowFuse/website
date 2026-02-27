@@ -26,7 +26,6 @@ sections:
             value: null
           enterprise:
             value: contact
-            note: "Available on request"
 
       - id: ff-expert-support
         label: Support Mode
