@@ -64,9 +64,11 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: true
+            value: null
+            note: "Available during beta"
           pro:
-            value: true
+            value: null
+            note: "Available during beta"
           enterprise:
             value: true
         selfHosted:
@@ -89,9 +91,11 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: true
+            value: null
+            note: "Available during beta"
           pro:
-            value: true
+            value: null
+            note: "Available during beta"
           enterprise:
             value: true
         selfHosted:
