@@ -152,6 +152,22 @@ When a `video` field is present, it takes precedence over the `image` field in t
 
 **Note:** You should still provide an `image` field as a fallback for social media previews and RSS feeds.
 
+### Embedding Videos in Article Body
+
+To embed a YouTube video within the body of a blog post, use the `<lite-youtube>` web component:
+
+```html
+<lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 100%; height: 315px;" title="Video title"></lite-youtube>
+```
+
+The video ID is the part after `v=` in a YouTube URL. For example:
+- URL: `https://www.youtube.com/watch?v=dteXgcBXUnk`
+- Video ID: `dteXgcBXUnk`
+
+The `<lite-youtube>` component is included globally on all pages — no additional imports needed. It shows a static thumbnail and only loads the YouTube player when the user clicks play.
+
+> **Do not use raw `<iframe>` tags to embed YouTube videos.** Iframes load YouTube's scripts and set tracking cookies as soon as the page renders, before any user consent — which is not GDPR-compliant. Always use `<lite-youtube>` instead.
+
 ### Tags
 
 Tag your content appropriately from the collection of tags that help us manage our blog content. They include:
