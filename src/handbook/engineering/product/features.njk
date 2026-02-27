@@ -69,7 +69,7 @@ navTitle: Feature Catalog
                 {% set isFirst = loop.first %}
                 <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}">
                     {% if cell and cell.value === true %}✓
-                    {% elif cell and cell.value === 'contact' %}<a href="/contact-us" class="ff-btn ff-btn--primary uppercase text-xs">Contact Us</a>
+                    {% elif cell and cell.value === 'contact' %}<span class="text-gray-500 text-xs">On request</span>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
                     {% elif cell and cell.value %}{{ cell.value }}
                     {% else %}–{% endif %}
@@ -87,7 +87,7 @@ navTitle: Feature Catalog
                 {% set isFirst = loop.first %}
                 <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}">
                     {% if cell and cell.value === true %}✓
-                    {% elif cell and cell.value === 'contact' %}<a href="/contact-us" class="ff-btn ff-btn--primary uppercase text-xs">Contact Us</a>
+                    {% elif cell and cell.value === 'contact' %}<span class="text-gray-500 text-xs">On request</span>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
                     {% elif cell and cell.value %}{{ cell.value }}
                     {% else %}–{% endif %}
