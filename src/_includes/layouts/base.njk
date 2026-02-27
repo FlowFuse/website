@@ -551,7 +551,7 @@ eleventyComputed:
         _hsp.push(['addPrivacyConsentListener', function(consent) {
             consent.categories.analytics = CookieConsent.acceptedCategory('analytics');
             consent.categories.advertisement = CookieConsent.acceptedCategory('ads');
-            consent.categories.functionality = true;
+            consent.categories.functionality = CookieConsent.acceptedCategory('functional');
         }]);
     }
 

@@ -1,5 +1,5 @@
 // Flag to load HubSpot chat widget when hs-scripts.com is ready.
-// Set to true when the user accepts functional cookies (cookieconsent-config.js)
+// Set to true when the user accepts analytics cookies (cookieconsent-config.js)
 // or when the user opens the chat widget before hs-scripts.com has finished loading.
 window._ffLoadChat = false
 
