@@ -1396,6 +1396,10 @@ h4:hover .header-anchor::before {
         @apply px-1 py-2 flex items-center justify-center;
     }
 
+    .ff-feature-note {
+        @apply text-xs text-gray-400 italic;
+    }
+
     .ff-feature-table-section li button {
         width: 100%;
     }

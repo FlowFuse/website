@@ -10,7 +10,6 @@ sections:
         subfeature: false
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -35,7 +34,6 @@ sections:
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -60,7 +58,6 @@ sections:
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -87,7 +84,6 @@ sections:
         subfeature: false
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -116,7 +112,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -140,7 +135,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
-        showOnFeaturesPage: false
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -170,7 +164,6 @@ sections:
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -200,7 +193,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [self-hosted]
         selfHosted:
           starter:
@@ -217,7 +209,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [self-hosted]
         selfHosted:
           starter:
@@ -234,7 +225,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [self-hosted]
         selfHosted:
           starter:
@@ -251,7 +241,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -275,7 +264,6 @@ sections:
         changelog: null
         solutions: [mes, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud]
         cloud:
           starter:
@@ -292,7 +280,6 @@ sections:
         changelog: null
         solutions: [mes, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud]
         cloud:
           starter:
@@ -309,7 +296,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -333,7 +319,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -360,7 +345,6 @@ sections:
         changelog: null
         solutions: [uns, it-ot-middleware, data-integration, mes, scada]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -387,7 +371,6 @@ sections:
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -411,7 +394,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -435,7 +417,6 @@ sections:
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -459,7 +440,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -483,7 +463,6 @@ sections:
         changelog: null
         solutions: [uns, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -507,7 +486,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -531,7 +509,6 @@ sections:
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -555,7 +532,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -579,7 +555,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -603,7 +578,6 @@ sections:
         changelog: null
         solutions: [mes, scada]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -627,7 +601,6 @@ sections:
         changelog: null
         solutions: [mes, scada, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -654,7 +627,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -678,7 +650,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -702,7 +673,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -732,7 +702,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -756,7 +725,6 @@ sections:
         changelog: null
         solutions: [mes, scada, edge-connectivity, it-ot-middleware]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -780,7 +748,6 @@ sections:
         changelog: null
         solutions: [mes, scada]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -804,7 +771,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -828,7 +794,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -855,7 +820,6 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: false
-        showOnFeaturesPage: true
         tags: [self-hosted]
         selfHosted:
           starter:
@@ -872,7 +836,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -896,7 +859,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -920,7 +882,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -944,7 +905,6 @@ sections:
         changelog: null
         solutions: [mes, scada]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -968,7 +928,6 @@ sections:
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
-        showOnFeaturesPage: true
         tags: [self-hosted]
         selfHosted:
           starter:

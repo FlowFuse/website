@@ -50,6 +50,8 @@
                     {% for opt in cell.options %}{{ opt }}{% if not loop.last %}<br>{% endif %}{% endfor %}
                 {% elif cell and cell.value %}
                     {{ cell.value }}
+                {% elif cell and cell.note %}
+                    <span class="ff-feature-note">{{ cell.note }}</span>
                 {% else %}
                     <span></span>
                 {% endif %}
