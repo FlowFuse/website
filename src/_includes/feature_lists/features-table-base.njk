@@ -9,8 +9,11 @@
             <label class="ml-2">Enterprise</label>
         </li>
     </ul>
-    
-    {% for section in pricingFeatures.sections %}
+
+    {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
+    {% set tiers = ['starter', 'pro', 'enterprise'] %}
+
+    {% for section in featureCatalog.sections %}
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--header sticky top-[44px]">
             <span style="padding-top: 12px; padding-bottom: 12px;" class="sticky left-0 h-full">{{ section.label }}</span>
@@ -18,36 +21,39 @@
             <span></span>
             <span></span>
         </li>
-        {% for row in section.rows %}
-        {% if hosting in row.tags %}
-        {% if hosting == "cloud" %}
-            {% set values = row.cloudValues %}
-        {% elif hosting == "self-hosted" %}
-            {% set values = row.selfHostedValues %}
-        {% endif %}
+        {% for row in section.features %}
+        {% if row.showOnPricing and hosting in row.tags %}
+        {% set hostingData = row[hostingKey] %}
         <li class="ff-feature-row">
-            <label {% if row.info %}class="sticky left-0 h-full" onclick="openInfo('{{ row.id }}', '{{ hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none"{% endif %}>
-                {{ row.label }}
-                {% if row.info %}
+            <label {% if row.description %}class="sticky left-0 h-full{% if row.subfeature %} pl-5 text-gray-500{% endif %}" onclick="openInfo('{{ row.id }}', '{{ hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none{% if row.subfeature %} pl-5 text-gray-500{% endif %}"{% endif %}>
+                {% if row.subfeature %}└ {% endif %}{{ row.label }}
+                {% if row.description %}
                 <i id="ff-info--{{ row.id }}-{{ hosting }}" class="ff-icon min-w-[20px]">{% include "components/icons/info.svg" %}</i>
                 {% endif %}
             </label>
-            {% for value in values %}
+            {% for tier in tiers %}
+            {% set cell = hostingData[tier] if hostingData else null %}
             <span>
-                {% if value === "check" %}
+                {% if cell and cell.value === true %}
                     {% include "components/feature-check.svg" %}
-                {% elif value === "time" %}
+                {% elif cell and cell.value === 'time' %}
                     {% tooltip "On the roadmap" %}
                     {% include "components/feature-time.svg" %}
                     {% endtooltip %}
-                {% elif value === "optional" %}
+                {% elif cell and cell.value === 'optional' %}
                     {% include "components/feature-optional.svg" %}
-                {% elif value === "addon" %}
+                {% elif cell and cell.value === 'addon' %}
                     {% include "components/feature-addon.svg" %}
-                {% elif value === null %}
-                <span></span>
+                {% elif cell and cell.value === 'contact' %}
+                    <a href="/contact-us" class="ff-btn ff-btn--primary uppercase">Contact Us</a>
+                {% elif cell and cell.value === 'list' %}
+                    {% for opt in cell.options %}{{ opt }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+                {% elif cell and cell.value %}
+                    {{ cell.value }}
+                {% elif cell and cell.note %}
+                    <span class="ff-feature-note">{{ cell.note }}</span>
                 {% else %}
-                {{ value | safe }}
+                    <span></span>
                 {% endif %}
             </span>
             {% endfor %}
@@ -59,9 +65,9 @@
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--column-buttons mt-6 h-10 gap-x-3">
             {% if hosting == "cloud" %}
-                {% set buttons = pricingFeatures.buttons.cloud %}
+                {% set buttons = featureCatalog.buttons.cloud %}
             {% elif hosting == "self-hosted" %}
-                {% set buttons = pricingFeatures.buttons.selfHosted %}
+                {% set buttons = featureCatalog.buttons.selfHosted %}
             {% endif %}
             <label class="align-baseline w-full text-center"></label>
             {% for button in buttons %}
@@ -72,18 +78,32 @@
                 <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
             {% endfor %}
         </li>
-    </ul>  
+    </ul>
 </div>
 
 <div id="feature-dialogs">
-    {% for section in pricingFeatures.sections %}
-    {% for row in section.rows %}
-    {% if row.info %}
+    {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
+    {% set tiers = ['starter', 'pro', 'enterprise'] %}
+    {% for section in featureCatalog.sections %}
+    {% for row in section.features %}
+    {% if row.showOnPricing and row.description %}
     <div id="ff-dialog--feature--{{ row.id }}-{{ hosting }}" class="ff-dialog-container">
         <div class="ff-dialog-shadow" onclick="closeInfo('{{ row.id }}', '{{ hosting }}')"></div>
         <div class="ff-dialog-modal">
             <div id="ff-dialog--header" class="ff-dialog-header">Feature: {{ row.label }}</div>
-            <div id="ff-dialog--content" class="ff-dialog-content">{{ row.info | safe }}</div>
+            <div id="ff-dialog--content" class="ff-dialog-content">
+                <p>{{ row.description }}</p>
+                {% set hostingData = row[hostingKey] %}
+                {% for tier in tiers %}
+                {% set cell = hostingData[tier] if hostingData else null %}
+                {% if cell and cell.note %}
+                <p><strong>{{ tier | capitalize }}:</strong> {{ cell.note }}</p>
+                {% endif %}
+                {% endfor %}
+                {% if row.docsLink %}
+                <p><a href="{{ row.docsLink }}" target="_blank" rel="noopener">Learn more</a></p>
+                {% endif %}
+            </div>
         </div>
     </div>
     {% endif %}
