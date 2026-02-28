@@ -1,0 +1,11 @@
+{
+    "name": "performance-overview",
+    "version": "1.0.1",
+    "description": "SEE README",
+    "main": "flow.json",
+    "license": "SEE LICENSE IN /blueprint-library/LICENSE",
+    "dependencies": {
+      "@flowfuse/node-red-dashboard": "^1.25.0"
+    }
+  }
+  

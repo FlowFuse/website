@@ -1,0 +1,15 @@
+{
+    "name": "blueprint-llm-chat-agent",
+    "version": "1.0.0",
+    "description": "SEE README",
+    "main": "flow.json",
+    "license": "SEE LICENSE IN /blueprint-library/LICENSE",
+    "dependencies": {
+      "@flowfuse/node-red-dashboard": "^1.2.0",
+      "@flowfuse/node-red-dashboard-2-ui-chat": "^1.1.0",
+      "@flowfuse/node-red-dashboard-2-ui-iframe": "^1.1.0",
+      "node-red-contrib-web-worldmap": "^5.1.4",
+      "@inductiv/node-red-openai-api": "^1.89.0"
+    }
+  }
+  

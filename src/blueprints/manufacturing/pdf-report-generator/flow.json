@@ -1,0 +1,4926 @@
+[
+    {
+        "id": "b9ebf893594086f8",
+        "type": "tab",
+        "label": "PDF Generator",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fa7147e04d4d5ec3",
+        "type": "tab",
+        "label": "Database",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8fa60b0979341a49",
+        "type": "tab",
+        "label": "Dashboard Interface",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5195bc5ce212feac",
+        "type": "group",
+        "z": "b9ebf893594086f8",
+        "name": "PDF Generator API \\n Endpoint: /api/shift-report-pdf/:facility_id/:shift_id \\n example: https://<your-instance>/api/shift-report-pdf/BPHP/1",
+        "style": {
+            "label": true,
+            "fill": "#ffff7f",
+            "stroke": "#000000",
+            "color": "#000000"
+        },
+        "nodes": [
+            "0619069521b3c404",
+            "4b465c324203f997",
+            "b6ebdb5a98f72bc3",
+            "b2abc25cebe445e8",
+            "532ff34d2885f3f2",
+            "7140b24cce808754",
+            "c90b030c8e3e8171",
+            "997040f8f8e99468"
+        ],
+        "x": 54,
+        "y": 587,
+        "w": 812,
+        "h": 274
+    },
+    {
+        "id": "6111417235066720",
+        "type": "group",
+        "z": "b9ebf893594086f8",
+        "name": "SUBROUTINE: generate-shift-report \\n Parameters: \\n * msg.facility_id - facility to query  \\n * msg.shift_id - shift id \\n ",
+        "style": {
+            "label": true,
+            "fill": "#7fb7df",
+            "color": "#000000"
+        },
+        "nodes": [
+            "ece6ac22c59f46f6",
+            "8a372253633bb4fc",
+            "310cd39b72dc7f21",
+            "cdb24ab4418140d8",
+            "fa649a1b7fc8c5c5",
+            "ed8e3776c6bd7a5f",
+            "8d63b3e4b15bdf9c",
+            "43f2f23564c65b63",
+            "bf96f48e3f52df9c",
+            "6867ef562742e2f1",
+            "2f8cbb8f2787655b",
+            "aaf5342923de79d9",
+            "ee557b03f49b267e",
+            "96037cbdea6976c3"
+        ],
+        "x": 54,
+        "y": 115,
+        "w": 572,
+        "h": 386
+    },
+    {
+        "id": "206ab16c39788689",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "name": "Simulated Data Setup",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3f2126c3c00b9e0d",
+            "07a3d5b9075ff846",
+            "c0550db87d6fb947",
+            "2b49b1f304443482"
+        ],
+        "x": 48,
+        "y": 853,
+        "w": 1064,
+        "h": 1134,
+        "info": "## group node info\r\n* just like the `comment` **node**"
+    },
+    {
+        "id": "2c6ab893143dbdfe",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "name": "SUBROUTINE: get-shift-report-data \\n Parameters: \\n * msg.facility_id - facility id \\n * msg.shift_id - shift id \\n ",
+        "style": {
+            "label": true,
+            "fill": "#7fb7df",
+            "color": "#000000"
+        },
+        "nodes": [
+            "ac74ccfb53b9a0e1",
+            "ce7c868697e87109",
+            "62bc773001d50980",
+            "e938fe6ec2142b65",
+            "c722aaa0a0370bb8",
+            "889a57dc910e6d6e",
+            "e4aa6e6ca07dc05f",
+            "21f0874e3ecd981f",
+            "08da37d6252fa606",
+            "6c87c566f8d0d408",
+            "3a3549726ef062f7",
+            "b3f627d773a67dd6",
+            "1085e18bd8d84b31",
+            "df3d6b320dced817",
+            "233aa744a48a1322",
+            "9e536f1f667bfcd0",
+            "bab02dad23e69e96",
+            "a3adaa1c22476952",
+            "a030b532f8fb90e4",
+            "2cf0e4dcb2f78fad",
+            "42122629bf6f3975",
+            "1cb8a075b1466e3d",
+            "f4a9a532be6747e7"
+        ],
+        "x": 54,
+        "y": 415,
+        "w": 982,
+        "h": 386
+    },
+    {
+        "id": "55dc3070a79577b1",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "name": "SUBROUTINE: get-shifts-for-date \\n Parameters: \\n * msg.facility_id - facility to query  \\n * msg.shift_date - report date \\n ",
+        "style": {
+            "label": true,
+            "fill": "#7fb7df",
+            "color": "#000000"
+        },
+        "nodes": [
+            "113c253c23e9d593",
+            "db809aa43d5454ea",
+            "cf9df632bfd4c331",
+            "08d16d481ed23386",
+            "dd9b19e6b56aff60",
+            "f34d62f2e07203a7",
+            "60c818fc5e40b541",
+            "cbab68d99be5a1a5",
+            "46337c350af8f856",
+            "41a441668e09bd05",
+            "9c3f46e819b0cd78",
+            "6944ac710f3930cb",
+            "45bb163436354912",
+            "ccf17697491f15e1"
+        ],
+        "x": 54,
+        "y": 115,
+        "w": 982,
+        "h": 266
+    },
+    {
+        "id": "c21fff191ae1f853",
+        "type": "group",
+        "z": "8fa60b0979341a49",
+        "name": "Enable/Disable subroutine",
+        "style": {
+            "label": true,
+            "fill": "#7fb7df",
+            "color": "#000000"
+        },
+        "nodes": [
+            "5546774022fb3d2a",
+            "159662b200cd23e2",
+            "63c9bed9857de49b",
+            "a3eef415c246927f",
+            "9f35bff839f1252a"
+        ],
+        "x": 54,
+        "y": 1339,
+        "w": 222,
+        "h": 122
+    },
+    {
+        "id": "3a778d6499eb6c80",
+        "type": "group",
+        "z": "8fa60b0979341a49",
+        "name": "Dashboard Report Controls",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "13ef4d0f6c13818a",
+            "ae7ae68c644f4b2a",
+            "f484f2d34ae2d6b1",
+            "65a43e5a99e54a71",
+            "fb2138ac029128c0",
+            "031dcd4f42c5a329",
+            "5f18a03048798e99",
+            "daf0026ea9755344",
+            "0df8e9a7e2667efd",
+            "7069e995386b49bd",
+            "b80a758566c2312b",
+            "624f8a071ee730b3",
+            "cd71b42931d6b523",
+            "3a76eface52561f3",
+            "77132463efaf3da2",
+            "58c24d5ac643aa21",
+            "5879637a48d6b56e",
+            "576a8f81c5b8220f",
+            "1b8890177ca1211c",
+            "f7650fc2485a9ebe",
+            "8378d5b491939aa7",
+            "f643bd5b3693e588",
+            "4bb51d5caf249031",
+            "9201daccc1030925",
+            "34a00da5d6a71195",
+            "4b99c2314a3ad17d",
+            "375d07b01555fa49",
+            "d93babaea741d523",
+            "c43293896f986726",
+            "73dd7e02e0bf95e3",
+            "b3bf5c5599bbd55d",
+            "ddb2fb3628fdde78",
+            "010596d634ee52c3",
+            "7423433981d9fb31",
+            "4c1c88620d5af834",
+            "817d15fc2de6b0a1",
+            "228b8828a6bb9ab2",
+            "2351bb5010a89802",
+            "388dc6b74b7304d4",
+            "709f230e499f330a",
+            "60442e18b12a7e24",
+            "7ebb82fe1b525861",
+            "ebb5858e6da6b6c2",
+            "d300a2960576d931",
+            "55461c7dd91377bd",
+            "0dfc1ea8f10de9f8",
+            "926b4d2694d4cc04",
+            "44db117a9c1a03f3",
+            "4ae8a946204b10b4",
+            "1252681425a03360",
+            "0955f53ae44545bb",
+            "10a1bc61606072dd",
+            "b3aad8eff37b5d75",
+            "01956356535fd2c7",
+            "19913776884fa065",
+            "e12ec33628a4fe37",
+            "2fc4ea1ee5abb0a9",
+            "2356fc964506c76c",
+            "d5de36b9683be629",
+            "d9db45c490446f1a",
+            "0b978cef0a2de26c",
+            "b42aca09f3094a9b",
+            "55f2f29a3261b49c",
+            "2e79c52074aeec9c",
+            "17b016a91dae707d",
+            "924357cc7c467141",
+            "6962a36a92ce04ec",
+            "049eb3c3f7c6395b",
+            "dad8cc0798bc293c",
+            "7061f619570cdadf",
+            "e99cbf1c459f6869"
+        ],
+        "x": 54,
+        "y": 119,
+        "w": 902,
+        "h": 1162
+    },
+    {
+        "id": "3f2126c3c00b9e0d",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "g": "206ab16c39788689",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "743da10e16f63290",
+            "0f5dded450a2bf6c",
+            "c8b30f419a0be8ec",
+            "0d96d3431ffe16d3",
+            "6694477c73b44d98",
+            "d21b40b0f31b327a",
+            "781fcc3b68e886bf",
+            "33daaa16ca90dae7",
+            "68d9d0272038f192",
+            "95beda1133a7e063"
+        ],
+        "x": 74,
+        "y": 879,
+        "w": 972,
+        "h": 142
+    },
+    {
+        "id": "07a3d5b9075ff846",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "g": "206ab16c39788689",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "2beb68abc5da93bc",
+            "e35a51e9eb94e831",
+            "0f4cc6983b87adbf",
+            "ee4c1b5f039ceb8c",
+            "bac64529279a2ffb",
+            "2245e2734e52da90",
+            "606a927afb5f183e",
+            "febe38097d647a54",
+            "b9b669adb495ab28",
+            "cf4e6dc2fd75e926",
+            "38f3941275c448b6",
+            "89efa0bcfd6de063",
+            "091cbc91ca7da797",
+            "34ce4eca7f17c8d0",
+            "42efc0370d8a38df",
+            "8b6660f5159db465",
+            "2cd16631ed8a52e0",
+            "05d4a643df20b63d",
+            "d4bad361a3ffc6a8",
+            "ef0639884bc8cc60",
+            "03c268e8811a0c96",
+            "28c49990c741b4bd",
+            "4bcd489cf9088f7a",
+            "965c563a71414fce",
+            "60cc313c763d2e56",
+            "99f62204ff84c3e4",
+            "dc27fc1eef6a2e2e",
+            "7f5cdd4b8f2c4f28"
+        ],
+        "x": 74,
+        "y": 1039,
+        "w": 1012,
+        "h": 542
+    },
+    {
+        "id": "c0550db87d6fb947",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "g": "206ab16c39788689",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "ba24bdbde1b0d99c",
+            "2f6cbef4f3eefb6f",
+            "40a39bd72a9a2b3c",
+            "01dad7c8c3c39ea3",
+            "a647cb430d07c486",
+            "ba8eff9bba32098e",
+            "f46adda87cca3459",
+            "62de21f91ebd0bd9",
+            "5578819ffa2e1b08",
+            "08a5d1d4693d5fa9"
+        ],
+        "x": 74,
+        "y": 1759,
+        "w": 972,
+        "h": 202
+    },
+    {
+        "id": "2b49b1f304443482",
+        "type": "group",
+        "z": "fa7147e04d4d5ec3",
+        "g": "206ab16c39788689",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "11e1bb0fc1897754",
+            "38434ede939c7d36",
+            "c3a1af58dca1762c",
+            "76ddbce2299caa34",
+            "cd08ece075917cc2",
+            "149faba65653a2d2",
+            "757e77ccc02566da",
+            "2a5f8f4151fb5009"
+        ],
+        "x": 74,
+        "y": 1599,
+        "w": 872,
+        "h": 142
+    },
+    {
+        "id": "6c87c566f8d0d408",
+        "type": "junction",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "x": 840,
+        "y": 640,
+        "wires": [
+            [
+                "b3f627d773a67dd6",
+                "1cb8a075b1466e3d"
+            ]
+        ]
+    },
+    {
+        "id": "9c3f46e819b0cd78",
+        "type": "junction",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "x": 840,
+        "y": 220,
+        "wires": [
+            [
+                "45bb163436354912",
+                "ccf17697491f15e1"
+            ]
+        ]
+    },
+    {
+        "id": "2a5f8f4151fb5009",
+        "type": "junction",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "x": 400,
+        "y": 1640,
+        "wires": [
+            [
+                "76ddbce2299caa34",
+                "38434ede939c7d36"
+            ]
+        ]
+    },
+    {
+        "id": "17b016a91dae707d",
+        "type": "junction",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "ae7ae68c644f4b2a",
+                "388dc6b74b7304d4"
+            ]
+        ]
+    },
+    {
+        "id": "e91dfad2a32019e9",
+        "type": "ui-base",
+        "name": "FlowFuse",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ]
+    },
+    {
+        "id": "24f5d1edea2c6d98",
+        "type": "ui-theme",
+        "name": "PDF Reporting Theme",
+        "colors": {
+            "surface": "#1a1c24",
+            "primary": "#4f7a28",
+            "bgPage": "#000000",
+            "groupBg": "#1a1c24",
+            "groupOutline": "#1a1c24"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "bbbb2e233469d64c",
+        "type": "ui-page",
+        "name": "PDF Reports",
+        "ui": "e91dfad2a32019e9",
+        "path": "/PDFReporting",
+        "icon": "table",
+        "layout": "grid",
+        "theme": "24f5d1edea2c6d98",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "9"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "9"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e4b2e03732772762",
+        "type": "ui-group",
+        "name": "Report Options",
+        "page": "bbbb2e233469d64c",
+        "width": "9",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "85ce115bf575917c",
+        "type": "ui-group",
+        "name": "Report Viewer",
+        "page": "bbbb2e233469d64c",
+        "width": "12",
+        "height": "8",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "1ae6d7f7fdb60191",
+        "type": "sqlitedb",
+        "db": "pdf-report-data.sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "0619069521b3c404",
+        "type": "http in",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "",
+        "url": "/api/shift-report-pdf/:facility_id/:shift_id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 660,
+        "wires": [
+            [
+                "7140b24cce808754",
+                "c90b030c8e3e8171"
+            ]
+        ]
+    },
+    {
+        "id": "4b465c324203f997",
+        "type": "http response",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "content-type": "application/pdf",
+            "Content-Disposition": "attachment; filename=\"shift-report.pdf\""
+        },
+        "x": 770,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b6ebdb5a98f72bc3",
+        "type": "link call",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "",
+        "links": [
+            "cdb24ab4418140d8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 440,
+        "y": 720,
+        "wires": [
+            [
+                "b2abc25cebe445e8"
+            ]
+        ]
+    },
+    {
+        "id": "b2abc25cebe445e8",
+        "type": "switch",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "All good?",
+        "property": "error",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 400,
+        "y": 800,
+        "wires": [
+            [
+                "4b465c324203f997"
+            ],
+            [
+                "997040f8f8e99468"
+            ]
+        ]
+    },
+    {
+        "id": "532ff34d2885f3f2",
+        "type": "http response",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "",
+        "statusCode": "500",
+        "headers": {},
+        "x": 780,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "7140b24cce808754",
+        "type": "change",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "shift_id",
+                "pt": "msg",
+                "to": "req.params.shift_id",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "facility_id",
+                "pt": "msg",
+                "to": "req.params.facility_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 720,
+        "wires": [
+            [
+                "b6ebdb5a98f72bc3"
+            ]
+        ]
+    },
+    {
+        "id": "ece6ac22c59f46f6",
+        "type": "function",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "Doc Def",
+        "func": "\n/* Helper function */\nconst toDate = (d) => new Date(d)\nconst isoDate = (d) => toDate(d).toISOString().split('T')[0]\nconst isoTime = (d) => toDate(d).toISOString().split('T')[1].substring(0,8)\nconst isoDateTime = (d) => `${isoDate(d)} ${isoTime(d)}`\nconst localDate = (d) => toDate(d).toLocaleDateString()\nconst localTime = (d) => toDate(d).toLocaleTimeString()\nconst localDateTime = (d) => toDate(d).toLocaleString()\nconst toPercent = (v, d=2) => (v * 100).toFixed(2)\nconst secondsToHumanReadableDuration = (seconds) => {\n    const numSeconds = +seconds\n    if (isNaN(numSeconds)) {\n        return 'NaN'\n    }\n    const h = Math.floor(numSeconds / 3600)\n    const m = Math.floor((numSeconds % 3600) / 60)\n    const s = numSeconds % 60\n    const parts = []\n    if (h > 0) parts.push(`${h.toFixed(0)}h`)\n    if (m > 0) parts.push(`${m.toFixed(0)}m`)\n    if (s > 0 || parts.length === 0) parts.push(`${s.toFixed(0)}s`)\n    return parts.join(' ')\n}\n\n/* Report data prep */\nconst tableData = msg.payload || []\nconst tableRows = tableData.map(e => [\n    localTime(e.downtime_start),\n    secondsToHumanReadableDuration(e.downtime_duration_seconds ?? 0),\n    (!!e.is_planned) ? {text: '*', alignment: 'center'} : '' ,\n    e.reason_description||'',\n    e.notes||''\n])\nlet lineName = msg.Facility.name\n\n\n\nconst logo = `data:image/png;base64,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`\n\nconst now = new Date()\nconst nowDateTimeStr = localDateTime(now)\nconst dd = {\n    pageSize: \"A4\",\n    pageOrientation: \"landscape\",\n    pageMargins: [\n        30,\n        50,\n        30,\n        30\n    ],\n    watermark: { text: 'Draft', color: 'red', opacity: 0.1, bold: false, italics: false },\n    info: {\n        title: `Shift Report: ${msg.Facility.id}, ${msg.PlannedShift.shift_name}, ${msg.PlannedShift.shift_date}`,\n        author: \"FlowFuse\",\n        subject: \"Shift Report\",\n        keywords: \"OEE\"\n    },\n    footer: function (currentPage, pageCount) {\n        return {\n            marginLeft: 30,\n            marginRight: 30,\n            columns: [\n                { text: `${msg.PlannedShift.shift_name} ${msg.PlannedShift.shift_date}` },\n                `Generated: ${nowDateTimeStr}`,\n                { text: 'Page ' + currentPage.toString() + ' of ' + pageCount, alignment: 'right' }\n            ]\n        }\n    },\n    header: {\n        marginTop: 20,\n        marginLeft: 30,\n        marginRight: 15,\n        columns: [\n            { text: 'Shift Report', bold: true },\n            msg.Facility.name + ` (${msg.Facility.id})`,\n            {\n                alignment: 'right',\n                // \"svg\": logo,\n                \"image\": logo,\n                \"width\": 120\n            },\n        ]\n    },\n    content: [\n        { \n            columns: [\n                { text: 'Production Shift', width: 100},\n                `${msg.PlannedShift.shift_name}`\n            ]\n        },\n        { \n            columns: [\n                { text: 'Production Date', width: 100},\n                localDate(msg.PlannedShift.start_datetime)\n            ]\n        },\n        { \n            columns: [\n                { text: 'Production Start', width: 100},\n                localTime(msg.PlannedShift.start_datetime)\n            ]\n        },\n        {\n            columns: [\n                { text: 'Run ID', width: 100 },\n                { text: `${msg.PlannedShift.id}`, width: 100 },\n            ]\n        },\n        \" \", // blank line\n        { text: 'OEE Summary', fontSize: 15 },\n        {\n            layout: \"lightHorizontalLines\",\n            table: {\n                headerRows: 1,\n                body: [\n                    [\n                        \"OEE\",\n                        \"Quality\",\n                        \"Performance\",\n                        \"Availability\",\n                        \"Total Count\",\n                        \"Good Count\",\n                        \"Waste Count\",\n                    ],\n                    [\n                        toPercent(msg.ProductionData.oee_score),\n                        toPercent(msg.ProductionData.quality),\n                        toPercent(msg.ProductionData.performance),\n                        toPercent(msg.ProductionData.availability),\n                        msg.ProductionData.total_units,\n                        msg.ProductionData.good_units,\n                        msg.ProductionData.scrap_units,\n                    ]\n                ]\n            }\n        },\n        \" \", // blank line\n        { text: 'Run Stop Summary', fontSize: 15 },\n        {\n            layout: \"lightHorizontalLines\",\n            table: {\n                headerRows: 1,\n                body: [\n                    [\n                        \"Shift Duration\",\n                        \"Planned Run Time\",\n                        \"Actual Run Time\",\n                        \"Planned Stops Total\",\n                        \"Unplanned Stops Total\"\n                    ],\n                    [\n                        secondsToHumanReadableDuration(msg.PlannedShift.duration_minutes * 60),\n                        secondsToHumanReadableDuration((msg.ProductionData.planned_runtime_minutes * 60) - msg.ProductionData.planned_downtime_seconds),\n                        secondsToHumanReadableDuration(msg.ProductionData.runtime_minutes * 60),\n                        secondsToHumanReadableDuration(msg.ProductionData.planned_downtime_seconds),\n                        secondsToHumanReadableDuration(msg.ProductionData.unplanned_downtime_seconds)\n                    ]\n                ]\n            }\n        },\n        \" \", // blank line\n        { text: 'Stoppages', fontSize: 15 },\n        {\n            layout: \"lightHorizontalLines\",\n            table: {\n                headerRows: 1,\n                widths: [\n                    \"auto\",\n                    \"auto\",\n                    \"auto\",\n                    \"auto\",\n                    \"*\"\n                ],\n                body: [\n                    [\n                        \"Time\",\n                        \"Duration\",\n                        \"Planned\",\n                        \"Reason\",\n                        \"Note\"\n                    ],\n                    ...tableRows\n                ]\n            }\n        }\n    ]\n}\n\nfunction insertImage(docDef, title, imageData, width) {\n    docDef.content.unshift({\n        \"image\": imageData,\n        \"width\": width || 200\n    })\n    docDef.content.unshift(title)\n}\n\nif (msg.logo) {\n    insertImage(dd, msg.logoText || \"Logo\", msg.logo, 64)\n}\n\nmsg.docdef = RED.util.cloneMessage(dd);\nmsg.payload = dd;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 280,
+        "wires": [
+            [
+                "8a372253633bb4fc",
+                "aaf5342923de79d9"
+            ]
+        ]
+    },
+    {
+        "id": "310cd39b72dc7f21",
+        "type": "link call",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "",
+        "links": [
+            "ce7c868697e87109"
+        ],
+        "linkType": "static",
+        "timeout": "10",
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "96037cbdea6976c3",
+                "ece6ac22c59f46f6"
+            ]
+        ]
+    },
+    {
+        "id": "cdb24ab4418140d8",
+        "type": "link in",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "generate-shift-report",
+        "links": [],
+        "x": 95,
+        "y": 220,
+        "wires": [
+            [
+                "310cd39b72dc7f21"
+            ]
+        ]
+    },
+    {
+        "id": "fa649a1b7fc8c5c5",
+        "type": "debug",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "PDF Doc Def",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ed8e3776c6bd7a5f",
+        "type": "link out",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "link out 16",
+        "mode": "return",
+        "links": [],
+        "x": 455,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "8d63b3e4b15bdf9c",
+        "type": "catch",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "ed8e3776c6bd7a5f",
+                "43f2f23564c65b63"
+            ]
+        ]
+    },
+    {
+        "id": "43f2f23564c65b63",
+        "type": "debug",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "PDF Error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "bf96f48e3f52df9c",
+        "type": "link call",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "",
+        "links": [
+            "cdb24ab4418140d8"
+        ],
+        "linkType": "static",
+        "timeout": "10",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "2f8cbb8f2787655b"
+            ]
+        ]
+    },
+    {
+        "id": "6867ef562742e2f1",
+        "type": "inject",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "debug",
+        "props": [
+            {
+                "p": "_debug",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "facility_id",
+                "v": "reporting.selectedOptions.facility_id",
+                "vt": "global"
+            },
+            {
+                "p": "shift_date",
+                "v": "reporting.selectedOptions.shift_date",
+                "vt": "global"
+            },
+            {
+                "p": "shift_id",
+                "v": "reporting.selectedOptions.shift_id",
+                "vt": "global"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "bf96f48e3f52df9c"
+            ]
+        ]
+    },
+    {
+        "id": "2f8cbb8f2787655b",
+        "type": "debug",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "PDF Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c90b030c8e3e8171",
+        "type": "debug",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "58a2b8e9c59f5170",
+        "type": "comment",
+        "z": "b9ebf893594086f8",
+        "name": "READ ME - Report Generation Endpoint API ",
+        "info": "This endpoint is not used in these demo flows since we\nutilise the built-in WS communications of FlowFuse/Dashboard\nto transmit the PDF data from the backend to the frontend.\n\nHowever, we provided this endpoint example of how to utilise\nthe PDF report generator in other applications or even other\ndashboard offerings like uibuilder.\n\n### Example URL\n([https://<your-instance-url>/api/shift-report-pdf/BPHP/123])[https://<your-instance-url>/api/shift-report-pdf/BPHP/123]\nWhere `BPHP` is the facility ID and `123` is the Run ID (planned shift ID)\n",
+        "x": 230,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "997040f8f8e99468",
+        "type": "change",
+        "z": "b9ebf893594086f8",
+        "g": "5195bc5ce212feac",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 820,
+        "wires": [
+            [
+                "532ff34d2885f3f2"
+            ]
+        ]
+    },
+    {
+        "id": "fc23cedbf1194ca4",
+        "type": "comment",
+        "z": "b9ebf893594086f8",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 390,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "aaf5342923de79d9",
+        "type": "switch",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "Debug?",
+        "property": "_debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 405,
+        "y": 280,
+        "wires": [
+            [
+                "fa649a1b7fc8c5c5"
+            ]
+        ],
+        "icon": "font-awesome/fa-bug",
+        "l": false
+    },
+    {
+        "id": "ee557b03f49b267e",
+        "type": "debug",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "PDF src data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "96037cbdea6976c3",
+        "type": "switch",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "Debug?",
+        "property": "_debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 405,
+        "y": 220,
+        "wires": [
+            [
+                "ee557b03f49b267e"
+            ]
+        ],
+        "icon": "font-awesome/fa-bug",
+        "l": false
+    },
+    {
+        "id": "44c3c3c311fc0e83",
+        "type": "comment",
+        "z": "b9ebf893594086f8",
+        "name": "READ ME...",
+        "info": "### PDF Generator flows\n\nThis flow tab is where the PDF doc def (Document Definition)\nis generated and converted to a PDF document.\n\nThe PDF is never saved to file, instead it is transmitted\nin binary format for the caller to offer as a download to\nthe user.\n\nThere is also an API endpoint example which exposes the PDF\ngenerator to external application. See the READ ME in the\nyellow group titled PDF Generator API\n\n---\n\n**FlowFuse Inc.**",
+        "x": 130,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8a372253633bb4fc",
+        "type": "pdfbuilder",
+        "z": "b9ebf893594086f8",
+        "g": "6111417235066720",
+        "name": "pdfmake.",
+        "outputType": "Buffer",
+        "inputProperty": "docdef",
+        "options": "{}",
+        "outputProperty": "payload",
+        "x": 220,
+        "y": 340,
+        "wires": [
+            [
+                "ed8e3776c6bd7a5f"
+            ]
+        ]
+    },
+    {
+        "id": "e35a51e9eb94e831",
+        "type": "function",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Downtime Data \\n Production Data",
+        "func": "/* Data gen variables */\n\nconst DowntimeData = []\nconst minStops = 3;\nconst maxStops = 20;\nconst minDurationMins = 1;\nconst maxDurationMins = 20;\n\nconst ProductionData = []\nconst JobsPerHour = 60 // 1 unit per minute\nconst SCRAP_RATE = 0.05 // 5% scrap rate\n\n\n/** @typedef {object} FACILITY\n * @property {string} id\n * @property {string} name\n * @property {string} type\n * @property {string} parent_id\n * @property {string} location\n * @property {number} max_output_rate\n * @property {string} asset_type\n * @property {number} is_active\n * @property {string} created_at\n * @property {string} updated_at\n */\n\n/** @type Array<FACILITY> */\nconst FACILITIES = msg.Facilities.filter(e => e.type === \"FACILITY\")\n\n/** @typedef {object} DOWNTIME_REASON\n * @property {string} id\n * @property {string} reason_code\n * @property {string} reason_description\n * @property {string} category\n * @property {number} is_planned\n * @property {number} is_active\n * @property {number} priority_level\n * @property {number} requires_approval\n * @property {number} is_user_selectable\n * @property {string} created_at\n * @property {string} updated_at\n */\n\n/** @type Array<DOWNTIME_REASON> */\nconst DOWNTIME_REASONS = msg.StoppageReasons\n\n/** @typedef {object} PlannedShift\n * @property {number} id\n * @property {string} facility_id\n * @property {string} pattern_id\n * @property {string} pattern\n * @property {string} shift\n * @property {string} shift_date\n * @property {Date} start_datetime\n * @property {Date} end_datetime\n * @property {number} duration_minutes\n * @property {number} is_cancelled\n * @property {string} notes\n * @property {string} created_at\n * @property {string} updated_at\n */\n\n/** @type Array<PlannedShift> */\nconst PlannedShifts = msg.PlannedShifts\n\nfunction getRandomInt(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\nfunction getRandomIntNear(target, minusPercent = 0.0, plusPercent = 0.0) {\n    const min = Math.floor(target - (target * minusPercent))\n    const max = Math.ceil(target + (target * plusPercent))\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\nfunction getRandomElement(arr) {\n    return arr[Math.floor(Math.random() * arr.length)];\n}\nfunction getRandomDowntimeReason() {\n    /** @type DOWNTIME_REASON */\n    const reason = getRandomElement(DOWNTIME_REASONS);\n    return reason\n}\n\nconst normalizeTimestamp = (timestamp) => timestamp.toISOString().split(\"T\").join(\" \").slice(0, 19);\nconst isoTimestamp = (timestamp) => timestamp.toISOString();\n\n// not fully iso 8601 compliant, since we want sunday to be the first day of the week\nfunction getWeekNumber(d) {\n    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));\n    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()));\n    const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));\n    const weekNo = Math.ceil((((d - yearStart.valueOf()) / 86400000) + 1) / 7);\n    return {\n        year: d.getUTCFullYear(), week: weekNo\n    }\n}\n\nfunction generateStops(startTime, shiftMins, { minStops = 1, maxStops = 5, minDurationMins = 1, maxDurationMins = 30 } = {}) {\n    if (!(startTime instanceof Date)) {\n        throw new Error(\"startTime must be a Date object\");\n    }\n    if (!shiftMins || shiftMins <= 0) {\n        throw new Error(\"shiftMins must be a positive number\");\n    }\n    minDurationMins = minDurationMins || 1\n    let previousStopTime = new Date(startTime);\n    const endTime = new Date(startTime.getTime() + shiftMins * 60 * 1000); // Convert shiftMins to milliseconds\n    const numStops = getRandomInt(minStops, maxStops);\n    const totalAvailableMilliseconds = endTime.getTime() - startTime.getTime();\n    const exactSpacing = (totalAvailableMilliseconds - maxDurationMins) / (numStops + 1)\n    const stops = [];\n    for (let i = 0; i < numStops; i++) {\n        const spacing = getRandomIntNear(exactSpacing * (i + 1), 0.30, 0.10)\n        const stopStartTime = new Date(startTime.getTime() + spacing);\n        stopStartTime.setMilliseconds(0)\n        if (stopStartTime <= previousStopTime) {\n            continue // Skip this stop if it is before the previous stop\n        }\n        const stopDuration = getRandomInt(minDurationMins, maxDurationMins);\n        const stopDurationSecs = (stopDuration * 60) + (getRandomInt(0,59))\n        const stopEndTime = new Date(stopStartTime.getTime() + stopDurationSecs * 1000);\n        if (stopEndTime > endTime) {\n            break // Skip this stop if it goes beyond the end time\n        }\n\n        stops.push({\n            startTime: stopStartTime, // Create a new Date object to avoid mutation\n            endTime: stopEndTime,     // Create a new Date object to avoid mutation\n            durationSeconds: stopDurationSecs,\n        });\n\n        previousStopTime = new Date(stopEndTime); // Update for the next stop\n    }\n    return stops;\n}\n\n/**\n * facility {Fac}\n */\nfunction generateDowntimeDataForFacility(\n    /** @type FACILITY */ facility,\n    /** @type PlannedShift */ shift,\n    { minStops = 1, maxStops = 5, minDurationMins = 1, maxDurationMins = 30 } = {}\n) {\n    const downtimeData = [];\n    const stops = generateStops(shift.start_datetime, shift.duration_minutes, { minStops, maxStops, minDurationMins, maxDurationMins });\n    \n    for (let i = 0; i < stops.length; i++) {\n        const stop = stops[i];\n\n        const reason = getRandomDowntimeReason();\n        // node.warn({_:\"Generating reason\", reason});\n        downtimeData.push({\n            facility_id: facility.id,\n            planned_shift_id: shift.id,\n            shift_date: shift.shift_date,\n            // shift_week: shift.weekNo,\n            downtime_start: stop.startTime,\n            downtime_end: stop.endTime,\n            downtime_duration_seconds: stop.durationSeconds,\n            planned_stop: reason.is_planned,\n            stoppage_reason_id: reason.id,\n        });\n    }\n    // node.warn({_:\"Returning downtimeData\", downtimeData});\n    return downtimeData;\n}\n\n\n// sort shiftData by shiftStart time\nconst shiftData = [...PlannedShifts]\n// const shiftData = [PlannedShifts[0], PlannedShifts[1]]\n\nshiftData.forEach(s => {\n    s.start_datetime = new Date(s.start_datetime)\n    s.end_datetime = new Date(s.end_datetime)\n})\nshiftData.sort((a, b) => a.start_datetime.valueOf() - b.start_datetime.valueOf());\n\nfor (const shift of shiftData) {\n    const facility = FACILITIES.find(facility => facility.id === shift.facility_id);\n    // node.warn({_:\"generateDowntimeDataForFacility for facility\", facility});\n    if (!facility) { continue }\n    const downtimeEntries = generateDowntimeDataForFacility(facility, shift, { minStops, maxStops, minDurationMins, maxDurationMins });\n    DowntimeData.push(...downtimeEntries);\n}\n\n// generate a bulk insert for SQLite from the downtimeData array\nconst generateBulkInsert = (tableName, columns, data) => {\n    const values = data.map(entry => {\n        const valueBuilder = []\n        for (const col of columns) {\n            if (typeof entry[col] === 'string') {\n                valueBuilder.push(`'${entry[col].replace(/'/g, \"''\")}'`); // escape single quotes in strings\n            } else if (entry[col] instanceof Date) {\n                valueBuilder.push(`'${isoTimestamp(entry[col])}'`); // format date as string\n            } else if (typeof entry[col] === 'number') {\n                valueBuilder.push(entry[col]); // leave numbers as is\n            } else if (!entry[col]) {\n                valueBuilder.push('NULL')\n            } else {\n                valueBuilder.push(`'${entry[col]}'`); // for any other type, just convert to string\n            }\n        }\n        return `\\n(${valueBuilder.join(\", \")})`;\n    }).join(\", \");\n    return `INSERT INTO ${tableName} (${columns}) VALUES ${values};`;\n};\n\nnode.warn({DowntimeData});\nmsg.DowntimeData = DowntimeData\nconst columns = Object.keys(DowntimeData[0]);\nconst m1 = {}\nm1.topic = generateBulkInsert('DowntimeData', columns, DowntimeData)\n\n\n\nfor (const shift of shiftData) {\n    const facility = FACILITIES.find(facility => facility.id === shift.facility_id);\n    // node.warn({_:\"Gonna loop facilities\", facilities});\n\n    const downtimeEntries = DowntimeData.filter(dte => dte.planned_shift_id === shift.id && dte.facility_id === facility.id);\n    \n    const planned_runtime_minutes = shift.duration_minutes\n    const planned_downtime_seconds = downtimeEntries.filter(e => e.planned_stop === 1).reduce((acc, entry) => acc + entry.downtime_duration_seconds, 0)\n    const unplanned_downtime_seconds = downtimeEntries.filter(e => (e.planned_stop ?? 0) === 0).reduce((acc, entry) => acc + entry.downtime_duration_seconds, 0)\n    let production_planned_minutes = planned_runtime_minutes - (planned_downtime_seconds / 60)\n    if (production_planned_minutes < 0) { production_planned_minutes = 0 }\n    let runtime_minutes = production_planned_minutes - (unplanned_downtime_seconds / 60) // in minutes\n    if (runtime_minutes <= 0) { runtime_minutes = 0 }\n\n    const estUnits = Math.floor((production_planned_minutes / 60) * JobsPerHour) // in units\n    const actual_output =  Math.floor(((runtime_minutes / 60) * JobsPerHour) * 0.95) // in units\n    const ideal_cycle_time = production_planned_minutes / estUnits // in minutes/unit\n    // Actual Cycle Time = Runtime / Total Units Produced\n    const actual_cycle_time = runtime_minutes / actual_output // in minutes/unit\n    const total_units = actual_output\n    const scrap_units = getRandomInt(0, Math.floor(total_units * SCRAP_RATE))\n    let good_units = total_units - scrap_units\n    if (good_units < 0) {\n        good_units = 0\n    }\n    \n\n    // Availability = Run Time / Planned Production Time\n    const availability = planned_runtime_minutes > 0 ? (runtime_minutes / planned_runtime_minutes) : 0\n    // Performance = (Ideal Cycle Time × Total Count) / Run Time\n    const performance = runtime_minutes > 0 ? (ideal_cycle_time * total_units) / runtime_minutes : 0\n    // Quality = Good Count / Total Count\n    const quality = total_units > 0 ? (good_units / total_units) : 0\n    const oee_score = availability * performance * quality\n    const dt = downtimeEntries.map(e=>{return {d: e.downtime_duration_seconds/60, planned: e.planned_stop}})\n    // node.warn({_:\"downtimeEntry\", facility, dt, planned_runtime_minutes, planned_downtime_seconds, unplanned_downtime_seconds, runtime_minutes, estUnits, ideal_cycle_time, actual_cycle_time, total_units, good_units, scrap_units, availability, performance, quality, oee_score});\n\n    const productionEntry = {\n        facility_id: facility.id,\n        planned_shift_id: shift.id,\n        shift_date: shift.shift_date,\n        \n        planned_runtime_minutes,\n        runtime_minutes,\n\n        planned_downtime_seconds,\n        unplanned_downtime_seconds,\n\n        total_units,\n        good_units,\n        scrap_units,\n\n        availability,\n        performance,\n        quality,\n        oee_score\n    };\n    ProductionData.push(productionEntry);\n\n}\nnode.warn({ProductionData});\nmsg.ProductionData = ProductionData\nconst pColumns = Object.keys(ProductionData[0]);\nconst m2 = {}\nm2.topic = generateBulkInsert('ProductionData', pColumns, ProductionData)\n\nreturn [m1, m2]",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 1400,
+        "wires": [
+            [
+                "2beb68abc5da93bc"
+            ],
+            [
+                "89efa0bcfd6de063"
+            ]
+        ]
+    },
+    {
+        "id": "11e1bb0fc1897754",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "name": "3: Check data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 1640,
+        "wires": [
+            [
+                "2a5f8f4151fb5009"
+            ]
+        ]
+    },
+    {
+        "id": "c3a1af58dca1762c",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "name": "DowntimeData",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "743da10e16f63290",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "1: Click to create tables",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "4",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 920,
+        "wires": [
+            [
+                "95beda1133a7e063"
+            ]
+        ]
+    },
+    {
+        "id": "2f6cbef4f3eefb6f",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "4: Click to drop table",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 1800,
+        "wires": [
+            [
+                "ba24bdbde1b0d99c"
+            ]
+        ]
+    },
+    {
+        "id": "0f4cc6983b87adbf",
+        "type": "function",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Create PlannedShifts",
+        "func": "const FACILITIES = msg.Facilities.filter(f => f.type === \"FACILITY\" && f.is_active == 1)\n\nconst SundayJustGone = new Date();\nSundayJustGone.setDate(SundayJustGone.getDate() - (SundayJustGone.getDay() + 1)); // last Sunday\nlet startDate = new Date(SundayJustGone);\nstartDate.setHours(12, 0, 0, 0); // set to midday\nstartDate = addDays(startDate, -29) // 4 weeks, 1 day  prior\nconst endDate = new Date();\n\nconst ShiftPatterns = msg.ShiftPatterns\nconst PlannedShifts = [];\n\nfunction fomratYMD(date) {\n  return date.toISOString().split(\"T\")[0];\n}\n\nfunction pad(n) {\n  return n.toString().padStart(2, '0');\n}\n\nfunction addMinutes(date, minutes) {\n    const result = new Date(date)\n    result.setMinutes(result.getMinutes() + minutes)\n    return result\n}\n\nfunction addDays(date, days) {\n  const result = new Date(date)\n  result.setDate(result.getDate() + days)\n  return result\n}\n\nfunction combineDateAndTime(date, timeStr) {\n    const [hours, minutes, seconds] = timeStr.split(\":\").map(Number);\n    const d = new Date(date);\n    d.setHours(hours, minutes, seconds || 0, 0);\n    return d;\n}\n\nconst normalizeTimestamp = (timestamp) => timestamp.toISOString().split(\"T\").join(\" \").slice(0, 19);\nconst isoTimestamp = (timestamp) => timestamp.toISOString();\n\n// node.warn({_:\"Create PlannedShifts\", FACILITIES, ShiftPatterns, startDate, endDate })\nfor (\n    let currentDate = new Date(startDate);\n    currentDate <= endDate;\n    currentDate = addDays(currentDate, 1)\n) {\n    const dow = currentDate.getDay(); // 0 = Sunday\n\n    for (const facility of FACILITIES) {\n        const matchingPatterns = ShiftPatterns.filter(p => p.dow === dow && p.is_active && p.pattern == facility.shift_pattern);\n\n        if (!matchingPatterns) {\n            node.warn({ _:\"No shift pattern found:\", dow, currentDate, matchingPatterns });\n            continue\n        }\n\n        for (const pattern of matchingPatterns) {\n            const shiftStart = combineDateAndTime(currentDate, pattern.start_time);\n            const shiftEnd = addMinutes(shiftStart, pattern.duration_minutes);\n            // node.warn({facility, pattern, shiftStart, shiftEnd});\n            PlannedShifts.push({\n                facility_id: facility.id,\n                pattern_id: pattern.id,\n                pattern: pattern.pattern,\n                shift: pattern.shift,\n                shift_name: pattern.name,\n                shift_date: fomratYMD(currentDate),\n                start_datetime: shiftStart.toISOString(),\n                end_datetime: shiftEnd.toISOString(),\n                duration_minutes: pattern.duration_minutes,\n                notes: \"System Generated\"\n            });\n        }\n    }\n}\n\n\n// generate a bulk insert for SQLite from the downtimeData array\nconst generateBulkInsert = (tableName, columns, data) => {\n    const values = data.map(entry => {\n        const valueBuilder = []\n        for (const col of columns) {\n            if (typeof entry[col] === 'string') {\n                valueBuilder.push(`'${entry[col].replace(/'/g, \"''\")}'`); // escape single quotes in strings\n            } else if (entry[col] instanceof Date) {\n                valueBuilder.push(`'${isoTimestamp(entry[col])}'`); // format date as string\n            } else if (typeof entry[col] === 'number') {\n                valueBuilder.push(entry[col]); // leave numbers as is\n            } else if (!entry[col]) {\n                valueBuilder.push('NULL')\n            } else {\n                valueBuilder.push(`'${entry[col]}'`); // for any other type, just convert to string\n            }\n        }\n        return `\\n(${valueBuilder.join(\", \")})`;\n    }).join(\", \");\n    return `INSERT INTO ${tableName} (${columns}) VALUES ${values};`;\n};\n\nnode.warn({PlannedShifts});\nconst columns = Object.keys(PlannedShifts[0]);\nmsg.topic = generateBulkInsert('PlannedShifts', columns, PlannedShifts)\nmsg.PlannedShifts = PlannedShifts\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 1320,
+        "wires": [
+            [
+                "ee4c1b5f039ceb8c"
+            ]
+        ]
+    },
+    {
+        "id": "bac64529279a2ffb",
+        "type": "catch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 170,
+        "y": 1480,
+        "wires": [
+            [
+                "2245e2734e52da90"
+            ]
+        ]
+    },
+    {
+        "id": "2245e2734e52da90",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "errors",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "62de21f91ebd0bd9",
+        "type": "catch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 170,
+        "y": 1920,
+        "wires": [
+            [
+                "5578819ffa2e1b08"
+            ]
+        ]
+    },
+    {
+        "id": "5578819ffa2e1b08",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "errors.",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 330,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "33daaa16ca90dae7",
+        "type": "catch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 170,
+        "y": 980,
+        "wires": [
+            [
+                "68d9d0272038f192"
+            ]
+        ]
+    },
+    {
+        "id": "68d9d0272038f192",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "errors.",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "42efc0370d8a38df",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "2: Click to generate and insert demo data.",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 1080,
+        "wires": [
+            [
+                "8b6660f5159db465"
+            ]
+        ]
+    },
+    {
+        "id": "8b6660f5159db465",
+        "type": "function",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Create ShiftPatterns",
+        "func": "const ShiftPatterns = [\n    // 3 shift pattern\n    { id: \"3S:D1\", pattern: \"3 Shift\", shift: \"DAYS\", name: \"Monday Dayshift\", dow: 1, start_time: \"07:30:00\", duration_minutes: 480 },\n    { id: \"3S:D2\", pattern: \"3 Shift\", shift: \"DAYS\", name: \"Tuesday Dayshift\", dow: 2, start_time: \"07:30:00\", duration_minutes: 480 },\n    { id: \"3S:D3\", pattern: \"3 Shift\", shift: \"DAYS\", name: \"Wednesday Dayshift\", dow: 3, start_time: \"07:30:00\", duration_minutes: 480 },\n    { id: \"3S:D4\", pattern: \"3 Shift\", shift: \"DAYS\", name: \"Thursday Dayshift\", dow: 4, start_time: \"07:30:00\", duration_minutes: 480 },\n    { id: \"3S:D5\", pattern: \"3 Shift\", shift: \"DAYS\", name: \"Friday Dayshift\", dow: 5, start_time: \"07:30:00\", duration_minutes: 390 }, // 6.5 hours on Friday\n    { id: \"3S:L1\", pattern: \"3 Shift\", shift: \"LATES\", name: \"Monday Lateshift\", dow: 1, start_time: \"15:30:00\", duration_minutes: 480 },\n    { id: \"3S:L2\", pattern: \"3 Shift\", shift: \"LATES\", name: \"Tuesday Lateshift\", dow: 2, start_time: \"15:30:00\", duration_minutes: 480 },\n    { id: \"3S:L3\", pattern: \"3 Shift\", shift: \"LATES\", name: \"Wednesday Lateshift\", dow: 3, start_time: \"15:30:00\", duration_minutes: 480 },\n    { id: \"3S:L4\", pattern: \"3 Shift\", shift: \"LATES\", name: \"Thursday Lateshift\", dow: 4, start_time: \"15:30:00\", duration_minutes: 480 },\n    { id: \"3S:L5\", pattern: \"3 Shift\", shift: \"LATES\", name: \"Friday Lateshift\", dow: 5, start_time: \"14:00:00\", duration_minutes: 360 }, // 6 hours on Friday\n    { id: \"3S:N1\", pattern: \"3 Shift\", shift: \"NIGHTS\", name: \"Sunday Nightshift\", dow: 0, start_time: \"23:30:00\", duration_minutes: 480 },\n    { id: \"3S:N2\", pattern: \"3 Shift\", shift: \"NIGHTS\", name: \"Monday Nightshift\", dow: 1, start_time: \"23:30:00\", duration_minutes: 480 },\n    { id: \"3S:N3\", pattern: \"3 Shift\", shift: \"NIGHTS\", name: \"Tuesday Nightshift\", dow: 2, start_time: \"23:30:00\", duration_minutes: 480 },\n    { id: \"3S:N4\", pattern: \"3 Shift\", shift: \"NIGHTS\", name: \"Wednesday Nightshift\", dow: 3, start_time: \"23:30:00\", duration_minutes: 480 },\n    { id: \"3S:N5\", pattern: \"3 Shift\", shift: \"NIGHTS\", name: \"Thursday Nightshift\", dow: 4, start_time: \"23:30:00\", duration_minutes: 480 },\n    // 2 shift pattern\n    { id: \"2S:D1\", pattern: \"2 Shift\", shift: \"DAYS\", name: \"Monday Dayshift\", dow: 1, start_time: \"07:00:00\", duration_minutes: 480 },\n    { id: \"2S:D2\", pattern: \"2 Shift\", shift: \"DAYS\", name: \"Tuesday Dayshift\", dow: 2, start_time: \"07:00:00\", duration_minutes: 480 },\n    { id: \"2S:D3\", pattern: \"2 Shift\", shift: \"DAYS\", name: \"Wednesday Dayshift\", dow: 3, start_time: \"07:00:00\", duration_minutes: 480 },\n    { id: \"2S:D4\", pattern: \"2 Shift\", shift: \"DAYS\", name: \"Thursday Dayshift\", dow: 4, start_time: \"07:00:00\", duration_minutes: 480 },\n    { id: \"2S:D5\", pattern: \"2 Shift\", shift: \"DAYS\", name: \"Friday Dayshift\", dow: 5, start_time: \"07:00:00\", duration_minutes: 480 },\n    { id: \"2S:L1\", pattern: \"2 Shift\", shift: \"LATES\", name: \"Monday Lateshift\", dow: 1, start_time: \"15:00:00\", duration_minutes: 480 },\n    { id: \"2S:L2\", pattern: \"2 Shift\", shift: \"LATES\", name: \"Tuesday Lateshift\", dow: 2, start_time: \"15:00:00\", duration_minutes: 480 },\n    { id: \"2S:L3\", pattern: \"2 Shift\", shift: \"LATES\", name: \"Wednesday Lateshift\", dow: 3, start_time: \"15:00:00\", duration_minutes: 480 },\n    { id: \"2S:L4\", pattern: \"2 Shift\", shift: \"LATES\", name: \"Thursday Lateshift\", dow: 4, start_time: \"15:00:00\", duration_minutes: 480 },\n    { id: \"2S:L5\", pattern: \"2 Shift\", shift: \"LATES\", name: \"Friday Lateshift\", dow: 5, start_time: \"15:00:00\", duration_minutes: 480 },\n]\nconst normalizeTimestamp = (timestamp) => timestamp.toISOString().split(\"T\").join(\" \").slice(0, 19);\nconst isoTimestamp = (timestamp) => timestamp.toISOString();\n\n// generate a bulk insert for SQLite from the downtimeData array\nconst generateBulkInsert = (tableName, columns, data) => {\n    const values = data.map(entry => {\n        const valueBuilder = []\n        for (const col of columns) {\n            if (typeof entry[col] === 'string') {\n                valueBuilder.push(`'${entry[col].replace(/'/g, \"''\")}'`); // escape single quotes in strings\n            } else if (entry[col] instanceof Date) {\n                valueBuilder.push(`'${isoTimestamp(entry[col])}'`); // format date as string\n            } else if (typeof entry[col] === 'number') {\n                valueBuilder.push(entry[col]); // leave numbers as is\n            } else if (!entry[col]) {\n                valueBuilder.push('NULL')\n            } else {\n                valueBuilder.push(`'${entry[col]}'`); // for any other type, just convert to string\n            }\n        }\n        return `\\n(${valueBuilder.join(\", \")})`;\n    }).join(\", \");\n    return `INSERT INTO ${tableName} (${columns}) VALUES ${values};`;\n};\nnode.warn({ShiftPatterns});\nconst columns = Object.keys(ShiftPatterns[0]);\nmsg.topic = generateBulkInsert('ShiftPatterns', columns, ShiftPatterns)\nmsg.ShiftPatterns = ShiftPatterns\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 1140,
+        "wires": [
+            [
+                "2cd16631ed8a52e0"
+            ]
+        ]
+    },
+    {
+        "id": "05d4a643df20b63d",
+        "type": "function",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Create Facilities",
+        "func": "const Facilities = [\n    { id: \"ACME1\", parent_id: null, type:\"OU\", shift_pattern: null, location: \"UK\", name: \"Acme Plant UK\", },\n    { id: \"BP\", parent_id: 'ACME1', type:\"LINE\", shift_pattern: \"3 Shift\", location: \"Acme Plant 1 UK\", name: \"Batch Process\", },\n    { id: \"L1\", parent_id: 'ACME1', type:\"LINE\", shift_pattern: \"2 Shift\", location: \"Acme Plant 1 UK\", name: \"Line 1\", },\n    { id: \"L2\", parent_id: 'ACME1', type:\"LINE\", shift_pattern: \"3 Shift\", location: \"Acme Plant 1 UK\", name: \"Line 2\", },\n\n    { id: \"BPHP\", parent_id: 'BP', type:\"FACILITY\", shift_pattern: \"3 Shift\", location: \"Pressing\", name: \"Hydraulic Press\", },\n    { id: \"BPPB\", parent_id: 'BP', type:\"FACILITY\", shift_pattern: \"3 Shift\", location: \"Pressing\", name: \"CNC Press Brake\", },\n    { id: \"BPSP\", parent_id: 'BP', type:\"FACILITY\", shift_pattern: \"3 Shift\", location: \"Pressing\", name: \"Stamping Press\", },\n    { id: \"BPPP\", parent_id: 'BP', type:\"FACILITY\", shift_pattern: \"3 Shift\", location: \"Pressing\", name: \"Power Press\", },\n\n    { id: \"L1RA\", parent_id: 'L1', type:\"FACILITY\", shift_pattern: \"2 Shift\", location: \"Assembly\", name: \"Robotic Arm\", },\n    { id: \"L1SIM\", parent_id: 'L1', type:\"FACILITY\", shift_pattern: \"2 Shift\", location: \"Assembly\", name: \"Screw Insertion Machine\", },\n    { id: \"L1P&P\", parent_id: 'L1', type:\"FACILITY\", shift_pattern: \"2 Shift\", location: \"Assembly\", name: \"Pick-and-Place Machine\", },\n    { id: \"L2P&P\", parent_id: 'L2', type:\"FACILITY\", shift_pattern: \"3 Shift\", location: \"Assembly\", name: \"Pick-and-Place Machine\", },\n\n\n    { id: \"L1CSM\", parent_id: 'L1', type:\"FACILITY\", shift_pattern: \"2 Shift\", location: \"Packaging\", name: \"Carton Sealing Machine\", },\n    { id: \"L1SWM\", parent_id: 'L1', type:\"FACILITY\", shift_pattern: \"2 Shift\", location: \"Packaging\", name: \"Shrink Wrapping Machine\", },\n    { id: \"L1BFCM\", parent_id: 'L1', type:\"FACILITY\", shift_pattern: \"2 Shift\", location: \"Packaging\", name: \"Bottle Filling and Capping Machine\", },\n    { id: \"L1FW\", parent_id: 'L1', type:\"FACILITY\", shift_pattern: \"2 Shift\", location: \"Packaging\", name: \"Flow Wrapper\", },\n\n    { id: \"L2BFCM\", parent_id: 'L2', type:\"FACILITY\", shift_pattern: \"3 Shift\", location: \"Packaging\", name: \"Bottle Filling and Capping Machine\", },\n    { id: \"L2FW\", parent_id: 'L2', type:\"FACILITY\", shift_pattern: \"3 Shift\", location: \"Packaging\", name: \"Flow Wrapper\", },\n]\nconst normalizeTimestamp = (timestamp) => timestamp.toISOString().split(\"T\").join(\" \").slice(0, 19);\nconst isoTimestamp = (timestamp) => timestamp.toISOString();\n\n// generate a bulk insert for SQLite from the downtimeData array\n// generate a bulk insert for SQLite from the downtimeData array\nconst generateBulkInsert = (tableName, columns, data) => {\n    const values = data.map(entry => {\n        const valueBuilder = []\n        for (const col of columns) {\n            if (typeof entry[col] === 'string') {\n                valueBuilder.push(`'${entry[col].replace(/'/g, \"''\")}'`); // escape single quotes in strings\n            } else if (entry[col] instanceof Date) {\n                valueBuilder.push(`'${isoTimestamp(entry[col])}'`); // format date as string\n            } else if (typeof entry[col] === 'number') {\n                valueBuilder.push(entry[col]); // leave numbers as is\n            } else if (!entry[col]) {\n                valueBuilder.push('NULL')\n            } else {\n                valueBuilder.push(`'${entry[col]}'`); // for any other type, just convert to string\n            }\n        }\n        return `\\n(${valueBuilder.join(\", \")})`;\n    }).join(\", \");\n    return `INSERT INTO ${tableName} (${columns}) VALUES ${values};`;\n};\nnode.warn({Facilities});\nconst columns = Object.keys(Facilities[0]);\nmsg.topic = generateBulkInsert('Facilities', columns, Facilities)\nmsg.Facilities = Facilities\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 1200,
+        "wires": [
+            [
+                "d4bad361a3ffc6a8"
+            ]
+        ]
+    },
+    {
+        "id": "ef0639884bc8cc60",
+        "type": "function",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "Create StoppageReasons",
+        "func": "const StoppageReasons = [\n  // --- Planned Reasons ---\n  {\n    id: \"uuid-001\", reason_code: \"PL01\", reason_description: \"Scheduled Maintenance\",\n    category: \"PLANNED\", is_planned: 1, is_active: 1,\n    priority_level: 3, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-002\", reason_code: \"PL02\", reason_description: \"Shift Changeover\",\n    category: \"PLANNED\", is_planned: 1, is_active: 1,\n    priority_level: 4, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-003\", reason_code: \"PL03\", reason_description: \"Tool Changeover\",\n    category: \"PLANNED\", is_planned: 1, is_active: 1,\n    priority_level: 3, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-004\", reason_code: \"PL04\", reason_description: \"Quality Checks\",\n    category: \"PLANNED\", is_planned: 1, is_active: 1,\n    priority_level: 3, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-005\", reason_code: \"PL05\", reason_description: \"Cleaning\",\n    category: \"PLANNED\", is_planned: 1, is_active: 1,\n    priority_level: 4, requires_approval: 0, is_user_selectable: 1,\n  },\n\n  // --- Unplanned Reasons ---\n  {\n    id: \"uuid-006\", reason_code: \"UP01\", reason_description: \"Power Failure\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 1, requires_approval: 1, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-007\", reason_code: \"UP02\", reason_description: \"Material Shortage\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-008\", reason_code: \"UP03\", reason_description: \"Operator Unavailable\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-009\", reason_code: \"UP04\", reason_description: \"Emergency Stop\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 1, requires_approval: 1, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-010\", reason_code: \"UP05\", reason_description: \"Overrun\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 3, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-011\", reason_code: \"UP06\", reason_description: \"Underrun\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 3, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-012\", reason_code: \"UP07\", reason_description: \"Limit Switch Failure\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-013\", reason_code: \"UP08\", reason_description: \"Water Pressure\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 3, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-014\", reason_code: \"UP09\", reason_description: \"Hydraulic Pressure\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 3, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-015\", reason_code: \"UP10\", reason_description: \"CP Trip\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-016\", reason_code: \"UP11\", reason_description: \"Under Voltage\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-017\", reason_code: \"UP12\", reason_description: \"Over Voltage\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-018\", reason_code: \"UP13\", reason_description: \"Over Current\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-019\", reason_code: \"UP14\", reason_description: \"Over Temperature\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  },\n  {\n    id: \"uuid-020\", reason_code: \"UP15\", reason_description: \"Under Temperature\",\n    category: \"UNPLANNED\", is_planned: 0, is_active: 1,\n    priority_level: 2, requires_approval: 0, is_user_selectable: 1,\n  }\n];\n\nconst normalizeTimestamp = (timestamp) => timestamp.toISOString().split(\"T\").join(\" \").slice(0, 19);\nconst isoTimestamp = (timestamp) => timestamp.toISOString();\n\n// generate a bulk insert for SQLite from the downtimeData array\n// generate a bulk insert for SQLite from the downtimeData array\nconst generateBulkInsert = (tableName, columns, data) => {\n    const values = data.map(entry => {\n        const valueBuilder = []\n        for (const col of columns) {\n            if (typeof entry[col] === 'string') {\n                valueBuilder.push(`'${entry[col].replace(/'/g, \"''\")}'`); // escape single quotes in strings\n            } else if (entry[col] instanceof Date) {\n                valueBuilder.push(`'${isoTimestamp(entry[col])}'`); // format date as string\n            } else if (typeof entry[col] === 'number') {\n                valueBuilder.push(entry[col]); // leave numbers as is\n            } else if (!entry[col]) {\n                valueBuilder.push('NULL')\n            } else {\n                valueBuilder.push(`'${entry[col]}'`); // for any other type, just convert to string\n            }\n        }\n        return `\\n(${valueBuilder.join(\", \")})`;\n    }).join(\", \");\n    return `INSERT INTO ${tableName} (${columns}) VALUES ${values};`;\n};\nnode.warn({StoppageReasons});\nconst columns = Object.keys(StoppageReasons[0]);\nmsg.topic = generateBulkInsert('StoppageReasons', columns, StoppageReasons)\nmsg.StoppageReasons = StoppageReasons\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 1260,
+        "wires": [
+            [
+                "03c268e8811a0c96"
+            ]
+        ]
+    },
+    {
+        "id": "091cbc91ca7da797",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "store ShiftPatterns",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.tables.ShiftPatterns",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ShiftPatterns",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1140,
+        "wires": [
+            [
+                "05d4a643df20b63d"
+            ]
+        ]
+    },
+    {
+        "id": "965c563a71414fce",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "store Facilities",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.tables.Facilities",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "Facilities",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 1200,
+        "wires": [
+            [
+                "ef0639884bc8cc60"
+            ]
+        ]
+    },
+    {
+        "id": "34ce4eca7f17c8d0",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "store StoppageReasons",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.tables.StoppageReasons",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "StoppageReasons",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 1260,
+        "wires": [
+            [
+                "0f4cc6983b87adbf"
+            ]
+        ]
+    },
+    {
+        "id": "febe38097d647a54",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "store PlannedShifts",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.tables.PlannedShifts",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "PlannedShifts",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1320,
+        "wires": [
+            [
+                "e35a51e9eb94e831"
+            ]
+        ]
+    },
+    {
+        "id": "b9b669adb495ab28",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "cf4e6dc2fd75e926",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "89efa0bcfd6de063",
+        "type": "delay",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 565,
+        "y": 1440,
+        "wires": [
+            [
+                "38f3941275c448b6"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "cd08ece075917cc2",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "name": "ProductionData",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "149faba65653a2d2",
+        "type": "catch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 170,
+        "y": 1700,
+        "wires": [
+            [
+                "757e77ccc02566da"
+            ]
+        ]
+    },
+    {
+        "id": "757e77ccc02566da",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "name": "errors",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 330,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "08a5d1d4693d5fa9",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "name": "clear globals",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "reporting.tables",
+                "pt": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 1920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac74ccfb53b9a0e1",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "debug test",
+        "props": [
+            {
+                "p": "_debug",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "shift_date",
+                "v": "reporting.selectedOptions.shift_date",
+                "vt": "global"
+            },
+            {
+                "p": "facility_id",
+                "v": "reporting.selectedOptions.facility_id",
+                "vt": "global"
+            },
+            {
+                "p": "shift_id",
+                "v": "reporting.selectedOptions.shift_id",
+                "vt": "global"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 720,
+        "wires": [
+            [
+                "f4a9a532be6747e7"
+            ]
+        ]
+    },
+    {
+        "id": "ce7c868697e87109",
+        "type": "link in",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "get-shift-report-data",
+        "links": [
+            "f4a9a532be6747e7"
+        ],
+        "x": 95,
+        "y": 520,
+        "wires": [
+            [
+                "889a57dc910e6d6e"
+            ]
+        ]
+    },
+    {
+        "id": "62bc773001d50980",
+        "type": "link out",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "link out 6",
+        "mode": "return",
+        "links": [],
+        "x": 995,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "e938fe6ec2142b65",
+        "type": "catch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 470,
+        "y": 700,
+        "wires": [
+            [
+                "c722aaa0a0370bb8",
+                "08da37d6252fa606"
+            ]
+        ]
+    },
+    {
+        "id": "c722aaa0a0370bb8",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "Get report data Error",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "889a57dc910e6d6e",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$facility_id",
+                "pt": "msg",
+                "to": "facility_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 165,
+        "y": 520,
+        "wires": [
+            [
+                "1085e18bd8d84b31"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "21f0874e3ecd981f",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "Report Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 965,
+        "y": 700,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "08da37d6252fa606",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rowcount",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            },
+            {
+                "t": "delete",
+                "p": "reporting.debug.get-downtime-data",
+                "pt": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 700,
+        "wires": [
+            [
+                "6c87c566f8d0d408"
+            ]
+        ]
+    },
+    {
+        "id": "3a3549726ef062f7",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rowcount",
+                "pt": "msg",
+                "to": "payload.length",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reporting.debug.get-downtime-data.payload",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reporting.debug.get-downtime-data.PlannedShift",
+                "pt": "global",
+                "to": "PlannedShift",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reporting.debug.get-downtime-data.Facility",
+                "pt": "global",
+                "to": "Facility",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reporting.debug.get-downtime-data.ProductionData",
+                "pt": "global",
+                "to": "ProductionData",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 640,
+        "wires": [
+            [
+                "6c87c566f8d0d408"
+            ]
+        ]
+    },
+    {
+        "id": "b3f627d773a67dd6",
+        "type": "switch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "should return?",
+        "property": "_linkSource",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 895,
+        "y": 640,
+        "wires": [
+            [
+                "62bc773001d50980"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "113c253c23e9d593",
+        "type": "inject",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "debug test",
+        "props": [
+            {
+                "p": "_debug",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "shiftDate",
+                "v": "$moment().subtract(7, \"days\").format(\"YYYY-MM-DD\")",
+                "vt": "jsonata"
+            },
+            {
+                "p": "facility_id",
+                "v": "L1SWM",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 340,
+        "wires": [
+            [
+                "db809aa43d5454ea"
+            ]
+        ]
+    },
+    {
+        "id": "db809aa43d5454ea",
+        "type": "link out",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "cf9df632bfd4c331"
+        ],
+        "x": 265,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "cf9df632bfd4c331",
+        "type": "link in",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "get-shifts-for-date",
+        "links": [
+            "db809aa43d5454ea"
+        ],
+        "x": 95,
+        "y": 220,
+        "wires": [
+            [
+                "60c818fc5e40b541"
+            ]
+        ]
+    },
+    {
+        "id": "08d16d481ed23386",
+        "type": "link out",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "link out 8",
+        "mode": "return",
+        "links": [],
+        "x": 995,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "dd9b19e6b56aff60",
+        "type": "catch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "",
+        "scope": "group",
+        "uncaught": false,
+        "x": 490,
+        "y": 280,
+        "wires": [
+            [
+                "f34d62f2e07203a7",
+                "41a441668e09bd05"
+            ]
+        ]
+    },
+    {
+        "id": "f34d62f2e07203a7",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "Get PlannedShifts data Error",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "60c818fc5e40b541",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$shift_date",
+                "pt": "msg",
+                "to": "$moment(msg.shift_date).format(\"YYYY-MM-DD\")",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "params.$facility_id",
+                "pt": "msg",
+                "to": "facility_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "cbab68d99be5a1a5"
+            ]
+        ]
+    },
+    {
+        "id": "46337c350af8f856",
+        "type": "debug",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "PlannedShifts Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 965,
+        "y": 280,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "41a441668e09bd05",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rowcount",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 280,
+        "wires": [
+            [
+                "9c3f46e819b0cd78"
+            ]
+        ]
+    },
+    {
+        "id": "6944ac710f3930cb",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rowcount",
+                "pt": "msg",
+                "to": "payload.length",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 220,
+        "wires": [
+            [
+                "9c3f46e819b0cd78"
+            ]
+        ]
+    },
+    {
+        "id": "45bb163436354912",
+        "type": "switch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "should return?",
+        "property": "_linkSource",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 895,
+        "y": 220,
+        "wires": [
+            [
+                "08d16d481ed23386"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "df3d6b320dced817",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Facility",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 520,
+        "wires": [
+            [
+                "bab02dad23e69e96"
+            ]
+        ]
+    },
+    {
+        "id": "233aa744a48a1322",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PlannedShift",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 520,
+        "wires": [
+            [
+                "42122629bf6f3975"
+            ]
+        ]
+    },
+    {
+        "id": "bab02dad23e69e96",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$shift_id",
+                "pt": "msg",
+                "to": "shift_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 565,
+        "y": 520,
+        "wires": [
+            [
+                "9e536f1f667bfcd0"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a3adaa1c22476952",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$facility_id",
+                "pt": "msg",
+                "to": "facility_id",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "params.$shift_id",
+                "pt": "msg",
+                "to": "shift_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 355,
+        "y": 640,
+        "wires": [
+            [
+                "e4aa6e6ca07dc05f"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a030b532f8fb90e4",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ProductionData",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "a3adaa1c22476952"
+            ]
+        ]
+    },
+    {
+        "id": "42122629bf6f3975",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$facility_id",
+                "pt": "msg",
+                "to": "facility_id",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "params.$shift_id",
+                "pt": "msg",
+                "to": "shift_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 355,
+        "y": 580,
+        "wires": [
+            [
+                "2cf0e4dcb2f78fad"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "99f62204ff84c3e4",
+        "type": "link out",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "926b4d2694d4cc04"
+        ],
+        "x": 505,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "dc27fc1eef6a2e2e",
+        "type": "complete",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "scope": [
+            "febe38097d647a54"
+        ],
+        "uncaught": false,
+        "x": 170,
+        "y": 1540,
+        "wires": [
+            [
+                "7f5cdd4b8f2c4f28"
+            ]
+        ]
+    },
+    {
+        "id": "051aa9812c84fbc8",
+        "type": "comment",
+        "z": "fa7147e04d4d5ec3",
+        "name": "READ ME...",
+        "info": "### Customisation\n\nThe flows in this blueprint depend on the naming of data fields\n\nTherefore, if your database tables have alternative names, you will need\nto update the aliases in the queries.\n\nFor example, the \"Facilities\" database node returns \n`[{id,name,location}, ...]`\n\n```sql\nSELECT\n    f.id as id, \n    f.name as name, \n    f.location as location\nFROM\n    Facilities f\nWHERE\n    f.id = $facility_id;\n```\n\nIf the fields and/or tables in your database are \ndifferent, you can update the aliases as follows...\n\n```sql\nSELECT\n    f.ident as id, \n    f.unit_name as name, \n    f.area as location\nFROM\n    line_table f\nWHERE\n    f.ident = $facility_id;\n```\n\n---\n\n**FlowFuse Inc.**",
+        "x": 130,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1cb8a075b1466e3d",
+        "type": "switch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "Debug?",
+        "property": "_debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 895,
+        "y": 700,
+        "wires": [
+            [
+                "21f0874e3ecd981f"
+            ]
+        ],
+        "icon": "font-awesome/fa-bug",
+        "l": false
+    },
+    {
+        "id": "ccf17697491f15e1",
+        "type": "switch",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "name": "Debug?",
+        "property": "_debug",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 895,
+        "y": 280,
+        "wires": [
+            [
+                "46337c350af8f856"
+            ]
+        ],
+        "icon": "font-awesome/fa-bug",
+        "l": false
+    },
+    {
+        "id": "f4a9a532be6747e7",
+        "type": "link out",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "ce7c868697e87109"
+        ],
+        "x": 265,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "2beb68abc5da93bc",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "batch",
+        "sql": "",
+        "name": "insert via msg.topic",
+        "x": 690,
+        "y": 1380,
+        "wires": [
+            [
+                "b9b669adb495ab28"
+            ]
+        ]
+    },
+    {
+        "id": "38434ede939c7d36",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "select * from DowntimeData\nlimit 200;",
+        "name": "select 200 from DowntimeData",
+        "x": 570,
+        "y": 1640,
+        "wires": [
+            [
+                "c3a1af58dca1762c"
+            ]
+        ]
+    },
+    {
+        "id": "0f5dded450a2bf6c",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE StoppageReasons (\n    id TEXT PRIMARY KEY, -- Use UUIDs as TEXT in SQLite\n    reason_code TEXT NOT NULL UNIQUE,\n    reason_description TEXT NOT NULL,\n    category TEXT NOT NULL,\n    is_planned INTEGER NOT NULL CHECK (is_planned IN (0, 1)),\n    is_active INTEGER NOT NULL DEFAULT 1 CHECK (is_active IN (0, 1)),\n    priority_level INTEGER, -- e.g., 1 (high) to 5 (low)\n    requires_approval INTEGER DEFAULT 0 CHECK (requires_approval IN (0, 1)),\n    is_user_selectable INTEGER DEFAULT 1 CHECK (is_user_selectable IN (0, 1)),\n    created_at TIMESTAMP DEFAULT (datetime('now')),\n    updated_at TIMESTAMP DEFAULT (datetime('now'))\n);\n\n\n\n",
+        "name": "StoppageReasons",
+        "x": 530,
+        "y": 920,
+        "wires": [
+            [
+                "c8b30f419a0be8ec"
+            ]
+        ]
+    },
+    {
+        "id": "c8b30f419a0be8ec",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE Facilities (\n    id TEXT PRIMARY KEY,\n    name TEXT NOT NULL,\n    type TEXT NOT NULL CHECK (type IN ('OU', 'LINE', 'FACILITY')),\n    parent_id TEXT, -- NULL if it's a top-level LINE\n    location TEXT, -- optional: building, zone, etc.\n    shift_pattern TEXT,\n    asset_type TEXT,\n    is_active INTEGER NOT NULL DEFAULT 1 CHECK (is_active IN (0,1)),\n    created_at TIMESTAMP DEFAULT (datetime('now')),\n    updated_at TIMESTAMP DEFAULT (datetime('now')),\n    FOREIGN KEY (parent_id) REFERENCES Facilities(id)\n);",
+        "name": "Facilities",
+        "x": 720,
+        "y": 920,
+        "wires": [
+            [
+                "0d96d3431ffe16d3"
+            ]
+        ]
+    },
+    {
+        "id": "0d96d3431ffe16d3",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "\nCREATE TABLE ShiftPatterns (\n    id TEXT PRIMARY KEY,\n    pattern TEXT NOT NULL,      -- e.g. '2-shift', '3-shift'\n    shift TEXT NOT NULL,      -- e.g. 'Days', 'Lates'\n    dow INTEGER NOT NULL CHECK (dow BETWEEN 0 AND 6),  -- 0 = Sunday\n    name TEXT,                     -- Friendly name like \"Monday Dayshift\"\n    start_time TEXT NOT NULL,      -- '08:00:00'\n    is_active INTEGER NOT NULL DEFAULT 1 CHECK (is_active IN (0, 1)),\n    duration_minutes INTEGER NOT NULL,\n    created_at TEXT DEFAULT (datetime('now')),\n    updated_at TEXT DEFAULT (datetime('now'))\n);",
+        "name": "ShiftPatterns",
+        "x": 930,
+        "y": 920,
+        "wires": [
+            [
+                "6694477c73b44d98"
+            ]
+        ]
+    },
+    {
+        "id": "6694477c73b44d98",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE PlannedShifts (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    facility_id TEXT NOT NULL,             -- Production facility\n    pattern_id TEXT NOT NULL,\n    pattern TEXT NOT NULL,      -- e.g. '2-shift', '3-shift'\n    shift TEXT NOT NULL,      -- e.g. 'Days', 'Lates'\n    shift_name TEXT NOT NULL,      -- e.g. 'Friday Shayshift'\n    shift_date TEXT NOT NULL,              -- e.g. '2025-05-03'\n    start_datetime TEXT NOT NULL,          -- Full ISO: '2025-05-03T08:00:00'\n    end_datetime TEXT NOT NULL,\n    duration_minutes INTEGER NOT NULL,\n    is_cancelled INTEGER DEFAULT 0 CHECK (is_cancelled IN (0,1)),\n    notes TEXT,\n    created_at TEXT DEFAULT (datetime('now')),\n    updated_at TEXT DEFAULT (datetime('now')),\n    FOREIGN KEY (facility_id) REFERENCES Facilities(id),\n    FOREIGN KEY (pattern_id) REFERENCES ShiftPatterns(id)\n);\n",
+        "name": "PlannedShifts",
+        "x": 520,
+        "y": 980,
+        "wires": [
+            [
+                "d21b40b0f31b327a"
+            ]
+        ]
+    },
+    {
+        "id": "d21b40b0f31b327a",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE ProductionData (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    facility_id TEXT NOT NULL,\n    planned_shift_id INTEGER NOT NULL,\n    shift_date TEXT NOT NULL,\n    planned_runtime_minutes INTEGER NOT NULL,\n    runtime_minutes INTEGER NOT NULL,\n    planned_downtime_seconds INTEGER NOT NULL,\n    unplanned_downtime_seconds INTEGER NOT NULL,\n    total_units INTEGER NOT NULL,\n    good_units INTEGER NOT NULL,\n    scrap_units INTEGER NOT NULL,\n    availability REAL,\n    performance REAL,\n    quality REAL,\n    oee_score REAL,\n    created_at TEXT DEFAULT (datetime('now')),\n    updated_at TEXT DEFAULT (datetime('now')),\n    FOREIGN KEY (facility_id) REFERENCES Facilities(id),\n    FOREIGN KEY (planned_shift_id) REFERENCES PlannedShifts(id)\n);",
+        "name": "ProductionData",
+        "x": 740,
+        "y": 980,
+        "wires": [
+            [
+                "781fcc3b68e886bf"
+            ]
+        ]
+    },
+    {
+        "id": "781fcc3b68e886bf",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE DowntimeData (\n    id                        INTEGER       PRIMARY KEY AUTOINCREMENT,\n    facility_id               TEXT NOT NULL,\n    planned_shift_id INTEGER NOT NULL,\n    shift_date TEXT NOT NULL,\n    downtime_start            DATETIME      NOT NULL,\n    downtime_end              DATETIME      NOT NULL,\n    downtime_duration_seconds INTEGER       NOT NULL,\n    planned_stop              INTEGER DEFAULT 0 CHECK (planned_stop IN (0,1)),\n    stoppage_reason_id           TEXT          NOT NULL,\n    stoppage_reason_override_id           TEXT,\n    notes TEXT,\n    created_at TEXT DEFAULT (datetime('now')),\n    FOREIGN KEY (facility_id) REFERENCES Facilities(id),\n    FOREIGN KEY (stoppage_reason_id) REFERENCES StoppageReasons(id),\n    FOREIGN KEY (planned_shift_id) REFERENCES PlannedShifts(id)\n\n);\n",
+        "name": "DowntimeData",
+        "x": 940,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba24bdbde1b0d99c",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "DROP TABLE IF EXISTS ProductionData;\n",
+        "name": "DROP ProductionData",
+        "x": 440,
+        "y": 1800,
+        "wires": [
+            [
+                "40a39bd72a9a2b3c"
+            ]
+        ]
+    },
+    {
+        "id": "40a39bd72a9a2b3c",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "DROP TABLE IF EXISTS DowntimeData;\n",
+        "name": "DROP DowntimeData",
+        "x": 680,
+        "y": 1800,
+        "wires": [
+            [
+                "01dad7c8c3c39ea3"
+            ]
+        ]
+    },
+    {
+        "id": "01dad7c8c3c39ea3",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "DROP TABLE IF EXISTS PlannedShifts;\n\n",
+        "name": "DROP PlannedShifts",
+        "x": 920,
+        "y": 1800,
+        "wires": [
+            [
+                "a647cb430d07c486"
+            ]
+        ]
+    },
+    {
+        "id": "a647cb430d07c486",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "DROP TABLE IF EXISTS ShiftPatterns;\n\n",
+        "name": "DROP ShiftPatterns",
+        "x": 440,
+        "y": 1860,
+        "wires": [
+            [
+                "ba8eff9bba32098e"
+            ]
+        ]
+    },
+    {
+        "id": "ba8eff9bba32098e",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "\nDROP TABLE IF EXISTS StoppageReasons;\n\n",
+        "name": "DROP StoppageReasons",
+        "x": 690,
+        "y": 1860,
+        "wires": [
+            [
+                "f46adda87cca3459"
+            ]
+        ]
+    },
+    {
+        "id": "f46adda87cca3459",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "c0550db87d6fb947",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "\nDROP TABLE IF EXISTS Facilities;\n",
+        "name": "DROP Facilities",
+        "x": 900,
+        "y": 1860,
+        "wires": [
+            [
+                "08a5d1d4693d5fa9"
+            ]
+        ]
+    },
+    {
+        "id": "ee4c1b5f039ceb8c",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "batch",
+        "sql": "",
+        "name": "insert via msg.topic",
+        "x": 470,
+        "y": 1320,
+        "wires": [
+            [
+                "606a927afb5f183e"
+            ]
+        ]
+    },
+    {
+        "id": "2cd16631ed8a52e0",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "batch",
+        "sql": "",
+        "name": "insert via msg.topic",
+        "x": 470,
+        "y": 1140,
+        "wires": [
+            [
+                "28c49990c741b4bd"
+            ]
+        ]
+    },
+    {
+        "id": "d4bad361a3ffc6a8",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "batch",
+        "sql": "",
+        "name": "insert via msg.topic",
+        "x": 470,
+        "y": 1200,
+        "wires": [
+            [
+                "4bcd489cf9088f7a"
+            ]
+        ]
+    },
+    {
+        "id": "03c268e8811a0c96",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "batch",
+        "sql": "",
+        "name": "insert via msg.topic",
+        "x": 470,
+        "y": 1260,
+        "wires": [
+            [
+                "60cc313c763d2e56"
+            ]
+        ]
+    },
+    {
+        "id": "28c49990c741b4bd",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM ShiftPatterns",
+        "name": "Get ShiftPatterns",
+        "x": 690,
+        "y": 1140,
+        "wires": [
+            [
+                "091cbc91ca7da797"
+            ]
+        ]
+    },
+    {
+        "id": "4bcd489cf9088f7a",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM Facilities",
+        "name": "Get Facilities",
+        "x": 670,
+        "y": 1200,
+        "wires": [
+            [
+                "965c563a71414fce"
+            ]
+        ]
+    },
+    {
+        "id": "60cc313c763d2e56",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM StoppageReasons",
+        "name": "Get StoppageReasons",
+        "x": 700,
+        "y": 1260,
+        "wires": [
+            [
+                "34ce4eca7f17c8d0"
+            ]
+        ]
+    },
+    {
+        "id": "606a927afb5f183e",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM PlannedShifts",
+        "name": "Get PlannedShifts",
+        "x": 690,
+        "y": 1320,
+        "wires": [
+            [
+                "febe38097d647a54"
+            ]
+        ]
+    },
+    {
+        "id": "38f3941275c448b6",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "batch",
+        "sql": "",
+        "name": "insert via msg.topic",
+        "x": 690,
+        "y": 1440,
+        "wires": [
+            [
+                "cf4e6dc2fd75e926"
+            ]
+        ]
+    },
+    {
+        "id": "76ddbce2299caa34",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2b49b1f304443482",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "fixed",
+        "sql": "select * from ProductionData\nlimit 200;",
+        "name": "select 200 from ProductionData",
+        "x": 570,
+        "y": 1700,
+        "wires": [
+            [
+                "cd08ece075917cc2"
+            ]
+        ]
+    },
+    {
+        "id": "e4aa6e6ca07dc05f",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n    dd.id as id,\n    dd.facility_id as facility_id,\n    dd.planned_shift_id as planned_shift_id,\n    dd.shift_date as shift_date,\n    dd.downtime_start as downtime_start,\n    dd.downtime_end as downtime_end,\n    dd.downtime_duration_seconds as downtime_duration_seconds,\n    dd.planned_stop as planned_stop,\n    dd.stoppage_reason_id as stoppage_reason_id,\n    dd.stoppage_reason_override_id as stoppage_reason_override_id,\n    dd.notes as notes,\n    sr.reason_code as reason_code,\n    sr.reason_description as reason_description,\n    sr.category as category,\n    sr.is_planned as is_planned\nFROM\n    DowntimeData dd\nJOIN\n    StoppageReasons sr ON dd.stoppage_reason_id = sr.id\nWHERE\n    dd.facility_id = $facility_id\n    AND dd.planned_shift_id = $shift_id;\n    -- AND dd.shift_date = $shift_date\n",
+        "name": "DowntimeData",
+        "x": 480,
+        "y": 640,
+        "wires": [
+            [
+                "3a3549726ef062f7"
+            ]
+        ]
+    },
+    {
+        "id": "cbab68d99be5a1a5",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "55dc3070a79577b1",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT \n    ps.id as id,\n    ps.shift as shift\nFROM PlannedShifts ps\nWHERE ps.shift_date = $shift_date AND ps.facility_id = $facility_id",
+        "name": "PlannedShifts",
+        "x": 500,
+        "y": 220,
+        "wires": [
+            [
+                "6944ac710f3930cb"
+            ]
+        ]
+    },
+    {
+        "id": "1085e18bd8d84b31",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n    f.id as id, \n    f.name as name, \n    f.location as location\nFROM\n    Facilities f\nWHERE\n    f.id = $facility_id;\n",
+        "name": "Facilities",
+        "x": 260,
+        "y": 520,
+        "wires": [
+            [
+                "df3d6b320dced817"
+            ]
+        ]
+    },
+    {
+        "id": "9e536f1f667bfcd0",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n    ps.id as id,\n    ps.pattern as pattern, \n    ps.shift as shift,\n    ps.shift_name as shift_name,\n    ps.shift_date as shift_date,\n    ps.start_datetime as start_datetime, \n    ps.end_datetime as end_datetime, \n    ps.duration_minutes as duration_minutes \nFROM\n    PlannedShifts ps\nWHERE\n    ps.id = $shift_id;\n",
+        "name": "PlannedShifts",
+        "x": 680,
+        "y": 520,
+        "wires": [
+            [
+                "233aa744a48a1322"
+            ]
+        ]
+    },
+    {
+        "id": "2cf0e4dcb2f78fad",
+        "type": "sqlite",
+        "z": "fa7147e04d4d5ec3",
+        "g": "2c6ab893143dbdfe",
+        "mydb": "1ae6d7f7fdb60191",
+        "sqlquery": "prepared",
+        "sql": "SELECT\n    pd.id as id,\n    pd.planned_runtime_minutes as planned_runtime_minutes,\n    pd.runtime_minutes as runtime_minutes,\n    pd.shift_date as shift_date,\n    pd.planned_downtime_seconds as planned_downtime_seconds,\n    pd.unplanned_downtime_seconds as unplanned_downtime_seconds,\n    pd.total_units as total_units,\n    pd.good_units as good_units,\n    pd.scrap_units as scrap_units,\n    pd.availability as availability,\n    pd.performance as performance,\n    pd.quality as quality,\n    pd.oee_score as oee_score\nFROM\n    ProductionData pd\nWHERE\n    pd.facility_id = $facility_id\n    AND pd.planned_shift_id = $shift_id;\n",
+        "name": "ProductionData",
+        "x": 480,
+        "y": 580,
+        "wires": [
+            [
+                "a030b532f8fb90e4"
+            ]
+        ]
+    },
+    {
+        "id": "7f5cdd4b8f2c4f28",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "07a3d5b9075ff846",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1540,
+        "wires": [
+            [
+                "99f62204ff84c3e4"
+            ]
+        ]
+    },
+    {
+        "id": "95beda1133a7e063",
+        "type": "change",
+        "z": "fa7147e04d4d5ec3",
+        "g": "3f2126c3c00b9e0d",
+        "name": "Prepare tables local cache",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting",
+                "pt": "global",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "reporting.tables",
+                "pt": "global",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 385,
+        "y": 920,
+        "wires": [
+            [
+                "0f5dded450a2bf6c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "13ef4d0f6c13818a",
+        "type": "ui-dropdown",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "group": "e4b2e03732772762",
+        "name": "",
+        "label": "Line Selection:",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": false,
+        "msgTrigger": "onChange",
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "65a43e5a99e54a71",
+                "60442e18b12a7e24"
+            ]
+        ]
+    },
+    {
+        "id": "ae7ae68c644f4b2a",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "generate options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Facilities",
+                "pt": "msg",
+                "to": "reporting.tables.Facilities",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "[\t    Facilities[type = \"LINE\"].{\t    \"label\": parent_id & \", \" & location & \", \" & name,\t    \"value\": id\t  }\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions",
+                "pt": "global",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "13ef4d0f6c13818a"
+            ]
+        ]
+    },
+    {
+        "id": "f484f2d34ae2d6b1",
+        "type": "inject",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "init",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "17b016a91dae707d"
+            ]
+        ]
+    },
+    {
+        "id": "65a43e5a99e54a71",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.line_id",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "line_id",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.facility_id",
+                "pt": "global",
+                "to": "null",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.facility",
+                "pt": "global",
+                "to": "null",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 200,
+        "wires": [
+            [
+                "7423433981d9fb31"
+            ]
+        ]
+    },
+    {
+        "id": "fb2138ac029128c0",
+        "type": "ui-dropdown",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "group": "e4b2e03732772762",
+        "name": "",
+        "label": "Facility Selection:",
+        "tooltip": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": false,
+        "msgTrigger": "onChange",
+        "x": 590,
+        "y": 380,
+        "wires": [
+            [
+                "0df8e9a7e2667efd",
+                "2e79c52074aeec9c"
+            ]
+        ]
+    },
+    {
+        "id": "031dcd4f42c5a329",
+        "type": "delay",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 165,
+        "y": 380,
+        "wires": [
+            [
+                "55461c7dd91377bd"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "5f18a03048798e99",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "reset options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "fb2138ac029128c0"
+            ]
+        ]
+    },
+    {
+        "id": "daf0026ea9755344",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.facility",
+                "pt": "global",
+                "to": "facility",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.facility_id",
+                "pt": "global",
+                "to": "facility_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 440,
+        "wires": [
+            [
+                "c43293896f986726"
+            ]
+        ]
+    },
+    {
+        "id": "0df8e9a7e2667efd",
+        "type": "function",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Get selected facility",
+        "func": "const Facilities = global.get('reporting.tables.Facilities')\nconst facility_id = msg.payload\nlet facility = Facilities.find(e => e.id === facility_id) || null\nmsg.facility_id = facility_id\nmsg.facility = facility\nmsg.payload = facility\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 380,
+        "wires": [
+            [
+                "daf0026ea9755344"
+            ]
+        ]
+    },
+    {
+        "id": "7069e995386b49bd",
+        "type": "ui-text-input",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "group": "e4b2e03732772762",
+        "name": "",
+        "label": "Production Date",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "date",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "77132463efaf3da2"
+            ]
+        ]
+    },
+    {
+        "id": "b80a758566c2312b",
+        "type": "ui-dropdown",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "group": "e4b2e03732772762",
+        "name": "",
+        "label": "Shift Selection:",
+        "tooltip": "",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 580,
+        "y": 800,
+        "wires": [
+            [
+                "b3aad8eff37b5d75"
+            ]
+        ]
+    },
+    {
+        "id": "624f8a071ee730b3",
+        "type": "delay",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 385,
+        "y": 660,
+        "wires": [
+            [
+                "58c24d5ac643aa21"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "cd71b42931d6b523",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "generate options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "[payload.{\t  \"label\": shift,\t  \"value\": id\t}]\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 780,
+        "wires": [
+            [
+                "b80a758566c2312b"
+            ]
+        ]
+    },
+    {
+        "id": "3a76eface52561f3",
+        "type": "link call",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "links": [
+            "cf9df632bfd4c331"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 690,
+        "y": 660,
+        "wires": [
+            [
+                "4ae8a946204b10b4"
+            ]
+        ]
+    },
+    {
+        "id": "77132463efaf3da2",
+        "type": "rbe",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 705,
+        "y": 580,
+        "wires": [
+            [
+                "228b8828a6bb9ab2",
+                "4bb51d5caf249031"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "58c24d5ac643aa21",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "prepare params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "facility_id",
+                "pt": "msg",
+                "to": "reporting.selectedOptions.facility_id",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "shift_date",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 660,
+        "wires": [
+            [
+                "3a76eface52561f3"
+            ]
+        ]
+    },
+    {
+        "id": "5879637a48d6b56e",
+        "type": "ui-button",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "group": "e4b2e03732772762",
+        "name": "",
+        "label": "Shift Report",
+        "order": 5,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "production",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 570,
+        "y": 960,
+        "wires": [
+            [
+                "817d15fc2de6b0a1"
+            ]
+        ]
+    },
+    {
+        "id": "576a8f81c5b8220f",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 6",
+        "links": [
+            "ebb5858e6da6b6c2",
+            "10a1bc61606072dd"
+        ],
+        "x": 115,
+        "y": 1020,
+        "wires": [
+            [
+                "f7650fc2485a9ebe",
+                "0dfc1ea8f10de9f8"
+            ]
+        ]
+    },
+    {
+        "id": "1b8890177ca1211c",
+        "type": "switch",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Valid shift_id",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 175,
+        "y": 980,
+        "wires": [
+            [
+                "8378d5b491939aa7"
+            ],
+            [
+                "f7650fc2485a9ebe"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "f7650fc2485a9ebe",
+        "type": "link call",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "links": [
+            "9f35bff839f1252a"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 300,
+        "y": 1000,
+        "wires": [
+            [
+                "5879637a48d6b56e"
+            ]
+        ]
+    },
+    {
+        "id": "8378d5b491939aa7",
+        "type": "link call",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "links": [
+            "a3eef415c246927f"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 290,
+        "y": 960,
+        "wires": [
+            [
+                "5879637a48d6b56e"
+            ]
+        ]
+    },
+    {
+        "id": "5546774022fb3d2a",
+        "type": "function",
+        "z": "8fa60b0979341a49",
+        "g": "c21fff191ae1f853",
+        "name": "enabled: true",
+        "func": "\nreturn {\n    enabled: true,\n    _linkSource: msg._linkSource\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 155,
+        "y": 1380,
+        "wires": [
+            [
+                "63c9bed9857de49b"
+            ]
+        ],
+        "icon": "font-awesome/fa-check-square",
+        "l": false
+    },
+    {
+        "id": "159662b200cd23e2",
+        "type": "function",
+        "z": "8fa60b0979341a49",
+        "g": "c21fff191ae1f853",
+        "name": "enabled: false",
+        "func": "\nreturn {\n    enabled: false,\n    _linkSource: msg._linkSource\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 155,
+        "y": 1420,
+        "wires": [
+            [
+                "63c9bed9857de49b"
+            ]
+        ],
+        "icon": "font-awesome/fa-window-close",
+        "l": false
+    },
+    {
+        "id": "63c9bed9857de49b",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "c21fff191ae1f853",
+        "name": "ret",
+        "mode": "return",
+        "links": [],
+        "x": 235,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "a3eef415c246927f",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "c21fff191ae1f853",
+        "name": "enable",
+        "links": [],
+        "x": 95,
+        "y": 1380,
+        "wires": [
+            [
+                "5546774022fb3d2a"
+            ]
+        ]
+    },
+    {
+        "id": "9f35bff839f1252a",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "c21fff191ae1f853",
+        "name": "disable",
+        "links": [],
+        "x": 95,
+        "y": 1420,
+        "wires": [
+            [
+                "159662b200cd23e2"
+            ]
+        ]
+    },
+    {
+        "id": "f643bd5b3693e588",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 5",
+        "links": [
+            "b42aca09f3094a9b",
+            "d300a2960576d931",
+            "2e79c52074aeec9c"
+        ],
+        "x": 115,
+        "y": 600,
+        "wires": [
+            [
+                "7ebb82fe1b525861",
+                "010596d634ee52c3"
+            ]
+        ]
+    },
+    {
+        "id": "4bb51d5caf249031",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Reset downstream 2",
+        "mode": "link",
+        "links": [
+            "9201daccc1030925"
+        ],
+        "x": 915,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "9201daccc1030925",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 9",
+        "links": [
+            "7ebb82fe1b525861",
+            "4bb51d5caf249031",
+            "1252681425a03360"
+        ],
+        "x": 115,
+        "y": 820,
+        "wires": [
+            [
+                "44db117a9c1a03f3",
+                "ebb5858e6da6b6c2"
+            ]
+        ]
+    },
+    {
+        "id": "34a00da5d6a71195",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Shift Select",
+        "mode": "link",
+        "links": [
+            "4b99c2314a3ad17d"
+        ],
+        "x": 915,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "4b99c2314a3ad17d",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Shift Select",
+        "links": [
+            "34a00da5d6a71195"
+        ],
+        "x": 115,
+        "y": 980,
+        "wires": [
+            [
+                "1b8890177ca1211c"
+            ]
+        ]
+    },
+    {
+        "id": "375d07b01555fa49",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Prod Date Set",
+        "mode": "link",
+        "links": [
+            "d93babaea741d523"
+        ],
+        "x": 915,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d93babaea741d523",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Prod Date Set",
+        "links": [
+            "375d07b01555fa49"
+        ],
+        "x": 115,
+        "y": 780,
+        "wires": [
+            [
+                "cd71b42931d6b523"
+            ]
+        ]
+    },
+    {
+        "id": "c43293896f986726",
+        "type": "switch",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Is valid facility",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "FACILITY",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 755,
+        "y": 440,
+        "wires": [
+            [
+                "73dd7e02e0bf95e3"
+            ],
+            [
+                "b42aca09f3094a9b"
+            ]
+        ],
+        "icon": "font-awesome/fa-question",
+        "l": false
+    },
+    {
+        "id": "73dd7e02e0bf95e3",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "b3bf5c5599bbd55d"
+        ],
+        "x": 915,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b3bf5c5599bbd55d",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 10",
+        "links": [
+            "73dd7e02e0bf95e3"
+        ],
+        "x": 115,
+        "y": 560,
+        "wires": [
+            [
+                "ddb2fb3628fdde78"
+            ]
+        ]
+    },
+    {
+        "id": "ddb2fb3628fdde78",
+        "type": "link call",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "links": [
+            "a3eef415c246927f"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 290,
+        "y": 560,
+        "wires": [
+            [
+                "7069e995386b49bd"
+            ]
+        ]
+    },
+    {
+        "id": "010596d634ee52c3",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "clear options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.shift_date",
+                "pt": "global",
+                "to": "null",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.shift_id",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 600,
+        "wires": [
+            [
+                "7069e995386b49bd"
+            ]
+        ]
+    },
+    {
+        "id": "7423433981d9fb31",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 14",
+        "mode": "link",
+        "links": [
+            "4c1c88620d5af834"
+        ],
+        "x": 915,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4c1c88620d5af834",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 11",
+        "links": [
+            "7423433981d9fb31"
+        ],
+        "x": 115,
+        "y": 380,
+        "wires": [
+            [
+                "031dcd4f42c5a329"
+            ]
+        ]
+    },
+    {
+        "id": "817d15fc2de6b0a1",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "facility",
+                "pt": "msg",
+                "to": "reporting.selectedOptions.facility",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "facility_id",
+                "pt": "msg",
+                "to": "reporting.selectedOptions.facility_id",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "shift_id",
+                "pt": "msg",
+                "to": "reporting.selectedOptions.shift_id",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "shift_date",
+                "pt": "msg",
+                "to": "reporting.selectedOptions.shift_date",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 960,
+        "wires": [
+            [
+                "2351bb5010a89802"
+            ]
+        ]
+    },
+    {
+        "id": "228b8828a6bb9ab2",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "update globals",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.shift_date",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.shift_id",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 335,
+        "y": 660,
+        "wires": [
+            [
+                "624f8a071ee730b3"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "2351bb5010a89802",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 15",
+        "mode": "link",
+        "links": [
+            "2356fc964506c76c"
+        ],
+        "x": 915,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "388dc6b74b7304d4",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Reset downstream all",
+        "mode": "link",
+        "links": [
+            "709f230e499f330a"
+        ],
+        "x": 275,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "709f230e499f330a",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 4",
+        "links": [
+            "388dc6b74b7304d4",
+            "60442e18b12a7e24"
+        ],
+        "x": 115,
+        "y": 420,
+        "wires": [
+            [
+                "5f18a03048798e99",
+                "d300a2960576d931"
+            ]
+        ]
+    },
+    {
+        "id": "60442e18b12a7e24",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Reset downstream 1",
+        "mode": "link",
+        "links": [
+            "709f230e499f330a"
+        ],
+        "x": 695,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7ebb82fe1b525861",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 18",
+        "mode": "link",
+        "links": [
+            "9201daccc1030925"
+        ],
+        "x": 255,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ebb5858e6da6b6c2",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 19",
+        "mode": "link",
+        "links": [
+            "576a8f81c5b8220f"
+        ],
+        "x": 255,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "d300a2960576d931",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Reset downstream 1",
+        "mode": "link",
+        "links": [
+            "f643bd5b3693e588"
+        ],
+        "x": 255,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "55461c7dd91377bd",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "generate options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "Facilities",
+                "pt": "msg",
+                "to": "reporting.tables.Facilities",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "line_id",
+                "pt": "msg",
+                "to": "reporting.selectedOptions.line_id",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "line_id",
+                "pt": "msg",
+                "to": "line_id ? line_id : \"L1\"",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "[ \t  Facilities[type = \"FACILITY\" and parent_id = $$.line_id].{\t    \"label\": name,\t    \"value\": id\t  }\t]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 380,
+        "wires": [
+            [
+                "fb2138ac029128c0"
+            ]
+        ]
+    },
+    {
+        "id": "19913776884fa065",
+        "type": "ui-template",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "group": "85ce115bf575917c",
+        "page": "",
+        "ui": "",
+        "name": "Report Viewer",
+        "order": 1,
+        "width": "12",
+        "height": "14",
+        "head": "",
+        "format": "<template>\n    <v-card v-if=\"!!objectUrl && visible\" class=\"fill-height d-flex flex-column\">\n        <div>\n            <v-btn :disabled=\"downloading\" @click=\"downloadPdf\" color=\"primary\"\n                :prepend-icon=\"downloading ? '' : 'mdi-file-pdf-box'\" class=\"v-btn--block\">\n                <template v-if=\"downloading\">\n                    <v-progress-circular indeterminate color=\"white\" size=\"20\"></v-progress-circular>\n                </template>\n                <template v-else>\n                    Download\n                </template>\n            </v-btn>\n        </div>\n\n        <div class=\"d-flex flex-column flex-grow-1 pa-0\">\n            <iframe v-if=\"!!objectUrl\" ref=\"frame\" :src=\"objectUrl\" class=\"w-100 h-100\" style=\"border: none;\"></iframe>\n        </div>\n    </v-card>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                downloading: false,\n                visible: false,\n                url: null,\n                objectUrl: null\n            }\n        },\n        watch: {\n            msg: function () {\n                console.log('msg', this.msg)\n                if (this.msg?.visible === true || this.msg?.visible === false) {\n                    console.log('Updating visibility to:', this.msg.visible)\n                    this.visible = this.msg.visible\n                }\n                if (this.msg?.topic === 'pdf' && this.msg?.payload && this.visible) {\n                    this.displayPdfBuffer()\n                }\n            }\n        },\n        unmount () {\n            debugger\n            this.cleanup()\n        },\n        methods: {\n            cleanup() {\n                if (this.objectUrl) {\n                    URL.revokeObjectURL(this.objectUrl)\n                    this.objectUrl = null\n                }\n            },\n            displayPdfBuffer() {\n                console.log('displayPdfBuffer called')\n                try {\n                    const pdfData = this.msg?.payload\n                    if (pdfData instanceof ArrayBuffer) {\n                        // Create a Blob from the buffer data\n                        const byteArray = new Uint8Array(pdfData);\n                        const blob = new Blob([byteArray], { type: 'application/pdf' });\n\n                        // Create an Object URL\n                        this.cleanup()\n                        this.objectUrl = URL.createObjectURL(blob);\n\n                    } else {\n                        this.cleanup()\n                        console.error(\"Invalid PDF data format received:\", pdfData);\n                    }\n\n                } catch (error) {\n                    this.cleanup()\n                    console.error('Error displaying PDF:', error);\n                }\n            },\n            async downloadPdf() {\n                this.downLoading = true; // Set loading state to true\n                console.log('downloadPdf called')\n                try {\n                    const url = this.objectUrl\n                    const filename = (this.msg?.shift_date && this.msg?.shift_id && this.msg?.facility_id)\n                        ? `Shift-Report_${this.msg.shift_id}_${this.msg.facility_id}_${this.msg.shift_date}.pdf`\n                        : 'Shift-Report.pdf'\n\n                    // Create a link element to trigger the download\n                    const link = document.createElement('a');\n                    link.href = url;\n                    link.setAttribute('download', filename);\n                    document.body.appendChild(link);\n\n                    // Trigger the download\n                    link.click();\n                    link.remove();\n                } catch (error) {\n                    this.send({error: error})\n                    console.error('Error generating PDF:', error);\n                } finally {\n                    this.downLoading = false; // Set loading state to false\n                }\n            }\n        }\n    }\n</script>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 580,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0dfc1ea8f10de9f8",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 20",
+        "mode": "link",
+        "links": [
+            "e12ec33628a4fe37"
+        ],
+        "x": 255,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "e12ec33628a4fe37",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 12",
+        "links": [
+            "0dfc1ea8f10de9f8"
+        ],
+        "x": 115,
+        "y": 1240,
+        "wires": [
+            [
+                "d9db45c490446f1a"
+            ]
+        ]
+    },
+    {
+        "id": "2fc4ea1ee5abb0a9",
+        "type": "debug",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "2356fc964506c76c",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 14",
+        "links": [
+            "2351bb5010a89802"
+        ],
+        "x": 115,
+        "y": 1140,
+        "wires": [
+            [
+                "d5de36b9683be629"
+            ]
+        ]
+    },
+    {
+        "id": "d5de36b9683be629",
+        "type": "link call",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "links": [
+            "cdb24ab4418140d8"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 280,
+        "y": 1140,
+        "wires": [
+            [
+                "01956356535fd2c7"
+            ]
+        ]
+    },
+    {
+        "id": "01956356535fd2c7",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "pdf",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "visible",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 1180,
+        "wires": [
+            [
+                "0b978cef0a2de26c"
+            ]
+        ]
+    },
+    {
+        "id": "926b4d2694d4cc04",
+        "type": "link in",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link in 15",
+        "links": [
+            "99f62204ff84c3e4"
+        ],
+        "x": 115,
+        "y": 200,
+        "wires": [
+            [
+                "17b016a91dae707d"
+            ]
+        ]
+    },
+    {
+        "id": "44db117a9c1a03f3",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "reset options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "[{   \"label\": \"---\",   \"value\": 0 }]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 820,
+        "wires": [
+            [
+                "b80a758566c2312b"
+            ]
+        ]
+    },
+    {
+        "id": "4ae8a946204b10b4",
+        "type": "switch",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Has Rows?",
+        "property": "rowcount",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 815,
+        "y": 660,
+        "wires": [
+            [
+                "375d07b01555fa49"
+            ],
+            [
+                "1252681425a03360"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1252681425a03360",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 23",
+        "mode": "link",
+        "links": [
+            "9201daccc1030925"
+        ],
+        "x": 915,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0955f53ae44545bb",
+        "type": "switch",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Valid shift_id",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 815,
+        "y": 800,
+        "wires": [
+            [
+                "34a00da5d6a71195"
+            ],
+            [
+                "10a1bc61606072dd"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "10a1bc61606072dd",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "link out 17",
+        "mode": "link",
+        "links": [
+            "576a8f81c5b8220f"
+        ],
+        "x": 915,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "b3aad8eff37b5d75",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "update globals",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reporting.selectedOptions.shift_id",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 765,
+        "y": 800,
+        "wires": [
+            [
+                "0955f53ae44545bb"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "d9db45c490446f1a",
+        "type": "change",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "hide report viewer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "visibility",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "null",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "visible",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 1240,
+        "wires": [
+            [
+                "2fc4ea1ee5abb0a9",
+                "19913776884fa065"
+            ]
+        ]
+    },
+    {
+        "id": "0b978cef0a2de26c",
+        "type": "switch",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "No error?",
+        "property": "error",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 385,
+        "y": 1180,
+        "wires": [
+            [
+                "55f2f29a3261b49c",
+                "19913776884fa065"
+            ],
+            [
+                "d9db45c490446f1a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b42aca09f3094a9b",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Reset downstream 1",
+        "mode": "link",
+        "links": [
+            "f643bd5b3693e588"
+        ],
+        "x": 915,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "55f2f29a3261b49c",
+        "type": "debug",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "2e79c52074aeec9c",
+        "type": "link out",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Reset downstream 1",
+        "mode": "link",
+        "links": [
+            "f643bd5b3693e588"
+        ],
+        "x": 755,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4267578196970853",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "name": "READ ME...",
+        "info": "### Dashboard flows\n\nHere we use only dashboard built-in controls to present\ncascading choices from the Facility selection through to\nthe Date.  \n\nWe embed an iFrame into the `ui-template` node to present\nthe compiled PDF report.  If the browser you are using does\nnot support embeded PDFs, a download button is also avaiable\nto save it for later viewing in a PDF application.\n\n\nNOTE:\nTo view the Dashboard - Open the \"Dashboard 2.0\" sidebar, and click \"Open Dashboard\"\n\n---\n\n**FlowFuse Inc.**",
+        "x": 130,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "924357cc7c467141",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Gather the parent line names from global context to generate first dropdown options",
+        "info": "",
+        "x": 390,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6962a36a92ce04ec",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Based on the parent selection, generate the facility dropdown options",
+        "info": "",
+        "x": 340,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "049eb3c3f7c6395b",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Based on the parent selection, eable the production date picker",
+        "info": "",
+        "x": 330,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "dad8cc0798bc293c",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Based on the parent selection and date selected, generate the avaiable shift dropdown options",
+        "info": "",
+        "x": 420,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "7061f619570cdadf",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Now that all form fields are set, we can enable the \"Shift Report\" button",
+        "info": "",
+        "x": 350,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "e99cbf1c459f6869",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "g": "3a778d6499eb6c80",
+        "name": "Lastly, use a ui-template to embed a PDF viewer and offer a download link",
+        "info": "",
+        "x": 360,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "ab878fa5581f217f",
+        "type": "comment",
+        "z": "8fa60b0979341a49",
+        "name": "To view the Dashboard - Open the \"Dashboard 2.0\" sidebar, and click \"Open Dashboard\"",
+        "info": "",
+        "x": 640,
+        "y": 60,
+        "wires": []
+    }
+]
