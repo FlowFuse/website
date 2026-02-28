@@ -1,0 +1,42 @@
+---
+originalPath: contribute/workflows/password-reset.md
+updated: 2026-02-27 13:37:40 +0000
+version: 2.27.1
+navTitle: Reset Password Flow
+meta:
+   description: Learn how to reset passwords in FlowFuse Cloud with our step-by-step guide and detailed sequence diagrams.
+---
+
+# Reset Password Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant UserEmail
+    participant User
+    participant UI
+    participant Runtime
+    participant DB
+    User->>UI: Access the login page
+    UI->>UI: Displays 'forgot pw' if `user:reset-password`=true
+    User->>UI: Clicks 'forgot password'
+    User->>UI: Enters their email address, clicks submit
+    UI->>+Runtime: POST /account/forgot_password { email: <email> }
+    Runtime->>DB: Get user
+    DB->>Runtime: User
+    Runtime->>DB: Generate AccessToken { scope: 'password:reset' }
+    Runtime->>UserEmail: Send email containing reset link
+    Runtime-->>-UI: { status: 'okay' }
+
+    UserEmail-->>User: Email received
+    User->>UI: Opens /account/change-password/{token}
+    User->>UI: Enters new details, clicks submit
+    UI->>+Runtime: POST /account/reset_password/:token { password }
+    Runtime->>DB: Validate {token} is a valid password reset token
+    Runtime->>DB: Get the user associated with token
+    Runtime->>DB: Change users password
+    Runtime->>DB: Delete the token
+    Runtime->>-UI: {status: 'okay' }
+    UI->UI: Prompt user to login
+
+```

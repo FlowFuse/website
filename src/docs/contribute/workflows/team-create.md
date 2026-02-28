@@ -1,0 +1,47 @@
+---
+originalPath: contribute/workflows/team-create.md
+updated: 2026-02-27 13:37:40 +0000
+version: 2.27.1
+navTitle: Team creation Flow
+meta:
+   description: Explore the detailed sequence for team creation in FlowFuse with step-by-step process diagrams, covering both billing-enabled and no-billing scenarios, ensuring a comprehensive understanding of the workflow.
+---
+
+# Sequence For Team Creation
+
+```mermaid
+sequenceDiagram
+autonumber
+participant User
+participant Ui
+participant Runtime
+participant ContainerDriver
+participant DB
+participant Stripe
+
+User->>Ui: Clicks Create Team
+User->>Ui: Enters Team Name
+alt billing enabled
+Ui->>Runtime: POST /api/v1/teams
+Runtime->>DB: Create Team
+Runtime->>Stripe: checkout.create.session
+Stripe->>Runtime: Session ID
+Runtime->>Ui: { billingURL: "https://stripe..." }
+Ui->>Stripe: Redirect
+User->>Stripe: Enters Credit Card info
+alt complete
+Stripe->>Ui: Redirect to Ui
+Ui->>Ui: Show Team Overview
+Stripe->>Runtime: POST /ee/billing/callback
+Runtime->>DB: Create Subscription
+else abort
+Stripe->>Ui: Message 
+Ui->>Runtime: DELETE /api/v1/teams/{id}
+end
+else: no billing
+Ui->>Runtime: POST /teams
+Runtime->>DB: Create Team
+Runtime->>Ui: { status: "okay"}
+Ui->>Ui: Show Team Overview
+end
+```
