@@ -9,7 +9,36 @@ navTitle: Feature Catalog
 {% set tiers = ['starter', 'pro', 'enterprise'] %}
 {% set solutions = ['mes', 'scada', 'uns', 'edge-connectivity', 'it-ot-middleware', 'data-integration'] %}
 
-<div class="overflow-x-auto mb-10 max-w-full">
+<style>
+    .table-fullscreen {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: white;
+        overflow: auto;
+        padding: 0 1rem;
+        margin-bottom: 0 !important;
+    }
+    .table-fullscreen table {
+        min-width: 100%;
+    }
+    .table-fullscreen > .flex {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: white;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+</style>
+
+<div id="feature-table-wrapper" class="overflow-x-auto mb-10 max-w-full">
+<div class="flex justify-end mb-2">
+    <button id="fullscreen-toggle" onclick="toggleTableFullscreen()" class="text-xs text-gray-500 hover:text-indigo-600 border border-gray-200 rounded px-2 py-1 transition-colors">
+        <span id="fullscreen-expand">&#x26F6; Expand table</span>
+        <span id="fullscreen-collapse" class="hidden">&#x2715; Close</span>
+    </button>
+</div>
 <table class="border-collapse text-sm" style="width: max-content; min-width: 100%;">
     <colgroup>
         <col style="width: 220px;">
@@ -111,3 +140,36 @@ navTitle: Feature Catalog
     </tbody>
 </table>
 </div>
+
+<script>
+function toggleTableFullscreen() {
+    var wrapper = document.getElementById('feature-table-wrapper');
+    var expand = document.getElementById('fullscreen-expand');
+    var collapse = document.getElementById('fullscreen-collapse');
+    var isFullscreen = wrapper.classList.contains('table-fullscreen');
+    var sidebars = document.querySelectorAll('.handbook-nav, .sticky.top-20');
+
+    if (isFullscreen) {
+        wrapper.classList.remove('table-fullscreen');
+        expand.classList.remove('hidden');
+        collapse.classList.add('hidden');
+        sidebars.forEach(function(el) { el.style.visibility = ''; });
+        document.body.style.overflow = '';
+    } else {
+        wrapper.classList.add('table-fullscreen');
+        expand.classList.add('hidden');
+        collapse.classList.remove('hidden');
+        sidebars.forEach(function(el) { el.style.visibility = 'hidden'; });
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        var wrapper = document.getElementById('feature-table-wrapper');
+        if (wrapper && wrapper.classList.contains('table-fullscreen')) {
+            toggleTableFullscreen();
+        }
+    }
+});
+</script>
