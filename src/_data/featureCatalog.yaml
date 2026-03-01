@@ -52,6 +52,7 @@ sections:
 
       - id: ff-expert-insights
         label: Insights Mode
+        beta: true
         description: "Connects FlowFuse Expert to MCP servers in your Node-RED instances, enabling real-time data queries and actions through a single chat interface."
         docsLink: /ai/
         changelog: null
@@ -93,26 +94,26 @@ sections:
           starter:
             value: null
             tag: "Beta"
-            tagPrefix: "While in"
-            note: "Available during beta"
+            tagPrefix: "During Insights Mode"
+            note: "Available during beta of Insights Mode"
           pro:
             value: null
             tag: "Beta"
-            tagPrefix: "While in"
-            note: "Available during beta"
+            tagPrefix: "During Insights Mode"
+            note: "Available during beta of Insights Mode"
           enterprise:
             value: true
         selfHosted:
           starter:
             value: null
             tag: "Beta"
-            tagPrefix: "While in"
-            note: "Available during beta"
+            tagPrefix: "During Insights Mode"
+            note: "Available during beta of Insights Mode"
           pro:
             value: null
             tag: "Beta"
-            tagPrefix: "While in"
-            note: "Available during beta"
+            tagPrefix: "During Insights Mode"
+            note: "Available during beta of Insights Mode"
           enterprise:
             value: true
 

@@ -85,7 +85,7 @@ navTitle: Feature Catalog
         {% for feature in section.features %}
         <tr class="border-t border-gray-100 hover:bg-gray-50">
             <td class="py-3 px-4 align-top border-r border-gray-100{% if feature.subfeature %} pl-8{% endif %}">
-                {% if feature.subfeature %}<span class="text-gray-400 mr-1">└</span><span class="text-gray-600 font-medium">{{ feature.label }}</span>{% else %}<strong>{{ feature.label }}</strong>{% endif %}
+                {% if feature.subfeature %}<span class="text-gray-400 mr-1">└</span><span class="text-gray-600 font-medium">{{ feature.label }}</span>{% else %}<strong>{{ feature.label }}</strong>{% endif %}{% if feature.beta %} <span class="text-xs text-indigo-600 font-medium bg-indigo-50 rounded" style="padding: 2px 8px;">Beta</span>{% endif %}
                 {% if feature.description %}<br><span class="text-gray-500">{{ feature.description }}</span>{% endif %}
                 {% if feature.docsLink %}<br><a href="{{ feature.docsLink }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Docs</a>{% endif %}
                 {% if feature.changelog %}<br><a href="{{ feature.changelog }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Changelog</a>{% endif %}
