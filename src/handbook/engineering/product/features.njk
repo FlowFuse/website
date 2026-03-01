@@ -72,8 +72,8 @@ navTitle: Feature Catalog
                     {% elif cell and cell.value === 'contact' %}<span class="text-gray-500 text-xs">On request</span>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
                     {% elif cell and cell.value %}{{ cell.value }}
-                    {% else %}–{% endif %}
-                    {% if cell and cell.note %}<br><span class="text-gray-400 text-xs">{{ cell.note }}</span>{% endif %}
+                    {% elif not (cell and cell.note) %}–{% endif %}
+                    {% if cell and cell.note %}{% if cell and cell.value %}<br>{% endif %}<span class="text-gray-400 text-xs">{{ cell.note }}</span>{% endif %}
                 </td>
                 {% endfor %}
             {% else %}
@@ -90,8 +90,8 @@ navTitle: Feature Catalog
                     {% elif cell and cell.value === 'contact' %}<span class="text-gray-500 text-xs">On request</span>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
                     {% elif cell and cell.value %}{{ cell.value }}
-                    {% else %}–{% endif %}
-                    {% if cell and cell.note %}<br><span class="text-gray-400 text-xs">{{ cell.note }}</span>{% endif %}
+                    {% elif not (cell and cell.note) %}–{% endif %}
+                    {% if cell and cell.note %}{% if cell and cell.value %}<br>{% endif %}<span class="text-gray-400 text-xs">{{ cell.note }}</span>{% endif %}
                 </td>
                 {% endfor %}
             {% else %}
