@@ -62,9 +62,13 @@ sections:
         cloud:
           starter:
             value: null
+            tag: "Beta"
+            tagPrefix: "While in"
             note: "Available during beta"
           pro:
             value: null
+            tag: "Beta"
+            tagPrefix: "While in"
             note: "Available during beta"
           enterprise:
             value: true
@@ -88,17 +92,27 @@ sections:
         cloud:
           starter:
             value: null
+            tag: "Beta"
+            tagPrefix: "While in"
             note: "Available during beta"
           pro:
             value: null
+            tag: "Beta"
+            tagPrefix: "While in"
             note: "Available during beta"
           enterprise:
             value: true
         selfHosted:
           starter:
             value: null
+            tag: "Beta"
+            tagPrefix: "While in"
+            note: "Available during beta"
           pro:
             value: null
+            tag: "Beta"
+            tagPrefix: "While in"
+            note: "Available during beta"
           enterprise:
             value: true
 

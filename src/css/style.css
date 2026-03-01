@@ -1393,11 +1393,28 @@ h4:hover .header-anchor::before {
     .ff-feature-table-section li span {
         text-align: center;
         height: 100%;
-        @apply px-1 py-2 flex items-center justify-center;
+        @apply px-1 py-2 flex items-center justify-center text-sm;
     }
 
-    .ff-feature-note {
-        @apply text-xs text-gray-400 italic;
+    .ff-feature-table-section li span:has(.ff-feature-note) {
+        flex-wrap: wrap;
+    }
+
+    .ff-feature-table-section li span .ff-feature-tag-prefix {
+        width: 100%;
+        height: auto;
+    }
+
+    .ff-feature-table-section li span.ff-feature-note {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: #4338ca;
+        background-color: #eef2ff;
+        border-radius: 9999px;
+        padding: 0.125rem 0.5rem;
+        white-space: nowrap;
+        font-weight: 500;
+        height: auto;
     }
 
     .ff-feature-table-section li button {
