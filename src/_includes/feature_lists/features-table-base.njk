@@ -51,7 +51,7 @@
                 {% elif cell and cell.value %}
                     {{ cell.value }}
                 {% elif cell and cell.tag %}
-                    {% if cell.tagPrefix %}{{ cell.tagPrefix }} {% endif %}<span class="ff-feature-note">{{ cell.tag }}</span>
+                    {% if cell.tagPrefix %}{{ cell.tagPrefix }} {% endif %}<span class="ff-feature-note{% if cell.tagPrefix %} ml-1{% endif %}">{{ cell.tag }}</span>
                 {% else %}
                     <span></span>
                 {% endif %}
