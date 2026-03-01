@@ -1400,11 +1400,6 @@ h4:hover .header-anchor::before {
         flex-wrap: wrap;
     }
 
-    .ff-feature-table-section li span .ff-feature-tag-prefix {
-        width: 100%;
-        height: auto;
-    }
-
     .ff-feature-table-section li span.ff-feature-note {
         font-size: 0.75rem;
         line-height: 1rem;
