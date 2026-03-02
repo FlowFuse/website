@@ -45,7 +45,7 @@
                 {% elif cell and cell.value === 'addon' %}
                     {% include "components/feature-addon.svg" %}
                 {% elif cell and cell.value === 'contact' %}
-                    <a href="/contact-us" class="ff-btn ff-btn--primary-outlined uppercase">Contact Us</a>
+                    <a href="/contact-us" class="ff-btn ff-btn--primary-outlined uppercase grow mx-1">Contact Us</a>
                 {% elif cell and cell.value === 'list' %}
                     {% for opt in cell.options %}{{ opt }}{% if not loop.last %}<br>{% endif %}{% endfor %}
                 {% elif cell and cell.value %}

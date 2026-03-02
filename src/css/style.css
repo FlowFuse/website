@@ -1633,7 +1633,7 @@ h4:hover .header-anchor::before {
         flex-shrink: 0;
         width: auto;
         align-items: center;
-        animation: 30s slide infinite linear;
+        animation: 60s slide infinite linear;
     }
 
     .social-proof-carousel div img,
