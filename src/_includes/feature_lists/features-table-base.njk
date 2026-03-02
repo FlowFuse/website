@@ -2,9 +2,9 @@
     <ul class="{{ hosting }} ff-feature-table-section sticky top-0 md:top-14 z-10">
         <li class="ff-feature--column-header">
             <span class="sticky left-0 h-full bg-white"></span>
-            <label class="mr-2">Enterprise</label>
+            <label>Enterprise</label>
             <label>Pro</label>
-            <label class="ml-2">
+            <label>
                 <div>Starter</div>
             </label>
         </li>
@@ -45,7 +45,7 @@
                 {% elif cell and cell.value === 'addon' %}
                     {% include "components/feature-addon.svg" %}
                 {% elif cell and cell.value === 'contact' %}
-                    <a href="/contact-us" class="ff-btn ff-btn--primary uppercase">Contact Us</a>
+                    <a href="/contact-us" class="ff-btn ff-btn--primary-outlined uppercase">Contact Us</a>
                 {% elif cell and cell.value === 'list' %}
                     {% for opt in cell.options %}{{ opt }}{% if not loop.last %}<br>{% endif %}{% endfor %}
                 {% elif cell and cell.value %}
@@ -75,7 +75,7 @@
                 {% if button.url == 'sign-up-url' %}
                     {% set buttonUrl %}{% include "sign-up-url.njk" %}{% endset %}
                 {% endif %}
-                <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
+                <label><a class="ff-btn {{ 'ff-btn--primary' if loop.first else 'ff-btn--primary-outlined' }} uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
             {% endfor %}
         </li>
     </ul>

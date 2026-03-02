@@ -1274,6 +1274,7 @@ h4:hover .header-anchor::before {
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
+        column-gap: 0.5rem;
         @apply bg-indigo-50/30;
     }
 
@@ -1349,6 +1350,7 @@ h4:hover .header-anchor::before {
     .ff-feature-table-section li.ff-feature--column-buttons {
         background-color: white;
         padding: 0;
+        column-gap: 0.75rem;
     }
     .ff-feature-table-section li.ff-feature--column-buttons label {
         text-align: center;
@@ -1370,7 +1372,7 @@ h4:hover .header-anchor::before {
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header):not(.ff-feature--column-buttons) label {
-        border-right: 1px solid theme(colors.indigo.100);
+        border-right: none;
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header):nth-child(even) label {
@@ -1445,6 +1447,32 @@ h4:hover .header-anchor::before {
 
     .ff-feature-table-section:nth-child(3) li:last-child {
         @apply rounded-bl-lg;
+    }
+
+    /* Enterprise column highlight border */
+    .ff-feature-table-section li > :nth-child(2) {
+        border-left: 2px solid theme(colors.indigo.200);
+        border-right: 2px solid theme(colors.indigo.200);
+    }
+
+    /* Column header Enterprise label: top border + rounded top */
+    .ff-feature-table-section li.ff-feature--column-header > :nth-child(2) {
+        border-top: 2px solid theme(colors.indigo.200);
+        border-radius: 12px 12px 0 0;
+        margin: 0;
+    }
+
+    /* Bottom border + rounded corners on last data section */
+    .ff-feature-table > ul:nth-last-child(2) li:last-child > :nth-child(2) {
+        border-bottom: 2px solid theme(colors.indigo.200);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    /* No highlight on buttons row */
+    .ff-feature-table-section li.ff-feature--column-buttons > :nth-child(2) {
+        border-left: none;
+        border-right: none;
     }
 
     .ff-features-key {

@@ -113,7 +113,7 @@ hubspot:
                     </div>
                     {% endif %}
                 </div>
-                <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
+                <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full"
                     href='{% if cloud %}{% include "sign-up-url.njk" %}{% else %}https://flowfuse.com/docs/install/introduction/{% endif %}'
                     {% if cloud %}onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})"{% else %}onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})"{% endif %}>
                     {% if cloud %}TRY FOR FREE{% else %}INSTALL NOW{% endif %}
@@ -221,7 +221,7 @@ hubspot:
                                     </div>
                                 </div>
                             </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
+                            <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full"
                                 href="{% if cloud %}{% include "sign-up-url.njk" %}{% else %}/contact-us{% endif %}"
                                 {% if cloud %}onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})"{% else %}onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'})"{% endif %}>
                                 {% if cloud %}TRY FOR FREE{% else %}CONTACT US{% endif %}
