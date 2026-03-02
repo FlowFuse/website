@@ -45,6 +45,7 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 1. Finalize this manual invoice, then void the automatically created one from the subscription conversion and send an email to accounting.
 1. If you need to void the invoice and send an email with the invoice number and reason to our accounting for their administration.
+   - Make sure to void the invoices in all necessary places in Hubspot
 
 #### Roles and Responsibilities: CSM vs. Accounting in Accounts Receivable
 
