@@ -2,16 +2,16 @@
     <ul class="{{ hosting }} ff-feature-table-section sticky top-0 md:top-14 z-10">
         <li class="ff-feature--column-header">
             <span class="sticky left-0 h-full bg-white"></span>
-            <label class="mr-2">
+            <label class="mr-2">Enterprise</label>
+            <label>Pro</label>
+            <label class="ml-2">
                 <div>Starter</div>
             </label>
-            <label>Pro</label>
-            <label class="ml-2">Enterprise</label>
         </li>
     </ul>
 
     {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
-    {% set tiers = ['starter', 'pro', 'enterprise'] %}
+    {% set tiers = ['enterprise', 'pro', 'starter'] %}
 
     {% for section in featureCatalog.sections %}
     <ul class="{{ hosting }} ff-feature-table-section">
@@ -53,7 +53,7 @@
                 {% elif cell and cell.tag %}
                     {% if cell.tagPrefix %}{{ cell.tagPrefix }} {% endif %}<span class="ff-feature-note{% if cell.tagPrefix %} ml-1{% endif %}">{{ cell.tag }}</span>
                 {% else %}
-                    <span></span>
+                    <span class="text-gray-300">&mdash;</span>
                 {% endif %}
             </span>
             {% endfor %}
