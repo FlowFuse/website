@@ -182,16 +182,10 @@ eleventyComputed:
                         var consentState = Object.assign({}, deniedConsent);
                         if (stored.categories.includes('analytics')) {
                             // Analytics was previously accepted — grant it immediately.
-                            // Set a flag so onConsent skips the dataLayer re-push (GA4 will
-                            // already fire via the "All Pages" trigger).
-                            window._ffHadStoredAnalyticsConsent = true;
                             consentState['analytics_storage'] = 'granted';
                         }
                         if (stored.categories.includes('ads')) {
                             // Ads was previously accepted — grant it immediately.
-                            // Set a flag so onConsent skips the dataLayer re-push (ads tags
-                            // will already fire via the "All Pages" trigger).
-                            window._ffHadStoredAdsConsent = true;
                             consentState['ad_storage'] = 'granted';
                             consentState['ad_user_data'] = 'granted';
                             consentState['ad_personalization'] = 'granted';
