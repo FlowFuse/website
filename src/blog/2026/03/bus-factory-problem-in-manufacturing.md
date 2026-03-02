@@ -22,7 +22,7 @@ The problem isn't unique to integration systems, but it hits them harder. Integr
 
 The good news is it's a solvable problem. The first step is knowing you have it. Before you read further, take two minutes to assess where your team stands today.
 
-<iframe src="https://bus-factory-problem-dashboard.flowfuse.cloud/dashboard/bus-factory-calculator" width="100%" height="800px" frameborder="0"></iframe>
+<iframe src="https://bus-factory-problem-dashboard.flowfuse.cloud/dashboard/bus-factory-calculator" width="100%" height="600px" frameborder="0"></iframe>
 
 Now you know where you stand. The rest of this article explains how integration systems end up here, why documentation alone never fixes it, and what it actually takes to change it.
 
