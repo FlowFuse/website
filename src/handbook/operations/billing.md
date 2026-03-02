@@ -44,7 +44,18 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Make sure both ACH and Credit Card options are checked for payment.
 1. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 1. Finalize this manual invoice, then void the automatically created one from the subscription conversion and send an email to accounting.
-1. If you need to void the invoice and send an email with the invoice number and reason to our accounting for their administration. 
+1. If you need to void the invoice and send an email with the invoice number and reason to our accounting for their administration.
+
+#### Roles and Responsibilities: CSM vs. Accounting in Accounts Receivable
+
+**CSM (Customer Success Manager):**
+1. Payment Follow-up: Proactively monitor outstanding invoices and follow up with customers to ensure timely payment. If an invoice reaches 30 days past due, the CSM must flag the account as "At Risk" in HubSpot.
+2. Banking Updates: Notify customers of any changes to FlowFuse’s banking information or payment instructions. In the event of an invoice dispute (e.g., wrong amount), the CSM is responsible for validating the claim against the contract before modifying the invoice and notifying Accounting (billing@flowfuse.com).
+3. Proof of Payment: Collect payment confirmations (wire receipts, etc.) from customers and forward them to the Accounting team for reconciliation.
+
+**Accounting:**
+1. Payment Application: Process and apply all received payments (Wire, ACH, Stripe) within HubSpot to ensure accurate balance records.
+2. Stripe Reconciliation: Reconcile Stripe transactions and update the platform status to reflect completed payments.
 
 ### Creating a PS invoice
 
@@ -105,3 +116,9 @@ When a payment does not go through, an email is sent from @flowfuse.com. This al
 For customers paying an invoice, once a payment has been incomplete for 15 days, the invoice is marked as uncollectible.
 
 These settings are configurable by Stripe administrators, here: https://dashboard.stripe.com/settings/billing/automatic.
+
+### Escalation Process (Past Due Invoices)
+
+- 1–15 Days Past Due: CSM sends a friendly check-in via email to the primary contact to confirm the invoice was received and scheduled for payment.
+- 16–30 Days Past Due: CSM follows up with the customer’s Accounts Payable (AP) department directly. If no response, the CSM requests an internal update from the customer champion. (The invoice at this stage is marked as uncollectible)
+- 31–45 Days Past Due: Executive Escalation: CSM alerts the #past-due Slack channel of the past due invoice to review with the Sales & Executive team and decide if we need to send a formal "Overdue Notice" and agree on service suspension.
