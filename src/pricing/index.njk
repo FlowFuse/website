@@ -375,25 +375,21 @@ hubspot:
     // Check the hosting parameter when the page loads
     updateContentAndUrl(hosting);
 
-    cloudText.addEventListener("click", function() {
-        if (hosting === 'cloud') return;
-        hosting = 'cloud';
+    document.querySelector(".btnToggle").addEventListener("click", function(e) {
+        var rect = this.getBoundingClientRect();
+        var isLeftHalf = (e.clientX - rect.left) < rect.width / 2;
+        var target = isLeftHalf ? 'cloud' : 'self-hosted';
+        if (hosting === target) return;
+        hosting = target;
         updateContentAndUrl(hosting);
-        capture('cloud');
-    });
-
-    selfHostedText.addEventListener("click", function() {
-        if (hosting === 'self-hosted') return;
-        hosting = 'self-hosted';
-        updateContentAndUrl(hosting);
-        capture('self-hosted');
+        capture(target);
     });
 </script>
 
 <!-- Features info -->
 <script>
     function openInfo(id, hosting) {
-        capture('info-feature', { feature: id }, { hosting: hosting })
+        if (typeof capture === 'function') { capture('info-feature', { feature: id }, { hosting: hosting }) }
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
     }
     function closeInfo(id, hosting) {
