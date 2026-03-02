@@ -10,7 +10,7 @@ duration: 60
 video:
 hosts: ["kristopher-sandoval"]
 hubspot:
-    formId:
+    formId: 2ddecd23-80e1-4ea6-bab5-9f05a348bad2
     downloadFormId:
 ---
 This webinar explores how external AI agents can be safely and effectively integrated into industrial workflows using FlowFuse. We'll show how to connect edge data, APIs, and AI services into production-ready pipelines that drive real operational value.
