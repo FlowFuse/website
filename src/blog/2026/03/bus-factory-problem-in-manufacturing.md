@@ -64,11 +64,13 @@ The teams that actually maintain good documentation tend to do it because it's b
 
 FlowFuse is an industrial data platform built on [Node-RED](/node-red/). It's designed for teams who need to connect machines, systems, and data across IT and OT environments at scale, with the governance and reliability that production environments require.
 
-What makes it relevant to the bus factor problem isn't just the platform itself. It's where FlowFuse has chosen to embed intelligence.
+What makes it relevant to the bus factor problem is where FlowFuse has chosen to put the intelligence.
 
-[FlowFuse Expert](/docs/user/expert/#flowfuse-expert) is an AI assistant that lives directly inside the Node-RED editor. Not in a separate tool. Not in a sidebar you have to open separately. Right there, in the environment where the work actually happens.
+[FlowFuse Expert](/docs/user/expert/) is an AI assistant built directly into the Node-RED editor inside FlowFuse. It is not a generic AI. It is specifically trained on FlowFuse's own documentation, blog posts, and resources, which means it understands the platform, its nodes, and the industrial context it operates in. When you ask it a question, you are not talking to a general-purpose chatbot - you are talking to something that knows what a Function node is, what an MQTT broker does, and what your specific flow is actually doing.
 
-The Flow Explainer feature is the most direct answer to the knowledge concentration problem. Select any flow or group of nodes, click Explain, and FlowFuse Expert reads the connections, analyzes the function code, and generates a plain-language explanation of what the flow does and why. 
+That last part matters. FlowFuse Expert can take your flow as context. Select a flow, add it to the conversation, and ask plain-language questions about it - what does this flow do, why is this node outputting a number instead of a string, where could this logic fail. It can also take your palette as context, so it knows which nodes you actually have installed and can give advice based on what is available to you rather than what exists in theory.
+
+For a team inheriting flows they didn't build, this changes the equation significantly. Instead of spending days reverse-engineering what a flow does, a new team member can get a working explanation in seconds and ask follow-up questions in plain language.
 
 <lite-youtube
   videoid="YRc1DwkghRs"
@@ -76,11 +78,9 @@ The Flow Explainer feature is the most direct answer to the knowledge concentrat
   title="FlowFuse Expert Explaining Selected Flow">
 </lite-youtube>
 
-That explanation can be saved as a comment node inside the flow itself, or copied into a documentation tab, with a single click. The documentation stays with the flow. It doesn't live in a wiki that nobody updates.
+The video above shows just one example - asking questions about a selected flow. FlowFuse Expert goes much further than that. You can query your live operational data through MCP tools in Insights mode, get inline code completions as you type inside Function nodes, generate CSS and HTML for FlowFuse Dashboard templates, build Function nodes from plain-language descriptions, and get intelligent suggestions for which node to add next. The more you use it, the less the work depends on any single person remembering how something was built.
 
-For teams inheriting flows they didn't build, this changes the equation significantly. Instead of spending days trying to reverse-engineer what a flow does, a new team member can get a working explanation in seconds and then ask follow-up questions. FlowFuse Expert can also help debug flows, suggest the next node in a sequence, generate function code from plain-language descriptions, and build out test data that looks realistic enough to actually validate logic. It handles the JavaScript, the regex, the CSS, the JSON, so engineers can focus on the domain knowledge they actually have.
-
-The AI is also not generic. FlowFuse Expert is trained on FlowFuse's own documentation, knows the platform's nodes and patterns, and understands the industrial context it's operating in. It generates real, deployable artifacts rather than code snippets that need to be heavily adapted before they're useful.
+Beyond the chat interface, FlowFuse Expert also brings AI directly into Node-RED through [Node-RED Embedded AI](/docs/user/expert/node-red-embedded-ai/). This is AI that works where you already are - inside node editors and on the canvas - without needing to open a separate panel. It can write Function node code from a plain-language description, generate CSS and HTML for FlowFuse Dashboard templates, suggest which node to add next in a flow, and produce realistic test data to validate logic. It handles the JavaScript, the regex, the CSS, the JSON - so engineers can focus on the domain knowledge that actually requires a human.
 
 ## Reducing the Bus Factor in Practice
 
