@@ -1308,7 +1308,7 @@ h4:hover .header-anchor::before {
     }
 
     .ff-feature-table-section li.ff-feature-row label {
-        padding: 12px;
+        @apply py-3 pr-3 px-4 md:px-6;
     }
 
     main .ff-feature-row a {
@@ -1363,10 +1363,14 @@ h4:hover .header-anchor::before {
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header) label {
-        text-align: right;
+        text-align: left;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-start;
+    }
+
+    .ff-feature-table-section li:not(.ff-feature--column-header):not(.ff-feature--column-buttons) label {
+        border-right: 1px solid theme(colors.indigo.100);
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header):nth-child(even) label {
@@ -1378,9 +1382,9 @@ h4:hover .header-anchor::before {
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header) label .ff-icon {
-        margin-left: 4px;
+        margin-left: auto;
         width: 20px;
-        color: black;
+        color: theme(colors.gray.400);
         transition: none;
     }
 
@@ -1430,6 +1434,8 @@ h4:hover .header-anchor::before {
         height: 100%;
         display: flex;
         justify-content: left !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
         @apply px-1 px-4 md:px-6;
     }
 
