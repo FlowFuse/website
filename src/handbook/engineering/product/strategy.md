@@ -14,10 +14,6 @@ Our strategy is reviewed on a regular basis and we will iterate when there is re
 
 Our strategic Objectives direct our investment and innovation efforts, and are re evaluated each quarter.
 
-- [Establish FlowFuse as the Enterprise-Trusted Node-RED Platform](#Establish-FlowFuse-as-the-Enterprise-Trusted-Node-RED-Platform)
-- [Deliver the fastest, most flexible edge deployments](#deliver-the-fastest-most-flexible-edge-deployments)
-- [Win ICP manufacturing Logos](#win-icp-manufacturing-logos)
-
 ### Establish FlowFuse as the Enterprise-Trusted Node-RED Platform
 
 FlowFuse is committed to augmenting the enterprise-readiness of Node-RED. Our strategy emphasises enhancing audit and compliance capabilities, instituting stringent preventive and corrective controls, and bolstering security. By integrating these vital aspects, we aim to create a reliable, secure, and scalable environment. This initiative underlines our dedication to surpassing enterprise expectations and strengthening Node-RED's position in the industry.
