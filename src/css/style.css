@@ -1434,6 +1434,8 @@ h4:hover .header-anchor::before {
         height: 100%;
         display: flex;
         justify-content: left !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
         @apply px-1 px-4 md:px-6;
     }
 
