@@ -1278,7 +1278,7 @@ h4:hover .header-anchor::before {
     }
 
     .self-hosted.ff-feature-table-section li {
-        grid-template-columns: 320px 1fr 1fr 1fr;
+        grid-template-columns: 320px repeat(3, 1fr);
     }
 
     .ff-feature-table-section li:first-child {
@@ -1290,7 +1290,7 @@ h4:hover .header-anchor::before {
             grid-template-columns: 220px 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 220px 1fr 1fr 1fr;
+            grid-template-columns: 220px repeat(3, 1fr);
         }
     }
 
@@ -1299,7 +1299,7 @@ h4:hover .header-anchor::before {
             grid-template-columns: 170px 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 170px 1fr 1fr 1fr;
+            grid-template-columns: 170px repeat(3, 1fr);
         }
     }
 
@@ -1393,7 +1393,23 @@ h4:hover .header-anchor::before {
     .ff-feature-table-section li span {
         text-align: center;
         height: 100%;
-        @apply px-1 py-2 flex items-center justify-center;
+        @apply px-1 py-2 flex items-center justify-center text-sm;
+    }
+
+    .ff-feature-table-section li span:has(.ff-feature-note) {
+        flex-wrap: wrap;
+    }
+
+    .ff-feature-table-section li span.ff-feature-note {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: #4338ca;
+        background-color: #eef2ff;
+        border-radius: 9999px;
+        padding: 0.125rem 0.5rem;
+        white-space: nowrap;
+        font-weight: 500;
+        height: auto;
     }
 
     .ff-feature-table-section li button {
