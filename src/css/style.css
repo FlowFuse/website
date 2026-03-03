@@ -1278,7 +1278,7 @@ h4:hover .header-anchor::before {
     }
 
     .self-hosted.ff-feature-table-section li {
-        grid-template-columns: 320px 1fr 1fr 1fr;
+        grid-template-columns: 320px repeat(3, 1fr);
     }
 
     .ff-feature-table-section li:first-child {
@@ -1290,7 +1290,7 @@ h4:hover .header-anchor::before {
             grid-template-columns: 220px 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 220px 1fr 1fr 1fr;
+            grid-template-columns: 220px repeat(3, 1fr);
         }
     }
 
@@ -1299,7 +1299,7 @@ h4:hover .header-anchor::before {
             grid-template-columns: 170px 1fr 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 170px 1fr 1fr 1fr;
+            grid-template-columns: 170px repeat(3, 1fr);
         }
     }
 
@@ -1308,7 +1308,7 @@ h4:hover .header-anchor::before {
     }
 
     .ff-feature-table-section li.ff-feature-row label {
-        padding: 12px;
+        @apply py-3 pr-3 px-4 md:px-6;
     }
 
     main .ff-feature-row a {
@@ -1363,10 +1363,14 @@ h4:hover .header-anchor::before {
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header) label {
-        text-align: right;
+        text-align: left;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-start;
+    }
+
+    .ff-feature-table-section li:not(.ff-feature--column-header):not(.ff-feature--column-buttons) label {
+        border-right: 1px solid theme(colors.indigo.100);
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header):nth-child(even) label {
@@ -1378,9 +1382,9 @@ h4:hover .header-anchor::before {
     }
 
     .ff-feature-table-section li:not(.ff-feature--column-header) label .ff-icon {
-        margin-left: 4px;
+        margin-left: auto;
         width: 20px;
-        color: black;
+        color: theme(colors.gray.400);
         transition: none;
     }
 
@@ -1393,7 +1397,23 @@ h4:hover .header-anchor::before {
     .ff-feature-table-section li span {
         text-align: center;
         height: 100%;
-        @apply px-1 py-2 flex items-center justify-center;
+        @apply px-1 py-2 flex items-center justify-center text-sm;
+    }
+
+    .ff-feature-table-section li span:has(.ff-feature-note) {
+        flex-wrap: wrap;
+    }
+
+    .ff-feature-table-section li span.ff-feature-note {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: #4338ca;
+        background-color: #eef2ff;
+        border-radius: 9999px;
+        padding: 0.125rem 0.5rem;
+        white-space: nowrap;
+        font-weight: 500;
+        height: auto;
     }
 
     .ff-feature-table-section li button {
@@ -1414,6 +1434,8 @@ h4:hover .header-anchor::before {
         height: 100%;
         display: flex;
         justify-content: left !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
         @apply px-1 px-4 md:px-6;
     }
 
