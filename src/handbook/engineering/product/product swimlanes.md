@@ -1,5 +1,5 @@
 ---
-navTitle: Strategy
+navTitle: Product Swimlanes
 ---
 
 # Product Swimlanes
