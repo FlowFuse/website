@@ -5,7 +5,7 @@ meta:
     description: Learn how to integrate external AI agents into industrial workflows using FlowFuse to turn edge data into intelligent, automated action.
 image: /images/webinars/integrating-external-ai-agents-in-industrial-workflows.jpg
 date: 2026-03-24
-time: 17:00 CET (11:00am ET)
+time: 17:00 CET (12:00am ET)
 duration: 60
 video:
 hosts: ["kristopher-sandoval"]
