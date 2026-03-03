@@ -248,7 +248,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "We use tools including Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. This category also enables HubSpot meeting embeds and the chat widget.",
+                            description: "We use tools including Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. This category also enables HubSpot forms, meeting embeds, and the chat widget.",
                             linkedCategory: "analytics"
                         },
                         {

@@ -1,15 +1,20 @@
-<script>
-    function displayHubSpotForm() {
-        hbspt.forms.create({
-            region: "eu1",
-            portalId: "26586079",
-            formId: "{{ formId or hubspot.formId }}",
-            onFormSubmit: function ($form) {
-                capture('{{ cta or hubspot.cta }}', {
-                    'page': '{{ hubspot.reference or title }}'
-                })
-            }
-        });
-    }
+{% set hubspotFormId = formId or hubspot.formId %}
+{% set formTargetId = targetId or ('hs-form-' + (hubspotFormId | replace('-', ''))) %}
+{% set fallbackId = formTargetId + '-fallback' %}
+{% set contentType = 'form' %}
+<div id="{{ formTargetId }}"></div>
+{% include "hubspot/consent-fallback.njk" %}
+<script type="text/plain" data-category="analytics">
+    window.ffCreateHubSpotForm({
+        target: '#{{ formTargetId }}',
+        fallbackSelector: '#{{ fallbackId }}',
+        region: "eu1",
+        portalId: "26586079",
+        formId: "{{ hubspotFormId }}",
+        onFormSubmit: function () {
+            capture('{{ cta or hubspot.cta }}', {
+                'page': '{{ hubspot.reference or title }}'
+            });
+        }
+    });
 </script>
-<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()" onerror="hsFallback(this);"></script>

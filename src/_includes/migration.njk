@@ -113,16 +113,19 @@
         event.preventDefault();
     }
 
-    function displayHubSpotForm() {
-        hbspt.forms.create({
-            target: '#hs-user-form',
-            region: "eu1",
-            portalId: "26586079",
-            formId:"968a9ab6-3dd8-45b2-991c-3f055dc18787",
-            onFormSubmitted: function ($form) {
-                migrateFile()
-            }
-        });
-    }
 </script>
-<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()" onerror="hsFallback(this)"></script>
+{% set fallbackId = 'hs-user-form-fallback' %}
+{% set contentType = 'form' %}
+{% include "hubspot/consent-fallback.njk" %}
+<script type="text/plain" data-category="analytics">
+    window.ffCreateHubSpotForm({
+        target: '#hs-user-form',
+        fallbackSelector: '#hs-user-form-fallback',
+        region: "eu1",
+        portalId: "26586079",
+        formId: "968a9ab6-3dd8-45b2-991c-3f055dc18787",
+        onFormSubmitted: function () {
+            migrateFile();
+        }
+    });
+</script>
