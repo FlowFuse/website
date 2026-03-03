@@ -2,11 +2,6 @@
 title: Vision
 meta:
    description: FlowFuse's company vision, what it means, and how it should shape the work of every team.
-eleventyNavigation:
-   key: Vision
-   parent: strategy
-   order: 1
-layout: layouts/handbook.njk
 ---
 
 ## Vision Statement
