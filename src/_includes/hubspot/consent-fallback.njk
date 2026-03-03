@@ -1,13 +1,13 @@
-<div id="{{ fallbackId }}" class="ff-hubspot-consent-fallback text-center border border-indigo-300 rounded-lg bg-white px-4 py-10">
-    <p style="color: #6366f1;"><strong>Hmm… there was supposed to be a {{ contentType | default('content') }} here</strong></p>
+<div id="{{ fallbackId }}" class="ff-hubspot-consent-fallback text-center border bg-red-50/25 border-red-300 rounded-lg px-4 py-6">
+    <p class="text-red-400"><strong>Hmm… there was supposed to be a {{ contentType }} here</strong></p>
     <p class="text-gray-600">
-        To load this {{ contentType | default('content') }}, please accept <strong>Analytics cookies</strong>.
+        To load this {{ contentType }}, please accept <strong>Analytics cookies</strong>.
         If that doesn't work, try adjusting your privacy settings, or switching browsers.
     </p>
     <p class="mt-4">
         <button
             onclick="if(window.CookieConsent){CookieConsent.showPreferences()}"
-            class="inline-block px-4 py-2 rounded-lg border border-indigo-400 text-indigo-600 hover:bg-indigo-50 transition-colors cursor-pointer bg-transparent text-sm font-medium"
+            class="inline-block ff-btn ff-btn--primary-outlined uppercase"
         >
             Open cookie settings
         </button>

@@ -145,7 +145,9 @@ function ffCreateHubSpotForm (config) {
             }
             return
         }
-        window.hbspt.forms.create(config)
+        // Keep local helper-only keys out of HubSpot's context object.
+        const { fallbackSelector, ...hubspotConfig } = config
+        window.hbspt.forms.create(hubspotConfig)
         if (targetElement) {
             targetElement.dataset.ffHsFormLoaded = 'true'
         }

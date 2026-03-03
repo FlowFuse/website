@@ -219,7 +219,7 @@ CookieConsent.run({
             en: {
                 consentModal: {
                     title: "This site uses cookies",
-                    description: "We use cookies to ensure this site works properly and, with your permission, to improve your experience and enable features like analytics and live chat support.",
+                    description: "We use cookies to ensure this site works properly and, with your permission, to improve your experience and enable features like analytics and <span class=\"font-medium text-indigo-600\">live chat support</span>.",
                     acceptAllBtn: "Accept all",
                     showPreferencesBtn: "Settings",
                     footer: "<a href=\"/privacy-policy/\">Privacy Policy</a>\n"

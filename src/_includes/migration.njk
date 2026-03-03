@@ -20,8 +20,11 @@
                 </div>
                 <a id="dashboard-2-download" style="display:none"></a>
             </div>
-            <div id="hs-user-form">
-
+            <div>
+                {% set formId = "968a9ab6-3dd8-45b2-991c-3f055dc18787" %}
+                {% set targetId = "hs-user-form" %}
+                {% set onFormSubmitted = "function () { migrateFile(); }" %}
+                {% include "hubspot/hs-form.njk" %}
             </div>
         </div>
     </div>
@@ -113,19 +116,4 @@
         event.preventDefault();
     }
 
-</script>
-{% set fallbackId = 'hs-user-form-fallback' %}
-{% set contentType = 'form' %}
-{% include "hubspot/consent-fallback.njk" %}
-<script type="text/plain" data-category="analytics">
-    window.ffCreateHubSpotForm({
-        target: '#hs-user-form',
-        fallbackSelector: '#hs-user-form-fallback',
-        region: "eu1",
-        portalId: "26586079",
-        formId: "968a9ab6-3dd8-45b2-991c-3f055dc18787",
-        onFormSubmitted: function () {
-            migrateFile();
-        }
-    });
 </script>
