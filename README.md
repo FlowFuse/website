@@ -54,16 +54,6 @@ any content is changed.
 needs to parse all images in the `/docs` and `/handbook` folders. You will
 see a `404` at `localhost:8080` during this time.
 
-**Note**: If running from within VS Code, you may be prompted with the following:
-
-```
-Would you like to configure VS Code to use Edge Functions? (Y/n) 
-A new VS Code settings file will be created at /Users/joepavitt/Documents/FlowFuse/development/FlowFuse/website/.vscode/settings.json
-```
-
-It is recommended to response `y` to both of these questions.
-
-
 ### Running FlowFuse Documentation
 
 Much like our Handbook, the documentation for FlowFuse are also maintained in a separate repository. Our docs are maintained in the core [FlowFuse repo](https://github.com/FlowFuse/flowfuse).
@@ -112,9 +102,3 @@ This setup was inspired by:
 
  - [Eleventy Base Blog starter repository](https://github.com/11ty/eleventy-base-blog)
  - [Oxide.Computer's website setup](https://github.com/oxidecomputer/website)
-
-## Troubleshooting
-
-### `This edge function has crashed`
-
-If you see this error, and it is the first ever time you have run the website, this [is expected](https://github.com/FlowFuse/website/pull/577#issuecomment-1491934272). You can stop the web server (`ctrl + c` from the terminal) and restart it. Following which, it should work. 

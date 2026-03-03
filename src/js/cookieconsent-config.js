@@ -42,23 +42,32 @@ function syncHubSpotConsent (allowTracking) {
     clearHubSpotCookiesFallback();
 }
 
-function pushGtmJsEvent () {
+function pushConsentUpdatedEvent (options) {
+    var changedCategories = options.changedCategories || [];
+    var analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+    var adsAccepted = CookieConsent.acceptedCategory('ads');
+    var functionalAccepted = CookieConsent.acceptedCategory('functional');
+
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'gtm.js' });
+    window.dataLayer.push({
+        event: 'ff_consent_updated',
+        changed_categories: changedCategories,
+        analytics_storage: analyticsAccepted ? 'granted' : 'denied',
+        ad_storage: adsAccepted ? 'granted' : 'denied',
+        ad_user_data: adsAccepted ? 'granted' : 'denied',
+        ad_personalization: adsAccepted ? 'granted' : 'denied',
+        functionality_storage: functionalAccepted ? 'granted' : 'denied',
+        personalization_storage: adsAccepted ? 'granted' : 'denied'
+    });
 }
 
 function applyAnalyticsConsent (options) {
     var accepted = options.accepted;
-    var shouldRepush = !!options.shouldRepush;
     var emitEvent = !!options.emitEvent;
 
     gtag('consent', 'update', {
         'analytics_storage': accepted ? 'granted' : 'denied'
     });
-
-    if (accepted && shouldRepush) {
-        pushGtmJsEvent();
-    }
 
     if (emitEvent) {
         gtag('event', 'cookie_consent', {
@@ -84,7 +93,6 @@ function applyAnalyticsConsent (options) {
 
 function applyAdsConsent (options) {
     var accepted = options.accepted;
-    var shouldRepush = !!options.shouldRepush;
     var emitEvent = !!options.emitEvent;
 
     gtag('consent', 'update', {
@@ -93,10 +101,6 @@ function applyAdsConsent (options) {
         'ad_personalization': accepted ? 'granted' : 'denied',
         'personalization_storage': accepted ? 'granted' : 'denied'
     });
-
-    if (accepted && shouldRepush) {
-        pushGtmJsEvent();
-    }
 
     if (emitEvent) {
         gtag('event', 'cookie_consent', {
@@ -132,15 +136,14 @@ CookieConsent.run({
     onConsent: function(){
         applyAnalyticsConsent({
             accepted: CookieConsent.acceptedCategory('analytics'),
-            shouldRepush: false,
             emitEvent: false
         });
         applyAdsConsent({
             accepted: CookieConsent.acceptedCategory('ads'),
-            shouldRepush: false,
             emitEvent: false
         });
         applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
+        pushConsentUpdatedEvent({ changedCategories: [] });
     },
 
     // Runs once when the user makes the first consent decision.
@@ -150,22 +153,20 @@ CookieConsent.run({
 
         applyAnalyticsConsent({
             accepted: analyticsAccepted,
-            shouldRepush: analyticsAccepted && !window._ffHadStoredAnalyticsConsent,
             emitEvent: true
         });
         applyAdsConsent({
             accepted: adsAccepted,
-            shouldRepush: adsAccepted && !window._ffHadStoredAdsConsent && !analyticsAccepted,
             emitEvent: true
         });
         applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
+        pushConsentUpdatedEvent({ changedCategories: ['analytics', 'ads', 'functional'] });
     },
 
     onChange: function({changedCategories}){
         if(changedCategories.includes('analytics')){
             applyAnalyticsConsent({
                 accepted: CookieConsent.acceptedCategory('analytics'),
-                shouldRepush: CookieConsent.acceptedCategory('analytics'),
                 emitEvent: true
             });
         }
@@ -173,7 +174,6 @@ CookieConsent.run({
         if(changedCategories.includes('ads')){
             applyAdsConsent({
                 accepted: CookieConsent.acceptedCategory('ads'),
-                shouldRepush: CookieConsent.acceptedCategory('ads') && !changedCategories.includes('analytics'),
                 emitEvent: true
             });
         }
@@ -181,6 +181,8 @@ CookieConsent.run({
         if(changedCategories.includes('functional')){
             applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
         }
+
+        pushConsentUpdatedEvent({ changedCategories: changedCategories });
     },
 
     categories: {
