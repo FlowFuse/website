@@ -8,27 +8,19 @@ meta:
 
 >**That platform that moves you from fragile, project-based automation to governed, distributed industrial runtime infrastructure.**
 
----
+
 
 ## The Full Vision
 
 This vision follows the [Radical Product Thinking](https://www.radicalproduct.com/) framework. It is the outcome of a cross-functional workshop and reflects the strongest signals from across the team.
 
-### Today
+**Today when** industrial engineers and maintenance crews want to evolve the systems their factories depend on, they start with ad-hoc scripts and disconnected tools that seem manageable at first — until they scale. What begins as a few flows becomes a duct-taped collection of fragile logic, where updating one machine can break five others and the only people who can safely touch the system are a handful of "heroes" carrying institutional knowledge in their heads. This creates brittle infrastructure, team burnout, and a ceiling on what operations can ever become.
 
-When industrial engineers and maintenance crews want to evolve the systems their factories depend on, they start with ad-hoc scripts and disconnected tools that seem manageable at first — until they scale. What begins as a few flows becomes a duct-taped collection of fragile logic, where updating one machine can break five others and the only people who can safely touch the system are a handful of "heroes" carrying institutional knowledge in their heads. This creates brittle infrastructure, team burnout, and a ceiling on what operations can ever become.
+**This is unacceptable because** Industrial decisions are time-bound and the systems that support them must be trusted. When logic is invisible and undocumented, when one change can cascade into failures across a plant, and when scaling from one site to fifty requires starting over — manufacturers cannot move at the speed the market demands.
 
-### This is unacceptable because
+**We envision A world where** operational change feels routine rather than dangerous — where any engineer can understand or modify a process flow without needing a hero to explain it, where intentional industrial workflows run reliably across dozens of sites, and where teams scale from one plant to a hundred in weeks, not months. A world where the industrial stack is not bespoke and locked-in, but governed, versioned, and built to last.
 
-Industrial decisions are time-bound and the systems that support them must be trusted. When logic is invisible and undocumented, when one change can cascade into failures across a plant, and when scaling from one site to fifty requires starting over — manufacturers cannot move at the speed the market demands.
-
-### We envision
-
-A world where operational change feels routine rather than dangerous — where any engineer can understand or modify a process flow without needing a hero to explain it, where intentional industrial workflows run reliably across dozens of sites, and where teams scale from one plant to a hundred in weeks, not months. A world where the industrial stack is not bespoke and locked-in, but governed, versioned, and built to last.
-
-### We are bringing this about
-
-Through a distributed industrial runtime that serves as the operational backbone for event-driven workflows across OT and IT. We execute business logic, validate and transform payloads, manage application lifecycle, and deploy across distributed device fleets — ensuring that industrial operations are intentional, visible, and governed at scale. As AI commoditizes glue code and data aggregation, we are building the durable layer: runtime control, orchestration discipline, and the infrastructure organizations can bet on.
+**We are bringing this about** Through a distributed industrial runtime that serves as the operational backbone for event-driven workflows across OT and IT. We execute business logic, validate and transform payloads, manage application lifecycle, and deploy across distributed device fleets — ensuring that industrial operations are intentional, visible, and governed at scale. As AI commoditizes glue code and data aggregation, we are building the durable layer: runtime control, orchestration discipline, and the infrastructure organizations can bet on.
 
 ---
 ### How our product vision helps us
