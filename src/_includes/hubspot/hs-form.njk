@@ -1,13 +1,17 @@
-{% set hubspotFormId = formId or hubspot.formId %}
+{% set hubspotData = hubspot or {} %}
+{% set hubspotFormId = formId or hubspotData.formId %}
 {% set formTargetId = targetId or ('hs-form-' + (hubspotFormId | replace('-', ''))) %}
 {% set fallbackId = formTargetId + '-fallback' %}
 {% set contentType = 'form' %}
-{% set hubspotRegion = region or hubspot.region or 'eu1' %}
-{% set hubspotPortalId = portalId or hubspot.portalId or '26586079' %}
-{% set onFormSubmittedHandler = onFormSubmitted or hubspot.onFormSubmitted %}
+{% set hubspotRegion = region or hubspotData.region or 'eu1' %}
+{% set hubspotPortalId = portalId or hubspotData.portalId or '26586079' %}
+{% set onFormSubmittedHandler = onFormSubmitted or hubspotData.onFormSubmitted %}
+{% set ctaValue = cta or hubspotData.cta %}
+{% set referenceValue = hubspotData.reference or title %}
+
 <div id="{{ formTargetId }}"></div>
 {% include "hubspot/consent-fallback.njk" %}
-<script type="text/plain" data-category="analytics">
+<script>
     window.ffCreateHubSpotForm({
         target: '#{{ formTargetId }}',
         fallbackSelector: '#{{ fallbackId }}',
@@ -16,12 +20,12 @@
         formId: "{{ hubspotFormId }}",
         {% if onFormSubmittedHandler %}
         onFormSubmitted: {{ onFormSubmittedHandler | safe }},
-        {% elif cta or hubspot.cta %}
+        {% elif ctaValue %}
         onFormSubmit: function () {
-            capture('{{ cta or hubspot.cta }}', {
-                'page': '{{ hubspot.reference or title }}'
+            capture('{{ ctaValue }}', {
+                'page': '{{ referenceValue }}'
             });
-        }
+        },
         {% endif %}
     });
 </script>

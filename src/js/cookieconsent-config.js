@@ -219,7 +219,7 @@ CookieConsent.run({
             en: {
                 consentModal: {
                     title: "This site uses cookies",
-                    description: "We use cookies to ensure this site works properly and, with your permission, to improve your experience and enable features like analytics and <span class=\"font-medium text-indigo-600\">live chat support</span>.",
+                    description: "We use cookies to ensure this site works properly, forms render properly, and, with your permission, to improve your experience and enable features like analytics and <span class=\"font-medium text-indigo-600\">live chat support</span>.",
                     acceptAllBtn: "Accept all",
                     showPreferencesBtn: "Settings",
                     footer: "<a href=\"/privacy-policy/\">Privacy Policy</a>\n"
@@ -238,7 +238,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
-                            description: "Essential cookies are crucial for the basic functionality of our website. Without these cookies, our website could not function properly.",
+                            description: "Essential cookies are crucial for core website functionality, including security, anti-spam protection (Google reCAPTCHA), and technical form delivery. Without these cookies, key features of the website, such as secure contact forms, could not function properly.",
                             linkedCategory: "necessary"
                         },
                         {
@@ -248,7 +248,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "We use tools including Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. This category also enables HubSpot forms, meeting embeds, and the chat widget.",
+                            description: "We use tools including Google Analytics, HubSpot tracking, PostHog, and warmly.ai to understand how visitors interact with our website. This category enables HubSpot tracking, meeting embeds, and the chat widget.",
                             linkedCategory: "analytics"
                         },
                         {
