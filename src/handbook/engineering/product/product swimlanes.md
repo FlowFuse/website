@@ -5,7 +5,7 @@ navTitle: Product Swimlanes
 # Product Swimlanes
 
 ## What are they
-Product swimlanes are areas of focus and expertise within the Flowfuse product.
+[Product swimlanes](https://en.wikipedia.org/wiki/Swimlane) are areas of focus and expertise within the Flowfuse product.
 
 ## Why we use them
 Swimlanes allow us to 
@@ -15,11 +15,11 @@ Swimlanes allow us to
 
 ## Our swimlanes
 
-### FlowFuse Expert
-our AI expert within Flowfuse, including both insights(advanced enterprise) and assistant (basic, pro/free). 
+### AI Focus
+AI enablement within the FlowFuse platform, including the FlowFuse Expert AI agent which has offers support and enablement (basic, pro/free) and data insights (advanced enterprise).
 
 ### Edge Orchestration and data acquisition
-Everything edge related, from data acquisition to fleet orchestration
+Everything edge related, from data acquisition to fleet orchestration.
 
 ### Platform Core
 The engine that runs the ship. all things relevant to the platform and its operation and resilience.
