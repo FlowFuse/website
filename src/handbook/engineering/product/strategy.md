@@ -4,7 +4,7 @@ navTitle: Strategy
 
 # Product Strategy
 
-In support of our [company strategy](/handbook/company/strategy), and derived from our [vision](/handbook/company/product/vision), we build our product around a single product mission statement:
+In support of our [company strategy](/handbook/company/strategy), and derived from our [vision](/handbook/engineering/product/vision), we build our product around a single product mission statement:
 
 >**We are the platform that moves you from fragile, project-based automation to governed, distributed industrial runtime infrastructure.**
 
