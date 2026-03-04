@@ -57,7 +57,7 @@ Our Service is designed for businesses and their representatives. We do not offe
 - **Analytics cookies**: We use tools such as Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. These cookies enable usage tracking, meeting embeds, and the live chat widget. These cookies are only activated if you provide explicit consent.
 - **Advertising cookies**: We use cookies from Google, Meta (Facebook), and LinkedIn to measure the effectiveness of our campaigns, show relevant ads, and limit how often you see the same ad. These cookies are only activated if you provide explicit consent.
 
-You can manage your cookie preferences at any time through the cookie banner available on the site. No analytics, functional or advertising cookies are set without your prior consent.
+You can manage your cookie preferences at any time through the <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">cookie banner</a> available on the site. No analytics, functional or advertising cookies are set without your prior consent.
 
 **Web beacons**: Also known as pixel tags or clear GIFs, are used to demonstrate that a webpage or email was accessed or opened, or that certain content was viewed or clicked.
 
@@ -119,7 +119,7 @@ You have the following choices with respect to your personal information.
 **Opt-out of marketing communications.**  You may opt-out of marketing-related emails by following the opt-out or unsubscribe instructions at the bottom of the email, or by <a href="#how-to-contact-us">contacting us</a>.  Please note that if you choose to opt-out of marketing-related emails, you may continue to receive service-related and other non-marketing emails.
 
 
-**Cookies and consent management.** You can manage your cookie preferences at any time using the cookie banner on our site. No analytics or advertising cookies will be set without your explicit consent. Most browsers allow you to delete and reject cookies. If you do not accept cookies, some features of the site may not be available. For more information about cookies and how to manage them, visit <a href="https://allaboutcookies.org">https://allaboutcookies.org</a>.
+**Cookies and consent management.** You can manage your cookie preferences at any time using the <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">cookie banner</a> on our site. No analytics or advertising cookies will be set without your explicit consent. Most browsers allow you to delete and reject cookies. If you do not accept cookies, some features of the site may not be available. For more information about cookies and how to manage them, visit <a href="https://allaboutcookies.org">https://allaboutcookies.org</a>.
 
 **Do Not Track.** Some Internet browsers may be configured to send “Do Not Track” signals to the online services that you visit.  We currently do not respond to “Do Not Track” or similar signals.  To find out more about “Do Not Track,” please visit <a href="https://allaboutdnt.com">https://allaboutdnt.com</a>.
 
