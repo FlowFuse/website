@@ -145,6 +145,31 @@ The Service is not intended for use by children under 16 years of age. If we lea
 
 We reserve the right to modify this Privacy Policy at any time. If we make material changes to this Privacy Policy, we will notify you by updating the date of this Privacy Policy and posting it on the Service. If required by law we will also provide notification of changes in another way that we believe is reasonably likely to reach you, such as via email or another manner through the Service.  Any modifications to this Privacy Policy will be effective upon our posting the modified version (or as otherwise indicated at the time of posting). In all cases, your use of the Service after the effective date of any modified Privacy Policy indicates your acceptance of the modified Privacy Policy.
 
+## <span name="european-users">Additional Information for European Users</span>
+
+If you are located in the European Economic Area (EEA), the United Kingdom (UK), or Switzerland, the following additional information applies to you.
+
+**Legal Bases for Processing**
+We process your personal information on the following legal bases:
+* **Consent:** For marketing communications and the use of non-essential cookies (Analytics, Functional, and Advertising).
+* **Contractual Necessity:** To provide the Service and support you have requested.
+* **Legitimate Interests:** To protect our Service, prevent fraud (such as via reCAPTCHA), and improve our product offerings.
+
+**Your Rights**
+Under the GDPR, you have the following rights:
+* **Right to Access/Portability:** Request a copy of your data in a structured format.
+* **Right to Erasure:** Request that we delete your personal information.
+* **Right to Object/Restrict:** Object to our processing of your data for legitimate interests or request we limit how we use it.
+* **Right to Withdraw Consent:** Withdraw your consent for cookies or marketing at any time.
+* **Right to Complain:** You have the right to lodge a complaint with your local Data Protection Authority.
+
+To exercise any of these rights, please follow the instructions in the [How to contact us](#how-to-contact-us) section below. We will respond to your request within 30 days.
+
+**International Transfers**
+When we transfer data to the United States, we ensure a similar degree of protection is afforded to it by ensuring at least one of the following safeguards is implemented:
+* **Standard Contractual Clauses (SCCs):** We use specific contracts approved by the European Commission.
+* **Data Center Selection:** We utilize EU-based data centers (e.g., HubSpot EU1 region) where available to minimize transfer risks.
+
 ## <span name="how-to-contact-us">How to contact us</span>
 
  - **Email:** `contact@flowfuse.com`
