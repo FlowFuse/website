@@ -50,11 +50,19 @@ The jitter prevents the **thundering herd problem**, where every failed client r
 
 ## Building It
 
+In this section, we'll build this pattern in Node-RED step by step.
+
 Node-RED is the de facto standard for IIoT flow-based programming, and FlowFuse is the recommended way to run it in production. It gives you managed deployments, team collaboration, and enterprise-grade support, all built around Node-RED. [Start a free trial here](https://app.flowfuse.com/account/create). Everything in this guide works on standalone Node-RED too.
 
-In industrial environments, a message that fails silently is worse than one that fails loudly. A timeout, a malformed payload, a downstream API returning a 503 can drop data without a trace and leave your pipeline looking healthy when it isn't.
+The architecture has five components:
 
-That is exactly what this pattern is built to prevent. Every message gets three guarantees: it will be processed, retried with exponential backoff if something goes wrong, and routed to a Dead Letter Queue with full context if it cannot recover. Here is how it fits together:
+1. Retry state initializer
+2. Catch node for centralized error handling
+3. Retry manager with exponential backoff
+4. Delay node for controlled retries
+5. Dead Letter Queue backed by SQLite
+
+Here's how they connect:
 
 ```mermaid
 flowchart TD
@@ -77,9 +85,12 @@ Every step below maps directly to one part of that diagram. Follow it in order.
 
 ### Step 1: Initialize Retry State
 
-Node-RED carries everything in `msg`. Before your message enters the processing pipeline, attach its retry metadata in a function node.
+This function node runs once when a fresh message enters the pipeline. It attaches retry metadata to `msg` so every downstream node knows where the message stands.
 
-One important detail: store the original payload in `msg._originalPayload` before the message goes anywhere. The HTTP request node overwrites `msg.payload` with the response body on every call. Without this, the original data is gone by the time a message reaches the DLQ.
+1. Drag a **function node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Init Retry State`.
+4. In the **Function** tab, paste the following code:
 
 ```javascript
 msg._originalPayload = msg.payload;
@@ -97,15 +108,26 @@ if (!msg._retry) {
 return msg;
 ```
 
-The `if (!msg._retry)` check ensures this only runs on a fresh message. When the retry manager loops the message back through the pipeline, this block is skipped entirely. The underscore prefix on `msg._retry` protects it from being overwritten by the HTTP request node response.
+5. Click **Done**.
 
-`maxAttempts` is set on the message itself, not hardcoded elsewhere. Different flows can have different retry limits without touching shared configuration.
+Two things are happening here worth noting. First, `msg._originalPayload` saves a copy of the original payload before anything touches it. Some nodes — like the HTTP Request node — overwrite `msg.payload` with their response body, so this copy is what gets stored in the DLQ later. Second, the `if (!msg._retry)` check ensures initialization only runs on a fresh message. When the retry loop sends the message back through, this block is skipped entirely and the existing retry state is preserved. The underscore prefix on `msg._retry` also protects it from being overwritten by processing nodes.
 
-### Step 2: The Catch Node
+### Step 2: Add a Catch Node
 
-Drop a catch node onto your canvas and wire its output to the retry manager. The catch node watches your processing nodes and the moment one of them fails, it pulls the message out of the normal flow and sends it forward for retry handling.
+The catch node monitors your processing nodes and intercepts any message that causes an error, routing it to the retry logic instead of letting it disappear.
 
-Node-RED's standard nodes, the HTTP request node, the MQTT out node, the database node, do not always attach a clean error reason to the message. They sometimes set `msg.error` as an object rather than a string. Add one function node between the catch node and the retry manager to normalize that:
+1. Drag a **catch node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Catch Errors`.
+4. Set **Catch errors from** to `All nodes` so it covers every node in the flow.
+5. Click **Done**.
+
+Next, add a normalization step between the catch node and the retry manager. Node-RED's built-in nodes sometimes attach `msg.error` as an object rather than a string, which causes problems downstream. This function node converts it to a consistent string format.
+
+1. Drag a **function node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Normalize Error`.
+4. In the **Function** tab, paste:
 
 ```javascript
 msg.retry = msg._retry;
@@ -118,13 +140,18 @@ msg.error = msg.error || 'Processing failed';
 return msg;
 ```
 
-One catch node covers all your processing nodes. Configure it to watch all nodes in the flow and the retry manager will receive a clean, consistent message every time.
+5. Click **Done**.
+6. Wire the **catch node** output → **Normalize Error** input.
 
-### Step 3: The Retry Manager
+### Step 3: Add the Retry Manager
 
-This is where the decision gets made. Retry or give up.
+This is the decision node. It increments the attempt count, calculates the backoff delay, and routes the message either back into the pipeline for another try or forward to the DLQ if retries are exhausted.
 
-Add a function node and wire the normalize error node into it. This node does three things: increments the attempt count, calculates how long to wait before the next attempt, and routes the message either back into the pipeline or forward to the DLQ.
+1. Drag a **function node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Retry Manager`.
+4. Go to the **Setup** tab and set **Outputs** to `2`. This gives the node two output ports — one for retrying, one for the DLQ.
+5. Go to the **Function** tab and paste:
 
 ```javascript
 const MAX_ATTEMPTS = msg.retry.maxAttempts || 5;
@@ -164,34 +191,58 @@ node.status({
 return [msg, null];
 ```
 
-The function node has two outputs. Output 1 goes to a delay node wired back into your processing node. Output 2 goes to the DLQ handler. The `return [msg, null]` and `return [null, msg]` statements control that routing. No switch node needed.
+6. Click **Done**.
+7. Wire the **Normalize Error** output → **Retry Manager** input.
 
-### Step 4: The Delay Node
+`return [msg, null]` sends the message out of **Output 1** (retry path). `return [null, msg]` sends it out of **Output 2** (DLQ path). No switch node is needed — the routing is built into the return statement.
 
-The delay node is what gives failing services time to recover. Without it, retries fire immediately and you are back to hammering a system that is already struggling.
+### Step 4: Add the Delay Node
 
-Drop a delay node onto your canvas and wire the first output of the retry manager into it. Then wire its output back into your processing node. One setting matters here: set the delay mode to "override delay with `msg.delay`". That tells the node to read the backoff value the retry manager calculated rather than using a fixed time.
+The delay node holds the message for the calculated backoff period before it re-enters the pipeline. Without this, retries fire instantly and you are hammering an already-struggling service.
 
-Each pass through the loop the delay gets longer. First retry waits roughly 1 second. Second waits 2. Third waits 4. The message keeps its retry state across every loop because it travels on `msg` the entire time. Nothing is stored externally. Nothing is lost between attempts.
+1. Drag a **delay node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Backoff Delay`.
+4. Set **Action** to `Delay each message`.
+5. Set **For** to `Override delay with msg.delay`. This tells the node to use the backoff value the Retry Manager calculated rather than a fixed duration.
+6. Click **Done**.
+7. Wire **Retry Manager Output 1** → **Backoff Delay** input.
+8. Wire **Backoff Delay** output → your processing node input (the node that does the actual work, such as the HTTP Request node). This completes the retry loop.
 
-When the retry manager decides the message is done, it stops sending to the delay node entirely and routes to output 2 instead. The loop ends and the message moves to the DLQ.
+Each pass through the loop, the delay gets longer — roughly 1 second on the first retry, 2 seconds on the second, 4 on the third, and so on. When the Retry Manager decides retries are exhausted, it stops sending to Output 1 entirely and routes to Output 2 instead, ending the loop.
 
-### Step 5: The DLQ Handler
+### Step 5: Set Up the DLQ Handler
 
-When a message reaches this node, retries are over. The job now is preservation. Every detail matters here: the original payload, the error reason, how many times it was attempted, and when it finally gave up. That context is what makes recovery possible.
+When a message reaches this stage, retries are finished. The goal now is to preserve everything: the original payload, the error reason, how many attempts were made, and the timestamp. That context is what makes later recovery possible.
 
-**Install the SQLite node**
+#### 5a: Install the SQLite Node
 
-1. Open the Node-RED palette manager
-2. Search for `node-red-node-sqlite`
-3. Click install and restart Node-RED when prompted
+1. In the Node-RED editor, click the **menu icon** (top-right hamburger menu).
+2. Select **Manage palette**.
+3. Go to the **Install** tab.
+4. Search for `node-red-node-sqlite`.
+5. Click **Install** next to the result and confirm.
+6. Wait for the install to complete, then click **Close**.
 
-**Create the database table**
+#### 5b: Create the Database Table
 
-1. Drop an inject node onto your canvas
-2. Configure it to run once on deploy
-3. Wire it directly into a sqlite node and set the database path to `/data/node-red-dlq.db`
-4. Paste this into the SQL field:
+This step runs once on deploy to create the DLQ table if it does not already exist.
+
+1. Drag an **inject node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Create Table on Deploy`.
+4. Under **Inject once after**, tick the checkbox and set the delay to `0.1` seconds. This makes it run automatically on deploy.
+5. Remove all properties from the **msg** list (click the `x` next to each). No payload is needed — just the trigger.
+6. Click **Done**.
+
+Now add the SQLite node:
+
+1. Drag a **sqlite node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Create DLQ Table`.
+4. Next to **Database**, click the pencil icon to create a new database config. Set the path to `/data/node-red-dlq.db` and click **Add**.
+5. Set **SQL Query** to `Fixed statement`.
+6. Paste the following into the SQL field:
 
 ```sql
 CREATE TABLE IF NOT EXISTS dlq (
@@ -204,34 +255,53 @@ CREATE TABLE IF NOT EXISTS dlq (
 )
 ```
 
-**Handle failed messages**
+7. Click **Done**.
+8. Wire the **Create Table on Deploy** inject node → **Create DLQ Table** sqlite node.
 
-1. Wire the second output of the retry manager into a change node
-2. Add the following rules in the change node:
+#### 5c: Build the Insert Flow
 
-Set `msg.params` to `{}` (JSON)
+This is the path a message takes when retries are exhausted. A change node assembles the SQL parameters, then a sqlite node writes the record.
 
-Then set each property:
+1. Drag a **change node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Build DLQ Params`.
+4. Add the following rules one at a time using the **+ add** button:
 
-- Set `msg.params.$id` to `msg._msgid`
-- Set `msg.params.$topic` to `msg._retry.topic`
-- Set `msg.params.$payload` to JSONata: `$string(_originalPayload)`
-- Set `msg.params.$attempts` to `msg.retry.attempts`
-- Set `msg.params.$last_error` to `msg.retry.lastError`
-- Set `msg.params.$captured_at` to JSONata: `$now()`
+| Action | Target | Value type | Value |
+|--------|--------|------------|-------|
+| Set | `msg.params` | JSON | `{}` |
+| Set | `msg.params.$id` | msg | `_msgid` |
+| Set | `msg.params.$topic` | msg | `_retry.topic` |
+| Set | `msg.params.$payload` | JSONata | `$string(_originalPayload)` |
+| Set | `msg.params.$attempts` | msg | `retry.attempts` |
+| Set | `msg.params.$last_error` | msg | `retry.lastError` |
+| Set | `msg.params.$captured_at` | JSONata | `$now()` |
 
-3. Wire the change node into a sqlite node pointed at the same database
-4. Set the SQL to:
+5. Click **Done**.
+
+Now add the insert node:
+
+1. Drag a **sqlite node** onto the canvas.
+2. Double-click it to open its settings.
+3. In the **Name** field, enter `Insert DLQ Record`.
+4. For **Database**, select the same `/data/node-red-dlq.db` config created in Step 5b.
+5. Set **SQL Query** to `Prepared statement`.
+6. Paste the following SQL:
 
 ```sql
 INSERT OR REPLACE INTO dlq 
   (id, topic, payload, attempts, last_error, captured_at) 
-  VALUES ($id, $topic, $payload, $attempts, $last_error, $captured_at) 
+  VALUES ($id, $topic, $payload, $attempts, $last_error, $captured_at)
 ```
 
-5. Set the sqlite node to read parameters from `msg.params`
+7. Click **Done**.
 
-Each property maps directly to its column. The original sensor payload is preserved correctly and the error reason is always a readable string.
+Finally, wire everything together:
+
+1. **Retry Manager Output 2** → **Build DLQ Params** input.
+2. **Build DLQ Params** output → **Insert DLQ Record** input.
+
+Each property in `msg.params` maps directly to a column. `INSERT OR REPLACE` ensures a message that appears multiple times (for example, if a flow is restarted mid-retry) does not create duplicate rows — it overwrites cleanly on the same `id`.
 
 ## Putting It All Together: Simulation
 
