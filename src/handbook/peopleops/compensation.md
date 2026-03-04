@@ -179,6 +179,7 @@ Bonuses will not be processed if MBOs are defined or changed after the period ha
   * Final bonus amount for CEO approval
 
 ## CEO Confirmation
+
 Before any bonus is processed, the manager must email the CEO confirming:
 * Employee name
 * Performance period
@@ -199,8 +200,9 @@ Once approved in writing by the CEO:
 
 Bonuses are paid in the next payroll cycle after approval.
 
-## Sample Email — Bonus Confirmation to Employee
+## Template Email — Bonus Confirmation to Employee
 
+```
 Subject: Bonus Confirmation for [Period]
 
 Hi [Name],
@@ -216,6 +218,7 @@ Based on this, your approved bonus for this period is [currency + amount]. Pleas
 
 Best,
 [Manager Name]
+```
 
 CC: CEO
 
@@ -237,7 +240,6 @@ Purpose:
 * Email employee + CEO
 * Update Bonus Tracker
 
-
 2. End of Quarter — Review & Process Bonuses
 Performance period ends:
   * Q1: March 31
@@ -251,7 +253,8 @@ Review start dates (mandatory):
   * Q3: October 1
   * Q4: January 1
 
-### Review & approval window:
+### Review & approval window
+
 Bonus review and CEO approval must be completed within 5 business days from the review start date.
 
 Purpose:
@@ -260,6 +263,7 @@ Purpose:
 * Email CEO for approval
 
 ## Enforcement Rules
+
 * Bonuses not submitted by the payroll cutoff will be deferred to the next cycle or rejected.
 * Any bonus issue discovered after the period ends must be flagged as a process gap, not resolved retroactively.
 * Delays in review or approval do not justify retroactive changes to bonus criteria or amounts.
