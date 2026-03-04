@@ -93,6 +93,11 @@ Note that each repository may have slightly different pre-publish requirements -
 example if there is a build step or not. You may need to customise the workflow
 to match what is needed.
 
+#### Static Application Security Testing
+
+For any repository that contains code, the Static Application Security Testing workflow should be added.
+This is done by adding [`.github/workflows/sast.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/sast-scan.yml) to the repository. This workflow will run on any pull request and will scan the code for any known security vulnerabilities. By default, scan results are added to The GitHub Advanced Security tab of the repository, but can be configured to also post comments on the pull request if vulnerabilities are found (see reusable workflow for details).
+
 #### Private Repositories
 
 For *private* repositories, you will also need to add a Repository Secret as

@@ -1,15 +1,31 @@
+{% set hubspotData = hubspot or {} %}
+{% set hubspotFormId = formId or hubspotData.formId %}
+{% set formTargetId = targetId or ('hs-form-' + (hubspotFormId | replace('-', ''))) %}
+{% set fallbackId = formTargetId + '-fallback' %}
+{% set contentType = 'form' %}
+{% set hubspotRegion = region or hubspotData.region or 'eu1' %}
+{% set hubspotPortalId = portalId or hubspotData.portalId or '26586079' %}
+{% set onFormSubmittedHandler = onFormSubmitted or hubspotData.onFormSubmitted %}
+{% set ctaValue = cta or hubspotData.cta %}
+{% set referenceValue = hubspotData.reference or title %}
+
+<div id="{{ formTargetId }}"></div>
+{% include "hubspot/consent-fallback.njk" %}
 <script>
-    function displayHubSpotForm() {
-        hbspt.forms.create({
-            region: "eu1",
-            portalId: "26586079",
-            formId: "{{ formId or hubspot.formId }}",
-            onFormSubmit: function ($form) {
-                capture('{{ cta or hubspot.cta }}', {
-                    'page': '{{ hubspot.reference or title }}'
-                })
-            }
-        });
-    }
+    window.ffCreateHubSpotForm({
+        target: '#{{ formTargetId }}',
+        fallbackSelector: '#{{ fallbackId }}',
+        region: "{{ hubspotRegion }}",
+        portalId: "{{ hubspotPortalId }}",
+        formId: "{{ hubspotFormId }}",
+        {% if onFormSubmittedHandler %}
+        onFormSubmitted: {{ onFormSubmittedHandler | safe }},
+        {% elif ctaValue %}
+        onFormSubmit: function () {
+            capture('{{ ctaValue }}', {
+                'page': '{{ referenceValue }}'
+            });
+        },
+        {% endif %}
+    });
 </script>
-<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()" onerror="hsFallback(this);"></script>

@@ -3,11 +3,12 @@ title: "Edge AI Is 80% Plumbing, 20% Intelligence"
 subtitle: "Why your Edge AI pilot is still a pilot."
 description: "Learn how manufacturers are turning Edge AI pilots into production reality — and why the plumbing matters more than the model."
 date: 2026-02-27
-keywords: 
+keywords: Edge AI, Industrial IoT, IIoT, manufacturing AI, Edge AI deployment, AI pilot to production, Node-RED, FlowFuse, ONNX, predictive maintenance, anomaly detection, edge device management, industrial automation, OT IT convergence
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/02/images/edge-ai-is-80-20.png
 tags:
-- flowfuse
+  - flowfuse
+  - ai
 ---
 
 The model is the easy part. I know that is not what you were told. But it is true, and somewhere between your third deployment and your first production fire, you will stop arguing with it.
