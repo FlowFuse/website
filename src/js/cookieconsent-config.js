@@ -42,23 +42,32 @@ function syncHubSpotConsent (allowTracking) {
     clearHubSpotCookiesFallback();
 }
 
-function pushGtmJsEvent () {
+function pushConsentUpdatedEvent (options) {
+    var changedCategories = options.changedCategories || [];
+    var analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+    var adsAccepted = CookieConsent.acceptedCategory('ads');
+    var functionalAccepted = CookieConsent.acceptedCategory('functional');
+
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'gtm.js' });
+    window.dataLayer.push({
+        event: 'ff_consent_updated',
+        changed_categories: changedCategories,
+        analytics_storage: analyticsAccepted ? 'granted' : 'denied',
+        ad_storage: adsAccepted ? 'granted' : 'denied',
+        ad_user_data: adsAccepted ? 'granted' : 'denied',
+        ad_personalization: adsAccepted ? 'granted' : 'denied',
+        functionality_storage: functionalAccepted ? 'granted' : 'denied',
+        personalization_storage: adsAccepted ? 'granted' : 'denied'
+    });
 }
 
 function applyAnalyticsConsent (options) {
     var accepted = options.accepted;
-    var shouldRepush = !!options.shouldRepush;
     var emitEvent = !!options.emitEvent;
 
     gtag('consent', 'update', {
         'analytics_storage': accepted ? 'granted' : 'denied'
     });
-
-    if (accepted && shouldRepush) {
-        pushGtmJsEvent();
-    }
 
     if (emitEvent) {
         gtag('event', 'cookie_consent', {
@@ -84,7 +93,6 @@ function applyAnalyticsConsent (options) {
 
 function applyAdsConsent (options) {
     var accepted = options.accepted;
-    var shouldRepush = !!options.shouldRepush;
     var emitEvent = !!options.emitEvent;
 
     gtag('consent', 'update', {
@@ -93,10 +101,6 @@ function applyAdsConsent (options) {
         'ad_personalization': accepted ? 'granted' : 'denied',
         'personalization_storage': accepted ? 'granted' : 'denied'
     });
-
-    if (accepted && shouldRepush) {
-        pushGtmJsEvent();
-    }
 
     if (emitEvent) {
         gtag('event', 'cookie_consent', {
@@ -132,15 +136,14 @@ CookieConsent.run({
     onConsent: function(){
         applyAnalyticsConsent({
             accepted: CookieConsent.acceptedCategory('analytics'),
-            shouldRepush: false,
             emitEvent: false
         });
         applyAdsConsent({
             accepted: CookieConsent.acceptedCategory('ads'),
-            shouldRepush: false,
             emitEvent: false
         });
         applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
+        pushConsentUpdatedEvent({ changedCategories: [] });
     },
 
     // Runs once when the user makes the first consent decision.
@@ -150,22 +153,20 @@ CookieConsent.run({
 
         applyAnalyticsConsent({
             accepted: analyticsAccepted,
-            shouldRepush: analyticsAccepted && !window._ffHadStoredAnalyticsConsent,
             emitEvent: true
         });
         applyAdsConsent({
             accepted: adsAccepted,
-            shouldRepush: adsAccepted && !window._ffHadStoredAdsConsent && !analyticsAccepted,
             emitEvent: true
         });
         applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
+        pushConsentUpdatedEvent({ changedCategories: ['analytics', 'ads', 'functional'] });
     },
 
     onChange: function({changedCategories}){
         if(changedCategories.includes('analytics')){
             applyAnalyticsConsent({
                 accepted: CookieConsent.acceptedCategory('analytics'),
-                shouldRepush: CookieConsent.acceptedCategory('analytics'),
                 emitEvent: true
             });
         }
@@ -173,7 +174,6 @@ CookieConsent.run({
         if(changedCategories.includes('ads')){
             applyAdsConsent({
                 accepted: CookieConsent.acceptedCategory('ads'),
-                shouldRepush: CookieConsent.acceptedCategory('ads') && !changedCategories.includes('analytics'),
                 emitEvent: true
             });
         }
@@ -181,6 +181,8 @@ CookieConsent.run({
         if(changedCategories.includes('functional')){
             applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
         }
+
+        pushConsentUpdatedEvent({ changedCategories: changedCategories });
     },
 
     categories: {
@@ -217,7 +219,7 @@ CookieConsent.run({
             en: {
                 consentModal: {
                     title: "This site uses cookies",
-                    description: "We use cookies to ensure this site works properly and, with your permission, to improve your experience and enable features like analytics and live chat support.",
+                    description: "We use cookies to ensure this site works properly, forms render properly, and, with your permission, to improve your experience and enable features like analytics and <span class=\"font-medium text-indigo-600\">live chat support</span>.",
                     acceptAllBtn: "Accept all",
                     showPreferencesBtn: "Settings",
                     footer: "<a href=\"/privacy-policy/\">Privacy Policy</a>\n"
@@ -236,7 +238,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
-                            description: "Essential cookies are crucial for the basic functionality of our website. Without these cookies, our website could not function properly.",
+                            description: "Essential cookies are crucial for core website functionality, including security, anti-spam protection (Google reCAPTCHA), and technical form delivery. Without these cookies, key features of the website, such as secure contact forms, could not function properly.",
                             linkedCategory: "necessary"
                         },
                         {
@@ -246,7 +248,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "We use tools including Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. This category also enables HubSpot meeting embeds and the chat widget.",
+                            description: "We use tools including Google Analytics, HubSpot tracking, PostHog, and warmly.ai to understand how visitors interact with our website. This category enables HubSpot tracking, meeting embeds, and the chat widget.",
                             linkedCategory: "analytics"
                         },
                         {
