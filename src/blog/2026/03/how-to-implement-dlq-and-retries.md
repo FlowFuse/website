@@ -2,7 +2,7 @@
 title: "How to Implement Dead Letter Queues for Industrial IoT Data Pipelines"
 subtitle: "Dead Letter Queues: The Safety Net Your IIoT Data Pipeline is Missing"
 description: "Learn how to implement Dead Letter Queues and exponential backoff retries using Node-RED and SQLite. A production-ready pattern that ensures no message is ever silently dropped."
-date: 2026-03-02
+date: 2026-03-04
 keywords: 
 authors: ["sumit-shinde"]
 image: 
