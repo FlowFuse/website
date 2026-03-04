@@ -20,8 +20,11 @@
                 </div>
                 <a id="dashboard-2-download" style="display:none"></a>
             </div>
-            <div id="hs-user-form">
-
+            <div>
+                {% set formId = "968a9ab6-3dd8-45b2-991c-3f055dc18787" %}
+                {% set targetId = "hs-user-form" %}
+                {% set onFormSubmitted = "function () { migrateFile(); }" %}
+                {% include "hubspot/hs-form.njk" %}
             </div>
         </div>
     </div>
@@ -113,16 +116,4 @@
         event.preventDefault();
     }
 
-    function displayHubSpotForm() {
-        hbspt.forms.create({
-            target: '#hs-user-form',
-            region: "eu1",
-            portalId: "26586079",
-            formId:"968a9ab6-3dd8-45b2-991c-3f055dc18787",
-            onFormSubmitted: function ($form) {
-                migrateFile()
-            }
-        });
-    }
 </script>
-<script async type="text/javascript" charset="utf-8" src="//js-eu1.hsforms.net/forms/embed/v2.js" onload="displayHubSpotForm()" onerror="hsFallback(this)"></script>

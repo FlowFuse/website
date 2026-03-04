@@ -1,0 +1,24 @@
+<div id="{{ fallbackId }}" class="ff-hubspot-consent-fallback text-center border bg-red-50/25 border-red-300 rounded-lg px-4 py-6">
+    <p class="text-red-400"><strong>Hmm… there was supposed to be a {{ contentType }} here</strong></p>
+    {% if contentType == 'form' %}
+        <p class="text-gray-600">
+            If this form does not load, try adjusting your privacy settings or switching browsers.
+        </p>
+    {% else %}
+        <p class="text-gray-600">
+            To load this {{ contentType }}, please accept <strong>Analytics cookies</strong>.
+            If that doesn't work, try adjusting your privacy settings, or switching browsers.
+        </p>
+        <p class="mt-4">
+            <button
+                onclick="if(window.CookieConsent){CookieConsent.showPreferences()}"
+                class="inline-block ff-btn ff-btn--primary-outlined uppercase"
+            >
+                Open cookie settings
+            </button>
+        </p>
+        <p class="mt-2 text-gray-600">
+            Alternatively, you can send us a message through our <a href="/contact-us/">contact form</a>.
+        </p>
+    {% endif %}
+</div>
