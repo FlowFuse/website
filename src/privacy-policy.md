@@ -50,11 +50,16 @@ Our Service is designed for businesses and their representatives. We do not offe
  - **Device data**, such as your computer’s or mobile device’s operating system type and version, manufacturer and model, browser type, screen resolution, RAM and disk size, CPU usage, device type (e.g., phone, tablet), IP address, unique identifiers, language settings, mobile device carrier, radio/network information (e.g., Wi-Fi, LTE, 3G), and general location information such as city, state or geographic area.
  - **Online activity data**, such as pages or screens you viewed, how long you spent on a page or screen, the website you visited before browsing to the Service, navigation paths between pages or screens, information about your activity on a page or screen, access times and duration of access, and whether you have opened our marketing emails or clicked links within them.
 
-**Cookies and similar technologies**. Like many online services, we, our service providers, and our business partners may use the following technologies:
+**Cookies and similar technologies**. We, our service providers, and our business partners use cookies and similar technologies for the following purposes:
 
+- **Strictly necessary cookies**: Essential for core website functionality, including security, anti-spam protection (Google reCAPTCHA), and technical form delivery. Without these cookies, key features of the website, such as secure contact forms, would not function properly.
+- **Functional cookies**: Enable optional site features that are not strictly necessary to operate the website, but enhance the user experience.
+- **Analytics cookies**: We use tools such as Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. These cookies enable usage tracking, meeting embeds, and the live chat widget. These cookies are only activated if you provide explicit consent.
+- **Advertising cookies**: We use cookies from Google, Meta (Facebook), and LinkedIn to measure the effectiveness of our campaigns, show relevant ads, and limit how often you see the same ad. These cookies are only activated if you provide explicit consent.
 
- - **Cookies**, which are text files that websites store on a visitor‘s device to uniquely identify the visitor’s browser or to store information or settings in the browser for the purpose of helping you navigate between pages efficiently, remembering your preferences, enabling functionality, helping us understand user activity and patterns, and facilitating analytics.
- - **Web beacons**, also known as pixel tags or clear GIFs, which are used to demonstrate that a webpage or email was accessed or opened, or that certain content was viewed or clicked.
+You can manage your cookie preferences at any time through the cookie banner available on the site. No analytics, functional or advertising cookies are set without your prior consent.
+
+**Web beacons**: Also known as pixel tags or clear GIFs, are used to demonstrate that a webpage or email was accessed or opened, or that certain content was viewed or clicked.
 
 **Data about others**. Users of the Service may have the opportunity to refer friends or other contacts to us and share their contact information with us. Please do not refer someone to us or share their contact information with us unless you have their permission to do so.
 
@@ -93,7 +98,13 @@ We may share your personal information with the following parties and as otherwi
 
 **Affiliates.** Our corporate parent, subsidiaries, and affiliates, for purposes consistent with this Privacy Policy.
 
-**Service providers.** Third parties that provide services on our behalf or help us operate the Service or our business (such as hosting, information technology, email delivery, marketing, and website analytics).
+**Service providers.** Third parties that provide services on our behalf or help us operate the Service or our business (such as hosting, information technology, email delivery, marketing, and website analytics). This includes:
+- **Google Analytics** (analytics, advertising)
+- **HubSpot** (forms, analytics, chat, marketing)
+- **PostHog** (analytics, product usage)
+- **warmly.ai** (analytics)
+- **Google, Meta, LinkedIn** (advertising)
+These providers may set cookies or similar technologies on your device, but only after you have provided explicit consent through our cookie banner.
 
 **Professional advisors.**  Professional advisors, such as lawyers, auditors, bankers and insurers, where necessary in the course of the professional services that they render to us.
 
@@ -107,7 +118,8 @@ You have the following choices with respect to your personal information.
 
 **Opt-out of marketing communications.**  You may opt-out of marketing-related emails by following the opt-out or unsubscribe instructions at the bottom of the email, or by <a href="#how-to-contact-us">contacting us</a>.  Please note that if you choose to opt-out of marketing-related emails, you may continue to receive service-related and other non-marketing emails.
 
-**Cookies.** Most browser settings let you delete and reject cookies placed by websites. Many browsers accept cookies by default until you change your settings. If you do not accept cookies, you may not be able to use all functionality of the Service and it may not work properly. For more information about cookies, including how to see what cookies have been set on your browser and how to manage and delete them, visit <a href="https://allaboutcookies.org">https://allaboutcookies.org</a>.
+
+**Cookies and consent management.** You can manage your cookie preferences at any time using the cookie banner on our site. No analytics or advertising cookies will be set without your explicit consent. Most browsers allow you to delete and reject cookies. If you do not accept cookies, some features of the site may not be available. For more information about cookies and how to manage them, visit <a href="https://allaboutcookies.org">https://allaboutcookies.org</a>.
 
 **Do Not Track.** Some Internet browsers may be configured to send “Do Not Track” signals to the online services that you visit.  We currently do not respond to “Do Not Track” or similar signals.  To find out more about “Do Not Track,” please visit <a href="https://allaboutdnt.com">https://allaboutdnt.com</a>.
 
@@ -123,7 +135,7 @@ We employ technical, organizational and physical safeguards designed to protect 
 
 ## <span name="international-data-transfer">International data transfer</span>
 
-We are headquartered in the United States and may use service providers that operate in other countries. Your personal information may be transferred to the United States or other locations where privacy laws may not be as protective as those in your state, province, or country.
+We are headquartered in the United States and may use service providers that operate in other countries, including the European Economic Area (EEA). Your personal information may be transferred to the United States or other locations where privacy laws may not be as protective as those in your state, province, or country.
 
 ## <span name="children">Children</span>
 
