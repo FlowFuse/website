@@ -76,3 +76,13 @@ Below are some questions that can be used and how answers are evaluated.
 **Values**
 - Collaborative Community
 - Constructive Candor
+
+#### 12. In a perfect world, we have all the data. In our world, we don't. Tell me about a time you chose to force a decision even though your peers or bosses wanted to wait for more information. What was the risk of acting, and what was the risk of waiting
+
+- Bias for Action
+- Conviction Over Consensus
+
+#### 13. Follow-up to the previous question: When you realized that decision was wrong, what was the specific 'trigger' that told you it was failing? How much time passed between that trigger and you taking action to fix it?
+
+- Intellectual Honesty
+- Correction Velocity
