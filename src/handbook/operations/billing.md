@@ -38,7 +38,7 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 ### Creating an invoice
 
 1. On the Deal page, find the Invoices section on the right-hand side, then click Create Blank Invoice.
-1. Add the corresponding products,start and end date per productline, discounts to reflect their first invoice as agreed in the order form.
+1. Add the corresponding products, start and end date per product line, discounts to reflect their first invoice as agreed in the order form.
    - If they require a PO number, add the PO number on the Deal. 
 1. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
 1. Make sure both ACH and Credit Card options are checked for payment.
