@@ -8,8 +8,6 @@ meta:
 
 >**That platform that moves you from fragile, project-based automation to governed, distributed industrial runtime infrastructure.**
 
-
-
 ## The Full Vision
 
 This vision follows the [Radical Product Thinking](https://www.radicalproduct.com/) framework. It is the outcome of a cross-functional workshop and reflects the strongest signals from across the team.
