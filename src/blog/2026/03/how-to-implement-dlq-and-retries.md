@@ -2,8 +2,8 @@
 title: "Building Dead Letter Queues and Retries in Node-RED for IIoT"
 subtitle: "Dead Letter Queues: The Safety Net Your IIoT Data Pipeline is Missing"
 description: "Learn how to implement Dead Letter Queues and exponential backoff retries using Node-RED and SQLite. A production-ready pattern that ensures no message is ever silently dropped."
-date: 2026-03-04
-keywords: 
+date: 2026-03-05
+keywords: dead letter queue, Node-RED, IIoT, exponential backoff, retry pattern, SQLite, message queue, error handling, Node-RED flow, edge computing, industrial IoT, FlowFuse, message broker, data pipeline, fault tolerance
 authors: ["sumit-shinde"]
 image: 
 tags:
