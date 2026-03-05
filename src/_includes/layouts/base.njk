@@ -261,18 +261,23 @@ eleventyComputed:
                         </ul>
                         {% endnavoption %}
                         {% navoption "Solutions", null, 0 %}
-                        <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-3 sm:pr-1 align-left sm:auto-rows-auto items-center">
-                            {% navoption "Use Cases", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
+                        <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-8 sm:grid-cols-3 sm:pr-1 align-left sm:auto-rows-auto items-center">
+                            {% navoption "By Use Case", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
                                 {% navoption "IT/OT Middleware", "/solutions/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
                                 {% navoption "Unified Namespace", "/solutions/uns/", 1, "uns" %}{% endnavoption %}
                                 {% navoption "SCADA", "/solutions/scada/", 1, "adjustments-horizontal" %}{% endnavoption %}
                                 {% navoption "MES", "/solutions/mes/", 1, "chart" %}{% endnavoption %}
                             </ul>
-                            {% navoption "Protocols", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
-                            <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2">
+                            {% navoption "By Protocol", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
+                            <ul class="sub-menu grid grid-rows-subgrid row-span-7 ml-7 auto-rows-auto border-l-2">
                                 {% navoption "Browse All", "/solutions/protocols/", 1, "chip" %}{% endnavoption %}
                                 {% navoption "Connect X to Y", "/solutions/connect/", 1, "squares-plus" %}{% endnavoption %}
+                                {% navoption "Data Acquisition", "/solutions/use-cases/data-acquisition/", 1, "arrow-small-down" %}{% endnavoption %}
+                                {% navoption "Data Transformation", "/solutions/use-cases/data-transformation/", 1, "arrows-right-left" %}{% endnavoption %}
+                                {% navoption "Data Deployment", "/solutions/use-cases/data-deployment/", 1, "rocket-launch" %}{% endnavoption %}
+                                {% navoption "Data Storage", "/solutions/use-cases/data-storage/", 1, "circle-stack" %}{% endnavoption %}
+                                {% navoption "Data Visualisation", "/solutions/use-cases/data-visualisation/", 1, "chart" %}{% endnavoption %}
                             </ul>
                             {% navoption "By Team", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">

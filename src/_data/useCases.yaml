@@ -23,60 +23,75 @@ useCases:
       description: "Collect industrial data from any source with FlowFuse. Support for OPC-UA, MQTT, Modbus, and more."
       keywords: "data acquisition, industrial data, FlowFuse, IoT data collection"
 
-  - slug: machine-monitoring
-    name: Machine Monitoring
+  - slug: data-transformation
+    name: Data Transformation
     description: >
-      Monitor machine health, performance, and status in real time. Build
-      dashboards, set up alerts, and track OEE across your entire
-      production floor.
+      Transform, enrich, and normalize data between industrial systems.
+      Convert protocols, reshape payloads, and apply business logic to
+      raw machine data before it reaches downstream systems.
     heroDescription: >
-      Build real-time machine monitoring dashboards with FlowFuse.
-      Connect any equipment, visualize KPIs, and get alerted to
-      issues before they cause downtime.
-    relatedProtocols:
-      - opc-ua
-      - s7
-      - ethernet-ip
-    meta:
-      title: "Machine Monitoring with FlowFuse"
-      description: "Monitor machines in real time with FlowFuse. Build dashboards, track OEE, and reduce downtime."
-      keywords: "machine monitoring, industrial IoT, real-time dashboards, OEE, FlowFuse"
-
-  - slug: predictive-maintenance
-    name: Predictive Maintenance
-    description: >
-      Use data-driven insights to predict equipment failures before they
-      occur. Collect vibration, temperature, and operational data to build
-      maintenance models.
-    heroDescription: >
-      Implement predictive maintenance workflows with FlowFuse. Collect
-      sensor data, detect anomalies, and prevent unplanned downtime.
+      Transform industrial data with FlowFuse. Convert formats, enrich
+      payloads, and apply business logic — all with low-code flows.
     relatedProtocols:
       - opc-ua
       - mqtt
       - modbus
-    meta:
-      title: "Predictive Maintenance with FlowFuse"
-      description: "Implement predictive maintenance with FlowFuse. Collect sensor data and detect anomalies early."
-      keywords: "predictive maintenance, condition monitoring, FlowFuse, industrial IoT"
-
-  - slug: protocol-conversion
-    name: Protocol Conversion
-    description: >
-      Translate between different industrial protocols to unify your data
-      infrastructure. Bridge OT and IT networks without replacing existing
-      equipment.
-    heroDescription: >
-      Convert between any industrial protocols with FlowFuse. Bridge
-      legacy equipment to modern systems without middleware complexity.
-    relatedProtocols:
-      - opc-ua
-      - modbus
-      - s7
-      - mqtt
-      - ethernet-ip
       - http-rest
     meta:
-      title: "Protocol Conversion with FlowFuse"
-      description: "Convert between industrial protocols with FlowFuse. Bridge OPC-UA, Modbus, MQTT, and more."
-      keywords: "protocol conversion, protocol gateway, industrial integration, FlowFuse"
+      title: "Data Transformation with FlowFuse"
+      description: "Transform and normalize industrial data with FlowFuse. Protocol conversion, payload reshaping, and more."
+      keywords: "data transformation, protocol conversion, industrial data, FlowFuse"
+
+  - slug: data-deployment
+    name: Data Deployment
+    description: >
+      Deploy data flows and applications to edge devices and remote sites
+      at scale. Manage, update, and monitor deployments across your entire
+      fleet from a central platform.
+    heroDescription: >
+      Deploy industrial data flows at scale with FlowFuse. Push to edge
+      devices, manage remote sites, and keep your fleet in sync.
+    relatedProtocols:
+      - mqtt
+      - http-rest
+    meta:
+      title: "Data Deployment with FlowFuse"
+      description: "Deploy data flows to edge devices at scale with FlowFuse. Centralized management for distributed architectures."
+      keywords: "data deployment, edge deployment, fleet management, FlowFuse, IoT"
+
+  - slug: data-storage
+    name: Data Storage
+    description: >
+      Route industrial data to databases, historians, and data lakes.
+      Connect to time-series databases, SQL stores, cloud storage, and
+      enterprise data platforms.
+    heroDescription: >
+      Store industrial data anywhere with FlowFuse. Connect to databases,
+      historians, and cloud platforms with pre-built integrations.
+    relatedProtocols:
+      - mqtt
+      - http-rest
+      - opc-ua
+    meta:
+      title: "Data Storage with FlowFuse"
+      description: "Route industrial data to any storage with FlowFuse. Databases, historians, cloud platforms, and more."
+      keywords: "data storage, industrial data, time-series database, data historian, FlowFuse"
+
+  - slug: data-visualisation
+    name: Data Visualisation
+    description: >
+      Build real-time dashboards and visualisations for industrial data.
+      Monitor machine health, track KPIs, and display production metrics
+      with customisable, low-code interfaces.
+    heroDescription: >
+      Visualise industrial data in real time with FlowFuse. Build
+      dashboards, monitor KPIs, and share insights across your organisation.
+    relatedProtocols:
+      - opc-ua
+      - mqtt
+      - modbus
+      - s7
+    meta:
+      title: "Data Visualisation with FlowFuse"
+      description: "Build real-time industrial dashboards with FlowFuse. Monitor machines, track KPIs, and visualise production data."
+      keywords: "data visualisation, industrial dashboards, real-time monitoring, FlowFuse, IoT"
