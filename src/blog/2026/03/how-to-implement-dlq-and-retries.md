@@ -5,7 +5,7 @@ description: "Learn how to implement Dead Letter Queues and exponential backoff 
 date: 2026-03-05
 keywords: dead letter queue, Node-RED, IIoT, exponential backoff, retry pattern, SQLite, message queue, error handling, Node-RED flow, edge computing, industrial IoT, FlowFuse, message broker, data pipeline, fault tolerance
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/03/images/dlq-blog-tile.png
 tags:
 - flowfuse
 ---
