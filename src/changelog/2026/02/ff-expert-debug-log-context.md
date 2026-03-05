@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse Expert: Helping you make sense of your debug log"
 description: "Include debug log entries as context in FlowFuse Expert to help troubleshoot issues in your flows."
-date: 2026-02-27 13:00:00.0
+date: 2026-03-05 13:00:00.0
 authors: ['steve-mclaughlin']
 tags:
   - changelog
@@ -26,3 +26,4 @@ We have added the ability to include individual log entries and a quick-add sele
 *FlowFuse Expert Focused Debug Log Context*
 
 We are sure you will love this feature - and there is more to come too!
+
