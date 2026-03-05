@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+sitemapPriority: 0.7
+---
+<!-- Connect X to Y Page Layout -->
+<div class="w-full page hero">
+    <div class="w-full pt-12 pb-12 md:pt-6 md:pb-8">
+        <div class="px-6 container mx-auto text-center md:max-w-screen-lg">
+            <p class="text-indigo-600 font-semibold uppercase tracking-wide text-sm mb-2">Protocol Integration</p>
+            <h1 class="mt-0 m-auto font-medium max-w-2xl">
+                Connect <span class="text-indigo-600">{{ fromName }}</span>
+                to <span class="text-indigo-600">{{ toName }}</span>
+            </h1>
+            <p class="mb-10 max-w-2xl mx-auto">{{ pairDescription }}</p>
+
+            <!-- Visual connection diagram -->
+            <div class="flex items-center justify-center gap-2 sm:gap-4 my-8 flex-wrap sm:flex-nowrap">
+                <div class="bg-white border-2 border-indigo-200 rounded-lg p-3 sm:p-4 text-center min-w-[100px]">
+                    <span class="font-bold text-base sm:text-lg">{{ fromShortName }}</span>
+                </div>
+                <div class="text-indigo-400 text-xl sm:text-2xl">&rarr;</div>
+                <div class="bg-indigo-50 border-2 border-indigo-300 rounded-lg p-3 sm:p-4 text-center min-w-[100px]">
+                    <span class="font-bold text-base sm:text-lg text-indigo-700">FlowFuse</span>
+                </div>
+                <div class="text-indigo-400 text-xl sm:text-2xl">&rarr;</div>
+                <div class="bg-white border-2 border-indigo-200 rounded-lg p-3 sm:p-4 text-center min-w-[100px]">
+                    <span class="font-bold text-base sm:text-lg">{{ toShortName }}</span>
+                </div>
+            </div>
+
+            <div class="flex gap-3 justify-center">
+                <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'connect-{{ fromSlug }}-to-{{ toSlug }}'})">TALK TO AN EXPERT</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'connect-{{ fromSlug }}-to-{{ toSlug }}'})">GET STARTED</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content body -->
+<div class="w-full px-6">
+    <div class="max-w-screen-lg mx-auto">
+        {{ content | safe }}
+    </div>
+</div>
+
+<!-- Reverse direction link -->
+<div class="w-full py-8 px-6 text-center">
+    <div class="max-w-screen-lg mx-auto">
+        <p class="text-gray-600">
+            Looking for the other direction?
+            <a href="/solutions/connect/{{ toSlug }}-to-{{ fromSlug }}/" class="text-indigo-600 font-semibold">
+                Connect {{ toName }} to {{ fromName }} &rarr;
+            </a>
+        </p>
+    </div>
+</div>
+
+<!-- Related Protocol Pages -->
+<div class="w-full bg-indigo-50/50 py-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-8">Learn More</h2>
+        <div class="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+            <a href="/solutions/protocols/{{ fromSlug }}/"
+               class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline group">
+                <span class="font-semibold text-indigo-600 group-hover:text-indigo-800">{{ fromName }}</span>
+                <p class="text-sm text-gray-600 mt-1 mb-0">All {{ fromShortName }} integrations</p>
+            </a>
+            <a href="/solutions/protocols/{{ toSlug }}/"
+               class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline group">
+                <span class="font-semibold text-indigo-600 group-hover:text-indigo-800">{{ toName }}</span>
+                <p class="text-sm text-gray-600 mt-1 mb-0">All {{ toShortName }} integrations</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% include "common-cta.njk" %}
