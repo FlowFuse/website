@@ -505,7 +505,7 @@ Once deployed, the flow should look like this:
 
 **5. Act on the Result**
 
-Connect the scoring output to whatever suits your operation. For testing, a debug node shows results in real time. For production, an mqtt-out node can publish anomaly alerts downstream, and the [FlowFuse Dashboard](https://dashboard.flowfuse.com) package can visualise the anomaly score over time with a clear motor state indicator.
+Connect the scoring output to whatever suits your operation. For testing, a debug node shows results in real time. For production, an mqtt-out node can publish anomaly alerts downstream, the [FlowFuse Dashboard](https://dashboard.flowfuse.com) package can visualise the anomaly score over time with a clear motor state indicator, and alerting nodes can notify your team directly, via [Telegram](/node-red/notification/email/), [email](/node-red/notification/telegram/), or [SIGNL4](/blueprints/other/mobile-alerting/) for structured mobile alerts with on-call scheduling and acknowledgement tracking.
 
 ### What the Output Looks Like
 
