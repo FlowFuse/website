@@ -1,6 +1,6 @@
 ---
-title: "FlowFuse Expert: Stay Up to Date with FlowFuse Expert"
-description: "The FlowFuse Expert will now let you know if there is an update so that you don't miss out on new features."
+title: "FlowFuse Expert: Never Miss an Update"
+description: "FlowFuse Expert now shows a banner when a new version is available, so you always have access to the latest features."
 date: 2026-02-27 13:00:00.0
 authors: ['steve-mclaughlin']
 tags:
