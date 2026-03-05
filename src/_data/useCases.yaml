@@ -1,0 +1,82 @@
+# Industrial use cases for FlowFuse
+# Each generates a page at: /solutions/use-cases/{slug}/
+#
+# To add a new use case, add an entry below.
+useCases:
+  - slug: data-acquisition
+    name: Data Acquisition
+    description: >
+      Collect data from diverse industrial sources including PLCs, sensors,
+      and legacy equipment. Normalize and route data to databases, cloud
+      platforms, and analytics tools.
+    heroDescription: >
+      FlowFuse makes industrial data acquisition simple. Connect any
+      device, transform any protocol, and deliver data anywhere — all
+      from a single platform.
+    relatedProtocols:
+      - opc-ua
+      - mqtt
+      - modbus
+      - ethernet-ip
+    meta:
+      title: "Data Acquisition with FlowFuse"
+      description: "Collect industrial data from any source with FlowFuse. Support for OPC-UA, MQTT, Modbus, and more."
+      keywords: "data acquisition, industrial data, FlowFuse, IoT data collection"
+
+  - slug: machine-monitoring
+    name: Machine Monitoring
+    description: >
+      Monitor machine health, performance, and status in real time. Build
+      dashboards, set up alerts, and track OEE across your entire
+      production floor.
+    heroDescription: >
+      Build real-time machine monitoring dashboards with FlowFuse.
+      Connect any equipment, visualize KPIs, and get alerted to
+      issues before they cause downtime.
+    relatedProtocols:
+      - opc-ua
+      - s7
+      - ethernet-ip
+    meta:
+      title: "Machine Monitoring with FlowFuse"
+      description: "Monitor machines in real time with FlowFuse. Build dashboards, track OEE, and reduce downtime."
+      keywords: "machine monitoring, industrial IoT, real-time dashboards, OEE, FlowFuse"
+
+  - slug: predictive-maintenance
+    name: Predictive Maintenance
+    description: >
+      Use data-driven insights to predict equipment failures before they
+      occur. Collect vibration, temperature, and operational data to build
+      maintenance models.
+    heroDescription: >
+      Implement predictive maintenance workflows with FlowFuse. Collect
+      sensor data, detect anomalies, and prevent unplanned downtime.
+    relatedProtocols:
+      - opc-ua
+      - mqtt
+      - modbus
+    meta:
+      title: "Predictive Maintenance with FlowFuse"
+      description: "Implement predictive maintenance with FlowFuse. Collect sensor data and detect anomalies early."
+      keywords: "predictive maintenance, condition monitoring, FlowFuse, industrial IoT"
+
+  - slug: protocol-conversion
+    name: Protocol Conversion
+    description: >
+      Translate between different industrial protocols to unify your data
+      infrastructure. Bridge OT and IT networks without replacing existing
+      equipment.
+    heroDescription: >
+      Convert between any industrial protocols with FlowFuse. Bridge
+      legacy equipment to modern systems without middleware complexity.
+    relatedProtocols:
+      - opc-ua
+      - modbus
+      - s7
+      - mqtt
+      - ethernet-ip
+      - http-rest
+    meta:
+      title: "Protocol Conversion with FlowFuse"
+      description: "Convert between industrial protocols with FlowFuse. Bridge OPC-UA, Modbus, MQTT, and more."
+      keywords: "protocol conversion, protocol gateway, industrial integration, FlowFuse"
