@@ -325,9 +325,9 @@ The storage layer you pick for your DLQ is an architectural decision, not a conf
 
 SQLite is the right starting point for most IIoT edge deployments. It is embedded, needs no additional infrastructure, survives restarts, and gives you full SQL queryability over every failed message. It does one job and does it well.
 
-It has one hard limit: it is local. The moment your pipeline spans multiple Node-RED instances across different machines, each node holds its own isolated queue. Cross-node visibility disappears. Coordinated replay becomes a manual problem. That is when you move to PostgreSQL as a shared DLQ store across multiple Node RED instances, or, if the pipeline is broker-based, use MQTT persistent sessions to improve delivery resilience.
+It has one hard limit: it is local. The moment your pipeline spans multiple Node-RED instances across different machines, each node holds its own isolated queue. Cross-node visibility disappears. Coordinated replay becomes a manual problem. That is when you move to [PostgreSQL](/blog/2025/08/getting-started-with-flowfuse-tables/) as a shared DLQ store across multiple Node RED instances, or, if the pipeline is broker-based, use [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) persistent sessions to improve delivery resilience.
 
-Kafka sits at the far end of the spectrum. Replayable, partitioned, built for distributed scale. It is the right answer for high-throughput pipelines where consumer groups and horizontal scaling are real requirements. It is the wrong answer for an edge gateway that processes a few hundred messages a minute. The operational weight is significant and it deserves to be earned.
+[Kafka](/blog/2024/03/using-kafka-with-node-red/) sits at the far end of the spectrum. Replayable, partitioned, built for distributed scale. It is the right answer for high-throughput pipelines where consumer groups and horizontal scaling are real requirements. It is the wrong answer for an edge gateway that processes a few hundred messages a minute. The operational weight is significant and it deserves to be earned.
 
 Match the storage to the architecture you have, not the one you imagine you might need. Start simple. Migrate when the constraints force you to.
 
@@ -344,3 +344,5 @@ The implementation here is lean by design. It runs inside Node-RED with nothing 
 And you will need it. Not because your flows are poorly built, but because distributed systems fail. APIs go down. Networks drop. Services timeout at the worst possible moment. The question has never been whether that happens. It is whether you are ready when it does.
 
 Now you are.
+
+*If you're building production-grade Node-RED systems and want help designing reliable IIoT pipelines with retries, observability, and DLQs, [contact the FlowFuse team](/contact-us/) to discuss your use case.*
