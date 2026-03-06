@@ -126,7 +126,7 @@ added to the list, especially when you're considering a job offer at FlowFuse.
 
 For employees located in the United States, FlowFuse offers health insurance coverage through Deel; since this changes regularly, please see Deel for accurate information.
 
-Health insurance benefits begin on the employee’s **first day of employment**.
+Health insurance benefits do not begin immediately. Employees have until **mid-month of the month they start** to enroll, with coverage beginning on the **1st of the following month**. For example, if you start on March 2nd and enroll by mid-March, coverage will begin April 1st.
 
 We commit to offering at least one medical plan, one dental plan, and one vision plan with 100% coverage for team members. We also subsidize some level of coverage for dependants, as well, but specifics are tied to plan details.  
 
