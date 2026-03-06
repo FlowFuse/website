@@ -227,13 +227,13 @@ When a message reaches this stage, retries are finished. The goal now is to pres
 3. The Query node is pre-configured to connect to your FlowFuse-managed database automatically. No credentials needed.
 4. Paste the following into the Query field:
 ```sql
-CREATE TABLE IF NOT EXISTS dlq (
-  id TEXT PRIMARY KEY,
-  topic TEXT,
-  payload TEXT,
-  attempts INTEGER,
-  last_error TEXT,
-  captured_at TEXT
+CREATE TABLE IF NOT EXISTS "dlq" (
+  "id" TEXT PRIMARY KEY,
+  "topic" TEXT,
+  "payload" TEXT,
+  "attempts" INTEGER,
+  "last_error" TEXT,
+  "captured_at" TEXT
 )
 ```
 
