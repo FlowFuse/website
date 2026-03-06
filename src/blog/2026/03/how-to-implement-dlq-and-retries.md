@@ -298,4 +298,4 @@ And you will need it. Not because your flows are poorly built, but because distr
 
 Now you are.
 
-*If you are building production-grade IIoT pipelines and want help designing reliable data flows with retries, observability, and DLQs, [contact the FlowFuse team](/contact-us/) to discuss your use case.*
+*Stop losing data you'll never get back. [Contact us](/contact-us/) to build a fault-tolerant IIoT pipeline that catches every failure before it disappears.*
