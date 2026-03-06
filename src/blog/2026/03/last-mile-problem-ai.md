@@ -2,7 +2,7 @@
 title: "The Last Mile Problem in Industrial AI"
 subtitle: "You approved the budget. The model works. So why is it still in staging?"
 description: "Your AI pilot passed every test and stalled before production. Here is why that keeps happening, and what it actually takes to stop it."
-date: 2026-03-05
+date: 2026-03-09
 keywords: 
 authors: ["sumit-shinde"]
 image: 
