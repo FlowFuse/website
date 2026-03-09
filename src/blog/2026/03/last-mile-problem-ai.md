@@ -5,7 +5,7 @@ description: "Your AI pilot passed every test and stalled before production. Her
 date: 2026-03-09
 keywords: 
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/03/images/last-mile-problem-ai.png
 tags:
 - flowfuse
 ---
