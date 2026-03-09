@@ -19,13 +19,13 @@ The new FlowFuse 1.6 adds new support for multi-instance Node-RED within a singl
 
 FlowFuse 1.6 expands the scope of applications to now allow for multiple instances of Node-RED. For complex Node-RED applications, it is common to have different flows interacting with other flows or flows deployed to different target environments. The ability to associate all these different flows with a single application makes it easier for the development, test and deployment of these types of complex applications.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OHChdWeRI9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="OHChdWeRI9Q" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Access Node-RED logs from remote devices
 
 FlowFuse makes it easy to deploy Node-RED out to remote devices. However, once Node-RED has been deployed to the remote device it is often difficult to troubleshoot or debug. Now with FlowFuse 1.6, you can get access to the Node-RED logs from remote devices. This makes it much easier to understand and debug the behavior of a remote device.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yW1zxwiCmto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="yW1zxwiCmto" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Other Improvements
 
@@ -61,7 +61,7 @@ Application Overview: “Open Editor” shouldn’t show (or should be disabled)
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({{ site.onboardingURL }}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

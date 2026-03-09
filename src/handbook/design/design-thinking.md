@@ -17,7 +17,7 @@ found within [FigJam](./tools#figjam-(more-info)), we have also written up some 
 
 ## User Personas
 
-Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. At FlowFuse, we have many personas that will evolve over time, we have written up some of our Personas [here](../product/personas/).
+Personas are fictional characters that represent the different users we expect to interact with FlowFuse as a brand and/or platform. At FlowFuse, we have many personas that will evolve over time, we have written up some of our Personas [here](../engineering/product/personas/).
 
 <div class="grid grid-cols-2 gap-4">
     <div class="rounded-md bg-gray-900 text-white p-4 border-2 border-black">

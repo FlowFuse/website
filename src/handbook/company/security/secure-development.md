@@ -37,7 +37,7 @@ FlowFuse policy requires that:
     - manual product testing and verification prior to release to production
    
    Code reviews should also cover documentation and tests to ensure our
-   [definition of done](../../development/project-management.md#defining-done) is
+   [definition of done](../../engineering/project-management.md#defining-done) is
    achieved.
 
  3. Risk assessment activities (i.e. threat modeling) must be performed for a

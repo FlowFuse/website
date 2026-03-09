@@ -30,7 +30,7 @@ _Image showing FlowFuse collecting data from a PLC using OPC UA and logging it t
 
 Before getting started, make sure you have:
 
-- **A running FlowFuse instance** – If you don’t have one yet, [sign up]({{ site.onboardingURL }}) for FlowFuse and set up an instance on your edge device. This device will manage data collection and logging from your PLC using Node-RED.
+- **A running FlowFuse instance** – If you don’t have one yet, [sign up]({% include "sign-up-url.njk" %}) for FlowFuse and set up an instance on your edge device. This device will manage data collection and logging from your PLC using Node-RED.
 
 ## Step 1: Setting Up PLC Communication in FlowFuse
 

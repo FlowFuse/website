@@ -1,5 +1,5 @@
 ---
-title: FlowFuse Assistant just got smarter
+title: FlowFuse Expert just got smarter
 description: "Understand what your teams flows are doing with the power of AI"
 date: 2025-06-30 12:00:00.0  
 authors: ['stephen-mclaughlin']
@@ -9,7 +9,7 @@ issues:
   - https://github.com/FlowFuse/nr-assistant/pull/44
 ---
 
-Following on from the recent improvements we made earlier this month, we have added even more goodness to the FlowFuse Assistant:
+Following on from the recent improvements we made earlier this month, we have added even more goodness to the FlowFuse Expert:
 
 We have: 
 - Added a menu for quick access to the new features

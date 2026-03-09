@@ -1,2 +1,23 @@
-<div class="meetings-iframe-container -mb-20 md:-mb-6" data-src="{{ hubspot.dataSrc }}"></div>
-<script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js" onerror="hsFallback(this)"></script>
+{% set fallbackId = 'meetings-consent-placeholder' %}
+{% set contentType = 'meeting calendar' %}
+{% include "hubspot/consent-fallback.njk" %}
+<script>
+    window._ffLoadMeetings = function () {
+        var placeholder = document.getElementById('meetings-consent-placeholder');
+        if (!placeholder) return;
+
+        var parent = placeholder.parentNode;
+
+        var container = document.createElement('div');
+        container.className = 'meetings-iframe-container -mb-20 md:-mb-6';
+        container.setAttribute('data-src', '{{ hubspot.dataSrc }}');
+        parent.insertBefore(container, placeholder);
+
+        var script = document.createElement('script');
+        script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
+        script.onload = function () { placeholder.remove(); };
+        script.onerror = function () { hsFallback(placeholder); };
+        parent.insertBefore(script, placeholder);
+        window._ffLoadMeetings = null;
+    };
+</script>

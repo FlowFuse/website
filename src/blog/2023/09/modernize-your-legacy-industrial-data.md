@@ -87,7 +87,7 @@ While Node-RED is a fantastic tool for data collection, transformation, and anal
 
 That’s where FlowFuse steps in to make your life easier. FlowFuse is designed to tackle these challenges head-on. It enhances Node-RED with features that simplify collaboration, strengthen security, and provide scalable deployment options. Imagine having a robust system that not only keeps your Node-RED applications running smoothly but also scales effortlessly with your needs. With FlowFuse, you gain access to a comprehensive suite of production-ready [features](/platform/features/) designed to streamline your Node-RED workflows and boost overall performance.
 
-**[Sign up]({{ site.onboardingURL }}) now for a free trial and experience FlowFuse's features**
+**[Sign up]({% include "sign-up-url.njk" %}) now for a free trial and experience FlowFuse's features**
 
 ### Learn More
 

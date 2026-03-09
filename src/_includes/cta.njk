@@ -6,14 +6,29 @@
   {% endif %}
 
   {% assign link_text = '' %}
-  {% assign link_url = cta_url | default: '#' %} <!-- Defaulting to '#' if cta_url is not defined -->
+  {% capture main_cta_url %}{% include "sign-up-url.njk" %}{% endcapture %}
+  {% assign link_url = main_cta_url %}
+  {% assign cta_query_value = '' %}
+
+  {% if cta_query and cta_query != '' %}
+    {% assign cta_query_value = cta_query %}
+  {% elsif cta_url and cta_url contains '?' %}
+    {% assign cta_query_value = cta_url | split: '?' | last %}
+  {% endif %}
 
   {% if cta_type == "contact" %}
     {% assign link_text = "Talk to Us Now" %}
+    {% assign link_url = "/contact-us/" %}
   {% elsif cta_type == "demo" %}
     {% assign link_text = "Let’s Walk You Through It – Book a Demo Today" %}
+    {% assign link_url = "/book-demo/" %}
   {% else %}
     {% assign link_text = "Sign Up for FlowFuse Now to Get Started" %}
+    {% assign link_url = main_cta_url %}
+  {% endif %}
+
+  {% if cta_query_value != '' %}
+    {% assign link_url = link_url | append: '?' | append: cta_query_value %}
   {% endif %}
 
   <a href="{{ link_url }}">

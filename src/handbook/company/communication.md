@@ -98,7 +98,7 @@ Our recommended Slack (light) theme is:
 You will not automatically join every Slack channel when you start. Below are some helpful channels you may want to join depending on your interests and work.
 
 - `#announcements` for company-wide announcements.
-- `#feature-demos` for product updates. Everyone should stay aware of product changes, no matter their role.
+- [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK) for product demos of sprint and release deliveries, showcased to a wide audience (marketing, sales, product strategy, leadership). Everyone should stay aware of product changes, no matter their role.
 - `#ops-metrics` for sales and engagement metrics.
 - `#virtual-coffee` to join the coffee call rotation.
 - `#gh-handbook` to follow updates to the handbook.
@@ -119,6 +119,12 @@ We use a simple naming structure in Slack to make channels easier to find and un
 We recommend organizing these channels into [custom Slack sections](https://slack.com/help/articles/360043207674-Organize-your-sidebar-with-custom-sections) for easier navigation.
 
 We also have channels for specific groups, such as `#people-managers` for managers and `#us-hr` for HR topics specific to US team members.
+
+##### Project channels
+
+Project channels are created for ongoing work within a product lane with a clear scope. Use them for day-to-day coordination, intermediate demos, design feedback, and scope discussions among the directly involved stakeholders. 
+
+When a feature is ready to be delivered, post the final demo in [`#feature-demos`](https://flowfuse.slack.com/archives/C04GW82DJFK). This keeps `#feature-demos` focused on what is ready for a wider audience, and `#proj-` channels focused on what is still in progress.
 
 When you create a new channel, add a clear description. This helps everyone browse channels and decide which ones are relevant to their work.
 
@@ -162,24 +168,23 @@ Example standup messages:
 
 1. Purpose & Attendance
 Our Monday meeting serves a dual purpose: maintaining organizational alignment as we scale and fostering a connected team culture.
-* First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals.
-* Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities.
+   * First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals.
+   * Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities.
 
 2. Format: Department Spotlights
 Each Monday, one department will lead a 5–10 minute presentation. These briefings are intended to be concise, high-level, and focused on information that impacts the broader organization.
 The rotation will follow a four-week cycle:
-* Week 1: Company Update – Focusing on organizational health and "big picture" goals by the CEO
-* Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by the Engineering & Product leadership
-* Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Sales leadership
-* Week 4: Marketing – Highlighting how we are communicating our value to the market by marketing leadership
+   * Week 1: Company Update – Focusing on organizational health and "big picture" goals by the CEO
+   * Week 2: Technology & Product – Demonstrating what we are building and the "why" behind it by the Engineering & Product leadership
+   * Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Sales leadership
+   * Week 4: Marketing – Highlighting how we are communicating our value to the market by marketing leadership
 
 3. Presenter Guidelines 
 To maintain a high-energy pace and respect the team's time:
-
-* Content: Focus on three pillars: Recent Wins, Current Challenges, and Upcoming Milestones.
-* Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
-* Visuals: Keep to 3–5 high-impact, data-informed slides.
-* Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
+   * Content: Focus on three pillars: Recent Wins, Current Challenges, and Upcoming Milestones.
+   * Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
+   * Visuals: Keep to 3–5 high-impact, data-informed slides.
+   * Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
 
 4. Open Agenda (Optional Segment)
 For the latter portion of the meeting, team members are encouraged to add items to the agenda. This is an informal space to share weekend highlights, personal news, or professional updates that keep you busy.

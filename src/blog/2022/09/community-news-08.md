@@ -34,5 +34,5 @@ Docker has [announced](https://twitter.com/Docker/status/1559919666721693699?t=Q
 [**Simulating IOT Projects in Your Browser**](https://wokwi.com/)  
 While not directly related to FlowFuse we’ve enjoyed wasting a little too much time looking at the simulated IOT projects on [Wokwi](https://wokwi.com/). The [Simon Game with Score](https://wokwi.com/projects/328451800839488084) project is a little too addictive.
     
-[**Try FlowFuse for Free**]({{ site.onboardingURL }})  
+[**Try FlowFuse for Free**]({% include "sign-up-url.njk" %})  
 As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowFuse when you create a new team. To get this discount please use the code RELEASE09 when on the payment page after creating a new team.

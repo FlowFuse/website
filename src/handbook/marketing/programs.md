@@ -185,3 +185,100 @@ Date: [Submission date]
 5. Resources and Budget Estimate
 [Your response here]
 ```
+
+## 7. Analytics & Tag Management
+
+### Adding Tags in Google Tag Manager (GTM)
+
+When creating or updating tags in GTM, always configure the **Consent Settings** for each tag before publishing. Without this, a tag may fire as soon as the page loads — before the user has had a chance to accept or decline cookies — which is a GDPR compliance issue.
+
+Use this sequence every time you create or update a tag:
+
+1. Identify the tag category.
+2. Configure [**Consent Settings**](#required-consent-type-by-tag-category) in GTM (`Advanced Settings → Consent Settings`).
+3. Select the correct [primary trigger type](#primary-trigger-selection).
+4. Add the shared [consent-change trigger](#shared-consent-change-trigger-(ff-consent-update)) `FF Consent Update` where required.
+5. [Validate in Tag Assistant before publishing](#validation-in-tag-assistant-before-publishing).
+
+#### Required consent type by tag category
+
+| Tag category | Required consent type |
+|---|---|
+| Analytics (e.g. Google Analytics, HubSpot, PostHog) | `analytics_storage` |
+| Advertising & remarketing (e.g. Google Tag AW (Google Ads base tag), LinkedIn InsightTag, Conversion Linker, Meta Pixel) | `ad_storage` |
+| Functional tools (non-essential UX features that do not perform analytics/advertising tracking) | `functionality_storage` |
+| Personalization & A/B testing (e.g. tools that remember user preferences or show tailored content) | `personalization_storage` |
+| Security (e.g. fraud prevention, bot detection) | `security_storage` — typically strictly necessary; no consent required in most cases |
+
+#### Primary trigger selection
+
+- **Google Tag type tags (Google Tag AW, Google Analytics 4) and base tracking/pixel tags** (for example LinkedIn InsightTag): use `All Pages` (Page View), not `Initialization - All Pages`.
+- **Conversion tags** (thank-you page, button click, form submit, custom conversion event): use a scoped trigger tied to the conversion action.
+
+#### Shared consent-change trigger (`FF Consent Update`)
+
+The website emits one Data Layer event for consent changes:
+
+- Trigger name in GTM: `FF Consent Update`
+- Event name: `ff_consent_updated`
+
+Use this trigger to support in-session firing immediately after consent changes, without requiring a page reload.
+
+How to apply it:
+
+1. Open the tag.
+2. In **Triggering**, add `FF Consent Update`.
+3. Keep the tag's existing primary trigger.
+4. Save and test in Tag Assistant.
+
+When to use it:
+
+- Add it to consent-aware **sitewide Page View tags** (typically tags that use `All Pages`).
+- Do not add it to action-scoped conversion tags by default.
+- Do not add it to `Initialization - All Pages` Google Tag AW.
+
+#### Validation in Tag Assistant before publishing
+
+Use GTM Preview/Tag Assistant to verify consent behavior before publishing container changes.
+
+Recommended references:
+
+- [Troubleshoot consent mode with Tag Assistant](https://developers.google.com/tag-platform/security/guides/consent-debugging)
+
+Validation steps:
+
+1. In GTM, click **Preview** and connect to the website URL.
+2. Trigger the consent flow on the site (accept/reject categories).
+3. In Tag Assistant, verify consent signals (`default` and `update`) are present.
+4. Verify the custom event `ff_consent_updated` appears when consent changes.
+5. For each tag under test, confirm it is **Fired** or **Blocked** according to its configured consent requirement.
+6. Publish only after expected behavior is confirmed.
+
+> If you're unsure which consent type applies to a new tag, check with the team before publishing.
+
+### Adding new third-party tracking tools
+
+To avoid compliance gaps, all third-party tracking scripts, pixels, and analytics tools must follow this process before being deployed.
+
+**Rule: GTM is the single point of control.**
+No tracking scripts should be added directly to HTML templates, `<head>` tags, layout files, or JavaScript bundles. GTM is the only approved deployment path for third-party tracking tools. This ensures every tool is subject to consent enforcement and can be audited or disabled without a code deployment.
+
+This also applies to integrations available inside third-party platforms. For example, HubSpot offers a built-in pixel integration (under Marketing → Ads → Settings → Pixels) that can deploy scripts like the Meta Pixel directly through HubSpot's own script. **Do not use this.** Pixels deployed through HubSpot fire outside of GTM's consent mode, making it impossible to enforce the correct consent type or audit them independently. Always deploy pixels through GTM instead.
+
+**Before adding any new tool, answer these questions:**
+
+1. **What data does it collect?** Does it collect personal data (IP addresses, user IDs, behavioral data)?
+2. **Does it set cookies?** Check the tool's privacy policy or cookie documentation. If the answer is yes — or unclear — assume it requires user consent.
+3. **What consent type applies?** Use the table above to determine whether the tool requires `analytics_storage`, `ad_storage`, or another consent type.
+4. **Is it strictly necessary?** Only tools that are essential for the site to function (e.g. security, authentication) may be exempt from consent — and these are rare. If in doubt, require consent.
+
+**Checklist before publishing a new tag in GTM:**
+
+- Tag is deployed via GTM — not hardcoded in any template or layout file
+- Consent requirement is set in **Advanced Settings → Consent Settings**
+- Trigger type follows the guidance in the [primary trigger selection](#primary-trigger-selection) section above
+- `FF Consent Update` is attached to consent-aware sitewide `All Pages` tags that should react immediately after consent changes
+- The tool and its consent category are documented in the table above in this handbook section
+- A team member with context on GDPR has reviewed the setup before the first publish
+
+> Any new tracking tool that cannot be deployed through GTM (e.g. it requires a code-level integration) must be reviewed and approved before implementation. Reach out in the marketing Slack channel before proceeding.

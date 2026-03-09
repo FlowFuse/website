@@ -95,7 +95,7 @@ While OpenTelemetry excels at tracing and optimizing Node-RED flows, FlowFuse of
 
 FlowFuse also boosts collaboration and security through features like team management, role-based access control, multi-factor authentication, and snapshot recovery. These capabilities ensure effective management, secure access, and easy recovery from changes, making FlowFuse an essential tool for optimizing and overseeing your Node-RED deployments.
 
-{% include "cta.njk", cta_url: "/get-started?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Monitoring%20and%20Optimizing%20Node-RED%20Flows%20with%20Open%20Telemetry", cta_type: "signup", cta_text: "" %}
+{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Monitoring%20and%20Optimizing%20Node-RED%20Flows%20with%20Open%20Telemetry", cta_type: "signup", cta_text: "" %}
 
 ## Conclusion
 

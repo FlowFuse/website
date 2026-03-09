@@ -18,7 +18,7 @@ Deploy Node-RED to many devices quickly, and allow a staged development process 
 
 Keep reading for the details of what's in this release or you can watch our 1 minute roundup video of the new release above.
 
-To make it easy for everyone to experience FlowFuse, we are introducing a new free 30-day trial. You can now experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowFuse Cloud;]({{ site.onboardingURL }}) no credit card is required!
+To make it easy for everyone to experience FlowFuse, we are introducing a new free 30-day trial. You can now experience the power of using FlowFuse to quickly deliver Node-RED applications in a reliable, repeatable, collaborative, and secure manner. To get your free trial simply [sign up for FlowFuse Cloud;]({% include "sign-up-url.njk" %}) no credit card is required!
 
 ## New User Features
 
@@ -28,14 +28,14 @@ To make it easy for everyone to experience FlowFuse, we are introducing a new fr
 Most prominently, FlowFuse 1.4 features automatic device onboarding for fleets. Simply download a FlowFuse device provisioning credential to allow quick roll-out to a whole fleet, without the need to have device specific configuration. When the agent starts, the FlowFuse agent and the Node-RED snapshot will automatically be provisioned to the device and start operations. [Issue #1212](https://github.com/FlowFuse/flowfuse/issues/1212)
 
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/XTVw4O4-Crg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><lite-youtube videoid="XTVw4O4-Crg" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 **Support for Staged Development**
 
 A new feature of 1.4 is the ability to setup staged deployments. This makes it possible to simply move a project between a Development > Test > Production for your Node-RED application delivery. [Issue #1580](https://github.com/FlowFuse/flowfuse/issues/1580)
 
 
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/6QOmotlrwWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div><lite-youtube videoid="6QOmotlrwWw" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Improvements
 
@@ -79,7 +79,7 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({{ site.onboardingURL }}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

@@ -1,0 +1,207 @@
+---
+layout: page
+nohero: true
+image: /vs/images/flowfuse-vs-litmus-hero.png
+imageDescription: "FlowFuse vs Litmus Hero Image"
+heroTitle: "A Flexible Alternative to <span class='text-indigo-600'>Litmus</span>"
+meta:
+    title: "A Flexible Alternative to Litmus"
+    description: "FlowFuse is an open, cloud-ready platform that industrial teams choose as an alternative to Litmus. Build faster, stay flexible, and scale Industrial AI on your terms — without unnecessary lock-in."
+hero:
+    buttonText: "Talk to a Migration Expert"
+    buttonLink: "https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation"
+    buttonReference: "vs-litmus"
+sectionTitle: "Why Industrial Teams Consider <span class='text-indigo-600'>FlowFuse Instead of Litmus</span>"
+sectionSubtitle: "Open, flexible edge architecture. Reduced vendor lock-in and higher portability."
+sections:
+    - svgPath: "components/icons/cube-transparent.svg"
+      title: "Built for open architectures"
+      description: "Run your Industrial IoT and AI workloads at the edge, on-premises, or in the cloud, and keep the freedom to choose the infrastructure and services that fit each site."
+    - svgPath: "components/icons/squares-plus.svg"
+      title: "Open & extensible"
+      description: "Built on open-source Node-RED and an open connector ecosystem, so engineering teams can integrate a wide range of OT assets, IT systems, and AI services with full visibility into every flow."
+    - svgPath: "components/icons/link.svg"
+      title: "Fast integrations"
+      description: "Native support for MQTT, OPC-UA, REST APIs, SQL targets, and UNS-style architectures helps reduce custom glue code and accelerates time from prototype to production."
+table:
+    - feature: "Platform foundations"
+      flowFuse: "Built on Node-RED and an open-source ecosystem"
+      litmus: "Enterprise-grade Industrial Edge Data Platform combining connectivity, analytics, and AI in one product"
+    - feature: "Openness & transparency"
+      flowFuse: "Flows are human-readable, portable, and can be version-controlled alongside code"
+      litmus: "Integrated environment designed to abstract complexity for large-scale deployments"
+    - feature: "Deployment flexibility"
+      flowFuse: "Designed for edge, on-prem, and cloud deployments across heterogeneous infrastructures"
+      litmus: "Deployed at thousands of industrial sites with a strong focus on Industrial AI at scale"
+    - feature: "Integration patterns"
+      flowFuse: "MQTT, OPC-UA, REST, SQL, UNS patterns, and a large library of community nodes"
+      litmus: "Broad OT connectivity plus pre-built connectors for major clouds and data platforms"
+    - feature: "Extensibility model"
+      flowFuse: "Extend with JavaScript, custom Node-RED nodes, and APIs to fit unique plant requirements"
+      litmus: "Extend within the Litmus platform using its built-in capabilities and integrations"
+    - feature: "Industrial AI approach"
+      flowFuse: "Bring-your-own models, services, and clouds to keep AI strategy flexible over time"
+      litmus: "Positioning as 'Industrial AI-ready' with an integrated edge data and AI stack"
+    - feature: "Governance & ownership"
+      flowFuse: "Designed so customers can deeply inspect, test, and govern the logic that runs at the edge"
+      litmus: "Emphasizes centralized management of nodes, apps, and models at scale"
+switch:
+    title: How to Move Workloads from Litmus to FlowFuse
+    content:
+        - "<span class='font-semibold'>Migration consultation:</span> We review your current Litmus deployment, main use cases, and data flows, then propose an equivalent FlowFuse architecture that preserves your requirements while increasing openness and flexibility."
+        - "<span class='font-semibold'>Try FlowFuse with your data:</span> Connect representative OT assets, replicate key pipelines, and validate performance, maintainability, and operator experience in a controlled pilot before you commit."
+        - "<span class='font-semibold'>Gradual rollout with expert support:</span> We support you from initial pilot to multi-site rollout, helping your team standardize patterns, document best practices, and train engineers on the FlowFuse-based approach."
+    cta: TALK TO A MIGRATION EXPERT
+    ctaUrl: "/book-demo"
+cta:
+    title: "Exploring Alternatives to Litmus?"
+    content: "Discover how FlowFuse can help your team modernize its industrial edge and data infrastructure with an open, flexible platform that complements your existing AI and analytics strategy. <a href='https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation' class='font-semibold'>Book a Demo with a FlowFuse Expert</a>."
+---
+<!--Hero Content-->
+<div class="w-full px-6">
+    <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
+        <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
+            <div class="m-auto md:w-1/2">
+                <h1 class="w-full mt-0 m-auto">
+                    {{ heroTitle | safe }}
+                </h1>
+                <p class="mb-10">
+                    {{ meta.description }}
+                </p>
+                <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">    
+                    {% macro migrationExpertButton(desktop=true) %}
+                    <a class="ff-btn ff-btn--primary text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}" 
+                        href="{{ hero.buttonLink }}" 
+                        onclick="capture('talk-to-migration-expert', {'reference': '{{ hero.buttonReference }}'})">
+                        {{ hero.buttonText }}
+                    </a>
+                    {% endmacro %}
+                    {{ migrationExpertButton() }}
+                    {% macro tryItOutButton(desktop=true) %}
+                    <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}" 
+                    href="{% include "sign-up-url.njk" %}" 
+                    onclick="capture('try-it-out', {'reference': '{{ hero.buttonReference }}'})">
+                        <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                            TRY IT OUT
+                            {% include "components/icons/arrow-right.svg" %}
+                        </span>
+                    </a>
+                    {% endmacro %}
+                    {{ tryItOutButton() }}
+                </div>
+            </div>
+            <div class="md:w-1/2 flex-grow relative">
+                <div class="ff-image-cover ff-image-rounded w-full h-full">
+                    {% set imageSrc = ["./", image ] | join %}
+                    {% image imageSrc, imageDescription, [496] %}           
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row md:hidden gap-3">
+                {{ migrationExpertButton(false) }}
+                {{ tryItOutButton(false) }}
+            </div>
+        </div>   
+    </div>
+    <div class="max-w-screen-lg mx-auto">
+        <!-- Cards -->  
+        {% set blueCards = [
+            {"title": "Open, flexible edge architecture",
+            "content": "Customers can run FlowFuse where it makes sense — <span class='font-medium'>at the edge, on-premises, or in the cloud</span> — and integrate with a wide range of clouds, data platforms, and AI services, rather than a single, tightly coupled stack."},
+            {"title": "Reduced vendor lock-in and higher portability",
+            "content": "Because flows remain Node-RED-compatible and <span class='font-medium'>rely on open standards</span>, organizations can evolve their Industrial AI strategy over time without being constrained by a monolithic, proprietary edge data platform."}
+        ] %}
+        <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left mb-20">
+            {% for card in blueCards %}
+            <div class="p-6 bg-indigo-50 rounded-lg">
+                <h5>{{ card.title }}</h5>
+                <p>{{ card.content | safe }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- From Litmus to FlowFuse -->  
+        <h2 class="text-center w-full md:text-left">{{ sectionTitle | safe }}</h2>
+        <p>Industrial organizations evaluating Litmus often explore FlowFuse for a more open, modular approach to edge connectivity, data orchestration, and Industrial AI workloads.​</p>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
+            {% for section in sections %}
+            <div class="relative w-full max-md:max-w-md mx-auto">
+                <div class="flex flex-col items-center sm:items-start">
+                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                        <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
+                            {% include section.svgPath %}
+                        </div>
+                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                            <h5 class="w-full md:m-0">
+                                <div class="text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</div>
+                            </h5>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-center sm:text-left font-light">{{ section.description | safe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Table Section -->
+        <div class="relative overflow-x-auto rounded-lg mt-20">
+            <table class="w-full table-fixed min-w-[500px]">
+                <thead class="bg-indigo-100">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 w-1/3">
+                            Features
+                        </th>
+                        <th scope="col" class="px-6 py-3 w-1/3">
+                            FlowFuse
+                        </th>
+                        <th scope="col" class="px-6 py-3 w-1/3">
+                            Litmus
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in table %}
+                    <tr class="even:bg-indigo-50/50">
+                        <th scope="row" class="px-6 py-4 font-medium text-center">
+                            {{ item.feature }}
+                        </th>
+                        <td class="px-6 py-4">
+                            {{ item.flowFuse }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ item.litmus }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- Switch Section -->
+        <div class="container p-8 md:max-w-screen-lg border-2 border-indigo-200 rounded-lg bg-white drop-shadow-lg m-auto mt-20 grid max-sm:grid-cols-1 sm:grid-cols-[minmax(500px,_1fr) 1fr 1fr] sm:grid-flow-col sm:gap-x-6 sm:grid-rows-[[minmax(100px,_1fr)_minmax(20px,_1fr)]">
+            <h3 class="order-1 max-sm:text-center">{{ switch.title | safe }}</h3>
+            <div class="sm:row-span-2 sm:col-span-2 sm:order-3 order-2 flex items-center max-sm:pl-6 max-sm:my-4 sm:px-10 m-auto">
+                <ol class="list-decimal mt-2">
+                {% for item in switch.content %}
+                <li class="{% if not loop.last %}mb-4{%endif%}">{{ item | safe}}</li>
+                {% endfor %}
+                </ol>
+            </div>
+            <div class="flex sm:items-end justify-start sm:order-2 order-3 sm:self-end max-sm:mt-6 max-sm:mx-auto">
+                {{ migrationExpertButton() }}
+            </div>
+        </div>
+    </div>
+</div>    
+<div class="w-full px-6 pb-24">
+    <p class="text-center md:max-w-screen-lg m-auto mt-24 font-medium">Trusted by industrial teams worldwide to modernize their OT‑IT data infrastructure and edge architectures.</p>
+    <!-- Social proof -->
+    <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl mb-14">
+        <div class="mx-auto w-full">
+            {% include "social-proof.njk" %}
+        </div>
+    </div>
+    <!-- CTA section -->
+    <div class="ff-blue-card text-center w-full md:text-left md:max-w-screen-lg mx-auto mt-6 flex flex-col gap-6">
+        <h2>{{ cta.title | safe }}</h2>
+        <p>{{ cta.content | safe }}</p>
+    </div>
+</div>

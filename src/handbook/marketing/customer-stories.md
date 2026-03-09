@@ -31,10 +31,10 @@ A customer story is the same as a case study, these are helpful in illustrating 
     - Set the PDF URL as the action after submission, under 'Redirect to another page.'
     - Update and publish the form.
     - Copy the form ID from the script generated when you click on publish.
-11. Create a new branch of the website repository. Follow our standard [development processes](/handbook/development/project-management#development-board). Google Docs has an [extension to convert the reviewed draft document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget). 
+11. Create a new branch of the website repository. Follow our standard [development processes](/handbook/engineering/project-management#development-board). Google Docs has an [extension to convert the reviewed draft document to markdown](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607?hl=en&pann=docs_addon_widget). 
 12. Add the HubSpot formId to your story's front matter, so anyone can download the PDF version of the case study.
 13. It is OK for you to merge your own PR to main without review where the content is urgent or has been reviewed outside of Git but where it is practical to follow the
-[standard process](/handbook/development/project-management#development-board) we encourage you to do so.
+[standard process](/handbook/engineering/project-management#development-board) we encourage you to do so.
 
 ## Customer Story CMS
 

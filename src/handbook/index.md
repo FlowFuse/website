@@ -73,10 +73,10 @@ To run our company we provide a comprehensive guide outlining policies, procedur
 
 | | |
 |:----|:----|
-| [Product](/handbook/product/)<br /><p>Planning, scheduling, and where the product will be a year from now</p>
-| [Development](/handbook/development/)<br /><p>How features are delivered with velocity and quality</p>|
-| [Design](/handbook/design/)<br /><p>How information is presented through UX/UI to users, prospects, and internally.</p>
-| [Security](/handbook/company/security/)<br /><p>Keeping what's private private, and what needs protecting protected.</p>|
+| [Engineering](/handbook/engineering/)<br /><p>Product management, development, and how features are delivered with velocity and quality</p>
+| [Design](/handbook/design/)<br /><p>How information is presented through UX/UI to users, prospects, and internally.</p>|
+| [Security](/handbook/company/security/)<br /><p>Keeping what's private private, and what needs protecting protected.</p>
+| <!-- placeholder for now --> |
  
 
 ### Bringing the built product to market

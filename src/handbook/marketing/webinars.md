@@ -90,8 +90,8 @@ I look forward to seeing you there!
 
 And here are a couple of samples of our past promo videos:
 
-<iframe width="560" height="315" class="mb-6" src="https://www.youtube.com/embed//mfihdh336bw?rel=0" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bgJNk0x_sMs?rel=0" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="mfihdh336bw" params="rel=0" style="width: 100%; height: 315px; margin-bottom: 1.5rem;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="bgJNk0x_sMs" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
 
 ## Post Webinar
 

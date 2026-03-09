@@ -76,7 +76,7 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 ### FlowFuse Cloud
 
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free]({{ site.onboardingURL }}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
 
 ## Upgrading FlowFuse
 

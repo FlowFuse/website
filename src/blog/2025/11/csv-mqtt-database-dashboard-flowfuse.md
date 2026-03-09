@@ -223,12 +223,12 @@ Before inserting data, you need to create a table to store your sensor readings.
 
 1. In your Node-RED editor, drag a **Query node** onto the canvas. Just like the FlowFuse MQTT nodes, it will automatically configure itself when added to the canvas.
 
-2. Double-click to open it and click **"Ask the FlowFuse assistant"** at the top of the configuration dialog.
+2. Double-click to open it and click **"Ask the FlowFuse Expert"** at the top of the configuration dialog.
 
 3. In the assistant prompt, enter:
    *“Create a new table named `sensor_data` to store sensor readings with the following columns: `timestamp`, `site`, `line`, `device`, `measurement`, `value`, and `unit`.”*, Modify the table name and columns as needed to match your specific data and application requirements.
 
-4. Click the **"Ask the FlowFuse assistant"** button. The assistant will generate the SQL query for you and automatically populate it in the Query field.
+4. Click the **"Ask the FlowFuse Expert"** button. The assistant will generate the SQL query for you and automatically populate it in the Query field.
 
 6. Drag an **Inject node** onto the canvas, set it to trigger once, and connect it to the **Query node**.
 
@@ -335,6 +335,6 @@ Once deployed, open the dashboard — you should see a real-time line chart disp
 
 You've transformed static CSV files into live data streams that flow through MQTT, databases, and dashboards. Your legacy equipment now communicates with modern systems without any hardware changes.
 
-This tutorial walked you through building a data pipeline. FlowFuse takes it further by handling both development and production deployment. When you need to scale across multiple production lines, manage team collaboration, deploy to hundreds of devices remotely, or maintain infrastructure like MQTT brokers and databases, FlowFuse provides the platform to do it all. As you saw, it also includes an AI Assistant to speed up your workflow.
+This tutorial walked you through building a data pipeline. FlowFuse takes it further by handling both development and production deployment. When you need to scale across multiple production lines, manage team collaboration, deploy to hundreds of devices remotely, or maintain infrastructure like MQTT brokers and databases, FlowFuse provides the platform to do it all. As you saw, it also includes an FlowFuse Expert to speed up your workflow.
 
 If you want to see more on how FlowFuse helps with scaling and production deployments, [book a demo](/book-demo/) today.

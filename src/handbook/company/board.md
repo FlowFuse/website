@@ -70,12 +70,12 @@ The 120 minutes of each meeting are structured in the following time blocks:
 - 60 minutes Strategic Discussion - In the Strategic Discussion portion, we will
   focus on one to three (but no more) key topics of focus for the business for
   discussion. Prior context is shared through the prewatch.
-- 30 minutes "Routine business" (Closed portion of meeting) - Providing an open
+- 30 minutes "Routine business" (Closed session) - Providing an open
   forum for board members and observers to raise additional topics. In this
   Closed portion of the meeting, we will always cover:
      - Stock Option Approvals.
      - Approval of previous meeting's minutes.
-     - Compensation matters related to team members over 200K USD.
+     - Compensation matters related to team members over 250K USD.
 
 It would be highly appreciated if topics to be discussed are shared in advance with the rest of the board.
 

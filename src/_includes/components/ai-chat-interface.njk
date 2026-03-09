@@ -16,16 +16,8 @@
     </div>
 
     <div class="ai-prompts mt-4">
-        <div class="flex flex-wrap gap-2 mb-3">
-            <button class="prompt-pill text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600 whitespace-nowrap overflow-hidden text-ellipsis" data-prompt="I want to create a dashboard that shows the status of my machines. The machines status is available in a SQL Server Database. What are the steps to achieve this">
-                Show Machine Status on a Dashboard
-            </button>
-            <button class="prompt-pill text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600 whitespace-nowrap overflow-hidden text-ellipsis" data-prompt="How would I read modbus data from a PLC and store it in a database table?">
-                Write modbus data to a Database Table
-            </button>
-            <button class="prompt-pill text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600 whitespace-nowrap overflow-hidden text-ellipsis" data-prompt="Can you guide me on how to collect OPC-UA data and publish it to MQTT UNS?">
-                Convert OPC-UA to MQTT UNS
-            </button>
+        <div class="wrapper flex flex-wrap gap-2 mb-3">
+            {#  content injected#}
         </div>
     </div>
 </div>

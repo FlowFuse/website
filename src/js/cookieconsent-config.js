@@ -6,6 +6,116 @@ if (isNodeRedLanding) {
     document.documentElement.classList.add('cc--darkmode');
 }
 
+function clearHubSpotCookiesFallback () {
+    var hubspotCookiePattern = /^(__hstc|hubspotutk|__hssrc|__hssc|__hs_do_not_track|__hs_cookie_cat_pref)$/;
+    var cookieNames = document.cookie.split(';').map(function (part) {
+        return part.split('=')[0].trim();
+    }).filter(function (name) {
+        return hubspotCookiePattern.test(name);
+    });
+
+    var host = window.location.hostname;
+    var hostParts = host.split('.');
+    var rootDomain = hostParts.length > 2 ? hostParts.slice(1).join('.') : host;
+    var domains = ['', host, '.' + host, rootDomain, '.' + rootDomain];
+
+    cookieNames.forEach(function (name) {
+        domains.forEach(function (domain) {
+            var domainPart = domain ? '; domain=' + domain : '';
+            document.cookie = name + '=; Max-Age=0; path=/' + domainPart + '; SameSite=Lax';
+        });
+    });
+}
+
+function syncHubSpotConsent (allowTracking) {
+    window._hsq = window._hsq || [];
+    window._hsp = window._hsp || [];
+
+    if (allowTracking) {
+        window._hsq.push(['doNotTrack', {track: true}]);
+        return;
+    }
+
+    // Stop new tracking and revoke/remove HubSpot cookies already created.
+    window._hsq.push(['doNotTrack']);
+    window._hsp.push(['revokeCookieConsent']);
+    clearHubSpotCookiesFallback();
+}
+
+function pushConsentUpdatedEvent (options) {
+    var changedCategories = options.changedCategories || [];
+    var analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+    var adsAccepted = CookieConsent.acceptedCategory('ads');
+    var functionalAccepted = CookieConsent.acceptedCategory('functional');
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'ff_consent_updated',
+        changed_categories: changedCategories,
+        analytics_storage: analyticsAccepted ? 'granted' : 'denied',
+        ad_storage: adsAccepted ? 'granted' : 'denied',
+        ad_user_data: adsAccepted ? 'granted' : 'denied',
+        ad_personalization: adsAccepted ? 'granted' : 'denied',
+        functionality_storage: functionalAccepted ? 'granted' : 'denied',
+        personalization_storage: adsAccepted ? 'granted' : 'denied'
+    });
+}
+
+function applyAnalyticsConsent (options) {
+    var accepted = options.accepted;
+    var emitEvent = !!options.emitEvent;
+
+    gtag('consent', 'update', {
+        'analytics_storage': accepted ? 'granted' : 'denied'
+    });
+
+    if (emitEvent) {
+        gtag('event', 'cookie_consent', {
+            'event_category': 'analytics',
+            'event_label': accepted ? 'accepted' : 'denied'
+        });
+    }
+
+    syncHubSpotConsent(accepted);
+
+    if (accepted) {
+        if (typeof window._ffLoadMeetings === 'function') {
+            window._ffLoadMeetings();
+        }
+        window._ffLoadChat = true;
+        if (window.HubSpotConversations) {
+            window.HubSpotConversations.widget.load();
+        }
+    } else {
+        window._ffLoadChat = false;
+    }
+}
+
+function applyAdsConsent (options) {
+    var accepted = options.accepted;
+    var emitEvent = !!options.emitEvent;
+
+    gtag('consent', 'update', {
+        'ad_storage': accepted ? 'granted' : 'denied',
+        'ad_user_data': accepted ? 'granted' : 'denied',
+        'ad_personalization': accepted ? 'granted' : 'denied',
+        'personalization_storage': accepted ? 'granted' : 'denied'
+    });
+
+    if (emitEvent) {
+        gtag('event', 'cookie_consent', {
+            'event_category': 'ads',
+            'event_label': accepted ? 'accepted' : 'denied'
+        });
+    }
+}
+
+function applyFunctionalConsent (accepted) {
+    gtag('consent', 'update', {
+        'functionality_storage': accepted ? 'granted' : 'denied'
+    });
+}
+
 CookieConsent.run({
     guiOptions: {
         consentModal: {
@@ -22,115 +132,83 @@ CookieConsent.run({
         }
     },
 
+    // Runs on each page load after consent exists; keep this idempotent.
     onConsent: function(){
-        if(CookieConsent.acceptedCategory('analytics')){
-            // Enable Google Analytics
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted'
-            });
-            // Send event to Google Analytics
-            gtag('event', 'cookie_consent', {
-                'event_category': 'analytics',
-                'event_label': 'accepted'
-            });
-        }else{
-            // Disable Google Analytics
-            gtag('consent', 'update', {
-                'analytics_storage': 'denied'
-            });
-            // Send event to Google Analytics
-            gtag('event', 'cookie_consent', {
-                'event_category': 'analytics',
-                'event_label': 'denied'
-            });
-        }
-
-        if(CookieConsent.acceptedCategory('ads')){
-            gtag('consent', 'update', {
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted'
-            });
-            // Send event to Google Analytics
-            gtag('event', 'cookie_consent', {
-                'event_category': 'ads',
-                'event_label': 'accepted'
-            });
-        }else{
-            gtag('consent', 'update', {
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied'
-            });
-            // Send event to Google Analytics
-            gtag('event', 'cookie_consent', {
-                'event_category': 'ads',
-                'event_label': 'denied'
-            });
-        }
+        applyAnalyticsConsent({
+            accepted: CookieConsent.acceptedCategory('analytics'),
+            emitEvent: false
+        });
+        applyAdsConsent({
+            accepted: CookieConsent.acceptedCategory('ads'),
+            emitEvent: false
+        });
+        applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
+        pushConsentUpdatedEvent({ changedCategories: [] });
     },
-    
+
+    // Runs once when the user makes the first consent decision.
+    onFirstConsent: function () {
+        var analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+        var adsAccepted = CookieConsent.acceptedCategory('ads');
+
+        applyAnalyticsConsent({
+            accepted: analyticsAccepted,
+            emitEvent: true
+        });
+        applyAdsConsent({
+            accepted: adsAccepted,
+            emitEvent: true
+        });
+        applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
+        pushConsentUpdatedEvent({ changedCategories: ['analytics', 'ads', 'functional'] });
+    },
+
     onChange: function({changedCategories}){
         if(changedCategories.includes('analytics')){
-            if(CookieConsent.acceptedCategory('analytics')){
-                // Enable Google Analytics
-                gtag('consent', 'update', {
-                    'analytics_storage': 'granted'
-                });
-                // Send event to Google Analytics
-                gtag('event', 'cookie_consent', {
-                    'event_category': 'analytics',
-                    'event_label': 'accepted'
-                });
-                // Enable PostHog
-                posthog.opt_in_capturing();
-            }else{
-                // Disable Google Analytics
-                gtag('consent', 'update', {
-                    'analytics_storage': 'denied'
-                });
-                // Send event to Google Analytics
-                gtag('event', 'cookie_consent', {
-                    'event_category': 'analytics',
-                    'event_label': 'denied'
-                });
-                // Disable PostHog
-                posthog.opt_out_capturing();
-            }
+            applyAnalyticsConsent({
+                accepted: CookieConsent.acceptedCategory('analytics'),
+                emitEvent: true
+            });
         }
 
         if(changedCategories.includes('ads')){
-            if(CookieConsent.acceptedCategory('ads')){
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
-                });
-                // Send event to Google Analytics
-                gtag('event', 'cookie_consent', {
-                    'event_category': 'ads',
-                    'event_label': 'accepted'
-                });
-            }else{
-                gtag('consent', 'update', {
-                    'ad_storage': 'denied',
-                    'ad_user_data': 'denied',
-                    'ad_personalization': 'denied'
-                });
-                // Send event to Google Analytics
-                gtag('event', 'cookie_consent', {
-                    'event_category': 'ads',
-                    'event_label': 'denied'
-                });
-            }
+            applyAdsConsent({
+                accepted: CookieConsent.acceptedCategory('ads'),
+                emitEvent: true
+            });
         }
+
+        if(changedCategories.includes('functional')){
+            applyFunctionalConsent(CookieConsent.acceptedCategory('functional'));
+        }
+
+        pushConsentUpdatedEvent({ changedCategories: changedCategories });
     },
 
     categories: {
         necessary: {
             readOnly: true
         },
-        analytics: {},
+        functional: {},
+        analytics: {
+            autoClear: {
+                cookies: [
+                    {
+                        name: /^(_ga|_gid|_gat|_gcl)/
+                    },
+                    {
+                        name: /^(__hstc|hubspotutk|__hssrc|__hssc|__hs_do_not_track|__hs_cookie_cat_pref)$/
+                    },
+                    {
+                        name: /^(ph_[^=\s]+_posthog|ph_phc_[^=\s]+_posthog|__ph_opt_in_out_[^=\s]+)$/
+                    },
+                    {
+                        name: /^warmly_/
+                    }
+                ],
+                reloadPage: false
+            }
+        },
         ads: {}
     },
     
@@ -141,7 +219,7 @@ CookieConsent.run({
             en: {
                 consentModal: {
                     title: "This site uses cookies",
-                    description: "We use cookies to ensure this site's proper operation and, if you approve, tracking cookies to understand how you interact with it.",
+                    description: "We use cookies to ensure this site works properly, forms render properly, and, with your permission, to improve your experience and enable features like analytics and <span class=\"font-medium text-indigo-600\">live chat support</span>.",
                     acceptAllBtn: "Accept all",
                     showPreferencesBtn: "Settings",
                     footer: "<a href=\"/privacy-policy/\">Privacy Policy</a>\n"
@@ -160,17 +238,22 @@ CookieConsent.run({
                         },
                         {
                             title: "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
-                            description: "Essential cookies are crucial for the basic functionality of our website. Without these cookies, our website could not function properly.",
+                            description: "Essential cookies are crucial for core website functionality, including security, anti-spam protection (Google reCAPTCHA), and technical form delivery. Without these cookies, key features of the website, such as secure contact forms, could not function properly.",
                             linkedCategory: "necessary"
                         },
                         {
+                            title: "Functional Cookies",
+                            description: "These cookies support optional site functionality that is not strictly necessary to run the website.",
+                            linkedCategory: "functional"
+                        },
+                        {
                             title: "Analytics Cookies",
-                            description: "We use Google Analytics, HubSpot, PostHog and Reo.Dev for analytics. These services use cookies to collect data that helps us understand how you interact with our website. These insights allow us to improve our content and build better features that enhance your experience.",
+                            description: "We use tools including Google Analytics, HubSpot tracking, PostHog, and warmly.ai to understand how visitors interact with our website. This category enables HubSpot tracking, meeting embeds, and the chat widget.",
                             linkedCategory: "analytics"
                         },
                         {
                             title: "Advertisement Cookies",
-                            description: "Google uses cookies for advertising, including serving and rendering ads, personalizing ads, limiting the number of times an ad is shown to a user, muting ads you have chosen to stop seeing, and measuring the effectiveness of ads.",
+                            description: "We use advertising cookies from Google, Meta, and LinkedIn to measure the effectiveness of our campaigns, show relevant ads, and limit how often you see the same ad.",
                             linkedCategory: "ads"
                         }
                     ]

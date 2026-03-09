@@ -158,3 +158,125 @@ as evidenced by a PO or signed quote, is the sole determinant.
 - Contract Start Date
 - Company address
 - Renewal Date
+ 
+## Deal Approval Process (Deal Desk)
+To ensure consistency and efficiency in our deal cycles, all proposals must follow the established Deal Desk workflow. This process covers the end-to-end journey from initial proposal creation through security review and final legal/contract execution.
+
+### Overview of the Flow
+
+#### Proposal Stage
+
+Sales reps create proposals and determine if the deal structure (discounts, terms, payment schedules) is standard. Non-standard deals are routed to the CEO via Slack for approval.
+
+```mermaid
+graph TD
+    %% Nodes
+    Start["Is the deal structure standard?"]
+    AcceptProposal["Customer accepts the Proposal 'Agreed in Principle'?"]
+    Negotiate["Rep must negotiate with the customer"]
+    DealCriteria["Is there a discount?
+                Is the term > 1 year?
+                Payment terms > Net 30<br />"]
+    CEO["Route to CEO for Slack approval"]
+    Security["<b>Go to Security Process</b>"]
+
+    %% Connections
+    Start -- Yes --> AcceptProposal
+    Start -- No --> DealCriteria
+
+    AcceptProposal -- No --> Negotiate
+    AcceptProposal -- Yes ----> Security
+
+    Negotiate --> Start
+
+    DealCriteria -- No --> Security
+    DealCriteria -- Yes --> CEO
+
+    CEO -- Reject --> Negotiate
+    CEO -- Accept --> Security
+```
+
+#### Security Review
+
+If a customer requires a security review, the AE coordinates between the
+customer's questionnaire and the Engineering team to provide approved answers.
+
+```mermaid
+flowchart TD
+    %% Nodes
+    Start[Sales Rep Reviews Security]
+    ReqReview{Requires Security Review?}
+    
+    %% Happy Path Steps
+    ShareQ[Customer Shares Questionnaire]
+    SendToEng[AE sends to Eng]
+    EngAnswers[Eng sends answers to AE]
+    Forward[AE forwards to Customer]
+    
+    %% Approval Decision
+    Accepts{Customer Accepts?}
+    Rework[AE reviews notes/Meeting with Engineering]
+    
+    %% End State
+    EndProcess((Go to Contract/Legal))
+
+    %% Connections
+    Start --> ReqReview
+    
+    %% No Review Path
+    ReqReview -- No --> EndProcess
+    
+    %% Review Needed Path
+    ReqReview -- Yes --> ShareQ
+    ShareQ --> SendToEng
+    SendToEng --> EngAnswers
+    EngAnswers --> Forward
+    Forward --> Accepts
+    
+    %% Outcome Logic
+    Accepts -- Approve --> EndProcess
+    
+    %% Rejection Loop
+    Accepts -- Reject --> Rework
+    Rework --> EngAnswers
+```
+
+
+#### Legal & Contract Process
+
+This stage handles the Master Subscription Agreement (MSA).
+Depending on whether the customer accepts our standard MSA or requests minor/major
+redlines, the contract is routed to Legal (Scale) and/or the CEO for cost and term
+approval before final signature.
+
+```mermaid
+flowchart TD
+    %% Nodes
+    IsStd{Standard MSA?}
+    IsRed{Redlines?}
+    NonStd[Legal Review + Cost Approval]
+    Major[Legal Review - Major/IP]
+    CEO[CEO Approval]
+    Send[Send to Customer]
+    Approved{Customer Approve?}
+    Sign((Sign Contract))
+    
+    %% Non-Standard Path
+    IsStd -- No --> NonStd
+    NonStd --> CEO
+
+    %% Standard Path
+    IsStd -- Yes --> IsRed
+    IsRed -- No --> Sign
+    
+    %% Redline Paths
+    IsRed -- "Yes (Minor/Payment)" --> CEO
+    IsRed -- "Yes (Major/Liability)" --> Major
+    Major --> CEO
+
+    %% Unified Loop
+    CEO --> Send
+    Send --> Approved
+    Approved -- Yes --> Sign
+    Approved -- No --> CEO
+```
