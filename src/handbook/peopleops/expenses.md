@@ -105,7 +105,7 @@ their laptops. As such, the following devices are recommended:
 
 | Operating System | Recommended Device                                                                                                                                                     |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MacOS            | [MacBook Air 15" - 24 GB RAM](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-24gb-memory-512gb) (~$1,899 ex VAT) |
+| MacOS            | [MacBook Pro 16" - 32 GB RAM](https://www.apple.com/shop/buy-mac/macbook-pro) (~$2,499 ex VAT) |
 | Windows/Linux    | [Dell XPS 15 - 16 GB RAM](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-15-laptop/spd/xps-15-9530-laptop/cn95303cc) (~$2,300)                                 |
 
 If you require an alternative device, please discuss with your manager.
