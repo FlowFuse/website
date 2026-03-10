@@ -205,16 +205,14 @@ Use this sequence every time you create or update a tag:
 | Tag category | Required consent type |
 |---|---|
 | Analytics (e.g. Google Analytics, HubSpot, PostHog) | `analytics_storage` |
-| Advertising & remarketing (e.g. LinkedIn InsightTag, Conversion Linker, Meta Pixel) | `ad_storage` |
+| Advertising & remarketing (e.g. Google Tag AW (Google Ads base tag), LinkedIn InsightTag, Conversion Linker, Meta Pixel) | `ad_storage` |
 | Functional tools (non-essential UX features that do not perform analytics/advertising tracking) | `functionality_storage` |
 | Personalization & A/B testing (e.g. tools that remember user preferences or show tailored content) | `personalization_storage` |
 | Security (e.g. fraud prevention, bot detection) | `security_storage` — typically strictly necessary; no consent required in most cases |
-| Google Tag AW (Google Ads base tag) | **No consent requirement** — this tag uses Google Consent Mode v2 natively and must fire on all page loads (including denied-consent states) for cookieless modeling. |
 
 #### Primary trigger selection
 
-- **Google Tag type tags (Google Tag AW, Google Analytics 4)**: use `Initialization - All Pages`.
-- **Base tracking/pixel tags** (for example LinkedIn InsightTag): use `All Pages` (Page View), not `Initialization - All Pages`.
+- **Google Tag type tags (Google Tag AW, Google Analytics 4) and base tracking/pixel tags** (for example LinkedIn InsightTag): use `All Pages` (Page View), not `Initialization - All Pages`.
 - **Conversion tags** (thank-you page, button click, form submit, custom conversion event): use a scoped trigger tied to the conversion action.
 
 #### Shared consent-change trigger (`FF Consent Update`)

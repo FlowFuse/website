@@ -4,13 +4,38 @@ navTitle: Strategy
 
 # Product Strategy
 
-In support of our [company strategy](/handbook/company/strategy.md), we build our product around a single product mission statement:
+In support of our [company strategy](/handbook/company/strategy), and derived from our [vision](/handbook/engineering/product/vision), we build our product around a single product mission statement:
 
-> **Provide the best way to build, manage and deploy Node-RED applications at scale, in reliable and secure production environments.**
+>**We are the platform that moves you from fragile, project-based automation to governed, distributed industrial runtime infrastructure.**
 
-Our strategy is an indication and statement of intent for the next 2 years. FlowFuse will empower everyone to build custom applications to achieve their business goals and depend less on off-the-shelf point solutions. 
+Our strategy is reviewed on a regular basis and we will iterate when there is reason to do so. 
 
-Our strategy is reviewed on a regular basis and we will iterate when there is reason to do so; timing is everything. 
+## Strategic Objectives
+
+Our strategic Objectives direct our investment and innovation efforts, and are re evaluated each quarter.
+
+### Establish FlowFuse as the Enterprise-Trusted Node-RED Platform
+
+FlowFuse is committed to augmenting the enterprise-readiness of Node-RED. Our strategy emphasises enhancing audit and compliance capabilities, instituting stringent preventive and corrective controls, and bolstering security. By integrating these vital aspects, we aim to create a reliable, secure, and scalable environment. This initiative underlines our dedication to surpassing enterprise expectations and strengthening Node-RED's position in the industry.
+
+### Deliver the Fastest, most Flexible Edge Deployments
+
+Many organizations position Node-RED instances on remote servers, edge-, or industrial-devices. This practise allows them to meet network-, infrastructure-, or use-case- requirements.
+
+FlowFuse already supports this process by creating snapshots on Node-RED instances that can be deployed to multiple remote targets. We will continue to expand the functionalities to allow users to manage existing Node-RED instances, improve their development practices to accelerate development and ensure a reliable and repeatable process, providing more flexible remote deployment options and offering the best support for devices in closed and segmented networks as we are facing it in production environments.
+
+### Win ICP Manufacturing Logos
+Our Industrial enterprise customers rely on node-red and FlowFuse to complete the observability of their OT and IT networks. Our product solves real, painful problems for people responsible for the uptime and observability of their networks and production. We are committed to building, selling and marketing our platform with their needs at the forefront of our product decisions.
+
+## Roadmap
+
+The company roadmap shows a high-level view of the features we are building to bring our company vision to fruition. Our roadmap provides transparency into our development priorities and helps align our team's efforts with our strategic objectives.
+
+You can view our current roadmap in the [12 Month Plan view](https://github.com/orgs/FlowFuse/projects/3/views/19) of our Product Planning project on GitHub.
+
+The roadmap may need to be adjusted over time as we pivot when we identify better ways to accomplish our company goals. This flexibility allows us to respond to market changes, customer feedback, and emerging opportunities while maintaining our focus on delivering maximum value to our customers.
+
+
 
 ## Product Pillars
 
@@ -18,19 +43,18 @@ When we talk about our product features and the value it offers to our customers
 
 These three pillars ensure we are aligned with our product mission statement and company strategy.
 
+
+| Pillar Name                  | Strategic Value Proposition                                                                                | The "Operational Scaling" Problem/Solution                                                                                                                                                                                                                                          | Differentiation (vs. Raw Node-RED/Competitors)                                                                                                                              |
+|:-----------------------------|:-----------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Operational Scaling**      | **Deliver Consistency at Scale.** Move from "one-off" projects to a global fleet strategy.                 | **Problem:** Successful pilots often become "snowflakes" that are impossible to maintain or update across multiple sites.<br><br>**Solution:** Centralized management of application patterns, ensuring that a CNC monitoring app at Site A is identical to the one at Site B.      | Unlike raw Node-RED, FlowFuse provides the governance, deployment pipelines, and device management needed to scale without adding headcount.                                |
+| **System Agility**           | **Extend & Adapt without Rip-and-Replace.** Turn rigid vendor software into flexible business assets.      | **Problem:** Purchased systems (MES/SCADA) rarely meet 100% of local operational needs, leading to manual workarounds.<br><br>**Solution:** A "low-code" agility layer that sits atop existing systems to add custom logic, vendor-agnostic workflows, and tailored business rules. | FlowFuse acts as the "anti-lock-in" layer. It allows teams to customize their stack without relying on expensive original vendor consultants or custom C#/.NET builds.      |
+| **Event-Driven Data Bridge** | **High-Precision Data Orchestration.** Connect the shop floor to the top floor based on real-world events. | **Problem:** Traditional middleware is often too heavy, while historians are too passive for real-time action.<br><br>**Solution:** A lightweight, event-based bridge that triggers data movement, transformation, and storage only when specific operational events occur.         | We aren't a "data lake." We are the intelligent router. This avoids the "dump everything to the cloud" cost trap and positions us as a surgical tool for IT/OT integration. |
+
+
 Any new feature requests, product improvements, or other changes to our product can be reflected back to these pillars to ensure they are in line with our product strategy.
 
+### Product Areas
 We can break down our product pillars into smaller "Areas", which are more specific focus areas on how to optimize the product pillar. You can see how these Areas are used in our product planning [here](../project-management.md).
-
-| Build | Manage | Deploy |
-|-------|--------|--------|
-| [Simplified Hosting](#simplified-hosting) | [Security](#security) | [DevOps](#devops) |
-| [Version Control](#version-control) | [Centralized Management](#centralized-management) | [Remote Deployments](#remote-deployments) |
-| [Trust](#trust) | [Adminsitration](#administration) | [Scale](#scale) |
-| [Remote Access](#remote-access) | [Frictionless Maintenance](#frictionless-maintenance) | [Reliability](#reliability) |
-| [Full Stack Applications](#full-stack-applications) | [Observability](#observability) |  |
-| [Low Code](#low-code) |  |  |
-| [Collaborative Development](#collaborative-development) |  |  |
 
 ### Build
 
@@ -110,59 +134,5 @@ FlowFuse users should not have to concern when scaling their own applications. F
 
 #### Reliability
 
-Flowfuse users should have trust that their applications will run reliably. This includes ensuring that applications are highly available, and that users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
-
-## Go to Market (GTM) pillars & initiatives
-
-Our strategic pillars are points aimed at steering our investment and innovation efforts. The initiatives are indication and statement of intent for the next 6 months. All GTM pricing principles can be found [here](./pricing.md).
-
-- [Advancing Enterprise-Readiness](#advancing-enterprise-readiness)
-- [Applications on the edge](#applications-on-the-edge)
-- [Enhanced Integration Capabilities](#enhanced-integration-capabilities)
-- [Data Visualization & Analytics](#data-visualization-&-analytics)
-
-### Advancing Enterprise-Readiness
-
-FlowFuse is committed to augmenting the enterprise-readiness of Node-RED. Our strategy emphasises enhancing audit and compliance capabilities, instituting stringent preventive and corrective controls, and bolstering security. By integrating these vital aspects, we aim to create a reliable, secure, and scalable environment. This initiative underlines our dedication to surpassing enterprise expectations and strengthening Node-RED's position in the industry.
-
-- [Review-Based Pipeline Execution](https://github.com/FlowFuse/flowfuse/issues/3139): This feature mandates a dual-approval mechanism, colloquially known as the "four-eyes principle," before any changes can be propagated to a production system. This requirement is not only a best practice but a compulsory stipulation in several regulated industries, including food and pharmaceuticals, where the integrity and reliability of production systems are paramount. The introduction of Review-Based Pipeline Execution is poised to serve a dual purpose: it enables FlowFuse to venture into new market segments that necessitate such stringent control mechanisms, and it addresses the existing demands of our current customer base.
-
-- [Implement "Organization" as an additional hierarchy level](https://github.com/FlowFuse/flowfuse/issues/2338): FlowFuse is expanding its enterprise capabilities by introducing "Organization" as an additional hierarchy level, particularly within the FlowFuse Cloud environment. This development is a direct response to the growing demand from enterprise customers utilizing our managed SaaS offering. As businesses increasingly seek efficient ways to manage multiple teams on the FlowFuse Cloud, the implementation of Organizations is set to provide a more structured and seamless management and billing system. This enhancement will not only cater to the needs of larger corporations but also streamline administrative processes, thereby offering a more cohesive and efficient platform for enterprise-level operations.
-
-- [File Storage for Instances](https://github.com/FlowFuse/flowfuse/issues/3056) This feature aims to enable users to store data within FlowFuse-hosted Node-RED instances, a requirement for numerous use cases, such as displaying images in dashboards. More importantly, it is essential for most AI models, which need persistent file storage. The introduction of file storage for Node-RED hosted instances is a critical step towards demonstrating Node-RED's capabilities as an enabler for AI applications, furthering its utility and applicability in advanced, data-driven environments.
-
-### Applications on the edge 
-
-Many organizations position Node-RED instances on remote servers, edge-, or industrial-devices. This practise allows them to meet network-, infrastructure-, or use-case- requirements.
-
-FlowFuse already supports this process by creating snapshots on Node-RED instances that can be deployed to multiple remote targets. We will continue to expand the functionalities to allow users to manage existing Node-RED instances, improve their development practices to accelerate development and ensure a reliable and repeatable process, providing more flexible remote deployment options and offering the best support for devices in closed and segmented networks as we are facing it in production environments.
-
-- [Enhanced Device Settings](https://github.com/FlowFuse/flowfuse/issues/3172): The initiative focuses on expanding the configuration options for Devices, aligning with existing capabilities on hosted Node-RED setups. It aims to empower users to remotely manage their device settings, enhancing the efficiency and flexibility of device fleet management. 
-
-- [Immersive Node-RED experience](https://github.com/FlowFuse/flowfuse/issues/2246), a separation between the Node-RED Editor and FlowFuse leads to unused features from a UX standpoint in FlowFuse, due to the need to jump between both entities. An immersive Node-RED experience embeds Node-RED into FlowFuse, allowing seamless usage of Node-RED and FlowFuse features.
-
-### Enhanced Integration Capabilities
-
-The [Unified Namespace](https://flowfuse.com/unified-namespace/) is a modern IT/OT architecture for industrial companies to accelerate digital transformation. All data, from sensors, systems, and machines, are connected to make their data available to a unified network of data producers and consumers. This speeds up application building, system integration, and delivers faster insights into productivity. Node-RED and FlowFuse are a perfect match and should be positioned as integral entities of a modern UNS architecture. The natural flexibility of Node-RED, in combination with FlowFuse, offers all the requirements to realize the OT and IT integration and contextualization into a UNS. It also provides analytical and real-time monitoring capabilities to generate actionable insights.
-
-- [Introduce a way of sharing MQTT Broker connection configurations securely in a team](https://github.com/FlowFuse/flowfuse/issues/3444). MQTT is one of the most common protocols used for an UNS architecture; therefore, it is extremely important to allow users to not only configure and establish an MQTT connection from Node-RED but also to share configurations in a team or enterprise.
-- Adding MQTT Topic tree browsing capabilities is one of the most common MQTT features, which allows easier navigation and application creation while using MQTT. The MQTT topic tree should be ideally accessible directly within the Editor and shared across a Team.
-
-### Data Visualization & Analytics
-
-FlowFuse's commitment to a low-programming approach via Node-RED, complemented by the Node-RED Dashboard, allows for advanced data management and analytical functions. The Node-RED Dashboard provides a crucial interactive graphical user interface for Node-RED applications, allowing users to see data in a more visually engaging and understandable format. By processing and visualizing data, we will deliver insights into asset state, track patterns, and optimize asset use.
-
-- FlowFuse Dashboard feature parity with D1.0. A logical step to replace D1.0 .
-
-- Manufacturing Widgets Extension for Dashboard 2.0. This extension should provide very classic manufacturing visualization, making it even easier to create Node-RED Dashboards for manufacturing.
-
-## Roadmap
-
-The company roadmap shows a high-level view of the features we are building to bring our company vision to fruition. Our roadmap provides transparency into our development priorities and helps align our team's efforts with our strategic objectives.
-
-You can view our current roadmap in the [12 Month Plan view](https://github.com/orgs/FlowFuse/projects/3/views/19) of our Product Planning project on GitHub.
-
-The roadmap may need to be adjusted over time as we pivot when we identify better ways to accomplish our company goals. This flexibility allows us to respond to market changes, customer feedback, and emerging opportunities while maintaining our focus on delivering maximum value to our customers.
-
-
+FlowFuse users can trust that their applications will run reliably. This includes ensuring that applications are highly available, and that users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
 
