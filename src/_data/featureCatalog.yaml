@@ -208,23 +208,14 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        tags: [self-hosted]
-        selfHosted:
+        tags: [cloud, self-hosted]
+        cloud:
           starter:
             value: null
           pro:
             value: true
           enterprise:
             value: true
-
-      - id: enterprise-support
-        label: Enterprise Support
-        description: null
-        docsLink: null
-        changelog: null
-        solutions: []
-        showOnPricing: true
-        tags: [self-hosted]
         selfHosted:
           starter:
             value: null
@@ -240,7 +231,14 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        tags: [self-hosted]
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
         selfHosted:
           starter:
             value: null
@@ -249,6 +247,29 @@ sections:
           enterprise:
             value: true
 
+      - id: enterprise-support
+        label: Enterprise Support
+        description: null
+        docsLink: null
+        changelog: null
+        solutions: []
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+            
       - id: custom-hostname
         label: Custom Hostnames
         description: "Access your Node-RED application via your own domain name."
