@@ -54,7 +54,7 @@ That said, every post should answer three questions:
 Include a screenshot for any visual change. Reference images from `src/img/` like this:
 
 ```markdown
-![Alt text](https://flowfuse.com/img/your-image.webp)
+![Alt text](./images/your-image.png)
 *Caption describing what is shown*
 ```
 
@@ -98,7 +98,7 @@ Do not paste PR titles or commit messages. They are written for engineers. Rewri
 >
 > It is a small (but important) improvement that just makes things that little bit easier.
 
-*Source: [Duplicate Instances Across Different Applications](https://flowfuse.com/changelog/2025/10/duplicate-instances-across-applications/)*
+*Source: [Duplicate Instances Across Different Applications](/changelog/2025/10/duplicate-instances-across-applications/)*
 
 Short, honest about the size of the change, and gets straight to the point.
 
@@ -111,7 +111,7 @@ Short, honest about the size of the change, and gets straight to the point.
 > - Are any nodes on my palette disabled?
 > - Can you suggest a node package that would replace this complex function code?
 
-*Source: [FlowFuse Expert: Palette Queries](https://flowfuse.com/changelog/2026/01/ff-expert-palette-queries/)*
+*Source: [FlowFuse Expert: Palette Queries](/changelog/2026/01/ff-expert-palette-queries/)*
 
 Instead of describing the feature abstractly, this shows exactly how a user will interact with it. Use this approach whenever a feature is best explained through concrete examples of what the user can now say or do.
 
@@ -121,7 +121,7 @@ Instead of describing the feature abstractly, this shows exactly how a user will
 >
 > This feature is available to Enterprise Licensed Self Hosted users and Enterprise tier users of FlowFuse Cloud.
 
-*Source: [HA Hosted Instance Rolling Restart](https://flowfuse.com/changelog/2026/02/ha-instance-rolling-restart/)*
+*Source: [HA Hosted Instance Rolling Restart](/changelog/2026/02/ha-instance-rolling-restart/)*
 
 The technical detail is there, but the sentence that follows immediately translates it into what the user actually cares about. Always pair the *what* with the *so what*.
 
@@ -131,7 +131,7 @@ The technical detail is there, but the sentence that follows immediately transla
 >
 > This change is effective from v2.24.0 onwards.
 
-*Source: [Node.js v20 Minimum Version Requirement](https://flowfuse.com/changelog/2025/11/minimum-nodejs-version/)*
+*Source: [Node.js v20 Minimum Version Requirement](/changelog/2025/11/minimum-nodejs-version/)*
 
 The requirement is in the first sentence, bolded, impossible to miss. Users who need to act see it immediately.
 
