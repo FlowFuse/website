@@ -213,11 +213,11 @@ The `<!--more-->` tag is used to define the text shown in the blog index from ea
 
 ### Example blog index item based on the header above
 
-![Example of how the headers are shown on the blog index](./images/blog-index.png)
+![Example of how the headers are shown on the blog index](./images/blog-index.png){class="border border-gray-200 max-w-[400px]"}
 
 ### Example blogs based on the header above
 
-![Example of how the headers are shown on blogs](./images/blog-article.png)
+![Example of how the headers are shown on blogs](./images/blog-article.png){class="border border-gray-200 max-w-[600px]"}
 
 ### Rendering Node-RED Flows
 
