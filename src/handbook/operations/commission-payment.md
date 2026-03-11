@@ -71,7 +71,7 @@ Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
 to get a written agreement to the commission number. 
 
-The email should be sent to the team member's personal email address so they retain access to the commission confirmation post-employment, as compensation records are considered personal. Make sure the CEO and Head of GTM both receive a copy by including them in the cc on the email.
+The email should be sent to the team member's personal email address so they retain access to the commission confirmation post-employment, as compensation records are considered personal. Make sure the CEO and the manager of the team member receiving the bonus both receive a copy by including them in the cc on the email.
 
 Here is an email template that can be used:
 
