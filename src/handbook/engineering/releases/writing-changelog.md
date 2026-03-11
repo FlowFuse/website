@@ -1,12 +1,9 @@
----
-navTitle: Changelog Posts
----
-
 # Writing Changelog Posts
 
 The [FlowFuse Changelog](https://flowfuse.com/changelog/) is where users find out what has shipped. It is one of the most read pages on the site and one of the most direct ways we communicate value to our users.
 
-A changelog post is not a PR description or a release note. It is a short, focused announcement written for a FlowFuse user - someone who is busy and wants to know quickly what changed and whether it matters to them.
+A changelog post is not a PR description or a release note. It is a short, focused announcement written for a FlowFuse user, someone who is busy and wants to know quickly what changed and whether it matters to them.
+
 
 ## When to write one
 
@@ -16,6 +13,7 @@ Do not write changelog posts for internal tooling changes with no user-visible i
 
 If you are unsure, ask: *would a user who opens FlowFuse tomorrow notice or benefit from this?* If not, skip it.
 
+
 ## Creating the file
 
 Posts live in the [website repository](https://github.com/FlowFuse/website/tree/main/src/changelog). Navigate to the correct year and month folder for when the feature shipped, and create a new `.md` file. If the folder for that month does not exist yet, create it.
@@ -24,7 +22,8 @@ Posts live in the [website repository](https://github.com/FlowFuse/website/tree/
 src/changelog/YYYY/MM/your-post-slug.md
 ```
 
-The slug should be short, lowercase, and hyphen-separated. It should describe the feature, not the release - `duplicate-instances-across-applications`, not `v2-25-0`.
+The slug should be short, lowercase, and hyphen-separated, describing the feature being announced.
+
 
 ## Frontmatter
 
@@ -36,6 +35,9 @@ Every post requires the following fields at the top of the file:
 | `description` | One sentence summarising the change. This appears in link previews and search results, so it should make sense without any surrounding context. |
 | `date` | The date the feature shipped, in `YYYY-MM-DD` format. |
 | `authors` | Your handle from `src/_data/team`. Leave it out if there is no single clear author. |
+| `tags` | Always include `changelog`. |
+| `issues` | A list of related GitHub issue URLs. Link any issues that tracked the work being announced. |
+
 
 ## Writing the post
 
@@ -54,7 +56,7 @@ That said, every post should answer three questions:
 Include a screenshot for any visual change. Reference images from `src/img/` like this:
 
 ```markdown
-![Alt text](./images/your-image.png)
+![Alt text](https://flowfuse.com/img/your-image.webp)
 *Caption describing what is shown*
 ```
 
@@ -67,6 +69,7 @@ If a feature is only available on certain plans or from a specific version, say 
 ### Breaking changes
 
 If a change could break an existing user setup or requires action before upgrading, say so in the first paragraph. Do not bury it.
+
 
 ## Writing style
 
@@ -90,6 +93,7 @@ Avoid jargon unless it is standard FlowFuse or Node-RED vocabulary. If a technic
 
 Do not paste PR titles or commit messages. They are written for engineers. Rewrite them from the user's perspective.
 
+
 ## Examples
 
 ### A small but useful improvement
@@ -98,9 +102,10 @@ Do not paste PR titles or commit messages. They are written for engineers. Rewri
 >
 > It is a small (but important) improvement that just makes things that little bit easier.
 
-*Source: [Duplicate Instances Across Different Applications](/changelog/2025/10/duplicate-instances-across-applications/)*
+*Source: [Duplicate Instances Across Different Applications](https://flowfuse.com/changelog/2025/10/duplicate-instances-across-applications/)*
 
 Short, honest about the size of the change, and gets straight to the point.
+
 
 ### Showing what is now possible
 
@@ -111,9 +116,10 @@ Short, honest about the size of the change, and gets straight to the point.
 > - Are any nodes on my palette disabled?
 > - Can you suggest a node package that would replace this complex function code?
 
-*Source: [FlowFuse Expert: Palette Queries](/changelog/2026/01/ff-expert-palette-queries/)*
+*Source: [FlowFuse Expert: Palette Queries](https://flowfuse.com/changelog/2026/01/ff-expert-palette-queries/)*
 
 Instead of describing the feature abstractly, this shows exactly how a user will interact with it. Use this approach whenever a feature is best explained through concrete examples of what the user can now say or do.
+
 
 ### Translating a technical change into a user benefit
 
@@ -121,19 +127,23 @@ Instead of describing the feature abstractly, this shows exactly how a user will
 >
 > This feature is available to Enterprise Licensed Self Hosted users and Enterprise tier users of FlowFuse Cloud.
 
-*Source: [HA Hosted Instance Rolling Restart](/changelog/2026/02/ha-instance-rolling-restart/)*
+*Source: [HA Hosted Instance Rolling Restart](https://flowfuse.com/changelog/2026/02/ha-instance-rolling-restart/)*
 
 The technical detail is there, but the sentence that follows immediately translates it into what the user actually cares about. Always pair the *what* with the *so what*.
 
+
 ### A breaking change
 
-> We're leveling up! FlowFuse now requires **Node.js v20 or higher** to run.
+Here is how the Node.js v20 requirement should have been written:
+
+> **FlowFuse v2.24.0 requires Node.js v20 or higher.** If you are running an older version, you will need to upgrade Node.js before updating FlowFuse.
 >
-> This change is effective from v2.24.0 onwards.
+> Node.js v18 reaches end of life in April 2025 and no longer receives security updates. This change ensures FlowFuse continues to run on a supported and secure runtime.
+>
+> To check your current version, run `node --version`.
 
-*Source: [Node.js v20 Minimum Version Requirement](/changelog/2025/11/minimum-nodejs-version/)*
+State what is changing and who it affects in the first sentence. Then explain why. Then tell the user exactly what to do. A user who needs to act should have everything they need without leaving the page.
 
-The requirement is in the first sentence, bolded, impossible to miss. Users who need to act see it immediately.
 
 ## Raising a PR
 
