@@ -29,7 +29,7 @@ We expect these layers to fit the customers as they grow in their FlowFuse and N
 
 ### Do you have an overview of the different tiers?
 
-Certainly, an overview of the tiers and prices are available at our [pricing page](/pricing).
+Certainly, an overview of the tiers and prices are available at our [pricing page]({% include "pricing-url.njk" %}).
 
 ### How do I upgrade from Starter to Pro tier?
 

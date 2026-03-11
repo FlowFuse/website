@@ -46,7 +46,7 @@ Let's walk through connecting your FlowFuse instances to a Git repository.
 
 Before you begin, make sure you have:
 
-- **FlowFuse Team Account**: Git integration is available exclusively to Enterprise users. If you don't have a Enterprise account, visit the [FlowFuse pricing page](/pricing) or contact `sales@flowfuse.com` to upgrade.
+- **FlowFuse Team Account**: Git integration is available exclusively to Enterprise users. If you don't have a Enterprise account, visit the [FlowFuse pricing page]({% include "pricing-url.njk" %}) or contact `sales@flowfuse.com` to upgrade.
 
 - **GitHub Account**: You'll need a GitHub account with permission to create repositories and generate personal access tokens.
 

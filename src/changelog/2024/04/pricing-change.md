@@ -7,7 +7,7 @@ tags:
     - changelog
 ---
 
-We're updating our pricing model for the Enterprise and Teams tiers on FlowFuse Cloud, with changes taking effect immediately. All information is available on our [pricing page](https://flowfuse.com/pricing/).
+We're updating our pricing model for the Enterprise and Teams tiers on FlowFuse Cloud, with changes taking effect immediately. All information is available on our [pricing page]({% include "pricing-url.njk" %}).
 
 The new pricing scheme is as follows:
 - Starter Tier: Remains unchanged

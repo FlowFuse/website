@@ -4,7 +4,7 @@ navTitle: Engagements & Pricing
 
 # Engagements
 
-Pricing is publicly available at [our pricing page](/pricing/). When discussing
+Pricing is publicly available at [our pricing page]({% include "pricing-url.njk" %}). When discussing
 pricing with enterprise customers, make a copy of
 [our internal pricing template deck](https://docs.google.com/presentation/d/1kaW6aZxpnCaVuQVdVsi0RTulhRMbeqglhZHkzSP-2kM/)
 to discuss.
