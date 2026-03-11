@@ -60,7 +60,7 @@ That said, every post should answer three questions:
 Include a screenshot for any visual change. Reference images from `src/img/` like this:
 
 ```markdown
-![Alt text](https://flowfuse.com/img/your-image.webp)
+![Alt text](./images/image.png)
 *Caption describing what is shown*
 ```
 
