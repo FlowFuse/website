@@ -1,3 +1,7 @@
+---
+navTitle: Changelog Posts
+---
+
 # Writing Changelog Posts
 
 The [FlowFuse Changelog](https://flowfuse.com/changelog/) is where users find out what has shipped. It is one of the most read pages on the site and one of the most direct ways we communicate value to our users.
@@ -134,13 +138,13 @@ The technical detail is there, but the sentence that follows immediately transla
 
 ### A breaking change
 
-Here is how the Node.js v20 requirement should have been written:
-
 > **FlowFuse v2.24.0 requires Node.js v20 or higher.** If you are running an older version, you will need to upgrade Node.js before updating FlowFuse.
 >
-> Node.js v18 reaches end of life in April 2025 and no longer receives security updates. This change ensures FlowFuse continues to run on a supported and secure runtime.
+> Node.js v18 reached end of life in April 2025 and no longer receives security updates. This change ensures FlowFuse continues to run on a supported and secure runtime.
 >
 > To check your current version, run `node --version`.
+
+*Source: [Node.js v20 Minimum Version Requirement](https://flowfuse.com/changelog/2025/11/minimum-nodejs-version/)*
 
 State what is changing and who it affects in the first sentence. Then explain why. Then tell the user exactly what to do. A user who needs to act should have everything they need without leaving the page.
 
