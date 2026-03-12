@@ -15,7 +15,7 @@ keywords:
   - OT security
   - edge deployment
   - industrial automation
-date: 2026-03-XX
+date: 2026-03-12
 author: Pablo
 audience: external
 image: /blog/2026/03/images/enterprise-pillars-cert-nodes.png
