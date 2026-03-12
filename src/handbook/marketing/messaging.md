@@ -47,7 +47,6 @@ our 'ICP'. That's not to say FlowFuse shouldn't cater to this audience, but does
    large budgets to purchase FlowFuse.
 1. Greater than 500 employees. The company needs to be large enough to have
    internal IT and/or OT people on staff.
-1. Node-RED interested
 1. Established Digitalization strategy
 
 See also the description of
