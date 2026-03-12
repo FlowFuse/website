@@ -22,3 +22,5 @@ You can also use the quick-add button in the Resource Selector to pull in your m
 
 ![Using the Resource Selector to add log entries](./images/expert-debug-log-specific.gif)
 *Using the Resource Selector to add specific log entries as context*
+
+For more details, see [Debug Context](/docs/user/expert/chat/#debug-context).
