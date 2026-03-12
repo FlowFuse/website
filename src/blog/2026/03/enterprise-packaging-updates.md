@@ -63,8 +63,6 @@ Build, iterate, and adapt faster with AI-assisted tooling. Certified Nodes and A
 
 Connect your systems with operational responsiveness — not just bulk data collection. FlowFuse is built for the workflow-centric, event-driven logic that manufacturing operations actually run on.
 
----
-
 ## What this means for your team
 
 FlowFuse has always been built on Node-RED — but Enterprise customers need more than a great open-source foundation. They need a platform they can stake production operations on.
