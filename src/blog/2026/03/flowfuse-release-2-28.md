@@ -4,7 +4,7 @@ subtitle: "Point FlowFuse Expert at your debug logs, configure Node.js runtime o
 description: "FlowFuse 2.28 lets you troubleshoot flows faster with debug log context in FlowFuse Expert, manage Remote Instances centrally with Node.js options and payload configuration, and gives self-hosted users more deployment flexibility."
 date: 2026-03-12
 authors: ["dimitrie-hoekstra"]
-image: /blog/2026/02/images/flowfuse-release-2-27.png
+image: /blog/2026/03/images/flowfuse-release-2-28.png
 tags:
    - flowfuse
    - news
@@ -38,9 +38,8 @@ Tracking down issues in your flows usually means adding debug nodes, reading thr
 
 You can now select individual debug log entries and include them as context when asking FlowFuse Expert for help. Combined with your selected flows, Expert sees exactly what you see — the error, the flow that produced it, and the surrounding context.
 
-<!-- TODO: Add screenshot/gif -->
-<!-- ![Selecting debug log entries as context for FlowFuse Expert](./images/expert-debug-context.gif){data-zoomable} -->
-<!-- <figcaption>Select specific log entries to give FlowFuse Expert focused troubleshooting context</figcaption> -->
+![Selecting debug log entries as context for FlowFuse Expert](./images/debug-expert.png){data-zoomable}
+<figcaption>Select specific log entries to give FlowFuse Expert focused troubleshooting context</figcaption>
 
 - **Select individual log entries** to focus Expert on the specific issue rather than everything in your log
 - **Quick-add from the Resource Selector** to pull in logs alongside your flows in one step
@@ -50,9 +49,8 @@ You can now select individual debug log entries and include them as context when
 
 FlowFuse Expert is getting new capabilities regularly — like the debug log context above. But when you are deep in your flows, it is easy to miss that an update is available. Expert now shows a banner when a newer version is ready. One click and you are up to date, so you always have access to the latest troubleshooting and development features.
 
-<!-- TODO: Add screenshot/gif -->
-<!-- ![FlowFuse Expert update banner](./images/ff-expert-update-banner.gif){data-zoomable} -->
-<!-- <figcaption>Expert lets you know when an update is available</figcaption> -->
+![FlowFuse Expert update banner](./images/expert-update-banner.png){data-zoomable}
+<figcaption>Expert lets you know when an update is available</figcaption>
 
 ## New Device Agent Configuration Options
 
@@ -68,8 +66,6 @@ Device Agent v3.8.1 lets you set Node.js command line arguments for Remote Insta
 ### Set API Payload Limits from the UI
 
 If your Remote Instances handle large MQTT messages or file uploads, you may have hit the default API payload size limit. You can now configure the maximum API payload length directly in FlowFuse under **Remote Instance → Settings → Editor**.
-
-<!-- TODO: Add screenshot -->
 
 ## More Flexibility for Self-Hosted Deployments
 
