@@ -89,7 +89,7 @@ navTitle: Feature Catalog
                 {% if feature.subfeature %}<span class="text-gray-400 mr-1">└</span><span class="text-gray-600 font-medium">{{ feature.label }}</span>{% else %}<strong>{{ feature.label }}</strong>{% endif %}{% if feature.beta %} <span class="text-xs text-indigo-600 font-medium bg-indigo-50 rounded" style="padding: 2px 8px;">Beta</span>{% endif %}
                 {% if feature.description %}<br><span class="text-gray-500">{{ feature.description }}</span>{% endif %}
                 {% if feature.docsLink %}<br><a href="{{ feature.docsLink }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Docs</a>{% endif %}
-                {% if feature.changelog %}<br><a href="{{ feature.changelog }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Changelog</a>{% endif %}
+                {% if feature.changelog %}{% if feature.changelog is iterable and feature.changelog is not string %}{% for cl in feature.changelog %}<br><a href="{{ cl.url }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Changelog{% if feature.changelog.length > 1 %} ({{ cl.release }}){% endif %}</a>{% endfor %}{% else %}<br><a href="{{ feature.changelog }}" target="_blank" rel="noopener" class="text-indigo-600 text-xs">Changelog</a>{% endif %}{% endif %}
             </td>
 
             {# Cloud tiers #}
