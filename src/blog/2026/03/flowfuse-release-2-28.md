@@ -33,7 +33,7 @@ You can now select individual debug log entries and include them as context when
 
 ### Always Have the Latest Expert Capabilities
 
-FlowFuse Expert now shows a banner when a newer version is available. One click and you are up to date — no need to check manually or wonder if you are missing new capabilities.
+FlowFuse Expert is getting new capabilities regularly — like the debug log context above. But when you are deep in your flows, it is easy to miss that an update is available. Expert now shows a banner when a newer version is ready. One click and you are up to date, so you always have access to the latest troubleshooting and development features.
 
 <!-- TODO: Add screenshot/gif -->
 <!-- ![FlowFuse Expert update banner](./images/ff-expert-update-banner.gif){data-zoomable} -->
@@ -60,11 +60,15 @@ If your Remote Instances handle large MQTT messages or file uploads, you may hav
 
 ## More Flexibility for Self-Hosted Deployments
 
-Teams running FlowFuse on their own Kubernetes or Docker infrastructure get several improvements in this release:
+### Migrate from Ingress Nginx to Traefik
 
-- **Team NPM Registry** — Self-hosted Docker Compose deployments can now expose a private NPM registry for custom nodes, with a configurable admin password
-- **Ingress migration tooling** — A new migration tool helps Kubernetes users move from Nginx Ingress to Traefik, with the required job resources and RBAC already included in the Helm chart
-- **Separate ingress class for projects** — You can now set a custom ingress class name for Hosted Instances, independent of the platform ingress, using `forge.projectIngressClassName`
+With the [retirement of Ingress Nginx](https://kubernetes.io/blog/2025/06/30/ingress-nginx-retirement/), many self-hosted Kubernetes users need to move to a supported ingress controller. To help with this transition, we have prepared a blueprint for migrating from Ingress Nginx to Traefik. The Helm chart now includes the required job resources and RBAC for the migration tool, and we have published a step-by-step [ingress controller migration guide](/docs/install/kubernetes/ingress-controller-migration/) to walk you through the process.
+
+As part of this work, you can now also set a separate ingress class name for Hosted Instances using `forge.projectIngressClassName`, allowing you to run project traffic through a different ingress controller than the platform itself.
+
+### Additional self-hosted improvements
+
+- **Team NPM Registry** — Docker Compose deployments can now expose a private NPM registry for custom nodes, with a configurable admin password
 - **Persistent storage access modes** — Configure custom PVC access modes (e.g. `ReadWriteMany`) for Hosted Instance storage in Kubernetes
 - **File-server PVC configuration** — Set the size, access modes, and storage class for file-server persistent volumes
 - **Private CA certificate mounting** — Docker Compose deployments can now mount a private CA certificate file into the forge service
