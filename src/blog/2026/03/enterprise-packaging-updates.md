@@ -47,8 +47,6 @@ Whether you're onboarding a new site, adapting an existing flow, or troubleshoot
 
 Our goal is simple: **the first week of value should come faster than ever before.**
 
----
-
 ## Built around three things that matter at scale
 
 These additions aren't standalone features — they reflect a deliberate focus on the three capabilities manufacturing enterprises need as they move from pilot to production to fleet.
