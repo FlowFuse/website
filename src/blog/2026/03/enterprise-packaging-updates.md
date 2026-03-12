@@ -17,17 +17,16 @@ keywords:
   - industrial automation
 date: 2026-03-12
 author: Pablo
-audience: external
 image: /blog/2026/03/images/enterprise-pillars-cert-nodes.png
 ---
 
-Manufacturing teams using FlowFuse are running Node-RED at scale — across plants, teams, and environments. As that scale grows, so do the expectations: faster deployments, tighter security, smarter tooling.
+Manufacturing teams using FlowFuse are running industrial applications at scale — across plants, teams, and environments. As that scale grows, so do the expectations: faster deployments, tighter security, smarter tooling.
 
 Today we're announcing updates to our Enterprise tier that reflect where our customers are headed and the kind of platform they need to get there.
 
 **FlowFuse Enterprise now includes Certified Nodes and AI Insights.**
 
----
+<!--more-->
 
 ## What's new in Enterprise
 
