@@ -1,6 +1,6 @@
 ---
 title: Upcoming Scheduled Server Maintenance on March 21st, 2026
-description: Allowing NodeJS command line arguments to be set for Remote Instances
+description: Keeping the FlowFuse Cloud up to date with critical server maintenance.
 date: 2026-03-12 12:00:00.0
 authors: ['nick-oleary']
 tags:
