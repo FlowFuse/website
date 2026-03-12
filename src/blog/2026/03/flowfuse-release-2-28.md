@@ -38,7 +38,7 @@ Tracking down issues in your flows usually means adding debug nodes, reading thr
 
 You can now select individual debug log entries and include them as context when asking FlowFuse Expert for help. Combined with your selected flows, Expert sees exactly what you see — the error, the flow that produced it, and the surrounding context.
 
-![Selecting debug log entries as context for FlowFuse Expert](./images/debug-expert.png){data-zoomable}
+![Selecting debug log entries as context for FlowFuse Expert](./images/debug-expert.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Select specific log entries to give FlowFuse Expert focused troubleshooting context</figcaption>
 
 - **Select individual log entries** to focus Expert on the specific issue rather than everything in your log
@@ -49,7 +49,7 @@ You can now select individual debug log entries and include them as context when
 
 FlowFuse Expert is getting new capabilities regularly — like the debug log context above. But when you are deep in your flows, it is easy to miss that an update is available. Expert now shows a banner when a newer version is ready. One click and you are up to date, so you always have access to the latest troubleshooting and development features.
 
-![FlowFuse Expert update banner](./images/expert-update-banner.png){data-zoomable}
+![FlowFuse Expert update banner](./images/expert-update-banner.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Expert lets you know when an update is available</figcaption>
 
 ## New Device Agent Configuration Options
