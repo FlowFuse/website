@@ -1,6 +1,6 @@
 ---
 title: "FlowFuse 2.28: Troubleshoot Faster, Manage Edge Devices Centrally, and More Self-Hosted Flexibility"
-subtitle: "Point FlowFuse Expert at your debug logs, configure Node.js runtime options without SSH, and gain more control over self-hosted deployments."
+subtitle: "Point FlowFuse Expert at your debug logs, configure Node.js runtime options for edge devices, and gain more control over self-hosted deployments."
 description: "FlowFuse 2.28 lets you troubleshoot flows faster with debug log context in FlowFuse Expert, manage Remote Instances centrally with Node.js options and payload configuration, and gives self-hosted users more deployment flexibility."
 date: 2026-03-12
 authors: ["dimitrie-hoekstra"]
@@ -9,6 +9,21 @@ tags:
    - flowfuse
    - news
    - releases
+release: "2.28"
+features:
+   - id: ff-expert-support
+     heading: "Point Expert at Your Debug Logs"
+   - id: ff-expert
+     heading: "Always Have the Latest Expert Capabilities"
+   - id: edge-devices
+     heading: "New Device Agent Configuration Options"
+   - heading: "More Flexibility for Self-Hosted Deployments"
+     tiers:
+       selfHosted: all
+   - heading: "What else is new?"
+     tiers:
+       cloud: all
+       selfHosted: all
 ---
 
 FlowFuse 2.28 focuses on making your day-to-day work faster and giving you more control — whether you are debugging a flow, managing edge devices, or running FlowFuse on your own infrastructure.
@@ -39,18 +54,16 @@ FlowFuse Expert is getting new capabilities regularly — like the debug log con
 <!-- ![FlowFuse Expert update banner](./images/ff-expert-update-banner.gif){data-zoomable} -->
 <!-- <figcaption>Expert lets you know when an update is available</figcaption> -->
 
-## Manage Remote Instances Without SSH
+## New Device Agent Configuration Options
 
-When you run Node-RED on edge devices or remote servers, changing runtime configuration usually means connecting to each device individually. FlowFuse 2.28 gives you two ways to manage this centrally.
+FlowFuse 2.28 expands what you can configure on your edge devices, giving you more control over how Node-RED runs on Remote Instances.
 
 ### Configure Node.js Runtime Options
 
-Device Agent v3.8.1 lets you set Node.js command line arguments for Remote Instances — directly from your `device.yml` or the agent command line. This means you can:
+Device Agent v3.8.1 lets you set Node.js command line arguments for Remote Instances — via your `device.yml` or the agent command line. Previously these options were not configurable at all. Now you can:
 
 - **Increase memory** for flows that process large datasets (`--max-old-space-size`)
 - **Use private CA certificates** for secure enterprise environments (`--use-openssl-ca` on Linux, `--use-system-ca` on Windows/macOS)
-
-No SSH, no per-device configuration scripts.
 
 ### Set API Payload Limits from the UI
 
