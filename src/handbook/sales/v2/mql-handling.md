@@ -51,6 +51,7 @@ Research the account the contact is employed at. Update the Account fields where
 Before writing the email, make a quick fit assessment:
 
 - Does the company match the [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-(icp))
+- Update the ICP field in the Contact with "Yes" or "No" based on your fit assessment. **Don't leave that field empty.**
 - Is the contact title aligned to a buying role or influencer role?
 - Is this an **education** contact? (university, school, academic institution)
 
