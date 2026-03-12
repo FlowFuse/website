@@ -38,3 +38,5 @@ nodeOptions:
 - '--max-old-space-size=256'
 - '--use-openssl-ca'
 ```
+
+For more details, see [Configuring Node.js Options](/docs/device-agent/running/#configuring-node.js-options).
