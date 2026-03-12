@@ -35,7 +35,7 @@ Today we're announcing updates to our Enterprise tier that reflect where our cus
 
 One of the most consistent questions we hear from IT and security teams evaluating FlowFuse is: "Is FlowFuse secure and compliant enough for production?"
 
-Certified Nodes are our answer. Every node in the catalogue has been security-scanned,  battle-tested, and comes with a clear support owner, along with enterprise level response times. That means your team gets the flexibility of the Node-RED ecosystem with the accountability that enterprise production environments demand.
+Certified Nodes are our answer. Every node in the catalogue has been security-scanned, battle-tested, and comes with a clear support owner, along with enterprise level response times. That means your team gets the flexibility of the Node-RED ecosystem with the accountability that enterprise production environments demand.
 
 This isn't just a compliance checkbox. It's the foundation for **trusting your infrastructure** — and for IT and Operations to standardize on FlowFuse with confidence across sites.
 
