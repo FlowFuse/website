@@ -4,7 +4,7 @@ subtitle: "Point FlowFuse Expert at your debug logs, configure Node.js runtime o
 description: "FlowFuse 2.28 lets you troubleshoot flows faster with debug log context in FlowFuse Expert, manage Remote Instances centrally with Node.js options and payload configuration, and gives self-hosted users more deployment flexibility."
 date: 2026-03-12
 authors: ["dimitrie-hoekstra"]
-image: /blog/2026/03/images/flowfuse-release-2-28.png
+image: 
 tags:
    - flowfuse
    - news
