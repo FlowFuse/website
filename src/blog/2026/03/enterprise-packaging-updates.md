@@ -72,5 +72,3 @@ FlowFuse has always been built on Node-RED — but Enterprise customers need mor
 Certified Nodes and AI Insights are the next step in making FlowFuse that platform: more accountable, more capable, and faster to value than ever.
 
 **Get started at [flowfuse.com/pricing](https://flowfuse.com/pricing).**
-
----
