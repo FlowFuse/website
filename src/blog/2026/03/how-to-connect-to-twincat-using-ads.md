@@ -1,5 +1,5 @@
 ---
-title: "How to Connect to Beckhoff TwinCAT Using ADS"
+title: "How to Connect to Beckhoff TwinCAT Using ADS ( 2026 )"
 subtitle: "Read and write TwinCAT PLC variables from FlowFuse using the ADS protocol, no additional licensing required."
 description: "Learn how to connect Beckhoff TwinCAT to FlowFuse using ADS. This guide covers AMS routing, TwinCAT software PLC setup, and reading and writing PLC variables with node-red-contrib-ads-client."
 date: 2026-02-13
