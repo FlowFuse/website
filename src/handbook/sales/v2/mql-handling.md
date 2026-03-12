@@ -23,6 +23,7 @@ Open the contact record in HubSpot as soon as you are notified of a new MQL.
 
 - Check the `Lead Status` field — it should be set **Open**.
 - Review the activity timeline: what triggered the MQL? (form submission, trial sign-up, contact request, webinar registration, etc.)
+- Review the original source of the MQL if available (AI Referrals, Organic Search, Direct Traffic, Referrals, Paid Search, Offline Sources, Paid Social, Organic Social, Email Marketing, etc.)
 - Check and update the [activation category](/handbook/marketing/lead-activation/) applies: inbound, intent outbound, warm outbound, or cold outbound. This shapes your messaging angle.
 - Check if there is an existing deal or prior contact history.
    - If so, understand investigate if this is a stakeholder in a current deal or expension opportunity.
