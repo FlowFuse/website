@@ -1628,8 +1628,8 @@ h4:hover .header-anchor::before {
     margin: 8px 0 16px 0;
 }
 
-h2 + .ff-tier-badges {
-    margin-top: -7px;
+.ff-tier-badges--h2 {
+    margin-top: -15.2px;
 }
 
 .ff-tier-badge {

@@ -703,7 +703,7 @@ module.exports = function(eleventyConfig) {
         const cloudLabel = deriveTierLabel(feature.cloud);
         const selfHostedLabel = deriveTierLabel(feature.selfHosted);
         if (!cloudLabel && !selfHostedLabel) return '';
-        let html = '<div class="ff-tier-badges">';
+        let html = `<div class="ff-tier-badges">`;
         if (cloudLabel) {
             const unavailable = cloudLabel === 'Not available';
             html += `<span class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
@@ -817,9 +817,10 @@ module.exports = function(eleventyConfig) {
 
             const heading = headingMatches[headingIdx];
 
-            // Insert badges right after the heading tag
+            // Insert badges right after the heading tag, adding heading-level class for spacing
             if (injection.badges) {
-                ops.push({ index: heading.index + heading.length, html: injection.badges });
+                const badgesWithLevel = injection.badges.replace('class="ff-tier-badges"', `class="ff-tier-badges ff-tier-badges--h${heading.level}"`);
+                ops.push({ index: heading.index + heading.length, html: badgesWithLevel });
             }
 
             // Insert changelogs before the next heading at the same or higher level
