@@ -2,14 +2,16 @@
 title: "FlowFuse Expert: Never Miss an Update"
 description: "FlowFuse Expert now shows a banner when a new version is available, so you always have access to the latest features."
 date: 2026-02-27 13:00:00.0
-authors: ['steve-mclaughlin']
+authors: ['stephen-mclaughlin']
 tags:
   - changelog
+issues:
+  - https://github.com/FlowFuse/flowfuse/issues/6763
 ---
 
-FlowFuse Expert is getting new capabilities regularly — but if you're deep in your flows, it's easy to miss that an update is available with which you would miss out on added capabilities.
+The Expert now shows a banner in the chat area when a newer version is available. One click and you are up to date.
 
-Now, a subtle banner appears in the chat area when there's a newer version of Expert ready. One click and you're up to date.
+FlowFuse Expert is updated regularly with new capabilities. This makes sure you always know when there is something new to try, without having to check manually.
 
-![FlowFuse Expert update banner](./images/ff-expert-update-banner.gif){data-zoomable}
+![FlowFuse Expert update banner](./images/ff-expert-update-banner.gif)
 *FlowFuse Expert lets you know when an update is available*

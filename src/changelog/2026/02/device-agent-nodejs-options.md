@@ -1,6 +1,6 @@
 ---
-title: Set NodeJS Options for Remote Instances
-description: Allowing NodeJS command line arguments to be set for Remote Instances
+title: Set Node.js Options for Remote Instances
+description: FlowFuse Device Agent v3.8.1 lets you pass Node.js command line arguments to Remote Instances, enabling custom heap sizes and private CA certificate support.
 date: 2026-02-13 12:00:00.0
 authors: ['ben-hardill']
 tags:
@@ -9,35 +9,32 @@ issues:
   - https://github.com/FlowFuse/device-agent/issues/571
 ---
 
-FlowFuse Device Agent v3.8.1 adds support for setting Node.js command line arguments for Remote Instances.
+You can now pass Node.js command line arguments to Remote Instances running the FlowFuse Device Agent.
 
-This allows things like:
+This is useful in two common situations: when your flows are memory-intensive and need a larger heap, or when your environment uses private CA certificates that Node.js does not trust by default.
 
-- Setting the Node.js heap size for memory-intensive flows
-- Enabling `--use-openssl-ca` (Linux) or `--use-system-ca` (Windows and macOS) to use private CA certificates
+### Configuring Node.js options
 
-Node.js options can be configured in two ways:
+There are two ways to set these options.
 
-### 1. Via the device agent command line
-
-Use the --node-options argument. This argument may be specified multiple times:
-
-    ```bash
-    flowfuse-device-agent -c /opt/flowfuse-device-agent/device.yml \
+**Via the device agent command line**, using `--node-options`. The argument can be specified more than once:
+```bash
+flowfuse-device-agent -c /opt/flowfuse-device-agent/device.yml \
     --node-options='--max-old-space-size=256' \
     --node-options='--use-openssl-ca'
-    ```
+```
 
-### 2. Via the `device.yml` file
+**Via `device.yml`**, by adding a `nodeOptions` list:
+```yaml
+deviceId: xxxxxxx
+forgeURL: https://app.flowfuse.com
+token: xxxxxxxx
+credentialSecret: xxxxx
+nodeOptions:
+  - '--max-old-space-size=256'
+  - '--use-openssl-ca'
+```
 
-Add a `nodeOptions` section:
+Note that the correct flag for private CA certificates depends on your OS: use `--use-openssl-ca` on Linux, or `--use-system-ca` on Windows and macOS.
 
-    ```yaml
-    deviceId: xxxxxxx
-    forgeURL: https://app.flowfuse.com
-    token: xxxxxxxx
-    credentialSecret: xxxxx
-    nodeOptions:
-      - '--max-old-space-size=256'
-      - '--use-openssl-ca'
-    ```
+This feature is available from Device Agent v3.8.1.
