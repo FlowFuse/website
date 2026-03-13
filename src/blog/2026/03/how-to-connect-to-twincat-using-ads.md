@@ -83,6 +83,7 @@ $xml = @"
 "@
 $xml | Set-Content "C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Target\StaticRoutes.xml"
 ```
+> Note: In this example, TwinCAT 3.1 is installed. If you are using a different version, replace 3.1 with the version installed on your system. The installation path may also vary depending on your TwinCAT setup.
 
 3. Restart the TwinCAT router from the system tray by right clicking the TwinCAT icon and selecting **Router > Restart**.
 4. Open the Windows Firewall and confirm that port 48898 is allowed for inbound TCP connections.
@@ -116,7 +117,7 @@ Once the installation is complete, a few nodes will appear in the right-hand pal
 | Target AMS Net ID | AMS Net ID of your TwinCAT machine, e.g. `10.68.82.232.1.1` |
 | Target ADS Port   | `851`                                                        |
 
-![Required settings tab showing Target AMS Net ID and Target ADS Port fields in the ADS connection configuration](./images/Twincat-config-required-feilds.png)
+![Required settings tab showing Target AMS Net ID and Target ADS Port fields in the ADS connection configuration](./images/Twincat-config-required-fields.png)
 
 5. Switch to the **Optional Settings** tab and fill in the network settings:
 
