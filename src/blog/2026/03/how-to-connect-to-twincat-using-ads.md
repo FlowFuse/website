@@ -30,7 +30,7 @@ Before you begin, make sure you have the following in place:
 - Symbol paths of the variables you want to read or write, available from whoever wrote the PLC program
 
 > If you don't have a real PLC available and want to follow along with a test setup, see
-> [Setting Up a Test PLC](#setting-up-a-test-plc) at the end of this guide before continuing.
+> [Setting Up a Test PLC](#setting-up-a-test-plc-optional) at the end of this guide before continuing.
 
 ## What is ADS and Why It Matters
 
