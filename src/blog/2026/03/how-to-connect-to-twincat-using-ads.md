@@ -307,21 +307,21 @@ This gives you three live variables to work with. `temperature` increments conti
 
 Symbol creation must be enabled for ADS to access variables by name. Without this step the ADS client will connect successfully but fail to find any variables.
 
-1. In Solution Explorer expand the project, then under **Task** double click **PlcTask**
-2. Check **Create symbols** in the properties window that opens
-3. Click **OK**
+10. In Solution Explorer expand the project, then under **Task** double click **PlcTask**
+11. Check **Create symbols** in the properties window that opens
+12. Click **OK**
 
 ![PlcTask properties window showing the Create symbols checkbox enabled](./images/create-symbol.png)
 
 ### Build and Activate
 
-10. Press **Ctrl+Shift+B** to build the project. Check the output window for any errors before continuing.
-11. Right click the PLC instance in Solution Explorer and select **Login**
+13. Press **Ctrl+Shift+B** to build the project. Check the output window for any errors before continuing.
+14. Right click the PLC instance in Solution Explorer and select **Login**
 
 > **Note:** If Login is not visible in the right click menu, find it in the top menu bar under **PLC > Login**.
 
-12. When TwinCAT prompts you to create the application on port 851, click **Yes**. Do not skip this step or change the port.
-13. Press **F5** to start the PLC
+15. When TwinCAT prompts you to create the application on port 851, click **Yes**. Do not skip this step or change the port.
+16. Press **F5** to start the PLC
 
 The TwinCAT system tray icon must be green before you proceed. A blue icon means the runtime is not running and ADS connections will fail.
 
