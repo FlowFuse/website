@@ -166,7 +166,7 @@ Click the inject button. You should see the variable value appear in the debug p
 
 <lite-youtube
   videoid="wTRmgIyWLyk"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
+  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/ads-read.png'); background-size: cover; background-position: center;"
   title="Reading TwinCAT PLC Variables with FlowFuse">
 </lite-youtube>
 
@@ -191,7 +191,7 @@ The debug node will now receive a message every time the variable value changes 
 
 <lite-youtube
   videoid="JYrzRXCHb9Q"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
+  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/ads-subscribe-image.png'); background-size: cover; background-position: center;"
   title="Subscribing to TwinCAT PLC Variable Changes with FlowFuse">
 </lite-youtube>
 
@@ -221,7 +221,7 @@ To verify the write worked, add a read value node for the same variable and chec
 
 <lite-youtube
   videoid="f0GtEp6OA_M"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
+  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/ads-write-image.png'); background-size: cover; background-position: center;"
   title="Writing to TwinCAT PLC Variables with FlowFuse">
 </lite-youtube>
 
