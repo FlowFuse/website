@@ -16,6 +16,14 @@ hubspot:
                 {% if subtitle %}
                 <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
+                {% set catalogFeature = page.url | featureForChangelog %}
+                {% if catalogFeature %}
+                    {% set tierCloud = catalogFeature.cloud | tierLabel %}
+                    {% set tierSelfHosted = catalogFeature.selfHosted | tierLabel %}
+                    {% if tierCloud or tierSelfHosted %}
+                        {% include "components/tier-badges.njk" %}
+                    {% endif %}
+                {% endif %}
             </div>
         </div>
     {% endif %}
