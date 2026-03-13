@@ -30,7 +30,7 @@ Before you begin, make sure you have the following in place:
 - Symbol paths of the variables you want to read or write, available from whoever wrote the PLC program
 
 > If you don't have a real PLC available and want to follow along with a test setup, see
-> [Setting Up a Test PLC](#setting-up-a-test-plc-optional) at the end of this guide before continuing.
+> [Setting Up a Test PLC](#setting-up-a-test-plc) at the end of this guide before continuing.
 
 ## What is ADS and Why It Matters
 
@@ -248,7 +248,7 @@ Port 48898 is blocked on the TwinCAT machine firewall or the two devices are not
 - **PLC variables not updating**
 The PLC is not in Run mode. The TwinCAT system tray icon must be green. A blue icon means the runtime is stopped — right click the tray icon and select **Restart TwinCAT (Run Mode)**.
 
-## Setting Up a Test PLC (Optional)
+## Setting Up a Test PLC
 
 This section is for readers who do not have a real TwinCAT PLC available and want to set up a minimal test environment to follow along with this guide. If you already have a PLC running, you do not need this section.
 
