@@ -54,14 +54,13 @@ FlowFuse Expert is getting new capabilities regularly — like the debug log con
 
 ## New Device Agent Configuration Options
 
-FlowFuse 2.28 expands what you can configure on your edge devices, giving you more control over how Node-RED runs on Remote Instances.
+FlowFuse 2.28 combined with Device Agent v3.8.1 expands what you can configure on your edge devices, giving you more control over how Node-RED runs on Remote Instances.
 
 ### Configure Node.js Runtime Options
 
-Device Agent v3.8.1 lets you set Node.js command line arguments for Remote Instances — via your `device.yml` or the agent command line. Previously these options were not configurable at all. Now you can:
+The latest Device Agent lets you set Node.js command line arguments for Remote Instances — via your `device.yml` or the agent command line. Previously these options were not configurable at all. The full set of NodeJS (command line arguments)[https://nodejs.org/docs/latest-v22.x/api/cli.html] can be set. For example
 
 - **Increase memory** for flows that process large datasets (`--max-old-space-size`)
-- **Use private CA certificates** for secure enterprise environments (`--use-openssl-ca` on Linux, `--use-system-ca` on Windows/macOS)
 
 ### Set API Payload Limits from the UI
 
@@ -77,15 +76,13 @@ As part of this work, you can now also set a separate ingress class name for Hos
 
 ### Additional self-hosted improvements
 
-- **Team NPM Registry** — Docker Compose deployments can now expose a private NPM registry for custom nodes, with a configurable admin password
-- **Persistent storage access modes** — Configure custom PVC access modes (e.g. `ReadWriteMany`) for Hosted Instance storage in Kubernetes
+- **Team NPM Registry** — Docker Compose deployments can now have all the Team Library, Custom Nodes pre-requisits configured.
 - **File-server PVC configuration** — Set the size, access modes, and storage class for file-server persistent volumes
 - **Private CA certificate mounting** — Docker Compose deployments can now mount a private CA certificate file into the forge service
 
 ## What else is new?
 
-- Instances now automatically receive scheduled maintenance settings when their team type changes, so they stay up to date without manual configuration
-- Improved reliability with better Valkey/Redis cache reconnection handling and enhanced error context in device editor tunnels
+- Instances can now automatically receive scheduled maintenance, so they stay up to date without manual configuration.
 - Updated FlowFuse Expert documentation with dedicated guides for the Chat Interface and AI-assisted features in Node-RED
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.28, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
