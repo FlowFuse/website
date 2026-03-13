@@ -4,6 +4,7 @@ subtitle: "Read and write TwinCAT PLC variables from FlowFuse using the ADS prot
 description: "Learn how to connect Beckhoff TwinCAT to FlowFuse using ADS. This guide covers AMS routing, TwinCAT software PLC setup, and reading and writing PLC variables with node-red-contrib-ads-client."
 date: 2026-03-13
 authors: ["sumit-shinde"]
+image: /blog/2026/03/images/backoff-twincat.png
 tags:
 - flowfuse
 ---
