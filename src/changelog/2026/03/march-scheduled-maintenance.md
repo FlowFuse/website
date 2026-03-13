@@ -19,7 +19,7 @@ If your instance was created after 11th March 2026, or has been updated to the 2
 
 Otherwise, you can take action to migrate your instance before the scheduled maintenance window at your own convenience.
 
-If you manually suspend and restart your instance at any time before the maintenance window, your instance will not need to be restarted and no further action will be needed.
+If you manually suspend and restart your instance, or upgrade to 2.28 at any time before the maintenance window, your instance will not need to be restarted and no further action will be needed.
 
 You can find the "Suspend" option from the "Actions" drop down menu on the Instance Overview page. Once the Instance reports being in the Suspended state, you can select "Start" from the same drop down menu.
 
