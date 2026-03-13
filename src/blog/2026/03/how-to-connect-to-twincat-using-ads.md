@@ -2,7 +2,7 @@
 title: "How to Connect to Beckhoff TwinCAT PLC Using ADS (2026)"
 subtitle: "Read and write TwinCAT PLC variables from FlowFuse using the ADS protocol, no additional licensing required."
 description: "Learn how to connect Beckhoff TwinCAT to FlowFuse using ADS. This guide covers AMS routing, TwinCAT software PLC setup, and reading and writing PLC variables with node-red-contrib-ads-client."
-date: 2026-02-06
+date: 2026-03-13
 authors: ["sumit-shinde"]
 tags:
 - flowfuse
@@ -63,6 +63,7 @@ For example if your FlowFuse device IP is `192.168.1.50`, its AMS Net ID is `192
 
 1. On the TwinCAT machine open PowerShell as administrator
 2. Run the following command, replacing `YOUR_EDGE_DEVICE_IP` with the actual IP of your FlowFuse device:
+
 ```powershell
 $xml = @"
 <?xml version="1.0"?>
@@ -100,7 +101,7 @@ After completing these steps, verify that port 48898 is reachable from your Flow
 
 Once the installation is complete, a few nodes will appear in the right-hand palette under the TwinCAT ADS category.
 
-![](./images/twincat-ads-nodes.png "")
+![TwinCAT ADS nodes available in the Node-RED palette after installing node-red-contrib-ads-client](./images/twincat-ads-nodes.png)
 
 ## Connecting to TwinCAT
 
@@ -124,7 +125,7 @@ In the **Required Settings** tab fill in:
 | Target AMS Net ID | AMS Net ID of your TwinCAT machine, e.g. `192.168.1.10.1.1` |
 | Target ADS Port   | `851`                                                        |
 
-![](./images/Twincat-config-required-feilds.png "")
+![Required settings tab showing Target AMS Net ID and Target ADS Port fields in the ADS connection configuration](./images/Twincat-config-required-feilds.png)
 
 Switch to the **Optional Settings** tab and fill in:
 
@@ -141,7 +142,7 @@ Switch to the **Optional Settings** tab and fill in:
 4. Set the **Local AMS Net ID** to the AMS Net ID of your FlowFuse device.
 5. Leave **Local ADS Port** at the default value `32750`.
 
-![](./images/twincat-config-optional-tab.png "")
+![Optional settings tab showing Router Address, Router TCP Port, Local AMS Net ID and Local ADS Port fields](./images/twincat-config-optional-tab.png)
 
 The **Router Address** and **Router TCP Port** allow the ADS client to reach the TwinCAT router over the network. The **Local AMS Net ID** identifies your FlowFuse edge device inside the ADS routing system and must match the route configured in `StaticRoutes.xml`. The **Local ADS Port** defines the local ADS endpoint used by the client and normally does not need to be changed.
 
@@ -153,7 +154,7 @@ The **Router Address** and **Router TCP Port** allow the ADS client to reach the
 
 Within a few seconds the connection status node should show **connected**, indicating that FlowFuse successfully established an ADS session with the TwinCAT runtime.
 
-![](./images/connection-status.png "")
+![ADS connection status node showing connected state in Node-RED](./images/connection-status.png)
 
 ## Reading PLC Variables
 
@@ -167,7 +168,7 @@ With the connection working, reading a variable takes three nodes: an inject nod
 6. Select your TwinCAT connection from the **Connection** dropdown
 7. Set the **Variable name** to the full symbol path of the variable you want to read. Symbol paths are always in the format `ProgramName.VariableName`. If you are following along with the test PLC, use `MAIN.temperature`. If you are connecting to a real PLC, use the symbol paths provided by the controls engineer.
 
-![](./images/ads-read-value.png "")
+![ADS Read Value node configuration showing variable name set to MAIN.temperature](./images/ads-read-value.png)
 
 8. Click **Done**
 
@@ -195,7 +196,7 @@ Polling on a fixed timer works but is inefficient. For live data the better appr
 5. Set the **Subscription mode** to **On Change**. This tells the TwinCAT runtime to notify FlowFuse only when the variable value has actually changed, rather than pushing the value on every cycle regardless of whether it changed. If you need a value delivered at a fixed interval even when unchanged, use **Cyclic** instead.
 6. Set the **Cycle time** to `100` milliseconds. This is how frequently TwinCAT checks for changes on its side.
 
-![](./images/ads-subscribe.png "")
+![ADS Subscribe Value node configuration showing variable name, subscription mode set to On Change, and cycle time set to 100ms](./images/ads-subscribe.png)
 
 7. Click **Done**
 8. Connect its output to a debug node
@@ -219,7 +220,7 @@ Writing back to the PLC closes the loop. This is useful for sending setpoints, c
 4. Set the **Variable name** to the full symbol path of the variable you want to write to. If you are following along with the test PLC, use `MAIN.setpoint`.
 5. Leave **Automatically fill missing properties (autoFill)** unchecked. This setting only applies when writing complex types such as structs or function blocks — it reads the current value from the PLC first and merges your changes on top so unspecified fields are not zeroed out. For a simple variable like `MAIN.setpoint` it has no effect.
 
-![](./images/ads-write.png "")
+![ADS Write Value node configuration showing variable name set to MAIN.setpoint with autoFill unchecked](./images/ads-write.png)
 
 6. Click **Done**
 
@@ -289,6 +290,7 @@ This section is for readers who do not have a real TwinCAT PLC available and wan
 
 7. In Solution Explorer expand **PLC > your project > POUs** and double click **MAIN**
 8. In the declaration section (top panel) replace the existing content with:
+
 ```
 PROGRAM MAIN
 VAR
@@ -300,6 +302,7 @@ END_VAR
 ```
 
 9. In the program body (bottom panel) add:
+
 ```
 temperature := temperature + 0.1;
 IF temperature > 100.0 THEN
@@ -323,7 +326,7 @@ Symbol creation must be enabled for ADS to access variables by name. Without thi
 2. Check **Create symbols** in the properties window that opens
 3. Click **OK**
 
-![](./images/create-symbol.png "")
+![PlcTask properties window showing the Create symbols checkbox enabled](./images/create-symbol.png)
 
 ### Build and Activate
 
