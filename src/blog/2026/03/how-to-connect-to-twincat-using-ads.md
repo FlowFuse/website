@@ -8,7 +8,7 @@ tags:
 - flowfuse
 ---
 
-Beckhoff TwinCAT is one of the most widely deployed PLC platforms in industrial automation. ADS, its native communication protocol, gives you direct read and write access to PLC variables without additional licensing or middleware — and connecting from FlowFuse means tapping into that same channel TwinCAT uses internally.
+Beckhoff TwinCAT is one of the most widely deployed PLC platforms in industrial automation. ADS, its native communication protocol, gives you direct read and write access to PLC variables without additional licensing or middleware, and connecting from FlowFuse means tapping into that same channel TwinCAT uses internally.
 
 <!--more-->
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following in place:
 
 ADS, Automation Device Specification, is not an integration layer Beckhoff added for external tools. It is the internal communication backbone of the TwinCAT runtime itself. The same protocol TwinCAT XAE uses when you go online with a PLC, the same one the HMI uses to read variables, the same one the NC task uses to talk to the PLC task. When you connect from FlowFuse, you are using that same channel.
 
-Every TwinCAT device has an AMS Net ID. It looks like an IP address with two extra octets: `192.168.1.10.1.1`. The first four typically match the device IP, the last two are almost always `1.1` by convention. This is how the ADS router identifies devices on the network, and it is what you will configure in every connection you make from FlowFuse.
+Every TwinCAT device has an AMS Net ID. It looks like an IP address with two extra octets: `10.68.82.232.1.1`. The first four typically match the device IP, the last two are almost always `1.1` by convention. This is how the ADS router identifies devices on the network, and it is what you will configure in every connection you make from FlowFuse.
 
 Within a device, different TwinCAT components are reachable on different ADS ports. The PLC runtime listens on port `851` by default. If your machine runs multiple PLC tasks, each task gets its own port: the first task is `851`, the second is `852`, and so on. Check with the controls engineer which port corresponds to the task containing your variables.
 
@@ -53,13 +53,15 @@ Before adding the route you need two pieces of information:
 - The IP address of your FlowFuse edge device
 - The AMS Net ID you will assign to it, which is the IP address with `.1.1` appended
 
-For example if your FlowFuse device IP is `192.168.1.50`, its AMS Net ID is `192.168.1.50.1.1`.
+For example if your FlowFuse device IP is `10.68.82.101`, its AMS Net ID is `10.68.82.101.1.1`.
 
 > **Important:** Your FlowFuse edge device must be on the same network as the interface TwinCAT's AMS Net ID is bound to. TwinCAT binds its AMS Net ID to a specific network interface on startup. If your machine has multiple network interfaces, confirm which IP the AMS Net ID uses — you can find it by right clicking the TwinCAT tray icon and selecting **About TwinCAT System**. Your FlowFuse device must be reachable on that same network, otherwise the ADS handshake will fail even if port 48898 is open.
 
 **Edit StaticRoutes.xml:**
 
 > If you do not have direct access to the TwinCAT machine, ask the controls engineer or machine builder to make this change. Share this section with them so they know exactly what needs to be set, particularly the `Flags` value of `0`.
+
+> **Warning:** The PowerShell command below overwrites the entire `StaticRoutes.xml` file. If the TwinCAT machine already has existing routes configured, back up the file before running this command or add your route entry manually inside the existing `<RemoteConnections>` block instead.
 
 1. On the TwinCAT machine open PowerShell as administrator
 2. Run the following command, replacing `YOUR_EDGE_DEVICE_IP` with the actual IP of your FlowFuse device:
@@ -83,12 +85,9 @@ $xml | Set-Content "C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Target\StaticRou
 ```
 
 3. Restart the TwinCAT router from the system tray by right clicking the TwinCAT icon and selecting **Router > Restart**.
+4. Open the Windows Firewall and confirm that port 48898 is allowed for inbound TCP connections.
 
-4. Make sure port 48898 is open on the TwinCAT machine firewall before proceeding.
-
-After completing these steps, verify that port 48898 is reachable from your FlowFuse edge device. If the connection is blocked, check that both devices are on the same network and that the firewall rule was applied correctly.
-
-> **In a real factory:** StaticRoutes.xml is typically managed by the machine builder or controls engineer who commissioned the system. What you need from them is confirmation that your FlowFuse edge device IP has been added to the route table with Flags set to 0. That one detail is what makes the difference between a working connection and hours of silent debugging.
+After the router restarts, verify that port 48898 is reachable from your FlowFuse edge device by running `nc -zv <twincat-ip> 48898`. If the connection is refused, confirm the firewall rule was saved and that both devices are on the same subnet.
 
 ## Installing node-red-contrib-ads-client in FlowFuse
 
@@ -105,42 +104,28 @@ Once the installation is complete, a few nodes will appear in the right-hand pal
 
 ## Connecting to TwinCAT
 
-Before building the flow, collect the following values from the controls engineer or machine builder who manages the TwinCAT machine:
-
-* **TwinCAT machine IP** – IP address of the TwinCAT machine on the same network as your FlowFuse device
-* **TwinCAT AMS Net ID** – AMS Net ID of the TwinCAT machine, visible in **About TwinCAT System**
-* **FlowFuse device IP** – IP address of the FlowFuse edge device
-* **FlowFuse AMS Net ID** – The FlowFuse device IP with `.1.1` appended
-
 **Add the connection node:**
 
-1. In Node-RED drag an **ADS – Connection Status** node onto the canvas.
-2. Double click it to open the configuration.
-3. Next to the **Connection** field click **+** to create a new connection.
-
-In the **Required Settings** tab fill in:
+1. In Node-RED drag an **ADS – Connection Status** node onto the canvas
+2. Double click it to open the configuration
+3. Next to the **Connection** field click **+** to create a new connection
+4. In the **Required Settings** tab fill in the Target AMS Net ID and Target ADS Port:
 
 | Field             | Value                                                        |
 | ----------------- | ------------------------------------------------------------ |
-| Target AMS Net ID | AMS Net ID of your TwinCAT machine, e.g. `192.168.1.10.1.1` |
+| Target AMS Net ID | AMS Net ID of your TwinCAT machine, e.g. `10.68.82.232.1.1` |
 | Target ADS Port   | `851`                                                        |
 
 ![Required settings tab showing Target AMS Net ID and Target ADS Port fields in the ADS connection configuration](./images/Twincat-config-required-feilds.png)
 
-Switch to the **Optional Settings** tab and fill in:
+5. Switch to the **Optional Settings** tab and fill in the network settings:
 
 | Field            | Value                                                             |
 | ---------------- | ----------------------------------------------------------------- |
-| Router Address   | IP address of your TwinCAT machine, e.g. `192.168.1.10`           |
+| Router Address   | IP address of your TwinCAT machine, e.g. `10.68.82.232`           |
 | Router TCP Port  | `48898`                                                           |
-| Local AMS Net ID | AMS Net ID of your FlowFuse edge device, e.g. `192.168.1.50.1.1` |
+| Local AMS Net ID | AMS Net ID of your FlowFuse edge device, e.g. `10.68.82.101.1.1` |
 | Local ADS Port   | `32750`                                                           |
-
-1. Switch to the **Optional Settings** tab.
-2. Enter the **Router Address** (the IP address of the TwinCAT machine).
-3. Leave **Router TCP Port** set to `48898`.
-4. Set the **Local AMS Net ID** to the AMS Net ID of your FlowFuse device.
-5. Leave **Local ADS Port** at the default value `32750`.
 
 ![Optional settings tab showing Router Address, Router TCP Port, Local AMS Net ID and Local ADS Port fields](./images/twincat-config-optional-tab.png)
 
@@ -148,9 +133,9 @@ The **Router Address** and **Router TCP Port** allow the ADS client to reach the
 
 > **Note:** If your TwinCAT system is in config mode or the PLC runtime takes time to initialize on startup, enable **Allow Half Open** in the connection settings. Without it the client performs a strict system state check on connect and will fail with ADS error 7 even if the router is reachable. With it enabled the client connects regardless and waits for the runtime to become ready.
 
-1. Click **Add** to save the connection configuration.
-2. Click **Done**.
-3. Click **Deploy**.
+6. Click **Add** to save the connection configuration
+7. Click **Done**
+8. Click **Deploy**
 
 Within a few seconds the connection status node should show **connected**, indicating that FlowFuse successfully established an ADS session with the TwinCAT runtime.
 
@@ -180,9 +165,9 @@ With the connection working, reading a variable takes three nodes: an inject nod
 Click the inject button. You should see the variable value appear in the debug panel.
 
 <lite-youtube
-  videoid="Fkv2x3Kv0lY"
+  videoid="wTRmgIyWLyk"
   style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
-  title="Motor Anomaly Detection System Built Using FlowFuse">
+  title="Reading TwinCAT PLC Variables with FlowFuse">
 </lite-youtube>
 
 ## Subscribing to Variable Changes
@@ -205,9 +190,9 @@ Polling on a fixed timer works but is inefficient. For live data the better appr
 The debug node will now receive a message every time the variable value changes in the PLC, with no polling required from FlowFuse.
 
 <lite-youtube
-  videoid="Fkv2x3Kv0lY"
+  videoid="JYrzRXCHb9Q"
   style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
-  title="Motor Anomaly Detection System Built Using FlowFuse">
+  title="Subscribing to TwinCAT PLC Variable Changes with FlowFuse">
 </lite-youtube>
 
 ## Writing to PLC Variables
@@ -235,9 +220,9 @@ Writing back to the PLC closes the loop. This is useful for sending setpoints, c
 To verify the write worked, add a read value node for the same variable and check that the value updated in the debug panel.
 
 <lite-youtube
-  videoid="Fkv2x3Kv0lY"
+  videoid="f0GtEp6OA_M"
   style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
-  title="Motor Anomaly Detection System Built Using FlowFuse">
+  title="Writing to TwinCAT PLC Variables with FlowFuse">
 </lite-youtube>
 
 ## Troubleshooting
@@ -290,7 +275,6 @@ This section is for readers who do not have a real TwinCAT PLC available and wan
 
 7. In Solution Explorer expand **PLC > your project > POUs** and double click **MAIN**
 8. In the declaration section (top panel) replace the existing content with:
-
 ```
 PROGRAM MAIN
 VAR
@@ -302,7 +286,6 @@ END_VAR
 ```
 
 9. In the program body (bottom panel) add:
-
 ```
 temperature := temperature + 0.1;
 IF temperature > 100.0 THEN
