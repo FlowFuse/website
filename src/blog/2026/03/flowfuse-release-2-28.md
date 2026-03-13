@@ -64,7 +64,7 @@ The latest Device Agent lets you set Node.js command line arguments for Remote I
 
 ### Set API Payload Limits from the UI
 
-If your Remote Instances handle large MQTT messages or file uploads, you may have hit the default API payload size limit. You can now configure the maximum API payload length directly in FlowFuse under **Remote Instance → Settings → Editor**.
+If your Remote Instances handle large file uploads, you may have hit the default API payload size limit. You can now configure the maximum API payload length directly in FlowFuse under **Remote Instance → Settings → Editor**.
 
 ## More Flexibility for Self-Hosted Deployments
 
