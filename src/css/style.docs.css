@@ -120,12 +120,12 @@
 }
 
 .ff-callout--warning {
-    background-color: #fef3c7;
-    border-left-color: #f59e0b;
+    background-color: theme(colors.yellow.50);
+    border-left-color: theme(colors.yellow.500);
 }
 
 .ff-callout--warning .ff-callout__title {
-    color: #b45309;
+    color: theme(colors.yellow.700);
 }
 
 .ff-callout--critical {
