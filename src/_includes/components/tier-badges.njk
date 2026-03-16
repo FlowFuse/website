@@ -1,0 +1,14 @@
+<div class="ff-tier-badges">
+  {% if tierCloud %}
+    <span class="ff-tier-badge {{ 'ff-tier--unavailable' if tierCloud == 'Not available' else 'ff-tier--available' }}">
+      <span class="ff-tier-badge__label">Cloud</span>
+      <span class="ff-tier-badge__value">{{ tierCloud }}</span>
+    </span>
+  {% endif %}
+  {% if tierSelfHosted %}
+    <span class="ff-tier-badge {{ 'ff-tier--unavailable' if tierSelfHosted == 'Not available' else 'ff-tier--available' }}">
+      <span class="ff-tier-badge__label">Self-Hosted</span>
+      <span class="ff-tier-badge__value">{{ tierSelfHosted }}</span>
+    </span>
+  {% endif %}
+</div>
