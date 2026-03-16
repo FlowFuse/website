@@ -1,5 +1,5 @@
 ---
-title: Upcoming Scheduled Server Maintenance on March 21st, 2026
+title: "Updated: Upcoming Scheduled Server Maintenance on March 28th, 2026"
 description: Keeping the FlowFuse Cloud up to date with critical server maintenance.
 date: 2026-03-12 12:00:00.0
 authors: ['nick-oleary']
@@ -11,7 +11,9 @@ As part of our ongoing efforts to maintain our infrastructure, we need to update
 
 This will require restarting any hosted Node-RED instances running on those servers, leading to a short downtime whilst they restart. Remote instances on the edge are unaffected.
 
-**We will complete this migration during a 2 hour maintenance window starting at 8am UTC on Saturday 21st March 2026.**
+**We will complete this migration during a 2 hour maintenance window starting at 8am UTC on Saturday 28th March 2026.**
+
+Note: the original version of this post had the incorrect date. The mainteance is scheduled for Saturday 28th March.
 
 ### Will my instances be affected?
 
