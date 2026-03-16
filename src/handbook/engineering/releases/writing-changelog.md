@@ -4,10 +4,9 @@ navTitle: Changelog Posts
 
 # Writing Changelog Posts
 
-The [FlowFuse Changelog](https://flowfuse.com/changelog/) is where users find out what has shipped. It is one of the most read pages on the site and one of the most direct ways we communicate value to our users.
+The [FlowFuse Changelog](/changelog/) is where users go to see what has shipped. It is a place to communicate product updates clearly and directly to FlowFuse users.
 
-A changelog post is not a PR description or a release note. It is a short, focused announcement written for a FlowFuse user, someone who is busy and wants to know quickly what changed and whether it matters to them.
-
+A changelog post is not a PR description or a release note. It is a short, focused announcement written for a FlowFuse user, someone who is busy and wants to quickly understand what changed and whether it affects them.
 
 ## When to write one
 
