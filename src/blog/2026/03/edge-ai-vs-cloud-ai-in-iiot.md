@@ -1,7 +1,7 @@
 ---
-title: "Edge vs. Cloud AI in Industrial Environments"
+title: "Edge vs Cloud AI in Manufacturing: Where Each Actually Belongs"
 subtitle: "Should we run our AI at the edge or in the cloud?"
-description: ""
+description: "Industrial AI works best when edge and cloud are treated as complementary layers. This article explores how manufacturers use hierarchical architectures to combine real-time inference on the plant floor with large-scale model training in the cloud."
 date: 2026-03-02
 keywords: 
 authors: ["sumit-shinde"]
@@ -10,13 +10,11 @@ tags:
 - flowfuse
 ---
 
-Industrial operations don't stop for network delays. A conveyor fault, a pressure spike, a bearing about to fail. These need a response in milliseconds, not the time it takes to reach a data center and back.
+Most industrial AI deployments are built around the wrong question. "Edge or cloud?" treats a deployment decision as a binary choice, when the real question is simpler and more useful: what does this specific workload actually require?
 
-Yet the cloud delivers what the plant floor cannot. The compute power to build and train AI models, the ability to learn from thousands of machines, and the scale to deploy intelligence across entire operations.
+Edge AI offers real-time inference with no network dependency. Cloud AI offers the depth of compute and data that builds models worth deploying in the first place. Both are genuinely necessary. Neither is universally correct. And the architecture that works is almost always a hierarchy of both, not a choice between them.
 
-That is the core challenge of industrial AI today. Edge and cloud both have real limits. Latency, bandwidth, data ownership, model size, system reliability. The trade-offs are real, and getting them wrong doesn't mean a poor result. It means lost production or a safety event.
-
-This article looks at both honestly. Where each works, where each falls short, and how leading industrial companies are moving past the debate toward a smarter approach that puts the right AI in the right place, for the right reasons.
+This piece looks at where each layer performs, where each fails, and how to place workloads correctly across the hierarchy. The goal is not a verdict. It is a framework for making the decision well, every time.
 
 ## What Edge AI and Cloud AI Actually Mean on the Plant Floor
 
@@ -81,7 +79,15 @@ Each level handles a different class of decisions, at a different speed, with a 
 
 Data flows up through this hierarchy for aggregation and learning. Model updates, detection thresholds, and configurations flow back down. An architecture that flips this, sending time-sensitive decisions to the cloud while the edge just passes data along, will run into the same problems as a cloud-only deployment, regardless of what it is called.
 
-Placing workloads correctly is where most industrial AI projects go wrong. The starting point is always the decision itself: what is the AI being asked to do, and what happens if the answer is late? Three questions settle most cases. What response time is acceptable. Can the data leave the facility. And how much context does the model actually need. In most real deployments, the same asset feeds multiple levels at once: a Level 2 anomaly detection model, a Level 3 shift performance report, and a Level 4–5 fleet-wide predictive model retrained monthly. These are three different problems running at three different speeds, not one problem waiting for one answer.
+Placing workloads correctly is where most industrial AI projects go wrong. The starting point is always the decision itself: what is the AI being asked to do, and what happens if the answer is late? Three questions settle most cases:
+
+> What response time is acceptable? Milliseconds point to Level 0–2. Seconds to minutes allow Level 3. Hours or longer can go to the cloud.
+
+> Can the data leave the facility? Regulatory constraints, network limitations, or operational policy may make cloud processing impermissible regardless of latency.
+
+> How much context does the model need? Single-asset inference fits at the edge. Cross-site pattern recognition belongs in the cloud.
+
+In most real deployments, the same asset feeds multiple levels simultaneously: a Level 2 anomaly detection model acting in real time, a Level 3 shift performance report running every few hours, and a Level 4–5 fleet-wide predictive model retrained monthly. These are three different problems running at three different speeds, not one problem waiting for one answer.
 
 ## Conclusion
 
@@ -89,6 +95,10 @@ The edge-vs-cloud question has a straightforward answer once the right question 
 
 Edge and cloud are not competing philosophies. They are complementary layers of a single architecture that the manufacturing industry already understands. What industrial AI adds is the requirement to place intelligence deliberately at each level, not just data collection at the bottom and reporting at the top, but active inference, model management, and continuous learning distributed across the hierarchy in proportion to where the decisions actually happen.
 
-The technology to do this exists. The frameworks are mature, the hardware is proven, and the use cases are well established. What separates the deployments that deliver sustained operational value from the ones that stall after the pilot is not the sophistication of the models. It is the clarity of the architecture and the discipline to build it in the right order.
+The technology to do this exists. The frameworks are mature, the hardware is proven, and the use cases are well established. What separates deployments that deliver sustained operational value from the ones that stall after the pilot is not the sophistication of the models. It is the clarity of the architecture and the discipline to build it in the right order.
 
-Define the decision. Map it to the hierarchy. Build the infrastructure that decision requires. Then train the model. That sequence, followed consistently across every workload and every site, is what industrial AI at scale actually looks like.
+Define the decision. Map it to the hierarchy. Build the infrastructure that decision requires. Then train the model.
+
+That sequence is what industrial AI at scale actually looks like, and [FlowFuse](https://flowfuse.com) is the platform built to run it. From connecting machines and collecting data, to transforming and visualizing it in real time, to running model inference directly in the flow with ONNX nodes, wiring live plant data into AI agents with MCP, and letting operators query their operations in plain language with Expert Insights. One platform. Every level of the hierarchy.
+
+[Book a demo today](/book-demo/) to see how FlowFuse brings the full hierarchy to life across your operations.
