@@ -85,3 +85,54 @@
 .checklist-item .tooltip:hover:after {
     display:block;
 }
+
+.prose .ff-callout__content > :first-child {
+    margin-top: 0;
+}
+
+.prose .ff-callout__content > :last-child {
+    margin-bottom: 0;
+}
+
+.ff-callout {
+    @apply my-6 border-l-2 px-4 py-3;
+}
+
+.main-content .ff-callout {
+    @apply mb-6;
+}
+
+.ff-callout__title {
+    @apply mt-0 mb-1 text-sm font-bold uppercase tracking-wide;
+}
+
+.ff-callout__content > * {
+    @apply text-left;
+}
+
+.ff-callout--note {
+    background-color: theme(colors.blue.50);
+    border-left-color: theme(colors.blue.500);
+}
+
+.ff-callout--note .ff-callout__title {
+    color: theme(colors.blue.700);
+}
+
+.ff-callout--warning {
+    background-color: #fef3c7;
+    border-left-color: #f59e0b;
+}
+
+.ff-callout--warning .ff-callout__title {
+    color: #b45309;
+}
+
+.ff-callout--critical {
+    background-color: theme(colors.red.50);
+    border-left-color: theme(colors.red.500);
+}
+
+.ff-callout--critical .ff-callout__title {
+    color: theme(colors.red.700);
+}
