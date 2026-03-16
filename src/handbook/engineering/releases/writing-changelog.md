@@ -6,7 +6,7 @@ navTitle: Changelog Posts
 
 The [FlowFuse Changelog](/changelog/) is where users go to see what has shipped. It is a place to communicate product updates clearly and directly to FlowFuse users.
 
-A changelog post is not a PR description or a release note. It is a short, focused announcement written for a FlowFuse user, someone who is busy and wants to quickly understand what changed and whether it affects them.
+A changelog post is not a PR description or a release note. It is a short, focused announcement written for FlowFuse users who want to quickly understand what changed and how it impacts them.
 
 ## When to write one
 
@@ -14,8 +14,7 @@ Write a changelog post when you ship something a user would notice or benefit fr
 
 Do not write changelog posts for internal tooling changes with no user-visible impact, routine dependency bumps, minor bug fixes the average user would never encounter, or changes behind a feature flag that are not yet generally available.
 
-If you are unsure, ask: *would a user who opens FlowFuse tomorrow notice or benefit from this?* If not, skip it.
-
+If you are unsure, ask: “Would a user who opens FlowFuse tomorrow notice or benefit from this?” If the answer is no, it can likely be skipped. When in doubt, make it a quick discussion with the team, involving both engineering and product.
 
 ## Creating the file
 
@@ -26,7 +25,6 @@ src/changelog/YYYY/MM/your-post-slug.md
 ```
 
 The slug should be short, lowercase, and hyphen-separated, describing the feature being announced.
-
 
 ## Frontmatter
 
@@ -41,6 +39,24 @@ Every post requires the following fields at the top of the file:
 | `tags` | Always include `changelog`. |
 | `issues` | A list of related GitHub issue URLs. Link any issues that tracked the work being announced. |
 
+## Starting Template
+
+You can start a new changelog post with the following template:
+
+```markdown
+---
+title: Short Feature Title
+description: One sentence summarising the change.
+date: YYYY-MM-DD
+authors: your-handle
+tags:
+  - changelog
+issues:
+  - https://github.com/FlowFuse/<repo>/issues/<id>
+---
+
+Write the changelog post here.
+```
 
 ## Writing the post
 
@@ -73,7 +89,6 @@ If a feature is only available on certain plans or from a specific version, say 
 
 If a change could break an existing user setup or requires action before upgrading, say so in the first paragraph. Do not bury it.
 
-
 ## Writing style
 
 Write for the user, not the engineer. Every changelog entry can tell two stories - what changed in the code, and what improved for the user. Always tell the second one.
@@ -95,7 +110,6 @@ Keep it short. A changelog post is not a blog post. If the feature needs more de
 Avoid jargon unless it is standard FlowFuse or Node-RED vocabulary. If a technical term is unavoidable, give enough context that a non-expert can follow.
 
 Do not paste PR titles or commit messages. They are written for engineers. Rewrite them from the user's perspective.
-
 
 ## Examples
 
@@ -123,7 +137,6 @@ Short, honest about the size of the change, and gets straight to the point.
 
 Instead of describing the feature abstractly, this shows exactly how a user will interact with it. Use this approach whenever a feature is best explained through concrete examples of what the user can now say or do.
 
-
 ### Translating a technical change into a user benefit
 
 > Any action that triggers a restart of the Node-RED instance will now restart them in sequence rather than in parallel. This means there should be no downtime for this instance.
@@ -133,7 +146,6 @@ Instead of describing the feature abstractly, this shows exactly how a user will
 *Source: [HA Hosted Instance Rolling Restart](https://flowfuse.com/changelog/2026/02/ha-instance-rolling-restart/)*
 
 The technical detail is there, but the sentence that follows immediately translates it into what the user actually cares about. Always pair the *what* with the *so what*.
-
 
 ### A breaking change
 
@@ -146,7 +158,6 @@ The technical detail is there, but the sentence that follows immediately transla
 *Source: [Node.js v20 Minimum Version Requirement](https://flowfuse.com/changelog/2025/11/minimum-nodejs-version/)*
 
 State what is changing and who it affects in the first sentence. Then explain why. Then tell the user exactly what to do. A user who needs to act should have everything they need without leaving the page.
-
 
 ## Raising a PR
 
