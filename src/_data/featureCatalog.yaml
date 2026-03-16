@@ -5,7 +5,7 @@ sections:
       - id: ff-expert
         label: FlowFuse Expert
         description: "AI-powered assistant that supports, enables, and speeds up workflows across FlowFuse and Node-RED, with access to MCP servers defined in your Node-RED instances through a single interface."
-        docsLink: /ai/
+        docsLink: /docs/user/expert/
         changelog:
           - url: /changelog/2026/02/ff-expert-update-banner/
             release: "2.28"
@@ -31,7 +31,7 @@ sections:
       - id: ff-expert-support
         label: Support Mode
         description: "Chat-based assistance for FlowFuse and Node-RED, including Node-RED instance management through natural language."
-        docsLink: /ai/
+        docsLink: /docs/user/expert/chat/#support-mode
         changelog:
           - url: /changelog/2026/02/ff-expert-debug-log-context/
             release: "2.28"
@@ -58,7 +58,7 @@ sections:
         label: Insights Mode
         beta: true
         description: "Connects FlowFuse Expert to MCP servers in your Node-RED instances, enabling real-time data queries and actions through a single chat interface."
-        docsLink: /ai/
+        docsLink: /docs/user/expert/chat/#insights-mode
         changelog: null
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
@@ -150,7 +150,7 @@ sections:
       - id: hosted-instances
         label: Hosted Instances
         description: "Run Node-RED instances managed and hosted by FlowFuse."
-        docsLink: null
+        docsLink: /docs/user/concepts/#hosted-instance
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
@@ -179,7 +179,7 @@ sections:
       - id: edge-devices
         label: Edge Devices
         description: "Connect and manage edge devices running Node-RED at the network edge."
-        docsLink: null
+        docsLink: /docs/device-agent/introduction/
         changelog:
           - url: /changelog/2026/02/device-agent-nodejs-options/
             release: "2.28"
@@ -232,7 +232,7 @@ sections:
 
       - id: dedicated-support
         label: Dedicated Success Management
-        description: null
+        description: /handbook/engineering/ops/dedicated/
         docsLink: null
         changelog: null
         solutions: []
@@ -279,7 +279,7 @@ sections:
       - id: custom-hostname
         label: Custom Hostnames
         description: "Access your Node-RED application via your own domain name."
-        docsLink: null
+        docsLink: /docs/user/custom-hostnames/
         changelog: null
         solutions: []
         showOnPricing: true
@@ -302,7 +302,7 @@ sections:
       - id: persistent-files
         label: Persistent Files
         description: "Store files persistently on the local file system of your Node-RED instance across restarts and upgrades."
-        docsLink: null
+        docsLink: /docs/install/file-storage/
         changelog: null
         solutions: [mes, data-integration]
         showOnPricing: true
@@ -318,7 +318,7 @@ sections:
       - id: persistent-context
         label: Persistent Context
         description: "In-memory values defined in a Node-RED flow persist across project restarts and upgrades."
-        docsLink: null
+        docsLink: /docs/user/persistent-context/
         changelog: null
         solutions: [mes, data-integration]
         showOnPricing: true
@@ -334,7 +334,7 @@ sections:
       - id: live-chat-support
         label: Live Chat Support
         description: null
-        docsLink: null
+        docsLink: /docs/user/live-chat-support/
         changelog: null
         solutions: []
         showOnPricing: true
@@ -383,7 +383,7 @@ sections:
       - id: mqtt-broker
         label: MQTT Broker
         description: "Manage and create MQTT clients to transport data for efficient messaging and communication within your applications."
-        docsLink: null
+        docsLink: /docs/user/teambroker/
         changelog: null
         solutions: [uns, it-ot-middleware, data-integration, mes, scada]
         showOnPricing: true
@@ -478,7 +478,7 @@ sections:
       - id: pipelines
         label: DevOps Pipelines
         description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."
-        docsLink: null
+        docsLink: /docs/user/devops-pipelines/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -501,7 +501,7 @@ sections:
       - id: project-nodes
         label: Seamless Data Stream
         description: "FlowFuse Project Nodes enable the passing of data and messages between your Node-RED projects."
-        docsLink: https://github.com/FlowFuse/nr-project-nodes
+        docsLink: /blog/2024/10/exploring-flowfuse-project-nodes/
         changelog: null
         solutions: [uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -547,7 +547,7 @@ sections:
       - id: device-groups
         label: Device Group Management
         description: "Logically group devices assigned to an application and integrate device groups into your DevOps Pipeline for coordinated fleet updates."
-        docsLink: null
+        docsLink: /docs/user/device-groups/
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
@@ -570,7 +570,7 @@ sections:
       - id: git-integration
         label: Git Integration
         description: "Back up your flows to a remote Git repository through a DevOps Pipeline."
-        docsLink: null
+        docsLink: /blog/2026/01/how-to-integrate-node-red-with-git/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
@@ -593,7 +593,7 @@ sections:
       - id: ha
         label: High Availability
         description: "Leverage horizontal scaling for reliable and scalable processing of your data through Node-RED."
-        docsLink: null
+        docsLink: /docs/user/high-availability/
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
@@ -639,7 +639,7 @@ sections:
       - id: tables
         label: FlowFuse Tables
         description: "Integrated database feature for storing, reading, writing, and querying data within FlowFuse."
-        docsLink: null
+        docsLink: /docs/user/ff-tables/
         changelog: null
         solutions: [mes, scada, data-integration]
         showOnPricing: true
@@ -665,7 +665,7 @@ sections:
       - id: audit-log
         label: Audit Log
         description: "Keep track of everything going on in your Node-RED instances and FlowFuse. Audit Logs provide details on what actions have taken place, when they happened, and who did them."
-        docsLink: null
+        docsLink: /docs/user/logs/#audit-log
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
@@ -688,7 +688,7 @@ sections:
       - id: rbac
         label: Role-Based Access Control
         description: "Intuitive team management tooling makes it easy to control who has access to what across your FlowFuse organisation."
-        docsLink: null
+        docsLink: /docs/user/role-based-access-control/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -711,7 +711,7 @@ sections:
       - id: security
         label: Endpoint Security
         description: "Secure HTTP endpoints for hosted Node-RED instances using FlowFuse credentials."
-        docsLink: null
+        docsLink: /docs/user/instance-settings/#security
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
@@ -740,7 +740,7 @@ sections:
       - id: 2fa
         label: Two-Factor Authentication
         description: "Two-factor authentication adds an extra layer of security to your FlowFuse account."
-        docsLink: https://flowfuse.com/docs/user/user-settings/#two-factor-authentication
+        docsLink: /docs/user/user-settings/#two-factor-authentication
         changelog: null
         solutions: []
         showOnPricing: true
@@ -763,7 +763,7 @@ sections:
       - id: certified-nodes
         label: Certified Nodes
         description: "A curated selection of certified Node-RED nodes, enhancing efficiency and security for production deployments."
-        docsLink: null
+        docsLink: /docs/user/certified-nodes/
         changelog: null
         solutions: [mes, scada, edge-connectivity, it-ot-middleware]
         showOnPricing: true
@@ -786,7 +786,7 @@ sections:
       - id: instance-monitoring
         label: Instance Monitoring
         description: "Enable alerts to be sent via email when your Node-RED instances encounter issues."
-        docsLink: https://flowfuse.com/docs/user/instance-settings/#alerts
+        docsLink: /docs/user/instance-settings/#alerts
         changelog: null
         solutions: [mes, scada]
         showOnPricing: true
@@ -809,7 +809,7 @@ sections:
       - id: sso
         label: Single Sign-On (SSO)
         description: "Configure FlowFuse to work with your own SSO provider, allowing users to access FlowFuse with a single set of login credentials."
-        docsLink: null
+        docsLink: /docs/admin/sso/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
@@ -858,7 +858,7 @@ sections:
       - id: teams
         label: Number of Teams
         description: "Create multiple teams to organise Node-RED projects across different groups or business units."
-        docsLink: null
+        docsLink: /blog/2024/12/flowfuse-team-collaboration/
         changelog: null
         solutions: []
         showOnPricing: false
@@ -874,7 +874,7 @@ sections:
       - id: team-members
         label: Team Members
         description: "Invite multiple team members to collaborate on the same Node-RED flows."
-        docsLink: null
+        docsLink: /docs/user/team/#teams
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
@@ -897,7 +897,7 @@ sections:
       - id: blueprints
         label: Access to Blueprints
         description: "FlowFuse Blueprints simplify Node-RED deployments by offering pre-built, customisable flows for specific use cases."
-        docsLink: https://flowfuse.com/blog/2023/10/blueprints/
+        docsLink: /blog/2023/10/blueprints/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -943,7 +943,7 @@ sections:
       - id: multi-user-dashboard
         label: Personalised Multi-User Dashboards
         description: "Build applications that provide unique data to each logged-in user using personalised multi-user dashboards."
-        docsLink: https://flowfuse.com/blog/2024/01/dashboard-2-multi-user/
+        docsLink: /blog/2024/01/dashboard-2-multi-user/
         changelog: null
         solutions: [mes, scada]
         showOnPricing: true
@@ -966,7 +966,7 @@ sections:
       - id: team-library
         label: Team Library
         description: "Set up standard nodes and flows that can be shared with all team members across your organisation."
-        docsLink: null
+        docsLink: /docs/user/shared-library/
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
