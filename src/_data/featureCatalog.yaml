@@ -26,7 +26,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: contact
+            value: "Contact Support"
 
       - id: ff-expert-support
         label: Support Mode
@@ -52,7 +52,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: contact
+            value: null
 
       - id: ff-expert-insights
         label: Insights Mode
