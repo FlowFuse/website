@@ -44,9 +44,10 @@ Every post requires the following fields at the top of the file:
 You can start a new changelog post with the following template:
 
 ```markdown
+```markdown
 ---
 title: Short Feature Title
-description: One sentence summarising the change.
+description: One sentence summarising the change — written for a user, not an engineer.
 date: YYYY-MM-DD
 authors: your-handle
 tags:
@@ -55,7 +56,36 @@ issues:
   - https://github.com/FlowFuse/<repo>/issues/<id>
 ---
 
-Write the changelog post here.
+<!-- 
+  WHAT CHANGED — Lead with it. One or two sentences max.
+  Bad:  "Refactored snapshot restore logic for dev mode instances."
+  Good: "You can now restore snapshots without leaving developer mode."
+
+  If this is a BREAKING CHANGE, say so here in bold before anything else:
+  **FlowFuse vX.Y requires [thing]. You will need to [action] before upgrading.**
+-->
+
+[What changed, stated plainly.]
+
+<!-- WHY IT MATTERS — The "so what". Don't skip this. -->
+
+[The problem this solves or the benefit it brings.]
+
+<!-- HOW TO GET STARTED — Only include this if setup or action is required. Delete if it just works. -->
+
+To get started:
+
+1. [First step]
+2. [Second step]
+
+<!-- SCREENSHOT — Include for any visual change. Delete if not applicable. -->
+
+![Alt text describing the UI shown](./images/your-image.png)
+*Caption describing what is shown in context.*
+
+<!-- AVAILABILITY — Include if this is plan- or version-gated. Delete if available to everyone. -->
+
+This feature is available to [plan/tier] users of FlowFuse Cloud and [licence type] Self Hosted users from [vX.Y].
 ```
 
 ## Writing the post
@@ -123,7 +153,6 @@ Do not paste PR titles or commit messages. They are written for engineers. Rewri
 
 Short, honest about the size of the change, and gets straight to the point.
 
-
 ### Showing what is now possible
 
 > You can now ask the Expert about your installed nodes, versions, and available updates without leaving the chat interface. For example:
@@ -161,4 +190,4 @@ State what is changing and who it affects in the first sentence. Then explain wh
 
 ## Raising a PR
 
-Follow the standard [Git workflow](/handbook/company/guides/git/) to raise a PR against the website repository. Changelog posts should be reviewed by at least one other team member before merging.
+Follow the standard [Git workflow](/handbook/company/guides/git/) to raise a PR against the website repository. Changelog posts should be reviewed by a technical writer before merging. If no technical writer is available, product can review as a backup.
