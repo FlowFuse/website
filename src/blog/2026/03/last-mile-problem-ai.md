@@ -78,6 +78,12 @@ That gap does not close itself. It closes when someone in the organization is ex
 
 Most industrial AI initiatives are not structured that way. The project has a data science lead and a project manager and a steering committee. It does not have an integration owner. And so the last mile, the mile that requires both teams to move toward each other, stays exactly as wide as it was on day one.
 
+{% assign ctaTitle = "Is your AI model stuck in staging?" %}
+{% assign ctaUrl = "/book-demo/" %}
+{% assign ctaButtonText = "Book a Demo" %}
+{% assign ctaMessage = "FlowFuse gives your industrial AI somewhere to live in production. Connect to any protocol, run inference at the edge, and give OT teams the deployment tooling they actually need.<br><br>Book a demo and see how FlowFuse closes the last mile." %}
+{% include "components/blog-cta.njk" %}
+
 ## What Closing the Last Mile Actually Requires
 
 The answer is not a better model. It is not a bigger data science team. It is not another vendor promising that this time the integration will be straightforward.
