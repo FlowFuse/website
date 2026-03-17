@@ -1668,6 +1668,13 @@ h4:hover .header-anchor::before {
     overflow: hidden;
     white-space: nowrap;
     font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.15s;
+}
+
+a.ff-tier-badge:hover {
+    opacity: 0.8;
 }
 
 .ff-tier-badge__label {

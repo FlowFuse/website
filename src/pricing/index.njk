@@ -386,6 +386,14 @@ hubspot:
     // Check the hosting parameter when the page loads
     updateContentAndUrl(hosting);
 
+    // Scroll to hash target after hosting toggle (for tier badge links)
+    if (window.location.hash) {
+        setTimeout(function() {
+            var el = document.querySelector(window.location.hash);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+    }
+
     document.querySelector(".btnToggle").addEventListener("click", function(e) {
         var rect = this.getBoundingClientRect();
         var isLeftHalf = (e.clientX - rect.left) < rect.width / 2;

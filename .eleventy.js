@@ -715,9 +715,11 @@ module.exports = function(eleventyConfig) {
         const starter = tierData.starter && tierData.starter.value;
         const pro = tierData.pro && tierData.pro.value;
         const enterprise = tierData.enterprise && tierData.enterprise.value;
-        if (starter && pro && enterprise) return "All tiers";
-        if (pro && enterprise) return "Pro+";
+        const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
+        if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
+        if (pro && enterprise && !enterpriseDimmed) return "Pro+";
         if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterpriseDimmed) return "Enterprise (on request)";
         if (enterprise) return "Enterprise";
         return "Not available";
     }
@@ -727,20 +729,23 @@ module.exports = function(eleventyConfig) {
         const cloudLabel = deriveTierLabel(feature.cloud);
         const selfHostedLabel = deriveTierLabel(feature.selfHosted);
         if (!cloudLabel && !selfHostedLabel) return '';
+        const featureId = feature.id;
         let html = `<div class="ff-tier-badges">`;
         if (cloudLabel) {
             const unavailable = cloudLabel === 'Not available';
-            html += `<span class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+            const href = `/pricing/?hosting=cloud#ff-feature--${featureId}-cloud`;
+            html += `<a href="${href}" class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
             html += `<span class="ff-tier-badge__label">Cloud</span>`;
             html += `<span class="ff-tier-badge__value">${cloudLabel}</span>`;
-            html += `</span>`;
+            html += `</a>`;
         }
         if (selfHostedLabel) {
             const unavailable = selfHostedLabel === 'Not available';
-            html += `<span class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+            const href = `/pricing/?hosting=self-hosted#ff-feature--${featureId}-self-hosted`;
+            html += `<a href="${href}" class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
             html += `<span class="ff-tier-badge__label">Self-Hosted</span>`;
             html += `<span class="ff-tier-badge__value">${selfHostedLabel}</span>`;
-            html += `</span>`;
+            html += `</a>`;
         }
         html += '</div>';
         return html;
