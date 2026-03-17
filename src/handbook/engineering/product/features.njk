@@ -97,7 +97,7 @@ navTitle: Feature Catalog
                 {% for tier in tiers %}
                 {% set cell = feature.cloud[tier] %}
                 {% set isFirst = loop.first %}
-                <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}">
+                <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}{% if cell and cell.dimmed %} opacity-40{% endif %}">
                     {% if cell and cell.value === true %}✓
                     {% elif cell and cell.value === 'contact' %}<span class="text-gray-500 text-xs">On request</span>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}
@@ -115,7 +115,7 @@ navTitle: Feature Catalog
                 {% for tier in tiers %}
                 {% set cell = feature.selfHosted[tier] %}
                 {% set isFirst = loop.first %}
-                <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}">
+                <td class="py-3 px-4 align-top text-center border-r border-gray-100{% if isFirst %} border-l-2 border-l-gray-300{% endif %}{% if cell and cell.dimmed %} opacity-40{% endif %}">
                     {% if cell and cell.value === true %}✓
                     {% elif cell and cell.value === 'contact' %}<span class="text-gray-500 text-xs">On request</span>
                     {% elif cell and cell.value === 'list' %}{{ cell.options | join(', ') }}

@@ -24,6 +24,16 @@ const { isSearchPage, isSearchUrl, extractHeadingRecords } = require("./lib/sear
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+// Documentation alert boxes
+const shortcodeMarkdown = new markdownIt()
+
+function renderDocsAlertBox(content, tone = 'note', title = '') {
+    const normalizedTone = tone.toLowerCase();
+    const resolvedTitle = title
+    const markdownContent = shortcodeMarkdown.render(content)
+
+    return `<div class="ff-callout ff-callout--${normalizedTone}"><p class="ff-callout__title">${resolvedTitle}</p><div class="ff-callout__content">${markdownContent}</div></div>`
+}
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
@@ -145,6 +155,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
+    eleventyConfig.setFrontMatterParsingOptions({
+        excerpt: true,
+        excerpt_separator: "<!--more-->",
+        excerpt_alias: "excerpt"
+    });
 
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
@@ -240,6 +255,20 @@ module.exports = function(eleventyConfig) {
         let markdownContent = md.render(content);
         return `<div class="ff-blue-card">${markdownContent}</div>`;
     });
+
+    // Documentation alert boxes
+    eleventyConfig.addPairedLiquidShortcode('note', function (content, title = '') {
+        return renderDocsAlertBox(content, 'note', "Note")
+    })
+
+    eleventyConfig.addPairedLiquidShortcode('warning', function (content, title = '') {
+        return renderDocsAlertBox(content, 'warning', "Warning")
+    })
+
+    eleventyConfig.addPairedLiquidShortcode('critical', function (content, title = '') {
+        return renderDocsAlertBox(content, 'critical', "Critical")
+    })
+
 
     let flowId = 0; // Keep a global counter to allow more than one 
     eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
@@ -471,6 +500,11 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("truncate", function(text, maxWordCount) {
+        if (text === undefined || text === null || text === "") {
+            return "";
+        }
+
+        text = String(text);
         const split = text.split(" ");
         if (split.length <= maxWordCount) {
             return text;
@@ -478,11 +512,6 @@ module.exports = function(eleventyConfig) {
         return text.split(" ").splice(0, maxWordCount).join(" ") + "..."
     });
 
-
-    eleventyConfig.addFilter("excerpt", function(str) {
-        const content = new String(str);
-        return content.split("\n<!--more-->\n")[0]
-    });
 
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);
@@ -691,9 +720,11 @@ module.exports = function(eleventyConfig) {
         const starter = tierData.starter && tierData.starter.value;
         const pro = tierData.pro && tierData.pro.value;
         const enterprise = tierData.enterprise && tierData.enterprise.value;
-        if (starter && pro && enterprise) return "All tiers";
-        if (pro && enterprise) return "Pro+";
-        if (enterprise === 'contact') return "Enterprise (on request)";
+        const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
+        if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
+        if (pro && enterprise && !enterpriseDimmed) return "Pro+";
+        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterpriseDimmed) return "Enterprise (on request)";
         if (enterprise) return "Enterprise";
         return "Not available";
     }
@@ -703,20 +734,23 @@ module.exports = function(eleventyConfig) {
         const cloudLabel = deriveTierLabel(feature.cloud);
         const selfHostedLabel = deriveTierLabel(feature.selfHosted);
         if (!cloudLabel && !selfHostedLabel) return '';
+        const featureId = feature.id;
         let html = `<div class="ff-tier-badges">`;
         if (cloudLabel) {
             const unavailable = cloudLabel === 'Not available';
-            html += `<span class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+            const anchor = featureId ? `#ff-feature--${featureId}-cloud` : '';
+            html += `<a href="/pricing/?hosting=cloud${anchor}" class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
             html += `<span class="ff-tier-badge__label">Cloud</span>`;
             html += `<span class="ff-tier-badge__value">${cloudLabel}</span>`;
-            html += `</span>`;
+            html += `</a>`;
         }
         if (selfHostedLabel) {
             const unavailable = selfHostedLabel === 'Not available';
-            html += `<span class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+            const anchor = featureId ? `#ff-feature--${featureId}-self-hosted` : '';
+            html += `<a href="/pricing/?hosting=self-hosted${anchor}" class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
             html += `<span class="ff-tier-badge__label">Self-Hosted</span>`;
             html += `<span class="ff-tier-badge__value">${selfHostedLabel}</span>`;
-            html += `</span>`;
+            html += `</a>`;
         }
         html += '</div>';
         return html;

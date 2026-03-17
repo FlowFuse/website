@@ -17,15 +17,15 @@ eleventyExcludeFromCollections: true
 
 ## Documentation
 {%- for doc in collections.docs | reverse %}
-- [{{ doc.data.navTitle }}]({{ site.baseURL }}{{ doc.url | replace(r/.$/, ".md") }}): {{ doc.data.meta.description or doc.templateContent | excerpt | truncate(100) | striptags }}
+- [{{ doc.data.navTitle }}]({{ site.baseURL }}{{ doc.url | replace(r/.$/, ".md") }}): {{ doc.data.meta.description or doc.data.description or doc.data.excerpt | truncate(100) | striptags }}
 {%- endfor %}
 
 ## Customer Stories
 {%- for story in collections.stories | reverse %}
-- [{{ story.data.title }}]({{ site.baseURL }}{{ story.url | replace(r/.$/, ".md") }}): {{ story.data.subtitle or story.data.description or story.templateContent | excerpt | truncate(100) | striptags }}
+- [{{ story.data.title }}]({{ site.baseURL }}{{ story.url | replace(r/.$/, ".md") }}): {{ story.data.subtitle or story.data.description or story.data.meta.description or story.data.excerpt | truncate(100) | striptags }}
 {%- endfor %}
 
 ## Webinars
 {%- for webinar in collections.webinar | reverse %}
-- [{{ webinar.data.title }}]({{ site.baseURL }}{{ webinar.url | replace(r/.$/, ".md") }}): {{ webinar.data.description or webinar.templateContent | excerpt | truncate(100) | striptags }}
+- [{{ webinar.data.title }}]({{ site.baseURL }}{{ webinar.url | replace(r/.$/, ".md") }}): {{ webinar.data.description or webinar.data.meta.description or webinar.data.excerpt | truncate(100) | striptags }}
 {%- endfor %}
