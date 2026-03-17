@@ -24,6 +24,16 @@ const { isSearchPage, isSearchUrl, extractHeadingRecords } = require("./lib/sear
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+// Documentation alert boxes
+const shortcodeMarkdown = new markdownIt()
+
+function renderDocsAlertBox(content, tone = 'note', title = '') {
+    const normalizedTone = tone.toLowerCase();
+    const resolvedTitle = title
+    const markdownContent = shortcodeMarkdown.render(content)
+
+    return `<div class="ff-callout ff-callout--${normalizedTone}"><p class="ff-callout__title">${resolvedTitle}</p><div class="ff-callout__content">${markdownContent}</div></div>`
+}
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
@@ -240,6 +250,20 @@ module.exports = function(eleventyConfig) {
         let markdownContent = md.render(content);
         return `<div class="ff-blue-card">${markdownContent}</div>`;
     });
+
+    // Documentation alert boxes
+    eleventyConfig.addPairedLiquidShortcode('note', function (content, title = '') {
+        return renderDocsAlertBox(content, 'note', "Note")
+    })
+
+    eleventyConfig.addPairedLiquidShortcode('warning', function (content, title = '') {
+        return renderDocsAlertBox(content, 'warning', "Warning")
+    })
+
+    eleventyConfig.addPairedLiquidShortcode('critical', function (content, title = '') {
+        return renderDocsAlertBox(content, 'critical', "Critical")
+    })
+
 
     let flowId = 0; // Keep a global counter to allow more than one 
     eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
