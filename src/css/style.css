@@ -1620,6 +1620,70 @@ h4:hover .header-anchor::before {
     }
 }
 
+/* Tier badges for changelog & blog */
+.ff-tier-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 16px 0;
+}
+
+.ff-tier-badges--h2 {
+    margin-top: -15.2px;
+}
+
+.ff-tier-badge {
+    display: inline-flex;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.ff-tier-badge__label {
+    padding: 2px 8px 2px 10px;
+}
+
+.ff-tier-badge__value {
+    padding: 2px 10px 2px 8px;
+}
+
+.ff-tier--available .ff-tier-badge__label {
+    color: #fff;
+    background-color: #6366f1;
+}
+
+.ff-tier--available .ff-tier-badge__value {
+    color: #4338ca;
+    background-color: #eef2ff;
+}
+
+.ff-tier--unavailable .ff-tier-badge__label {
+    color: #fff;
+    background-color: #9ca3af;
+}
+
+.ff-tier--unavailable .ff-tier-badge__value {
+    color: #6b7280;
+    background-color: #f3f4f6;
+}
+
+.ff-feature-info {
+    margin: 4px 0 16px 0;
+}
+
+.ff-related-changelogs {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0 0 8px 0;
+}
+
+.ff-related-changelogs a {
+    color: #4338ca;
+}
+
 pre.mermaid {
     background-color: #ffffff
 }

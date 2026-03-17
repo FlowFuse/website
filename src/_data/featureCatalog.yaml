@@ -6,7 +6,9 @@ sections:
         label: FlowFuse Expert
         description: "AI-powered assistant that supports, enables, and speeds up workflows across FlowFuse and Node-RED, with access to MCP servers defined in your Node-RED instances through a single interface."
         docsLink: /ai/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/02/ff-expert-update-banner/
+            release: "2.28"
         subfeature: false
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -24,13 +26,15 @@ sections:
           pro:
             value: null
           enterprise:
-            value: contact
+            value: "Contact Support"
 
       - id: ff-expert-support
         label: Support Mode
         description: "Chat-based assistance for FlowFuse and Node-RED, including Node-RED instance management through natural language."
         docsLink: /ai/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/02/ff-expert-debug-log-context/
+            release: "2.28"
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -48,7 +52,8 @@ sections:
           pro:
             value: null
           enterprise:
-            value: null
+            value: true
+            dimmed: true
 
       - id: ff-expert-insights
         label: Insights Mode
@@ -79,7 +84,8 @@ sections:
           pro:
             value: null
           enterprise:
-            value: null
+            value: true
+            dimmed: true
 
       - id: nr-mcp-servers
         label: Node-RED MCP Servers
@@ -176,7 +182,9 @@ sections:
         label: Edge Devices
         description: "Connect and manage edge devices running Node-RED at the network edge."
         docsLink: null
-        changelog: null
+        changelog:
+          - url: /changelog/2026/02/device-agent-nodejs-options/
+            release: "2.28"
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
         tags: [cloud, self-hosted]
@@ -208,23 +216,14 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        tags: [self-hosted]
-        selfHosted:
+        tags: [cloud, self-hosted]
+        cloud:
           starter:
             value: null
           pro:
             value: true
           enterprise:
             value: true
-
-      - id: enterprise-support
-        label: Enterprise Support
-        description: null
-        docsLink: null
-        changelog: null
-        solutions: []
-        showOnPricing: true
-        tags: [self-hosted]
         selfHosted:
           starter:
             value: null
@@ -240,7 +239,14 @@ sections:
         changelog: null
         solutions: []
         showOnPricing: true
-        tags: [self-hosted]
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
         selfHosted:
           starter:
             value: null
@@ -249,6 +255,29 @@ sections:
           enterprise:
             value: true
 
+      - id: enterprise-support
+        label: Enterprise Support
+        description: null
+        docsLink: null
+        changelog: null
+        solutions: []
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+            
       - id: custom-hostname
         label: Custom Hostnames
         description: "Access your Node-RED application via your own domain name."
