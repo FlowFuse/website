@@ -336,7 +336,7 @@ sections:
       - id: live-chat-support
         label: Live Chat Support
         description: null
-        docsLink: /docs/user/live-chat-support/
+        docsLink: null
         changelog: null
         solutions: []
         showOnPricing: true
@@ -765,7 +765,7 @@ sections:
       - id: certified-nodes
         label: Certified Nodes
         description: "A curated selection of certified Node-RED nodes, enhancing efficiency and security for production deployments."
-        docsLink: /docs/user/certified-nodes/
+        docsLink: /blog/2025/07/certified-nodes-v2/
         changelog: null
         solutions: [mes, scada, edge-connectivity, it-ot-middleware]
         showOnPricing: true
