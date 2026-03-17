@@ -155,6 +155,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
+    eleventyConfig.setFrontMatterParsingOptions({
+        excerpt: true,
+        excerpt_separator: "<!--more-->",
+        excerpt_alias: "excerpt"
+    });
 
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
@@ -495,6 +500,11 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("truncate", function(text, maxWordCount) {
+        if (text === undefined || text === null || text === "") {
+            return "";
+        }
+
+        text = String(text);
         const split = text.split(" ");
         if (split.length <= maxWordCount) {
             return text;
@@ -502,11 +512,6 @@ module.exports = function(eleventyConfig) {
         return text.split(" ").splice(0, maxWordCount).join(" ") + "..."
     });
 
-
-    eleventyConfig.addFilter("excerpt", function(str) {
-        const content = new String(str);
-        return content.split("\n<!--more-->\n")[0]
-    });
 
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);

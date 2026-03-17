@@ -46,7 +46,7 @@ meta:
                             </a>
                             <div class="flex flex-col justify-between md:w-1/2 md:px-2">
                                 <div class="grow">
-                                    {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+                                    {% include "summary.njk" %}
                                 </div>
                                 <div>
                                     {%- if item.data.tags.includes('ama') -%}
@@ -86,9 +86,7 @@ meta:
                             <h3 class="mt-1 mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
                         </div>
                         <div class="text-sm prose prose-blue md:prose-md py-1">
-                            {% if item.data.description %}
-                            {{ (item.data.description | excerpt | safe) }}
-                            {% endif %}
+                            {% include "summary.njk" %}
                         </div>
                     </a>
                 </li>
