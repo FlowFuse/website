@@ -62,6 +62,19 @@
                         {% endif %}
                     </div>
                     {{ content | safe }}
+
+                    <!-- CTA-->
+                    <div class="mt-10">
+                        {% if cta == 'contact' %}
+                            {% include "cta/contact-us.njk" %}
+                        {% elif cta == 'demo' %}
+                            {% include "cta/book-a-demo.njk" %}
+                        {% elif cta == 'pricing' %}
+                            {% include "cta/pricing.njk" %}
+                        {% else %}
+                            {% include "cta/sign-up.njk" %}
+                        {% endif %}
+                    </div>
                 </div>
 
                 <!-- FAQ Section -->
@@ -106,10 +119,6 @@
                     <div class="mb-6 pb-6 pt-6 border-t-2">
                         {% include "components/social-share.njk" %}
                     </div>
-                    <div class="mt-3 pt-6 flex flex-col border-t-2">
-                        <h3 class="">Sign up for updates</h3>
-                        {% include hubspot.script %}
-                    </div>
                 </div>
             </div>
         </div>
@@ -117,5 +126,3 @@
 </div>
 
 {% include "./common-js.njk" %}
-
-

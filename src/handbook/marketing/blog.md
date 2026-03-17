@@ -213,37 +213,57 @@ The `<!--more-->` tag is used to define the text shown in the blog index from ea
 
 ### Blog CTA
 
-Each blog post should include a call-to-action (CTA) block at the end of the article body, just before the closing content. This is rendered using the `blog-cta.njk` component and helps drive readers toward a relevant next step, such as booking a demo or exploring a feature.
+Each blog post should include a call-to-action (CTA) block at the end of the article body, just before the closing content. This is rendered automatically by the blog post layout (`post.njk`) and helps drive readers toward a relevant next step.
 
-To add a CTA, set the following Liquid variables immediately before the `include` tag:
+By default, if no specific CTA is chosen, the "Sign Up" CTA (`sign-up.njk`) will be displayed. Each CTA type (sign-up, book-a-demo, contact, pricing) comes with its own default title, button text, and description.
 
-{% raw %}
-```njk
-{% assign ctaTitle = "your cta title" %}
-{% assign ctaUrl = "target url" %}
-{% assign ctaButtonText = "button text" %}
-{% assign ctaMessage = "cta message" %}
-{% include "components/blog-cta.njk" %}
+To customize the CTA, you can set variables in the article's front matter:
+
+**Choosing a specific CTA:**
+
+To use a CTA other than the default "Sign Up" CTA, set the `cta` variable in your front matter to one of the following values:
+- `cta: 'book-a-demo'` (for the "Book a Demo" CTA)
+- `cta: 'contact'` (for the "Contact Us" CTA)
+- `cta: 'pricing'` (for the "Pricing" CTA)
+
+Example:
+```yaml
+---
+title: My Blog Post
+cta: 'book-a-demo'
+---
 ```
-{% endraw %}
 
-**Variables:**
+**Customizing CTA content:**
+
+You can customize the title, URL, button text, and description of the CTA by setting the following variables in your front matter:
 
 - `ctaTitle` — The headline displayed in the CTA block. Should be a short, action-oriented phrase relevant to the article.
-- `ctaUrl` — The URL the button links to (e.g. `/book-demo/`, a signup page, a contact page, a docs page, or a feature page).
-- `ctaButtonText` — The label on the call-to-action button (e.g. `"Book a Demo"`, `"Get Started"`).
-- `ctaMessage` — A brief supporting message (1–3 sentences) that explains the value or relevance of the CTA in the context of the article. HTML is supported for line breaks (`<br><br>`).
+- `ctaUrl` — (Optional) The URL the button links to. If not provided, a default URL specific to the chosen CTA type will be used (e.g., `/book-demo/` for the "Book a Demo" CTA).
+- `ctaButtonText` — The label on the call-to-action button (e.g., `"Book a Demo"`, `"Get Started"`).
+- `ctaDescription` — A brief supporting message (1–3 sentences) that explains the value or relevance of the CTA in the context of the article. HTML is supported for line breaks (`<br><br>`).
 
-The CTA should be relevant to the article's topic. Tailor all four variables to match the subject matter, a post about dashboards should point readers toward dashboard features, while a post about industrial AI might link to a demo.
+Example:
+```yaml
+---
+title: My Blog Post
+ctaTitle: 'Ready to learn more?'
+ctaUrl: '/solutions/my-solution'
+ctaButtonText: 'Explore Solutions'
+ctaDescription: 'Discover how our solutions can transform your business.'
+---
+```
+
+The CTA should be relevant to the article's topic. Tailor these variables to match the subject matter.
 
 **Tracking:**
 
-The component automatically fires a PostHog event when the CTA button is clicked. No additional setup is required from the author. The event captures:
+The CTA button automatically fires an event when clicked. No additional setup is required from the author. The event captures:
 
 - **Event name:** `blog-cta`
 - **Property `reference`:** `"Blog: <article title>"` — populated automatically from the page's `title` front matter field.
 
-This allows you to track which blog posts are driving CTA clicks in PostHog, filtered by the `reference` property.
+This allows you to track which blog posts are driving CTA clicks in your analytics, filtered by the `reference` property.
 
 ### Example blog index item based on the header above
 
