@@ -101,3 +101,5 @@ The technology to do this exists. The frameworks are mature, the hardware is pro
 Define the decision. Map it to the hierarchy. Build the infrastructure that decision requires. Then train the model.
 
 That sequence is what industrial AI at scale actually looks like, and [FlowFuse](https://flowfuse.com) is the platform built to run it. From connecting machines and collecting data, to transforming and visualizing it in real time, to running model inference directly in the flow with ONNX nodes, wiring live plant data into AI agents with MCP, and letting operators query their operations in plain language with Expert Insights. One platform. Every level of the hierarchy.
+
+[Book a demo today](/book-demo/) to see how FlowFuse brings the full hierarchy to life across your operations.
