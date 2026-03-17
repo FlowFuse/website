@@ -26,7 +26,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: "Contact Support"
+            value: "Contact Support to enable"
 
       - id: ff-expert-support
         label: Support Mode
