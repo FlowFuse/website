@@ -57,7 +57,7 @@ The Engineering team maintains a large number of repositories related to individ
 | FlowFuse/admin | Company Admin tasks; onboarding/offboarding employees, access requests, release checklists | private |
 | FlowFuse/website | The FlowFuse Website, including handbook | public |
 | FlowFuse/CloudProject | Task management for FlowFuse Cloud platform | private |
-| FlowFuse/customer | Task management for events and customer-specific work; webinars, artwork requests | private |
+| FlowFuse/marketing | Task management for events and customer-specific work; webinars, artwork requests | private |
 | FlowFuse/dev-env | FlowFuse development environment tooling | public |
 | FlowFuse/flowfuse | The core product code repository| public |
 | FlowFuse/product | A higher level planning and strategising repository for FlowFuse | private |
