@@ -1274,6 +1274,7 @@ h4:hover .header-anchor::before {
         display: grid;
         grid-template-columns: 270px 1fr 1fr 1fr;
         align-items: center;
+        column-gap: 0.5rem;
         @apply bg-indigo-50/30;
     }
 
@@ -1349,6 +1350,7 @@ h4:hover .header-anchor::before {
     .ff-feature-table-section li.ff-feature--column-buttons {
         background-color: white;
         padding: 0;
+        column-gap: 0.75rem;
     }
     .ff-feature-table-section li.ff-feature--column-buttons label {
         text-align: center;
@@ -1445,6 +1447,32 @@ h4:hover .header-anchor::before {
 
     .ff-feature-table-section:nth-child(3) li:last-child {
         @apply rounded-bl-lg;
+    }
+
+    /* Enterprise column highlight border */
+    .ff-feature-table-section li > :nth-child(4) {
+        border-left: 2px solid theme(colors.indigo.200);
+        border-right: 2px solid theme(colors.indigo.200);
+    }
+
+    /* Column header Enterprise label: top border + rounded top */
+    .ff-feature-table-section li.ff-feature--column-header > :nth-child(4) {
+        border-top: 2px solid theme(colors.indigo.200);
+        border-radius: 12px 12px 0 0;
+        margin: 0;
+    }
+
+    /* Bottom border + rounded corners on last data section */
+    .ff-feature-table > ul:nth-last-child(2) li:last-child > :nth-child(4) {
+        border-bottom: 2px solid theme(colors.indigo.200);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    /* No highlight on buttons row */
+    .ff-feature-table-section li.ff-feature--column-buttons > :nth-child(4) {
+        border-left: none;
+        border-right: none;
     }
 
     .ff-features-key {
@@ -1605,7 +1633,7 @@ h4:hover .header-anchor::before {
         flex-shrink: 0;
         width: auto;
         align-items: center;
-        animation: 30s slide infinite linear;
+        animation: 60s slide infinite linear;
     }
 
     .social-proof-carousel div img,
@@ -1640,6 +1668,13 @@ h4:hover .header-anchor::before {
     overflow: hidden;
     white-space: nowrap;
     font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.15s;
+}
+
+a.ff-tier-badge:hover {
+    opacity: 0.8;
 }
 
 .ff-tier-badge__label {
