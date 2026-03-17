@@ -5,7 +5,7 @@ sections:
       - id: ff-expert
         label: FlowFuse Expert
         description: "AI-powered assistant that supports, enables, and speeds up workflows across FlowFuse and Node-RED, with access to MCP servers defined in your Node-RED instances through a single interface."
-        docsLink: /docs/user/expert/
+        docsLink: /docs/user/expert
         changelog:
           - url: /changelog/2026/02/ff-expert-update-banner/
             release: "2.28"
