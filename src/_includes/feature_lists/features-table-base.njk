@@ -2,16 +2,16 @@
     <ul class="{{ hosting }} ff-feature-table-section sticky top-0 md:top-14 z-10">
         <li class="ff-feature--column-header">
             <span class="sticky left-0 h-full bg-white"></span>
-            <label>Enterprise</label>
-            <label>Pro</label>
             <label>
                 <div>Starter</div>
             </label>
+            <label>Pro</label>
+            <label>Enterprise</label>
         </li>
     </ul>
 
     {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
-    {% set tiers = ['enterprise', 'pro', 'starter'] %}
+    {% set tiers = ['starter', 'pro', 'enterprise'] %}
 
     {% for section in featureCatalog.sections %}
     <ul class="{{ hosting }} ff-feature-table-section">
@@ -33,9 +33,9 @@
             </label>
             {% for tier in tiers %}
             {% set cell = hostingData[tier] if hostingData else null %}
-            <span{% if cell and cell.dimmed %} class="opacity-40"{% endif %}>
+            <span>
                 {% if cell and cell.value === true %}
-                    {% include "components/feature-check.svg" %}
+                    {% if cell.dimmed %}<span class="opacity-40">{% endif %}{% include "components/feature-check.svg" %}{% if cell.dimmed %}</span>{% endif %}
                 {% elif cell and cell.value === 'time' %}
                     {% tooltip "On the roadmap" %}
                     {% include "components/feature-time.svg" %}
