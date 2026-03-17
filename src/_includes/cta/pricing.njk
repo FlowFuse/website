@@ -1,0 +1,19 @@
+<div class="ff-blue-card p-8 m-auto max-w-prose grid grid-cols-1 sm:grid-cols-[1fr_2fr] gap-8 sm:gap-x-10 items-baseline">
+    <div class="flex flex-col gap-6 sm:gap-8 sm:justify-center order-1">
+        <h3>{{ ctaTitle | default("Find the right plan for you") }}</h3>
+        {% macro ctaButton() %}
+        <a class="ff-btn ff-btn--highlight uppercase items-center text-base no-underline" href="{{ ctaButtonUrl | default('/pricing') }}" onclick="if (typeof capture !== 'undefined') { capture('blog-cta', {'reference': 'Blog: {{ title | escape }}'}); }">
+            {{ ctaButtonText | default("View Pricing") }}
+        </a>
+        {% endmacro %}
+        <div class="hidden sm:flex items-start justify-center sm:justify-start">
+            {{ ctaButton() }}
+        </div>
+    </div>
+    <div class="text-left sm:flex sm:flex-col sm:justify-center order-2">
+        <p>{{ ctaDescription | default("Explore our pricing plans and choose the one that best fits your needs.") }}</p>
+    </div>
+    <div class="flex justify-center order-3 sm:hidden">
+        {{ ctaButton() }}
+    </div>
+</div>
