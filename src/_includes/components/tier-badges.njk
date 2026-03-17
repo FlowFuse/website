@@ -1,14 +1,14 @@
 <div class="ff-tier-badges">
   {% if tierCloud %}
-    <span class="ff-tier-badge {{ 'ff-tier--unavailable' if tierCloud == 'Not available' else 'ff-tier--available' }}">
+    <a href="/pricing/?hosting=cloud{% if catalogFeature %}#ff-feature--{{ catalogFeature.id }}-cloud{% endif %}" class="ff-tier-badge {{ 'ff-tier--unavailable' if tierCloud == 'Not available' else 'ff-tier--available' }}">
       <span class="ff-tier-badge__label">Cloud</span>
       <span class="ff-tier-badge__value">{{ tierCloud }}</span>
-    </span>
+    </a>
   {% endif %}
   {% if tierSelfHosted %}
-    <span class="ff-tier-badge {{ 'ff-tier--unavailable' if tierSelfHosted == 'Not available' else 'ff-tier--available' }}">
+    <a href="/pricing/?hosting=self-hosted{% if catalogFeature %}#ff-feature--{{ catalogFeature.id }}-self-hosted{% endif %}" class="ff-tier-badge {{ 'ff-tier--unavailable' if tierSelfHosted == 'Not available' else 'ff-tier--available' }}">
       <span class="ff-tier-badge__label">Self-Hosted</span>
       <span class="ff-tier-badge__value">{{ tierSelfHosted }}</span>
-    </span>
+    </a>
   {% endif %}
 </div>

@@ -2,11 +2,11 @@
     <ul class="{{ hosting }} ff-feature-table-section sticky top-0 md:top-14 z-10">
         <li class="ff-feature--column-header">
             <span class="sticky left-0 h-full bg-white"></span>
-            <label class="mr-2">
+            <label>
                 <div>Starter</div>
             </label>
             <label>Pro</label>
-            <label class="ml-2">Enterprise</label>
+            <label>Enterprise</label>
         </li>
     </ul>
 
@@ -24,7 +24,7 @@
         {% for row in section.features %}
         {% if row.showOnPricing and hosting in row.tags %}
         {% set hostingData = row[hostingKey] %}
-        <li class="ff-feature-row">
+        <li class="ff-feature-row" id="ff-feature--{{ row.id }}-{{ hosting }}">
             <label {% if row.description %}class="sticky left-0 h-full{% if row.subfeature %} pl-5 text-gray-500{% endif %}" onclick="openInfo('{{ row.id }}', '{{ hosting }}')"{% else %}class="sticky left-0 h-full pointer-events-none{% if row.subfeature %} pl-5 text-gray-500{% endif %}"{% endif %}>
                 {% if row.subfeature %}└ {% endif %}{{ row.label }}{% if row.beta %} <span class="ff-feature-note ml-1">Beta</span>{% endif %}
                 {% if row.description %}
@@ -33,9 +33,9 @@
             </label>
             {% for tier in tiers %}
             {% set cell = hostingData[tier] if hostingData else null %}
-            <span{% if cell and cell.dimmed %} class="opacity-40"{% endif %}>
+            <span>
                 {% if cell and cell.value === true %}
-                    {% include "components/feature-check.svg" %}
+                    {% if cell.dimmed %}<span class="opacity-40">{% endif %}{% include "components/feature-check.svg" %}{% if cell.dimmed %}</span>{% endif %}
                 {% elif cell and cell.value === 'time' %}
                     {% tooltip "On the roadmap" %}
                     {% include "components/feature-time.svg" %}
@@ -45,7 +45,7 @@
                 {% elif cell and cell.value === 'addon' %}
                     {% include "components/feature-addon.svg" %}
                 {% elif cell and cell.value === 'contact' %}
-                    <a href="/contact-us" class="ff-btn ff-btn--primary uppercase">Contact Us</a>
+                    <a href="/contact-us" class="ff-btn ff-btn--primary-outlined uppercase grow mx-1">Contact Us</a>
                 {% elif cell and cell.value === 'list' %}
                     {% for opt in cell.options %}{{ opt }}{% if not loop.last %}<br>{% endif %}{% endfor %}
                 {% elif cell and cell.value %}
@@ -53,7 +53,7 @@
                 {% elif cell and cell.tag %}
                     {% if cell.tagPrefix %}{{ cell.tagPrefix }} {% endif %}<span class="ff-feature-note{% if cell.tagPrefix %} ml-1{% endif %}">{{ cell.tag }}</span>
                 {% else %}
-                    <span></span>
+                    <span class="text-gray-300">&mdash;</span>
                 {% endif %}
             </span>
             {% endfor %}
@@ -75,7 +75,7 @@
                 {% if button.url == 'sign-up-url' %}
                     {% set buttonUrl %}{% include "sign-up-url.njk" %}{% endset %}
                 {% endif %}
-                <label><a class="ff-btn ff-btn--primary uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
+                <label><a class="ff-btn {{ 'ff-btn--primary' if loop.last else 'ff-btn--primary-outlined' }} uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
             {% endfor %}
         </li>
     </ul>
