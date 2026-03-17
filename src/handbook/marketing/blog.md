@@ -211,6 +211,40 @@ The image can then be referenced in the markdown file like so:
 
 The `<!--more-->` tag is used to define the text shown in the blog index from each article.
 
+### Blog CTA
+
+Each blog post should include a call-to-action (CTA) block at the end of the article body, just before the closing content. This is rendered using the `blog-cta.njk` component and helps drive readers toward a relevant next step, such as booking a demo or exploring a feature.
+
+To add a CTA, set the following Liquid variables immediately before the `include` tag:
+
+{% raw %}
+```njk
+{% assign ctaTitle = "your cta title" %}
+{% assign ctaUrl = "target url" %}
+{% assign ctaButtonText = "button text" %}
+{% assign ctaMessage = "cta message" %}
+{% include "components/blog-cta.njk" %}
+```
+{% endraw %}
+
+**Variables:**
+
+- `ctaTitle` — The headline displayed in the CTA block. Should be a short, action-oriented phrase relevant to the article.
+- `ctaUrl` — The URL the button links to (e.g. `/book-demo/`, a signup page, a contact page, a docs page, or a feature page).
+- `ctaButtonText` — The label on the call-to-action button (e.g. `"Book a Demo"`, `"Get Started"`).
+- `ctaMessage` — A brief supporting message (1–3 sentences) that explains the value or relevance of the CTA in the context of the article. HTML is supported for line breaks (`<br><br>`).
+
+The CTA should be relevant to the article's topic. Tailor all four variables to match the subject matter, a post about dashboards should point readers toward dashboard features, while a post about industrial AI might link to a demo.
+
+**Tracking:**
+
+The component automatically fires a PostHog event when the CTA button is clicked. No additional setup is required from the author. The event captures:
+
+- **Event name:** `blog-cta`
+- **Property `reference`:** `"Blog: <article title>"` — populated automatically from the page's `title` front matter field.
+
+This allows you to track which blog posts are driving CTA clicks in PostHog, filtered by the `reference` property.
+
 ### Example blog index item based on the header above
 
 ![Example of how the headers are shown on the blog index](./images/blog-index.png){class="border border-gray-200 max-w-[400px]"}
