@@ -287,6 +287,7 @@
     margin: 0rem;
     border-radius: 18px;
     border: 2px solid theme(colors.indigo.200);
+    background-color: white;
     z-index: 0;
     cursor: pointer;
     padding: 0;

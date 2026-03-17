@@ -32,9 +32,9 @@ hubspot:
         <div class="text-center w-full pt-12 pb-6">
             <h1>FlowFuse <span class="text-indigo-600">Pricing</span></h1>
         </div>
-        <div class="px-6 pricing-tiles flex flex-col lg:max-w-screen-2xl">
-            <!-- Toggle-->
-            <div class="text-center mt-5 md:mt-0 md:mb-8">
+        <!-- Sticky Toggle -->
+        <div id="pricing-toggle" class="sticky top-0 md:top-14 z-20 py-3 transition-colors duration-200">
+            <div class="text-center">
                 <div class="mainToggle">
                     <button class="btnToggle">
                         <span class="selector"></span>
@@ -49,6 +49,8 @@ hubspot:
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="px-6 pricing-tiles flex flex-col lg:max-w-screen-2xl">
             <!-- Plans -->
             {% macro starter(cloud=true) %}
             <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
@@ -393,6 +395,18 @@ hubspot:
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
     }
+
+    // Show white background on toggle when feature table headers become sticky
+    const toggleEl = document.getElementById('pricing-toggle');
+    const featureTable = document.querySelector('.ff-feature-table');
+    function updateToggleBg() {
+        if (!featureTable || !toggleEl) return;
+        const tableTop = featureTable.getBoundingClientRect().top;
+        const toggleBottom = toggleEl.getBoundingClientRect().bottom;
+        toggleEl.classList.toggle('bg-white', tableTop <= toggleBottom);
+    }
+    window.addEventListener('scroll', updateToggleBg, { passive: true });
+    updateToggleBg();
 
     document.querySelector(".btnToggle").addEventListener("click", function(e) {
         var rect = this.getBoundingClientRect();
