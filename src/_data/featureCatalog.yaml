@@ -88,7 +88,7 @@ sections:
       - id: nr-mcp-servers
         label: Node-RED MCP Servers
         description: "Build and expose MCP servers directly from Node-RED instances, making your data and actions available to FlowFuse Expert and other AI agents."
-        docsLink: /node-red/flowfuse/mcp/
+        docsLink: /blog/2025/10/building-mcp-server-using-flowfuse/
         changelog: null
         subfeature: false
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
@@ -127,7 +127,7 @@ sections:
       - id: nr-hosting
         label: Node-RED Hosting
         description: "FlowFuse hosts and manages Node-RED instances at any scale."
-        docsLink: null
+        docsLink: /docs/user/introduction/#creating-a-node-red-instance
         changelog: null
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -150,7 +150,7 @@ sections:
       - id: hosted-instances
         label: Hosted Instances
         description: "Run Node-RED instances managed and hosted by FlowFuse."
-        docsLink: /docs/user/concepts/#hosted-instance
+        docsLink: /docs/user/introduction/#creating-a-node-red-instance
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
@@ -210,7 +210,7 @@ sections:
       - id: installation-support
         label: Installation Support
         description: null
-        docsLink: null
+        docsLink: /docs/install/introduction/#do-you-need-help%3F-installation-service
         changelog: null
         solutions: []
         showOnPricing: true
@@ -232,8 +232,8 @@ sections:
 
       - id: dedicated-support
         label: Dedicated Success Management
-        description: /handbook/engineering/ops/dedicated/
-        docsLink: null
+        description: null
+        docsLink: /handbook/sales/customer-success/
         changelog: null
         solutions: []
         showOnPricing: true
@@ -256,7 +256,7 @@ sections:
       - id: enterprise-support
         label: Enterprise Support
         description: null
-        docsLink: null
+        docsLink: /docs/premium-support/
         changelog: null
         solutions: []
         showOnPricing: true
@@ -409,7 +409,7 @@ sections:
       - id: device-mgmt
         label: Device Fleet Updates
         description: "Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes, securely without requiring full device access for your whole organisation."
-        docsLink: null
+        docsLink: /docs/device-agent/introduction/
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
@@ -455,7 +455,7 @@ sections:
       - id: edge-development
         label: Edge Development
         description: "Connect to an edge device and develop your Node-RED flows directly on the device."
-        docsLink: null
+        docsLink: /docs/device-agent/quickstart/
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
@@ -524,7 +524,7 @@ sections:
       - id: private-npm-registry
         label: Private NPM Registry
         description: null
-        docsLink: null
+        docsLink: /docs/user/custom-npm-packages/
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
