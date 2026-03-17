@@ -22,7 +22,7 @@
     <div class="flex-grow pt-4">
         {% if item.data.tags.includes("posts") %}
         <div class="prose">
-            {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+            {% include "summary.njk" %}
         </div>
         <a href="{{ item.url }}" class="group-hover:underline">read more...</a>
         {% else %}
