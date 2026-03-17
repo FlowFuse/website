@@ -33,7 +33,7 @@
             </label>
             {% for tier in tiers %}
             {% set cell = hostingData[tier] if hostingData else null %}
-            <span>
+            <span{% if cell and cell.dimmed %} class="opacity-40"{% endif %}>
                 {% if cell and cell.value === true %}
                     {% include "components/feature-check.svg" %}
                 {% elif cell and cell.value === 'time' %}
