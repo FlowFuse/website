@@ -43,7 +43,9 @@ By generating a tile immediately, we ensure:
 #### Requirements
 
 - Enable both modes: **thinking** and **Nano Banana**.  
-- Always attach at least three **PNG or JPG** reference images from [this folder](https://drive.google.com/open?id=1w99oFeCCcbVVkOxkzmwKlrwjWzAJFOWM&usp=drive_fs)
+- Always attach at least three **PNG or JPG** reference images from [the curated reference folder](https://drive.google.com/open?id=1mbJ-PFuAuhUpsR3hRYxwZM_-WrwF6PIU&usp=drive_fs)
+  - Only use images from this folder as references.  
+  - ❗ Do not use AI-generated images as references, as this degrades visual consistency, colour accuracy, and style over time.
 - All attached reference images must use the same background color (light indigo or dark indigo).  
 - To choose the correct background color, check the [most recently published article](/blog/):
   - If the latest tile uses a light background, generate a dark one next, and vice versa.
@@ -67,6 +69,12 @@ Use the attached images as a style reference. It should include:
 - For example, if you want a diagram-style tile:  
   - Attach only diagram-based reference images.  
   - Provide a description of the diagram or include Mermaid code.
+
+#### Storing Generated Images
+
+- All AI-generated tiles must be uploaded to the [this folder](https://drive.google.com/open?id=10FMVkHMwCEf1zc80t8J-4sY2xtggYQ6G&usp=drive_fs).
+- This folder is for reference and organization only.  
+- Images in this folder must NOT be reused as reference images for future generations.
 
 #### About the Watermark
 
