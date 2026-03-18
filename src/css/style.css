@@ -1661,48 +1661,17 @@ h4:hover .header-anchor::before {
 }
 
 .ff-tier-badge {
-    display: inline-flex;
+    @apply inline-flex whitespace-nowrap text-current;
     font-size: 0.75rem;
     line-height: 1rem;
-    border-radius: 9999px;
-    overflow: hidden;
-    white-space: nowrap;
-    font-weight: 500;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.15s;
-}
-
-a.ff-tier-badge:hover {
-    opacity: 0.8;
 }
 
 .ff-tier-badge__label {
-    padding: 2px 8px 2px 10px;
+    @apply px-2.5 py-0.5 text-gray-500 font-medium bg-gray-100 border border-r-0 border-gray-200 rounded-l;
 }
 
 .ff-tier-badge__value {
-    padding: 2px 10px 2px 8px;
-}
-
-.ff-tier--available .ff-tier-badge__label {
-    color: #fff;
-    background-color: #6366f1;
-}
-
-.ff-tier--available .ff-tier-badge__value {
-    color: #4338ca;
-    background-color: #eef2ff;
-}
-
-.ff-tier--unavailable .ff-tier-badge__label {
-    color: #fff;
-    background-color: #9ca3af;
-}
-
-.ff-tier--unavailable .ff-tier-badge__value {
-    color: #6b7280;
-    background-color: #f3f4f6;
+    @apply px-2.5 py-0.5 text-gray-500 font-light bg-white border border-l-0 border-gray-200 rounded-r;
 }
 
 .ff-feature-info {
