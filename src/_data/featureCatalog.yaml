@@ -191,7 +191,7 @@ sections:
         cloud:
           starter:
             value: true
-            note: "Includes 5 edge devices"
+            note: "Up to 3 remote instances. Shared with hosted instance count."
           pro:
             value: true
             note: "Starts with 5, shared with hosted instance count"
