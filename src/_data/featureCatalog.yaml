@@ -834,7 +834,7 @@ sections:
       - id: hipaa
         label: BAA for HIPAA
         description: "FlowFuse can sign a Business Associate Agreement to ensure proper safeguarding of protected health information handled on your behalf."
-        docsLink: null
+        docsLink: /handbook/sales/subscription-agreement-1.5
         changelog: null
         solutions: []
         showOnPricing: true
