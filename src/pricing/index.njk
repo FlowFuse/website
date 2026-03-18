@@ -421,7 +421,7 @@ hubspot:
     });
 </script>
 
-<!-- Sync horizontal scroll: sticky header mirrors table body scroll -->
+<!-- Sync horizontal scroll and sticky header background -->
 <script>
     document.querySelectorAll('[data-table-body]').forEach(function(body) {
         var header = body.parentElement.querySelector('[data-table-header]');
@@ -429,6 +429,19 @@ hubspot:
         body.addEventListener('scroll', function() {
             header.scrollLeft = body.scrollLeft;
         }, { passive: true });
+    });
+
+    // Show white background on column headers only when rows scroll behind them
+    document.querySelectorAll('[data-sticky-header]').forEach(function(stickyEl) {
+        var body = stickyEl.parentElement.querySelector('[data-table-body]');
+        if (!body) return;
+        function updateStickyBg() {
+            var bodyTop = body.getBoundingClientRect().top;
+            var stickyBottom = stickyEl.getBoundingClientRect().bottom;
+            stickyEl.classList.toggle('bg-white', bodyTop <= stickyBottom);
+        }
+        window.addEventListener('scroll', updateStickyBg, { passive: true });
+        updateStickyBg();
     });
 </script>
 

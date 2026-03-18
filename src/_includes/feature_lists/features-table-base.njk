@@ -1,5 +1,5 @@
 {# Column header — outside overflow container so sticky works on mobile #}
-<div class="sticky top-[140px] sm:top-[164px] md:top-[116px] z-10 bg-white">
+<div class="sticky top-[140px] sm:top-[164px] md:top-[116px] z-10 transition-colors duration-200" data-sticky-header>
     <div class="overflow-hidden sm:overflow-visible" data-table-header>
         <div class="ff-feature-table m-auto">
             <ul class="{{ hosting }} ff-feature-table-section">
@@ -24,7 +24,7 @@
 
         {% for section in featureCatalog.sections %}
         <ul class="{{ hosting }} ff-feature-table-section">
-            <li class="ff-feature--header sticky top-[184px] sm:top-[208px] md:top-[160px]">
+            <li class="ff-feature--header sm:sticky sm:top-[208px] md:top-[160px]">
                 <span class="sticky left-0 h-full">{{ section.label }}</span>
                 <span></span>
                 <span></span>
