@@ -111,7 +111,7 @@ Include a screenshot for any visual change. Reference images from `src/img/` lik
 
 Always add a caption in italics directly below the image. The caption should describe what is shown in context, not just repeat the alt text.
 
-Screenshots should be 1408px wide to support retina screens. Height can vary depending on what is being shown.
+Screenshots should ideally be 1408px wide. Height can vary depending on what is being shown.
 
 ### Availability
 
