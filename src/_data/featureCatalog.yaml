@@ -160,10 +160,10 @@ sections:
         cloud:
           starter:
             value: "1"
-            note: "Includes 1 hosted instance. Upgrades available up to 3 hosted / 3 remote instances."
+            note: "Includes 1 hosted instance. Upgrades available up to 3 hosted / 3 remote instances. Additional instances are $20/month."
           pro:
             value: "5"
-            note: "Starts with 5, shared with edge device count"
+            note: "Starts with 5, shared with edge device count. Additional instances start at $35/month."
           enterprise:
             value: "20"
             note: "Starts with 20, shared with edge device count"
@@ -173,7 +173,7 @@ sections:
             note: "Includes 5 hosted instances, shared with edge device count"
           pro:
             value: "10"
-            note: "Includes 10 hosted instances, shared with edge device count"
+            note: "Includes 10 hosted instances, shared with edge device count. Additional instances start at $35/month."
           enterprise:
             value: "20"
             note: "Starts with 20, shared with edge device count"
