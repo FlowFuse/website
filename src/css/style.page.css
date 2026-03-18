@@ -164,7 +164,15 @@
         flex-direction: column;
         @apply max-w-sm;
     }
-    
+
+    .pricing-tile--enterprise {
+        background: linear-gradient(theme(colors.indigo.400), theme(colors.indigo.200) 40%, theme(colors.indigo.100));
+    }
+
+    .pricing-tile--enterprise .pricing-tile-background {
+        background: linear-gradient(white 30%, theme(colors.indigo.50));
+    }
+
     .pricing-tile-background {
         position: relative;
         width: calc(100% - 4px);

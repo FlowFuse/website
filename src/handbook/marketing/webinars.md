@@ -103,7 +103,7 @@ And here are a couple of samples of our past promo videos:
 * Download the attendee list from Zoom and upload it to HubSpot. The filter that captures attendees in HubSpot isn't reliable and might cause non-attendee emails to be sent to actual attendees.
 * For those who wanted to be contacted, change Life Cycle Stage property to MQL 
 
-This [webinar prep issue](https://github.com/FlowFuse/customer/issues/271) can be cloned and updated to keep track of activities.
+This [webinar prep issue](https://github.com/FlowFuse/marketing/issues/271) can be cloned and updated to keep track of activities.
 
 ## Creating a Webinar Page
 

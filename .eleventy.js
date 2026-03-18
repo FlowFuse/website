@@ -24,6 +24,16 @@ const { isSearchPage, isSearchUrl, extractHeadingRecords } = require("./lib/sear
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+// Documentation alert boxes
+const shortcodeMarkdown = new markdownIt()
+
+function renderDocsAlertBox(content, tone = 'note', title = '') {
+    const normalizedTone = tone.toLowerCase();
+    const resolvedTitle = title
+    const markdownContent = shortcodeMarkdown.render(content)
+
+    return `<div class="ff-callout ff-callout--${normalizedTone}"><p class="ff-callout__title">${resolvedTitle}</p><div class="ff-callout__content">${markdownContent}</div></div>`
+}
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
 const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
@@ -145,6 +155,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
+    eleventyConfig.setFrontMatterParsingOptions({
+        excerpt: true,
+        excerpt_separator: "<!--more-->",
+        excerpt_alias: "excerpt"
+    });
 
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
@@ -240,6 +255,20 @@ module.exports = function(eleventyConfig) {
         let markdownContent = md.render(content);
         return `<div class="ff-blue-card">${markdownContent}</div>`;
     });
+
+    // Documentation alert boxes
+    eleventyConfig.addPairedLiquidShortcode('note', function (content, title = '') {
+        return renderDocsAlertBox(content, 'note', "Note")
+    })
+
+    eleventyConfig.addPairedLiquidShortcode('warning', function (content, title = '') {
+        return renderDocsAlertBox(content, 'warning', "Warning")
+    })
+
+    eleventyConfig.addPairedLiquidShortcode('critical', function (content, title = '') {
+        return renderDocsAlertBox(content, 'critical', "Critical")
+    })
+
 
     let flowId = 0; // Keep a global counter to allow more than one 
     eleventyConfig.addPairedShortcode("renderFlow", function (flow, height = 200) {
@@ -471,6 +500,11 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("truncate", function(text, maxWordCount) {
+        if (text === undefined || text === null || text === "") {
+            return "";
+        }
+
+        text = String(text);
         const split = text.split(" ");
         if (split.length <= maxWordCount) {
             return text;
@@ -478,11 +512,6 @@ module.exports = function(eleventyConfig) {
         return text.split(" ").splice(0, maxWordCount).join(" ") + "..."
     });
 
-
-    eleventyConfig.addFilter("excerpt", function(str) {
-        const content = new String(str);
-        return content.split("\n<!--more-->\n")[0]
-    });
 
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);
@@ -634,6 +663,227 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+    // Feature catalog helpers for tier badges
+    const featureCatalog = yaml.load(fs.readFileSync("./src/_data/featureCatalog.yaml", "utf8"));
+
+    function changelogTitle(url) {
+        const slug = url.replace(/\/$/, '').split('/').pop();
+        const parts = url.replace(/\/$/, '').split('/').filter(Boolean);
+        // url: /changelog/2026/02/slug/ -> src/changelog/2026/02/slug.md
+        const filePath = path.join("./src", parts.join('/') + '.md');
+        try {
+            const content = fs.readFileSync(filePath, 'utf8');
+            const match = content.match(/^---[\s\S]*?title:\s*["']?(.+?)["']?\s*$/m);
+            if (match) return match[1];
+        } catch (e) { /* file not found, fall back */ }
+        return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function findFeatureById(id) {
+        for (const section of featureCatalog.sections) {
+            for (const feature of section.features) {
+                if (feature.id === id) return feature;
+            }
+        }
+        return null;
+    }
+
+    function getChangelogUrls(feature) {
+        if (!feature.changelog) return [];
+        const entries = Array.isArray(feature.changelog) ? feature.changelog : [feature.changelog];
+        return entries.map(entry => typeof entry === 'string' ? entry : entry.url);
+    }
+
+    function getChangelogUrlsForRelease(feature, release) {
+        if (!feature.changelog) return [];
+        const entries = Array.isArray(feature.changelog) ? feature.changelog : [feature.changelog];
+        return entries
+            .filter(entry => typeof entry === 'object' && entry.release === release)
+            .map(entry => entry.url);
+    }
+
+    function findFeatureByChangelog(changelogUrl) {
+        const normalized = changelogUrl.replace(/\/$/, '') + '/';
+        for (const section of featureCatalog.sections) {
+            for (const feature of section.features) {
+                const urls = getChangelogUrls(feature);
+                for (const url of urls) {
+                    if ((url.replace(/\/$/, '') + '/') === normalized) return feature;
+                }
+            }
+        }
+        return null;
+    }
+
+    function deriveTierLabel(tierData) {
+        if (!tierData) return null;
+        const starter = tierData.starter && tierData.starter.value;
+        const pro = tierData.pro && tierData.pro.value;
+        const enterprise = tierData.enterprise && tierData.enterprise.value;
+        const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
+        if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
+        if (pro && enterprise && !enterpriseDimmed) return "Pro+";
+        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterpriseDimmed) return "Enterprise (on request)";
+        if (enterprise) return "Enterprise";
+        return "Not available";
+    }
+
+    function renderTierBadges(feature) {
+        if (!feature) return '';
+        const cloudLabel = deriveTierLabel(feature.cloud);
+        const selfHostedLabel = deriveTierLabel(feature.selfHosted);
+        if (!cloudLabel && !selfHostedLabel) return '';
+        const featureId = feature.id;
+        let html = `<div class="ff-tier-badges">`;
+        if (cloudLabel) {
+            const unavailable = cloudLabel === 'Not available';
+            const anchor = featureId ? `#ff-feature--${featureId}-cloud` : '';
+            html += `<a href="/pricing/?hosting=cloud${anchor}" class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+            html += `<span class="ff-tier-badge__label">Cloud</span>`;
+            html += `<span class="ff-tier-badge__value">${cloudLabel}</span>`;
+            html += `</a>`;
+        }
+        if (selfHostedLabel) {
+            const unavailable = selfHostedLabel === 'Not available';
+            const anchor = featureId ? `#ff-feature--${featureId}-self-hosted` : '';
+            html += `<a href="/pricing/?hosting=self-hosted${anchor}" class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+            html += `<span class="ff-tier-badge__label">Self-Hosted</span>`;
+            html += `<span class="ff-tier-badge__value">${selfHostedLabel}</span>`;
+            html += `</a>`;
+        }
+        html += '</div>';
+        return html;
+    }
+
+    function renderChangelogLinks(urls) {
+        if (!urls || urls.length === 0) return '';
+        let html = '<div class="ff-related-changelogs">Changelog: ';
+        const links = urls.map(url => {
+            const label = changelogTitle(url);
+            return `<a href="${url}">${label}</a>`;
+        });
+        html += links.join(' | ');
+        html += '</div>';
+        return html;
+    }
+
+    // Inject tier badges and changelog links into release blog posts based on frontmatter
+    eleventyConfig.addTransform("releaseFeatures", function(content) {
+        if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
+
+        // Transforms don't have access to template data, so parse frontmatter from source
+        const inputPath = this.page.inputPath;
+        if (!inputPath || !inputPath.endsWith('.md')) return content;
+
+        let frontmatter;
+        try {
+            const source = fs.readFileSync(inputPath, 'utf8');
+            const fmMatch = source.match(/^---\n([\s\S]*?)\n---/);
+            if (!fmMatch) return content;
+            frontmatter = yaml.load(fmMatch[1]);
+        } catch (e) { return content; }
+
+        const features = frontmatter.features;
+        const release = frontmatter.release;
+        if (!features || !Array.isArray(features) || features.length === 0) return content;
+
+        // Build injection map: heading text -> { badges HTML, changelogs HTML }
+        const injections = [];
+        for (const entry of features) {
+            let badges = '';
+            let changelogs = '';
+
+            if (entry.id) {
+                // Feature from featureCatalog
+                const feature = findFeatureById(entry.id);
+                if (!feature) continue;
+                badges = renderTierBadges(feature);
+                const changelogUrls = release ? getChangelogUrlsForRelease(feature, release) : getChangelogUrls(feature);
+                changelogs = renderChangelogLinks(changelogUrls);
+            } else if (entry.tiers) {
+                // Inline tier specification (no feature ID)
+                const inlineFeature = {};
+                if (entry.tiers.cloud) {
+                    // Convert shorthand ("all", "pro+", "enterprise") to tier structure
+                    const t = entry.tiers.cloud;
+                    inlineFeature.cloud = {
+                        starter: { value: t === 'all' ? true : null },
+                        pro: { value: (t === 'all' || t === 'pro+') ? true : null },
+                        enterprise: { value: true }
+                    };
+                }
+                if (entry.tiers.selfHosted) {
+                    const t = entry.tiers.selfHosted;
+                    inlineFeature.selfHosted = {
+                        starter: { value: t === 'all' ? true : null },
+                        pro: { value: (t === 'all' || t === 'pro+') ? true : null },
+                        enterprise: { value: true }
+                    };
+                }
+                badges = renderTierBadges(inlineFeature);
+            }
+
+            if (badges || changelogs) {
+                injections.push({ heading: entry.heading, badges, changelogs });
+            }
+        }
+
+        if (injections.length === 0) return content;
+
+        // Find all headings (h2-h6) in the HTML with their positions
+        const headingRegex = /<h([2-6])\s[^>]*>.*?<\/h\1>/gs;
+        const headingMatches = [];
+        let match;
+        while ((match = headingRegex.exec(content)) !== null) {
+            // Extract text content from heading (strip HTML tags)
+            const textContent = match[0].replace(/<[^>]+>/g, '').trim();
+            headingMatches.push({ index: match.index, length: match[0].length, text: textContent, level: parseInt(match[1]) });
+        }
+
+        // Process injections in reverse order so indices stay valid
+        const ops = []; // { index, html } — insert html at index
+
+        for (const injection of injections) {
+            // Find matching heading
+            const headingIdx = headingMatches.findIndex(h => h.text === injection.heading);
+            if (headingIdx === -1) continue;
+
+            const heading = headingMatches[headingIdx];
+
+            // Insert badges right after the heading tag, adding heading-level class for spacing
+            if (injection.badges) {
+                const badgesWithLevel = injection.badges.replace('class="ff-tier-badges"', `class="ff-tier-badges ff-tier-badges--h${heading.level}"`);
+                ops.push({ index: heading.index + heading.length, html: badgesWithLevel });
+            }
+
+            // Insert changelogs before the next heading at the same or higher level
+            // H2 changelogs go before the next H2; H3 changelogs go before the next H2 or H3
+            if (injection.changelogs) {
+                const nextPeer = headingMatches.find((h, i) => i > headingIdx && h.level <= heading.level);
+                const insertBefore = nextPeer ? nextPeer.index : content.length;
+                ops.push({ index: insertBefore, html: injection.changelogs });
+            }
+        }
+
+        // Sort by index descending so we can splice without shifting
+        ops.sort((a, b) => b.index - a.index);
+        for (const op of ops) {
+            content = content.slice(0, op.index) + op.html + content.slice(op.index);
+        }
+
+        return content;
+    });
+
+    // Make helpers available to changelog layout via filters
+    eleventyConfig.addFilter("featureForChangelog", function(url) {
+        return findFeatureByChangelog(url);
+    });
+
+    eleventyConfig.addFilter("tierLabel", function(tierData) {
+        return deriveTierLabel(tierData);
+    });
+
     function loadSVG (file) {
         let relativeFilePath = `./src/_includes/components/icons/${file}.svg`;
         let data = fs.readFileSync(relativeFilePath, function(err, contents) {
@@ -697,7 +947,7 @@ module.exports = function(eleventyConfig) {
         return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE)
     });
 
-    eleventyConfig.addAsyncShortcode("tileImage", async function(item, image, defaultImage, defaultDescription, imageSize, title = null) {
+    eleventyConfig.addAsyncShortcode("tileImage", async function(item, image, defaultImage, defaultDescription, imageSize, title = null, priority = false) {
         let imageSrc, imageDescription;
 
         if (item && item.data && item.data.image) {
@@ -716,7 +966,7 @@ module.exports = function(eleventyConfig) {
 
         const currentWorkingFilePath = this.page.inputPath;
 
-        return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE);
+        return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE, priority);
     });
     
     // Create a collection for sidebar navigation

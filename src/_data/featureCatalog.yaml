@@ -6,7 +6,9 @@ sections:
         label: FlowFuse Expert
         description: "AI-powered assistant that supports, enables, and speeds up workflows across FlowFuse and Node-RED, with access to MCP servers defined in your Node-RED instances through a single interface."
         docsLink: /ai/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/02/ff-expert-update-banner/
+            release: "2.28"
         subfeature: false
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -24,13 +26,15 @@ sections:
           pro:
             value: null
           enterprise:
-            value: contact
+            value: "Contact Support to enable"
 
       - id: ff-expert-support
         label: Support Mode
         description: "Chat-based assistance for FlowFuse and Node-RED, including Node-RED instance management through natural language."
         docsLink: /ai/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/02/ff-expert-debug-log-context/
+            release: "2.28"
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -48,7 +52,8 @@ sections:
           pro:
             value: null
           enterprise:
-            value: null
+            value: true
+            dimmed: true
 
       - id: ff-expert-insights
         label: Insights Mode
@@ -79,7 +84,8 @@ sections:
           pro:
             value: null
           enterprise:
-            value: null
+            value: true
+            dimmed: true
 
       - id: nr-mcp-servers
         label: Node-RED MCP Servers
@@ -176,7 +182,9 @@ sections:
         label: Edge Devices
         description: "Connect and manage edge devices running Node-RED at the network edge."
         docsLink: null
-        changelog: null
+        changelog:
+          - url: /changelog/2026/02/device-agent-nodejs-options/
+            release: "2.28"
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
         tags: [cloud, self-hosted]
@@ -983,7 +991,7 @@ buttons:
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-pro'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
-      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
+      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
   selfHosted:
     - cta: INSTALL NOW
       url: https://flowfuse.com/docs/install/introduction/

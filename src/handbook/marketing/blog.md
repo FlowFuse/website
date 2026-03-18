@@ -94,6 +94,10 @@ date: 2022-12-20
 authors: ["rob-marcer"]
 image: /blog/2022/12/images/tile-image.png
 video: dteXgcBXUnk  # Optional: YouTube video ID to use instead of image in hero section
+cta:
+  type: pricing
+  title: Ready to compare plans?
+  description: Explore the available options and choose the best fit for your team.
 tags:
     - posts
     - node-red
@@ -152,7 +156,7 @@ When a `video` field is present, it takes precedence over the `image` field in t
 
 **Note:** You should still provide an `image` field as a fallback for social media previews and RSS feeds.
 
-### Embedding Videos in Article Body
+#### Embedding Videos in Article Body
 
 To embed a YouTube video within the body of a blog post, use the `<lite-youtube>` web component:
 
@@ -167,6 +171,60 @@ The video ID is the part after `v=` in a YouTube URL. For example:
 The `<lite-youtube>` component is included globally on all pages — no additional imports needed. It shows a static thumbnail and only loads the YouTube player when the user clicks play.
 
 > **Do not use raw `<iframe>` tags to embed YouTube videos.** Iframes load YouTube's scripts and set tracking cookies as soon as the page renders, before any user consent — which is not GDPR-compliant. Always use `<lite-youtube>` instead.
+
+### CTA
+
+The CTA renders a call-to-action block at the end of the article body, just before the closing content.
+
+If no CTA is defined, the default "Sign Up" variant is shown.
+
+To customize it, add a `cta` object to the front matter.
+
+#### CTA Type
+
+Set `cta.type` to one of the following values:
+- `demo` - renders the "Book a Demo" CTA and always links to `/book-demo`
+- `contact` - renders the "Contact Us" CTA and always links to `/contact-us`
+- `pricing` - renders the "Pricing" CTA and always links to `/pricing`
+- `sign-up` - renders the default sign-up CTA and always links to the hosted sign-up URL
+
+Example:
+```yaml
+---
+cta:
+  type: demo
+---
+```
+
+#### CTA Content
+
+You can optionally override the CTA title and description:
+
+- `cta.title` — The headline displayed in the CTA block. Keep it short and relevant to the article.
+- `cta.description` — A brief supporting message that explains the value or relevance of the CTA in the context of the article.
+
+The button label and destination are fixed by `cta.type` and should not be customized.
+
+Example:
+```yaml
+---
+cta:
+  type: pricing
+  title: Planning to deploy this in production?
+  description: Explore which plans support your infrastructure, scaling, and security requirements.
+---
+```
+
+The CTA should be relevant to the article's topic. Tailor these variables to match the subject matter.
+
+#### Tracking
+
+The CTA button automatically fires an event when clicked. No additional setup is required from the author. The event captures:
+
+- **Event name:** `blog-cta`
+- **Property `reference`:** `"Blog: <article title>"` — populated automatically from the page's `title` front matter field.
+
+This allows you to track which blog posts are driving CTA clicks in your analytics, filtered by the `reference` property.
 
 ### Tags
 
@@ -213,11 +271,11 @@ The `<!--more-->` tag is used to define the text shown in the blog index from ea
 
 ### Example blog index item based on the header above
 
-![Example of how the headers are shown on the blog index](./images/blog-index.png)
+![Example of how the headers are shown on the blog index](./images/blog-index.png){class="border border-gray-200 max-w-[400px]"}
 
 ### Example blogs based on the header above
 
-![Example of how the headers are shown on blogs](./images/blog-article.png)
+![Example of how the headers are shown on blogs](./images/blog-article.png){class="border border-gray-200 max-w-[600px]"}
 
 ### Rendering Node-RED Flows
 
