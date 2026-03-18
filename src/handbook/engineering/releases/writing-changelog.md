@@ -111,6 +111,8 @@ Include a screenshot for any visual change. Reference images from `src/img/` lik
 
 Always add a caption in italics directly below the image. The caption should describe what is shown in context, not just repeat the alt text.
 
+Screenshots should be 1408px wide to support retina screens. Height can vary depending on what is being shown.
+
 ### Availability
 
 If a feature is only available on certain plans or from a specific version, say so. Put this at the end of the post, or immediately after the main announcement if it affects whether the user can access it at all.
