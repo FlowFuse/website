@@ -159,8 +159,8 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: true
-            note: "Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted / 3 remote instances."
+            value: "1"
+            note: "Includes 1 hosted instance. Upgrades available up to 3 hosted / 3 remote instances."
           pro:
             value: true
             note: "Starts with 5, shared with edge device count"
@@ -172,7 +172,7 @@ sections:
             value: "5"
             note: "Includes 5 hosted instances, shared with edge device count"
           pro:
-            value: true
+            value: "10"
             note: "Includes 10 hosted instances, shared with edge device count"
           enterprise:
             value: true
