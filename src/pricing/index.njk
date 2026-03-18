@@ -398,12 +398,12 @@ hubspot:
         }, 100);
     }
 
-    // Show white background on toggle when feature table headers become sticky
+    // Show white background on toggle when feature table body becomes sticky
     const toggleEl = document.getElementById('pricing-toggle');
-    const featureTable = document.querySelector('.ff-feature-table');
+    const featureTableBody = document.querySelector('[data-table-body]');
     function updateToggleBg() {
-        if (!featureTable || !toggleEl) return;
-        const tableTop = featureTable.getBoundingClientRect().top;
+        if (!featureTableBody || !toggleEl) return;
+        const tableTop = featureTableBody.getBoundingClientRect().top;
         const toggleBottom = toggleEl.getBoundingClientRect().bottom;
         toggleEl.classList.toggle('bg-white', tableTop <= toggleBottom);
     }

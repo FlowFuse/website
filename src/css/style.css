@@ -1330,7 +1330,7 @@ h4:hover .header-anchor::before {
 
     .ff-feature-table-section li.ff-feature--column-header {
         padding: 0;
-        margin-top: 20px;
+        margin-top: 0;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label {
