@@ -134,10 +134,6 @@ Always write an availability note in the post as well. Tier badges communicate t
 
 Put it at the end of the post, or immediately after the main announcement if it affects whether the user can access the feature at all.
 
-### Breaking changes
-
-If a change could break an existing user setup or requires action before upgrading, say so in the first paragraph. Do not bury it.
-
 ## Writing style
 
 Write for the user, not the engineer. Every changelog entry can tell two stories - what changed in the code, and what improved for the user. Always tell the second one.
