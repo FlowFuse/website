@@ -64,19 +64,19 @@
     {% endfor %}
     <ul class="{{ hosting }} ff-feature-table-section">
         <li class="ff-feature--column-buttons mt-6 h-10 gap-x-3">
-            {% if hosting == "cloud" %}
-                {% set buttons = featureCatalog.buttons.cloud %}
-            {% elif hosting == "self-hosted" %}
-                {% set buttons = featureCatalog.buttons.selfHosted %}
+        {% if hosting == "cloud" %}
+            {% set buttons = featureCatalog.buttons.cloud %}
+        {% elif hosting == "self-hosted" %}
+            {% set buttons = featureCatalog.buttons.selfHosted %}
+        {% endif %}
+        <label class="align-baseline w-full text-center"></label>
+        {% for button in buttons %}
+            {% set buttonUrl = button.url %}
+            {% if button.url == 'sign-up-url' %}
+                {% set buttonUrl %}{% include "sign-up-url.njk" %}{% endset %}
             {% endif %}
-            <label class="align-baseline w-full text-center"></label>
-            {% for button in buttons %}
-                {% set buttonUrl = button.url %}
-                {% if button.url == 'sign-up-url' %}
-                    {% set buttonUrl %}{% include "sign-up-url.njk" %}{% endset %}
-                {% endif %}
-                <label><a class="ff-btn {{ 'ff-btn--primary' if loop.last else 'ff-btn--primary-outlined' }} uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
-            {% endfor %}
+            <label><a class="ff-btn {{ 'ff-btn--primary' if loop.last else 'ff-btn--primary-outlined' }} uppercase align-baseline w-full text-center" href="{{ buttonUrl }}" {% if button.onclick %} onclick="{{ button.onclick }}" {% endif %}>{{ button.cta }}</a></label>
+        {% endfor %}
         </li>
     </ul>
 </div>
