@@ -271,11 +271,11 @@ hubspot:
                 <!-- Feature List -->
                 <div>{{ featuresHtml | safe }}
                     {% set hosting = "cloud" %}
-                    <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                    <div class="contentCloud transition duration-1000 max-w-full">
                         {% include "feature_lists/features-table-base.njk" %}
                     </div>
                     {% set hosting = "self-hosted" %}
-                    <div class="contentSelfHosted hide transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                    <div class="contentSelfHosted hide transition duration-1000 max-w-full">
                         {% include "feature_lists/features-table-base.njk" %}
                     </div>
                 </div>
@@ -418,6 +418,17 @@ hubspot:
         hosting = target;
         updateContentAndUrl(hosting);
         capture(target);
+    });
+</script>
+
+<!-- Sync horizontal scroll: sticky header mirrors table body scroll -->
+<script>
+    document.querySelectorAll('[data-table-body]').forEach(function(body) {
+        var header = body.parentElement.querySelector('[data-table-header]');
+        if (!header) return;
+        body.addEventListener('scroll', function() {
+            header.scrollLeft = body.scrollLeft;
+        }, { passive: true });
     });
 </script>
 

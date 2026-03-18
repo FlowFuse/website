@@ -1258,6 +1258,10 @@ h4:hover .header-anchor::before {
         min-width: 600px;
     }
 
+    .ff-feature-table--body {
+        margin-top: 0;
+    }
+
     .ff-feature-table li .ff-icon {
         width: 32px;
         height: 32px;
@@ -1445,11 +1449,11 @@ h4:hover .header-anchor::before {
         @apply px-1 px-4 md:px-6;
     }
 
-    .ff-feature-table-section:nth-child(2) .ff-feature--header {
+    .ff-feature-table--body .ff-feature-table-section:first-child .ff-feature--header {
         @apply rounded-tl-lg;
     }
 
-    .ff-feature-table-section:nth-child(3) li:last-child {
+    .ff-feature-table--body .ff-feature-table-section:nth-child(2) li:last-child {
         @apply rounded-bl-lg;
     }
 
