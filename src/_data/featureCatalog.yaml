@@ -394,10 +394,10 @@ sections:
           starter:
             value: null
           pro:
-            value: true
+            value: "5 clients"
             note: "Includes 5 clients. Additional clients can be purchased."
           enterprise:
-            value: true
+            value: "20 clients"
             note: "Includes 20 clients. Additional clients can be purchased."
         selfHosted:
           starter:
@@ -405,7 +405,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: true
+            value: "20 clients"
             note: "Includes 20 clients. Additional clients can be purchased."
 
       - id: device-mgmt
