@@ -1,14 +1,18 @@
+{% set showTierCloud = tierCloud and tierCloud != 'Not available' %}
+{% set showTierSelfHosted = tierSelfHosted and tierSelfHosted != 'Not available' %}
+{% if showTierCloud or showTierSelfHosted %}
 <div class="ff-tier-badges">
-  {% if tierCloud %}
-    <a href="/pricing/?hosting=cloud{% if catalogFeature %}#ff-feature--{{ catalogFeature.id }}-cloud{% endif %}" class="ff-tier-badge {{ 'ff-tier--unavailable' if tierCloud == 'Not available' else 'ff-tier--available' }}">
+  {% if showTierCloud %}
+    <div class="ff-tier-badge ff-tier--available">
       <span class="ff-tier-badge__label">Cloud</span>
       <span class="ff-tier-badge__value">{{ tierCloud }}</span>
-    </a>
+    </div>
   {% endif %}
-  {% if tierSelfHosted %}
-    <a href="/pricing/?hosting=self-hosted{% if catalogFeature %}#ff-feature--{{ catalogFeature.id }}-self-hosted{% endif %}" class="ff-tier-badge {{ 'ff-tier--unavailable' if tierSelfHosted == 'Not available' else 'ff-tier--available' }}">
+  {% if showTierSelfHosted %}
+    <div class="ff-tier-badge ff-tier--available">
       <span class="ff-tier-badge__label">Self-Hosted</span>
       <span class="ff-tier-badge__value">{{ tierSelfHosted }}</span>
-    </a>
+    </div>
   {% endif %}
 </div>
+{% endif %}
