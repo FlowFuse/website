@@ -14,7 +14,7 @@ Write a changelog post when you ship something a user would notice or benefit fr
 
 Do not write changelog posts for internal tooling changes with no user-visible impact, routine dependency bumps, minor bug fixes the average user would never encounter, or changes behind a feature flag that are not yet generally available.
 
-If you are unsure, ask: “Would a user who opens FlowFuse tomorrow notice or benefit from this?” If the answer is no, it can likely be skipped. When in doubt, make it a quick discussion with the team, involving both engineering and product.
+If you are unsure, ask: "Would a user who opens FlowFuse tomorrow notice or benefit from this?" If the answer is no, it can likely be skipped. When in doubt, make it a quick discussion with the team, involving both engineering and product.
 
 ## Creating the file
 
@@ -44,10 +44,9 @@ Every post requires the following fields at the top of the file:
 You can start a new changelog post with the following template:
 
 ```markdown
-```markdown
 ---
 title: Short Feature Title
-description: One sentence summarising the change — written for a user, not an engineer.
+description: One sentence summarising the change, written for a user, not an engineer.
 date: YYYY-MM-DD
 authors: your-handle
 tags:
@@ -111,11 +110,29 @@ Include a screenshot for any visual change. Reference images from `src/img/` lik
 
 Always add a caption in italics directly below the image. The caption should describe what is shown in context, not just repeat the alt text.
 
-Screenshots should ideally be 1408px wide. Height can vary depending on what is being shown.
+Screenshots should ideally be **1408px wide**. Height can vary depending on what is being shown.
 
-### Availability
+### Feature catalog and availability
 
-If a feature is only available on certain plans or from a specific version, say so. Put this at the end of the post, or immediately after the main announcement if it affects whether the user can access it at all.
+Changelog posts should ideally be tied to a feature defined in [`featureCatalog.yaml`](https://github.com/FlowFuse/website/blob/main/src/_data/featureCatalog.yaml). The catalog is the single source of truth for tier availability across FlowFuse.
+
+When you ship a changelog post for a catalogued feature, update the feature's entry in `featureCatalog.yaml` to include the changelog `url` and `release` number:
+
+```yaml
+changelog:
+  - url: /changelog/2026/03/your-post-slug/
+    release: "2.29"
+```
+
+Once that entry is in place, tier availability badges are injected into the changelog post automatically at build time. No additional markup needed in the post itself.
+
+If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. If the feature's tier availability has changed alongside this release, update the relevant fields in the catalog too. Any additions or availability changes in `featureCatalog.yaml` must be reviewed by product before merging.
+
+Always write an availability note in the post as well. Tier badges communicate the tier, but prose tells the user what it means for them. Write it like this:
+
+> This feature is available to Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from vX.Y.
+
+Put it at the end of the post, or immediately after the main announcement if it affects whether the user can access the feature at all.
 
 ### Breaking changes
 
@@ -151,7 +168,7 @@ Do not paste PR titles or commit messages. They are written for engineers. Rewri
 >
 > It is a small (but important) improvement that just makes things that little bit easier.
 
-*Source: [Duplicate Instances Across Different Applications](/changelog/2025/10/duplicate-instances-across-applications/)*
+*Source: [Duplicate Instances Across Different Applications](https://flowfuse.com/changelog/2025/10/duplicate-instances-across-applications/)*
 
 Short, honest about the size of the change, and gets straight to the point.
 
@@ -164,7 +181,7 @@ Short, honest about the size of the change, and gets straight to the point.
 > - Are any nodes on my palette disabled?
 > - Can you suggest a node package that would replace this complex function code?
 
-*Source: [FlowFuse Expert: Palette Queries](/changelog/2026/01/ff-expert-palette-queries/)*
+*Source: [FlowFuse Expert: Palette Queries](https://flowfuse.com/changelog/2026/01/ff-expert-palette-queries/)*
 
 Instead of describing the feature abstractly, this shows exactly how a user will interact with it. Use this approach whenever a feature is best explained through concrete examples of what the user can now say or do.
 
@@ -174,7 +191,7 @@ Instead of describing the feature abstractly, this shows exactly how a user will
 >
 > This feature is available to Enterprise Licensed Self Hosted users and Enterprise tier users of FlowFuse Cloud.
 
-*Source: [HA Hosted Instance Rolling Restart](/changelog/2026/02/ha-instance-rolling-restart/)*
+*Source: [HA Hosted Instance Rolling Restart](https://flowfuse.com/changelog/2026/02/ha-instance-rolling-restart/)*
 
 The technical detail is there, but the sentence that follows immediately translates it into what the user actually cares about. Always pair the *what* with the *so what*.
 
@@ -186,7 +203,7 @@ The technical detail is there, but the sentence that follows immediately transla
 >
 > To check your current version, run `node --version`.
 
-*Source: [Node.js v20 Minimum Version Requirement](/changelog/2025/11/minimum-nodejs-version/)*
+*Source: [Node.js v20 Minimum Version Requirement](https://flowfuse.com/changelog/2025/11/minimum-nodejs-version/)*
 
 State what is changing and who it affects in the first sentence. Then explain why. Then tell the user exactly what to do. A user who needs to act should have everything they need without leaving the page.
 
