@@ -162,10 +162,10 @@ sections:
             value: "1"
             note: "Includes 1 hosted instance. Upgrades available up to 3 hosted / 3 remote instances."
           pro:
-            value: true
+            value: "5"
             note: "Starts with 5, shared with edge device count"
           enterprise:
-            value: true
+            value: "20"
             note: "Starts with 20, shared with edge device count"
         selfHosted:
           starter:
@@ -175,7 +175,7 @@ sections:
             value: "10"
             note: "Includes 10 hosted instances, shared with edge device count"
           enterprise:
-            value: true
+            value: "20"
             note: "Starts with 20, shared with edge device count"
 
       - id: edge-devices
