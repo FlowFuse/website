@@ -90,7 +90,7 @@ sections:
       - id: nr-mcp-servers
         label: Node-RED MCP Servers
         description: "Build and expose MCP servers directly from Node-RED instances, making your data and actions available to FlowFuse Expert and other AI agents."
-        docsLink: /blog/2025/10/building-mcp-server-using-flowfuse/
+        docsLink: /node-red/flowfuse/mcp/
         changelog: null
         subfeature: false
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
@@ -503,7 +503,7 @@ sections:
       - id: project-nodes
         label: Seamless Data Stream
         description: "FlowFuse Project Nodes enable the passing of data and messages between your Node-RED projects."
-        docsLink: /blog/2024/10/exploring-flowfuse-project-nodes/
+        docsLink: /docs/user/projectnodes/
         changelog: null
         solutions: [uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -572,7 +572,7 @@ sections:
       - id: git-integration
         label: Git Integration
         description: "Back up your flows to a remote Git repository through a DevOps Pipeline."
-        docsLink: /blog/2026/01/how-to-integrate-node-red-with-git/
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
@@ -860,7 +860,7 @@ sections:
       - id: teams
         label: Number of Teams
         description: "Create multiple teams to organise Node-RED projects across different groups or business units."
-        docsLink: /blog/2024/12/flowfuse-team-collaboration/
+        docsLink: /docs/user/team/
         changelog: null
         solutions: []
         showOnPricing: false
@@ -899,7 +899,7 @@ sections:
       - id: blueprints
         label: Access to Blueprints
         description: "FlowFuse Blueprints simplify Node-RED deployments by offering pre-built, customisable flows for specific use cases."
-        docsLink: /blog/2023/10/blueprints/
+        docsLink: /docs/user/concepts/#blueprint
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -945,7 +945,7 @@ sections:
       - id: multi-user-dashboard
         label: Personalised Multi-User Dashboards
         description: "Build applications that provide unique data to each logged-in user using personalised multi-user dashboards."
-        docsLink: /blog/2024/01/dashboard-2-multi-user/
+        docsLink: https://dashboard.flowfuse.com/user/multi-tenancy.html
         changelog: null
         solutions: [mes, scada]
         showOnPricing: true
