@@ -37,8 +37,11 @@
         <h3 class="mt-0 mb-0 !text-3xl text-indigo-800">{{ ctaData.title or currentCta.title }}</h3>
         <p class="mt-0 mb-0 max-w-4xl mx-auto sm:mx-0 leading-relaxed">{{ ctaData.description or currentCta.description }}</p>
         <div class="flex justify-center sm:justify-start">
-            <a class="ff-btn ff-btn--highlight uppercase items-center text-base no-underline" href="{{ buttonUrl }}" onclick="if (typeof capture !== 'undefined') { capture('blog-cta', {'reference': 'Blog: {{ title | escape }}'}); }">
-                {{ currentCta.buttonText }}
+            <a class="ff-btn ff-btn--highlight uppercase items-center text-base no-underline" href="{{ buttonUrl }}" onclick="if (typeof capture !== 'undefined')
+            { capture('blog-cta', {
+                reference: 'Blog: {{ title | escape }}',
+                cta_type: '{{ ctaType }}'}); }">
+            {{ currentCta.buttonText }}
             </a>
         </div>
     </div>
