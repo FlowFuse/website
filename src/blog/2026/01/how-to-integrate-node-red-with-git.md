@@ -9,7 +9,7 @@ image: /blog/2026/01/images/integrate-nr-with-git.png
 tags:
   - flowfuse
 cta:
-  type: contact
+  type: demo
   title: See FlowFuse in Action
   description: Want to see how FlowFuse makes Node-RED production-ready? Book a demo and we'll walk you through the entire platform and all its features.
 ---
