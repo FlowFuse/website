@@ -26,7 +26,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: "Contact Support"
+            value: "Contact Support to enable"
 
       - id: ff-expert-support
         label: Support Mode
@@ -991,7 +991,7 @@ buttons:
       onclick: "capture('cta-join', {'position': 'secondary'}, {'plan': 'cloud-pro'})"
     - cta: Request a Quote
       url: /pricing/request-quote/
-      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
+      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
   selfHosted:
     - cta: INSTALL NOW
       url: https://flowfuse.com/docs/install/introduction/

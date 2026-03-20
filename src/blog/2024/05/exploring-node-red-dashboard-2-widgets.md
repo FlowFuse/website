@@ -9,6 +9,10 @@ image: /blog/2024/05/images/dashboard-widgets.png
 tags:
     - posts
     - dashboard
+cta:
+  type: sign-up
+  title: Build and Deploy Node-RED Dashboards in Minutes
+  description: FlowFuse gives you everything you need to build, secure, and scale Node-RED Dashboard applications — with multi-user support, authentication, and production-ready deployment built in.
 ---
 
 This guide delves into Node-RED Dashboard 2.0 widgets. It is a guide on how to build a Dashboard application, and will cover many of the widgets available today.
@@ -241,7 +245,3 @@ If you want to enhance this simple application by adding more features or want t
 - [How to Build An Application With Node-RED Dashboard 2.0](/blog/2024/04/how-to-build-an-application-with-node-red-dashboard-2/) - This guide, covers how you can build personalize multiuser dashboard using flow fuse multi-user addon.
 
 - [Multi-User Dashboard for Ticket/Task Management blueprint](/blueprints/flowfuse-dashboard/multi-user-dashboard/) -  this blueprint allows you to utilize templates to develop a personalized multi-user dashboard quickly. This Task management blueprint has all features such as adding, updating, and deleting tasks, user profiles, and admin dashboard.
-
-If you are looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team, [sign up]() for FlowFuse and get started today!
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Exploring%20Node-RED%20Dashboard%202.0%20Widgets", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

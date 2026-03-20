@@ -155,6 +155,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
+    eleventyConfig.setFrontMatterParsingOptions({
+        excerpt: true,
+        excerpt_separator: "<!--more-->",
+        excerpt_alias: "excerpt"
+    });
 
     // Set DEV_MODE_POSTS to true if the context is not 'production'
     const DEV_MODE_POSTS = process.env.CONTEXT !== "production";
@@ -495,6 +500,11 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("truncate", function(text, maxWordCount) {
+        if (text === undefined || text === null || text === "") {
+            return "";
+        }
+
+        text = String(text);
         const split = text.split(" ");
         if (split.length <= maxWordCount) {
             return text;
@@ -502,11 +512,6 @@ module.exports = function(eleventyConfig) {
         return text.split(" ").splice(0, maxWordCount).join(" ") + "..."
     });
 
-
-    eleventyConfig.addFilter("excerpt", function(str) {
-        const content = new String(str);
-        return content.split("\n<!--more-->\n")[0]
-    });
 
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);
@@ -715,9 +720,11 @@ module.exports = function(eleventyConfig) {
         const starter = tierData.starter && tierData.starter.value;
         const pro = tierData.pro && tierData.pro.value;
         const enterprise = tierData.enterprise && tierData.enterprise.value;
-        if (starter && pro && enterprise) return "All tiers";
-        if (pro && enterprise) return "Pro+";
-        if (enterprise === 'contact') return "Enterprise (on request)";
+        const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
+        if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
+        if (pro && enterprise && !enterpriseDimmed) return "Pro+";
+        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterpriseDimmed) return "Enterprise (on request)";
         if (enterprise) return "Enterprise";
         return "Not available";
     }
@@ -726,21 +733,21 @@ module.exports = function(eleventyConfig) {
         if (!feature) return '';
         const cloudLabel = deriveTierLabel(feature.cloud);
         const selfHostedLabel = deriveTierLabel(feature.selfHosted);
-        if (!cloudLabel && !selfHostedLabel) return '';
+        const showCloud = cloudLabel && cloudLabel !== 'Not available';
+        const showSelfHosted = selfHostedLabel && selfHostedLabel !== 'Not available';
+        if (!showCloud && !showSelfHosted) return '';
         let html = `<div class="ff-tier-badges">`;
-        if (cloudLabel) {
-            const unavailable = cloudLabel === 'Not available';
-            html += `<span class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+        if (showCloud) {
+            html += `<div class="ff-tier-badge ff-tier--available">`;
             html += `<span class="ff-tier-badge__label">Cloud</span>`;
             html += `<span class="ff-tier-badge__value">${cloudLabel}</span>`;
-            html += `</span>`;
+            html += `</div>`;
         }
-        if (selfHostedLabel) {
-            const unavailable = selfHostedLabel === 'Not available';
-            html += `<span class="ff-tier-badge ${unavailable ? 'ff-tier--unavailable' : 'ff-tier--available'}">`;
+        if (showSelfHosted) {
+            html += `<div class="ff-tier-badge ff-tier--available">`;
             html += `<span class="ff-tier-badge__label">Self-Hosted</span>`;
             html += `<span class="ff-tier-badge__value">${selfHostedLabel}</span>`;
-            html += `</span>`;
+            html += `</div>`;
         }
         html += '</div>';
         return html;

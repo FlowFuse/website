@@ -8,6 +8,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/01/images/integrate-nr-with-git.png
 tags:
   - flowfuse
+cta:
+  type: demo
+  title: See FlowFuse in Action
+  description: FlowFuse brings Git-style version control, DevOps pipelines, and team collaboration to Node-RED. See how teams are shipping flows with the same discipline as software.
 ---
 
 If you've been using Node-RED in production, you already know the pain points. Flows get complex. Teams grow. Someone makes a change that breaks production at 2 AM. You need to roll back, but which version was working? Who approved this deployment? How do you keep your dev environment in sync with production?
@@ -155,5 +159,3 @@ This bidirectional workflow solves several common challenges. Teams can commit f
 ## Conclusion
 
 FlowFuse simplifies everything about running Node-RED at scale—deployment, security, scaling, and team management. Git integration bridges the gap between FlowFuse's DevOps features and your existing development infrastructure. Your flows stay version-controlled, your team stays synchronized, and your operations stay simple.
-
-Want to see how FlowFuse makes Node-RED production-ready? [Book a demo](/book-demo/) and we'll walk you through the entire platform and all its features.

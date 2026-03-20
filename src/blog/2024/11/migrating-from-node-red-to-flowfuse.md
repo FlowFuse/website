@@ -9,6 +9,10 @@ keywords: node-red migration, node-red snapshot, node-red instance management, C
 tags:
    - flowfuse
    - flowfuse features
+cta:
+  type: demo
+  title: See How Easy Node-RED Migration Can Be
+  description: FlowFuse handles the infrastructure, security, and scalability so you can focus on building — whether you're running on edge devices or in the cloud.
 ---
 
 Migrating your Node-RED instance to [FlowFuse](/) centralizes management and simplifies deployment. Once migrated, FlowFuse takes care of the infrastructure, security, and scalability, making the process much easier. This allows you to focus on building solutions without worrying about the complexities of self-hosting. Whether you're working with edge devices or want to work on cloud instances, this migration streamlines the management of your IIoT workflows, improving efficiency and scalability.
@@ -140,5 +144,3 @@ Setting a device target will ensure that the snapshot will be deployed on all of
 ## Conclusion
 
 Migrating from a self-managed Node-RED setup to FlowFuse is simple and offers significant benefits. By transitioning, you’ll reduce operational complexity, enhance security, and improve scalability. FlowFuse handles the infrastructure, so you can focus on building and optimizing your IIoT solutions—whether on edge devices or in the cloud.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Migrating%20from%20Self-Managed%20Node-RED%20to%20FlowFuse-Managed%20Node-RED", cta_type: "signup", cta_text: "" %}
