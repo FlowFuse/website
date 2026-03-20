@@ -7,6 +7,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/motor-anomaly-detection-ai.png
 tags:
 - flowfuse
+cta:
+  type: demo
+  title: Your Motors Are Telling You Something
+  description: Book a demo and see how FlowFuse brings sensor ingestion, AI inference, and real-time alerting together on the factory floor — no separate ML infrastructure required
 ---
 
 Bearing wear, shaft misalignment, and imbalance don't appear overnight. They develop over days or weeks, leaving a clear trail in vibration data long before any audible or thermal symptoms emerge. By the time a technician hears grinding or feels heat, the window for low-cost intervention has already closed.
@@ -533,5 +537,3 @@ Training data quality matters more than model architecture. A model trained on d
 False positives are inevitable in early deployment. External vibration from nearby equipment, transient load spikes, or sensor cable movement can all push the score above threshold momentarily. The rolling average window helps, but it doesn't eliminate them. Treat the first few weeks as a calibration period: log alerts, investigate them, and adjust `THRESHOLD_SIGMA` or the window size based on what you learn. The system improves with attention.
 
 Finally, anomaly detection is an early warning layer, not a maintenance strategy on its own. It tells you to look sooner, not what to do when you get there. Pair it with regular physical inspection, lubrication schedules, and, where possible, a domain expert who can interpret the alerts in context. Used that way, it earns its place. Used as a replacement for those things, it will eventually let you down.
-
-*Most motor failures are predictable. The vibration signature is there weeks before the damage is done. This guide shows how to capture that signal and act on it. FlowFuse brings the full pipeline together in one place: sensor ingestion, feature extraction, and custom-trained AI inference, without managing separate infrastructure. [Try it free]({% include "sign-up-url.njk" %}).*

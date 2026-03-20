@@ -9,6 +9,10 @@ image: /blog/2026/02/images/edge-ai-is-80-20.png
 tags:
   - flowfuse
   - ai
+cta:
+  type: sign-up
+  title: Build the Plumbing That Makes AI Actually Work
+  description: FlowFuse is the operational layer that takes Node-RED to production — device management, snapshot deployments, ONNX-based AI inference, and DevOps pipelines built specifically for the factory floor. Start your 14-day free trial today.
 ---
 
 The model is the easy part. I know that is not what you were told. But it is true, and somewhere between your third deployment and your first production fire, you will stop arguing with it.

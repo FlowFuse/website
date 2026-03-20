@@ -8,6 +8,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/last-mile-problem-ai.png
 tags:
 - flowfuse
+cta:
+  type: contact
+  title: Give Your AI the Infrastructure to Actually Run
+  description: FlowFuse connects to any protocol, runs inference at the edge, and gives OT teams the deployment tooling they need to own AI in production. Contact us to close the last mile.
 ---
 
 There is a slide that lives in almost every industrial AI project deck.
@@ -103,5 +107,3 @@ It is a prioritization problem. A scoping problem. A decision, made early in eve
 The manufacturers generating real operational value from AI today made a different decision. They treated integration as the foundation, not the footnote. They gave the last mile the budget it deserved, the ownership it required, and the infrastructure it needed to hold. And then they built models on top of that foundation and watched them actually run.
 
 That is the sequence. Infrastructure first. Intelligence on top of it. Not the other way around.
-
-This is what FlowFuse was built to support. Not to replace the AI your team has built, but to give it somewhere to live in production. If your model is ready and your plant is not, that is a last mile problem. [We'd like to help you solve it.](/contact-us/)
