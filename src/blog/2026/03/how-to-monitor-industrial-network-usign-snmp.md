@@ -5,7 +5,7 @@ description: "Learn how to monitor industrial network health using SNMP and Flow
 date: 2026-03-19
 keywords: SNMP monitoring, industrial network health, FlowFuse, Node-RED SNMP, network telemetry, OID polling, industrial IoT
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/03/images/snmp-tile.png
 tags:
 - flowfuse
 cta:
