@@ -78,7 +78,7 @@ A URL will be made available to include in the post.
 YouTube videos can be embedded directly in pages using the `<lite-youtube>` web component — no S3 upload needed:
 
 ```html
-<lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 100%; height: 315px;" title="Video title"></lite-youtube>
+<lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 704px; height: 100%;" title="Video title"></lite-youtube>
 ```
 
 > **Do not use raw `<iframe>` tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/blog/#embedding-videos-in-article-body) for more detail.
