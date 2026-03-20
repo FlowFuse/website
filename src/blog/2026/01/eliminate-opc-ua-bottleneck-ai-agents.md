@@ -103,5 +103,4 @@ This isn't about replacing people with automation. It's about making the data in
 
 And it's not limited to OPC UA. FlowFuse's MCP approach works the same way across any industrial system—MQTT brokers, Modbus devices, SQL databases, REST APIs, whatever protocols you're running. Same natural language interface, same investigation capabilities, different underlying systems. The infrastructure you have becomes the infrastructure you can actually use.
 
-***If you want a single platform to reliably connect OPC UA servers, devices, and data systems—and make that data usable by both people and AI—FlowFuse provides the foundation. [Contact us to learn more](/contact-us/)***
 
