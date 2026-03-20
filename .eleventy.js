@@ -890,6 +890,76 @@ module.exports = function(eleventyConfig) {
         return null;
     }
 
+    function findSubfeaturesForDocsPage(pageUrl) {
+        if (!pageUrl) return [];
+        const normalizedPage = pageUrl.replace(/\/$/, '') + '/';
+        const results = [];
+        for (const section of featureCatalog.sections) {
+            for (const feature of section.features) {
+                if (!feature.docsLink || !feature.subfeature) continue;
+                let link = feature.docsLink;
+                link = link.replace(/^https?:\/\/flowfuse\.com/, '');
+                const fragment = (link.match(/#(.+)/) || [])[1];
+                if (!fragment) continue;
+                const linkPath = link.replace(/#.*/, '').replace(/\/$/, '') + '/';
+                if (normalizedPage === linkPath) {
+                    results.push({ feature, fragment });
+                }
+            }
+        }
+        return results;
+    }
+
+    // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
+    eleventyConfig.addTransform("docsFeatureBadges", function(content) {
+        if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
+
+        const parentFeature = findFeatureByDocsLink(this.page.url);
+        const subfeatures = findSubfeaturesForDocsPage(this.page.url);
+        if (!parentFeature && subfeatures.length === 0) return content;
+
+        const ops = [];
+
+        // Inject parent feature badges after the first H1
+        if (parentFeature) {
+            const h1Regex = /<h1[^>]*>.*?<\/h1>/s;
+            const h1Match = h1Regex.exec(content);
+            if (h1Match) {
+                const badges = renderTierBadges(parentFeature);
+                if (badges) {
+                    const wrapped = badges.replace('class="ff-tier-badges"', 'class="ff-tier-badges not-prose"');
+                    ops.push({ index: h1Match.index + h1Match[0].length, html: wrapped });
+                }
+            }
+        }
+
+        // Inject subfeature badges after their matching headings
+        if (subfeatures.length > 0) {
+            const headingRegex = /<h([2-6])\s[^>]*id="([^"]*)"[^>]*>.*?<\/h\1>/gs;
+            const headingMatches = [];
+            let hmatch;
+            while ((hmatch = headingRegex.exec(content)) !== null) {
+                headingMatches.push({ index: hmatch.index, length: hmatch[0].length, id: hmatch[2], level: parseInt(hmatch[1]) });
+            }
+
+            for (const { feature, fragment } of subfeatures) {
+                const heading = headingMatches.find(h => h.id === fragment);
+                if (!heading) continue;
+                const badges = renderTierBadges(feature);
+                if (badges) {
+                    const wrapped = badges.replace('class="ff-tier-badges"', 'class="ff-tier-badges not-prose"');
+                    ops.push({ index: heading.index + heading.length, html: wrapped });
+                }
+            }
+        }
+
+        ops.sort((a, b) => b.index - a.index);
+        for (const op of ops) {
+            content = content.slice(0, op.index) + op.html + content.slice(op.index);
+        }
+        return content;
+    });
+
     // Make helpers available to changelog layout via filters
     eleventyConfig.addFilter("featureForChangelog", function(url) {
         return findFeatureByChangelog(url);
