@@ -11,7 +11,7 @@ tags:
 cta:
   type: contact
   title: Connect Any Protocol, at Any Scale
-  description: FlowFuse gives you enterprise Node-RED to build production IoT systems that work with MQTT, CoAP, or both. No rewiring your architecture, just reliable data flow at the scale you need. Contact us to learn more.
+  description: FlowFuse gives you enterprise Node-RED to build production IoT systems that work with MQTT, CoAP, or both. No rewiring your architecture, just reliable data flow at the scale you need.
 ---
 
 The MQTT vs CoAP debate is mostly noise. One protocol assumes you have infrastructure and want centralized coordination. The other assumes you don't and can't. If you're still debating which is "better," you haven't measured what matters.
