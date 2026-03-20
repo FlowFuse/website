@@ -161,7 +161,7 @@ When a `video` field is present, it takes precedence over the `image` field in t
 To embed a YouTube video within the body of a blog post, use the `<lite-youtube>` web component:
 
 ```html
-<lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 100%; height: 315px;" title="Video title"></lite-youtube>
+<lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 704px; height: 100%;" title="Video title"></lite-youtube>
 ```
 
 The video ID is the part after `v=` in a YouTube URL. For example:

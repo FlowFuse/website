@@ -54,7 +54,7 @@ The documentation provides a guide for [installing FlowFuse on a local server](/
 If you haven't played with FlowFuse yet, here's a more complete walk-through
 of the platform:
 
-<lite-youtube videoid="YYZDx8n17Ys" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="YYZDx8n17Ys" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 ### Upgrading FlowFuse
 

@@ -1887,6 +1887,13 @@ Aesthetics
     height: 100%;
 }
 
+lite-youtube {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.75rem;
+}
+
 lite-youtube::before {
     display: none !important;
 }
