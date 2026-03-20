@@ -29,6 +29,14 @@ date: git Last Modified
         <div class="w-full">
             <!-- Main Content -->
             <div class="order-last md:order-first">
+                {% set catalogFeature = page.url | featureForDocsPage %}
+                {% if catalogFeature %}
+                    {% set tierCloud = catalogFeature.cloud | tierLabel %}
+                    {% set tierSelfHosted = catalogFeature.selfHosted | tierLabel %}
+                    <div class="mt-6 mb-2">
+                        {% include "components/tier-badges.njk" %}
+                    </div>
+                {% endif %}
                 <div class="mt-6 mb-4 prose prose-blue main-content">
                     {{ content | rewriteHandbookLinks(page) | safe }}
                 </div>

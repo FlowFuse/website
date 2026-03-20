@@ -872,9 +872,31 @@ module.exports = function(eleventyConfig) {
         return content;
     });
 
+    function findFeatureByDocsLink(pageUrl) {
+        if (!pageUrl) return null;
+        const normalizedPage = pageUrl.replace(/\/$/, '') + '/';
+        for (const section of featureCatalog.sections) {
+            for (const feature of section.features) {
+                if (!feature.docsLink || feature.subfeature) continue;
+                let link = feature.docsLink;
+                // Strip full domain if present
+                link = link.replace(/^https?:\/\/flowfuse\.com/, '');
+                // Strip fragment
+                link = link.replace(/#.*$/, '');
+                const normalizedLink = link.replace(/\/$/, '') + '/';
+                if (normalizedPage === normalizedLink) return feature;
+            }
+        }
+        return null;
+    }
+
     // Make helpers available to changelog layout via filters
     eleventyConfig.addFilter("featureForChangelog", function(url) {
         return findFeatureByChangelog(url);
+    });
+
+    eleventyConfig.addFilter("featureForDocsPage", function(url) {
+        return findFeatureByDocsLink(url);
     });
 
     eleventyConfig.addFilter("tierLabel", function(tierData) {

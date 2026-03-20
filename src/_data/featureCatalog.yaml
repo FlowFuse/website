@@ -304,7 +304,7 @@ sections:
       - id: custom-hostname
         label: Custom Hostnames
         description: "Access your Node-RED application via your own domain name."
-        docsLink: null
+        docsLink: /docs/user/custom-hostnames/
         changelog: null
         solutions: []
         showOnPricing: true
@@ -343,7 +343,7 @@ sections:
       - id: persistent-context
         label: Persistent Context
         description: "In-memory values defined in a Node-RED flow persist across project restarts and upgrades."
-        docsLink: null
+        docsLink: /docs/user/persistent-context/
         changelog: null
         solutions: [mes, data-integration]
         showOnPricing: true
@@ -385,7 +385,7 @@ sections:
       - id: mqtt-broker
         label: MQTT Broker
         description: "Manage and create MQTT clients to transport data for efficient messaging and communication within your applications."
-        docsLink: null
+        docsLink: /docs/user/teambroker/
         changelog: null
         solutions: [uns, it-ot-middleware, data-integration, mes, scada]
         showOnPricing: true
@@ -480,7 +480,7 @@ sections:
       - id: pipelines
         label: DevOps Pipelines
         description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."
-        docsLink: null
+        docsLink: /docs/user/devops-pipelines/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -549,7 +549,7 @@ sections:
       - id: device-groups
         label: Device Group Management
         description: "Logically group devices assigned to an application and integrate device groups into your DevOps Pipeline for coordinated fleet updates."
-        docsLink: null
+        docsLink: /docs/user/device-groups/
         changelog: null
         solutions: [mes, scada, edge-connectivity]
         showOnPricing: true
@@ -595,7 +595,7 @@ sections:
       - id: ha
         label: High Availability
         description: "Leverage horizontal scaling for reliable and scalable processing of your data through Node-RED."
-        docsLink: null
+        docsLink: /docs/user/high-availability/
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
@@ -641,7 +641,7 @@ sections:
       - id: tables
         label: FlowFuse Tables
         description: "Integrated database feature for storing, reading, writing, and querying data within FlowFuse."
-        docsLink: null
+        docsLink: /docs/user/ff-tables/
         changelog: null
         solutions: [mes, scada, data-integration]
         showOnPricing: true
@@ -667,7 +667,7 @@ sections:
       - id: audit-log
         label: Audit Log
         description: "Keep track of everything going on in your Node-RED instances and FlowFuse. Audit Logs provide details on what actions have taken place, when they happened, and who did them."
-        docsLink: null
+        docsLink: /docs/user/logs/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
@@ -690,7 +690,7 @@ sections:
       - id: rbac
         label: Role-Based Access Control
         description: "Intuitive team management tooling makes it easy to control who has access to what across your FlowFuse organisation."
-        docsLink: null
+        docsLink: /docs/user/role-based-access-control/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
@@ -811,7 +811,7 @@ sections:
       - id: sso
         label: Single Sign-On (SSO)
         description: "Configure FlowFuse to work with your own SSO provider, allowing users to access FlowFuse with a single set of login credentials."
-        docsLink: null
+        docsLink: /docs/admin/sso/
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
@@ -968,7 +968,7 @@ sections:
       - id: team-library
         label: Team Library
         description: "Set up standard nodes and flows that can be shared with all team members across your organisation."
-        docsLink: null
+        docsLink: /docs/user/shared-library/
         changelog: null
         solutions: [mes, scada, uns]
         showOnPricing: true
