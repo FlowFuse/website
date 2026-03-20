@@ -8,6 +8,10 @@ image: /blog/2026/01/images/node-red-story.png
 keywords:
 tags:
  - node-red
+cta:
+  type: sign-up
+  title: Ready to Take Node-RED to Production?
+  description: FlowFuse gives Node-RED everything enterprises need — fleet management, version control, security, and DevOps pipelines. See how teams are scaling from one instance to thousands.
 ---
 
 In late 2011, Nick O'Leary was a "plumber" of the digital age. As part of IBM's Emerging Technology Group, he spent his days building experimental projects that pushed the boundaries of what connected systems could do. But there was a problem: for every new experiment, he found himself writing the same boilerplate code over and over — the tedious "wiring" work needed to make different systems talk to each other.
@@ -181,5 +185,3 @@ What amazes me most is the community's generosity. People don't just solve probl
 If this story touched you, please share it. Someone out there might need the reminder that the impossible is usually just the not-yet-possible.
 
 Thank you for reading, and happy New Year!
-
-If you're facing scaling challenges that led to FlowFuse's creation, [reach out to us](/contact-us/).

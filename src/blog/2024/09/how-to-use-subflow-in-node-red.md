@@ -10,6 +10,10 @@ keywords: node red subflow, nodered subflow, node red subflow environment variab
 tags:
     - node-red
     - how-to
+cta:
+  type: sign-up
+  title: Build and Reuse Node-RED Flows Across Your Team
+  description: FlowFuse gives you version control, team collaboration, and centralized deployment — so your subflows and reusable logic stay consistent across every instance and every engineer.
 ---
 
 In traditional programming, managing complex and repetitive tasks can quickly lead to a tangled mess of code that’s hard to maintain and update. To tackle this issue, developers use libraries or modules—reusable chunks of code that help organize functionality, minimize duplication, and keep codebases clean and manageable.
@@ -157,5 +161,3 @@ Now, just like regular Node-RED nodes, you can effectively use this Subflow node
 ## Conclusion
 
 In this guide, we explored the concept of subflows in Node-RED, including their definition and purpose. We walked through the steps to create and configure subflows, demonstrating how to integrate them into your main flow. Additionally, we discussed how to edit and update existing subflows, and provided best practices for managing and organizing them effectively.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20create%20and%20use%20Subflow%20in%20Node-RED", cta_type: "signup", cta_text: "" %}

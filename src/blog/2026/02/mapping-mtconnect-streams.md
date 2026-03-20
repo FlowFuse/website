@@ -8,6 +8,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/mtconnect.png
 tags:
 - flowfuse
+cta:
+  type: contact
+  title: Connect Your CNC Machines to Live Dashboards
+  description: FlowFuse makes it simple to collect MTConnect data, build real-time dashboards, and integrate shop floor equipment with your broader systems, no custom code required. Get in touch to discuss your project.
 ---
 
 Most manufacturing facilities run MTConnect agents on their CNC machines, but the XML data these agents produce isn't directly usable. You receive streams of timestamped measurements, state changes, and condition flags wrapped in hierarchical XML structures. Converting this into a functional dashboard means solving three problems: retrieving the data reliably, parsing it correctly, and routing specific values to the right display components.
@@ -167,5 +171,3 @@ Below is the complete flow configuration. If you've successfully built the dashb
 Your MTConnect dashboard is now live, pulling real-time machine data and displaying it through visual widgets. The setup you've built here works the same way across any MTConnect-compliant machine in your facility.
 
 This is what FlowFuse does—it makes connecting to equipment, collecting data, transforming it into useful formats, and visualizing it on dashboards straightforward. Beyond basic monitoring, you can log production metrics to databases for trend analysis, set up automated alerts when machines enter fault states, integrate shop floor data with MES or ERP systems, and build event-driven workflows that respond to machine conditions. For production environments, FlowFuse Enterprise provides role-based access control, audit logging, high availability infrastructure, and dedicated support—giving you the operational controls needed to run manufacturing applications reliably across multiple facilities.
-
-Want to deploy this across your facility? [Contact us](https://flowfuse.com/contact-us/) to discuss your manufacturing monitoring requirements.

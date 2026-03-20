@@ -10,6 +10,10 @@ keywords: node red webscraping, websrcaping with node-red, node red https reques
 tags:
     - node-red
     - how-to
+cta:
+  type: sign-up
+  title: Automate Data Collection With Node-RED
+  description: FlowFuse gives you a production-ready platform to build, deploy, and manage Node-RED flows — with team collaboration, version control, and centralized management across all your instances.
 ---
 
 Web scraping has become an indispensable tool for monitoring news, tracking competitors, and gathering insights. In this guide, you'll learn how to harness the power of Node-RED for efficient web scraping, allowing you to extract and manage data from various websites with ease that are not exposed through an API.
@@ -128,5 +132,3 @@ Web scraping can be a valuable tool for gathering data, but it's crucial to navi
 ## Conclusion
 
 You’ve now learned to use Node-RED for web scraping, from sending requests and parsing HTML to transforming data into practical formats. This approach streamlines data collection from websites, making it easier to manage and analyze information efficiently.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Scrape%20Data%20from%20Websites%20Using%20Node-RED", cta_type: "signup", cta_text: "" %}

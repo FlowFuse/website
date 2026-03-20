@@ -8,6 +8,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/canbus-tutorial.png
 tags:
 - flowfuse
+cta:
+  type: contact
+  title: Take CAN Bus From Dev to Production
+  description: FlowFuse makes it simple to deploy, monitor, and maintain Node-RED flows across your entire edge fleet, same flows, any hardware, any scale. Get in touch to discuss your project.
 ---
 
 If you work with vehicles, industrial automation, or embedded systems, you've likely encountered **CAN bus**, the communication backbone that connects ECUs, sensors, controllers, and actuators in real-world environments. The challenge isn't just reading CAN data; it's getting that data into your dashboards, cloud platforms, databases, or industrial control systems.
@@ -302,5 +306,3 @@ By combining SocketCAN with FlowFuse, you've eliminated much of the complexity t
 The real power of this approach becomes clear when you consider scalability. The same FlowFuse flows work identically whether you're testing with a virtual CAN interface on your laptop or deploying to production hardware with physical CAN controllers. The abstraction layer provided by SocketCAN means your application logic remains stable even as your hardware requirements evolve.
 
 Once you've connected to your CAN bus, the possibilities expand significantly. You can build real-time monitoring dashboards to visualize CAN data, send telemetry to cloud platforms for analytics and storage, or bridge CAN networks with virtually any other protocol or system. FlowFuse's extensive ecosystem of nodes and integrations supports connections to databases, MQTT brokers, REST APIs, industrial protocols, and more, making it straightforward to integrate your CAN infrastructure into larger IoT and automation workflows.
-
-*Managing Node-RED across multiple edge devices or looking for a platform that makes connecting and scaling easier? FlowFuse makes it simple to deploy, monitor, and maintain your infrastructure at scale. [Get in touch](/contact-us/) to discuss your project and see how we can help.*
