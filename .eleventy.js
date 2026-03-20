@@ -783,7 +783,7 @@ module.exports = function(eleventyConfig) {
 
         const features = frontmatter.features;
         const release = frontmatter.release;
-        if (!features || !Array.isArray(features) || features.length === 0) return content;
+        if (!release || !features || !Array.isArray(features) || features.length === 0) return content;
 
         // Build injection map: heading text -> { badges HTML, changelogs HTML }
         const injections = [];
@@ -916,7 +916,24 @@ module.exports = function(eleventyConfig) {
 
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);
-        if (!parentFeature && subfeatures.length === 0) return content;
+
+        // Parse frontmatter for features array (same format as changelog posts)
+        let fmFeatures = [];
+        const inputPath = this.page.inputPath;
+        if (inputPath && inputPath.endsWith('.md')) {
+            try {
+                const source = fs.readFileSync(inputPath, 'utf8');
+                const fmMatch = source.match(/^---\n([\s\S]*?)\n---/);
+                if (fmMatch) {
+                    const fm = yaml.load(fmMatch[1]);
+                    if (fm.features && Array.isArray(fm.features)) {
+                        fmFeatures = fm.features;
+                    }
+                }
+            } catch (e) { /* ignore */ }
+        }
+
+        if (!parentFeature && subfeatures.length === 0 && fmFeatures.length === 0) return content;
 
         const ops = [];
 
@@ -933,16 +950,35 @@ module.exports = function(eleventyConfig) {
             }
         }
 
-        // Inject subfeature badges after their matching headings
-        if (subfeatures.length > 0) {
+        // Scan headings for subfeature and frontmatter-based injections
+        if (subfeatures.length > 0 || fmFeatures.length > 0) {
             const headingRegex = /<h([2-6])\s[^>]*id="([^"]*)"[^>]*>.*?<\/h\1>/gs;
             const headingMatches = [];
             let hmatch;
             while ((hmatch = headingRegex.exec(content)) !== null) {
-                headingMatches.push({ index: hmatch.index, length: hmatch[0].length, id: hmatch[2], level: parseInt(hmatch[1]) });
+                const textContent = hmatch[0].replace(/<[^>]+>/g, '').trim();
+                headingMatches.push({ index: hmatch.index, length: hmatch[0].length, id: hmatch[2], text: textContent, level: parseInt(hmatch[1]) });
             }
 
+            // Frontmatter features take priority — track handled heading IDs
+            const handledHeadingIds = new Set();
+            for (const entry of fmFeatures) {
+                if (!entry.id || !entry.heading) continue;
+                const feature = findFeatureById(entry.id);
+                if (!feature) continue;
+                const heading = headingMatches.find(h => h.text === entry.heading);
+                if (!heading) continue;
+                handledHeadingIds.add(heading.id);
+                const badges = renderTierBadges(feature);
+                if (badges) {
+                    const wrapped = badges.replace('class="ff-tier-badges"', 'class="ff-tier-badges not-prose"');
+                    ops.push({ index: heading.index + heading.length, html: wrapped });
+                }
+            }
+
+            // Subfeatures matched by docsLink fragment (skip if frontmatter already handled)
             for (const { feature, fragment } of subfeatures) {
+                if (handledHeadingIds.has(fragment)) continue;
                 const heading = headingMatches.find(h => h.id === fragment);
                 if (!heading) continue;
                 const badges = renderTierBadges(feature);
