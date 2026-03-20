@@ -1,5 +1,5 @@
 ---
-navTitle: Marketing - Website
+navTitle: Website
 ---
 
 # Marketing Website
@@ -114,6 +114,31 @@ meta:
   keywords: flowfuse, flows, manufacturing
 ---
 ```
+## Requesting New Website Pages
+
+New pages or significant page updates should start with a [Website Page Request](https://github.com/FlowFuse/website/issues/new/choose) issue in the website repository.
+
+The request should include a draft (Google Doc) with:
+- full copy for all sections  
+- CTA destinations and links  
+- any relevant context for the page  
+
+Starting with a draft copy is often the fastest way to get feedback and move into implementation.
+
+In many cases, this helps keep changes focused and iterations small when the page is built.
+
+For design-related considerations, see the [Design Review process](/handbook/design/process/#design-review).
+
+
+## Pull Request Scope
+
+To support fast iteration:
+
+- prefer small, focused PRs  
+- avoid mixing content updates with layout or functional changes  
+- split larger changes into separate PRs where possible  
+
+This makes changes easier to review, test, and iterate on, and helps keep iterations small.
 
 ## Reviewing Pull Requests
 
