@@ -12,6 +12,10 @@ tags:
    - flowfuse dashboard
    - customizing dashboard
    - dashboard 2.0
+cta:
+  type: sign-up
+  title: Build Beautiful Node-RED Dashboards Faster
+  description: FlowFuse gives you everything you need to build, style, and deploy Node-RED Dashboard 2.0 applications — with multi-user support, authentication, and production-ready infrastructure built in.
 ---
 
 In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.
@@ -192,5 +196,3 @@ To delve deeper into Node-RED Dashboard 2.0, we recommend exploring the followin
 - [Node-RED Dashboard 2.0 Documentation](https://dashboard.flowfuse.com/) - Detailed information for each of the nodes available in Dashboard 2.0, as well as useful guides on building custom nodes and widgets of your own.
 - [Node-RED Forums - Dashboard 2.0](https://discourse.nodered.org/tag/dashboard-2) - The Node-RED forums are a great place to ask questions, share your projects and get help from the community.
 - [Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/) - A free guide to an enterprise-ready Node-RED. Learn all about Node-RED history, securing your flows, and dashboard data visualization.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Comprehensive%20guide%3A%20Node-RED%20Dashboard%202.0%20layout%2C%20sidebar%2C%20and%20styling", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

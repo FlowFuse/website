@@ -7,6 +7,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/backoff-twincat.png
 tags:
 - flowfuse
+cta:
+  type: contact
+  title: Connect TwinCAT to the Rest of Your Stack
+  description: FlowFuse makes it simple to take live PLC data further — dashboards, databases, ERP, cloud platforms, and alerts, all without custom integration code.
 ---
 
 Beckhoff TwinCAT is one of the most widely deployed PLC platforms in industrial automation. ADS, its native communication protocol, gives you direct read and write access to PLC variables without additional licensing or middleware, and connecting from FlowFuse means tapping into that same channel TwinCAT uses internally.
@@ -334,5 +338,3 @@ You now have a working ADS connection between FlowFuse and TwinCAT, reading vari
 This guide covered the core nodes to get you connected and working. The `node-red-contrib-ads-client` package includes several other nodes worth exploring on your own, and future articles will cover more advanced use cases in depth.
 
 With FlowFuse you can take this further. Build real-time dashboards that visualize live PLC data, connect TwinCAT to other systems like databases, ERP, or cloud platforms, set up alerts when variables go out of range, and create operator interfaces that let your team interact with the machine from anywhere. All of it built on the same connection you just configured, without writing a single line of custom integration code.
-
-If you have questions or need help getting set up, [contact us](/contact-us/) and we are happy to help.
