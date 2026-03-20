@@ -690,8 +690,9 @@ sections:
       - id: rbac
         label: Role-Based Access Control
         description: "Intuitive team management tooling makes it easy to control who has access to what across your FlowFuse organisation."
-        docsLink: null
+        docsLink: /docs/user/role-based-access-control/
         changelog: null
+        subfeature: false
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
         tags: [cloud, self-hosted]
@@ -707,6 +708,30 @@ sections:
             value: true
           pro:
             value: true
+          enterprise:
+            value: true
+
+      - id: rbac-application
+        label: Application-Level RBAC
+        description: "Fine-grained access control per application, allowing team members to have different permission levels across different applications without requiring separate teams."
+        docsLink: /docs/user/role-based-access-control/#application-level-rbac
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
           enterprise:
             value: true
 
