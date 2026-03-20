@@ -12,6 +12,10 @@ tags:
     - node-red
     - dashboard
     - comparing node-red dashboards
+cta:
+  type: sign-up
+  title: Build and Deploy Node-RED Dashboards in Production
+  description: FlowFuse gives you everything you need to build, secure, and scale Node-RED Dashboard applications — with team collaboration, version control, and production-ready deployment built in.
 ---
 
 When choosing a dashboard solution for Node-RED, two popular options are FlowFuse Dashboard (also known as Dashboard 2.0) and UI-Builder. This article compares these tools across several key areas, including installation, ease of use, development activity, and customizability, to help you decide which one best suits your needs.
@@ -235,5 +239,3 @@ UI-Builder does not have a publicly accessible project roadmap or a dedicated pl
 FlowFuse Dashboard is well-suited for users seeking a user-friendly, low-code solution with a wide range of pre-built elements and strong community support. Its ease of use and active development make it ideal for quick deployment and minimal technical overhead.
 
 UI-Builder, however, offers nice performance and customization, benefiting users with coding expertise who need highly tailored UIs. Despite its flexibility and faster load times, it requires more complex setup and migration.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Dashboard%20vs%20UI-Builder%3A%20A%20Comprehensive%20Comparison", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

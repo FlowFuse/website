@@ -7,6 +7,10 @@ authors: ["sumit-shinde"]
 image: /blog/2025/01/images/choosing-iot-device-mangement-platform.png
 tags:
    - flowfuse
+cta:
+  type: pricing
+  title: Find the Right Plan for Your IIoT Operations
+  description: FlowFuse offers flexible pricing — including a free tier for up to two devices — so you can start small and scale as your IIoT network grows, with enterprise-grade security and support built in.
 ---
 
 With more devices being connected across industrial environments, managing them can get pretty overwhelming. The right IIoT device management software can help you stay on top of things—keeping everything secure, up-to-date, and running smoothly. But with so many options out there, how do you figure out which one’s best for your business?
@@ -130,5 +134,3 @@ Built on the flexible [Node-RED](/node-red) framework, FlowFuse easily integrate
 If things go awry, FlowFuse’s [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) feature lets you quickly revert to a previous stable state, minimizing downtime and keeping your systems running smoothly. Advanced monitoring tools continuously track device performance, sending alerts if issues like crashes or resource overloads arise, so your team can act before problems escalate. Detailed device logs and audit trails make troubleshooting straightforward, helping you quickly pinpoint issues and maintain a secure environment.
 
 FlowFuse offers [flexible pricing plans](/pricing/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20pricing&utm_term=high_intent&utm_content=How%20to%20Choose%20the%20Right%20IIoT%20Device%20Management%20Software%20for%20Your%20Business), including a free tier that allows you to manage up to two devices—so you can try the platform before making any commitment. Whether you’re just starting out or scaling your operations, FlowFuse provides the tools and support you need to efficiently manage your IIoT network.
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=How%20to%20Choose%20the%20Right%20IIoT%20Device%20Management%20Software%20for%20Your%20Business", cta_type: "demo", cta_text: "" %}
