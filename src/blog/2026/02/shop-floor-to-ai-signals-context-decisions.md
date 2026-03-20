@@ -12,7 +12,7 @@ tags:
 cta:
   type: contact
   title: Build the Architecture Your AI Actually Needs
-  description: FlowFuse helps you connect industrial systems, enrich signals with context, and publish to a Unified Namespace so your AI finally has something useful to work with. Contact us to get started.
+  description: FlowFuse helps you connect industrial systems, enrich signals with context, and publish to a Unified Namespace so your AI finally has something useful to work with.
 ---
 
 Your industrial AI initiative is dying. Maybe it's already dead.

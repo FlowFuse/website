@@ -10,8 +10,8 @@ tags:
 - flowfuse
 cta:
   type: demo
-  title: What Happens When Your Key Person Is Gone?
-  description: FlowFuse makes integration knowledge durable with version control, team collaboration, and an AI assistant that explains any flow in plain language. Book a demo to see it in action.
+  title: See How FlowFuse Reduces Your Bus Factor
+  description: FlowFuse makes integration knowledge durable with version control, team collaboration, and an AI assistant that explains any flow in plain language.
 ---
 
 The bus factor is a simple idea. If one person leaves your team, how much breaks? If the answer is "a lot," your bus factor is one. Most integration systems have a bus factor of one.

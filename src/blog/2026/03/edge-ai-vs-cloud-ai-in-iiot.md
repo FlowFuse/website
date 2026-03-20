@@ -10,7 +10,7 @@ tags:
 cta:
   type: demo
   title: Run AI at Every Level of Your Operation
-  description: FlowFuse connects machines, transforms data, runs model inference with ONNX nodes, and wires live plant data into AI agents. One platform across every level of the hierarchy. Book a demo to see it in action.
+  description: FlowFuse connects machines, transforms data, runs model inference with ONNX nodes, and wires live plant data into AI agents. One platform across every level of the hierarchy.
 ---
 
 Most industrial AI deployments are built around the wrong question. "Edge or cloud?" treats a deployment decision as a binary choice, when the real question is simpler and more useful: what does this specific workload actually require?

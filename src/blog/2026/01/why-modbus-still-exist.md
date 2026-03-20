@@ -11,7 +11,7 @@ tags:
 cta:
   type: demo
   title: Modernize Without the Rip and Replace
-  description: Book a FlowFuse Demo today to see how we can help you modernize your operations without the "rip and replace" headache. 
+  description: FlowFuse connects your legacy Modbus devices to modern systems without replacing what already works. See how teams are bridging old and new infrastructure on the same platform. 
 ---
 
 Modbus is 47 years old and has no built-in security. By every measure, it should have been obsolete a decade ago. OPC UA, EtherNet/IP, MQTT, Profinet: modern protocols with semantic modeling, encryption, and real-time capabilities arrived backed by billions in vendor investment and industry standardization efforts.

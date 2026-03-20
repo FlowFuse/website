@@ -9,7 +9,7 @@ tags:
 - flowfuse
 cta:
   type: demo
-  title: Your Motors Are Telling You Something
+  title: See How FlowFuse Catches Faults Before They Fail
   description: Book a demo and see how FlowFuse brings sensor ingestion, AI inference, and real-time alerting together on the factory floor — no separate ML infrastructure required
 ---
 

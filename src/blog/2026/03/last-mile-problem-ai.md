@@ -11,7 +11,7 @@ tags:
 cta:
   type: contact
   title: Give Your AI the Infrastructure to Actually Run
-  description: FlowFuse connects to any protocol, runs inference at the edge, and gives OT teams the deployment tooling they need to own AI in production. Contact us to close the last mile.
+  description: FlowFuse connects to any protocol, runs inference at the edge, and gives OT teams the deployment tooling they need to own AI in production.
 ---
 
 There is a slide that lives in almost every industrial AI project deck.

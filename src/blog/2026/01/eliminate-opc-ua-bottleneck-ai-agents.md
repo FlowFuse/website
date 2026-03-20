@@ -11,7 +11,7 @@ tags:
 cta:
   type: contact
   title: Turn Your Industrial Data Into Instant Answers
-  description: If you want a single platform to reliably connect OPC UA servers, devices, and data systems—and make that data usable by both people and AI—FlowFuse provides the foundation. Contact us to learn more.
+  description: If you want a single platform to reliably connect OPC UA servers, devices, and data systems—and make that data usable by both people and AI—FlowFuse provides the foundation.
 ---
 
 OPC UA servers store everything. Finding anything takes hours.

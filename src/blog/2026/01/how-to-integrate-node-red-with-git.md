@@ -11,7 +11,7 @@ tags:
 cta:
   type: demo
   title: See FlowFuse in Action
-  description: Want to see how FlowFuse makes Node-RED production-ready? Book a demo and we'll walk you through the entire platform and all its features.
+  description: FlowFuse brings Git-style version control, DevOps pipelines, and team collaboration to Node-RED. See how teams are shipping flows with the same discipline as software.
 ---
 
 If you've been using Node-RED in production, you already know the pain points. Flows get complex. Teams grow. Someone makes a change that breaks production at 2 AM. You need to roll back, but which version was working? Who approved this deployment? How do you keep your dev environment in sync with production?

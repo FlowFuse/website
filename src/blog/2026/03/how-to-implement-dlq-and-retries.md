@@ -11,7 +11,7 @@ tags:
 cta:
   type: contact
   title: Stop Losing Data You Will Never Get Back
-  description: FlowFuse gives your IIoT pipelines the fault tolerance they need — built-in retry logic, Dead Letter Queues backed by FlowFuse Tables, and full visibility into every failure. Contact us to get started.
+  description: FlowFuse gives your IIoT pipelines the fault tolerance they need — built-in retry logic, Dead Letter Queues backed by FlowFuse Tables, and full visibility into every failure.
 ---
 
 Somewhere in your IIoT pipeline, a message just failed. You don't know which one. You don't know when. And unless you have a Dead Letter Queue, you never will.
