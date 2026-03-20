@@ -12,6 +12,10 @@ tags:
     - ming
     - influx
     - dashboards
+cta:
+  type: demo
+  title: See the MIND Stack in Action
+  description: FlowFuse brings MQTT, Node-RED, and Dashboard 2.0 together in one platform — fewer components to manage, faster deployment, and built-in security for your IoT infrastructure.
 ---
 
 The [MING stack](https://flowfuse.com/blog/2023/02/ming-blog/) has gained significant popularity over the years as it built upon open-source projects.  That has given way to many people leveraging this stack to build solutions upon in various different environments.  The MING stack is composed of 4 main components, [MQTT](https://mosquitto.org/), [InfluxDB](https://www.influxdata.com/), [Node-RED](/node-red/), and [Grafana](https://grafana.com/).  Combined together are the 4 main pillars, data transportation, data storage, data transformation, and visualizations.  With this, it requires the management of 4 different applications, which often reside on the same server, but not necessarily.  With more moving parts, creates complexity.
@@ -63,6 +67,4 @@ FlowFuse provides built-in features, such as MQTT, backups, deployment pipelines
 ## Conclusion
 
 While we believe that the MING stack is here to stay, we believe as the market matures, it should offer many different variations suitable for each customer's needs.  However, we find that the MIND offering does fill a niche in the market that may better suit your needs.  None the less, choosing FlowFuse to manage your Node-RED runtimes will ensure that your applications will be secure, scalable, and easily manageable.  Allowing your domain experts to take control and extend their knowledge bringing increased value to industrial facilities around the world.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20MIND%20stack%20with%20Node-RED%20and%20FlowFuse%20Dashboard%202.0", cta_type: "signup", cta_text: "" %}
 
