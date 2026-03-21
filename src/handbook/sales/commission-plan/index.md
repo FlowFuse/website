@@ -2,7 +2,7 @@
 navTitle: Sales Compensation Plan
 ---
 
-# FY 2025 SALES COMPENSATION PLAN
+# FY 2026 SALES COMPENSATION PLAN
 
 ## 1. Introduction
 
@@ -176,7 +176,7 @@ It is intended that any Incentive Compensation and other payments and benefits u
 
 **ACKNOWLEDGMENT**
 
-I acknowledge that I have read, understand, and agree to this FY 2025 SALES COMPENSATION PLAN.
+I acknowledge that I have read, understand, and agree to this FY 2026 SALES COMPENSATION PLAN.
 
 [Team members who are eligible for this commission plan will receive a docusign of this as part of their onboarding for signature.]
 
@@ -186,7 +186,7 @@ I acknowledge that I have read, understand, and agree to this FY 2025 SALES COMP
 
 ### 1. Effective Date
 
-This Plan is effective through [start date] and [end date] is subject to the terms and conditions in the “FlowFuse FY 2025 Sales Compensation Plan”.
+This Plan is effective through [start date] and [end date] is subject to the terms and conditions in the “FlowFuse FY 2026 Sales Compensation Plan”.
 
 ### 2. Job Title/Role
 
@@ -219,7 +219,7 @@ Quota credit for upsells and renewals will continue to be based on Incremental A
 
 Bookings completed through partners will receive a 20% uplift in the value of the deal for commission purposes. For example, a $100,000 booking sold through a partner where the partner receives a 30% margin, the net value to FlowFuse would be $70,000. The deal would get a 20% uplift for commission credit purposes, the net deal amount for commission purposes would be 84,000.
 
-### 8\. Commission and Quota Credit
+### 8. Commission and Quota Credit
 
 Commission will be calculated based on the Commissionable Value of each Qualifying Sale, defined as:
 
@@ -237,7 +237,7 @@ Notes: Commissions will be paid on multi-year deals at the base rate according t
 
 ### 9. Quota
 
-New net Annual Recurring Revenue (ARR) plus services sold on New Business deals Quota of $ for Q1 2025 through Q4 2025 assigned quarterly as follows: 
+New net Annual Recurring Revenue (ARR) plus services sold on New Business deals Quota of $ for Q1 2026 through Q4 2026 assigned quarterly as follows: 
 
 Q1	$  [Quota Q1]
 Q2	$  [Quota Q2]
