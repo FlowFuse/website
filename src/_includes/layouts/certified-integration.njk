@@ -1,0 +1,161 @@
+---
+layout: layouts/base.njk
+sitemapPriority: 0.9
+---
+{# Hero Section #}
+<div class="w-full" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+    <div class="w-full pt-12 pb-12 md:pt-8 md:pb-10">
+        <div class="px-6 container mx-auto md:max-w-screen-lg">
+            <div class="md:flex items-center md:flex-row md:justify-between gap-8">
+                <div class="my-auto max-md:mx-auto md:w-7/12 max-w-xl max-md:text-center">
+                    <div class="flex items-center gap-2 mb-3 max-md:justify-center">
+                        <span class="bg-green-700 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">Certified</span>
+                        <span class="text-green-400 text-xs font-semibold uppercase tracking-wide">Enterprise Integration</span>
+                    </div>
+                    <h1 class="w-full mt-0 md:px-0 m-auto font-medium text-white">
+                        {{ integrationName }}
+                    </h1>
+                    <p class="text-gray-300 mb-6 text-lg">{{ heroDescription }}</p>
+                    {# Trust signal pills #}
+                    <div class="flex flex-wrap gap-2 mb-8 max-md:justify-center">
+                        {% if trustSla %}
+                        <span class="bg-white/10 text-gray-200 text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">{{ trustSla }} SLA</span>
+                        {% endif %}
+                        {% if trustSupportResponse %}
+                        <span class="bg-white/10 text-gray-200 text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">{{ trustSupportResponse }} Support Response</span>
+                        {% endif %}
+                        {% if trustUpdateFrequency %}
+                        <span class="bg-white/10 text-gray-200 text-xs font-medium px-3 py-1.5 rounded-full border border-white/20">{{ trustUpdateFrequency }} Updates</span>
+                        {% endif %}
+                    </div>
+                    <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col">
+                        <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/"
+                           onclick="capture('cta-contact-us', {'position': 'primary'}, {'page': 'integration-{{ integrationSlug }}'})">TALK TO AN EXPERT</a>
+                        <a class="ff-btn ff-btn--primary-outlined min-h-[40px] !text-white !border-white/40 hover:!bg-white/10" href="{% include 'sign-up-url.njk' %}"
+                           onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'integration-{{ integrationSlug }}'})">START FREE TRIAL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Use Cases Section #}
+{% if useCasesJson %}
+{% set useCasesList = useCasesJson | fromJson %}
+<div class="w-full py-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-8">What You Can Build</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {% for uc in useCasesList %}
+            <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                <h3 class="mt-0 text-lg font-semibold">{{ uc.title }}</h3>
+                <p class="text-gray-600 text-sm mb-0">{{ uc.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{# How It Works #}
+<div class="w-full bg-gray-50 py-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-8">How FlowFuse Connects {{ integrationName }}</h2>
+        <div class="flex items-center justify-center gap-2 sm:gap-4 my-8 flex-wrap sm:flex-nowrap">
+            <div class="bg-white border-2 border-green-200 rounded-lg p-4 sm:p-6 text-center min-w-[120px]">
+                <span class="font-bold text-lg">{{ integrationShortName }}</span>
+                <p class="text-xs text-gray-500 mt-1 mb-0">Source System</p>
+            </div>
+            <div class="text-green-500 text-2xl">&rarr;</div>
+            <div class="bg-indigo-50 border-2 border-indigo-300 rounded-lg p-4 sm:p-6 text-center min-w-[120px]">
+                <span class="font-bold text-lg text-indigo-700">FlowFuse</span>
+                <p class="text-xs text-gray-500 mt-1 mb-0">Node-RED Platform</p>
+            </div>
+            <div class="text-green-500 text-2xl">&rarr;</div>
+            <div class="bg-white border-2 border-green-200 rounded-lg p-4 sm:p-6 text-center min-w-[120px]">
+                <span class="font-bold text-lg">Any System</span>
+                <p class="text-xs text-gray-500 mt-1 mb-0">Target</p>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto">
+            FlowFuse uses Node-RED's visual flow editor to connect {{ integrationShortName }} devices and systems
+            to any destination &mdash; databases, cloud platforms, dashboards, and enterprise applications.
+            No custom code required.
+        </p>
+    </div>
+</div>
+
+{# Benefits Section #}
+{% if benefitsJson %}
+{% set benefitsList = benefitsJson | fromJson %}
+<div class="w-full py-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-8">Why Choose FlowFuse Certified</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {% for benefit in benefitsList %}
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-600">
+                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="mt-0 text-lg font-semibold">{{ benefit.title }}</h3>
+                <p class="text-gray-600 text-sm mb-0">{{ benefit.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{# Certified Nodes Included #}
+{% if certifiedNodeIds.length > 0 %}
+<div class="w-full bg-gray-50 py-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-2">Certified Nodes Included</h2>
+        <p class="text-center text-gray-500 mb-8">The npm packages included with this integration</p>
+        <div class="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {% for nodeId in certifiedNodeIds %}
+            <div class="bg-white border border-gray-200 rounded-lg p-5">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded">Certified</span>
+                </div>
+                <code class="text-sm text-indigo-600 font-mono">{{ nodeId }}</code>
+                <div class="mt-3">
+                    <a href="https://www.npmjs.com/package/{{ nodeId }}" target="_blank" rel="noopener noreferrer"
+                       class="text-xs text-gray-500 hover:text-indigo-600 inline-flex items-center gap-1">
+                        View on npm
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{# Connect to Other Integrations #}
+<div class="w-full py-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-8">Connect {{ integrationName }} to...</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {% for integration in certifiedIntegrations.integrations %}
+                {% if integration.slug != integrationSlug %}
+                <a href="/integrations/{{ integrationSlug }}/and/{{ integration.slug }}/"
+                   class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition-all hover:no-underline">
+                    <span class="font-semibold text-gray-800">{{ integrationName }}</span>
+                    <span class="text-gray-400 mx-2">&rarr;</span>
+                    <span class="font-semibold text-indigo-600">{{ integration.name }}</span>
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{# CTA #}
+{% include "common-cta.njk" %}

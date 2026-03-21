@@ -262,14 +262,33 @@ eleventyComputed:
                         </ul>
                         {% endnavoption %}
                         {% navoption "Solutions", null, 0 %}
-                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-3 sm:grid-cols-1 sm:pr-9 align-left">
-                                {% navoption "IT/OT middleware", "/solutions/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
+                        <ul class="narrow sm:grid sm:grid-cols-3 sm:pr-1 align-left sm:auto-rows-auto items-start gap-x-4">
+                            <li class="pl-3 title border-l-2"><span class="flex items-center gap-2">By Use Case</span></li>
+                            <li class="pl-3 title border-l-2"><span class="flex items-center gap-2">By Protocol</span></li>
+                            <li class="pl-3 title border-l-2"><span class="flex items-center gap-2">By Team</span></li>
+                            <ul class="ml-7 auto-rows-auto border-l-2">
+                                {% navoption "IT/OT Middleware", "/solutions/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
                                 {% navoption "Unified Namespace", "/solutions/uns/", 1, "uns" %}{% endnavoption %}
                                 {% navoption "SCADA", "/solutions/scada/", 1, "adjustments-horizontal" %}{% endnavoption %}
                                 {% navoption "MES", "/solutions/mes/", 1, "chart" %}{% endnavoption %}
-                                {% navoption "Edge Connectivity", "/solutions/edge-connectivity/", 1, "chip" %}{% endnavoption %}
-                                {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
                             </ul>
+                            <ul class="ml-7 auto-rows-auto border-l-2">
+                                {% navoption "Data Acquisition", "/solutions/use-cases/data-acquisition/", 1, "arrow-small-down" %}{% endnavoption %}
+                                {% navoption "Data Transformation", "/solutions/use-cases/data-transformation/", 1, "arrows-right-left" %}{% endnavoption %}
+                                {% navoption "Data Deployment", "/solutions/use-cases/data-deployment/", 1, "rocket-launch" %}{% endnavoption %}
+                                {% navoption "Data Storage", "/solutions/use-cases/data-storage/", 1, "circle-stack" %}{% endnavoption %}
+                                {% navoption "Data Visualisation", "/solutions/use-cases/data-visualisation/", 1, "chart" %}{% endnavoption %}
+                                <li class="my-2"><hr class="border-gray-300"></li>
+                                {% navoption "Browse All Protocols", "/solutions/protocols/", 1, "chip" %}{% endnavoption %}
+                                {% navoption "Connect X to Y", "/solutions/connect/", 1, "squares-plus" %}{% endnavoption %}
+                            </ul>
+                            <ul class="ml-7 auto-rows-auto border-l-2">
+                                {% navoption "Operations Engineers", "/solutions/teams/operations-engineers/", 1, "cog" %}{% endnavoption %}
+                                {% navoption "IT Teams", "/solutions/teams/it-teams/", 1, "chip" %}{% endnavoption %}
+                                {% navoption "Maintenance Teams", "/solutions/teams/maintenance-teams/", 1, "adjustments-horizontal" %}{% endnavoption %}
+                                {% navoption "Data Engineers", "/solutions/teams/data-engineers/", 1, "chart" %}{% endnavoption %}
+                            </ul>
+                        </ul>
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
                             <ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9 align-left">

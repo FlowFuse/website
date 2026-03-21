@@ -1,0 +1,132 @@
+# Industrial protocols that FlowFuse connects
+# Each protocol generates:
+#   - Individual page: /solutions/protocols/{slug}/
+#   - Pair pages:      /solutions/connect/{slug}-to-{other}/  (auto-generated)
+#
+# To add a new protocol, add an entry below. All "Connect X to Y" pages
+# are auto-generated from this list via protocolPairs.js.
+protocols:
+  - slug: opc-ua
+    name: OPC-UA
+    shortName: OPC-UA
+    category: industrial
+    description: >
+      OPC-UA (Open Platform Communications Unified Architecture) is the
+      industry standard for secure, reliable machine-to-machine communication
+      in industrial automation.
+    heroDescription: >
+      Connect your OPC-UA enabled devices and systems with FlowFuse.
+      Collect, transform, and route data from any OPC-UA server to
+      enterprise systems, databases, and cloud platforms.
+    useCases:
+      - data-acquisition
+      - machine-monitoring
+    relatedIntegrations:
+      - node-red-contrib-opcua
+    meta:
+      title: "FlowFuse for OPC-UA Integration"
+      description: "Connect OPC-UA devices to any system with FlowFuse. Bridge industrial OPC-UA data to MQTT, REST APIs, databases, and more."
+      keywords: "OPC-UA, industrial automation, FlowFuse, Node-RED, OPC UA client, OPC UA server"
+
+  - slug: mqtt
+    name: MQTT
+    shortName: MQTT
+    category: messaging
+    description: >
+      MQTT is a lightweight publish-subscribe messaging protocol designed
+      for constrained devices and low-bandwidth, high-latency networks,
+      widely used in IoT and industrial applications.
+    heroDescription: >
+      Build MQTT-powered data pipelines with FlowFuse. Connect MQTT
+      brokers, transform messages, and route data to any destination.
+    useCases:
+      - data-acquisition
+      - real-time-monitoring
+    relatedIntegrations:
+      - node-red-contrib-aedes
+    meta:
+      title: "FlowFuse for MQTT Integration"
+      description: "Build MQTT integrations with FlowFuse. Connect brokers, transform data, and bridge MQTT to enterprise systems."
+      keywords: "MQTT, IoT, FlowFuse, Node-RED, MQTT broker, publish subscribe"
+
+  - slug: ethernet-ip
+    name: Ethernet/IP
+    shortName: EtherNet/IP
+    category: industrial
+    description: >
+      Ethernet/IP (Industrial Protocol) is an industrial network protocol
+      for real-time I/O control and information exchange, commonly used
+      with Allen-Bradley and Rockwell Automation equipment.
+    heroDescription: >
+      Connect Ethernet/IP devices to your enterprise systems with FlowFuse.
+      Bridge shop floor data from Allen-Bradley PLCs to IT systems.
+    useCases:
+      - machine-monitoring
+      - data-acquisition
+    relatedIntegrations: []
+    meta:
+      title: "FlowFuse for Ethernet/IP Integration"
+      description: "Connect Ethernet/IP devices with FlowFuse. Bridge Allen-Bradley and Rockwell Automation data to enterprise systems."
+      keywords: "Ethernet/IP, EtherNet/IP, Allen-Bradley, Rockwell Automation, FlowFuse, industrial protocol"
+
+  - slug: modbus
+    name: Modbus
+    shortName: Modbus
+    category: industrial
+    description: >
+      Modbus is a serial communication protocol widely used in industrial
+      electronics for connecting electronic devices, supporting both
+      RTU (serial) and TCP (Ethernet) variants.
+    heroDescription: >
+      Integrate Modbus devices into modern data workflows with FlowFuse.
+      Read registers, coils, and inputs from any Modbus device.
+    useCases:
+      - data-acquisition
+      - legacy-modernization
+    relatedIntegrations:
+      - node-red-contrib-modbus
+    meta:
+      title: "FlowFuse for Modbus Integration"
+      description: "Connect Modbus RTU and TCP devices with FlowFuse. Bridge legacy equipment to modern systems."
+      keywords: "Modbus, Modbus TCP, Modbus RTU, industrial communication, FlowFuse"
+
+  - slug: s7
+    name: Siemens S7
+    shortName: S7
+    category: industrial
+    description: >
+      The Siemens S7 protocol enables direct communication with Siemens
+      S7-300, S7-400, S7-1200, and S7-1500 PLCs without additional
+      middleware.
+    heroDescription: >
+      Connect Siemens S7 PLCs directly to any system with FlowFuse.
+      Read and write PLC data, build dashboards, and automate workflows.
+    useCases:
+      - machine-monitoring
+      - scada-modernization
+    relatedIntegrations:
+      - node-red-contrib-s7
+    meta:
+      title: "FlowFuse for Siemens S7 Integration"
+      description: "Connect Siemens S7 PLCs with FlowFuse. Bridge S7-1200 and S7-1500 data to enterprise systems."
+      keywords: "Siemens S7, PLC, S7-1500, S7-1200, FlowFuse, industrial automation"
+
+  - slug: http-rest
+    name: HTTP/REST APIs
+    shortName: REST
+    category: it
+    description: >
+      HTTP/REST APIs enable integration with web services, cloud platforms,
+      ERP systems, MES solutions, and any system that exposes a REST
+      interface.
+    heroDescription: >
+      Bridge industrial data to any REST API with FlowFuse. Connect
+      your shop floor to cloud services, databases, and business systems.
+    useCases:
+      - data-integration
+      - cloud-connectivity
+    relatedIntegrations: []
+    meta:
+      title: "FlowFuse for HTTP/REST Integration"
+      description: "Connect REST APIs with FlowFuse. Bridge industrial data to cloud platforms, ERPs, and web services."
+      keywords: "REST API, HTTP, FlowFuse, integration, web services, cloud"
