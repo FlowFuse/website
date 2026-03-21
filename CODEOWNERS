@@ -19,6 +19,8 @@
 # Change in values need sign off from both the CEO and CTO
 /src/handbook/company/values.md @knolleary @ZJvandeWeg
 
-
 # Package-lock.json (engineering team)
 /package-lock.json @FlowFuse/engineering  @Yndira-E
+
+# Changelog posts (tech writer required, product as backup)
+/handbook/engineering/releases/writing-changelog @sumitshinde-84 @dimitrieh
