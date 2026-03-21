@@ -1,0 +1,43 @@
+---
+layout: nohero
+meta:
+    title: "Industrial Use Cases - FlowFuse Solutions"
+    description: "Explore FlowFuse use cases: data acquisition, machine monitoring, predictive maintenance, protocol conversion, and more."
+    keywords: "industrial use cases, data acquisition, machine monitoring, predictive maintenance, FlowFuse"
+---
+<div class="nohero w-full">
+    <div class="w-full pt-12 pb-8">
+        <div class="px-6 container mx-auto text-center md:max-w-screen-lg">
+            <h1 class="mt-0 m-auto font-medium">
+                Industrial <span class="text-indigo-600">Use Cases</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg">
+                Explore how FlowFuse addresses common industrial automation use cases,
+                from data acquisition to predictive maintenance.
+            </p>
+        </div>
+    </div>
+
+    <div class="container m-auto max-w-screen-lg px-6 pb-12">
+        <div class="grid sm:grid-cols-2 gap-6 mt-8">
+            {% for useCase in useCases.useCases %}
+            <a href="/solutions/use-cases/{{ useCase.slug }}/"
+               class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline group">
+                <h3 class="mt-0 mb-2 group-hover:text-indigo-600">{{ useCase.name }}</h3>
+                <p class="text-sm text-gray-600 mb-3">{{ useCase.description | truncate(25) }}</p>
+                <div class="flex flex-wrap gap-2">
+                    {% for protocolSlug in useCase.relatedProtocols %}
+                        {% for protocol in protocols.protocols %}
+                            {% if protocol.slug == protocolSlug %}
+                            <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded">{{ protocol.shortName }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include "common-cta.njk" %}

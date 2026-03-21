@@ -1,0 +1,59 @@
+---
+pagination:
+    data: protocols.protocols
+    size: 1
+    alias: protocol
+layout: layouts/protocol.njk
+eleventyComputed:
+    permalink: /solutions/protocols/{{ protocol.slug }}/
+    title: "FlowFuse for {{ protocol.name }}"
+    protocolName: "{{ protocol.name }}"
+    protocolSlug: "{{ protocol.slug }}"
+    heroDescription: "{{ protocol.heroDescription }}"
+    meta:
+        title: "{{ protocol.meta.title }}"
+        description: "{{ protocol.meta.description }}"
+        keywords: "{{ protocol.meta.keywords }}"
+---
+<div class="mt-12 content">
+    <h2 class="mb-4">How FlowFuse Connects {{ protocol.name }}</h2>
+    <p>
+        FlowFuse, powered by Node-RED, provides native support for {{ protocol.name }} connectivity.
+        Whether you need to collect data, monitor equipment, or bridge {{ protocol.shortName }} to other systems,
+        FlowFuse makes it simple with a visual, low-code approach.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8 mt-8">
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="mt-0">Key Capabilities</h3>
+            <ul>
+                <li>Connect to {{ protocol.shortName }} devices with pre-built nodes</li>
+                <li>Transform and normalize data in real time</li>
+                <li>Route data to databases, dashboards, and cloud platforms</li>
+                <li>Deploy at the edge or in the cloud</li>
+                <li>Scale from one device to thousands with FlowFuse fleet management</li>
+            </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="mt-0">Why FlowFuse?</h3>
+            <ul>
+                <li>Enterprise-grade security with SSO and RBAC</li>
+                <li>Visual, low-code development with Node-RED</li>
+                <li>Fleet management for edge deployments</li>
+                <li>Built-in MQTT broker for data routing</li>
+                <li>Professional support and certified nodes</li>
+            </ul>
+        </div>
+    </div>
+
+    {% if protocol.relatedIntegrations.length > 0 %}
+    <h2 class="mt-12 mb-4">Related Node-RED Integrations</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {% for nodeId in protocol.relatedIntegrations %}
+        <a href="/integrations/{{ nodeId }}/" class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline">
+            <span class="font-mono text-sm text-indigo-600">{{ nodeId }}</span>
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
