@@ -7,7 +7,7 @@ keywords:
   - Node-RED enterprise
   - certified nodes
   - AI Insights
-date: 2026-03-12
+date: 2026-03-23
 authors: ["lori-beaulieu"]
 image: /blog/2026/03/images/enterprise-pillars-cert-nodes.png
 ---
