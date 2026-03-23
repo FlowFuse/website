@@ -641,7 +641,7 @@ h4:hover .header-anchor::before {
 */
 @layer components {
     .ff-website .ff-header {
-        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 relative md:sticky;
+        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
     .ff-website header .ff-wordmark path,
@@ -665,7 +665,11 @@ h4:hover .header-anchor::before {
     .ff-website header #nav-content {
         height: calc(100% - 64px - 64px);
         @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
-        @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row;
+        @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row md:flex-nowrap;
+    }
+
+    .ff-website header #nav-content > li {
+        @apply md:whitespace-nowrap;
     }
 
     .ff-website header #nav-toggle {
@@ -716,7 +720,7 @@ h4:hover .header-anchor::before {
 
     .ff-website header .cta a {
         color: theme(colors.indigo.600);
-        @apply md:px-3 font-normal;
+        @apply md:px-3 font-normal whitespace-nowrap;
     }
 
 
@@ -840,7 +844,7 @@ h4:hover .header-anchor::before {
     }
 
     .ff-website header.mobile-open {
-        @apply border-b sticky sm:relative;
+        @apply border-b sticky;
     }
 
     .ff-website header.mobile-open #nav-content {
@@ -1254,6 +1258,10 @@ h4:hover .header-anchor::before {
         min-width: 600px;
     }
 
+    .ff-feature-table--body {
+        margin-top: 0;
+    }
+
     .ff-feature-table li .ff-icon {
         width: 32px;
         height: 32px;
@@ -1322,7 +1330,7 @@ h4:hover .header-anchor::before {
 
     .ff-feature-table-section li.ff-feature--column-header {
         padding: 0;
-        margin-top: 20px;
+        margin-top: 0;
     }
 
     .ff-feature-table-section li.ff-feature--column-header label {
@@ -1441,11 +1449,11 @@ h4:hover .header-anchor::before {
         @apply px-1 px-4 md:px-6;
     }
 
-    .ff-feature-table-section:nth-child(2) .ff-feature--header {
+    .ff-feature-table--body .ff-feature-table-section:first-child .ff-feature--header {
         @apply rounded-tl-lg;
     }
 
-    .ff-feature-table-section:nth-child(3) li:last-child {
+    .ff-feature-table--body .ff-feature-table-section:nth-child(2) li:last-child {
         @apply rounded-bl-lg;
     }
 
@@ -1661,48 +1669,17 @@ h4:hover .header-anchor::before {
 }
 
 .ff-tier-badge {
-    display: inline-flex;
+    @apply inline-flex whitespace-nowrap text-current;
     font-size: 0.75rem;
     line-height: 1rem;
-    border-radius: 9999px;
-    overflow: hidden;
-    white-space: nowrap;
-    font-weight: 500;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.15s;
-}
-
-a.ff-tier-badge:hover {
-    opacity: 0.8;
 }
 
 .ff-tier-badge__label {
-    padding: 2px 8px 2px 10px;
+    @apply px-2.5 py-0.5 text-gray-500 font-medium bg-gray-100 border border-r-0 border-gray-200 rounded-l;
 }
 
 .ff-tier-badge__value {
-    padding: 2px 10px 2px 8px;
-}
-
-.ff-tier--available .ff-tier-badge__label {
-    color: #fff;
-    background-color: #6366f1;
-}
-
-.ff-tier--available .ff-tier-badge__value {
-    color: #4338ca;
-    background-color: #eef2ff;
-}
-
-.ff-tier--unavailable .ff-tier-badge__label {
-    color: #fff;
-    background-color: #9ca3af;
-}
-
-.ff-tier--unavailable .ff-tier-badge__value {
-    color: #6b7280;
-    background-color: #f3f4f6;
+    @apply px-2.5 py-0.5 text-gray-500 font-light bg-white border border-l-0 border-gray-200 rounded-r;
 }
 
 .ff-feature-info {
@@ -1916,6 +1893,13 @@ Aesthetics
 
 .ebook-images > :nth-child(2){
     height: 100%;
+}
+
+lite-youtube {
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.75rem;
 }
 
 lite-youtube::before {

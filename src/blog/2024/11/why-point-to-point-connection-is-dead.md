@@ -11,6 +11,10 @@ tags:
    - flowfuse
    - mqtt 
    - unified-namespace
+cta:
+  type: demo
+  title: See How FlowFuse Powers a Unified Namespace
+  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, and centralized device management — everything you need to move from a spaghetti network of point-to-point connections to a clean, scalable UNS.
 ---
 
 Manufacturing has changed significantly over the years, driven by new technology and the need for better communication between systems. In the past, point-to-point (P2P) connections, where devices communicate directly with each other, were the standard. However, as factories become more complex, P2P connections are no longer practical. This article explains why P2P connections are outdated and how a Unified Namespace (UNS) offers a better, more flexible solution.
@@ -102,5 +106,3 @@ Get started with this article [Building UNS with FlowFuse](/blog/2024/11/buildin
 ## Summary
 
 Due to complexity, high maintenance costs, and security risks, point-to-point (P2P) connections are becoming less effective in modern factories. A Unified Namespace (UNS) solves these problems by connecting devices through a central hub, making managing, scaling, and securing systems easier. UNS improves data sharing and reduces downtime. Tools like FlowFuse make it simple to set up and manage a UNS, offering a more efficient and flexible solution for manufacturing.
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.cloud/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=The%20Death%20of%20Point-to-Point%3A%20Why%20You%20Need%20a%20Unified%20Namespace", cta_type: "signup", cta_text: "Start building your own Unified Namespace with FlowFuse and take the first step toward a more efficient and connected manufacturing system." %}
