@@ -16,7 +16,7 @@ The ESP32 is an affordable and powerful microchip that combines Wi-Fi and Blueto
 
 <!--more-->
 
-<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 ## Prerequisites
 

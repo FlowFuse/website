@@ -10,6 +10,10 @@ tags:
  - post
  - flowfuse
  - self hosted
+cta:
+  type: contact
+  title: Need Help Deploying FlowFuse?
+  description: Whether you're self-hosting on your own infrastructure or looking for a managed cloud option, our team can help you get up and running with the right setup for your environment.
 ---
 
 With Node-RED's increasing role in IoT, FlowFuse Cloud has become a favored platform for deploying production Node-RED applications. It offers [extensive features](/platform/features/) at a low cost, reducing operational overhead. However, the cloud is not the only option we provide; we also offer a self-hosted option for users who prefer to deploy FlowFuse on their servers. This guide demonstrates how to deploy FlowFuse on your Ubuntu server using Docker, covering key aspects such as domain setup, email, SSL, and more for real-world production scenarios
@@ -253,5 +257,3 @@ When you open the platform in your browser for the first time, you'll need to cr
 - [Deploying FlowFuse with Docker Documentation](/docs/install/docker/): This documentation covers everything in detail on how to install FlowFuse using Docker.
 - [Deploying FlowFuse with Docker on Ubuntu youtube video](https://www.youtube.com/watch?v=qQwAPuz9bEk): This YouTube video demonstrates how to deploy FlowFuse using Docker on an Ubuntu server for your server's local network.
 - [Form for requesting Installation Service](/docs/install/introduction/#do-you-need-help%3F-installation-service): Fill this form if you need assistance with the installation process.
-
-{% include "cta.njk", cta_url: "/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=Deploying%20FlowFuse%20with%20Docker%20on%20an%20Ubuntu%20server", cta_type: "contact", cta_text: "Got questions or need help deploying FlowFuse (Node-RED) on your Ubuntu server?" %}

@@ -7,6 +7,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/modbus-rtu-vs-tcp.png
 tags:
   - flowfuse
+cta:
+  type: sign-up
+  title: Stop Debugging Modbus at 2 AM
+  description: FlowFuse supports both Modbus RTU and TCP across the full OT/IT stack, with the monitoring, logging, and fleet management to catch problems before they take down the line.
 ---
 
 Modbus shipped in 1979. It has outlasted every protocol that was meant to replace it, survived the transition from relay logic to microprocessors and modern SCADA systems, and is still running production lines today. That kind of longevity does not happen by accident. It exists because the protocol is simple, deterministic, and unambiguous, at least in its original form, a point I have discussed in more detail in a [separate article](/blog/2026/01/why-modbus-still-exist/).
@@ -102,5 +106,3 @@ If you are deploying TCP: isolate Modbus devices on a dedicated VLAN or network 
 If you are maintaining a hybrid gateway architecture, resist the urge to rationalize it away. It is doing work.
 
 The two protocols make different guarantees, fail differently, and require different diagnostic skills when something goes wrong. Understanding that distinction before the system is designed costs nothing. Understanding it for the first time during an incident costs considerably more.
-
-*If you are working with either protocol in production, FlowFuse supports both [Modbus RTU](/blog/2025/09/using-modbus-with-flowfuse/) and [Modbus TCP](/node-red/protocol/modbus/) across the full OT/IT stack, so the protocol layer does not become another thing to solve. [Get started here.]({% include "sign-up-url.njk" %})*

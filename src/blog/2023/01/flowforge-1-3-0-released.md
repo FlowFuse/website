@@ -25,17 +25,17 @@ To make it easy for everyone to experience FlowFuse, we are introducing a new [f
 [Share your flows via team libraries](https://github.com/FlowFuse/flowfuse/issues/237) \
 FlowFuse has now added the ability for you to share your flows via the import and export features in Node-RED. Once you export a flow everyone else in your FlowFuse team will be able to import your work into their projects. You can see a demonstration of this new feature in [the video](https://youtu.be/B7XK3TUklUU) below.
 
-<div><lite-youtube videoid="B7XK3TUklUU" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
+<div><lite-youtube videoid="B7XK3TUklUU" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 [Control access to your Node-RED dashboards using FlowFuse credentials](https://github.com/FlowFuse/flowfuse/issues/1325) \
 In FlowFuse 0.10 we added the ability to secure endpoints created within your FlowFuse projects. This allows you to create dashboards or APIs and limit who can access them. In 1.3 we've added the ability for you to limit access to those same resources based on the visitor having a user account on your FlowFuse team. You can see a demonstration of this new feature in [the video](https://youtu.be/JRk-Cf7eNIo) below.
 
-<div><lite-youtube videoid="JRk-Cf7eNIo" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
+<div><lite-youtube videoid="JRk-Cf7eNIo" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 [Filter your audit logs for easier reading](https://github.com/FlowFuse/flowfuse/issues/1448) \
 In FlowFuse 1.3 we’ve added the ability to filter your admin logs by user or action type. We think this is a great new feature which will help admins have confidence that they will be able to review the audit logs quickly when needed. You can see a demonstration of this new feature in [the video](https://youtu.be/p0Vuy5x42Go) below.
 
-<div><lite-youtube videoid="p0Vuy5x42Go" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
+<div><lite-youtube videoid="p0Vuy5x42Go" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 ## Improvements
 
