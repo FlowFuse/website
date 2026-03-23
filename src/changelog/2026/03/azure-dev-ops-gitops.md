@@ -1,6 +1,6 @@
 ---
-title:
-description:
+title: Azure DevOps Pipeline support
+description: Store and retrieve Snapshots from Azure DevOps git repositories
 date: 2026-03- 12:00:00
 authors: ['ben-hardill']
 tags:
@@ -9,7 +9,7 @@ issues:
  - https://github.com/FlowFuse/flowfuse/issues/5491
 ---
 
-Pipeline Git Stages can now make use Azure DevOps Git repositories in addition to GitHub.
+[DevOps Pipeline](https://flowfuse.com/docs/user/devops-pipelines) Git Stages can now make use Azure DevOps Git repositories in addition to GitHub.
 
 This means you can both push and pull Snapshots to and from an Azure DevOps repository as part of a Pipeline.
 
