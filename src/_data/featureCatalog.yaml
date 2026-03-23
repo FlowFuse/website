@@ -789,7 +789,7 @@ sections:
 
       - id: certified-nodes
         label: Certified Nodes
-        description: "A curated selection of certified Node-RED nodes, enhancing efficiency and security for production deployments."
+        description: "Officially supported Node-RED nodes with SLA-backed security patching and reliability guarantees for mission-critical production deployments."
         docsLink: null
         changelog: null
         solutions: [mes, scada, edge-connectivity, it-ot-middleware]
@@ -799,7 +799,7 @@ sections:
           starter:
             value: null
           pro:
-            value: true
+            value: null
           enterprise:
             value: true
         selfHosted:
