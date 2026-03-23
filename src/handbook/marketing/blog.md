@@ -184,7 +184,7 @@ The `<lite-youtube>` component is included globally on all pages — no addition
 
 The CTA renders a call-to-action block at the end of the article body, just before the closing content.
 
-If no CTA is defined, the default "Sign Up" variant is shown.
+If no CTA is defined, the default "contact" variant is shown.
 
 To customize it, add a `cta` object to the front matter.
 
@@ -192,9 +192,9 @@ To customize it, add a `cta` object to the front matter.
 
 Set `cta.type` to one of the following values:
 - `demo` - renders the "Book a Demo" CTA and always links to `/book-demo`
-- `contact` - renders the "Contact Us" CTA and always links to `/contact-us`
+- `contact` - renders the default "Contact Us" CTA and always links to `/contact-us`
 - `pricing` - renders the "Pricing" CTA and always links to `/pricing`
-- `sign-up` - renders the default sign-up CTA and always links to the hosted sign-up URL
+- `sign-up` - renders the sign-up CTA and always links to the hosted sign-up URL
 
 Example:
 ```yaml
