@@ -3,13 +3,13 @@
 {% if showTierCloud or showTierSelfHosted %}
 <div class="ff-tier-badges">
   {% if showTierCloud %}
-    <div class="ff-tier-badge ff-tier--available">
+    <div class="ff-tier-badge ff-tier--available ff-tooltip" data-tooltip="Available on FlowFuse Cloud: {{ tierCloud }}">
       <span class="ff-tier-badge__label">Cloud</span>
       <span class="ff-tier-badge__value">{{ tierCloud }}</span>
     </div>
   {% endif %}
   {% if showTierSelfHosted %}
-    <div class="ff-tier-badge ff-tier--available">
+    <div class="ff-tier-badge ff-tier--available ff-tooltip" data-tooltip="Available on FlowFuse Self-Hosted: {{ tierSelfHosted }}">
       <span class="ff-tier-badge__label">Self-Hosted</span>
       <span class="ff-tier-badge__value">{{ tierSelfHosted }}</span>
     </div>
