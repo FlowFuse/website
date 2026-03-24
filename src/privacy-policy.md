@@ -50,16 +50,12 @@ Our Service is designed for businesses and their representatives. We do not offe
  - **Device data**, such as your computer’s or mobile device’s operating system type and version, manufacturer and model, browser type, screen resolution, RAM and disk size, CPU usage, device type (e.g., phone, tablet), IP address, unique identifiers, language settings, mobile device carrier, radio/network information (e.g., Wi-Fi, LTE, 3G), and general location information such as city, state or geographic area.
  - **Online activity data**, such as pages or screens you viewed, how long you spent on a page or screen, the website you visited before browsing to the Service, navigation paths between pages or screens, information about your activity on a page or screen, access times and duration of access, and whether you have opened our marketing emails or clicked links within them.
 
-**Cookies and similar technologies**. We, our service providers, and our business partners use cookies and similar technologies for the following purposes:
-
-- **Strictly necessary cookies**: Essential for core website functionality, including security, anti-spam protection (Google reCAPTCHA), and technical form delivery. Without these cookies, key features of the website, such as secure contact forms, would not function properly.
-- **Functional cookies**: Enable optional site features that are not strictly necessary to operate the website, but enhance the user experience.
-- **Analytics cookies**: We use tools such as Google Analytics, HubSpot, PostHog, and warmly.ai to understand how visitors interact with our website. These cookies enable usage tracking, meeting embeds, and the live chat widget. These cookies are only activated if you provide explicit consent.
-- **Advertising cookies**: We use cookies from Google, Meta (Facebook), and LinkedIn to measure the effectiveness of our campaigns, show relevant ads, and limit how often you see the same ad. These cookies are only activated if you provide explicit consent.
+**Cookies and similar technologies**. Like many online services, we, our service providers, and our business partners may use the following technologies:
+ - **Cookies**, which are text files that websites store on a visitor‘s device to uniquely identify the visitor’s browser or to store information or settings in the browser for the purpose of helping you navigate between pages efficiently, remembering your preferences, enabling functionality, helping us understand user activity and patterns, and facilitating analytics.
 
 You can manage your cookie preferences at any time through the <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">cookie banner</a> available on the site. No analytics, functional or advertising cookies are set without your prior consent.
 
-**Web beacons**: Also known as pixel tags or clear GIFs, are used to demonstrate that a webpage or email was accessed or opened, or that certain content was viewed or clicked.
+ - **Web beacons**, also known as pixel tags or clear GIFs, which are used to demonstrate that a webpage or email was accessed or opened, or that certain content was viewed or clicked.
 
 **Data about others**. Users of the Service may have the opportunity to refer friends or other contacts to us and share their contact information with us. Please do not refer someone to us or share their contact information with us unless you have their permission to do so.
 
