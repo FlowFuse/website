@@ -1,5 +1,5 @@
 ---
-title: "5 Places Smart Factories Are Already Using AI (And You'd Never Guess #3)"
+title: "5 Places Smart Factories Are Already Using AI"
 subtitle: "Where AI Is Actually Working on the Factory Floor"
 description: "Most manufacturers are still debating AI adoption. These five use cases are already running in production, cutting downtime, scrap, energy costs, and injury rates."
 date: 2026-03-02
