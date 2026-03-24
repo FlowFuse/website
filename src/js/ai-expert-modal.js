@@ -158,6 +158,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal();
+        // Track outbound link clicks within Expert modal
+        const link = e.target.closest('a[href]');
+        if (link && link.hostname !== location.hostname && typeof capture === 'function') {
+            capture('expert-app-link-clicked', { url: link.href, page: location.pathname });
+        }
     });
 
     // Handle prompt pill clicks
@@ -418,6 +423,8 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionId = crypto.randomUUID();
         transferPayload = []
 
+        if (typeof capture === 'function') capture('expert-modal-opened', { has_prompt: !!userText, page: location.pathname });
+
         // Reset auto-scroll to enabled when opening modal
         autoScrollEnabled = true;
 
@@ -527,6 +534,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeModal() {
+        const userMsgCount = messages.filter(m => m.role === 'human').length;
+        if (typeof capture === 'function') capture('expert-modal-closed', { messages_sent: userMsgCount, page: location.pathname });
+
         const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
         const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
         const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
@@ -1267,6 +1277,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = modalInput.value.trim();
         if (!message) return; // Don't send empty messages
 
+        const msgIndex = messages.filter(m => m.role === 'human').length + 1;
+        if (typeof capture === 'function') capture('expert-message-sent', { message_index: msgIndex, page: location.pathname });
+
         // Clear the input
         modalInput.value = '';
 
@@ -1365,6 +1378,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const message = modalInput.value.trim();
             if (message) {
+                const msgIndex = messages.filter(m => m.role === 'human').length + 1;
+                if (typeof capture === 'function') capture('expert-message-sent', { message_index: msgIndex, page: location.pathname });
+
                 modalInput.value = '';
 
 
