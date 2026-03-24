@@ -25,6 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Transaction ID for preventing race conditions
     let lastTransactionId = null;
 
+    // Session analytics
+    let sessionOpenedAt = null;
+    let richResponseCount = 0;
+    let plainResponseCount = 0;
+    let sessionSummarySent = false;
+
+    function sendSessionSummary(trigger) {
+        if (sessionSummarySent || !sessionOpenedAt) return;
+        if (typeof capture !== 'function') return;
+        const userMsgs = messages.filter(m => m.role === 'human').length;
+        if (userMsgs === 0 && trigger !== 'close') return;
+        sessionSummarySent = true;
+        capture('expert-session-summary', {
+            trigger: trigger,
+            duration_seconds: Math.round((Date.now() - sessionOpenedAt) / 1000),
+            user_messages: userMsgs,
+            ai_responses_rich: richResponseCount,
+            ai_responses_plain: plainResponseCount,
+            page: location.pathname
+        });
+    }
+
     // Auto-scroll management
     let autoScrollEnabled = true;
     const scrollThreshold = 50; // pixels from bottom to consider "at bottom"
@@ -417,6 +439,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Generate new session ID for this chat session
         sessionId = crypto.randomUUID();
         transferPayload = []
+        sessionOpenedAt = Date.now();
+        richResponseCount = 0;
+        plainResponseCount = 0;
+        sessionSummarySent = false;
 
         // Reset auto-scroll to enabled when opening modal
         autoScrollEnabled = true;
@@ -527,6 +553,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeModal() {
+        sendSessionSummary('close');
+
         const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
         const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
         const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
@@ -760,6 +788,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function clearConversation() {
+        sendSessionSummary('clear');
+
         // Stop any ongoing generation
         if (currentAbortController) {
             currentAbortController.abort();
@@ -966,6 +996,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (typeof aiMessage === 'string') {
             aiMessage = { kind: 'chat', content: aiMessage };
         }
+        // Track response type for session summary
+        if (aiMessage.kind === 'guide' || aiMessage.kind === 'resources') {
+            richResponseCount++;
+        } else {
+            plainResponseCount++;
+        }
+
         // Add to messages array
         const message = { content: '', type: 'ai', isHTML: true };
         messages.push(message);
@@ -1474,6 +1511,8 @@ document.addEventListener('DOMContentLoaded', function() {
         : 'https://app.flowfuse.com';
 
     document.getElementById('continue-to-app').addEventListener('click', function handler() {
+        sendSessionSummary('transfer-to-app');
+
         // Reuse existing target window or create new one if it doesn't exist or was closed
         if (!target || target.closed) {
             target = window.open(appURL, 'flowfuse-app');
@@ -1513,5 +1552,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add the event listener only once
             window.addEventListener('message', messageHandler);
         }
+    });
+
+    // Send session summary when user leaves the page
+    window.addEventListener('pagehide', function() {
+        sendSessionSummary('page-leave');
     });
 });
