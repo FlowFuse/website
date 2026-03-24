@@ -2,7 +2,7 @@
 title: "5 Places Smart Factories Are Already Using AI"
 subtitle: "Where AI Is Actually Working on the Factory Floor"
 description: "Most manufacturers are still debating AI adoption. These five use cases are already running in production, cutting downtime, scrap, energy costs, and injury rates."
-date: 2026-03-02
+date: 2026-03-24
 keywords: AI in manufacturing, smart factory AI, predictive maintenance CNC machines, visual quality inspection AI, computer vision manufacturing, IIoT AI use cases, factory floor AI, HVAC energy optimization manufacturing, AI worker safety ergonomics, manufacturing AI examples, Node-RED IIoT integration, unplanned downtime manufacturing, AI anomaly detection industrial motors, Industry 4.0 AI
 authors: ["sumit-shinde"]
 image: 
