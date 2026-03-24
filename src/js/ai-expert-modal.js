@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Transaction ID for preventing race conditions
     let lastTransactionId = null;
 
+    // Session timing for analytics
+    let sessionOpenedAt = null;
+
     // Auto-scroll management
     let autoScrollEnabled = true;
     const scrollThreshold = 50; // pixels from bottom to consider "at bottom"
@@ -158,6 +161,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal();
+        const link = e.target.closest('a[href]');
+        if (link && link.hostname !== location.hostname && typeof capture === 'function') {
+            capture('expert-app-link-clicked', {
+                url: link.href,
+                is_signup: /\/account\/create/.test(link.href),
+                page: location.pathname
+            });
+        }
     });
 
     // Handle prompt pill clicks
@@ -417,6 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Generate new session ID for this chat session
         sessionId = crypto.randomUUID();
         transferPayload = []
+        sessionOpenedAt = Date.now();
 
         // Reset auto-scroll to enabled when opening modal
         autoScrollEnabled = true;
@@ -527,6 +539,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeModal() {
+        if (typeof capture === 'function' && sessionOpenedAt) {
+            const durationSec = Math.round((Date.now() - sessionOpenedAt) / 1000);
+            const userMsgCount = messages.filter(m => m.role === 'human').length;
+            capture('expert-modal-closed', { duration_seconds: durationSec, messages_sent: userMsgCount, page: location.pathname });
+        }
+
         const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
         const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
         const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
