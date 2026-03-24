@@ -1,0 +1,90 @@
+name: "🌐 Website - Page Request"
+description: Submit a brief for a new website page or a significant page update.
+labels: [task]
+projects: ["FlowFuse/18"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request a new page or a major page refresh.
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: What is the goal of this page and what problem does it solve?
+      placeholder: |
+        - What is this page for?
+        - Why do we need it now?
+        - What user or business problem should it address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Content
+      description: Link the draft content and include any CTA destinations.
+      placeholder: |
+        Google Doc:
+        -
+
+        Include:
+        - Full copy for all sections
+        - Links / URLs for CTAs and buttons
+    validations:
+      required: true
+
+  - type: textarea
+    id: visuals
+    attributes:
+      label: Visuals
+      description: List any required diagrams, images, illustrations, or rough sketches.
+      placeholder: |
+        - Product screenshots
+        - Architecture diagram
+        - Customer logos
+        - Sketches or inspiration links
+
+  - type: input
+    id: url_slug
+    attributes:
+      label: Proposed URL slug
+      description: Suggested URL path for the page.
+      placeholder: /solutions/example-page
+
+  - type: dropdown
+    id: main_navigation
+    attributes:
+      label: Include in main navigation?
+      description: Should this page appear in the main navigation?
+      multiple: false
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+
+  - type: input
+    id: navigation_section
+    attributes:
+      label: Navigation section
+      description: If yes, where should it live in the navigation?
+      placeholder: Platform, Solutions, Resources...
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any additional context such as SEO, related issue, campaign timing, dependencies, or stakeholders.
+      placeholder: |
+        - SEO targets / keywords
+        - Related issue
+        - Campaign or launch timing
+        - Dependencies
+        - Reviewers / stakeholders
+
+  - type: markdown
+    attributes:
+      value: |
+        Remember to add an assignee so the request has a clear owner.

@@ -10,6 +10,10 @@ keywords: s7,siemens, siemens s7 1200 with node-red, siemens s7 1500 with node-r
 tags: 
   - node-red
   - flowfuse
+cta:
+  type: sign-up
+  title: Connect Your Siemens PLCs to the Rest of Your Stack
+  description: FlowFuse gives you remote device management, DevOps pipelines, and a built-in dashboard platform — so you can control, monitor, and scale your S7 PLC integrations without on-site visits.
 ---
 
 Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
@@ -230,5 +234,3 @@ Make sure the IP addresses of your device and PLC are in the same subnet. If the
 ## Conclusion 
 
 Integrating Siemens S7 PLCs with Node-RED opens up powerful automation possibilities with minimal complexity. By following the steps outlined in this guide, you can easily connect your PLC to Node-RED, control devices, and visualize real-time data on dashboards. Whether you're writing data to control outputs or reading sensor values, Node-RED offers a flexible, user-friendly platform for industrial automation.
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Getting%20Started%3A%20Integrating%20Siemens%20S7%20PLCs%20with%20Node-RED", cta_type: "demo", cta_text: "" %}
