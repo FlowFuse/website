@@ -98,13 +98,7 @@ We may share your personal information with the following parties and as otherwi
 
 **Affiliates.** Our corporate parent, subsidiaries, and affiliates, for purposes consistent with this Privacy Policy.
 
-**Service providers.** Third parties that provide services on our behalf or help us operate the Service or our business (such as hosting, information technology, email delivery, marketing, and website analytics). This includes:
-- **Google Analytics** (analytics, advertising)
-- **HubSpot** (forms, analytics, chat, marketing)
-- **PostHog** (analytics, product usage)
-- **warmly.ai** (analytics)
-- **Google, Meta, LinkedIn** (advertising)
-These providers may set cookies or similar technologies on your device, but only after you have provided explicit consent through our cookie banner.
+**Service providers.** Third parties that provide services on our behalf or help us operate the Service or our business (such as hosting, information technology, email delivery, marketing, and website analytics).
 
 **Professional advisors.**  Professional advisors, such as lawyers, auditors, bankers and insurers, where necessary in the course of the professional services that they render to us.
 
