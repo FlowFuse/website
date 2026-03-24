@@ -234,7 +234,7 @@ eleventyComputed:
                     <a class="w-8 h-8 hidden md:block lg:hidden" href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-square.svg" %}
                     </a>
-                    <div class="block md:hidden">
+                    <div class="flex items-center gap-1 md:hidden">
                         <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
                             <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                             <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -253,9 +253,10 @@ eleventyComputed:
                                 {% navoption "Security Statement", "/platform/security/", 1, "lock-closed" %}{% endnavoption %}
                             </ul>
                             {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
-                            <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2">
+                            <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2">
                                 {% navoption "FlowFuse Dashboard", "/platform/dashboard/", 2, "dashboard" %}{% endnavoption %}
                                 {% navoption "Device Agent", "/platform/device-agent/", 2, "device-agent" %}{% endnavoption %}
+                                {% navoption "Node-RED", "/node-red/", 2, "code-bracket" %}{% endnavoption %}
                             </ul>
                             {% navoption "Why FlowFuse", "/platform/why-flowfuse/", 1, "flowfuse" %}{% endnavoption %}
                         </ul>
@@ -284,16 +285,20 @@ eleventyComputed:
                                 {% navoption "Educational License", "/education/", 1, "certificate" %}{% endnavoption %}
                             </ul>
                         {% endnavoption %}
-                        {% navoption "AI", "/ai/", 0, false %}{% endnavoption %}
-                        {% navoption "Node-RED", "/node-red/", 0, false %}{% endnavoption %}
-                        {% navoption "Docs", "/docs/", 0, false %}{% endnavoption %}
-                        {% navoption "Pricing", "/pricing/", 0 %}{% endnavoption %}
+                        {% navoption "AI", "/ai/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
+                        {% navoption "Docs", "/docs/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
+                        {% navoption "Pricing", "/pricing/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
+                        <!-- More dropdown for overflow items -->
+                        <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
+                            <span class="flex items-center gap-1">More<span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
+                            <ul id="nav-more-list" class="align-left"></ul>
+                        </li>
                     </ul>
                     <!-- CTAs -->
-                    <ul class="hidden cta top-8 right-0 border shadow-sm md:inline md:shadow-none w-36 z-10 md:border-0 bg-white md:bg-transparent md:w-auto rounded md:static md:float-none md:flex md:flex-row flex-col items-center justify-end font-medium text no-underline">
+                    <ul class="cta flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
 			            <li class="flex"><a href="{{ site.appURL }}">Sign In</a></li>
-			            <li class="flex"><a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
-                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
+			            <li class="hidden md:flex"><a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
+                        <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
                             Contact Us
                         </a>
                     </ul>
@@ -385,10 +390,87 @@ eleventyComputed:
     document.getElementById('nav-toggle').onclick = function(){
         // self
         document.getElementById("nav-toggle").classList.toggle("mobile-open");
-        
+
         let classes = document.getElementById("ff-header").classList;
         classes.toggle("mobile-open");
-    }
+    };
+
+    // Nav overflow: move non-dropdown items into "More" when they don't fit
+    (function() {
+        var nav = document.getElementById('nav-content');
+        var headerNav = document.querySelector('.ff-header nav');
+        var moreItem = document.getElementById('nav-more');
+        var moreList = document.getElementById('nav-more-list');
+        if (!nav || !moreItem || !moreList || !headerNav) return;
+
+        function isOverflowing() {
+            // Check if the last child of <nav> extends past the viewport
+            var navRight = headerNav.getBoundingClientRect().right;
+            var children = Array.from(headerNav.children).filter(function(el) {
+                return el.offsetWidth > 0;
+            });
+            var last = children[children.length - 1];
+            return last && last.getBoundingClientRect().right > navRight + 1;
+        }
+
+        function handleNavOverflow() {
+            // On mobile, reset and bail
+            if (window.innerWidth < 768) {
+                moreItem.style.display = 'none';
+                nav.querySelectorAll('.nav-collapsible').forEach(function(el) { el.style.display = ''; });
+                return;
+            }
+
+            // Reset: show all collapsible items, hide More
+            nav.querySelectorAll('.nav-collapsible').forEach(function(el) { el.style.display = ''; });
+            moreItem.style.display = 'none';
+            while (moreList.firstChild) moreList.removeChild(moreList.firstChild);
+
+            if (!isOverflowing()) return;
+
+            // Show More item first (it takes space)
+            moreItem.style.display = '';
+
+            // Collect collapsible items in reverse order (rightmost first)
+            var collapsible = Array.from(nav.querySelectorAll('.nav-collapsible')).reverse();
+
+            for (var i = 0; i < collapsible.length; i++) {
+                var item = collapsible[i];
+                if (!isOverflowing()) break;
+
+                // Hide this item and clone into More
+                var link = item.querySelector('a');
+                if (link) {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    a.className = 'flex items-center gap-2';
+                    a.href = link.getAttribute('href');
+                    a.textContent = link.textContent.trim();
+                    li.appendChild(a);
+                    moreList.prepend(li);
+                }
+                item.style.display = 'none';
+            }
+
+            // If nothing in More, hide it
+            if (moreList.children.length === 0) {
+                moreItem.style.display = 'none';
+            }
+        }
+
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(handleNavOverflow, 50);
+        });
+        // Run after fonts load for accurate measurement
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(handleNavOverflow);
+        } else {
+            window.addEventListener('load', handleNavOverflow);
+        }
+        handleNavOverflow();
+    })();
 </script>
 <!-- Youtube Facade -->
 <script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>

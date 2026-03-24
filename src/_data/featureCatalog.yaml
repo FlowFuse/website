@@ -159,23 +159,23 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: true
-            note: "Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted / 3 remote instances."
+            value: "1"
+            note: "Includes 1 hosted instance. Upgrades available up to 3 hosted / 3 remote instances. Additional instances are $20/month."
           pro:
-            value: true
-            note: "Starts with 5, shared with edge device count"
+            value: "5"
+            note: "Starts with 5, shared with edge device count. Additional instances start at $35/month."
           enterprise:
-            value: true
+            value: "20"
             note: "Starts with 20, shared with edge device count"
         selfHosted:
           starter:
             value: "5"
             note: "Includes 5 hosted instances, shared with edge device count"
           pro:
-            value: true
-            note: "Includes 10 hosted instances, shared with edge device count"
+            value: "10"
+            note: "Includes 10 hosted instances, shared with edge device count. Additional instances start at $35/month."
           enterprise:
-            value: true
+            value: "20"
             note: "Starts with 20, shared with edge device count"
 
       - id: edge-devices
@@ -191,7 +191,7 @@ sections:
         cloud:
           starter:
             value: true
-            note: "Includes 5 edge devices"
+            note: "Up to 3 remote instances. Shared with hosted instance count."
           pro:
             value: true
             note: "Starts with 5, shared with hosted instance count"
@@ -255,6 +255,29 @@ sections:
           enterprise:
             value: true
 
+      - id: live-chat-support
+        label: Live Chat Support
+        description: null
+        docsLink: null
+        changelog: null
+        solutions: []
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+
       - id: enterprise-support
         label: Enterprise Support
         description: null
@@ -277,7 +300,7 @@ sections:
             value: null
           enterprise:
             value: true
-            
+
       - id: custom-hostname
         label: Custom Hostnames
         description: "Access your Node-RED application via your own domain name."
@@ -333,29 +356,6 @@ sections:
           enterprise:
             value: "1 GB"
 
-      - id: live-chat-support
-        label: Live Chat Support
-        description: null
-        docsLink: null
-        changelog: null
-        solutions: []
-        showOnPricing: true
-        tags: [cloud, self-hosted]
-        cloud:
-          starter:
-            value: null
-          pro:
-            value: true
-          enterprise:
-            value: true
-        selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
-          enterprise:
-            value: true
-
       - id: workflow-executions
         label: Workflow Executions
         description: null
@@ -394,10 +394,10 @@ sections:
           starter:
             value: null
           pro:
-            value: true
+            value: "5 clients"
             note: "Includes 5 clients. Additional clients can be purchased."
           enterprise:
-            value: true
+            value: "20 clients"
             note: "Includes 20 clients. Additional clients can be purchased."
         selfHosted:
           starter:
@@ -405,7 +405,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: true
+            value: "20 clients"
             note: "Includes 20 clients. Additional clients can be purchased."
 
       - id: device-mgmt
@@ -692,6 +692,7 @@ sections:
         description: "Intuitive team management tooling makes it easy to control who has access to what across your FlowFuse organisation."
         docsLink: /docs/user/role-based-access-control/
         changelog: null
+        subfeature: false
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
         tags: [cloud, self-hosted]
@@ -707,6 +708,30 @@ sections:
             value: true
           pro:
             value: true
+          enterprise:
+            value: true
+
+      - id: rbac-application
+        label: Application-Level RBAC
+        description: "Fine-grained access control per application, allowing team members to have different permission levels across different applications without requiring separate teams."
+        docsLink: /docs/user/role-based-access-control/#application-level-rbac
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
           enterprise:
             value: true
 
@@ -764,7 +789,7 @@ sections:
 
       - id: certified-nodes
         label: Certified Nodes
-        description: "A curated selection of certified Node-RED nodes, enhancing efficiency and security for production deployments."
+        description: "Officially supported Node-RED nodes with SLA-backed security patching and reliability guarantees for mission-critical production deployments."
         docsLink: /blog/2025/07/certified-nodes-v2/
         changelog: null
         solutions: [mes, scada, edge-connectivity, it-ot-middleware]
@@ -774,7 +799,7 @@ sections:
           starter:
             value: null
           pro:
-            value: true
+            value: null
           enterprise:
             value: true
         selfHosted:

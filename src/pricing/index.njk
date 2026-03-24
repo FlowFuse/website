@@ -32,9 +32,9 @@ hubspot:
         <div class="text-center w-full pt-12 pb-6">
             <h1>FlowFuse <span class="text-indigo-600">Pricing</span></h1>
         </div>
-        <div class="px-6 pricing-tiles flex flex-col lg:max-w-screen-2xl">
-            <!-- Toggle-->
-            <div class="text-center mt-5 md:mt-0 md:mb-8">
+        <div class="h-5 md:h-0"></div>
+        <div id="pricing-toggle" class="sticky top-20 sm:top-[104px] md:top-14 z-20 py-3 transition-colors duration-200">
+            <div class="text-center">
                 <div class="mainToggle">
                     <button class="btnToggle">
                         <span class="selector"></span>
@@ -49,50 +49,44 @@ hubspot:
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="px-6 pricing-tiles flex flex-col lg:max-w-screen-2xl md:mt-8">
             <!-- Plans -->
             {% macro starter(cloud=true) %}
-            <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                <div>
-                    <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                            <h4 style="display:inline-block;">Starter</h4>
-                        </div>
-                        {% if cloud %}
-                        <p class="mt-7"><span class="inline font-normal">Cloud-hosted Node-RED</span> with FlowFuse development enhancements. The fastest way to <span class="inline font-normal">get started building </span>with Node-RED.</p>
-                        {% else %}
-                        <p class="mt-7">Download and self-host the <span class="inline font-normal">open-source edition</span> of FlowFuse. Ideal for evaluation and small deployments.</p>
-                        {% endif %}
+            <div class="pricing-tile-background pb-6">
+                <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
+                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                        <h4 style="display:inline-block;">Starter</h4>
                     </div>
-
-                    <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                        {% if cloud %}
-                        <ul class="ff-checklist font-light leading-7 mt-2">
-                            <li>Faster, more powerful, AI-enhanced Node&#8209;RED</li>
-                            <li>2 team members</li>
-                            <li>Blueprints</li>
-                            <li>Option to upgrade up to 3 hosted/3 remote instances</li>
-                        </ul>
-                        <span class="hidden md:inline"><br></span>
-                        <br>
-                        <note class="font-semibold">Includes 1 hosted instance. Additional instances are $20/month.
-                        </note>
-                        {% else %}
-                        <ul class="ff-checklist font-light leading-7 mt-2">
-                            <li>Open-source FlowFuse platform</li>
-                            <li>Self-hosted deployment</li>
-                            <li>Core instance & device management</li>
-                            <li>5 team members</li>
-                            <li>Community edition</li>
-                        </ul>
-                        <br>
-                        <note class="font-semibold">Includes up to 5 hosted instances or remote instances.
-                        </note>
-                        {% endif %}
-                    </div>
+                    {% if cloud %}
+                    <p class="mt-7"><span class="inline font-normal">Cloud-hosted Node-RED</span> with FlowFuse development enhancements. The fastest way to <span class="inline font-normal">get started building </span>with Node-RED.</p>
+                    {% else %}
+                    <p class="mt-7">Download and self-host the <span class="inline font-normal">open-source edition</span> of FlowFuse. Ideal for evaluation and small deployments.</p>
+                    {% endif %}
                 </div>
+                <div class="flex flex-col content-start features mt-6 md:mt-3 w-full">
+                    {% if cloud %}
+                    <ul class="ff-checklist font-light leading-7 mt-2">
+                        <li>FlowFuse Expert for AI-assisted Node&#8209;RED development</li>
+                        <li>2 team members</li>
+                        <li>Blueprints</li>
+                        <li>Option to upgrade up to 3 hosted/3 remote instances</li>
+                    </ul>
+                    {% else %}
+                    <ul class="ff-checklist font-light leading-7 mt-2">
+                        <li>Open-source FlowFuse platform</li>
+                        <li>Self-hosted deployment</li>
+                        <li>Core instance & device management</li>
+                        <li>5 team members</li>
+                        <li>Community edition</li>
+                    </ul>
+                    {% endif %}
+                </div>
+                <note class="font-semibold mt-4">{% if cloud %}Includes 1 hosted instance. Additional instances are $20/month.{% else %}Includes up to 5 hosted instances or remote instances.{% endif %}
+                </note>
                 <div data-nosnippet class="flex">
                     {% if cloud %}
-                    <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                    <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                         <div class="text-left flex flex-row md:self-end">
                             <div class="mr-1">
                                 <note class="note text-sm">Starting at</note>
@@ -108,7 +102,7 @@ hubspot:
                         </div>
                     </div>
                     {% else %}
-                    <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                    <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                         <h2 class="self-end pb-1">Free</h2>
                     </div>
                     {% endif %}
@@ -130,37 +124,31 @@ hubspot:
                     <!-- Pro -->
                     <div class="pricing-tile md:h-full">
                         {% macro team(cloud=true) %}
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Pro</h4>
-                                    </div>
-                                    <p class="mt-7"><span class="inline font-normal">Build bespoke applications collaboratively</span>, manage your Node-RED applications with improved security and control.</p>
+                        <div class="pricing-tile-background pb-6">
+                            <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
+                                <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                    <h4 style="display:inline-block;">Pro</h4>
                                 </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>Faster, more powerful, AI-enhanced Node&#8209;RED</li>
-                                        <li>20 Team members</li>
-                                        <li>Team collaboration</li>
-                                        <li>MQTT Broker (8 clients to start)</li>
-                                        {% if cloud %}
-                                        <li>Standard Support + SLA: 99.5&#37;</li>
-                                        {% else %}
-                                        <li>Enterprise support</li>
-                                        <li>Dedicated Success Management</li>
-                                        {% endif %}
-                                    </ul>
-                                    {% if cloud %}<span class="hidden md:inline"><br></span>{% endif %}
-                                    <br>
-                                    <note class="font-semibold">Includes {% if cloud %}5{% else %}5{% endif %} hosted instances or remote instances. Additional instances start at $35/month.
-                                    </note>
-                                </div>
+                                <p class="mt-7"><span class="inline font-normal">Build bespoke applications collaboratively</span>, manage your Node-RED applications with improved security and control.</p>
                             </div>
+                            <div class="flex flex-col content-start features mt-6 md:mt-3 w-full">
+                                <ul class="ff-checklist font-light leading-7 mt-2">
+                                    <li>Everything in Starter</li>
+                                    <li>20 Team members</li>
+                                    <li>Team collaboration</li>
+                                    {% if cloud %}
+                                    <li>MQTT Broker (5 clients to start)</li>
+                                    <li>Standard Support + SLA: 99.5&#37;</li>
+                                    {% else %}
+                                    <li>Installation support</li>
+                                    <li>Dedicated Success Management</li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <note class="font-semibold mt-4">Includes {% if cloud %}5{% else %}10{% endif %} hosted instances or remote instances. Additional instances start at $35/month.
+                            </note>
                             <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                                <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                                     <div class="text-left flex flex-row md:self-end">
                                         <div class="mr-1">
                                             <note class="note text-sm">Starting at</note>
@@ -190,36 +178,36 @@ hubspot:
                     <!-- Enterprise -->
                     {% macro enterprise(show_sla=true, cloud=true) %}
                     <div class="pricing-tile pricing-tile--enterprise md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Enterprise</h4>
-                                    </div>
-                                    <p class="mt-7">Operate <span class="inline font-normal">organization-wide</span> industrial applications with the highest security and integrity.</p>
+                        <div class="pricing-tile-background pb-6">
+                            <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
+                                <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                    <h4 style="display:inline-block;">Enterprise</h4>
                                 </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>Faster, more powerful, AI-enhanced Node&#8209;RED</li>
-                                        <li>Unlimited team members</li>
-                                        <li>Single Sign-On</li>
-                                        {% if cloud %}
-                                        <li>MQTT Broker (20 clients to start)</li>
-                                        {% endif %}
-                                        <li>Enterprise support{% if show_sla %} + SLA: 99.9&#37;{% endif %}</li>
-                                        {% if not cloud %}
-                                        <li>Dedicated Success Management</li>
-                                        {% endif %}
-                                        <li>Device group management</li>
-                                    </ul>
-                                    <br>
-                                    <note class="font-semibold">Includes 20 hosted instances or remote instances.</note>
-                                </div>
+                                <p class="mt-7">Operate <span class="inline font-normal">organization-wide</span> industrial applications with the highest security and integrity.</p>
                             </div>
+                            <div class="flex flex-col content-start features mt-6 md:mt-3 w-full">
+                                <ul class="ff-checklist font-light leading-7 mt-2">
+                                    <li>Everything in Pro</li>
+                                    {% if cloud %}
+                                    <li>Includes Insights Mode</li>
+                                    {% else %}
+                                    <li>FlowFuse Expert for AI-assisted Node&#8209;RED development and MCP insights mode</li>
+                                    {% endif %}
+                                    <li>Unlimited team members</li>
+                                    <li>Single Sign-On</li>
+                                    {% if cloud %}
+                                    <li>MQTT Broker (20 clients to start)</li>
+                                    {% endif %}
+                                    <li>Enterprise support{% if show_sla %} + SLA: 99.9&#37;{% endif %}</li>
+                                    {% if not cloud %}
+                                    <li>Dedicated Success Management</li>
+                                    {% endif %}
+                                    <li>Device group management</li>
+                                </ul>
+                            </div>
+                            <note class="font-semibold mt-4">Includes 20 hosted instances or remote instances.</note>
                             <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row items-end md:self-end">
+                                <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row items-end md:self-end">
                                     <h2 class="self-end pb-1">Let's Talk</h2>
                                     {% if not cloud %}<span class="pl-3 pb-2 text-sm text-gray-500">Trial period possible</span>{% endif %}
                                 </div>
@@ -269,15 +257,17 @@ hubspot:
                 <!-- Feature List -->
                 <div>{{ featuresHtml | safe }}
                     {% set hosting = "cloud" %}
-                    <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                    <div class="contentCloud transition duration-1000 max-w-full">
                         {% include "feature_lists/features-table-base.njk" %}
                     </div>
                     {% set hosting = "self-hosted" %}
-                    <div class="contentSelfHosted hide transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                    <div class="contentSelfHosted hide transition duration-1000 max-w-full">
                         {% include "feature_lists/features-table-base.njk" %}
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="product w-full px-6 md:px-0 sm:mt-[67px]">
             <p class="max-w-screen-lg m-auto mt-12 text-center md:px-9 pb-12 border-b">
                 At FlowFuse we understand that the security practises of our product
                 are important to your company. We've prepared a <a href="/platform/security/">security statement</a>
@@ -394,6 +384,18 @@ hubspot:
         }, 100);
     }
 
+    // Show white background on toggle when feature table body becomes sticky
+    const toggleEl = document.getElementById('pricing-toggle');
+    const featureTableBody = document.querySelector('[data-table-body]');
+    function updateToggleBg() {
+        if (!featureTableBody || !toggleEl) return;
+        const tableTop = featureTableBody.getBoundingClientRect().top;
+        const toggleBottom = toggleEl.getBoundingClientRect().bottom;
+        toggleEl.classList.toggle('bg-white', tableTop <= toggleBottom);
+    }
+    window.addEventListener('scroll', updateToggleBg, { passive: true });
+    updateToggleBg();
+
     document.querySelector(".btnToggle").addEventListener("click", function(e) {
         var rect = this.getBoundingClientRect();
         var isLeftHalf = (e.clientX - rect.left) < rect.width / 2;
@@ -402,6 +404,30 @@ hubspot:
         hosting = target;
         updateContentAndUrl(hosting);
         capture(target);
+    });
+</script>
+
+<!-- Sync horizontal scroll and sticky header background -->
+<script>
+    document.querySelectorAll('[data-table-body]').forEach(function(body) {
+        var header = body.parentElement.querySelector('[data-table-header]');
+        if (!header) return;
+        body.addEventListener('scroll', function() {
+            header.scrollLeft = body.scrollLeft;
+        }, { passive: true });
+    });
+
+    // Show white background on column headers only when rows scroll behind them
+    document.querySelectorAll('[data-sticky-header]').forEach(function(stickyEl) {
+        var body = stickyEl.parentElement.querySelector('[data-table-body]');
+        if (!body) return;
+        function updateStickyBg() {
+            var bodyTop = body.getBoundingClientRect().top;
+            var stickyBottom = stickyEl.getBoundingClientRect().bottom;
+            stickyEl.classList.toggle('bg-white', bodyTop <= stickyBottom);
+        }
+        window.addEventListener('scroll', updateStickyBg, { passive: true });
+        updateStickyBg();
     });
 </script>
 

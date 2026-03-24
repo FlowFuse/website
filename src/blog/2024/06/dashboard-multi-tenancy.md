@@ -10,6 +10,10 @@ tags:
    - news
    - flowfuse
    - dashboard
+cta:
+  type: sign-up
+  title: Build Multi-Tenant Dashboards With Node-RED
+  description: FlowFuse gives you everything you need to build personalized, user-aware dashboards — with built-in authentication, client constraints, and multi-tenancy support across all team tiers.
 ---
 
 FlowFuse Dashboard has featured multi-tenancy features through the FlowFuse User Addon. This made user based applications available only to specific FlowFuse team tiers and customers. However, the Node-RED community wanted to use the same feature set in cases FlowFuse didn't consider initially. Taking this feedback on board, today we announce some significant changes to how you can build Dashboards with multi-tenancy in mind.
@@ -98,5 +102,3 @@ A huge thanks to Fred Loucks ([@fullmetal-fred](https://github.com/fullmetal-fre
 ## Build Multi Tenant Dashboards with FlowFuse Cloud
 
 Start by following our [Getting Started Guide](https://dashboard.flowfuse.com/user/multi-tenancy.html#building-multi-tenant-dashboards).
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Multi-Tenancy%20available%20for%20everyone%20with%20FlowFuse%27s%20Dashboard%202.0", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}
