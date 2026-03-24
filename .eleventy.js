@@ -917,7 +917,7 @@ module.exports = function(eleventyConfig) {
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);
 
-        // Parse frontmatter for features array (same format as changelog posts)
+        // Parse frontmatter for features array — but skip pages with `release` (handled by releaseFeatures)
         let fmFeatures = [];
         const inputPath = this.page.inputPath;
         if (inputPath && inputPath.endsWith('.md')) {
@@ -926,6 +926,7 @@ module.exports = function(eleventyConfig) {
                 const fmMatch = source.match(/^---\n([\s\S]*?)\n---/);
                 if (fmMatch) {
                     const fm = yaml.load(fmMatch[1]);
+                    if (fm.release) return content;
                     if (fm.features && Array.isArray(fm.features)) {
                         fmFeatures = fm.features;
                     }
