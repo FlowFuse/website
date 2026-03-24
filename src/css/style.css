@@ -1675,7 +1675,7 @@ h4:hover .header-anchor::before {
 }
 
 .ff-tier-badge__label {
-    @apply px-2.5 py-0.5 text-gray-500 font-medium bg-gray-100 border border-r-0 border-gray-200 rounded-l;
+    @apply px-2.5 py-0.5 text-indigo-700 font-medium bg-indigo-50 border border-r-0 border-indigo-100 rounded-l;
 }
 
 .ff-tier-badge__value {
