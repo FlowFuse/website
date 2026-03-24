@@ -89,6 +89,8 @@ FlowFuse maintains required insurance policies for operational and commercial pu
 
 Authorized personnel may access insurance documents via the internal [Google Drive folder](https://drive.google.com/drive/folders/1Q2UqEmusDIpBD4-4Km1eFksHaRkVzl7O?usp=drive_link). Requests for insurance documentation should be directed to Operations or PeopleOps.
 
+The internal document also contains our insurance broker's contact information, policy renewal dates, and key coverage details.
+
 ## Miscellaneous
 
 - [W9 with signature](https://drive.google.com/file/d/1A2_mnPRfc5gWAb4yEYNiViuCHiARkLcD/view){rel="nofollow"}
