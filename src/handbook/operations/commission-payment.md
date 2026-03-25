@@ -73,7 +73,7 @@ to get a written agreement to the commission number.
 
 The email should be sent to the team member's personal email address so they retain access to the commission confirmation post-employment, as compensation records are considered personal. Make sure the CEO and the manager of the team member receiving the bonus both receive a copy by including them in the cc on the email.
 
-Here is an email template that can be used:
+Here is an email template that should be used:
 
 Subject line: `Commission for [Month] [YYYY]`.
 
