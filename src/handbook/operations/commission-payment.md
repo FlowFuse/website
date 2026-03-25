@@ -73,7 +73,15 @@ to get a written agreement to the commission number.
 
 The email should be sent to the team member's personal email address so they retain access to the commission confirmation post-employment, as compensation records are considered personal. Make sure the CEO and the manager of the team member receiving the bonus both receive a copy by including them in the cc on the email.
 
-Here is an email template that should be used:
+### Additional Notes for Commission Processing
+
+To avoid errors, copy and paste all numerical amounts directly from the spreadsheet whenever possible instead of typing them manually. Carefully double-check all details before saving the email as a draft. Once the draft is finalized and verified, inform the CEO that it is ready for review and sending. 
+
+After processing commission, update the Ops Plan spreadsheet (AE productivity tab) with the finalized commission details.
+
+Add this task as a recurring calendar reminder on the first Monday or Tuesday of each month.
+
+### Email template that should be used:
 
 Subject line: `Commission for [Month] [YYYY]`.
 
