@@ -39,6 +39,13 @@ The invoice should include:
 - Details of services rendered
 - Amount of dollars due
 
+#### Internal Processing & Approval (Accounts Payables)
+Once an invoice is received at billing@flowfuse.com, the following workflow is initiated:
+1. System Entry: The accounting team enters the invoice into Bill.com and invites the vendor to the BILL network to facilitate secure e-payments.
+2. Verification: Accounting will contact the vendor directly if any additional information is required to process the payment.
+3. Approval Chain: Each invoice requires a minimum of **two approvers**, with the CEO (ZJ) serving as the final approver.
+4. Payment Release: The accounting team reviews Bill.com at least twice per week to release payments for all fully approved invoices.
+
 When verifications are finalised, typically within a couple of business days,
 the vendor will receive an email with details and next steps.
 
