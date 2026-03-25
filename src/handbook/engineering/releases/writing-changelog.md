@@ -10,7 +10,9 @@ A changelog post is not a PR description or a release note. It is a short, focus
 
 ## When to write one
 
-Write a changelog post when you ship something a user would notice or benefit from. This includes new features, meaningful improvements to existing functionality, behaviour changes users need to be aware of, and breaking changes that require user action.
+Write a changelog post when you ship something a user would notice or benefit from. This means the change is **live in production on FlowFuse Cloud** and visible to users.
+
+This includes new features, meaningful improvements to existing functionality, behaviour changes users need to be aware of, and breaking changes that require user action.
 
 Do not write changelog posts for internal tooling changes with no user-visible impact, routine dependency bumps, minor bug fixes the average user would never encounter, or changes behind a feature flag that are not yet generally available.
 
