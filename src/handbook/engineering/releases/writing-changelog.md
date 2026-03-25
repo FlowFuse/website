@@ -16,6 +16,14 @@ Do not write changelog posts for internal tooling changes with no user-visible i
 
 If you are unsure, ask: "Would a user who opens FlowFuse tomorrow notice or benefit from this?" If the answer is no, it can likely be skipped. When in doubt, make it a quick discussion with the team, involving both engineering and product.
 
+## How changelog posts are triggered
+
+Changelog posts should be identified during refinement, not after work is complete.
+
+- Product creates a `changelog` ticket for any work that requires a changelog post
+- Engineering and Product are jointly responsible for asking: "Does this need a changelog?" during refinement
+
+This ensures changelog work is planned alongside delivery, rather than being remembered (or missed) at release time.
 ## Creating the file
 
 Posts live in the [website repository](https://github.com/FlowFuse/website/tree/main/src/changelog). Navigate to the correct year and month folder for when the feature shipped, and create a new `.md` file. If the folder for that month does not exist yet, create it.
@@ -91,13 +99,15 @@ This feature is available to [plan/tier] users of FlowFuse Cloud and [licence ty
 
 There is no fixed template - the right length and shape depends on the change. A small improvement might be two sentences and a screenshot. A complex feature might need steps, multiple screenshots, and an availability note. Use your judgement.
 
-That said, every post should answer three questions:
+That said, every post should answer four questions:
 
 **What changed?** State it plainly in the opening. Do not make the user read three paragraphs before they find out what the post is about.
 
 **Why does it matter?** Explain the benefit or the problem it solves. This is the difference between a changelog post and a bare release note. Without it, users have no reason to care.
 
 **What do they need to do?** If the feature requires setup or user action, explain how to get started. If it just works, you do not need this.
+
+**Where is it available?** The change is live on FlowFuse Cloud. Self Hosted users will receive it in the next release (_vX.Y_).
 
 ### Screenshots
 
@@ -138,6 +148,7 @@ Put it at the end of the post, or immediately after the main announcement if it 
 
 Write for the user, not the engineer. Every changelog entry can tell two stories - what changed in the code, and what improved for the user. Always tell the second one.
 
+Write in _active voice_. Active voice puts the subject before the verb. The user is doing something, or something is now possible for them. When possible, write with “you” as the subject. It makes writing more direct, clear, and engaging. It also makes for better storytelling.
 | Instead of this | Write this |
 |---|---|
 | Updated authentication API response handling | Logging in is noticeably faster |
@@ -156,6 +167,25 @@ Avoid jargon unless it is standard FlowFuse or Node-RED vocabulary. If a technic
 
 Do not paste PR titles or commit messages. They are written for engineers. Rewrite them from the user's perspective.
 
+## Drafting with AI
+
+If you prefer, you can use an LLM to draft a first version of your changelog post.
+
+Paste the following prompt into your tool of choice along with your PR description, commit messages, or technical notes:
+
+> You are writing a FlowFuse changelog post. The audience is FlowFuse users — cloud customers and self-hosted admins. Using the content I paste below, write a changelog post that:
+> - Opens with what changed, stated plainly in active voice
+> - Focuses on what the user can now do (use “you” where possible)
+> - Explains the user benefit in one or two sentences
+> - Includes a "getting started" section only if user action is required
+> - Ends with: "This change is live on FlowFuse Cloud. Self Hosted users will receive it in the next release (vX.Y)."
+>
+> Do not use PR titles or commit message language. Write for someone who just opened FlowFuse and wants to know what’s new.
+>
+> Here is the technical context:
+> [paste here]
+
+Always review and edit the output before publishing.
 ## Examples
 
 ### A small but useful improvement
@@ -205,4 +235,11 @@ State what is changing and who it affects in the first sentence. Then explain wh
 
 ## Raising a PR
 
-Follow the standard [Git workflow](/handbook/company/guides/git/) to raise a PR against the website repository. Changelog posts should be reviewed by a technical writer before merging. If no technical writer is available, product can review as a backup.
+Follow the standard [Git workflow](/handbook/company/guides/git/) to raise a PR against the website repository.
+
+Changelog posts should be reviewed by at least one of:
+- Product
+- Marketing
+- Engineering
+
+Aim for 1–2 reviewers to ensure accuracy and clarity. This avoids bottlenecks if specific individuals are unavailable.
