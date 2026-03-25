@@ -108,12 +108,11 @@ Once commission numbers are finalized for the month, rep productivity should be 
 
 If the employee agrees to the commission, process the payment in Deel as USD payment.
 Sign into Deel and browse to the profile of the commission receiver. For contractors
-the commission or bonux is a **Payment Adjustment**. For EOR team members, you'll
-need to add an item under "Payments and Submissions" manually.
+the commission is a **Payment Adjustment**, and mark it as a **commission** payment not as a bonus.
+For EOR team members, you'll need to add an item under "Payments and Submissions" manually.
 
-In both cases be explicit about this being a bonus for achievements for a certain 
+In both cases be explicit about this being a bonus or commission for achievements for a certain 
 time period and what the achievement was.
-
 
 ## Processing non-commission Bonuses
 

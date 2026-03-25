@@ -783,7 +783,7 @@ module.exports = function(eleventyConfig) {
 
         const features = frontmatter.features;
         const release = frontmatter.release;
-        if (!features || !Array.isArray(features) || features.length === 0) return content;
+        if (!release || !features || !Array.isArray(features) || features.length === 0) return content;
 
         // Build injection map: heading text -> { badges HTML, changelogs HTML }
         const injections = [];
@@ -872,9 +872,138 @@ module.exports = function(eleventyConfig) {
         return content;
     });
 
+    function findFeatureByDocsLink(pageUrl) {
+        if (!pageUrl) return null;
+        const normalizedPage = pageUrl.replace(/\/$/, '') + '/';
+        for (const section of featureCatalog.sections) {
+            for (const feature of section.features) {
+                if (!feature.docsLink || feature.subfeature) continue;
+                let link = feature.docsLink;
+                // Strip full domain if present
+                link = link.replace(/^https?:\/\/flowfuse\.com/, '');
+                // Strip fragment
+                link = link.replace(/#.*$/, '');
+                const normalizedLink = link.replace(/\/$/, '') + '/';
+                if (normalizedPage === normalizedLink) return feature;
+            }
+        }
+        return null;
+    }
+
+    function findSubfeaturesForDocsPage(pageUrl) {
+        if (!pageUrl) return [];
+        const normalizedPage = pageUrl.replace(/\/$/, '') + '/';
+        const results = [];
+        for (const section of featureCatalog.sections) {
+            for (const feature of section.features) {
+                if (!feature.docsLink || !feature.subfeature) continue;
+                let link = feature.docsLink;
+                link = link.replace(/^https?:\/\/flowfuse\.com/, '');
+                const fragment = (link.match(/#(.+)/) || [])[1];
+                if (!fragment) continue;
+                const linkPath = link.replace(/#.*/, '').replace(/\/$/, '') + '/';
+                if (normalizedPage === linkPath) {
+                    results.push({ feature, fragment });
+                }
+            }
+        }
+        return results;
+    }
+
+    // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
+    eleventyConfig.addTransform("docsFeatureBadges", function(content) {
+        if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
+
+        const parentFeature = findFeatureByDocsLink(this.page.url);
+        const subfeatures = findSubfeaturesForDocsPage(this.page.url);
+
+        // Parse frontmatter for features array — but skip pages with `release` (handled by releaseFeatures)
+        let fmFeatures = [];
+        const inputPath = this.page.inputPath;
+        if (inputPath && inputPath.endsWith('.md')) {
+            try {
+                const source = fs.readFileSync(inputPath, 'utf8');
+                const fmMatch = source.match(/^---\n([\s\S]*?)\n---/);
+                if (fmMatch) {
+                    const fm = yaml.load(fmMatch[1]);
+                    if (fm.release) return content;
+                    if (fm.features && Array.isArray(fm.features)) {
+                        fmFeatures = fm.features;
+                    }
+                }
+            } catch (e) { /* ignore */ }
+        }
+
+        if (!parentFeature && subfeatures.length === 0 && fmFeatures.length === 0) return content;
+
+        const ops = [];
+
+        // Inject parent feature badges after the first H1
+        if (parentFeature) {
+            const h1Regex = /<h1[^>]*>.*?<\/h1>/s;
+            const h1Match = h1Regex.exec(content);
+            if (h1Match) {
+                const badges = renderTierBadges(parentFeature);
+                if (badges) {
+                    const wrapped = badges.replace('class="ff-tier-badges"', 'class="ff-tier-badges not-prose"');
+                    ops.push({ index: h1Match.index + h1Match[0].length, html: wrapped });
+                }
+            }
+        }
+
+        // Scan headings for subfeature and frontmatter-based injections
+        if (subfeatures.length > 0 || fmFeatures.length > 0) {
+            const headingRegex = /<h([2-6])\s[^>]*id="([^"]*)"[^>]*>.*?<\/h\1>/gs;
+            const headingMatches = [];
+            let hmatch;
+            while ((hmatch = headingRegex.exec(content)) !== null) {
+                const textContent = hmatch[0].replace(/<[^>]+>/g, '').trim();
+                headingMatches.push({ index: hmatch.index, length: hmatch[0].length, id: hmatch[2], text: textContent, level: parseInt(hmatch[1]) });
+            }
+
+            // Frontmatter features take priority — track handled heading IDs
+            const handledHeadingIds = new Set();
+            for (const entry of fmFeatures) {
+                if (!entry.id || !entry.heading) continue;
+                const feature = findFeatureById(entry.id);
+                if (!feature) continue;
+                const heading = headingMatches.find(h => h.text === entry.heading);
+                if (!heading) continue;
+                handledHeadingIds.add(heading.id);
+                const badges = renderTierBadges(feature);
+                if (badges) {
+                    const wrapped = badges.replace('class="ff-tier-badges"', 'class="ff-tier-badges not-prose"');
+                    ops.push({ index: heading.index + heading.length, html: wrapped });
+                }
+            }
+
+            // Subfeatures matched by docsLink fragment (skip if frontmatter already handled)
+            for (const { feature, fragment } of subfeatures) {
+                if (handledHeadingIds.has(fragment)) continue;
+                const heading = headingMatches.find(h => h.id === fragment);
+                if (!heading) continue;
+                const badges = renderTierBadges(feature);
+                if (badges) {
+                    const wrapped = badges.replace('class="ff-tier-badges"', 'class="ff-tier-badges not-prose"');
+                    ops.push({ index: heading.index + heading.length, html: wrapped });
+                }
+            }
+        }
+
+        ops.sort((a, b) => b.index - a.index);
+        for (const op of ops) {
+            content = content.slice(0, op.index) + op.html + content.slice(op.index);
+        }
+        return content;
+    });
+
     // Make helpers available to changelog layout via filters
     eleventyConfig.addFilter("featureForChangelog", function(url) {
         return findFeatureByChangelog(url);
+    });
+
+    eleventyConfig.addFilter("featureForDocsPage", function(url) {
+        return findFeatureByDocsLink(url);
     });
 
     eleventyConfig.addFilter("tierLabel", function(tierData) {
