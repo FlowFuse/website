@@ -62,7 +62,7 @@ h4 {
 h5 {
     font-size: 1.1rem;
     line-height: 1.85rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 p {
@@ -1912,11 +1912,11 @@ lite-youtube::before {
 }
 
 .bg-radial-indigo {
-    background: radial-gradient(ellipse 30% 70% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
+    background: radial-gradient(ellipse 30% 70% at center bottom, rgb(from theme(colors.blue.200) r g b / 0.3) 0%, rgb(from theme(colors.blue.200) r g b / 0) 100%);
 }
 
 .bg-radial-indigo-small {
-    background: radial-gradient(ellipse 50% 5% at center bottom, rgba(191, 219, 254, 0.3) 0%, rgba(191, 219, 254, 0) 100%);
+    background: radial-gradient(ellipse 50% 5% at center bottom, rgb(from theme(colors.blue.200) r g b / 0.3) 0%, rgb(from theme(colors.blue.200) r g b / 0) 100%);
 }
 
 /* AI Chat Interface Styles */
@@ -1954,7 +1954,7 @@ lite-youtube::before {
 
 .ai-chat-box .textarea-wrapper {
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    linear-gradient(135deg, theme(colors.red.400), theme(colors.indigo.400), theme(colors.red.400)) border-box;
     border: 1px solid transparent;
     animation: gradient-border-rotate 4s linear;
 }
@@ -2027,7 +2027,7 @@ lite-youtube::before {
 
 .ai-chat-box .textarea-wrapper.modal-header {
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(90deg, theme(colors.red.600), #5048e5, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    linear-gradient(90deg, theme(colors.red.400), theme(colors.indigo.400), theme(colors.red.400), theme(colors.indigo.400), theme(colors.red.400)) border-box;
     border: none;
     border-bottom: 1px solid transparent;
     background-size: 200% 100%;
@@ -2045,7 +2045,7 @@ lite-youtube::before {
 
 #continue-to-app.textarea-wrapper {
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(135deg, theme(colors.red.600), #5048e5, theme(colors.red.600)) border-box;
+    linear-gradient(135deg, theme(colors.red.400), theme(colors.indigo.400), theme(colors.red.400)) border-box;
     border: 1px solid transparent;
     animation: gradient-border-rotate 4s linear;
 }
@@ -2095,7 +2095,12 @@ lite-youtube::before {
     position: relative;
 }
 
-.raster-gradient-bg::before {
+.raster-gradient-bg.red-blob {
+    background: radial-gradient(circle 60vw at 20% 40%, rgb(from theme(colors.red.50) r g b / 0.7), transparent);
+    position: relative;
+}
+
+.nr-grid::before {
     content: "";
     position: absolute;
     top: 0;

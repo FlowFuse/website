@@ -53,7 +53,7 @@ hubspot:
   reference: "homepage"
 ---
 <!--Hero Content-->
-<div class="w-full px-6 raster-gradient-bg">
+<div class="w-full px-6 raster-gradient-bg red-blob">
     <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
@@ -115,7 +115,7 @@ hubspot:
     <div class="max-w-md sm:max-w-screen-lg mx-auto">
         <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
             {% for metric in metrics %}
-                <div class="w-full m-auto gradient-roi-bottom-right from-indigo-100 rounded-lg pb-3 px-4 pt-6">
+                <div class="w-full m-auto rounded-lg bg-gradient-to-tl from-indigo-50/50 to-red-50/50 pb-3 px-4 pt-6">
                     <div class="flex">
                         <h3 class="text-4xl font-normal text-indigo-600">{{ metric.number }}</h3>
                     </div>
@@ -132,11 +132,11 @@ hubspot:
             <div class="grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 mt-6 w-full">
                 {% for item in solutions %}
                 <a class="my-2 group hover:no-underline" href="{{ item.href }}">
-                    <div class="sm:max-h-none max-h-[250px] max-sm:max-w-[500px] ff-image-cover ff-image-rounded scale mx-auto mb-6">
-                        {% image item.image, item.imageAlt, [500] %}
+                    <div class="w-full max-w-[333px] h-[245px] max-sm:max-w-[500px] max-sm:h-[200px] mx-auto mb-6 flex items-center justify-center overflow-hidden ff-image-cover ff-image-rounded scale">
+                        {% image item.image, item.imageAlt, [333] %}
                     </div>
-                    <div class="flex flex-row gap-2 my-3 items-center max-sm:justify-center text-indigo-700 group hover:text-indigo-900">
-                        <div class="w-6 h-6 my-auto">
+                    <div class="flex flex-row gap-2 my-3 items-center max-sm:justify-center">
+                        <div class="w-6 h-6 my-auto text-indigo-700">
                             {% include item.icon %}
                         </div>
                         <h4 class="text-xl text-indigo-700 hover:text-indigo-900">{{ item.title }}</h4>
@@ -175,7 +175,7 @@ hubspot:
     </div>
 </div>    
 <!-- Problem section -->
-<div class="bg-indigo-50/50 w-full py-12 px-6">
+<div class="bg-gradient-to-br from-indigo-700 to-indigo-900 w-full py-12 px-6">
     <div class="sm:max-w-screen-lg mx-auto">
         <div class="sm:flex sm:flex-row gap-12 my-4 m-auto max-sm:text-center">
             <div class="sm:w-1/3 flex-grow relative">
@@ -184,11 +184,11 @@ hubspot:
                 </div>
             </div>
             <div class="sm:w-2/3 my-auto flex flex-col">
-                <h2 class="max-sm:mt-10">Your Industrial Data is Trapped. <span class="text-indigo-600">Our AI Unlocks It</span></h2>
-                <p>
+                <h2 class="max-sm:mt-10 text-white">Your Industrial Data is Trapped. <span class="text-indigo-300">Our AI Unlocks It</span></h2>
+                <p class="text-indigo-50">
                     Large manufacturing organizations struggle to unlock the full potential of their operational data. Your current infrastructure creates information silos between IT and OT systems, preventing the scalable digitalization initiatives that drive competitive advantage. <span class="font-semibold">FlowFuse's AI-powered platform intelligently bridges this gap</span>, enabling true operational excellence across all your facilities.
                 </p>
-                <a class="mt-4 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
+                <a class="mt-4 ff-btn ff-btn--highlight uppercase inline-block self-center sm:self-start"
                 href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'secondary'})">BOOK A DEMO</a>
             </div>
         </div>
@@ -197,7 +197,7 @@ hubspot:
 <!-- Status Quo section -->
 <div class="about w-full pt-16 px-6">
     <div class="max-sm:text-center max-w-screen-lg mx-auto pb-16 bg-radial-indigo-small mb-16">
-        <h2 class=" w-full">Why Traditional Industrial Integration Can't Scale <span class="text-indigo-600">(And How We Use AI to Fix It)</span></h2>
+        <h2 class=" w-full">Why Traditional Industrial Integration Can't Scale <span class="text-red-600">(And How We Use AI to Fix It)</span></h2>
         <p>Most large manufacturers try to solve connectivity challenges with approaches that create enterprise-wide bottlenecks. Here’s how FlowFuse provides a smarter, AI-driven alternative:</p>
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
             {% for section in sections %}
@@ -237,8 +237,8 @@ hubspot:
         </div>
     </div>
     <!-- How FF solves the problem section -->
-    <div class="text-center sm:text-left max-w-screen-lg mx-auto p-9 rounded-xl border-2 border-indigo-600 drop-shadow-md bg-white">
-        <h2><span class="text-indigo-600">Intelligently Scale</span> Your Industrial Applications with AI</h2>
+    <div class="text-center sm:text-left max-w-screen-lg mx-auto p-9 rounded-xl border-2 border-gray-300 drop-shadow-md bg-white">
+        <h2><span class="text-red-600">Intelligently Scale</span> Your Industrial Applications with AI</h2>
         <div class="md:hidden flex ff-image-rounded max-w-[500px] m-auto mt-6">
             {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [500] %}
         </div>
@@ -246,7 +246,7 @@ hubspot:
             <div class="md:w-7/12">
                 <p>FlowFuse transforms how organizations deploy and manage industrial applications using Node-RED. Our platform, now enhanced with FlowFuse Expert, empowers IT and OT teams to collaborate more effectively than ever before. Standardize deployments across multiple facilities and accelerate innovation, all while maintaining the governance, security, and scalability your digital transformation demands.</p>
                 <div class="flex gap-3 max-sm:max-w-sm max-md:mx-auto max-sm:flex-col max-sm:justify-center mt-6">
-                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-contact-us', {'position': 'secondary'})">CONTACT US</a>
+                    <a class="ff-btn ff-btn--highlight min-h-[40px]" href="/contact-us/" onclick="capture('cta-contact-us', {'position': 'secondary'})">CONTACT US</a>
                     <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">TRY IT OUT</a>
                 </div>
             </div>
@@ -262,15 +262,19 @@ hubspot:
         {% for item in capabilities %}
         <div class="max-md:text-center md:flex md:flex-row gap-8 my-4 m-auto{% if loop.index is even %} md:flex-row-reverse{% endif %} mb-12 md:mb-24">
             <div class="max-md:hidden md:w-[45%] max-md:mb-12 flex items-center">
-                <div class="ff-image-rounded w-full border-2 border-indigo-300 hard-shadow-indigo300 m-auto">
-                    {% image item.imagePath, item.imageAlt, [440] %}
+                <div class="rounded-xl w-full bg-gradient-to-tl from-red-100 to-indigo-100 p-5 md:p-8 m-auto">
+                    <div class="ff-image-rounded w-full overflow-hidden">
+                        {% image item.imagePath, item.imageAlt, [440] %}
+                    </div>
                 </div>
             </div>
             <div class="md:w-[55%] my-auto flex flex-col">
-                <h5 class="text-indigo-400 mb-3">{{ item.feature }}</h5>
+                <h5 class="text-red-600 mb-3">{{ item.feature }}</h5>
                 <h2>{{ item.capability }}</h2>
-                <div class="md:hidden ff-image-rounded w-full border-2 border-indigo-300 hard-shadow-indigo300 max-w-[500px] mx-auto my-6">
-                    {% image item.imagePath, item.imageAlt, [440] %}
+                <div class="md:hidden rounded-xl w-full bg-gradient-to-tl from-red-100 to-indigo-100 max-w-[500px] mx-auto my-6 p-4">
+                    <div class="ff-image-rounded w-full border border-red-200 overflow-hidden">
+                        {% image item.imagePath, item.imageAlt, [440] %}
+                    </div>
                 </div>
                 <p>
                     {{ item.description }}
