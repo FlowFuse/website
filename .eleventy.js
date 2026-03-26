@@ -738,13 +738,13 @@ module.exports = function(eleventyConfig) {
         if (!showCloud && !showSelfHosted) return '';
         let html = `<div class="ff-tier-badges">`;
         if (showCloud) {
-            html += `<div class="ff-tier-badge ff-tier--available">`;
+            html += `<div class="ff-tier-badge ff-tier--available ff-tooltip" data-tooltip="Available on FlowFuse Cloud: ${cloudLabel}">`;
             html += `<span class="ff-tier-badge__label">Cloud</span>`;
             html += `<span class="ff-tier-badge__value">${cloudLabel}</span>`;
             html += `</div>`;
         }
         if (showSelfHosted) {
-            html += `<div class="ff-tier-badge ff-tier--available">`;
+            html += `<div class="ff-tier-badge ff-tier--available ff-tooltip" data-tooltip="Available on FlowFuse Self-Hosted: ${selfHostedLabel}">`;
             html += `<span class="ff-tier-badge__label">Self-Hosted</span>`;
             html += `<span class="ff-tier-badge__value">${selfHostedLabel}</span>`;
             html += `</div>`;

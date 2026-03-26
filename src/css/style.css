@@ -1674,6 +1674,18 @@ h4:hover .header-anchor::before {
     line-height: 1rem;
 }
 
+.ff-tier-badge.ff-tooltip:hover:after,
+.ff-tier-badge.ff-tooltip:hover:before {
+    transition-delay: 0.5s;
+}
+
+.ff-tier-badge.ff-tooltip:hover:after {
+    font-size: 0.75rem;
+    min-width: auto;
+    white-space: nowrap;
+    padding: 4px 8px;
+}
+
 .ff-tier-badge__label {
     @apply px-2.5 py-0.5 text-gray-500 font-medium bg-gray-100 border border-r-0 border-gray-200 rounded-l;
 }
