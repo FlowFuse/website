@@ -1,7 +1,7 @@
 ---
 title: Azure DevOps Pipeline support
 description: Store and retrieve Snapshots from Azure DevOps git repositories
-date: 2026-03- 12:00:00
+date: 2026-03-24 17:00:00
 authors: ['ben-hardill']
 tags:
  - changelog
