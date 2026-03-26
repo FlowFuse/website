@@ -44,7 +44,7 @@ Every post requires the following fields at the top of the file:
 |---|---|
 | `title` | The name of the feature or change. Title case. Keep it short. |
 | `description` | One sentence summarising the change. This appears in link previews and search results, so it should make sense without any surrounding context. |
-| `date` | The date the feature shipped, in `YYYY-MM-DD` format. |
+| `date` | The date and time the feature shipped, in `YYYY-MM-DD HH:mm:ss` format (e.g., `2026-03-24 17:00:00`). The timestamp ensures correct sorting when multiple features are added on the same day. |
 | `authors` | Your handle from `src/_data/team`. Leave it out if there is no single clear author. |
 | `tags` | Always include `changelog`. |
 | `issues` | A list of related GitHub issue URLs. Link any issues that tracked the work being announced. |
@@ -57,7 +57,7 @@ You can start a new changelog post with the following template:
 ---
 title: Short Feature Title
 description: One sentence summarising the change, written for a user, not an engineer.
-date: YYYY-MM-DD
+date: YYYY-MM-DD HH:mm:ss
 authors: your-handle
 tags:
   - changelog
