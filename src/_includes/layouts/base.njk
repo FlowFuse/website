@@ -231,7 +231,7 @@ eleventyComputed:
                     <a class="flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-wordmark.njk" %}
                     </a>
-                    <a class="w-8 h-8 hidden md:block lg:hidden" href="/" style="font-family:'Baloo 2', sans-serif">
+                    <a class="w-8 h-8 hidden md:block lg:hidden shrink-0" href="/" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-square.svg" %}
                     </a>
                     <div class="flex items-center gap-1 md:hidden">
@@ -295,7 +295,7 @@ eleventyComputed:
                         </li>
                     </ul>
                     <!-- CTAs -->
-                    <ul class="cta flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
+                    <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
 			            <li class="flex"><a href="{{ site.appURL }}">Sign In</a></li>
 			            <li class="hidden md:flex"><a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
                         <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
@@ -404,13 +404,14 @@ eleventyComputed:
         if (!nav || !moreItem || !moreList || !headerNav) return;
 
         function isOverflowing() {
+            var overflowBuffer = 24;
             // Check if the last child of <nav> extends past the viewport
             var navRight = headerNav.getBoundingClientRect().right;
             var children = Array.from(headerNav.children).filter(function(el) {
                 return el.offsetWidth > 0;
             });
             var last = children[children.length - 1];
-            return last && last.getBoundingClientRect().right > navRight + 1;
+            return last && last.getBoundingClientRect().right > navRight + 1 + overflowBuffer;
         }
 
         function handleNavOverflow() {
