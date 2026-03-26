@@ -654,7 +654,7 @@ h4:hover .header-anchor::before {
     }
 
     .ff-website header nav .ff-nav-chevron {
-        @apply block md:hidden transition-transform;
+        @apply block md:hidden transition-transform p-0 min-h-0 leading-none;
     }
 
     .ff-website header .ff-nav-dropdown:hover .ff-nav-chevron,
