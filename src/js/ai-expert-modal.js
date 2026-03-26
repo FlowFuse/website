@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.classList.contains('prompt-pill') && e.target.dataset.prompt) {
             e.preventDefault();
             const promptText = e.target.dataset.prompt;
+            if (typeof capture === 'function') capture('expert-prompt-pill-clicked', { prompt_title: e.target.textContent.trim(), page: location.pathname });
             openModal(promptText);
         }
     });
