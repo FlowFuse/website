@@ -73,7 +73,15 @@ to get a written agreement to the commission number.
 
 The email should be sent to the team member's personal email address so they retain access to the commission confirmation post-employment, as compensation records are considered personal. Make sure the CEO and the manager of the team member receiving the bonus both receive a copy by including them in the cc on the email.
 
-Here is an email template that can be used:
+### Additional Notes for Commission Processing
+
+To avoid errors, copy and paste all numerical amounts directly from the spreadsheet whenever possible instead of typing them manually. Carefully double-check all details before saving the email as a draft. Once the draft is finalized and verified, inform the CEO that it is ready for review and sending. 
+
+After processing commission, update the Ops Plan spreadsheet (AE productivity tab) with the finalized commission details.
+
+Add this task as a recurring calendar reminder on the first Monday or Tuesday of each month.
+
+### Email template that should be used:
 
 Subject line: `Commission for [Month] [YYYY]`.
 
@@ -125,3 +133,22 @@ All goals must be achieved within the agreed quarter. Data or outcomes generated
 When the goal has been fully achieved or the quarter has ended with results within the agreed performance threshold, the employee should send a follow-up email to both their manager and the CEO summarizing the achieved outcome.
 
 The bonus payment will be included in the next payroll after the goal completion or report is submitted.
+
+## Processing CSM Commission
+
+Following the end of each quarter, the Operations team processes CSM commissions based on the performance metrics outlined in the [CS Handbook](https://flowfuse.com/handbook/sales/customer-success/).
+
+### Payout Timeline & Submission
+
+1. Submission: CSMs must complete and submit the Commission Calculation [Template](https://docs.google.com/spreadsheets/d/1QruPv_EmC3o0OPTipSxqKIWy0mMxMB8asWupdA8N_X8/edit?gid=1622984334#gid=1622984334) by the 5th business day of the new quarter. Duplicate the workbook and complete the necessary fields following the legend. 
+2. Validation: Operations will cross-reference the template against HubSpot data, specifically verifying the Effective Dates for all transactions.
+3. Payment: Once validated, commissions are included in the next available payroll cycle.
+
+### Data Requirements
+The calculation template must include:
+- Company Name & Transaction Amount (ARR Delta).
+- Notice Date: When the customer informed us of the change. Or when we actually closed won the change in Hubspot
+- Effective Date: When the change actually takes place in the contract.
+
+### Currency of Payout
+Commission is paid in the currency specified in your initial employment contract (e.g., USD or EUR). _Note: Please confirm your specific payout currency with the Operations team during your first quarter._
