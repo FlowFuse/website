@@ -10,6 +10,10 @@ tags:
  - flowfuse
  - unified-namespace
  - mqtt
+cta:
+  type: demo
+  title: See FlowFuse's Topic Hierarchy View in Action
+  description: FlowFuse gives you a built-in MQTT broker, visual topic hierarchy monitoring, and access control — everything you need to design, manage, and scale your UNS topic structure without the complexity.
 ---
 
 Topic structuring is not just a technical concern when building a high-performance Unified Namespace (UNS) for manufacturing environments; it's a strategic design choice that can determine the system's scalability, efficiency, and overall effectiveness. 
@@ -200,5 +204,3 @@ _Image showing FlowFuse topic hierarchy interface for UNS_
 What truly stands out is FlowFuse's ability to handle both legacy and modern industrial protocols, effortlessly bridging the gap between old and new systems. Whether adding new devices, integrating data streams, or scaling to thousands of devices, FlowFuse gives you the flexibility, scalability, and security you need to optimize your UNS at every step.
 
 FlowFuse doesn’t just help you manage topics—it streamlines collaboration, enhances system performance, and accelerates your journey toward a fully integrated, future-proof UNS.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Designing%20a%20Clear%20Topic%20Structure%20for%20Your%20UNS", cta_type: "signup", cta_text: "Looking to simplify your UNS management? Unlock the full potential of your data architecture with FlowFuse." %}
