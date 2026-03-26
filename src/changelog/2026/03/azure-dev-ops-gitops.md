@@ -15,7 +15,7 @@ This means you can both push and pull Snapshots to and from an Azure DevOps repo
 
 Personal Access Tokens to access the repositories can be added under Team Settings -> Integrations
 
-![Dialog to create a new Azure DevOps Token](./images/azue-token.png)
+![Dialog to create a new Azure DevOps Token](./images/azure-token.png)
 _Dialog to create a new Azure DevOps Token_
 
 This is available to Pro and Enterprise customers on FlowFuse Cloud and Enterprise licensed Self Hosted installs.
