@@ -72,7 +72,7 @@ company, you can claim back the money through
 Before approving an expense in Deel, please verify:
 - The receipt is a final Proof of Payment (not a quote)
 - That the attachment is an invoice and not a screenshot
-- Asset purchases >$500 are logged in the Asset Tracker. If not, flag with operations
+- Asset purchases >$500 are logged in the [Asset](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit?gid=0#gid=0) Tracker. If not, flag with operations
 - The description clearly states the business justification
 - For expenses >$250, ensure the CEO is looped in for co-approval
 
