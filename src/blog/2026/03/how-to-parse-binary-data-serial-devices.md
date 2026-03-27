@@ -132,7 +132,7 @@ Three checks: frame length, start and end markers, checksum. If any fail, the me
 
 ### Step 4: Parse the Bytes
 
-Add a **Buffer Parser node** and double-click it. Set **Result Type** to **key/value**. Then add one row for each field.
+Add a **Buffer Parser node** and double-click it. Set **Output** to **key/value**. Then add one row for each field.
 
 **Weight**
 - Name: `weight`
@@ -189,7 +189,7 @@ Connect both Change nodes to the Debug node. Click **Deploy**, then click the In
   "weight": 23.5,
   "unit": "kg",
   "stable": true,
-  "overload": false,
+  "overload": true,
   "zero": false
 }
 ```
