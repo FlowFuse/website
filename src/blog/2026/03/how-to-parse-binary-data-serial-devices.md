@@ -74,7 +74,7 @@ By the end of this article, that buffer becomes:
 
 ## Building the Flow in FlowFuse
 
-We'll simulate the device output using an Inject node so you can follow along without hardware. In a real deployment, the Inject node is replaced by a Serial In node receiving bytes directly from the device. The parsing logic, the validation, the Buffer Parser configuration — all of it stays identical. The only difference is where the bytes come from. If you want to set up the actual serial connection, [this article covers that](https://flowfuse.com/blog/2025/07/connect-legacy-equipment-serial-flowfuse/).
+We'll simulate the device output using an Inject node so you can follow along without hardware. In a real deployment, the Inject node is replaced by a Serial In node receiving bytes directly from the device. The parsing logic, the validation, the Buffer Parser configuration — all of it stays identical. The only difference is where the bytes come from. If you want to set up the actual serial connection, [this article covers that](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/).
 
 The flow is: **Inject node** connected to a **Function node** connected to a **Buffer Parser node** connected to a **Switch node**, each output of the Switch connected to its own **Change node**, both Change nodes connected to a **Debug node.**
 
@@ -167,7 +167,7 @@ Add a **Buffer Parser node** and double-click it. Set **Output** to **key/value*
 ![Buffer Parser node configuration showing weight, unit, and status flag fields mapped to their respective byte offsets](./images/buffer-parser.png)
 _Configuring the Buffer Parser node to extract weight, unit, and status flags from the 10-byte frame_
 
-The float conversion, the byte reading, the individual bit extraction — all handled visually without code. The `bool` type with Bit Offset is what makes bitfield parsing possible here. Each status flag is packed into a single byte, and the Buffer Parser pulls them out one bit at a time. If you want a deeper walkthrough of every Buffer Parser field and configuration option, [this article covers it in full](https://flowfuse.com/blog/2025/12/node-red-buffer-parser-industrial-data/).
+The float conversion, the byte reading, the individual bit extraction — all handled visually without code. The `bool` type with Bit Offset is what makes bitfield parsing possible here. Each status flag is packed into a single byte, and the Buffer Parser pulls them out one bit at a time. If you want a deeper walkthrough of every Buffer Parser field and configuration option, [this article covers it in full](/blog/2025/12/node-red-buffer-parser-industrial-data/).
 
 ### Step 5: Map the Unit Value
 
