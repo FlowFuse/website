@@ -5,7 +5,7 @@ description: "How AI-driven edge connectivity is redefining industrial operation
 date: 2026-03-27
 keywords: Edge AI, Node-RED, FlowFuse, industrial automation, OT IT integration, knowledge management, IIoT integration, PLC integration, industrial AI, Edge connectivity 
 authors: ["zeger-jan-van-de-weg"]
-image: 
+image: /blog/2026/03/images/Rethinking-Edge-AI's-Core-Orchestration.png
 tags:
 - flowfuse
 cta:
@@ -43,6 +43,9 @@ At the enterprise level, FlowFuse Cloud provides the central "control tower" to 
 On top of this connectivity fabric, FlowFuse Expert acts as the AI assistant tuned for industrial teams that will make your life easier as you never imagined.
 Grounded via MCP in your actual machines, brokers, and databases, it does much more than chat: it generates live Node‑RED flows, data mappings, dashboards, and even queries that are directly deployable into your environment. Because it connects to both OT sources (PLCs, industrial brokers, historians) and IT systems (data lakes, CMDBs, corporate apps), Expert sees, understands and manages both halves of the map. 100% control of both IT and OT. It translates plant-floor requirements into IT-compliant flows and ensures that security and governance policies are automatically applied to edge configurations. It acts as the structural bridge that finally closes the IT/OT gap.
 For OT engineers, this means months‑long projects compress into days or minutes; for IT, it means governance and security controls stay intact even as more of the work shifts closer to the plant floor.
+
+![IT/OT Gap Diagram](./images/Rethinking-Edge-AI's-Core-Orchestration-diagram.png)
+_IT/OT Gap Diagram_
 
 ## From pilots to a scalable "AI nerve system"
 
