@@ -1,0 +1,16 @@
+{
+  "order": 23,
+  "name": "Andrea Palmieri",
+  "title": "AI & Full Stack Engineer",
+  "github": "andypalmi",
+  "linkedin": "andreapalmieri00",
+  "country": "IT",
+  "headshot": "andrea.png",
+  "reports_to": "Jamie Strusz",
+  "email": "[andrea@flowfuse.com](mailto:andrea@flowfuse.com)",
+  "facts": [
+    "Curious guy passionate about IT and all tech stuff.",
+    "Self-taught in IT with an MSc in AI.",
+    "In love with my girlfriend, family, dog, and the beach."
+  ]
+}
