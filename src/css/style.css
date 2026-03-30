@@ -583,6 +583,11 @@ h4:hover .header-anchor::before {
     @apply object-center;
 }
 
+.ff-image-cover.top img,
+.ff-image-cover.top picture {
+    @apply object-top;
+}
+
 .ff-image-cover.blueprint img,
 .ff-image-cover.blueprint picture {
     object-position: left top;
@@ -654,7 +659,7 @@ h4:hover .header-anchor::before {
     }
 
     .ff-website header nav .ff-nav-chevron {
-        @apply block md:hidden transition-transform;
+        @apply block md:hidden transition-transform p-0 min-h-0 leading-none;
     }
 
     .ff-website header .ff-nav-dropdown:hover .ff-nav-chevron,
