@@ -181,7 +181,7 @@ Paste the following prompt into your tool of choice along with your PR descripti
 > - Focuses on what the user can now do (use “you” where possible)
 > - Explains the user benefit in one or two sentences
 > - Includes a 'getting started' section only if the user needs to take action
-> - Ends with: "This change is live on FlowFuse Cloud. Self Hosted users will receive it in the next release (vX.Y)."
+> - Ends with an availability note: "This feature is available to [tier] users of FlowFuse Cloud and [licence type] Self Hosted users from vX.Y."
 >
 > Do not use PR titles or commit message language. Write for someone who just opened FlowFuse and wants to know what’s new.
 >
@@ -197,7 +197,7 @@ Always review and edit the output before publishing.
 >
 > It is a small (but important) improvement that just makes things that little bit easier.
 
-*Source: [Duplicate Instances Across Different Applications](https://flowfuse.com/changelog/2025/10/duplicate-instances-across-applications/)*
+*Source: [Duplicate Instances Across Different Applications](/changelog/2025/10/duplicate-instances-across-applications/)*
 
 Short, honest about the size of the change, and gets straight to the point.
 
@@ -210,7 +210,7 @@ Short, honest about the size of the change, and gets straight to the point.
 > - Are any nodes on my palette disabled?
 > - Can you suggest a node package that would replace this complex function code?
 
-*Source: [FlowFuse Expert: Palette Queries](https://flowfuse.com/changelog/2026/01/ff-expert-palette-queries/)*
+*Source: [FlowFuse Expert: Palette Queries](/changelog/2026/01/ff-expert-palette-queries/)*
 
 Instead of describing the feature abstractly, this shows exactly how a user will interact with it. Use this approach whenever concrete examples best explain a feature — what the user can now say or do.
 
@@ -220,7 +220,7 @@ Instead of describing the feature abstractly, this shows exactly how a user will
 >
 > This feature is available to Enterprise Licensed Self Hosted users and Enterprise tier users of FlowFuse Cloud.
 
-*Source: [HA Hosted Instance Rolling Restart](https://flowfuse.com/changelog/2026/02/ha-instance-rolling-restart/)*
+*Source: [HA Hosted Instance Rolling Restart](/changelog/2026/02/ha-instance-rolling-restart/)*
 
 The technical detail is there, but the sentence that follows immediately translates it into what the user actually cares about. Always pair the *what* with the *so what*.
 
@@ -232,7 +232,7 @@ The technical detail is there, but the sentence that follows immediately transla
 >
 > To check your current version, run `node --version`.
 
-*Source: [Node.js v20 Minimum Version Requirement](https://flowfuse.com/changelog/2025/11/minimum-nodejs-version/)*
+*Source: [Node.js v20 Minimum Version Requirement](/changelog/2025/11/minimum-nodejs-version/)*
 
 State what is changing and who it affects in the first sentence. Then explain why. Then tell the user exactly what to do. A user who needs to act should have everything they need without leaving the page.
 

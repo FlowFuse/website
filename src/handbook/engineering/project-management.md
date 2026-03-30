@@ -154,6 +154,8 @@ If questions, issues, or improvement ideas come up during a demo, they should be
 
 Some completed work is communicated externally via the FlowFuse changelog and release highlights.
 
+For detailed guidance on writing changelog posts, see [Writing Changelog Posts](/handbook/engineering/releases/writing-changelog/).
+
 Work may be changelog-worthy when it:
 
 * delivers visible user value
