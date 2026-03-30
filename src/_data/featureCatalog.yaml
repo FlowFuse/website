@@ -481,7 +481,9 @@ sections:
         label: DevOps Pipelines
         description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."
         docsLink: /docs/user/devops-pipelines/
-        changelog: null
+        changelog:
+         - url: '/changelog/2026/03/azure-dev-ops-gitops'
+           release: '2.29.0'
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
         tags: [cloud, self-hosted]
