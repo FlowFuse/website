@@ -5,7 +5,7 @@ description: "OPC UA has every technical advantage. Modbus is still winning. Her
 date: 2026-03-30
 keywords:
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/03/images/opcua-is-not-replacing-modbus-yet.png
 tags:
 - flowfuse
 cta:
