@@ -3,7 +3,7 @@ title: "Why OPC UA Is Not Replacing Modbus (Yet)"
 subtitle: "Why your next device will still ship with Modbus, and what OPC UA needs to fix before that changes"
 description: "OPC UA has every technical advantage. Modbus is still winning. Here's why the replacement hasn't happened and what would actually change that."
 date: 2026-03-30
-keywords:
+keywords: opc ua, modbus, industrial automation, protocol comparison, field devices, scada, mes, industrial protocols, gateway architecture, edge computing, node-red, mqtt, industrial security, certificate management, interoperability
 authors: ["sumit-shinde"]
 image:
 tags:
