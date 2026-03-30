@@ -16,7 +16,7 @@ This includes new features, meaningful improvements to existing functionality, b
 
 Do not write changelog posts for internal tooling changes with no user-visible impact, routine dependency bumps, minor bug fixes the average user would never encounter, or changes behind a feature flag that are not yet generally available.
 
-If you are unsure, ask: "Would a user who opens FlowFuse tomorrow notice or benefit from this?" If the answer is no, it can likely be skipped. When in doubt, make it a quick discussion with the team, involving both engineering and product.
+If you are unsure, ask: "Would a user who opens FlowFuse tomorrow notice or benefit from this?" If the answer is no, you can likely skip it. When in doubt, make it a quick discussion with the team, involving both engineering and product.
 
 ## Identifying what needs a changelog post
 
@@ -25,7 +25,8 @@ Product and engineering identify changelog posts during refinement, not after wo
 - Product creates a `changelog` ticket for any work that requires a changelog post
 - Engineering and Product are jointly responsible for asking: "Does this need a changelog?" during refinement
 
-This ensures changelog work is planned alongside delivery, rather than remembered (or missed) at release time.
+This ensures the team plans changelog work alongside delivery, rather than remembering (or missing) them at release time.
+
 ## Creating the file
 
 Posts live in the [website repository](https://github.com/FlowFuse/website/tree/main/src/changelog). Navigate to the correct year and month folder for when the feature shipped, and create a new `.md` file. If the folder for that month does not exist yet, create it.
@@ -34,7 +35,7 @@ Posts live in the [website repository](https://github.com/FlowFuse/website/tree/
 src/changelog/YYYY/MM/your-post-slug.md
 ```
 
-The slug should be short, lowercase, and hyphen-separated, describing the feature being announced.
+The slug should be short, lowercase, and hyphen-separated, describing the feature you are announcing.
 
 ## Frontmatter
 
@@ -44,10 +45,10 @@ Every post requires the following fields at the top of the file:
 |---|---|
 | `title` | The name of the feature or change. Title case. Keep it short. |
 | `description` | One sentence summarising the change. This appears in link previews and search results, so it should make sense without any surrounding context. |
-| `date` | The date and time the feature shipped, in `YYYY-MM-DD HH:mm:ss` format (e.g., `2026-03-24 17:00:00`). The timestamp ensures correct sorting when multiple features are added on the same day. |
+| `date` | The date and time the feature shipped, in `YYYY-MM-DD HH:mm:ss` format (e.g., `2026-03-24 17:00:00`). The timestamp ensures correct sorting when you add multiple features on the same day. |
 | `authors` | Your handle from `src/_data/team`. Leave it out if there is no single clear author. |
 | `tags` | Always include `changelog`. |
-| `issues` | A list of related GitHub issue URLs. Link any issues that tracked the work being announced. |
+| `issues` | A list of related GitHub issue URLs. Link any issues that tracked the work this post announces. |
 
 ## Starting Template
 
@@ -120,13 +121,13 @@ Include a screenshot for any visual change. Reference images from `src/img/` lik
 *Caption describing what is shown*
 ```
 
-Always add a caption in italics directly below the image. The caption should describe what is shown in context, not just repeat the alt text.
+Always add a caption in italics directly below the image. The caption should describe what the image shows in context, not just repeat the alt text.
 
-Screenshots should ideally be **1408px wide**. Height can vary depending on what is being shown.
+Screenshots should ideally be **1408px wide**. Height can vary depending on what you are showing.
 
 ### Feature catalog and availability
 
-Changelog posts should ideally be tied to a feature defined in [`featureCatalog.yaml`](https://github.com/FlowFuse/website/blob/main/src/_data/featureCatalog.yaml). The catalog is the single source of truth for tier availability across FlowFuse.
+Ideally, tie each changelog post to a feature defined in [`featureCatalog.yaml`](https://github.com/FlowFuse/website/blob/main/src/_data/featureCatalog.yaml). The catalog is the single source of truth for tier availability across FlowFuse.
 
 When you ship a changelog post for a catalogued feature, update the feature's entry in `featureCatalog.yaml` to include the changelog `url` and `release` number:
 
@@ -136,7 +137,7 @@ changelog:
     release: "2.29"
 ```
 
-Once that entry is in place, the build injects tier availability badges into the changelog post automatically. No additional markup needed in the post itself.
+Once that entry is in place, the build injects tier availability badges into the changelog post automatically. You need no additional markup in the post itself.
 
 If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. If the feature's tier availability has changed alongside this release, update the relevant fields in the catalog too. Product must review any additions or availability changes in `featureCatalog.yaml` before merging.
 
@@ -167,7 +168,7 @@ Keep it short. A changelog post is not a blog post. If the feature needs more de
 
 Avoid jargon unless it is standard FlowFuse or Node-RED vocabulary. If a technical term is unavoidable, give enough context that a non-expert can follow.
 
-Do not paste PR titles or commit messages. They are written for engineers. Rewrite them from the user's perspective.
+Do not paste PR titles or commit messages, as those are for our internal engineering team. Rewrite them from the user's perspective.
 
 ## Drafting with AI
 
@@ -211,7 +212,7 @@ Short, honest about the size of the change, and gets straight to the point.
 
 *Source: [FlowFuse Expert: Palette Queries](https://flowfuse.com/changelog/2026/01/ff-expert-palette-queries/)*
 
-Instead of describing the feature abstractly, this shows exactly how a user will interact with it. Use this approach whenever a feature is best explained through concrete examples of what the user can now say or do.
+Instead of describing the feature abstractly, this shows exactly how a user will interact with it. Use this approach whenever concrete examples best explain a feature — what the user can now say or do.
 
 ### Translating a technical change into a user benefit
 
