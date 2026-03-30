@@ -6,7 +6,7 @@ navTitle: Changelog Posts
 
 The [FlowFuse Changelog](/changelog/) is where users go to see what has shipped. It is a place to communicate product updates clearly and directly to FlowFuse users.
 
-A changelog post is not a PR description or a release note. It is a short, focused announcement written for FlowFuse users who want to quickly understand what changed and how it impacts them.
+A changelog post is not a PR description or a release note. It is a short, focused announcement aimed at FlowFuse users who want to quickly understand what changed and how it impacts them.
 
 ## When to write one
 
@@ -14,7 +14,7 @@ Write a changelog post when you ship something a user would notice or benefit fr
 
 This includes new features, meaningful improvements to existing functionality, behaviour changes users need to be aware of, and breaking changes that require user action.
 
-Do not write changelog posts for internal tooling changes with no user-visible impact, routine dependency bumps, minor bug fixes the average user would never encounter, or changes behind a feature flag that are not yet generally available.
+Do not write changelog posts for internal tooling changes with no user-visible impact, routine dependency bumps, minor bug fixes the average user would never encounter, or changes behind a feature flag you have not yet released to everyone.
 
 If you are unsure, ask: "Would a user who opens FlowFuse tomorrow notice or benefit from this?" If the answer is no, you can likely skip it. When in doubt, make it a quick discussion with the team, involving both engineering and product.
 
@@ -81,7 +81,7 @@ issues:
 
 [The problem this solves or the benefit it brings.]
 
-<!-- HOW TO GET STARTED — Only include this if setup or action is required. Delete if it just works. -->
+<!-- HOW TO GET STARTED — Only include this if the user needs to take action. Delete if it just works. -->
 
 To get started:
 
@@ -180,7 +180,7 @@ Paste the following prompt into your tool of choice along with your PR descripti
 > - Opens with what changed, stated plainly in active voice
 > - Focuses on what the user can now do (use “you” where possible)
 > - Explains the user benefit in one or two sentences
-> - Includes a "getting started" section only if user action is required
+> - Includes a 'getting started' section only if the user needs to take action
 > - Ends with: "This change is live on FlowFuse Cloud. Self Hosted users will receive it in the next release (vX.Y)."
 >
 > Do not use PR titles or commit message language. Write for someone who just opened FlowFuse and wants to know what’s new.
