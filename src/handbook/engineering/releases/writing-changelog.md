@@ -18,14 +18,14 @@ Do not write changelog posts for internal tooling changes with no user-visible i
 
 If you are unsure, ask: "Would a user who opens FlowFuse tomorrow notice or benefit from this?" If the answer is no, it can likely be skipped. When in doubt, make it a quick discussion with the team, involving both engineering and product.
 
-## How changelog posts are triggered
+## Identifying what needs a changelog post
 
-Changelog posts should be identified during refinement, not after work is complete.
+Product and engineering identify changelog posts during refinement, not after work is complete.
 
 - Product creates a `changelog` ticket for any work that requires a changelog post
 - Engineering and Product are jointly responsible for asking: "Does this need a changelog?" during refinement
 
-This ensures changelog work is planned alongside delivery, rather than being remembered (or missed) at release time.
+This ensures changelog work is planned alongside delivery, rather than remembered (or missed) at release time.
 ## Creating the file
 
 Posts live in the [website repository](https://github.com/FlowFuse/website/tree/main/src/changelog). Navigate to the correct year and month folder for when the feature shipped, and create a new `.md` file. If the folder for that month does not exist yet, create it.
@@ -136,9 +136,9 @@ changelog:
     release: "2.29"
 ```
 
-Once that entry is in place, tier availability badges are injected into the changelog post automatically at build time. No additional markup needed in the post itself.
+Once that entry is in place, the build injects tier availability badges into the changelog post automatically. No additional markup needed in the post itself.
 
-If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. If the feature's tier availability has changed alongside this release, update the relevant fields in the catalog too. Any additions or availability changes in `featureCatalog.yaml` must be reviewed by product before merging.
+If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. If the feature's tier availability has changed alongside this release, update the relevant fields in the catalog too. Product must review any additions or availability changes in `featureCatalog.yaml` before merging.
 
 Always write an availability note in the post as well. Tier badges communicate the tier, but prose tells the user what it means for them. Write it like this:
 
@@ -239,7 +239,7 @@ State what is changing and who it affects in the first sentence. Then explain wh
 
 Follow the standard [Git workflow](/handbook/company/guides/git/) to raise a PR against the website repository.
 
-Changelog posts should be reviewed by at least one of:
+Have at least one of the following review the post before it goes live:
 - Product
 - Marketing
 - Engineering
