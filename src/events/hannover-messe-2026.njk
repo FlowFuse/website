@@ -29,13 +29,65 @@ specialSessions:
       imgAlt: FlowFuse Talks at Hannover Messe
       imageClass: top
       labelClass: text-indigo-600
-      label: On-booth sessions
+      label: Live at our booth
       title: "FlowFuse Talks"
       date: "Monday, April 20 to Thursday, April 23 2026"
       location: "Hall 014 Stand K26"
       description: "Join FlowFuse talks to see how teams connect machines, move data, and build and scale real-world industrial applications — all on a single platform, with insights from practitioners working on production systems, partners and the FlowFuse team."
       cta: SAVE YOUR SPOT
+      secondaryCta: VIEW AGENDA
+      secondaryCtaTarget: "#flowfuse-talks-agenda"
       ctaUrl: "https://www.eventbrite.com/e/flowfuse-talks-at-hannover-messe-2026-tickets-1985896052552?aff=oddtdtcreator"
+flowFuseTalksAgenda:
+    ctaUrl: "https://www.eventbrite.com/e/flowfuse-talks-at-hannover-messe-2026-tickets-1985896052552?aff=oddtdtcreator"
+    days:
+        - dateLabel: "Monday, April 20"
+          talks:
+              - time: "10:00 - 11:00"
+                title: "Bringing Intelligence to the Edge - Leveraging FlowFuse for Local Context"
+                speaker: "Kristopher Sandoval"
+              - time: "13:00 - 14:00"
+                title: "Mayker: Industrial Use Cases in the Food Industry"
+                speaker: "Mayker"
+              - time: "15:00 - 16:00"
+                title: "The Intelligence Imperative: Turning Manufacturing Data into Business Value"
+                speaker: "ZJ van de Weg"
+        - dateLabel: "Tuesday, April 21"
+          talks:
+              - time: "10:00 - 11:00"
+                title: "Making Industry Work - Leveraging NodeOPCUA with Sterfive and FlowFuse (TBC)"
+                speaker: "TBC"
+                tbd: true
+              - time: "13:00 - 14:00"
+                title: "Tulip Roundtable"
+                speaker: "ZJ van de Weg"
+              - time: "15:00 - 16:00"
+                title: "TBD"
+                speaker: "TBD"
+                tbd: true
+        - dateLabel: "Wednesday, April 22"
+          talks:
+              - time: "10:00 - 11:00"
+                title: "Modern Industry Roundtable with FlowFuse and Mayker (TBC)"
+                speaker: "Mayker"
+              - time: "13:00 - 14:00"
+                title: "Ensuring Data Sovereignty and Security in Industrial Spaces"
+                speaker: "Kristopher Sandoval"
+              - time: "15:00 - 16:00"
+                title: "Architecting AI at Scale with FlowFuse"
+                speaker: "Nick O'Leary"
+        - dateLabel: "Thursday, April 23"
+          talks:
+              - time: "10:00 - 11:00"
+                title: "Deploying Edge Intelligence in Industrial Operations with RevPi and FlowFuse (TBC)"
+                speaker: "TBC"
+                tbd: true
+              - time: "13:00 - 14:00"
+                title: "Deploying MCP and AI Connectivity at Scale with FlowFuse"
+                speaker: "Kristopher Sandoval"
+              - time: "15:00 - 16:00"
+                title: "Evaluating and Controlling Hallucinations in Industrial AI Applications"
+                speaker: "Kristopher Sandoval"
 bookDemo:
     cta: BOOK A DEMO
     ctaUrl: "/book-demo"
@@ -133,14 +185,61 @@ bookDemo:
                     </div>
                 </div>
                 <p>{{ session.description }}</p>
-                <div class="mt-4">
+                <div class="mt-4 flex flex-col sm:flex-row sm:flex-wrap gap-6">
                     <a class="ff-btn ff-btn--primary uppercase inline-flex items-center text-base w-full md:w-auto justify-center" href="{{ session.ctaUrl }}">
                         {{ session.cta }}
                     </a>
+                    {% if session.secondaryCta and session.secondaryCtaTarget %}
+                    <a class="inline-flex items-center justify-center gap-1.5 text-base font-semibold uppercase text-indigo-600 w-full md:w-auto no-underline hover:no-underline"
+                        href="{{ session.secondaryCtaTarget }}"
+                        onclick="document.getElementById('flowfuse-talks-agenda')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); return false;">
+                        {{ session.secondaryCta }}
+                        {% include "components/icons/arrow-small-down.svg" %}
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
         {% endfor %}
+    </div>
+</div>
+<!-- FlowFuse Talks Agenda -->
+<div class="w-full px-6 py-14 md:py-20 bg-indigo-50/50">
+    <div id="flowfuse-talks-agenda" class="container flex flex-col m-auto text-left items-stretch md:max-w-screen-lg scroll-mt-8 md:scroll-mt-12">
+        <h2 class="text-gray-600 leading-snug mb-8 md:mb-10"><span class="text-red-600">FlowFuse Talks</span> Agenda</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
+            {% for day in flowFuseTalksAgenda.days %}
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 text-sm font-medium">
+                    <div class="w-5">
+                        {% include "components/icons/calendar.svg" %}
+                    </div>
+                    <span>{{ day.dateLabel }}</span>
+                </div>
+                {% for talk in day.talks %}
+                {% if talk.tbd %}
+                <div class="rounded-xl border border-gray-300 p-4 text-gray-400">
+                    <p class="m-0 text-xs font-medium text-gray-400">{{ talk.time }}</p>
+                    <h3 class="text-[18px] leading-[1.25] mt-2 mb-3 text-gray-400">{{ talk.title }}</h3>
+                    <p class="m-0 text-sm text-gray-400">{{ talk.speaker }}</p>
+                </div>
+                {% else %}
+                <a class="group relative rounded-xl bg-indigo-500 p-4 text-white no-underline hover:no-underline transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-[0_14px_28px_rgba(67,56,202,0.22)] focus-visible:-translate-y-1 focus-visible:bg-indigo-700 focus-visible:shadow-[0_14px_28px_rgba(67,56,202,0.22)]"
+                    href="{{ flowFuseTalksAgenda.ctaUrl }}">
+                    <div class="w-full flex flex-row justify-between">
+                        <p class="m-0 pr-5 text-xs font-medium text-indigo-200">{{ talk.time }}</p>
+                        <div class="w-5 text-indigo-200">
+                            {% include "components/icons/arrow-top-right-on-square.svg" %}
+                        </div>
+                    </div>
+                    <h3 class="text-[18px] leading-[1.25] mt-2 mb-3 text-white">{{ talk.title }}</h3>
+                    <p class="m-0 text-sm text-indigo-200">{{ talk.speaker }}</p>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 <!-- Live Session Section -->
