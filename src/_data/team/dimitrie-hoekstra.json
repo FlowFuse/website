@@ -1,15 +1,16 @@
 {
   "order": 21,
   "name": "Dimitrie Hoekstra",
-  "title": "Sr. Design Engineer",
+  "title": "Product Manager",
   "github": "dimitrieh",
   "linkedin": "dimitrieh",
   "email": "dimitrie@flowfuse.com",
   "country": "ES",
   "headshot": "dimitrie.png",
-  "reports_to": "Jamie Strusz",
+  "reports_to": "Lori Beaulieu",
+  "bio": "Dimitrie leads the AI Focus product lane at FlowFuse, shaping how industrial IT/OT teams leverage AI to augment their desired outcomes.",
   "facts": [
-    "Designer enthusiastic and specialised in Open Source and DevOps",
+    "Product manager with a design engineering background in Open Source and DevOps",
     "Traveled and worked across the world, now makes life work across three countries instead of one",
     "I grab my motorbike for a trip whenever I can"
   ]
