@@ -173,7 +173,7 @@ sections:
             note: "Includes 5 hosted instances, shared with edge device count"
           pro:
             value: true
-            note: "Includes 10 hosted instances, shared with edge device count"
+            note: "Includes 5 hosted instances, shared with edge device count"
           enterprise:
             value: true
             note: "Starts with 20, shared with edge device count"
