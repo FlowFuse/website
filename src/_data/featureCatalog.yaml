@@ -159,23 +159,23 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: "1"
-            note: "Includes 1 hosted instance. Upgrades available up to 3 hosted / 3 remote instances. Additional instances are $20/month."
+            value: true
+            note: "Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted / 3 remote instances."
           pro:
-            value: "5"
-            note: "Starts with 5, shared with edge device count. Additional instances start at $35/month."
+            value: true
+            note: "Starts with 5, shared with edge device count"
           enterprise:
-            value: "20"
+            value: true
             note: "Starts with 20, shared with edge device count"
         selfHosted:
           starter:
             value: "5"
             note: "Includes 5 hosted instances, shared with edge device count"
           pro:
-            value: "10"
-            note: "Includes 10 hosted instances, shared with edge device count. Additional instances start at $35/month."
+            value: true
+            note: "Includes 5 hosted instances, shared with edge device count"
           enterprise:
-            value: "20"
+            value: true
             note: "Starts with 20, shared with edge device count"
 
       - id: edge-devices
@@ -191,7 +191,7 @@ sections:
         cloud:
           starter:
             value: true
-            note: "Up to 3 remote instances. Shared with hosted instance count."
+            note: "Includes 5 edge devices"
           pro:
             value: true
             note: "Starts with 5, shared with hosted instance count"
@@ -394,10 +394,10 @@ sections:
           starter:
             value: null
           pro:
-            value: "5 clients"
+            value: true
             note: "Includes 5 clients. Additional clients can be purchased."
           enterprise:
-            value: "20 clients"
+            value: true
             note: "Includes 20 clients. Additional clients can be purchased."
         selfHosted:
           starter:
@@ -405,7 +405,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: "20 clients"
+            value: true
             note: "Includes 20 clients. Additional clients can be purchased."
 
       - id: device-mgmt
