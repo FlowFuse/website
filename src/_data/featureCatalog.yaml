@@ -178,6 +178,29 @@ sections:
             value: "20"
             note: "Starts with 20, shared with edge device count"
 
+      - id: embedded-editor-tab-title
+        label: Embedded Editor Browser Tab Title
+        description: "The browser tab title updates to reflect the active Node-RED canvas tab when working in the embedded editor."
+        changelog:
+          - url: /changelog/2026/03/embedded-editor-tab-title/
+            release: "2.29"
+        subfeature: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: edge-devices
         label: Edge Devices
         description: "Connect and manage edge devices running Node-RED at the network edge."
