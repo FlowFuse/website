@@ -17,7 +17,7 @@ Previously the title stayed generic — something like `Instance - Editor - Flow
 *The browser tab title showing "Node-RED: Flow 1 - FlowFuse" after navigating to the Flow 1 canvas tab.*
 
 ![Browser tab showing the old generic title "Hosted Instance - Expert - FlowFuse"](./images/browser-title-before.png)
-*Previously, the title stayed generic regardless of which canvas tab was active.*
+*The old generic title, showing "Hosted Instance - Expert - FlowFuse" regardless of which canvas tab was open.*
 
 This feature requires **Node-RED Assistant v0.12.0** or later. If you are on an older version of the assistant, the title will not update.
 
