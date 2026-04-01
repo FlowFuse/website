@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target.classList.contains('prompt-pill') && e.target.dataset.prompt) {
             e.preventDefault();
             const promptText = e.target.dataset.prompt;
+            if (typeof capture === 'function') capture('expert-prompt-pill-clicked', { prompt_title: e.target.textContent.trim(), page: location.pathname });
             openModal(promptText);
         }
     });
@@ -362,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedPrompts = shuffled.slice(0, INITIAL_SUGGESTIONS_COUNT);
         function createPromptButton({appendClass, attr, text, title}) {
             const button = document.createElement('button');
-            button.className = `${appendClass} text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600 whitespace-nowrap overflow-hidden text-ellipsis`;
+            button.className = `${appendClass} text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-500 hover:bg-white hover:shadow-sm transition-all border hover:border-indigo-600 border-indigo-200 whitespace-nowrap overflow-hidden text-ellipsis`;
             if (attr) {
                 button.setAttribute('data-prompt', attr);
             }
@@ -808,7 +809,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Note: This API may only work in production (flowfuse.com domain)
             // For local development, we'll get simulated responses
-            const response = await fetch('https://flowfuse-expert-api.flowfuse.cloud/v4/website-chat', {
+            const response = await fetch('https://expert.flowfuse.com/v4/expert', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

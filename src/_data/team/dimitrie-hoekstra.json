@@ -1,16 +1,17 @@
 {
   "order": 21,
   "name": "Dimitrie Hoekstra",
-  "title": "Sr. Design Engineer",
+  "title": "Product Manager",
   "github": "dimitrieh",
   "linkedin": "dimitrieh",
   "email": "dimitrie@flowfuse.com",
   "country": "ES",
   "headshot": "dimitrie.png",
-  "reports_to": "Jamie Strusz",
+  "reports_to": "Lori Beaulieu",
+  "bio": "Product manager with a technical product design background, continuing to be meticulous about user-centric design, now shaping how industrial IT/OT teams are made more effective through AI at FlowFuse.",
   "facts": [
-    "Designer enthusiastic and specialised in Open Source and DevOps",
-    "Traveled and worked across the world, now makes life work across three countries instead of one",
-    "I grab my motorbike for a trip whenever I can"
+    "Envisions how FlowFuse Expert and AI tooling should feel for the industrial teams who actually have to use them",
+    "Fanatic of and specialised in Open Source and DevOps",
+    "Makes life work across three countries; grabs the motorbike whenever the calendar allows"
   ]
 }
