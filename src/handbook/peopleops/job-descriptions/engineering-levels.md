@@ -85,7 +85,6 @@ Examples:
 
 Community work is considered real work and should be planned and visible.
 
-
 # Levels
 
 Levels represent increasing scope of ownership and influence.
