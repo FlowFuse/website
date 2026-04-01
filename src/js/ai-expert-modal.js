@@ -809,7 +809,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Note: This API may only work in production (flowfuse.com domain)
             // For local development, we'll get simulated responses
-            const response = await fetch('https://flowfuse-expert-api.flowfuse.cloud/v4/website-chat', {
+            const response = await fetch('https://expert.flowfuse.com/v4/expert', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
