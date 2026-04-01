@@ -14,7 +14,7 @@ Now the browser tab title updates as you navigate the embedded editor. If you're
 Previously the title stayed generic — something like `Instance - Editor - FlowFuse` — regardless of which canvas tab was active. If you had multiple embedded editors open in different browser tabs, there was no way to tell them apart at a glance.
 
 ![Browser tab showing "Node-RED: Flow 1 - FlowFuse" after the update](./images/browser-title-after.png)
-*The browser tab now reflects the active canvas tab name.*
+*The browser tab title showing "Node-RED: Flow 1 - FlowFuse" after navigating to the Flow 1 canvas tab.*
 
 ![Browser tab showing the old generic title "Hosted Instance - Expert - FlowFuse"](./images/browser-title-before.png)
 *Previously, the title stayed generic regardless of which canvas tab was active.*
