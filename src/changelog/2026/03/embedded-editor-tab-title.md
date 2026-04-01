@@ -21,4 +21,4 @@ Previously the title stayed generic — something like `Instance - Editor - Flow
 
 This feature requires **Node-RED Assistant v0.12.0** or later. If you are on an older version of the assistant, the title will not update.
 
-This change is live on FlowFuse Cloud. Self Hosted users will receive it in the next release (v2.29).
+This change is live on FlowFuse Cloud. Self-Hosted users will receive it in the next release (v2.29).
