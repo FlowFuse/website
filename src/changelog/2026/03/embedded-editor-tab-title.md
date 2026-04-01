@@ -1,5 +1,5 @@
 ---
-title: Embedded Editor Now Shows Active Tab in Browser Title
+title: Embedded Editor Now Shows Active Tab
 description: The browser tab title now updates to reflect the active Node-RED canvas tab when working in the embedded editor.
 date: 2026-03-31 00:00:00
 authors: ['noley-holland']
