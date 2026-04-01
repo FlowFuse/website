@@ -11,10 +11,10 @@ issues:
 
 Now the browser tab title updates as you navigate the embedded editor. If you're working on a tab called "Sensor Flow", your browser will show `Node-RED: Sensor Flow - FlowFuse`. This works for both hosted and remote device instances, and also updates when you navigate into a subflow.
 
-Previously, the title stayed generic — something like `Instance - Editor - FlowFuse` — regardless of which canvas tab was active. If you had multiple embedded editors open in different browser tabs, there was no way to tell them apart at a glance.
-
 ![Browser tab showing "Node-RED: Flow 1 - FlowFuse" after the update](./images/browser-title-after.png)
 *The browser tab title showing "Node-RED: Flow 1 - FlowFuse" after navigating to the Flow 1 canvas tab.*
+
+Previously, the title stayed generic — something like `Instance - Editor - FlowFuse` — regardless of which canvas tab was active. If you had multiple embedded editors open in different browser tabs, there was no way to tell them apart at a glance.
 
 ![Browser tab showing the old generic title "Hosted Instance - Expert - FlowFuse"](./images/browser-title-before.png)
 *The old generic title, showing "Hosted Instance - Expert - FlowFuse" regardless of which canvas tab was open.*
