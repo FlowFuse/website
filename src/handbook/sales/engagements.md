@@ -125,7 +125,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
      invoice
 1. Move the deal to `Closing` in HubSpots Deal overview, update the close date
    to when the customer committed to purchasing.
-1. Send the CSM a note with the following information:
+1. Send the CSM a direct message on slack with the following information:
    - Company Name
    - Key Champion
    - Billing Contact
