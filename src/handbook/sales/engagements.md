@@ -125,6 +125,11 @@ as evidenced by a PO or signed quote, is the sole determinant.
      invoice
 1. Move the deal to `Closing` in HubSpots Deal overview, update the close date
    to when the customer committed to purchasing.
+1. Send the CSM a note with the following information:
+   - Company Name
+   - Key Champion
+   - Billing Contact
+   - Trial/PoV History: Please specify if they had an active Trial or Proof of Value (PoV) running prior to signing the annual contract.
 
 ### Steps for the CSM to complete
 
@@ -136,7 +141,6 @@ as evidenced by a PO or signed quote, is the sole determinant.
 1. Create the
    [subscription](/handbook/operations/billing/#creating-a-subscription)
 1. If the signed quote is either an upsell or renewal, update the subscription with the line items and new pricing.
-1. If a P.O. number has to filed on the invoice, create invoice manually
 1. Provide access to the agreed upon line items
    - _Cloud_
      - Set up a team on FlowFuse Cloud for the customer in the right tier
