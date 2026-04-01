@@ -19,8 +19,6 @@ Previously the title stayed generic — something like `Instance - Editor - Flow
 ![Browser tab showing the old generic title "Hosted Instance - Expert - FlowFuse"](./images/browser-title-before.png)
 *Previously, the title stayed generic regardless of which canvas tab was active.*
 
-This works for both hosted instances and remote device instances, and also updates when you navigate into a subflow.
-
 This feature requires **Node-RED Assistant v0.12.0** or later. If you are on an older version of the assistant, the title will not update.
 
 This change is live on FlowFuse Cloud. Self Hosted users will receive it in the next release (v2.29).
