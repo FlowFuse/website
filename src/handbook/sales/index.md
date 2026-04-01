@@ -25,7 +25,6 @@ customer expansion, and customer success. This includes:
 | Role | Contributors |
 |------|--------------|
 | VP of Sales | [Michael Davis](/team#michael-davis) [@MichaelBDavis](https://github.com/MichaelBDavis) |
-| AE | [Omar Ahmed](/team#omar-ahmed) [@omarazizahmed](https://github.com/omarazizahmed) | 
 | AE |[Kasheef Mohammed](/team#kasheef-mohammed) [@Kasheef](https://github.com/Kasheef13) |
 | CSM | [Esmé Wieringa](/team#esme-wieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
 
