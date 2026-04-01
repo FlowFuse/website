@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedPrompts = shuffled.slice(0, INITIAL_SUGGESTIONS_COUNT);
         function createPromptButton({appendClass, attr, text, title}) {
             const button = document.createElement('button');
-            button.className = `${appendClass} text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600 whitespace-nowrap overflow-hidden text-ellipsis`;
+            button.className = `${appendClass} text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-500 hover:bg-white hover:shadow-sm transition-all border hover:border-indigo-600 border-indigo-200 whitespace-nowrap overflow-hidden text-ellipsis`;
             if (attr) {
                 button.setAttribute('data-prompt', attr);
             }
