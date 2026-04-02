@@ -18,6 +18,8 @@ cta:
 
 You set a scan rate, point it at a device, start reading registers, and data flows. It works. So nobody looks at it again.
 
+<!--more-->
+
 Except "working" and "working correctly" are different things in Modbus polling, and the gap between them is where most engineers quietly lose data, burn network bandwidth, and cause the intermittent device dropouts that get blamed on hardware.
 
 The mistakes aren't exotic. They're the same ones across almost every installation: polling everything at the same rate, ignoring timeouts, stacking too many registers into single requests, or hammering slow devices with back-to-back queries they were never designed to handle. None of these are obvious from the outside because Modbus doesn't complain. It just silently returns stale data, drops a frame, or lets the device go quiet.
