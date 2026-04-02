@@ -5,7 +5,7 @@ description: "Learn how to decode binary data from any legacy serial device in N
 date: 2026-03-27
 keywords: binary data parsing, serial communication, Node-RED, FlowFuse, buffer parser, frame validation, checksum validation, bitfield parsing, RS-232, legacy devices, industrial IoT
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/03/images/parse-binary-data.png
 tags:
   - flowfuse
 cta:
