@@ -35,12 +35,12 @@ Insert the two tokens
       assistant:
         enabled: true
         service:
-          url: https://flow-gen.flowfuse.cloud/v1/openai
+          url: https://expert.flowfuse.com/v1/openai
           token: <Assistant Token>
       expert:
         enabled: true
         service:
-          url: https://flowfuse-expert-api.flowfuse.cloud/v4/expert
+          url: https://expert.flowfuse.com/v4/expert
           token: <Expert Token>
 ```
 
@@ -51,8 +51,8 @@ Insert the two tokens
 The feature is enabled by adding the tokens to the values passed to the Helm chart.
 
  - `forge.assistant.enabled` should be set to `true`
- - `forge.assistant.service.url` should be set to `https://flow-gen.flowfuse.cloud/v1/openai`
+ - `forge.assistant.service.url` should be set to `https://expert.flowfuse.com/v1/openai`
  - `forge.assistant.service.token` should be set to the provided Assistant Token
  - `forge.expert.enabled` should be set to `true`
- - `forge.expert.service.url` should be set to `https://flowfuse-expert-api.flowfuse.cloud/v4/expert`
+ - `forge.expert.service.url` should be set to `https://expert.flowfuse.com/v4/expert`
  - `forge.expert.service.token` should be set to the provided Expert Token
