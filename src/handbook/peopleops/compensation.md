@@ -165,6 +165,31 @@ For bonuses tied to quarterly or period-based MBOs:
 
 Bonuses will not be processed if MBOs are defined or changed after the period has started.
 
+### Bonus Calculation (MBO Attainment)
+
+When an MBO is defined as a growth target, attainment is measured based on the proportion of growth achieved, not the absolute value reached.
+
+#### Definitions
+
+* **Baseline**: the starting value at the beginning of the period
+* **Target**: the expected value after applying the growth objective
+* **Required growth**: target minus baseline
+* **Achieved growth**: actual result minus baseline
+
+#### Calculation
+
+Attainment is calculated as:
+
+> Attainment = achieved growth ÷ required growth
+
+The baseline is only used to determine the growth and is not included in the attainment itself.
+
+#### Notes
+
+* Being close to the target in absolute terms does not imply high attainment
+* All growth-based MBOs follow this approach unless explicitly defined otherwise
+
+
 ## Bonus Review (End of Period)
 * Within 5 business days after period end, the employee sends a final MBO summary to the Manager covering:
   * Bonus period (quarter or dates)
