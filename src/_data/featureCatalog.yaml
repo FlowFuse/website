@@ -599,7 +599,7 @@ sections:
         changelog: null
         subfeature: true
         solutions: [mes, scada, uns, it-ot-middleware]
-        showOnPricing: false
+        showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
@@ -625,7 +625,7 @@ sections:
            release: '2.29'
         subfeature: true
         solutions: [mes, scada, uns, it-ot-middleware]
-        showOnPricing: false
+        showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
           starter:
