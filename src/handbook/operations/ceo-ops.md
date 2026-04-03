@@ -120,66 +120,51 @@ When drafting any email for CEO review:
 # 
 
 
-# CEO Calendar Management \
+# CEO Calendar Management
 
 
 This guide outlines how we manage the CEO’s calendar to ensure clarity, efficiency, and alignment with priorities. The goal is to maintain a predictable schedule, reduce unnecessary context switching, and support effective asynchronous work.
 
-Note: The CEO’s calendar operates in CET, and all scheduling should default to CET unless explicitly stated otherwise.
+Note: The CEO’s calendar operates in Pacific Time , and all scheduling should default to PT unless explicitly stated otherwise.
 
 
 ---
 
-
 ## Core Principles
-
-
 
 * **Accuracy:** The calendar must always reflect the CEO’s true availability.
 * **Clarity:** Every meeting requires a purpose, agenda, and supporting context.
 * **Protection of time:** Buffers, OOO blocks, and focus periods must be respected.
 * **Prioritization:** The calendar is optimized around the CEO’s highest-impact work.
-* **Timezone-aware:** All scheduling must account for CET.
-
-
----
-
-
-## CEO Availability & Working Hours (CET)
-
-The following availability rules must always be reflected accurately on the CEO’s calendar: \
-
-
-
-
-* Core working hours: Monday–Friday, 09:00–17:00 CET. \
- If a slot is open during this window, it is generally bookable. \
-
-* Evening working blocks: Tuesday, Wednesday, Thursday, 19:00–22:00 CET. \
- Aim to keep one evening per week free whenever possible. \
-
-* Protected family time: 17:00–19:00 CET on weekdays. \
- Not bookable except for urgent matters involving current investors. \
- This exception does not apply to new investors. \
-
-* Fridays: The CEO aims to finish by 17:00 CET. \
- Occasional exceptions may be made for important calls with a current investor (Cota). \
-
-* Known unavailability (e.g., commuting or travel transitions) must be blocked on the calendar.
-
+* **Timezone-aware:** All scheduling must account for PT.
 
 ---
 
+## CEO Availability & Working Hours (Pacific Time)
+
+The following availability rules must always be reflected accurately on the CEO’s calendar:
+
+1. Core working hours: Monday–Friday, 05:00 - 14:00 PT 
+* If a slot is open during this window, it is generally bookable.
+
+2. Protected time (family/personal):
+* The CEO may block time for family or personal commitments. These periods should not be bookable, except for urgent matters
+* Occasional exceptions may be made for important calls with current or prospective investors.
+
+3. Exercise blocks:
+* Ensure exercise time is scheduled daily but may shift based on availability.
+
+---
 
 ### Review the Calendar (Start of Day)
 
 
 
-* Review the CEO’s calendar to ensure accuracy and CET alignment.
+* Review the CEO’s calendar to ensure accuracy and PT alignment.
 * Confirm no meeting overlaps; escalate conflicts as needed.
 * Verify each meeting includes a purpose, agenda, and relevant links.
 * Identify any sessions requiring CEO approval or rescheduling.
-* Check the week ahead for high-effort, investor-related, or time-sensitive commitments. \
+* Check the week ahead for high-effort, investor-related, or time-sensitive commitments.
 
 
 
@@ -218,12 +203,10 @@ Available on request to the P.A. from the CEO.
 
 **Important:**
 
-* All **1:1 meeting requests** must first be raised during the **daily touch-base**.
-* Send the link **only after** the CEO gives **explicit approval**.
-
+* All **1:1 meeting requests** must first be raised during the **daily touch-base**
+* Send the link **only after** the CEO gives **explicit approval**
 
 ---
-
 
 ### 3. Honor OOO Blocks
 
@@ -236,15 +219,11 @@ OOO blocks are non-negotiable and must not be overridden except for:
 
 Any exception must be surfaced to the CEO immediately.
 
-
 ---
-
 
 ### 4. Maintain Calendar Structure
 
 Use the following event types consistently:
-
-
 
 * Meeting – confirmed sessions with a documented agenda
 * Buffer – reserved time following every meeting
@@ -255,11 +234,9 @@ Use the following event types consistently:
 
 ---
 
-
 ## Rescheduling Protocol
 
 When a meeting needs to be moved:
-
 
 
 * Notify all participants.
@@ -268,22 +245,15 @@ When a meeting needs to be moved:
 * Investor or board meetings may not be moved without direct CEO approval.
 * OOO boundaries must be respected unless the matter is urgent or board-related.
 
-
 ---
-
 
 ## Weekly Review
 
 Once per week, complete a structured audit:
 
-
-
 * Validate agendas and materials for all major meetings.
 * Confirm hiring blocks, recurring syncs, and investor meetings are correctly placed.
 * Ensure all OOO blocks remain intact.
 * Flag days that appear overloaded and raise concerns with the CEO.
-* Remove unused holds and outdated calendar blocks. \
-
-
- \
+* Remove unused holds and outdated calendar blocks.
 
