@@ -16,9 +16,6 @@ features:
    - id: ff-expert
      heading: "FlowFuse Expert for Self-Hosted Enterprise"
    - heading: "What else is new?"
-     tiers:
-       cloud: all
-       selfHosted: all
 ---
 
 <!--
@@ -29,31 +26,31 @@ features:
   - [ ] Final copy review
 -->
 
-FlowFuse 2.29 brings two additions that our enterprise users have been asking for: Azure DevOps Git integration for your DevOps Pipelines, and FlowFuse Expert for self-hosted enterprise customers giving you faster troubleshooting and flow-building guidance.
+FlowFuse 2.29 brings two capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, and FlowFuse Expert for self-hosted enterprise deployments.
 
 <!--more-->
 
 ## Azure DevOps Git Integration {#azure-devops}
 
-Until now, FlowFuse's Git integration only supported GitHub repositories. That left teams using Azure DevOps without a way to connect their flows to their existing Git workflows.
+Until now, FlowFuse's Git integration only supported GitHub repositories. That left teams using Azure DevOps without a native way to include their Node-RED flows in their existing version control workflows.
 
-FlowFuse 2.29 adds full Azure DevOps Git support to DevOps Pipelines. You can now push and pull flows from Azure DevOps repos and trigger pipeline stages against them — the same way you could with GitHub.
+FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push and pull snapshots from Azure DevOps repositories — the same way you could with GitHub.
 
 <!-- TODO: screenshot of Azure DevOps pipeline setup -->
 
-- **Connect Azure DevOps repos** to your FlowFuse pipelines alongside or instead of GitHub
-- **Run pipeline stages** that push or pull from Azure DevOps repositories
-- **Use Azure Personal Access Tokens** for authentication — configured in the same token dialog you already know
+- **Connect Azure DevOps repos** alongside or instead of GitHub
+- **Push and pull snapshots** directly from your Azure DevOps repositories
+- **Use Azure Personal Access Tokens** for authentication — configured under Team Settings → Integrations
 
 If your organisation standardises on Azure DevOps for version control, your Node-RED flows can now be part of that workflow.
 
 ## FlowFuse Expert for Self-Hosted Enterprise {#expert-self-hosted}
 
-Self-hosted enterprise customers can now troubleshoot flows faster, get contextual guidance while building, and point at specific debug logs or nodes to get targeted help — all from within the editor. This is FlowFuse Expert, and with 2.29 it is available for self-hosted enterprise deployments.
+FlowFuse Expert — the AI-powered assistant that helps you troubleshoot flows, get contextual guidance while building, and point at specific debug logs or nodes for targeted help — can now be enabled for self-hosted enterprise deployments.
 
 <!-- TODO: screenshot or diagram showing self-hosted Expert in use -->
 
-If you are a self-hosted enterprise customer and want Expert enabled for your deployment, reach out to your customer success representative.
+To get Expert enabled on your self-hosted environment, reach out to your customer success representative.
 
 ## What else is new?
 
@@ -61,7 +58,7 @@ If you are a self-hosted enterprise customer and want Expert enabled for your de
 - **Expert opens by default** — FlowFuse Expert now opens automatically when you visit the editor for the first time. If you close it, that preference is remembered across browser sessions.
 - **MCP server discoverability fix** — Older MCP servers that were registered on your instances were not showing up in Expert Insights mode. All registered MCP servers are now discoverable again.
 - **Embedded editor tab titles** — Hosted and Remote Instance editor tabs now show the actual Node-RED flow name rather than a generic title.
-- **Blueprint markdown rendering** — Blueprint descriptions now render properly as markdown, so formatting like headers and lists display as intended.
+- **Blueprint markdown rendering** — Blueprint descriptions now support markdown rendering, so formatting like headers and lists display as intended.
 - **SSO team role management** — Team roles for SSO-managed users can now be changed directly in FlowFuse, resolving a limitation where SSO-enabled users' roles were locked.
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.29, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
