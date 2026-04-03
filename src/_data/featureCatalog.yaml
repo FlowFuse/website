@@ -571,7 +571,7 @@ sections:
 
       - id: git-integration
         label: Git Integration
-        description: "Back up your flows to a remote Git repository through a DevOps Pipeline."
+        description: "Back up your flows to a remote Git repository through a DevOps Pipeline. Supports GitHub and Azure DevOps repositories."
         docsLink: /docs/user/devops-pipelines/#git-repository-stage
         changelog:
          - url: '/changelog/2026/03/azure-dev-ops-gitops'
