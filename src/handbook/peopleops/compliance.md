@@ -10,7 +10,7 @@ FlowFuse uses the Mineral Portal (accessed via Deel) to manage state-specific ma
 - Adding Admins: Access cannot be granted self-serve. To add a new admin, you must contact our Payroll Provider HR Resource (refer to the Vendor Sheet for contact info).
 
 ### How to Access Mineral:
-1. Log in to the Payroll Provider (Deel).
+1. Log in to Deel.
 2. Navigate to the People Tab.
 3. Go to the Documents tab and scroll to the "Request by Deel" section.
 4. Click View on "Employee handbook and required HR training."
