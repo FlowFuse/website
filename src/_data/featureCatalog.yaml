@@ -573,11 +573,59 @@ sections:
         label: Git Integration
         description: "Back up your flows to a remote Git repository through a DevOps Pipeline. Supports GitHub and Azure DevOps repositories."
         docsLink: /docs/user/devops-pipelines/#git-repository-stage
+        changelog: null
+        solutions: [mes, scada, uns, it-ot-middleware]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+
+      - id: git-integration-github
+        label: GitHub
+        description: "Push and pull snapshots to GitHub repositories through DevOps Pipeline Git Stages."
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+
+      - id: git-integration-azure
+        label: Azure DevOps
+        description: "Push and pull snapshots to Azure DevOps repositories through DevOps Pipeline Git Stages."
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
         changelog:
          - url: '/changelog/2026/03/azure-dev-ops-gitops'
            release: '2.29'
+        subfeature: true
         solutions: [mes, scada, uns, it-ot-middleware]
-        showOnPricing: true
+        showOnPricing: false
         tags: [cloud, self-hosted]
         cloud:
           starter:
