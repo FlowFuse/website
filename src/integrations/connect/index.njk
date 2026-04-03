@@ -1,0 +1,32 @@
+---
+layout: layouts/nohero.njk
+title: Connect Integrations
+description: Browse all certified integration connection guides. Learn how to bridge data between industrial protocols, cloud services, and enterprise systems.
+meta:
+    title: "Connect Integrations | FlowFuse"
+---
+<div class="container mx-auto max-w-screen-lg px-6 py-12">
+    <h1 class="font-medium text-center">Connect Integrations</h1>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+        FlowFuse certified nodes make it easy to bridge data between systems.
+        Choose a connection to learn more.
+    </p>
+    {% for integration in certifiedIntegrations.integrations %}
+    <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4">Connect {{ integration.name }} to...</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {% for other in certifiedIntegrations.integrations %}
+                {% if other.slug != integration.slug %}
+                <a href="/integrations/{{ integration.slug }}/and/{{ other.slug }}/"
+                   class="block p-3 bg-white rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition-all hover:no-underline text-sm">
+                    <span class="font-semibold text-gray-800">{{ integration.shortName }}</span>
+                    <span class="text-gray-400 mx-1">&rarr;</span>
+                    <span class="font-semibold text-indigo-600">{{ other.name }}</span>
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% include "common-cta.njk" %}
