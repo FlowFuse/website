@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.29: Azure DevOps Git Integration and Expert for Self-Hosted Enterprise"
-subtitle: "Azure DevOps pipelines and faster flow troubleshooting now reach your self-hosted enterprise environment."
-description: "FlowFuse 2.29 adds Azure DevOps Git integration for DevOps Pipelines and brings FlowFuse Expert to self-hosted enterprise customers."
+subtitle: "Azure DevOps Git support and FlowFuse Expert now reach your self-hosted enterprise environment."
+description: "FlowFuse 2.29 adds Azure DevOps as a supported Git provider and brings FlowFuse Expert to self-hosted enterprise customers."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/04/images/flowfuse-release-2-29.png
@@ -11,7 +11,7 @@ tags:
    - releases
 release: "2.29"
 features:
-   - id: git-integration
+   - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
    - id: ff-expert
      heading: "FlowFuse Expert for Self-Hosted Enterprise"
