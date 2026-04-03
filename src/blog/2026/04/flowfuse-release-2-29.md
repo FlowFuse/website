@@ -11,15 +11,10 @@ tags:
    - releases
 release: "2.29"
 features:
-   - id: azure-devops
+   - id: git-integration
      heading: "Azure DevOps Git Integration"
-     tiers:
-       cloud: all
-       selfHosted: all
-   - id: expert-self-hosted
+   - id: ff-expert
      heading: "FlowFuse Expert for Self-Hosted Enterprise"
-     tiers:
-       selfHosted: enterprise
    - heading: "What else is new?"
      tiers:
        cloud: all
