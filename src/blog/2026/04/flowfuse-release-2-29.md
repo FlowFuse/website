@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.29: Azure DevOps Git Integration and Expert for Self-Hosted Enterprise"
-subtitle: "Azure DevOps pipelines and AI-assisted flow development now reach your self-hosted enterprise environment."
-description: "FlowFuse 2.29 adds Azure DevOps Git integration for DevOps Pipelines and brings FlowFuse Expert to self-hosted enterprise customers with zero-config setup via expert.flowfuse.com."
+subtitle: "Azure DevOps pipelines and faster flow troubleshooting now reach your self-hosted enterprise environment."
+description: "FlowFuse 2.29 adds Azure DevOps Git integration for DevOps Pipelines and brings FlowFuse Expert to self-hosted enterprise customers."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/04/images/flowfuse-release-2-29.png
@@ -32,10 +32,9 @@ features:
   - [ ] Screenshot for Expert on self-hosted
   - [ ] Blog post hero image (art request)
   - [ ] Final copy review
-  - [ ] Confirm SSO fix (#6994) lands — add to "What else is new" if so
 -->
 
-FlowFuse 2.29 brings two additions that our enterprise users have been asking for: Azure DevOps Git integration for your DevOps Pipelines, and FlowFuse Expert now available for self-hosted enterprise deployments.
+FlowFuse 2.29 brings two additions that our enterprise users have been asking for: Azure DevOps Git integration for your DevOps Pipelines, and FlowFuse Expert — faster troubleshooting and flow-building guidance — now available for self-hosted enterprise deployments.
 
 <!--more-->
 
@@ -55,25 +54,20 @@ If your organisation standardises on Azure DevOps for version control, your Node
 
 ## FlowFuse Expert for Self-Hosted Enterprise {#expert-self-hosted}
 
-FlowFuse Expert has been available on FlowFuse Cloud, but self-hosted enterprise customers could not access it — there was no enablement mechanism, and every request required ad-hoc engineering intervention.
+Self-hosted enterprise customers can now troubleshoot flows faster, get contextual guidance while building, and point at specific debug logs or nodes to get targeted help — all from within the editor. This is FlowFuse Expert, and with 2.29 it is available for self-hosted enterprise deployments.
 
-That changes with 2.29. We set up a unified `expert.flowfuse.com` endpoint and baked default URLs into the application code. Self-hosted enterprise instances now connect to Expert without manual configuration, giving your team access to both FlowFuse Expert and the AI Assistant.
+<!-- TODO: screenshot or diagram showing self-hosted Expert in use -->
 
-<!-- TODO: screenshot or diagram showing self-hosted Expert connection -->
-
-- **Zero-config connection** — self-hosted enterprise instances reach Expert automatically via `expert.flowfuse.com`
-- **No engineering intervention required** — enabling Expert no longer requires manual setup per customer
-- **Unified access** — connecting a customer provisions both Expert and Assistant together
-
-If you are a self-hosted enterprise customer and want Expert enabled, reach out to your customer success contact.
+If you are a self-hosted enterprise customer and want Expert enabled for your deployment, reach out to your customer success representative.
 
 ## What else is new?
 
+- **Node-RED 4.1.8** — FlowFuse now ships with Node-RED 4.1.8, which adds function node tab badges (see which tabs contain code at a glance), theme plugin overrides for settings and menu options, configurable palette categories via theme plugins, and show-first/last-tab keyboard actions.
 - **Expert opens by default** — FlowFuse Expert now opens automatically when you visit the editor for the first time. If you close it, that preference is remembered across browser sessions.
 - **MCP server discoverability fix** — Older MCP servers that were registered on your instances were not showing up in Expert Insights mode. All registered MCP servers are now discoverable again.
 - **Embedded editor tab titles** — Hosted and Remote Instance editor tabs now show the actual Node-RED flow name rather than a generic title.
 - **Blueprint markdown rendering** — Blueprint descriptions now render properly as markdown, so formatting like headers and lists display as intended.
-- **Platform reliability** — We added rate limiting to team suspension and scheduled maintenance operations, preventing large-scale instance restarts from overwhelming the backend.
+- **SSO team role management** — Team roles for SSO-managed users can now be changed directly in FlowFuse, resolving a limitation where SSO-enabled users' roles were locked.
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.29, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
