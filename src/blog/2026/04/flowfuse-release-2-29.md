@@ -34,7 +34,7 @@ features:
   - [ ] Final copy review
 -->
 
-FlowFuse 2.29 brings two additions that our enterprise users have been asking for: Azure DevOps Git integration for your DevOps Pipelines, and FlowFuse Expert — faster troubleshooting and flow-building guidance — now available for self-hosted enterprise deployments.
+FlowFuse 2.29 brings two additions that our enterprise users have been asking for: Azure DevOps Git integration for your DevOps Pipelines, and FlowFuse Expert for self-hosted enterprise customers giving you faster troubleshooting and flow-building guidance.
 
 <!--more-->
 
