@@ -57,7 +57,7 @@ One more thing worth stating plainly: your scan rate has to account for the devi
 
 Timeouts are the most quietly destructive configuration parameter in a Modbus polling setup. Set them wrong and your system doesn't fail loudly. It just becomes unreliable in ways that are genuinely difficult to trace back to the source.
 
-Here's what actually happens when a Modbus master sends a request: it waits. There's no acknowledgment mechanism in the protocol, no "I got your request, give me a moment." The master sends the frame and sits in silence until either a valid response arrives or the timeout expires. What happens after that expiry, whether retry, skip, error, or log, is entirely up to whatever stack you're using. Modbus itself has no opinion.
+Here's what actually happens when a Modbus master sends a request: it waits. There's no explicit acknowledgment mechanism beyond the response itself, no "I got your request, give me a moment." The master sends the frame and sits in silence until either a valid response arrives or the timeout expires. What happens after that expiry, whether retry, skip, error, or log, is entirely up to whatever stack you're using. Modbus itself has no opinion.
 
 That silence is where most setups go wrong.
 
@@ -73,7 +73,7 @@ If your timeout is 100ms and your device occasionally needs 130ms, you get a spu
 
 Timeout values aren't arbitrary. They have a floor set by physics and firmware, and your configured value needs to sit above that floor with enough margin to absorb real-world variation. The floor has three components:
 
-*Transmission time* is how long it takes to physically clock the request frame onto the wire. At 9600 baud, each bit takes roughly 104 microseconds. A typical Modbus RTU request runs 8 bytes, which is 80 bits including start and stop bits, so about 8ms just to transmit at 9600 baud. At 19200 baud it halves. At 115200 baud it becomes negligible.
+*Transmission time* is how long it takes to physically clock the request frame onto the wire. At 9600 baud, each bit takes roughly 104 microseconds. A typical Modbus RTU request runs 8 bytes, which at 11 bits per byte (1 start bit, 8 data bits, 1 stop bit, plus parity) comes to roughly 88 bits, so about 9ms just to transmit at 9600 baud. At 19200 baud it halves. At 115200 baud it becomes negligible.
 
 *Device processing time* is how long the device takes to receive the complete request, validate the CRC, look up the register values, and build the response. Budget 20 to 50ms for most industrial devices, 50 to 100ms for older PLCs and slower microcontrollers, and up to 150ms for devices known to have slow UART handling.
 
@@ -81,7 +81,7 @@ Timeout values aren't arbitrary. They have a floor set by physics and firmware, 
 
 Add those up for a 9600 baud network reading 10 registers from a moderately slow device: 8ms transmit + 75ms processing + 25ms response = 108ms minimum. A 100ms timeout fails this transaction every time. A 150ms timeout passes it usually but fails it when the device is under load. A 250ms timeout gives you real margin.
 
-The general rule: calculate your floor, then multiply by 1.5 to 2 as a stability margin. That margin isn't wasted time. It's the difference between a system that runs cleanly for years and one that produces unexplained errors every few days. For Modbus TCP the math changes but the principle doesn't. TCP eliminates the baud rate component, but device processing time still dominates, and now you've added network latency and TCP stack overhead on both ends. A 500ms timeout is reasonable for most TCP deployments. Anything under 200ms is asking for intermittent failures on anything but a pristine local network.
+The general rule: calculate your floor, then multiply by 1.5 to 2 as a stability margin. That margin isn't wasted time. It's the difference between a system that runs cleanly for years and one that produces unexplained errors every few days. For Modbus TCP the math changes but the principle doesn't. TCP eliminates the baud rate component, but device processing time still dominates, and now you've added network latency and TCP stack overhead on both ends. A 500ms timeout is reasonable for most TCP deployments. Anything under 200ms can lead to intermittent failures depending on device response time and network conditions.
 
 **The too-loose timeout problem**
 
