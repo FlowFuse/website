@@ -378,8 +378,12 @@ hubspot:
 
     // Scroll to hash target after hosting toggle (for tier badge links)
     if (window.location.hash) {
+        var hashTarget = window.location.hash;
+        if (typeof capture === 'function' && hashTarget.startsWith('#ff-feature--')) {
+            capture('pricing-deep-link-arrived', { hash: hashTarget, hosting: hosting, referrer: document.referrer });
+        }
         setTimeout(function() {
-            var el = document.querySelector(window.location.hash);
+            var el = document.querySelector(hashTarget);
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 100);
     }
@@ -403,7 +407,7 @@ hubspot:
         if (hosting === target) return;
         hosting = target;
         updateContentAndUrl(hosting);
-        capture(target);
+        if (typeof capture === 'function') capture('pricing-hosting-toggled', { hosting: target });
     });
 </script>
 
@@ -434,10 +438,11 @@ hubspot:
 <!-- Features info -->
 <script>
     function openInfo(id, hosting) {
-        if (typeof capture === 'function') { capture('info-feature', { feature: id }, { hosting: hosting }) }
+        if (typeof capture === 'function') capture('pricing-feature-info-opened', { feature: id, hosting: hosting });
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
     }
     function closeInfo(id, hosting) {
+        if (typeof capture === 'function') capture('pricing-feature-info-closed', { feature: id, hosting: hosting });
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
     }
 </script>

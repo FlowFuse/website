@@ -111,7 +111,7 @@
                 {% endif %}
                 {% endfor %}
                 {% if row.docsLink %}
-                <p><a href="{{ row.docsLink }}" target="_blank" rel="noopener">Learn more</a></p>
+                <p><a href="{{ row.docsLink }}" target="_blank" rel="noopener" onclick="if(typeof capture==='function')capture('pricing-feature-docs-clicked',{feature:'{{ row.id }}',hosting:'{{ hosting }}'})">Learn more</a></p>
                 {% endif %}
             </div>
         </div>
