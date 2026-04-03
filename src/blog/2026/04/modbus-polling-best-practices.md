@@ -3,7 +3,7 @@ title: "Most Modbus Polling Setups Are Wrong — Here's How to Fix Yours"
 subtitle: "The configuration decisions made at setup time that cause problems you'll blame on hardware"
 description: "Most Modbus polling problems aren't hardware failures. They're three configuration mistakes made at commissioning and never revisited. Here's how to fix them."
 date: 2026-04-03
-keywords: 
+keywords: Modbus polling, Modbus configuration, Modbus troubleshooting, Modbus scan rate, Modbus timeout, RS-485 communication, Modbus batching, industrial automation, SCADA systems, Node-RED Modbus
 authors: ["sumit-shinde"]
 image: 
 tags:
