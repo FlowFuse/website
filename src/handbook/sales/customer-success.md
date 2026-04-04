@@ -360,3 +360,26 @@ When a customer requests access to the FlowFuse Assistant, do the following:
    On the deadline day, go through the remaining instances and restart them.
    Check that each one comes back online properly, and assist customers with any
    issues that come up.
+
+## Customer Success Commission Structure
+
+The Customer Success team is compensated under a quarterly commission plan that rewards retention, growth, and product engagement.
+
+### Commission Components
+Payouts are based on three equally weighted goals (33.33% each). Note that weightings and specific targets are subject to review at the start of each fiscal year or quarter. _**To be confirmed**_
+
+1. Renewals Completed (33.33%): Based on the percentage of assigned renewals successfully closed.
+2. Net Retention Revenue (NRR) (33.33%): Measured against a 115% NRR goal. (100% NRR = 0% payout; 115% NRR = 100% payout).
+3. Quarterly KPI (33.33%): Focused on product engagement (e.g., 10 Customer PRs). **_Note: Management will confirm if overachievement results in additional commission._**
+
+### When Transactions are Credited
+To align with SaaS market standards, commission is credited based on the Effective Date of the contract change (when the revenue officially starts or stops). _**To be confirmed**_
+
+| Metric                | Credit Date for Commission   |
+| ----------------------| -----------------------------|
+| Churn                 | Contract End Date            |
+| Expansion (In-Term)   | Provisioning/Effective Date  |
+| Expansion (Renewal)   | New Contract Start Date      |
+| Renewal               | New Contract Start Date      |
+| Contraction           | New Contract Start Date      |
+_Example: If a renewal is signed in Q4 but the "Effective Start Date" is in Q1, the commission is earned in Q1._
