@@ -1,0 +1,97 @@
+# Industrial use cases for FlowFuse
+# Each generates a page at: /solutions/use-cases/{slug}/
+#
+# To add a new use case, add an entry below.
+useCases:
+  - slug: data-acquisition
+    name: Data Acquisition
+    description: >
+      Collect data from diverse industrial sources including PLCs, sensors,
+      and legacy equipment. Normalize and route data to databases, cloud
+      platforms, and analytics tools.
+    heroDescription: >
+      FlowFuse makes industrial data acquisition simple. Connect any
+      device, transform any protocol, and deliver data anywhere — all
+      from a single platform.
+    relatedProtocols:
+      - opc-ua
+      - mqtt
+      - modbus
+      - ethernet-ip
+    meta:
+      title: "Data Acquisition with FlowFuse"
+      description: "Collect industrial data from any source with FlowFuse. Support for OPC-UA, MQTT, Modbus, and more."
+      keywords: "data acquisition, industrial data, FlowFuse, IoT data collection"
+
+  - slug: data-transformation
+    name: Data Transformation
+    description: >
+      Transform, enrich, and normalize data between industrial systems.
+      Convert protocols, reshape payloads, and apply business logic to
+      raw machine data before it reaches downstream systems.
+    heroDescription: >
+      Transform industrial data with FlowFuse. Convert formats, enrich
+      payloads, and apply business logic — all with low-code flows.
+    relatedProtocols:
+      - opc-ua
+      - mqtt
+      - modbus
+      - http-rest
+    meta:
+      title: "Data Transformation with FlowFuse"
+      description: "Transform and normalize industrial data with FlowFuse. Protocol conversion, payload reshaping, and more."
+      keywords: "data transformation, protocol conversion, industrial data, FlowFuse"
+
+  - slug: data-deployment
+    name: Data Deployment
+    description: >
+      Deploy data flows and applications to edge devices and remote sites
+      at scale. Manage, update, and monitor deployments across your entire
+      fleet from a central platform.
+    heroDescription: >
+      Deploy industrial data flows at scale with FlowFuse. Push to edge
+      devices, manage remote sites, and keep your fleet in sync.
+    relatedProtocols:
+      - mqtt
+      - http-rest
+    meta:
+      title: "Data Deployment with FlowFuse"
+      description: "Deploy data flows to edge devices at scale with FlowFuse. Centralized management for distributed architectures."
+      keywords: "data deployment, edge deployment, fleet management, FlowFuse, IoT"
+
+  - slug: data-storage
+    name: Data Storage
+    description: >
+      Route industrial data to databases, historians, and data lakes.
+      Connect to time-series databases, SQL stores, cloud storage, and
+      enterprise data platforms.
+    heroDescription: >
+      Store industrial data anywhere with FlowFuse. Connect to databases,
+      historians, and cloud platforms with pre-built integrations.
+    relatedProtocols:
+      - mqtt
+      - http-rest
+      - opc-ua
+    meta:
+      title: "Data Storage with FlowFuse"
+      description: "Route industrial data to any storage with FlowFuse. Databases, historians, cloud platforms, and more."
+      keywords: "data storage, industrial data, time-series database, data historian, FlowFuse"
+
+  - slug: data-visualisation
+    name: Data Visualisation
+    description: >
+      Build real-time dashboards and visualisations for industrial data.
+      Monitor machine health, track KPIs, and display production metrics
+      with customisable, low-code interfaces.
+    heroDescription: >
+      Visualise industrial data in real time with FlowFuse. Build
+      dashboards, monitor KPIs, and share insights across your organisation.
+    relatedProtocols:
+      - opc-ua
+      - mqtt
+      - modbus
+      - s7
+    meta:
+      title: "Data Visualisation with FlowFuse"
+      description: "Build real-time industrial dashboards with FlowFuse. Monitor machines, track KPIs, and visualise production data."
+      keywords: "data visualisation, industrial dashboards, real-time monitoring, FlowFuse, IoT"
