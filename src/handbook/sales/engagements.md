@@ -136,7 +136,11 @@ as evidenced by a PO or signed quote, is the sole determinant.
 1. Create the
    [subscription](/handbook/operations/billing/#creating-a-subscription)
 1. If the signed quote is either an upsell or renewal, update the subscription with the line items and new pricing.
-1. If a P.O. number has to filed on the invoice, create invoice manually
+1. To include a P.O. number on an invoice, enter it into the PO Number field on the Deal object. Once the subscription is created, the workflow automatically pushes this number to the invoice. This process also works if a customer provides the P.O. number after the deal has already closed.
+   - Locate the Deal: Open the specific deal in HubSpot.
+   - Enter PO: Fill in the PO Number field.
+   - Automation: The system syncs this to the invoice upon subscription creation.
+   - Late POs: If a PO arrives after closing, updating the field will still trigger the sync to the current invoice.
 1. Provide access to the agreed upon line items
    - _Cloud_
      - Set up a team on FlowFuse Cloud for the customer in the right tier
