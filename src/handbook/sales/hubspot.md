@@ -39,9 +39,11 @@ MQLs will be engaged by a Sales Representative, according with the appropriate g
 
 ##### From MQL to SQL - Qualifying questions
 
-- Is there a use case FlowFuse can solve?
-- Is there a need, now or in the near future, for 10 or more instances?
-- Is there a timeline for implementation within the next 6 months?
+- Does the prospect and company fit the target industry / company size / role?
+- Are they working on an initiative related to connecting systems, industrial data, or operational workflows?
+- Can they describe a specific problem, use case or goal they’re trying to address?
+- Is this an active or planned initiative (not just general research)?
+- Are they open to a meeting to explore their use case in more detail?
 
 ### Lead Status
 
