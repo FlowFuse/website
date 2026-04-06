@@ -5,7 +5,7 @@ description: "Most Modbus polling problems aren't hardware failures. They're thr
 date: 2026-04-03
 keywords: Modbus polling, Modbus configuration, Modbus troubleshooting, Modbus scan rate, Modbus timeout, RS-485 communication, Modbus batching, industrial automation, SCADA systems, Node-RED Modbus
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/04/images/modbus-polling-best-practices.png
 tags:
 - flowfuse
 cta:
