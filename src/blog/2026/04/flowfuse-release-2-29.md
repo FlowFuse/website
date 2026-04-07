@@ -44,6 +44,8 @@ FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push an
 
 If your organisation standardises on Azure DevOps for version control, your Node-RED flows can now be part of that workflow.
 
+<!-- Changelog auto-injects from featureCatalog (git-integration-azure → /changelog/2026/03/azure-dev-ops-gitops). No manual placeholder needed. -->
+
 ## See Exactly What Changed in a Snapshot {#snapshot-diff}
 
 FlowFuse's snapshot comparison already showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific properties changed. When a function node's code changed, you couldn't tell which lines were different without manually diffing two code blocks.
@@ -55,6 +57,9 @@ With 2.29, the compare dialog adds a property-level diff sidebar that shows exac
 
 <!-- TODO: replace placeholder with real GIF showing the snapshot diff sidebar -->
 
+<!-- TODO: changelog entry for snapshot diff sidebar (FlowFuse/flowfuse#7025, PR #7026) -->
+<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
+
 ## FlowFuse Expert {#expert}
 
 FlowFuse Expert is our integrated AI assistant. It runs across the FlowFuse website, the FlowFuse platform, and the immersive Node-RED experience you use to manage your Node-RED instances in FlowFuse, giving you one consistent AI surface for troubleshooting flows, building with contextual guidance, and getting targeted help on specific debug logs or nodes.
@@ -64,6 +69,9 @@ FlowFuse Expert is our integrated AI assistant. It runs across the FlowFuse webs
 FlowFuse Expert is now available for self-hosted enterprise FlowFuse instances, giving your team the same troubleshooting, contextual guidance, and targeted help as cloud customers, all while keeping your operational data on your own infrastructure.
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
+
+<!-- TODO: changelog entry for Expert on self-hosted enterprise -->
+<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
 
 ### Take action directly from Expert responses {#expert-actions}
 
@@ -75,6 +83,9 @@ Expert responses can now include clickable action links. Click one and Expert pe
 <!-- TODO: replace placeholder with real GIF showing action links in Expert responses -->
 
 **Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.
+
+<!-- TODO: changelog entry for Expert action links (FlowFuse/nr-assistant#184, #192, FlowFuse/flowfuse#6864) -->
+<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
 
 ## What else is new?
 
