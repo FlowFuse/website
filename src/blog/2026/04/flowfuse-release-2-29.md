@@ -108,15 +108,20 @@ If something in this release improves your workflow, or if there is still fricti
 
 ## Try FlowFuse
 
+<style>
+.ff-try-card > *:first-child { margin-top: 0 !important; }
+.ff-try-card > *:last-child { margin-bottom: 0 !important; }
+</style>
+
 <div class="grid md:grid-cols-2 gap-6 my-6" markdown="1">
-<div class="border-2 border-indigo-100 rounded-lg p-6 [&>*:first-child]:!mt-0 [&>*:last-child]:!mb-0" markdown="1">
+<div class="ff-try-card border-2 border-indigo-100 rounded-lg p-6" markdown="1">
 
 ### FlowFuse Cloud
 
 [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud and start connecting your IT and OT systems within minutes.
 
 </div>
-<div class="border-2 border-indigo-100 rounded-lg p-6 [&>*:first-child]:!mt-0 [&>*:last-child]:!mb-0" markdown="1">
+<div class="ff-try-card border-2 border-indigo-100 rounded-lg p-6" markdown="1">
 
 ### Self-Hosted
 
