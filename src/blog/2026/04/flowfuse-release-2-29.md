@@ -13,7 +13,7 @@ release: "2.29"
 features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
-   - heading: "See Exactly What Changed in a Snapshot"
+   - heading: "See Exactly What Changed in a Node-RED Instance Snapshot"
    - id: ff-expert
      heading: "FlowFuse Expert"
    - heading: "What else is new?"
@@ -46,9 +46,9 @@ If your organisation standardises on Azure DevOps for version control, your Node
 
 <!-- Changelog auto-injects from featureCatalog (git-integration-azure → /changelog/2026/03/azure-dev-ops-gitops). No manual placeholder needed. -->
 
-## See Exactly What Changed in a Snapshot {#snapshot-diff}
+## See Exactly What Changed in a Node-RED Instance Snapshot {#snapshot-diff}
 
-FlowFuse's snapshot comparison already showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific properties changed. When a function node's code changed, you couldn't tell which lines were different without manually diffing two code blocks.
+FlowFuse lets you take snapshots of your Node-RED instances, capturing the full set of flows at a point in time so you can roll back, promote between environments, or compare two versions. The snapshot comparison view already showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific properties changed. When a function node's code changed, you couldn't tell which lines were different without manually diffing two code blocks.
 
 ![Placeholder for snapshot diff demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Snapshot+diff+sidebar+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Placeholder, replace with GIF demonstrating the new snapshot diff sidebar</figcaption>
