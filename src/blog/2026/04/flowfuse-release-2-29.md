@@ -4,7 +4,7 @@ subtitle: "Azure DevOps Git support and FlowFuse Expert now reach your self-host
 description: "FlowFuse 2.29 adds Azure DevOps as a supported Git provider and brings FlowFuse Expert to self-hosted enterprise customers."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
-image: /blog/2026/04/images/flowfuse-release-2-29.png
+image: /blog/2026/04/images/flowfuse-release-2-29-placeholder.png
 tags:
    - flowfuse
    - news
