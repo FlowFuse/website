@@ -46,7 +46,7 @@ If your organisation standardises on Azure DevOps for version control, your Node
 
 ## FlowFuse Expert {#expert}
 
-FlowFuse Expert is the AI-powered assistant that helps you troubleshoot flows, get contextual guidance while building, and point at specific debug logs or nodes for targeted help.
+FlowFuse Expert is our integrated AI assistant. It runs across the FlowFuse website, the FlowFuse platform, and the immersive Node-RED experience you use to manage your Node-RED instances in FlowFuse, giving you one consistent AI surface for troubleshooting flows, building with contextual guidance, and getting targeted help on specific debug logs or nodes.
 
 ### Available for Self-Hosted Enterprise {#expert-self-hosted}
 
