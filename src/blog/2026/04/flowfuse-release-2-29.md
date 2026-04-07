@@ -65,7 +65,7 @@ With 2.29, the compare dialog adds a property-level diff sidebar that shows exac
 
 *FlowFuse Expert is our integrated AI assistant. One consistent surface across the FlowFuse website, platform, and immersive Node-RED editor for troubleshooting, building, and getting targeted help.*
 
-### Available for Self-Hosted Enterprise {#expert-self-hosted}
+### Self-Hosted Enterprise customers can now get FlowFuse Expert enabled {#expert-self-hosted}
 
 FlowFuse Expert is now available for self-hosted enterprise FlowFuse instances, giving your team the same troubleshooting, contextual guidance, and targeted help as cloud customers, all while keeping your operational data on your own infrastructure.
 
