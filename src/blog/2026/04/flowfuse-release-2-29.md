@@ -13,6 +13,7 @@ release: "2.29"
 features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
+   - heading: "Visual Flow Diff Viewer"
    - id: ff-expert
      heading: "FlowFuse Expert"
    - heading: "What else is new?"
@@ -26,7 +27,7 @@ features:
   - [ ] Final copy review
 -->
 
-FlowFuse 2.29 brings two capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, and FlowFuse Expert for self-hosted enterprise deployments.
+FlowFuse 2.29 brings three capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, a visual flow diff viewer for snapshot comparisons, and FlowFuse Expert for self-hosted enterprise deployments.
 
 <!--more-->
 
@@ -42,6 +43,17 @@ FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push an
 - **Use Azure Personal Access Tokens** for authentication, configured under Team Settings → Integrations
 
 If your organisation standardises on Azure DevOps for version control, your Node-RED flows can now be part of that workflow.
+
+## Visual Flow Diff Viewer {#flow-diff}
+
+When you compare two flow snapshots, FlowFuse now shows you exactly what changed: every property, every line of function code, every wire. No more mentally diffing two function nodes side by side or guessing which property is different.
+
+![Placeholder for visual flow diff viewer demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Visual+flow+diff+viewer+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
+<figcaption>Placeholder, replace with GIF demonstrating the visual flow diff viewer</figcaption>
+
+The new compare dialog adds a property-level diff sidebar with git-style line diffs for code, a navigation bar that steps through every changed node (with arrow key shortcuts), and canvas highlights that scroll to the current node as you navigate. Whether you're reviewing what changed between dev and production, validating a teammate's update, or debugging why a flow broke after a deploy, you can now see exactly what changed without leaving FlowFuse.
+
+<!-- TODO: replace placeholder with real GIF showing the flow diff viewer -->
 
 ## FlowFuse Expert {#expert}
 
