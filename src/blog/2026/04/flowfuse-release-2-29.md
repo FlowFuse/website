@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.29: Azure DevOps, Clearer Snapshot Diffs, and Self-Hosted Expert"
-subtitle: "Azure DevOps Git support, clearer snapshot comparisons, and FlowFuse Expert for self-hosted enterprise customers."
-description: "FlowFuse 2.29 adds Azure DevOps as a supported Git provider, makes snapshot comparisons clearer with property-level diffs, and brings FlowFuse Expert to self-hosted enterprise customers."
+title: "FlowFuse 2.29: FlowFuse Expert Comes to Self-Hosted Enterprise"
+subtitle: "Self-Hosted Enterprise customers can now enable FlowFuse Expert. Plus Azure DevOps Git support and clearer snapshot comparisons."
+description: "FlowFuse 2.29 brings FlowFuse Expert to self-hosted enterprise customers, adds Azure DevOps as a supported Git provider, and makes snapshot comparisons clearer with property-level diffs."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/04/images/flowfuse-release-2-29-placeholder.png
