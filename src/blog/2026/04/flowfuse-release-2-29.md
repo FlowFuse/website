@@ -62,7 +62,7 @@ With 2.29, the compare dialog adds a property-level diff sidebar that shows exac
 
 ## FlowFuse Expert {#expert}
 
-FlowFuse Expert is our integrated AI assistant. It runs across the FlowFuse website, the FlowFuse platform, and the immersive Node-RED experience you use to manage your Node-RED instances in FlowFuse, giving you one consistent AI surface for troubleshooting flows, building with contextual guidance, and getting targeted help on specific debug logs or nodes.
+*FlowFuse Expert is our integrated AI assistant. It runs across the FlowFuse website, the FlowFuse platform, and the immersive Node-RED experience you use to manage your Node-RED instances in FlowFuse, giving you one consistent AI surface for troubleshooting flows, building with contextual guidance, and getting targeted help on specific debug logs or nodes.*
 
 ### Available for Self-Hosted Enterprise {#expert-self-hosted}
 
