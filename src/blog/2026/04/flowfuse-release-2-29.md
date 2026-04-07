@@ -46,7 +46,7 @@ If your organisation standardises on Azure DevOps for version control, your Node
 
 ## See Exactly What Changed in a Snapshot {#snapshot-diff}
 
-FlowFuse's snapshot comparison already showed flows side by side, but the visual alone doesn't always tell the whole story. When a function node's code changes, you couldn't tell which lines were different without manually diffing two code blocks. When a wire moved, spotting it on a busy canvas took effort.
+FlowFuse's snapshot comparison already showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific properties changed. When a function node's code changed, you couldn't tell which lines were different without manually diffing two code blocks.
 
 ![Placeholder for snapshot diff demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Snapshot+diff+sidebar+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Placeholder, replace with GIF demonstrating the new snapshot diff sidebar</figcaption>
