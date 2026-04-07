@@ -253,7 +253,7 @@ sections:
           starter:
             value: null
           pro:
-            value: null
+            value: true
           enterprise:
             value: true
 
@@ -277,7 +277,7 @@ sections:
           starter:
             value: null
           pro:
-            value: null
+            value: true
           enterprise:
             value: true
 
