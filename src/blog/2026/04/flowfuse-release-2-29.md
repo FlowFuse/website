@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.29: Azure DevOps, Visual Flow Diff, and Self-Hosted Expert"
-subtitle: "Azure DevOps Git support, visual snapshot diffs, and FlowFuse Expert for self-hosted enterprise customers."
-description: "FlowFuse 2.29 adds Azure DevOps as a supported Git provider, a visual flow diff viewer for snapshot comparisons, and brings FlowFuse Expert to self-hosted enterprise customers."
+title: "FlowFuse 2.29: Azure DevOps, Clearer Snapshot Diffs, and Self-Hosted Expert"
+subtitle: "Azure DevOps Git support, clearer snapshot comparisons, and FlowFuse Expert for self-hosted enterprise customers."
+description: "FlowFuse 2.29 adds Azure DevOps as a supported Git provider, makes snapshot comparisons clearer with property-level diffs, and brings FlowFuse Expert to self-hosted enterprise customers."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/04/images/flowfuse-release-2-29-placeholder.png
@@ -13,7 +13,7 @@ release: "2.29"
 features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
-   - heading: "Visual Flow Diff Viewer"
+   - heading: "See Exactly What Changed in a Snapshot"
    - id: ff-expert
      heading: "FlowFuse Expert"
    - heading: "What else is new?"
@@ -27,7 +27,7 @@ features:
   - [ ] Final copy review
 -->
 
-FlowFuse 2.29 brings three capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, a visual flow diff viewer for snapshot comparisons, and FlowFuse Expert for self-hosted enterprise deployments.
+FlowFuse 2.29 brings three capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, clearer snapshot comparisons that show exactly what changed, and FlowFuse Expert for self-hosted enterprise deployments.
 
 <!--more-->
 
@@ -44,16 +44,16 @@ FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push an
 
 If your organisation standardises on Azure DevOps for version control, your Node-RED flows can now be part of that workflow.
 
-## Visual Flow Diff Viewer {#flow-diff}
+## See Exactly What Changed in a Snapshot {#snapshot-diff}
 
-When you compare two flow snapshots, FlowFuse now shows you exactly what changed: every property, every line of function code, every wire. No more mentally diffing two function nodes side by side or guessing which property is different.
+FlowFuse's snapshot comparison already showed flows side by side, but the visual alone doesn't always tell the whole story. When a function node's code changes, you couldn't tell which lines were different without manually diffing two code blocks. When a wire moved, spotting it on a busy canvas took effort.
 
-![Placeholder for visual flow diff viewer demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Visual+flow+diff+viewer+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
-<figcaption>Placeholder, replace with GIF demonstrating the visual flow diff viewer</figcaption>
+![Placeholder for snapshot diff demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Snapshot+diff+sidebar+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
+<figcaption>Placeholder, replace with GIF demonstrating the new snapshot diff sidebar</figcaption>
 
-The new compare dialog adds a property-level diff sidebar with git-style line diffs for code, a navigation bar that steps through every changed node (with arrow key shortcuts), and canvas highlights that scroll to the current node as you navigate. Whether you're reviewing what changed between dev and production, validating a teammate's update, or debugging why a flow broke after a deploy, you can now see exactly what changed without leaving FlowFuse.
+With 2.29, the compare dialog adds a property-level diff sidebar that shows exactly what changed: structural properties old to new at a glance, and git-style line diffs for function code, template HTML, and JSON. A navigation bar steps through every changed, added, or deleted node with arrow key shortcuts, and the canvas highlights and scrolls to the current node as you navigate. Whether you're reviewing what changed between dev and production, validating a teammate's update, or debugging why a flow broke after a deploy, you can now see exactly what changed without leaving FlowFuse.
 
-<!-- TODO: replace placeholder with real GIF showing the flow diff viewer -->
+<!-- TODO: replace placeholder with real GIF showing the snapshot diff sidebar -->
 
 ## FlowFuse Expert {#expert}
 
