@@ -89,6 +89,7 @@ Expert responses can now include clickable action links. Click one and Expert pe
 
 - **Expert opens by default**: FlowFuse Expert now opens automatically when you visit the editor for the first time. If you close it, that preference is remembered across browser sessions.
 - **Embedded editor tab titles**: Hosted and Remote Instance editor tabs now show the actual Node-RED flow name rather than a generic title.
+- **Instance URL env var**: Hosted Node-RED instances now expose an `FF_INSTANCE_URL` environment variable containing the instance's URL (default or custom hostname). Useful for flows that need to know their own address, like webhook callbacks or OAuth redirects.
 - **Blueprint markdown rendering**: Blueprint descriptions now support markdown rendering, so formatting like headers and lists display as intended.
 
 ### Fixes
