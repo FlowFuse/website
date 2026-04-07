@@ -11,6 +11,8 @@ issues:
 
 Now the browser tab title updates as you navigate the embedded editor. If you're working on a tab called "Sensor Flow", your browser will show `Node-RED: Sensor Flow - FlowFuse`. This works for both hosted and remote device instances, and also updates when you navigate into a subflow.
 
+If you work with multiple editors open at once, you can now tell exactly what's open in each tab without clicking through.
+
 ![Browser tab showing "Node-RED: Flow 1 - FlowFuse" after the update](./images/browser-title-after.png)
 *The browser tab title showing "Node-RED: Flow 1 - FlowFuse" after navigating to the Flow 1 canvas tab.*
 
