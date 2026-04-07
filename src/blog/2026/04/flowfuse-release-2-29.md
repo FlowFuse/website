@@ -106,10 +106,13 @@ If something in this release improves your workflow, or if there is still fricti
 
 ## Try FlowFuse
 
-### FlowFuse Cloud
-
-[Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud and start connecting your IT and OT systems within minutes.
-
-### Self-Hosted
-
-[Install FlowFuse](/docs/install/introduction/) on your own infrastructure and keep your industrial data on-premise.
+<div class="grid md:grid-cols-2 gap-8 my-6 not-prose">
+  <div class="p-6 border border-gray-200 rounded-lg">
+    <h3 class="text-xl font-semibold mb-3" id="flowfuse-cloud">FlowFuse Cloud</h3>
+    <p><a href="{% include "sign-up-url.njk" %}" class="text-blue-600 hover:text-blue-800 font-medium">Get started for free</a> on FlowFuse Cloud and start connecting your IT and OT systems within minutes.</p>
+  </div>
+  <div class="p-6 border border-gray-200 rounded-lg">
+    <h3 class="text-xl font-semibold mb-3" id="self-hosted">Self-Hosted</h3>
+    <p><a href="/docs/install/introduction/" class="text-blue-600 hover:text-blue-800 font-medium">Install FlowFuse</a> on your own infrastructure and keep your industrial data on-premise.</p>
+  </div>
+</div>
