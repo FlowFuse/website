@@ -91,11 +91,14 @@ Expert responses can now include clickable action links. Click one and Expert pe
 ## What else is new?
 
 - **Expert opens by default**: FlowFuse Expert now opens automatically when you visit the editor for the first time. If you close it, that preference is remembered across browser sessions.
-- **MCP server discoverability fix**: Older MCP servers that were registered on your instances were not showing up in Expert Insights mode. All registered MCP servers are now discoverable again.
 - **Embedded editor tab titles**: Hosted and Remote Instance editor tabs now show the actual Node-RED flow name rather than a generic title.
 - **Snapshot detail in the immersive editor**: Reviewing a snapshot from inside the immersive editor now opens it in a modal, so you can inspect snapshots without leaving the editor.
-- **Developer Mode tab restored in the immersive editor**: The Developer Mode tab is back in the immersive editor drawer, letting you toggle Auto Snapshots and create snapshots without opening a second window.
 - **Blueprint markdown rendering**: Blueprint descriptions now support markdown rendering, so formatting like headers and lists display as intended.
+
+### Fixes
+
+- **MCP server discoverability**: Older MCP servers that were registered on your instances were not showing up in Expert Insights mode. All registered MCP servers are now discoverable again.
+- **Developer Mode tab restored in the immersive editor**: The Developer Mode tab is back in the immersive editor drawer, letting you toggle Auto Snapshots and create snapshots without opening a second window.
 - **SSO team role management**: Team roles for SSO-managed users can now be changed directly in FlowFuse, resolving a limitation where SSO-enabled users' roles were locked.
 
 ### Node-RED
