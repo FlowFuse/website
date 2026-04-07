@@ -36,10 +36,6 @@ Until now, FlowFuse's Git integration only supported GitHub repositories. That l
 
 FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push and pull snapshots from Azure DevOps repositories, the same way you could with GitHub.
 
-![Placeholder for Azure DevOps Git stage screenshot](https://placehold.co/900x500/e5e7eb/6b7280?text=Azure+DevOps+Git+stage+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
-<figcaption>Placeholder, replace with screenshot of Azure DevOps pipeline setup</figcaption>
-
-<!-- TODO: replace placeholder with real screenshot of Azure DevOps pipeline setup -->
 
 - **Connect Azure DevOps repos** alongside or instead of GitHub
 - **Push and pull snapshots** directly from your Azure DevOps repositories
