@@ -209,6 +209,29 @@ sections:
             value: true
             note: "Starts with 20, shared with hosted instance count"
 
+      - id: snapshots
+        label: Snapshots
+        description: "Take point-in-time backups of your Node-RED instances and devices. Restore, promote between environments, or compare two snapshots side by side to see exactly what changed."
+        docsLink: /docs/user/snapshots/
+        changelog: null
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: installation-support
         label: Installation Support
         description: null
