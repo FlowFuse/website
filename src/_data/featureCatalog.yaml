@@ -178,6 +178,29 @@ sections:
             value: true
             note: "Starts with 20, shared with edge device count"
 
+      - id: developer-mode-immersive-editor
+        label: Developer Mode in Immersive Editor
+        description: "The Developer Mode tab is accessible directly from the immersive editor drawer when working with remote instances."
+        changelog:
+          - url: /changelog/2026/03/developer-mode-in-immersive-editor/
+            release: "2.29"
+        subfeature: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+
       - id: edge-devices
         label: Edge Devices
         description: "Connect and manage edge devices running Node-RED at the network edge."
