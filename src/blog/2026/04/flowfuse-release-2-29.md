@@ -54,7 +54,7 @@ FlowFuse Expert is now available for self-hosted enterprise deployments, giving 
 
 <!-- TODO: screenshot or diagram showing self-hosted Expert in use -->
 
-[Contact your customer success representative](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
+[Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
 
 ### Take action directly from Expert responses {#expert-actions}
 
