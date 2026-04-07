@@ -25,10 +25,10 @@ diving into the messaging.
 ## Product Pillars Alignment
 
 Our core product messaging should reflect FlowFuse’s three [product pillars](/handbook/engineering/product/strategy/#product-pillars): 
-Operational Scaling (delivering consistency at scale instead of one-off “snowflake” projects), 
-System Agility (extending and adapting rigid vendor systems without rip-and-replace), and 
-Event-Driven Data Bridge (acting as a lightweight, event-based bridge that intelligently 
-routes data between the shop floor and the top floor).
+* Operational Scaling; delivering consistency at scale instead of one-off “snowflake” projects
+* System Agility; extending and adapting rigid vendor systems without rip-and-replace
+* Event-Driven Data Bridge; acting as a lightweight, event-based bridge that intelligently 
+routes data between the shop floor and the top floor.
 
 ## Audience
 
