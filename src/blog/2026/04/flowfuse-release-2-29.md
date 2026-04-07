@@ -107,6 +107,8 @@ Expert responses can now include clickable action links. Click one and Expert pe
 
 Looking ahead, [Node-RED 5.0](https://nodered.org/blog/2025/12/03/node-red-roadmap-to-5) is in beta. It's a modernization and UI re-architecture that readies Node-RED for better AI-guided development and brings more clarity to manual editing. FlowFuse will ship 5.0 once it reaches stable release.
 
+---
+
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.29, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
 If something in this release improves your workflow, or if there is still friction we can remove, please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.29) to us.
