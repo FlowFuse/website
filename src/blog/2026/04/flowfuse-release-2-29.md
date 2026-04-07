@@ -36,7 +36,10 @@ Until now, FlowFuse's Git integration only supported GitHub repositories. That l
 
 FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push and pull snapshots from Azure DevOps repositories, the same way you could with GitHub.
 
-<!-- TODO: screenshot of Azure DevOps pipeline setup -->
+![Placeholder for Azure DevOps Git stage screenshot](https://placehold.co/900x500/e5e7eb/6b7280?text=Azure+DevOps+Git+stage+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
+<figcaption>Placeholder, replace with screenshot of Azure DevOps pipeline setup</figcaption>
+
+<!-- TODO: replace placeholder with real screenshot of Azure DevOps pipeline setup -->
 
 - **Connect Azure DevOps repos** alongside or instead of GitHub
 - **Push and pull snapshots** directly from your Azure DevOps repositories
@@ -52,7 +55,10 @@ FlowFuse Expert is our integrated AI assistant. It runs across the FlowFuse webs
 
 FlowFuse Expert is now available for self-hosted enterprise deployments, giving your team the same troubleshooting, contextual guidance, and targeted help as cloud customers, all while keeping your operational data on your own infrastructure.
 
-<!-- TODO: screenshot or diagram showing self-hosted Expert in use -->
+![Placeholder for Expert on self-hosted screenshot](https://placehold.co/900x500/e5e7eb/6b7280?text=Expert+on+self-hosted+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
+<figcaption>Placeholder, replace with screenshot or diagram showing Expert on self-hosted</figcaption>
+
+<!-- TODO: replace placeholder with real screenshot or diagram showing self-hosted Expert in use -->
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
 
