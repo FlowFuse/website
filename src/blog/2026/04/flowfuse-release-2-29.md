@@ -27,7 +27,7 @@ features:
   - [ ] Final copy review
 -->
 
-FlowFuse 2.29 brings three capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, clearer snapshot comparisons that show exactly what changed, and FlowFuse Expert for self-hosted enterprise deployments.
+FlowFuse 2.29 brings three capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, clearer snapshot comparisons that show exactly what changed, and FlowFuse Expert for self-hosted enterprise FlowFuse instances.
 
 <!--more-->
 
@@ -61,7 +61,7 @@ FlowFuse Expert is our integrated AI assistant. It runs across the FlowFuse webs
 
 ### Available for Self-Hosted Enterprise {#expert-self-hosted}
 
-FlowFuse Expert is now available for self-hosted enterprise deployments, giving your team the same troubleshooting, contextual guidance, and targeted help as cloud customers, all while keeping your operational data on your own infrastructure.
+FlowFuse Expert is now available for self-hosted enterprise FlowFuse instances, giving your team the same troubleshooting, contextual guidance, and targeted help as cloud customers, all while keeping your operational data on your own infrastructure.
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
 
