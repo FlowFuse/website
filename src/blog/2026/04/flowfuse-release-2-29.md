@@ -71,9 +71,6 @@ FlowFuse Expert is now available for self-hosted enterprise FlowFuse instances, 
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
 
-<!-- TODO: changelog entry for Expert on self-hosted enterprise -->
-<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
-
 ### Take action directly from Expert responses {#expert-actions}
 
 Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation. Less copy-paste, faster iteration, and the first step toward Expert acting as a true agent in your editor.
