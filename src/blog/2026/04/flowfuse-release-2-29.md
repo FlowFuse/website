@@ -13,7 +13,8 @@ release: "2.29"
 features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
-   - heading: "See Exactly What Changed in a Node-RED Instance Snapshot"
+   - id: snapshots
+     heading: "See Exactly What Changed in a Node-RED Instance Snapshot"
    - id: ff-expert
      heading: "FlowFuse Expert"
    - heading: "What else is new?"
