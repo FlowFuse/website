@@ -28,4 +28,6 @@ Use the Prev / Next buttons or the ← → arrow keys to navigate through change
   title="Snapshot Comparison — FlowFuse v2.29">
 </lite-youtube>
 
+For the first time, teams can review a snapshot diff before deployment and actually trust what they're seeing — not just look at it.
+
 This feature is available to all FlowFuse Cloud and Self Hosted users from v2.29.
