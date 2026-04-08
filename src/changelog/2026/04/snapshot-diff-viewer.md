@@ -2,7 +2,7 @@
 title: Richer snapshot comparison view
 description: The snapshot comparison dialog now gives a full breakdown of every change between two snapshots — navigate node by node and see exactly what was added, removed, or modified.
 date: 2026-04-07 12:00:00
-authors: andypalmi
+authors: ["andrea-palmieri"]
 tags:
   - changelog
 issues:
