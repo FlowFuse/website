@@ -913,6 +913,7 @@ module.exports = function(eleventyConfig) {
     // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
     eleventyConfig.addTransform("docsFeatureBadges", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
+        if (!this.page.url || !/^(\/docs\/|\/node-red\/|\/handbook\/)/.test(this.page.url)) return content;
 
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);
