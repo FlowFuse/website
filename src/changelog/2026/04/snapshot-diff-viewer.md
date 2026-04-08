@@ -19,7 +19,7 @@ Now when you compare two snapshots, a sidebar lists every changed, added, and de
 - **Property diffs**: each changed property is shown inline with the old and new value side by side.
 - **Code diffs**: for function and template nodes, code changes appear as a line-level diff with red for removed lines and green for added — the same format you'd expect from a git diff.
 
-Use the Prev / Next buttons or the ← → arrow keys to move through changes at your own pace.
+Use the Prev / Next buttons or the ← → arrow keys to navigate through changes.
 
 <lite-youtube
   videoid="cNdGB-gksfQ"
