@@ -137,6 +137,7 @@ If a screen recording better demonstrates the change than a static screenshot, y
 **Videos** are the recommended way to show screen recordings. To add one:
 
 1. Ask in [#dev-marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) to have the recording uploaded to YouTube. Give them the video title and they will handle the upload. By default it will be published as **unlisted**. If the recording is polished and has voiceover and refined editing, let them know it may be worth publishing publicly.
+
 2. Once it is on YouTube, embed it in your post using the `<lite-youtube>` component. The component is already available in the website repository, no setup needed.
 
 ```html
