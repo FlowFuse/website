@@ -2,7 +2,7 @@
 title: Richer snapshot comparison view
 description: The snapshot comparison dialog now gives a full breakdown of every change between two snapshots — navigate node by node and see exactly what was added, removed, or modified.
 date: 2026-04-07 12:00:00
-authors: ["andrea-palmieri"]
+authors: andypalmi
 tags:
   - changelog
 issues:
@@ -21,4 +21,4 @@ Now when you compare two snapshots, a sidebar lists every changed, added, and de
 
 Use the Prev / Next buttons or the ← → arrow keys to move through changes at your own pace.
 
-This feature is available to all FlowFuse Cloud users and Self Hosted users from release 2.29.
+This feature is available to all FlowFuse Cloud and Self Hosted users from v2.29.

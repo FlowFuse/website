@@ -500,6 +500,31 @@ sections:
           enterprise:
             value: true
 
+      - id: snapshot-compare
+        label: Snapshot Comparison
+        description: "Compare two snapshots side-by-side with a navigable diff view — step through every changed, added, or deleted node and see property and code diffs."
+        docsLink: /docs/user/snapshots/
+        changelog:
+          - url: '/changelog/2026/04/snapshot-diff-viewer/'
+            release: '2.29'
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: project-nodes
         label: Seamless Data Stream
         description: "FlowFuse Project Nodes enable the passing of data and messages between your Node-RED projects."
