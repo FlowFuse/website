@@ -129,27 +129,3 @@ Looking ahead, [Node-RED 5.0](https://nodered.org/blog/2025/12/03/node-red-roadm
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.29, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
 If something in this release improves your workflow, or if there is still friction we can remove, please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.29) to us.
-
-## Try FlowFuse
-
-<style>
-.ff-try-card > *:first-child { margin-top: 0 !important; }
-.ff-try-card > *:last-child { margin-bottom: 0 !important; }
-</style>
-
-<div class="grid md:grid-cols-2 gap-6 my-6" markdown="1">
-<div class="ff-try-card border-2 border-indigo-100 rounded-lg p-6" markdown="1">
-
-#### FlowFuse Cloud
-
-[Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud and start connecting your IT and OT systems within minutes.
-
-</div>
-<div class="ff-try-card border-2 border-indigo-100 rounded-lg p-6" markdown="1">
-
-#### Self-Hosted
-
-[Install FlowFuse](/docs/install/introduction/) on your own infrastructure and keep your industrial data on-premise.
-
-</div>
-</div>
