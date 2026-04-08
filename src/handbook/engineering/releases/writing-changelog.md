@@ -152,7 +152,7 @@ Replace the following:
 
 - `YOUR_VIDEO_ID` with the video ID from the YouTube URL
 - `Your Video Title` with a short descriptive title for the video
-- 
+
 ### Feature catalog and availability
 
 Ideally, tie each changelog post to a feature defined in [`featureCatalog.yaml`](https://github.com/FlowFuse/website/blob/main/src/_data/featureCatalog.yaml). The catalog is the single source of truth for tier availability across FlowFuse.
