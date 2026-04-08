@@ -21,4 +21,4 @@ Now when you compare two snapshots, a sidebar lists every changed, added, and de
 
 Use the Prev / Next buttons or the ← → arrow keys to move through changes at your own pace.
 
-This feature is available to all FlowFuse Cloud users and Self Hosted users from the next release.
+This feature is available to all FlowFuse Cloud users and Self Hosted users from release 2.29.
