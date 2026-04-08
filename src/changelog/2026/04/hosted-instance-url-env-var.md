@@ -9,7 +9,7 @@ issues:
  - https://github.com/FlowFuse/flowfuse/issues/6984
 ---
 
-Hosted Instances now include an [Environment Variable](/docs/user/envvar/#standard-environment-variables) called `FF_INSTANCE_URL` which allows them to know what URL they can be reached on.
+Your hosted instance now knows its own URL. The `FF_INSTANCE_URL` [environment variable](/docs/user/envvar/#standard-environment-variables) is automatically available to your flows, so you can reference the instance's address without hardcoding it.
 
 ![List of Hosted Instance Environment Variables](./images/ff-instance-url-env-var.png)
 _FF_INSTANCE_URL in list of Instance Environment Variables_
