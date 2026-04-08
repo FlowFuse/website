@@ -21,4 +21,11 @@ Now when you compare two snapshots, a sidebar lists every changed, added, and de
 
 Use the Prev / Next buttons or the ← → arrow keys to move through changes at your own pace.
 
+<lite-youtube
+  videoid="cNdGB-gksfQ"
+  params="rel=0"
+  style="width: 704px; height: 100%;"
+  title="Snapshot Comparison — FlowFuse v2.29">
+</lite-youtube>
+
 This feature is available to all FlowFuse Cloud and Self Hosted users from v2.29.
