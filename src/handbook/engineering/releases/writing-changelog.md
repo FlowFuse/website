@@ -136,7 +136,7 @@ If a screen recording better demonstrates the change than a static screenshot, y
 
 **Videos** are the recommended way to show screen recordings. To add one:
 
-1. Ask DevRel to upload the recording to YouTube. Give them the video title and they will handle the upload. By default it will be published as **unlisted**. If the recording is polished and has voiceover and refined editing, let them know it may be worth publishing publicly.
+1. Ask in [#dev-marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) to have the recording uploaded to YouTube. Give them the video title and they will handle the upload. By default it will be published as **unlisted**. If the recording is polished and has voiceover and refined editing, let them know it may be worth publishing publicly.
 2. Once it is on YouTube, embed it in your post using the `<lite-youtube>` component. The component is already available in the website repository, no setup needed.
 
 ```html
@@ -152,7 +152,7 @@ Replace the following:
 
 - `YOUR_VIDEO_ID` with the video ID from the YouTube URL
 - `Your Video Title` with a short descriptive title for the video
-
+- 
 ### Feature catalog and availability
 
 Ideally, tie each changelog post to a feature defined in [`featureCatalog.yaml`](https://github.com/FlowFuse/website/blob/main/src/_data/featureCatalog.yaml). The catalog is the single source of truth for tier availability across FlowFuse.
