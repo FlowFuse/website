@@ -28,52 +28,65 @@ features:
   - [ ] Final copy review
 -->
 
-FlowFuse 2.29 brings three capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider in DevOps Pipelines, clearer snapshot comparisons that show exactly what changed, and FlowFuse Expert for self-hosted enterprise FlowFuse instances.
+FlowFuse 2.29 gives teams more control over how flows move through their stack, makes it easier to understand what changed between versions, and brings FlowFuse Expert to self-hosted enterprise customers.
 
 <!--more-->
 
-## Azure DevOps Git Integration {#azure-devops}
+## More Visibility and Control Across Your Deployment Workflow {#deployment-workflow}
 
-Until now, FlowFuse's Git integration only supported GitHub repositories. That left teams using Azure DevOps without a native way to include their Node-RED flows in their existing version control workflows.
+Managing flows across environments means tracking what changed, when, and by whom. When tooling gaps introduce friction here — or leave your version control workflow fragmented — they slow teams down at exactly the wrong moment.
 
-FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push and pull snapshots from Azure DevOps repositories, the same way you could with GitHub.
+### Azure DevOps Git Integration {#azure-devops}
 
+FlowFuse's GitOps support previously required GitHub. Teams standardised on Azure DevOps had no native way to include Node-RED flows in their existing version control workflow.
 
-- **Connect Azure DevOps repos** alongside or instead of GitHub
-- **Push and pull snapshots** directly from your Azure DevOps repositories
-- **Use Azure Personal Access Tokens** for authentication, configured under Team Settings → Integrations
+FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push and pull snapshots directly from Azure DevOps repositories using Personal Access Tokens, configured under Team Settings → Integrations.
 
-If your organisation standardises on Azure DevOps for version control, your Node-RED flows can now be part of that workflow.
+### In practice
+
+- You connect Azure DevOps repos alongside or instead of GitHub
+- Your Node-RED flows participate in the same version control workflow as the rest of your stack
+- You authenticate with Azure Personal Access Tokens, with no secondary tooling required
 
 <!-- Changelog auto-injects from featureCatalog (git-integration-azure → /changelog/2026/03/azure-dev-ops-gitops). No manual placeholder needed. -->
 
-## See Exactly What Changed in a Node-RED Instance Snapshot {#snapshot-diff}
+### See Exactly What Changed in a Snapshot {#snapshot-diff}
 
-FlowFuse lets you take snapshots of your Node-RED instances, capturing the full set of flows at a point in time so you can roll back, promote between environments, or compare two versions. The snapshot comparison view already showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific properties changed. When a function node's code changed, you couldn't tell which lines were different without manually diffing two code blocks.
+FlowFuse's snapshot comparison view showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific property changed. When a function node's code changed, you couldn't identify which lines were different without manually diffing two code blocks outside of FlowFuse.
 
 ![Placeholder for snapshot diff demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Snapshot+diff+sidebar+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Placeholder, replace with GIF demonstrating the new snapshot diff sidebar</figcaption>
 
-With 2.29, the compare dialog adds a property-level diff sidebar that shows exactly what changed: structural properties old to new at a glance, and git-style line diffs for function code, template HTML, and JSON. A navigation bar steps through every changed, added, or deleted node with arrow key shortcuts, and the canvas highlights and scrolls to the current node as you navigate. Whether you're reviewing what changed between dev and production, validating a teammate's update, or debugging why a flow broke after a deploy, you can now see exactly what changed without leaving FlowFuse.
+The compare dialog now includes a property-level diff sidebar: structural property changes old to new at a glance, and git-style line diffs for function code, template HTML, and JSON. A navigation bar steps through every changed, added, or deleted node with arrow key shortcuts. The canvas highlights and scrolls to the current node as you navigate.
 
 <!-- TODO: replace placeholder with real GIF showing the snapshot diff sidebar -->
 
 <!-- TODO: changelog entry for snapshot diff sidebar (FlowFuse/flowfuse#7025, PR #7026) -->
 <div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
 
-## FlowFuse Expert {#expert}
+### In practice
 
-*FlowFuse Expert is our integrated AI assistant. One consistent surface across the FlowFuse website, platform, and immersive Node-RED editor for troubleshooting, building, and getting targeted help.*
+- You review what changed between dev and production without leaving FlowFuse
+- You validate a teammate's update at the property level, not just the node level
+- You debug why a flow changed after a deploy with the same tooling you use to promote it
 
-### Self-Hosted Enterprise customers can now get FlowFuse Expert enabled {#expert-self-hosted}
+## FlowFuse Expert, Available to More Teams and More Capable {#expert}
 
-FlowFuse Expert is now available for self-hosted enterprise FlowFuse instances, giving your team the same troubleshooting, contextual guidance, and targeted help as cloud customers, all while keeping your operational data on your own infrastructure.
+*FlowFuse Expert is our integrated AI assistant — one consistent surface across the FlowFuse website, platform, and immersive Node-RED editor for troubleshooting, building, and getting targeted help.*
+
+### Self-Hosted Enterprise {#expert-self-hosted}
+
+FlowFuse Expert was previously only available to cloud customers. Self-hosted enterprise teams had no equivalent surface for in-context troubleshooting and guidance.
+
+Expert is now available for self-hosted enterprise FlowFuse instances. Your team gets the same contextual guidance and targeted help as cloud customers, with your operational data staying on your own infrastructure.
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
 
-### Take action directly from Expert responses {#expert-actions}
+### Take Action Directly from Expert Responses {#expert-actions}
 
-Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation. Less copy-paste, faster iteration, and the first step toward Expert acting as a true agent in your editor.
+Expert responses previously surfaced information and suggestions. Acting on them — importing a flow, selecting relevant nodes, opening a new tab — required switching out of the conversation and doing it manually.
+
+Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation.
 
 ![Placeholder for Expert action links demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Expert+action+links+demo+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Placeholder, replace with GIF demonstrating Expert action links</figcaption>
@@ -84,6 +97,12 @@ Expert responses can now include clickable action links. Click one and Expert pe
 
 <!-- TODO: changelog entry for Expert action links (FlowFuse/nr-assistant#184, #192, FlowFuse/flowfuse#6864) -->
 <div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
+
+### In practice
+
+- Self-hosted enterprise teams get Expert without routing operational data through cloud infrastructure
+- You act on Expert suggestions in one click instead of manually applying them
+- You stay in the conversation while Expert works in your editor
 
 ## What else is new?
 
