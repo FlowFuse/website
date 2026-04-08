@@ -125,6 +125,34 @@ Always add a caption in italics directly below the image. The caption should des
 
 Screenshots should ideally be **1408px wide**. Height can vary depending on what you are showing.
 
+### Screen recordings and videos
+
+If a screen recording better demonstrates the change than a static screenshot, you can embed a video or GIF in the changelog post.
+
+**GIFs** can be used for short, simple interactions where a video would be overkill. If you use a GIF:
+
+- It must be sharp and legible. No blurred or low-resolution captures.
+- It must be under 1MB. If it is larger, use a video instead.
+
+**Videos** are the recommended way to show screen recordings. To add one:
+
+1. Ask DevRel to upload the recording to YouTube. Give them the video title and they will handle the upload. By default it will be published as **unlisted**. If the recording is polished and has voiceover and refined editing, let them know it may be worth publishing publicly.
+2. Once it is on YouTube, embed it in your post using the `<lite-youtube>` component. The component is already available in the website repository, no setup needed.
+
+```html
+<lite-youtube
+  videoid="YOUR_VIDEO_ID"
+  params="rel=0"
+  style="width: 704px; height: 100%;"
+  title="Your Video Title">
+</lite-youtube>
+```
+
+Replace the following:
+
+- `YOUR_VIDEO_ID` with the video ID from the YouTube URL
+- `Your Video Title` with a short descriptive title for the video
+
 ### Feature catalog and availability
 
 Ideally, tie each changelog post to a feature defined in [`featureCatalog.yaml`](https://github.com/FlowFuse/website/blob/main/src/_data/featureCatalog.yaml). The catalog is the single source of truth for tier availability across FlowFuse.
