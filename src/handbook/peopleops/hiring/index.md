@@ -152,6 +152,7 @@ candidate strengths and challenges are. Before the hiring manager extends an off
 explicit approval is required from the CEO to:
 - Check we hire in their location
   - If we haven't hired in their location, alert Business Operations to do a review before extending the offer
+- If a candidate is based in France, Germany, Belgium, Denmark, Sweden, Finland, Norway, Netherlands, Spain, Italy, Portugal, Austria, or the Czech Republic, please verify with BizOps before proceeding with the hiring process
 - Confirm candidate is seeking full-time employment (FlowFuse only offers full-time positions)
 - Notice period aligns with internal processes
 - Total compensation is in FlowFuse's range
