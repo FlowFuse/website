@@ -10,8 +10,6 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/7029
 ---
 
-The snapshot comparison dialog now gives you a complete, navigable breakdown of every difference between two snapshots.
-
 Previously, comparing snapshots only showed the two flow canvases overlaid at different opacities. You could see that something had changed, but not what or where.
 
 Now when you compare two snapshots, a sidebar lists every changed, added, and deleted node. You can step through them one at a time — the canvas highlights and scrolls to the relevant node automatically. For each change you can see:
