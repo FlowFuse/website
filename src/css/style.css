@@ -2096,7 +2096,7 @@ lite-youtube::before {
 }
 
 .raster-gradient-bg.red-blob {
-    background: radial-gradient(circle 60vw at 20% 40%, rgb(from theme(colors.red.50) r g b / 0.7), transparent);
+    background: radial-gradient(circle 40vw at 20% 40%, rgb(from theme(colors.red.50) r g b / 0.5), transparent);
     position: relative;
 }
 
