@@ -1,4 +1,10 @@
 [[headers]]
+  for = "/og-image"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"

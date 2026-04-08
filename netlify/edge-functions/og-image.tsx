@@ -1,0 +1,169 @@
+import React from "https://esm.sh/react@18.2.0";
+import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
+
+async function loadGoogleFont(font: string, text: string) {
+  const url = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text)}`;
+  const css = await (await fetch(url)).text();
+  const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
+
+  if (resource) {
+    const response = await fetch(resource[1]);
+    if (response.status == 200) {
+      return await response.arrayBuffer();
+    }
+  }
+
+  throw new Error('failed to load font data');
+}
+
+export default async (request: Request) => {
+  const { searchParams } = new URL(request.url);
+
+  // Get parameters from URL
+  const title = searchParams.get('title') || 'Handbook';
+  const description = searchParams.get('description') || '';
+  const section = searchParams.get('section') || '';
+
+  // Combine all text for font loading
+  const allText = `${title} ${description} ${section} Handbook •`;
+
+  // Load Heebo fonts (regular and semibold)
+  const heeboRegular = await loadGoogleFont('Heebo:wght@400', allText);
+  const heeboSemibold = await loadGoogleFont('Heebo:wght@600', allText);
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#ffffff',
+          padding: '60px',
+          fontFamily: 'Heebo',
+        }}
+      >
+        {/* Header with logo and badge */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px',
+            marginBottom: '40px',
+          }}
+        >
+          {/* FlowFuse Logo */}
+          <img
+            src="https://flowfuse.com/handbook/images/logos/ff-icon--light.png"
+            width="80"
+            height="80"
+          />
+
+          {/* Handbook badge with section */}
+          <div
+            style={{
+              fontSize: '48px',
+              color: '#6B7280',
+              fontWeight: '600',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '16px',
+            }}
+          >
+            <span style={{ color: '#111827' }}>Handbook</span>
+            {section && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <span style={{ color: '#D1D5DB' }}>•</span>
+                <span style={{ textTransform: 'capitalize', color: '#9CA3AF' }}>{section}</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Title */}
+        <div
+          style={{
+            fontSize: '64px',
+            fontWeight: 'bold',
+            color: '#111827',
+            lineHeight: 1.1,
+            marginBottom: '30px',
+            maxWidth: '100%',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            lineClamp: 2,
+            display: 'flex',
+          }}
+        >
+          {title}
+        </div>
+
+        {/* Description with fade effect */}
+        {description && (
+          <div
+            style={{
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              maxWidth: '100%',
+              overflow: 'hidden',
+              maxHeight: '270px',
+            }}
+          >
+            <div
+              style={{
+                fontSize: '38px',
+                color: '#6B7280',
+                lineHeight: 1.4,
+                maxWidth: '100%',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                lineClamp: 5,
+                display: 'flex',
+              }}
+            >
+              {description}
+            </div>
+            {/* Fade gradient overlay */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: '80px',
+                backgroundImage: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)',
+              }}
+            />
+          </div>
+        )}
+      </div>
+    ),
+    {
+      width: 1200,
+      height: 630,
+      fonts: [
+        {
+          name: 'Heebo',
+          data: heeboRegular,
+          weight: 400,
+          style: 'normal',
+        },
+        {
+          name: 'Heebo',
+          data: heeboSemibold,
+          weight: 600,
+          style: 'normal',
+        },
+      ],
+      headers: {
+        'Cache-Control': 'public, max-age=604800, immutable', // 1 week cache
+      },
+    }
+  );
+};
+
+export const config = {
+  path: "/og-image",
+};

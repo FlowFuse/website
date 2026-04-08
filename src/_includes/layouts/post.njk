@@ -36,9 +36,9 @@
                     {%- endfor %}
                     <span class="text-gray-400">•</span>
                     {%- if lastUpdated -%}
-                    <time value="{{ lastUpdated | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time>
+                    <time value="{{ lastUpdated | toDate | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time>
                     {%- else -%}
-                    <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
+                    <time value="{{ date | toDate | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     {%- endif -%}
                 </div>
             </div>
