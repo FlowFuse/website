@@ -4,13 +4,15 @@ navTitle: Self Hosted Assistant
 
 # FlowFuse Expert
 
-FlowFuse Expert is a collection of LLM based resources provided on FlowFuse Cloud.
+[FlowFuse Expert](/docs/user/expert/) is a collection of LLM based resources provided on FlowFuse Cloud.
 
 Access to these features is also available to Enterprise Licensed Self Hosted and Dedicated Customers.
 
 Self Hosted customers are directed to contact support to request the necessary authentication tokens to enable the features.
 
-The FlowFuse Expert consists of two internal components that each need to be enabled with their own token. We are working to consolidate and simplify this configuration, but this is how it needs to be done for FlowFuse 2.28.
+The FlowFuse Expert consists of two internal components that each need to be enabled with their own token.
+
+> **As of v2.29**, the Expert and Assistant service URLs are pre-configured with sensible defaults — admins no longer need to manually specify them for standard deployments. Only the tokens need to be provided. If you are running an air-gapped environment or using custom routing, you may still need to override the default URLs.
 
 ## Process
 
@@ -27,12 +29,24 @@ The FlowFuse Expert consists of two internal components that each need to be ena
 
 ### Docker
 
-The feature is enabled by editing the `configs.flowfuse.content` section at the top of the `docker-compse.yml` file.
-Add the following after the end of the `npmRegistry` section. The `assistant` and `expert` keys should be indented 6 spaces to match.
+The feature is enabled by editing the `configs.flowfuse.content` section at the top of the `docker-compose.yml` file. Add the following after the end of the `npmRegistry` section. The `assistant` and `expert` keys should be indented 6 spaces to match.
 
-Insert the two tokens
+As of v2.29, the `url` fields are optional for standard deployments — only the tokens are required:
 
+```yaml
+      assistant:
+        enabled: true
+        service:
+          token: <Assistant Token>
+      expert:
+        enabled: true
+        service:
+          token: <Expert Token>
 ```
+
+If you need to override the default URLs (e.g. for air-gapped environments or custom routing), include them explicitly:
+
+```yaml
       assistant:
         enabled: true
         service:
@@ -45,15 +59,18 @@ Insert the two tokens
           token: <Expert Token>
 ```
 
-
-
 ### Kubernetes
 
 The feature is enabled by adding the tokens to the values passed to the Helm chart.
 
- - `forge.assistant.enabled` should be set to `true`
- - `forge.assistant.service.url` should be set to `https://expert.flowfuse.com/v1/openai`
- - `forge.assistant.service.token` should be set to the provided Assistant Token
- - `forge.expert.enabled` should be set to `true`
- - `forge.expert.service.url` should be set to `https://expert.flowfuse.com/v4/expert`
- - `forge.expert.service.token` should be set to the provided Expert Token
+As of v2.29, the service URLs are pre-configured by default. Only the following are required for standard deployments:
+
+- `forge.assistant.enabled` should be set to `true`
+- `forge.assistant.service.token` should be set to the provided Assistant Token
+- `forge.expert.enabled` should be set to `true`
+- `forge.expert.service.token` should be set to the provided Expert Token
+
+If you need to override the default URLs (e.g. for air-gapped environments or custom routing), also set:
+
+- `forge.assistant.service.url` to `https://expert.flowfuse.com/v1/openai`
+- `forge.expert.service.url` to `https://expert.flowfuse.com/v4/expert`
