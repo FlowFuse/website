@@ -13,7 +13,7 @@ release: "2.29"
 features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
-   - id: snapshots
+   - id: snapshot-compare
      heading: "See Exactly What Changed in a Snapshot"
    - id: ff-expert
      heading: "FlowFuse Expert, Available to More Teams and More Capable"
@@ -51,7 +51,7 @@ Expert responses can now include clickable action links. Click one and Expert pe
 
 **Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.
 
-<div class="ff-related-changelogs">Changelog: <em>[FlowFuse expert action links](https://flowfuse.com/changelog/2026/04/expert-action-links/)</em></div>
+<div class="ff-related-changelogs">Changelog: <em><a href="https://flowfuse.com/changelog/2026/04/expert-action-links/">FlowFuse expert action links</a></em></div>
 
 ### In practice
 
@@ -83,7 +83,7 @@ FlowFuse's snapshot comparison view showed flows side by side, but the visual al
 
 The compare dialog now includes a property-level diff sidebar: structural property changes old to new at a glance, and git-style line diffs for function code, template HTML, and JSON. A navigation bar steps through every changed, added, or deleted node with arrow key shortcuts. The canvas highlights and scrolls to the current node as you navigate.
 
-<div class="ff-related-changelogs">Changelog with video demo: <em>[Richer snapshot comparison view](https://flowfuse.com/changelog/2026/04/snapshot-diff-viewer/)</em></div>
+<div class="ff-related-changelogs">Changelog with video demo: <em><a href="https://flowfuse.com/changelog/2026/04/snapshot-diff-viewer/">Richer snapshot comparison view</a></em></div>
 
 ### In practice
 
