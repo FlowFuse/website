@@ -1,3 +1,7 @@
+---
+navTitle: Engineering Levels
+---
+
 # FlowFuse Engineering Levels
 
 ## Purpose
