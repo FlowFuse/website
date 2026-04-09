@@ -113,7 +113,6 @@ The compare dialog now includes a property-level diff sidebar: structural proper
 - **MCP server discoverability**: Older MCP servers that were registered on your instances were not showing up in Expert Insights mode. All registered MCP servers are now discoverable again.
 - **Snapshot detail in the immersive editor**: Reviewing a snapshot from inside the immersive editor now opens it in a modal, so you can inspect snapshots without leaving the editor.
 - **Developer Mode tab restored in the immersive editor**: The Developer Mode tab is back in the immersive editor drawer, letting you toggle Auto Snapshots and create snapshots without opening a second window.
-- **SSO team role management**: Team roles for SSO-managed users can now be changed directly in FlowFuse, resolving a limitation where SSO-enabled users' roles were locked.
 
 ### Node-RED
 
