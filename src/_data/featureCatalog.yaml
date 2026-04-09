@@ -178,26 +178,26 @@ sections:
             value: true
             note: "Starts with 20, shared with edge device count"
 
-      - id: developer-mode-immersive-editor
-        label: Developer Mode in Immersive Editor
-        description: "The Developer Mode tab is accessible directly from the immersive editor drawer when working with remote instances."
+      - id: embedded-editor-tab-title
+        label: Embedded Editor Browser Tab Title
+        description: "The browser tab title updates to reflect the active Node-RED canvas tab when working in the embedded editor."
         changelog:
-          - url: /changelog/2026/03/developer-mode-in-immersive-editor/
+          - url: /changelog/2026/03/embedded-editor-tab-title/
             release: "2.29"
         subfeature: false
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: null
+            value: true
           pro:
-            value: null
+            value: true
           enterprise:
             value: true
         selfHosted:
           starter:
-            value: null
+            value: true
           pro:
-            value: null
+            value: true
           enterprise:
             value: true
 
@@ -237,6 +237,7 @@ sections:
         description: "Take point-in-time backups of your Node-RED instances and devices. Restore, promote between environments, or compare two snapshots side by side to see exactly what changed."
         docsLink: /docs/user/snapshots/
         changelog: null
+        subfeature: false
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: true
         tags: [cloud, self-hosted]
@@ -250,6 +251,54 @@ sections:
         selfHosted:
           starter:
             value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-remote
+        label: Auto Snapshot for Remote Instances
+        description: "Automatically capture a snapshot every time a remote instance is deployed, so you always have a recoverable history of what was running on each device."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-hosted
+        label: Auto Snapshot for Hosted Instances
+        description: "Automatically capture a snapshot every time a hosted instance is deployed, so you always have a recoverable history of what was running."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
           pro:
             value: true
           enterprise:
