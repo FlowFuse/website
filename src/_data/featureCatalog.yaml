@@ -232,6 +232,78 @@ sections:
             value: true
             note: "Starts with 20, shared with hosted instance count"
 
+      - id: snapshots
+        label: Snapshots
+        description: "Take point-in-time backups of your Node-RED instances and devices. Restore, promote between environments, or compare two snapshots side by side to see exactly what changed."
+        docsLink: /docs/user/snapshots/
+        changelog: null
+        subfeature: false
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-remote
+        label: Auto Snapshot for Remote Instances
+        description: "Automatically capture a snapshot every time a remote instance is deployed, so you always have a recoverable history of what was running on each device."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-hosted
+        label: Auto Snapshot for Hosted Instances
+        description: "Automatically capture a snapshot every time a hosted instance is deployed, so you always have a recoverable history of what was running."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: installation-support
         label: Installation Support
         description: null
