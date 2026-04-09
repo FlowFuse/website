@@ -51,8 +51,7 @@ Expert responses can now include clickable action links. Click one and Expert pe
 
 **Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.
 
-<!-- TODO: changelog entry for Expert action links (FlowFuse/nr-assistant#184, #192, FlowFuse/flowfuse#6864) -->
-<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
+<div class="ff-related-changelogs">Changelog: <em>[FlowFuse expert action links](https://flowfuse.com/changelog/2026/04/expert-action-links/)</em></div>
 
 ### In practice
 
