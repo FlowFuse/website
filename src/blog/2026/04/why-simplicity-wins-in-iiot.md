@@ -5,7 +5,7 @@ description: "Most industrial systems don't fail because of bad technology. They
 date: 2026-04-08
 keywords: industrial automation, industrial system design, operational technology, edge computing, IIoT, Modbus, MQTT, OPC UA, Node-RED, FlowFuse, legacy system integration, industrial data integration, edge gateway architecture, system complexity, maintainable systems
 authors: ["sumit-shinde"]
-image: /blog/2026/04/images/the-real-cost-of-over-engineered-systems.png
+image: /blog/2026/04/images/the-real-cost-of-overengineered-systems.png
 tags:
 - flowfuse
 cta:
