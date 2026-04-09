@@ -65,7 +65,6 @@ Expert responses can now include clickable action links. Click one and Expert pe
 
 ### In practice
 
-- Self-hosted enterprise teams get Expert without routing operational data through cloud infrastructure
 - You act on Expert suggestions in one click instead of manually applying them
 - You stay in the conversation while Expert works in your editor
 
