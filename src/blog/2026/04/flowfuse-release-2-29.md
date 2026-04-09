@@ -4,7 +4,7 @@ subtitle: "Self-Hosted Enterprise customers can now enable FlowFuse Expert. Plus
 description: "FlowFuse 2.29 brings FlowFuse Expert to self-hosted enterprise customers, adds Azure DevOps as a supported Git provider, and makes snapshot comparisons clearer with property-level diffs."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
-image: /blog/2026/04/images/release-2-29.png
+image: /blog/2026/04/images/flowfuse-release-2-29.png
 tags:
    - flowfuse
    - news
@@ -14,17 +14,21 @@ features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
    - id: snapshots
-     heading: "See Exactly What Changed in a Node-RED Instance Snapshot"
+     heading: "See Exactly What Changed in a Snapshot"
    - id: ff-expert
-     heading: "FlowFuse Expert"
+     heading: "FlowFuse Expert, Available to More Teams and More Capable"
    - heading: "What else is new?"
+cta:
+  type: sign-up
+  title: Try the latest FlowFuse improvements in your own environment
+  description: Use Expert to take action in your editor, connect Azure DevOps to your workflow, and see exactly what changed between snapshots.
 ---
 
 <!--
   STATUS: WIP, needs refinement
   - [ ] Screenshots / video for Azure DevOps pipeline setup
   - [ ] Screenshot for Expert on self-hosted
-  - [ ] Final copy review
+  - [ ] Final copy review 
 -->
 
 FlowFuse 2.29 gives teams more control over how flows move through their stack, makes it easier to understand what changed between versions, and brings FlowFuse Expert to self-hosted enterprise customers.
