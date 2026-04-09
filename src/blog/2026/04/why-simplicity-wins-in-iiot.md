@@ -3,9 +3,9 @@ title: "The Real Cost of Over-Engineered Industrial Systems"
 subtitle: "When the system nobody wants to touch becomes the system everything depends on"
 description: "Most industrial systems don't fail because of bad technology. They fail because of too much of it. Here's what over-engineered infrastructure is actually costing your facility, and what a different decision looks like."
 date: 2026-04-08
-keywords: 
+keywords: industrial automation, industrial system design, operational technology, edge computing, IIoT, Modbus, MQTT, OPC UA, Node-RED, FlowFuse, legacy system integration, industrial data integration, edge gateway architecture, system complexity, maintainable systems
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/04/images/the-real-cost-of-over-engineered-systems.png
 tags:
 - flowfuse
 cta:
