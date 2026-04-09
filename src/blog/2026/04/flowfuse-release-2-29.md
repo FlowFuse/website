@@ -82,8 +82,6 @@ FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push an
 - Your Node-RED flows participate in the same version control workflow as the rest of your stack
 - You authenticate with Azure Personal Access Tokens, with no secondary tooling required
 
-<!-- Changelog auto-injects from featureCatalog (git-integration-azure → /changelog/2026/03/azure-dev-ops-gitops). No manual placeholder needed. -->
-
 ### See Exactly What Changed in a Snapshot {#snapshot-diff}
 
 FlowFuse's snapshot comparison view showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific property changed. When a function node's code changed, you couldn't identify which lines were different without manually diffing two code blocks outside of FlowFuse.
@@ -95,8 +93,7 @@ The compare dialog now includes a property-level diff sidebar: structural proper
 
 <!-- TODO: replace placeholder with real GIF showing the snapshot diff sidebar -->
 
-<!-- TODO: changelog entry for snapshot diff sidebar (FlowFuse/flowfuse#7025, PR #7026) -->
-<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
+<div class="ff-related-changelogs">Changelog: <em>[Richer snapshot comparison view](https://flowfuse.com/changelog/2026/04/snapshot-diff-viewer/)</em></div>
 
 ### In practice
 
