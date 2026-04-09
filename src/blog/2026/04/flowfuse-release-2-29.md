@@ -4,7 +4,7 @@ subtitle: "Self-Hosted Enterprise customers can now enable FlowFuse Expert. Plus
 description: "FlowFuse 2.29 brings FlowFuse Expert to self-hosted enterprise customers, adds Azure DevOps as a supported Git provider, and makes snapshot comparisons clearer with property-level diffs."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
-image: /blog/2026/04/images/flowfuse-release-2-29-placeholder.png
+image: /blog/2026/04/images/release-2-29.png
 tags:
    - flowfuse
    - news
@@ -24,13 +24,46 @@ features:
   STATUS: WIP, needs refinement
   - [ ] Screenshots / video for Azure DevOps pipeline setup
   - [ ] Screenshot for Expert on self-hosted
-  - [ ] Blog post hero image (art request)
   - [ ] Final copy review
 -->
 
 FlowFuse 2.29 gives teams more control over how flows move through their stack, makes it easier to understand what changed between versions, and brings FlowFuse Expert to self-hosted enterprise customers.
 
 <!--more-->
+
+## FlowFuse Expert, Available to More Teams and More Capable {#expert}
+
+*FlowFuse Expert is our integrated AI assistant — one consistent surface across the FlowFuse website, platform, and immersive Node-RED editor for troubleshooting, building, and getting targeted help.*
+
+### Self-Hosted Enterprise {#expert-self-hosted}
+
+FlowFuse Expert was previously only available to cloud customers. Self-hosted enterprise teams had no equivalent surface for in-context troubleshooting and guidance.
+
+Expert is now available for self-hosted enterprise FlowFuse instances. Your team gets the same contextual guidance and targeted help as cloud customers, with your operational data staying on your own infrastructure.
+
+[Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
+
+### Take Action Directly from Expert Responses {#expert-actions}
+
+Expert responses previously surfaced information and suggestions. Acting on them — importing a flow, selecting relevant nodes, opening a new tab — required switching out of the conversation and doing it manually.
+
+Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation.
+
+![Placeholder for Expert action links demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Expert+action+links+demo+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
+<figcaption>Placeholder, replace with GIF demonstrating Expert action links</figcaption>
+
+<!-- TODO: replace placeholder with real GIF showing action links in Expert responses -->
+
+**Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.
+
+<!-- TODO: changelog entry for Expert action links (FlowFuse/nr-assistant#184, #192, FlowFuse/flowfuse#6864) -->
+<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
+
+### In practice
+
+- Self-hosted enterprise teams get Expert without routing operational data through cloud infrastructure
+- You act on Expert suggestions in one click instead of manually applying them
+- You stay in the conversation while Expert works in your editor
 
 ## More Visibility and Control Across Your Deployment Workflow {#deployment-workflow}
 
@@ -69,40 +102,6 @@ The compare dialog now includes a property-level diff sidebar: structural proper
 - You review what changed between dev and production without leaving FlowFuse
 - You validate a teammate's update at the property level, not just the node level
 - You debug why a flow changed after a deploy with the same tooling you use to promote it
-
-## FlowFuse Expert, Available to More Teams and More Capable {#expert}
-
-*FlowFuse Expert is our integrated AI assistant — one consistent surface across the FlowFuse website, platform, and immersive Node-RED editor for troubleshooting, building, and getting targeted help.*
-
-### Self-Hosted Enterprise {#expert-self-hosted}
-
-FlowFuse Expert was previously only available to cloud customers. Self-hosted enterprise teams had no equivalent surface for in-context troubleshooting and guidance.
-
-Expert is now available for self-hosted enterprise FlowFuse instances. Your team gets the same contextual guidance and targeted help as cloud customers, with your operational data staying on your own infrastructure.
-
-[Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
-
-### Take Action Directly from Expert Responses {#expert-actions}
-
-Expert responses previously surfaced information and suggestions. Acting on them — importing a flow, selecting relevant nodes, opening a new tab — required switching out of the conversation and doing it manually.
-
-Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation.
-
-![Placeholder for Expert action links demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Expert+action+links+demo+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
-<figcaption>Placeholder, replace with GIF demonstrating Expert action links</figcaption>
-
-<!-- TODO: replace placeholder with real GIF showing action links in Expert responses -->
-
-**Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.
-
-<!-- TODO: changelog entry for Expert action links (FlowFuse/nr-assistant#184, #192, FlowFuse/flowfuse#6864) -->
-<div class="ff-related-changelogs">Changelog: <em>TBD, link will be added once entry is published</em></div>
-
-### In practice
-
-- Self-hosted enterprise teams get Expert without routing operational data through cloud infrastructure
-- You act on Expert suggestions in one click instead of manually applying them
-- You stay in the conversation while Expert works in your editor
 
 ## What else is new?
 
