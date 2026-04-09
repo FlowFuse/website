@@ -9,7 +9,7 @@ issues:
 ---
 
 When interacting with the FlowFuse expert, you might be asked to search flows, select a node, or edit a node.
-Previously, this was a presented as a set of text instructions.
+Previously, this was presented as a set of text instructions.
 As of today, whenever possible, the Expert will provide clickable action links that will perform the operation for you.
 
 
