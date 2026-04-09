@@ -189,16 +189,31 @@ This level is rare and not time-based.
 
 # Performance and Reviews
 
-Quarterly reviews:
+## Mid-Quarter Check-Ins
 
-- Gather evidence against each core dimension
-- Identify demonstrated level behaviors
-- Identify next-level behaviors to develop
+Each quarter includes an informal mid-point check-in between the engineer and manager. The goal is to identify early whether anything is off-track and course-correct before the quarter closes — not to evaluate, but to make sure no one is surprised.
 
-Annual reviews:
+## Quarterly Reviews
 
-- Synthesize quarterly evidence
-- Evaluate sustained scope and impact
-- Inform compensation and promotion decisions
+Quarterly reviews are informal. The manager leads evidence gathering ahead of each conversation, drawing on:
 
-Performance evaluation is based on observable behavior and documented impact.
+- Completed issues and pull requests (including review comments)
+- Geekbot standup history
+- Relevant Slack threads and direct messages
+- Notes logged during the quarter
+
+The manager synthesizes this into a draft evaluation across the five core dimensions before the review conversation.
+
+In the review itself, the engineer and manager go through the evaluation together. The goal is to make sure nothing meaningful was missed and that the engineer feels accurately and well represented. Engineers should come prepared to flag anything they want to add or clarify.
+
+## Annual Reviews
+
+Annual reviews are formal and synthesize evidence from all four quarters of the year.
+
+The manager evaluates sustained scope and impact across dimensions, identifies patterns, and uses this as the basis for compensation and promotion decisions.
+
+## What Engineers Should Expect
+
+- Your manager is doing the legwork. Both the engineer and manager flag notable things during the quarter as they happen.
+- Reviews are based on observable behavior and documented impact. Impact that shows up as reliability, stability, or prevented problems counts alongside shipped work.
+- The review conversation is collaborative. If something feels off, say so.
