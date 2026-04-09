@@ -11,9 +11,7 @@ to discuss.
 
 ## Creating a Deal
 
-A deal is opened when the correct stage of the
-[SPICED methodogy](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU/)
-has been achieved.
+A deal is opened when an opportunity has achieved the Sales and Buyer Verifiers for a given [Sales Stage](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU/).
 
 To open a deal, be sure to set the correct properties.
 

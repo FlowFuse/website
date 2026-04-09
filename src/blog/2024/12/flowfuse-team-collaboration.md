@@ -9,6 +9,10 @@ keywords: real-time collaboration on node-red projects, centrlize management, re
 tags:
    - flowfuse
    - flowfuse features
+cta:
+  type: demo
+  title: Build a Real-Time, Scalable UNS With FlowFuse
+  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, and centralized device management — so you can implement Pub/Sub and Unified Namespace without stitching together multiple tools.
 ---
 
 A few weeks ago, we discussed how [FlowFuse centralizes edge device and Node-RED management](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/), as well as its [security features](/blog/2024/10/exploring-flowfuse-security-features/). Now, we're focusing on another key benefit of FlowFuse—making collaboration easier for teams in industrial environments.
@@ -118,10 +122,6 @@ These are just a few of the features we’ve covered. FlowFuse has many more too
 In summary, FlowFuse is a platform that streamlines collaboration on Node-RED projects. Centralizing your Node-RED instances, devices, and data ensures that everyone on your team is aligned and has access to the same resources. Features like real-time updates, role-based access, version control, and audit logs make collaborating easier, staying secure, and avoiding errors easier. Whether you're managing small flows or large-scale industrial systems, FlowFuse helps your team work together more efficiently and effectively.
 
 With FlowFuse, factories can achieve faster, safer, and more scalable collaboration on data pipelines, edge device management, and IT-OT integration.
-
-*Ready to Improve Your Manufacturing Team’s Collaboration?*
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Streamlining%20Node-RED%20Collaboration%20with%20FlowFuse", cta_type: "demo", cta_text: "Want to learn more about how FlowFuse can enhance your industrial data operations and improve team collaboration?" %}
 
 ## Up Next
 

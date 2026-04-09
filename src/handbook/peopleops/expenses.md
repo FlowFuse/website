@@ -53,11 +53,12 @@ If you use your own means to purchase something that ought to be covered by the
 company, you can claim back the money through
 [Deel](https://help.letsdeel.com/hc/en-gb/articles/16801667118353-How-Do-I-Add-an-Expense-to-my-Pay).
 
-- Create a new expense by clicking <kbd>Add item on the Payment Items tab on
+- Create a new expense by clicking <kbd>Add Expense on the Quick Actions tab on
   your Deel homepage</kbd>
 - Enter the type of adjustment and select the Expense Category
 - Enter a description, expense name, price and attach an invoice, then click
   <kbd>Submit</kbd>
+   - Make sure it's an invoice and not a screenshot of the invoice
 - This expense will now appear in your "Pending" list
 - Adjustments approved before the payroll cut-off date will be processed in the
   current month's payroll. Any adjustment approved after the payroll cut-off
@@ -65,6 +66,15 @@ company, you can claim back the money through
 - Your manager is authorized to approve expenses that are $250 or less. However,
   if an expense exceeds $250, both the CEO and your manager will need to review
   and approve it.
+
+### Manager Checklist
+
+Before approving an expense in Deel, please verify:
+- The receipt is a final Proof of Payment (not a quote)
+- That the attachment is an invoice and not a screenshot
+- Asset purchases >$500 are logged in the Asset Tracker. If not, flag with operations
+- The description clearly states the business justification
+- For expenses >$250, ensure the CEO is looped in for co-approval
 
 ## Equipment
 

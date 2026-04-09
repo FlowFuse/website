@@ -10,6 +10,10 @@ tags:
    - posts
    - dashboard
    - dashboard theming
+cta:
+  type: sign-up
+  title: Build Branded Node-RED Dashboards Your Way
+  description: FlowFuse gives you everything you need to build, customize, and deploy Node-RED Dashboard applications — with full theming control, multi-user support, and production-ready infrastructure built in.
 ---
 
 A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.
@@ -259,5 +263,3 @@ For more information on  theme, how to add new themes, and set themes for pages,
 ## Conclusion
 
 In this article, we explored FlowFuse Dashboard's new customization features. We focused on adding elements like buttons and logos to the header, and discussed styling options such as default, hidden, and fixed for headers. We also covered how to adjust dashboard themes to personalize colors and layout. These insights empower users to create more personalized and functional Node-RED dashboards.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Customise%20theming%20in%20your%20FlowFuse%20Dashboard", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

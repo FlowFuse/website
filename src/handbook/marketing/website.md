@@ -1,5 +1,5 @@
 ---
-navTitle: Marketing - Website
+navTitle: Website
 ---
 
 # Marketing Website
@@ -78,7 +78,7 @@ A URL will be made available to include in the post.
 YouTube videos can be embedded directly in pages using the `<lite-youtube>` web component — no S3 upload needed:
 
 ```html
-<lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 100%; height: 315px;" title="Video title"></lite-youtube>
+<lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 704px; height: 100%;" title="Video title"></lite-youtube>
 ```
 
 > **Do not use raw `<iframe>` tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/blog/#embedding-videos-in-article-body) for more detail.
@@ -114,6 +114,31 @@ meta:
   keywords: flowfuse, flows, manufacturing
 ---
 ```
+## Requesting New Website Pages
+
+New pages or significant page updates should start with a [Website Page Request](https://github.com/FlowFuse/website/issues/new/choose) issue in the website repository.
+
+The request should include a draft (Google Doc) with:
+- full copy for all sections  
+- CTA destinations and links  
+- any relevant context for the page  
+
+Starting with a draft copy is often the fastest way to get feedback and move into implementation.
+
+In many cases, this helps keep changes focused and iterations small when the page is built.
+
+For design-related considerations, see the [Design Review process](/handbook/design/process/#design-review).
+
+
+## Pull Request Scope
+
+To support fast iteration:
+
+- prefer small, focused PRs  
+- avoid mixing content updates with layout or functional changes  
+- split larger changes into separate PRs where possible  
+
+This makes changes easier to review, test, and iterate on, and helps keep iterations small.
 
 ## Reviewing Pull Requests
 

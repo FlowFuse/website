@@ -38,7 +38,7 @@ Tracking down issues in your flows usually means adding debug nodes, reading thr
 
 You can now select individual debug log entries and include them as context when asking FlowFuse Expert for help. Combined with your selected flows, Expert sees exactly what you see — the error, the flow that produced it, and the surrounding context.
 
-![Selecting debug log entries as context for FlowFuse Expert](./images/debug-expert.png){data-zoomable style="border: 2px solid #E5E7EB;"}
+<lite-youtube videoid="e0XV6lMKazo" params="rel=0" style="width: 704; height: 100%; background-image: url('https://img.youtube.com/vi/e0XV6lMKazo/maxresdefault.jpg');" title="YouTube video player"></lite-youtube>
 <figcaption>Select specific log entries to give FlowFuse Expert focused troubleshooting context</figcaption>
 
 - **Select individual log entries** to focus Expert on the specific issue rather than everything in your log

@@ -9,6 +9,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/shopfloor-to-ai.png
 tags:
 - flowfuse
+cta:
+  type: contact
+  title: Build the Architecture Your AI Actually Needs
+  description: FlowFuse helps you connect industrial systems, enrich signals with context, and publish to a Unified Namespace so your AI finally has something useful to work with.
 ---
 
 Your industrial AI initiative is dying. Maybe it's already dead.

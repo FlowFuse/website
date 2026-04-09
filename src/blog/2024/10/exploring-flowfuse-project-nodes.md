@@ -11,6 +11,10 @@ tags:
    - node-red mqtt
    - node red mqtt 
    - node red communication protocols
+cta:
+  type: sign-up
+  title: Connect Your Node-RED Instances With Zero Configuration
+  description: FlowFuse gives you project nodes, a built-in MQTT broker, and centralized management — so your Node-RED instances can communicate securely without complex setup.
 ---
 
 Node-RED is a powerful tool for IoT application development, connecting various services and devices. However, establishing communication between different Node-RED instances—whether for monitoring or control—can be complex. This often requires detailed configurations and protocols like MQTT, HTTP, or CoAP, despite its seamless integration with many protocols.
@@ -204,5 +208,3 @@ Now that you understand how to use FlowFuse project nodes, you can significantly
 ## Conclusion
 
 FlowFuse project nodes streamline communication between Node-RED instances. By using these nodes, you can easily monitor performance, request data, and more. This makes your workflows smoother and more efficient. 
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Using%20FlowFuse%20Project%20Nodes%20for%20Faster%20and%20More%20Efficient%20Communication", cta_type: "signup", cta_text: "Streamline communication between your Node-RED instances—manage, scale, and secure them with ease to enhance industrial efficiency." %}

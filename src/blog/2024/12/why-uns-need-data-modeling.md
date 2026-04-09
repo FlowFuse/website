@@ -10,6 +10,10 @@ tags:
    - flowfuse
    - unified-namespace
    - data modeling
+cta:
+  type: demo
+  title: Turn Raw Factory Data Into Actionable Insights
+  description: FlowFuse helps you connect, collect, transform, and visualize industrial data — with the data modeling tools you need to make your Unified Namespace actually work.
 ---
 
 In manufacturing, data flows from various sources—machines, sensors, enterprise systems, and more. A [Unified Namespace (UNS)](/solutions/uns/) brings all this data into a central hub. However, centralizing data isn't enough to truly call it a UNS. It's not just about aggregating information. A true UNS goes beyond being a data repository; it organizes, structures, and contextualizes that data, transforming it into something valuable and actionable for your business.
@@ -131,7 +135,3 @@ With support for over 5,000 community nodes and protocols like MQTT, OPC-UA, and
 Check out [this article](/blog/2023/12/unified-namespace-data-modelling/) to see how FlowFuse makes data modeling easier.
 
 FlowFuse also offers enterprise-grade features to manage edge devices and Node-RED instances, helping you scale, collaborate, and stay compliant.
-
-**Take Control of Your Data with FlowFuse**
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Data%20Modeling%3A%20The%20Key%20to%20a%20Successful%20Unified%20Namespace", cta_type: "demo", cta_text: "Want to make the most of your data? Our team is ready to help you set up a Unified Namespace (UNS) that fits your needs." %}

@@ -146,6 +146,7 @@
     .pricing-tiles {
         position: relative;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr auto auto auto;
         gap: 20px;
         z-index: 2;
         margin-left: auto;
@@ -163,6 +164,19 @@
         display: flex;
         flex-direction: column;
         @apply max-w-sm;
+    }
+
+    @media (min-width: 768px) {
+        .pricing-tile {
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-row: span 5;
+        }
+        .pricing-tile-background {
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-row: span 5;
+        }
     }
 
     .pricing-tile--enterprise {
@@ -287,6 +301,7 @@
     margin: 0rem;
     border-radius: 18px;
     border: 2px solid theme(colors.indigo.200);
+    background-color: white;
     z-index: 0;
     cursor: pointer;
     padding: 0;

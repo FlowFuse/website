@@ -10,6 +10,10 @@ tags:
  - posts
  - node-red function node
  - node red function node
+cta:
+  type: sign-up
+  title: Write Complex Node-RED Logic Without the Struggle
+  description: FlowFuse Expert lets you generate function node code from plain-language descriptions — so you spend less time writing JavaScript and more time building what matters.
 ---
 
 Node-RED is a powerful tool for building automation flows through its visual interface and low-code nodes. However, there are times when this low-code approach falls short, particularly when you need to implement complex JavaScript logic. That’s where the Function Node comes into play. Many Node-RED developers excel in their domains—such as IoT integration and PLCs—but may lack a strong foundation in JavaScript.
@@ -84,8 +88,6 @@ Before proceeding, ensure you have updated Node-RED to the latest version on the
 7. Deploy the flow and click the inject button; both UCL and LCL will be displayed on the debug panel.
 
 Using the FlowFuse Expert is significantly easier than Blockly, as it streamlines the process and saves you valuable time. You can articulate your goals in plain English or other languages, such as Spanish or Dutch, and the assistant generates your Function Node seamlessly. This allows you to focus more on your project objectives rather than getting bogged down in coding or block arrangements. Additionally, it provides you with the original Function Node, maintaining standard functionality.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Exploring%20Quick%20Ways%20to%20Write%20Complex%20Logic%20in%20Function%20Nodes%20in%20Node-RED", cta_type: "signup", cta_text: "" %}
 
 ## Conclusion 
 

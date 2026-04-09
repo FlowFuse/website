@@ -11,6 +11,10 @@ tags:
    - post
    - flowfuse
    - mqtt
+cta:
+  type: demo
+  title: Get More Out of MQTT in Your Industrial Environment
+  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, SSL/TLS security, and centralized device management — everything you need to run reliable, scalable industrial IoT communication.
 ---
 
 MQTT is a go-to protocol for industrial IoT, known for its efficiency, scalability, and ease of use. While it offers great flexibility in handling real-time data, there are key factors to consider in order to get the most out of it. From ensuring data consistency to addressing security and performance concerns, these factors can significantly enhance MQTT’s effectiveness in industrial settings.
@@ -108,8 +112,6 @@ Security is another area where FlowFuse excels. It allows you to configure MQTT 
 FlowFuse also simplifies the creation of acknowledgment mechanisms. With Node-RED, you can design custom workflows to track message receipt and processing, ensuring data integrity and improving operational transparency. This level of control guarantees that your system operates smoothly and reliably.
 
 Additionally, FlowFuse provides its own MQTT broker service that follows open standards, helping you avoid vendor lock-in and offering the flexibility to scale and adapt as your needs evolve. With built-in high availability, load balancing, and access control mechanisms, FlowFuse ensures continuous and reliable and secure data flow. And you can scale its capabilities by contacting FlowFuse support to meet the growing demands of your industrial IoT system.
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.cloud/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Getting%20the%20Most%20Out%20of%20MQTT%20for%20Industrial%20IoT", cta_type: "signup", cta_text: "" %}
 
 ## Conclusion
 

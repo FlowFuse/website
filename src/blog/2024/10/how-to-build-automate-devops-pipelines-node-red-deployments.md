@@ -9,6 +9,10 @@ tags:
    - node-red devops
    - node red devops
    - node red devops pipeline
+cta:
+  type: demo
+  title: Deploy Node-RED Flows With Confidence
+  description: FlowFuse gives you visual DevOps pipelines, staged rollouts, and one-click deployment to thousands of devices — so every change is tested before it touches production.
 ---
 
 When deploying any update in your manufacturing or automotive process, it is important to perform testing and validation. The smallest errors can lead to a production outage. In such cases, having a quick and reliable deployment process is essential for maximising uptime and minimising downtime.
@@ -92,5 +96,3 @@ When creating a pipeline, you can include only one Device Group, and it must be 
 ## Conclusion
 
 DevOps pipelines formalize deployment patterns, standardize testing, and streamline updates, minimizing errors and downtime. This clear process improves reliability and helps organizations adapt more easily thus ensuring smooth operation of critical applications in manufacturing and automotive environments.
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Creating%20and%20Automating%20DevOps%20Pipelines%20for%20Node-RED%20in%20Industrial%20Environments", cta_type: "demo", cta_text: "Want to learn how FlowFuse can help you scale, manage, and optimize your industrial processes?" %}
