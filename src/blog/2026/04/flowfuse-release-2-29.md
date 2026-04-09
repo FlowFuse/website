@@ -24,13 +24,6 @@ cta:
   description: Use Expert to take action in your editor, connect Azure DevOps to your workflow, and see exactly what changed between snapshots.
 ---
 
-<!--
-  STATUS: WIP, needs refinement
-  - [ ] Screenshots / video for Azure DevOps pipeline setup
-  - [ ] Screenshot for Expert on self-hosted
-  - [ ] Final copy review 
--->
-
 FlowFuse 2.29 gives teams more control over how flows move through their stack, makes it easier to understand what changed between versions, and brings FlowFuse Expert to self-hosted enterprise customers.
 
 <!--more-->
