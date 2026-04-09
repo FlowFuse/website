@@ -53,10 +53,8 @@ Expert responses previously surfaced information and suggestions. Acting on them
 
 Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation.
 
-![Placeholder for Expert action links demo](https://placehold.co/900x500/e5e7eb/6b7280?text=Expert+action+links+demo+placeholder){data-zoomable style="border: 2px solid #E5E7EB;"}
-<figcaption>Placeholder, replace with GIF demonstrating Expert action links</figcaption>
-
-<!-- TODO: replace placeholder with real GIF showing action links in Expert responses -->
+![Expert action links demo](src/blog/2026/04/images/expert-action-links.gif)
+<figcaption>Expert responses can now act on your behalf — click a link and Expert opens a tab, selects nodes, or imports a flow directly in your editor.</figcaption>
 
 **Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.
 
