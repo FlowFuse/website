@@ -232,6 +232,78 @@ sections:
             value: true
             note: "Starts with 20, shared with hosted instance count"
 
+      - id: snapshots
+        label: Snapshots
+        description: "Take point-in-time backups of your Node-RED instances and devices. Restore, promote between environments, or compare two snapshots side by side to see exactly what changed."
+        docsLink: /docs/user/snapshots/
+        changelog: null
+        subfeature: false
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-remote
+        label: Auto Snapshot for Remote Instances
+        description: "Automatically capture a snapshot every time a remote instance is deployed, so you always have a recoverable history of what was running on each device."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-hosted
+        label: Auto Snapshot for Hosted Instances
+        description: "Automatically capture a snapshot every time a hosted instance is deployed, so you always have a recoverable history of what was running."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: installation-support
         label: Installation Support
         description: null
@@ -500,6 +572,31 @@ sections:
           enterprise:
             value: true
 
+      - id: immersive-editor-snapshots
+        label: Snapshot Details in Immersive Editor
+        description: "View and manage snapshot details directly inside the immersive editor without leaving your editing session."
+        docsLink: /docs/user/snapshots/
+        changelog:
+          - url: /changelog/2026/03/snapshot-detail-modal-immersive-editor/
+            release: '2.29'
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: pipelines
         label: DevOps Pipelines
         description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."
@@ -511,6 +608,31 @@ sections:
         cloud:
           starter:
             value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshot-compare
+        label: Snapshot Comparison
+        description: "Compare two snapshots side-by-side with a navigable diff view — step through every changed, added, or deleted node and see property and code diffs."
+        docsLink: /docs/user/snapshots/
+        changelog:
+          - url: '/changelog/2026/04/snapshot-diff-viewer/'
+            release: '2.29'
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
           pro:
             value: true
           enterprise:
