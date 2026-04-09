@@ -84,9 +84,7 @@ FlowFuse's snapshot comparison view showed flows side by side, but the visual al
 
 The compare dialog now includes a property-level diff sidebar: structural property changes old to new at a glance, and git-style line diffs for function code, template HTML, and JSON. A navigation bar steps through every changed, added, or deleted node with arrow key shortcuts. The canvas highlights and scrolls to the current node as you navigate.
 
-<!-- TODO: replace placeholder with real GIF showing the snapshot diff sidebar -->
-
-<div class="ff-related-changelogs">Changelog: <em>[Richer snapshot comparison view](https://flowfuse.com/changelog/2026/04/snapshot-diff-viewer/)</em></div>
+<div class="ff-related-changelogs">Changelog with video demo: <em>[Richer snapshot comparison view](https://flowfuse.com/changelog/2026/04/snapshot-diff-viewer/)</em></div>
 
 ### In practice
 
