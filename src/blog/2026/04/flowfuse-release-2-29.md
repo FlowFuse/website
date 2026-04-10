@@ -27,7 +27,10 @@ cta:
 FlowFuse 2.29 gives teams more control over how flows move through their stack, makes it easier to understand what changed between versions, and brings FlowFuse Expert to self-hosted enterprise customers.
 
 <!--more-->
-<lite-youtube videoid="lz4bu7d1AH0" params="rel=0" style="width: 704px; height: 100%;" title="FlowFuse v2.29 - Expert Comes to Self-Hosted Enterprise, Diff Comparisons, and More!">
+---
+title: FlowFuse v2.29 - Expert Comes to Self-Hosted Enterprise, Diff Comparisons, and More!
+video: lz4bu7d1AH0
+---
 
 ## FlowFuse Expert, Available to More Teams and More Capable {#expert}
 
