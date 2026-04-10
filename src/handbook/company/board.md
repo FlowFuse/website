@@ -12,6 +12,8 @@ topic for a deep dive.
 Scheduling is done by sending out a [Doodle](https://doodle.com/en/) to ensure
 it's low friction for all participants.
 
+Board meeting dates are planned and communicated at the beginning of each calendar year. Before confirming dates, ensure there are no major conflicts (e.g. company events, holidays, or key stakeholder unavailability). One (1) month prior to each Board meeting, reconfirm the scheduled date and check for any new conflicts. Any changes or cancellations must be communicated to the Board at least one (1) month in advance, and if a meeting is cancelled, all Board members must be notified.
+
 ## Calendar invites
 
 Since some of the folks invited alternate meetings they attend, we have two
