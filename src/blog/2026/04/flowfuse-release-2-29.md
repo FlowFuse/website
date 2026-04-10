@@ -28,7 +28,6 @@ FlowFuse 2.29 gives teams more control over how flows move through their stack, 
 
 <!--more-->
 ---
-title: FlowFuse v2.29 - Expert Comes to Self-Hosted Enterprise, Diff Comparisons, and More!
 video: lz4bu7d1AH0
 ---
 
