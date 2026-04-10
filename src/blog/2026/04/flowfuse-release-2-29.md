@@ -28,6 +28,12 @@ FlowFuse 2.29 gives teams more control over how flows move through their stack, 
 
 <!--more-->
 
+<lite-youtube
+  videoid="lz4bu7d1AH0"
+  params="rel=0"
+  style="width: 704px; height: 100%;"
+  title="FlowFuse v2.29 - Expert Comes to Self-Hosted Enterprise, Diff Comparisons, and More!">
+
 ## FlowFuse Expert, Available to More Teams and More Capable {#expert}
 
 *FlowFuse Expert is our integrated AI assistant — one consistent surface across the FlowFuse website, platform, and immersive Node-RED editor for troubleshooting, building, and getting targeted help.*
