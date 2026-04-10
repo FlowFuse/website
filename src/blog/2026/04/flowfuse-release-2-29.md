@@ -5,6 +5,7 @@ description: "FlowFuse 2.29 brings FlowFuse Expert to self-hosted enterprise cus
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/04/images/flowfuse-release-2-29.png
+video: lz4bu7d1AH0
 tags:
    - flowfuse
    - news
@@ -27,9 +28,6 @@ cta:
 FlowFuse 2.29 gives teams more control over how flows move through their stack, makes it easier to understand what changed between versions, and brings FlowFuse Expert to self-hosted enterprise customers.
 
 <!--more-->
----
-video: lz4bu7d1AH0
----
 
 ## FlowFuse Expert, Available to More Teams and More Capable {#expert}
 
