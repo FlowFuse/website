@@ -22,7 +22,7 @@ Use the Prev / Next buttons or the ← → arrow keys to navigate through change
 <lite-youtube
   videoid="cNdGB-gksfQ"
   params="rel=0"
-  style="width: 704px; height: 100%;"
+  style="width: 100%; aspect-ratio: 16/9;"
   title="Snapshot Comparison — FlowFuse v2.29">
 </lite-youtube>
 

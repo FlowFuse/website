@@ -12,8 +12,8 @@ The P.A.s tasks is to run complete certain tasks every day. For some, even
 multiple times a day.
  
 1. [Inbox Management](/handbook/operations/ceo-ops/inbox-management/)
-1. Calendar Management
-1. CEO Task Management
+1. [Calendar Management](handbook/operations/ceo-ops/calendar-management/)
+1. [CEO Task Management](/handbook/operations/ceo-ops/task-managment/)
 1. Other tasks to pick up (Peopleops, bizops, etc)
 
 ### CEO meeting hours

@@ -58,7 +58,7 @@
         "@11ty/eleventy-fetch": "^4.0.0",
         "@flowfuse/flow-renderer": "^0.5.0",
         "@netlify/blobs": "^10.3.0",
-        "@xmldom/xmldom": "^0.8.10",
+        "@xmldom/xmldom": "^0.8.12",
         "algoliasearch": "^4.25.3",
         "codeowners": "^5.1.1",
         "eleventy-plugin-toc": "^1.1.5",
