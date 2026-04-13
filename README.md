@@ -4,14 +4,24 @@
 
 This repository contains the source of the FlowFuse website.
 
-It is built using [Tailwind CSS](https://tailwindcss.com/) and [Eleventy](https://www.11ty.dev/).
-
 It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
-
 This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `main` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
 repository, when changes are pushed to `main`.
 
 Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
+
+## Repository structure
+
+This repository is an **npm workspace** containing two projects:
+
+| Directory | Purpose |
+|-----------|---------|
+| *(root)* | Legacy [Eleventy](https://www.11ty.dev/) site — all existing content lives here |
+| `nuxt/` | New [Nuxt 3](https://nuxt.com/) frontend — pages are migrated here incrementally |
+
+### Nuxt migration
+
+The site is being migrated from Eleventy (11ty) to Nuxt 3 using the [Strangler Fig pattern](https://martinfowler.com/bliki/StranglerFigApplication.html). Nuxt acts as the front door on port 3000: pages that have been migrated are served directly by Nuxt; all other routes are transparently proxied to the legacy 11ty server on port 8080.
 
 ## Prerequisites 
 
@@ -31,34 +41,45 @@ Netlify is then configured to watch the `live` branch for any changes, once dete
 * `jq` ([download](https://stedolan.github.io/jq/))
    * From a administrator terminal, run `choco install jq`
 
-## Building the site locally
+## Running locally
 
-First clone the FlowFuse repository with `git clone https://github.com/FlowFuse/flowfuse` or
-using a Git client like VS Code. 
-
-Secondly, clone the website repository with `git clone https://github.com/FlowFuse/website.git` or
-using a Git client like VS Code. After cloning the repository, open a
-terminal inside the newly cloned `website` directory and install the project dependencies, then run the build and the website
-(driven by eleventy) server:
+Clone the repository, then install all dependencies (workspace packages are included automatically):
 
 ```bash
 npm install
+```
 
+### Start both servers (recommended)
+
+```bash
+npm run dev
+```
+
+This starts three watchers concurrently:
+
+| Process | URL | Description |
+|---------|-----|-------------|
+| Nuxt dev server | http://localhost:3000 | Front door — serves migrated pages and proxies everything else |
+| 11ty dev server | http://localhost:8080 | Legacy site (proxied through Nuxt) |
+| PostCSS watcher | — | Compiles Tailwind CSS for the legacy site |
+
+**Use http://localhost:3000** as your development URL. The legacy 11ty server on port 8080 is also accessible directly if needed.
+
+**Note**: the first time running this, 11ty may take a little while to process all images in the `/docs` and `/handbook` folders.
+
+### Legacy-only mode
+
+To run just the legacy 11ty stack (equivalent to the old `npm start`):
+
+```bash
 npm start
 ```
 
-This will start a server on http://localhost:8080 that will automatically reload whenever
-any content is changed. 
-
-**Note**: the first time running this, it may take a little while as it
-needs to parse all images in the `/docs` and `/handbook` folders. You will
-see a `404` at `localhost:8080` during this time.
+This starts the full legacy stack on http://localhost:8080 including docs, blueprints, and PostCSS.
 
 ### Running FlowFuse Documentation
 
-Much like our Handbook, the documentation for FlowFuse are also maintained in a separate repository. Our docs are maintained in the core [FlowFuse repo](https://github.com/FlowFuse/flowfuse).
-
-If you want to run a local version of the documentation, you'll need to clone the FlowFuse repository alongside the website, e.g.:
+The documentation for FlowFuse is maintained in the core [FlowFuse repo](https://github.com/FlowFuse/flowfuse). To run a local version of the documentation, clone that repository alongside this one:
 
 ```
 /<parent_directory>
@@ -66,23 +87,11 @@ If you want to run a local version of the documentation, you'll need to clone th
     /flowfuse
 ```
 
-The `npm run start` command that starts the Website server will retrieve the documentation from that folder, and automatically inject them into the website for your viewing. Any changes made to the documentation in the `/flowfuse/docs` folder, will automatically refresh the website. The docs will be available at http://localhost:8080/docs.
+The `npm run dev` (and `npm start`) commands will retrieve the documentation from that folder and inject them into the site automatically. The docs will be available at http://localhost:3000/docs.
 
 ## How to add blog posts
 
-Add a new markdown file to `src/blog/` with the following metadata in the top:
-
-```
----
-title: My post title
-subtitle: A subtitle
-description: A short description of the post
-date: 2020-04-06
-authors: ["nick-oleary"]
----
-```
-
-The `authors` list should correspond to an entry under `src/_data/team`.
+See the [Blog section of the Marketing Handbook](https://flowfuse.com/handbook/marketing/blog/) for instructions on writing and publishing blog posts.
 
 ## Updating the FlowFuse Documentation
 
