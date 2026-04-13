@@ -1,0 +1,10 @@
+# Nuxt build outputs
+.nuxt/
+.output/
+dist
+
+# Nuxt Content cache
+.data/
+
+# Dependencies (hoisted to workspace root)
+node_modules/
