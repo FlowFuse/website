@@ -45,6 +45,7 @@ Insert the two tokens
           token: <Expert Token>
 ```
 
+NOTE: For FlowFuse v2.29.0 and onward the urls can be omitted from the configuration as they have preset defaults
 
 
 ### Kubernetes
@@ -57,3 +58,5 @@ The feature is enabled by adding the tokens to the values passed to the Helm cha
  - `forge.expert.enabled` should be set to `true`
  - `forge.expert.service.url` should be set to `https://expert.flowfuse.com/v4/expert`
  - `forge.expert.service.token` should be set to the provided Expert Token
+
+NOTE: For FlowFuse v2.29.0 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults
