@@ -149,7 +149,7 @@ If a screen recording better demonstrates the change than a static screenshot, y
 </lite-youtube>
 ```
 
-3. If the video includes spoken content, ensure closed captions (on-screen text for spoken audio) are enabled. Auto-generated captions are acceptable, but review them for accuracy if the video includes technical terms.
+3. If the video includes spoken content, ensure closed captions are enabled. Auto-generated captions can be used, but review them for accuracy, especially for technical terms.
 
 Replace the following:
 
