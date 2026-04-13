@@ -203,6 +203,9 @@ for employees located in the US.
 
 During the onboarding process on our EOR provider platform, candidates must either be citizens of the country where they will be working or possess a valid visa. Any requests for changes in tax residency should be communicated to the HR department and CEO at least 2 months in advance. This includes changing States within the US.
 
+#### Deposits
+Our partnership with Deel as an Employer of Record involves a standard security deposit to ensure compliance with local labor laws and to guarantee the seamless administration of international payroll and benefits. To read more about it, regarding deposit amounts, refunds, etc, authorized personnel may access the following [document](https://docs.google.com/document/d/1bjGI2JOLUuH_IvtEHOJiNacrCYKCMCAANzLoluaF9c8/edit?usp=sharing).
+
 ## Onboarding
 
 Before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
