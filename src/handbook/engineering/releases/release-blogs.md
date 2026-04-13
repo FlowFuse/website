@@ -95,7 +95,7 @@ Bullet list of smaller improvements, fixes, and Node-RED updates. No "In practic
 
 Keep the post to a single, well-defined call to action. Multiple CTAs split the reader's attention and reduce the effectiveness of each.
 
-The CTA is already handled via front matter — that is where it should be tailored if you need to customise it for a release. Do not add a `## Try FlowFuse` block manually in the body. It will render twice on the published page.
+The CTA is already handled via front matter. For guidance on how to add or customize it, refer to the handbook: [CTA Guidelines](handbook/marketing/blog/#cta). Do not add a `## Try FlowFuse` block manually in the body, as it will render twice on the published page.
 
 ## Writing style
 
