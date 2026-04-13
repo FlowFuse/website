@@ -4,7 +4,7 @@ navTitle: Release Blogs
 
 # Writing Release Blogs
 
-The [FlowFuse blog](/blog/) is where users, customers, and the broader Node-RED community go to understand what has changed in a release. A release blog is published on release day and covers the full scope of a release at a level of depth the changelog does not.
+The [FlowFuse blog](/blog/releases/) is where users, customers, and the broader Node-RED community go to understand what has changed in a release. A release blog is published on release day and covers the full scope of a release at a level of depth the changelog does not.
 
 A release blog is not a changelog, a PR description, or a feature list. It is a short, narrative announcement aimed at FlowFuse users who want to understand what improved for them and why it matters.
 
