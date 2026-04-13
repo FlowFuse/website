@@ -88,6 +88,11 @@ be working.
 The Organizer should also factor in the ease of getting Visas for team members who need
 to travel outside of their country. 
 
+### Visas & Invitation Letters
+If a letter of invitation is required, please reach out to BizzOps team so we can generate one. If a visa application is required, the employee will be responsible for covering the associated fees. (Visa applications are part of the standard screening process for travel, and since this applies to all employees, the costs are handled individually rather than as a company expense.)
+
+### Flights
+
 As the summit organizer, you should research rough flight costs for each employee based
 on their location. Add a 10-15% buffer and set this is a budget for that employee.
 Employees are responsible for booking their own flights. 
