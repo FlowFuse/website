@@ -30,6 +30,7 @@ specialSessions:
       imageClass: top
       labelClass: text-indigo-600
       label: Live at our booth
+      id: flowfuse-talks
       title: "FlowFuse Talks"
       date: "Monday, April 20 to Thursday, April 23 2026"
       location: "Hall 014 Stand K26"
@@ -161,7 +162,7 @@ bookDemo:
     <div id="special-sessions" class="container flex flex-col m-auto text-left items-stretch md:max-w-screen-lg scroll-mt-8 md:scroll-mt-12">
         <h2 class="text-gray-600 leading-snug mb-8 md:mb-10">Don't Miss our <span class="text-indigo-600">Special Sessions</span></h2>
         {% for session in specialSessions %}
-        <div class="rounded-xl border border-gray-200 bg-white p-4 sm:p-4 md:p-3 flex flex-col md:flex-row gap-5 items-center md:items-stretch drop-shadow-sm{% if not loop.first %} mt-6{% endif %}">
+        <div {% if session.id %}id="{{ session.id }}" {% endif %}class="rounded-xl border border-gray-200 bg-white p-4 sm:p-4 md:p-3 flex flex-col md:flex-row gap-5 items-center md:items-stretch drop-shadow-sm{% if not loop.first %} mt-6{% endif %} scroll-mt-8 md:scroll-mt-12">
             <div class="w-full h-[300px] ff-image-cover {{ session.imageClass or 'center' }} ff-image-rounded md:w-[240px] md:h-auto md:self-stretch shrink-0">
                 {% set imageSrc = ["./", session.image ] | join %}
                 {% set imageDescription = session.imgAlt %}

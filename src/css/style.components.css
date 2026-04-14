@@ -329,3 +329,28 @@
 .rich-content li:only-child {
     margin-bottom: 0;
 }
+
+/* --- Hannover Messe 2026 Promo Banner --- */
+/* Only what can't be done with inline Tailwind: animation state + child element targeting + ff-btn override */
+.hm-promo-banner {
+    transform: translateX(calc(100% + 48px));
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.hm-promo-banner--visible {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.hm-promo-banner__hm-logo picture,
+.hm-promo-banner__hm-logo img {
+    height: 54px;
+    width: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.hm-promo-banner__link:hover {
+    color: #fff;
+}
