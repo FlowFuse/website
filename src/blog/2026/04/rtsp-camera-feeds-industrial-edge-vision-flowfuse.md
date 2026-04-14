@@ -5,7 +5,7 @@ description: "Learn how to connect RTSP camera streams in FlowFuse, extract fram
 date: 2026-04-14
 keywords: RTSP, Node-RED, FlowFuse, industrial edge vision, IP camera, FFmpeg, IIoT, edge computing
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/04/images/rtsp-camera-feed-flowfuse.png
 tags:
   - flowfuse
 cta:
