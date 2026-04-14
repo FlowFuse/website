@@ -41,7 +41,7 @@ The invoice should include:
 
 #### Internal Processing & Approval (Accounts Payables)
 Once an invoice is received at billing@flowfuse.com, the following workflow is initiated:
-1. Forwarding: The billing@flowfuse.com Google Group routes all incoming bills to team@zeni.ai and flowfuse@zeni.ai
+1. Forwarding: The `billing@flowfuse.com` Google Group routes all incoming bills the Zeni team.
 2. System Entry: The accounting team, Zeni, enters the invoice into Bill.com and invites the vendor to the BILL network to facilitate secure e-payments.
 3. Verification: Accounting will contact the vendor directly if any additional information is required to process the payment.
 4. Approval Chain: Each invoice requires a minimum of **two approvers**, with the CEO (ZJ) serving as the final approver. Noubar will serve as the first approver. We can also get approval from the invoice's DRI if the person is outside the scope of the BizOps team.
