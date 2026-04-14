@@ -299,7 +299,7 @@ The Customer Success manager is responsible for executing the following steps
 when an annually-billed customer chooses not to renew their subscription:
 
 1. **Update Contracted Customer Tracker** Access the
-   [CS Customer tracking]([https://docs.google.com/document/d/1_s9JW-cD9yuRKS1Ztcc29wtxGIrdmhKjwZyoDIkkMRE/edit?tab=t.0](https://docs.google.com/spreadsheets/d/1n99ROi49GHdmHjYivbwGlKYH28Qh-x0QZUrxiO9ppHg/edit?gid=0#gid=0))
+   [CS Customer tracking](https://docs.google.com/spreadsheets/d/1n99ROi49GHdmHjYivbwGlKYH28Qh-x0QZUrxiO9ppHg/edit?gid=0#gid=0)
    and move the churned customer to the "Churned" tab. Add the churn date and the reason for churning. 
 
 2. **Cancel Subscription in Hubspot** Cancel the subscription on their account page in Hubspot, to ensure no further invoices are
