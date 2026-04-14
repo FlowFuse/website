@@ -2,7 +2,7 @@
 title: "RTSP Camera Feeds for Industrial Edge Vision in FlowFuse"
 subtitle: "Connect IP cameras to Node-RED, extract frames in real time, and route visual data across your industrial flows"
 description: "Learn how to connect RTSP camera streams in FlowFuse, extract frames at configurable intervals, and build real-time industrial vision pipelines, from conveyor inspection to thermal anomaly detection."
-date: 2026-04-10
+date: 2026-04-14
 keywords: RTSP, Node-RED, FlowFuse, industrial edge vision, IP camera, FFmpeg, IIoT, edge computing
 authors: ["sumit-shinde"]
 image:
@@ -30,7 +30,7 @@ You will connect an RTSP stream in FlowFuse, extract frames at a configurable in
 
 RTSP is not a streaming format. That distinction matters more than it sounds.
 
-When a camera sends video over a network, the actual media (the compressed frames) travels over RTP (Real-time Transport Protocol), with session quality feedback handled by RTCP (Real-time Transport Control Protocol). RTSP and RTP are independent protocols that operate at the same transport layer, each serving a distinct role. RTSP handles session control (typically over TCP, though UDP is also valid per RFC 2326), while RTP carries the media stream independently, typically over UDP. Think of RTSP as the remote control and RTP as the broadcast channel. When engineers say "the camera has an RTSP feed," what they mean is the camera exposes an RTSP endpoint that a client can connect to, negotiate a session with, and then receive a continuous RTP stream from.
+When a camera sends video over a network, the actual media (the compressed frames) travels over RTP (Real-time Transport Protocol), with session quality feedback handled by RTCP (Real-time Transport Control Protocol). RTSP and RTP are independent protocols that operate at the application layer, each serving a distinct role. RTSP handles session control (typically over TCP, though UDP is also valid per RFC 2326), while RTP carries the media stream independently, typically over UDP. Think of RTSP as the remote control and RTP as the broadcast channel. When engineers say "the camera has an RTSP feed," what they mean is the camera exposes an RTSP endpoint that a client can connect to, negotiate a session with, and then receive a continuous RTP stream from.
 
 The default port for RTSP is 554, though many cameras and servers use non-standard ports. 8554 is common enough that you will encounter it regularly; it is the default for MediaMTX, the test server used later in this guide. The URL follows a predictable pattern: `rtsp://username:password@camera-ip:port/stream-path`. The stream path varies by vendor, which is where most of the friction is, but the protocol underneath is consistent.
 
@@ -46,11 +46,13 @@ The camera has been there the whole time. RTSP is how you finally read it.
 
 When a camera streams H.264 (the most common codec on industrial IP cameras), FFmpeg decodes the H.264 stream and re-encodes each frame as a JPEG before piping it to your flow. This is not a passthrough; it is a decode-and-re-encode step, and it carries a real CPU cost on edge hardware. At 5 fps on a single camera, this is manageable on a modern edge device. At 10+ fps, or across multiple cameras, profile the CPU load before deploying to production. For thermal logging use cases where 1 fps is sufficient, the overhead is negligible.
 
-One useful tuning knob: FFmpeg's default MJPEG output uses near-lossless quality (`-q:v 2`), which produces large buffers and high encode overhead. Adding `-q:v 5` to your args is a modest quality reduction that meaningfully decreases buffer sizes and encode overhead with minimal visual quality loss for inspection purposes. The `-q:v` scale runs from 2 (highest quality, largest buffers) to 31 (lowest quality, smallest buffers), so higher values mean less overhead. For the conveyor inspection and thermal use cases described in this guide, quality 5–10 is a practical starting point. Use `-q:v 10` to further reduce pressure on constrained hardware. Add it after `-c:v mjpeg` in your args array:
+One useful tuning knob: FFmpeg's default MJPEG output uses near-lossless quality (`-q:v 2`), which produces large buffers and high encoding overhead. Adding `-q:v 5` to your args is a modest quality reduction that meaningfully decreases buffer sizes and encoding overhead with minimal visual quality loss for inspection purposes. The `-q:v` scale runs from 2 (highest quality, largest buffers) to 31 (lowest quality, smallest buffers), so higher values mean less overhead. For the conveyor inspection and thermal use cases described in this guide, quality 5–10 is a practical starting point. Use `-q:v 10` to further reduce pressure on constrained hardware. Add it after `-c:v mjpeg` in your args array:
 
 ```json
 ["-loglevel","error","-rtsp_transport","tcp","-i","rtsp://SECRET@192.168.1.64:554/Streaming/Channels/101","-f","image2pipe","-c:v","mjpeg","-q:v","5","-vf","fps=5","-"]
 ```
+
+If downstream processing — such as base64 conversion, dashboard rendering, or inference — cannot keep up with the incoming frame rate, frames may be dropped or memory usage may increase. Ensure the configured FPS aligns with the processing capacity of your flow and edge hardware.
 
 ## Prerequisites
 
@@ -177,7 +179,7 @@ Install `@kevingodell/node-red-ffmpeg` in your FlowFuse instance. This node wrap
 
 ### Step 4: Add Start and Stop Controls
 
-> **Windows note:** On Windows, Node.js child processes do not handle POSIX signals, so the `SIGTERM` kill signal used by the ffmpeg node is ignored by most FFmpeg builds. The Stop inject node described below will have no effect on Windows. If you are running FlowFuse on a Windows edge device, use a process manager or the Node-RED runtime restart to stop the stream instead.
+> **Windows note:** Node.js on Windows does not reliably propagate POSIX signals like SIGTERM to child processes, so the Stop inject node described below will have no effect on Windows. If you are running FlowFuse on a Windows edge device, use a process manager or the Node-RED runtime restart to stop the stream instead.
 
 Drag two **inject** nodes onto the canvas.
 
@@ -216,18 +218,20 @@ The `-rtsp_transport tcp` flag appears before `-i` in the args array, which is r
 
 To change the frame rate, update `fps=5`. For conveyor inspection, 5–10 fps is a practical starting point. For thermal logging, 1 fps is sufficient. Higher frame rates consume more CPU, both for FFmpeg's decode/re-encode step and for downstream processing. The `-q:v 5` setting controls JPEG quality; remember the scale runs 2–31 where lower means higher quality and larger buffers. Increase to `-q:v 10` to further reduce CPU and memory pressure on constrained hardware.
 
+If downstream processing — such as base64 conversion, dashboard rendering, or inference — cannot keep up with the incoming frame rate, frames may be dropped or memory usage may increase. Ensure the configured FPS aligns with the processing capacity of your flow and edge hardware.
+
 - **Outputs:** `1`
 - **Signal:** `SIGTERM` (Linux/macOS only — see Windows note in Step 4)
 
 **Understanding the node's outputs:** The **Outputs** field controls how many stdio streams from the ffmpeg process are wired as node outputs. Setting it to `1` wires stdout only. The node then adds one extra output on top for status messages, giving you **two outputs total**. Looking at the node on the canvas: the **top output (output 1) carries status events** (`spawn`, `close`, `error`) and the **bottom output (output 2) carries the stdout frame data**. Wire output 1 to a debug node so you can monitor when the process starts, stops, or errors — this is essential for keeping a long-running pipeline healthy.
 
-**Handling stream disconnections:** When the RTSP connection drops, the ffmpeg process exits and output 1 emits a `close` status event. Note that after a disconnection, FFmpeg takes several seconds to reconnect and resume emitting frames — the exact delay depends on the camera and network conditions. To keep the pipeline running unattended, add a watchdog: connect a **switch** node to output 1 that checks `msg.payload.status === 'close'`, then wire its output back to the ffmpeg node input with `msg.action = {"command":"start"}`. This restarts the stream automatically whenever the connection is lost.
+**Handling stream disconnections:** When the RTSP connection drops, the ffmpeg process may exit or stop producing frames, and output 1 emits a `close` status event. Note that after a disconnection, FFmpeg takes several seconds to reconnect and resume emitting frames — the exact delay depends on the camera and network conditions. To keep the pipeline running unattended, add a watchdog: connect a **switch** node to output 1 that checks `msg.payload.status === 'close'`, then wire its output back to the ffmpeg node input with `msg.action = {"command":"start"}`. This restarts the stream automatically whenever the connection is lost.
 
 > **Note:** The importable flow at the end of this guide does not include the watchdog node, to keep it easy to read. For a production deployment, add it as described above.
 
 ### Step 6: Reassemble JPEG Frames
 
-FFmpeg pipes frames as a continuous byte stream. Each frame arrives in multiple chunks split at the OS pipe buffer limit of 8192 bytes. This function node waits for a complete JPEG by detecting the start marker `0xFF 0xD8` (SOI) and end marker `0xFF 0xD9` (EOI), then outputs one complete frame per message.
+FFmpeg pipes frames as a continuous byte stream. Each frame arrives in multiple chunks split into chunks based on the OS pipe buffer behavior. This function node waits for a complete JPEG by detecting the start marker `0xFF 0xD8` (SOI) and end marker `0xFF 0xD9` (EOI), then outputs one complete frame per message.
 
 Note: within valid JPEG scan data, any `0xFF` byte that is not a marker is followed by a stuffed `0x00` byte per the JPEG spec, which means a literal `0xFF 0xD9` sequence cannot appear inside well-formed scan data. In practice this implementation is reliable for the MJPEG output FFmpeg produces. If you encounter corrupted frames with malformed streams, consider a more robust framing strategy such as FFmpeg's segment muxer, which produces self-contained JPEG files rather than a continuous byte stream.
 
