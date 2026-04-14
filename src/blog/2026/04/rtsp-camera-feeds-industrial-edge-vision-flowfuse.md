@@ -348,6 +348,6 @@ But capturing frames is only the first half. The value is in what you do with th
 
 FlowFuse supports this directly. The `@flowfuse-nodes/nr-ai-nodes` package brings ONNX runtime support into FlowFuse, which means any model you can train and export sits inside your flow like any other node. The frame comes in, the model scores it, the result routes wherever it needs to go. No cloud round trip. No external inference server to manage. No data leaving the plant network.
 
-To see the full pattern end to end, read [Building an AI Vibration Anomaly Detector for Industrial Motors](https://flowfuse.com/blog/2026/02/motor-anomaly-detector-ai/). It walks through training a custom model on real equipment data, exporting it to ONNX, and wiring it into a live FlowFuse inference flow using FlowFuse's AI nodes. The deployment approach is the same for any model you train, on any signal you can get into a flow.
+To see the full pattern end to end, read [Building an AI Vibration Anomaly Detector for Industrial Motors](/blog/2026/02/motor-anomaly-detector-ai/). It walks through training a custom model on real equipment data, exporting it to ONNX, and wiring it into a live FlowFuse inference flow using FlowFuse's AI nodes. The deployment approach is the same for any model you train, on any signal you can get into a flow.
 
 The camera is already there. The pipeline is already running. The next step is making it think.
