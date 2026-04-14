@@ -10,7 +10,8 @@ FlowFuse partners with external specialists to ensure global and domestic tax co
 | Payroll Tax     | Managed via Deel                                    | Per pay cycle
 | Income Tax      | Tax Consultants (filing in all states with physical presence/nexus)| Annual / Quarterly
 | Tax R&D Credit  | Tax Consultants (specialized study and filing)                     | Annual
-| Sales Tax       | TBC                                                                | Monthly/Quarterly
+| USA Sales Tax   | TBC                                                                | Monthly/Quarterly
+| UK Sales Tax    | Accountants                                                        | Quarterly
 
 To find out the names of the providers, please visit our [vendor sheet](https://docs.google.com/spreadsheets/d/1ro77wy0cRK6gpzVv_iq4vpdmbdMq61X5-tTwI_F3hXM/edit?gid=0#gid=0). 
 
