@@ -8,7 +8,7 @@ keywords:
   - certified nodes
   - AI Insights
 date: 2026-03-23
-authors: ["lori-beaulieu"]
+authors: ["zeger-jan-van-de-weg"]
 image: /blog/2026/03/images/enterprise-pillars-cert-nodes.png
 ---
 

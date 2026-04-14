@@ -159,24 +159,47 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: "1"
-            note: "Includes 1 hosted instance. Upgrades available up to 3 hosted / 3 remote instances. Additional instances are $20/month."
+            value: true
+            note: "Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted / 3 remote instances."
           pro:
-            value: "5"
-            note: "Starts with 5, shared with edge device count. Additional instances start at $35/month."
+            value: true
+            note: "Starts with 5, shared with edge device count"
           enterprise:
-            value: "20"
+            value: true
             note: "Starts with 20, shared with edge device count"
         selfHosted:
           starter:
             value: "5"
             note: "Includes 5 hosted instances, shared with edge device count"
           pro:
-            value: "10"
-            note: "Includes 10 hosted instances, shared with edge device count. Additional instances start at $35/month."
+            value: true
+            note: "Includes 5 hosted instances, shared with edge device count"
           enterprise:
-            value: "20"
+            value: true
             note: "Starts with 20, shared with edge device count"
+
+      - id: embedded-editor-tab-title
+        label: Embedded Editor Browser Tab Title
+        description: "The browser tab title updates to reflect the active Node-RED canvas tab when working in the embedded editor."
+        changelog:
+          - url: /changelog/2026/03/embedded-editor-tab-title/
+            release: "2.29"
+        subfeature: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
 
       - id: edge-devices
         label: Edge Devices
@@ -191,7 +214,7 @@ sections:
         cloud:
           starter:
             value: true
-            note: "Up to 3 remote instances. Shared with hosted instance count."
+            note: "Includes 5 edge devices"
           pro:
             value: true
             note: "Starts with 5, shared with hosted instance count"
@@ -208,6 +231,78 @@ sections:
           enterprise:
             value: true
             note: "Starts with 20, shared with hosted instance count"
+
+      - id: snapshots
+        label: Snapshots
+        description: "Take point-in-time backups of your Node-RED instances and devices. Restore, promote between environments, or compare two snapshots side by side to see exactly what changed."
+        docsLink: /docs/user/snapshots/
+        changelog: null
+        subfeature: false
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-remote
+        label: Auto Snapshot for Remote Instances
+        description: "Automatically capture a snapshot every time a remote instance is deployed, so you always have a recoverable history of what was running on each device."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshots-auto-hosted
+        label: Auto Snapshot for Hosted Instances
+        description: "Automatically capture a snapshot every time a hosted instance is deployed, so you always have a recoverable history of what was running."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
 
       - id: installation-support
         label: Installation Support
@@ -394,10 +489,10 @@ sections:
           starter:
             value: null
           pro:
-            value: "5 clients"
+            value: true
             note: "Includes 5 clients. Additional clients can be purchased."
           enterprise:
-            value: "20 clients"
+            value: true
             note: "Includes 20 clients. Additional clients can be purchased."
         selfHosted:
           starter:
@@ -405,7 +500,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: "20 clients"
+            value: true
             note: "Includes 20 clients. Additional clients can be purchased."
 
       - id: device-mgmt
@@ -477,6 +572,31 @@ sections:
           enterprise:
             value: true
 
+      - id: immersive-editor-snapshots
+        label: Snapshot Details in Immersive Editor
+        description: "View and manage snapshot details directly inside the immersive editor without leaving your editing session."
+        docsLink: /docs/user/snapshots/
+        changelog:
+          - url: /changelog/2026/03/snapshot-detail-modal-immersive-editor/
+            release: '2.29'
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: pipelines
         label: DevOps Pipelines
         description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."
@@ -488,6 +608,31 @@ sections:
         cloud:
           starter:
             value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
+      - id: snapshot-compare
+        label: Snapshot Comparison
+        description: "Compare two snapshots side-by-side with a navigable diff view — step through every changed, added, or deleted node and see property and code diffs."
+        docsLink: /docs/user/snapshots/
+        changelog:
+          - url: '/changelog/2026/04/snapshot-diff-viewer/'
+            release: '2.29'
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
           pro:
             value: true
           enterprise:
@@ -571,7 +716,7 @@ sections:
 
       - id: git-integration
         label: Git Integration
-        description: "Back up your flows to a remote Git repository through a DevOps Pipeline."
+        description: "Back up your flows to a remote Git repository through a DevOps Pipeline. Supports GitHub and Azure DevOps repositories."
         docsLink: /docs/user/devops-pipelines/#git-repository-stage
         changelog: null
         solutions: [mes, scada, uns, it-ot-middleware]
@@ -581,7 +726,57 @@ sections:
           starter:
             value: null
           pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
             value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+
+      - id: git-integration-github
+        label: GitHub
+        description: "Push and pull snapshots to GitHub repositories through DevOps Pipeline Git Stages."
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
+        changelog: null
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: true
+
+      - id: git-integration-azure
+        label: Azure DevOps
+        description: "Push and pull snapshots to Azure DevOps repositories through DevOps Pipeline Git Stages."
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
+        changelog:
+         - url: '/changelog/2026/03/azure-dev-ops-gitops'
+           release: '2.29'
+        subfeature: true
+        solutions: [mes, scada, uns, it-ot-middleware]
+        showOnPricing: true
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: null
+          pro:
+            value: true
           enterprise:
             value: true
         selfHosted:

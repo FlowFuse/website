@@ -111,7 +111,7 @@ Open territory:  Upon following circumstances the Company may have and assign te
   Compensation:
 
   * Booked Agreements in the open territory will be eligible for standard commission credit  
-  * Booked Agreements in the open territory will not be eligible for quota credit
+  * Booked Agreements in the open territory will not be eligible for quota credit without management approval
 
 ## 11. President’s Club & Achievers
 \[Intentionally Left Blank.\]

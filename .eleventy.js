@@ -231,6 +231,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/events/hm25-invite.ics");
     eleventyConfig.addPassthroughCopy("src/webinars/2025/simplifying-opc-ua/opc-ua-webinar-flows.zip");
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
+    eleventyConfig.addPassthroughCopy("src/js/hm-promo-banner.js");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
@@ -913,6 +914,7 @@ module.exports = function(eleventyConfig) {
     // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
     eleventyConfig.addTransform("docsFeatureBadges", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
+        if (!this.page.url || !/^(\/docs\/|\/node-red\/|\/handbook\/)/.test(this.page.url)) return content;
 
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);

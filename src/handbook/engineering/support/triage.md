@@ -8,7 +8,7 @@ navTitle: Triage Duty
 
 Support triage duty is a first-line monitoring role to ensure incoming support requests are promptly acknowledged, categorized, and routed to the right department, team, or person.
 
-At FlowFuse, we do not currently have a dedicated support team. To share the support load, keep every department connected to our users, and ensure clear ownership, we operate a **full company triage rotation**. This reflects our commitment to **proactive ownership as a company**, ensuring customers receive timely, thoughtful responses and that requests reach the right place quickly.
+At FlowFuse, we do not currently have a dedicated support team. To share the support load, keep every department connected to our users, and ensure clear ownership, we operate a triage rotation for all team members outside of Engineering. Engineering provides a separate rotating expert to support this process. This reflects our commitment to **proactive ownership as a company**, ensuring customers receive timely, thoughtful responses and that requests reach the right place quickly.
 
 The goal of triage is not to solve every issue yourself, but to act as a connector and create forward motion.
 
@@ -27,7 +27,7 @@ Support triage duty is not just an operational practice. It is an expression of 
 
 - **Collaborative Community**
 
-  By rotating triage across the company, customer ownership is shared rather than siloed. This keeps teams connected to real user needs and ensures information flows openly.
+  By rotating triage across the organization, customer ownership is shared, teams remain connected to real user needs, and ensures information flows openly.
 
 - **Constructive Candor**
 
@@ -44,8 +44,9 @@ Triage exists as a practical extension of how we work together at FlowFuse.
 
 ### The Schedule
 
-- Each Friday, the Support Coordinator announces the next **Triage Lead** in `#support-tickets`.
+- Each Friday, the Support Coordinator announces the next **Triage Lead** (from non-engineering teams) in `#support-tickets`.
 - Rotations last **one week (Monday to Friday)**.
+- In parallel, a second expert from Engineering is assigned weekly to assist with technical queries. This Engineering rotation is assigned by the Engineering Manager.
 
 ### The Role
 
