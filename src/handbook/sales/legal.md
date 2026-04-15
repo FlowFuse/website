@@ -82,6 +82,8 @@ Clauses we cannot agree to:
    [data classification policies](/handbook/company/security/data-management/#data-classification).
 1. Auditability of destruction of Confidential Information. As a remote company
    we will not allow third parties access to homes or offices of employees.
+1. Lack of experation of the NDA. For the duration of the relationship between our companies
+   or no more than 5 years, an NDA remains in play.
 
 ## Insurance Coverage
 
