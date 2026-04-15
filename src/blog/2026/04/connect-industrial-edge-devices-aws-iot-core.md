@@ -20,7 +20,7 @@ AWS IoT Core is Amazon's managed service for connecting edge devices to the clou
 
 FlowFuse is an industrial application platform that connects machines, collects data across any protocol, and builds and deploys industrial applications at scale. In this guide, we'll use FlowFuse as the edge platform to connect to AWS IoT Core.
 
-We'll walk through the full setup from scratch: creating an IoT Thing in AWS, generating X.509 certificates, configuring the right policy, and publishing your first message from the edge, verified live in the AWS console.
+We'll walk through the full setup from scratch: creating an IoT Thing in AWS, generating X.509 certificates, configuring the right policy, publishing your first message from the edge, and **verifying** it live in the AWS console.
 
 If you're new to MQTT and want to understand how it works before diving in, [this guide covers the fundamentals](/blog/2024/06/how-to-use-mqtt-in-node-red/).
 
@@ -56,12 +56,12 @@ _AWS IoT Core Thing name field with flowfuse-edge entered_
 6. Select **Auto-generate a new certificate** and click **Next**.
 
 !["AWS IoT Core certificate creation page with Auto-generate a new certificate option selected"](./images/aws-console-4-step.png)
-__
+_AWS IoT Core certificate creation page with Auto-generate a new certificate option selected_
 
 7. The next screen asks you to attach a policy. A policy defines what your device is allowed to do: connect, publish, subscribe, or receive. Without one, AWS will reject every connection even if the certificate is valid. Click **Create policy** in the top right. A new tab opens.
 
 !["AWS IoT Core policy attachment screen with the Create policy button visible in the top right"](./images/aws-console-5-step.png)
-__
+_AWS IoT Core policy attachment screen with the Create policy button visible in the top right_
 
 8. Give it a name like `flowfuse-policy`, switch to the **JSON** editor and paste the following:
 
@@ -92,7 +92,7 @@ _AWS IoT Core policy editor in JSON mode with the flowfuse-policy name entered a
 10. Back on the policy attachment screen, refresh the policy list, select `flowfuse-policy`, and click **Create thing**.
 
 !["AWS IoT Core policy attachment screen with flowfuse-policy selected and the Create thing button ready to click"](./images/aws-console-7-step.png)
-__
+_AWS IoT Core policy attachment screen with flowfuse-policy selected and the Create thing button ready to click_
 
 ## Step 2: Download Certificates
 
@@ -181,7 +181,7 @@ For this demo we'll use an **inject** node as the data source. In a real deploym
 3. Double-click the **mqtt out** node and set the **Topic** to `flowfuse/telemetry`. This is the topic AWS will receive messages on.
 4. Click **Done**, then click **Deploy** to apply the flow.
 
-Once deployed, the **mqtt out** node should show a green **connected** status indicator beneath it. If it shows red or a reconnecting state, double-check the endpoint, port, client ID, and certificate files.
+Once deployed, the **mqtt out** node should show a green **connected** status indicator beneath it. If it shows red or is in a reconnecting state, double-check the endpoint, port, client ID, and certificate files.
 
 !["Node-RED canvas showing the mqtt out node configured with the AWS IoT Core endpoint as the server and flowfuse/telemetry as the topic"](./images/mqtt-out.png)
 _mqtt out node configuration showing AWS IoT Core Endpoint selected as the server and flowfuse/telemetry set as the topic_
