@@ -34,9 +34,9 @@ eleventyComputed:
 ---
 
 <!-- Primary Content -->
-<div class="about w-full">
+<div class="about w-full px-6">
     <div class="w-full pt-12 pb-16 md:pb-10 md:pt-12 flex flex-col items-center">
-        <div class="container text-center max-w-xl md:max-w-4xl px-6">
+        <div class="container text-center max-w-xl md:max-w-4xl">
             <h1>About FlowFuse</h1>
             <div class="flex flex-col md:flex-row gap-8 items-center mt-10">
                 <div class="md:w-1/2 text-left my-auto">
@@ -84,11 +84,11 @@ eleventyComputed:
 </div>
 
 <!-- Team -->
-<div class="team w-full pb-20 pt-12">
-    <div class="container m-auto text-center max-w-xl md:max-w-4xl px-6 mb-10">
+<div class="team w-full pb-20 pt-12 px-6">
+    <div class="container m-auto text-center max-w-xl md:max-w-4xl mb-10">
         <h2>Meet the Team</h2>
     </div>
-    <div class="container m-auto text-left max-w-4xl px-6">
+    <div class="container m-auto text-left max-w-4xl">
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             {%- for member in team | dictsortBy(false, 'order') -%}
             <div id="{{ member._key }}" class="team-headshot w-full max-w-xs m-auto">
