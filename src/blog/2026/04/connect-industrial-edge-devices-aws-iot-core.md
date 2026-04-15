@@ -22,7 +22,7 @@ FlowFuse is an industrial application platform that connects machines, collects 
 
 We'll walk through the full setup from scratch: creating an IoT Thing in AWS, generating X.509 certificates, configuring the right policy, and publishing your first message from the edge, verified live in the AWS console.
 
-If you're new to MQTT and want to understand how it works before diving in, [this guide covers the fundamentals](https://flowfuse.com/blog/2024/06/how-to-use-mqtt-in-node-red/).
+If you're new to MQTT and want to understand how it works before diving in, [this guide covers the fundamentals](/blog/2024/06/how-to-use-mqtt-in-node-red/).
 
 ## Prerequisites
 
@@ -122,9 +122,6 @@ Every AWS account has a unique IoT Core endpoint. This is the host address you w
 ```
 xxxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com
 ```
-
-!["AWS IoT Core Domain configurations page showing the unique endpoint URL for the account"](./images/aws-console-domain-config.png)
-_Domain configurations page showing the endpoint URL_
 
 Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](https://flowfuse.com/docs/user/envvar/) — for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
 
