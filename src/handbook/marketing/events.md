@@ -161,11 +161,21 @@ Other type of content that's proven to be engaging is team pictures, tagging the
 
 Make sure to create a detailed briefing, provide examples and details of what is required and when. 
 
-#### Two Weeks Before the Event
+#### Two Weeks Before the Event: Pre-Event Outbound
 
 The sales team should send personal emails to those who redeemed free tickets, inviting them to book a meeting at the booth with one of the on-site team members. These should be personal emails, not newsletter or marketing emails, as this is a personal invitation to someone who already knows the company and redeemed their ticket using our link.
 
 Company participants will review the event's messaging framework, practice the pitch, record it, and share it on the Slack channel.
+
+Alongside marketing campaigns, the sales team should actively reach out to their target accounts ahead of the event.
+
+Reps should send personal, one-to-one emails linked to the HubSpot campaign, inviting contacts to visit the booth and book time to meet. These should be simple and relevant, not generic marketing emails.
+
+Where possible, include a meeting booking link to make it easy to schedule time in advance.
+
+The goal is to have meetings booked before the event, not just rely on booth traffic.
+
+As a baseline, each rep is expected to reach out to a meaningful set of target contacts and secure a number of meetings ahead of the event.
 
 #### During the event
 
