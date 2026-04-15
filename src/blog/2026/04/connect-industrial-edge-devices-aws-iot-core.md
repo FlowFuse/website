@@ -2,7 +2,7 @@
 title: "How to Connect Industrial Edge Devices to AWS IoT Core"
 subtitle: "Send industrial data from the edge to AWS securely over MQTT"
 description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates. This step-by-step guide covers creating an IoT Thing, generating certificates, configuring policies, and publishing your first message from FlowFuse."
-date: 2026-04-03
+date: 2026-04-15
 keywords: FlowFuse, AWS IoT Core, MQTT, X.509, IoT, industrial IoT, edge to cloud
 authors: ["sumit-shinde"]
 image:
@@ -84,7 +84,7 @@ __
 ```
 
 !["AWS IoT Core policy editor in JSON mode with the flowfuse-policy name entered and the permission JSON pasted in"](./images/aws-console-6-step.png)
-__
+_AWS IoT Core policy editor in JSON mode with the flowfuse-policy name entered and the permission JSON pasted in_
 
 > This wildcard policy works for initial setup. In production, replace `*` with specific ARNs for your Thing, topics, and client ID to follow least-privilege principles.
 
@@ -107,7 +107,7 @@ Before leaving the confirmation screen, download all three certificate files. Yo
 Click **Download** next to each file. Also download the **Amazon Root CA 1** from the link provided on the same page.
 
 !["AWS IoT Core certificate download screen showing the device certificate, private key, and Root CA download buttons"](./images/aws-console-8-step.png)
-__
+_AWS IoT Core certificate download screen showing the device certificate, private key, and Root CA download buttons_
 
 > Keep these files safe. You cannot download the private key again after leaving this page. If you lose it, you will need to create a new certificate.
 
@@ -126,7 +126,7 @@ xxxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com
 !["AWS IoT Core Domain configurations page showing the unique endpoint URL for the account"](./images/aws-console-domain-config.png)
 _Domain configurations page showing the endpoint URL_
 
-Save this. You'll need it in the next step.
+Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](https://flowfuse.com/docs/user/envvar/) — for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
 
 ## Step 4: Configure the MQTT Connection in FlowFuse
 
@@ -140,10 +140,12 @@ First, upload your certificates so Node-RED can use them for the TLS handshake.
 
 | Field | Value |
 | --- | --- |
-| Server | Your AWS IoT endpoint from Step 3 |
+| Server | `${SERVER}` — set via FlowFuse environment variable |
 | Port | `8883` |
-| Client ID | `flowfuse-edge` (must match your Thing name) |
+| Client ID | `${CLIENT_ID}` — set via FlowFuse environment variable |
 | Keep alive | `60` |
+
+Define `SERVER` and `CLIENT_ID` under your instance's environment settings in FlowFuse. See [FlowFuse Environment Variables](https://flowfuse.com/docs/user/envvar/) for how to configure them. Keeping these values out of the flow JSON means you can deploy the same flow to multiple edge instances — each with its own Thing name and endpoint — without touching the flow itself. The Client ID must still match your Thing name exactly, so each instance gets its own variable value.
 
 4. Check **Enable TLS**. A TLS configuration field appears.
 5. Click the **+** icon next to it to add a new TLS config.
