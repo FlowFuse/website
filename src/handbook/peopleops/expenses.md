@@ -129,7 +129,7 @@ recommended:
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-16gb-memory-512gb) (~$1299 ex VAT) |
 
-Unless circumstances require otherwise, laptops will only be considered for a
+Unless circumstances require otherwise, laptops will be considered for a
 refresh after 4 years. In some cases, depending on the specific requirements of the 
 role, a different device may be more appropriate. For example, roles that require 
 higher performance or processing power may opt for a [MacBook Pro](https://www.apple.com/shop/buy-mac/macbook-pro) instead of the standard 
