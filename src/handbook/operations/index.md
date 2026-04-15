@@ -42,6 +42,10 @@ This convention is particularly helpful for:
 
 **Note:** For internal face-to-face discussions, prefer Slack Huddles in public channels over Google Meet when possible, as noted in the services table above.
 
+## Mail Handling
+
+FlowFuse uses [Earthclass Mail](https://www.earthclassmail.com/) to handle physical mail. Earthclass Mail receives all incoming mail on our behalf, scans it, and makes it available digitally. By default, physical mail is shredded after scanning — if a piece of mail needs to be retained physically, shredding must be cancelled before it occurs. Any checks that need to be cashed cannot be processed automatically and must be handled manually; the CEO typically takes care of this.
+
 ## Email
 
 While there are a number of email aliases and google groups used throughout the organization, there is some activities across operations, people operations, and finance management that requires that activities be done with external parties. As a redundancy, rather than use a person's individual email (e.g. zj@), we use a google group to avoid the risk of information getting lost. For example, for some government filings, we use ops@.

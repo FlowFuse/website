@@ -17,6 +17,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Skip to main content link */
+.skip-to-main {
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.25rem 0.75rem;
+    background-color: theme(colors.indigo.600);
+    color: theme(colors.white);
+    border-radius: 0 0 0.375rem 0.375rem;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+.skip-to-main:hover {
+    background-color: theme(colors.indigo.700);
+}
+.skip-to-main:focus {
+    transform: translateY(0);
+    outline: 2px solid theme(colors.indigo.600);
+    outline-offset: 2px;
+}
+
 html, body {
     font-size: 16px;
     font-family: 'Helvetica Neue', sans-serif;
@@ -1811,6 +1836,11 @@ input[type="range"] {
     background: theme(colors.indigo.600);
 }
 
+input[type="range"]:focus-visible {
+    outline: 2px solid theme(colors.indigo.600);
+    outline-offset: 2px;
+}
+
 /* Thumb: webkit */
 input[type="range"]::-webkit-slider-thumb {
     /* removing default appearance */
@@ -1957,6 +1987,11 @@ lite-youtube::before {
     linear-gradient(135deg, theme(colors.red.400), theme(colors.indigo.400), theme(colors.red.400)) border-box;
     border: 1px solid transparent;
     animation: gradient-border-rotate 4s linear;
+}
+
+.ai-chat-box .textarea-wrapper:focus-within {
+    outline: 2px solid theme(colors.indigo.500);
+    outline-offset: 3px;
 }
 
 /* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */

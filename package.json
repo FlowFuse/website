@@ -42,7 +42,7 @@
         "del-cli": "^5.0.0",
         "dotenv-cli": "^7.4.4",
         "eleventy-plugin-code-clipboard": "git+https://github.com/joepavitt/eleventy-plugin-code-clipboard.git",
-        "html-minifier": "^4.0.0",
+        "html-minifier-terser": "^7.2.0",
         "markdown-it-anchor": "^8.6.7",
         "markdown-it-footnote": "^3.0.3",
         "netlify-plugin-cache": "^1.0.3",
@@ -57,6 +57,12 @@
         "tailwindcss": "^3.4.19",
         "terser": "^5.9.0",
         "vanilla-cookieconsent": "^3.0.0"
+    },
+    "overrides": {
+        "yaml": ">=1.10.3",
+        "simple-update-notifier": {
+            "semver": ">=7.5.2"
+        }
     },
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
