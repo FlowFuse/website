@@ -91,6 +91,13 @@ Authorized personnel may access insurance documents via the internal [Google Dri
 
 The internal document also contains our insurance broker's contact information, policy renewal dates, and key coverage details.
 
+To find employer liability insurance in Deel, follow these steps:
+1. Open Deel
+2. Click on People
+3. Click on Documents
+4. Click on Registration & Files
+5. Click on PEO Workers' Compensation Packet
+
 ## Miscellaneous
 
 - [W9 with signature](https://drive.google.com/file/d/1A2_mnPRfc5gWAb4yEYNiViuCHiARkLcD/view){rel="nofollow"}
