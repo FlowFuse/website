@@ -18,6 +18,8 @@ Every industrial site generates data. Getting it to AWS securely is where most t
 
 AWS IoT Core is Amazon's managed service for connecting edge devices to the cloud over MQTT. It handles secure device authentication, message routing, and fan-out to any AWS service in your stack: Lambda, DynamoDB, S3, and more. No broker to manage, no infrastructure to maintain.
 
+<!--more-->
+
 FlowFuse is an industrial application platform that connects machines, collects data across any protocol, and builds and deploys industrial applications at scale. In this guide, we'll use FlowFuse as the edge platform to connect to AWS IoT Core.
 
 We'll walk through the full setup from scratch: creating an IoT Thing in AWS, generating X.509 certificates, configuring the right policy, publishing your first message from the edge, and **verifying** it live in the AWS console.
@@ -183,7 +185,7 @@ For this demo we'll use an **inject** node as the data source. In a real deploym
 
 Once deployed, the **mqtt out** node should show a green **connected** status indicator beneath it. If it shows red or is in a reconnecting state, double-check the endpoint, port, client ID, and certificate files.
 
-!["Node-RED canvas showing the mqtt out node configured with the AWS IoT Core endpoint as the server and flowfuse/telemetry as the topic"](./images/mqtt-out.png)
+!["Node-RED canvas showing the mqtt out node configured with the AWS IoT Core endpoint as the server and flowfuse/telemetry as the topic"](./images/mqtt-out-aws-endpoint.png)
 _mqtt out node configuration showing AWS IoT Core Endpoint selected as the server and flowfuse/telemetry set as the topic_
 
 5. Click the button on the **inject** node to trigger a manual publish.
