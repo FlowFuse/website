@@ -127,18 +127,18 @@ Screenshots should ideally be **1408px wide**. Height can vary depending on what
 
 ### Screen recordings and videos
 
-If a screen recording better demonstrates the change than a static screenshot, you can embed a video or GIF in the changelog post.
+Use a video or GIF when the change is easier to show than describe.
 
-**GIFs** can be used for short, simple interactions where a video would be overkill. If you use a GIF:
+**GIFs** work well for short, simple interactions where a video would be overkill. If you use one:
 
 - It must be sharp and legible. No blurred or low-resolution captures.
 - It must be under 1MB. If it is larger, use a video instead.
 
 **Videos** are the recommended way to show screen recordings. To add one:
 
-1. Ask in [#dev-marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) to have the recording uploaded to YouTube. Give them the video title and they will handle the upload. By default it will be published as **unlisted**. If the recording is polished and has voiceover and refined editing, let them know it may be worth publishing publicly.
+1. Ask in [#dev-marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) to have the recording uploaded to YouTube. Give them the video title and they will handle the upload. They publish it as _unlisted_ by default. If the recording is polished and has voiceover and refined editing, let them know it may be worth publishing publicly.
 
-2. Once it is on YouTube, embed it in your post using the `<lite-youtube>` component. The component is already available in the website repository, no setup needed.
+2. Once it's on YouTube, embed it in your post using the `<lite-youtube>` component. No setup needed — it's already available in the website repository.
 
 ```html
 <lite-youtube
@@ -149,7 +149,7 @@ If a screen recording better demonstrates the change than a static screenshot, y
 </lite-youtube>
 ```
 
-3. If the video includes spoken content, ensure closed captions are enabled. Auto-generated captions can be used, but review them for accuracy, especially for technical terms.
+3. Review closed captions for accuracy if the video includes spoken content. Auto-generated captions work, but technical terms often need manual correction.
 
 Replace the following:
 
