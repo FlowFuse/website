@@ -116,7 +116,7 @@ their laptops. As such, the following devices are recommended:
 | Operating System | Recommended Device                                                                                                                                                     |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | MacOS            | [MacBook Pro 16" - 32 GB RAM](https://www.apple.com/shop/buy-mac/macbook-pro) (~$2,499 ex VAT) |
-| Windows/Linux    | [Dell XPS 15 - 16 GB RAM](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-15-laptop/spd/xps-15-9530-laptop/cn95303cc) (~$2,300)                                 |
+| Windows/Linux    | No recommendation at this time |
 
 If you require an alternative device, please discuss with your manager.
 
@@ -127,7 +127,7 @@ recommended:
 
 | Operating System | Recommended Device                                                                                                                                                    |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-16gb-memory-512gb) (~$1299 ex VAT) |
+| MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-midnight-m5-chip-10-core-cpu-10-core-gpu-24gb-memory-512gb-storage) (~$1499 ex VAT) |
 
 Unless circumstances require otherwise, laptops will be considered for a
 refresh after 4 years. In some cases, depending on the specific requirements of the 
