@@ -5,7 +5,7 @@ description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509
 date: 2026-04-15
 keywords: FlowFuse, AWS IoT Core, MQTT, X.509, IoT, industrial IoT, edge to cloud
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/04/images/edge-aws-iot-core.png
 tags:
   - flowfuse
 cta:
