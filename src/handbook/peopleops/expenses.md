@@ -108,6 +108,10 @@ Laptops are covered separately and are provided as needed when a new hire joins
 the team. If you choose to order a laptop by yourself, we generally recommend
 the following devices:
 
+##### Laptop Capitalization and Refresh Schedule
+
+Laptops are capitalized and depreciated in our accounting system over 3 years. Once the 3 years are up, the employee can replace their equipment with a newer model. Request a direct refresh of your equipment from your manager for approval before buying a new one.
+
 #### Developers
 
 We recognize that developers will have slightly more demanding requirements for
