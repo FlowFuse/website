@@ -1,0 +1,24 @@
+---
+pagination:
+    data: certifiedIntegrations.integrations
+    size: 1
+    alias: integration
+layout: layouts/certified-integration.njk
+eleventyComputed:
+    permalink: /integrations/{{ integration.slug }}/
+    title: "{{ integration.name }} Integration | FlowFuse"
+    integrationName: "{{ integration.name }}"
+    integrationShortName: "{{ integration.shortName }}"
+    integrationSlug: "{{ integration.slug }}"
+    heroDescription: "{{ integration.heroDescription }}"
+    useCasesJson: "{{ integration.useCases | json }}"
+    benefitsJson: "{{ integration.benefits | json }}"
+    certifiedNodeIds: "{{ integration.certifiedNodes }}"
+    trustSla: "{{ integration.trustSignals.sla }}"
+    trustSupportResponse: "{{ integration.trustSignals.supportResponse }}"
+    trustUpdateFrequency: "{{ integration.trustSignals.updateFrequency }}"
+    meta:
+        title: "{{ integration.meta.title }}"
+        description: "{{ integration.meta.description }}"
+        keywords: "{{ integration.meta.keywords }}"
+---

@@ -1,0 +1,65 @@
+---
+pagination:
+    data: protocolPairs
+    size: 1
+    alias: pair
+layout: layouts/connect.njk
+eleventyComputed:
+    permalink: /solutions/connect/{{ pair.slug }}/
+    title: "{{ pair.title }}"
+    fromName: "{{ pair.from.name }}"
+    fromShortName: "{{ pair.from.shortName }}"
+    fromSlug: "{{ pair.from.slug }}"
+    toName: "{{ pair.to.name }}"
+    toShortName: "{{ pair.to.shortName }}"
+    toSlug: "{{ pair.to.slug }}"
+    pairDescription: "{{ pair.description }}"
+    meta:
+        title: "{{ pair.meta.title }}"
+        description: "{{ pair.meta.description }}"
+        keywords: "{{ pair.meta.keywords }}"
+---
+<div class="mt-12 content">
+    <h2 class="mb-4">How to Connect {{ pair.from.name }} to {{ pair.to.name }}</h2>
+    <p>
+        FlowFuse makes it easy to bridge data from {{ pair.from.name }} to {{ pair.to.name }}
+        using Node-RED's visual flow editor. No custom code required.
+    </p>
+
+    <div class="mt-8">
+        <h3>Step-by-Step Guide</h3>
+        <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+                <div class="bg-indigo-100 text-indigo-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                <div>
+                    <h4 class="mt-0">Set up your {{ pair.from.shortName }} connection</h4>
+                    <p>Install the {{ pair.from.shortName }} nodes from the FlowFuse integration catalog and configure your connection parameters.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-start">
+                <div class="bg-indigo-100 text-indigo-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                <div>
+                    <h4 class="mt-0">Transform your data</h4>
+                    <p>Use function nodes or built-in transformers to reshape, filter, and enrich your data as it flows through the pipeline.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-start">
+                <div class="bg-indigo-100 text-indigo-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                <div>
+                    <h4 class="mt-0">Send data to {{ pair.to.shortName }}</h4>
+                    <p>Configure the {{ pair.to.shortName }} output node to deliver data to your target system in the format it expects.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-12 bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+        <h3 class="mt-0">Why use FlowFuse for this integration?</h3>
+        <ul>
+            <li><strong>No middleware complexity</strong> &mdash; FlowFuse handles the protocol translation natively</li>
+            <li><strong>Scale to production</strong> &mdash; Deploy at the edge or in the cloud with fleet management</li>
+            <li><strong>Enterprise governance</strong> &mdash; SSO, RBAC, and audit trails for every change</li>
+            <li><strong>Professional support</strong> &mdash; FlowFuse certified nodes with guaranteed quality</li>
+        </ul>
+    </div>
+</div>

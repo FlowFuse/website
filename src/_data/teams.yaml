@@ -1,0 +1,104 @@
+# Target teams/personas for FlowFuse
+# Each generates a page at: /solutions/teams/{slug}/
+#
+# To add a new team, add an entry below.
+teams:
+  - slug: operations-engineers
+    name: Operations Engineers
+    description: >
+      Operations engineers manage and optimize manufacturing processes,
+      ensuring equipment runs efficiently and production targets are met.
+    heroDescription: >
+      FlowFuse empowers operations engineers to build custom monitoring
+      and control solutions without writing code. Connect any machine,
+      build dashboards, and automate workflows.
+    painPoints:
+      - "Disconnected systems make it hard to get a unified view of operations"
+      - "Manual data collection from equipment is time-consuming and error-prone"
+      - "Legacy equipment lacks modern connectivity options"
+    relatedUseCases:
+      - machine-monitoring
+      - data-acquisition
+    relatedProtocols:
+      - opc-ua
+      - s7
+      - ethernet-ip
+    meta:
+      title: "FlowFuse for Operations Engineers"
+      description: "How FlowFuse helps operations engineers connect machines, build dashboards, and automate workflows."
+      keywords: "operations engineers, manufacturing, FlowFuse, industrial automation"
+
+  - slug: it-teams
+    name: IT Teams
+    description: >
+      IT teams manage enterprise infrastructure, ensure security and
+      compliance, and bridge the gap between operational technology
+      and information technology.
+    heroDescription: >
+      FlowFuse provides IT teams with enterprise-grade security,
+      governance, and audit trails for industrial applications.
+      Manage Node-RED deployments at scale with SSO, RBAC, and
+      centralized control.
+    painPoints:
+      - "Shadow IT from OT departments creates security blind spots"
+      - "Lack of visibility and governance over industrial integration tools"
+      - "Difficulty maintaining compliance when connecting OT to IT networks"
+    relatedUseCases:
+      - data-acquisition
+      - protocol-conversion
+    relatedProtocols:
+      - http-rest
+      - mqtt
+    meta:
+      title: "FlowFuse for IT Teams"
+      description: "How FlowFuse helps IT teams govern industrial integrations with enterprise-grade security."
+      keywords: "IT teams, enterprise security, governance, FlowFuse, RBAC, SSO"
+
+  - slug: maintenance-teams
+    name: Maintenance Teams
+    description: >
+      Maintenance teams keep equipment running, minimize downtime, and
+      transition from reactive to predictive maintenance strategies.
+    heroDescription: >
+      FlowFuse helps maintenance teams implement condition-based and
+      predictive maintenance. Monitor equipment health, detect anomalies,
+      and schedule maintenance before failures occur.
+    painPoints:
+      - "Reactive maintenance leads to costly unplanned downtime"
+      - "No easy way to track equipment health trends over time"
+      - "Difficulty integrating CMMS with shop floor sensor data"
+    relatedUseCases:
+      - predictive-maintenance
+      - machine-monitoring
+    relatedProtocols:
+      - opc-ua
+      - modbus
+    meta:
+      title: "FlowFuse for Maintenance Teams"
+      description: "How FlowFuse helps maintenance teams implement predictive maintenance and reduce downtime."
+      keywords: "maintenance teams, predictive maintenance, condition monitoring, FlowFuse"
+
+  - slug: data-engineers
+    name: Data Engineers
+    description: >
+      Data engineers build and maintain data pipelines and infrastructure,
+      ensuring industrial data flows reliably from source to analytics.
+    heroDescription: >
+      FlowFuse enables data engineers to build robust industrial data
+      pipelines without deep OT expertise. Connect any protocol,
+      transform data, and deliver to any data platform.
+    painPoints:
+      - "Industrial data is hard to access and normalize across different protocols"
+      - "Multiple proprietary protocols require specialized knowledge"
+      - "No standard tooling for OT data engineering workflows"
+    relatedUseCases:
+      - data-acquisition
+      - protocol-conversion
+    relatedProtocols:
+      - mqtt
+      - http-rest
+      - opc-ua
+    meta:
+      title: "FlowFuse for Data Engineers"
+      description: "How FlowFuse helps data engineers build industrial data pipelines across any protocol."
+      keywords: "data engineers, data pipelines, industrial data, FlowFuse, ETL"

@@ -1,0 +1,60 @@
+---
+pagination:
+    data: teams.teams
+    size: 1
+    alias: team
+layout: layouts/team.njk
+eleventyComputed:
+    permalink: /solutions/teams/{{ team.slug }}/
+    title: "FlowFuse for {{ team.name }}"
+    teamName: "{{ team.name }}"
+    teamSlug: "{{ team.slug }}"
+    heroDescription: "{{ team.heroDescription }}"
+    teamPainPoints: "{{ team.painPoints }}"
+    relatedUseCaseSlugs: "{{ team.relatedUseCases }}"
+    meta:
+        title: "{{ team.meta.title }}"
+        description: "{{ team.meta.description }}"
+        keywords: "{{ team.meta.keywords }}"
+---
+<div class="mt-12 content">
+    <h2 class="mb-4">How {{ team.name }} Use FlowFuse</h2>
+    <p>{{ team.description }}</p>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-8">
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="mt-0">What You Can Build</h3>
+            <ul>
+                <li>Custom dashboards for real-time visibility</li>
+                <li>Automated data pipelines across protocols</li>
+                <li>Alert systems for critical conditions</li>
+                <li>Integration workflows between OT and IT systems</li>
+            </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="mt-0">Why FlowFuse</h3>
+            <ul>
+                <li>No deep programming expertise required</li>
+                <li>Thousands of pre-built Node-RED nodes</li>
+                <li>Enterprise security and governance</li>
+                <li>Scale from prototype to production</li>
+            </ul>
+        </div>
+    </div>
+
+    {% if team.relatedProtocols.length > 0 %}
+    <h2 class="mt-12 mb-4">Protocols You'll Work With</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {% for pSlug in team.relatedProtocols %}
+            {% for p in protocols.protocols %}
+                {% if p.slug == pSlug %}
+                <a href="/solutions/protocols/{{ p.slug }}/" class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline group">
+                    <span class="font-semibold text-indigo-600 group-hover:text-indigo-800">{{ p.name }}</span>
+                    <p class="text-sm text-gray-600 mt-1 mb-0">{{ p.description | truncate(12) }}</p>
+                </a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

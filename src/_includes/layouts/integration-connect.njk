@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+sitemapPriority: 0.7
+---
+{# Connect Integration X to Y Page #}
+<div class="w-full" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+    <div class="w-full pt-12 pb-12 md:pt-8 md:pb-10">
+        <div class="px-6 container mx-auto text-center md:max-w-screen-lg">
+            <div class="flex items-center gap-2 mb-3 justify-center">
+                <span class="bg-green-700 text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">Certified</span>
+                <span class="text-green-400 text-xs font-semibold uppercase tracking-wide">Integration</span>
+            </div>
+            <h1 class="mt-0 m-auto font-medium max-w-2xl text-white">
+                Connect <span class="text-green-400">{{ fromName }}</span>
+                to <span class="text-green-400">{{ toName }}</span>
+            </h1>
+            <p class="mb-8 max-w-2xl mx-auto text-gray-300">{{ pairDescription }}</p>
+
+            {# Visual connection diagram #}
+            <div class="flex items-center justify-center gap-2 sm:gap-4 my-8 flex-wrap sm:flex-nowrap">
+                <div class="bg-white/10 border-2 border-white/20 rounded-lg p-3 sm:p-4 text-center min-w-[100px]">
+                    <span class="font-bold text-base sm:text-lg text-white">{{ fromShortName }}</span>
+                </div>
+                <div class="text-green-400 text-xl sm:text-2xl">&rarr;</div>
+                <div class="bg-indigo-500/20 border-2 border-indigo-400/40 rounded-lg p-3 sm:p-4 text-center min-w-[100px]">
+                    <span class="font-bold text-base sm:text-lg text-white">FlowFuse</span>
+                </div>
+                <div class="text-green-400 text-xl sm:text-2xl">&rarr;</div>
+                <div class="bg-white/10 border-2 border-white/20 rounded-lg p-3 sm:p-4 text-center min-w-[100px]">
+                    <span class="font-bold text-base sm:text-lg text-white">{{ toShortName }}</span>
+                </div>
+            </div>
+
+            <div class="flex gap-3 justify-center">
+                <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/"
+                   onclick="capture('cta-contact-us', {'position': 'primary'}, {'page': 'connect-{{ fromSlug }}-and-{{ toSlug }}'})">TALK TO AN EXPERT</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] !text-white !border-white/40 hover:!bg-white/10" href="{% include 'sign-up-url.njk' %}"
+                   onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'connect-{{ fromSlug }}-and-{{ toSlug }}'})">START FREE TRIAL</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Content body #}
+<div class="w-full px-6">
+    <div class="max-w-screen-lg mx-auto">
+        {{ content | safe }}
+    </div>
+</div>
+
+{# Reverse direction link #}
+<div class="w-full py-8 px-6 text-center">
+    <div class="max-w-screen-lg mx-auto">
+        <p class="text-gray-600">
+            Looking for the other direction?
+            <a href="/integrations/{{ toSlug }}/and/{{ fromSlug }}/" class="text-indigo-600 font-semibold">
+                Connect {{ toName }} to {{ fromName }} &rarr;
+            </a>
+        </p>
+    </div>
+</div>
+
+{# Related Integration Pages #}
+<div class="w-full bg-gray-50 py-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-8">Learn More</h2>
+        <div class="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+            <a href="/integrations/{{ fromSlug }}/"
+               class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition-all hover:no-underline group">
+                <span class="font-semibold text-indigo-600 group-hover:text-indigo-800">{{ fromName }}</span>
+                <p class="text-sm text-gray-600 mt-1 mb-0">View full integration details</p>
+            </a>
+            <a href="/integrations/{{ toSlug }}/"
+               class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-md transition-all hover:no-underline group">
+                <span class="font-semibold text-indigo-600 group-hover:text-indigo-800">{{ toName }}</span>
+                <p class="text-sm text-gray-600 mt-1 mb-0">View full integration details</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% include "common-cta.njk" %}

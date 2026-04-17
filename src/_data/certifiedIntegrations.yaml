@@ -1,0 +1,265 @@
+# Certified Integrations for FlowFuse
+#
+# Master data file defining all certified integrations.
+# Each integration groups one or more certified Node-RED node packages
+# into a single marketable entity with solution-oriented content.
+#
+# To add a new integration:
+#   1. Add an entry below following the existing pattern
+#   2. Detail pages auto-generate at /integrations/{slug}/
+#   3. "Connect X to Y" pages auto-generate via integrationPairs.js
+#
+categories:
+  - slug: industrial-protocols
+    name: Industrial Protocols
+  - slug: cloud-and-data
+    name: Cloud & Data
+  - slug: enterprise-systems
+    name: Enterprise Systems
+  - slug: edge-and-iot
+    name: Edge & IoT
+
+integrations:
+  - slug: opc-ua
+    name: OPC-UA
+    shortName: OPC-UA
+    icon: opc-ua
+    category: industrial-protocols
+    description: >
+      Industrial automation protocol for secure, reliable
+      machine-to-machine communication in manufacturing and process control.
+    heroDescription: >
+      Connect to any OPC-UA enabled device with commercially
+      supported, SLA-backed Node-RED nodes. Bridge shop floor data
+      to enterprise systems with guaranteed reliability.
+    certifiedNodes:
+      - node-red-contrib-opcua
+    useCases:
+      - title: SCADA Modernization
+        description: Bridge legacy SCADA systems to modern cloud platforms and dashboards without ripping and replacing existing infrastructure.
+      - title: IT/OT Convergence
+        description: Connect shop floor OPC-UA data directly to enterprise IT systems, ERPs, and business intelligence tools.
+      - title: Predictive Maintenance
+        description: Stream real-time machine telemetry to analytics platforms for condition monitoring and failure prediction.
+    benefits:
+      - title: Commercial Support
+        description: 24-hour response SLA with a dedicated engineering team that understands industrial protocols.
+      - title: Rigorous Testing
+        description: Tested against dozens of OPC-UA server implementations across major PLC and SCADA vendors.
+      - title: Guaranteed Compatibility
+        description: Validated with every FlowFuse release. No surprises after platform upgrades.
+    trustSignals:
+      sla: "99.9% uptime"
+      supportResponse: "24h"
+      updateFrequency: Monthly
+      certificationLevel: Enterprise
+    relatedIntegrations:
+      - mqtt
+      - modbus
+    meta:
+      title: "OPC-UA Integration for Node-RED | FlowFuse Certified"
+      description: "Enterprise-grade OPC-UA connectivity for Node-RED. Commercially supported, SLA-backed, and rigorously tested."
+      keywords: "OPC-UA, Node-RED, industrial automation, FlowFuse, certified node, OPC UA client, OPC UA server"
+
+  - slug: mqtt
+    name: MQTT
+    shortName: MQTT
+    icon: mqtt
+    category: industrial-protocols
+    description: >
+      Lightweight publish-subscribe messaging protocol for IoT
+      and industrial telemetry at scale.
+    heroDescription: >
+      Build production-grade MQTT data pipelines with FlowFuse.
+      Connect brokers, transform messages, and route data to any
+      destination with enterprise support and guaranteed uptime.
+    certifiedNodes:
+      - "@flowfuse/node-red-contrib-aedes"
+    useCases:
+      - title: Unified Namespace (UNS)
+        description: Implement a Unified Namespace architecture for real-time industrial data access across your entire organization.
+      - title: IoT Data Ingestion
+        description: Collect telemetry from thousands of devices and sensors through a centralized, managed MQTT infrastructure.
+      - title: Event-Driven Automation
+        description: Trigger automated workflows based on real-time MQTT messages from equipment and production systems.
+    benefits:
+      - title: Built-in Broker
+        description: FlowFuse includes a managed MQTT broker — no need to provision and maintain separate infrastructure.
+      - title: Scalable Architecture
+        description: Handle thousands of concurrent device connections with enterprise-grade message routing.
+      - title: Edge to Cloud
+        description: Deploy MQTT processing at the edge or in the cloud with FlowFuse fleet management.
+    trustSignals:
+      sla: "99.9% uptime"
+      supportResponse: "24h"
+      updateFrequency: Monthly
+      certificationLevel: Enterprise
+    relatedIntegrations:
+      - opc-ua
+      - modbus
+    meta:
+      title: "MQTT Integration for Node-RED | FlowFuse Certified"
+      description: "Enterprise-grade MQTT connectivity for Node-RED. Built-in broker, commercial support, and guaranteed reliability."
+      keywords: "MQTT, Node-RED, IoT, FlowFuse, certified node, MQTT broker, publish subscribe"
+
+  - slug: modbus
+    name: Modbus
+    shortName: Modbus
+    icon: modbus
+    category: industrial-protocols
+    description: >
+      Serial communication protocol for connecting PLCs, sensors,
+      and industrial controllers via RTU and TCP.
+    heroDescription: >
+      Integrate Modbus devices into modern data workflows with FlowFuse.
+      Read registers, coils, and inputs from any Modbus RTU or TCP
+      device with certified, commercially supported nodes.
+    certifiedNodes:
+      - node-red-contrib-modbus
+    useCases:
+      - title: Legacy Equipment Integration
+        description: Connect older Modbus-based equipment to modern cloud platforms without replacing working hardware.
+      - title: Energy Monitoring
+        description: Read power meters, environmental sensors, and utility systems over Modbus for real-time energy management.
+      - title: Process Data Collection
+        description: Aggregate register data from PLCs and controllers into centralized databases and dashboards.
+    benefits:
+      - title: RTU and TCP Support
+        description: Certified nodes support both Modbus RTU (serial) and Modbus TCP (Ethernet) in a single package.
+      - title: Production Hardened
+        description: Tested in high-frequency polling scenarios with robust reconnection and error handling.
+      - title: Commercial Support
+        description: Direct access to engineers who understand Modbus addressing, register maps, and industrial deployment.
+    trustSignals:
+      sla: "99.9% uptime"
+      supportResponse: "24h"
+      updateFrequency: Monthly
+      certificationLevel: Enterprise
+    relatedIntegrations:
+      - opc-ua
+      - s7
+    meta:
+      title: "Modbus Integration for Node-RED | FlowFuse Certified"
+      description: "Enterprise-grade Modbus RTU and TCP connectivity for Node-RED. Commercially supported and rigorously tested."
+      keywords: "Modbus, Modbus TCP, Modbus RTU, Node-RED, FlowFuse, certified node, PLC, industrial"
+
+  - slug: s7
+    name: Siemens S7
+    shortName: S7
+    icon: s7
+    category: industrial-protocols
+    description: >
+      Direct communication with Siemens S7-300, S7-400, S7-1200,
+      and S7-1500 PLCs without additional middleware.
+    heroDescription: >
+      Connect Siemens S7 PLCs directly to any system with FlowFuse.
+      Read and write PLC data, build dashboards, and automate
+      workflows with commercially supported Node-RED nodes.
+    certifiedNodes:
+      - node-red-contrib-s7
+    useCases:
+      - title: PLC Data Visualization
+        description: Stream Siemens PLC data to real-time dashboards and HMI replacements without proprietary SCADA software.
+      - title: MES Integration
+        description: Connect S7 PLCs to Manufacturing Execution Systems for production tracking and quality management.
+      - title: Cloud Connectivity
+        description: Bridge on-premises Siemens PLC data to cloud platforms like AWS, Azure, or Google Cloud.
+    benefits:
+      - title: Direct PLC Access
+        description: Read and write S7 data blocks, inputs, outputs, and markers without OPC-UA middleware.
+      - title: Multi-PLC Support
+        description: Connect to S7-300, S7-400, S7-1200, and S7-1500 series with a single certified node.
+      - title: Optimized Performance
+        description: Efficient polling with configurable cycle times and variable grouping for minimal PLC load.
+    trustSignals:
+      sla: "99.9% uptime"
+      supportResponse: "24h"
+      updateFrequency: Monthly
+      certificationLevel: Enterprise
+    relatedIntegrations:
+      - opc-ua
+      - modbus
+    meta:
+      title: "Siemens S7 Integration for Node-RED | FlowFuse Certified"
+      description: "Enterprise-grade Siemens S7 PLC connectivity for Node-RED. Direct access to S7-1200 and S7-1500 data."
+      keywords: "Siemens S7, PLC, S7-1500, S7-1200, Node-RED, FlowFuse, certified node, industrial automation"
+
+  - slug: ethernet-ip
+    name: Ethernet/IP
+    shortName: EtherNet/IP
+    icon: ethernet-ip
+    category: industrial-protocols
+    description: >
+      Industrial network protocol for real-time I/O control with
+      Allen-Bradley and Rockwell Automation equipment.
+    heroDescription: >
+      Connect Allen-Bradley and Rockwell Automation equipment to
+      enterprise systems with FlowFuse. Bridge Ethernet/IP data
+      to cloud platforms, databases, and business applications.
+    certifiedNodes: []
+    useCases:
+      - title: Rockwell Integration
+        description: Connect Allen-Bradley ControlLogix and CompactLogix controllers to modern IT infrastructure.
+      - title: Production Monitoring
+        description: Stream real-time production data from Ethernet/IP devices to dashboards and analytics platforms.
+      - title: Multi-Vendor Bridging
+        description: Bridge Ethernet/IP networks to other industrial protocols like OPC-UA and MQTT.
+    benefits:
+      - title: Allen-Bradley Native
+        description: Purpose-built for Rockwell Automation ecosystems with optimized tag-based data access.
+      - title: Real-Time Data
+        description: Low-latency data collection for time-critical monitoring and control applications.
+      - title: Enterprise Support
+        description: Commercial support from engineers experienced with Rockwell Automation deployments.
+    trustSignals:
+      sla: "99.9% uptime"
+      supportResponse: "24h"
+      updateFrequency: Monthly
+      certificationLevel: Enterprise
+    relatedIntegrations:
+      - opc-ua
+      - mqtt
+    meta:
+      title: "Ethernet/IP Integration for Node-RED | FlowFuse Certified"
+      description: "Enterprise-grade Ethernet/IP connectivity for Allen-Bradley and Rockwell Automation systems."
+      keywords: "Ethernet/IP, EtherNet/IP, Allen-Bradley, Rockwell Automation, Node-RED, FlowFuse, certified node"
+
+  - slug: http-rest
+    name: HTTP/REST APIs
+    shortName: REST
+    icon: http-rest
+    category: cloud-and-data
+    description: >
+      Connect to any web service, cloud platform, or enterprise
+      system that exposes a REST API interface.
+    heroDescription: >
+      Bridge industrial data to any REST API with FlowFuse.
+      Connect your shop floor to cloud services, databases, ERP
+      systems, and business applications with certified nodes.
+    certifiedNodes: []
+    useCases:
+      - title: Cloud Platform Integration
+        description: Push industrial data to AWS, Azure, or GCP services via their REST APIs.
+      - title: ERP Connectivity
+        description: Connect shop floor data to SAP, Oracle, or other ERP systems through REST interfaces.
+      - title: Webhook Automation
+        description: Trigger and respond to webhooks for event-driven integration between systems.
+    benefits:
+      - title: Universal Connectivity
+        description: Connect to any system with a REST API — cloud platforms, SaaS tools, custom applications.
+      - title: Authentication Support
+        description: Built-in support for OAuth2, API keys, bearer tokens, and certificate-based authentication.
+      - title: Data Transformation
+        description: Transform, filter, and enrich data between industrial formats and REST API payloads.
+    trustSignals:
+      sla: "99.9% uptime"
+      supportResponse: "24h"
+      updateFrequency: Monthly
+      certificationLevel: Enterprise
+    relatedIntegrations:
+      - mqtt
+      - opc-ua
+    meta:
+      title: "HTTP/REST Integration for Node-RED | FlowFuse Certified"
+      description: "Enterprise-grade REST API connectivity for Node-RED. Connect industrial data to any web service."
+      keywords: "REST API, HTTP, Node-RED, FlowFuse, certified node, web services, cloud integration"

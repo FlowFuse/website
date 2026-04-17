@@ -1,0 +1,43 @@
+---
+layout: nohero
+meta:
+    title: "Solutions by Team - FlowFuse"
+    description: "Discover how FlowFuse helps different teams: operations engineers, IT teams, maintenance teams, and data engineers."
+    keywords: "FlowFuse solutions, operations engineers, IT teams, maintenance teams, data engineers"
+---
+<div class="nohero w-full">
+    <div class="w-full pt-12 pb-8">
+        <div class="px-6 container mx-auto text-center md:max-w-screen-lg">
+            <h1 class="mt-0 m-auto font-medium">
+                Solutions by <span class="text-indigo-600">Team</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg">
+                Discover how FlowFuse helps different teams across your organization —
+                from operations engineers to data engineers.
+            </p>
+        </div>
+    </div>
+
+    <div class="container m-auto max-w-screen-lg px-6 pb-12">
+        <div class="grid sm:grid-cols-2 gap-6 mt-8">
+            {% for team in teams.teams %}
+            <a href="/solutions/teams/{{ team.slug }}/"
+               class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline group">
+                <h3 class="mt-0 mb-2 group-hover:text-indigo-600">{{ team.name }}</h3>
+                <p class="text-sm text-gray-600 mb-3">{{ team.description | truncate(20) }}</p>
+                <div class="flex flex-wrap gap-2">
+                    {% for ucSlug in team.relatedUseCases %}
+                        {% for uc in useCases.useCases %}
+                            {% if uc.slug == ucSlug %}
+                            <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded">{{ uc.name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include "common-cta.njk" %}
