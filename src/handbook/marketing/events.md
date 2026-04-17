@@ -203,6 +203,7 @@ Make sure to update the video loop for the screens, check the taglines, customer
 The team should confirm their availability around six months before the event, when they're invited to the trade show.
 
 As part of the logistics planning, a booth schedule will be created and accommodation will be booked. Considering those things, travels should be planned and booked two months in advance. For events requiring employee visas, a minimum lead time of 60 days is mandatory to process internal documentation (such as invitation letters) and account for embassy wait times.
+Team members assigned to an event should avoid scheduling personal travel during the week immediately before the trade show, to help ensure smooth preparation and on-site execution.
 
 If anyone wishes to take days off after the event, it would be ideal to add the out of office event to the team and personal calendars right after booking the travel tickets, so the retrospective meeting can be planned ahead of time considering the team availability.
 
