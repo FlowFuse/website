@@ -5,7 +5,7 @@ description: "Most edge deployments do not fail because of technology. They fail
 date: 2026-04-16
 keywords: IT vs OT, IT OT convergence, edge computing, industrial edge, edge ownership, IT OT integration, edge governance, edge device management, industrial IoT, Node-RED, FlowFuse
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/04/images/it-vs-ot-who-owns-the-edge.png
 tags:
 - flowfuse
 cta:
