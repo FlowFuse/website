@@ -18,7 +18,7 @@ Ask IT who owns the edge. They'll say they do. Ask OT the same question. Same an
 
 <!--more-->
 
-Both teams are wrong, and both teams are right. IT has the infrastructure discipline. OT has the operational knowledge. Neither has both — and the edge demands both. Until that tension gets resolved, deployments stall, workarounds multiply, and the line goes down at the worst possible moment while everyone figures out whose problem it is.
+Both teams are wrong, and both teams are right. IT has the infrastructure discipline. OT has the operational knowledge. Neither has both, and the edge demands both. Until that tension gets resolved, deployments stall, workarounds multiply, and the line goes down at the worst possible moment while everyone figures out whose problem it is.
 
 Edge ownership is genuinely uncomfortable to assign. It sits at the intersection of two teams with different mandates, different definitions of risk, and different answers to the same question: what does reliable actually mean here?
 
