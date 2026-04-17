@@ -20,12 +20,7 @@ This applies to:
 - Software Engineers, including the CTO when operating as an engineer
 - Infrastructure Engineers
 
-Levels reflect scope of ownership and influence.
-
-"Meets Expectations" at a level represents strong performance.
-
-Promotion requires sustained demonstration of next-level behaviors.
-
+Levels reflect scope of ownership and influence. "Meets Expectations" at a level represents strong performance. promotion requires sustained demonstration of next-level behaviors.
 
 # Core Dimensions
 
