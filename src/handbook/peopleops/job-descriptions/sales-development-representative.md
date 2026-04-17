@@ -6,83 +6,83 @@ navGroup: Job Descriptions
 # Sales Development Representative
 
 ## Job Description
-We are seeking a highly motivated, driven, and self-sufficient Sales Development Representative (an "SDR") to join our team and improve the consistency and predictability of our inbound conversion engine.
-This role is critical to FlowFuse’s growth because pipeline is not only constrained by demand, but by how consistently Marketing Qualified Leads (MQLs) are progressed into first meetings. In this early-stage growth opportunity, you will be responsible for owning inbound MQL follow-up, increasing meeting generation, reducing stalled leads, and helping us define what great early-stage execution looks like.
-This role requires someone who can execute with discipline, refine messaging based on real conversations, and help us optimize our MQL-to-meeting motion through iteration and learning.
 
-* Own inbound MQL follow-up and ensure every qualified lead is actively progressed toward a clear outcome.
-* Convert inbound demand into first meetings through structured, consistent, multi-touch follow-up.
-* Test and refine follow-up messaging, cadence, and conversion tactics based on real results.
-* Improve follow-up velocity and reduce the number of MQLs that stall after first contact.
-* Work closely with Account Executives to ensure high-quality handoff into discovery and sales conversations.
-* Collaborate cross-functionally with marketing and sales to align on lead quality, process design, and conversion goals.
-* Gather and communicate feedback on lead quality, objections, drop-off points, and messaging gaps.
-* Help define what a repeatable and scalable SDR function should look like at FlowFuse.
+We are hiring our **first-ever SDR** at FlowFuse — a blank-slate, build-it-yourself opportunity for someone who is energised by that kind of challenge.
+
+There is no existing SDR playbook. No inherited cadences. No handed-down process to maintain. What exists is a growing pipeline of inbound interest, a lean and high-performing sales team, and the expectation that you will figure out — fast — what works and do more of it.
+
+Your mandate is broad by design: work leads. Nurture them. Find the approaches that move conversations forward and double down on those. Drop what doesn't. Whether that is relentless inbound follow-up, creative outbound sequences, personalised video messages, or something we haven't thought of yet — the right answer is whatever produces results.
+
+[Results](/handbook/company/values/#-results) and [Iterative Improvement](/handbook/company/values/#-iterative-improvement) are two of FlowFuse's core values. This role is where both are most visible. We expect you to ship your first outreach on day two, measure it by day five, and iterate from there. You will own the SDR and BDR playbook — not inherit it. That means writing it, testing it, revising it, and making it repeatable.
+
+**What you will own:**
+
+* Work every qualified lead — inbound and, in time, outbound — toward a clear next step
+* Run multi-touch follow-up sequences and refine them based on actual conversion data
+* Build and maintain the SDR and BDR playbook from scratch, iterating rapidly on what works
+* Increase meeting generation and reduce stalled leads
+* Collaborate closely with Account Executives to ensure smooth handoff into discovery
+* Feed structured insight back to marketing on lead quality, objections, and messaging gaps
+* Track and report on core metrics: speed to first touch, MQL-to-meeting rate, follow-up velocity
 
 ## Role Evolution
-This role is initially focused on inbound MQL follow-up, as this is currently the primary constraint in our go-to-market motion. However, as we establish a consistent and repeatable inbound conversion process, the scope of the role is expected to evolve.
-Over time, the SDR will progressively take ownership of:
 
-* Outbound prospecting and account targeting
-* Identifying and engaging new potential customers
-* Testing outbound messaging and sequences
-* Supporting pipeline generation beyond inbound demand
-The goal is to grow this role from an inbound conversion engine into a broader sales development function, contributing both to pipeline efficiency and pipeline creation.
+We are hiring for inbound MQL follow-up first because that is the clearest constraint right now — but this role was never meant to stay there. As the inbound motion becomes repeatable, you will expand into outbound prospecting: identifying target accounts, testing cold sequences, and generating net-new pipeline. The SDR function you build will grow into a full SDR/BDR capability. This is a ground-floor opportunity to define what that looks like at FlowFuse.
 
 ## Skills
-* Startup GTM DNA: Comfortable operating in an early-stage environment with ambiguity, iteration, and evolving process definitions.
-* Inbound Conversion Mindset: Understands that success comes from speed, persistence, consistency, and follow-up quality rather than volume alone.
-* Curiosity & Adaptability: Excited to test new approaches, learn from outcomes, and continuously improve messaging and process.
-* Execution Discipline: Able to work through a structured follow-up cadence and maintain momentum across many leads without dropping quality.
-* Communication Skills: Excellent written and verbal communication skills, with the ability to engage both technical and business stakeholders clearly.
-* Technical Acumen: Comfortable understanding and speaking about technical solutions such as Node-RED, industrial automation, IoT, edge deployments, or DevOps-related tooling.
-* Process Thinking: Able to identify where leads stall, where the CRM does not reflect the real follow-up state, and how to improve system visibility.
-* Collaboration: Works well with marketing and Account Executives to align on handoff quality and conversion improvement.
-* Familiarity with AI tools to enhance prospecting, personalization, and follow-up workflows is a plus.
-* A strong attitude match with the existing team is critical, especially around ownership, learning, and consistency.
+
+* **Builder mentality**: Excited to work without a blueprint. You see an undefined process as an opportunity, not a gap.
+* **Bias for action**: You send the first email before the playbook is finished. You learn by doing, not by planning.
+* **Inbound conversion instincts**: Speed, persistence, and follow-up quality over raw volume.
+* **Iterative discipline**: You track what you test, draw conclusions quickly, and change course without drama.
+* **Communication**: Strong written and verbal skills. You can engage both a plant engineer and a CTO without switching decks.
+* **Technical curiosity**: Comfortable learning and talking about Node-RED, industrial automation, IoT, and edge deployments.
+* **Process thinking**: You spot where leads stall, where CRM data lies, and how to fix both.
+* **Familiarity with AI tools** to accelerate prospecting, personalisation, and cadence workflows is a plus.
 
 ## 90-Day Plan
-*  Week 1-4:
-  * Immerse yourself in FlowFuse’s product, strategy, market, and current GTM motion, with particular attention to how inbound demand turns into meetings and pipeline.
-  * Learn the official MQL definition, current routing logic, and the existing MQL follow-up playbook.
-  * By week 2, begin executing first-touch and follow-up outreach on inbound MQLs with support and review from the team.
-  * Familiarize yourself with the Node-RED ecosystem, common customer pain points, and the typical objections seen in inbound conversations.
-  * Meet with key stakeholders across sales, marketing, and customer success.
-  * Review current CRM stages, activity tracking, and areas where “worked” vs “progressing” are not clearly reflected.
-* Week 5-8:
-  * Take ownership of daily inbound MQL follow-up and begin operating independently against agreed follow-up SLAs.
-  * Start refining outreach messaging, objection handling, and follow-up cadence based on live conversations.
-  * Identify where leads stall between MQL and first meeting and recommend improvements.
-  * Begin tracking and reporting on key conversion metrics such as speed to first touch, MQL-to-meeting conversion, and follow-up velocity.
-  * Work with Account Executives to improve handoff quality and meeting preparedness.
-* Week 9-13:
-  * Operate the inbound SDR motion independently with clear daily and weekly discipline.
-  * Refine and iterate on the SDR playbook based on results, patterns, and conversion data.
-  * Provide structured feedback to marketing on lead quality, MQL segmentation, and messaging effectiveness.
-  * Help formalize what a scalable SDR function should look like at FlowFuse, including recommendations on process, tooling, and performance metrics.
+
+**Week 1–4**
+* Immerse yourself in FlowFuse's product, market, and current GTM motion — specifically how inbound demand currently does (and does not) become meetings
+* Learn the MQL definition, current routing logic, and any existing follow-up patterns
+* By week 2: send your first outreach sequences — no waiting for a perfect playbook
+* Meet with sales, marketing, and customer success to understand the full lead lifecycle
+* Begin logging observations on where leads stall and why
+
+**Week 5–8**
+* Own daily inbound MQL follow-up independently against agreed SLAs
+* Start systematically testing and iterating: messaging, cadence length, channel mix, personalisation approaches
+* Identify the top two or three places where MQL-to-meeting conversion breaks down and propose fixes
+* Begin tracking and sharing conversion metrics weekly
+
+**Week 9–13**
+* Operate the inbound SDR motion independently with clear daily and weekly discipline
+* Publish a first version of the SDR playbook — even if it is a draft — and treat it as a living document
+* Provide structured feedback to marketing on lead quality and messaging gaps
+* Begin scoping the outbound motion: target account criteria, sequencing approach, first tests
 
 ## Hiring Plan
-* Initial Screening: Review resumes and cover letters to assess candidate qualifications, communication ability, and interest in early-stage GTM execution.
-* First Interview: Conduct a phone or video interview to evaluate candidate discipline, mindset, and understanding of follow-up and conversion.
-* Second Interview: In-depth interview with the hiring manager and relevant team members to discuss process thinking, execution style, and collaboration across marketing and sales.
-* STAR Interview (45mins): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
-* Assessment/Presentation: A short work sample or live exercise to demonstrate how the candidate would handle inbound lead follow-up, qualification, and meeting generation.
-* Final Interview: A final interview with key stakeholders.
-* Offer: Extend an offer to the selected candidate.
+
+* **Initial Screening**: Resume and cover letter review for communication quality, early-stage GTM experience, and evidence of a builder or tester mindset
+* **First Interview**: Phone or video conversation on execution style, iteration approach, and mindset in ambiguous environments
+* **Second Interview**: In-depth discussion with the hiring manager and relevant team members on process thinking, collaboration with marketing and AEs, and what "building a playbook" means to you
+* **STAR Interview (45 mins)**: Behavioral interview focused on values alignment — ownership, learning, and consistency — conducted by the CEO
+* **Assessment/Presentation**: Short work sample or live exercise (see below)
+* **Final Interview**: Conversation with key stakeholders
+* **Offer**
 
 ## Assessment
-Prepare a 10-minute roleplay / presentation for a hypothetical inbound lead who has requested contact after engaging with FlowFuse content and appears to be a likely fit. Assume the prospect is interested in managing Node-RED instances across distributed industrial environments, but has not yet committed to a meeting.
-Your goal is to:
-identify the most relevant follow-up approach,
-ask the right qualifying questions,
-handle the first layer of objections,
-and move the conversation toward a booked discovery meeting.
-Please spend no more than 90 minutes on this task.
-What are we looking for?
-* Messaging skills
+
+Prepare a 10-minute roleplay or presentation for a hypothetical inbound lead who has requested contact after engaging with FlowFuse content. Assume the prospect is interested in managing Node-RED instances across distributed industrial environments but has not yet committed to a meeting.
+
+Your goal: identify the best follow-up approach for this lead, ask the right qualifying questions, handle a first layer of objections, and move toward a booked discovery meeting.
+
+Please spend no more than 90 minutes on preparation.
+
+**What we are looking for:**
+* Messaging clarity and personalisation
 * Ability to guide a conversation toward a clear next step
-* Business acumen
-* Clarity
+* Business and technical acumen
 * Listening and qualification skills
-* Process thinking
-* Consistency and structure
+* Process thinking — how would you log this, sequence it, and follow up if they go dark?
+* Evidence of an iterative mindset: what would you change if this approach did not work?
