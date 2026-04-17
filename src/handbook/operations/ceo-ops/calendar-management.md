@@ -110,9 +110,7 @@ with each participant, and then proceed to book the meeting.
 
 For external 1:1 meetings, a meeting booking link is available. These links don't
 change, beware who these links are provided to.
-   - If a meeting schedule is received through email and not reflected in the calendar,
-     notify the CEO of the incoming invite and confirm whether they will attend
-     before adding to the calendar.
+- If a meeting schedule is received through email and not reflected in the calendar, notify the CEO of the incoming invite and confirm whether they will attend before adding to the calendar.
 
 ## Rescheduling Protocol
 
