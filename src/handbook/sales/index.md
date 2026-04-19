@@ -36,6 +36,7 @@ Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/
 ## How we work
 
  - [Sales Team Operating Principles](./operating-principles.md)
+ - [Forecast Review](./forecast-review.md)
  - [Demo](./meetings/demo.md)
  - [Sales Deck](https://docs.google.com/presentation/d/1aK87jBFXP9ElvJz_b2U_sBmQqpqFD5ddCyjeuVVnnVs/)
  - [Engagements & Pricing](./engagements.md)
