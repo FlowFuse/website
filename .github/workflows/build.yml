@@ -62,8 +62,5 @@ jobs:
           git add src/blueprints/* -A -f
           git commit -a -m "Bot: update blueprints"
       - name: Push to 'live' branch
-        uses: ad-m/github-push-action@77c5b412c50b723d2a4fbc6d71fb5723bcd439aa # v1.0.0
-        with:
-          directory: './website'
-          branch: live
-          force: true
+        run: git push --force origin HEAD:live
+        working-directory: './website'
