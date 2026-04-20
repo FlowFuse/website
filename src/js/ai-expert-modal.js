@@ -160,6 +160,39 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === modal) closeModal();
     });
 
+    // Escape key close + focus trap: scoped to modal element
+    modal.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+            return;
+        }
+        if (e.key !== 'Tab') return;
+        var focusableElements = modal.querySelectorAll(
+            'button:not([disabled]), ' +
+            'textarea:not([disabled]), ' +
+            'input:not([disabled]), ' +
+            'a[href], ' +
+            '[tabindex]:not([tabindex="-1"])'
+        );
+        var focusable = Array.from(focusableElements).filter(function(el) {
+            return el.offsetParent !== null; // visible elements only
+        });
+        if (focusable.length === 0) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            }
+        } else {
+            if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
     // Handle prompt pill clicks
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('prompt-pill') && e.target.dataset.prompt) {
@@ -482,6 +515,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalInputSection.style.viewTransitionName = '';
                 }
 
+                // Move focus into the modal for accessibility
+                if (!userText) {
+                    modalInput.focus();
+                }
+
                 // Start chat if user provided text
                 if (userText) {
                     startChat(userText);
@@ -499,6 +537,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
                 document.body.style.overflow = 'hidden';
+                // Move focus into the modal for accessibility
+                if (!userText) {
+                    modalInput.focus();
+                }
                 if (userText) {
                     modalInput.value = userText;
                     startChat(userText);
@@ -520,6 +562,11 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
+
+            // Move focus into the modal for accessibility
+            if (!userText) {
+                modalInput.focus();
+            }
 
             if (userText) {
                 startChat(userText);
