@@ -104,11 +104,13 @@ This helps the CEO or next interviewer quickly understand the context and prepar
 
 ## 1:1 Request Link
 
-Internal meetings will be requested by the CEO through Slack. Opening the calendar
-for both participants and schedule the meeting without checking on both sides.
+Internal meetings will be requested by the CEO through Slack. Open the calendar 
+for both participants, find a time when both are available, confirm availability 
+with each participant, and then proceed to book the meeting.
 
 For external 1:1 meetings, a meeting booking link is available. These links don't
 change, beware who these links are provided to.
+- If a meeting schedule is received through email and not reflected in the calendar, notify the CEO of the incoming invite and confirm whether they will attend before adding to the calendar.
 
 ## Rescheduling Protocol
 
