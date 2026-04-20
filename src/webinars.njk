@@ -36,9 +36,9 @@ meta:
                                         <label>
                                             <h4 class="text-white">{{ item.data.title }}</h4>
                                             <div class="webinar-tile-datetime">
-                                                <time value="{{ item.time }}" class="text-gray-400">{{ item.data.time }}</time>
-                                                <time value="{{ item.date }}" class="text-gray-400">{{ item.data.date | shortDate }}</time>
-                                                <time value="{{ item.duration }}" class="text-gray-400">{{ item.data.duration | duration }}</time>
+                                                <time value="{{ item.time }}" class="text-gray-500">{{ item.data.time }}</time>
+                                                <time value="{{ item.date }}" class="text-gray-500">{{ item.data.date | shortDate }}</time>
+                                                <time value="{{ item.duration }}" class="text-gray-500">{{ item.data.duration | duration }}</time>
                                             </div>
                                         </label>
                                     </div>
@@ -77,7 +77,7 @@ meta:
                 <li class="w-full my-2 pb-6 border-b">
                     <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
                         <div class="">
-                            <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
+                            <time class="block text-xs mb-2" value="{{ item.date }}" class="text-gray-500">{{ item.date | shortDate }}</time>
                             <div>
                                 <div class="w-full h-auto shadow rounded mb-4">
                                     {% tileImage item, "./images/og-blog.jpg", "Image with logo and the slogan: Elevate Node-RED with Flowfuse", 285 %}
