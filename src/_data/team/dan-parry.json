@@ -1,0 +1,15 @@
+{
+    "order": 30,
+    "name": "Dan Parry",
+    "title": "Enterprise Account Executive",
+    "github": "danielgparry-star",
+    "linkedin": "daniel-parry-32a5b540/",
+    "country": "US",
+    "email": "daniel@flowfuse.com",
+    "headshot": "dan.png",
+    "reports_to": "Michael Davis",
+    "facts": [
+        "Spent last 10+ years in mixture of devsecops, apimgt, and api security",
+        "I enjoy reading, maps, college football and basketball, swimming, and chess"
+    ]
+}

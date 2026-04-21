@@ -17,6 +17,7 @@ using the `New Repository Checklist` and then worked through.
 
 - FlowFuse Components should start with `flowfuse-`
 - If a Node-RED plugin/node should start with `nr-`
+- FlowFuse Certified nodes should start with `ffcn-`
 - Installers or Orchestration projects are named without the leading `flowfuse-` e.g. `installer` or `helm`
 
 ### Settings

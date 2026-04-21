@@ -11,6 +11,10 @@ tags:
  - flowfuse
  - flowfuse features
  - node-red security
+cta:
+  type: demo
+  title: See Every FlowFuse Security Feature in Action
+  description: From SSO and RBAC to audit logs, instance protection, and SBoM — FlowFuse gives you enterprise-grade security for every Node-RED deployment across your team.
 ---
 
 When it comes to securing Node-RED applications and its editor, ensuring that your flows and data are protected from unauthorized access can feel like a daunting task. Even after investing considerable time, achieving the right level of security often remains a complex challenge. For enterprises, this goes far beyond access control— security is a cornerstone of protecting sensitive data, maintaining operational continuity, and meeting strict regulatory requirements. A robust security framework not only prevents breaches but also safeguards intellectual property, preserves trust, and shields the organization from costly cyber threats.
@@ -147,7 +151,3 @@ _FlowFuse: Software Bills of Materials Inteface_
 For more information, refer to the [Article on FlowFuse Software Bills of Materials](/blog/2024/10/exploring-flowfuse-sbom-feature/).
 
 In conclusion, FlowFuse offers a comprehensive suite of security features designed to empower you with the tools to protect your Node-RED applications effectively. Understanding and utilizing these security features will help you maintain a secure and efficient environment for your Node-RED applications. With FlowFuse, you can confidently safeguard your deployments, ensuring robust protection against unauthorized access while enhancing collaboration within your team.
-
-## Get Started with FlowFuse Today!
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Security%20Features%20You%20Didn%E2%80%99t%20Know%20You%20Needed", cta_type: "signup", cta_text: "Ready to secure and scale your Node-RED applications?" %}

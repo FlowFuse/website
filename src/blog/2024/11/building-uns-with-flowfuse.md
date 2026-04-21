@@ -11,6 +11,10 @@ tags:
    - flowfuse
    - unified-namespace
    - mqtt
+cta:
+  type: demo
+  title: See How FlowFuse Powers a Unified Namespace
+  description: FlowFuse brings together Node-RED, a built-in MQTT broker, and centralized device management — everything you need to connect your shop floor data into a single, real-time namespace.
 ---
 
 As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/solutions/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
@@ -191,5 +195,3 @@ _FlowFuse Dashboard Monitoring Vibrations_
 ## Conclusion
 
 FlowFuse makes building a Unified Namespace (UNS) easy by centralizing data from systems, devices, and sensors. With seamless integration of Node-RED, MQTT, and its enterprise layer, FlowFuse ensures smooth data flow, real-time insights, and efficient management. It simplifies operations, enhances productivity, and improves system interoperability, making it easy to adapt your UNS to specific needs and support real-time analytics and automation.
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Building%20a%20Unified%20Namespace%20%28UNS%29%20with%20FlowFuse", cta_type: "demo", cta_text: "Curious about how FlowFuse can simplify building your Unified Namespace?" %}

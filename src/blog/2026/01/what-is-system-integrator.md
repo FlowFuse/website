@@ -26,6 +26,10 @@ meta:
       answer: "Modern system integrators use platforms like Node-RED for visual, flow-based integration and tools like FlowFuse for enterprise management at scale. These enable faster development, support multiple protocols without custom drivers, provide centralized control across deployments, and make systems easier to maintain and modify compared to traditional custom-coded point-to-point integrations."
     - question: "How long does a typical system integration project take?"
       answer: "Project timelines vary significantly based on scope and complexity. Simple integrations connecting a few machines to a cloud platform might take weeks, while comprehensive facility-wide projects integrating legacy equipment with modern enterprise systems can take months. Good integrators provide realistic timelines during planning and account for potential delays from equipment availability, testing windows, and unforeseen technical challenges."  
+cta:
+  type: contact
+  title: Build Integrations Once. Deploy Them Everywhere
+  description: FlowFuse gives system integrators the platform to scale Node-RED across hundreds of sites without custom code on every project, and gives manufacturers the visibility to trust what's running on their floor.
 ---
 
 Most factories don't get built all at once. They evolve. Someone buys a robot in 2018. A conveyor system gets added when production ramps up. Last year, a vision system showed up because quality was slipping. Every piece from a different vendor, every piece with its own manual, its own software, its own way of doing things.
@@ -155,7 +159,3 @@ Whether you're trying to understand what system integrators do, evaluating one f
 If you're a system integrator, FlowFuse helps you build integrations once and deploy them everywhere (across hundreds of sites, thousands of devices, without writing custom code for every project). Our platform gives you the tools to scale faster, reduce project complexity, and deliver more value to your clients.
 
 [Learn about our partner program](/partners/referral-sign-up/)
-
-Need a system integrator for your project? We work with experienced integrators who understand modern integration challenges (from legacy equipment to Industry 4.0 initiatives). Whether you're connecting your first machine to the cloud or standardizing integrations across multiple facilities, we can connect you with the right partner.
-
-[Contact us](/contact-us/)

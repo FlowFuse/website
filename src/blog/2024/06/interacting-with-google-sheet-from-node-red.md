@@ -12,6 +12,10 @@ tags:
    - node red
    - google sheet
    - how to
+cta:
+  type: sign-up
+  title: Connect Node-RED to Any Data Source
+  description: FlowFuse makes it simple to build, deploy, and manage Node-RED integrations — from Google Sheets to industrial systems — with production-ready infrastructure and team collaboration built in.
 ---
 
 Have you ever needed to integrate Google Sheets with your Node-RED application to track and manage data seamlessly? This guide will walk you through the process of integrating Google Sheets with Node-RED, enabling you to write, read, update, and delete data effortlessly.
@@ -146,5 +150,3 @@ Below I have provided the complete flow that we have built through the guide, ma
 ## Conclusion
 
 This guide demonstrated how to integrate Google Sheets with Node-RED for streamlined data management. We covered setting up the Google Sheets API, configuring Node-RED to interact with sheets, and performing actions like writing, reading, updating, and deleting data.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20Google%20Sheets%20from%20Node-RED", cta_type: "signup", cta_text: "" %}

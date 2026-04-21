@@ -9,6 +9,10 @@ tags:
     - posts
     - node-red
     - dashboard
+cta:
+  type: sign-up
+  title: Build and Deploy Node-RED Applications Faster
+  description: FlowFuse gives you everything you need to build, secure, and scale Node-RED applications — multi-user support, authentication, and production-ready deployment included. Start your free trial today.
 ---
 
 In this guide, we'll build a Todo application to guide you through the features and explain how you can build rich and dynamic applications too. It shows many of the features that make Dashboard 2.0 great, and why you should use it over the deprecated node-red-dashboard.
@@ -222,5 +226,3 @@ If you want to enhance this simple application by adding more features, consider
 - [How to Build an Admin Dashboard with Node-RED Dashboard 2.0](/blog/2024/04/building-an-admin-panel-in-node-red-with-dashboard-2/) - This detailed guide demonstrates how to build a secure admin page in Node-RED Dashboard 2.0.
 
 - [Multi-User Dashboard for Ticket/Task Management](/blueprints/flowfuse-dashboard/multi-user-dashboard/) blueprint, which allows you to utilize templates to develop a personalized multi-user dashboard quickly. This Task management blueprint has all features such as adding, updating, and deleting tasks, user profiles, and admin dashboard.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Build%20An%20Application%20With%20Node-RED%20Dashboard%202.0", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

@@ -8,6 +8,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/dlq-blog-tile.png
 tags:
 - flowfuse
+cta:
+  type: contact
+  title: Stop Losing Data You Will Never Get Back
+  description: FlowFuse gives your IIoT pipelines the fault tolerance they need — built-in retry logic, Dead Letter Queues backed by FlowFuse Tables, and full visibility into every failure.
 ---
 
 Somewhere in your IIoT pipeline, a message just failed. You don't know which one. You don't know when. And unless you have a Dead Letter Queue, you never will.
@@ -227,13 +231,13 @@ When a message reaches this stage, retries are finished. The goal now is to pres
 3. The Query node is pre-configured to connect to your FlowFuse-managed database automatically. No credentials needed.
 4. Paste the following into the Query field:
 ```sql
-CREATE TABLE IF NOT EXISTS dlq (
-  id TEXT PRIMARY KEY,
-  topic TEXT,
-  payload TEXT,
-  attempts INTEGER,
-  last_error TEXT,
-  captured_at TEXT
+CREATE TABLE IF NOT EXISTS "dlq" (
+  "id" TEXT PRIMARY KEY,
+  "topic" TEXT,
+  "payload" TEXT,
+  "attempts" INTEGER,
+  "last_error" TEXT,
+  "captured_at" TEXT
 )
 ```
 
@@ -297,5 +301,3 @@ You deploy it once and it works quietly in the background until the moment you n
 And you will need it. Not because your flows are poorly built, but because distributed systems fail. APIs go down. Networks drop. Services timeout at the worst possible moment. The question has never been whether that happens. It is whether you are ready when it does.
 
 Now you are.
-
-*If you are building production-grade IIoT pipelines and want help designing reliable data flows with retries, observability, and DLQs, [contact the FlowFuse team](/contact-us/) to discuss your use case.*

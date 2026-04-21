@@ -34,9 +34,9 @@ Each of these metrics is reported on weekly during our Marketing Team Meeting to
 
 | Role | Contributors |
 |------|--------------|
-| Marketing Manager, Product | [Pablo Filomeno](/team#pablo-filomeno) [@PabloFilomeno83](https://github.com/PabloFilomeno83) |
-| Marketing Manager, Website & Social Media | [Yndira Escobar](/team#yndira-escobar) [@Yndira-E](https://github.com/Yndira-E) |
-| Technical Writer | [Sumit Shinde](/team#sumit-shinde) [@sumitshinde-88](https://github.com/sumitshinde-84) |
+| Marketing Manager, Product | [Pablo Filomeno](/about#pablo-filomeno) [@PabloFilomeno83](https://github.com/PabloFilomeno83) |
+| Marketing Manager, Website & Social Media | [Yndira Escobar](/about#yndira-escobar) [@Yndira-E](https://github.com/Yndira-E) |
+| Technical Writer | [Sumit Shinde](/about#sumit-shinde) [@sumitshinde-88](https://github.com/sumitshinde-84) |
 
 ## Contact us
 

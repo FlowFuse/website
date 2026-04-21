@@ -11,7 +11,7 @@ tags:
     - dashboard
 ---
 
-Just weeks ago, we at FlowFuse [announced our plan](../../06/dashboard-announcement) to develop a successor to the Node-RED Dashboard. Today, we're excited to reveal the pre-alpha release of this highly anticipated project, bringing us one step closer to a new era of data visualization in Node-RED.
+Just weeks ago, we at FlowFuse [announced our plan](/blog/2023/06/dashboard-announcement/) to develop a successor to the Node-RED Dashboard. Today, we're excited to reveal the pre-alpha release of this highly anticipated project, bringing us one step closer to a new era of data visualization in Node-RED.
 
 <!--more-->
 

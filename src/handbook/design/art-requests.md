@@ -21,7 +21,7 @@ You can create an issue on any of the FlowFuse Repositories that best suits the 
 
 - [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse): In-Product Visuals (e.g. icons, diagrams, pictograms)
 - [FlowFuse/website](https://github.com/FlowFuse/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
-- [FlowFuse/content](https://github.com/FlowFuse/customer){rel="nofollow"}: Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
+- [FlowFuse/content](https://github.com/FlowFuse/marketing){rel="nofollow"}: Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
 
 When creating an issue, you'll be presented with an option to create an "Art Request" from the Issue Templates:
 

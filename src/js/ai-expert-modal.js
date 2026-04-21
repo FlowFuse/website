@@ -160,11 +160,45 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === modal) closeModal();
     });
 
+    // Escape key close + focus trap: scoped to modal element
+    modal.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+            return;
+        }
+        if (e.key !== 'Tab') return;
+        var focusableElements = modal.querySelectorAll(
+            'button:not([disabled]), ' +
+            'textarea:not([disabled]), ' +
+            'input:not([disabled]), ' +
+            'a[href], ' +
+            '[tabindex]:not([tabindex="-1"])'
+        );
+        var focusable = Array.from(focusableElements).filter(function(el) {
+            return el.offsetParent !== null; // visible elements only
+        });
+        if (focusable.length === 0) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            }
+        } else {
+            if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
     // Handle prompt pill clicks
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('prompt-pill') && e.target.dataset.prompt) {
             e.preventDefault();
             const promptText = e.target.dataset.prompt;
+            if (typeof capture === 'function') capture('expert-prompt-pill-clicked', { prompt_title: e.target.textContent.trim(), page: location.pathname });
             openModal(promptText);
         }
     });
@@ -362,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedPrompts = shuffled.slice(0, INITIAL_SUGGESTIONS_COUNT);
         function createPromptButton({appendClass, attr, text, title}) {
             const button = document.createElement('button');
-            button.className = `${appendClass} text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-600 hover:bg-white hover:shadow-sm transition-all border border-indigo-600 whitespace-nowrap overflow-hidden text-ellipsis`;
+            button.className = `${appendClass} text-left px-4 py-2 bg-white backdrop-blur rounded-full text-sm text-gray-500 hover:bg-white hover:shadow-sm transition-all border hover:border-indigo-600 border-indigo-200 whitespace-nowrap overflow-hidden text-ellipsis`;
             if (attr) {
                 button.setAttribute('data-prompt', attr);
             }
@@ -481,6 +515,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalInputSection.style.viewTransitionName = '';
                 }
 
+                // Move focus into the modal for accessibility
+                if (!userText) {
+                    modalInput.focus();
+                }
+
                 // Start chat if user provided text
                 if (userText) {
                     startChat(userText);
@@ -498,6 +537,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
                 document.body.style.overflow = 'hidden';
+                // Move focus into the modal for accessibility
+                if (!userText) {
+                    modalInput.focus();
+                }
                 if (userText) {
                     modalInput.value = userText;
                     startChat(userText);
@@ -519,6 +562,11 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
+
+            // Move focus into the modal for accessibility
+            if (!userText) {
+                modalInput.focus();
+            }
 
             if (userText) {
                 startChat(userText);
@@ -808,7 +856,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Note: This API may only work in production (flowfuse.com domain)
             // For local development, we'll get simulated responses
-            const response = await fetch('https://flowfuse-expert-api.flowfuse.cloud/v4/website-chat', {
+            const response = await fetch('https://expert.flowfuse.com/v4/expert', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

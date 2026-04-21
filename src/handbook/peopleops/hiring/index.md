@@ -152,6 +152,7 @@ candidate strengths and challenges are. Before the hiring manager extends an off
 explicit approval is required from the CEO to:
 - Check we hire in their location
   - If we haven't hired in their location, alert Business Operations to do a review before extending the offer
+- If a candidate is based in France, Germany, Belgium, Denmark, Sweden, Finland, Norway, Netherlands, Spain, Italy, Portugal, Austria, or the Czech Republic, please verify with BizOps before proceeding with the hiring process
 - Confirm candidate is seeking full-time employment (FlowFuse only offers full-time positions)
 - Notice period aligns with internal processes
 - Total compensation is in FlowFuse's range
@@ -201,6 +202,9 @@ for employees located in the US.
 ### Tax Residency
 
 During the onboarding process on our EOR provider platform, candidates must either be citizens of the country where they will be working or possess a valid visa. Any requests for changes in tax residency should be communicated to the HR department and CEO at least 2 months in advance. This includes changing States within the US.
+
+#### Deposits
+Our partnership with Deel as an Employer of Record involves a standard security deposit to ensure compliance with local labor laws and to guarantee the seamless administration of international payroll and benefits. To read more about it, regarding deposit amounts, refunds, etc, authorized personnel may access the following [document](https://docs.google.com/document/d/1bjGI2JOLUuH_IvtEHOJiNacrCYKCMCAANzLoluaF9c8/edit?usp=sharing).
 
 ## Onboarding
 

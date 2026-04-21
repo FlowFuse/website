@@ -1,20 +1,30 @@
 <li class="w-full my-2 py-6 border-b flex flex-col md:flex-row">
-    <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline flex-none md:w-72 md:pr-4">
-        <time class="block text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
-        <h3 class="mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
-        <div class="italic text-xs mb-3">
-            <div class="author">
-                {% set comma = joiner() %}
-                {%- for author in item.data.authors %}
-                {{ comma() }} {{ team[author].name }}
-                {%- endfor %}
+    <div class="w-full flex flex-col flex-none md:w-72 md:pr-4">
+        <a href="{{ item.url }}" class="flex flex-col group hover:no-underline">
+            <time class="block text-xs" value="{{ item.date }}" class="text-gray-400">{{ item.date | shortDate }}</time>
+            <h3 class="mb-0 font-medium group-hover:underline">{{ item.data.title }}</h3>
+            <div class="italic text-xs mb-3">
+                <div class="author">
+                    {% set comma = joiner() %}
+                    {%- for author in item.data.authors %}
+                    {{ comma() }} {{ team[author].name }}
+                    {%- endfor %}
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+        {% set catalogFeature = item.url | featureForChangelog %}
+        {% if catalogFeature %}
+            {% set tierCloud = catalogFeature.cloud | tierLabel %}
+            {% set tierSelfHosted = catalogFeature.selfHosted | tierLabel %}
+            {% if tierCloud or tierSelfHosted %}
+                {% include "components/tier-badges.njk" %}
+            {% endif %}
+        {% endif %}
+    </div>
     <div class="flex-grow pt-4">
         {% if item.data.tags.includes("posts") %}
         <div class="prose">
-            {{ item.templateContent | excerpt | striptags(true)| restoreParagraphs | safe }}
+            {% include "summary.njk" %}
         </div>
         <a href="{{ item.url }}" class="group-hover:underline">read more...</a>
         {% else %}
