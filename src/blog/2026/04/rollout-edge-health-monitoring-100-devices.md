@@ -2,7 +2,7 @@
 title: "How to Stop Noisy Sensor Data from Flooding Your Industrial System"
 subtitle: "A practical guide to suppressing sensor noise in industrial systems using FlowFuse"
 description: "Learn how to implement a deadband filter in FlowFuse to suppress noisy sensor data from PLCs, temperature probes, and flow meters. Step-by-step guide using the built-in filter node on FlowFuse."
-date: 2026-04-03
+date: 2026-04-22
 keywords: 
 authors: ["sumit-shinde"]
 image: 
