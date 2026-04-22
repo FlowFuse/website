@@ -16,6 +16,8 @@ cta:
 
 In industrial systems, sensors rarely sit perfectly still. A temperature probe, pressure transducer, or flow meter will constantly fluctuate. Not because the process is changing, but because of electrical noise, vibration, or quantization artifacts in the ADC. If your control system reacts to every tiny wiggle, it triggers unnecessary alarms, wears out actuators, and buries real events in a fog of jitter.
 
+<!--more-->
+
 A deadband filter fixes this with a single rule: only report a new value if it has moved beyond a defined threshold from the last accepted reading. Stateless, computationally trivial, and tunable with one parameter. It is the simplest first line of defense for any industrial sensor pipeline. In this post, we will break down how it works, when to use it, and how to implement one in FlowFuse.
 
 ## What is a deadband filter?
