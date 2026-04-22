@@ -2,8 +2,8 @@
 title: "How to Stop Noisy Sensor Data from Flooding Your Industrial System"
 subtitle: "A practical guide to suppressing sensor noise in industrial systems using FlowFuse"
 description: "Learn how to implement a deadband filter in FlowFuse to suppress noisy sensor data from PLCs, temperature probes, and flow meters. Step-by-step guide using the built-in filter node on FlowFuse."
-date: 2026-04-03
-keywords: 
+date: 2026-04-22
+keywords: deadband filter, sensor noise filtering, industrial data filtering, FlowFuse, Node-RED filter node, industrial sensor data, IIoT data processing, edge data filtering
 authors: ["sumit-shinde"]
 image: /blog/2026/04/images/stop-noisy-sensor-data.png
 tags:
@@ -15,6 +15,8 @@ cta:
 ---
 
 In industrial systems, sensors rarely sit perfectly still. A temperature probe, pressure transducer, or flow meter will constantly fluctuate. Not because the process is changing, but because of electrical noise, vibration, or quantization artifacts in the ADC. If your control system reacts to every tiny wiggle, it triggers unnecessary alarms, wears out actuators, and buries real events in a fog of jitter.
+
+<!--more-->
 
 A deadband filter fixes this with a single rule: only report a new value if it has moved beyond a defined threshold from the last accepted reading. Stateless, computationally trivial, and tunable with one parameter. It is the simplest first line of defense for any industrial sensor pipeline. In this post, we will break down how it works, when to use it, and how to implement one in FlowFuse.
 
