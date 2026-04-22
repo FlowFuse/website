@@ -5,7 +5,7 @@ description: "Learn how to implement a deadband filter in FlowFuse to suppress n
 date: 2026-04-03
 keywords: 
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/04/images/stop-noisy-sensor-data.png
 tags:
     - flowfuse
 cta:
