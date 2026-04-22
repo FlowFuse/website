@@ -8,6 +8,10 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/bus-factor-problem-tile-image.png
 tags:
 - flowfuse
+cta:
+  type: demo
+  title: See How FlowFuse Reduces Your Bus Factor
+  description: FlowFuse makes integration knowledge durable with version control, team collaboration, and an AI assistant that explains any flow in plain language.
 ---
 
 The bus factor is a simple idea. If one person leaves your team, how much breaks? If the answer is "a lot," your bus factor is one. Most integration systems have a bus factor of one.
@@ -99,5 +103,3 @@ The goal isn't to make everyone interchangeable. It's to make sure that when som
 Integration systems are the connective tissue of industrial operations. When they're well understood and well documented, they're an asset. When they're opaque and person-dependent, they're a liability that just hasn't failed yet.
 
 The bus factor problem doesn't go away on its own. Knowledge concentrates by default, distributing it requires the right conditions, the right process, and tooling that makes the good behavior easier than the bad. That's exactly what FlowFuse is built to do.
-
-If you're ready to see how it works in practice, [book a demo](https://flowfuse.com/book-demo/) and we'll show you how teams are using FlowFuse to make their integration systems something anyone on the team can understand, maintain, and build on.

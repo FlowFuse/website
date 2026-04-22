@@ -13,6 +13,10 @@ tags:
   - perdue model
   - ISA 99
   - unified-namespace
+cta:
+  type: contact
+  title: Architect Your Factory Network With FlowFuse
+  description: FlowFuse helps you deploy and manage Node-RED across every layer of your factory — from shopfloor devices to enterprise systems, with centralized control and full visibility across every instance.
 ---
 
 The architecture of a factory's Node-RED infrastructure is a common topic of discussion and inquiry. Fundamentally, my response to such queries unfolds in two parts. Initially, the focus must be on data organization. I champion a structure centered around a [Unified Namespace](/solutions/uns/), a concept I explore in depth in this article ["Node-RED in a Unified Namespace Architecture."](/blog/2024/02/node-red-unified-namespace-architecture/) However, this is only one part of the inquiry. The other part of the question delves into the positioning of FlowFuse and Node-RED within the network infrastructure.
@@ -58,5 +62,3 @@ These [Project Links](/docs/user/projectnodes/) are more than just communication
 ## Summary
 
 By employing a unified namespace approach and strategically positioning Node-RED and FlowFuse within the network, we enable a seamless flow of data from the shopfloor to the enterprise level. This multilayered approach not only enhances communication between operational technology and information technology but also empowers real-time monitoring, predictive maintenance, and strategic decision-making. 
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Node-RED%20Manufacturing%20Architecture", cta_type: "signup", cta_text: "" %}

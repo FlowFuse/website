@@ -9,6 +9,10 @@ image: /blog/2026/01/images/opcua-vs-mqtt.png
 keywords: MQTT vs OPC UA, MQTT protocol, OPC UA protocol, industrial communication, IIoT architecture, OPC UA PubSub, MQTT Sparkplug
 tags:
  - flowfuse
+cta:
+  type: contact
+  title: Stop Choosing Protocols. Start Mapping Requirements.
+  description: FlowFuse connects both MQTT and OPC UA natively, so you don't have to pick sides. See how teams are building industrial data architectures that use the right protocol for every data flow.
 ---
 
 The question itself is broken.
@@ -254,5 +258,3 @@ The right question isn't "MQTT or OPC UA?"
 It's "MQTT where? OPC UA where? Both where?"
 
 Answer that based on your requirements, not vendor marketing.
-
-***If you're figuring out how to connect legacy equipment, new sensors, and cloud systems and the answer isn't obvious, we get it. We work through these architecture questions with teams every day. Want to talk through your specific setup? [Get in touch](/contact-us/).***

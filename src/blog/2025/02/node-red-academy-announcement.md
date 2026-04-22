@@ -11,6 +11,10 @@ tags:
    - education
    - Node-RED Academy
    - news
+cta:
+  type: sign-up
+  title: Learn Node-RED, Then Put It Into Production
+  description: FlowFuse gives you the enterprise platform to deploy, manage, and scale everything you build — from your first flow to factory-floor production systems.
 ---
 
 The [Node-RED Academy](https://node-red-academy.learnworlds.com/) provides Node-RED courses both for experts, who want to grow their knowledge, and for beginners, who are just learning the ropes. Get formal certification in Node-RED by completing courses and share certificates on LinkedIn to demonstrate your Node-RED learning accomplishments.
@@ -58,5 +62,3 @@ Head to [Node-RED Academy](https://node-red-academy.learnworlds.com/) and sign u
 
 ![Screenshot of the Node-RED Academy home page](./images/academy-home-page.png){data-zoomable}
 _Screenshot of the Node-RED Academy home page_
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Announcing%20Node-RED%20Academy%21", cta_type: "signup", cta_text: "The courses include everything you need to learn Node-RED, but you will also need access to an instance of Node-RED to follow along with exercises and apply your new knowledge. The easiest way to get access to Node-RED is with the FlowFuse Starter Plan." %}

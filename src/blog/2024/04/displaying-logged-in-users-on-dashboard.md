@@ -8,6 +8,10 @@ image: /blog/2024/04/images/logged-in-user-dashboard.png
 tags:
    - posts
    - dashboard 2.0
+cta:
+  type: sign-up
+  title: Build Secure Multi-User Dashboards With Node-RED
+  description: FlowFuse makes it simple to add user authentication, personalized views, and role-based access to your Node-RED dashboards. Start your free trial and see it in action.
 ---
 
 About a month ago, a powerful solution became available to the Node-RED community to deal with users and allow multiple to interact with the same dashboard in a personalized manner. It's called the  Multli user Dashboard for Node-RED. In this guide, we will provide a step-by-step guide to show you how to secure your dashboard and access and display logged in user information on Dashboard 2.0.
@@ -146,5 +150,3 @@ If you want to learn more about the FlowFuse Multiuser addon and Personalize Mul
 ## Conclusion 
 
 In this guide, we have demonstrated how to secure your dashboard and how to retrieve and display logged in user data on Dashboard 2.0. Additionally, we have discussed the functionality of the FlowFuse multi-user addon.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Displaying%20logged%20in%20user%20on%20Node-RED%20Dashboard%202.0", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

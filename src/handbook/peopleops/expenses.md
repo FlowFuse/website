@@ -53,11 +53,12 @@ If you use your own means to purchase something that ought to be covered by the
 company, you can claim back the money through
 [Deel](https://help.letsdeel.com/hc/en-gb/articles/16801667118353-How-Do-I-Add-an-Expense-to-my-Pay).
 
-- Create a new expense by clicking <kbd>Add item on the Payment Items tab on
+- Create a new expense by clicking <kbd>Add Expense on the Quick Actions tab on
   your Deel homepage</kbd>
 - Enter the type of adjustment and select the Expense Category
 - Enter a description, expense name, price and attach an invoice, then click
   <kbd>Submit</kbd>
+   - Make sure it's an invoice and not a screenshot of the invoice
 - This expense will now appear in your "Pending" list
 - Adjustments approved before the payroll cut-off date will be processed in the
   current month's payroll. Any adjustment approved after the payroll cut-off
@@ -65,6 +66,15 @@ company, you can claim back the money through
 - Your manager is authorized to approve expenses that are $250 or less. However,
   if an expense exceeds $250, both the CEO and your manager will need to review
   and approve it.
+
+### Manager Checklist
+
+Before approving an expense in Deel, please verify:
+- The receipt is a final Proof of Payment (not a quote)
+- That the attachment is an invoice and not a screenshot
+- Asset purchases >$500 are logged in the [Asset](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit?gid=0#gid=0) Tracker. If not, flag with operations
+- The description clearly states the business justification
+- For expenses >$250, ensure the CEO is looped in for co-approval
 
 ## Equipment
 
@@ -105,8 +115,8 @@ their laptops. As such, the following devices are recommended:
 
 | Operating System | Recommended Device                                                                                                                                                     |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MacOS            | [MacBook Air 15" - 24 GB RAM](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-24gb-memory-512gb) (~$1,600 ex VAT) |
-| Windows/Linux    | [Dell XPS 15 - 16 GB RAM](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-15-laptop/spd/xps-15-9530-laptop/cn95303cc) (~$2,300)                                 |
+| MacOS            | [MacBook Pro 16" - 32 GB RAM](https://www.apple.com/shop/buy-mac/macbook-pro) (~$2,499 ex VAT) |
+| Windows/Linux    | No recommendation at this time |
 
 If you require an alternative device, please discuss with your manager.
 
@@ -117,10 +127,15 @@ recommended:
 
 | Operating System | Recommended Device                                                                                                                                                    |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/13-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-16gb-memory-512gb) (~$1200 ex VAT) |
+| MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-midnight-m5-chip-10-core-cpu-10-core-gpu-24gb-memory-512gb-storage) (~$1499 ex VAT) |
 
-Unless circumstances require otherwise, laptops will only be considered for a
-refresh after 4 years. Please discuss with your manager if you need to refresh
+Unless circumstances require otherwise, laptops will be considered for a
+refresh after 4 years. In some cases, depending on the specific requirements of the 
+role, a different device may be more appropriate. For example, roles that require 
+higher performance or processing power may opt for a [MacBook Pro](https://www.apple.com/shop/buy-mac/macbook-pro) instead of the standard 
+recommendation. Any such variation should be discussed with and approved by the 
+employee’s manager.
+Please discuss with your manager if you need to refresh
 your laptop.
 
 ### Audio and Video

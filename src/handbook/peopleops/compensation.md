@@ -126,7 +126,7 @@ added to the list, especially when you're considering a job offer at FlowFuse.
 
 For employees located in the United States, FlowFuse offers health insurance coverage through Deel; since this changes regularly, please see Deel for accurate information.
 
-Health insurance benefits begin on the employee’s **first day of employment**.
+Health insurance benefits do not begin immediately. Employees have until **mid-month of the month they start** to enroll, with coverage beginning on the **1st of the following month**. For example, if you start on March 2nd and enroll by mid-March, coverage will begin April 1st.
 
 We commit to offering at least one medical plan, one dental plan, and one vision plan with 100% coverage for team members. We also subsidize some level of coverage for dependants, as well, but specifics are tied to plan details.  
 
@@ -165,6 +165,31 @@ For bonuses tied to quarterly or period-based MBOs:
 
 Bonuses will not be processed if MBOs are defined or changed after the period has started.
 
+### Bonus Calculation (MBO Attainment)
+
+When an MBO is defined as a growth target, attainment is measured based on the proportion of growth achieved, not the absolute value reached.
+
+#### Definitions
+
+* **Baseline**: the starting value at the beginning of the period
+* **Target**: the expected value after applying the growth objective
+* **Required growth**: target minus baseline
+* **Achieved growth**: actual result minus baseline
+
+#### Calculation
+
+Attainment is calculated as:
+
+> Attainment = achieved growth ÷ required growth
+
+The baseline is only used to determine the growth and is not included in the attainment itself.
+
+#### Notes
+
+* Being close to the target in absolute terms does not imply high attainment
+* All growth-based MBOs follow this approach unless explicitly defined otherwise
+
+
 ## Bonus Review (End of Period)
 * Within 5 business days after period end, the employee sends a final MBO summary to the Manager covering:
   * Bonus period (quarter or dates)
@@ -179,6 +204,7 @@ Bonuses will not be processed if MBOs are defined or changed after the period ha
   * Final bonus amount for CEO approval
 
 ## CEO Confirmation
+
 Before any bonus is processed, the manager must email the CEO confirming:
 * Employee name
 * Performance period
@@ -199,8 +225,9 @@ Once approved in writing by the CEO:
 
 Bonuses are paid in the next payroll cycle after approval.
 
-## Sample Email — Bonus Confirmation to Employee
+## Template Email — Bonus Confirmation to Employee
 
+```
 Subject: Bonus Confirmation for [Period]
 
 Hi [Name],
@@ -216,6 +243,7 @@ Based on this, your approved bonus for this period is [currency + amount]. Pleas
 
 Best,
 [Manager Name]
+```
 
 CC: CEO
 
@@ -237,7 +265,6 @@ Purpose:
 * Email employee + CEO
 * Update Bonus Tracker
 
-
 2. End of Quarter — Review & Process Bonuses
 Performance period ends:
   * Q1: March 31
@@ -251,7 +278,8 @@ Review start dates (mandatory):
   * Q3: October 1
   * Q4: January 1
 
-### Review & approval window:
+### Review & approval window
+
 Bonus review and CEO approval must be completed within 5 business days from the review start date.
 
 Purpose:
@@ -260,6 +288,7 @@ Purpose:
 * Email CEO for approval
 
 ## Enforcement Rules
+
 * Bonuses not submitted by the payroll cutoff will be deferred to the next cycle or rejected.
 * Any bonus issue discovered after the period ends must be flagged as a process gap, not resolved retroactively.
 * Delays in review or approval do not justify retroactive changes to bonus criteria or amounts.

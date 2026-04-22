@@ -8,6 +8,10 @@ image: /blog/2026/01/images/why-modbus-wont-dia.png
 keywords: Modbus, industrial automation, PLC, OPC UA, EtherNet/IP, MQTT, legacy systems, industrial protocols, factory automation, FlowFuse
 tags:
  - flowfuse
+cta:
+  type: demo
+  title: Modernize Without the Rip and Replace
+  description: FlowFuse connects your legacy Modbus devices to modern systems without replacing what already works. See how teams are bridging old and new infrastructure on the same platform. 
 ---
 
 Modbus is 47 years old and has no built-in security. By every measure, it should have been obsolete a decade ago. OPC UA, EtherNet/IP, MQTT, Profinet: modern protocols with semantic modeling, encryption, and real-time capabilities arrived backed by billions in vendor investment and industry standardization efforts.
@@ -115,5 +119,3 @@ The result is a patchwork that reflects industrial reality rather than protocol 
 This approach proves that Modbus survives not because it's technically superior, but because it solves real problems with minimal friction. The protocol succeeded by being simple enough that anyone can implement it, cheap enough that everyone does, and reliable enough that nobody has to think about it.
 
 FlowFuse is the industrial data platform designed to bridge this gap between legacy Modbus registers and modern enterprise systems. Our platform provides the connectivity and security layers needed to transform aging infrastructure into a secure, data-driven operation. 
-
-***[Book a FlowFuse Demo](https://flowfuse.com/book-demo/)** today to see how we can help you modernize your operations without the "rip and replace" headache.***

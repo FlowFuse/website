@@ -10,6 +10,10 @@ tags:
    - dashboard 2.0
    - admin dashboard
    - admin-only page
+cta:
+  type: demo
+  title: Build Dashboards Your Whole Team Can Use
+  description: FlowFuse makes it simple to secure Node-RED dashboards with user authentication, role-based access, and multi-user support. See how teams are building production-grade dashboards on the same platform.
 ---
 
 Managing and analyzing increasing amounts of data becomes crucial for organizations. Dashboard 2.0 and Node-RED help organizations access the data, normalize it, and visualize it. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.
@@ -96,5 +100,3 @@ If you want to learn more about FlowFuse multiuser addon and personalize the mul
 - [Personalised Multi-user Dashboards with Node-RED Dashboard 2.0](/blog/2024/01/dashboard-2-multi-user/) - This article explores the process of building multi-user Dashboards secured with FlowFuse Cloud.
 - [Displaying logged-in users on Dashboard 2.0](/blog/2024/04/displaying-logged-in-users-on-dashboard/) - This detailed guide demonstrates how to display logged-in users on Dashboard 2.0 which using the FlowFuse Multiuser addon and FlowFuse.
 - [Multi-User Dashboard for Ticket/Task Management](/blueprints/flowfuse-dashboard/multi-user-dashboard/) blueprint, which allows you to utilize templates to develop Personalize multi-user dashboard quickly.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Build%20an%20Admin%20Dashboard%20with%20Node-RED%20Dashboard%202.0", cta_type: "signup", cta_text: "Looking to build a multi-user dashboard, deploy it in seconds, scale and manage Node-RED efficiently, and enable seamless remote access for your entire team?" %}

@@ -320,20 +320,6 @@ The following fonts are used across the FlowFuse platform, website, and branded 
 
 All app and site iconography uses [Heroicons](https://heroicons.com/), by the makers of Tailwind CSS. Within our flowforge app, we have two icon sizes available which can be assigned with `ff-icon` and `ff-icon-sm`.
 
-## Pictograms
-
-These larger images are used for stylistic purposes. We use pictograms to communicate in a glance, offer interactivity, or simplify complex ideas.
-
-If you wish to create your own Pictograms, you can use this Adobe Illustrator file as a template:
-[pictogram.ai](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa)
-
-<img width="500" class="p-2" alt="An example showing how Pictograms are used in the 'Company Values' section of the FlowFuse website" src="../images/pictograms_example.png">
-
-Sizings:
-
-- **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
-- **250 x 250 px:** Used as part of page headers, inline with the page title and page description.
-
 ## Branded Templates
 
 ### Email Signature

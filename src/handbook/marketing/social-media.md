@@ -147,7 +147,7 @@ We'll share a [new hire post](/handbook/marketing/social-media/#new-hire) when n
 
 If you’d like something shared on FlowFuse’s social channels, please follow this process:
 
-1. Create an issue in the [customer GitHub repository](https://github.com/FlowFuse/customer/issues).
+1. Create an issue in the [customer GitHub repository](https://github.com/FlowFuse/marketing/issues).
 1. Use the Social Post Request template to make sure all relevant information is included.
 1. Assign the issue to the social media manager.
 1. Provide as much context as possible, including links, visual ideas, and deadlines if applicable.

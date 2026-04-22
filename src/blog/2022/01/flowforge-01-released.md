@@ -34,7 +34,7 @@ With the 0.1 release, we have the basic building blocks of the platform in place
 For a more complete walk-through of the platform in this early release, you can
 watch this video.
 
-<lite-youtube videoid="YYZDx8n17Ys" params="rel=0" style="width: 100%; height: 315px;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="YYZDx8n17Ys" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 
 ### Getting started with FlowFuse

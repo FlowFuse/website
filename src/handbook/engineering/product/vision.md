@@ -20,7 +20,7 @@ This vision follows the [Radical Product Thinking](https://www.radicalproduct.co
 
 **We are bringing this about** Through a distributed industrial runtime that serves as the operational backbone for event-driven workflows across OT and IT. We execute business logic, validate and transform payloads, manage application lifecycle, and deploy across distributed device fleets — ensuring that industrial operations are intentional, visible, and governed at scale. As AI commoditizes glue code and data aggregation, we are building the durable layer: runtime control, orchestration discipline, and the infrastructure organizations can bet on.
 
----
+
 ### How our product vision helps us
 
 This long-form product vision is the **source code for our strategy**. It's meant to be rich in context, bold and specific.
@@ -76,7 +76,6 @@ As AI reshapes industrial software, glue code and data aggregation will be commo
 - **ICP:** Industrial engineers and digital transformation leads remain our primary buyers. C-Suite is a secondary motion.
 - **Enterprise expansion thesis:** Z2 and multi-plant deployment is the beachhead for long-term enterprise value.
 
----
 
 ## Strategic context: AI and the market
 

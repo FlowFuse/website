@@ -82,12 +82,23 @@ Clauses we cannot agree to:
    [data classification policies](/handbook/company/security/data-management/#data-classification).
 1. Auditability of destruction of Confidential Information. As a remote company
    we will not allow third parties access to homes or offices of employees.
+1. Lack of expiration of the NDA. For the duration of the relationship between our companies
+   or no more than 5 years, an NDA remains in play.
 
 ## Insurance Coverage
 
 FlowFuse maintains required insurance policies for operational and commercial purposes.
 
 Authorized personnel may access insurance documents via the internal [Google Drive folder](https://drive.google.com/drive/folders/1Q2UqEmusDIpBD4-4Km1eFksHaRkVzl7O?usp=drive_link). Requests for insurance documentation should be directed to Operations or PeopleOps.
+
+The internal document also contains our insurance broker's contact information, policy renewal dates, and key coverage details.
+
+To find employer liability insurance in Deel, follow these steps:
+1. Open Deel
+2. Click on People
+3. Click on Documents
+4. Click on Registration & Files
+5. Click on PEO Workers' Compensation Packet
 
 ## Miscellaneous
 

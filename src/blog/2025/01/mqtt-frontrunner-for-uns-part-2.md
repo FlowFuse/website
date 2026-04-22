@@ -11,6 +11,10 @@ tags:
  - mqtt
  - uns
  - unified-namespace
+cta:
+  type: demo
+  title: Build Your Unified Namespace With FlowFuse
+  description: FlowFuse gives you a built-in MQTT broker, topic hierarchy monitoring, and Node-RED integration — everything you need to implement a scalable, well-organized UNS in one platform.
 ---
 
 In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the  reasons behind MQTT's popularity as a choice for Unified Namespace (UNS) implementations; focusing on its lightweight design, low latency, and reliable message delivery. In this second part, we’ll explore additional factors that further establish MQTT as the leading protocol for UNS brokers, diving into its connectivity, scalability, structured topic management. 
@@ -63,5 +67,3 @@ Good news! Recently, FlowFuse has added a built-in MQTT broker service within th
 FlowFuse not only allows you to build and manage your UNS, but also provides a collaborative environment where teams can work in real time. It offers scalability, security, and ease of use, making it simple to grow your system as your needs evolve.
 
 With FlowFuse, you get everything you need to handle data pipelines, implement a UNS, and scale efficiently—all within a single platform.
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=MQTT%3A%20The%20Frontrunner%20for%20Your%20UNS%20Broker%20-%20Part%202", cta_type: "demo", cta_text: "Want to learn more about how FlowFuse can help?" %}

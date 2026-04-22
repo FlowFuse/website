@@ -9,6 +9,10 @@ keywords: remote device management, easy remote device management, iot device ma
 tags:
    - post
    - flowfuse
+cta:
+  type: demo
+  title: See What Centralized Node-RED Management Looks Like
+  description: FlowFuse gives you one platform to deploy, monitor, secure, and scale every Node-RED instance and edge device across your entire operation.
 ---
 
 Managing a single Node-RED instance involves setting up and configuring a server, securely tunneling for remote access to edge devices, and ensuring proper networking and firewall configurations, all of which can be complex. The complexity increases when overseeing multiple Node-RED instances spread across various projects, edge devices, or environments.
@@ -87,8 +91,6 @@ With its intuitive interface, FlowFuse handles deployments, updates, and real-ti
 FlowFuse also enhances security with advanced settings, keeping your systems safe while boosting collaboration. As operations grow, FlowFuse scales seamlessly, integrating new devices and systems without added complexity.
 
 By simplifying system management, FlowFuse cuts costs, keeps production running smoothly, and lets your team focus on growth and innovation.
-
-{% include "cta.njk", cta_query: "utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Transform%20Chaos%20into%20Control%3A%20Centralize%20Node-RED%20Management%20with%20FlowFuse", cta_type: "signup", cta_text: "" %}
 
 ## Conclusion
 
