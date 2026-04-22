@@ -1,13 +1,13 @@
 ---
 title: "How to Stop Noisy Sensor Data from Flooding Your Industrial System"
-subtitle: "A practical guide to suppressing sensor noise in industrial systems using Node-RED and FlowFuse"
-description: "Learn how to implement a deadband filter in Node-RED to suppress noisy sensor data from PLCs, temperature probes, and flow meters. Step-by-step guide using the built-in filter node on FlowFuse."
+subtitle: "A practical guide to suppressing sensor noise in industrial systems using FlowFuse"
+description: "Learn how to implement a deadband filter in FlowFuse to suppress noisy sensor data from PLCs, temperature probes, and flow meters. Step-by-step guide using the built-in filter node on FlowFuse."
 date: 2026-04-03
 keywords: 
 authors: ["sumit-shinde"]
 image: 
 tags:
-- flowfuse
+    - flowfuse
 cta:
     type: signup
     title: "Start Building Cleaner Industrial Pipelines Today"
@@ -49,7 +49,7 @@ A practical starting point is to measure your sensor output when the process is 
 Before getting started, you will need the following:
 
 - A running FlowFuse instance. If you do not have one yet, start with a [free trial](https://app.flowfuse.com/account/create) and follow [this guide](https://flowfuse.com/blog/2025/09/installing-node-red/) to get up and running on your edge device.
-- A sensor or data source publishing values to Node-RED via MQTT, Modbus, OPC-UA, or a simulated inject node for testing.
+- A sensor or data source publishing values to FlowFuse via MQTT, Modbus, OPC-UA, or a simulated inject node for testing.
 
 ## Collecting sensor data with FlowFuse
 
@@ -64,30 +64,27 @@ Not sure how to connect your specific device or protocol? [Contact us](/contact-
 If you are following along and do not have a live sensor available, you can simulate one using an inject node. Set it to repeat on an interval, and use a JSONata expression to generate a noisy value:
 
 ```json
-$round(50 + $random() * 4 - 2, 2)
+$round(50 + $random() * 4 - 2, 2) + $random() * 0.6 - 0.3
 ```
 
-This simulates a sensor hovering around 50 with up to 2 units of random noise, realistic enough to see the deadband filter in action.
+This simulates a sensor bouncing between 48 and 52 with tight rapid noise on top, realistic enough to see the deadband filter in action.
 
-<!-- SCREENSHOT: Inject node configuration showing JSONata expression and repeat interval -->
+!["Inject node configured as a noisy sensor simulator using JSONata expression in FlowFuse"](./images/inject-node-noisy-sensor-simulation.png)
+*Inject node configured to simulate a noisy sensor, generating random values between 48 and 52 with additional jitter every second.*
 
-## Implementing a deadband filter in Node-RED
+## Implementing a deadband filter
 
-Node-RED has a built-in **filter** node that handles deadband filtering out of the box. No code required. It only passes data when the payload has changed by more than a specified amount, which is exactly what a deadband filter does.
+FlowFuse has a built-in **filter** node that handles deadband filtering out of the box. No code required. It only passes data when the payload has changed by more than a specified amount, which is exactly what a deadband filter does.
 
 ### Step 1: Add the filter node
 
-1. In your Node-RED palette, search for **filter**.
+1. In your palette, search for **filter**.
 2. Drag it onto the canvas.
-
-<!-- SCREENSHOT: Node-RED palette with filter node highlighted -->
 
 ### Step 2: Place it in your flow
 
 1. Position the filter node between your sensor input node and your output node.
 2. Wire the sensor input to the filter node input, and the filter node output to your output. Whether that is a dashboard node, a database write node, or an MQTT broker.
-
-<!-- SCREENSHOT: Node-RED flow showing sensor → filter → output -->
 
 ### Step 3: Configure the filter node
 
@@ -99,9 +96,13 @@ Node-RED has a built-in **filter** node that handles deadband filtering out of t
 6. If your flow handles multiple sensors on different topics, check **Apply mode separately for each** and set it to `msg.topic`. This allows a single filter node to handle multiple sensors independently.
 7. Click **Done** and deploy your flow.
 
-<!-- SCREENSHOT: filter node configuration panel showing all fields configured -->
+!["Filter node configuration in FlowFuse showing deadband mode set to block unless value change is greater than threshold"](./images/filter-node-deadband.png)
+*Filter node configured in deadband mode with threshold set to 2.5. Only values that differ by more than 2.5 units from the last accepted reading are passed downstream.*
 
 > **Note:** The first value that arrives is always passed through and stored as the reference point. From that point on, every incoming value is compared against it. Only values that differ by more than the threshold are forwarded. When one is, it becomes the new reference point for all comparisons that follow.
+
+!["Side by side dashboard comparison showing filtered vs unfiltered sensor data in FlowFuse"](./images/chart-with-deadband-and-without-it.png)
+*The dashboard above shows two charts connected to the same sensor data. The left chart has the deadband filter applied, the right does not. Notice the noise difference.*
 
 ## Conclusion
 
