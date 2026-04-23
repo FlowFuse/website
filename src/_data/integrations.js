@@ -66,6 +66,10 @@ module.exports = async () => {
                 node.categories.push("catalogue");
             }
 
+            const stripRelativeTags = (html) => html
+                .replace(/<link\b[^>]*?\bhref=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*\/?>/gi, '')
+                .replace(/<script\b[^>]*?\bsrc=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*>(?:[\s\S]*?<\/script>)?/gi, '');
+
             // Fetch full npm node details (readme, etc.)
             try {
                 const nodeDetails = await EleventyFetch(
@@ -133,14 +137,9 @@ module.exports = async () => {
                                                 }
                                             });
                                             
-                                            // Strip relative <link> and <script> tags from template fields
-                                            // to prevent the hyperlink checker from flagging them as broken links
                                             let sanitizedFlow = flowContent;
                                             try {
                                                 const flowJson = JSON.parse(flowContent);
-                                                const stripRelativeTags = (html) => html
-                                                    .replace(/<link\b[^>]*?\bhref=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*\/?>/gi, '')
-                                                    .replace(/<script\b[^>]*?\bsrc=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*>(?:[\s\S]*?<\/script>)?/gi, '');
                                                 const sanitizeNode = (n) => {
                                                     if (n && typeof n === 'object') {
                                                         if (typeof n.template === 'string') n.template = stripRelativeTags(n.template);
@@ -217,11 +216,8 @@ module.exports = async () => {
                                 // If no GitHub info, return the match as-is
                                 return match;
                             }
-                        )
-                        // Strip <link> tags with relative href (e.g. CSS, icons) — they don't resolve on our site
-                        .replace(/<link\b[^>]*?\bhref=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*\/?>/gi, '')
-                        // Strip <script> tags with relative src — they don't resolve on our site
-                        .replace(/<script\b[^>]*?\bsrc=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*>(?:[\s\S]*?<\/script>)?/gi, '');
+                        );
+                    node.readme = stripRelativeTags(node.readme);
                 } else {
                     node.readme = "";
                 }
