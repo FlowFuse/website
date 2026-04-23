@@ -71,7 +71,7 @@ $round(45 + (($millis() % 10000) / 1000) + $random(), 2)
 
 This simulates a sensor that drifts steadily over time with random noise on top, giving the signal enough range to realistically cross the deadband threshold.
 
-!["Inject node configured as a noisy sensor simulator using JSONata expression in FlowFuse"](./images/inject-node-noisy-sensor-simulation.png)
+!["Inject node configured as a noisy sensor simulator using JSONata expression in FlowFuse"](./images/noisy-sensor-simulation.png)
 *Inject node configured to simulate a noisy sensor, generating a drifting value with added jitter every second.*
 
 ## Implementing a deadband filter
