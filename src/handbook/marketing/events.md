@@ -209,6 +209,8 @@ If anyone wishes to take days off after the event, it would be ideal to add the 
 
 A briefing meeting will be held and checklist will be provided two weeks before the trade show, so everyone can prepare for the upcoming event.
 
+The on-site team must always include at least one member of the marketing team to own event promotion, content capture, and lead follow-up alignment.
+
 At arrival, the team should ensure to check all the items on the list, follow the booth schedule, adhere to the leads strategy plan, social media plan and booth messaging, while maintaining professional booth etiquette. See [dos and don’ts](https://www.esntradeshow.com/dos-and-donts-of-trade-show-exhibiting/) from ESN for reference.
 
 
