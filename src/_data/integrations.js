@@ -133,12 +133,35 @@ module.exports = async () => {
                                                 }
                                             });
                                             
+                                            // Strip relative <link> and <script> tags from template fields
+                                            // to prevent the hyperlink checker from flagging them as broken links
+                                            let sanitizedFlow = flowContent;
+                                            try {
+                                                const flowJson = JSON.parse(flowContent);
+                                                const stripRelativeTags = (html) => html
+                                                    .replace(/<link\b[^>]*?\bhref=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*\/?>/gi, '')
+                                                    .replace(/<script\b[^>]*?\bsrc=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*>(?:[\s\S]*?<\/script>)?/gi, '');
+                                                const sanitizeNode = (n) => {
+                                                    if (n && typeof n === 'object') {
+                                                        if (typeof n.template === 'string') n.template = stripRelativeTags(n.template);
+                                                        if (typeof n.html === 'string') n.html = stripRelativeTags(n.html);
+                                                    }
+                                                    return n;
+                                                };
+                                                if (Array.isArray(flowJson)) {
+                                                    flowJson.forEach(sanitizeNode);
+                                                } else {
+                                                    sanitizeNode(flowJson);
+                                                }
+                                                sanitizedFlow = JSON.stringify(flowJson);
+                                            } catch (_) { /* keep original if not valid JSON */ }
+
                                             return {
                                                 name: file.name.replace('.json', ''), // Remove .json extension for display
                                                 path: file.path,
                                                 url: file.html_url,
                                                 downloadUrl: file.download_url,
-                                                flow: flowContent // Store the actual flow JSON as string
+                                                flow: sanitizedFlow
                                             };
                                         } catch (err) {
                                             console.error(`Failed to fetch flow content for ${file.name}:`, err.message);
