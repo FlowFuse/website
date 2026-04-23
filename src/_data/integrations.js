@@ -194,7 +194,11 @@ module.exports = async () => {
                                 // If no GitHub info, return the match as-is
                                 return match;
                             }
-                        );
+                        )
+                        // Strip <link> tags with relative href (e.g. CSS, icons) — they don't resolve on our site
+                        .replace(/<link\b[^>]*?\bhref=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*\/?>/gi, '')
+                        // Strip <script> tags with relative src — they don't resolve on our site
+                        .replace(/<script\b[^>]*?\bsrc=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*>(?:[\s\S]*?<\/script>)?/gi, '');
                 } else {
                     node.readme = "";
                 }
