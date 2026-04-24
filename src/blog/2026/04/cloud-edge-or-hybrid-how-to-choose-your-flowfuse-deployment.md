@@ -2,7 +2,7 @@
 title: "Cloud, Edge, or Both? How to Choose Your Deployment Before an Outage Does It For You"
 subtitle: "Cloud, edge, or hybrid: a practical guide to FlowFuse deployment."
 description: "Cloud, edge, or hybrid? Learn how to choose the right FlowFuse deployment model for your industrial workflows - before an outage exposes the wrong architecture."
-date: 2026-04-17
+date: 2026-04-24
 keywords: flowfuse, cloud, edge, hybrid, industrial iot, node-red, deployment, opc-ua, modbus, latency
 authors: ["sumit-shinde"]
 image: /blog/2026/04/images/edge-cloud-or-both.png
