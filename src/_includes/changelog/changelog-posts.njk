@@ -26,7 +26,7 @@
         <div class="prose">
             {% include "summary.njk" %}
         </div>
-        <a href="{{ item.url }}" class="group-hover:underline">read more...</a>
+        <a href="{{ item.url }}" class="group-hover:underline" aria-label="Read more about {{ item.data.title }}">read more...</a>
         {% else %}
         <div class="prose">
             {{ item.content | safe }}
