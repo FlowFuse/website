@@ -11,8 +11,12 @@ jobs:
         uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         with:
           client-id: ${{ secrets.GH_BOT_APP_ID }}
-          private-key: ${{ secrets.GH_BOT_APP_KEY }}
+          private-key: ${{ secrets.GH_CI_READONLY_APP_KEY }}
           owner: ${{ github.repository_owner }}
+          repositories: |
+            website
+            flowfuse
+            blueprint-library
       - name: Check out website repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -50,4 +54,3 @@ jobs:
       - uses: untitaker/hyperlink@fb5bb9c5011a3d143a54b4b30aedc30ec5bc0f89 # 0.2.0
         with:
           args: website/_site/ --check-anchors --sources website/src
-
