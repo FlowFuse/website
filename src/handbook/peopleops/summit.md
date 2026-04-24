@@ -23,6 +23,8 @@ dinners and lunches. Each employee is then responsible for booking their own fli
 and travel arrangements. Please check in with the summit organizer on your own personal
 budget, as this will differ person-to-person and be a factor of each employee's location.
 
+See the [Travel handbook](/handbook/peopleops/travel/) for policies on flights, visas, extended stays, and bringing family.
+
 Other expenses whilst performing duties as employee [are reimbursed](/handbook/peopleops/expenses/#expenses) if within the scope of the summit.
 
 ### Alcohol
@@ -88,19 +90,9 @@ be working.
 The Organizer should also factor in the ease of getting Visas for team members who need
 to travel outside of their country. 
 
-### Visas & Invitation Letters
-If a letter of invitation is required, please reach out to BizzOps team so we can generate one. If a visa application is required, the employee will be responsible for covering the associated fees. (Visa applications are part of the standard screening process for travel, and since this applies to all employees, the costs are handled individually rather than as a company expense.)
+### Flights & Accommodation
 
-### Flights
-
-As the summit organizer, you should research rough flight costs for each employee based
-on their location. Add a 10-15% buffer and set this is a budget for that employee.
-Employees are responsible for booking their own flights. 
-
-FlowFuse intends to accommodate a reasonable journey in terms of duration and
-departure time.
-
-FlowFuse will not cover business class flights for employees.
+As the summit organizer, research rough flight costs for each employee based on their location, add a 10–15% buffer, and communicate that as their personal budget. General employee travel policies — including flights, accommodation, visas, extended stays, and bringing family — are documented in the [Travel handbook](/handbook/peopleops/travel/).
 
 ### Accommodation
 
@@ -118,30 +110,6 @@ make the summit days themselves smoother, and more enjoyable.
 
 In the past, we have had a room share arrangement for a summit, and whilst it
 reduced cost, the feedback was that in the future we should avoid this where possible.
-
-#### Extended Stays
-
-Traveling is a privilege that we should not take for granted. Many employees will
-get to visit places around the world they otherwise would not have had the
-opportunity to visit, and as such, FlowFuse fully encourages employees extending
-their stay either side of the summit, whether this to be working remotely or as [paid-leave](./leave).
-Any costs during this time though, will be at the employee's own expense.
-
-#### Bringing Family
-
-If an employee wishes to bring their family to the summit, they are very welcome to.
-
-Family members are encouraged to attend the social events as part of the summit, it's
-great to get to meet colleague's families and help further build relationships.
-For costs in group bookings, e.g. if FlowFuse have paid for a social event at a fixed
-cost, independent of attendees, then family members are welcome to join for free.
-On occasions whereby an expense is directly proportional to the number of attendees,
-then additional family members will be charged accordingly.
-
-For accommodation, if the employee already has a Double room, then there are no additional costs to
-consider, however if the standard room provided to all employees would be a Twin,
-or Single, and the employee wishes to upgrade this, then additional costs will be
-at the employee's own expense.
 
 ### Food
 

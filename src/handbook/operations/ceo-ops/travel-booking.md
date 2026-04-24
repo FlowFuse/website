@@ -6,7 +6,7 @@ navGroup: CEO Ops
 This page captures the CEO's travel preferences to guide the E.A. when booking
 flights, trains, and hotels. General employee travel policies — including what
 FlowFuse covers for flights and accommodation — are documented in the
-[Summit handbook](/handbook/peopleops/summit/#flights).
+[Travel handbook](/handbook/peopleops/travel/).
 
 ## Flights
 
