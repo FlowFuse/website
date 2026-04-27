@@ -7,7 +7,7 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-We are hiring our **first-ever SDR** at FlowFuse — a blank-slate, build-it-yourself opportunity for someone who is energised by that kind of challenge.
+We are hiring our first SDR at FlowFuse — a blank-slate, build-it-yourself opportunity for someone who is energised by that kind of challenge.
 
 There is no existing SDR playbook. No inherited cadences. No handed-down process to maintain. What exists is a growing pipeline of inbound interest, a lean and high-performing sales team, and the expectation that you will figure out — fast — what works and do more of it.
 
