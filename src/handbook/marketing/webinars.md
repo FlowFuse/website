@@ -20,7 +20,7 @@ The following are the steps to produce a montly webinar.
    1. Send an email to the speaker requesting:
         * A short bio (around 350 characters)
         * A headshot
-        * A draft title and abstract using [this template](https://docs.google.com/document/d/1Ovh-X87OW5uFFFQXlCob3KMoLybLhL1h3qKLLyIe9FY/edit?usp=sharing) (please duplicate the document and save it in the corresponding folder before sharing it with the speaker). The host then reviews it to ensure it aligns with our messaging.
+        * A draft title and abstract using [this template](https://docs.google.com/document/d/1Ovh-X87OW5uFFFQXlCob3KMoLybLhL1h3qKLLyIe9FY/edit?usp=sharing) (please duplicate the document and save it in the corresponding folder before sharing it with the speaker), focusing on the use of FlowFuse. The host then reviews it to ensure it aligns with our messaging.
             - Set the deadline for all the above to the week before the previous webinar to ensure we have a defined title by the day of the previous session, so it can be promoted during it and in follow-up emails.
             - If the speaker is unable to commit to this timeline, or does not meet the deadline, the session should be rescheduled for the following month. In that case, an internal webinar should be planned instead.
         * Slides for the presentation using [our template](/handbook/design/branding/#presentations). Create a copy and and save it in the corresponding folder before sharing it with the speaker.
