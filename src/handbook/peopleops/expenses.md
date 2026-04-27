@@ -27,7 +27,7 @@ for a monthly subscription with a vendor. Contact the Head of Operations if you 
 vendor card.
 
 Expenses on Brex require a memo and receipts. Memos explain the purpose of the
-expense. Receipts can be attached via the web UI, email, or Slack. Please
+expense. Receipts can be attached via the web UI, email (`receipts@brex.com`), or Slack. Please
 [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
 
 
