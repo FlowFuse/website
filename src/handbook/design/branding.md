@@ -316,6 +316,28 @@ The following fonts are used across the FlowFuse platform, website, and branded 
     </div>
 </div>
 
+### Text Color & Contrast
+
+[WCAG 2.1 AA](https://www.w3.org/TR/WCAG21/#contrast-minimum) requires a contrast ratio of at least **4.5:1** between normal-size body text and its background (large text — 18pt or larger, or 14pt bold — requires 3:1; see [Success Criterion 1.4.3](https://www.w3.org/TR/WCAG21/#contrast-minimum)). Several values in the grey scale above look similar but sit on opposite sides of that threshold, so choose by background:
+
+| Background | Minimum grey for normal text | Notes |
+|------------|------------------------------|-------|
+| White (`#FFFFFF`) | **Grey 500** (`#6B7280`, 4.83:1) | Minimum for normal text. Site body copy uses Grey 700 (`#374151`, 7.56:1); Grey 500 is used for bolded prose text and for secondary metadata like dates, bylines, and captions |
+| Grey 50 / Grey 100 (`bg-gray-50`, `bg-gray-100`) | **Grey 600** (`#4B5563`) | Grey 500 produces only ~4.3:1 on Grey 100, below AA |
+| Indigo 50 (`bg-indigo-50`) | **Grey 600** | Tinted background reduces effective contrast against mid-greys |
+| Dark backgrounds (Grey 600+) | Grey 300 or lighter, or white | Light values required to reach 4.5:1 |
+
+**Grey 400 (`#9CA3AF`) fails AA for normal text on any light background (≈2.85:1 on white).** Reserve it for:
+
+- Decorative, non-text elements (icons, dividers, tree-branch characters), where the 3:1 non-text contrast rule applies
+- Intentional placeholder or disabled states where the reduced contrast is the intended signal — for example, unconfirmed talks on an event schedule, inactive form fields, or greyed-out menu items. Document the intent inline so future edits preserve it.
+
+When in doubt, run the page through Lighthouse and check the `color-contrast` audit before shipping.
+
+**Lighthouse** (built into Chrome DevTools): open the page → DevTools (`⌘⌥I` / `F12`) → **Lighthouse** tab → tick **Accessibility** → **Analyze page load**. Scroll to "Contrast" in the report — any failing element is listed with its selector and the actual ratio.
+
+For a one-off spot-check without running a full audit, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) takes two hex values and returns the ratio.
+
 ## Iconography
 
 All app and site iconography uses [Heroicons](https://heroicons.com/), by the makers of Tailwind CSS. Within our flowforge app, we have two icon sizes available which can be assigned with `ff-icon` and `ff-icon-sm`.
