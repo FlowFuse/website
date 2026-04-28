@@ -9,25 +9,27 @@ image:
 tags:
 - flowfuse
 cta:
-  type: contact
-  title: "From Modbus to your data platform — without the firefighting"
-  description: "FlowFuse connects industrial machines across any protocol and gives teams a single place to build, deploy, and manage applications at scale. Talk to us about your setup."
+  type: sign-up
+  title: Unlock your Modbus data with FlowFus
+  description: Get Modbus data flowing reliably — then connect every other protocol on your plant floor. OPC-UA, MQTT, legacy and modern, all in one place
 ---
 
 Our [last article on Modbus](/blog/2026/04/modbus-polling-best-practices/) covered the mistakes baked in at setup. Fix those and the system starts better.
 
+<!--more-->
+
 It won't stay that way.
 
-Equipment gets added to a cable tray that was clean for eight months. A VPN lands between the polling engine and the plant floor. Three devices get decommissioned without anyone touching the poll list. None of it announces itself — Modbus just runs slower until someone finally looks.
+A VPN lands between the polling engine and the plant floor. Three devices get decommissioned without anyone updating the poll list. None of it announces itself — Modbus just degrades until someone finally notices.
 
-Here's how to catch it first.
+Here's how to catch it before that.
 
 ## Serial and TCP Fail Through Different Mechanisms
 
 [Modbus RTU](https://www.modbus.org/specs.php) and Modbus TCP share the same application protocol. The similarity ends there.
 
-![Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths](./images/modbus-rtu-and-tcp-physical-layer-image.png)
-_Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths_
+![Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths](/img/modbus-rtu-and-tcp-physical-layer-image.png)
+*Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths*
 
 They fail through fundamentally different mechanisms, and the most common diagnostic mistake is applying serial troubleshooting logic to a TCP problem, or vice versa. It doesn't just waste time; it produces fixes aimed at the wrong layer entirely.
 
@@ -57,12 +59,12 @@ The most common TCP failure pattern is connection table exhaustion. Modbus TCP d
 
 Those connection slots release when the idle-connection timeout or the TCP FIN/RST sequence clears them. On most embedded Modbus TCP firmware, this idle timeout is typically 60 to 120 seconds, producing a failure cycle with a consistent interval: errors for roughly 90 seconds, reconnect, fill the table again, repeat.
 
-![Cyclical Modbus TCP connection exhaustion loop showing connection creation, table saturation, TCP resets, and idle timeout recovery](./images/modbus-tcp-connection-cycle.png)
-_Cyclical failure pattern caused by connection table exhaustion. Diagnostic signal: failures repeat at a consistent interval._
+![Cyclical Modbus TCP connection exhaustion loop showing connection creation, table saturation, TCP resets, and idle timeout recovery](/img/modbus-tcp-connection-cycle.png)
+*Cyclical failure pattern caused by connection table exhaustion. Diagnostic signal: failures repeat at a consistent interval.*
 
 That regularity is the diagnostic signal. A device with intermittent hardware faults fails unpredictably. A device whose connection table is being exhausted fails on a clock. If you're seeing periodic offline events with suspiciously consistent timing, check your connection handling before you assume the device is faulty.
 
-**Transaction ID handling** is worth checking in high-concurrency polling configurations. The [Modbus application protocol specification]( https://www.modbus.org/file/secure/modbusprotocolspecification.pdf) defines Transaction IDs to match requests with responses. A polling stack that reuses Transaction IDs before receiving a response to the previous one can match incoming responses to the wrong pending request. When this occurs, the symptom is correct values appearing in the wrong registers. It doesn't show up as an error at all, which makes it unusually difficult to diagnose. If you're seeing values that are off by a plausible amount but never produce error codes, check whether your stack's Transaction ID handling is correct under concurrent load.
+**Transaction ID handling** is worth checking in high-concurrency polling configurations. The [Modbus application protocol specification](https://www.modbus.org/file/secure/modbusprotocolspecification.pdf) defines Transaction IDs to match requests with responses. A polling stack that reuses Transaction IDs before receiving a response to the previous one can match incoming responses to the wrong pending request. When this occurs, the symptom is correct values appearing in the wrong registers. It doesn't show up as an error at all, which makes it unusually difficult to diagnose. If you're seeing values that are off by a plausible amount but never produce error codes, check whether your stack's Transaction ID handling is correct under concurrent load.
 
 The second TCP failure mode that's become more common as industrial networks gain remote access infrastructure is latency on routed network paths pushing transaction times past configured timeouts. This applies to any routed path: site-to-site VPNs, SD-WAN appliances, MPLS links with QoS misconfiguration, or firewalls with deep-packet inspection enabled for industrial protocols. Modbus TCP on a dedicated plant-floor LAN has round-trip latency in single-digit milliseconds. The same configuration over a site-to-site VPN or through a stateful firewall can see 80 to 200ms per transaction. If your timeouts were calculated against a local network and you've since added any routing hops, your effective timeout margin may now be zero under any congestion. The failures are load-dependent: worse during business hours, cleaner overnight, invisible when you run a manual test. The fix is the same as in the last article: measure actual round-trip time under realistic load, then set your timeout to 1.5 to 2x that value.
 
@@ -84,16 +86,14 @@ Beyond request queuing, converters introduce several other failure modes:
 
 Most converters expose diagnostic statistics through a web UI or Telnet interface. When a converter-accessed segment produces intermittent errors, pull those diagnostics before you start chasing wiring. If the serial error counters are near zero but the queue depth is nonzero during failures, you're looking at a queuing problem that originates on the software side. If the serial error counters are climbing, you have a real physical problem on the RS-485 side.
 
-With [FlowFuse](/), disabling concurrency on a converter-fronted segment is a configuration change you can push to remote edge devices without physical access or a maintenance window.
-
 ## Exception Codes Tell You What Type of Error You're Dealing With
 
 Before treating every failed transaction as a generic timeout or communication fault, check the [Modbus exception code](https://www.modbus.org/file/secure/modbusprotocolspecification.pdf). When a device receives a valid request but can't fulfill it, it returns an exception response, and that code is specific enough to redirect your troubleshooting immediately.
 
 The codes you'll encounter most often:
 
-![Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps](./images/exception-table-modbus.png)
-_Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps_
+![Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps](/img/exception-table-modbus.png)
+*Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps*
 
 **Exception 0x01 — Illegal Function**: The device doesn't support the function code you sent. Usually a configuration issue: the polling stack is sending a [function code](https://en.wikipedia.org/wiki/Modbus#Supported_function_codes) the device firmware doesn't implement.
 
@@ -113,8 +113,8 @@ There is a problem in almost every Modbus installation that's been running for m
 
 Take a serial network with 18 active devices and 3 that are offline. With a 300ms timeout and 2 retries configured, each unresponsive device costs 900ms per cycle. Three offline devices: 2.7 seconds of dead time on every poll cycle. On a bus where each active device transaction takes 70ms, that's the equivalent of roughly 40 active transactions blocked per cycle.
 
-![Modbus poll cycle timeline showing active transactions and dead device waits consuming majority of cycle time](./images/modbus-poll-cycle-dead-time.png)
-_Dead devices dominate the poll cycle: ~5.1s actual vs 500ms target, with 2.7s wasted on non-responsive devices._
+![Modbus poll cycle timeline showing active transactions and dead device waits consuming majority of cycle time](/img/modbus-poll-cycle-dead-time.png)
+*Dead devices dominate the poll cycle: ~5.1s actual vs 500ms target, with 2.7s wasted on non-responsive devices.*
 
 If your fast-tier registers are supposed to poll at 500ms, your actual cycle time is now well over three seconds. Data still flows. Values still update. Nothing throws a hard error. The system looks operational while running at a fraction of its designed capacity.
 
@@ -122,7 +122,7 @@ If your fast-tier registers are supposed to poll at 500ms, your actual cycle tim
 
 After a device fails a configurable number of consecutive polls, move it out of the normal rotation and into a low-frequency check — once every 60 seconds is a reasonable starting point. When it responds again, restore it to the normal rotation immediately.
 
-Most commercial [SCADA](https://en.wikipedia.org/wiki/SCADA) systems and industrial gateways support this natively, usually labeled as device backoff, retry holdoff, or failure-state polling interval. In FlowFuse, you implement it explicitly: track a failure counter per device address, suppress it from the main poll rotation when the counter exceeds your threshold, and run it on a separate low-frequency timer.
+Most commercial [SCADA](https://en.wikipedia.org/wiki/SCADA) systems and industrial gateways support this natively, usually labeled as device backoff, retry holdoff, or failure-state polling interval. In Node-RED, you implement this explicitly: track a failure counter per device address, suppress it from the main poll rotation when the counter exceeds your threshold, and run it on a separate low-frequency timer.
 
 Backoff is a runtime mitigation, not a solution. Backoff entries should be reviewed quarterly, and anything that hasn't responded in 30 days warrants a direct question: is this device expected to return, or is it permanently gone? If it's gone, remove it. The poll list should reflect the actual field.
 
@@ -154,7 +154,7 @@ From that raw stream, you want three derived views:
 
 **Segment-level CRC error rate**: sum CRC failures across all devices sharing a physical segment or converter, and plot that alongside the individual device rates. The divergence between the segment total and any individual device is the diagnostic signal.
 
-In FlowFuse, write a structured record after each Modbus response (device ID, timestamp, success boolean, response time, error type) to a flow targeting your time-series backend. Keep the raw transaction log and the derived metrics separate: the raw log is your diagnostic record, the derived metrics are your operational view.
+In FlowFuse, write a structured record after each Modbus response — device ID, timestamp, success boolean, response time, error type — to a flow targeting your time-series backend.
 
 Build a dashboard that flags any device whose rolling success rate drops below 97%, or whose current response time median exceeds twice its 30-day baseline. Treat these thresholds as starting points. High-noise environments or older legacy devices may warrant looser thresholds; safety-critical systems warrant tighter ones. The goal is to make unplanned degradation visible early, not to produce alerts for every expected variance during a planned network change or device restart.
 
