@@ -28,7 +28,7 @@ Here's how to catch it before that.
 
 [Modbus RTU](https://www.modbus.org/specs.php) and Modbus TCP share the same application protocol. The similarity ends there.
 
-![Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths](/img/modbus-rtu-and-tcp-physical-layer-image.png)
+![Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths](./images/modbus-rtu-and-tcp-physical-layer-image.png)
 *Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths*
 
 They fail through fundamentally different mechanisms, and the most common diagnostic mistake is applying serial troubleshooting logic to a TCP problem, or vice versa. It doesn't just waste time; it produces fixes aimed at the wrong layer entirely.
@@ -59,7 +59,7 @@ The most common TCP failure pattern is connection table exhaustion. Modbus TCP d
 
 Those connection slots release when the idle-connection timeout or the TCP FIN/RST sequence clears them. On most embedded Modbus TCP firmware, this idle timeout is typically 60 to 120 seconds, producing a failure cycle with a consistent interval: errors for roughly 90 seconds, reconnect, fill the table again, repeat.
 
-![Cyclical Modbus TCP connection exhaustion loop showing connection creation, table saturation, TCP resets, and idle timeout recovery](/img/modbus-tcp-connection-cycle.png)
+![Cyclical Modbus TCP connection exhaustion loop showing connection creation, table saturation, TCP resets, and idle timeout recovery](./images/modbus-tcp-connection-cycle.png)
 *Cyclical failure pattern caused by connection table exhaustion. Diagnostic signal: failures repeat at a consistent interval.*
 
 That regularity is the diagnostic signal. A device with intermittent hardware faults fails unpredictably. A device whose connection table is being exhausted fails on a clock. If you're seeing periodic offline events with suspiciously consistent timing, check your connection handling before you assume the device is faulty.
@@ -92,7 +92,7 @@ Before treating every failed transaction as a generic timeout or communication f
 
 The codes you'll encounter most often:
 
-![Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps](/img/exception-table-modbus.png)
+![Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps](./images/exception-table-modbus.png)
 *Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps*
 
 **Exception 0x01 — Illegal Function**: The device doesn't support the function code you sent. Usually a configuration issue: the polling stack is sending a [function code](https://en.wikipedia.org/wiki/Modbus#Supported_function_codes) the device firmware doesn't implement.
@@ -113,7 +113,7 @@ There is a problem in almost every Modbus installation that's been running for m
 
 Take a serial network with 18 active devices and 3 that are offline. With a 300ms timeout and 2 retries configured, each unresponsive device costs 900ms per cycle. Three offline devices: 2.7 seconds of dead time on every poll cycle. On a bus where each active device transaction takes 70ms, that's the equivalent of roughly 40 active transactions blocked per cycle.
 
-![Modbus poll cycle timeline showing active transactions and dead device waits consuming majority of cycle time](/img/modbus-poll-cycle-dead-time.png)
+![Modbus poll cycle timeline showing active transactions and dead device waits consuming majority of cycle time](./images/modbus-poll-cycle-dead-time.png)
 *Dead devices dominate the poll cycle: ~5.1s actual vs 500ms target, with 2.7s wasted on non-responsive devices.*
 
 If your fast-tier registers are supposed to poll at 500ms, your actual cycle time is now well over three seconds. Data still flows. Values still update. Nothing throws a hard error. The system looks operational while running at a fraction of its designed capacity.
