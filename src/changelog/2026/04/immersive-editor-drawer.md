@@ -1,7 +1,7 @@
 ---
 title: A More Integrated Immersive Editor
 description: The immersive editor drawer is now pinnable, switchable, and resizable — with your preferences saved between sessions.
-date: 2026-04-22 12:00:00
+date: 2026-04-29 12:00:00
 authors: ['noley-holland']
 tags:
   - changelog
