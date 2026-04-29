@@ -1,5 +1,5 @@
 ---
-title: A More Integrated Immersive Editor Drawer
+title: Customisable Immersive Editor Drawer
 description: The immersive editor drawer is now pinnable, switchable, and resizable — with your preferences saved between sessions.
 date: 2026-04-29 12:00:00
 authors: ['noley-holland']
@@ -9,7 +9,7 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/6267
 ---
 
-The drawer in the immersive editor no longer floats over your flow canvas. It now sits inside the editor layout, and you control how it behaves:
+The drawer in the immersive editor used to float over your canvas, blocking parts of your flow whenever it was open. Now it sits inside the editor layout, so FlowFuse tools stay visible alongside your work. You can also set it up the way you like, and it stays that way every time you come back:
 
 ![Pinning, moving, and full-screening the immersive editor drawer](./images/immersive-ui-drawer.gif){data-zoomable}
 *Pin, switch sides, or go full-screen from the drawer header — your settings persist between sessions.*
