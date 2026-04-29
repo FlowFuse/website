@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <defs>
+    <style>
+      text { font-family: 'Heebo', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="560" fill="#ffffff"/>
+
+  <!-- Column header backgrounds -->
+  <!-- Cloud: Blue 700 -->
+  <rect x="170" y="20" width="220" height="64" rx="8" fill="#1D4ED8"/>
+  <!-- Edge: Blue 600 -->
+  <rect x="400" y="20" width="220" height="64" rx="8" fill="#2563EB"/>
+  <!-- Hybrid: Blue 500 -->
+  <rect x="630" y="20" width="220" height="64" rx="8" fill="#3B82F6"/>
+
+  <!-- Column header titles -->
+  <text x="280" y="46" text-anchor="middle" font-size="14" font-weight="600" fill="#EFF6FF">Cloud instances</text>
+  <text x="280" y="66" text-anchor="middle" font-size="12" font-weight="400" fill="#BFDBFE">Managed, zero infra</text>
+  <text x="510" y="46" text-anchor="middle" font-size="14" font-weight="600" fill="#EFF6FF">Edge instances</text>
+  <text x="510" y="66" text-anchor="middle" font-size="12" font-weight="400" fill="#BFDBFE">On-device, offline-capable</text>
+  <text x="740" y="46" text-anchor="middle" font-size="14" font-weight="600" fill="#EFF6FF">Hybrid</text>
+  <text x="740" y="66" text-anchor="middle" font-size="12" font-weight="400" fill="#DBEAFE">Edge + cloud combined</text>
+
+  <!-- Table border -->
+  <rect x="20" y="100" width="860" height="440" rx="8" fill="none" stroke="#BFDBFE" stroke-width="1"/>
+
+  <!-- Row stripe backgrounds (alternating) -->
+  <!-- Row 1: Latency — white -->
+  <rect x="20" y="100" width="860" height="66" rx="0" fill="#EFF6FF"/>
+  <!-- Row 2: Offline — blue 50 -->
+  <rect x="20" y="166" width="860" height="66" fill="#DBEAFE"/>
+  <!-- Row 3: Setup — white -->
+  <rect x="20" y="232" width="860" height="66" fill="#EFF6FF"/>
+  <!-- Row 4: Cost — blue 50 -->
+  <rect x="20" y="298" width="860" height="66" fill="#DBEAFE"/>
+  <!-- Row 5: Where it breaks — white -->
+  <rect x="20" y="364" width="860" height="66" fill="#EFF6FF"/>
+  <!-- Row 6: Best for — blue 50 -->
+  <rect x="20" y="430" width="860" height="110" rx="0" fill="#DBEAFE"/>
+
+  <!-- Top-left corner rounding fix for first row -->
+  <rect x="20" y="100" width="8" height="8" fill="#EFF6FF"/>
+  <rect x="872" y="100" width="8" height="8" fill="#EFF6FF"/>
+  <!-- Bottom corner fix for last row -->
+  <rect x="20" y="532" width="8" height="8" fill="#DBEAFE"/>
+  <rect x="872" y="532" width="8" height="8" fill="#DBEAFE"/>
+
+  <!-- Vertical dividers -->
+  <line x1="150" y1="100" x2="150" y2="540" stroke="#BFDBFE" stroke-width="1"/>
+  <line x1="380" y1="100" x2="380" y2="540" stroke="#BFDBFE" stroke-width="1"/>
+  <line x1="610" y1="100" x2="610" y2="540" stroke="#BFDBFE" stroke-width="1"/>
+
+  <!-- Horizontal dividers -->
+  <line x1="20" y1="166" x2="880" y2="166" stroke="#BFDBFE" stroke-width="1"/>
+  <line x1="20" y1="232" x2="880" y2="232" stroke="#BFDBFE" stroke-width="1"/>
+  <line x1="20" y1="298" x2="880" y2="298" stroke="#BFDBFE" stroke-width="1"/>
+  <line x1="20" y1="364" x2="880" y2="364" stroke="#BFDBFE" stroke-width="1"/>
+  <line x1="20" y1="430" x2="880" y2="430" stroke="#BFDBFE" stroke-width="1"/>
+
+  <!-- Row labels -->
+  <text x="85" y="138" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF" letter-spacing="0.5">LATENCY</text>
+  <text x="85" y="204" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF" letter-spacing="0.5">OFFLINE</text>
+  <text x="85" y="270" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF" letter-spacing="0.5">SETUP</text>
+  <text x="85" y="336" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF" letter-spacing="0.5">COST</text>
+  <text x="85" y="391" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF" letter-spacing="0.5">WHERE IT</text>
+  <text x="85" y="406" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF" letter-spacing="0.5">BREAKS</text>
+  <text x="85" y="492" text-anchor="middle" font-size="11" font-weight="600" fill="#1E40AF" letter-spacing="0.5">BEST FOR</text>
+
+  <!-- ROW 1: Latency -->
+  <text x="265" y="138" text-anchor="middle" font-size="13" fill="#1E3A8A">20–100 ms network overhead</text>
+  <text x="495" y="138" text-anchor="middle" font-size="13" fill="#1E3A8A">Local execution, no WAN round-trip</text>
+  <text x="745" y="138" text-anchor="middle" font-size="13" fill="#1E3A8A">Both, assigned by workload</text>
+
+  <!-- ROW 2: Offline -->
+  <text x="265" y="204" text-anchor="middle" font-size="13" fill="#1E3A8A">No — WAN connection required</text>
+  <text x="495" y="204" text-anchor="middle" font-size="13" fill="#1E3A8A">Yes — runs fully on-device</text>
+  <text x="745" y="204" text-anchor="middle" font-size="13" fill="#1E3A8A">Edge layer stays up independently</text>
+
+  <!-- ROW 3: Setup -->
+  <text x="265" y="270" text-anchor="middle" font-size="13" fill="#1E3A8A">Live in minutes, no hardware</text>
+  <text x="495" y="261" text-anchor="middle" font-size="13" fill="#1E3A8A">Hardware procurement +</text>
+  <text x="495" y="279" text-anchor="middle" font-size="13" fill="#1E3A8A">Device Agent install</text>
+  <text x="745" y="270" text-anchor="middle" font-size="13" fill="#1E3A8A">Both models deployed together</text>
+
+  <!-- ROW 4: Cost -->
+  <text x="265" y="336" text-anchor="middle" font-size="13" fill="#1E3A8A">Predictable per-instance fee</text>
+  <text x="495" y="336" text-anchor="middle" font-size="13" fill="#1E3A8A">CapEx + ongoing maintenance</text>
+  <text x="745" y="336" text-anchor="middle" font-size="13" fill="#1E3A8A">Combined — plan both upfront</text>
+
+  <!-- ROW 5: Where it breaks -->
+  <text x="265" y="402" text-anchor="middle" font-size="13" fill="#1E3A8A">WAN drops, execution stops</text>
+  <text x="495" y="402" text-anchor="middle" font-size="13" fill="#1E3A8A">You own hardware failures</text>
+  <text x="745" y="393" text-anchor="middle" font-size="13" fill="#1E3A8A">No clear ownership</text>
+  <text x="745" y="411" text-anchor="middle" font-size="13" fill="#1E3A8A">across layers</text>
+
+  <!-- ROW 6: Best for — text + tags -->
+  <text x="265" y="468" text-anchor="middle" font-size="13" fill="#1E3A8A">SaaS and system integrations</text>
+  <rect x="192" y="478" width="146" height="24" rx="4" fill="#1D4ED8"/>
+  <text x="265" y="494" text-anchor="middle" font-size="11" font-weight="500" fill="#EFF6FF">no latency constraints</text>
+
+  <text x="495" y="468" text-anchor="middle" font-size="13" fill="#1E3A8A">PLCs, OPC-UA, plant floor control</text>
+  <rect x="418" y="478" width="154" height="24" rx="4" fill="#2563EB"/>
+  <text x="495" y="494" text-anchor="middle" font-size="11" font-weight="500" fill="#EFF6FF">offline-resilient sites</text>
+
+  <text x="745" y="468" text-anchor="middle" font-size="13" fill="#1E3A8A">Multi-site manufacturing ops</text>
+  <rect x="656" y="478" width="178" height="24" rx="4" fill="#3B82F6"/>
+  <text x="745" y="494" text-anchor="middle" font-size="11" font-weight="500" fill="#EFF6FF">edge control + cloud analytics</text>
+
+  <!-- Outer border on top of everything -->
+  <rect x="20" y="100" width="860" height="440" rx="8" fill="none" stroke="#BFDBFE" stroke-width="1.5"/>
+</svg>
