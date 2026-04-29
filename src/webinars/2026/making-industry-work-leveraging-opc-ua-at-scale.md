@@ -7,7 +7,7 @@ image: /images/webinars/making-industry-work-leveraging-opc-ua-at-scale.jpg
 date: 2026-04-28
 time: 17:00 CET (11:00am ET)
 duration: 60
-video:
+video: NtA5KIaE3R4
 hosts: ["etienne-rossignon"]
 hubspot:
     formId: 447f73d3-18c8-4155-89dd-a36de0cd1fec
