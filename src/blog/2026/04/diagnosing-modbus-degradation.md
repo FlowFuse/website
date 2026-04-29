@@ -18,6 +18,8 @@ Modbus doesn't fail loudly. It drifts, and by the time operators notice, you've 
 
 It shows up as slightly stale values, a poll cycle that's somehow three times slower than configured, operators filing tickets about data that "seems off." Never a hard fault. Never a clear cause.
 
+<!--more-->
+
 The [previous article](/blog/2026/04/modbus-polling-best-practices/) covered setup mistakes. This one covers what breaks after that: how to read CRC errors and TCP failures correctly, how dead devices silently consume your poll cycle, and what metrics catch degradation before your operators do.
 
 ## Serial and TCP Fail Through Different Mechanisms
