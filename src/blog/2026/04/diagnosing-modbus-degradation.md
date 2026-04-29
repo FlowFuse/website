@@ -3,7 +3,7 @@ title: "Diagnosing Modbus Degradation: From CRC Errors to TCP Timeouts"
 subtitle: "CRC errors, connection exhaustion, dead poll lists, and the metrics that catch Modbus degradation early"
 description: "Modbus doesn't fail loudly. It drifts. This guide covers how to diagnose serial vs. TCP failures, eliminate dead device overhead, and build the metrics layer that tells you something is wrong before your operators do."
 date: 2026-04-29
-keywords: 
+keywords: Modbus, Modbus RTU, Modbus TCP, RS-485, CRC errors, TCP timeouts, polling, connection exhaustion, industrial networking, SCADA, exception codes, latency, device backoff, response time, time-series monitoring
 authors: ["sumit-shinde"]
 image: /blog/2026/04/images/modbus-degradation-img.png
 tags:
