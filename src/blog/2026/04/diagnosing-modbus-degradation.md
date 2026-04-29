@@ -24,7 +24,7 @@ The [previous article](/blog/2026/04/modbus-polling-best-practices/) covered set
 
 ## Serial and TCP Fail Through Different Mechanisms
 
-[Modbus RTU](https://www.modbus.org/specs.php) and Modbus TCP share the same application protocol. The similarity ends there.
+Modbus RTU and Modbus TCP share the same application protocol. The similarity ends there.
 
 ![Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths](./images/modbus-rtu-and-tcp-physical-layer-image.png)
 *Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths*
