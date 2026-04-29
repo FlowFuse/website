@@ -5,7 +5,7 @@ description: "Modbus doesn't fail loudly. It drifts. This guide covers how to di
 date: 2026-04-29
 keywords: 
 authors: ["sumit-shinde"]
-image: /blog/2026/04/images/modbus-degradation.png
+image: /blog/2026/04/images/modbus-degradation-img.png
 tags:
   - flowfuse
 cta:
