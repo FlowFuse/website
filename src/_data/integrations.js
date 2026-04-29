@@ -137,7 +137,8 @@ module.exports = async () => {
                                                 }
                                             });
                                             
-                                            let sanitizedFlow = flowContent;
+                                            const escapeForHtml = (s) => s.replace(/&/g, '\\u0026').replace(/</g, '\\u003c').replace(/>/g, '\\u003e');
+                                            let sanitizedFlow = escapeForHtml(flowContent);
                                             try {
                                                 const flowJson = JSON.parse(flowContent);
                                                 const sanitizeNode = (n) => {
@@ -152,7 +153,10 @@ module.exports = async () => {
                                                 } else {
                                                     sanitizeNode(flowJson);
                                                 }
-                                                sanitizedFlow = JSON.stringify(flowJson);
+                                                sanitizedFlow = JSON.stringify(flowJson)
+                                                    .replace(/&/g, '\\u0026')
+                                                    .replace(/</g, '\\u003c')
+                                                    .replace(/>/g, '\\u003e');
                                             } catch (_) { /* keep original if not valid JSON */ }
 
                                             return {

@@ -48,7 +48,7 @@
         "netlify-plugin-cache": "^1.0.3",
         "nodemon": "^2.0.20",
         "npm-run-all2": "^7.0.1",
-        "postcss": "^8.4.35",
+        "postcss": "^8.5.10",
         "postcss-cli": "^9.0.1",
         "postcss-import": "^14.0.2",
         "postcss-minify": "^1.1.0",
