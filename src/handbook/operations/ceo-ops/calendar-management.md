@@ -23,7 +23,7 @@ please:
 
 * Ensure there's no overlapping meetings
    - Or when there's overlap in events, it's clear which one the CEO participates in and which meeting won't be attended.
-* Block times, by creating events, to travel to meetings on-site
+* Block times, by creating events, to travel to meetings on-site (see [Travel Booking](/handbook/operations/ceo-ops/travel-booking/) for CEO preferences)
 * Check the [event anatomy](#calendar-event-anatomy) for meetings
 * Confirm hiring blocks, recurring syncs, and investor meetings are correctly placed.
 * Ensure all Out-of-Office (OOO) blocks remain intact.

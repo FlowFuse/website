@@ -381,8 +381,10 @@
         width: 128px;
     }
 
-    .company-value h5 {
+    .company-value h5,
+    .company-value h3 {
         font-size: 1.25rem;
+        font-weight: 600;
         margin-top: 1rem;
         margin-bottom: 3rem;
         @apply px-2 md:px-0

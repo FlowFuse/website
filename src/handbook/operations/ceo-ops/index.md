@@ -14,6 +14,7 @@ multiple times a day.
 1. [Inbox Management](/handbook/operations/ceo-ops/inbox-management/)
 1. [Calendar Management](/handbook/operations/ceo-ops/calendar-management/)
 1. [CEO Task Management](/handbook/operations/ceo-ops/task-managment/)
+1. [Travel Booking](/handbook/operations/ceo-ops/travel-booking/)
 1. Other tasks to pick up (Peopleops, bizops, etc)
 
 ### CEO meeting hours
