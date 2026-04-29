@@ -5,7 +5,7 @@ description: "Discover why IIoT data integration fails at scale and how the Unif
 date: 2026-04-29
 keywords: 
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/04/images/rosseta-stone-for-factories.png
 tags:
 - flowfuse
 cta:
