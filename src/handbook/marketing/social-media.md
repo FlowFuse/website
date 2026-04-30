@@ -12,7 +12,7 @@ Each content type has channels which are appropriate, this table sets out which 
 |Release Post         |*        |*        |         |*       |       |*             |*                 |
 |Product updates      |*        |*        |         |        |*      |*             |*                 |
 |Curated content      |*        |*        |         |        |       |              |                  |
-|Events               |*        |*        |         |*       |*      |*             |*                 |
+|Events               |*        |*        |*        |*       |*      |*             |*                 |
 |Short videos         |*        |*        |*        |        |       |              |                  |
 |Long format videos   |         |*        |*        |        |       |              |                  |
 |Downloadable content |*        |*        |         |*       |       |*             |                  |
@@ -70,12 +70,8 @@ Each content type has channels which are appropriate, this table sets out which 
 #### Planning and posting
 
 - We'll plan **two weeks ahead**, to give us time to prepare content and the associated materials.
-- We'll keep the planning on our [HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar).
-    - There are placeholder posts in the form of drafts.
-    - Clone them to be able to create a new post adressed to all social channels at once.
-    - The draft includes the type of content to be shared on the given date and time, and structure recomendations for the description.
-    - When posting content on Facebook, always share to the relevant groups too.
-    - We'll add a placeholder for Youtube, but this needs to be shared from the Youtube platform and not HubSpot.
+- We'll keep the planning on our [Social Content Calendar project in Asana](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519) and handle scheduling through the [HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar).
+    - Make sure to mark the Asana task as done once the post is scheduled. Otherwise, you’ll keep getting reminders, or it will show up as a missed deadline
 - **Posting hours:** Aligned with USA Eastern Time before work hours and during lunch, aiming to coincide with Germany's lunch and after work hours.
     - USA before work (6:00 am EDT - 12 pm CEST).
     - USA lunch hours (11:30 am EDT -  5:30 pm CEST).
@@ -95,7 +91,9 @@ Each content type has channels which are appropriate, this table sets out which 
 - Hashtags, ideally three.
 - Link to article / website.
     - In HubSpot, delete the link from the "Add media" section to keep full-size image.
-- If you're attaching a video to the post, click the “Edit Thumbnail” button and choose a frame from the video or select/upload an image that better reflects what the content is about. Otherwise, the first frame of the video will be used by default.
+- If you're attaching a video to the post:
+    - Click the “Edit Thumbnail” button and choose a frame from the video or select/upload an image that better reflects what the content is about. Otherwise, the first frame of the video will be used by default.
+    - If the attachment is a clip and the content links to the full version, prioritize website URLs over other channels like YouTube. Only use those when the full video isn’t available on the website.
 - Select the corresponding campaign if applicable.
 
 ##### New Hire
