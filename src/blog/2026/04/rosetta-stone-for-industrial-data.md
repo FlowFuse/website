@@ -11,7 +11,7 @@ tags:
 cta:
   type: demo
   title: Your factory data is already there. Let's make it readable.
-  description: FlowFuse allows to bridge legacy equipment and modern systems through a Unified Namespace — so every machine, every platform, and every team speaks the same language.
+  description: FlowFuse allows you to bridge legacy equipment and modern systems through a Unified Namespace — so every machine, every platform, and every team speaks the same language.
 ---
 
 In July 1799, a French soldier digging fortifications near the Egyptian town of Rosetta struck something hard beneath the soil. What he pulled out was a slab of dark granodiorite, about the size of a small door, covered in dense carved text.
