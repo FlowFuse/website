@@ -80,7 +80,7 @@ What actually works is three things aligned together.
 
 **An architecture that removes the N² problem entirely.** The [Unified Namespace](/solutions/uns/) is what changes the geometry. Instead of bilateral connections between systems, every device and every application publishes to and subscribes from a single broker. The broker is the fixed reference point, the Rosetta Stone. Every system maps to it. Every system becomes readable to every other system, not because they were directly connected, but because they share the same anchor.
 
-!["Industrial data flow from PLC to analytics via MQTT broker"](./images/flowfuse-uns-diagram.png)
+!["Industrial data flow from PLC to analytics via MQTT broker"](./images/flowfuse-uns.png)
 _Industrial data flow from PLC to analytics via MQTT broker_
 
 Add a new machine and it publishes to the namespace. Every downstream system already subscribed to that topic hierarchy gets the data automatically. No new integration project. No new translation layer. No new debt.
