@@ -71,7 +71,8 @@ Each content type has channels which are appropriate, this table sets out which 
 
 - We'll plan **two weeks ahead**, to give us time to prepare content and the associated materials.
 - We'll keep the planning on our [Social Content Calendar project in Asana](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519) and handle scheduling through the [HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar).
-    - Make sure to mark the Asana task as done once the post is scheduled. Otherwise, you’ll keep getting reminders, or it will show up as a missed deadline
+    - Each assignee will get reminders to post in the `#social-post-reminders` Slack channel starting two days before the scheduled date and continuing until one day after if it hasn’t been scheduled.
+    - Make sure to mark the Asana task as done once the post is scheduled. Otherwise, you’ll keep getting reminders, or it will show up as a missed deadline.
 - **Posting hours:** Aligned with USA Eastern Time before work hours and during lunch, aiming to coincide with Germany's lunch and after work hours.
     - USA before work (6:00 am EDT - 12 pm CEST).
     - USA lunch hours (11:30 am EDT -  5:30 pm CEST).
