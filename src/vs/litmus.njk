@@ -107,7 +107,7 @@ cta:
         <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left mb-20">
             {% for card in blueCards %}
             <div class="p-6 bg-gradient-to-r from-white to-indigo-50 border border-indigo-100 rounded-lg">
-                <h5 class="text-indigo-600">{{ card.title }}</h5>
+                <h3 class="text-indigo-600 text-xl font-semibold">{{ card.title }}</h3>
                 <p>{{ card.content | safe }}</p>
             </div>
             {% endfor %}
@@ -130,9 +130,9 @@ cta:
                             </div>
                         </div>
                         <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                            <h5 class="w-full md:m-0">
-                                <div class="text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</div>
-                            </h5>
+                            <h3 class="w-full md:m-0">
+                                <div class="text-xl font-semibold text-gray-600 text-center sm:text-left">{{ section.title }}</div>
+                            </h3>
                         </div>
                     </div>
                     <div>

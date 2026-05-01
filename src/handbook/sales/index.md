@@ -24,10 +24,10 @@ customer expansion, and customer success. This includes:
 
 | Role | Contributors |
 |------|--------------|
-| VP of Sales | [Michael Davis](/team#michael-davis) [@MichaelBDavis](https://github.com/MichaelBDavis) |
-| AE | [Dan Parry](/team#dan-parry) [@dgparry32](https://github.com/danielgparry-star) | 
-| AE |[Kasheef Mohammed](/team#kasheef-mohammed) [@Kasheef](https://github.com/Kasheef13) |
-| CSM | [Esmé Wieringa](/team#esme-wieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
+| VP of Sales | [Michael Davis](/about#michael-davis) [@MichaelBDavis](https://github.com/MichaelBDavis) |
+| AE | [Dan Parry](/about#dan-parry) [@dgparry32](https://github.com/danielgparry-star) | 
+| AE |[Kasheef Mohammed](/about#kasheef-mohammed) [@Kasheef](https://github.com/Kasheef13) |
+| CSM | [Esmé Wieringa](/about#esme-wieringa) [@Esmewieringa](https://github.com/Esmewieringa) |
 
 ## Contact us
 
@@ -36,6 +36,7 @@ Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/
 ## How we work
 
  - [Sales Team Operating Principles](./operating-principles.md)
+ - [Forecast Review](./forecast-review.md)
  - [Demo](./meetings/demo.md)
  - [Sales Deck](https://docs.google.com/presentation/d/1aK87jBFXP9ElvJz_b2U_sBmQqpqFD5ddCyjeuVVnnVs/)
  - [Engagements & Pricing](./engagements.md)
@@ -46,3 +47,7 @@ Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/
  - [Ideal Customer Profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl)
  - [Sales Regions](./regions.md)
  - [Customer Success](./customer-success.md)
+
+### Sales Processes
+
+ - [Edge Connect Process](./edge-connect-process.md)

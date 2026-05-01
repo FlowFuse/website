@@ -27,7 +27,7 @@ for a monthly subscription with a vendor. Contact the Head of Operations if you 
 vendor card.
 
 Expenses on Brex require a memo and receipts. Memos explain the purpose of the
-expense. Receipts can be attached via the web UI, email, or Slack. Please
+expense. Receipts can be attached via the web UI, email (`receipts@brex.com`), or Slack. Please
 [read their docs](https://www.brex.com/support/how-do-i-attach-receipts-to-brex-transactions/).
 
 
@@ -108,6 +108,10 @@ Laptops are covered separately and are provided as needed when a new hire joins
 the team. If you choose to order a laptop by yourself, we generally recommend
 the following devices:
 
+#### Laptop Capitalization and Refresh Schedule
+
+Laptops are capitalized and depreciated in our accounting system over 3 years. Once the 3 years are up, the employee can replace their equipment with a newer model. Request a direct refresh of your equipment from your manager for approval before buying a new one.
+
 #### Developers
 
 We recognize that developers will have slightly more demanding requirements for
@@ -116,7 +120,7 @@ their laptops. As such, the following devices are recommended:
 | Operating System | Recommended Device                                                                                                                                                     |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | MacOS            | [MacBook Pro 16" - 32 GB RAM](https://www.apple.com/shop/buy-mac/macbook-pro) (~$2,499 ex VAT) |
-| Windows/Linux    | [Dell XPS 15 - 16 GB RAM](https://www.dell.com/en-uk/shop/laptops-2-in-1-pcs/xps-15-laptop/spd/xps-15-9530-laptop/cn95303cc) (~$2,300)                                 |
+| Windows/Linux    | No recommendation at this time |
 
 If you require an alternative device, please discuss with your manager.
 
@@ -127,10 +131,15 @@ recommended:
 
 | Operating System | Recommended Device                                                                                                                                                    |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-sky-blue-m4-chip-with-10-core-cpu-10-core-gpu-16gb-memory-512gb) (~$1299 ex VAT) |
+| MacOS            | [MacBook Air 15"](https://www.apple.com/shop/buy-mac/macbook-air/15-inch-midnight-m5-chip-10-core-cpu-10-core-gpu-24gb-memory-512gb-storage) (~$1499 ex VAT) |
 
-Unless circumstances require otherwise, laptops will only be considered for a
-refresh after 4 years. Please discuss with your manager if you need to refresh
+Unless circumstances require otherwise, laptops will be considered for a
+refresh after 3 years. In some cases, depending on the specific requirements of the 
+role, a different device may be more appropriate. For example, roles that require 
+higher performance or processing power may opt for a [MacBook Pro](https://www.apple.com/shop/buy-mac/macbook-pro) instead of the standard 
+recommendation. Any such variation should be discussed with and approved by the 
+employee’s manager.
+Please discuss with your manager if you need to refresh
 your laptop.
 
 ### Audio and Video

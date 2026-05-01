@@ -23,7 +23,7 @@ please:
 
 * Ensure there's no overlapping meetings
    - Or when there's overlap in events, it's clear which one the CEO participates in and which meeting won't be attended.
-* Block times, by creating events, to travel to meetings on-site
+* Block times, by creating events, to travel to meetings on-site (see [Travel Booking](/handbook/operations/ceo-ops/travel-booking/) for CEO preferences)
 * Check the [event anatomy](#calendar-event-anatomy) for meetings
 * Confirm hiring blocks, recurring syncs, and investor meetings are correctly placed.
 * Ensure all Out-of-Office (OOO) blocks remain intact.
@@ -104,11 +104,13 @@ This helps the CEO or next interviewer quickly understand the context and prepar
 
 ## 1:1 Request Link
 
-Internal meetings will be requested by the CEO through Slack. Opening the calendar
-for both participants and schedule the meeting without checking on both sides.
+Internal meetings will be requested by the CEO through Slack. Open the calendar 
+for both participants, find a time when both are available, confirm availability 
+with each participant, and then proceed to book the meeting.
 
 For external 1:1 meetings, a meeting booking link is available. These links don't
 change, beware who these links are provided to.
+- If a meeting schedule is received through email and not reflected in the calendar, notify the CEO of the incoming invite and confirm whether they will attend before adding to the calendar.
 
 ## Rescheduling Protocol
 

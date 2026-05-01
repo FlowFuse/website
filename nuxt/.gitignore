@@ -1,0 +1,6 @@
+# Nuxt build outputs
+.nuxt/
+.output/
+
+# Dependencies (hoisted to workspace root)
+node_modules/

@@ -221,6 +221,7 @@ eleventyComputed:
     {%- endif -%}
 </head>
 <body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <div class="flex-grow base">
         <div class="w-full">
             <!-- Events Banner -->
@@ -313,7 +314,7 @@ eleventyComputed:
                 </div>    
             </header>
             <!-- Main Content -->
-            <main class="flex flex-col mx-auto items-center justify-center gradient-bg">
+            <main id="main-content" class="flex flex-col mx-auto items-center justify-center gradient-bg">
                 {{ content | safe }}
             </main>
         </div>
@@ -335,9 +336,8 @@ eleventyComputed:
                     </div>
                 </div>
                 <div class="w-full md:row-span-2">
-                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-6 gap-y-4 sm:grid-rows-4 md:grid-rows-6 sm:justify-between md:m-auto text-base sm:gap-x-6">
+                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/team/" class="py-3">Team</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="{{ site.jobBoard }}" class="py-3">Jobs</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
                         <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>

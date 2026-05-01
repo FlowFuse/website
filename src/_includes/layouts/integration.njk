@@ -265,21 +265,22 @@ layout: layouts/base.njk
 </div>
 
 {% if hasExamples %}
+{% for example in integration.examples %}
+{% if example.flow %}
+<script type="application/json" id="flow-data-{{ loop.index0 }}">{{ example.flow | safe }}</script>
+{% endif %}
+{% endfor %}
+
 <!-- Flow Renderer Script -->
 <script type="module">
     import FlowRenderer from '/js/flowrenderer.min.js';
 
     // Store flow data
-    const flowData = [
-        {% for example in integration.examples %}
-        {% if example.flow %}
-        {
-            index: {{ loop.index0 }},
-            flow: {{ example.flow | safe }}
-        }{% if not loop.last %},{% endif %}
-        {% endif %}
-        {% endfor %}
-    ];
+    const flowData = [];
+    document.querySelectorAll('script[id^="flow-data-"]').forEach(el => {
+        const index = parseInt(el.id.replace('flow-data-', ''), 10);
+        flowData.push({ index, flow: JSON.parse(el.textContent) });
+    });
 
     // Add event listeners to tab buttons
     document.querySelectorAll('.tab-button').forEach(button => {
