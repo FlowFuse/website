@@ -11,7 +11,7 @@ We are hiring our first SDR at FlowFuse — a blank-slate, build-it-yourself opp
 
 There is no existing SDR playbook. No inherited cadences. No handed-down process to maintain. What exists is a growing pipeline of inbound interest, a lean and high-performing sales team, and the expectation that you will figure out — fast — what works and do more of it.
 
-Your mandate is broad by design: work leads. Nurture them. Find the approaches that move conversations forward and double down on those. Drop what doesn't. Whether that is relentless inbound follow-up, creative outbound sequences, personalised video messages, or something we haven't thought of yet — the right answer is whatever produces results.
+Your mandate is broad by design: work leads. Nurture them. Find the approaches that move conversations forward and double down on those. Drop what doesn't. Move fast. Learn faster. Whether that is relentless inbound follow-up, creative outbound sequences, personalised video messages, or something we haven't thought of yet — the right answer is whatever produces results.
 
 [Results](/handbook/company/values/#-results) and [Iterative Improvement](/handbook/company/values/#-iterative-improvement) are two of FlowFuse's core values. This role is where both are most visible. We expect you to ship your first outreach on day two, measure it by day five, and iterate from there. You will own the SDR and BDR playbook — not inherit it. That means writing it, testing it, revising it, and making it repeatable.
 
