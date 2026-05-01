@@ -29,6 +29,10 @@ Your mandate is broad by design: work leads. Nurture them. Find the approaches t
 
 We are hiring for inbound MQL follow-up first because that is the clearest constraint right now — but this role was never meant to stay there. As the inbound motion becomes repeatable, you will expand into outbound prospecting: identifying target accounts, testing cold sequences, and generating net-new pipeline. The SDR function you build will grow into a full SDR/BDR capability. This is a ground-floor opportunity to define what that looks like at FlowFuse.
 
+## Who We Are
+
+We work hard and we ship things. Results matter more than hours, and learning fast beats waiting for perfect. Nobody is going to hand you a task list here — you're expected to find the work, jump in, and figure it out. If something doesn't work, say so, change course, and move on. No drama, no ego. Just a small team building something real in a space that most software companies ignore, having a lot of fun doing it. If you've ever thrived in an environment where everyone just figures it out, you'll fit right in.
+
 ## Skills
 
 * **Builder mentality**: Excited to work without a blueprint. You see an undefined process as an opportunity, not a gap.
