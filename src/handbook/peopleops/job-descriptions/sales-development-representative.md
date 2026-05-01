@@ -66,7 +66,7 @@ We are hiring for inbound MQL follow-up first because that is the clearest const
 * **Initial Screening**: Resume and cover letter review for communication quality, early-stage GTM experience, and evidence of a builder or tester mindset
 * **First Interview**: Phone or video conversation on execution style, iteration approach, and mindset in ambiguous environments
 * **Second Interview**: In-depth discussion with the hiring manager and relevant team members on process thinking, collaboration with marketing and AEs, and what "building a playbook" means to you
-* **STAR Interview (45 mins)**: Behavioral interview focused on values alignment — ownership, learning, and consistency — conducted by the CEO
+* **STAR Interview (45 mins)**: Behavioral interview focused on values alignment — ownership, iteration, learning from failure, and results over perfection — conducted by the CEO
 * **Assessment/Presentation**: Short work sample or live exercise (see below)
 * **Final Interview**: Conversation with key stakeholders
 * **Offer**
