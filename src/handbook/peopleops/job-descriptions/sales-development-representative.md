@@ -32,13 +32,13 @@ We are hiring for inbound MQL follow-up first because that is the clearest const
 ## Skills
 
 * **Builder mentality**: Excited to work without a blueprint. You see an undefined process as an opportunity, not a gap.
+* **AI fluency:** Comfortable using AI tools to accelerate your work — or actively developing that skill. This isn't optional, it's how we operate.
 * **Bias for action**: You send the first email before the playbook is finished. You learn by doing, not by planning.
 * **Inbound conversion instincts**: Speed, persistence, and follow-up quality over raw volume.
 * **Iterative discipline**: You track what you test, draw conclusions quickly, and change course without drama.
 * **Communication**: Strong written and verbal skills. You can engage both a plant engineer and a CTO without switching decks.
 * **Technical curiosity**: Comfortable learning and talking about Node-RED, industrial automation, IoT, and edge deployments.
 * **Process thinking**: You spot where leads stall, where CRM data lies, and how to fix both.
-* **Familiarity with AI tools** to accelerate prospecting, personalisation, and cadence workflows is a plus.
 
 ## 90-Day Plan
 
