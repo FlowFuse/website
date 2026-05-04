@@ -8,19 +8,12 @@ The weekly Forecast Review is an internal sales meeting designed to create clari
 
 ## Preparation
 
-Before the meeting, every AE and CSM must:
-
-1. Update the **agenda doc** with the following numbers for the current quarter:
-   - **Commit** — The amount they are certain they will land. Closed amount includes deals that have already closed.
-   - **Most Likely** — Where they expect to land based on current deal progression.
-   - **Upside** — Where they would land if they ran the tables and closed every active opportunity.
-   - **New opportunities created** — The number of new opportunities opened since the last review.
-   - **New pipeline created** — The total dollar value of new pipeline added since the last review.
-
-2. Update their **HubSpot forecast** for the current month and the two following months before the meeting:
-
-- [HubSpot Forecasting](https://app-eu1.hubspot.com/forecasting/26586079/teams/147609275?forecast_type=0&pipeline=default&time_period=THIS_MONTH&deal_grouping_type=DEAL_STAGE)
+Before the meeting, every AE and CSM must update:
+- Their [HubSpot Forecasting](https://app-eu1.hubspot.com/forecasting/26586079/teams/147609275?forecast_type=0&pipeline=default&time_period=THIS_MONTH&deal_grouping_type=DEAL_STAGE)
+   - Current month
+   - Subsequent 2 months
 - Ensure an up to date "Next steps" property for all deals
+
 ## Meeting agenda
 
 The meeting runs through the pipeline in three phases.
