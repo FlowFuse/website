@@ -19,8 +19,8 @@ Before the meeting, every AE and CSM must:
 
 2. Update their **HubSpot forecast** for the current month and the two following months before the meeting:
 
-[HubSpot Forecasting](https://app-eu1.hubspot.com/forecasting/26586079/teams/147609275?forecast_type=0&pipeline=default&time_period=THIS_MONTH&deal_grouping_type=DEAL_STAGE)
-
+- [HubSpot Forecasting](https://app-eu1.hubspot.com/forecasting/26586079/teams/147609275?forecast_type=0&pipeline=default&time_period=THIS_MONTH&deal_grouping_type=DEAL_STAGE)
+- Ensure an up to date "Next steps" property for all deals
 ## Meeting agenda
 
 The meeting runs through the pipeline in three phases.
