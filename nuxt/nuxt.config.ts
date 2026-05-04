@@ -5,7 +5,11 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
 
     nitro: {
-        preset: 'static'
+        preset: 'static',
+        prerender: {
+            routes: [],
+            crawlLinks: false // remove when Nuxt pages exist; enables auto-discovery of routes
+        }
     },
 
     routeRules: isDev ? {
