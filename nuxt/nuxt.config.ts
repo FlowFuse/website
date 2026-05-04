@@ -4,6 +4,10 @@ const isDev = process.env.NODE_ENV !== 'production'
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
+    nitro: {
+        preset: 'static'
+    },
+
     routeRules: isDev ? {
         // In development, proxy all routes to the legacy 11ty dev server
         '/**': { proxy: 'http://localhost:8080/**' }
