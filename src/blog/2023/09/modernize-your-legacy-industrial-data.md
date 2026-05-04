@@ -3,6 +3,7 @@ title: Modernize your legacy industrial data
 subtitle: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
 description: Learn how to bridge legacy industrial protocols like Modbus to the IIoT era using Node-RED and buffer parsing. Explore data types, conversion challenges, and examples
 date: 2023-09-14
+lastUpdated: 2025-07-23
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
 tags:
@@ -84,9 +85,9 @@ Converting an array of 16-bit unsigned integers to String, Float and a scaled in
 
 While Node-RED is a fantastic tool for data collection, transformation, and analysis, integrating it into a production environment can sometimes feel like navigating a maze. Whether you’re deploying Node-RED on a server, ensuring secure remote access for your team, or managing a sprawling network of thousands of instances, it’s easy to feel overwhelmed.
 
-That’s where FlowFuse steps in to make your life easier. FlowFuse is designed to tackle these challenges head-on. It enhances Node-RED with features that simplify collaboration, strengthen security, and provide scalable deployment options. Imagine having a robust system that not only keeps your Node-RED applications running smoothly but also scales effortlessly with your needs. With FlowFuse, you gain access to a comprehensive suite of production-ready [features](/product/features/) designed to streamline your Node-RED workflows and boost overall performance.
+That’s where FlowFuse steps in to make your life easier. FlowFuse is designed to tackle these challenges head-on. It enhances Node-RED with features that simplify collaboration, strengthen security, and provide scalable deployment options. Imagine having a robust system that not only keeps your Node-RED applications running smoothly but also scales effortlessly with your needs. With FlowFuse, you gain access to a comprehensive suite of production-ready [features](/platform/features/) designed to streamline your Node-RED workflows and boost overall performance.
 
-**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and experience FlowFuse's features**
+**[Sign up]({% include "sign-up-url.njk" %}) now for a free trial and experience FlowFuse's features**
 
 ### Learn More
 

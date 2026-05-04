@@ -16,19 +16,19 @@
     </div>
     <div class="w-full md:bg-white md:pt-8">
     <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg md:gap-14 items-stretch">
-        <div class="ff-prose whitepaper w-full mt-3">
+        <div class="ff-prose whitepaper w-full mt-3 md:w-2/3">
             <label class="text-red-600 font-medium mb-2">Whitepaper</label>
             <h3 class="text-gray-600 leading-snug">{% block whitepaperTitle %}Whitepaper Title{% endblock %}</span></h3>
-            <h4 class="text-gray-400">{% block whitepaperSubtitle %}{% endblock %}</h4> 
+            <h4 class="text-gray-600">{% block whitepaperSubtitle %}{% endblock %}</h4>
             {% block description %}Whitepaper description{% endblock %}
                 <!-- Social proof logos -->
-            <div class="social-proof-logos-smaller border-t border-gray-200 mt-16">
+            <div class="border-t border-gray-200 mt-16">
                 {% include "social-proof.njk" %}
             </div>
         </div>
         <div class="max-w-[350px] flex flex-col mx-auto">
             <div class="sticky top-20 bg-indigo-50 border-2 border-indigo-200 rounded-md drop-shadow-xl px-6 pb-2 mt-4">
-                <p class="text-gray-500"><span class="font-semibold">{% block formTitle %}Download our whitepaper{% endblock %}</span></br>{% block formSubtitle %}to learn how to unleash your engineers' potential and accelerate industrial innovation.{% endblock %}</p>
+                <p class="text-gray-600"><span class="font-semibold">{% block formTitle %}Download our whitepaper{% endblock %}</span></br>{% block formSubtitle %}to learn how to unleash your engineers' potential and accelerate industrial innovation.{% endblock %}</p>
                 {% include hubspot.script %}
             </div>
         </div>

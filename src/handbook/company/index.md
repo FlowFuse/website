@@ -14,6 +14,7 @@ and contains department agnostic details.
 | [Communication](/handbook/company/communication/) | How we communicate and keep everyone informed |
 | [Decisions](/handbook/company/decisions/) | Decision making in an async ready fashion is harder than in person, learn how FlowFuse does it |
 | [Board meetings](/handbook/company/board/) | Board meetings, and how they work for us |
+| [Organizational Structure](./organizational-structure.md) | Company org chart and reporting relationships |
 | [Principles](./principles.md) | |
 | [Remote work](./remote.md) | |
 | [Security](/handbook/company/security/) | |
@@ -26,23 +27,38 @@ As a registering company we have to provide our address to customers and supplie
 
 ```
 FlowFuse Inc
-548 Market Street
-PO Box 7775 #29439
-San Francisco, CA 94120-7775 USA.
+548 Market St
+PMB 24889
+San Francisco, California 94104-5401 US
 ```
+
+### Official Name Change & Incorporation Document
+[Here's](https://drive.google.com/file/d/1cnHv1K8VxKeq8YuRaUpczO9c8ilm6kHZ/view?usp=drive_link) the official document detailing the transition from Flowforge to Flowfuse and the company's incorporation as a Delaware Corporation. 
 
 ### Banking details
 
-Customer invoices are generated in Stripe, and the preferred way for FlowFuse is to use SWIFT or bank wires as
-the invoice suggests.
-
 For larger customers with internal processes requiring our bank details, they can wire the money to the company's
-checking account too. Wiring instructions to be shared by the rep are found in [our internal drive](https://drive.google.com/file/d/1XfO_nsh0OcB7S4peKEjiPV5qNIj9avJ0/view?usp=sharing).
+checking account. Wiring instructions to be shared by the rep are found in
+[our internal drive](https://drive.google.com/file/d/1B68cgaut2zdpEx6EfuBTJYMU36f8pYqH/view?usp=drive_link).
 
 ### Dun & Bradstreet
 
-FlowFuse's Dun and Bradstreet ID is: 11-899-4742
+FlowFuse's Dun (DUNS number) and Bradstreet ID is: `11-899-4742`
 
 ### NAICS code
 
-54151 - Computer Systems Design and Related Services
+541512 - Computer Systems Design and Related Services
+
+### SOC2 Type 2 report
+
+Our 2025, and at this time latest, SOC2 Type 2 report can be found [on our internal Google Drive](https://drive.google.com/file/d/1uBzNvSMaJXZLA24bjJmoDO8mOoUdZG4t/view?usp=sharing).
+
+### Tax ID
+
+FlowFuse's tax ID (Employer Identification Number or EIN) is in the Finance vault in 1Password. Ask the CEO for our Federal EIN.
+Ask the CEO for Federal EIN 
+
+### Companies Ultimate Beneficiaries
+
+FlowFuse's Ultimate Beneficiaries is in the Company Info vault in 1Password. Ask the CEO for our Ultimate Beneficiaries list.
+

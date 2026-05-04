@@ -102,10 +102,16 @@
             "file": "06-httpproxy"
         },
         {
-            "xpath": "mqtt",
-            "name": "MQTT",
+            "xpath": "mqtt-in",
+            "name": "MQTT In",
             "file": "10-mqtt"
         },
+        {
+            "xpath": "mqtt-out",
+            "name": "MQTT Out",
+            "file": "10-mqtt"
+        }
+        ,
         {
             "xpath": "http in",
             "name": "HTTP in",

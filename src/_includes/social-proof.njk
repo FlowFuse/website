@@ -1,6 +1,17 @@
-<ul class="opacity-70">
-    <li class="w-[113px] sm:w-[131px] mix-blend-luminosity saturate-0 opacity-80">{% image "./images/home-logos/walter-logo.svg", "Walter Tools logo", [131] %}</li>
-    <li class="w-[113px] sm:w-[131px]">{% image "./images/home-logos/bosch-logo.png", "Bosch logo", [131] %}</li>
-    <li class="w-[115px] sm:w-[125px] mix-blend-luminosity saturate-0 opacity-80">{% image "./images/home-logos/wenco-logo.svg", "Airship logo", [80] %}</li>
-    <li class="w-[81px] sm:w-[90px]">{% image "./images/home-logos/enexis-logo.png", "Enexis logo", [90] %}</li>
-</ul>
+<div class="social-proof-carousel">
+    <div class="mix-blend-luminosity opacity-70 saturate-0">
+    {%- for logo in collections.homeLogos | shuffle -%}
+        {% set imgSrc = logo %}
+        {% set imgAlt = logo | replace("images/home-logos/", "") | replace("-", " ") | replace(".png", "") | replace(".svg", "") | capitalize %}
+        {% image imgSrc, imgAlt %}
+    {% endfor %}
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".social-proof-carousel");
+    const items = carousel.innerHTML; 
+    carousel.innerHTML += items;
+});
+</script>

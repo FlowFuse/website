@@ -50,9 +50,6 @@
     content: '' !important;
 }
 
-.ff-prose.whitepaper .prose {
-    max-width: none;
-}
 .ff-prose .prose h1 {
     font-size: 2.25em;
     line-height: 1.3;

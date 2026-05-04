@@ -3,6 +3,7 @@ title: Modernize your legacy industrial data. Part 2.
 subtitle: Explore strategies, challenges, and smart processing techniques for enhancing legacy industrial data utilization in the IIoT era with Node-RED.
 description: A deeper dive into making the most of legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
 date: 2023-09-17
+lastUpdated: 2025-07-23
 authors: ["stephen-mclaughlin"]
 image: "/blog/2023/09/images/industrial-legacy-data-blog-image.png"
 tags:
@@ -131,7 +132,7 @@ Node-RED is a powerful tool widely used in IoT and IIoT industries, including ma
 
 FlowFuse simplifies these tasks by providing a unified platform for managing all Node-RED instances. It enhances collaboration, ensures security, and supports scalability, making deployment and management more efficient. With features like [snapshots](/docs/user/snapshots/), team collaboration tools, one-click deployment, and [multi-factor authentication](/docs/user/user-settings/#security), FlowFuse streamlines the process and enhances the operational capabilities of Node-RED in production settings.
 
-**[Sign up](https://app.flowfuse.com/account/create/) now for a free trial and experience FlowFuse's features**
+**[Sign up]({% include "sign-up-url.njk" %}) now for a free trial and experience FlowFuse's features**
 
 ## Wrap up
 

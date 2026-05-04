@@ -1,176 +1,211 @@
 ---
-title: How to Use MQTT in Node-RED.
-subtitle: Step-by-step guide on integrating MQTT with Node-RED.
-description: Learn how to effectively integrate MQTT with Node-RED in this comprehensive guide, covering setup, configuration, and practical applications for IoT projects.
+title: "Working with MQTT in Node-RED: Complete Guide (2026)"
+subtitle: "Connect, subscribe, and publish MQTT messages in Node-RED"
+description: "Complete MQTT Node-RED tutorial: configure brokers, implement pub/sub messaging, use mqtt-in and mqtt-out nodes, and create dynamic subscriptions for IoT"
 date: 2024-06-05
+lastUpdated: 2025-12-18
 authors: ["sumit-shinde"]
-image: /blog/2024/06/images/how-to-use-mqtt-in-node-red.png
+image: /blog/2024/06/images/working-with-mqtt.jpg
+keywords: node red mqtt, mqtt node red, mqtt in node red, node red mqtt in, node red mqtt out, node red mqtt broker, mqtt broker node red, node-red-contrib-mqtt-broker, node red mqtt dynamic subscription, node red mqtt example,, mqtt dynamic subscription, mqtt in/out nodes, mqtt broker setup
 tags:
    - posts
    - node-red
    - mqtt
-   - manufacturing
+meta:
+  faq:
+  - question: "Why does my MQTT node show disconnected?"
+    answer: "Check the broker address and port (1883 for unencrypted, 8883 for TLS). Verify your username and password are correct. If using environment variables, confirm they're set and restart Node-RED. Make sure the broker is running and your network allows the connection. For port 8883, enable TLS in the node configuration."
+  - question: "Why does my MQTT node keep connecting and disconnecting?"
+    answer: "This usually happens when multiple clients use the same Client ID. Each MQTT connection needs a unique Client ID—when a second client connects with the same ID, the broker kicks off the first one. In your broker configuration, either leave the Client ID empty (Node-RED generates a unique one automatically) or set different IDs for each connection. If your broker requires specific Client IDs, make sure each Node-RED instance or MQTT node uses a different one."
+  - question: "Why do I keep getting old messages when I deploy?"
+    answer: "Those are retained messages. When you subscribe to a topic with a retained message, you immediately receive the last published value. To fix this, don't set retain=true when publishing unless you want new subscribers to get the last value. Clear retained messages by publishing an empty payload with retain=true to that topic, or filter them in your flow by checking the msg.retain property."
+  - question: "Can I use wildcards in mqtt-in nodes?"
+    answer: "Yes. Use `+` for single-level wildcards (`sensors/+/temperature`) and `#` for multi-level (`factory/#`). The received message includes the full topic in msg.topic. You cannot use wildcards when publishing—only for subscribing."
+  - question: "What is the difference between QoS 0, 1, and 2?"
+    answer: "QoS 0 is fast but can lose messages. QoS 1 guarantees delivery but might send duplicates. QoS 2 ensures exactly-once delivery but is slowest. Use QoS 0 for high-frequency sensor data, QoS 1 for most applications, and QoS 2 only for critical commands where duplicates would cause problems."
+  - question: "How do I handle JSON data in MQTT messages?"
+    answer: "Set the mqtt-in node's Output to auto-detect—it automatically parses JSON into objects. The mqtt-out node automatically stringifies objects in msg.payload. No extra configuration needed for most cases."
+  - question: "How do I optimize MQTT messages in Node-RED?"
+    answer: "For high-frequency or bandwidth-constrained systems, consider using Protocol Buffers instead of JSON. Protocol Buffers reduce message size by 60-80% and improve parsing performance. Define your data schema in a `.proto` file, then use protocol buffer nodes to encode before publishing and decode after receiving. This is especially valuable for industrial IoT with thousands of sensors. See our guide on optimizing industrial data with Protocol Buffers: https://flowfuse.com/blog/2025/11/optimize-industrial-data-protocol-buffers/"
 ---
 
-In the realm of IoT, the number of IoT devices is set to surpass 75 billion by 2025, according to a [statista report](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/). Therefore, efficient communication protocols and platforms that can easily connect to these devices and allow low-code programming are crucial. MQTT and Node-RED stand out for this purpose in the IoT domain. These technologies form the backbone of the popular [MING Stack](/blog/2023/02/ming-blog/) used in IoT, demonstrating their effectiveness in managing and processing data. This guide will walk you through integrating MQTT with Node-RED, practical applications, and best practices.
+MQTT handles the messaging layer for most IoT deployments. Node-RED provides built-in nodes that connect to MQTT brokers, subscribe to topics, and publish messages—all through a visual interface.
 
 <!--more-->
 
-## Understanding MQTT and Node-RED
+This guide walks through the configuration steps and common patterns you'll need for working implementations.
 
-MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol designed for establishing communication among multiple devices. It operates on TCP and follows the publish-subscribe model, which makes it ideal for IoT applications due to its ability to transmit data efficiently between resource-constrained devices with low bandwidth and power requirements. Additionally, MQTT perfectly aligns With UNS architecture in manufacturing, for more details refer to the [Selecting a broker for your Unified Namespace](/blog/2024/01/unified-namespace-what-broker/)
+## What You'll Need
 
-On the other hand, Node-RED is an open-source visual programming tool used for wiring together hardware devices, APIs, and online services. It provides a browser-based flow editor that simplifies the creation of complex workflows by visually connecting nodes. With its extensive palette of pre-built nodes and flexibility, Node-RED is widely used in IoT, automation, and data integration projects, For more information refer to our [Node-RED page](/node-red/).
+Before you start, make sure you have:
 
-## Setting up your MQTT and Node-RED Environment
+- **Node-RED Instance**: You need Node-RED running somewhere. Easiest option is FlowFuse, grab a [free trial](https://app.flowfuse.com/) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
+- **MQTT Broker**: You'll need an MQTT broker to handle message routing. If you're on FlowFuse Pro tier, you get a built-in MQTT broker service—no separate setup needed.
 
-### Setting up your MQTT Environment
+## Getting Connected
 
-In this guide, we will utilize the [HiveMQ Cloud MQTT broker](https://www.hivemq.com/mqtt-cloud-broker/). We will use their free trial as we are learning, but if you want to use it for your project, make sure to use their correct cluster according to your needs. If you prefer to use another cloud platform such as Mosquito, or EMqX, feel free to do so.
+Node-RED ships with MQTT nodes already installed. Open your Node-RED editor and look in the palette—you'll find **mqtt-in** and **mqtt-out** under the network section.
 
-FlowFuse has also launched an MQTT broker service that is integrated directly into platform, making it easy to use MQTT with Node-RED. For more information, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
+> If you're using FlowFuse's managed MQTT broker, this is straightforward. Use the [ff-mqtt-in](/node-red/flowfuse/mqtt/mqtt-in/) and [ff-mqtt-out](/node-red/flowfuse/mqtt/mqtt-out/) nodes instead of the standard MQTT nodes. Simply drag one onto the canvas, and the connection to FlowFuse's broker will be configured automatically.
 
-1. Create your account with HiveMQ and log in.
-2. After logging in, you will be asked to select a cluster. Choose the **Starter** cluster, then select the **AWS Cloud** provider and set the tier to **Production S**. Make sure to select the correct region and proceed to create the cluster.
-3. Now, click on **Manage Cluster**, then click on the **Access Management** option located at the top. Create credentials in the **Authentication** tab with the correct permissions.
+For any other broker, drag an **mqtt-in** or **mqtt-out** node onto your workspace. Double-click it to open the configuration panel.
 
-### Setting up your Node-RED Environment
+Click the pencil icon next to **Server**. You'll see two tabs: Connection and Security.
 
-For Node-RED, we will be using FlowFuse, which enhances Node-RED usage with managed instances, automated deployments, and real-time collaboration features, making it ideal for enterprise teams. It simplifies the configuration, monitoring, and operation of Node-RED applications. 
+**Connection Tab**
 
-1. Head to the [FlowFuse sign-up](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20Use%20MQTT%20in%20Node-RED) page to create your new account and the [FlowFuse login](https://app.flowfuse.com/) page to log in.
-2. After successful login, you will see the Application and instance which is added by default.
-3. Click on that instance and then click on the editor URL to open the Node-RED editor.
+![MQTT broker connection configuration screen showing server address, port, and protocol settings](./images/mqtt-broker-config.png "MQTT Connection Tab - Configure broker address, port, and TLS settings"){data-zoomable}
 
-## Configuring MQTT Node in Node-RED
+1. **Server**: Enter your broker address (`broker.hivemq.com` for testing, or your broker's hostname)
+2. **Port**: Use `8883` for encrypted connections, `1883` for unencrypted
+3. **Enable TLS**: Check this if you're using port 8883
+4. **Protocol**: Leave it at MQTT 3.1.1 unless you specifically need MQTT 5 features
 
-When you open the Node-RED editor, you'll see the MQTT nodes already installed as they are part of Node-RED core nodes. When you drag an **mqtt-in** or **mqtt-out** node onto the workspace, you need to configure the MQTT broker node. You can do this by Double-clicking mqtt node and clicking on the edit icon next to the Server field and entering the following details of your MQTT broker into the MQTT broker config node, For more details on mqtt nodes refer to the [MQTT core node docs](/node-red/core-nodes/mqtt/).
+**Security Tab**
 
-## Connection Tab
+![MQTT broker security configuration showing username and password fields](./images/mqtt-configuration-security-tab.png "MQTT Security Tab - Enter credentials using environment variables for security"){data-zoomable}
 
-!["Screenshot of mqtt broker config node's connection tab"](./images/how-to-use-mqtt-with-node-red-mqtt-broker-connection-tab.png "Screenshot of mqtt broker config node's connection tab"){data-zoomable}
+Enter your username and password. For anything beyond local testing, use environment variables:
 
-1. **Server:** Enter the server address of your HiveMQ cluster, ex - `<yourclustername>.a02.usw2.aws.hivemq.cloud`
+- Put `${MQTT_USER}` in the username field
+- Put `${MQTT_PASSWORD}` in the password field
 
-2. **Port:** Use the default MQTT port (typically 1883 for non-secure or 8883 for secure connections).
+Set these in your Node-RED settings or FlowFuse environment config
 
-3. **Connect Automatically:** Enable this option to ensure the MQTT node attempts to connect automatically when Node-RED starts or flow is deployed.
+> See [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for setup details.
 
-4. **Use TLS:** Enable this option if you are connecting to a secure MQTT broker.
-
-5. **Protocol:** Choose the MQTT protocol version. Typically, MQTT V3.1.1 is widely supported:
-
-6. **Client ID:** Provide a unique client ID for your connection. This can be left blank to let the broker generate.
-
-7. **Keep Alive:** Set the keep-alive interval in seconds. it is set by default for 60 seconds.
-
-8. **Use Clean Session:** Enable this to ensure the broker does not store session information between connections.
-
-### Security Tab
-
-!["Screenshot of mqtt broker config node's security tab"](./images/how-to-use-mqtt-with-node-red-mqtt-broker-security-tab.png "Screenshot of mqtt broker config node's security tab"){data-zoomable}
-
-1. **Username:** Enter the username you created in the HiveMQ Access Management tab. If you are using another broker, use the corresponding username.
-
-2. **Password:** Enter the password associated with the username.
-
-*Note: - Make sure you are using environment variables while dealing with sensitive configuration information to prevent exposing them directly in the flow, for more details refer to [Using Environment varriables in Node-RED](/blog/2023/01/environment-variables-in-node-red/)*
+Click **Add**, then **Done**. Deploy your flow. If the node shows "connected" under it, you're in.
 
 ## Publishing Data to a Topic on MQTT Broker
 
-1. Drag an **mqtt-out** node onto the canvas.
-2. Double-click on the **mqtt-out** node and select the added broker configuration to which you want to send data in the server field.
-3. In the topic field, enter the desired topic name.
-4. Set the **QoS** to **2** for accurate and guaranteed data delivery.
-5. Set **retain** to true if you want to retain the data.
-6. Connect the node's output, which is emitting the payload data you want to send to the MQTT broker, to the input of the **mqtt-out** node.
+The mqtt-out node sends data from Node-RED to your MQTT broker. Configure the topic, quality of service level, and retention settings to control how your messages are delivered.
 
-!["Screenshot of the mqtt-out node configuration"](./images/how-to-use-mqtt-mqtt-out-node.png "Screenshot of the mqtt-out node configuration"){data-zoomable}
+1. Drag an **mqtt-out** node onto the canvas.
+2. Double-click the **mqtt-out** node and select your broker from the **Server** dropdown.
+3. Enter your topic name in the **Topic** field. Use forward slashes for hierarchy like `factory/line1/temp`.
+4. Set **QoS** to **2** for guaranteed delivery. Use **1** if you can tolerate occasional duplicates, or **0** for high-frequency data where missing readings don't matter.
+5. Enable **Retain** if new subscribers should immediately receive the last published value.
+6. Connect your data source to the mqtt-out node's input. The node expects `msg.payload` to contain your data.
+
+![MQTT-out node configuration panel settings](./images/mqtt-out.png "MQTT-out Node Configuration"){data-zoomable}
 
 ## Subscribing to a Topic on MQTT Broker
 
-1. Drag an **MQTT-in** node onto the canvas.
-2. Double-click on the **MQTT-in** node and select the appropriate added broker configuration from which you want to receive data in the server field.
-3. Set **action** to **subscribe to a single topic** and  enter the topic name to which you want to subscribe for receiving data in the topic field.
-4. Set the **QoS** to **2**.
-5. Set the output to the desired format.
-6. Connect the output of the **mqtt-in** node to the input of the node to whom you want to pass the data for further processing or analysis.
+The mqtt-in node receives messages from topics you specify. You can subscribe to specific topics or use wildcards to monitor multiple topics at once.
 
-!["Screenshot of the mqtt-in node configuration"](./images/how-to-use-mqtt-mqtt-in-node.png "Screenshot of the mqtt-in node configuration"){data-zoomable}
+1. Drag an **mqtt-in** node onto the canvas.
+2. Double-click the **mqtt-in** node and select your broker from the **Server** dropdown.
+3. Set **Action** to **subscribe to a single topic** and enter the topic name in the **Topic** field. You can use:
+   - Specific topics: `factory/line1/temp`
+   - Single-level wildcard: `factory/+/temp` (matches any value where + appears)
+   - Multi-level wildcard: `factory/#` (matches everything under factory/)
+4. Set **QoS** to **2**.
+5. Set **Output** to **auto-detect** (it parses JSON automatically and passes through other formats as strings).
+6. Connect the mqtt-in node's output to wherever you need the data.
+
+![MQTT-in node configuration showing subscription settings with topic field and QoS options](./images/mqtt-in-config.png "MQTT-in Node Configuration"){data-zoomable}
+
+**For Dynamic Subscriptions:**
+
+If you need to change subscriptions at runtime based on user input or system conditions, set **Action** to **dynamic** instead. You'll control subscriptions by sending messages with `msg.topic` and `msg.action` to the node's input.
+
+![MQTT-in node configured for dynamic subscription mode with empty topic field](./images/mqtt-in-dynamic.png "MQTT-in Dynamic Mode"){data-zoomable}
+
+To subscribe dynamically, send a message like:
+
+```javascript
+msg.topic = "factory/line1/temperature";
+msg.action = "subscribe";
+```
+
+To unsubscribe:
+
+```javascript
+msg.topic = "factory/line1/temperature";
+msg.action = "unsubscribe";
+```
+
+This is useful when users select which equipment to monitor from a dashboard, when topics depend on database queries or API responses, or when you need to add and remove subscriptions without redeploying your flow.
 
 ## Deploying the Flow
 
-1. To deploy the flow, click on the **deploy** button located at the top-right corner.
+Deploy your flow to activate the MQTT connection and start sending or receiving messages.
 
-*Tip: To ensure that your MQTT node is connected to the broker, check the node status. It will display 'connected' if the connection is successful.*
+1. Click the **Deploy** button at the top-right corner.
 
-!["Screenshot of the mqtt node status showing node is connected successfully to the broker"](./images/how-to-use-mqtt-with-node-red-mqtt-showing-mqtt-node-status.png "Screenshot of the mqtt node status showing node is connected successfully to the broker"){data-zoomable}
+*Tip: Check the node status below each MQTT node. It will display 'connected' if the connection is successful.*
 
-## Creating a Simple Project
-
-Now that you're familiar with how to send and receive data using MQTT, let's dive into creating a simple project in this section. We'll transmit temperature data obtained from a temperature sensor from one instance of Node-RED to another. This project will provide a practical demonstration of how MQTT can be utilized for communication. If you don't know how to run Node-RED on your edge device and read sensor data, please refer to this documentation on [Setting up Node-RED on Raspberry Pi](/node-red/hardware/raspberry-pi-4/)
-
-### Publishing Temperature Data to a Topic on the MQTT Broker
-
-1. Drag an **mqtt-out** node onto the canvas, and configure it with the MQTT broker to which you want to send data.
-2. Enter "temp" in the topic field and set **QoS** to **2**.
-3. Connect the output of the node that is reading your temperature data to the input of the **mqtt-out** node.
-4. Deploy the flow by clicking on the **deploy** button located at the top-right corner.
-
-!["Screenshot of the device editor of a Node-RED instance running on the device (connected to a temperature sensor) using the FlowFuse device agent, where we are reading temperature data from the sensor and sending it to an MQTT broker."](./images/how-to-use-mqtt-with-node-red-mqtt-node-red-instance-1.png "Screenshot of the device editor of a Node-RED instance running on the device ( connected to a temperature sensor ) using the FlowFuse device agent, where we are reading temperature data from the sensor and sending it to an MQTT broker."){data-zoomable}
-
-### Subscribing to the Topic on the MQTT Broker to Receive Temperature Data
-
-Now, create a new instance in which we will receive the temperature data by subscribing to the topic. Refer to this guide which shows how you can [create a new instance in FlowFuse](/docs/user/introduction/#creating-a-node-red-instance).
-
-1. Drag an **mqtt-in** node onto the canvas, and configure it with the broker to which you are sending temperature data.
-2. Enter "temp" in the topic field and set **QoS** to **2**.
-3. Drag a **Debug** node onto the canvas.
-4. Connect the **mqtt-in** node's output to the **Debug** node's input.
-5. Deploy the flow by clicking on the **deploy** button located at the top-right corner.
-
-!["Screenshot of sencod Node-RED instance editor in which temperature data is receving from mqtt broker"](./images/how-to-use-mqtt-with-node-red-mqtt-node-red-instance-2.png "Screenshot of sencod Node-RED instance editor in which temperature data is receving from mqtt broker"){data-zoomable}
-
-Now, you will see the temperature data printed in the debug tab in the sidebar. Additionally, you can display this data on a chart using Dashboard 2.0 or store it in a database. For more details refer to the following guides:
-
-- [Sending data to influxDB](/node-red/database/influxdb/)
-- [Charting Data in on Dashboard 2.0](/node-red/integration-technologies/rest/)
+![MQTT nodes in Node-RED editor showing green connected status indicators below each node](./images/mqtt-node-status.png "MQTT Node Status - Green 'connected' indicator confirms successful broker connection"){data-zoomable}
 
 ## Best Practices
 
-Ensuring the security and efficiency of your MQTT and Node-RED deployments is crucial for successful IoT projects. Explore these best practices to enhance your system's performance and protect your data.
+Production MQTT deployments need more than basic configuration. These practices separate hobby projects from industrial-grade systems that run 24/7 without issues.
 
-### Security
+### Security First
 
-- **SSL/TLS Encryption:** Secure your MQTT communication by enabling SSL/TLS encryption. This ensures that data transmitted between devices and the broker is encrypted.
+**Always use TLS encryption.** Unencrypted MQTT sends credentials and data in plain text across your network. Enable port 8883 with TLS on your broker, then check the **Enable TLS** box in your Node-RED broker configuration. No exceptions for production systems.
 
-- **Authentication and Authorization:** Implement strong authentication mechanisms to verify the identity of clients connecting to the broker. Additionally, enforce access control policies to restrict clients' actions based on their roles and permissions. For instance, you can allow specific clients to only publish or subscribe to data as needed.
+**Never hardcode credentials.** Putting usernames and passwords directly in nodes means anyone with access to your flows can see them. Use environment variables instead:
 
-- **Environment Variables:** Utilize environment variables to prevent exposing your sensitive configuration data within the flow.
+```
+Username: ${MQTT_USER}
+Password: ${MQTT_PASS}
+```
 
-### Performance Optimization
+Set these in your Node-RED settings file or FlowFuse environment configuration. See [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for the complete setup.
 
-- **Quality of Service (QoS) Levels:** Choose the appropriate QoS level for your MQTT messages based on the reliability requirements of your application. Higher QoS levels ensure message delivery but may incur increased network overhead.
+**Implement access control on your broker.** Not every device needs to publish and subscribe to every topic. Configure your MQTT broker's ACL (Access Control List) to restrict clients based on their role. Sensors should only publish to their specific topics. Dashboard applications should only subscribe to what they display. This limits damage if credentials get compromised.
 
-- **Payload Size Optimization:** Optimize the size of MQTT message payloads to minimize bandwidth usage and improve network efficiency. Transmit only essential data and consider compressing payloads when applicable to reduce transmission times.
+### Choose the Right QoS
 
-## Applications for Node-RED & MQTT
+QoS isn't a "set it and forget it" decision. Each level trades reliability against network overhead and latency.
 
-- **Industrial Automation and Remote Monitoring:** In industrial settings, Node-RED combined with MQTT enables automation of processes, monitoring of equipment status, and remote management of industrial systems. This setup is scalable and can handle large volumes of data efficiently.
+**QoS 0:** Fire and forget. Use for high-frequency sensor data where missing one reading doesn't matter.
 
-- **Data Logging and Analytics:** Node-RED can be used to collect data from various sources via MQTT and log it into databases or cloud services. You can then analyze this data, generate reports, and gain insights into trends and patterns for decision-making.
+**QoS 1:** Guaranteed delivery, possible duplicates. Good for status updates and notifications.
 
-- **Home Automation:** With Node-RED and MQTT, you can build sophisticated home automation systems. Examples include controlling lights, thermostats, security cameras, and other smart devices using MQTT messages.
+**QoS 2:** Exactly once delivery with higher latency. Use for commands that trigger actions or critical transactions.
 
-- **Environmental Monitoring and Smart Agriculture:** For environmental monitoring applications such as weather stations or smart agriculture systems, Node-RED can gather sensor data through MQTT, process it in real-time, and trigger actions based on predefined conditions like irrigation control or alert notifications.
+Match QoS to your use case. Don't default everything to QoS 2 just to be safe—you'll waste bandwidth and add latency where it doesn't help.
 
-- **Fleet Management and Tracking:** For fleet management applications, Node-RED can receive GPS data from vehicles or assets via MQTT, track their locations, monitor performance metrics, and send notifications or commands based on predefined rules, enhancing operational efficiency and safety.
+### Design Your Topic Hierarchy Properly
 
-- **Healthcare and Remote Patient Monitoring:** In healthcare, Node-RED coupled with MQTT can facilitate remote patient monitoring by collecting health data from sensors or wearable devices, transmitting it securely, and providing real-time alerts to healthcare providers or patients for timely interventions.
+Your topic structure determines how easy it is to filter, subscribe, and scale your system. A hierarchical approach mirrors your physical setup and makes wildcards useful.
 
-- **Energy Management and Smart Grids:** Node-RED can play a crucial role in energy management systems by integrating with smart meters, renewable energy sources, and grid infrastructure via MQTT. This integration enables real-time monitoring, demand response, and optimization of energy consumption.
-- **Building Automation and Energy Efficiency:** For building automation and energy efficiency projects, Node-RED can control HVAC systems, lighting, and other building components based on occupancy, environmental conditions, and energy demand signals received through MQTT, leading to cost savings and sustainability.
+**Structure topics from general to specific:**
 
-## Conclusion 
+```
+company/location/area/equipment/measurement
+```
 
-This guide comprehensively covers integrating MQTT with Node-RED, including setup instructions, MQTT node configuration, practical application examples like data publishing and subscribing, and essential best practices for security and performance optimization. It serves as a valuable resource for developers looking to leverage MQTT's capabilities within Node-RED for effective IoT communication and automation.
+**Good hierarchy:**
+
+```
+acme/chicago/packaging/filler-01/temperature
+acme/chicago/packaging/filler-01/pressure
+acme/denver/assembly/robot-03/temperature
+acme/denver/assembly/conveyor-02/speed
+```
+
+**Poor hierarchy:**
+
+```
+temp-sensor-1
+temp-sensor-2
+pressure-sensor-1
+line1-data
+```
+
+The difference: with a proper hierarchy, you can subscribe at any level. Need all data from Chicago? Subscribe to `acme/chicago/#`. Want temperature readings across all sites? Use `acme/+/+/+/temperature`. 
+
+Flat topics force you to subscribe to dozens of individual topics and manage them manually. Hierarchical topics let the broker do the filtering.
+
+**Keep it simple:** Use lowercase, separate levels with forward slashes, use hyphens within names. Topics are paths, not sentences.
+
+## Conclusion
+
+You now know how to connect Node-RED to MQTT brokers, publish data to topics, subscribe to incoming messages, and secure your deployment with TLS and proper credentials. That's the foundation.
+
+Go build something. Connect a sensor, route the data, display it somewhere useful. The patterns you've learned here scale from a single device to entire factory floors.
+
+When you hit the limits of managing individual instances—tracking deployments, coordinating updates, maintaining uptime across sites—that's when tools like [FlowFuse]({% include "sign-up-url.njk" %}) become relevant. Until then, you have everything you need.

@@ -10,47 +10,33 @@ navTitle: Asset Management Policy
 
 ## Purpose
 
-To identify organizational assets and define appropriate protection responsibilities.
-To ensure that information receives an appropriate level of protection in accordance
-with its importance to the organization. To prevent unauthorized disclosure,
-modification, removal, or destruction of information stored on media.
-
+This policy establishes how the organization identifies, manages, and protects its assets. Its purpose is to ensure that information and equipment receive appropriate protection and to prevent unauthorized disclosure, modification, removal, or destruction of organizational data.
 
 ## Scope 
 
-This policy applies to all FlowFuse owned or managed information systems.
+This policy applies to all organizational assets owned or managed by FlowFuse, including information, equipment, and devices. It also applies to all employees and third parties who use or handle these assets.
 
 ## Policy
 
 ### Inventory of Assets
 
-Assets associated with information and information processing facilities that
-store, process, or transmit classified information shall be identified and an
-inventory of these assets shall be created and maintained.
+Identify all assets that store, process, or transmit confidential information, and maintain an up-to-date inventory of these assets.
 
 ### Ownership of Assets
 
-Assets maintained in the inventory shall be owned by a specific individual or
-group within the company.
+Assign each asset in the inventory to a specific individual or group responsible for its management and protection.
 
 ### Acceptable Use of Assets
 
-Rules for the acceptable use of information, assets, and information processing
-facilities shall be identified and documented in the [Information Security Policy](./information-security.md).
+Follow the acceptable use rules defined in the [Information Security Policy](./information-security.md).
 
 ### Loss or Theft of Assets
 
-All personnel must immediately report the loss of any information systems,
-including portable or laptop computers, smartphones, PDAs, authentication tokens
-(keyfobs, one-time-password generators, or personally owned smartphones or
-devices with access to FlowFuse systems) or other devices that can store and
-process or help grant access to FlowFuse data.
+Report the loss or theft of any device that stores FlowFuse data or provides access to FlowFuse systems immediately. This includes devices such as computers, hardware tokens, and personal mobile phones.
 
 ### Return of Assets
 
-All employees and third-party users of FlowFuse equipment shall return all of
-the organizational assets within their possession upon termination of their
-employment, contract, or agreement in accordance with the [off-boarding process](../../peopleops/hiring.md#offboarding).
+Return all FlowFuse assets in your possession when your employment or contract ends, following the [off-boarding process](/handbook/peopleops/hiring/#offboarding).
 
 ### Handling of Assets
 
@@ -60,22 +46,23 @@ equipment.
 
 Employees are responsible for ensuring that company equipment is secured and
 properly attended to whenever it is transported or stored. Equipment must be
-secured in accordance with the [Access Control](./access-control.md) policy and
-must not be left unattended in public locations.
+secured in accordance with the [Access Control policy](./access-control.md) and must not be left unattended in public locations.
 
 All mobile devices shall be handled in accordance with the [Information Security Policy](./information-security.md).
 
 ## Exceptions
 
-Requests for an exception to this policy must be submitted via email to the
-CEO or CTO for approval.
+Submit requests for exceptions to this policy by email to the CEO or CTO for approval.
 
 ## Violations & Enforcement
 
-Any known violations of this policy should be reported to the CEO or CTO.
-Violations of this policy can result in immediate withdrawal or suspension of
-system access and/or disciplinary action in accordance with company procedures
-up to and including termination of employment.
+Report any violations of this policy to the CEO or CTO immediately.
+
+Violations may result in suspension of system access and disciplinary action in accordance with company procedures, up to and including termination of employment.
 
 --- 
-Policy derived from [JupiterOne/security-policy-templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/)) and [Vanta](https://vanta.com)
+
+This policy is adapted from the following sources:
+
+- [JupiterOne Security Policy Templates](https://github.com/JupiterOne/security-policy-templates) ([CC BY-SA 4 license](https://creativecommons.org/licenses/by-sa/4.0/))
+- [Vanta](https://vanta.com)

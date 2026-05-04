@@ -17,7 +17,7 @@ tags:
    - Node-RED
 ---
 
-FlowFuse 2.6 is packed with great new features, and in this release we've had a heavy focus on improving the development experience of Node-RED, lowering the barrier to entry for new users and aligning to our [Simplified Hosting](https://flowfuse.com/handbook/product/strategy/#simplified-hosting) and [Low-Code](https://flowfuse.com/handbook/product/strategy/#low-code) plans from our [Product Strategy](https://flowfuse.com/handbook/product/strategy/).
+FlowFuse 2.6 is packed with great new features, and in this release we've had a heavy focus on improving the development experience of Node-RED, lowering the barrier to entry for new users and aligning to our [Simplified Hosting](https://flowfuse.com/handbook/engineering/product/strategy/#simplified-hosting) and [Low-Code](https://flowfuse.com/handbook/engineering/product/strategy/#low-code) plans from our [Product Strategy](https://flowfuse.com/handbook/engineering/product/strategy/).
 
 <!--more-->
 
@@ -27,16 +27,16 @@ Whilst a big part of FlowFuse is the ability to run Node-RED, we're also focussi
 
 ### AI-Infused Node-RED
 
-![Screenshot showing the "FlowFuse Assistant" dialog box](./images/assistant-dialog-function-node-builder.png){data-zoomable}
-_Screenshot of an example instruction sent to FlowFuse Assistant._
+![Screenshot showing the "FlowFuse Expert" dialog box](./images/assistant-dialog-function-node-builder.png){data-zoomable}
+_Screenshot of an example instruction sent to FlowFuse Expert._
 
 One of the joys of Node-RED is how it empowers users not experienced with development to create bespoke applications. A popular and very powerful node in Node-RED is the "function" node. This node allows users to write JavaScript code to manipulate messages. However, this can be daunting for users who are not familiar with JavaScript, it's a steep learning curve. As such, when you run Node-RED in FlowFuse, you'll be able to use the **Node-RED Assistant** in both the Editor toolbar, and the function nodes:
 
-![Screenshot showing the "FlowFuse Assistant" button available in the Editor Toolbar](./images/assistant-toolbar.png){data-zoomable}
-_Screenshot showing the "FlowFuse Assistant" button available in the Editor Toolbar_
+![Screenshot showing the "FlowFuse Expert" button available in the Editor Toolbar](./images/assistant-toolbar.png){data-zoomable}
+_Screenshot showing the "FlowFuse Expert" button available in the Editor Toolbar_
 
-![Screenshot showing the "Ask the FlowFuse Assistant" button available in the function node](./images/assistant-function-node-inline-code-lens.png){data-zoomable}
-_Screenshot showing the "Ask the FlowFuse Assistant" button available in the function node_
+![Screenshot showing the "Ask the FlowFuse Expert" button available in the function node](./images/assistant-function-node-inline-code-lens.png){data-zoomable}
+_Screenshot showing the "Ask the FlowFuse Expert" button available in the function node_
 
 The Node-RED Assistant is an AI-powered tool that can help you write JavaScript code in the function node. It can suggest code snippets, help you debug your code, and even write code for you. This is a game-changer for users who are inexperienced with JavaScript, as it lowers the barrier to entry and makes it easier to create applications.
 
@@ -113,7 +113,7 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 ### FlowFuse Cloud
 
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free]({{ site.appURL }}/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
 
 ## Upgrading FlowFuse
 

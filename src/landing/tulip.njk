@@ -1,0 +1,230 @@
+---
+layout: page
+nohero: true
+skipIndex: true
+image: images/solutions/mes-hero.png
+imageDescription: "MES Diagram"
+heroTitle: "<span class='text-indigo-600'>Get ALL Your Data</span> into Your MES"
+meta:
+    title: "Get ALL Your Data into Your MES"
+    description: "Tulip is only as powerful as the data you feed it. FlowFuse connects legacy machines, edge devices, ERPs, and any industrial system—giving Tulip the complete picture it needs to optimize your operations."
+hero:
+    buttonText: "REQUEST DEMO"
+    buttonLink: "form"
+    buttonReference: "landing-tulip"
+problem:
+    title: "Is <span class='text-indigo-600'>Tulip</span> Running on Incomplete Data?"
+    intro: "Tulip should give you complete visibility across your shop floor. But most manufacturers struggle with:"
+    outro: "The result? Tulip can only work with the data it receives—and critical information stays trapped in isolated systems."
+problems:
+    - svgPath: "components/icons/large/disconnected.svg"
+      title: "Legacy equipment that doesn't communicate with Tulip"
+    - svgPath: "components/icons/large/data-silos.svg"
+      title: "Data silos across different systems and protocols"
+    - svgPath: "components/icons/large/expensive.svg"
+      title: "Custom integrations that are expensive and fragile"
+    - svgPath: "components/icons/large/incomplete.svg"
+      title: "Incomplete shop floor visibility because not all data reaches Tulip"
+sectionTitle: "<span class='text-indigo-600'>Connect Everything</span> to Tulip"
+sections:
+    - svgPath: "components/icons/arrows-pointing-out.svg"
+      title: "Connect Everything"
+      description:
+        - "MQTT, OPC-UA, Modbus HTTP/REST"
+        - "Legacy PLCs, modern IoT sensors, edge devices"
+        - "ERP systems, databases, APIs"
+        - "Any protocol, any device, any system"
+    - svgPath: "components/icons/puzzle-piece.svg"
+      title: "Integrate Legacy Equipment"
+      description:
+        - "MQTT, OPC-UA, Modbus HTTP/REST"
+        - "Legacy PLCs, modern IoT sensors, edge devices"
+        - "ERP systems, databases, APIs"
+        - "Any protocol, any device, any system"
+    - svgPath: "components/icons/check-circle.svg"
+      title: "Optimized for Tulip Users"
+      description:
+        - "MQTT, OPC-UA, Modbus HTTP/REST"
+        - "Legacy PLCs, modern IoT sensors, edge devices"
+        - "ERP systems, databases, APIs"
+        - "Any protocol, any device, any system"
+how:
+    title: "The Data Connectivity Platform <span class='text-indigo-600'>Built for Manufacturing</span>"
+    img: "/vs/images/flowfuse-tulip.png"
+    imgAlt: "FlowFuse Tulip Integration Diagram"
+    subtitle: "Built on <span class='whitespace-nowrap'>Node-RED</span> with enterprise features:"
+howFeatures:
+    - svgPath: "components/icons/user-group.svg"
+      title: "Team collaboration and version control"
+    - svgPath: "components/icons/lock-closed.svg"
+      title: "Secure deployment across edge and cloud"
+    - svgPath: "components/icons/arrows.svg"
+      title: "High availability and disaster recovery"
+    - svgPath: "components/icons/lifebuoy.svg"
+      title: "Enterprise support and professional services"
+stories:
+    title: "Latest <span class='text-indigo-600'>Customer Stories</span>"
+    url: "/customer-stories/"
+    urlText: "See more customer stories"
+hubspot:
+    script: "hubspot/hs-book-meeting.njk"
+    dataSrc: https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?embed=true
+    cta: "book-a-demo"
+    reference: "tulip-landing"
+---
+<!--Hero Content-->
+<div class="nohero w-full">
+    <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
+        <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
+            <div class="m-auto md:w-1/2">
+                <h1 class="w-full mt-0 px-12 md:px-0 my-auto text-base md:max-w-[365px]">
+                    <span class="text-4xl">{{ heroTitle | safe }}</span>
+                </h1>
+                <p class="mb-10">
+                    {{ meta.description }}
+                </p>
+                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" 
+                    href="#{{ hero.buttonLink }}" 
+                    onclick="scrollToAnchor(event, '{{ hero.buttonLink }}'); capture('download', {'reference': '{{ hero.buttonReference }}'})">
+                    {{ hero.buttonText }}
+                </a>
+            </div>
+            <div class="md:w-1/2 flex-grow relative">
+                <div class="ff-image-rounded w-full h-full">
+                    {% set imageSrc = ["./", image ] | join %}
+                    {% image imageSrc, imageDescription, [496] %}             
+                </div>
+            </div>
+            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden m-auto mt-12"
+            href="#{{ hero.buttonLink }}" 
+            onclick="scrollToAnchor(event, '{{ hero.buttonLink }}'); capture('download', {'reference': '{{ hero.buttonReference }}'})">
+            {{ hero.buttonText }}</a>
+        </div>   
+    </div>
+
+    <!-- Problem -->  
+    <div class="w-full">
+        <div class="max-w-screen-lg mx-auto px-6">
+            <h2 class="text-center w-full md:text-left mb-4">{{ problem.title | safe }}</h2>
+            <p class="text-center w-full md:text-left text-gray-500 font-normal">{{ problem.intro }}</p>
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 my-12">
+                {% for item in problems %}
+                <div class="relative w-full max-md:max-w-md mx-auto bg-indigo-50 rounded-md p-6">
+                    <div class="flex flex-row justify-center items-center gap-8 h-full">
+                        <div class="flex w-16 items-center justify-center">
+                            {% include item.svgPath %}
+                        </div>
+                        <h5 class="w-full md:m-0 text-gray-600 font-medium mx-auto">{{ item.title }}</h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <p class="text-center w-full md:text-left text-gray-500 font-normal">{{ problem.outro }}</p>
+        </div>
+    </div>
+    <!-- Solution -->  
+    <div class="w-full">
+        <div class="max-w-screen-lg mx-auto px-6 mt-20">
+            <h2 class="text-center w-full md:text-left max-w-4xl">{{ sectionTitle | safe }}</h2>
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-12">
+                {% for section in sections %}
+                <div class="container relative w-full max-md:max-w-md mx-auto">
+                    <div class="flex flex-col items-center sm:items-start">
+                        <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
+                            <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
+                                {% include section.svgPath %}
+                            </div>
+                            <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
+                                <h5 class="w-full md:m-0 font-medium">
+                                    <div class="text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</div>
+                                </h5>
+                            </div>
+                        </div>
+                        <ul class="mt-6 ff-prose prose list-disc">
+                            {% for item in section.description %}
+                            <li class="font-light my-0 ml-4">{{ item | safe }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>    
+    <!-- How It Works -->  
+    <div class="w-full bg-indigo-50/50 py-16 mt-20">
+        <div class="max-w-screen-lg mx-auto px-6">
+            <h2 class="text-center w-full md:text-left max-w-4xl">{{ how.title | safe }}</h2>
+            <div class="w-full my-12">
+                {% set imageSrc = ["./", how.img ] | join %}
+                {% set imageDescription = how.imgAlt %}
+                {% image imageSrc, imageDescription, [976] %} 
+            </div>
+            <div class="w-full md:flex gap-4">
+                <h4 class="md:w-[203px] text-xl max-md:mb-6 max-md:text-center">{{ how.subtitle | safe }}</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                    {% for item in howFeatures %}
+                    <div class="bg-indigo-50 border border-white rounded-md flex flex-row items-center gap-4 p-4">
+                        <div class="w-8 h-8 text-indigo-600">
+                            {% include item.svgPath %}
+                        </div>
+                        <div class="text-gray-600">{{ item.title }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!--Customer Stories Banner-->
+    <div class="max-w-screen-lg mx-auto px-6 mt-16">
+        <h2 class="max-md:text-center max-w-3xl">{{ stories.title | safe }}</span></h2>
+        <ul class="mt-10 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 m-auto gap-6">
+            {%- for item in collections.stories | sort(attribute='item.date') | reverse | limit(3) -%}
+            <li class="w-full max-w-md m-auto my-2">
+                <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+                    <div>
+                        <div>
+                            <div class="relative">
+                                <div class="w-full h-40 ff-image-cover scale mb-4 ff-image-rounded object-contain overflow-hidden">
+                                    {% if item.data.image %}
+                                        {% set imageSrc = ["./", item.data.image ] | join %}
+                                        {% set imageDescription = ["Image representing ", item.data.title] | join %}
+                                        {% if item.data.logo %}
+                                            <div class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center">
+                                                {% set logoSrc = ["./", item.data.logo ] | join %}
+                                                {% set logoDescription = ["Image representing ", item.data.story.brand, " logo"] | join %}
+                                                {% image logoSrc, logoDescription, [285] %}
+                                            </div>
+                                        {% endif %}
+                                    {% else %}
+                                        {% set imageSrc = "./images/og-blog.jpg" %}
+                                        {% set imageDescription = "Image with logo and the slogan: Elevate Node-RED with Flowfuse" %}
+                                    {% endif %}
+                                    {% image imageSrc, imageDescription, [285] %}
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="mt-1 mb-0 group-hover:underline font-light text-lg text-left text-gray-600">{{ item.data.title }}</h5>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ stories.url }}" class="w-full font-light text-center md:text-left hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md mx-auto mb-20">
+            {{ stories.urlText | safe }} {% include 'components/icons/chevron-right-sm.svg' %}
+        </a>  
+    </div>  
+    <!-- Form -->
+    <div id="form" class="max-w-screen-lg mx-auto mb-6">
+        <div class="w-full px-6 pb-2 max-sm:mt-4">
+            <h2 class="mb-8 max-md:text-center">Ready to Make the Wiser Decision?</h2>
+            <p>See how FlowFuse can connect ALL your data sources to Tulip. Book your demo now.</p>
+            <div class="my-10">
+                {% include hubspot.script %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll to anchor -->
+{% include "smooth-scroll.njk" %}

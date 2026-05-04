@@ -22,7 +22,7 @@ This policy covers all information security or data privacy events or incidents.
 
 This policy relates to how we deal with security issues internally. For information
 on how to report potential vulnerabilities in the FlowFuse platform and associated
-components from outside the company, please refer to our [Vulnerability Reporting policy](/handbook/development/security).
+components from outside the company, please refer to our [Vulnerability Reporting policy](/handbook/engineering/security).
 
 ## Incident and Event Definitions
 

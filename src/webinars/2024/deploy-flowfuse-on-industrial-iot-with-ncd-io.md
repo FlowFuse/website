@@ -1,7 +1,7 @@
 ---
 title: "Deploy FlowFuse on Industrial IoT with NCD.io"
-subtitle: In this webinar, we focus on how integrating Node-Red and robust hardware from NCD.io forms a powerful solution for system integrators and developers in the industrial sector.
-description: Join our webinar on May 29, 2024, as Grey Dziuba and Travis Elliot explore the integration of FlowFuse with NCD.io’s IIoT solutions. Discover how Node-Red enhances data access and security in industrial networks. Ideal for engineers and system integrators looking to advance their IoT strategies.
+subtitle: In this webinar, we focus on how integrating Node-RED and robust hardware from NCD.io forms a powerful solution for system integrators and developers in the industrial sector.
+description: Join our webinar on May 29, 2024, as Grey Dziuba and Travis Elliot explore the integration of FlowFuse with NCD.io’s IIoT solutions. Discover how Node-RED enhances data access and security in industrial networks. Ideal for engineers and system integrators looking to advance their IoT strategies.
 image: /images/webinars/ncd-io-and-flowfuse.jpg
 date: 2024-05-29
 time: 17:00 CET (11:00am ET) 
@@ -23,7 +23,7 @@ How can these networks be safely connected to enable better data access and usab
 
 Grey Dziuba, OT Data and Community Strategist at FlowFuse and Travis Elliot, COO of NCD.io, discuss:
 
-- How Node-Red and NCD.io’s technologies can streamline IIoT deployments.
+- How Node-RED and NCD.io’s technologies can streamline IIoT deployments.
 - Best practices for integrating these technologies into your existing infrastructure.
 - The extended capabilities of FlowFuse in enhancing the security and scalability of IIoT systems.
 

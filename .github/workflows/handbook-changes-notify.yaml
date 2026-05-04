@@ -1,0 +1,122 @@
+name: Notify on Handbook Changes
+
+on:
+  pull_request:
+    types:
+      - closed
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check-changes:
+    name: Verify changes
+    runs-on: ubuntu-latest
+    outputs:
+      handbook_has_been_updated: ${{ steps.changed-files.outputs.handbook_changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - name: Find changed files
+        id: changed-files
+        run: |
+          ./.github/scripts/detect_changed_files.sh
+
+  notify-slack:
+    name: Send notification
+    needs: check-changes
+    if: |
+      github.event.pull_request.merged == true && 
+      needs.check-changes.outputs.handbook_has_been_updated == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        fetch-depth: 0
+    - name: Generate URLs
+      id: generate-urls
+      run: |
+        ./.github/scripts/generate_handbook_urls.sh
+    - name: Send notification
+      uses: slackapi/slack-github-action@03ea5433c137af7c0495bc0cad1af10403fc800c # v3.0.2
+      with:
+        method: chat.postMessage
+        token: ${{ secrets.SLACK_GHBOT_TOKEN }}
+        payload: |
+          {
+            "unfurl_links": true,
+            "unfurl_media": true,
+            "channel": "C02UNQAFZPV",
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "📚 Handbook Update",
+                  "emoji": true
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Our handbook has been updated with new information."
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Author:*\n${{ github.event.pull_request.user.login }}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Updated at:*\n${{ github.event.pull_request.merged_at }}"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*Summary of Changes:*\n${{ github.event.pull_request.title }}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*New/modified pages:*\n${{ steps.generate-urls.outputs.handbook_urls }}"
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "actions",
+                "elements": [
+                  {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "View Merged Pull Request",
+                      "emoji": true
+                    },
+                    "style": "primary",
+                    "url": "${{ github.event.pull_request.html_url }}",
+                    "value": "view_changes"
+                  }
+                ]
+              }
+            ]
+          }
+        

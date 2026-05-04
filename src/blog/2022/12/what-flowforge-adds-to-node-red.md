@@ -10,7 +10,7 @@ tags:
     - node-red
 ---
 
-Many organisations face challenges in IT/OT convergence. There are many protocols, disparate devices, and everything is a brownfield project. Furthermore, skilled engineers are hard to find. Many organisations find themselves maintaining systems and integrations, and have little time left to improve continuously.
+Many organizations face challenges in IT/OT convergence. There are many protocols, disparate devices, and everything is a brownfield project. Furthermore, skilled engineers are hard to find. Many organizations find themselves maintaining systems and integrations, and have little time left to improve continuously.
 
 <!--more-->
 
@@ -18,8 +18,8 @@ This is why Node-RED is adopted so widely, it makes a world of difference throug
 
 FlowFuse makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED. It offers an intuitive user interface for creating, deploying, monitoring, and managing multiple Node-RED projects. FlowFuse also provides one-click deployment to thousands of devices, making it easy to manage large-scale environments. 
 
-These features make FlowFuse a valuable tool for organisations using Node-RED to build applications and automate processes. Enabling for further adoption of Node-RED to integrate more systems, for even better decisions.
+These features make FlowFuse a valuable tool for organizations using Node-RED to build applications and automate processes. Enabling for further adoption of Node-RED to integrate more systems, for even better decisions.
 
-This not only reduces operational costs but it also allows an organisation to be far more agile with their Node-RED projects than was possible without FlowFuse.
+This not only reduces operational costs but it also allows an organization to be far more agile with their Node-RED projects than was possible without FlowFuse.
 
 We would be happy to talk to you more about how FlowFuse can help you get the most value from Node-RED. Please [contact us](/contact-us/) to learn more.

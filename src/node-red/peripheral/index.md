@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: "Peripheral Devices"
-  order: 6
+  order: 7
 meta:
    title: Integrating Node-RED with Peripheral Devices
    description: Learn how to integrate Node-RED with various peripheral devices, including keyboards, mice, printers, and more.

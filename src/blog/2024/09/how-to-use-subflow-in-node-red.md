@@ -3,12 +3,17 @@ title: How to create and use Subflow in Node-RED
 subtitle: A Practical Guide to Implementing Subflows in Node-RED for Efficient Workflow Management
 description: Learn how to effectively use subflows in Node-RED with this comprehensive guide. Discover the benefits, creation steps, and best practices for managing subflows to streamline your automation workflows.
 date: 2024-09-13
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/09/images/subflow-in-node-red.png
 keywords: node red subflow, nodered subflow, node red subflow environment variables, node red create subflow, node red subflows
 tags:
     - node-red
     - how-to
+cta:
+  type: sign-up
+  title: Build and Reuse Node-RED Flows Across Your Team
+  description: FlowFuse gives you version control, team collaboration, and centralized deployment — so your subflows and reusable logic stay consistent across every instance and every engineer.
 ---
 
 In traditional programming, managing complex and repetitive tasks can quickly lead to a tangled mess of code that’s hard to maintain and update. To tackle this issue, developers use libraries or modules—reusable chunks of code that help organize functionality, minimize duplication, and keep codebases clean and manageable.
@@ -90,7 +95,7 @@ _The switch node in Node-RED with a max retry condition set using an environment
 
 As we know, any node in Node-RED requires input and output ports to manage its data flow. Similarly, a Subflow node requires these ports to function correctly. In our Subflow example, it needs to be triggered and therefore requires at least one input port and one or more output ports. Specifically, our Subflow has two outputs: one for successfully fetched data and another to indicate when the maximum retry limit has been exceeded.
 
-1. In the **Subflow** tab, at the top, you will see an option for **inputs** with values 0 and 1. Click on **1** to add an input port (as a any node-red node can have only one input port). Once set to 1, you will see an input port added in the Subflow tab. Connect it to the appropriate node; in our example, it should be connected to the first **change** node.
+1. In the **Subflow** tab, at the top, you will see an option for **inputs** with values 0 and 1. Click on **1** to add an input port (as a any Node-RED node can have only one input port). Once set to 1, you will see an input port added in the Subflow tab. Connect it to the appropriate node; in our example, it should be connected to the first **change** node.
 
 ![Option to add input port for subflow](./images/input-adding-subflow.png){data-zoomable}
 _Option to add input port for subflow_
@@ -156,5 +161,3 @@ Now, just like regular Node-RED nodes, you can effectively use this Subflow node
 ## Conclusion
 
 In this guide, we explored the concept of subflows in Node-RED, including their definition and purpose. We walked through the steps to create and configure subflows, demonstrating how to integrate them into your main flow. Additionally, we discussed how to edit and update existing subflows, and provided best practices for managing and organizing them effectively.
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=How%20to%20create%20and%20use%20Subflow%20in%20Node-RED", cta_type: "signup", cta_text: "" %}

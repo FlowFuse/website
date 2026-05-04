@@ -51,7 +51,7 @@ We've fixed the following bugs in this release.
 - [Solved an issue where a device gets an error  unknown device](https://github.com/FlowFuse/device-agent/issues/7)<br>
 - [The Audit Log in the Forge app displays the correct IP when a user logs in to Node-RED](https://github.com/FlowFuse/flowfuse/issues/507)<br>
 - [Resolved an issue with devices downloading snaphots from legacy stacks](https://github.com/FlowFuse/flowfuse/issues/507)<br>
-- [Fixed an error where objects in the node-red log would hang the log page](https://github.com/FlowFuse/flowfuse/issues/735)<br>
+- [Fixed an error where objects in the Node-RED log would hang the log page](https://github.com/FlowFuse/flowfuse/issues/735)<br>
 - [Next Billing Date is now shown correctly](https://github.com/FlowFuse/flowfuse/issues/745)<br>
 - [Fixed a bug where the loading page would flash during polling](https://github.com/FlowFuse/flowfuse/issues/689)<br>
 

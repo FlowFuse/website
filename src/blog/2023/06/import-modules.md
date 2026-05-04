@@ -3,6 +3,7 @@ title: Use any npm module in Node-RED
 subtitle: See how you can easily import any npm module, for use in a Node-RED function node.
 description: Node-RED has an incredibly rich resource of integrations available, but sometimes you need that little extra. This shows you how.
 date: 2023-06-05
+lastUpdated: 2025-07-23
 authors: ["joe-pavitt", "stephen-mclaughlin"]
 image: /images/blog/tile-import-npm.jpeg
 tags:
@@ -63,4 +64,4 @@ Within two minutes, we could wire up a node to retrieve data from our API, and t
 
 With the FlowFuse Assistant, you can leverage AI to generate Function nodes effortlessly. Just input your prompt, and the Assistant will handle the creation for you, saving time and reducing manual coding.
 
-To explore how to make the most of the FlowFuse Assistant and its capabilities, check out the [Assistants Documentation](/docs/user/assistant/).
+To explore how to make the most of the FlowFuse Assistant and its capabilities, check out the [Assistants Documentation](/docs/user/expert/).

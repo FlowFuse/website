@@ -23,7 +23,7 @@ In LwM2M, the server can send commands, gather data, and change device settings 
 
 ## Using LwM2M with Node-RED
 
-In this section, I will demonstrate how you can monitor and control IoT devices using LwM2M with Node-RED. For demonstration purposes, I'll show you how to monitor and control an Ubuntu machine running Node-RED via the [FlowFuse Device Agent](/product/device-agent/). This setup will help you understand how to use LwM2M to manage your devices remotely.
+In this section, I will demonstrate how you can monitor and control IoT devices using LwM2M with Node-RED. For demonstration purposes, I'll show you how to monitor and control an Ubuntu machine running Node-RED via the [FlowFuse Device Agent](/platform/device-agent/). This setup will help you understand how to use LwM2M to manage your devices remotely.
 
 ### Prerequisites
 

@@ -3,6 +3,7 @@ title: Using Environment Variables in Node-RED
 subtitle: Predefined data to be used in your Node-RED instance 
 description: Node-RED supports environment variables (env vars) slight different, how to use it and the gotcha's are explained in this article.
 date: 2023-01-27 16:11:47.0
+lastUpdated: 2025-07-23
 authors: ["zeger-jan-van-de-weg"]
 tags:
     - posts
@@ -39,7 +40,7 @@ In FlowFuse it’s easy to manage variables set for instances. Under settings in
 
 FlowFuse provides a comprehensive platform for managing and securing your Node-RED solutions. It includes advanced security features such as role-based access control, Multi-factor Authentication (MFA), Single Sign-On (SSO), and encryption to protect your data and enhance operational efficiency.
 
-Learn how FlowFuse can boost your Node-RED security and streamline management through the [FlowFuse security statement](/product/security/#application).
+Learn how FlowFuse can boost your Node-RED security and streamline management through the [FlowFuse security statement](/platform/security/#application).
 
 ### Explore More on Security
 

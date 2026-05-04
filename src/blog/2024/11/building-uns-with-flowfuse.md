@@ -3,6 +3,7 @@ title: Building a Unified Namespace (UNS) with FlowFuse
 subtitle: Implement your Unified Namespace seamlessly using our low-code platform
 description: Discover how FlowFuse helps you build a Unified Namespace (UNS) effortlessly, streamlining industrial data sharing, improving operational efficiency, and enabling real-time insights for smarter decision-making.
 date: 2024-11-28
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/building-uns-with-flowfuse.png
 keywords: building unified namespace using nodered, nodered uns, uns nodered
@@ -10,6 +11,10 @@ tags:
    - flowfuse
    - unified-namespace
    - mqtt
+cta:
+  type: demo
+  title: See How FlowFuse Powers a Unified Namespace
+  description: FlowFuse brings together Node-RED, a built-in MQTT broker, and centralized device management — everything you need to connect your shop floor data into a single, real-time namespace.
 ---
 
 As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/solutions/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
@@ -32,7 +37,7 @@ Fortunately, Node-RED provides support for a wide range of industrial protocols,
 
 By leveraging Node-RED, you can collect data from these legacy systems, process and transform the data using low-code workflows, and then seamlessly send it to the cloud via modern protocols such as MQTT, Kafka, AMQP, and more.
 
-In our example, Node-RED can directly collect metrics from sensor using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/product/device-agent/), This agent enables you to remotely monitor, manage, and build Node-RED flows securely through the FlowFuse platform remotely. [See here](/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
+In our example, Node-RED can directly collect metrics from sensor using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/platform/device-agent/), This agent enables you to remotely monitor, manage, and build Node-RED flows securely through the FlowFuse platform remotely. [See here](/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
 
 ### Step 2: Transform and Process the Collected metrics
 
@@ -152,7 +157,7 @@ While Sparkplug B provides a standardized topic model, its hierarchy may not alw
 
 ### Step 5: Sending Collected metrics to UNS
 
-With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/node-red/core-nodes/mqtt/) node to send the transformed data to the broker.
+With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/node-red/core-nodes/mqtt-in/) node to send the transformed data to the broker.
 
 1. Drag an MQTT out node into your flow.  
 2. Configure the node to connect to the FlowFuse MQTT Broker using the client credentials generated earlier.
@@ -182,7 +187,7 @@ _Monitoring your mqtt topic hierarchy within FlowFuse_
 
 Once your data is in the UNS, you have a centralized, real-time view of your operations. This unified structure enables easier access, sharing, and analysis of data across systems, helping you drive better decisions, improve efficiency, and gain valuable insights to optimize your processes.
 
-With real-time data access, you can create monitoring dashboards using the [FlowFuse Dashboard](/product/dashboard/) with a low-code approach, integrate with other cloud solutions, or leverage it further for enhanced analytics or automation.
+With real-time data access, you can create monitoring dashboards using the [FlowFuse Dashboard](/platform/dashboard/) with a low-code approach, integrate with other cloud solutions, or leverage it further for enhanced analytics or automation.
 
 ![FlowFuse Dashboard Monitoring Vibrations](./images/flowfuse-dashboard.png){data-zoomable}
 _FlowFuse Dashboard Monitoring Vibrations_
@@ -190,5 +195,3 @@ _FlowFuse Dashboard Monitoring Vibrations_
 ## Conclusion
 
 FlowFuse makes building a Unified Namespace (UNS) easy by centralizing data from systems, devices, and sensors. With seamless integration of Node-RED, MQTT, and its enterprise layer, FlowFuse ensures smooth data flow, real-time insights, and efficient management. It simplifies operations, enhances productivity, and improves system interoperability, making it easy to adapt your UNS to specific needs and support real-time analytics and automation.
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Building%20a%20Unified%20Namespace%20%28UNS%29%20with%20FlowFuse", cta_type: "demo", cta_text: "Curious about how FlowFuse can simplify building your Unified Namespace?" %}

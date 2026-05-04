@@ -12,8 +12,8 @@ date: git Last Modified
     <div class="px-10 pt-8">
         <!-- Breadcrumbs - Desktop -->
         <div class="w-full">
-            <div class="font-medium border-b pb-1 flex flex-col md:flex-row md:items-end">
-                <div class="md:flex-1 ">
+            <div class="font-medium border-b pb-1 flex flex-col gap-1">
+                <div class="md:flex-1">
                     {% if version %}
                     v{{ version }}
                     {% endif %}
@@ -21,7 +21,7 @@ date: git Last Modified
                     {{ page.url | handbookBreadcrumbs | safe }}
                     {% endif %}
                 </div>
-                <div class="w-full xl:max-w-[30%] md:max-w-[50%] sm:w-full md:ml-auto mb-1 max-md:mt-3">
+                <div class="w-full mb-1">
                     <div id="algolia-search" class="border rounded"></div>
                 </div>
             </div>
@@ -38,8 +38,7 @@ date: git Last Modified
     <div class="lg:border-l right-nav">
         <!-- Right side bar -->
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
-            <h3 class="font-medium border-b pb-1 mb-4">On this page</h3>
-            <ul id="toc" class="text-sm border-b mb-4"></ul>
+            {% include "layouts/toc.njk" %}
             {%- for maintainer in page | pageOwners | ghUsersToTeamMembers(team) -%}
                 {%- if loop.first -%}
                     <h3 class="font-medium border-b pb-1 mb-4">Page maintainer</h3>
@@ -58,6 +57,3 @@ date: git Last Modified
 </div>
 
 {% include "./common-js.njk" %}
-
-<!-- medium-zoom 1.1.0 | MIT License | https://github.com/francoischalifour/medium-zoom -->
-{% include "medium-zoom.min.njk" %}

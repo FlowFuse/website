@@ -3,6 +3,7 @@ title: Monitoring and Optimizing Node-RED Flows with Open Telemetry.
 subtitle: Integrating Open Telemetry with Node-RED for Efficient Distributed Tracing
 description: Learn to integrate Open Telemetry with Node-RED to track and optimize flow performance.
 date: 2024-08-15
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/opentelemetry-with-node-red.png
 keywords: nodered opentelemetry node opentelemetry, opentelemetry nodejs example, opentelemetry node, open telemetry nodejs
@@ -10,6 +11,10 @@ tags:
    - post
    - node-red
    - node-red tips
+cta:
+  type: sign-up
+  title: Manage and Monitor Node-RED at Scale
+  description: FlowFuse gives you centralized deployment, team collaboration, role-based access control, and snapshot recovery — everything you need to keep your Node-RED flows running reliably in production.
 ---
 
 Have you ever found yourself frustrated by unexpected delays in your Node-RED flows, wondering where the bottlenecks are hiding? Even small latency issues can have a big impact on your system's performance. That's where Open Telemetry comes in. With its powerful distributed tracing capabilities, you can finally take control and get a clear view of how your flows are performing in real time.
@@ -93,8 +98,6 @@ Throughout this guide, we’ve interacted with an exporter which is running loca
 While OpenTelemetry excels at tracing and optimizing Node-RED flows, FlowFuse offers a powerful solution for managing and monitoring Node-RED instances. It streamlines the creation, deployment, and management of instances, allowing you to deploy your applications with a single click and minimizing deployment complexity and errors.
 
 FlowFuse also boosts collaboration and security through features like team management, role-based access control, multi-factor authentication, and snapshot recovery. These capabilities ensure effective management, secure access, and easy recovery from changes, making FlowFuse an essential tool for optimizing and overseeing your Node-RED deployments.
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Monitoring%20and%20Optimizing%20Node-RED%20Flows%20with%20Open%20Telemetry", cta_type: "signup", cta_text: "" %}
 
 ## Conclusion
 

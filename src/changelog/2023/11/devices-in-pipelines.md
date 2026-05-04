@@ -10,4 +10,4 @@ Building on our [previous release](https://flowfuse.com/blog/2023/08/flowfuse-1-
 
 ![Devices in DevOps Pipelines](./images/devices-in-pipelines.png)
 
-Devices in DevOps Pipelines are available for every customer who has access to DevOps Pipelines. This includes all Cloud customers and those from the Team Tier onwards for our self-hosted version.
+Devices in DevOps Pipelines are available for every customer who has access to DevOps Pipelines. This includes all Cloud customers and those from the Pro Tier onwards for our self-hosted version.

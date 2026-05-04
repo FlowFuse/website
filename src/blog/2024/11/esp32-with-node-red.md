@@ -3,6 +3,7 @@ title: Interacting with ESP32 Using Node-RED and MQTT
 subtitle: Building IoT Flows with ESP32 and FlowFuse
 description:  Learn how to connect your ESP32 with Node-RED using MQTT in this easy-to-follow guide. Build a user-friendly dashboard with FlowFuse Dashboard to control your IoT devices remotely. Ideal for beginners and IoT hobbyists!
 date: 2024-11-14
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/esp32-with-node-red.png
 keywords: esp32 with node red, node red esp32, connect esp32 to node red, esp node red, esp32 mqtt node red, esp32 node red, esp32 node red mqtt, mqtt esp32 node red, mqtt node red esp32, node red mqtt esp32, node red with esp32
@@ -15,7 +16,7 @@ The ESP32 is an affordable and powerful microchip that combines Wi-Fi and Blueto
 
 <!--more-->
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/ecfJ-9MxyVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 ## Prerequisites
 
@@ -27,7 +28,7 @@ To follow this tutorial, you'll need the following:
     - Additionally, if you haven't set up the Arduino IDE for the ESP32 board, please follow this tutorial: [How to Set Up ESP32 with Arduino IDE](https://www.youtube.com/watch?v=CD8VJl27n94)
 - **FlowFuse account**: This will allow you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on your Node-RED projects with your team, manage and program your edge devices remotely, and provide an MQTT broker with an interface for securely managing clients.
 
-If you haven’t signed up for a FlowFuse account yet, [sign up](https://app.flowfuse.com/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20ESP32%20Using%20Node-RED%20and%20MQTT) now.
+If you haven’t signed up for a FlowFuse account yet, [sign up]({% include "sign-up-url.njk" %}?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20ESP32%20Using%20Node-RED%20and%20MQTT) now.
 
 ## Getting Started with ESP32 and Node-RED
 

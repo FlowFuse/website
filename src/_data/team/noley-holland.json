@@ -1,0 +1,16 @@
+{
+  "order": 9,
+  "name": "Noley Holland",
+  "title": "Full Stack Developer",
+  "github": "n-lark",
+  "linkedin": "noley-holland",
+  "country": "US",
+  "email": "noley@flowfuse.com",
+  "headshot": "noley.png",
+  "reports_to": "Jamie Strusz",
+  "facts": [
+    "Builder of thoughtful frontend systems, specializing in turning 'it renders' into 'it feels right'",
+    "Loves agate hunting, mountain biking, cycling and camping; operates on Pacific Northwest forest logic",
+    "Has two cats and a backyard possum named Petunia"
+  ]
+}

@@ -53,7 +53,7 @@ We've fixed the following bugs in this release.
 - [Occasional Timeout when deploying flows](https://github.com/FlowFuse/flowforge-nr-storage/issues/17)<br>
 - [Notification of member deletion contains internal ID](https://github.com/FlowFuse/flowfuse/issues/833)<br>
 - [Pressing Enter in the Team Delete modal triggers cancel](https://github.com/FlowFuse/flowfuse/issues/334)<br>
-- [Node-Red Isn't ready when Forge app says it is running (Docker)](https://github.com/FlowFuse/flowfuse/issues/751)<br>
+- [Node-RED Isn't ready when Forge app says it is running (Docker)](https://github.com/FlowFuse/flowfuse/issues/751)<br>
 
 ## Contributors
 We'd like the thank the following for their contributions to this release:

@@ -5,12 +5,16 @@ description: Discover essential FlowFuse security features that enhance protecti
 date: 2024-10-24
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/flowfuse-security-features.png
-keywords: node-red security, node red security, how to secure node-red solutions, secured solution for manufacturing, iot vulnerabilities, iot security concerns, iot and security
+keywords: node-red security, node red security, how to secure Node-RED solutions, secured solution for manufacturing, iot vulnerabilities, iot security concerns, iot and security
 tags:
  - post
  - flowfuse
  - flowfuse features
  - node-red security
+cta:
+  type: demo
+  title: See Every FlowFuse Security Feature in Action
+  description: From SSO and RBAC to audit logs, instance protection, and SBoM — FlowFuse gives you enterprise-grade security for every Node-RED deployment across your team.
 ---
 
 When it comes to securing Node-RED applications and its editor, ensuring that your flows and data are protected from unauthorized access can feel like a daunting task. Even after investing considerable time, achieving the right level of security often remains a complex challenge. For enterprises, this goes far beyond access control— security is a cornerstone of protecting sensitive data, maintaining operational continuity, and meeting strict regulatory requirements. A robust security framework not only prevents breaches but also safeguards intellectual property, preserves trust, and shields the organization from costly cyber threats.
@@ -25,7 +29,7 @@ Securing your Node-RED applications is essential to protect sensitive data, prop
 
 Here’s the best part- we don’t just offer default protections; we empower you to fine-tune your security defences. FlowFuse features a user-friendly interface that allows you to customize your security settings and design a strategy tailored to your needs. Rest easy knowing that we've laid a solid security foundation while giving you the flexibility to enhance your defences.
 
-If you're interested in learning more about how we safeguard your data privacy and security, we invite you to read our detailed [security statement](/product/security/). Additionally, we are proud to announce that [FlowFuse has achieved SOC 2 Type 1 compliance](/blog/2024/01/soc2/), demonstrating our commitment to maintaining the highest standards in security and data protection.
+If you're interested in learning more about how we safeguard your data privacy and security, we invite you to read our detailed [security statement](/platform/security/). Additionally, we are proud to announce that [FlowFuse has achieved SOC 2 Type 1 compliance](/blog/2024/01/soc2/), demonstrating our commitment to maintaining the highest standards in security and data protection.
 
 ### Single Sign-On (SSO) Integration
 
@@ -147,7 +151,3 @@ _FlowFuse: Software Bills of Materials Inteface_
 For more information, refer to the [Article on FlowFuse Software Bills of Materials](/blog/2024/10/exploring-flowfuse-sbom-feature/).
 
 In conclusion, FlowFuse offers a comprehensive suite of security features designed to empower you with the tools to protect your Node-RED applications effectively. Understanding and utilizing these security features will help you maintain a secure and efficient environment for your Node-RED applications. With FlowFuse, you can confidently safeguard your deployments, ensuring robust protection against unauthorized access while enhancing collaboration within your team.
-
-## Get Started with FlowFuse Today!
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%20Security%20Features%20You%20Didn%E2%80%99t%20Know%20You%20Needed", cta_type: "signup", cta_text: "Ready to secure and scale your Node-RED applications?" %}

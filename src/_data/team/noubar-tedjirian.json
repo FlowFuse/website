@@ -1,0 +1,17 @@
+{
+    "order": 22,
+    "name": "Noubar Tedjirian",
+    "title": "Chief of Staff",
+    "github": "UnicornGunnerz",
+    "linkedin": "noubar-tedjirian",
+    "blog": "",
+    "country": "CAN",
+    "email": "noubar@flowfuse.com",
+    "headshot": "noubar.png",
+    "reports_to": "ZJ van de Weg",
+    "bio": "Noubar is the Chief of Staff to the CEO, focusing on cross-functional strategic initiatives, helping improve internal workflows, collaborating closely on communications, investor relations, and business opportunities",
+    "facts": [
+        "Strategic architect of startup operations, specializing in untangling complex processes and scaling high-growth chaos into streamlined systems",
+        "Traveler, tech enthusiast, and multi-sport obsessive who can seamlessly pivot from European football to Canadian hockey"
+    ]
+}

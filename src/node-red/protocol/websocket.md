@@ -11,11 +11,13 @@ image:
 
 # {{meta.title}}
 
-Let's look at how to use WebSocket in Node-RED for communication. We will explain the concepts through practical examples, covering how to connect and communicate as a WebSocket client and how to build a WebSocket server using Node-RED to communicate with clients.
+This guide covers WebSocket communication in Node-RED. You'll learn how to connect as a client and set up your own WebSocket server.
 
 ## What is Websocket?
 
-WebSocket technology facilitates real-time, two-way communication between a client (such as a web browser or IoT device) and a server. Unlike traditional HTTP requests, which are one-way and require establishing a new connection for each message, WebSockets maintain a persistent connection. This allows both the client and server to send messages to each other at any time, making it particularly suited for applications that require real-time data exchange.
+WebSocket enables real-time, bidirectional communication between clients (web browsers, IoT devices, etc.) and servers. Think of it as keeping a phone line open instead of hanging up and calling back for every message.
+
+Traditional HTTP works like sending letters back and forth - each request needs its own connection. WebSocket keeps a single connection alive, letting both sides send messages whenever they need to. This makes it ideal for applications that need instant data exchange.
 
 ## How Does WebSocket Work?
 

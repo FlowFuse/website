@@ -3,6 +3,7 @@ title: Node-RED Tips - Importing, Exporting, and Grouping Flows
 subtitle: Save yourself time when working on Node-RED with these three tips.
 description: "Learn how to save time on Node-RED with three essential techniques: exporting and importing flows, accessing example flows from custom nodes, and organizing nodes using groups for improved clarity and management."
 date: 2023-03-27 12:00:00
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /images/blog/nr-quicktips.jpg
 tags:
@@ -58,7 +59,7 @@ It's important to note that while custom node examples can be a useful starting 
 
 The group feature in Node-RED allows users to visually group nodes together within the workspace. This feature offers several benefits:
 
-1. Improved organisation: The group feature allows you to group related nodes visually, which can make your flow easier to understand and navigate. This can be particularly helpful for larger, more complex flows.
+1. Improved organization: The group feature allows you to group related nodes visually, which can make your flow easier to understand and navigate. This can be particularly helpful for larger, more complex flows.
 
 2. Simplified editing: When you group nodes together, you can edit or move them as a single unit, rather than individually. This can save time and reduce the chance of errors.
 
@@ -86,4 +87,4 @@ You can read our previous Node-RED tips here.
 
 With FlowFuse [Team Library](/docs/user/shared-library/#shared-team-library), sharing flows across different Node-RED instances is effortless. This Library feature allows you to organize and share flows among team members without the need for manual copying, making collaboration more efficient and effective.
 
-**[Sign up](https://app.flowfuse.com/account/create/) for a free trial today and discover how FlowFuse can enhance your Node***
+**[Sign up]({% include "sign-up-url.njk" %}) for a free trial today and discover how FlowFuse can enhance your Node***

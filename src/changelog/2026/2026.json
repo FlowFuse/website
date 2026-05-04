@@ -1,0 +1,8 @@
+{
+    "tags": [
+        "changelog"
+    ],
+    "layout": "layouts/post-changelog.njk",
+    "nav": "changelog",
+    "searchTitle": "Changelog"
+}

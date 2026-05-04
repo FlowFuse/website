@@ -9,7 +9,7 @@ meta:
 image: /node-red/protocol/images/amqp-with-node-red.png
 ---
 
- {{meta.title}}
+# {{meta.title}}
 
 Imagine your Node-RED flow working well, handling data from different sources, until suddenly, messages start disappearing or arriving out of order. [MQTT](/node-red/protocol/mqtt/) works fine for basic messaging, but it can struggle in more complex situations where you need delivery guarantees and advanced routing.
 

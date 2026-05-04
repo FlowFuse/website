@@ -11,6 +11,10 @@ tags:
    - node-red
    - node-red security
    - sso
+cta:
+  type: pricing
+  title: Enterprise-Grade Security for Your Node-RED Platform
+  description: SSO with SAML and LDAP, RBAC, audit logging, and SOC 2 compliance — all included in FlowFuse Enterprise for teams that need centralized authentication and production-grade governance.
 ---
 
 SSO plays a crucial role in modern enterprise environments by simplifying user authentication across multiple applications. At FlowFuse, we recognize the significance of SSO and offer robust support for integrating it with your self-hosted platform. In this comprehensive guide, we will focus on configuring SSO SAML, specifically using Google as the Identity Provider (IdP). We also support SSO with LDAP. For more information, refer to [Setting up LDAP SSO for your Self-Hosted FlowFuse](/docs/admin/sso/ldap/).
@@ -143,5 +147,3 @@ To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse ac
 ## Conclusion
 
 In this guide, we've covered setting up SSO SAML for your self-hosted FlowFuse platform, exploring how SSO and SAML enhance user experience, improve security, and simplify management. You've learned to create an SSO configuration in FlowFuse, set up a SAML app in Google Workspace, and enable seamless authentication.
-
-{% include "cta.njk", cta_url: "/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=How%20to%20Set%20Up%20SSO%20SAML%20for%20Node-RED", cta_type: "contact", cta_text: "Got questions or need help setting up SSO SAML for FlowFuse (Node-RED)?" %}

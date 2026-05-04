@@ -4,6 +4,25 @@ title: FlowFuse for IT/OT Integration
 subtitle: FlowFuse allows teams to automate their manufacturing process through customized, reliable applications.
 meta:
     keywords: "FlowFuse, Manufacturing, Automation, DevOps, Integration, OT, IT, Data, Visualization, Event Triggers, Fleet Management, Monitoring, Collaborative Development, Environment, Application Deployment, Professional Support"
+    faq:
+        - question: "Can FlowFuse connect our PLCs to our ERP system?"
+          answer: >
+            Yes, FlowFuse can be extended with over 5,000 open-source plug-ins to support virtually all industrial protocols. Connect your Siemens, Allen-Bradley, Omron, or other PLCs directly to SAP, Oracle, or any ERP system.
+        - question: "We have mixed equipment brands on our shop floor. Can FlowFuse handle this?"
+          answer: >
+            Absolutely. FlowFuse acts as a universal translator between different equipment brands and protocols, allowing seamless data exchange between Siemens, Rockwell, Schneider, and other vendors.
+        - question: "How do we ensure production data security when connecting shop floor to business systems?"
+          answer: >
+            FlowFuse provides secure tunneling for device connections, encrypted data transmission using TLS/SSL, role-based access control (RBAC), and comprehensive audit logging to meet manufacturing compliance requirements.
+        - question: "Can our plant operators create data flows without IT support?"
+          answer: >
+            Yes, FlowFuse uses a visual drag-and-drop interface. Operators can build integrations between machines, SCADA, and business systems by connecting pre-built nodes - no coding required.
+        - question: "What if our legacy equipment doesn't support modern protocols?"
+          answer: >
+            FlowFuse can connect through serial converters, protocol gateways, or even manual data entry interfaces, ensuring no equipment is left behind in your digital transformation.
+        - question: "Do we need to shut down production to implement FlowFuse?"
+          answer: >
+            No, FlowFuse can be deployed alongside existing systems with read-only connections initially. Full integration can be phased in during scheduled maintenance windows.
 image: /images/solutions/og-solutions-manufacturing.jpg
 heroImg: ./images/pictograms/factory_blue.png
 description:
@@ -132,6 +151,21 @@ description:
         </div>
     </div>
 </div>
+
+<!-- FAQ Section -->
+<div class="w-full">
+  <div class="container m-auto text-center">
+    <div class="content max-w-screen-lg m-auto px-6 md:px-0">
+      <div class="pt-24 md:pt-16 text-left">
+        <h2 class="max-md:text-center -mb-12">
+          Frequently Asked <span class="text-indigo-600">Questions</span>
+        </h2>
+        {% include "faq.njk" %}
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="w-full">
     <div class="px-6 pt-3 md:pt-10 pb-20 md:pb-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
         <!-- Resources -->
@@ -215,17 +249,17 @@ description:
                             </h4>
                         </div>
                         <p class="mb-0 text-left">
-                            The easiest way to start building Node-RED applications. No installation required! Simply sign up and gain immediate access to the editor.
+                            The easiest way to start building industrial applications. No installation required! Simply sign up and gain immediate access to the editor.
                         </p>
                     </div>
-                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="https://app.flowfuse.com/account/create" onclick="capture('cta-join', {'position': 'manufacturing'})">SIGN UP</a>
+                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'manufacturing'})">SIGN UP</a>
                 </div>
                 <div class="deployment-card white-bg">
                     <div>
                         <div class="title">
                             <h4 class="text-indigo-600">Self managed</br>
                             </h4>
-                            <div class="text-base font-bold text-gray-400 pb-4">(on premise)</div> 
+                            <div class="text-base font-bold text-gray-600 pb-4">(on premise)</div>
                         </div>
                         <p class="mb-0 text-left">
                             Run FlowFuse where you prefer; that's possible too! In your cloud of preference, or even on-site.
@@ -240,10 +274,10 @@ description:
                             </h4>
                         </div>
                         <p class="mb-0 text-left">
-                            Run Node-RED where the data is generated. Manage thousands of edge devices through the FlowFuse Device Agent.
+                            Run FlowFuse where the data is generated. Manage thousands of edge devices through the FlowFuse Device Agent.
                         </p>
                     </div>
-                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/product/device-agent/">MORE INFO</a>
+                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="/platform/device-agent/">MORE INFO</a>
                 </div>
             </div>
         </div>

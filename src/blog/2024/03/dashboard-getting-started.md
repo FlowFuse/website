@@ -3,6 +3,7 @@ title: Getting Started with Node-RED Dashboard 2.0
 subtitle: New to Node-RED? New to Dashboard 2.0? This guide will help you get started.
 description: New to Node-RED? New to Dashboard 2.0? This guide will help you get started.
 date: 2024-03-27
+lastUpdated: 2025-07-23
 authors: ["joe-pavitt"]
 image: /blog/2024/03/images/getting-started-with-dashboard-2.png
 tags:

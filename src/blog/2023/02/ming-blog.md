@@ -3,6 +3,7 @@ title: MING Stack for IoT
 subtitle: A technology stack for IoT
 description: MING technology stack includes key componets in all IoT solutions M - Mosquitto/MQTT, I-InfluxDB, N-Node-RED, G-Granfana
 date: 2023-02-23
+lastUpdated: 2025-07-23
 authors: ["ian-skerrett"]
 image: /blog/2023/02/images/tile-ming.jpg
 tags:
@@ -40,6 +41,6 @@ Is MING relevant for IoT use cases? In my experience, people building IoT soluti
 
 If you’re concerned about managing multiple components in your IoT stack, FlowFuse has you covered. By bundling three of the four core elements of the MING stack—MQTT, Node-RED, and Grafana. FlowFuse simplifies your setup and management. This streamlined approach means fewer moving parts and less complexity, allowing you to focus on what matters most: your data and your applications.
 
-With the FlowFuse [MIND stack](/blog/2024/05/node-red-mind-stack-with-flowfuse/), you get a unified platform that integrates MQTT for efficient communication, Node-RED for seamless integration and data transformation, and [Dashboard 2.0](/product/dashboard/) for powerful visualizations—all from one place. This integration reduces configuration and maintenance overhead while ensuring consistent performance and security across your deployments. Explore the MIND stack now.
+With the FlowFuse [MIND stack](/blog/2024/05/node-red-mind-stack-with-flowfuse/), you get a unified platform that integrates MQTT for efficient communication, Node-RED for seamless integration and data transformation, and [Dashboard 2.0](/platform/dashboard/) for powerful visualizations—all from one place. This integration reduces configuration and maintenance overhead while ensuring consistent performance and security across your deployments. Explore the MIND stack now.
 
-**Want an easier, more secure, and scalable IoT stack? Start your [free trial](https://app.flowfuse.com/account/create/) of FlowFuse today.**
+**Want an easier, more secure, and scalable IoT stack? Start your [free trial]({% include "sign-up-url.njk" %}) of FlowFuse today.**

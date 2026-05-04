@@ -122,7 +122,7 @@ Just to highlight a few, particularly valuable, updates and fixes:
 
  - UI Button Group - Now supports `msg.enabled` to enable/disable the widget.
  - UI Form - Now supports `msg.enabled` to enable/disable the widget.
- - UI Button - Colour customisation now available, without needing to write overriding CSS.
+ - UI Button - Color customisation now available, without needing to write overriding CSS.
  - UI Switch - Fix missing `msg.topic` when setting the topic to a static string.
 
  ## What's Next?

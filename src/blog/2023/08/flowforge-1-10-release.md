@@ -20,7 +20,7 @@ FlowFuse 1.10 now allows users to import environment variable templates. This ma
 
 
 ## DevOps Pipelines now can include devices [#2243](https://github.com/FlowFuse/flowfuse/issues/2243)
-DevOps pipelines have proven very popular for creating dev/test/production environments for Node-Red flow development. Now, devices can be associated with a pipeline so when a snapshot is created it can be pushed to all the devices associated with the pipeline.  This will improve the overall quality and reliability of Node-RED development for remote devices.
+DevOps pipelines have proven very popular for creating dev/test/production environments for Node-RED flow development. Now, devices can be associated with a pipeline so when a snapshot is created it can be pushed to all the devices associated with the pipeline.  This will improve the overall quality and reliability of Node-RED development for remote devices.
 
 ## Devices can now access the team library [#2294](https://github.com/FlowFuse/flowfuse/issues/2294)
 
@@ -61,7 +61,7 @@ Together, we can make FlowFuse better with each release!
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({{ site.appURL }}/account/create) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

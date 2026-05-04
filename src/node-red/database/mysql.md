@@ -3,7 +3,7 @@ eleventyNavigation:
   key: MySQL
   parent: Database
 meta:
-  title: Using MySQL with Node-RED
+  title: Using MySQL with Node-RED (2026 Updated)
   description: Learn how to seamlessly integrate MySQL with Node-RED for efficient data management and application development.
   keywords: nodered mysql, node red mysql, node-red-node-mysql, mysql nodered, mysql node red
 image: /node-red/database/images/timescaledb-with-node-red.png
@@ -196,7 +196,3 @@ Below is the complete flow covering all the operations discussed throughout this
 After deploying the flow, you can test each operation—such as creating, deleting, updating, and executing other queries—by clicking the inject button. For debugging purposes, add debug nodes to the flow. 
 
 Additionally, if you want to explore the integration of other databases with Node-RED, you can refer to our [database section](/node-red/database/) in the Node-RED learning resources, where we cover databases such as PostgreSQL, MongoDB, InfluxDB, DynamoDB, and more.
-
-## Conclusion
-
-This guide has equipped you with essential skills for integrating MySQL with Node-RED. You've learned how to set up and manage MySQL nodes, perform crucial database operations, and leverage MySQL's capabilities within Node-RED for efficient data handling and automation.

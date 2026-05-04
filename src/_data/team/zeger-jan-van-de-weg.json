@@ -2,16 +2,17 @@
     "order": 1,
     "name": "ZJ van de Weg",
     "title": "CEO",
-    "twitter": "ZJvandeWeg",
     "github": "ZJvandeWeg",
     "linkedin": "zegerjan",
     "blog": "https://www.zjvandeweg.nl",
     "country": "NL",
     "email": "zj@flowfuse.com",
     "headshot": "zj.png",
+    "reports_to": null,
+    "bio": "ZJ is the CEO of FlowFuse. As an engineer-turned-CEO with a career built on open-source software, his mission is to empower engineers to build better, more efficient software solutions.",
     "facts": [
         "Early GitLab employee, still knows too much about Git for his own good",
         "BSc in Computer Science, developing software since his teenage years",
-	"Only half an Ironman, but certainly knows how to swim, bike, and run"
+        "Only half an Ironman, but certainly knows how to swim, bike, and run"
     ]
 }

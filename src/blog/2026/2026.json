@@ -1,0 +1,8 @@
+{
+    "tags": [
+        "posts"
+    ],
+    "layout": "layouts/post.njk",
+    "nav": "blog",
+    "searchTitle": "Blog"
+}

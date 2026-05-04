@@ -1,16 +1,16 @@
 ---
-navTitle: HR Policies
+navTitle: PeopleOps Policies
 ---
 
 # PeopleOps policies
 
-All employees at FlowFuse will find HR policies in this section of the handbook. Please note that this section of the handbook will be continuously updated to reflect the evolving needs of our organization. As FlowFuse is actively in the process of developing and incorporating additional policies, we encourage you to check back regularly for the latest updates. Your familiarity with these policies ensures that you stay informed and aligned with our company's values and practices.
+All employees at FlowFuse will find PeopleOps policies in this section of the handbook. Please note that this section of the handbook will be continuously updated to reflect the evolving needs of our organization. As FlowFuse is actively in the process of developing and incorporating additional policies, we encourage you to check back regularly for the latest updates. Your familiarity with these policies ensures that you stay informed and aligned with our company's values and practices.
 
 ## Grievance Procedure
 
-We're all about making FlowFuse an great place to work for everyone, however if you ever run into any concerns while you're here, these guidelines are here to help you out in raising a grievance. 
+We're all about making FlowFuse an great place to work for everyone. However, if you ever run into any concerns while you're here, these guidelines are here to help you out in raising a grievance. 
 
-This procedure applies to all employees and full-time contractors regardless of length of service. It does not apply to ad-hoc freelancers.
+This procedure applies to all employees and contractors regardless of length of service. It does not apply to ad-hoc freelancers.
 
 ### Step 1: Informal Resolution
 
@@ -99,30 +99,27 @@ All cases of underperformance must be documented by the manager through email to
 the CEO and CTO with the timespan of a potential plan created by the employee's
 manager.
 
-### Performance Improvement Plan (PIP)
+### Coaching Plan for Performance Support
 
-After the plan formulated by the manager has not returned the employee to performance
-that is considered on par with the expectations of their role the CEO and manager
-will create a PIP for the employee.
+When additional structure or support is needed to help a team member meet the
+expectations of their role, the manager may create a [Coaching Plan](/handbook/peopleops/coaching-plans/) in partnership
+with the employee.
 
-**A PIP is a genuine opportunity from FlowFuse to the employee to get where they need to be.** While other companies
-use PIPs solely to provide the legal documentation for termination, at FlowFuse a
-PIP is intended to set the bar for both the manager and employee and have transparency
-around expected performance.
+**A Coaching Plan is a genuine investment by FlowFuse in supporting a team member’s success.**
+FlowFuse believes in supporting team members through structured development and clear expectations. 
+A Coaching Plan sets shared expectations for both the manager and team member, while providing the support, feedback, and mentorship needed to succeed.
 
-The PIP will outline the specific areas of underperformance, the specific steps
-the employee must take to improve, and the timeline for improvement. The employee
-will be required to sign the PIP and agree to its terms.
+The Coaching Plan will outline the areas for improvement, the actions to be taken, the support and resources provided, and the expected review timeline.
 
-If an employee has been on a PIP before and for the same reasons enters this stage
-of the underperformance policy again the CEO and manager can opt for not providing
-a PIP. This ensures that a PIP is a genuine change.
+If an employee has previously completed a Coaching Plan for the same concerns and re-enters
+this stage, the company may determine that a different approach is appropriate.
+This helps ensure Coaching Plans remain a meaningful tool for growth.
 
 ### Termination
 
-If an employee's performance does not improve, or if they violate the terms of
-their PIP, they may be terminated. Termination will be based on a documented
-pattern of underperformance or unacceptable behavior.
+If performance does not improve despite sustained coaching and support, or if serious
+policy violations occur, termination may be considered.
+Termination will be based on a documented pattern of underperformance or unacceptable behavior.
 
 ## CEO underperformance
 
@@ -136,3 +133,7 @@ to discuss a reports underperformance. It's advised not to include the CEO in su
 
 If the board agrees with the CEO underperforming a seperate process will be followed
 tailored to the sitation and the bylaws of FlowFuse.
+
+## Role changes
+
+If a team member experiences a role change because they are promoted, demoted, or taking on new responsibilities, their new role should be announced to the whole company via the "announcements" Slack channel so that all team members are aware. The "why" behind the change does not need to be explained unless it's celebratory.

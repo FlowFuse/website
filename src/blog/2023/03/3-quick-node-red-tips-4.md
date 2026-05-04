@@ -3,6 +3,7 @@ title: Node-RED Tips - Smooth, Catch, and Math
 subtitle: Save yourself time when working on Node-RED with these three tips.
 description: Save yourself time when working on Node-RED with these three tips.
 date: 2023-03-13 12:00:00
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /images/blog/nr-quicktips.jpg
 tags:

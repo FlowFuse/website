@@ -1,5 +1,5 @@
 ---
-title: Bringing AI to Node-RED with FlowFuse Assistant
+title: Bringing AI to Node-RED with FlowFuse Expert
 subtitle: Join us for this live webinar on infusing Node-RED with AI within FlowFuse.
 image: /images/webinars/bringing-ai-to-nodered.jpg
 date: 2024-07-31
@@ -20,9 +20,9 @@ There's no denying the place AI has in the software development world. From help
 
 In this webinar, Nick O'Leary explores both of these topics and how they apply to Node-RED.
 
-On the development side, he introduces our new FlowFuse Assistant, bringing the power of AI into the heart of the Node-RED editor.
+On the development side, he introduces our new FlowFuse Expert, bringing the power of AI into the heart of the Node-RED editor.
 
-The FlowFuse Assistant will let you tell it what you want your Function nodes to do, and it will suggest the code needed to do it - accelerating your application development.
+The FlowFuse Expert will let you tell it what you want your Function nodes to do, and it will suggest the code needed to do it - accelerating your application development.
 
 He also looks at how Node-RED applications can be enhanced with the power of AI - using Machine Learning models to bring real-time object detection to a camera feed.
 

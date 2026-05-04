@@ -1,21 +1,31 @@
-The `unknown` node is not one users can add add to their flows, and there's no
-way to add them from the node palette. This node will only show up when when you
-import a flow with nodes that have not yet been installed.
+Represents nodes that are not installed in your Node-RED instance.
 
-To understand which nodes need installing when importing a flow, it is advised
-to create a list of installed node packages _before_ exporting your flows. Such a list 
-can be obtained by looking in the palette manager.
+## Where and why do we see the Unknown node?
 
-!["List of nodes installed, including unused nodes"](./images/list-nodes-unused.png)
+The Unknown node appears automatically when you import flows containing nodes that aren't installed in your current Node-RED instance. You cannot add Unknown nodes manually - they only appear as placeholders for missing node types. This helps you identify which node packages need to be installed before your imported flows can function properly.
 
-Or use the `System Info` dialog to get a list:
+## How the node appears
 
-!["List of nodes installed through the System Info dialog"](./images/system-info-installed-nodes.gif)
+When Node-RED encounters an unrecognized node type during import, it creates an Unknown node placeholder that preserves the original configuration and connections. Once you install the missing package and reload Node-RED, Unknown nodes automatically convert to their proper types with all settings intact.
 
-Presently it is not possible to install older versions of a package into Node-RED so your flows will need to run on the latest version of each package, you may want to consider updating before you migrate.
+> Latest versions of Node-RED include package dependency information when exporting flows. When you import these flows, Node-RED automatically detects missing packages and prompts you to install them with a single click, eliminating the need to manually identify and install each required package.
 
-## Migrating your flows to FlowFuse
+## Identifying required packages
 
-When migrating your flows from any Node-RED to a FlowFuse managed Node-RED instance
-it is advised to use [the `nr-tools plugin`](/docs/migration/introduction) created by the FlowFuse team. Migrating this way will not only the copy your flows, it will include any credentials you have set and install
-the required packages for you.
+Before importing flows, identify which node packages are installed in your source instance to prepare the target instance with necessary dependencies.
+
+### Using the Palette Manager
+
+Access the Palette Manager through the Node-RED menu to see all installed packages and their versions.
+
+![List of nodes installed, including unused nodes](./images/list-nodes-unused.png)
+
+### Using System Info
+
+The System Info dialog provides a comprehensive list of installed node packages that you can view and copy for documentation.
+
+![List of nodes installed through the System Info dialog](./images/system-info-installed-nodes.gif)
+
+## Migrating flows to FlowFuse
+
+When migrating flows to FlowFuse, use the [nr-tools plugin](/docs/migration/introduction) for automatic package installation, credential migration, and complete flow transfer. This eliminates manual package identification and installation, making migration faster and less error-prone.

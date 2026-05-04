@@ -9,6 +9,8 @@ meta:
 image: /node-red/peripheral/images/barcode-scanner.png
 ---
 
+# {{meta.title}}
+
 Barcode scanners, functioning as Human Interface Devices (HID) similar to keyboards, offer versatile programming options.  Variations of barcode scanners can be seen used from anything from checkout counters, logistics, and to manufacturing erp systems. In our case, we kept it basic and we used one to trigger a Node-RED flow, keeping the process straightforward and efficient.  Don't let that limit your imagination though, with QR codes, you can store just about anything including recipes in a JSON structure.
 
 ## Configuring the scanner and scanning barcodes

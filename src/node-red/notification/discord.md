@@ -11,7 +11,11 @@ image: /node-red/notification/images/sending-and-receiving-discord-message-with-
 
 # {{meta.title}}
 
-Sending notifications is crucial for IoT applications, especially for critical alerts, and many different services are used, but Discord is a standout among them. In recent months, we've written many articles on integrating other services with Node-RED, including popular notification platforms like [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/). In this guide, we will delve into sending and receiving messages from Node-RED to users and channels on Discord, along with troubleshooting tips for resolving common errors that may occur.
+This guide explains how to integrate Discord with Node-RED to send and receive messages. You'll learn how to configure a Discord bot, send messages to users and channels, and handle incoming messages.
+
+Discord is commonly used for notifications in IoT applications. This document covers the setup process and includes troubleshooting steps for common integration issues.
+
+For information on integrating other notification services, see the guides on [Email](/node-red/notification/email/) and [Telegram](/node-red/notification/telegram/).
 
 <!--more-->
 

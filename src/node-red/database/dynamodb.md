@@ -3,7 +3,7 @@ eleventyNavigation:
   key: DynamoDB
   parent: Database
 meta:
-  title: Using DynamoDB with Node-RED
+  title: Using DynamoDB with Node-RED (2026 Updated)
   description: Get started with AWS' NoSQL database DynamoDB with Node-RED
   keywords: node-red, flowfuse, integration, dynamodb, aws, nosql
 image: /node-red/core-nodes/images/node-red-dynamodb.png
@@ -118,10 +118,6 @@ While scanning is available, it should be used sparingly due to its high demand 
 {% endrenderFlow %}
 
 ![DynamoDB Scan Node-RED](./images/node-red-dynamodb-scan-flowfuse.png){data-zoomable}
-
-## Conclusion
-
-Leveraging DynamoDB in your production environment can streamline how you manage recipes, control quality, and monitor production processes. Its fast data handling capabilities ensure that you can react quickly to changes in production conditions and maintain high standards of operation.
 
 ## Full Flow
 

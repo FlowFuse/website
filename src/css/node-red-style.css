@@ -1,0 +1,33 @@
+@tailwind components;
+@tailwind utilities;
+
+body.node-red-con {
+    background-color: rgba(33, 33, 35, 1);
+    background-image: url(https://nrcon.nodered.org/images/layered-waves.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.node-red-con h1,
+body.node-red-con h2, 
+body.node-red-con h3,
+body.node-red-con h4,
+body.node-red-con h5,
+body.node-red-con h6,
+body.node-red-con p {
+    color: #ffffff;
+}
+
+body.node-red-con .container.main {
+    z-index: 1;
+    @apply bg-black/30;
+}
+
+/* Cookie banner */
+body.node-red-con #cc-main {
+    --cc-btn-primary-bg: theme(colors.white);
+    --cc-btn-primary-hover-bg: theme(colors.gray.50);
+    --cc-btn-secondary-bg: theme(colors.gray.400);
+    --cc-btn-secondary-hover-bg: theme(colors.gray.400);
+}

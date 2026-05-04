@@ -14,3 +14,5 @@
  - [ ] I have considered the performance impact of these changes
  - [ ] Suitable unit/system level tests have been added and they pass
  - [ ] Documentation has been updated
+ - [ ] For blog PRs, an Art Request has been created ([instructions](https://flowfuse.com/handbook/design/art-requests/#creating-an-art-request))
+

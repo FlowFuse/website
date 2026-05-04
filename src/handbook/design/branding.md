@@ -133,7 +133,7 @@ The following fonts are used across the FlowFuse platform, website, and branded 
 - **Heebo:** When using this font, we aim to avoid weights heavier than *semi-bold* to maintain a clean and balanced design.
 - **Baloo Da 2:** Exclusively used in the FlowFuse logo.
 
-## Colour Palette
+## Color Palette
 
 <div class="space-y-6">
     <div class="grid gap-x-2 grid-cols-2">
@@ -316,34 +316,94 @@ The following fonts are used across the FlowFuse platform, website, and branded 
     </div>
 </div>
 
+### Text Color & Contrast
+
+[WCAG 2.1 AA](https://www.w3.org/TR/WCAG21/#contrast-minimum) requires a contrast ratio of at least **4.5:1** between normal-size body text and its background (large text — 18pt or larger, or 14pt bold — requires 3:1; see [Success Criterion 1.4.3](https://www.w3.org/TR/WCAG21/#contrast-minimum)). Several values in the grey scale above look similar but sit on opposite sides of that threshold, so choose by background:
+
+| Background | Minimum grey for normal text | Notes |
+|------------|------------------------------|-------|
+| White (`#FFFFFF`) | **Grey 500** (`#6B7280`, 4.83:1) | Minimum for normal text. Site body copy uses Grey 700 (`#374151`, 7.56:1); Grey 500 is used for bolded prose text and for secondary metadata like dates, bylines, and captions |
+| Grey 50 / Grey 100 (`bg-gray-50`, `bg-gray-100`) | **Grey 600** (`#4B5563`) | Grey 500 produces only ~4.3:1 on Grey 100, below AA |
+| Indigo 50 (`bg-indigo-50`) | **Grey 600** | Tinted background reduces effective contrast against mid-greys |
+| Dark backgrounds (Grey 600+) | Grey 300 or lighter, or white | Light values required to reach 4.5:1 |
+
+**Grey 400 (`#9CA3AF`) fails AA for normal text on any light background (≈2.85:1 on white).** Reserve it for:
+
+- Decorative, non-text elements (icons, dividers, tree-branch characters), where the 3:1 non-text contrast rule applies
+- Intentional placeholder or disabled states where the reduced contrast is the intended signal — for example, unconfirmed talks on an event schedule, inactive form fields, or greyed-out menu items. Document the intent inline so future edits preserve it.
+
+When in doubt, run the page through Lighthouse and check the `color-contrast` audit before shipping.
+
+**Lighthouse** (built into Chrome DevTools): open the page → DevTools (`⌘⌥I` / `F12`) → **Lighthouse** tab → tick **Accessibility** → **Analyze page load**. Scroll to "Contrast" in the report — any failing element is listed with its selector and the actual ratio.
+
+For a one-off spot-check without running a full audit, the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) takes two hex values and returns the ratio.
+
 ## Iconography
 
 All app and site iconography uses [Heroicons](https://heroicons.com/), by the makers of Tailwind CSS. Within our flowforge app, we have two icon sizes available which can be assigned with `ff-icon` and `ff-icon-sm`.
 
-## Pictograms
+## Branded Templates
 
-These larger images are used for stylistic purposes. We use pictograms to communicate in a glance, offer interactivity, or simplify complex ideas.
+### Email Signature
 
-If you wish to create your own Pictograms, you can use this Adobe Illustrator file as a template:
-[pictogram.ai](https://drive.google.com/drive/u/1/folders/1guBnBUrIiRXuK6vsik_NIXIhtE1cZRRa)
+Using a consistent email signature helps people outside FlowFuse understand who we are and what we do. Including your job title gives context to your role, and the link to our website makes it easy for recipients to learn more about us. It also reinforces our brand and makes every interaction look professional and cohesive.
 
-<img width="500" class="p-2" alt="An example showing how Pictograms are used in the 'Company Values' section of the FlowFuse website" src="../images/pictograms_example.png">
+##### When to use your signature
+Always include it in external emails (clients, partners, vendors, community members) and when starting or joining a new email thread. For ongoing replies within the same thread, it's optional. Many email clients have settings to automatically include your signature only in new emails, which can help streamline this.
 
-Sizings:
+#### Gmail (Browser)
 
-- **128 x 128px**: Used when showing multiple pictograms in the same section of the website or application.
-- **250 x 250 px:** Used as part of page headers, inline with the page title and page description.
+If you're using Gmail in your browser:
 
-## Presentations
+1. Go to [flowfuse.com/email-signature/](/email-signature/)
+2. Copy the signature displayed on the page
+3. Paste it into your Gmail signature settings following [these instructions](https://support.google.com/mail/answer/8395?hl=en&co=GENIE.Platform%3DDesktop)
+4. Update the placeholder text with your personal information
+ 
+
+#### Apple Mail
+
+If you're using the Apple Mail app, you can follow [this video tutorial](https://www.youtube.com/watch?v=Gb4dbik1YPI) which covers most of the steps below. The main difference is that we're providing you with the [signature code](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk) directly, so you can skip the HTML generation part.
+
+Here are the detailed steps:
+
+1. Create a new signature following [these instructions](https://support.apple.com/en-gb/guide/mail/mail11943/mac). Name it and leave it empty. If any content is added automatically, delete it. Close the Mail app.
+
+2. In Finder, go to the menu bar and select **Go > Go to Folder**, then enter: `~/Library/Mail`
+
+3. Navigate to the folder that starts with "V" followed by a number (this indicates your Mail version and will vary by user), then go to **MailData > Signatures**.
+
+4. Find the file with the `*.mailsignature` extension and open it in a text editor.
+
+5. Replace everything below the line `Mime-Version: [version]` with the code from [email-signature.njk](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk).
+
+6. Save the file, then press **Command + I** to open the Info window and check **Locked**.
+
+7. Reopen the Mail app, return to the Signatures menu, and edit the placeholder data with your personal information.
+
+Your signature is now ready to use.
+
+> **Note:** Please preserve the typography, colors, and formatting in the signature template to maintain brand consistency.
+### Presentations
 
 There's a **branded theme** for Google Slides presentations available in the [FlowFuse template gallery](https://docs.google.com/presentation/u/0/?tgif=d&ftv=1). To access it, you need to be logged in to your FlowFuse account. Look for a theme called "FlowFuse Template".
 
 When you click on it, two things will happen:   
 1. A new Google Slides file will be created in your Drive with the theme applied.
-2. The copy of the file will open for editing.
+2. The file will open for editing.
 
 You'll find a fully designed presentation as an example of how to use different layouts. To explore all the predefined options available, check the [Layout menu](https://support.google.com/docs/answer/1705254?hl=en&ref_topic=19434&sjid=8039782987794605660-EU#zippy=%2Cchange-layout:~:text=your%20theme%20colors-,Change%20layout,-A%20layout%20is).
 
 Feel free to edit the content, delete or add slides as needed. Any changes you make will only affect your copy in your Drive.
 
-Please note that the theme has predefined typography, margins, and colors. We kindly request that any changes made maintain these design elements as part of the overall composition and design of your presentation.
+### Letterhead
+
+A **branded Google Docs letterhead** is also available in the [FlowFuse template gallery](https://docs.google.com/document/u/0/?ftv=1&folder=16xMKKQxonSD4IkdLJjVuACTrQInZ_-Zr&tgif=d), titled "FlowFuse Letterhead – Template." Make sure you're logged into your FlowFuse account to see it.
+
+Clicking the template will create an editable copy in your Drive — just like with the presentation template. You can customize this copy freely without affecting the original.
+
+> **Note:** Both templates include predefined typography, colors, and margins. Please preserve these elements to maintain consistency across all branded materials.
+
+### Video Call Backgrounds
+
+As part of our design assets, we have [branded images](https://drive.google.com/open?id=1B0-m5L_X2dvLqbQXvW9RqpMvSDC_FM_0&usp=drive_fs) in our company drive that can be used as backgrounds for video calls. Both regular and mirrored versions are available to suit the platform and view mode you have set up.

@@ -11,7 +11,8 @@
 #algolia-search .aa-DetachedSearchButton:focus,
 #algolia-search .aa-DetachedSearchButton:focus-within,
 #algolia-search .aa-DetachedSearchButton:active {
-    outline: none;
+    outline: 2px solid theme(colors.indigo.600);
+    outline-offset: 2px;
     box-shadow: none;
 }
 
@@ -21,7 +22,7 @@
 }
 #algolia-search .aa-Form:focus-visible,
 #algolia-search .aa-Form:focus-within {
-    box-shadow: none;
+    box-shadow: 0 0 0 2px theme(colors.indigo.600);
     outline: none;
 }
 #algolia-search .aa-Form .aa-SubmitIcon,
@@ -65,6 +66,9 @@
 
 .aa-Panel .aa-ItemContent .aa-ItemContentBody {
     grid-column: span 4;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -79,4 +83,18 @@
 
 .aa-Panel .aa-ItemContent .aa-ItemContentBody .aa-ItemContentDescription {
     color: #777;
+}
+
+.aa-Panel .aa-SourceFooter #load-more {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #777;
+    padding: 10px 0 5px;
+    font-size: 12px;
+}
+
+.aa-Panel .aa-SourceFooter #load-more:hover {
+    cursor: pointer;
+    color: #2563eb;
 }

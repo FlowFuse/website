@@ -3,12 +3,17 @@ title: "Getting Started: Integrating Siemens S7 PLCs with Node-RED"
 subtitle: "A Step-by-Step Beginner's Guide to Connect, Control, and Monitor Siemens S7 PLCs Using Node-RED"
 description: "Learn how to integrate Siemens S7 PLCs with Node-RED for seamless industrial automation. This guide covers setup, configuration, and workflow creation to control and monitor PLCs effortlessly, including writing and reading data from your PLCs."
 date: 2025-01-17
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde","stephen-mclaughlin"]
 image: /blog/2025/01/images/s7-with-node-red.png
 keywords: s7,siemens, siemens s7 1200 with node-red, siemens s7 1500 with node-red, writing data to plc using node-red, reading data from plc using node-red, s7 with node-red
 tags: 
   - node-red
   - flowfuse
+cta:
+  type: sign-up
+  title: Connect Your Siemens PLCs to the Rest of Your Stack
+  description: FlowFuse gives you remote device management, DevOps pipelines, and a built-in dashboard platform — so you can control, monitor, and scale your S7 PLC integrations without on-site visits.
 ---
 
 Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
@@ -40,9 +45,9 @@ _Providing complete access to the PLC_
 ![Untick 'Optimized Block Access'.](./images/optimized-block-access.png){data-zoomable}
 _Untick 'Optimized Block Access.'_
 
-3. Install Node-RED on the device that will communicate with the S7 PLC. You cannot install Node-RED directly on the S7 PLC, as PLCs are typically controllers, not computers. For example, you can use a device like the Revolutionary Pi to connect and transfer data across systems. Use the [FlowFuse Device Agent](/product/device-agent/) to install Node-RED on your device. 
+3. Install Node-RED on the device that will communicate with the S7 PLC. You cannot install Node-RED directly on the S7 PLC, as PLCs are typically controllers, not computers. For example, you can use a device like the Revolutionary Pi to connect and transfer data across systems. Use the [FlowFuse Device Agent](/platform/device-agent/) to install Node-RED on your device. 
 
-- Why FlowFuse Device Agent? It allows you to manage Node-RED remotely, enabling control, monitoring, and flow creation without the need for on-site visits. FlowFuse also offers a suite of enterprise-grade features such as collaboration, device management, and DevOps pipelines, which are essential in industrial environments. These features help streamline operations and ensure scalability in complex automation systems. For setup, refer to the [installation guide](/docs/device-agent/install/).
+- Why FlowFuse Device Agent? It allows you to manage Node-RED remotely, enabling control, monitoring, and flow creation without the need for on-site visits. FlowFuse also offers a suite of enterprise-grade features such as collaboration, device management, and DevOps pipelines, which are essential in industrial environments. These features help streamline operations and ensure scalability in complex automation systems. [Sign up for free]({% include "sign-up-url.njk" %}) to get started.
 
 4. Verify that the device running Node-RED is in the same network as the PLC and can successfully ping the PLC. Also, a firewall should not block the S7 port (typically port 102).
 
@@ -158,11 +163,11 @@ Now that you’ve configured the connection, it’s time to use Node-RED to writ
 ![Configuring S7-out Node to write data to plc](./images/configuring-s7-out-node.png){data-zoomable}
 _Configuring S7-out Node to write data to plc_
 
-5. The node is now ready to write data to the PLC. You can use standard Node-RED nodes like Inject, Change, or Function to create a workflow that sends the data. Ensure the data type matches the configuration set in the PLC program. For example, in my ladder logic, I need to modify the status of individual open contacts, each with its own address, such as DB1.DBX0.0, DB1.DBX0.1, and DB1.DBX0.2, to control the tower lights. Setting these contacts to TRUE will turn on the red, yellow, and green lights, respectively. You can send the data using the nodes I’ve mentioned, or you can build a custom dashboard with [FlowFuse Dashboard](/product/dashboard/) for easier interaction.
+5. The node is now ready to write data to the PLC. You can use standard Node-RED nodes like Inject, Change, or Function to create a workflow that sends the data. Ensure the data type matches the configuration set in the PLC program. For example, in my ladder logic, I need to modify the status of individual open contacts, each with its own address, such as DB1.DBX0.0, DB1.DBX0.1, and DB1.DBX0.2, to control the tower lights. Setting these contacts to TRUE will turn on the red, yellow, and green lights, respectively. You can send the data using the nodes I’ve mentioned, or you can build a custom dashboard with [FlowFuse Dashboard](/platform/dashboard/) for easier interaction.
 
 6. Once your flow is set up and the s7-out node for each variable is configured, click Deploy in the top-right corner to activate the flow.
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/AilWMNPzP1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="AilWMNPzP1Q" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 In the video above, the dashboard interface is built to control the stack light. At the end of this article, I will provide the complete flow for you to download.
 
@@ -203,7 +208,7 @@ Now that you have the desired format for your output data, you may want to build
 
 The video below shows the updated dashboard interface used to monitor the stack light LED status:
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/Nlyk_BATKGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="Nlyk_BATKGE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 Here is the flow you can import into your FlowFuse remote instance and deploy. Ensure that you have installed `node-red-contrib-s7` and `node-red-contrib-buffer-parser`. This flow includes S7 nodes for interacting with the S7 PLC and Project nodes for communicating with the FlowFuse hosted instance, where you will build the dashboard.
 
@@ -229,5 +234,3 @@ Make sure the IP addresses of your device and PLC are in the same subnet. If the
 ## Conclusion 
 
 Integrating Siemens S7 PLCs with Node-RED opens up powerful automation possibilities with minimal complexity. By following the steps outlined in this guide, you can easily connect your PLC to Node-RED, control devices, and visualize real-time data on dashboards. Whether you're writing data to control outputs or reading sensor values, Node-RED offers a flexible, user-friendly platform for industrial automation.
-
-{% include "cta.njk", cta_url: "/book-demo/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20book%20demo&utm_term=high_intent&utm_content=Getting%20Started%3A%20Integrating%20Siemens%20S7%20PLCs%20with%20Node-RED", cta_type: "demo", cta_text: "" %}

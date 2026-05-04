@@ -3,11 +3,16 @@ title: "Using Snapshots for Version Control in Node-RED with FlowFuse"
 subtitle: "Effortlessly manage and recover your Node-RED flows with snapshots in FlowFuse."
 description: Learn how to use snapshots for version control in Node-RED with FlowFuse. Explore step-by-step guidance on creating, managing, and restoring flow backups to enhance your Node-RED development and save yourself from accidental changes.
 date: 2024-09-26
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde", "stephen-mclaughlin"]
 image: /blog/2024/09/images/snapshot-with-node-red-ff.png
 keywords: node red version control, node-red flows, node red backup, node red flow backup
 tags:
    - flowfuse
+cta:
+  type: demo
+  title: See How FlowFuse Protects Your Node-RED Flows
+  description: FlowFuse gives your team snapshots, auto-backups, version comparison, and one-click rollback — so a bad deploy never becomes a production crisis.
 ---
 
 Version control is essential, especially when multiple people are working on the same Node-RED project. Without it, changes can easily overlap, or worse — accidental updates could break critical flows. FlowFuse solves this challenge with snapshots, allowing you to create backups of your flows, restore previous versions, and safeguard your project from unexpected issues. 
@@ -36,7 +41,7 @@ Creating snapshots in FlowFuse is straightforward and can be done in just a few 
 
 ### Creating Snapshots for Cloud and Device Instances
 
-Before we begin, it’s essential to understand the differences between a cloud instance and a device instance. For more information, refer to the [Documentation](/docs/user/concepts/#what-is-the-difference-between-an-instance-and-a-device%3F).
+Before we begin, it’s essential to understand the differences between a cloud instance and a device instance. For more information, refer to the [Documentation](/docs/user/concepts/#instance).
 
 Additionally, let’s discuss the two types of device assignments available in FlowFuse:
 
@@ -242,5 +247,3 @@ Once done you will be able to see the green mark in that snapshot showing on how
 ### Conclusion
 
 Using snapshots in FlowFuse is an effective way to manage your Node-RED projects with confidence. By regularly creating snapshots, you can ensure that you always have a backup of your work, allowing you to quickly recover from mistakes or accidental changes. 
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Using%20Snapshots%20for%20Version%20Control%20in%20Node-RED%20with%20FlowFuse", cta_type: "signup", cta_text: "Never lose your work again—keep every flow protected, collaborate effortlessly, and scale your Node-RED projects with confidence." %}

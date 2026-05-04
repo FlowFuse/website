@@ -3,6 +3,7 @@ title: The benefits and drawbacks of using Node-RED function nodes
 subtitle: In this blog post, I will discuss some of the benefits and drawbacks of using Function nodes in your next Node-RED project.
 description: Explore the benefits and drawbacks of Function nodes in Node-RED projects, balancing customizability with simplicity for optimal flow design.
 date: 2023-03-20
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /blog/2023/03/images/function-nodes.png
 tags:
@@ -49,7 +50,7 @@ FlowFuse offers a robust platform for building, scaling, and securing your Node-
 
 We are constantly adding new features to make it easy to use in the enterprise where you can rapidly improve your industrial processes. The **"FlowFuse Assistant."** for example is an AI-powered tool that simplifies the creation of Function nodes. You only need to provide a prompt, and the assistant generates the Function nodes for you.
 
-For more details on using the FlowFuse Assistant, visit [the Assistants Documentation](/docs/user/assistant/).
+For more details on using the FlowFuse Assistant, visit [the Assistants Documentation](/docs/user/expert/).
 
 ## Conclusion:
 

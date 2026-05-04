@@ -3,6 +3,7 @@ title: Node-RED Tips - Deploying, Debugging, and Delaying
 subtitle: Save yourself time when working on Node-RED with these three tips.
 description: Save yourself time when working on Node-RED with these three tips.
 date: 2023-02-23 18:00:00
+lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: /images/blog/nr-quicktips.jpg
 tags:
@@ -42,7 +43,7 @@ We hope you found these tips useful, if you'd like to suggest some of your own t
 
 ## Enhance Efficiency with FlowFuse
 
-FlowFuse is a cloud-based platform designed to boost collaboration, security, and scalability for your Node-RED applications. It features [numerous tools and functionalities](/product/features/) that streamline the development-to-deployment process, including one-click deployment, the [FlowFuse Assistant](/docs/user/assistant/), and other capabilities that simplify managing your Node-RED environment.
+FlowFuse is a cloud-based platform designed to boost collaboration, security, and scalability for your Node-RED applications. It features [numerous tools and functionalities](/platform/features/) that streamline the development-to-deployment process, including one-click deployment, the [FlowFuse Assistant](/docs/user/expert/), and other capabilities that simplify managing your Node-RED environment.
 
 For more tips, tricks, and professional development techniques with Node-RED, check out our recommended eBook:
 

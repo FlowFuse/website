@@ -1,0 +1,18 @@
+{
+    "order": 5,
+    "name": "Jamie Strusz",
+    "title": "Engineering Manager",
+    "github": "allthedoll",
+    "linkedin": "geocuration",
+    "blog": "",
+    "country": "US",
+    "email": "jamie@flowfuse.com",
+    "headshot": "jamie.png",
+    "reports_to": "ZJ van de Weg",
+    "bio": "Jamie leads engineering at FlowFuse, focusing on developer experience, clarity, and building systems and teams that scale.",
+    "facts": [
+        "Builder of high-trust engineering orgs, specializing in turning chaotic systems into scalable ones (and creating themed Slack rituals no one asked for but everyone ends up using)",
+        "Loves art history, lifting heavy, and birding; accompanied by Sir Yorick, her certified good boy and distinguished service dog",
+        "Chaotic good, and allegedly just three raccoons in a sweater"
+    ]
+}

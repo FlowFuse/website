@@ -1,7 +1,7 @@
 ---
 title: "MQTT Service Now Available on FlowFuse"
-subtitle: We are thrilled to announce a significant milestone for FlowFuse, we now offer our very own MQTT service, built-in and ready to use with your node-RED applications.
-description: We are thrilled to announce a significant milestone for FlowFuse, we now offer our very own MQTT service, built-in and ready to use with your node-RED applications.
+subtitle: We are thrilled to announce a significant milestone for FlowFuse, we now offer our very own MQTT service, built-in and ready to use with your Node-RED applications.
+description: We are thrilled to announce a significant milestone for FlowFuse, we now offer our very own MQTT service, built-in and ready to use with your Node-RED applications.
 date: 2024-10-31
 authors: ["joe-pavitt"]
 image: /blog/2024/10/images/ff-mqtt.png
@@ -12,11 +12,11 @@ tags:
    - node-red
 ---
 
-In our [recent product update](/blog/2024/10/flowfuse-release-2-10) we have added our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has been a highly requested feature, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Team and Enterprise teams.
+In our [recent product update](/blog/2024/10/flowfuse-release-2-10) we have added our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has been a highly requested feature, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Pro and Enterprise teams.
 
 <!--more-->
 
-The MQTT Service is available now on [FlowFuse Cloud](https://flowfuse.com/product/cloud/). FlowFuse permits you to setup your own secure clients to begin publishing and subscribing to your own topics.
+The MQTT Service is available now on [FlowFuse Cloud](https://flowfuse.com/platform/cloud/). FlowFuse permits you to setup your own secure clients to begin publishing and subscribing to your own topics.
 
 You can now use FlowFuse to manage your own MQTT Clients alongside your Node-RED instances, making it easier to build full-stack, event-driven applications within FlowFuse.
 
@@ -31,9 +31,9 @@ FlowFuse MQTT Service simplifies access to real-time data, an important element 
 
 ## Pricing
 
-If you're on the Team or Enterprise tiers of FlowFuse Cloud, then you don't have to pay any extra to get started with the MQTT Service. 
+If you're on the Pro or Enterprise tiers of FlowFuse Cloud, then you don't have to pay any extra to get started with the MQTT Service. 
 
-- **Team Tier:** Includes **5 clients for free** as part of your existing plan
+- **Pro Tier:** Includes **5 clients for free** as part of your existing plan
 - **Enterprise Tier:** Includes **20 clients for free** as part of your existing plan
 
 In the near future we'll be publishing extra packages of clients that you can add to your team, beyond the amounts included with the base tiers.

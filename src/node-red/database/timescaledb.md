@@ -3,7 +3,7 @@ eleventyNavigation:
   key: TimescaleDB
   parent: Database
 meta:
-  title: Using TimescaleDB with Node-RED
+  title: Using TimescaleDB with Node-RED (2026 Updated)
   description: Learn how to integrate TimescaleDB with Node-RED for storing and managing time-series data efficiently.
   keywords: node-red timescaledb, nodered postgresql, nodered time-series database
 image: /node-red/database/images/timescaledb-with-node-red.png

@@ -5,18 +5,18 @@ sitemapPriority: 0.90
 faqTitle: "Frequently Asked <span class='text-indigo-600'>Questions</span>"
 faqSubtitle: "If you have any questions not addressed here, don't hesitate to contact us through our <a href='/contact-us'>Contact Us</a> page"
 meta:
-    description: Discover the pricing options for FlowFuse, featuring Starter, Team, and Enterprise plans. Benefit from volume discounts on Team and Enterprise plans. Get started with a 14-day trial period for the Team plan.
+    description: Discover the pricing options for FlowFuse, featuring Starter, Pro, and Enterprise plans. Benefit from volume discounts on Pro and Enterprise plans. Get started with a 14-day trial period for the Pro plan.
     keywords: FlowFuse pricing, Cost, Plans, Features, Cloud, Self-hosted
     faq:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
           answer: >
-            Yes, Starter and Team customers on an annual subscription receive a 20% discount off of the monthly subscription price. Please reach out to request the discount. Please <a href="/contact-us/">reach out</a> to request the discount.
-        - question: "Why is self-hosted the same price as cloud?"
-          answer: >
-            Self-hosted environments require more support and configuration than FlowFuse Cloud, which offset any resources saved.
+            Yes, both Starter and Pro customers receive a free month when paying for a year of FlowFuse in advance. Simply choose yearly billing upon signup, or select it from the Billing area in the app.
         - question: "Are flat-fee or site-wide licenses available?"
           answer: >
             It is not possible at this time to purchase an unlimited-use license, but contact us to discuss pricing for your unique use case.
+        - question: "Do you offer discounts for large-scale deployments?"
+          answer: >
+            Yes, we provide customized volume discounts for use cases requiring hundreds or thousands of Node-RED instances. Please <a href='/contact-us'>Contact Us</a> to discuss your specific requirements.​
 hubspot:
     cloud:
         formId: d43ab79b-d075-4b63-ba5e-bf971ca0b86e
@@ -24,9 +24,6 @@ hubspot:
     selfHosted:
         formId: 41e858e1-6756-45be-9082-3980237fa229
         cta: "cta-request-trial-license"
-    dedicated:
-        formId: 5a9939ee-899a-46b7-ab16-6376e310381d
-        cta: "cta-contact-us-for-pricing"
     reference: "pricing"
 ---
 
@@ -35,9 +32,9 @@ hubspot:
         <div class="text-center w-full pt-12 pb-6">
             <h1>FlowFuse <span class="text-indigo-600">Pricing</span></h1>
         </div>
-        <div class="px-6 pricing-tiles flex flex-col lg:max-w-screen-2xl">
-            <!-- Toggle-->
-            <div class="text-center mt-5 md:mt-0 md:mb-8">
+        <div class="h-5 md:h-0"></div>
+        <div id="pricing-toggle" class="sticky top-20 sm:top-[104px] md:top-14 z-20 py-3 transition-colors duration-200">
+            <div class="text-center">
                 <div class="mainToggle">
                     <button class="btnToggle">
                         <span class="selector"></span>
@@ -48,174 +45,178 @@ hubspot:
                             <div class="divSelfHosted">
                                 <span class="selfHostedText">SELF HOSTED</span>
                             </div>
-                            <div class="divDedicated">
-                                <span class="dedicatedText">DEDICATED</span>
-                            </div>
                         </div>
                     </button>
                 </div>
             </div>
+        </div>
+        <div class="px-6 pricing-tiles flex flex-col lg:max-w-screen-2xl md:mt-8">
             <!-- Plans -->
+            {% macro starter(cloud=true) %}
+            <div class="pricing-tile-background pb-6">
+                <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
+                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                        <h4 style="display:inline-block;">Starter</h4>
+                    </div>
+                    {% if cloud %}
+                    <p class="mt-7"><span class="inline font-normal">Cloud-hosted Node-RED</span> with FlowFuse development enhancements. The fastest way to <span class="inline font-normal">get started building </span>with Node-RED.</p>
+                    {% else %}
+                    <p class="mt-7">Download and self-host the <span class="inline font-normal">open-source edition</span> of FlowFuse. Ideal for evaluation and small deployments.</p>
+                    {% endif %}
+                </div>
+                <div class="flex flex-col content-start features mt-6 md:mt-3 w-full">
+                    {% if cloud %}
+                    <ul class="ff-checklist font-light leading-7 mt-2">
+                        <li>FlowFuse Expert for AI-assisted Node&#8209;RED development</li>
+                        <li>2 team members</li>
+                        <li>Blueprints</li>
+                        <li>Option to upgrade up to 3 hosted/3 remote instances</li>
+                    </ul>
+                    {% else %}
+                    <ul class="ff-checklist font-light leading-7 mt-2">
+                        <li>Open-source FlowFuse platform</li>
+                        <li>Self-hosted deployment</li>
+                        <li>Core instance & device management</li>
+                        <li>5 team members</li>
+                        <li>Community edition</li>
+                    </ul>
+                    {% endif %}
+                </div>
+                <note class="font-semibold mt-4">{% if cloud %}Includes 1 hosted instance. Additional instances are $20/month.{% else %}Includes up to 5 hosted instances or remote instances.{% endif %}
+                </note>
+                <div data-nosnippet class="flex">
+                    {% if cloud %}
+                    <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                        <div class="text-left flex flex-row md:self-end">
+                            <div class="mr-1">
+                                <note class="note text-sm">Starting at</note>
+                                <h2 class="self-end pb-1">
+                                    $20
+                                </h2>
+                            </div>
+                            <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
+                                /month
+                                <br>
+                                <span class="text-xs text-gray-500">after free trial of Pro</span>
+                            </note>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                        <h2 class="self-end pb-1">Free</h2>
+                    </div>
+                    {% endif %}
+                </div>
+                <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full"
+                    href='{% if cloud %}{% include "sign-up-url.njk" %}{% else %}https://flowfuse.com/docs/install/introduction/{% endif %}'
+                    {% if cloud %}onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})"{% else %}onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})"{% endif %}>
+                    {% if cloud %}TRY FOR FREE{% else %}INSTALL NOW{% endif %}
+                </a>
+            </div>
+            {% endmacro %}
             <!-- Cloud -->
             <div class="contentCloud m-auto transition duration-1000 md:min-h-[502px]">
-                <div class="pricing-tiles flex flex-col md:grid md:max-lg:grid-cols-2 lg:max-w-screen-2xl mt-4 md:mt-0">
-                    <!-- Free -->
-                    <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Free</h4>
-                                    </div>
-                                    <p class="mt-7">For edge device management. Free to you.</p>
-                                </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-semibold">2 remote instances, and includes:
-                                    </note>
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>1 Team member</li>
-                                        <li>Device auto snapshots</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
-                                    <div class="text-left flex flex-row md:self-end">
-                                        <div class="mr-1">
-                                            <h2 class="self-end pb-1">
-                                                Free
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.appURL }}/account/create"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-free'})">GET STARTED</a>
-                        </div>
-                    </div>
+                <div class="pricing-tiles flex flex-col md:grid md:max-lg lg:max-w-screen-xl mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Starter</h4>
-                                    </div>
-                                    <p class="mt-7"><span class="inline font-normal">For smaller-scale applications. </span>The fastest, easiest way to host <span class="inline-block">Node-RED</span> instances.</p>
-                                </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-semibold">2 hosted instances, 2 remote instances, and includes:
-                                    </note>
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>2 Team members</li>
-                                        <li>Device management</li>
-                                        <li>Device Auto Snapshots</li>
-                                        <li>Blueprints</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
-                                    <div class="text-left flex flex-row md:self-end">
-                                        <div class="mr-1">
-                                            <h2 class="self-end pb-1">
-                                                $20
-                                            </h2>
-                                        </div>
-                                        <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
-                                            /month
-                                            <br>
-                                            <span class="text-xs text-gray-500">after free trial of Team</span>
-                                        </note>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.appURL }}/account/create"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-starter'})">TRY FOR FREE</a>
-                        </div>
+                        {{ starter() }}
                     </div>
-                    <!-- Team -->
+                    <!-- Pro -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Team</h4>
-                                    </div>
-                                    <p class="mt-7">Empower your <span class="inline font-normal">Node-RED developer
-                                            teams</span> with the collaborative features of FlowFuse Cloud.</p>
+                        {% macro team(cloud=true) %}
+                        <div class="pricing-tile-background pb-6">
+                            <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
+                                <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                    <h4 style="display:inline-block;">Pro</h4>
                                 </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-semibold">Starts at 5 hosted instances or remote instances, and includes:
-                                    </note>
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>20 Team members</li>
-                                        <li>Team collaboration</li>
-                                        <li>MQTT Broker (8 clients to start)</li>
-                                        <li>Standard Support + SLA: 99.5&#37;</li>
-                                    </ul>
-                                </div>
+                                <p class="mt-7"><span class="inline font-normal">Build bespoke applications collaboratively</span>, manage your Node-RED applications with improved security and control.</p>
                             </div>
+                            <div class="flex flex-col content-start features mt-6 md:mt-3 w-full">
+                                <ul class="ff-checklist font-light leading-7 mt-2">
+                                    <li>Everything in Starter</li>
+                                    <li>20 Team members</li>
+                                    <li>Team collaboration</li>
+                                    {% if cloud %}
+                                    <li>MQTT Broker (8 clients to start)</li>
+                                    <li>Standard Support + SLA: 99.5&#37;</li>
+                                    {% else %}
+                                    <li>Installation support</li>
+                                    <li>Dedicated Success Management</li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <note class="font-semibold mt-4">Includes {% if cloud %}5{% else %}5{% endif %} hosted instances or remote instances. Additional instances start at $35/month.
+                            </note>
                             <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
+                                <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
                                     <div class="text-left flex flex-row md:self-end">
                                         <div class="mr-1">
                                             <note class="note text-sm">Starting at</note>
                                             <h2 class="self-end pb-1">
-                                                $175
+                                                $425
                                             </h2>
                                         </div>
                                         <note class="pl-2 text-sm leading-4 text-left self-end pb-2">
                                             /month
+                                            {% if not cloud %}
+                                            <br>
+                                            <span class="text-xs text-gray-500">Billed annually</span>
+                                            {% endif %}
                                         </note>
                                     </div>
                                 </div>
                             </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                                href="{{ site.appURL }}/account/create"
-                                onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})">TRY FOR FREE</a>
+                            <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full"
+                                href="{% if cloud %}{% include "sign-up-url.njk" %}{% else %}/contact-us{% endif %}"
+                                {% if cloud %}onclick="capture('cta-join', {'position': 'primary'}, {'plan': 'cloud-team'})"{% else %}onclick="capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-team'})"{% endif %}>
+                                {% if cloud %}TRY FOR FREE{% else %}CONTACT US{% endif %}
+                            </a>
                         </div>
+                        {% endmacro %}
+                        {{ team() }}
                     </div>
                     <!-- Enterprise -->
                     {% macro enterprise(show_sla=true, cloud=true) %}
-                    <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Enterprise</h4>
-                                    </div>
-                                    <p class="mt-7">For <span class="inline font-normal">business critical applications</span> that require high availability and enterprise support.</p>
+                    <div class="pricing-tile pricing-tile--enterprise md:h-full">
+                        <div class="pricing-tile-background pb-6">
+                            <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
+                                <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
+                                    <h4 style="display:inline-block;">Enterprise</h4>
                                 </div>
-                                <div class="flex flex-col content-start features md:mt-3 mt-6 w-full">
-                                    <note class="font-semibold">Starts at 20 hosted instances or remote instances, and includes:</note>
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>Unlimited team members</li>
-                                        <li>Single Sign-On</li>
-                                        {% if cloud %}
-                                        <li>MQTT Broker (20 clients to start)</li>
-                                        {% endif %}
-                                        <li>Enterprise support{% if show_sla %} + SLA: 99.9&#37;{% endif %}</li>
-                                        <li>Device group management</li>
-                                    </ul>
-                                </div>
+                                <p class="mt-7">Operate <span class="inline font-normal">organization-wide</span> industrial applications with the highest security and integrity.</p>
                             </div>
+                            <div class="flex flex-col content-start features mt-6 md:mt-3 w-full">
+                                <ul class="ff-checklist font-light leading-7 mt-2">
+                                    <li>Everything in Pro</li>
+                                    {% if cloud %}
+                                    <li>Includes Insights Mode</li>
+                                    {% else %}
+                                    <li>FlowFuse Expert for AI-assisted Node&#8209;RED development and MCP insights mode</li>
+                                    {% endif %}
+                                    <li>Unlimited team members</li>
+                                    <li>Single Sign-On</li>
+                                    {% if cloud %}
+                                    <li>MQTT Broker (20 clients to start)</li>
+                                    {% endif %}
+                                    <li>Enterprise support{% if show_sla %} + SLA: 99.9&#37;{% endif %}</li>
+                                    {% if not cloud %}
+                                    <li>Dedicated Success Management</li>
+                                    {% endif %}
+                                    <li>Device group management</li>
+                                </ul>
+                            </div>
+                            <note class="font-semibold mt-4">Includes 20 hosted instances or remote instances.</note>
                             <div data-nosnippet class="flex">
-                                <!-- Price -->
-                                <div class="mt-9 md:mt-12 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row md:self-end">
-                                    <h2 class="self-end pb-1">{% if cloud %}Let's Talk{% else %}Free Trial{% endif %}</h2>
+                                <div class="mt-9 md:mt-6 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row items-end md:self-end">
+                                    <h2 class="self-end pb-1">Let's Talk</h2>
+                                    {% if not cloud %}<span class="pl-3 pb-2 text-sm text-gray-500">Trial period possible</span>{% endif %}
                                 </div>
                             </div>
                             <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
                             {% if cloud %}
                                href="#contact-us" onclick="scrollToAnchor(event, 'contact-us'); capture('cta-contact-us', {'position': 'primary'}, {'plan': 'cloud-enterprise'})">Contact Us</a>
                             {% else %}
-                                href="#request-trial-license" onclick="scrollToAnchor(event, 'request-trial-license'); capture('cta-trial-license', {'position': 'primary'}, {'plan': 'sh-enterprise'});">Get 30-day Trial License</a>
+                               href="#request-trial-license" onclick="scrollToAnchor(event, 'request-trial-license'); capture('cta-contact-us', {'position': 'primary'}, {'plan': 'sh-enterprise'})">Contact Us</a>
                             {% endif %}
                         </div>
                     </div>
@@ -223,88 +224,21 @@ hubspot:
                     {{ enterprise() }}
                 </div>
             </div>
-            <!-- Self-hosted -->
+            <!-- Self-Hosted -->
             <div class="contentSelfHosted hide m-auto transition duration-1000 md:min-h-[502px]">
-                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-sm mt-4 md:mt-0">
+                <div class="pricing-tiles flex flex-col md:grid md:max-lg lg:max-w-screen-xl mt-4 md:mt-0">
                     <!-- Starter -->
                     <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid md:grid-rows-[auto_1fr_minmax(36px,_36px)]">
-                            <div>
-                                <div class="flex flex-col items-center text-left md:flex-row md:mb-5 md:px-0 md:block md:min-h-[145px]">
-                                    <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                        <h4 style="display:inline-block;">Starter</h4>
-                                    </div>
-                                    <p class="mt-7"><span class="inline">Download the <span class="inline font-normal">open source edition</span> of FlowFuse platform to get started.</p>
-                                </div>
-                                <div class="flex flex-col content-start features max-md:mt-6 w-full">
-                                    <note class="font-semibold">Includes:
-                                    </note>
-                                    <ul class="ff-checklist font-light leading-7 mt-2">
-                                        <li>5 hosted instances or remote instances</li>
-                                        <li>5 team members</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-9 md:text-left items-left w-full mb-11 md:mb-5 flex flex-row">
-                                <h2 class="self-end pb-1">Free</h2>
-                            </div>
-                            <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full"
-                            href="/docs/install/introduction/" onclick="capture('cta-install', {'position': 'primary'}, {'plan': 'sh-starter'})">INSTALL NOW</a>
-                        </div>
+                        {{ starter(false) }}
+                    </div>
+                    <!-- Team -->
+                    <div class="pricing-tile md:h-full">
+                        {{ team(false) }}
                     </div>
                     <!-- Enterprise -->
                     <div class="pricing-tile md:h-full">
                         {{ enterprise(false, false) }}
                     </div>
-                </div>
-            </div>
-            <!-- Dedicated -->
-            <div class="contentDedicated hide m-auto transition duration-1000 md:min-h-[500px] w-full mb-12">
-                <div class="pricing-tiles flex flex-col md:grid md:max-w-screen-lg mt-4 md:mt-0">
-                    <!-- Card -->
-                    <div class="pricing-tile md:h-full">
-                        <div class="pricing-tile-background pb-6 md:grid">
-                            <section class="flex md:flex-row gap-2">
-                                <div class="md:w-2/3">
-                                    <div class="flex flex-col items-center text-left md:flex-row md:mb-6 md:px-0 md:block md:min-h-[133px]">
-                                        <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                            <h4 style="display:inline-block;">FlowFuse Dedicated</h4>
-                                        </div>
-                                        <p class="mt-7">Tailored for businesses prioritizing data security, compliance, and regional flexibility, ideal for demanding efficiency and productivity in strict regulatory environments.</p>
-                                    </div>
-                                    <div class="flex flex-col content-start features md:mt-3 mt-10 mb-10 w-full">
-                                        <note class="font-bold" style="display: inline-block;">Top features:
-                                        </note>
-                                        <ul class="ff-checklist font-light leading-7 mt-2 flex flex-col md:flex-row md:gap-2">
-                                            <div class="w-full md:w-3/5">
-                                                <li>Fully managed by FlowFuse</li>
-                                                <li>Data residency in region of your choice</li>
-                                                <li>Full data and source code isolation</li>
-                                            </div>
-                                            <div class="w-full md:w-2/5">
-                                                <li>Enterprise grade security</li>
-                                                <li>Regular upgrade cadence</li>
-                                            </div>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="justify-center items-center m-auto md:w-1/3 max-w-[347px] w-full hidden md:flex lg:mt-3">
-                                    {% image "./images/dedicated/flowfuse-dedicated.png", "FlowFuse and Node-RED logos in a double shield", [347] %}
-                                </div>
-                            </section>
-                            <div class="md:container text-center w-full md:max-w-4xl flex flex-col gap-x-8 gap-y-4 items-center justify-center md:items-start md:justify-start md:flex-row">
-                                <a onclick="scrollToAnchor(event, 'contact-us-dedicated'); capture('cta-contact-us-for-pricing', {'position': 'primary'}, {'plan': 'dedicated'});" class="ff-btn ff-btn--primary flex flex-col max-md:w-full">
-                                  <span class="text-base uppercase no-underline md:px-4">
-                                    CONTACT US FOR PRICING
-                                  </span>
-                                </a>
-                                <a href="/dedicated/" onclick="capture('cta-learn-more', {'position': 'primary'}, {'plan': 'dedicated'})" class="max-md:w-full py-2 flex flex-row text-center justify-center md:text-left items-center md:justify-end md:self-end md:justify-self-end gap-1">
-                                    Learn more about dedicated
-                                    {% include "components/icons/arrow-long-right.svg" %}
-                                </a>
-                            </div>
-                        </div>
-                    </div>    
                 </div>
             </div>
         </div>
@@ -323,28 +257,28 @@ hubspot:
                 <!-- Feature List -->
                 <div>{{ featuresHtml | safe }}
                     {% set hosting = "cloud" %}
-                    <div class="contentCloud transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                    <div class="contentCloud transition duration-1000 max-w-full">
                         {% include "feature_lists/features-table-base.njk" %}
                     </div>
                     {% set hosting = "self-hosted" %}
-                    <div class="contentSelfHosted hide transition duration-1000 max-w-full overflow-x-scroll sm:overflow-x-visible h-[60vh] sm:h-full">
+                    <div class="contentSelfHosted hide transition duration-1000 max-w-full">
                         {% include "feature_lists/features-table-base.njk" %}
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="product w-full px-6 md:px-0 sm:mt-[67px]">
             <p class="max-w-screen-lg m-auto mt-12 text-center md:px-9 pb-12 border-b">
                 At FlowFuse we understand that the security practises of our product
-                are important to your company. We've prepared a <a href="/product/security/">security statement</a>
+                are important to your company. We've prepared a <a href="/platform/security/">security statement</a>
                 for you to understand the choices we've made.
             </p>
         </div>
     </div>
 </div>
 <!-- Social proof -->
-<div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl pb-7 md:px-9">
-    <div class="social-proof-logos mx-auto w-full text-center">
-        {% include "social-proof.njk" %}
-    </div>
+<div class="w-full py-7">
+    {% include "social-proof.njk" %}
 </div>
 <!-- Form section -->
 <!-- Contact us -->
@@ -359,7 +293,13 @@ hubspot:
                     To learn more about our plans, discuss your specific needs, or get advice on the best fit for your project, please fill out the form and we will get back to you as soon as possible.
                 </p>
             </div>
-            {% hubspotForm hubspot.cloud.formId, hubspot.cloud.cta, hubspot.reference, 'contactUsForm' %}
+            <div>
+                {% set formId = hubspot.cloud.formId %}
+                {% set cta = hubspot.cloud.cta %}
+                {% set reference = hubspot.reference %}
+                {% set targetId = 'hs-form-pricing-cloud-contact-us' %}
+                {% include "hubspot/hs-form.njk" %}
+            </div>
         </div>
     </div>
 </div>
@@ -375,21 +315,16 @@ hubspot:
                     Unlock the complete potential of FlowFuse with a complimentary 30-day Enterprise license. This trial gives you the chance to explore all the features and functionalities of FlowFuse in your own environment. To start your trial, simply fill out the form. Our sales team will reach out to you to discuss your needs and provide the license.
                 </p>
             </div>
-            {% hubspotForm hubspot.selfHosted.formId, hubspot.selfHosted.cta, hubspot.reference, 'trialLicenseForm' %}
+            <div>
+                {% set formId = hubspot.selfHosted.formId %}
+                {% set cta = hubspot.selfHosted.cta %}
+                {% set reference = hubspot.reference %}
+                {% set targetId = 'hs-form-pricing-self-hosted-trial-license' %}
+                {% include "hubspot/hs-form.njk" %}
+            </div>
         </div>
     </div>
 </div>
-<!-- Dedicated contact us -->
-<div class="contentDedicated hide w-full px-6" id="contact-us-dedicated">
-    <div class="flex flex-col m-auto max-w-2xl mt-10 pb-12 gap-12">
-        <h2 class="w-full text-center"><span class="text-indigo-600">Contact us</span> for pricing
-        </h2>
-        <div>
-            {% hubspotForm hubspot.dedicated.formId, hubspot.dedicated.cta, hubspot.reference, 'dedicatedPricingForm' %}
-        </div>
-    </div>
-</div>
-
 <!-- Frequently Asked Questions -->
 <div class="px-6 md:px-14 max-w-screen-lg mx-auto">
     {% include "faq.njk" %}
@@ -407,81 +342,110 @@ hubspot:
     const btns = document.querySelectorAll(".mainToggle");
     const cloud = document.querySelectorAll(".contentCloud");
     const selfHosted = document.querySelectorAll(".contentSelfHosted");
-    const dedicated = document.querySelectorAll(".contentDedicated"); // New dedicated elements
     const cloudText = document.querySelector(".cloudText");
     const selfHostedText = document.querySelector(".selfHostedText");
-    const dedicatedText = document.querySelector(".dedicatedText");
     const selector = document.querySelector(".selector");
     const featureComparison = document.querySelector("#feature-comparison");
 
     function updateContentAndUrl(hosting) {
         cloudText.classList.remove('active');
         selfHostedText.classList.remove('active');
-        dedicatedText.classList.remove('active');
 
         if (hosting === 'cloud') {
             selector.style.left = "0.8%";
             cloud.forEach((item) => item.classList.remove("hide"));
             selfHosted.forEach((item) => item.classList.add("hide"));
-            dedicated.forEach((item) => item.classList.add("hide"));
             urlParams.delete('hosting');
             cloudText.classList.add('active');
             featureComparison.classList.remove("hide");
         } else if (hosting === 'self-hosted') {
-            selector.style.left = "33%";
+            selector.style.left = "49%";
             cloud.forEach((item) => item.classList.add("hide"));
             selfHosted.forEach((item) => item.classList.remove("hide"));
-            dedicated.forEach((item) => item.classList.add("hide"));
             urlParams.set('hosting', hosting);
             selfHostedText.classList.add('active');
             featureComparison.classList.remove("hide");
-        } else {
-            selector.style.left = "66.2%";
-            cloud.forEach((item) => item.classList.add("hide"));
-            selfHosted.forEach((item) => item.classList.add("hide"));
-            dedicated.forEach((item) => item.classList.remove("hide"));
-            urlParams.set('hosting', hosting);
-            dedicatedText.classList.add('active');
-            featureComparison.classList.add("hide");
         }
 
         // Update the history
         let paramString = urlParams.toString();
-        window.history.replaceState({}, '', paramString ? "?" + paramString : window.location.pathname);
+        let currentHash = window.location.hash; // Preserve the current hash
+        window.history.replaceState({}, '', paramString ? "?" + paramString + currentHash : window.location.pathname + currentHash);
     }
 
     // Check the hosting parameter when the page loads
     updateContentAndUrl(hosting);
 
-    cloudText.addEventListener("click", function() {
-        if (hosting === 'cloud') return;
-        hosting = 'cloud';
+    // Scroll to hash target after hosting toggle (for tier badge links)
+    if (window.location.hash) {
+        setTimeout(function() {
+            var el = document.querySelector(window.location.hash);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+    }
+
+    // Show white background on toggle when feature table body becomes sticky
+    const toggleEl = document.getElementById('pricing-toggle');
+    const featureTableBody = document.querySelector('[data-table-body]');
+    function updateToggleBg() {
+        if (!featureTableBody || !toggleEl) return;
+        const tableTop = featureTableBody.getBoundingClientRect().top;
+        const toggleBottom = toggleEl.getBoundingClientRect().bottom;
+        toggleEl.classList.toggle('bg-white', tableTop <= toggleBottom);
+    }
+    window.addEventListener('scroll', updateToggleBg, { passive: true });
+    updateToggleBg();
+
+    document.querySelector(".btnToggle").addEventListener("click", function(e) {
+        var rect = this.getBoundingClientRect();
+        var isLeftHalf = (e.clientX - rect.left) < rect.width / 2;
+        var target = isLeftHalf ? 'cloud' : 'self-hosted';
+        if (hosting === target) return;
+        hosting = target;
         updateContentAndUrl(hosting);
-        capture('cloud');
+        capture(target);
+    });
+</script>
+
+<!-- Sync horizontal scroll and sticky header background -->
+<script>
+    document.querySelectorAll('[data-table-body]').forEach(function(body) {
+        var header = body.parentElement.querySelector('[data-table-header]');
+        if (!header) return;
+        body.addEventListener('scroll', function() {
+            header.scrollLeft = body.scrollLeft;
+        }, { passive: true });
     });
 
-    selfHostedText.addEventListener("click", function() {
-        if (hosting === 'self-hosted') return;
-        hosting = 'self-hosted';
-        updateContentAndUrl(hosting);
-        capture('self-hosted');
-    });
-
-    dedicatedText.addEventListener("click", function() {
-        if (hosting === 'dedicated') return;
-        hosting = 'dedicated';
-        updateContentAndUrl(hosting);
-        capture('dedicated');
+    // Show white background on column headers only when rows scroll behind them
+    document.querySelectorAll('[data-sticky-header]').forEach(function(stickyEl) {
+        var body = stickyEl.parentElement.querySelector('[data-table-body]');
+        if (!body) return;
+        function updateStickyBg() {
+            var bodyTop = body.getBoundingClientRect().top;
+            var stickyBottom = stickyEl.getBoundingClientRect().bottom;
+            stickyEl.classList.toggle('bg-white', bodyTop <= stickyBottom);
+        }
+        window.addEventListener('scroll', updateStickyBg, { passive: true });
+        updateStickyBg();
     });
 </script>
 
 <!-- Features info -->
 <script>
     function openInfo(id, hosting) {
-        capture('info-feature', { feature: id }, { hosting: hosting })
+        if (typeof capture === 'function') { capture('info-feature', { feature: id }, { hosting: hosting }) }
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.add('active')
     }
     function closeInfo(id, hosting) {
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
     }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var activeDialog = document.querySelector('.ff-dialog-container.active');
+            if (activeDialog) {
+                activeDialog.classList.remove('active');
+            }
+        }
+    });
 </script>

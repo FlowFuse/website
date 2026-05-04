@@ -3,6 +3,7 @@ title: Why UNS needs Pub/Sub
 subtitle: Discover How Pub/Sub Transforms Unified Namespace into a Scalable, Real-Time Data Powerhouse for Modern Manufacturing.
 description: Explore why integrating Publish/Subscribe (Pub/Sub) with Unified Namespace (UNS) is key to optimizing manufacturing data flow. Learn how this combination reduces latency, improves scalability, and enables real-time decision-making in IIoT systems.
 date: 2024-11-19
+lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/why-uns-needs-pub-sub.png
 keywords: unified namespace, pub/sub, mqtt, iiot, manufacturing, real-time data, event-driven, scalability, smart factory, flowfuse, iot integration
@@ -10,6 +11,10 @@ tags:
    - flowfuse
    - mqtt 
    - unified-namespace
+cta:
+  type: demo
+  title: Build a Real-Time, Scalable UNS With FlowFuse
+  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, and centralized device management — so you can implement Pub/Sub and Unified Namespace without stitching together multiple tools.
 ---
 
 As the manufacturing industry evolves and becomes increasingly connected through the Industrial Internet of Things (IIoT), the concept of a Unified Namespace (UNS) has emerged as a critical architecture for centralizing and organizing data. UNS serves as a central reference point where all operational data, from machines to the enterprise, can be accessed in a consistent and structured way. Over time, more and more manufacturers have adopted UNS to simplify data integration and improve real-time visibility across systems.
@@ -96,5 +101,3 @@ Get started with this article [Building UNS with FlowFuse](/blog/2024/11/buildin
 ## Conclusion 
 
 Integrating Pub/Sub with a Unified Namespace enhances manufacturing operations by enabling real-time data flow, reducing latency, and improving scalability. This combination ensures efficient, resilient, and future-ready systems, empowering manufacturers to stay competitive in the IIoT era.
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Why%20UNS%20needs%20Pub%2FSub", cta_type: "signup", cta_text: "Curious about how FlowFuse can simplify building your Unified Namespace?" %}

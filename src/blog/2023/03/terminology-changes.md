@@ -45,7 +45,7 @@ In future releases, environment variables will also be able to be stored at the 
 
 FlowFuse can also be used to manage remote Node-RED instances. This is typically useful when you have a number of remote devices that are required to run the same Node-RED instance, and may have variation in configuration or environment variables for example.
 
-Devices are registered to an Instance, and can be configured to run [Snapshots](/docs/user/concepts/#instance-snapshot) of the Instance running in FlowFuse.
+Devices are registered to an Instance, and can be configured to run [Snapshots](/docs/user/concepts/#snapshot) of the Instance running in FlowFuse.
 
 To accomplish this remote management capability, the [FlowFuse Device Agent](https://github.com/FlowFuse/device-agent) needs to be installed on each device. Devices are registered with a Team, and then the appropriate device(s) are assigned to a Node-RED instance that should be deployed to the device(s). When the Node-RED instance is ready for deployment, a user creates a snapshot of the instance and marks it as a target snapshot for the device.
 

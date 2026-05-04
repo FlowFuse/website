@@ -12,6 +12,10 @@ tags:
  - flowfuse software bills of material
  - Sbom in the industrial applications
  - sbom open source
+cta:
+  type: pricing
+  title: Enterprise Security Starts With Knowing What's Inside
+  description: FlowFuse SBoM gives enterprise teams full visibility into every dependency across all Node-RED instances and devices — so vulnerabilities get caught before they become incidents.
 ---
 
 FlowFuse recently launched Software Bill of Materials (SBoM) for enterprise customers. This powerful tool enhances security and management within projects, particularly in the Node-RED ecosystem. As open-source libraries and software continue to play a pivotal role in the industry, monitoring third-party components used in projects becomes essential. The SBoM enables organizations to track dependencies and identify vulnerabilities, ensuring compliance and mitigating risks.
@@ -42,7 +46,7 @@ To support the effective monitoring and assessment of your dependencies, FlowFus
 
 ### Accessing FlowFuse SBoM Interface
 
-The Software Bill of Materials (SBoM) interface is available at the application level. For more information on the application, refer to the [Documentation](https://flowfuse.com/docs/user/concepts/#application). To access it:
+The Software Bill of Materials (SBoM) interface is available at the application level. For more information on the application, refer to the [Documentation](/docs/user/concepts/#application). To access it:
 
 1. Navigate to your Node-RED application within the FlowFuse platform.
 
@@ -64,5 +68,3 @@ Once you navigate the tab, you will see a list of all the packages installed wit
 _Image showing the Dependencies tab along with the detailed notes of each item displayed._
 
 Incorporating a Software Bill of Materials into your development process not only enhances security but also fosters a culture of accountability and transparency within your team. By understanding your dependencies, you can make informed decisions that protect your applications and ensure compliance with industry standards. 
-
-{% include "cta.njk", cta_url: "https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=FlowFuse%27s%20Software%20bills%20of%20material%20helps%20enhance%20Application%20Security%20and%20Management", cta_type: "signup", cta_text: "Try FlowFuse today with a free trial! Discover how you can enhance your Node-RED projects and accelerate your production processes." %}

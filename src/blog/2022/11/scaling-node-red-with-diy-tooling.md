@@ -70,7 +70,7 @@ devices. Scaling to that many devices and runtimes requires hours of development
 each week alongside monitoring, maintenance, and auditing.
 
 As a side effect of investing more time into Node-RED and its ecosystem the
-organisation has developed a few standards. Standard custom nodes that are
+organization has developed a few standards. Standard custom nodes that are
 pre-installed (👋 `moment.js`), a style guide published for developing flows,
 maybe even flow linting: https://github.com/node-red/nrlint
 

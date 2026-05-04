@@ -7,8 +7,6 @@ tags:
   - changelog
 ---
 
-# New Device Version History Events
-
 Users can now get better visibility of the state of their Remote Instances with additional events in the Version History timeline. This enhancement improves traceability and provides deeper insights into remote instance state changes over time.
 
 ## New Trackable Events
