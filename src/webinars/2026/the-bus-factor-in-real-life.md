@@ -1,5 +1,5 @@
 ---
-title: "The Bus Factor in Real Life - How FlowFuse Deployed Stack Resilience at Hannover Messe 2026"
+title: "Applying The Bus Factor - How FlowFuse Deployed Stack Resilience in Real Life"
 subtitle: What the Bus Factor Reveals About Industrial System Resilience - and What Happened When We Had to Find Out the Hard Way
 meta:
     description: The bus factor isn't just a thought experiment. When travel complications left our lead architect stranded nine time zones away from a live Hannover Messe demo, the stack had to run itself. Here's what held, what didn't, and what it means for how you build industrial systems that survive the unexpected.
@@ -38,6 +38,8 @@ We'll walk through the architecture behind the demo — a live supply chain simu
 
 > What does your system need to be able to do when you can't be in the room?
 
+We'll demo the specific functionality and features on FlowFuse that made all of this possible, as well as the architectural choices that enabled rapid repairs and deployment in the actual real-world environment.
+
 ---
 
 ## What You'll Learn
@@ -46,7 +48,7 @@ In this session, Kristopher will cover:
 
 - What the bus factor is, why it's frustratingly underweighted in industrial system design, and how to actually measure it for your own stack  
 
-- The real architecture behind the Hannover Messe demo — what was running, where, and why it was designed the way it was  
+- A demo of the real architecture behind the Hannover Messe demo — what was running, where, and why it was designed the way it was  
 
 - What remote management looked like under genuine operational pressure — not a feature walkthrough, but a live account of what the tooling had to do  
 
