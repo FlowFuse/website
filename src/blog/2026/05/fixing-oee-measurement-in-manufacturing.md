@@ -2,7 +2,7 @@
 title: "How Measuring OEE Can Be Problematic for Your Factory — And What to Do About It"
 subtitle: "Why the OEE score on your dashboard does not match what is happening on the floor."
 description: "Most factories measure OEE wrong. Manual logs miss small stops, definitions drift, and operators game the score. A practical look at what to do about it."
-date: 2026-04-05
+date: 2026-05-05
 keywords: 
 authors: ["sumit-shinde"]
 image: 
