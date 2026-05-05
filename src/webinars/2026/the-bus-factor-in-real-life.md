@@ -3,7 +3,7 @@ title: "Applying The Bus Factor - How FlowFuse Deployed Stack Resilience in Real
 subtitle: What the Bus Factor Reveals About Industrial System Resilience - and What Happened When We Had to Find Out the Hard Way
 meta:
     description: The bus factor isn't just a thought experiment. When travel complications left our lead architect stranded nine time zones away from a live Hannover Messe demo, the stack had to run itself. Here's what held, what didn't, and what it means for how you build industrial systems that survive the unexpected.
-image:
+image: /images/webinars/the-bus-factor-in-real-life.jpg
 date: 2026-05-28
 time: 17:00 CET (11:00am ET)
 duration: 60
