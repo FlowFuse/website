@@ -86,7 +86,7 @@ Plant-level averages hide everything. [Averaging OEE across an entire facility p
 
 ## Tracking without acting
 
-A lot of plants have gone through the full OEE journey. Bought the software. Installed the dashboards. Trained the operators. Put the screens on the floor. Six months later the same three reasons still top the Pareto chart.
+A lot of plants have gone through the full OEE journey. Bought the software. Installed the dashboards. Trained the operators. Put the screens on the floor. Six months later the same three reasons still top the [Pareto chart](/blog/2025/09/creating-pareto-chart/).
 
 Material wait. Changeover. Minor stops. No change.
 
@@ -100,7 +100,7 @@ The fix is to connect data to action. A recurring failure should trigger a maint
 
 ## What to actually do
 
-- **Get the data from the machines, not the operators.** The PLC already knows when the line stopped, how fast it ran, and how many parts came off. The operator classifies the cause. Everything else falls apart without this.
+- **Get the data from the machines, not the operators.** The PLC already knows when the line stopped, how fast it ran, and how many parts came off. The operator classifies the cause. Everything else falls apart without this. This is the layer [FlowFuse](/) handles — pulling the data straight off the PLC over OPC-UA, Modbus, S7, or EtherNet/IP.
 
 - **Write down your definitions.** Make every site calculate the same way before comparing any numbers. Use a hierarchical reason code tree, not free text. Kill the "Other" bucket.
 
@@ -110,14 +110,16 @@ The fix is to connect data to action. A recurring failure should trigger a maint
 
 - **Pair OEE with metrics that catch what it misses.** Throughput. First-pass yield. On-time-in-full. MTBF. The single number is a summary, not the picture.
 
-- **Wire the data into action.** A logged event that does not trigger a ticket, an alert, or a kaizen item is a row in a database, not a fix.
+- **Wire the data into action.** A logged event that does not trigger a ticket, an alert, or a kaizen item is a row in a database, not a fix. This is where [FlowFuse](/) earns its place — turning a downtime event into a maintenance ticket, a procurement alert, or a kaizen task in real time.
 
 - **Compare against your own baseline.** Not the industry. Not 85%. Last month, last shift, last product run.
 
 ## Closing
 
-OEE is not broken. The way most plants measure it is.
+OEE is not broken. It is just often misunderstood.
 
-A plant that fixes the data layer, agrees on what the numbers mean, and treats the score as a diagnostic instead of a target gets something useful out of OEE. That starts at the connection between the machine and the dashboard, which is where [FlowFuse](/) lives.
+Used as a target, it gets gamed. Used as a comparison, it misleads. But used as a diagnostic, grounded in real data and consistent definitions, it becomes one of the most useful tools on the shop floor.
 
-The 78% on the morning report is not the point. The losses underneath it are.
+The difference is not in the formula. It is in how honestly you measure and whether anything changes because of it.
+
+The value of OEE is not the number you report. It is the problems you uncover and the actions you take next.
