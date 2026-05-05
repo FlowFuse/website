@@ -78,6 +78,6 @@ command = "npm run build:nuxt"
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
-    "nuxt/.output/public/img", # Eleventy Image Disk Cache
+    "nuxt/public/img", # Eleventy Image Disk Cache
     ".cache/images" # Eleventy image processing cache
   ]
