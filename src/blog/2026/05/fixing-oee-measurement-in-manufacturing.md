@@ -2,7 +2,7 @@
 title: "How Measuring OEE Can Be Problematic for Your Factory — And What to Do About It"
 subtitle: "Why the OEE score on your dashboard does not match what is happening on the floor."
 description: "Most factories measure OEE wrong. Manual logs miss small stops, definitions drift, and operators game the score. A practical look at what to do about it."
-date: 2026-05-05
+date: 2026-05-06
 keywords: 
 authors: ["sumit-shinde"]
 image: 
@@ -14,11 +14,15 @@ cta:
   description: Tell us what PLCs and protocols you are working with. We will show you how FlowFuse pulls the data and what an honest OEE dashboard looks like on your line.
 ---
 
-"85% is world-class" gets repeated in every plant manager meeting. Only [3–6% of manufacturers ever hit it](https://oxmaint.com/industries/steel-plant/oee-benchmarks-by-manufacturing-industry). The global average sits closer to [60%](https://manufacturingleadgeneration.com/manufacturing-quality-statistics/). A pharma plant running at 72% under FDA validation rules is probably outperforming the automotive line bragging about 84%, but the quarterly review never frames it that way.
+"85% is called world-class OEE" gets repeated in every plant manager meeting. In reality, only [3–6% of manufacturers ever reach that level](https://oxmaint.com/industries/steel-plant/oee-benchmarks-by-manufacturing-industry), and most operate much closer to [60%](https://manufacturingleadgeneration.com/manufacturing-quality-statistics/).
+
+A pharma plant running at 72% under FDA validation rules is probably outperforming the automotive line bragging about 84%, but the quarterly review never frames it that way.
 
 <!--more-->
 
-The formula is simple. Implementing it honestly almost never is. Definitions drift between sites. Manual collection misses small stops. Ideal cycle times get fudged. Operators game whatever gets measured. And the math itself fights you — push one component up and another usually drops.
+The formula is simple. Implementing it honestly almost never is. Definitions drift between sites. Manual collection misses small stops. Ideal cycle times get fudged. Operators game whatever gets measured. And the math itself fights you, push one component up and another usually drops.
+
+This article looks at where OEE typically goes wrong on the shop floor, in how data is captured, how it is defined, and how it gets used, and what to fix so the number starts matching reality.
 
 ## Most OEE numbers are made up
 
@@ -34,17 +38,21 @@ The fix is structural. PLCs already know when a line stopped, how long it ran be
 
 ## Everyone calculates OEE differently
 
-Two plants in the same company report 75% OEE. One counts changeovers as planned downtime. The other counts them as unplanned. One uses the machine's nameplate speed as the ideal cycle time. The other uses the average speed they hit last quarter. Same number on the slide. Different realities on the floor.
+Two plants in the same company report 75% OEE. It looks comparable, but it usually is not.
 
-[Even in corporations using standardized MES systems, OEE figures are not automatically comparable](https://www.symestic.com/en-us/blog/oee/the-limits-of-oee). Small differences in how setup time, breaks, planned maintenance, or first-pass quality get classified produce big differences in the final score.
+One plant counts changeovers as planned downtime. The other counts them as unplanned. One uses the machine’s rated speed as the ideal cycle time. The other uses whatever speed they managed last quarter. Same formula. Different inputs. Same number on the slide, different reality on the floor.
 
-The ideal cycle time is where most of the drift happens. It is supposed to be the rated speed from the manufacturer. In practice, [plants set it too low to account for aging machinery or material issues](https://www.ease.io/blog/oee-in-manufacturing/). The score looks healthier than reality, with the actual losses hidden inside an artificially relaxed baseline.
+[Even in corporations using standardized MES systems, OEE figures are not automatically comparable](https://www.symestic.com/en-us/blog/oee/the-limits-of-oee). Small differences in how setup time, breaks, planned maintenance, or first-pass quality get classified can significantly change the final score.
 
-Quality has the same problem. The Quality component is supposed to count only first-pass good parts. Including reworked parts [hides the fact that opportunity exists for improving first-pass process quality](https://www.worximity.com/blog/the-biggest-mistakes-when-calculating-oee). The line still ships the part. The score still looks fine. The rework bay grows.
+The biggest distortion usually comes from ideal cycle time. It is supposed to be the machine’s rated speed. In practice, [plants set it too low to account for aging machinery or material issues](https://www.ease.io/blog/oee-in-manufacturing/). The score improves, but the loss does not disappear, it just gets built into the baseline.
 
-Then there is the "Other" code. Once that bucket grows past [10–15% of logged downtime events, the dataset cannot identify top failure modes or drive maintenance decisions](https://oxmaint.com/industries/fmcg/oee-data-collection-downtime-logging-checklist). You know the line stopped. You do not know why.
+Quality has a similar issue. OEE is meant to count only first-pass good parts. Including reworked parts [hides the fact that opportunity exists for improving first-pass process quality](https://www.worximity.com/blog/the-biggest-mistakes-when-calculating-oee). The line still ships the part, but the rework effort keeps growing.
 
-The fix here is governance, not software. Write down what counts as planned downtime, which cycle time applies to which product, and what passes as first-pass quality. Use a hierarchical reason code tree instead of free text. Without that, OEE benchmarking across plants is comparing definitions, not performance.
+Then there is the “Other” category. Once that bucket grows past [10–15% of logged downtime events, the dataset cannot identify top failure modes or drive maintenance decisions](https://oxmaint.com/industries/fmcg/oee-data-collection-downtime-logging-checklist). You know the line stopped, but not why.
+
+The fix here is not more tools, it is consistency. Define what counts as planned downtime. Fix the cycle time for each product. Agree on what qualifies as first-pass quality. Use structured reason codes instead of free text.
+
+Without that, OEE comparisons across plants are not comparing performance. They are comparing definitions.
 
 ## People game whatever you measure
 
