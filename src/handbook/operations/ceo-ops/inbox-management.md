@@ -57,6 +57,7 @@ An archived email is considered fully resolved. This means:
 * Follow-ups were delegated or closed
 * No further attention is required
 * Meeting invites have been accepted
+* Receipts have been forwarded per the [Expenses](/handbook/peopleops/expenses/#company-credit-card) handbook
 
 Archiving reflects our commitment to maintaining a clear, trustworthy system of
 record. This practice enables the CEO inbox to operate with an Inbox Zero

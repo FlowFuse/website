@@ -26,7 +26,13 @@
         "dev:eleventy": "dotenv -- npx @11ty/eleventy --serve --port 8080 --quiet",
         "old_dev:eleventy": "dotenv -v NODE_ENV=development -- ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
         "prod:eleventy": "npx @11ty/eleventy",
-        "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js"
+        "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js",
+        "clean:nuxt": "npx del-cli 'nuxt/public' 'nuxt/.output' && npx mkdirp 'nuxt/public/js' 'nuxt/public/css'",
+        "build:js:nuxt": "terser -c -m -o nuxt/public/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js nuxt/public/js/flowrenderer.min.js",
+        "prod:postcss-nuxt": "postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js",
+        "prod:eleventy-nuxt": "npx @11ty/eleventy --output=./nuxt/public/",
+        "prod:nuxt": "npm run generate --workspace=nuxt",
+        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
     },
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",
@@ -48,7 +54,7 @@
         "netlify-plugin-cache": "^1.0.3",
         "nodemon": "^2.0.20",
         "npm-run-all2": "^7.0.1",
-        "postcss": "^8.4.35",
+        "postcss": "^8.5.10",
         "postcss-cli": "^9.0.1",
         "postcss-import": "^14.0.2",
         "postcss-minify": "^1.1.0",
@@ -68,7 +74,7 @@
         "@11ty/eleventy-fetch": "^4.0.0",
         "@flowfuse/flow-renderer": "^0.5.0",
         "@netlify/blobs": "^10.3.0",
-        "@xmldom/xmldom": "^0.8.12",
+        "@xmldom/xmldom": "^0.8.13",
         "algoliasearch": "^4.25.3",
         "codeowners": "^5.1.1",
         "eleventy-plugin-toc": "^1.1.5",

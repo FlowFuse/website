@@ -61,13 +61,13 @@ async function copyFiles (src, dest, version) {
     const ffRepo = repoPaths.find(p => existsSync(path.join(p, 'docs')))
     if (!ffRepo) {
         console.log(`FlowFuse repository not found (${repoPaths}) - skipping`)
-        process.exit(-1)
+        process.exit()
     }
 
     const docsDir = path.join(ffRepo, 'docs')
     if (!existsSync(docsDir)) {
         console.log(`FlowFuse Docs folder not found ${docsDir} - skipping`)
-        process.exit(-1)
+        process.exit()
     }
 
     const packFile = await fs.readFile(path.join(ffRepo, 'package.json'))

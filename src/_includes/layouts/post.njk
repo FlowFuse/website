@@ -34,7 +34,7 @@
                     {%- for author in authors %}
                         {{ comma() }} <span class="font-medium">{{ people[author].name if people[author] else 'FlowFuse' }}</span>
                     {%- endfor %}
-                    <span class="text-gray-400">•</span>
+                    <span class="text-gray-500">•</span>
                     {%- if lastUpdated -%}
                     <time value="{{ lastUpdated | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time>
                     {%- else -%}

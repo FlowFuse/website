@@ -66,6 +66,10 @@ module.exports = async () => {
                 node.categories.push("catalogue");
             }
 
+            const stripRelativeTags = (html) => html
+                .replace(/<link\b[^>]*?\bhref=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*\/?>/gi, '')
+                .replace(/<script\b[^>]*?\bsrc=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*>(?:[\s\S]*?<\/script>)?/gi, '');
+
             // Fetch full npm node details (readme, etc.)
             try {
                 const nodeDetails = await EleventyFetch(
@@ -133,12 +137,34 @@ module.exports = async () => {
                                                 }
                                             });
                                             
+                                            const escapeForHtml = (s) => s.replace(/&/g, '\\u0026').replace(/</g, '\\u003c').replace(/>/g, '\\u003e');
+                                            let sanitizedFlow = escapeForHtml(flowContent);
+                                            try {
+                                                const flowJson = JSON.parse(flowContent);
+                                                const sanitizeNode = (n) => {
+                                                    if (n && typeof n === 'object') {
+                                                        if (typeof n.template === 'string') n.template = stripRelativeTags(n.template);
+                                                        if (typeof n.html === 'string') n.html = stripRelativeTags(n.html);
+                                                    }
+                                                    return n;
+                                                };
+                                                if (Array.isArray(flowJson)) {
+                                                    flowJson.forEach(sanitizeNode);
+                                                } else {
+                                                    sanitizeNode(flowJson);
+                                                }
+                                                sanitizedFlow = JSON.stringify(flowJson)
+                                                    .replace(/&/g, '\\u0026')
+                                                    .replace(/</g, '\\u003c')
+                                                    .replace(/>/g, '\\u003e');
+                                            } catch (_) { /* keep original if not valid JSON */ }
+
                                             return {
                                                 name: file.name.replace('.json', ''), // Remove .json extension for display
                                                 path: file.path,
                                                 url: file.html_url,
                                                 downloadUrl: file.download_url,
-                                                flow: flowContent // Store the actual flow JSON as string
+                                                flow: sanitizedFlow
                                             };
                                         } catch (err) {
                                             console.error(`Failed to fetch flow content for ${file.name}:`, err.message);
@@ -195,6 +221,7 @@ module.exports = async () => {
                                 return match;
                             }
                         );
+                    node.readme = stripRelativeTags(node.readme);
                 } else {
                     node.readme = "";
                 }
