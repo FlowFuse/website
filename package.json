@@ -26,7 +26,13 @@
         "dev:eleventy": "dotenv -- npx @11ty/eleventy --serve --port 8080 --quiet",
         "old_dev:eleventy": "dotenv -v NODE_ENV=development -- ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
         "prod:eleventy": "npx @11ty/eleventy",
-        "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js"
+        "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js",
+        "clean:nuxt": "npx del-cli 'nuxt/public' 'nuxt/.output' && npx mkdirp 'nuxt/public/js' 'nuxt/public/css'",
+        "build:js:nuxt": "terser -c -m -o nuxt/public/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js nuxt/public/js/flowrenderer.min.js",
+        "prod:postcss-nuxt": "postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js",
+        "prod:eleventy-nuxt": "npx @11ty/eleventy --output=./nuxt/public/",
+        "prod:nuxt": "npm run generate --workspace=nuxt",
+        "build:nuxt": "dotenv -v NODE_ENV=production -v SKIP_IMAGES=true -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
     },
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",
