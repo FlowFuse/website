@@ -1262,7 +1262,8 @@ module.exports = function(eleventyConfig) {
         return searchIndexItems;
     });
 
-    eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    eleventyConfig.on("eleventy.after", async () => {
+        const outputDir = eleventyConfig.directories?.output || eleventyConfig.dir.output;
         const defaultKeywords = (site.messaging?.keywords || "")
             .split(",")
             .map((item) => item.trim());
@@ -1272,10 +1273,10 @@ module.exports = function(eleventyConfig) {
 
         const records = [];
 
-        const htmlFiles = await listHtmlFiles(dir.output);
+        const htmlFiles = await listHtmlFiles(outputDir);
 
         for (const outputPath of htmlFiles) {
-            const url = outputPathToUrl(dir.output, outputPath);
+            const url = outputPathToUrl(outputDir, outputPath);
             if (!isSearchUrl(url)) {
                 continue;
             }
@@ -1331,7 +1332,7 @@ module.exports = function(eleventyConfig) {
             );
         }
 
-        const outputPath = path.join(dir.output, "search-index.json");
+        const outputPath = path.join(outputDir, "search-index.json");
         await fs.promises.writeFile(outputPath, JSON.stringify(records, null, 2));
         console.log(`[11ty] Wrote ${records.length} search records to ${outputPath}`);
     });
