@@ -99,17 +99,6 @@ to match what is needed.
 For any repository that contains code, the Static Application Security Testing workflow should be added.
 This is done by adding [`.github/workflows/sast.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/sast-scan.yml) to the repository. This workflow will run on any pull request and will scan the code for any known security vulnerabilities. By default, scan results are added to The GitHub Advanced Security tab of the repository, but can be configured to also post comments on the pull request if vulnerabilities are found (see reusable workflow for details).
 
-#### Private Repositories
-
-For *private* repositories, you will also need to add a Repository Secret as
-they cannot access the organization-wide secret we have in place.
-
-1. Generate a [Personal Access Token](https://github.com/settings/tokens) with
-   `repo, write:org` scope.
-
-2. Add it as a Repository Secret to the Private Repo (https://github.com/FlowFuse/<repo-name>/settings/secrets/actions)
-   with the name `PROJECT_ACCESS_TOKEN`
-
 ### Labels
 
 We have a standard set of labels that should be applied to all repositories. This

@@ -597,6 +597,31 @@ sections:
           enterprise:
             value: true
 
+      - id: immersive-editor-drawer
+        label: Customisable Immersive Editor Drawer
+        description: "Pin, move, resize, or full-screen the immersive editor drawer — your preferences are remembered between sessions."
+        docsLink: null
+        changelog:
+          - url: /changelog/2026/04/immersive-editor-drawer/
+            release: '2.30'
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: pipelines
         label: DevOps Pipelines
         description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."

@@ -23,8 +23,11 @@ The following are the steps to produce a montly webinar.
         * A draft title and abstract using [this template](https://docs.google.com/document/d/1Ovh-X87OW5uFFFQXlCob3KMoLybLhL1h3qKLLyIe9FY/edit?usp=sharing) (please duplicate the document and save it in the corresponding folder before sharing it with the speaker), focusing on the use of FlowFuse. The host then reviews it to ensure it aligns with our messaging.
             - Set the deadline for all the above to the week before the previous webinar to ensure we have a defined title by the day of the previous session, so it can be promoted during it and in follow-up emails.
             - If the speaker is unable to commit to this timeline, or does not meet the deadline, the session should be rescheduled for the following month. In that case, an internal webinar should be planned instead.
+        * A recording of a [promo video](#promo-video), linking to the referred handbook section for details on format and script.
+            - Set the deadline to two weeks before the session.
         * Slides for the presentation using [our template](/handbook/design/branding/#presentations). Create a copy and and save it in the corresponding folder before sharing it with the speaker.
             - Set the deadline to the week before the session so it can be reviewed during the dry run.
+        * A list of channels where they could support the event promotion, this would lead to a conversation about joint promotion.
    1. When there's a demo involved, provide the speaker with a non-trial FlowFuse account so they can work on it with an official account
    1. [Create a webinar page](#creating-a-webinar-page) for the website
    1. Create a Zoom webinar page
@@ -51,7 +54,7 @@ The following are the steps to produce a montly webinar.
         * Under **Service > Feedback Surveys**, you'll find the latest one called *‘Webinar Survey - [&lt;month> &lt;year>]’*.  
         * Clone it, update the survey name to match the month and year of the upcoming webinar, and update the header to match the webinar's name.  
         * Publish the survey and copy the shareable link.  
-        * Under **Automations > Workflows**, you'll need to update two workflows: *‘Contact Us Request’* and *‘New Contact Us Form Completion - MQLs’*. In both workflows, you need to update the trigger enrollment for contacts.  
+        * Under **Automations > Workflows**, look for *‘New Contact Us Form Completion - MQLs’*. You'll need to update the trigger enrollment for contacts in that workflow
         * Look for the group with the criteria: *‘Contact is associated to: Any Feedback submission’* and update the survey name to the one you just created.  
         * Save the change and when it asks *'Do you want to enroll existing contacts?'* click on the button that says **'Save and don't enroll existing contacts'**. You should pay close attention to this step, because if you choose the other option, all of the contacts that have ever requested to be contacted will re-enroll and sales will get notifications and tasks to contact all of them again.  
         * Go to **Zoom**, and in the **Webinars** section, under **Survey**, choose *'Use a 3rd party survey'* and paste the shareable link you obtained when the survey was published.
