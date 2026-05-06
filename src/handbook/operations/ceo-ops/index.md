@@ -6,6 +6,12 @@ navGroup: Internal Operations
 For CEO assistance, as personal assistant, there's a couple of high level tasks
 to be aware of and how these are handled.
 
+## Tools
+
+### 1Password
+
+A shared 1Password vault is available to the CEO and the exec assistant. All passwords relevant to CEO operations should be stored there.
+
 ## Daily Workflow
 
 The P.A.s tasks is to run complete certain tasks every day. For some, even
