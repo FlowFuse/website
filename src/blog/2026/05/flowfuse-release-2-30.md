@@ -109,8 +109,6 @@ We iterated on the property-level diff viewer that shipped in release 2.29 so th
 
 ## Node-RED
 
-Node-RED is the canvas FlowFuse builds on, and the project keeps moving fast.
-
 [Node-RED 5.0](https://nodered.org/blog/2025/12/03/node-red-roadmap-to-5) is in active beta. It is a modernization and UI re-architecture that readies Node-RED for better AI-guided development and brings more clarity to manual editing. The latest betas land in the Node-RED forum first, with release notes, known issues, and the team looking for feedback. Try them out and follow along on the [Node-RED forum](https://discourse.nodered.org/).
 
 We are aiming to ship Node-RED 5.0 as a stack option in FlowFuse by the end of May. Until then, Node-RED 4.1 remains the default.
