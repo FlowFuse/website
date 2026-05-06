@@ -42,7 +42,6 @@ MQLs will be engaged by a Sales Representative, according with the appropriate g
 - Does the prospect and company fit the target industry / company size / role?
 - Are they working on an initiative related to connecting systems, industrial data, or operational workflows?
 - Can they describe a specific problem, use case or goal they’re trying to address?
-- Is this an active or planned initiative (not just general research)?
 - Are they open to a meeting to explore their use case in more detail?
 
 ### Lead Status
