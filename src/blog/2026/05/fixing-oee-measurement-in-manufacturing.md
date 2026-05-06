@@ -5,7 +5,7 @@ description: "Most factories measure OEE wrong. Manual logs miss small stops, de
 date: 2026-05-06
 keywords: 
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/04/images/oee-is-misleading.png
 tags:
 - flowfuse
 cta:
