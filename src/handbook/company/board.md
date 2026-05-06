@@ -26,6 +26,8 @@ alternating succession.
 Calendar invites include all the folks expected to be at the board meeting,
 including our legal counsel.
 
+COS and Vp of Sales should be included on all board meeting calendar invites. When sending the calendar invite, attach the board deck (as a PDF) so attendees have it ahead of time.
+
 ## The Strategic Timeline
 
 Working from the meeting date, follow these milestones:
@@ -143,7 +145,7 @@ Drive.
 
 #### Sending out the deck
 
-2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. 
+2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. Additionally, the deck should also be attached to the calendar invite at the time it is sent.
 
 #### Managing the Two Slide Decks
 
