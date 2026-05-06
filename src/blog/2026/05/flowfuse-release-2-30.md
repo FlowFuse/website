@@ -1,6 +1,6 @@
 ---
 title: "FlowFuse 2.30: Expert Builds Your Industrial Application"
-subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Plus an immersive editor optimised for iterating with Expert."
+subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Plus a more immersive editor optimised for iterating with Expert."
 description: "FlowFuse 2.30 lets FlowFuse Expert build industrial applications from a description: OEE dashboards, MES handover screens, UNS topic mappings, and more."
 date: 2026-05-07
 authors: ["dimitrie-hoekstra"]
@@ -47,11 +47,11 @@ FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a 
 
 ## FlowFuse Expert Builds Your Industrial Application {#expert-application-building}
 
-*FlowFuse Expert is our integrated AI assistant: chat-based help across the FlowFuse website, platform, and the immersive Node-RED editor.*
+*FlowFuse Expert is our integrated AI assistant across FlowFuse's website, platform, and in the immersive Node-RED editor.*
 
 Until now, Expert could surface information, suggest changes, and act on links you clicked. Translating those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand.
 
-Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced.
+Now you can describe what you want to build and the FlowFuse Expert builds it for you directly on the canvas. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced so it maps correctly to your real life hardware.
 
 Examples to try:
 
@@ -62,11 +62,13 @@ Examples to try:
 
 Under the hood, the two-way communication runs over MQTT with a dedicated broker behind it for Cloud teams.
 
+<!-- TODO: screenshot or short gif of Expert building, e.g., an OEE dashboard, in the canvas -->
+
+### Availability
+
 Application building is a soft launch and available on **FlowFuse Cloud Starter, Team, and Enterprise on request**. Self-hosted enablement follows once the central broker work lands.
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to enable Application Building on your Cloud team.
-
-<!-- TODO: screenshot or short gif of Expert building, e.g., an OEE dashboard, in the canvas -->
 
 **Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own provider account.
 
