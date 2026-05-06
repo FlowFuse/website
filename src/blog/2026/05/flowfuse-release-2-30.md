@@ -1,22 +1,3 @@
-<!--
-STATUS: WIP DRAFT for FlowFuse 2.30 release blog. DO NOT MERGE until checklist below is closed.
-
-Outstanding before merge:
-- [ ] Confirm lead-story framing with @knolleary (agentic Expert flow building, Cloud-only soft launch on request, Beta)
-- [ ] Hold/promote candidate sections based on whether these PRs land before 2026-05-07:
-      - flowfuse#7119 force-all-users SSO (Bosch)
-      - flowfuse#7078 audit log stop reason
-      - flowfuse#7180 immersive editor disabled-state UX
-      - flowfuse#7202 snapshot comparison wire-change polish
-      - flowfuse#7184 EMQX bridge automation
-- [ ] Author changelog entries for the lead story (agentic flow building) and the snapshot-comparison polish
-- [ ] Add a `ff-expert-flow-building` (Beta) sub-feature to src/_data/featureCatalog.yaml so tier badges render correctly. Plan: Cloud Starter/Pro/Enterprise on request, Self-Hosted unavailable for now.
-- [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png
-- [ ] Video to follow in a separate PR after publish (2.29 precedent: website#4855, 2.28: website#4724)
-- [ ] Marketing copy review: @Yndira-E, @allthedoll
-- [ ] Engineering review: @knolleary, @hardillb
-- [ ] SEO description final pass
--->
 ---
 title: "FlowFuse 2.30: Expert Starts Building Flows for You"
 subtitle: "Describe a flow in chat and FlowFuse Expert wires it on your canvas (Beta). Plus a more immersive editor experience and clearer snapshot comparisons."
@@ -41,6 +22,26 @@ cta:
   title: Try the latest FlowFuse improvements in your own environment
   description: Describe a flow and let Expert build it for you, manage instance settings without leaving the editor, and review snapshots with sharper diffs.
 ---
+
+<!--
+STATUS: WIP DRAFT for FlowFuse 2.30 release blog. DO NOT MERGE until checklist below is closed.
+
+Outstanding before merge:
+- [ ] Confirm lead-story framing with knolleary (agentic Expert flow building, Cloud-only soft launch on request, Beta)
+- [ ] Hold/promote candidate sections based on whether these PRs land before 2026-05-07:
+      - flowfuse#7119 force-all-users SSO (Bosch)
+      - flowfuse#7078 audit log stop reason
+      - flowfuse#7180 immersive editor disabled-state UX
+      - flowfuse#7202 snapshot comparison wire-change polish
+      - flowfuse#7184 EMQX bridge automation
+- [ ] Author changelog entries for the lead story (agentic flow building) and the snapshot-comparison polish
+- [ ] Add a ff-expert-flow-building (Beta) sub-feature to src/_data/featureCatalog.yaml so tier badges render correctly. Plan: Cloud Starter/Pro/Enterprise on request, Self-Hosted unavailable for now.
+- [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png
+- [ ] Video to follow in a separate PR after publish (2.29 precedent: website#4855, 2.28: website#4724)
+- [ ] Marketing copy review (Yndira-E, allthedoll)
+- [ ] Engineering review (knolleary, hardillb)
+- [ ] SEO description final pass
+-->
 
 FlowFuse 2.30 takes FlowFuse Expert from suggesting changes to making them, makes the immersive editor work without overlapping Expert, and sharpens what you see in a snapshot comparison.
 
