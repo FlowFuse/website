@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.30: Expert Starts Building Flows for You"
-subtitle: "Describe a flow in chat and FlowFuse Expert wires it on your canvas (Beta). Plus a more immersive editor experience and clearer snapshot comparisons."
-description: "FlowFuse 2.30 extends FlowFuse Expert with flow-building in beta, makes the immersive editor work without overlapping Expert, and sharpens snapshot comparison diffs."
+title: "FlowFuse 2.30: Expert Builds Your Industrial Application"
+subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Plus instance management inside the immersive editor and faster deployment validation with sharper snapshot diffs."
+description: "FlowFuse 2.30 lets FlowFuse Expert build industrial applications from a description, lets you manage instance settings without leaving the immersive editor, and sharpens deployment validation with clearer snapshot diffs."
 date: 2026-05-07
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/05/images/flowfuse-release-2-30.png
@@ -12,15 +12,15 @@ tags:
 release: "2.30"
 features:
    - id: ff-expert
-     heading: "FlowFuse Expert Starts Building Flows for You (Beta)"
-   - heading: "A More Immersive Editor Experience"
+     heading: "FlowFuse Expert Builds Your Industrial Application"
+   - heading: "Manage Your Instance Without Leaving the Editor"
    - id: snapshot-compare
-     heading: "Snapshot Comparison: Even Clearer Diffs"
+     heading: "Validate Deployments Faster With Sharper Snapshot Diffs"
    - heading: "What else is new?"
 cta:
   type: sign-up
   title: Try the latest FlowFuse improvements in your own environment
-  description: Describe a flow and let Expert build it for you, manage instance settings without leaving the editor, and review snapshots with sharper diffs.
+  description: Describe the application you need and let Expert build it on your canvas, manage instance settings without leaving the editor, and validate deployments faster with sharper snapshot diffs.
 ---
 
 <!--
@@ -43,35 +43,44 @@ Outstanding before merge:
 - [ ] SEO description final pass
 -->
 
-FlowFuse 2.30 takes FlowFuse Expert from suggesting changes to making them, makes the immersive editor work without overlapping Expert, and sharpens what you see in a snapshot comparison.
+FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description, lets you manage instance settings without leaving the immersive editor, and sharpens deployment validation with clearer snapshot diffs.
 
 <!--more-->
 
-## FlowFuse Expert Starts Building Flows for You (Beta) {#expert-flow-building}
+## FlowFuse Expert Builds Your Industrial Application {#expert-flow-building}
 
 *FlowFuse Expert is our integrated AI assistant: chat-based help across the FlowFuse website, platform, and the immersive Node-RED editor.*
 
-Until now, Expert could surface information, suggest changes, and act on links you clicked. Building a flow still meant translating those suggestions back into nodes, wires, and configuration by hand.
+Until now, Expert could surface information, suggest changes, and act on links you clicked. Translating those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand.
 
-Expert can now build flows for you. Describe what you want, and Expert assembles it on your canvas: adding tabs, wiring nodes, configuring properties. While Expert works, real-time tool-call status keeps you in the loop. The two-way communication runs over MQTT, with a dedicated broker behind it for Cloud teams.
+Expert now builds the application for you. Describe the outcome you need and Expert assembles it on your canvas, adding tabs, wiring nodes, and configuring properties. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced.
 
-This is a soft launch. Flow building is in **beta** and available on **FlowFuse Cloud Starter, Team, and Enterprise on request**. Self-hosted enablement follows once the central broker work lands.
+Examples to try:
 
-[Contact us](/contact-us/?subject=FlowFuse%20Expert%20Flow%20Building%20Beta) to enable Flow Building on your Cloud team.
+- "An OEE dashboard for line 3 with downtime reasons and a daily target"
+- "A Modbus connection that publishes tag values to my UNS broker on `factory/line3/+`"
+- "A shift handover screen showing outstanding alarms and recent operator notes"
+- "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
-<!-- TODO: screenshot or short gif of Expert building a flow in the canvas -->
+Under the hood, the two-way communication runs over MQTT with a dedicated broker behind it for Cloud teams.
+
+Application building is a soft launch and available on **FlowFuse Cloud Starter, Team, and Enterprise on request**. Self-hosted enablement follows once the central broker work lands.
+
+[Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to enable Application Building on your Cloud team.
+
+<!-- TODO: screenshot or short gif of Expert building, e.g., an OEE dashboard, in the canvas -->
 
 **Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own provider account.
 
-<!-- TODO: add ff-related-changelogs link once changelog entry for flow building is authored -->
+<!-- TODO: add ff-related-changelogs link once changelog entry for application building is authored -->
 
 ### In practice
 
-- You describe a flow in chat and Expert builds it on your canvas, instead of copying suggestions node by node
-- You see Expert's progress in real time as it adds tabs, wires nodes, and configures properties
-- You stay in your editor while Expert works alongside you, rather than getting handed back text instructions
+- You go from a description to a working OEE dashboard, Modbus integration, or handover screen without placing each node by hand
+- You see Expert's progress in real time as it builds, rather than waiting on a wall of suggestions to apply manually
+- You iterate by talking, asking Expert to add a downtime category, swap a node, or rewire a connection, instead of bouncing between chat and canvas
 
-## A More Immersive Editor Experience {#immersive-editor}
+## Manage Your Instance Without Leaving the Editor {#immersive-editor}
 
 The immersive editor places FlowFuse Expert next to the Node-RED canvas. In 2.29 the two could overlap when you opened the instance drawer, which forced you back out to the platform UI to manage settings, snapshots, environment variables, palette, and group or application assignment.
 
@@ -87,7 +96,7 @@ In 2.30 the drawer fits inside the immersive editor without overlapping Expert. 
 - You stop bouncing between the editor and the platform UI for routine instance work
 - Expert and the editor stay visible alongside whatever you are configuring
 
-## Snapshot Comparison: Even Clearer Diffs {#snapshot-diff}
+## Validate Deployments Faster With Sharper Snapshot Diffs {#snapshot-diff}
 
 The snapshot comparison view shipped in 2.29 with property-level diffs and a navigable change panel. 2.30 sharpens the signal-to-noise.
 
