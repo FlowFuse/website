@@ -164,11 +164,26 @@ as evidenced by a PO or signed quote, is the sole determinant.
 ## Deal Approval Process (Deal Desk)
 To ensure consistency and efficiency in our deal cycles, all proposals must follow the established Deal Desk workflow. This process covers the end-to-end journey from initial proposal creation through security review and final legal/contract execution.
 
+### Asana Deal Desk Tasks
+
+Any deal that requires **legal review**, **pricing/discount approval**, or other operational hand-offs must have a task created in the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list).
+
+When creating a task, include the following context so reviewers can act without needing to chase down background:
+
+- **Deal / company name** — the customer or prospect this deal is for.
+- **Counter-party contacts** — names, titles, and email addresses of the people involved from the customer side (e.g. economic buyer, legal contact, procurement).
+- **Deal summary** — ARR, contract length, and any non-standard terms being requested.
+- **What is needed** — be explicit: legal redline review, discount approval, MSA exception, etc.
+- **Deadline / urgency** — when a decision is needed and why.
+- **Link to HubSpot deal** — so reviewers can access the full deal record.
+
+Creating a task ensures nothing gets lost in Slack threads and gives the CEO, Legal, and Finance a single place to review, comment, and approve.
+
 ### Overview of the Flow
 
 #### Proposal Stage
 
-Sales reps create proposals and determine if the deal structure (discounts, terms, payment schedules) is standard. Non-standard deals are routed to the CEO via Slack for approval.
+Sales reps create proposals and determine if the deal structure (discounts, terms, payment schedules) is standard. Non-standard deals are routed to the CEO via Slack for approval, **and an Asana task must be opened in the Deal Desk project** (see above).
 
 ```mermaid
 graph TD
@@ -249,7 +264,7 @@ flowchart TD
 This stage handles the Master Subscription Agreement (MSA).
 Depending on whether the customer accepts our standard MSA or requests minor/major
 redlines, the contract is routed to Legal (Scale) and/or the CEO for cost and term
-approval before final signature.
+approval before final signature. **Any deal entering this stage requires an Asana task in the Deal Desk project** with full counter-party context (see [Asana Deal Desk Tasks](#asana-deal-desk-tasks) above).
 
 ```mermaid
 flowchart TD
