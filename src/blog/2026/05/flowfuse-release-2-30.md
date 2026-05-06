@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.30: Expert Builds Your Industrial Application"
-subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Plus instance management inside the immersive editor and faster deployment validation with sharper snapshot diffs."
-description: "FlowFuse 2.30 lets FlowFuse Expert build industrial applications from a description, lets you manage instance settings without leaving the immersive editor, and sharpens deployment validation with clearer snapshot diffs."
+subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Plus an immersive editor optimised for iterating with Expert."
+description: "FlowFuse 2.30 lets FlowFuse Expert build industrial applications from a description: OEE dashboards, MES handover screens, UNS topic mappings, and more."
 date: 2026-05-07
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/05/images/flowfuse-release-2-30.png
@@ -13,29 +13,27 @@ release: "2.30"
 features:
    - id: ff-expert
      heading: "FlowFuse Expert Builds Your Industrial Application"
-   - heading: "Manage Your Instance Without Leaving the Editor"
-   - id: snapshot-compare
-     heading: "Validate Deployments Faster With Sharper Snapshot Diffs"
    - heading: "What else is new?"
 cta:
   type: sign-up
   title: Try the latest FlowFuse improvements in your own environment
-  description: Describe the application you need and let Expert build it on your canvas, manage instance settings without leaving the editor, and validate deployments faster with sharper snapshot diffs.
+  description: Describe the application you need and let Expert build it on your canvas.
 ---
 
 <!--
 STATUS: WIP DRAFT for FlowFuse 2.30 release blog. DO NOT MERGE until checklist below is closed.
 
 Outstanding before merge:
-- [ ] Confirm lead-story framing with knolleary (agentic Expert flow building, Cloud-only soft launch on request, Beta)
-- [ ] Hold/promote candidate sections based on whether these PRs land before 2026-05-07:
+- [ ] Confirm lead-story framing with knolleary (agentic Expert application building, Cloud-only soft launch on request)
+- [ ] Hold/promote candidate items based on whether these PRs land before 2026-05-07:
       - flowfuse#7119 force-all-users SSO (Bosch)
       - flowfuse#7078 audit log stop reason
       - flowfuse#7180 immersive editor disabled-state UX
       - flowfuse#7202 snapshot comparison wire-change polish
       - flowfuse#7184 EMQX bridge automation
-- [ ] Author changelog entries for the lead story (agentic flow building) and the snapshot-comparison polish
-- [ ] Add a ff-expert-flow-building (Beta) sub-feature to src/_data/featureCatalog.yaml so tier badges render correctly. Plan: Cloud Starter/Pro/Enterprise on request, Self-Hosted unavailable for now.
+- [ ] Author changelog entry for the lead story (Expert application building)
+- [ ] Decide on a ff-expert sub-feature entry in src/_data/featureCatalog.yaml so tier badges reflect the new application-building capability
+- [ ] Confirm latest Node-RED 5.0 beta version and the most useful forum thread to link
 - [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png
 - [ ] Video to follow in a separate PR after publish (2.29 precedent: website#4855, 2.28: website#4724)
 - [ ] Marketing copy review (Yndira-E, allthedoll)
@@ -43,17 +41,17 @@ Outstanding before merge:
 - [ ] SEO description final pass
 -->
 
-FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description, lets you manage instance settings without leaving the immersive editor, and sharpens deployment validation with clearer snapshot diffs.
+FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your canvas.
 
 <!--more-->
 
-## FlowFuse Expert Builds Your Industrial Application {#expert-flow-building}
+## FlowFuse Expert Builds Your Industrial Application {#expert-application-building}
 
 *FlowFuse Expert is our integrated AI assistant: chat-based help across the FlowFuse website, platform, and the immersive Node-RED editor.*
 
 Until now, Expert could surface information, suggest changes, and act on links you clicked. Translating those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand.
 
-Expert now builds the application for you. Describe the outcome you need and Expert assembles it on your canvas, adding tabs, wiring nodes, and configuring properties. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced.
+Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced.
 
 Examples to try:
 
@@ -80,59 +78,38 @@ Application building is a soft launch and available on **FlowFuse Cloud Starter,
 - You see Expert's progress in real time as it builds, rather than waiting on a wall of suggestions to apply manually
 - You iterate by talking, asking Expert to add a downtime category, swap a node, or rewire a connection, instead of bouncing between chat and canvas
 
-## Manage Your Instance Without Leaving the Editor {#immersive-editor}
+## What else is new?
 
-The immersive editor places FlowFuse Expert next to the Node-RED canvas. In 2.29 the two could overlap when you opened the instance drawer, which forced you back out to the platform UI to manage settings, snapshots, environment variables, palette, and group or application assignment.
+### A smoother iteration experience with Expert
 
-In 2.30 the drawer fits inside the immersive editor without overlapping Expert. Every drawer tab works there: Settings, Snapshots, Environment Variables, Performance, Palette, and assignment. Save buttons disable correctly after a save, the Performance tab is back, and remote-instance assign and unassign reflect without a manual reload.
-
-<!-- TODO: screenshot of the instance drawer inside the immersive editor, with Expert visible alongside -->
+We optimised the immersive editor UI so iterating with FlowFuse Expert on your industrial application is faster and stays in context. The instance drawer no longer overlaps with the Node-RED canvas, so settings, snapshots, environment variables, palette, and group or application assignment all sit alongside your work rather than covering it.
 
 <div class="ff-related-changelogs">Changelog: <a href="https://flowfuse.com/changelog/2026/04/immersive-editor-drawer/">Instance drawer in the immersive editor</a></div>
 
-### In practice
+### Snapshot comparison polish
 
-- You manage instance settings, snapshots, env vars, performance, palette, and assignment from inside the immersive editor
-- You stop bouncing between the editor and the platform UI for routine instance work
-- Expert and the editor stay visible alongside whatever you are configuring
+A small follow-up to the property-level diff viewer that shipped in 2.29: computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles. Powered by a `flow-renderer` 0.5.1 update.
 
-## Validate Deployments Faster With Sharper Snapshot Diffs {#snapshot-diff}
-
-The snapshot comparison view shipped in 2.29 with property-level diffs and a navigable change panel. 2.30 sharpens the signal-to-noise.
-
-Computed properties (the group node `w` and `h` values) no longer flag as changes, so structural diffs show what actually changed. The change panel labels each entry with a node-type badge (config, tab, or normal). Position-only changes are hidden by default. Config-node highlighting clears between selections. JSON sections support prettify and wrap toggles.
-
-The viewer is powered by `flow-renderer` 0.5.1, which adds `persistentHighlight` so the canvas stays in sync with the change panel as you step through.
-
-<!-- TODO: screenshot showing the cleaner diff with node-type badges and prettified JSON -->
-
-<!-- TODO: add ff-related-changelogs link once 2.30 changelog entry for snapshot polish is authored -->
-
-### In practice
-
-- You see only the changes that matter, with computed properties filtered out automatically
-- You step through a diff knowing whether each change is on a normal node, a tab, or a config node
-- You toggle wrap and prettify on long JSON without leaving the diff view
-
-## What else is new?
+### Smaller updates and fixes
 
 - **Markdown code blocks in Expert preserve line breaks again**: a regression from the 2.29 highlighting work is fixed.
 - **Device editor auto-recovery**: when opening the editor on a remote instance fails on first load, the page now refreshes after three seconds rather than leaving you on a 502.
 - **SSO security hardening**: Google Social Login tokens can no longer be reused across logins, and a first SSO login on an unverified local account rotates the password to a random string. <!-- TODO: append "Force-all-users SSO" line if flowfuse#7119 lands -->
-- **Tooltip cleanup**: the custom tooltip directive is replaced with the native `title` attribute. Less flicker, fewer stuck tooltips.
+- **Tooltip cleanup**: native `title` replaces the buggy custom directive. Less flicker, fewer stuck tooltips.
+- **Suspended team logging**: when a billing failure or trial expiry leaves an instance running, we now log why so support can act faster.
+- **Device palette settings**: saving palette changes on a device no longer accidentally sends sanitised security flags upstream.
+- **Git integration feature flag**: `gitIntegration` respects the all-feature override (Azure DevOps users on edge configurations).
+- **Expert chat request timeout**: front-end chat requests time out cleanly rather than hanging.
 <!-- CANDIDATE: keep this bullet only if flowfuse#7078 lands -->
 - **Audit log stop reasons**: stop events show the underlying reason in the audit log detail rather than a generic message.
 
-### Fixes
+## Node-RED
 
-- **Suspended team logging**: when a billing failure or trial expiry leaves an instance running, we now log why so support can act faster.
-- **Device palette settings**: saving palette changes on a device no longer accidentally sends sanitised security flags back upstream.
-- **Git integration feature flag**: `gitIntegration` respects the all-feature override (Azure DevOps users on edge configurations).
-- **Expert chat request timeout**: front-end chat requests time out cleanly rather than hanging.
+Node-RED is the canvas FlowFuse builds on, and the project keeps moving fast.
 
-### Node-RED
+[Node-RED 5.0](https://nodered.org/blog/2025/12/03/node-red-roadmap-to-5) is in active beta. It is a modernization and UI re-architecture that readies Node-RED for better AI-guided development and brings more clarity to manual editing. The latest betas land in the Node-RED forum first, with release notes, known issues, and the team looking for feedback. Try them out and follow along on the [Node-RED forum](https://discourse.nodered.org/).
 
-[Node-RED 5.0](https://nodered.org/blog/2025/12/03/node-red-roadmap-to-5) is approaching its first stable release. We are aiming to ship 5.0 as a stack option in FlowFuse by the end of May. Until then, Node-RED 4.1 remains the default.
+We are aiming to ship Node-RED 5.0 as a stack option in FlowFuse by the end of May. Until then, Node-RED 4.1 remains the default.
 
 <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #D1D5DB;">
 
