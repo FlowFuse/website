@@ -11,7 +11,7 @@ tags:
    - releases
 release: "2.30"
 features:
-   - id: ff-expert
+   - id: ff-expert-application-building
      heading: "FlowFuse Expert Builds Your Industrial Application"
    - heading: "What else is new?"
 cta:
@@ -31,8 +31,8 @@ Outstanding before merge:
       - flowfuse#7180 immersive editor disabled-state UX
       - flowfuse#7202 snapshot comparison wire-change polish
       - flowfuse#7184 EMQX bridge automation
-- [ ] Author changelog entry for the lead story (Expert application building)
-- [ ] Decide on a ff-expert sub-feature entry in src/_data/featureCatalog.yaml so tier badges reflect the new application-building capability
+- [ ] Confirm changelog authors (currently set to nick-oleary for application building, andrea-palmieri for snapshot polish based on prior contribution patterns)
+- [ ] Decide whether to flip ff-expert-application-building to showOnPricing: true once the team is ready to surface it on /pricing/
 - [ ] Confirm latest Node-RED 5.0 beta version and the most useful forum thread to link
 - [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png
 - [ ] Video to follow in a separate PR after publish (2.29 precedent: website#4855, 2.28: website#4724)
@@ -70,8 +70,6 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 **Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own AI provider.
 
-<!-- TODO: add ff-related-changelogs link once changelog entry for application building is authored -->
-
 ### In practice
 
 - You go from a description to a working OEE dashboard, Modbus integration, or handover screen without needing to place each node by hand
@@ -89,6 +87,8 @@ We optimised the immersive Node-RED editor so iterating with FlowFuse Expert on 
 ### More usable snapshot comparisons
 
 We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is more easily made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
+
+<div class="ff-related-changelogs">Changelog: <a href="https://flowfuse.com/changelog/2026/05/snapshot-comparison-polish/">More usable snapshot comparisons</a></div>
 
 ### Smaller updates and fixes
 
