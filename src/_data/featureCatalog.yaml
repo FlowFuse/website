@@ -32,9 +32,11 @@ sections:
         label: Application Building
         description: "Describe what you want to build and FlowFuse Expert assembles it on your canvas, adding tabs, wiring nodes, and configuring properties."
         docsLink: /docs/user/expert/chat/
-        changelog:
-          - url: /changelog/2026/05/expert-application-building/
-            release: "2.30"
+        # TODO: uncomment once src/changelog/2026/05/expert-application-building.md is authored
+        # changelog:
+        #   - url: /changelog/2026/05/expert-application-building/
+        #     release: "2.30"
+        changelog: null
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: false
@@ -681,8 +683,9 @@ sections:
         changelog:
           - url: '/changelog/2026/04/snapshot-diff-viewer/'
             release: '2.29'
-          - url: '/changelog/2026/05/snapshot-comparison-polish/'
-            release: '2.30'
+          # TODO: uncomment once src/changelog/2026/05/snapshot-comparison-polish.md is authored
+          # - url: '/changelog/2026/05/snapshot-comparison-polish/'
+          #   release: '2.30'
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: false
         tags: [cloud, self-hosted]

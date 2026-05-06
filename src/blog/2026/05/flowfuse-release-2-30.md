@@ -14,6 +14,10 @@ features:
    - id: ff-expert-application-building
      heading: "FlowFuse Expert Builds Your Industrial Application"
    - heading: "What else is new?"
+   - id: immersive-editor-drawer
+     heading: "A smoother iteration experience with Expert"
+   - id: snapshot-compare
+     heading: "More usable snapshot comparisons"
 cta:
   type: sign-up
   title: Try the latest FlowFuse improvements in your own environment
@@ -31,7 +35,10 @@ Outstanding before merge:
       - flowfuse#7180 immersive editor disabled-state UX
       - flowfuse#7202 snapshot comparison wire-change polish
       - flowfuse#7184 EMQX bridge automation
-- [ ] Confirm changelog authors (currently set to nick-oleary for application building, andrea-palmieri for snapshot polish based on prior contribution patterns)
+- [ ] Engineering to author two changelog entries (out of scope for this PR):
+      - src/changelog/2026/05/expert-application-building.md (lead story)
+      - src/changelog/2026/05/snapshot-comparison-polish.md (snapshot follow-up)
+      Once both files exist, uncomment the `changelog:` blocks on `ff-expert-application-building` and `snapshot-compare` in src/_data/featureCatalog.yaml. The release blog post then auto-injects the changelog links via the `releaseFeatures` transform; no inline divs needed.
 - [ ] Decide whether to flip ff-expert-application-building to showOnPricing: true once the team is ready to surface it on /pricing/
 - [ ] Confirm latest Node-RED 5.0 beta version and the most useful forum thread to link
 - [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png
@@ -82,13 +89,10 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 We optimised the immersive Node-RED editor so iterating with FlowFuse Expert on your industrial application is easier and with less context switching. The FlowFuse Platform UI can stay available and the instance drawer no longer overlaps with the Node-RED canvas, so settings, snapshots, environment variables, palette, and group or application assignment all sit alongside your work rather than covering it.
 
-<div class="ff-related-changelogs">Changelog: <a href="https://flowfuse.com/changelog/2026/04/immersive-editor-drawer/">Instance drawer in the immersive editor</a></div>
-
 ### More usable snapshot comparisons
 
 We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is more easily made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
 
-<div class="ff-related-changelogs">Changelog: <a href="https://flowfuse.com/changelog/2026/05/snapshot-comparison-polish/">More usable snapshot comparisons</a></div>
 
 ### Smaller updates and fixes
 
