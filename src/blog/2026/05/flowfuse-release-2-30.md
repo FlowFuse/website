@@ -51,7 +51,7 @@ FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a 
 
 Until now, Expert could surface information, suggest changes, and act on links you clicked. Translating those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand.
 
-Now you can describe what you want to build and the FlowFuse Expert builds it for you directly on the canvas. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced so it maps correctly to your real life hardware.
+Now you can describe what you want to build and the FlowFuse Expert builds it for you directly on the canvas saving you time. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced so it maps correctly to your real life scenario.
 
 Examples to try:
 
@@ -60,37 +60,35 @@ Examples to try:
 - "A shift handover screen showing outstanding alarms and recent operator notes"
 - "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
-Under the hood, the two-way communication runs over MQTT with a dedicated broker behind it for Cloud teams.
-
 <!-- TODO: screenshot or short gif of Expert building, e.g., an OEE dashboard, in the canvas -->
 
 ### Availability
 
-Application building is a soft launch and available on **FlowFuse Cloud Starter, Team, and Enterprise on request**. Self-hosted enablement follows once the central broker work lands.
+Agentic Node-RED development is being soft launched to create a window of opportunity to fine tune the experience in order to scale right after. Right now it is available on **FlowFuse Cloud Starter, Team, and Enterprise on request**. Self-hosted enablement follows shortly.
 
-[Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to enable Application Building on your Cloud team.
+[Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to let us enable Agentic Node-RED development for your FlowFuse Cloud team.
 
-**Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own provider account.
+**Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own AI provider.
 
 <!-- TODO: add ff-related-changelogs link once changelog entry for application building is authored -->
 
 ### In practice
 
-- You go from a description to a working OEE dashboard, Modbus integration, or handover screen without placing each node by hand
+- You go from a description to a working OEE dashboard, Modbus integration, or handover screen without needing to place each node by hand
 - You see Expert's progress in real time as it builds, rather than waiting on a wall of suggestions to apply manually
-- You iterate by talking, asking Expert to add a downtime category, swap a node, or rewire a connection, instead of bouncing between chat and canvas
+- You iterate by talking in addition to being to able to control everything by hand through the canvas
 
 ## What else is new?
 
 ### A smoother iteration experience with Expert
 
-We optimised the immersive editor UI so iterating with FlowFuse Expert on your industrial application is faster and stays in context. The instance drawer no longer overlaps with the Node-RED canvas, so settings, snapshots, environment variables, palette, and group or application assignment all sit alongside your work rather than covering it.
+We optimised the immersive Node-RED editor so iterating with FlowFuse Expert on your industrial application is easier and with less context switching. The FlowFuse Platform UI can stay available and the instance drawer no longer overlaps with the Node-RED canvas, so settings, snapshots, environment variables, palette, and group or application assignment all sit alongside your work rather than covering it.
 
 <div class="ff-related-changelogs">Changelog: <a href="https://flowfuse.com/changelog/2026/04/immersive-editor-drawer/">Instance drawer in the immersive editor</a></div>
 
-### Snapshot comparison polish
+### More usable snapshot comparisons
 
-A small follow-up to the property-level diff viewer that shipped in 2.29: computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles. Powered by a `flow-renderer` 0.5.1 update.
+We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is easier made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
 
 ### Smaller updates and fixes
 
