@@ -76,7 +76,7 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 - You go from a description to a working OEE dashboard, Modbus integration, or handover screen without needing to place each node by hand
 - You see Expert's progress in real time as it builds, rather than waiting on a wall of suggestions to apply manually
-- You iterate by talking in addition to being to able to control everything by hand through the canvas
+- You iterate by talking, in addition to being able to control everything by hand through the canvas
 
 ## What else is new?
 
@@ -88,7 +88,7 @@ We optimised the immersive Node-RED editor so iterating with FlowFuse Expert on 
 
 ### More usable snapshot comparisons
 
-We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is easier made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
+We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is more easily made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
 
 ### Smaller updates and fixes
 
