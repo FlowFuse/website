@@ -18,3 +18,5 @@ With the release of FlowFuse 2.30.0 it is now possible to pick a configured prov
 ![Admin settings for Automatic SSO Redirect](./images/singe-sso-provider.png)
 
 To prevent administrator lockout in the event of a SSO failure, admins can by pass this redirect and enter their normal username and password by accessing any page on the admin route, e.g. `https://forge.example.com/admin`
+
+This feature is only available to Self Hosted Enterprise licensed FlowFuse Instances.
