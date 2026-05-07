@@ -681,9 +681,6 @@ sections:
         changelog:
           - url: '/changelog/2026/04/snapshot-diff-viewer/'
             release: '2.29'
-          # TODO: uncomment once src/changelog/2026/05/snapshot-comparison-polish.md is authored
-          # - url: '/changelog/2026/05/snapshot-comparison-polish/'
-          #   release: '2.30'
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: false
         tags: [cloud, self-hosted]
