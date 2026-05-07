@@ -24,7 +24,7 @@ cta:
   description: Application Building is in soft launch on FlowFuse Cloud Starter, Team, and Enterprise. Request access to enable it for your team.
 ---
 
-FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your canvas.
+FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your workspace.
 
 ## FlowFuse Expert Builds Your Industrial Application {#expert-application-building}
 
