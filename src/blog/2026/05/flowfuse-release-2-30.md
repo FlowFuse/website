@@ -19,9 +19,9 @@ features:
    - id: snapshot-compare
      heading: "More usable snapshot comparisons"
 cta:
-  type: sign-up
-  title: Try the latest FlowFuse improvements in your own environment
-  description: Describe the application you need and let Expert build it on your canvas.
+  type: contact
+  title: Get FlowFuse Expert Application Building enabled for your team
+  description: Application Building is in soft launch on FlowFuse Cloud Starter, Team, and Enterprise. Request access to enable it for your team.
 ---
 
 <!--
@@ -91,7 +91,7 @@ We optimized the immersive Node-RED editor so iterating with FlowFuse Expert on 
 
 ### More usable snapshot comparisons
 
-We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is more easily made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes are hidden by default, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
+We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is more easily made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes can be hidden when you want to focus on substantive edits, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
 
 
 ### Smaller updates and fixes
