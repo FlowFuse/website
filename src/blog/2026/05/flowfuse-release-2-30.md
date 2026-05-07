@@ -48,7 +48,7 @@ Examples to try:
 
 Agentic Node-RED development is being soft launched to create a window of opportunity to fine tune the experience in order to scale right after. Right now it is available on **FlowFuse Cloud Starter, Team, and Enterprise on request**. Self-hosted enablement follows shortly.
 
-[Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to let us enable Agentic Node-RED development for your FlowFuse Cloud team.
+[Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to let us enable Agentic Node-RED development for your FlowFuse Cloud team. Please make sure to provide the email address associated with your FlowFuse Cloud team.
 
 **Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own AI provider.
 
