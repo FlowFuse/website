@@ -1,6 +1,6 @@
 ---
 title: FlowFuse Expert Builds Your Application
-description: Describe the application you want, and FlowFuse Expert assembles it on your Node-RED canvas: tabs, nodes, wires, and configuration.
+description: "Describe the application you want, and FlowFuse Expert assembles it on your Node-RED canvas: tabs, nodes, wires, and configuration."
 date: 2026-05-07 12:00:00
 authors: ['nick-oleary']
 tags:
