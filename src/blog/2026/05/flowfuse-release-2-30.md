@@ -35,8 +35,8 @@ Outstanding before merge:
       - flowfuse#7202 snapshot wire-change polish: MERGED, covered in "More usable snapshot comparisons"
       - flowfuse#7180 immersive editor disabled-state UX: still open, dropped from this release
       - flowfuse#7184 EMQX bridge automation: still open, internal-only, dropped from this release
-- [ ] Changelog entries (separate PRs):
-      - src/changelog/2026/05/expert-application-building.md (lead story): #4964, featureCatalog reference now uncommented in this PR. Order of merge: changelog PR first, then this PR, so the auto-injected link resolves on production.
+- [x] Changelog entries:
+      - src/changelog/2026/05/expert-application-building.md (lead story): authored in #4964. featureCatalog reference uncommented in this PR. Lead-section gif duplicated into src/blog/2026/05/images/expert-application-building.gif so this PR's deploy preview matches the production look. Merge order: #4964 first, then this PR, so the auto-injected link resolves on production.
       - src/changelog/2026/05/snapshot-comparison-polish.md (snapshot follow-up): not yet authored. Once the file lands, uncomment the 2.30 entry on `snapshot-compare` in src/_data/featureCatalog.yaml.
 - [ ] Decide whether to flip ff-expert-application-building to showOnPricing: true once the team is ready to surface it on /pricing/
 - [ ] Confirm latest Node-RED 5.0 beta version and the most useful forum thread to link
@@ -66,7 +66,8 @@ Examples to try:
 - "A shift handover screen showing outstanding alarms and recent operator notes"
 - "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
-<!-- TODO: screenshot or short gif of Expert building, e.g., an OEE dashboard, in the canvas -->
+![FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt](src/blog/2026/05/images/expert-application-building.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+<figcaption>FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt.</figcaption>
 
 ### Availability
 
