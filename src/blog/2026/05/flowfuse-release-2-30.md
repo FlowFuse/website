@@ -34,7 +34,7 @@ Until now, Expert could surface information, suggest changes, and act on links y
 
 Now you can describe what you want to build and the FlowFuse Expert builds it for you directly on the Node-RED workspace saving you time. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced so it maps correctly to your real life scenario.
 
-Examples to try:
+Start your agentic development with for example:
 
 - "An OEE dashboard for line 3 with downtime reasons and a daily target"
 - "Get temperature from Modbus address 1001 and publish that to my UNS broker on factory/line3/temperature"
