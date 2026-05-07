@@ -29,12 +29,12 @@ STATUS: WIP DRAFT for FlowFuse 2.30 release blog. DO NOT MERGE until checklist b
 
 Outstanding before merge:
 - [ ] Confirm lead-story framing with knolleary (agentic Expert application building, Cloud-only soft launch on request)
-- [ ] Hold/promote candidate items based on whether these PRs land before 2026-05-07:
-      - flowfuse#7119 force-all-users SSO (Bosch)
-      - flowfuse#7078 audit log stop reason
-      - flowfuse#7180 immersive editor disabled-state UX
-      - flowfuse#7202 snapshot comparison wire-change polish
-      - flowfuse#7184 EMQX bridge automation
+- [x] Candidate PR triage (resolved 2026-05-07):
+      - flowfuse#7119 force-all-users SSO: MERGED, bullet added under "Smaller updates and fixes"
+      - flowfuse#7078 audit log stop reason: MERGED, bullet retained
+      - flowfuse#7202 snapshot wire-change polish: MERGED, covered in "More usable snapshot comparisons"
+      - flowfuse#7180 immersive editor disabled-state UX: still open, dropped from this release
+      - flowfuse#7184 EMQX bridge automation: still open, internal-only, dropped from this release
 - [ ] Engineering to author two changelog entries (out of scope for this PR):
       - src/changelog/2026/05/expert-application-building.md (lead story)
       - src/changelog/2026/05/snapshot-comparison-polish.md (snapshot follow-up)
@@ -98,13 +98,12 @@ We continued refining the snapshot comparison experience introduced in 2.29 to m
 
 - **Markdown code blocks in Expert preserve line breaks again**: a regression from the 2.29 highlighting work is fixed.
 - **Device editor auto-recovery**: when opening the editor on a remote instance fails on first load, the page now refreshes after three seconds rather than leaving you on a 502.
-- **SSO security hardening**: Google Social Login tokens can no longer be reused across logins, and a first SSO login on an unverified local account rotates the password to a random string. <!-- TODO: append "Force-all-users SSO" line if flowfuse#7119 lands -->
+- **Force all users to use SSO**: admins can now redirect every login to a single configured SSO provider, removing the email and password fallback for organisations that need to enforce SSO across the org (Enterprise self-hosted).
 - **Tooltip cleanup**: native `title` replaces the buggy custom directive. Less flicker, fewer stuck tooltips.
 - **Suspended team logging**: when a billing failure or trial expiry leaves an instance running, we now log why so support can act faster.
 - **Device palette settings**: saving palette changes on a device no longer accidentally sends sanitised security flags upstream.
 - **Git integration feature flag**: `gitIntegration` respects the all-feature override (Azure DevOps users on edge configurations).
 - **Expert chat request timeout**: front-end chat requests time out cleanly rather than hanging.
-<!-- CANDIDATE: keep this bullet only if flowfuse#7078 lands -->
 - **Audit log stop reasons**: stop events show the underlying reason in the audit log detail rather than a generic message.
 
 **Looking ahead:** we're actively preparing support for Node-RED 5.0 in FlowFuse and currently expect it to become available as a stack option by the end of May. Until then, Node-RED 4.1 remains the default.
