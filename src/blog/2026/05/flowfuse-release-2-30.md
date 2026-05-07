@@ -35,10 +35,9 @@ Outstanding before merge:
       - flowfuse#7202 snapshot wire-change polish: MERGED, covered in "More usable snapshot comparisons"
       - flowfuse#7180 immersive editor disabled-state UX: still open, dropped from this release
       - flowfuse#7184 EMQX bridge automation: still open, internal-only, dropped from this release
-- [ ] Engineering to author two changelog entries (out of scope for this PR):
-      - src/changelog/2026/05/expert-application-building.md (lead story)
-      - src/changelog/2026/05/snapshot-comparison-polish.md (snapshot follow-up)
-      Once both files exist, uncomment the `changelog:` blocks on `ff-expert-application-building` and `snapshot-compare` in src/_data/featureCatalog.yaml. The release blog post then auto-injects the changelog links via the `releaseFeatures` transform; no inline divs needed.
+- [ ] Changelog entries (separate PRs):
+      - src/changelog/2026/05/expert-application-building.md (lead story): #4964, featureCatalog reference now uncommented in this PR. Order of merge: changelog PR first, then this PR, so the auto-injected link resolves on production.
+      - src/changelog/2026/05/snapshot-comparison-polish.md (snapshot follow-up): not yet authored. Once the file lands, uncomment the 2.30 entry on `snapshot-compare` in src/_data/featureCatalog.yaml.
 - [ ] Decide whether to flip ff-expert-application-building to showOnPricing: true once the team is ready to surface it on /pricing/
 - [ ] Confirm latest Node-RED 5.0 beta version and the most useful forum thread to link
 - [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png

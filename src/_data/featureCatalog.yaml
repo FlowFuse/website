@@ -32,11 +32,9 @@ sections:
         label: Application Building
         description: "Describe what you want to build and FlowFuse Expert assembles it on your canvas, adding tabs, wiring nodes, and configuring properties."
         docsLink: /docs/user/expert/chat/
-        # TODO: uncomment once src/changelog/2026/05/expert-application-building.md is authored
-        # changelog:
-        #   - url: /changelog/2026/05/expert-application-building/
-        #     release: "2.30"
-        changelog: null
+        changelog:
+          - url: /changelog/2026/05/expert-application-building/
+            release: "2.30"
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: false
