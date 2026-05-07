@@ -68,20 +68,6 @@ There is also slower drift at the management level. Ideal cycle times get adjust
 
 The fix is removing the incentive to game. Use OEE as a diagnostic, not a scorecard. Stop ranking shifts on it. Stop tying it to bonuses. Make the goal "find the losses," not "hit 80%."
 
-## The math fights itself
-
-OEE is Availability times Performance times Quality. The idea is one number captures everything. The problem is the three components are not independent.
-
-Run the line faster to improve Performance and rejects increase, so Quality drops. Tighten quality checks and the line stops more often, so Availability drops. Skip maintenance to protect Availability and you get longer breakdowns later.
-
-It gets worse on a production line. A high OEE on a non-bottleneck machine is not a good thing. [If a machine that is not the bottleneck runs at high OEE, it leads to a jam of parts before the bottleneck](https://www.allaboutlean.com/use-oee/). The machine looks efficient. The system does not improve.
-
-High-mix manufacturing breaks the math differently. When a machine runs multiple products, [using the fastest part as the ideal cycle time causes Performance to collapse for slower jobs, even when they are running as planned](https://www.machinetracking.com/post/ope-vs-oee-cnc-manufacturing).
-
-There is also a safety dimension. [Safety-critical processes sometimes require conservative operating speeds or deliberate redundancy, both of which reduce measured OEE](https://tractian.com/en/blog/world-class-oee). The metric penalises behaviour that is sometimes necessary.
-
-OEE is one input. Pair it with throughput, first-pass yield, on-time-in-full, and bottleneck utilisation. Look at the components separately, not just the combined score.
-
 ## The benchmark trap
 
 The 85% number gets repeated like a rule. It came from [Seiichi Nakajima's TPM framework in the 1980s](https://en.wikipedia.org/wiki/Overall_equipment_effectiveness), based on 90% availability, 95% performance, and 99.9% quality. It was a directional target for stable, high-volume manufacturing, not a universal benchmark.
@@ -101,6 +87,8 @@ Material wait. Changeover. Minor stops. No change.
 From a distance, the system looks active. On the floor, it feels like a report nobody uses.
 
 The issue is ownership. Production logs downtime, but maintenance, engineering, or procurement must fix it. The insight sits in one team, the action in another, and nothing closes the loop.
+
+This is also where OEE's structural limits show up. [A high OEE on a non-bottleneck machine is not a good thing—if a machine that is not the bottleneck runs at high OEE, it leads to a jam of parts before the bottleneck](https://www.allaboutlean.com/use-oee/). The machine looks efficient. The system does not improve. Focus OEE tracking on the bottleneck and the lines feeding it.
 
 The fix is to connect data to action. A recurring failure should trigger a maintenance work order. A material delay should alert procurement and the line lead. A changeover overrun should create a kaizen task.
 
