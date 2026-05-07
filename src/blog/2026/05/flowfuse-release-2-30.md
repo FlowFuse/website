@@ -41,8 +41,8 @@ Examples to try:
 - "A shift handover screen showing outstanding alarms and recent operator notes"
 - "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
-![FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt](src/blog/2026/05/images/expert-application-building.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
-<figcaption>FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt.</figcaption>
+![FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt](src/blog/2026/05/images/expert-application-building.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+<figcaption>FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt.</figcaption>
 
 ### Availability
 
