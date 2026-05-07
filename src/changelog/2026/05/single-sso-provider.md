@@ -21,4 +21,6 @@ _Admin settings for Automatic SSO Redirect_
 
 To prevent administrator lockout in the event of a SSO failure, admins can by pass this redirect and enter their normal username and password by accessing any page on the admin route, e.g. `https://forge.example.com/admin`
 
+Documentation is found [here](https://flowfuse.com/docs/admin/sso/saml#forcing-all-users-to-use-sso)
+
 This feature is only available to Self Hosted Enterprise licensed FlowFuse Instances.
