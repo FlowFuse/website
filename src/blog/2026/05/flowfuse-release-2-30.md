@@ -1,6 +1,6 @@
 ---
 title: "FlowFuse 2.30: Expert Builds Your Industrial Application"
-subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Plus a more immersive editor optimised for iterating with Expert."
+subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your canvas. Plus a more immersive editor optimized for iterating with Expert."
 description: "FlowFuse 2.30 lets FlowFuse Expert build industrial applications from a description: OEE dashboards, MES handover screens, UNS topic mappings, and more."
 date: 2026-05-07
 authors: ["dimitrie-hoekstra"]
@@ -87,7 +87,7 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 ### A smoother iteration experience with Expert
 
-We optimised the immersive Node-RED editor so iterating with FlowFuse Expert on your industrial application is easier and with less context switching. The FlowFuse Platform UI can stay available and the instance drawer no longer overlaps with the Node-RED canvas, so settings, snapshots, environment variables, palette, and group or application assignment all sit alongside your work rather than covering it.
+We optimized the immersive Node-RED editor so iterating with FlowFuse Expert on your industrial application is easier and with less context switching. The FlowFuse Platform UI can stay available and the instance drawer no longer overlaps with the Node-RED canvas, so settings, snapshots, environment variables, palette, and group or application assignment all sit alongside your work rather than covering it.
 
 ### More usable snapshot comparisons
 
