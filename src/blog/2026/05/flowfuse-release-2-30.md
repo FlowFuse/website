@@ -56,7 +56,7 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 - You go from a description to a working OEE dashboard, Modbus integration, or handover screen without needing to place each node by hand
 - You see Expert's progress in real time as it builds, rather than waiting on a wall of suggestions to apply manually
-- You iterate by talking, in addition to being able to control everything by hand through the canvas
+- You iterate by talking, in addition to being able to control everything by hand through the workspace 
 
 ## What else is new?
 
