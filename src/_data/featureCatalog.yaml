@@ -30,7 +30,7 @@ sections:
 
       - id: ff-expert-application-building
         label: Application Building
-        description: "Describe what you want to build and FlowFuse Expert assembles it on your canvas, adding tabs, wiring nodes, and configuring properties."
+        description: "Describe what you want to build and FlowFuse Expert assembles it on your workspace, adding tabs, wiring nodes, and configuring properties."
         docsLink: /docs/user/expert/chat/
         changelog:
           - url: /changelog/2026/05/expert-application-building/
