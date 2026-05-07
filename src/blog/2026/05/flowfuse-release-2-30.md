@@ -32,7 +32,7 @@ FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a 
 
 Until now, Expert could surface information, suggest changes, and act on links you clicked. Translating those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand.
 
-Now you can describe what you want to build and the FlowFuse Expert builds it for you directly on the canvas saving you time. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced so it maps correctly to your real life scenario.
+Now you can describe what you want to build and the FlowFuse Expert builds it for you directly on the Node-RED workspace saving you time. Real-time tool-call status keeps you in the loop while it works, and you keep iterating in chat to refine what it produced so it maps correctly to your real life scenario.
 
 Examples to try:
 
