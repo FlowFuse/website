@@ -24,29 +24,6 @@ cta:
   description: Application Building is in soft launch on FlowFuse Cloud Starter, Team, and Enterprise. Request access to enable it for your team.
 ---
 
-<!--
-STATUS: WIP DRAFT for FlowFuse 2.30 release blog. DO NOT MERGE until checklist below is closed.
-
-Outstanding before merge:
-- [ ] Confirm lead-story framing with knolleary (agentic Expert application building, Cloud-only soft launch on request)
-- [x] Candidate PR triage (resolved 2026-05-07):
-      - flowfuse#7119 force-all-users SSO: MERGED, bullet added under "Smaller updates and fixes"
-      - flowfuse#7078 audit log stop reason: MERGED, bullet retained
-      - flowfuse#7202 snapshot wire-change polish: MERGED, covered in "More usable snapshot comparisons"
-      - flowfuse#7180 immersive editor disabled-state UX: still open, dropped from this release
-      - flowfuse#7184 EMQX bridge automation: still open, internal-only, dropped from this release
-- [x] Changelog entries:
-      - src/changelog/2026/05/expert-application-building.md (lead story): authored in #4964. featureCatalog reference uncommented in this PR. Lead-section gif duplicated into src/blog/2026/05/images/expert-application-building.gif so this PR's deploy preview matches the production look. Merge order: #4964 first, then this PR, so the auto-injected link resolves on production.
-      - Snapshot follow-up: no changelog this release.
-- [ ] Decide whether to flip ff-expert-application-building to showOnPricing: true once the team is ready to surface it on /pricing/
-- [ ] Confirm latest Node-RED 5.0 beta version and the most useful forum thread to link
-- [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png
-- [ ] Video to follow in a separate PR after publish (2.29 precedent: website#4855, 2.28: website#4724)
-- [ ] Marketing copy review (Yndira-E, allthedoll)
-- [ ] Engineering review (knolleary, hardillb)
-- [ ] SEO description final pass
--->
-
 FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your canvas.
 
 <!--more-->
