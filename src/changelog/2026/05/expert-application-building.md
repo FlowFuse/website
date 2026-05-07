@@ -12,7 +12,8 @@ You can now describe the application you want to build, and FlowFuse Expert asse
 
 Until now, the Expert could answer questions, suggest changes, and act on links you clicked. Turning those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand. Now the Expert does that work for you, and you keep iterating in chat to shape the result around your real-world setup.
 
-<!-- TODO: add a short screen recording of the Expert assembling, for example, an OEE dashboard on the canvas. Upload to YouTube via #dev-marketing and embed with <lite-youtube>. -->
+![FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt](./images/expert-application-building.gif){data-zoomable}
+*FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt.*
 
 Agentic Node-RED development is rolling out as a soft launch so we can fine-tune the experience before opening it up more widely. It is available on request to FlowFuse Cloud Starter, Team, and Enterprise teams from v2.30. Self Hosted enablement follows shortly.
 
