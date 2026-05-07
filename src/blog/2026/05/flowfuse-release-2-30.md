@@ -62,7 +62,7 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 ### A smoother iteration experience with Expert
 
-We refined the immersive editor experience so working with FlowFuse Expert feels more natural and with less context switching. Platform controls like snapshots, environment variables, and instance settings now stay accessible alongside the canvas instead of covering your workspace.
+We refined the immersive editor experience so working with FlowFuse Expert feels more natural and with less context switching. Platform controls like snapshots, environment variables, and instance settings now stay accessible alongside the workspace instead of covering your workspace.
 
 ### More usable snapshot comparisons
 
