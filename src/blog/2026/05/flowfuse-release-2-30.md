@@ -37,7 +37,7 @@ Now you can describe what you want to build and the FlowFuse Expert builds it fo
 Examples to try:
 
 - "An OEE dashboard for line 3 with downtime reasons and a daily target"
-- "A Modbus connection that publishes tag values to my UNS broker on `factory/line3/+`"
+- "Get temperature from Modbus address 1001 and publish that to my UNS broker on factory/line3/temperature"
 - "A shift handover screen showing outstanding alarms and recent operator notes"
 - "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
