@@ -26,8 +26,6 @@ cta:
 
 FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your canvas.
 
-<!--more-->
-
 ## FlowFuse Expert Builds Your Industrial Application {#expert-application-building}
 
 *FlowFuse Expert is our integrated AI assistant across FlowFuse's website, platform, and in the immersive Node-RED editor.*
