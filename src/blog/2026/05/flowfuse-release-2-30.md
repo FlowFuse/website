@@ -37,7 +37,7 @@ Outstanding before merge:
       - flowfuse#7184 EMQX bridge automation: still open, internal-only, dropped from this release
 - [x] Changelog entries:
       - src/changelog/2026/05/expert-application-building.md (lead story): authored in #4964. featureCatalog reference uncommented in this PR. Lead-section gif duplicated into src/blog/2026/05/images/expert-application-building.gif so this PR's deploy preview matches the production look. Merge order: #4964 first, then this PR, so the auto-injected link resolves on production.
-      - src/changelog/2026/05/snapshot-comparison-polish.md (snapshot follow-up): not yet authored. Once the file lands, uncomment the 2.30 entry on `snapshot-compare` in src/_data/featureCatalog.yaml.
+      - Snapshot follow-up: no changelog this release.
 - [ ] Decide whether to flip ff-expert-application-building to showOnPricing: true once the team is ready to surface it on /pricing/
 - [ ] Confirm latest Node-RED 5.0 beta version and the most useful forum thread to link
 - [ ] Hero image at src/blog/2026/05/images/flowfuse-release-2-30.png
