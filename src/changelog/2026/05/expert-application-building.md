@@ -8,13 +8,15 @@ tags:
 issues:
 ---
 
-You can now describe the application you want to build, and FlowFuse Expert assembles it for you directly on your Node-RED canvas. It adds tabs, drops in nodes, wires them together, and configures their properties, so you can start from a working flow instead of a blank canvas.
+You can now describe what you want to build, and the FlowFuse Expert will assemble it for you directly on your Node-RED workspace. It adds tabs, drops in nodes, wires them together, and configures their properties, to help get you up and running.
 
-Until now, the Expert could answer questions, suggest changes, and act on links you clicked. Turning those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand. Now the Expert does that work for you, and you keep iterating in chat to shape the result around your real-world setup.
+Previously, the Expert could answer questions, suggest changes, and act on links you clicked. Turning those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand. Now the Expert does that work for you, and you keep iterating in chat to shape the result around your real-world setup.
 
-![FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt](./images/expert-application-building.gif){data-zoomable}
-*FlowFuse Expert assembling an application on the Node-RED canvas from a chat prompt.*
+![FlowFuse Expert assembling flows on the Node-RED workspace from a chat prompt](./images/expert-application-building.gif){data-zoomable}
+*FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt.*
 
 Agentic Node-RED development is rolling out as a soft launch so we can fine-tune the experience before opening it up more widely. It is available on request to FlowFuse Cloud Starter, Team, and Enterprise teams from v2.30. Self Hosted enablement follows shortly.
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to enable agentic Node-RED development for your FlowFuse Cloud team.
+
+For usage guidance, see the [Building Flows on the Canvas](/docs/user/expert/chat/#building-flows-on-the-canvas) docs.
