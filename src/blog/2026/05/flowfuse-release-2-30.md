@@ -87,11 +87,11 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 ### A smoother iteration experience with Expert
 
-We optimized the immersive Node-RED editor so iterating with FlowFuse Expert on your industrial application is easier and with less context switching. The FlowFuse Platform UI can stay available and the instance drawer no longer overlaps with the Node-RED canvas, so settings, snapshots, environment variables, palette, and group or application assignment all sit alongside your work rather than covering it.
+We refined the immersive editor experience so working with FlowFuse Expert feels more natural and with less context switching. Platform controls like snapshots, environment variables, and instance settings now stay accessible alongside the canvas instead of covering your workspace.
 
 ### More usable snapshot comparisons
 
-We iterated on the property-level diff viewer that shipped in release 2.29 so the right information is more easily made available to you. Computed properties (group node `w` and `h` values) no longer flag as changes, position-only changes can be hidden when you want to focus on substantive edits, the change panel labels each entry with a node-type badge (config, tab, or normal), and JSON sections support prettify and wrap toggles.
+We continued refining the snapshot comparison experience introduced in 2.29 to make reviewing changes faster and less noisy. Position-only changes can be hidden, computed values no longer appear as modified, and the diff viewer now makes it easier to identify the type of node affected at a glance.
 
 
 ### Smaller updates and fixes
@@ -107,11 +107,7 @@ We iterated on the property-level diff viewer that shipped in release 2.29 so th
 <!-- CANDIDATE: keep this bullet only if flowfuse#7078 lands -->
 - **Audit log stop reasons**: stop events show the underlying reason in the audit log detail rather than a generic message.
 
-## Node-RED
-
-[Node-RED 5.0](https://nodered.org/blog/2025/12/03/node-red-roadmap-to-5) is in active beta. It is a modernization and UI re-architecture that readies Node-RED for better AI-guided development and brings more clarity to manual editing. The latest betas land in the Node-RED forum first, with release notes, known issues, and the team looking for feedback. Try them out and follow along on the [Node-RED forum](https://discourse.nodered.org/).
-
-We are aiming to ship Node-RED 5.0 as a stack option in FlowFuse by the end of May. Until then, Node-RED 4.1 remains the default.
+**Looking ahead:** we're actively preparing support for Node-RED 5.0 in FlowFuse and currently expect it to become available as a stack option by the end of May. Until then, Node-RED 4.1 remains the default.
 
 <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #D1D5DB;">
 
