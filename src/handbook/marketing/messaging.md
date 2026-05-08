@@ -133,6 +133,10 @@ floor—triggering data movement, transformation, and storage only when real-wor
 avoiding the “dump everything to the cloud” cost trap. This makes FlowFuse the competitive advantage 
 for industrial teams ready to deliver results faster, more securely, and smarter than ever before.
 
+## Elevator pitch for events
+
+We are professionalizing Node-RED for the shop-floor, meaning that you keep the agility, speed and flexibility of the open source but add to that the enterprise grade security, full traceability, and scalability for an industrial environment. 
+
 ## Selection Criteria: Our messaging commandments
 
 This captures how we believe an ICP team is thinking about how to choose their next generation software platform for digitalizing their industrial process. This captures the following questions and our answers.
