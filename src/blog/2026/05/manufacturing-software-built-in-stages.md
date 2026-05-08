@@ -66,21 +66,40 @@ Manufacturing environments rarely rely on a single standard. FlowFuse supports p
 **AI that accelerates application development.**
 The latest version of FlowFuse introduces [major improvements to FlowFuse Expert](/blog/2026/05/flowfuse-release-2-30/), an AI assistant designed for building and troubleshooting industrial flows. Instead of manually assembling every workflow, engineers can describe what they want to build in natural language, and Expert helps generate flows, debug issues, and explain implementation steps.
 
-With MCP integrations connecting Expert to your brokers, databases, APIs, and industrial systems, the assistant can work with the context of your actual environment, reducing repetitive engineering work when building new manufacturing capabilities.
+With [MCP](/blog/2025/10/building-mcp-server-using-flowfuse/) integrations connecting Expert to your brokers, databases, APIs, and industrial systems, the assistant can work with the context of your actual environment, reducing repetitive engineering work when building new manufacturing capabilities.
 
 ## How It All Connects
 
 A manufacturing stack built on FlowFuse works across three layers.
 
-At the bottom is your shop floor infrastructure, including machines, PLCs, sensors, and SCADA systems continuously generating operational data.
+### Layer 1: Shop Floor Infrastructure
 
-FlowFuse sits in the middle layer, connecting to these systems through protocols like MQTT, OPC UA, Modbus, EtherNet/IP, and over 5,000 integrations. It collects raw production data, normalizes it, and turns it into usable operational context.
+At the bottom is your shop floor infrastructure, including machines, PLCs, sensors, and SCADA systems continuously generating operational data. This is where your operation lives—every temperature reading, production count, alarm signal, and quality check originates here.
 
-On top of this data layer, manufacturers can build applications with [FlowFuse Dashboards](https://dashboard.flowfuse.com) for OEE tracking, quality workflows, downtime monitoring, maintenance alerts, and work order management. Because these capabilities remain independent, teams can deploy and improve them incrementally as requirements evolve.
+### Layer 2: The FlowFuse Integration & Data Backbone
 
-FlowFuse also includes the enterprise capabilities needed to operate these applications at scale, including remote edge device management, DevOps workflows, snapshots for version control and rollback, high availability deployments, role-based access control, and built-in security features. Teams can manage industrial applications across multiple sites without building additional infrastructure around them.
+FlowFuse sits in the middle layer, connecting to these systems through protocols like MQTT, OPC UA, Modbus, EtherNet/IP, and over 5,000 integrations. It collects raw production data, normalizes it, and turns it into usable operational context. 
+
+A key advantage is FlowFuse's built-in MQTT broker, which enables you to build a [Unified Namespace (UNS)](/blog/2024/11/building-uns-with-flowfuse/), a standardized data structure that simplifies how machines, applications, and business systems communicate. With a UNS in place, integrations become faster to build and easier to maintain as your stack grows.
+
+On top of this data layer, manufacturers can build applications with [FlowFuse Dashboards](https://dashboard.flowfuse.com/) for OEE tracking, quality workflows, downtime monitoring, maintenance alerts, and work order management. Because these capabilities remain independent, teams can deploy and improve them incrementally as requirements evolve.
+
+FlowFuse also includes the enterprise capabilities needed to operate these applications at scale, including:
+
+- Remote edge device management
+- DevOps workflows
+- Snapshots for version control and rollback
+- High availability deployments
+- Role-based access control
+- Built-in security features
+
+Teams can manage industrial applications across multiple sites without building additional infrastructure around them.
+
+### Layer 3: Business Systems Integration
 
 At the top layer are your business systems, including ERP platforms, reporting tools, quality systems, and cloud services. FlowFuse connects these systems through APIs and integrations so operational data moves seamlessly between the shop floor and the business.
+
+### Why This Architecture Changes Everything
 
 This modular approach changes how manufacturing software delivers value. Instead of waiting over a year for a full MES rollout, manufacturers can start with a single capability and expand over time. Machine monitoring can go live first, followed by OEE, quality management, or ERP integration when needed.
 
