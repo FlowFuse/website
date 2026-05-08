@@ -122,6 +122,7 @@ Customer success contacts FlowFuse customers and prospective customers (anyone w
 All team members are asked to identify customer and prospect requests in the following way:
 - On a GitHub issue, use the label Sales Request or Customer Request, as appropriate. (A request is a Sales Request when a member of the Sales team learns that a prospect is interested in a feature. It is a Customer Request when an existing customer makes a request. An issue can be both a Customer Request and a Sales Request.)
 - On the main issue, list the customer record in HubSpot. Do this on the main issue rather than a comment, as these can be lost.
+- On the HubSpot **account** record for the requesting organisation, add the GitHub issue URL to the `github_issue` property. This creates a direct link from the account to every feature they have requested.
 - If an issue already exists and a new request is made, add this information to the existing issue. This helps keep a comprehensive record of how many requests of a feature there are, and by whom.
 
 
@@ -129,7 +130,8 @@ All team members are asked to identify customer and prospect requests in the fol
 
 For FlowFuse Cloud customers, we add various useful data to our CRM records to
 help us better understand who each customer is and how they are using FlowFuse.
-They are as follows:
+
+#### Contact properties
 
 | Field name  | Description | 
 |----------- | ---- |
@@ -137,6 +139,12 @@ They are as follows:
 | FFC-Actions | This shows actions which have been taken by someone on a team this contact is on. To see a full list of available actions view [this report](https://app-eu1.hubspot.com/reports-list/26586079/182831966/){rel="nofollow"} in Hubspot |                                                                                                                               |
 | FFC-Usage | This field shows a contact's answer to how they are planning to use FlowFuse Cloud, you can view the options and current data on [this report](https://app-eu1.hubspot.com/reports-list/26586079/182851924/){rel="nofollow"}.|
 | FFC-Events (deprecated) | This legacy field showed email campaigns which had been triggered to be sent to each contact. For example, after 24 hours if a user had not used out snapshots feature the integration between FlowFuse Cloud and Hubspot would add the relevant tag to this user. Hubspot would in turn send the email to the contact. This way of working is being replaced by FFC-Actions as that field can triggered email campaigns based on action or inaction as well as adding value to our CRM. |
+
+#### Account properties
+
+| Field name | Description |
+| :--------- | :---------- |
+| `github_issue` | A list of GitHub issue URLs for feature requests made by this account. Add the relevant issue URL here whenever a customer or prospect from this organisation requests a feature. Customer Success uses this field to identify accounts to notify when a requested feature ships. |
 
 ## Inbound Support
 
