@@ -68,16 +68,6 @@ At this stage we're using the default set of status's in HubSpot:
 drip campaigns or other outbound lead-gen actions. This property will be set to `Yes` when the contact was in HubSpot
 through other marketing activities too, but wasn't nurtured to the point of a meeting yet.
 
-## Account Management
-
-HubSpot accounts (company records) represent a customer or prospect organisation. Account-level properties capture information that applies to the whole organisation rather than a specific contact.
-
-### Account Properties
-
-| Property | Description |
-| :------- | :---------- |
-| `github_issue` | A list of GitHub issue URLs for feature requests made by this account. Populated whenever a customer or prospect requests a feature; each entry links directly to the corresponding issue in the FlowFuse GitHub repository. Used by Customer Success to notify accounts when their requested features ship. |
-
 ## Importing Contacts Into HubSpot
 
 If you import contacts into HubSpot, it is important that the First Name and Last Name are populated correctly. Currently the FlowFuse Cloud database stores first and last name in a single field called Name. If you import this field into HubSpot the default is set to populate the Last Name field. The First Name field will not be populated so any email personalization with First Name will not be effective.  
