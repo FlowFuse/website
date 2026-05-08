@@ -609,7 +609,7 @@ eleventyComputed:
 <script>{{ hubspotJS | jsmin | safe }}</script>
 
 <!-- Cookie banner (must load before any consent-gated scripts) -->
-<script async type="text/javascript" src="/js/cc.min.js"></script>
+<script defer type="text/javascript" src="/js/cc.min.js"></script>
 
 <!-- HS tracker - consent-gated (analytics: tracking + chat widget runtime) -->
 <script type="text/plain" data-category="analytics" async id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
