@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms'],
+            routes: ['/terms', '/privacy-policy'],
             crawlLinks: false
         }
     },

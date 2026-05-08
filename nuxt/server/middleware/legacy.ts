@@ -2,7 +2,7 @@ import { proxyRequest } from 'h3'
 
 // Routes that are handled by Nuxt pages (not proxied to 11ty).
 // Extend this list as pages are migrated.
-const NUXT_ROUTES = new Set(['/terms', '/terms/'])
+const NUXT_ROUTES = new Set(['/terms', '/terms/', '/privacy-policy', '/privacy-policy/'])
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
