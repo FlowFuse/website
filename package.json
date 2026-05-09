@@ -32,7 +32,8 @@
         "prod:postcss-nuxt": "postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js",
         "prod:eleventy-nuxt": "npx @11ty/eleventy --output=./nuxt/public/",
         "prod:nuxt": "npm run generate --workspace=nuxt",
-        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
+        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt",
+        "build:nuxt:skip-images": "dotenv -v SKIP_IMAGES=true -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
     },
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",
