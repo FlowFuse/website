@@ -1,0 +1,120 @@
+---
+layout: page
+nohero: true
+hubspot:
+    script: "hubspot/hs-form.njk"
+---
+
+<div class="nohero w-full">
+
+    <!-- Hero -->
+    <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
+        <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8 items-stretch">
+
+            <div class="m-auto md:w-1/2">
+                <h1 class="w-full mt-0 px-6 md:px-0 m-auto font-medium">
+                    <span class="text-4xl">{{ hero.headline }} <span class="text-indigo-600">{{ hero.headlineHighlight }}</span></span>
+                </h1>
+                <p class="mb-4">{{ hero.intro1 | safe }}</p>
+                <p class="mb-10">{{ hero.intro2 | safe }}</p>
+                <a class="ff-btn ff-btn--highlight hidden min-h-[40px] md:inline uppercase"
+                   href="#form"
+                   onclick="scrollToAnchor(event, 'form'); capture('{{ hubspot.cta }}', {'reference': '{{ hubspot.reference }}'})">
+                    {{ hero.buttonText }}
+                </a>
+            </div>
+
+            <div class="md:w-1/2 flex-grow relative">
+                <div class="ff-image-cover ff-image-rounded w-full h-full">
+                    {% set heroImageSrc = ["./", hero.image] | join %}
+                    {% image heroImageSrc, hero.imageAlt, [496] %}
+                </div>
+            </div>
+
+            <a class="ff-btn ff-btn--highlight flex flex-col w-full md:hidden m-auto mt-12 uppercase"
+               href="#form"
+               onclick="scrollToAnchor(event, 'form'); capture('{{ hubspot.cta }}', {'reference': '{{ hubspot.reference }}'})">
+                {{ hero.buttonText }}
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Comparison section -->
+    <div class="w-full py-16 comparison-section-bg">
+        <div class="max-w-screen-lg mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-6">
+
+                <!-- Left card -->
+                <div class="md:w-1/2 bg-white rounded-xl shadow-sm border border-gray-300 overflow-hidden">
+                    <div class="bg-gray-100 px-8 min-h-[6rem] flex items-center justify-center border-b border-gray-200">
+                        <h2 class="text-center text-gray-600 font-medium text-2xl m-0">{{ leftCard.title | safe }}</h2>
+                    </div>
+                    <ul class="px-8 py-6 space-y-10">
+                        {% for item in leftCard.items %}
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 min-w-[2rem] rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                                <div class="w-5 h-5 text-gray-400">{% include item.icon %}</div>
+                            </div>
+                            <span class="text-base leading-snug pt-1">{{ item.text | safe }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Right card -->
+                <div class="md:w-1/2 bg-white rounded-xl shadow-lg border border-red-400 overflow-hidden">
+                    <div class="bg-red-50 px-8 min-h-[6rem] flex items-center justify-center border-b border-red-200">
+                        <h2 class="text-center text-red-500 font-medium text-2xl m-0">{{ rightCard.title | safe }}</h2>
+                    </div>
+                    <ul class="px-8 py-6 space-y-10">
+                        {% for item in rightCard.items %}
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 min-w-[2rem] rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+                                <div class="w-5 h-5 text-white m-auto">{% include item.icon %}</div>
+                            </div>
+                            <span class="text-base leading-snug pt-1">{{ item.text | safe }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Key takeaway + Form -->
+    <div class="w-full py-16">
+        <div class="max-w-screen-lg mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+
+                <!-- Key takeaway -->
+                <div class="w-full md:w-1/2 rounded-xl p-8 bg-gradient-to-b from-indigo-50 to-transparent">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-8 h-8 min-w-[2rem] rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                            <div class="w-5 h-5 text-indigo-600">{% include "components/icons/light-bulb.svg" %}</div>
+                        </div>
+                        <h3 class="text-indigo-600 font-medium text-xl m-0">Key takeaway</h3>
+                    </div>
+                    <p>{{ takeaway.para1 | safe }}</p>
+                    <p class="mt-4">{{ takeaway.para2 | safe }}</p>
+                </div>
+
+                <!-- Form -->
+                <div id="form" class="w-full md:w-1/2 pt-8">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-8 h-8 min-w-[2rem] rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                            <div class="w-4 h-4 text-indigo-600">{% include "components/icons/document-text.svg" %}</div>
+                        </div>
+                        <h3 class="font-medium text-xl m-0 text-gray-900">{{ form.title }}</h3>
+                    </div>
+                    {% include hubspot.script %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% include "smooth-scroll.njk" %}
