@@ -98,6 +98,8 @@ Board approval is required for every new employee's options grant. For each appl
 - Vesting schedule
 All information must be based on the final, executed offer letter. Employees included on this slide must have completed onboarding prior to the board meeting.
 
+To note: Stock Options cannot be approved when the company's 409A Valuation is expired. 
+
 ## Metrics
 
 Key Metrics to include:
@@ -147,7 +149,7 @@ Drive.
 
 #### Sending out the deck
 
-2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. Additionally, the deck should also be attached to the calendar invite at the time it is sent.
+2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. Additionally, the deck should also be attached to the calendar invite at the time it is sent (PDF or Google Slides). For Google Slides, please provide comment-only access to allow board members to submit questions ahead of the meeting.
 
 #### Managing the Two Slide Decks
 
