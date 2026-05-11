@@ -94,53 +94,45 @@ Adapt to tone and context. The shape of the ask is what matters.
 
 ### A. Not found (no FlowFuse Cloud team matched)
 
-> Subject: FlowFuse Expert Agentic Application Building, information needed
+> Subject: FlowFuse Expert Agentic Application Building
 >
 > Hi [name],
 >
-> Thanks for your interest in FlowFuse Expert Agentic Application Building. We couldn't match the email you used to a FlowFuse Cloud team. To take this further we'll need:
+> Thanks for your interest. We couldn't match the email you used to a FlowFuse Cloud team, so we'll need a couple of things from you:
 >
 > - The email associated with the FlowFuse Cloud team that should receive access
-> - A short description of your use case (the kind of application you're hoping Expert will help build)
-> - The reason you'd like to be part of the soft launch
+> - Your use case: what you want to build, why you need it, what you plan to do with it, plus any other context you'd like to share
 >
-> One thing to flag upfront: Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). The team that gets enabled will need to be on one of these plans.
->
-> Looking forward to hearing back.
+> One thing upfront: Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). The team that gets enabled will need to be on one of these.
 
 ### B. Found, team is on the Free plan
 
-> Subject: FlowFuse Expert Agentic Application Building, a couple of things
+> Subject: FlowFuse Expert Agentic Application Building
 >
 > Hi [name],
 >
-> Thanks for your interest in FlowFuse Expert Agentic Application Building. We found your [team name] team on FlowFuse Cloud. Two things before we move forward:
+> Thanks for your interest. We found your [team name] team on FlowFuse Cloud. Two things before we move forward:
 >
-> - Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). Your team is on the Free plan today, so it'll need to be upgraded before we can enable the feature. Happy to walk through plan options if useful.
-> - We'd also like to learn more so we can confirm your team is a good fit for the soft launch:
->   - A short description of your use case
->   - The reason you'd like to be part of the soft launch
+> - Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). Your team is on the Free plan today, so it'll need to be upgraded before we can enable the feature. Happy to walk through plan options.
+> - Your use case: what you want to build, why you need it, what you plan to do with it, plus any other context you'd like to share.
 
 ### C. Found, team is already on a paid plan
 
-> Subject: FlowFuse Expert Agentic Application Building, a couple of questions
+> Subject: FlowFuse Expert Agentic Application Building
 >
 > Hi [name],
 >
-> Thanks for your interest in FlowFuse Expert Agentic Application Building. We found your [team name] team on FlowFuse Cloud. To confirm fit for the soft launch, could you share:
+> Thanks for your interest. We found your [team name] team on FlowFuse Cloud. To confirm fit for the soft launch, could you share your use case: what you want to build, what you plan to do with it, plus any other context you'd like to share?
 >
-> - A short description of your use case (the kind of application you're hoping Expert will help build)
-> - The reason you'd like to be part of the soft launch
->
-> Once we have these we'll enable Expert Agentic Application Building on your team.
+> Once we have that we'll enable Expert Agentic Application Building on your team.
 
 ### D. Decline (not eligible)
 
-> Subject: FlowFuse Expert Agentic Application Building, soft launch eligibility
+> Subject: FlowFuse Expert Agentic Application Building
 >
 > Hi [name],
 >
-> Thanks again for sharing your use case for Expert Agentic Application Building. We're rolling this out as a soft launch to a small group of teams who are a particularly close fit for what the capability does today. Right now [specific reason: e.g. the use case sits outside what Expert can build at this stage / the team's setup doesn't yet match the soft-launch criteria], so we're not enabling it on your team at this stage.
+> Thanks for sharing your use case. Right now [specific reason], so we're not enabling it on your team at this stage.
 >
 > We'll be expanding access over the coming weeks. If your situation changes, reach back out and we'll re-evaluate.
 
