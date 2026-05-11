@@ -25,9 +25,10 @@ flowchart TD
     Contact["Contact submitted<br />HubSpot notification fires"]
     Identify["<b>[Triage]</b> Identify customer and team"]
 
-    AskUnknown["<b>[Triage] Reply: request all info</b><br />- Email tied to FlowFuse Cloud team<br />- Use case and reason<br />- Note: paid tier team required"]
-    AskFree["<b>[Triage] Reply: request info, note tier</b><br />- Use case and reason<br />- Note: paid tier team required"]
-    AskPaid["<b>[Triage] Reply: request info</b><br />- Use case and reason"]
+    AskSignup["<b>[Triage] Reply: not a customer yet</b><br />- Direct to sign-up on a paid plan<br />- Ask for use case for fit"]
+    AskRelated["<b>[Triage] Reply: clarify related team</b><br />- Which team should be enabled?<br />- Ask for use case"]
+    AskFreeOrExpired["<b>[Triage] Reply: free or inactive plan</b><br />- Upgrade or reactivate required<br />- Ask for use case"]
+    AskPaid["<b>[Triage] Reply: request info</b><br />- Ask for use case"]
 
     Receive["<b>[Triage]</b> Receive reply<br />Use case and reason on file<br />Paid tier path confirmed"]
     InformProduct["<b>Inform Product</b><br />Add note on HubSpot record<br />summarising the use case"]
@@ -39,11 +40,13 @@ flowchart TD
     Notify(["<b>[Triage]</b> Notify contact<br />Access is live"])
 
     Start --> Contact --> Identify
-    Identify -- "Not found" --> AskUnknown
-    Identify -- "Found, free tier" --> AskFree
-    Identify -- "Found, paid tier" --> AskPaid
-    AskUnknown --> Receive
-    AskFree --> Receive
+    Identify -- "Not a customer yet" --> AskSignup
+    Identify -- "Different email,<br />related team exists" --> AskRelated
+    Identify -- "Free plan or<br />plan no longer active" --> AskFreeOrExpired
+    Identify -- "Found, paid plan active" --> AskPaid
+    AskSignup --> Receive
+    AskRelated --> Receive
+    AskFreeOrExpired --> Receive
     AskPaid --> Receive
     Receive --> InformProduct --> Eligibility
     Eligibility -- "Not eligible" --> Decline
@@ -68,10 +71,11 @@ flowchart TD
 
 ## Step by step
 
-1. **[Triage] Identify customer and team in HubSpot** using the email from the contact submission. Three outcomes:
-   - **Not found**: no matching contact or FlowFuse Cloud team.
-   - **Found, free tier**: the team exists but is on the Free plan.
-   - **Found, paid tier**: the team is on Starter, Team, or Enterprise.
+1. **[Triage] Identify customer and team in HubSpot** using the email from the contact submission. Four outcomes:
+   - **Not a customer yet**: no FlowFuse Cloud team for this contact or their company.
+   - **Different email, related team exists**: the contact's email doesn't match, but a team at the same company exists under a different email (e.g. a colleague's Starter team).
+   - **Free plan or plan no longer active**: the team exists but is on the Free plan, or a previously paid plan / trial has expired or been cancelled.
+   - **Found, paid plan active**: the team is on Starter, Team, or Enterprise with an active subscription.
 
 2. **[Triage] Reply with an info ask, scoped to what is still missing.** The paid tier requirement always lands in this first reply so it never arrives late in the conversation. Use the relevant template below.
 
@@ -92,20 +96,28 @@ flowchart TD
 
 Adapt to tone and context. The shape of the ask is what matters.
 
-### A. Not found (no FlowFuse Cloud team matched)
+### A. Not a customer yet
 
 > Subject: FlowFuse Expert Agentic Application Building
 >
 > Hi [name],
 >
-> Thanks for your interest. We couldn't match the email you used to a FlowFuse Cloud team, so we'll need a couple of things from you:
+> Thanks for your interest. It looks like [company name] doesn't have a FlowFuse Cloud team yet. Expert Agentic Application Building runs on top of FlowFuse Cloud, so we'd need a team in place on a paid plan (Starter, Team, Enterprise) before we can enable the feature. Happy to walk through plan options and help get set up.
 >
-> - The email associated with the FlowFuse Cloud team that should receive access
-> - Your use case: what you want to build, why you need it, what you plan to do with it, plus any other context you'd like to share
->
-> One thing upfront: Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). The team that gets enabled will need to be on one of these.
+> In the meantime, your use case helps us confirm fit: what you want to build, why you need it, what you plan to do with it, plus any other context you'd like to share.
 
-### B. Found, team is on the Free plan
+### B. Different email, related team exists
+
+> Subject: FlowFuse Expert Agentic Application Building
+>
+> Hi [name],
+>
+> Thanks for your interest. The email you used doesn't match a FlowFuse Cloud team directly, but I can see [company name] has a [Starter / Team / Enterprise] team active under a different email. A couple of things to sort out:
+>
+> - Should we enable Expert Agentic Application Building on that existing team, or are you looking to set up a separate one? Happy to walk through either path.
+> - Your use case: what you want to build, why you need it, what you plan to do with it, plus any other context you'd like to share.
+
+### C. Free plan or plan no longer active
 
 > Subject: FlowFuse Expert Agentic Application Building
 >
@@ -113,10 +125,10 @@ Adapt to tone and context. The shape of the ask is what matters.
 >
 > Thanks for your interest. We found your [team name] team on FlowFuse Cloud. Two things before we move forward:
 >
-> - Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). Your team is on the Free plan today, so it'll need to be upgraded before we can enable the feature. Happy to walk through plan options.
+> - Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). Your team is on the Free plan today / your previous plan is no longer active, so it'll need to be upgraded or reactivated before we can enable the feature. Happy to walk through plan options.
 > - Your use case: what you want to build, why you need it, what you plan to do with it, plus any other context you'd like to share.
 
-### C. Found, team is already on a paid plan
+### D. Found, team is already on a paid plan
 
 > Subject: FlowFuse Expert Agentic Application Building
 >
@@ -126,7 +138,7 @@ Adapt to tone and context. The shape of the ask is what matters.
 >
 > Once we have that we'll enable Expert Agentic Application Building on your team.
 
-### D. Decline (not eligible)
+### E. Decline (not eligible)
 
 > Subject: FlowFuse Expert Agentic Application Building
 >
