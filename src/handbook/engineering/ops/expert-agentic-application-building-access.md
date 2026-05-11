@@ -1,10 +1,10 @@
 ---
-navTitle: Expert Application Building Access
+navTitle: Expert Agentic Application Building Access
 ---
 
-# Expert Application Building Soft-Launch Access
+# Expert Agentic Application Building Soft-Launch Access
 
-FlowFuse Expert Application Building (agentic Node-RED development, FlowFuse 2.30) is in soft launch on FlowFuse Cloud. Access is granted on request to teams on a paid plan (Starter, Team, Enterprise). This page describes how to triage incoming requests.
+FlowFuse Expert Agentic Application Building (agentic Node-RED development, FlowFuse 2.30) is in soft launch on FlowFuse Cloud. Access is granted on request to teams on a paid plan (Starter, Team, Enterprise). This page describes how to triage incoming requests.
 
 Customers request access via the [contact form](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) linked from the [2.30 release blog post](/blog/2026/05/flowfuse-release-2-30/) and the changelog. They are asked to include the email associated with their FlowFuse Cloud team.
 
@@ -65,7 +65,7 @@ flowchart TD
    - **Escalate to Product** only when fit is genuinely borderline. Product owns the criteria, not the case-by-case decision.
 
 4. **Outcome:**
-   - **Eligible**: [Triage] open a [Production Change Request](https://github.com/FlowFuse/CloudProject/issues/new?assignees=&labels=change-request&projects=&template=change-request.yml&title=Change%3A+Enable+Expert+Application+Building+for+%5Bteam%5D) in CloudProject with the FlowFuse Cloud team identifier in the body. Post the link in `#dept-engineering`.
+   - **Eligible**: [Triage] open a [Production Change Request](https://github.com/FlowFuse/CloudProject/issues/new?assignees=&labels=change-request&projects=&template=change-request.yml&title=Change%3A+Enable+Expert+Agentic+Application+Building+for+%5Bteam%5D) in CloudProject with the FlowFuse Cloud team identifier in the body. Post the link in `#dept-engineering`.
    - **Not eligible**: [Triage] reply with a polite decline using the template below.
 
 5. **[Engineering] Activate the feature for the team** referenced in the PCR and comment back on the PCR when complete.
@@ -78,53 +78,53 @@ Adapt to tone and context. The shape of the ask is what matters.
 
 ### A. Not found (no FlowFuse Cloud team matched)
 
-> Subject: FlowFuse Expert Application Building, information needed
+> Subject: FlowFuse Expert Agentic Application Building, information needed
 >
 > Hi [name],
 >
-> Thanks for your interest in FlowFuse Expert Application Building. We couldn't match the email you used to a FlowFuse Cloud team. To take this further we'll need:
+> Thanks for your interest in FlowFuse Expert Agentic Application Building. We couldn't match the email you used to a FlowFuse Cloud team. To take this further we'll need:
 >
 > - The email associated with the FlowFuse Cloud team that should receive access
 > - A short description of your use case (the kind of application you're hoping Expert will help build)
 > - The reason you'd like to be part of the soft launch
 >
-> One thing to flag upfront: Expert Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). The team that gets enabled will need to be on one of these plans.
+> One thing to flag upfront: Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). The team that gets enabled will need to be on one of these plans.
 >
 > Looking forward to hearing back.
 
 ### B. Found, team is on the Free plan
 
-> Subject: FlowFuse Expert Application Building, a couple of things
+> Subject: FlowFuse Expert Agentic Application Building, a couple of things
 >
 > Hi [name],
 >
-> Thanks for your interest in FlowFuse Expert Application Building. We found your [team name] team on FlowFuse Cloud. Two things before we move forward:
+> Thanks for your interest in FlowFuse Expert Agentic Application Building. We found your [team name] team on FlowFuse Cloud. Two things before we move forward:
 >
-> - Expert Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). Your team is on the Free plan today, so it'll need to be upgraded before we can enable the feature. Happy to walk through plan options if useful.
+> - Expert Agentic Application Building is currently available on FlowFuse Cloud paid plans (Starter, Team, Enterprise). Your team is on the Free plan today, so it'll need to be upgraded before we can enable the feature. Happy to walk through plan options if useful.
 > - We'd also like to learn more so we can confirm your team is a good fit for the soft launch:
 >   - A short description of your use case
 >   - The reason you'd like to be part of the soft launch
 
 ### C. Found, team is already on a paid plan
 
-> Subject: FlowFuse Expert Application Building, a couple of questions
+> Subject: FlowFuse Expert Agentic Application Building, a couple of questions
 >
 > Hi [name],
 >
-> Thanks for your interest in FlowFuse Expert Application Building. We found your [team name] team on FlowFuse Cloud. To confirm fit for the soft launch, could you share:
+> Thanks for your interest in FlowFuse Expert Agentic Application Building. We found your [team name] team on FlowFuse Cloud. To confirm fit for the soft launch, could you share:
 >
 > - A short description of your use case (the kind of application you're hoping Expert will help build)
 > - The reason you'd like to be part of the soft launch
 >
-> Once we have these we'll enable Expert Application Building on your team.
+> Once we have these we'll enable Expert Agentic Application Building on your team.
 
 ### D. Decline (not eligible)
 
-> Subject: FlowFuse Expert Application Building, soft launch eligibility
+> Subject: FlowFuse Expert Agentic Application Building, soft launch eligibility
 >
 > Hi [name],
 >
-> Thanks again for sharing your use case for Expert Application Building. We're rolling this out as a soft launch to a small group of teams who are a particularly close fit for what the capability does today. Right now [specific reason: e.g. the use case sits outside what Expert can build at this stage / the team's setup doesn't yet match the soft-launch criteria], so we're not enabling it on your team at this stage.
+> Thanks again for sharing your use case for Expert Agentic Application Building. We're rolling this out as a soft launch to a small group of teams who are a particularly close fit for what the capability does today. Right now [specific reason: e.g. the use case sits outside what Expert can build at this stage / the team's setup doesn't yet match the soft-launch criteria], so we're not enabling it on your team at this stage.
 >
 > We'll be expanding access over the coming weeks. If your situation changes, reach back out and we'll re-evaluate.
 
