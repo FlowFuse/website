@@ -12,30 +12,30 @@ Customers request access via the [contact form](/contact-us/?subject=FlowFuse%20
 
 ```mermaid
 flowchart TD
-    Start([Reads soft-launch announcement<br/><i>Includes FlowFuse team email</i>])
-    Contact[Contact submitted<br/><i>HubSpot notification fires</i>]
-    Identify{{Identify customer and team}}
+    Start(["Reads soft-launch announcement<br />Includes FlowFuse team email"])
+    Contact["Contact submitted<br />HubSpot notification fires"]
+    Identify{{"Identify customer and team"}}
 
-    AskUnknown[<b>Reply: request all info</b><br/>· Email tied to FlowFuse Cloud team<br/>· Use case and reason<br/>· Note: paid tier team required]
-    AskFree[<b>Reply: request info, note tier</b><br/>· Use case and reason<br/>· Note: paid tier team required]
-    AskPaid[<b>Reply: request info</b><br/>· Use case and reason]
+    AskUnknown["<b>Reply: request all info</b><br />- Email tied to FlowFuse Cloud team<br />- Use case and reason<br />- Note: paid tier team required"]
+    AskFree["<b>Reply: request info, note tier</b><br />- Use case and reason<br />- Note: paid tier team required"]
+    AskPaid["<b>Reply: request info</b><br />- Use case and reason"]
 
-    Receive[Receive reply<br/><i>Use case and reason on file,<br/>paid tier path confirmed</i>]
+    Receive["Receive reply<br />Use case and reason on file<br />Paid tier path confirmed"]
 
-    Eligibility{Verify eligibility<br/><i>Fit for soft-launch</i>}
-    Decline([Reply: not eligible<br/><i>Polite decline, explain criteria</i>])
-    Activate([Activate access<br/><i>Notify contact, all prerequisites confirmed</i>])
+    Eligibility{"Verify eligibility<br />Fit for soft-launch"}
+    Decline(["Reply: not eligible<br />Polite decline, explain criteria"])
+    Activate(["<b>Activate access</b><br />Notify contact, all prerequisites confirmed"])
 
     Start --> Contact --> Identify
-    Identify -- Not found --> AskUnknown
-    Identify -- Found, free tier --> AskFree
-    Identify -- Found, paid tier --> AskPaid
+    Identify -- "Not found" --> AskUnknown
+    Identify -- "Found, free tier" --> AskFree
+    Identify -- "Found, paid tier" --> AskPaid
     AskUnknown --> Receive
     AskFree --> Receive
     AskPaid --> Receive
     Receive --> Eligibility
-    Eligibility -- Not eligible --> Decline
-    Eligibility -- Eligible --> Activate
+    Eligibility -- "Not eligible" --> Decline
+    Eligibility -- "Eligible" --> Activate
 ```
 
 ## Step by step
