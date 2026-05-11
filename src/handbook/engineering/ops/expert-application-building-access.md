@@ -10,11 +10,12 @@ Customers request access via the [contact form](/contact-us/?subject=FlowFuse%20
 
 ## Flow
 
+{% raw %}
 ```mermaid
 flowchart TD
     Start(["Reads soft-launch announcement<br />Includes FlowFuse team email"])
     Contact["Contact submitted<br />HubSpot notification fires"]
-    Identify{{"Identify customer and team"}}
+    Identify["Identify customer and team"]
 
     AskUnknown["<b>Reply: request all info</b><br />- Email tied to FlowFuse Cloud team<br />- Use case and reason<br />- Note: paid tier team required"]
     AskFree["<b>Reply: request info, note tier</b><br />- Use case and reason<br />- Note: paid tier team required"]
@@ -37,6 +38,7 @@ flowchart TD
     Eligibility -- "Not eligible" --> Decline
     Eligibility -- "Eligible" --> Activate
 ```
+{% endraw %}
 
 ## Step by step
 
