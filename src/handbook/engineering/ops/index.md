@@ -12,6 +12,7 @@ navTitle: Platform Ops
  - [FlowFuse Dedicated](./dedicated.md)
  - [Updating Stacks](./production-stack-update.md)
  - [Self Hosted Assistant](./self-hosted-assistant.md)
+ - [Expert Application Building Access](./expert-application-building-access.md)
  
 
 ## CI/CD
