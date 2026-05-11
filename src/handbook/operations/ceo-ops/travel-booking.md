@@ -63,3 +63,17 @@ In order, optimize for:
 - A quiet room. Request an interior-facing or courtyard room away from street noise.
 - A park or safe running route in the area is a plus.
 - Hotels that provide shaving products are preferred; traveling with shaving gear is inconvenient.
+
+## Booking Standards
+
+### Escalation Threshold
+
+If a booking issue is unresolved after **1 hour**, stop troubleshooting independently. Notify CEO immediately and hand off any relevant contact details (e.g., a direct phone number) so CEO can take action. Do not continue working the problem silently beyond this window.
+
+### Communication Standard
+
+Surface blockers to CEO in real time, do not wait for a scheduled call to flag that progress has stalled. A short Slack message is sufficient; the goal is no surprises.
+
+### Carrier Selection
+
+Always book directly with the **operating carrier** the airline physically executing the flight. Avoid bookings where the ticketing carrier differs from the operating carrier (codeshares, partner airline tickets). When in doubt, confirm which carrier will be operating the flight before completing the booking.
