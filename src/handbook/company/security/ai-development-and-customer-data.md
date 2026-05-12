@@ -47,15 +47,13 @@ Apply the same data protection, security, and review standards to internal AI us
 
 Customer data may be used with AI systems only under the following conditions:
 
-1. Use customer data solely to provide the requested product functionality.
-2. Ensure all AI processing of customer data follows existing access controls, logging, and security policies.
+1. Providing the requested product functionality.
+2. Following existing access controls, logging, and security policies.
 
 Customer data is not used for the following purposes:
 
-1. Do not use customer data to train shared, public, or cross-customer AI models.
-2. FlowFuse does not train AI models on customer data.
-3. Do not use customer data for internal experimentation unrelated to a customer’s use case.
-4. Do not use customer data to improve general-purpose AI model behavior.
+1. Training shared, public, or cross-customer AI models.
+2. Internal experimentation unrelated to a customer’s use case.
 
 Customer data remains owned and controlled by the customer at all times.
 
