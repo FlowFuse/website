@@ -11,12 +11,14 @@ FlowFuse uses Hubspot for generating quotes, and requesting the signatures on
 them. For other legal documents we're using
 [Google eSignatures](https://support.google.com/docs/answer/12315692?hl=en).
 
-**Signature Circulation Requirements**
-Before requesting a signature on any document, the following must be in place:
+### Signature Circulation Requirements
 
-**Context provided.** Include a clear explanation of what the document is, why it needs to be signed, and any relevant background. Do not send a document for signature without this context.
-**All signatories identified.** Confirm all required signatures upfront — both internal and counterparty. The person initiating the request is responsible for ensuring all parties are included in the same signing workflow. 
-**Document complete.** The document must be fully filled out before circulation. No placeholder text (e.g., [INSERT DESCRIPTION]) or incomplete fields should remain. Incomplete documents sent for signing will need to be re-executed.
+Before requesting a signature on any document, the following must be in place and
+communicated.
+
+1. Context: What is the document being signed, and why are we signing this agreement? What does it support?
+2. Confirm all required signatures upfront — both internal and counterparty.
+3. The document must be fully filled out before circulation. No placeholder text (e.g., [INSERT DESCRIPTION]) or incomplete fields should remain.
 
 ## Subscription agreement
 
