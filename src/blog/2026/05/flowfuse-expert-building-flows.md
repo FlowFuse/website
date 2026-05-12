@@ -47,7 +47,7 @@ You didn't go hunting through the palette or keep the documentation open in anot
 From there, you can replace simulated data with live machine data, redesign the dashboard, add alarms, connect MQTT or OPC UA sources, and keep refining the application through prompts instead of manual building.
 
 <lite-youtube
-  videoid="DR9OTIVtBLU"
+  videoid=""
   style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/05/images/flowfuse-expert-video-thumbnail.jpg'); background-size: cover; background-position: center;"
   title="Building Industrial Apps With FlowFuse Expert">
 </lite-youtube>
@@ -66,7 +66,7 @@ If you just say *"build me a machine dashboard"*, Expert has to guess at all of 
 
 ### Show Expert the data when something's off
 
-If a card's blank or a value's wrong, don't ask Expert to figure it out from the wiring. Open the debug sidebar, attach the context, and now Expert can see what's actually flowing through. The empty payload, the error, whatever. Guessing turns into reading.
+If a card's blank or a value's wrong, don't ask Expert to figure it out from the wiring. Open the debug sidebar, [attach the context](/docs/user/expert/chat/#debug-context), and now Expert can see what's actually flowing through. The empty payload, the error, whatever. Guessing turns into reading.
 
 ### One change per prompt
 
