@@ -3,12 +3,12 @@ title: "How to Build Industrial Apps With FlowFuse AI Expert"
 subtitle: "A practical guide to prompting, context, and iteration"
 description: "FlowFuse Expert now builds applications from a description. Here's what it sees, how to prompt it well, and how to iterate without backtracking."
 date: 2026-05-12
-keywords:
+keywords: flowfuse ai expert, flowfuse expert, industrial automation, node-red, industrial dashboards, mqtt, opc ua, industrial iot, ai-assisted development, real-time monitoring, flowfuse cloud, machine monitoring
 authors: ["sumit-shinde"]
 image: /blog/2026/05/images/flowfuse-ai-expert-tile.png
 video: DR9OTIVtBLU
 tags:
-- flowfuse
+    - flowfuse
 cta:
     type: contact
     title: Try FlowFuse Expert on your team
@@ -16,6 +16,8 @@ cta:
 ---
 
 FlowFuse Expert now builds applications for you. Describe what you need, and the flow shows up on the canvas, wired and configured. Ask for a change, it updates on the spot. No dragging, no wiring, no hunting through the palette.
+
+<!--more-->
 
 We shared the initial announcement in the [2.30 release post](/blog/2026/05/flowfuse-release-2-30/#expert-application-building). This post expands on that introduction by covering how Expert interprets your environment, techniques for writing clearer prompts, and ways to iterate on generated flows to get closer to your intended outcome.
 
