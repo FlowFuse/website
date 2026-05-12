@@ -6,7 +6,7 @@ navTitle: AI Development and Customer Data Policy
 
 | Policy owner | Effective date |
 | ------------ | -------------- |
-| @knolleary   | 2026-02-18     |
+| @knolleary   | 2026-05-12     |
 
 ## Purpose
 
@@ -45,19 +45,14 @@ Apply the same data protection, security, and review standards to internal AI us
 
 ## Customer Data Usage
 
+Customer data remains owned and controlled by the customer at all times.
+
 Customer data may be used with AI systems only under the following conditions:
 
-1. Use customer data solely to provide the requested product functionality.
-2. Ensure all AI processing of customer data follows existing access controls, logging, and security policies.
+1. In order to provide the requested product functionality.
+2. Following existing access controls, logging, and security policies.
 
-Customer data is not used for the following purposes:
-
-1. Do not use customer data to train shared, public, or cross-customer AI models.
-2. FlowFuse does not train AI models on customer data.
-3. Do not use customer data for internal experimentation unrelated to a customer’s use case.
-4. Do not use customer data to improve general-purpose AI model behavior.
-
-Customer data remains owned and controlled by the customer at all times.
+Whilst we reserve the right to use interactions with the platform to help improve the product, this does not extend to using customer data to train AI models.
 
 ## Internal Data vs Customer Data
 
@@ -66,7 +61,7 @@ Customer data remains owned and controlled by the customer at all times.
    - Prompt development
    - Evaluation and testing of AI features
 
-2. Do not repurpose customer data for internal AI development or testing, even if anonymized, without explicit approval.
+2. Do not repurpose customer data for internal AI development or testing without explicit approval.
 
 ## Third-Party AI Services
 
