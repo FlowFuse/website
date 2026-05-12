@@ -15,11 +15,11 @@ cta:
     description: Available in soft launch on FlowFuse Cloud. Reach out to get it enabled.
 ---
 
-FlowFuse Expert now builds applications for you. Describe what you need, and the flow shows up on the canvas, wired and configured. Ask for a change, it updates on the spot. No dragging, no wiring, no hunting through the palette.
+FlowFuse Expert now builds applications for you. Describe what you need, and the flow shows up on the canvas, wired and configured. Ask for a change, it updates on the spot. 
 
 <!--more-->
 
-We shared the initial announcement in the [2.30 release post](/blog/2026/05/flowfuse-release-2-30/#expert-application-building). This post expands on that introduction by covering how Expert interprets your environment, techniques for writing clearer prompts, and ways to iterate on generated flows to get closer to your intended outcome.
+We shared the initial announcement in the [2.30 release post](/blog/2026/05/flowfuse-release-2-30/#expert-application-building). This post covers building your first flow with FlowFuse Expert, how Expert understands your environment, and how to write clearer prompts to get better results.
 
 ![FlowFuse Expert building a simulated packaging conveyor monitoring application](./images/expert-application-building.gif)
 _Expert building a packaging conveyor monitoring application — MQTT alerts, dashboard indicators, and real-time event simulation, from a single prompt._
@@ -34,11 +34,17 @@ Before the first node lands on the canvas, Expert reads your environment:
 - **Specific configurations**: MQTT topics, SQL queries, API endpoints, auth schemes, and UI settings.
 - **Your debug context**: when you attach it from the debug sidebar, Expert sees the `msg` data, errors, and values flowing through each node. It reasons about runtime behavior, not just wiring.
 
-This is why Expert doesn't suggest impossible things. It won't reference nodes you don't have installed, and it won't rebuild work you've already done. It builds on what's already there.
+This means Expert doesn't suggest impossible things. It doesn't ignore your existing work or force you to rebuild. It builds *with* what you have, *around* what you've already created, and *on top of* your existing infrastructure.
 
 ## Try it in two minutes
 
-Open the editor, find the FlowFuse Expert chat, and paste this:
+Before you start, make sure FlowFuse Expert is enabled for your team.
+
+Expert is currently in **soft launch** on FlowFuse Cloud. We're starting with a small group so we can evaluate real-world usage before rolling it out more broadly.
+
+To enable it for your team, [contact us](/contact-us/). If you don't have a FlowFuse account yet, [sign up]({% include "sign-up-url.njk" %}) first.
+
+Once enabled, open the editor, [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface), and paste this:
 
 *"Build me an overview dashboard for three machines (Machine 1, Machine 2, Machine 3). Use an inject node set to repeat every 4 seconds to trigger a function node that randomly assigns each machine one of three states: Running, Idle, or Fault. Display each machine on a dashboard page as a ui-template card showing the machine name, current state, and a colored circle indicator: green for Running, yellow for Idle, red for Fault."*
 
@@ -62,7 +68,7 @@ Expert builds what you describe. The clearer you are, the less you'll fix later.
 
 ### Spell out what you want
 
-Tell Expert exactly what you're after. Intervals, logic, colors, names. Anything you've already decided, put it in the prompt. The conveyor example works on the first try because it doesn't leave anything to interpretation.
+Tell Expert exactly what you're after. Intervals, logic, colors, names. Anything you've already decided, put it in the prompt. The above example works on the first try because it doesn't leave anything to interpretation.
 
 If you just say *"build me a machine dashboard"*, Expert has to guess at all of it. And if you call them "the machines" instead of giving them names, the names won't line up between your nodes, your topics, and your dashboard a few prompts later.
 
@@ -87,5 +93,3 @@ Long chats get tangled. If Expert keeps making the same mistake or referencing s
 ## Where to go next
 
 For the full reference on what FlowFuse Expert reads, how it interacts with your canvas, and advanced usage, see the [FlowFuse Expert documentation](/docs/user/expert/).
-
-FlowFuse Expert is in **soft launch** on FlowFuse Cloud. To enable it for your team, [contact us](/contact-us/). If you don't have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
