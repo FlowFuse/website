@@ -2,7 +2,7 @@
 title: "How to Build Industrial Apps With FlowFuse AI Expert"
 subtitle: "From a description to a running flow"
 description: "FlowFuse Expert now builds applications from a description. Here's what that looks like, what Expert understands about your environment, and how to keep iterating."
-date: 2026-05-12
+date: 2026-05-13
 keywords: flowfuse ai expert, flowfuse expert, industrial automation, node-red, industrial dashboards, mqtt, opc ua, industrial iot, ai-assisted development, real-time monitoring, flowfuse cloud, machine monitoring
 authors: ["sumit-shinde"]
 image: /blog/2026/05/images/flowfuse-ai-expert-tile.png
@@ -56,7 +56,7 @@ You didn't go hunting through the palette or keep the documentation open in anot
 From there, you can replace simulated data with live machine data, redesign the dashboard, add alarms, connect MQTT or OPC UA sources, and keep refining the application through prompts instead of manual building.
 
 <lite-youtube
-  videoid=""
+  videoid="wzD02B7EaqM"
   style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/05/images/flowfuse-expert-video-thumbnail.jpg'); background-size: cover; background-position: center;"
   title="Building Industrial Apps With FlowFuse Expert">
 </lite-youtube>
