@@ -30,7 +30,7 @@ Before the first node lands on the canvas, Expert reads your environment. We're 
 
 - **Your canvas state**: the nodes you've placed, how they connect, what they do.
 - **Your installed palette**: which nodes are installed and at what version.
-- **Your existing node configurations**: the settings already defined in the nodes on your canvas. You can also share context directly to connect Expert to external infrastructure — this is being improved into a more dedicated experience soon, and FlowFuse-native infrastructure will increasingly be recognised and considered automatically based on intent.
+- **Your existing node configurations**: the settings already defined in the nodes on your canvas. You can also share context directly to let the Expert create the node configurations for external infrastructure — this is being improved into a more dedicated experience soon, and FlowFuse-native infrastructure will increasingly be recognised and considered automatically based on intent.
 - **Your runtime data**: when you attach it from the debug sidebar, Expert sees the `msg` data, errors, and values flowing through each node. It reasons about runtime behavior, not just wiring. We're working on optimising and automating this soon.
 
 The result is output you can trust to match what you expect, so you reach your intended outcome sooner.
