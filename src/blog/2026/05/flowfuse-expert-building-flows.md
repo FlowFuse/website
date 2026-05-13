@@ -15,7 +15,7 @@ cta:
     description: Available in soft launch on FlowFuse Cloud. Reach out to get it enabled.
 ---
 
-FlowFuse Expert now builds applications for you. Describe what you need, and the flow shows up on the canvas, wired and configured. Ask for a change, it updates on the spot.
+FlowFuse Expert now builds applications for you. Describe what you need, and the flow is built in front of you on the canvas, wired and configured. Ask for a change, it updates on the spot.
 
 <!--more-->
 
