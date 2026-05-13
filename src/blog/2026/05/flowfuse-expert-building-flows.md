@@ -45,7 +45,7 @@ Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/exp
 
 Paste this in:
 
-*"Build a live dashboard with three machines (Machine 1, Machine 2, Machine 3). Each one should keep switching on its own every 2 seconds between Running (green), Idle (yellow), or Fault (red), so at any moment they can be in different states, with the name, state, and colored indicator updating live on the page."*
+*"Build a live dashboard monitoring three machines (Machine 1, Machine 2, Machine 3). Each one should keep switching on its own every 2 seconds between Running (green), Idle (yellow), or Fault (red), so at any moment they can be in different states, with the name, state, and colored indicator updating live on the page."*
 
 You can watch Expert do its work as the flow is built on the canvas. A few seconds later it's wired up and ready. Hit Deploy, open the dashboard, and the cards start cycling through Running, Idle, and Fault.
 
