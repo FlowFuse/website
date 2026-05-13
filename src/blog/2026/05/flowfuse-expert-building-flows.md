@@ -37,7 +37,7 @@ The result is output you can trust to match what you expect, so you reach your i
 
 ## Get started in two minutes
 
-Expert is currently in **soft launch** on FlowFuse Cloud while we refine the experience. Self Hosted Enterprise support is coming in the next release.
+Expert is currently in **soft launch** on FlowFuse Cloud while we refine the experience. We're planning a full public launch alongside Self Hosted Enterprise support in the next release.
 
 During the soft launch, Expert must be manually enabled for your FlowFuse Cloud team. [Contact us](/contact-us/) using the email address associated with your team, and we'll enable it for you. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first. The soft launch is available for paid Flowfuse Cloud teams only.
 
