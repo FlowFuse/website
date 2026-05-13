@@ -29,8 +29,8 @@ _Expert building a packaging conveyor monitoring application: MQTT alerts, dashb
 Before the first node lands on the canvas, Expert reads your environment. We're tuning the experience to load context agentically based on what each scenario needs. Depending on the task, that can include:
 
 - **Your canvas state**: the nodes you've placed, how they connect, what they do.
-- **Your available nodes**: which nodes are installed and at what version.
-- **Your infrastructure**: the databases, APIs, MQTT brokers, and services you've connected.
+- **Your installed palette**: which nodes are installed and at what version.
+- **Your existing node configurations**: the settings already defined in the nodes on your canvas. You can also share context directly to connect Expert to external infrastructure — this is being improved into a more dedicated experience soon, and FlowFuse-native infrastructure will increasingly be recognised and considered automatically based on intent.
 - **Your runtime data**: when you attach it from the debug sidebar, Expert sees the `msg` data, errors, and values flowing through each node. It reasons about runtime behavior, not just wiring. We're working on optimising and automating this soon.
 
 The result is output you can trust to match what you expect, so you reach your intended outcome sooner.
@@ -39,7 +39,7 @@ The result is output you can trust to match what you expect, so you reach your i
 
 Expert is currently in **soft launch** on FlowFuse Cloud while we refine the experience. Self Hosted Enterprise support is coming in the next release.
 
-During the soft launch, Expert must be manually enabled for your FlowFuse Cloud team. [Contact us](/contact-us/) using the email address associated with your team, and we’ll enable it for you. If you don’t already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first. The soft launch is available for paid Flowfuse Cloud teams only.
+During the soft launch, Expert must be manually enabled for your FlowFuse Cloud team. [Contact us](/contact-us/) using the email address associated with your team, and we'll enable it for you. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first. The soft launch is available for paid Flowfuse Cloud teams only.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 
