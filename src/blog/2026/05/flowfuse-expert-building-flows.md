@@ -33,13 +33,13 @@ Before the first node lands on the canvas, Expert reads your environment. We're 
 - **Your infrastructure**: the databases, APIs, MQTT brokers, and services you've connected.
 - **Your runtime data**: when you attach it from the debug sidebar, Expert sees the `msg` data, errors, and values flowing through each node. It reasons about runtime behavior, not just wiring. We're working on optimising and automating this soon.
 
-The result is output you can trust to match what you expect, so you reach your intended outcome sooner. Expert builds *with* what you have, *around* what you've already created, and *on top of* your existing infrastructure.
+The result is output you can trust to match what you expect, so you reach your intended outcome sooner.
 
-## Try it in two minutes
+## Get started in two minutes
 
 Expert is currently in **soft launch** on FlowFuse Cloud while we refine the experience. Self Hosted Enterprise support is coming in the next release.
 
-During the soft launch, Expert must be manually enabled for your FlowFuse Cloud team. [Contact us](/contact-us/) using the email address associated with your team, and we’ll enable it for you. If you don’t already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
+During the soft launch, Expert must be manually enabled for your FlowFuse Cloud team. [Contact us](/contact-us/) using the email address associated with your team, and we’ll enable it for you. If you don’t already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first. The soft launch is available for paid Flowfuse Cloud teams only.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 
@@ -47,9 +47,9 @@ Paste this in:
 
 *"Build a live dashboard with three machines (Machine 1, Machine 2, Machine 3). Each one should keep switching on its own every 2 seconds between Running (green), Idle (yellow), or Fault (red), so at any moment they can be in different states, with the name, state, and colored indicator updating live on the page."*
 
-You can watch Expert do its work as the flow builds itself on the canvas. A few seconds later it's wired up and ready. Hit Deploy, open the dashboard, and the cards start cycling through Running, Idle, and Fault.
+You can watch Expert do its work as the flow is built on the canvas. A few seconds later it's wired up and ready. Hit Deploy, open the dashboard, and the cards start cycling through Running, Idle, and Fault.
 
-You didn't go hunting through the palette or keep the documentation open in another tab. The flow just showed up.
+You didn't go hunting through the palette or keep the documentation open in another tab. The flow just showed up saving you time and effort.
 
 > For now Expert can only build flows when you're on a Node-RED instance hosted on FlowFuse Cloud. We're rolling this out wider from the next release onwards.
 
