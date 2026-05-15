@@ -89,7 +89,7 @@ Forecast stage: Forecast
 - Objection handling & discussion (20–30 min)
 - Define next step: PoC alignment (10 min)
 
-Deal Vialility Meeting Aka Demo Feedback Meeting 
+Deal Vialility Meeting Aka Demo Feedback Meeting.
 Before this meeting - Discuss the commercial model with the deal desk 
 Goal - Understand if the customer resonated with the demo and if there are still some outstanding questions. 
 Capture feedback and if alignment is established, Evaluate budgets and sizing and anchor pricing 
