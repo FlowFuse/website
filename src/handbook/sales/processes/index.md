@@ -33,7 +33,7 @@ Each process is owned by a specific function, with other functions contributing 
 These processes support Sales-led motions and ensure technical validation and delivery readiness.
 
 - Discovery support
-- Demo execution
+- [Demo execution](/handbook/sales/meetings/demo/#demo)
 - Proof of Concept (PoC) delivery
 - Technical onboarding & enablement
 
