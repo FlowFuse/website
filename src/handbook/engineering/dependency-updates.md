@@ -23,7 +23,7 @@ Work through Dependabot PRs in this order:
 3. **Read the release notes for each bump.** Confirm there are no breaking changes that affect how we use the package. Patch and minor bumps still occasionally ship behavior changes worth knowing about.
 4. **Merge the safe, small bumps first.** Patch and minor updates with a contained diff and clean release notes go in early. Leave anything with an unusually large diff for closer review.
 5. **CI must pass before merging — no exceptions.** A red build on a dependency PR is the signal that something needs investigation, not a bypass.
-6. **Check all repositories** - dependabot is active in all our repositiories. 
+6. **Check all repositories.** - Dependabot is active in all our repositiories. 
 
 ## Major version bumps
 
