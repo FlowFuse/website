@@ -15,6 +15,8 @@ If that fails, the company must learn quickly and iterate. When the messaging is
 consistent the company can learn faster and have a structured approach to these
 iterations.
 
+This is an iterative process - as of May 2026, following work at the Athens Summit in Greece, this messaging will be evolving based on company feedback. When this messaging is finalised, this page will be updated.
+
 For guidance on how to express our brand in writing and communication style, see
 [Brand Personality, Tone of Voice & Character](/handbook/marketing/brand-voice/)
 
