@@ -1,6 +1,7 @@
 # Demo
 
 This document explains the process of delivering a sales demo of the features of FlowFuse. It is not intended to cover all features but to give potential customers a good understanding of FlowFuse's value.
+The demo outlined below is tailored for customers who are already familiar with Node-RED. A separate demo flow for Node-RED-unaware audiences is currently in development.
 
 ## Setup - Before the Demo
 
