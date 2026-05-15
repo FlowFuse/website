@@ -6,14 +6,14 @@ navTitle: Customer Success
 
 FlowFuse CSMs are to drive adoption and expansion within accounts. Customers
 should be provided help and support to connect their assets, build applications
-for their organisation, and automate workflows. To do so, a playbook is created
+for their organisation, and automate workflows. To do so, our playbook is created
 to build one way we do things and have one asset to update with the learnings.
 The purpose of this playbook is to ensure FlowFuse customers build applications
 to optimize their operations, thereby positioning FlowFuse as the platform over
 traditional Manufacturing Execution Systems (MES) and Supervisory Control and
-Data Acquisition (SCADA) systems. FlowFuse is focussed on
-farming/growing/cultivation. We're a hunter organization at first, though, the
-market currently accepts our product mostly through internal growth.
+Data Acquisition (SCADA) systems. FlowFuse is focused on
+farming/growing/cultivation/agriculture. We're a hunter organization at first, though, the
+market currently accepts our product mostly through internal growth paths.
 
 ## Engagement and Responsibilities
 
@@ -39,7 +39,7 @@ advocacy that will further fuel FlowFuse's growth.
 ## Customer Success Methodology
 
 The basic principal of CS is to help customers succeed in their goals by getting
-value from our services. The assumption is, where customers get value they are
+value from our services. The assumption is, where customers get value they are 
 likely to consciously recognize that value, be open to gaining more value, and
 recommending FlowFuse to potential customers. This should in turn result in
 customers remaining with FlowFuse for longer, delivering greater revenue, and
@@ -52,7 +52,7 @@ as follows:
 
 | Cohort     | Key Traits                                                     |
 | ---------- | -------------------------------------------------------------- |
-| Trial      | Not paying for services                                        |
+| Trial      | Not conflicting for services                                   |
 | Starter    | Low number of Node-RED instances                               |
 | Pro        | Smaller applications, collaboration on applications            |
 | Enterprise | Large scale applications, extensive use of FlowFuse's features |
