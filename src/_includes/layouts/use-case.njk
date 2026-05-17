@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+sitemapPriority: 0.8
+---
+<!-- Use Case Page Layout -->
+<div class="w-full page hero">
+    <div class="w-full pt-12 pb-12 md:pt-6 md:pb-8">
+        <div class="md:flex px-6 md:my-16 items-center container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
+            <div class="my-auto max-md:mx-auto md:w-1/2 lg:w-7/12 max-w-lg">
+                <p class="text-indigo-600 font-semibold uppercase tracking-wide text-sm mb-2">Use Case</p>
+                <h1 class="w-full mt-0 md:px-0 m-auto font-medium">
+                    {{ useCaseName }}
+                </h1>
+                <p class="mb-10">{{ heroDescription }}</p>
+                <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
+                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'usecase-{{ useCaseSlug }}'})">TALK TO AN EXPERT</a>
+                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'usecase-{{ useCaseSlug }}'})">GET STARTED</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-full px-6">
+    <div class="max-w-screen-lg mx-auto">
+        {{ content | safe }}
+    </div>
+</div>
+
+<!-- Related Protocols -->
+{% if relatedProtocolSlugs | length %}
+<div class="w-full bg-indigo-50/50 py-12 mt-12 px-6">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="font-bold text-center mb-8">Protocols for {{ useCaseName }}</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {% for pSlug in relatedProtocolSlugs %}
+                {% for p in protocols.protocols %}
+                    {% if p.slug == pSlug %}
+                    <a href="/solutions/protocols/{{ p.slug }}/"
+                       class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline group">
+                        <span class="font-semibold text-indigo-600 group-hover:text-indigo-800">{{ p.name }}</span>
+                        <p class="text-sm text-gray-600 mt-1 mb-0">{{ p.description | truncate(15) }}</p>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% include "common-cta.njk" %}

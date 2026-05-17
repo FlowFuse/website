@@ -1,0 +1,59 @@
+---
+pagination:
+    data: useCases.useCases
+    size: 1
+    alias: useCase
+layout: layouts/use-case.njk
+eleventyComputed:
+    permalink: /solutions/use-cases/{{ useCase.slug }}/
+    title: "{{ useCase.name }} with FlowFuse"
+    useCaseName: "{{ useCase.name }}"
+    useCaseSlug: "{{ useCase.slug }}"
+    heroDescription: "{{ useCase.heroDescription }}"
+    relatedProtocolSlugs: "{{ useCase.relatedProtocols }}"
+    meta:
+        title: "{{ useCase.meta.title }}"
+        description: "{{ useCase.meta.description }}"
+        keywords: "{{ useCase.meta.keywords }}"
+---
+<div class="mt-12 content">
+    <h2 class="mb-4">{{ useCase.name }} with FlowFuse</h2>
+    <p>{{ useCase.description }}</p>
+
+    <div class="mt-8 bg-white border border-gray-200 rounded-lg p-6">
+        <h3 class="mt-0">How It Works</h3>
+        <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+                <div class="bg-indigo-100 text-indigo-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                <div>
+                    <h4 class="mt-0">Connect your data sources</h4>
+                    <p>Use Node-RED's extensive library of protocol nodes to connect to your equipment, sensors, and systems.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-start">
+                <div class="bg-indigo-100 text-indigo-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                <div>
+                    <h4 class="mt-0">Transform and process</h4>
+                    <p>Use FlowFuse's visual flow editor to transform, filter, aggregate, and enrich your data in real time.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-start">
+                <div class="bg-indigo-100 text-indigo-700 rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                <div>
+                    <h4 class="mt-0">Deliver and act</h4>
+                    <p>Route data to dashboards, databases, cloud platforms, or trigger automated actions based on conditions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-8 bg-white border border-gray-200 rounded-lg p-6">
+        <h3 class="mt-0">Benefits</h3>
+        <ul>
+            <li>Reduce time-to-value with low-code development</li>
+            <li>Scale from proof-of-concept to production seamlessly</li>
+            <li>Enterprise-grade security and governance</li>
+            <li>Professional support and certified nodes</li>
+        </ul>
+    </div>
+</div>

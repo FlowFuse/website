@@ -1,0 +1,46 @@
+---
+layout: nohero
+meta:
+    title: "Connect Any Protocol to Any Protocol - FlowFuse"
+    description: "Browse all protocol connections: OPC-UA to MQTT, Modbus to REST, Ethernet/IP to S7, and more. FlowFuse bridges any industrial protocol."
+    keywords: "protocol connections, connect OPC-UA to MQTT, connect Modbus to REST, FlowFuse, industrial integration"
+---
+<div class="nohero w-full">
+    <div class="w-full pt-12 pb-8">
+        <div class="px-6 container mx-auto text-center md:max-w-screen-lg">
+            <h1 class="mt-0 m-auto font-medium">
+                Connect <span class="text-indigo-600">Any Protocol</span> to Any Other
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg">
+                FlowFuse bridges data between any industrial protocols. Select a pair below
+                to learn how to connect them.
+            </p>
+        </div>
+    </div>
+
+    <div class="container m-auto max-w-screen-lg px-6 pb-12">
+        {% for protocol in protocols.protocols %}
+        <div class="mb-10">
+            <h3 class="mb-4 flex items-center gap-2">
+                <span>Connect</span>
+                <a href="/solutions/protocols/{{ protocol.slug }}/" class="text-indigo-600 hover:text-indigo-800">{{ protocol.name }}</a>
+                <span>to...</span>
+            </h3>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {% for other in protocols.protocols %}
+                    {% if other.slug != protocol.slug %}
+                    <a href="/solutions/connect/{{ protocol.slug }}-to-{{ other.slug }}/"
+                       class="block p-3 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline text-sm">
+                        <span class="font-semibold text-gray-800">{{ protocol.shortName }}</span>
+                        <span class="text-gray-400 mx-1">&rarr;</span>
+                        <span class="font-semibold text-indigo-600">{{ other.shortName }}</span>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% include "common-cta.njk" %}

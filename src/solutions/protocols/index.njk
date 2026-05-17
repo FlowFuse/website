@@ -1,0 +1,59 @@
+---
+layout: nohero
+meta:
+    title: "Industrial Protocols - FlowFuse Solutions"
+    description: "Browse industrial protocols supported by FlowFuse: OPC-UA, MQTT, Modbus, Ethernet/IP, Siemens S7, and more."
+    keywords: "industrial protocols, OPC-UA, MQTT, Modbus, Ethernet/IP, FlowFuse, Node-RED"
+---
+<div class="nohero w-full">
+    <div class="w-full pt-12 pb-8">
+        <div class="px-6 container mx-auto text-center md:max-w-screen-lg">
+            <h1 class="mt-0 m-auto font-medium">
+                Industrial <span class="text-indigo-600">Protocols</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg">
+                Browse all industrial protocols that FlowFuse connects. Each protocol page shows
+                how FlowFuse bridges that protocol to your enterprise systems.
+            </p>
+        </div>
+    </div>
+
+    <div class="container m-auto max-w-screen-lg px-6 pb-12">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+            {% for protocol in protocols.protocols %}
+            <a href="/solutions/protocols/{{ protocol.slug }}/"
+               class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline group">
+                <h3 class="mt-0 mb-2 group-hover:text-indigo-600">{{ protocol.name }}</h3>
+                <span class="inline-block text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded mb-3">{{ protocol.category }}</span>
+                <p class="text-sm text-gray-600 mb-0">{{ protocol.description | truncate(20) }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Connect X to Y Teaser -->
+    <div class="w-full bg-indigo-50/50 py-12 px-6" id="connect">
+        <div class="max-w-screen-lg mx-auto text-center">
+            <h2 class="font-bold mb-4">Connect Any Protocol to Any Other</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+                FlowFuse makes it easy to bridge data between different industrial protocols.
+                Choose a pair below to learn how.
+            </p>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-left">
+                {% for pair in protocolPairs | head(9) %}
+                <a href="/solutions/connect/{{ pair.slug }}/"
+                   class="block p-3 bg-white rounded-lg border border-gray-200 hover:border-indigo-300 hover:shadow-md transition-all hover:no-underline text-sm">
+                    <span class="font-semibold text-gray-800">{{ pair.from.shortName }}</span>
+                    <span class="text-gray-400 mx-1">&rarr;</span>
+                    <span class="font-semibold text-indigo-600">{{ pair.to.shortName }}</span>
+                </a>
+                {% endfor %}
+            </div>
+            <a href="/solutions/connect/" class="inline-block mt-6 text-indigo-600 font-semibold hover:text-indigo-800">
+                View all protocol connections &rarr;
+            </a>
+        </div>
+    </div>
+</div>
+
+{% include "common-cta.njk" %}
