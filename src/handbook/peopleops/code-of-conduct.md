@@ -43,7 +43,7 @@ encouraging participants to recognize the relationships between our actions and
 their effects within FlowFuse culture.
 
 At the core are our [company values](../company/values.md). This Code of Conduct
-makes explict how we should behave whilst uphold our values.
+makes explicit how we should behave whilst uphold our values.
 
  - [**Be inclusive**](../company/values.md#👥-collaborative-community). We strive
    to be a company that welcomes and supports people of all backgrounds and identities.
