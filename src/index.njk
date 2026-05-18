@@ -57,18 +57,27 @@ hubspot:
     <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
-                <h1 class="font-medium home m-auto text-3xl sm:text-4xl md:text-5xl text-center text-indigo-700 mb-6 max-w-2xl">
+                <h1 class="font-medium m-auto text-6xl sm:text-7xl text-center text-indigo-700 mt-28 max-w-4xl">
                     {{ site.messaging.tagLine | safe }}
                 </h1>
-                <p class="mt-6 sm:mt-10 text-center text-gray-600 md:text-xl max-w-4xl m-auto">
+                <p class="mt-20 text-center text-gray-600 md:text-xl m-auto max-w-4xl">
                     {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
                 </p>
-                <div class="mt-20">
-                    <!-- AI Chat Interface -->
-                    {% include "components/ai-chat-interface.njk" %}
-
-                    <!-- AI Expert Modal -->
-                    {% include "components/ai-expert-modal.njk" %}
+                <div class="flex flex-col my-20">
+                    <div class="m-auto flex gap-4 items-center justify-center flex-row">
+                        <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hero'})">
+                            <span class="text-base uppercase items-center">
+                                BOOK A DEMO
+                            </span>
+                        </a>
+                        <a class="ff-btn flex flex-col mb-6" href="{% include 'sign-up-url.njk' %}"
+                        onclick="capture('cta-try-it-now', {'position': 'hero'})">
+                            <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                TRY IT OUT
+                                {% include "components/icons/arrow-right.svg" %}
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,18 +117,6 @@ hubspot:
                     <p class="mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
                 </div>
             {% endfor %}
-        </div>
-    </div>
-
-    <!-- Video -->
-    <div class="text-center mt-28 mb-16">
-        <div class="flex justify-center items-end m-auto">
-            <lite-youtube
-                videoid="s4s_d5sXd8M"
-                params="rel=0"
-                style="width: 1024px; overflow: hidden; background-image: url('https://img.youtube.com/vi/s4s_d5sXd8M/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                class="border-4 border-indigo-200 rounded-xl sm:max-w-none sm:max-h-full">
-            </lite-youtube>
         </div>
     </div>
 </div>
@@ -174,7 +171,7 @@ hubspot:
         </div>
     </div>
     <!-- Cost of inaction section -->
-    <div class="text-center sm:text-left max-w-screen-lg mx-auto py-6 mb-16 flex flex-col sm:flex-row gap-10">
+    <div class="text-center sm:text-left max-w-screen-lg mx-auto py-6 flex flex-col sm:flex-row gap-10">
         <div class="sm:w-1/2">
             <h3>The enterprise cost of fragmented industrial architecture</h3>
             <p>Without integrated industrial data monitoring and control, large manufacturers face significant operational losses:</p>

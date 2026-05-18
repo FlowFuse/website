@@ -7,9 +7,7 @@ navGroup: Customer Department
 
 ## Collecting Signatures
 
-FlowFuse uses Hubspot for generating quotes, and requesting the signatures on
-them. For other legal documents we're using
-[Google eSignatures](https://support.google.com/docs/answer/12315692?hl=en).
+See the [Signatures](/handbook/operations/signatures/) page in Operations for procedures on collecting signatures and circulation requirements.
 
 ## Subscription agreement
 

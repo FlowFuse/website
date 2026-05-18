@@ -2,16 +2,21 @@
     function toggleNavList (el) {
         const li = el.parentElement
         li.classList.toggle('open')
-        const ul = li.nextElementSibling
+        // The nested <ul> is wrapped in an <li class="contents"> sibling for valid list semantics.
+        const wrapper = li.nextElementSibling
+        const ul = wrapper && wrapper.firstElementChild
+        if (!ul || ul.tagName !== 'UL') return
         ul.classList.toggle('open')
+        el.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false')
         if (ul.style.maxHeight) {
             ul.style.maxHeight = null;
         } else {
-            if (ul.parentElement.tagName === "UL" && !ul.parentElement.classList.contains('handbook-nav')) {
-                ul.parentElement.style.maxHeight = "initial"
+            const containingUl = wrapper.parentElement
+            if (containingUl && containingUl.tagName === "UL" && !containingUl.classList.contains('handbook-nav')) {
+                containingUl.style.maxHeight = "initial"
             }
             ul.style.maxHeight = ul.scrollHeight + "px";
-        } 
+        }
     }
 </script>
 
@@ -34,7 +39,7 @@
                             {{ entry.name }}
                         </a>
                         {% if entry.children %}
-                            <button onclick="toggleNavList(this)">
+                            <button onclick="toggleNavList(this)" aria-label="Toggle {{ entry.name }} submenu" aria-expanded="false">
                                 <span class="ff-icon icon-expand">
                                     {% include "components/icons/chevron-down.svg" %}
                                 </span>
@@ -45,36 +50,40 @@
                         {% endif %}
                     </li>
                     {% if entry.children %}
-                        <ul class="handbook-nav-nested">
-                            {% for child in entry.children %}
-                                <li class="{% if child.url === page.url %}active{% endif %}">
-                                    <a href="{{child.url}}">
-                                        {{ child.name }}
-                                    </a>
+                        <li class="contents">
+                            <ul class="handbook-nav-nested">
+                                {% for child in entry.children %}
+                                    <li class="{% if child.url === page.url %}active{% endif %}">
+                                        <a href="{{child.url}}">
+                                            {{ child.name }}
+                                        </a>
+                                        {% if child.children %}
+                                            <button onclick="toggleNavList(this)" aria-label="Toggle {{ child.name }} submenu" aria-expanded="false">
+                                                <span class="ff-icon icon-expand">
+                                                    {% include "components/icons/chevron-down.svg" %}
+                                                </span>
+                                                <span class="ff-icon icon-minimise">
+                                                    {% include "components/icons/chevron-up.svg" %}
+                                                </span>
+                                            </button>
+                                        {% endif %}
+                                    </li>
                                     {% if child.children %}
-                                        <button onclick="toggleNavList(this)">
-                                            <span class="ff-icon icon-expand">
-                                                {% include "components/icons/chevron-down.svg" %}
-                                            </span>
-                                            <span class="ff-icon icon-minimise">
-                                                {% include "components/icons/chevron-up.svg" %}
-                                            </span>
-                                        </button>
+                                        <li class="contents">
+                                            <ul class="handbook-nav-nested-2">
+                                                {% for grandchild in child.children %}
+                                                    <li class="{% if grandchild.url === page.url %}active{% endif %}">
+                                                        <a href="{{grandchild.url}}">
+                                                            {{ grandchild.name }}
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
                                     {% endif %}
-                                </li>
-                                {% if child.children %}
-                                    <ul class="handbook-nav-nested-2">
-                                        {% for grandchild in child.children %}
-                                            <li class="{% if grandchild.url === page.url %}active{% endif %}">
-                                                <a href="{{grandchild.url}}">
-                                                    {{ grandchild.name }}
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            {% endfor %}
-                    </ul>
+                                {% endfor %}
+                            </ul>
+                        </li>
                 {% endif %}
             {% endfor %}
         {% endif %}

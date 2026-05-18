@@ -8,7 +8,7 @@ This handbook contains all the information about how FlowFuse is run. It's a
 living set of documents - collectively we'll [iterate](/handbook/company/values/#%F0%9F%94%81-iterative-improvement)
 on it as we learn and discover new things.
 
-### About the Handbook
+## About the Handbook
 
 The FlowFuse handbook is inspired by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
 As an all-remote company, we share [their rationale](https://about.gitlab.com/handbook/about/#advantages) for having a handbook.

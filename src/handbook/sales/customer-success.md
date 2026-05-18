@@ -121,8 +121,7 @@ Customer success contacts FlowFuse customers and prospective customers (anyone w
 
 All team members are asked to identify customer and prospect requests in the following way:
 - On a GitHub issue, use the label Sales Request or Customer Request, as appropriate. (A request is a Sales Request when a member of the Sales team learns that a prospect is interested in a feature. It is a Customer Request when an existing customer makes a request. An issue can be both a Customer Request and a Sales Request.)
-- On the main issue, list the customer record in HubSpot. Do this on the main issue rather than a comment, as these can be lost.
-- If an issue already exists and a new request is made, add this information to the existing issue. This helps keep a comprehensive record of how many requests of a feature there are, and by whom.
+- Customer-specific context (which deal or account the request is tied to) does not go on the public issue. Mention the request on the deal's representative issue inside FlowFuse/product, and if a public issue already exists for the same request, reference that existing one from the deal issue rather than opening a new one. See [Deal Management](./hubspot.md#deal-management). Sales and Product share responsibility for maintaining this link, including for past requests, so any feature request can be traced back to the deals it pertains to.
 
 
 ### Hubspot Properties
