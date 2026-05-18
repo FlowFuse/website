@@ -83,10 +83,16 @@ Each content type has channels which are appropriate, this table sets out which 
 
 ##### Regular
 
-- Descriptive text: 
-    - Align with post purpose and audience goals.
-    - Must reflect our [Brand Voice](/handbook/marketing/brand-voice/).
-    - Think about relevance to the audience.
+- Descriptive text:
+    - Align with post purpose and audience goals. Think about relevance to the audience.
+    - Ideally, **content should be written from the personal perspective of the author**. Posts written in first person may allow more room for individual perspective and personality while still generally aligning with our [Brand Voice](/handbook/marketing/brand-voice/) and [FlowFuse values](/handbook/company/values/).
+        - Any post written in first person **must be signed by the author** at the end of the post, including:
+            - Full name
+            - Job title
+            - Personal profile tag when supported by the platform
+        - And using the following format:
+            - *— Name, Role*
+    - Without author attribution, posts should be written in a neutral company voice and fully reflect our [Brand Voice](/handbook/marketing/brand-voice/).
 - Emoji
 - Only one CTA
 - Hashtags, ideally three.
