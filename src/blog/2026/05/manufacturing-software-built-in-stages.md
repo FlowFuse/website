@@ -5,7 +5,7 @@ description: "Stop waiting years for manufacturing software projects to deliver 
 date: 2026-05-18
 keywords: flowfuse, manufacturing software, MES, industrial automation, Node-RED, industrial IoT, smart manufacturing, unified namespace, OEE tracking, Industry 4.0
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/05/images/all-or-nothing-manufacturing-software.png
 tags:
 - flowfuse
 cta:
