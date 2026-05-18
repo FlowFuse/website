@@ -75,7 +75,7 @@ Depending on the background against which the logo is presented, there are corre
 
 Search for the file name ending with "dark", such as: *ff-logo--wordmark--dark.png*
 
-<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-gray-800 rounded-md md:w-[60%] min-w-[330px] m-auto">
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-indigo-700 rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-400 p-8">
         <img class="m-auto p-2" width="250" min-width="250" class="p-2" alt="Image of the horizontal version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--wordmark--dark.png">
     </div>
