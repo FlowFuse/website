@@ -2,8 +2,8 @@
 title: "All-or-Nothing Manufacturing Software Is Killing Your Agility"
 subtitle: "Deploy the capabilities you need today. Build the rest tomorrow."
 description: "Stop waiting years for manufacturing software projects to deliver value. See how FlowFuse enables composable industrial applications built around your operation."
-date: 2026-05-08
-keywords: 
+date: 2026-05-18
+keywords: flowfuse, manufacturing software, MES, industrial automation, Node-RED, industrial IoT, smart manufacturing, unified namespace, OEE tracking, Industry 4.0
 authors: ["sumit-shinde"]
 image: 
 tags:
