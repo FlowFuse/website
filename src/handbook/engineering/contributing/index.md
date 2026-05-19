@@ -58,7 +58,7 @@ Once code is merged, please close any related branches in order to keep the repo
 
 PRs, when opened, should have at least one reviewer assigned, and a consequent review approved, before any merge takes place. If a PR is opened for review/discussion purposes, this PR should be set to `draft` state.
 
-When merging a PR, you should choose the "Merge pull request" option. There is no need to rebase or squash the PR commits.
+When merging a PR, you should choose the "Squash and merge" option. This is the default approach for merging pull requests.
 
 When conducting a PR review, if you are the last (or only) reviewer and all reviews (including your own) are approvals, unless there is a comment from the author stating otherwise, you are free to conduct the merge. Otherwise, leave the merge to the author of the PR, or a future reviewer.
 
