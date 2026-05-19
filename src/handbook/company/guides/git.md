@@ -25,7 +25,7 @@ If you've been asked to do a new piece of work, this is the quick bullet list of
 6. You can do multiple commits and pushes to iterate on your work. It will all be saved to your branch
 7. When ready for review, open a Pull Request
 8. Assign someone else as a reviewer, they may offer feedback
-9. The reviewer, when happy, will aprove and merge the Pull request
+9. The reviewer, when happy, will approve and merge the Pull request
 10. Once your PR is merged, be sure to switch back to the `main` branch again
 
 ### Modifying an Existing Contribution
@@ -39,8 +39,8 @@ If another person has opened a Pull Request or branch already, and asked you to 
 5. You can do multiple commits and pushes to iterate on your work. It will all be saved to your branch & PR.
 6. Check with the original PR owner as to whether you're reviewing the PR, or if someone else has been assigned
 7. Reviewer submits their feedback, if any.
-8. The reviewer, when happy, will aprove and merge the Pull request
-10. Once you have finished your contirubtions, you can switch back to the `main` branch
+8. The reviewer, when happy, will approve and merge the Pull request
+10. Once you have finished your contributions, you can switch back to the `main` branch
 
 ### Completing a Pull Request Review
 
@@ -48,7 +48,7 @@ You may be asked to conduct a Pull Request Review. This means that someone else 
 
 1. Switch to their branch on your machine (if request to append to the Pull Request, that will have a branch associated to.)
 2. Run the code (e.g. website server or FlowFuse platform) and ensure their changes work as expected.
-3. "Add your Review" on GitHub, offer comments and recommendatins where required.
+3. "Add your Review" on GitHub, offer comments and recommendations where required.
 4. Once you're happy, "Approve" the Pull Request
 5. Merge the PR
 6. Ensure you have switched back to the `main` branch locally before continuing any other work.

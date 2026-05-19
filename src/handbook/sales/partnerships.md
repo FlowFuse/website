@@ -14,7 +14,7 @@ For reseller partnerships, please refer to our [Reseller Agreement](https://docs
 
 FlowFuse also continues to build it's partner channel by working with strategic System Integrators.
 
-When there's interest in becoming a partner FlowFuse requires a project to colaborate on jointly.
+When there's interest in becoming a partner FlowFuse requires a project to collaborate on jointly.
 Implementation projects structure the partnership and learning on both sides.
 
 Please [contact us](https://flowfuse.com/partners/) to discuss and complete an agreement.

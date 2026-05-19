@@ -60,7 +60,7 @@ Follow these steps to create a quote.
    [the instructions](/handbook/sales/engagements/#what-to-quote)
    - Select the appropriate Plan that is being quoted
    - For each line item, except Professional Services, check the Billing
-     frequence to `Annual` and if the terms *_ensure automatic renewal_
+     frequency to `Annual` and if the terms *_ensure automatic renewal_
    - Adjust fields for Term and discount/fee/tax as needed.
    - Add Add-on line items for purchases that exceed features that are included
      with the Plan.
