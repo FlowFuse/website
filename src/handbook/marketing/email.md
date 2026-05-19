@@ -15,7 +15,7 @@ The following guidelines are meant to document the roles and responsibilities of
 
 The sales team, customer success, and support team will be required to send email to communicate with specific potential customers and customers. These types of email are typically between the FlowFuse employee and an individual customer to accomplish a task or transaction. For instance, handling a support request or further a sales process.
 
-These types of email should be stored in HubSpot using the HubSpot interface or the HubSpot Chrome plugin. The goal should be that all transactional email is associated with the contact in Hubspot to have an history of the interaction.
+These types of email should be stored in HubSpot using the HubSpot interface or the HubSpot Chrome plugin. The goal should be that all transactional email is associated with the contact in Hubspot to have a history of the interaction.
 
 ### Community email 
 
