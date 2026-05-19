@@ -4,7 +4,7 @@ navTitle: Art Requests
 
 # Art Requests
 
-Across FlowFuse it will be a common occurence that we need visual content created. These can be part of development tasks (where you're comfortable doing the development work, but less doing the graphic/illustrative design work) or social/marketing materials.  
+Across FlowFuse it will be a common occurrence that we need visual content created. These can be part of development tasks (where you're comfortable doing the development work, but less doing the graphic/illustrative design work) or social/marketing materials.  
 
 Likely places this will be required are:
 
