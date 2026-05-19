@@ -60,7 +60,7 @@ Follow these steps to create a quote.
    [the instructions](/handbook/sales/engagements/#what-to-quote)
    - Select the appropriate Plan that is being quoted
    - For each line item, except Professional Services, check the Billing
-     frequence to `Annual` and if the terms *_ensure automatic renewal_
+     frequency to `Annual` and if the terms *_ensure automatic renewal_
    - Adjust fields for Term and discount/fee/tax as needed.
    - Add Add-on line items for purchases that exceed features that are included
      with the Plan.
@@ -102,7 +102,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
    - Verify the Deal amount is set correctly based on Deal Type:
      - New Business: ACV (Annual Contract Value)
      - Expansions/Renewals: Incremental ARR
-   - On the Hubspot Deal view, check and update:
+   - On the HubSpot Deal view, check and update:
      - Hosting Environment
      - Contract Start Date
      - Company address
@@ -150,7 +150,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
      - Generate a [license key](../sales/meetings/poc.md#generating-a-license)
      - Send the license key with the onboarding email to the customer, following
        this
-       [Hubspot Template](https://app-eu1.hubspot.com/templates/26586079/edit/135404737?q=welco&page=1).
+       [HubSpot Template](https://app-eu1.hubspot.com/templates/26586079/edit/135404737?q=welco&page=1).
 1. If Professional Services are included, inform the PS team of deal.
 1. Add customer to onboarding stage in the CSM tracking document.
 1. Move the deal to `Closed Won` stage.

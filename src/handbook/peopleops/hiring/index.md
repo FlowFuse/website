@@ -289,6 +289,6 @@ After announcing the departure in Slack, the manager will create a new offboardi
 The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
 
 Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package.
-Such a package might be dependent on on business requirements, standing of the employee, among other factors.
+Such a package might be dependent on business requirements, standing of the employee, among other factors.
 
 The company will reimburse any outstanding expenses that comply with [our handbook](/handbook/peopleops/expenses/#reimbursement)

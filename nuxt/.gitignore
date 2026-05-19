@@ -8,3 +8,4 @@ public/
 
 # Dependencies (hoisted to workspace root)
 node_modules/
+.data/

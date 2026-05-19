@@ -16,7 +16,7 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **“Base Salary”** means the wages paid to a Salesperson each payroll period, regardless of Salesperson’s performance under the Plan.
 
-“**Booked**” means the satisfaction of all of the following conditions:  (1) a written Agreement is executed by a Customer on a Qualifying Sale, (2) the executed Agreement is accepted and approved by the Company, (3) the executed agreement and related quote and PO (if any) are attached to the opportunity in Hubspot.com and (4) the Company has shipped software or delivered services, (5) the “Closing a Deal” process as described in the company handbook has been completed.
+“**Booked**” means the satisfaction of all of the following conditions:  (1) a written Agreement is executed by a Customer on a Qualifying Sale, (2) the executed Agreement is accepted and approved by the Company, (3) the executed agreement and related quote and PO (if any) are attached to the opportunity in HubSpot.com and (4) the Company has shipped software or delivered services, (5) the “Closing a Deal” process as described in the company handbook has been completed.
 
 “**Booking Date**” means the date a sale was Booked.
 
