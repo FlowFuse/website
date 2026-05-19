@@ -10,6 +10,8 @@
     },
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
-        "nuxt": "^4.0.0"
+        "better-sqlite3": "^12.10.0",
+        "nuxt": "^4.0.0",
+        "nuxt-link-checker": "^5.0.10"
     }
 }

@@ -1,7 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content'],
+    modules: ['@nuxt/content', 'nuxt-link-checker'],
+
+    linkChecker: {
+        failOnError: true,
+        // trailing-slash: 11ty pages use trailing slashes intentionally
+        // no-error-response: links to 11ty pages return 404 in the Nuxt-only static output
+        skipInspections: ['trailing-slash', 'no-error-response'],
+    },
 
     app: {
         head: {
