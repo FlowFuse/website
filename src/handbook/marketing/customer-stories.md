@@ -78,7 +78,7 @@ The date is useful to order the stories in the customer stories index. The newes
 
 Image of the logo to be included in the customer stories index, on top of the image, ideally a png file with transparent background. This is an optional field, if it's covering an important part of the image or if the image already includes a logo, there's no need to add it.
 
-### Hubspot
+### HubSpot
 ##### formId
 
 Download form ID code provided by HubSpot.
