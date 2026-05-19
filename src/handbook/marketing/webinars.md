@@ -7,7 +7,7 @@ navGroup: Sales & Marketing
 
 FlowFuse organizes monthly webinars on topics about Node-RED, FlowFuse and the general IoT industry. The topics are typically educational and technical in content. The goal is to become the source of great content for learning about these topics.
 
-The FlowFuse webinar is typically scheduled during the last week of the month, but be mindfull of trade-shows and company in-person events, as webinars should not be scheduled during those weeks.
+The FlowFuse webinar is typically scheduled during the last week of the month, but be mindful of trade-shows and company in-person events, as webinars should not be scheduled during those weeks.
 
 The webinar typically starts at 17:00CET or 11amET, to allow for European and Pacific coast of North America attendees.  All webinars are recorded and the recording is made available on the FlowFuse Youtube channel.
 

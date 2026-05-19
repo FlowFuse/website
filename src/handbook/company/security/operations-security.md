@@ -74,7 +74,7 @@ periodically tested, not less than annually.
 Backups must be stored separately from the production data location.
 
 FlowFuse does not regularly backup user devices like laptops. Users are expected to
-store critical files and information in the commpany-provided Google Drive with
+store critical files and information in the company-provided Google Drive with
 appropriate access controls applied.
 
 ## Logging & Monitoring
