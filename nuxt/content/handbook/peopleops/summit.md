@@ -23,7 +23,7 @@ dinners and lunches. Each employee is then responsible for booking their own fli
 and travel arrangements. Please check in with the summit organizer on your own personal
 budget, as this will differ person-to-person and be a factor of each employee's location.
 
-Prepare at least 10 weeks in advance in canvassing for vendors and expenses for activites, food, and venue.
+Prepare at least 10 weeks in advance when canvassing for vendors and expenses for activites, food, and venue.
 
 See the [Travel handbook](/handbook/peopleops/travel/) for policies on flights, visas, extended stays, and bringing family.
 
