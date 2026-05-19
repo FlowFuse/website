@@ -5,7 +5,7 @@ navTitle: Using Git
 
 ## Background
 
-[Git](#git) is a way for a team to create written content, track any changes to that content, and seek approval for any changes to become the [Published](#publish) version of that content on [Live](#live). [Git](#git) can be used in many ways, our developers use it to write the code which makes FlowFuse work. In this guide we are focusing on the process of working with documents within our company [Handbook](#handbook) or website. We will use [Git](#git)'s terminology to describe how we are working. This guide also assumes you are using [Github](#github).com to edit the [Handbook](#handbook) and website.
+[Git](#git) is a way for a team to create written content, track any changes to that content, and seek approval for any changes to become the [Published](#publish) version of that content on [Live](#live). [Git](#git) can be used in many ways, our developers use it to write the code which makes FlowFuse work. In this guide we are focusing on the process of working with documents within our company [Handbook](#handbook) or website. We will use [Git](#git)'s terminology to describe how we are working. This guide also assumes you are using [GitHub](#github).com to edit the [Handbook](#handbook) and website.
 
 When making changes to a [Project](#project) at least two people have to agree that the changes should be Published. In most cases those two people would be yourself and a [Reviewer](#reviewer).
 
@@ -60,7 +60,7 @@ You may be asked to conduct a Pull Request Review. This means that someone else 
 
 The first step to editing content is to create a [Branch](#branch) of that content. A [Branch](#branch) is a complete copy of the [Project](#project). Creating a [Branch](#branch) allows you to edit the content without those edits changing the [Live](#live) copy of a [Project](#project).
 
-Navigate to the Project within [Github](#github) you want to work on, that would usually be [our website](https://github.com/FlowFuse/website) or [Handbook](https://github.com/FlowFuse/handbook).
+Navigate to the Project within [GitHub](#github) you want to work on, that would usually be [our website](https://github.com/FlowFuse/website) or [Handbook](https://github.com/FlowFuse/handbook).
 
 ![Create a new Branch](../../images/git-how-to/new-branch-1.png)
 
@@ -98,7 +98,7 @@ I will work on the file until I think it's ready for a colleague to review the c
 
 I am now ready to request a [Review](#review) of my work from a colleague. To do this I need to create a [Pull Request](#pull-request). Once you create the [Pull Request](#pull-request) an alert will be sent to your colleagues asking them for feedback on your work.
 
-[Github](#github) gives you an easy to find button to create a [Pull Request](#pull-request) for your current work. 
+[GitHub](#github) gives you an easy to find button to create a [Pull Request](#pull-request) for your current work. 
 
 ![Create a Pull Request](../../images/git-how-to/create-a-pr-1.gif "@skip")
 
@@ -148,9 +148,9 @@ The process to save changes to a [Branch](#branch) of a [Project](#project).
 
 An app to help us collaboratively manage changes to documents. You can read more [here](https://git-scm.com/) but we'd advise you don't unless you are a developer as Git has a lot of features and terminology which you don't need to understand at this point.
 
-### Github
+### GitHub
 
-A website which allows you to manage [Git](#git). Github also allows you to communicate with your colleagues about changes you are making.
+A website which allows you to manage [Git](#git). GitHub also allows you to communicate with your colleagues about changes you are making.
 
 ### Handbook
 
