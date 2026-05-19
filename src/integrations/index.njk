@@ -33,7 +33,8 @@ Explore the list of integrations and modules available for your Node-RED project
         currentPage: 0,
         maxPages: 0
     }
-    let filterCertified = false;
+    const params = new URLSearchParams(window.location.search);
+    let filterCertified = params.get('certified') === '1';
     const filters = {
         ai: {
             checked: false,
@@ -84,7 +85,7 @@ Explore the list of integrations and modules available for your Node-RED project
             label: 'Utility'
         }
     }
-    var catalogue = []
+    let catalogue = []
 
     function showElementById (id) {
         document.getElementById(id).style.display = 'block';
@@ -116,6 +117,10 @@ Explore the list of integrations and modules available for your Node-RED project
                 catalogue = data.catalogue
                 pagination.maxPage = Math.ceil(catalogue.length / pagination.perPage);
                 renderFilters();
+                // reflect any URL-driven certified state in the sidebar checkbox
+                const sidebar = document.getElementById('catalogue-filter-certified');
+                if (sidebar) sidebar.checked = filterCertified;
+                syncCertifiedUI();
                 filterCatalogue(catalogue);
             });
     }
@@ -171,7 +176,40 @@ Explore the list of integrations and modules available for your Node-RED project
 
     function toggleCertified () {
         filterCertified = document.getElementById('catalogue-filter-certified').checked;
+        syncCertifiedUI();
+        syncCertifiedUrl();
         filterCatalogue();
+    }
+
+    function setCertified (value) {
+        filterCertified = !!value;
+        const sidebar = document.getElementById('catalogue-filter-certified');
+        if (sidebar) sidebar.checked = filterCertified;
+        syncCertifiedUI();
+        syncCertifiedUrl();
+        filterCatalogue();
+    }
+
+    function syncCertifiedUrl () {
+        const url = new URL(window.location.href);
+        if (filterCertified) {
+            url.searchParams.set('certified', '1');
+        } else {
+            url.searchParams.delete('certified');
+        }
+        history.replaceState(null, '', url.toString());
+    }
+
+    function syncCertifiedUI () {
+        const pill = document.getElementById('certified-pill-toggle');
+        if (pill) {
+            pill.setAttribute('aria-pressed', filterCertified ? 'true' : 'false');
+            pill.classList.toggle('certified-pill--active', filterCertified);
+        }
+        const count = document.getElementById('certified-count');
+        if (count && Array.isArray(catalogue)) {
+            count.textContent = catalogue.filter(n => n.ffCertified).length;
+        }
     }
 
 
@@ -319,12 +357,10 @@ Explore the list of integrations and modules available for your Node-RED project
                 <li class="integration-card group border border-gray-300 rounded-xl bg-white drop-shadow-md">
                     <a href="${nodeUrl}"${linkAttrs} class="h-48 flex flex-col">
                         <div class="integration-card--details p-3 grow min-h-0">
-                            <div class="flex justify-between text-sm items-center">
-                                <span>@${integration.npmScope || integration.npmOwners[0]}${externalIcon}</span>
-                                <span class="ff-certified-tag" style="display: ${certified ? 'flex' : 'none'}">
-                                    <certified-icon />
-                                </span>
-                            </div>    
+                            <div class="flex justify-between text-sm items-center gap-2">
+                                <span class="truncate">@${integration.npmScope || integration.npmOwners[0]}${externalIcon}</span>
+                                <span class="certified-pill" style="display: ${certified ? 'inline-flex' : 'none'}" title="FlowFuse Certified"><certified-icon></certified-icon><span>Certified</span></span>
+                            </div>
                             <label class="group-hover:text-indigo-600 cursor-pointer">${integration.name}</label>
                             <p class="text-sm my-2 leading-5">${description}</p>
                         </div>
@@ -343,13 +379,60 @@ Explore the list of integrations and modules available for your Node-RED project
     }
     customElements.define('integration-tile', IntegrationTile);
 </script>
+<section class="certified-hero">
+    <div class="container m-auto md:max-w-6xl px-6">
+        <div class="certified-hero--card bg-indigo-50 rounded-lg border-[3px] border-indigo-200 drop-shadow-xl p-6 md:p-10 grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+            <div class="md:col-span-5">
+                <span class="certified-eyebrow"><certified-icon></certified-icon><span>FlowFuse Certified</span></span>
+                <h2 class="certified-hero--title text-balance">Certified nodes, backed by their authors and supported long-term.</h2>
+                <p class="certified-hero--lede">
+                    Choosing a Node-RED node for production raises questions you can't always answer from a README. Is it actively maintained? Is it secure? Will the maintainer still be around in two years? Certified Nodes answer those questions.
+                </p>
+                <div class="certified-hero--actions">
+                    <button
+                        id="certified-pill-toggle"
+                        type="button"
+                        class="ff-btn ff-btn--primary uppercase certified-toggle"
+                        aria-pressed="false"
+                        onclick="setCertified(!filterCertified)"><certified-icon></certified-icon><span>Show only Certified</span><span class="certified-toggle--count">(<span id="certified-count">…</span>)</span></button>
+                    <a class="certified-hero--link inline-flex items-center gap-1" href="/blog/2025/07/certified-nodes-v2/">
+                        Learn more {% include "components/icons/arrow-long-right.svg" %}
+                    </a>
+                </div>
+            </div>
+            <ul class="certified-pillars md:col-span-7">
+                <li class="certified-pillar">
+                    <span class="certified-pillar--icon" aria-hidden="true">{% include "components/icons/users.svg" %}</span>
+                    <div>
+                        <h3 class="certified-pillar--title">Vetted authors</h3>
+                        <p class="certified-pillar--body">Every Certified Node comes from a developer with a track record in their domain — not an anonymous npm publisher.</p>
+                    </div>
+                </li>
+                <li class="certified-pillar">
+                    <span class="certified-pillar--icon" aria-hidden="true">{% include "components/icons/shield-check.svg" %}</span>
+                    <div>
+                        <h3 class="certified-pillar--title">Tested for production</h3>
+                        <p class="certified-pillar--body">We check each node for reliability, security posture, and current documentation before it ships — and patch CVEs on our own timeline.</p>
+                    </div>
+                </li>
+                <li class="certified-pillar">
+                    <span class="certified-pillar--icon" aria-hidden="true">{% include "components/icons/code-bracket.svg" %}</span>
+                    <div>
+                        <h3 class="certified-pillar--title">Open source and proprietary, both welcome</h3>
+                        <p class="certified-pillar--body">Some Certified Nodes are free and open; others target specific enterprise needs. The certification standard is the same.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 <div class="container m-auto text-left md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4 flex">
     <div class="catalogue-filters w-52 shrink-0 hidden md:block">
         <label>Filters</label>
         <ul>
             <li>
                 <input type="checkbox" id="catalogue-filter-certified" onchange="toggleCertified()"/>
-                <label class="inline-flex gap-1 items-center" for="catalogue-filter-certified">FlowFuse Certified <certified-icon /></label>
+                <label class="inline-flex gap-1 items-center" for="catalogue-filter-certified">FlowFuse Certified <certified-icon></certified-icon></label>
             </li>
         </ul>
         <label>Categories</label>
@@ -360,7 +443,7 @@ Explore the list of integrations and modules available for your Node-RED project
     </div>
     <div class="grow  max-md:max-w-lg mx-auto">
         <input id="search-catalogue" class="catalogue-search" type="text" placeholder="Search Integrations" onkeyup="filterCatalogue()" onchange="filterCatalogue()"/>
-        <div class="catalogue-meta">
+        <div class="catalogue-meta" aria-live="polite" aria-atomic="true">
             <div id="count-container" style="display: none;"><span id="integrations-count">X</span> Integrations</div>
             <div id="count-placeholder"><span id="integrations-count">Loading...</div>
         </div>

@@ -51,20 +51,178 @@
     color: theme(colors.blue.500);
 }
 
-/* .ff-certified-tag {
-    background-color: theme(colors.blue.50);
-    border: 1px solid theme(colors.blue.600);
-    padding: 3px 6px;
-    border-radius: 6px;
-    align-items: center;
-    gap: 3px;
-} */
-
 .certified-icon {
     width: 24px;
     height: 24px;
     fill: theme(colors.indigo.600);
     stroke: theme(colors.white);
+}
+
+/* Compensates for catalog.njk's empty `{% block actions %}` div, which always
+   reserves ~32px of vertical space whether or not a page defines the block. */
+.certified-hero {
+    margin-top: -32px;
+}
+
+.certified-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: theme(colors.indigo.700);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.certified-eyebrow .certified-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.certified-hero--title {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: theme(colors.gray.900);
+    margin: 0 0 8px 0;
+}
+
+@media (min-width: 768px) {
+    .certified-hero--title {
+        font-size: 28px;
+    }
+}
+
+.certified-hero--lede {
+    font-size: 16px;
+    line-height: 1.5;
+    color: theme(colors.gray.700);
+    margin: 0 0 20px 0;
+}
+
+.certified-hero--actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.certified-hero--link {
+    color: theme(colors.indigo.700);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.certified-hero--link:hover {
+    color: theme(colors.indigo.800);
+}
+
+.certified-pillars {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+}
+
+.certified-pillar {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+.certified-pillar--icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    background-color: theme(colors.white);
+    border: 1px solid theme(colors.indigo.200);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    color: theme(colors.indigo.600);
+}
+
+.certified-pillar--icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.certified-pillar--title {
+    font-size: 16px;
+    font-weight: 700;
+    color: theme(colors.gray.900);
+    margin: 0 0 4px 0;
+}
+
+.certified-pillar--body {
+    font-size: 14px;
+    line-height: 1.5;
+    color: theme(colors.gray.700);
+    margin: 0;
+}
+
+.certified-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px 2px 4px;
+    background-color: theme(colors.indigo.50);
+    color: theme(colors.indigo.700);
+    border: 1px solid theme(colors.indigo.200);
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.certified-pill .certified-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.certified-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.certified-toggle:focus-visible {
+    outline: 2px solid theme(colors.indigo.600);
+    outline-offset: 2px;
+}
+
+.certified-toggle .certified-icon {
+    width: 18px;
+    height: 18px;
+    fill: theme(colors.white);
+    stroke: theme(colors.indigo.600);
+}
+
+.certified-toggle[aria-pressed="true"],
+.certified-toggle.certified-pill--active {
+    background-color: theme(colors.indigo.50);
+    color: theme(colors.indigo.700);
+    box-shadow: inset 0 0 0 1px theme(colors.indigo.300);
+}
+
+.certified-toggle[aria-pressed="true"] .certified-icon,
+.certified-toggle.certified-pill--active .certified-icon {
+    fill: theme(colors.indigo.600);
+    stroke: theme(colors.white);
+}
+
+.certified-toggle--count {
+    opacity: 0.85;
+    font-weight: 400;
 }
 
 .integration-card a {
