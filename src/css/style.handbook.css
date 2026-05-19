@@ -172,4 +172,72 @@
         margin-bottom: 0.125rem;
         padding-left: 1.25rem;
     }
+
+    /* Color palette cards */
+    .ff-color-grid {
+        display: grid;
+        gap: .75rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 640px) {
+        .ff-color-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+
+    @media (min-width: 1540px) {
+        .ff-color-grid { grid-template-columns: repeat(10, 1fr); }
+    }
+
+    .ff-color-card {
+        cursor: pointer;
+        border-radius: .75rem;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+        border: 1px solid #F3F4F6;
+        transition: box-shadow .2s ease;
+    }
+
+    .ff-color-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .13);
+    }
+
+    .ff-color-card .cc-btn {
+        opacity: 0;
+        transition: opacity .15s;
+        line-height: 0;
+        background: rgba(0, 0, 0, .2);
+        border-radius: 4px;
+        padding: 3px;
+        color: white;
+    }
+
+    .ff-color-card:hover .cc-btn { opacity: 1; }
+
+    .ff-color-card .cc-btn svg { width: 16px; height: 16px; }
+
+    .ff-color-card .cc-swatch {
+        height: 5rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: .5rem;
+    }
+
+    .ff-color-card .cc-info { padding: .6rem .75rem; background: #fff; }
+
+    .ff-color-card .cc-name {
+        margin: 0 !important;
+        font-size: .875rem;
+        font-weight: 500;
+        color: #1F2937;
+        line-height: 1.4;
+    }
+
+    .ff-color-card .cc-hex {
+        margin: .1rem 0 0 !important;
+        font-size: .72rem;
+        font-family: monospace;
+        color: #9CA3AF;
+        line-height: 1.3;
+    }
 }

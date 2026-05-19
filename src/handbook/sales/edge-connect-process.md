@@ -89,6 +89,11 @@ Forecast stage: Forecast
 - Objection handling & discussion (20–30 min)
 - Define next step: PoC alignment (10 min)
 
+Deal Vialility Meeting Aka Demo Feedback Meeting.
+Before this meeting - Discuss the commercial model with the deal desk 
+Goal - Understand if the customer resonated with the demo and if there are still some outstanding questions. 
+Capture feedback and if alignment is established, Evaluate budgets and sizing and anchor pricing 
+
 Next Step: PoC kickoff.
 
 ## **Meeting 3:** PoC Kickoff (60 min)
@@ -141,7 +146,7 @@ Forecast stage: Commit
 - Contract terms discussion (15 min)
 - Timeline & implementation planning (10 min)
 
-Next Step: Move into executive/procurement review. If any non-standard pricing, discounts, or contract terms are on the table, open a task in the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list) before this meeting — see the [Deal Desk process](/handbook/sales/engagements/#asana-deal-desk-tasks) for what context to include.
+Next Step: Move into executive/procurement review. If any non-standard pricing, discounts, or contract terms are on the table, submit a form through this [link](https://form.asana.com/?k=hUrD0SJEka-BxHZ5qXAcxQ&d=1213818720452348) to create a task in the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list) before this meeting — see the [Deal Desk process](/handbook/sales/engagements/#asana-deal-desk-tasks) for what context to include.
 
 ## **Meeting(s) 6:** Executive / Procurement Review + Close (30–45 min)
 
