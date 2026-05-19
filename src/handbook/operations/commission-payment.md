@@ -67,6 +67,8 @@ in the last month.
 Finally, go to the "Commissions" tab and select the employee to calculate the
 payment for.
 
+Do not manually override any formulas in the commission tab, make sure that all calculations should be driven by the sheet's logic.
+
 Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
 to get a written agreement to the commission number. 

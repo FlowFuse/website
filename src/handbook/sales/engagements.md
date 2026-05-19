@@ -166,7 +166,7 @@ To ensure consistency and efficiency in our deal cycles, all proposals must foll
 
 ### Asana Deal Desk Tasks
 
-Any deal that requires **legal review**, **pricing/discount approval**, or other operational hand-offs must have a task created in the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list).
+Any deal that requires **legal review**, **pricing/discount approval**, or other operational hand-offs must have a task created in the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list). To create a task, submit your request through this [form](https://form.asana.com/?k=hUrD0SJEka-BxHZ5qXAcxQ&d=1213818720452348).
 
 When creating a task, include the following context so reviewers can act without needing to chase down background:
 

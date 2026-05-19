@@ -68,6 +68,16 @@ At this stage we're using the default set of status's in HubSpot:
 drip campaigns or other outbound lead-gen actions. This property will be set to `Yes` when the contact was in HubSpot
 through other marketing activities too, but wasn't nurtured to the point of a meeting yet.
 
+## Deal Management
+
+A HubSpot deal represents a specific revenue opportunity with a customer or prospect. Each deal is mirrored daily into a representative GitHub issue in the FlowFuse/product repository, with the deal owner assigned as the issue assignee. The deal issue is the discussion hub and collection point for everything tied to that deal: feature requests blocking or supporting it, customer-specific implementation discussions, and cross-references to the public Sales Request or Customer Request issues filed elsewhere in FlowFuse repositories. Because FlowFuse/product is private, this view is internal-only and lets the team see which feature requests pertain to which deal. Sales and Product share responsibility for maintaining this link.
+
+### Deal Properties
+
+| Property | Description |
+| :------- | :---------- |
+| `github_issue` | URL of the deal's representative GitHub issue in FlowFuse/product. Auto-populated and synced daily; do not edit manually. The linked issue is where deal-tied feature requests, blockers, and customer asks are discussed and cross-referenced. |
+
 ## Importing Contacts Into HubSpot
 
 If you import contacts into HubSpot, it is important that the First Name and Last Name are populated correctly. Currently the FlowFuse Cloud database stores first and last name in a single field called Name. If you import this field into HubSpot the default is set to populate the Last Name field. The First Name field will not be populated so any email personalization with First Name will not be effective.  
