@@ -8,7 +8,7 @@ It enables the creation of customer contacts, and then logging of emails/notes a
 ## Contact Management
 
 Given that we have multiple client-facing roles within FlowFuse, it's important to document those that
-we talk to to ensure no crossover in sales and conversations.
+we talk to ensure no crossover in sales and conversations.
 
 ### Lifecycle Stage
 

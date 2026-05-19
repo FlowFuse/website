@@ -25,7 +25,7 @@ The following are the steps to produce a montly webinar.
             - If the speaker is unable to commit to this timeline, or does not meet the deadline, the session should be rescheduled for the following month. In that case, an internal webinar should be planned instead.
         * A recording of a [promo video](#promo-video), linking to the referred handbook section for details on format and script.
             - Set the deadline to two weeks before the session.
-        * Slides for the presentation using [our template](/handbook/design/branding/#presentations). Create a copy and and save it in the corresponding folder before sharing it with the speaker.
+        * Slides for the presentation using [our template](/handbook/design/branding/#presentations). Create a copy and save it in the corresponding folder before sharing it with the speaker.
             - Set the deadline to the week before the session so it can be reviewed during the dry run.
         * A list of channels where they could support the event promotion, this would lead to a conversation about joint promotion.
    1. When there's a demo involved, provide the speaker with a non-trial FlowFuse account so they can work on it with an official account

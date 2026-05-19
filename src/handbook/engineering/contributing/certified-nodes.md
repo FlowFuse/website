@@ -36,6 +36,6 @@ Licensed Self Hosting customers can request access to the Certified Nodes regist
 2. Open the editor and locate the function node in the `Authentication` tab
 3. The comments at the top of the tab explain how to generate a token using the customer name and a randomly generated password (recommend using the `pwgen` command to create random password)
 4. Add the username, password and token (as comment) to the `tokens` object in the function node
-5. Provide the token to the customer to add in the `Admin Settings` -> `Flowfuse Nodes` section in their Forge instance
+5. Provide the token to the customer to add in the `Admin Settings` -> `FlowFuse Nodes` section in their Forge instance
 
 ![screen shot of Admin Settings page where token is entered](../images/ff-cert-nodes-token.png)
