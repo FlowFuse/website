@@ -4,7 +4,7 @@ navTitle: Incident Response
 
 # Incident Response
 
-When an issue is identified that impacts the availablity of any part of the production platform,
+When an issue is identified that impacts the availability of any part of the production platform,
 it is vital we are able to respond effectively, resolve the issue and ensure lessons are learnt
 to prevent it happening again.
 
@@ -43,7 +43,7 @@ The issue should remain open until all actions are complete.
 
 Depending on the nature of the incident, we may choose to publish a blog post with details
 for our customers. This should be our default response, however we may decide some incidents
-are sufficiently localised to not warrent a full write-up.
+are sufficiently localised to not warrant a full write-up.
 
 The blog post should explain the incident in an accessible way - we want to be open with
 our customers. This should include links to any relevant follow-up actions to demonstrate
