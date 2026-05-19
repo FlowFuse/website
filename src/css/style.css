@@ -478,6 +478,25 @@ h4:hover .header-anchor::before {
     display: inline;
 }
 
+/* @nuxt/content wraps heading text in <a> — undo prose link styles and replicate #-on-hover */
+.prose :is(h1, h2, h3, h4, h5, h6) > a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+}
+.prose :is(h1, h2, h3, h4, h5, h6) > a::before {
+    content: '#';
+    display: none;
+    position: absolute;
+    padding-right: 0.5rem;
+    text-decoration: none;
+    right: 100%;
+}
+.prose :is(h1, h2, h3, h4, h5, h6):hover > a::before,
+.prose :is(h1, h2, h3, h4, h5, h6):focus-within > a::before {
+    display: inline;
+}
+
 .ff-bg-dark {
     background-color: theme(colors.gray.800);
 }

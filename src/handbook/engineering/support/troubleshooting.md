@@ -66,7 +66,7 @@ You should also, always ask, the reasons for wanting to delete the account. Unde
 
 When debugging FlowFuse Dashboard issues a very useful tool is the `_debug` view which is served up with every FlowFuse Dashboard. You can read more about it in the [FlowFuse Dashboard documentation](https://dashboard.flowfuse.com/contributing/widgets/debugging).
 
-Any bugs found for FlowFuse Dashboard should be logged as as an issue in the [FlowFuse Dashboard repository](https://github.com/FlowFuse/node-red-dashboard/issues).
+Any bugs found for FlowFuse Dashboard should be logged as an issue in the [FlowFuse Dashboard repository](https://github.com/FlowFuse/node-red-dashboard/issues).
 
 ### Pricing
 #### 2025 Pricing & Tier Changes

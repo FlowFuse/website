@@ -4,7 +4,7 @@ navTitle: Signatures
 
 # Signatures
 
-FlowFuse uses Hubspot for generating quotes, and requesting the signatures on
+FlowFuse uses HubSpot for generating quotes, and requesting the signatures on
 them. For other legal documents we're using
 [Google eSignatures](https://support.google.com/docs/answer/12315692?hl=en).
 
