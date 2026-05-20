@@ -33,7 +33,7 @@ Each change pushed to the repositories `main` branch initiates the process.
 Node package publish process is defined in the file `.github/workflows/publish.yml` in each repository while container images build steps can be found in `.github/workflows/*-containers.yml` files in [helm repository](https://github.com/FlowFuse/helm/tree/main/.github/workflows).
 
 Each package has its dedicated code repository. Due to the security limitations of GitHub Actions, there is no possibility to access the pipeline from one repository to another.
-Therefore, there is a need to use a dedicated [Github App](https://docs.github.com/en/apps/overview) to access repositories and trigger the build process of the dependent package. The process of creating such GitHub App is described in the [GitHub documentation](https://docs.github.com/en/developers/apps/creating-a-github-app).
+Therefore, there is a need to use a dedicated [GitHub App](https://docs.github.com/en/apps/overview) to access repositories and trigger the build process of the dependent package. The process of creating such GitHub App is described in the [GitHub documentation](https://docs.github.com/en/developers/apps/creating-a-github-app).
 Because such GitHub App imitates a regular user, it is necessary to include `workflow_dispatch` event in the dependent workflow definition.
 
 Example of job responsible for triggering dependent pipeline:

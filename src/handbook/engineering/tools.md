@@ -19,8 +19,6 @@ When using AI tools for development, never share:
 2. Company secrets like API keys, private credentials, etc, etc.
 3. Customer code or other assets under NDA
 
-### GitHub Copilot
+### Claude Code
 
-GitHub Copilot Business is available to team members by raising an [access request issue](https://github.com/FlowFuse/admin/issues/new?template=access-request.md) and assigning it to the CTO.
-
-Alternatively, individuals can self-purchase Copilot Pro/+ and expense the cost, or qualify for free access due to their role as an Open Source maintainer.
+Claude Code is available to team members by raising an [access request issue](https://github.com/FlowFuse/admin/issues/new?template=access-request.md) and assigning it to the CTO.

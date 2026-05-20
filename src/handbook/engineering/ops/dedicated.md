@@ -18,7 +18,7 @@ In order to create the dedicated instance, some information will be required fro
    - The core platform (`app.`), broker (`mqtt.`) and hosted instances will be made available under this domain.
    - The base domain, `<customer>.flowfuse.io`, will redirect to `app.<customer>.flowfuse.io`
    - All traffic to the domain will be on port 443 - including the Device Agent MQTT connection
-   - If the customer requests to use their own (sub-)domain, they will need to setup their DNS to point
+   - If the customer requests to use their own (sub-)domain, they will need to set up their DNS to point
      at the AWS Route53 end-point once it has been created.
  - **Choice of AWS region**. We default to `eu-west-1` but customers may want to choose one more
    local to them. Not all AWS regions are equal and we may need to review their choice for suitability.
@@ -41,7 +41,7 @@ This checklist covers the follow items:
 
 1. Create a new AWS sub-account for each dedicated env.
 2. Create user accounts for the ops team
-2. Use Terraform to setup initial cluster
+2. Use Terraform to set up initial cluster
 3. Setup grafana monitoring - including all the necessary alerting
 4. Setup initial admin account - store details in 1Password
 5. Setup initial Stacks, Instance Types and Team Types

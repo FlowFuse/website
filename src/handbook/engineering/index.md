@@ -30,7 +30,7 @@ The product function defines what we build and why.
 
 - [Security Policy](./security.md)
 - [Packaging](./packaging.md) - how we manage repos and npm packaging
-- [Contributing](./contributing) - tips & details on how to setup a local development environment.
+- [Contributing](./contributing) - tips & details on how to set up a local development environment.
 - [Dependency Updates](./dependency-updates.md) - how we triage Dependabot PRs each week
 - [Project Management](./project-management.md) - details the processes we use to guide product development.
 - [Tools](./tools.md) - the tools we use
