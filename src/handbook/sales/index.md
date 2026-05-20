@@ -63,7 +63,8 @@ Below is the mapping of our core sales capabilities to the specific tools we use
 | **Subscription Tracking** | **HubSpot** | Monitoring customer lifecycles, upgrades, renewals, and ongoing subscriptions. |
 | **Call Recording** | **Fathom** | Recording, transcribing, and summarizing customer calls and meetings. |
 | **Data Enrichment** | **Clay** | Automatically pulling in missing contact or company data to build robust, targeted lead lists. |
-| **Account Research & Planning** | **Claude** | Synthesizing account data, conducting deep-dive strategic research, and planning personalized outreach. |
+| Account Research & Planning | Claude | Synthesizing account data, conducting deep-dive strategic research, and planning personalized outreach. |
+| Account-based Outreach | LinkedIn Sales Navigator | Research and outreach to prospects on LinkedIn. |
 
 ### Sales Processes
 
