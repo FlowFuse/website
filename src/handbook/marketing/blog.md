@@ -1,14 +1,15 @@
 ---
 meta:
-    title: Marketing - Blog
+    title: Blog
 ---
 
 # Blog
 
 ## Blogging Process
 
-Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance (that we track in this [dedicated dashboard](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/110361885?appliedIlsFilters=JTdCJTIyMTEwMzYxODg1JTIyJTNBJTdCJTIyMC0xJTIyJTNBJTdCJTIyZmlsdGVycyUyMiUzQSU1QiU3QiUyMnByb3BlcnR5TmFtZSUyMiUzQSUyMmNyZWF0ZWRhdGUlMjIlMkMlMjJwcm9wZXJ0eVR5cGUlMjIlM0ElMjJkYXRldGltZSUyMiUyQyUyMm9wZXJhdG9yJTIyJTNBJTIySVNfQkVUV0VFTiUyMiUyQyUyMnZhbHVlJTIyJTNBJTdCJTIycHJvcGVydHlUeXBlJTIyJTNBJTIyZGF0ZXRpbWUtcmFuZ2VkJTIyJTJDJTIyb3BlcmF0b3IlMjIlM0ElMjJJU19CRVRXRUVOJTIyJTJDJTIybG93ZXJCb3VuZFRpbWVzdGFtcCUyMiUzQTE3NTkwMTc2MDAwMDAlMkMlMjJ1cHBlckJvdW5kVGltZXN0YW1wJTIyJTNBMTc2MTUyMzIwMDAwMCU3RCU3RCU1RCUyQyUyMmRhdGFTb3VyY2VOYW1lJTIyJTNBJTIyQ09OVEFDVCUyMiU3RCU3RCU3RA%3D%3D) and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach). The process for publishing a blog is as follows:
+Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance (that we track in this [dedicated dashboard](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/110361885) and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach) and GEO that we track in this [Google Analytics report](https://analytics.google.com/analytics/web/#/analysis/a221166832p304634214). The process for publishing a blog is as follows:
 
+1. Program your blog post content aligned with the content strategy and schedule it in the Marketing team's [Content Calendar](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519).  
 1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
 1. Issues should be assigned a date, which should be posted here in this [GitHub projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
 1. Create an [art request](/handbook/design/art-requests/#creating-an-art-request) for a blog tile to go with your article and share a deadline for when you're planning it to go live. This image will be used not only on the web, but also when the content is promoted on socials.
