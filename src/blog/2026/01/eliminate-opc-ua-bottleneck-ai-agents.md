@@ -79,7 +79,7 @@ The video below shows an AI agent generating complete OPC UA server documentatio
 
 <lite-youtube
   videoid="agxAw4B91Nw"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/01/images/ai-opcua-document-generation.jpg'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/01/images/ai-opcua-document-generation.jpg'); background-size: cover; background-position: center;"
   title="AI Agent Generating OPC UA Documentation">
 </lite-youtube>
 

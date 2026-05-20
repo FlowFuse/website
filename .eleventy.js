@@ -36,7 +36,10 @@ function renderDocsAlertBox(content, tone = 'note', title = '') {
 }
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
-const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview"
+// Image processing is skipped in dev mode or when explicitly requested via SKIP_IMAGES.
+// Kept separate from DEV_MODE so build-time image flags never affect analytics/consent script inclusion.
+const SKIP_IMAGES = DEV_MODE || process.env.SKIP_IMAGES === 'true'
 const DEPLOY_PREVIEW = process.env.CONTEXT === "deploy-preview";
 const IMAGE_BUILD_PROFILE = process.env.IMAGE_BUILD_PROFILE || "full";
 
@@ -1062,7 +1065,7 @@ module.exports = function(eleventyConfig) {
     
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
-    if (DEV_MODE) {
+    if (SKIP_IMAGES) {
         console.info(`[11ty] Image pipeline is enabled in dev mode, copying images without any conversion or resizing`)
     } else {
         console.info(`[11ty] Image pipeline is enabled in prod mode, expect a wait for first build while images are converted and resized`)
@@ -1072,7 +1075,7 @@ module.exports = function(eleventyConfig) {
         const title = null
         const currentWorkingFilePath = this.page.inputPath
 
-        return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE)
+        return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES)
     });
 
     eleventyConfig.addAsyncShortcode("tileImage", async function(item, image, defaultImage, defaultDescription, imageSize, title = null, priority = false) {
@@ -1094,7 +1097,7 @@ module.exports = function(eleventyConfig) {
 
         const currentWorkingFilePath = this.page.inputPath;
 
-        return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE, priority);
+        return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES, priority);
     });
     
     // Create a collection for sidebar navigation
@@ -1262,7 +1265,8 @@ module.exports = function(eleventyConfig) {
         return searchIndexItems;
     });
 
-    eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    eleventyConfig.on("eleventy.after", async () => {
+        const outputDir = eleventyConfig.directories?.output || eleventyConfig.dir.output;
         const defaultKeywords = (site.messaging?.keywords || "")
             .split(",")
             .map((item) => item.trim());
@@ -1272,10 +1276,10 @@ module.exports = function(eleventyConfig) {
 
         const records = [];
 
-        const htmlFiles = await listHtmlFiles(dir.output);
+        const htmlFiles = await listHtmlFiles(outputDir);
 
         for (const outputPath of htmlFiles) {
-            const url = outputPathToUrl(dir.output, outputPath);
+            const url = outputPathToUrl(outputDir, outputPath);
             if (!isSearchUrl(url)) {
                 continue;
             }
@@ -1331,7 +1335,7 @@ module.exports = function(eleventyConfig) {
             );
         }
 
-        const outputPath = path.join(dir.output, "search-index.json");
+        const outputPath = path.join(outputDir, "search-index.json");
         await fs.promises.writeFile(outputPath, JSON.stringify(records, null, 2));
         console.log(`[11ty] Wrote ${records.length} search records to ${outputPath}`);
     });
@@ -1392,7 +1396,7 @@ module.exports = function(eleventyConfig) {
         const async = false // cannot run async inside markdown
 
         try {
-            let imageHtml = imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, DEV_MODE)
+            let imageHtml = imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, SKIP_IMAGES)
 
             // Add the additional attributes to the image
             for (let attr in attributes) {

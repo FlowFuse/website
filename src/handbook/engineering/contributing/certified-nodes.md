@@ -28,3 +28,14 @@ Full details on the technical process are provided in the [certified-nr-nodes](h
 5. Review the PR with the CTO/Engineering Team
 
 
+## Generating Tokens for Access to Certified Nodes Registry
+
+Licensed Self Hosting customers can request access to the Certified Nodes registry via support. These are the steps to generate a token for them
+
+1. On FlowFuse Cloud in the FlowFuse Team, locate the `ff-certified-nodes` instance in the `Internal Tools` Application
+2. Open the editor and locate the function node in the `Authentication` tab
+3. The comments at the top of the tab explain how to generate a token using the customer name and a randomly generated password (recommend using the `pwgen` command to create random password)
+4. Add the username, password and token (as comment) to the `tokens` object in the function node
+5. Provide the token to the customer to add in the `Admin Settings` -> `FlowFuse Nodes` section in their Forge instance
+
+![screen shot of Admin Settings page where token is entered](../images/ff-cert-nodes-token.png)

@@ -8,7 +8,7 @@ This handbook contains all the information about how FlowFuse is run. It's a
 living set of documents - collectively we'll [iterate](/handbook/company/values/#%F0%9F%94%81-iterative-improvement)
 on it as we learn and discover new things.
 
-### About the Handbook
+## About the Handbook
 
 The FlowFuse handbook is inspired by the [GitLab handbook](https://about.gitlab.com/handbook/about/).
 As an all-remote company, we share [their rationale](https://about.gitlab.com/handbook/about/#advantages) for having a handbook.
@@ -38,7 +38,7 @@ shared in this handbook.
 
 The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook)
 and contributions can be made through pull-requests. How to contribute
-is capture [in a guide](https://github.com/FlowFuse/website#flowfuse-website).
+is captured [in a guide](https://github.com/FlowFuse/website#flowfuse-website).
 
 The handbook is here for the whole company to help maintain. **Pull-requests are welcome and strongly encouraged**.
 
@@ -52,7 +52,7 @@ Instead of starting a discussion on Slack or in a meeting, we start it in the ha
 
 * Start with a Proposal, not a Chat: When you have an idea for a new process, a change to an existing one, or a solution to a problem, you don't send a message on Slack. You create a proposal directly in the handbook. This proposal is a merge request that includes your suggested changes, allowing everyone to see and comment on the content directly. This ensures the full context of a discussion is preserved and universally accessible.
 * Integrate Discussion and Documentation: The discussion about your proposal happens right there in the merge request. Team members can provide feedback, ask questions, and suggest edits. This allows us to disagree and commit in a transparent way. Once a consensus is reached or a decision is made, the final version is merged into the handbook, and the entire discussion trail is saved for future reference.
-* Empower Everyone to Contribute: This system allows anyone at Flowfuse—from a new hire to a senior leader—to contribute directly to our company's culture and processes. It generates a shared responsibility to maintain the pace of documentation through a pay-it-forward mentality. The history of every change is visible, showing how learning happens and how iteration shapes proposals.
+* Empower Everyone to Contribute: This system allows anyone at FlowFuse—from a new hire to a senior leader—to contribute directly to our company's culture and processes. It generates a shared responsibility to maintain the pace of documentation through a pay-it-forward mentality. The history of every change is visible, showing how learning happens and how iteration shapes proposals.
 * Eliminate Wasted Effort: By making the handbook the hub of our collaborative work, we ensure that the information we need is always where it should be. This prevents us from having to document something after the fact—a step that is often skipped—and avoids the "torturous pattern of people pinging people for updates". This is how we prioritize results and stay focused on what matters.
 
 

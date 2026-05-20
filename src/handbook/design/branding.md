@@ -1,3 +1,8 @@
+---
+navTitle: Branding
+templateEngineOverride: njk,md
+---
+
 # FlowFuse Branding Guidelines
 
 For FlowFuse Assets (e.g. logos, pictograms, and raw design files), if you're part of the FlowFuse team, please refer to the [`/design`](https://drive.google.com/drive/folders/1PiuFwW3H8XuydolepmfQQ4BjcdNekVQg) folder on the company Google Drive.
@@ -15,14 +20,14 @@ Our logo is a combination mark, featuring an abstract symbol that represents the
 
 **The horizontal version is the preferred choice**. When space and layout constraints make this option an awkward fit, forcing the logo to be too small, the vertical version can be used.
 
-#### Horizontal Version
+#### Horizontal Version <span class="font-light italic">(preferred choice)</span>
 
 <hr style="margin-bottom:30px; border-color:#E5E7EB;">
 <div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
     <img width="250" min-width="250" class="p-2" alt="Image of the horizontal version of FlowFuse logo" src="../images/logos/ff-logo--wordmark--light.png">
 </div>
 
-#### Vertical Version
+#### Vertical Version <span class="font-light italic">(only use if you have space and layout constraints)</span>
 
 <hr style="margin-bottom:30px; border-color:#E5E7EB;">
 <div class="flex h-full flex-col justify-center items-center md:mt-0 mb-14">
@@ -70,7 +75,7 @@ Depending on the background against which the logo is presented, there are corre
 
 Search for the file name ending with "dark", such as: *ff-logo--wordmark--dark.png*
 
-<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-gray-800 rounded-md md:w-[60%] min-w-[330px] m-auto">
+<div class="flex h-full flex-col justify-center items-center md:mt-4 mb-14 bg-indigo-700 rounded-md md:w-[60%] min-w-[330px] m-auto">
     <div class="w-[90%] border-b border-gray-400 p-8">
         <img class="m-auto p-2" width="250" min-width="250" class="p-2" alt="Image of the horizontal version of FlowFuse logo for dark backgrounds" src="../images/logos/ff-logo--wordmark--dark.png">
     </div>
@@ -135,185 +140,90 @@ The following fonts are used across the FlowFuse platform, website, and branded 
 
 ## Color Palette
 
+<script>
+function ffCopyHex(hex, el) {
+    navigator.clipboard.writeText(hex);
+    var c = el.querySelector('.cc-copy'), k = el.querySelector('.cc-check');
+    c.style.display = 'none';
+    k.style.display = 'block';
+    setTimeout(function() { c.style.display = 'block'; k.style.display = 'none'; }, 1500);
+}
+</script>
+
+{% set colorPalette = [
+  [
+    { name: "Black",   hex: "#000000" },
+    { name: "White",   hex: "#FFFFFF", light: true }
+  ],
+  [
+    { name: "Grey 50",  hex: "#F9FAFB", light: true },
+    { name: "Grey 100", hex: "#F3F4F6", light: true },
+    { name: "Grey 200", hex: "#E5E7EB", light: true },
+    { name: "Grey 300", hex: "#D1D5DB" },
+    { name: "Grey 400", hex: "#9CA3AF" },
+    { name: "Grey 500", hex: "#6B7280" },
+    { name: "Grey 600", hex: "#4B5563" },
+    { name: "Grey 700", hex: "#374151" },
+    { name: "Grey 800", hex: "#1F2937" },
+    { name: "Grey 900", hex: "#111827" }
+  ],
+  [
+    { name: "Red 50",  hex: "#FFEFEA", light: true },
+    { name: "Red 100", hex: "#FFD9CE", light: true },
+    { name: "Red 200", hex: "#FFC5B3", light: true },
+    { name: "Red 300", hex: "#FFB29A" },
+    { name: "Red 400", hex: "#FA9170" },
+    { name: "Red 500", hex: "#EB6D46" },
+    { name: "Red 600", hex: "#DA3D0B" },
+    { name: "Red 700", hex: "#B33109" },
+    { name: "Red 800", hex: "#8D2606" },
+    { name: "Red 900", hex: "#671D06" }
+  ],
+  [
+    { name: "Indigo 50",  hex: "#EEF2FF", light: true },
+    { name: "Indigo 100", hex: "#E0E7FF", light: true },
+    { name: "Indigo 200", hex: "#C7D2FE", light: true },
+    { name: "Indigo 300", hex: "#A5B4FC" },
+    { name: "Indigo 400", hex: "#818CF8" },
+    { name: "Indigo 500", hex: "#6366F1" },
+    { name: "Indigo 600", hex: "#4F46E5" },
+    { name: "Indigo 700", hex: "#4338CA" },
+    { name: "Indigo 800", hex: "#3730A3" },
+    { name: "Indigo 900", hex: "#312E81" }
+  ],
+  [
+    { name: "Blue 50",  hex: "#EFF6FF", light: true },
+    { name: "Blue 100", hex: "#DBEAFE", light: true },
+    { name: "Blue 200", hex: "#BFDBFE", light: true },
+    { name: "Blue 300", hex: "#93C5FD" },
+    { name: "Blue 400", hex: "#60A5FA" },
+    { name: "Blue 500", hex: "#3B82F6" },
+    { name: "Blue 600", hex: "#2563EB" },
+    { name: "Blue 700", hex: "#1D4ED8" },
+    { name: "Blue 800", hex: "#1E40AF" },
+    { name: "Blue 900", hex: "#1E3A8A" }
+  ]
+] %}
+
 <div class="space-y-6">
-    <div class="grid gap-x-2 grid-cols-2">
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: black; color: white;">
-            <span>Black</span>
-            <span class="font-mono">#000000</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: white; color: black;">
-            <span>White</span>
-            <span class="font-mono">#FFFFFF</span>
-        </div>
+{% for group in colorPalette %}
+<div class="ff-color-grid">
+{% for color in group %}
+<div class="ff-color-card" onclick="ffCopyHex('{{ color.hex }}', this)">
+    <div class="cc-swatch" style="background:{{ color.hex }}{% if color.light %};border-bottom:1px solid #E5E7EB{% endif %}">
+        <span class="cc-btn">
+            <span class="cc-copy" style="display:block">{% include "components/icons/clipboard-copy.svg" %}</span>
+            <span class="cc-check" style="display:none">{% include "components/icons/check.svg" %}</span>
+        </span>
     </div>
-    <div class="grid gap-2 grid-cols-2">
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #F9FAFB; color: black;">
-            <span>Grey 50</span>
-            <span class="font-mono">#F9FAFB</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #F3F4F6; color: black;">
-            <span>Grey 100</span>
-            <span class="font-mono">#F3F4F6</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #E5E7EB; color: black;">
-            <span>Grey 200</span>
-            <span class="font-mono">#E5E7EB</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #D1D5DB; color: black;">
-            <span>Grey 300</span>
-            <span class="font-mono">#D1D5DB</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #9CA3AF; color: white;">
-            <span>Grey 400</span>
-            <span class="font-mono">#9CA3AF</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #6B7280; color: white;">
-            <span>Grey 500</span>
-            <span class="font-mono">#6B7280</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #4B5563; color: white;">
-            <span>Grey 600</span>
-            <span class="font-mono">#4B5563</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #374151; color: white;">
-            <span>Grey 700</span>
-            <span class="font-mono">#374151</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #1F2937; color: white;">
-            <span>Grey 800</span>
-            <span class="font-mono">#1F2937</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #111827; color: white;">
-            <span>Grey 900</span>
-            <span class="font-mono">#111827</span>
-        </div>
+    <div class="cc-info">
+        <p class="cc-name">{{ color.name }}</p>
+        <p class="cc-hex">{{ color.hex }}</p>
     </div>
-    <div class="grid gap-2 grid-cols-2">
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #FFEFEA; color: black;">
-            <span>Red 50</span>
-            <span class="font-mono">#FFEFEA</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #FFD9CE; color: black;">
-            <span>Red 100</span>
-            <span class="font-mono">#FFD9CE</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #FFC5B3; color: black;">
-            <span>Red 200</span>
-            <span class="font-mono">#FFC5B3</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #FFB29A; color: white;">
-            <span>Red 300</span>
-            <span class="font-mono">#FFB29A</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #FA9170; color: white;">
-            <span>Red 400</span>
-            <span class="font-mono">#FA9170</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #EB6D46; color: white;">
-            <span>Red 500</span>
-            <span class="font-mono">#EB6D46</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #DA3D0B; color: white;">
-            <span>Red 600</span>
-            <span class="font-mono">#DA3D0B</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #B33109; color: white;">
-            <span>Red 700</span>
-            <span class="font-mono">#B33109</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #8D2606; color: white;">
-            <span>Red 800</span>
-            <span class="font-mono">#8D2606</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #671D06; color: white;">
-            <span>Red 900</span>
-            <span class="font-mono">#671D06</span>
-        </div>
-    </div>
-    <div class="grid gap-2 grid-cols-2">
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #EEF2FF; color: black;">
-            <span>Indigo 50</span>
-            <span class="font-mono">#EEF2FF</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #E0E7FF; color: black;">
-            <span>Indigo 100</span>
-            <span class="font-mono">#E0E7FF</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #C7D2FE; color: black;">
-            <span>Indigo 200</span>
-            <span class="font-mono">#C7D2FE</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #A5B4FC; color: black;">
-            <span>Indigo 300</span>
-            <span class="font-mono">#A5B4FC</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #818CF8; color: black;">
-            <span>Indigo 400</span>
-            <span class="font-mono">#818CF8</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #6366F1; color: white;">
-            <span>Indigo 500</span>
-            <span class="font-mono">#6366F1</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #4F46E5; color: white;">
-            <span>Indigo 600</span>
-            <span class="font-mono">#4F46E5</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #4338CA; color: white;">
-            <span>Indigo 700</span>
-            <span class="font-mono">#4338CA</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #3730A3; color: white;">
-            <span>Indigo 800</span>
-            <span class="font-mono">#3730A3</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #312E81; color: white;">
-            <span>Indigo 900</span>
-            <span class="font-mono">#312E81</span>
-        </div>
-    </div>
-    <div class="grid gap-2 grid-cols-2">
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #EFF6FF; color: black;">
-            <span>Blue 50</span>
-            <span class="font-mono">#EFF6FF</span>
-        </div> 
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #DBEAFE; color: black;">
-            <span>Blue 100</span>
-            <span class="font-mono">#DBEAFE</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #BFDBFE; color: black;">
-            <span>Blue 200</span>
-            <span class="font-mono">#BFDBFE</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #93C5FD; color: black;">
-            <span>Blue 300</span>
-            <span class="font-mono">#93C5FD</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #60A5FA; color: white;">
-            <span>Blue 400</span>
-            <span class="font-mono">#60A5FA</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #3B82F6; color: white;">
-            <span>Blue 500</span>
-            <span class="font-mono">#3B82F6</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #2563EB; color: white;">
-            <span>Blue 600</span>
-            <span class="font-mono">#2563EB</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #1D4ED8; color: white;">
-            <span>Blue 700</span>
-            <span class="font-mono">#1D4ED8</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #1E40AF; color: white;">
-            <span>Blue 800</span>
-            <span class="font-mono">#1E40AF</span>
-        </div>
-        <div class="flex justify-between px-3 py-1.5 rounded" style="border: 1px solid grey; background-color: #1E3A8A; color: white;">
-            <span>Blue 900</span>
-            <span class="font-mono">#1E3A8A</span>
-        </div>
-    </div>
+</div>
+{% endfor %}
+</div>
+{% endfor %}
 </div>
 
 ### Text Color & Contrast

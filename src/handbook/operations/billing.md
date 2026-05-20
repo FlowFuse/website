@@ -4,9 +4,9 @@ navTitle: Billing
 
 # Billing
 
-Subscriptions and their invoices are all stored in Hubspot, and Stripe is used for payment processing for contracted
-revenue. For FlowFuse's montly self-service customers Stripe also tracks the subscription instead of Hubspot.
-Team members will be given a login to the relevant Stripe and Hubspot dashboard as required for
+Subscriptions and their invoices are all stored in HubSpot, and Stripe is used for payment processing for contracted
+revenue. For FlowFuse's montly self-service customers Stripe also tracks the subscription instead of HubSpot.
+Team members will be given a login to the relevant Stripe and HubSpot dashboard as required for
 their role with an appropriate level of access.
 
 ## Providing support
@@ -29,7 +29,7 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Ensure the company details are updated, and include an address and country.
 1. On the Deal page, find the Subscription section on the right-hand side, then click Add and Convert Deal to Subscription.
 1. Change the dates, terms, products, discounts, contact, and company information if required (most will be correct, since it is pulling from the signed quote).
-1. Under Invoice Settings, uncheck the box that automatically emails customers. There will still be an invoice created by Hubspot, but it won't be automatically send to the customer.
+1. Under Invoice Settings, uncheck the box that automatically emails customers. There will still be an invoice created by HubSpot, but it won't be automatically send to the customer.
 2. If additional information is needed on the invoice, you'll void the invoice and follow the steps mentioned under 'creating an invoice'.
 1. Click the Create button on the top right.
 2. If no additional information is needed on the invoice, directly send the automated invoice to the customer.
@@ -44,8 +44,8 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Make sure both ACH and Credit Card options are checked for payment.
 1. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 1. Finalize this manual invoice, then void the automatically created one from the subscription conversion and send an email to accounting.
-1. If you need to void the invoice and send an email with the invoice number and reason to our accounting for their administration.
-   - Make sure to void the invoices in all necessary places in Hubspot
+1. If you need to void the invoice, send an email with the invoice number and reason to our accounting team through Slack for their administration.
+   - Make sure to void the invoices in all necessary places in HubSpot
 
 #### Roles and Responsibilities: CSM vs. Accounting in Accounts Receivable
 
@@ -60,11 +60,11 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 
 ### Creating a PS invoice
 
-For new customers an invoice should be generated in [Hubspot's Invoice section](https://app-eu1.hubspot.com/contacts/26586079/objects/0-53/views/all/list).
+For new customers an invoice should be generated in [HubSpot's Invoice section](https://app-eu1.hubspot.com/contacts/26586079/objects/0-53/views/all/list).
 
 1. Ensure the company details are updated, and include an address and country.
 2. Ensure the customer provided a PO number if they require one.
-3. Create a one-time invoice through Hubspot -- If the customer already is used to paying through Stripe, use best judgement when to switch them over
+3. Create a one-time invoice through HubSpot -- If the customer already is used to paying through Stripe, use best judgement when to switch them over
 
 ## Adding a Coupon
 

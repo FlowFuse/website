@@ -15,7 +15,7 @@ one day a week outside of home. To accommodate this, you can
 
 ## Separating work from private life
 
-Its advised to separate work and private life as much as possible. Now there's
+It's advised to separate work and private life as much as possible. Now there's
 less of a physical barrier, it's more important to create this barrier on the
 digital world. Turn off notification outside of your intended working hours for
 email, Slack, and GitHub where possible.

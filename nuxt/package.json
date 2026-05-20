@@ -9,6 +9,9 @@
         "preview": "nuxt preview"
     },
     "devDependencies": {
-        "nuxt": "^3.16.0"
+        "@nuxt/content": "^3.13.0",
+        "better-sqlite3": "^12.10.0",
+        "nuxt": "^4.4.6",
+        "nuxt-link-checker": "^5.0.10"
     }
 }

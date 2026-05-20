@@ -26,6 +26,10 @@ alternating succession.
 Calendar invites include all the folks expected to be at the board meeting,
 including our legal counsel.
 
+COS and VP of Sales should be included on all board meeting calendar invites. When sending the calendar invite, attach the board deck (as a PDF) so attendees have it ahead of time.
+
+For a full and up-to-date list of board members, observers, legal counsel, and key stakeholders to include, refer to the [FF Executive Assistant Guide](https://docs.google.com/document/d/1dkQaHjTDs8OIKQaUcPZe5RVliu-yY6RjmBnJXnfhr0U/edit?tab=t.0#heading=h.xtkvy2qm8i83) — specifically the Name Familiarity & Relationship table, which includes all BoD members, observers, and legal contacts.
+
 ## The Strategic Timeline
 
 Working from the meeting date, follow these milestones:
@@ -94,6 +98,8 @@ Board approval is required for every new employee's options grant. For each appl
 - Vesting schedule
 All information must be based on the final, executed offer letter. Employees included on this slide must have completed onboarding prior to the board meeting.
 
+To note: Stock Options cannot be approved when the company's 409A Valuation is expired. 
+
 ## Metrics
 
 Key Metrics to include:
@@ -143,7 +149,7 @@ Drive.
 
 #### Sending out the deck
 
-2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. 
+2-4 Days before the board meeting, save the document as a pdf file and share it with the board members for review. Include minutes from last time and other assets in the same email. Additionally, the deck should also be attached to the calendar invite at the time it is sent (PDF or Google Slides). For Google Slides, please provide comment-only access to allow board members to submit questions ahead of the meeting.
 
 #### Managing the Two Slide Decks
 

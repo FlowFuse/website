@@ -1,5 +1,5 @@
 ---
-navTitle: Hubspot
+navTitle: HubSpot
 ---
 
 We use [HubSpot](https://www.hubspot.com/) to track and manage all of our customer interactions.
@@ -8,7 +8,7 @@ It enables the creation of customer contacts, and then logging of emails/notes a
 ## Contact Management
 
 Given that we have multiple client-facing roles within FlowFuse, it's important to document those that
-we talk to to ensure no crossover in sales and conversations.
+we talk to ensure no crossover in sales and conversations.
 
 ### Lifecycle Stage
 
@@ -19,7 +19,7 @@ It is up to the contact owner to ensure their contacts have the appropriate life
 
 | Stage Name | Lifecycle Stage | Owner | Deal Stage | Deal Probability | Requirements for this Stage | Supporting Materials | KPIs |
 | :---- | :---: | :---: | :---: | :---: | :---- | :---- | :---- |
-| Subscriber | Subscriber | Marketing | N/A | 0% | <ul><li>Email known in Hubspot</li><li> Aware of FlowFuse</li></ul> | N/A | <ul><li> Total contacts in Database </li><li>Social Media Company Followers</li></ul> |
+| Subscriber | Subscriber | Marketing | N/A | 0% | <ul><li>Email known in HubSpot</li><li> Aware of FlowFuse</li></ul> | N/A | <ul><li> Total contacts in Database </li><li>Social Media Company Followers</li></ul> |
 | Lead | Lead | Marketing | N/A | 0% | <ul><li>Demonstrated interested in FlowFuse</li><li>Started trial on FlowFuse Cloud OR filled another form on the marketing website</li></ul> | N/A | N/A | # new leads |
 | Marketing Qualified Lead | MQL | Sales | N/A | 0% | <ul><li>Requested a quote or trial license through the website</li><li>Is a business user on FlowFuse Cloud</li><li>Requested to be contacted via a website or other marketing activity</li><li>Confirmation for First Meeting</li><li>Technical Fit and Pain is very probable</li></ul><br>See [Lead Activation](/handbook/marketing/lead-activation/) for inbound vs. outbound definitions. | <ul><li>Lead Scoring</li><li>Sequences & Templates</li></ul> | # new MQLs |
 | Sales Qualified Lead | SQL | Sales | N/A | 0% | <ul><li>SPICED Discovery done</li><li>Customer Pain Identified</li><li>Confirmed Critical Event</li><li>Timeline PoC and Purchase known</li><li>Stakeholders Identified</li></ul> | <ul><li>Intro meeting Deck</li><li>Customer Success Stories</li></ul> | # New SQLs & # First Meetings Occurred |
@@ -42,7 +42,6 @@ MQLs will be engaged by a Sales Representative, according with the appropriate g
 - Does the prospect and company fit the target industry / company size / role?
 - Are they working on an initiative related to connecting systems, industrial data, or operational workflows?
 - Can they describe a specific problem, use case or goal they’re trying to address?
-- Is this an active or planned initiative (not just general research)?
 - Are they open to a meeting to explore their use case in more detail?
 
 ### Lead Status
@@ -68,6 +67,16 @@ At this stage we're using the default set of status's in HubSpot:
 `Activation Outbound` is a custom property that's set to `Yes` when the first meeting with the contact came through outbound
 drip campaigns or other outbound lead-gen actions. This property will be set to `Yes` when the contact was in HubSpot
 through other marketing activities too, but wasn't nurtured to the point of a meeting yet.
+
+## Deal Management
+
+A HubSpot deal represents a specific revenue opportunity with a customer or prospect. Each deal is mirrored daily into a representative GitHub issue in the FlowFuse/product repository, with the deal owner assigned as the issue assignee. The deal issue is the discussion hub and collection point for everything tied to that deal: feature requests blocking or supporting it, customer-specific implementation discussions, and cross-references to the public Sales Request or Customer Request issues filed elsewhere in FlowFuse repositories. Because FlowFuse/product is private, this view is internal-only and lets the team see which feature requests pertain to which deal. Sales and Product share responsibility for maintaining this link.
+
+### Deal Properties
+
+| Property | Description |
+| :------- | :---------- |
+| `github_issue` | URL of the deal's representative GitHub issue in FlowFuse/product. Auto-populated and synced daily; do not edit manually. The linked issue is where deal-tied feature requests, blockers, and customer asks are discussed and cross-referenced. |
 
 ## Importing Contacts Into HubSpot
 

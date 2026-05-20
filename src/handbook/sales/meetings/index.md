@@ -69,3 +69,4 @@ Fathom Notetaker is an AI-powered tool we use to record, transcribe, and summari
 
 1. Prior to sharing the call with external attendees, ensure there is no internal dialogue included before or after they joined.
 1. If there are portions you'd like to remove, go to the "Transcript" tab, find the parts to remove and click the three buttons on the right side of the text. This will allow you to remove specific portions or entire conversations. The video and transcript are both clipped using this method, although it may take a few minutes to reflect changes.
+1. You must own the meeting in order to be able to trim the transcript.
