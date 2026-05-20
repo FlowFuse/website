@@ -121,7 +121,7 @@
       }
     }
     {% endif %}
-    {% if meta.faq %}
+     {% if meta.faq %}
     ,
     {
       "@type": "FAQPage",
@@ -135,6 +135,34 @@
             "@type": "Answer",
             "text": "{{ item.answer }}"
           }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    {% endif %}
+    {% if meta.howto %}
+    ,
+    {
+      "@type": "HowTo",
+      "@id": "https://flowfuse.com{{ page.url }}#howto",
+      "name": "{{ meta.howto.name or title }}",
+      "description": "{{ meta.howto.description or description }}",
+      {% if meta.howto.totalTime %}"totalTime": "{{ meta.howto.totalTime }}",{% endif %}
+      {% if meta.howto.tool %}
+      "tool": [
+        {% for t in meta.howto.tool %}
+        { "@type": "HowToTool", "name": "{{ t }}" }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ],
+      {% endif %}
+      "step": [
+        {% for s in meta.howto.steps %}
+        {
+          "@type": "HowToStep",
+          "position": {{ loop.index }},
+          "name": "{{ s.name }}",
+          "text": "{{ s.text }}"
+          {% if s.url %},"url": "https://flowfuse.com{{ page.url }}#{{ s.url }}"{% endif %}
         }{% if not loop.last %},{% endif %}
         {% endfor %}
       ]
