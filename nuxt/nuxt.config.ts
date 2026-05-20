@@ -37,6 +37,13 @@ export default defineNuxtConfig({
         }
     },
 
+    // public/ (11ty static output) and .output/ (nuxt build) are large generated
+    // directory trees. On macOS, chokidar falls back to kqueue which opens file
+    // descriptors for each watched path, causing spawn EBADF when esbuild tries
+    // to start its service process.
+
+    ignore: ['public/**', '.output/**'],
+
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts
     // to allow per-route exclusions as pages are migrated.
 })
