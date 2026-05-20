@@ -1,3 +1,6 @@
+{% set authorSlug = authors[0] if authors and authors.length else null %}
+{% set author = people[authorSlug] if authorSlug else null %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -6,17 +9,24 @@
       "@type": "Organization",
       "@id": "https://flowfuse.com/#organization",
       "name": "FlowFuse",
+      "legalName": "FlowFuse Inc.",
+      "alternateName": ["Flow Fuse"],
       "url": "https://flowfuse.com",
-      "description": "{{ site.messaging.title }}",
+      "description": "FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.",
+      "foundingDate": "2021",
       "logo": {
         "@type": "ImageObject",
         "url": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png"
       },
       "sameAs": [
-        "https://www.g2.com/products/flowfuse/reviews",
         "https://www.linkedin.com/company/flowfuse",
+        "https://github.com/FlowFuse",
         "https://www.youtube.com/@FlowFuseInc",
-        "https://github.com/FlowFuse"
+        "https://twitter.com/FlowFuseInc",
+        "https://www.crunchbase.com/organization/flowforge",
+        "https://www.g2.com/sellers/flowfuse",
+        "https://www.facebook.com/FlowFuse",
+        "https://www.reddit.com/r/FlowFuse/"
       ]
     },
     {
@@ -55,15 +65,18 @@
       "name": "FlowFuse",
       "url": "https://flowfuse.com",
       "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform, Linux, Docker, Kubernetes",
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "3",
+        "ratingValue": "4.9",
+        "ratingCount": "4",
         "bestRating": "5",
-        "worstRating": "0"
+        "worstRating": "1",
+        "reviewCount": "4",
+        "url": "https://www.g2.com/sellers/flowfuse"
       }
     }
     {% if type == "post" %}
