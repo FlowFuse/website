@@ -94,11 +94,28 @@
       {% endif %}
       "datePublished": "{{ date | dateToRfc3339 }}",
       "dateModified": "{{ (lastUpdated or date) | dateToRfc3339 }}",
+      {% if author %}
       "author": {
         "@type": "Person",
-        "name": "{{ authors }}",
-        "url": "https://flowfuse.com/about/#{{ authors }}"
+        "@id": "https://flowfuse.com/about/#{{ authorSlug }}",
+        "name": "{{ author.name }}",
+        {% if author.title %}"jobTitle": "{{ author.title }}",{% endif %}
+        "url": "https://flowfuse.com/about/#{{ authorSlug }}",
+        {% if author.headshot %}"image": "https://flowfuse.com/images/team/headshot-{{ author.headshot | replace('.png','') | replace('.jpg','') | replace('.jpeg','') }}.png",{% endif %}
+        {% if author.bio %}"description": {{ author.bio | dump | safe }},{% endif %}
+        {% if author.knowsAbout %}"knowsAbout": {{ author.knowsAbout | dump | safe }},{% endif %}
+        "worksFor": { "@id": "https://flowfuse.com/#organization" },
+        "sameAs": [
+          {% set socials = [] %}
+          {% if author.linkedin %}{% set socials = (socials.push("https://www.linkedin.com/in/" + author.linkedin), socials) %}{% endif %}
+          {% if author.github %}{% set socials = (socials.push("https://github.com/" + author.github), socials) %}{% endif %}
+          {% if author.twitter %}{% set socials = (socials.push("https://twitter.com/" + author.twitter), socials) %}{% endif %}
+          {% for url in socials %}"{{ url }}"{% if not loop.last %},{% endif %}{% endfor %}
+        ]
       },
+      {% else %}
+      "author": { "@id": "https://flowfuse.com/#organization" },
+      {% endif %}
       "publisher": {
         "@id": "https://flowfuse.com/#organization"
       }
