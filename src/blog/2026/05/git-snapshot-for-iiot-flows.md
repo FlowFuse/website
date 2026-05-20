@@ -22,11 +22,9 @@ Here is the problem that creates, and how FlowFuse snapshot comparison solves it
 
 [Management of Change](https://www.advancedtech.com/blog/what-is-moc-in-manufacturing/) requires that every change to control logic or operating procedures is reviewed, approved, and documented before it reaches production. The intent is sound: catch problems before they cause incidents.
 
-In practice, the reviewer sees a ticket. "Updated OEE calculation." "Modified threshold on line 4 flow." They read it, they sign it, and the change goes out. Nobody in that process has looked at the logic itself.
+In practice, the reviewer sees a ticket. "Updated OEE calculation." "Modified threshold on line 4 flow." A threshold changed from 80 to 8. A retry block deleted. Nobody reviewing a ticket sees any of that — they read it, they sign it, and the change goes out.
 
-That is not a process failure. It is a tooling failure. Until recently, there was no practical way for a reviewer to see the exact lines of function code that changed, or which environment variable was modified, or which nodes were added or removed, before deployment. So teams worked around it with descriptions, and hoped the descriptions were accurate.
-
-Small changes are often the ones that cause the hardest-to-trace incidents. A threshold adjusted from 80 to 8, a deleted retry block, or a modified scaling factor can quietly change machine behavior without anyone noticing during review. The problem is not that teams skip MOC. The problem is that most reviews never expose the actual logic difference clearly enough to catch it.
+That is not a process failure. It is a tooling failure. Until recently, there was no practical way for a reviewer to see the exact lines of function code that changed, or which environment variable was modified, or which nodes were added or removed. So teams worked around it with descriptions, and hoped the descriptions were accurate.
 
 That is where incidents trace back to.
 
@@ -44,9 +42,9 @@ For configuration changes, the view shifts to a side-by-side property comparison
 
 ![FlowFuse snapshot diff showing modified node properties with changed configuration values highlighted between two snapshots](./images/snapshot-diff-prop-change-WMsvdK6VxR-1300.png)
 
-Function node logic appears as a line-level code diff: red for removed, green for added, in the same format as a Git diff. Property changes, such as a modified threshold, an updated endpoint, or a changed environment variable, show old and new values side by side. The left sidebar lists every node that was added, deleted, or changed, so the reviewer knows the full scope before they start.
+Function node logic appears as a line-level code diff: red for removed, green for added. Property changes, such as a modified threshold, an updated endpoint, or a changed environment variable, show old and new values side by side. The left sidebar lists every node that was added, deleted, or changed, so the reviewer knows the full scope before they start.
 
-This creates a real audit trail for industrial change control. Reviewers can see exactly what changed before deployment instead of relying on summaries or manual descriptions.
+This creates a real audit trail for industrial change control. Reviewers can see exactly what changed instead of relying on summaries or manual descriptions.
 
 ## From Review to Deployment
 
@@ -54,8 +52,6 @@ When the reviewer has worked through the diff, they approve the named snapshot. 
 
 ![Diagram showing the MOC workflow from engineer creating a named snapshot, through reviewer comparison and approval, to snapshot deployment on the edge device](./images/moc-to-deployment.png)
 
-In FlowFuse, the reviewed artifact and the deployed artifact are the same thing.
-
-The MOC record references the snapshot by name. What was reviewed, what was approved, and what reached the machine are the same artifact, not a description of it, not an approximation of it. For audits, incident investigations, and regulatory compliance, that traceability is what MOC was always meant to produce.
+In FlowFuse, the reviewed artifact and the deployed artifact are the same thing. For audits, incident investigations, and regulatory compliance, that traceability is what MOC was always meant to produce.
 
 For teams managing logic across many devices, the same approved snapshot can be pushed to an entire fleet without re-entry. For teams that need a full version history, rollback capability, or deployment traceability, the [full snapshot documentation](https://flowfuse.com/docs/user/snapshots/) covers every available action.
