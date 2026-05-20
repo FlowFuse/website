@@ -51,7 +51,7 @@ to your machine.
 
 Make a copy of
 [this Google Sheet template](https://docs.google.com/spreadsheets/d/1fBq4g4W26M3k-uUOg5p4D2mYUyBPP8EbdtPLwuQ5RPI/)
-and import the CSV just downloaded from Hubspot into the "All Deals" sheet.
+and import the CSV just downloaded from HubSpot into the "All Deals" sheet.
 "File" -> "Import" -> "Upload" -> "Replace Current Sheet".
 
 Now "All Deals" have been listed, that adds all the deal closers to the "Team"
@@ -66,6 +66,8 @@ in the last month.
 
 Finally, go to the "Commissions" tab and select the employee to calculate the
 payment for.
+
+Do not manually override any formulas in the commission tab, make sure that all calculations should be driven by the sheet's logic.
 
 Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
@@ -147,7 +149,7 @@ Following the end of each quarter, the Operations team processes CSM commissions
 ### Data Requirements
 The calculation template must include:
 - Company Name & Transaction Amount (ARR Delta).
-- Notice Date: When the customer informed us of the change. Or when we actually closed won the change in Hubspot
+- Notice Date: When the customer informed us of the change. Or when we actually closed won the change in HubSpot
 - Effective Date: When the change actually takes place in the contract.
 
 ### Currency of Payout

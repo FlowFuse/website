@@ -86,7 +86,7 @@ Enforce industry best practices for passwords and configure systems to support t
 - Do not reuse passwords across different systems.
 - Store passwords only in the company-provided password vault, 1Password.
 
-## Programmaticaly Accessible Resources
+## Programmatically Accessible Resources
 
 When programmatic access to resources is required, the following guidelines must
 be followed:

@@ -4,7 +4,7 @@ navTitle: Art Requests
 
 # Art Requests
 
-Across FlowFuse it will be a common occurence that we need visual content created. These can be part of development tasks (where you're comfortable doing the development work, but less doing the graphic/illustrative design work) or social/marketing materials.  
+Across FlowFuse it will be a common occurrence that we need visual content created. These can be part of development tasks (where you're comfortable doing the development work, but less doing the graphic/illustrative design work) or social/marketing materials.  
 
 Likely places this will be required are:
 
@@ -32,7 +32,7 @@ When creating an issue, you'll be presented with an option to create an "Art Req
 Please be sure to include as much detail as possible, but most importantly:
 
 - **Type**: What type of asset is this? Blog Tile? YouTube Thumbnail?
-- **Format**: Image (e.g. `.png`, `.jpg`), Video (e.g. `mp4`), Animation (e.g. `.gif` or Lottie Animtion)
+- **Format**: Image (e.g. `.png`, `.jpg`), Video (e.g. `mp4`), Animation (e.g. `.gif` or Lottie Animation)
 - **Deadline**: This is defined on the right-side of the issue under the "Art Requests" project, once the issue has been created.
 - **Milestone**: If this is a Product request, please add the Development Project and assign the relevant release milestone, otherwise, this is not required.
 
