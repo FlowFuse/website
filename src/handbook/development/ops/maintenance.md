@@ -27,6 +27,7 @@ Where the maintenance action will cause disruption to customers, it must be sche
 * at least 45 days notice should be provided to customers
 * not during the working week
 * maintenance should not overlap with [scheduled release](../releases/process.md) week
+
 ## Customers communication
 
 Once the maintenance date is set, customers should be informed about the upcoming maintenance. This must be done in co-ordination with Customer team. The communication should include:
