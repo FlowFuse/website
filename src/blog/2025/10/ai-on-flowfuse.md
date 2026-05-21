@@ -10,7 +10,7 @@ tags:
   - flowfuse
   - node-red
   - post
-  - AI
+  - ai
 ---
 
 We have a VERY exciting announcement today: you can now build an MCP server and upload custom-trained AI models to FlowFuse! 

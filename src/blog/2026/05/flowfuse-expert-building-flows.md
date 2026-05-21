@@ -9,6 +9,7 @@ image: /blog/2026/05/images/flowfuse-ai-expert-tile.png
 video: DR9OTIVtBLU
 tags:
     - flowfuse
+    - ai
 cta:
     type: contact
     title: Try FlowFuse Expert on your team
