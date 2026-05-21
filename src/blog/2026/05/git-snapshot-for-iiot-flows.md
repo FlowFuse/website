@@ -2,7 +2,7 @@
 title: "See Exactly What Changed in Your IIoT MOC Review with Git-Style Diffs"
 subtitle: "How FlowFuse snapshot comparison gives IIoT teams a verifiable, auditable review of every logic change before it reaches the machine"
 description: "Most IIoT teams have a MOC process. What they lack is visibility into the actual logic change. FlowFuse snapshot comparison shows reviewers exactly what shifted between deployments, node by node, line by line, before anything is deployed."
-date: 2026-05-20
+date: 2026-05-21
 authors: ["sumit-shinde"]
 tags:
   - flowfuse
@@ -30,7 +30,7 @@ That is where incidents trace back to.
 
 ## What Snapshot Comparison Shows
 
-A [snapshot](https://flowfuse.com/docs/user/snapshots/) in FlowFuse captures the complete state of a deployed instance at a point in time: every node, function block, configuration value, and environment variable. Comparing two snapshots produces a diff of everything that shifted between them.
+A [snapshot](/docs/user/snapshots/) in FlowFuse captures the complete state of a deployed instance at a point in time: every node, function block, configuration value, and environment variable. Comparing two snapshots produces a diff of everything that shifted between them.
 
 The engineer makes their changes and creates a named snapshot. That snapshot becomes the artifact attached to the MOC request.
 
@@ -56,4 +56,4 @@ In FlowFuse, the reviewed artifact and the deployed artifact are the same thing.
 
 For teams on Team or Enterprise plans, FlowFuse also creates auto snapshots on every deploy, a passive safety net that captures the exact state running on each instance or device, even when a named snapshot was not part of the workflow. Up to ten auto snapshots are retained automatically, giving teams a recoverable history without any extra steps.
 
-For teams managing logic across many devices, the same approved snapshot can be pushed to an entire fleet without re-entry. For teams that need a full version history, rollback capability, or deployment traceability, the [full snapshot documentation](https://flowfuse.com/docs/user/snapshots/) covers every available action.
+For teams managing logic across many devices, the same approved snapshot can be pushed to an entire fleet without re-entry. For teams that need a full version history, rollback capability, or deployment traceability, the [full snapshot documentation](/docs/user/snapshots/) covers every available action.
