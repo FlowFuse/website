@@ -11,6 +11,7 @@ tags:
     - community
     - flowfuse
     - openai
+    - ai
 ---
 
 ## Introduction to the World of GPTs and AI Assistants
