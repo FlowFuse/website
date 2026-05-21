@@ -4,6 +4,10 @@ navTitle: Infrastructure Maintenance
 
 Periodically, FlowFuse performs maintenance on FlowFuse Cloud resources. This page describes how we manage and execute maintenance tasks around the infrastructure.
 
+# When does this process apply?
+
+Use this process when planned maintenance will require action from customers or cause visible disruption to their instances. If the work can be completed within our SLA with no customer-visible impact, just do it - don't generate comms for behind-the-scenes work.
+
 # Maintenance scope
 
 The maintenance most often involves updates to the following resources:
