@@ -207,8 +207,10 @@ Explore the list of integrations and modules available for your Node-RED project
             pill.classList.toggle('certified-pill--active', filterCertified);
         }
         const count = document.getElementById('certified-count');
-        if (count && Array.isArray(catalogue)) {
+        const wrapper = document.getElementById('certified-count-wrapper');
+        if (count && wrapper && Array.isArray(catalogue) && catalogue.length > 0) {
             count.textContent = catalogue.filter(n => n.ffCertified).length;
+            wrapper.hidden = false;
         }
     }
 
@@ -384,7 +386,7 @@ Explore the list of integrations and modules available for your Node-RED project
         <div class="certified-hero--card bg-indigo-50 rounded-lg border-[3px] border-indigo-200 drop-shadow-xl p-6 md:p-10 grid md:grid-cols-12 gap-8 md:gap-10 items-start">
             <div class="md:col-span-5">
                 <span class="certified-eyebrow"><certified-icon></certified-icon><span>FlowFuse Certified</span></span>
-                <h2 class="certified-hero--title text-balance">Certified nodes, backed by their authors and supported long-term.</h2>
+                <h2 class="certified-hero--title text-balance">Certified Nodes, backed by their authors and supported long-term.</h2>
                 <p class="certified-hero--lede">
                     Choosing a Node-RED node for production raises questions you can't always answer from a README. Is it actively maintained? Is it secure? Will the maintainer still be around in two years? Certified Nodes answer those questions.
                 </p>
@@ -394,7 +396,8 @@ Explore the list of integrations and modules available for your Node-RED project
                         type="button"
                         class="ff-btn ff-btn--primary uppercase certified-toggle"
                         aria-pressed="false"
-                        onclick="setCertified(!filterCertified)"><certified-icon></certified-icon><span>Show only Certified</span><span class="certified-toggle--count">(<span id="certified-count">…</span>)</span></button>
+                        onclick="setCertified(!filterCertified)"><certified-icon></certified-icon><span>Show only Certified</span><span id="certified-count-wrapper" class="certified-toggle--count" hidden> (<span id="certified-count"></span>)</span></button>
+                    {# TODO: repoint to a proper FlowFuse-owned Certified Nodes explainer page when one exists. A year-old blog post is not the long-term destination. #}
                     <a class="certified-hero--link inline-flex items-center gap-1" href="/blog/2025/07/certified-nodes-v2/">
                         Learn more {% include "components/icons/arrow-long-right.svg" %}
                     </a>
@@ -411,14 +414,14 @@ Explore the list of integrations and modules available for your Node-RED project
                 <li class="certified-pillar">
                     <span class="certified-pillar--icon" aria-hidden="true">{% include "components/icons/shield-check.svg" %}</span>
                     <div>
-                        <h3 class="certified-pillar--title">Tested for production</h3>
-                        <p class="certified-pillar--body">We check each node for reliability, security posture, and current documentation before it ships — and patch CVEs on our own timeline.</p>
+                        <h3 class="certified-pillar--title">Supported through production</h3>
+                        <p class="certified-pillar--body">FlowFuse stands behind every Certified Node after launch — patching CVEs on our own timeline. Each node is vetted for reliability, security posture, and current documentation before shipping.</p>
                     </div>
                 </li>
                 <li class="certified-pillar">
                     <span class="certified-pillar--icon" aria-hidden="true">{% include "components/icons/code-bracket.svg" %}</span>
                     <div>
-                        <h3 class="certified-pillar--title">Open source and proprietary, both welcome</h3>
+                        <h3 class="certified-pillar--title">Free or commercial, same bar</h3>
                         <p class="certified-pillar--body">Some Certified Nodes are free and open; others target specific enterprise needs. The certification standard is the same.</p>
                     </div>
                 </li>
@@ -445,7 +448,7 @@ Explore the list of integrations and modules available for your Node-RED project
         <input id="search-catalogue" class="catalogue-search" type="text" placeholder="Search Integrations" onkeyup="filterCatalogue()" onchange="filterCatalogue()"/>
         <div class="catalogue-meta" aria-live="polite" aria-atomic="true">
             <div id="count-container" style="display: none;"><span id="integrations-count">X</span> Integrations</div>
-            <div id="count-placeholder"><span id="integrations-count">Loading...</div>
+            <div id="count-placeholder"><span>Loading...</span></div>
         </div>
         <ul id="integration-tiles-placeholder" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <integration-tile-placeholder></integration-tile-placeholder>

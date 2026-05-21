@@ -10,15 +10,15 @@
                     {% image "./images/home/blog.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
                 </div>
             </a>
-            <h4 class="text-xl font-bold pb-3">Latest on the blog</h4>
+            <h3 class="text-xl font-bold pb-3">Latest on the blog</h3>
             {%- for item in collections[collectionName or 'posts'] | sort(attribute='item.date') | reverse | limit(3) -%}
             <a href="{{ item.url }}"
                 class="w-full flex flex-col group {% if not loop.last %}border-b{% endif %}">
-                <h5 class="my-2 font-light">
+                <h4 class="my-2 font-light text-lg">
                     <span class="text-gray-500 group-hover:text-blue-700">
                         {{ item.data.title }}
                     </span>
-                </h5>
+                </h4>
             </a>
             {%- endfor -%}
         </div>
@@ -35,9 +35,9 @@
                     {% image "./images/home/webinar.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
                 </div>
             </a>
-            <h4 class="text-xl font-bold pb-3">{% if item.date | isFutureDate %}Upcoming{% else %}Latest{% endif %} Webinar</h4>
+            <h3 class="text-xl font-bold pb-3">{% if item.date | isFutureDate %}Upcoming{% else %}Latest{% endif %} Webinar</h3>
             <div class="w-full flex flex-col">
-                <h5 class="my-2 font-light"><span class="text-gray-500">{{ item.data.title }}</span></h5>
+                <h4 class="my-2 font-light text-lg"><span class="text-gray-500">{{ item.data.title }}</span></h4>
             </div>
             <div class="webinar-title w-full border-t pt-3 font-light text-gray-500">
                 <time value="{{ item.date }}">{{ item.date | shortDate }}</time>
@@ -56,8 +56,8 @@
                 <div class="sm:max-h-none md:min-w-[40%] max-w-[448px] ff-image-cover ff-image-rounded mx-auto mb-4 aspect-video">
                     {% image "./images/home/newsletter.png", "Image of hands typing on laptop working on Node-RED flows", [448] %}
                 </div>
-            <h4 class="text-xl font-bold pb-3">Newsletter</h4>
-            <h5 class="font-bold pb-3 pt-2">Sign up for our monthly email updates</h5>
+            <h3 class="text-xl font-bold pb-3">Newsletter</h3>
+            <h4 class="font-bold pb-3 pt-2 text-lg">Sign up for our monthly email updates</h4>
         </div>
         <div class="-mb-1 self-end w-full">
             {% include hubspot.script %}

@@ -3,13 +3,23 @@
 {% if showTierCloud or showTierSelfHosted %}
 <div class="ff-tier-badges">
   {% if showTierCloud %}
-    <div class="ff-tier-badge ff-tier--available" onclick="capture('tier-badge-click',{hosting:'cloud',tier:'{{ tierCloud }}',page:location.pathname})">
+    <div class="ff-tier-badge ff-tier--available"
+         role="button"
+         tabindex="0"
+         aria-label="Cloud tier: {{ tierCloud }}"
+         onclick="capture('tier-badge-click',{hosting:'cloud',tier:'{{ tierCloud }}',page:location.pathname})"
+         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
       <span class="ff-tier-badge__label">Cloud</span>
       <span class="ff-tier-badge__value">{{ tierCloud }}</span>
     </div>
   {% endif %}
   {% if showTierSelfHosted %}
-    <div class="ff-tier-badge ff-tier--available" onclick="capture('tier-badge-click',{hosting:'self-hosted',tier:'{{ tierSelfHosted }}',page:location.pathname})">
+    <div class="ff-tier-badge ff-tier--available"
+         role="button"
+         tabindex="0"
+         aria-label="Self-Hosted tier: {{ tierSelfHosted }}"
+         onclick="capture('tier-badge-click',{hosting:'self-hosted',tier:'{{ tierSelfHosted }}',page:location.pathname})"
+         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
       <span class="ff-tier-badge__label">Self-Hosted</span>
       <span class="ff-tier-badge__value">{{ tierSelfHosted }}</span>
     </div>
