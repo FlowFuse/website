@@ -9,6 +9,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 ---
 
 This release unlocks several new abilities for our users, speeding your development time, easing management of Node-RED instances, providing a smoother path to adding large numbers of devices, and more. Let's dig in.
