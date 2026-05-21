@@ -1,5 +1,5 @@
 ---
-title: "See Exactly What Changed in Your IIoT MOC Review with Git-Style Diffs"
+title: "See Every Logic Change in Your IIoT MOC Review with Git-Style Diffs"
 subtitle: "How FlowFuse snapshot comparison gives IIoT teams a verifiable, auditable review of every logic change before it reaches the machine"
 description: "Most IIoT teams have a MOC process. What they lack is visibility into the actual logic change. FlowFuse snapshot comparison shows reviewers exactly what shifted between deployments, node by node, line by line, before anything is deployed."
 date: 2026-05-21
