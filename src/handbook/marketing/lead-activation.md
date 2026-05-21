@@ -34,7 +34,7 @@ leads are further categorized into three sub-types based on the strength of the 
 Prospects showing behavioral signals of interest without explicit hand raise.
 
 For example
-- Website visits tracked via intent tools (Hubspot Intent, Warmly)
+- Website visits tracked via intent tools (HubSpot Intent, Warmly)
 - Ad interaction data from platforms like ZenABM
 - Content engagement patterns
 - Product page visits
