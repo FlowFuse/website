@@ -29,7 +29,7 @@
 </div>
 <div class="flex flex-wrap flex-row gap-3 justify-center my-6">
   {%- for t in testimonials -%}
-  <button class="testimonial-button align-baseline max-md:p-2">
+  <button class="testimonial-button align-baseline max-md:p-2" aria-label="Show testimonial from {{ t.author }}, {{ t.company }}">
     <span></span>
   </button>
   {%- endfor -%}

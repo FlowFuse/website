@@ -9,6 +9,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 ---
 
 This release represents a major leap forward in FlowFuse's data management and AI capabilities, introducing our new FlowFuse Tables database feature, along with enhanced AI assistance features and a streamlined user interface. These improvements make FlowFuse a complete solution for building industrial applications, even while reducing development time.

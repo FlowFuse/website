@@ -17,7 +17,7 @@ defineEmits(['toggle'])
                         <span>FlowFuse Certified</span>
                     </span>
                     <h2 class="certified-hero--title text-balance">
-                        Certified nodes, backed by their authors and supported long-term.
+                        Certified Nodes, backed by their authors and supported long-term.
                     </h2>
                     <p class="certified-hero--lede">
                         Choosing a Node-RED node for production raises questions you can't always answer from a README. Is it actively maintained? Is it secure? Will the maintainer still be around in two years? Certified Nodes answer those questions.
@@ -32,8 +32,9 @@ defineEmits(['toggle'])
                         >
                             <IntegrationsCertifiedIcon />
                             <span>Show only Certified</span>
-                            <span class="certified-toggle--count">(<span>{{ count ?? '…' }}</span>)</span>
+                            <span v-if="count !== null" class="certified-toggle--count"> ({{ count }})</span>
                         </button>
+                        <!-- TODO: repoint to a proper FlowFuse-owned Certified Nodes explainer page when one exists. A year-old blog post is not the long-term destination. -->
                         <a
                             class="certified-hero--link inline-flex items-center gap-1"
                             href="/blog/2025/07/certified-nodes-v2/"
@@ -75,8 +76,8 @@ defineEmits(['toggle'])
                             </svg>
                         </span>
                         <div>
-                            <h3 class="certified-pillar--title">Tested for production</h3>
-                            <p class="certified-pillar--body">We check each node for reliability, security posture, and current documentation before it ships — and patch CVEs on our own timeline.</p>
+                            <h3 class="certified-pillar--title">Supported through production</h3>
+                            <p class="certified-pillar--body">FlowFuse stands behind every Certified Node after launch — patching CVEs on our own timeline. Each node is vetted for reliability, security posture, and current documentation before shipping.</p>
                         </div>
                     </li>
                     <li class="certified-pillar">
@@ -86,7 +87,7 @@ defineEmits(['toggle'])
                             </svg>
                         </span>
                         <div>
-                            <h3 class="certified-pillar--title">Open source and proprietary, both welcome</h3>
+                            <h3 class="certified-pillar--title">Free or commercial, same bar</h3>
                             <p class="certified-pillar--body">Some Certified Nodes are free and open; others target specific enterprise needs. The certification standard is the same.</p>
                         </div>
                     </li>

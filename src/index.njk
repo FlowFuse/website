@@ -85,7 +85,7 @@ hubspot:
     <!-- Social Proof -->
     <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl mb-10">
         <div class="w-full text-center min-h-14 flex justify-center items-center mt-16 bg-radial-indigo">
-            <h5 class="text-gray-600">Trusted by our customers</h5>
+            <h2 class="text-gray-600 text-lg font-semibold">Trusted by our customers</h2>
         </div>
         <div class="mx-auto text-center -mt-0.5">
             {% include "social-proof.njk" %}
@@ -120,7 +120,6 @@ hubspot:
         </div>
     </div>
 </div>
-
 
 <!-- Problem section -->
 <div class="bg-gradient-to-br from-indigo-700 to-indigo-900 w-full py-20 px-6 my-16">
@@ -177,11 +176,11 @@ hubspot:
             <p>Without integrated industrial data monitoring and control, large manufacturers face significant operational losses:</p>
         </div>
         <div class="sm:w-1/4">
-            <h5 class="text-4xl text-indigo-600 font-semibold">$50B</h5>
+            <h4 class="text-4xl text-indigo-600 font-semibold">$50B</h4>
             <p>Annual cost of unplanned downtime across industrial manufacturers globally</p>
         </div>
         <div class="sm:w-1/4">
-            <h5 class="text-4xl text-indigo-600">800h</h5>
+            <h4 class="text-4xl text-indigo-600">800h</h4>
             <p>Average equipment downtime per year experienced by manufacturers (over 15 hours per week)</p>
         </div>
     </div>
@@ -251,7 +250,7 @@ hubspot:
                 </div>
             </div>
             <div class="md:w-[55%] my-auto flex flex-col">
-                <h5 class="text-red-600 mb-3">{{ item.feature }}</h5>
+                <h3 class="text-red-600 mb-3 text-lg font-semibold">{{ item.feature }}</h3>
                 <h2>{{ item.capability }}</h2>
                 <div class="md:hidden rounded-xl w-full bg-gradient-to-tl from-red-100 to-indigo-100 max-w-[500px] mx-auto my-6 p-4">
                     <div class="ff-image-rounded w-full border border-red-200 overflow-hidden">
@@ -283,7 +282,7 @@ hubspot:
                         <div class="w-6 h-6 my-auto text-indigo-700">
                             {% include item.icon %}
                         </div>
-                        <h4 class="text-xl text-indigo-700 hover:text-indigo-900">{{ item.title }}</h4>
+                        <h3 class="text-xl text-indigo-700 hover:text-indigo-900">{{ item.title }}</h3>
                     </div>
                     <p class="leading-6 sm:pr-3">{{ item.description }}</p>
                 </a>
@@ -314,7 +313,7 @@ hubspot:
                 {% include "explore-more-content.njk" %}
             </div>
             <div class="md:hidden bg-indigo-50 py-1 px-4 rounded-md w-full mx-auto max-md:text-center">
-                <p>Need assistance with your project? <a href="/contact-us/">Contact us</a>, and our experts will gladly provide a solution tailored to your needs.</p>
+                <p>Need assistance with your project? <a href="/contact-us/" class="underline">Contact us</a>, and our experts will gladly provide a solution tailored to your needs.</p>
             </div>
     </div>
 </div>
