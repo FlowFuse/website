@@ -50,7 +50,8 @@
             <h2 class="mt-1 mb-0 text-xl font-medium group-hover:underline">{{ item.data.title }}</h2>
         </div>
         <div class="text-sm prose prose-blue md:prose-md py-1">
-            {% include "summary.njk" %}
+            {% set summary = item.data.excerpt or item.data.description or item.data.meta.description %}
+            {% if summary %}{{ summary | md | striptags | truncate(20) }}{% endif %}
         </div>
         <div class="italic text-xs mb-3">
             <div class="author">

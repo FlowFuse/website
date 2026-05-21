@@ -17,6 +17,7 @@ const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
 const pluginTOC = require('eleventy-plugin-toc');
+const { decodeHTML } = require('entities');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
@@ -516,6 +517,10 @@ module.exports = function(eleventyConfig) {
         return text.split(" ").splice(0, maxWordCount).join(" ") + "..."
     });
 
+
+    eleventyConfig.addFilter("striptags", function(text) {
+        return decodeHTML(String(text).replace(/<[^>]+>/g, ""));
+    });
 
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);
