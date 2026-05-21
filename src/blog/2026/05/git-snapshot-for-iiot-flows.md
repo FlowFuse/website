@@ -36,11 +36,11 @@ The engineer makes their changes and creates a named snapshot. That snapshot bec
 
 The reviewer compares it against the snapshot currently running in production. What they see is not a description of the change. It is the change.
 
-![FlowFuse snapshot diff showing a JavaScript function node with line-by-line code changes highlighted between two deployments](./images/snapshot-diff-code-change-1OlYX5X61T-1300.png)
+![FlowFuse snapshot diff showing a JavaScript function node with line-by-line code changes highlighted between two deployments](./images/snapshot-function-code-change.png)
 
 For configuration changes, the view shifts to a side-by-side property comparison.
 
-![FlowFuse snapshot diff showing modified node properties with changed configuration values highlighted between two snapshots](./images/snapshot-diff-prop-change-WMsvdK6VxR-1300.png)
+![FlowFuse snapshot diff showing modified node properties with changed configuration values highlighted between two snapshots](./images/snapshot-prop-change.png)
 
 Function node logic appears as a line-level code diff: red for removed, green for added. Property changes, such as a modified threshold, an updated endpoint, or a changed environment variable, show old and new values side by side. The left sidebar lists every node that was added, deleted, or changed, so the reviewer knows the full scope before they start.
 
