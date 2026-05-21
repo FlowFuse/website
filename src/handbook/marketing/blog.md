@@ -243,7 +243,6 @@ Tag your content appropriately from the collection of tags that help us manage o
 - `flowfuse`
 - `how-to`
 - `dashboard`
-- `community`
 - `releases`
 - `news`
 - `unified-namespace`
