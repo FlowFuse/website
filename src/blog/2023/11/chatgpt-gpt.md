@@ -11,6 +11,7 @@ tags:
     - community
     - flowfuse
     - chatgpt
+    - ai
 
 ---
 

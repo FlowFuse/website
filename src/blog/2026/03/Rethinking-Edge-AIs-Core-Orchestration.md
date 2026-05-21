@@ -8,6 +8,7 @@ authors: ["zeger-jan-van-de-weg"]
 image: /blog/2026/03/images/Rethinking-Edge-AI's-Core-Orchestration.png
 tags:
 - flowfuse
+- ai
 cta:
   type: demo
   title: Rethinking Edge AI's Core Orchestration

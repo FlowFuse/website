@@ -9,6 +9,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 ---
 
 This release is focused on improvements that help you manage and optimize the performance of your Node-RED instances and takes an important step in integrating AI with FlowFuse so that you can build applications even more quickly.
