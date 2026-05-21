@@ -10,15 +10,13 @@
  * layer is idiomatic to Nuxt and trivially swappable to another driver later.
  */
 import { createHash } from 'node:crypto'
-import { fileURLToPath } from 'node:url'
-import { dirname, resolve } from 'node:path'
+import { resolve } from 'node:path'
 import { ofetch } from 'ofetch'
 import { createStorage } from 'unstorage'
 import fsDriver from 'unstorage/drivers/fs-lite'
 
-// Anchor the cache to the nuxt workspace so it's stable regardless of which
-// directory `nuxt generate` was launched from. Lands at nuxt/.cache/integrations/.
-const CACHE_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../../.cache/integrations')
+// cwd, not import.meta.url — Nitro bundles this file and the rewritten URL resolves above filesystem root.
+const CACHE_DIR = resolve(process.cwd(), '.cache/integrations')
 
 const storage = createStorage({
     driver: fsDriver({ base: CACHE_DIR })
