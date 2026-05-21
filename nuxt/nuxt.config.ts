@@ -32,8 +32,27 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy'],
+            routes: ['/terms', '/privacy-policy', '/integrations'],
             crawlLinks: false
+        }
+    },
+
+    hooks: {
+        // Enumerate dynamic /integrations/{id}/ routes at build time so SSG generates them all.
+        // Uses `ofetch`/`cachedFetch` (NOT Nuxt's $fetch) because $fetch is only initialised
+        // at nitro runtime — this hook runs at config-time.
+        async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {
+            if (nitroConfig.dev) return
+            const { buildEnrichedIntegrations } = await import('./server/utils/integrations-enrich')
+            const integrations = await buildEnrichedIntegrations()
+            if (integrations.length === 0) {
+                throw new Error('[nuxt] integrations enumeration returned 0 nodes — refusing to build a site with no detail pages')
+            }
+            const routes = integrations.map(n => `/integrations/${n._id}/`)
+            nitroConfig.prerender = nitroConfig.prerender || {}
+            // Dedup defensively in case the hook fires more than once.
+            nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
+            console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)
         }
     },
 
