@@ -4,6 +4,7 @@ subtitle: "How FlowFuse snapshot comparison gives IIoT teams a verifiable, audit
 description: "Most IIoT teams have a MOC process. What they lack is visibility into the actual logic change. FlowFuse snapshot comparison shows reviewers exactly what shifted between deployments, node by node, line by line, before anything is deployed."
 date: 2026-05-21
 authors: ["sumit-shinde"]
+image: /blog/2026/05/images/moc-with-snapshot.png
 tags:
   - flowfuse
 cta:
