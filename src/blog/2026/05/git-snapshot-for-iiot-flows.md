@@ -54,6 +54,4 @@ When the reviewer has worked through the diff, they approve the named snapshot. 
 
 In FlowFuse, the reviewed artifact and the deployed artifact are the same thing. For audits, incident investigations, and regulatory compliance, that traceability is what MOC was always meant to produce.
 
-For teams on Team or Enterprise plans, FlowFuse also creates auto snapshots on every deploy, a passive safety net that captures the exact state running on each instance or device, even when a named snapshot was not part of the workflow. Up to ten auto snapshots are retained automatically, giving teams a recoverable history without any extra steps.
-
-For teams managing logic across many devices, the same approved snapshot can be pushed to an entire fleet without re-entry. For teams that need a full version history, rollback capability, or deployment traceability, the [full snapshot documentation](/docs/user/snapshots/) covers every available action.
+For teams on Team or Enterprise plans, FlowFuse also creates auto snapshots on every deploy, a passive safety net that captures the exact state running on each instance or device, even when a named snapshot was not part of the workflow. Up to ten auto snapshots are retained automatically, giving teams a recoverable history without any extra steps. The same approved snapshot can also be pushed to an entire fleet without re-entry. The [full snapshot documentation](/docs/user/snapshots/) covers every available action.
