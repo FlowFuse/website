@@ -1237,6 +1237,12 @@ module.exports = function(eleventyConfig) {
         return nav;
     });
 
+    eleventyConfig.addCollection("aiBlog", function(collectionApi) {
+        return collectionApi.getFilteredByTag("ai").filter(item => {
+            return !item.data.tags || !item.data.tags.includes("blueprints");
+        });
+    });
+
     eleventyConfig.addCollection("homeLogos", function () {
         const logosDir = path.join(__dirname, "src/images/home-logos");
         const logos = fs.readdirSync(logosDir)

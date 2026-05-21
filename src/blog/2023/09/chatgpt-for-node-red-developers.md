@@ -9,6 +9,7 @@ tags:
     - posts
     - node-red
     - chatgpt
+    - ai
 ---
 
 ChatGPT has the potential to have a significant impact on the Node-RED community. It is a powerful language model that can be used to generate flows, interpret them, and provide documentation, maybe soon even write the flow! The combination of ChatGPT, or generative AI at large, with Node-RED can significantly improve the developer experience with Node-RED. In this post we’ll review what the community has already built.
