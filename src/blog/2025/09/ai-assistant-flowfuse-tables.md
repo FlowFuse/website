@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/09/images/flowfuse-assistant-query-node.png
 tags:
   - flowfuse
+  - ai
 ---
 
 Getting data from your database used to mean writing SQL queries. Not anymore. The FlowFuse Expert now lets you ask for what you want in plain English and automatically generates the SQL for you in query node.

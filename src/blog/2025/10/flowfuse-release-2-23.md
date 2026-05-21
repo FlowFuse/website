@@ -9,6 +9,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 ---
 
 In this exciting release, we've shipped several features that accelerate development in Node-RED using AI, enable creation of AI agents using new Model Context Protocol nodes, provide application-level access controls for much more sophisticated user permissions management, and put an expert flow creator right on our homepage. It's a big one! Let's have a look.

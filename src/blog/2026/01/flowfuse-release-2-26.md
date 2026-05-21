@@ -9,6 +9,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 ---
 
 With the holiday break sitting in the middle of this release cycle, it's a smaller release than usual this month. But that hasn't stopped us continuing to make the FlowFuse Expert even more useful.
