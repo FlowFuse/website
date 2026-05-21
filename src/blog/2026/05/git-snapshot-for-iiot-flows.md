@@ -9,7 +9,7 @@ tags:
 cta:
     type: contact
     title: Your MOC process deserves better than a description
-    description: See exactly what changed — node by node, line by line — before anything reaches production. Reach out to learn how FlowFuse fits your team.
+    description: See exactly what changed, node by node, line by line, before anything reaches production. Reach out to learn how FlowFuse fits your team.
 ---
 
 Approving a logic change you cannot fully see is not MOC. It is a signature on a description.
@@ -22,7 +22,7 @@ Here is the problem that creates, and how FlowFuse snapshot comparison solves it
 
 [Management of Change](https://www.advancedtech.com/blog/what-is-moc-in-manufacturing/) requires that every change to control logic or operating procedures is reviewed, approved, and documented before it reaches production. The intent is sound: catch problems before they cause incidents.
 
-In practice, the reviewer sees a ticket. "Updated OEE calculation." "Modified threshold on line 4 flow." A threshold changed from 80 to 8. A retry block deleted. Nobody reviewing a ticket sees any of that — they read it, they sign it, and the change goes out.
+In practice, the reviewer sees a ticket. "Updated OEE calculation." "Modified threshold on line 4 flow." A threshold changed from 80 to 8. A retry block deleted. Nobody reviewing a ticket sees any of that. They read it, they sign it, and the change goes out.
 
 That is not a process failure. It is a tooling failure. Until recently, there was no practical way for a reviewer to see the exact lines of function code that changed, or which environment variable was modified, or which nodes were added or removed. So teams worked around it with descriptions, and hoped the descriptions were accurate.
 
@@ -30,13 +30,13 @@ That is where incidents trace back to.
 
 ## What Snapshot Comparison Shows
 
-A [snapshot](https://flowfuse.com/docs/user/snapshots/) in FlowFuse captures the complete state of a Node-RED instance at a point in time: every node, function block, configuration value, and environment variable. Comparing two snapshots produces a diff of everything that shifted between them.
+A [snapshot](https://flowfuse.com/docs/user/snapshots/) in FlowFuse captures the complete state of a deployed instance at a point in time: every node, function block, configuration value, and environment variable. Comparing two snapshots produces a diff of everything that shifted between them.
 
 The engineer makes their changes and creates a named snapshot. That snapshot becomes the artifact attached to the MOC request.
 
 The reviewer compares it against the snapshot currently running in production. What they see is not a description of the change. It is the change.
 
-![FlowFuse snapshot diff showing a JavaScript function node with line-by-line code changes highlighted between two deployments](./images/snapshot-function-code-change.png)
+![FlowFuse snapshot diff showing a function node with line-by-line code changes highlighted between two deployments](./images/snapshot-function-code-change.png)
 
 For configuration changes, the view shifts to a side-by-side property comparison.
 
@@ -54,6 +54,6 @@ When the reviewer has worked through the diff, they approve the named snapshot. 
 
 In FlowFuse, the reviewed artifact and the deployed artifact are the same thing. For audits, incident investigations, and regulatory compliance, that traceability is what MOC was always meant to produce.
 
-For teams on Team or Enterprise plans, FlowFuse also creates auto snapshots on every deploy — a passive safety net that captures the exact state running on each instance or device, even when a named snapshot was not part of the workflow. Up to ten auto snapshots are retained automatically, giving teams a recoverable history without any extra steps.
+For teams on Team or Enterprise plans, FlowFuse also creates auto snapshots on every deploy, a passive safety net that captures the exact state running on each instance or device, even when a named snapshot was not part of the workflow. Up to ten auto snapshots are retained automatically, giving teams a recoverable history without any extra steps.
 
 For teams managing logic across many devices, the same approved snapshot can be pushed to an entire fleet without re-entry. For teams that need a full version history, rollback capability, or deployment traceability, the [full snapshot documentation](https://flowfuse.com/docs/user/snapshots/) covers every available action.
