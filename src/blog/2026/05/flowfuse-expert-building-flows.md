@@ -57,7 +57,7 @@ From there, you can replace simulated data with live machine data, redesign the 
 
 <lite-youtube
   videoid="wzD02B7EaqM"
-  style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px; background-image: url('/blog/2026/05/images/flowfuse-expert-building-flow.jpg'); background-size: cover;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/05/images/flowfuse-expert-building-flow.jpg'); background-size: cover;"
   title="Building Industrial Apps With FlowFuse Expert">
 </lite-youtube>
 

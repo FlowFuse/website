@@ -10,7 +10,7 @@ For definitions of inbound vs. outbound lead sources and the MQL activation proc
 
 ## Setting up
 
- - Once the content has been finalized, create a PDF version and upload it to Hubspot (Library -> files).
+ - Once the content has been finalized, create a PDF version and upload it to HubSpot (Library -> files).
  - Create a new Form to capture lead information such as name, email, company and title. Add a campaign where relevant. (You can clone an existing form). Set the form submission action to link directly to the PDF or to a thank you page (thank you pages help track conversions in ad campaigns). 
  - Create a Thank you mail which includes the link to the PDf and request to "contact us" for further information/help.
  - Create a workflow to send the email upon form submission and to add the lead to a topic interest group list ([Example](https://app-eu1.hubspot.com/workflows/26586079/platform/flow/1472559590/edit).   

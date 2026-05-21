@@ -7,7 +7,7 @@ navGroup: Sales & Marketing
 
 FlowFuse organizes monthly webinars on topics about Node-RED, FlowFuse and the general IoT industry. The topics are typically educational and technical in content. The goal is to become the source of great content for learning about these topics.
 
-The FlowFuse webinar is typically scheduled during the last week of the month, but be mindfull of trade-shows and company in-person events, as webinars should not be scheduled during those weeks.
+The FlowFuse webinar is typically scheduled during the last week of the month, but be mindful of trade-shows and company in-person events, as webinars should not be scheduled during those weeks.
 
 The webinar typically starts at 17:00CET or 11amET, to allow for European and Pacific coast of North America attendees.  All webinars are recorded and the recording is made available on the FlowFuse Youtube channel.
 
@@ -25,7 +25,7 @@ The following are the steps to produce a montly webinar.
             - If the speaker is unable to commit to this timeline, or does not meet the deadline, the session should be rescheduled for the following month. In that case, an internal webinar should be planned instead.
         * A recording of a [promo video](#promo-video), linking to the referred handbook section for details on format and script.
             - Set the deadline to two weeks before the session.
-        * Slides for the presentation using [our template](/handbook/design/branding/#presentations). Create a copy and and save it in the corresponding folder before sharing it with the speaker.
+        * Slides for the presentation using [our template](/handbook/design/branding/#presentations). Create a copy and save it in the corresponding folder before sharing it with the speaker.
             - Set the deadline to the week before the session so it can be reviewed during the dry run.
         * A list of channels where they could support the event promotion, this would lead to a conversation about joint promotion.
    1. When there's a demo involved, provide the speaker with a non-trial FlowFuse account so they can work on it with an official account
@@ -37,8 +37,8 @@ The following are the steps to produce a montly webinar.
         * Under Branding, for the banner add the graphic created for the web site.
         * Under Invitations, invite the speaker as a Panelist.
             - Panelist receive a unique url to join the webinar that grants them access before the webinar starts. It is important the speaker knows to use this url.
-        * Under Email Setting ensure the following: Confirmation email sent to panelist, Reminder sent 1 hour and 1 day before.  Turn off email for follow-up since we do that inside Hubspot.
-        * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in Hubspot.
+        * Under Email Setting ensure the following: Confirmation email sent to panelist, Reminder sent 1 hour and 1 day before.  Turn off email for follow-up since we do that inside HubSpot.
+        * Under Survey, you can decide if you want to do a survey at the end of the webinar. We ask if someone wants to be contacted by FlowFuse to discuss our services. These become MQLs in HubSpot.
    1. Setup HubSpot to accept webinar registrations.
         * Create a marketing campaign for the webinar. Name it like this: *‘Webinar [year month keyword]’*, resulting in something like *Webinar 2025 11 Rev Pi* and **add every related asset to it**.
         * Create a new static segment (list) called ‘Webinar Registrations [&lt;month> Edition]
@@ -48,7 +48,7 @@ The following are the steps to produce a montly webinar.
             * Edit ‘Add Contact to Zoom Webinar’ to update the new Webinar ID. Replace the current number with the number from the webinar you just created for this month. You find the Webinar ID on the main page of the Zoom webinar. NOTE: you need to  hyphens to replace the spaces in the ID number.
             * Edit ‘Add to static list’ to change the list to the new list for this month’s webinar.
             * Remember to Save the changes.
-   1. Test the web page for the webinar to see if a new registrant gets added to the Hubspot list.
+   1. Test the web page for the webinar to see if a new registrant gets added to the HubSpot list.
    1. Page is now ready to be published.
    1. Setting up the survey on HubSpot.  
         * Under **Service > Feedback Surveys**, you'll find the latest one called *‘Webinar Survey - [&lt;month> &lt;year>]’*.  
@@ -66,7 +66,7 @@ The following are the steps to produce a montly webinar.
     * LinkedIn, Twitter, Facebook, Node-RED Forum Event category, Redit Node-RED, Node-RED slack. For socials a [promo video](#promo-video) recorded by the speaker is recommended.
     * Encourage FlowFuse employees to promote their network
     * Dedicated email to all in the community outreach list
-* Week 3 (1 week before webinar): Email to Hubspot list (Send to those you didn't open previous week's email and new leads in DB. Exclude registered leads) 
+* Week 3 (1 week before webinar): Email to HubSpot list (Send to those you didn't open previous week's email and new leads in DB. Exclude registered leads) 
     * Typically clone a previous email as the starting point.
 * Week 4: Another social media promotion and email.
     * Typically this is sent 1 day before the webinar as a reminder that its not too late to join.
@@ -111,7 +111,7 @@ And here are a couple of samples of our past promo videos:
     * Trim out the dead air waiting to start the webinar
 * Publish webinar recording
 * Social media post with link to webinar recording
-* In Hubspot send follow-up email to the registration list created in Hubspot that includes a link to the recording on YouTube.
+* In HubSpot send follow-up email to the registration list created in HubSpot that includes a link to the recording on YouTube.
 * Download the attendee list from Zoom and upload it to HubSpot. The filter that captures attendees in HubSpot isn't reliable and might cause non-attendee emails to be sent to actual attendees.
 * For those who wanted to be contacted, change Life Cycle Stage property to MQL 
 
