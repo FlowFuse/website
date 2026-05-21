@@ -142,8 +142,10 @@ resources:
                     <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED FREE</a>
                 </div>
             </div>
-            <div class="ff-image-rounded flex max-md:hidden justify-center m-auto max-w-[450px]">
-                {% image "./images/plc-landing-image.png", "PLC connected to cloud, MQTT, and dashboards via FlowFuse", [450, 900] %}
+            <div class="md:w-1/2 lg:w-5/12 flex-grow relative">
+                <div class="ff-image-rounded w-full">
+                    {% image "./images/plc-landing-image.png", "PLC connected to cloud, MQTT, and dashboards via FlowFuse", [450, 900] %}
+                </div>
             </div>
         </div>
     </div>
