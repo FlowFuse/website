@@ -31,7 +31,7 @@ That is where incidents trace back to.
 
 ## What Snapshot Comparison Shows
 
-A [snapshot](/docs/user/snapshots/) in FlowFuse captures the complete state of a deployed instance at a point in time: every node, function block, configuration value, and environment variable. Comparing two snapshots produces a diff of everything that shifted between them.
+A [snapshot](/docs/user/snapshots/) in FlowFuse captures the complete state of an instance running your IIoT flows at a point in time: every node, function block, configuration value, and environment variable. Comparing two snapshots produces a diff of everything that shifted between them.
 
 The engineer makes their changes and creates a named snapshot. That snapshot becomes the artifact attached to the MOC request.
 
