@@ -7,67 +7,58 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://flowfuse.com/#organization",
+      "@id": "{{ site.baseURL }}/#organization",
       "name": "FlowFuse",
-      "legalName": "FlowFuse Inc.",
-      "alternateName": ["Flow Fuse"],
-      "url": "https://flowfuse.com",
-      "description": "FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.",
-      "foundingDate": "2021",
+      "legalName": "{{ site.organization.legalName }}",
+      "alternateName": {{ site.organization.alternateName | dump | safe }},
+      "url": "{{ site.baseURL }}",
+      "description": "{{ site.messaging.subtitle }}",
+      "foundingDate": "{{ site.organization.foundingDate }}",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png"
+        "url": "{{ site.organization.logo }}"
       },
-      "sameAs": [
-        "https://www.linkedin.com/company/flowfuse",
-        "https://github.com/FlowFuse",
-        "https://www.youtube.com/@FlowFuseInc",
-        "https://twitter.com/FlowFuseInc",
-        "https://www.crunchbase.com/organization/flowforge",
-        "https://www.g2.com/sellers/flowfuse",
-        "https://www.facebook.com/FlowFuse",
-        "https://www.reddit.com/r/FlowFuse/"
-      ]
+      "sameAs": {{ site.organization.sameAs | dump | safe }}
     },
     {
       "@type": "WebSite",
-      "@id": "https://flowfuse.com/#website",
-      "url": "https://flowfuse.com",
+      "@id": "{{ site.baseURL }}/#website",
+      "url": "{{ site.baseURL }}",
       "name": "FlowFuse",
       "description": "{{ site.messaging.title }}",
       "publisher": {
-        "@id": "https://flowfuse.com/#organization"
+        "@id": "{{ site.baseURL }}/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://flowfuse.com{{ page.url }}#webpage",
-      "url": "https://flowfuse.com{{ page.url }}",
+      "@id": "{{ site.baseURL }}{{ page.url }}#webpage",
+      "url": "{{ site.baseURL }}{{ page.url }}",
       "name": "{{ title or site.messaging.title }}",
       "headline": "{{ title or site.messaging.title }}",
       "description": "{{ description or site.messaging.subtitle }}",
       "isPartOf": {
-        "@id": "https://flowfuse.com/#website"
+        "@id": "{{ site.baseURL }}/#website"
       },
       {% if image %}
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "{% if image.startsWith('http') %}{{ image }}{% else %}https://flowfuse.com{{ image }}{% endif %}"
+        "url": "{% if image.startsWith('http') %}{{ image }}{% else %}{{ site.baseURL }}{{ image }}{% endif %}"
       },
       {% endif %}
       "publisher": {
-        "@id": "https://flowfuse.com/#organization"
+        "@id": "{{ site.baseURL }}/#organization"
       }
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://flowfuse.com/#software",
+      "@id": "{{ site.baseURL }}/#software",
       "name": "FlowFuse",
-      "url": "https://flowfuse.com",
+      "url": "{{ site.baseURL }}",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Cross-platform, Linux, Docker, Kubernetes",
       "publisher": {
-        "@id": "https://flowfuse.com/#organization"
+        "@id": "{{ site.baseURL }}/#organization"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -83,41 +74,39 @@
     ,
     {
       "@type": "BlogPosting",
-      "@id": "https://flowfuse.com{{ page.url }}#blogposting",
+      "@id": "{{ site.baseURL }}{{ page.url }}#blogposting",
       "mainEntityOfPage": {
-        "@id": "https://flowfuse.com{{ page.url }}#webpage"
+        "@id": "{{ site.baseURL }}{{ page.url }}#webpage"
       },
       "headline": "{{ title }}",
       "description": "{{ description }}",
       {% if image %}
-      "image": "{% if image.startsWith('http') %}{{ image }}{% else %}https://flowfuse.com{{ image }}{% endif %}",
+      "image": "{% if image.startsWith('http') %}{{ image }}{% else %}{{ site.baseURL }}{{ image }}{% endif %}",
       {% endif %}
       "datePublished": "{{ date | dateToRfc3339 }}",
       "dateModified": "{{ (lastUpdated or date) | dateToRfc3339 }}",
       {% if author %}
       "author": {
         "@type": "Person",
-        "@id": "https://flowfuse.com/about/#{{ authorSlug }}",
+        "@id": "{{ site.baseURL }}/about/#{{ authorSlug }}",
         "name": "{{ author.name }}",
         {% if author.title %}"jobTitle": "{{ author.title }}",{% endif %}
-        "url": "https://flowfuse.com/about/#{{ authorSlug }}",
-        {% if author.headshot %}"image": "https://flowfuse.com/images/team/headshot-{{ author.headshot | replace('.png','') | replace('.jpg','') | replace('.jpeg','') }}.png",{% endif %}
+        "url": "{{ site.baseURL }}/about/#{{ authorSlug }}",
+        {% if author.headshot %}"image": "{{ site.baseURL }}/images/team/headshot-{{ author.headshot | replace('.png','') | replace('.jpg','') | replace('.jpeg','') }}.png",{% endif %}
         {% if author.bio %}"description": {{ author.bio | dump | safe }},{% endif %}
         {% if author.knowsAbout %}"knowsAbout": {{ author.knowsAbout | dump | safe }},{% endif %}
-        "worksFor": { "@id": "https://flowfuse.com/#organization" },
-        "sameAs": [
-          {% set socials = [] %}
-          {% if author.linkedin %}{% set socials = (socials.push("https://www.linkedin.com/in/" + author.linkedin), socials) %}{% endif %}
-          {% if author.github %}{% set socials = (socials.push("https://github.com/" + author.github), socials) %}{% endif %}
-          {% if author.twitter %}{% set socials = (socials.push("https://twitter.com/" + author.twitter), socials) %}{% endif %}
-          {% for url in socials %}"{{ url }}"{% if not loop.last %},{% endif %}{% endfor %}
-        ]
+        "worksFor": { "@id": "{{ site.baseURL }}/#organization" },
+        {% set socials = [] %}
+        {% if author.linkedin %}{% set socials = (socials.push("https://www.linkedin.com/in/" + author.linkedin), socials) %}{% endif %}
+        {% if author.github %}{% set socials = (socials.push("https://github.com/" + author.github), socials) %}{% endif %}
+        {% if author.twitter %}{% set socials = (socials.push("https://twitter.com/" + author.twitter), socials) %}{% endif %}
+        "sameAs": {{ socials | dump | safe }}
       },
       {% else %}
-      "author": { "@id": "https://flowfuse.com/#organization" },
+      "author": { "@id": "{{ site.baseURL }}/#organization" },
       {% endif %}
       "publisher": {
-        "@id": "https://flowfuse.com/#organization"
+        "@id": "{{ site.baseURL }}/#organization"
       }
     }
     {% endif %}
@@ -125,7 +114,7 @@
     ,
     {
       "@type": "FAQPage",
-      "@id": "https://flowfuse.com{{ page.url }}#faq",
+      "@id": "{{ site.baseURL }}{{ page.url }}#faq",
       "mainEntity": [
         {% for item in meta.faq %}
         {
@@ -144,7 +133,7 @@
     ,
     {
       "@type": "HowTo",
-      "@id": "https://flowfuse.com{{ page.url }}#howto",
+      "@id": "{{ site.baseURL }}{{ page.url }}#howto",
       "name": "{{ meta.howto.name or title }}",
       "description": "{{ meta.howto.description or description }}",
       {% if meta.howto.totalTime %}"totalTime": "{{ meta.howto.totalTime }}",{% endif %}
@@ -162,7 +151,7 @@
           "position": {{ loop.index }},
           "name": "{{ s.name }}",
           "text": "{{ s.text }}"
-          {% if s.url %},"url": "https://flowfuse.com{{ page.url }}#{{ s.url }}"{% endif %}
+          {% if s.url %},"url": "{{ site.baseURL }}{{ page.url }}#{{ s.url }}"{% endif %}
         }{% if not loop.last %},{% endif %}
         {% endfor %}
       ]

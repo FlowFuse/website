@@ -13,11 +13,10 @@
     },
     "organization": {
         "legalName": "FlowFuse Inc.",
-        "alternateName": ["Flow Fuse"],
+        "alternateName": ["FlowForge", "Flow Fuse"],
         "foundingDate": "2021",
-        "description": "FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.",
-        "founders": ["nick-oleary", "zeger-jan-van-de-weg"],
-        "logo": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png",
+        "founders": ["nick-oleary"],
+        "logo": "https://flowfuse.com/handbook/images/logos/ff-logo--wordmark--light.png",
         "sameAs": [
             "https://www.linkedin.com/company/flowfuse",
             "https://github.com/FlowFuse",

@@ -2,9 +2,5 @@
     "id": "flowfuse",
     "name": "FlowFuse",
     "img": "/images/flowfuse-icon.png",
-    "url": "https://flowfuse.com",
-    "logo": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png",
-    "description": "FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.",
-    "founded": "2021",
-    "headquarters": "San Francisco, California, United States"
+    "url": "https://flowfuse.com"
 }
