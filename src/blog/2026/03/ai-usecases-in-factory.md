@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/ai-use-case.png
 tags:
 - flowfuse
+- ai
 cta:
   title: "Start With One Use Case. Build From There."
   description: "Whether it's predictive maintenance, quality inspection, or energy optimization — FlowFuse connects your OT data to AI models without a multi-year transformation."
