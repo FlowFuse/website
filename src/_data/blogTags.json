@@ -2,27 +2,27 @@
     "label": "All",
     "value": "posts"
 }, {
+    "label": "How-To",
+    "value": "how-to"
+}, {
     "label": "Node-RED",
     "value": "node-red"
-},  {
-    "label": "FlowFuse",
-    "value": "flowfuse"
+}, {
+    "label": "AI",
+    "value": "ai"
 }, {
     "label": "UNS",
     "value": "uns"
 }, {
-    "label": "How-To",
-    "value": "how-to"
+    "label": "Dashboard",
+    "value": "dashboard"
 }, {
-    "label": "Community",
-    "value": "community"
+    "label": "FlowFuse",
+    "value": "flowfuse"
 }, {
     "label": "Releases",
     "value": "releases"
 }, {
     "label": "News",
     "value": "news"
-}, {
-    "label": "Dashboard",
-    "value": "dashboard"
 }]

@@ -61,7 +61,7 @@ eleventyComputed:
                     <div class="w-[42px]">
                         {% image "./images/node-red-hexagon.png", "Node-RED Logo", [42] %}
                     </div>
-                    <h4 class="mt-3"><span class="inline-block text-red-700">Node-RED</span></h4>
+                    <h2 class="mt-3 text-[1.4rem] leading-[1.9rem]"><span class="inline-block text-red-700">Node-RED</span></h2>
                 </div>
                 <p class="md:w-[72%] text-justify"><span class="font-medium">We are deeply committed to the success of the Node-RED open
                         source project</span>. FlowFuse dedicates significant resources to improving the core technology of the project and fostering the growth of the Node-RED community. </p>
@@ -71,7 +71,7 @@ eleventyComputed:
                     <div class="w-[42px]">
                         {% image "./images/pictograms/opensource_red.png", "Open Source Logo", [42] %}
                     </div>
-                    <h4 class="mt-2"><span class="inline-block text-red-700">Open Source</span></h4>
+                    <h2 class="mt-2 text-[1.4rem] leading-[1.9rem]"><span class="inline-block text-red-700">Open Source</span></h2>
                 </div>
                 <div class="md:w-[72%] text-justify">
                     <p>We believe strongly that <span class="font-medium">Open Source is the heart of everything we
@@ -108,35 +108,35 @@ eleventyComputed:
                     <div class="socials">
                         {% if member.email %}
                         <span class="">
-                            <a href="mailto:{{ member.email }}">
+                            <a href="mailto:{{ member.email }}" aria-label="Email {{ member.name }}">
                                 {% include "components/mail.njk" %}
                             </a>
                         </span>
                         {% endif %}
                         {% if member.twitter %}
                         <span class="">
-                            <a class="" target="_blank" href="https://twitter.com/{{ member.twitter }}">
+                            <a class="" target="_blank" href="https://twitter.com/{{ member.twitter }}" aria-label="{{ member.name }} on Twitter">
                                 {% include "components/twitter.njk" %}
                             </a>
                         </span>
                         {% endif %}
                         {% if member.github %}
                         <span class="">
-                            <a class="" target="_blank" href="https://github.com/{{ member.github }}">
+                            <a class="" target="_blank" href="https://github.com/{{ member.github }}" aria-label="{{ member.name }} on GitHub">
                                 {% include "components/github.njk" %}
                             </a>
                         </span>
                         {% endif %}
                         {% if member.linkedin %}
                         <span class="">
-                            <a class="" target="_blank" href="https://www.linkedin.com/in/{{ member.linkedin }}">
+                            <a class="" target="_blank" href="https://www.linkedin.com/in/{{ member.linkedin }}" aria-label="{{ member.name }} on LinkedIn">
                                 {% include "components/linkedin.njk" %}
                             </a>
                         </span>
                         {% endif %}
                         {% if member.blog %}
                         <span class="">
-                            <a class="" target="_blank" href="{{ member.blog }}">
+                            <a class="" target="_blank" href="{{ member.blog }}" aria-label="{{ member.name }}'s blog">
                                 {% include "components/rss.njk" %}
                             </a>
                         </span>
@@ -154,7 +154,7 @@ eleventyComputed:
     <div class="container about-values m-auto max-w-xl md:max-w-4xl px-0 sm:px-6 md:px-0">
         <div>
             <h2 class="mb-10 text-center">Corporate Values</h2>
-            <p class="text-justify">As a remote-only company, FlowFuse seeks and fosters talent from Europe, North America, and Asia. Our <a href="/handbook/company/values/">corporate values</a> encourage our team to continuously iterate using constructive candor to prioritize customer empathy.</p>
+            <p class="text-justify">As a remote-only company, FlowFuse seeks and fosters talent from Europe, North America, and Asia. Our <a href="/handbook/company/values/" class="underline">corporate values</a> encourage our team to continuously iterate using constructive candor to prioritize customer empathy.</p>
         </div>
         {% include "values.njk" %}
     </div>
@@ -191,9 +191,9 @@ eleventyComputed:
     <div class="container m-auto text-center max-w-4xl">
         <div>
             <h2 class="mb-4">Working at FlowFuse</h2>
-            <p>Here are just some of the benefits enjoyed by our employees. We are always looking to improve and expand these too. You can read more about them in our <a href="/handbook/peopleops/">Handbook.</a></p>
+            <p>Here are just some of the benefits enjoyed by our employees. We are always looking to improve and expand these too. You can read more about them in our <a href="/handbook/peopleops/" class="underline">Handbook.</a></p>
         </div>
         {% include "benefits.njk" %}
-        <p class="mt-8">Interested in joining FlowFuse? Check out our <a href="{{ site.jobBoard }}">Jobs</a> page for our current openings.</p>
+        <p class="mt-8">Interested in joining FlowFuse? Check out our <a href="{{ site.jobBoard }}" class="underline">Jobs</a> page for our current openings.</p>
     </div>
 </div>

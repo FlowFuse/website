@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/last-mile-problem-ai.png
 tags:
 - flowfuse
+- ai
 cta:
   type: contact
   title: Give Your AI the Infrastructure to Actually Run

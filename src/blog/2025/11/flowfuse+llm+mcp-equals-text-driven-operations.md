@@ -10,6 +10,7 @@ keywords: MCP, Node-RED MCP, LLM
 tags:
   - flowfuse
   - node-red
+  - ai
 ---
 
 In industrial operations it's all about getting more out of the CAPEX already

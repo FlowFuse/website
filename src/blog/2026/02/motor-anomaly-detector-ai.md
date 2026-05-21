@@ -7,6 +7,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/motor-anomaly-detection-ai.png
 tags:
 - flowfuse
+- ai
 cta:
   type: demo
   title: See How FlowFuse Catches Faults Before They Fail

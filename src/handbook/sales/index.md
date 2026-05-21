@@ -48,6 +48,24 @@ Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/
  - [Sales Regions](./regions.md)
  - [Customer Success](./customer-success.md)
 
+### Sales tech stack
+
+FlowFuse utilizes a streamlined and integrated tech stack to manage the entire sales process, from initial research to closed-won tracking. Our foundation is built on HubSpot as our primary Customer Relationship Management (CRM) platform, supplemented by specialized tools for enrichment, intelligence, and meeting capture.
+
+Below is the mapping of our core sales capabilities to the specific tools we use:
+
+#### Capability to Tool Mapping
+
+| Capability | Tool | Primary Use Case |
+| --- | --- | --- |
+| **CRM (Source of Truth)** | **HubSpot** | Managing all customer relationships, pipeline data, and contact records. |
+| **Emails, Calls & Sequences** | **HubSpot** | Executing outreach, standardizing email templates, and running automated cadences. |
+| **Subscription Tracking** | **HubSpot** | Monitoring customer lifecycles, upgrades, renewals, and ongoing subscriptions. |
+| **Call Recording** | **Fathom** | Recording, transcribing, and summarizing customer calls and meetings. |
+| **Data Enrichment** | **Clay** | Automatically pulling in missing contact or company data to build robust, targeted lead lists. |
+| Account Research & Planning | Claude | Synthesizing account data, conducting deep-dive strategic research, and planning personalized outreach. |
+| Account-based Outreach | LinkedIn Sales Navigator | Research and outreach to prospects on LinkedIn. |
+
 ### Sales Processes
 
  - [Edge Connect Process](./edge-connect-process.md)

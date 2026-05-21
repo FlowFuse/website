@@ -12,6 +12,7 @@ tags:
     - community
     - how-to
     - chatgpt
+    - ai
 ---
 
 Recently we [posted a demo of ChatGPT integration in a Node-RED function node](https://www.linkedin.com/posts/flowforge_chatgpt-with-node-red-function-nodes-activity-7052725869684953088-2yOA?utm_source=share&utm_medium=member_desktop) 
