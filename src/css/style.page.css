@@ -352,7 +352,7 @@
 }
 
 .cloudText, .selfHostedText {
-    color: theme(colors.indigo.400);
+    color: theme(colors.indigo.600);
 }
 
 .cloudText.active, .selfHostedText.active {
@@ -402,7 +402,8 @@
         min-width: 60px;
     }
 
-    .about-values .company-value h5 {
+    .about-values .company-value h5,
+    .about-values .company-value h3 {
         color: theme(colors.indigo.700);
         font-weight: 500;
         margin-top: 0;
@@ -529,7 +530,7 @@
 }
 
 .member-info .title .role {
-    color: theme(colors.indigo.400);
+    color: theme(colors.indigo.600);
     font-weight: 300;
     font-size: 1rem;
     margin-top: 8px;
