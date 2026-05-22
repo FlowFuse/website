@@ -54,16 +54,16 @@ hubspot:
 ---
 <!--Hero Content-->
 <div class="w-full px-6 raster-gradient-bg red-blob">
-    <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
+    <div class="sm:max-w-screen-lg mt-6 md:mt-12 mx-auto">
         <div class="container m-auto text-left max-w-screen-lg">
             <div class="mx-auto">
-                <h1 class="font-medium m-auto text-6xl sm:text-7xl text-center text-indigo-700 mt-28 max-w-4xl">
+                <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-indigo-700 mt-12 md:mt-28 max-w-4xl">
                     {{ site.messaging.tagLine | safe }}
                 </h1>
-                <p class="mt-20 text-center text-gray-600 md:text-xl m-auto max-w-4xl">
+                <p class="mt-12 text-center text-gray-600 md:text-xl m-auto max-w-4xl">
                     {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
                 </p>
-                <div class="flex flex-col my-20">
+                <div class="flex flex-col my-12">
                     <div class="m-auto flex gap-4 items-center justify-center flex-row">
                         <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hero'})">
                             <span class="text-base uppercase items-center">
@@ -79,11 +79,16 @@ hubspot:
                         </a>
                     </div>
                 </div>
+                <div class="w-full flex-grow relative bg-gradient-to-tl from-red-100 to-indigo-100 p-4 md:p-8 m-auto rounded-xl">
+                    <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full">
+                        {% image "./images/home/flowfuse-home-ui.png", "FlowFuse Home UI", [308] %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Social Proof -->
-    <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl mb-10">
+    <div class="sm:max-w-screen-lg m-auto max-w-5xl mb-10">
         <div class="w-full text-center min-h-14 flex justify-center items-center mt-16 bg-radial-indigo">
             <h2 class="text-gray-600 text-lg font-semibold">Trusted by our customers</h2>
         </div>
