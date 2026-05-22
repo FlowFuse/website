@@ -214,7 +214,7 @@ A single Node-RED instance can simultaneously communicate with Siemens S7 PLCs, 
 
 FlowFuse adds the enterprise infrastructure: centralized management across hundreds of edge devices, version control and rollback, role-based access, audit logging, and security at every layer. Build one flow that reads from Siemens PLCs and deploy it to every facility. When something changes, update once and push the change everywhere. Edge instances run locally even if network connections drop.
 
-FlowFuse doesn't replace your PLCs. It connects them. That Rockwell controller keeps running its proven logic. The Siemens system continues its scan cycle. What changes is the integration layer that lets isolated systems finally communicate.
+[FlowFuse doesn't replace your PLCs. It connects them.](/landing/plc/) That Rockwell controller keeps running its proven logic. The Siemens system continues its scan cycle. What changes is the integration layer that lets isolated systems finally communicate.
 
 A [large US manufacturing company](/customer-stories/manufacturing-digital-transformation/) with over 10,000 employees uses FlowFuse to manage thousands of Node-RED instances deployed across global facilities. These instances collect data from sensors, PLCs, and cameras on production lines, enabling them to transition from paper-based operations to real-time data visibility. A team of five developers—former manufacturing engineers, not software specialists—built hundreds of applications using Node-RED's visual programming. FlowFuse now manages deployment to thousands of remote devices and maintains multiple versions across all instances, solving what had become an unmanageable tracking challenge as they scaled.
 

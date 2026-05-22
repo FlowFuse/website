@@ -618,6 +618,8 @@ With the foundation laid in this documentation, you can customize the applicatio
 
 In the next documentation of the OPC UA series, we will establish how to create an OPC UA Client application in Node-RED.
 
+OPC UA is one of several industrial protocols FlowFuse uses to connect PLCs to the modern stack. For EtherNet/IP, Siemens S7, Modbus, MQTT, and more, see the [FlowFuse PLC integration overview](/landing/plc/).
+
 Source code for flow used in this documentation - 
 
 {% renderFlow %}

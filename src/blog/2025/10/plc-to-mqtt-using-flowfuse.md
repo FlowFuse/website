@@ -195,3 +195,5 @@ Manufacturers typically see substantial cost reduction in the first year, with i
 ## Get Started
 
 Connect your first PLC today. [Sign up for FlowFuse](https://app.flowfuse.com/), install the Device Agent on your edge hardware, and have data flowing to MQTT in under an hour. The platform handles the complexity—you focus on turning factory data into insights.
+
+MQTT is one of several ways FlowFuse connects PLCs to the modern industrial stack. For a full view of supported protocols — OPC UA, EtherNet/IP, Siemens S7, Modbus, and more — see the [FlowFuse PLC integration overview](/landing/plc/).
