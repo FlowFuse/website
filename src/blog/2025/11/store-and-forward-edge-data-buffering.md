@@ -346,3 +346,5 @@ This pattern solves a common problem in industrial environments: maintaining com
 The system you've built is production-ready as-is, but you can extend it based on your requirements—add monitoring for buffer capacity, implement data validation rules, or configure forwarding to multiple destinations. The core mechanism remains the same.
 
 If you want to get the flow template that you can use directly and modify according to your needs, check out our [latest blueprint](/blueprints/getting-started/store-and-forward/).
+
+Store-and-forward is just one part of a complete PLC integration. For the full picture — connecting Siemens, Allen-Bradley, Omron, and other PLCs to MQTT, cloud, and enterprise systems — see the [FlowFuse PLC integration overview](/landing/plc/).

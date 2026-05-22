@@ -128,23 +128,25 @@ resources:
     <!-- ============================================================
          HERO
     ============================================================ -->
-    <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8  px-6">
-        <div class="flex flex-col md:flex-row md:my-16 items-center justify-between mx-auto text-center md:text-left max-w-screen-lg gap-8">
-            <div class="my-auto max-md:mx-auto md:w-1/2 lg:w-5/12 max-w-md">
-                <h1 class="w-full mt-0 px-6 md:px-0 m-auto font-medium">
-                    Connect Your <span class="text-indigo-600 inline-block">PLCs</span> to the Modern Industrial Stack
-                </h1>
-                <p class="mb-10">
-                    FlowFuse bridges Programmable Logic Controllers — Siemens, Allen-Bradley, Omron, and more — to MQTT, OPC UA, cloud platforms, and enterprise systems. No expensive gateways, no custom code.
-                </p>
-                <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
-                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'plc'})">TALK TO AN EXPERT</a>
-                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED FREE</a>
+    <div class="w-full px-6">
+        <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
+            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+                <div class="m-auto md:w-3/5">
+                    <h1 class="w-full mt-0 m-auto font-medium">
+                        Connect Your <span class="text-indigo-600 inline-block">PLCs</span> to the Modern Industrial Stack
+                    </h1>
+                    <p class="mb-10">
+                        FlowFuse bridges Programmable Logic Controllers — Siemens, Allen-Bradley, Omron, and more — to MQTT, OPC UA, cloud platforms, and enterprise systems. No expensive gateways, no custom code.
+                    </p>
+                    <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
+                        <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'plc'})">TALK TO AN EXPERT</a>
+                        <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED FREE</a>
+                    </div>
                 </div>
-            </div>
-            <div class="md:w-1/2 lg:w-5/12 flex-grow relative">
-                <div class="ff-image-rounded w-full">
-                    {% image "./images/plc-landing-image.png", "PLC connected to cloud, MQTT, and dashboards via FlowFuse", [450, 900] %}
+                <div class="md:w-2/5 flex-grow relative">
+                    <div class="ff-image-rounded w-full">
+                        {% image "./images/plc-landing-image.png", "PLC connected to cloud, MQTT, and dashboards via FlowFuse", [496] %}
+                    </div>
                 </div>
             </div>
         </div>
