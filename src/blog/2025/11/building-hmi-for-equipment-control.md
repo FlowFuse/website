@@ -260,4 +260,6 @@ As your system grows, organize controls across multiple dashboard pages for diff
 
 And if you need to deploy the solution across many production lines, FlowFuse's DevOps features help you manage the scale. Build your HMI once, then deploy it across multiple edge devices and push updates centrally without visiting each location.
 
+For a full view of the PLC brands and protocols FlowFuse supports — Siemens, Allen-Bradley, Omron, OPC UA, Modbus, and more — see [how FlowFuse connects any PLC to the modern industrial stack](/landing/plc/).
+
 [Book a demo](/book-demo/) to see how FlowFuse can help your organization connect, collect, transform, and visualize industrial data with our low-code and AI-powered editor—without the hassle of infrastructure management, deployment complexities, or security concerns at scale.

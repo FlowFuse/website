@@ -239,6 +239,6 @@ Check out our [Getting Started with Dashboard guide](/blog/2024/03/dashboard-get
 
 ### Beyond Allen-Bradley
 
-FlowFuse isn't limited to EtherNet/IP. Connect Siemens PLCs via S7, use OPC UA for vendor-neutral communication, integrate Modbus devices, or connect IoT sensors with MQTT. Mix protocols as needed—your factory floor probably isn't single-vendor anyway.
+FlowFuse isn't limited to EtherNet/IP. Connect Siemens PLCs via S7, use OPC UA for vendor-neutral communication, integrate Modbus devices, or connect IoT sensors with MQTT. Mix protocols as needed—your factory floor probably isn't single-vendor anyway. For a full view of every supported PLC brand and protocol, see the [FlowFuse PLC integration overview](/landing/plc/).
 
 [Book a demo](/book-demo/) to see how FlowFuse connects your entire operation.

@@ -106,3 +106,5 @@ If you are deploying TCP: isolate Modbus devices on a dedicated VLAN or network 
 If you are maintaining a hybrid gateway architecture, resist the urge to rationalize it away. It is doing work.
 
 The two protocols make different guarantees, fail differently, and require different diagnostic skills when something goes wrong. Understanding that distinction before the system is designed costs nothing. Understanding it for the first time during an incident costs considerably more.
+
+For a practical guide to connecting Modbus PLCs — alongside OPC UA, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
