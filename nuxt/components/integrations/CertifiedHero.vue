@@ -8,21 +8,21 @@ defineEmits(['toggle'])
 </script>
 
 <template>
-    <section class="certified-hero">
-        <div class="container m-auto md:max-w-6xl px-6">
-            <div class="certified-hero--card bg-indigo-50 rounded-lg border-[3px] border-indigo-200 drop-shadow-xl p-6 md:p-10 grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+    <section class="certified-hero mb-8">
+        <div class="container m-auto md:max-w-6xl">
+            <div class="certified-hero--card rounded-lg border-[3px] border-indigo-200 p-6 md:p-10 grid md:grid-cols-12 gap-8 md:gap-10 items-start">
                 <div class="md:col-span-5">
                     <span class="certified-eyebrow">
                         <IntegrationsCertifiedIcon />
                         <span>FlowFuse Certified</span>
                     </span>
-                    <h2 class="certified-hero--title text-balance">
-                        Certified Nodes, backed by their authors and supported long-term.
+                    <h2 class="certified-hero--title text-balance mb-8">
+                        Certified Nodes, backed by their authors and supported long-term
                     </h2>
                     <p class="certified-hero--lede">
                         Choosing a Node-RED node for production raises questions you can't always answer from a README. Is it actively maintained? Is it secure? Will the maintainer still be around in two years? Certified Nodes answer those questions.
                     </p>
-                    <div class="certified-hero--actions">
+                    <div class="certified-hero--actions mt-8">
                         <button
                             id="certified-pill-toggle"
                             type="button"
@@ -36,7 +36,7 @@ defineEmits(['toggle'])
                         </button>
                         <!-- TODO: repoint to a proper FlowFuse-owned Certified Nodes explainer page when one exists. A year-old blog post is not the long-term destination. -->
                         <a
-                            class="certified-hero--link inline-flex items-center gap-1"
+                            class="certified-hero--link inline-flex items-center gap-1 uppercase"
                             href="/blog/2025/07/certified-nodes-v2/"
                         >
                             Learn more

@@ -338,3 +338,5 @@ You now have a working ADS connection between FlowFuse and TwinCAT, reading vari
 This guide covered the core nodes to get you connected and working. The `node-red-contrib-ads-client` package includes several other nodes worth exploring on your own, and future articles will cover more advanced use cases in depth.
 
 With FlowFuse you can take this further. Build real-time dashboards that visualize live PLC data, connect TwinCAT to other systems like databases, ERP, or cloud platforms, set up alerts when variables go out of range, and create operator interfaces that let your team interact with the machine from anywhere. All of it built on the same connection you just configured, without writing a single line of custom integration code.
+
+Beckhoff TwinCAT ADS is one of many PLCs FlowFuse connects to the modern industrial stack. For Siemens, Allen-Bradley, Omron, Modbus, OPC UA, and more, see the [FlowFuse PLC integration overview](/landing/plc/).
