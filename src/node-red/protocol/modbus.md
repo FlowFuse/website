@@ -140,3 +140,5 @@ Final flow is given below:
 {% endrenderFlow %}
 
 The way that we set up this example worked well for the small sample size and quickly getting content on the dashboard, but as you work through your own needs, think about the data structures that will be the most conducive to efficiently working with your data.
+
+Modbus is one of several industrial protocols FlowFuse supports for connecting PLCs to MQTT, cloud platforms, and enterprise systems. See the [FlowFuse PLC integration overview](/landing/plc/) for OPC UA, EtherNet/IP, Siemens S7, and more.

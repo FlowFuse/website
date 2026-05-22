@@ -85,7 +85,6 @@
 .certified-hero--title {
     font-size: 24px;
     line-height: 1.25;
-    font-weight: 700;
     color: theme(colors.gray.900);
     margin: 0 0 8px 0;
 }
@@ -142,9 +141,7 @@
     width: 36px;
     height: 36px;
     border-radius: 9999px;
-    background-color: theme(colors.white);
-    border: 1px solid theme(colors.indigo.200);
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    background-color: theme(colors.indigo.50);
     color: theme(colors.indigo.600);
 }
 
@@ -155,7 +152,6 @@
 
 .certified-pillar--title {
     font-size: 16px;
-    font-weight: 700;
     color: theme(colors.gray.900);
     margin: 0 0 4px 0;
 }
