@@ -56,15 +56,15 @@ Once code is merged, please close any related branches in order to keep the repo
 
 ### Pull Requests
 
-PRs, when opened, should have at least one reviewer assigned, and a consequent review approved, before any merge takes place. If a PR is opened for review/discussion purposes, this PR should be set to `draft` state.
+When opening a Pull Request (PR), assign at least one reviewer; an approval is required before merging. If the PR is intended for review or discussion only, set it to `draft` state.
 
-When merging a PR, you should choose the "Squash and merge" option. This is the default approach for merging pull requests.
+The PR title must follow the [Conventional Commits](https://www.conventionalcommits.org/) pattern (e.g. `feat: add user login`, `fix(api): handle empty payload`, `docs: update contributing guide`).
 
-When conducting a PR review, if you are the last (or only) reviewer and all reviews (including your own) are approvals, unless there is a comment from the author stating otherwise, you are free to conduct the merge. Otherwise, leave the merge to the author of the PR, or a future reviewer.
+Merge using the "Squash and merge" option — this is our default approach.
 
-For a comprehensive review of the Pull Request, utilize the designated FlowFuse pre-staging environment. As of the composition of this document, the pre-staging verification is only available for the primary [FlowFuse NPM package](https://github.com/FlowFuse/flowfuse).
+When reviewing, if you are the last (or only) reviewer and all reviews (including your own) are approvals, you are free to conduct the merge — unless the author has stated otherwise. In that case, leave the merge to the author or a future reviewer.
 
-Pre-staging environment is created for each Pull Request created within `FlowFuse/flowfuse` repo which includes changes in the source code. Read more in the [Test Changes in Staging](#test-changes-in-staging) section.
+For a comprehensive review, utilize the designated FlowFuse pre-staging environment. A pre-staging environment is created for each PR opened within the `FlowFuse/flowfuse` repo that includes source code changes. Read more in the [Test Changes in Staging](#test-changes-in-staging) section.
 
 ## Conducting Code Reviews
 
