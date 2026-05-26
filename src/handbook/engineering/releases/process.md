@@ -187,6 +187,25 @@ as needed in coordination with the CTO/Senior Engineer.
 
 All release activity should be highlighted in #dept-engineering so the team is aware.
 
+#### `release-please` governed repositories
+
+A repository's release is managed by the [`release-please`](https://github.com/googleapis/release-please) if the `.github/workflows/release-please.yaml` GitHub Actions workflow exists in the repository.
+The release process is semi-automated in these repositories, with `release-please` automatically maintaining a release PR that updates the version and changelog when changes are merged to `main`. 
+The release manager's role is to review and merge the release PR. Once the release PR is merged, `release-please` will automatically create a Git tag and GitHub Release, and trigger the publish workflow to publish a package/build containers etc.
+
+For repositories where `release-please` is configured, the release manager should:
+
+1. Open the repository on GitHub and locate the release PR automatically maintained by `release-please` (titled e.g. `chore: Release X.Y.Z`)
+   * If the release PR does not exist, there is nothing to release
+1. Review the proposed version bump and the generated `CHANGELOG.md` entries; make sure the entries reflect the changes that should ship
+1. Approve and merge the release PR
+1. Confirm that the matching Git tag and GitHub Release have been created
+1. Verify the publish workflow, triggered automatically after the release PR is merged, completes successfully
+
+#### Manual release process
+
+For repositories that do not yet have `release-please` enabled, follow the manual steps below:
+
 1. Check that all changes have been merged to main
 1. Update the `package.json` version number
 1. `cd` into the directory of the package you want to release
