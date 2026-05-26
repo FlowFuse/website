@@ -55,8 +55,13 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
     layout used by the migrated Nuxt pages, so a global `extends: ['docus']`
     was rejected to keep the hybrid build green. See agent-discoveries in
     CLAUDE.md.
+  - **11ty no longer builds these 166 pages**: `.eleventy.js` reads the generated
+    `nuxt/handbook.migrated-sources.json` manifest and ignores them, so 11ty
+    builds only the 3 bespoke stragglers. The handbook section is genuinely off
+    11ty except those 3.
   - Verified: `nuxt generate` green, `nuxt-link-checker` 0 errors / 0 warnings,
-    route diff 0 dropped (Nuxt build is a superset of the 1069-route baseline).
+    route diff 0 dropped (Nuxt build is a superset of the 1069-route baseline);
+    handbook pages confirmed Nuxt-rendered (`id="__nuxt"`) in the output.
 
 ## Remaining scope (large; multi-session)
 
