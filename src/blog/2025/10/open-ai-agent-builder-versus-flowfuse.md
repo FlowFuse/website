@@ -9,6 +9,7 @@ image: /blog/2025/10/images/open-ai-agent-builder-versus-flowfuse.png
 tags:
   - flowfuse
   - posts
+  - ai
 ---
 
 AI is moving fast, and with it, the tools we use to build intelligent applications.

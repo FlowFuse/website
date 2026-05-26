@@ -232,4 +232,6 @@ FlowFuse makes this process straightforward by combining Node-RED’s flexibilit
 
 And while CSV is a reliable starting point, FlowFuse also integrates seamlessly with modern databases and historians like InfluxDB, TimescaleDB, and MySQL. Even better, FlowFuse Cloud includes a built-in PostgreSQL service and an AI Query Node that lets you explore your data conversationally — turning raw logs into actionable insights.
 
+For more on how FlowFuse connects PLCs across OPC UA, Siemens S7, EtherNet/IP, and Modbus to collect and route industrial data, see the [FlowFuse PLC integration overview](/landing/plc/).
+
 > You can [talk to our team](/book-demo/), they’ll walk you through a live demo showing how FlowFuse helps you connect, collect, transform, and visualize your industrial data reliably and intelligently.

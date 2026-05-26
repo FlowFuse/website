@@ -8,7 +8,7 @@ meta:
 For our front-end we test on two fronts:
 
 - [Unit Tests](#unit-tests) - Focusses on individual functional testing. Each function should be tested in complete isolation
-- [E2E Integration Tests](#e2e-integration-tests) - Driven by automated testing framework, [Cypress](https://www.cypress.io/), this tests our front-end in it's entirety, including button clicks, navigations and API calls.
+- [E2E Integration Tests](#e2e-integration-tests) - Driven by automated testing framework, [Cypress](https://www.cypress.io/), this tests our front-end in its entirety, including button clicks, navigations and API calls.
 
 ## Unit Tests
 

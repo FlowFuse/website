@@ -221,3 +221,5 @@ A few things worth doing before you go to production:
 **Monitor connection state.** Add a status node in Node-RED connected to your mqtt out node. If the connection drops, you'll want to know immediately — not when someone notices missing data an hour later.
 
 Industrial data pipelines aren't complex. They just have a lot of small steps that have to be right. You've done the hard part.
+
+For more on how FlowFuse connects PLCs and edge devices — via OPC UA, EtherNet/IP, Siemens S7, and Modbus — to cloud and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

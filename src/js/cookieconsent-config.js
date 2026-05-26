@@ -204,12 +204,24 @@ CookieConsent.run({
                     },
                     {
                         name: /^warmly_/
+                    },
+                    {
+                        name: /^_lc2_/
                     }
                 ],
                 reloadPage: false
             }
         },
-        ads: {}
+        ads: {
+            autoClear: {
+                cookies: [
+                    {
+                        name: /^(_li_dcdm_c|_li_ss|li_sugr|lidc|bcookie|bscookie|UserMatchHistory)$/
+                    }
+                ],
+                reloadPage: false
+            }
+        }
     },
     
     language: {
@@ -248,7 +260,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "We use tools including Google Analytics, HubSpot tracking, PostHog, and warmly.ai to understand how visitors interact with our website. This category enables HubSpot tracking, meeting embeds, and the chat widget.",
+                            description: "We use tools including Google Analytics, HubSpot tracking, PostHog, warmly.ai, and Swan AI to understand how visitors interact with our website. This category enables HubSpot tracking, meeting embeds, and the chat widget.",
                             linkedCategory: "analytics"
                         },
                         {

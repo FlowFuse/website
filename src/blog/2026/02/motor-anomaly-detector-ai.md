@@ -7,6 +7,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/motor-anomaly-detection-ai.png
 tags:
 - flowfuse
+- ai
 cta:
   type: demo
   title: See How FlowFuse Catches Faults Before They Fail
@@ -23,7 +24,7 @@ This guide walks through building exactly that: a custom AI model that learns th
 
 <lite-youtube
   videoid="Fkv2x3Kv0lY"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/02/images/anomaly-detection.png'); background-size: cover; background-position: center;"
   title="Motor Anomaly Detection System Built Using FlowFuse">
 </lite-youtube>
 

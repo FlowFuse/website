@@ -58,7 +58,7 @@ from the previous paragraph.
 2. this is another item in the list
 ```
 
-To prevent reordering and keeping count, Markdown allows you to use non-sequencial numbers:
+To prevent reordering and keeping count, Markdown allows you to use non-sequential numbers:
 
 ```
 1. Item one
@@ -117,7 +117,7 @@ For `inline` quoting, use single backticks:
 For `inline` quoting, use single backticks.
 ```
 
-For block quotes, use tripple backticks:
+For block quotes, use triple backticks:
 
 ```
 this will write the content as if it is code

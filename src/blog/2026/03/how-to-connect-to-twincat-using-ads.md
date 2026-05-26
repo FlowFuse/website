@@ -172,7 +172,7 @@ Click the inject button. You should see the variable value appear in the debug p
 
 <lite-youtube
   videoid="wTRmgIyWLyk"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/03/images/ads-read.png'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/03/images/ads-read.png'); background-size: cover; background-position: center;"
   title="Reading TwinCAT PLC Variables with FlowFuse">
 </lite-youtube>
 
@@ -197,7 +197,7 @@ The debug node will now receive a message every time the variable value changes 
 
 <lite-youtube
   videoid="JYrzRXCHb9Q"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/03/images/ads-subscribe-image.png'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/03/images/ads-subscribe-image.png'); background-size: cover; background-position: center;"
   title="Subscribing to TwinCAT PLC Variable Changes with FlowFuse">
 </lite-youtube>
 
@@ -227,7 +227,7 @@ To verify the write worked, add a read value node for the same variable and chec
 
 <lite-youtube
   videoid="f0GtEp6OA_M"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/03/images/ads-write-image.png'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/03/images/ads-write-image.png'); background-size: cover; background-position: center;"
   title="Writing to TwinCAT PLC Variables with FlowFuse">
 </lite-youtube>
 
@@ -338,3 +338,5 @@ You now have a working ADS connection between FlowFuse and TwinCAT, reading vari
 This guide covered the core nodes to get you connected and working. The `node-red-contrib-ads-client` package includes several other nodes worth exploring on your own, and future articles will cover more advanced use cases in depth.
 
 With FlowFuse you can take this further. Build real-time dashboards that visualize live PLC data, connect TwinCAT to other systems like databases, ERP, or cloud platforms, set up alerts when variables go out of range, and create operator interfaces that let your team interact with the machine from anywhere. All of it built on the same connection you just configured, without writing a single line of custom integration code.
+
+Beckhoff TwinCAT ADS is one of many PLCs FlowFuse connects to the modern industrial stack. For Siemens, Allen-Bradley, Omron, Modbus, OPC UA, and more, see the [FlowFuse PLC integration overview](/landing/plc/).
