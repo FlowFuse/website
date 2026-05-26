@@ -43,6 +43,23 @@ When using AI internally:
 
 Apply the same data protection, security, and review standards to internal AI usage as to AI functionality shipped within the product.
 
+### Approved AI Tools
+
+FlowFuse provides the following AI tools to team members:
+
+- **Claude** (via Claude Team) — general-purpose AI assistant for writing, analysis, coding support, and research.
+- **Gemini** (via Google Workspace) — AI features built into Gmail, Docs, Meet, and other Workspace apps.
+
+AI features built into other approved tools (for example, summarization, drafting assistance, or transcription) are covered by the existing approval of the underlying tool and the principles in this policy.
+
+Other AI tools may be approved on a case-by-case basis through the vendor approval process. The full list of approved vendors and software is maintained in Vanta and via approved Vendor & Software Checklist issues in the admin repo on GitHub.
+
+### Requesting a New AI Tool
+
+To request approval for a new AI tool, open a [Vendor & Software Checklist](https://github.com/FlowFuse/admin/issues/new?template=vendor-process.md) issue in the admin repo on GitHub. The request is reviewed for security, data handling, and budget before approval.
+
+To request access to an already-approved AI tool, open an [Access / Permission Request](https://github.com/FlowFuse/admin/issues/new?template=access-request.md) issue in the admin repo on GitHub.
+
 ## Customer Data Usage
 
 Customer data may be used with AI systems only under the following conditions:
