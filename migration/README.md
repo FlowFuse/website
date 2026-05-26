@@ -14,9 +14,13 @@ route set must be a **superset** of the 11ty route set — zero dropped URLs.
   (maps `foo/index.html` → `/foo/`, root `index.html` → `/`).
 - `route-diff.mjs` — diffs an old vs new route list; exits non-zero if any
   11ty route is missing from the Nuxt build.
-- `verify-routes.sh` — end-to-end: builds the 11ty baseline, builds the Nuxt
-  hybrid output, extracts both route sets, writes the diff.
-- `routes-11ty.txt` — committed snapshot of the legacy 11ty route set.
+- `capture-baseline.sh` — run ONCE on the pristine pre-migration tree to record
+  the frozen `routes-11ty.txt` baseline.
+- `verify-routes.sh` — builds the Nuxt hybrid output and diffs it against the
+  frozen `routes-11ty.txt`.
+- `routes-11ty.txt` — **frozen** snapshot of the legacy 11ty route set, captured
+  before migration. Immutable: it is the reference every Nuxt build is checked
+  against, so a section migrated off 11ty still fails the diff if its URLs move.
 - `routes-nuxt.txt` — committed snapshot of the Nuxt build route set.
 - `route-diff.txt` — committed proof: the diff result (must show 0 dropped).
 

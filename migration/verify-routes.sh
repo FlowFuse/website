@@ -1,29 +1,29 @@
 #!/usr/bin/env bash
 # Route-parity verification for the 11ty -> Nuxt migration.
 #
-# Proves the migrated Nuxt build serves a SUPERSET of the legacy 11ty routes,
-# i.e. no URL that previously returned 200 is dropped or renamed.
+# Proves the migrated Nuxt build serves a SUPERSET of the FROZEN legacy 11ty
+# routes (migration/routes-11ty.txt), i.e. no URL that previously returned 200
+# is dropped or renamed -- even for sections that 11ty no longer builds because
+# they were migrated to native Nuxt / Docus.
 #
-# Steps:
-#   1. Build the legacy 11ty site in isolation -> _site_baseline  (the "before")
-#   2. Build the hybrid/Nuxt output -> nuxt/.output/public         (the "after")
-#   3. Extract both route sets and diff them.
+# The baseline is frozen on purpose; capture it once with capture-baseline.sh.
 #
 # Run from the repo root:  bash migration/verify-routes.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-echo "==> [1/4] Building legacy 11ty baseline -> _site_baseline"
-SKIP_IMAGES=true ELEVENTY_RUN_MODE=build CONTEXT=production \
-    npx @11ty/eleventy --output=./_site_baseline --quiet
+if [ ! -s migration/routes-11ty.txt ]; then
+    echo "ERROR: migration/routes-11ty.txt (frozen baseline) is missing."
+    echo "Capture it once on the pre-migration tree: bash migration/capture-baseline.sh"
+    exit 1
+fi
 
-echo "==> [2/4] Building Nuxt hybrid output -> nuxt/.output/public"
+echo "==> [1/3] Building Nuxt hybrid output -> nuxt/.output/public"
 npm run build:nuxt:skip-images
 
-echo "==> [3/4] Extracting route sets"
-node migration/extract-routes.mjs _site_baseline        > migration/routes-11ty.txt
-node migration/extract-routes.mjs nuxt/.output/public   > migration/routes-nuxt.txt
+echo "==> [2/3] Extracting Nuxt route set"
+node migration/extract-routes.mjs nuxt/.output/public > migration/routes-nuxt.txt
 
-echo "==> [4/4] Diffing (Nuxt must be a superset of 11ty)"
+echo "==> [3/3] Diffing against frozen 11ty baseline (Nuxt must be a superset)"
 node migration/route-diff.mjs migration/routes-11ty.txt migration/routes-nuxt.txt \
     | tee migration/route-diff.txt
