@@ -58,7 +58,10 @@ Once code is merged, please close any related branches in order to keep the repo
 
 When opening a Pull Request (PR), assign at least one reviewer; an approval is required before merging. If the PR is intended for review or discussion only, set it to `draft` state.
 
-The PR title must follow the [Conventional Commits](https://www.conventionalcommits.org/) pattern (e.g. `feat: add user login`, `fix(api): handle empty payload`, `docs: update contributing guide`).
+The PR title must follow the [Conventional Commits](https://www.conventionalcommits.org/) pattern: 
+- `feat: add user login`
+- `fix(api): handle empty payload`
+- `docs: update contributing guide`
 
 Merge using the "Squash and merge" option — this is our default approach.
 
