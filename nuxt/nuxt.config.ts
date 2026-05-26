@@ -37,6 +37,14 @@ export default defineNuxtConfig({
         }
     },
 
+    // This sprite is behind a *.sprites.app proxy; Vite blocks foreign Host
+    // headers (DNS-rebinding protection) unless the hostname is allowlisted.
+    vite: {
+        server: {
+            allowedHosts: ['tasks-website-nuxt4-bmswx.sprites.app']
+        }
+    },
+
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts
     // to allow per-route exclusions as pages are migrated.
 })
