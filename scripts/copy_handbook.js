@@ -23,6 +23,9 @@ const SRC = path.resolve(__dirname, '../src/handbook')
 const CONTENT = path.resolve(__dirname, '../nuxt/content/handbook')
 const PUBLIC_MEDIA = path.resolve(__dirname, '../nuxt/public/handbook-media')
 const ROUTES_FILE = path.resolve(__dirname, '../nuxt/handbook.routes.json')
+const REPO_ROOT = path.resolve(__dirname, '..')
+// Source files Nuxt now owns; .eleventy.js reads this to stop 11ty rebuilding them.
+const MIGRATED_SOURCES_FILE = path.resolve(__dirname, '../nuxt/handbook.migrated-sources.json')
 
 // Map an absolute src/handbook/*.md file path to the route 11ty served.
 function fileToRoute(absFile) {
@@ -120,6 +123,12 @@ for (const absFile of mdFiles) {
 routes.sort()
 fs.mkdirSync(path.dirname(ROUTES_FILE), { recursive: true })
 fs.writeFileSync(ROUTES_FILE, JSON.stringify(routes, null, 2) + '\n')
+
+// Record the repo-relative source files Nuxt now owns so 11ty can ignore them.
+const migratedSources = mdFiles
+    .map((f) => path.relative(REPO_ROOT, f).split(path.sep).join('/'))
+    .sort()
+fs.writeFileSync(MIGRATED_SOURCES_FILE, JSON.stringify(migratedSources, null, 2) + '\n')
 
 console.log(`copy_handbook: ${mdFiles.length} markdown pages -> nuxt/content/handbook`)
 console.log(`copy_handbook: ${copiedMedia.size} images -> nuxt/public/handbook-media`)

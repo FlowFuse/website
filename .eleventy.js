@@ -49,6 +49,20 @@ console.info(`[11ty] Image build profile: ${IMAGE_BUILD_PROFILE}`)
 module.exports = function(eleventyConfig) {
     let searchIndexItems = [];
 
+    // Stop 11ty rebuilding handbook pages that have been migrated to native Nuxt
+    // Content (see scripts/copy_handbook.js). The generated manifest lists the
+    // exact source files Nuxt now serves; the bespoke .njk handbook pages and
+    // any unsafe-URL pages left on 11ty are NOT in it and keep building here.
+    try {
+        const migrated = require('./nuxt/handbook.migrated-sources.json')
+        for (const file of migrated) {
+            eleventyConfig.ignores.add(file)
+        }
+        console.info(`[11ty] Ignoring ${migrated.length} handbook page(s) now served by Nuxt`)
+    } catch (e) {
+        // Manifest absent (e.g. standalone 11ty build) — build the handbook as before.
+    }
+
     function extractMetaTag(html, selector) {
         const regex = new RegExp(`<meta[^>]*${selector}[^>]*content=(["'])(.*?)\\1[^>]*>`, "i");
         const match = html.match(regex);

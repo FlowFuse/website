@@ -12,6 +12,7 @@ src/blueprints/*
 nuxt/content/handbook
 nuxt/public/handbook-media
 nuxt/handbook.routes.json
+nuxt/handbook.migrated-sources.json
 
 # Local development config
 .vscode/
