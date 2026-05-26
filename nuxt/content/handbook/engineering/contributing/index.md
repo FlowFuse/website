@@ -63,7 +63,7 @@ The PR title must follow the [Conventional Commits](https://www.conventionalcomm
 - `fix(api): handle empty payload`
 - `docs: update contributing guide`
 
-Merge using the "Squash and merge" option — this is our default approach.
+Merge using the `Squash and merge` option — this is our default approach.
 
 When reviewing, if you are the last (or only) reviewer and all reviews (including your own) are approvals, you are free to conduct the merge — unless the author has stated otherwise. In that case, leave the merge to the author or a future reviewer.
 
