@@ -14,13 +14,13 @@ cta:
     description: "Talk to us about how FlowFuse adds SSO, RBAC, audit logging, and governed deployments to the custom industrial applications most NIS2 assessments flag."
 ---
 
-The [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive) transposition deadline of 17 October 2024 has passed. National laws are now in force across most of the EU, and the [European Commission is pressuring the remaining member states](https://digital-strategy.ec.europa.eu/en/news/commission-calls-19-member-states-fully-transpose-nis2-directive) to finalise their implementations. Fines are enforceable. Important entities (the tier most manufacturers fall into) face up to €7 million or 1.4% of global turnover. Essential entities face up to €10 million or 2%, with personal liability for senior management on top.
+For two decades, cybersecurity in European manufacturing was a quiet conversation. IT secured the office. OT ran the plant floor. Engineers shipped what they needed — dashboards on shared logins, edge scripts on a laptop under a desk. Not secure, but productive, and nobody was forcing the question.
 
-Yet most mid-market manufacturers we talk to are still stuck on the same question: *where do we actually start?*
+That era is over. The [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive) is in force across the EU. Mid-market manufacturers are now squarely in scope. Under [Article 34](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), fines reach €10 million or 2% of global turnover for essential entities, and €7 million or 1.4% for important entities — whichever is higher. Article 20 adds personal liability for senior management on top.
 
-The directive itself does not help. Read [Article 21](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) and you will find ten categories of cybersecurity measures you must take. Risk analysis, incident handling, supply chain security, access control, and so on. All described in legal language with no implementation detail. Every consultant has a different opinion. Every vendor claims to be the answer. Meanwhile the auditor's calendar invite is already in your inbox.
+So manufacturers open [Article 21](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), find ten categories of measures in legal language with no implementation detail, and stall on the only question that matters: *where do we actually start?*
 
-There is a way through this. It is not new, it is not proprietary, and it is already the de facto answer that regulators, auditors, and major OT vendors have converged on. It is just not well known outside specialist circles.
+This article is about the standard that answers it. **NIS2 tells you what to do. IEC 62443 tells you how.**
 
 ## NIS2 is deliberately vague, and that is the problem
 
@@ -36,15 +36,15 @@ That gap is where most compliance projects stall. You cannot engineer compliance
 
 For NIS2 purposes, three parts of the family matter most.
 
-**[IEC 62443-2-1](https://webstore.iec.ch/publication/64686)** defines the requirements for a cybersecurity management system at the asset owner: policies, roles, risk assessment, training, incident response. This is the organisational layer. It maps directly to the governance and risk management requirements in NIS2 Article 21.
+**[IEC 62443-2-1](https://webstore.iec.ch/en/publication/62883)** defines the requirements for a cybersecurity management system at the asset owner: policies, roles, risk assessment, training, incident response. This is the organisational layer. It maps directly to the governance and risk management requirements in NIS2 Article 21.
 
-**[IEC 62443-3-3](https://webstore.iec.ch/publication/7033)** specifies the technical system requirements: identification and authentication, use control, system integrity, data confidentiality, restricted data flow, timely response to events, and resource availability. These are the seven Foundational Requirements (FR1 to FR7) that every industrial control system needs to implement. Each requirement has a Security Level (SL1 to SL4). [SL2 has become the default target for most manufacturing environments](https://www.dnv.com/cyber/insights/articles/leverage-iec-62443-for-eu-nis2-directive-compliance/).
+**[IEC 62443-3-3](https://webstore.iec.ch/publication/7033)** specifies the technical system requirements: identification and authentication, use control, system integrity, data confidentiality, restricted data flow, timely response to events, and resource availability. These are the seven Foundational Requirements (FR1 to FR7) that every industrial control system needs to implement. Each requirement has a Security Level (SL1 to SL4). [SL2 has become the default target for most manufacturing environments](https://www.isasecure.org/hubfs/The-Case-for-ISA-IEC-62443-Security-Level-2-as-a-Minimum-FINAL.pdf).
 
 **[IEC 62443-4-1 and 4-2](https://www.isa.org/standards-and-publications/isa-standards/isa-iec-62443-series-of-standards)** cover the secure development lifecycle for product suppliers and the technical security requirements for components. If you build PLCs, HMIs, sensors, or industrial software, your customers will increasingly demand these in purchase orders. They are also what the [EU Cyber Resilience Act](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act) effectively requires.
 
 The mapping between NIS2's ten Article 21 categories and 62443's controls is direct and well documented. Access control under NIS2 maps to FR1 and FR2 in 62443-3-3. Incident handling maps to FR6 and the management system requirements in 2-1. Supply chain security maps to 4-1 certification of your suppliers.
 
-This is not a coincidence. [ENISA](https://www.enisa.europa.eu/topics/nis-directive), national regulators, and major industrial vendors have explicitly aligned on 62443 as the technical reference. When an auditor asks how you are implementing NIS2, "we are aligned to 62443-3-3 at SL2" is an answer they will recognise.
+This is not a coincidence. [ENISA](https://www.enisa.europa.eu/nis2), national regulators, and major industrial vendors have explicitly aligned on 62443 as the technical reference. When an auditor asks how you are implementing NIS2, "we are aligned to 62443-3-3 at SL2" is an answer they will recognise.
 
 Be honest about the cost. A full certification effort is a multi-month engagement with an accredited [ISASecure](https://www.isasecure.org/) certification body, and costs scale with system complexity. High five to six figures is typical for a meaningful scope. Most mid-market manufacturers do not need to certify. They need to *align*. That is a much shorter path, and it is where the real compliance value lives.
 
@@ -52,7 +52,7 @@ Be honest about the cost. A full certification effort is a multi-month engagemen
 
 If 62443 is the answer, why is not every manufacturer using it? Three honest reasons.
 
-**The standard is intimidating to navigate.** There are 13+ documents in the family, written in formal standards language. It is genuinely hard to know which parts apply to you without a guide. Reading the index alone takes an afternoon.
+**The standard is intimidating to navigate.** There are more than a dozen documents in the family, written in formal standards language. It is genuinely hard to know which parts apply to you without a guide. Reading the index alone takes an afternoon.
 
 **OT cybersecurity expertise is scarce at mid-sized plants.** The people who understand both PLCs *and* identity management are rare and expensive. Most plant IT teams were built to keep the ERP running, not to harden an industrial control system against a nation-state actor.
 
