@@ -189,9 +189,11 @@ All release activity should be highlighted in #dept-engineering so the team is a
 
 #### `release-please` governed repositories
 
+{% note %}
 A repository's release is managed by the [`release-please`](https://github.com/googleapis/release-please) if the `.github/workflows/release-please.yaml` GitHub Actions workflow exists in the repository.
+{% endnote %}
 
-The release process is semi-automated in these repositories, with `release-please` automatically maintaining a release PR that updates the version and changelog when changes are merged to `main`. 
+The release process is semi-automated in these repositories, with the `release-please` automatically maintaining a release PR that updates the version and changelog when changes are merged to `main`. 
 
 The release manager's role is to review and merge the release PR. Once the release PR is merged, `release-please` will automatically create a Git tag and GitHub Release, and trigger the publish workflow to publish a package/build containers etc.
 
