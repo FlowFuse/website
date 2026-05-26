@@ -63,6 +63,22 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
     route diff 0 dropped (Nuxt build is a superset of the 1069-route baseline);
     handbook pages confirmed Nuxt-rendered (`id="__nuxt"`) in the output.
 
+- **Changelog** (`/changelog/...`, 180 routes) — fully migrated to native Nuxt
+  and **removed from the 11ty build**:
+  - `scripts/copy_changelog.js` generates `nuxt/content/changelog` + a combined
+    date-desc card index (170 entries + 9 blog posts tagged `changelog`) that
+    matches 11ty's `collections.changelog`, so the paginated index reproduces
+    the exact pages (`/changelog/` + `/changelog/1/`…`/changelog/9/`, 19/page).
+  - `nuxt/pages/changelog/[...slug].vue` serves entries + the paginated index;
+    author/date/issues come from the generated index (one source of truth, also
+    used by the feed) since `@nuxt/content` doesn't surface custom frontmatter.
+  - `nuxt/server/routes/changelog/index.xml.get.ts` reproduces the Atom feed.
+  - `.eleventy.js` ignores the 170 entries + `index.njk` + `feed-changelog.njk`.
+  - Deferred (documented fidelity gaps, not URL/route issues): Algolia search box,
+    feature-catalog tier badges, and the HubSpot subscribe form on entries; the
+    index shows entry descriptions rather than full inline content.
+  - Verified: build green, link-checker 0/0, route diff 0 dropped.
+
 ## Remaining scope (large; multi-session)
 
 1. **Handbook polish (optional).** Core migration is DONE (see above). Remaining
