@@ -1,5 +1,6 @@
 .DS_Store
 _site
+_site_baseline
 node_modules
 src/handbook/media
 src/docs/*
