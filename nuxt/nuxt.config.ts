@@ -2,11 +2,13 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
-// Handbook routes are generated from src/handbook by scripts/copy_handbook.js.
-const handbookRoutesFile = fileURLToPath(new URL('./handbook.routes.json', import.meta.url))
-const handbookRoutes: string[] = existsSync(handbookRoutesFile)
-    ? JSON.parse(readFileSync(handbookRoutesFile, 'utf-8'))
-    : []
+// Routes generated from the legacy 11ty source by the scripts/copy_*.js steps.
+const readRoutes = (name: string): string[] => {
+    const f = fileURLToPath(new URL(`./${name}`, import.meta.url))
+    return existsSync(f) ? JSON.parse(readFileSync(f, 'utf-8')) : []
+}
+const handbookRoutes = readRoutes('handbook.routes.json')
+const changelogRoutes = readRoutes('changelog.routes.json')
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -59,7 +61,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy', ...handbookRoutes],
+            routes: ['/terms', '/privacy-policy', ...handbookRoutes, ...changelogRoutes],
             crawlLinks: false
         }
     },

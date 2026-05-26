@@ -11,6 +11,12 @@ export default defineContentConfig({
         handbook: defineCollection({
             type: 'page',
             source: 'handbook/**/*.md'
+        }),
+        // Changelog entries are generated from src/changelog by
+        // scripts/copy_changelog.js (relative links/images rewritten).
+        changelog: defineCollection({
+            type: 'page',
+            source: 'changelog/**/*.md'
         })
     }
 })

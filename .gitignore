@@ -13,6 +13,12 @@ nuxt/content/handbook
 nuxt/public/handbook-media
 nuxt/handbook.routes.json
 nuxt/handbook.migrated-sources.json
+nuxt/content/changelog
+nuxt/public/changelog-media
+nuxt/changelog.routes.json
+nuxt/changelog.index.json
+nuxt/changelog.team.json
+nuxt/changelog.migrated-sources.json
 
 # Local development config
 .vscode/
