@@ -1,0 +1,12 @@
+# Route diff
+# 11ty routes:  1069
+# Nuxt routes:  1072
+# Dropped:      0
+# Added:        3
+
+## ADDED (new in Nuxt, not in 11ty)
++ /200
++ /privacy-policy/
++ /terms/
+
+OK: Nuxt build is a superset of 11ty routes (zero dropped URLs).
