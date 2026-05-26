@@ -8,6 +8,11 @@ src/docs/*
 src/blueprints/*
 !src/blueprints/*.njk
 
+# Generated from src/handbook by scripts/copy_handbook.js
+nuxt/content/handbook
+nuxt/public/handbook-media
+nuxt/handbook.routes.json
+
 # Local development config
 .vscode/
 
