@@ -58,6 +58,7 @@ In this session, Kristopher will cover:
 
 - A practical framework for auditing your own deployment's bus factor — and the specific design patterns that reduce it  
 
+- The four architectural decisions that kept the deployment running from nine time zones away — and how to apply them to your own stack this week
 ---
 
 ## Who This Is For
