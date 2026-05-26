@@ -197,7 +197,7 @@ The release manager's role is to review and merge the release PR. Once the relea
 
 For repositories where the `release-please` is configured, the release manager should:
 
-1. Open the repository on GitHub and locate the release PR automatically maintained by `release-please` (titled e.g. `chore: Release X.Y.Z`)
+1. Open the repository on GitHub and locate the release pull request (titled e.g. `chore: Release X.Y.Z`)
    * If the release PR does not exist, there is nothing to release
 1. Review the proposed version bump and the generated `CHANGELOG.md` entries; make sure the entries reflect the changes that should ship
 1. Approve and merge the release PR
