@@ -1,6 +1,5 @@
 ---
-layout: page
-nohero: true
+layout: default
 meta:
   title: "Renewable Energy Operations Platform | FlowFuse"
   description: "Connect solar, wind, and storage assets in one place. FlowFuse helps your team monitor, automate, and optimize every site in real time, without rewriting your entire stack."
@@ -10,11 +9,10 @@ hero:
   primaryCtaLink: "/book-demo/"
   secondaryCta: "CONTACT US"
   secondaryCtaLink: "/contact-us/"
-  image: "/landing/images/edge-hero.png"
+  image: "/images/industries/renewable-energies.png"
   imageAlt: "Aerial view of a wind and solar farm with data overlay showing real-time monitoring metrics."
+  subCta: "See a sample renewable dashboard"
 problems:
-  title: "The Problem Today"
-  items:
     - "Fragmented assets and legacy systems make it hard to see what is happening across all your sites."
     - "Compliance reporting and grid constraints add complexity and manual work to already stretched teams."
     - "Every new turbine, inverter, or battery vendor brings yet another integration problem."
@@ -31,7 +29,7 @@ outcomes:
   title: "Key Outcomes"
   subtitle: "for Renewable Operators"
   items:
-    - svgPath: "components/icons/document-chart-bar.svg"
+    - svgPath: "components/icons/bolt.svg"
       title: "Cut manual reporting effort"
       description: "and speed up regulatory/compliance reporting cycles."
     - svgPath: "components/icons/bell-alert.svg"
@@ -43,13 +41,13 @@ outcomes:
 useCases:
   title: "Use Cases"
   items:
-    - image: "/landing/images/use-cases-plant.png"
+    - image: "/images/industries/renewable-turbine.png"
       imageAlt: "Wind turbines in an open field at sunset."
       description: "<strong>Fleet-wide turbine performance monitoring</strong> with anomaly detection on vibration/temperature."
-    - image: "/landing/images/hero-plant.png"
+    - image: "/images/industries/renewable-solar.png"
       imageAlt: "Large solar farm with rows of panels stretching across the landscape."
       description: "<strong>Solar farm production vs forecast dashboards</strong> for trading and grid teams."
-    - image: "/landing/images/hero-enterprise.png"
+    - image: "src/images/industries/renewable-incident-workflow.png"
       imageAlt: "Dashboard interface showing automated incident tracking and maintenance ticketing."
       description: "<strong>Automated incident workflows:</strong> alarms send context-rich tickets to maintenance tools."
 cta:
@@ -59,50 +57,64 @@ cta:
   buttonLink: "/book-demo/"
 ---
 
-<div class="nohero w-full">
+<div class="w-full">
 
     <!-- ============================================================
          HERO
     ============================================================ -->
     <div class="w-full px-6">
-        <div class="w-full py-12 md:pt-6">
+        <div class="w-full py-10 sm:py-12 md:pt-6">
             <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
-                <div class="m-auto md:w-3/5">
-                    <h1 class="w-full mt-0 m-auto font-medium">
-                        Scale <span class="text-indigo-600">renewable operations</span> without vendor lock-in
+                <div class="m-auto md:w-1/2">
+                    <h1 class="w-full mt-0 m-auto font-medium sm:text-5xl">
+                        <span class="text-red-600">Scale renewable operations</span> without vendor lock-in
                     </h1>
                     <p class="mb-10 text-gray-600">{{ hero.description }}</p>
-                    <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:items-center md:justify-start">
-                        <a class="ff-btn ff-btn--primary min-h-[40px] uppercase"
-                            href="{{ hero.primaryCtaLink }}"
-                            onclick="capture('cta-book-demo', {'position': 'hero', 'page': 'renewables'})">
-                            {{ hero.primaryCta }}
-                        </a>
-                        <a class="flex items-center gap-1 text-indigo-600 font-medium hover:text-indigo-800 hover:underline uppercase"
-                            href="{{ hero.secondaryCtaLink }}"
-                            onclick="capture('cta-contact', {'position': 'hero', 'page': 'renewables'})">
-                            {{ hero.secondaryCta }}
-                            {% include "components/icons/arrow-right.svg" %}
-                        </a>
+                    <div class="md:mt-3 gap-2 hidden md:flex md:flex-col md:items-start md:justify-start">
+                        <div class="flex gap-4 items-center flex-row">
+                            <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
+                                href="{{ hero.primaryCtaLink }}"
+                                onclick="capture('cta-book-demo', {'position': 'hero', 'page': 'renewables'})">
+                                <span class="text-base uppercase items-center">
+                                    {{ hero.primaryCta }}
+                                </span>
+                            </a>
+                            <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                                href="{{ hero.secondaryCtaLink }}"
+                                onclick="capture('cta-contact', {'position': 'hero', 'page': 'renewables'})">
+                                <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                {{ hero.secondaryCta }}
+                                {% include "components/icons/arrow-right.svg" %}
+                                </span>
+                            </a>
+                        </div>
+                        <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
                     </div>
                 </div>
-                <div class="md:w-2/5 flex-grow relative">
+                <div class="md:w-1/2 flex-grow relative">
                     <div class="ff-image-cover ff-image-rounded w-full h-full">
                         {% image ["./", hero.image] | join, hero.imageAlt, [496] %}
                     </div>
                 </div>
-                <div class="flex flex-col sm:flex-row md:hidden gap-3 mt-8 max-sm:max-w-xs max-sm:mx-auto">
-                    <a class="ff-btn ff-btn--primary min-h-[40px] uppercase w-full sm:w-auto"
-                        href="{{ hero.primaryCtaLink }}"
-                        onclick="capture('cta-book-demo', {'position': 'hero-mobile', 'page': 'renewables'})">
-                        {{ hero.primaryCta }}
-                    </a>
-                    <a class="flex items-center justify-center gap-1 text-indigo-600 font-medium hover:text-indigo-800 hover:underline uppercase"
-                        href="{{ hero.secondaryCtaLink }}"
-                        onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': 'renewables'})">
-                        {{ hero.secondaryCta }}
-                        {% include "components/icons/arrow-right.svg" %}
-                    </a>
+                <div class="flex flex-col md:hidden gap-3 mt-8 items-center">
+                    <div class="flex flex-row gap-4 items-center justify-center flex-wrap">
+                        <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
+                            href="{{ hero.primaryCtaLink }}"
+                            onclick="capture('cta-book-demo', {'position': 'hero-mobile', 'page': 'renewables'})">
+                            <span class="text-base uppercase items-center">
+                                {{ hero.primaryCta }}
+                            </span>
+                        </a>
+                        <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                            href="{{ hero.secondaryCtaLink }}"
+                            onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': 'renewables'})">
+                            <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                {{ hero.secondaryCta }}
+                                {% include "components/icons/arrow-right.svg" %}
+                            </span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
                 </div>
             </div>
         </div>
@@ -111,44 +123,24 @@ cta:
     <!-- ============================================================
          THE PROBLEM TODAY
     ============================================================ -->
-    <div class="w-full py-16 px-6 bg-gray-50">
+    <div class="w-full py-16 sm:py-24 px-6 bg-white">
         <div class="max-w-screen-lg mx-auto">
             <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-2/5 flex justify-center">
-                    <div class="w-64 h-64 bg-white rounded-2xl border border-indigo-100 drop-shadow-md flex items-center justify-center">
-                        <div class="grid grid-cols-2 gap-6 p-6">
-                            <div class="bg-indigo-50 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-indigo-400">
-                                {% include "components/icons/squares-2x2.svg" %}
-                            </div>
-                            <div class="bg-indigo-50 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-indigo-400">
-                                {% include "components/icons/adjustments-horizontal.svg" %}
-                            </div>
-                            <div class="bg-indigo-50 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-indigo-400">
-                                {% include "components/icons/adjustments-vertical.svg" %}
-                            </div>
-                            <div class="bg-red-50 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-red-400">
-                                {% include "components/icons/mail.svg" %}
-                            </div>
-                            <div class="col-span-2 flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-red-100 text-red-500 flex items-center justify-center">
-                                    {% include "components/icons/exclamation-triangle.svg" %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-3/5">
-                    <h2 class="max-md:text-center"><span class="text-indigo-600">The Problem</span> Today</h2>
-                    <ul class="mt-6 flex flex-col gap-4 list-none p-0 m-0">
-                        {% for item in problems.items %}
-                        <li class="flex items-start gap-3">
-                            <span class="flex-shrink-0 w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-500">
-                                <span class="w-5 h-5">{% include "components/icons/x-circle.svg" %}</span>
+                <div class="md:w-1/2">
+                    <h2 class="max-md:text-center"><span class="text-red-600">The Problem</span> Today</h2>
+                    <ul class="mt-6 flex flex-col gap-6 list-none p-0 m-0">
+                        {% for problem in problems %}
+                        <li class="flex items-start gap-3 items-center">
+                            <span class="flex-shrink-0 w-12 h-12 bg-red-300 rounded-full flex items-center justify-center text-white">
+                                <span class="w-6 h-6">{% include "components/icons/x-mark.svg" %}</span>
                             </span>
-                            <p class="text-gray-700 m-0 pt-2">{{ item }}</p>
+                            <p class="text-gray-700 m-0 pt-2">{{ problem }}</p>
                         </li>
                         {% endfor %}
                     </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:order-first [&>svg]:max-w-full [&>svg]:h-auto">
+                    {% include "images/industries/renewable-problem.svg" %}
                 </div>
             </div>
         </div>
@@ -157,52 +149,24 @@ cta:
     <!-- ============================================================
          WHAT YOU GET WITH FLOWFUSE
     ============================================================ -->
-    <div class="w-full bg-indigo-700 py-20 px-6">
+    <div class="w-full bg-[radial-gradient(ellipse_120%_120%_at_50%_120%,theme(colors.indigo.600)_0%,theme(colors.indigo.900)_100%)] py-16 sm:py-24 px-6">
         <div class="max-w-screen-lg mx-auto">
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2">
                     <h2 class="text-white max-md:text-center">{{ solution.title }}</h2>
                     <ul class="mt-8 flex flex-col gap-6 list-none p-0 m-0">
                         {% for benefit in solution.benefits %}
-                        <li class="flex items-start gap-4">
-                            <span class="flex-shrink-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white">
-                                <span class="w-5 h-5">{% include benefit.svgPath %}</span>
+                        <li class="flex items-start gap-6 items-center">
+                            <span class="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
+                                <span class="w-6 h-6">{% include benefit.svgPath %}</span>
                             </span>
                             <p class="text-indigo-100 m-0 font-light">{{ benefit.text | safe }}</p>
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="grid grid-cols-3 gap-4 w-full max-w-xs">
-                        <div class="col-span-3 flex justify-center gap-4">
-                            <div class="bg-indigo-600 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-white border border-indigo-500">
-                                {% include "components/icons/bolt.svg" %}
-                            </div>
-                            <div class="bg-indigo-600 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-white border border-indigo-500">
-                                {% include "components/icons/sparkles.svg" %}
-                            </div>
-                            <div class="bg-indigo-600 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-white border border-indigo-500">
-                                {% include "components/icons/squares-plus.svg" %}
-                            </div>
-                        </div>
-                        <div class="col-span-3 flex justify-center">
-                            <div class="bg-red-500 rounded-xl p-3 flex items-center justify-center w-14 h-14">
-                                {% include "components/icons/flowfuse.svg" %}
-                            </div>
-                        </div>
-                        <div class="col-span-3 flex justify-center gap-4">
-                            <div class="bg-indigo-600 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-white border border-indigo-500">
-                                {% include "components/icons/cloud.svg" %}
-                            </div>
-                            <div class="bg-indigo-600 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-white border border-indigo-500">
-                                {% include "components/icons/chart.svg" %}
-                            </div>
-                            <div class="bg-indigo-600 rounded-xl p-4 flex items-center justify-center w-16 h-16 text-white border border-indigo-500">
-                                {% include "components/icons/mail.svg" %}
-                            </div>
-                        </div>
-                    </div>
+                <div class="md:w-1/2 flex justify-center [&>svg]:max-w-full [&>svg]:h-auto">
+                    {% include "images/industries/renewable-solution.svg" %}
                 </div>
             </div>
         </div>
@@ -211,20 +175,17 @@ cta:
     <!-- ============================================================
          KEY OUTCOMES
     ============================================================ -->
-    <div class="w-full py-16 px-6">
+    <div class="w-full py-16 sm:py-24 px-6">
         <div class="max-w-screen-lg mx-auto">
             <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/3">
-                    <h2 class="max-md:text-center text-indigo-600">{{ outcomes.title }}</h2>
-                    <h3 class="max-md:text-center text-gray-700 font-normal mt-0">{{ outcomes.subtitle }}</h3>
-                </div>
-                <div class="md:w-2/3 flex flex-col gap-4">
+                <h2 class="md:w-1/4 max-md:text-center"><span class="text-indigo-600">{{ outcomes.title }}</span> {{ outcomes.subtitle }}</h2>
+                <div class="md:w-3/4 flex flex-col gap-4">
                     {% for item in outcomes.items %}
-                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 flex items-start gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 text-indigo-500 mt-0.5">
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 flex items-center gap-6">
+                        <div class="flex-shrink-0 w-8 h-8 text-indigo-500 mt-0.5">
                             {% include item.svgPath %}
                         </div>
-                        <p class="m-0 text-gray-700">
+                        <p class="m-0 text-xl font-light">
                             <strong>{{ item.title }}</strong> {{ item.description }}
                         </p>
                     </div>
@@ -242,11 +203,11 @@ cta:
             <h2 class="text-center text-indigo-600 mb-10">{{ useCases.title }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {% for item in useCases.items %}
-                <div class="flex flex-col gap-3 rounded-xl border border-white p-3" style="background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.1) 100%);">
-                    <div class="w-full h-48 ff-image-cover rounded-xl overflow-hidden">
+                <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
+                    <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
                         {% image ["./", item.image] | join, item.imageAlt, [400] %}
                     </div>
-                    <p class="text-gray-700 text-sm m-0 leading-relaxed px-1 pb-1">{{ item.description | safe }}</p>
+                    <p class="m-0 py-1">{{ item.description | safe }}</p>
                 </div>
                 {% endfor %}
             </div>
@@ -258,7 +219,7 @@ cta:
     ============================================================ -->
     <div class="w-full py-12 px-6">
         <div class="max-w-screen-lg mx-auto">
-            <p class="text-center text-gray-500 text-sm mb-6">Used by industrial teams to run 24/7 operations on top of Node-RED.</p>
+            <p class="text-center text-indigo-800 font-semibold mb-6">Used by industrial teams to run 24/7 operations on top of Node-RED.</p>
             <div class="max-md:max-w-xl max-md:mx-auto">
                 {% include "social-proof.njk" %}
             </div>
@@ -268,12 +229,12 @@ cta:
     <!-- ============================================================
          CTA
     ============================================================ -->
-    <div class="w-full px-6 pb-20">
+    <div class="w-full px-6 pb-24">
         <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10">
             <h3 class="mb-4 w-full text-center">{{ cta.title }}</h3>
             <p class="text-center text-gray-600 mb-8 max-w-xl mx-auto">{{ cta.description }}</p>
             <div class="flex justify-center">
-                <a class="ff-btn ff-btn--primary min-h-[40px] uppercase"
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
                     href="{{ cta.buttonLink }}"
                     onclick="capture('cta-book-demo', {'position': 'cta', 'page': 'renewables'})">
                     {{ cta.buttonText }}
@@ -281,5 +242,4 @@ cta:
             </div>
         </div>
     </div>
-
 </div>
