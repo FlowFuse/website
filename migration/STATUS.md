@@ -34,29 +34,38 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
 
 - `/terms/`, `/privacy-policy/` — `nuxt/pages/*.vue` + `nuxt/content/*.md`
   (pre-existing).
+- **Handbook** (`/handbook/...`, 166 markdown pages) — now rendered natively by
+  Nuxt Content at the identical URLs (trailing slashes preserved):
+  - `scripts/copy_handbook.js` generates `nuxt/content/handbook` from
+    `src/handbook`, rewriting relative `.md` links → absolute `/handbook/...`
+    URLs and relative images → `/handbook-media/...` (copied into public). It
+    emits `nuxt/handbook.routes.json` for prerendering.
+  - `nuxt/pages/handbook/[...slug].vue` + `HandbookNavTree.vue` render the page
+    with a sidebar nav (from `queryCollectionNavigation`) and a TOC.
+  - `handbook` collection added in `content.config.ts`; routes prerendered via
+    `nitro.prerender.routes`; `/handbook*` yielded to Nuxt in the legacy proxy.
+  - Two pages remain on 11ty by design: the `.njk`-templated
+    `/handbook/engineering/product/features/` and the space-named
+    `/handbook/engineering/product/product swimlanes/` (a literal space in the
+    URL the Nuxt prerenderer can't resolve; copy script skips unsafe-char paths).
+  - **Docus note:** the handbook is rendered with `@nuxt/content` v3 — the same
+    engine Docus is built on — under a bespoke handbook layout, rather than the
+    global `docus` theme layer. Docus v5 extends the whole app (Nuxt UI Pro,
+    own catch-all route + collections) and would override the FlowFuse marketing
+    layout used by the migrated Nuxt pages, so a global `extends: ['docus']`
+    was rejected to keep the hybrid build green. See agent-discoveries in
+    CLAUDE.md.
+  - Verified: `nuxt generate` green, `nuxt-link-checker` 0 errors / 0 warnings,
+    route diff 0 dropped (Nuxt build is a superset of the 1069-route baseline).
 
 ## Remaining scope (large; multi-session)
 
-1. **Handbook → Nuxt Content / Docus** (167 markdown pages, `/handbook/...`).
-   Blockers discovered:
-   - 49 handbook `.md` files use **relative** `.md` links and relative
-     `../../images/...` paths that 11ty rewrites at build time
-     (`rewriteHandbookLinks`, image handler). A native migration must
-     reproduce this rewriting (see proposed `scripts/copy_handbook.js`).
-   - Two handbook routes are **`.njk` templates**, not markdown:
-     `/handbook/engineering/product/features/` and
-     `/handbook/sales/subscription-agreement-1.5/`. They must be ported
-     separately or remain on 11ty.
-   - The handbook **sidebar nav** is built in `.eleventy.js` (`addCollection('nav')`)
-     from `navTitle`/`navGroup`/`navOrder` frontmatter and is **shared** by the
-     two `.njk` pages, so removing the `.md` files from 11ty also affects them.
-   - Docus v5 is a **global** Nuxt theme layer (pulls Nuxt UI Pro, og-image,
-     llms, mcp-toolkit; ships its own catch-all route + content collections).
-     Extending it globally overrides the bespoke FlowFuse marketing layout used
-     by the already-migrated Nuxt pages and risks a non-green build. Recommended
-     path: render the handbook with `@nuxt/content` v3 (the engine Docus is
-     built on) under a dedicated handbook layout, OR scope Docus to a child
-     layer — not a global `extends`.
+1. **Handbook polish (optional).** Core migration is DONE (see above). Remaining
+   niceties: port the two pages still on 11ty to native Nuxt (the `.njk`
+   `features` page and the space-named `product swimlanes` page), and reproduce
+   the legacy nav grouping/ordering (`navGroup`/`navOrder`) — the current
+   sidebar is a plain alphabetical tree from `queryCollectionNavigation`.
+   Once the whole handbook is native, stop 11ty from building `src/handbook`.
 2. **Docs → Docus** (`/docs/...`). The docs markdown is **not in this repo** —
    it is copied at build time from an external FlowFuse repo
    (`scripts/copy_docs.js`, sources `../flowfuse/docs`). Only `src/docs/docs.json`
