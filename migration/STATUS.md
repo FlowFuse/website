@@ -186,13 +186,15 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
    Reusable components built: HubSpotForm, EventDetail, FaqAccordion, SocialProof,
    Icon (+ scripts/copy_icons.js), MqlContact, HubSpotMeeting.
    Remaining, roughly by difficulty:
-   - **events/proveit-2026** — migrated to native Nuxt (faithful 1:1 of the
-     bespoke `.njk`; images pass through at `/events/images/pi26/`). The two
-     Hannover Messe pages (2025, 2026) remain on 11ty (2026 has a large nested
-     talks-agenda grid); migrate them to clear the `/events` cluster, then make
-     `/events` a Nuxt-owned proxy prefix.
-   - **Bespoke `.njk` marketing pages still on 11ty** (~30 routes): platform/ (5),
-     events/ (2 Hannover left), landing/ (11), thank-you/ (4), pricing/index (1, large tier
+   - **events/ cluster — DONE** (all 3 pages native Nuxt): proveit-2026,
+     hannover-messe-2025, hannover-messe-2026 (incl. the nested talks-agenda
+     grid). Faithful 1:1 of the bespoke `.njk`; `{% image %}` → plain `<img>`
+     against the pass-through `/events/images/...` files; icon includes →
+     `<Icon>`. Each is a Nuxt-owned route in the proxy + prerender. Verified:
+     route diff 0 dropped, link-checker 0 of 553, all 3 `id="__nuxt"` and
+     visually confirmed in-browser.
+   - **Bespoke `.njk` marketing pages still on 11ty** (~27 routes): platform/ (5),
+     landing/ (4: accelerating…, factory-efficiency, plc, tulip), thank-you/ (4), pricing/index (1, large tier
      tables), about (1, full team grid + values + benefits), index/homepage (1),
      community/newsletter (1, depends on the blog), certified-nodes (1,
      data-driven catalog), 404. Convert following the solutions/vs/partners
