@@ -64,6 +64,13 @@ module.exports = function(eleventyConfig) {
     }
     ignoreMigrated('./nuxt/handbook.migrated-sources.json', 'handbook')
     ignoreMigrated('./nuxt/changelog.migrated-sources.json', 'changelog')
+    // NOTE: customer-stories is NOT ignored in 11ty. Its `collections.stories`
+    // is consumed by other pages that remain on 11ty (node-red/index.njk,
+    // landing/tulip.njk, thank-you/contact.njk via stories-block, llms.njk), so
+    // removing the source would empty that collection and break those pages.
+    // Instead Nuxt prerenders the customer-stories routes and overwrites 11ty's
+    // output in the merged build, so Nuxt serves them while the collection stays
+    // intact for the dependent pages.
     // The changelog index + Atom feed are now produced by Nuxt; stop 11ty
     // building them so the section is fully served by Nuxt.
     if (require('fs').existsSync(__dirname + '/nuxt/changelog.migrated-sources.json')) {

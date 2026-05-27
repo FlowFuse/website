@@ -19,6 +19,11 @@ nuxt/changelog.routes.json
 nuxt/changelog.index.json
 nuxt/changelog.team.json
 nuxt/changelog.migrated-sources.json
+nuxt/content/customer-stories
+nuxt/public/customer-stories-media
+nuxt/customer-stories.routes.json
+nuxt/customer-stories.index.json
+nuxt/customer-stories.migrated-sources.json
 
 # Local development config
 .vscode/

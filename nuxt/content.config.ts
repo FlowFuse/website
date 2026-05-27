@@ -17,6 +17,12 @@ export default defineContentConfig({
         changelog: defineCollection({
             type: 'page',
             source: 'changelog/**/*.md'
+        }),
+        // Customer stories are generated from src/customer-stories by
+        // scripts/copy_customer_stories.js (relative links/images rewritten).
+        customerStories: defineCollection({
+            type: 'page',
+            source: 'customer-stories/**/*.md'
         })
     }
 })
