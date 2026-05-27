@@ -164,16 +164,22 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
    removing each from the legacy proxy and adding it to `nitro.prerender.routes`.
    Migrated so far: terms, privacy-policy, handbook, changelog,
    customer-stories, **webinars + AMAs**, **ebooks**, **solutions** (6),
-   **vs** (2), **whitepaper** (3), **jobs** (3). Remaining, roughly by difficulty:
-   - **Bespoke static `.njk` marketing pages** (~70 routes): platform/ (5),
-     partners/ (4), events/ (3), pricing/ (2), landing/ (11), thank-you/ (4),
-     and ~20 single top-level pages (about, support, community, resources, etc.).
-     Each is hand-crafted HTML using 11ty shortcodes (`{% image %}`,
-     icon/`sign-up-url` includes, inline `{% set %}` data); convert to bespoke
-     `.vue` pages following the solutions/vs pattern. Mostly deterministic, but
-     per-page work; a few embed interactive widgets (e.g. the dashboard
-     migration tool on platform/dashboard, the thank-you reading-resources
-     layout) that need more than static conversion.
+   **vs** (2), **whitepaper** (3), **jobs** (3), **partners** (4),
+   **single pages**: careers, sign-up, email-signature, free-consultation,
+   contact-us, book-demo, education, professional-services, support,
+   resources/publications, pricing/request-quote.
+   Reusable components built: HubSpotForm, EventDetail, FaqAccordion, SocialProof,
+   Icon (+ scripts/copy_icons.js), MqlContact, HubSpotMeeting.
+   Remaining, roughly by difficulty:
+   - **Bespoke `.njk` marketing pages still on 11ty** (~30 routes): platform/ (5),
+     events/ (3), landing/ (11), thank-you/ (4), pricing/index (1, large tier
+     tables), about (1, full team grid + values + benefits), index/homepage (1),
+     community/newsletter (1, depends on the blog), certified-nodes (1,
+     data-driven catalog), 404. Convert following the solutions/vs/partners
+     pattern (reuse the components above). A few need data/infra: about needs a
+     team-data bundle; platform/dashboard embeds the Node-RED migration tool;
+     support's Algolia search + HubSpot chat are site-wide-script integrations
+     (currently degraded — documented fidelity gaps).
    - **integrations/ (61 routes)** — DATA-DRIVEN at build time from the live
      `ff-integrations.flowfuse.cloud` API + npm registry readmes
      (`src/_data/integrations.js`). The route set ("top 50 by downloads +
