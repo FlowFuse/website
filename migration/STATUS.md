@@ -196,6 +196,21 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
    templating, 11ty build steps; simplify `package.json` build to
    `npm run generate --workspace=nuxt`.
 
+## Blog is the keystone dependency for the last marketing pages
+
+Several remaining pages embed **blog-derived collections** and so cannot be
+finished until the blog cluster (`/blog/...`, 429 routes — the largest remaining
+piece, with `renderFlow` embeds, category/tag/author pages, pagination and Atom
+feeds) is migrated:
+- `thank-you/*` (4) — `layouts/thank-you.njk` → `explore-more-content.njk` lists
+  `collections.posts` (latest blog) + `collections.webinar`.
+- `community/newsletter` (1) — lists `collections.newsletter` (blog posts tagged
+  newsletter).
+- homepage (`/`) and several sections surface "latest on the blog".
+The webinar/stories halves of these can reuse the already-migrated events +
+customer-stories data; the blog half needs the blog collection. Recommend
+migrating the blog next (it unblocks the most remaining work), then these pages.
+
 ## How to verify after any migration step
 
 ```bash
