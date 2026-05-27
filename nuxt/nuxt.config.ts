@@ -64,7 +64,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity', '/solutions/data-integration', '/solutions/mes', '/solutions/it-ot-middleware', '/vs/kepware', '/vs/litmus', '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse', '/whitepaper/open-source-software-for-manufacturing', '/whitepaper/uns-decoupling-data-producers-and-consumers', '/jobs/developer-relations-advocate', '/jobs/engineering-manager', '/jobs/solutions-engineer', '/partners', '/partners/certify-hardware', '/partners/ctrlx', '/partners/referral-sign-up', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
+            routes: ['/terms', '/privacy-policy', '/careers', '/sign-up', '/email-signature', '/free-consultation', '/contact-us', '/book-demo', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity', '/solutions/data-integration', '/solutions/mes', '/solutions/it-ot-middleware', '/vs/kepware', '/vs/litmus', '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse', '/whitepaper/open-source-software-for-manufacturing', '/whitepaper/uns-decoupling-data-producers-and-consumers', '/jobs/developer-relations-advocate', '/jobs/engineering-manager', '/jobs/solutions-engineer', '/partners', '/partners/certify-hardware', '/partners/ctrlx', '/partners/referral-sign-up', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
             crawlLinks: false
         }
     },
