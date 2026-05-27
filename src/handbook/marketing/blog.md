@@ -189,6 +189,7 @@ The `tldr` field adds a highlighted summary block that appears at the top of the
 It can be a single string or a list of bullet points:
 
 **Single paragraph:**
+
 ```yaml
 ---
 tldr: "A one-sentence or short paragraph summary of the article's key takeaway."
@@ -196,6 +197,7 @@ tldr: "A one-sentence or short paragraph summary of the article's key takeaway."
 ```
 
 **Bullet list:**
+
 ```yaml
 ---
 tldr:
