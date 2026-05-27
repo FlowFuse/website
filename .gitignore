@@ -44,3 +44,5 @@ nuxt/events.index.json
 
 
 deno.lock
+# Playwright MCP screenshot artifacts
+.playwright-mcp/

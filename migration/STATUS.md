@@ -87,6 +87,25 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
   them and Nuxt's prerender overwrites the output (the dev proxy yields the routes
   to Nuxt). Verified: build green, link-checker 0/0, route diff 0 dropped.
 
+- **Webinars + AMAs** (`/webinars/...` 41, `/ask-me-anything/...` 3) — rendered via
+  native Nuxt. They share the legacy `layouts/webinar.njk` and the tag-based
+  `event` collection, so they were migrated together:
+  - `scripts/copy_events.js` generates the `webinars` + `ama` content collections
+    from `src/webinars` and `src/ask-me-anything`, resolves hosts from
+    team+guests, and emits `events.index.json` (per-page date/time/duration/
+    video/hubspot/hosts, keyed by url) + `events.routes.json` for prerender.
+  - `pages/webinars/[...slug].vue` serves the `/webinars/` index (upcoming/past)
+    and detail pages; `pages/ask-me-anything/[...slug].vue` reuses the shared
+    `EventDetail.vue`. `HubSpotForm.vue` embeds the registration/download forms.
+  - One webinar with a literal space in its filename is left on 11ty (the Nuxt
+    prerenderer cannot resolve unsafe-char routes); 11ty still emits it so route
+    parity holds. A directory-index (`simplifying-opc-ua/index.md`) maps to the
+    directory URL. NOT removed from the 11ty build (the `event` collection is
+    still consumed by other 11ty pages); Nuxt prerender overwrites the output.
+  - Verified: build green, prerender 0 errors, route diff 0 dropped (superset);
+    index + detail + AMA confirmed Nuxt-rendered (`id="__nuxt"`), video embed +
+    host card + HubSpot form render in-browser.
+
 ## Unblocking infrastructure built & verified
 
 - **`RenderFlow` MDC component** (`nuxt/components/content/RenderFlow.vue`) —
