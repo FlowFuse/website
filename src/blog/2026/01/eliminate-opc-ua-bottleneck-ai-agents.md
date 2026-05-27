@@ -79,7 +79,7 @@ The video below shows an AI agent generating complete OPC UA server documentatio
 
 <lite-youtube
   videoid="agxAw4B91Nw"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/01/images/ai-opcua-document-generation.jpg'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/01/images/ai-opcua-document-generation.jpg'); background-size: cover; background-position: center;"
   title="AI Agent Generating OPC UA Documentation">
 </lite-youtube>
 
@@ -102,5 +102,7 @@ The value in industrial data was never about collection—it was always about th
 This isn't about replacing people with automation. It's about making the data infrastructure you already built actually useful for the decisions it was meant to inform. Your team still interprets results, makes judgment calls, and takes action. The AI just handles the mechanical work of data access and analysis.
 
 And it's not limited to OPC UA. FlowFuse's MCP approach works the same way across any industrial system—MQTT brokers, Modbus devices, SQL databases, REST APIs, whatever protocols you're running. Same natural language interface, same investigation capabilities, different underlying systems. The infrastructure you have becomes the infrastructure you can actually use.
+
+For a complete guide to connecting PLCs via OPC UA, EtherNet/IP, Siemens S7, and Modbus to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
 
 

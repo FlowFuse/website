@@ -141,3 +141,5 @@ The three problems this article covers, scan rate uniformity, timeout miscalcula
 The fix for all three is the same kind of work: deliberate, once, documented. Tier your scan rates to match how fast your data actually changes. Calculate your timeouts from the physics of your network rather than accepting defaults. Read the register map before you batch. None of this takes long. None of it requires downtime. It just requires treating these as decisions rather than defaults.
 
 If you've made these changes and your installation is still misbehaving, the problem is in the operational layer: how your polling architecture handles the network and devices once they're running. The next article covers that: serial versus TCP failure modes, unresponsive device handling, live diagnostics, and how to fix what you find without taking production down.
+
+For a complete guide to connecting Modbus PLCs — alongside OPC UA, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

@@ -173,3 +173,5 @@ Modbus RTU has stood the test of time in industrial automation because it’s si
 * Scale from a single sensor to a **factory-wide monitoring and control system**.
 
 The real value comes when you stop treating Modbus as just a communication protocol and start using FlowFuse as the **bridge between industrial devices and enterprise systems**. From dashboards to alerts, from analytics to cloud integration — the possibilities are endless once the data is in your hands.
+
+Modbus is one of several protocols FlowFuse uses to connect PLCs — see [how FlowFuse connects any PLC to MQTT, cloud, and enterprise systems](/landing/plc/) for the full picture.

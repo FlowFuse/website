@@ -10,6 +10,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 release: "2.29"
 features:
    - id: git-integration-azure

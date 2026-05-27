@@ -9,6 +9,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/shopfloor-to-ai.png
 tags:
 - flowfuse
+- ai
 cta:
   type: contact
   title: Build the Architecture Your AI Actually Needs

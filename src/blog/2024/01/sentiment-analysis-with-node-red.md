@@ -10,6 +10,7 @@ tags:
     - node-red
     - dashboard
     - sentiment analysis
+    - ai
 ---
 
 Have you ever built a sentiment analysis system to extract insights from text content? If yes then I don’t think you'll need an explanation of how complex it is to build. In this guide, we will build a sentiment analysis system with Node-RED using Dashboard 2.0 in a few easy steps. 

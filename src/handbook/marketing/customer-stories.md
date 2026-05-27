@@ -10,7 +10,7 @@ meta:
 
 A customer story is the same as a case study, these are helpful in illustrating how Node-RED and FlowFuse can be useful for our potential customers. The process would be as follows:
 
-1. Raise an issue for the content in our private [Github repository](https://github.com/FlowFuse/marketing){rel="nofollow"}.
+1. Raise an issue for the content in our private [GitHub repository](https://github.com/FlowFuse/marketing){rel="nofollow"}.
 2. Add it to the [Content Calendar Project](https://github.com/orgs/FlowFuse/projects/21) and schedule it.
 3. If you want to work on the content immediately please triage the issue into our [development board](https://github.com/orgs/FlowFuse/projects/1/views/33).
 4. Conduct an interview call with the customer using Google Meet to record and transcribe the conversation. Record interviews using Fathom as outlined in the [Sales Meetings guide](/handbook/sales/meetings/).
@@ -78,7 +78,7 @@ The date is useful to order the stories in the customer stories index. The newes
 
 Image of the logo to be included in the customer stories index, on top of the image, ideally a png file with transparent background. This is an optional field, if it's covering an important part of the image or if the image already includes a logo, there's no need to add it.
 
-### Hubspot
+### HubSpot
 ##### formId
 
 Download form ID code provided by HubSpot.

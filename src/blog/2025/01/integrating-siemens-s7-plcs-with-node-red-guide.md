@@ -235,3 +235,5 @@ Make sure the IP addresses of your device and PLC are in the same subnet. If the
 ## Conclusion 
 
 Integrating Siemens S7 PLCs with Node-RED opens up powerful automation possibilities with minimal complexity. By following the steps outlined in this guide, you can easily connect your PLC to Node-RED, control devices, and visualize real-time data on dashboards. Whether you're writing data to control outputs or reading sensor values, Node-RED offers a flexible, user-friendly platform for industrial automation.
+
+Beyond Siemens S7, FlowFuse connects Allen-Bradley, Omron, Beckhoff, and any Modbus or OPC UA-enabled PLC to MQTT, cloud, and enterprise systems. See the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.

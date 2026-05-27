@@ -74,7 +74,7 @@ Disclosure requires the signing of NDA and management approval.
  - Non-production security data
  - Incident reports - prior to publication
 
-**Internal** data contains information used for day-to-day interal operations of
+**Internal** data contains information used for day-to-day internal operations of
 the company.
 
 Unauthorized disclosure may cause undesirable outcomes to business operations.
@@ -108,7 +108,7 @@ outside of FlowFuse.
  - Backups encrypted and secured
  - Retained for as long as operationally, contractually or legally required
  - Only accessible to privileged users
- - Never transfered to entites outside of the company
+ - Never transferred to entities outside of the company
 
 ### Confidential
 

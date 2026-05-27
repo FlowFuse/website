@@ -78,7 +78,7 @@ For a team inheriting flows they didn't build, this changes the equation signifi
 
 <lite-youtube
   videoid="YRc1DwkghRs"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/03/images/ff-expert-explaining-flow.jpeg'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/03/images/ff-expert-explaining-flow.jpeg'); background-size: cover; background-position: center;"
   title="FlowFuse Expert Explaining Selected Flow">
 </lite-youtube>
 
