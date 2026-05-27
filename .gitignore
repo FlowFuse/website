@@ -30,6 +30,10 @@ nuxt/content/ask-me-anything
 nuxt/public/events-media
 nuxt/events.routes.json
 nuxt/events.index.json
+# Generated from src/ebooks by scripts/copy_ebooks.js
+nuxt/content/ebooks
+nuxt/ebooks.routes.json
+nuxt/ebooks.index.json
 
 # Local development config
 .vscode/

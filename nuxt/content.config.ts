@@ -33,6 +33,11 @@ export default defineContentConfig({
         ama: defineCollection({
             type: 'page',
             source: 'ask-me-anything/**/*.md'
+        }),
+        // Ebooks are generated from src/ebooks by scripts/copy_ebooks.js.
+        ebooks: defineCollection({
+            type: 'page',
+            source: 'ebooks/**/*.md'
         })
     }
 })

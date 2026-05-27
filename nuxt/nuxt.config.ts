@@ -11,6 +11,7 @@ const handbookRoutes = readRoutes('handbook.routes.json')
 const changelogRoutes = readRoutes('changelog.routes.json')
 const customerStoriesRoutes = readRoutes('customer-stories.routes.json')
 const eventRoutes = readRoutes('events.routes.json')
+const ebookRoutes = readRoutes('ebooks.routes.json')
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -63,7 +64,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes],
+            routes: ['/terms', '/privacy-policy', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
             crawlLinks: false
         }
     },
