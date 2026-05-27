@@ -64,7 +64,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
+            routes: ['/terms', '/privacy-policy', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
             crawlLinks: false
         }
     },
