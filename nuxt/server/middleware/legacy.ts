@@ -2,10 +2,10 @@ import { proxyRequest } from 'h3'
 
 // Routes that are handled by Nuxt pages (not proxied to 11ty).
 // Extend this list as pages are migrated. Trailing slashes are matched automatically.
-const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity'])
+const NUXT_ROUTES = new Set(['/terms', '/privacy-policy'])
 
 // Whole sub-trees owned by Nuxt (everything under the prefix).
-const NUXT_PREFIXES = ['/handbook', '/handbook-media', '/changelog', '/changelog-media', '/customer-stories', '/customer-stories-media', '/webinars', '/ask-me-anything', '/events-media', '/ebooks']
+const NUXT_PREFIXES = ['/handbook', '/handbook-media', '/changelog', '/changelog-media', '/customer-stories', '/customer-stories-media', '/webinars', '/ask-me-anything', '/events-media', '/ebooks', '/solutions']
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
