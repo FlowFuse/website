@@ -1,0 +1,371 @@
+<script setup>
+const signUpUrl = 'https://app.flowfuse.com/account/create'
+
+const protocols = [
+    {
+        icon: 'globe-alt',
+        title: 'OPC UA',
+        description: 'The IIoT standard. Connect to any OPC UA-enabled PLC — Siemens, Allen-Bradley, Beckhoff, and more — with built-in security and structured data models.',
+        links: [{ text: 'OPC UA Tutorial →', url: '/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/' }],
+    },
+    {
+        icon: 'wifi',
+        title: 'MQTT',
+        description: 'Publish PLC tag data to any MQTT broker — AWS IoT, Azure IoT Hub, HiveMQ, or the built-in FlowFuse MQTT Broker. The foundation of a Unified Namespace.',
+        links: [{ text: 'PLC to MQTT Guide →', url: '/blog/2025/10/plc-to-mqtt-using-flowfuse/' }],
+    },
+    {
+        icon: 'chip',
+        title: 'EtherNet/IP',
+        description: 'Native Allen-Bradley / Rockwell communication. Read and write tags on ControlLogix and CompactLogix PLCs without a gateway.',
+        links: [{ text: 'EtherNet/IP Guide →', url: '/blog/2025/10/using-ethernet-ip-with-flowfuse/' }],
+    },
+    {
+        icon: 'server-stack',
+        title: 'Siemens S7 Protocol',
+        description: 'Direct S7comm connectivity to Siemens S7-300, S7-400, S7-1200, and S7-1500 PLCs. Read DB blocks, Merkers, I/O, and more.',
+        links: [{ text: 'Siemens S7 Integration Guide →', url: '/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/' }],
+    },
+    {
+        icon: 'arrows-pointing-out',
+        title: 'Modbus TCP / RTU',
+        description: 'The universal open protocol. Connect legacy PLCs, drives, meters, and sensors that speak Modbus — over Ethernet or serial.',
+        links: [{ text: 'Modbus Guide →', url: '/blog/2025/09/using-modbus-with-flowfuse/' }],
+    },
+    {
+        icon: 'squares-plus',
+        title: '5,000+ Community Nodes',
+        description: 'Beyond the basics: PROFINET, BACnet, DNP3, IEC 61850, Mitsubishi MC Protocol, Omron FINS, Beckhoff TwinCAT ADS, and more — all available as open-source community nodes.',
+        links: [{ text: 'Browse Node Library →', url: '/integrations/' }],
+    },
+]
+
+const steps = [
+    { number: '1', title: 'Connect Your PLC', description: "Drop a protocol node into your flow canvas — OPC UA, S7, EtherNet/IP, or Modbus. Enter your PLC's IP address and tag list. Data starts flowing in seconds." },
+    { number: '2', title: 'Transform & Route', description: 'Filter, scale, aggregate, or enrich tag data using visual flow logic. Route it to MQTT, databases, dashboards, REST APIs, or cloud services — all in one flow.' },
+    { number: '3', title: 'Deploy & Scale', description: 'Push your flow to one edge device or a thousand with one click. Monitor health, update remotely, roll back instantly — all from the FlowFuse central platform.' },
+]
+
+const advantages = [
+    { title: 'Protocol-agnostic', description: 'One platform connects Siemens, Allen-Bradley, Omron, Mitsubishi, legacy Modbus, and modern OPC UA — no vendor lock-in.' },
+    { title: 'Low-code, fast to deploy', description: 'Drag-and-drop flows replace months of custom integration work. Go from PLC to live dashboard in hours, not weeks.' },
+    { title: 'Edge + cloud flexibility', description: 'Run close to the machine on an industrial PC, in your private cloud, or on FlowFuse Cloud — or all three simultaneously.' },
+    { title: 'Store-and-forward resilience', description: 'Buffer PLC data locally during network outages and forward it when connectivity is restored — zero data loss at the edge.' },
+    { title: 'Open-source core', description: '5,000+ open-source community nodes for protocols, integrations, and data transformation. No proprietary runtime fees, no protocol licensing costs.' },
+    { title: 'Enterprise-ready', description: 'Role-based access, audit logs, DevOps pipelines, team collaboration, and professional support — for production OT environments.' },
+]
+
+const resources = [
+    { title: 'How to Connect Any PLC to MQTT in Under an Hour', image: '/blog/2025/10/images/plc-to-mqtt.png', alt: 'PLC to MQTT integration diagram', url: '/blog/2025/10/plc-to-mqtt-using-flowfuse/' },
+    { title: 'OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment', image: '/blog/2025/07/images/opcua-tutorial.png', alt: 'OPC UA tutorial illustration', url: '/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/' },
+    { title: 'How to Log PLC Data to CSV Files', image: '/blog/2025/10/images/log-plc-data-to-csv.png', alt: 'PLC data logging illustration', url: '/blog/2025/10/how-to-log-plc-data-csv-files/' },
+    { title: 'Getting Started: Integrating Siemens S7 PLCs with Node-RED', image: '/blog/2025/01/images/s7-with-node-red.png', alt: 'Siemens S7 PLC integration guide', url: '/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/' },
+    { title: 'EtherNet/IP Integration: Communicating with Allen-Bradley PLCs', image: '/blog/2025/10/images/allen-bradly-plc.png', alt: 'Allen-Bradley PLC with EtherNet/IP', url: '/blog/2025/10/using-ethernet-ip-with-flowfuse/' },
+    { title: 'How to Connect to Beckhoff TwinCAT PLC Using ADS', image: '/blog/2026/03/images/backoff-twincat.png', alt: 'Beckhoff TwinCAT ADS integration', url: '/blog/2026/03/how-to-connect-to-twincat-using-ads/' },
+    { title: 'Building a Web HMI for Factory Equipment Control', image: '/blog/2025/11/images/building-a-web-hmi-for-factory.png', alt: 'Web HMI dashboard for factory', url: '/blog/2025/11/building-hmi-for-equipment-control/' },
+    { title: 'Store-and-Forward: Buffering PLC Data During Network Outages', image: '/blog/2025/11/images/store-and-forward.png', alt: 'Store and forward edge buffering', url: '/blog/2025/11/store-and-forward-edge-data-buffering/' },
+]
+
+const faqs = [
+    { question: 'What is a PLC (Programmable Logic Controller)?', answer: 'A Programmable Logic Controller (PLC) is an industrial computer used to automate manufacturing processes — controlling machines, assembly lines, conveyor belts, and other equipment on the factory floor. PLCs continuously read inputs from sensors and actuators, execute a control program, and send output signals to drive motors, valves, and other devices. Common PLC brands include Siemens (S7-300, S7-400, S7-1200, S7-1500), Allen-Bradley (Rockwell Automation ControlLogix, CompactLogix), Omron, Mitsubishi, Schneider Electric, and Beckhoff.' },
+    { question: 'How does FlowFuse connect to PLCs?', answer: "FlowFuse connects to PLCs via industrial protocols including OPC UA, MQTT, Modbus TCP/RTU, EtherNet/IP (for Allen-Bradley), and the Siemens S7 protocol using a built-in low-code runtime. You drag in a certified protocol node, enter your PLC's IP address or endpoint, and data flows immediately. No custom code, no expensive gateways, no vendor lock-in." },
+    { question: 'Which PLC brands does FlowFuse support?', answer: 'FlowFuse supports virtually all major PLC brands: Siemens (S7-1200, S7-1500, S7-300, S7-400), Allen-Bradley / Rockwell Automation (ControlLogix, CompactLogix via EtherNet/IP), Omron, Mitsubishi, Schneider Electric, Beckhoff TwinCAT, and any PLC that exposes OPC UA or Modbus TCP. If your PLC speaks a standard industrial protocol, FlowFuse can connect it.' },
+    { question: 'Can I connect a PLC to MQTT using FlowFuse?', answer: 'Yes. Connecting a PLC to MQTT is one of the most common FlowFuse use cases. FlowFuse reads tag data from your PLC (via OPC UA, S7, EtherNet/IP, or Modbus), transforms it as needed, and publishes it to any MQTT broker — including AWS IoT, Azure IoT Hub, HiveMQ, Mosquitto, or the built-in FlowFuse MQTT Broker. This is the foundation for building a Unified Namespace (UNS) or streaming factory data to the cloud.' },
+    { question: 'How do I collect and log data from a PLC?', answer: 'In FlowFuse, you build a flow that polls your PLC at a set interval (or subscribes to events), transforms the tag data, and writes it to your destination — a CSV file, InfluxDB, TimescaleDB, PostgreSQL, or a cloud data lake. You can also trigger logging on events (alarms, production counts, shift changes) rather than polling. FlowFuse manages deployment, versioning, and monitoring of these flows across multiple edge devices.' },
+    { question: 'Can FlowFuse replace my existing SCADA system?', answer: 'FlowFuse can augment or replace traditional SCADA systems. It provides real-time monitoring, custom dashboards via FlowFuse Dashboard, alarm management, and control logic — without the cost and inflexibility of monolithic SCADA software. Many organizations start by running FlowFuse alongside their existing SCADA to add cloud connectivity or modern dashboards, then expand from there.' },
+    { question: 'Does FlowFuse work on-premises or in the cloud?', answer: 'Both. FlowFuse runs on FlowFuse Cloud (fully managed, no infrastructure to maintain), self-managed on your own servers or private cloud, or directly on edge devices running the FlowFuse Device Agent. For PLC connectivity, many teams deploy the Device Agent on an industrial PC close to the machines, so data never has to leave the plant unless you choose to send it.' },
+]
+
+useHead({
+    title: 'PLC Integration Platform | Connect PLCs to MQTT, Cloud & SCADA | FlowFuse • FlowFuse',
+    meta: [{ name: 'description', content: 'Connect any PLC — Siemens S7, Allen-Bradley, Omron, Mitsubishi — to MQTT, OPC UA, cloud, and enterprise systems. FlowFuse makes PLC data integration fast with low-code flows.' }],
+})
+</script>
+
+<template>
+  <div class="nohero w-full">
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <div class="w-full px-6">
+      <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
+        <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+          <div class="m-auto md:w-3/5">
+            <h1 class="w-full mt-0 m-auto font-medium">
+              Connect Your <span class="text-indigo-600 inline-block">PLCs</span> to the Modern Industrial Stack
+            </h1>
+            <p class="mb-10">
+              FlowFuse bridges Programmable Logic Controllers — Siemens, Allen-Bradley, Omron, and more — to MQTT, OPC UA, cloud platforms, and enterprise systems. No expensive gateways, no custom code.
+            </p>
+            <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
+              <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/">TALK TO AN EXPERT</a>
+              <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" :href="signUpUrl">GET STARTED FREE</a>
+            </div>
+          </div>
+          <div class="md:w-2/5 flex-grow relative">
+            <div class="ff-image-rounded w-full">
+              <img src="/landing/images/plc-landing-image.png" alt="PLC connected to cloud, MQTT, and dashboards via FlowFuse" loading="lazy" class="w-full h-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         WHAT IS A PLC
+    ============================================================ -->
+    <div class="w-full bg-gray-50 py-16 px-6">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-6">What is a <span class="text-indigo-600">PLC</span>?</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <p>
+              A <strong>Programmable Logic Controller (PLC)</strong> is a ruggedized industrial computer that automates electromechanical processes on the factory floor — controlling machines, conveyor belts, assembly lines, packaging systems, and more.
+            </p>
+            <p>
+              PLCs continuously execute a <em>scan cycle</em>: they read inputs from sensors and field devices, run a control program (written in ladder logic, structured text, or function block diagrams), and write outputs to actuators, motors, and valves.
+            </p>
+            <p>
+              Originally designed for deterministic machine control, modern PLCs also expose data over standard industrial protocols — making them the primary data source for IIoT, SCADA, MES, and digital transformation initiatives.
+            </p>
+            <a href="/blog/2025/12/what-is-plc/" class="text-indigo-600 text-sm font-medium hover:underline">Deep dive: What Is a PLC? →</a>
+          </div>
+          <div class="flex flex-col gap-5">
+            <div class="bg-white rounded-lg border border-indigo-100 p-6 drop-shadow-sm">
+              <h4 class="text-indigo-600 mb-2 mt-0">Common PLC Brands</h4>
+              <ul class="mt-0 mb-0 space-y-1 text-gray-700">
+                <li><strong>Siemens</strong> — S7-300, S7-400, S7-1200, S7-1500</li>
+                <li><strong>Allen-Bradley (Rockwell)</strong> — ControlLogix, CompactLogix</li>
+                <li><strong>Omron</strong> — NJ / NX Series</li>
+                <li><strong>Mitsubishi</strong> — MELSEC iQ-R / Q Series</li>
+                <li><strong>Schneider Electric</strong> — Modicon M340, M580</li>
+                <li><strong>Beckhoff</strong> — TwinCAT</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg border border-indigo-100 p-6 drop-shadow-sm">
+              <h4 class="text-indigo-600 mb-2 mt-0">Common PLC Protocols</h4>
+              <ul class="mt-0 mb-0 space-y-1 text-gray-700">
+                <li><strong>OPC UA</strong> — vendor-neutral, secure</li>
+                <li><strong>MQTT</strong> — lightweight publish/subscribe</li>
+                <li><strong>EtherNet/IP</strong> — Allen-Bradley native</li>
+                <li><strong>Siemens S7</strong> — S7comm / S7comm-plus</li>
+                <li><strong>Modbus TCP / RTU</strong> — legacy & open</li>
+                <li><strong>PROFINET / PROFIBUS</strong> — Siemens field bus</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         THE CHALLENGE
+    ============================================================ -->
+    <div class="w-full py-16 px-6">
+      <div class="max-w-screen-lg mx-auto">
+        <div class="flex md:flex-row flex-col w-full bg-white border-2 border-indigo-200 px-8 py-6 drop-shadow-lg md:gap-8 rounded-lg items-center">
+          <h2 class="w-full md:w-1/3 my-4 text-indigo-400 text-2xl leading-tight">PLC data is valuable — but hard to get out</h2>
+          <p class="md:w-2/3 my-4">
+            PLCs generate rich, real-time data — production counts, machine states, alarms, energy readings — but that data is often trapped. Getting it into dashboards, databases, cloud analytics, or ERP systems traditionally requires expensive SCADA licenses, proprietary gateways, or months of custom integration work. FlowFuse changes that.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         HOW FLOWFUSE CONNECTS TO PLCS
+    ============================================================ -->
+    <div class="w-full bg-indigo-50/50 py-16 px-6">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-4">How FlowFuse Connects to <span class="text-indigo-600">Any PLC</span></h2>
+        <p class="mb-12 max-w-2xl">
+          FlowFuse's built-in low-code runtime includes 5,000+ nodes for industrial protocols. Drag in a protocol node, configure your PLC's address, and data flows. No gateway hardware required.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div v-for="protocol in protocols" :key="protocol.title" class="bg-white rounded-lg border border-gray-100 p-6 drop-shadow-sm flex flex-col">
+            <div class="w-8 h-8 text-indigo-600 mb-4">
+              <Icon :name="protocol.icon" />
+            </div>
+            <h4 class="mt-0 mb-2 text-gray-800">{{ protocol.title }}</h4>
+            <p class="text-gray-600 font-light flex-grow">{{ protocol.description }}</p>
+            <a v-for="link in protocol.links" :key="link.url" :href="link.url" class="text-indigo-600 text-sm font-medium mt-2 hover:underline">{{ link.text }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         USE CASES
+    ============================================================ -->
+    <div class="w-full py-16 px-6">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-12 text-center">What You Can Build with <span class="text-indigo-600">PLC + FlowFuse</span></h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
+              <Icon name="circle-stack" />
+            </div>
+            <div>
+              <h4 class="mt-0 mb-2">PLC Data Logging</h4>
+              <p class="font-light text-gray-600">
+                Collect tag values, machine states, and counters at any interval. Write to InfluxDB, TimescaleDB, PostgreSQL, or CSV — for OEE tracking, trend analysis, and compliance.
+              </p>
+              <a href="/blog/2025/10/how-to-log-plc-data-csv-files/" class="text-indigo-600 text-sm font-medium hover:underline">How to Log PLC Data →</a>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
+              <Icon name="computer-desktop" />
+            </div>
+            <div>
+              <h4 class="mt-0 mb-2">Web HMI & Dashboards</h4>
+              <p class="font-light text-gray-600">
+                Build modern operator interfaces that display live PLC data — gauges, trends, alarms, and controls — accessible from any browser without proprietary HMI software.
+              </p>
+              <a href="/blog/2025/11/building-hmi-for-equipment-control/" class="text-indigo-600 text-sm font-medium hover:underline">Building a Web HMI →</a>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
+              <Icon name="cloud" />
+            </div>
+            <div>
+              <h4 class="mt-0 mb-2">PLC to Cloud Integration</h4>
+              <p class="font-light text-gray-600">
+                Stream PLC data to AWS IoT, Azure IoT Hub, Google Cloud, or any REST API. Enable predictive maintenance, AI analytics, and enterprise reporting without replacing your PLCs.
+              </p>
+              <a href="/blog/2026/04/connect-industrial-edge-devices-aws-iot-core/" class="text-indigo-600 text-sm font-medium hover:underline">PLC to Cloud Integration Guide →</a>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
+              <Icon name="link" />
+            </div>
+            <div>
+              <h4 class="mt-0 mb-2">PLC to MES / ERP Integration</h4>
+              <p class="font-light text-gray-600">
+                Bridge the OT/IT gap. Route production counts, downtime events, and quality data from PLCs directly into SAP, Oracle, or any MES — eliminating manual entry and delays.
+              </p>
+              <a href="/landing/enterprise-integration/" class="text-indigo-600 text-sm font-medium hover:underline">Enterprise Integration →</a>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
+              <Icon name="bell-alert" />
+            </div>
+            <div>
+              <h4 class="mt-0 mb-2">Alarm Management</h4>
+              <p class="font-light text-gray-600">
+                Subscribe to PLC fault bits and alarm words, route notifications to Slack, email, SMS, or PagerDuty, and log alarm history for root-cause analysis.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
+              <Icon name="wifi" />
+            </div>
+            <div>
+              <h4 class="mt-0 mb-2">Unified Namespace (UNS)</h4>
+              <p class="font-light text-gray-600">
+                Use FlowFuse as the adapter layer between your PLCs and an MQTT-based UNS. Normalize data from Siemens, Allen-Bradley, and legacy equipment into a common topic hierarchy.
+              </p>
+              <a href="/solutions/uns/" class="text-indigo-600 text-sm font-medium hover:underline">Learn about UNS →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         HOW IT WORKS — 3 STEPS
+    ============================================================ -->
+    <div class="w-full bg-indigo-50/50 py-16 px-6">
+      <div class="max-w-screen-lg mx-auto text-center">
+        <h2 class="mb-12">From PLC to Insight in <span class="text-indigo-600">3 Steps</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div v-for="step in steps" :key="step.number" class="bg-white rounded-xl border border-indigo-100 p-8 drop-shadow-sm text-left">
+            <div class="text-4xl font-bold text-indigo-200 mb-4">{{ step.number }}</div>
+            <h4 class="mt-0 mb-3 text-gray-800">{{ step.title }}</h4>
+            <p class="font-light text-gray-600">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         FLOWFUSE ADVANTAGE
+    ============================================================ -->
+    <div class="w-full py-16 px-6">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-12 text-center sm:text-left">The FlowFuse <span class="text-red-600">Advantage</span></h2>
+        <div class="w-full grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          <div v-for="item in advantages" :key="item.title" class="w-full mt-4 md:mt-0 flex flex-col">
+            <h4 class="flex justify-center sm:justify-start font-semibold text-gray-500">{{ item.title }}</h4>
+            <p class="text-center sm:text-left font-light mt-4 max-sm:max-w-md max-sm:mx-auto">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <div class="w-full bg-gray-50 py-16 px-6">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="max-md:text-center -mb-12">
+          Frequently Asked <span class="text-indigo-600">Questions</span>
+        </h2>
+        <FaqAccordion :items="faqs" />
+      </div>
+    </div>
+
+    <!-- ============================================================
+         BLOG RESOURCES
+    ============================================================ -->
+    <div class="w-full py-16 px-6">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="text-center mb-10">Learn More: <span class="text-indigo-600">PLC Integration Guides</span></h2>
+
+        <div class="ff-nodered-resources grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a v-for="resource in resources" :key="resource.url" class="h-full" :href="resource.url">
+            <li class="h-full">
+              <div class="w-2/5 max-md:aspect-video ff-image-cover ff-image-left-rounded h-full">
+                <img :src="resource.image" :alt="resource.alt" loading="lazy" class="w-full h-auto" style="max-width:208px">
+              </div>
+              <label class="w-3/5 font-light">{{ resource.title }}</label>
+            </li>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         CTA
+    ============================================================ -->
+    <div class="w-full px-6 pb-20">
+      <div class="max-w-screen-lg mx-auto">
+        <div class="ff-blue-card">
+          <h4 class="mb-6 w-full text-center">Ready to unlock your PLC data?</h4>
+          <p class="text-center text-gray-600 mb-8">
+            Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack — in a live demo or a free trial.
+          </p>
+          <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
+            <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="/book-demo/">Book a Demo</a>
+            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" :href="signUpUrl">Get Started Free</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>
