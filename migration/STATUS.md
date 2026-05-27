@@ -79,6 +79,14 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
     index shows entry descriptions rather than full inline content.
   - Verified: build green, link-checker 0/0, route diff 0 dropped.
 
+- **Customer stories** (`/customer-stories/...`, 11 routes) — rendered via native
+  Nuxt (`pages/customer-stories/[...slug].vue` + generated metadata index for the
+  story brand/quote/challenge/solution sidebar). NOT removed from the 11ty build:
+  `collections.stories` is consumed by other pages that remain on 11ty
+  (node-red/index, landing/tulip, thank-you/contact, llms), so 11ty keeps building
+  them and Nuxt's prerender overwrites the output (the dev proxy yields the routes
+  to Nuxt). Verified: build green, link-checker 0/0, route diff 0 dropped.
+
 ## Remaining scope (large; multi-session)
 
 1. **Handbook polish (optional).** Core migration is DONE (see above). Remaining
