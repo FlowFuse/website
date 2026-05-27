@@ -44,6 +44,12 @@ export default defineContentConfig({
         docs: defineCollection({
             type: 'page',
             source: 'docs/**/*.md'
+        }),
+        // Blog posts are generated from src/blog by scripts/copy_blog.js
+        // (renderFlow -> ::render-flow, nunjucks stripped, links/images rewritten).
+        blog: defineCollection({
+            type: 'page',
+            source: 'blog/**/*.md'
         })
     }
 })

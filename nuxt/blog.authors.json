@@ -1,0 +1,353 @@
+{
+  "andrea-palmieri": {
+    "name": "Andrea Palmieri",
+    "title": "AI & Full Stack Engineer",
+    "bio": "",
+    "headshot": "andrea.png",
+    "github": "andypalmi",
+    "linkedin": "andreapalmieri00",
+    "email": "andrea@flowfuse.com"
+  },
+  "ben-hardill": {
+    "name": "Ben Hardill",
+    "title": "Senior Software Developer",
+    "bio": "Ben is the Lead Backend Developer and one of the founding employees at FlowFuse. As well as being a Node-RED core contributor he enjoys tinkering at lowest levels of the Internet",
+    "headshot": "ben.png",
+    "github": "hardillb",
+    "linkedin": "ben-hardill",
+    "email": ""
+  },
+  "dan-parry": {
+    "name": "Dan Parry",
+    "title": "Enterprise Account Executive",
+    "bio": "",
+    "headshot": "dan.png",
+    "github": "danielgparry-star",
+    "linkedin": "daniel-parry-32a5b540/",
+    "email": "daniel@flowfuse.com"
+  },
+  "dimitrie-hoekstra": {
+    "name": "Dimitrie Hoekstra",
+    "title": "Product Manager",
+    "bio": "Product manager with a technical product design background, continuing to be meticulous about user-centric design, now shaping how industrial IT/OT teams are made more effective through AI at FlowFuse.",
+    "headshot": "dimitrie.png",
+    "github": "dimitrieh",
+    "linkedin": "dimitrieh",
+    "email": "dimitrie@flowfuse.com"
+  },
+  "drew-gatti": {
+    "name": "Drew Gatti",
+    "title": "Solutions Engineer",
+    "bio": "Drew is a Solutions Engineer at FlowFuse with more than 15 years of hands-on experience across automation, industrial controls, and full-stack systems integration. Before joining FlowFuse, he led projects in PLC and SCADA development, electrical design, and process optimization for manufacturing, energy, and biogas facilities. His work bridges industrial automation with modern software architecture to deliver reliable, scalable solutions.",
+    "headshot": "drew-gatti.png",
+    "github": "dgatti0213",
+    "linkedin": "drew-gatti-28899a138",
+    "email": "drew@flowfuse.com"
+  },
+  "esme-wieringa": {
+    "name": "Esmé Wieringa",
+    "title": "Customer Success manager",
+    "bio": "",
+    "headshot": "esme.png",
+    "github": "Esmewieringa",
+    "linkedin": "esmewieringa",
+    "email": "esme@flowfuse.com"
+  },
+  "jamie-strusz": {
+    "name": "Jamie Strusz",
+    "title": "Engineering Manager",
+    "bio": "Jamie leads engineering at FlowFuse, focusing on developer experience, clarity, and building systems and teams that scale.",
+    "headshot": "jamie.png",
+    "github": "allthedoll",
+    "linkedin": "geocuration",
+    "email": "jamie@flowfuse.com"
+  },
+  "kasheef-mohammed": {
+    "name": "Kasheef Mohammed",
+    "title": "Enterprise Account Executive",
+    "bio": "",
+    "headshot": "kasheef.png",
+    "github": "Kasheef13",
+    "linkedin": "kasheef-mohammed",
+    "email": "kasheef@flowfuse.com"
+  },
+  "kristopher-sandoval": {
+    "name": "Kristopher Sandoval",
+    "title": "Developer Relations Advocate",
+    "bio": "Kristopher is a product marketing and developer relations leader with more than a decade of experience turning technical products into movements and fans into evangelists.",
+    "headshot": "kristopher.png",
+    "github": "kristopherleads",
+    "linkedin": "krsando",
+    "email": "kristopher@flowfuse.com"
+  },
+  "michael-davis": {
+    "name": "Michael Davis",
+    "title": "VP of Sales",
+    "bio": "",
+    "headshot": "michael.png",
+    "github": "MichaelBDavis",
+    "linkedin": "michaelbdavis",
+    "email": "michael@flowfuse.com"
+  },
+  "nick-oleary": {
+    "name": "Nick O'Leary",
+    "title": "CTO",
+    "bio": "Nick is the founder/CTO of FlowFuse. He created Node-RED in 2013 and continues to lead the project today. He has worked on projects ranging from smart meter energy monitoring to retrofitting sensors to industrial manufacturing lines with Raspberry Pis and Arduinos.",
+    "headshot": "nick.png",
+    "github": "knolleary",
+    "linkedin": "nickoleary",
+    "email": ""
+  },
+  "noley-holland": {
+    "name": "Noley Holland",
+    "title": "Full Stack Developer",
+    "bio": "",
+    "headshot": "noley.png",
+    "github": "n-lark",
+    "linkedin": "noley-holland",
+    "email": "noley@flowfuse.com"
+  },
+  "noubar-tedjirian": {
+    "name": "Noubar Tedjirian",
+    "title": "Chief of Staff",
+    "bio": "Noubar is the Chief of Staff to the CEO, focusing on cross-functional strategic initiatives, helping improve internal workflows, collaborating closely on communications, investor relations, and business opportunities",
+    "headshot": "noubar.png",
+    "github": "UnicornGunnerz",
+    "linkedin": "noubar-tedjirian",
+    "email": "noubar@flowfuse.com"
+  },
+  "pablo-filomeno": {
+    "name": "Pablo Filomeno",
+    "title": "Product Marketing Manager",
+    "bio": "Pablo is the Product Marketing Manager of FlowFuse. With a background in strategic communications and a passion for making complex technologies accessible, his mission is to help industrial and software teams discover the power of FlowFuse to transform their operations.",
+    "headshot": "pablo.png",
+    "github": "PabloFilomeno83",
+    "linkedin": "",
+    "email": "pablo@flowfuse.com"
+  },
+  "piotr-pawlowski": {
+    "name": "Piotr Pawlowski",
+    "title": "DevOps Engineer",
+    "bio": "",
+    "headshot": "piotr.png",
+    "github": "ppawlowski",
+    "linkedin": "",
+    "email": "piotr@flowfuse.com"
+  },
+  "rob-marcer": {
+    "name": "Rob Marcer",
+    "title": "Head of Professional Services",
+    "bio": "Rob is the Head of Professional Services at FlowFuse, he helps FlowFuse customers plan, build, and deploy large scale Internet of Things projects. He has worked with customers in various industries including automotive, life sciences, logistics, utilities, and smart buildings.",
+    "headshot": "rob.png",
+    "github": "robmarcer",
+    "linkedin": "rob-marcer-b414b910",
+    "email": "rob@flowfuse.com"
+  },
+  "serban-costin": {
+    "name": "Serban Costin",
+    "title": "Senior Front End Developer",
+    "bio": "",
+    "headshot": "serban.png",
+    "github": "cstns",
+    "linkedin": "serban-costin-32a07894",
+    "email": ""
+  },
+  "stephen-mclaughlin": {
+    "name": "Steve McLaughlin",
+    "title": "Senior Software Developer",
+    "bio": "Steve is a Senior Software Engineer at FlowFuse. Prior to joining FlowFuse, he worked as an Engineer in the Automotive Industry and has extensive production environment experience. Steve is also a Node-RED core contributor and has written several popular contribution nodes for Node-RED including drivers for communicating with PLC Hardware",
+    "headshot": "steve.png",
+    "github": "steve-mcl",
+    "linkedin": "",
+    "email": ""
+  },
+  "sumit-shinde": {
+    "name": "Sumit Shinde",
+    "title": "Technical Writer",
+    "bio": "Sumit is a Technical Writer at FlowFuse who helps engineers adopt Node-RED for industrial automation projects. He has authored over 100 articles covering industrial protocols (OPC UA, MQTT, Modbus), Unified Namespace architectures, and practical manufacturing solutions. Through his writing, he makes complex industrial concepts accessible, helping teams connect legacy equipment, build real-time dashboards, and implement Industry 4.0 strategies.",
+    "headshot": "sumit.png",
+    "github": "sumitshinde-84",
+    "linkedin": "sumit-shinde-a16b1126b",
+    "email": "sumit@flowfuse.com"
+  },
+  "yndira-escobar": {
+    "name": "Yndira Escobar",
+    "title": "Marketing Manager, Website & Social Media",
+    "bio": "",
+    "headshot": "yndira.png",
+    "github": "Yndira-E",
+    "linkedin": "yndira-escobar-es",
+    "email": "yndira@flowfuse.com"
+  },
+  "zeger-jan-van-de-weg": {
+    "name": "ZJ van de Weg",
+    "title": "CEO",
+    "bio": "ZJ is the CEO of FlowFuse. As an engineer-turned-CEO with a career built on open-source software, his mission is to empower engineers to build better, more efficient software solutions.",
+    "headshot": "zj.png",
+    "github": "ZJvandeWeg",
+    "linkedin": "zegerjan",
+    "email": "zj@flowfuse.com"
+  },
+  "alejandro-simo": {
+    "name": "Alejandro Simó",
+    "title": "IT OT Architect",
+    "bio": "",
+    "headshot": "alejandro.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "andrew-lynch": {
+    "name": "Andrew Lynch",
+    "title": "Industry Expert",
+    "bio": "",
+    "headshot": "andrew.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "anthony-sargeant": {
+    "name": "Anthony Sargeant",
+    "title": "Senior Developer Global Digital Platforms, Sky",
+    "bio": "",
+    "headshot": "anthony-sargeant.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "boris-crismancich": {
+    "name": "Boris Crismancich",
+    "title": "Business Development & Board Member at Revolution Pi",
+    "bio": "",
+    "headshot": "boris.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "etienne-rossignon": {
+    "name": "Etienne Rossignon",
+    "title": "Founder at Sterfive",
+    "bio": "",
+    "headshot": "etienne.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "grey-dziuba": {
+    "name": "Grey Dziuba",
+    "title": "OT Data & Community Strategist",
+    "bio": "",
+    "headshot": "grey.png",
+    "github": "gdziuba",
+    "linkedin": "gdziuba",
+    "email": "grey@flowfuse.com"
+  },
+  "harshad-joshi": {
+    "name": "Harshad Joshi",
+    "title": "Lead Developer and designer of Bufferstack.IO Linux Distro",
+    "bio": "",
+    "headshot": "harshad.jpg",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "joe-pavitt": {
+    "name": "Joe Pavitt",
+    "title": "",
+    "bio": "Joe has been working with Node-RED for nearly 10 years, having worked with Nick O'Leary at IBM as a Master Inventor, and been one of the early developers working on the original Node-RED Dashboard. Since joining FlowFuse in 2022, Joe has become the lead for the FlowFuse Dashboard (Dashboard 2.0), created the Node-RED Academy and leads design and front-end development for FlowFuse.",
+    "headshot": "joe.png",
+    "github": "joepavitt",
+    "linkedin": "joepavitt",
+    "email": ""
+  },
+  "kin-lane": {
+    "name": "Kin Lane",
+    "title": "Chief Community Officer @ Naftiko",
+    "bio": "",
+    "headshot": "kin.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "klaus-landsdorf": {
+    "name": "Klaus Landsdorf",
+    "title": "CEO and Co-Founder, Iniationware",
+    "bio": "",
+    "headshot": "klaus.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "kudzai-manditereza": {
+    "name": "Kudzai Manditereza",
+    "title": "Sr. Industry Solutions Advocate, HiveMQ",
+    "bio": "",
+    "headshot": "kudzai-manditereza.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "kurt-braun": {
+    "name": "Kurt Braun",
+    "title": "Director of Automation Sales Engineering and Development, Wago",
+    "bio": "",
+    "headshot": "kurt-braun.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "marian-demme": {
+    "name": "Marian Demme",
+    "title": "Product Manager",
+    "bio": "",
+    "headshot": "marian.png",
+    "github": "MarianRaphael",
+    "linkedin": "marian-demme",
+    "email": "marian@flowfuse.com"
+  },
+  "michael-palmer": {
+    "name": "Michael Palmer",
+    "title": "Innovator in Residence @ Maryville University of Saint Louis",
+    "bio": "",
+    "headshot": "michaelp.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "quintijn-steelant": {
+    "name": "Quintijn Steelant",
+    "title": "Digital manufacturing consultant",
+    "bio": "",
+    "headshot": "quintijn.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "raymond-macaisa": {
+    "name": "Raymond Macaisa",
+    "title": "Design Engineering Manager",
+    "bio": "",
+    "headshot": "raymond.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "travis-elliot": {
+    "name": "Travis Elliot",
+    "title": "COO, NCD.io",
+    "bio": "",
+    "headshot": "Travis-Elliot.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  "trent-christopher": {
+    "name": "Trent Christopher",
+    "title": "Owner/Engineer",
+    "bio": "",
+    "headshot": "trent.png",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  }
+}

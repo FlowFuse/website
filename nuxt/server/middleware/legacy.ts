@@ -17,6 +17,15 @@ export default defineEventHandler(async (event) => {
 
     // Let Nuxt handle migrated pages (strip trailing slash and query string before matching)
     const normalised = path.split('?')[0].replace(/\/$/, '') || '/'
+
+    // Blog: Nuxt owns the post/index/category pages, but blog image assets
+    // (/blog/YYYY/MM/images/...) are still served by the 11ty passthrough build,
+    // so proxy those to 11ty in dev. The feed (/blog/index.xml) is a Nuxt route.
+    if (normalised === '/blog' || normalised.startsWith('/blog/')) {
+        const isAsset = /\/images\//.test(normalised) || /\.(png|jpe?g|gif|svg|webp|avif|mp4|webm|json)$/i.test(normalised)
+        if (!isAsset) return
+    }
+
     if (NUXT_ROUTES.has(normalised)) return
     if (NUXT_PREFIXES.some((p) => normalised === p || normalised.startsWith(p + '/'))) return
 
