@@ -87,6 +87,19 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
   them and Nuxt's prerender overwrites the output (the dev proxy yields the routes
   to Nuxt). Verified: build green, link-checker 0/0, route diff 0 dropped.
 
+## Unblocking infrastructure built & verified
+
+- **`RenderFlow` MDC component** (`nuxt/components/content/RenderFlow.vue`) —
+  reproduces the legacy 11ty `renderFlow` shortcode, rendering Node-RED flows
+  client-side via the bundled `@flowfuse/flow-renderer`. Flow JSON is passed
+  base64-encoded to survive MDC parsing. **Verified in a real browser** (renders
+  nodes/wires/labels/zoom). This unblocks the 188 `renderFlow` embeds across
+  node-red (75) and blog (113) — the single biggest blocker for those clusters.
+  Remaining for those clusters even with RenderFlow: MDC `{{ }}` escaping for
+  Node-RED message examples, inlining `{% include %}` (md + `navigation-items-list.njk`),
+  the `eleventyNavigation` sidebar, the data-driven `core-nodes/*.njk` catalog
+  (from `coreNodes.json`), and the blog post layout + category/pagination/feeds.
+
 ## Remaining scope (large; multi-session)
 
 1. **Handbook polish (optional).** Core migration is DONE (see above). Remaining
