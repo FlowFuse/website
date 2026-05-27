@@ -113,6 +113,15 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
   `HubSpotForm.vue` for the gated download. Removed from the legacy proxy.
   Verified: build green, route diff 0 dropped, page Nuxt-rendered, form works.
 
+- **Solutions** (`/solutions/...`, 6) — all six bespoke marketing pages
+  (uns, scada, mes, edge-connectivity, data-integration, it-ot-middleware)
+  converted to native `.vue` pages, reproducing the hand-crafted 11ty markup.
+  Shortcodes resolved natively: `{% image %}`→`<img>`, icon includes / `ffIconLg`
+  inlined as SVG, `sign-up-url`→app URL, `lite-youtube`→responsive iframe,
+  `faq.njk`→reusable `FaqAccordion.vue`. `/solutions` is now a Nuxt-owned prefix
+  in the legacy proxy. Verified: build green, link-checker 0/0, route diff 0
+  dropped, all six Nuxt-rendered (it-ot-middleware visually confirmed in-browser).
+
 ## Unblocking infrastructure built & verified
 
 - **`RenderFlow` MDC component** (`nuxt/components/content/RenderFlow.vue`) —
@@ -145,15 +154,16 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
 3. **Remaining marketing sections** (~700 routes) — convert one cluster at a time,
    removing each from the legacy proxy and adding it to `nitro.prerender.routes`.
    Migrated so far this/earlier sessions: terms, privacy-policy, handbook,
-   changelog, customer-stories, **webinars + AMAs**, **ebooks**. Remaining,
-   roughly by difficulty:
-   - **Bespoke static `.njk` marketing pages** (~90 routes): solutions/ (6),
-     platform/ (5), partners/ (4), vs/ (2), jobs/ (3), events/ (3), pricing/ (2),
+   changelog, customer-stories, **webinars + AMAs**, **ebooks**, **solutions** (6).
+   Remaining, roughly by difficulty:
+   - **Bespoke static `.njk` marketing pages** (~78 routes): platform/ (5),
+     partners/ (4), vs/ (2), jobs/ (3), events/ (3), pricing/ (2),
      whitepaper/ (3), landing/ (11), thank-you/ (4), and ~20 single top-level
-     pages (about, pricing, support, community, resources, etc.). Each is
-     hand-crafted HTML using 11ty shortcodes (`{% image %}`, icon/`sign-up-url`
-     includes, inline `{% set %}` data); convert to bespoke `.vue` pages. No
-     external data — deterministic, but per-page work with visual-parity risk.
+     pages (about, support, community, resources, etc.). Each is hand-crafted
+     HTML using 11ty shortcodes (`{% image %}`, icon/`sign-up-url` includes,
+     inline `{% set %}` data); convert to bespoke `.vue` pages following the
+     solutions-cluster pattern. No external data — deterministic, but per-page
+     work with visual-parity risk.
    - **integrations/ (61 routes)** — DATA-DRIVEN at build time from the live
      `ff-integrations.flowfuse.cloud` API + npm registry readmes
      (`src/_data/integrations.js`). The route set ("top 50 by downloads +
