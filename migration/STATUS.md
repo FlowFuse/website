@@ -193,15 +193,32 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
      `<Icon>`. Each is a Nuxt-owned route in the proxy + prerender. Verified:
      route diff 0 dropped, link-checker 0 of 553, all 3 `id="__nuxt"` and
      visually confirmed in-browser.
-   - **Bespoke `.njk` marketing pages still on 11ty** (~27 routes): platform/ (5),
-     landing/ (4: accelerating…, factory-efficiency, plc, tulip), thank-you/ (4), pricing/index (1, large tier
-     tables), about (1, full team grid + values + benefits), index/homepage (1),
-     community/newsletter (1, depends on the blog), certified-nodes (1,
-     data-driven catalog), 404. Convert following the solutions/vs/partners
-     pattern (reuse the components above). A few need data/infra: about needs a
-     team-data bundle; platform/dashboard embeds the Node-RED migration tool;
-     support's Algolia search + HubSpot chat are site-wide-script integrations
-     (currently degraded — documented fidelity gaps).
+   - **blog/ cluster — DONE** (429 routes, native `@nuxt/content`): see the
+     dedicated entry below. This was the keystone and unblocks the homepage +
+     community/newsletter (both also DONE).
+   - **homepage (`/`) — DONE.** `pages/index.vue` is a faithful 1:1 of
+     `src/index.njk` (hero, social-proof, metrics, problem/status-quo, AI block,
+     capabilities, solutions, testimonials, get-started, explore-more pulling
+     latest blog posts + latest webinar + newsletter form). Verified Nuxt-rendered
+     + visually in-browser.
+   - **platform/ — DONE** (4 of 5): dashboard, device-agent, features,
+     why-flowfuse are native `.vue` (FaqAccordion, inlined get-started/migration/
+     download-modal, reactive Node-RED migration tool on dashboard). Only
+     `platform/security` (a `.md`) stays on 11ty. Visually verified.
+   - **landing/ — DONE** (all bespoke `.njk` now native): accelerating-…-low-code
+     (gated whitepaper), factory-efficiency (stat hero + case-study form), plc
+     (protocol/advantage/FAQ data sections), tulip (customer-stories grid +
+     HubSpotMeeting). The 7 earlier landing pages were already native. Verified.
+   - **community/newsletter — DONE.** `pages/community/newsletter.vue` lists blog
+     posts tagged `newsletter` from `blog.index.json`. Visually verified.
+   - **Bespoke `.njk` marketing pages STILL on 11ty** (remaining): thank-you/ (4,
+     depend on explore-more = blog+webinar collections, both now available),
+     pricing/index (1, large tier tables), about (already native — `about.vue`),
+     certified-nodes (1, data-driven `certifiedNodes` catalog, paginated 24/page),
+     ai (1), 404 (special `/404.html`), plus site-wide feed/sitemap/redirects njk.
+     `platform/security` (.md). Convert following the solutions/landing pattern.
+     NOTE: fidelity gaps that persist site-wide — Algolia search + HubSpot chat
+     are global-script integrations not yet wired (documented degraded).
    - **integrations/ (61 routes)** — DATA-DRIVEN at build time from the live
      `ff-integrations.flowfuse.cloud` API + npm registry readmes
      (`src/_data/integrations.js`). The route set ("top 50 by downloads +
@@ -218,20 +235,47 @@ Current proof: `migration/route-diff.txt` — 0 dropped, Nuxt is a superset
    templating, 11ty build steps; simplify `package.json` build to
    `npm run generate --workspace=nuxt`.
 
-## Blog is the keystone dependency for the last marketing pages
+## Blog cluster — DONE (was the keystone dependency)
 
-Several remaining pages embed **blog-derived collections** and so cannot be
-finished until the blog cluster (`/blog/...`, 429 routes — the largest remaining
-piece, with `renderFlow` embeds, category/tag/author pages, pagination and Atom
-feeds) is migrated:
-- `thank-you/*` (4) — `layouts/thank-you.njk` → `explore-more-content.njk` lists
-  `collections.posts` (latest blog) + `collections.webinar`.
-- `community/newsletter` (1) — lists `collections.newsletter` (blog posts tagged
-  newsletter).
-- homepage (`/`) and several sections surface "latest on the blog".
-The webinar/stories halves of these can reuse the already-migrated events +
-customer-stories data; the blog half needs the blog collection. Recommend
-migrating the blog next (it unblocks the most remaining work), then these pages.
+The blog (`/blog/...`, 429 routes — the largest single cluster) is fully migrated
+to native `@nuxt/content`:
+- `scripts/copy_blog.js` generates `nuxt/content/blog/**` (renderFlow →
+  `::render-flow` MDC, nunjucks stripped, relative `.md` links/images rewritten),
+  plus `blog.index.json` (card index + per-category url lists + pagination meta),
+  `blog.authors.json`, `blog.routes.json`, `blog.migrated-sources.json`.
+- `pages/blog/[...slug].vue` serves posts + the paginated main index + 9 category
+  pages (`/blog/<cat>/` + `/blog/<cat>/N/`); `server/routes/blog/index.xml.get.ts`
+  reproduces the Atom feed.
+- Verified: route diff 0 dropped (430 blog routes incl. the feed; superset of the
+  429 baseline), link-checker 0 failing, blog posts + index confirmed
+  Nuxt-rendered and visually spot-checked in-browser.
+
+Because blog is done, its dependents are unblocked and now also DONE: the
+**homepage** "latest on the blog" block, **community/newsletter**
+(`collections.newsletter`). Still using blog/webinar collections and not yet
+migrated: **thank-you/** (4) — `layouts/thank-you.njk` →
+`explore-more-content.njk` (latest blog + latest webinar); both data sources are
+now available, so these are a straightforward next step.
+
+## This session (2026-05-27) — what was migrated
+
+blog (429) · homepage (/) · platform/{dashboard,device-agent,features,
+why-flowfuse} · landing/{accelerating-…-low-code,factory-efficiency,plc,tulip} ·
+community/newsletter. Each verified: build green, route diff **0 dropped**,
+link-checker **0 failing** (992 pages at session end), pages Nuxt-rendered and
+visually spot-checked. All committed locally (not pushed).
+
+## Largest remaining clusters (still on 11ty — multi-session)
+
+- **integrations/ (61)** — data-driven (live API + npm readmes); see below.
+- **node-red/ (114)** — external data + 75 `renderFlow` embeds + `core-nodes`
+  catalog + `eleventyNavigation` sidebar.
+- A handful of bespoke pages (thank-you ×4, pricing/index, certified-nodes, ai,
+  404) and site-wide njk (feed/sitemap/redirects).
+- **11ty cannot be removed yet**: the above routes still come only from 11ty, and
+  blog/image passthrough assets are still served by the 11ty build. Removal is the
+  final step once those clusters are native AND an asset-copy path replaces the
+  11ty passthrough.
 
 ## How to verify after any migration step
 
