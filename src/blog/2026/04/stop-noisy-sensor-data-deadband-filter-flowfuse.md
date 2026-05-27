@@ -12,6 +12,7 @@ cta:
     type: signup
     title: "Start Building Cleaner Industrial Pipelines Today"
     description: "FlowFuse makes it easy to connect, filter, and manage industrial sensor data across your entire fleet. Start your free trial and get your first flow running in minutes."
+tldr: "Industrial sensors constantly fluctuate due to electrical noise, vibration, and ADC artifacts a deadband filter suppresses this by only forwarding a new value when it has moved beyond a defined threshold from the last accepted reading. FlowFuse has a built-in filter node that implements this in no-code configuration, and this guide walks through setting it up to handle single or multiple sensors independently, with practical advice on choosing the right threshold."
 ---
 
 In industrial systems, sensors rarely sit perfectly still. A temperature probe, pressure transducer, or flow meter will constantly fluctuate. Not because the process is changing, but because of electrical noise, vibration, or quantization artifacts in the ADC. If your control system reacts to every tiny wiggle, it triggers unnecessary alarms, wears out actuators, and buries real events in a fog of jitter.

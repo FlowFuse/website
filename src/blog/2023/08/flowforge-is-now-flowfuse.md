@@ -9,6 +9,7 @@ tags:
     - posts
     - community
     - news
+tldr: "FlowForge is rebranding to FlowFuse following a trademark challenge, with the new name chosen to better reflect the company's mission of fusing data, processes, and technologies together. The product, platform, and cloud service remain unchanged; the rebrand will roll out across the website, social media, and product releases over the following weeks."
 ---
 
 We are happy to announce that FlowForge is changing its name to FlowFuse. Changing our corporate identity wasn’t our top priority but a recent trademark challenge has promoted us to create a new brand for our company. 

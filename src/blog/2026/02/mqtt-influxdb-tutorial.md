@@ -12,6 +12,7 @@ cta:
   type: sign-up
   title: Build Pipelines You Can Actually Debug
   description: FlowFuse turns MQTT-to-InfluxDB and every other IIoT integration into a visual flow. No custom scripts, no silent failures, no mystery at 2am. Start your free trial today.
+tldr: "Building an MQTT-to-InfluxDB pipeline in FlowFuse requires just three nodes: an MQTT in node to subscribe to sensor topics, a change node to transform the payload into InfluxDB's field-and-tag structure, and an InfluxDB out node to write the data. This visual approach eliminates the hidden failure modes of custom scripts and makes the entire pipeline easy to debug and hand off."
 ---
 
 An MQTT to InfluxDB is one of the most common and most critical pipelines in IIoT. Every timestamped telemetry event that drives decisions on the floor needs to land somewhere it can be queried, trended, and acted on.
