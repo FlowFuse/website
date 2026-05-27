@@ -2,7 +2,7 @@ import { proxyRequest } from 'h3'
 
 // Routes that are handled by Nuxt pages (not proxied to 11ty).
 // Extend this list as pages are migrated. Trailing slashes are matched automatically.
-const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/careers', '/sign-up', '/email-signature', '/free-consultation', '/contact-us', '/book-demo', '/education', '/professional-services', '/support', '/resources/publications', '/pricing/request-quote', '/about', '/landing/building-and-scaling-industrial-applications', '/landing/coordinating-industrial-systems-at-scale', '/landing/unified-real-time-data-platform', '/landing/enterprise-integration', '/landing/edge-connectivity', '/landing/line-control', '/landing/plant-orchestration'])
+const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/careers', '/sign-up', '/email-signature', '/free-consultation', '/contact-us', '/book-demo', '/education', '/professional-services', '/support', '/resources/publications', '/pricing/request-quote', '/about', '/landing/building-and-scaling-industrial-applications', '/landing/coordinating-industrial-systems-at-scale', '/landing/unified-real-time-data-platform', '/landing/enterprise-integration', '/landing/edge-connectivity', '/landing/line-control', '/landing/plant-orchestration', '/events/proveit-2026'])
 
 // Whole sub-trees owned by Nuxt (everything under the prefix).
 const NUXT_PREFIXES = ['/handbook', '/handbook-media', '/changelog', '/changelog-media', '/customer-stories', '/customer-stories-media', '/webinars', '/ask-me-anything', '/events-media', '/ebooks', '/solutions', '/vs', '/whitepaper', '/jobs', '/partners', '/docs', '/docs-media']
