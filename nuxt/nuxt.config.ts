@@ -64,7 +64,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity', '/solutions/data-integration', '/solutions/mes', '/solutions/it-ot-middleware', '/vs/kepware', '/vs/litmus', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
+            routes: ['/terms', '/privacy-policy', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity', '/solutions/data-integration', '/solutions/mes', '/solutions/it-ot-middleware', '/vs/kepware', '/vs/litmus', '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse', '/whitepaper/open-source-software-for-manufacturing', '/whitepaper/uns-decoupling-data-producers-and-consumers', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
             crawlLinks: false
         }
     },
