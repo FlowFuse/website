@@ -34,6 +34,11 @@ nuxt/events.index.json
 nuxt/content/ebooks
 nuxt/ebooks.routes.json
 nuxt/ebooks.index.json
+# Generated from src/docs by scripts/copy_docs_nuxt.js
+nuxt/content/docs
+nuxt/public/docs-media
+nuxt/docs.routes.json
+nuxt/docs.index.json
 
 # Local development config
 .vscode/

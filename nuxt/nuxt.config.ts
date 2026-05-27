@@ -12,6 +12,7 @@ const changelogRoutes = readRoutes('changelog.routes.json')
 const customerStoriesRoutes = readRoutes('customer-stories.routes.json')
 const eventRoutes = readRoutes('events.routes.json')
 const ebookRoutes = readRoutes('ebooks.routes.json')
+const docsRoutes = readRoutes('docs.routes.json')
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -64,7 +65,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy', '/careers', '/sign-up', '/email-signature', '/free-consultation', '/contact-us', '/book-demo', '/education', '/professional-services', '/support', '/resources/publications', '/pricing/request-quote', '/about', '/landing/building-and-scaling-industrial-applications', '/landing/coordinating-industrial-systems-at-scale', '/landing/unified-real-time-data-platform', '/landing/enterprise-integration', '/landing/edge-connectivity', '/landing/line-control', '/landing/plant-orchestration', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity', '/solutions/data-integration', '/solutions/mes', '/solutions/it-ot-middleware', '/vs/kepware', '/vs/litmus', '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse', '/whitepaper/open-source-software-for-manufacturing', '/whitepaper/uns-decoupling-data-producers-and-consumers', '/jobs/developer-relations-advocate', '/jobs/engineering-manager', '/jobs/solutions-engineer', '/partners', '/partners/certify-hardware', '/partners/ctrlx', '/partners/referral-sign-up', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes],
+            routes: ['/terms', '/privacy-policy', '/careers', '/sign-up', '/email-signature', '/free-consultation', '/contact-us', '/book-demo', '/education', '/professional-services', '/support', '/resources/publications', '/pricing/request-quote', '/about', '/landing/building-and-scaling-industrial-applications', '/landing/coordinating-industrial-systems-at-scale', '/landing/unified-real-time-data-platform', '/landing/enterprise-integration', '/landing/edge-connectivity', '/landing/line-control', '/landing/plant-orchestration', '/solutions/scada', '/solutions/uns', '/solutions/edge-connectivity', '/solutions/data-integration', '/solutions/mes', '/solutions/it-ot-middleware', '/vs/kepware', '/vs/litmus', '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse', '/whitepaper/open-source-software-for-manufacturing', '/whitepaper/uns-decoupling-data-producers-and-consumers', '/jobs/developer-relations-advocate', '/jobs/engineering-manager', '/jobs/solutions-engineer', '/partners', '/partners/certify-hardware', '/partners/ctrlx', '/partners/referral-sign-up', ...handbookRoutes, ...changelogRoutes, ...customerStoriesRoutes, ...eventRoutes, ...ebookRoutes, ...docsRoutes],
             crawlLinks: false
         }
     },

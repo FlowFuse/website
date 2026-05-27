@@ -38,6 +38,12 @@ export default defineContentConfig({
         ebooks: defineCollection({
             type: 'page',
             source: 'ebooks/**/*.md'
+        }),
+        // Product docs are generated from src/docs (itself synced from the
+        // external FlowFuse repo) by scripts/copy_docs_nuxt.js.
+        docs: defineCollection({
+            type: 'page',
+            source: 'docs/**/*.md'
         })
     }
 })
