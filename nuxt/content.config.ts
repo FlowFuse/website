@@ -23,6 +23,16 @@ export default defineContentConfig({
         customerStories: defineCollection({
             type: 'page',
             source: 'customer-stories/**/*.md'
+        }),
+        // Webinars + AMAs are generated from src/webinars and
+        // src/ask-me-anything by scripts/copy_events.js.
+        webinars: defineCollection({
+            type: 'page',
+            source: 'webinars/**/*.md'
+        }),
+        ama: defineCollection({
+            type: 'page',
+            source: 'ask-me-anything/**/*.md'
         })
     }
 })

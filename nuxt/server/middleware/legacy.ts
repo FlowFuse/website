@@ -5,7 +5,7 @@ import { proxyRequest } from 'h3'
 const NUXT_ROUTES = new Set(['/terms', '/privacy-policy'])
 
 // Whole sub-trees owned by Nuxt (everything under the prefix).
-const NUXT_PREFIXES = ['/handbook', '/handbook-media', '/changelog', '/changelog-media', '/customer-stories', '/customer-stories-media']
+const NUXT_PREFIXES = ['/handbook', '/handbook-media', '/changelog', '/changelog-media', '/customer-stories', '/customer-stories-media', '/webinars', '/ask-me-anything', '/events-media']
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return

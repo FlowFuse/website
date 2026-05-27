@@ -24,6 +24,12 @@ nuxt/public/customer-stories-media
 nuxt/customer-stories.routes.json
 nuxt/customer-stories.index.json
 nuxt/customer-stories.migrated-sources.json
+# Generated from src/webinars + src/ask-me-anything by scripts/copy_events.js
+nuxt/content/webinars
+nuxt/content/ask-me-anything
+nuxt/public/events-media
+nuxt/events.routes.json
+nuxt/events.index.json
 
 # Local development config
 .vscode/
