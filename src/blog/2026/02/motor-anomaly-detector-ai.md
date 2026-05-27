@@ -12,6 +12,7 @@ cta:
   type: demo
   title: See How FlowFuse Catches Faults Before They Fail
   description: Book a demo and see how FlowFuse brings sensor ingestion, AI inference, and real-time alerting together on the factory floor — no separate ML infrastructure required
+tldr: "This guide walks through building an AI-based motor vibration anomaly detector using an autoencoder trained on healthy sensor data, exported to ONNX, and deployed directly in Node-RED via FlowFuse's AI nodes no separate ML infrastructure required. The system extracts 33 time-domain features per vibration window, scores each reading against a trained threshold, and classifies results as NORMAL, WARNING, or CRITICAL in real time."
 ---
 
 Bearing wear, shaft misalignment, and imbalance don't appear overnight. They develop over days or weeks, leaving a clear trail in vibration data long before any audible or thermal symptoms emerge. By the time a technician hears grinding or feels heat, the window for low-cost intervention has already closed.

@@ -28,6 +28,7 @@ meta:
 
     - question: "What are the 7 main parts of a PLC?"
       answer: "The 7 main parts of a PLC are: 1) Power Supply – provides stable power; 2) Central Processing Unit (CPU) – executes the control program; 3) Input Modules – read signals from sensors and switches; 4) Output Modules – control actuators like motors and valves; 5) Programming Device – used to write and upload programs; 6) Communication Interface – allows the PLC to connect with other PLCs, HMIs, or SCADA systems; 7) Memory – stores the program and runtime data."
+tldr: "A Programmable Logic Controller (PLC) is a rugged industrial computer that continuously reads sensor inputs, executes control logic, and operates motors, valves, and equipment in real-time with deterministic reliability forming the backbone of 80% of global industrial automation since Dick Morley's 1968 invention. Unlike general-purpose computers, PLCs are designed for decades of uninterrupted operation in extreme environments, and the biggest modern challenge is getting PLCs from different vendors to communicate with each other and with enterprise IT systems."
 ---
 
 ***A PLC (Programmable Logic Controller) is an industrial computer that continuously monitors sensors, executes control logic, and operates motors, valves, and equipment in real-time, serving as the reliable backbone of modern manufacturing and industrial automation.***
