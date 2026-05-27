@@ -1,0 +1,75 @@
+<script setup>
+useHead({
+    title: 'How to Certify Your Hardware • FlowFuse',
+    meta: [{ name: 'description', content: 'Follow these steps to get your hardware certified for compatibility with FlowFuse and Node-RED' }],
+})
+</script>
+
+<template>
+  <div class="w-full page hero">
+    <div class="content">
+      <div class="py-20 px-6 md:px-0">
+        <h1><div class="m-auto max-w-xl text-center">How to Certify Your Hardware</div></h1>
+        <div class="max-w-[550px] m-auto gap-6 md:gap-2">
+          <h4 class="text-center m-auto text-indigo-400">Follow these steps to get your hardware certified for compatibility with FlowFuse and Node-RED.</h4>
+        </div>
+      </div>
+      <div class="w-full px-6 pb-20 md:px-0 flex flex-col gap-10 md:gap-12">
+        <div class="container max-w-screen-md m-auto flex flex-col gap-4">
+          <h3 class="m-auto text-center w-full mb-6">Technical Qualification in 3 Steps</h3>
+          <div class="ff-certify-list">
+            <div class="ff-item">
+              <div class="ff-line-container sm:hidden"><div class="ff-line" /></div>
+              <div class="ff-certify-list-icon sm:pb-2"><Icon name="book-open" /></div>
+              <div class="ff-line-container"><div class="ff-line" /></div>
+              <div class="font-light sm:row-span-2 col-span-3 sm:col-auto pt-6 sm:pt-0">Explore the FlowFuse Device Agent <a href="https://github.com/FlowFuse/device-agent" target="_blank">Repository</a> and <a href="/docs/device-agent/introduction/">Documentation</a>.</div>
+            </div>
+            <div class="ff-item">
+              <div class="ff-line-container"><div class="ff-line" /></div>
+              <div class="ff-certify-list-icon"><Icon name="check-circle" /></div>
+              <div class="ff-line-container"><div class="ff-line" /></div>
+              <div class="font-light sm:row-span-3 col-span-3 my-auto pt-6 sm:pt-0">Ensure that the Device Agent comes pre-installed on your device. Alternatively, it should be available from a store or marketplace as a "one-click" installer.</div>
+            </div>
+            <div class="ff-item">
+              <div class="ff-line-container"><div class="ff-line" /></div>
+              <div class="ff-certify-list-icon"><Icon name="document-arrow-up" /></div>
+              <div class="ff-line-container"><div class="ff-line sm:hidden" /></div>
+              <div class="font-light sm:row-span-3 col-span-3 my-auto pt-6 sm:pt-0">Users can easily upload their device configuration either through a custom user interface (e.g., file upload or input mask) or via the built-in Device Agent UI.</div>
+            </div>
+          </div>
+        </div>
+        <hr class="w-full md:w-[768px] mx-auto">
+        <div class="container max-w-screen-md m-auto flex flex-col gap-4">
+          <h3 class="m-auto text-center w-full">Certification</h3>
+          <div class="flex flex-col gap-6 md:px-10">
+            <p class="w-full">After successfully navigating the technical qualification, take the next step by booking a meeting with our team. Together, we'll work towards ensuring your device is fully compatible with FlowFuse and Node-RED.</p>
+            <ul class="flex flex-row justify-center w-full items-center">
+              <li class="pb-6 hover:transition-opacity hover:opacity-75 transition ease-in duration-300">
+                <a href="https://meetings-eu1.hubspot.com/marian-demme" class="inline-block ff-btn ff-btn--primary uppercase w-[218px] m-auto text-center"><span>BOOK A MEETING</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="w-full md:w-[768px] mx-auto">
+        <div class="container max-w-screen-md m-auto flex flex-col gap-4">
+          <h3 class="m-auto text-center w-full mb-6">Marketing and Publications</h3>
+          <div class="ff-certify-list">
+            <div class="ff-item">
+              <div class="ff-line-container sm:hidden"><div class="ff-line" /></div>
+              <div class="ff-certify-list-icon sm:pb-2"><Icon name="chat-bubble-bottom-center-text" /></div>
+              <div class="ff-line-container"><div class="ff-line" /></div>
+              <div class="font-light sm:row-span-2 col-span-3 sm:col-auto pt-6 sm:pt-0">In a joint meeting, we will discuss marketing activities on a case-by-case basis.</div>
+            </div>
+            <div class="ff-item ff-certified">
+              <div class="ff-line-container"><div class="ff-line" /></div>
+              <div class="ff-certify-list-icon"><Icon name="check-badge" /></div>
+              <div class="ff-line-container"><div class="ff-line sm:hidden" /></div>
+              <div class="font-light sm:row-span-3 col-span-3 my-auto pt-6 sm:pt-0">Upon successful technical qualification, you will be granted the right to use the "FlowFuse Certified" logo.</div>
+              <div class="w-[86px] col-span-3 sm:row-span-3 m-auto pt-6 sm:pt-0"><img src="/images/partners/ff-certified-device.svg" alt="FlowFuse certification badge" style="max-width:86px" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

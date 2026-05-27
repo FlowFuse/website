@@ -1,0 +1,86 @@
+<script setup>
+useHead({
+    title: 'Node-RED Resources • FlowFuse',
+    meta: [{ name: 'description', content: 'FlowFuse and ctrlX' }],
+})
+</script>
+
+<template>
+  <div class="w-full page hero">
+    <div class="content">
+      <div class="nohero w-full px-6">
+        <div class="w-full px-6 pt-8 md:pt-16 pb-16 md:px-0">
+          <div class="container md:m-auto text-center max-w-4xl flex flex-col items-center md:items-start">
+            <h2 class="mt-0 md:pl-0 md:pr-3 md:text-left md:max-w-lg">Production Ready <span class="inline-block">Node-RED</span> for ctrlX AUTOMATION</h2>
+          </div>
+          <div class="container m-auto md:-mt-6 text-center max-w-4xl flex flex-col md:flex-row md:text-left md:gap-8">
+            <p class="flex justify-center items-center mt-6 md:mt-0 md:w-1/2 text-lg">FlowFuse offers Node-RED support and third party nodes for production use on ctlrX AUTOMATION</p>
+            <div class="flex justify-center items-center mt-12 md:mt-0 md:w-1/2">
+              <div class="relative max-w-md">
+                <img src="/images/partners/nr-ctrlx.png" alt="Graphics depicting Node-RED compatibility with ctrlX." style="max-width:412px" />
+              </div>
+            </div>
+          </div>
+          <div class="container m-auto md:-mt-6 text-center max-w-4xl flex flex-col md:items-start mt-10">
+            <a class="ff-btn ff-btn--primary flex flex-col" href="https://developer.community.boschrexroth.com/t5/Store-and-How-to/FlowFuse-Node-RED/ba-p/82135" target="_blank">
+              <span class="text-base uppercase md:px-4">Get Node-RED from ctrlX Store</span>
+            </a>
+          </div>
+        </div>
+        <div class="w-full pt-8 px-0 ff-prose">
+          <div class="text-center mt-4 md:mt-6 mb-6"><h2>What FlowFuse Offers</h2></div>
+          <div class="container m-auto max-w-4xl prose">
+            <div class="grid px-6 md:px-0 grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 sm:gap-x-8 sm:gap-y-0 mb-10">
+              <div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                  <div class="w-16"><img src="/images/pictograms/results_blue.png" alt="Graphics depicting low-code programming." style="max-width:64px" /></div>
+                  <div class="flex flex-col leading-8">Professional Support</div>
+                </h3>
+                <p class="mb-0">FlowFuse reduces the risk of using Node-RED in production. We offer professional support for Node-RED deployments on the crtlX platform. Customers have direct access to Node-RED experts who can help with development and production deployment issues.</p>
+              </div>
+              <div class="text-left self-start">
+                <h3 class="flex items-center gap-4">
+                  <div class="w-16"><img src="/images/pictograms/node_catalog_blue.png" alt="Graphics depicting connectivity and integration." style="max-width:64px" /></div>
+                  <div class="flex flex-col leading-8">Support for Third Party Nodes</div>
+                </h3>
+                <p class="mb-0">The Node-RED package for ctrlX includes pre-installs <span class="font-bold">third party nodes</span> for popular industrial protocols, including OMRON, MC Protocol, Modbus and S7. FlowFuse will support the use of these nodes in production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="w-full md:w-[896px] mx-auto">
+        <div class="w-full pt-8 px-0 pb-6 ff-prose">
+          <div class="text-center mt-4 md:my-6"><h2>For CtrlX Customers</h2></div>
+          <div class="container m-auto max-w-4xl">
+            <div class="grid px-6 md:px-0 grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 sm:gap-x-8 sm:gap-y-0 mb-16">
+              <div class="text-left self-start h-full flex flex-col justify-between">
+                <div class="prose">
+                  <h3 class="flex items-center gap-4">
+                    <div class="w-16 mt-6"><img src="/images/pictograms/support_blue.png" alt="Graphics depicting low-code programming." style="max-width:64px" /></div>
+                    <div class="flex flex-col leading-8 mt-6">Customer Support</div>
+                  </h3>
+                  <p class="mb-0">Get in touch with us to access expert guidance and comprehensive assistance for your Node-RED deployments. Our team will support you every step of the way, ensuring seamless integration and successful implementation.</p>
+                </div>
+                <div class="container text-center max-w-4xl flex flex-col md:items-start mt-6 md:mt-8">
+                  <a class="ff-btn ff-btn--primary-outlined flex flex-col" href="/support"><span class="text-base uppercase no-underline md:px-4">CONTACT SUPPORT</span></a>
+                </div>
+              </div>
+              <div class="text-left self-start">
+                <div class="mt-4 md:mt-0 prose">
+                  <h3 class="flex items-center gap-4">
+                    <div class="w-14 pb-2 mt-6 md:justify-start md:items-start"><img src="/images/flowfuse-icon.png" alt="Graphics depicting low-code programming." style="max-width:64px" /></div>
+                    <div class="flex flex-col leading-8 mt-6">Upgrade to FlowFuse</div>
+                  </h3>
+                  <p class="mb-0">CtrlX customers can update their Node-RED deployments to use the FlowFuse platform to take advantage of our device management, team collaboration, software delivery pipelines and other enterprise features. Book a demo to discover the FlowFuse platform.</p>
+                </div>
+                <div class="container m-auto text-center max-w-4xl flex flex-col md:items-start mt-6 md:mt-8">
+                  <a class="ff-btn ff-btn--primary no-underline flex flex-col" href="/book-demo"><span class="text-base uppercase md:px-4">BOOK A DEMO</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
