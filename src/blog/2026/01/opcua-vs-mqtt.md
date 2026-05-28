@@ -9,6 +9,7 @@ image: /blog/2026/01/images/opcua-vs-mqtt.png
 keywords: MQTT vs OPC UA, MQTT protocol, OPC UA protocol, industrial communication, IIoT architecture, OPC UA PubSub, MQTT Sparkplug
 tags:
  - flowfuse
+ - opcua
 cta:
   type: contact
   title: Stop Choosing Protocols. Start Mapping Requirements.

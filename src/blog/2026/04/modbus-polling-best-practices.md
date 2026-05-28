@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/04/images/modbus-polling-best-practices.jpg
 tags:
 - flowfuse
+- modbus
 cta:
   type: contact
   title: Need help fixing your Modbus setup?

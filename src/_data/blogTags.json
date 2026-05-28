@@ -25,4 +25,10 @@
 }, {
     "label": "News",
     "value": "news"
+}, {
+    "label": "Modbus",
+    "value": "modbus"
+}, {
+    "label": "OPC UA",
+    "value": "opcua"
 }]
