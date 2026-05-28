@@ -16,7 +16,7 @@ outputs. Let's create a basic example and work from there. Let's connect the
 inject to the `exec` input, and connect the three dots to debug nodes. I've set
 the command in the exec node to `date`.
 
-!["Wired up exec node"](./images/wired-up-exec-node.png)
+!["Wired up exec node"](/node-red/core-nodes/images/wired-up-exec-node.png)
 
 When triggered, you'll see two outputs in the debug pane. One from `Standard out`;
 the date and timestamp of the execution and the `Exit code` will output too.
@@ -40,7 +40,7 @@ want.
 When there's continous output you'll need to select `spawn` mode in the settings
 windown of the `exec` node:
 
-![spawn mode for exec in Node-RED](./images/spawn-mode-exec.png)
+![spawn mode for exec in Node-RED](/node-red/core-nodes/images/spawn-mode-exec.png)
 
 This will produce a message per line to the standard out output for further
 processing.

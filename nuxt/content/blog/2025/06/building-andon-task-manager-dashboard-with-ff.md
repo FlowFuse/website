@@ -440,7 +440,7 @@ else {
 16. Drag another link-out node and connect it to the first output of the second switch node. Name it "Link to First Switch Output".
 17. Deploy the changes.
 
-![Dashboard view displaying a highlighted request entry with visual emphasis based on request age.](./images/highlighted-requst.png
+![Dashboard view displaying a highlighted request entry with visual emphasis based on request age.](/blog/2025/06/images/highlighted-requst.png
 ){data-zoomable}
 _Dashboard showing a request visually highlighted based on how long ago it was made, with applied styling and alert classification._
 

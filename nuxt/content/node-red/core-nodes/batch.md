@@ -17,17 +17,17 @@ The Batch node operates in three different modes, each suited for different use 
 
 Groups messages into sequences of a given length. Set the batch size to 5 and the first 5 messages form one batch, the next 5 form another batch, and so on.
 
-![Batching messages into 5 groups](./images/batch-example1.png)
+![Batching messages into 5 groups](/node-red/core-nodes/images/batch-example1.png)
 
 The overlap option lets you repeat messages between batches. When enabled, messages at the end of one sequence appear at the start of the next. With a batch size of 5 and overlap of 1, you get sequences like 1-5, then 5-9, then 9-13. This creates a sliding window effect that's useful for analysis requiring context from previous data.
 
-![Batching messages into 5 groups with overlap](./images/batch-example2.png)
+![Batching messages into 5 groups with overlap](/node-red/core-nodes/images/batch-example2.png)
 
 ### Group by Time Interval
 
 Groups all messages that arrive within a specified time period. Set it to 2 seconds and every message received in that window gets batched together. When the interval expires, the batch releases and a new window starts. You can optionally configure the node to send an empty message if nothing arrives within the interval.
 
-![Batching messages into 2 second groups](./images/batch-example3.gif)
+![Batching messages into 2 second groups](/node-red/core-nodes/images/batch-example3.gif)
 
 ### Concatenate Sequences
 
@@ -35,9 +35,9 @@ Creates a new message sequence by combining incoming sequences in a specified or
 
 This mode lets you duplicate sequences for parallel processing or reorder them by topic. For example, you could filter an array of numbers into positive and negative values, assign each group a different topic, then concatenate them in whichever order you need.
 
-![Duplicating a sequence of data](./images/batch-example4.png)
+![Duplicating a sequence of data](/node-red/core-nodes/images/batch-example4.png)
 
-![Batch filter and concatenate](./images/batch-example5.png)
+![Batch filter and concatenate](/node-red/core-nodes/images/batch-example5.png)
 
 ## How the node handles messages
 

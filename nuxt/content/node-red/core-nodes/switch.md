@@ -23,7 +23,7 @@ Here are some common use cases for using the Switch node in Node-RED:
 
 ## Examples
 
-![Switch Node Example](./images/switch-example-2.png)
+![Switch Node Example](/node-red/core-nodes/images/switch-example-2.png)
 
 
 

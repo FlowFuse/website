@@ -24,7 +24,7 @@ Here are some other use cases for using the Delay node:
 
 An example of using the Delay node to rate limit http request to an external API.
 
-![Delay node properties](./images/delay-node-2.png)
+![Delay node properties](/node-red/core-nodes/images/delay-node-2.png)
 
 
 

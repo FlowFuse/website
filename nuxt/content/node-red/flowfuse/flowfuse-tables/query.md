@@ -122,6 +122,6 @@ flow: "eyUgcmF3ICV9Clt7ImlkIjoiOWNkNzQ5OGQ0ZjgzMmYxZSIsInR5cGUiOiJncm91cCIsInoiO
 
 In the Query node, click **"Assistant"**, enter plain English like *"Show me all readings from today"*, and the AI automatically generates the SQL query.
 
-![Query Node FlowFuse Expert](./src/blog/2025/09/images/flowfuse-ai-assistance-table-demo.gif)
+![Query Node FlowFuse Expert](/blog/2025/09/images/flowfuse-ai-assistance-table-demo.gif)
 
 For more detailed information on natural language queries with the Query node, read this article: [FlowFuse Expert for FlowFuse Tables](https://flowfuse.com/blog/2025/09/ai-assistant-flowfuse-tables/).

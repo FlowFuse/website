@@ -35,7 +35,7 @@ To install the Node-RED Debugger:
 
 ### Enabling the Debugger
 
-![Image showing the option to turn the debugger on and off in the sidebar](../images/disable-enable-button.png
+![Image showing the option to turn the debugger on and off in the sidebar](/node-red/getting-started/images/disable-enable-button.png
 ){data-zoomable}
 _Image showing the option to turn the debugger on and off in the sidebar_
 
@@ -69,7 +69,7 @@ However, clicking the **Inject** node once does not produce the expected results
 
 Before proceeding further, let's first understand the Debugger tab and its different sections. The Debugger tab contains two main areas: **Breakpoints** and **Messages**. 
 
-![Image showing the breakpoint section in the sidebar](../images/breakpoints-section.png
+![Image showing the breakpoint section in the sidebar](/node-red/getting-started/images/breakpoints-section.png
 ){data-zoomable}
 _Image showing the breakpoint section in the sidebar_
 

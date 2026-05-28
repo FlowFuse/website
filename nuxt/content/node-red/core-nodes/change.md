@@ -12,7 +12,7 @@ Use cases for the Change node include:
 
 1. **Data Transformation**: You can use the Change node to transform data from one format to another. For example, you can convert temperature values from Celsius to Fahrenheit, translate textual information, or convert timestamps to a different format.
 
-![Data Transform](./images/change-data-transform.png)
+![Data Transform](/node-red/core-nodes/images/change-data-transform.png)
 
 
 
@@ -26,7 +26,7 @@ flow: "W3siaWQiOiIxY2Q0ODY4NC4wNGRiYWIiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJUZW1wZXJhd
 
 2. **Message Filtering**: The Change node can filter out messages based on specific conditions. You can use the Change node to route messages to different outputs, discard irrelevant messages, or take specific actions based on message properties.
 
-![Message Filter](./images/change-message-filter.png)
+![Message Filter](/node-red/core-nodes/images/change-message-filter.png)
 
 
 ::render-flow
@@ -40,7 +40,7 @@ flow: "W3siaWQiOiJhNDU2OTA3MC40OGY5ZDgiLCJ0eXBlIjoiaW5qZWN0IiwieiI6ImQyMzhlNDhhL
 
 3. **Message Enrichment**: The Change node allows you to add or modify properties in a message to enrich its content. For instance, you can add timestamps, add contextual information, or set specific identifiers for tracking purposes.
 
-![Message Enrichment](./images/change-message-enrich.png)
+![Message Enrichment](/node-red/core-nodes/images/change-message-enrich.png)
 
 
 ::render-flow
@@ -54,7 +54,7 @@ flow: "W3siaWQiOiIzNGQ0OWM3Zi41MDVkNTgiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJNZXNzYWdlI
 
 4. **Renaming Properties**: The Change node allows you to rename message properties, making it easier to understand and work with data at various points in your flow.
 
-![Example](./images/change-rename-property.png)
+![Example](/node-red/core-nodes/images/change-rename-property.png)
 
 
 ::render-flow
@@ -68,7 +68,7 @@ flow: "W3siaWQiOiI1ZTYwNTRiOS44YjZhNjQiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJSZW5hbWluZ
 
 5. **Default Values**: If a message lacks certain properties, the Change node can set default values for those properties, ensuring consistency in the data flow.
 
-![Example](./images/change-default.png)
+![Example](/node-red/core-nodes/images/change-default.png)
 
 
 ::render-flow
@@ -82,7 +82,7 @@ flow: "W3siaWQiOiIzYWJiZTg4Yi41MzdhYzQiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJEZWZhdWx0I
 
 6. **Message Formatting**: When sending data to external systems or services, the Change node can format the message payload in the required format (e.g., JSON, XML) or adjust data to match specific API requirements.
 
-![Example](./images/change-message-format.png)
+![Example](/node-red/core-nodes/images/change-message-format.png)
 
 
 ::render-flow

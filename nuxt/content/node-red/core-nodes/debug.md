@@ -55,25 +55,25 @@ The node can be enabled or disabled without modifying the flow. A disabled Debug
 
 The Copy Path feature lets you quickly copy the property path of any value in the debug output. This is a real time saver when building Change or Function nodes, helping you avoid typos and errors. Simply click the small icon next to any property in the debug output to copy its full path.
 
-![Copy Path helper](./images/debug-copy-path.gif)
+![Copy Path helper](/node-red/core-nodes/images/debug-copy-path.gif)
 
 ### Copy Value
 
 Copy Value gives you an exact copy of any property value to use in Inject, Change, or Function nodes. This is extremely useful when you need to simulate real data or when sharing example flows with others for troubleshooting. Click the value in the debug output and select Copy Value from the menu.
 
-![Copy Value helper](./images/debug-copy-value.gif)
+![Copy Value helper](/node-red/core-nodes/images/debug-copy-value.gif)
 
 ### Pin Open
 
 When debug output contains many nested properties, Pin Open helps you keep specific items expanded while collapsing others. This makes it easy to focus on the data you care about without losing your place as new messages arrive.
 
-![Pin Open helper](./images/debug-pin-open.gif)
+![Pin Open helper](/node-red/core-nodes/images/debug-pin-open.gif)
 
 ## Examples
 
 This example demonstrates common ways to use the Debug node for visualizing data and assisting development. It shows outputting to the sidebar, displaying node status, and using JSONata expressions.
 
-![Debug Nodes](./images/debug-examples.png)
+![Debug Nodes](/node-red/core-nodes/images/debug-examples.png)
 
 ## Node Documentation
 

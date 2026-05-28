@@ -22,7 +22,7 @@ Besides unit conversion, the range node can be used for:
 
 An example of a change node that converts from miles to kilometers.
 
-![Range properties](./images/range-node2.png)
+![Range properties](/node-red/core-nodes/images/range-node2.png)
 
 
 

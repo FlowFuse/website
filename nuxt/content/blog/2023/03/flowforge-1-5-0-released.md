@@ -18,7 +18,7 @@ As such, our User Experience has been updated to reflect these changes, and allo
 
 At the top-level in FlowFuse, you can now see a list of your "Appications". In FlowFuse 1.5, as we still have a 1:1 relationship of Applications to Local Instances, this will be the same as the list of "Projects" that you're used to seeing.
 
-![Screenshot to show the new "Applications" view](./images/screenshot-applications.png "Screenshot to show the new "Applications" view")
+![Screenshot to show the new "Applications" view](/blog/2023/03/images/screenshot-applications.png "Screenshot to show the new "Applications" view")
 <figcaption class="-mt-6 text-center"><b>"Applications" view in FlowFuse, listing all available Applications</b></figcaption>
 
 For 1.5, all of your settings, environment variables, etc. are all now at the "Instance" level. Applications will gain a lot more functionality in future releases.
@@ -26,12 +26,12 @@ For 1.5, all of your settings, environment variables, etc. are all now at the "I
 
 When clicking on one of your Applications, you will see a list of Node-RED instances bound to that Application.
 
-![Screenshot to show the new "Instances" view](./images/screenshot-instances.png "Screenshot to show the new "Instances" view")
+![Screenshot to show the new "Instances" view](/blog/2023/03/images/screenshot-instances.png "Screenshot to show the new "Instances" view")
 <figcaption class="-mt-6 text-center"><b>A list of Instances contained within a single Application.</b></figcaption>
 
 Clicking on this Instance, will open up the "Instance" view, this is an exact replica of the "Project" view you'll be used to seeing in FlowFuse, and contains all of the same functionality:
 
-![Screenshot to show the new "Instances" view](./images/screenshot-instance.png "Screenshot to show the new "Instances" view")
+![Screenshot to show the new "Instances" view](/blog/2023/03/images/screenshot-instance.png "Screenshot to show the new "Instances" view")
 <figcaption class="-mt-6 text-center"><b>FlowFuse 1.5's "Instance" view. This contains all of the functionality previously found in the "Project" view.</b></figcaption>
 
 ### Devices & Managing Remote Instances

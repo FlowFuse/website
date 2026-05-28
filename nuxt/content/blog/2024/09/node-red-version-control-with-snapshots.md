@@ -86,7 +86,7 @@ If the device is in fleet mode, it will be running the flows specified by the ta
 1. Go to **Devices** by clicking on the **Devices** option in the sidebar, and then click on the specific device.
 2. Once clicked, a similar interface will open as with instances, allowing you to manage and monitor its settings and configuration. Ensure that the device has developer mode enabled.
 
-![Image showing the 'Create Snapshot' option in the Developer mode tab](./images/option-to-create-device-snapshot.png
+![Image showing the 'Create Snapshot' option in the Developer mode tab](/blog/2024/09/images/option-to-create-device-snapshot.png
 ){data-zoomable}
 *Image showing the 'Create Snapshot' option in the Developer mode tab*
 

@@ -285,10 +285,10 @@ _Image showing the edit button to be clicked on._
 
 3. Next, in the left-side container, you will see a list of all available devices in your application. Select the devices you want to add to the group (make sure to add only the devices that require the deployment of the flow built to gather system metrics). Click the "Add Devices" button at the top-right of that container, and then click "Save Changes". Once done, you will see all added devices in the right-side container, confirming that they have been successfully added to the group.
 
-![Interface to select the devices that need to be added to the group, along with the 'Add Devices' button.](./images/device-group-device-adding.png ){data-zoomable}  
+![Interface to select the devices that need to be added to the group, along with the 'Add Devices' button.](/blog/2025/02/images/device-group-device-adding.png ){data-zoomable}  
 _Interface to select the devices that must be added to the group, along with the 'Add Devices' button._
 
-![Showing the selected devices we chose to add, along with the 'Save Changes' button.](./images/save-changes-to-add-devices.png ){data-zoomable}  
+![Showing the selected devices we chose to add, along with the 'Save Changes' button.](/blog/2025/02/images/save-changes-to-add-devices.png ){data-zoomable}  
 _Showing the selected devices we chose to add, along with the 'Save Changes' button._
 
 #### Creating Snapshot
@@ -297,10 +297,10 @@ _Showing the selected devices we chose to add, along with the 'Save Changes' but
 
 2. Go to the Snapshots tab and create a new snapshot by clicking the "Create Snapshot" button. Enter details such as the name and description. While making the snapshot, ensure the "Set as Target" option is checked before clicking "Create". Enabling this option sets the created snapshot as the device’s active snapshot. Later, this snapshot will be used for deployment on devices within the device group via the DevOps pipeline.
 
-![Showing the option to switch to "Version history" and the "Create Snapshot" button.](./images/create-snapshot.png ){data-zoomable}  
+![Showing the option to switch to "Version history" and the "Create Snapshot" button.](/blog/2025/02/images/create-snapshot.png ){data-zoomable}  
 _Showing the option to switch to "Version history" and the "Create Snapshot" button._
 
-!["Showing the form to create a snapshot and the "Set as Target" option."](./images/set-active-snapshot.png ){data-zoomable}  
+!["Showing the form to create a snapshot and the "Set as Target" option."](/blog/2025/02/images/set-active-snapshot.png ){data-zoomable}  
 _Showing the form to create a snapshot and the "Set as Target" option._
 
 If you want to learn more about snapshots, you can read our article [Using Snapshots for Version Control in Node-RED with FlowFuse](/blog/2024/09/node-red-version-control-with-snapshots/).

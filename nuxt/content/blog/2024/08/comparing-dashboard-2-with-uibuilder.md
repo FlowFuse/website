@@ -168,7 +168,7 @@ _Screenshot of the FlowFuse Dashboard package's weekly download chart from npm_
 
 UI-Builder has a smaller but still active user community. While not as large as FlowFuse Dashboard's, it includes dedicated users who also engage in forums, contribute to discussions, and share their use cases and solutions.
 
-!["Screenshot of the Ui-Builder package's weekly download chart from npm"](./images/ui-builder-downloads.png )
+!["Screenshot of the Ui-Builder package's weekly download chart from npm"](/blog/2024/08/images/ui-builder-downloads.png )
 _Screenshot of the Ui-Builder package's weekly download chart from npm_
 
 ## How Good is the Support and Documentation?
@@ -187,7 +187,7 @@ UI-Builder also has good support, with active contributions from the author and 
 
 FlowFuse Dashboard is actively working on enhancing its feature set. With extensive functionality already in place, the project also has ambitious plans to introduce more advanced features to better serve its users. You can track these developments on the [FlowFuse Dashboard GitHub project board](https://github.com/orgs/FlowFuse/projects/15/views/4), where ongoing and upcoming features are documented.
 
-!["Screenshot of the FlowFuse Dashboard GitHub project board"](./images/dashboard-2-project-plan.png )
+!["Screenshot of the FlowFuse Dashboard GitHub project board"](/blog/2024/08/images/dashboard-2-project-plan.png )
 _Screenshot of the FlowFuse Dashboard GitHub project board_
 
 Additionally, updates about new features and enhancements are also provided through social media, blogs, and the Node-RED forums, ensuring that users stay informed about the latest developments.

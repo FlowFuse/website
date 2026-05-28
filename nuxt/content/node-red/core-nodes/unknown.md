@@ -23,13 +23,13 @@ Before importing flows, identify which node packages are installed in your sourc
 
 Access the Palette Manager through the Node-RED menu to see all installed packages and their versions.
 
-![List of nodes installed, including unused nodes](./images/list-nodes-unused.png)
+![List of nodes installed, including unused nodes](/node-red/core-nodes/images/list-nodes-unused.png)
 
 ### Using System Info
 
 The System Info dialog provides a comprehensive list of installed node packages that you can view and copy for documentation.
 
-![List of nodes installed through the System Info dialog](./images/system-info-installed-nodes.gif)
+![List of nodes installed through the System Info dialog](/node-red/core-nodes/images/system-info-installed-nodes.gif)
 
 ## Migrating flows to FlowFuse
 
