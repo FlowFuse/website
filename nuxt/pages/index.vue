@@ -9,10 +9,27 @@ const tagLine = 'Build and Deploy Industrial Applications at Scale with FlowFuse
 const subtitle = 'FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.'
 
 const metrics = [
-    { number: '10x', text: 'Faster development with FlowFuse Expert' },
-    { number: '50%', text: 'Reduction in scrap rate with real-time monitoring' },
-    { number: '9x', text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services" },
+    { number: '50%', text: 'Reduction in scrap rate with real-time operational monitoring' },
+    { number: '10x', text: 'Faster from idea to deployed operational application with FlowFuse Expert' },
+    { number: '20+', text: 'Manufacturing sites standardized from a single platform without rebuilding' },
 ]
+
+// Rotating hero background images (ported from src/_data/heroImages.js + config.json)
+const heroImages = [
+    { src: '/images/home/hero/hero-1.jpg', alt: 'Industrial manufacturing facility', mobileOverlay: true },
+    { src: '/images/home/hero/hero-2.jpg', alt: 'Industrial shipping port with cargo containers and cranes', mobileOverlay: true },
+    { src: '/images/home/hero/hero-3.jpg', alt: 'Large-scale solar panel array at an industrial energy facility', mobileOverlay: false },
+]
+const activeSlide = ref(0)
+onMounted(() => {
+    if (heroImages.length < 2) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    setTimeout(() => {
+        const advance = () => { activeSlide.value = (activeSlide.value + 1) % heroImages.length }
+        advance()
+        setInterval(advance, 4400)
+    }, 3200)
+})
 
 const sections = [
     { svg: 'lock-closed', title: 'Vendor-Locked SCADA Ecosystems', description: 'Proprietary platforms tie your strategy to a single vendor, creating expensive risks. FlowFuse offers a flexible, open-source-based alternative that puts you in control.' },
@@ -50,36 +67,54 @@ useHead({
 <template>
   <div class="w-full">
     <!--Hero Content-->
-    <div class="w-full px-6 raster-gradient-bg red-blob">
-      <div class="sm:max-w-screen-lg mt-6 md:mt-12 mx-auto">
-        <div class="container m-auto text-left max-w-screen-lg">
-          <div class="mx-auto">
-            <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-indigo-700 mt-12 md:mt-28 max-w-4xl">{{ tagLine }}</h1>
-            <p class="mt-12 text-center text-gray-600 md:text-xl m-auto max-w-4xl">{{ subtitle }}</p>
-            <div class="flex flex-col my-12">
-              <div class="m-auto flex gap-4 items-center justify-center flex-row">
-                <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/">
-                  <span class="text-base uppercase items-center">BOOK A DEMO</span>
-                </a>
-                <a class="ff-btn flex flex-col mb-6" :href="SIGNUP_URL">
-                  <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                    TRY IT OUT
-                    <Icon name="arrow-right" />
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="w-full flex-grow relative bg-gradient-to-tl from-red-100 to-indigo-100 p-4 md:p-8 m-auto rounded-xl">
-              <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full">
-                <img src="/images/home/flowfuse-home-ui.png" alt="FlowFuse Home UI" class="w-full h-auto" loading="lazy">
+    <section class="w-full relative bg-indigo-800 md:min-h-[800px]">
+      <div v-if="heroImages.length" class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div v-for="(slide, i) in heroImages" :key="slide.src" class="hero-slide" :class="{ 'is-active': i === activeSlide }">
+          <img :src="slide.src" :alt="slide.alt" loading="lazy">
+          <div v-if="slide.mobileOverlay" class="absolute inset-0 bg-gray-500/50 mix-blend-multiply md:hidden"></div>
+        </div>
+      </div>
+      <div class="relative z-10 px-6 w-full pt-12 md:pt-28 pb-36 md:pb-24">
+        <div class="sm:max-w-screen-lg mx-auto">
+          <div class="container m-auto text-left max-w-screen-lg">
+            <div class="mx-auto">
+              <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-white max-w-4xl">{{ tagLine }}</h1>
+              <p class="mt-12 text-center text-gray-200 md:text-xl m-auto max-w-4xl">{{ subtitle }}</p>
+              <div class="flex flex-col mt-12">
+                <div class="m-auto flex gap-4 items-center justify-center flex-row">
+                  <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/">
+                    <span class="text-base uppercase items-center">BOOK A DEMO</span>
+                  </a>
+                  <a class="ff-btn flex flex-col mb-6" :href="SIGNUP_URL">
+                    <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
+                      TRY IT OUT
+                      <Icon name="arrow-right" />
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Screenshot bridge: overlaps hero from below -->
+    <div class="relative z-10 px-6 -mt-28 md:-mt-48">
+      <div class="sm:max-w-screen-lg mx-auto">
+        <div class="w-full flex-grow relative bg-gradient-to-tl from-red-100 to-indigo-100 p-4 md:p-8 rounded-xl">
+          <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full">
+            <img src="/images/home/flowfuse-home-ui.png" alt="FlowFuse Home UI" class="w-full h-auto" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Proof + Metrics -->
+    <div class="w-full px-6 pt-8">
       <!-- Social Proof -->
       <div class="sm:max-w-screen-lg m-auto max-w-5xl mb-10">
-        <div class="w-full text-center min-h-14 flex justify-center items-center mt-16 bg-radial-indigo">
+        <div class="w-full text-center min-h-14 flex justify-center items-center mt-8 bg-radial-indigo">
           <h2 class="text-gray-600 text-lg font-semibold">Trusted by our customers</h2>
         </div>
         <div class="mx-auto text-center -mt-0.5">
@@ -89,8 +124,8 @@ useHead({
       <!-- Metrics -->
       <div class="max-w-md sm:max-w-screen-lg mx-auto mb-10">
         <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
-          <div v-for="metric in metrics" :key="metric.number" class="w-full m-auto rounded-lg bg-gradient-to-tl from-indigo-50/50 to-red-50/50 pb-3 px-4 pt-6">
-            <div class="flex"><h3 class="text-4xl font-normal text-indigo-600">{{ metric.number }}</h3></div>
+          <div v-for="metric in metrics" :key="metric.number" class="w-full h-full rounded-lg bg-red-50/70 pb-3 px-6 pt-6">
+            <h3 class="text-5xl font-semibold text-red-400">{{ metric.number }}</h3>
             <p class="mt-0 font-normal leading-6" v-html="metric.text" />
           </div>
         </div>
