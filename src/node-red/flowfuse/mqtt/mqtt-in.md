@@ -72,6 +72,19 @@ Establishes connection to the MQTT broker.
 msg.action = 'connect';
 ```
 
+The `connect` action uses the `msg.broker` object to know which broker to connect to.
+
+```javascript
+msg.broker = {
+  url: 'mqtt://localhost:1883',
+  // or can be specified as
+  // broker: 'localhost',
+  // port: 1883,
+  clientid: 'client-1',
+  cleansession: true
+}
+```
+
 ### Disconnect
 Terminates the broker connection.
 
