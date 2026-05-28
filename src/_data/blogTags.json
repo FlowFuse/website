@@ -26,6 +26,9 @@
     "label": "News",
     "value": "news"
 }, {
+    "label": "PLC",
+    "value": "plc"
+}, {
     "label": "MQTT",
     "value": "mqtt"
 }, {
@@ -34,7 +37,4 @@
 }, {
     "label": "Modbus",
     "value": "modbus"
-}, {
-    "label": "PLC",
-    "value": "plc"
 }]
