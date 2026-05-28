@@ -1,0 +1,325 @@
+---
+title: "Using TimescaleDB with Node-RED (2026 Updated)"
+description: "Learn how to integrate TimescaleDB with Node-RED for storing and managing time-series data efficiently."
+---
+
+# {{ meta.title }}
+
+In the context of IoT and IIoT applications, time series databases are essential for storing data based on timestamps. While InfluxDB has been a popular choice for a long time, another time series database, TimescaleDB, is gaining popularity. This guide will cover how to use TimescaleDB with Node-RED, how TimescaleDB works, and the queries needed when building IoT applications.
+
+If you prefer video tutorials, a few months ago, Grey, OT Data & Community Strategist at Flowfuse, conducted a [live session on TimescaleDB](https://www.youtube.com/watch?v=MD1U6LDqJ1c).
+
+
+## What is TimeScaleDB
+
+TimescaleDB is a time-series database built on PostgreSQL for efficiently handling large volumes of event data. This means that a TimescaleDB runs within an overall PostgreSQL instance which enables it to take advantage of many of the attributes of PostgreSQL such as reliability, security, and connectivity to a wide range of third-party tools. 
+
+!["Image displaying regular postgreSQL table and TimescaleDB hypertable"](/node-red-media/database/images/timescaledb-with-node-red-hypertables.png "Image displaying regular postgreSQL table and TimescaleDB hypertable"){data-zoomable}
+
+Unlike PostgreSQL, TimescaleDB uses a distributed hypertable architecture that automatically partitions your data by time. You interact with hypertables in the same way as regular PostgreSQL tables, but with extra features that make managing your time-series data much easier. Each hypertable consists of multiple PostgreSQL tables (chunks). Each chunk is assigned a range of time and only contains data from that range.
+
+## Setting up TimescaleDB environment
+
+### Installing TimescaleDB locally
+
+If you want to install TimescaleDB locally, you can follow their official documentation on [Install TimescaleDB](https://docs.timescale.com/self-hosted/latest/install/).
+
+### Using TimescaleDB cloud option
+
+TimescaleDB also offers a cloud option that simplifies deployment and management. Here’s how to set it up:
+
+1. Go to the [Timescale Cloud](https://console.cloud.timescale.com/signup) website and sign up for an account.
+2. Once logged in, create a new TimescaleDB service by following the on-screen instructions.
+3. Choose your service settings, such as region, CPU, memory, and storage requirements, based on your application's needs.
+4. After creating the service, you’ll see the connection details. If you cannot see them, go to the "Services" option in the sidebar, click on the created service, and then in the "Overview" tab at the bottom, you will see your configuration details.
+
+## Using TimescaleDB with Node-RED
+
+In this section of the guide, we will explore integrating TimescaleDB with Node-RED. We'll cover creating and deleting Hypertables, and inserting, updating, and deleting data from these tables. Additionally, we'll delve into advanced queries for comprehensive data analysis. Throughout this guide, we'll use a temperature example to illustrate each operation.
+
+### Installing PostgreSQL Custom Node
+
+Since TimescaleDB is built on top of PostgreSQL, we can use the PostgreSQL node.
+
+1. Click the Node-RED Settings (top-right).
+2. Click "Manage Palette".
+3. Search for `node-red-contrib-postgresql`.
+4. Click "Install".
+
+### Configuring PostgreSQL node with TimescaleDB configurations
+
+Before proceeding, make sure you have added environment variables for your TimescaleDB configuration details. For more information, refer to [Using environment variables with Node-RED](/blog/2023/01/environment-variables-in-node-red/).
+
+1. Drag a PostgreSQL node onto the canvas and double-click on it.
+2. Click on the edit icon next to the Server input field to add configuration details in the PostgreSQL config node.
+3. Enter the environment variables set for each of your configuration details in the corresponding input fields.
+
+!["Screenshot the FlowFuse instance setting's environment tab"](/node-red-media/database/images/using-timescaledb-with-node-red-environment-variables.png "Screenshot the FlowFuse instance setting's environment tab"){data-zoomable}
+
+!["Screenshot showing PostgreSQL config node's connection tab"](/node-red-media/database/images/using-timescaledb-with-node-red-postgresql-config-node-connection-tab.png "Screenshot showing PostgreSQL config node's connection tab"){data-zoomable}
+
+!["Screenshot showing PostgreSQL config node's security tab"](/node-red-media/database/images/using-timescaledb-with-node-red-postgresql-config-node-security-tab.png "Screenshot showing PostgreSQL config node's security tab"){data-zoomable}
+
+### Creating Hypertables
+
+To create a hypertable, start with creating a standard PostgreSQL table and convert it into a hypertable.
+
+1. Insert the following SQL commands into the PostgreSQL node's query field.
+
+```sql
+-- Create a standard PostgreSQL table
+
+CREATE TABLE sensor_data (
+        time TIMESTAMPTZ NOT NULL,
+        location STRING,
+ temperature DOUBLE PRECISION
+ );
+
+-- Convert the table into a hypertable for efficient time-series data management
+SELECT create_hypertable('sensor_data', 'time');
+```
+2. Drag an Inject node onto the canvas, which we will use to trigger the operation.
+3. Connect the Inject node's output to the input of the PostgreSQL node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiJkNzY2NzA5ZjEzYzg0MTBiIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IkNyZWF0ZSBoeXBlcnRhYmxlIiwicHJvcHMiOlt7InAiOiJwYXlsb2FkIn0seyJwIjoidG9waWMiLCJ2dCI6InN0ciJ9XSwicmVwZWF0IjoiIiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJwYXlsb2FkIjoiIiwicGF5bG9hZFR5cGUiOiJkYXRlIiwieCI6MjEwLCJ5IjoxNDAsIndpcmVzIjpbWyJhOTc3Y2I2NDZkZTJhMzBiIl1dfSx7ImlkIjoiYTk3N2NiNjQ2ZGUyYTMwYiIsInR5cGUiOiJwb3N0Z3Jlc3FsIiwieiI6Ijc3NDgxODZkNjdhZDBhNTgiLCJuYW1lIjoiUG9zdGdyZVNRTCIsInF1ZXJ5IjoiQ1JFQVRFIFRBQkxFIHNlbnNvcl9kYXRhIChcbiAgICB0aW1lIFRJTUVTVEFNUFRaIE5PVCBOVUxMLFxuICAgIGxvY2F0aW9uIFRFWFQsXG4gICAgdGVtcGVyYXR1cmUgRE9VQkxFIFBSRUNJU0lPTlxuKTtcblxuU0VMRUNUIGNyZWF0ZV9oeXBlcnRhYmxlKCdzZW5zb3JfZGF0YScsICd0aW1lJyk7XG4iLCJwb3N0Z3JlU1FMQ29uZmlnIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInNwbGl0IjpmYWxzZSwicm93c1Blck1zZyI6MSwib3V0cHV0cyI6MSwieCI6NDkwLCJ5IjoxNDAsIndpcmVzIjpbWyJjODQzNzMyZjIwODhmODNlIl1dfSx7ImlkIjoiYzg0MzczMmYyMDg4ZjgzZSIsInR5cGUiOiJkZWJ1ZyIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6ImRlYnVnIDEiLCJhY3RpdmUiOnRydWUsInRvc2lkZWJhciI6dHJ1ZSwiY29uc29sZSI6ZmFsc2UsInRvc3RhdHVzIjpmYWxzZSwiY29tcGxldGUiOiJmYWxzZSIsInN0YXR1c1ZhbCI6IiIsInN0YXR1c1R5cGUiOiJhdXRvIiwieCI6NzQwLCJ5IjoxNDAsIndpcmVzIjpbXX0seyJpZCI6ImVhMWY4ZTNkOWRiOTUyNDUiLCJ0eXBlIjoicG9zdGdyZVNRTENvbmZpZyIsIm5hbWUiOiJUaW1lc2NhbGVEQiBDb25maWd1cmF0aW9ucyIsImhvc3QiOiIke0hPU1R9IiwiaG9zdEZpZWxkVHlwZSI6InN0ciIsInBvcnQiOiIke1BPUlR9IiwicG9ydEZpZWxkVHlwZSI6Im51bSIsImRhdGFiYXNlIjoiJHtEQVRBQkFTRX0iLCJkYXRhYmFzZUZpZWxkVHlwZSI6InN0ciIsInNzbCI6ImZhbHNlIiwic3NsRmllbGRUeXBlIjoiYm9vbCIsImFwcGxpY2F0aW9uTmFtZSI6IiIsImFwcGxpY2F0aW9uTmFtZVR5cGUiOiJzdHIiLCJtYXgiOiIxMCIsIm1heEZpZWxkVHlwZSI6Im51bSIsImlkbGUiOiIxMDAwIiwiaWRsZUZpZWxkVHlwZSI6Im51bSIsImNvbm5lY3Rpb25UaW1lb3V0IjoiMTAwMDAiLCJjb25uZWN0aW9uVGltZW91dEZpZWxkVHlwZSI6Im51bSIsInVzZXIiOiIke1VTRVJOQU1FfSIsInVzZXJGaWVsZFR5cGUiOiJzdHIiLCJwYXNzd29yZCI6IiR7UEFTU1dPUkR9IiwicGFzc3dvcmRGaWVsZFR5cGUiOiJzdHIifV0="
+---
+::
+
+
+
+### Inserting Data into the Table
+
+The steps to insert data into a TimescaleDB Hypertable are similar to inserting data into a standard PostgreSQL table.
+
+1. Drag the Inject nodes onto the canvas.
+2. Set the `msg.payload.temperature` to the JSONata expression `$floor(($random() * 21) + 30)` which will generate random data for us,  and `msg.payload.location` to "New York" for the first Inject node, and do the same for the second Inject node but with a different location.
+
+!["Screenshot of the inject node generating sensor data for new york city"](/node-red-media/database/images/using-timescaledb-with-node-red-inject-node-2.png "Screenshot of the inject node generating sensor data for new york city"){data-zoomable}
+
+!["Screenshot of the inject node generating sensor data for new york city"](/node-red-media/database/images/using-timescaledb-with-node-red-inject-node-1.png "Screenshot of the inject node generating sensor data for new york city"){data-zoomable}
+
+3. For both Inject nodes, set the repeat interval to 5 seconds, which inserts data every 5 seconds.
+4. Drag a PostgreSQL node onto the canvas and insert the following SQL command into the query field:
+
+```sql
+-- Insert a new row into the sensor_data table
+INSERT INTO sensor_data (time, location, temperature)
+VALUES (
+    now(), -- Current timestamp
+    '{{msg.payload.location}}', -- Location of the sensor reading
+    '{{msg.payload.temperature}}' -- Temperature recorded by the sensor
+);
+
+```
+
+5. Drag a Debug node onto the canvas.
+6. Connect the output of the Inject nodes to the input of the PostgreSQL node and the output of PostgreSQL to the input of the Debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiJjNDJkZmRhYTQ0YTAyZWRhIiwidHlwZSI6InBvc3RncmVzcWwiLCJ6IjoiNzc0ODE4NmQ2N2FkMGE1OCIsIm5hbWUiOiIiLCJxdWVyeSI6IklOU0VSVCBJTlRPIHNlbnNvcl9kYXRhICh0aW1lLCBsb2NhdGlvbiwgdGVtcGVyYXR1cmUpXG5WQUxVRVMgKG5vdygpLCAne3ttc2cucGF5bG9hZC5sb2NhdGlvbn19JywgJ3t7bXNnLnBheWxvYWQudGVtcGVyYXR1cmV9fScpO1xuIiwicG9zdGdyZVNRTENvbmZpZyI6ImVhMWY4ZTNkOWRiOTUyNDUiLCJzcGxpdCI6ZmFsc2UsInJvd3NQZXJNc2ciOjEsIm91dHB1dHMiOjEsIngiOjQ5MCwieSI6NTQwLCJ3aXJlcyI6W1siZjg4ODIyZmM5ZmRmOTBkYyJdXX0seyJpZCI6ImY4ODgyMmZjOWZkZjkwZGMiLCJ0eXBlIjoiZGVidWciLCJ6IjoiNzc0ODE4NmQ2N2FkMGE1OCIsIm5hbWUiOiJkZWJ1ZyAyIiwiYWN0aXZlIjp0cnVlLCJ0b3NpZGViYXIiOnRydWUsImNvbnNvbGUiOmZhbHNlLCJ0b3N0YXR1cyI6ZmFsc2UsImNvbXBsZXRlIjoiZmFsc2UiLCJzdGF0dXNWYWwiOiIiLCJzdGF0dXNUeXBlIjoiYXV0byIsIngiOjcwMCwieSI6NTQwLCJ3aXJlcyI6W119LHsiaWQiOiJiM2I1ZmM2YWQ4MzAxNDVlIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IlNlbnNvciBwbGFjZWQgaW4gdGhlIE5ldyBZb3JrIiwicHJvcHMiOlt7InAiOiJwYXlsb2FkLmxvY2F0aW9uIiwidiI6Ik5ldyBZb3JrIiwidnQiOiJzdHIifSx7InAiOiJwYXlsb2FkLnRlbXBlcmF0dXJlIiwidiI6IiRmbG9vcigoJHJhbmRvbSgpICogMjEpICsgMzApIiwidnQiOiJqc29uYXRhIn1dLCJyZXBlYXQiOiI1IiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJ4IjoyMzAsInkiOjU4MCwid2lyZXMiOltbImM0MmRmZGFhNDRhMDJlZGEiXV19LHsiaWQiOiIyZDA3ZDhkNzNlZDQzZjM3IiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IlNlbnNvciBwbGFjZWQgaW4gdGhlIENoaWNhZ28iLCJwcm9wcyI6W3sicCI6InBheWxvYWQubG9jYXRpb24iLCJ2IjoiQ2hpY2FnbyIsInZ0Ijoic3RyIn0seyJwIjoicGF5bG9hZC50ZW1wZXJhdHVyZSIsInYiOiIkZmxvb3IoKCRyYW5kb20oKSAqIDIxKSArIDMwKSIsInZ0IjoianNvbmF0YSJ9XSwicmVwZWF0IjoiNSIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwieCI6MjMwLCJ5Ijo1MjAsIndpcmVzIjpbWyJjNDJkZmRhYTQ0YTAyZWRhIl1dfSx7ImlkIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInR5cGUiOiJwb3N0Z3JlU1FMQ29uZmlnIiwibmFtZSI6IlRpbWVzY2FsZURCIENvbmZpZ3VyYXRpb25zIiwiaG9zdCI6IiR7SE9TVH0iLCJob3N0RmllbGRUeXBlIjoic3RyIiwicG9ydCI6IiR7UE9SVH0iLCJwb3J0RmllbGRUeXBlIjoibnVtIiwiZGF0YWJhc2UiOiIke0RBVEFCQVNFfSIsImRhdGFiYXNlRmllbGRUeXBlIjoic3RyIiwic3NsIjoiZmFsc2UiLCJzc2xGaWVsZFR5cGUiOiJib29sIiwiYXBwbGljYXRpb25OYW1lIjoiIiwiYXBwbGljYXRpb25OYW1lVHlwZSI6InN0ciIsIm1heCI6IjEwIiwibWF4RmllbGRUeXBlIjoibnVtIiwiaWRsZSI6IjEwMDAiLCJpZGxlRmllbGRUeXBlIjoibnVtIiwiY29ubmVjdGlvblRpbWVvdXQiOiIxMDAwMCIsImNvbm5lY3Rpb25UaW1lb3V0RmllbGRUeXBlIjoibnVtIiwidXNlciI6IiR7VVNFUk5BTUV9IiwidXNlckZpZWxkVHlwZSI6InN0ciIsInBhc3N3b3JkIjoiJHtQQVNTV09SRH0iLCJwYXNzd29yZEZpZWxkVHlwZSI6InN0ciJ9XQ=="
+---
+::
+
+
+
+### Updating data to the table
+
+When you need to update multiple rows of a table based on specific conditions, you can do so as follows. In the following flow, we are updating the temperature of rows where the time falls within the specified time range to increase by 0.1 degree:
+
+1. Drag an Inject node onto the canvas.
+2. Drag a PostgreSQL node onto the canvas and insert the following SQL command into the query field:
+
+```sql
+-- Update temperature data in the sensor_data table
+UPDATE sensor_data
+  SET temperature = temperature + 0.1
+  WHERE time >= '2024-05-29 16:40' -- Starting timestamp for the update
+    AND time < '20124-05-29 16:50'; -- Ending timestamp for the update
+```
+3. Drag a Debug node onto the canvas.
+4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI3MDJiOTE2OWZmMDAzOTZjIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IlVwZGF0aW5nIGRhdGEgYmFzZWQgb24gY29uZGl0aW9uIiwicHJvcHMiOlt7InAiOiJwYXlsb2FkIn0seyJwIjoidG9waWMiLCJ2dCI6InN0ciJ9XSwicmVwZWF0IjoiIiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJwYXlsb2FkIjoiIiwicGF5bG9hZFR5cGUiOiJkYXRlIiwieCI6MjEwLCJ5IjoxMTIwLCJ3aXJlcyI6W1siODFkY2IyZDg1MWJiOTMxNiJdXX0seyJpZCI6IjgxZGNiMmQ4NTFiYjkzMTYiLCJ0eXBlIjoicG9zdGdyZXNxbCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IiIsInF1ZXJ5IjoiLS0gVXBkYXRlIHRlbXBlcmF0dXJlIGRhdGEgaW4gdGhlIHNlbnNvcl9kYXRhIHRhYmxlXG5VUERBVEUgc2Vuc29yX2RhdGFcbiAgU0VUIHRlbXBlcmF0dXJlID0gdGVtcGVyYXR1cmUgKyAwLjFcbiAgV0hFUkUgdGltZSA+PSAnMjAyNC0wNS0yOVQxMTo1MDoyNS44NTlaJyAtLSBTdGFydGluZyB0aW1lc3RhbXAgZm9yIHRoZSB1cGRhdGVcbiAgICBBTkQgdGltZSA8ICcyMDI0LTA1LTI5VDEyOjE3OjQzLjMwNVonOyAtLSBFbmRpbmcgdGltZXN0YW1wIGZvciB0aGUgdXBkYXRlXG4iLCJwb3N0Z3JlU1FMQ29uZmlnIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInNwbGl0IjpmYWxzZSwicm93c1Blck1zZyI6MSwib3V0cHV0cyI6MSwieCI6NTMwLCJ5IjoxMTIwLCJ3aXJlcyI6W1siMjllMjg1OTVhOWY1YTBkZiJdXX0seyJpZCI6IjI5ZTI4NTk1YTlmNWEwZGYiLCJ0eXBlIjoiZGVidWciLCJ6IjoiNzc0ODE4NmQ2N2FkMGE1OCIsIm5hbWUiOiJkZWJ1ZyAxNCIsImFjdGl2ZSI6dHJ1ZSwidG9zaWRlYmFyIjp0cnVlLCJjb25zb2xlIjpmYWxzZSwidG9zdGF0dXMiOmZhbHNlLCJjb21wbGV0ZSI6ImZhbHNlIiwic3RhdHVzVmFsIjoiIiwic3RhdHVzVHlwZSI6ImF1dG8iLCJ4Ijo3NjAsInkiOjExMjAsIndpcmVzIjpbXX0seyJpZCI6ImVhMWY4ZTNkOWRiOTUyNDUiLCJ0eXBlIjoicG9zdGdyZVNRTENvbmZpZyIsIm5hbWUiOiJUaW1lc2NhbGVEQiBDb25maWd1cmF0aW9ucyIsImhvc3QiOiIke0hPU1R9IiwiaG9zdEZpZWxkVHlwZSI6InN0ciIsInBvcnQiOiIke1BPUlR9IiwicG9ydEZpZWxkVHlwZSI6Im51bSIsImRhdGFiYXNlIjoiJHtEQVRBQkFTRX0iLCJkYXRhYmFzZUZpZWxkVHlwZSI6InN0ciIsInNzbCI6ImZhbHNlIiwic3NsRmllbGRUeXBlIjoiYm9vbCIsImFwcGxpY2F0aW9uTmFtZSI6IiIsImFwcGxpY2F0aW9uTmFtZVR5cGUiOiJzdHIiLCJtYXgiOiIxMCIsIm1heEZpZWxkVHlwZSI6Im51bSIsImlkbGUiOiIxMDAwIiwiaWRsZUZpZWxkVHlwZSI6Im51bSIsImNvbm5lY3Rpb25UaW1lb3V0IjoiMTAwMDAiLCJjb25uZWN0aW9uVGltZW91dEZpZWxkVHlwZSI6Im51bSIsInVzZXIiOiIke1VTRVJOQU1FfSIsInVzZXJGaWVsZFR5cGUiOiJzdHIiLCJwYXNzd29yZCI6IiR7UEFTU1dPUkR9IiwicGFzc3dvcmRGaWVsZFR5cGUiOiJzdHIifV0="
+---
+::
+
+
+
+### Deleting data to the table
+
+1. Drag an Inject node onto the canvas.
+2. Drag a PostgreSQL node onto the canvas and insert the following SQL into the query field:
+
+```sql
+-- Delete rows from the sensor_data table where the temperature is below 35 degrees Celsius or humidity is below 60%
+DELETE FROM sensor_data
+WHERE temperature < 35 -- Delete rows where the temperature is less than 35 degrees Celsius
+```
+3. Drag a Debug node onto the canvas.
+4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI3MDJiOTE2OWZmMDAzOTZjIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IkRlbGV0ZSBkYXRhIGJhc2VkIG9uIGNvbmRpdGlvbiIsInByb3BzIjpbeyJwIjoicGF5bG9hZCJ9LHsicCI6InRvcGljIiwidnQiOiJzdHIifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwicGF5bG9hZCI6IiIsInBheWxvYWRUeXBlIjoiZGF0ZSIsIngiOjIxMCwieSI6MTEyMCwid2lyZXMiOltbIjgxZGNiMmQ4NTFiYjkzMTYiXV19LHsiaWQiOiI4MWRjYjJkODUxYmI5MzE2IiwidHlwZSI6InBvc3RncmVzcWwiLCJ6IjoiNzc0ODE4NmQ2N2FkMGE1OCIsIm5hbWUiOiIiLCJxdWVyeSI6Ii0tIERlbGV0ZSByb3dzIGZyb20gdGhlIHNlbnNvcl9kYXRhIHRhYmxlIHdoZXJlIHRoZSB0ZW1wZXJhdHVyZSBpcyBiZWxvdyAzNSBkZWdyZWVzIENlbHNpdXMgb3IgaHVtaWRpdHkgaXMgYmVsb3cgNjAlXG5ERUxFVEUgRlJPTSBzZW5zb3JfZGF0YVxuV0hFUkUgdGVtcGVyYXR1cmUgPCAzNSAtLSBEZWxldGUgcm93cyB3aGVyZSB0aGUgdGVtcGVyYXR1cmUgaXMgbGVzcyB0aGFuIDM1IGRlZ3JlZXMgQ2Vsc2l1cyIsInBvc3RncmVTUUxDb25maWciOiJlYTFmOGUzZDlkYjk1MjQ1Iiwic3BsaXQiOmZhbHNlLCJyb3dzUGVyTXNnIjoxLCJvdXRwdXRzIjoxLCJ4Ijo1MzAsInkiOjExMjAsIndpcmVzIjpbWyIyOWUyODU5NWE5ZjVhMGRmIl1dfSx7ImlkIjoiMjllMjg1OTVhOWY1YTBkZiIsInR5cGUiOiJkZWJ1ZyIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6ImRlYnVnIDE0IiwiYWN0aXZlIjp0cnVlLCJ0b3NpZGViYXIiOnRydWUsImNvbnNvbGUiOmZhbHNlLCJ0b3N0YXR1cyI6ZmFsc2UsImNvbXBsZXRlIjoiZmFsc2UiLCJzdGF0dXNWYWwiOiIiLCJzdGF0dXNUeXBlIjoiYXV0byIsIngiOjc2MCwieSI6MTEyMCwid2lyZXMiOltdfSx7ImlkIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInR5cGUiOiJwb3N0Z3JlU1FMQ29uZmlnIiwibmFtZSI6IlRpbWVzY2FsZURCIENvbmZpZ3VyYXRpb25zIiwiaG9zdCI6IiR7SE9TVH0iLCJob3N0RmllbGRUeXBlIjoic3RyIiwicG9ydCI6IiR7UE9SVH0iLCJwb3J0RmllbGRUeXBlIjoibnVtIiwiZGF0YWJhc2UiOiIke0RBVEFCQVNFfSIsImRhdGFiYXNlRmllbGRUeXBlIjoic3RyIiwic3NsIjoiZmFsc2UiLCJzc2xGaWVsZFR5cGUiOiJib29sIiwiYXBwbGljYXRpb25OYW1lIjoiIiwiYXBwbGljYXRpb25OYW1lVHlwZSI6InN0ciIsIm1heCI6IjEwIiwibWF4RmllbGRUeXBlIjoibnVtIiwiaWRsZSI6IjEwMDAiLCJpZGxlRmllbGRUeXBlIjoibnVtIiwiY29ubmVjdGlvblRpbWVvdXQiOiIxMDAwMCIsImNvbm5lY3Rpb25UaW1lb3V0RmllbGRUeXBlIjoibnVtIiwidXNlciI6IiR7VVNFUk5BTUV9IiwidXNlckZpZWxkVHlwZSI6InN0ciIsInBhc3N3b3JkIjoiJHtQQVNTV09SRH0iLCJwYXNzd29yZEZpZWxkVHlwZSI6InN0ciJ9XQ=="
+---
+::
+
+
+
+### Retrieving all data from the table
+
+1. Drag an Inject node onto the canvas.
+2. Drag a PostgreSQL node onto the canvas and insert the following SQL into the query field:
+
+```sql
+-- Retrieve all rows from the sensor_data table
+SELECT * FROM sensor_data;
+```
+3. Drag a Debug node onto the canvas.
+4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiJkNTUxZTE1ZjcwMTNlOTcwIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IlJldHJpZXZlIGFsbCBkYXRhIiwicHJvcHMiOlt7InAiOiJwYXlsb2FkIn0seyJwIjoidG9waWMiLCJ2dCI6InN0ciJ9XSwicmVwZWF0IjoiIiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJwYXlsb2FkIjoiIiwicGF5bG9hZFR5cGUiOiJkYXRlIiwieCI6MTgwLCJ5Ijo2NjAsIndpcmVzIjpbWyI4NTgwNjNjOGU3ZDkwZjUwIl1dfSx7ImlkIjoiODU4MDYzYzhlN2Q5MGY1MCIsInR5cGUiOiJwb3N0Z3Jlc3FsIiwieiI6Ijc3NDgxODZkNjdhZDBhNTgiLCJuYW1lIjoiIiwicXVlcnkiOiJTRUxFQ1QgKiBGUk9NIHNlbnNvcl9kYXRhOyIsInBvc3RncmVTUUxDb25maWciOiJlYTFmOGUzZDlkYjk1MjQ1Iiwic3BsaXQiOmZhbHNlLCJyb3dzUGVyTXNnIjoxLCJvdXRwdXRzIjoxLCJ4Ijo1NTAsInkiOjY2MCwid2lyZXMiOltbIjc5MTU2ODM1ZDVhZDRjNGQiXV19LHsiaWQiOiI3OTE1NjgzNWQ1YWQ0YzRkIiwidHlwZSI6ImRlYnVnIiwieiI6Ijc3NDgxODZkNjdhZDBhNTgiLCJuYW1lIjoiZGVidWcgOSIsImFjdGl2ZSI6dHJ1ZSwidG9zaWRlYmFyIjp0cnVlLCJjb25zb2xlIjpmYWxzZSwidG9zdGF0dXMiOmZhbHNlLCJjb21wbGV0ZSI6ImZhbHNlIiwic3RhdHVzVmFsIjoiIiwic3RhdHVzVHlwZSI6ImF1dG8iLCJ4Ijo3ODAsInkiOjY2MCwid2lyZXMiOltdfSx7ImlkIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInR5cGUiOiJwb3N0Z3JlU1FMQ29uZmlnIiwibmFtZSI6IlRpbWVzY2FsZURCIENvbmZpZ3VyYXRpb25zIiwiaG9zdCI6IiR7SE9TVH0iLCJob3N0RmllbGRUeXBlIjoic3RyIiwicG9ydCI6IiR7UE9SVH0iLCJwb3J0RmllbGRUeXBlIjoibnVtIiwiZGF0YWJhc2UiOiIke0RBVEFCQVNFfSIsImRhdGFiYXNlRmllbGRUeXBlIjoic3RyIiwic3NsIjoiZmFsc2UiLCJzc2xGaWVsZFR5cGUiOiJib29sIiwiYXBwbGljYXRpb25OYW1lIjoiIiwiYXBwbGljYXRpb25OYW1lVHlwZSI6InN0ciIsIm1heCI6IjEwIiwibWF4RmllbGRUeXBlIjoibnVtIiwiaWRsZSI6IjEwMDAiLCJpZGxlRmllbGRUeXBlIjoibnVtIiwiY29ubmVjdGlvblRpbWVvdXQiOiIxMDAwMCIsImNvbm5lY3Rpb25UaW1lb3V0RmllbGRUeXBlIjoibnVtIiwidXNlciI6IiR7VVNFUk5BTUV9IiwidXNlckZpZWxkVHlwZSI6InN0ciIsInBhc3N3b3JkIjoiJHtQQVNTV09SRH0iLCJwYXNzd29yZEZpZWxkVHlwZSI6InN0ciJ9XQ=="
+---
+::
+
+
+
+### Retrieve Recent Data
+
+In situations where you need to quickly access the most recent data, such as monitoring real-time sensor readings or analyzing recent transactions, you can follow these steps:
+
+1. Drag an Inject node onto the canvas.
+2. Drag a PostgreSQL node onto the canvas and insert the following SQL into the query field:
+
+```sql
+-- Retrieve the most recent 100 rows from the sensor_data table, ordered by timestamp in descending order
+SELECT *
+FROM sensor_data
+ORDER BY time DESC -- Order the results by timestamp in descending order
+LIMIT 100; -- Limit the results to 100 rows
+```
+
+3. Drag a Debug node onto the canvas.
+4. Connect the output of the Inject node to the input of the PostgreSQL node and the output of the PostgreSQL node to the input of the Debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI5NDM2Yzc5ZTlkOWUzNTkzIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IlJldHJpZXZlIGxhc3QgMTAwIGRhdGEgb3JkZXJlZCBieSB0aW1lIiwicHJvcHMiOlt7InAiOiJwYXlsb2FkIn0seyJwIjoidG9waWMiLCJ2dCI6InN0ciJ9XSwicmVwZWF0IjoiIiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJwYXlsb2FkIjoiIiwicGF5bG9hZFR5cGUiOiJkYXRlIiwieCI6MjUwLCJ5Ijo3MjAsIndpcmVzIjpbWyI2ZDI2MTE3ZGQ2MWQwZWNjIl1dfSx7ImlkIjoiNmQyNjExN2RkNjFkMGVjYyIsInR5cGUiOiJwb3N0Z3Jlc3FsIiwieiI6Ijc3NDgxODZkNjdhZDBhNTgiLCJuYW1lIjoiIiwicXVlcnkiOiJTRUxFQ1QgKiBGUk9NIHNlbnNvcl9kYXRhIE9SREVSIEJZIHRpbWUgREVTQyBMSU1JVCAxMDA7IiwicG9zdGdyZVNRTENvbmZpZyI6ImVhMWY4ZTNkOWRiOTUyNDUiLCJzcGxpdCI6ZmFsc2UsInJvd3NQZXJNc2ciOjEsIm91dHB1dHMiOjEsIngiOjU1MCwieSI6NzIwLCJ3aXJlcyI6W1siMDkyYTA4MzA3YWU2ZDYzYyJdXX0seyJpZCI6IjA5MmEwODMwN2FlNmQ2M2MiLCJ0eXBlIjoiZGVidWciLCJ6IjoiNzc0ODE4NmQ2N2FkMGE1OCIsIm5hbWUiOiJkZWJ1ZyAxMCIsImFjdGl2ZSI6dHJ1ZSwidG9zaWRlYmFyIjp0cnVlLCJjb25zb2xlIjpmYWxzZSwidG9zdGF0dXMiOmZhbHNlLCJjb21wbGV0ZSI6ImZhbHNlIiwic3RhdHVzVmFsIjoiIiwic3RhdHVzVHlwZSI6ImF1dG8iLCJ4Ijo3ODAsInkiOjcyMCwid2lyZXMiOltdfSx7ImlkIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInR5cGUiOiJwb3N0Z3JlU1FMQ29uZmlnIiwibmFtZSI6IlRpbWVzY2FsZURCIENvbmZpZ3VyYXRpb25zIiwiaG9zdCI6IiR7SE9TVH0iLCJob3N0RmllbGRUeXBlIjoic3RyIiwicG9ydCI6IiR7UE9SVH0iLCJwb3J0RmllbGRUeXBlIjoibnVtIiwiZGF0YWJhc2UiOiIke0RBVEFCQVNFfSIsImRhdGFiYXNlRmllbGRUeXBlIjoic3RyIiwic3NsIjoiZmFsc2UiLCJzc2xGaWVsZFR5cGUiOiJib29sIiwiYXBwbGljYXRpb25OYW1lIjoiIiwiYXBwbGljYXRpb25OYW1lVHlwZSI6InN0ciIsIm1heCI6IjEwIiwibWF4RmllbGRUeXBlIjoibnVtIiwiaWRsZSI6IjEwMDAiLCJpZGxlRmllbGRUeXBlIjoibnVtIiwiY29ubmVjdGlvblRpbWVvdXQiOiIxMDAwMCIsImNvbm5lY3Rpb25UaW1lb3V0RmllbGRUeXBlIjoibnVtIiwidXNlciI6IiR7VVNFUk5BTUV9IiwidXNlckZpZWxkVHlwZSI6InN0ciIsInBhc3N3b3JkIjoiJHtQQVNTV09SRH0iLCJwYXNzd29yZEZpZWxkVHlwZSI6InN0ciJ9XQ=="
+---
+::
+
+
+
+### Retrieve Data Based on Time Range
+
+When you need to retrieve historical records within a specific time frame, follow these steps:
+
+1. Drag an Inject node onto the canvas.
+2. Drag a PostgreSQL node onto the canvas and insert the following SQL command into the query field:
+
+```sql
+-- Retrieve data from the sensor_data table where the timestamp is within the last 400 seconds
+SELECT *
+FROM sensor_data
+WHERE time > NOW() - INTERVAL '400 SECONDS';
+``` 
+
+3. Drag a Debug node onto the canvas.
+4. Connect the output of the inject node to the input of the PostgreSQL node, and connect the output of the PostgreSQL node to the input of the debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI2MGUxMTFiMWY2ZTA5NjEzIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IlJldHJpZXZlIGRhdGEgYmFzZWQgb24gdGltZSByYW5nZSIsInByb3BzIjpbeyJwIjoicGF5bG9hZCJ9LHsicCI6InRvcGljIiwidnQiOiJzdHIifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwicGF5bG9hZCI6IiIsInBheWxvYWRUeXBlIjoiZGF0ZSIsIngiOjI0MCwieSI6ODgwLCJ3aXJlcyI6W1siMGIxZWMzMzhkYmIxNjRmOSJdXX0seyJpZCI6IjBiMWVjMzM4ZGJiMTY0ZjkiLCJ0eXBlIjoicG9zdGdyZXNxbCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IiIsInF1ZXJ5IjoiLS0gQWdncmVnYXRlIGRhdGEgaW50byBzcGVjaWZpYyB0aW1lIGJ1Y2tldHNcblNFTEVDVCB0aW1lX2J1Y2tldCgnMTUgbWludXRlcycsIHRpbWUpIEFTIGZpZnRlZW5fbWluLCAtLSBDcmVhdGUgdGltZSBidWNrZXRzIG9mIDE1IG1pbnV0ZXNcbiAgICAgICBsb2NhdGlvbiwgLS0gTG9jYXRpb24gb2YgdGhlIHNlbnNvclxuICAgICAgIE1BWCh0ZW1wZXJhdHVyZSkgQVMgbWF4X3RlbXAgLS0gQ2FsY3VsYXRlIHRoZSBtYXhpbXVtIHRlbXBlcmF0dXJlIHdpdGhpbiBlYWNoIHRpbWUgYnVja2V0XG5GUk9NIHNlbnNvcl9kYXRhIC0tIFNlbGVjdCBkYXRhIGZyb20gdGhlIGNvbmRpdGlvbnMgdGFibGVcbldIRVJFIHRpbWUgPiBOT1coKSAtIElOVEVSVkFMICczIGhvdXJzJyAtLSBGaWx0ZXIgZGF0YSB0byBpbmNsdWRlIG9ubHkgdGhlIGxhc3QgMyBob3Vyc1xuR1JPVVAgQlkgZmlmdGVlbl9taW4sIGxvY2F0aW9uIC0tIEdyb3VwIGRhdGEgYnkgdGltZSBidWNrZXRzIGFuZCBsb2NhdGlvblxuT1JERVIgQlkgZmlmdGVlbl9taW4gREVTQywgbWF4X3RlbXAgREVTQzsgLS0gT3JkZXIgdGhlIHJlc3VsdHMgYnkgdGltZSBidWNrZXQgaW4gZGVzY2VuZGluZyBvcmRlciwgYW5kIHRoZW4gYnkgbWF4aW11bSB0ZW1wZXJhdHVyZSBpbiBkZXNjZW5kaW5nIG9yZGVyXG4iLCJwb3N0Z3JlU1FMQ29uZmlnIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInNwbGl0IjpmYWxzZSwicm93c1Blck1zZyI6MSwib3V0cHV0cyI6MSwieCI6NTUwLCJ5Ijo4ODAsIndpcmVzIjpbWyJmNmY2YzRmYTY1MWVlMzUxIl1dfSx7ImlkIjoiZjZmNmM0ZmE2NTFlZTM1MSIsInR5cGUiOiJkZWJ1ZyIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6ImRlYnVnIDEzIiwiYWN0aXZlIjp0cnVlLCJ0b3NpZGViYXIiOnRydWUsImNvbnNvbGUiOmZhbHNlLCJ0b3N0YXR1cyI6ZmFsc2UsImNvbXBsZXRlIjoiZmFsc2UiLCJzdGF0dXNWYWwiOiIiLCJzdGF0dXNUeXBlIjoiYXV0byIsIngiOjc4MCwieSI6ODgwLCJ3aXJlcyI6W119LHsiaWQiOiJlYTFmOGUzZDlkYjk1MjQ1IiwidHlwZSI6InBvc3RncmVTUUxDb25maWciLCJuYW1lIjoiVGltZXNjYWxlREIgQ29uZmlndXJhdGlvbnMiLCJob3N0IjoiJHtIT1NUfSIsImhvc3RGaWVsZFR5cGUiOiJzdHIiLCJwb3J0IjoiJHtQT1JUfSIsInBvcnRGaWVsZFR5cGUiOiJudW0iLCJkYXRhYmFzZSI6IiR7REFUQUJBU0V9IiwiZGF0YWJhc2VGaWVsZFR5cGUiOiJzdHIiLCJzc2wiOiJmYWxzZSIsInNzbEZpZWxkVHlwZSI6ImJvb2wiLCJhcHBsaWNhdGlvbk5hbWUiOiIiLCJhcHBsaWNhdGlvbk5hbWVUeXBlIjoic3RyIiwibWF4IjoiMTAiLCJtYXhGaWVsZFR5cGUiOiJudW0iLCJpZGxlIjoiMTAwMCIsImlkbGVGaWVsZFR5cGUiOiJudW0iLCJjb25uZWN0aW9uVGltZW91dCI6IjEwMDAwIiwiY29ubmVjdGlvblRpbWVvdXRGaWVsZFR5cGUiOiJudW0iLCJ1c2VyIjoiJHtVU0VSTkFNRX0iLCJ1c2VyRmllbGRUeXBlIjoic3RyIiwicGFzc3dvcmQiOiIke1BBU1NXT1JEfSIsInBhc3N3b3JkRmllbGRUeXBlIjoic3RyIn1d"
+---
+::
+
+
+
+### Aggregating data into specific time bucket
+
+Aggregating data involves combining multiple data points into summary statistics, usually over a specified time period or category. In the following flow, we aggregate sensor data from the last three hours into 15-minute intervals, computing summary statistics such as the maximum temperature per interval for each location.
+
+1. Drag an inject node onto the canvas.
+2. Drag a PostgreSQL node onto the canvas and insert the following SQL query into the query field:
+
+```sql
+-- Aggregate data into specific time buckets
+SELECT time_bucket('15 minutes', time) AS fifteen_min, -- Create time buckets of 15 minutes
+       location, -- Location of the sensor
+       *, -- Select all columns
+       MAX(temperature) AS max_temp -- Calculate the maximum temperature within each time bucket
+FROM conditions -- Select data from the conditions table
+WHERE time > NOW() - INTERVAL '3 hours' -- Filter data to include only the last 3 hours
+GROUP BY fifteen_min, location -- Group data by time buckets and location
+ORDER BY fifteen_min DESC, max_temp DESC; -- Order the results by time bucket in descending order, and then by maximum temperature in descending order
+```
+3. Drag the Debug node onto the canvas.
+4. Connect the output of the inject node to the input of the PostgreSQL node, and connect the output of the PostgreSQL node to the input of the debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI2MGUxMTFiMWY2ZTA5NjEzIiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IkFnZ3JlZ2F0aW5nIGRhdGEgaW50byBzcGVjaWZpYyB0aW1lIGJ1Y2tldCIsInByb3BzIjpbeyJwIjoicGF5bG9hZCJ9LHsicCI6InRvcGljIiwidnQiOiJzdHIifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwicGF5bG9hZCI6IiIsInBheWxvYWRUeXBlIjoiZGF0ZSIsIngiOjI2MCwieSI6ODgwLCJ3aXJlcyI6W1siMGIxZWMzMzhkYmIxNjRmOSJdXX0seyJpZCI6IjBiMWVjMzM4ZGJiMTY0ZjkiLCJ0eXBlIjoicG9zdGdyZXNxbCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IiIsInF1ZXJ5IjoiLS0gQWdncmVnYXRlIGRhdGEgaW50byBzcGVjaWZpYyB0aW1lIGJ1Y2tldHNcblNFTEVDVCB0aW1lX2J1Y2tldCgnMTUgbWludXRlcycsIHRpbWUpIEFTIGZpZnRlZW5fbWluLCAtLSBDcmVhdGUgdGltZSBidWNrZXRzIG9mIDE1IG1pbnV0ZXNcbiAgICAgICBsb2NhdGlvbiwgLS0gTG9jYXRpb24gb2YgdGhlIHNlbnNvclxuICAgICAgIE1BWCh0ZW1wZXJhdHVyZSkgQVMgbWF4X3RlbXAgLS0gQ2FsY3VsYXRlIHRoZSBtYXhpbXVtIHRlbXBlcmF0dXJlIHdpdGhpbiBlYWNoIHRpbWUgYnVja2V0XG5GUk9NIHNlbnNvcl9kYXRhIC0tIFNlbGVjdCBkYXRhIGZyb20gdGhlIGNvbmRpdGlvbnMgdGFibGVcbldIRVJFIHRpbWUgPiBOT1coKSAtIElOVEVSVkFMICczIGhvdXJzJyAtLSBGaWx0ZXIgZGF0YSB0byBpbmNsdWRlIG9ubHkgdGhlIGxhc3QgMyBob3Vyc1xuR1JPVVAgQlkgZmlmdGVlbl9taW4sIGxvY2F0aW9uIC0tIEdyb3VwIGRhdGEgYnkgdGltZSBidWNrZXRzIGFuZCBsb2NhdGlvblxuT1JERVIgQlkgZmlmdGVlbl9taW4gREVTQywgbWF4X3RlbXAgREVTQzsgLS0gT3JkZXIgdGhlIHJlc3VsdHMgYnkgdGltZSBidWNrZXQgaW4gZGVzY2VuZGluZyBvcmRlciwgYW5kIHRoZW4gYnkgbWF4aW11bSB0ZW1wZXJhdHVyZSBpbiBkZXNjZW5kaW5nIG9yZGVyXG4iLCJwb3N0Z3JlU1FMQ29uZmlnIjoiZWExZjhlM2Q5ZGI5NTI0NSIsInNwbGl0IjpmYWxzZSwicm93c1Blck1zZyI6MSwib3V0cHV0cyI6MSwieCI6NTUwLCJ5Ijo4ODAsIndpcmVzIjpbWyJmNmY2YzRmYTY1MWVlMzUxIl1dfSx7ImlkIjoiZjZmNmM0ZmE2NTFlZTM1MSIsInR5cGUiOiJkZWJ1ZyIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6ImRlYnVnIDEzIiwiYWN0aXZlIjp0cnVlLCJ0b3NpZGViYXIiOnRydWUsImNvbnNvbGUiOmZhbHNlLCJ0b3N0YXR1cyI6ZmFsc2UsImNvbXBsZXRlIjoiZmFsc2UiLCJzdGF0dXNWYWwiOiIiLCJzdGF0dXNUeXBlIjoiYXV0byIsIngiOjc4MCwieSI6ODgwLCJ3aXJlcyI6W119LHsiaWQiOiJlYTFmOGUzZDlkYjk1MjQ1IiwidHlwZSI6InBvc3RncmVTUUxDb25maWciLCJuYW1lIjoiVGltZXNjYWxlREIgQ29uZmlndXJhdGlvbnMiLCJob3N0IjoiJHtIT1NUfSIsImhvc3RGaWVsZFR5cGUiOiJzdHIiLCJwb3J0IjoiJHtQT1JUfSIsInBvcnRGaWVsZFR5cGUiOiJudW0iLCJkYXRhYmFzZSI6IiR7REFUQUJBU0V9IiwiZGF0YWJhc2VGaWVsZFR5cGUiOiJzdHIiLCJzc2wiOiJmYWxzZSIsInNzbEZpZWxkVHlwZSI6ImJvb2wiLCJhcHBsaWNhdGlvbk5hbWUiOiIiLCJhcHBsaWNhdGlvbk5hbWVUeXBlIjoic3RyIiwibWF4IjoiMTAiLCJtYXhGaWVsZFR5cGUiOiJudW0iLCJpZGxlIjoiMTAwMCIsImlkbGVGaWVsZFR5cGUiOiJudW0iLCJjb25uZWN0aW9uVGltZW91dCI6IjEwMDAwIiwiY29ubmVjdGlvblRpbWVvdXRGaWVsZFR5cGUiOiJudW0iLCJ1c2VyIjoiJHtVU0VSTkFNRX0iLCJ1c2VyRmllbGRUeXBlIjoic3RyIiwicGFzc3dvcmQiOiIke1BBU1NXT1JEfSIsInBhc3N3b3JkRmllbGRUeXBlIjoic3RyIn1d"
+---
+::
+
+
+
+### Dropping the table 
+
+1. Drag an inject node onto the canvas.
+2. Drag a PostgreSQL node onto the canvas and insert the following SQL query into the query field:
+
+```sql
+-- Drop the table if it exists
+DROP TABLE IF EXISTS sensor_data;
+```
+3. Drag the Debug node onto the canvas.
+4. Connect the output of the inject node to the input of the PostgreSQL node, and connect the output of the PostgreSQL node to the input of the debug node.
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI1Mjc1MzMyZmVjZDFjNzE1IiwidHlwZSI6ImluamVjdCIsInoiOiI3NzQ4MTg2ZDY3YWQwYTU4IiwibmFtZSI6IkRyb3AgdGFibGUiLCJwcm9wcyI6W3sicCI6InBheWxvYWQifSx7InAiOiJ0b3BpYyIsInZ0Ijoic3RyIn1dLCJyZXBlYXQiOiIiLCJjcm9udGFiIjoiIiwib25jZSI6ZmFsc2UsIm9uY2VEZWxheSI6MC4xLCJ0b3BpYyI6IiIsInBheWxvYWQiOiIiLCJwYXlsb2FkVHlwZSI6ImRhdGUiLCJ4IjoxNjAsInkiOjk2MCwid2lyZXMiOltbIjM4MmMyNmRlOTA3MTI0ODciXV19LHsiaWQiOiIzODJjMjZkZTkwNzEyNDg3IiwidHlwZSI6InBvc3RncmVzcWwiLCJ6IjoiNzc0ODE4NmQ2N2FkMGE1OCIsIm5hbWUiOiIiLCJxdWVyeSI6IkRST1AgVEFCTEUgSUYgRVhJU1RTIHNlbnNvcl9kYXRhOyIsInBvc3RncmVTUUxDb25maWciOiJlYTFmOGUzZDlkYjk1MjQ1Iiwic3BsaXQiOmZhbHNlLCJyb3dzUGVyTXNnIjoxLCJvdXRwdXRzIjoxLCJ4Ijo0NTAsInkiOjk2MCwid2lyZXMiOltbImQ3ZWIwYzkwMjBjOTY4YzUiXV19LHsiaWQiOiJkN2ViMGM5MDIwYzk2OGM1IiwidHlwZSI6ImRlYnVnIiwieiI6Ijc3NDgxODZkNjdhZDBhNTgiLCJuYW1lIjoiZGVidWcgMTIiLCJhY3RpdmUiOnRydWUsInRvc2lkZWJhciI6dHJ1ZSwiY29uc29sZSI6ZmFsc2UsInRvc3RhdHVzIjpmYWxzZSwiY29tcGxldGUiOiJmYWxzZSIsInN0YXR1c1ZhbCI6IiIsInN0YXR1c1R5cGUiOiJhdXRvIiwieCI6NzIwLCJ5Ijo5NjAsIndpcmVzIjpbXX0seyJpZCI6ImVhMWY4ZTNkOWRiOTUyNDUiLCJ0eXBlIjoicG9zdGdyZVNRTENvbmZpZyIsIm5hbWUiOiJUaW1lc2NhbGVEQiBDb25maWd1cmF0aW9ucyIsImhvc3QiOiIke0hPU1R9IiwiaG9zdEZpZWxkVHlwZSI6InN0ciIsInBvcnQiOiIke1BPUlR9IiwicG9ydEZpZWxkVHlwZSI6Im51bSIsImRhdGFiYXNlIjoiJHtEQVRBQkFTRX0iLCJkYXRhYmFzZUZpZWxkVHlwZSI6InN0ciIsInNzbCI6ImZhbHNlIiwic3NsRmllbGRUeXBlIjoiYm9vbCIsImFwcGxpY2F0aW9uTmFtZSI6IiIsImFwcGxpY2F0aW9uTmFtZVR5cGUiOiJzdHIiLCJtYXgiOiIxMCIsIm1heEZpZWxkVHlwZSI6Im51bSIsImlkbGUiOiIxMDAwIiwiaWRsZUZpZWxkVHlwZSI6Im51bSIsImNvbm5lY3Rpb25UaW1lb3V0IjoiMTAwMDAiLCJjb25uZWN0aW9uVGltZW91dEZpZWxkVHlwZSI6Im51bSIsInVzZXIiOiIke1VTRVJOQU1FfSIsInVzZXJGaWVsZFR5cGUiOiJzdHIiLCJwYXNzd29yZCI6IiR7UEFTU1dPUkR9IiwicGFzc3dvcmRGaWVsZFR5cGUiOiJzdHIifV0="
+---
+::
+
+
+
+## Deploying the Flow
+
+1. To test the imported flows, you need to deploy them. To do that, click on the deploy button located in the top right corner.
+
+After deploying the flow, you can test each operation such as creating, deleting, updating, and other queries by clicking on the inject button. Upon successful operation, you will be able to see the results in the debug panel of the sidebar. If you want to learn any additional information about PostgreSQL, you can refer to the [Using PostgreSQL with Node-RED](/node-red/database/postgresql/) where you will also find the section which shows the messages received after a successful operation by the PostgresWQL node.

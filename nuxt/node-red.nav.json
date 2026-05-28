@@ -1,0 +1,618 @@
+[
+  {
+    "title": "Node-RED Documentation",
+    "url": "/node-red/learn/",
+    "children": []
+  },
+  {
+    "title": "Getting Started",
+    "url": "/node-red/getting-started/",
+    "children": [
+      {
+        "title": "Editor",
+        "url": "/node-red/getting-started/editor/",
+        "children": [
+          {
+            "title": "Header",
+            "url": "/node-red/getting-started/editor/header/",
+            "children": []
+          },
+          {
+            "title": "Palette",
+            "url": "/node-red/getting-started/editor/palette/",
+            "children": []
+          },
+          {
+            "title": "Sidebar",
+            "url": "/node-red/getting-started/editor/sidebar/",
+            "children": []
+          },
+          {
+            "title": "Workspace",
+            "url": "/node-red/getting-started/editor/workspace/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Port Configuration",
+        "url": "/node-red/getting-started/node-red-port/",
+        "children": []
+      },
+      {
+        "title": "Node-RED Library",
+        "url": "/node-red/getting-started/library/",
+        "children": []
+      },
+      {
+        "title": "Update Node-RED",
+        "url": "/node-red/getting-started/update-node-red/",
+        "children": []
+      },
+      {
+        "title": "Node-RED On Android",
+        "url": "/node-red/getting-started/node-red-android/",
+        "children": []
+      },
+      {
+        "title": "Working with Messages",
+        "url": "/node-red/getting-started/node-red-messages/",
+        "children": []
+      },
+      {
+        "title": "String",
+        "url": "/node-red/getting-started/string/",
+        "children": []
+      },
+      {
+        "title": "Date & Time",
+        "url": "/node-red/getting-started/date-and-time/",
+        "children": []
+      },
+      {
+        "title": "Programming",
+        "url": "/node-red/getting-started/programming/",
+        "children": [
+          {
+            "title": "Data Tranformation",
+            "url": "/node-red/getting-started/programming/data-tranformation/",
+            "children": []
+          },
+          {
+            "title": "Debugging",
+            "url": "/node-red/getting-started/programming/debugging-flows/",
+            "children": []
+          },
+          {
+            "title": "If-Else",
+            "url": "/node-red/getting-started/programming/if-else/",
+            "children": []
+          },
+          {
+            "title": "Loop",
+            "url": "/node-red/getting-started/programming/loop/",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Terminology",
+    "url": "/node-red/terminology/",
+    "children": []
+  },
+  {
+    "title": "Keyboard Shortcuts",
+    "url": "/node-red/keyboard/",
+    "children": []
+  },
+  {
+    "title": "Core Nodes",
+    "url": "/node-red/core-nodes/",
+    "children": [
+      {
+        "title": "Common",
+        "url": "/node-red/core-nodes/inject/",
+        "children": [
+          {
+            "title": "Inject",
+            "url": "/node-red/core-nodes/inject/",
+            "children": []
+          },
+          {
+            "title": "Debug",
+            "url": "/node-red/core-nodes/debug/",
+            "children": []
+          },
+          {
+            "title": "Complete",
+            "url": "/node-red/core-nodes/complete/",
+            "children": []
+          },
+          {
+            "title": "Catch",
+            "url": "/node-red/core-nodes/catch/",
+            "children": []
+          },
+          {
+            "title": "Status",
+            "url": "/node-red/core-nodes/status/",
+            "children": []
+          },
+          {
+            "title": "Link",
+            "url": "/node-red/core-nodes/link/",
+            "children": []
+          },
+          {
+            "title": "Comment",
+            "url": "/node-red/core-nodes/comment/",
+            "children": []
+          },
+          {
+            "title": "Unknown",
+            "url": "/node-red/core-nodes/unknown/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Function",
+        "url": "/node-red/core-nodes/function/",
+        "children": [
+          {
+            "title": "Function",
+            "url": "/node-red/core-nodes/function/",
+            "children": []
+          },
+          {
+            "title": "Switch",
+            "url": "/node-red/core-nodes/switch/",
+            "children": []
+          },
+          {
+            "title": "Change",
+            "url": "/node-red/core-nodes/change/",
+            "children": []
+          },
+          {
+            "title": "Range",
+            "url": "/node-red/core-nodes/range/",
+            "children": []
+          },
+          {
+            "title": "Template",
+            "url": "/node-red/core-nodes/template/",
+            "children": []
+          },
+          {
+            "title": "Delay",
+            "url": "/node-red/core-nodes/delay/",
+            "children": []
+          },
+          {
+            "title": "Trigger",
+            "url": "/node-red/core-nodes/trigger/",
+            "children": []
+          },
+          {
+            "title": "Exec",
+            "url": "/node-red/core-nodes/exec/",
+            "children": []
+          },
+          {
+            "title": "Filter",
+            "url": "/node-red/core-nodes/filter/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Network",
+        "url": "/node-red/core-nodes/tls/",
+        "children": [
+          {
+            "title": "TLS",
+            "url": "/node-red/core-nodes/tls/",
+            "children": []
+          },
+          {
+            "title": "HTTP Proxy",
+            "url": "/node-red/core-nodes/http-proxy/",
+            "children": []
+          },
+          {
+            "title": "MQTT In",
+            "url": "/node-red/core-nodes/mqtt-in/",
+            "children": []
+          },
+          {
+            "title": "MQTT Out",
+            "url": "/node-red/core-nodes/mqtt-out/",
+            "children": []
+          },
+          {
+            "title": "HTTP in",
+            "url": "/node-red/core-nodes/http-in/",
+            "children": []
+          },
+          {
+            "title": "HTTP request",
+            "url": "/node-red/core-nodes/http-request/",
+            "children": []
+          },
+          {
+            "title": "WebSocket",
+            "url": "/node-red/core-nodes/websocket/",
+            "children": []
+          },
+          {
+            "title": "TCP in",
+            "url": "/node-red/core-nodes/tcp-in/",
+            "children": []
+          },
+          {
+            "title": "UDP In",
+            "url": "/node-red/core-nodes/udp-in/",
+            "children": []
+          },
+          {
+            "title": "UDP Out",
+            "url": "/node-red/core-nodes/udp-out/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Parsers",
+        "url": "/node-red/core-nodes/csv/",
+        "children": [
+          {
+            "title": "CSV",
+            "url": "/node-red/core-nodes/csv/",
+            "children": []
+          },
+          {
+            "title": "HTML",
+            "url": "/node-red/core-nodes/html/",
+            "children": []
+          },
+          {
+            "title": "JSON",
+            "url": "/node-red/core-nodes/json/",
+            "children": []
+          },
+          {
+            "title": "XML",
+            "url": "/node-red/core-nodes/xml/",
+            "children": []
+          },
+          {
+            "title": "YAML",
+            "url": "/node-red/core-nodes/yaml/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Sequence",
+        "url": "/node-red/core-nodes/split/",
+        "children": [
+          {
+            "title": "Split",
+            "url": "/node-red/core-nodes/split/",
+            "children": []
+          },
+          {
+            "title": "Sort",
+            "url": "/node-red/core-nodes/sort/",
+            "children": []
+          },
+          {
+            "title": "Batch",
+            "url": "/node-red/core-nodes/batch/",
+            "children": []
+          },
+          {
+            "title": "Join",
+            "url": "/node-red/core-nodes/join/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Storage",
+        "url": "/node-red/core-nodes/write-file/",
+        "children": [
+          {
+            "title": "Write File",
+            "url": "/node-red/core-nodes/write-file/",
+            "children": []
+          },
+          {
+            "title": "Read File",
+            "url": "/node-red/core-nodes/read-file/",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "FlowFuse Nodes",
+    "url": "/node-red/flowfuse/",
+    "children": [
+      {
+        "title": "FlowFuse Tables",
+        "url": "/node-red/flowfuse/flowfuse-tables/",
+        "children": [
+          {
+            "title": "Query",
+            "url": "/node-red/flowfuse/flowfuse-tables/query/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "MCP",
+        "url": "/node-red/flowfuse/mcp/",
+        "children": [
+          {
+            "title": "MCP Prompt",
+            "url": "/node-red/flowfuse/mcp/mcp-prompt/",
+            "children": []
+          },
+          {
+            "title": "MCP Resource",
+            "url": "/node-red/flowfuse/mcp/mcp-resource/",
+            "children": []
+          },
+          {
+            "title": "MCP Responses",
+            "url": "/node-red/flowfuse/mcp/mcp-response/",
+            "children": []
+          },
+          {
+            "title": "MCP Tool",
+            "url": "/node-red/flowfuse/mcp/mcp-tool/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "MQTT",
+        "url": "/node-red/flowfuse/mqtt/",
+        "children": [
+          {
+            "title": "MQTT In",
+            "url": "/node-red/flowfuse/mqtt/mqtt-in/",
+            "children": []
+          },
+          {
+            "title": "MQTT Out",
+            "url": "/node-red/flowfuse/mqtt/mqtt-out/",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "AI",
+        "url": "/node-red/flowfuse/ai/",
+        "children": [
+          {
+            "title": "Depth Estimation",
+            "url": "/node-red/flowfuse/ai/depth-estimation/",
+            "children": []
+          },
+          {
+            "title": "Image Classification",
+            "url": "/node-red/flowfuse/ai/image-classification/",
+            "children": []
+          },
+          {
+            "title": "Object Detection",
+            "url": "/node-red/flowfuse/ai/object-detection/",
+            "children": []
+          },
+          {
+            "title": "ONXX",
+            "url": "/node-red/flowfuse/ai/onxx/",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Hardware",
+    "url": "/node-red/hardware/",
+    "children": [
+      {
+        "title": "BLIIOT ARMxy BL340",
+        "url": "/node-red/hardware/armxy-bl340/",
+        "children": []
+      },
+      {
+        "title": "Opto-22 Groov Epic",
+        "url": "/node-red/hardware/opto-22-groove-rio-7-mm2001-10/",
+        "children": []
+      },
+      {
+        "title": "Raspberry Pi 4",
+        "url": "/node-red/hardware/raspberry-pi-4/",
+        "children": []
+      },
+      {
+        "title": "Raspberry Pi 5",
+        "url": "/node-red/hardware/raspberry-pi-5/",
+        "children": []
+      },
+      {
+        "title": "Robustel EG5120",
+        "url": "/node-red/hardware/robustel-eg5120/",
+        "children": []
+      },
+      {
+        "title": "Siemens IoT2050",
+        "url": "/node-red/hardware/siemens-iot-2050/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Database",
+    "url": "/node-red/database/",
+    "children": [
+      {
+        "title": "DynamoDB",
+        "url": "/node-red/database/dynamodb/",
+        "children": []
+      },
+      {
+        "title": "Firebase",
+        "url": "/node-red/database/firebase/",
+        "children": []
+      },
+      {
+        "title": "InfluxDB",
+        "url": "/node-red/database/influxdb/",
+        "children": []
+      },
+      {
+        "title": "MongoDB",
+        "url": "/node-red/database/mongodb/",
+        "children": []
+      },
+      {
+        "title": "MySQL",
+        "url": "/node-red/database/mysql/",
+        "children": []
+      },
+      {
+        "title": "PostgreSQL",
+        "url": "/node-red/database/postgresql/",
+        "children": []
+      },
+      {
+        "title": "Redis",
+        "url": "/node-red/database/redis/",
+        "children": []
+      },
+      {
+        "title": "SQLite",
+        "url": "/node-red/database/sqlite/",
+        "children": []
+      },
+      {
+        "title": "TimescaleDB",
+        "url": "/node-red/database/timescaledb/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Peripheral Devices",
+    "url": "/node-red/peripheral/",
+    "children": [
+      {
+        "title": "Arduino",
+        "url": "/node-red/peripheral/ardiuno/",
+        "children": []
+      },
+      {
+        "title": "Barcode Scanner",
+        "url": "/node-red/peripheral/barcodescanner/",
+        "children": []
+      },
+      {
+        "title": "ESP32",
+        "url": "/node-red/peripheral/esp32/",
+        "children": []
+      },
+      {
+        "title": "Webcam",
+        "url": "/node-red/peripheral/webcam/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Communication Protocols",
+    "url": "/node-red/protocol/",
+    "children": [
+      {
+        "title": "AMQP",
+        "url": "/node-red/protocol/amqp/",
+        "children": []
+      },
+      {
+        "title": "LwM2M",
+        "url": "/node-red/protocol/lwm2m/",
+        "children": []
+      },
+      {
+        "title": "Modbus",
+        "url": "/node-red/protocol/modbus/",
+        "children": []
+      },
+      {
+        "title": "MQTT",
+        "url": "/node-red/protocol/mqtt/",
+        "children": []
+      },
+      {
+        "title": "OPC-UA",
+        "url": "/node-red/protocol/opc-ua/",
+        "children": []
+      },
+      {
+        "title": "Websocket",
+        "url": "/node-red/protocol/websocket/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Integration Technologies",
+    "url": "/node-red/integration-technologies/",
+    "children": [
+      {
+        "title": "GraphQL API",
+        "url": "/node-red/integration-technologies/graphql/",
+        "children": []
+      },
+      {
+        "title": "REST API",
+        "url": "/node-red/integration-technologies/rest/",
+        "children": []
+      },
+      {
+        "title": "Webhook",
+        "url": "/node-red/integration-technologies/webhook/",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Notification Services",
+    "url": "/node-red/notification/",
+    "children": [
+      {
+        "title": "Discord",
+        "url": "/node-red/notification/discord/",
+        "children": []
+      },
+      {
+        "title": "Email",
+        "url": "/node-red/notification/email/",
+        "children": []
+      },
+      {
+        "title": "Telegram",
+        "url": "/node-red/notification/telegram/",
+        "children": []
+      }
+    ]
+  }
+]

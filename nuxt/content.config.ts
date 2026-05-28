@@ -50,6 +50,12 @@ export default defineContentConfig({
         blog: defineCollection({
             type: 'page',
             source: 'blog/**/*.md'
+        }),
+        // Node-RED learning resources + core-nodes catalog are generated from
+        // src/node-red (+ node help HTML) by scripts/copy_node_red.js.
+        nodeRed: defineCollection({
+            type: 'page',
+            source: 'node-red/**/*.md'
         })
     }
 })

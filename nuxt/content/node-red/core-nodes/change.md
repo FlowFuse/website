@@ -1,0 +1,120 @@
+---
+title: "Node-RED - Change Node"
+---
+# Change
+
+## What's the Change node in Node-RED used for?
+
+The Change node in Node-RED is used for modifying the content of messages within a flow. It allows you to add, remove, modify, or set message properties and payload values, making it a fundamental node for data transformation and manipulation. The Change node is essential for preparing data for further processing, formatting messages for specific outputs, and adapting data to suit the requirements of downstream nodes in a flow.
+
+## Examples for the Change node
+Use cases for the Change node include:
+
+1. **Data Transformation**: You can use the Change node to transform data from one format to another. For example, you can convert temperature values from Celsius to Fahrenheit, translate textual information, or convert timestamps to a different format.
+
+![Data Transform](./images/change-data-transform.png)
+
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiIxY2Q0ODY4NC4wNGRiYWIiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJUZW1wZXJhdHVyZSBDb252ZXJzaW9uIiwiZGlzYWJsZWQiOmZhbHNlLCJpbmZvIjoiIn0seyJpZCI6ImQ4MDNjM2M5LjA3NjFkOCIsInR5cGUiOiJpbmplY3QiLCJ6IjoiMWNkNDg2ODQuMDRkYmFiIiwibmFtZSI6IkNlbHNpdXMiLCJwcm9wcyI6W3sicCI6InBheWxvYWQifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwicGF5bG9hZCI6IjI1IiwicGF5bG9hZFR5cGUiOiJudW0iLCJ4IjoxNzAsInkiOjEwMCwid2lyZXMiOltbIjIxYjgzYjA3LjM2NTY0Il1dfSx7ImlkIjoiMjFiODNiMDcuMzY1NjQiLCJ0eXBlIjoiY2hhbmdlIiwieiI6IjFjZDQ4Njg0LjA0ZGJhYiIsIm5hbWUiOiJDb252ZXJ0IHRvIEZhaHJlbmhlaXQiLCJydWxlcyI6W3sidCI6InNldCIsInAiOiJwYXlsb2FkIiwicHQiOiJtc2ciLCJ0byI6IiRyb3VuZCgoJG51bWJlcihwYXlsb2FkKSAqIDkvNSkgKyAzMiwgMikiLCJ0b3QiOiJqc29uYXRhIn1dLCJhY3Rpb24iOiIiLCJwcm9wZXJ0eSI6IiIsImZyb20iOiIiLCJ0byI6IiIsInJlZyI6ZmFsc2UsIngiOjQxMCwieSI6MTAwLCJ3aXJlcyI6W1siZGM5MmRiNDQuYTUwYzA4Il1dfSx7ImlkIjoiZGM5MmRiNDQuYTUwYzA4IiwidHlwZSI6ImRlYnVnIiwieiI6IjFjZDQ4Njg0LjA0ZGJhYiIsIm5hbWUiOiJGYWhyZW5oZWl0IiwiYWN0aXZlIjp0cnVlLCJ0b3NpZGViYXIiOnRydWUsImNvbnNvbGUiOmZhbHNlLCJ0b3N0YXR1cyI6ZmFsc2UsImNvbXBsZXRlIjoicGF5bG9hZCIsInRhcmdldFR5cGUiOiJtc2ciLCJzdGF0dXNWYWwiOiIiLCJzdGF0dXNUeXBlIjoiYXV0byIsIngiOjYxMCwieSI6MTAwLCJ3aXJlcyI6W119XQ=="
+---
+::
+
+
+2. **Message Filtering**: The Change node can filter out messages based on specific conditions. You can use the Change node to route messages to different outputs, discard irrelevant messages, or take specific actions based on message properties.
+
+![Message Filter](./images/change-message-filter.png)
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiJhNDU2OTA3MC40OGY5ZDgiLCJ0eXBlIjoiaW5qZWN0IiwieiI6ImQyMzhlNDhhLjg1YzA4IiwibmFtZSI6IlNpbXVsYXRlIERhdGEiLCJwcm9wcyI6W3sicCI6InBheWxvYWQifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwicGF5bG9hZCI6IkJvbmpvdXIiLCJwYXlsb2FkVHlwZSI6InN0ciIsIngiOjE3MCwieSI6MTIwLCJ3aXJlcyI6W1siNTNjMzMyMzUuZTVjMjQ4Il1dfV0="
+---
+::
+
+
+
+3. **Message Enrichment**: The Change node allows you to add or modify properties in a message to enrich its content. For instance, you can add timestamps, add contextual information, or set specific identifiers for tracking purposes.
+
+![Message Enrichment](./images/change-message-enrich.png)
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiIzNGQ0OWM3Zi41MDVkNTgiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJNZXNzYWdlIEVucmljaG1lbnQiLCJkaXNhYmxlZCI6ZmFsc2UsImluZm8iOiIifSx7ImlkIjoiZjdjMDllOGYuMDFhZjIiLCJ0eXBlIjoiaW5qZWN0IiwieiI6IjM0ZDQ5YzdmLjUwNWQ1OCIsIm5hbWUiOiJTaW11bGF0ZSBEYXRhIiwicHJvcHMiOlt7InAiOiJwYXlsb2FkIn1dLCJyZXBlYXQiOiIiLCJjcm9udGFiIjoiIiwib25jZSI6ZmFsc2UsIm9uY2VEZWxheSI6MC4xLCJ0b3BpYyI6IiIsInBheWxvYWQiOiJIZWxsbywgd29ybGQhIiwicGF5bG9hZFR5cGUiOiJzdHIiLCJ4IjoxNzAsInkiOjEyMCwid2lyZXMiOltbIjJlZjc2N2QxLjNiNWYzMiJdXX0seyJpZCI6IjJlZjc2N2QxLjNiNWYzMiIsInR5cGUiOiJjaGFuZ2UiLCJ6IjoiMzRkNDljN2YuNTA1ZDU4IiwibmFtZSI6IkFkZCBUaW1lc3RhbXAiLCJydWxlcyI6W3sidCI6InNldCIsInAiOiJ0aW1lc3RhbXAiLCJwdCI6Im1zZyIsInRvIjoiJG5vdygpIiwidG90IjoianNvbmF0YSJ9XSwiYWN0aW9uIjoiIiwicHJvcGVydHkiOiIiLCJmcm9tIjoiIiwidG8iOiIiLCJyZWciOmZhbHNlLCJ4IjozNjAsInkiOjEyMCwid2lyZXMiOltbImUzYjBjOTQ5LmMyMGJhIl1dfSx7ImlkIjoiZTNiMGM5NDkuYzIwYmEiLCJ0eXBlIjoiZGVidWciLCJ6IjoiMzRkNDljN2YuNTA1ZDU4IiwibmFtZSI6IkVucmljaGVkIE1lc3NhZ2UiLCJhY3RpdmUiOnRydWUsInRvc2lkZWJhciI6dHJ1ZSwiY29uc29sZSI6ZmFsc2UsInRvc3RhdHVzIjpmYWxzZSwiY29tcGxldGUiOiJwYXlsb2FkIiwidGFyZ2V0VHlwZSI6Im1zZyIsInN0YXR1c1ZhbCI6IiIsInN0YXR1c1R5cGUiOiJhdXRvIiwieCI6NTgwLCJ5IjoxMjAsIndpcmVzIjpbXX1d"
+---
+::
+
+
+
+4. **Renaming Properties**: The Change node allows you to rename message properties, making it easier to understand and work with data at various points in your flow.
+
+![Example](./images/change-rename-property.png)
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI1ZTYwNTRiOS44YjZhNjQiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJSZW5hbWluZyBQcm9wZXJ0aWVzIiwiZGlzYWJsZWQiOmZhbHNlLCJpbmZvIjoiIn0seyJpZCI6ImNhOGEwM2YzLjExOWQxOCIsInR5cGUiOiJpbmplY3QiLCJ6IjoiNWU2MDU0YjkuOGI2YTY0IiwibmFtZSI6IlNpbXVsYXRlIERhdGEiLCJwcm9wcyI6W3sicCI6InBheWxvYWQifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwicGF5bG9hZCI6IntcImRhdGFcIjoxMjN9IiwicGF5bG9hZFR5cGUiOiJqc29uIiwieCI6MTcwLCJ5IjoxMjAsIndpcmVzIjpbWyJkNDRkZTA1Mi5hNzdkIl1dfSx7ImlkIjoiZDQ0ZGUwNTIuYTc3ZCIsInR5cGUiOiJjaGFuZ2UiLCJ6IjoiNWU2MDU0YjkuOGI2YTY0IiwibmFtZSI6IlJlbmFtZSBQcm9wZXJ0eSIsInJ1bGVzIjpbeyJ0Ijoic2V0IiwicCI6InNlbnNvckRhdGEiLCJwdCI6Im1zZyIsInRvIjoicGF5bG9hZC5kYXRhIiwidG90IjoibXNnIn0seyJ0IjoiZGVsZXRlIiwicCI6InBheWxvYWQuZGF0YSIsInB0IjoibXNnIn1dLCJhY3Rpb24iOiIiLCJwcm9wZXJ0eSI6IiIsImZyb20iOiIiLCJ0byI6IiIsInJlZyI6ZmFsc2UsIngiOjM4MCwieSI6MTIwLCJ3aXJlcyI6W1siNjkwZTZkZTEuM2FkMjE4Il1dfSx7ImlkIjoiNjkwZTZkZTEuM2FkMjE4IiwidHlwZSI6ImRlYnVnIiwieiI6IjVlNjA1NGI5LjhiNmE2NCIsIm5hbWUiOiJSZW5hbWVkIFByb3BlcnR5IiwiYWN0aXZlIjp0cnVlLCJ0b3NpZGViYXIiOnRydWUsImNvbnNvbGUiOmZhbHNlLCJ0b3N0YXR1cyI6ZmFsc2UsImNvbXBsZXRlIjoic2Vuc29yRGF0YSIsInRhcmdldFR5cGUiOiJtc2ciLCJzdGF0dXNWYWwiOiIiLCJzdGF0dXNUeXBlIjoiYXV0byIsIngiOjU3MCwieSI6MTIwLCJ3aXJlcyI6W119XQ=="
+---
+::
+
+
+
+5. **Default Values**: If a message lacks certain properties, the Change node can set default values for those properties, ensuring consistency in the data flow.
+
+![Example](./images/change-default.png)
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiIzYWJiZTg4Yi41MzdhYzQiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJEZWZhdWx0IFZhbHVlcyIsImRpc2FibGVkIjpmYWxzZSwiaW5mbyI6IiJ9LHsiaWQiOiI5NDdkY2FiMy40N2U4YiIsInR5cGUiOiJpbmplY3QiLCJ6IjoiM2FiYmU4OGIuNTM3YWM0IiwibmFtZSI6IlNpbXVsYXRlIERhdGEiLCJwcm9wcyI6W3sicCI6InBheWxvYWQifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwicGF5bG9hZCI6IntcIm5hbWVcIjpcIkFsaWNlXCJ9IiwicGF5bG9hZFR5cGUiOiJqc29uIiwieCI6MTcwLCJ5IjoxMjAsIndpcmVzIjpbWyJhOGQzY2U1Yy43OTgyYyJdXX0seyJpZCI6ImE4ZDNjZTVjLjc5ODJjIiwidHlwZSI6ImNoYW5nZSIsInoiOiIzYWJiZTg4Yi41MzdhYzQiLCJuYW1lIjoiU2V0IERlZmF1bHQgQWdlIiwicnVsZXMiOlt7InQiOiJtaXNzaW5nIiwicCI6InBheWxvYWQuYWdlIiwicHQiOiJtc2cifSx7InQiOiJzZXQiLCJwIjoicGF5bG9hZC5hZ2UiLCJwdCI6Im1zZyIsInRvIjoiMjUiLCJ0b3QiOiJudW0ifV0sImFjdGlvbiI6IiIsInByb3BlcnR5IjoiIiwiZnJvbSI6IiIsInRvIjoiIiwicmVnIjpmYWxzZSwieCI6MzcwLCJ5IjoxMjAsIndpcmVzIjpbWyJmNTg5MjU2Ny4zYmJkOCJdXX0seyJpZCI6ImY1ODkyNTY3LjNiYmQ4IiwidHlwZSI6ImRlYnVnIiwieiI6IjNhYmJlODhiLjUzN2FjNCIsIm5hbWUiOiJFbnJpY2hlZCBEYXRhIiwiYWN0aXZlIjp0cnVlLCJ0b3NpZGViYXIiOnRydWUsImNvbnNvbGUiOmZhbHNlLCJ0b3N0YXR1cyI6ZmFsc2UsImNvbXBsZXRlIjoicGF5bG9hZCIsInRhcmdldFR5cGUiOiJtc2ciLCJzdGF0dXNWYWwiOiIiLCJzdGF0dXNUeXBlIjoiYXV0byIsIngiOjU1MCwieSI6MTIwLCJ3aXJlcyI6W119XQ=="
+---
+::
+
+
+
+6. **Message Formatting**: When sending data to external systems or services, the Change node can format the message payload in the required format (e.g., JSON, XML) or adjust data to match specific API requirements.
+
+![Example](./images/change-message-format.png)
+
+
+::render-flow
+---
+height: 200
+flow: "W3siaWQiOiI0OWUzNzcxNy44YzNkOTgiLCJ0eXBlIjoidGFiIiwibGFiZWwiOiJNZXNzYWdlIEZvcm1hdHRpbmciLCJkaXNhYmxlZCI6ZmFsc2UsImluZm8iOiIifSx7ImlkIjoiNGI5N2ExZjIuYmY3YTBjIiwidHlwZSI6ImluamVjdCIsInoiOiI0OWUzNzcxNy44YzNkOTgiLCJuYW1lIjoiU2ltdWxhdGUgRGF0YSIsInByb3BzIjpbeyJwIjoicGF5bG9hZCJ9XSwicmVwZWF0IjoiIiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJwYXlsb2FkIjoie1widGVtcGVyYXR1cmVcIjoyOCxcImh1bWlkaXR5XCI6NTB9IiwicGF5bG9hZFR5cGUiOiJqc29uIiwieCI6MTcwLCJ5IjoxMjAsIndpcmVzIjpbWyJmMzAzY2UzNi5lM2MxZiJdXX0seyJpZCI6ImYzMDNjZTM2LmUzYzFmIiwidHlwZSI6ImNoYW5nZSIsInoiOiI0OWUzNzcxNy44YzNkOTgiLCJuYW1lIjoiRm9ybWF0IGFzIEpTT04iLCJydWxlcyI6W3sidCI6InNldCIsInAiOiJwYXlsb2FkIiwicHQiOiJtc2ciLCJ0byI6InBheWxvYWQudGVtcGVyYXR1cmUgJiBcIiDCsEMsIEh1bWlkaXR5OiBcIiAmIHBheWxvYWQuaHVtaWRpdHkgJiBcIiVcIiIsInRvdCI6Impzb25hdGEifV0sImFjdGlvbiI6IiIsInByb3BlcnR5IjoiIiwiZnJvbSI6IiIsInRvIjoiIiwicmVnIjpmYWxzZSwieCI6MzYwLCJ5IjoxMjAsIndpcmVzIjpbWyJkN2MxYWY5Zi5mMTA5OSJdXX0seyJpZCI6ImQ3YzFhZjlmLmYxMDk5IiwidHlwZSI6ImRlYnVnIiwieiI6IjQ5ZTM3NzE3LjhjM2Q5OCIsIm5hbWUiOiJGb3JtYXR0ZWQgTWVzc2FnZSIsImFjdGl2ZSI6dHJ1ZSwidG9zaWRlYmFyIjp0cnVlLCJjb25zb2xlIjpmYWxzZSwidG9zdGF0dXMiOmZhbHNlLCJjb21wbGV0ZSI6InBheWxvYWQiLCJ0YXJnZXRUeXBlIjoibXNnIiwic3RhdHVzVmFsIjoiIiwic3RhdHVzVHlwZSI6ImF1dG8iLCJ4Ijo1ODAsInkiOjEyMCwid2lyZXMiOltdfV0="
+---
+::
+
+
+
+Overall, the Change node is a crucial tool for data manipulation and orchestration in Node-RED flows. Its flexibility and range of operations make it an essential node for customizing messages according to your specific use cases and the requirements of the nodes within your flow.
+
+## Node Documentation
+
+<div class="core-node-doc">
+
+<p>Set, change, delete or move properties of a message, flow context or global context.</p> <p>The node can specify multiple rules that will be applied in the order they are defined.</p> <h3>Details</h3> <p>The available operations are:</p> <dl class="message-properties">
+<dt>Set</dt>
+<dd>set a property. The value can be a variety of different types, or
+can be taken from an existing message or context property.</dd>
+<dt>Change</dt>
+<dd>search &amp; replace parts of the property. If regular expressions
+are enabled, the "replace with" property can include capture groups, for
+example <code>$1</code>. Replace will only change the type if there
+is a complete match.</dd>
+<dt>Delete</dt>
+<dd>delete a property.</dd>
+<dt>Move</dt>
+<dd>move or rename a property.</dd>
+</dl> <p>The "expression" type uses the <a href="http://jsonata.org/" target="_new">JSONata</a>
+query and expression language.
+</p>
+
+</div>

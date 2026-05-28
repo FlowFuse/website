@@ -1,0 +1,104 @@
+---
+title: "Depth Estimation"
+description: "The Depth Estimation node estimates the distance of objects in an image and creates a depth map using an ONNX model."
+---
+
+# {{ meta.title }}
+
+The **Depth Estimation** node allows you to estimate the relative distance of objects within an image using an ONNX model. It generates a depth map that represents how far each pixel is from the camera and can optionally create a visual image of the depth map using different color styles.
+
+## Inputs
+
+### General
+
+- **Property:** `input`
+- **Type:** `object`, `buffer`, `string` or tensor. 
+- **Description:** The input image or tensor to classify. See the **Details** section for supported input formats.
+
+##### Supported Input Formats
+Typically, the input would be an image which could be:
+- A `Buffer` object containing the binary image data (e.g. from a `file` node or `http request` node)
+- A base64-encoded string.
+- A Jimp image object (e.g, output from `node-red-contrib-image-tools`).
+
+##### Tensor input
+Alternatively, you can supply a pre-processed tensor in the following format:
+
+```json
+{
+  "data": [0.0, 0.1, 0.2, ...],
+  "type": "float32",
+  "dim": [1, 3, 224, 224]
+}
+```
+
+This represents a flat array of pixel values, the data type of the tensor, and its dimensions (for example, `[batch_size, channels, height, width]`).
+
+> TIP: If the model supports batching, the input can be an array of images in one of the supported formats.
+
+## Model Selection
+
+You can specify the model in two ways:
+
+- Provide a **local path** (for example, `/data/models/resnet50.onnx`), or
+- Specify a **model name** available on **[Hugging Face](https://huggingface.co/models?pipeline_tag=depth-estimation&library=transformers.js,onnx&sort=trending)** (for example, [Xenova/depth-anything-small-hf](https://huggingface.co/Xenova/depth-anything-small-hf)).
+
+When specifying a model by name, you can define the data type to use when loading it. Supported types include:
+
+- `auto` — Automatically selects the most suitable type.
+- `fp32` — Standard 32-bit floating-point model.
+- `fp16` — Half-precision 16-bit floating-point model.
+- `int8` — 8-bit integer quantized model.
+- `uint8` — 8-bit unsigned integer model.
+- `q8` — Quantized Int8 model (default).
+- `q4` — Quantized Int4 model.
+- `q4f16` — Quantized Int4 with Float16 model.
+- `bnb4` — BNB4 quantized model.
+
+## Configuration
+
+### Output Image
+
+If enabled, the node generates a visual representation of the depth map based on the selected style and alpha values.
+The output will include both the raw depth data and a generated image:
+
+```json
+{
+  "data": { ... },
+  "image": "Buffer",
+  "width": 640,
+  "height": 480
+}
+```
+
+If disabled, only the raw depth data will be included in the output.
+
+### style
+
+Specifies the color map used when creating the depth visualization.
+
+Available options include:
+`grayscale`, `jet`, `hot`, `hsv`, `spring`, `summer`, `autumn`, `winter`, `bone`, `copper`, `viridis`, `inferno`, `magma`, `plasma`, `rainbow`, `cool`, `warm`, `earth`, `blackbody`, `electric`, `velocity-blue`, `velocity-green`, and many more.
+
+These styles correspond to common colormaps used in computer vision to represent depth or heat data.
+
+### alpha
+
+Defines the transparency of the generated depth image.
+You can use either a single value or an array of two values:
+
+- A single value (e.g., `0.5`) applies a uniform transparency.
+- An array `[0.3, 0.8]` defines a transparency range from the nearest (0.3) to farthest (0.8) objects.
+
+## Example Flow
+
+
+
+::render-flow
+---
+height: 400
+flow: "W3siaWQiOiI1ZjQzMTdmZGFhZTA5M2ZhIiwidHlwZSI6ImltYWdlLWRlcHRoIiwieiI6ImUxY2VlZWRmMzFjZTFlYmQiLCJuYW1lIjoiIiwicHJvcGVydHkiOiJpbWFnZSIsInByb3BlcnR5VHlwZSI6Im1zZyIsIm1vZGVsIjoiWGVub3ZhL2RlcHRoLWFueXRoaW5nLXNtYWxsLWhmIiwibW9kZWxUeXBlIjoibmFtZSIsImR0eXBlIjoiZnAxNiIsImdlbmVyYXRlSW1hZ2UiOiJ0cnVlIiwiZ2VuZXJhdGVJbWFnZVR5cGUiOiJib29sIiwiYWxwaGEiOiJhbHBoYSIsImFscGhhVHlwZSI6Im1zZyIsInN0eWxlIjoiaW1hZ2VTdHlsZSIsInN0eWxlVHlwZSI6Im1zZyIsIngiOjgzMCwieSI6MjQ0MCwid2lyZXMiOltbIjg2ZDc5ZDJmZTkxN2M4MzkiXV19LHsiaWQiOiI2YzY3MjNhZDk2ZDA1OTJmIiwidHlwZSI6ImluamVjdCIsInoiOiJlMWNlZWVkZjMxY2UxZWJkIiwibmFtZSI6ImZvb3RiYWxsIChob3QgQTE+MCkiLCJwcm9wcyI6W3sicCI6InVybCIsInYiOiJodHRwczovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zL3RodW1iLzQvNDIvRm9vdGJhbGxfaW5fQmxvb21pbmd0b24lMkNfSW5kaWFuYSUyQ18xOTk1LmpwZy8xOTIwcHgtRm9vdGJhbGxfaW5fQmxvb21pbmd0b24lMkNfSW5kaWFuYSUyQ18xOTk1LmpwZyIsInZ0Ijoic3RyIn0seyJwIjoiaW1hZ2VTdHlsZSIsInYiOiJob3QiLCJ2dCI6InN0ciJ9LHsicCI6ImFscGhhIiwidiI6IlsxLDBdIiwidnQiOiJqc29uIn1dLCJyZXBlYXQiOiIiLCJjcm9udGFiIjoiIiwib25jZSI6ZmFsc2UsIm9uY2VEZWxheSI6MC4xLCJ0b3BpYyI6IiIsIngiOjM3MCwieSI6MjQyMCwid2lyZXMiOltbIjkxZjYzNDI0YTBkMjljYmMiXV19LHsiaWQiOiJmMGMzZDY3ZTU4OTY1NDE5IiwidHlwZSI6Imh0dHAgcmVxdWVzdCIsInoiOiJlMWNlZWVkZjMxY2UxZWJkIiwibmFtZSI6IiIsIm1ldGhvZCI6IkdFVCIsInJldCI6ImJpbiIsInBheXRvcXMiOiJpZ25vcmUiLCJ1cmwiOiIiLCJ0bHMiOiIiLCJwZXJzaXN0IjpmYWxzZSwicHJveHkiOiIiLCJpbnNlY3VyZUhUVFBQYXJzZXIiOmZhbHNlLCJhdXRoVHlwZSI6IiIsInNlbmRlcnIiOmZhbHNlLCJoZWFkZXJzIjpbXSwieCI6NzMwLCJ5IjoyMzgwLCJ3aXJlcyI6W1siYTE4YjNhMmI5OTVkNDRhMyJdXX0seyJpZCI6IjZkZmMxZGViNjQ2NGQ0OGEiLCJ0eXBlIjoiaW1hZ2Ugdmlld2VyIiwieiI6ImUxY2VlZWRmMzFjZTFlYmQiLCJuYW1lIjoiIiwid2lkdGgiOiIzMDAiLCJkYXRhIjoiaW1hZ2UiLCJkYXRhVHlwZSI6Im1zZyIsImFjdGl2ZSI6dHJ1ZSwieCI6NjUwLCJ5IjoyNDQwLCJ3aXJlcyI6W1siNWY0MzE3ZmRhYWUwOTNmYSJdXX0seyJpZCI6Ijg2ZDc5ZDJmZTkxN2M4MzkiLCJ0eXBlIjoiaW1hZ2Ugdmlld2VyIiwieiI6ImUxY2VlZWRmMzFjZTFlYmQiLCJuYW1lIjoicGF5bG9hZC5pbWFnZSIsIndpZHRoIjoiMzAwIiwiZGF0YSI6InBheWxvYWQuaW1hZ2UiLCJkYXRhVHlwZSI6Im1zZyIsImFjdGl2ZSI6dHJ1ZSwieCI6MTAyMCwieSI6MjQ0MCwid2lyZXMiOltbIjE1ZWI2MmRiNWM2ZGY1YjAiXV19LHsiaWQiOiIxNWViNjJkYjVjNmRmNWIwIiwidHlwZSI6ImRlYnVnIiwieiI6ImUxY2VlZWRmMzFjZTFlYmQiLCJuYW1lIjoiZGF0YSIsImFjdGl2ZSI6dHJ1ZSwidG9zaWRlYmFyIjp0cnVlLCJjb25zb2xlIjpmYWxzZSwidG9zdGF0dXMiOmZhbHNlLCJjb21wbGV0ZSI6InBheWxvYWQiLCJ0YXJnZXRUeXBlIjoibXNnIiwic3RhdHVzVmFsIjoiIiwic3RhdHVzVHlwZSI6ImF1dG8iLCJ4IjoxMTkwLCJ5IjoyNDQwLCJ3aXJlcyI6W119LHsiaWQiOiJmYjk4OGM3ZjJiNWU3ZWJkIiwidHlwZSI6ImluamVjdCIsInoiOiJlMWNlZWVkZjMxY2UxZWJkIiwibmFtZSI6InRyZWUgKDFjaCBncmV5c2NhbGUpIiwicHJvcHMiOlt7InAiOiJ1cmwiLCJ2IjoiaHR0cHM6Ly93d3cuam90Zm9ybS5jb20vYmxvZy93cC1jb250ZW50L3VwbG9hZHMvMjAyMi8wMi9uaWtvLXBob3Rvcy10R1RWeGVPcl9Scy11bnNwbGFzaC5qcGciLCJ2dCI6InN0ciJ9LHsicCI6ImltYWdlU3R5bGUiLCJ2IjoiZ3JleXNjYWxlIiwidnQiOiJzdHIifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwieCI6MzcwLCJ5IjoyMzgwLCJ3aXJlcyI6W1siOTFmNjM0MjRhMGQyOWNiYyJdXX0seyJpZCI6IjEyNzZhZTU1NDQwZDg5NzEiLCJ0eXBlIjoiaW5qZWN0IiwieiI6ImUxY2VlZWRmMzFjZTFlYmQiLCJuYW1lIjoiYmlyZCAodmlyaWRpcykiLCJwcm9wcyI6W3sicCI6InVybCIsInYiOiJodHRwczovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zLzMvMzIvSG91c2Vfc3BhcnJvdzA0LmpwZyIsInZ0Ijoic3RyIn0seyJwIjoiaW1hZ2VTdHlsZSIsInYiOiJ2aXJpZGlzIiwidnQiOiJzdHIifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwieCI6MzUwLCJ5IjoyNTAwLCJ3aXJlcyI6W1siOTFmNjM0MjRhMGQyOWNiYyJdXX0seyJpZCI6IjJkMzQ2YzRhMmJkMzNiMzUiLCJ0eXBlIjoiaW5qZWN0IiwieiI6ImUxY2VlZWRmMzFjZTFlYmQiLCJuYW1lIjoiY2F2ZSAoZGVuc2l0eSkiLCJwcm9wcyI6W3sicCI6InVybCIsInYiOiJodHRwczovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zL2YvZjQvSGF3YWlpYW5fbGF2YV90dWJlLmpwZyIsInZ0Ijoic3RyIn0seyJwIjoiaW1hZ2VTdHlsZSIsInYiOiJkZW5zaXR5IiwidnQiOiJzdHIifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwieCI6MzUwLCJ5IjoyNTgwLCJ3aXJlcyI6W1siOTFmNjM0MjRhMGQyOWNiYyJdXX0seyJpZCI6IjgwYTQzNWYzNjU2ZDcxYzMiLCJ0eXBlIjoiaW5qZWN0IiwieiI6ImUxY2VlZWRmMzFjZTFlYmQiLCJuYW1lIjoib2N0b3B1cyAoamV0IEEwLjk+MC4zKSIsInByb3BzIjpbeyJwIjoidXJsIiwidiI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvdGh1bWIvNS81Ny9PY3RvcHVzMi5qcGcvMTkyMHB4LU9jdG9wdXMyLmpwZyIsInZ0Ijoic3RyIn0seyJwIjoiaW1hZ2VTdHlsZSIsInYiOiJqZXQiLCJ2dCI6InN0ciJ9LHsicCI6ImFscGhhIiwidiI6IlswLjUsMC45XSIsInZ0IjoianNvbiJ9XSwicmVwZWF0IjoiIiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJ4IjozODAsInkiOjI3MDAsIndpcmVzIjpbWyI5MWY2MzQyNGEwZDI5Y2JjIl1dfSx7ImlkIjoiZjZlODAwY2UzMzk5Y2I1ZiIsInR5cGUiOiJpbmplY3QiLCJ6IjoiZTFjZWVlZGYzMWNlMWViZCIsIm5hbWUiOiJjYXZlIChncmF5c2NhbGUpIiwicHJvcHMiOlt7InAiOiJ1cmwiLCJ2IjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy80LzRlL0hhbGxPZlRoZU1vdW50YWluS2luZ3MuanBnIiwidnQiOiJzdHIifSx7InAiOiJpbWFnZVN0eWxlIiwidiI6ImdyYXlzY2FsZSIsInZ0Ijoic3RyIn1dLCJyZXBlYXQiOiIiLCJjcm9udGFiIjoiIiwib25jZSI6ZmFsc2UsIm9uY2VEZWxheSI6MC4xLCJ0b3BpYyI6IiIsIngiOjM2MCwieSI6MjYyMCwid2lyZXMiOltbIjkxZjYzNDI0YTBkMjljYmMiXV19LHsiaWQiOiIwZjRlYWFhN2JmMWRkMjJlIiwidHlwZSI6ImluamVjdCIsInoiOiJlMWNlZWVkZjMxY2UxZWJkIiwibmFtZSI6InBsYW5lIChyYWluYm93KSIsInByb3BzIjpbeyJwIjoidXJsIiwidiI6Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvdGh1bWIvNS81NS9TcGl0ZmlyZV8tX1NlYXNvbl9QcmVtaWVyZV9BaXJzaG93XzIwMThfJTI4Y3JvcHBlZCUyOS5qcGcvMTkyMHB4LVNwaXRmaXJlXy1fU2Vhc29uX1ByZW1pZXJlX0FpcnNob3dfMjAxOF8lMjhjcm9wcGVkJTI5LmpwZyIsInZ0Ijoic3RyIn0seyJwIjoiY29sb3JtYXAiLCJ2IjoicmFpbmJvdyIsInZ0Ijoic3RyIn1dLCJyZXBlYXQiOiIiLCJjcm9udGFiIjoiIiwib25jZSI6ZmFsc2UsIm9uY2VEZWxheSI6MC4xLCJ0b3BpYyI6IiIsIngiOjM2MCwieSI6MjQ2MCwid2lyZXMiOltbIjkxZjYzNDI0YTBkMjljYmMiXV19LHsiaWQiOiIyZjIwZWRmYjgxOTBlOTE4IiwidHlwZSI6ImluamVjdCIsInoiOiJlMWNlZWVkZjMxY2UxZWJkIiwibmFtZSI6ImNhc3RsZSAoZ3JleXMpIiwicHJvcHMiOlt7InAiOiJ1cmwiLCJ2IjoiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy81LzUwL0JvZGlhbS1jYXN0bGUtMTBNeTgtMTE5Ny5qcGciLCJ2dCI6InN0ciJ9LHsicCI6ImltYWdlU3R5bGUiLCJ2IjoiZ3JleXMiLCJ2dCI6InN0ciJ9XSwicmVwZWF0IjoiIiwiY3JvbnRhYiI6IiIsIm9uY2UiOmZhbHNlLCJvbmNlRGVsYXkiOjAuMSwidG9waWMiOiIiLCJ4IjozNTAsInkiOjI1NDAsIndpcmVzIjpbWyI5MWY2MzQyNGEwZDI5Y2JjIl1dfSx7ImlkIjoiYzhmNDhkYTU4OGQ5YzljZSIsInR5cGUiOiJpbmplY3QiLCJ6IjoiZTFjZWVlZGYzMWNlMWViZCIsIm5hbWUiOiJtb25rZXkgKHJkYnUgQTA+MSkiLCJwcm9wcyI6W3sicCI6InVybCIsInYiOiJodHRwczovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zLzQvNDMvQm9ubmV0X21hY2FxdWVfJTI4TWFjYWNhX3JhZGlhdGElMjlfUGhvdG9ncmFwaF9CeV9TaGFudGFudV9LdXZlc2thci5qcGciLCJ2dCI6InN0ciJ9LHsicCI6ImltYWdlU3R5bGUiLCJ2IjoicmRidSIsInZ0Ijoic3RyIn0seyJwIjoiYWxwaGEiLCJ2IjoiWzAsMV0iLCJ2dCI6Impzb24ifV0sInJlcGVhdCI6IiIsImNyb250YWIiOiIiLCJvbmNlIjpmYWxzZSwib25jZURlbGF5IjowLjEsInRvcGljIjoiIiwieCI6MzcwLCJ5IjoyNjYwLCJ3aXJlcyI6W1siOTFmNjM0MjRhMGQyOWNiYyJdXX0seyJpZCI6IjgxNGUwODFkMTNlYjU4ZjYiLCJ0eXBlIjoiY29tbWVudCIsInoiOiJlMWNlZWVkZjMxY2UxZWJkIiwibmFtZSI6IkltYWdlIERlcHRoIiwiaW5mbyI6IiIsIngiOjMzMCwieSI6MjM0MCwid2lyZXMiOltdfSx7ImlkIjoiYTE4YjNhMmI5OTVkNDRhMyIsInR5cGUiOiJjaGFuZ2UiLCJ6IjoiZTFjZWVlZGYzMWNlMWViZCIsIm5hbWUiOiIiLCJydWxlcyI6W3sidCI6Im1vdmUiLCJwIjoicGF5bG9hZCIsInB0IjoibXNnIiwidG8iOiJpbWFnZSIsInRvdCI6Im1zZyJ9XSwiYWN0aW9uIjoiIiwicHJvcGVydHkiOiIiLCJmcm9tIjoiIiwidG8iOiIiLCJyZWciOmZhbHNlLCJ4Ijo4NTUsInkiOjIzODAsIndpcmVzIjpbWyI2ZGZjMWRlYjY0NjRkNDhhIl1dLCJsIjpmYWxzZX0seyJpZCI6IjkxZjYzNDI0YTBkMjljYmMiLCJ0eXBlIjoianVuY3Rpb24iLCJ6IjoiZTFjZWVlZGYzMWNlMWViZCIsIngiOjU4MCwieSI6MjM4MCwid2lyZXMiOltbImYwYzNkNjdlNTg5NjU0MTkiXV19LHsiaWQiOiIyZWFiNzcxYzYwODZmNzA4IiwidHlwZSI6Imdsb2JhbC1jb25maWciLCJlbnYiOltdLCJtb2R1bGVzIjp7IkBmbG93ZnVzZS1ub2Rlcy9uci1haS1ub2RlcyI6IjAuMS42Iiwibm9kZS1yZWQtY29udHJpYi1pbWFnZS10b29scyI6IjIuMS4xIn19XQ=="
+---
+::
+
+
