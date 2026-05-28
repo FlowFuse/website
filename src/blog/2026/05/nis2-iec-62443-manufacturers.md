@@ -1,7 +1,7 @@
 ---
 title: "NIS2 Compliance for Manufacturers: Why IEC 62443 Is the Missing Standard"
 subtitle: "A practical starting point for mid-market manufacturers stuck on Article 21"
-description: "NIS2 tells you what to do, not how. IEC 62443 is the technical standard ENISA, national regulators, and auditors have converged on. Here is where to start."
+description: "NIS2 tells you what to do, not how. IEC 62443 is the technical standard regulators, accredited bodies, and auditors keep pointing to. Here is where to start."
 date: 2026-05-28
 keywords: NIS2, IEC 62443, OT security, industrial cybersecurity, Article 21, ICS security, SL2, SCADA security, audit logging, access control
 authors: ["sumit-shinde"]
@@ -10,7 +10,7 @@ tags:
     - flowfuse
 tldr:
   - NIS2 Article 21 tells you what to achieve, not how — and that is where mid-market manufacturers stall.
-  - IEC 62443 is the standard ENISA, national regulators (ANSSI, BSI), and accredited auditors have converged on for OT. "Aligned to 62443-3-3 at SL2" is the answer they recognise.
+  - IEC 62443 is the standard regulators, accredited bodies, and ENISA guidance keep pointing to for OT. "Aligned to 62443-3-3 at SL2" is the answer auditors recognise.
   - Start by scoping your System under Consideration, inventorying every piece of OT software, and closing gaps against Foundational Requirements 1, 2, and 6: access control, use control, and audit logging.
   - The custom industrial applications running alongside SCADA are the layer most assessments flag and most teams have no clean answer for.
 cta:
@@ -19,7 +19,7 @@ cta:
     description: "Talk to us about how FlowFuse adds SSO, RBAC, audit logging, and governed deployments to the custom industrial applications most NIS2 assessments flag."
 ---
 
-Mid-market manufacturers are squarely in scope of the [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive), now in force across the EU. Under [Article 34](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), fines reach €10 million or 2% of global turnover for essential entities, and €7 million or 1.4% for important entities, whichever is higher. [Article 20](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) adds personal liability for senior management.
+Mid-market manufacturers are squarely in scope of the [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive), now being transposed and enforced across the EU. Under [Article 34](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), fines reach €10 million or 2% of global turnover for essential entities, and €7 million or 1.4% for important entities, whichever is higher. [Article 20](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) adds personal liability for senior management.
 
 <!--more-->
 
@@ -35,11 +35,7 @@ But the gap is real. Article 21 requires you to manage cyber risk "appropriately
 
 That gap is where most compliance projects stall. You cannot engineer compliance from a legal document. Lawyers write directives. Engineers need technical standards. Until someone names the standard to point at, every meeting ends with "let's get another quote."
 
-DNV, one of the world's largest accredited certification bodies, frames it the same way:
-
-> "The directive describes what needs to be achieved, although it doesn't prescribe how one must achieve it[…]. For critical infrastructure in the operational technology space, IEC 62443 set of standards helps asset owners to implement the right set of controls to secure their operations."
->
-> DNV, *Leverage IEC 62443 for EU NIS2 Directive compliance*
+DNV, one of the world's largest accredited certification bodies, frames it the same way. The directive describes what needs to be achieved without prescribing how to achieve it — and for critical infrastructure in the operational technology space, the IEC 62443 set of standards helps asset owners implement the right controls to secure their operations.
 
 ## IEC 62443 is the bridge
 
@@ -55,9 +51,9 @@ For NIS2 purposes, three parts of the family matter most.
 
 The mapping between NIS2's ten Article 21 categories and 62443's controls is direct and well documented. Access control under NIS2 maps to FR1 and FR2 in 62443-3-3. Incident handling maps to FR6 and the management system requirements in 2-1. Supply chain security maps to 4-1 certification of your suppliers.
 
-This is not coincidence. ENISA has published guidance on the NIS2 / IEC 62443 mapping, confirming that 62443 certification can serve as evidence of compliance with NIS2 technical requirements. National regulators have followed. France's ANSSI references IEC 62443 as the primary mapping standard for industrial environments and has built its own four-class system that aligns directly to 62443's Security Levels — ANSSI Class 2 to SL2, Class 3 to SL3, and so on. Germany's BSI, the Netherlands' NCSC, and other national authorities reference the same family. When an auditor asks how you are implementing NIS2, "we are aligned to 62443-3-3 at SL2" is an answer they will recognise.
+This convergence is visible across European guidance. ENISA's NIS2 implementation guidance references IEC 62443 alongside ISO 27001, NIST CSF, BSI Grundschutz, and ANSSI guidelines as relevant standards for industrial environments. National regulators have followed. France's ANSSI updated its industrial cybersecurity guidance in 2025 to explicitly strengthen alignment with IEC 62443, using a four-class system that draws on 62443's concepts of zones, conduits, and security levels. Germany's BSI, the Netherlands' NCSC, and other national authorities reference the same family. When an auditor asks how you are implementing NIS2, "we are aligned to 62443-3-3 at SL2" is an answer they will recognise.
 
-Be honest about the cost. A full certification effort is a multi-month engagement with an accredited [ISASecure](https://www.isasecure.org/) certification body, and costs scale with system complexity. Industry estimates for a meaningful scope typically run into the high five to six figures. Most mid-market manufacturers do not need to certify. They need to *align*. That is a much shorter path, and it is where the real compliance value lives.
+Be honest about the cost. A full certification effort is a multi-month engagement with an accredited [ISASecure](https://www.isasecure.org/) certification body, and costs scale with system complexity. Accredited bodies do not publish public pricing, so plan to get quotes early. Most mid-market manufacturers do not need to certify. They need to *align*. That is a much shorter path, and it is where the real compliance value lives.
 
 ## Why mid-market manufacturers stall
 
