@@ -9,7 +9,7 @@ image: /blog/2026/05/images/nis2-complience-for-manufacturer-image.png
 tags:
     - flowfuse
 tldr:
-  - NIS2 Article 21 tells you what to achieve, not how — and that is where mid-market manufacturers stall.
+  - NIS2 Article 21 tells you what to achieve, not how. That is where mid-market manufacturers stall.
   - IEC 62443 is the standard regulators, accredited bodies, and ENISA guidance keep pointing to for OT. "Aligned to 62443-3-3 at SL2" is the answer auditors recognise.
   - Start by scoping your System under Consideration, inventorying every piece of OT software, and closing gaps against Foundational Requirements 1, 2, and 6: access control, use control, and audit logging.
   - The custom industrial applications running alongside SCADA are the layer most assessments flag and most teams have no clean answer for.
@@ -19,7 +19,7 @@ cta:
     description: "Talk to us about how FlowFuse adds SSO, RBAC, audit logging, and governed deployments to the custom industrial applications most NIS2 assessments flag."
 ---
 
-Mid-market manufacturers are squarely in scope of the NIS2 Directive, now being transposed and enforced across the EU. 
+Mid-market manufacturers are squarely in scope of the NIS2 Directive, now being transposed and enforced across the EU.
 
 <!--more-->
 
@@ -31,13 +31,13 @@ This article is about the standard that answers it. **NIS2 tells you what to do.
 
 ## NIS2 is deliberately vague, and that is the problem
 
-NIS2 is outcome-based. It tells you what to achieve, not how to achieve it. That is a feature, not a bug. The same rules cover sectors as different as healthcare, energy, water, transport, and manufacturing, each with its own technical reality.
+[NIS2](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive) is outcome-based. It tells you what to achieve, not how to achieve it. That is a feature, not a bug. The same rules cover sectors as different as healthcare, energy, water, transport, and manufacturing, each with its own technical reality.
 
 But the gap is real. Article 21 requires you to manage cyber risk "appropriately and proportionately." It does not define what appropriate access control looks like on a plant floor. It does not tell you how to segment an OT network from IT. It does not specify what an incident response plan should contain for an industrial control system.
 
 That gap is where most compliance projects stall. You cannot engineer compliance from a legal document. Lawyers write directives. Engineers need technical standards. Until someone names the standard to point at, every meeting ends with "let's get another quote."
 
-DNV, one of the world's largest accredited certification bodies, frames it the same way. The directive describes what needs to be achieved without prescribing how to achieve it — and for critical infrastructure in the operational technology space, the IEC 62443 set of standards helps asset owners implement the right controls to secure their operations.
+DNV, one of the world's largest accredited certification bodies, frames it the same way. The directive describes what needs to be achieved without prescribing how to achieve it, and for critical infrastructure in the operational technology space, the IEC 62443 set of standards helps asset owners implement the right controls to secure their operations.
 
 ## IEC 62443 is the bridge
 
@@ -61,7 +61,7 @@ Be honest about the cost. A full certification effort is a multi-month engagemen
 
 If 62443 is the answer, why is not every manufacturer using it? Two honest reasons.
 
-**The standard is hard to navigate, and OT expertise is scarce.** The 62443 family runs to more than a dozen documents in formal standards language. The people who understand both PLCs and identity management — both ladder logic and SAML — are rare and expensive. Most plant IT teams were built to keep the ERP running, not to harden an industrial control system against a determined attacker.
+**The standard is hard to navigate, and OT expertise is scarce.** The 62443 family runs to more than a dozen documents in formal standards language. The people who understand both PLCs and identity management, both ladder logic and SAML, are rare and expensive. Most plant IT teams were built to keep the ERP running, not to harden an industrial control system against a determined attacker.
 
 **The gap between current reality and an auditable environment feels too large to start.** Look at the plant floor. Engineers share logins. Scripts run on unmanaged laptops. No audit trail of who changed what. The distance to "62443-aligned" looks impossible, so the project never gets a kickoff date.
 
@@ -73,9 +73,9 @@ When you scope your 62443 work, you will define what the standard calls the Syst
 
 What often gets missed is the layer of custom industrial applications running alongside that core stack. Dashboards built by a plant engineer to surface OEE data. Edge integrations pulling sensor readings into the cloud. Data transformation flows connecting an old line to a new MES. This software runs production-critical workloads, and it almost always lives outside any formal access control or audit regime.
 
-In a typical setup, that software has shared logins, no role-based access, no version control on changes, no audit trail of who deployed what, and ad-hoc deployment processes that vary by site. Against 62443-3-3 at SL2 — particularly FR1 (identification and authentication), FR2 (use control), and FR6 (timely response to events through audit logging) — this layer is one of the largest gaps on the assessment.
+In a typical setup, that software has shared logins, no role-based access, no version control on changes, no audit trail of who deployed what, and ad-hoc deployment processes that vary by site. Against 62443-3-3 at SL2, particularly FR1 (identification and authentication), FR2 (use control), and FR6 (timely response to events through audit logging), this layer is one of the largest gaps on the assessment.
 
-This is the gap [FlowFuse](https://flowfuse.com/) closes. FlowFuse is a managed industrial application platform that adds the controls 62443 expects to environments where engineers are already building production applications:
+This is the gap [FlowFuse](/) closes. FlowFuse is a managed industrial application platform that adds the controls 62443 expects to environments where engineers are already building production applications:
 
 - Enterprise SSO and role-based access control
 - Full audit logging of changes and deployments
