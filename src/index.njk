@@ -53,43 +53,86 @@ hubspot:
   reference: "homepage"
 ---
 <!--Hero Content-->
-<div class="w-full px-6 raster-gradient-bg red-blob">
-    <div class="sm:max-w-screen-lg mt-6 md:mt-12 mx-auto">
-        <div class="container m-auto text-left max-w-screen-lg">
-            <div class="mx-auto">
-                <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-indigo-700 mt-12 md:mt-28 max-w-4xl">
-                    {{ site.messaging.tagLine | safe }}
-                </h1>
-                <p class="mt-12 text-center text-gray-600 md:text-xl m-auto max-w-4xl">
-                    {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
-                </p>
-                <div class="flex flex-col my-12">
-                    <div class="m-auto flex gap-4 items-center justify-center flex-row">
-                        <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hero'})">
-                            <span class="text-base uppercase items-center">
-                                BOOK A DEMO
-                            </span>
-                        </a>
-                        <a class="ff-btn flex flex-col mb-6" href="{% include 'sign-up-url.njk' %}"
-                        onclick="capture('cta-try-it-now', {'position': 'hero'})">
-                            <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                                TRY IT OUT
-                                {% include "components/icons/arrow-right.svg" %}
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="w-full flex-grow relative bg-gradient-to-tl from-red-100 to-indigo-100 p-4 md:p-8 m-auto rounded-xl">
-                    <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full">
-                        {% image "./images/home/flowfuse-home-ui.png", "FlowFuse Home UI", [960] %}
+<section class="w-full relative bg-indigo-800 md:min-h-[800px]">
+    {% if heroImages.length %}
+    <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        {% for slide in heroImages %}
+        <div class="hero-slide{% if loop.first %} is-active{% endif %}">
+            {% image slide.src, slide.alt, [1920] %}
+            {% if slide.mobileOverlay %}
+            <div class="absolute inset-0 bg-gray-500/50 mix-blend-multiply md:hidden"></div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="relative z-10 px-6 w-full pt-12 md:pt-28 pb-36 md:pb-24">
+        <div class="sm:max-w-screen-lg mx-auto">
+            <div class="container m-auto text-left max-w-screen-lg">
+                <div class="mx-auto">
+                    <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-white max-w-4xl">
+                        {{ site.messaging.tagLine | safe }}
+                    </h1>
+                    <p class="mt-12 text-center text-gray-200 md:text-xl m-auto max-w-4xl">
+                        {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
+                    </p>
+                    <div class="flex flex-col mt-12">
+                        <div class="m-auto flex gap-4 items-center justify-center flex-row">
+                            <a class="ff-btn ff-btn--highlight flex flex-col mb-6" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hero'})">
+                                <span class="text-base uppercase items-center">
+                                    BOOK A DEMO
+                                </span>
+                            </a>
+                            <a class="ff-btn flex flex-col mb-6" href="{% include 'sign-up-url.njk' %}"
+                            onclick="capture('cta-try-it-now', {'position': 'hero'})">
+                                <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
+                                    TRY IT OUT
+                                    {% include "components/icons/arrow-right.svg" %}
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% if heroImages.length > 1 %}
+    <script>
+    (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var slides = document.querySelectorAll('.hero-slide');
+        if (!slides.length) return;
+        var current = 0;
+        function advance() {
+            slides[current].classList.remove('is-active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('is-active');
+        }
+        setTimeout(function () {
+            advance();
+            setInterval(advance, 4400);
+        }, 3200);
+    })();
+    </script>
+    {% endif %}
+</section>
+
+<!-- Screenshot bridge: overlaps hero from below -->
+<div class="relative z-10 px-6 -mt-28 md:-mt-48">
+    <div class="sm:max-w-screen-lg mx-auto">
+        <div class="w-full flex-grow relative bg-gradient-to-tl from-red-100 to-indigo-100 p-4 md:p-8 rounded-xl">
+            <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full">
+                {% image "./images/home/flowfuse-home-ui.png", "FlowFuse Home UI", [960] %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Social Proof + Metrics -->
+<div class="w-full px-6 pt-8">
     <!-- Social Proof -->
     <div class="sm:max-w-screen-lg m-auto max-w-5xl mb-10">
-        <div class="w-full text-center min-h-14 flex justify-center items-center mt-16 bg-radial-indigo">
+        <div class="w-full text-center min-h-14 flex justify-center items-center mt-8 bg-radial-indigo">
             <h2 class="text-gray-600 text-lg font-semibold">Trusted by our customers</h2>
         </div>
         <div class="mx-auto text-center -mt-0.5">
