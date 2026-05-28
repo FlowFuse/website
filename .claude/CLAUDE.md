@@ -2,32 +2,36 @@
 
 ## Stack
 
-- **SSG**: Eleventy (11ty) v3, source in `src/`, output to `_site/`
-- **CSS**: Tailwind v3 via PostCSS → `_site/css/style.css`
-- **Templates**: Nunjucks (`.njk`) + Markdown
+- **SSG**: Nuxt 4 static generation (`nuxt/`, output `nuxt/.output/public`).
+  Eleventy has been fully removed; `src/` is retained only as a data source the
+  `scripts/copy_*.js` build steps read (see `migration/STATUS.md`).
+- **CSS**: Tailwind v3 via PostCSS → `nuxt/public/css/style.css`
+- **Pages**: Nuxt `.vue` pages + `@nuxt/content` v3 (markdown under `nuxt/content/`,
+  generated from `src/` by the copy scripts)
 - **Search**: Algolia (`scripts/index-algolia.js`)
-- **Hosting**: Netlify; publish dir = `_site`
-- **Nuxt migration**: parallel Nuxt 3 project lives in `nuxt/` (see [nuxt/CLAUDE.md](nuxt/CLAUDE.md))
+- **Hosting**: Netlify; publish dir = `nuxt/.output/public`
+- **Nuxt app**: see [nuxt/CLAUDE.md](nuxt/CLAUDE.md)
 
 ## Dev commands
 
 ```bash
-npm start              # all watchers in parallel (11ty + nuxt + postcss + docs + blueprints)
-npm run dev            # eleventy + postcss + nuxt only
-npm run dev:eleventy   # 11ty only, port 8080
-npm run dev:nuxt       # Nuxt only, port 3000/3001
+npm run dev            # postcss(nuxt) + docs + blueprints watchers + nuxt dev (port 3000)
+npm start              # alias for npm run dev
 npm run docs           # sync docs from external source once
-npm run build          # production build
+npm run build          # production build (build:nuxt → nuxt generate)
 ```
+
+> The `src/` content-type docs below describe the markdown/frontmatter the copy
+> scripts read; the formats are unchanged from the 11ty era. Rendering is now
+> done by Nuxt pages/components, not Nunjucks layouts.
 
 ## Directory layout
 
 ```
 src/
 ├── _data/             # Global data files (authors, tags, site config, etc.)
-├── _includes/
-│   ├── layouts/       # Nunjucks layout templates
-│   └── components/    # Reusable partials
+├── _includes/         # Retained build inputs only: components/icons (SVGs),
+│   │                  #   core-nodes/ + hardware/ (node-red markdown includes)
 ├── blog/              # Blog posts  →  /blog/YYYY/MM/slug/
 ├── changelog/         # Changelog entries  →  /changelog/YYYY/MM/slug/
 ├── customer-stories/  # Case studies  →  /customer-stories/slug/
@@ -37,8 +41,7 @@ src/
 ├── images/            # Static images
 └── public/            # Pass-through static files
 scripts/               # Build-time scripts (copy_docs.js, copy_blueprints.js, etc.)
-lib/                   # Shared helpers used by .eleventy.js and scripts
-.eleventy.js           # Main Eleventy config (1100+ lines)
+nuxt/                  # Nuxt 4 app: pages/, components/, content/, server/, nuxt.config.ts
 ```
 
 ---
