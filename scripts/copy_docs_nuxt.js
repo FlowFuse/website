@@ -74,8 +74,36 @@ function copyMedia(absImage) {
     return '/docs-media/' + rel
 }
 
+// Blank lines inside the docs-index `ff-*-tiles` HTML containers (e.g. after a
+// multi-line inline SVG) terminate the markdown HTML block, so the deeply
+// indented continuation gets parsed as indented code blocks and renders as
+// stray <pre> of raw HTML. Drop blank lines within those containers so the
+// block stays intact and renders as the intended card grid.
+function stripBlankLinesInTileBlocks(body) {
+    const out = []
+    let inTiles = false
+    let depth = 0
+    for (const line of body.split('\n')) {
+        if (!inTiles && /^\s*<div\s+class="ff-(offering|product-feature)-tiles/.test(line)) {
+            inTiles = true
+            depth = 0
+        }
+        if (inTiles) {
+            if (line.trim() === '') continue
+            out.push(line)
+            depth += (line.match(/<div\b/g) || []).length
+            depth -= (line.match(/<\/div>/g) || []).length
+            if (depth <= 0) inTiles = false
+        } else {
+            out.push(line)
+        }
+    }
+    return out.join('\n')
+}
+
 function rewriteLinks(body, absFile) {
     const dir = path.dirname(absFile)
+    body = stripBlankLinesInTileBlocks(body)
 
     // Images: ![alt](target "title")
     body = body.replace(/(!\[[^\]]*\]\()([^)\s]+)(\s+"[^"]*")?(\))/g, (full, pre, target, title, post) => {
