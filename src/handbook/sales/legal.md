@@ -18,6 +18,8 @@ agreement, we have a
 [standard response overview](https://docs.google.com/document/d/1US_eixmRtzzFHybl3l9woP0isrwvK2_t7nPXoKYiuq4/edit?tab=t.0#heading=h.w8522tz1d0cr).
 Any redline or non-standard MSA review must also have a task in the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list) — see the [Deal Desk process](/handbook/sales/engagements/#asana-deal-desk-tasks) for required context.
 
+All legal document reviews, including NDAs, MSAs, DPAs, security agreements, and customer paper, must be submitted through the [Deal Desk](https://flowfuse.com/handbook/sales/engagements/#deal-approval-process-(deal-desk)) process in Asana before review or approval.
+
 ## Accepted Payment Methods
 
 For self-service customers, Stripe handles the payments with a variaty of
