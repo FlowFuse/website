@@ -2,7 +2,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
-// Routes generated from the legacy 11ty source by the scripts/copy_*.js steps.
+// Routes generated from the markdown/data sources by the scripts/copy_*.js steps.
 const readRoutes = (name: string): string[] => {
     const f = fileURLToPath(new URL(`./${name}`, import.meta.url))
     return existsSync(f) ? JSON.parse(readFileSync(f, 'utf-8')) : []
@@ -23,13 +23,12 @@ export default defineNuxtConfig({
 
     linkChecker: {
         failOnError: true,
-        // Inspections skipped for this 11ty→Nuxt migration:
-        //  - trailing-slash: 11ty pages use trailing slashes intentionally
-        //  - no-error-response: links to 11ty-served pages 404 in the Nuxt-only
-        //    static output (route integrity is instead proven by the committed
-        //    route diff in migration/route-diff.txt)
+        // Inspections skipped, carried over from the 11ty→Nuxt migration:
+        //  - trailing-slash: pages use trailing slashes intentionally
+        //  - no-error-response: route integrity is proven by the committed
+        //    route diff in migration/route-diff.txt rather than by the crawler
         // The rest are best-practice STYLE lints (not broken links) that the
-        // migrated legacy handbook prose naturally violates; skipping them keeps
+        // migrated handbook prose naturally violates; skipping them keeps
         // failOnError meaningful for genuine link breakage without rewriting
         // hundreds of pages of existing copy.
         skipInspections: [
@@ -81,6 +80,4 @@ export default defineNuxtConfig({
         }
     },
 
-    // Dev proxying to 11ty is handled by server/middleware/legacy.ts
-    // to allow per-route exclusions as pages are migrated.
 })

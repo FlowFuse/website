@@ -1,7 +1,0 @@
-<ul class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-3 md:gap-x-4 pt-8">
-    {% from "stories/customer-story.njk" import storyTile %}
-
-    {%- for item in collections.stories | excludeCurrent(page.url) | shuffle | limit(3) -%}
-        {{ storyTile(title=item.data.title, url=item.url, brand=item.data.story.brand, logo=item.data.logo, image=item.data.image) }}
-    {%- endfor -%}
-</ul>
