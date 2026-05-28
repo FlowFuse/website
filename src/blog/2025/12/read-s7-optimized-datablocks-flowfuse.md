@@ -9,6 +9,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/12/images/reading-s7-optimize-data-block.png
 tags:
   - flowfuse
+  - plc
 tldr: "Siemens S7-1200 and S7-1500 PLCs use optimized data blocks by default, which rearrange variable memory layouts at compile time making traditional S7 protocol nodes that rely on fixed byte offsets unreliable. The solution is OPC UA, which reads variables by symbolic name rather than memory address; this guide shows step-by-step how to enable the OPC UA server in TIA Portal and read optimized data block variables reliably by name."
 ---
 

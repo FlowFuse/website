@@ -7,6 +7,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/backoff-twincat.png
 tags:
 - flowfuse
+- plc
 cta:
   type: contact
   title: Connect TwinCAT to the Rest of Your Stack

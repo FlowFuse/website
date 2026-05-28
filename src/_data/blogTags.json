@@ -34,4 +34,7 @@
 }, {
     "label": "Modbus",
     "value": "modbus"
+}, {
+    "label": "PLC",
+    "value": "plc"
 }]
