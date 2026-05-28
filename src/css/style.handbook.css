@@ -8,6 +8,15 @@
         @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] 2xl:grid-cols-[300px,minmax(0,1fr),270px];
     }
 
+    /* The native Nuxt docs/handbook pages do their own 3-column layout on an
+       inner wrapper, so the legacy .handbook flex/grid container (built for the
+       old 11ty direct-child DOM) must not apply here — otherwise its flex item
+       is sized to content min-width and overflows narrow viewports. */
+    .handbook-shell {
+        display: block !important;
+        margin-top: 0;
+    }
+
     .handbook .prose {
         @apply max-w-full;
     }

@@ -44,7 +44,7 @@ useHead({
 </script>
 
 <template>
-  <div class="handbook ff-prose w-full text-left pb-24">
+  <div class="handbook handbook-shell ff-prose w-full text-left pb-24">
     <div class="mx-auto max-w-screen-xl flex flex-col lg:flex-row gap-8 px-6 pt-8">
       <!-- Sidebar navigation -->
       <aside class="lg:w-64 lg:flex-shrink-0 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto text-sm">
