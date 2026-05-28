@@ -32,6 +32,19 @@ function shortDate(d) {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
+const ALLOWED_AUTHOR_HOSTS = ['github.com', 'www.github.com', 'npmjs.com', 'www.npmjs.com']
+const safeAuthorUrl = computed(() => {
+    const raw = i.author?.url
+    if (!raw) return null
+    try {
+        const u = new URL(raw)
+        if (u.protocol !== 'https:' && u.protocol !== 'http:') return null
+        return ALLOWED_AUTHOR_HOSTS.includes(u.hostname) ? u.href : null
+    } catch {
+        return null
+    }
+})
+
 const flowRenderers = ref([])
 function encodeFlow(flow) {
     const json = JSON.stringify(flow)
@@ -126,7 +139,7 @@ onMounted(() => {
               <span v-if="i.author" class="flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
                 <strong>Author:</strong>
-                <a v-if="i.author.url && (i.author.url.includes('github.com') || i.author.url.includes('npmjs.com'))" :href="i.author.url" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 underline">{{ i.author.name }}</a>
+                <a v-if="safeAuthorUrl" :href="safeAuthorUrl" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 underline">{{ i.author.name }}</a>
                 <span v-else>{{ i.author.name }}</span>
               </span>
               <span v-if="i.lastUpdated" class="flex items-center gap-1">
