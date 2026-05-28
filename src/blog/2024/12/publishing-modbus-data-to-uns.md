@@ -30,6 +30,7 @@ meta:
       answer: "Quality of Service controls message delivery guarantees. QoS 0 is fastest but doesn't guarantee delivery. QoS 1 ensures at least one delivery (possible duplicates). QoS 2 guarantees exactly one delivery but is slowest. For most industrial monitoring, QoS 1 provides a good balance of reliability and performance."
     - question: "How do I verify my Unified Namespace is working correctly?"
       answer: "Check the FlowFuse Broker Hierarchy tab to see your topic structure. You should see all your topics organized as defined. Additionally, you can use the MQTT In node in Node-RED to subscribe to your topics and verify data is being published with the correct structure and values."
+tldr: "Bridging Modbus to MQTT with Node-RED solves the OT/IT integration gap by translating the Modbus master-slave polling model into an MQTT publish-subscribe architecture. The guide walks through reading Modbus holding registers, transforming raw register values into human-readable metrics, and publishing them to a Unified Namespace via FlowFuse's integrated MQTT broker."
 ---
 
 Converting Modbus to MQTT unlocks the value trapped in legacy industrial equipment. Industrial facilities worldwide face a persistent challenge: their Modbus-based sensors, PLCs, and controllers generate valuable operational data, but that data remains isolated in local control networks, unable to feed modern cloud analytics, remote dashboards, or predictive maintenance systems.

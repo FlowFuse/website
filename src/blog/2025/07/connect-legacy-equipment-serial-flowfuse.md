@@ -28,6 +28,7 @@ meta:
       answer: "For binary data, configure the serial node to output as Buffer instead of String. Then use a function node to parse the buffer using Node.js Buffer methods like readInt16BE(), readFloatLE(), etc. FlowFuse users can leverage the AI Assistant to generate parsing code by providing a sample of the data format."
     - question: "What's the best practice for handling serial connection failures in production?"
       answer: "Implement error handling with catch nodes to detect connection failures. Use the serial control node to attempt reconnection after failures. Add status nodes to monitor connection state and trigger alerts. Consider implementing a watchdog timer that checks for data timeouts and automatically restarts the connection if needed."
+tldr: "Many factory machines communicate via RS-232, RS-422, or RS-485 serial interfaces and can be integrated with modern systems using Node-RED and FlowFuse without any hardware modifications. This guide covers serial communication fundamentals, installing the node-red-contrib-serialport nodes, and building flows to collect and monitor data from legacy equipment in real time."
 ---
 
 Many factories rely on machines, both new and old, that communicate via traditional serial interfaces such as **RS-232, RS-422, or RS-485**. These machines remain reliable but can be challenging to integrate with modern systems due to their connectivity style.

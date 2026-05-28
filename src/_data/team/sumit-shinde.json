@@ -4,11 +4,31 @@
     "title": "Technical Writer",
     "github": "sumitshinde-84",
     "linkedin": "sumit-shinde-a16b1126b",
+    "twitter": null,
     "email": "sumit@flowfuse.com",
     "country": "IN",
     "headshot": "sumit.png",
     "reports_to": "Pablo Filomeno",
     "bio": "Sumit is a Technical Writer at FlowFuse who helps engineers adopt Node-RED for industrial automation projects. He has authored over 100 articles covering industrial protocols (OPC UA, MQTT, Modbus), Unified Namespace architectures, and practical manufacturing solutions. Through his writing, he makes complex industrial concepts accessible, helping teams connect legacy equipment, build real-time dashboards, and implement Industry 4.0 strategies.",
+    "expertise": [
+        "OPC UA",
+        "MQTT",
+        "Modbus",
+        "Unified Namespace",
+        "Node-RED",
+        "Industrial IoT",
+        "Manufacturing automation",
+        "PLC integration"
+    ],
+    "knowsAbout": [
+        "Industrial protocols",
+        "Industry 4.0",
+        "Edge computing",
+        "OPC UA tutorials",
+        "MES integration",
+        "OEE calculation",
+        "Dashboard development"
+    ],
     "facts": [
         "Enjoys contributing to open-source projects.",
         "Experienced love at first sight with Node-RED and enjoys writing and reading about it.",
@@ -16,4 +36,3 @@
         "Passionate about reading, running, and exploring historical places."
     ]
 }
-

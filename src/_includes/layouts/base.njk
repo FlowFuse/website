@@ -5,7 +5,7 @@ meta:
   site:
     name: FlowFuse
     description: {{ messaging.title }}
-    url: https://FlowFuse.com
+    url: https://flowfuse.com
     logo:
       src: https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png
       width: 396
@@ -118,7 +118,11 @@ eleventyComputed:
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@FlowFuseinc" />
+    {% if team[authors|first] and team[authors|first].twitter %}
     <meta name="twitter:creator" content="@{{ team[authors|first].twitter }}" />
+    {% else %}
+    <meta name="twitter:creator" content="@FlowFuseinc" />
+    {% endif %}
     {% else %}
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

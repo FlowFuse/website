@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/12/images/node-red-buffer-parser-industrial-data.png
 tags:
   - flowfuse
+tldr: "Legacy industrial devices like Modbus sensors and PLCs communicate in raw binary buffers compact byte sequences where each position encodes a specific value rather than human-readable JSON, because binary is far more efficient on low-bandwidth serial links. Node-RED's Buffer Parser node lets you decode these buffers visually through configuration rather than writing custom JavaScript, handling byte offsets, endianness, data types, and scaling factors automatically."
 ---
 
 Legacy industrial devices communicate in bytes. Your temperature sensor doesn't send you `{"temp": 23.5}` - it sends you `[1, 3, 4, 1, 44, 0, 200, 190, 125]`. Those numbers are meaningless unless you know how to decode them.
