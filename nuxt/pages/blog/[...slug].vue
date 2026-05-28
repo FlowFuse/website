@@ -161,9 +161,9 @@ useHead(() => ({
         <h1>{{ meta.title || entry.title }}</h1>
         <h4 v-if="meta.subtitle" v-html="meta.subtitle" />
         <div class="flex items-center gap-1 text-sm text-gray-500 mt-4">
-          <span class="font-medium">{{ authorNames(meta.authors) }}</span>
+          <span><template v-for="(id, i) in (meta.authors || [])" :key="id"><template v-if="i"> </template><span class="font-medium">{{ authorsData[id]?.name || 'FlowFuse' }}</span><span v-if="authorsData[id]?.title" class="text-gray-400">, {{ authorsData[id].title }}</span></template></span>
           <span class="text-gray-500">•</span>
-          <time>{{ fmtDate(meta.lastUpdated || meta.date) }}</time>
+          <time>{{ meta.lastUpdated ? 'Updated ' : '' }}{{ fmtDate(meta.lastUpdated || meta.date) }}</time>
         </div>
       </div>
     </div>
@@ -176,6 +176,13 @@ useHead(() => ({
               <lite-youtube v-if="meta.video" :videoid="meta.video" params="rel=0" style="margin-top:20px;margin-bottom:20px;width:100%;height:480px;" :title="`${meta.title} - YouTube video`" />
               <div v-else class="w-full h-auto"><img :src="meta.image" :alt="meta.title" class="w-full h-auto rounded"></div>
             </div>
+            <section v-if="meta.tldr" id="tldr" aria-label="TL;DR" class="not-prose my-8 rounded-r-lg border-l-4 border-indigo-400 bg-indigo-50 px-6 py-5">
+              <span class="text-indigo-400 text-xs uppercase font-bold tracking-wider">TL;DR</span>
+              <p v-if="typeof meta.tldr === 'string'" class="mt-2 mb-0 text-sm leading-relaxed text-gray-700">{{ meta.tldr }}</p>
+              <ul v-else class="mt-2 mb-0 list-disc space-y-1 pl-4 text-sm leading-relaxed text-gray-700">
+                <li v-for="(point, i) in meta.tldr" :key="i">{{ point }}</li>
+              </ul>
+            </section>
             <ContentRenderer v-if="entry" :value="entry" />
           </div>
 

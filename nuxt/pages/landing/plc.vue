@@ -346,6 +346,9 @@ useHead({
             </li>
           </a>
         </div>
+        <div class="text-center mt-8">
+          <a href="/blog/plc/" class="ff-btn ff-btn--primary-outlined">See All PLC Articles →</a>
+        </div>
       </div>
     </div>
 

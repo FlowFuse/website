@@ -52,6 +52,10 @@ const CATEGORIES = {
     releases: { tag: 'releases', label: 'Releases' },
     tips: { tag: 'tips', label: 'Quick Tips' },
     uns: { tag: 'unified-namespace', label: 'UNS' },
+    plc: { tag: 'plc', label: 'PLC' },
+    mqtt: { tag: 'mqtt', label: 'MQTT' },
+    opcua: { tag: 'opcua', label: 'OPC UA' },
+    modbus: { tag: 'modbus', label: 'Modbus' },
 }
 
 function parseFrontmatter(raw) {
@@ -227,6 +231,7 @@ for (const absFile of files) {
         video: data.video || '',
         tags: asArray(data.tags),
         lastUpdated: data.lastUpdated ? new Date(data.lastUpdated).toISOString() : null,
+        tldr: data.tldr || null,
     })
 }
 
