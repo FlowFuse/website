@@ -10,6 +10,7 @@ keywords: node-red variables, node-red global variable, node-red context variabl
 tags:
    - posts
    - node-red
+tldr: "Node-RED provides four variable types node, flow, global, and environment each with different scope and purpose. Context variables store application state at runtime (lost on restart unless persistent storage is used), while environment variables securely handle configuration and secrets. Choosing the right scope and using FlowFuse's persistent storage ensures reliable, production-grade state management."
 ---
 
 Variables are essential for building anything beyond basic message routing in Node-RED. They let you store state, share data across your application, and manage configuration—capabilities you'll need for almost any real-world project.

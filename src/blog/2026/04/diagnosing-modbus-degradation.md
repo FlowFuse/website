@@ -13,6 +13,7 @@ cta:
   type: sign-up
   title: Unlock your Modbus data with FlowFuse
   description: Get Modbus data flowing reliably — then connect every other protocol on your plant floor. OPC-UA, MQTT, legacy and modern, all in one place
+tldr: "Modbus degradation rarely announces itself it shows up as stale values, slower-than-expected poll cycles, and vague operator complaints. RS-485 serial and Modbus TCP fail through different mechanisms (CRC errors vs. connection table exhaustion), and the four metrics to monitor are transaction success rate, response time, CRC error count, and poll cycle completion time."
 ---
 
 Modbus doesn't fail loudly. It drifts, and by the time operators notice, you've already lost the easy fix.

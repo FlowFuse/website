@@ -27,6 +27,7 @@ meta:
     answer: "Set the mqtt-in node's Output to auto-detect—it automatically parses JSON into objects. The mqtt-out node automatically stringifies objects in msg.payload. No extra configuration needed for most cases."
   - question: "How do I optimize MQTT messages in Node-RED?"
     answer: "For high-frequency or bandwidth-constrained systems, consider using Protocol Buffers instead of JSON. Protocol Buffers reduce message size by 60-80% and improve parsing performance. Define your data schema in a `.proto` file, then use protocol buffer nodes to encode before publishing and decode after receiving. This is especially valuable for industrial IoT with thousands of sensors. See our guide on optimizing industrial data with Protocol Buffers: https://flowfuse.com/blog/2025/11/optimize-industrial-data-protocol-buffers/"
+tldr: "Node-RED's built-in mqtt-in and mqtt-out nodes make it straightforward to connect to any MQTT broker, subscribe to topics with wildcard support, and publish data. Dynamic subscriptions, TLS security, environment-variable credentials, and a well-structured topic hierarchy are the key practices for reliable, production-grade MQTT flows."
 ---
 
 MQTT handles the messaging layer for most IoT deployments. Node-RED provides built-in nodes that connect to MQTT brokers, subscribe to topics, and publish messages—all through a visual interface.

@@ -15,6 +15,7 @@ cta:
   type: sign-up
   title: Build Powerful IoT Solutions With Node-RED and Python
   description: FlowFuse gives you a production-ready platform to deploy and manage Node-RED flows — with the flexibility to integrate Python scripts, external libraries, and any data source your project needs.
+tldr: "Node-RED's Exec node can run any Python script as a system command, passing arguments and capturing stdout as message output. This approach lets you combine Node-RED's visual flow logic with Python's rich library ecosystem for tasks like sensor data processing, machine learning, or any advanced computation."
 ---
 
 Python's robust data processing capabilities and extensive libraries are well-known in programming. When combined with Node-RED, these technologies can synergize to elevate data analytics and automation. This guide walks you through integrating Python scripts with Node-RED. You'll gain practical insights, troubleshooting tips, and effective techniques for executing scripts, enabling you to leverage this powerful combination for your IoT projects.
