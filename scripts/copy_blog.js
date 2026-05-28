@@ -89,6 +89,14 @@ function fileToContentPath(absFile) {
 }
 
 function asArray(t) { return Array.isArray(t) ? t : t ? [t] : [] }
+// Card/hero image refs are rendered as-is in the browser; a relative frontmatter
+// path (e.g. "blog/2025/07/images/x.png") resolves against the page URL and 404s
+// on index/category pages. Normalise to the absolute path copy_assets publishes.
+function absImage(img) {
+    if (!img) return null
+    if (/^(https?:|\/)/.test(img)) return img
+    return '/' + String(img).replace(/^\.?\//, '')
+}
 
 // Map a nunjucks variable path like "site.appURL" to its literal value.
 function siteValue(expr) {
@@ -227,7 +235,7 @@ for (const absFile of files) {
         description: data.description || data.excerpt || data.meta?.description || data.subtitle || '',
         date: data.date ? new Date(data.date).toISOString() : null,
         authors: asArray(data.authors),
-        image: data.image || '/images/og-blog.jpg',
+        image: absImage(data.image) || '/images/og-blog.jpg',
         video: data.video || '',
         tags: asArray(data.tags),
         lastUpdated: data.lastUpdated ? new Date(data.lastUpdated).toISOString() : null,

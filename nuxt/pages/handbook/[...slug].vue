@@ -27,6 +27,10 @@ const tree = computed(() => {
 
 const toc = computed(() => page.value?.body?.toc?.links ?? [])
 
+// Sidebar is a collapsible disclosure below lg; always shown inline at lg+.
+const navOpen = ref(false)
+watch(() => route.path, () => { navOpen.value = false })
+
 useHead({
     title: `${page.value.title} • FlowFuse Handbook`
 })
@@ -34,10 +38,19 @@ useHead({
 
 <template>
   <div class="handbook ff-prose w-full text-left pb-24">
-    <div class="mx-auto max-w-screen-xl flex flex-col md:flex-row gap-8 px-6 pt-8">
+    <div class="mx-auto max-w-screen-xl flex flex-col lg:flex-row gap-8 px-6 pt-8">
       <!-- Sidebar navigation -->
-      <aside class="md:w-64 md:flex-shrink-0 md:sticky md:top-20 md:self-start md:max-h-[calc(100vh-6rem)] md:overflow-y-auto text-sm">
-        <nav>
+      <aside class="lg:w-64 lg:flex-shrink-0 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto text-sm">
+        <button
+          type="button"
+          class="lg:hidden w-full flex items-center justify-between rounded-md border border-gray-200 bg-gray-50 px-4 py-2 font-medium text-gray-700"
+          :aria-expanded="navOpen"
+          @click="navOpen = !navOpen"
+        >
+          <span>Handbook menu</span>
+          <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': navOpen }" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+        </button>
+        <nav :class="navOpen ? 'block' : 'hidden lg:block'" class="mt-2 lg:mt-0">
           <HandbookNavTree :items="tree" :current="route.path" />
         </nav>
       </aside>

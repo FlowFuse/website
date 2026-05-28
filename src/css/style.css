@@ -451,6 +451,15 @@ video, iframe {
     max-width: 100%;
 }
 
+/* Ported marketing pages hardcode style="max-width:NNNpx" on <img> without a
+   width:100% companion (11ty's {% image %} shortcode used to add it), so large
+   images overflow narrow viewports. Cap every image to its container width;
+   !important is required to beat the inline max-width. Aspect ratio preserved. */
+img {
+    max-width: 100% !important;
+    height: auto;
+}
+
 h1,h2,h3,h4 {
     position: relative;
 }

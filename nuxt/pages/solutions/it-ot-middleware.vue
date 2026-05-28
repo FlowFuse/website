@@ -81,7 +81,7 @@ useHead({
     </div>
 
     <div class="w-full md:max-w-screen-lg m-auto pb-32">
-      <img src="/images/solutions/markitechture-manufacturing.png" alt="High level architecture diagram showing how Node-RED can assist with data flow across a factory and manufacturing use-case" style="max-width:1024px" />
+      <img src="/images/solutions/markitechture-manufacturing.png" alt="High level architecture diagram showing how Node-RED can assist with data flow across a factory and manufacturing use-case" class="w-full h-auto mx-auto" style="max-width:1024px" />
     </div>
 
     <div class="w-full bg-gray-50 py-6">
