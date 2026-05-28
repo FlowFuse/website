@@ -11,7 +11,7 @@ tags:
 tldr:
   - NIS2 Article 21 tells you what to achieve, not how. That is where mid-market manufacturers stall.
   - IEC 62443 is the standard regulators, accredited bodies, and ENISA guidance keep pointing to for OT. "Aligned to 62443-3-3 at SL2" is the answer auditors recognise.
-  - Start by scoping your System under Consideration, inventorying every piece of OT software, and closing gaps against Foundational Requirements 1, 2, and 6: access control, use control, and audit logging.
+  - "Start by scoping your System under Consideration, inventorying every piece of OT software, and closing gaps against Foundational Requirements 1, 2, and 6: access control, use control, and audit logging."
   - The custom industrial applications running alongside SCADA are the layer most assessments flag and most teams have no clean answer for.
 cta:
     type: contact
