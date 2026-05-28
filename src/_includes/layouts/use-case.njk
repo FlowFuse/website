@@ -161,5 +161,12 @@ sitemapPriority: 0.7
     {% set relatedTag = "usecase:" + page.fileSlug %}
     {% include "components/related-resources.njk" %}
 
-    <!-- spacer so sticky dock never overlaps the final content -->
+    <!-- spacer so the floating expert dock never overlaps the final content -->
+    <div class="w-full h-28"></div>
+
 </div>
+
+<!-- ============================================================
+     FLOATING FLOWFUSE EXPERT DOCK (use case pages only)
+============================================================ -->
+{% include "components/expert-dock.njk" %}
