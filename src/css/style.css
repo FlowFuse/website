@@ -871,6 +871,18 @@ h4:hover .header-anchor::before {
         @apply py-3 pl-3;
     }
 
+    /* Solutions dropdown: two labelled subgroups separated by a single
+       full-height divider. The titles align left with their list items and
+       the divider runs the full height between the columns. */
+    .ff-website header .ff-nav-dropdown ul.ff-nav-subgroups > li > span.title {
+        text-align: left;
+        @apply sm:pl-3 sm:pr-4 sm:pb-1;
+    }
+    .ff-website header .ff-nav-dropdown ul.ff-nav-subgroups > li.ff-nav-subgroup-divider {
+        border-left: 1px solid theme(colors.gray.200);
+        @apply sm:pl-6;
+    }
+
     .ff-website header .ff-nav-dropdown >ul li a .ff-icon--solid {
         fill: theme(colors.gray.700);
     }

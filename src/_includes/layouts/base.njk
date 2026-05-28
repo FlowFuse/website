@@ -271,13 +271,25 @@ eleventyComputed:
                         </ul>
                         {% endnavoption %}
                         {% navoption "Solutions", null, 0 %}
-                            <ul class="sm:grid sm:grid-flow-col sm:grid-rows-3 sm:grid-cols-1 sm:pr-9 align-left">
-                                {% navoption "IT/OT middleware", "/solutions/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
-                                {% navoption "Unified Namespace", "/solutions/uns/", 1, "uns" %}{% endnavoption %}
-                                {% navoption "SCADA", "/solutions/scada/", 1, "adjustments-horizontal" %}{% endnavoption %}
-                                {% navoption "MES", "/solutions/mes/", 1, "chart" %}{% endnavoption %}
-                                {% navoption "Edge Connectivity", "/solutions/edge-connectivity/", 1, "chip" %}{% endnavoption %}
-                                {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
+                            <ul class="ff-nav-subgroups sm:grid sm:grid-flow-col sm:auto-cols-max sm:gap-x-8 sm:pr-6 align-left items-stretch">
+                                <li class="!bg-transparent">
+                                    <span class="title block">By architecture</span>
+                                    <ul class="sub-menu">
+                                        {% navoption "IT/OT middleware", "/solutions/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
+                                        {% navoption "Unified Namespace", "/solutions/uns/", 1, "uns" %}{% endnavoption %}
+                                        {% navoption "SCADA", "/solutions/scada/", 1, "adjustments-horizontal" %}{% endnavoption %}
+                                        {% navoption "MES", "/solutions/mes/", 1, "chart" %}{% endnavoption %}
+                                        {% navoption "Edge Connectivity", "/solutions/edge-connectivity/", 1, "chip" %}{% endnavoption %}
+                                        {% navoption "Data integration", "/solutions/data-integration/", 1, "db" %}{% endnavoption %}
+                                    </ul>
+                                </li>
+                                <li class="!bg-transparent ff-nav-subgroup-divider">
+                                    <span class="title block">By use case</span>
+                                    <ul class="sub-menu">
+                                        {% navoption "Production Monitoring", "/use-cases/production-monitoring/", 1, "chart" %}{% endnavoption %}
+                                        {% navoption "All use cases", "/use-cases/", 1, "squares-2x2" %}{% endnavoption %}
+                                    </ul>
+                                </li>
                             </ul>
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
