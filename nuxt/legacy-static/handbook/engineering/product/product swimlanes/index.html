@@ -1,0 +1,942 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet"></noscript>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aa4444">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+<meta name="keywords" content="handbook, Node-RED, Application Development, IoT, IIoT, Low-Code, open source, Integration, Workflow, Automation, Data Processing, Data Integration, Data Transformation, Data Visualization, Industrial Automation, Industrial IoT, Industry 4.0">
+<title>Product Swimlanes &#x2022; FlowFuse Handbook</title>
+<link rel="canonical" href="https://flowfuse.com/handbook/engineering/product/product%20swimlanes/">
+<meta name="description" content="FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.">
+<meta property="og:title" content="Product Swimlanes &#x2022; FlowFuse Handbook">
+<meta property="og:description" content="FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.">
+<meta property="og:url" content="https://flowfuse.com/handbook/engineering/product/product%20swimlanes/">
+<meta property="og:image" content="https://flowfuse.com/images/og-social-tile.jpg">
+<meta name="twitter:image" content="https://flowfuse.com/images/og-social-tile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="">
+<meta name="twitter:site" content="@FlowFuseinc">
+<meta property="article:section" content="handbook">
+<meta property="searchable:title" content="Handbook">
+<script>const blockedScripts=[];function needsToBeBlocked(e){return blockedScripts.some(t=>t.test(e))}const createElementBackup=document.createElement;function hsFallback(e){if(e&&e.parentNode){const t=e.parentNode.querySelector(".ff-hubspot-consent-fallback");if(t)return void t.classList.remove("hidden");const o=document.createElement("section");o.classList.add("ff-hubspot-consent-fallback"),o.innerHTML="\n                <p><strong>Unable to load HubSpot content.</strong></p>\n            ",e.parentNode.insertBefore(o,e.nextSibling)}}function loadHubSpotFormsScript(){return window.hbspt?.forms?.create?Promise.resolve(window.hbspt):(window._ffHubSpotFormsPromise||(window._ffHubSpotFormsPromise=new Promise((e,t)=>{const o=document.getElementById("ff-hs-forms-script");if(o)return o.addEventListener("load",()=>e(window.hbspt),{once:!0}),void o.addEventListener("error",()=>t(new Error("HubSpot forms script failed to load")),{once:!0});const r=document.createElement("script");r.id="ff-hs-forms-script",r.async=!0,r.charset="utf-8",r.src="https://js-eu1.hsforms.net/forms/embed/v2.js",r.onload=()=>e(window.hbspt),r.onerror=()=>t(new Error("HubSpot forms script failed to load")),document.head.appendChild(r)}).catch(e=>{throw window._ffHubSpotFormsPromise=null,e})),window._ffHubSpotFormsPromise)}function ffCreateHubSpotForm(e){if(!e||!e.formId)return;const t=e.target?document.querySelector(e.target):null,o=e.fallbackSelector?document.querySelector(e.fallbackSelector):null;e.target&&!t||"true"!==t?.dataset.ffHsFormLoaded&&(t&&t.querySelector("iframe, form, .hbspt-form")?t.dataset.ffHsFormLoaded="true":loadHubSpotFormsScript().then(()=>{if(!window.hbspt?.forms?.create)return void(o?o.classList.remove("hidden"):t&&hsFallback(t));const{fallbackSelector:r,...n}=e;window.hbspt.forms.create(n),t&&(t.dataset.ffHsFormLoaded="true"),o&&o.classList.add("hidden")}).catch(()=>{o?o.classList.remove("hidden"):t&&hsFallback(t)}))}document.createElement=function(...e){if("script"!==e[0].toLowerCase())return createElementBackup.bind(document)(...e);const t=createElementBackup.bind(document)(...e),o=t.setAttribute.bind(t);return o("defer","defer"),Object.defineProperties(t,{src:{get:()=>t.getAttribute("src"),set:e=>(needsToBeBlocked(e,t.type)&&o("type","javascript/blocked"),o("src",e),!0)},type:{set(e){const r=needsToBeBlocked(t.src,t.type)?"javascript/blocked":e;return o("type",r),!0}}}),t.setAttribute=function(e,o){"type"===e||"src"===e?t[e]=o:HTMLScriptElement.prototype.setAttribute.call(t,e,o)},t},window.ffCreateHubSpotForm=ffCreateHubSpotForm;</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://flowfuse.com/#organization",
+      "name": "FlowFuse",
+      "url": "https://flowfuse.com",
+      "description": "Build workflows and integrations that optimize your industrial operations",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png"
+      },
+      "sameAs": [
+        "https://www.g2.com/products/flowfuse/reviews",
+        "https://www.linkedin.com/company/flowfuse",
+        "https://www.youtube.com/@FlowFuseInc",
+        "https://github.com/FlowFuse"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://flowfuse.com/#website",
+      "url": "https://flowfuse.com",
+      "name": "FlowFuse",
+      "description": "Build workflows and integrations that optimize your industrial operations",
+      "publisher": {
+        "@id": "https://flowfuse.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://flowfuse.com/handbook/engineering/product/product swimlanes/#webpage",
+      "url": "https://flowfuse.com/handbook/engineering/product/product swimlanes/",
+      "name": "Build workflows and integrations that optimize your industrial operations",
+      "headline": "Build workflows and integrations that optimize your industrial operations",
+      "description": "FlowFuse is the universal platform that powers your factory, creating a secure and governed solution for your industrial operations.",
+      "isPartOf": {
+        "@id": "https://flowfuse.com/#website"
+      },
+      
+      "publisher": {
+        "@id": "https://flowfuse.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://flowfuse.com/#software",
+      "name": "FlowFuse",
+      "url": "https://flowfuse.com",
+      "applicationCategory": "DeveloperApplication",
+      "publisher": {
+        "@id": "https://flowfuse.com/#organization"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "3",
+        "bestRating": "5",
+        "worstRating": "0"
+      }
+    }
+    
+    
+  ]
+}
+</script>
+<script type="module" src="/js/flowrenderer.min.js"></script></head>
+<body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
+<a href="#main-content" class="skip-to-main">Skip to main content</a>
+<div class="flex-grow base">
+<div class="w-full">
+<div class="event-banner-container bg-indigo-700 hidden sm:block">
+<a href="/webinars/2026/the-bus-factor-in-real-life/" class="event-banner hidden sm:flex text-center w-full py-1 pb-3 sm:py-3 bg-indigo-700 hover:bg-indigo-600 text-indigo-100 text-sm px-2 gap-1 sm:gap-2 flex-col sm:flex-row items-center justify-center">
+<span class="hidden sm:block font-semibold">Webinar</span>
+<span class="hidden sm:block">-</span>
+<span>Applying The Bus Factor - How FlowFuse Deployed Stack Resilience in Real Life</span>
+<span class="hidden sm:block">-</span>
+<span class="flex items-center gap-1 font-medium underline">
+Register now <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+</span>
+</a>
+</div>
+<script>
+window.onload = function() {
+        const banners = document.querySelectorAll('.event-banner');
+        const container = document.querySelector('.event-banner-container');
+        
+        // If there are no banners, exit the function
+        if (banners.length === 0) return;
+        
+        let currentBanner = 0;
+
+        // Change the container color to match the current banner
+        function changeContainerColor(banner) {
+            const colorClass = banner.className.match(/bg-\w+-\d+/)[0];
+            const hoverColorClass = banner.className.match(/hover:bg-\w+-\d+/)[0];
+            container.className = 'event-banner-container ' + colorClass + ' ' + hoverColorClass + ' hidden sm:block';
+        }
+
+        // All banners are hidden by default
+        banners.forEach(banner => banner.style.visibility = 'hidden');
+
+        // Show the first banner
+        banners[0].style.visibility = 'visible';
+        changeContainerColor(banners[0]);
+
+        // If there is more than one banner, change the visible banner every 10 seconds
+        if (banners.length > 1) {
+            setInterval(function() {
+                // Hide the current banner
+                banners[currentBanner].style.visibility = 'hidden';
+
+                // Increment the current banner index
+                currentBanner = (currentBanner + 1) % banners.length;
+
+                // Show the new banner
+                banners[currentBanner].style.visibility = 'visible';
+                banners[currentBanner].style.animation = 'none'; // reset animation
+                // force reflow, triggering a new animation
+                void banners[currentBanner].offsetWidth;
+                banners[currentBanner].style.animation = 'slideDown 0.5s ease';
+
+                // Change the container color to match the new banner
+                setTimeout(function() {
+                    changeContainerColor(banners[currentBanner]);
+                }, 500); // wait for the slideDown animation to finish
+            }, 10000);
+        }
+    };
+</script>
+<header id="ff-header" class="ff-header">
+<nav class="relative w-full flex items-center justify-between mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
+<a class="flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row" href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
+<svg class="h-full w-full" viewBox="0 0 402 70" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_171_1177" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
+<path d="M402 0H0V70H402V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_171_1177)">
+<mask id="mask1_171_1177" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
+<path d="M402 0H0V70H402V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_171_1177)">
+<path d="M118.95 9.98H95.3695C93.7495 9.98 92.4595 10.47 91.4795 11.44C90.4995 12.41 90.0195 13.71 90.0195 15.32V55.38C90.0195 57.05 90.4495 58.24 91.3095 58.94C92.1695 59.64 93.5495 59.99 95.4395 59.99C96.3595 59.99 97.2495 59.92 98.1095 59.79C98.9695 59.66 99.6195 59.53 100.05 59.43V39.87H113.6C114.73 39.87 115.62 39.51 116.27 38.78C116.92 38.05 117.24 37.01 117.24 35.66C117.24 34.85 117.12 34.11 116.88 33.43C116.64 32.76 116.38 32.2 116.11 31.77H100.05V18.15H116.35C117.48 18.15 118.37 17.79 119.02 17.06C119.67 16.33 119.99 15.27 119.99 13.86C119.99 13.05 119.88 12.3 119.67 11.59C119.45 10.89 119.21 10.35 118.94 9.97" fill="#DA3D0B"/>
+<path d="M130.979 9.98001C130.059 9.98001 129.199 10.06 128.389 10.22C127.579 10.38 126.959 10.52 126.529 10.62V55.53C126.529 57.2 126.969 58.36 127.859 59.01C128.749 59.66 130.079 59.98 131.869 59.98C132.839 59.98 133.719 59.91 134.499 59.78C135.279 59.65 135.889 59.5 136.319 59.34V14.52C136.319 12.85 135.889 11.68 135.029 11C134.169 10.33 132.819 9.99001 130.979 9.99001" fill="#DA3D0B"/>
+<path d="M175.521 22.61C172.531 20.94 169.041 20.1 165.041 20.1C161.041 20.1 157.611 20.94 154.601 22.61C151.591 24.28 149.241 26.63 147.571 29.65C145.901 32.67 145.061 36.26 145.061 40.41C145.061 44.56 145.881 48.15 147.531 51.17C149.171 54.19 151.501 56.53 154.521 58.17C157.531 59.81 161.041 60.64 165.041 60.64C169.041 60.64 172.611 59.82 175.601 58.17C178.591 56.52 180.901 54.18 182.551 51.13C184.191 48.08 185.011 44.51 185.011 40.41C185.011 36.31 184.171 32.67 182.501 29.65C180.831 26.63 178.501 24.28 175.511 22.61M172.271 49.6C170.521 51.78 168.111 52.88 165.041 52.88C161.971 52.88 159.561 51.8 157.811 49.65C156.061 47.49 155.181 44.42 155.181 40.42C155.181 36.42 156.071 33.41 157.851 31.19C159.631 28.98 162.031 27.87 165.041 27.87C168.051 27.87 170.521 28.98 172.271 31.19C174.021 33.4 174.901 36.48 174.901 40.42C174.901 44.36 174.021 47.42 172.271 49.6Z" fill="#DA3D0B"/>
+<path d="M281.95 9.98H258.37C256.75 9.98 255.46 10.47 254.48 11.44C253.51 12.41 253.02 13.71 253.02 15.32V55.38C253.02 57.05 253.45 58.24 254.31 58.94C255.17 59.64 256.55 59.99 258.44 59.99C259.36 59.99 260.25 59.92 261.11 59.79C261.97 59.66 262.62 59.53 263.05 59.43V39.87H276.6C277.73 39.87 278.62 39.51 279.27 38.78C279.92 38.05 280.24 37.01 280.24 35.66C280.24 34.85 280.12 34.11 279.88 33.43C279.64 32.76 279.38 32.2 279.11 31.77H263.05V18.15H279.35C280.48 18.15 281.37 17.79 282.02 17.06C282.67 16.33 282.99 15.27 282.99 13.86C282.99 13.05 282.88 12.3 282.67 11.59C282.45 10.89 282.21 10.35 281.94 9.97" fill="#DA3D0B"/>
+<path d="M243.98 21.39C243.12 20.8 242.01 20.5 240.66 20.5C239.04 20.5 237.59 20.88 236.29 21.63C235.59 26.59 234.71 31.61 233.66 36.68C232.61 41.75 231.59 46.53 230.62 51H230.22C229.95 49.76 229.45 47.87 228.72 45.34C227.99 42.81 227.14 39.91 226.17 36.64C225.2 33.38 224.17 30.02 223.09 26.56C222.77 25.59 222.13 24.87 221.19 24.42C220.25 23.96 219.08 23.73 217.67 23.73C216.59 23.73 215.64 23.84 214.83 24.05C214.02 24.27 213.26 24.59 212.56 25.02C211.48 28.63 210.42 32.2 209.36 35.7C208.31 39.21 207.39 42.32 206.61 45.05C205.83 47.77 205.27 49.76 204.95 51H204.63C204.41 50.14 204.11 48.88 203.74 47.24C203.36 45.6 202.93 43.64 202.45 41.37C201.96 39.1 201.46 36.57 200.95 33.76C200.44 30.95 199.94 28.01 199.46 24.94C199.19 23.32 198.65 22.18 197.84 21.5C197.03 20.83 195.92 20.49 194.52 20.49C193.39 20.49 192.37 20.71 191.48 21.14C190.59 21.57 189.88 22.06 189.34 22.6C189.72 24.65 190.19 27 190.76 29.64C191.33 32.28 191.95 35.01 192.62 37.81C193.29 40.62 193.97 43.33 194.64 45.94C195.31 48.56 195.97 50.86 196.62 52.86C197.27 54.86 197.84 56.4 198.32 57.47C198.75 58.33 199.53 59 200.67 59.45C201.8 59.91 203.1 60.14 204.56 60.14C205.85 60.14 206.95 60 207.84 59.73C208.73 59.46 209.44 59.11 209.99 58.68C210.64 56.9 211.4 54.67 212.29 52C213.18 49.33 214.1 46.44 215.04 43.34C215.98 40.24 216.83 37.2 217.59 34.24C218.4 37.15 219.23 40.11 220.09 43.1C220.95 46.09 221.8 48.87 222.64 51.44C223.48 54 224.22 56.09 224.87 57.71C225.41 59.33 227.33 60.14 230.61 60.14C231.85 60.14 233 59.99 234.05 59.69C235.1 59.4 235.88 59.06 236.36 58.68C236.79 57.6 237.3 56.15 237.9 54.31C238.49 52.48 239.13 50.4 239.8 48.08C240.47 45.76 241.14 43.36 241.78 40.88C242.43 38.4 243 36.05 243.52 33.84C244.03 31.63 244.45 29.67 244.78 27.97C245.1 26.27 245.26 25.07 245.26 24.37C245.26 22.97 244.83 21.97 243.97 21.38" fill="#DA3D0B"/>
+<path d="M316.89 20.67C315.97 20.67 315.11 20.75 314.3 20.91C313.49 21.07 312.87 21.21 312.44 21.31V51.17C311.79 51.55 310.87 51.91 309.69 52.26C308.5 52.61 307.05 52.78 305.32 52.78C302.62 52.78 300.52 52.15 299.01 50.88C297.5 49.61 296.74 47.55 296.74 44.69V25.27C296.74 23.49 296.32 22.28 295.48 21.63C294.64 20.98 293.31 20.66 291.47 20.66C290.5 20.66 289.61 20.74 288.8 20.9C287.99 21.06 287.4 21.2 287.02 21.3V44.85C287.02 48.52 287.75 51.51 289.2 53.83C290.66 56.15 292.76 57.85 295.51 58.93C298.26 60.01 301.5 60.55 305.22 60.55C308.3 60.55 311.02 60.24 313.4 59.62C315.77 59 317.71 58.23 319.22 57.32C320.35 56.62 321.14 55.86 321.57 55.06C322 54.25 322.22 53.23 322.22 51.98V25.27C322.22 23.49 321.79 22.28 320.93 21.63C320.07 20.98 318.72 20.66 316.88 20.66" fill="#DA3D0B"/>
+<path d="M347.659 36.62L343.449 35.57C341.779 35.19 340.589 34.67 339.889 33.99C339.189 33.32 338.839 32.52 338.839 31.6C338.839 30.3 339.459 29.32 340.699 28.64C341.939 27.97 343.609 27.63 345.719 27.63C347.119 27.63 348.509 27.78 349.889 28.07C351.269 28.37 352.519 28.74 353.649 29.2C354.779 29.66 355.669 30.1 356.319 30.53C356.909 30.1 357.409 29.53 357.819 28.83C358.219 28.13 358.429 27.32 358.429 26.4C358.429 25.05 357.849 23.91 356.689 22.96C355.529 22.02 353.939 21.29 351.909 20.78C349.889 20.27 347.579 20.01 344.989 20.01C340.019 20.01 336.169 21.1 333.419 23.29C330.669 25.48 329.289 28.24 329.289 31.59C329.289 34.61 330.219 37.04 332.079 38.87C333.939 40.71 336.809 42.05 340.699 42.92L345.469 44.13C347.199 44.51 348.459 45.06 349.269 45.79C350.079 46.52 350.479 47.5 350.479 48.74C350.479 51.6 348.159 53.03 343.519 53.03C340.979 53.03 338.719 52.64 336.719 51.86C334.719 51.08 332.969 50.2 331.459 49.23C330.759 49.72 330.189 50.33 329.759 51.09C329.329 51.85 329.109 52.68 329.109 53.6C329.109 55.71 330.489 57.4 333.239 58.7C335.989 60 339.519 60.64 343.839 60.64C349.119 60.64 353.159 59.57 355.939 57.44C358.719 55.31 360.109 52.38 360.109 48.66C360.109 45.53 359.119 42.99 357.149 41.02C355.179 39.05 352.009 37.58 347.639 36.61" fill="#DA3D0B"/>
+<path d="M400.87 40.23C401.63 39.5 402 38.38 402 36.87C402 33.63 401.24 30.75 399.73 28.21C398.22 25.67 396.13 23.68 393.46 22.22C390.79 20.76 387.7 20.04 384.19 20.04C381.6 20.04 379.16 20.46 376.87 21.29C374.58 22.12 372.55 23.38 370.8 25.05C369.05 26.72 367.67 28.8 366.67 31.28C365.67 33.76 365.17 36.65 365.17 39.94C365.17 44.47 366.06 48.27 367.84 51.35C369.62 54.43 372.12 56.73 375.32 58.27C378.53 59.81 382.21 60.58 386.37 60.58C389.07 60.58 391.45 60.31 393.53 59.77C395.61 59.23 397.26 58.46 398.51 57.46C399.75 56.46 400.37 55.29 400.37 53.94C400.37 53.08 400.14 52.28 399.68 51.55C399.22 50.82 398.64 50.24 397.94 49.81C396.75 50.62 395.2 51.36 393.29 52.04C391.37 52.71 389.29 53.05 387.02 53.05C383.62 53.05 380.82 52.21 378.6 50.54C376.85 49.22 375.65 47.31 374.98 44.84L397.69 41.55C399.04 41.39 400.09 40.95 400.85 40.22M374.36 37.99C374.53 34.74 375.47 32.2 377.2 30.39C379.06 28.45 381.39 27.48 384.2 27.48C387.01 27.48 388.98 28.25 390.43 29.79C391.89 31.33 392.69 33.15 392.86 35.25L374.36 37.99Z" fill="#DA3D0B"/>
+<path d="M38.6096 42.28C45.7596 45.31 52.6296 48.9 60.0596 50.56C63.3596 51.11 66.7096 51.38 69.9996 51.38V33.16H67.2496C57.0696 33.16 47.6796 38.41 38.5996 42.27" fill="#DA3D0B"/>
+<path d="M17.43 48.08C14.13 47.81 10.82 47.81 7.53 47.81H0V64.54C0 67.56 2.45 70.01 5.47 70.01H64.53C67.55 70.01 70 67.56 70 64.54V62.43C62.86 62.43 55.39 61.51 48.78 58.75C38.34 55.17 28.71 48.36 17.43 48.08Z" fill="#DA3D0B"/>
+<path d="M64.53 0H5.47C2.45 0 0 2.45 0 5.47V36.49C6.61 36.49 13.58 36.76 20.18 36.21C29.26 35.39 37.23 30.42 45.76 27.11C53.46 23.8 61.75 21.86 70 22.14V5.47C70 2.45 67.55 0 64.53 0Z" fill="#DA3D0B"/>
+<path d="M70 33.17V22.13C61.75 21.86 53.46 23.8 45.76 27.1C37.23 30.41 29.26 35.38 20.18 36.2C13.58 36.76 6.61 36.48 0 36.48V47.79H7.54C10.83 47.79 14.14 47.79 17.44 48.06C28.72 48.33 38.34 55.15 48.79 58.73C55.4 61.49 62.87 62.41 70.01 62.41V51.37C66.72 51.37 63.37 51.1 60.07 50.55C52.64 48.88 45.77 45.3 38.62 42.27C47.7 38.4 57.08 33.16 67.27 33.16H70.02L70 33.17Z" fill="white"/>
+</g>
+</g>
+</svg>
+</a>
+<a class="w-8 h-8 hidden md:block lg:hidden shrink-0" href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
+<svg enable-background="new 0 0 79.4 79.4" viewBox="0 0 79.4 79.4" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.28751 0H73.5639C77.022 0 79.8514 2.83457 79.8514 6.29905V25.5112C70.4201 25.1962 60.9888 27.4009 52.1863 31.1803C49.3488 32.2807 46.5646 33.5413 43.7871 34.7989C37.0251 37.8605 30.3032 40.904 22.9494 41.5737C17.2809 42.047 11.435 41.9869 5.67825 41.9277C3.77251 41.9082 1.87653 41.8887 0 41.8887V6.29905C0 2.83457 2.82938 0 6.28751 0ZM44.0131 48.1865C45.9468 49.0061 47.863 49.861 49.7741 50.7136L49.7742 50.7136C55.9409 53.4649 62.0544 56.1924 68.5343 57.635C72.3069 58.2649 76.0794 58.5799 79.8519 58.5799V37.793H76.7081C67.2021 37.793 58.326 41.7897 49.7365 45.6572L49.7363 45.6573C47.8155 46.5222 45.909 47.3806 44.0131 48.1865ZM19.8057 54.8032C16.0332 54.4883 12.2606 54.4883 8.48814 54.4883H0V73.7004C0 77.1649 2.82938 79.9994 6.28751 79.9994H73.8782C77.3364 79.9994 80.1657 77.1649 80.1657 73.7004V71.1808C71.992 71.1808 63.5038 70.2359 55.9588 67.0864C51.7804 65.691 47.7481 63.8567 43.7373 62.0322L43.7373 62.0322C35.9794 58.5031 28.3023 55.0108 19.8057 54.8032Z" fill="#ED4E4E"/>
+<path d="M79.8514 37.7939V25.1958C70.4201 24.8808 60.9888 27.0855 52.1863 30.8649C42.4407 34.6444 33.3238 40.3135 22.9494 41.2584C15.4044 41.8883 7.54501 41.5733 0 41.5733V54.4864H8.48814C12.2606 54.4864 16.0331 54.4864 19.8057 54.8013C32.695 55.1163 43.6982 62.9901 55.6445 67.0845C63.1895 70.234 71.6776 71.1789 79.8514 71.1789V58.5807C76.0789 58.5807 72.3064 58.2658 68.5338 57.6359C60.0457 55.7462 52.1863 51.6518 44.0126 48.1873C54.387 43.778 65.0757 37.7939 76.7076 37.7939H79.8514Z" fill="white"/></svg>
+</a>
+<div class="flex items-center gap-1 md:hidden">
+<button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
+<svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+<svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+</button>
+</div>
+<ul id="nav-content">
+<li class="ff-nav-dropdown relative hover:cursor-pointer"><span class="flex items-center gap-1">Platform<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+<ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-5 sm:pr-1 align-left sm:auto-rows-auto items-center">
+<li class="pl-3 title border-l-2"><span class="flex items-center gap-2">Product</span></li>
+<li class="contents">
+<ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
+<li><a class="flex items-center gap-2" href="/platform/features/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg></svg>Features</a></li>
+<li><a class="flex items-center gap-2" href="/integrations/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"/>
+</svg>
+</svg>Integrations</a></li>
+<li><a class="flex items-center gap-2" href="/blueprints/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>Blueprint Library</a></li>
+<li><a class="flex items-center gap-2" href="/platform/security/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="100%" height="100%">
+<path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"/>
+</svg>
+</svg>Security Statement</a></li>
+</ul>
+</li>
+<li class="pl-3 title border-l-2"><span class="flex items-center gap-2">Components</span></li>
+<li class="contents">
+<ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2">
+<li><a class="flex items-center gap-2" href="/platform/dashboard/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg width="100%" height="100%" viewBox="0 0 350 402" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4234_2380)">
+<path d="M346.559 97.9807L178.437 0.921873C177.372 0.30994 176.188 0 174.996 0C173.804 0 172.62 0.30994 171.555 0.921873L3.44127 97.9807C1.31134 99.2126 0 101.485 0 103.941V298.059C0 300.515 1.31134 302.787 3.44127 304.019L171.555 401.078C172.62 401.69 173.804 402 174.996 402C176.188 402 177.372 401.69 178.437 401.078L346.551 304.019C348.681 302.787 349.992 300.515 349.992 298.059V103.941C349.992 101.485 348.681 99.2126 346.551 97.9807H346.559ZM223.619 65.5801C223.619 62.1946 226.472 59.3336 229.866 59.3336H240.261L296.338 91.7104H229.866C226.48 91.7104 223.619 88.8494 223.619 85.4639V65.5801ZM174.996 21.6561L220.75 48.0725C214.432 51.3785 210.092 57.9905 210.092 65.5801V68.9656C177.166 70.9445 162.185 87.2997 150.009 100.603C141.235 110.18 134.011 118.055 121.716 120.32V116.069C121.716 105.205 112.823 96.3118 101.951 96.3118H45.6902L174.996 21.6561ZM19.678 111.332L22.2848 109.822H101.943C105.328 109.822 108.189 112.683 108.189 116.069V135.952C108.189 139.338 105.336 142.199 101.943 142.199H20.9973C20.5443 142.199 20.1072 142.135 19.678 142.04V111.332ZM102.109 338.256L69.485 319.421V269.449C69.485 268.964 69.938 268.503 70.4228 268.503H101.172C101.656 268.503 102.109 268.964 102.109 269.449V338.256ZM190.891 371.165L174.996 380.344L158.259 370.68V196.414C158.259 195.93 158.712 195.477 159.196 195.477H189.937C190.422 195.477 190.883 195.93 190.883 196.414V371.173L190.891 371.165ZM280.793 319.262L248.169 338.097V246.696C248.169 246.219 248.622 245.759 249.106 245.759H279.855C280.332 245.759 280.793 246.219 280.793 246.696V319.262ZM330.314 290.668L294.312 311.458V246.696C294.312 238.749 287.803 232.248 279.847 232.248H249.098C241.143 232.248 234.634 238.749 234.634 246.696V345.901L204.41 363.353V196.407C204.41 188.459 197.893 181.959 189.937 181.959H159.196C151.241 181.959 144.732 188.459 144.732 196.407V362.868L115.62 346.06V269.449C115.62 261.502 109.111 254.993 101.156 254.993H70.4069C62.4515 254.993 55.9425 261.502 55.9425 269.449V311.609L19.6701 290.668V155.661C20.1072 155.693 20.5443 155.709 20.9893 155.709H101.943C112.815 155.709 121.708 146.816 121.708 135.952V134.196C161.008 134.474 174.042 143.081 187.807 152.181C201.882 161.503 216.442 171.135 255.735 171.135V174.321C255.735 185.185 264.636 194.078 275.508 194.078H330.306V290.668H330.314ZM330.314 180.568H275.516C272.13 180.568 269.261 177.707 269.261 174.321V154.437C269.261 151.052 272.122 148.191 275.516 148.191H330.314V180.568ZM330.314 134.681H275.516C264.644 134.681 255.743 143.574 255.743 154.437V157.624C220.519 157.624 208.264 149.51 195.278 140.919C183.85 133.354 172.103 125.597 147.402 122.307C151.98 118.453 156.009 114.058 159.983 109.719C163.21 106.19 166.476 102.638 170.092 99.3079C179.399 90.6932 189.786 85.909 200.881 83.652C203.734 83.1195 206.81 82.7381 210.092 82.5155V85.4639C210.092 96.3277 218.985 105.221 229.858 105.221H310.811C313.203 105.221 315.5 104.784 317.622 103.997L330.322 111.332V134.681H330.314Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_4234_2380">
+<rect width="100%" height="100%" fill="none"/>
+</clipPath>
+</defs>
+</svg>
+</svg>FlowFuse Dashboard</a></li>
+<li><a class="flex items-center gap-2" href="/platform/device-agent/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg width="100%" height="100%" viewBox="0 0 389 388" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path d="M202.763 209.857C218.321 216.441 233.282 224.255 249.385 227.89C256.584 229.049 263.854 229.681 270.983 229.681V190.049H265.013C242.94 190.049 222.501 201.498 202.763 209.857Z" fill="currentColor"/>
+<path d="M156.757 222.482C149.557 221.867 142.358 221.867 135.228 221.867H118.845V258.269C118.845 264.854 124.201 270.122 130.698 270.122H259.112C265.697 270.122 270.965 264.766 270.965 258.269V253.668C255.407 253.668 239.217 251.684 224.818 245.643C202.184 237.9 181.288 223.079 156.739 222.465L156.757 222.482Z" fill="currentColor"/>
+<path d="M259.183 117.914H130.698C124.183 117.914 118.845 123.269 118.845 129.837V197.301C133.244 197.301 148.398 197.916 162.727 196.687C182.482 194.895 199.813 184.079 218.339 176.879C235.073 169.68 253.107 165.5 271.071 166.045V129.837C271.071 123.252 265.715 117.914 259.218 117.914H259.183Z" fill="currentColor"/>
+<path d="M379.73 240.217H333.531V147.818H379.73C384.823 147.818 388.967 143.691 388.967 138.581C388.967 133.472 384.823 129.345 379.73 129.345H333.531V114.138C333.531 81.7757 307.736 55.4361 276.058 55.4361H259.622V9.23642C259.622 4.12654 255.478 0 250.385 0C245.293 0 241.149 4.12654 241.149 9.23642V55.4185H148.767V9.23642C148.767 4.12654 144.623 0 139.531 0C134.438 0 130.294 4.12654 130.294 9.23642V55.4185H113.858C82.1631 55.4185 56.3854 81.7581 56.3854 114.121V129.327H10.1506C5.05831 129.327 0.914215 133.454 0.914215 138.564C0.914215 143.674 5.05831 147.8 10.1506 147.8H56.3503V240.2H10.1506C5.05831 240.2 0.914215 244.326 0.914215 249.436C0.914215 254.546 5.05831 258.673 10.1506 258.673H56.3503V273.879C56.3503 306.242 82.1456 332.581 113.823 332.581H130.259V378.764C130.259 383.873 134.403 388 139.496 388C144.588 388 148.732 383.873 148.732 378.764V332.581H241.114V378.764C241.114 383.873 245.258 388 250.35 388C255.443 388 259.587 383.873 259.587 378.764V332.581H276.023C307.718 332.581 333.496 306.242 333.496 273.879V258.673H379.695C384.788 258.673 388.932 254.546 388.932 249.436C388.932 244.326 384.788 240.2 379.695 240.2L379.73 240.217ZM315.04 273.914C315.04 296.092 297.551 314.144 276.04 314.144H113.806C92.2951 314.144 74.8056 296.092 74.8056 273.914V114.138C74.8056 91.9604 92.2951 73.9089 113.806 73.9089H276.04C297.551 73.9089 315.04 91.9604 315.04 114.138V273.914Z" fill="currentColor"/>
+</svg>
+</svg>Device Agent</a></li>
+<li><a class="flex items-center gap-2" href="/node-red/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="100%" height="100%">
+<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
+</svg>
+</svg>Node-RED</a></li>
+</ul>
+</li>
+<li><a class="flex items-center gap-2" href="/platform/why-flowfuse/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M1.59385 0.00234319C0.712771 0.00234319 0.00377529 0.711833 0.00377529 1.5929C0.00246514 4.50292 0.000461073 7.41546 0 10.3255C1.88965 10.3367 3.78181 10.3802 5.66642 10.2453C8.29428 10.0057 10.6072 8.59451 13.0285 7.66784C15.231 6.73638 17.5964 6.17101 19.9975 6.2214L19.9972 1.59056C19.9982 0.709238 19.288 0 18.4072 0L1.59385 0.00234319ZM19.999 9.37235C19.7332 9.37661 19.4671 9.38387 19.2013 9.39475C16.2686 9.38346 13.6684 10.8999 11.0229 11.9621C13.0675 12.7893 15.0416 13.8402 17.2084 14.3277C18.1343 14.4682 19.0658 14.5366 20 14.5566L19.999 9.37235ZM2.0776 13.5472C1.38548 13.5487 0.693371 13.5559 0.00176078 13.5594C0.00236546 15.1759 0.00357496 16.7919 0.00618771 18.4094C0.00711994 19.2908 0.715434 20 1.59626 20H18.4091C19.2901 20 19.9991 19.2905 19.9991 18.4094V17.7095C17.9324 17.696 15.8671 17.381 13.9422 16.6075C10.9641 15.5685 8.18508 13.7227 4.95252 13.5992C3.99561 13.554 3.03718 13.5451 2.07774 13.5473L2.0776 13.5472Z"/></svg></svg>Why FlowFuse</a></li>
+</ul>
+</li>
+<li class="ff-nav-dropdown relative hover:cursor-pointer"><span class="flex items-center gap-1">Solutions<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+<ul class="sm:grid sm:grid-flow-col sm:grid-rows-3 sm:grid-cols-1 sm:pr-9 align-left">
+<li><a class="flex items-center gap-2" href="/solutions/it-ot-middleware/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full"><path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></svg>IT/OT middleware</a></li>
+<li><a class="flex items-center gap-2" href="/solutions/uns/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
+<g clip-path="url(#clip0_4698_1617)">
+<path d="M6.73302 6.74087L10.0791 10.0869M13.5048 13.5127L16.8509 16.8587M13.3056 13.3055C12.4691 14.142 11.1148 14.142 10.2783 13.3055C9.44174 12.469 9.44174 11.1147 10.2783 10.2781C11.1148 9.44162 12.4691 9.44162 13.3056 10.2781C14.1422 11.1147 14.1422 12.469 13.3056 13.3055ZM6.73302 6.7329C5.8965 7.56942 4.54214 7.56942 3.70563 6.7329C2.86911 5.89639 2.86911 4.54203 3.70563 3.70551C4.54214 2.869 5.8965 2.869 6.73302 3.70551C7.56953 4.54203 7.56953 5.89639 6.73302 6.7329ZM19.8942 19.8941C19.0577 20.7306 17.7033 20.7306 16.8668 19.8941C16.0303 19.0576 16.0303 17.7032 16.8668 16.8667C17.7033 16.0302 19.0577 16.0302 19.8942 16.8667C20.7307 17.7032 20.7307 19.0576 19.8942 19.8941Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.8731 6.74087L13.5255 10.0869M10.0903 13.5127L6.74266 16.8587M16.8651 6.7329C17.702 7.56942 19.057 7.56942 19.8939 6.7329C20.7308 5.89639 20.7308 4.54203 19.8939 3.70551C19.057 2.869 17.702 2.869 16.8651 3.70551C16.0282 4.54203 16.0282 5.89639 16.8651 6.7329ZM3.70591 19.8941C4.54281 20.7306 5.89779 20.7306 6.73469 19.8941C7.57159 19.0576 7.57159 17.7032 6.73469 16.8667C5.89779 16.0302 4.54281 16.0302 3.70591 16.8667C2.86901 17.7032 2.86901 19.0576 3.70591 19.8941Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_4698_1617">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg></svg>Unified Namespace</a></li>
+<li><a class="flex items-center gap-2" href="/solutions/scada/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="100%" height="100%">
+<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"/>
+</svg>
+</svg>SCADA</a></li>
+<li><a class="flex items-center gap-2" href="/solutions/mes/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="100%" height="100%">
+<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"/>
+</svg></svg>MES</a></li>
+<li><a class="flex items-center gap-2" href="/solutions/edge-connectivity/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg></svg>Edge Connectivity</a></li>
+<li><a class="flex items-center gap-2" href="/solutions/data-integration/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg></svg>Data integration</a></li>
+</ul>
+</li>
+<li class="ff-nav-dropdown relative hover:cursor-pointer"><span class="flex items-center gap-1">Resources<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+<ul class="sm:grid sm:grid-flow-col sm:grid-rows-5 sm:grid-cols-1 sm:pr-9 align-left">
+<li><a class="flex items-center gap-2" href="/blog/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></svg></svg>Blog</a></li>
+<li><a class="flex items-center gap-2" href="/webinars/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg></svg>Webinars</a></li>
+<li><a class="flex items-center gap-2" href="/resources/publications/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+</svg>
+</svg>Publications</a></li>
+<li><a class="flex items-center gap-2" href="/changelog/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+</svg>
+</svg>Changelog</a></li>
+<li><a class="flex items-center gap-2" href="https://github.com/FlowFuse/flowfuse"><svg class="ff-icon ff-icon-sm ff-icon--solid" fill="none" viewbox="0 0 24 24"><svg height="100%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="m12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></svg>Github</a></li>
+<li><a class="flex items-center gap-2" href="/docs/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></svg>Docs</a></li>
+<li><a class="flex items-center gap-2" href="https://discourse.nodered.org/c/vendors/flowfuse/24/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/>
+</svg></svg>Support forums</a></li>
+<li><a class="flex items-center gap-2" href="/customer-stories/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/>
+</svg>
+</svg>Customer Stories</a></li>
+<li><a class="flex items-center gap-2" href="https://node-red-academy.learnworlds.com/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="100%" height="100%">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/>
+</svg></svg>Node-RED Academy</a></li>
+<li><a class="flex items-center gap-2" href="/education/"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_5009_2197)">
+<path d="M9.25 4.75H11.87C12.77 4.75 13.62 5.11 14.26 5.74C14.89 6.37 15.25 7.23 15.25 8.13V9.63C15.25 9.93 15.37 10.21 15.58 10.43C15.79 10.64 16.08 10.76 16.38 10.76H17.88C18.78 10.76 19.63 11.12 20.27 11.75C20.9 12.38 21.26 13.24 21.26 14.14V16.02" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.5 11.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.5 8H11.64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.5 14.8599H11.64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.2517 13.7498V18.6298C21.2517 19.2498 20.7517 19.7498 20.1317 19.7498H2.88172C2.26172 19.7498 1.76172 19.2498 1.76172 18.6298V5.87977C1.76172 5.25977 2.26172 4.75977 2.88172 4.75977H12.2617C14.6517 4.75977 16.9417 5.70977 18.6217 7.39977C20.3117 9.08977 21.2617 11.3798 21.2617 13.7598L21.2517 13.7498Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.3994 15.1602C18.2994 15.0402 18.2294 14.8902 18.2194 14.7202C18.1994 14.5402 18.1194 14.3702 17.9994 14.2402C17.8794 14.1102 17.7094 14.0302 17.5194 14.0202C17.3594 14.0002 17.2094 13.9402 17.0794 13.8402C16.9494 13.7202 16.7694 13.6602 16.5894 13.6602C16.4094 13.6602 16.2294 13.7202 16.0994 13.8402C15.9794 13.9402 15.8294 14.0102 15.6694 14.0202C15.4894 14.0402 15.3194 14.1202 15.1894 14.2402C15.0594 14.3602 14.9794 14.5302 14.9694 14.7202C14.9494 14.8802 14.8894 15.0302 14.7894 15.1602C14.6694 15.2902 14.6094 15.4702 14.6094 15.6502C14.6094 15.8302 14.6694 16.0102 14.7894 16.1402C14.8894 16.2602 14.9594 16.4102 14.9694 16.5702C14.9894 16.7502 15.0694 16.9202 15.1894 17.0502C15.3094 17.1802 15.4794 17.2602 15.6694 17.2702C15.8294 17.2902 15.9794 17.3502 16.0994 17.4502C16.2294 17.5702 16.4094 17.6302 16.5894 17.6302C16.7694 17.6302 16.9494 17.5702 17.0794 17.4502C17.1994 17.3502 17.3494 17.2802 17.5194 17.2702C17.6994 17.2502 17.8694 17.1702 17.9994 17.0502C18.1294 16.9302 18.2094 16.7602 18.2194 16.5702C18.2394 16.4102 18.2994 16.2602 18.3994 16.1402C18.5194 16.0102 18.5794 15.8302 18.5794 15.6502C18.5794 15.4702 18.5194 15.2902 18.3994 15.1602Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_5009_2197">
+<rect width="21" height="16.5" fill="white" transform="translate(1 4)"/>
+</clipPath>
+</defs>
+</svg>
+</svg>Educational License</a></li>
+</ul>
+</li>
+<li class="nav-collapsible"><a class="flex items-center gap-2" href="/ai/">AI</a></li>
+<li class="nav-collapsible"><a class="flex items-center gap-2" href="/docs/">Docs</a></li>
+<li class="nav-collapsible"><a class="flex items-center gap-2" href="/pricing/">Pricing</a></li>
+<li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
+<span class="flex items-center gap-1">More<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+<ul id="nav-more-list" class="align-left"></ul>
+</li>
+</ul>
+<ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
+<li class="flex"><a href="https://app.flowfuse.com">Sign In</a></li>
+<li class="hidden md:flex"><a href="https://app.flowfuse.com/account/create" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
+<li class="flex">
+<a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
+Contact Us
+</a>
+</li>
+</ul>
+</nav>
+<div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
+<div class="grid grid-cols-2 gap-2">
+<a href="https://app.flowfuse.com" class="ff-btn ff-btn--primary-outlined">Sign In</a>
+<a href="https://app.flowfuse.com/account/create" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
+</div>
+<a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
+</div>
+</header>
+<main id="main-content" class="flex flex-col mx-auto items-center justify-center gradient-bg">
+<div class="w-full page hero">
+<div class="content">
+<div class="nohero w-full">
+<div class="w-full pl-6 bg-white/50">
+<div class="handbook ff-prose text-left pb-24 m-auto">
+<script>
+function toggleNavList (el) {
+        const li = el.parentElement
+        li.classList.toggle('open')
+        // The nested <ul> is wrapped in an <li class="contents"> sibling for valid list semantics.
+        const wrapper = li.nextElementSibling
+        const ul = wrapper && wrapper.firstElementChild
+        if (!ul || ul.tagName !== 'UL') return
+        ul.classList.toggle('open')
+        el.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false')
+        if (ul.style.maxHeight) {
+            ul.style.maxHeight = null;
+        } else {
+            const containingUl = wrapper.parentElement
+            if (containingUl && containingUl.tagName === "UL" && !containingUl.classList.contains('handbook-nav')) {
+                containingUl.style.maxHeight = "initial"
+            }
+            ul.style.maxHeight = ul.scrollHeight + "px";
+        }
+    }
+</script>
+<div class="border-r lg:pt-2" data-handbook>
+<ul class="handbook-nav" data-el="navigation">
+<li>
+<a href="/handbook/">handbook</a>
+</li>
+<li class="handbook-nav-group">Customer Department</li>
+<li>
+<a href="/handbook/sales/subscription-agreement-1.5/">
+Subscription Agreement 1.5
+</a>
+<button onclick="toggleNavList(this)" aria-label="Toggle Subscription Agreement 1.5 submenu" aria-expanded="false">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+</span>
+</button>
+</li>
+<li class="contents">
+<ul class="handbook-nav-nested">
+<li>
+<a href="/handbook/sales/subscription-agreement-1.5/">
+Subscription Agreement 1.5
+</a>
+</li>
+</ul>
+</li>
+<li class="handbook-nav-group">Other</li>
+<li class="active">
+<a href="/handbook/engineering/product/product swimlanes/">
+Product Swimlanes
+</a>
+<button onclick="toggleNavList(this)" aria-label="Toggle Product Swimlanes submenu" aria-expanded="false">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+</span>
+</button>
+</li>
+<li class="contents">
+<ul class="handbook-nav-nested">
+<li class="active">
+<a href="/handbook/engineering/product/product swimlanes/">
+Product Swimlanes
+</a>
+<button onclick="toggleNavList(this)" aria-label="Toggle Product Swimlanes submenu" aria-expanded="false">
+<span class="ff-icon icon-expand">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+</span>
+<span class="ff-icon icon-minimise">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
+</span>
+</button>
+</li>
+<li class="contents">
+<ul class="handbook-nav-nested-2">
+<li>
+<a href="/handbook/engineering/product/features/">
+Feature Catalog
+</a>
+</li>
+<li class="active">
+<a href="/handbook/engineering/product/product swimlanes/">
+Product Swimlanes
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="px-10 pt-8">
+<div class="w-full">
+<div class="font-medium border-b pb-1 flex flex-col gap-1">
+<div class="md:flex-1">
+/<a class="mx-2" href="/handbook/">handbook</a>/<a class="mx-2" href="/handbook/engineering/">engineering</a>/<a class="mx-2" href="/handbook/engineering/product/">product</a>/<a class="mx-2" href="/handbook/engineering/product/product swimlanes/">product swimlanes</a>
+</div>
+<div class="w-full mb-1">
+<div id="algolia-search" class="border rounded"></div>
+</div>
+</div>
+</div>
+<div class="w-full">
+<div class="order-last md:order-first">
+<div class="mt-6 mb-4 prose prose-blue main-content">
+<h1 id="product-swimlanes" tabindex="-1"><a class="header-anchor" href="#product-swimlanes">Product Swimlanes</a></h1>
+<h2 id="what-are-they" tabindex="-1"><a class="header-anchor" href="#what-are-they">What are they</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Swimlane">Product swimlanes</a> are areas of focus and expertise within the Flowfuse product.</p>
+<h2 id="why-we-use-them" tabindex="-1"><a class="header-anchor" href="#why-we-use-them">Why we use them</a></h2>
+<p>Swimlanes allow us to</p>
+<ol>
+<li>Develop deep expertise in a particular focus area of the product</li>
+<li>Assign decision rights to an individual when it comes to the features, roadmap, design and stakeholders of that area</li>
+<li>Ship Faster: The teams' velocity increases as they deepen their experience within the product area.</li>
+</ol>
+<h2 id="our-swimlanes" tabindex="-1"><a class="header-anchor" href="#our-swimlanes">Our swimlanes</a></h2>
+<h3 id="ai-focus" tabindex="-1"><a class="header-anchor" href="#ai-focus">AI Focus</a></h3>
+<p>AI enablement within the FlowFuse platform, including the FlowFuse Expert AI agent which has offers support and enablement (basic, pro/free) and data insights (advanced enterprise).</p>
+<h3 id="edge-orchestration-and-data-acquisition" tabindex="-1"><a class="header-anchor" href="#edge-orchestration-and-data-acquisition">Edge Orchestration and data acquisition</a></h3>
+<p>Everything edge related, from data acquisition to fleet orchestration.</p>
+<h3 id="platform-core" tabindex="-1"><a class="header-anchor" href="#platform-core">Platform Core</a></h3>
+<p>The engine that runs the ship. all things relevant to the platform and its operation and resilience.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:border-l right-nav">
+<div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
+<div class="mb-6">
+<h3 class="mb-3">Table of Contents</h3>
+<div class="toc-wrapper text-sm">
+<div class="toc">
+<ul><li><a href="#what-are-they">What are they</a></li><li><a href="#why-we-use-them">Why we use them</a></li><li><a href="#our-swimlanes">Our swimlanes</a><ul><li><a href="#ai-focus">AI Focus</a></li><li><a href="#edge-orchestration-and-data-acquisition">Edge Orchestration and data acquisition</a></li><li><a href="#platform-core">Platform Core</a></li></ul></li></ul>
+</div>
+</div>
+</div>
+<h3 class="font-medium border-b pb-1 mb-4">Page maintainer</h3><div class="team-card--sm">
+<div class="ff-headshot" style="background-image: url(/images/team/headshot-zj.png)"></div>
+<div class="team-card-info">
+<label>ZJ van de Weg</label>
+<span>CEO</span>
+</div>
+</div><div class="text-sm pb-1 text-right mb-4 max-lg:hidden"><a href="https://github.com/FlowFuse/website/edit/main/src/handbook/engineering/product/product swimlanes.md">Edit this page</a></div>
+<div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">Updated: 4 Mar, 2026</div>
+</div>
+</div>
+</div>
+</div>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.esm.mjs";
+    mermaid.initialize({
+        securityLevel: 'loose',
+        startOnLoad  : true
+    });
+</script>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/19.1.1/tooltips.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script>function showTooltip(o,e){o.trigger.className.includes("tooltipped")||(o.trigger.children[0].className="tooltipped tooltipped-s",o.trigger.children[0].ariaLabel=e)}window.addEventListener("load",()=>{var o=new ClipboardJS(".code-copy");o.on("success",o=>showTooltip(o,"Copied!")),o.on("error",o=>showTooltip(o,"Failed..."))});</script>
+<script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.5.1/themes/reset-min.css" integrity="sha256-KvFgFCzgqSErAPu6y9gz/AhZAvzK48VJASu3DpNLCEQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.6.1">
+<script type="text/javascript">
+const searchScope = document.head.querySelector('[property="article:section"][content]')?.content ?? '';
+
+    function initSearchBar() {
+        const {autocomplete, getAlgoliaResults} = window['@algolia/autocomplete-js'];
+        const searchClient = algoliasearch('ISKYOHIT7D', '68d4032f487d66423c37e6483e067272');
+        const scopeTitles = {
+            'ama': 'Ask Me Anything',
+            'blog': 'Blog',
+            'changelog': 'Changelog',
+            'customer-stories': 'Customer Stories',
+            'docs': 'Docs',
+            'ebooks': 'E-Books',
+            'handbook': 'Handbook',
+            'node-red': 'Node-RED',
+            'webinars': 'Webinars',
+        }
+        const placeholder = Object.prototype.hasOwnProperty.call(scopeTitles, searchScope) ? `Search in ${scopeTitles[searchScope]}...` : 'Search...'
+        
+        // Initial configuration
+        const initialHitsPerPage = 5;
+        // Use a Map to store hits per page for EACH scope independently
+        const hitsPerPageMap = {}; 
+        let initialQuery = ''; 
+        
+        const createSource = (searchClient, query, scope) => {
+            let totalHits = 0;
+            
+            // Ensure we have a default value for this scope in the map
+            if (!hitsPerPageMap[scope]) {
+                hitsPerPageMap[scope] = initialHitsPerPage;
+            }
+
+            let filters;
+            if (scope.length === 0) {
+                filters = undefined;
+            } else {
+                filters = `category:${scope}`;
+            }
+            
+            return {
+                sourceId : scope,
+                getItems : () => getAlgoliaResults({
+                    searchClient,
+                    queries: [
+                        {
+                            indexName            : 'prod_netlify',
+                            params               : {
+                                query,
+                                hitsPerPage: hitsPerPageMap[scope], // Read specific count
+                                attributesToSnippet: ['content:50']
+                            },
+                            attributesToHighlight: '*',
+                            filters: filters
+                        },
+                    ],
+                    transformResponse({ hits, results }) {
+                        totalHits = results[0].nbHits;
+                        return hits;
+                    }
+                }),
+                templates: {
+                    header({html}) {
+                        if (!Object.prototype.hasOwnProperty.call(scopeTitles, scope)) {
+                            return null;
+                        }
+
+                        return html`
+                            <span class="aa-SourceHeaderTitle">In ${scopeTitles[scope]}</span>
+                            <div class="aa-SourceHeaderLine"/>
+                        `;
+                    },
+                    item({item, components, html}) {
+                        return html`
+                            <a href="#" data-href="${item.url}" class="aa-ItemWrapper">
+                                <div class="aa-ItemContent">
+                                    <div class="aa-ItemIcon aa-ItemIcon--alignTop">
+                                        <img
+                                                src="#"
+                                                data-src="${item.image}"
+                                                alt="${item.name}"
+                                                width="40"
+                                                height="40"
+                                        />
+                                    </div>
+                                    <div class="aa-ItemContentBody">
+                                        <div class="aa-ItemContentTitle">
+                                            ${components.Highlight({ hit: item, attribute: ['hierarchy', 'lvl0'] })}
+                                        </div>
+                                        <div class="aa-ItemContentSubTitle ${item.type === 'lvl0' ? 'hidden' : ''}">
+                                            ${components.Highlight({ hit: item, attribute: ['hierarchy', item.type] })}
+                                        </div>
+                                        <div class="aa-ItemContentDescription">
+                                            ${item.content && item.content.trim().length > 0
+                                                ? components.Snippet({
+                                                    hit      : item,
+                                                    attribute: 'content',
+                                                })
+                                                : components.Snippet({
+                                                    hit      : item,
+                                                    attribute: 'description',
+                                                })}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>`;
+                    },
+                    footer({items, html}) {
+                        // Logic: Hide button if we are showing all available hits
+                        if (items.length === 0 || items.length >= totalHits) {
+                            return null;
+                        }
+                        // Add data-scope so we know WHICH button was clicked
+                        return html`<button type="button" data-scope="${scope}" id="load-more" class="aa-LoadMore load-more-btn">Load more...</button>`;
+                    }
+                }
+            };
+        }
+
+        autocomplete({
+            debug: false,
+            container: '#algolia-search',
+            placeholder,
+            getSources({query}) {
+                // Update initialQuery when getSources runs to track changes
+                if (query !== initialQuery) {
+                    initialQuery = query;
+                    // CHANGE 4: Reset ALL counters in the map on new search
+                    // We can simply clear the object or reset specific keys
+                    for (const key in hitsPerPageMap) {
+                        hitsPerPageMap[key] = initialHitsPerPage;
+                    }
+                }
+
+                if (searchScope === 'docs') {
+                    return [
+                        createSource(searchClient, query, 'docs'),
+                        createSource(searchClient, query, 'node-red')
+                    ];
+                }
+                return [ createSource(searchClient, query, searchScope) ]
+            },
+            onStateChange({ state, refresh }) {
+                // Link Fix
+                document.querySelectorAll('.aa-Panel a').forEach(item => {
+                    item.href = item.getAttribute('data-href');
+                });
+                document.querySelectorAll('.aa-Panel img').forEach(img => {
+                    img.src = img.getAttribute('data-src');
+                });
+                
+                // Logic for "Load More" buttons
+                const loadMoreBtns = document.querySelectorAll('.load-more-btn');
+                
+                loadMoreBtns.forEach(btn => {
+                    btn.onclick = (e) => {
+                        e.preventDefault(); 
+                        e.stopPropagation();
+                        
+                        // CHANGE 5: Identify scope and increment ONLY that scope
+                        const scope = e.target.getAttribute('data-scope');
+                        if (scope) {
+                            hitsPerPageMap[scope] = (hitsPerPageMap[scope] || initialHitsPerPage) + initialHitsPerPage;
+                        }
+
+                        // Trigger the refresh
+                        refresh(); 
+                    };
+                });
+            }
+        });
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js" integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.6.1" onload="initSearchBar()"></script>
+<script>
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e=e||self).mediumZoom=t()}(this,(function(){"use strict";var e=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var n in o)Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n])}return e},t=function(e){return"IMG"===e.tagName},o=function(e){return e&&1===e.nodeType},n=function(e){return".svg"===(e.currentSrc||e.src).substr(-4).toLowerCase()},i=function(e){try{return Array.isArray(e)?e.filter(t):function(e){return NodeList.prototype.isPrototypeOf(e)}(e)?[].slice.call(e).filter(t):o(e)?[e].filter(t):"string"==typeof e?[].slice.call(document.querySelectorAll(e)).filter(t):[]}catch(e){throw new TypeError("The provided selector is invalid.\nExpects a CSS selector, a Node element, a NodeList or an array.\nSee: https://github.com/francoischalifour/medium-zoom")}},r=function(e){var t=document.createElement("div");return t.classList.add("medium-zoom-overlay"),t.style.background=e,t},d=function(e){var t=e.getBoundingClientRect(),o=t.top,n=t.left,i=t.width,r=t.height,d=e.cloneNode(),a=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0,m=window.pageXOffset||document.documentElement.scrollLeft||document.body.scrollLeft||0;return d.removeAttribute("id"),d.style.position="absolute",d.style.top=o+a+"px",d.style.left=n+m+"px",d.style.width=i+"px",d.style.height=r+"px",d.style.transform="",d},a=function(t,o){var n=e({bubbles:!1,cancelable:!1,detail:void 0},o);if("function"==typeof window.CustomEvent)return new CustomEvent(t,n);var i=document.createEvent("CustomEvent");return i.initCustomEvent(t,n.bubbles,n.cancelable,n.detail),i};return function(e,t){void 0===t&&(t={});var o=t.insertAt;if(e&&"undefined"!=typeof document){var n=document.head||document.getElementsByTagName("head")[0],i=document.createElement("style");i.type="text/css","top"===o&&n.firstChild?n.insertBefore(i,n.firstChild):n.appendChild(i),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(document.createTextNode(e))}}(".medium-zoom-overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .3s;will-change:opacity}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{position:relative;cursor:pointer;cursor:zoom-out;will-change:transform}"),function t(m){var l=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},c=window.Promise||function(e){function t(){}e(t,t)},u=function(e){var t=e.target;t!==N?-1!==x.indexOf(t)&&w({target:t}):E()},s=function(){if(!A&&k.original){var e=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;Math.abs(S-e)>T.scrollOffset&&setTimeout(E,150)}},f=function(e){var t=e.key||e.keyCode;"Escape"!==t&&"Esc"!==t&&27!==t||E()},p=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=t;if(t.background&&(N.style.background=t.background),t.container&&t.container instanceof Object&&(n.container=e({},T.container,t.container)),t.template){var i=o(t.template)?t.template:document.querySelector(t.template);n.template=i}return T=e({},T,n),x.forEach((function(e){e.dispatchEvent(a("medium-zoom:update",{detail:{zoom:j}}))})),j},g=function(){var o=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t(e({},T,o))},v=function(){for(var e=arguments.length,t=Array(e),o=0;o<e;o++)t[o]=arguments[o];var n=t.reduce((function(e,t){return[].concat(e,i(t))}),[]);return n.filter((function(e){return-1===x.indexOf(e)})).forEach((function(e){x.push(e),e.classList.add("medium-zoom-image")})),O.forEach((function(e){var t=e.type,o=e.listener,i=e.options;n.forEach((function(e){e.addEventListener(t,o,i)}))})),j},h=function(){for(var e=arguments.length,t=Array(e),o=0;o<e;o++)t[o]=arguments[o];k.zoomed&&E();var n=t.length>0?t.reduce((function(e,t){return[].concat(e,i(t))}),[]):x;return n.forEach((function(e){e.classList.remove("medium-zoom-image"),e.dispatchEvent(a("medium-zoom:detach",{detail:{zoom:j}}))})),x=x.filter((function(e){return-1===n.indexOf(e)})),j},z=function(e,t){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};return x.forEach((function(n){n.addEventListener("medium-zoom:"+e,t,o)})),O.push({type:"medium-zoom:"+e,listener:t,options:o}),j},y=function(e,t){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};return x.forEach((function(n){n.removeEventListener("medium-zoom:"+e,t,o)})),O=O.filter((function(o){return!(o.type==="medium-zoom:"+e&&o.listener.toString()===t.toString())})),j},b=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},i=t.target,r=function(){var t={width:document.documentElement.clientWidth,height:document.documentElement.clientHeight,left:0,top:0,right:0,bottom:0},i=void 0,r=void 0;if(T.container)if(T.container instanceof Object)i=(t=e({},t,T.container)).width-t.left-t.right-2*T.margin,r=t.height-t.top-t.bottom-2*T.margin;else{var d=(o(T.container)?T.container:document.querySelector(T.container)).getBoundingClientRect(),a=d.width,m=d.height,l=d.left,c=d.top;t=e({},t,{width:a,height:m,left:l,top:c})}i=i||t.width-2*T.margin,r=r||t.height-2*T.margin;var u=k.zoomedHd||k.original,s=n(u)?i:u.naturalWidth||i,f=n(u)?r:u.naturalHeight||r,p=u.getBoundingClientRect(),g=p.top,v=p.left,h=p.width,z=p.height,y=Math.min(Math.max(h,s),i)/h,b=Math.min(Math.max(z,f),r)/z,E=Math.min(y,b),w="scale("+E+") translate3d("+((i-h)/2-v+T.margin+t.left)/E+"px, "+((r-z)/2-g+T.margin+t.top)/E+"px, 0)";k.zoomed.style.transform=w,k.zoomedHd&&(k.zoomedHd.style.transform=w)};return new c((function(e){if(i&&-1===x.indexOf(i))e(j);else{if(k.zoomed)e(j);else{if(i)k.original=i;else{if(!(x.length>0))return void e(j);var t=x;k.original=t[0]}if(k.original.dispatchEvent(a("medium-zoom:open",{detail:{zoom:j}})),S=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0,A=!0,k.zoomed=d(k.original),document.body.appendChild(N),T.template){var n=o(T.template)?T.template:document.querySelector(T.template);k.template=document.createElement("div"),k.template.appendChild(n.content.cloneNode(!0)),document.body.appendChild(k.template)}if(k.original.parentElement&&"PICTURE"===k.original.parentElement.tagName&&k.original.currentSrc&&(k.zoomed.src=k.original.currentSrc),document.body.appendChild(k.zoomed),window.requestAnimationFrame((function(){document.body.classList.add("medium-zoom--opened")})),k.original.classList.add("medium-zoom-image--hidden"),k.zoomed.classList.add("medium-zoom-image--opened"),k.zoomed.addEventListener("click",E),k.zoomed.addEventListener("transitionend",(function t(){A=!1,k.zoomed.removeEventListener("transitionend",t),k.original.dispatchEvent(a("medium-zoom:opened",{detail:{zoom:j}})),e(j)})),k.original.getAttribute("data-zoom-src")){k.zoomedHd=k.zoomed.cloneNode(),k.zoomedHd.removeAttribute("srcset"),k.zoomedHd.removeAttribute("sizes"),k.zoomedHd.removeAttribute("loading"),k.zoomedHd.src=k.zoomed.getAttribute("data-zoom-src"),k.zoomedHd.onerror=function(){clearInterval(m),console.warn("Unable to reach the zoom image target "+k.zoomedHd.src),k.zoomedHd=null,r()};var m=setInterval((function(){k.zoomedHd.complete&&(clearInterval(m),k.zoomedHd.classList.add("medium-zoom-image--opened"),k.zoomedHd.addEventListener("click",E),document.body.appendChild(k.zoomedHd),r())}),10)}else if(k.original.hasAttribute("srcset")){k.zoomedHd=k.zoomed.cloneNode(),k.zoomedHd.removeAttribute("sizes"),k.zoomedHd.removeAttribute("loading");var l=k.zoomedHd.addEventListener("load",(function(){k.zoomedHd.removeEventListener("load",l),k.zoomedHd.classList.add("medium-zoom-image--opened"),k.zoomedHd.addEventListener("click",E),document.body.appendChild(k.zoomedHd),r()}))}else r()}}}))},E=function(){return new c((function(e){if(!A&&k.original){A=!0,document.body.classList.remove("medium-zoom--opened"),k.zoomed.style.transform="",k.zoomedHd&&(k.zoomedHd.style.transform=""),k.template&&(k.template.style.transition="opacity 150ms",k.template.style.opacity=0),k.original.dispatchEvent(a("medium-zoom:close",{detail:{zoom:j}})),k.zoomed.addEventListener("transitionend",(function t(){k.original.classList.remove("medium-zoom-image--hidden"),document.body.removeChild(k.zoomed),k.zoomedHd&&document.body.removeChild(k.zoomedHd),document.body.removeChild(N),k.zoomed.classList.remove("medium-zoom-image--opened"),k.template&&document.body.removeChild(k.template),A=!1,k.zoomed.removeEventListener("transitionend",t),k.original.dispatchEvent(a("medium-zoom:closed",{detail:{zoom:j}})),k.original=null,k.zoomed=null,k.zoomedHd=null,k.template=null,e(j)}))}else e(j)}))},w=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.target;return k.original?E():b({target:t})},L=function(){return T},H=function(){return x},C=function(){return k.original},x=[],O=[],A=!1,S=0,T=l,k={original:null,zoomed:null,zoomedHd:null,template:null};"[object Object]"===Object.prototype.toString.call(m)?T=m:(m||"string"==typeof m)&&v(m),T=e({margin:0,background:"#fff",scrollOffset:40,container:null,template:null},T);var N=r(T.background);document.addEventListener("click",u),document.addEventListener("keyup",f),document.addEventListener("scroll",s),window.addEventListener("resize",E);var j={open:b,close:E,toggle:w,update:p,clone:g,attach:v,detach:h,on:z,off:y,getOptions:L,getImages:H,getZoomedImage:C};return j}}));
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+        const zoomableImages = document.querySelectorAll('img[data-zoomable]');
+
+        zoomableImages.forEach((img) => {
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('zoomable-image');
+            img.parentNode.parentNode.insertBefore(wrapper, img.parentNode);
+            wrapper.appendChild(img.parentNode);
+        });
+
+        mediumZoom('[data-zoomable]', {
+            margin: 48
+        });
+    });
+</script>
+<script>
+document.querySelectorAll("[data-handbook] a").forEach((link) => {
+        try {
+            if (!link.target && window.location.host !== new URL(link.href).host) {
+                link.target = "_blank";
+            }
+        } catch {
+            // Swallow errors
+        }
+    })
+</script>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<div id="hm-promo-banner" class="hm-promo-banner fixed bottom-6 right-6 w-[340px] max-w-[calc(100vw-48px)] bg-gradient-to-tl from-gray-800 to-gray-600 rounded-xl border-1 border-gray-300 shadow-[0_8px_32px_rgba(0,0,0,0.28)] z-[9000] hidden md:block" role="complementary" aria-label="Hannover Messe 2026 promotion">
+<button id="hm-promo-banner-close" class="absolute top-3 right-3 bg-transparent border-0 cursor-pointer text-gray-400 hover:text-white p-1 flex items-center justify-center" aria-label="Close promotional banner">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+<div class="p-6">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="shrink-0 hm-promo-banner__hm-logo">
+<picture><source type="image/jpeg" srcset="" sizes="100vw, 100vw"><source type="image/jpeg" srcset="" sizes="100vw, 100vw"><img alt="Hannover Messe 2026" loading="lazy" decoding="async" src="/img/hm_logo.png" width="undefined" height="undefined"></picture>
+</div>
+<h2 class="text-white text-xl font-semibold">Join us at Hannover Messe 2026</h2>
+</div>
+<div>
+<div class="prose ff-prose">
+<ul>
+<li class="text-gray-200">Live <span class="font-medium">demos + hands-on workshop</span> with Nick O'Leary</li>
+<li class="text-gray-200"><span class="font-medium">12 short talks</span> on real industrial use cases</li>
+<li class="text-gray-200 italic mb-6">Limited spots</li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col">
+<a class="ff-btn ff-btn--highlight" href="/events/hannover-messe-2026#special-sessions" rel="noopener noreferrer" onclick="if(typeof capture==='function') capture('hm-banner-click', {'target': 'cta-primary', 'label': 'save-your-spot', 'page': location.pathname, 'location': 'floating-banner'})">
+SAVE YOUR SPOT
+</a>
+</div>
+</div>
+</div>
+<script src="/js/hm-promo-banner.js" defer></script>
+<footer class="ff-footer bg-gray-100 w-full border-t border-white">
+<div class="py-8 px-10 md:px-6 md:pt-8 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
+<div class="w-full grid gap-y-8 md:gap-y-0 md:grid-rows-2 md:grid-flow-col md:ff-footer-columns md:gap-x-8 md:justify-between">
+<div class="w-36">
+<svg class="max-h-full w-full" viewBox="0 0 402 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_174_1492" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
+<path d="M402 0H0V70H402V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_174_1492)">
+<mask id="mask1_174_1492" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
+<path d="M402 0.0299988H0V69.97H402V0.0299988Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_174_1492)">
+<mask id="mask2_174_1492" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
+<path d="M402 0.0299988H0V69.97H402V0.0299988Z" fill="white"/>
+</mask>
+<g mask="url(#mask2_174_1492)">
+<path d="M118.949 9.94H95.2691C93.6191 9.94 92.2391 10.49 91.4191 11.32C90.3191 12.42 90.0391 13.52 90.0391 15.17V55.65C90.0391 57.3 90.5891 58.4 91.4191 59.23C92.2491 60.06 93.6191 60.33 95.5491 60.33C96.3791 60.33 97.4791 60.33 98.2991 60.05C99.1291 60.05 99.6791 59.77 100.229 59.77V40.22H113.719C114.819 40.22 115.649 39.94 116.469 39.12C117.019 38.29 117.569 37.47 117.569 36.09C117.569 35.26 117.569 34.44 117.289 33.89C117.009 33.34 116.739 32.79 116.459 32.24H100.489V18.2H116.739C117.839 18.2 118.669 17.92 119.489 17.1C120.039 16.27 120.589 15.17 120.589 13.8C120.589 12.97 120.589 12.15 120.309 11.6C119.479 10.77 119.209 10.5 118.929 9.95" fill="#1F2937"/>
+<path d="M131.06 9.94C130.23 9.94 129.41 9.94 128.58 10.22C127.75 10.5 127.2 10.5 126.65 10.5V55.38C126.65 57.03 127.2 58.13 128.03 58.96C128.86 59.51 130.23 60.06 132.16 60.06C133.26 60.06 134.09 60.06 134.91 59.78C135.74 59.78 136.29 59.5 136.84 59.23V14.62C136.84 12.97 136.29 11.87 135.46 11.04C134.08 10.21 132.71 9.94 131.05 9.94" fill="#1F2937"/>
+<path d="M175.39 22.61C172.36 20.96 168.78 20.13 164.93 20.13C161.08 20.13 157.5 20.96 154.47 22.61C151.44 24.26 149.24 26.74 147.31 29.77C145.66 32.8 144.83 36.38 144.83 40.51C144.83 44.64 145.66 48.22 147.31 51.25C148.96 54.28 151.16 56.48 154.19 58.13C157.22 59.78 160.8 60.61 164.65 60.61C168.78 60.61 172.36 59.78 175.11 58.13C178.14 56.48 180.34 54 181.99 50.97C183.64 47.94 184.47 44.36 184.47 40.23C184.47 36.1 183.64 32.52 181.99 29.49C180.89 26.74 178.41 24.26 175.38 22.61M172.36 49.59C170.71 51.79 168.23 52.89 165.2 52.89C162.17 52.89 159.69 51.79 158.04 49.59C156.39 47.39 155.29 44.36 155.29 40.23C155.29 36.38 156.12 33.35 158.04 30.87C159.69 28.67 162.17 27.57 165.2 27.57C168.23 27.57 170.71 28.67 172.36 30.87C174.01 33.07 175.11 36.1 175.11 40.23C174.83 44.36 174.01 47.39 172.36 49.59Z" fill="#1F2937"/>
+<path d="M281.949 9.94H258.269C256.619 9.94 255.239 10.49 254.419 11.32C253.319 12.42 253.039 13.52 253.039 15.17V55.65C253.039 57.3 253.589 58.4 254.419 59.23C255.249 60.06 256.619 60.33 258.549 60.33C259.379 60.33 260.479 60.33 261.299 60.05C262.129 60.05 262.679 59.77 263.229 59.77V40.22H276.719C277.819 40.22 278.649 39.94 279.469 39.12C280.019 38.29 280.569 37.47 280.569 36.09C280.569 35.26 280.569 34.44 280.289 33.89C280.009 33.34 279.739 32.79 279.459 32.24H263.489V18.2H279.739C280.839 18.2 281.669 17.92 282.489 17.1C283.039 16.27 283.589 15.17 283.589 13.8C283.589 12.97 283.589 12.15 283.309 11.6C282.479 10.77 282.209 10.5 281.929 9.95" fill="#1F2937"/>
+<path d="M243.95 21.51C243.12 20.96 242.02 20.68 240.65 20.68C239 20.68 237.62 20.96 236.24 21.78C235.41 26.74 234.59 31.69 233.49 36.92C232.39 41.88 231.56 46.83 230.46 51.24H230.18C229.9 50.14 229.35 48.21 228.8 45.46C227.97 42.98 227.15 39.95 226.32 36.65C225.22 33.35 224.39 30.04 223.29 26.46C223.01 25.36 222.46 24.81 221.36 24.26C220.53 23.71 219.16 23.71 217.78 23.71C216.68 23.71 215.85 23.71 215.03 23.99C214.21 24.27 213.38 24.54 212.83 25.09C211.73 28.67 210.63 32.25 209.53 35.83C208.43 39.41 207.6 42.44 206.78 45.19C205.96 47.94 205.4 49.87 205.13 51.25H204.85C204.57 50.42 204.3 49.05 204.02 47.4C203.74 45.75 203.19 43.82 202.64 41.62C202.09 39.42 201.54 36.94 201.26 33.91C200.71 31.16 200.16 28.13 199.88 25.1C199.6 23.45 199.05 22.35 198.23 21.8C197.4 21.25 196.3 20.7 194.93 20.7C193.83 20.7 192.73 20.98 191.9 21.25C190.52 21.53 189.97 22.08 189.42 22.63C189.7 24.56 190.25 27.04 190.8 29.79C191.35 32.54 191.9 35.3 192.73 38.05C193.28 40.8 194.11 43.56 194.66 46.31C195.21 49.06 196.04 51.27 196.59 53.19C197.14 55.12 197.69 56.77 198.24 57.87C198.79 58.7 199.34 59.52 200.72 59.8C201.82 60.35 203.2 60.35 204.57 60.35C205.94 60.35 207.05 60.35 207.87 60.07C208.7 59.79 209.52 59.52 210.07 58.97C210.62 57.32 211.45 54.84 212.27 52.36C213.1 49.61 214.2 46.85 215.02 43.82C215.85 40.79 216.95 37.76 217.5 34.73C218.33 37.76 219.15 40.51 219.98 43.54C220.81 46.57 221.63 49.32 222.46 51.8C223.29 54.28 224.11 56.48 224.66 58.13C225.21 59.78 227.14 60.61 230.44 60.61C231.82 60.61 232.92 60.33 233.74 60.06C234.84 59.78 235.67 59.51 235.94 58.96C236.49 57.86 236.77 56.48 237.59 54.55C238.14 52.62 238.69 50.7 239.52 48.22C240.07 46.02 240.9 43.54 241.45 41.06C242 38.58 242.55 36.1 243.1 33.9C243.65 31.7 243.93 29.77 244.48 28.12C244.76 26.47 245.03 25.09 245.03 24.54C245.31 22.89 244.75 22.06 243.93 21.51" fill="#1F2937"/>
+<path d="M316.92 20.68C316.09 20.68 315.27 20.68 314.44 20.96C313.61 21.24 313.06 21.24 312.51 21.24V50.98C311.96 51.26 310.86 51.81 309.76 52.08C308.66 52.36 307.01 52.63 305.35 52.63C302.6 52.63 300.67 52.08 299.02 50.7C297.64 49.32 296.82 47.4 296.82 44.64V25.37C296.82 23.72 296.27 22.34 295.44 21.79C294.61 21.24 293.24 20.69 291.31 20.69C290.21 20.69 289.38 20.69 288.56 20.97C287.73 21.25 287.18 21.25 286.91 21.25V44.65C286.91 48.23 287.74 51.26 289.11 53.74C290.49 55.94 292.69 57.87 295.44 58.97C298.19 60.07 301.5 60.62 305.08 60.62C308.11 60.62 310.86 60.34 313.34 59.79C315.82 59.24 317.75 58.41 319.12 57.59C320.22 56.76 321.05 56.21 321.6 55.39C322.15 54.56 322.15 53.46 322.15 52.36V25.38C322.15 23.73 321.6 22.35 320.77 21.8C319.94 20.97 318.84 20.7 316.92 20.7" fill="#1F2937"/>
+<path d="M347.76 36.65L343.63 35.55C341.98 35.27 340.88 34.72 340.05 33.9C339.22 33.35 338.95 32.52 338.95 31.42C338.95 30.04 339.5 29.22 340.88 28.39C341.98 27.84 343.91 27.29 345.84 27.29C347.22 27.29 348.59 27.57 349.97 27.84C351.35 28.12 352.72 28.39 353.82 28.94C354.92 29.49 355.75 29.77 356.57 30.32C357.12 29.77 357.67 29.22 357.95 28.67C358.23 27.84 358.5 27.29 358.5 26.19C358.5 24.81 357.95 23.71 356.85 22.89C355.75 22.06 354.1 21.24 352.17 20.69C350.24 20.14 347.76 19.86 345.29 19.86C340.33 19.86 336.48 20.96 333.73 23.16C330.98 25.36 329.6 28.12 329.6 31.42C329.6 34.45 330.43 36.93 332.35 38.58C334.28 40.51 337.03 41.88 340.89 42.71L345.57 43.81C347.22 44.09 348.6 44.64 349.42 45.46C350.25 46.29 350.52 47.11 350.52 48.49C350.52 51.24 348.32 52.9 343.64 52.9C341.16 52.9 338.96 52.62 336.76 51.8C334.83 50.97 332.91 50.15 331.53 49.05C330.7 49.6 330.15 50.15 329.88 50.98C329.33 51.81 329.33 52.63 329.33 53.46C329.33 55.66 330.71 57.31 333.46 58.69C336.21 60.07 339.79 60.62 344.2 60.62C349.43 60.62 353.56 59.52 356.32 57.32C359.08 55.12 360.45 52.36 360.45 48.51C360.45 45.48 359.35 42.73 357.42 40.8C355.22 39.15 352.19 37.5 347.78 36.67L347.76 36.65Z" fill="#1F2937"/>
+<path d="M400.899 40.23C401.729 39.4 401.999 38.3 401.999 36.93C401.999 33.63 401.169 30.87 399.799 28.39C398.429 25.91 396.219 23.98 393.469 22.33C390.719 20.95 387.689 20.13 384.109 20.13C381.629 20.13 379.149 20.68 376.679 21.51C374.479 22.34 372.269 23.71 370.619 25.36C368.969 27.01 367.589 29.21 366.489 31.69C365.389 34.17 365.109 37.2 365.109 40.23C365.109 44.64 365.939 48.49 367.859 51.52C369.509 54.55 372.269 57.03 375.289 58.4C378.589 60.05 382.169 60.6 386.299 60.6C389.049 60.6 391.259 60.32 393.459 59.77C395.659 59.22 397.309 58.39 398.419 57.57C399.799 56.47 400.349 55.37 400.349 53.99C400.349 53.16 400.069 52.34 399.799 51.51C399.249 50.68 398.699 50.13 398.149 49.86C397.049 50.69 395.399 51.51 393.469 52.06C391.539 52.61 389.339 53.16 387.139 53.16C383.839 53.16 380.809 52.33 378.599 50.68C376.949 49.3 375.569 47.38 375.019 44.9L397.599 41.6C398.979 41.32 400.079 41.05 400.899 40.22V40.23ZM374.469 38.03C374.749 34.73 375.569 32.25 377.219 30.32C379.149 28.39 381.349 27.29 384.099 27.29C386.849 27.29 388.779 28.12 390.429 29.49C391.809 31.14 392.629 32.79 392.909 35L374.459 38.03H374.469Z" fill="#1F2937"/>
+<path d="M38.5508 42.16C45.7108 45.19 52.5908 48.77 60.0308 50.42C63.3308 50.97 66.6408 51.25 69.9408 51.25V33.08H67.1908C57.0008 33.08 47.6408 38.31 38.5508 42.17" fill="#1F2937"/>
+<path d="M17.35 47.94C14.05 47.66 10.74 47.66 7.44 47.66H0V64.46C0 67.49 2.48 69.97 5.51 69.97H64.71C67.74 69.97 70.22 67.49 70.22 64.46V62.26C63.06 62.26 55.63 61.43 49.02 58.68C38.28 55.1 28.64 48.22 17.36 47.94" fill="#1F2937"/>
+<path d="M64.43 0.0299988H5.51C2.48 0.0299988 0 2.51 0 5.54V36.65C6.61 36.65 13.49 36.93 20.1 36.37C29.19 35.54 37.17 30.59 45.71 27.28C53.42 23.98 61.68 22.05 69.94 22.32V5.54C69.94 2.51 67.46 0.0299988 64.43 0.0299988Z" fill="#1F2937"/>
+</g>
+</g>
+</g>
+</svg>
+</div>
+<div class="w-full self-end order-last md:order-none">
+<div class="copyright-statement inline">
+<div>Copyright 2026 FlowFuse Inc. All Rights Reserved.
+<br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">here</a> to manage your preferences.
+</div>
+</div>
+</div>
+<div class="w-full md:row-span-2">
+<ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
+<li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="https://boards.greenhouse.io/flowfuse" class="py-3">Jobs</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="/partners/" class="py-3">Partnerships</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="/professional-services/" class="py-3">Professional Services</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/" class="py-3">Service Status</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="/support/" class="py-3">Request Support</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/" class="py-3">Contact Us</a></li>
+<li class="inline mr-2 mb-2 md:m-0"><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})" class="py-3">Sign Up to Mailing List</a></li>
+</ul>
+</div>
+<div class="w-full md:row-span-2">
+<ul class="flex flex-col gap-y-4 md:gap-y-6 w-full -mx-3 md:mx-0 text-base md:items-end">
+<li class="flex flex-wrap gap-x-4 gap-y-2 lg:gap-x-6 px-3 md:px-0 justify-between sm:justify-start md:justify-end">
+<a href="https://www.facebook.com/FlowFuse/" class="block">
+<span class="sr-only">Visit our Facebook page</span>
+<svg class="fill-current h-5 hover:text-red-hero" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.4286 0H2.57143C1.88944 0 1.23539 0.270918 0.753154 0.753154C0.270918 1.23539 0 1.88944 0 2.57143L0 21.4286C0 22.1106 0.270918 22.7646 0.753154 23.2468C1.23539 23.7291 1.88944 24 2.57143 24H9.92411V15.8405H6.54911V12H9.92411V9.07286C9.92411 5.74339 11.9063 3.90429 14.9421 3.90429C16.3961 3.90429 17.9164 4.16357 17.9164 4.16357V7.43143H16.2413C14.5907 7.43143 14.0759 8.45571 14.0759 9.50625V12H17.7605L17.1713 15.8405H14.0759V24H21.4286C22.1106 24 22.7646 23.7291 23.2468 23.2468C23.7291 22.7646 24 22.1106 24 21.4286V2.57143C24 1.88944 23.7291 1.23539 23.2468 0.753154C22.7646 0.270918 22.1106 0 21.4286 0Z"/></svg>
+</a>
+<a href="https://github.com/FlowFuse" class="block">
+<span class="sr-only">Visit our GitHub page</span>
+<svg class="fill-current hover:text-red-hero h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+</a>
+<a href="https://discord.gg/2RrvW8dkrF" class="block">
+<span class="sr-only">Join our Discord</span>
+<svg class="fill-current hover:text-red-hero h-5" width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.6361 1.39641C17.1907 0.734661 15.6648 0.265193 14.0973 0C13.8828 0.38343 13.6888 0.777928 13.5159 1.18184C11.8463 0.930252 10.1484 0.930252 8.47881 1.18184C8.30587 0.77797 8.1118 0.383476 7.8974 0C6.32897 0.267433 4.80205 0.738015 3.35518 1.39987C0.482757 5.64967 -0.29591 9.79391 0.0934235 13.8793C1.77558 15.1222 3.6584 16.0674 5.66003 16.6739C6.11074 16.0677 6.50956 15.4246 6.85226 14.7514C6.20135 14.5083 5.57311 14.2084 4.9748 13.8551C5.13227 13.7409 5.28627 13.6232 5.43508 13.509C7.17601 14.3277 9.07613 14.7522 11 14.7522C12.9238 14.7522 14.8239 14.3277 16.5648 13.509C16.7154 13.6319 16.8694 13.7495 17.0251 13.8551C16.4257 14.209 15.7963 14.5095 15.1442 14.7532C15.4865 15.426 15.8853 16.0686 16.3364 16.6739C18.3398 16.0698 20.224 15.1251 21.9065 13.881C22.3633 9.14329 21.1261 5.03711 18.6361 1.39641ZM7.34541 11.3668C6.26047 11.3668 5.36414 10.3822 5.36414 9.17097C5.36414 7.95971 6.22932 6.96648 7.34195 6.96648C8.45458 6.96648 9.34399 7.95971 9.32496 9.17097C9.30593 10.3822 8.45112 11.3668 7.34541 11.3668ZM14.6545 11.3668C13.5678 11.3668 12.675 10.3822 12.675 9.17097C12.675 7.95971 13.5401 6.96648 14.6545 6.96648C15.7689 6.96648 16.6514 7.95971 16.6323 9.17097C16.6133 10.3822 15.7602 11.3668 14.6545 11.3668Z"/>
+</svg>
+</a>
+<a href="https://www.reddit.com/r/flowfuse" class="block">
+<span class="sr-only">Visit our Reddit community</span>
+<svg class="fill-current h-5 hover:text-red-hero" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14.238 15.348c.085.084.085.221 0 .306-.465.462-1.194.687-2.231.687l-.008-.002-.008.002c-1.036 0-1.766-.225-2.231-.688-.085-.084-.085-.221 0-.305.084-.084.222-.084.307 0 .379.377 1.008.561 1.924.561l.008.002.008-.002c.915 0 1.544-.184 1.924-.561.085-.084.223-.084.307 0zm-3.44-2.418c0-.507-.414-.919-.922-.919-.509 0-.923.412-.923.919 0 .506.414.918.923.918.508.001.922-.411.922-.918zm13.202-.93c0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12 12 5.373 12 12zm-5-.129c0-.851-.695-1.543-1.55-1.543-.417 0-.795.167-1.074.435-1.056-.695-2.485-1.137-4.066-1.194l.865-2.724 2.343.549-.003.034c0 .696.569 1.262 1.268 1.262.699 0 1.267-.566 1.267-1.262s-.568-1.262-1.267-1.262c-.537 0-.994.335-1.179.804l-2.525-.592c-.11-.027-.223.037-.257.145l-.965 3.038c-1.656.02-3.155.466-4.258 1.181-.277-.255-.644-.415-1.05-.415-.854.001-1.549.693-1.549 1.544 0 .566.311 1.056.768 1.325-.03.164-.05.331-.05.5 0 2.281 2.805 4.137 6.253 4.137s6.253-1.856 6.253-4.137c0-.16-.017-.317-.044-.472.486-.261.82-.766.82-1.353zm-4.872.141c-.509 0-.922.412-.922.919 0 .506.414.918.922.918s.922-.412.922-.918c0-.507-.413-.919-.922-.919z"/></svg>
+</a>
+<a href="/blog/index.xml" class="block">
+<span class="sr-only">Subscribe to our RSS feed</span>
+<svg class="fill-current hover:text-red-hero" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/></svg>
+</a>
+<a href="https://www.linkedin.com/company/flowfuse" class="block">
+<span class="sr-only">Visit our LinkedIn page</span>
+<svg class="fill-current h-5 hover:text-red-hero" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0v24h24v-24h-24zm8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.397-2.586 7-2.777 7 2.476v6.759z"/></svg>
+</a>
+<a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g" class="block">
+<span class="sr-only">Visit our YouTube channel</span>
+<svg class="fill-current h-5 hover:text-red-hero" width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M27.3016 2.97749C26.9889 1.80488 26.0709 0.88338 24.9028 0.569489C22.7854 0 14.3001 0 14.3001 0C14.3001 0 5.81476 0 3.69957 0.569489C2.53142 0.88338 1.61342 1.80488 1.30072 2.97749C0.733398 5.10074 0.733398 9.53333 0.733398 9.53333C0.733398 9.53333 0.733398 13.9659 1.30072 16.0892C1.61342 17.2618 2.53142 18.1833 3.69957 18.4972C5.81476 19.0667 14.3001 19.0667 14.3001 19.0667C14.3001 19.0667 22.7854 19.0667 24.9006 18.4972C26.0687 18.1833 26.9867 17.2618 27.2994 16.0892C27.8667 13.9659 27.8667 9.53333 27.8667 9.53333C27.8667 9.53333 27.8667 5.10074 27.2994 2.97749H27.3016ZM11.5863 13.6184V5.44826L18.6354 9.53333L11.5863 13.6184Z"/>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</body>
+<script>
+document.getElementById('nav-toggle').onclick = function(){
+        // self
+        document.getElementById("nav-toggle").classList.toggle("mobile-open");
+
+        let classes = document.getElementById("ff-header").classList;
+        classes.toggle("mobile-open");
+    };
+
+    // Nav overflow: move non-dropdown items into "More" when they don't fit
+    (function() {
+        var nav = document.getElementById('nav-content');
+        var headerNav = document.querySelector('.ff-header nav');
+        var moreItem = document.getElementById('nav-more');
+        var moreList = document.getElementById('nav-more-list');
+        if (!nav || !moreItem || !moreList || !headerNav) return;
+
+        function isOverflowing() {
+            var overflowBuffer = 24;
+            // Check if the last child of <nav> extends past the viewport
+            var navRight = headerNav.getBoundingClientRect().right;
+            var children = Array.from(headerNav.children).filter(function(el) {
+                return el.offsetWidth > 0;
+            });
+            var last = children[children.length - 1];
+            return last && last.getBoundingClientRect().right > navRight + 1 + overflowBuffer;
+        }
+
+        function handleNavOverflow() {
+            // On mobile, reset and bail
+            if (window.innerWidth < 768) {
+                moreItem.style.display = 'none';
+                nav.querySelectorAll('.nav-collapsible').forEach(function(el) { el.style.display = ''; });
+                return;
+            }
+
+            // Reset: show all collapsible items, hide More
+            nav.querySelectorAll('.nav-collapsible').forEach(function(el) { el.style.display = ''; });
+            moreItem.style.display = 'none';
+            while (moreList.firstChild) moreList.removeChild(moreList.firstChild);
+
+            if (!isOverflowing()) return;
+
+            // Show More item first (it takes space)
+            moreItem.style.display = '';
+
+            // Collect collapsible items in reverse order (rightmost first)
+            var collapsible = Array.from(nav.querySelectorAll('.nav-collapsible')).reverse();
+
+            for (var i = 0; i < collapsible.length; i++) {
+                var item = collapsible[i];
+                if (!isOverflowing()) break;
+
+                // Hide this item and clone into More
+                var link = item.querySelector('a');
+                if (link) {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    a.className = 'flex items-center gap-2';
+                    a.href = link.getAttribute('href');
+                    a.textContent = link.textContent.trim();
+                    li.appendChild(a);
+                    moreList.prepend(li);
+                }
+                item.style.display = 'none';
+            }
+
+            // If nothing in More, hide it
+            if (moreList.children.length === 0) {
+                moreItem.style.display = 'none';
+            }
+        }
+
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(handleNavOverflow, 50);
+        });
+        // Run after fonts load for accurate measurement
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(handleNavOverflow);
+        } else {
+            window.addEventListener('load', handleNavOverflow);
+        }
+        handleNavOverflow();
+    })();
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js"></script>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer"></html>
