@@ -12,6 +12,7 @@ cta:
   type: contact
   title: Take CAN Bus From Dev to Production
   description: FlowFuse makes it simple to deploy, monitor, and maintain Node-RED flows across your entire edge fleet, same flows, any hardware, any scale. Get in touch to discuss your project.
+tldr: "SocketCAN exposes CAN bus interfaces as standard Linux network interfaces, and combined with FlowFuse's visual flow-based programming, you can send and receive CAN frames without low-level drivers or proprietary tools. This tutorial walks through enabling SocketCAN on Linux, installing the node-red-contrib-socketcan package, and building flows to connect CAN bus devices to dashboards, cloud platforms, and industrial systems."
 ---
 
 If you work with vehicles, industrial automation, or embedded systems, you've likely encountered **CAN bus**, the communication backbone that connects ECUs, sensors, controllers, and actuators in real-world environments. The challenge isn't just reading CAN data; it's getting that data into your dashboards, cloud platforms, databases, or industrial control systems.

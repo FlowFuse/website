@@ -12,6 +12,7 @@ cta:
     type: contact
     title: Not sure which deployment fits your setup?
     description: Talk to our team. We'll help you map the right architecture for your infrastructure, workflows, and operational constraints.
+tldr: "FlowFuse supports three deployment models cloud, edge (Remote Instances), and hybrid each with distinct trade-offs around latency, connectivity, and operational ownership. The right choice depends on where your data lives, how much latency your workflows can absorb, how reliable your WAN connection is, and how much hardware ownership your team can take on. Most serious industrial deployments end up hybrid, running edge logic locally for plant-floor equipment and cloud logic for aggregation and integration."
 ---
 
 A production line at a mid-size manufacturer goes dark for 22 minutes. Not because the machines failed. Because the WAN link between the factory and the cloud dropped. The logic controlling the line was hosted in the cloud. Without a connection, it couldn't execute. By the time the link recovered, the shift had lost a batch.

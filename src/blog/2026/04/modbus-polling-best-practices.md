@@ -13,6 +13,7 @@ cta:
   type: contact
   title: Need help fixing your Modbus setup?
   description: If your system is still dropping data or behaving unpredictably, reach out. We can help review your polling configuration and identify what is actually causing the instability.
+tldr: "Most Modbus polling problems aren't hardware failures they're three configuration mistakes made at commissioning: polling all registers at a single scan rate instead of tiering by how fast data changes, setting timeouts based on intuition instead of measured device response times, and batching registers aggressively across gaps in the register map. Each mistake produces silent failures that trace back to configuration decisions that are straightforward to fix once identified."
 ---
 
 **Modbus polling looks simple. It is simple. That's the problem.**

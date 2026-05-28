@@ -9,6 +9,7 @@ image: /blog/2025/02/images/arduino-with-node-red.png
 keywords: Arduino, Node-RED, Firmata, Node-RED IoT, automation, FlowFuse, LED control with Node-RED, IR sensor, input-output, serial communication, microcontroller, Arduino Uno, remote control, object detection, dashboard.
 tags: 
  - node-red
+tldr: "Arduino boards lack built-in internet connectivity, but using the Firmata protocol combined with Node-RED and FlowFuse enables remote control and automation of Arduino I/O pins without writing any Arduino code. This tutorial walks through uploading the StandardFirmata sketch to Arduino, installing the node-red-contrib-arduino nodes in FlowFuse, and building flows to control an LED and read sensors."
 ---
 
 Arduino is a popular open-source platform that lets you build cool electronics projects. It’s affordable and flexible, with lots of different boards and sensors to choose from. However, unlike some other boards, Arduino doesn’t have built-in internet connectivity, which can make remote control a bit tricky. Plus, it usually requires some coding to make things work.

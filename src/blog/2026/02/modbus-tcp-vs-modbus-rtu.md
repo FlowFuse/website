@@ -12,6 +12,7 @@ cta:
   type: sign-up
   title: Stop Debugging Modbus at 2 AM
   description: FlowFuse supports both Modbus RTU and TCP across the full OT/IT stack, with the monitoring, logging, and fleet management to catch problems before they take down the line.
+tldr: "Modbus RTU and Modbus TCP share the same data model but make entirely different assumptions about the network, failure modes, and latency. RTU failures are loud and physical while TCP failures tend to degrade silently, and TCP's exposure on Ethernet introduces security risks that serial never had choosing between them requires understanding these tradeoffs, not just swapping protocols."
 ---
 
 Modbus shipped in 1979. It has outlasted every protocol that was meant to replace it, survived the transition from relay logic to microprocessors and modern SCADA systems, and is still running production lines today. That kind of longevity does not happen by accident. It exists because the protocol is simple, deterministic, and unambiguous, at least in its original form, a point I have discussed in more detail in a [separate article](/blog/2026/01/why-modbus-still-exist/).
