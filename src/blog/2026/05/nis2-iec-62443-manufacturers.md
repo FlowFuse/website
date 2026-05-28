@@ -19,7 +19,7 @@ cta:
     description: "Talk to us about how FlowFuse adds SSO, RBAC, audit logging, and governed deployments to the custom industrial applications most NIS2 assessments flag."
 ---
 
-Mid-market manufacturers are squarely in scope of the [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive), now being transposed and enforced across the EU. 
+Mid-market manufacturers are squarely in scope of the NIS2 Directive, now being transposed and enforced across the EU. 
 
 <!--more-->
 
