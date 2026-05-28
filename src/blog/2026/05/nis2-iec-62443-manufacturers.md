@@ -19,9 +19,11 @@ cta:
     description: "Talk to us about how FlowFuse adds SSO, RBAC, audit logging, and governed deployments to the custom industrial applications most NIS2 assessments flag."
 ---
 
-Mid-market manufacturers are squarely in scope of the [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive), now being transposed and enforced across the EU. Under [Article 34](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), fines reach €10 million or 2% of global turnover for essential entities, and €7 million or 1.4% for important entities, whichever is higher. [Article 20](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) adds personal liability for senior management.
+Mid-market manufacturers are squarely in scope of the [NIS2 Directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive), now being transposed and enforced across the EU. 
 
 <!--more-->
+
+Under [Article 34](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), fines reach €10 million or 2% of global turnover for essential entities, and €7 million or 1.4% for important entities, whichever is higher. [Article 20](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) adds personal liability for senior management.
 
 So manufacturers open [Article 21](https://eur-lex.europa.eu/eli/dir/2022/2555/oj), find ten categories of measures in legal language with no implementation detail, and stall on the only question that matters: *where do we actually start?*
 
