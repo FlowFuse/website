@@ -14,6 +14,7 @@ cta:
   type: sign-up
   title: Build and Reuse Node-RED Flows Across Your Team
   description: FlowFuse gives you version control, team collaboration, and centralized deployment — so your subflows and reusable logic stay consistent across every instance and every engineer.
+tldr: "Subflows in Node-RED let you group reusable logic into a single custom node, similar to libraries or modules in traditional programming. This guide covers how to create a subflow from an existing flow, add configurable environment variable properties to it, and use it across multiple places in your Node-RED projects to eliminate duplication."
 ---
 
 In traditional programming, managing complex and repetitive tasks can quickly lead to a tangled mess of code that’s hard to maintain and update. To tackle this issue, developers use libraries or modules—reusable chunks of code that help organize functionality, minimize duplication, and keep codebases clean and manageable.
