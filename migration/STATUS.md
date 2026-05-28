@@ -1,5 +1,61 @@
 # 11ty → Nuxt 4 migration — status & runbook
 
+## Follow-up (2026-05-28b) — origin/main integration + responsive fixes
+
+Rebased the 62 local migration commits onto the updated `origin/main` (12 new
+upstream commits incl. the homepage redesign). 11ty deletions were KEPT; upstream
+edits to now-deleted 11ty files were PORTED into Nuxt rather than resurrected:
+- **Homepage** (`nuxt/pages/index.vue`): rotating hero background images
+  (`/images/home/hero/hero-{1,2,3}.jpg`, slideshow via `onMounted`), indigo
+  full-bleed hero with white text, screenshot "bridge" overlapping below, and
+  the updated metrics (50%/10x/20+, red styling).
+- **Blog** (`nuxt/pages/blog/[...slug].vue`, `copy_blog.js`): TL;DR/first-answer
+  block (`tldr` frontmatter now captured in `blog.index.json`), author job
+  titles + "Updated" date label.
+- **New blog categories** `/blog/{plc,mqtt,opcua,modbus}/` (added to the
+  `CATEGORIES` map in `copy_blog.js`) + the "See All PLC Articles" button on
+  `landing/plc`. New upstream blog `.md` (incl. the NIS2 post) flows through
+  `copy_blog` automatically.
+- `tailwind.config.js` (red tokens) and `src/css/style.css` (`.hero-slide`)
+  merged cleanly during the rebase. `package-lock.json` reconciled via
+  `npm install`.
+- **Deferred / documented gaps** (not regressions from this rebase):
+  `/industries/renewables/` (new upstream `src/industries/renewables.njk`) was
+  NOT ported to a Vue page — it is a brand-new standalone page, not in the frozen
+  baseline, and nothing links to it (no route-diff or link-checker impact).
+  JSON-LD/AEO: the native Nuxt pages never emitted structured data (pre-existing
+  site-wide gap), so upstream's `jsonld.njk` enhancement has no Nuxt target to
+  port a diff into.
+
+**Responsive testing** (scripted Playwright, NO MCP — `scripts/responsive-check.js`,
+viewports 375/768/1280/1920, screenshots `/tmp/responsive-*`) surfaced and FIXED
+the docs/handbook "look like shit" issues:
+- Docs/handbook dumped the full flat nav ABOVE the content on mobile → the
+  sidebar is now a collapsible disclosure below `lg` (toggle button) and the
+  two-column layout moved from `md` to `lg` (tablet is single-column).
+- The legacy `.handbook` flex/grid container (built for the old 11ty
+  direct-child DOM) overflowed the native pages (board page 545px @375px) — a
+  scoped `.handbook-shell` override renders those wrappers as plain blocks.
+  `node-red` + the 3 legacy-static handbook pages still use `.handbook` and are
+  untouched.
+- Code fences/tables now scroll (`.prose pre`/`table`); ALL images capped to
+  their container (`img { max-width:100% !important }`) — many ported marketing
+  pages hardcoded `style="max-width:NNNpx"` without `width:100%`.
+- Blog card/hero image paths normalised to absolute in `copy_blog.js`
+  (`absImage`) — relative frontmatter `image:` refs were 404ing on
+  index/category pages.
+- Docs landing tiles restored (grid + card CSS) and the tile HTML no longer
+  mis-parses into stray `<pre>` code blocks (blank lines stripped inside
+  `ff-*-tiles` in `copy_docs_nuxt.js`).
+
+Verification after fixes: `build:nuxt:skip-images` green, **link-checker 0 of
+1180 failing**, route diff **Dropped: 0** (Nuxt superset; adds
+`/blog/{plc,mqtt,opcua,modbus}/` + the NIS2 post + `/200` + terms/privacy),
+responsive sweep **0 horizontal overflow** at all 4 viewports across 15
+representative pages. Only remaining sweep flags are the pre-existing
+`/pricing/` + `/node-red/` hydration-mismatch console warnings (cosmetic,
+`ovfX=0`, documented below). All committed locally; nothing pushed.
+
 ## MIGRATION COMPLETE (2026-05-28) — 11ty removed
 
 The site is now generated entirely by Nuxt 4. Eleventy has been deleted:
