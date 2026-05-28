@@ -1,7 +1,20 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-    content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','src/**/*.js','.eleventy.js'],
+    content: [
+        // Nuxt app: components/pages/layouts now own all markup that used to
+        // live in the (deleted) 11ty src/**/*.njk templates. Without these,
+        // Tailwind purges @layer components classes used only in .vue files
+        // (e.g. .ff-nav-dropdown), breaking the site-wide header nav.
+        'nuxt/components/**/*.{vue,js,ts}',
+        'nuxt/layouts/**/*.{vue,js,ts}',
+        'nuxt/pages/**/*.{vue,js,ts}',
+        'nuxt/*.vue',
+        'nuxt/content/**/*.md',
+        // Retained src/ inputs still consumed as data (markdown content, SVG
+        // icons, JS) by the build scripts.
+        'src/**/*.md','src/**/*.svg','src/**/*.js',
+    ],
     safelist: [
       'ml-4',
       'ml-8',
