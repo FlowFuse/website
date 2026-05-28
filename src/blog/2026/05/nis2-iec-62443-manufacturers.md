@@ -5,7 +5,7 @@ description: "NIS2 tells you what to do, not how. IEC 62443 is the technical sta
 date: 2026-05-28
 keywords: NIS2, IEC 62443, OT security, industrial cybersecurity, Article 21, ICS security, SL2, SCADA security, audit logging, access control
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/05/images/nis2-complience-manufacturing.png
 tags:
     - flowfuse
 tldr:
