@@ -246,6 +246,85 @@ pre code {
     padding-right: 0.25rem;
 }
 
+/* Code fences and wide tables in docs/handbook/blog content must scroll on
+   narrow viewports rather than forcing the whole page wider (no max-width was
+   previously set, so long lines overflowed and broke the responsive layout). */
+.prose pre {
+    max-width: 100%;
+    overflow-x: auto;
+}
+.prose table {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Docs landing-page tiles (Getting Started / feature grids). The 11ty styles
+   for these classes were not carried into the Nuxt content, so they rendered as
+   unstyled stacked text (and the inert grid-cols utilities had no display:grid).
+   Restore a responsive card grid aligned with the design system. */
+.ff-offering-tiles,
+.ff-product-feature-tiles {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+.prose .ff-tile {
+    display: block;
+    border: 1px solid theme(colors.gray.200);
+    border-radius: theme(borderRadius.lg);
+    background: #fff;
+    padding: 1.25rem 1.5rem;
+    margin: 0;
+}
+.prose a.ff-tile {
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .15s, background-color .15s;
+}
+.prose a.ff-tile:hover {
+    border-color: theme(colors.indigo.400);
+    background: theme(colors.indigo.50);
+}
+.prose .ff-tile label {
+    display: block;
+    font-weight: 600;
+    color: theme(colors.gray.800);
+}
+.prose .ff-offering-tile ul {
+    margin: .75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+.prose .ff-offering-tile li {
+    margin: .25rem 0;
+}
+.prose .ff-offering-tile li a {
+    color: theme(colors.indigo.600);
+}
+.prose a.ff-product-feature-tile {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+}
+.ff-product-feature-tile-decorator {
+    flex: 0 0 auto;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: theme(colors.indigo.500);
+}
+.ff-product-feature-tile-decorator svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+.prose .ff-product-feature-tile span {
+    display: block;
+    font-size: .875rem;
+    color: theme(colors.gray.600);
+}
+
 .prose .zoomable-image + em,
 .prose img + em,
 .prose picture + em {
