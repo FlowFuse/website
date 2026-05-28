@@ -29,6 +29,58 @@ after hydration (catch-all `route.params.id` kept the trailing-slash empty
 segment); `pages/integrations/[...id].vue` now filters empty segments like the
 other data-driven pages.
 
+## Final smoke-sweep verification (2026-05-28)
+
+A scripted Playwright smoke sweep (`scripts/visual-check.js`, ~30 representative
+URLs, one or two per migrated cluster — screenshots to `/tmp/smoke`) was run
+against the built output served locally. It surfaced two regressions that the
+route-diff and link-checker could not catch, both now fixed:
+
+1. **Broken content images (95 refs across 6 clusters).** Relative markdown/HTML
+   image references in generated content were rendered verbatim and 404'd
+   (browser resolved them against the page URL). Three distinct copy-script gaps:
+   markdown image *titles* containing embedded quotes broke the blog regex;
+   customer-stories / node-red core-node use-case images were resolved against
+   the wrong base dir; and docs/handbook HTML `<img>` tags were never matched by
+   the markdown-only regexes. Fix: `scripts/normalize_content_images.js`, a new
+   build step (wired into both build chains after the content copy scripts) that
+   rewrites every still-relative image ref to the absolute path `copy_assets`
+   publishes it at — resolving file-dir-first then `src/` root, exactly as
+   11ty's `lib/image-handler.js` did. Rewrites 95 refs in 36 files; the 6
+   remaining relative refs are intentional placeholders in the handbook
+   "how-to-write" guides (`image.jpg`, `your-image.png`, `<image>.png`) and are
+   correctly left untouched.
+
+2. **Site-wide nav broken by Tailwind purge.** `tailwind.config.js` `content`
+   globs still pointed only at the deleted 11ty `src/**/*.njk`/`.eleventy.js`
+   templates and never scanned `nuxt/**/*.vue`. `@layer components` classes now
+   used only in Nuxt components (notably `.ff-nav-dropdown`) were purged, so the
+   header mega-menu rendered fully expanded on every page (and pricing feature
+   tables/dialogs showed inactive content). Fix: added the Nuxt app paths
+   (`nuxt/{components,layouts,pages}/**`, `nuxt/*.vue`, `nuxt/content/**/*.md`)
+   to the `content` array. Compiled `style.css` 121 KB → 183 KB; `.ff-nav-dropdown`
+   rules restored (2 → 33); nav renders correctly (visually confirmed).
+
+Re-verified after fixes: `build:nuxt:skip-images` green, route diff **Dropped: 0**
+(1178 → 1181, superset), `nuxt-link-checker` **0 of 1175 failing**, smoke sweep
+clean except the two known non-blocking items below.
+
+### Known non-blocking items (pre-existing, pages render correctly)
+
+- **Hydration mismatch on a few bespoke marketing pages** (`/pricing/`,
+  `/node-red/`, `/platform/device-agent/`): Vue logs "Hydration completed but
+  contains mismatches". Content, header, footer and headings all render
+  correctly; the warning is cosmetic. Root cause is not the `<p v-html>` blocks
+  (their injected HTML is inline-only) nor invalid nesting; pinpointing it
+  reliably needs a dev-mode build (which prints the exact mismatched node) — a
+  heavy detour with rebuild cost, deferred rather than guessed at.
+- **`RenderFlow` throws on flows containing `group`/`junction`/`tab` container
+  nodes** (e.g. `/node-red/core-nodes/batch/`): the bundled
+  `@flowfuse/flow-renderer` reads `firstChild` of null inside `renderFlows`.
+  Same library + flow JSON 11ty used, so it is a pre-existing renderer
+  limitation, already wrapped in try/catch (`RenderFlow.vue`) so the page
+  degrades gracefully; the rest of the page renders.
+
 The rest of this document is the historical record of the page-by-page
 migration that led here.
 
