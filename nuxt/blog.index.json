@@ -3,6 +3,29 @@
   "mainPageCount": 20,
   "cards": [
     {
+      "url": "/blog/2026/05/nis2-iec-62443-manufacturers/",
+      "path": "/blog/2026/05/nis2-iec-62443-manufacturers",
+      "title": "NIS2 Compliance for Manufacturers: Why IEC 62443 Is the Missing Standard",
+      "subtitle": "A practical starting point for mid-market manufacturers stuck on Article 21",
+      "description": "NIS2 tells you what to do, not how. IEC 62443 is the technical standard regulators, accredited bodies, and auditors keep pointing to. Here is where to start.",
+      "date": "2026-05-28T00:00:00.000Z",
+      "authors": [
+        "sumit-shinde"
+      ],
+      "image": "/blog/2026/05/images/nis2-complience-for-manufacturer-image.png",
+      "video": "",
+      "tags": [
+        "flowfuse"
+      ],
+      "lastUpdated": null,
+      "tldr": [
+        "NIS2 Article 21 tells you what to achieve, not how. That is where mid-market manufacturers stall.",
+        "IEC 62443 is the standard regulators, accredited bodies, and ENISA guidance keep pointing to for OT. \"Aligned to 62443-3-3 at SL2\" is the answer auditors recognise.",
+        "Start by scoping your System under Consideration, inventorying every piece of OT software, and closing gaps against Foundational Requirements 1, 2, and 6: access control, use control, and audit logging.",
+        "The custom industrial applications running alongside SCADA are the layer most assessments flag and most teams have no clean answer for."
+      ]
+    },
+    {
       "url": "/blog/2026/05/git-snapshot-for-iiot-flows/",
       "path": "/blog/2026/05/git-snapshot-for-iiot-flows",
       "title": "See Every Logic Change in Your IIoT MOC Review with Git-Style Diffs",
@@ -17,7 +40,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/05/manufacturing-software-built-in-stages/",
@@ -34,7 +58,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Traditional all-or-nothing MES deployments lock manufacturers into multi-year rollouts that can't keep pace with changing operations. FlowFuse enables a composable alternative: deploy only the capabilities you need today machine monitoring, OEE tracking, quality workflows then add more independently as requirements evolve, with each capability staying decoupled so teams can update or replace one piece without touching the rest of the stack."
     },
     {
       "url": "/blog/2026/05/flowfuse-expert-building-flows/",
@@ -52,7 +77,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "FlowFuse Expert can now build complete Node-RED applications from a natural language description, wiring nodes on the canvas in real time. Before building, Expert reads your installed palette, existing canvas state, node configurations, and runtime debug data to produce output that matches your actual environment. The feature is in soft launch on FlowFuse Cloud for paid teams."
     },
     {
       "url": "/blog/2026/05/fixing-oee-measurement-in-manufacturing/",
@@ -69,7 +95,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Most factories measure OEE incorrectly because they rely on manual logs, inconsistent definitions, and metrics that operators can game. Fix it by connecting directly to machine signals, standardizing how Availability, Performance, and Quality are calculated, and treating OEE as a diagnostic tool rather than a KPI to optimize for its own sake."
     },
     {
       "url": "/blog/2026/05/flowfuse-release-2-30/",
@@ -88,7 +115,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "FlowFuse 2.30 introduces agentic application building: describe the industrial flow you need and FlowFuse Expert assembles it on your Node-RED workspace. The release also delivers a more immersive editor layout, more usable snapshot comparisons, SSO enforcement for enterprises, and device editor auto-recovery."
     },
     {
       "url": "/blog/2026/04/rosetta-stone-for-industrial-data/",
@@ -105,7 +133,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Factories aren't data-poor they're data-illiterate: the same event gets recorded in incompatible formats across PLCs, SCADA, maintenance platforms, and edge gateways with no shared reference point. The solution is a Unified Namespace built on OPC-UA (shared meaning), MQTT/Sparkplug B (reliable transport), and a central broker as a fixed reference point so every new system added inherits the full value of everything already publishing there."
     },
     {
       "url": "/blog/2026/04/diagnosing-modbus-degradation/",
@@ -120,9 +149,11 @@
       "image": "/blog/2026/04/images/modbus-degradation-img.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "modbus"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Modbus degradation rarely announces itself it shows up as stale values, slower-than-expected poll cycles, and vague operator complaints. RS-485 serial and Modbus TCP fail through different mechanisms (CRC errors vs. connection table exhaustion), and the four metrics to monitor are transaction success rate, response time, CRC error count, and poll cycle completion time."
     },
     {
       "url": "/blog/2026/04/cloud-edge-or-hybrid-how-to-choose-your-flowfuse-deployment/",
@@ -139,7 +170,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "FlowFuse supports three deployment models cloud, edge (Remote Instances), and hybrid each with distinct trade-offs around latency, connectivity, and operational ownership. The right choice depends on where your data lives, how much latency your workflows can absorb, how reliable your WAN connection is, and how much hardware ownership your team can take on. Most serious industrial deployments end up hybrid, running edge logic locally for plant-floor equipment and cloud logic for aggregation and integration."
     },
     {
       "url": "/blog/2026/04/stop-noisy-sensor-data-deadband-filter-flowfuse/",
@@ -156,7 +188,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Industrial sensors constantly fluctuate due to electrical noise, vibration, and ADC artifacts a deadband filter suppresses this by only forwarding a new value when it has moved beyond a defined threshold from the last accepted reading. FlowFuse has a built-in filter node that implements this in no-code configuration, and this guide walks through setting it up to handle single or multiple sensors independently, with practical advice on choosing the right threshold."
     },
     {
       "url": "/blog/2026/04/it-vs-ot-who-owns-the-edge/",
@@ -173,7 +206,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Most edge deployments fail not because of bad technology, but because IT and OT never agreed on who owns what. Real shared ownership means IT owns the infrastructure layer (security, patches, monitoring) while OT owns the operational layer (what runs, when, and what it touches), with a shared platform like FlowFuse that gives both sides the visibility they need without forcing either to compromise."
     },
     {
       "url": "/blog/2026/04/connect-industrial-edge-devices-aws-iot-core/",
@@ -190,7 +224,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "This step-by-step guide walks through connecting FlowFuse to AWS IoT Core using MQTT over mutual TLS with X.509 certificates. It covers creating an IoT Thing, generating and downloading certificates, configuring the MQTT broker in Node-RED, and verifying that messages arrive in AWS. Once connected, industrial data from any protocol OPC-UA, Modbus, or others can be routed to any AWS service via IoT Core rules."
     },
     {
       "url": "/blog/2026/04/flowfuse-release-2-29/",
@@ -210,7 +245,8 @@
         "releases",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "FlowFuse 2.29 brings three main updates: FlowFuse Expert is now available for self-hosted enterprise customers and can execute actions directly in the Node-RED editor; Azure DevOps is now a supported Git provider for GitOps workflows; and snapshot comparisons now include a property-level diff sidebar with git-style line diffs. The release also ships Node-RED 4.1.8 as a stack option."
     },
     {
       "url": "/blog/2026/04/why-simplicity-wins-in-iiot/",
@@ -227,7 +263,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Over-engineered industrial systems don't fail because of bad intentions they fail because complexity accumulates through reasonable decisions made by people who won't be there to maintain them. The systems with the best operational track records prioritize legibility over capability built to be understood by the next engineer, not just the one who designed them."
     },
     {
       "url": "/blog/2026/04/modbus-polling-best-practices/",
@@ -242,9 +279,11 @@
       "image": "/blog/2026/04/images/modbus-polling-best-practices.jpg",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "modbus"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Most Modbus polling problems aren't hardware failures they're three configuration mistakes made at commissioning: polling all registers at a single scan rate instead of tiering by how fast data changes, setting timeouts based on intuition instead of measured device response times, and batching registers aggressively across gaps in the register map. Each mistake produces silent failures that trace back to configuration decisions that are straightforward to fix once identified."
     },
     {
       "url": "/blog/2026/03/why-opcua-is-not-replacing-modbus-yet/",
@@ -259,9 +298,12 @@
       "image": "/blog/2026/03/images/opcua-is-not-replacing-modbus-yet.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "opcua",
+        "modbus"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/Rethinking-Edge-AIs-Core-Orchestration/",
@@ -279,7 +321,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/how-to-parse-binary-data-serial-devices/",
@@ -296,7 +339,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/ai-usecases-in-factory/",
@@ -314,7 +358,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/enterprise-packaging-updates/",
@@ -329,7 +374,8 @@
       "image": "/blog/2026/03/images/enterprise-pillars-cert-nodes.png",
       "video": "",
       "tags": [],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/how-to-monitor-industrial-network-usign-snmp/",
@@ -346,7 +392,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/edge-ai-vs-cloud-ai-in-iiot/",
@@ -363,7 +410,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/how-to-connect-to-twincat-using-ads/",
@@ -378,9 +426,11 @@
       "image": "/blog/2026/03/images/backoff-twincat.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/flowfuse-release-2-28/",
@@ -399,7 +449,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/last-mile-problem-ai/",
@@ -417,7 +468,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/how-to-implement-dlq-and-retries/",
@@ -434,7 +486,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/03/bus-factory-problem-in-manufacturing/",
@@ -451,7 +504,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/02/edge-ai-is-80-percent-pipeline-and-20-percent-ai/",
@@ -469,7 +523,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Edge AI projects stall not because models are inaccurate, but because the infrastructure underneath them data normalization, fleet management, secure updates, and monitoring was never properly built. FlowFuse and Node-RED together provide the operational layer that bridges the gap between a working pilot and a reliable production deployment across real factory environments."
     },
     {
       "url": "/blog/2026/02/mqtt-influxdb-tutorial/",
@@ -484,9 +539,11 @@
       "image": "/blog/2026/02/images/mqtt-to-influxdb.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "mqtt"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Building an MQTT-to-InfluxDB pipeline in FlowFuse requires just three nodes: an MQTT in node to subscribe to sensor topics, a change node to transform the payload into InfluxDB's field-and-tag structure, and an InfluxDB out node to write the data. This visual approach eliminates the hidden failure modes of custom scripts and makes the entire pipeline easy to debug and hand off."
     },
     {
       "url": "/blog/2026/02/modbus-tcp-vs-modbus-rtu/",
@@ -501,9 +558,11 @@
       "image": "/blog/2026/02/images/modbus-rtu-vs-tcp.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "modbus"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Modbus RTU and Modbus TCP share the same data model but make entirely different assumptions about the network, failure modes, and latency. RTU failures are loud and physical while TCP failures tend to degrade silently, and TCP's exposure on Ethernet introduces security risks that serial never had choosing between them requires understanding these tradeoffs, not just swapping protocols."
     },
     {
       "url": "/blog/2026/02/motor-anomaly-detector-ai/",
@@ -521,7 +580,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "This guide walks through building an AI-based motor vibration anomaly detector using an autoencoder trained on healthy sensor data, exported to ONNX, and deployed directly in Node-RED via FlowFuse's AI nodes no separate ML infrastructure required. The system extracts 33 time-domain features per vibration window, scores each reading against a trained threshold, and classifies results as NORMAL, WARNING, or CRITICAL in real time."
     },
     {
       "url": "/blog/2026/02/getting-started-with-canbus/",
@@ -538,7 +598,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "SocketCAN exposes CAN bus interfaces as standard Linux network interfaces, and combined with FlowFuse's visual flow-based programming, you can send and receive CAN frames without low-level drivers or proprietary tools. This tutorial walks through enabling SocketCAN on Linux, installing the node-red-contrib-socketcan package, and building flows to connect CAN bus devices to dashboards, cloud platforms, and industrial systems."
     },
     {
       "url": "/blog/2026/02/flowfuse-release-2-27/",
@@ -557,7 +618,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "FlowFuse 2.27 brings the integrated editor experience to Remote instances and allows snapshot restores without leaving developer mode. FlowFuse Expert gains live palette and flow context awareness, and High Availability hosted instances now support rolling restarts to reduce service interruption during deployments."
     },
     {
       "url": "/blog/2026/02/what-is-event-driven-architecture-in-manufacturing/",
@@ -574,7 +636,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Traditional manufacturing systems waste the vast majority of their polling requests confirming nothing changed, and the gaps between polling cycles allow faults, defects, and delays to propagate unchecked. Event-Driven Architecture inverts this model by broadcasting significant occurrences the moment they happen, letting every subscribed system react instantly and in parallel turning what was a structural latency problem into a competitive advantage."
     },
     {
       "url": "/blog/2026/02/mapping-mtconnect-streams/",
@@ -591,7 +654,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "MTConnect agents expose CNC machine data as XML streams, and FlowFuse's node-red-contrib-solution-engine node lets you access any data point by its dataItemId without manual XML parsing. This tutorial shows how to connect FlowFuse to an MTConnect agent, extract values like spindle speed and controller mode, and build a real-time machine monitoring dashboard."
     },
     {
       "url": "/blog/2026/02/shop-floor-to-ai-signals-context-decisions/",
@@ -609,7 +673,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": "2026-02-11T00:00:00.000Z"
+      "lastUpdated": "2026-02-11T00:00:00.000Z",
+      "tldr": "Industrial AI fails not because of bad models but because raw signals lack the operational context product recipe, maintenance history, ambient conditions that makes them meaningful. A Unified Namespace built with FlowFuse and Node-RED unites the signal layer, context layer, and human decision layer so AI can provide real-time answers grounded in what is actually happening on the shop floor."
     },
     {
       "url": "/blog/2026/02/mqtt-vs-coap/",
@@ -624,9 +689,11 @@
       "image": "/blog/2026/02/images/coap-vs-mqtt.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "mqtt"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "MQTT and CoAP are not competing protocols they solve incompatible constraints. MQTT excels at coordinating large fleets through centralized brokers with strong delivery guarantees, while CoAP's UDP-based, broker-free design is the only viable option for ultra-constrained devices where TCP overhead would destroy battery life. The right choice comes from measuring your actual power budget, transmission frequency, and infrastructure requirements rather than debating which protocol is abstractly better."
     },
     {
       "url": "/blog/2026/01/eliminate-opc-ua-bottleneck-ai-agents/",
@@ -641,9 +708,11 @@
       "image": "/images/og-blog.jpg",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "opcua"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/01/why-modbus-still-exist/",
@@ -658,9 +727,11 @@
       "image": "/blog/2026/01/images/why-modbus-wont-dia.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "modbus"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/01/opcua-vs-mqtt/",
@@ -675,9 +746,12 @@
       "image": "/blog/2026/01/images/opcua-vs-mqtt.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "opcua",
+        "mqtt"
       ],
-      "lastUpdated": "2026-01-24T00:00:00.000Z"
+      "lastUpdated": "2026-01-24T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2026/01/kepware-opcua-better-alternative/",
@@ -692,9 +766,11 @@
       "image": "/blog/2026/01/images/kepware-alternative.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "opcua"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/01/flowfuse-release-2-26/",
@@ -714,7 +790,8 @@
         "releases",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/01/what-is-system-integrator/",
@@ -731,7 +808,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/01/how-to-integrate-node-red-with-git/",
@@ -748,7 +826,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2026/01/node-red-history-community-industrial-iot-flowfuse/",
@@ -765,7 +844,8 @@
       "tags": [
         "node-red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/12/what-is-mttf/",
@@ -782,7 +862,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Mean Time to Failure (MTTF) measures the average operating lifetime of non-repairable components such as light bulbs, batteries, and electronic modules before permanent failure requiring replacement, not repair. The formula is simply total operating time divided by number of failures, providing a statistical average useful for planning preventive replacements, spare parts inventory, and procurement decisions. MTTF differs from MTBF (which applies to repairable systems) and MTTR (which measures repair time)."
     },
     {
       "url": "/blog/2025/12/what-is-plc/",
@@ -797,9 +878,11 @@
       "image": "/blog/2025/12/images/what-is-plc.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "A Programmable Logic Controller (PLC) is a rugged industrial computer that continuously reads sensor inputs, executes control logic, and operates motors, valves, and equipment in real-time with deterministic reliability forming the backbone of 80% of global industrial automation since Dick Morley's 1968 invention. Unlike general-purpose computers, PLCs are designed for decades of uninterrupted operation in extreme environments, and the biggest modern challenge is getting PLCs from different vendors to communicate with each other and with enterprise IT systems."
     },
     {
       "url": "/blog/2025/12/node-red-timer/",
@@ -816,7 +899,8 @@
       "tags": [
         "node-red"
       ],
-      "lastUpdated": "2025-12-29T00:00:00.000Z"
+      "lastUpdated": "2025-12-29T00:00:00.000Z",
+      "tldr": "Timers are foundational to industrial automation, used for tracking machine runtime, measuring downtime, scheduling maintenance, and coordinating sequential processes. This tutorial shows how to implement both stopwatch timers and countdown timers in Node-RED using dedicated nodes, with practical examples suited for production floor displays and operator terminals."
     },
     {
       "url": "/blog/2025/12/five-whys-root-cause-analysis-definition-examples/",
@@ -833,7 +917,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": "2025-12-23T00:00:00.000Z"
+      "lastUpdated": "2025-12-23T00:00:00.000Z",
+      "tldr": "The Five Whys is a root cause analysis technique developed at Toyota that involves repeatedly asking 'why' a problem occurred typically five times until you uncover a systemic, fixable cause rather than just a symptom. It works because it's fast, accessible to front-line workers without statistical training, and forces a single causal chain to its end. Applying it correctly prevents problems from recurring by targeting the process gaps, training deficiencies, or procedural weaknesses that allowed the failure in the first place."
     },
     {
       "url": "/blog/2025/12/what-is-teep/",
@@ -850,7 +935,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/12/flowfuse-release-2-25/",
@@ -869,7 +955,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/12/kafka-vs-mqtt/",
@@ -888,7 +975,8 @@
         "mqtt",
         "kafka"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/12/node-red-buffer-parser-industrial-data/",
@@ -905,7 +993,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Legacy industrial devices like Modbus sensors and PLCs communicate in raw binary buffers compact byte sequences where each position encodes a specific value rather than human-readable JSON, because binary is far more efficient on low-bandwidth serial links. Node-RED's Buffer Parser node lets you decode these buffers visually through configuration rather than writing custom JavaScript, handling byte offsets, endianness, data types, and scaling factors automatically."
     },
     {
       "url": "/blog/2025/12/getting-weather-data-in-node-red/",
@@ -922,7 +1011,8 @@
       "tags": [
         "node-red"
       ],
-      "lastUpdated": "2025-12-29T00:00:00.000Z"
+      "lastUpdated": "2025-12-29T00:00:00.000Z",
+      "tldr": "Building a live weather dashboard in Node-RED is an ideal beginner project that teaches how to connect to REST APIs, process JSON responses, and display data visually. This tutorial uses the free OpenWeatherMap API and FlowFuse Dashboard to create a real-time display with gauges, text, and charts that refreshes on a configurable interval."
     },
     {
       "url": "/blog/2025/12/read-s7-optimized-datablocks-flowfuse/",
@@ -937,9 +1027,11 @@
       "image": "/blog/2025/12/images/reading-s7-optimize-data-block.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "plc"
       ],
-      "lastUpdated": "2025-12-31T00:00:00.000Z"
+      "lastUpdated": "2025-12-31T00:00:00.000Z",
+      "tldr": "Siemens S7-1200 and S7-1500 PLCs use optimized data blocks by default, which rearrange variable memory layouts at compile time making traditional S7 protocol nodes that rely on fixed byte offsets unreliable. The solution is OPC UA, which reads variables by symbolic name rather than memory address; this guide shows step-by-step how to enable the OPC UA server in TIA Portal and read optimized data block variables reliably by name."
     },
     {
       "url": "/blog/2025/11/optimize-industrial-data-protocol-buffers/",
@@ -956,7 +1048,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/industrial-data-validation-guide/",
@@ -973,7 +1066,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/store-and-forward-edge-data-buffering/",
@@ -988,9 +1082,11 @@
       "image": "/blog/2025/11/images/store-and-forward.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/flowfuse-release-2-24/",
@@ -1010,7 +1106,8 @@
         "releases",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/building-hmi-for-equipment-control/",
@@ -1025,9 +1122,11 @@
       "image": "/blog/2025/11/images/building-a-web-hmi-for-factory.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/flowfuse+llm+mcp-equals-text-driven-operations/",
@@ -1046,7 +1145,8 @@
         "node-red",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/building-label-scanner-with-flowfuse/",
@@ -1063,7 +1163,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/csv-mqtt-database-dashboard-flowfuse/",
@@ -1078,9 +1179,11 @@
       "image": "/blog/2025/11/images/how-to-ingest-csv-logs.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "mqtt"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/11/ptc-kepware-thingworx-divestment/",
@@ -1101,7 +1204,8 @@
         "thingworx",
         "industrial-iot"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/plc-to-mqtt-using-flowfuse/",
@@ -1116,9 +1220,13 @@
       "image": "/blog/2025/10/images/plc-to-mqtt.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "modbus",
+        "mqtt",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/flowfuse-release-2-23/",
@@ -1138,7 +1246,8 @@
         "releases",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/how-to-log-plc-data-csv-files/",
@@ -1153,9 +1262,11 @@
       "image": "/blog/2025/10/images/log-plc-data-to-csv.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/introducing-flowfuse-expert/",
@@ -1173,7 +1284,8 @@
         "flowfuse",
         "AI"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/building-mcp-server-using-flowfuse/",
@@ -1191,7 +1303,8 @@
         "flowfuse",
         "AI"
       ],
-      "lastUpdated": "2025-02-06T00:00:00.000Z"
+      "lastUpdated": "2025-02-06T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/ai-on-flowfuse/",
@@ -1211,7 +1324,8 @@
         "post",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/custom-onnx-model/",
@@ -1229,7 +1343,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/using-ethernet-ip-with-flowfuse/",
@@ -1246,9 +1361,11 @@
       "tags": [
         "flowfuse",
         "node-red",
-        "post"
+        "post",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/node-red-revolution/",
@@ -1266,7 +1383,8 @@
         "flowfuse",
         "node-red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/the-ai-orchestration-hype/",
@@ -1285,7 +1403,8 @@
         "node-red",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/node-red-vs-flowfuse/",
@@ -1302,7 +1421,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/10/open-ai-agent-builder-versus-flowfuse/",
@@ -1321,7 +1441,8 @@
         "posts",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/using-modbus-with-flowfuse/",
@@ -1336,9 +1457,11 @@
       "image": "/blog/2025/09/images/modbus-rtu.png",
       "video": "",
       "tags": [
-        "flowfuse"
+        "flowfuse",
+        "modbus"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Modbus RTU is one of the most widely used industrial communication protocols, running over serial connections in a master-slave architecture where FlowFuse acts as master and devices such as sensors, PLCs, and meters act as slaves. This guide covers Modbus data types, register addressing conventions, and step-by-step setup of the node-red-contrib-modbus nodes in FlowFuse to read and write device data."
     },
     {
       "url": "/blog/2025/09/flowfuse-release-2-22/",
@@ -1350,14 +1473,15 @@
       "authors": [
         "greg-stoutenburg"
       ],
-      "image": "blog/2025/09/images/2.22-release.png",
+      "image": "/blog/2025/09/images/2.22-release.png",
       "video": "",
       "tags": [
         "flowfuse",
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/what-is-takt-time/",
@@ -1374,7 +1498,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": "2025-12-26T00:00:00.000Z"
+      "lastUpdated": "2025-12-26T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/installing-node-red/",
@@ -1392,7 +1517,8 @@
         "flowfuse",
         "node-red"
       ],
-      "lastUpdated": "2025-12-26T00:00:00.000Z"
+      "lastUpdated": "2025-12-26T00:00:00.000Z",
+      "tldr": "Installing Node-RED is straightforward, but running it reliably across production lines with PLCs and critical equipment requires enterprise capabilities that standalone Node-RED cannot provide. FlowFuse adds high availability, centralized device management, DevOps pipelines, secure remote access, and automated snapshots to make Node-RED production-ready at scale."
     },
     {
       "url": "/blog/2025/09/ai-assistant-flowfuse-tables/",
@@ -1410,7 +1536,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/integrating-lorawan-with-flowfuse-node-red/",
@@ -1427,7 +1554,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/poka-yoke-mistake-proofing/",
@@ -1444,7 +1572,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": "2025-12-30T00:00:00.000Z"
+      "lastUpdated": "2025-12-30T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/what-is-5s-checklist/",
@@ -1462,7 +1591,8 @@
         "flowfuse",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/",
@@ -1479,7 +1609,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": "2025-12-19T00:00:00.000Z"
+      "lastUpdated": "2025-12-19T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/preventive-maintenance-equipment-failure/",
@@ -1496,7 +1627,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/09/creating-pareto-chart/",
@@ -1515,7 +1647,8 @@
         "manufacturing",
         "data-analysis"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/flowfuse-node-red-api/",
@@ -1532,7 +1665,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/flowfuse-release-2-21/",
@@ -1552,7 +1686,8 @@
         "releases",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/pareto-chart-manufacturing-guide/",
@@ -1564,12 +1699,13 @@
       "authors": [
         "sumit-shinde"
       ],
-      "image": "blog/2025/08/images/pareto-chart-manufacturing-guide.png",
+      "image": "/blog/2025/08/images/pareto-chart-manufacturing-guide.png",
       "video": "",
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": "2025-12-29T00:00:00.000Z"
+      "lastUpdated": "2025-12-29T00:00:00.000Z",
+      "tldr": "A Pareto Chart is a quality control tool that combines a descending bar chart with a cumulative percentage line to visualize which problems defects, downtime causes, supplier issues account for the greatest impact, based on the 80/20 principle. Manufacturing teams use it to prioritize where to focus limited improvement resources for maximum return, and modern platforms like FlowFuse can generate Pareto charts automatically from real-time production data."
     },
     {
       "url": "/blog/2025/08/annual_billing/",
@@ -1587,7 +1723,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/orchestrating-virtual-power-plants-low-code-platforms/",
@@ -1604,7 +1741,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/time-series-dashboard-flowfuse-postgresql/",
@@ -1621,7 +1759,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/open-source-software-and-manufacturing/",
@@ -1633,13 +1772,14 @@
       "authors": [
         "zeger-jan-van-de-weg"
       ],
-      "image": "blog/2025/08/images/open-source-software-and-manufacturing.png",
+      "image": "/blog/2025/08/images/open-source-software-and-manufacturing.png",
       "video": "",
       "tags": [
         "flowfuse",
         "node-red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/advanced-opcua-real-time-subscriptions-alarms-historical-data/",
@@ -1657,7 +1797,8 @@
         "flowfuse",
         "opcua"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "Polling OPC UA tags every few seconds misses critical events and wastes bandwidth; OPC UA subscriptions solve this by monitoring values server-side and pushing notifications only when they change. This advanced tutorial covers four production-ready OPC UA features in Node-RED: subscriptions for instant value updates, event and alarm handling, historical data queries, and method calls for triggering complex equipment operations."
     },
     {
       "url": "/blog/2025/08/flowfuse-why-pricing-matters/",
@@ -1674,7 +1815,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/08/getting-started-with-flowfuse-tables/",
@@ -1691,7 +1833,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/07/flowfuse-release-2-20/",
@@ -1711,7 +1854,8 @@
         "releases",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/",
@@ -1728,7 +1872,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/07/quality-control-automation-spc-charts/",
@@ -1747,7 +1892,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/",
@@ -1759,13 +1905,15 @@
       "authors": [
         "sumit-shinde"
       ],
-      "image": "blog/2025/07/images/opcua-tutorial.png",
+      "image": "/blog/2025/07/images/opcua-tutorial.png",
       "video": "",
       "tags": [
         "flowfuse",
-        "opcua"
+        "opcua",
+        "plc"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "OPC UA is the industry-standard protocol that provides a universal language for connecting PLCs, SCADA systems, HMIs, and enterprise applications from any vendor. This hands-on tutorial shows how to use Node-RED and FlowFuse to connect to any OPC UA server, browse available tags, and read and write real-time values from industrial equipment using the OPC UA Browser node for discovering Node IDs."
     },
     {
       "url": "/blog/2025/07/connect-legacy-equipment-serial-flowfuse/",
@@ -1777,13 +1925,14 @@
       "authors": [
         "sumit-shinde"
       ],
-      "image": "blog/2025/07/images/connect-serial-port-node-red-ff.png",
+      "image": "/blog/2025/07/images/connect-serial-port-node-red-ff.png",
       "video": "",
       "tags": [
         "flowfuse",
         "opcua"
       ],
-      "lastUpdated": "2025-12-10T00:00:00.000Z"
+      "lastUpdated": "2025-12-10T00:00:00.000Z",
+      "tldr": "Many factory machines communicate via RS-232, RS-422, or RS-485 serial interfaces and can be integrated with modern systems using Node-RED and FlowFuse without any hardware modifications. This guide covers serial communication fundamentals, installing the node-red-contrib-serialport nodes, and building flows to collect and monitor data from legacy equipment in real time."
     },
     {
       "url": "/blog/2025/07/flowfuse-release-2-19/",
@@ -1802,7 +1951,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/07/smart-manufacturing-order-panel-flowfuse/",
@@ -1820,7 +1970,8 @@
         "flowfuse",
         "mes"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/07/certified-nodes-v2/",
@@ -1832,7 +1983,7 @@
       "authors": [
         "zeger-jan-van-de-weg"
       ],
-      "image": "blog/2025/07/images/certified-nodes-v2.png",
+      "image": "/blog/2025/07/images/certified-nodes-v2.png",
       "video": "",
       "tags": [
         "flowfuse",
@@ -1840,7 +1991,8 @@
         "certified-nodes",
         "developers"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/building-andon-task-manager-dashboard-with-ff/",
@@ -1857,7 +2009,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/shop-floor-kpis-for-mes/",
@@ -1875,7 +2028,8 @@
         "flowfuse",
         "mes"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/structuring-storing-data-mes-integration/",
@@ -1893,7 +2047,8 @@
         "flowfuse",
         "mes"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/data-acquisition-for-mes/",
@@ -1911,7 +2066,8 @@
         "flowfuse",
         "mes"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/announcing-node-red-con-2025/",
@@ -1931,7 +2087,8 @@
         "community",
         "node-red"
       ],
-      "lastUpdated": "2025-08-21T00:00:00.000Z"
+      "lastUpdated": "2025-08-21T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/flowfuse-forms-easy-data-collection-factory-floor/",
@@ -1948,7 +2105,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/optimizing-operations-improve-industrial-operations-with-flowfuse/",
@@ -1967,7 +2125,8 @@
         "news",
         "funding"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/flowfuse-release-2-18/",
@@ -1987,7 +2146,8 @@
         "releases",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/what-is-mes/",
@@ -2005,7 +2165,8 @@
         "flowfuse",
         "mes"
       ],
-      "lastUpdated": "2025-12-29T00:00:00.000Z"
+      "lastUpdated": "2025-12-29T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/",
@@ -2022,7 +2183,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/05/designing-flexible-cron-schedules-in-flowfuse-with-node-red/",
@@ -2040,7 +2202,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": "2025-12-31T00:00:00.000Z"
+      "lastUpdated": "2025-12-31T00:00:00.000Z",
+      "tldr": "Node-RED's built-in Inject node handles simple intervals and basic time triggers, but complex scheduling requirements such as running only on weekdays, skipping holidays, or firing at a specific time on the last Friday of each month require the node-red-contrib-cron-plus node. This guide walks through using cron-plus in FlowFuse to build static cron expressions, solar event triggers (sunrise/sunset), date-specific schedules, and dynamically managed schedules that can be modified at runtime."
     },
     {
       "url": "/blog/2025/05/displaying-embeded-webpages-on-node-red-dashboard/",
@@ -2057,7 +2220,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/05/building-andon-task-manager-with-ff/",
@@ -2074,7 +2238,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/05/flowfuse-release-2-17/",
@@ -2093,7 +2258,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/05/how-to-generate-pdf-reports-using-node-red/",
@@ -2110,7 +2276,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/",
@@ -2127,7 +2294,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/04/flowfuse-release-2-16/",
@@ -2146,7 +2314,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/04/building-oee-dashboard-with-flowfuse-2/",
@@ -2163,7 +2332,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/",
@@ -2180,7 +2350,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/03/managing-mqtt-connections-at-scale-in-flowfuse/",
@@ -2198,7 +2369,8 @@
         "flowfuse",
         "mqtt"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/03/flowfuse-release-2-15/",
@@ -2217,7 +2389,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/02/flowfuse-release-2-14/",
@@ -2236,7 +2409,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/02/node-red-academy-announcement/",
@@ -2257,7 +2431,8 @@
         "Node-RED Academy",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/01/designing-topic-hierarchy-for-your-uns/",
@@ -2276,7 +2451,8 @@
         "unified-namespace",
         "mqtt"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/01/how-to-choose-right-iot-device-management-tool/",
@@ -2293,7 +2469,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/01/why-flowfuse-is-complete-toolkit-for-uns/",
@@ -2312,7 +2489,8 @@
         "flowfuse features",
         "unified-namespace"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/",
@@ -2329,9 +2507,11 @@
       "video": "",
       "tags": [
         "node-red",
-        "flowfuse"
+        "flowfuse",
+        "plc"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This guide walks through integrating Siemens S7 PLCs (S7-1200/1500) with Node-RED using the S7 protocol over ISO/TCP, covering prerequisites such as enabling PUT/GET communication, disabling optimized block access, and installing the FlowFuse Device Agent. Step-by-step instructions show how to read data from and write data to PLC data blocks and physical outputs, enabling remote monitoring and control without deep PLC expertise."
     },
     {
       "url": "/blog/2025/01/flowfuse-release-2-13/",
@@ -2350,7 +2530,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/01/mqtt-frontrunner-for-uns/",
@@ -2369,7 +2550,8 @@
         "uns",
         "unified-namespace"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/12/flowfuse-release-2-12/",
@@ -2388,7 +2570,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": "2025-08-07T00:00:00.000Z"
+      "lastUpdated": "2025-08-07T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/12/why-uns-need-data-modeling/",
@@ -2407,7 +2590,8 @@
         "unified-namespace",
         "data modeling"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/12/flowfuse-team-collaboration/",
@@ -2425,7 +2609,8 @@
         "flowfuse",
         "flowfuse features"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/12/publishing-modbus-data-to-uns/",
@@ -2441,9 +2626,11 @@
       "video": "",
       "tags": [
         "flowfuse",
-        "uns"
+        "uns",
+        "modbus"
       ],
-      "lastUpdated": "2025-12-19T00:00:00.000Z"
+      "lastUpdated": "2025-12-19T00:00:00.000Z",
+      "tldr": "Bridging Modbus to MQTT with Node-RED solves the OT/IT integration gap by translating the Modbus master-slave polling model into an MQTT publish-subscribe architecture. The guide walks through reading Modbus holding registers, transforming raw register values into human-readable metrics, and publishing them to a Unified Namespace via FlowFuse's integrated MQTT broker."
     },
     {
       "url": "/blog/2024/11/building-uns-with-flowfuse/",
@@ -2462,7 +2649,8 @@
         "unified-namespace",
         "mqtt"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/introducing-industrial-visionaries-podcast/",
@@ -2481,7 +2669,8 @@
         "flowfuse",
         "Podcast"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/why-point-to-point-connection-is-dead/",
@@ -2500,7 +2689,8 @@
         "mqtt",
         "unified-namespace"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/getting-the-most-out-of-mqtt-for-industrial-iot/",
@@ -2519,7 +2709,8 @@
         "flowfuse",
         "mqtt"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/flowfuse-release-2-11/",
@@ -2538,7 +2729,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/why-pub-sub-in-uns/",
@@ -2557,7 +2749,8 @@
         "mqtt",
         "unified-namespace"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/esp32-with-node-red/",
@@ -2575,7 +2768,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This tutorial walks through connecting an ESP32 microcontroller to Node-RED over MQTT using the FlowFuse broker, then building a simple dashboard to remotely control the ESP32's LED. The ESP32 is programmed via the Arduino IDE to subscribe to an MQTT topic and act on incoming commands from Node-RED."
     },
     {
       "url": "/blog/2024/11/migrating-from-node-red-to-flowfuse/",
@@ -2593,7 +2787,8 @@
         "flowfuse",
         "flowfuse features"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/device-agent-as-service-on-mac/",
@@ -2612,7 +2807,8 @@
         "flowfuse",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/11/dashboard-new-group-type-app-icon-and-charts/",
@@ -2632,7 +2828,8 @@
         "flowfuse",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/announcement-mqtt-broker/",
@@ -2650,9 +2847,11 @@
         "posts",
         "news",
         "flowfuse",
-        "node-red"
+        "node-red",
+        "mqtt"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/exploring-flowfuse-security-features/",
@@ -2672,7 +2871,8 @@
         "flowfuse features",
         "node-red security"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/flowfuse-release-2-10/",
@@ -2691,7 +2891,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/",
@@ -2709,7 +2910,8 @@
         "post",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/exploring-flowfuse-sbom-feature/",
@@ -2731,7 +2933,8 @@
         "Sbom in the industrial applications",
         "sbom open source"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/dashboard-new-group-type-app-icon-and-charts/",
@@ -2751,7 +2954,8 @@
         "flowfuse",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/quick-ways-to-write-functions-in-node-red/",
@@ -2770,7 +2974,8 @@
         "node-red function node",
         "node red function node"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/exploring-flowfuse-project-nodes/",
@@ -2791,7 +2996,8 @@
         "node red mqtt",
         "node red communication protocols"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/",
@@ -2811,7 +3017,8 @@
         "node red devops",
         "node red devops pipeline"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/09/flowfuse-release-2-9/",
@@ -2830,7 +3037,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/09/node-red-version-control-with-snapshots/",
@@ -2848,7 +3056,8 @@
       "tags": [
         "flowfuse"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/09/how-to-scrape-web-data-with-node-red/",
@@ -2866,7 +3075,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "Node-RED can be used to scrape data from websites that don't expose an API, by sending HTTP GET requests and parsing the returned HTML. This guide walks through building a complete web scraper in Node-RED from sending requests and extracting data with CSS selectors to storing the results using a public scraping-practice site as the example."
     },
     {
       "url": "/blog/2024/09/how-to-use-subflow-in-node-red/",
@@ -2884,7 +3094,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "Subflows in Node-RED let you group reusable logic into a single custom node, similar to libraries or modules in traditional programming. This guide covers how to create a subflow from an existing flow, add configurable environment variable properties to it, and use it across multiple places in your Node-RED projects to eliminate duplication."
     },
     {
       "url": "/blog/2024/08/flowfuse-2-8-release/",
@@ -2903,7 +3114,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/08/dashboard-new-layout-widgets-and-gauges/",
@@ -2923,7 +3135,8 @@
         "flowfuse",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/08/using-mqtt-sparkplugb-with-node-red/",
@@ -2942,7 +3155,8 @@
         "node-red",
         "mqtt"
       ],
-      "lastUpdated": "2025-12-22T00:00:00.000Z"
+      "lastUpdated": "2025-12-22T00:00:00.000Z",
+      "tldr": "MQTT Sparkplug B extends plain MQTT with standardized topic namespaces, Protocol Buffer payloads, and lifecycle state messages (birth/death) to solve the integration chaos common in industrial IoT. This guide explains the specification and shows how to use the node-red-contrib-mqtt-sparkplug-plus package to publish and receive Sparkplug B messages in Node-RED."
     },
     {
       "url": "/blog/2024/08/opentelemetry-with-node-red/",
@@ -2961,7 +3175,8 @@
         "node-red",
         "node-red tips"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/08/opc-ua-to-mqtt-with-node-red/",
@@ -2981,7 +3196,8 @@
         "mqtt",
         "opcua"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/08/customise-theming-in-your-dashboards/",
@@ -3000,7 +3216,8 @@
         "dashboard",
         "dashboard theming"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "FlowFuse Dashboard now supports deep visual customization including custom headers, themes, and layout modifications. Using Teleports inside the ui-template node, you can inject custom elements into specific dashboard areas without complex CSS. This guide covers adding header buttons, custom logos, modifying color themes, and adjusting group and page padding."
     },
     {
       "url": "/blog/2024/08/comparing-dashboard-2-with-uibuilder/",
@@ -3020,7 +3237,8 @@
         "dashboard",
         "comparing node-red dashboards"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "FlowFuse Dashboard (Dashboard 2.0) and UI-Builder are the two most popular Node-RED dashboard solutions after the deprecation of Node-RED Dashboard 1.0. FlowFuse Dashboard offers an easier low-code setup, a guided migration path from Dashboard 1.0, and active development, while UI-Builder requires deeper coding knowledge and a full rebuild when migrating."
     },
     {
       "url": "/blog/2024/08/flowfuse-2-7-release/",
@@ -3039,7 +3257,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/07/how-to-setup-sso-ldap-for-the-node-red/",
@@ -3059,7 +3278,8 @@
         "flowfuse features",
         "sso"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/07/dashboard-new-charts/",
@@ -3079,7 +3299,8 @@
         "flowfuse",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/07/evolution-of-technology-impact-on-job-roles-and-companies/",
@@ -3099,7 +3320,8 @@
         "low-code",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/07/building-on-flowfuse-devices/",
@@ -3119,7 +3341,8 @@
         "node-red",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/",
@@ -3139,7 +3362,8 @@
         "node-red security",
         "sso"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/07/deploying-flowfuse-with-docker/",
@@ -3158,7 +3382,8 @@
         "flowfuse",
         "self hosted"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/07/calling-python-script-from-node-red/",
@@ -3177,7 +3402,8 @@
         "node-red",
         "node red python"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "Node-RED's Exec node can run any Python script as a system command, passing arguments and capturing stdout as message output. This approach lets you combine Node-RED's visual flow logic with Python's rich library ecosystem for tasks like sensor data processing, machine learning, or any advanced computation."
     },
     {
       "url": "/blog/2024/07/flowfuse-2-6-release/",
@@ -3202,7 +3428,8 @@
         "blueprint",
         "Node-RED"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/06/dashboard-1-deprecated/",
@@ -3224,7 +3451,8 @@
         "dashboard",
         "FlowFuse Dashboard"
       ],
-      "lastUpdated": "2026-02-23T00:00:00.000Z"
+      "lastUpdated": "2026-02-23T00:00:00.000Z",
+      "tldr": "Node-RED Dashboard (Dashboard 1.0) has been formally deprecated, with no further development planned. FlowFuse Dashboard (Dashboard 2.0) is its natural successor, offering multi-tenancy, responsive layouts, new widget nodes, and PWA support. This post covers what's new, what's planned, and how to get started with FlowFuse Dashboard."
     },
     {
       "url": "/blog/2024/06/dashboard-multi-tenancy/",
@@ -3244,7 +3472,8 @@
         "flowfuse",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/06/interacting-with-google-sheet-from-node-red/",
@@ -3265,7 +3494,8 @@
         "google sheet",
         "how to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/06/node-red-4-on-flowfuse-cloud/",
@@ -3285,7 +3515,8 @@
         "Node-RED",
         "FlowFuse Cloud"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/06/flowfuse-2-5-release/",
@@ -3308,7 +3539,8 @@
         "blueprint",
         "Node-RED"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/06/how-to-use-mqtt-in-node-red/",
@@ -3327,7 +3559,8 @@
         "node-red",
         "mqtt"
       ],
-      "lastUpdated": "2025-12-18T00:00:00.000Z"
+      "lastUpdated": "2025-12-18T00:00:00.000Z",
+      "tldr": "Node-RED's built-in mqtt-in and mqtt-out nodes make it straightforward to connect to any MQTT broker, subscribe to topics with wildcard support, and publish data. Dynamic subscriptions, TLS security, environment-variable credentials, and a well-structured topic hierarchy are the key practices for reliable, production-grade MQTT flows."
     },
     {
       "url": "/blog/2024/05/exploring-node-red-dashboard-2-widgets/",
@@ -3345,7 +3578,8 @@
         "posts",
         "dashboard"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/05/why-you-need-a-low-code-platform/",
@@ -3363,7 +3597,8 @@
         "flowfuse",
         "low-code"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/05/node-red-mind-stack-with-flowfuse/",
@@ -3386,7 +3621,8 @@
         "influx",
         "dashboards"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/05/product-strategy-updates/",
@@ -3404,7 +3640,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/05/mapping-location-on-dashboard-2/",
@@ -3424,7 +3661,8 @@
         "fleet tracking",
         "location"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This guide shows how to build a real-time fleet tracking dashboard in Node-RED Dashboard 2.0 using the node-red-contrib-web-worldmap node. It covers retrieving live vehicle location data from a public API, formatting it for the Worldmap node, and embedding the interactive map inside a Dashboard 2.0 iframe widget."
     },
     {
       "url": "/blog/2024/05/node-red-dashboard-2-layout-navigation-styling/",
@@ -3445,7 +3683,8 @@
         "customizing dashboard",
         "dashboard 2.0"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "Node-RED Dashboard 2.0 offers three page layouts (Grid, Notebook, Fixed) and five navigation sidebar styles, giving full control over how dashboards look and behave. Custom themes and CSS via the ui-template node allow further visual customization, making it easy to build polished, branded interfaces."
     },
     {
       "url": "/blog/2024/05/flowfuse-2-4-release/",
@@ -3464,7 +3703,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/",
@@ -3482,7 +3722,8 @@
         "posts",
         "node-red"
       ],
-      "lastUpdated": "2025-12-09T00:00:00.000Z"
+      "lastUpdated": "2025-12-09T00:00:00.000Z",
+      "tldr": "Node-RED provides four variable types node, flow, global, and environment each with different scope and purpose. Context variables store application state at runtime (lost on restart unless persistent storage is used), while environment variables securely handle configuration and secrets. Choosing the right scope and using FlowFuse's persistent storage ensures reliable, production-grade state management."
     },
     {
       "url": "/blog/2024/04/dashboard-milestones-pwa-new-components/",
@@ -3507,7 +3748,8 @@
         "progressive web app",
         "Vuetify"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/how-to-build-an-application-with-node-red-dashboard-2/",
@@ -3526,7 +3768,8 @@
         "node-red",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/flowfuse-dedicated/",
@@ -3546,7 +3789,8 @@
         "flowfuse",
         "dedicated"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/flowfuse-at-hannover-messe-node-red/",
@@ -3567,7 +3811,8 @@
         "hannover messe",
         "conference announcement"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/node-red-multiplayer/",
@@ -3588,7 +3833,8 @@
         "collaborative editing",
         "concurrent editing"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/building-an-admin-panel-in-node-red-with-dashboard-2/",
@@ -3608,7 +3854,8 @@
         "admin dashboard",
         "admin-only page"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/displaying-logged-in-users-on-dashboard/",
@@ -3626,7 +3873,8 @@
         "posts",
         "dashboard 2.0"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/",
@@ -3646,7 +3894,8 @@
         "RBAC",
         "Role Based Access Control"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/04/node-red-architecture/",
@@ -3669,7 +3918,8 @@
         "ISA 99",
         "unified-namespace"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/using-kafka-with-node-red/",
@@ -3688,7 +3938,8 @@
         "node-red",
         "kafka"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/flowfuse-gallarus-strategic-partnership-to-accelerate-industry-4-adoption/",
@@ -3709,7 +3960,8 @@
         "Indusstry 4.0",
         "digital Transformation"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/dashboard-getting-started/",
@@ -3732,7 +3984,8 @@
         "nodered dashboard beginners guide",
         "nodered dashboard basics"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This getting-started guide walks new and experienced Node-RED users through installing FlowFuse Dashboard 2.0 and building their first dashboard. It covers installing the package via the Palette Manager, adding widgets to a canvas, and understanding the core building blocks ui-base, ui-page, ui-group, and ui-theme."
     },
     {
       "url": "/blog/2024/03/http-authentication-node-red-with-flowfuse/",
@@ -3753,7 +4006,8 @@
         "http node",
         "api"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/scaling-node-red-devices-vs-flowfuse-instance/",
@@ -3773,7 +4027,8 @@
         "device instance",
         "scaling node-red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/using-kafka-in-manufacturing/",
@@ -3794,7 +4049,8 @@
         "Manufacturing",
         "Real-time data streaming"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/flowfuse-self-hosted-starter-resource-limits/",
@@ -3812,7 +4068,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/low-code-is-better/",
@@ -3832,7 +4089,8 @@
         "low-code",
         "citizen development"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/looking-towards-node-red-4/",
@@ -3851,7 +4109,8 @@
         "flowfuse",
         "node-red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/03/installing-operating-node-red-behind-firewall/",
@@ -3871,7 +4130,8 @@
         "node-red",
         "vpn"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/history-of-nodered/",
@@ -3883,7 +4143,7 @@
       "authors": [
         "nick-oleary"
       ],
-      "image": "blog/2024/02/images/history-of-node-red.png",
+      "image": "/blog/2024/02/images/history-of-node-red.png",
       "video": "",
       "tags": [
         "posts",
@@ -3892,7 +4152,8 @@
         "Node-RED",
         "Node Red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/why-citizen-development-platforms/",
@@ -3911,7 +4172,8 @@
         "flowfuse",
         "citizen-development"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/taking-it-further-with-node-red/",
@@ -3930,7 +4192,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/node-red-unified-namespace-architecture/",
@@ -3949,7 +4212,8 @@
         "flowfuse",
         "unified-namespace"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/connect-node-red-to-kepware-opc/",
@@ -3961,13 +4225,15 @@
       "authors": [
         "grey-dziuba"
       ],
-      "image": "blog/2024/02/images/node-red-to-kepware.png",
+      "image": "/blog/2024/02/images/node-red-to-kepware.png",
       "video": "",
       "tags": [
         "posts",
-        "flowfuse"
+        "flowfuse",
+        "opcua"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/node-red-perfect-adapter-middleware-uns/",
@@ -3987,7 +4253,8 @@
         "flowfuse",
         "unified-namespace"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/software-development-in-node-red/",
@@ -4005,7 +4272,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/02/professional-services-for-node-red/",
@@ -4017,13 +4285,14 @@
       "authors": [
         "grey-dziuba"
       ],
-      "image": "blog/2024/01/images/professional-services-for-your-node-red.png",
+      "image": "/blog/2024/01/images/professional-services-for-your-node-red.png",
       "video": "",
       "tags": [
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/revolutionizing-manufacturing-impact-ai-chatgpt-technologies/",
@@ -4042,7 +4311,8 @@
         "flowfuse",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/unified-namespace-when-not-to-use/",
@@ -4054,14 +4324,15 @@
       "authors": [
         "zeger-jan-van-de-weg"
       ],
-      "image": "blog/2024/01/images/when-not-to-use-the-uns.png",
+      "image": "/blog/2024/01/images/when-not-to-use-the-uns.png",
       "video": "",
       "tags": [
         "posts",
         "flowfuse",
         "unified-namespace"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/how-to-deploy-node-red-with-flowfuse-to-balenacloud/",
@@ -4073,14 +4344,15 @@
       "authors": [
         "grey-dziuba"
       ],
-      "image": "blog/2024/01/images/balena-and-flowfuse.png",
+      "image": "/blog/2024/01/images/balena-and-flowfuse.png",
       "video": "",
       "tags": [
         "posts",
         "flowfuse",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/speech-driven-chatbot-with-node-red/",
@@ -4101,7 +4373,8 @@
         "virtual assistant",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/dashboard-2-ga/",
@@ -4122,7 +4395,8 @@
         "changelog",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/dashboard-2-multi-user/",
@@ -4143,7 +4417,8 @@
         "changelog",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/sentiment-analysis-with-node-red/",
@@ -4164,7 +4439,8 @@
         "sentiment analysis",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/unified-namespace-what-broker/",
@@ -4183,7 +4459,8 @@
         "flowfuse",
         "unified-namespace"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/flowfuse-release-2-0/",
@@ -4203,7 +4480,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/capture-data-edge-with-node-red-flowfuse/",
@@ -4223,7 +4501,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/soc2/",
@@ -4242,7 +4521,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/import-a-file/",
@@ -4261,7 +4541,8 @@
         "flowfuse",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2024/01/send-a-file/",
@@ -4280,7 +4561,8 @@
         "flowfuse",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/12/unified-namespace-data-modelling/",
@@ -4299,7 +4581,8 @@
         "flowfuse",
         "unified-namespace"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/12/flowfuse-year-review-2023/",
@@ -4317,7 +4600,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/12/introduction-to-unified-namespace/",
@@ -4336,7 +4620,8 @@
         "flowfuse",
         "unified-namespace"
       ],
-      "lastUpdated": "2025-12-24T00:00:00.000Z"
+      "lastUpdated": "2025-12-24T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/12/device-agent-as-a-windows-service/",
@@ -4357,7 +4642,8 @@
         "flowfuse",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/12/dashboard-0-10-0/",
@@ -4378,7 +4664,8 @@
         "changelog",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/12/ai-use-cases/",
@@ -4396,7 +4683,8 @@
         "posts",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/device-agent-balena/",
@@ -4415,7 +4703,8 @@
         "device",
         "balena"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/dashboard-0-8-0/",
@@ -4437,7 +4726,8 @@
         "changelog",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/ai-assistant/",
@@ -4459,7 +4749,8 @@
         "openai",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/chatgpt-gpt/",
@@ -4481,7 +4772,8 @@
         "chatgpt",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/dashboard-2.0-user-tracking/",
@@ -4500,7 +4792,8 @@
         "dashboard",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/community-news-11/",
@@ -4518,7 +4811,8 @@
         "posts",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/dashboard-0-7/",
@@ -4539,7 +4833,8 @@
         "changelog",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/11/meet-us-at-sps-nuremberg/",
@@ -4557,7 +4852,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/citizen-development/",
@@ -4569,14 +4865,15 @@
       "authors": [
         "marian-demme"
       ],
-      "image": "blog/2023/10/images/image-citizen-developers.png",
+      "image": "/blog/2023/10/images/image-citizen-developers.png",
       "video": "",
       "tags": [
         "posts",
         "flowfuse",
         "citizen-development"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/certified-nodes/",
@@ -4595,7 +4892,8 @@
         "releases",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/mes-build-buy/",
@@ -4615,7 +4913,8 @@
         "community",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/service-disruption-report-2023-10-11/",
@@ -4634,7 +4933,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/blueprints/",
@@ -4653,7 +4953,8 @@
         "releases",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/dashboard-integrations/",
@@ -4674,7 +4975,8 @@
         "changelog",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/community-news-10/",
@@ -4692,7 +4994,8 @@
         "posts",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/custom-vuetify-components-dashboard/",
@@ -4704,7 +5007,7 @@
       "authors": [
         "zeger-jan-van-de-weg"
       ],
-      "image": "blog/2023/10/images/tile-blog-custom-vuetify-components-for-Dashboard.png",
+      "image": "/blog/2023/10/images/tile-blog-custom-vuetify-components-for-Dashboard.png",
       "video": "",
       "tags": [
         "posts",
@@ -4712,7 +5015,8 @@
         "node-red",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/10/use-private-custom-nodes-with-flowfuse/",
@@ -4725,13 +5029,14 @@
         "marian-demme",
         "ben-hardill"
       ],
-      "image": "blog/2023/10/images/tile-blog-private-custom-nodes-tile.png",
+      "image": "/blog/2023/10/images/tile-blog-private-custom-nodes-tile.png",
       "video": "",
       "tags": [
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/rebranding-our-components/",
@@ -4750,7 +5055,8 @@
         "community",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/chatgpt-for-node-red-developers/",
@@ -4762,7 +5068,7 @@
       "authors": [
         "zeger-jan-van-de-weg"
       ],
-      "image": "blog/2023/09/images/chatgpt-node-red-dx-tile.png",
+      "image": "/blog/2023/09/images/chatgpt-node-red-dx-tile.png",
       "video": "",
       "tags": [
         "posts",
@@ -4770,7 +5076,8 @@
         "chatgpt",
         "ai"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/flow-viewer/",
@@ -4791,7 +5098,8 @@
         "flowfuse",
         "node-red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/modernize-your-legacy-industrial-data-part2/",
@@ -4810,7 +5118,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/modernize-your-legacy-industrial-data/",
@@ -4829,7 +5138,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/tulip-event-report/",
@@ -4841,13 +5151,14 @@
       "authors": [
         "ian-skerrett"
       ],
-      "image": "blog/2023/09/images/operation-calling.png",
+      "image": "/blog/2023/09/images/operation-calling.png",
       "video": "",
       "tags": [
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/community-news-09/",
@@ -4865,7 +5176,8 @@
         "posts",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/bosch-rexroth-announce/",
@@ -4877,14 +5189,15 @@
       "authors": [
         "ian-skerrett"
       ],
-      "image": "blog/2023/09/images/bosch-rexroth-announce.png",
+      "image": "/blog/2023/09/images/bosch-rexroth-announce.png",
       "video": "",
       "tags": [
         "posts",
         "news",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/09/dashboard-notebook-layout/",
@@ -4905,7 +5218,8 @@
         "changelog",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/flowfuse-1-11-release/",
@@ -4924,7 +5238,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/new-starter-tier/",
@@ -4936,14 +5251,15 @@
       "authors": [
         "nick-oleary"
       ],
-      "image": "blog/2023/08/images/ff-cloud-starter-package.png",
+      "image": "/blog/2023/08/images/ff-cloud-starter-package.png",
       "video": "",
       "tags": [
         "posts",
         "news",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/aws-marketplace-announce/",
@@ -4955,14 +5271,15 @@
       "authors": [
         "ian-skerrett"
       ],
-      "image": "blog/2023/08/images/flowfuse-aws.png",
+      "image": "/blog/2023/08/images/flowfuse-aws.png",
       "video": "",
       "tags": [
         "posts",
         "news",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/open-source-is-a-tier-not-competition/",
@@ -4980,7 +5297,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/flowforge-is-now-flowfuse/",
@@ -4999,7 +5317,8 @@
         "community",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": "FlowForge is rebranding to FlowFuse following a trademark challenge, with the new name chosen to better reflect the company's mission of fusing data, processes, and technologies together. The product, platform, and cloud service remain unchanged; the rebrand will roll out across the website, social media, and product releases over the following weeks."
     },
     {
       "url": "/blog/2023/08/dashboard-community-update/",
@@ -5019,7 +5338,8 @@
         "community",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/",
@@ -5031,14 +5351,15 @@
       "authors": [
         "marian-demme"
       ],
-      "image": "blog/2023/08/images/UNS/UNS-Headline.svg",
+      "image": "/blog/2023/08/images/UNS/UNS-Headline.svg",
       "video": "",
       "tags": [
         "posts",
         "flowfuse",
         "unified-namespace"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/community-news-08/",
@@ -5056,7 +5377,8 @@
         "posts",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/08/flowforge-1-10-release/",
@@ -5075,7 +5397,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/07/dashboard-0-1-release/",
@@ -5095,7 +5418,8 @@
         "releases",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/",
@@ -5107,15 +5431,16 @@
       "authors": [
         "richard-meyer"
       ],
-      "image": "blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png",
+      "image": "/blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png",
       "video": "",
       "tags": [
         "posts",
         "flowfuse",
         "node-red",
-        "OPC-UA"
+        "opcua"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This part of the OPC UA series shows how to build an interactive Node-RED dashboard that connects to a third-party OPC UA server to browse the address space, read and write values, and display alarms and events. Complete flow source code is provided, making it a practical starting point for production OPC UA client applications."
     },
     {
       "url": "/blog/2023/07/flowforge-1-9-3-release/",
@@ -5134,7 +5459,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/07/images-in-node-red-dashboards/",
@@ -5146,7 +5472,7 @@
       "authors": [
         "rob-marcer"
       ],
-      "image": "blog/2023/07/images/add-images-in-node-red-header.png",
+      "image": "/blog/2023/07/images/add-images-in-node-red-header.png",
       "video": "",
       "tags": [
         "posts",
@@ -5154,7 +5480,8 @@
         "node-red",
         "dashboard"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This guide covers multiple methods for displaying images in Node-RED dashboards, including pulling from URLs, encoding files as base64, and serving them via FlowFuse's Static Asset Service. The Static Asset Service approach is the simplest option for containerized environments like Docker or Kubernetes where writing to the local filesystem is not practical."
     },
     {
       "url": "/blog/2023/07/influxdb-historical-data/",
@@ -5166,13 +5493,14 @@
       "authors": [
         "andrew-lynch"
       ],
-      "image": "blog/2023/07/images/historical-data-dashboard.png",
+      "image": "/blog/2023/07/images/historical-data-dashboard.png",
       "video": "",
       "tags": [
         "posts",
         "node-red"
       ],
-      "lastUpdated": "2025-07-14T00:00:00.000Z"
+      "lastUpdated": "2025-07-14T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/",
@@ -5184,7 +5512,7 @@
       "authors": [
         "richard-meyer"
       ],
-      "image": "blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png",
+      "image": "/blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png",
       "video": "",
       "tags": [
         "posts",
@@ -5192,7 +5520,8 @@
         "opcua",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This first installment in an OPC UA series explains the OPC UA information model how devices are represented as structured node objects rather than raw register values and walks through deploying a working OPC UA server flow in Node-RED using the node-red-contrib-opcua package. Understanding the information model and address-space hierarchy is the key prerequisite before building OPC UA clients or integrations."
     },
     {
       "url": "/blog/2023/07/community-news-07/",
@@ -5210,7 +5539,8 @@
         "posts",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/07/flowforge-1-9-release/",
@@ -5229,7 +5559,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/06/dashboard-announcement/",
@@ -5250,7 +5581,8 @@
         "nodered dashboard announcement",
         "nodered dashboard depreciated"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/",
@@ -5262,7 +5594,7 @@
       "authors": [
         "richard-meyer"
       ],
-      "image": "blog/2023/06/images/ethip-to-S7/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter.png",
+      "image": "/blog/2023/06/images/ethip-to-S7/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter.png",
       "video": "dteXgcBXUnk",
       "tags": [
         "posts",
@@ -5276,7 +5608,8 @@
         "nodered s7",
         "node red s7"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/06/introducing-the-flowforge-community-forum/",
@@ -5294,7 +5627,8 @@
         "news",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/06/community-news-06/",
@@ -5312,7 +5646,8 @@
         "posts",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/06/flowforge-1-8-released/",
@@ -5331,7 +5666,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/06/import-modules/",
@@ -5349,7 +5685,8 @@
       "tags": [
         "posts"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/05/bringing-high-availability-to-node-red/",
@@ -5368,7 +5705,8 @@
         "node-red",
         "high availablity"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/06/3-quick-node-red-tips-7/",
@@ -5389,7 +5727,8 @@
         "dashboard",
         "node-red tips"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/05/node-red-community-survey-results/",
@@ -5408,7 +5747,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/05/persisting-chart-data-in-node-red/",
@@ -5428,7 +5768,8 @@
         "how-to",
         "dashboard"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/05/integrating-modbus-with-node-red/",
@@ -5445,9 +5786,11 @@
       "tags": [
         "posts",
         "node-red",
-        "how-to"
+        "how-to",
+        "modbus"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "Integrating Modbus with Node-RED requires more than just connecting nodes industrial reliability demands watchdog timers for auto-recovery, conservative poll rates to avoid overloading legacy networks, grouped coil/register addressing for efficiency, and correct handling of multi-register data types like 32-bit floats. This article walks through each best practice with example flows and node configurations."
     },
     {
       "url": "/blog/2023/05/flowforge-1-7-released/",
@@ -5466,7 +5809,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/05/community-news-05/",
@@ -5485,7 +5829,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/05/chatgpt-nodered-fcn-node/",
@@ -5508,7 +5853,8 @@
         "chatgpt",
         "ai"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/05/device-agent-as-a-service/",
@@ -5528,7 +5874,8 @@
         "how-to",
         "raspberry pi"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/04/3-quick-node-red-tips-6/",
@@ -5547,7 +5894,8 @@
         "node-red subflow",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/04/hannover-messe/",
@@ -5567,7 +5915,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/04/flowforge-1-6-released/",
@@ -5586,7 +5935,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/04/nodered-community-health/",
@@ -5606,7 +5956,8 @@
         "community",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/04/community-news-04/",
@@ -5625,7 +5976,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/04/securing-node-red-in-production/",
@@ -5645,7 +5997,8 @@
         "how-to",
         "securing node-red"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": "This step-by-step guide covers the essential security measures for Node-RED deployments: adding username/password authentication via settings.js, restricting LAN access, enabling HTTPS with TLS certificates, and using FlowFuse Cloud as a managed alternative that handles these concerns automatically. Even hobby deployments benefit from these protections to prevent unauthorized access to the Node-RED editor."
     },
     {
       "url": "/blog/2023/03/ibmcloud-starter-removed/",
@@ -5664,7 +6017,8 @@
         "node-red",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/3-quick-node-red-tips-5/",
@@ -5684,7 +6038,8 @@
         "how-to",
         "node-red tips"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/why-should-you-use-node-red-function-nodes/",
@@ -5703,7 +6058,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/flowforge-1-5-0-released/",
@@ -5722,7 +6078,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/terminology-changes/",
@@ -5741,7 +6098,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/3-quick-node-red-tips-4/",
@@ -5760,7 +6118,8 @@
         "node-red",
         "tips"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/comparing-node-red-dashboards/",
@@ -5780,7 +6139,8 @@
         "dashboard",
         "comparing node-red dashboards"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/3-quick-node-red-tips-3/",
@@ -5799,7 +6159,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/integration-platform-for-edge-computing/",
@@ -5818,7 +6179,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/03/community-news-03/",
@@ -5837,7 +6199,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/webinar-1-missed-questions/",
@@ -5855,7 +6218,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/3-quick-node-red-tips-2/",
@@ -5874,7 +6238,8 @@
         "node-red",
         "tips"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/ming-blog/",
@@ -5893,7 +6258,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/flowforge-1-4-0-released/",
@@ -5912,7 +6278,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/highly-available-node-red/",
@@ -5931,7 +6298,8 @@
         "node-red",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/service-disruption-report-2023-01-27/",
@@ -5950,7 +6318,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/3-quick-node-red-tips-1/",
@@ -5970,7 +6339,8 @@
         "how-to",
         "node-red tips"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/01/flowforge-story/",
@@ -5988,7 +6358,8 @@
         "posts",
         "flowfuse"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/02/community-news-02/",
@@ -6007,7 +6378,8 @@
         "community",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/01/environment-variables-in-node-red/",
@@ -6026,7 +6398,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": "2025-07-23T00:00:00.000Z"
+      "lastUpdated": "2025-07-23T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/01/getting-started-with-node-red/",
@@ -6045,7 +6418,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": "2025-12-16T00:00:00.000Z"
+      "lastUpdated": "2025-12-16T00:00:00.000Z",
+      "tldr": null
     },
     {
       "url": "/blog/2023/01/flowforge-1-3-0-released/",
@@ -6064,7 +6438,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/01/flowforge-1.2.1-released/",
@@ -6083,7 +6458,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2023/01/community-news-12/",
@@ -6102,7 +6478,8 @@
         "community",
         "newsletter"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/flowforge-1-2-0-released/",
@@ -6121,7 +6498,8 @@
         "flowforge",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/what-flowforge-adds-to-node-red/",
@@ -6140,7 +6518,8 @@
         "flowfuse",
         "node-red"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/flowforge-joins-openjs-foundation/",
@@ -6159,7 +6538,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/flowforge-1-1-2-released/",
@@ -6178,7 +6558,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/flowforge-gcp-https-set-up/",
@@ -6199,7 +6580,8 @@
         "Acme Companion",
         "Let's Encrypt"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/create-http-trigger-with-authentication/",
@@ -6218,7 +6600,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/node-red-flow-best-practice/",
@@ -6237,7 +6620,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/12/community-news-11/",
@@ -6256,7 +6640,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/11/scaling-node-red-with-diy-tooling/",
@@ -6275,7 +6660,8 @@
         "node-red",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/11/respin-docker-compose-01/",
@@ -6294,7 +6680,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/11/flowforge-1-1-released/",
@@ -6313,7 +6700,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/11/community-news-10/",
@@ -6332,7 +6720,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/10/seed-round-bring-node-red-to-enterprise/",
@@ -6351,7 +6740,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/10/flowforge-1-released/",
@@ -6370,7 +6760,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/10/db-migration-01/",
@@ -6389,7 +6780,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/10/ff-docker-gcp/",
@@ -6408,7 +6800,8 @@
         "flowfuse",
         "how-to"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/10/community-news-09/",
@@ -6427,7 +6820,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/09/flowforge-010-released/",
@@ -6446,7 +6840,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/09/static-ips/",
@@ -6465,7 +6860,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/09/community-news-08/",
@@ -6484,7 +6880,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/09/flowforge-09-released/",
@@ -6503,7 +6900,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/08/community-news-06/",
@@ -6522,7 +6920,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/08/flowforge-08-released/",
@@ -6541,7 +6940,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/07/new-projecttype/",
@@ -6560,7 +6960,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/07/community-news-06/",
@@ -6579,7 +6980,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/07/flowforge-07-released/",
@@ -6598,7 +7000,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/06/flowforge-06-released/",
@@ -6617,7 +7020,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/06/community-news-05/",
@@ -6636,7 +7040,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/05/sign-up-for-flowforge-cloud/",
@@ -6655,7 +7060,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/05/flowforge-05-released/",
@@ -6674,7 +7080,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/05/community-news-04/",
@@ -6693,7 +7100,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/05/node-red-3-beta-stack/",
@@ -6712,7 +7120,8 @@
         "node-red",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/04/flowforge-04-released/",
@@ -6731,7 +7140,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/04/community-news-03/",
@@ -6750,7 +7160,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/04/flowforge-accepting-customers/",
@@ -6769,7 +7180,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/03/flowforge-03-released/",
@@ -6788,7 +7200,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/03/community-news-02/",
@@ -6807,7 +7220,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/02/announcing-flowforge-cloud/",
@@ -6827,7 +7241,8 @@
         "news",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/02/flowforge-02-released/",
@@ -6846,7 +7261,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/02/use-case-solar-afloat/",
@@ -6865,7 +7281,8 @@
         "node-red",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/02/welcome-joe/",
@@ -6884,7 +7301,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/01/community-news-01/",
@@ -6903,7 +7321,8 @@
         "newsletter",
         "community"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/01/flowforge-01-released/",
@@ -6922,7 +7341,8 @@
         "flowfuse",
         "releases"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/01/welcome-steve/",
@@ -6941,7 +7361,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2022/01/welcome-zj/",
@@ -6960,7 +7381,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2021/05/welcome-ben/",
@@ -6978,7 +7400,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2021/04/first-deploy/",
@@ -6996,7 +7419,8 @@
         "flowfuse",
         "news"
       ],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/01/mqtt-frontrunner-for-uns-part-2/",
@@ -7009,7 +7433,8 @@
       "image": "/images/og-blog.jpg",
       "video": "",
       "tags": [],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/02/interacting-with-arduino-using-node-red/",
@@ -7022,7 +7447,8 @@
       "image": "/images/og-blog.jpg",
       "video": "",
       "tags": [],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     },
     {
       "url": "/blog/2025/02/monitoring-system-health-performance-scale-flowfuse/",
@@ -7035,7 +7461,8 @@
       "image": "/images/og-blog.jpg",
       "video": "",
       "tags": [],
-      "lastUpdated": null
+      "lastUpdated": null,
+      "tldr": null
     }
   ],
   "categories": {
@@ -7121,6 +7548,7 @@
       "tag": "flowfuse",
       "pageCount": 14,
       "urls": [
+        "/blog/2026/05/nis2-iec-62443-manufacturers/",
         "/blog/2026/05/git-snapshot-for-iiot-flows/",
         "/blog/2026/05/manufacturing-software-built-in-stages/",
         "/blog/2026/05/flowfuse-expert-building-flows/",
@@ -7689,6 +8117,81 @@
         "/blog/2023/12/unified-namespace-data-modelling/",
         "/blog/2023/12/introduction-to-unified-namespace/",
         "/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/"
+      ]
+    },
+    "plc": {
+      "label": "PLC",
+      "tag": "plc",
+      "pageCount": 1,
+      "urls": [
+        "/blog/2026/03/how-to-connect-to-twincat-using-ads/",
+        "/blog/2025/12/what-is-plc/",
+        "/blog/2025/12/read-s7-optimized-datablocks-flowfuse/",
+        "/blog/2025/11/store-and-forward-edge-data-buffering/",
+        "/blog/2025/11/building-hmi-for-equipment-control/",
+        "/blog/2025/10/plc-to-mqtt-using-flowfuse/",
+        "/blog/2025/10/how-to-log-plc-data-csv-files/",
+        "/blog/2025/10/using-ethernet-ip-with-flowfuse/",
+        "/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/",
+        "/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/"
+      ]
+    },
+    "mqtt": {
+      "label": "MQTT",
+      "tag": "mqtt",
+      "pageCount": 1,
+      "urls": [
+        "/blog/2026/02/mqtt-influxdb-tutorial/",
+        "/blog/2026/02/mqtt-vs-coap/",
+        "/blog/2026/01/opcua-vs-mqtt/",
+        "/blog/2025/12/kafka-vs-mqtt/",
+        "/blog/2025/11/csv-mqtt-database-dashboard-flowfuse/",
+        "/blog/2025/10/plc-to-mqtt-using-flowfuse/",
+        "/blog/2025/03/managing-mqtt-connections-at-scale-in-flowfuse/",
+        "/blog/2025/01/designing-topic-hierarchy-for-your-uns/",
+        "/blog/2025/01/mqtt-frontrunner-for-uns/",
+        "/blog/2024/11/building-uns-with-flowfuse/",
+        "/blog/2024/11/why-point-to-point-connection-is-dead/",
+        "/blog/2024/11/getting-the-most-out-of-mqtt-for-industrial-iot/",
+        "/blog/2024/11/why-pub-sub-in-uns/",
+        "/blog/2024/10/announcement-mqtt-broker/",
+        "/blog/2024/08/using-mqtt-sparkplugb-with-node-red/",
+        "/blog/2024/08/opc-ua-to-mqtt-with-node-red/",
+        "/blog/2024/06/how-to-use-mqtt-in-node-red/"
+      ]
+    },
+    "opcua": {
+      "label": "OPC UA",
+      "tag": "opcua",
+      "pageCount": 1,
+      "urls": [
+        "/blog/2026/03/why-opcua-is-not-replacing-modbus-yet/",
+        "/blog/2026/01/eliminate-opc-ua-bottleneck-ai-agents/",
+        "/blog/2026/01/opcua-vs-mqtt/",
+        "/blog/2026/01/kepware-opcua-better-alternative/",
+        "/blog/2025/08/advanced-opcua-real-time-subscriptions-alarms-historical-data/",
+        "/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/",
+        "/blog/2025/07/connect-legacy-equipment-serial-flowfuse/",
+        "/blog/2024/08/opc-ua-to-mqtt-with-node-red/",
+        "/blog/2024/02/connect-node-red-to-kepware-opc/",
+        "/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/",
+        "/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/"
+      ]
+    },
+    "modbus": {
+      "label": "Modbus",
+      "tag": "modbus",
+      "pageCount": 1,
+      "urls": [
+        "/blog/2026/04/diagnosing-modbus-degradation/",
+        "/blog/2026/04/modbus-polling-best-practices/",
+        "/blog/2026/03/why-opcua-is-not-replacing-modbus-yet/",
+        "/blog/2026/02/modbus-tcp-vs-modbus-rtu/",
+        "/blog/2026/01/why-modbus-still-exist/",
+        "/blog/2025/10/plc-to-mqtt-using-flowfuse/",
+        "/blog/2025/09/using-modbus-with-flowfuse/",
+        "/blog/2024/12/publishing-modbus-data-to-uns/",
+        "/blog/2023/05/integrating-modbus-with-node-red/"
       ]
     }
   }
