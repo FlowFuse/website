@@ -46,6 +46,13 @@ solutions:
       icon: "components/icons/chart.svg"
       title: "MES"
       description: "Implement custom Manufacturing Execution Systems (MES) with greater speed. Rapidly develop and deploy the specific workflows you need, connecting the production plan to the plant floor with ultimate efficiency."
+metrics:
+    - number: "50%"
+      text: "Reduction in scrap rate with real-time operational monitoring"
+    - number: "10x"
+      text: "Faster from idea to deployed operational application with FlowFuse Expert"
+    - number: "20+"
+      text: "Manufacturing sites standardized from a single platform without rebuilding"
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -141,27 +148,11 @@ hubspot:
     </div>
 
     <!-- Metrics -->
-    {% set metrics = [
-    {
-        number: "10x",
-        text: "Faster development with FlowFuse Expert"
-    },
-    {
-        number: "50%",
-        text: "Reduction in scrap rate with real-time monitoring"
-    },
-    {
-        number: "9x",
-        text: "Faster Prototyping, from days to hours for <span class='inline-block'>back-end</span> services"
-    }]
-    %}
     <div class="max-w-md sm:max-w-screen-lg mx-auto mb-10">
         <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
             {% for metric in metrics %}
-                <div class="w-full m-auto rounded-lg bg-gradient-to-tl from-indigo-50/50 to-red-50/50 pb-3 px-4 pt-6">
-                    <div class="flex">
-                        <h3 class="text-4xl font-normal text-indigo-600">{{ metric.number }}</h3>
-                    </div>
+                <div class="w-full h-full rounded-lg bg-red-50/70 pb-3 px-6 pt-6">
+                    <h3 class="text-5xl font-semibold text-red-400">{{ metric.number }}</h3>
                     <p class="mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
                 </div>
             {% endfor %}
