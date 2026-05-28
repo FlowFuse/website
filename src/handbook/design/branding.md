@@ -168,16 +168,16 @@ function ffCopyHex(hex, el) {
     { name: "Grey 900", hex: "#111827" }
   ],
   [
-    { name: "Red 50",  hex: "#FFEFEA", light: true },
-    { name: "Red 100", hex: "#FFD9CE", light: true },
-    { name: "Red 200", hex: "#FFC5B3", light: true },
-    { name: "Red 300", hex: "#FFB29A" },
-    { name: "Red 400", hex: "#FA9170" },
-    { name: "Red 500", hex: "#EB6D46" },
+    { name: "Red 50",  hex: "#FFE8E5", light: true },
+    { name: "Red 100", hex: "#FFBFB5", light: true },
+    { name: "Red 200", hex: "#FF8A7B", light: true },
+    { name: "Red 300", hex: "#FF604F" },
+    { name: "Red 400", hex: "#FF3B27" },
+    { name: "Red 500", hex: "#FF2400" },
     { name: "Red 600", hex: "#DA3D0B" },
-    { name: "Red 700", hex: "#B33109" },
-    { name: "Red 800", hex: "#8D2606" },
-    { name: "Red 900", hex: "#671D06" }
+    { name: "Red 700", hex: "#B32E09" },
+    { name: "Red 800", hex: "#8D1F06" },
+    { name: "Red 900", hex: "#671506" }
   ],
   [
     { name: "Indigo 50",  hex: "#EEF2FF", light: true },
