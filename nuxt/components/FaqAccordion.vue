@@ -22,7 +22,7 @@ const toggle = (i) => { open.value[i] = !open.value[i] }
               </button>
             </h3>
             <div v-show="open[i]" class="answer px-6 mt-6">
-              <p>{{ faq.answer }}</p>
+              <p v-html="faq.answer" />
             </div>
           </div>
         </div>
