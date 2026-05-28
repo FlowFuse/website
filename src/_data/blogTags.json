@@ -26,9 +26,12 @@
     "label": "News",
     "value": "news"
 }, {
-    "label": "Modbus",
-    "value": "modbus"
+    "label": "MQTT",
+    "value": "mqtt"
 }, {
     "label": "OPC UA",
     "value": "opcua"
+}, {
+    "label": "Modbus",
+    "value": "modbus"
 }]

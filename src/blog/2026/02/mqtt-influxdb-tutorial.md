@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/mqtt-to-influxdb.png
 tags:
 - flowfuse
+- mqtt
 cta:
   type: sign-up
   title: Build Pipelines You Can Actually Debug

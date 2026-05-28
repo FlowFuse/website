@@ -10,6 +10,7 @@ keywords: MQTT vs OPC UA, MQTT protocol, OPC UA protocol, industrial communicati
 tags:
  - flowfuse
  - opcua
+ - mqtt
 cta:
   type: contact
   title: Stop Choosing Protocols. Start Mapping Requirements.

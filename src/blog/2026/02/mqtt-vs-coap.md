@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/coap-vs-mqtt.png
 tags:
 - flowfuse
+- mqtt
 cta:
   type: contact
   title: Connect Any Protocol, at Any Scale
