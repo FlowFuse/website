@@ -9,6 +9,7 @@ image: /blog/2025/12/images/node-red-timer.png
 keywords: node-red timers, node-red stopwatch, node-red countdown timer, node-red industrial automation, node-red iiot, node-red process control, node-red hourglass, node-red contrib countdown, flowfuse node-red  
 tags:
     - node-red
+tldr: "Timers are foundational to industrial automation, used for tracking machine runtime, measuring downtime, scheduling maintenance, and coordinating sequential processes. This tutorial shows how to implement both stopwatch timers and countdown timers in Node-RED using dedicated nodes, with practical examples suited for production floor displays and operator terminals."
 ---
 
 Timers are everywhere in industrial automation. You need them to track how long a machine has been running, measure downtime, schedule maintenance, or coordinate processes that happen in sequence.

@@ -9,6 +9,7 @@ image: /blog/2025/12/images/building-a-weather-dashboard.png
 keywords: nodered weather, weather dashboard node-red, node-red weather dashboard
 tags:
     - node-red
+tldr: "Building a live weather dashboard in Node-RED is an ideal beginner project that teaches how to connect to REST APIs, process JSON responses, and display data visually. This tutorial uses the free OpenWeatherMap API and FlowFuse Dashboard to create a real-time display with gauges, text, and charts that refreshes on a configurable interval."
 ---
 
 A weather dashboard is honestly the best first project if you're getting into Node-RED. Takes about 10-15 minutes from start to finish, and by the end you'll understand how the whole thing works - connecting to APIs, processing data, and displaying it visually.

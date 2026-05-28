@@ -16,6 +16,7 @@ cta:
   type: sign-up
   title: Build Beautiful Node-RED Dashboards Faster
   description: FlowFuse gives you everything you need to build, style, and deploy Node-RED Dashboard 2.0 applications — with multi-user support, authentication, and production-ready infrastructure built in.
+tldr: "Node-RED Dashboard 2.0 offers three page layouts (Grid, Notebook, Fixed) and five navigation sidebar styles, giving full control over how dashboards look and behave. Custom themes and CSS via the ui-template node allow further visual customization, making it easy to build polished, branded interfaces."
 ---
 
 In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.

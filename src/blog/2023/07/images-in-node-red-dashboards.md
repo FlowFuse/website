@@ -11,6 +11,7 @@ tags:
     - flowfuse
     - node-red
     - dashboard
+tldr: "This guide covers multiple methods for displaying images in Node-RED dashboards, including pulling from URLs, encoding files as base64, and serving them via FlowFuse's Static Asset Service. The Static Asset Service approach is the simplest option for containerized environments like Docker or Kubernetes where writing to the local filesystem is not practical."
 ---
 
 Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerized environment such as Docker, or Kubernetes? We will also explore latest feature from FlowFuse that makes this step super easy.
