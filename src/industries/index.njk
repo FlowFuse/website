@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+sitemapPriority: 0.8
+title: "Industries"
+meta:
+  title: "Industries | FlowFuse"
+  description: "FlowFuse for industrial verticals. Operationalize applications at scale across your industry. Placeholder skeleton hub."
+---
+<div class="w-full">
+
+    <!-- HERO with CTA buttons -->
+    <div class="w-full px-6 bg-[radial-gradient(ellipse_120%_140%_at_50%_-20%,theme(colors.indigo.50)_0%,theme(colors.white)_60%)]">
+        <div class="max-w-screen-lg mx-auto py-16 sm:py-24 text-center">
+            <p class="uppercase tracking-widest text-sm font-semibold text-indigo-500 mb-4">Industries</p>
+            <h1 class="m-auto max-w-3xl font-medium">FlowFuse across <span class="text-indigo-600">industrial verticals</span></h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">Building industrial applications is easy. Operationalizing them at scale is hard. Explore how FlowFuse helps in your industry.</p>
+            <div class="mt-10 flex flex-wrap gap-4 justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'page': 'industries-hub'})">Talk to an expert</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase flex items-center gap-2" href="/use-cases/" onclick="capture('cta-explore-use-cases', {'position': 'hero', 'page': 'industries-hub'})">
+                    Explore use cases
+                    <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- VERTICAL CARD GRID -->
+    <div class="w-full py-16 sm:py-24 px-6 bg-white">
+        <div class="max-w-screen-lg mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for industry in collections.industry | sort(false, true, "data.vertical") %}
+                <a href="{{ industry.url }}" class="group flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                    <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ industry.data.vertical }}</h3>
+                    <p class="m-0 text-gray-600 text-sm flex-grow">{{ industry.data.tagline }}</p>
+                    <span class="mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
+                        View industry
+                        <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                    </span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- RESOURCES BLOCK PLACEHOLDER -->
+    {% set relatedTag = "" %}
+    {% include "components/related-resources.njk" %}
+
+    <!-- CLOSING CTA BAND -->
+    <div class="w-full px-6 py-20">
+        <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10 text-center">
+            <h3 class="mb-4 w-full text-center">Ready to operationalize at scale?</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Talk to an expert about your industry, or get started with FlowFuse today.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'page': 'industries-hub'})">Talk to an expert</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'footer', 'page': 'industries-hub'})">Get started</a>
+            </div>
+        </div>
+    </div>
+
+</div>
