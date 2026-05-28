@@ -13,6 +13,7 @@ cta:
   type: sign-up
   title: Build the Plumbing That Makes AI Actually Work
   description: FlowFuse is the operational layer that takes Node-RED to production — device management, snapshot deployments, ONNX-based AI inference, and DevOps pipelines built specifically for the factory floor.
+tldr: "Edge AI projects stall not because models are inaccurate, but because the infrastructure underneath them data normalization, fleet management, secure updates, and monitoring was never properly built. FlowFuse and Node-RED together provide the operational layer that bridges the gap between a working pilot and a reliable production deployment across real factory environments."
 ---
 
 The model is the easy part. I know that is not what you were told. But it is true, and somewhere between your third deployment and your first production fire, you will stop arguing with it.

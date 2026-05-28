@@ -14,6 +14,7 @@ tags:
     - dashboard
     - nodered dashboard beginners guide
     - nodered dashboard basics
+tldr: "This getting-started guide walks new and experienced Node-RED users through installing FlowFuse Dashboard 2.0 and building their first dashboard. It covers installing the package via the Palette Manager, adding widgets to a canvas, and understanding the core building blocks ui-base, ui-page, ui-group, and ui-theme."
 ---
 
 With our latest release of Node-RED Dashboard 2.0, we've made some big improvements to the onboarding experience.

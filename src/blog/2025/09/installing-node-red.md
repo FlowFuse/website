@@ -10,6 +10,7 @@ keywords: "download node-red, download nodered, install nodered, install node-re
 tags:
     - flowfuse
     - node-red
+tldr: "Installing Node-RED is straightforward, but running it reliably across production lines with PLCs and critical equipment requires enterprise capabilities that standalone Node-RED cannot provide. FlowFuse adds high availability, centralized device management, DevOps pipelines, secure remote access, and automated snapshots to make Node-RED production-ready at scale."
 ---
 
 Installing Node-RED is straightforward. Install Node.js, run a command, and you're ready for visual programming in industrial automation. The real challenge begins when it must run across production lines, connect to PLCs, and stay operational 24/7.
