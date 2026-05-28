@@ -4,7 +4,7 @@ import indexData from '../../integrations.index.json'
 const route = useRoute()
 const id = computed(() => {
     const s = route.params.id
-    return Array.isArray(s) ? s.join('/') : s
+    return (Array.isArray(s) ? s : s ? [s] : []).filter(Boolean).join('/')
 })
 
 const integration = computed(() => indexData.integrations.find((i) => i.id === id.value))
