@@ -12,6 +12,7 @@ cta:
   type: contact
   title: Connect Any Protocol, at Any Scale
   description: FlowFuse gives you enterprise Node-RED to build production IoT systems that work with MQTT, CoAP, or both. No rewiring your architecture, just reliable data flow at the scale you need.
+tldr: "MQTT and CoAP are not competing protocols they solve incompatible constraints. MQTT excels at coordinating large fleets through centralized brokers with strong delivery guarantees, while CoAP's UDP-based, broker-free design is the only viable option for ultra-constrained devices where TCP overhead would destroy battery life. The right choice comes from measuring your actual power budget, transmission frequency, and infrastructure requirements rather than debating which protocol is abstractly better."
 ---
 
 The MQTT vs CoAP debate is mostly noise. One protocol assumes you have infrastructure and want centralized coordination. The other assumes you don't and can't. If you're still debating which is "better," you haven't measured what matters.

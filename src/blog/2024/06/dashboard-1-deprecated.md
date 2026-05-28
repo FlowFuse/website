@@ -13,6 +13,7 @@ tags:
    - flowfuse
    - dashboard
    - FlowFuse Dashboard
+tldr: "Node-RED Dashboard (Dashboard 1.0) has been formally deprecated, with no further development planned. FlowFuse Dashboard (Dashboard 2.0) is its natural successor, offering multi-tenancy, responsive layouts, new widget nodes, and PWA support. This post covers what's new, what's planned, and how to get started with FlowFuse Dashboard."
 ---
 
 Dave Conway-Jones, the lead maintainer of Node-RED Dashboard, has [just announced](https://discourse.nodered.org/t/node-red-dashboard-v1-deprecation-notice/89006) that Node-RED Dashboard has been formally deprecated, meaning there will be no further development activity on the project.

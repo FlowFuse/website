@@ -12,6 +12,7 @@ cta:
   type: contact
   title: Connect Your CNC Machines to Live Dashboards
   description: FlowFuse makes it simple to collect MTConnect data, build real-time dashboards, and integrate shop floor equipment with your broader systems, no custom code required. Get in touch to discuss your project.
+tldr: "MTConnect agents expose CNC machine data as XML streams, and FlowFuse's node-red-contrib-solution-engine node lets you access any data point by its dataItemId without manual XML parsing. This tutorial shows how to connect FlowFuse to an MTConnect agent, extract values like spindle speed and controller mode, and build a real-time machine monitoring dashboard."
 ---
 
 Most manufacturing facilities run MTConnect agents on their CNC machines, but the XML data these agents produce isn't directly usable. You receive streams of timestamped measurements, state changes, and condition flags wrapped in hierarchical XML structures. Converting this into a functional dashboard means solving three problems: retrieving the data reliably, parsing it correctly, and routing specific values to the right display components.
