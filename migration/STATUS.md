@@ -1,11 +1,43 @@
 # 11ty → Nuxt 4 migration — status & runbook
 
+## MIGRATION COMPLETE (2026-05-28) — 11ty removed
+
+The site is now generated entirely by Nuxt 4. Eleventy has been deleted:
+`.eleventy.js`, `lib/`, the dev proxy `nuxt/server/middleware/legacy.ts`,
+`src/_data/eleventyComputed.js`, and all `src/` `.njk`/`_includes` templating
+are gone. `package.json` no longer has any 11ty step — the production build is
+`npm run build:nuxt` (`nuxt generate`).
+
+The Nuxt `copy_*.js` build scripts still read a handful of retained `src/`
+files purely as **data**: content markdown (blog, changelog, handbook,
+customer-stories, webinars, ask-me-anything, ebooks, node-red, docs),
+`src/_data/{team,guests,site.json,coreNodes.json}`, the static assets under
+`src/{public,images,js,blueprints}` + a few one-off passthroughs, and three
+files that survived the `.njk` purge because the scripts parse them as data:
+`src/redirects.njk` (static `_redirects` body), `src/node-red/index.njk` +
+`src/node-red/core-nodes/index.njk`, and `src/_includes/{components/icons,
+core-nodes,hardware}`.
+
+Final verification: `build:nuxt:skip-images` green, route diff **Dropped: 0**
+(1178 baseline → 1181 Nuxt, superset), `nuxt-link-checker` **0 of 1175
+failing**. The unsafe-char straggler pages (literal spaces / `.njk`-only) that
+11ty used to render are served from committed HTML in `nuxt/legacy-static/`
+(copied into `public` by `copy_legacy_static.js`).
+
+Also fixed during teardown: integration detail pages threw a client-side 404
+after hydration (catch-all `route.params.id` kept the trailing-slash empty
+segment); `pages/integrations/[...id].vue` now filters empty segments like the
+other data-driven pages.
+
+The rest of this document is the historical record of the page-by-page
+migration that led here.
+
 ## What this records
 
-The FlowFuse site runs as a Strangler-Fig hybrid: Nuxt 4 (`nuxt/`) owns a
-growing set of routes, everything else is proxied/copied from the legacy 11ty
-build (`src/`, `.eleventy.js`). This file tracks migration progress and the
-constraints discovered along the way.
+The FlowFuse site previously ran as a Strangler-Fig hybrid: Nuxt 4 (`nuxt/`)
+owned a growing set of routes, everything else was proxied/copied from the
+legacy 11ty build (`src/`, `.eleventy.js`). This file tracks the migration
+progress and the constraints discovered along the way.
 
 ## The one hard constraint (proven, automated)
 
