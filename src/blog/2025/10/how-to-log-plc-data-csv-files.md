@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/10/images/log-plc-data-to-csv.png
 tags:
     - flowfuse
+    - plc
 ---
 
 CSV files have been recording manufacturing data since the mid-1980s, over 40 years of continuous use across every industry. Logging to databases like InfluxDB, TimescaleDB, or PostgreSQL is excellent for real-time analytics, complex queries, and large-scale operations. But many organizations still rely on CSV files for good reasons: regulatory compliance, legacy system integration, offline analysis, or simply because it's the format their teams know and trust. If you're reading this, you're likely one of them and need a reliable solution.

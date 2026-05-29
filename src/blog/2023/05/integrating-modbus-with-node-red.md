@@ -10,6 +10,7 @@ tags:
     - posts
     - node-red
     - how-to
+    - modbus
 tldr: "Integrating Modbus with Node-RED requires more than just connecting nodes industrial reliability demands watchdog timers for auto-recovery, conservative poll rates to avoid overloading legacy networks, grouped coil/register addressing for efficiency, and correct handling of multi-register data types like 32-bit floats. This article walks through each best practice with example flows and node configurations."
 ---
 

@@ -10,6 +10,7 @@ tags:
    - news
    - flowfuse
    - node-red
+   - mqtt
 ---
 
 In our [recent product update](/blog/2024/10/flowfuse-release-2-10) we have added our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has been a highly requested feature, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Pro and Enterprise teams.

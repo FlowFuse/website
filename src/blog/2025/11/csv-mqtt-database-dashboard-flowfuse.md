@@ -8,6 +8,7 @@ image: /blog/2025/11/images/how-to-ingest-csv-logs.png
 keywords: CSV ingestion, MQTT broker, Node-RED, FlowFuse, industrial data, PLC logging, SCADA systems, real-time data pipeline, batch processing, database integration, data visualization, manufacturing data, Node-RED dashboard, sensor data, time-series data, industrial IoT, data orchestration, legacy systems integration
 tags:
   - flowfuse
+  - mqtt
 ---
 
 If you work in manufacturing, you likely have gigabytes of data in CSV files—temperature logs, production counts, machine status records. The data exists and is organized, but it's not accessible to the systems that need it.

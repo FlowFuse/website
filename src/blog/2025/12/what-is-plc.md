@@ -9,6 +9,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/12/images/what-is-plc.png
 tags:
   - flowfuse
+  - plc
 meta:
   faq:
     - question: "What is a PLC in simple terms?"

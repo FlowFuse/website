@@ -10,6 +10,7 @@ keywords: s7,siemens, siemens s7 1200 with node-red, siemens s7 1500 with node-r
 tags: 
   - node-red
   - flowfuse
+  - plc
 cta:
   type: sign-up
   title: Connect Your Siemens PLCs to the Rest of Your Stack

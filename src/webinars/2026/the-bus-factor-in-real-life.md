@@ -7,7 +7,7 @@ image: /images/webinars/the-bus-factor-in-real-life.jpg
 date: 2026-05-28
 time: 17:00 CET (11:00am ET)
 duration: 60
-video:
+video: hwVkMS5Pa8s
 hosts: ["kristopher-sandoval"]
 hubspot:
     formId: 8b6f4805-fc57-49f9-a282-3480328e9d9f
@@ -34,17 +34,17 @@ In a situation where the show floor opened regardless, and the system either wor
 
 ## What We Built (and Why It Matters)
 
-We'll walk through the architecture behind the demo — a live supply chain simulation spanning San Francisco, Funabashi, and Hannover, built on Python/SimPy, MQTT, Node-RED, QuestDB, and Opto22 Groov RIO hardware — and use it as a concrete case study for the broader question every OT/IT engineer should be asking:
+In the recording, Kristopher walks through the architecture behind the demo — a live supply chain simulation spanning San Francisco, Funabashi, and Hannover, built on Python/SimPy, MQTT, Node-RED, QuestDB, and Opto22 Groov RIO hardware — and uses it as a concrete case study for the broader question every OT/IT engineer should be asking:
 
 > What does your system need to be able to do when you can't be in the room?
 
-We'll demo the specific functionality and features on FlowFuse that made all of this possible, as well as the architectural choices that enabled rapid repairs and deployment in the actual real-world environment.
+You'll see a demo of the specific functionality and features on FlowFuse that made all of this possible, as well as the architectural choices that enabled rapid repairs and deployment in the actual real-world environment.
 
 ---
 
-## What You'll Learn
+## What's Covered
 
-In this session, Kristopher will cover:
+In this session, Kristopher covers:
 
 - What the bus factor is, why it's frustratingly underweighted in industrial system design, and how to actually measure it for your own stack  
 
@@ -66,3 +66,11 @@ In this session, Kristopher will cover:
 This webinar is ideal for OT/IT engineers, automation architects, and industrial IoT practitioners who are responsible for systems that need to keep running whether or not the right person is available.
 
 If you've ever been the single point of failure in your own stack — or quietly worried that someone else is — this session is for you.
+
+---
+
+## Would your stack survive without you? {.text-indigo-600}
+
+If this session made you think about how your deployment would recover if critical access disappeared, FlowFuse has the tools to address it — snapshotting, granular permissions, and centralized remote device management.
+
+[Talk to our team](/book-demo/)

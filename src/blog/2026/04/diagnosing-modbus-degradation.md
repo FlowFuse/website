@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/04/images/modbus-degradation-img.png
 tags:
   - flowfuse
+  - modbus
 cta:
   type: sign-up
   title: Unlock your Modbus data with FlowFuse

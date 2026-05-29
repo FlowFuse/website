@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/11/images/building-a-web-hmi-for-factory.png
 tags:
   - flowfuse
+  - plc
 ---
 
 Most factory HMIs are still stuck in one place. Dedicated panels mounted next to equipment, or SCADA workstations in the control room. Need to check something? You're walking over there.
