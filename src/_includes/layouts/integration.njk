@@ -159,13 +159,9 @@ layout: layouts/base.njk
                         Installation
                     </h3>
                     <p class="text-sm text-gray-600 mb-3">Install in Node-RED via the <a href="https://flowfuse.com/node-red/getting-started/library/#using-the-palette-manager" class="text-indigo-600 hover:text-indigo-800 font-semibold" target="_blank" rel="noopener noreferrer">palette manager</a>.</p>
-                    <img
-                        src="/img/installing-node-red-node.gif"
-                        alt="Animation of the Node-RED palette manager: open Manage Palette, search for the node, then click Install."
-                        loading="lazy"
-                        width="1326"
-                        height="720"
-                        class="motion-reduce:hidden block w-full rounded border border-gray-200" />
+                    <div class="motion-reduce:hidden [&_img]:block [&_img]:w-full [&_img]:rounded [&_img]:border [&_img]:border-gray-200">
+                        {% image "./node-red/getting-started/library/images/installing-node-red-node.gif", "Animation of the Node-RED palette manager: open Manage Palette, search for the node, then click Install.", [707] %}
+                    </div>
                     <img
                         src="/images/integrations/palette-manager-install.png"
                         alt="Node-RED Palette Manager dialog with the node selected and the Install button visible."
