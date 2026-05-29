@@ -16,11 +16,12 @@ route set must be a **superset** of the 11ty route set — zero dropped URLs.
   11ty route is missing from the Nuxt build.
 - `capture-baseline.sh` — run ONCE on the pristine pre-migration tree to record
   the frozen `routes-11ty.txt` baseline.
-- `verify-routes.sh` — builds the Nuxt hybrid output and diffs it against the
-  frozen `routes-11ty.txt`.
-- `routes-11ty.txt` — **frozen** snapshot of the legacy 11ty route set, captured
-  before migration. Immutable: it is the reference every Nuxt build is checked
-  against, so a section migrated off 11ty still fails the diff if its URLs move.
+- `verify-routes.sh` — builds the Nuxt static output (`nuxt generate`) and diffs
+  it against the frozen `routes-11ty.txt`.
+- `routes-11ty.txt` — **frozen** snapshot of the legacy 11ty route set (1178
+  routes), captured before migration. Immutable: it is the reference every Nuxt
+  build is checked against, so a section migrated off 11ty still fails the diff
+  if its URLs move.
 - `routes-nuxt.txt` — committed snapshot of the Nuxt build route set.
 - `route-diff.txt` — committed proof: the diff result (must show 0 dropped).
 
