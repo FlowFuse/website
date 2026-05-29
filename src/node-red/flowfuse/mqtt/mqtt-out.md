@@ -50,26 +50,6 @@ The following properties control message publication:
 - `msg.messageExpiryInterval`: MQTT version 5 message expiry time in seconds
 - `msg.topicAlias`: MQTT version 5 topic alias for bandwidth optimization
 
-## Dynamic Control Operations
-
-The node supports connection control through the `msg.action` property.
-
-### Connect
-Establishes the broker connection.
-
-```javascript
-msg.action = 'connect';
-```
-
-### Disconnect
-Terminates the connection.
-
-```javascript
-msg.action = 'disconnect';
-```
-
-**Note:** When a control action is specified, the node performs that operation instead of publishing a message.
-
 ## Publishing Messages
 
 ### Basic Publishing

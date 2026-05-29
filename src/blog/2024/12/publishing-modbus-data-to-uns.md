@@ -10,6 +10,7 @@ keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus t
 tags:
    - flowfuse
    - uns
+   - modbus
 meta:
     faq:
     - question: "Do I need FlowFuse to bridge Modbus to MQTT, or can I use standard Node-RED?"

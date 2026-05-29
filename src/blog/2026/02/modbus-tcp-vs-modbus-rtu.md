@@ -7,6 +7,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/modbus-rtu-vs-tcp.png
 tags:
   - flowfuse
+  - modbus
 cta:
   type: sign-up
   title: Stop Debugging Modbus at 2 AM

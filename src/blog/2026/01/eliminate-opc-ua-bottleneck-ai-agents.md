@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: 
 tags:
 - flowfuse
+- opcua
 cta:
   type: contact
   title: Turn Your Industrial Data Into Instant Answers

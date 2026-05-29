@@ -9,6 +9,7 @@ authors: ["sumit-shinde"]
 tags:
    - flowfuse
    - opcua
+   - plc
 meta:
   faq:
   - question: "How do I connect Node-RED to an OPC UA server?"
