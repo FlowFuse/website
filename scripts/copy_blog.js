@@ -154,21 +154,28 @@ function transformBody(body, absFile) {
         return served ? pre + served + (title || '') + post : full
     })
 
-    // 8. Links: [text](target) where target is a relative .md -> route URL.
+    // 8. Links: resolve relative targets the way 11ty did — against the post's
+    //    rendered URL (which is a directory), NOT the source file path. The
+    //    legacy site left blog relative links untouched and let the browser
+    //    resolve them against the page URL; @nuxt/content instead resolves them
+    //    against the page path treated as a file, dropping a segment. That is
+    //    why `../../04/foo` in a /blog/2022/05/<post>/ page was resolving to
+    //    `/blog/04/foo` (year lost) instead of `/blog/2022/04/foo`.
+    const postUrl = fileToRoute(absFile)
     body = body.replace(/(\]\()([^)\s]+)(\))/g, (full, pre, target, post) => {
-        if (/^(https?:|mailto:|#|\/)/.test(target)) return full
-        const m = target.match(/^([^#?]*)([#?].*)?$/)
-        if (!/\.md$/i.test(m[1])) return full
-        let abs = m[1].startsWith('src/') ? path.join(REPO, m[1]) : path.resolve(dir, m[1])
-        const relBlog = path.relative(SRC, abs).split(path.sep).join('/')
+        if (/^(https?:|mailto:|tel:|#|\/)/i.test(target)) return full
+        const m = target.match(/^([^#?]*)([#?][\s\S]*)?$/)
+        if (!m || !m[1]) return full
+        // Assets (images etc.) are handled by the image step / passthrough.
+        if (/\.(png|jpe?g|gif|svg|webp|avif|mp4|webm|pdf|zip|json)$/i.test(m[1])) return full
         let route
-        if (!relBlog.startsWith('..')) {
-            route = '/blog/' + relBlog.replace(/\.md$/, '') + '/'
-        } else {
-            const relSrc = path.relative(SRC_ROOT, abs).split(path.sep).join('/')
-            if (relSrc.startsWith('..')) return full
-            route = '/' + relSrc.replace(/(\/index)?\.md$/, '') + '/'
+        try {
+            route = new URL(m[1], 'https://h' + postUrl).pathname
+        } catch {
+            return full
         }
+        route = route.replace(/\/index\.md$/i, '/').replace(/\.md$/i, '')
+        if (route && !route.endsWith('/') && !/\.[a-z0-9]+$/i.test(route)) route += '/'
         return pre + route + (m[2] || '') + post
     })
 
