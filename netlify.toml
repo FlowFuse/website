@@ -59,9 +59,10 @@ status = 301
 force = true
 
 [dev]
-port = 8080
+port = 3000
+targetPort = 3000
 framework = "#static"
-command = "npx @11ty/eleventy --quiet --watch"
+command = "npm run dev"
 autoLaunch = false
 
 [build]
@@ -78,6 +79,6 @@ command = "npm run build:nuxt"
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
-    "nuxt/public/img", # Eleventy Image Disk Cache
-    ".cache/images" # Eleventy image processing cache
+    "nuxt/public/img", # Image disk cache
+    ".cache/images" # Image processing cache
   ]
