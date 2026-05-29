@@ -17,7 +17,9 @@ tldr: "OPC UA ships with real authentication, signing, and encryption — but at
 ---
 
 Threat actors don't break OPC UA's cryptography. They walk through the security it left switched off. The attacks that work in the field are disabled trust lists, anonymous logins left on, dead ciphers nobody removed, and servers sitting on the open internet. This post breaks down how attackers actually exploit OPC UA, vector by vector.
+
 <!--more-->
+
 That's the irony. Unlike most industrial protocols, OPC UA ships with real security: authentication, signing, and encryption built into the spec. It's what finally let your Siemens PLC, your Allen-Bradley controller, and your SCADA system speak the same language. But "built in" and "turned on" are different things, and attackers live in that gap.
 
 ## Why attackers target OPC UA
