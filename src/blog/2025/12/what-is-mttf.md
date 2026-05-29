@@ -30,6 +30,7 @@ meta:
 
   - question: "What's the relationship between MTTF and failure rate?"
     answer: "Failure rate is the inverse of MTTF: Failure Rate = 1 / MTTF. If MTTF is 10,000 hours, the failure rate is 0.0001 failures per hour or 1 failure per 10,000 hours. Both metrics describe the same reliability characteristic from different perspectives."
+tldr: "Mean Time to Failure (MTTF) measures the average operating lifetime of non-repairable components such as light bulbs, batteries, and electronic modules before permanent failure requiring replacement, not repair. The formula is simply total operating time divided by number of failures, providing a statistical average useful for planning preventive replacements, spare parts inventory, and procurement decisions. MTTF differs from MTBF (which applies to repairable systems) and MTTR (which measures repair time)."
 ---
 
 When a critical motor bearing assembly fails after just 6 months—half its rated lifespan—maintenance teams face a fundamental question: "How long should this component actually last?"

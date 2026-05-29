@@ -12,6 +12,7 @@ cta:
   type: contact
   title: Build Infrastructure That Ages Well
   description: See how FlowFuse helps facilities connect legacy devices to modern systems — simply, visibly, and without creating the next layer nobody understands.
+tldr: "Over-engineered industrial systems don't fail because of bad intentions they fail because complexity accumulates through reasonable decisions made by people who won't be there to maintain them. The systems with the best operational track records prioritize legibility over capability built to be understood by the next engineer, not just the one who designed them."
 ---
 
 **There is a system in your facility that your best engineer knows not to touch.**

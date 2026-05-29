@@ -103,6 +103,7 @@ date: 2022-12-20
 authors: ["rob-marcer"]
 image: /blog/2022/12/images/tile-image.png
 video: dteXgcBXUnk  # Optional: YouTube video ID to use instead of image in hero section
+tldr: "A short summary of the article's main takeaway."  # Optional
 cta:
   type: pricing
   title: Ready to compare plans?
@@ -180,6 +181,33 @@ The video ID is the part after `v=` in a YouTube URL. For example:
 The `<lite-youtube>` component is included globally on all pages — no additional imports needed. It shows a static thumbnail and only loads the YouTube player when the user clicks play.
 
 > **Do not use raw `<iframe>` tags to embed YouTube videos.** Iframes load YouTube's scripts and set tracking cookies as soon as the page renders, before any user consent — which is not GDPR-compliant. Always use `<lite-youtube>` instead.
+
+### TL;DR
+
+The `tldr` field adds a highlighted summary block that appears at the top of the article body, before the content. It helps readers quickly decide whether to read the full article and improves engagement for longer posts. It also supports AEO/GEO — answer engines (AI overviews, ChatGPT, Perplexity) prefer content that leads with the answer, and the TL;DR is the right place to do that. Write it as a direct, self-contained conclusion to the article's main question.
+
+It can be a single string or a list of bullet points:
+
+**Single paragraph:**
+
+```yaml
+---
+tldr: "A one-sentence or short paragraph summary of the article's key takeaway."
+---
+```
+
+**Bullet list:**
+
+```yaml
+---
+tldr:
+  - First key point.
+  - Second key point.
+  - Third key point.
+---
+```
+
+The block renders with an indigo left border and a "TL;DR" label. It is optional — omit it if the article is short or the introduction already serves as a clear summary.
 
 ### CTA
 

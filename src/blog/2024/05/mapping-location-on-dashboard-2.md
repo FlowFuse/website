@@ -15,6 +15,7 @@ cta:
   type: sign-up
   title: Build Real-Time Fleet Tracking Dashboards
   description: FlowFuse gives you everything you need to connect GPS devices, visualize live location data, and deploy production-ready dashboards — all on one platform.
+tldr: "This guide shows how to build a real-time fleet tracking dashboard in Node-RED Dashboard 2.0 using the node-red-contrib-web-worldmap node. It covers retrieving live vehicle location data from a public API, formatting it for the Worldmap node, and embedding the interactive map inside a Dashboard 2.0 iframe widget."
 ---
 
 Fleet management in IoT uses sensors and software to collect real-time data on vehicles, such as location, fuel consumption, and driver behavior. This data allows companies to optimize routes, reduce costs, improve safety, and enhance overall operational efficiency of their fleet. Building an application that allows the tracking of location to support Fleet management is what this post is about.

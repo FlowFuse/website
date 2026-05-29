@@ -8,6 +8,7 @@ image: /blog/2025/11/images/store-and-forward.png
 keywords: store-and-forward, edge computing, PLC data buffering, network resilience, industrial IoT, data continuity, FlowFuse, SQLite buffering, SCADA data collection, network outage recovery
 tags:
     - flowfuse
+    - plc
 ---
 
 Network outages happen. A fiber cut, a switch failure, or infrastructure maintenance can take your connectivity offline without warning. When it does, your PLCs continue operating normally—they don't wait for the network to recover.
