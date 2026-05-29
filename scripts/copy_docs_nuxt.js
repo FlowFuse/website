@@ -62,6 +62,23 @@ function splitTarget(target) {
     return { p: m[1], suffix: m[2] || '' }
 }
 
+// Map an absolute resolved source path (a `.md` file, a README/index, or a
+// bare slug written without `.md`) to its docs route, mirroring 11ty: links
+// were resolved relative to the source file with `.md` and `README`/`index`
+// stripped to the directory URL.
+function targetToRoute(absPath) {
+    let rel = path.relative(SRC, absPath).split(path.sep).join('/')
+    rel = rel.replace(/\.md$/i, '')
+    rel = rel.replace(/(^|\/)(README|index)$/i, '$1')
+    rel = rel.replace(/\/$/, '')
+    return rel ? '/docs/' + rel + '/' : '/docs/'
+}
+
+function isExternalOrAsset(p, target) {
+    if (/^([a-z][\w+.-]*:|#|\/)/i.test(target)) return true
+    return /\.[a-z0-9]+$/i.test(p) && !/\.md$/i.test(p)
+}
+
 const copiedMedia = new Set()
 function copyMedia(absImage) {
     const rel = path.relative(SRC, absImage).split(path.sep).join('/')
@@ -114,13 +131,22 @@ function rewriteLinks(body, absFile) {
         return pre + copyMedia(abs) + suffix + (title || '') + post
     })
 
-    // Links: [text](target) where target is a relative .md
+    // Markdown links: resolve every relative internal link (with or without a
+    // `.md` extension, including README -> directory) against the source dir,
+    // the way 11ty did, so @nuxt/content never mis-resolves a relative link.
     body = body.replace(/(\]\()([^)\s]+)(\))/g, (full, pre, target, post) => {
-        if (/^(https?:|mailto:|#|\/)/.test(target)) return full
         const { p, suffix } = splitTarget(target)
-        if (!/\.md$/i.test(p)) return full
+        if (!p || isExternalOrAsset(p, target)) return full
         const abs = path.resolve(dir, p)
-        return pre + fileToRoute(abs) + suffix + post
+        return pre + targetToRoute(abs) + suffix + post
+    })
+
+    // Raw-HTML links: <a href="target"> (the docs include hand-written HTML).
+    body = body.replace(/(<a\b[^>]*\shref=")([^"]+)(")/gi, (full, pre, target, post) => {
+        const { p, suffix } = splitTarget(target)
+        if (!p || isExternalOrAsset(p, target)) return full
+        const abs = path.resolve(dir, p)
+        return pre + targetToRoute(abs) + suffix + post
     })
 
     return body

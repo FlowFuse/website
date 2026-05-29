@@ -75,6 +75,22 @@ function splitTarget(target) {
     return { p: m[1], suffix: m[2] || '' }
 }
 
+// Map an absolute resolved source path (a `.md` file, a README/index, or a
+// bare slug written without `.md`) to its node-red route, resolved relative to
+// the source file as 11ty did, with `.md` and `README`/`index` stripped.
+function targetToRoute(absPath) {
+    let rel = path.relative(SRC, absPath).split(path.sep).join('/')
+    rel = rel.replace(/\.md$/i, '')
+    rel = rel.replace(/(^|\/)(README|index)$/i, '$1')
+    rel = rel.replace(/\/$/, '')
+    return rel ? '/node-red/' + rel + '/' : '/node-red/'
+}
+
+function isExternalOrAsset(p, target) {
+    if (/^([a-z][\w+.-]*:|#|\/)/i.test(target)) return true
+    return /\.[a-z0-9]+$/i.test(p) && !/\.md$/i.test(p)
+}
+
 // ---- body transform -----------------------------------------------------
 // `pageDir` is the directory of the page the body ultimately belongs to, so
 // inlined-partial relative paths resolve the same way 11ty's {% include %} does.
@@ -117,13 +133,22 @@ function transformBody(body, pageDir) {
         return pre + copyMedia(abs) + suffix + (title || '') + post
     })
 
-    // 7. Links: [text](rel.md) -> route URL.
+    // 7. Links: resolve every relative internal link (with or without `.md`,
+    //    README -> directory) against the source dir, as 11ty did, so
+    //    @nuxt/content never mis-resolves a relative link to another page.
     body = body.replace(/(\]\()([^)\s]+)(\))/g, (full, pre, target, post) => {
-        if (/^(https?:|mailto:|#|\/)/.test(target)) return full
         const { p, suffix } = splitTarget(target)
-        if (!/\.md$/i.test(p)) return full
+        if (!p || isExternalOrAsset(p, target)) return full
         const abs = path.resolve(pageDir, p)
-        return pre + fileToRoute(abs) + suffix + post
+        return pre + targetToRoute(abs) + suffix + post
+    })
+
+    // Raw-HTML links: <a href="target">.
+    body = body.replace(/(<a\b[^>]*\shref=")([^"]+)(")/gi, (full, pre, target, post) => {
+        const { p, suffix } = splitTarget(target)
+        if (!p || isExternalOrAsset(p, target)) return full
+        const abs = path.resolve(pageDir, p)
+        return pre + targetToRoute(abs) + suffix + post
     })
 
     return body

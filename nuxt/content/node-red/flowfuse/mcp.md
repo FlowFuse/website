@@ -108,7 +108,7 @@ To access FlowFuse Expert within your Node-RED instance where you have built you
 
 Once FlowFuse Expert is open, select your MCP server from the Insights tab, and Expert will automatically discover your resources and tools. You can then ask questions or request actions, and Expert will use your resources and tools based on your role.
 
-FlowFuse Expert enforces access control based on the annotations configured in your MCP Tool nodes. Learn more about configuring tool annotations in the [MCP Tool documentation](./mcp-tool#annotations).
+FlowFuse Expert enforces access control based on the annotations configured in your MCP Tool nodes. Learn more about configuring tool annotations in the [MCP Tool documentation](/node-red/flowfuse/mcp/mcp-tool/#annotations).
 
 ## Nodes
 
