@@ -101,11 +101,20 @@ function rewrite(body, absFile, urlForSlug) {
         return pre + copyMedia(abs) + (title || '') + post
     })
     body = body.replace(/(\]\()([^)\s]+)(\))/g, (full, pre, target, post) => {
-        if (/^(https?:|mailto:|#|\/)/.test(target)) return full
+        if (/^([a-z][\w+.-]*:|#|\/)/i.test(target)) return full
         const m = target.match(/^([^#?]*)([#?].*)?$/)
-        if (!/\.md$/i.test(m[1])) return full
-        const slug = path.basename(m[1], '.md')
-        return pre + urlForSlug(slug) + (m[2] || '') + post
+        if (!m[1]) return full
+        if (/\.md$/i.test(m[1])) {
+            const slug = path.basename(m[1], '.md')
+            return pre + urlForSlug(slug) + (m[2] || '') + post
+        }
+        // Relative downloadable asset (e.g. a .zip attachment) beside the
+        // content: copy it through and serve it from /events-media/.
+        const abs = path.resolve(dir, m[1])
+        if (/\.[a-z0-9]+$/i.test(m[1]) && fs.existsSync(abs)) {
+            return pre + copyMedia(abs) + (m[2] || '') + post
+        }
+        return full
     })
     return body
 }
