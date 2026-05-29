@@ -1,20 +1,18 @@
 // Nuxt-only smoke sweep: navigate a representative URL per migrated cluster,
 // capture uncaught page errors / console errors / render signals, screenshot
-// each to /tmp/smoke, then exit. Run via: node scripts/visual-check.js
-// Uses the system Chrome + the playwright module from the npx cache so no
-// project install is needed. Save screenshots to /tmp (never the repo).
+// each to OUT (default /tmp/smoke), then exit. Run via: node scripts/visual-check.js
+// Requires Playwright (npx playwright install chromium). Screenshots go to /tmp,
+// never the repo. Set CHROME_PATH to use a system Chrome instead of the bundled one.
 const fs = require('node:fs')
 const path = require('node:path')
 
-const PW_CANDIDATES = [
-  '/home/sprite/.npm/_npx/e41f203b7505f1fb/node_modules/playwright',
-  '/home/sprite/.npm/_npx/9833c18b2d85bc59/node_modules/playwright',
-]
 let chromium
-for (const p of PW_CANDIDATES) {
-  try { chromium = require(p).chromium; break } catch (_) {}
+try {
+  ;({ chromium } = require('playwright'))
+} catch (_) {
+  console.error('Playwright is required for this QA script. Install it with:\n  npx playwright install chromium\nor add it as a devDependency: npm i -D playwright')
+  process.exit(2)
 }
-if (!chromium) chromium = require('playwright').chromium
 
 const BASE = process.env.BASE || 'http://localhost:3000'
 const OUT = process.env.OUT || '/tmp/smoke'
@@ -68,7 +66,8 @@ const ONLY = process.env.ONLY ? process.env.ONLY.split(',') : null
 
 ;(async () => {
   const browser = await chromium.launch({
-    executablePath: '/usr/bin/google-chrome-stable',
+    // Use a system Chrome via CHROME_PATH if provided, else Playwright's bundled Chromium.
+    ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}),
     args: ['--no-sandbox', '--disable-dev-shm-usage'],
   })
   const ctx = await browser.newContext({ viewport: { width: 1366, height: 900 } })

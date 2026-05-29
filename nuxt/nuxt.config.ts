@@ -72,11 +72,19 @@ export default defineNuxtConfig({
         }
     },
 
-    // This sprite is behind a *.sprites.app proxy; Vite blocks foreign Host
-    // headers (DNS-rebinding protection) unless the hostname is allowlisted.
-    vite: {
-        server: {
-            allowedHosts: ['tasks-website-nuxt4-bmswx.sprites.app']
+    // Dev-only: when running `nuxt dev` behind a remote proxy (e.g. a cloud
+    // preview host), Vite rejects foreign Host headers (DNS-rebinding guard).
+    // Allowlist extra hosts via a comma-separated env var rather than hardcoding
+    // them, so nothing host-specific ships in the repo:
+    //   NUXT_DEV_ALLOWED_HOSTS=preview.example.com npm run dev
+    $development: {
+        vite: {
+            server: {
+                allowedHosts: (process.env.NUXT_DEV_ALLOWED_HOSTS || '')
+                    .split(',')
+                    .map((h) => h.trim())
+                    .filter(Boolean)
+            }
         }
     },
 

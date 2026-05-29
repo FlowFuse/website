@@ -6,15 +6,13 @@
 const fs = require('node:fs')
 const path = require('node:path')
 
-const PW_CANDIDATES = [
-  '/home/sprite/.npm/_npx/e41f203b7505f1fb/node_modules/playwright',
-  '/home/sprite/.npm/_npx/9833c18b2d85bc59/node_modules/playwright',
-]
 let chromium
-for (const p of PW_CANDIDATES) {
-  try { chromium = require(p).chromium; break } catch (_) {}
+try {
+  ;({ chromium } = require('playwright'))
+} catch (_) {
+  console.error('Playwright is required for this QA script. Install it with:\n  npx playwright install chromium\nor add it as a devDependency: npm i -D playwright')
+  process.exit(2)
 }
-if (!chromium) chromium = require('playwright').chromium
 
 const BASE = process.env.BASE || 'http://localhost:3000'
 const OUT = process.env.OUT || '/tmp/responsive'
@@ -59,7 +57,8 @@ const TARGETS = URLS.filter(([n]) => !ONLY || ONLY.includes(n))
 
 ;(async () => {
   const browser = await chromium.launch({
-    executablePath: '/usr/bin/google-chrome-stable',
+    // Use a system Chrome via CHROME_PATH if provided, else Playwright's bundled Chromium.
+    ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}),
     args: ['--no-sandbox', '--disable-dev-shm-usage'],
   })
 
