@@ -69,12 +69,12 @@ useHead(() => ({
     </ul>
     <nav aria-label="Pagination" class="pagination mt-4">
       <ol class="flex flex-row w-full justify-between text-gray-600">
-        <li class="w-40 justify-start" :style="pageNum === 0 ? 'opacity:0;pointer-events:none' : ''">
-          <a :href="pageNum <= 1 ? '/changelog/' : `/changelog/${pageNum - 1}/`">Previous</a>
+        <li class="w-40 justify-start">
+          <a v-if="pageNum > 0" :href="pageNum <= 1 ? '/changelog/' : `/changelog/${pageNum - 1}/`">Previous</a>
         </li>
         <li><span>{{ pageNum + 1 }} of {{ pageCount }}</span></li>
-        <li class="w-40 justify-end text-right" :style="pageNum >= pageCount - 1 ? 'opacity:0;pointer-events:none' : ''">
-          <a :href="`/changelog/${pageNum + 1}/`">Next</a>
+        <li class="w-40 justify-end text-right">
+          <a v-if="pageNum < pageCount - 1" :href="`/changelog/${pageNum + 1}/`">Next</a>
         </li>
       </ol>
     </nav>

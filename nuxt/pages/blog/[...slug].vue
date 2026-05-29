@@ -146,9 +146,9 @@ useHead(() => ({
     </ul>
     <nav aria-label="Pagination" class="pagination mt-4 px-2">
       <ol class="flex flex-row w-full justify-between text-gray-600">
-        <li class="w-40 justify-start" :style="pageNum === 0 ? 'opacity:0;pointer-events:none' : ''"><a :href="prevHref">Previous</a></li>
+        <li class="w-40 justify-start"><a v-if="pageNum > 0" :href="prevHref">Previous</a></li>
         <li><span>{{ pageNum + 1 }} of {{ pageCount }}</span></li>
-        <li class="w-40 justify-end text-right" :style="pageNum >= pageCount - 1 ? 'opacity:0;pointer-events:none' : ''"><a :href="nextHref">Next</a></li>
+        <li class="w-40 justify-end text-right"><a v-if="pageNum < pageCount - 1" :href="nextHref">Next</a></li>
       </ol>
     </nav>
   </div>
