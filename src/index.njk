@@ -200,24 +200,17 @@ hubspot:
     </div>
 </div>
 
-<!-- How FF solves the problem section -->
-<div class="w-full px-6 mt-28 mb-16">
-    <div class="text-center sm:text-left max-w-screen-lg mx-auto p-9 rounded-xl border-2 border-gray-300 drop-shadow-md bg-white">
-        <h2><span class="text-red-400">Intelligently Scale</span> Your Industrial Applications with AI</h2>
-        <div class="md:hidden flex ff-image-rounded max-w-[500px] m-auto mt-6">
-            {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [500] %}
-        </div>
-        <div class="w-full md:flex md:flex-row gap-6 justify-between items-center m-auto">
-            <div class="md:w-7/12">
-                <p>FlowFuse is the Industrial Application Platform that transforms how organizations connect, collect, and scale industrial operations. Our platform, now enhanced with FlowFuse Expert, empowers IT and OT teams to collaborate more effectively than ever before. Standardize deployments across multiple facilities and accelerate innovation, all while maintaining the governance, security, and scalability your digital transformation demands.</p>
-                <div class="flex gap-3 max-sm:max-w-sm max-md:mx-auto max-sm:flex-col max-sm:justify-center mt-6">
-                    <a class="ff-btn ff-btn--highlight min-h-[40px]" href="/contact-us/" onclick="capture('cta-contact-us', {'position': 'secondary'})">CONTACT US</a>
-                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">TRY IT OUT</a>
-                </div>
-            </div>
-            <div class="max-md:hidden flex ff-image-rounded md:max-w-[350px] m-auto">
-                {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [350] %}
-            </div>
+<!-- Solution section -->
+<div class="solution-section-bg w-full px-6 py-24">
+    <div class="relative z-10 max-w-screen-lg mx-auto max-md:text-center">
+        <p class="text-indigo-500 text-sm font-semibold uppercase m-0">The missing operational layer</p>
+        <h2 class="mt-4 md:text-5xl">FlowFuse is the industrial application platform that sits between your systems and your operations</h2>
+        <p>Whether you're extending an existing system, standardizing a proven solution across sites, or connecting OT and IT data flows — FlowFuse gives your team the platform to <strong>build once and run everywhere</strong>.</p>
+        <div class="flex gap-4 items-center max-md:justify-center flex-wrap mt-6">
+            <a class="ff-btn ff-btn--primary" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'secondary'})">BOOK A DEMO</a>
+            <a class="ff-btn" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">
+                <span class="text-base uppercase flex gap-2 items-center text-indigo-600 hover:text-indigo-800">TRY IT OUT {% include "components/icons/arrow-right.svg" %}</span>
+            </a>
         </div>
     </div>
 </div>
