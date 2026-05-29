@@ -41,18 +41,17 @@ for (const f of walk(publicSrc)) {
     count++
 }
 
-// 2. src/**/images/**/* -> nuxt/public/<path-relative-to-src> (unless skipping).
-if (!SKIP_IMAGES) {
-    const imageFiles = walk(SRC, (f) => f.split(path.sep).includes('images'))
+// 2. src/**/images/**/* -> nuxt/public/<path-relative-to-src>.
+//    Always copied: matches 11ty's addPassthroughCopy behaviour, which ran
+//    unconditionally regardless of SKIP_IMAGES. The flag is reserved for any
+//    future image-optimization pipeline (currently a no-op).
+const imageFiles = walk(SRC, (f) => f.split(path.sep).includes('images'))
     for (const f of imageFiles) {
         const rel = path.relative(SRC, f)
         copyFile(f, path.join(PUBLIC, rel))
         count++
     }
     console.log(`copy_assets: copied ${imageFiles.length} image files`)
-} else {
-    console.log('copy_assets: SKIP_IMAGES set, skipping src/**/images copy')
-}
 
 // 3. Remaining individual passthroughs from .eleventy.js.
 const extras = [
