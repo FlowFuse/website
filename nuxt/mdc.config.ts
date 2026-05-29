@@ -1,5 +1,6 @@
 import { defineConfig } from '@nuxtjs/mdc/config'
 import rehypeAnchorSlugs from './mdc-plugins/anchor-slugs.mjs'
+import rehypeStripInternalMd from './mdc-plugins/strip-internal-md.mjs'
 
 // MDC (the markdown engine behind @nuxt/content v3) loads this file from the
 // app srcDir and applies the `unified` hooks while building the processor. The
@@ -13,6 +14,7 @@ export default defineConfig({
     rehype (processor) {
       return processor
         .use(rehypeAnchorSlugs)
+        .use(rehypeStripInternalMd)
     }
   }
 })
