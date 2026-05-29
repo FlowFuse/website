@@ -66,3 +66,11 @@ In this session, Kristopher covers:
 This webinar is ideal for OT/IT engineers, automation architects, and industrial IoT practitioners who are responsible for systems that need to keep running whether or not the right person is available.
 
 If you've ever been the single point of failure in your own stack — or quietly worried that someone else is — this session is for you.
+
+---
+
+## Would your stack survive without you? {.text-indigo-600}
+
+If this session made you think about how your deployment would recover if critical access disappeared, FlowFuse has the tools to address it — snapshotting, granular permissions, and centralized remote device management.
+
+[Talk to our team](/book-demo/)
