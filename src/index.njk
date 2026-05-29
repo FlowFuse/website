@@ -12,19 +12,19 @@ sections:
       title: "What works on one line won't scale to fifty"
       description: "A working solution on one machine requires rebuilding from scratch for the next site. There is no system to standardize, deploy, and govern what works"
 capabilities:
-    - capability: "Edge data acquisition"
-      feature: "Device agent for streamlined connectivity"
-      description: "Easily and securely collect data from all your industrial devices and sensors. Our platform enables scalable agent deployment to unify data from diverse sources and protocols, ensuring a consistent and reliable flow of information."
-      imagePath: "images/home/home-remote-instances.png"
-      imageAlt: "FlowFuse UI"
-    - capability: "Organize and Analyze"
-      feature: "AI-Assisted platform for data transformation"
-      description: " Transform raw data into a structured and unified information model. FlowFuse Expert accelerates this process, allowing your teams to generate complex data transformation logic, from SQL queries to JavaScript functions, using simple natural language prompts. Cleanse, contextualize, and normalize data faster than ever before."
+    - capability: "Build operational workflows your core systems can't"
+      feature: "Low-code development with FlowFuse Expert"
+      description: "Create the operational applications that MES, ERP, and SCADA platforms struggle to support natively — from quality validation and workforce assignment to shift handovers and production visibility. Describe what you need in plain language and FlowFuse Expert generates the starting logic directly in your workspace."
       imagePath: "images/home/home-node-red.png"
+      imageAlt: "FlowFuse UI"
+    - capability: "Standardize proven workflows across every site"
+      feature: "Device Agent and DevOps Pipelines"
+      description: "Turn a successful workflow on one machine or line into a repeatable operational standard across plants. Roll out updates with version control, staged deployments, and centrally managed industrial devices. No more rebuilding from scratch for every site, or leaving improvements siloed in one location."
+      imagePath: "images/home/home-pipeline.png"
       imageAlt: "FlowFuse flow editor"
-    - capability: "Interact with the Data"
-      feature: "Interactive, real-time dashboards built with AI assistance"
-      description: "Give your teams the tools to visualize and interact with real-time operational data. with FlowFuse Expert, our LLM-powered copilot, you can create custom dashboards and sophisticated UI elements in record time, empowering you to monitor KPIs, optimize production, and innovate without limits."
+    - capability: "Connect shop floor events to enterprise systems"
+      feature: "Flow-based IT/OT connectivity"
+      description: "Move production events, work orders, alarms, and operational data securely between PLCs, edge devices, MES, ERP, cloud platforms, and operator interfaces — without brittle point-to-point integrations or exposing inbound firewall ports."
       imagePath: "images/home/home-dashboard.png"
       imageAlt: "FlowFuse Dashboard"
 solutions:
@@ -200,24 +200,17 @@ hubspot:
     </div>
 </div>
 
-<!-- How FF solves the problem section -->
-<div class="w-full px-6 mt-28 mb-16">
-    <div class="text-center sm:text-left max-w-screen-lg mx-auto p-9 rounded-xl border-2 border-gray-300 drop-shadow-md bg-white">
-        <h2><span class="text-red-400">Intelligently Scale</span> Your Industrial Applications with AI</h2>
-        <div class="md:hidden flex ff-image-rounded max-w-[500px] m-auto mt-6">
-            {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [500] %}
-        </div>
-        <div class="w-full md:flex md:flex-row gap-6 justify-between items-center m-auto">
-            <div class="md:w-7/12">
-                <p>FlowFuse is the Industrial Application Platform that transforms how organizations connect, collect, and scale industrial operations. Our platform, now enhanced with FlowFuse Expert, empowers IT and OT teams to collaborate more effectively than ever before. Standardize deployments across multiple facilities and accelerate innovation, all while maintaining the governance, security, and scalability your digital transformation demands.</p>
-                <div class="flex gap-3 max-sm:max-w-sm max-md:mx-auto max-sm:flex-col max-sm:justify-center mt-6">
-                    <a class="ff-btn ff-btn--highlight min-h-[40px]" href="/contact-us/" onclick="capture('cta-contact-us', {'position': 'secondary'})">CONTACT US</a>
-                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">TRY IT OUT</a>
-                </div>
-            </div>
-            <div class="max-md:hidden flex ff-image-rounded md:max-w-[350px] m-auto">
-                {% image "./images/home/app-maturity-diagram.png", "App maturity diagram", [350] %}
-            </div>
+<!-- Solution section -->
+<div class="solution-section-bg w-full px-6 py-24">
+    <div class="relative z-10 max-w-screen-lg mx-auto max-md:text-center">
+        <p class="text-indigo-500 text-sm font-semibold uppercase m-0">The missing operational layer</p>
+        <h2 class="mt-4 md:text-5xl">FlowFuse is the industrial application platform that sits between your systems and your operations</h2>
+        <p>Whether you're extending an existing system, standardizing a proven solution across sites, or connecting OT and IT data flows — FlowFuse gives your team the platform to <strong>build once and run everywhere</strong>.</p>
+        <div class="flex gap-4 items-center max-md:justify-center flex-wrap mt-6">
+            <a class="ff-btn ff-btn--primary" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'secondary'})">BOOK A DEMO</a>
+            <a class="ff-btn" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">
+                <span class="text-base uppercase flex gap-2 items-center text-indigo-600 hover:text-indigo-800">TRY IT OUT {% include "components/icons/arrow-right.svg" %}</span>
+            </a>
         </div>
     </div>
 </div>
@@ -235,7 +228,7 @@ hubspot:
                 </div>
             </div>
             <div class="md:w-[55%] my-auto flex flex-col">
-                <h3 class="text-red-400 mb-3 text-lg font-semibold">{{ item.feature }}</h3>
+                <h3 class="text-red-400 mb-3 text-sm font-semibold uppercase">{{ item.feature }}</h3>
                 <h2>{{ item.capability }}</h2>
                 <div class="md:hidden rounded-xl w-full bg-gradient-to-tl from-red-100 to-indigo-100 max-w-[500px] mx-auto my-6 p-4">
                     <div class="ff-image-rounded w-full border border-red-200 overflow-hidden">
