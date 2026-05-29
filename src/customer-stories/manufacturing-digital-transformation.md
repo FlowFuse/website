@@ -1,6 +1,6 @@
 ---
-title: Node-RED Enables Digital Transformation of a Large US Manufacturing Company
-description: Read how a US manufacturing giant uses Node-RED and FlowFuse for digital transformation, deploying thousands of instances to boost operational efficiency and innovation.
+title: "How Does a Large Manufacturer Turn Production Events into Action at Scale?"
+description: "A large US manufacturer operationalized real-time production data across thousands of devices and dozens of sites using FlowFuse to govern, scale, and standardize the workflows that turn shop-floor events into action."
 image: /images/stories/large-us-manufacturing.jpg
 date: 2023-05-04
 logo:
@@ -9,36 +9,70 @@ hubspot:
 story:
     brand: Manufacturing Company
     url:
-    quote: Overall, the project leader sees Node-RED as the future of software development. The low code paradigm makes it possible for companies to decentralize innovation within an organization
-    challenge: Maintain and track the thousands of Node-RED developed instances and versions of these instances.
-    solution: Using the FlowFuse platform to address these challenges.
+    quote: The low code paradigm makes it possible for companies to decentralize innovation within an organization, letting the people who run operations build the systems that govern them.
+    challenge: Pilot applications worked on a single line, but the company had no way to govern, version, and deploy thousands of operational workflows consistently across dozens of sites.
+    solution: Using FlowFuse as the operational layer to govern, scale, and standardize production-event workflows across the fleet.
     products:
-        - Node-RED
-        - FlowFuse Dashboard
         - FlowFuse
         - FlowFuse Device Agent
+        - FlowFuse Dashboard
         - FlowFuse Project Nodes
+        - Node-RED
     results:
-        - Managing the deployment of Node-RED instances out to thousands of remote devices and maintain multiple versions of the instances.
-        - Using FlowFuse delivery pipelines and collaboration tools to improve the reliability and efficiency of their development processes.
+        - Governed and versioned thousands of operational instances deployed across thousands of remote devices and dozens of sites.
+        - Used FlowFuse delivery pipelines and collaboration tools to standardize execution and improve the reliability of operational rollouts.
 ---
 
-A **large US based manufacturing company is using Node-RED** to enable the digital transformation of their entire manufacturing operations. The company has a global footprint with dozens of different locations and over ten thousand employees.
+A **large US-based manufacturer operationalized real-time production data** across its entire operation, turning shop-floor events into action at thousands of sites. Using FlowFuse as its operational layer, the company governs, versions, and scales hundreds of standardized workflows across dozens of locations and over ten thousand employees.
 
 <!--more-->
 
-They began their digital transformation and Node-RED journey in 2018. Today **they have thousands of Node-RED instances deployed** across their manufacturing sites that are enabling applications that have transformed the manufacturing operations.
+## What operational problem was the manufacturer trying to solve?
 
-Before they began their digital transformation, the company’s manufacturing data was recorded on paper or not accessible from the manufacturing machinery. It was very difficult to provide a holistic visibility of the operations, predict future maintenance requirements or proactively react to events on the shop floor. The company's MES system was focused on what to build and how to build it but not measuring, understanding or improving the processes.
+The manufacturer had production data but no way to act on it in real time. Data sat on paper or stayed locked inside machinery, so the company had no live visibility into operations, no way to predict maintenance, and no mechanism to respond to shop-floor events as they happened.
 
-Node-RED quickly became a key enabling technology for many of their digital transformation projects. **Node-RED gave them the tool to start providing visibility into the data** they required for these projects. Many of these projects were based on the [Lean Sigma DMAIC](https://goleansixsigma.com/dmaic-five-basic-phases-of-lean-six-sigma/) approach to process improvement, where Node-RED enabled the analyze step of the process. The applications included implementation of continuous improvement ideas, process improvement to staffing handbooks, and systems to facilitate better communication between areas. Due to the data availability enabled by Node-RED they were able to transition their daily operation planning stand-up meeting that was done at a white board and data on paper to a meeting based on real time data displayed on computing monitors.
+The daily operations stand-up showed the gap clearly. A team gathered at a white board, working from numbers written on paper. By the time anyone read a figure, the moment to act on it had passed. Events happened on the line; the response lived a shift behind. This is the operational gap manufacturers hit constantly: the data is there, the action isn't.
 
-A team of 5 Node-RED developers has created hundreds of different applications that have been deployed in the factories. Thousands of Node-RED instances are deployed on industrial computers (IPC) located throughout the different factories. These computers running Node-RED collect the data from the various sensors, PLCs and cameras located in the production lines, interpret the data to understand equipment efficiency, and then send it to the cloud. Other computers and monitors will then display the real time data on the shop floor so the operations team has visibility into the current operation.
+## Why didn't the company's existing MES, ERP, or dashboards solve it?
 
-According to the Node-RED project leader **the key benefit of using Node-RED for their digital transformation is the low code visual programming paradigm**. The team of Node-RED developers are former manufacturing engineers that have intimate knowledge of the operations. Node-RED makes it possible for these engineers to develop high quality code without extensive software development experience. The large set of available nodes makes it faster to develop and allows for a degree of standardization of code that promotes higher quality and less technical debt. The ability to create custom nodes allows the group to implement custom nodes of internal processes that can then be shared across all applications. Creating standard patterns for everyone to follow. The visual programming environment also allows the project leader to easily review and understand flows developed by junior programmers to help with training and continued quality.
+Existing systems each held a piece of the problem and none closed the loop from event to action. The MES executed production orders but didn't orchestrate a response when a line drifted. ERP planned but didn't run the line. Historians stored data but didn't act on it. Dashboards displayed numbers but drove no workflow.
 
-Some limitations they have noticed of Node-RED is the ability to orchestrate software delivery pipelines, version control and tools for teams of developers. It has become very difficult to maintain and track the thousands of Node-RED instances and versions of these instances that they have developed.
+The company's MES focused on **what** to build and **how** to build it, not on measuring, understanding, or improving the process while it ran. This is the limit manufacturers run into across the board: rigid systems built for execution or planning, not for operational logic that responds in real time. The company needed an operational layer sitting across these systems to turn production events into governed, repeatable responses.
 
-The company is using the FlowFuse platform to address these challenges. **They are using FlowFuse to manage the deployment of Node-RED instances out to thousands of remote devices and maintain multiple versions of the instances**. In addition, they use FlowFuse delivery pipelines and collaboration tools to improve the reliability and efficiency of their development processes.
+## What operational workflow did the manufacturer build?
 
-Overall, **the project leader sees Node-RED as the future of software development**. The low code paradigm makes it possible for companies to decentralize innovation within an organization. Allowing subject matter experts to build digital systems that drive innovation.
+The manufacturer built a workflow that watches the line and acts on what it sees, then runs that same pattern everywhere. Industrial computers collect data from sensors, PLCs, and cameras on the production lines, interpret it in real time to understand equipment efficiency, and drive an immediate response.
+
+That response pushes live status to monitors on the shop floor, so the operations team sees the current state of every line as it changes, and sends data upstream to the cloud for fleet-level visibility. The white-board stand-up became a meeting run off live operational data on screen. The same event-to-action pattern extended into continuous-improvement workflows, process changes to staffing handbooks, and coordination between production areas that had previously depended on manual hand-offs.
+
+A team of five former manufacturing engineers built hundreds of these applications. Because they knew the operations intimately, they encoded real operational logic into workflows the floor trusted. Reusable building blocks let them standardize that logic into shared patterns every application could follow, keeping quality high and technical debt low as the library grew.
+
+## How did the manufacturer operationalize these workflows across thousands of sites?
+
+The manufacturer uses **FlowFuse as its operational layer** to deploy, govern, and version thousands of instances across thousands of remote devices. FlowFuse maintains multiple versions across the fleet, so each site runs a known, governed configuration rather than a one-off, and delivery pipelines move changes through staged rollouts instead of manual hand-pushes.
+
+Building one workflow on one line was never the hard part. Operationalizing thousands of them across dozens of sites was. Without a platform underneath, the company had no reliable way to version instances, deploy them consistently, govern who changed what, or know which version ran where. FlowFuse collaboration and review tools let the team lead inspect and standardize junior developers' work before it reaches the floor. The workflows run on Node-RED inside FlowFuse, but the platform around them is what makes them deployable, governable, and repeatable across the whole operation.
+
+## What were the operational outcomes?
+
+The manufacturer moved from paper and white boards to **real-time operational response running across thousands of governed instances.** Operations teams now act on events as they happen rather than a shift later, and hundreds of standardized applications deploy and update through governed pipelines instead of manual effort.
+
+This cut the engineering overhead of running the fleet and kept execution consistent from site to site. New continuous-improvement logic, once proven on one line, now rolls out across plants as a versioned, repeatable workflow. The project leader sees this low-code, operational model as the future of how manufacturers build: it decentralizes innovation, letting the subject-matter experts who run operations build and govern the systems that drive them, at a scale manual development could never reach.
+
+## Frequently asked questions
+
+### What is an operational layer in manufacturing?
+
+An operational layer sits across existing systems like MES, ERP, and historians and turns production events into governed, repeatable action. It orchestrates workflows, governs who can change them, and deploys them consistently across sites — handling the execution and scaling that planning and record-keeping systems were never built to do.
+
+### How does FlowFuse help manufacturers scale operational applications?
+
+FlowFuse deploys, versions, and governs operational instances across thousands of remote devices and multiple sites. Delivery pipelines move changes through staged rollouts, version control keeps each site on a known configuration, and collaboration tools let teams review and standardize work before it reaches the production floor.
+
+### Can manufacturing engineers build operational workflows without software experience?
+
+Yes. The low-code visual model lets former manufacturing engineers encode operational logic without extensive software development experience. Reusable building blocks standardize that logic into shared patterns, so a team of five engineers can build and maintain hundreds of governed applications across an operation.
+
+### What is the difference between collecting data and operationalizing it?
+
+Collecting data means recording or displaying it; operationalizing it means acting on it in real time. A dashboard shows a line's status, but an operationalized workflow detects an event, decides on a response, and drives action — pushing alerts to the floor or triggering a downstream process automatically.
