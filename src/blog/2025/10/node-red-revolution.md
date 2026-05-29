@@ -9,6 +9,24 @@ image: /blog/2025/10/images/node-red-revolution.png
 tags:
   - flowfuse
   - node-red
+
+tldr: "Node-RED grew from Nick O'Leary's MQTT-visualization side project into a widely adopted industrial automation tool because of three things: its low-code visual nature, open-source availability, and extensibility. FlowFuse builds on that foundation to manage and scale Node-RED across an organization as an enterprise-ready platform."
+
+meta:
+  faq:
+    - question: "Why is Node-RED valuable for industrial automation?"
+      answer: "Node-RED suits industrial use because it runs anywhere from edge devices to the cloud and focuses on accessing data wherever it lives and doing something meaningful with it. It works alongside traditional PLCs as an easier integration point, pulling data from many systems, visualizing it, and sharing it across the organization."
+    - question: "What makes Node-RED successful as a low-code tool?"
+      answer: "Three factors: its low-code visual nature, which lets dragging a node replace minutes or hours of boilerplate code; its open-source availability, bringing collaboration, transparency, and interoperability; and its extensibility, which let the community build their own nodes and accelerated adoption."
+    - question: "What challenges come with scaling Node-RED across an organization?"
+      answer: "Open source at the core raises questions about who fixes issues without in-house engineering capacity and how to manage many Node-RED instances. Organizations must keep that infrastructure secured and maintained, and track which versions of flows are deployed across sites, which gets hard at scale."
+    - question: "Why was FlowFuse created?"
+      answer: "Nick O'Leary started FlowFuse to answer the operational questions Node-RED's open-source core raised at scale, such as managing many instances and tracking flow versions. FlowFuse elevates Node-RED into an enterprise-ready platform, built from first-hand experience of what scaling Node-RED actually requires."
+
+cta:
+  type: demo
+  title: "See FlowFuse manage Node-RED at scale"
+  description: "Book a demo to see how FlowFuse manages thousands of Node-RED instances across industrial sites."
 ---
 
 To understand the impact Node-RED has had on industrial automation, it's useful to understand where it has come from and what has enabled its success.

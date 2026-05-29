@@ -8,6 +8,24 @@ image:  /blog/2025/08/images/flowfuse-database.png
 keywords: flowfuse, industrial iot, node-red, postgresql, iot database, flowfuse database, sql queries, query node, dynamic parameters, create tables, edge computing, managed database, node-red-contrib-postgresql, influxdb, timescaledb
 tags:
    - flowfuse
+
+tldr: "FlowFuse Tables is a built-in managed PostgreSQL database that removes the need to provision a database or manage connection strings. Enable it from the Tables menu, create tables through the Explorer UI or SQL, then run CRUD operations with the Query node, which auto-connects and supports numbered and named parameters."
+
+meta:
+  faq:
+    - question: "What is FlowFuse Tables?"
+      answer: "FlowFuse Tables is a built-in managed PostgreSQL database service, released in beta, for storing Industrial IoT data inside your FlowFuse project. It removes the usual work of provisioning a database, managing connection strings and credentials, and configuring nodes. It is available for Enterprise users; contact FlowFuse to enable it."
+    - question: "How do I create a table in FlowFuse Tables?"
+      answer: "Two ways. Use the Explorer tab UI: click +, name the table, and add columns with a type, optional default, and nullable setting. Or use the Query node in the FlowFuse category: write a CREATE TABLE SQL statement, add an Inject node to trigger it, deploy, and click inject to create the table."
+    - question: "Do I need to enter database credentials to use the FlowFuse Query node?"
+      answer: "No. Inside a FlowFuse Node-RED instance, the Query node is pre-configured to connect to your FlowFuse-managed database automatically, so you do not enter credentials manually. The Credentials tab still provides host, port, username, and password if you need to reach the database from outside FlowFuse."
+    - question: "How do I use parameterized queries with the FlowFuse Query node?"
+      answer: "The Query node supports numbered and named parameters, which are safer than inline Mustache strings. For numbered parameters use placeholders like $1 and $2 and pass values as an array in msg.params. For named parameters use $status or $id and pass an object in msg.queryParameters."
+
+cta:
+  type: demo
+  title: "Explore FlowFuse Tables"
+  description: "Book a demo to see how built-in managed PostgreSQL stores your industrial data without external infrastructure."
 ---
 
 FlowFuse recently introduced a [beta release](/handbook/engineering/releases/#beta-release) built-in database service to their platform, making it easier than ever to store Industrial IoT data. In a typical setup, you would need to provision a database, manage connection strings and credentials, configure nodes, and handle security settings. The goal of this new feature is to simplify or even eliminate those steps entirely. In this article, you will learn how it works and how to get started.

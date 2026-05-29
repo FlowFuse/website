@@ -9,6 +9,24 @@ image: /blog/2025/10/images/flowfuse-ai-nodes.png
 tags:
   - flowfuse
   - ai
+
+tldr: "Train a custom image classifier in PyTorch using transfer learning on ResNet-18, export it to ONNX format, then run inference in Node-RED with the FlowFuse AI Nodes. This guide walks through environment setup, dataset structure, fine-tuning, and importing the model into the ONNX node."
+
+meta:
+  faq:
+    - question: "How do I run a custom AI model in Node-RED?"
+      answer: "Train a model in PyTorch, export it to ONNX format, then use the FlowFuse ONNX node. Import your model where Node-RED can access it (the Assets tab in FlowFuse cloud), import the advanced-custom-model example flow, set the model path, update the labels, and deploy."
+    - question: "What is transfer learning and why use it here?"
+      answer: "Transfer learning takes a pre-trained model and fine-tunes it on your own dataset. This tutorial fine-tunes ResNet-18, an 18-layer convolutional network pre-trained on ImageNet, so you can adapt existing knowledge to your specific task using a smaller dataset rather than training from scratch."
+    - question: "What format does the FlowFuse ONNX node need?"
+      answer: "The FlowFuse ONNX node uses models in ONNX format. After training in PyTorch, export with torch.onnx.export to produce a .onnx file. The guide uses opset version 16 and dynamic batch axes, then tests the result with ONNX Runtime before importing it into Node-RED."
+    - question: "How do I structure my image dataset for training?"
+      answer: "Organize images into train, val, and test folders, each containing a subfolder per class (for example apples, kiwis, mangos). The class subfolder names become your labels. After training, the script prints a class mapping you must note and reuse in the Node-RED load labels function node."
+
+cta:
+  type: sign-up
+  title: "Try the FlowFuse AI Nodes"
+  description: "Sign up to run your own ONNX models for image classification and inference directly inside Node-RED flows."
 ---
 
 FlowFuse is introducing a new set of AI nodes to make it easier than ever to integrate AI and machine learning into your Node-RED workflows.

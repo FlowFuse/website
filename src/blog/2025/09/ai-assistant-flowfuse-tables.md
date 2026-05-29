@@ -9,6 +9,24 @@ image: /blog/2025/09/images/flowfuse-assistant-query-node.png
 tags:
   - flowfuse
   - ai
+
+tldr: "The FlowFuse Expert lets you query a database in plain English instead of writing SQL. Combining FlowFuse Tables for connectivity and Query nodes with the Expert's natural language processing, you ask a question in the Query node's Assistant codelens and it generates the SQL automatically. Available to Enterprise users."
+
+meta:
+  faq:
+    - question: "How do I query a database without writing SQL in FlowFuse?"
+      answer: "Use the FlowFuse Expert inside a Query node. Open the node, find the Assistant codelens, type a request in plain English such as Show me all readings from today, and click Ask the FlowFuse Expert. It generates the matching SQL in the Query node's SQL field automatically."
+    - question: "What components does natural language querying combine?"
+      answer: "It combines two FlowFuse components. FlowFuse Tables provides the database connectivity and Query nodes, while the FlowFuse Expert adds the natural language processing that converts plain English into SQL. FlowFuse Tables must be activated in your team before you begin, and it is available for Enterprise users only."
+    - question: "What kinds of queries can the FlowFuse Expert handle?"
+      answer: "Beyond basic lookups, the FlowFuse Expert handles performance and time-based analysis, such as average temperature for the week or per hour, peak readings, complex filtering with multiple conditions, and statistical operations like standard deviation, all expressed as plain-English prompts that it converts into SQL."
+    - question: "Who can use FlowFuse Tables?"
+      answer: "FlowFuse Tables is currently available for Enterprise users only. Make sure it is activated in your FlowFuse team before you start, then import the sample flow to create a sensor_readings table and populate it with simulated hourly data to practice natural language querying with the FlowFuse Expert."
+
+cta:
+  type: demo
+  title: "See natural language database queries"
+  description: "Book a demo to see how FlowFuse Expert turns plain English into SQL queries against your industrial data."
 ---
 
 Getting data from your database used to mean writing SQL queries. Not anymore. The FlowFuse Expert now lets you ask for what you want in plain English and automatically generates the SQL for you in query node.

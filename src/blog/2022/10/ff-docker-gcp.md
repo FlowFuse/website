@@ -8,6 +8,24 @@ tags:
     - posts
     - flowfuse
     - how-to
+
+tldr: "To install FlowFuse on Google Cloud, create a GCP VM with a static IP, point two DNS records at it, install Docker, download the FlowFuse docker-compose build, and edit flowforge.yml and docker-compose.yml with your domain and SMTP details. Starting the stack gives you four running containers and a working FlowFuse server."
+
+meta:
+  faq:
+    - question: "How do I install FlowFuse on Google Cloud Platform?"
+      answer: "Create a GCP VM with a reserved static IP and HTTP/HTTPS firewall access, add two DNS records pointing to it, then SSH in and install Docker. Download the FlowFuse docker-compose build, edit flowforge.yml and docker-compose.yml with your domain and SMTP settings, then run docker compose up."
+    - question: "What do I need before installing FlowFuse on GCP?"
+      answer: "You need a domain name, a DNS provider, a GCP account, and an email provider that allows SMTP connections. The SMTP provider is required so FlowFuse can send emails to users, such as when they are added to teams. Google often gives free credits to cover the GCP costs initially."
+    - question: "Which configuration files do I edit to set up FlowFuse Docker?"
+      answer: "You edit two files. In flowforge.yml, set the domain and base_url, enable and configure the email/SMTP section, and set the public_url for the MQTT broker. In docker-compose.yml, add your domain to the virtual hosts configuration. Then start the stack with docker compose."
+    - question: "How do I confirm FlowFuse is running after install?"
+      answer: "After running docker compose up, use docker ps to check the containers. You should see four running Docker containers. You can then reach the FlowFuse login page via the DNS record you created, though traffic runs over HTTP until you add HTTPS separately."
+
+cta:
+  type: demo
+  title: "See FlowFuse in production"
+  description: "Book a demo to see how FlowFuse runs Node-RED at scale, or self-host it on your own cloud infrastructure."
 ---
 
 As part of our preparations for FlowFuse 1.0 we have been testing various real world scenarios to see where we can add to our documentation and where we might be able to improve our releases to make the install process easier for users. As a benefit of that testing we have been able to hone these installation processes and we wanted to share one of those with you today.

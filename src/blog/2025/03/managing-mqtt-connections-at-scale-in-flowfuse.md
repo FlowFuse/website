@@ -8,6 +8,26 @@ image: /blog/2025/03/images/scaling-mqtt-connections.png
 tags:
    - flowfuse
    - mqtt
+
+tldr: "Use environment variables to connect each FlowFuse pipeline stage to the right MQTT broker without manual setup. Reference them directly in the MQTT node with ${ENV_NAME}, or set values dynamically through a Change node for multi-device stages. Define shared variables at the device group level for consistency."
+
+meta:
+  faq:
+    - question: "How do I connect different pipeline stages to different MQTT brokers in FlowFuse?"
+      answer: "Use environment variables such as HOST, PORT, USERNAME, PASSWORD, CLIENT_ID, and TOPIC, set per instance or per device group. FlowFuse's one-click deployment then connects each stage to its intended broker automatically, so a development stage and a production stage can use separate brokers without manual reconfiguration."
+    - question: "How do I reference environment variables in a Node-RED MQTT node?"
+      answer: "Two methods. Reference variables directly in the MQTT node properties using ${ENV_NAME} syntax, which is simplest for a single instance per stage. Or use a Change node to set msg.broker properties dynamically, which is more flexible when multiple devices in one stage need unique client IDs, credentials, and topics."
+    - question: "How do I keep MQTT client IDs unique across multiple devices?"
+      answer: "Use the default per-instance environment variables FF_DEVICE_NAME and FF_DEVICE_ID. Combine FF_DEVICE_NAME with a shared CLIENT_ID_SUFFIX to generate the client ID, use FF_DEVICE_NAME as the username, and FF_DEVICE_ID as the password. This avoids client ID duplication and connection conflicts within a stage."
+    - question: "Can I set MQTT environment variables for a whole device group?"
+      answer: "Yes. Set shared variables like HOST, PORT, and CLIENT_ID_SUFFIX at the device group level in FlowFuse, and they apply to all remote instances in the group. This avoids configuring each instance individually when most settings are the same, keeping configuration consistent across the group."
+    - question: "Can I monitor MQTT topics across brokers in FlowFuse?"
+      answer: "Yes. Once flows are deployed and MQTT nodes are connected, you can monitor and manage all topics across all brokers directly in FlowFuse. You can also bring your own brokers for topic monitoring within the platform."
+
+cta:
+  type: sign-up
+  title: "Automate MQTT across your pipeline"
+  description: "Sign up for FlowFuse to deploy Node-RED flows with stage-specific MQTT brokers using environment variables."
 ---
 
 FlowFuse makes it easy to deploy Node-RED flows at scale using DevOps pipelines and device groups. However, different stages in a pipeline may need different MQTT brokers—for example, one for development and another for production. Manually configuring each stage can be time-consuming, especially when a stage has multiple remote instances (devices).

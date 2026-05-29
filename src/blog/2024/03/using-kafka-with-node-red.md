@@ -10,6 +10,24 @@ tags:
    - posts
    - node-red
    - kafka
+
+tldr: "This guide shows how to integrate Apache Kafka with Node-RED for real-time data. You install Kafka locally with Docker or run it in the cloud, add the node-red-kafka-manager node, create a topic with partitions, then build producer and consumer flows to send and visualize regional temperature data on a dashboard."
+
+meta:
+  faq:
+    - question: "How do I connect Node-RED to Apache Kafka?"
+      answer: "Install the node-red-kafka-manager node from the palette manager, then configure a Kafka producer or consumer node with your broker host, port, and SASL credentials. Enable TLS and upload a CA certificate in PEM format if your broker uses secure communication. Store connection details as environment variables for easier configuration."
+    - question: "How do I install Kafka locally for testing with Node-RED?"
+      answer: "Use Docker to simplify setup. First run a Zookeeper container exposing port 2181, then run a Kafka container exposing port 9092 with the Confluent cp-kafka image, setting KAFKA_ZOOKEEPER_CONNECT and KAFKA_ADVERTISED_LISTENERS to your private IP. You can also run Kafka in the cloud using a managed service."
+    - question: "How do I create a Kafka topic with partitions in Node-RED?"
+      answer: "Use an inject node with msg.topic set to createTopics and msg.payload set to a JSON array defining the topic name, partition count, and replication factor. Connect it to a Kafka admin node and deploy, then click inject. The guide creates a Temperature topic with three partitions for separate city regions."
+    - question: "How do I send and receive data with Kafka producer and consumer nodes?"
+      answer: "Add a Kafka producer node, select your config, set the topic, key, and partition number, then feed it data from an inject node. To receive, add a Kafka consumer node on the same topic and partition. Use a change node to convert the string payload back to a number before charting it."
+
+cta:
+  type: sign-up
+  title: "Build your Kafka flow on FlowFuse"
+  description: "Spin up a managed Node-RED instance and connect Kafka producers and consumers with a free trial."
 ---
 
 Kafka is one of the most powerful technologies enabling seamless data communication. Many individuals are utilizing it alongside Node-RED for real-time data exchange in their IoT and IIoT applications. However, some users are encountering difficulties in obtaining assistance with Kafka-related queries.

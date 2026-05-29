@@ -9,6 +9,26 @@ tags:
     - posts
     - flowfuse
     - opcua
+
+tldr: "To connect Node-RED to a PTC KepserverEX OPC server, install the node-red-contrib-opcua node, configure an OPC UA endpoint using Basic256Sha256 with Sign and Encrypt and anonymous login, then trust the Node-RED client in KepserverEX. Once connected, you can browse, read, and write PLC tags using namespace and string NodeId addressing."
+
+meta:
+  faq:
+    - question: "How do I connect Node-RED to a Kepware OPC server?"
+      answer: "Install the node-red-contrib-opcua node, then add an OPC UA endpoint using the endpoint URL from KepserverEX's OPC UA Configuration Manager, for example opc.tcp://127.0.0.1:49320. Use Basic256Sha256 security with Sign and Encrypt and anonymous login, enable anonymous login in Kepware, then trust the Node-RED client and deploy."
+    - question: "What node do I use to connect Node-RED to KepserverEX?"
+      answer: "The guide uses the node-red-contrib-opcua node, which provides an OPC UA Client and OPC UA endpoint configuration. KepserverEX, also called Kepware, is an OPC server widely used in manufacturing to extract data from PLCs, and OPC UA provides the bridge between it and Node-RED."
+    - question: "Why does the OPC UA connection fail until I trust the client?"
+      answer: "On the first connection attempt the server may not connect, which is expected. Triggering the Node-RED inject node registers the NodeOPCUA-Client in KepserverEX's Trusted Clients tab. Once you select that client and click Trust, the connection succeeds and Node-RED can browse the project's tags."
+    - question: "How do I read and write Kepware tags from Node-RED?"
+      answer: "Set the item in the OPCUa-Item node using namespace and string NodeId syntax, such as ns=2;s=Simulation Examples.Functions.Ramp1, where ns is the namespace and s is the string NodeId. To read, trigger the read inject node; to write, set a value and change the OPCUa-Client action to Write."
+    - question: "What is KepserverEX used for?"
+      answer: "KepserverEX, often called Kepware, is an OPC connectivity platform that securely manages, monitors, and controls automation devices. It extracts data from PLCs without direct interaction and supports real-time monitoring, M2M communication, and IIoT. Integrating it with Node-RED adds bidirectional communication for sending, storing, and manipulating data."
+
+cta:
+  type: demo
+  title: "Connect industrial data with FlowFuse"
+  description: "Book a demo to see how FlowFuse and Node-RED bridge OPC UA servers, PLCs, and your IIoT applications."
 ---
 
 KepserverEX, often referred to as Kepware, is an OPC server that has been the important tool many manufacturing companies have used on their digital transformation journey.  It plays an important role for many to extract data from PLCs, Programmable Logic Controllers, without having to directly interact with them.

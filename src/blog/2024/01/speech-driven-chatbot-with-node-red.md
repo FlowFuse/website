@@ -11,6 +11,26 @@ tags:
     - dashboard
     - virtual assistant
     - ai
+
+tldr: "You can build a speech-driven chatbot in Node-RED using Dashboard 2.0 template widgets and the browser's Web Speech API for local speech recognition and synthesis, with no external speech service. A ChatGPT node generates responses, with the OpenAI API key stored as an environment variable for security."
+
+meta:
+  faq:
+    - question: "Can Node-RED do speech recognition and synthesis without an external API?"
+      answer: "Yes. The guide uses the browser's Web Speech API inside Dashboard 2.0 template widgets, which processes speech locally in the browser rather than calling an external service. It is supported in most modern browsers except Firefox, so no external speech recognition or synthesis API is required."
+    - question: "How do I build a speech-driven chatbot with Node-RED?"
+      answer: "Install Dashboard 2.0, then build a Vue speech-to-text template widget using webkitSpeechRecognition, pass the recognized text through a ChatGPT node, and feed the response into a text-to-speech template widget using SpeechSynthesisUtterance. Deploy the flow and open the dashboard to talk with the chatbot."
+    - question: "How do I integrate ChatGPT into a Node-RED flow?"
+      answer: "Install a ChatGPT node such as @sumit_shinde_84/node-red-contrib-node-gpt, then connect speech-recognition output through a change node that sets your OpenAI token, into the ChatGPT node. The node's response is sent to the text-to-speech widget so the chatbot replies aloud."
+    - question: "How do I keep my OpenAI API key secure in Node-RED?"
+      answer: "Store the OpenAI API key as an environment variable rather than placing it directly in the flow. In the instance settings, add a variable in the environment section, then use a change node to set that environment variable as a msg property, keeping the key from being exposed in the flow."
+    - question: "Which browsers support the speech features in this chatbot?"
+      answer: "The Web Speech API used for speech recognition and synthesis is widely present in modern browsers, with the notable exception of Firefox. Because processing happens locally in the browser, the chatbot works without external speech APIs in supported browsers."
+
+cta:
+  type: sign-up
+  title: "Build voice apps in Node-RED"
+  description: "Sign up for FlowFuse to build and deploy Node-RED Dashboard 2.0 apps like this speech-driven chatbot."
 ---
 
 Have you ever wanted to integrate speech recognition and synthesis into your Node-RED project and thought it was too complex? Often it has required external services or APIs. However, in this guide, we show you how you can use speech recognition and synthesis in your Node-RED projects without needing an external service or API.  

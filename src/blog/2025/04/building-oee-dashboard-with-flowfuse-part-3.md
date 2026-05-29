@@ -8,6 +8,24 @@ image: /blog/2025/04/images/oee-dashboard-building-3.png
 keywords: oee dashboard, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
+
+tldr: "Part 3 refines the FlowFuse OEE dashboard: apply a dark theme via Dashboard 2.0 settings, fix responsive layout by adjusting tablet breakpoint columns, add a logo and title with a Vue Teleport template, scale to multiple lines using subflows, and swap simulated data for your real database queries."
+
+meta:
+  faq:
+    - question: "How do I make a Node-RED OEE dashboard responsive across screen sizes?"
+      answer: "Open Page Settings in the Dashboard editor and adjust the Breakpoint Settings Table. The post sets the Tablet column count to 6 so two 3-column KPI widgets fit per row and 6-column summary widgets span the row. A custom CSS template forces equal card heights to fix uneven sections."
+    - question: "How do I scale an OEE dashboard to multiple production lines?"
+      answer: "Convert the line's flow into a subflow with an input node and environment variables for widget groups, so logic is reusable. To add a line, copy the flow into a new tab, create a new dashboard page with its own path, add a widget group, and update the line name and shift durations."
+    - question: "How do I connect a real database to the OEE dashboard instead of simulated data?"
+      answer: "Install the contrib node for your database via Palette Manager and replace the sqlite nodes. For SQL databases the queries can stay; for NoSQL or time-series databases, rewrite them. To match your schema, update field and table names but keep the column aliases and dynamic parameters $startTime, $endTime, and $line unchanged."
+    - question: "How do I add a custom logo and title to a FlowFuse Dashboard 2.0 header?"
+      answer: "Drag a Template widget onto the canvas and add Vue code that uses Teleport to inject content into the #app-bar-title and #app-bar-actions areas. Place your title text and an img tag pointing at your logo. With FlowFuse you can host the logo using the static assets service."
+
+cta:
+  type: sign-up
+  title: "Start from the OEE Dashboard Blueprint"
+  description: "Sign up for FlowFuse and use the ready-made OEE Dashboard Blueprint to deploy faster."
 ---
 
 In [Part 2](/blog/2025/04/building-oee-dashboard-with-flowfuse-2/), we built the flow to calculate OEE for the production line using simulated production and downtime data and created a dashboard interface for visualization. However, we did not focus much on theme, layout, or styling.

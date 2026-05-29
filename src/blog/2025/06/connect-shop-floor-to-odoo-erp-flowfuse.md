@@ -8,6 +8,26 @@ image: /blog/2025/06/images/connect-shopfloor-to-erp.png
 keywords: erp to shopfloor, shop floor to erp, integration odoo, odoo integration, node-red odoo, odoo node-red, odoo with low-code
 tags:
    - flowfuse
+
+tldr: "FlowFuse connects shop floor data directly to the Odoo ERP, removing manual entry and stale inventory. Using the node-red-contrib-odoo-xmlrpc-filters-fields package, you configure one Odoo connection, then read, create, update, delete, and search records by specifying an Odoo model such as product.template or mrp.production."
+
+meta:
+  faq:
+    - question: "How do I connect Node-RED to Odoo?"
+      answer: "Install the node-red-contrib-odoo-xmlrpc-filters-fields package, drag in any odoo-xmlrpc node, and click the pencil icon next to Host to add a connection. Enter your Odoo host URL, database name, username, and password once; all odoo-xmlrpc nodes can then reuse that saved configuration."
+    - question: "What is an Odoo model and how do I use it in FlowFuse?"
+      answer: "An Odoo model represents a type of business object, like a database table. Every read, create, update, or delete targets a specific model. Common manufacturing models include product.template for products, stock.quant for inventory, and mrp.production for manufacturing orders. You specify the model in each odoo-xmlrpc node."
+    - question: "How do I create or update Odoo records from the shop floor?"
+      answer: "To create records, send an array of objects as msg.payload to an odoo-xmlrpc-create node with the target model. To update, send an array where the first element is a list of record IDs and the second is an object of fields to change, using the odoo-xmlrpc-update node."
+    - question: "How do I keep Odoo credentials secure in a Node-RED flow?"
+      answer: "Store the Odoo host, database, username, and password in FlowFuse Environment Variables rather than directly in the flow. This keeps sensitive details outside your flow code so they are not exposed when you share or export flows. The connection node then references those variables."
+    - question: "How do I filter and search Odoo data in FlowFuse?"
+      answer: "Use the odoo-xmlrpc-search_read node. Filters are a list of lists, each as [field, operator, value], combined with AND; operators include =, !=, >, in, and ilike. Set msg.fields to limit returned columns, and use msg.offset and msg.limit to paginate larger result sets."
+
+cta:
+  type: contact
+  title: "Connect your shop floor to Odoo"
+  description: "Get in touch to discuss how FlowFuse links your factory data directly to your ERP without manual entry."
 ---
 
 A major problem in manufacturing today is when your ERP system isn't getting real-time information from the factory floor. This gap causes big issues, like ordering too much material because inventory numbers are old, or missing important production deadlines. This lack of instant, correct information directly leads to higher costs and lost opportunities for your business.

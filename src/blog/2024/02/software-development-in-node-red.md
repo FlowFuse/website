@@ -8,6 +8,24 @@ image: /blog/2024/02/images/software-development-practices-to-node-red.png
 tags:
     - posts
     - flowfuse
+
+tldr: "Software development practices translate to Node-RED. Use the nrlint tool to catch flow problems before they run, the Node-RED Debugger plugin to set breakpoints and step through messages, and Inject and Debug nodes for basic testing. Both nrlint and the Debugger come pre-installed in FlowFuse Cloud."
+
+meta:
+  faq:
+    - question: "How do I lint Node-RED flows?"
+      answer: "Use the nrlint tool, which runs on the command line or directly in the editor to spot potential problems in flows. It catches stylistic issues like nodes not aligned to the grid, identifies potential infinite loops, and highlights Debug nodes without a name set, helping keep flows tidy and maintainable."
+    - question: "How do I debug a Node-RED flow step by step?"
+      answer: "Install the Node-RED Debugger plugin to enable step-by-step debugging. Set breakpoints on any node input or output that trigger when a message arrives. The Debugger pauses the whole runtime, shows queued messages, and lets you release them one at a time to watch how the flow progresses."
+    - question: "Can you write automated tests for Node-RED flows?"
+      answer: "Partially today. You can use Inject nodes to trigger messages with different values and Debug nodes to examine results, though this clutters flows and requires manual verification. A repeatable testing sidebar with defined test cases is a future Node-RED roadmap item, not yet available."
+    - question: "Are nrlint and the Node-RED Debugger available in FlowFuse?"
+      answer: "Yes. Both nrlint and the Node-RED Debugger plugin come pre-installed in all FlowFuse Cloud hosted instances. You can start using them today via the editor's sidebar menu, without installing anything yourself."
+
+cta:
+  type: sign-up
+  title: "Try linting and debugging in FlowFuse"
+  description: "Sign up for FlowFuse Cloud, where nrlint and the Node-RED Debugger are pre-installed and ready in the sidebar."
 ---
 
 I'm always thinking about how we can continue to improve the Node-RED experience. One area I like to explore is to make sure we learn the right lessons from the Software Development world. 

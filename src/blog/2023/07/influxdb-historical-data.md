@@ -10,6 +10,24 @@ keywords: Node-RED InfluxDB, Time-series data, Industrial dashboard, Historical 
 tags:
     - posts
     - node-red
+
+tldr: "Build a Node-RED dashboard that shows both live and historical data by storing time-series readings in InfluxDB. Capture serial sensor data, clean it with a change node, write it to InfluxDB Cloud with the influxdb-out node, then query a date range through a form and reshape the result for the chart node."
+
+meta:
+  faq:
+    - question: "How do I store Node-RED data in InfluxDB?"
+      answer: "Install node-red-contrib-influxdb from the Palette Manager, then drag in an influxdb-out node. Configure it with your InfluxDB URL, API token, organization, and bucket. Send the value you want stored as msg.payload, and the node writes each reading to your time-series bucket."
+    - question: "How do I query historical data from InfluxDB and show it in a Node-RED chart?"
+      answer: "Use a form node to collect a start time and window, build the query with a template node using mustache variables for rangeStart and rangeEnd, then run it against InfluxDB. Reshape the returned object with split, change, and join nodes into the [{series,data,labels}] format the chart node expects."
+    - question: "How do I capture serial port sensor data in Node-RED?"
+      answer: "Configure a serial-in node with settings matching your device, such as 9600 8N1, and use 0x0D (carriage return) as the message delimiter. Add a delay node to throttle high-speed streams, then extract the numeric value from the ASCII string with a change node using a JSONata regex match."
+    - question: "Is InfluxDB free to use for a Node-RED dashboard?"
+      answer: "Yes. The post uses InfluxDB Cloud Serverless on its Free plan, which is sufficient for the example. You create an account, set up a bucket to store data, and generate an API token to authorize calls from Node-RED. Restrict the token's permissions once you move beyond testing."
+
+cta:
+  type: sign-up
+  title: "Make your dashboard production-ready"
+  description: "FlowFuse adds backups, version control, and remote management to your existing Node-RED and InfluxDB flows."
 ---
 
 Every new dashboard is met with the fast-following request, “can we save this data and somehow look back on it?”  Yes, you can, and let’s use InfluxDB to make it happen!

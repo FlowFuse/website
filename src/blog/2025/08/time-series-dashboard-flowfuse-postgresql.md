@@ -8,6 +8,26 @@ image: /blog/2025/08/images/historical-data-dashboard.png
 keywords: flowfuse tables, iiot dashboard, industrial iot, time series data, postgresql optimization, historical data visualization, node-red dashboard, sensor data, batch inserts, data analytics, iot monitoring, flowfuse tutorial, industrial automation, real-time charts, time series database
 tags:
    - flowfuse
+
+tldr: "Build a historical IIoT dashboard with FlowFuse Tables and its managed PostgreSQL database. Create an indexed sensor_readings table, accumulate sensor data and write it in batches of 100 with a Function node, then query by time range and visualize it with a ui-chart, all inside Node-RED."
+
+meta:
+  faq:
+    - question: "Can PostgreSQL handle large volumes of time-series data?"
+      answer: "Yes, when configured properly. Without optimization, query performance slows as data grows, but techniques like batch inserts and smart indexing keep PostgreSQL fast and reliable at industrial scale. FlowFuse Tables offers managed PostgreSQL as its first database because it is flexible, reliable, and open source."
+    - question: "How do I store sensor data efficiently in PostgreSQL with Node-RED?"
+      answer: "Use batch inserts instead of writing each reading individually. Add a Function node that accumulates incoming readings in context until it reaches a batch size, such as 100, then builds a single parameterized INSERT statement with placeholders and sends it to a Query node. This replaces 100 separate writes with one transaction."
+    - question: "How should I index a time-series table in PostgreSQL?"
+      answer: "Create a composite index on sensor_id and timestamp in descending order. This lets PostgreSQL quickly locate readings for a specific sensor while already ordering them newest to oldest, avoiding expensive sorts when fetching recent values. The post also uses TIMESTAMPTZ to store timestamps with timezone information for geographically spread sensors."
+    - question: "What is FlowFuse Tables?"
+      answer: "FlowFuse Tables is an Enterprise feature that provides a managed PostgreSQL database inside the FlowFuse platform. It lets you collect, transform, store, and visualize data without juggling external databases or leaving FlowFuse, using Query nodes in Node-RED for table creation, inserts, and queries."
+    - question: "How do I let users select a time range on a Node-RED dashboard?"
+      answer: "Use a ui-form node with date, time, and window fields, then format the input with a Change node and convert it to UTC with a Date/Time Formatter node to match the TIMESTAMPTZ standard. Pass the values as parameters to a Query node and display results in a ui-chart."
+
+cta:
+  type: sign-up
+  title: "Build a time-series dashboard"
+  description: "Sign up for FlowFuse and use FlowFuse Tables to store and visualize industrial sensor data in Node-RED."
 ---
 
 In Industrial IoT, tracking data over time is crucial. Whether you’re monitoring temperature changes throughout the day, spotting machine downtime, or analyzing production trends across shifts, a historical data dashboard helps you see important patterns clearly.

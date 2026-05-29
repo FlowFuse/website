@@ -8,6 +8,26 @@ image: /blog/2025/06/images/building-forms-in-flowfuse.png
 keywords: flowfuse form, node-red form, Recipe Management System, Node-RED Recipe Management, FlowFuse Recipe Management System
 tags:
    - flowfuse
+
+tldr: "The FlowFuse Dashboard Form widget lets you build factory data-collection forms with drag-and-drop, no coding. It supports text, number, date, multiline, dropdown, and checkbox inputs, configured statically or dynamically at runtime. Submitted data arrives in msg.payload for processing, storage, or directly instructing shop-floor machines via the FlowFuse Device Agent."
+
+meta:
+  faq:
+    - question: "How do I build a form in FlowFuse Dashboard?"
+      answer: "Drag the Form widget onto the canvas, assign it to a group and page, set its size and label, then add input elements with the + add button. Each element gets a label, a name used as the msg.payload key, a type, and an optional required flag. No coding is needed."
+    - question: "What input types does the FlowFuse Form widget support?"
+      answer: "The Form widget supports text fields, number inputs, date pickers, multi-line text areas, dropdown selection, and checkboxes. Runtime configuration also supports password, email, switch, and time types. Fields can be set statically with predefined values or dynamically through your Node-RED flow."
+    - question: "How do I access data submitted from a FlowFuse form?"
+      answer: "When a user submits the form, the data is sent to nodes connected to the ui-form output inside msg.payload. Each field's value is accessed by its key or name, for example msg.payload.device_name. You can then validate, transform, store it in a database or context storage, or instruct machines."
+    - question: "Can I pre-fill or change form fields dynamically?"
+      answer: "Yes. Send an object in msg.payload to the ui-form node to pre-fill fields, where each key matches a form field. To add or change fields at runtime, use msg.ui_update.options with an array of element configs, and use msg.ui_update.dropdownOptions to update dropdown choices without changing the rest of the form."
+    - question: "Can FlowFuse forms control machines on the shop floor?"
+      answer: "Yes. The collected form data can directly instruct machines on the shop floor, with the FlowFuse Device Agent managing that control. The post demonstrates this with a production recipe update form backed by SQLite, where operators select a recipe and apply changes to parameters like temperature and mixing speed."
+
+cta:
+  type: sign-up
+  title: "Collect factory data without code"
+  description: "Start a free FlowFuse trial and build drag-and-drop dashboard forms for your shop floor in Node-RED."
 ---
 
 It's often a pain to get important data from the factory floor. Things like doing quality checks still rely on old methods like manual notes and slow spreadsheets. This can lead to delays, errors, and a lot of wasted time before anyone can actually use the information. It's especially tough when you need quick feedback from an operator.

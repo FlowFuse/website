@@ -11,6 +11,24 @@ tags:
     - node-red
     - how-to
     - node-red tips
+
+tldr: "Three Node-RED organization tips: export and import flows as JSON to move or back up your work, import example flows bundled with custom nodes to get a quick starting point, and use the group feature to visually organize nodes for clearer, easier-to-edit, and easier-to-share flows."
+
+meta:
+  faq:
+    - question: "How do I export and import flows in Node-RED?"
+      answer: "Open the menu (three horizontal lines, top right) and choose Import or Export. Export gives you the flow as JSON via Clipboard or a downloaded file. Import lets you paste or select that JSON into another instance. Note that some nodes may need extra setup or installation after importing."
+    - question: "How do I use the example flows included with custom nodes?"
+      answer: "Drag the custom node onto your flow and double-click to open its configuration panel. Look for an Examples menu or button, whose location varies by node, then pick an example and click Import to add it to your workspace. Test examples thoroughly before using them in production."
+    - question: "What does grouping nodes do in Node-RED?"
+      answer: "The group feature visually groups related nodes in the workspace. It improves organization, lets you edit or move grouped nodes as a single unit, packages related nodes together when sharing a flow, and reduces visual clutter, which helps most with larger, more complex flows."
+    - question: "How do I back up my Node-RED flows?"
+      answer: "Use the Export feature to save your flows and settings as a compressed JSON file. Choose File to download it to your computer, then keep it as a backup or import it into another Node-RED instance later. FlowFuse adds version control and snapshots for safer recovery."
+
+cta:
+  type: sign-up
+  title: "Version and share flows with FlowFuse"
+  description: "Sign up for a free trial to track changes, take snapshots, and share Node-RED flows across instances with the Team Library."
 ---
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.

@@ -10,6 +10,24 @@ tags:
     - flowfuse
     - low-code
     - ai
+
+tldr: "Technology has always reshaped industries and job roles, from the Industrial Revolution to today's AI and low-code tools. Companies that adapt thrive; those that resist decline, as Nokia and Xerox showed. FlowFuse combines low-code Node-RED with AI features to help businesses, especially manufacturers, innovate and stay competitive."
+
+meta:
+  faq:
+    - question: "How do AI and low-code tools change job roles?"
+      answer: "AI and low-code tools both disrupt existing roles and create new ones. Demand is rising for AI Integration Specialists, Data Scientists, Machine Learning Engineers, and prompt engineers, while low-code adoption creates Automation Engineers, IoT Developers, and Integration Specialists. Node-RED is becoming a standard requirement in manufacturing and IoT job listings."
+    - question: "Why do companies fail to survive technological change?"
+      answer: "Companies decline when they cling to outdated methods instead of adapting. Nokia led mobile phones but resisted the smartphone shift and lost to Apple and Samsung. Xerox missed its own innovations. Businesses that fail to embrace new technology risk obsolescence, while adaptable ones like Amazon evolve and grow."
+    - question: "What is FlowFuse and how does it combine low-code with AI?"
+      answer: "FlowFuse is a cloud-based platform for Node-RED, a low-code tool. It adds real-time collaboration, version control, and remote edge device programming, and integrates with over 5,000 applications and protocols. AI features like Function GPT, Node-RED Builder, and FlowFuse Expert help users automate flow creation and boost productivity."
+    - question: "Is AI in manufacturing the next frontier or just hype?"
+      answer: "The post argues strategic adoption of AI and low-code tools is critical for competitive advantage, not hype. Manufacturers are already using these tools to optimize operations and stay competitive in Industry 4.0. Businesses that implement AI responsibly improve efficiency and decision-making, while those that hesitate risk falling behind."
+
+cta:
+  type: demo
+  title: "See FlowFuse for manufacturing"
+  description: "Book a demo to see how low-code Node-RED and AI features streamline industrial operations."
 ---
 
 Throughout history, technology has continuously transformed industries, job roles, and entire companies. While these changes often evoke fear and resistance, they also create new jobs, opportunities for innovation and growth. This post will explore how historical technological advancements have reshaped both individual job roles and entire companies, examine current trends like AI and low-code tools, and discuss the critical importance of adaptability for both individuals and businesses in navigating technological disruption, Importantly, we will address the pressing question of our time: ***"How can AI and low-code tools both enhance and challenge human capabilities, creativity, and the job market, and is this the next frontier in manufacturing or just hype"***

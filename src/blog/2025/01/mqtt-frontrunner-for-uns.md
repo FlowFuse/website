@@ -11,6 +11,24 @@ tags:
  - mqtt
  - uns
  - unified-namespace
+
+tldr: "MQTT is the strongest broker choice for a Unified Namespace because its publish-subscribe model decouples producers and consumers, its event-driven design pushes data with low latency, and its three QoS levels give reliable delivery. It stays lightweight where AMQP and Kafka add complexity and heavier infrastructure."
+
+meta:
+  faq:
+    - question: "Why is MQTT the best broker for a Unified Namespace (UNS)?"
+      answer: "MQTT fits UNS needs through its publish-subscribe model, which decouples producers from consumers so new devices can be added without disrupting data flows. Its event-driven architecture pushes data with low latency, and its Quality of Service levels give reliable delivery, all while staying lightweight compared with heavier alternatives."
+    - question: "How does MQTT's publish-subscribe model help a UNS?"
+      answer: "Producers publish data to a central broker without knowing who consumes it, and interested consumers subscribe to the relevant stream. This removes point-to-point connections, so adding new devices or services does not disrupt existing flows. The event-driven design pushes data the moment it is available instead of polling."
+    - question: "What are the MQTT QoS levels and which should I use?"
+      answer: "MQTT offers three. QoS 0, at most once, suits non-critical data where occasional loss is acceptable. QoS 1, at least once, is ideal for most IIoT applications that need reliable delivery and tolerate duplicates. QoS 2, exactly once, is for mission-critical data where no duplicates or omissions are acceptable."
+    - question: "Is MQTT better than Kafka or AMQP for a UNS?"
+      answer: "For most UNS scenarios, yes. AMQP and Kafka also offer reliability guarantees, but they are more complex and require heavier infrastructure. MQTT provides a simple, lightweight design with the right level of reliability through QoS, letting you scale the network easily while keeping data flows dependable."
+
+cta:
+  type: demo
+  title: "Build your UNS on MQTT"
+  description: "FlowFuse includes a built-in MQTT broker to manage all your UNS clients, devices, and data from one place."
 ---
 
 Choosing the right broker for your UNS is crucial. It must support real-time data, scale easily, and integrate seamlessly with devices and services. MQTT often comes out as the best choice for these needs.

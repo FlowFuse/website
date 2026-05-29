@@ -11,6 +11,24 @@ tags:
   - flowfuse
   - node-red
   - ai
+
+tldr: "Combining LLMs, the Model Context Protocol (MCP), and Node-RED lets operators query and control machines in plain language. MCP exposes read-only resources and action tools to the LLM, while Node-RED bridges legacy machine protocols. A human stays in the loop for physical or high-stakes actions because LLM output is non-deterministic."
+
+meta:
+  faq:
+    - question: "What is the Model Context Protocol (MCP) and how does it work with Node-RED?"
+      answer: "MCP is an agreed-upon protocol that gives an LLM more context. Operators define resources (read-only data like sensor readings or spec sheets) and tools (functions that perform actions). Node-RED connects legacy and proprietary machine protocols, and the FlowFuse MCP node feeds that context to the LLM as an operational partner."
+    - question: "Can an LLM control a physical machine through Node-RED?"
+      answer: "Yes, by wrapping control logic in an MCP tool. For example, Node-RED can integrate a Siemens S7 stack light; the LLM requests an action like turn the stack light green, the MCP tool sends it through Node-RED's adapters, and the action executes. Existing machine integrations become LLM-ready without rebuilding them."
+    - question: "Why do you need a human in the loop with LLM-driven operations?"
+      answer: "LLM output is predictive and non-deterministic, so it can change when context shifts and may be confident even when wrong. For physical or high-stakes actions like stopping a production line, full control should not be handed to the AI. For now it works best on reversible, digital tasks like generating reports."
+    - question: "What are MCP resources versus tools?"
+      answer: "Resources are read-only information exposed to the LLM, such as sensor readings, staff lists, vacation calendars, or specification sheets with upper and lower limits. Tools are functions that let the LLM perform an action or change state in the physical world. Together they let an operator move from reading data to taking action."
+
+cta:
+  type: demo
+  title: "See text-driven operations in action"
+  description: "Request a demo to see how LLM and MCP-powered automation works on your industrial floor with FlowFuse."
 ---
 
 In industrial operations it's all about getting more out of the CAPEX already

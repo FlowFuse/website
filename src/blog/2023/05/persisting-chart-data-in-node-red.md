@@ -10,6 +10,24 @@ tags:
     - node-red
     - how-to
     - dashboard
+
+tldr: "Node-RED Dashboard charts hold historic data in the chart node, but that data is lost on restart or migration. Persist it three ways: write the chart's full payload to a file with file-out/file-in, store it in FlowFuse persistent context, or expose it via an HTTP API to copy elsewhere."
+
+meta:
+  faq:
+    - question: "How do I persist Node-RED chart data so it survives a restart?"
+      answer: "The chart node outputs its full data set on each update, so capture that payload and store it. Three options work: write it to a file with the file-out node and reload with file-in, save it to FlowFuse persistent context, or expose it through an HTTP API endpoint."
+    - question: "Why is my Node-RED chart data lost when I redeploy or move the flow?"
+      answer: "Dashboard 1 stores historic data inside the chart node itself, which is fine for prototypes but not durable. Data is lost when you restart the instance, upgrade Node-RED, or move the flow to a new device. Persisting the payload externally protects against this."
+    - question: "What is FlowFuse persistent context and how does it store chart data?"
+      answer: "FlowFuse Cloud and premium self-hosted instances provide persistent context storage that survives restarts. You set the chart's output payload into a persistent global variable with a change node, then reload it into the chart later. Duplicate points are automatically ignored on import."
+    - question: "Can I access Node-RED chart data through an API?"
+      answer: "Yes. Store the chart payload in flow context, then add an http-in node and http-response node to serve it at a URL. You can visit the URL in a browser or have another system request it. Secure the endpoint, or anyone on the network can read your data."
+
+cta:
+  type: sign-up
+  title: "Run Node-RED with persistent storage"
+  description: "FlowFuse instances include persistent context so your chart data survives restarts and migrations."
 ---
 
 Node-RED makes it easy to create HMI (Human Machine Interfaces) using [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard).

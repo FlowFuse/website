@@ -8,6 +8,26 @@ image: /blog/2025/05/images/Building-an-Andon-Task-Manager-with-FlowFuse-1.png
 keywords: free andon task manager dashboard, andon task manager free, building andon task manager, node-red andon task manager, flowfuse andon task manager
 tags:
    - flowfuse
+
+tldr: "An Andon Task Manager built with FlowFuse and Node-RED lets frontline workers raise issues that self-route to the right department in real time, with timestamps for creation, acknowledgement, and resolution. This first part plans the request structure, core features, dashboard design, and storage using SQLite plus FlowFuse context storage."
+
+meta:
+  faq:
+    - question: "What is an Andon Task Manager?"
+      answer: "An Andon Task Manager is a digital system for real-time issue reporting, escalation, and resolution tracking on the factory floor. Inspired by lean manufacturing Andon systems, it lets frontline workers raise issues like breakdowns or material shortages that route to the right team, with status updates when resolved."
+    - question: "How do you build an Andon system with Node-RED and FlowFuse?"
+      answer: "You model each issue as a request with fields like id, line, department, and timestamps for created, acknowledged, and resolved. Core features include request creation, acknowledge, resolve, filtering by line or department, admin tools, status display, and alerts. A FlowFuse Dashboard provides separate user and admin views."
+    - question: "What data does each Andon request store?"
+      answer: "Each request stores a unique id, the line or machine where the issue was raised, the responsible department, a created timestamp, acknowledged and resolved timestamps, and a note for context. Line and department use predefined values managed through admin settings to keep data consistent across the system."
+    - question: "What database does the Andon Task Manager use?"
+      answer: "It uses SQLite for structured request data, accessed through the node-red-contrib-sqlite node, which suits lightweight local deployments. For dynamic runtime data like the selected line or department and the available lists, it uses FlowFuse's built-in context storage to keep persistent state across sessions."
+    - question: "Is there a ready-made Andon system for FlowFuse?"
+      answer: "Yes. Rather than building from scratch, you can register for FlowFuse and use the pre-configured Andon Task Manager blueprint, which is set up for easy deployment. The blog series also walks through building the system manually to understand the design and storage choices."
+
+cta:
+  type: demo
+  title: "Deploy a factory-floor Andon system"
+  description: "Try the FlowFuse Andon Task Manager blueprint or book a demo to see real-time issue tracking on your lines."
 ---
 
 In modern manufacturing and service environments, speed and transparency are critical for addressing issues as they arise. An Andon system helps achieve this by enabling frontline workers to signal problems in real time, triggering quick responses from support teams.

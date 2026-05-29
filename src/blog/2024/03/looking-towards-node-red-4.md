@@ -9,6 +9,26 @@ tags:
     - posts
     - flowfuse
     - node-red
+
+tldr: "Node-RED 4.0, planned for around the end of April 2024, drops support for Node.js below 18 (Node 20 recommended) and adds extended auto-complete, Inject timestamp formatting, an RFC4180-compliant CSV node, configurable config nodes in subflows, and an updated JSONata. Concurrent Google-Docs-style editing is on the roadmap but not in 4.0."
+
+meta:
+  faq:
+    - question: "What new features are coming in Node-RED 4.0?"
+      answer: "Node-RED 4.0 adds auto-complete for flow, global, and env inputs, timestamp formatting options in the Inject node, an RFC4180-compliant and faster CSV node, the ability to expose config node choices in subflow properties, and an updated JSONata library with performance improvements, plus many smaller editor changes."
+    - question: "Which Node.js versions does Node-RED 4.0 support?"
+      answer: "Node-RED 4.0 drops support for anything earlier than Node.js 18, with Node 20 recommended. The project times major releases to when a Node.js version reaches end-of-support, so this gives users almost two full years before they need to consider another Node.js upgrade."
+    - question: "When is Node-RED 4.0 being released?"
+      answer: "The release plan targets Node-RED 4.0 for around the end of April 2024, with a series of beta releases beforehand to gather early community feedback. Release announcements are posted on the Node-RED community forum."
+    - question: "Does Node-RED 4.0 support real-time collaborative editing?"
+      answer: "Not in 4.0. Concurrent editing, with a Google-Docs-style experience where you see other users' changes in real time, is on the roadmap as a future, more transformational change. There are difficult problems to solve first, so it is not part of the imminent 4.0 release."
+    - question: "What changed with the CSV node in Node-RED 4.0?"
+      answer: "The CSV node was overhauled to follow the RFC4180 standard, handling tricky edge cases that previously left some users stuck, and it is also faster. A legacy mode is kept in place so flows that relied on the old node's non-standard edge-case behaviour continue to work."
+
+cta:
+  type: sign-up
+  title: "Run the latest Node-RED on FlowFuse"
+  description: "Sign up for FlowFuse to deploy and manage Node-RED instances, including new releases, with team collaboration built in."
 ---
 
 With Node-RED 4.0 coming soon, I wanted to take a look at what users can expect to see with the new release,

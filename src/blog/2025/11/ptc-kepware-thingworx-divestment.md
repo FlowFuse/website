@@ -12,6 +12,24 @@ tags:
     - kepware
     - thingworx
     - industrial-iot
+
+tldr: "PTC sold Kepware and ThingWorx to TPG for $600M, creating roadmap and pricing uncertainty for industrial users. The post frames this as a reason to evaluate open-source alternatives. FlowFuse, built on Node-RED by its founder Nick O'Leary, offers no vendor lock-in, 5,000+ integration nodes, and enterprise management."
+
+meta:
+  faq:
+    - question: "What does PTC selling Kepware and ThingWorx mean for customers?"
+      answer: "PTC divested Kepware and ThingWorx to TPG for $600M to refocus on its CAD, PLM, and ALM business. For customers, this brings uncertainty: product roadmaps may shift, pricing structures could change, and integration strategies may no longer fit. Organizations relying on these platforms are now operating in a period of transition that carries risk."
+    - question: "How does FlowFuse compare to Kepware?"
+      answer: "FlowFuse is open-source, built on Node-RED, with no vendor lock-in and portable flows you can run in cloud, on-premises, or at the edge. It offers 5,000+ community nodes, transparent use-based pricing, and an active community. Kepware is a proprietary stack with tiered licensing, limited integrations, and an uncertain future under TPG."
+    - question: "Why choose an open-source industrial data platform over a proprietary one?"
+      answer: "Proprietary platforms tie your data strategy to a vendor's business decisions, such as pricing changes, deprecated features, or acquisitions. Open-source Node-RED and FlowFuse keep you in control: the core is community-maintained, your flows are yours to take elsewhere, and you can extend or customize the platform to fit your needs."
+    - question: "Is FlowFuse ready for enterprise industrial use?"
+      answer: "Yes. FlowFuse adds enterprise capabilities on top of Node-RED, including centralized management of instances across sites and edge devices, DevOps-ready workflows with version control and CI/CD, role-based access control, audit logs, compliance-ready deployment, and scalability to manage thousands of edge or cloud instances from one platform."
+
+cta:
+  type: demo
+  title: "Talk to a FlowFuse migration expert"
+  description: "Book a demo to plan a migration from Kepware or ThingWorx to open-source industrial data integration."
 ---
 
 

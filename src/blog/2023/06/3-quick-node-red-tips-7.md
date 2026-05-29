@@ -11,6 +11,22 @@ tags:
     - node-red
     - dashboard
     - node-red tips
+
+tldr: "This Node-RED Dashboard edition shares three time-saving tips: make layouts responsive by placing content in groups that stack on small screens, add multiple data series to a single chart by giving each a different msg.topic, and persist slider values across redeploys using Node-RED context."
+
+meta:
+  faq:
+    - question: "How do I make a Node-RED Dashboard responsive?"
+      answer: "Node-RED Dashboard does not resize graphs by device, but you can place content into Dashboard groups. Those groups sit side by side when the screen is wide enough and stack vertically on smaller devices, making the same dashboard usable on both phones and laptops without separate layouts."
+    - question: "How do I add multiple data series to one Node-RED chart?"
+      answer: "Give each series a different msg.topic before passing data into the chart, using a change node to set the topic. The chart then plots each topic as a separate series. This is useful for comparing related data, such as internal and external temperature from two sensors on the same chart."
+    - question: "How do I stop a Node-RED slider from resetting on deploy?"
+      answer: "Persist the slider value using Node-RED context. Each time the slider changes, store the value in context; each time you deploy, load the value back from context to restore it. Without this, a redeploy resets the slider to its default, which could unintentionally change a machine's speed."
+
+cta:
+  type: sign-up
+  title: "Try these dashboard tips in FlowFuse"
+  description: "Import the example flows into a free FlowFuse Node-RED instance and build your own dashboards."
 ---
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.

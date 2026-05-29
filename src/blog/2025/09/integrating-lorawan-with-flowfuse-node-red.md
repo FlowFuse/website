@@ -8,6 +8,24 @@ image: /blog/2025/09/images/lorawan-flowfuse.png
 keywords: LoRaWAN", FlowFuse", Node-RED, IoT integration, The Things Network, TTN, MQTT
 tags:
 - flowfuse
+
+tldr: "This guide integrates LoRaWAN devices with FlowFuse using The Things Network (TTN). You connect TTN's MQTT integration to an MQTT In node to receive uplink messages, decode the Base64 payload with base64 and buffer-parser nodes, and send downlink commands back to devices via an MQTT Out node."
+
+meta:
+  faq:
+    - question: "What is LoRaWAN and how does it work?"
+      answer: "LoRaWAN is a low-power wireless protocol for IoT devices that send small amounts of data over long distances, up to 15 kilometers, running for years on a single battery. It has three parts: end devices (sensors), gateways that receive and forward data, and a network server that manages devices and routes data to applications."
+    - question: "How do I connect The Things Network to FlowFuse?"
+      answer: "Use TTN's MQTT integration. In the TTN Console, open your application's Other Integrations tab and select MQTT to get the server address, port (1883 or 8883 for TLS), username (your application ID), and password (your API key). In FlowFuse, configure an MQTT In node with these details and the uplink topic to receive messages."
+    - question: "How do I decode a LoRaWAN payload in Node-RED?"
+      answer: "Uplink payloads arrive Base64-encoded. Set msg.payload to uplink_message.frm_payload with a change node, decode it to a Buffer with a base64 node, then use the buffer-parser node to extract values. Configure each element's type, name, length, offset, and scale, for example int16be temperature at offset 0 with scale 0.01."
+    - question: "Can I send commands back to LoRaWAN devices from FlowFuse?"
+      answer: "Yes, using downlink messages. Build a downlink object with f_port, a Base64-encoded frm_payload, and a priority in a function node, then publish it with an MQTT Out node to the TTN downlink topic. Devices only receive downlinks during their receive windows after sending an uplink, so communication is asynchronous."
+
+cta:
+  type: sign-up
+  title: "Build a LoRaWAN flow on FlowFuse"
+  description: "Start a free trial to connect TTN devices and build your first sensor dashboard."
 ---
 
 LoRaWAN (Long Range Wide Area Network) is a low-power wireless protocol designed for IoT devices that need to transmit small amounts of data over long distances. FlowFuse is a platform that provides a visual programming interface for connecting IoT devices and services.

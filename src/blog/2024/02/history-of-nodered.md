@@ -11,6 +11,24 @@ tags:
     - History of Node-RED
     - Node-RED
     - Node Red
+
+tldr: "Node-RED began in January 2013 as Nick O'Leary's side project at IBM to visualize MQTT topic mappings. Built on Node.js, it grew into an open-source low-code tool, joined the OpenJS Foundation, shipped on the Raspberry Pi image, and now has millions of IoT and automation deployments."
+
+meta:
+  faq:
+    - question: "Who created Node-RED and when?"
+      answer: "Nick O'Leary created Node-RED in January 2013 while working in IBM's Emerging Technology Group, with colleague Dave Conway-Jones. It started as a side project to visualize how messages mapped between MQTT topics, then grew into a tool for accessing and transforming data from many sources."
+    - question: "Why was Node-RED made open source?"
+      answer: "Nick O'Leary chose the open-source route because it was the natural fit for the project's future, publishing it in late 2013. Open governance later let companies get involved with an equal voice, which built confidence and attracted contributors and supporters like Hitachi."
+    - question: "What are the core building blocks of Node-RED?"
+      answer: "After redesigning the code to make adding new nodes easier, Nick O'Leary introduced the function node, change node, and switch node. These became the basic building blocks of the tool, letting users access data from sources and modify it with small pieces of JavaScript."
+    - question: "Why did Node-RED join the OpenJS Foundation?"
+      answer: "Some companies worried about Node-RED being a single-vendor open-source project. It joined what became the OpenJS Foundation as a founding project, alongside Node.js and jQuery. Independent governance gave companies confidence to get involved, knowing they had an equal voice in its development."
+
+cta:
+  type: contact
+  title: "Talk to the team about Node-RED at scale"
+  description: "FlowFuse helps organizations manage and scale their Node-RED deployments built on the same low-code foundation."
 ---
 
 

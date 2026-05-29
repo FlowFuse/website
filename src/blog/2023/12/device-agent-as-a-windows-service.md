@@ -9,6 +9,26 @@ tags:
     - posts
     - flowfuse
     - how-to
+
+tldr: "To run the FlowFuse device agent as a Windows service, install Node.js and the agent via npm, link it to your FlowFuse team, then use the nssm utility to register it as a service under a dedicated user account. The agent then keeps Node-RED running after logoff or reboot."
+
+meta:
+  faq:
+    - question: "How do I run the FlowFuse device agent as a Windows service?"
+      answer: "Install Node.js and the device agent with npm, link it to your FlowFuse team, then use the nssm utility to install it as a service. Set the AppDirectory and AppParameters with nssm, and configure the service to log on under a dedicated user account."
+    - question: "Why run the Node-RED device agent as a service instead of from the command line?"
+      answer: "Running the agent as a service means it keeps running even after you log off or restart the computer with no user logged in. Starting it from the command line with flowfuse-device-agent works for testing but is not suitable for long-term, unattended installations."
+    - question: "What is nssm and do I have to use it for the device agent service?"
+      answer: "nssm is a utility that runs any executable as a Windows service. The guide uses nssm to install and configure the FlowFuse device agent service, but you are free to choose an alternative service tool if you prefer."
+    - question: "What accounts do I need to set up the device agent as a service?"
+      answer: "You need two accounts: a non-admin user account that runs the device agent, and an admin account for elevated commands to set up the service. You grant the user account read/write access to the agent directory, then set the service to log on as that user."
+    - question: "How do I start, stop, and check the device agent service?"
+      answer: "Use the sc command from a command prompt. Run sc start flowfuse-device-agent to start, sc stop flowfuse-device-agent to stop, and sc query flowfuse-device-agent to check status. You can also view it in services.msc."
+
+cta:
+  type: sign-up
+  title: "Run Node-RED on your own hardware"
+  description: "Sign up for FlowFuse and use the device agent to manage Node-RED instances on Windows and other devices."
 ---
 
 FlowFuse's device agent allows you to manage and run your Node-RED instances on

@@ -9,6 +9,24 @@ keywords: store-and-forward, edge computing, PLC data buffering, network resilie
 tags:
     - flowfuse
     - plc
+
+tldr: "Store-and-forward prevents data loss during network outages by writing every reading to local SQLite first, then forwarding when connectivity returns. This guide builds the pattern in FlowFuse in six steps: collect data, buffer it in SQLite, write incoming records, monitor connectivity with ping, forward unsent records in batches, and handle errors."
+
+meta:
+  faq:
+    - question: "What is store-and-forward in industrial data collection?"
+      answer: "Store-and-forward is a pattern where data is saved to local storage before transmission, then forwarded once the network is available. The edge device writes every data point to local SQLite first. If the network is up it transmits; if down, the data stays buffered until connectivity returns, so no readings are lost."
+    - question: "How do I build a store-and-forward buffer in FlowFuse?"
+      answer: "The post uses a six-step flow: collect data via Node-RED nodes, create a SQLite data_buffer table, write each incoming record with sent=0, monitor connectivity with a ping node and switch, forward unsent records in batches of 50 ordered by timestamp, then mark records sent=1 and delete them after confirmation, with a catch node handling errors."
+    - question: "Why use SQLite for edge data buffering?"
+      answer: "SQLite is lightweight, needs no separate database server, and handles the write volumes typical of industrial data collection. It provides persistent local storage for buffered records during outages. The post uses node-red-node-sqlite with a Read-write-create database and prepared statements to prevent SQL injection and handle special characters."
+    - question: "How does the system detect when the network is back online?"
+      answer: "A ping node checks the destination, such as broker.flowfuse.cloud, every 30 seconds. A switch node routes the result, setting flow.networkOnline to false when ping fails and true when it succeeds. A Link Out node then triggers the forwarding logic, which drains the buffered backlog in chronological order."
+
+cta:
+  type: demo
+  title: "Protect production data at the edge"
+  description: "Book a demo to see how FlowFuse buffers and forwards data so network outages do not create gaps."
 ---
 
 Network outages happen. A fiber cut, a switch failure, or infrastructure maintenance can take your connectivity offline without warning. When it does, your PLCs continue operating normally—they don't wait for the network to recover.

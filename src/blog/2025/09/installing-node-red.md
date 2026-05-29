@@ -11,6 +11,22 @@ tags:
     - flowfuse
     - node-red
 tldr: "Installing Node-RED is straightforward, but running it reliably across production lines with PLCs and critical equipment requires enterprise capabilities that standalone Node-RED cannot provide. FlowFuse adds high availability, centralized device management, DevOps pipelines, secure remote access, and automated snapshots to make Node-RED production-ready at scale."
+
+meta:
+  faq:
+    - question: "How do I install Node-RED?"
+      answer: "Installing Node-RED is straightforward: install Node.js, run a command, and you can start visual programming. The challenge is running it reliably in production across production lines and PLCs that must stay operational 24/7. For that, FlowFuse's One-Line Install sets up Node.js, the Device Agent, and registers your device automatically."
+    - question: "Why isn't standalone Node-RED enough for production?"
+      answer: "Standalone Node-RED works well for testing, but production demands more. When flows control PLCs and critical equipment, downtime is costly, hardware fails, and networks drop. Production needs automatic restarts, centralized updates, secure remote access, backups, and role-based permissions, which the basic installation cannot provide on its own."
+    - question: "What does FlowFuse add to Node-RED for production?"
+      answer: "FlowFuse adds enterprise reliability and management, including High Availability mode, Device Agents for health monitoring and secure remote access, DevOps workflows with version control and rapid rollbacks, device grouping for mass updates, single sign-on, role-based access control, audit logging, and automated snapshots. MQTT and PostgreSQL services are built in."
+    - question: "Who created FlowFuse and Node-RED?"
+      answer: "Nick O'Leary created Node-RED at IBM in 2013 and co-founded FlowFuse. After more than a decade working with enterprise users deploying Node-RED in production, Nick and the FlowFuse team built FlowFuse to solve the operational challenges standalone Node-RED cannot handle at scale, reflecting over 12 years of Node-RED expertise."
+
+cta:
+  type: demo
+  title: "See FlowFuse with your setup"
+  description: "Book a demo to see how FlowFuse runs Node-RED reliably across your production environment."
 ---
 
 Installing Node-RED is straightforward. Install Node.js, run a command, and you're ready for visual programming in industrial automation. The real challenge begins when it must run across production lines, connect to PLCs, and stay operational 24/7.

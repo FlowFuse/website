@@ -9,6 +9,26 @@ image: blog/2025/08/images/open-source-software-and-manufacturing.png
 tags:
    - flowfuse
    - node-red
+
+tldr: "Manufacturers once led software innovation but now lag, with about 70% of digital transformation projects self-reported as failures. The main barrier is vendor lock-in from proprietary systems. Open-source software addresses this through cost-effectiveness, flexibility, cross-industry collaboration, and long-term stability, letting manufacturers direct their own technology rather than depend on a single vendor."
+
+meta:
+  faq:
+    - question: "Why do manufacturing digital transformation projects fail?"
+      answer: "About 70% of digital transformation projects are self-reported as failures. The post links this to high upfront costs and pressure for fast ROI, a shortage of in-house IT skills, incompatible legacy systems, and cybersecurity fears from increased connectivity. These issues trace back to reliance on closed, proprietary systems and vendor lock-in."
+    - question: "What is vendor lock-in and why is it a problem in manufacturing?"
+      answer: "Vendor lock-in is when a customer becomes so dependent on one vendor's products that switching is prohibitively difficult or costly. In manufacturing it inflates licensing costs, stifles innovation, and creates interoperability problems, leaving manufacturers as followers rather than leaders in software-aided business."
+    - question: "How does open-source software help manufacturers?"
+      answer: "Open-source software offers four key benefits: cost-effectiveness by redirecting license fees toward in-house value, flexibility to extend and adapt the code, cross-industry collaboration that shares solutions, and long-term stability because publicly distributed code cannot be withdrawn and can be forked if maintainers leave."
+    - question: "Is open-source software actually free for manufacturers?"
+      answer: "No. The post is clear that OSS is not free when you account for total cost of ownership, including implementation, integration, training, and support. The difference is where the money goes: instead of license and maintenance fees that benefit the vendor, the same capital is reinvested into value for the manufacturer."
+    - question: "Why does open-source give manufacturers more strategic control?"
+      answer: "With proprietary software, a manufacturer is exposed to the vendor's business risks, such as acquisition or product discontinuation that can leave systems unsupported. With OSS, the code is publicly distributed and cannot be withdrawn, and the community or company can fork and continue it, providing long-term stability."
+
+cta:
+  type: contact
+  title: "Plan an open-source manufacturing strategy"
+  description: "Talk with FlowFuse about applying open source to your factory, or download the Open Source Software for Manufacturing whitepaper."
 ---
 
 The manufacturing sector is in an interesting situation. It's caught between a

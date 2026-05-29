@@ -11,6 +11,24 @@ tags:
     - dashboard
     - sentiment analysis
     - ai
+
+tldr: "Build a sentiment analysis system in Node-RED using Dashboard 2.0. A form widget collects text, a Change node normalizes it, the node-red-node-sentiment package scores it from -5 to 5, JSONata converts the score to a percentage, and a Vuetify circular progress bar with emojis displays the result."
+
+meta:
+  faq:
+    - question: "How do I build sentiment analysis in Node-RED?"
+      answer: "Collect text with a Dashboard 2.0 form widget, normalize the payload with a Change node, then pass it to the node-red-node-sentiment node. Convert the score to a percentage using a JSONata expression and display the result with a Vuetify circular progress bar and emojis in a ui template widget."
+    - question: "Which Node-RED node performs sentiment analysis?"
+      answer: "This guide uses the node-red-node-sentiment package, installed via the Node-RED palette manager. It uses the AFINN-165 wordlists and returns a sentiment object with a score property, typically ranging from -5 to 5, which the flow then uses to drive the dashboard display."
+    - question: "How do I convert a sentiment score to a percentage?"
+      answer: "Use a Change node with the JSONata expression ((msg.sentiment.score - (-5)) / (5 - (-5))) * 100. Because the sentiment score ranges from -5 to 5, this maps it to a 0 to 100 percentage, which suits a circular progress bar instead of showing negative values."
+    - question: "How do I display sentiment results on a Node-RED dashboard?"
+      answer: "Use a Dashboard 2.0 ui template widget with a Vuetify v-progress-circular component. Bind its model-value to the calculated percentage and use v-if, v-else-if, and v-else to switch between sad, neutral, and happy emojis based on whether the value falls below 33.33, 66.66, or higher."
+
+cta:
+  type: sign-up
+  title: "Build this flow on FlowFuse"
+  description: "Sign up to run Node-RED with Dashboard 2.0 and deploy your sentiment analysis dashboard in the cloud."
 ---
 
 Have you ever built a sentiment analysis system to extract insights from text content? If yes then I don’t think you'll need an explanation of how complex it is to build. In this guide, we will build a sentiment analysis system with Node-RED using Dashboard 2.0 in a few easy steps. 

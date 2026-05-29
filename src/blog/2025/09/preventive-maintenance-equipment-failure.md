@@ -8,6 +8,26 @@ image: /blog/2025/09/images/preventive-maintenance-blog.png
 keywords: preventive maintenance, predictive maintenance, maintenance software, equipment monitoring, industrial data platforms, manufacturing downtime, OEE improvement
 tags:
   - flowfuse
+
+tldr: "Equipment failures are predictable, not random. During the P-F interval, machines broadcast distress through vibration, power, temperature, and acoustic signals. Industrial data platforms like FlowFuse provide universal connectivity to monitor everything, turning unplanned downtime into planned interventions and delivering measurable ROI."
+
+meta:
+  faq:
+    - question: "What is preventive maintenance in manufacturing?"
+      answer: "Preventive maintenance replaces components during scheduled downtime based on equipment condition rather than waiting for failure. The post explains the P-F curve: the measurable interval between when a potential failure becomes detectable and when functional failure occurs, typically 6-12 weeks for rotating equipment like motors and pumps."
+    - question: "How much does unplanned downtime cost manufacturers?"
+      answer: "Unplanned downtime outages last an average of four hours and cost roughly $2 million per incident. Forbes reports it can cost manufacturers $50 billion per year, and Siemens' 2024 report found it now costs Fortune Global 500 companies 11% of yearly turnover, almost $1.5 trillion."
+    - question: "Why do many manufacturers still run equipment to failure?"
+      answer: "The barrier is infrastructure complexity, not ignorance. Traditional preventive maintenance software required custom programming, proprietary gateways, and specialized expertise per device. Implementation stretched 12-18 months and cost hundreds of thousands of dollars, leaving legacy CNC machines, PLCs, robots, and sensors trapped behind incompatible interfaces."
+    - question: "How does FlowFuse support equipment monitoring?"
+      answer: "FlowFuse, built on Node-RED, provides native support for almost all industrial protocols so any device that communicates digitally connects without custom development. Its visual programming environment lets engineers correlate readings, build role-based dashboards, and set automated alerts. Transparent pricing has no per-tag penalties, encouraging comprehensive data collection."
+    - question: "What ROI does predictive maintenance deliver?"
+      answer: "Research shows 95% of predictive maintenance adopters reported positive ROI, with 27% recouping costs in under a year. Manufacturers see emergency repairs drop 60-80%, maintenance spending fall 12-18%, equipment life extend 20-40%, and OEE climb 10-20%. The US Department of Energy projects a tenfold return."
+
+cta:
+  type: demo
+  title: "Cut unplanned downtime"
+  description: "Book a demo to see how FlowFuse connects legacy and modern equipment for comprehensive condition monitoring."
 ---
 
 At 2:47 AM on a Tuesday, a $15 bearing brought down a $2 million production line.

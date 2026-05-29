@@ -9,6 +9,24 @@ tags:
     - posts
     - node-red
     - high availablity 
+
+tldr: "High availability for Node-RED comes down to two factors: statefulness and how work is routed. The hot-spare and load-balanced approaches each handle explicit and implicit state differently. FlowFuse is starting with the scaling side, running multiple load-balanced instances on Kubernetes."
+
+meta:
+  faq:
+    - question: "What are the approaches to high availability in Node-RED?"
+      answer: "Two approaches. The hot-spare approach keeps a second instance ready to take over when the primary fails, achieving availability but not scalability. The load-balanced approach runs a second active instance and shares work between them, so if either fails the other continues, with higher potential throughput as a side effect."
+    - question: "Why does state make Node-RED high availability difficult?"
+      answer: "Flows have explicit state, programmed into Context or a database, and implicit state held in memory by nodes like Smooth or Batch. With multiple instances, implicit state stays bound to each individual instance, and shared explicit stores risk concurrency issues. A flow has to be created with HA and scaling in mind."
+    - question: "How is MQTT work routed across multiple Node-RED instances?"
+      answer: "MQTT creates outbound connections, so in early versions every instance subscribed to the same topics and received every message, which fit no HA model. MQTTv5 added Shared Subscriptions, letting a group of clients subscribe to the same topic while the broker distributes messages between them, enabling load balancing when configured correctly."
+    - question: "How does FlowFuse approach high availability?"
+      answer: "FlowFuse is starting with the scaling side of HA, running multiple copies of an instance with load balancing in front. Its initial focus is Kubernetes, matching its hosted Cloud platform, leaning on Kubernetes building blocks rather than reinventing them. FlowFuse also runs on Docker Compose as an open platform."
+
+cta:
+  type: contact
+  title: "Discuss high availability for your deployment"
+  description: "Contact FlowFuse to talk through scaling and high availability for your Node-RED applications."
 ---
 
 Many companies look to deploy Node-RED into use cases that require the application

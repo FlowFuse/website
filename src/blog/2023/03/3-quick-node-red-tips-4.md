@@ -10,6 +10,24 @@ tags:
     - posts 
     - node-red
     - tips
+
+tldr: "Three Node-RED time-savers: use the Smooth node to track the min and max of recent payloads and filter spurious sensor values, perform math directly in a Change node with JSONata expressions, and use the Catch node to trigger flows when specific nodes error. Each tip includes an importable flow."
+
+meta:
+  faq:
+    - question: "How do I filter out spurious sensor values in Node-RED?"
+      answer: "Use the Smooth node to store the min and max of a payload over the last few messages, such as the last 100. Then feed values into a Switch node that checks whether each reading falls between those stored bounds, routing outliers down a separate wire to raise an alert."
+    - question: "Can I do math in Node-RED without a Function node?"
+      answer: "Yes. Use a Change node with a JSONata expression. To multiply a payload by 2.5, set msg.payload to the JSONata expression msg.payload * 2.5. This handles basic math without installing a custom node like node-red-contrib-calc or writing function code."
+    - question: "How do I run a flow when a Node-RED node errors?"
+      answer: "Use the Catch node. Drop it onto the workspace and choose whether it catches errors from all nodes or specific ones, such as the Read File node. It needs no wires from the source node, so a single Catch node can monitor a whole project, log errors, and send alerts."
+    - question: "What does the Smooth node do in Node-RED?"
+      answer: "The Smooth node stores values over a defined window of recent messages and can return the min, max, or other aggregates. In this tip it captures the highest and lowest of the last 100 payloads, which you then use to detect and ignore readings that deviate too far from the sample."
+
+cta:
+  type: sign-up
+  title: "Try these flows in FlowFuse"
+  description: "Sign up to run, version, and share these Node-RED flows across multiple instances with FlowFuse."
 ---
 
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.

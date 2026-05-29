@@ -9,6 +9,24 @@ tags:
     - posts
     - node-red
     - how-to
+
+tldr: "In Node-RED, store transactional data outside msg.payload, for example in msg.store, so it survives nodes that overwrite the payload. Use the Change node to tidy unneeded data. Prefer the msg object over context for per-message data, since context risks race conditions that corrupt data."
+
+meta:
+  faq:
+    - question: "How do I store data outside msg.payload in Node-RED?"
+      answer: "Place data in any named property on the message object, such as msg.store or msg.later, instead of only msg.payload. This matters because many nodes, like the HTTP request node, overwrite msg.payload with their response. Storing data elsewhere keeps it available later in the flow rather than being overwritten and lost."
+    - question: "Should I use context or msg to store data in Node-RED?"
+      answer: "Prefer the msg object for transactional, per-message data. Storing values in context risks a race condition: when messages are delayed and arrive out of order, cached values can be assigned to the wrong message and corrupt data. Keeping data in msg is more robust, modular, and scalable."
+    - question: "How do I remove unwanted data from a Node-RED message?"
+      answer: "Use the Change node with a delete rule. The post shows deleting msg.other while leaving the rest of the message intact to pass to the next node. Tidying messages this way removes data you no longer need and can optimize the speed of your flows."
+    - question: "Why does the HTTP request node overwrite my data in Node-RED?"
+      answer: "The HTTP request node writes the API response into msg.payload, replacing whatever was there. In the post's sunset example, the city name and coordinates are first copied into msg.store with a Change node, so they remain available after the HTTP call to build the final output sentence."
+
+cta:
+  type: sign-up
+  title: "Start building flows in FlowFuse"
+  description: "Sign up for FlowFuse to build, manage, and deploy Node-RED flows with team collaboration and version control."
 ---
 
 It's quite straightforward to pass plenty of useful data with each message (msg) in your flows. Not only can you store information in msg.payload, but you can also place information in any other named object, for instance, msg.store.

@@ -17,6 +17,24 @@ tags:
   - node red s7comm
   - nodered s7
   - node red s7
+
+tldr: "Node-RED can act as a free, software-based EtherNet/IP to S7 protocol converter instead of dedicated gateway hardware. Install the node-red-contrib-cip-ethernet-ip and node-red-contrib-s7 nodes, read tags from an Allen Bradley PLC, wire them to S7 out nodes writing to a Siemens PLC, and add a filter to reduce fieldbus traffic."
+
+meta:
+  faq:
+    - question: "Can Node-RED convert EtherNet/IP to S7?"
+      answer: "Yes. Node-RED works as a no-code, software-based protocol converter between an Allen Bradley PLC using EtherNet/IP and a Siemens PLC using S7. Install the node-red-contrib-cip-ethernet-ip and node-red-contrib-s7 nodes, read tags from one PLC, and wire them to output nodes writing to the other, replacing dedicated gateway hardware."
+    - question: "Which Node-RED nodes do I need for EtherNet/IP and S7?"
+      answer: "Install two nodes from the palette manager: node-red-contrib-s7 for reading and writing Siemens S7 data, and node-red-contrib-cip-ethernet-ip for EtherNet/IP. Use eth-ip in nodes to read Allen Bradley tags and s7 out nodes to write to the Siemens PLC's data block."
+    - question: "How do I set up a Siemens S7 PLC to receive remote data?"
+      answer: "In the Siemens PLC, create a data block for the incoming data and disable optimized block access in its attributes. Make the tags writeable and accessible, and set No protection in the CPU properties. Use absolute tag references in the s7 endpoint node, following the node documentation's formatting."
+    - question: "How do I reduce noisy data in a Node-RED protocol converter?"
+      answer: "Add a filter node with a deadband on REAL data types. In the example, a 3% deadband on Robot_Position discards changes smaller than 3% from the last value, so a shift from 15.6 to 15.6999 is dropped while 15.6999 to 18 passes. This reduces fieldbus traffic from noisy signals."
+
+cta:
+  type: sign-up
+  title: "Build your own protocol converter"
+  description: "Sign up for FlowFuse to run Node-RED and convert between industrial protocols without gateway hardware."
 ---
 
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  

@@ -8,6 +8,26 @@ keywords: AI in manufacturing, manufacturing automation, Node-RED automation, Fl
 image: /blog/2025/07/images/flowfuse-ai.png
 tags:
   - flowfuse
+
+tldr: "FlowFuse Expert lets manufacturing engineers describe a task in plain English and get working Node-RED code back. It writes function nodes to parse machine data, generates realistic test data, builds custom Vue.js dashboard widgets and CSS, and explains complex existing flows for knowledge transfer."
+
+meta:
+  faq:
+    - question: "What is FlowFuse Expert?"
+      answer: "FlowFuse Expert is an AI assistant built into FlowFuse that generates Node-RED code from plain-English descriptions. Engineers open a function node, describe what they need, and receive working JavaScript. It also creates dashboard widgets, generates test data, writes CSS, and explains existing flows without requiring web development skills."
+    - question: "How do I parse machine data in Node-RED without writing JavaScript?"
+      answer: "Open a function node, click the FlowFuse Expert button, and describe the parsing task in plain English. For example, ask it to parse a CNC report and extract part count, cycle time, and alerts as JSON. It generates the code, which you review and test with your own data."
+    - question: "Can FlowFuse Expert build custom dashboard widgets?"
+      answer: "Yes. Describe the widget you need and FlowFuse Expert generates the Vue.js template and Chart.js integration for the Dashboard ui-template node. It can build visualizations like a Pareto chart with bars and a cumulative percentage line, and write CSS to match your HMI styling standards."
+    - question: "How does FlowFuse Expert help document existing Node-RED flows?"
+      answer: "FlowFuse Expert's Flow Explainer documents flows automatically. Select any flow or group of nodes and click Explain. It analyzes connections, reads function code, and generates plain-language descriptions of what each part does, which speeds up knowledge transfer when team members leave."
+    - question: "Can I create test data for manufacturing dashboards with FlowFuse Expert?"
+      answer: "Yes. Ask FlowFuse Expert to generate sample records and it produces realistic test data in seconds. For example, request 20 machine records with machine ID, production count, efficiency percentage, downtime minutes, and last maintenance date, complete with realistic variations, instead of building data by hand."
+
+cta:
+  type: demo
+  title: "See FlowFuse Expert in action"
+  description: "Book a demo to see how your engineers can generate Node-RED code, dashboards, and documentation from plain English."
 ---
 
 Every manufacturing engineer knows this scenario: Node-RED's visual programming handles most of your automation needs brilliantly. Connect to PLCs, route data, trigger actions—all with drag-and-drop simplicity, but then you hit the wall. Your machine outputs data in a proprietary format. You need a custom dashboard widget that doesn't exist. You're manually creating test data for hours, or you're trying to understand a complex flow built by someone who left last year.

@@ -8,6 +8,24 @@ image: /blog/2025/04/images/oee-dashboard-buildig-ff-2.png
 keywords: free oee dashboard, oee dashboard free, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
+
+tldr: "Part 2 builds an OEE dashboard in FlowFuse Dashboard (Node-RED Dashboard 2.0) using simulated production and downtime data stored in SQLite. You collect and prepare data, calculate availability, performance, quality, and OEE with JSONata and function nodes, then visualize metrics, downtime, and a 30-day OEE trend."
+
+meta:
+  faq:
+    - question: "How do I build an OEE dashboard in Node-RED?"
+      answer: "Use FlowFuse Dashboard (Node-RED Dashboard 2.0) and split work into five parts: collect and configure data, prepare it for calculations, calculate OEE and key metrics, break down the data, and build the dashboard. The guide stores simulated production and downtime data in SQLite and visualizes results with gauges, charts, and tables."
+    - question: "How is OEE calculated in this FlowFuse guide?"
+      answer: "OEE is the product of availability, performance, and quality. Availability is (shift duration minus total downtime) divided by shift duration; performance is total produced units divided by target output; quality is total good units divided by total produced units. Each is computed with JSONata in a change node, then multiplied and rounded for the final OEE."
+    - question: "What do I need to follow the OEE dashboard tutorial?"
+      answer: "You need a running FlowFuse instance, the FlowFuse Dashboard (Node-RED Dashboard 2.0) installed and configured, and the node-red-contrib-sqlite node. Basic Node-RED knowledge is recommended. The guide provides an importable flow that generates simulated production and downtime data so you can build the dashboard without a real data source."
+    - question: "Can I calculate an OEE trend over the last 30 days?"
+      answer: "Yes. Add a second SQLite flow that queries production and downtime data from the last 30 days instead of the last 12 hours. A function node groups records by date, calculates daily availability, performance, quality, and OEE, sorts by timestamp, and feeds the result into a line chart widget labeled as the OEE trend."
+
+cta:
+  type: sign-up
+  title: "Launch your OEE dashboard"
+  description: "Register for FlowFuse and start from the ready-made OEE Dashboard Blueprint."
 ---
 
 In [Part 1](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/), we explored the fundamentals of OEE, outlined a basic design of the dashboard, and identified the key elements to include in the OEE dashboard. 
