@@ -12,19 +12,19 @@ sections:
       title: "What works on one line won't scale to fifty"
       description: "A working solution on one machine requires rebuilding from scratch for the next site. There is no system to standardize, deploy, and govern what works"
 capabilities:
-    - capability: "Edge data acquisition"
-      feature: "Device agent for streamlined connectivity"
-      description: "Easily and securely collect data from all your industrial devices and sensors. Our platform enables scalable agent deployment to unify data from diverse sources and protocols, ensuring a consistent and reliable flow of information."
-      imagePath: "images/home/home-remote-instances.png"
-      imageAlt: "FlowFuse UI"
-    - capability: "Organize and Analyze"
-      feature: "AI-Assisted platform for data transformation"
-      description: " Transform raw data into a structured and unified information model. FlowFuse Expert accelerates this process, allowing your teams to generate complex data transformation logic, from SQL queries to JavaScript functions, using simple natural language prompts. Cleanse, contextualize, and normalize data faster than ever before."
+    - capability: "Build operational workflows your core systems can't"
+      feature: "Low-code development with FlowFuse Expert"
+      description: "Create the operational applications that MES, ERP, and SCADA platforms struggle to support natively — from quality validation and workforce assignment to shift handovers and production visibility. Describe what you need in plain language and FlowFuse Expert generates the starting logic directly in your workspace."
       imagePath: "images/home/home-node-red.png"
+      imageAlt: "FlowFuse UI"
+    - capability: "Standardize proven workflows across every site"
+      feature: "Device Agent and DevOps Pipelines"
+      description: "Turn a successful workflow on one machine or line into a repeatable operational standard across plants. Roll out updates with version control, staged deployments, and centrally managed industrial devices. No more rebuilding from scratch for every site, or leaving improvements siloed in one location."
+      imagePath: "images/home/home-pipeline.png"
       imageAlt: "FlowFuse flow editor"
-    - capability: "Interact with the Data"
-      feature: "Interactive, real-time dashboards built with AI assistance"
-      description: "Give your teams the tools to visualize and interact with real-time operational data. with FlowFuse Expert, our LLM-powered copilot, you can create custom dashboards and sophisticated UI elements in record time, empowering you to monitor KPIs, optimize production, and innovate without limits."
+    - capability: "Connect shop floor events to enterprise systems"
+      feature: "Flow-based IT/OT connectivity"
+      description: "Move production events, work orders, alarms, and operational data securely between PLCs, edge devices, MES, ERP, cloud platforms, and operator interfaces — without brittle point-to-point integrations or exposing inbound firewall ports."
       imagePath: "images/home/home-dashboard.png"
       imageAlt: "FlowFuse Dashboard"
 solutions:
@@ -228,7 +228,7 @@ hubspot:
                 </div>
             </div>
             <div class="md:w-[55%] my-auto flex flex-col">
-                <h3 class="text-red-400 mb-3 text-lg font-semibold">{{ item.feature }}</h3>
+                <h3 class="text-red-400 mb-3 text-sm font-semibold uppercase">{{ item.feature }}</h3>
                 <h2>{{ item.capability }}</h2>
                 <div class="md:hidden rounded-xl w-full bg-gradient-to-tl from-red-100 to-indigo-100 max-w-[500px] mx-auto my-6 p-4">
                     <div class="ff-image-rounded w-full border border-red-200 overflow-hidden">
