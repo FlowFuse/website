@@ -43,7 +43,7 @@ for (const f of walk(LEGACY)) {
 const redirectsSrc = path.join(ROOT, 'src', 'redirects.njk')
 if (fs.existsSync(redirectsSrc)) {
     const raw = fs.readFileSync(redirectsSrc, 'utf8')
-    const body = raw.replace(/^---[\s\S]*?---\n/, '')
+    const body = raw.replace(/^---[\s\S]*?---\r?\n/, '')
     fs.writeFileSync(path.join(PUBLIC, '_redirects'), body)
     count++
 }
