@@ -1003,7 +1003,7 @@ h4:hover .header-anchor::before {
 }
 
 .testimonial #container {
-    @apply md:min-h-[284px] min-h-[650px];
+    @apply md:min-h-[284px] sm:min-h-[440px] min-h-[700px];
 }
 
 .testimonial.active {
