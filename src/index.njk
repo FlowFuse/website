@@ -316,7 +316,7 @@ hubspot:
     </div>
 </div>
 
-<div class="w-full px-6">
+<div class="w-full px-6 bg-radial-indigo-small pt-6 pb-10">
     <!-- Testimonials -->
     <div class="w-full mt-16 md:px-0">
         <div class="sm:max-w-screen-lg mx-auto">
@@ -326,30 +326,41 @@ hubspot:
 </div>
 
 <!-- AI section -->
-<div class="w-full px-6 bg-indigo-50/50 my-10">
-    <div class="w-full pt-20 pb-20">
-        <div class="sm:max-w-screen-lg mx-auto">
-            <!-- Header with bg image -->
-            <div class="relative ff-image-cover right ff-image-rounded mb-12 h-[100px] sm:h-[130px]">
-                {% image "./images/home/home-flowfuse-ai.jpg", "Abstract visual of AI powering connected systems and data pipelines.", [1024] %}
-                <!-- Gradient overlay -->
-                <div class="absolute inset-0 bg-gradient-to-r from-indigo-900 to-indigo-700 sm:hidden"></div>
-                <!-- Content -->
-                <div class="absolute inset-0 max-w-2xl h-full flex items-center sm:pl-10">
-                    <h2 class="text-white w-full max-sm:text-center mb-0"><span class='text-indigo-300'>Meet</span> FlowFuse Expert</h2>
+<div class="w-full px-6 py-20">
+    <div class="max-w-screen-lg mx-auto">
+        <p class="text-red-400 text-sm font-semibold uppercase m-0 max-md:text-center">AI in industrial operations</p>
+        <h2 class="mt-4 md:text-5xl max-md:text-center">AI makes building faster. <span class="text-red-400">FlowFuse makes it operational.</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-16">
+            <div class="border-2 border-red-200 rounded-lg p-6 flex flex-col justify-between bg-gradient-to-tl from-red-50/50 to-transparent">
+                <div class="flex flex-col gap-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 shrink-0 text-red-400">
+                            {% include "components/icons/bolt.svg" %}
+                        </div>
+                        <p class="text-red-400 text-2xl font-medium m-0">AI accelerates the build</p>
+                    </div>
+                    <p class="text-gray-700 font-light m-0">FlowFuse Expert, our industrial-tuned AI assistant, lets your team describe what they need in plain language — and generates flows, data transformations, and dashboard logic. No waiting on scarce developers.</p>
                 </div>
+                <a href="/ai/" class="flex items-center justify-end gap-1.5 text-indigo-600 hover:underline mt-6">
+                    Learn more about FlowFuse AI
+                    {% include "components/icons/arrow-long-right.svg" %}
+                </a>
             </div>
-            <!-- Content - Description paragraphs -->
-            <p class="max-sm:text-center">
-                An <span class='font-medium'>industrial-tuned LLM</span> uses FlowFuse's knowledge base and your data schemas to <span class='font-medium'>turn your plain-language description into industrial automation flows</span>, data mappings, dashboards, and queries—so you can <span class='font-medium'>build faster without waiting on scarce developers.</span>
-            </p>
-            <p class="max-sm:text-center">
-                FlowFuse does not bolt a generic LLM onto the side of your stack; LLMs are wired directly into how teams design, build, and operate industrial applications via Model Context Protocol (MCP). <span class='font-medium'>FlowFuse Expert is the AI</span> that understands your flows, data structures, and environment in real time—so it can <span class='font-medium'>generate and refine real, deployable artifacts instead of isolated snippets.</span>
-            </p>
-            <a href="/ai/" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1 mt-6">
-                Learn more about FlowFuse AI
-                {% include "components/icons/arrow-long-right.svg" %}
-            </a>
+            <div class="border-2 border-red-200 rounded-lg p-6 flex flex-col justify-between bg-gradient-to-tl from-red-50/50 to-transparent">
+                <div class="flex flex-col gap-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 shrink-0 text-red-400">
+                            {% include "components/icons/shield-check.svg" %}
+                        </div>
+                        <p class="text-red-400 text-2xl font-medium m-0">FlowFuse governs the result</p>
+                    </div>
+                    <p class="text-gray-700 font-light m-0">Speed without governance creates new debt. FlowFuse provides the production layer where AI-assisted work becomes visible, versioned, secure, and reusable — across the enterprise.</p>
+                </div>
+                <a href="/book-demo/" class="flex items-center justify-end gap-1.5 text-indigo-600 hover:underline mt-6" onclick="capture('cta-book-demo', {'position': 'ai'})">
+                    Book a demo
+                    {% include "components/icons/arrow-long-right.svg" %}
+                </a>
+            </div>
         </div>
     </div>
 </div>
