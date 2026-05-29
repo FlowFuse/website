@@ -81,6 +81,23 @@ operationalSystem:
                 description: "Structured controller data flows, diagnostics, and routing."
               - name: "System Diagnostics"
                 description: "Error tracking and root cause analysis across deployed applications."
+meta:
+    faq:
+        - question: "What's the difference between Node-RED and FlowFuse?"
+          answer: >
+            Node-RED is the open-source runtime FlowFuse is built on — it's how you build the logic. FlowFuse adds everything after the build: deployment across sites, version control, team access management, and enterprise security. You can use FlowFuse without prior Node-RED experience.
+        - question: "Do I need Node-RED experience to use FlowFuse?"
+          answer: >
+            No. FlowFuse Expert, our AI-assisted development tool, lets your team describe what they need in plain language and generates the logic. Your team can build without a steep learning curve.
+        - question: "Can FlowFuse work with our existing systems?"
+          answer: >
+            Yes — FlowFuse is designed for brownfield environments. It connects to and extends your existing MES, ERP, SCADA, PLCs, and other systems without replacing them or requiring modifications to core platforms.
+        - question: "How does FlowFuse handle security and compliance?"
+          answer: >
+            FlowFuse is SOC 2 Type 1 and Type 2 certified. It supports RBAC, SSO, audit logs, and air-gapped self-hosted deployments for environments with strict network isolation requirements.
+        - question: "How long does a typical deployment take?"
+          answer: >
+            Most teams are operational within days. FlowFuse is designed to start with a single use case and expand — not require a multi-month implementation before delivering value.
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -316,10 +333,10 @@ hubspot:
     </div>
 </div>
 
-<div class="w-full px-6 bg-radial-indigo-small pt-6 pb-10">
+<div class="w-full bg-radial-indigo-small pt-6 pb-10">
     <!-- Testimonials -->
     <div class="w-full mt-16 md:px-0">
-        <div class="sm:max-w-screen-lg mx-auto">
+        <div class="max-w-screen-lg mx-auto">
             {% include "testimonials.njk" %}
         </div>
     </div>
@@ -365,13 +382,25 @@ hubspot:
     </div>
 </div>
 
+<!-- FAQ Section -->
+<div class="w-full px-6 pt-20 bg-indigo-50/50 mb-10">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-1">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
+        <div class="-mt-20">
+            {% include "faq.njk" %}
+        </div>
+    </div>
+</div>
+
 <div class="pb-10 md:pb-12 pt-14 px-6">
     <!-- Get Started -->
-    <div class="ff-blue-card">
-        {% include "get-started.njk" %}
+    <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center" style="background: radial-gradient(ellipse 50% 150% at 50% 100%, #6366f1, #211c64)">
+        <p class="text-white text-5xl font-medium m-0">Get Started with FlowFuse</p>
+        <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Book a demo to see how — or start a free trial and build it yourself.</p>
+        <a class="ff-btn ff-btn--highlight" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'get-started'})">BOOK A DEMO</a>
     </div>
     <!-- FF Content -->
-    <div class="max-w-md sm:max-w-screen-lg m-auto max-w-5xl px-6">
+    <div class="max-w-screen-lg m-auto">
             <div class="pt-12 mt-10 pb-12">
             <h2 class="text-center w-full md:text-left col-span-full font-medium"><span class="text-indigo-600">Explore more</span> about FlowFuse</h2>
                 {% include "explore-more-content.njk" %}
