@@ -1,64 +1,60 @@
-# Verification — 11ty → Nuxt migration (handbook increment)
+# Verification — 11ty → Nuxt 4 migration (final / PR-ready)
 
-Date: 2026-05-26
+Date: 2026-05-29
 
-> The `site-verify` plugin referenced in CLAUDE.md is not installed in this
-> environment, so the equivalent checks were run manually (build, link-checker,
-> route parity, HTTP health, and browser rendering).
+> Records the verification gates for the completed migration. The `site-verify`
+> plugin referenced in CLAUDE.md is not installed here, so the equivalent checks
+> were run manually (build, link-checker, route parity, responsive sweep).
+> An earlier point-in-time snapshot (the 2026-05-26 handbook increment, 1069-route
+> era) is preserved in the git history of this file.
 
 ## Build
 
-- `npm run build:nuxt:skip-images` (hybrid: 11ty → `nuxt/public`, then
-  `nuxt generate`) completes with **no errors**.
-- `nuxt generate` prerendered **339 routes** (166 handbook pages + Nuxt pages +
-  payloads) successfully — no prerender errors.
+- `npm run build:nuxt:skip-images` (`copy_*` steps → `nuxt generate`) completes
+  with **no errors** (exit 0). Eleventy is fully removed; this is a pure Nuxt 4
+  static build to `nuxt/.output/public`.
+
+## Route parity (the hard constraint)
+
+`migration/route-diff.txt` — generated Nuxt route set vs the **frozen 1178-route**
+11ty baseline (`migration/routes-11ty.txt`):
+
+```
+# 11ty routes:  1178
+# Nuxt routes:  1186
+# Dropped:      0
+# Added:        8   (/200, /terms/, /privacy-policy/, 4 new blog categories, 1 new blog post)
+OK: Nuxt build is a superset of 11ty routes (zero dropped URLs).
+```
+
+Zero legacy URLs dropped or renamed — trailing slashes preserved. Re-run any time
+with `bash migration/verify-routes.sh`.
 
 ## Link checker (nuxt-link-checker, failOnError: true)
 
 ```
 Nuxt Link Checker Summary
-  Failing Pages: 0 of 168
+  Failing Pages: 0 of 1180
   Total errors: 0
   Total warnings: 0
 ```
 
-## Route parity (the hard constraint)
+## Responsive sweep (scripted Playwright, no MCP browser)
 
-`migration/route-diff.txt` (Nuxt build vs frozen 1069-route 11ty baseline):
-
-```
-# 11ty routes:  1069
-# Nuxt routes:  1072
-# Dropped:      0
-# Added:        3   (/200, /terms/, /privacy-policy/)
-OK: Nuxt build is a superset of 11ty routes (zero dropped URLs).
-```
-
-The 169 `/handbook/...` routes are all present; 166 are now Nuxt-rendered
-(verified `id="__nuxt"` / `_payload` markers in the output), the 2 `.njk`/
-space-named pages remain 11ty-served, and `/handbook/` index resolves.
-
-## HTTP health (live preview, sprite-env `web` service, port 3000)
+`npm run qa:responsive` — viewports 375 / 768 / 1280 / 1920, 15 representative
+URLs (docs + handbook emphasised, plus one page per migrated cluster):
 
 ```
-sprite URL (auth-gated proxy): 200
-local /            : 200
-local /handbook/   : 200
-local /pricing/    : 200
-local /terms/      : 200
+60 captures (15 urls x 4 viewports), 8 flagged
 ```
 
-Note: the public `*.sprites.app` URL 302→ a sprites.dev auth page (sprite
-network policy); the app itself is verified on `http://localhost:3000`.
-
-## Browser rendering (Playwright)
-
-- `/` — homepage renders with full CSS (FlowFuse marketing layout).
-- `/handbook/company/values/` — Nuxt-rendered: nested sidebar nav (full
-  handbook tree), FlowFuse header/footer, content with rewritten internal
-  links and images. Title `Values • FlowFuse Handbook`.
+- **All captures HTTP 200; zero horizontal overflow (`ovfX=0`) at every viewport.**
+- Docs and handbook render cleanly at all four widths.
+- The 8 flags are the known, cosmetic "Hydration completed but contains
+  mismatches" console warnings on `/pricing/` and `/node-red/` only (documented in
+  `STATUS.md` as non-blocking; the pages render correctly).
 
 ## Process hygiene
 
-- No orphaned raw dev servers (`nuxt dev`/`vite`/`eleventy`/`http.server`).
-- Long-running server runs as the sprite-env `web` service (not a raw process).
+- No orphaned raw dev servers (`nuxt dev` / `vite` / `eleventy` / `http.server`).
+- The local preview runs as the sprite-env `web` service (static `nuxt/.output/public`).

@@ -1,5 +1,29 @@
 # 11ty → Nuxt 4 migration — status & runbook
 
+## FINAL STATE (PR-ready) — read this first
+
+The migration is **complete**. The site is generated entirely by Nuxt 4
+(`nuxt generate` → `nuxt/.output/public`); Eleventy is fully removed. `src/` is
+retained only as a data source the `scripts/copy_*.js` build steps read.
+
+Verification (re-run `bash migration/verify-routes.sh`):
+
+- **Build:** `npm run build:nuxt:skip-images` clean, no errors.
+- **Route parity:** frozen 1178-route 11ty baseline → 1186 Nuxt routes,
+  **Dropped: 0** (superset; see `route-diff.txt`). Trailing slashes preserved.
+- **Link checker:** `nuxt-link-checker` — **0 of 1180 failing**, 0 errors/warnings.
+- **Responsive:** `npm run qa:responsive` (375/768/1280/1920) — 60 captures,
+  **0 horizontal overflow**; only cosmetic `/pricing/` + `/node-red/` hydration
+  warnings remain (non-blocking, see "Known non-blocking items" below).
+
+See `migration/VERIFICATION.md` for the full gate output and
+`migration/PR_DESCRIPTION.md` for the PR summary.
+
+> The sections below are the **historical running log** of the page-by-page
+> migration, newest first. Earlier entries quote interim route counts (e.g. the
+> 1069-route handbook-increment era) that predate the final 1178-route baseline
+> above — they are kept as a record, not as the current numbers.
+
 ## Follow-up (2026-05-28b) — origin/main integration + responsive fixes
 
 Rebased the 62 local migration commits onto the updated `origin/main` (12 new
