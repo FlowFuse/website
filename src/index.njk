@@ -53,6 +53,34 @@ metrics:
       text: "Faster from idea to deployed operational application with FlowFuse Expert"
     - number: "20+"
       text: "Manufacturing sites standardized from a single platform without rebuilding"
+operationalSystem:
+    categories:
+        - title: "PRODUCTION & OPERATIONS"
+          items:
+              - name: "Production Monitoring"
+                description: "OEE tracking across lines, shifts, and plants."
+              - name: "Continuous Improvement"
+                description: "Digital CI workflow from suggestion to closure."
+        - title: "OPERATIONAL WORKFLOWS"
+          items:
+              - name: "Workforce Assignment"
+                description: "Dynamic operator allocation using training, ergonomics, and demand data."
+              - name: "Shop Floor Communication"
+                description: "Real-time alerts, escalation, and cross-site coordination."
+        - title: "SYSTEM EXTENSIONS"
+          items:
+              - name: "Quality Validation"
+                description: "Inline inspection and QA checks outside the core system."
+              - name: "Track & Trace"
+                description: "Part, component, and batch traceability across the plant."
+        - title: "OPERATIONAL INFRASTRUCTURE"
+          items:
+              - name: "Equipment Monitoring"
+                description: "PLC and device health monitoring across controller types."
+              - name: "Operational Data Pipelines"
+                description: "Structured controller data flows, diagnostics, and routing."
+              - name: "System Diagnostics"
+                description: "Error tracking and root cause analysis across deployed applications."
 hubspot:
   script: "hubspot/hs-form.njk"
   formId: 159c173d-dd95-49bd-922b-ff3ef243e90c
@@ -244,6 +272,59 @@ hubspot:
     </div>
 </div>
 
+<!-- Mature Adoption - Operational Application System section -->
+<div class="w-full px-6 py-20 bg-gradient-to-br from-indigo-50 to-red-50">
+    <div class="max-w-screen-lg mx-auto max-md:text-center">
+        <p class="text-indigo-400 text-sm font-semibold uppercase m-0">What mature adoption looks like</p>
+        <h2 class="my-4 md:text-5xl">From one-off solutions to <span class="text-indigo-600">an operational application system</span></h2>
+        <p class="max-w-screen-md">These are not use cases — these are production applications running across the business. Built once, governed centrally, deployed across every site.</p>
+
+        <div class="mt-10 bg-white/40 border-2 border-white rounded-xl pt-8 p-5 flex flex-col gap-8">
+            <p class="text-center text-indigo-600 text-3xl font-normal m-0">Operational Application System</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start">
+                {% for category in operationalSystem.categories %}
+                <div class="border border-indigo-300 rounded-lg flex flex-col">
+                    <div class="bg-indigo-600 text-white text-sm font-medium text-center uppercase px-4 py-2.5 rounded-t-lg leading-5">
+                        {{ category.title }}
+                    </div>
+                    <div class="flex flex-col gap-[18px] p-2.5">
+                        {% for item in category.items %}
+                        <div class="bg-white border border-white rounded-lg p-4 flex flex-col gap-3">
+                            <p class="text-indigo-500 font-medium m-0">{{ item.name }}</p>
+                            <p class="text-gray-700 font-light m-0 text-sm leading-5">{{ item.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="rounded-xl px-8 py-9" style="background: radial-gradient(ellipse 50% 125% at 50% 100%, #6366f1, #312e81)">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <p class="text-white text-3xl font-medium m-0 md:w-80 shrink-0 leading-10">Every problem solved becomes a reusable application</p>
+                    <div class="flex flex-col gap-3.5 md:pt-2.5">
+                        <p class="text-indigo-50 font-light text-xl leading-6 m-0">That's how a small team manages operations across dozens of sites — without rebuilding from scratch every time.</p>
+                        <p class="text-red-50 font-medium text-xl leading-6 m-0">Ready to build yours?</p>
+                        <div class="flex justify-center md:justify-end mt-2">
+                            <a class="ff-btn ff-btn--highlight" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'oas'})">BOOK A DEMO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-full px-6">
+    <!-- Testimonials -->
+    <div class="w-full mt-16 md:px-0">
+        <div class="sm:max-w-screen-lg mx-auto">
+            {% include "testimonials.njk" %}
+        </div>
+    </div>
+</div>
+
 <!-- AI section -->
 <div class="w-full px-6 bg-indigo-50/50 my-10">
     <div class="w-full pt-20 pb-20">
@@ -269,41 +350,6 @@ hubspot:
                 Learn more about FlowFuse AI
                 {% include "components/icons/arrow-long-right.svg" %}
             </a>
-        </div>
-    </div>
-</div>
-
-<div class="w-full px-6">
-    <!-- Solutions section -->
-    <div class="w-full py-10 md:pt-16">
-        <div class="sm:max-w-screen-lg mx-auto max-sm:text-center">
-            <h2 class="max-sm:mt-10"><span class="text-indigo-600">Unlock Powerful Solutions</span> for Your Industrial Operations</h2>
-            <p class="my-6">FlowFuse provides a comprehensive set of solutions designed to bridge the gap between IT and OT, streamline device management, and integrate data with unprecedented speed and intelligence.</p>
-            <div class="grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6 mt-6 w-full">
-                {% for item in solutions %}
-                <a class="my-2 group hover:no-underline" href="{{ item.href }}">
-                    <div class="w-full max-w-[333px] h-[245px] max-sm:max-w-[500px] max-sm:h-[200px] mx-auto mb-6 flex items-center justify-center overflow-hidden ff-image-cover ff-image-rounded scale">
-                        {% image item.image, item.imageAlt, [333] %}
-                    </div>
-                    <div class="flex flex-row gap-2 my-3 items-center max-sm:justify-center">
-                        <div class="w-6 h-6 my-auto text-indigo-700">
-                            {% include item.icon %}
-                        </div>
-                        <h3 class="text-xl text-indigo-700 hover:text-indigo-900">{{ item.title }}</h3>
-                    </div>
-                    <p class="leading-6 sm:pr-3">{{ item.description }}</p>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="w-full px-6">
-    <!-- Testimonials -->
-    <div class="w-full mt-16 md:px-0">
-        <div class="sm:max-w-screen-lg mx-auto">
-            {% include "testimonials.njk" %}
         </div>
     </div>
 </div>
