@@ -41,7 +41,12 @@ function routeKey (file) {
     return rel === '' ? '/' : rel
 }
 
-const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '')
+// Decode percent-encoding (the renderer encodes fragment chars like `:` -> `%3A`)
+// so a `%3A` fragment still matches an id that literally contains `:`.
+function decodeFrag (s) {
+    try { return decodeURIComponent(s) } catch { return s }
+}
+const norm = (s) => decodeFrag(s).toLowerCase().replace(/[^a-z0-9]+/g, '')
 
 const ID_RE = /\sid="([^"]+)"/g
 const HREF_RE = /href="([^"]*#[^"]*)"/g
@@ -97,7 +102,7 @@ for (const file of files) {
             return full // relative cross-page / external - leave alone
         }
         if (!target) return full
-        if (target.ids.has(frag)) return full // already valid
+        if (target.ids.has(frag) || target.ids.has(decodeFrag(frag))) return full // already valid
 
         const fix = target.normMap.get(norm(frag))
         if (!fix || fix === frag) return full
