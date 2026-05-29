@@ -20,13 +20,13 @@ High Availability is our first [preview feature](/handbook/engineering/product/v
 
 FlowFuse 1.8 introduces the concept of Pipelines to better organize your Node-RED development. Development team can now set up different staging environments for different steps in the development cycle, ex. test, development and production. Node-RED instances can be pushed along a pipeline as they move along the development process. This allows for a better organized and predictable development process for your team. 
 
-The new Pipelines feature builds upon the Staged Development support that we introduced in[FlowFuse Version 1.4](../../02/flowforge-1-4-0-released). We highly recommend that development teams avoid developing their flows directly in production instances. This approach fosters a more reliable and robust development process, reducing the risks associated with production environment modifications. Instead, start your development in a dedicated development or test instance and then deploy your Node-RED instance to production once they have been thoroughly tested and reviewed. 
+The new Pipelines feature builds upon the Staged Development support that we introduced in[FlowFuse Version 1.4](/blog/2023/02/flowforge-1-4-0-released/). We highly recommend that development teams avoid developing their flows directly in production instances. This approach fosters a more reliable and robust development process, reducing the risks associated with production environment modifications. Instead, start your development in a dedicated development or test instance and then deploy your Node-RED instance to production once they have been thoroughly tested and reviewed. 
 
 <lite-youtube videoid="Pbql22f3vqY" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
 ## User interface for Device Agent
 
-In our previous release, we introduced [Editor Access for Devices](../../05/flowforge-1-7-released). Now, the FlowFuse Device Agent now comes with its very own User Interface (UI) for configuration.
+In our previous release, we introduced [Editor Access for Devices](/blog/2023/05/flowforge-1-7-released/). Now, the FlowFuse Device Agent now comes with its very own User Interface (UI) for configuration.
 
 Imagine this: Your industrial equipment arrives with the Device Agent preinstalled. In the past, you might have faced challenges in configuring and connecting your device with FlowFuse, particularly if you had no direct shell access. But not any more.
 

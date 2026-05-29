@@ -163,7 +163,9 @@ function transformBody(body, absFile) {
     //    `/blog/04/foo` (year lost) instead of `/blog/2022/04/foo`.
     const postUrl = fileToRoute(absFile)
     body = body.replace(/(\]\()([^)\s]+)(\))/g, (full, pre, target, post) => {
-        if (/^(https?:|mailto:|tel:|#|\/)/i.test(target)) return full
+        // Skip anything with a URI scheme (http:, mailto:, even malformed ones
+        // like a `lhttps:` typo), pure fragments, and already-absolute paths.
+        if (/^([a-z][\w+.-]*:|#|\/)/i.test(target)) return full
         const m = target.match(/^([^#?]*)([#?][\s\S]*)?$/)
         if (!m || !m[1]) return full
         // Assets (images etc.) are handled by the image step / passthrough.
