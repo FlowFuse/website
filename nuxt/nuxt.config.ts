@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { existsSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+// @ts-ignore - plain rehype plugins, no bundled types
+import rehypeAnchorSlugs from './mdc-plugins/anchor-slugs.mjs'
+// @ts-ignore
+import rehypeStripInternalMd from './mdc-plugins/strip-internal-md.mjs'
 
 // Routes generated from the markdown/data sources by the scripts/copy_*.js steps.
 const readRoutes = (name: string): string[] => {
@@ -20,6 +24,22 @@ const nodeRedRoutes = readRoutes('node-red.routes.json')
 export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: ['@nuxt/content', 'nuxt-link-checker'],
+
+    // Heading-id slugger (markdown-it-anchor parity) + internal .md/README link
+    // stripping, injected into MDC's rehype stage before compileHast assigns
+    // ids / builds the TOC. Passed as `instance` functions (resolved in-process
+    // by @nuxt/content's importPlugins) rather than via mdc.config.ts file
+    // discovery. See nuxt/mdc-plugins/*.mjs.
+    content: {
+        build: {
+            markdown: {
+                rehypePlugins: {
+                    'flowfuse-anchor-slugs': { instance: rehypeAnchorSlugs },
+                    'flowfuse-strip-internal-md': { instance: rehypeStripInternalMd },
+                },
+            },
+        },
+    },
 
     linkChecker: {
         failOnError: true,

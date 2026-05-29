@@ -29,13 +29,27 @@ function slugify (s) {
   return String(s).trim().toLowerCase().replace(/\s+/g, '-')
 }
 
+// Honour an explicit `{#custom-id}` at the end of a heading (markdown-it-attrs
+// in 11ty), stripping it from the visible text and using it as the id.
+function explicitId (node) {
+  const text = toString(node)
+  const m = text.match(/\{#([^}\s]+)\}\s*$/)
+  if (!m) return null
+  // Remove the `{#id}` token from the trailing text node so it isn't rendered.
+  const last = node.children && node.children[node.children.length - 1]
+  if (last && last.type === 'text') {
+    last.value = last.value.replace(/\s*\{#[^}\s]+\}\s*$/, '')
+  }
+  return m[1]
+}
+
 export default function rehypeAnchorSlugs () {
   return (tree) => {
     // markdown-it-anchor de-dupes repeated slugs by appending `-2`, `-3`, ...
     const seen = Object.create(null)
     visit(tree, 'element', (node) => {
       if (!/^h[1-6]$/.test(node.tagName || '')) return
-      const base = slugify(toString(node))
+      const base = explicitId(node) || slugify(toString(node))
       if (!base) return
       let uniq = base
       let i = 2
