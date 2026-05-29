@@ -30,6 +30,7 @@
         "legacy-static": "node scripts/copy_legacy_static.js",
         "normalize-images": "node scripts/normalize_content_images.js",
         "sitemap": "node scripts/gen_sitemap.js",
+        "repair-anchors": "node scripts/repair_anchors.js",
         "index:algolia": "node scripts/index-algolia.js",
         "qa:responsive": "node scripts/responsive-check.js",
         "qa:smoke": "node scripts/visual-check.js",
@@ -37,8 +38,8 @@
         "prod:postcss-nuxt": "postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js",
         "prod:nuxt": "npm run generate --workspace=nuxt",
         "clean:nuxt": "npx del-cli 'nuxt/public/**/*.html' 'nuxt/public/search-index.json' 'nuxt/.output' && npx mkdirp 'nuxt/public/js' 'nuxt/public/css'",
-        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs docs-nuxt handbook changelog blog customer-stories events integrations node-red ebooks normalize-images icons team blueprints assets legacy-static prod:postcss-nuxt prod:nuxt sitemap",
-        "build:nuxt:skip-images": "dotenv -v SKIP_IMAGES=true -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs docs-nuxt handbook changelog blog customer-stories events integrations node-red ebooks normalize-images icons team blueprints assets legacy-static prod:postcss-nuxt prod:nuxt sitemap",
+        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs docs-nuxt handbook changelog blog customer-stories events integrations node-red ebooks normalize-images icons team blueprints assets legacy-static prod:postcss-nuxt prod:nuxt repair-anchors sitemap",
+        "build:nuxt:skip-images": "dotenv -v SKIP_IMAGES=true -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs docs-nuxt handbook changelog blog customer-stories events integrations node-red ebooks normalize-images icons team blueprints assets legacy-static prod:postcss-nuxt prod:nuxt repair-anchors sitemap",
         "build": "npm run build:nuxt",
         "build:indexed": "npm run build:nuxt && npm run index:algolia"
     },
