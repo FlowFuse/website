@@ -24,6 +24,58 @@ See `migration/VERIFICATION.md` for the full gate output and
 > 1069-route handbook-increment era) that predate the final 1178-route baseline
 > above — they are kept as a record, not as the current numbers.
 
+## Follow-up (2026-05-29) — markdown-rendering parity (hyperlink clean)
+
+`nuxt-link-checker` only inspects the routes Nuxt prerenders; the stricter
+`hyperlink` (untitaker/hyperlink@0.2.0, `--check-anchors --sources src`) over the
+built `nuxt/.output/public` surfaced rendering differences vs the old 11ty
+(markdown-it) pipeline. Baseline: **1430 bad links / 58 bad anchors**. After this
+pass: **0 bad anchors, 0 in-scope bad links** (route diff still **Dropped: 0**,
+1178→1186). The only remaining `hyperlink` errors (1196) are all `/blueprints`
+— an un-migrated cluster sourced from the external, auth-gated `../blueprint-library`
+repo that cannot be cloned here; it renders in CI (Netlify green) and is out of
+scope for local verification.
+
+Four rendering dimensions were aligned to markdown-it/markdown-it-anchor:
+
+1. **Heading-id slugger.** @nuxt/content (MDC) ids via github-slugger strip
+   `?:()&`, periods and emoji; markdown-it-anchor keeps them, and the prose
+   anchors were written against that form. A rehype plugin
+   (`nuxt/mdc-plugins/anchor-slugs.mjs`) re-derives each id with the
+   markdown-it-anchor algorithm in raw (non-percent-encoded) form, honors an
+   explicit trailing `{#custom-id}`, and is registered via
+   `content.build.markdown.rehypePlugins` in `nuxt.config.ts` (the `mdc.config.ts`
+   file-discovery yielded an empty `#mdc-configs` here, so it never ran — use the
+   nuxt.config `instance:` form). It runs before MDC's `compileHast`, so the id
+   flows to both the heading and the generated TOC.
+2. **Internal `.md`/README links.** `nuxt/mdc-plugins/strip-internal-md.mjs`
+   (rehype) strips `.md`/README from absolute internal hrefs; the relative and
+   raw-HTML cases are handled in the copy scripts (below) because @nuxt/content
+   resolves relative links at render time, after the rehype stage.
+3. **Relative links.** @nuxt/content resolves a relative href against the page
+   path treated as a *file*, dropping a segment (`../../04/foo` in
+   `/blog/2022/05/<post>/` → `/blog/04/foo`). The copy scripts now pre-resolve
+   relative internal links to absolute URLs before handing content to
+   @nuxt/content: **blog** resolves against the post URL-as-directory
+   (`copy_blog.js`); **handbook/docs/node-red** resolve against the source dir
+   (matching 11ty's `rewriteHandbookLinks` `../`-prepend), strip `.md`/README,
+   and cover raw-HTML `<a>` (`copy_handbook.js`, `copy_docs_nuxt.js`,
+   `copy_node_red.js`). `copy_events.js` also serves relative downloadable assets
+   (e.g. a webinar `.zip`).
+4. **Anchor repair.** `scripts/repair_anchors.js` (post-build, wired between
+   `prod:nuxt` and `sitemap`) rewrites any still-broken `#fragment` link to the
+   real heading id via a normalised match, bridging the residue MDC's id
+   post-processing leaves (collapsed `--`, leading-digit `_`) that the slugger
+   can't pre-empt; it is cross-page aware and decodes percent-encoded fragments.
+
+Also fixed (not @nuxt/content per se, but broke `hyperlink`): blog/changelog
+pagination emitted hidden Prev/Next links with broken hrefs — now rendered with
+`v-if` so first/last-page links aren't in the DOM.
+
+Genuinely-broken-in-source links left as-is (broken in 11ty too, content issues,
+not rendering): none remain in scope. Re-run: `hyperlink nuxt/.output/public/
+--check-anchors --sources src` (binary at `/.sprite/languages/rust/cargo/bin`).
+
 ## Follow-up (2026-05-28b) — origin/main integration + responsive fixes
 
 Rebased the 62 local migration commits onto the updated `origin/main` (12 new
