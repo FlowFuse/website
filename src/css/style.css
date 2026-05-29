@@ -678,6 +678,13 @@ h4:hover .header-anchor::before {
     object-position: center;
 }
 
+/* Solution section background */
+.solution-section-bg {
+    background: url('/images/home/home-solution-background.svg');
+    background-position: bottom;
+    background-size: cover;
+}
+
 .ff-image-top-rounded img,
 .ff-image-top-rounded picture {
     @apply rounded-t-lg;
