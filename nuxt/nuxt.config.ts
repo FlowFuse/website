@@ -88,4 +88,20 @@ export default defineNuxtConfig({
         }
     },
 
+    vite: {
+        vue: {
+            template: {
+                transformAssetUrls: {
+                    // Leave root-relative `<img src="/...">` paths alone. The default
+                    // template-asset transform turns them into Rollup imports, which
+                    // breaks the SKIP_IMAGES test build (the file isn't in public/ at
+                    // that point). At runtime / production, the path is served from
+                    // `public/` as expected.
+                    includeAbsolute: false,
+                },
+            },
+        },
+    },
+
+
 })
