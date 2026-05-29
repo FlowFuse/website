@@ -1,12 +1,32 @@
 <script setup>
 import { INTEGRATION_CATEGORIES } from '~/types/integrations'
 import { fetchCatalogue } from '~/utils/integrations'
+import { SITE_URL, OG_IMAGE, buildJsonLd } from '~/utils/seo'
+
+const PAGE_URL = `${SITE_URL}/integrations/`
+const TITLE = 'Integrations • FlowFuse'
+const DESCRIPTION = 'Explore the list of integrations and modules available for your Node-RED projects. Created (and curated) by FlowFuse and the Node-RED community.'
+
+useSeoMeta({
+    title: TITLE,
+    description: DESCRIPTION,
+    ogTitle: TITLE,
+    ogDescription: DESCRIPTION,
+    ogUrl: PAGE_URL,
+    ogImage: OG_IMAGE,
+    ogType: 'website',
+    twitterCard: 'summary_large_image',
+    twitterSite: '@FlowFuseinc',
+    twitterImage: OG_IMAGE,
+    twitterDescription: ''
+})
 
 useHead({
-    title: 'Integrations • FlowFuse',
-    meta: [
-        { name: 'description', content: 'Explore the list of integrations and modules available for your Node-RED projects. Created (and curated) by FlowFuse and the Node-RED community.' }
-    ]
+    link: [{ rel: 'canonical', href: PAGE_URL }],
+    script: [{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(buildJsonLd({ url: PAGE_URL, title: TITLE, description: DESCRIPTION }))
+    }]
 })
 
 const route = useRoute()

@@ -27,6 +27,7 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
                 rel="noopener noreferrer"
             >palette manager</a>.
         </p>
+        <!-- GIF stays as <img> so animation survives. -->
         <img
             :src="installGifUrl"
             alt="Animation of the Node-RED palette manager: open Manage Palette, search for the node, then click Install."
@@ -35,12 +36,11 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
             height="720"
             class="motion-reduce:hidden block w-full rounded border border-gray-200"
         />
-        <img
+        <NetlifyImg
             :src="installPngUrl"
             alt="Node-RED Palette Manager dialog with the node selected and the Install button visible."
-            loading="lazy"
-            width="707"
-            height="376"
+            :width="707"
+            :height="376"
             class="motion-safe:hidden block w-full rounded border border-gray-200"
         />
     </div>

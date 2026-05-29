@@ -1,5 +1,6 @@
 <script setup>
 import { cleanRepoUrl, formatNumber, shortDate } from '~/utils/formatters'
+import { SITE_URL, OG_IMAGE, buildJsonLd } from '~/utils/seo'
 
 const route = useRoute()
 const router = useRouter()
@@ -33,14 +34,35 @@ const authorIsLinkable = computed(() => {
     return Boolean(url) && (url.includes('github.com') || url.includes('npmjs.com'))
 })
 
-// Function form so title/meta react if the integration ever updates after mount.
+const seoTitle = computed(() => `${node.value._id} • FlowFuse Integrations`)
+const seoDescription = computed(() => node.value.description || '')
+// id can end in `/` from trailing-slash catch-all routes.
+const pageUrl = computed(() => `${SITE_URL}/integrations/${id.value.replace(/\/+$/, '')}/`)
+
+useSeoMeta({
+    title: () => seoTitle.value,
+    description: () => seoDescription.value,
+    ogTitle: () => seoTitle.value,
+    ogDescription: () => seoDescription.value,
+    ogUrl: () => pageUrl.value,
+    ogImage: OG_IMAGE,
+    ogType: 'website',
+    twitterCard: 'summary_large_image',
+    twitterSite: '@FlowFuseinc',
+    twitterImage: OG_IMAGE,
+    twitterDescription: ''
+})
+
 useHead(() => ({
-    title: `${node.value._id} • FlowFuse Integrations`,
-    meta: [
-        { name: 'description', content: node.value.description },
-        { property: 'og:title', content: node.value._id },
-        { property: 'og:description', content: node.value.description }
-    ]
+    link: [{ rel: 'canonical', href: pageUrl.value }],
+    script: [{
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(buildJsonLd({
+            url: pageUrl.value,
+            title: seoTitle.value,
+            description: seoDescription.value
+        }))
+    }]
 }))
 
 // Tab state for nodes with examples
