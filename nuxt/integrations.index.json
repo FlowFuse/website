@@ -16571,7 +16571,7 @@
       "name": "node-red-node-ui-table",
       "description": "Table UI widget node for Node-RED Dashboard",
       "version": "0.4.5",
-      "downloadsWeek": 25606,
+      "downloadsWeek": 14750,
       "npmScope": "knolleary",
       "author": {
         "name": "Kazuhito Yokoi",
