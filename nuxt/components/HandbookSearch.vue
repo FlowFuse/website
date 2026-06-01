@@ -68,6 +68,9 @@ onMounted(async () => {
                         return html`
                             <a href="#" data-href="${item.url}" class="aa-ItemWrapper">
                                 <div class="aa-ItemContent">
+                                    <div class="aa-ItemIcon aa-ItemIcon--alignTop">
+                                        <img src="#" data-src="${item.image}" alt="${item.name}" width="40" height="40" />
+                                    </div>
                                     <div class="aa-ItemContentBody">
                                         <div class="aa-ItemContentTitle">
                                             ${components.Highlight({ hit: item, attribute: ['hierarchy', 'lvl0'] })}
@@ -95,6 +98,9 @@ onMounted(async () => {
             document.querySelectorAll('.aa-Panel a').forEach((el: any) => {
                 el.href = el.getAttribute('data-href')
             })
+            document.querySelectorAll('.aa-Panel img').forEach((img: any) => {
+                img.src = img.getAttribute('data-src')
+            })
             const btn = document.querySelector<HTMLElement>('.load-more-btn')
             if (btn) {
                 btn.onclick = (e) => {
@@ -110,5 +116,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div ref="searchContainer" class="border rounded"></div>
+  <div ref="searchContainer" id="algolia-search" class="border rounded"></div>
 </template>
