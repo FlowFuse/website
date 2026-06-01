@@ -658,6 +658,33 @@ h4:hover .header-anchor::before {
     @apply rounded-lg;
 }
 
+/* Hero background slideshow */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1200ms ease-in-out;
+}
+.hero-slide.is-active {
+    opacity: 1;
+}
+.hero-slide picture,
+.hero-slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Solution section background */
+.solution-section-bg {
+    background: url('/images/home/home-solution-background.svg');
+    background-position: bottom;
+    background-size: cover;
+}
+
 .ff-image-top-rounded img,
 .ff-image-top-rounded picture {
     @apply rounded-t-lg;
@@ -976,7 +1003,7 @@ h4:hover .header-anchor::before {
 }
 
 .testimonial #container {
-    @apply md:min-h-[284px] min-h-[650px];
+    @apply md:min-h-[284px] sm:min-h-[440px] min-h-[700px];
 }
 
 .testimonial.active {
@@ -1191,6 +1218,7 @@ h4:hover .header-anchor::before {
 
     .ff-website .ff-btn {
         justify-content: center;
+        font-size: 16px;
         font-weight: bold;
         height: auto;
         padding: 8px 16px;

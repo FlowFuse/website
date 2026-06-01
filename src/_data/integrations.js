@@ -1,5 +1,4 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
-const certifiedNodes = require("./certifiedNodes");
 
 module.exports = async () => {
     console.log("Loading Integrations...");
@@ -12,44 +11,26 @@ module.exports = async () => {
         type: "json"
     });
 
-    // Get certified nodes first
-    const nodes = await certifiedNodes();
-    const ffNodesMap = nodes.reduce((acc, node) => {
-        acc[node.id] = node;
-        return acc;
-    }, {});
-
     // Sort by weekly downloads and get top 50 nodes
     const topNodes = response.catalogue
         .sort((a, b) => b.downloads.week - a.downloads.week)
         .slice(0, 50); // Limit to top 50 downloaded nodes
 
-    // Create a map of top nodes by ID for quick lookup
     const topNodesMap = topNodes.reduce((acc, node) => {
         acc[node._id] = node;
         return acc;
     }, {});
 
-    // Merge: ensure all certified nodes are included
-    // Add any certified nodes that aren't in the top 50
-    const certifiedNodeIds = Object.keys(ffNodesMap);
-    certifiedNodeIds.forEach(certifiedId => {
-        if (!topNodesMap[certifiedId]) {
-            // Find the certified node in the full catalogue
-            const certifiedNode = response.catalogue.find(n => n._id === certifiedId);
-            if (certifiedNode) {
-                topNodes.push(certifiedNode);
-            }
+    // Ensure all certified nodes are included even if outside the top 50.
+    // The ff-integrations API already marks them with ffCertified: true.
+    response.catalogue.forEach(node => {
+        if (node.ffCertified && !topNodesMap[node._id]) {
+            topNodes.push(node);
         }
     });
 
     const data = Promise.all(
         topNodes.map(async (node) => {
-            // Mark FlowFuse certified nodes
-            if (ffNodesMap[node._id]) {
-                node.ffCertified = true;
-            }
-
             // Ensure categories exist
             if (!node.categories) {
                 node.categories = [];
