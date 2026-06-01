@@ -110,29 +110,7 @@ You can import the required comment node by importing the following JSON:
 
 ### Platform
 
-To add a Blueprint to FlowFuse Cloud, submit a Change Request following the [Change Control process](/handbook/operations/change/#flowfuse-cloud-change-control). A blueprint change request looks like:
-
-Example Change Request: Change: Add OEE Dashboard Blueprint to production
-```
-### Environment
-
-- [ ] Staging
-- [x] Production
-
-### Due Date
-
-_No response_
-
-### Change Description
-
-This PR (<PR_LINK>) adds a new blueprint flow, along with documentation on how to use it with both real-world and simulated data sources.
-
-### Validation Steps
-
-- [ ] Is the Blueprint PR approved?  
-- [ ] Is the blueprint added to the specified environment?  
-- [ ] Is the Blueprint PR documentation updated with the blueprint ID and merged?
-```
+To add a Blueprint to FlowFuse Cloud, submit a Change Request following the [Change Control process](/handbook/operations/change/#flowfuse-cloud-change-control), using the change request template in the CloudProject repository.
 
 The issue should include a link to the relevant Pull Request in the Blueprint Library repository where your Blueprint has been published.
 
