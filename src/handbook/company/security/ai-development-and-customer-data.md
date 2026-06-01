@@ -40,6 +40,7 @@ When using AI internally:
 2. Use internal, synthetic, or publicly available data for experimentation whenever possible.
 3. Review AI-generated output before relying on it or including it in the product.
 4. Do not use AI tools to bypass security controls, access restrictions, or approval processes.
+5. FlowFuse Cloud Personal Access Tokens for users with Admin access should **never** be given to AI agents.
 
 Apply the same data protection, security, and review standards to internal AI usage as to AI functionality shipped within the product.
 
