@@ -76,4 +76,4 @@ What separates them is the plumbing.
 
 Build it on something that understands where you are starting from.
 
-*If you are running Node-RED in production today, or trying to, FlowFuse is the operational layer that makes it scale. Device management, snapshot deployments, DevOps pipelines, ONNX-based AI inference, and the FlowFuse Expert to build faster, all built specifically for industrial environments. [Start a 14-day free trial today]({% include "sign-up-url.njk" %}). No abstractions. No greenfield assumptions. Just the infrastructure your plant actually needs.*
+*If you are running Node-RED in production today, or trying to, FlowFuse is the operational layer that makes it scale. Device management, snapshot deployments, DevOps pipelines, ONNX-based AI inference, and the FlowFuse Expert to build faster, all built specifically for industrial environments. [Start a 30-day free trial today]({% include "sign-up-url.njk" %}). No abstractions. No greenfield assumptions. Just the infrastructure your plant actually needs.*
