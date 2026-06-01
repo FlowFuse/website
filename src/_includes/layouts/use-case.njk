@@ -3,11 +3,29 @@ layout: layouts/base.njk
 sitemapPriority: 0.7
 ---
 {# ============================================================
-   USE CASE LAYOUT (skeleton, generic workflow pattern)
-   Per-page front-matter: problem, gap[], workflow[], outcomes[].
-   Sections 3 and 5 are fixed generic platform positioning.
-   No customer names, no quotes, no real numbers.
+   USE CASE LAYOUT (content-driven, pain-led narrative)
+
+   Per-page front-matter (rich, preferred):
+     problem        hero sub-headline (the pain in one line)
+     customerPain   { heading, intro[], cards[ {icon,title,detail} ] }
+     outcomeFirst   { heading, intro, dimensions[ {label,title,detail} ] }
+     whyItMatters   { heading, intro, points[ {title,detail} ] }
+     competition    { heading, intro, traps[ {label,title,detail} ] }
+     comparison     { without[ {title,detail} ], with[ {title,detail} ] }
+
+   Legacy fall-back front-matter (simple skeleton, still supported):
+     gap[], workflow[], outcomes[]
+
+   No customer names and no attributed quotes on the public page.
    ============================================================ #}
+
+{# --- build the sticky section nav from the blocks that exist --- #}
+{% set nav = [] %}
+{% if customerPain %}{% set nav = nav.concat([{ id: "customer-pain", label: "Customer Pain" }]) %}{% endif %}
+{% if outcomeFirst %}{% set nav = nav.concat([{ id: "outcome-first", label: "Outcome First" }]) %}{% endif %}
+{% if whyItMatters %}{% set nav = nav.concat([{ id: "why-it-matters", label: "Why It Matters" }]) %}{% endif %}
+{% if competition %}{% set nav = nav.concat([{ id: "competition", label: "Why Off-the-Shelf Fails" }]) %}{% endif %}
+{% if comparison %}{% set nav = nav.concat([{ id: "with-without", label: "With / Without FlowFuse" }]) %}{% endif %}
 
 <div class="w-full">
 
@@ -25,141 +43,234 @@ sitemapPriority: 0.7
         </div>
     </div>
 
+    {% if nav.length %}
     <!-- ============================================================
-         1. THE OPERATIONAL GAP
+         STICKY SECTION NAV
     ============================================================ -->
-    <div class="w-full py-16 sm:py-24 px-6 bg-white">
-        <div class="max-w-screen-lg mx-auto">
-            <h2 class="max-md:text-center"><span class="text-red-600">The operational</span> gap</h2>
-            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
-                {% for paragraph in gap %}
-                <p class="text-gray-600 m-0">{{ paragraph }}</p>
-                {% endfor %}
-            </div>
-            <p class="mt-8 text-sm text-gray-400 italic">Placeholder copy. Generic operational framing for this workflow pattern.</p>
-        </div>
-    </div>
-
-    <!-- ============================================================
-         2. WHY EXISTING SYSTEMS DID NOT SOLVE IT (fixed, generic)
-    ============================================================ -->
-    <div class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100">
-        <div class="max-w-screen-lg mx-auto">
-            <h2 class="text-center">Why existing systems did not solve it</h2>
-            {% set reasons = [
-                {title: "MES is too rigid", detail: "Fixed workflows are slow and costly to change as operations evolve."},
-                {title: "Dashboards do not act", detail: "Visibility alone does not trigger or coordinate a response."},
-                {title: "Historians store but do not orchestrate", detail: "Data is captured for later, not turned into action in the moment."},
-                {title: "ERP does not execute", detail: "Business systems plan work but do not run the operational workflow."},
-                {title: "AI builds but does not operationalize", detail: "Generated logic still needs governance, deployment and scale."},
-                {title: "Scripts do not scale", detail: "One-off scripts are hard to manage, repeat and roll out across sites."}
-            ] %}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                {% for reason in reasons %}
-                <div class="rounded-xl bg-white border border-gray-200 p-6 flex flex-col gap-2">
-                    <div class="w-8 h-8 text-red-400">{% include "components/icons/x-circle.svg" %}</div>
-                    <h4 class="m-0 text-gray-800">{{ reason.title }}</h4>
-                    <p class="m-0 text-gray-600 text-sm">{{ reason.detail }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-         3. THE OPERATIONAL WORKFLOW (Event, Decision, Action)
-    ============================================================ -->
-    <div class="w-full bg-[radial-gradient(ellipse_120%_120%_at_50%_120%,theme(colors.indigo.600)_0%,theme(colors.indigo.900)_100%)] py-16 sm:py-24 px-6">
-        <div class="max-w-screen-lg mx-auto">
-            <h2 class="text-white text-center">The operational workflow</h2>
-            <p class="text-indigo-200 text-center max-w-2xl mx-auto mt-4">A pattern that turns industrial events into action.</p>
-            {% set steps = [
-                {label: "Event", icon: "components/icons/bolt.svg", detail: "An industrial event triggers the workflow from a machine, sensor, broker or system signal."},
-                {label: "Decision", icon: "components/icons/arrows-right-left.svg", detail: "Event-driven orchestration applies logic, context and rules to decide what should happen."},
-                {label: "Action", icon: "components/icons/cursor-arrow-rays.svg", detail: "Guided operator actions and automated steps carry out the response where work happens."}
-            ] %}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                {% for step in steps %}
-                <div class="rounded-xl border border-indigo-400/40 bg-indigo-950/30 p-6 flex flex-col gap-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
-                            <span class="w-5 h-5">{% include step.icon %}</span>
-                        </div>
-                        <span class="text-indigo-300 text-sm font-semibold uppercase tracking-widest">{{ loop.index }}</span>
-                    </div>
-                    <h4 class="text-white m-0">{{ step.label }}</h4>
-                    <p class="text-indigo-100 font-light m-0">{{ step.detail }}</p>
-                </div>
-                {% endfor %}
-            </div>
-            {% if workflow %}
-            <ul class="mt-10 max-w-3xl mx-auto flex flex-col gap-3 list-none p-0">
-                {% for item in workflow %}
-                <li class="flex items-start gap-3 text-indigo-100">
-                    <span class="flex-shrink-0 w-6 h-6 text-indigo-300 mt-0.5">{% include "components/icons/check.svg" %}</span>
-                    <span>{{ item }}</span>
+    <nav class="sticky top-0 z-30 w-full bg-white/90 backdrop-blur border-y border-gray-100">
+        <div class="max-w-screen-lg mx-auto px-6">
+            <ul class="flex gap-1 sm:gap-2 overflow-x-auto list-none m-0 p-0 py-2 text-sm">
+                {% for item in nav %}
+                <li class="flex-shrink-0">
+                    <a href="#{{ item.id }}" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 transition-colors">
+                        <span class="font-semibold text-indigo-400">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                        <span class="whitespace-nowrap">{{ item.label }}</span>
+                    </a>
                 </li>
                 {% endfor %}
             </ul>
-            {% endif %}
+        </div>
+    </nav>
+    {% endif %}
+
+    {% if customerPain %}
+    <!-- ============================================================
+         01. CUSTOMER PAIN
+    ============================================================ -->
+    <div id="customer-pain" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase tracking-widest text-xs font-semibold text-indigo-400 mb-2">01 · Customer pain</p>
+            <h2 class="max-md:text-center"><span class="text-red-600">{{ customerPain.heading }}</span></h2>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+                {% for paragraph in customerPain.intro %}
+                <p class="text-gray-600 m-0">{{ paragraph }}</p>
+                {% endfor %}
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
+                {% for card in customerPain.cards %}
+                <div class="rounded-xl bg-gray-50 border border-gray-200 p-6 flex flex-col gap-3">
+                    <div class="w-9 h-9 bg-white rounded-lg border border-gray-200 flex items-center justify-center text-red-500">
+                        <span class="w-5 h-5">{% include "components/icons/" + card.icon + ".svg" %}</span>
+                    </div>
+                    <h4 class="m-0 text-gray-800">{{ card.title }}</h4>
+                    <p class="m-0 text-gray-600 text-sm">{{ card.detail }}</p>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
+    {% endif %}
 
+    {% if outcomeFirst %}
     <!-- ============================================================
-         4. HOW IT IS OPERATIONALIZED WITH FLOWFUSE (generic, no customer)
+         02. OUTCOME FIRST
     ============================================================ -->
-    <div class="w-full py-16 sm:py-24 px-6 bg-white">
+    <div id="outcome-first" class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100 scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <h2 class="max-md:text-center">How it is operationalized with FlowFuse</h2>
-            <p class="text-gray-500 mt-2">Generic platform capabilities. No named customer or attributed quotes.</p>
-            {% set ops = [
-                {title: "Deployment", detail: "Ship the workflow to cloud, on-premise or edge from one platform."},
-                {title: "Governance", detail: "Keep humans in control with approvals and audit trails."},
-                {title: "Role-based access", detail: "Scope who can view, edit and deploy across teams."},
-                {title: "Version control", detail: "Track changes and roll back safely."},
-                {title: "CI/CD pipelines", detail: "Promote from development to test to production."},
-                {title: "Multi-site rollout", detail: "Roll the same workflow out to every site in a controlled way."},
-                {title: "Reuse", detail: "Package the pattern as a reusable building block."}
-            ] %}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 mt-8">
-                {% for op in ops %}
-                <div class="flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
-                        <span class="w-4 h-4">{% include "components/icons/check.svg" %}</span>
-                    </span>
+            <p class="uppercase tracking-widest text-xs font-semibold text-indigo-400 mb-2">02 · Outcome first</p>
+            <h2 class="max-md:text-center">{{ outcomeFirst.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-gray-600">{{ outcomeFirst.intro }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                {% for dim in outcomeFirst.dimensions %}
+                <div class="rounded-xl bg-white border border-gray-200 p-6 flex flex-col gap-2">
+                    <span class="text-indigo-500 text-xs font-semibold uppercase tracking-widest">{{ dim.label }}</span>
+                    <h4 class="m-0 text-gray-800">{{ dim.title }}</h4>
+                    <p class="m-0 text-gray-600 text-sm">{{ dim.detail }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if whyItMatters %}
+    <!-- ============================================================
+         03. WHY IT MATTERS
+    ============================================================ -->
+    <div id="why-it-matters" class="w-full bg-[radial-gradient(ellipse_120%_120%_at_50%_120%,theme(colors.indigo.600)_0%,theme(colors.indigo.900)_100%)] py-16 sm:py-24 px-6 scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase tracking-widest text-xs font-semibold text-indigo-300 mb-2">03 · Why this is important</p>
+            <h2 class="text-white max-md:text-center">{{ whyItMatters.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-indigo-100 font-light">{{ whyItMatters.intro }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                {% for point in whyItMatters.points %}
+                <div class="rounded-xl border border-indigo-400/40 bg-indigo-950/30 p-6 flex gap-4">
+                    <span class="text-indigo-300 text-2xl font-semibold leading-none">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
                     <div>
-                        <h5 class="m-0 text-gray-800">{{ op.title }}</h5>
-                        <p class="m-0 text-gray-600 text-sm">{{ op.detail }}</p>
+                        <h4 class="text-white m-0">{{ point.title }}</h4>
+                        <p class="text-indigo-100 font-light m-0 mt-1 text-sm">{{ point.detail }}</p>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
+    {% endif %}
 
+    {% if competition %}
     <!-- ============================================================
-         5. OUTCOMES (generic placeholder bullets, no client, no numbers)
+         04. WHY OFF-THE-SHELF / COMPETITION FAILS
     ============================================================ -->
-    <div class="w-full py-16 sm:py-24 px-6 comparison-section-bg">
+    <div id="competition" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <h2 class="text-indigo-600 max-md:text-center">Outcomes</h2>
-            <div class="mt-8 flex flex-col gap-4 max-w-3xl">
-                {% for outcome in outcomes %}
-                <div class="bg-white border border-indigo-100 rounded-lg p-5 flex items-center gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 text-indigo-500">{% include "components/icons/arrow-trending-up.svg" %}</span>
-                    <p class="m-0 text-lg font-light text-gray-700">{{ outcome }}</p>
+            <p class="uppercase tracking-widest text-xs font-semibold text-indigo-400 mb-2">04 · Why off-the-shelf doesn't work</p>
+            <h2 class="max-md:text-center">{{ competition.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-gray-600">{{ competition.intro }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                {% for trap in competition.traps %}
+                <div class="rounded-xl bg-gray-50 border border-gray-200 p-6 flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-6 h-6 text-red-400">{% include "components/icons/x-circle.svg" %}</span>
+                        <span class="text-red-500 text-xs font-semibold uppercase tracking-widest">{{ trap.label }}</span>
+                    </div>
+                    <h4 class="m-0 text-gray-800">{{ trap.title }}</h4>
+                    <p class="m-0 text-gray-600 text-sm">{{ trap.detail }}</p>
                 </div>
                 {% endfor %}
             </div>
-            <p class="mt-6 text-xs text-gray-400 italic">Placeholder outcomes. No customer names or real figures.</p>
         </div>
     </div>
+    {% endif %}
+
+    {% if comparison %}
+    <!-- ============================================================
+         05. WITH / WITHOUT FLOWFUSE
+    ============================================================ -->
+    <div id="with-without" class="w-full py-16 sm:py-24 px-6 comparison-section-bg scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase tracking-widest text-xs font-semibold text-indigo-400 mb-2">05 · With / without FlowFuse</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
+                <div>
+                    <h3 class="text-gray-500 m-0">Without FlowFuse</h3>
+                    <div class="mt-6 flex flex-col gap-4">
+                        {% for row in comparison.without %}
+                        <div class="bg-white border border-gray-200 rounded-lg p-5 flex items-start gap-4">
+                            <span class="flex-shrink-0 w-6 h-6 text-red-400 mt-0.5">{% include "components/icons/x-mark.svg" %}</span>
+                            <div>
+                                <h5 class="m-0 text-gray-800">{{ row.title }}</h5>
+                                <p class="m-0 mt-1 text-gray-600 text-sm">{{ row.detail }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-indigo-600 m-0">With FlowFuse</h3>
+                    <div class="mt-6 flex flex-col gap-4">
+                        {% for row in comparison.with %}
+                        <div class="bg-white border border-indigo-100 rounded-lg p-5 flex items-start gap-4">
+                            <span class="flex-shrink-0 w-6 h-6 text-indigo-500 mt-0.5">{% include "components/icons/check-circle.svg" %}</span>
+                            <div>
+                                <h5 class="m-0 text-gray-800">{{ row.title }}</h5>
+                                <p class="m-0 mt-1 text-gray-600 text-sm">{{ row.detail }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {# ============================================================
+       LEGACY SKELETON FALL-BACK (only when no rich blocks defined)
+    ============================================================ #}
+    {% if not nav.length %}
+        {% if gap %}
+        <div class="w-full py-16 sm:py-24 px-6 bg-white">
+            <div class="max-w-screen-lg mx-auto">
+                <h2 class="max-md:text-center"><span class="text-red-600">The operational</span> gap</h2>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+                    {% for paragraph in gap %}
+                    <p class="text-gray-600 m-0">{{ paragraph }}</p>
+                    {% endfor %}
+                </div>
+                <p class="mt-8 text-sm text-gray-400 italic">Placeholder copy. Generic operational framing for this workflow pattern.</p>
+            </div>
+        </div>
+        {% endif %}
+        {% if workflow %}
+        <div class="w-full bg-indigo-900 py-16 sm:py-24 px-6">
+            <div class="max-w-screen-lg mx-auto">
+                <h2 class="text-white text-center">The operational workflow</h2>
+                <ul class="mt-10 max-w-3xl mx-auto flex flex-col gap-3 list-none p-0">
+                    {% for item in workflow %}
+                    <li class="flex items-start gap-3 text-indigo-100">
+                        <span class="flex-shrink-0 w-6 h-6 text-indigo-300 mt-0.5">{% include "components/icons/check.svg" %}</span>
+                        <span>{{ item }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        {% if outcomes %}
+        <div class="w-full py-16 sm:py-24 px-6 comparison-section-bg">
+            <div class="max-w-screen-lg mx-auto">
+                <h2 class="text-indigo-600 max-md:text-center">Outcomes</h2>
+                <div class="mt-8 flex flex-col gap-4 max-w-3xl">
+                    {% for outcome in outcomes %}
+                    <div class="bg-white border border-indigo-100 rounded-lg p-5 flex items-center gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 text-indigo-500">{% include "components/icons/arrow-trending-up.svg" %}</span>
+                        <p class="m-0 text-lg font-light text-gray-700">{{ outcome }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <p class="mt-6 text-xs text-gray-400 italic">Placeholder outcomes. No customer names or real figures.</p>
+            </div>
+        </div>
+        {% endif %}
+    {% endif %}
 
     <!-- ============================================================
-         6. RELATED RESOURCES (empty "More coming soon" state)
+         RELATED RESOURCES (empty "More coming soon" state)
     ============================================================ -->
     {% set relatedTag = "usecase:" + page.fileSlug %}
     {% include "components/related-resources.njk" %}
 
-    <!-- spacer so sticky dock never overlaps the final content -->
+    <!-- ============================================================
+         CLOSING CTA
+    ============================================================ -->
+    <div class="w-full px-6 py-20">
+        <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10 text-center">
+            <h3 class="mb-4 w-full text-center">See it on your operation</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Talk to an expert, or get started with FlowFuse today.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'usecase': '{{ page.fileSlug }}'})">Talk to an expert</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'footer', 'usecase': '{{ page.fileSlug }}'})">Get started</a>
+            </div>
+        </div>
+    </div>
+
 </div>
