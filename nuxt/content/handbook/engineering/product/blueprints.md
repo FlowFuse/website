@@ -27,7 +27,7 @@ We encourage Blueprint submissions from our customers, partners, and the wider c
 
 ### Internal Development
 
-If a Blueprint is being developed internally, it should be added to the `blueprint-library` repository via a Pull Request. First, create an issue in the same repository to track its progress and ensure alignment with product and company strategy. The Pull Request must be reviewed and tested by another team member. Once approved, [submit a Change Request](#submitting-a-change-request). When the responsible admin adds the Blueprint to the platform, they will share the Blueprint ID with the author, who should then include it in the Blueprint's README file:
+If a Blueprint is being developed internally, it should be added to the `blueprint-library` repository via a Pull Request. First, create an issue in the same repository to track its progress and ensure alignment with product and company strategy. The Pull Request must be reviewed and tested by another team member. Once approved, [submit a Change Request](/handbook/operations/change/#flowfuse-cloud-change-control). When the responsible admin adds the Blueprint to the platform, they will share the Blueprint ID with the author, who should then include it in the Blueprint's README file:
 
 ```markdown
 ---
@@ -110,9 +110,7 @@ You can import the required comment node by importing the following JSON:
 
 ### Platform
 
-#### Submitting a Change Request
-
-To add a Blueprint to FlowFuse Cloud, submit a Change Request following the [Change Control process](/handbook/operations/change/#flowfuse-cloud-change-control).
+To add a Blueprint to FlowFuse Cloud, submit a Change Request following the [Change Control process](/handbook/operations/change/#flowfuse-cloud-change-control). A blueprint change request looks like:
 
 Example Change Request: Change: Add OEE Dashboard Blueprint to production
 ```
