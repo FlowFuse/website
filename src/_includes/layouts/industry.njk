@@ -1,62 +1,6 @@
 ---
 layout: default
-meta:
-  title: "Renewable Energy Operations Platform | FlowFuse"
-  description: "Connect solar, wind, and storage assets in one place. FlowFuse helps your team monitor, automate, and optimize every site in real time, without rewriting your entire stack."
-hero:
-  description: "Connect solar, wind, and storage assets in one place. FlowFuse helps your team monitor, automate, and optimize every site in real time, without rewriting your entire stack."
-  primaryCta: "BOOK A 30-MINUTE DEMO"
-  primaryCtaLink: "/book-demo/"
-  secondaryCta: "CONTACT US"
-  secondaryCtaLink: "/contact-us/"
-  image: "/images/industries/renewable-energies.png"
-  imageAlt: "Aerial view of a wind and solar farm with data overlay showing real-time monitoring metrics."
-  subCta: "See a sample renewable dashboard"
-problems:
-    - "Fragmented assets and legacy systems make it hard to see what is happening across all your sites."
-    - "Compliance reporting and grid constraints add complexity and manual work to already stretched teams."
-    - "Every new turbine, inverter, or battery vendor brings yet another integration problem."
-solution:
-  title: "What You Get with FlowFuse"
-  benefits:
-    - svgPath: "components/icons/link.svg"
-      text: "One platform to <strong>connect OT data</strong> (SCADA, PLCs, sensors) with IT systems (cloud, analytics, reporting)."
-    - svgPath: "components/icons/bolt.svg"
-      text: "Low-code automation built on Node-RED so your engineers can <strong>ship flows in hours, not weeks</strong>."
-    - svgPath: "components/icons/rectangle-stack.svg"
-      text: "Environments for development, testing, and production to <strong>safely roll out changes across all assets</strong>."
-outcomes:
-  title: "Key Outcomes"
-  subtitle: "for Renewable Operators"
-  items:
-    - svgPath: "components/icons/bolt.svg"
-      title: "Cut manual reporting effort"
-      description: "and speed up regulatory/compliance reporting cycles."
-    - svgPath: "components/icons/bell-alert.svg"
-      title: "Improve uptime"
-      description: "with alerting and predictive maintenance workflows."
-    - svgPath: "components/icons/arrows-pointing-out.svg"
-      title: "Roll out new monitoring logic to every site"
-      description: "with one controlled deployment, instead of one-by-one changes."
-useCases:
-  title: "Use Cases"
-  items:
-    - image: "/images/industries/renewable-turbine.png"
-      imageAlt: "Wind turbines in an open field at sunset."
-      description: "<strong>Fleet-wide turbine performance monitoring</strong> with anomaly detection on vibration/temperature."
-    - image: "/images/industries/renewable-solar.png"
-      imageAlt: "Large solar farm with rows of panels stretching across the landscape."
-      description: "<strong>Solar farm production vs forecast dashboards</strong> for trading and grid teams."
-    - image: "src/images/industries/renewable-incident-workflow.png"
-      imageAlt: "Dashboard interface showing automated incident tracking and maintenance ticketing."
-      description: "<strong>Automated incident workflows:</strong> alarms send context-rich tickets to maintenance tools."
-cta:
-  title: "Ready to see your assets in one view?"
-  description: "Share a sample of your renewable assets and the team will show how FlowFuse would monitor them in real time."
-  buttonText: "BOOK YOUR DEMO"
-  buttonLink: "/book-demo/"
 ---
-
 <div class="w-full">
 
     <!-- ============================================================
@@ -67,21 +11,21 @@ cta:
             <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
                 <div class="m-auto md:w-1/2">
                     <h1 class="w-full mt-0 m-auto font-medium sm:text-5xl">
-                        <span class="text-red-600">Scale renewable operations</span> without vendor lock-in
+                        {{ hero.heading | safe }}
                     </h1>
                     <p class="mb-10 text-gray-600">{{ hero.description }}</p>
                     <div class="md:mt-3 gap-2 hidden md:flex md:flex-col md:items-start md:justify-start">
                         <div class="flex gap-4 items-center flex-row">
                             <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
                                 href="{{ hero.primaryCtaLink }}"
-                                onclick="capture('cta-book-demo', {'position': 'hero', 'page': 'renewables'})">
+                                onclick="capture('cta-book-demo', {'position': 'hero', 'page': '{{ slug }}'})">
                                 <span class="text-base uppercase items-center">
                                     {{ hero.primaryCta }}
                                 </span>
                             </a>
                             <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
                                 href="{{ hero.secondaryCtaLink }}"
-                                onclick="capture('cta-contact', {'position': 'hero', 'page': 'renewables'})">
+                                onclick="capture('cta-contact', {'position': 'hero', 'page': '{{ slug }}'})">
                                 <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
                                 {{ hero.secondaryCta }}
                                 {% include "components/icons/arrow-right.svg" %}
@@ -100,14 +44,14 @@ cta:
                     <div class="flex flex-row gap-4 items-center justify-center flex-wrap">
                         <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
                             href="{{ hero.primaryCtaLink }}"
-                            onclick="capture('cta-book-demo', {'position': 'hero-mobile', 'page': 'renewables'})">
+                            onclick="capture('cta-book-demo', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
                             <span class="text-base uppercase items-center">
                                 {{ hero.primaryCta }}
                             </span>
                         </a>
                         <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
                             href="{{ hero.secondaryCtaLink }}"
-                            onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': 'renewables'})">
+                            onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
                             <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
                                 {{ hero.secondaryCta }}
                                 {% include "components/icons/arrow-right.svg" %}
@@ -140,7 +84,7 @@ cta:
                     </ul>
                 </div>
                 <div class="md:w-1/2 flex justify-center md:order-first [&>svg]:max-w-full [&>svg]:h-auto">
-                    {% include "images/industries/renewable-problem.svg" %}
+                    {% include problemImage %}
                 </div>
             </div>
         </div>
@@ -166,7 +110,7 @@ cta:
                     </ul>
                 </div>
                 <div class="md:w-1/2 flex justify-center [&>svg]:max-w-full [&>svg]:h-auto">
-                    {% include "images/industries/renewable-solution.svg" %}
+                    {% include solutionImage %}
                 </div>
             </div>
         </div>
@@ -219,7 +163,7 @@ cta:
     ============================================================ -->
     <div class="w-full py-12 px-6">
         <div class="max-w-screen-lg mx-auto">
-            <p class="text-center text-indigo-800 font-semibold mb-6">Used by industrial teams to run 24/7 operations on top of Node-RED.</p>
+            <p class="text-center text-indigo-800 font-semibold mb-6">{{ socialProofText }}</p>
             <div class="max-md:max-w-xl max-md:mx-auto">
                 {% include "social-proof.njk" %}
             </div>
@@ -236,7 +180,7 @@ cta:
             <div class="flex justify-center">
                 <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
                     href="{{ cta.buttonLink }}"
-                    onclick="capture('cta-book-demo', {'position': 'cta', 'page': 'renewables'})">
+                    onclick="capture('cta-book-demo', {'position': 'cta', 'page': '{{ slug }}'})">
                     {{ cta.buttonText }}
                 </a>
             </div>
