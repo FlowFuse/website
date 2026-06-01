@@ -10,6 +10,7 @@ keywords: node-red variables, node-red global variable, node-red context variabl
 tags:
    - posts
    - node-red
+   - how-to
 cta:
   type: signup
   title: "Take Your Node-RED Flows to Production with FlowFuse"
