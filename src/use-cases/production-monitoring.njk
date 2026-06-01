@@ -1,0 +1,125 @@
+---
+layout: use-case
+tags:
+  - use-case
+title: "Production Monitoring"
+meta:
+  title: "Production Monitoring | Use Cases | FlowFuse"
+  description: "Real-time visibility into what your production lines are actually doing. Build the monitoring app your operation needs with FlowFuse and Node-RED: connect any protocol, deploy at the edge or in the cloud, and roll out across sites."
+problem: "Your operation is running. You just can't see it clearly enough, until something breaks."
+
+customerPain:
+  heading: "Visibility gaps are expensive."
+  intro:
+    - "Production teams know their lines are running. What they don't always know is how well, until a supervisor walks the floor, a shift report lands, or a machine stops."
+    - "By then, the window to intervene is gone. Decisions get made on lag, instinct, and tribal knowledge instead of data."
+    - "The pain isn't unique to any one industry. It surfaces wherever machines produce output and humans are responsible for the result."
+  cards:
+    - icon: "clock"
+      title: "Reactive firefighting"
+      detail: "Problems are discovered after the fact, via alarms, operator reports, or finished-goods inspection. The response is always late."
+    - icon: "clip-list"
+      title: "Manual data collection"
+      detail: "Operators log counts, cycle times, and downtime events by hand. Numbers are inconsistent, delayed, and disconnected from the actual machine record."
+    - icon: "link-slash"
+      title: "Data that doesn't talk"
+      detail: "PLCs, SCADA, MES, and ERP each hold a piece of the picture. Nobody has connected them. Each system speaks a different protocol."
+    - icon: "chart"
+      title: "Reporting built on stale data"
+      detail: "Shift summaries and OEE reports tell you what happened yesterday. Nobody is watching what is happening now."
+
+outcomeFirst:
+  heading: "Define what \"monitored\" means for your operation."
+  intro: "There is no universal production monitoring app, because every operation measures success differently. The value FlowFuse delivers isn't a fixed dashboard. It is the ability to build exactly the one your operation needs."
+  dimensions:
+    - label: "Operational"
+      title: "Know what every line is producing, right now"
+      detail: "Live counts, cycle times, and throughput visible to anyone who needs them, from the floor to the control room."
+    - label: "Financial"
+      title: "Turn downtime from a cost center into a managed metric"
+      detail: "When you can see and categorize downtime events as they happen, you can act on them, and start reducing them systematically."
+    - label: "Organizational"
+      title: "Replace floor walks with live visibility"
+      detail: "Supervisors and engineers spend less time gathering data and more time acting on it. The floor reports to them, not the other way around."
+    - label: "Quality"
+      title: "Catch deviations before they become defects"
+      detail: "Monitoring process conditions in real time means anomalies surface early, before they have run through a full batch or shift."
+    - label: "Strategic"
+      title: "Build a data foundation you actually own"
+      detail: "Contextualized, historian-backed production data that feeds into MES, ERP, or AI tools, on your terms, not a vendor's."
+    - label: "Flexibility"
+      title: "Start where the pain is, scale from there"
+      detail: "One line, one shift, one KPI. Prove value fast, then expand. You are not locked into a one-size-fits-all deployment model."
+
+whyItMatters:
+  heading: "Blind production is a compounding liability."
+  intro: "Every hour a line runs without real-time visibility, the cost of the gap grows, not just in lost output, but in the decisions that never got made."
+  points:
+    - title: "Downtime is under-reported by design"
+      detail: "Manual logging creates pressure to minimize recorded stops. The real downtime picture is almost always worse than the data shows, which means improvement programs are built on a false baseline."
+    - title: "Reactive maintenance costs more than planned"
+      detail: "When you can't see a machine degrading, you can't schedule around it. You respond to failures instead of preventing them, and pay the premium every time."
+    - title: "OEE without live data is a lagging indicator"
+      detail: "A shift report tells you your OEE was 68%. Live monitoring tells you it dropped to 51% at 10:42 and you can still do something about it."
+    - title: "Digitization pressure isn't going away"
+      detail: "Customer requirements, ESG commitments, and internal efficiency mandates all require production data. The longer it takes to build the foundation, the further behind you fall."
+    - title: "The talent that knows your machines is leaving"
+      detail: "Experienced operators carry decades of institutional knowledge. Without a system to capture and surface what they know, that knowledge walks out the door at retirement."
+
+competition:
+  heading: "Your operation isn't a template."
+  intro: "Off-the-shelf monitoring platforms are built to fit the widest possible audience, which means they fit your specific operation poorly. You end up adapting your processes to the tool, not the other way around."
+  traps:
+    - label: "Trap 01"
+      title: "Rigid data models that don't match your machines"
+      detail: "Pre-built solutions assume standard signals, standard naming conventions, and standard equipment hierarchies. Your PLC speaks Siemens S7. Your historian uses a custom tag structure built in 2009. The integration becomes a months-long professional-services engagement, if it is even possible."
+    - label: "Trap 02"
+      title: "One dashboard for everyone means optimal for no one"
+      detail: "The shift supervisor needs a line overview. The maintenance engineer needs trend data on a specific axis. The plant manager needs a KPI roll-up. Off-the-shelf tools offer one fixed view, or an expensive configuration layer to build the others."
+    - label: "Trap 03"
+      title: "Time-to-value measured in quarters, not weeks"
+      detail: "Configuration, data mapping, and integration scoping turn into a professional-services engagement that drags on. The pilot budget runs out before anyone sees a working dashboard, and the project quietly stalls before it ever proves value."
+    - label: "Trap 04"
+      title: "Deployment models built for greenfield, not the shop floor"
+      detail: "Cloud-first SaaS tools were not designed for air-gapped networks, aging edge hardware, or mixed OT/IT environments where every change requires a change-management process. Getting them deployed takes longer than the pilot budget allows."
+
+comparison:
+  without:
+    - title: "Visibility on a delay"
+      detail: "Production status comes from shift reports, floor walks, and end-of-day summaries. By the time you know something went wrong, the shift is over."
+    - title: "Integrations that never close"
+      detail: "Every protocol difference, every legacy PLC, every proprietary historian adds months to a monitoring project. Most stall in pilot."
+    - title: "Apps built for someone else's operation"
+      detail: "The vendor's dashboard shows what they thought you would want to see. Your real KPIs live in a spreadsheet someone updates manually every morning."
+    - title: "IT projects that outpace OT readiness"
+      detail: "Cloud-native tools land in environments that were not built for them. Security reviews, network changes, and change management consume the timeline."
+    - title: "One site at a time, forever"
+      detail: "Even if a monitoring app works well in one facility, replicating it means rebuilding it. Nothing transfers. Every deployment is a new project."
+  with:
+    - title: "Live production data, where you need it"
+      detail: "Node-RED flows collect, contextualize, and surface machine data in real time, on the floor, in the control room, or wherever your team works."
+    - title: "Connect anything, regardless of protocol"
+      detail: "OPC-UA, Modbus, S7, MQTT, REST: Node-RED speaks them all. FlowFuse manages the infrastructure so your integrations stay running."
+    - title: "Build the app your operation actually needs"
+      detail: "FlowFuse Dashboard gives your team the tools to build purpose-fit interfaces, without a dedicated front-end developer or a six-figure SI engagement."
+    - title: "Runs at the edge, in the cloud, or both"
+      detail: "Deploy the Device Agent on existing edge hardware. Run instances in FlowFuse Cloud. Mix and match based on what your network allows."
+    - title: "Snapshot, replicate, and roll out at scale"
+      detail: "Once your monitoring app works on one line, FlowFuse lets you snapshot it and push it across every site, with environment-specific variables, centrally managed. Built on open Node-RED, the foundation stays yours."
+---
+{#
+  INTERNAL, NOT RENDERED. Marketing guidance for the next content pass.
+
+  Sections 6 to 10 still to be built:
+  - Lead with a crawl/walk/run framing: one line, one data source, one KPI,
+    building to multi-site. Avoid a big-bang deployment tone.
+  - Show how we do it: 2 to 3 reference flows from the Pulse flows JSON
+    (data collection, dashboard logic, alerting). Screenshots or embedded
+    flow diagrams work here.
+  - FlowFuse expert enablement: link certified nodes (OPC-UA, S7, MQTT),
+    Dashboard docs, and SE-led workshop content.
+  - Customer success / credibility: case study or sanitized reference
+    (e.g. "global automotive manufacturer") rather than a blank page.
+  - SEO aliasing: this same buyer pain also reads as "Machine Monitoring",
+    "Line Visibility", "OEE Tracking", "Real-Time Production Intelligence".
+#}
