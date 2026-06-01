@@ -53,6 +53,7 @@ useCases:
     - image: "src/images/industries/renewable-incident-workflow.png"
       imageAlt: "Dashboard interface showing automated incident tracking and maintenance ticketing."
       description: "<strong>Automated incident workflows:</strong> alarms send context-rich tickets to maintenance tools."
+socialProofText: "Used by industrial teams to run 24/7 operations on top of Node-RED"
 cta:
   title: "Ready to see your assets in one view?"
   description: "Share a sample of your renewable assets and the team will show how FlowFuse would monitor them in real time."
