@@ -9,6 +9,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/01/images/kepware-alternative.png
 tags:
   - flowfuse
+  - opcua
 cta:
   type: contact
   title: Evaluate Your Options Before New Ownership Does It For You

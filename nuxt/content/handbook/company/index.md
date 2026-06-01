@@ -40,6 +40,7 @@ San Francisco, California 94104-5401 US
 For larger customers with internal processes requiring our bank details, they can wire the money to the company's
 checking account. Wiring instructions to be shared by the rep are found in
 [our internal drive](https://drive.google.com/file/d/1B68cgaut2zdpEx6EfuBTJYMU36f8pYqH/view?usp=drive_link).
+- If a vendor is sending money back to our account in any other currency than USD, we should find the necessary currency information from this [link](https://www.svb.com/incoming-wire-payment/) and share it with them.
 
 ### Dun & Bradstreet
 

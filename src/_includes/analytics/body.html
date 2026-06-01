@@ -1,0 +1,143 @@
+<!-- Scroll depth + pageleave tracking.
+     These are local calculations only — no data leaves the browser.
+     capture() is a no-op when PostHog is not loaded (no analytics consent). -->
+<script>
+    const NO_SCROLL_HEIGHT = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+    var MAX_CONTENT_VIEWED = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+
+    addEventListener("scroll", (event) => {
+        const contentViewed = Math.min(1, (window.innerHeight + window.pageYOffset)/document.body.offsetHeight)
+        if (contentViewed > MAX_CONTENT_VIEWED) {
+            MAX_CONTENT_VIEWED = contentViewed
+        }
+    });
+
+    function emitPageLeave () {
+        var viewed
+        var scrolled
+        if (NO_SCROLL_HEIGHT === 1) {
+            viewed = 1
+            scrolled = 0
+        } else {
+            viewed = MAX_CONTENT_VIEWED
+            scrolled = (MAX_CONTENT_VIEWED - NO_SCROLL_HEIGHT) / (1 - NO_SCROLL_HEIGHT)
+        }
+
+        capture('$pageleave', {
+            content_scrolled: scrolled,
+            content_viewed: viewed
+        })
+    }
+
+    window.addEventListener &&
+            window.addEventListener('onpagehide' in self ? 'pagehide' : 'unload', emitPageLeave)
+
+    function capture (eventName, props) {
+        if (window.posthog) {
+            posthog.capture(eventName, props);
+        }
+    }
+</script>
+
+<!-- PostHog — only loads when the user accepts analytics cookies.
+     No stub, no network calls, no cookies before consent. -->
+<script type="text/plain" data-category="analytics">
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('{{ POSTHOG_APIKEY }}', {
+        api_host: 'https://eu.i.posthog.com',
+        person_profiles: 'always',
+        capture_pageleave: false,
+        disable_surveys: true
+    });
+    posthog.register({ user_agent_string: window.navigator.userAgent });
+</script>
+
+<!-- Revoke PostHog on rejection/withdrawal. -->
+<script type="text/plain" data-category="!analytics">
+    if (window.posthog) {
+        posthog.opt_out_capturing();
+        posthog.reset();
+        // Switch to memory mode to avoid any new persistence after withdrawal.
+        // Cookies are cleared by autoClear in cookieconsent-config.js.
+        posthog.set_config({ persistence: 'memory' });
+
+        var posthogStorageKeyPattern = /^(ph_[^\s]+_posthog|__ph_opt_in_out_[^\s]+)$/;
+        try {
+            for (var i = localStorage.length - 1; i >= 0; i--) {
+                var localKey = localStorage.key(i);
+                if (localKey && posthogStorageKeyPattern.test(localKey)) {
+                    localStorage.removeItem(localKey);
+                }
+            }
+            for (var j = sessionStorage.length - 1; j >= 0; j--) {
+                var sessionKey = sessionStorage.key(j);
+                if (sessionKey && posthogStorageKeyPattern.test(sessionKey)) {
+                    sessionStorage.removeItem(sessionKey);
+                }
+            }
+        } catch (e) {}
+    }
+</script>
+
+<!-- HubSpot Tracking -->
+<script>
+window._ffLoadChat = false
+
+if (
+    window.sessionStorage?.getItem("chatInProgress") === null &&
+    window.location.hash !== "#hs-chat-open"
+) {
+    window.hsConversationsSettings = {
+        loadImmediately: false,
+    }
+
+    window.addEventListener("load", (event) => {
+        let loaded = false
+        function loadHubSpotChat(event) {
+            if (loaded) return
+            loaded = true
+            window._ffLoadChat = true
+            setTimeout(() => {
+                window.HubSpotConversations?.widget?.load()
+            }, 1)
+        }
+
+        window.addEventListener("mousemove", loadHubSpotChat, { once: true })
+        window.addEventListener("scroll", loadHubSpotChat, { once: true })
+    })
+}
+
+window.hsConversationsOnReady = [
+    () => {
+        if (window._ffLoadChat) {
+            window.HubSpotConversations.widget.load()
+        }
+        window.HubSpotConversations.on("conversationStarted", () => {
+            window.sessionStorage?.setItem("chatInProgress", "true")
+        })
+    },
+]
+</script>
+
+<!-- Cookie banner (must load before any consent-gated scripts) -->
+<script defer type="text/javascript" src="/js/cc.min.js"></script>
+
+<!-- HS tracker - consent-gated (analytics: tracking + chat widget runtime) -->
+<script type="text/plain" data-category="analytics" async id="hs-script-loader" src="//js-eu1.hs-scripts.com/26586079.js"></script>
+
+<!-- HubSpot Consent Listener -->
+<script type="text/javascript">
+    function addHubSpotConsentListener() {
+        var _hsp = window._hsp = window._hsp || [];
+
+        _hsp.push(['addPrivacyConsentListener', function(consent) {
+            consent.categories.analytics = CookieConsent.acceptedCategory('analytics');
+            consent.categories.advertisement = CookieConsent.acceptedCategory('ads');
+            consent.categories.functionality = CookieConsent.acceptedCategory('functional');
+        }]);
+    }
+
+    window.addEventListener('load', (event) => {
+        addHubSpotConsentListener();
+    });
+</script>

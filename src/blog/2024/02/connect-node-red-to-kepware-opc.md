@@ -8,6 +8,7 @@ image: blog/2024/02/images/node-red-to-kepware.png
 tags:
     - posts
     - flowfuse
+    - opcua
 ---
 
 KepserverEX, often referred to as Kepware, is an OPC server that has been the important tool many manufacturing companies have used on their digital transformation journey.  It plays an important role for many to extract data from PLCs, Programmable Logic Controllers, without having to directly interact with them.

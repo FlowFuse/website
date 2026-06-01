@@ -11,6 +11,7 @@ tags:
     - node-red
     - how-to
     - securing node-red
+tldr: "This step-by-step guide covers the essential security measures for Node-RED deployments: adding username/password authentication via settings.js, restricting LAN access, enabling HTTPS with TLS certificates, and using FlowFuse Cloud as a managed alternative that handles these concerns automatically. Even hobby deployments benefit from these protections to prevent unauthorized access to the Node-RED editor."
 ---
 
 Node-RED is very easy to get up and running. Whether you run it locally, in Docker, on a Raspberry Pi, or on a service such as FlowFuse Cloud you can have a project up and running in minutes.

@@ -10,6 +10,7 @@ keywords: esp32 with node red, node red esp32, connect esp32 to node red, esp no
 tags:
  - node-red
  - how-to
+tldr: "This tutorial walks through connecting an ESP32 microcontroller to Node-RED over MQTT using the FlowFuse broker, then building a simple dashboard to remotely control the ESP32's LED. The ESP32 is programmed via the Arduino IDE to subscribe to an MQTT topic and act on incoming commands from Node-RED."
 ---
 
 The ESP32 is an affordable and powerful microchip that combines Wi-Fi and Bluetooth in one small package. It's commonly used in smart devices like home automation systems, wearables, and other IoT projects. Despite its low cost (around $6), it offers strong performance, and low power consumption, and is compatible with popular platforms like Arduino. Whether you're a hobbyist or a business, the ESP32 provides great value, making it easy to create wireless devices without a big investment. This tutorial demonstrates how to set up communication between the ESP32 and Node-RED using MQTT, along with an interactive dashboard via FlowFuse for a user-friendly interface. 
