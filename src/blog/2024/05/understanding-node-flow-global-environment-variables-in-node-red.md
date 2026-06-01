@@ -2,19 +2,18 @@
 title: "How to Use Variables in Node-RED: Flow, Global, Context & Environment (2026)"
 subtitle: A complete guide to setting, retrieving, and persisting Node-RED variables for efficient, production-ready flows.
 description: Learn how to use Node-RED global, flow, context, and environment variables in 2026. Step-by-step examples for setting, retrieving, and persisting state, plus best practices and an FAQ.
-lastUpdated: 2026-06-01
 date: 2024-05-06
+lastUpdated: 2025-12-09
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/understanding-node-red-variables.png
 keywords: node-red variables, node-red global variable, node-red context variable, node-red flow variable, node-red environment variables
 tags:
    - posts
    - node-red
-   - how-to
 cta:
   type: signup
   title: "Take Your Node-RED Flows to Production with FlowFuse"
-  description: "description: "Built by the team behind Node-RED, FlowFuse turns your flows into production-grade applications—with persistent state that survives restarts, centralized management of every instance, team collaboration with role-based access and SSO, DevOps pipelines, and built-in monitoring with crash alerts. Start your free trial today."
+  description: "Built by the team behind Node-RED, FlowFuse turns your flows into production-grade applications—with persistent state that survives restarts, centralized management of every instance, team collaboration with role-based access and SSO, DevOps pipelines, and built-in monitoring with crash alerts. Start your free trial today."
 meta:
 faq:
 - question: "What are the different types of variables in Node-RED?"
@@ -287,7 +286,7 @@ Here are some guidelines for effective variable usage in Node-RED:
 
 ## Conclusion
 
-Node-RED's four variable types give you a clear toolkit for managing data and state. Use node context for private, node-specific values, flow variables for data shared within a single tab, and global variables for anything multiple flows need to reach. Reach for environment variables when you're handling configuration and secrets that shouldn't be hardcoded. Matching the scope to the job keeps your flows organized, predictable, and easy for others to maintain.
+Node-RED's four variable types give you a clear toolkit for managing data and state. Use **node context** for private, node-specific values, **flow variables** for data shared within a single tab, and **global variables** for anything multiple flows need to reach. Reach for **environment variables** when you're handling configuration and secrets that shouldn't be hardcoded. Matching the scope to the job keeps your flows organized, predictable, and easy for others to maintain.
 
 The one thing to keep front of mind: context variables live in memory by default, so they reset on every restart or redeploy. For anything your application genuinely depends on—counters, cached configuration, dashboard history—plan for persistent storage from the start rather than discovering the gap in production.
 
