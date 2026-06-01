@@ -146,7 +146,7 @@ Follow these steps to run the script:
 
 Once everything has been published, the Release Manager should:
 
-1. Raise a "FlowFuse Cloud Change Requests" Issue in [CloudProject Project](https://github.com/FlowFuse/CloudProject/issues/new/choose) to request Production to be updated to the new version. Stack update procedure can be found [here](../ops/production-stack-update.md)
+1. Raise a [FlowFuse Cloud Change Request](/handbook/operations/change/#flowfuse-cloud-change-control) to request Production to be updated to the new version. Stack update procedure can be found [here](../ops/production-stack-update.md)
 2. Notify the CTO/Senior Engineer that the release is ready to publish to production.
 
 Once Production has been updated and verified, the Release Manager should announce

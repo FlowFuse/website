@@ -16,7 +16,7 @@ The FlowFuse Expert consists of two internal components that each need to be ena
 
 1. Customer emails `support@flowfuse.com`
 2. Support/Sales needs to verify that the customer has a current Enterprise License
-3. Once confirmed, they raise a [Production Change Request](https://github.com/FlowFuse/CloudProject/issues/new?assignees=&labels=change-request&projects=&template=change-request.yml&title=Change%3A+) providing details of the Customer and post a message to `#dept-engineering` with a link.
+3. Once confirmed, they raise a [Production Change Request](/handbook/operations/change/#flowfuse-cloud-change-control) providing details of the Customer and post a message to `#dept-engineering` with a link.
 4. Engineering needs to create **two** access tokens for the customer.
    1. **Assistant**: Open the Instance Settings for the `flow-gen` instance in the `Internal Tools` Application. Under the Security settings create a new HTTP Bearer Token using the customer name as the token name. The token will only be displayed once, so make a note of it - this is the **Assistant Token**.
    2. **Expert**: Open the Instance Settings for the `flowfuse-expert-api` instance in the `Internal Tools` Application. Under the Security settings create a new HTTP Bearer Token using the customer name as the token name. The token will only be displayed once, so make a note of it - this is the **Expert Token**.

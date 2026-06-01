@@ -10,7 +10,7 @@ If the prospect would like to trial FlowFuse Cloud, they are able to self-servic
 
 #### Extending a trial
 
-To extend the trial period, including if a trial has expired already, use the 'Extend Trial' button on the Team Settings page. This is only available to platform Administrators. If you do not have admin access, raise a [CloudProject change request](https://github.com/FlowFuse/CloudProject/issues/new?assignees=&labels=change-request&projects=&template=change-request.yml&title=Change%3A+) with details.
+To extend the trial period, including if a trial has expired already, use the 'Extend Trial' button on the Team Settings page. This is only available to platform Administrators. If you do not have admin access, raise a [CloudProject change request](/handbook/operations/change/#flowfuse-cloud-change-control) with details.
 
 ### Self-hosted trial
 

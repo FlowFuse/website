@@ -112,7 +112,7 @@ You can import the required comment node by importing the following JSON:
 
 #### Submitting a Change Request
 
-To add a Blueprint to FlowFuse Cloud, a [Change Request](https://github.com/FlowFuse/CloudProject/issues/new?assignees=&labels=change-request&projects=&template=change-request.yml&title=Change%3A+) must be submitted. 
+To add a Blueprint to FlowFuse Cloud, submit a Change Request following the [Change Control process](/handbook/operations/change/#flowfuse-cloud-change-control).
 
 Example Change Request: Change: Add OEE Dashboard Blueprint to production
 ```
