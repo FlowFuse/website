@@ -37,13 +37,13 @@ onMounted(() => {
 
 <template>
   <div v-if="toc.length" class="mb-6">
-    <h3 class="font-medium border-b pb-1 mb-3">On this page</h3>
+    <h3 class="mb-3">Table of Contents</h3>
     <div class="toc-wrapper text-sm">
-      <ul>
+      <ul class="list-none p-0 m-0">
         <li v-for="item in toc" :key="item.id"
-          :class="['my-1', item.level === 2 ? 'pl-0' : item.level === 3 ? 'pl-3' : 'pl-6']">
+          :class="['mb-4', item.level === 2 ? 'pl-0' : item.level === 3 ? 'pl-4' : 'pl-8']">
           <a :href="`#${item.id}`"
-            :class="['block py-0.5 hover:text-indigo-600 transition-colors', activeId === item.id ? 'text-indigo-600 font-medium' : 'text-gray-600']">
+            :class="['block py-[0.2rem] text-blue-600 no-underline transition-all duration-200 hover:pl-2 hover:underline', activeId === item.id ? 'font-medium' : '']">
             {{ item.text }}
           </a>
         </li>

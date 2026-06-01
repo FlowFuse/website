@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'handbook' })
+definePageMeta({ layout: 'default' })
 
 const route = useRoute()
 const slugParts = computed(() =>

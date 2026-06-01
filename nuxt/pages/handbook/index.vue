@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'handbook' })
+definePageMeta({ layout: 'default' })
 
 const { data: page } = await useAsyncData('handbook-root', () =>
     queryCollection('handbook').path('/handbook').first()

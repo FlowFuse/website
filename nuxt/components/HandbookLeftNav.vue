@@ -47,7 +47,7 @@ function ulStyle(node: NavNode) {
 </script>
 
 <template>
-  <div class="border-r lg:pt-2" data-handbook>
+  <div class="border-r lg:pt-2 text-sm" data-handbook>
     <ul class="handbook-nav" data-el="navigation">
       <li :class="{ active: isActive('/handbook') }">
         <NuxtLink href="/handbook">Handbook</NuxtLink>
