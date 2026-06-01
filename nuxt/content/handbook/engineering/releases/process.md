@@ -177,7 +177,7 @@ must be done manually.
    to update the version and `CHANGELOG.md` file with suitable details.
  - Create the GitHub release with the appropriate `vX.Y.Z` tag.
 
-Finally, create two [change requests](/handbook/operations/change/), one for
+Finally, create two [change requests](/handbook/operations/change/#flowfuse-cloud-change-control), one for
 staging and one for production to upgrade to the latest version.
 
 ### Unmanaged Releases
