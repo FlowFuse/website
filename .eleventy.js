@@ -532,6 +532,41 @@ module.exports = function(eleventyConfig) {
     })
 
 
+    eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
+        let parts = url.split("/").filter(e => e !== '');
+        if (parts[parts.length-1] === "index") {
+            parts.pop();
+        }
+
+        let path = "";
+        return "/"+parts.map(p => {
+            let url = `${path}/${p}`;
+            path = url;
+            return `<a class="mx-2" href="${url}/">${p}</a>`
+        }).join("/")
+    });
+
+    eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
+        const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
+
+        const matcher = /((href|src)="([^"]*))"/g
+        let match
+        while ((match = matcher.exec(str)) !== null) {
+            let url = match[3]
+            if (/^(http|#|mailto:)/.test(url)) {
+                continue
+            }
+            url = url.replace(/.md(#.*)?$/, '$1')
+            url = url.replace(/README(#.*)?$/, '$1')
+            if (url[0] !== '/' && !isIndexPage) {
+                url = '../'+url
+            }
+
+            str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[1].length)
+        }
+        return str;
+    })
+
     eleventyConfig.addFilter("handbookEditLink", (page) => {
         let baseUrl = 'https://github.com/FlowFuse/website/edit/main/'
         let filePath = page.inputPath
