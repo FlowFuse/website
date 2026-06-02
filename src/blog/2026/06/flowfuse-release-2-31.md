@@ -20,7 +20,7 @@ release: "2.31"
 #     heading: "Dark Mode"
 #   - id: realtime-platform-updates        (new entry)
 #     heading: "Real-Time Platform Updates"
-tldr: "FlowFuse 2.31 ends the soft launch of agentic development: FlowFuse Expert now builds applications on both Hosted and Remote Instances, and reaches FlowFuse Self-Hosted Enterprise through an MQTT bridge. Admins get per-team and per-instance control over AI, the editor gets a dark mode, and platform status now updates in real time over MQTT. This is a foundational release, with a lot of the work happening under the hood."
+tldr: "FlowFuse 2.31 ends the soft launch of agentic development: FlowFuse Expert now builds applications on both Hosted and Remote Instances, and reaches FlowFuse Self-Hosted Enterprise for the first time. Admins get per-team and per-instance control over AI, the editor gets a dark mode, and instance and team status update live without a refresh. This is a foundational release, with a lot of the work happening under the hood."
 ---
 
 FlowFuse 2.31 takes agentic development out of soft launch. FlowFuse Expert can now build your application directly on both Hosted and Remote Instances, and on FlowFuse Self-Hosted (Enterprise) for the first time, not just FlowFuse Cloud. Alongside that, you get granular control over where AI runs, a dark mode for the platform, and platform status that updates in real time.
@@ -60,13 +60,13 @@ The platform now has a dark mode. Easier on the eyes for long sessions in the ed
 
 ## Real-Time Platform Updates {#realtime-platform-updates}
 
-Instance and team status used to be fetched by polling the backend over HTTP on a timer. In 2.31 we moved that to MQTT over WebSockets, so status updates arrive in real time instead of on the next poll.
+Instance and team status now update live. When something changes, you see it right away instead of waiting for the page to catch up on its next refresh.
 
-- **Live instance status** without waiting for a refresh
-- **Live team updates** pushed as they happen
-- Less polling load on the backend
+- **Live instance status** as it changes, no refresh needed
+- **Live team updates** as they happen
+- A platform that feels more responsive overall
 
-Most of this you will not see directly, but the platform should feel more responsive.
+Under the hood we moved from periodic polling to a push-based connection, which also takes load off the backend.
 
 ## What else is new?
 
