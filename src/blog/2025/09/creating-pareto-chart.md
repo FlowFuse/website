@@ -23,7 +23,7 @@ _Pareto Chart showing defect categories in manufacturing with bars for scratches
 
 ## Getting Started
 
-To create a Pareto Chart for manufacturing data, you'll need access to industrial data platforms that can connect to your production systems. This guide uses FlowFuse, a low-code platform that simplifies industrial data workflows. If you don't have an account yet, you can [sign up for a 14-day free trial](https://app.flowfuse.com/).
+To create a Pareto Chart for manufacturing data, you'll need access to industrial data platforms that can connect to your production systems. This guide uses FlowFuse, a low-code platform that simplifies industrial data workflows. If you don't have an account yet, you can [sign up for a 30-day free trial](https://app.flowfuse.com/).
 
 ### Step 1: Connect to Your Data Source
 

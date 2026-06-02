@@ -531,12 +531,13 @@ module.exports = function(eleventyConfig) {
         return new URL(url, site.baseURL).href;
     })
 
+
     eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
         let parts = url.split("/").filter(e => e !== '');
         if (parts[parts.length-1] === "index") {
             parts.pop();
         }
-        
+
         let path = "";
         return "/"+parts.map(p => {
             let url = `${path}/${p}`;
@@ -546,11 +547,6 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
-        // If page.inputPath looks like: ./src/handbook/abc/def.md
-        // then the url of the page will be `/handbook/abc/def/`
-        // links of the form `./` or `[^/]` must be prepended with `../`
-        // to ensure it links to the right place
-
         const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
 
         const matcher = /((href|src)="([^"]*))"/g
@@ -558,12 +554,9 @@ module.exports = function(eleventyConfig) {
         while ((match = matcher.exec(str)) !== null) {
             let url = match[3]
             if (/^(http|#|mailto:)/.test(url)) {
-                // Do not rewrite absolute urls, in-page anchors or emails
                 continue
             }
-            // */abc.md#anchor => */abc/#anchor
             url = url.replace(/.md(#.*)?$/, '$1')
-            // */README#anchor => */#anchor
             url = url.replace(/README(#.*)?$/, '$1')
             if (url[0] !== '/' && !isIndexPage) {
                 url = '../'+url
@@ -922,7 +915,7 @@ module.exports = function(eleventyConfig) {
     // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
     eleventyConfig.addTransform("docsFeatureBadges", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
-        if (!this.page.url || !/^(\/docs\/|\/node-red\/|\/handbook\/)/.test(this.page.url)) return content;
+        if (!this.page.url || !/^(\/docs\/|\/node-red\/)/.test(this.page.url)) return content;
 
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);
@@ -1109,7 +1102,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addCollection('nav', function(collection) {
         let nav = {}
 
-        createNav('handbook')
         createNav('docs')
 
         function createNav(tag) {
@@ -1140,7 +1132,7 @@ module.exports = function(eleventyConfig) {
                 // recursively parse the folder hierarchy and created our collection object
                 // pass nav = {} as the first accumulator - build up hierarchy map of TOC
                 hierarchy.reduce((accumulator, currentValue, i) => {
-                    // create a nested object detailing the full handbook hierarchy
+                    // create a nested object detailing the full docs hierarchy
                     if (!accumulator[currentValue]) {
                         accumulator[currentValue] = {
                             'name': currentValue,
@@ -1191,7 +1183,6 @@ module.exports = function(eleventyConfig) {
                 }
             }
 
-            // not req'd to have handbook in Website build, so this may be empty
             if (nav[tag]) {
                 for (child of nav[tag].children) {
                     if (child.group) {
@@ -1205,7 +1196,7 @@ module.exports = function(eleventyConfig) {
                         }
                         groups[group].children.push(child)
                     } else {
-                        // capture & flag top-level handbook docs, that haven't had a group assigned
+                        // capture & flag top-level docs that haven't had a group assigned
                         groups['Other'].children.push(child)
                     }
                 }
