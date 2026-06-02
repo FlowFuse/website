@@ -31,16 +31,11 @@ FlowFuse 2.31 takes agentic development out of soft launch. FlowFuse Expert can 
 
 *FlowFuse Expert is our integrated AI assistant across FlowFuse's website, platform, and the immersive Node-RED editor.*
 
-In 2.30 we introduced agentic application building in soft launch: describe the OEE dashboard, MES handover screen, or UNS mapping you need, and Expert assembles it on your workspace. With 2.31, that soft launch ends and the capability opens up more widely.
+In 2.30 we put agentic application building into soft launch. The idea is simple: tell FlowFuse Expert what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and it assembles the flow on your workspace for you. Until now you had to request access while we proved it out.
 
-Both come from the same change under the hood: FlowFuse Expert now talks over an MQTT pub/sub transport instead of a direct connection. That unlocks two separate things.
+That phase is over. With 2.31, agentic development becomes generally available as an open beta, on FlowFuse Cloud and for Self-Hosted Enterprise. No more requesting access: on FlowFuse Cloud it is switched on for your team, and Self-Hosted Enterprise customers can enable it with a small configuration change (your customer success contact can walk you through it). We are keeping the beta label on while we keep refining it.
 
-- **Remote Instances are now supported.** Agentic development used to work only on Hosted Instances (the Node-RED that FlowFuse runs for you). Remote Instances, which run on your own hardware through the device agent, were left out because Expert could not reach them. MQTT pub/sub reaches those remote devices, so the same build-it-for-me experience now works on Remote Instances too, on both FlowFuse Cloud and Self-Hosted.
-- **FlowFuse Self-Hosted (Enterprise) is now supported.** This is a different axis: agentic development used to be FlowFuse Cloud only. Self-Hosted Enterprise customers enable it by bridging their local EMQX broker to FlowFuse's central broker with a small YAML config change. After that, Expert works inside the editor exactly as it does on Cloud, on both Hosted and Remote Instances.
-
-To be clear, these are two different things. "Hosted" and "Remote" describe the instance: Hosted Instances run on FlowFuse, Remote Instances run on your own hardware. "Self-Hosted" describes how you run the FlowFuse platform itself, and it can have both kinds of instance.
-
-If you are a Self-Hosted Enterprise customer and want this enabled, reach out to your customer success contact and we will walk you through the setup.
+On top of that, we expanded where agentic development runs. It used to work only on Hosted Instances, the Node-RED that FlowFuse runs for you. In 2.31 it works on Remote Instances too, the ones running on your own hardware through the device agent, so you get the same build-it-for-me experience wherever your instance lives.
 
 ## Decide Where AI Runs {#ai-opt-out}
 
