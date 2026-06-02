@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.31: Agentic Development Leaves Soft Launch, Reaches Remote Instances and Self-Hosted"
-subtitle: "FlowFuse Expert can now build your application on Hosted and Remote instances, including Self-Hosted Enterprise. Plus per-team and per-instance AI controls, dark mode, and real-time platform updates."
-description: "FlowFuse 2.31 takes agentic development out of soft launch and extends it to Remote instances and Self-Hosted Enterprise, adds granular AI opt-out controls, dark mode, and real-time platform updates over MQTT."
+subtitle: "FlowFuse Expert can now build your application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and per-instance AI controls, dark mode, and real-time platform updates."
+description: "FlowFuse 2.31 takes agentic development out of soft launch and extends it to Remote Instances and FlowFuse Self-Hosted Enterprise, adds granular AI opt-out controls, dark mode, and real-time platform updates over MQTT."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 # image: /blog/2026/06/images/flowfuse-release-2-31.png  # add once the art request asset lands; the file is absent now and 11ty's image step errors on it, so it is omitted (falls back to the default blog tile)
@@ -20,10 +20,10 @@ release: "2.31"
 #     heading: "Dark Mode"
 #   - id: realtime-platform-updates        (new entry)
 #     heading: "Real-Time Platform Updates"
-tldr: "FlowFuse 2.31 ends the soft launch of agentic development: FlowFuse Expert now builds applications on both Hosted and Remote instances, and reaches Self-Hosted Enterprise through an MQTT bridge. Admins get per-team and per-instance control over AI, the editor gets a dark mode, and platform status now updates in real time over MQTT. This is a foundational release, with a lot of the work happening under the hood."
+tldr: "FlowFuse 2.31 ends the soft launch of agentic development: FlowFuse Expert now builds applications on both Hosted and Remote Instances, and reaches FlowFuse Self-Hosted Enterprise through an MQTT bridge. Admins get per-team and per-instance control over AI, the editor gets a dark mode, and platform status now updates in real time over MQTT. This is a foundational release, with a lot of the work happening under the hood."
 ---
 
-FlowFuse 2.31 takes agentic development out of soft launch. FlowFuse Expert can now build your application directly on both Hosted and Remote instances, and it reaches Self-Hosted Enterprise customers for the first time. Alongside that, you get granular control over where AI runs, a dark mode for the platform, and platform status that updates in real time.
+FlowFuse 2.31 takes agentic development out of soft launch. FlowFuse Expert can now build your application directly on both Hosted and Remote Instances, and on FlowFuse Self-Hosted (Enterprise) for the first time, not just FlowFuse Cloud. Alongside that, you get granular control over where AI runs, a dark mode for the platform, and platform status that updates in real time.
 
 <!--more-->
 
@@ -33,10 +33,12 @@ FlowFuse 2.31 takes agentic development out of soft launch. FlowFuse Expert can 
 
 In 2.30 we introduced agentic application building in soft launch: describe the OEE dashboard, MES handover screen, or UNS mapping you need, and Expert assembles it on your workspace. With 2.31, that soft launch ends and the capability opens up more widely.
 
-Two things change:
+Both come from the same change under the hood: FlowFuse Expert now talks over an MQTT pub/sub transport instead of a direct connection. That unlocks two separate things.
 
-- **Remote instances are now included.** Until now agentic development only worked on Hosted instances. Remote instances were left out. That gap closes in 2.31, so you get the same build-it-for-me experience regardless of where your instance runs.
-- **Self-Hosted Enterprise gets access.** Self-Hosted Enterprise customers can now reach FlowFuse Expert through a central broker bridge. Your local EMQX broker connects to FlowFuse's central broker with a small YAML config change, and from there Expert works inside your editor the same way it does on Cloud.
+- **Remote Instances are now supported.** Agentic development used to work only on Hosted Instances (the Node-RED that FlowFuse runs for you). Remote Instances, which run on your own hardware through the device agent, were left out because Expert could not reach them. MQTT pub/sub reaches those remote devices, so the same build-it-for-me experience now works on Remote Instances too, on both FlowFuse Cloud and Self-Hosted.
+- **FlowFuse Self-Hosted (Enterprise) is now supported.** This is a different axis: agentic development used to be FlowFuse Cloud only. Self-Hosted Enterprise customers enable it by bridging their local EMQX broker to FlowFuse's central broker with a small YAML config change. After that, Expert works inside the editor exactly as it does on Cloud, on both Hosted and Remote Instances.
+
+To be clear, these are two different things. "Hosted" and "Remote" describe the instance: Hosted Instances run on FlowFuse, Remote Instances run on your own hardware. "Self-Hosted" describes how you run the FlowFuse platform itself, and it can have both kinds of instance.
 
 If you are a Self-Hosted Enterprise customer and want this enabled, reach out to your customer success contact and we will walk you through the setup.
 
@@ -72,9 +74,27 @@ Most of this you will not see directly, but the platform should feel more respon
 - **Tailwind 4 upgrade and UI polish**: we upgraded the platform to Tailwind 4 and fixed a batch of layout and styling inconsistencies that came with it.
 - **Smaller fixes**: custom packages with uppercase names no longer break pipeline deploys, CSP no longer blocks `wss://` connections to MQTT brokers, and we tightened backend response schemas so generated TypeScript types are accurate.
 
-## A note on this release
+## Fresh off our team off-site in Greece
 
-This one is lighter on big user-facing features, and that is on purpose. The team was at a company off-site this cycle, and we used the time to step back: revamping how we run product, and resetting our roadmaps for what is coming next. So a lot of 2.31 is foundational, under-the-hood work, the kind that sets up the bigger things we are building toward. More on that soon.
+We spent part of this cycle together in Greece for a full-company off-site, and it shaped what you see (and do not yet see) in 2.31.
+
+<!-- PHOTO: group shot of the team in Greece. Swap for ![The FlowFuse team in Greece](/blog/2026/06/images/offsite-team.jpg) once the asset lands. -->
+
+Getting everyone in one place let us do the kind of work that is hard to do day-to-day and fully remote:
+
+- Stepping back to align on where FlowFuse is headed next
+- Revamping how we run product, from discovery through to what actually ships in a release
+- Resetting our roadmaps so the next releases build on each other rather than pulling in different directions
+
+<!-- PHOTO: working-session / whiteboard shot. Swap for ![Roadmap working session](/blog/2026/06/images/offsite-roadmap.jpg) once the asset lands. -->
+
+It is also why 2.31 is lighter on big, user-facing features than a typical release, and we are okay with that. A lot of what we shipped this month is foundational, under-the-hood work, the kind that sets up the bigger things we are building toward.
+
+<!-- PHOTO: candid / team-dinner shot. Swap for ![Team dinner in Greece](/blog/2026/06/images/offsite-dinner.jpg) once the asset lands. -->
+
+We will share more on what came out of the off-site soon.
+
+<!-- TODO (skeleton): confirm the specifics above (where in Greece, dates, what we want to share publicly), tighten the copy, and replace the three PHOTO comments with real images in /blog/2026/06/images/. -->
 
 ---
 
