@@ -862,7 +862,7 @@ sections:
           pro:
             value: null
           enterprise:
-            value: "Requires Kubernetes"
+            value: true
 
       - id: performance
         label: Performance Monitoring
