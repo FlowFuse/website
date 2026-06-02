@@ -4,7 +4,7 @@ subtitle: "FlowFuse Expert can now build your application on Hosted and Remote i
 description: "FlowFuse 2.31 takes agentic development out of soft launch and extends it to Remote instances and Self-Hosted Enterprise, adds granular AI opt-out controls, dark mode, and real-time platform updates over MQTT."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
-image: /blog/2026/06/images/flowfuse-release-2-31.png
+# image: /blog/2026/06/images/flowfuse-release-2-31.png  # add once the art request asset lands; the file is absent now and 11ty's image step errors on it, so it is omitted (falls back to the default blog tile)
 tags:
    - flowfuse
    - news
