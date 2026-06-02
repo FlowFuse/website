@@ -67,6 +67,12 @@ This starts three watchers concurrently:
 
 **Note**: the first time running this, 11ty may take a little while to process all images in the `/docs` and `/handbook` folders.
 
+**Note**: if you have previously run `npm run build:nuxt`, clean the generated directories before starting dev or you will get a `spawn EBADF` error:
+
+```bash
+npm run clean:nuxt
+```
+
 ### Legacy-only mode
 
 To run just the legacy 11ty stack (equivalent to the old `npm start`):
