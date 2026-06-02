@@ -1,16 +1,63 @@
 ---
-title: Interacting with ESP32 Using Node-RED and MQTT
-subtitle: Building IoT Flows with ESP32 and FlowFuse
-description:  Learn how to connect your ESP32 with Node-RED using MQTT in this easy-to-follow guide. Build a user-friendly dashboard with FlowFuse Dashboard to control your IoT devices remotely. Ideal for beginners and IoT hobbyists!
+title: "How to Connect an ESP32 to Node-RED Using MQTT (2026)"
+subtitle: "A step-by-step guide to controlling and monitoring an ESP32 over MQTT, with a FlowFuse dashboard."
+description: "Learn how to connect an ESP32 to Node-RED using MQTT in 2026. Step-by-step guide covering the MQTT broker setup, Arduino IDE code, and building a dashboard to control your IoT device remotely—ideal for beginners and IoT hobbyists."
 date: 2024-11-14
-lastUpdated: 2025-07-23
+lastUpdated: 2026-06-01
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/esp32-with-node-red.png
 keywords: esp32 with node red, node red esp32, connect esp32 to node red, esp node red, esp32 mqtt node red, esp32 node red, esp32 node red mqtt, mqtt esp32 node red, mqtt node red esp32, node red mqtt esp32, node red with esp32
 tags:
- - node-red
- - how-to
-tldr: "This tutorial walks through connecting an ESP32 microcontroller to Node-RED over MQTT using the FlowFuse broker, then building a simple dashboard to remotely control the ESP32's LED. The ESP32 is programmed via the Arduino IDE to subscribe to an MQTT topic and act on incoming commands from Node-RED."
+  - node-red
+  - how-to
+  - mqtt
+cta:
+  type: signup
+  title: "Build and Scale Your IoT Projects with FlowFuse"
+  description: "Going from one ESP32 to a fleet of devices? FlowFuse gives you a managed MQTT broker, hosted Node-RED, remote device management, and dashboards in one platform—so you can deploy, monitor, and update your IoT devices from anywhere without managing infrastructure. Start free today."
+meta:
+  howto:
+    name: "How to Connect an ESP32 to Node-RED Using MQTT"
+    description: "Route messages between an ESP32 and Node-RED through an MQTT broker, then build a FlowFuse dashboard to control the ESP32's LED remotely from anywhere."
+    totalTime: "PT30M"
+    tool:
+      - "ESP32"
+      - "Arduino IDE"
+      - "Node-RED"
+      - "FlowFuse"
+    steps:
+      - name: "Create a Node-RED instance on FlowFuse Cloud"
+        text: "Log in to your FlowFuse account and create a new Node-RED instance. Once the instance is running, open the Node-RED editor."
+        url: "step-1-creating-node-red-instance-on-flowfuse-cloud"
+      - name: "Create and configure MQTT clients in FlowFuse"
+        text: "In the FlowFuse sidebar, click Broker and create two MQTT clients—one for Node-RED and one for the ESP32. Set a username and password for each and save the credentials."
+        url: "step-2-creating-and-configuring-mqtt-clients-in-flowfuse"
+      - name: "Build a Node-RED flow and dashboard to publish commands over MQTT"
+        text: "In Node-RED, add an mqtt out node configured with broker.flowfuse.cloud and your Node-RED client credentials, publishing to a topic such as /LedControl. Add two ui-button nodes (ON payload 1, OFF payload 2) from FlowFuse Dashboard and wire them to the mqtt out node. Deploy and confirm the node shows Connected."
+        url: "step-3-building-a-node-red-dashboard-to-send-commands-over-mqtt"
+      - name: "Program the ESP32 to subscribe to the MQTT topic and control the LED"
+        text: "In the Arduino IDE, install the PubSubClient library, paste the provided sketch, fill in your Wi-Fi credentials and MQTT client credentials, then upload to the ESP32. Open the Serial Monitor at 115200 baud to confirm it connects to Wi-Fi and the broker, then test ON/OFF commands from the dashboard."
+        url: "step-4-programming-esp32-to-receive-commands-from-mqtt-and-control-led"
+  faq:
+    - question: "How do I connect an ESP32 to Node-RED?"
+      answer: "The ESP32 and Node-RED don't connect directly—they communicate through an MQTT broker. Node-RED publishes commands to a topic on the broker, and the ESP32 (programmed via the Arduino IDE) subscribes to that topic to receive them, and can publish its own data back. With FlowFuse you get a managed broker, so you create an MQTT client for Node-RED and one for the ESP32, then point both at broker.flowfuse.cloud."
+    - question: "Why use MQTT to connect an ESP32 to Node-RED?"
+      answer: "MQTT is a lightweight publish/subscribe protocol built for low-bandwidth, unreliable networks, which makes it ideal for IoT. It lets the ESP32 and Node-RED exchange messages over Wi-Fi without a direct connection, so they can communicate across networks or even over the internet as long as both reach the same broker."
+    - question: "What MQTT broker should I use with the ESP32?"
+      answer: "You can use any MQTT broker—a public test broker, a self-hosted Mosquitto instance, or a managed service. FlowFuse includes a built-in broker at broker.flowfuse.cloud with per-team topic spaces and access control, so you don't have to install or maintain broker infrastructure yourself."
+    - question: "What library do I need to program the ESP32 for MQTT?"
+      answer: "Use the PubSubClient library (or EspMQTTClient) in the Arduino IDE. The ESP32 firmware connects to Wi-Fi, connects to the MQTT broker with its client credentials, subscribes to the control topic, and runs a callback that acts on incoming messages—for example switching an LED on or off based on the payload."
+    - question: "Why does my ESP32 keep disconnecting from the MQTT broker?"
+      answer: "The most common cause is two clients sharing the same MQTT client ID. The ESP32 and Node-RED each need their own unique client ID, or the broker will repeatedly disconnect one of them. Check that you created separate broker clients and used the correct, distinct credentials in each."
+    - question: "Why doesn't my ESP32 respond to commands from Node-RED?"
+      answer: "Confirm the topic in the ESP32 code exactly matches the topic the Node-RED mqtt out node publishes to (for example /LedControl)—topics are case-sensitive. Also verify the ESP32 is on Wi-Fi, the MQTT node shows connected, and the payload values match what your callback checks for. Rebooting the ESP32 often clears transient issues."
+    - question: "Can I control the ESP32 over the internet, not just my local network?"
+      answer: "Yes. Because communication goes through an MQTT broker rather than a direct connection, the ESP32 and Node-RED only need to reach the broker—not each other. With a cloud broker like the one in FlowFuse and hosted Node-RED, you can control and monitor the ESP32 from anywhere, as long as the device has Wi-Fi access."
+    - question: "Can I read sensor data from the ESP32, not just send commands to it?"
+      answer: "Yes. The same setup works in both directions. Have the ESP32 publish sensor readings to a topic, add an mqtt in node in Node-RED subscribed to that topic, and route the values to a dashboard, database, or alerting logic. Use separate topics for commands and data to keep flows organized."
+    - question: "Does this work with the ESP8266 as well as the ESP32?"
+      answer: "Yes. The same MQTT approach works on the ESP8266 with minor code changes—mainly including the ESP8266WiFi library instead of WiFi.h. The Node-RED side, broker setup, and dashboard are identical."
+tldr: "This guide explains how to connect an ESP32 to Node-RED using MQTT. The two devices don't talk directly—they exchange messages through an MQTT broker. Using FlowFuse's managed broker (broker.flowfuse.cloud), you create one MQTT client for Node-RED and one for the ESP32, build a Node-RED flow and FlowFuse dashboard that publishes commands (for example to /LedControl), and program the ESP32 in the Arduino IDE with the PubSubClient library to subscribe to that topic and act on the payload—turning an LED on or off. Because everything routes through the broker, you can control the device from anywhere with Wi-Fi, and the same pattern works in reverse to read sensor data back into Node-RED."
 ---
 
 The ESP32 is an affordable and powerful microchip that combines Wi-Fi and Bluetooth in one small package. It's commonly used in smart devices like home automation systems, wearables, and other IoT projects. Despite its low cost (around $6), it offers strong performance, and low power consumption, and is compatible with popular platforms like Arduino. Whether you're a hobbyist or a business, the ESP32 provides great value, making it easy to create wireless devices without a big investment. This tutorial demonstrates how to set up communication between the ESP32 and Node-RED using MQTT, along with an interactive dashboard via FlowFuse for a user-friendly interface. 
