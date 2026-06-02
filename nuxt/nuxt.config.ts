@@ -49,7 +49,7 @@ export default defineNuxtConfig({
     },
 
     nitro: {
-        preset: 'static',
+        preset: 'netlify',
         prerender: {
             routes: [
                 '/terms',
@@ -57,6 +57,16 @@ export default defineNuxtConfig({
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
             ],
             crawlLinks: false
+        }
+    },
+
+    studio: {
+        route: '/_studio',
+        repository: {
+            provider: 'github',
+            owner: 'FlowFuse',
+            repo: 'website',
+            branch: 'main',
         }
     },
 

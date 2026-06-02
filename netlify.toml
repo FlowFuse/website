@@ -1,8 +1,8 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
-    Content-Security-Policy = "frame-ancestors 'none';"
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "frame-ancestors 'self';"
 
 [[redirects]]
 from = "http://flowforge.com/*"
@@ -67,6 +67,10 @@ autoLaunch = false
 [build]
 command = "npm run build:nuxt"
 publish = "nuxt/.output/public"
+
+[functions]
+directory = "nuxt/.netlify/functions-internal"
+included_files = ["nuxt/.output/**"]
 
 [context.deploy-preview]
 command = "npm run build:nuxt"
