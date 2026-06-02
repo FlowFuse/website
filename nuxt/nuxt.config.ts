@@ -29,6 +29,12 @@ export default defineNuxtConfig({
         skipInspections: ['trailing-slash', 'no-error-response'],
     },
 
+    // @nuxt/content generates `import X from 'handbook-links'` for the remark plugin key.
+    // This alias makes that import resolvable in the Vite bundle context.
+    alias: {
+        'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
+    },
+
     app: {
         head: {
             link: [
