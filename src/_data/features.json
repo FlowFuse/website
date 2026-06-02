@@ -60,6 +60,6 @@
     "imageFolder": "../images/pictograms/",
     "imageFile": "certified-nodes_blue.png",
     "imageAlt": " certifying badge.",
-    "content": "Our curated collection of certified nodes, ensuring top-notch quality, security, and support. Explore our certified nodes on the <a href='/certified-nodes'>Certified Nodes Page</a> and benefit from a robust ecosystem while maintaining operational reliability."
+    "content": "Our curated collection of certified nodes, ensuring top-notch quality, security, and support. <a href='/integrations/?certified=1'>Explore our certified nodes</a> and benefit from a robust ecosystem while maintaining operational reliability."
   }
 ]

@@ -9,6 +9,7 @@ image:  /blog/2025/05/images/cron-node-red.png
 keywords: Node-RED cron scheduling, cron-plus, Node-RED time-based automation, FlowFuse automation, node-red-contrib-cron-plus
 tags:
    - flowfuse
+tldr: "Node-RED's built-in Inject node handles simple intervals and basic time triggers, but complex scheduling requirements such as running only on weekdays, skipping holidays, or firing at a specific time on the last Friday of each month require the node-red-contrib-cron-plus node. This guide walks through using cron-plus in FlowFuse to build static cron expressions, solar event triggers (sunrise/sunset), date-specific schedules, and dynamically managed schedules that can be modified at runtime."
 ---
 
 Automation isn’t just about reacting to events—sometimes it’s about doing things at the right time. In Node-RED, the Inject node is great for triggering flows at set intervals, but it’s limited when you need more control. Cron jobs offer precise scheduling, letting you set up custom times for your tasks. In this guide, we'll show you how to create flexible cron schedules in FlowFuse with Node-RED, so your flows run exactly when needed.

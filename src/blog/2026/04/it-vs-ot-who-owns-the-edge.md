@@ -12,6 +12,7 @@ cta:
     type: contact
     title: Talk to us about your edge strategy
     description: Get practical guidance on aligning IT and OT ownership, governance, and tooling for your edge deployments.
+tldr: "Most edge deployments fail not because of bad technology, but because IT and OT never agreed on who owns what. Real shared ownership means IT owns the infrastructure layer (security, patches, monitoring) while OT owns the operational layer (what runs, when, and what it touches), with a shared platform like FlowFuse that gives both sides the visibility they need without forcing either to compromise."
 ---
 
 Ask IT who owns the edge. They'll say they do. Ask OT the same question. Same answer. That's the problem.

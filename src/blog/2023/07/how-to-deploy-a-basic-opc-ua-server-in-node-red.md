@@ -12,6 +12,7 @@ tags:
    - node-red
    - opcua
    - how-to
+tldr: "This first installment in an OPC UA series explains the OPC UA information model how devices are represented as structured node objects rather than raw register values and walks through deploying a working OPC UA server flow in Node-RED using the node-red-contrib-opcua package. Understanding the information model and address-space hierarchy is the key prerequisite before building OPC UA clients or integrations."
 ---
 
 This article is the first part of a series of OPC-UA content.  Here, we will explain some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walk through and deploy an example OPC-UA Server.  
