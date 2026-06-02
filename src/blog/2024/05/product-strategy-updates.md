@@ -55,7 +55,7 @@ With FlowFuse, we aim to provide the best way to deploy Node-RED applications to
 
 Our development team are busy working on a range of new features to help us deliver on our mission. If you're interested to see what highlight features we're working on for the next release (v2.5) in four weeks time, you can checkout our [Development Board](https://github.com/orgs/FlowFuse/projects/1/views/39) on GitHub.
 
-For longer term planning, we have our [Product Planning Board](https://github.com/orgs/FlowFuse/projects/3/views/9), which outlines the features we're working on for the next 12 months. It's subject to change, as we're always [iterating](/handbook/company/values/#%F0%9F%94%81-iterative-improvement), but it gives a good idea of where our focus will likely be in the coming months.
+For longer term planning, we have our [Product Planning Board](https://github.com/orgs/FlowFuse/projects/3/views/9), which outlines the features we're working on for the next 12 months. It's subject to change, as we're always [iterating](/handbook/company/values/#iterative-improvement), but it gives a good idea of where our focus will likely be in the coming months.
 
 In the mean time, please do reach out if there are any features you'd like to see in FlowFuse, or if you have any feedback on our product strategy. We're always keen to hear from our users and learn how we can better serve you.
 
