@@ -3,7 +3,6 @@ title: "Scaling Manufacturing Data Integration: How Arch Systems Connects 100+ F
 subtitle: "Why repeatable integration, not the first connection, is the real bottleneck at scale"
 description: "Arch Systems connects 100+ factory databases to a single analytics platform using FlowFuse. See how standardized subflows and DevOps pipelines made each new integration cheap to build and cheap to maintain."
 date: 2026-06-02
-canonical: https://flowfuse.com/blog/2026/06/scaling-manufacturing-data-integration/
 keywords: manufacturing data integration, MES integration, factory database integration, industrial DevOps, FlowFuse, low-code manufacturing, real-time production data, scalable data integration
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/scaling-manufacturing-data-integration.png
