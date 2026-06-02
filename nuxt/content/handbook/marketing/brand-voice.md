@@ -122,7 +122,7 @@ Tone should be:
 **Example:**  
 > Hey, good question! I’ve seen a similar issue when deploying on Docker — it might be worth checking your volume permissions. Let me know if that helps or if you want to try another approach.
 
-For broader principles on interacting with the community as a FlowFuse team member, see our [Community Guidelines](/handbook/marketing/community/community-guidelines.md).
+For broader principles on interacting with the community as a FlowFuse team member, see our [Community Guidelines](/handbook/marketing/community/community-guidelines/).
 
 ### Commenting on third-party content (e.g. posts by others)
 

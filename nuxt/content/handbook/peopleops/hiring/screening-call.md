@@ -15,7 +15,7 @@ The structure of this call is as follows:
 This screening call serves as a filter for both the company to align with the candidate on mutual expectations and the details of the role. 
 
 During this call FlowFuse should understand:
-1. Alignment to [Values](/handbook/company/values.md).
+1. Alignment to [Values](/handbook/company/values/).
 1. The candidate is enthusiastic about the company and the open role.
 1. The candidate is seeking full-time employment (FlowFuse only offers full-time positions).
 1. To get that information and make the candidate feels comfortable, use ice-braker questions like:
