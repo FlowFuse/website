@@ -1,247 +1,293 @@
 ---
-title: Interacting with ESP32 Using Node-RED and MQTT
-subtitle: Building IoT Flows with ESP32 and FlowFuse
-description:  Learn how to connect your ESP32 with Node-RED using MQTT in this easy-to-follow guide. Build a user-friendly dashboard with FlowFuse Dashboard to control your IoT devices remotely. Ideal for beginners and IoT hobbyists!
-date: 2024-11-14
-lastUpdated: 2025-07-23
-authors: ["sumit-shinde"]
-image: /blog/2024/11/images/esp32-with-node-red.png
-keywords: esp32 with node red, node red esp32, connect esp32 to node red, esp node red, esp32 mqtt node red, esp32 node red, esp32 node red mqtt, mqtt esp32 node red, mqtt node red esp32, node red mqtt esp32, node red with esp32
+title: "How to Read and Write Siemens S7 PLC Data — A Node-RED Guide (2026)"
+subtitle: "A step-by-step beginner's guide to reading, writing, and monitoring data from Siemens S7-1200 and S7-1500 PLCs."
+description: "Learn how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) for industrial monitoring and control. This guide covers PLC setup, the S7 protocol over ISO-on-TCP, addressing, and building dashboards—no deep PLC expertise required."
+lastUpdated: 2026-06-03
+date: 2025-01-17
+authors: ["sumit-shinde","stephen-mclaughlin"]
+image: /blog/2025/01/images/s7-with-node-red.png
+keywords: siemens s7 plc data, read data from s7 plc, write data to s7 plc, siemens s7 1200 with node-red, siemens s7 1500 with node-red, s7 with node-red, plc data integration, industrial automation
 tags:
- - node-red
- - how-to
-tldr: "This tutorial walks through connecting an ESP32 microcontroller to Node-RED over MQTT using the FlowFuse broker, then building a simple dashboard to remotely control the ESP32's LED. The ESP32 is programmed via the Arduino IDE to subscribe to an MQTT topic and act on incoming commands from Node-RED."
+  - node-red
+  - flowfuse
+  - plc
+  - how-to
+cta:
+  type: contact
+  title: "Turn PLC Data Into Operational Visibility with FlowFuse"
+  description: "Reading and writing S7 data is just the start. FlowFuse extends your existing PLCs, SCADA, and MES—no rip-and-replace—into a single platform for remote device management, dashboards, and DevOps pipelines. Connect Siemens, Allen-Bradley, Modbus, and OPC UA devices, and get your first operational application running this week. SOC 2 certified, with RBAC, SSO, and self-hosted options. Talk to our team about your architecture."
+meta:
+  howto:
+    name: "How to Read and Write Siemens S7 PLC Data with Node-RED"
+    description: "Connect a Siemens S7-1200 or S7-1500 PLC to Node-RED over the S7 protocol (ISO-on-TCP, port 102), then read and write PLC data for remote monitoring and control."
+    totalTime: "PT30M"
+    tool:
+      - "TIA Portal"
+      - "Node-RED"
+      - "node-red-contrib-s7"
+      - "FlowFuse Device Agent"
+    steps:
+      - name: "Configure PLC settings in TIA Portal"
+        text: "In TIA Portal, enable PUT/GET communication from remote partners, set the PLC to full access (no protection), and disable Optimized Block Access on any data block you intend to read or write. Download the updated configuration to the PLC before proceeding."
+        url: "prerequisite"
+      - name: "Install Node-RED on a networked device using FlowFuse Device Agent"
+        text: "Install the FlowFuse Device Agent on a device (such as a Raspberry Pi or RevPi) that is on the same network as the PLC. The Device Agent runs Node-RED and enables remote management without on-site visits."
+        url: "prerequisite"
+      - name: "Install the node-red-contrib-s7 node"
+        text: "In Node-RED, open the main menu, click Manage Palette, switch to the Install tab, search for node-red-contrib-s7, and click Install. Once complete the S7 nodes appear in the palette."
+        url: "installing-the-s7-node"
+      - name: "Configure the S7 endpoint connection"
+        text: "Drag an S7 node onto the canvas and add a new PLC configuration. Select Ethernet (ISO on TCP) as the transport, enter the PLC's IP address and leave port 102 unchanged. Set the Rack and Slot IDs from TIA Portal's Device View, set the cycle time and timeout, then add your variables using the Node-RED address format (e.g. DB5,X0.0 for TIA Portal's DB5.DBX0.0)."
+        url: "configuring-the-s7-node-to-connect-to-the-plc"
+      - name: "Write data to the PLC using the s7-out node"
+        text: "Drag an s7-out node onto the canvas, select the target variable and the PLC configuration, then wire standard nodes (Inject, Change, Function, or a Dashboard button) to it. Deploy the flow and verify the PLC output changes as expected."
+        url: "writing-data-to-the-plc"
+      - name: "Read data from the PLC using the s7-in node"
+        text: "Drag an s7-in node onto the canvas, select the PLC configuration and the variable to read, and enable Emit only when value changes. Deploy the flow and use a Debug node to verify the data. Use node-red-contrib-buffer-parser to unpack word or double-word values into individual bits, then route the results to dashboards, databases, or other systems."
+        url: "reading-data-from-the-plc"
+  faq:
+    - question: "How do I read data from a Siemens S7 PLC?"
+      answer: "Install an S7 communication node (such as node-red-contrib-s7) in Node-RED, configure an S7 endpoint with your PLC's IP address over Ethernet (ISO on TCP) using port 102, and add the variables you want to read. The s7-in node then polls those addresses on a set cycle time and emits the values, which you can route to dashboards, databases, or other systems."
+    - question: "How do I write data to a Siemens S7 PLC?"
+      answer: "Use the s7-out node pointed at the variable you want to change, then drive it with standard nodes like inject, change, or function. Make sure the data type you send matches the PLC program, and that PUT/GET communication is enabled and optimized block access is disabled on the relevant data block."
+    - question: "What protocol is used to communicate with Siemens S7 PLCs?"
+      answer: "Siemens S7 PLCs communicate using the S7 protocol over ISO-on-TCP (RFC 1006), typically on TCP port 102. The device reading or writing data must be on the same network as the PLC and able to reach that port through any firewalls."
+    - question: "What do I need to configure on the PLC before reading or writing data?"
+      answer: "In TIA Portal you must allow PUT/GET communication from remote partners, provide full access to the PLC, and disable 'Optimized Block Access' on any data block you intend to read or write over the S7 protocol. Without these settings the connection establishes but data exchange fails."
+    - question: "Do I have to disable optimized block access on S7-1200 and S7-1500 PLCs?"
+      answer: "For the classic S7 protocol, yes—it relies on fixed memory offsets, so optimized data blocks must be disabled. If you can't disable optimization (it improves performance and is often mandated by coding standards), use OPC UA instead, which reads variables by symbolic name and works with optimized blocks without modification."
+    - question: "Why does the S7 address format differ from TIA Portal?"
+      answer: "The S7 node uses a slightly different addressing scheme. For example, TIA Portal's DB5.DBX0.1 becomes DB5,X0.1, and DB13.DBW4 becomes DB13,WORD4. You map the TIA Portal address to the node's equivalent format when adding variables to the S7 endpoint."
+    - question: "Why does my S7 connection fail even though the PLC is reachable?"
+      answer: "If the connection establishes but data won't exchange—often shown as a 'service not implemented' or frame error—the usual causes are missing PUT/GET permission, optimized block access still enabled, or the PLC and the device running Node-RED being on different subnets. Confirm both devices share a subnet (for example 192.168.1.x) and that port 102 is not blocked by a firewall."
+    - question: "Which Siemens PLCs work with this method, and does it work for the S7-1200 and S7-1500?"
+      answer: "It works with S7-300, S7-400, S7-1200, and S7-1500 controllers. The S7-1200 and S7-1500 require PUT/GET enabled and optimized block access disabled. Siemens LOGO uses a different addressing scheme, so check the node's README for those details."
+    - question: "How do I efficiently read many data points from an S7 PLC?"
+      answer: "Reading individual points one by one can be slow at scale. A common optimization is to pack multiple boolean statuses into a single word or double word inside the PLC program, read that one value, then unpack the bits afterward (for example with node-red-contrib-buffer-parser). For mission-critical data, a FIFO buffer in the PLC prevents loss during network outages."
+    - question: "Can I read data from multiple PLC vendors, not just Siemens?"
+      answer: "Yes. The same approach extends beyond Siemens S7. Allen-Bradley PLCs can be read over EtherNet/IP, and OPC UA or Modbus provide vendor-neutral options across Siemens, Rockwell, Schneider, Beckhoff, Omron, and others. Most factory floors mix vendors, so a protocol-flexible platform avoids being locked to one brand."
+    - question: "Can I build a dashboard to monitor and control S7 PLC data remotely?"
+      answer: "Yes. Once data is flowing in and out of the PLC, you can visualize it with LEDs, gauges, and charts and add buttons for control using FlowFuse Dashboard. To access a dashboard securely over the internet from a remote device, run the dashboard in a hosted instance and pass values to and from the edge device using FlowFuse Project nodes."
+tldr: "This guide explains how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) using Node-RED and the S7 protocol over ISO-on-TCP (port 102). Prerequisites: enable PUT/GET communication, disable optimized block access on your data blocks, and run Node-RED on a networked device (the FlowFuse Device Agent makes this remotely manageable). After installing an S7 node, you configure an endpoint with the PLC's IP, rack, and slot, map TIA Portal addresses to the node's address format, then use s7-in to read values and s7-out to write them—enabling remote monitoring, control, and dashboards without deep PLC expertise. The same patterns extend to Allen-Bradley, Modbus, and OPC UA devices for multi-vendor environments."
 ---
 
-The ESP32 is an affordable and powerful microchip that combines Wi-Fi and Bluetooth in one small package. It's commonly used in smart devices like home automation systems, wearables, and other IoT projects. Despite its low cost (around $6), it offers strong performance, and low power consumption, and is compatible with popular platforms like Arduino. Whether you're a hobbyist or a business, the ESP32 provides great value, making it easy to create wireless devices without a big investment. This tutorial demonstrates how to set up communication between the ESP32 and Node-RED using MQTT, along with an interactive dashboard via FlowFuse for a user-friendly interface. 
+Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
 
 <!--more-->
 
-<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
+This is where Node-RED comes in, offering a user-friendly solution to seamlessly connect Siemens S7 PLCs with a variety of platforms. With its intuitive flow-based interface, Node-RED enables you to create custom workflows and dashboards—no deep technical expertise required.
 
-## Prerequisites
+Siemens S7 PLCs are typically programmed using TIA Portal, Siemens' integrated development environment, and communication with external systems usually relies on the S7 protocol (ISO over TCP/IP). In this article, we’ll walk you through how to use Node-RED to read from and write to Siemens S7 PLCs via the S7 protocol, unlocking new possibilities for remote control and system integration in your industrial automation setup.
 
-To follow this tutorial, you'll need the following:
+## Prerequisite
 
-- **ESP32 microcontroller**: The hardware you'll be using for this project.
-- **USB cable**: To connect the ESP32 to your computer.
-- **Arduino IDE**: Installed and set up to program your ESP32. [Download](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) the Arduino IDE if you haven't already done so.
-    - Additionally, if you haven't set up the Arduino IDE for the ESP32 board, please follow this tutorial: [How to Set Up ESP32 with Arduino IDE](https://www.youtube.com/watch?v=CD8VJl27n94)
-- **FlowFuse account**: This will allow you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on your Node-RED projects with your team, manage and program your edge devices remotely, and provide an MQTT broker with an interface for securely managing clients.
+Before integrating your Siemens S7 PLC with Node-RED, make sure you have the following :
 
-If you haven’t signed up for a FlowFuse account yet, [sign up]({% include "sign-up-url.njk" %}?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20ESP32%20Using%20Node-RED%20and%20MQTT) now.
+1. Before downloading the ladder program and all configurations and settings to your PLC, make sure you have the following settings:
 
-## Getting Started with ESP32 and Node-RED
+- Allow PUT/GET Communication from remote partners.
 
-In this section, we’ll set up Node-RED on FlowFuse, create an MQTT connection, and configure everything to interact with your ESP32. This will lay the foundation for building your IoT flows and controlling devices.
+![PUT/GET Communication from remote partners is Allowed](./images/allow-put-get-communication.png){data-zoomable}
+_PUT/GET Communication from remote partners is Allowed_
 
-### Step 1: Creating Node-RED instance on FlowFuse Cloud
+- Provide full access to the PLC (no protection), allowing unrestricted access to data exchange.
 
-Start by logging into your [FlowFuse](/) account and creating a new Node-RED instance. For more information on creating a Node-RED instance, refer to the [FlowFuse documentation](/docs/user/introduction/#creating-a-node-red-instance).
+![Providing complete access to the PLC](./images/providing-full-access-to-plc.png){data-zoomable}
+_Providing complete access to the PLC_
 
-Once the instance is created, open the Node-RED editor.
+2. Ensure that the appropriate ladder program (or any other logic) is written according to your requirements and successfully downloaded to the PLC. However, before downloading, make sure the 'Optimized Block Access' option is disabled for the data block that your ladder program using.
 
-### Step 2: Creating and Configuring MQTT Clients in FlowFuse
+![Untick 'Optimized Block Access'.](./images/optimized-block-access.png){data-zoomable}
+_Untick 'Optimized Block Access.'_
 
-In this step, we’ll set up MQTT to enable communication between Node-RED and the ESP32. MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol designed for reliable, low-bandwidth communication between devices in IoT applications.
+3. Install Node-RED on the device that will communicate with the S7 PLC. You cannot install Node-RED directly on the S7 PLC, as PLCs are typically controllers, not computers. For example, you can use a device like the Revolutionary Pi to connect and transfer data across systems. Use the [FlowFuse Device Agent](/platform/device-agent/) to install Node-RED on your device. 
 
-We use MQTT because it allows devices to communicate over a network (like Wi-Fi) without the need for a direct physical connection. This makes it perfect for long-distance communication, where devices need to send and receive data efficiently, even when they are not physically connected or close to each other.
+- Why FlowFuse Device Agent? It allows you to manage Node-RED remotely, enabling control, monitoring, and flow creation without the need for on-site visits. FlowFuse also offers a suite of enterprise-grade features such as collaboration, device management, and DevOps pipelines, which are essential in industrial environments. These features help streamline operations and ensure scalability in complex automation systems. [Sign up for free]({% include "sign-up-url.njk" %}) to get started.
 
-![Diagram showing the flow of data and how commands are sent to the ESP32 using MQTT using Node-RED.](./images/esp32-mqtt-node-red.png){data-zoomable}
-_Diagram showing the flow of data and how commands are sent to the ESP32 using MQTT using Node-RED_
+4. Verify that the device running Node-RED is in the same network as the PLC and can successfully ping the PLC. Also, a firewall should not block the S7 port (typically port 102).
 
-In our setup, Node-RED will publish commands to the MQTT broker, and the ESP32 will subscribe to topics to receive responses. The ESP32 will then perform actions, such as controlling an LED. To facilitate this, we’ll create two MQTT clients in FlowFuse (since the MQTT broker is already set up and managed by FlowFuse, you don’t need to worry about its configuration or maintenance). One client will be for Node-RED, and the other will be for the ESP32. These clients will handle the secure and reliable exchange of messages, ensuring smooth communication between the two devices.
+## Integrating Siemens S7 PLCs with Node-RED
 
-**To Create MQTT Clients in FlowFuse:**
+Now that everything is set up, let's integrate your Siemens S7 PLC with Node-RED. In this article, I’ll demonstrate the process using a Siemens S7-1212C PLC. I’ve connected it to a stack/tower light and will walk you through how to write data to the PLC to control this light. Later, I’ll show you how to read data and reflect the status of the light.
 
-1. Navigate to your FlowFuse platform and log in to your account.
-2. In the left sidebar, click on "Broker".
-3. In the newly opened interface, click the “Create Client” button.
-4. Enter a username and password for your MQTT client. Confirm the password.
-    - You can leave the default pattern as `#` for access control, or set a custom pattern if needed.
+My program in TIA Portal is structured as shown below, utilizing DB (Data Blocks) and Q (physical outputs) to control devices. However, Node-RED can retrieve almost all types of data from the PLC. The process is similar for most data types.
 
-![Interface for setting MQTT client details and credentials](./images/mqtt-client-create.png){data-zoomable}
-_Interface for setting MQTT client details and credentials_
+![Ladder Logic to Control Outputs for Managing Lights](./images/ladder-to-control-lights.png)_Ladder Logic to Control Outputs for Managing Lights_
 
-5. Click "Create" to generate the client.
-6. Copy the client ID and save it somewhere secure for later use.
-7. Repeat the same steps to create the second MQTT client for the ESP32.
+Let’s break down what’s happening in the ladder logic above. First, we have open contacts, each with address variables defined in a separate Data Block. There are three open branches, each starting with an open contact. Each contact is connected to an output that alters the status of a Q physical address. Each Q corresponds to a physical output on the PLC, which is wired to the lights. When we change the status of a contact to "true," it activates the corresponding light by altering the state of the Q output, which reflects the change in the physical output.
 
-### Step 3: Building a Node-RED Dashboard to Send Commands Over MQTT
+### Installing the S7 Node
 
-Now that we’ve created the MQTT clients, it’s time to build a Node-RED dashboard and create a flow that will publish commands to the FlowFuse MQTT broker. This will later allow you to interact with your ESP32 using a user-friendly interface.
+To communicate from Node-RED to the PLC, we need to install the S7 node, which allows Node-RED to interface with Siemens S7 PLCs. In this article, we will be using `node-red-contrib-s7`, which is quite popular. If this particular node is not suitable for your workflow you can find alternatives in the [Node-RED catalog](https://flows.nodered.org/search?term=siemens&type=node).
 
-**Let's first create a flow to connect to the MQTT broker with the client config we have created:**
+#### Steps to Install the S7 Node:
 
-1. Drag the **mqtt out** node onto the canvas in Node-RED.
-2. Double-click the **mqtt out** node to open the settings.
-3. Click the pencil icon next to the Server field to open the MQTT broker configuration.
-4. In the configuration, enter the following details:
-    - Server: `broker.flowfuse.cloud`
-    - Client ID: The Client ID you created earlier.
-    - Username: The MQTT username (Client ID).
-    - Password: The MQTT password.
-5. Click "Add" to save the configuration, then select the newly added configuration.
-6. In the Topic field, enter a topic name, such as `/LEDControl`.
-7. Click "Done" to close the settings.
-8. Click "Deploy" in the top-right corner to deploy the flow.
-9. Once deployed, check the MQTT out node for a Connected status, confirming the connection to the MQTT broker.
+1. Open your Node-RED editor in a web browser.
+2. Open the main menu by clicking the three horizontal lines in the top-right corner.
+3. Click "Manage Palette" from the menu.
+4. Switch to the "Install" tab and type `node-red-contrib-s7` in the search field.
+5. Click "Install" next to the node name.
 
-For this example, we will create a very simple dashboard. If you're not familiar with FlowFuse Dashboard, you can refer to the following blog to get started: [FlowFuse Dashboard: Getting Started](/blog/2024/03/dashboard-getting-started/)
+Once the installation is complete, the S7 nodes will be available in your Node-RED palette, and you can start using it to communicate with your Siemens S7 PLC.
 
-1. Install the `@flowfuse/node-red-dashboard` from the Node-RED Palette Manager.
-2. Drag two **ui-button** widgets onto the canvas.
-3. Double-click on the first button and set the Label to "ON", the Background Color to Green, and the Payload to `1`. Adjust the Width and Height as needed.
-4. Double-click on the second button and set the Label to "OFF", the Background Color to Red, and the Payload to `2`.
-5. Connect the output of both buttons to the input of the **mqtt out** node.
-6. Click "Deploy" to save the flow.
+### Addressing Scheme for Variables in Node-RED with the S7 Node
+
+Before we start, it's important to note that the variables and their addresses configured on the S7 endpoint follow a slightly different addressing scheme compared to those used in Step 7 or the TIA Portal. Therefore, when adding variables to the S7 node in Node-RED, you must ensure that you follow the correct addressing format outlined in the table below.
+
+
+| **Node-RED Address**      | **Step7 Equivalent**   | **Data Type**       | **Description**                                  |
+|---------------------------|------------------------|---------------------|--------------------------------------------------|
+| `DB5,X0.1`                | `DB5.DBX0.1`           | Boolean             | Bit 1 of byte 0 in DB5                          |
+| `DB23,BYTE1`              | `DB23.DBB1`            | Number (Byte)       | Byte 1 (0-255) of DB23                          |
+| `DB100,CHAR2`             | `DB100.DBB2`           | String              | Byte 2 of DB100 as Char                         |
+| `DB42,INT3`               | `DB42.DBW3`            | Number (16-bit)     | Signed 16-bit number at byte 3 in DB42          |
+| `DB57,WORD4`              | `DB57.DBW4`            | Number (16-bit)     | Unsigned 16-bit number at byte 4 in DB57        |
+| `DB13,DINT5`              | `DB13.DBD5`            | Number (32-bit)     | Signed 32-bit number at byte 5 in DB13          |
+| `DB19,DWORD6`             | `DB19.DBD6`            | Number (32-bit)     | Unsigned 32-bit number at byte 6 in DB19        |
+| `DB21,REAL7`              | `DB21.DBD7`            | Floating Point (32) | Floating point number at byte 7 in DB21         |
+| `DB2,S7.10*`              | -                      | String              | String (length 10) starting at byte 7 in DB2    |
+| `I1.0`                    | `I1.0`                 | Boolean             | Bit 0 of byte 1 in input area                   |
+| `Q2.1`                    | `Q2.1`                 | Boolean             | Bit 1 of byte 2 in output area                  |
+| `M3.2`                    | `M3.2`                 | Boolean             | Bit 2 of byte 3 in memory area                  |
+| `IB4`                     | `IB4`                  | Number (Byte)       | Byte 4 (0-255) in input area                    |
+| `QB5`                     | `QB5`                  | Number (Byte)       | Byte 5 (0-255) in output area                   |
+| `MB6`                     | `MB6`                  | Number (Byte)       | Byte 6 (0-255) in memory area                   |
+| `IC7`                     | `IB7`                  | String              | Byte 7 of input area as Char                    |
+| `QC8`                     | `QB8`                  | String              | Byte 8 of output area as Char                   |
+| `MC9`                     | `MB9`                  | String              | Byte 9 of memory area as Char                   |
+| `II10`                    | `IW10`                 | Number (16-bit)     | Signed 16-bit number at byte 10 in input area   |
+| `QI12`                    | `QW12`                 | Number (16-bit)     | Signed 16-bit number at byte 12 in output area  |
+| `MI14`                    | `MW14`                 | Number (16-bit)     | Signed 16-bit number at byte 14 in memory area  |
+| `IW16`                    | `IW16`                 | Number (16-bit)     | Unsigned 16-bit number at byte 16 in input area |
+| `QW18`                    | `QW18`                 | Number (16-bit)     | Unsigned 16-bit number at byte 18 in output area|
+| `MW20`                    | `MW20`                 | Number (16-bit)     | Unsigned 16-bit number at byte 20 in memory area|
+| `IDI22`                   | `ID22`                 | Number (32-bit)     | Signed 32-bit number at byte 22 in input area   |
+| `QDI24`                   | `QD24`                 | Number (32-bit)     | Signed 32-bit number at byte 24 in output area  |
+| `MDI26`                   | `MD26`                 | Number (32-bit)     | Signed 32-bit number at byte 26 in memory area  |
+| `ID28`                    | `ID28`                 | Number (32-bit)     | Unsigned 32-bit number at byte 28 in input area |
+| `QD30`                    | `QD30`                 | Number (32-bit)     | Unsigned 32-bit number at byte 30 in output area|
+| `MD32`                    | `MD32`                 | Number (32-bit)     | Unsigned 32-bit number at byte 32 in memory area|
+| `IR34`                    | `IR34`                 | Floating Point      | Floating point number at byte 34 in input area |
+| `QR36`                    | `QR36`                 | Floating Point      | Floating point number at byte 36 in output area|
+| `MR38`                    | `MR38`                 | Floating Point      | Floating point number at byte 38 in memory area|
+| `DB1,DT0`                 | -                      | Date                | Timestamp in DATE_AND_TIME format              |
+| `DB1,DTZ10`               | -                      | Date                | Timestamp in DATE_AND_TIME format (UTC)        |
+| `DB2,DTL2`                | -                      | Date                | Timestamp in DTL format                         |
+| `DB2,DTLZ12`              | -                      | Date                | Timestamp in DTL format (UTC)                  |
+| `DB57,RWORD4`             | `DB57.DBW4`            | Number (16-bit)     | Unsigned 16-bit number, Little-Endian at byte 4|
+| `DB13,RDI5`               | `DB13.DBD5`            | Number (32-bit)     | Signed 32-bit number, Little-Endian at byte 5  |
+| `MRW20`                   | `MW20`                 | Number (16-bit)     | Unsigned 16-bit number, Little-Endian at byte 20|
+
+For example, consider that you have a ladder logic program in the TIA Portal with addresses like DB5.DBX0.0 and DB13.DBW4. You must adjust the address format slightly when you want to use these in the Node-RED S7 node. In Node-RED, DB5.DBX0.0 would be represented as DB5,X0.0 and DB13.DBW4 would be written as DB13,WORD4. Essentially, you look at the TIA Portal address, find the corresponding format in the Node-RED address column, and use that format in the S7 node configuration.
+
+If you wanted integrate Siemens LOGO, please refer to the node's [README](https://flows.nodered.org/node/node-red-contrib-s7), as the addressing differs.
+
+### Configuring the S7 Node to Connect to the PLC
+
+Now that you have all the necessary knowledge and setup, let's start by establishing a connection between Node-RED and your Siemens S7 PLC. The S7 node in Node-RED simplifies the process, making it easy to configure communication. Follow the steps below to connect and start interacting with your PLC
+
+1. Drag the S7 node onto the Node-RED canvas.
+2. Double-click on the S7 node and click on the "+" icon to add a PLC configuration.
+3. Select "Ethernet (ISO on TCP)" as the transport protocol, then enter your PLC's IP address. The default port (102) is used for S7 communication, so leave it unchanged.
+4. Set the Mode to "Rack," then enter the Rack ID and Slot ID. These values can be found in the TIA Portal under the Device View tab on your configured device.
+
+![Image showing window from where you will get the Rack No and Slot No](./images/showing-rack-and-slot.png){data-zoomable}
+_Image showing window from where you will get the Rack No and Slot No_
+
+5. Enter the Cycle Time (interval for communication with the PLC) and Timeout Duration (maximum time to wait for a response).
+6. Once done, switch to the Variables tab and add all the variables with the correct address and name you want to read or write.
+
+![Adding Variables into s7 node](./images/s7-config-variables.png){data-zoomable}
+_Adding Variables into s7 node_
+
+7. After adding the variables, click Add and then Done.
+8. Deploy the flow by clicking the top-right Deploy button. Once deployed, the connection status will be displayed at the bottom of the node. If connected successfully, it will show a green squre with "online" status.
+
+![Configuring S7 node for connection](./images/s7-connection-configuration.png){data-zoomable}
+_Configuring S7 node for connection_
+
+### Writing Data to the PLC
+
+Now that you’ve configured the connection, it’s time to use Node-RED to write data to the PLC to control light.
+
+1. Drag the s7-out node onto the canvas.
+2. Double-click on the node and select the variable to which you want to update or write a value.
+3. Select the PLC configuration that we have added.
+4. Click Done.
+
+![Configuring S7-out Node to write data to plc](./images/configuring-s7-out-node.png){data-zoomable}
+_Configuring S7-out Node to write data to plc_
+
+5. The node is now ready to write data to the PLC. You can use standard Node-RED nodes like Inject, Change, or Function to create a workflow that sends the data. Ensure the data type matches the configuration set in the PLC program. For example, in my ladder logic, I need to modify the status of individual open contacts, each with its own address, such as DB1.DBX0.0, DB1.DBX0.1, and DB1.DBX0.2, to control the tower lights. Setting these contacts to TRUE will turn on the red, yellow, and green lights, respectively. You can send the data using the nodes I’ve mentioned, or you can build a custom dashboard with [FlowFuse Dashboard](/platform/dashboard/) for easier interaction.
+
+6. Once your flow is set up and the s7-out node for each variable is configured, click Deploy in the top-right corner to activate the flow.
+
+<lite-youtube videoid="AilWMNPzP1Q" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
+
+In the video above, the dashboard interface is built to control the stack light. At the end of this article, I will provide the complete flow for you to download.
+
+If you're building a dashboard, keep in mind that while you can create it on Node-RED within the remote instance on FlowFuse Device Agent, you won’t be able to access it remotely across the editor tunnel. You can of course access it locally on the device or on the local LAN. For this demonstration, I wish to access the dashboard remotely across the internet and so I will create the dashboard in a hosted instance of Node-RED and use the FlowFuse Projects nodes to simply and securely pass the necessary values to and from the remote Node-RED instance. For more details on how to set this up, check out our article: [Exploring FlowFuse Project Nodes](/blog/2024/10/exploring-flowfuse-project-nodes/).
+
+### Reading Data from the PLC 
+
+Now that we’ve covered how to write data to your Siemens S7 PLC, let's move on to reading data from it. Node-RED makes it easy to retrieve important information such as the status of inputs, outputs, or internal memory. By pulling this data into your workflows or visualizing it on a dashboard, you can monitor key parameters in real time and gain valuable insights.
+
+However, before we dive in, it's important to consider that reading individual data points one by one in large-scale manufacturing systems can lead to delays. This approach may not be efficient, especially when dealing with a large number of data points. For more information on these challenges and potential solutions, you can refer to this article: [Modernize Your Legacy Industrial Data - Part 2](/blog/2023/09/modernize-your-legacy-industrial-data-part2/).
+
+To address this issue, you can optimize data retrieval by storing output status values in a single word or double word within the PLC. For our example, I have created a custom function in my program that assigns the output values to individual bits of the word. 
+
+![Ladder diagram showing a custom function that stores the status of outputs in a single word within the PLC.](./images/custom-function-storing-bits-in-word.png){data-zoomable}
+_Custom ladder diagram function storing output statuses in a single word for optimized data retrieval._
+
+There are several ways to implement this, and depending on your system’s needs, some methods may be more efficient than others. In this case, the output values are stored in a single word within the PLC, as shown in the ladder diagram above. This is not the only correct method—it's simply one approach that works for this particular scenario. Feel free to adapt or explore other methods that might better suit your setup. 
+
+Additionally, if the data you’re reading is mission-critical and you can't afford to lose any, consider using a FIFO stack or buffer in your PLC program. This method ensures that even if there is a network outage or computer problem, no data is lost as it will remain siting in the stack until your Node-RED is back on line and retrieves it.  This ensures no gaps or interruptions in your data and guarantees data integrity.
+
+Now, let’s begin reading the data from the PLC.
+
+1. Drag the `s7-in` node onto the canvas.
+2. Double-click on the node to open the configuration and select the appropriate PLC configuration from the list of available connections.
+3. Choose the appropriate mode based on your requirements. If you want to read only one variable, select "Single Variable Mode". In this mode, the "Variable" dropdown will allow you to select only a single variable at a time. If you need to read multiple variables, you can select "All Variables" mode, but be aware that the node might still process each request sequentially, depending on its internal workings (which is not fully documented). This can be inefficient when dealing with hundreds of variables.
+4. Choose the variable that corresponds to the word or double word containing all the data points you want to read. For example, if you’ve configured the word in the PLC as `DB.DBW2`, the format in the s7-in node will be `DB,WORD2`.
+5. Enable the "Emit only when value changes (diff)" option to ensure that the node only triggers when the value of the variable changes, reducing unnecessary reads and improving efficiency.
+6. Once your configuration is set, click "Done" and then deploy the flow to start reading data from the PLC.
+
+![Configuring S7-in Node to Read data from plc](./images/configuring-s7-in-node.png){data-zoomable}
+_Configuring S7-in Node to Read data from plc_
+
+You can add a "Debug" node to the `s7-in` node's output to verify that the data is being read correctly.
+
+Once you see the printed data, you might be surprised, or perhaps you already expected this: since the word data type we're reading is not directly available in Node.js or Node-RED, we'll receive it as an integer. But don't worry—you can convert it into the format that suits your needs using node-red-contrib-buffer-parser. In this integer scenario, you'll need to shift the bits or extract individual values to match your desired output, such as isolating specific bits to represent different statuses or control points. The flow provided at the end demonstrates the implementation of this conversion.
+
+Now that you have the desired format for your output data, you may want to build a dashboard interface with LEDs, gauges, or charts to monitor and visualize the data you've retrieved. You can use the FlowFuse Dashboard, as suggested earlier.
+
+The video below shows the updated dashboard interface used to monitor the stack light LED status:
+
+<lite-youtube videoid="Nlyk_BATKGE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
+
+Here is the flow you can import into your FlowFuse remote instance and deploy. Ensure that you have installed `node-red-contrib-s7` and `node-red-contrib-buffer-parser`. This flow includes S7 nodes for interacting with the S7 PLC and Project nodes for communicating with the FlowFuse hosted instance, where you will build the dashboard.
 
 {% renderFlow %}
-[{"id":"59887a8115c95eae","type":"tab","label":"Flow 1","disabled":false,"info":"","env":[]},{"id":"02c25e8a30f9379d","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"showPageTitle":true,"navigationStyle":"default","titleBarStyle":"default"},{"id":"cfb2ab9ff30660fc","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"density":"default","pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"d263574af6876c7a","type":"ui-page","name":"ESP32","ui":"02c25e8a30f9379d","path":"/page1","icon":"home","layout":"grid","theme":"cfb2ab9ff30660fc","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"3ae115ea7ede6827","type":"ui-group","name":"Group 1","page":"d263574af6876c7a","width":"6","height":"1","order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"def97b29f5f7baab","type":"mqtt-broker","name":"","broker":"broker.flowfuse.cloud","port":"1883","clientid":"","autoConnect":true,"usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closeRetain":"false","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","willMsg":{},"userProps":"","sessionExpiry":""},{"id":"5a9162986a34a4d6","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"ON","order":1,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"1","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"green","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":120,"wires":[["9239f8a7cca5c858"]]},{"id":"f9c194994d9491a8","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"OFF","order":2,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"2","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"red","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":160,"wires":[["9239f8a7cca5c858"]]},{"id":"9239f8a7cca5c858","type":"mqtt out","z":"59887a8115c95eae","name":"","topic":"/LedControl","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"def97b29f5f7baab","x":390,"y":140,"wires":[]}]
+[{"id":"0ffc8c2703b5e059","type":"group","z":"FFF0000000000001","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["061313277591a004","a8499bc2443f0bd9","2974dd47fda54b9c","4c009f6076f47eb6","f4378d1e7c268e1e","63abd67743263739"],"x":54,"y":99,"w":732,"h":202},{"id":"061313277591a004","type":"s7 out","z":"FFF0000000000001","g":"0ffc8c2703b5e059","endpoint":"f2f06ce027c97e4d","variable":"Button_1","name":"Button to Turn the RED Light ON","x":620,"y":140,"wires":[]},{"id":"a8499bc2443f0bd9","type":"s7 out","z":"FFF0000000000001","g":"0ffc8c2703b5e059","endpoint":"f2f06ce027c97e4d","variable":"Button_2","name":"Button to turn the Yellow light ON","x":620,"y":200,"wires":[]},{"id":"2974dd47fda54b9c","type":"s7 out","z":"FFF0000000000001","g":"0ffc8c2703b5e059","endpoint":"f2f06ce027c97e4d","variable":"Button_3","name":"Button to turn Green light  ON","x":610,"y":260,"wires":[]},{"id":"4c009f6076f47eb6","type":"project link in","z":"FFF0000000000001","g":"0ffc8c2703b5e059","name":"Project in node to control the red light","project":"all","broadcast":true,"topic":"light_control_red","x":230,"y":140,"wires":[["061313277591a004"]]},{"id":"f4378d1e7c268e1e","type":"project link in","z":"FFF0000000000001","g":"0ffc8c2703b5e059","name":"Project in node to control the yellow light","project":"all","broadcast":true,"topic":"light_control_yellow","x":240,"y":200,"wires":[["a8499bc2443f0bd9"]]},{"id":"63abd67743263739","type":"project link in","z":"FFF0000000000001","g":"0ffc8c2703b5e059","name":"Project in node to control the green light","project":"all","broadcast":true,"topic":"light_control_green","x":240,"y":260,"wires":[["2974dd47fda54b9c"]]},{"id":"f2f06ce027c97e4d","type":"s7 endpoint","transport":"iso-on-tcp","address":"192.168.1.6","port":"102","rack":"0","slot":"1","localtsaphi":"01","localtsaplo":"00","remotetsaphi":"01","remotetsaplo":"00","connmode":"rack-slot","adapter":"","busaddr":"2","cycletime":"1000","timeout":"2000","name":"S7 Connection Configuration","vartable":[{"addr":"DB1,X0.0","name":"Button_1"},{"addr":"DB1,X0.1","name":"Button_2"},{"addr":"DB1,X0.2","name":"Button_3"},{"addr":"DB1,WORD2","name":"LightStatus"}]},{"id":"23fd40630dbef712","type":"group","z":"FFF0000000000001","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["a45637418005d0e5","a8ea1622d1fad4ba","8d9a9dc4183a778e","d60a74a5430df7ae"],"x":54,"y":339,"w":972,"h":82},{"id":"a45637418005d0e5","type":"s7 in","z":"FFF0000000000001","g":"23fd40630dbef712","endpoint":"f2f06ce027c97e4d","mode":"single","variable":"LightStatus","diff":true,"name":"","x":150,"y":380,"wires":[["d60a74a5430df7ae"]]},{"id":"a8ea1622d1fad4ba","type":"project link out","z":"FFF0000000000001","g":"23fd40630dbef712","name":"project out node to send the light status","mode":"link","broadcast":true,"project":"c51f38c2-6c80-442a-a9e2-10ddd68fb606","topic":"light_status","x":840,"y":380,"wires":[]},{"id":"8d9a9dc4183a778e","type":"buffer-parser","z":"FFF0000000000001","g":"23fd40630dbef712","name":"","data":"payload","dataType":"msg","specification":"spec","specificationType":"ui","items":[{"type":"bool","name":"red","offset":0,"length":1,"offsetbit":0,"scale":"1","mask":""},{"type":"bool","name":"yellow","offset":0,"length":1,"offsetbit":1,"scale":"1","mask":""},{"type":"bool","name":"green","offset":0,"length":1,"offsetbit":2,"scale":"1","mask":""},{"type":"bool","name":"all","offset":0,"length":16,"offsetbit":0,"scale":"1","mask":""}],"swap1":"","swap2":"","swap3":"","swap1Type":"swap","swap2Type":"swap","swap3Type":"swap","msgProperty":"payload","msgPropertyType":"str","resultType":"keyvalue","resultTypeType":"return","multipleResult":false,"fanOutMultipleResult":false,"setTopic":true,"outputs":1,"x":530,"y":380,"wires":[["a8ea1622d1fad4ba"]]},{"id":"d60a74a5430df7ae","type":"buffer-maker","z":"FFF0000000000001","g":"23fd40630dbef712","name":"","specification":"spec","specificationType":"ui","items":[{"name":"1stword","type":"uint16le","length":1,"dataType":"msg","data":"payload"}],"swap1":"","swap2":"","swap3":"","swap1Type":"swap","swap2Type":"swap","swap3Type":"swap","msgProperty":"payload","msgPropertyType":"str","x":330,"y":380,"wires":[["8d9a9dc4183a778e"]]}]
 {% endrenderFlow %}
 
-Now, when you click either the "ON" or "OFF" button on the dashboard, it will send either 1 or 2 as the payload. The ESP32 will use this payload in its code to turn the LED on or off. To view the dashboard, switch to the Dashboard 2.0 tab on the right side and click the Open Dashboard button. The dashboard will look similar to the image below.
+Below is the flow that you can import and deploy into the hosted instance created on FlowFuse. With this flow, you'll have a dashboard to control and monitor the tower lights. Just make sure you have installed `@flowfuse/node-red-dashboard` and `@flowfuse/node-red-dashboard-2-ui-led`, and ensure the hosted instance is in the same FlowFuse team as your remote instance.
 
-![FlowFuse Dashboard Build to control the ESP32 LED](./images/dashboard2.png){data-zoomable}
-_FlowFuse Dashboard Build to control the ESP32 LED_
+{% renderFlow %}
+[{"id":"1f56099d53798b99","type":"group","z":"eb351e503901d04f","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["1e6a379c83bac6b4","f015125886fec5a6","76c696f160db3ca2","1974cfc417898151","9c503fe31081dc2f","9501e2eb7690a0b5"],"x":74,"y":79,"w":652,"h":202},{"id":"1e6a379c83bac6b4","type":"ui-button","z":"eb351e503901d04f","g":"1f56099d53798b99","group":"d4102809d229cb95","name":"","label":"YELLOW","order":5,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"","payloadType":"str","topic":"topic","topicType":"msg","buttonColor":"yellow","textColor":"","iconColor":"","enableClick":false,"enablePointerdown":true,"pointerdownPayload":"1","pointerdownPayloadType":"num","enablePointerup":true,"pointerupPayload":"0","pointerupPayloadType":"num","x":160,"y":180,"wires":[["1974cfc417898151"]]},{"id":"f015125886fec5a6","type":"ui-button","z":"eb351e503901d04f","g":"1f56099d53798b99","group":"d4102809d229cb95","name":"","label":"RED","order":4,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"","payloadType":"str","topic":"topic","topicType":"msg","buttonColor":"red","textColor":"","iconColor":"","enableClick":false,"enablePointerdown":true,"pointerdownPayload":"1","pointerdownPayloadType":"num","enablePointerup":true,"pointerupPayload":"0","pointerupPayloadType":"num","x":150,"y":120,"wires":[["9501e2eb7690a0b5"]]},{"id":"76c696f160db3ca2","type":"ui-button","z":"eb351e503901d04f","g":"1f56099d53798b99","group":"d4102809d229cb95","name":"","label":"GREEN","order":6,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"","payloadType":"str","topic":"topic","topicType":"msg","buttonColor":"green","textColor":"","iconColor":"","enableClick":false,"enablePointerdown":true,"pointerdownPayload":"1","pointerdownPayloadType":"num","enablePointerup":true,"pointerupPayload":"0","pointerupPayloadType":"num","x":160,"y":240,"wires":[["9c503fe31081dc2f"]]},{"id":"1974cfc417898151","type":"project link out","z":"eb351e503901d04f","g":"1f56099d53798b99","name":"Project out node to control the yellow light","mode":"link","broadcast":true,"project":"c51f38c2-6c80-442a-a9e2-10ddd68fb606","topic":"light_control_yellow","x":530,"y":180,"wires":[]},{"id":"9c503fe31081dc2f","type":"project link out","z":"eb351e503901d04f","g":"1f56099d53798b99","name":"Project out node to control the green light","mode":"link","broadcast":true,"project":"c51f38c2-6c80-442a-a9e2-10ddd68fb606","topic":"light_control_green","x":520,"y":240,"wires":[]},{"id":"9501e2eb7690a0b5","type":"project link out","z":"eb351e503901d04f","g":"1f56099d53798b99","name":"Project out node to control the red light","mode":"link","broadcast":true,"project":"c51f38c2-6c80-442a-a9e2-10ddd68fb606","topic":"light_control_red","x":520,"y":120,"wires":[]},{"id":"d4102809d229cb95","type":"ui-group","name":"Group 1","page":"62085b96f178f643","width":"3","height":1,"order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"62085b96f178f643","type":"ui-page","name":"Page 1","ui":"02c25e8a30f9379d","path":"/page1","icon":"home","layout":"notebook","theme":"f6f5e7ae33bf6878","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"02c25e8a30f9379d","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"showPageTitle":true,"navigationStyle":"default","titleBarStyle":"hidden"},{"id":"f6f5e7ae33bf6878","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094ce","bgPage":"#1a1a1a","groupBg":"#000000","groupOutline":"#000000"},"sizes":{"density":"default","pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"82cc6997fddd0b4b","type":"group","z":"eb351e503901d04f","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["d163a7ab23f7458f","20d211683534362b","b1477193956e591b","fb8801a4accc3c15","2f62948afcfde259","6966f129e718d20a","a5cecf8e8adf6eef"],"x":74,"y":299,"w":872,"h":202},{"id":"d163a7ab23f7458f","type":"ui-led","z":"eb351e503901d04f","g":"82cc6997fddd0b4b","name":"Status of RED light","group":"d4102809d229cb95","order":1,"width":"1","height":"3","label":"","labelPlacement":"left","labelAlignment":"left","states":[{"value":"true","valueType":"bool","color":"#ff0000"},{"value":"false","valueType":"bool","color":"#787878"}],"allowColorForValueInMessage":false,"shape":"circle","showBorder":true,"showGlow":true,"x":810,"y":340,"wires":[]},{"id":"20d211683534362b","type":"ui-led","z":"eb351e503901d04f","g":"82cc6997fddd0b4b","name":"Status of Yellow light","group":"d4102809d229cb95","order":2,"width":"1","height":"3","label":"","labelPlacement":"left","labelAlignment":"left","states":[{"value":"true","valueType":"bool","color":"#c8ff00"},{"value":"false","valueType":"bool","color":"#787878"}],"allowColorForValueInMessage":false,"shape":"circle","showBorder":true,"showGlow":true,"x":820,"y":400,"wires":[]},{"id":"b1477193956e591b","type":"ui-led","z":"eb351e503901d04f","g":"82cc6997fddd0b4b","name":"Status of Green light","group":"d4102809d229cb95","order":3,"width":"1","height":"3","label":"","labelPlacement":"left","labelAlignment":"left","states":[{"value":"true","valueType":"bool","color":"#41891a"},{"value":"false","valueType":"bool","color":"#787878"}],"allowColorForValueInMessage":false,"shape":"circle","showBorder":true,"showGlow":true,"x":820,"y":460,"wires":[]},{"id":"fb8801a4accc3c15","type":"change","z":"eb351e503901d04f","g":"82cc6997fddd0b4b","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.red","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":600,"y":340,"wires":[["d163a7ab23f7458f"]]},{"id":"2f62948afcfde259","type":"change","z":"eb351e503901d04f","g":"82cc6997fddd0b4b","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.yellow","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":600,"y":400,"wires":[["20d211683534362b"]]},{"id":"6966f129e718d20a","type":"change","z":"eb351e503901d04f","g":"82cc6997fddd0b4b","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload.green","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":600,"y":460,"wires":[["b1477193956e591b"]]},{"id":"a5cecf8e8adf6eef","type":"project link in","z":"eb351e503901d04f","g":"82cc6997fddd0b4b","name":"project in node to receive the light status","project":"all","broadcast":true,"topic":"light_status","x":260,"y":400,"wires":[["fb8801a4accc3c15","2f62948afcfde259","6966f129e718d20a"]]}]
+{% endrenderFlow %}
 
-### Step 4: Programming ESP32 to receive commands from MQTT and Control LED
+## Troubleshooting 
 
-Now, let's move on to the final step. Before proceeding, make sure your ESP32 is **connected to your laptop or computer via USB***. The USB connection is essential for uploading the code (sketch) to the ESP32, which will enable it to connect to the internet and communicate with the MQTT broker.
-The ESP32 will subscribe to the MQTT topic we configured earlier (e.g., /LEDControl). Based on the received payload (1 or 2), it will control the LED accordingly — turning it on or off.
+When you try to establish a connection with the PLC, you may encounter the following error. This error occurs because your device has established the connection but is unable to communicate. To resolve this issue, ensure that you have configured all the settings mentioned in the prerequisites. If the problem persists, it could be because your PLC and the device running Node-RED are on different networks.
 
-**Setting up Arduino IDE:**
+!["Error: This service is not implemented on the modeul or frame error was reported"](./images/error.png){data-zoomable}
+_"Error: This service is not implemented on the modeul or frame error was reported"_
 
-1. Open the Arduino IDE on your computer.
-2. Ensure you have selected the correct board and port in the Tools menu.
-3. Install the necessary library:
-4. Go to Tools > "Manage Libraries".
-5. Search for and install the "EspMQTTClient" library by Patrick Lapointe.
-6. The library installation will prompt you to install its dependencies—ensure that you tick that option and proceed to install.
+Make sure the IP addresses of your device and PLC are in the same subnet. If the PLC is connected to the internet via a router, all devices (PLC, Node-RED device, and router) should have IP addresses within the same subnet. For example, if your PLC has the address 192.168.1.1, ensure that the other devices have IP addresses in the range 192.168.1.x.
 
-**Code for ESP32:**
+## Conclusion 
 
-1. Copy the following code into the Arduino IDE:
+Integrating Siemens S7 PLCs with Node-RED opens up powerful automation possibilities with minimal complexity. By following the steps outlined in this guide, you can easily connect your PLC to Node-RED, control devices, and visualize real-time data on dashboards. Whether you're writing data to control outputs or reading sensor values, Node-RED offers a flexible, user-friendly platform for industrial automation.
 
-```cpp
-#if defined(ESP32)
-#include <WiFi.h>
-#elif defined(ESP8266)
-#include <ESP8266WiFi.h>
-#endif
-
-#include <PubSubClient.h>
-
-#define LedPin 2 // ESP32 built-in LED pin
-
-// WiFi and MQTT settings
-const char* ssid = ""; // Change this to your WiFi SSID
-const char* password = ""; // Change this to your WiFi password
-const char* mqtt_server = "broker.flowfuse.cloud"; // FlowFuse MQTT broker server
-
-// MQTT client credentials
-const char* mqtt_client_id = ""; // Replace with your MQTT client ID
-const char* mqtt_username = ""; // Replace with your MQTT username
-const char* mqtt_password = ""; // Replace with your MQTT password
-
-WiFiClient espClient;
-PubSubClient client(espClient);
-
-// Function to connect to WiFi
-void setup_wifi() {
-    delay(10);
-    Serial.println();
-    Serial.print("Connecting to ");
-    Serial.print(ssid);
-    WiFi.begin(ssid, password);
-
-    while(WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
- }
-
-    Serial.println("\nWiFi connected");
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
-}
-
-// Callback function to handle messages from subscribed topics
-void callback(char* topic, byte* payload, unsigned int length) {
-
- String msg;
-    for (int i = 0; i < length; i++) {
- msg += (char)payload[i];
- }
-
- // Control LED based on message
-    if (msg == "1") {
-        digitalWrite(LedPin, HIGH); // Turn LED on
- }
-    else if (msg == "2") {
-        digitalWrite(LedPin, LOW); // Turn LED off
- }
-}
-
-// Function to connect to MQTT broker
-void reconnect() {
-    while (!client.connected()) {
-        Serial.println("Attempting MQTT connection...");
-
- // Connect to MQTT broker with the client ID, username, and password
-        if (client.connect(mqtt_client_id, mqtt_username, mqtt_password)) {
-            Serial.println("Connected to MQTT broker");
-            client.subscribe("/LedControl");
- }
-        else {
-            Serial.print("Failed, rc=");
-            Serial.print(client.state());
-            Serial.println(" trying again in 5 seconds");
-            delay(5000);
- }
- }
-}
-
-void setup() {
-    Serial.begin(115200);
-    pinMode(LedPin, OUTPUT);
-    setup_wifi();
-    client.setServer(mqtt_server, 1883);
-    client.setCallback(callback);
-}
-
-void loop() {
-    if (!client.connected()) {
-        reconnect();
- }
-    client.loop();
-}
-```
-
-2. Replace the placeholder values in the code: SSID (your Wi-Fi network's SSID), Wi-Fi Password (your Wi-Fi network's password), MQTT Client ID (the MQTT client ID you generated for esp32), MQTT Username and Password (the MQTT credentials you created).
-3. After you've made these changes, click "Upload" in the Arduino IDE to upload the code to your ESP32.
-4. Once the upload is complete, open the Serial Monitor (set the baud rate to 115200) to monitor the output.
-
-If everything is set up correctly, you should see the output in the Serial Monitor as shown in the image.
-
-![Serial monitor displaying the result when everything is set up correctly.](./images/serial-monitor.png){data-zoomable} 
-_Serial monitor displays the result when everything is set up correctly._
-
-Once you verify the setup, you can unplug the USB from the computer and connect the ESP32 to a power adapter. With this, your ESP32 is now powered and connected to Wi-Fi (make sure your device is on the same Wi-Fi network as the one configured in the code), allowing you to control the LED from anywhere in the world via the MQTT commands sent through Node-RED.
-
-### Troubleshooting
-
-1. **Can't Upload Code to ESP32**
-    - Solution: Make sure the correct board and port are selected in the Arduino IDE.
-Check Tools > Board for the right ESP32 model and Tools > Port for the correct connection.
-If the port is missing, [Download](https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads) and reinstall the CP210x USB drivers.
-
-2. **ESP32 Keeps Disconnecting from MQTT**
-- Solution: Make sure both the ESP32 and Node-RED have unique MQTT client IDs.
-If both devices share the same client ID, they will conflict and cause disconnections.
-
-3. **ESP32 Doesn’t Respond to Commands (LED Not Turning On/Off)**
-    - Solution: Verify the topic in the ESP32 code matches the one in Node-RED (e.g., /LedControl). If it still doesn't work, try rebooting your ESP32.
-
-## Conclusion
-
-In this tutorial, we successfully connected the ESP32 to Node-RED using MQTT, enabling remote control of an LED via a FlowFuse dashboard. This simple IoT setup demonstrates how easy it is to interact with devices using MQTT and Node-RED, offering a flexible and scalable solution for future projects. With the ESP32, Node-RED, and FlowFuse, you can easily expand and integrate more devices into your IoT system.
+Beyond Siemens S7, FlowFuse connects Allen-Bradley, Omron, Beckhoff, and any Modbus or OPC UA-enabled PLC to MQTT, cloud, and enterprise systems. See the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
