@@ -69,9 +69,8 @@ Most of this you will not see directly, but the platform should feel more respon
 ## What else is new?
 
 - **Custom CA certificates** are now documented for environments that need them.
-- **Single SSO provider redirect** — if your team has exactly one SSO provider configured, login redirects straight to it instead of showing a provider picker (a customer request).
-- **Tailwind 4 upgrade and UI polish** — we upgraded the platform to Tailwind 4 and fixed a batch of layout and styling inconsistencies that came with it.
-- **Smaller fixes** — custom packages with uppercase names no longer break pipeline deploys, CSP no longer blocks `wss://` connections to MQTT brokers, and we tightened backend response schemas so generated TypeScript types are accurate.
+- **Tailwind 4 upgrade and UI polish**: we upgraded the platform to Tailwind 4 and fixed a batch of layout and styling inconsistencies that came with it.
+- **Smaller fixes**: custom packages with uppercase names no longer break pipeline deploys, CSP no longer blocks `wss://` connections to MQTT brokers, and we tightened backend response schemas so generated TypeScript types are accurate.
 
 ## A note on this release
 
