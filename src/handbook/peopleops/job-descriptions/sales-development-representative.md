@@ -7,13 +7,13 @@ navGroup: Job Descriptions
 
 ## Job Description
 
-We are hiring our first SDR at FlowFuse — a blank-slate, build-it-yourself opportunity for someone who is energised by that kind of challenge.
+We are hiring our first SDR at FlowFuse. This is an early-stage role where you will help shaping how we handle inbound and outbound sales development. 
 
-There is no existing SDR playbook. No inherited cadences. No handed-down process to maintain. What exists is a growing pipeline of inbound interest, a lean and high-performing sales team, and the expectation that you will figure out — fast — what works and do more of it.
+We don't have an established SDR process or playbook yet. Part of this role is helping us figure out what works and making it repeatable. We already have a steady flow of inbound interest and a small sales team. We need someone who can follow up consistently, learn quickly, and improve the process over time.
 
-Your mandate is broad by design: work leads. Nurture them. Find the approaches that move conversations forward and double down on those. Drop what doesn't. Move fast. Learn faster. Whether that is relentless inbound follow-up, creative outbound sequences, personalised video messages, or something we haven't thought of yet — the right answer is whatever produces results.
+Your job is simple in principle: work leads and move conversations forward. Nurture them. Find the approaches that move conversations forward and double down on those. Drop what doesn't. Move fast. Learn faster. That could mean fast inbound follow-up, testing outbound outreach, trying different messaging styles, or experimenting with new approaches.
 
-[Results](/handbook/company/values/#-results) and [Iterative Improvement](/handbook/company/values/#-iterative-improvement) are two of FlowFuse's core values. This role is where both are most visible. We expect you to ship your first outreach on day two, measure it by day five, and iterate from there. You will own the SDR and BDR playbook — not inherit it. That means writing it, testing it, revising it, and making it repeatable.
+[Results](/handbook/company/values/#-results) and [Iterative Improvement](/handbook/company/values/#-iterative-improvement) are two of FlowFuse's core values. This role is where both are most visible. We expect you to start reaching out to leads early, learn from the responses, and improve quickly. You will own the SDR and BDR playbook, not inherit it. That means writing it, testing it, revising it, and making it repeatable.
 
 **What you will own:**
 
@@ -31,14 +31,14 @@ We are hiring for inbound MQL follow-up first because that is the clearest const
 
 ## Who We Are
 
-We work hard and we ship things. Results matter more than hours, and learning fast beats waiting for perfect. Nobody is going to hand you a task list here — you're expected to find the work, jump in, and figure it out. If something doesn't work, say so, change course, and move on. No drama, no ego. Just a small team building something real in a space that most software companies ignore, having a lot of fun doing it. If you've ever thrived in an environment where everyone just figures it out, you'll fit right in.
+We move quickly and focus on getting useful work done. We care more about outcomes than appearances, and we prefer testing, iterating and learning over over-planning. This is a role for someone comfortable working independently and taking initiative without needing constant direction. If something isn't working, we expect people to speak up and adjust quickly. Just a small team building something real in a space that most software companies ignore, having a lot of fun doing it. If you've ever thrived in an environment where everyone just figures it out, you'll fit right in.
 
 ## Skills
 
 * **Builder mentality**: Excited to work without a blueprint. You see an undefined process as an opportunity, not a gap.
 * **AI fluency:** Comfortable using AI tools to accelerate your work — or actively developing that skill. This isn't optional, it's how we operate.
-* **Bias for action**: You send the first email before the playbook is finished. You learn by doing, not by planning.
-* **Inbound conversion instincts**: Speed, persistence, and follow-up quality over raw volume.
+* **Comfortable taking initiative and trying things quickly**: You send the first email before the playbook is finished. You learn by doing, not by planning.
+* **Strong follow-up habits**: Speed, persistence, and follow-up quality over raw volume.
 * **Iterative discipline**: You track what you test, draw conclusions quickly, and change course without drama.
 * **Communication**: Strong written and verbal skills. You can engage both a plant engineer and a CTO without switching decks.
 * **Technical curiosity**: Comfortable learning and talking about Node-RED, industrial automation, IoT, and edge deployments.
@@ -47,9 +47,9 @@ We work hard and we ship things. Results matter more than hours, and learning fa
 ## 90-Day Plan
 
 **Week 1–4**
-* Immerse yourself in FlowFuse's product, market, and current GTM motion — specifically how inbound demand currently does (and does not) become meetings
+* Learn how FlowFuse's product, customers, and current sales process work, specifically how inbound demand currently does (and does not) become meetings
 * Learn the MQL definition, current routing logic, and any existing follow-up patterns
-* By week 2: send your first outreach sequences — no waiting for a perfect playbook
+* By week 2: send your first outreach sequences. Start testing outreach early rather than over-planning
 * Meet with sales, marketing, and customer success to understand the full lead lifecycle
 * Begin logging observations on where leads stall and why
 
@@ -63,11 +63,11 @@ We work hard and we ship things. Results matter more than hours, and learning fa
 * Operate the inbound SDR motion independently with clear daily and weekly discipline
 * Publish a first version of the SDR playbook — even if it is a draft — and treat it as a living document
 * Provide structured feedback to marketing on lead quality and messaging gaps
-* Begin scoping the outbound motion: target account criteria, sequencing approach, first tests
+* Start exploring what an outbound process could look like: target account criteria, sequencing approach, first tests
 
 ## Hiring Plan
 
-* **Initial Screening**: Resume and cover letter review for communication quality, early-stage GTM experience, and evidence of a builder or tester mindset
+* **Initial Screening**: Resume and cover letter review for communication quality, early-stage GTM experience, and evidence of initiative and willingness to experiment
 * **First Interview**: Phone or video conversation on execution style, iteration approach, and mindset in ambiguous environments
 * **Second Interview**: In-depth discussion with the hiring manager and relevant team members on process thinking, collaboration with marketing and AEs, and what "building a playbook" means to you
 * **STAR Interview (45 mins)**: Behavioral interview focused on values alignment — ownership, iteration, learning from failure, and results over perfection — conducted by the CEO
@@ -79,7 +79,7 @@ We work hard and we ship things. Results matter more than hours, and learning fa
 
 Prepare a 10-minute roleplay or presentation for a hypothetical inbound lead who has requested contact after engaging with FlowFuse content. Assume the prospect is interested in managing Node-RED instances across distributed industrial environments but has not yet committed to a meeting.
 
-Your goal: identify the best follow-up approach for this lead, ask the right qualifying questions, handle a first layer of objections, and move toward a booked discovery meeting.
+Your goal: identify the best follow-up approach for this lead, ask the right qualifying questions, respond to initial objections or concerns, and move toward a booked discovery meeting.
 
 Please spend no more than 90 minutes on preparation.
 
