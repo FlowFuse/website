@@ -40,6 +40,7 @@ When using AI internally:
 2. Use internal, synthetic, or publicly available data for experimentation whenever possible.
 3. Review AI-generated output before relying on it or including it in the product.
 4. Do not use AI tools to bypass security controls, access restrictions, or approval processes.
+5. Never give credentials to AI tools or agents. This covers Personal Access Tokens, API keys, passwords, and any other secret, whether you're pasting it into a chat or handing it to an agent to act with. Admin-scoped FlowFuse Cloud and Dedicated Instance PATs are the highest-risk case: an agent holding one can take destructive, account-wide actions.
 
 Apply the same data protection, security, and review standards to internal AI usage as to AI functionality shipped within the product.
 
