@@ -1,9 +1,9 @@
 ---
-title: How to Deploy a Basic OPC-UA Server in Node-RED - Part 1
+title: "How to Deploy a Basic OPC-UA Server in Node-RED - Part 1 (2026)"
 subtitle: OPC-UA Server Information Modeling in Node-RED
 description: Introduction to OPC-UA and how to deploy a Node-RED server flow.
-date: 2023-07-13 
-lastUpdated: 2025-07-23
+lastUpdated: 2026-06-03
+date: 2023-07-13
 authors: ["richard-meyer"]
 image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
 keywords: opc ua server, opc ua server free, opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, node red opcua, node-red opcua, opcua node red, opcua nodered
@@ -12,6 +12,55 @@ tags:
    - node-red
    - opcua
    - how-to
+cta:
+  type: sign-up
+  title: "Run Your OPC UA Node-RED Server in the Cloud"
+  description: "Sign up for FlowFuse to deploy, manage, and scale your Node-RED OPC UA server flows securely in the cloud with built-in DevOps pipelines."
+meta:
+  howto:
+    name: "How to Deploy a Basic OPC UA Server in Node-RED"
+    description: "Learn the OPC UA information model and deploy a working OPC UA server flow in Node-RED using the node-red-contrib-opcua-server package."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "node-red-contrib-opcua-server"
+      - "Prosys OPC UA Browser"
+    steps:
+      - name: "Understand OPC UA vs fieldbus protocols"
+        text: "Review the differences between fieldbus data models and the OPC UA information model, which represents devices as structured node objects in a folder hierarchy."
+        url: "fieldbus-model-vs-opc-ua-information-model"
+      - name: "Deploy the example OPC UA server flow"
+        text: "Import and deploy the example compact server flow from the node-red-contrib-opcua-server GitHub repository into your Node-RED instance."
+        url: "deploying-an-example-opc-ua-server-in-node-red"
+      - name: "Review the inject nodes and flow context variables"
+        text: "Examine the inject nodes that populate isoInput and isoOutput flow context variables with random float values every second to simulate live device data."
+        url: "deploying-an-example-opc-ua-server-in-node-red"
+      - name: "Configure the Compact Server node"
+        text: "Open the Compact Server node properties, set the port, review security settings (allow anonymous for testing), and define the OPC UA address space using the node-opcua SDK."
+        url: "deploying-an-example-opc-ua-server-in-node-red"
+      - name: "Set the Discovery endpoint URL"
+        text: "On the Discovery tab of the Compact Server node, enter the endpoint URL in the format opc.tcp://<address>:port, then deploy the flow and confirm the server shows as active."
+        url: "deploying-an-example-opc-ua-server-in-node-red"
+      - name: "Connect with Prosys OPC UA Browser"
+        text: "Download the free Prosys OPC UA Browser, enter the server endpoint URL, connect with anonymous security, and browse the address space to verify the published nodes."
+        url: "connect-to-example-opc-server-using-opc-ua-browser"
+  faq:
+    - question: "What is OPC UA and why is it used in industrial automation?"
+      answer: "OPC UA (Open Platform Communications Unified Architecture) is an open, platform-independent communication framework widely used in industrial automation and Industry 4.0. It enables secure, structured data exchange across the entire automation pyramid from field devices to ERP systems."
+    - question: "What is the OPC UA information model?"
+      answer: "The OPC UA information model represents automation data as structured node objects (rather than raw register values), organized in a folder hierarchy within a server address space. Devices can be described as objects with attributes like raw values, fault flags, and alarm setpoints."
+    - question: "Which Node-RED package is used to create an OPC UA server?"
+      answer: "The node-red-contrib-opcua-server package provides a compact server node that focuses exclusively on OPC UA server functionality with fewer dependencies than the full node-red-contrib-opcua package."
+    - question: "How do I allow anonymous access to my OPC UA server in Node-RED?"
+      answer: "Open the Compact Server node properties, navigate to the Security tab, and ensure Allow Anonymous is enabled. This is suitable for testing but should be disabled in production environments."
+    - question: "What format does the OPC UA endpoint URL use?"
+      answer: "The endpoint URL follows the format opc.tcp://<address>:port. The default port for node-red-contrib-opcua-server is 54845, and the address is the IP address or hostname of the Node-RED instance."
+    - question: "How do OPC UA views differ from the default folder structure?"
+      answer: "OPC UA views allow you to define custom hierarchies that OPC clients can browse as an alternative to the default folder structure, making it easier to organize and expose device data in a meaningful way."
+    - question: "Can OPC UA be used for real-time communication at the device level?"
+      answer: "With the inclusion of Time Sensitive Networking (TSN) into the OPC UA technology stack, OPC UA can feasibly be used for real-time communication all the way down to the device level, not just at the SCADA level and above."
+    - question: "How do I verify my Node-RED OPC UA server is working?"
+      answer: "After deploying the flow, the Compact Server node should display active. You can then connect with a free OPC UA client such as the Prosys OPC UA Browser to browse the address space and verify nodes are publishing the expected values."
 tldr: "This first installment in an OPC UA series explains the OPC UA information model how devices are represented as structured node objects rather than raw register values and walks through deploying a working OPC UA server flow in Node-RED using the node-red-contrib-opcua package. Understanding the information model and address-space hierarchy is the key prerequisite before building OPC UA clients or integrations."
 ---
 

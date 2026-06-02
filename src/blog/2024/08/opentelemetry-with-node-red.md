@@ -1,20 +1,60 @@
 ---
-title: Monitoring and Optimizing Node-RED Flows with Open Telemetry.
+title: "Monitoring and Optimizing Node-RED Flows with Open Telemetry (2026)"
 subtitle: Integrating Open Telemetry with Node-RED for Efficient Distributed Tracing
 description: Learn to integrate Open Telemetry with Node-RED to track and optimize flow performance.
+lastUpdated: 2026-06-03
 date: 2024-08-15
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/opentelemetry-with-node-red.png
-keywords: nodered opentelemetry node opentelemetry, opentelemetry nodejs example, opentelemetry node, open telemetry nodejs
+keywords: nodered opentelemetry node opentelemetry, opentelemetry nodejs example, opentelemetry node, open telemetry nodejs, node-red distributed tracing, node-red performance monitoring, opentelemetry jaeger node-red
 tags:
    - post
    - node-red
    - node-red tips
+   - how-to
 cta:
   type: sign-up
   title: Manage and Monitor Node-RED at Scale
   description: FlowFuse gives you centralized deployment, team collaboration, role-based access control, and snapshot recovery — everything you need to keep your Node-RED flows running reliably in production.
+meta:
+  howto:
+    name: "How to Monitor Node-RED Flows with OpenTelemetry"
+    description: "Learn how to install the node-red-contrib-opentelemetry module, configure an OTEL node with a Jaeger exporter, and use distributed tracing to identify and fix performance bottlenecks in Node-RED flows."
+    totalTime: "PT25M"
+    tool:
+      - "Node-RED"
+      - "node-red-contrib-opentelemetry"
+      - "Jaeger"
+      - "OpenTelemetry"
+    steps:
+      - name: "Understand distributed tracing and OpenTelemetry"
+        text: "Learn what distributed tracing is, how OpenTelemetry creates spans for each message hop in a Node-RED flow, and why it helps identify latency bottlenecks."
+        url: "what-is-distributed-tracing-and-how-does-open-telemetry-help"
+      - name: "Install the node-red-contrib-opentelemetry module"
+        text: "Install node-red-contrib-opentelemetry via the Node-RED Palette Manager, and set up a Jaeger exporter as the trace backend."
+        url: "prerequisite"
+      - name: "Configure the OTEL node in Node-RED"
+        text: "Drag an OTEL node onto the canvas, set the exporter URL, service name, prefix, ignore list, propagate list, and timeout to begin collecting trace data."
+        url: "setting-open-telemetry-in-node-red"
+      - name: "Monitor performance using the Jaeger web UI"
+        text: "Open the Jaeger UI at http://localhost:16686, search for your service, inspect individual traces, and identify which nodes contribute the most latency."
+        url: "monitoring-performance-using-the-exporter-web-ui"
+  faq:
+    - question: "What is OpenTelemetry and why use it with Node-RED?"
+      answer: "OpenTelemetry is an open-source observability framework that collects traces, metrics, and logs from software systems. In Node-RED it creates spans for every message transition between nodes, giving you a precise timeline of where delays occur in your flows."
+    - question: "Which Node-RED module enables OpenTelemetry tracing?"
+      answer: "The node-red-contrib-opentelemetry module adds an OTEL node to your palette. Once configured with an exporter endpoint, it automatically instruments all message flows and sends trace data to your chosen backend such as Jaeger or Zipkin."
+    - question: "What is a span in the context of Node-RED and OpenTelemetry?"
+      answer: "A span is a timed unit of work representing a single message transition from one node to another. Spans are linked to form a trace that shows the full path and duration of a message as it moves through the flow."
+    - question: "Can I exclude certain nodes from OpenTelemetry tracing?"
+      answer: "Yes. In the OTEL node configuration, use the Ignore field to list node names that should be excluded from tracing. This is useful for utility nodes that do not affect latency measurements."
+    - question: "What exporter backends does OpenTelemetry support for Node-RED?"
+      answer: "OpenTelemetry supports multiple exporter backends including Jaeger, Zipkin, and any OTLP-compatible collector. For this guide Jaeger is used, accessible by default at http://localhost:16686."
+    - question: "How do I propagate trace context to external services from Node-RED?"
+      answer: "In the OTEL node configuration, add node names to the Propagate field. Those nodes will forward trace headers to external HTTP services or other downstream components, maintaining trace continuity across system boundaries."
+    - question: "Can I monitor Node-RED flows running in production remotely?"
+      answer: "Yes. By deploying the OpenTelemetry exporter on a remote server and pointing the OTEL node's exporter URL to it, you can collect and view traces from production Node-RED instances running anywhere."
+tldr: "This guide explains how to integrate OpenTelemetry with Node-RED using the node-red-contrib-opentelemetry module to perform distributed tracing. By connecting to a Jaeger exporter, you can inspect per-node latency across your flows, pinpoint bottlenecks, and verify that fixes have the intended effect — reducing a 2-second delay to just 8 milliseconds in the worked example."
 ---
 
 Have you ever found yourself frustrated by unexpected delays in your Node-RED flows, wondering where the bottlenecks are hiding? Even small latency issues can have a big impact on your system's performance. That's where Open Telemetry comes in. With its powerful distributed tracing capabilities, you can finally take control and get a clear view of how your flows are performing in real time.
