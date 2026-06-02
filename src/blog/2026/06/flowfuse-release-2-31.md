@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.31: Agentic Development Leaves Soft Launch, Reaches Remote Instances and Self-Hosted"
-subtitle: "FlowFuse Expert can now build your application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and per-instance AI controls, dark mode, and real-time platform updates."
-description: "FlowFuse 2.31 takes agentic development out of soft launch and extends it to Remote Instances and FlowFuse Self-Hosted Enterprise, adds granular AI opt-out controls, dark mode, and real-time platform updates over MQTT."
+title: "FlowFuse 2.31: Agentic Development Now in Open Beta, FlowFuse Expert Builds Your Industrial App"
+subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and per-instance AI controls, dark mode, and real-time platform updates."
+description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and per-instance AI controls, an app-wide dark mode, and real-time platform updates."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 # image: /blog/2026/06/images/flowfuse-release-2-31.png  # add once the art request asset lands; the file is absent now and 11ty's image step errors on it, so it is omitted (falls back to the default blog tile)
@@ -13,29 +13,29 @@ release: "2.31"
 # features: block intentionally commented out until featureCatalog wiring is done.
 # Wire these once eng authors the changelog entries and product tiering is finalized:
 #   - id: ff-expert-application-building   (update existing entry: add 2.31 changelog + self-hosted enterprise)
-#     heading: "Agentic Development Leaves Soft Launch"
+#     heading: "Let FlowFuse Expert build your industrial application"
 #   - id: ai-opt-out                       (new entry; changelog flowfuse#7333; tiering TBD)
 #     heading: "Decide Where AI Runs"
 #   - id: dark-mode                        (new entry; changelog flowfuse#7359)
 #     heading: "Dark Mode"
 #   - id: realtime-platform-updates        (new entry)
 #     heading: "Real-Time Platform Updates"
-tldr: "FlowFuse 2.31 ends the soft launch of agentic development: FlowFuse Expert now builds applications on both Hosted and Remote Instances, and reaches FlowFuse Self-Hosted Enterprise for the first time. Admins get per-team and per-instance control over AI, the editor gets a dark mode, and instance and team status update live without a refresh. This is a foundational release, with a lot of the work happening under the hood."
+tldr: "In FlowFuse 2.31 you describe what you want and FlowFuse Expert builds your industrial application for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. You also get per-team and per-instance control over AI, an app-wide dark mode, and instance and team status that updates live. This is a foundational release, with a lot of the work happening under the hood."
 ---
 
-FlowFuse 2.31 takes agentic development out of soft launch. FlowFuse Expert can now build your application directly on both Hosted and Remote Instances, and on FlowFuse Self-Hosted (Enterprise) for the first time, not just FlowFuse Cloud. Alongside that, you get granular control over where AI runs, a dark mode for the platform, and platform status that updates in real time.
+With FlowFuse 2.31 you describe what you want and FlowFuse Expert builds it on your Node-RED workspace for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. Alongside that, you get granular control over where AI runs, an app-wide dark mode, and platform status that updates in real time.
 
 <!--more-->
 
-## Agentic Development Leaves Soft Launch {#expert-agentic-ga}
+## Let FlowFuse Expert build your industrial application {#expert-agentic-ga}
 
 *FlowFuse Expert is our integrated AI assistant across FlowFuse's website, platform, and the immersive Node-RED editor.*
 
 In 2.30 we put agentic application building into soft launch. The idea is simple: tell FlowFuse Expert what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and it assembles the flow on your workspace for you. Until now you had to request access while we proved it out.
 
-That phase is over. With 2.31, agentic development becomes generally available as an open beta, on FlowFuse Cloud and for Self-Hosted Enterprise. No more requesting access: on FlowFuse Cloud it is switched on for your team, and Self-Hosted Enterprise customers can enable it with a small configuration change (your customer success contact can walk you through it). We are keeping the beta label on while we keep refining it.
+That phase is over. With 2.31, agentic development opens up as an open beta, on FlowFuse Cloud and for Self-Hosted Enterprise. No more requesting access: on FlowFuse Cloud it is switched on for your team, and Self-Hosted Enterprise customers can enable it with a small configuration change (your customer success contact can walk you through it). We are keeping the beta label on while we keep refining it.
 
-On top of that, we expanded where agentic development runs. It used to work only on Hosted Instances, the Node-RED that FlowFuse runs for you. In 2.31 it works on Remote Instances too, the ones running on your own hardware through the device agent, so you get the same build-it-for-me experience wherever your instance lives.
+You can now use it on Remote Instances as well as Hosted Instances. Until now agentic development was limited to Hosted Instances. In 2.31 it also works on Remote Instances, so you get the same build-it-for-me experience across both instance types.
 
 ## Decide Where AI Runs {#ai-opt-out}
 
@@ -45,11 +45,11 @@ Not every team wants AI on, and not every instance should have it. 2.31 makes th
 - **Per-instance opt-out** on Self-Hosted Enterprise, for cases where a specific instance should stay AI-free.
 - **Opt-in for Self-Hosted.** AI is not enabled by default for self-hosted clients. You turn it on when you want it, rather than having it forced on.
 
-This gives admins a clear control surface, and it lets us keep iterating on AI without changing the experience for teams that have opted out.
+This gives admins clear control over where AI runs, team by team and instance by instance.
 
 ## Dark Mode {#dark-mode}
 
-The platform now has a dark mode. Easier on the eyes for long sessions in the editor and across the dashboard, and it follows the look you would expect.
+FlowFuse now has an app-wide dark mode. Easier on the eyes for long sessions, and your choice is remembered in your browser.
 
 <!-- TODO: screenshot of dark mode editor -->
 
@@ -66,8 +66,7 @@ Under the hood we moved from periodic polling to a push-based connection, which 
 ## What else is new?
 
 - **Custom CA certificates** are now documented for environments that need them.
-- **Tailwind 4 upgrade and UI polish**: we upgraded the platform to Tailwind 4 and fixed a batch of layout and styling inconsistencies that came with it.
-- **Smaller fixes**: custom packages with uppercase names no longer break pipeline deploys, CSP no longer blocks `wss://` connections to MQTT brokers, and we tightened backend response schemas so generated TypeScript types are accurate.
+- **Smaller fixes**: secure (`wss://`) connections to your MQTT broker now work from the editor, and custom packages with uppercase names no longer break pipeline deploys.
 
 ## Fresh off our team off-site in Greece
 
