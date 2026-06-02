@@ -20,7 +20,7 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', 'nuxt-link-checker'],
+    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio'],
 
     linkChecker: {
         failOnError: true,
