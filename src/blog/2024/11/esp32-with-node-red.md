@@ -1,9 +1,9 @@
 ---
-title: "How to Connect an ESP32 to Node-RED Using MQTT (2026)"
+title: "Interacting with ESP32 Using Node-RED and MQTT (2026)"
 subtitle: "A step-by-step guide to controlling and monitoring an ESP32 over MQTT, with a FlowFuse dashboard."
 description: "Learn how to connect an ESP32 to Node-RED using MQTT in 2026. Step-by-step guide covering the MQTT broker setup, Arduino IDE code, and building a dashboard to control your IoT device remotely—ideal for beginners and IoT hobbyists."
+lastUpdated: 2026-06-03
 date: 2024-11-14
-lastUpdated: 2026-06-01
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/esp32-with-node-red.png
 keywords: esp32 with node red, node red esp32, connect esp32 to node red, esp node red, esp32 mqtt node red, esp32 node red, esp32 node red mqtt, mqtt esp32 node red, mqtt node red esp32, node red mqtt esp32, node red with esp32
