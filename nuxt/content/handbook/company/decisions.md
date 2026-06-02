@@ -18,7 +18,7 @@ This allows for efficient decision-making and prevents decision paralysis or
 ambiguity within FlowFuse. The DRI is expected to gather relevant input and
 feedback from other stakeholders but is ultimately responsible for making the
 final call. Other stakeholders might need to
-<a href="./values/#disagreeandcommit">Disagree and Commit</a>. Regular
+<a href="/handbook/company/values/">Disagree and Commit</a>. Regular
 (async) communication and collaboration with other team members and stakeholders
 is crucial to ensure alignment and support for the DRI's initiatives.
 
