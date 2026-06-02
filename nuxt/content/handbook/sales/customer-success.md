@@ -262,7 +262,7 @@ their flows should be redirected to the
 3rd party nodes are not supported at this time. It is reasonable to point a
 customer direct to a repo for a 3rd party node question.
 
-[support-tickets]: ../../support/
+[support-tickets]: /support/
 [support-forum]: https://discourse.nodered.org/c/vendors/flowfuse/24
 
 ## Quarterly Business Review
