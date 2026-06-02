@@ -16,17 +16,17 @@ Our personas are structured around three strategic layers that reflect the typic
 
 **Layer 1 - Users (End-users & Advocates)**
 FlowFuse serves as their reliable, technically-grounded partner for daily operational challenges.
-- [Peter Automation and Controls Engineer](#peter%2C-automation-and-controls-engineer) - Uses Node-RED, MQTT, and industrial protocols
-- [Sarah Process Engineer](#sarah%2C-process-engineer) - Works with data and industrial processes
+- [Peter Automation and Controls Engineer](#peter-automation-and-controls-engineer) - Uses Node-RED, MQTT, and industrial protocols
+- [Sarah Process Engineer](#sarah-process-engineer) - Works with data and industrial processes
 
 **Layer 2 - Champions (Technical Influencers & Evaluators)**  
 FlowFuse demonstrates value through practical, straightforward solutions that address real business needs.
-- [Steve Plant Engineer](#steve%2C-plant-engineer) - Needs convincing through proven results and clear ROI
-- [Isabella IIoT Project Lead](#isabella%2C-iiot-project-lead) - IT/OT bridge seeking dependable platform for digital transformation
+- [Steve Plant Engineer](#steve-plant-engineer) - Needs convincing through proven results and clear ROI
+- [Isabella IIoT Project Lead](#isabella-iiot-project-lead) - IT/OT bridge seeking dependable platform for digital transformation
 
 **Layer 3 - Buyers (Economic Decision-Makers)**
 FlowFuse provides transparent, enterprise-ready solutions with measurable impact on business outcomes.
-- [Paul Plant Manager](#paul%2C-plant-manager) - Final decision maker focused on operational efficiency and innovation
+- [Paul Plant Manager](#paul-plant-manager) - Final decision maker focused on operational efficiency and innovation
 
 #### Layer Interactions & Influence Flow
 
@@ -477,7 +477,7 @@ What problem does the persona want to solve, or which benefit does the character
         <div class="flex flex-col">
             <label class="font-bold">Job to be done:</label>
             <ul>
-                <li>Works alongside <a href="#sarah%2C-process-engineer">Sarah</a></li>
+                <li>Works alongside <a href="#sarah-process-engineer">Sarah</a></li>
                 <li>Management of a team responsible for planning, design, and programming of PLCs</li>
                 <li>Conception, specification, and programming of Controls Systems</li>
                 <li>Connection of the control systems to other systems and implementation of process adjustments</li>

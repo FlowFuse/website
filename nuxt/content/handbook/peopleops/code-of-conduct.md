@@ -45,9 +45,9 @@ their effects within FlowFuse culture.
 At the core are our [company values](../company/values.md). This Code of Conduct
 makes explicit how we should behave whilst uphold our values.
 
- - [**Be inclusive**](../company/values.md#👥-collaborative-community). We strive
+ - [**Be inclusive**](../company/values#collaborative-community). We strive
    to be a company that welcomes and supports people of all backgrounds and identities.
- - [**Be considerate**](../company/values.md#🤝-customer-empathy). Your work at
+ - [**Be considerate**](../company/values#customer-empathy). Your work at
    FlowFuse will be used by other people, and you in turn will depend on the
    work of others. Any decision you take will affect users and colleagues, and
    you should take those consequences into account when making decisions.

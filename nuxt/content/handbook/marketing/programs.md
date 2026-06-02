@@ -101,7 +101,7 @@ We engage in strategic partnerships to expand our reach, validate our solutions,
 
 Strategic partnerships can take different forms:
  - **Technology and solution partners** led by sales through the [Partners Program](/handbook/sales/partnerships/). This program focuses on building and nurturing relationships with technology partners and solution providers to expand our reach, enter new markets, and create co-marketing opportunities.
- - **Customers**, where joint marketing initiatives are occasionally included as part of a sales negotiation. These initiatives are aimed at demonstrating that FlowFuse provides a suited solution for our [ICP](/handbook/marketing/messaging/#ideal-customer-profile-(icp)).
+ - **Customers**, where joint marketing initiatives are occasionally included as part of a sales negotiation. These initiatives are aimed at demonstrating that FlowFuse provides a suited solution for our [ICP](/handbook/marketing/messaging/#ideal-customer-profile-icp).
  - **Influencers or vendors** with whom we may collaborate for sponsored content to reach audiences that value their expertise on topics relevant to our ICP.
 
 When evaluating co-marketing opportunities, we consider:
@@ -197,7 +197,7 @@ Use this sequence every time you create or update a tag:
 1. Identify the tag category.
 2. Configure [**Consent Settings**](#required-consent-type-by-tag-category) in GTM (`Advanced Settings → Consent Settings`).
 3. Select the correct [primary trigger type](#primary-trigger-selection).
-4. Add the shared [consent-change trigger](#shared-consent-change-trigger-(ff-consent-update)) `FF Consent Update` where required.
+4. Add the shared [consent-change trigger](#shared-consent-change-trigger-ff-consent-update) `FF Consent Update` where required.
 5. [Validate in Tag Assistant before publishing](#validation-in-tag-assistant-before-publishing).
 
 #### Required consent type by tag category

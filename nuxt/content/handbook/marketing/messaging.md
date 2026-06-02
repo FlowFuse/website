@@ -21,7 +21,7 @@ For guidance on how to express our brand in writing and communication style, see
 [Brand Personality, Tone of Voice & Character](/handbook/marketing/brand-voice/)
 
 Please also read the
-[Company Mission](/handbook/company/strategy/#flowfuse%27s-mission) before
+[Company Mission](/handbook/company/strategy/#flowfuses-mission) before
 diving into the messaging.
 
 ## Product Pillars Alignment

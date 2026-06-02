@@ -21,7 +21,7 @@ Key responsibilities include:
 * Attracting, developing, and retaining top talent across all levels of the organization.
 * Ensuring compliance with all legal and regulatory requirements.
 * Staying abreast of industry trends, competitive landscape, and emerging technologies to inform strategic decisions.
-* Fostering innovation and [iterative improvement](/handbook/company/values/#%F0%9F%94%81-iterative-improvement) across all aspects of the business.
+* Fostering innovation and [iterative improvement](/handbook/company/values/#iterative-improvement) across all aspects of the business.
 
 ## Skills
 

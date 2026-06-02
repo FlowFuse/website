@@ -121,7 +121,7 @@ Each content type has channels which are appropriate, this table sets out which 
 - Use the **“Invite to follow”** feature on the company page. The page has a **monthly pool of 250 invitation credits**. Each admin can send invitations to their connections using these credits, but the total number of invitations sent by all admins cannot exceed 250 per month. We should make sure to use our full quota every month, as this directly contributes to growing our audience.  
 - When selecting people to invite, focus on relevant industries and roles. This ensures new followers are more likely to engage with our content and convert into qualified leads.  
     - To identify industries where FlowFuse already has traction, go to **Analytics → Followers → Follower demographics**, and filter by *Industry*.  
-    - Also see our [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-(icp)) to prioritize the right contacts.  
+    - Also see our [Ideal Customer Profile](/handbook/marketing/messaging/#ideal-customer-profile-icp) to prioritize the right contacts.  
 - This activity should be completed **monthly** as part of our ongoing LinkedIn growth strategy.
 
 *If you're not a page admin but have a strong network within our ICP industries, reach out to the Social Media Manager.  
@@ -165,7 +165,7 @@ For Reddit, Node-RED Slack, and Node-RED Discourse:
 
 
 - Follow the tone and behaviour defined in our [Community Guidelines](/handbook/marketing/community/community-guidelines/).
-- Use your own voice, you're talking from a personal account after all, but also remember that you represent the brand and company values. Blend your tone with our [Brand Voice](/handbook/marketing/brand-voice/#participating-in-community-spaces-(e.g.-node-red-forum%2C-github%2C-discord)).
+- Use your own voice, you're talking from a personal account after all, but also remember that you represent the brand and company values. Blend your tone with our [Brand Voice](/handbook/marketing/brand-voice/#participating-in-community-spaces-eg-node-red-forum-github-discord).
 - Copy should remain informal, honest, and useful — without sounding like a sales pitch.
 
 Keep it factual. Keep it human.

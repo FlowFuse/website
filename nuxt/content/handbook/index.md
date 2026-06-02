@@ -5,7 +5,7 @@ navTitle: Handbook
 # FlowFuse Handbook
 
 This handbook contains all the information about how FlowFuse is run. It's a
-living set of documents - collectively we'll [iterate](/handbook/company/values/#%F0%9F%94%81-iterative-improvement)
+living set of documents - collectively we'll [iterate](/handbook/company/values/#iterative-improvement)
 on it as we learn and discover new things.
 
 ## About the Handbook

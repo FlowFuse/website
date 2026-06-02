@@ -76,7 +76,7 @@ Further, please check:
    - Verify one of these is set, and for each participant it's clear where to be when.
 1. Agenda and (internal) tasks
    - Verify each meeting includes all context, a purpose, agenda, and relevant links.
-   - [No agenda, no attenda](/handbook/company/communication/#no-agenda%2C-no-attenda)
+   - [No agenda, no attenda](/handbook/company/communication/#no-agenda-no-attenda)
       - If there's nothing to discuss, bail out of the meeting.
 
 ## Meeting Booking Process
