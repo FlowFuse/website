@@ -77,10 +77,6 @@ Most of this you will not see directly, but the platform should feel more respon
 
 This one is lighter on big user-facing features, and that is on purpose. The team was at a company off-site this cycle, and we used the time to step back: revamping how we run product, and resetting our roadmaps for what is coming next. So a lot of 2.31 is foundational, under-the-hood work, the kind that sets up the bigger things we are building toward. More on that soon.
 
-## Node-RED 5.0
-
-Node-RED 5.0 is landing, and FlowFuse will upgrade to it right after this release. Keep an eye on the [Node-RED forum](https://discourse.nodered.org/) for the announcement.
-
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.31, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
 If something in this release improves your workflow, or if there is still friction we can remove, please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.31) with us.
