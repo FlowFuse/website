@@ -38,5 +38,13 @@ export default function remarkHandbookLinks() {
         visit(tree, 'link', (node: any) => {
             node.url = resolveUrl(node.url)
         })
+
+        // Resolve src in raw HTML <img> tags
+        visit(tree, 'html', (node: any) => {
+            node.value = node.value.replace(
+                /(<img\b[^>]*?\s)src="([^"]*?)"/gi,
+                (_: string, prefix: string, url: string) => `${prefix}src="${resolveUrl(url)}"`
+            )
+        })
     }
 }
