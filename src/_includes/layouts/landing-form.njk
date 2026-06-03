@@ -1,0 +1,28 @@
+---
+layout: layouts/page.njk
+---
+<div class="w-full page webinar">
+  <div class="w-full pt-6 pb-24">
+    <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8">
+      <div class="max-w-screen-sm w-full">
+        <p>{{ intro | safe }}</p>
+        <div class="ff-blue-card flex flex-row gap-6 items-center">
+          {% if image %}
+          <div class="max-w-24">
+            {% set imageSrc = ["./", image] | join %}
+            {% image imageSrc, imageAlt or title, [100] %}
+          </div>
+          {% endif %}
+          <h4 class="font-light text-left">{{ cardText }}</h4>
+        </div>
+        {% include "social-proof.njk" %}
+      </div>
+      <!-- Form / Calendar Script -->
+      <div class="product mt-3">
+        <div class="w-80 w-full mx-auto">
+          {% include hubspot.script %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

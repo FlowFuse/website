@@ -1,14 +1,68 @@
 ---
-title: "Node-RED Buffer Parser Guide: Decode Modbus and Industrial Device Data"
+title: "Node-RED Buffer Parser Guide: Decode Modbus and Industrial Device Data (2026)"
 subtitle: "A practical guide to visual buffer parsing in Node-RED"
 description: "Learn how to parse Modbus and industrial device buffers in Node-RED using the Buffer Parser node. Visual configuration, no coding required. Handle endianness and scaling easily."
+lastUpdated: 2026-06-03
 date: 2025-12-10
 keywords: node-red, buffer parser, modbus, modbus rtu, modbus tcp, industrial automation, plc, raw data parsing, binary data, payload decoding, node-red tutorial, node-red buffer parser, node-red modbus parsing, industrial endianness, byte order, bitmask, byte offset, data decoding, data acquisition, serial communication, legacy devices, industrial sensors, modbus registers, buffer parsing guide
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/node-red-buffer-parser-industrial-data.png
 tags:
   - flowfuse
-tldr: "Legacy industrial devices like Modbus sensors and PLCs communicate in raw binary buffers compact byte sequences where each position encodes a specific value rather than human-readable JSON, because binary is far more efficient on low-bandwidth serial links. Node-RED's Buffer Parser node lets you decode these buffers visually through configuration rather than writing custom JavaScript, handling byte offsets, endianness, data types, and scaling factors automatically."
+  - how-to
+cta:
+  type: sign-up
+  title: "Parse Industrial Data at Scale with FlowFuse"
+  description: "FlowFuse gives you a managed Node-RED platform with remote deployment, snapshots, and the FlowFuse AI Expert built into the editor — so you can decode industrial buffers and manage edge devices without the operational overhead."
+meta:
+  howto:
+    name: "How to Parse Modbus Buffer Data in Node-RED Using the Buffer Parser Node"
+    description: "Install the Buffer Parser node, build a flow with an Inject and Debug node, then configure the Buffer Parser to extract temperature and humidity values from a Modbus RTU buffer using byte offsets, data types, and scale factors."
+    totalTime: "PT20M"
+    tool:
+      - "Node-RED"
+      - "node-red-contrib-buffer-parser"
+      - "FlowFuse"
+    steps:
+      - name: "Understand Buffer Data"
+        text: "Learn why industrial devices send raw binary buffers instead of JSON, and how byte position, endianness, and data type together determine the real-world value encoded in each field."
+        url: "understanding-buffer-data"
+      - name: "Install the Buffer Parser Node"
+        text: "Open the Node-RED Manage Palette dialog, search for node-red-contrib-buffer-parser on the Install tab, and click Install."
+        url: "setting-up-the-buffer-parser"
+      - name: "Build the Flow"
+        text: "Drag an Inject node onto the canvas, set its payload type to Buffer and enter the raw byte array. Add a Buffer Parser node and a Debug node, then wire them in sequence."
+        url: "building-the-flow"
+      - name: "Configure the Buffer Parser"
+        text: "Open the Buffer Parser node, set Result Type to Key/value, and confirm Property is set to msg.payload and Specification is set to UI Specification."
+        url: "configuring-the-buffer-parser"
+      - name: "Extract Temperature"
+        text: "Add a row in the Buffer Parser configuration with Name=temperature, Type=uint16be, Offset=3, Length=1, and Scale=0.1 to read the 16-bit big-endian temperature value and divide it by 10."
+        url: "extracting-temperature"
+      - name: "Extract Humidity"
+        text: "Add a second row with Name=humidity, Type=uint16be, Offset=5, Length=1, and Scale=0.1 to read the 16-bit big-endian humidity value from bytes 5-6."
+        url: "extracting-humidity"
+      - name: "Test the Configuration"
+        text: "Deploy the flow, click the Inject button, and verify the Debug panel shows {\"temperature\": 30.0, \"humidity\": 20.0}. If values are wrong, troubleshoot by adjusting endianness, signed/unsigned type, data size, scale, or byte offset."
+        url: "testing-the-configuration"
+  faq:
+    - question: "Why do industrial devices send raw binary buffers instead of JSON?"
+      answer: "Binary is far more efficient: a JSON message like {\"temperature\": 30.0} takes 21 bytes, while the same value in binary takes just 2 bytes. On serial links running at 9600 baud with thousands of readings per day, this difference matters significantly. Modbus was also designed in 1979 for PLCs with kilobytes of memory, and factories still run that equipment today."
+    - question: "What is the node-red-contrib-buffer-parser node?"
+      answer: "It is a Node-RED community node that lets you decode raw byte buffers into named JSON fields through visual configuration. You specify the byte offset, data type (e.g. uint16be), length, and scale factor for each field, and the node handles the conversion automatically without JavaScript."
+    - question: "What does 'uint16be' mean in the Buffer Parser type dropdown?"
+      answer: "'uint16' means a 16-bit unsigned integer (no negative values), and 'be' means big-endian, where the first byte is the high byte. So uint16be at offset 3 reads bytes 3 and 4 in order as (byte3 × 256) + byte4."
+    - question: "How do I divide a raw value by 10 using the Scale field?"
+      answer: "The Buffer Parser multiplies the raw value by the Scale number, so to divide by 10 you must enter 0.1. Entering 10 would multiply by 10, which is the opposite of what you want."
+    - question: "My parsed value is completely wrong — how do I troubleshoot it?"
+      answer: "Check endianness first (swap uint16be to uint16le or vice versa if values are swapped). If values are negative when they should be positive, change int16 to uint16. If values are 256x too large, you may be using an 8-bit type for a 16-bit field. Verify your byte offsets against the device manual, remembering that offset counts from zero."
+    - question: "Can the Buffer Parser handle multiple sensor readings at once?"
+      answer: "Yes. You can add as many rows as needed, each with its own name, type, offset, length, and scale. Setting Length greater than 1 returns an array of values, which is useful when a device sends a block of identical readings starting at the same offset."
+    - question: "When should I use a JavaScript Function node instead of Buffer Parser?"
+      answer: "Use a Function node when you need conditional parsing where the buffer structure changes based on values within the buffer itself (variable-length responses), or when you need to extract many individual bits and bitwise operations in code are cleaner than many separate bool rows."
+    - question: "What is byte swapping and when do I need it?"
+      answer: "Byte swapping reorders the bytes within a multi-byte value. Most devices that use big-endian or little-endian formats are covered by the type names (e.g. uint16be vs uint16le). You only need the swap16/swap32/swap64 Byte Swap option when a device uses a non-standard byte order that does not match either of those conventions."
+tldr: "Legacy industrial devices like Modbus sensors and PLCs communicate in raw binary buffers — compact byte sequences where each position encodes a specific value rather than human-readable JSON, because binary is far more efficient on low-bandwidth serial links. Node-RED's Buffer Parser node lets you decode these buffers visually through configuration rather than writing custom JavaScript, handling byte offsets, endianness, data types, and scaling factors automatically."
 ---
 
 Legacy industrial devices communicate in bytes. Your temperature sensor doesn't send you `{"temp": 23.5}` - it sends you `[1, 3, 4, 1, 44, 0, 200, 190, 125]`. Those numbers are meaningless unless you know how to decode them.

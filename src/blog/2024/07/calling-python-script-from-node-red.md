@@ -1,21 +1,63 @@
 ---
-title: Calling a Python script from Node-RED
-subtitle: Guide on how to execute Python scripts from Node-RED
-description: Learn how to seamlessly execute a Python script from Node-RED for advanced data processing and analysis.
+title: "Calling a Python script from Node-RED (2026)"
+subtitle: "A step-by-step guide to executing Python scripts from Node-RED, passing arguments, and capturing output."
+description: "Learn how to run a Python script from Node-RED using the Exec node. Step-by-step guide covering script execution, passing arguments, reading sensor data, and troubleshooting—combine Node-RED's visual flows with Python's libraries."
+lastUpdated: 2026-06-03
 date: 2024-07-10
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/calling-python-script-from-node-red.png
-keywords: node red and python, node red call python script, node red exec node python script, node red execute python script, node red for python,node red python example, node red python script, node red run python script, node red with python, python in node red
+keywords: node red and python, node red call python script, node red exec node python script, node red execute python script, node red for python, node red python example, node red python script, node red run python script, node red with python, python in node red
 tags:
-   - post
-   - node-red
-   - node red python
+  - post
+  - node-red
+  - node red python
+  - how-to
 cta:
   type: sign-up
-  title: Build Powerful IoT Solutions With Node-RED and Python
-  description: FlowFuse gives you a production-ready platform to deploy and manage Node-RED flows — with the flexibility to integrate Python scripts, external libraries, and any data source your project needs.
-tldr: "Node-RED's Exec node can run any Python script as a system command, passing arguments and capturing stdout as message output. This approach lets you combine Node-RED's visual flow logic with Python's rich library ecosystem for tasks like sensor data processing, machine learning, or any advanced computation."
+  title: "Build Powerful IoT Solutions With Node-RED and Python"
+  description: "FlowFuse gives you a production-ready platform to deploy and manage Node-RED flows—with the flexibility to integrate Python scripts, external libraries, and any data source your project needs. Deploy to edge devices, collaborate with your team, and scale from one device to thousands. Start free today."
+meta:
+  howto:
+    name: "How to Run a Python Script from Node-RED Using the Exec Node"
+    description: "Use the Node-RED Exec node to execute a Python script, capture its output as msg.payload, pass arguments, and parse printed JSON—combining Node-RED's visual flows with Python's libraries."
+    totalTime: "PT20M"
+    tool:
+      - "Node-RED"
+      - "Python"
+      - "Exec node"
+    steps:
+      - name: "Verify Python is installed"
+        text: "Open a terminal and run 'python --version' or 'python3 --version'. Note which command works—you must use the same one in the Exec node command. Install Python from python.org if it is not present."
+        url: "installing-python"
+      - name: "Execute a Python script with the Exec node"
+        text: "Drag an Exec node onto the canvas and set its command to 'python -u ./your_script.py' (use python3 if required). The -u flag prevents output buffering. Wire an Inject node to its input and a Debug node to its first output, then deploy and trigger the Inject node. The script's stdout appears as msg.payload."
+        url: "executing-python-script-from-node-red"
+      - name: "Read sensor data by calling a Python script on an interval"
+        text: "Set an Inject node to repeat on an interval, wire it to an Exec node that runs your sensor script, then add a JSON node (set to 'Always convert to JSON object') after the Exec node to parse the printed JSON. Wire a Debug node at the end to inspect the structured sensor readings."
+        url: "reading-temperature-sensor-using-python-script"
+      - name: "Pass arguments to the Python script from Node-RED"
+        text: "Append arguments directly to the Exec command (e.g. 'python -u ./example.py -30'). In the Python script, read them with sys.argv—sys.argv[1] is the first argument. You can also enable 'Append msg.payload' on the Exec node to pass dynamic values from the incoming message."
+        url: "executing-python-script-with-arguments-from-node-red"
+  faq:
+    - question: "How do I run a Python script from Node-RED?"
+      answer: "Use the Exec node, which runs system commands. Set its command to 'python ./your_script.py' (or 'python3' depending on your system), connect an Inject node to trigger it, and a Debug node to view the output. The script's stdout is returned on the Exec node's first output, the error stream on the second, and the return code on the third."
+    - question: "What is the difference between the Exec node and a Function node for Python?"
+      answer: "The Function node runs JavaScript inside Node-RED and cannot execute Python directly. The Exec node runs an external system command, so it's the right choice for launching a Python interpreter against a script file. Use Exec whenever you need Python's libraries or existing scripts."
+    - question: "Should I use 'python' or 'python3' in the Exec command?"
+      answer: "It depends on how Python is installed. Run 'python --version' in a terminal; if that works, use 'python your_script.py'. If only 'python3 --version' works, use 'python3 your_script.py'. Match the command in the Exec node to whichever one resolves on the machine running Node-RED."
+    - question: "Why should I add the -u flag when running Python from the Exec node?"
+      answer: "The -u flag forces unbuffered output, so Python writes results immediately instead of holding them in a buffer. Without it, you may see delayed, missing, or out-of-order output in Node-RED, especially for scripts that print as they run. A command like 'python -u ./example.py' avoids these buffering issues."
+    - question: "How do I pass arguments or input to a Python script from Node-RED?"
+      answer: "Append arguments to the Exec command, for example 'python -u ./example.py 42'. In the script, read them with the sys module: sys.argv[1] is the first argument (sys.argv[0] is the script name). You can also enable 'Append msg.payload' on the Exec node to pass dynamic values from the incoming message as arguments."
+    - question: "How do I get data back from the Python script into Node-RED?"
+      answer: "Have the script print its result to stdout—the Exec node captures that on its first output as msg.payload. If the script prints JSON, add a JSON node set to 'Always convert to JSON object' after the Exec node to parse it into a usable object for the rest of your flow."
+    - question: "Why is my Python script not producing output in Node-RED?"
+      answer: "Common causes: output buffering (add the -u flag), the wrong interpreter (python vs python3), an incorrect file path or working directory, or a script that runs an infinite loop and never exits so the Exec node never receives a completed result. Check the Exec node's second (stderr) and third (return code) outputs to diagnose errors."
+    - question: "Can Node-RED run a Python script that reads from a sensor?"
+      answer: "Yes. Run Node-RED on a device wired to the sensor (such as a Raspberry Pi with a DHT11), have a Python script read the sensor and print the reading as JSON, then trigger that script from the Exec node on an interval using an Inject node. Make sure the script reads once and exits rather than looping internally, so Node-RED controls the polling."
+    - question: "Do I need to install Python separately to use it with Node-RED?"
+      answer: "Yes. Node-RED does not bundle a Python runtime, so Python must be installed on the same machine that runs Node-RED. Any third-party libraries your script imports (for example adafruit-circuitpython for sensors) also need to be installed in that environment."
+tldr: "To run a Python script from Node-RED, use the Exec node with a command like 'python -u ./your_script.py'. Trigger it with an Inject node and read the result from a Debug node—the Exec node returns the script's stdout as msg.payload, plus separate outputs for errors and the return code. Add the -u flag to avoid output buffering, pass arguments by appending them to the command (read in Python via sys.argv), and parse printed JSON with a JSON node. Python must be installed on the same machine as Node-RED. This pairs Node-RED's visual flow logic with Python's libraries for tasks like sensor reading, data processing, and machine learning."
 ---
 
 Python's robust data processing capabilities and extensive libraries are well-known in programming. When combined with Node-RED, these technologies can synergize to elevate data analytics and automation. This guide walks you through integrating Python scripts with Node-RED. You'll gain practical insights, troubleshooting tips, and effective techniques for executing scripts, enabling you to leverage this powerful combination for your IoT projects.

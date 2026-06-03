@@ -686,7 +686,7 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: true
+            value: null
           pro:
             value: true
           enterprise:
@@ -1008,7 +1008,7 @@ sections:
             options: ["None", "HTTP Basic Auth"]
           pro:
             value: list
-            options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
+            options: ["None", "HTTP Basic Auth"]
           enterprise:
             value: list
             options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
@@ -1251,7 +1251,7 @@ sections:
           starter:
             value: null
           pro:
-            value: null
+            value: true
           enterprise:
             value: true
 
