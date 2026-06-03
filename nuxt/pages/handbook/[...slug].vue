@@ -21,7 +21,7 @@ if (!page.value) {
 const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Handbook')
 
 useHead({
-    title: `${pageTitle.value} • FlowFuse Handbook`,
+    title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook'),
     meta: [{ name: 'robots', content: 'noindex' }]
 })
 
