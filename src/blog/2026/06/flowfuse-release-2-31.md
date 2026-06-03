@@ -37,66 +37,30 @@ It now works on Remote Instances as well as Hosted Instances, so you get the sam
 
 FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can add to your instances. At launch you can get:
 
-### RTSP
-
-Bring live video streams into your flows, like camera feeds for monitoring, inspection, or feeding frames into a vision or AI pipeline.
-
-### OPC UA
-
-Connect to your industrial equipment over OPC UA, the standard for talking to PLCs, SCADA systems, and machines on the plant floor.
-
-### AI nodes
-
-Call leading AI models straight from your flows:
-
-- Anthropic
-- OpenAI
-- Gemini
-- Ollama, for models you run yourself
-
-Other model providers are following soon.
+- **RTSP**: bring live video streams into your flows, like camera feeds for monitoring, inspection, or feeding frames into a vision or AI pipeline.
+- **OPC UA**: connect to your industrial equipment, the standard for talking to PLCs, SCADA systems, and machines on the plant floor.
+- **AI nodes**: call leading AI models straight from your flows, with more providers following soon:
+  - Anthropic
+  - OpenAI
+  - Gemini
+  - Ollama, for models you run yourself
 
 Certified nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your account rep, and we'll enable the ones your team needs.
-
-## Real-Time Platform Updates {#realtime-platform-updates}
-
-Instance and team status now update live. When something changes, you see it right away instead of waiting for the page to catch up on its next refresh.
-
-- **Live instance status** as it changes, no refresh needed
-- **Live team updates** as they happen
-- A platform that feels more responsive overall
-
-Under the hood we moved from periodic polling to a push-based connection, which also takes load off the backend.
 
 ## What else is new?
 
 - **AI opt-out controls**: switch AI off per team (FlowFuse Cloud and Self-Hosted Enterprise) or per instance (Self-Hosted Enterprise); AI stays opt-in for self-hosted.
+- **Real-time platform updates**: instance and team status now update live, no refresh needed.
 - **Custom CA certificates** are now documented for environments that need them.
 - **Smaller fixes**: secure (`wss://`) connections to your MQTT broker now work from the editor, and custom packages with uppercase names no longer break pipeline deploys.
 
 ## Fresh off our team off-site in Greece
 
-We spent part of this cycle together in Greece for a full-company off-site, and it shaped what you see (and do not yet see) in 2.31.
+We spent part of this cycle together in Greece for a full-company off-site, resetting our roadmaps and how we run product. That is also why 2.31 is lighter on big features: a lot of this month's work is foundational. More on what came out of it soon.
 
-<!-- PHOTO: group shot of the team in Greece. Swap for ![The FlowFuse team in Greece](/blog/2026/06/images/offsite-team.jpg) once the asset lands. -->
+<!-- PHOTO: add the off-site team photo here once the asset lands: ![The FlowFuse team in Greece](/blog/2026/06/images/offsite-team.jpg) -->
 
-Getting everyone in one place let us do the kind of work that is hard to do day-to-day and fully remote:
-
-- Stepping back to align on where FlowFuse is headed next
-- Revamping how we run product, from discovery through to what actually ships in a release
-- Resetting our roadmaps so the next releases build on each other rather than pulling in different directions
-
-<!-- PHOTO: working-session / whiteboard shot. Swap for ![Roadmap working session](/blog/2026/06/images/offsite-roadmap.jpg) once the asset lands. -->
-
-It is also why 2.31 is lighter on big, user-facing features than a typical release, and we are okay with that. A lot of what we shipped this month is foundational, under-the-hood work, the kind that sets up the bigger things we are building toward.
-
-<!-- PHOTO: candid / team-dinner shot. Swap for ![Team dinner in Greece](/blog/2026/06/images/offsite-dinner.jpg) once the asset lands. -->
-
-We will share more on what came out of the off-site soon.
-
-<!-- TODO (skeleton): confirm the specifics above (where in Greece, dates, what we want to share publicly), tighten the copy, and replace the three PHOTO comments with real images in /blog/2026/06/images/. -->
-
----
+<hr style="margin: 3rem 0; border: 0; border-top: 1px solid #D1D5DB;">
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.31, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
