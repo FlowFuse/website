@@ -13,7 +13,7 @@ We don't have an established SDR process or playbook yet. Part of this role is h
 
 Your job is simple in principle: work leads and move conversations forward. Nurture them. Find the approaches that move conversations forward and double down on those. Drop what doesn't. Move fast. Learn faster. That could mean fast inbound follow-up, testing outbound outreach, trying different messaging styles, or experimenting with new approaches.
 
-[Results](/handbook/company/values/#-results) and [Iterative Improvement](/handbook/company/values/#-iterative-improvement) are two of FlowFuse's core values. This role is where both are most visible. We expect you to start reaching out to leads early, learn from the responses, and improve quickly. You will own the SDR and BDR playbook, not inherit it. That means writing it, testing it, revising it, and making it repeatable.
+[Results](/handbook/company/values/#results) and [Iterative Improvement](/handbook/company/values/#iterative-improvement) are two of FlowFuse's core values. This role is where both are most visible. We expect you to start reaching out to leads early, learn from the responses, and improve quickly. You will own the SDR and BDR playbook, not inherit it. That means writing it, testing it, revising it, and making it repeatable.
 
 **What you will own:**
 
