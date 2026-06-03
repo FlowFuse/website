@@ -1,9 +1,9 @@
 ---
-title: How to create and use Subflow in Node-RED
+title: "How to create and use Subflow in Node-RED (2026)"
 subtitle: A Practical Guide to Implementing Subflows in Node-RED for Efficient Workflow Management
 description: Learn how to effectively use subflows in Node-RED with this comprehensive guide. Discover the benefits, creation steps, and best practices for managing subflows to streamline your automation workflows.
+lastUpdated: 2026-06-03
 date: 2024-09-13
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/09/images/subflow-in-node-red.png
 keywords: node red subflow, nodered subflow, node red subflow environment variables, node red create subflow, node red subflows
@@ -14,6 +14,52 @@ cta:
   type: sign-up
   title: Build and Reuse Node-RED Flows Across Your Team
   description: FlowFuse gives you version control, team collaboration, and centralized deployment — so your subflows and reusable logic stay consistent across every instance and every engineer.
+meta:
+  howto:
+    name: "How to Create and Use a Subflow in Node-RED"
+    description: "Learn how to convert a reusable Node-RED flow into a Subflow node with configurable environment variable properties, input/output ports, status indicators, and custom appearance."
+    totalTime: "PT25M"
+    tool:
+      - "Node-RED"
+    steps:
+      - name: "Import the Example Flow"
+        text: "Import the provided API retry flow into your Node-RED instance as the starting point for creating a Subflow."
+        url: "creating-a-subflow-in-node-red"
+      - name: "Convert the Selection to a Subflow"
+        text: "Select the nodes you want to encapsulate, open the main menu, and choose 'Selection to Subflow' under the Subflows option."
+        url: "creating-subflow-of-selection"
+      - name: "Add Environment Variable Properties"
+        text: "Open the Subflow template, click 'Edit Properties', add environment variable properties for configurable values such as API URL and max retry count, then click Done."
+        url: "adding-properties-to-the-subflow"
+      - name: "Use Environment Variables in Nodes"
+        text: "Double-click the relevant nodes inside the Subflow and replace hardcoded values with the environment variable syntax ${YOUR_ENV_NAME}."
+        url: "setting-added-environment-variables-in-the-nodes"
+      - name: "Configure Input and Output Ports"
+        text: "In the Subflow tab, set the number of input and output ports and connect them to the appropriate entry and exit nodes within the Subflow."
+        url: "managing-subflow-input-and-output-ports"
+      - name: "Add Status Indicators"
+        text: "Add a Status node to the Subflow and connect Change nodes to it so the Subflow reports meaningful runtime states like 'retrying' or 'completed'."
+        url: "adding-status-for-subflow-nodes"
+      - name: "Customize Appearance and Add Documentation"
+        text: "Use the Appearance tab to set a color, icon, and port labels. Use the Description tab to write markdown documentation that appears in the Node-RED help sidebar."
+        url: "customizing-the-appearance-of-a-subflow-node"
+  faq:
+    - question: "What is a Subflow in Node-RED?"
+      answer: "A Subflow is a reusable group of nodes packaged as a single custom node. It works like a module or function — encapsulating logic so you can reuse it in multiple places without duplicating the underlying flow."
+    - question: "How do I create a Subflow in Node-RED?"
+      answer: "Select the nodes you want to encapsulate on the canvas, open the main menu (top-right), and choose Subflows > Selection to Subflow. The selected nodes are replaced by a single Subflow node added to the palette."
+    - question: "How do I add configurable properties to a Subflow?"
+      answer: "Double-click the Subflow node and click 'Edit Subflow Template', then click 'Edit Properties' and use the '+ add' button to define environment variable properties with names and default values."
+    - question: "How do I use environment variables inside a Subflow?"
+      answer: "Reference them with the syntax ${ENV_VAR_NAME} inside node configuration fields. For example, set an HTTP request node's URL field to ${API_URL} to make it configurable per Subflow instance."
+    - question: "Can a Subflow have multiple output ports?"
+      answer: "Yes — unlike regular Node-RED nodes which can have one input, Subflows support multiple output ports. You can add as many outputs as needed in the Subflow tab and connect each to the appropriate node inside the Subflow."
+    - question: "Can I add documentation to a Subflow node?"
+      answer: "Yes — in the Subflow template, click 'Edit Properties' and switch to the Description tab. Documentation written there in markdown will appear in Node-RED's help sidebar when users click on the Subflow node."
+    - question: "What are the benefits of using Subflows?"
+      answer: "Subflows promote modularity, eliminate duplicated flow logic, simplify your main canvas by hiding complexity inside a single node, and make it easier to update shared logic in one place."
+    - question: "How do I share a Subflow across multiple Node-RED instances?"
+      answer: "You can export the Subflow definition and import it into other instances. With FlowFuse, you can centrally manage and deploy Subflows consistently across all your Node-RED instances and team members."
 tldr: "Subflows in Node-RED let you group reusable logic into a single custom node, similar to libraries or modules in traditional programming. This guide covers how to create a subflow from an existing flow, add configurable environment variable properties to it, and use it across multiple places in your Node-RED projects to eliminate duplication."
 ---
 

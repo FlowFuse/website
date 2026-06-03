@@ -2,9 +2,11 @@
 title: Announcing Node-RED Academy!
 subtitle: The new Node-RED Academy enables you to learn Node-RED, increase your expertise, and demonstrate your knowledge with shareable certificates.
 description: The new Node-RED Academy enables you to learn Node-RED, increase your expertise, and demonstrate your knowledge with shareable certificates.
+lastUpdated: 2026-06-03
 date: 2025-02-05
 authors: ["greg-stoutenburg"]
 image: /blog/2025/02/images/academy-announcement.png
+keywords: node-red academy, node-red courses, node-red certification, learn node-red, node-red training
 tags:
    - flowfuse
    - node-red
@@ -15,6 +17,25 @@ cta:
   type: sign-up
   title: Learn Node-RED, Then Put It Into Production
   description: FlowFuse gives you the enterprise platform to deploy, manage, and scale everything you build — from your first flow to factory-floor production systems.
+meta:
+  faq:
+    - question: "What is Node-RED Academy?"
+      answer: "Node-RED Academy is a learning portal offering structured Node-RED courses for both beginners and experienced developers, with formal certification upon course completion."
+    - question: "Is Node-RED Academy free?"
+      answer: "The first course, Node-RED Fundamentals, is free and takes about 90 minutes to complete. Additional courses may vary in pricing."
+    - question: "What certification do I get from Node-RED Academy?"
+      answer: "Upon completing any Node-RED Academy course you receive a shareable certificate that can be added to your LinkedIn profile or CV to demonstrate your Node-RED expertise."
+    - question: "Who created the Node-RED Academy?"
+      answer: "Node-RED Academy is curated by the authors and developers behind Node-RED and is supported by FlowFuse, the enterprise-grade industrial data platform built around Node-RED."
+    - question: "What courses are available in Node-RED Academy?"
+      answer: "Currently the Node-RED Fundamentals course is available. Planned future courses include Node-RED Advanced, Building Applications with Node-RED, Node-RED for Industry, FlowFuse Fundamentals, and more."
+    - question: "Who is Node-RED Academy for?"
+      answer: "Node-RED Academy is for anyone looking to learn or advance their Node-RED skills — from complete beginners building their first flow to experienced developers seeking formal certification."
+    - question: "How do I get started with Node-RED Academy?"
+      answer: "Head to node-red-academy.learnworlds.com and sign up for free to begin your first course immediately."
+    - question: "How does Node-RED Academy differ from other Node-RED resources?"
+      answer: "Unlike scattered community tutorials, Node-RED Academy provides a curated, structured curriculum created by the people who build Node-RED, covering everything from fundamentals to industrial integrations, with formal certification."
+tldr: "Node-RED Academy is a new free learning portal where developers can take structured Node-RED courses, earn shareable certificates, and grow from beginner to expert. The first course, Node-RED Fundamentals, is free, takes roughly 90 minutes, and is available now, with more courses covering advanced topics and FlowFuse planned for the future."
 ---
 
 The [Node-RED Academy](https://node-red-academy.learnworlds.com/) provides Node-RED courses both for experts, who want to grow their knowledge, and for beginners, who are just learning the ropes. Get formal certification in Node-RED by completing courses and share certificates on LinkedIn to demonstrate your Node-RED learning accomplishments.
@@ -23,7 +44,7 @@ The [Node-RED Academy](https://node-red-academy.learnworlds.com/) provides Node-
 
 ## What is Node-RED Academy?
 
-Node-RED Academy is a brand new learning portal for Node-RED. Whether you’re a complete beginner to Node-RED or have been building applications for years, Node-RED Academy courses will take your expertise to the next level, and provide you with formal certification that are evidence of your Node-RED knowledge and skills.
+Node-RED Academy is a brand new learning portal for Node-RED. Whether you're a complete beginner to Node-RED or have been building applications for years, Node-RED Academy courses will take your expertise to the next level, and provide you with formal certification that are evidence of your Node-RED knowledge and skills.
 
 ## Can I Earn a Credential?
 
@@ -50,7 +71,7 @@ We also have plans for the following courses to follow in the future:
 This list will likely grow beyond this too. We will be evolving our courses based on feedback and ideas from the community too!
 
 
-## Who’s behind the Node-RED Academy?
+## Who's behind the Node-RED Academy?
 
 There are many great resources for Node-RED education out there, but the Node-RED Academy has been curated by the authors and developers behind Node-RED and covers everything you'll need to know from building your first flow to integrating with industrial hardware.
 

@@ -1,14 +1,53 @@
 ---
-title: Using Environment Variables in Node-RED
+title: "Using Environment Variables in Node-RED (2026)"
 subtitle: Predefined data to be used in your Node-RED instance 
 description: Node-RED supports environment variables (env vars) slight different, how to use it and the gotcha's are explained in this article.
+lastUpdated: 2026-06-03
 date: 2023-01-27 16:11:47.0
-lastUpdated: 2025-07-23
 authors: ["zeger-jan-van-de-weg"]
+keywords: node-red environment variables, env vars node-red, node-red env variable, flowfuse environment variables, node-red configuration
 tags:
     - posts
     - node-red
     - how-to
+cta:
+  type: sign-up
+  title: Manage Node-RED Environment Variables with FlowFuse
+  description: FlowFuse makes it easy to set, update, and secure environment variables across all your Node-RED instances and devices — with role-based access control and centralized management from a single dashboard.
+meta:
+  howto:
+    name: "How to Use Environment Variables in Node-RED"
+    description: "Learn how to read and manage environment variables in Node-RED flows using the inject, change, and switch nodes, including FlowFuse-specific predefined variables."
+    totalTime: "PT15M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+    steps:
+      - name: "Inject an environment variable"
+        text: "Use the inject node with the 'env variable' payload type to read a predefined Node-RED variable such as NR_FLOW_NAME and pass its value into your flow."
+        url: "predefined-variables"
+      - name: "Use environment variables in change and switch nodes"
+        text: "Leverage environment variables in change and switch nodes to configure node behaviour dynamically without hardcoding values."
+        url: "managing-environments-variables"
+      - name: "Manage environment variables in FlowFuse"
+        text: "In the FlowFuse instance settings, open the Environment tab, add key-value pairs for your variables, restart the instance, and update device snapshots so the new values take effect."
+        url: "managing-environments-variables"
+  faq:
+    - question: "What are environment variables in Node-RED?"
+      answer: "Environment variables in Node-RED are key-value string pairs that supply configuration or secret values to flows without hardcoding them. They are read at deploy time, not dynamically during execution."
+    - question: "Can I change an environment variable while a Node-RED flow is running?"
+      answer: "No. Node-RED resolves environment variable values when the flow is deployed, not at runtime. To update a value, change the variable and redeploy (or restart) the instance. For runtime-mutable data, use persistent context instead."
+    - question: "What predefined environment variables does Node-RED provide?"
+      answer: "As of Node-RED 3.0, predefined variables include NR_NODE_NAME, NR_GROUP_NAME, and NR_FLOW_NAME. These allow you to identify the current node, group, or flow by name without manual configuration."
+    - question: "What additional environment variables does FlowFuse provide?"
+      answer: "FlowFuse adds variables such as FF_PROJECT_ID for each instance and device-specific variables via the device agent. These help identify which instance or device generated a message, useful for routing or dashboard filtering."
+    - question: "Where do I set environment variables in FlowFuse?"
+      answer: "Go to your instance in the FlowFuse dashboard, open Settings, and select the Environment tab. Add your key-value pairs there, then restart the instance for cloud deployments or update the target snapshot for devices."
+    - question: "Can I use environment variables in the switch node to check if a variable exists?"
+      answer: "Node-RED does not support checking whether an environment variable exists in the switch node. The inject node will output an empty value for an undefined variable, but the switch node cannot evaluate existence directly."
+    - question: "What is the difference between environment variables and Node-RED context?"
+      answer: "Environment variables are set outside of flows and are read-only during execution, while Node-RED context (flow, global, or persistent) can be read and written at runtime. Use context when you need values that change as the flow runs."
+tldr: "Node-RED environment variables are read-only key-value pairs resolved at deploy time, useful for storing configuration and secrets without hardcoding them in flows. Node-RED exposes predefined variables like NR_FLOW_NAME, and FlowFuse extends this with instance and device identifiers. You can set and manage variables for all your instances directly from the FlowFuse Environment settings tab."
 ---
 
 Programs, written with Node-RED or otherwise, need to sometimes retrieve information that wasn’t decided on during the creation of the program. 
