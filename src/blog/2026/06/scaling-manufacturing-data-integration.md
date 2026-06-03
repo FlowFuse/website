@@ -1,5 +1,5 @@
 ---
-title: "Scaling Manufacturing Data Integration to 100+ Databases"
+title: "How Arch Systems Connected 100+ Factory Databases with FlowFuse"
 subtitle: "Why repeatable integration, not the first connection, is the real bottleneck at scale"
 description: "Arch Systems connects 100+ factory databases to a single analytics platform using FlowFuse. See how standardized subflows and DevOps pipelines made each new integration cheap to build and cheap to maintain."
 date: 2026-06-03
