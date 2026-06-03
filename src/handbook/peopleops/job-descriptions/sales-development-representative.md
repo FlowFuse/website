@@ -17,7 +17,7 @@ Your job is simple in principle: work leads and move conversations forward. Nurt
 
 **What you will own:**
 
-* Work every qualified lead — inbound and, in time, outbound — toward a clear next step
+* Work every qualified lead — inbound and outbound — toward a clear next step
 * Run multi-touch follow-up sequences and refine them based on actual conversion data
 * Build and maintain the SDR and BDR playbook from scratch, iterating rapidly on what works
 * Increase meeting generation and reduce stalled leads
