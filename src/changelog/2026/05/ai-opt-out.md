@@ -16,7 +16,7 @@ You can now turn off AI features for your team from the team settings page. When
 
 The toggle is on by default for all teams. Flipping it off shows a confirmation dialog so you don't accidentally disable it. If you change your mind later, just flip it back on.
 
-Self Hosted Enterprise customers also get a platform-level and team-type-level AI feature flag, so admins can control AI availability across the entire installation or per plan before it ever reaches team owners.
+Self Hosted Enterprise customers also get platform-level and team-type-level AI controls, so admins can control AI availability across the entire installation or per plan before it ever reaches team owners.
 
 This feature is available to all FlowFuse Cloud users and Enterprise Self Hosted users from v2.31.                                                                                                                                                                                                                          
                                                                                                              
