@@ -38,7 +38,7 @@ sitemapPriority: 0.7
             <h1 class="m-auto max-w-3xl font-medium"><span class="text-indigo-600">{{ title }}</span></h1>
             <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">{{ problem }}</p>
             <div class="mt-10 flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'usecase': '{{ page.fileSlug }}'})">Talk to an expert</a>
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'usecase': '{{ page.fileSlug }}'})">Talk to an expert</a>
             </div>
         </div>
     </div>
@@ -256,7 +256,7 @@ sitemapPriority: 0.7
     <!-- ============================================================
          RELATED RESOURCES (empty "More coming soon" state)
     ============================================================ -->
-    {% set relatedTag = "usecase:" + page.fileSlug %}
+    {% set useCaseSlug = page.fileSlug %}
     {% include "components/related-resources.njk" %}
 
     <!-- ============================================================
@@ -264,10 +264,10 @@ sitemapPriority: 0.7
     ============================================================ -->
     <div class="w-full px-6 py-20">
         <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10 text-center">
-            <h3 class="mb-4 w-full text-center">See it on your operation</h3>
-            <p class="text-gray-600 mb-8 max-w-xl mx-auto">Talk to an expert, or get started with FlowFuse today.</p>
+            <h3 class="mb-4 w-full text-center">{{ closingCta.heading or "See it on your operations" }}</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">{{ closingCta.description or "Talk to an expert, or get started with FlowFuse today." }}</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'usecase': '{{ page.fileSlug }}'})">Talk to an expert</a>
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'usecase': '{{ page.fileSlug }}'})">Talk to an expert</a>
                 <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'footer', 'usecase': '{{ page.fileSlug }}'})">Get started</a>
             </div>
         </div>

@@ -1,31 +1,30 @@
 {# ============================================================
-   RELATED RESOURCES (skeleton)
-   Three columns: Case studies / White papers / Blog.
-   Driven by a tag passed in as `relatedTag` (e.g. "industry:food-beverage"
-   or "usecase:track-and-trace"). Resources opt in later by adding that tag;
-   the matching tag collection is then split by section.
-   No existing customer stories are tagged, so every column renders the
-   empty "More coming soon" state.
+   RELATED RESOURCES
+   Three columns: Case studies / eBooks and Whitepapers / Blog.
+   Content opts in via a dedicated front matter field:
+     usecase:
+       - production-monitoring
+   The layout passes `useCaseSlug` (e.g. "production-monitoring").
    ============================================================ #}
-{% set relatedTag = relatedTag or "" %}
-{% set tagged = collections[relatedTag] or [] %}
 
 {% set caseStudies = [] %}
 {% set whitepapers = [] %}
 {% set blogPosts = [] %}
-{% for item in tagged %}
-    {% if "/customer-stories/" in item.url %}
-        {% set caseStudies = (caseStudies.push(item), caseStudies) %}
-    {% elif "/whitepaper/" in item.url %}
-        {% set whitepapers = (whitepapers.push(item), whitepapers) %}
-    {% elif "/blog/" in item.url %}
-        {% set blogPosts = (blogPosts.push(item), blogPosts) %}
+{% for item in collections.all %}
+    {% if item.data.usecase and useCaseSlug in item.data.usecase %}
+        {% if "/customer-stories/" in item.url %}
+            {% set caseStudies = (caseStudies.push(item), caseStudies) %}
+        {% elif "/ebooks/" in item.url or "/whitepaper/" in item.url %}
+            {% set whitepapers = (whitepapers.push(item), whitepapers) %}
+        {% elif "/blog/" in item.url %}
+            {% set blogPosts = (blogPosts.push(item), blogPosts) %}
+        {% endif %}
     {% endif %}
 {% endfor %}
 
 {% set columns = [
     {heading: "Case studies", items: caseStudies},
-    {heading: "White papers", items: whitepapers},
+    {heading: "eBooks and Whitepapers", items: whitepapers},
     {heading: "Blog", items: blogPosts}
 ] %}
 
@@ -40,7 +39,7 @@
                 <ul class="flex flex-col gap-3 list-none p-0 m-0">
                     {% for item in column.items %}
                     <li>
-                        <a href="{{ item.url }}" class="text-indigo-600 hover:text-indigo-800">{{ item.data.title }}</a>
+                        <a href="{{ item.url }}" class="text-indigo-600 hover:text-indigo-800">{{ item.data.title or item.data.meta.title or item.data.contentTitle | safe }}</a>
                     </li>
                     {% endfor %}
                 </ul>

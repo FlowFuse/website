@@ -3,6 +3,8 @@ title: "Preventive Maintenance in Manufacturing: Avoid Multi-Million Dollar Equi
 subtitle: "How industrial data platforms are turning equipment failures from crisis events into predictable, manageable costs"
 description: "Unplanned downtime costs manufacturers millions. Learn how preventive maintenance software and data platforms like FlowFuse cut failures, boost OEE, and deliver lasting ROI."
 date: 2025-09-04
+usecase:
+  - production-monitoring
 authors: ["sumit-shinde"]
 image: /blog/2025/09/images/preventive-maintenance-blog.png
 keywords: preventive maintenance, predictive maintenance, maintenance software, equipment monitoring, industrial data platforms, manufacturing downtime, OEE improvement
