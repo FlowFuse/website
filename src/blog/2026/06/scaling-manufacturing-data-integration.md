@@ -9,6 +9,27 @@ image:
 tags:
 - flowfuse
 meta:
+  howto:
+    name: "How to Scale Manufacturing Data Integration Across Many Factory Databases"
+    description: "Make each new factory integration cheap to build and cheap to maintain by standardizing reusable subflows, connecting to MES systems over MQTT, and managing every deployment from a single platform with FlowFuse DevOps pipelines."
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "MQTT broker"
+      - "MES system"
+    steps:
+      - name: "Standardize the integration as a reusable subflow"
+        text: "Stop treating each integration as a one-off project. In FlowFuse's low-code environment, build a standardized, parameterized subflow that performs the integration the same way on every deployment. Onboarding a new system then becomes deploying a known-good template and adjusting a few parameters, instead of building from scratch."
+        url: "standardize-the-unit-of-work"
+      - name: "Connect to MES systems over MQTT for live production data"
+        text: "Use MQTT brokers to connect directly to the MES systems, opening a reliable path for live production data. Configure flows to receive the stream, filter it, and generate tasks automatically from the processed data so the system responds to production events as they happen."
+        url: "standardize-the-unit-of-work"
+      - name: "Layer FlowFuse on top of existing factory systems"
+        text: "Add FlowFuse as a low-code layer above the MES systems already running on the floor rather than replacing them, connecting to existing factory systems so a new data source does not require a rebuild."
+        url: "standardize-the-unit-of-work"
+      - name: "Centralize deployment with DevOps pipelines"
+        text: "Manage every instance running your flows from a single FlowFuse platform and use deployment pipelines to propagate changes across development and production environments. Edit once and push the change to every production instance automatically, removing instance-by-instance patching and reducing configuration errors."
+        url: "devops-one-place-to-change-everything"
   faq:
   - question: "What is manufacturing data integration?"
     answer: "Manufacturing data integration is the process of connecting factory systems such as MES platforms, databases, PLCs, and APIs to a central platform so production data can be collected, standardized, and acted on. The goal is a single, reliable flow of live production data that analytics, dashboards, and other systems can use without each consumer having to talk to every source directly."
@@ -21,7 +42,7 @@ meta:
   - question: "How did Arch Systems connect more than 100 factory databases?"
     answer: "Arch stopped treating each integration as a one-off project and started treating it as a template. Using FlowFuse's low-code environment, the team built standardized, reusable subflows that automate job creation in Arch React, with MQTT brokers connecting directly to MES systems for live production data. Onboarding a new customer became a matter of deploying a proven template rather than building an integration from nothing."
   - question: "How does FlowFuse support DevOps for industrial integrations?"
-    answer: "FlowFuse manages every instance running your flows from a single platform and uses DevOps pipelines to stage those instances across development, test, and production. Changes are made once and propagated to every production instance automatically, and snapshots provide a version history so any instance can roll back to a known-good state if a change misbehaves."
+    answer: "FlowFuse manages every instance running your flows from a single platform and uses deployment pipelines to propagate changes across development and production environments. Changes are made once in a single place and pushed to every production instance automatically, which removes instance-by-instance patching and reduces configuration errors."
   - question: "What results did Arch Systems achieve with FlowFuse?"
     answer: "Arch connected more than 100 databases through automated, FlowFuse-orchestrated subflows, cut new-customer rollout time to a fraction of what it was, maintained consistent real-time processing across diverse systems using MQTT pipelines, and pushed updates to every environment at once through single-point editing and DevOps pipelines."
 tldr: "Arch Systems needed to connect 100+ factory databases across diverse MES systems and environments without rebuilding every integration. By standardizing reusable subflows in FlowFuse's low-code environment and managing deployments through FlowFuse DevOps pipelines, Arch made each integration cheap to build and cheap to maintain, cutting new-customer rollout time to a fraction of what it was."
@@ -31,51 +52,51 @@ cta:
   description: "See how FlowFuse helps teams standardize, deploy, and maintain industrial data integrations from a single platform. Talk to us about your setup."
 ---
 
-[Arch Systems](https://archsys.io/) connects more than 100 factory databases to a single analytics platform. Each one runs in a different production environment, talks to a different MES, and exposes its data through a different API. Connecting any single database was never the difficult part. Connecting the hundredth without rebuilding the work from scratch was.
+[Arch Systems](https://archsys.io/) runs more than 100 factory databases into a single analytics platform. Each one lives in a different production environment. Each one speaks to a different MES. Across them sits a tangle of diverse APIs and databases that rarely share conventions. Connecting any single database was never hard. Connecting the hundredth without rebuilding the work from scratch is the problem worth solving.
 
-Arch builds an AI copilot for manufacturers. It reads dashboards, synthesizes production data, and gives operators and engineers prescriptive guidance in real time, without an infrastructure overhaul. A copilot is only as useful as the data feeding it, and in a factory that data lives in the least cooperative layer of the stack: the gap between the shop floor and enterprise IT, where MES systems, databases, and APIs rarely share conventions.
+Arch builds an AI copilot for manufacturers. It reads dashboards, synthesizes production data, and hands operators and engineers prescriptive guidance in real time, no infrastructure overhaul required. A copilot is only as good as the data feeding it. In a factory, that data sits in the least cooperative layer of the stack: the gap between the shop floor and enterprise IT, where MES systems, databases, and APIs rarely agree on anything.
 
-What makes this worth writing about is not that Arch connected the data. It is the architectural choice that let them connect it once and repeat the result reliably.
+Here is the part that matters. Arch didn't just connect the data. They made the choice to connect it once and repeat the result reliably. That choice is the story.
 
-## The cost was in the repetition, not the connection
+## The cost lives in the repetition, not the connection
 
-Connecting one factory system to one platform is a known quantity. Most competent teams can do it. The cost appears on the second integration, and again on the tenth, and again on the hundredth.
+Connecting one factory system to one platform is a solved problem. Most competent teams clear it. The cost shows up on the second integration. Then the tenth. Then the hundredth.
 
-Hand-built integrations do not compose. Every new customer turns into a separate project. A fix applied in one environment does not reach the others, so the maintenance surface grows with each deployment, and so does the likelihood of configuration drift, where environments that should be identical slowly diverge until something fails in production. At more than 100 databases across multiple environments, that approach stops holding. The integration layer is no longer plumbing. It becomes the constraint on how fast the business can grow.
+Hand-built integrations don't compose. Every new customer becomes a separate project. A fix you apply in one environment never reaches the others, so the maintenance surface grows with every deployment, and configuration drift creeps in, environments that should be identical pulling apart until something breaks in production. Past 100 databases across multiple environments, that approach collapses. The integration layer stops being plumbing. It becomes the ceiling on how fast the business can grow.
 
-For a company whose core work is onboarding manufacturers, that constraint sets a hard limit on the roadmap.
+For a company whose entire job is onboarding manufacturers, that ceiling sets the roadmap. So Arch refused to accept it.
 
 ## Standardize the unit of work
 
-Arch stopped treating each integration as a project and started treating it as a template.
+Arch stopped treating each integration as a project. They started treating it as a template.
 
-Working in FlowFuse's low-code environment, the team built standardized, reusable subflows that automate job creation in Arch React. The subflow is the unit of work: a packaged, parameterized piece of logic that performs one job the same way on every deployment. Onboarding a new customer changed from "build an integration" to "deploy a known-good template and adjust the edges." The engineering happens once. What follows is configuration.
+Working in FlowFuse's low-code environment, the team built standardized, reusable subflows that automate job creation in Arch React. The subflow is the unit of work: a packaged, parameterized piece of logic that does one job the same way on every deployment. Onboarding a new customer shifted from "build an integration" to "deploy a known-good template and adjust the edges." Do the engineering once. Configure everything after that.
 
-Beneath that layer, MQTT brokers connect directly to the MES systems and open a reliable path for live production data. The flows receive the stream, filter it, and generate tasks automatically as production events arrive. Data moves when something actually happens on the floor, not on a constant dump-everything schedule. That event-driven path between shop floor and top floor is how the pipeline operates by default.
+Beneath that layer, MQTT brokers connect straight to the MES systems and open a reliable path for live production data. The flows take the stream, filter it, and generate tasks automatically from the processed production data. The architecture responds to production events immediately, which is what turns raw shop-floor activity into real-time insight.
 
-Arch did this without ripping out or replacing the MES systems already running on the floor. FlowFuse sits as a low-code layer on top of them, reaching a large library of nodes for industrial protocols, databases, and services, so a new data source is usually a matter of configuring an existing connector rather than writing an integration from nothing.
+Arch did this on top of the MES systems already running on the floor, not by replacing them. FlowFuse sits as a low-code layer above them, connecting to existing factory systems rather than forcing a rebuild.
 
 ## DevOps: one place to change everything
 
-The standardized subflows make each integration inexpensive to build. FlowFuse's DevOps model makes each integration inexpensive to maintain, and for anyone responsible for a system at this scale, the second property is the one that decides whether the first one lasts.
+Standardized subflows make each integration cheap to build. FlowFuse's DevOps model makes each integration cheap to maintain. For anyone running a system at this scale, the second property is the one that decides whether the first one survives.
 
-FlowFuse manages every instance running your flows from a single platform, and its DevOps pipelines stage those instances across development, test, and production. Arch edits in one place and propagates the change to every production instance automatically. There is no instance-by-instance patching, no divergence between deployments that are supposed to match, and fewer configuration errors, because the system has one source of truth instead of dozens of hand-managed copies. Snapshots add a version history on top, so any instance can roll back to a known-good state if a change misbehaves.
+FlowFuse manages every instance running your flows from a single platform, and its deployment pipelines propagate changes across development and production environments. Arch edits in one place and pushes the change to every production instance automatically. No instance-by-instance patching. No divergence between deployments that are supposed to match. Fewer configuration errors, because the system runs on one source of truth instead of dozens of hand-managed copies.
 
-These are two distinct properties working toward the same outcome. One keeps the cost of building low. The other keeps the cost of maintaining low. Together they separate Arch's growth from its operational load, so the company can add customers without adding the same weight to the team that keeps everything running.
+Two distinct properties, one outcome. One keeps the cost of building low. The other keeps the cost of maintaining low. Together they break the link between Arch's growth and its operational load. Arch adds customers without adding the same weight to the team keeping everything running.
 
 ## Results
 
-- More than 100 databases connected through automated, FlowFuse-orchestrated subflows.
-- New-customer rollouts completed in a fraction of the previous time, as reusable subflows replaced manual configuration.
-- Consistent real-time processing across diverse systems, using MQTT pipelines paired with FlowFuse-managed environments.
-- Updates that reach every environment at once through single-point editing and DevOps pipelines, with no drift and no per-instance patching.
+- **More than 100 databases connected through automated subflows.** Every integration runs on the same FlowFuse-orchestrated pattern rather than a hand-built connection, which is why the hundredth database came online on the same proven path as the first.
+- **New-customer onboarding shifted from a build to a deployment.** Reusable subflows replaced manual configuration, cutting the time to bring a new customer online to a fraction of what it once took and removing the per-customer engineering that had limited how fast Arch could grow.
+- **Reliable real-time processing across diverse systems.** MQTT pipelines paired with FlowFuse-managed environments keep live production data consistent and dependable, regardless of how different each customer's MES happens to be.
+- **A single edit reaches every environment at once.** Single-point editing and centralized deployment pipelines propagate updates across all production instances simultaneously, with no configuration drift and no instance-by-instance patching, so the cost of maintenance no longer rises with each new deployment.
 
-As Arch describes it, the ability to edit once and deploy everywhere added real efficiency to how the team manages integrations.
+Taken together, these results separate Arch's growth from its operational load. The standardized subflows keep each integration inexpensive to build, the centralized DevOps model keeps it inexpensive to maintain, and the combination lets Arch add customers without adding the same weight to the team that keeps everything running. As Arch describes it, the ability to edit once and deploy everywhere added real efficiency to how the team manages integrations.
 
 ## What comes next
 
-Arch continues to expand the platform with more data sources, more third-party integrations, and more manufacturing customers. Because the foundation is templated and centrally managed, each addition begins from proven ground rather than an empty canvas.
+Arch keeps expanding the platform: more data sources, more third-party integrations, more manufacturing customers. Because the foundation is templated and centrally managed, each addition starts from proven ground instead of an empty canvas.
 
-The result that matters was never the first 100 databases. It is an architecture in which the next 100 cost a fraction of what the first ones did.
+The first 100 databases were never the result that mattered. The architecture is. The next 100 cost a fraction of what the first ones did.
 
-*Read the full story on the [FlowFuse customer page](https://flowfuse.com/customer-stories/scaling-manufacturing-automation-with-flowfuse/).*
+*Read the full story on the [FlowFuse customer page](/customer-stories/scaling-manufacturing-automation-with-flowfuse/).*
