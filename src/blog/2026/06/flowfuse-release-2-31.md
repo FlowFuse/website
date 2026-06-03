@@ -35,6 +35,16 @@ That phase is over. With 2.31, agentic development opens up as an open beta, on 
 
 You can now use it on Remote Instances as well as Hosted Instances. Until now agentic development was limited to Hosted Instances. In 2.31 it also works on Remote Instances, so you get the same build-it-for-me experience across both instance types.
 
+## Certified nodes for industrial connectivity and AI {#certified-nodes}
+
+FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can add to your instances. Available at launch:
+
+- **RTSP** for video streams
+- **OPC UA** for industrial connectivity
+- **AI nodes** for Anthropic, OpenAI, Gemini, and Ollama, with other model providers following soon
+
+Certified nodes are available to FlowFuse Cloud customers. Get in contact with sales or your account rep and we'll enable the ones your team needs.
+
 ## Decide Where AI Runs {#ai-opt-out}
 
 Not every team wants AI on, and not every instance should have it. 2.31 makes that a setting rather than an all-or-nothing platform decision.
