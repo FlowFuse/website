@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.31: Agentic Development Now in Open Beta, FlowFuse Expert Builds Your Industrial App on Edge Devices"
-subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and per-instance AI controls, dark mode, and real-time platform updates."
-description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and per-instance AI controls, an app-wide dark mode, and real-time platform updates."
+subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and per-instance AI controls and real-time platform updates."
+description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and per-instance AI controls and real-time platform updates."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 # image: /blog/2026/06/images/flowfuse-release-2-31.png  # add once the art request asset lands; the file is absent now and 11ty's image step errors on it, so it is omitted (falls back to the default blog tile)
@@ -16,14 +16,12 @@ release: "2.31"
 #     heading: "Let FlowFuse Expert build your industrial application"
 #   - id: ai-opt-out                       (new entry; changelog flowfuse#7333; tiering TBD)
 #     heading: "Decide Where AI Runs"
-#   - id: dark-mode                        (new entry; changelog flowfuse#7359)
-#     heading: "Dark Mode"
 #   - id: realtime-platform-updates        (new entry)
 #     heading: "Real-Time Platform Updates"
-tldr: "In FlowFuse 2.31 you describe what you want and FlowFuse Expert builds your industrial application for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. You also get per-team and per-instance control over AI, an app-wide dark mode, and instance and team status that updates live. This is a foundational release, with a lot of the work happening under the hood."
+tldr: "In FlowFuse 2.31 you describe what you want and FlowFuse Expert builds your industrial application for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. You also get per-team and per-instance control over AI, and instance and team status that updates live. This is a foundational release, with a lot of the work happening under the hood."
 ---
 
-With FlowFuse 2.31 you describe what you want and FlowFuse Expert builds it on your Node-RED workspace for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. Alongside that, you get granular control over where AI runs, an app-wide dark mode, and platform status that updates in real time.
+With FlowFuse 2.31 you describe what you want and FlowFuse Expert builds it on your Node-RED workspace for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. Alongside that, you get granular control over where AI runs and platform status that updates in real time.
 
 <!--more-->
 
@@ -46,12 +44,6 @@ Not every team wants AI on, and not every instance should have it. 2.31 makes th
 - **Opt-in for Self-Hosted.** AI is not enabled by default for self-hosted clients. You turn it on when you want it, rather than having it forced on.
 
 This gives admins clear control over where AI runs, team by team and instance by instance.
-
-## Dark Mode {#dark-mode}
-
-FlowFuse now has an app-wide dark mode. Easier on the eyes for long sessions, and your choice is remembered in your browser.
-
-<!-- TODO: screenshot of dark mode editor -->
 
 ## Real-Time Platform Updates {#realtime-platform-updates}
 
