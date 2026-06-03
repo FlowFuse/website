@@ -5,7 +5,7 @@ description: "Arch Systems connects 100+ factory databases to a single analytics
 date: 2026-06-03
 keywords: manufacturing data integration, MES integration, factory database integration, industrial DevOps, FlowFuse, low-code manufacturing, real-time production data, scalable data integration
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/06/images/arch-systems.png
 tags:
 - flowfuse
 meta:
