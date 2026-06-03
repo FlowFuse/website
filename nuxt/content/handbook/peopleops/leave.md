@@ -20,7 +20,6 @@ Before you can take time off you should _always_:
     - This is a limitation in Deel and does not limit the amount of time off you may take.
 - Add an 'Out of Office' appointment in your personal Google Calendar, and
   decline all meetings automatically.
-- Add your Out of Office to your [team calendar](#team-calendars) as `Name OOO`.
 - Add a 'Vacation responder' to your Gmail account, and provide another contact
   person within your team.
   1. Open **Gmail** in your browser.
@@ -34,15 +33,42 @@ Before you can take time off you should _always_:
        through [Day], [Date]. Please contact [team member] in my absence."_)
 - Inform fellow team members of your time off, and hand over work that’s distributed.
   
-### Team Calendars
+### Team Calendars & Deel OOO Sync
 
 We use team-specific calendars to track team meetings, events, and team-level availability.
 
 Out of Office time should be visible in two places:
 - Your **personal calendar** so collaborators across the company can see your availability.
-- Your **team calendar** so your immediate team has clear visibility into coverage and capacity.
+- Your **Deel synced calendar** so the company and your immediate team has clear visibility into coverage and capacity.
 
 This is intentional and not considered duplication. Each calendar serves a different audience.
+
+To eliminate manual entry duplication, we use automated Deel calendar feeds. Make sure that your out of office is logged properly in Deel for it to show up in these calendar feeds. Clicking the links below will automatically prompt Google Calendar to subscribe to the feed safely and securely.
+
+#### How to Subscribe to Deel OOO Sync Calendars
+
+Simply click the link for the **Company-Wide** calendar and your specific **Department** calendar below. Google Calendar will open a desktop prompt asking if you want to add the calendar. Click **Add**.
+
+* 📅 **[Click to Add] FlowFuse Company-Wide OOO Calendar**
+  [Subscribe to Company OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiJmZTVkOTJiOS00ZGY1LTRkMGYtOWFlMC00MjI2OTQwYTRjMmIiLCJpYXQiOjE3ODA0MTEzNDksImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.M_bb-zECVFcbqvimk2BGiEq2WjTNvYdgNEtH_EmH_rQ?v=1)
+
+* 📅 **[Click to Add] BizOps Department OOO**
+  [Subscribe to BizOps OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiJjOTcyMDljNS0yYTMyLTQ1ZTQtYmQ5OS04MjVmMjY1ZDIxMzQiLCJpYXQiOjE3ODA0MTUyMzgsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.zqApkZFDbT8jJaNHDHeACWwGCZ8l_1mMTjnoZjRLSmM?v=1)
+
+* 📅 **[Click to Add] Engineering Department OOO**
+  [Subscribe to Engineering OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiIxYzlhMjZhOC01YzgyLTQ4ZjItOTllZi05YWEzMjM0NTIwMzkiLCJpYXQiOjE3ODA0MTUxNjYsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.6aW-787XYMR67tmkcCpDcVLfVgHICyOMtt2TEXE6QDI?v=1)
+
+* 📅 **[Click to Add] Marketing Department OOO**
+  [Subscribe to Marketing OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiI0OGUwMTAzYy1iODIyLTRhNDctODU3Mi04YmE3NzZjZTk4ODEiLCJpYXQiOjE3ODA0MTUyMDcsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.12mOszOGcM9GOOpHyyH7j6Uob0b8f8N-1UvkRD05mgg?v=1)
+
+* 📅 **[Click to Add] Sales Department OOO**
+  [Subscribe to Sales OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiI3ZGQxZTUzMS0xOWEwLTQyY2UtYTk3Ny0xYjZmNGNkOWU0YzkiLCJpYXQiOjE3ODA0MTUyMjQsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.zLOhqZPrnL9W3C62pWLKbvpzbim_XwbZUuCjrf-gEZw?v=1)
+ 
+*(Note: Google Calendar can take up to 12-24 hours to initially sync data packages from Deel, so newly approved time-off blocks may not populate instantly upon adding the calendar).*
+
+#### How to Subscribe to Team Calendars for team meetings and events
+
+In addition to the automated feeds for tracking out-of-office schedules, please ensure you also subscribe to your departmental team calendars to keep track of synchronous group events and project meetings.
 
 - [Engineering](https://calendar.google.com/calendar/u/0?cid=Y19iMTZjMTdjYzlmNmZiMTYyZmI0NmUxMDIyNzNkNTFmMWQ4ZjI0MThkMzVmZTc5ZmExNGU0NTE3M2NkMDE5NTVlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 - [Marketing](https://calendar.google.com/calendar/u/0?cid=Y19iY2UwZjY2NzE3ZTQ3YjAzZjgxZjliNTdjNWNhYTkyYTZlOTM1ZTg5NGU5MDdiOTZjNmY5N2I4ODA3MjllMDQ5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
