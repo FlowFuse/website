@@ -56,6 +56,12 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'netlify',
+        serverAssets: [
+            {
+                baseName: 'analytics',
+                dir: '../src/_includes/analytics'
+            }
+        ],
         prerender: {
             routes: [
                 '/terms',
