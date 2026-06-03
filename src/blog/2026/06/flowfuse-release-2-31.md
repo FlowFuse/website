@@ -18,14 +18,14 @@ release: "2.31"
 #     heading: "Decide Where AI Runs"
 #   - id: realtime-platform-updates        (new entry)
 #     heading: "Real-Time Platform Updates"
-tldr: "In FlowFuse 2.31 you describe what you want and FlowFuse Expert builds your industrial application for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. You also get per-team and per-instance control over AI, and instance and team status that updates live. This is a foundational release, with a lot of the work happening under the hood."
+tldr: "FlowFuse 2.31 takes agentic application building into open beta: describe what you want and FlowFuse Expert builds it on your workspace, now on FlowFuse Cloud and Self-Hosted Enterprise, and on Remote as well as Hosted Instances. New certified nodes bring RTSP, OPC UA, and AI models to your flows, and you get per-team and per-instance control over AI. A foundational release, with much of the work under the hood."
 ---
 
-With FlowFuse 2.31 you describe what you want and FlowFuse Expert builds it on your Node-RED workspace for you. It is now an open beta, no longer request-only, on FlowFuse Cloud and for Self-Hosted Enterprise, and it works on Remote Instances as well as Hosted ones. Alongside that, you get granular control over where AI runs and platform status that updates in real time.
+FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, now in open beta and running at the edge. Describe what you need, and Expert assembles it on your workspace.
 
 <!--more-->
 
-## Let FlowFuse Expert build your industrial application {#expert-agentic-ga}
+## Let FlowFuse Expert build your industrial application, now in open beta {#expert-agentic-ga}
 
 *FlowFuse Expert is our integrated AI assistant, in the website, the platform, and the immersive Node-RED editor.*
 
@@ -54,7 +54,7 @@ Certified nodes are available to FlowFuse Cloud customers. [Get in touch with sa
 - **Custom CA certificates** are now documented for environments that need them.
 - **Smaller fixes**: secure (`wss://`) connections to your MQTT broker now work from the editor, and custom packages with uppercase names no longer break pipeline deploys.
 
-## Fresh off our team off-site in Greece
+## Our team off-site in Greece
 
 We spent part of this cycle together in Greece for a full-company off-site, resetting our roadmaps and how we run product. That is also why 2.31 is lighter on big features: a lot of this month's work is foundational. More on what came out of it soon.
 
