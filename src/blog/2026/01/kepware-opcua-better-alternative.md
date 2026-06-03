@@ -9,6 +9,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/01/images/kepware-alternative.png
 tags:
   - flowfuse
+  - opcua
 cta:
   type: contact
   title: Evaluate Your Options Before New Ownership Does It For You
@@ -112,3 +113,5 @@ Kepware functions reliably. That's not disputed. But reliability alone doesn't j
 Evaluate alternatives now from strength. Or negotiate renewals later from weakness under new ownership terms.
 
 Kepware won through early dominance and ecosystem lock-in. That's separate from being the right architecture for current operations.
+
+See [how FlowFuse connects any PLC to MQTT, OPC UA, cloud, and enterprise systems](/landing/plc/) — without per-tag licensing or proprietary lock-in.

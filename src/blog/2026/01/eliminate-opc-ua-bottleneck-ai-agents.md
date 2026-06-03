@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: 
 tags:
 - flowfuse
+- opcua
 cta:
   type: contact
   title: Turn Your Industrial Data Into Instant Answers
@@ -102,5 +103,7 @@ The value in industrial data was never about collection—it was always about th
 This isn't about replacing people with automation. It's about making the data infrastructure you already built actually useful for the decisions it was meant to inform. Your team still interprets results, makes judgment calls, and takes action. The AI just handles the mechanical work of data access and analysis.
 
 And it's not limited to OPC UA. FlowFuse's MCP approach works the same way across any industrial system—MQTT brokers, Modbus devices, SQL databases, REST APIs, whatever protocols you're running. Same natural language interface, same investigation capabilities, different underlying systems. The infrastructure you have becomes the infrastructure you can actually use.
+
+For a complete guide to connecting PLCs via OPC UA, EtherNet/IP, Siemens S7, and Modbus to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
 
 

@@ -8,10 +8,12 @@ authors: ["sumit-shinde"]
 image: /blog/2026/04/images/modbus-degradation-img.png
 tags:
   - flowfuse
+  - modbus
 cta:
   type: sign-up
   title: Unlock your Modbus data with FlowFuse
   description: Get Modbus data flowing reliably — then connect every other protocol on your plant floor. OPC-UA, MQTT, legacy and modern, all in one place
+tldr: "Modbus degradation rarely announces itself it shows up as stale values, slower-than-expected poll cycles, and vague operator complaints. RS-485 serial and Modbus TCP fail through different mechanisms (CRC errors vs. connection table exhaustion), and the four metrics to monitor are transaction success rate, response time, CRC error count, and poll cycle completion time."
 ---
 
 Modbus doesn't fail loudly. It drifts, and by the time operators notice, you've already lost the easy fix.
@@ -177,3 +179,5 @@ Physical changes to the RS-485 segment (wiring, termination, baud rate or parity
 What keeps a Modbus installation stable for years is mostly mundane: a poll list reviewed quarterly against the actual field, scan rates tiered with the reasoning written down, timeouts calculated from measured device response times rather than defaults, and per-device success rates visible on a dashboard that someone checks regularly enough to catch drift before it becomes failure. None of it is sophisticated. All of it requires treating the Modbus layer as something that needs ongoing maintenance, not a configuration artifact from the last integration project.
 
 If you've worked through both parts and the installation is still misbehaving, you're likely past what configuration review can resolve. Power quality on the RS-485 segment, a device firmware bug producing malformed responses on specific register ranges, or a network infrastructure change that introduced unexpected latency: these are real causes that look like everything else until you rule everything else out. A [protocol capture](https://en.wikipedia.org/wiki/Packet_analyzer) on the wire during an active failure event will tell you more in twenty minutes than another hour of configuration review. At that point, that's where to start.
+
+For a guide to connecting Modbus PLCs — alongside OPC UA, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

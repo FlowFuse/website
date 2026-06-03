@@ -9,6 +9,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/12/images/what-is-plc.png
 tags:
   - flowfuse
+  - plc
 meta:
   faq:
     - question: "What is a PLC in simple terms?"
@@ -28,6 +29,7 @@ meta:
 
     - question: "What are the 7 main parts of a PLC?"
       answer: "The 7 main parts of a PLC are: 1) Power Supply – provides stable power; 2) Central Processing Unit (CPU) – executes the control program; 3) Input Modules – read signals from sensors and switches; 4) Output Modules – control actuators like motors and valves; 5) Programming Device – used to write and upload programs; 6) Communication Interface – allows the PLC to connect with other PLCs, HMIs, or SCADA systems; 7) Memory – stores the program and runtime data."
+tldr: "A Programmable Logic Controller (PLC) is a rugged industrial computer that continuously reads sensor inputs, executes control logic, and operates motors, valves, and equipment in real-time with deterministic reliability forming the backbone of 80% of global industrial automation since Dick Morley's 1968 invention. Unlike general-purpose computers, PLCs are designed for decades of uninterrupted operation in extreme environments, and the biggest modern challenge is getting PLCs from different vendors to communicate with each other and with enterprise IT systems."
 ---
 
 ***A PLC (Programmable Logic Controller) is an industrial computer that continuously monitors sensors, executes control logic, and operates motors, valves, and equipment in real-time, serving as the reliable backbone of modern manufacturing and industrial automation.***
@@ -214,7 +216,7 @@ A single Node-RED instance can simultaneously communicate with Siemens S7 PLCs, 
 
 FlowFuse adds the enterprise infrastructure: centralized management across hundreds of edge devices, version control and rollback, role-based access, audit logging, and security at every layer. Build one flow that reads from Siemens PLCs and deploy it to every facility. When something changes, update once and push the change everywhere. Edge instances run locally even if network connections drop.
 
-FlowFuse doesn't replace your PLCs. It connects them. That Rockwell controller keeps running its proven logic. The Siemens system continues its scan cycle. What changes is the integration layer that lets isolated systems finally communicate.
+[FlowFuse doesn't replace your PLCs. It connects them.](/landing/plc/) That Rockwell controller keeps running its proven logic. The Siemens system continues its scan cycle. What changes is the integration layer that lets isolated systems finally communicate.
 
 A [large US manufacturing company](/customer-stories/manufacturing-digital-transformation/) with over 10,000 employees uses FlowFuse to manage thousands of Node-RED instances deployed across global facilities. These instances collect data from sensors, PLCs, and cameras on production lines, enabling them to transition from paper-based operations to real-time data visibility. A team of five developers—former manufacturing engineers, not software specialists—built hundreds of applications using Node-RED's visual programming. FlowFuse now manages deployment to thousands of remote devices and maintains multiple versions across all instances, solving what had become an unmanageable tracking challenge as they scaled.
 

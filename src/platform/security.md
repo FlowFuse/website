@@ -144,7 +144,7 @@ Most notably for (prospective) customers assessing FlowFuse:
 
 1. [Information Security Policy and Acceptable Use Policy](/handbook/company/security/information-security/)
 1. [Data Management Policy](/handbook/company/security/data-management/)
-1. [Information security awareness training](/handbook/company/security/human-resources/#information-security-awareness%2C-education-%26-training)
+1. [Information security awareness training](/handbook/company/security/human-resources/#information-security-awareness-education-training)
 
 ## GxP Readiness
 

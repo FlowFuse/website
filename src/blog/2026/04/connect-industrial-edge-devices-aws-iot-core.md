@@ -12,6 +12,7 @@ cta:
   type: sign-up
   title: Edge to cloud, without the complexity
   description: FlowFuse connects your industrial machines to AWS IoT Core — securely, at scale, without managing infrastructure.
+tldr: "This step-by-step guide walks through connecting FlowFuse to AWS IoT Core using MQTT over mutual TLS with X.509 certificates. It covers creating an IoT Thing, generating and downloading certificates, configuring the MQTT broker in Node-RED, and verifying that messages arrive in AWS. Once connected, industrial data from any protocol OPC-UA, Modbus, or others can be routed to any AWS service via IoT Core rules."
 ---
 
 Every industrial site generates data. Getting it to AWS securely is where most teams get stuck.
@@ -221,3 +222,5 @@ A few things worth doing before you go to production:
 **Monitor connection state.** Add a status node in Node-RED connected to your mqtt out node. If the connection drops, you'll want to know immediately — not when someone notices missing data an hour later.
 
 Industrial data pipelines aren't complex. They just have a lot of small steps that have to be right. You've done the hard part.
+
+For more on how FlowFuse connects PLCs and edge devices — via OPC UA, EtherNet/IP, Siemens S7, and Modbus — to cloud and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

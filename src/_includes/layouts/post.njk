@@ -32,13 +32,13 @@
                 <div class="flex items-center gap-1 text-sm text-gray-500 mt-4">
                     {% set comma = joiner() %}
                     {%- for author in authors %}
-                        {{ comma() }} <span class="font-medium">{{ people[author].name if people[author] else 'FlowFuse' }}</span>
+                        {{ comma() }} <span class="font-medium">{{ people[author].name if people[author] else 'FlowFuse' }}</span>{% if people[author] and people[author].title %}<span class="text-gray-400">, {{ people[author].title }}</span>{% endif %}
                     {%- endfor %}
                     <span class="text-gray-500">•</span>
                     {%- if lastUpdated -%}
-                    <time value="{{ lastUpdated | dateToRfc3339 }}">{{ lastUpdated | shortDate }}</time>
+                    <time datetime="{{ lastUpdated | dateToRfc3339 }}">Updated {{ lastUpdated | shortDate }}</time>
                     {%- else -%}
-                    <time value="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
+                    <time datetime="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
                     {%- endif -%}
                 </div>
             </div>
@@ -61,6 +61,20 @@
                             </div>
                         {% endif %}
                     </div>
+                    {% if tldr %}
+                    <section id="tldr" aria-label="TL;DR" class="not-prose my-8 rounded-r-lg border-l-4 border-indigo-400 bg-indigo-50 px-6 py-5">
+                        <span class="text-indigo-400 text-xs uppercase font-bold tracking-wider">TL;DR</span>
+                        {% if tldr is string %}
+                            <p class="mt-2 mb-0 text-sm leading-relaxed text-gray-700">{{ tldr }}</p>
+                        {% else %}
+                            <ul class="mt-2 mb-0 list-disc space-y-1 pl-4 text-sm leading-relaxed text-gray-700">
+                                {% for point in tldr %}
+                                    <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </section>
+                    {% endif %}
                     {{ content | safe }}
 
                 </div>

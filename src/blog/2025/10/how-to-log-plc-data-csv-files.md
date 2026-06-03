@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/10/images/log-plc-data-to-csv.png
 tags:
     - flowfuse
+    - plc
 ---
 
 CSV files have been recording manufacturing data since the mid-1980s, over 40 years of continuous use across every industry. Logging to databases like InfluxDB, TimescaleDB, or PostgreSQL is excellent for real-time analytics, complex queries, and large-scale operations. But many organizations still rely on CSV files for good reasons: regulatory compliance, legacy system integration, offline analysis, or simply because it's the format their teams know and trust. If you're reading this, you're likely one of them and need a reliable solution.
@@ -231,5 +232,7 @@ Start small: connect one PLC, verify data quality, and deploy your first logging
 FlowFuse makes this process straightforward by combining Node-RED’s flexibility with enterprise-grade management and monitoring. You can deploy updates remotely, manage devices across multiple sites, and standardize data collection — all from a single platform.
 
 And while CSV is a reliable starting point, FlowFuse also integrates seamlessly with modern databases and historians like InfluxDB, TimescaleDB, and MySQL. Even better, FlowFuse Cloud includes a built-in PostgreSQL service and an AI Query Node that lets you explore your data conversationally — turning raw logs into actionable insights.
+
+For more on how FlowFuse connects PLCs across OPC UA, Siemens S7, EtherNet/IP, and Modbus to collect and route industrial data, see the [FlowFuse PLC integration overview](/landing/plc/).
 
 > You can [talk to our team](/book-demo/), they’ll walk you through a live demo showing how FlowFuse helps you connect, collect, transform, and visualize your industrial data reliably and intelligently.

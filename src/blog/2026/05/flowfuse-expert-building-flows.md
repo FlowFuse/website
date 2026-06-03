@@ -14,6 +14,7 @@ cta:
     type: contact
     title: Try FlowFuse Expert on your team
     description: Available in soft launch on FlowFuse Cloud. Reach out to get it enabled.
+tldr: "FlowFuse Expert can now build complete Node-RED applications from a natural language description, wiring nodes on the canvas in real time. Before building, Expert reads your installed palette, existing canvas state, node configurations, and runtime debug data to produce output that matches your actual environment. The feature is in soft launch on FlowFuse Cloud for paid teams."
 ---
 
 FlowFuse Expert now builds applications for you. Describe what you need, and the flow is built in front of you on the canvas, wired and configured. Ask for a change, it updates on the spot.

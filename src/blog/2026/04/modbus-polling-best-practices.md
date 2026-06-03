@@ -8,10 +8,12 @@ authors: ["sumit-shinde"]
 image: /blog/2026/04/images/modbus-polling-best-practices.jpg
 tags:
 - flowfuse
+- modbus
 cta:
   type: contact
   title: Need help fixing your Modbus setup?
   description: If your system is still dropping data or behaving unpredictably, reach out. We can help review your polling configuration and identify what is actually causing the instability.
+tldr: "Most Modbus polling problems aren't hardware failures they're three configuration mistakes made at commissioning: polling all registers at a single scan rate instead of tiering by how fast data changes, setting timeouts based on intuition instead of measured device response times, and batching registers aggressively across gaps in the register map. Each mistake produces silent failures that trace back to configuration decisions that are straightforward to fix once identified."
 ---
 
 **Modbus polling looks simple. It is simple. That's the problem.**
@@ -140,3 +142,5 @@ The three problems this article covers, scan rate uniformity, timeout miscalcula
 The fix for all three is the same kind of work: deliberate, once, documented. Tier your scan rates to match how fast your data actually changes. Calculate your timeouts from the physics of your network rather than accepting defaults. Read the register map before you batch. None of this takes long. None of it requires downtime. It just requires treating these as decisions rather than defaults.
 
 If you've made these changes and your installation is still misbehaving, the problem is in the operational layer: how your polling architecture handles the network and devices once they're running. The next article covers that: serial versus TCP failure modes, unresponsive device handling, live diagnostics, and how to fix what you find without taking production down.
+
+For a complete guide to connecting Modbus PLCs — alongside OPC UA, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

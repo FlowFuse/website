@@ -8,6 +8,9 @@ authors: ["sumit-shinde"]
 image: /blog/2025/10/images/plc-to-mqtt.png
 tags:
   - flowfuse
+  - modbus
+  - mqtt
+  - plc
 ---
 
 Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand—flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
@@ -195,3 +198,5 @@ Manufacturers typically see substantial cost reduction in the first year, with i
 ## Get Started
 
 Connect your first PLC today. [Sign up for FlowFuse](https://app.flowfuse.com/), install the Device Agent on your edge hardware, and have data flowing to MQTT in under an hour. The platform handles the complexity—you focus on turning factory data into insights.
+
+MQTT is one of several ways FlowFuse connects PLCs to the modern industrial stack. For a full view of supported protocols — OPC UA, EtherNet/IP, Siemens S7, Modbus, and more — see the [FlowFuse PLC integration overview](/landing/plc/).

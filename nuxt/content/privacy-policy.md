@@ -52,16 +52,16 @@ We may use your personal information for the following purposes or as otherwise 
 
 **Service delivery.** We may use your personal information to:
 
- - provide, operate and improve the Service and our business, including researching prospective and current portfolio companies and financing them;
+ - provide, operate and improve the Service and our business;
  - communicate with you about the Service, including by sending announcements, updates, security alerts, and support and administrative messages;
  - understand your needs and interests, and personalize your experience with the Service and our communications; and
  - provide support for the Service, and respond to your requests, questions and feedback.
 
 **Research and development.** We may use your personal information for research and development purposes, including to analyze and improve the Service and our business. As part of these activities, we may create aggregated, de-identified or other anonymous data from personal information we collect. We make personal information into anonymous data by removing information that makes the data personally identifiable to you. We may use this anonymous data and share it with third parties for our lawful business purposes, including to analyze and improve the Service and promote our business.
 
-**Marketing.** We and our service providers may collect and use your personal information for marketing purposes. We may send you Open Core Ventures-related marketing communications as permitted by law. You may opt-out of our marketing communications as described in the [Opt-out of marketing](#your-choices) section below.
+**Marketing.** We and our service providers may collect and use your personal information for marketing purposes. We may send you FlowFuse-related marketing communications as permitted by law. You may opt-out of our marketing communications as described in the [Opt-out of marketing](#your-choices) section below.
 
-**To manage our and other's recruiting and process employment applications.** We may use personal information, such as information submitted to us in a job application, to facilitate our and other's recruitment activities and process employment applications, such as by evaluating a job candidate for an employment activity, and monitoring recruitment statistics. For our portfolio companies, we may use your personal information to assist their recruitment and employment process.
+**To manage our recruiting and process employment applications.** We may use personal information, such as information submitted to us in a job application, to facilitate our recruitment activities and process employment applications, such as by evaluating a job candidate for an employment activity, and monitoring recruitment statistics.
 
 **Compliance and protection.** We may use your personal information to:
 
@@ -85,7 +85,7 @@ We may share your personal information with the following parties and as otherwi
 
 **Authorities and others.** Law enforcement, government authorities, and private parties, as we believe in good faith to be necessary or appropriate for the compliance and protection purposes described above.
 
-**Business transferees.** Acquirers and other relevant participants in business transactions (or negotiations and diligence for such transactions) involving a corporate divestiture, merger, consolidation, acquisition, reorganization, sale or other disposition of all or any portion of the business or assets of, or equity interests in, Open Core Ventures or our affiliates (including, in connection with a bankruptcy or similar proceedings).
+**Business transferees.** Acquirers and other relevant participants in business transactions (or negotiations and diligence for such transactions) involving a corporate divestiture, merger, consolidation, acquisition, reorganization, sale or other disposition of all or any portion of the business or assets of, or equity interests in, FlowFuse or our affiliates (including, in connection with a bankruptcy or similar proceedings).
 
 ## Your choices
 

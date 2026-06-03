@@ -1,18 +1,69 @@
 ---
-title: How to Build An Application With Node-RED Dashboard 2.0
+title: "How to Build An Application With Node-RED Dashboard 2.0 (2026)"
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
 description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building a personalized, secure, and fully functional application.
+lastUpdated: 2026-06-03
 date: 2024-04-25
 authors: ["sumit-shinde"]
 image: /blog/2024/04/images/build-application-dashboard-2.png
+keywords: node-red dashboard 2.0 application, build application node-red dashboard, node-red dashboard 2 tutorial, flowfuse dashboard app, node-red task management dashboard
 tags:
     - posts
     - node-red
     - dashboard
+    - how-to
 cta:
   type: sign-up
   title: Build and Deploy Node-RED Applications Faster
   description: FlowFuse gives you everything you need to build, secure, and scale Node-RED applications — multi-user support, authentication, and production-ready deployment included. Start your free trial today.
+meta:
+  howto:
+    name: "How to Build an Application with Node-RED Dashboard 2.0"
+    description: "Learn how to build a personalized, secure task management application using Node-RED Dashboard 2.0 with FlowFuse user authentication, global context storage, and Vuetify data tables."
+    totalTime: "PT35M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "Node-RED Dashboard 2.0"
+      - "FlowFuse User Addon"
+    steps:
+      - name: "Install the FlowFuse User Addon and enable user authentication"
+        text: "Install the FlowFuse User Addon for Dashboard 2.0 and enable FlowFuse user authentication in the instance settings to restrict access and expose logged-in user data."
+        url: "installing-flowfuse-user-addon"
+      - name: "Build a form to submit tasks"
+        text: "Drag a ui-form widget onto the canvas, configure the page layout, and add form elements for task title, description, due date, and priority."
+        url: "building-a-form-to-submit-tasks"
+      - name: "Store tasks in the global context"
+        text: "Use a function node to read the existing tasks array from global context, append the new task including the logged-in user's information, and write the updated array back."
+        url: "storing-tasks-in-the-global-context"
+      - name: "Display a notification on successful task submission"
+        text: "Connect a change node to set a confirmation message payload and wire it to a ui-notification widget positioned at the center of the screen."
+        url: "displaying-notification-on-successful-task-submission"
+      - name: "Retrieve and filter tasks by user"
+        text: "Use a ui-event node to trigger on page load, retrieve tasks from global context, and filter them with a function node so each user sees only their own tasks."
+        url: "retrieving-and-filtering-tasks"
+      - name: "Enable client constraints and create a data table"
+        text: "Enable Accept Client Constraints for the ui-template widget in the FF Auth tab, then paste a Vuetify data table into the widget and connect it to the filtered task output."
+        url: "enabling-client-constraint-for-ui-template"
+      - name: "Deploy the flow"
+        text: "Click the Deploy button, open the dashboard URL, log in with FlowFuse credentials, and verify that tasks can be added and displayed per user."
+        url: "deploying-the-flow"
+  faq:
+    - question: "What is Node-RED Dashboard 2.0?"
+      answer: "Node-RED Dashboard 2.0 is a modern replacement for the original node-red-dashboard package. It is built on Vue.js and Vuetify, supports multi-user authentication via FlowFuse, and provides a wider range of interactive widgets for building web applications directly from Node-RED flows."
+    - question: "What does the FlowFuse User Addon do?"
+      answer: "The FlowFuse User Addon is a plugin for Dashboard 2.0 that exposes the currently logged-in FlowFuse user's data (such as userId, username, and avatar) inside each dashboard message payload via msg._client.user. This allows flows to personalise content per user."
+    - question: "How does Dashboard 2.0 handle multi-user data isolation?"
+      answer: "Dashboard 2.0 supports client constraints that target messages to individual browser sessions. By enabling 'Accept Client Constraints' on widgets such as ui-template, you ensure that data updates and notifications are sent only to the user who triggered them, not to all connected users."
+    - question: "Can I use Vuetify components inside a ui-template widget?"
+      answer: "Yes. Dashboard 2.0's ui-template widget is built on Vue.js, which means all Vuetify components are available. You can copy component markup directly from the Vuetify documentation and paste it into a ui-template to use data tables, dialogs, cards, and more."
+    - question: "Where is task data stored in this guide?"
+      answer: "Tasks are stored in Node-RED's global context using global.set('tasks', tasks). This is suitable for demonstration purposes. For production use, a persistent database such as SQLite, MongoDB, or PostgreSQL is recommended."
+    - question: "How do I ensure only FlowFuse users can access the dashboard?"
+      answer: "Enable FlowFuse User Authentication in the instance settings under Settings > Security. This adds a login page in front of the dashboard URL so only registered FlowFuse users can access the application."
+    - question: "What triggers the task list to refresh when a user navigates to the tasks page?"
+      answer: "A ui-event node configured with the appropriate UI base listens for page change and reload events. When a user navigates to the tasks page, the ui-event fires and triggers the retrieval and filtering of tasks from global context."
+tldr: "This guide walks through building a personalised, multi-user task management application with Node-RED Dashboard 2.0 and FlowFuse. It covers enabling user authentication, using the FlowFuse User Addon to access logged-in user data, storing and filtering tasks in global context per user, and rendering them in a Vuetify data table inside a ui-template widget with client constraints enabled."
 ---
 
 In this guide, we'll build a Todo application to guide you through the features and explain how you can build rich and dynamic applications too. It shows many of the features that make Dashboard 2.0 great, and why you should use it over the deprecated node-red-dashboard.

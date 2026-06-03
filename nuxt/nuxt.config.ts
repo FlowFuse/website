@@ -1,3 +1,22 @@
+import { readdirSync, statSync } from 'node:fs'
+import { join, basename } from 'node:path'
+import remarkHandbookLinks from './utils/remark-handbook-links'
+
+// Collect all handbook routes from content files for SSG prerendering
+function collectHandbookRoutes(dir: string, basePath: string): string[] {
+    const routes: string[] = []
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            routes.push(...collectHandbookRoutes(fullPath, `${basePath}/${file}`))
+        } else if (file.endsWith('.md')) {
+            const slug = basename(file, '.md')
+            routes.push(slug === 'index' ? `${basePath}/` : `${basePath}/${slug}/`)
+        }
+    }
+    return routes
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -32,9 +51,23 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'static',
         prerender: {
-            routes: ['/terms', '/privacy-policy'],
+            routes: [
+                '/terms',
+                '/privacy-policy',
+                ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+            ],
             crawlLinks: false
         }
+    },
+
+    content: {
+        build: {
+            markdown: {
+                remarkPlugins: {
+                    'handbook-links': { instance: remarkHandbookLinks },
+                },
+            },
+        },
     },
 
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts

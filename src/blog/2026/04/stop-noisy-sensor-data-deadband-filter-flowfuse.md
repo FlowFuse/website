@@ -12,6 +12,7 @@ cta:
     type: signup
     title: "Start Building Cleaner Industrial Pipelines Today"
     description: "FlowFuse makes it easy to connect, filter, and manage industrial sensor data across your entire fleet. Start your free trial and get your first flow running in minutes."
+tldr: "Industrial sensors constantly fluctuate due to electrical noise, vibration, and ADC artifacts a deadband filter suppresses this by only forwarding a new value when it has moved beyond a defined threshold from the last accepted reading. FlowFuse has a built-in filter node that implements this in no-code configuration, and this guide walks through setting it up to handle single or multiple sensors independently, with practical advice on choosing the right threshold."
 ---
 
 In industrial systems, sensors rarely sit perfectly still. A temperature probe, pressure transducer, or flow meter will constantly fluctuate. Not because the process is changing, but because of electrical noise, vibration, or quantization artifacts in the ADC. If your control system reacts to every tiny wiggle, it triggers unnecessary alarms, wears out actuators, and buries real events in a fog of jitter.
@@ -115,3 +116,5 @@ A deadband filter solves this with a single comparison. No complex logic, no add
 But filtering noise is just one piece of a reliable industrial data pipeline. FlowFuse goes further. It simplifies collecting data from any device or protocol, implementing patterns like deadband filtering, [store and forward](/blog/2025/11/store-and-forward-edge-data-buffering/) to handle network interruptions, [dead letter queues](/blog/2026/03/how-to-implement-dlq-and-retries/) to catch and recover failed messages, and much more. All of it managed centrally, deployed consistently, and running reliably across your entire fleet.
 
 The filter handles the noise. FlowFuse handles everything else.
+
+For more on how FlowFuse connects PLCs and sensors — via OPC UA, Modbus, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

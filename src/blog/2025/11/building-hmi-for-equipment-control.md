@@ -8,6 +8,7 @@ authors: ["sumit-shinde"]
 image: /blog/2025/11/images/building-a-web-hmi-for-factory.png
 tags:
   - flowfuse
+  - plc
 ---
 
 Most factory HMIs are still stuck in one place. Dedicated panels mounted next to equipment, or SCADA workstations in the control room. Need to check something? You're walking over there.
@@ -259,5 +260,7 @@ You now have a working HMI that controls real equipment from any browser. The sa
 As your system grows, organize controls across multiple dashboard pages for different production lines or work cells. Add chart widgets to visualize production rates, cycle times, and sensor trends. Configure notification nodes to alert your team via email or Telegram when faults occur.
 
 And if you need to deploy the solution across many production lines, FlowFuse's DevOps features help you manage the scale. Build your HMI once, then deploy it across multiple edge devices and push updates centrally without visiting each location.
+
+For a full view of the PLC brands and protocols FlowFuse supports — Siemens, Allen-Bradley, Omron, OPC UA, Modbus, and more — see [how FlowFuse connects any PLC to the modern industrial stack](/landing/plc/).
 
 [Book a demo](/book-demo/) to see how FlowFuse can help your organization connect, collect, transform, and visualize industrial data with our low-code and AI-powered editor—without the hassle of infrastructure management, deployment complexities, or security concerns at scale.
