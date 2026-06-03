@@ -66,11 +66,15 @@ autoLaunch = false
 
 [build]
 command = "npm run build:nuxt"
-publish = "nuxt/.output/public"
+publish = "nuxt/dist"
 
 [functions]
 directory = "nuxt/.netlify/functions-internal"
-included_files = ["nuxt/.output/**"]
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/server"
+status = 200
 
 [context.deploy-preview]
 command = "npm run build:nuxt"
