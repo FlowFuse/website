@@ -27,13 +27,11 @@ With FlowFuse 2.31 you describe what you want and FlowFuse Expert builds it on y
 
 ## Let FlowFuse Expert build your industrial application {#expert-agentic-ga}
 
-*FlowFuse Expert is our integrated AI assistant across FlowFuse's website, platform, and the immersive Node-RED editor.*
+*FlowFuse Expert is our integrated AI assistant, in the website, the platform, and the immersive Node-RED editor.*
 
-In 2.30 we put agentic application building into soft launch. The idea is simple: tell FlowFuse Expert what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and it assembles the flow on your workspace for you. Until now you had to request access while we proved it out.
+Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and FlowFuse Expert assembles the flow on your workspace for you. With 2.31 this moves out of soft launch into an open beta: switched on for your team on FlowFuse Cloud, and enabled with a small configuration change on Self-Hosted Enterprise. No request needed.
 
-That phase is over. With 2.31, agentic development opens up as an open beta, on FlowFuse Cloud and for Self-Hosted Enterprise. No more requesting access: on FlowFuse Cloud it is switched on for your team, and Self-Hosted Enterprise customers can enable it with a small configuration change (your customer success contact can walk you through it). We are keeping the beta label on while we keep refining it.
-
-You can now use it on Remote Instances as well as Hosted Instances. Until now agentic development was limited to Hosted Instances. In 2.31 it also works on Remote Instances, so you get the same build-it-for-me experience across both instance types.
+It now works on Remote Instances as well as Hosted Instances, so you get the same build-it-for-me experience across both.
 
 ## Certified nodes for industrial connectivity and AI {#certified-nodes}
 
