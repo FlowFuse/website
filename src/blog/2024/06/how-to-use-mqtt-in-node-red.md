@@ -2,31 +2,59 @@
 title: "Working with MQTT in Node-RED: Complete Guide (2026)"
 subtitle: "Connect, subscribe, and publish MQTT messages in Node-RED"
 description: "Complete MQTT Node-RED tutorial: configure brokers, implement pub/sub messaging, use mqtt-in and mqtt-out nodes, and create dynamic subscriptions for IoT"
+lastUpdated: 2026-06-03
 date: 2024-06-05
-lastUpdated: 2025-12-18
 authors: ["sumit-shinde"]
 image: /blog/2024/06/images/working-with-mqtt.jpg
-keywords: node red mqtt, mqtt node red, mqtt in node red, node red mqtt in, node red mqtt out, node red mqtt broker, mqtt broker node red, node-red-contrib-mqtt-broker, node red mqtt dynamic subscription, node red mqtt example,, mqtt dynamic subscription, mqtt in/out nodes, mqtt broker setup
+keywords: node red mqtt, mqtt node red, mqtt in node red, node red mqtt in, node red mqtt out, node red mqtt broker, mqtt broker node red, node-red-contrib-mqtt-broker, node red mqtt dynamic subscription, node red mqtt example, mqtt dynamic subscription, mqtt in/out nodes, mqtt broker setup
 tags:
-   - posts
-   - node-red
-   - mqtt
+  - posts
+  - node-red
+  - mqtt
+  - how-to
+cta:
+  type: sign-up
+  title: "Run Production-Grade MQTT and Node-RED in One Platform"
+  description: "FlowFuse gives you hosted Node-RED and a built-in MQTT broker with access control, TLS, and managed credentials—plus remote device management and DevOps pipelines to run reliably from one device to entire factory floors. Start free today."
 meta:
+  howto:
+    name: "How to Connect Node-RED to an MQTT Broker"
+    description: "Configure an MQTT broker connection in Node-RED, publish messages to topics with the mqtt-out node, subscribe to topics with the mqtt-in node, and deploy the flow."
+    totalTime: "PT15M"
+    tool:
+      - "Node-RED"
+      - "MQTT broker"
+    steps:
+      - name: "Configure the MQTT broker connection"
+        text: "Drag an mqtt-in or mqtt-out node onto the canvas and click the pencil icon next to Server to create a broker config. On the Connection tab, enter the broker address and port (1883 for unencrypted, 8883 for TLS). On the Security tab, enter your credentials—use environment variables like ${MQTT_USER} and ${MQTT_PASSWORD} rather than plain text. Click Add and deploy; a 'connected' status under the node confirms the link."
+        url: "getting-connected"
+      - name: "Publish data to a topic with the mqtt-out node"
+        text: "Drag an mqtt-out node onto the canvas, select your broker, and enter a topic (e.g. factory/line1/temp). Set QoS to 1 or 2 for reliable delivery; enable Retain only if new subscribers should receive the last published value. Wire your data source to the node's input—it publishes whatever is in msg.payload."
+        url: "publishing-data-to-a-topic-on-mqtt-broker"
+      - name: "Subscribe to a topic with the mqtt-in node"
+        text: "Drag an mqtt-in node onto the canvas, select your broker, and set Action to 'subscribe to a single topic'. Enter a topic or use wildcards: + for a single level (factory/+/temp) or # for multiple levels (factory/#). Set Output to auto-detect so JSON payloads are parsed automatically. Wire the output to wherever the data should go."
+        url: "subscribing-to-a-topic-on-mqtt-broker"
+      - name: "Deploy the flow"
+        text: "Click the Deploy button in the top-right corner. Check the status label under each MQTT node—it should show 'connected'. If it shows an error, verify your broker address, port, credentials, and that TLS is enabled when using port 8883."
+        url: "deploying-the-flow"
   faq:
-  - question: "Why does my MQTT node show disconnected?"
-    answer: "Check the broker address and port (1883 for unencrypted, 8883 for TLS). Verify your username and password are correct. If using environment variables, confirm they're set and restart Node-RED. Make sure the broker is running and your network allows the connection. For port 8883, enable TLS in the node configuration."
-  - question: "Why does my MQTT node keep connecting and disconnecting?"
-    answer: "This usually happens when multiple clients use the same Client ID. Each MQTT connection needs a unique Client ID—when a second client connects with the same ID, the broker kicks off the first one. In your broker configuration, either leave the Client ID empty (Node-RED generates a unique one automatically) or set different IDs for each connection. If your broker requires specific Client IDs, make sure each Node-RED instance or MQTT node uses a different one."
-  - question: "Why do I keep getting old messages when I deploy?"
-    answer: "Those are retained messages. When you subscribe to a topic with a retained message, you immediately receive the last published value. To fix this, don't set retain=true when publishing unless you want new subscribers to get the last value. Clear retained messages by publishing an empty payload with retain=true to that topic, or filter them in your flow by checking the msg.retain property."
-  - question: "Can I use wildcards in mqtt-in nodes?"
-    answer: "Yes. Use `+` for single-level wildcards (`sensors/+/temperature`) and `#` for multi-level (`factory/#`). The received message includes the full topic in msg.topic. You cannot use wildcards when publishing—only for subscribing."
-  - question: "What is the difference between QoS 0, 1, and 2?"
-    answer: "QoS 0 is fast but can lose messages. QoS 1 guarantees delivery but might send duplicates. QoS 2 ensures exactly-once delivery but is slowest. Use QoS 0 for high-frequency sensor data, QoS 1 for most applications, and QoS 2 only for critical commands where duplicates would cause problems."
-  - question: "How do I handle JSON data in MQTT messages?"
-    answer: "Set the mqtt-in node's Output to auto-detect—it automatically parses JSON into objects. The mqtt-out node automatically stringifies objects in msg.payload. No extra configuration needed for most cases."
-  - question: "How do I optimize MQTT messages in Node-RED?"
-    answer: "For high-frequency or bandwidth-constrained systems, consider using Protocol Buffers instead of JSON. Protocol Buffers reduce message size by 60-80% and improve parsing performance. Define your data schema in a `.proto` file, then use protocol buffer nodes to encode before publishing and decode after receiving. This is especially valuable for industrial IoT with thousands of sensors. See our guide on optimizing industrial data with Protocol Buffers: https://flowfuse.com/blog/2025/11/optimize-industrial-data-protocol-buffers/"
+    - question: "Why does my MQTT node show disconnected?"
+      answer: "Check the broker address and port (1883 for unencrypted, 8883 for TLS). Verify your username and password are correct. If using environment variables, confirm they're set and restart Node-RED. Make sure the broker is running and your network allows the connection. For port 8883, enable TLS in the node configuration."
+    - question: "Why does my MQTT node keep connecting and disconnecting?"
+      answer: "This usually happens when multiple clients use the same Client ID. Each MQTT connection needs a unique Client ID—when a second client connects with the same ID, the broker kicks off the first one. In your broker configuration, either leave the Client ID empty (Node-RED generates a unique one automatically) or set different IDs for each connection. If your broker requires specific Client IDs, make sure each Node-RED instance or MQTT node uses a different one."
+    - question: "Why do I keep getting old messages when I deploy?"
+      answer: "Those are retained messages. When you subscribe to a topic with a retained message, you immediately receive the last published value. To fix this, don't set retain=true when publishing unless you want new subscribers to get the last value. Clear retained messages by publishing an empty payload with retain=true to that topic, or filter them in your flow by checking the msg.retain property."
+    - question: "Can I use wildcards in mqtt-in nodes?"
+      answer: "Yes. Use `+` for single-level wildcards (`sensors/+/temperature`) and `#` for multi-level (`factory/#`). The received message includes the full topic in msg.topic. You cannot use wildcards when publishing—only for subscribing."
+    - question: "What is the difference between QoS 0, 1, and 2?"
+      answer: "QoS 0 is fast but can lose messages. QoS 1 guarantees delivery but might send duplicates. QoS 2 ensures exactly-once delivery but is slowest. Use QoS 0 for high-frequency sensor data, QoS 1 for most applications, and QoS 2 only for critical commands where duplicates would cause problems."
+    - question: "How do I handle JSON data in MQTT messages?"
+      answer: "Set the mqtt-in node's Output to auto-detect—it automatically parses JSON into objects. The mqtt-out node automatically stringifies objects in msg.payload. No extra configuration needed for most cases."
+    - question: "What is a dynamic MQTT subscription in Node-RED?"
+      answer: "A dynamic subscription lets you subscribe and unsubscribe at runtime without redeploying. Set the mqtt-in node's Action to 'dynamic', then send messages with msg.action set to 'subscribe' or 'unsubscribe' and msg.topic set to the target topic. It's useful when users pick equipment to monitor from a dashboard or when topics come from a database or API."
+    - question: "How do I optimize MQTT messages in Node-RED?"
+      answer: "For high-frequency or bandwidth-constrained systems, consider using Protocol Buffers instead of JSON. Protocol Buffers reduce message size by 60-80% and improve parsing performance. Define your data schema in a `.proto` file, then use protocol buffer nodes to encode before publishing and decode after receiving. This is especially valuable for industrial IoT with thousands of sensors. See our guide on optimizing industrial data with Protocol Buffers: https://flowfuse.com/blog/2025/11/optimize-industrial-data-protocol-buffers/"
+tldr: "Node-RED's built-in mqtt-in and mqtt-out nodes make it straightforward to connect to any MQTT broker, subscribe to topics with wildcard support, and publish data. Dynamic subscriptions, TLS security, environment-variable credentials, and a well-structured topic hierarchy are the key practices for reliable, production-grade MQTT flows."
 ---
 
 MQTT handles the messaging layer for most IoT deployments. Node-RED provides built-in nodes that connect to MQTT brokers, subscribe to topics, and publish messages—all through a visual interface.

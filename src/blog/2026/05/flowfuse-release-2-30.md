@@ -23,6 +23,7 @@ cta:
   type: contact
   title: Get FlowFuse Expert Application Building enabled for your team
   description: Application Building is in soft launch on FlowFuse Cloud Starter, Team, and Enterprise. Request access to enable it for your team.
+tldr: "FlowFuse 2.30 introduces agentic application building: describe the industrial flow you need and FlowFuse Expert assembles it on your Node-RED workspace. The release also delivers a more immersive editor layout, more usable snapshot comparisons, SSO enforcement for enterprises, and device editor auto-recovery."
 ---
 
 FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your workspace.

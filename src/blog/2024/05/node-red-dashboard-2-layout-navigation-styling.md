@@ -1,21 +1,68 @@
 ---
 title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling"
 subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to style Dashboard 2.0 elements effortlessly.
-description: Discover Dashboard 2.0's layouts, sidebars, and styling features for a seamless user experience.
+description: Discover Node-RED Dashboard 2.0's three layouts (Grid, Notebook, Fixed), five navigation sidebar styles, themes, and custom CSS styling—a complete guide to controlling how your dashboards look and behave.
+lastUpdated: 2026-06-03
 date: 2024-05-10
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling.png
+keywords: node-red dashboard 2.0, node-red dashboard layout, dashboard 2.0 grid layout, node-red dashboard sidebar, node-red dashboard styling, node-red dashboard css, ui-template node, flowfuse dashboard
 tags:
-   - posts
-   - dashboard
-   - flowfuse dashboard
-   - customizing dashboard
-   - dashboard 2.0
+  - posts
+  - dashboard
+  - flowfuse dashboard
+  - customizing dashboard
+  - dashboard 2.0
+  - how-to
 cta:
   type: sign-up
-  title: Build Beautiful Node-RED Dashboards Faster
-  description: FlowFuse gives you everything you need to build, style, and deploy Node-RED Dashboard 2.0 applications — with multi-user support, authentication, and production-ready infrastructure built in.
+  title: "Build Beautiful Node-RED Dashboards Faster"
+  description: "FlowFuse gives you everything you need to build, style, and deploy Node-RED Dashboard 2.0 applications—with multi-user support, authentication, and production-ready infrastructure built in. Go from prototype to a secure, shareable dashboard without managing servers. Start free today."
+meta:
+  howto:
+    name: "How to Configure Node-RED Dashboard 2.0 Layout, Sidebar, and Styling"
+    description: "Control how your Node-RED Dashboard 2.0 looks and behaves by choosing a page layout, sizing groups and widgets, applying a theme, selecting a navigation sidebar style, and adding custom CSS."
+    totalTime: "PT15M"
+    tool:
+      - "Node-RED"
+      - "Node-RED Dashboard 2.0"
+      - "ui-template node"
+    steps:
+      - name: "Choose and set a page layout"
+        text: "In the Dashboard 2.0 sidebar, click the edit button next to your page and select a layout: Grid (12 equal columns), Notebook (centered 1024px, groups stack vertically), or Fixed (each width unit equals 90px). Grid and Notebook are recommended for most use cases."
+        url: "setting-page-layout"
+      - name: "Size groups and widgets"
+        text: "Open a group or widget's configuration and adjust its size property. Within a group, widget width is a fraction of the group's internal column count—for example in a 4-column group, a widget set to width 3 takes 75%. Vertical row height is consistently 48px regardless of layout."
+        url: "setting-element-size"
+      - name: "Apply a theme to control colors and spacing"
+        text: "In the Dashboard 2.0 sidebar, switch to the Theme tab, click '+theme', set the colors (navigation, primary, backgrounds, outlines) and sizing values (padding, gaps, border radius), then save. Edit the target page and select the new theme in its Theme field."
+        url: "setting-a-new-page-theme"
+      - name: "Choose a navigation sidebar style"
+        text: "In the Dashboard 2.0 sidebar, click 'Edit Settings' and select a Style: Collapsing (default, content adjusts on open), Fixed (always visible), Collapse to icon (icons visible when collapsed), Appear over content (opens over a transparent overlay), or Always hide (navigation via ui-control widget)."
+        url: "setting-sidebar"
+      - name: "Add custom CSS with a ui-template node"
+        text: "Add a class name to any widget, group, or page in its Class field. Drag a ui-template node onto the canvas, set its type to 'CSS (Single Page)' to scope styles to one page or 'CSS (All Pages)' to apply across the whole dashboard, then write your CSS rules targeting the class you added."
+        url: "writing-custom-css"
+  faq:
+    - question: "What layouts are available in Node-RED Dashboard 2.0?"
+      answer: "Dashboard 2.0 offers three page layouts: Grid, which divides the page into 12 equal columns; Notebook, a centered 1024px-wide layout that stacks groups vertically like a Jupyter notebook; and Fixed, where each width unit equals 90px. Grid and Notebook are recommended, as Fixed is not yet fully optimized."
+    - question: "How does the Grid layout work in Dashboard 2.0?"
+      answer: "The Grid layout splits the page into 12 equally-sized columns. You set how many columns a group occupies with its size property, and when groups in a row fill all 12 columns a new row starts automatically. Each row's height is set by the tallest widget in that row."
+    - question: "How do I size widgets and groups in Dashboard 2.0?"
+      answer: "Open the element's configuration from the Dashboard 2.0 sidebar and adjust its size property. A widget's width is a fraction of its group's internal grid—for example, in a 4-column group a widget set to width 1 takes 25% and one set to width 3 takes 75%. Horizontal unit size depends on the layout, but each row is consistently 48px tall."
+    - question: "What are the navigation sidebar options in Dashboard 2.0?"
+      answer: "There are five sidebar styles: Collapsing (the default, page content adjusts when opened), Fixed (always visible on the left), Collapse to icon (collapses to navigable page icons), Appear over content (opens over a transparent overlay without resizing content), and Always hide (hidden, with navigation handled by the ui-control widget)."
+    - question: "How do I change the sidebar style in Node-RED Dashboard 2.0?"
+      answer: "In the Node-RED editor, open the Dashboard 2.0 sidebar, click 'Edit Settings' at the top left, then choose your preferred style from the Style field in the sidebar options. The change applies to how navigation behaves across your dashboard application."
+    - question: "How do I apply a custom theme to a Dashboard 2.0 page?"
+      answer: "In the Dashboard 2.0 sidebar, switch to the Theme tab, click '+theme' to create one, set its colors and sizing, and save. Then edit the page you want to style and select the new theme in its Theme field. A theme controls colors for navigation, primary elements, backgrounds, and outlines, plus spacing and radius values."
+    - question: "How do I add custom CSS to a Node-RED Dashboard 2.0?"
+      answer: "Add a class to a widget, group, or page in its Class field, then use a ui-template node to write the CSS. The ui-template supports two scopes: CSS (Single Page), which targets one ui-page, and CSS (All Pages), which applies across the whole dashboard via the ui-base. Select the scope, choose the page or base, and write your styles."
+    - question: "What is the difference between a theme and custom CSS in Dashboard 2.0?"
+      answer: "A theme is a structured set of colors and sizing values applied through the ui-theme configuration—the supported way to control the overall look. Custom CSS via the ui-template node goes further, letting you style individual widgets, groups, or pages by class for fine-grained or branded designs the theme settings don't cover."
+    - question: "Is Node-RED Dashboard 2.0 the same as the original Node-RED Dashboard?"
+      answer: "No. Dashboard 2.0 (the FlowFuse-maintained @flowfuse/node-red-dashboard) is a rebuilt successor to the original dashboard, with a different layout system, theming, and node set. Layouts, sizing rules, and the ui-template styling approach described here are specific to Dashboard 2.0."
+tldr: "Node-RED Dashboard 2.0 gives you three page layouts—Grid (12 equal columns), Notebook (centered 1024px, stacked groups), and Fixed (90px per width unit)—and five navigation sidebar styles (Collapsing, Fixed, Collapse to icon, Appear over content, Always hide). Widgets are sized as a fraction of their group's internal grid, with rows a consistent 48px tall. You control colors and spacing through themes (ui-theme) and can go further with custom CSS by adding classes and writing styles in a ui-template node, scoped to a single page or all pages."
 ---
 
 In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.

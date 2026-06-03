@@ -36,6 +36,7 @@ meta:
     
     - question: "What are the best practices for production deployments?"
       answer: "Use clear naming for groups, edge nodes, and devices; always send birth and death messages; enable metric aliasing; buffer messages during connectivity loss; secure MQTT with TLS and authentication; and test failure recovery to ensure robust operation."
+tldr: "MQTT Sparkplug B extends plain MQTT with standardized topic namespaces, Protocol Buffer payloads, and lifecycle state messages (birth/death) to solve the integration chaos common in industrial IoT. This guide explains the specification and shows how to use the node-red-contrib-mqtt-sparkplug-plus package to publish and receive Sparkplug B messages in Node-RED."
 ---
 
 Connected devices can generate a lot of data, but without a standardized format, managing and consuming it can be tricky. MQTT certainly simplifies getting your messages delivered but it does not enforce any structure. This is where MQTT Sparkplug B helps by providing a clear, standardized format for data. In this guide, we’ll show you how to use MQTT Sparkplug B with Node-RED to make managing your device data easier and more organized.
