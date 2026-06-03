@@ -37,23 +37,21 @@ You can now use it on Remote Instances as well as Hosted Instances. Until now ag
 
 ## Certified nodes for industrial connectivity and AI {#certified-nodes}
 
-FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can add to your instances. Available at launch:
+FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can add to your instances. At launch you can get:
 
-- **RTSP** for video streams
-- **OPC UA** for industrial connectivity
-- **AI nodes** for Anthropic, OpenAI, Gemini, and Ollama, with other model providers following soon
+### RTSP
 
-Certified nodes are available to FlowFuse Cloud customers. Get in contact with sales or your account rep and we'll enable the ones your team needs.
+Bring live video streams into your flows, like camera feeds for monitoring, inspection, or feeding frames into a vision or AI pipeline.
 
-## Decide Where AI Runs {#ai-opt-out}
+### OPC UA
 
-Not every team wants AI on, and not every instance should have it. 2.31 makes that a setting rather than an all-or-nothing platform decision.
+Connect to your industrial equipment over OPC UA, the standard for talking to PLCs, SCADA systems, and machines on the plant floor.
 
-- **Per-team opt-out** on FlowFuse Cloud and Self-Hosted Enterprise. A team owner can switch AI features off for their team.
-- **Per-instance opt-out** on Self-Hosted Enterprise, for cases where a specific instance should stay AI-free.
-- **Opt-in for Self-Hosted.** AI is not enabled by default for self-hosted clients. You turn it on when you want it, rather than having it forced on.
+### AI nodes
 
-This gives admins clear control over where AI runs, team by team and instance by instance.
+Call leading AI models straight from your flows: Anthropic, OpenAI, Gemini, and Ollama for models you run yourself. Other model providers are following soon.
+
+Certified nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your account rep, and we'll enable the ones your team needs.
 
 ## Real-Time Platform Updates {#realtime-platform-updates}
 
@@ -67,6 +65,7 @@ Under the hood we moved from periodic polling to a push-based connection, which 
 
 ## What else is new?
 
+- **AI opt-out controls**: switch AI off per team (FlowFuse Cloud and Self-Hosted Enterprise) or per instance (Self-Hosted Enterprise); AI stays opt-in for self-hosted.
 - **Custom CA certificates** are now documented for environments that need them.
 - **Smaller fixes**: secure (`wss://`) connections to your MQTT broker now work from the editor, and custom packages with uppercase names no longer break pipeline deploys.
 
