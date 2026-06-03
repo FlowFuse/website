@@ -9,7 +9,7 @@ issues:
 - https://github.com/FlowFuse/flowfuse/issues/7316
 ---
 
-You can now turn off AI features for your team from the team settings page. When disabled, the Expert Assistant, inline code completions, snapshot description generation, and the nr-assistant plugin are all removed for your team. Running instances will need a restart for the change to fully take effect.            
+You can now turn off AI features for your team from the team settings page. When disabled, FlowFuse removes the Expert Assistant, inline code completions, and snapshot description generation for your team. Running instances will need a restart for the change to fully take effect.            
 
 ![AI Features toggle in team settings](./images/ai-opt-out-toggle.png){data-zoomable}                                                                                                                                                                                                                                       
 *Opt out of AI features from the Danger section in team settings.*
