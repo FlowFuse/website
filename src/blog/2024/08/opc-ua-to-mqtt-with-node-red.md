@@ -1,9 +1,9 @@
 ---
-title: Bridging OPC UA Data to MQTT with Node-RED
+title: "Bridging OPC UA Data to MQTT with Node-RED (2026)"
 subtitle: Connecting OPC UA Data Streams to MQTT Brokers for Enhanced IoT Communication and Monitoring
 description: Learn how to bridge OPC UA data to MQTT using Node-RED for seamless industrial IoT integration and real-time data flow.
+lastUpdated: 2026-06-03
 date: 2024-08-13
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/brdging-opcua-to-mqtt.png
 keywords: opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, opc ua mqtt, opc ua over mqtt, opc ua to mqtt gateway, mqtt to opc ua, mqtt and opc ua, opc ua and mqtt, opc ua via mqtt, opcua to mqtt
@@ -12,6 +12,56 @@ tags:
    - node-red
    - mqtt
    - opcua
+   - how-to
+cta:
+  type: sign-up
+  title: Connect OPC UA and MQTT with Node-RED on FlowFuse
+  description: FlowFuse makes it easy to deploy Node-RED in the cloud or at the edge and bridge industrial protocols like OPC UA and MQTT — with built-in MQTT broker support, team collaboration, and production-ready infrastructure.
+meta:
+  howto:
+    name: "How to Bridge OPC UA Data to MQTT with Node-RED"
+    description: "Connect a running OPC UA server to an MQTT broker using Node-RED by reading OPC UA node values, aggregating them into a single object, and publishing to an MQTT topic."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "node-red-contrib-opcua"
+      - "Prosys OPC UA Simulation Server"
+      - "MQTT Broker"
+    steps:
+      - name: "Why Bridge OPC UA to MQTT"
+        text: "Understand why converting OPC UA data into MQTT messages enables CNC machines and other OPC UA devices to communicate with cloud solutions, edge devices, and IoT applications that rely on MQTT."
+        url: "why-bridge-opc-ua-to-mqtt"
+      - name: "Retrieve Data from the OPC UA Server"
+        text: "Use an inject node, a change node to set msg.topic to the OPC UA node ID and datatype, and an OpcUa-Client node configured with your server endpoint and READ action to pull data values."
+        url: "retrieving-data-from-the-opc-ua-server"
+      - name: "Transform and Aggregate Data"
+        text: "Add change nodes to label each retrieved property with a meaningful msg.topic key, then use a join node in manual mode to combine all properties into a single msg.payload object."
+        url: "transforming-and-aggregating-data"
+      - name: "Send Data to the MQTT Broker"
+        text: "Drag an mqtt out node onto the canvas, configure it with broker details and a topic, connect it to the join node's output, and deploy the flow to start publishing OPC UA data to MQTT."
+        url: "sending-data-to-the-mqtt-broker"
+      - name: "Bridge MQTT Data Back to OPC UA"
+        text: "For reverse bridging, use an mqtt in node to receive commands, a change node to set the target OPC UA node ID, and an OpcUa-Client node with action type WRITE to update machine values."
+        url: "bridging-mqtt-data-to-opc-ua"
+  faq:
+    - question: "Why would I bridge OPC UA to MQTT instead of using OPC UA directly?"
+      answer: "MQTT is a more universally supported lightweight messaging protocol used by cloud platforms, edge devices, and custom IoT applications. Bridging OPC UA to MQTT makes machine data accessible to these systems without requiring them to implement OPC UA support."
+    - question: "What Node-RED package is needed for OPC UA integration?"
+      answer: "You need to install node-red-contrib-opcua from the Node-RED palette manager. This package adds OpcUa-Client and OpcUa-Endpoint nodes that connect to any OPC UA server."
+    - question: "Can I use a free OPC UA server for testing?"
+      answer: "Yes. The Prosys OPC UA Simulation Server is a free tool that simulates CNC machine data and is designed for testing OPC UA client applications. It is available for download from the Prosys website."
+    - question: "How do I aggregate multiple OPC UA properties into one MQTT message?"
+      answer: "Use a join node configured in manual mode. Set it to build a msg.payload object using msg.topic values as keys and set the count to match the number of properties being retrieved. This collects all properties before publishing."
+    - question: "Does FlowFuse provide a built-in MQTT broker?"
+      answer: "Yes. FlowFuse offers an integrated MQTT Broker Service within the platform, making it easy to configure Node-RED to publish OPC UA data without setting up a separate broker."
+    - question: "How do I write data from MQTT back to an OPC UA server?"
+      answer: "Use an mqtt in node to subscribe to a command topic, a change node to set msg.topic to the target OPC UA node ID and datatype, and an OpcUa-Client node with action type set to WRITE. Connect them in sequence and deploy."
+    - question: "What security options does the OpcUa-Client node support?"
+      answer: "The node supports configuring security policy and security mode (e.g., None, Basic256Sha256), and allows specifying certificate and private key file paths for encrypted and authenticated OPC UA connections."
+    - question: "Can I bridge multiple OPC UA properties simultaneously?"
+      answer: "Yes. Create separate inject, change, and OpcUa-Client node chains for each property, all feeding into the same join node. The join node aggregates all property values before a single MQTT publish."
+tldr: "This guide demonstrates how to connect an OPC UA server to an MQTT broker using Node-RED, allowing industrial machine data to flow into modern IoT systems. It covers installing node-red-contrib-opcua, reading multiple OPC UA node values, aggregating them with a join node, and publishing the result to MQTT. A reverse bridging pattern for sending MQTT commands back to OPC UA is also covered."
 ---
 
 Have you ever found yourself trying to connect old industrial systems with new IoT tools? This is a common scenario when trying to digitally transform while setting up your Unified Name Space. Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?  
