@@ -47,7 +47,14 @@ Connect to your industrial equipment over OPC UA, the standard for talking to PL
 
 ### AI nodes
 
-Call leading AI models straight from your flows: Anthropic, OpenAI, Gemini, and Ollama for models you run yourself. Other model providers are following soon.
+Call leading AI models straight from your flows:
+
+- Anthropic
+- OpenAI
+- Gemini
+- Ollama, for models you run yourself
+
+Other model providers are following soon.
 
 Certified nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your account rep, and we'll enable the ones your team needs.
 
