@@ -1,8 +1,8 @@
 ---
-title: "Scaling Manufacturing Data Integration: How Arch Systems Connects 100+ Factory Databases"
+title: "Scaling Manufacturing Data Integration to 100+ Databases"
 subtitle: "Why repeatable integration, not the first connection, is the real bottleneck at scale"
 description: "Arch Systems connects 100+ factory databases to a single analytics platform using FlowFuse. See how standardized subflows and DevOps pipelines made each new integration cheap to build and cheap to maintain."
-date: 2026-06-02
+date: 2026-06-03
 keywords: manufacturing data integration, MES integration, factory database integration, industrial DevOps, FlowFuse, low-code manufacturing, real-time production data, scalable data integration
 authors: ["sumit-shinde"]
 image: 
@@ -52,9 +52,9 @@ cta:
   description: "See how FlowFuse helps teams standardize, deploy, and maintain industrial data integrations from a single platform. Talk to us about your setup."
 ---
 
-[Arch Systems](https://archsys.io/) runs more than 100 factory databases into a single analytics platform. Each one lives in a different production environment. Each one speaks to a different MES. Across them sits a tangle of diverse APIs and databases that rarely share conventions. Connecting any single database was never hard. Connecting the hundredth without rebuilding the work from scratch is the problem worth solving.
+[Arch Systems](https://archsys.io/) builds an AI copilot for manufacturers, and to power it the company connects more than 100 factory databases into a single analytics platform. Each one lives in a different production environment. Each one speaks to a different MES. Across them sits a tangle of diverse APIs and databases that rarely share conventions. Connecting any single database was never hard. Connecting the hundredth without rebuilding the work from scratch is the problem worth solving.
 
-Arch builds an AI copilot for manufacturers. It reads dashboards, synthesizes production data, and hands operators and engineers prescriptive guidance in real time, no infrastructure overhaul required. A copilot is only as good as the data feeding it. In a factory, that data sits in the least cooperative layer of the stack: the gap between the shop floor and enterprise IT, where MES systems, databases, and APIs rarely agree on anything.
+That copilot reads dashboards, synthesizes production data, and hands operators and engineers prescriptive guidance in real time, no infrastructure overhaul required. But a copilot is only as good as the data feeding it. In a factory, that data sits in the least cooperative layer of the stack: the gap between the shop floor and enterprise IT, where MES systems, databases, and APIs rarely agree on anything.
 
 Here is the part that matters. Arch didn't just connect the data. They made the choice to connect it once and repeat the result reliably. That choice is the story.
 
@@ -99,4 +99,4 @@ Arch keeps expanding the platform: more data sources, more third-party integrati
 
 The first 100 databases were never the result that mattered. The architecture is. The next 100 cost a fraction of what the first ones did.
 
-*Read the full story on the [FlowFuse customer page](/customer-stories/scaling-manufacturing-automation-with-flowfuse/).*
+*Read the full story on the [FlowFuse customer page](https://flowfuse.com/customer-stories/scaling-manufacturing-automation-with-flowfuse/).*
