@@ -46,10 +46,11 @@ useHead({
       <div class="lg:border-l right-nav">
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
           <HandbookToc />
-          <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
-            <a href="https://github.com/FlowFuse/website/edit/main/src/handbook/index.md"
-              target="_blank" rel="noopener">Edit this page</a>
-          </div>
+          <ClientOnly>
+            <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
+              <a href="/_studio?redirect=%2Fhandbook%2F" target="_blank" rel="noopener">Edit this page</a>
+            </div>
+          </ClientOnly>
         </div>
       </div>
 

@@ -1,7 +1,21 @@
 import { visit } from 'unist-util-visit'
-import { resolve, dirname } from 'node:path/posix'
 import type { Root } from 'mdast'
 import type { VFile } from 'vfile'
+
+function posixDirname(path: string): string {
+    const i = path.lastIndexOf('/')
+    return i <= 0 ? '/' : path.slice(0, i)
+}
+
+function posixResolve(base: string, rel: string): string {
+    const parts = (base + rel).split('/')
+    const out: string[] = []
+    for (const p of parts) {
+        if (p === '..') out.pop()
+        else if (p !== '.') out.push(p)
+    }
+    return '/' + out.filter(Boolean).join('/')
+}
 
 // Converts relative image/link URLs in handbook markdown to absolute paths.
 // This is needed because @nuxt/content serves pages with trailing-slash URLs,
@@ -14,7 +28,7 @@ export default function remarkHandbookLinks() {
         // Extract the handbook-relative portion: e.g. /handbook/engineering/frontend/layouts.md
         const handbookIdx = filePath.lastIndexOf('/handbook/')
         const relPath = filePath.slice(handbookIdx)
-        const baseDir = dirname(relPath) + '/'
+        const baseDir = posixDirname(relPath) + '/'
 
         function resolveUrl(url: string): string {
             if (!url) return url
@@ -27,7 +41,7 @@ export default function remarkHandbookLinks() {
             // Resolve relative URL against the base directory
             const anchor = url.match(/#.*/)?.[0] ?? ''
             const pathPart = url.replace(/#.*$/, '')
-            const resolved = resolve(baseDir, pathPart)
+            const resolved = posixResolve(baseDir, pathPart)
             return resolved + anchor
         }
 
