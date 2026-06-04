@@ -10,26 +10,25 @@ tags:
    - news
    - releases
 release: "2.31"
-# features: block intentionally commented out until featureCatalog wiring is done.
-# Wire these once eng authors the changelog entries and product tiering is finalized:
-#   - id: ff-expert-application-building   (update existing entry: add 2.31 changelog + self-hosted enterprise)
-#     heading: "Let FlowFuse Expert build your industrial application"
-#   - id: ai-opt-out                       (new entry; changelog flowfuse#7333; tiering TBD)
-#     heading: "Decide Where AI Runs"
-#   - id: realtime-platform-updates        (new entry)
-#     heading: "Real-Time Platform Updates"
-tldr: "FlowFuse 2.31 takes agentic application building into open beta: describe what you want and FlowFuse Expert builds it on your workspace, now on FlowFuse Cloud and Self-Hosted Enterprise, and on Remote as well as Hosted Instances. New certified nodes bring RTSP, OPC UA, and AI models to your flows, and you get per-team and per-instance control over AI. A foundational release, with much of the work under the hood."
+# features + changelog interlinking deferred to a follow-up (stacked) PR, since it depends on the
+# 2.31 changelog entries that land with the release. Wire after merge: certified-nodes (entry exists),
+# ff-expert-application-building (needs open-beta cloud tier, self-hosted enterprise, and a 2.31 changelog).
+tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new certified nodes (RTSP, OPC UA, AI) and per-team and per-instance control over AI."
+cta:
+  type: contact
+  title: Get FlowFuse Expert and certified nodes enabled for your team
+  description: Agentic development is in open beta and certified nodes are available on request. Get in touch and we'll set your team up.
 ---
 
-FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, now in open beta and running at the edge. Describe what you need, and Expert assembles it on your workspace.
+FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, now in open beta. Describe what you need, and Expert assembles it on your workspace.
 
 <!--more-->
 
-## Let FlowFuse Expert build your industrial application, now in open beta {#expert-agentic-ga}
+## Agentic Development Now in Open Beta {#expert-agentic-ga}
 
 *FlowFuse Expert is our integrated AI assistant, in the website, the platform, and the immersive Node-RED editor.*
 
-Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and FlowFuse Expert assembles the flow on your workspace for you. With 2.31 this moves out of soft launch into an open beta: switched on for your team on FlowFuse Cloud, and enabled with a small configuration change on Self-Hosted Enterprise. No request needed.
+Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and FlowFuse Expert assembles the flow on your workspace for you. With 2.31 this moves out of soft launch into an open beta: switched on for your team on FlowFuse Cloud, no request needed. On Self-Hosted Enterprise, [contact us](/contact-us/) to enable it, and new self-hosted customers get it enabled automatically.
 
 It now works on Remote Instances as well as Hosted Instances, so you get the same build-it-for-me experience across both.
 
@@ -45,7 +44,7 @@ FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can ad
   - Gemini
   - Ollama, for models you run yourself
 
-  These first LLM nodes handle single-shot, text-in/text-out calls. Multimodal input, conversation history, and tool calling are planned for follow-up iterations. They join the FlowFuse AI Nodes package we [shipped in 2.23](/changelog/2025/10/onnx-nodes/), which already includes the ONNX Inference, Image Classification, Object Detection, and Image Depth Estimation nodes for running vision and custom models on-device, with no external API calls.
+  These first LLM nodes handle single-shot, text-in/text-out calls; see the [LLM nodes documentation](/node-red/flowfuse/ai/llm-nodes/) for details. Multimodal input, conversation history, and tool calling are planned for follow-up iterations. They join the FlowFuse AI Nodes package we [shipped in 2.23](/changelog/2025/10/onnx-nodes/), which already includes the ONNX Inference, Image Classification, Object Detection, and Image Depth Estimation nodes for running vision and custom models on-device, with no external API calls.
 
 Certified nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your account rep, and we'll enable the ones your team needs.
 
@@ -67,14 +66,3 @@ We spent part of this cycle together in Greece for a full-company off-site, rese
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.31, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
 If something in this release improves your workflow, or if there is still friction we can remove, please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.31) with us.
-
-## Try FlowFuse
-
-### FlowFuse Cloud
-
-The fastest way to get started is with FlowFuse Cloud.
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in minutes.
-
-### Self-Hosted
-
-Run FlowFuse locally using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
