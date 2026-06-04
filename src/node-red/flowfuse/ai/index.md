@@ -5,18 +5,14 @@ eleventyNavigation:
   order: 4
 meta:
   title: FlowFuse AI Nodes
-  description: A set of nodes that bring ONNX Runtime to Node-RED, enabling AI and machine learning model inference within your flows.
+  description: A set of Node-RED nodes for AI and machine learning, including ONNX model inference and LLM nodes for OpenAI, Anthropic, Google Gemini, and Ollama.
 ---
 
 # {{ meta.title }}
 
-The **FlowFuse AI Nodes** package brings the power of the **ONNX Runtime** to Node-RED, enabling AI and machine learning capabilities directly within your flows. These nodes make it simple to run pre-trained or custom ONNX models without requiring deep expertise in machine learning or coding.
+The **FlowFuse AI Nodes** package adds AI capabilities to Node-RED. It includes nodes for running local ONNX models (image classification, object detection, depth estimation, and custom inference) as well as **LLM nodes** for sending text prompts to hosted and local large language models from OpenAI, Anthropic, Google Gemini, and Ollama.
 
 ## Nodes
 
-This section lists the **AI nodes** available in the FlowFuse AI package:
-
 {% include "navigation-items-list.njk" %}
-
-Each node provides a specific AI capability, enabling you to combine them into powerful intelligent automation pipelines.
 
