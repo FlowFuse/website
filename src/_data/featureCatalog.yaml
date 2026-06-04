@@ -35,27 +35,26 @@ sections:
         changelog:
           - url: /changelog/2026/05/expert-application-building/
             release: "2.30"
+          - url: /changelog/2026/06/agentic-development-open-beta/  # TODO: match authored changelog slug
+            release: "2.31"
         subfeature: true
         solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
         showOnPricing: false
-        tags: [cloud]
+        tags: [cloud, self-hosted]
         cloud:
           starter:
             value: true
-            note: "On request"
           pro:
             value: true
-            note: "On request"
           enterprise:
             value: true
-            note: "On request"
         selfHosted:
           starter:
             value: null
           pro:
             value: null
           enterprise:
-            value: null
+            value: true
 
       - id: ff-expert-support
         label: Support Mode
@@ -1040,7 +1039,9 @@ sections:
         label: Certified Nodes
         description: "Officially supported Node-RED nodes with SLA-backed security patching and reliability guarantees for mission-critical production deployments."
         docsLink: /blog/2025/07/certified-nodes-v2/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/06/certified-nodes/  # TODO: match authored changelog slug
+            release: "2.31"
         solutions: [mes, scada, edge-connectivity, it-ot-middleware]
         showOnPricing: true
         tags: [cloud, self-hosted]
