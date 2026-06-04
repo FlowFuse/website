@@ -54,11 +54,13 @@ Certified Nodes are available to FlowFuse Cloud customers. [Get in touch with sa
 - **Custom CA certificates** are now documented for environments that need them.
 - **Smaller fixes**: secure (`wss://`) connections to your MQTT broker now work from the editor, and custom packages with uppercase names no longer break pipeline deploys.
 
-## Our team off-site in Greece
+## A quick note from our team off-site in Greece
 
-We spent part of this cycle together in Greece for a full-company off-site, resetting our roadmaps and how we run product. That is also why 2.31 is lighter on big features: a lot of this month's work is foundational.
+We spent part of this cycle together in Greece for a full-company off-site, and it shaped what you see (and do not yet see) in 2.31.
 
-<!-- PHOTO: add the off-site team photo here once the asset lands: ![The FlowFuse team in Greece](/blog/2026/06/images/offsite-team.jpg) -->
+![The FlowFuse team in Greece](/blog/2026/06/images/offsite-team.jpg)
+
+Getting everyone in one place let us reset our roadmaps and how we work, the kind of introspection that is hard to do day-to-day and fully remote. It is also why 2.31 is lighter on big features: a lot of this month went into foundational groundwork for what is coming next. We will share more soon.
 
 <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #D1D5DB;">
 
