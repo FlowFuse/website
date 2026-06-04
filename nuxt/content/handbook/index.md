@@ -36,11 +36,11 @@ shared in this handbook.
 
 ## Contributing
 
-The handbook is maintained on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook)
-and contributions can be made through pull-requests. How to contribute
-is captured [in a guide](https://github.com/FlowFuse/website#flowfuse-website).
+The handbook can be edited by anyone at FlowFuse using **Nuxt Studio**, our CMS. Click **"Edit this page"** on any handbook page to open the editor, make your changes, and submit them for review. No Git knowledge required.
 
-The handbook is here for the whole company to help maintain. **Pull-requests are welcome and strongly encouraged**.
+Engineers and others comfortable with Git can also contribute directly via pull-request on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook).
+
+The handbook is here for the whole company to help maintain. **Contributions are welcome and strongly encouraged**.
 
 To follow the latest changes in the Handbook, join the `#gh-handbook` channel on Slack.
 
@@ -50,8 +50,8 @@ Being handbook-first means that our handbook is not a static document we update 
 
 Instead of starting a discussion on Slack or in a meeting, we start it in the handbook. Here’s how we do it:
 
-* Start with a Proposal, not a Chat: When you have an idea for a new process, a change to an existing one, or a solution to a problem, you don't send a message on Slack. You create a proposal directly in the handbook. This proposal is a merge request that includes your suggested changes, allowing everyone to see and comment on the content directly. This ensures the full context of a discussion is preserved and universally accessible.
-* Integrate Discussion and Documentation: The discussion about your proposal happens right there in the merge request. Team members can provide feedback, ask questions, and suggest edits. This allows us to disagree and commit in a transparent way. Once a consensus is reached or a decision is made, the final version is merged into the handbook, and the entire discussion trail is saved for future reference.
+* Start with a Proposal, not a Chat: When you have an idea for a new process, a change to an existing one, or a solution to a problem, you don't send a message on Slack. You create a proposal directly in the handbook. Use **Nuxt Studio** (click "Edit this page") or open a pull-request on GitHub — either way your changes are proposed as a reviewable diff, allowing everyone to see and comment on the content directly. This ensures the full context of a discussion is preserved and universally accessible.
+* Integrate Discussion and Documentation: The discussion about your proposal happens right there in the pull-request. Team members can provide feedback, ask questions, and suggest edits. This allows us to disagree and commit in a transparent way. Once a consensus is reached or a decision is made, the final version is merged into the handbook, and the entire discussion trail is saved for future reference.
 * Empower Everyone to Contribute: This system allows anyone at FlowFuse—from a new hire to a senior leader—to contribute directly to our company's culture and processes. It generates a shared responsibility to maintain the pace of documentation through a pay-it-forward mentality. The history of every change is visible, showing how learning happens and how iteration shapes proposals.
 * Eliminate Wasted Effort: By making the handbook the hub of our collaborative work, we ensure that the information we need is always where it should be. This prevents us from having to document something after the fact—a step that is often skipped—and avoids the "torturous pattern of people pinging people for updates". This is how we prioritize results and stay focused on what matters.
 

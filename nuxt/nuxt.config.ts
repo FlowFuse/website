@@ -20,13 +20,19 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', 'nuxt-link-checker'],
+    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio'],
 
     linkChecker: {
         failOnError: true,
         // trailing-slash: 11ty pages use trailing slashes intentionally
         // no-error-response: links to 11ty pages return 404 in the Nuxt-only static output
         skipInspections: ['trailing-slash', 'no-error-response'],
+    },
+
+    // @nuxt/content generates `import X from 'handbook-links'` for the remark plugin key.
+    // This alias makes that import resolvable in the Vite bundle context.
+    alias: {
+        'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
     },
 
     app: {
@@ -49,7 +55,13 @@ export default defineNuxtConfig({
     },
 
     nitro: {
-        preset: 'static',
+        preset: 'netlify',
+        serverAssets: [
+            {
+                baseName: 'analytics',
+                dir: '../src/_includes/analytics'
+            }
+        ],
         prerender: {
             routes: [
                 '/terms',
@@ -57,6 +69,16 @@ export default defineNuxtConfig({
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
             ],
             crawlLinks: false
+        }
+    },
+
+    studio: {
+        route: '/_studio',
+        repository: {
+            provider: 'github',
+            owner: 'FlowFuse',
+            repo: 'website',
+            branch: 'main',
         }
     },
 
