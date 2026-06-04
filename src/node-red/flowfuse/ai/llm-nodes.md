@@ -12,7 +12,7 @@ meta:
 
 The **LLM nodes** send a text prompt to a large language model and return the model's text response. Four provider nodes are included: **OpenAI**, **Anthropic (Claude)**, **Google Gemini**, and **Ollama**. They share a common configuration and message contract so they can be used interchangeably in a flow.
 
-> **Note:** Multi-modality support for the LLM nodes is being explored. Please reach out if you have such requirements.
+> **Note:** More providers, extra functionality, and multi-modality support for the LLM nodes are coming soon. Please reach out if you have such requirements.
 
 ## Configuration
 
