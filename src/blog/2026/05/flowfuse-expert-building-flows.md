@@ -2,6 +2,7 @@
 title: "How to Build Industrial Apps With FlowFuse AI Expert"
 subtitle: "From a description to a running flow"
 description: "FlowFuse Expert now builds applications from a description. Here's what that looks like, what Expert understands about your environment, and how to keep iterating."
+lastUpdated: 2026-06-04
 date: 2026-05-13
 keywords: flowfuse ai expert, flowfuse expert, industrial automation, node-red, industrial dashboards, mqtt, opc ua, industrial iot, ai-assisted development, real-time monitoring, flowfuse cloud, machine monitoring
 authors: ["sumit-shinde"]
