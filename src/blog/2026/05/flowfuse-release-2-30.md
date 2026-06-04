@@ -2,6 +2,7 @@
 title: "FlowFuse 2.30: Expert Builds Your Industrial Application"
 subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your workspace. Plus a more immersive editor optimized for iterating with Expert."
 description: "FlowFuse 2.30 lets FlowFuse Expert build industrial applications from a description: OEE dashboards, MES handover screens, UNS topic mappings, and more."
+lastUpdated: 2026-06-04
 date: 2026-05-07
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/05/images/flowfuse-release-2-30.png
@@ -53,6 +54,8 @@ Agentic Node-RED development is being soft launched to create a window of opport
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to let us enable Agentic Node-RED development for your FlowFuse Cloud team. Please make sure to provide the email address associated with your FlowFuse Cloud team.
 
 **Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own AI provider.
+
+> **Update (FlowFuse 2.31):** FlowFuse Expert is now in open beta — available on FlowFuse Cloud with no request needed, and on Self-Hosted Enterprise. It, now, works on both Hosted and Remote Instances. [Read the 2.31 release post](/blog/2026/06/flowfuse-release-2-31/).
 
 ### In practice
 

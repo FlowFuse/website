@@ -61,8 +61,8 @@ Guidelines for including images:
 - Wherever possible use:
   - The markdown image include tag in blog prose: `![Name of Image](../relative-path-to-image.jpeg)` 
     - You can use the `@skip` tag to disable the image pipeline entirely for an image `![Name of Image](../relative-path-to-image.jpeg "@skip")`
-  - The NJK shortcode in website body: {% raw %} `{% image "./relative-path-to-image.png", "Image alt tag for screen readers", [150] %}`{% endraw %}
-    - Where 150 is the maximum width the image will be displayed on the page (source image should be two times this width)
+  - The MDC image component in page body: `<NuxtImg src="./relative-path-to-image.png" alt="Image alt tag for screen readers" width="150" />`
+    - Where `width` is the maximum width the image will be displayed on the page (source image should be two times this width)
 - GIFs can grow incredibly large, consider using a video in a modern format if the animation is longer than a few seconds
 
 ## Non-Image Assets
