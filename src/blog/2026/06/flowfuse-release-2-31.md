@@ -58,7 +58,7 @@ Certified nodes are available to FlowFuse Cloud customers. [Get in touch with sa
 
 ## Our team off-site in Greece
 
-We spent part of this cycle together in Greece for a full-company off-site, resetting our roadmaps and how we run product. That is also why 2.31 is lighter on big features: a lot of this month's work is foundational. More on what came out of it soon.
+We spent part of this cycle together in Greece for a full-company off-site, resetting our roadmaps and how we run product. That is also why 2.31 is lighter on big features: a lot of this month's work is foundational.
 
 <!-- PHOTO: add the off-site team photo here once the asset lands: ![The FlowFuse team in Greece](/blog/2026/06/images/offsite-team.jpg) -->
 
