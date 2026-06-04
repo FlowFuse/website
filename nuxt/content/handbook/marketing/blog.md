@@ -321,15 +321,13 @@ flow looks like and how to use them. Furthermore it automatically provides a
 download and copy button too for users to use what they've learned.
 
 To render a flow you'll need to export it to JSON in Node-RED and paste it in a
-`renderFlow` shortcode:
+`renderFlow` MDC component:
 
-{% raw %}
-```
-{% renderFlow %}
+```md
+::render-flow
 <flowJSONHere>
-{% endrenderFlow %}
+::
 ```
-{% endraw %}
 
 ### Writing content
 
