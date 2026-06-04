@@ -12,8 +12,6 @@ meta:
 
 The **FlowFuse AI** Nodes package adds AI capabilities to Node-RED. It includes nodes for running local ONNX models for image classification, object detection, depth estimation, and custom inference, as well as LLM nodes for sending text prompts to hosted and local large language models from OpenAI, Anthropic, Google Gemini, and Ollama.
 
-*Note: More providers, extra functionality, and multi-modality are coming soon.*
-
 ## Nodes
 
 {% include "navigation-items-list.njk" %}
