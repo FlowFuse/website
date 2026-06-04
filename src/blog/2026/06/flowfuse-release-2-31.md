@@ -45,6 +45,8 @@ FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can ad
   - Gemini
   - Ollama, for models you run yourself
 
+  These first AI nodes handle single-shot, text-in/text-out calls. Multimodal input, conversation history, and tool calling are planned for follow-up iterations. The same package also ships on-device AI nodes that run vision models locally, for image classification, object detection, and depth estimation, with no external API calls.
+
 Certified nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your account rep, and we'll enable the ones your team needs.
 
 ## What else is new?
