@@ -54,6 +54,8 @@ Agentic Node-RED development is being soft launched to create a window of opport
 
 **Coming next:** self-hosted enablement, plus we are exploring "bring your own key" so teams can point Expert at their own AI provider.
 
+> **Update (FlowFuse 2.31):** FlowFuse Expert is now in open beta — available on FlowFuse Cloud with no request needed, and on Self-Hosted Enterprise. It also works on Remote Instances. [Read the 2.31 release post](/blog/2026/06/flowfuse-release-2-31/).
+
 ### In practice
 
 - You go from a description to a working OEE dashboard, Modbus integration, or handover screen without needing to place each node by hand
