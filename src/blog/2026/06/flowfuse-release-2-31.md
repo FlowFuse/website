@@ -10,9 +10,15 @@ tags:
    - news
    - releases
 release: "2.31"
-# features + changelog interlinking deferred to a follow-up (stacked) PR, since it depends on the
-# 2.31 changelog entries that land with the release. Wire after merge: certified-nodes (entry exists),
-# ff-expert-application-building (needs open-beta cloud tier, self-hosted enterprise, and a 2.31 changelog).
+features:
+   - id: ff-expert-application-building
+     heading: "Let FlowFuse Expert build your industrial application"
+   - id: certified-nodes
+     heading: "Certified Nodes for industrial connectivity and AI"
+   - heading: "What else is new?"
+     tiers:
+       cloud: all
+       selfHosted: all
 tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and per-instance control over AI."
 cta:
   type: contact
