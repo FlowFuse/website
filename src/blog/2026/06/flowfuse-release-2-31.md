@@ -24,7 +24,7 @@ FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, no
 
 <!--more-->
 
-## Agentic Development Now in Open Beta {#expert-agentic-ga}
+## Let FlowFuse Expert build your industrial application {#expert-agentic-ga}
 
 *FlowFuse Expert is our integrated AI assistant, in the website, the platform, and the immersive Node-RED editor.*
 
