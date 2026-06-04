@@ -17,7 +17,7 @@ tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe 
 cta:
   type: contact
   title: Get FlowFuse Expert and certified nodes enabled for your team
-  description: Agentic development is in open beta and certified nodes are available on request. Get in touch and we'll set your team up.
+  description: Agentic development is in open beta and Certified Nodes are available on request. Get in touch and we'll set your team up.
 ---
 
 FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, now in open beta. Describe what you need, and Expert assembles it on your workspace.
