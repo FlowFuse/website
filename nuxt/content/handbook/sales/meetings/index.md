@@ -1,5 +1,5 @@
 ---
-navTitle: Sales Meetings
+title: "Sales Meetings"
 ---
 
 To understand the prospective customers needs and how FlowFuse can help a process

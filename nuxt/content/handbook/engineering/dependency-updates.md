@@ -1,5 +1,5 @@
 ---
-navTitle: Dependency Updates
+title: "Dependency Updates"
 ---
 
 # Dependency Updates

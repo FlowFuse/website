@@ -1,6 +1,7 @@
 ---
-navTitle: Company
-navGroup: Company
+title: "Company"
+navigation:
+  group: "Company"
 ---
 
 # Company

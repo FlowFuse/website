@@ -1,5 +1,5 @@
 ---
-navTitle: Observability
+title: "Observability"
 ---
 
 # Observability

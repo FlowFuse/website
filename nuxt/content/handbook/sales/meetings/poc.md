@@ -1,5 +1,5 @@
 ---
-navTitle: Proof of Concept
+title: "Proof of Concept"
 ---
 
 ## Proof of Concept

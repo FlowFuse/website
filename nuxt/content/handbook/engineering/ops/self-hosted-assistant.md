@@ -1,5 +1,5 @@
 ---
-navTitle: Self Hosted Assistant
+title: "Self Hosted Assistant"
 ---
 
 # FlowFuse Expert

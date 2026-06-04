@@ -1,6 +1,5 @@
 ---
-meta:
-    title: Company Strategy
+title: "Strategy"
 ---
 
 # Strategy

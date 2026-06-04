@@ -1,5 +1,5 @@
 ---
-navTitle: Accounts
+title: "Accounts"
 ---
 
 # Accounts

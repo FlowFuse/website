@@ -1,5 +1,5 @@
 ---
-navTitle: Markdown Guide
+title: "Markdown Guide"
 ---
 
 # Markdown Guide

@@ -1,5 +1,5 @@
 ---
-navTitle: Board & Investors
+title: "Board & Investors"
 ---
 
 # Board meetings

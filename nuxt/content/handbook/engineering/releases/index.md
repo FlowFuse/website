@@ -1,5 +1,5 @@
 ---
-navTitle: Releases
+title: "Releases"
 ---
 
 # Releases

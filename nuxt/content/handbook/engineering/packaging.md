@@ -1,5 +1,5 @@
 ---
-navTitle: Packaging Guidelines
+title: "Packaging Guidelines"
 ---
 
 # Packaging Guidelines

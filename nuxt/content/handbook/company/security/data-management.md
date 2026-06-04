@@ -1,5 +1,5 @@
 ---
-navTitle: Data Management Policy
+title: "Data Management Policy"
 ---
 
 # Data Management Policy

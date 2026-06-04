@@ -1,5 +1,5 @@
 ---
-navTitle: Forums and Support
+title: "Forums and Support"
 ---
 
 ## FlowFuse Support and Forums

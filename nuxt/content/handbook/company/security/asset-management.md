@@ -1,5 +1,5 @@
 ---
-navTitle: Asset Management Policy
+title: "Asset Management Policy"
 ---
 
 # Asset Management Policy

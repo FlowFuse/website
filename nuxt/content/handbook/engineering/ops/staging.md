@@ -1,5 +1,5 @@
 ---
-navTitle: Staging Environment
+title: "Staging Environment"
 ---
 
 # Staging Environment

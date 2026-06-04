@@ -1,5 +1,5 @@
 ---
-navTitle: AI Development and Customer Data Policy
+title: "AI Development and Customer Data Policy"
 ---
 
 # AI Development and Customer Data Policy

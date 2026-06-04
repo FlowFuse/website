@@ -1,5 +1,5 @@
 ---
-navTitle: Community 
+title: "Community"
 ---
 
 # Community

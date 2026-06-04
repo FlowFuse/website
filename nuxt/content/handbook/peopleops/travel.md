@@ -1,5 +1,5 @@
 ---
-navTitle: Travel
+title: "Travel"
 ---
 
 # Travel

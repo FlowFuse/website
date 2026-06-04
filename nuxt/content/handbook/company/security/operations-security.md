@@ -1,5 +1,5 @@
 ---
-navTitle: Operations Security Policy
+title: "Operations Security Policy"
 ---
 
 # Operations Security Policy

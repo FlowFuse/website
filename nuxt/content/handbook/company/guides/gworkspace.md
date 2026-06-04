@@ -1,3 +1,6 @@
+---
+title: "Google Workspace"
+---
 # Google Workspace
 
 ## Overview

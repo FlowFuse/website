@@ -1,5 +1,5 @@
 ---
-navTitle: Engagements & Pricing
+title: "Engagements & Pricing"
 ---
 
 # Engagements

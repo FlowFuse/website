@@ -1,6 +1,7 @@
 ---
-navTitle: Operations
-navGroup: Company
+title: "Operations"
+navigation:
+  group: "Company"
 ---
 
 # Operations

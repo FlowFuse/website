@@ -1,5 +1,5 @@
 ---
-navTitle: Hiring
+title: "Hiring"
 ---
 
 # Hiring

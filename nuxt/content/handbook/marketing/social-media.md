@@ -1,5 +1,5 @@
 ---
-navTitle: Social Media
+title: "Social Media"
 ---
 
 # Social Media Channels

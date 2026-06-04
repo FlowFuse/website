@@ -1,5 +1,5 @@
 ---
-navTitle: Website
+title: "Website"
 ---
 
 # Marketing Website

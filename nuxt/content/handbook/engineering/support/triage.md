@@ -1,5 +1,5 @@
 ---
-navTitle: Triage Duty
+title: "Triage Duty"
 ---
 
 # Support Triage Duty

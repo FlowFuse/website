@@ -1,5 +1,5 @@
 ---
-navTitle: Code of Conduct
+title: "Code of Conduct"
 ---
 
 # Code of Conduct

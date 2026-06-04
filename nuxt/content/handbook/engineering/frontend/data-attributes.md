@@ -1,5 +1,5 @@
 ---
-navTitle: Data Attributes
+title: "Data Attributes"
 ---
 
 # Data Attributes

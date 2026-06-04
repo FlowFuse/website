@@ -1,5 +1,5 @@
 ---
-navTitle: Summit
+title: "Summit"
 ---
 
 # Summit

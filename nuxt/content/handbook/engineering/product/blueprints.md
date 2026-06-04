@@ -1,5 +1,5 @@
 ---
-navTitle: Blueprints
+title: "Blueprints"
 ---
 # Blueprints
 

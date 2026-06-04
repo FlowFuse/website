@@ -1,8 +1,8 @@
 export interface NavNode {
     name: string
     path: string
-    navGroup?: string
-    navOrder: number
+    group?: string
+    order: number
     children: NavNode[]
 }
 
@@ -14,16 +14,15 @@ export interface NavGroup {
 
 interface RawPage {
     path: string
-    navTitle?: string | null
-    navGroup?: string | null
-    navOrder?: number | null
+    title?: string | null
+    navigation?: { group?: string | null; order?: number | null } | null
 }
 
 interface TreeNode {
     name: string
     path: string
-    navGroup?: string
-    navOrder: number
+    group?: string
+    order: number
     children: Record<string, TreeNode>
 }
 
@@ -46,10 +45,10 @@ export function buildHandbookNav(pages: RawPage[]): NavGroup[] {
 
             if (!current[part]) {
                 current[part] = {
-                    name: (isLeaf && page.navTitle) ? page.navTitle : part,
+                    name: (isLeaf && page.title) ? page.title : part,
                     path: '/' + parts.slice(0, i + 1).join('/'),
-                    navGroup: isLeaf ? (page.navGroup ?? undefined) : undefined,
-                    navOrder: isLeaf ? (page.navOrder ?? Infinity) : Infinity,
+                    group: isLeaf ? (page.navigation?.group ?? undefined) : undefined,
+                    order: isLeaf ? (page.navigation?.order ?? Infinity) : Infinity,
                     children: {}
                 }
             }
@@ -61,15 +60,15 @@ export function buildHandbookNav(pages: RawPage[]): NavGroup[] {
         return Object.values(obj).map((node) => ({
             name: node.name,
             path: node.path,
-            navGroup: node.navGroup,
-            navOrder: node.navOrder,
+            group: node.group,
+            order: node.order,
             children: toNavNodes(node.children)
         }))
     }
 
     function sortNodes(nodes: NavNode[]): NavNode[] {
         return nodes
-            .sort((a, b) => (a.navOrder - b.navOrder) || a.name.localeCompare(b.name))
+            .sort((a, b) => (a.order - b.order) || a.name.localeCompare(b.name))
             .map(n => ({ ...n, children: sortNodes(n.children) }))
     }
 
@@ -80,7 +79,7 @@ export function buildHandbookNav(pages: RawPage[]): NavGroup[] {
     const groups: Record<string, NavGroup> = {}
 
     for (const section of sortNodes(handbookRoot.children)) {
-        const groupName = section.navGroup || 'Other'
+        const groupName = section.group || 'Other'
         if (!groups[groupName]) {
             groups[groupName] = { name: groupName, order: Object.keys(groups).length, children: [] }
         }
