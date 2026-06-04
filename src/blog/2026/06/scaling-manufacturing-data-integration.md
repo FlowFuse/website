@@ -1,8 +1,8 @@
 ---
 title: "How Arch Systems Connected 100+ Factory Databases with FlowFuse"
-subtitle: "Arch cut new-customer onboarding from a build to a deployment, without adding operational complexity"
+subtitle: "Arch cut new-customer rollout time to a fraction of what it was, without adding operational complexity"
 description: "Arch Systems connects 100+ factory databases to a single analytics platform using FlowFuse. See how standardized subflows and DevOps pipelines made each new integration cheap to build and cheap to maintain."
-date: 2026-06-03
+date: 2026-06-04
 keywords: manufacturing data integration, MES integration, factory database integration, industrial DevOps, FlowFuse, low-code manufacturing, real-time production data, scalable data integration
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/arch-systems.png
@@ -34,9 +34,9 @@ meta:
   - question: "What is manufacturing data integration?"
     answer: "Manufacturing data integration is the process of connecting factory systems such as MES platforms, databases, PLCs, and APIs to a central platform so production data can be collected, standardized, and acted on. The goal is a single, reliable flow of live production data that analytics, dashboards, and other systems can use without each consumer having to talk to every source directly."
   - question: "What is the hardest part of integrating manufacturing systems at scale?"
-    answer: "Connecting one system to one platform is straightforward. The difficulty is repeatability: doing it across many systems, sites, and environments without rebuilding each integration from scratch. As the number of integrations grows, hand-built connections become a separate project each time, the maintenance burden grows with every deployment, and environments that should match begin to drift apart."
-  - question: "What is configuration drift in industrial systems?"
-    answer: "Configuration drift happens when deployments that are supposed to be identical slowly diverge through manual, environment-by-environment changes. Over time, a fix applied in one place but not the others leaves each environment subtly different, which makes behavior unpredictable and causes failures that are hard to trace. Centralized deployment with a single source of truth is the standard way to prevent it."
+    answer: "Connecting one system to one platform is straightforward. The difficulty is repeatability: doing it across many systems, sites, and environments without rebuilding each integration from scratch. As the number of integrations grows, hand-built connections become a separate project each time, the maintenance burden grows with every deployment, and environments that should match begin to diverge."
+  - question: "Why do identical-looking environments behave differently in industrial systems?"
+    answer: "Deployments that are supposed to be identical can slowly diverge through manual, environment-by-environment changes. Over time, a fix applied in one place but not the others leaves each environment subtly different, which makes behavior unpredictable and causes failures that are hard to trace. Centralized deployment with a single source of truth is the standard way to prevent it."
   - question: "What is a subflow, and why does it help integrations scale?"
     answer: "A subflow is a packaged, parameterized piece of logic that performs one job the same way on every deployment. Treating an integration as a reusable subflow instead of a one-off build means the hard engineering happens once; onboarding a new system becomes a matter of deploying a known-good template and adjusting a few parameters, which is what lets the approach scale to many environments."
   - question: "How did Arch Systems connect more than 100 factory databases?"
@@ -62,7 +62,7 @@ Here is the part that matters. Arch didn't just connect the data. They made the 
 
 Connecting one factory system to one platform is a solved problem. Most competent teams clear it. The cost shows up on the second integration. Then the tenth. Then the hundredth.
 
-Hand-built integrations don't compose. Every new customer becomes a separate project. A fix you apply in one environment never reaches the others, so the maintenance surface grows with every deployment, and configuration drift creeps in, environments that should be identical pulling apart until something breaks in production. Past 100 databases across multiple environments, that approach collapses. The integration layer stops being plumbing. It becomes the ceiling on how fast the business can grow.
+Hand-built integrations don't compose. Every new customer becomes a separate project. A fix you apply in one environment never reaches the others, so the maintenance surface grows with every deployment, and configuration errors creep in, environments that should be identical pulling apart until something breaks in production. Past 100 databases across multiple environments, that approach collapses. The integration layer stops being plumbing. It becomes the ceiling on how fast the business can grow.
 
 For a company whose entire job is onboarding manufacturers, that ceiling sets the roadmap. So Arch refused to accept it.
 
@@ -70,11 +70,11 @@ For a company whose entire job is onboarding manufacturers, that ceiling sets th
 
 Arch stopped treating each integration as a project. They started treating it as a template.
 
-Working in FlowFuse's low-code environment, the team built standardized, reusable subflows that automate job creation in Arch React. The subflow is the unit of work: a packaged, parameterized piece of logic that does one job the same way on every deployment. Onboarding a new customer shifted from "build an integration" to "deploy a known-good template and adjust the edges." Do the engineering once. Configure everything after that.
+Working in FlowFuse's low-code environment, the team built standardized, reusable subflows that automate job creation in Arch React. The subflow is the unit of work: a packaged, parameterized piece of logic that does one job the same way on every deployment. Onboarding a new customer shifted from building an integration to deploying a known-good template and adjusting the edges. Do the engineering once. Configure everything after that.
 
 Beneath that layer, MQTT brokers connect straight to the MES systems and open a reliable path for live production data. The flows take the stream, filter it, and generate tasks automatically from the processed production data. The architecture responds to production events immediately, which is what turns raw shop-floor activity into real-time insight.
 
-Arch did this on top of the MES systems already running on the floor, not by replacing them. FlowFuse sits as a low-code layer above them, connecting to existing factory systems rather than forcing a rebuild.
+Arch did this on top of the MES systems already running on the floor, not by replacing them. FlowFuse sits as a low-code layer above them, connecting to existing factory systems rather than forcing a rebuild. It runs as part of Arch's broader technology stack, working alongside the company's own platform capabilities and its other partner technologies rather than standing alone.
 
 ## DevOps: one place to change everything
 
@@ -87,9 +87,9 @@ Two distinct properties, one outcome. One keeps the cost of building low. The ot
 ## Results
 
 - **More than 100 databases connected through automated subflows.** Every integration runs on the same FlowFuse-orchestrated pattern rather than a hand-built connection, which is why the hundredth database came online on the same proven path as the first.
-- **New-customer onboarding shifted from a build to a deployment.** Reusable subflows replaced manual configuration, cutting the time to bring a new customer online to a fraction of what it once took and removing the per-customer engineering that had limited how fast Arch could grow.
+- **New-customer rollout cut to a fraction of the time.** Reusable subflows replaced manual configuration, cutting the time to bring a new customer online to a fraction of what it once took and removing the per-customer engineering that had limited how fast Arch could grow.
 - **Reliable real-time processing across diverse systems.** MQTT pipelines paired with FlowFuse-managed environments keep live production data consistent and dependable, regardless of how different each customer's MES happens to be.
-- **A single edit reaches every environment at once.** Single-point editing and centralized deployment pipelines propagate updates across all production instances simultaneously, with no configuration drift and no instance-by-instance patching, so the cost of maintenance no longer rises with each new deployment.
+- **A single edit reaches every environment at once.** Single-point editing and centralized deployment pipelines propagate updates across all production instances simultaneously, with no divergence between environments and no instance-by-instance patching, so the cost of maintenance no longer rises with each new deployment.
 
 Taken together, these results separate Arch's growth from its operational load. The standardized subflows keep each integration inexpensive to build, the centralized DevOps model keeps it inexpensive to maintain, and the combination lets Arch add customers without adding the same weight to the team that keeps everything running. As Arch describes it, the ability to edit once and deploy everywhere added real efficiency to how the team manages integrations.
 
