@@ -58,7 +58,7 @@ Certified Nodes are available to FlowFuse Cloud customers. [Get in touch with sa
 
 We spent part of this cycle together in Greece for a full-company off-site, and it shaped what you see (and do not yet see) in 2.31.
 
-![The FlowFuse team in Greece](/blog/2026/06/images/offsite-team.jpg)
+![The FlowFuse team in Greece](./images/offsite-team.jpg)
 
 Getting everyone in one place let us reset our roadmaps and how we work, the kind of introspection that is hard to do day-to-day and fully remote. It is also why 2.31 is lighter on big features: a lot of this month went into foundational groundwork for what is coming next. We will share more soon.
 
