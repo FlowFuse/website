@@ -4,7 +4,7 @@ subtitle: "FlowFuse Expert can now build your industrial application on both Hos
 description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and per-instance AI controls and real-time platform updates."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
-# image: /blog/2026/06/images/flowfuse-release-2-31.png  # add once the art request asset lands; the file is absent now and 11ty's image step errors on it, so it is omitted (falls back to the default blog tile)
+image: /blog/2026/06/images/flowfuse-release-2-31.jpg
 tags:
    - flowfuse
    - news
