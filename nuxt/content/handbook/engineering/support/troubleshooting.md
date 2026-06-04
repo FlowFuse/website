@@ -1,5 +1,5 @@
 ---
-navTitle: Troubleshooting
+title: "Troubleshooting"
 ---
 
 # Troubleshooting

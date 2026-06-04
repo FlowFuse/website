@@ -1,5 +1,5 @@
 ---
-navTitle: Dashboard 2.0 Releases
+title: "Dashboard 2.0 Releases"
 ---
 
 # Dashboard 2.0 Release Process

@@ -1,6 +1,5 @@
 ---
-navTitle: Webinars
-navGroup: Sales & Marketing
+title: "Webinars"
 ---
 
 # FlowFuse Webinars

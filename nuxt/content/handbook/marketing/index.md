@@ -1,6 +1,7 @@
 ---
-navTitle: Marketing
-navGroup: Marketing department
+title: "Marketing"
+navigation:
+  group: "Marketing department"
 ---
 
 # Marketing department

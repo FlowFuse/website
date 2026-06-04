@@ -1,5 +1,5 @@
 ---
-navTitle: Job Descriptions
+title: "Job Descriptions"
 ---
 
 # Job Descriptions

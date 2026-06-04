@@ -1,6 +1,5 @@
 ---
-navTitle: Chief of Staff
-navGroup: Job Descriptions
+title: "Chief of Staff"
 ---
 
 # Chief of Staff

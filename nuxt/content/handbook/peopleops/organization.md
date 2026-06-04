@@ -1,5 +1,5 @@
 ---
-navTitle: PeopleOps Policies
+title: "PeopleOps Policies"
 ---
 
 # PeopleOps policies

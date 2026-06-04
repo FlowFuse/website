@@ -1,5 +1,5 @@
 ---
-navTitle: Signatures
+title: "Signatures"
 ---
 
 # Signatures

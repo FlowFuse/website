@@ -1,5 +1,5 @@
 ---
-navTitle: Product Growth
+title: "Product Growth"
 ---
 
 # Product Growth

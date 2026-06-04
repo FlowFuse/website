@@ -1,5 +1,5 @@
 ---
-navTitle: Professional Services
+title: "Professional Services"
 ---
 
 FlowFuse may offer support services as part of an annual subscription. If

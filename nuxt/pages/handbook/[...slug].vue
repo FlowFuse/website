@@ -18,7 +18,7 @@ if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Handbook')
+const pageTitle = computed(() => page.value?.title || slugParts.value.at(-1) || 'Handbook')
 
 useHead({
     title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook'),

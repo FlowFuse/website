@@ -1,5 +1,5 @@
 ---
-navTitle: Change Control
+title: "Change Control"
 ---
 
 As part of our [secure operations policies](/handbook/company/security/) we implement a Change Control process for certain operations in order to provide auditable, reviewable changes to key systems.

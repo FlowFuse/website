@@ -1,5 +1,5 @@
 ---
-navTitle: Information Security Policy and Acceptable Use Policy
+title: "Information Security Policy and Acceptable Use Policy"
 ---
 
 # Information Security Policy and Acceptable Use Policy

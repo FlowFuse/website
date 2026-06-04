@@ -1,5 +1,5 @@
 ---
-navTitle: Principles
+title: "Principles"
 ---
 
 ## Product Principles

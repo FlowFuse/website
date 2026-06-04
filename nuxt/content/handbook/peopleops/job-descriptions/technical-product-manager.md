@@ -1,6 +1,5 @@
 ---
-navTitle: Technical Product Manager
-navGroup: Job Descriptions
+title: "Technical Product Manager"
 ---
 
 # Technical Product Manager

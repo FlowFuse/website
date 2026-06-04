@@ -1,5 +1,5 @@
 ---
-navTitle: Front End
+title: "Front End"
 ---
 
 # Front-End

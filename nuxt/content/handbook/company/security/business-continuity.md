@@ -1,5 +1,5 @@
 ---
-navTitle: Business Continuity & Disaster Recovery Policy
+title: "Business Continuity & Disaster Recovery Policy"
 ---
 
 # Business Continuity & Disaster Recovery Policy

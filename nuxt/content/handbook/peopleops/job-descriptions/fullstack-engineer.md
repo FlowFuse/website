@@ -1,6 +1,5 @@
 ---
-navTitle: Fullstack Engineer
-navGroup: Job Descriptions
+title: "Fullstack Engineer"
 ---
 
 # Fullstack Engineer

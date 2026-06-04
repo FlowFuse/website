@@ -1,5 +1,5 @@
 ---
-navTitle: Guides
+title: "Guides"
 ---
 
 # Guides

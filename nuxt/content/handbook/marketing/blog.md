@@ -1,7 +1,3 @@
----
-meta:
-    title: Blog
----
 
 # Blog
 

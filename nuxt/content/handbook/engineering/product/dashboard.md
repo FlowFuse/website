@@ -1,5 +1,5 @@
 ---
-navTitle: Node-RED Dashboard
+title: "Node-RED Dashboard"
 ---
 # Node-RED Dashboard 2.0 - Project
 

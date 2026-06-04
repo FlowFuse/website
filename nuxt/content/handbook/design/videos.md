@@ -1,6 +1,5 @@
 ---
-navTitle: Video
-navGroup: Sales & Marketing
+title: "Video"
 ---
 
 # Videos

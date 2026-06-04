@@ -1,5 +1,5 @@
 ---
-navTitle: Incident Response Plan
+title: "Incident Response Plan"
 ---
 
 # Incident Response Plan

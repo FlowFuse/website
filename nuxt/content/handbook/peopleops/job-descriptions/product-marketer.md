@@ -1,6 +1,5 @@
 ---
-navTitle: Product Marketer
-navGroup: Job Descriptions
+title: "Product Marketer"
 ---
 
 # Product Marketer

@@ -1,5 +1,5 @@
 ---
-navTitle: Platform Ops
+title: "Platform Ops"
 ---
 
 # Platform Ops

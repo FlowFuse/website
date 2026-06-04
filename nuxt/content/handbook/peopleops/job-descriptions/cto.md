@@ -1,6 +1,5 @@
 ---
-navTitle: CTO
-navGroup: Job Descriptions
+title: "CTO"
 ---
 
 # CTO

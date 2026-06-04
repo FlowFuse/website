@@ -1,6 +1,5 @@
 ---
-navTitle: Account Executive
-navGroup: Job Descriptions
+title: "Account Executive"
 ---
 
 # Account Executive

@@ -1,5 +1,5 @@
 ---
-navTitle: Security
+title: "Security"
 ---
 
 # Security

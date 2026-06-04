@@ -1,5 +1,5 @@
 ---
-navTitle: Personas
+title: "Personas"
 ---
 
 # Personas

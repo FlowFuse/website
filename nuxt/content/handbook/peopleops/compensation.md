@@ -1,5 +1,5 @@
 ---
-navTitle: Compensation
+title: "Compensation"
 ---
 
 # Compensation

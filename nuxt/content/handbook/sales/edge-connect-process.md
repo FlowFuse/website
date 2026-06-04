@@ -1,6 +1,5 @@
 ---
-navTitle: Edge Connectivity Sales Process
-navGroup: Sales department
+title: "Edge Connectivity Sales Process"
 ---
 
 # Edge Connectivity Sales Process

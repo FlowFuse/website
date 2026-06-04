@@ -1,5 +1,5 @@
 ---
-navTitle: Feedback
+title: "Feedback"
 ---
 
 # Product Feedback

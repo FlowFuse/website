@@ -1,5 +1,5 @@
 ---
-navTitle: Sales Regions
+title: "Sales Regions"
 ---
 
 We manage our sales opportunities across three primary sales regions:

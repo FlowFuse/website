@@ -1,5 +1,5 @@
 ---
-navTitle: Deployment
+title: "Deployment"
 ---
 
 # Dependencies within the CI/CD process

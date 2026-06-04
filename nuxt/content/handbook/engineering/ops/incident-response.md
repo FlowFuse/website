@@ -1,5 +1,5 @@
 ---
-navTitle: Incident Response
+title: "Incident Response"
 ---
 
 # Incident Response

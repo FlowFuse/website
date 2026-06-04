@@ -1,5 +1,5 @@
 ---
-navTitle: Remote Work
+title: "Remote Work"
 ---
 
 # Remote Work

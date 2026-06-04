@@ -1,5 +1,5 @@
 ---
-navTitle: Cryptography Policy
+title: "Cryptography Policy"
 ---
 
 # Cryptography Policy

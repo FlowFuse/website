@@ -1,5 +1,5 @@
 ---
-navTitle: Holiday & Leave
+title: "Holiday & Leave"
 ---
 
 # Holiday and Leave

@@ -1,5 +1,5 @@
 ---
-navTitle: FlowFuse Dedicated
+title: "FlowFuse Dedicated"
 ---
 
 # FlowFuse Dedicated

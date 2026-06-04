@@ -1,6 +1,5 @@
 ---
-navTitle: CEO Ops
-navGroup: Internal Operations
+title: "CEO Ops"
 ---
 
 For CEO assistance, as personal assistant, there's a couple of high level tasks

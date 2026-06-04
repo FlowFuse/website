@@ -1,6 +1,5 @@
 ---
-navTitle: Organizational Structure
-templateEngineOverride: njk,md
+title: "Organizational Structure"
 ---
 
 # Organizational Structure

@@ -1,5 +1,5 @@
 ---
-navTitle: Metrics
+title: "Metrics"
 ---
 
 # Product Metrics
