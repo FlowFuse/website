@@ -2,6 +2,7 @@
 title: "FlowFuse 2.30: Expert Builds Your Industrial Application"
 subtitle: "Describe the OEE dashboard, MES handover screen, or UNS topic mapping you need, and FlowFuse Expert builds it on your workspace. Plus a more immersive editor optimized for iterating with Expert."
 description: "FlowFuse 2.30 lets FlowFuse Expert build industrial applications from a description: OEE dashboards, MES handover screens, UNS topic mappings, and more."
+lastUpdated: 2026-06-04
 date: 2026-05-07
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/05/images/flowfuse-release-2-30.png
