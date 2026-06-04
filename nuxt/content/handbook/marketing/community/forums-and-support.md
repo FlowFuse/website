@@ -1,4 +1,5 @@
 ---
+title: Forums And Support
 navTitle: Forums and Support
 ---
 
@@ -8,7 +9,7 @@ navTitle: Forums and Support
 
 We provide a comprehensive support and community platform for FlowFuse users, developers, and enthusiasts. Our forums and support resources are designed to empower you with the knowledge, assistance, and collaboration you need to make the most out of FlowFuse and Node-RED.
 
-At FlowFuse, we believe in fostering a community that is knowledgeable, supportive, and inclusive. We encourage you to explore our [Community Guidelines](./community-guidelines/) to understand how you can contribute positively to this dynamic ecosystem.
+At FlowFuse, we believe in fostering a community that is knowledgeable, supportive, and inclusive. We encourage you to explore our [Community Guidelines](/handbook/marketing/community/community-guidelines) to understand how you can contribute positively to this dynamic ecosystem.
 
 ### Forums
 
@@ -20,33 +21,16 @@ The FlowFuse forums are key places for discussions, problem-solving, and communi
 - **Search Before Posting**: Before starting a new thread, use the search functionality to see if your question has already been answered. This helps keep the forum organized and reduces duplicate posts.
 - **Follow Up**: If you receive help, follow up to let others know if the solution worked or if you need further assistance. This feedback helps improve the community knowledge base.
 
-You can access the forum here:
-
-- [FlowFuse Forum](https://discourse.nodered.org/c/vendors/flowfuse/24/)
+You can access the forum here: [FlowFuse Forum](https://discourse.nodered.org/c/vendors/flowfuse/24/)
 
 ### Other Support
 
 In addition to the forum, we also offer:
 
-- **Documentation**: Extensive documentation is available on the FlowFuse websites. This should be your first stop for information on features, configuration, and troubleshooting.
-  - [FlowFuse Documentation](/docs/)
-
-- **Tutorials and Guides**: Detailed tutorials and guides to help you get started and master advanced topics.
-  - [FlowFuse Tutorials and Guides](/blog/)
-
-- **Ebook**: The ultimate beginner guide to professional Node-RED.
-  - [The Ultimate Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)
-
-- **Webinars**: These are live webinars during which experts share their knowledge, provide updates on FlowFuse, and allow community members to ask questions directly.
-  - [FlowFuse Webinars](/handbook/marketing/webinars)
-
-- **Community Discord**: This is a channel for users to discuss FlowFuse and Node-RED, share resources, and ask questions.
-  - [Discord Channel](https://discord.gg/2RrvW8dkrF)
-
-- **Ticket Support and Instant Chat**: Personalized and real-time support through our help center.
-  - [FlowFuse Help Center](/support/)
-
-- **GitHub Issues**: This is a platform for submitting issues for new features or bug reports. Provide detailed information to help our developers understand and address your issue.
-  - [FlowFuse GitHub](https://github.com/FlowFuse)
-
-Utilizing these forums and support resources allows you to effectively resolve issues, learn new skills, and contribute to the community's collective knowledge. Remember always to engage respectfully and constructively to maintain a positive and supportive environment for all members.
+- [FlowFuse Documentation](/docs/): Extensive documentation is available on the FlowFuse websites. This should be your first stop for information on features, configuration, and troubleshooting.
+- [FlowFuse Blog](/blog/): Technical content on Detailed tutorials and guides to help you get started and master advanced topics.
+- E-Books
+  -  [The Ultimate Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)
+- [FlowFuse Webinars](/handbook/marketing/webinars): These are live webinars during which experts share their knowledge, provide updates on FlowFuse, and allow community members to ask questions directly.
+- [FlowFuse Support Center](/support/): Personalized and real-time support through our help center.
+- [FlowFuse GitHub](https://github.com/FlowFuse): This is a platform for submitting issues for new features or bug reports. Provide detailed information to help our developers understand and address your issue.
