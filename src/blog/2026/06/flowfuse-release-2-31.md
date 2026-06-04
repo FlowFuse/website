@@ -13,10 +13,10 @@ release: "2.31"
 # features + changelog interlinking deferred to a follow-up (stacked) PR, since it depends on the
 # 2.31 changelog entries that land with the release. Wire after merge: certified-nodes (entry exists),
 # ff-expert-application-building (needs open-beta cloud tier, self-hosted enterprise, and a 2.31 changelog).
-tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new certified nodes (RTSP, OPC UA, AI) and per-team and per-instance control over AI."
+tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and per-instance control over AI."
 cta:
   type: contact
-  title: Get FlowFuse Expert and certified nodes enabled for your team
+  title: Get FlowFuse Expert and Certified Nodes enabled for your team
   description: Agentic development is in open beta and Certified Nodes are available on request. Get in touch and we'll set your team up.
 ---
 
@@ -32,7 +32,7 @@ Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS
 
 It now works on Remote Instances as well as Hosted Instances, so you get the same build-it-for-me experience across both.
 
-## Certified nodes for industrial connectivity and AI {#certified-nodes}
+## Certified Nodes for industrial connectivity and AI {#certified-nodes}
 
 FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can add to your instances. At launch you can get:
 
