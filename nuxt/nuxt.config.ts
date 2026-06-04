@@ -92,6 +92,15 @@ export default defineNuxtConfig({
         },
     },
 
+    vite: {
+        optimizeDeps: {
+            include: [
+                '@vue/devtools-core',
+                '@vue/devtools-kit',
+            ],
+        },
+    },
+
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts
     // to allow per-route exclusions as pages are migrated.
 })
