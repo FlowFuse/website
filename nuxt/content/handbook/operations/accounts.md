@@ -34,7 +34,7 @@ revenue tracking. This is achieved by placing the team into 'manual' billing mod
 For customers on contracted revenue, e.g. an annual deal made by an account
 executive, the team too is put into manual billing mode. 
 
-1. Raise a [Change Request](./change.md) with the name of the team and a request to move it to manual billing mode
+1. Raise a [Change Request](/handbook/operations/change/#flowfuse-cloud-change-control) with the name of the team and a request to move it to manual billing mode
 2. The request can be actioned by anyone with admin access to the platform. They will have access to admin-only
    tools on the Team Settings/Danger page, including the option to 'Setup Manual Billing'. As part of this process,
    they can pick what Team Type should be applied. Unless specifically requested otherwise, teams should always be

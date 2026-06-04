@@ -27,7 +27,7 @@ We encourage Blueprint submissions from our customers, partners, and the wider c
 
 ### Internal Development
 
-If a Blueprint is being developed internally, it should be added to the `blueprint-library` repository via a Pull Request. First, create an issue in the same repository to track its progress and ensure alignment with product and company strategy. The Pull Request must be reviewed and tested by another team member. Once approved, [submit a Change Request](#submitting-a-change-request). When the responsible admin adds the Blueprint to the platform, they will share the Blueprint ID with the author, who should then include it in the Blueprint's README file:
+If a Blueprint is being developed internally, it should be added to the `blueprint-library` repository via a Pull Request. First, create an issue in the same repository to track its progress and ensure alignment with product and company strategy. The Pull Request must be reviewed and tested by another team member. Once approved, [submit a Change Request](/handbook/operations/change/#flowfuse-cloud-change-control). When the responsible admin adds the Blueprint to the platform, they will share the Blueprint ID with the author, who should then include it in the Blueprint's README file:
 
 ```markdown
 ---
@@ -110,31 +110,7 @@ You can import the required comment node by importing the following JSON:
 
 ### Platform
 
-#### Submitting a Change Request
-
-To add a Blueprint to FlowFuse Cloud, a [Change Request](https://github.com/FlowFuse/CloudProject/issues/new?assignees=&labels=change-request&projects=&template=change-request.yml&title=Change%3A+) must be submitted. 
-
-Example Change Request: Change: Add OEE Dashboard Blueprint to production
-```
-### Environment
-
-- [ ] Staging
-- [x] Production
-
-### Due Date
-
-_No response_
-
-### Change Description
-
-This PR (<PR_LINK>) adds a new blueprint flow, along with documentation on how to use it with both real-world and simulated data sources.
-
-### Validation Steps
-
-- [ ] Is the Blueprint PR approved?  
-- [ ] Is the blueprint added to the specified environment?  
-- [ ] Is the Blueprint PR documentation updated with the blueprint ID and merged?
-```
+To add a Blueprint to FlowFuse Cloud, submit a Change Request following the [Change Control process](/handbook/operations/change/#flowfuse-cloud-change-control), using the change request template in the CloudProject repository.
 
 The issue should include a link to the relevant Pull Request in the Blueprint Library repository where your Blueprint has been published.
 

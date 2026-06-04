@@ -1,16 +1,69 @@
 ---
-title: How to Build an OPC UA Client Dashboard in Node-RED - Part 3
+title: "How to Build an OPC UA Client Dashboard in Node-RED - Part 3 (2026)"
 subtitle: Interactive OPC UA Client dashboard that communicates with a 3rd party OPC UA Server
 description: Building a Dashboard-Driven OPC UA Client to Browse, Read, Write, and Get Events from a 3rd party OPC UA Server
-date: 2023-07-27 
-lastUpdated: 2025-07-23
+lastUpdated: 2026-06-03
+date: 2023-07-27
 authors: ["richard-meyer"]
 image: blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png
+keywords: opc ua client node-red, opc ua dashboard, node-red opcua client, opc ua browser node-red, read write opc ua node-red, opc ua alarms events, prosys simulation server
 tags:
     - posts
     - flowfuse
     - node-red
     - opcua
+    - how-to
+cta:
+  type: sign-up
+  title: "Deploy Your OPC UA Dashboard with FlowFuse"
+  description: "Sign up for FlowFuse to securely deploy, share, and scale your Node-RED OPC UA client dashboard applications with team collaboration and DevOps pipelines."
+meta:
+  howto:
+    name: "How to Build an OPC UA Client Dashboard in Node-RED"
+    description: "Build an interactive Node-RED dashboard that connects to a third-party OPC UA server to browse the address space, read and write values, and display alarms and events."
+    totalTime: "PT45M"
+    tool:
+      - "Node-RED"
+      - "@flowfuse/node-red-dashboard"
+      - "node-red-contrib-opcua"
+      - "@flowfuse/node-red-dashboard-2-ui-led"
+      - "Prosys OPC UA Simulation Server"
+    steps:
+      - name: "Install required custom nodes"
+        text: "Install @flowfuse/node-red-dashboard, node-red-contrib-opcua, and @flowfuse/node-red-dashboard-2-ui-led in your Node-RED instance."
+        url: "custom-nodes-used-assumptions"
+      - name: "Install and deploy the Prosys OPC UA Simulation Server"
+        text: "Download, install, and run the Prosys OPC UA Simulation Server, switch to expert mode, then copy the endpoint URL and replace the hostname with your machine's IP address."
+        url: "install-and-deploy-the-prosys-opc-ua-simulation-server"
+      - name: "Browse the hierarchical address space"
+        text: "Import and deploy the browser flow that uses OpcUa-Browser nodes to discover folder structure and store nodeIds as flow context variables, then display them on the dashboard."
+        url: "browse-hierarchical-server-address-space-structure-with-opc-ua-browser-node"
+      - name: "Read OPC UA values and display them on the dashboard"
+        text: "Import the read flow that subscribes to various OPC UA data types and visualizes them using charts, gauges, and text widgets on the Node-RED dashboard."
+        url: "read-opc-ua-values-using-opc-ua-browser-node"
+      - name: "Write OPC UA values from the dashboard"
+        text: "Import the write flow that uses OpcUa-Item and Opc-Ua-Client nodes to send values back to the OPC UA server directly from dashboard input widgets."
+        url: "write-opc-ua-values-to-server-using-opcua-item-and-opc-ua-client-nodes"
+      - name: "Read alarms and events from the OPC UA server"
+        text: "Import the events flow that uses OpcUa-Event and Opc-Ua-Client nodes to subscribe to server alarms and display them in a table on the dashboard."
+        url: "read-alarms-events-from-opc-ua-server-using-opcua-event-and-opc-ua-client-nodes"
+  faq:
+    - question: "What custom nodes do I need to build an OPC UA client dashboard in Node-RED?"
+      answer: "You need @flowfuse/node-red-dashboard for the UI, node-red-contrib-opcua for OPC UA communication, and @flowfuse/node-red-dashboard-2-ui-led for LED status indicators."
+    - question: "What is the Prosys OPC UA Simulation Server?"
+      answer: "It is a free cross-platform application by Prosys for testing OPC UA client applications. It runs on Windows, Linux, and macOS and exposes a simulation address space that clients can browse, read, write, and subscribe to events from."
+    - question: "How do I find the correct endpoint URL for the Prosys OPC UA Simulation Server?"
+      answer: "The endpoint URL is displayed on the Status tab of the application. Replace the computer name with the actual IP address of the machine to allow remote connections. The format is opc.tcp://<ip>:53530/OPCUA/SimulationServer."
+    - question: "How does browsing the OPC UA address space work in Node-RED?"
+      answer: "The OpcUa-Browser node connects to the server endpoint and returns the folder and node structure. By leaving the Topic field blank, it browses the entire Objects tree. The returned nodeIds are stored as flow context variables for use in subsequent read and write operations."
+    - question: "Can I write values back to an OPC UA server from a Node-RED dashboard?"
+      answer: "Yes. Using OpcUa-Item and Opc-Ua-Client nodes, you can send values from dashboard input widgets directly to the OPC UA server, enabling two-way communication."
+    - question: "How do I display OPC UA alarms and events in Node-RED?"
+      answer: "Use the OpcUa-Event node combined with the Opc-Ua-Client node to subscribe to server events. The received alarm data can then be passed to a dashboard table widget for display."
+    - question: "Is security used in this OPC UA client example?"
+      answer: "No. This example uses no security and assumes the OPC UA server and Node-RED client are on the same network. For production applications, SSL/TLS security should be configured on both the server and client."
+    - question: "Where can I find the full source code for the OPC UA Client Dashboard?"
+      answer: "The complete flow source code for all four objectives — browsing, reading, writing, and events — is included inline within the article, ready to import directly into Node-RED."
 tldr: "This part of the OPC UA series shows how to build an interactive Node-RED dashboard that connects to a third-party OPC UA server to browse the address space, read and write values, and display alarms and events. Complete flow source code is provided, making it a practical starting point for production OPC UA client applications."
 ---
 This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/node-red/protocol/opc-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 

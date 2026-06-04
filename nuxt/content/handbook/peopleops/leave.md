@@ -20,7 +20,6 @@ Before you can take time off you should _always_:
     - This is a limitation in Deel and does not limit the amount of time off you may take.
 - Add an 'Out of Office' appointment in your personal Google Calendar, and
   decline all meetings automatically.
-- Add your Out of Office to your [team calendar](#team-calendars) as `Name OOO`.
 - Add a 'Vacation responder' to your Gmail account, and provide another contact
   person within your team.
   1. Open **Gmail** in your browser.
@@ -34,15 +33,25 @@ Before you can take time off you should _always_:
        through [Day], [Date]. Please contact [team member] in my absence."_)
 - Inform fellow team members of your time off, and hand over work that’s distributed.
   
-### Team Calendars
+### Team Calendars & Deel OOO Sync
 
 We use team-specific calendars to track team meetings, events, and team-level availability.
 
 Out of Office time should be visible in two places:
 - Your **personal calendar** so collaborators across the company can see your availability.
-- Your **team calendar** so your immediate team has clear visibility into coverage and capacity.
+- Your **Deel synced calendar** so the company and your immediate team has clear visibility into coverage and capacity.
 
 This is intentional and not considered duplication. Each calendar serves a different audience.
+
+To eliminate manual entry duplication, we use automated Deel calendar feeds. Make sure that your out of office is logged properly in Deel for it to show up in these calendar feeds. Clicking the links below will automatically prompt Google Calendar to subscribe to the feed safely and securely.
+
+#### How to Subscribe to Deel OOO Sync Calendars
+
+**Links temporarily removed - they will be updated soon**
+
+#### How to Subscribe to Team Calendars for team meetings and events
+
+In addition to the automated feeds for tracking out-of-office schedules, please ensure you also subscribe to your departmental team calendars to keep track of synchronous group events and project meetings.
 
 - [Engineering](https://calendar.google.com/calendar/u/0?cid=Y19iMTZjMTdjYzlmNmZiMTYyZmI0NmUxMDIyNzNkNTFmMWQ4ZjI0MThkMzVmZTc5ZmExNGU0NTE3M2NkMDE5NTVlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 - [Marketing](https://calendar.google.com/calendar/u/0?cid=Y19iY2UwZjY2NzE3ZTQ3YjAzZjgxZjliNTdjNWNhYTkyYTZlOTM1ZTg5NGU5MDdiOTZjNmY5N2I4ODA3MjllMDQ5QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)

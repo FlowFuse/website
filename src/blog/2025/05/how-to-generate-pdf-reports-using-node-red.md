@@ -1,13 +1,61 @@
 ---
-title: "How to Generate PDF Reports Using Node-RED in FlowFuse"
+title: "How to Generate PDF Reports Using Node-RED in FlowFuse (2026)"
 subtitle: Learn how to automate the generation of dynamic PDF reports within Node-RED and FlowFuse.
 description: Discover how to create automated PDF reports in Node-RED with FlowFuse. This guide covers everything from setting up the required nodes to generating and serving PDF reports with dynamic data, making sharing and archiving important business insights easy.
+lastUpdated: 2026-06-03
 date: 2025-05-07
 authors: ["sumit-shinde"]
 image:  /blog/2025/05/images/how-to-generate-pdf-with-nr-and-ff.png
-keywords: pdf generate with node-red, node-red pdf report generation, pdf report node-red, pdfmake node-red, platmac/node-red-pdfbuilder
+keywords: pdf generate with node-red, node-red pdf report generation, pdf report node-red, pdfmake node-red, platmac/node-red-pdfbuilder, automate pdf node-red, node-red pdfbuilder
 tags:
    - flowfuse
+   - how-to
+cta:
+  type: sign-up
+  title: Automate PDF Reports with Node-RED on FlowFuse
+  description: FlowFuse gives you a managed Node-RED environment with one-click deployment, secure HTTP endpoints, and Dashboard 2.0 integration — everything you need to automate and serve PDF reports in production.
+meta:
+  howto:
+    name: "How to Generate PDF Reports Using Node-RED"
+    description: "Learn how to install the pdfbuilder node, build a flow that pulls data from SQLite, generates a dynamic PDF, serves it via HTTP, and embeds it in a FlowFuse dashboard."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "@platmac/node-red-pdfbuilder"
+      - "node-red-contrib-sqlite"
+      - "@flowfuse/node-red-dashboard"
+    steps:
+      - name: "Install the @platmac/node-red-pdfbuilder node"
+        text: "Open the Node-RED Palette Manager, search for @platmac/node-red-pdfbuilder, and install it along with the dashboard and SQLite nodes."
+        url: "step-1-install-the-platmacnode-red-pdfbuilder"
+      - name: "Understand how to use the pdfbuilder node"
+        text: "Learn the key attributes such as content, style, layout, pageSize, and pageMargins used to define the structure and appearance of a PDF."
+        url: "step-2-understanding-how-to-use-the-pdfbuilder-node"
+      - name: "Create a flow to generate a PDF"
+        text: "Build a Node-RED flow that reads data from SQLite, uses a function node to construct the PDF document definition, passes it through the pdfbuilder node, and writes the output file."
+        url: "step-3-creating-a-flow-to-generate-a-pdf"
+      - name: "Serve the PDF via HTTP and preview it on the dashboard"
+        text: "Add an HTTP-in endpoint that serves the generated PDF with appropriate Content-Type headers, then embed it in a Dashboard 2.0 iframe widget with a download button."
+        url: "step-4-serving-the-pdf-via-http-and-previewing-it-on-the-dashboard"
+  faq:
+    - question: "Which Node-RED node is used to generate PDFs?"
+      answer: "The @platmac/node-red-pdfbuilder node is the primary node for generating PDFs in Node-RED. It uses the pdfmake library internally and allows you to define content, layout, styles, and page settings via a JSON document definition."
+    - question: "Can I include dynamic data from a database in my PDF report?"
+      answer: "Yes. You can query a database such as SQLite using the node-red-contrib-sqlite node, pass the results to a function node that builds a pdfmake document definition with the data, and then pipe that into the pdfbuilder node."
+    - question: "How do I serve the generated PDF over HTTP in Node-RED?"
+      answer: "Add an HTTP-in node configured with method GET and a URL path like /report.pdf, connect it to your PDF generation flow, set the Content-Type header to application/pdf in a change node, and connect a HTTP-response node at the end."
+    - question: "How can I embed the PDF in a FlowFuse Dashboard 2.0 page?"
+      answer: "Use the @flowfuse/node-red-dashboard-2-ui-iframe node, point its URL to your HTTP endpoint (e.g. https://<instance>.flowfuse.cloud/report.pdf), and place it on a dashboard page. Trigger the iframe refresh using a ui-event node."
+    - question: "Can users download the PDF from the dashboard?"
+      answer: "Yes. Add a ui-template widget containing an HTML anchor tag with a download attribute pointing to your PDF HTTP endpoint. This renders a download button directly on the dashboard."
+    - question: "Does pdfbuilder work server-side without a browser?"
+      answer: "Yes. The pdfbuilder node operates entirely server-side via the pdfmake library, so PDFs are generated programmatically without any browser or manual interaction, making it ideal for automated workflows."
+    - question: "What page sizes and margins can I set for a PDF?"
+      answer: "You can set pageSize to values such as A4, LETTER, or LEGAL, and pageMargins to an array of four numbers representing left, top, right, and bottom margins in points."
+    - question: "Is there a ready-made blueprint for PDF generation in FlowFuse?"
+      answer: "Yes. FlowFuse provides a PDF Report Generator blueprint at flowfuse.com/blueprints/manufacturing/pdf-report-generator/ that lets you get started without building the flow from scratch."
+tldr: "This guide shows how to automate PDF report generation in Node-RED using the @platmac/node-red-pdfbuilder node and FlowFuse. It covers installing the node, building a flow that pulls production data from SQLite and renders it as a styled PDF, serving the file via an HTTP endpoint, and embedding it with a download button in a Dashboard 2.0 iframe widget."
 ---
 
 Generating PDF reports is a common need in many workflows—whether you're logging data, sharing results, or creating summaries. With Node-RED and FlowFuse, you can easily automate turning your data into well-structured PDF files. This guide will show you how to set up step-by-step PDF report generation using simple tools and flows.
