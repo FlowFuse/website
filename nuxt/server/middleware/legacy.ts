@@ -5,7 +5,7 @@ import { proxyRequest } from 'h3'
 const NUXT_ROUTES = new Set(['/terms', '/privacy-policy'])
 
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
-const NUXT_PREFIXES = ['/handbook']
+const NUXT_PREFIXES = ['/handbook', '/ebooks']
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return

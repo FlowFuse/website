@@ -66,6 +66,8 @@ export default defineNuxtConfig({
             routes: [
                 '/terms',
                 '/privacy-policy',
+                '/ebooks/beginner-guide-to-a-professional-nodered/',
+                '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
             ],
             crawlLinks: false
