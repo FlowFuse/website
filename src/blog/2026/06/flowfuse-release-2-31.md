@@ -46,7 +46,7 @@ FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can ad
 
   These first LLM nodes handle single-shot, text-in/text-out calls; see the [LLM nodes documentation](/node-red/flowfuse/ai/llm-nodes/) for details. Multimodal input, conversation history, and tool calling are planned for follow-up iterations. They join the FlowFuse AI Nodes package we [shipped in 2.23](/changelog/2025/10/onnx-nodes/), which already includes the ONNX Inference, Image Classification, Object Detection, and Image Depth Estimation nodes for running vision and custom models on-device, with no external API calls.
 
-Certified Nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your account rep, and we'll enable the ones your team needs.
+Certified Nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your customer success manager, and we'll enable the ones your team needs.
 
 ## What else is new?
 
