@@ -74,7 +74,7 @@ This is the part where we switch them on, not as a checklist, but as an architec
 
 Part 1 named the trap that sinks more deployments than any zero-day: OPC UA splits *application* authentication (does the server trust this client's certificate?) from *user* authentication (who is this operator, and what may they do?). Teams harden one, leave the other open, and believe they're covered.
 
-The reason this confuses people is that OPC UA secures at the **application layer**, not the transport layer. TLS protects the pipe between two hosts. OPC UA protects the *messages*, independently of the transport, so a receiver detects a tampered process value even on a hostile network. Encryption rides on top of that as a separate layer.
+The reason this confuses people is that OPC UA secures the **messages themselves**, not just the transport beneath them. A transport-only scheme like TLS protects the pipe between two hosts; OPC UA signs and encrypts each message independently of the transport, so a receiver detects a tampered process value even on a hostile network and even if the transport is something other than TLS. Application authentication and message security are layers in their own right, sitting above whatever carries the bytes.
 
 Two facts fall out of this, and both map straight to Part 1's attacks:
 
@@ -97,7 +97,7 @@ OPC UA has a protocol feature built for exactly this, and most "best practices" 
 
 Why this matters architecturally: the server sits in the production zone behind a firewall with **no inbound ports open**. From the firewall's perspective the traffic is outbound, the one direction it already permits. A SCADA client or edge gateway in the DMZ listens on a single port; each downstream server connects out to it. You get bidirectional OPC UA communication while the production-network firewall stays completely closed to the outside.
 
-This is the structural fix that makes Part 1's exposure problem disappear rather than merely guarding it. Layer it inside normal defense in depth, IEC 62541 calls for exactly this:
+This is the structural fix that makes Part 1's exposure problem disappear rather than merely guarding it. Layer it inside normal defense in depth, the zone-and-conduit segmentation IEC 62443 calls for:
 
 - **Segment the network.** Control network separate from enterprise, firewalls between zones. A typical layout: `SignAndEncrypt` from the enterprise zone (historians, MES, ERP), through a DMZ of edge gateways and protocol bridges, down to a plant floor where PLCs and HMIs sit on isolated VLANs.
 - **Put a security gateway in the DMZ.** A gateway can terminate Reverse Connect on both sides and act as the single, aggregating access point to the plant, the only door, and one you control.
@@ -138,7 +138,7 @@ Part 1's Secura research and the CVEs behind it all traced to one root cause: kn
 
 - `None`, no signing, no encryption, everything in plaintext. This is the "None" mode 80% of Part 1's exposed servers still offered. Disable it, or bind it to localhost-only diagnostics.
 - `Sign`, every message signed but not encrypted. Integrity and authenticity without confidentiality. Use only where you've consciously decided the data is non-sensitive but you still must detect a forged value.
-- `SignAndEncrypt`, all three. The answer for anything carrying process data or accepting commands.
+- `SignAndEncrypt`, signed *and* encrypted: integrity, authenticity, and confidentiality together. The answer for anything carrying process data or accepting commands.
 
 **Then remove the dead policies.** `Basic128Rsa15` and `Basic256` are deprecated, the OPC Foundation retired them in spec 1.04 because they lean on SHA-1 and RSA key lengths that no longer meet NIST or BSI guidance, and IEC 62443 and the NIST CSF explicitly flag them. `Basic128Rsa15` is the exact policy behind Part 1's CVE-2024-42512 and CODESYS's CVE-2025-1468 Bleichenbacher oracle. If a server *only* offers these, that's a firmware-update conversation, not a config tweak.
 
