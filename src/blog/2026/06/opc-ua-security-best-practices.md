@@ -35,7 +35,7 @@ In [Part 1](/blog/2026/05/opc-ua-security-attack-vectors/), we watched how threa
 
 This is the part where we switch them on, not as a checklist, but as an architecture where each decision closes a specific vector from Part 1. The order matters, because the cheapest fixes close the widest holes.
 
-## [The model that decides everything else](#the-model)
+## The model that decides everything else
 
 Part 1 named the trap that sinks more deployments than any zero-day: OPC UA splits *application* authentication (does the server trust this client's certificate?) from *user* authentication (who is this operator, and what may they do?). Teams harden one, leave the other open, and believe they're covered.
 
@@ -51,7 +51,7 @@ Hold onto the second point. Almost every control below is a way of making that m
 ![Application authentication and user authentication are two separate checks on the same OPC UA session.](./images/opcua-application-vs-user-authentication.png)
 *OPC UA authenticates the software and the operator as two separate checks, not one.*
 
-## [Stop accepting inbound connections at all](#reverse-connect)
+## Stop accepting inbound connections at all
 
 Part 1 opened with the worst number: 14,220 internet-exposed servers, more than half allowing unauthenticated access. The instinct is to bolt authentication onto an exposed server. The better move is to stop the server from accepting inbound connections in the first place.
 
@@ -73,7 +73,7 @@ Vendors agree on the bottom line. Siemens, Schneider, and Rockwell all explicitl
 ![A segmented network with Enterprise, DMZ, and Plant Floor zones separated by firewalls, with SignAndEncrypt links between them.](./images/opcua-defense-in-depth-network-zones.png)
 *OPC UA security sits inside a segmented, defense-in-depth network.*
 
-## [Make the trust list actually enforce](#trust-list)
+## Make the trust list actually enforce
 
 This was Part 1's ugliest vector, because the servers *look* secure, they advertise certificate authentication, they just don't enforce it. CISPA tested 48 products and found the failures clustered in trust list handling: missing support, disabled by default, insecure configuration. Here is how the trust check works, and the two settings that quietly defeat it.
 
@@ -95,7 +95,7 @@ The concrete mechanic trips up everyone the first time, so it's worth being lite
 
 The governing rule: **trust nothing by default.** A certificate enters the trusted store only through explicit, human approval. That is the control CISPA kept finding switched off.
 
-## [Force SignAndEncrypt, and rip the deprecated ciphers out](#crypto)
+## Force SignAndEncrypt, and rip the deprecated ciphers out
 
 Part 1's Secura research and the CVEs behind it all traced to one root cause: known-weak crypto left switched on in non-default configurations. You close this by removing the option, not by hoping nobody selects it.
 
@@ -109,7 +109,7 @@ Part 1's Secura research and the CVEs behind it all traced to one root cause: kn
 
 For anything new, `Basic256Sha256` is the floor; the modern policies `Aes128_Sha256_RsaOaep` (faster) and `Aes256_Sha256_RsaPss` (strongest available) are better. The trade-off is backward compatibility, older devices won't speak the newer suites, so the realistic migration is `Basic256Sha256` as the enforced minimum while you push the fleet forward and decommission the deprecated suites as you go. The point is that an attacker can't downgrade to a broken cipher you've physically removed.
 
-## [Separate who-the-software-is from who-the-operator-is](#user-auth-rbac)
+## Separate who-the-software-is from who-the-operator-is
 
 Application authentication, handled above, proves *which software* connected. It says nothing about *who* is driving the session. Part 1's anonymous-access vector only fully closes when you enforce both layers, and as Part 1 noted, anonymous *user* access is far less dangerous when *application* authentication is genuinely enforced, and far more dangerous when it isn't.
 
@@ -121,7 +121,7 @@ User authentication options, weakest to strongest:
 
 Then constrain what an authenticated identity can do. Implement **role-based access control from day one.** Running every application with administrator rights is the oversized blast radius Part 1 warned about, one compromise and the attacker owns the read-and-write path to the process. Assign read, write, and browse separately, per role, least privilege. If a server can't enforce granular access itself, put a gateway in front that can.
 
-## [Manage certificates like infrastructure, not a one-time chore](#certificate-lifecycle)
+## Manage certificates like infrastructure, not a one-time chore
 
 The trust mechanics above assume certificates that are valid, unique, and revocable. At one connection, manual exchange is fine. At a hundred it collapses, and that collapse is what produces the 20-year self-signed certs and shared keys Part 1 punished.
 
@@ -148,19 +148,19 @@ One field tip even with a GDS: keep a local rejected-certificate store on each a
 
 If you're building this on FlowFuse, the OPC UA connectivity is available as one of the Certified Nodes introduced in [FlowFuse 2.31](https://flowfuse.com/blog/2026/06/flowfuse-release-2-31/), vetted and FlowFuse-supported rather than pulled unmaintained from the community registry, which is the supply-chain point above made concrete. As with any OPC UA client, confirm it's set to reject untrusted server certificates before you go to production rather than auto-accepting them.
 
-## [Keep the audit trail on, and watched](#auditing)
+## Keep the audit trail on, and watched
 
 Part 1's quietest, most damning detail: most anonymously reachable servers also had auditing *disabled*, so an attacker connected, read the plant, and left no trace. A silent denial-of-service and a client-side compromise both get worse when nothing is watching.
 
 OPC UA emits rich audit events for security-relevant operations. Turn them on, then make sure something *collects and watches* them, events nobody reads are theatre. This is what turns an undetected man-in-the-middle into an alert and a silent DoS into an incident with a timeline.
 
-## [Patch the stack, and especially the gateways](#patch)
+## Patch the stack, and especially the gateways
 
 Part 1 closed on a supply-chain truth: one flaw in a shared OPC UA library or sample propagates into every product built on it, and integration servers are rich targets because vulnerabilities *chain*, Team82 strung five bugs together to own a Softing gateway.
 
 So architecture doesn't end at configuration. Track CVEs for your specific stack and gateways. Subscribe to the OPC Foundation security bulletins and your vendors' advisories. Patch the integration servers stitching systems together with the same urgency as the servers themselves, owning one reaches everything behind it. And because the client trusts the server, a client fed bad data by a rogue server is its own vector (Part 1's client-side RCE): client-side updates matter as much as server-side.
 
-## [Test what you think you built](#test)
+## Test what you think you built
 
 The step everyone skips. Verify configuration matches policy:
 
@@ -170,7 +170,7 @@ The step everyone skips. Verify configuration matches policy:
 
 A trust store you've never tested is a hypothesis, not a control, and Part 1 is a catalogue of deployments where the hypothesis was wrong.
 
-## [The blueprint, in one breath](#blueprint)
+## The blueprint, in one breath
 
 Every vector in Part 1 had the same root cause: a tool OPC UA handed you that nobody switched on. The architecture is switching them on, in the order of biggest hole for least effort:
 
