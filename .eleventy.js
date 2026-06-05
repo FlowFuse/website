@@ -725,7 +725,7 @@ module.exports = function(eleventyConfig) {
         const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
         if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
         if (pro && enterprise && !enterpriseDimmed) return "Pro+";
-        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (contact us)";
         if (enterpriseDimmed) return "Enterprise (on request)";
         if (enterprise) return "Enterprise";
         return "Not available";
