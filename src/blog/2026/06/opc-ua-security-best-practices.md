@@ -4,7 +4,7 @@ subtitle: "Part 1 showed how attackers walk in. This is the blueprint that locks
 description: "Turn every OPC UA attack vector into a configuration decision you control: Reverse Connect to keep the firewall closed, enforced trust lists, SignAndEncrypt, GDS certificate management, RBAC, and the field anti-patterns that quietly undo all of it."
 date: 2026-06-05
 authors: ["sumit-shinde"]
-image: /blog/2026/06/images/opcua-security-architecture.png
+image: /blog/2026/06/images/opc-ua-security.png
 keywords: opc ua security, opc ua security architecture, opc ua reverse connect, opc ua certificate management, opc ua trust list, opc ua gds, opc ua signandencrypt, opc ua rbac, defensible opc ua, opc ua best practices, industrial security, iiot security
 tags:
   - post
