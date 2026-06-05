@@ -13,15 +13,14 @@ release: "2.31"
 features:
    - id: ff-expert-application-building
      heading: "Let FlowFuse Expert build your industrial application"
-   - heading: "Certified Nodes for industrial connectivity and AI"
-     tiers:
-       cloud: enterprise
+   - id: certified-nodes
+     heading: "Certified Nodes for industrial connectivity and AI"
    - heading: "What else is new?"
      tiers:
        cloud: all
        selfHosted: all
-# Certified Nodes uses an inline Cloud-only badge because Self-Hosted lands in 2.32.
-# Switch to `id: certified-nodes` once Self-Hosted support ships.
+# Certified Nodes Self-Hosted renders "Coming soon" from the catalog SH value ('time').
+# Flip that tier to true in 2.32 when Self-Hosted support ships.
 tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and per-instance control over AI."
 cta:
   type: contact
