@@ -8,6 +8,9 @@
         "generate": "nuxt generate",
         "preview": "nuxt preview"
     },
+    "dependencies": {
+        "mermaid": "^11"
+    },
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
         "@nuxt/image": "^2.0.0",
