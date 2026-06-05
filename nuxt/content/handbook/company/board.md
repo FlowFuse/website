@@ -5,30 +5,36 @@ title: "Board & Investors"
 # Board meetings
 
 There are Board Meeting Cadence with 4 official 120-minute meetings per year
-(once per quarter) about 1 month after the quarter closes, interspersed with 4
-60-minute informal meetings that are focused on metrics and cover one strategic
-topic for a deep dive.
+(once per quarter) about 1 month after the quarter closes.
 
 Scheduling is done by sending out a [Doodle](https://doodle.com/en/) to ensure
 it's low friction for all participants.
 
-Board meeting dates are planned and communicated at the beginning of each calendar year. Before confirming dates, ensure there are no major conflicts (e.g. company events, holidays, or key stakeholder unavailability). One (1) month prior to each Board meeting, reconfirm the scheduled date and check for any new conflicts. Any changes or cancellations must be communicated to the Board at least one (1) month in advance, and if a meeting is cancelled, all Board members must be notified.
+Board meeting dates are scheduled and communicated at the beginning of each
+calendar year. Before confirming dates, ensure there are no major conflicts
+(e.g. company events, holidays, or key stakeholder unavailability). One (1) month
+prior to each Board meeting, reconfirm the scheduled date and check for any new
+conflicts. Any changes or cancellations must be communicated to the Board at least
+one (1) month in advance, and if a meeting is cancelled, all Board members must
+be notified.
 
 ## Calendar invites
 
-Since some of the folks invited alternate meetings they attend, we have two
-sequences of invites scheduled to recur at 26 weeks (instead of one sequence at
-13 weeks). This is important to note since this means that if you want to link
-something in the meeting invite (e.g. a doc or slides), it must be edited in two
-places. This is more reasonable than manually adding folks to the meeting in
-alternating succession.
+Calendar invites include:
+* Board members
+* Board observers
+* (optional) smaller, follow-on investors
+* including our legal counsel.
+* Chief of Staff
+* VP of Sales
 
-Calendar invites include all the folks expected to be at the board meeting,
-including our legal counsel.
+For a full and up-to-date list of board members, observers, legal counsel, and
+key stakeholders to include, refer to the [FF Executive Assistant Guide](https://docs.google.com/document/d/1dkQaHjTDs8OIKQaUcPZe5RVliu-yY6RjmBnJXnfhr0U/edit?tab=t.0#heading=h.xtkvy2qm8i83)
+specifically the Name Familiarity & Relationship table, which includes all BoD members, observers, and legal contacts.
 
-COS and VP of Sales should be included on all board meeting calendar invites. When sending the calendar invite, attach the board deck (as a PDF) so attendees have it ahead of time.
-
-For a full and up-to-date list of board members, observers, legal counsel, and key stakeholders to include, refer to the [FF Executive Assistant Guide](https://docs.google.com/document/d/1dkQaHjTDs8OIKQaUcPZe5RVliu-yY6RjmBnJXnfhr0U/edit?tab=t.0#heading=h.xtkvy2qm8i83) — specifically the Name Familiarity & Relationship table, which includes all BoD members, observers, and legal contacts.
+When creating the calendar invite, attach the board deck (as a Google Slides link)
+so attendees have it ahead of time. The deck will be empty a few months out,
+but allows the company to iterate on the deck as the meeting comes closer.
 
 ## The Strategic Timeline
 
