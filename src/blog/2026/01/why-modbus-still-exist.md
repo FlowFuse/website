@@ -8,6 +8,7 @@ image: /blog/2026/01/images/why-modbus-wont-dia.png
 keywords: Modbus, industrial automation, PLC, OPC UA, EtherNet/IP, MQTT, legacy systems, industrial protocols, factory automation, FlowFuse
 tags:
  - flowfuse
+ - modbus
 cta:
   type: demo
   title: Modernize Without the Rip and Replace

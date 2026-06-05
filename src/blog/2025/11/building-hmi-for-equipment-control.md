@@ -3,11 +3,14 @@ title: "Building a Web HMI for Factory Equipment Control"
 subtitle: "Create web-based operator interfaces for industrial equipment"
 description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser"
 date: 2025-11-19
+usecase:
+  - production-monitoring
 keywords: FlowFuse, web HMI, PLC control, Node-RED dashboard, industrial automation, edge device, MQTT, factory monitoring, SCADA alternative, remote equipment control
 authors: ["sumit-shinde"]
 image: /blog/2025/11/images/building-a-web-hmi-for-factory.png
 tags:
   - flowfuse
+  - plc
 ---
 
 Most factory HMIs are still stuck in one place. Dedicated panels mounted next to equipment, or SCADA workstations in the control room. Need to check something? You're walking over there.

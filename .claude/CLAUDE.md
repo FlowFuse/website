@@ -1,24 +1,44 @@
 # FlowFuse Website — Codebase Guide
 
-## Stack
+## Architecture (Nuxt-first, 11ty being phased out)
 
-- **SSG**: Eleventy (11ty) v3, source in `src/`, output to `_site/`
-- **CSS**: Tailwind v3 via PostCSS → `_site/css/style.css`
-- **Templates**: Nunjucks (`.njk`) + Markdown
+The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framework going forward; 11ty is being phased out section by section using a strangler-fig pattern.
+
+- **Primary framework**: Nuxt 3 (`nuxt/`) with `@nuxt/content` v3 for content-driven pages
+- **Legacy SSG**: Eleventy (11ty) v3, source in `src/`, output to `_site/` — being phased out
+- **Strategy**: Nuxt is the front door. In dev, Nuxt proxies un-migrated routes to 11ty (port 8080). In production, `nuxt generate` produces the final output.
+- **CSS**: Tailwind v3 via PostCSS → `_site/css/style.css` (shared between both)
+- **Templates (legacy)**: Nunjucks (`.njk`) + Markdown (11ty only)
 - **Search**: Algolia (`scripts/index-algolia.js`)
-- **Hosting**: Netlify; publish dir = `_site`
-- **Nuxt migration**: parallel Nuxt 3 project lives in `nuxt/` (see [nuxt/CLAUDE.md](nuxt/CLAUDE.md))
+- **Hosting**: Netlify; final output from `nuxt generate`
+
+### Migration status
+
+| Section | Status |
+|---------|--------|
+| `/handbook/**` | **Migrated** — served by Nuxt (`nuxt/content/handbook/`) |
+| All other routes | Still on 11ty, proxied through Nuxt in dev |
+
+### Production build order
+
+```
+clean:nuxt → build:js:nuxt → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
+```
+
+11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
 
 ## Dev commands
 
 ```bash
 npm start              # all watchers in parallel (11ty + nuxt + postcss + docs + blueprints)
 npm run dev            # eleventy + postcss + nuxt only
-npm run dev:eleventy   # 11ty only, port 8080
-npm run dev:nuxt       # Nuxt only, port 3000/3001
+npm run dev:eleventy   # 11ty only, port 8080 (legacy; most work doesn't need this)
+npm run dev:nuxt       # Nuxt only, port 3000 — use this for handbook and migrated pages
 npm run docs           # sync docs from external source once
 npm run build          # production build
 ```
+
+> When working on the handbook or other migrated sections, `npm run dev:nuxt` is sufficient. `npm start` is only needed when also touching 11ty-served pages.
 
 ## Directory layout
 
@@ -104,19 +124,26 @@ Each year has a `src/changelog/YYYY/YYYY.json` that tags the collection.
 
 ### Handbook pages
 
-**Source:** `src/handbook/{department}/{slug}.md`  
+**Source:** `nuxt/content/handbook/{department}/{slug}.md` ← edit here  
 **URL:** `/handbook/{department}/{slug}/`  
-**Layout:** `layouts/documentation.njk` (shared with docs)
+**Rendered by:** Nuxt — `nuxt/pages/handbook/[...slug].vue` + `HandbookLeftNav` component
 
 ```yaml
 ---
-navTitle: "Title shown in sidebar nav"
-navGroup: "Optional group heading"
+title: "Page title (shown in browser tab and sidebar nav)"
+navigation:            # optional — only needed on top-level section index.md files
+  group: "Company"     # groups this section under a heading in the left nav
 ---
 ```
 
+**Fields:**
+- `title` — required; used as the page title and sidebar nav label
+- `navigation.group` — only set on top-level section `index.md` files to group sections in the left nav (e.g. "Company", "Engineering & Design Practices", "Internal Operations", "Sales department")
+
+**Nav grouping:** `nuxt/composables/useHandbookNav.ts` reads all pages via `queryCollection('handbook').all()` and builds the sidebar tree. The `navigation.group` on each section's `index.md` controls which sidebar group the section appears under.
+
 Department folders: `company/`, `design/`, `engineering/`, `marketing/`, `operations/`, `peopleops/`, `sales/`  
-Collection config: `src/handbook/handbook.json`
+Collection config: `nuxt/content.config.ts` (defines the `handbook` collection)
 
 ---
 

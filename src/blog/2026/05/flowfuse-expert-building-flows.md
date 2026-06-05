@@ -2,6 +2,7 @@
 title: "How to Build Industrial Apps With FlowFuse AI Expert"
 subtitle: "From a description to a running flow"
 description: "FlowFuse Expert now builds applications from a description. Here's what that looks like, what Expert understands about your environment, and how to keep iterating."
+lastUpdated: 2026-06-04
 date: 2026-05-13
 keywords: flowfuse ai expert, flowfuse expert, industrial automation, node-red, industrial dashboards, mqtt, opc ua, industrial iot, ai-assisted development, real-time monitoring, flowfuse cloud, machine monitoring
 authors: ["sumit-shinde"]
@@ -11,9 +12,10 @@ tags:
     - flowfuse
     - ai
 cta:
-    type: contact
+    type: sign-up
     title: Try FlowFuse Expert on your team
-    description: Available in soft launch on FlowFuse Cloud. Reach out to get it enabled.
+    description: FlowFuse Expert Application Building is in open beta on FlowFuse Cloud — no request needed. Sign up and start building.
+tldr: "FlowFuse Expert can now build complete Node-RED applications from a natural language description, wiring nodes on the canvas in real time. Before building, Expert reads your installed palette, existing canvas state, node configurations, and runtime debug data to produce output that matches your actual environment. The feature is in open beta on FlowFuse Cloud (all tiers) and Self-Hosted Enterprise, and works on both Hosted and Remote Instances."
 ---
 
 FlowFuse Expert now builds applications for you. Describe what you need, and the flow is built in front of you on the canvas, wired and configured. Ask for a change, it updates on the spot.
@@ -38,9 +40,7 @@ The result is output you can trust to match what you expect, so you reach your i
 
 ## Get started in two minutes
 
-Expert is currently in **soft launch** on FlowFuse Cloud while we refine the experience. We're planning a full public launch alongside Self Hosted Enterprise support in the next release.
-
-During the soft launch, Expert must be manually enabled for your FlowFuse Cloud team. [Contact us](/contact-us/) using the email address associated with your team, and we'll enable it for you. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first. The soft launch is available for paid Flowfuse Cloud teams only.
+FlowFuse Expert is in open beta on FlowFuse Cloud (Starter, Team, and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 
@@ -52,7 +52,7 @@ You can watch Expert do its work as the flow is built on the canvas. A few secon
 
 You didn't go hunting through the palette or keep the documentation open in another tab. The flow just showed up saving you time and effort.
 
-> For now Expert can only build flows when you're on a Node-RED instance hosted on FlowFuse Cloud. We're rolling this out wider from the next release onwards.
+> FlowFuse Expert works on both Hosted and Remote Instances.
 
 From there, you can replace simulated data with live machine data, redesign the dashboard, add alarms, connect MQTT or OPC UA sources, and keep refining the application through prompts instead of manual building.
 

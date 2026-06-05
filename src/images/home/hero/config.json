@@ -1,0 +1,5 @@
+[
+    { "file": "hero-1.jpg", "alt": "Industrial manufacturing facility", "mobileOverlay": true },
+    { "file": "hero-2.jpg", "alt": "Industrial shipping port with cargo containers and cranes", "mobileOverlay": true },
+    { "file": "hero-3.jpg", "alt": "Large-scale solar panel array at an industrial energy facility", "mobileOverlay": false }
+]

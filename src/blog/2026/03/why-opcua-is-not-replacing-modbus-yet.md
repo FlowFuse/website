@@ -8,6 +8,8 @@ authors: ["sumit-shinde"]
 image: /blog/2026/03/images/opcua-is-not-replacing-modbus-yet.png
 tags:
 - flowfuse
+- opcua
+- modbus
 cta:
   type: demo
   title: Bridge Modbus and OPC UA Without Ripping Out Your Infrastructure

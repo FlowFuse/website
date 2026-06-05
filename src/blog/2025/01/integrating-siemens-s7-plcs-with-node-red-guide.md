@@ -1,19 +1,74 @@
 ---
-title: "Getting Started: Integrating Siemens S7 PLCs with Node-RED" 
-subtitle: "A Step-by-Step Beginner's Guide to Connect, Control, and Monitor Siemens S7 PLCs Using Node-RED"
-description: "Learn how to integrate Siemens S7 PLCs with Node-RED for seamless industrial automation. This guide covers setup, configuration, and workflow creation to control and monitor PLCs effortlessly, including writing and reading data from your PLCs."
+title: "How to Read and Write Siemens S7 PLC Data — A Node-RED Guide (2026)"
+subtitle: "A step-by-step beginner's guide to reading, writing, and monitoring data from Siemens S7-1200 and S7-1500 PLCs."
+description: "Learn how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) for industrial monitoring and control. This guide covers PLC setup, the S7 protocol over ISO-on-TCP, addressing, and building dashboards—no deep PLC expertise required."
+lastUpdated: 2026-06-03
 date: 2025-01-17
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde","stephen-mclaughlin"]
 image: /blog/2025/01/images/s7-with-node-red.png
-keywords: s7,siemens, siemens s7 1200 with node-red, siemens s7 1500 with node-red, writing data to plc using node-red, reading data from plc using node-red, s7 with node-red
-tags: 
+keywords: siemens s7 plc data, read data from s7 plc, write data to s7 plc, siemens s7 1200 with node-red, siemens s7 1500 with node-red, s7 with node-red, plc data integration, industrial automation
+tags:
   - node-red
   - flowfuse
+  - plc
+  - how-to
 cta:
-  type: sign-up
-  title: Connect Your Siemens PLCs to the Rest of Your Stack
-  description: FlowFuse gives you remote device management, DevOps pipelines, and a built-in dashboard platform — so you can control, monitor, and scale your S7 PLC integrations without on-site visits.
+  type: contact
+  title: "Turn PLC Data Into Operational Visibility with FlowFuse"
+  description: "Reading and writing S7 data is just the start. FlowFuse extends your existing PLCs, SCADA, and MES—no rip-and-replace—into a single platform for remote device management, dashboards, and DevOps pipelines. Connect Siemens, Allen-Bradley, Modbus, and OPC UA devices, and get your first operational application running this week. SOC 2 certified, with RBAC, SSO, and self-hosted options. Talk to our team about your architecture."
+meta:
+  howto:
+    name: "How to Read and Write Siemens S7 PLC Data with Node-RED"
+    description: "Connect a Siemens S7-1200 or S7-1500 PLC to Node-RED over the S7 protocol (ISO-on-TCP, port 102), then read and write PLC data for remote monitoring and control."
+    totalTime: "PT30M"
+    tool:
+      - "TIA Portal"
+      - "Node-RED"
+      - "node-red-contrib-s7"
+      - "FlowFuse Device Agent"
+    steps:
+      - name: "Configure PLC settings in TIA Portal"
+        text: "In TIA Portal, enable PUT/GET communication from remote partners, set the PLC to full access (no protection), and disable Optimized Block Access on any data block you intend to read or write. Download the updated configuration to the PLC before proceeding."
+        url: "prerequisite"
+      - name: "Install Node-RED on a networked device using FlowFuse Device Agent"
+        text: "Install the FlowFuse Device Agent on a device (such as a Raspberry Pi or RevPi) that is on the same network as the PLC. The Device Agent runs Node-RED and enables remote management without on-site visits."
+        url: "prerequisite"
+      - name: "Install the node-red-contrib-s7 node"
+        text: "In Node-RED, open the main menu, click Manage Palette, switch to the Install tab, search for node-red-contrib-s7, and click Install. Once complete the S7 nodes appear in the palette."
+        url: "installing-the-s7-node"
+      - name: "Configure the S7 endpoint connection"
+        text: "Drag an S7 node onto the canvas and add a new PLC configuration. Select Ethernet (ISO on TCP) as the transport, enter the PLC's IP address and leave port 102 unchanged. Set the Rack and Slot IDs from TIA Portal's Device View, set the cycle time and timeout, then add your variables using the Node-RED address format (e.g. DB5,X0.0 for TIA Portal's DB5.DBX0.0)."
+        url: "configuring-the-s7-node-to-connect-to-the-plc"
+      - name: "Write data to the PLC using the s7-out node"
+        text: "Drag an s7-out node onto the canvas, select the target variable and the PLC configuration, then wire standard nodes (Inject, Change, Function, or a Dashboard button) to it. Deploy the flow and verify the PLC output changes as expected."
+        url: "writing-data-to-the-plc"
+      - name: "Read data from the PLC using the s7-in node"
+        text: "Drag an s7-in node onto the canvas, select the PLC configuration and the variable to read, and enable Emit only when value changes. Deploy the flow and use a Debug node to verify the data. Use node-red-contrib-buffer-parser to unpack word or double-word values into individual bits, then route the results to dashboards, databases, or other systems."
+        url: "reading-data-from-the-plc"
+  faq:
+    - question: "How do I read data from a Siemens S7 PLC?"
+      answer: "Install an S7 communication node (such as node-red-contrib-s7) in Node-RED, configure an S7 endpoint with your PLC's IP address over Ethernet (ISO on TCP) using port 102, and add the variables you want to read. The s7-in node then polls those addresses on a set cycle time and emits the values, which you can route to dashboards, databases, or other systems."
+    - question: "How do I write data to a Siemens S7 PLC?"
+      answer: "Use the s7-out node pointed at the variable you want to change, then drive it with standard nodes like inject, change, or function. Make sure the data type you send matches the PLC program, and that PUT/GET communication is enabled and optimized block access is disabled on the relevant data block."
+    - question: "What protocol is used to communicate with Siemens S7 PLCs?"
+      answer: "Siemens S7 PLCs communicate using the S7 protocol over ISO-on-TCP (RFC 1006), typically on TCP port 102. The device reading or writing data must be on the same network as the PLC and able to reach that port through any firewalls."
+    - question: "What do I need to configure on the PLC before reading or writing data?"
+      answer: "In TIA Portal you must allow PUT/GET communication from remote partners, provide full access to the PLC, and disable 'Optimized Block Access' on any data block you intend to read or write over the S7 protocol. Without these settings the connection establishes but data exchange fails."
+    - question: "Do I have to disable optimized block access on S7-1200 and S7-1500 PLCs?"
+      answer: "For the classic S7 protocol, yes—it relies on fixed memory offsets, so optimized data blocks must be disabled. If you can't disable optimization (it improves performance and is often mandated by coding standards), use OPC UA instead, which reads variables by symbolic name and works with optimized blocks without modification."
+    - question: "Why does the S7 address format differ from TIA Portal?"
+      answer: "The S7 node uses a slightly different addressing scheme. For example, TIA Portal's DB5.DBX0.1 becomes DB5,X0.1, and DB13.DBW4 becomes DB13,WORD4. You map the TIA Portal address to the node's equivalent format when adding variables to the S7 endpoint."
+    - question: "Why does my S7 connection fail even though the PLC is reachable?"
+      answer: "If the connection establishes but data won't exchange—often shown as a 'service not implemented' or frame error—the usual causes are missing PUT/GET permission, optimized block access still enabled, or the PLC and the device running Node-RED being on different subnets. Confirm both devices share a subnet (for example 192.168.1.x) and that port 102 is not blocked by a firewall."
+    - question: "Which Siemens PLCs work with this method, and does it work for the S7-1200 and S7-1500?"
+      answer: "It works with S7-300, S7-400, S7-1200, and S7-1500 controllers. The S7-1200 and S7-1500 require PUT/GET enabled and optimized block access disabled. Siemens LOGO uses a different addressing scheme, so check the node's README for those details."
+    - question: "How do I efficiently read many data points from an S7 PLC?"
+      answer: "Reading individual points one by one can be slow at scale. A common optimization is to pack multiple boolean statuses into a single word or double word inside the PLC program, read that one value, then unpack the bits afterward (for example with node-red-contrib-buffer-parser). For mission-critical data, a FIFO buffer in the PLC prevents loss during network outages."
+    - question: "Can I read data from multiple PLC vendors, not just Siemens?"
+      answer: "Yes. The same approach extends beyond Siemens S7. Allen-Bradley PLCs can be read over EtherNet/IP, and OPC UA or Modbus provide vendor-neutral options across Siemens, Rockwell, Schneider, Beckhoff, Omron, and others. Most factory floors mix vendors, so a protocol-flexible platform avoids being locked to one brand."
+    - question: "Can I build a dashboard to monitor and control S7 PLC data remotely?"
+      answer: "Yes. Once data is flowing in and out of the PLC, you can visualize it with LEDs, gauges, and charts and add buttons for control using FlowFuse Dashboard. To access a dashboard securely over the internet from a remote device, run the dashboard in a hosted instance and pass values to and from the edge device using FlowFuse Project nodes."
+tldr: "This guide explains how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) using Node-RED and the S7 protocol over ISO-on-TCP (port 102). Prerequisites: enable PUT/GET communication, disable optimized block access on your data blocks, and run Node-RED on a networked device (the FlowFuse Device Agent makes this remotely manageable). After installing an S7 node, you configure an endpoint with the PLC's IP, rack, and slot, map TIA Portal addresses to the node's address format, then use s7-in to read values and s7-out to write them—enabling remote monitoring, control, and dashboards without deep PLC expertise. The same patterns extend to Allen-Bradley, Modbus, and OPC UA devices for multi-vendor environments."
 ---
 
 Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.

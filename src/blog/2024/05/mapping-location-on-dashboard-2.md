@@ -1,20 +1,69 @@
 ---
-title: Mapping location data within Node-RED Dashboard 2.0.
+title: "Mapping location data within Node-RED Dashboard 2.0. (2026)"
 subtitle: Step-by-step guide to plot location data on dashboard 2.0.
 description: Learn how to plot location data on Dashboard 2.0 with this comprehensive step-by-step guide. 
+lastUpdated: 2026-06-03
 date: 2024-05-13
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/05/images/mapping-location-on-dashboard-2-worldmap.png
+keywords: node-red dashboard map, node-red worldmap, dashboard 2.0 location, fleet tracking node-red, node-red map widget
 tags:
    - posts
    - dashboard
    - fleet tracking
    - location
+   - how-to
 cta:
   type: sign-up
   title: Build Real-Time Fleet Tracking Dashboards
   description: FlowFuse gives you everything you need to connect GPS devices, visualize live location data, and deploy production-ready dashboards — all on one platform.
+meta:
+  howto:
+    name: "How to Map Location Data in Node-RED Dashboard 2.0"
+    description: "Learn how to install the worldmap custom node, retrieve live vehicle location data from a public API, format it for the Worldmap node, and embed the interactive map in a Dashboard 2.0 iframe widget."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "Node-RED Dashboard 2.0"
+      - "node-red-contrib-web-worldmap"
+      - "@flowfuse/node-red-dashboard-2-ui-iframe"
+    steps:
+      - name: "Install the Worldmap Custom Node"
+        text: "Open Node-RED's Manage Palette, switch to the Install tab, search for node-red-contrib-web-worldmap, and click Install."
+        url: "installing-world-map-custom-node"
+      - name: "Retrieve Location Data"
+        text: "Add an Inject node set to repeat every 20 seconds and connect it to an HTTP Request node configured to GET the Edinburgh Open Public Transportation API endpoint as a parsed JSON object."
+        url: "retrieving-location-data"
+      - name: "Format Location Data"
+        text: "Use Change, Split, and Switch nodes to reshape each vehicle object into the format expected by the Worldmap node, setting lat/lon properties and removing incompatible fields."
+        url: "formatting-location-data"
+      - name: "Plot Data on the Worldmap"
+        text: "Add a Worldmap node, set its path to /worldmap, and connect the output of the formatting nodes to its input so each vehicle is plotted with the correct icon and color."
+        url: "plotting-location-data-on-worldmap"
+      - name: "Render the Map in Dashboard 2.0"
+        text: "Install the @flowfuse/node-red-dashboard-2-ui-iframe widget, drag an iframe widget onto the canvas, configure its URL to /worldmap, and assign it to your dashboard group."
+        url: "rendering-map-on-dashboard-20"
+      - name: "Deploy the Flow"
+        text: "Click Deploy in the Node-RED editor, then open your Dashboard 2.0 to see the live vehicle locations plotted on the interactive map."
+        url: "deploying-the-flow"
+  faq:
+    - question: "How do I add a map to Node-RED Dashboard 2.0?"
+      answer: "Install the node-red-contrib-web-worldmap node to serve an interactive map at a URL path, then embed it in Dashboard 2.0 using the @flowfuse/node-red-dashboard-2-ui-iframe widget pointed at that path."
+    - question: "What is the node-red-contrib-web-worldmap node?"
+      answer: "It is a Node-RED node that generates an interactive, browser-based world map (powered by Leaflet) at a configurable URL. You send messages to it describing items to plot, and it updates the map in real time."
+    - question: "What data format does the Worldmap node expect?"
+      answer: "Each message payload should be an object with at minimum a 'name' (unique identifier), 'lat' (latitude), and 'lon' (longitude) property. Additional properties like 'icon', 'iconColor', and 'speed' are also supported."
+    - question: "Can I use this approach for my own GPS-tracked vehicles instead of public transport data?"
+      answer: "Yes — replace the Edinburgh API with your own data source. If you are tracking your own devices, you can connect them to Node-RED using the FlowFuse Device Agent to stream GPS and sensor data directly."
+    - question: "What is the iframe widget used for in this guide?"
+      answer: "The @flowfuse/node-red-dashboard-2-ui-iframe widget embeds an external webpage inside a Dashboard 2.0 panel using an HTML iframe. It is used here to display the worldmap page inside your dashboard layout."
+    - question: "How often should I poll the location API?"
+      answer: "The guide uses a 20-second interval for the Edinburgh public transport API. The appropriate interval depends on how frequently your data source updates and how much API load is acceptable."
+    - question: "Do I need a FlowFuse account to follow this guide?"
+      answer: "No — this guide works with any Node-RED installation. However, if you want to deploy a production fleet tracking dashboard and access it securely from anywhere, FlowFuse Cloud provides managed hosting, HTTPS, and remote device connectivity."
+    - question: "Can I customize the map icons for different vehicle types?"
+      answer: "Yes — the guide shows how to use a Switch node to detect the vehicle type and a Change node to set different 'icon' and 'iconColor' properties per type, such as a train icon for trams and a bus icon for buses."
+tldr: "This guide shows how to build a real-time fleet tracking dashboard in Node-RED Dashboard 2.0 using the node-red-contrib-web-worldmap node. It covers retrieving live vehicle location data from a public API, formatting it for the Worldmap node, and embedding the interactive map inside a Dashboard 2.0 iframe widget."
 ---
 
 Fleet management in IoT uses sensors and software to collect real-time data on vehicles, such as location, fuel consumption, and driver behavior. This data allows companies to optimize routes, reduce costs, improve safety, and enhance overall operational efficiency of their fleet. Building an application that allows the tracking of location to support Fleet management is what this post is about.

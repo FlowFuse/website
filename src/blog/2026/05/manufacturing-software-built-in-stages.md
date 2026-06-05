@@ -12,6 +12,7 @@ cta:
   type: contact
   title: "Ready to move faster?"
   description: "See how FlowFuse lets you deploy manufacturing capabilities in weeks, not years. Talk to our team about building your manufacturing stack." 
+tldr: "Traditional all-or-nothing MES deployments lock manufacturers into multi-year rollouts that can't keep pace with changing operations. FlowFuse enables a composable alternative: deploy only the capabilities you need today machine monitoring, OEE tracking, quality workflows then add more independently as requirements evolve, with each capability staying decoupled so teams can update or replace one piece without touching the rest of the stack."
 ---
 
 Every software vendor's pitch follows the same pattern. You get a complete system. It does everything. You commit to the full scope upfront, sign a multi-year contract, and wait. Eighteen months later, if the implementation runs on schedule, you might see value.

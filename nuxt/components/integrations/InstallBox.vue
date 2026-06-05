@@ -1,5 +1,5 @@
 <script setup>
-const installGifUrl = '/img/installing-node-red-node.gif'
+const installGifUrl = '/node-red/getting-started/library/images/installing-node-red-node.gif'
 const installPngUrl = '/images/integrations/palette-manager-install.png'
 </script>
 

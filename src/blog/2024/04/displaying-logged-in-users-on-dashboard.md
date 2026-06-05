@@ -1,17 +1,64 @@
 ---
-title: Displaying logged in user on Node-RED Dashboard 2.0
+title: "Displaying logged in user on Node-RED Dashboard 2.0 (2026)"
 subtitle: Step-by-Step Beginner's Guide to Displaying logged in User on Node-RED Dashboard 2.0
 description: Learn how to secure your Dashboard, install, and configure the FlowFuse Multi-user addon, and display logged-in users on Node-RED Dashboard 2.0. Additionally, delve deeper into understanding how the FlowFuse Multi-user addon functions.
+lastUpdated: 2026-06-03
 date: 2024-04-03
 authors: ["sumit-shinde"]
 image: /blog/2024/04/images/logged-in-user-dashboard.png
+keywords: node-red dashboard 2.0, display logged in user, flowfuse multi-user addon, dashboard user authentication, node-red user info, dashboard 2.0 personalization, flowfuse dashboard security
 tags:
    - posts
    - dashboard 2.0
+   - how-to
 cta:
   type: sign-up
   title: Build Secure Multi-User Dashboards With Node-RED
   description: FlowFuse makes it simple to add user authentication, personalized views, and role-based access to your Node-RED dashboards. Start your free trial and see it in action.
+meta:
+  howto:
+    name: "How to Display Logged-In User on Node-RED Dashboard 2.0"
+    description: "Enable FlowFuse user authentication, install the multi-user addon, and render the logged-in user's name and avatar in the Dashboard 2.0 header using Vue Teleport."
+    totalTime: "PT20M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "Dashboard 2.0"
+      - "FlowFuse User Addon (@flowfuse/node-red-dashboard-2-user-addon)"
+    steps:
+      - name: "Enable FlowFuse User Authentication"
+        text: "Navigate to the Instance settings, select the Security tab, and enable FlowFuse User Authentication so visitors must log in before accessing the dashboard."
+        url: "enabling-flowfuse-user-authentication"
+      - name: "Install the FlowFuse User Addon"
+        text: "Open the Node-RED Manage Palette dialog, search for @flowfuse/node-red-dashboard-2-user-addon, and install it to make logged-in user data available on every dashboard message."
+        url: "installing-flowfuse-user-addon"
+      - name: "Understand How the Addon Works"
+        text: "Learn that the addon appends user information (userId, username, email, name, image) to msg._client.user and also exposes it via setup.socketio.auth.user in ui-template widgets."
+        url: "how-it-works"
+      - name: "Display Logged-In User on Dashboard 2.0"
+        text: "Add a ui-template node scoped to UI level, use Vue Teleport targeting #app-bar-actions, and bind setup.socketio.auth.user.name and .image to show the user's avatar and greeting in the header."
+        url: "displaying-logged-in-user-on-dashboard-2.0"
+      - name: "Deploy the Flow"
+        text: "Click the Deploy button in the Node-RED editor and open the dashboard URL to verify the logged-in user's name and avatar appear in the top-right of the header."
+        url: "deploying-the-flow"
+  faq:
+    - question: "What is the FlowFuse Multi-user Dashboard addon?"
+      answer: "It is a plugin for Dashboard 2.0 that uses the FlowFuse API to attach authenticated user information—including user ID, username, email, full name, and avatar—to every msg object emitted by dashboard widgets."
+    - question: "Which FlowFuse plans support the Multi-user addon?"
+      answer: "The Multi-user addon is available to Teams and Enterprise Self-Hosted customers. Contact FlowFuse to get the required configurations to get started."
+    - question: "How is user data accessed inside a ui-template widget?"
+      answer: "User data is available as setup.socketio.auth.user in the Vue template (e.g. {{ setup.socketio.auth.user.name }}) and as this.setup.socketio.auth.user in the widget's JavaScript section."
+    - question: "What is the difference between 'Include Client Data' and 'Accept Client Constraints'?"
+      answer: "'Include Client Data' appends user info to every msg emitted by a widget. 'Accept Client Constraints' restricts message delivery to the specific client (socket ID) that triggered the event, improving data isolation and security in multi-user scenarios."
+    - question: "Can I display the user avatar alongside the name?"
+      answer: "Yes. Use an <img> tag bound to setup.socketio.auth.user.image inside the Teleport block targeting #app-bar-actions. The image URL is the user's FlowFuse account avatar."
+    - question: "What does Vue Teleport do in this context?"
+      answer: "Teleport renders a component's HTML into a different DOM element—in this case, the #app-bar-actions slot in the Dashboard 2.0 header—without requiring complex CSS positioning or modifying core dashboard files."
+    - question: "Why must I set the ui-template scope to 'Widget (Ui-Scoped)'?"
+      answer: "UI-scoped widgets render on every page of the dashboard automatically, so you only need one ui-template to show the logged-in user across all pages instead of adding one per page."
+    - question: "Do I need to redeploy every time a different user logs in?"
+      answer: "No. The addon fetches the current user's data at runtime via SocketIO authentication. Each user who logs in sees their own information without any redeployment."
+tldr: "This guide explains how to display the logged-in user's name and avatar on a Node-RED Dashboard 2.0 by enabling FlowFuse User Authentication, installing the @flowfuse/node-red-dashboard-2-user-addon, and using a Vue Teleport inside a ui-template node. The addon attaches user data to every dashboard message under msg._client.user, making personalization straightforward without custom backend code."
 ---
 
 About a month ago, a powerful solution became available to the Node-RED community to deal with users and allow multiple to interact with the same dashboard in a personalized manner. It's called the  Multli user Dashboard for Node-RED. In this guide, we will provide a step-by-step guide to show you how to secure your dashboard and access and display logged in user information on Dashboard 2.0.

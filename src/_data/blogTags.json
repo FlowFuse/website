@@ -25,4 +25,16 @@
 }, {
     "label": "News",
     "value": "news"
+}, {
+    "label": "PLC",
+    "value": "plc"
+}, {
+    "label": "MQTT",
+    "value": "mqtt"
+}, {
+    "label": "OPC UA",
+    "value": "opcua"
+}, {
+    "label": "Modbus",
+    "value": "modbus"
 }]

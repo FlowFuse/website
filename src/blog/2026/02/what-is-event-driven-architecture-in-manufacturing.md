@@ -12,6 +12,7 @@ cta:
   type: sign-up
   title: Stop Polling. Start Reacting
   description: FlowFuse connects IT and OT systems through a single platform with a built-in MQTT broker, support for virtually any protocol, and enterprise-grade deployment.
+tldr: "Traditional manufacturing systems waste the vast majority of their polling requests confirming nothing changed, and the gaps between polling cycles allow faults, defects, and delays to propagate unchecked. Event-Driven Architecture inverts this model by broadcasting significant occurrences the moment they happen, letting every subscribed system react instantly and in parallel turning what was a structural latency problem into a competitive advantage."
 ---
 
 Nearly 99% of the requests your manufacturing systems make return the same answer: nothing changed. The 1% that matter? You find out too late. This isn't a monitoring problem. It's an architecture problem.

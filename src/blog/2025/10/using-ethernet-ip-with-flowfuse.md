@@ -10,6 +10,7 @@ tags:
   - flowfuse
   - node-red
   - post
+  - plc
 ---
 
 EtherNet/IP is one of the most widely used industrial communication protocols for connecting PLCs, sensors, and controllers across manufacturing environments. If you're working with Allen-Bradley PLCs—whether it's ControlLogix, CompactLogix, or MicroLogix—you're using some of the most trusted automation hardware in the industry.

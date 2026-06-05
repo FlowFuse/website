@@ -70,7 +70,7 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 
 3. Click on "Settings" from the left sidebar and switch to the SSO section.
 
-!["Screenshot of platform showing the 'admin settings' 'SSO' tab option"](./images/setting's-sso-setting-section.png "Screenshot of platform showing the 'admin settings' 'SSO' tab option"){data-zoomable}
+!["Screenshot of platform showing the 'admin settings' 'SSO' tab option"](./images/settings-sso-setting-section.png "Screenshot of platform showing the 'admin settings' 'SSO' tab option"){data-zoomable}
 
 4. Click on the top-right "Create SSO configuration".
 
@@ -93,7 +93,7 @@ If you haven't deployed FlowFuse yet, refer to our [documentation on installing 
 
 1. Open the main menu from the top-right corner by clicking on menu icon.
 
-!["Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"](./images/main-menu's-web-and-mobile-apps-option.png "Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"){data-zoomable}
+!["Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"](./images/main-menus-web-and-mobile-apps-option.png "Screenshot showing the 'web and mobile apps' option in the sidebar in the Google workspace admin console"){data-zoomable}
 
 2. Click on the "Apps" icon, which expands additional choices. Then click on the "Web and mobile apps."
 
