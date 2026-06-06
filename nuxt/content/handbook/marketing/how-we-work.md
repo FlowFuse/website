@@ -15,9 +15,9 @@ on that take more than two hours in the [marketing issue tracker](https://github
 
 ## Scheduling and Planning
 
-The marketing team creates tasks, stories, and epics just like our engineering
-team. The CEO currently does planning in 1:1s with each individual
-contributor.
+All content is planned using a two-week rolling schedule tracked in the [Asana content calendar](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519). The team reviews the next two weeks every week during the marketing meeting to confirm ownership, fill gaps, and confirm social posts are scheduled.
+
+For full details on how content is planned, scheduled, and reviewed — including how to propose new content — see the [Content Strategy](/handbook/marketing/content-strategy/).
 
 ## Team Performance and Collaboration
 
@@ -29,13 +29,7 @@ When required, the marketing team also leverages external vendors to maintain qu
 
 ## Requesting Marketing support
 
-If you would like to see the Marketing team create and publish content as a demo, blog post, or social media post, follow these steps:
-1. Create issues in the `marketing` repo and put them in the Marketing Department Work Schedule project with 'No Status'. If your request is for a social post, ensure that it follows the structure outlined [here](https://flowfuse.com/handbook/marketing/social-media/#requesting-a-social-post).
-1. Discuss the issues with the Product Marketing Manager to ensure that expectations are in line with Marketing priorities and timelines.
-1. Change the status of the issue to 'Todo', add an assignee, and the suggested target date. This ensures the person responsible is notified and has the necessary info to plan their work effectively.
-1. Add these items to the [Content Planner spreadsheet](https://docs.google.com/spreadsheets/d/1YGaP62WBqtfYsYGSgp2HA9i6u29SFHkow8tYzQwC_uU/edit?usp=sharing).
-
-The Product Marketing Manager will validate timelines and deliverables.
+If you would like the marketing team to create and publish content — a demo, blog post, or social media post — follow the [feedback loop process](/handbook/marketing/content-strategy/#feedback-loop-with-content-producers) in the Content Strategy page. For social post requests specifically, follow the steps in [Requesting a social post](/handbook/marketing/social-media/#requesting-a-social-post).
 
 ## Monthly Marketing Performance Tracking
 

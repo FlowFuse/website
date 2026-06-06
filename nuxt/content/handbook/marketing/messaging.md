@@ -1,5 +1,10 @@
 ---
-title: "Company Messaging"
+title: Company Messaging
+description: |-
+  Clear and consistent messaging serves as a cornerstone for our company to
+  achieve growth and a bigger market presence. The messaging framework is
+  essential for the company to communicate its value, purpose, and
+  differentiation, to in turn effectively acquire and retain our customer base.
 ---
 
 # Company Messaging

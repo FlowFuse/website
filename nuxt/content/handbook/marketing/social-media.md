@@ -69,6 +69,8 @@ Each content type has channels which are appropriate, this table sets out which 
 
 #### Planning and posting
 
+Social posts are planned as part of the broader [content strategy](/handbook/marketing/content-strategy/#content-planning--scheduling). The two-week rolling schedule and weekly review apply here too — social posts for the next two weeks should always be planned and ready.
+
 - We'll plan **two weeks ahead**, to give us time to prepare content and the associated materials.
 - We'll keep the planning on our [Social Content Calendar project in Asana](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519) and handle scheduling through the [HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar).
     - Each assignee will get reminders to post in the `#social-post-reminders` Slack channel starting two days before the scheduled date and continuing until one day after if it hasn’t been scheduled.
