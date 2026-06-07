@@ -5,6 +5,7 @@ description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial applicati
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/06/images/flowfuse-release-2-31.jpg
+video: r6f3w6KKI-E
 tags:
    - flowfuse
    - news
