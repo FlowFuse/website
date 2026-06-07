@@ -45,7 +45,6 @@ Each content type has channels which are appropriate, this table sets out which 
 
 - **Own content:** 2-3x week. Mondays, Wednesdays, and Thursdays.
     - **Fresh blogs:** Every new piece of content will be shared on social media as a link to the article.
-    - **Clips form our podcast:** Industrial Visionaries, announcing new episodes.
     - **Product updates:** Release announcement every four weeks on Thursdays. Additionally, we’ll share quick, dev-driven product highlights whenever available. These are:
         - Faster to publish: Engineers or other team members can send a short video or screenshot with a quick explanation. The marketing team will handle editing and posting.
         - Less polished: Raw demos, internal tools, experiments, early features — even work-in-progress — are welcome. These should feel more like dev logs than polished announcements.

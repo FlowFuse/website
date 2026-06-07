@@ -49,9 +49,6 @@ the two-week rolling content calendar.
 - **[Social Media](/handbook/marketing/social-media/)**: We maintain an active
   presence on key social platforms to engage with our community, amplify our
   content, and build our [brand's voice](/handbook/marketing/brand-voice/).
-- **Podcast "Industrial Visionaries"**: Our podcast features conversations with
-  industry leaders to explore key trends, provide unique insights, and expand
-  our brand's reach to new audiences.
 - **[Community Engagement & Sponsorships](/handbook/marketing/community/)**:
   We actively support and participate in the broader community, including
   sponsoring key events like the Node-RED conference, to strengthen our
