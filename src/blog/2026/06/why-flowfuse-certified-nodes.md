@@ -1,6 +1,6 @@
 ---
 title: "Why FlowFuse Certified Nodes?"
-subtitle: "When vetted, secure, and supported nodes are the right call — and when they aren't"
+subtitle: "Depend on maintained, secure, and supported nodes to reliably integrate your systems."
 description: "FlowFuse Certified Nodes take the vetting, security monitoring, and support burden of community nodes off your plate. Here are four situations where they're the clear solve."
 date: 2026-06-05
 keywords: flowfuse certified nodes, node-red security, vetted nodes, node-red compliance, industrial node-red, node-red support, secure node-red deployment
