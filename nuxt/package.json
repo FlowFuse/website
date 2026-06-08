@@ -9,14 +9,17 @@
         "preview": "nuxt preview"
     },
     "dependencies": {
+        "@takumi-rs/core": "^1.7.0",
         "mermaid": "^11"
     },
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
         "@nuxt/image": "^2.0.0",
+        "@nuxtjs/seo": "^5.1.4",
         "better-sqlite3": "^12.10.0",
         "nuxt": "^4.4.6",
         "nuxt-link-checker": "^5.0.10",
+        "nuxt-og-image": "^6.5.3",
         "nuxt-studio": "^1.7.0"
     }
 }

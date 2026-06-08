@@ -19,10 +19,18 @@ if (!page.value) {
 }
 
 const pageTitle = computed(() => page.value?.title || slugParts.value.at(-1) || 'Handbook')
+const fullTitle = computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook')
+const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
-useHead({
-    title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook'),
-    meta: [{ name: 'robots', content: 'noindex' }]
+useSeoMeta({
+    title: fullTitle,
+    description: computed(() => page.value?.description || ''),
+    ogTitle: fullTitle,
+    ogDescription: computed(() => page.value?.description || ''),
+    ogUrl: canonicalUrl,
+    ogType: 'article',
+    twitterCard: 'summary_large_image',
+    twitterSite: '@FlowFuseinc',
 })
 
 // Build breadcrumbs from URL parts
@@ -33,6 +41,26 @@ const breadcrumbs = computed(() => {
         path += '/' + part
         return { name: part, path }
     })
+})
+
+useSchemaOrg([
+    // Exclude the last crumb (current page) — nuxt-schema-org appends it automatically
+    defineBreadcrumb({
+        itemListElement: breadcrumbs.value.slice(0, -1).map(crumb => ({
+            name: crumb.name,
+            item: crumb.path,
+        })),
+    }),
+    defineArticle({
+        headline: pageTitle,
+        description: computed(() => page.value?.description || ''),
+        author: [{ name: 'FlowFuse', url: 'https://flowfuse.com' }],
+    }),
+])
+
+defineOgImageComponent('Default', {
+    title: pageTitle.value,
+    section: 'Handbook',
 })
 </script>
 
