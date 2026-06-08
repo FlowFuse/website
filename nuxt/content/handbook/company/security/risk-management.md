@@ -1,5 +1,5 @@
 ---
-navTitle: Risk Management Policy
+title: "Risk Management Policy"
 ---
 
 # Data Management Policy

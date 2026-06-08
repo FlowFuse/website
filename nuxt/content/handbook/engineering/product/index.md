@@ -1,5 +1,5 @@
 ---
-navTitle: Product
+title: "Product"
 ---
 # Product
 

@@ -1,5 +1,5 @@
 ---
-navTitle: Hardware Security Policy
+title: "Hardware Security Policy"
 ---
 
 As an all-remote company, good security practices are required of all FlowFuse employees.

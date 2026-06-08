@@ -1,5 +1,5 @@
 ---
-navTitle: Task Management
+title: "Task Management"
 ---
 
 Tasks are the primary way to track work that needs to happen on behalf of the

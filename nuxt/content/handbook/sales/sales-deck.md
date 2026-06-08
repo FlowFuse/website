@@ -1,5 +1,5 @@
 ---
-navTitle: Sales Deck
+title: "Sales Deck"
 ---
 
 # Sales Deck

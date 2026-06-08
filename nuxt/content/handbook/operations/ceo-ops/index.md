@@ -1,6 +1,5 @@
 ---
-navTitle: CEO Ops
-navGroup: Internal Operations
+title: "CEO Ops"
 ---
 
 For CEO assistance, as personal assistant, there's a couple of high level tasks
@@ -14,8 +13,9 @@ A shared 1Password vault is available to the CEO and the exec assistant. All pas
 
 ## Daily Workflow
 
-The P.A.s tasks is to run complete certain tasks every day. For some, even
-multiple times a day.
+The P.A.'s tasks is to run complete certain tasks every day. For some, even
+multiple times a day. Capture the output of these in a "Daily Briefing" send
+before the [CEO's meeting hours](#ceo-meeting-hours). 
  
 1. [Inbox Management](/handbook/operations/ceo-ops/inbox-management/)
 1. [Calendar Management](/handbook/operations/ceo-ops/calendar-management/)

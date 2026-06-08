@@ -5,14 +5,23 @@ description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial applicati
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/06/images/flowfuse-release-2-31.jpg
+video: r6f3w6KKI-E
 tags:
    - flowfuse
    - news
    - releases
 release: "2.31"
-# features + changelog interlinking deferred to a follow-up (stacked) PR, since it depends on the
-# 2.31 changelog entries that land with the release. Wire after merge: certified-nodes (entry exists),
-# ff-expert-application-building (needs open-beta cloud tier, self-hosted enterprise, and a 2.31 changelog).
+features:
+   - id: ff-expert-application-building
+     heading: "Let FlowFuse Expert build your industrial application"
+   - id: certified-nodes
+     heading: "Certified Nodes for industrial connectivity and AI"
+   - heading: "What else is new?"
+     tiers:
+       cloud: all
+       selfHosted: all
+# Certified Nodes Self-Hosted renders "Coming soon" from the catalog SH value ('time').
+# Flip that tier to true in 2.32 when Self-Hosted support ships.
 tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and per-instance control over AI."
 cta:
   type: contact
@@ -28,9 +37,9 @@ FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, no
 
 *FlowFuse Expert is our integrated AI assistant, in the website, the platform, and the immersive Node-RED editor.*
 
-Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and FlowFuse Expert assembles the flow on your workspace for you. With 2.31 this moves out of soft launch into an open beta: switched on for your team on FlowFuse Cloud, no request needed. On Self-Hosted Enterprise, [contact us](/contact-us/) to enable it, and new self-hosted customers get it enabled automatically.
+Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS topic mapping, and FlowFuse Expert assembles the flow on your workspace for you. With 2.31 this moves out of soft launch into an open beta: switched on for your team on FlowFuse Cloud, no request needed. On Self-Hosted Enterprise, [contact us](/contact-us/) to get it set up; self-hosted setup is not automatic, it requires a provisioning token and configuring the bridge.
 
-It now works on Remote Instances as well as Hosted Instances, so you get the same build-it-for-me experience across both.
+It now works on Remote Instances as well as Hosted Instances, so you get the same build-it-for-me experience across both. Agentic flow building requires the nr-assistant plugin at v0.16.0 or newer, and FlowFuse Expert will let you know when an update is available in your instance's immersive editor.
 
 ## Certified Nodes for industrial connectivity and AI {#certified-nodes}
 
@@ -46,7 +55,7 @@ FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can ad
 
   These first LLM nodes handle single-shot, text-in/text-out calls; see the [LLM nodes documentation](/node-red/flowfuse/ai/llm-nodes/) for details. Multimodal input, conversation history, and tool calling are planned for follow-up iterations. They join the FlowFuse AI Nodes package we [shipped in 2.23](/changelog/2025/10/onnx-nodes/), which already includes the ONNX Inference, Image Classification, Object Detection, and Image Depth Estimation nodes for running vision and custom models on-device, with no external API calls.
 
-Certified Nodes are available to FlowFuse Cloud customers. [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your account rep, and we'll enable the ones your team needs.
+Certified Nodes are available to FlowFuse Cloud customers as of this release, with Self-Hosted Enterprise support arriving in the next release (2.32). [Get in touch with sales](/contact-us/?subject=Certified%20Nodes) or your customer success manager, and we'll enable the ones your team needs.
 
 ## What else is new?
 

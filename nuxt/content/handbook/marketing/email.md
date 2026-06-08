@@ -1,6 +1,5 @@
 ---
-meta:
-    title: Marketing - Email
+title: "Email"
 ---
 
 # Marketing Email

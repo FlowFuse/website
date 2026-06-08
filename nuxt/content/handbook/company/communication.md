@@ -1,5 +1,5 @@
 ---
-navTitle: Communications
+title: "Communications"
 ---
 
 # Communication

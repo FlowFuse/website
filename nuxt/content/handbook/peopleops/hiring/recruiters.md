@@ -1,5 +1,5 @@
 ---
-navTitle: Working with Recruiters
+title: "Working with Recruiters"
 ---
 
 # Working with Recruiters

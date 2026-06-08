@@ -1,8 +1,8 @@
 ---
-navTitle: Commission Payment
+title: "Commission Payment"
 ---
 
-# {{ navTitle }}
+# Commission Payment
 
 FlowFuse has some employees that are compensated through a bonus or commission
 structure. This structure reduces their base compensation, and rewards them when

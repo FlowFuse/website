@@ -1,5 +1,5 @@
 ---
-navTitle: Head of Marketing
+title: "Head of Marketing"
 ---
 
 # Head of Marketing

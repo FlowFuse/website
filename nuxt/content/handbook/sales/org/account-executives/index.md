@@ -1,6 +1,5 @@
 ---
-navTitle: Account Executives
-navGroup: Sales department
+title: "Account Executives"
 ---
 
 # Account Executives

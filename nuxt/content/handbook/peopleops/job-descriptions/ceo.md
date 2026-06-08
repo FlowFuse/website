@@ -1,6 +1,5 @@
 ---
-navTitle: CEO
-navGroup: Job Descriptions
+title: "CEO"
 ---
 
 # CEO

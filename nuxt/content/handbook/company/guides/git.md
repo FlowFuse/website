@@ -1,5 +1,5 @@
 ---
-navTitle: Editing the Handbook
+title: "Editing the Handbook"
 ---
 # Editing the Handbook
 

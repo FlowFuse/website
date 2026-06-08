@@ -1,5 +1,5 @@
 ---
-navTitle: Team NPM Registry
+title: "Team NPM Registry"
 ---
 
 # FlowFuse Team NPM Registry

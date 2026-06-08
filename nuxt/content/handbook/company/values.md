@@ -1,6 +1,5 @@
 ---
-meta:
-    title: Company Values
+title: "Values"
 ---
 
 # Values

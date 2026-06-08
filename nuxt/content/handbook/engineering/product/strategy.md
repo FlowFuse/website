@@ -1,5 +1,5 @@
 ---
-navTitle: Strategy
+title: "Strategy"
 ---
 
 # Product Strategy

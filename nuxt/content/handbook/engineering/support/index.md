@@ -1,5 +1,5 @@
 ---
-navTitle: Support
+title: "Support"
 ---
 
 # Support

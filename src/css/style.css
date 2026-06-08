@@ -1778,6 +1778,16 @@ h4:hover .header-anchor::before {
     color: #4338ca;
 }
 
+.ff-related-docs {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0 0 8px 0;
+}
+
+.ff-related-docs a {
+    color: #4338ca;
+}
+
 pre.mermaid {
     background-color: #ffffff
 }

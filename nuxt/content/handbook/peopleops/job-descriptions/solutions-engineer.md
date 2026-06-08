@@ -1,6 +1,5 @@
 ---
-navTitle: Solutions Engineer
-navGroup: Job Descriptions
+title: "Solutions Engineer"
 ---
 
 # Solutions Engineer

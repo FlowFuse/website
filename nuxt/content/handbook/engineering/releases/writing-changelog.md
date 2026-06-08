@@ -1,5 +1,5 @@
 ---
-navTitle: Changelog Posts
+title: "Changelog Posts"
 ---
 
 # Writing Changelog Posts

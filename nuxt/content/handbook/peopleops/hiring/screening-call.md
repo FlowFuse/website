@@ -1,5 +1,5 @@
 ---
-navTitle: Screening Call
+title: "Screening Call"
 ---
 
 The first stage in almost every interview process is a 15-20 minute screening call. 

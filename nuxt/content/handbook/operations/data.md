@@ -1,5 +1,5 @@
 ---
-navTitle: Data at FlowFuse
+title: "Data at FlowFuse"
 ---
 
 # Data at FlowFuse

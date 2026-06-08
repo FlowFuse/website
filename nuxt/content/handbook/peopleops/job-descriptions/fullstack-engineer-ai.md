@@ -1,6 +1,5 @@
 ---
-navTitle: Fullstack Engineer (AI-Focused)
-navGroup: Job Descriptions
+title: "Fullstack Engineer (AI-Focused)"
 ---
 
 # Fullstack Engineer (AI-Focused)

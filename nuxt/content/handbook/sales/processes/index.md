@@ -1,6 +1,5 @@
 ---
-navTitle: Processes
-navGroup: Sales department
+title: "Processes"
 ---
 
 # Processes

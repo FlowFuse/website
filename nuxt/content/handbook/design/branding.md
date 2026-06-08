@@ -1,6 +1,5 @@
 ---
-navTitle: Branding
-templateEngineOverride: njk,md
+title: "Branding"
 ---
 
 # FlowFuse Branding Guidelines

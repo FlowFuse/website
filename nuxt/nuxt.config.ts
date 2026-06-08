@@ -20,7 +20,7 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio'],
+    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio', '@nuxt/image'],
 
     linkChecker: {
         failOnError: true,
@@ -52,6 +52,12 @@ export default defineNuxtConfig({
                 { name: 'theme-color', content: '#ffffff' },
             ]
         }
+    },
+
+    image: {
+        provider: process.env.SKIP_IMAGES === 'true' ? 'none' : 'netlify',
+        domains: ['flowfuse.com', 'www.flowfuse.com'],
+        quality: 80,
     },
 
     nitro: {
@@ -96,6 +102,15 @@ export default defineNuxtConfig({
                     'handbook-links': { instance: remarkHandbookLinks },
                 },
             },
+        },
+    },
+
+    vite: {
+        optimizeDeps: {
+            include: [
+                '@vue/devtools-core',
+                '@vue/devtools-kit',
+            ],
         },
     },
 

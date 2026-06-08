@@ -1,5 +1,5 @@
 ---
-navTitle: Billing
+title: "Billing"
 ---
 
 # Billing

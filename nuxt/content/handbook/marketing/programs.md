@@ -1,5 +1,5 @@
 ---
-navTitle: Marketing Programs
+title: "Marketing Programs"
 ---
 
 # Marketing Programs

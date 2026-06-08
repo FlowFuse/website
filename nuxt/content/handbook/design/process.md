@@ -1,3 +1,6 @@
+---
+title: "Process"
+---
 # Process
 
 ## Art Requests

@@ -1,5 +1,5 @@
 ---
-navTitle: Project Management
+title: "Project Management"
 ---
 
 # Project Management

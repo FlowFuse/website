@@ -1,5 +1,5 @@
 ---
-navTitle: Release Process
+title: "Release Process"
 ---
 # Release Process
 

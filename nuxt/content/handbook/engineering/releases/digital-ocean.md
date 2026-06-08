@@ -1,5 +1,5 @@
 ---
-navTitle: Release Process - Digital Ocean
+title: "Release Process - Digital Ocean"
 ---
 
 # Digital Ocean Release Process

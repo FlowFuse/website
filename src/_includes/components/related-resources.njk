@@ -1,0 +1,55 @@
+{# ============================================================
+   RELATED RESOURCES
+   Three columns: Case studies / eBooks and Whitepapers / Blog.
+   Content opts in via a dedicated front matter field:
+     usecase:
+       - production-monitoring
+   The layout passes `useCaseSlug` (e.g. "production-monitoring").
+   ============================================================ #}
+
+{% set caseStudies = [] %}
+{% set whitepapers = [] %}
+{% set blogPosts = [] %}
+{% for item in collections.all %}
+    {% if item.data.usecase and useCaseSlug in item.data.usecase %}
+        {% if "/customer-stories/" in item.url %}
+            {% set caseStudies = (caseStudies.push(item), caseStudies) %}
+        {% elif "/ebooks/" in item.url or "/whitepaper/" in item.url %}
+            {% set whitepapers = (whitepapers.push(item), whitepapers) %}
+        {% elif "/blog/" in item.url %}
+            {% set blogPosts = (blogPosts.push(item), blogPosts) %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% set columns = [
+    {heading: "Case studies", items: caseStudies},
+    {heading: "eBooks and Whitepapers", items: whitepapers},
+    {heading: "Blog", items: blogPosts}
+] %}
+
+<div class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="max-md:text-center">Related resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            {% for column in columns %}
+            <div>
+                <h4 class="text-gray-800 border-b border-gray-200 pb-3 mb-4">{{ column.heading }}</h4>
+                {% if column.items.length %}
+                <ul class="flex flex-col gap-3 list-none p-0 m-0">
+                    {% for item in column.items %}
+                    <li>
+                        <a href="{{ item.url }}" class="text-indigo-600 hover:text-indigo-800">{{ item.data.title or item.data.meta.title or item.data.contentTitle | safe }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <div class="rounded-lg border border-dashed border-gray-300 bg-white p-6 text-center">
+                    <p class="m-0 text-gray-400 text-sm">More coming soon</p>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

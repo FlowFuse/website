@@ -3,6 +3,8 @@ title: Node-RED Enables Digital Transformation of a Large US Manufacturing Compa
 description: Read how a US manufacturing giant uses Node-RED and FlowFuse for digital transformation, deploying thousands of instances to boost operational efficiency and innovation.
 image: /images/stories/large-us-manufacturing.jpg
 date: 2023-05-04
+usecase:
+  - production-monitoring
 logo:
 hubspot:
     formId: 826044fa-9760-4f47-84d0-bfe0234f1fa7

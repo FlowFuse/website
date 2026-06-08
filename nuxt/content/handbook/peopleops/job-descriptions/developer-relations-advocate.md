@@ -1,6 +1,5 @@
 ---
-navTitle: Developer Relations Advocate
-navGroup: Job Descriptions
+title: "Developer Relations Advocate"
 ---
 
 # Developer Relations Advocate

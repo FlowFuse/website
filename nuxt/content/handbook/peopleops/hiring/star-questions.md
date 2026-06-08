@@ -1,5 +1,5 @@
 ---
-navTitle: STAR Questions
+title: "STAR Questions"
 ---
 
 Every candidate hiring plan includes at least one STAR Interview.

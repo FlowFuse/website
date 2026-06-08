@@ -1,6 +1,7 @@
 ---
-navTitle: People Ops
-navGroup: Internal Operations
+title: "People Ops"
+navigation:
+  group: "Internal Operations"
 ---
 
 # People Operations

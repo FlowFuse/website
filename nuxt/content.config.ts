@@ -10,9 +10,9 @@ export default defineContentConfig({
             type: 'page',
             source: 'handbook/**/*.md',
             schema: z.object({
-                navTitle: z.string().optional(),
-                navGroup: z.string().optional(),
-                navOrder: z.number().optional(),
+                navigation: z.object({
+                    group: z.string().optional(),
+                }).optional(),
             })
         }),
         ebooks: defineCollection({

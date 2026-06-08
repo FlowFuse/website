@@ -1,5 +1,5 @@
 ---
-navTitle: Sales Compensation Plan
+title: "Sales Compensation Plan"
 ---
 
 # FY 2026 SALES COMPENSATION PLAN

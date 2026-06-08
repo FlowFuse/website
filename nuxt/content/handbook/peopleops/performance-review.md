@@ -1,5 +1,5 @@
 ---
-navTitle: Performance review
+title: "Performance review"
 ---
 
 # Performance Review

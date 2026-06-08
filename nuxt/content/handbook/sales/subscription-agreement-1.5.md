@@ -1,7 +1,6 @@
 ---
 # Note: Do not delete this file. It's still referenced in contracts and quotes.
-navTitle: Subscription Agreement 1.5
-navGroup: Customer Department
+title: "Subscription Agreement 1.5"
 ---
 
 Below is the FlowFuse subscription agreement that applies to Team and Enterprise tier customers buying annual subscriptions. If you'd like to make alterations for your organization, please download the .docx file in the following form and initiate the legal part of the negotiation through your account executive.

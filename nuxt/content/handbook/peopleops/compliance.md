@@ -1,5 +1,5 @@
 ---
-navTitle: Compliance & Regulatory
+title: "Compliance & Regulatory"
 ---
 
 # Compliance & Training (Mineral)

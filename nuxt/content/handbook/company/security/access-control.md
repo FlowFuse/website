@@ -1,5 +1,5 @@
 ---
-navTitle: Access Control Policy
+title: "Access Control Policy"
 ---
 
 # Access Control Policy
