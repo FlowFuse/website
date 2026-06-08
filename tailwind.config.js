@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-    content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','src/**/*.js','.eleventy.js','nuxt/components/**/*.vue','nuxt/pages/**/*.vue','nuxt/layouts/**/*.vue','nuxt/app.vue'],
+    content: ['src/**/*.html','src/**/*.njk','src/**/*.md','src/**/*.svg','src/**/*.js','.eleventy.js','nuxt/**/*.vue','nuxt/**/*.ts'],
     safelist: [
       'ml-4',
       'ml-8',

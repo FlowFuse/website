@@ -77,6 +77,13 @@ export default defineNuxtConfig({
                 '/terms',
                 '/privacy-policy',
                 '/integrations',
+                '/ebooks/beginner-guide-to-a-professional-nodered/',
+                '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
+                '/whitepaper/uns-decoupling-data-producers-and-consumers/',
+                '/whitepaper/open-source-software-for-manufacturing/',
+                '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
+                '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
+                '/resources/publications/',
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
             ],
             crawlLinks: false
