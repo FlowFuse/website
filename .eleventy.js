@@ -726,8 +726,9 @@ module.exports = function(eleventyConfig) {
         const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
         if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
         if (pro && enterprise && !enterpriseDimmed) return "Pro+";
-        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (contact us)";
         if (enterpriseDimmed) return "Enterprise (on request)";
+        if (enterprise === 'time') return "Coming soon";
         if (enterprise) return "Enterprise";
         return "Not available";
     }
@@ -768,7 +769,13 @@ module.exports = function(eleventyConfig) {
         return html;
     }
 
-    // Inject tier badges and changelog links into release blog posts based on frontmatter
+    function renderDocsLink(feature) {
+        if (!feature || !feature.docsLink) return '';
+        const label = feature.label || 'Documentation';
+        return `<div class="ff-related-docs">Docs: <a href="${feature.docsLink}">${label}</a></div>`;
+    }
+
+    // Inject tier badges, changelog links, and a docs link into release blog posts based on frontmatter
     eleventyConfig.addTransform("releaseFeatures", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
 
@@ -793,6 +800,7 @@ module.exports = function(eleventyConfig) {
         for (const entry of features) {
             let badges = '';
             let changelogs = '';
+            let docs = '';
 
             if (entry.id) {
                 // Feature from featureCatalog
@@ -801,6 +809,7 @@ module.exports = function(eleventyConfig) {
                 badges = renderTierBadges(feature);
                 const changelogUrls = release ? getChangelogUrlsForRelease(feature, release) : getChangelogUrls(feature);
                 changelogs = renderChangelogLinks(changelogUrls);
+                docs = renderDocsLink(feature);
             } else if (entry.tiers) {
                 // Inline tier specification (no feature ID)
                 const inlineFeature = {};
@@ -824,8 +833,9 @@ module.exports = function(eleventyConfig) {
                 badges = renderTierBadges(inlineFeature);
             }
 
-            if (badges || changelogs) {
-                injections.push({ heading: entry.heading, badges, changelogs });
+            if (badges || changelogs || docs) {
+                // Docs link sits on its own line below the changelog line
+                injections.push({ heading: entry.heading, badges, related: changelogs + docs });
             }
         }
 
@@ -857,12 +867,12 @@ module.exports = function(eleventyConfig) {
                 ops.push({ index: heading.index + heading.length, html: badgesWithLevel });
             }
 
-            // Insert changelogs before the next heading at the same or higher level
-            // H2 changelogs go before the next H2; H3 changelogs go before the next H2 or H3
-            if (injection.changelogs) {
+            // Insert changelog + docs links before the next heading at the same or higher level
+            // H2 links go before the next H2; H3 links go before the next H2 or H3
+            if (injection.related) {
                 const nextPeer = headingMatches.find((h, i) => i > headingIdx && h.level <= heading.level);
                 const insertBefore = nextPeer ? nextPeer.index : content.length;
-                ops.push({ index: insertBefore, html: injection.changelogs });
+                ops.push({ index: insertBefore, html: injection.related });
             }
         }
 
