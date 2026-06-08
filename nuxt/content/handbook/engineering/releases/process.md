@@ -97,7 +97,7 @@ have been published as needed.
  - [flowfuse/verdaccio-ff-auth](https://www.github.com/flowfuse/verdaccio-ff-auth) (This is not published to npmjs at this time)
  - [flowfuse/mqtt-schema-agent](https://www.github.com/flowfuse/mqtt-schema-agent)
 
-Verify [flowfuse/flowfuse-nr-launcher](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
+Verify [flowfuse/flowfuse-nr-launcher](https://www.github.com/flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
 Verify that the helm/node-red-container Dockerfiles point to the latest Node-RED release (e.g. 3.1.x) and that both the helm [install-device-cache.sh](https://github.com/FlowFuse/helm/blob/main/flowforge-container/install-device-cache.sh) and docker-compose [install-device-cache.sh](https://github.com/FlowFuse/docker-compose/blob/main/flowforge-docker/install-device-cache.sh) have been updated.
 
