@@ -14,24 +14,28 @@ const router = useRouter()
 
 const PAGE_SIZE = 30
 
-// Client-side fetch: ~6000 nodes (~1.2MB) is too big to inline in the SSR payload.
-const catalogue = ref(null)
+const catalogue = shallowRef(null)
 
 onMounted(async () => {
-    // Read query on client only; SSR can't see it without forcing a hydration mismatch.
     if (route.query.certified === '1') filterCertified.value = true
-    catalogue.value = await fetchCatalogue()
+    const raw = await fetchCatalogue()
+    const enriched = raw.map(n => ({ ...n, _idLc: n._id.toLowerCase() }))
+    enriched.sort((a, b) => {
+        if (a.ffCertified && !b.ffCertified) return -1
+        if (!a.ffCertified && b.ffCertified) return 1
+        return (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0)
+    })
+    catalogue.value = enriched
 })
 
 const certifiedCount = computed(
     () => (catalogue.value ?? []).filter(n => n.ffCertified).length
 )
 
-// IDs of nodes with prerendered detail pages; others should link to npm instead.
 const generatedIds = computed(() => {
     const list = catalogue.value ?? []
-    const top = [...list].sort((a, b) => (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0)).slice(0, 50)
-    const ids = new Set(top.map(n => n._id))
+    const byDownloads = [...list].sort((a, b) => (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0))
+    const ids = new Set(byDownloads.slice(0, 50).map(n => n._id))
     list.forEach(n => { if (n.ffCertified) ids.add(n._id) })
     return ids
 })
@@ -39,6 +43,12 @@ const generatedIds = computed(() => {
 const filterCertified = ref(false)
 const selectedCategories = ref(new Set())
 const searchText = ref('')
+const searchQuery = ref('')
+let searchTimer = null
+watch(searchText, (val) => {
+    if (searchTimer) clearTimeout(searchTimer)
+    searchTimer = setTimeout(() => { searchQuery.value = val }, 200)
+})
 const currentPage = ref(0)
 
 function toggleCertified () {
@@ -72,8 +82,8 @@ function syncUrl () {
 }
 
 const filtered = computed(() => {
-    const search = searchText.value.toLowerCase()
-    const list = (catalogue.value ?? []).filter((node) => {
+    const search = searchQuery.value.toLowerCase()
+    return (catalogue.value ?? []).filter((node) => {
         if (filterCertified.value && !node.ffCertified) return false
         if (selectedCategories.value.size > 0) {
             // AND across categories: a node must have every checked category.
@@ -81,15 +91,9 @@ const filtered = computed(() => {
                 if (!node.categories?.includes(key)) return false
             }
         }
-        if (search && !node._id.toLowerCase().includes(search)) return false
+        if (search && !node._idLc.includes(search)) return false
         return true
     })
-    list.sort((a, b) => {
-        if (a.ffCertified && !b.ffCertified) return -1
-        if (!a.ffCertified && b.ffCertified) return 1
-        return (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0)
-    })
-    return list
 })
 
 const maxPage = computed(() => Math.max(1, Math.ceil(filtered.value.length / PAGE_SIZE)))
@@ -103,7 +107,6 @@ function changePage (diff) {
     currentPage.value = next
 }
 
-// Reset to page 0 when the filtered list shrinks past the current page.
 watch(filtered, () => {
     if (currentPage.value >= maxPage.value) currentPage.value = 0
 })

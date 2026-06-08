@@ -111,22 +111,22 @@ onMounted(() => {
             <div class="flex flex-col lg:flex-row gap-8 min-w-0">
                 <div class="flex-grow min-w-0 overflow-hidden">
                     <div v-if="node.ffCertified" class="mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg overflow-hidden">
-                        <h3 class="text-indigo-900 font-bold mb-2 flex items-center gap-2">
+                        <h2 class="text-indigo-900 font-bold mb-2 flex items-center gap-2 text-lg">
                             <IntegrationsCertifiedIcon class="w-8 h-8 fill-indigo-900" />
                             FlowFuse Certified Node
-                        </h3>
+                        </h2>
                         <p class="text-indigo-800 mb-0">
                             This node has been certified by FlowFuse, ensuring it meets our standards for quality, security, and support.
                             <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="font-semibold underline hover:text-indigo-900" target="_blank" rel="noopener noreferrer">Learn more about certified nodes</a>.
                         </p>
                     </div>
                     <div v-else class="mb-8 p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg overflow-hidden">
-                        <h3 class="text-blue-900 font-bold mb-2 flex items-center gap-2">
+                        <h2 class="text-blue-900 font-bold mb-2 flex items-center gap-2 text-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                 <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
                             </svg>
                             Get Your Node Certified
-                        </h3>
+                        </h2>
                         <p class="text-blue-800 mb-3">Boost your node's credibility and reach by becoming FlowFuse Certified. Certification demonstrates quality, security, and reliability to the Node-RED community.</p>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/#contact-us-to-discuss-your-node-certification" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm hover:no-underline" target="_blank" rel="noopener noreferrer">
@@ -200,7 +200,7 @@ onMounted(() => {
                         <IntegrationsInstallBox />
 
                         <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
-                            <h3 class="text-lg font-bold mb-4">Quick Stats</h3>
+                            <h2 class="text-lg font-bold mb-4">Quick Stats</h2>
                             <div class="space-y-3 text-sm">
                                 <div class="flex justify-between items-center pb-2 border-b">
                                     <span class="text-gray-600">Current Version</span>
@@ -222,7 +222,7 @@ onMounted(() => {
                         </div>
 
                         <div v-if="node.githubOwner && node.githubRepo" class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
-                            <h3 class="text-lg font-bold mb-3">GitHub Stats</h3>
+                            <h2 class="text-lg font-bold mb-3">GitHub Stats</h2>
                             <div class="space-y-2">
                                 <a :href="`https://github.com/${node.githubOwner}/${node.githubRepo}/issues`" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded transition-colors">
                                     <span class="text-sm text-gray-600 flex items-center gap-2">
@@ -255,7 +255,7 @@ onMounted(() => {
                         </div>
 
                         <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-hidden">
-                            <h3 class="text-sm font-semibold mb-3 text-gray-600 uppercase">External Resources</h3>
+                            <h2 class="text-sm font-semibold mb-3 text-gray-600 uppercase">External Resources</h2>
                             <div class="space-y-2 text-sm">
                                 <a :href="`https://www.npmjs.com/package/${node._id}`" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition-colors">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -273,7 +273,7 @@ onMounted(() => {
                         </div>
 
                         <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200 rounded-lg p-6 overflow-hidden">
-                            <h3 class="text-lg font-bold mb-3 text-indigo-900">Need Help?</h3>
+                            <h2 class="text-lg font-bold mb-3 text-indigo-900">Need Help?</h2>
                             <p class="text-sm text-gray-700 mb-4">Get professional support for your Node-RED projects with FlowFuse.</p>
                             <a href="/contact-us/" class="inline-flex items-center justify-center w-full gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm hover:no-underline">
                                 CONTACT US

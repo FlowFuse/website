@@ -5,7 +5,7 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
 
 <template>
     <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
-        <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+        <h2 class="text-lg font-bold mb-3 flex items-center gap-2">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -17,7 +17,7 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
             </svg>
             Installation
-        </h3>
+        </h2>
         <p class="text-sm text-gray-600 mb-3">
             Install in Node-RED via the
             <a
