@@ -2,8 +2,8 @@
 meta:
   title: "UNS - Decoupling data producers and consumers"
   description: "Discover why Unified Namespace (UNS) is essential for scalable and adaptable systems. Get step-by-step implementation guidance, explore real-world applications, and learn when UNS might not be the right solution—all in one comprehensive whitepaper."
-image: /whitepaper/images/uns.png
-thumbnail: /resources/images/whitepaper_uns.png
+image: /images/whitepapers/uns.png
+thumbnail: /images/publications/whitepaper_uns.png
 hubspot:
   formId: 85c01934-e6fb-4f92-8377-1ea20be00535
   cta: send-me-a-copy

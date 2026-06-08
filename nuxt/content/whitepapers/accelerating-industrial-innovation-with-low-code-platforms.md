@@ -2,8 +2,8 @@
 meta:
   title: "Accelerating Industrial Innovation with Low-Code Platforms"
   description: "Discover how low-code platforms are accelerating industrial innovation, and how you can leverage them to drive digital transformation in your manufacturing business."
-image: /landing/images/low-code-whitepaper.png
-thumbnail: /resources/images/Whitepaper_Accelerating-Industrial-Innovation-With-Low-Code-Platforms.png
+image: /images/whitepapers/low-code-whitepaper.png
+thumbnail: /images/publications/Whitepaper_Accelerating-Industrial-Innovation-With-Low-Code-Platforms.png
 hubspot:
   formId: b9b00a26-31ee-435a-b5fc-ebc38cd90055
   cta: cta-download-now

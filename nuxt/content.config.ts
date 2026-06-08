@@ -20,6 +20,7 @@ export default defineContentConfig({
             source: 'ebooks/*.md',
             schema: z.object({
                 contentTitle: z.string().optional(),
+                usecase: z.array(z.string()).optional(),
                 image: z.string(),
                 thumbnail: z.string().optional(),
                 coverImage: z.string().optional(),
