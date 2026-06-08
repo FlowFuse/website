@@ -3,7 +3,6 @@ import MarkdownItAnchor from 'markdown-it-anchor'
 import MarkdownItFootnote from 'markdown-it-footnote'
 import MarkdownItAttrs from 'markdown-it-attrs'
 import sanitizeHtml from 'sanitize-html'
-// Relative paths: nuxt.config.ts imports this via jiti, which doesn't resolve `~/` aliases.
 import type {
     Integration,
     IntegrationCatalogEntry,
@@ -28,7 +27,6 @@ const md = new MarkdownIt({ html: true })
     .use(MarkdownItFootnote)
     .use(MarkdownItAttrs)
 
-// Memoised so all detail pages share one fetch per build; cleared on rejection so dev recovers.
 let _enrichedCache: Promise<Integration[]> | null = null
 export function buildEnrichedIntegrations (): Promise<Integration[]> {
     if (!_enrichedCache) {
@@ -54,7 +52,6 @@ async function _buildEnrichedIntegrations (): Promise<Integration[]> {
         topNodes.map(node => [node._id, node])
     )
 
-    // Certified nodes always get a detail page even if they're outside the top 50.
     for (const node of catalogue) {
         if (node.ffCertified && !topNodesMap.has(node._id)) {
             topNodes.push(node)
@@ -66,7 +63,6 @@ async function _buildEnrichedIntegrations (): Promise<Integration[]> {
     const failed = results.filter(r => r.failed).map(r => r.node._id)
     const failureRate = failed.length / results.length
 
-    // Above the threshold, fail the deploy rather than ship most cards without READMEs/examples.
     if (failureRate > FAILURE_THRESHOLD) {
         const sample = failed.slice(0, 5).join(', ')
         const more = failed.length > 5 ? `, …+${failed.length - 5} more` : ''
@@ -211,7 +207,6 @@ function escapeForHtml (s: string): string {
     return s.replace(/&/g, '\\u0026').replace(/</g, '\\u003c').replace(/>/g, '\\u003e')
 }
 
-// README is rendered via v-html, so it must be sanitised against XSS from upstream npm authors.
 const README_SANITIZE_OPTS: sanitizeHtml.IOptions = {
     allowedTags: [
         'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
@@ -261,7 +256,6 @@ function sanitiseFlow (raw: string): string {
     return result
 }
 
-// Runs on raw markdown so it covers both `![]()` and `<img>` (markdown's HTML escape hatch).
 function rewriteRelativeAssets (readme: string, owner?: string, repo?: string): string {
     if (!owner || !repo) return readme
 
@@ -278,9 +272,6 @@ function rewriteRelativeAssets (readme: string, owner?: string, repo?: string): 
         })
 }
 
-// Recover `#anchor` links whose targets lost periods during slugification (e.g.
-// `#migration-from-0.1.2` → id `migration-from-0-1-2`), then point remaining
-// relative hrefs/srcs at the repo on GitHub.
 function rewriteIntegrationLinks (html: string, node: Integration): string {
     if (!html) return html
 

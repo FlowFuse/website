@@ -1,7 +1,9 @@
-<script setup>
-import { INTEGRATION_CATEGORIES } from '../../types/integrations'
+<script setup lang="ts">
+import { INTEGRATION_CATEGORIES, type IntegrationCatalogEntry } from '../../types/integrations'
 import { fetchCatalogue } from '../../utils/integrations'
 import { SITE_URL } from '../../utils/seo'
+
+type CatalogueNode = IntegrationCatalogEntry & { _idLc: string }
 
 const PAGE_URL = `${SITE_URL}/integrations/`
 const TITLE = 'Integrations • FlowFuse'
@@ -14,12 +16,12 @@ const router = useRouter()
 
 const PAGE_SIZE = 30
 
-const catalogue = shallowRef(null)
+const catalogue = shallowRef<CatalogueNode[] | null>(null)
 
 onMounted(async () => {
     if (route.query.certified === '1') filterCertified.value = true
     const raw = await fetchCatalogue()
-    const enriched = raw.map(n => ({ ...n, _idLc: n._id.toLowerCase() }))
+    const enriched: CatalogueNode[] = raw.map(n => ({ ...n, _idLc: n._id.toLowerCase() }))
     enriched.sort((a, b) => {
         if (a.ffCertified && !b.ffCertified) return -1
         if (!a.ffCertified && b.ffCertified) return 1
@@ -41,10 +43,10 @@ const generatedIds = computed(() => {
 })
 
 const filterCertified = ref(false)
-const selectedCategories = ref(new Set())
+const selectedCategories = ref<Set<string>>(new Set())
 const searchText = ref('')
 const searchQuery = ref('')
-let searchTimer = null
+let searchTimer: ReturnType<typeof setTimeout> | null = null
 watch(searchText, (val) => {
     if (searchTimer) clearTimeout(searchTimer)
     searchTimer = setTimeout(() => { searchQuery.value = val }, 200)
@@ -55,13 +57,13 @@ function toggleCertified () {
     setCertified(!filterCertified.value)
 }
 
-function setCertified (next) {
-    filterCertified.value = !!next
+function setCertified (next: boolean) {
+    filterCertified.value = next
     currentPage.value = 0
     syncUrl()
 }
 
-function toggleCategory (key) {
+function toggleCategory (key: string) {
     if (selectedCategories.value.has(key)) {
         selectedCategories.value.delete(key)
     } else {
@@ -86,7 +88,6 @@ const filtered = computed(() => {
     return (catalogue.value ?? []).filter((node) => {
         if (filterCertified.value && !node.ffCertified) return false
         if (selectedCategories.value.size > 0) {
-            // AND across categories: a node must have every checked category.
             for (const key of selectedCategories.value) {
                 if (!node.categories?.includes(key)) return false
             }
@@ -101,7 +102,7 @@ const pageNodes = computed(() =>
     filtered.value.slice(currentPage.value * PAGE_SIZE, (currentPage.value + 1) * PAGE_SIZE)
 )
 
-function changePage (diff) {
+function changePage (diff: number) {
     const next = currentPage.value + diff
     if (next < 0 || next >= maxPage.value) return
     currentPage.value = next
@@ -137,7 +138,7 @@ watch(filtered, () => {
                                 id="catalogue-filter-certified"
                                 type="checkbox"
                                 :checked="filterCertified"
-                                @change="setCertified($event.target.checked)"
+                                @change="setCertified(($event.target as HTMLInputElement).checked)"
                             />
                             <label class="inline-flex gap-1 items-center" for="catalogue-filter-certified">
                                 FlowFuse Certified
@@ -167,7 +168,6 @@ watch(filtered, () => {
                         type="search"
                         placeholder="Search Integrations"
                     />
-                    <!-- aria-live container must exist at hydration so SR can announce updates. -->
                     <div class="catalogue-meta" aria-live="polite" aria-atomic="true" role="status">
                         <div v-if="catalogue"><span>{{ filtered.length }}</span> Integrations</div>
                     </div>

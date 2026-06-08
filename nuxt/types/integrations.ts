@@ -14,7 +14,6 @@ export interface IntegrationCatalogEntry {
     description: string
     categories: string[]
     author?: IntegrationAuthor | string
-    /** Some catalog entries lack npmOwners entirely — defensive optional. */
     npmOwners?: string[]
     npmScope: string | null
     ffCertified?: boolean
@@ -28,7 +27,6 @@ export interface IntegrationExample {
     path: string
     url: string
     downloadUrl: string
-    /** JSON-encoded flow content, already escaped for safe HTML embedding. */
     flow?: string
 }
 
@@ -49,7 +47,6 @@ export interface IntegrationTimeMap {
 }
 
 export interface Integration extends IntegrationCatalogEntry {
-    /** Rendered README (HTML) with relative-to-absolute image rewriting. */
     readme?: string
     homepage?: string
     bugs?: { url?: string }

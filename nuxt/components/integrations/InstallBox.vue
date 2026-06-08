@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const installGifUrl = '/node-red/getting-started/library/images/installing-node-red-node.gif'
 const installPngUrl = '/images/integrations/palette-manager-install.png'
 </script>
@@ -27,7 +27,6 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
                 rel="noopener noreferrer"
             >palette manager</a>.
         </p>
-        <!-- GIF stays as <img> so animation survives. -->
         <img
             :src="installGifUrl"
             alt="Animation of the Node-RED palette manager: open Manage Palette, search for the node, then click Install."

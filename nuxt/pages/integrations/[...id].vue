@@ -1,13 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { cleanRepoUrl, formatNumber, shortDate } from '../../utils/formatters'
 import { SITE_URL } from '../../utils/seo'
+import type { Integration } from '../../types/integrations'
 
 const route = useRoute()
 const router = useRouter()
 // Catch-all so scoped names like `@flowfuse/node-red-dashboard` resolve.
-const id = computed(() => route.params.id.join('/'))
+const id = computed(() => (route.params.id as string[]).join('/'))
 
-const { data: integration } = await useFetch(`/api/integrations/${id.value}`, {
+const { data: integration } = await useFetch<Integration>(`/api/integrations/${id.value}`, {
     key: `integration-${id.value}`
 })
 
@@ -15,7 +16,7 @@ if (!integration.value) {
     throw createError({ statusCode: 404, statusMessage: `Integration not found: ${id.value}` })
 }
 
-const node = computed(() => integration.value)
+const node = computed(() => integration.value!)
 const hasExamples = computed(() => Boolean(node.value.examples && node.value.examples.length > 0))
 const authorName = computed(() => {
     const author = node.value.author
@@ -33,7 +34,6 @@ const authorIsLinkable = computed(() => {
 
 const seoTitle = computed(() => `${node.value._id} • FlowFuse Integrations`)
 const seoDescription = computed(() => node.value.description || '')
-// Strip trailing slash before re-adding one so catch-all `/foo/` doesn't become `/foo//`.
 const pageUrl = computed(() => `${SITE_URL}/integrations/${id.value.replace(/\/+$/, '')}/`)
 
 useFlowFuseSeo({
@@ -42,8 +42,8 @@ useFlowFuseSeo({
     url: () => pageUrl.value,
 })
 
-const activeTab = ref('overview')
-function switchTab (tab) {
+const activeTab = ref<'overview' | 'examples'>('overview')
+function switchTab (tab: 'overview' | 'examples') {
     activeTab.value = tab
     router.replace({ hash: `#${tab}` })
 }

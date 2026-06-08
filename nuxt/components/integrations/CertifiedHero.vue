@@ -1,10 +1,10 @@
-<script setup>
-defineProps({
-    // Null while the catalog fetch is in flight; resolves to a number after.
-    count: { validator: v => v === null || typeof v === 'number', default: null },
-    pressed: { type: Boolean, required: true }
-})
-defineEmits(['toggle'])
+<script setup lang="ts">
+// `count` is null while the catalog fetch is in flight; resolves to a number after.
+defineProps<{
+    count: number | null
+    pressed: boolean
+}>()
+defineEmits<{ toggle: [] }>()
 </script>
 
 <template>

@@ -2,10 +2,9 @@
 definePageMeta({ layout: 'default' })
 
 const route = useRoute()
-const slugParts = computed(() => {
-    const slug = route.params.slug
-    return (Array.isArray(slug) ? slug : [slug]).filter(Boolean)
-})
+const slugParts = computed(() =>
+    Array.isArray(route.params.slug) ? route.params.slug : [route.params.slug].filter(Boolean)
+)
 const contentPath = computed(() =>
     slugParts.value.length ? `/handbook/${slugParts.value.join('/')}` : '/handbook'
 )
@@ -20,18 +19,11 @@ if (!page.value) {
 }
 
 const pageTitle = computed(() => page.value?.title || slugParts.value.at(-1) || 'Handbook')
-const pageDescription = computed(() =>
-    page.value?.description || `${pageTitle.value} — FlowFuse handbook.`
-)
 
-useHead(() => ({
-    title: slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook',
-    link: [{ rel: 'canonical', href: `https://flowfuse.com${contentPath.value}/` }],
-    meta: [
-        { name: 'robots', content: 'noindex' },
-        { name: 'description', content: pageDescription.value },
-    ]
-}))
+useHead({
+    title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook'),
+    meta: [{ name: 'robots', content: 'noindex' }]
+})
 
 // Build breadcrumbs from URL parts
 const breadcrumbs = computed(() => {

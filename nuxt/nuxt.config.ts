@@ -128,4 +128,7 @@ export default defineNuxtConfig({
             ],
         },
     },
+
+    // Dev proxying to 11ty is handled by server/middleware/legacy.ts
+    // to allow per-route exclusions as pages are migrated.
 })

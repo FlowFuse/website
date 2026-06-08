@@ -1,11 +1,11 @@
-<script setup>
-const props = defineProps({
-    // Sanitised at build time (see sanitiseFlow in integrations-enrich.ts).
-    flow: { type: String, required: true },
-    index: { type: Number, required: true }
-})
+<script setup lang="ts">
+// Sanitised at build time (see sanitiseFlow in integrations-enrich.ts).
+const props = defineProps<{
+    flow: string
+    index: number
+}>()
 
-const container = ref(null)
+const container = ref<HTMLDivElement | null>(null)
 let cleanedUp = false
 
 async function loadAndRender () {
