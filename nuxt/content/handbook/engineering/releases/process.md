@@ -85,19 +85,19 @@ If they need to be updated, refer to the [Unmanaged Repositories](#unmanaged-rep
 The Release Manager should verify the following projects are up to date and
 have been published as needed.
 
- - [`flowfuse/device-agent`](https://github.com/FlowFuse/device-agent)
- - [`flowfuse/device-agent/installer`](https://github.com/FlowFuse/device-agent/tree/main/installer#release-process)
- - [`flowfuse/nr-project-nodes`](https://www.github.com/flowfuse/nr-project-nodes)
- - [`flowfuse/nr-file-nodes`](https://www.github.com/flowfuse/nr-file-nodes)
- - [`flowfuse/nr-tools-plugin`](https://www.github.com/flowfuse/nr-tools-plugin)
- - [`flowfuse/nr-assistant`](https://www.github.com/flowfuse/nr-assistant)
- - [`flowfuse/nr-mqtt-nodes`](https://www.github.com/flowfuse/nr-mqtt-nodes)
- - [`flowfuse/nr-tables-nodes`](https://www.github.com/flowfuse/nr-tables-nodes)
- - [`flowfuse/nr-subflow-export`](https://www.github.com/flowfuse/nr-subflow-export)
- - [`flowfuse/verdaccio-ff-auth`](https://www.github.com/flowfuse/verdaccio-ff-auth) (This is not published to npmjs at this time)
- - [`flowfuse/mqtt-schema-agent`](https://www.github.com/flowfuse/mqtt-schema-agent)
+ - [flowfuse/device-agent](https://github.com/FlowFuse/device-agent)
+ - [flowfuse/device-agent/installer](https://github.com/FlowFuse/device-agent/tree/main/installer#release-process)
+ - [flowfuse/nr-project-nodes](https://www.github.com/flowfuse/nr-project-nodes)
+ - [flowfuse/nr-file-nodes](https://www.github.com/flowfuse/nr-file-nodes)
+ - [flowfuse/nr-tools-plugin](https://www.github.com/flowfuse/nr-tools-plugin)
+ - [flowfuse/nr-assistant](https://www.github.com/flowfuse/nr-assistant)
+ - [flowfuse/nr-mqtt-nodes](https://www.github.com/flowfuse/nr-mqtt-nodes)
+ - [flowfuse/nr-tables-nodes](https://www.github.com/flowfuse/nr-tables-nodes)
+ - [flowfuse/nr-subflow-export](https://www.github.com/flowfuse/nr-subflow-export)
+ - [flowfuse/verdaccio-ff-auth](https://www.github.com/flowfuse/verdaccio-ff-auth) (This is not published to npmjs at this time)
+ - [flowfuse/mqtt-schema-agent](https://www.github.com/flowfuse/mqtt-schema-agent)
 
-Verify [`flowfuse/flowfuse-nr-launcher`](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
+Verify [flowfuse/flowfuse-nr-launcher](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
 Verify that the helm/node-red-container Dockerfiles point to the latest Node-RED release (e.g. 3.1.x) and that both the helm [install-device-cache.sh](https://github.com/FlowFuse/helm/blob/main/flowforge-container/install-device-cache.sh) and docker-compose [install-device-cache.sh](https://github.com/FlowFuse/docker-compose/blob/main/flowforge-docker/install-device-cache.sh) have been updated.
 
