@@ -1,5 +1,3 @@
-// Parity with src/_includes/jsonld.njk.
-
 export const SITE_URL = 'https://flowfuse.com'
 export const OG_IMAGE = `${SITE_URL}/images/og-social-tile.jpg`
 

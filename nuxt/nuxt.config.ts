@@ -83,9 +83,8 @@ export default defineNuxtConfig({
     },
 
     hooks: {
-        // Enumerate dynamic /integrations/{id}/ routes at build time so SSG generates them all.
-        // Uses `ofetch`/`cachedFetch` (NOT Nuxt's $fetch) because $fetch is only initialised
-        // at nitro runtime — this hook runs at config-time.
+        // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
+        // Can't use Nuxt's $fetch here — it only exists at nitro runtime.
         async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {
             if (nitroConfig.dev) return
             const { buildEnrichedIntegrations } = await import('./server/utils/integrations-enrich')
@@ -95,7 +94,6 @@ export default defineNuxtConfig({
             }
             const routes = integrations.map(n => `/integrations/${n._id}/`)
             nitroConfig.prerender = nitroConfig.prerender || {}
-            // Dedup defensively in case the hook fires more than once.
             nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
             console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)
         }
@@ -129,8 +127,4 @@ export default defineNuxtConfig({
             ],
         },
     },
-
-
-    // Dev proxying to 11ty is handled by server/middleware/legacy.ts
-    // to allow per-route exclusions as pages are migrated.
 })

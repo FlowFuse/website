@@ -1,7 +1,7 @@
 <script setup>
-import { INTEGRATION_CATEGORIES } from '~/types/integrations'
-import { fetchCatalogue } from '~/utils/integrations'
-import { SITE_URL } from '~/utils/seo'
+import { INTEGRATION_CATEGORIES } from '../../types/integrations'
+import { fetchCatalogue } from '../../utils/integrations'
+import { SITE_URL } from '../../utils/seo'
 
 const PAGE_URL = `${SITE_URL}/integrations/`
 const TITLE = 'Integrations • FlowFuse'
@@ -14,12 +14,11 @@ const router = useRouter()
 
 const PAGE_SIZE = 30
 
-// Client-side fetch: avoids inlining ~6000 nodes (~1.2MB) into the page payload.
-// Matches the previous Eleventy behaviour of loading the catalog after first paint.
+// Client-side fetch: ~6000 nodes (~1.2MB) is too big to inline in the SSR payload.
 const catalogue = ref(null)
 
 onMounted(async () => {
-    // Apply URL state on the client (after hydration) to keep SSR HTML stable.
+    // Read query on client only; SSR can't see it without forcing a hydration mismatch.
     if (route.query.certified === '1') filterCertified.value = true
     catalogue.value = await fetchCatalogue()
 })
@@ -28,7 +27,7 @@ const certifiedCount = computed(
     () => (catalogue.value ?? []).filter(n => n.ffCertified).length
 )
 
-// IDs that have generated detail pages on this site (certified + top 50)
+// IDs of nodes with prerendered detail pages; others should link to npm instead.
 const generatedIds = computed(() => {
     const list = catalogue.value ?? []
     const top = [...list].sort((a, b) => (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0)).slice(0, 50)
@@ -37,10 +36,6 @@ const generatedIds = computed(() => {
     return ids
 })
 
-// --- filter / search / pagination state ---
-// Initial value must match SSR (always false) to avoid a hydration mismatch on
-// direct loads of /integrations/?certified=1. The query is read in onMounted
-// below so client and server agree at hydration time.
 const filterCertified = ref(false)
 const selectedCategories = ref(new Set())
 const searchText = ref('')
@@ -76,14 +71,12 @@ function syncUrl () {
     router.replace({ query })
 }
 
-// --- derived state: filtered + paginated ---
 const filtered = computed(() => {
     const search = searchText.value.toLowerCase()
     const list = (catalogue.value ?? []).filter((node) => {
         if (filterCertified.value && !node.ffCertified) return false
         if (selectedCategories.value.size > 0) {
-            // AND semantics: every checked category must be present on the node
-            // (matches the deleted Eleventy index.njk behaviour).
+            // AND across categories: a node must have every checked category.
             for (const key of selectedCategories.value) {
                 if (!node.categories?.includes(key)) return false
             }
@@ -110,7 +103,7 @@ function changePage (diff) {
     currentPage.value = next
 }
 
-// keep currentPage in range if filters change
+// Reset to page 0 when the filtered list shrinks past the current page.
 watch(filtered, () => {
     if (currentPage.value >= maxPage.value) currentPage.value = 0
 })

@@ -1,15 +1,12 @@
 <script setup>
-import { cleanRepoUrl, formatNumber, shortDate } from '~/utils/formatters'
-import { SITE_URL } from '~/utils/seo'
+import { cleanRepoUrl, formatNumber, shortDate } from '../../utils/formatters'
+import { SITE_URL } from '../../utils/seo'
 
 const route = useRoute()
 const router = useRouter()
-// [...id].vue is a catch-all so scoped npm package names (e.g. @flowfuse/node-red-dashboard)
-// resolve. route.params.id is always a string[] for catch-all routes; join with '/'.
+// Catch-all so scoped names like `@flowfuse/node-red-dashboard` resolve.
 const id = computed(() => route.params.id.join('/'))
 
-// Data comes from a server route so the heavy enrichment + fs-cache stay
-// server-only and don't get bundled into the client.
 const { data: integration } = await useFetch(`/api/integrations/${id.value}`, {
     key: `integration-${id.value}`
 })
@@ -36,7 +33,7 @@ const authorIsLinkable = computed(() => {
 
 const seoTitle = computed(() => `${node.value._id} • FlowFuse Integrations`)
 const seoDescription = computed(() => node.value.description || '')
-// id can end in `/` from trailing-slash catch-all routes.
+// Strip trailing slash before re-adding one so catch-all `/foo/` doesn't become `/foo//`.
 const pageUrl = computed(() => `${SITE_URL}/integrations/${id.value.replace(/\/+$/, '')}/`)
 
 useFlowFuseSeo({
@@ -45,7 +42,6 @@ useFlowFuseSeo({
     url: () => pageUrl.value,
 })
 
-// Tab state for nodes with examples
 const activeTab = ref('overview')
 function switchTab (tab) {
     activeTab.value = tab
@@ -60,7 +56,6 @@ onMounted(() => {
 
 <template>
     <div>
-        <!-- Header -->
         <div class="node-header bg-gradient-to-br from-indigo-50 to-white border-b border-gray-200 py-8 min-h-[280px] w-full">
             <div class="container m-auto max-w-6xl px-6 overflow-hidden w-full">
                 <div class="flex flex-col md:flex-row gap-6 items-start w-full">
@@ -112,11 +107,9 @@ onMounted(() => {
             </div>
         </div>
 
-        <!-- Main content -->
         <div class="container m-auto max-w-6xl px-6 py-8">
             <div class="flex flex-col lg:flex-row gap-8 min-w-0">
                 <div class="flex-grow min-w-0 overflow-hidden">
-                    <!-- Certified / call-to-certify callout -->
                     <div v-if="node.ffCertified" class="mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg overflow-hidden">
                         <h3 class="text-indigo-900 font-bold mb-2 flex items-center gap-2">
                             <IntegrationsCertifiedIcon class="w-8 h-8 fill-indigo-900" />
@@ -145,7 +138,6 @@ onMounted(() => {
                         </div>
                     </div>
 
-                    <!-- Tabs (only when examples exist) -->
                     <div v-if="hasExamples" class="border-b border-gray-300 mb-6">
                         <div class="flex gap-8" role="tablist" aria-label="Integration details">
                             <button
@@ -181,7 +173,6 @@ onMounted(() => {
                             aria-labelledby="tab-overview"
                             tabindex="0"
                         >
-                            <!-- README is pre-rendered HTML from build time. -->
                             <div v-html="node.readme || ''"></div>
                         </div>
                         <div
@@ -204,12 +195,10 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <!-- Sidebar -->
                 <div class="lg:w-80 flex-shrink-0 min-w-0">
                     <div class="space-y-6">
                         <IntegrationsInstallBox />
 
-                        <!-- Quick Stats -->
                         <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
                             <h3 class="text-lg font-bold mb-4">Quick Stats</h3>
                             <div class="space-y-3 text-sm">
@@ -232,7 +221,6 @@ onMounted(() => {
                             </div>
                         </div>
 
-                        <!-- GitHub Stats -->
                         <div v-if="node.githubOwner && node.githubRepo" class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm overflow-hidden">
                             <h3 class="text-lg font-bold mb-3">GitHub Stats</h3>
                             <div class="space-y-2">
@@ -266,7 +254,6 @@ onMounted(() => {
                             </div>
                         </div>
 
-                        <!-- External resources -->
                         <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-hidden">
                             <h3 class="text-sm font-semibold mb-3 text-gray-600 uppercase">External Resources</h3>
                             <div class="space-y-2 text-sm">
@@ -285,7 +272,6 @@ onMounted(() => {
                             </div>
                         </div>
 
-                        <!-- Support CTA -->
                         <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200 rounded-lg p-6 overflow-hidden">
                             <h3 class="text-lg font-bold mb-3 text-indigo-900">Need Help?</h3>
                             <p class="text-sm text-gray-700 mb-4">Get professional support for your Node-RED projects with FlowFuse.</p>

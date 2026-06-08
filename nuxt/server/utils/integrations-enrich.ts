@@ -28,8 +28,7 @@ const md = new MarkdownIt({ html: true })
     .use(MarkdownItFootnote)
     .use(MarkdownItAttrs)
 
-// Memoised so all detail pages share one fetch per `nuxt generate`; cleared on
-// rejection so dev sessions recover without a restart.
+// Memoised so all detail pages share one fetch per build; cleared on rejection so dev recovers.
 let _enrichedCache: Promise<Integration[]> | null = null
 export function buildEnrichedIntegrations (): Promise<Integration[]> {
     if (!_enrichedCache) {
@@ -67,8 +66,7 @@ async function _buildEnrichedIntegrations (): Promise<Integration[]> {
     const failed = results.filter(r => r.failed).map(r => r.node._id)
     const failureRate = failed.length / results.length
 
-    // Above the threshold means upstream is broken enough to fail the deploy
-    // rather than ship a site missing READMEs/examples for most integrations.
+    // Above the threshold, fail the deploy rather than ship most cards without READMEs/examples.
     if (failureRate > FAILURE_THRESHOLD) {
         const sample = failed.slice(0, 5).join(', ')
         const more = failed.length > 5 ? `, …+${failed.length - 5} more` : ''
@@ -280,9 +278,9 @@ function rewriteRelativeAssets (readme: string, owner?: string, repo?: string): 
         })
 }
 
-// Post-render: recover `#anchor` links whose targets lost periods during slugification
-// (`#migration-from-0.1.2` → id `migration-from-0-1-2`), then point remaining relative
-// hrefs/srcs at the repo on GitHub.
+// Recover `#anchor` links whose targets lost periods during slugification (e.g.
+// `#migration-from-0.1.2` → id `migration-from-0-1-2`), then point remaining
+// relative hrefs/srcs at the repo on GitHub.
 function rewriteIntegrationLinks (html: string, node: Integration): string {
     if (!html) return html
 
