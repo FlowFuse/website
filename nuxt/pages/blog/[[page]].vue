@@ -53,58 +53,69 @@ const nextHref = computed(() => `/blog/${currentPage.value + 1}/`)
         </div>
 
         <ul class="flex flex-wrap">
-            <template v-for="(post, index) in posts" :key="post.url">
 
-                <!-- Featured post (first on each page) -->
-                <li v-if="index === 0" class="w-full mt-2 px-2 pb-4">
-                    <NuxtLink :href="post.url" class="w-full flex flex-col group hover:no-underline">
-                        <div class="md:w-3/4 pr-2">
-                            <time class="block text-xs text-gray-500">{{ formatDate(post.date) }}</time>
-                            <h2 class="mb-0 text-xl font-medium group-hover:underline">{{ post.title }}</h2>
-                            <div class="italic text-xs mb-3">
-                                <span v-for="(author, i) in post.authors" :key="author.id">{{ i > 0 ? ', ' : '' }}{{ author.name }}</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row">
-                            <div class="ff-blog-tile pr-2 md:w-1/3">
-                                <img
-                                    :src="post.image ?? '/images/og-blog.jpg'"
-                                    :alt="post.title"
-                                    width="285"
-                                    class="w-full h-auto"
-                                />
-                            </div>
-                            <div class="flex flex-col justify-between md:w-2/3 md:px-2">
-                                <div>{{ truncate(post.description) }}</div>
-                                <div class="group-hover:underline">read more...</div>
-                            </div>
-                        </div>
-                    </NuxtLink>
-                </li>
-
-                <!-- Regular posts (3-column grid) -->
-                <li v-else class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
-                    <NuxtLink :href="post.url" class="w-full flex flex-col group hover:no-underline">
-                        <div>
-                            <time class="block text-xs mb-2 text-gray-500">{{ formatDate(post.date) }}</time>
-                            <div class="ff-blog-tile">
-                                <img
-                                    :src="post.image ?? '/images/og-blog.jpg'"
-                                    :alt="post.title"
-                                    width="285"
-                                    class="w-full h-auto"
-                                />
-                            </div>
-                            <h2 class="mt-1 mb-0 text-xl font-medium group-hover:underline">{{ post.title }}</h2>
-                        </div>
-                        <div class="text-sm prose prose-blue py-1">{{ truncate(post.description) }}</div>
+            <!-- Featured post (first on each page) -->
+            <li v-if="posts[0]" class="w-full mt-2 px-2 pb-4">
+                <NuxtLink :href="posts[0].url" class="w-full flex flex-col group hover:no-underline">
+                    <div class="md:w-3/4 pr-2">
+                        <time class="block text-xs text-gray-500">{{ formatDate(posts[0].date) }}</time>
+                        <h2 class="mb-0 text-xl font-medium group-hover:underline">{{ posts[0].title }}</h2>
                         <div class="italic text-xs mb-3">
-                            <span v-for="(author, i) in post.authors" :key="author.id">{{ i > 0 ? ', ' : '' }}{{ author.name }}</span>
+                            <span v-for="(author, i) in posts[0].authors" :key="author.id">{{ i > 0 ? ', ' : '' }}{{ author.name }}</span>
                         </div>
-                    </NuxtLink>
-                </li>
+                    </div>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="ff-blog-tile pr-2 md:w-1/3">
+                            <img
+                                :src="posts[0].image ?? '/images/og-blog.jpg'"
+                                :alt="posts[0].title"
+                                width="285"
+                                class="w-full h-auto"
+                            />
+                        </div>
+                        <div class="flex flex-col justify-between md:w-2/3 md:px-2">
+                            <div>{{ truncate(posts[0].description) }}</div>
+                            <div class="group-hover:underline">read more...</div>
+                        </div>
+                    </div>
+                </NuxtLink>
+            </li>
 
-            </template>
+            <!-- Newsletter banner -->
+            <li v-if="posts.length > 0" class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
+                <a id="sign-up"></a>
+                <h3 class="mb-0 text-lg font-semibold">Sign up for our monthly email updates:</h3>
+                <ClientOnly>
+                    <HubSpotForm
+                        form-id="159c173d-dd95-49bd-922b-ff3ef243e90c"
+                        cta="cta-blog-subscribe"
+                        reference="blog"
+                    />
+                </ClientOnly>
+            </li>
+
+            <!-- Regular posts (3-column grid) -->
+            <li v-for="post in posts.slice(1)" :key="post.url" class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
+                <NuxtLink :href="post.url" class="w-full flex flex-col group hover:no-underline">
+                    <div>
+                        <time class="block text-xs mb-2 text-gray-500">{{ formatDate(post.date) }}</time>
+                        <div class="ff-blog-tile">
+                            <img
+                                :src="post.image ?? '/images/og-blog.jpg'"
+                                :alt="post.title"
+                                width="285"
+                                class="w-full h-auto"
+                            />
+                        </div>
+                        <h2 class="mt-1 mb-0 text-xl font-medium group-hover:underline">{{ post.title }}</h2>
+                    </div>
+                    <div class="text-sm prose prose-blue py-1">{{ truncate(post.description) }}</div>
+                    <div class="italic text-xs mb-3">
+                        <span v-for="(author, i) in post.authors" :key="author.id">{{ i > 0 ? ', ' : '' }}{{ author.name }}</span>
+                    </div>
+                </NuxtLink>
+            </li>
+
         </ul>
 
         <nav aria-label="Pagination" class="pagination mt-4">
