@@ -80,7 +80,7 @@ separately. This is typically done by the development team in the build up to th
 full release and should be coordinated by the CTO or Senior Engineer prior to release
 day.
 
-If they need to be updated, refer to the [Unmanaged Repositories](#unmanaged-repositories) section for the guidance.
+If they need to be updated, refer to the [Unmanaged Repository](#unmanaged-repository) section for the guidance.
 
 The Release Manager should verify the following projects are up to date and
 have been published as needed.
@@ -180,20 +180,20 @@ must be done manually.
 Finally, create two [change requests](/handbook/operations/change/#flowfuse-cloud-change-control), one for
 staging and one for production to upgrade to the latest version.
 
-## Unmanaged Repositories
+## Unmanaged Repository
 
-The Unmanaged Repositories (not covered by the [Scheduled Release](#scheduled-release) process) have a simpler release process. They are released
+An Unmanaged Repository (not covered by the shell script executed in the [Scheduled Release](#scheduled-release) process) has a simpler release process. It is released
 as needed in coordination with the CTO/Senior Engineer.
 
 All release activity should be highlighted in #dept-engineering so the team is aware.
 
-#### `release-please` governed repositories
+#### `release-please` governed repository
 
 ::note
 A repository's release is managed by the [`release-please`](https://github.com/googleapis/release-please) if the `.github/workflows/release-please.yaml` GitHub Actions workflow exists in the repository.
 ::
 
-The release process is semi-automated in these repositories, with the `release-please` automatically maintaining a release PR that updates the version and changelog when changes are merged to `main`. 
+The release process is semi-automated in this repository, with the `release-please` automatically maintaining a release PR that updates the version and changelog when changes are merged to `main`. 
 
 The release manager's role is to review and merge the release PR. Once the release PR is merged, `release-please` will automatically create a Git tag and GitHub Release, and trigger the publish workflow to publish a package/build containers etc.
 
