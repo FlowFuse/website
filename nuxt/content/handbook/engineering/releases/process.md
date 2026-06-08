@@ -187,7 +187,7 @@ as needed in coordination with the CTO/Senior Engineer.
 
 All release activity should be highlighted in #dept-engineering so the team is aware.
 
-#### `release-please` governed repository
+### `release-please` governed repository
 
 ::note
 A repository's release is managed by the [`release-please`](https://github.com/googleapis/release-please) if the `.github/workflows/release-please.yaml` GitHub Actions workflow exists in the repository.
