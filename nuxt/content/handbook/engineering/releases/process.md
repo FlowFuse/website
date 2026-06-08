@@ -182,7 +182,7 @@ staging and one for production to upgrade to the latest version.
 
 ## Unmanaged Repository
 
-An Unmanaged Repository (not covered by the shell script executed in the [Scheduled Release](#scheduled-release) process) has a simpler release process. It is released
+An Unmanaged Repository (not covered by the shell script executed in the [Scheduled Releases](#scheduled-releases) process) has a simpler release process. It is released
 as needed in coordination with the CTO/Senior Engineer.
 
 All release activity should be highlighted in #dept-engineering so the team is aware.
