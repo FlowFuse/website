@@ -80,6 +80,8 @@ separately. This is typically done by the development team in the build up to th
 full release and should be coordinated by the CTO or Senior Engineer prior to release
 day.
 
+If they need to be updated, refer to the [Unmanaged Repositories](#unmanaged-repositories) section for the guidance.
+
 The Release Manager should verify the following projects are up to date and
 have been published as needed.
 
@@ -98,8 +100,6 @@ have been published as needed.
 Verify [`flowfuse/flowfuse-nr-launcher`](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
 Verify that the helm/node-red-container Dockerfiles point to the latest Node-RED release (e.g. 3.1.x) and that both the helm [install-device-cache.sh](https://github.com/FlowFuse/helm/blob/main/flowforge-container/install-device-cache.sh) and docker-compose [install-device-cache.sh](https://github.com/FlowFuse/docker-compose/blob/main/flowforge-docker/install-device-cache.sh) have been updated.
-
-If any need to be updated, refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
 
 ### Phase Two
 
@@ -180,9 +180,9 @@ must be done manually.
 Finally, create two [change requests](/handbook/operations/change/#flowfuse-cloud-change-control), one for
 staging and one for production to upgrade to the latest version.
 
-### Unmanaged Releases
+## Unmanaged Repositories
 
-The Unmanaged Repositories have a simpler release process. They are released
+The Unmanaged Repositories (not covered by the [Scheduled Release](#scheduled-release) process) have a simpler release process. They are released
 as needed in coordination with the CTO/Senior Engineer.
 
 All release activity should be highlighted in #dept-engineering so the team is aware.
