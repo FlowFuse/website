@@ -19,21 +19,45 @@ export default defineContentConfig({
             type: 'page',
             source: 'ebooks/*.md',
             schema: z.object({
-                contentTitle: z.string(),
+                contentTitle: z.string().optional(),
                 image: z.string(),
+                thumbnail: z.string().optional(),
                 coverImage: z.string().optional(),
                 secondaryImage: z.string().optional(),
                 tertiaryImage: z.string().optional(),
                 meta: z.object({
-                    title: z.string().optional(),
+                    title: z.string(),
                     description: z.string().optional(),
-                }).optional(),
+                }),
                 hubspot: z.object({
                     formId: z.string(),
                     cta: z.string().optional(),
                     reference: z.string().optional(),
                 }),
                 contentTable: z.array(z.string()),
+            })
+        }),
+        whitepapers: defineCollection({
+            type: 'page',
+            source: 'whitepapers/*.md',
+            schema: z.object({
+                meta: z.object({
+                    title: z.string(),
+                    description: z.string().optional(),
+                }),
+                image: z.string(),
+                thumbnail: z.string(),
+                hubspot: z.object({
+                    formId: z.string(),
+                    cta: z.string().optional(),
+                    reference: z.string().optional(),
+                }),
+                heroTitle: z.string(),
+                heroContent: z.string(),
+                whitepaperTitle: z.string(),
+                whitepaperSubtitle: z.string().optional(),
+                formTitle: z.string().optional(),
+                formSubtitle: z.string().optional(),
             })
         })
     }

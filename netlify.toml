@@ -72,6 +72,11 @@ publish = "nuxt/dist"
 directory = "nuxt/.netlify/functions-internal"
 
 [[redirects]]
+from = "/landing/accelerating-industrial-innovation-with-low-code-platforms/"
+to = "/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/"
+status = 301
+
+[[redirects]]
 from = "/*"
 to = "/.netlify/functions/server"
 status = 200

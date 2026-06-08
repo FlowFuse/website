@@ -1,6 +1,7 @@
 ---
 contentTitle: The Ultimate Guide to Building Applications with <span class="inline-block">FlowFuse Dashboard for Node-RED</span>
 coverImage: /images/ebooks/ebook_dashboard.png
+thumbnail: /resources/images/eBook_Ultimate-Guide-to-Building-Applications-with-FlowFuse-Dashboard-for-Node-RED.png
 image: /images/ebooks/ebook-dashboard-render.png
 secondaryImage: /images/ebooks/bar-chart.gif
 tertiaryImage: /images/ebooks/line-chart.gif

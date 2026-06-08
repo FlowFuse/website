@@ -13,7 +13,7 @@ if (!page.value) {
 const coverImage = computed(() => page.value?.coverImage ?? page.value?.image)
 
 useHead({
-    title: `${page.value.meta?.title ?? page.value.contentTitle} • FlowFuse`,
+    title: `${page.value.meta.title} • FlowFuse`,
     meta: [
         { name: 'description', content: page.value.meta?.description ?? '' },
     ]
