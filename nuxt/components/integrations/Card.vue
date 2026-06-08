@@ -50,7 +50,7 @@ const shortDescription = computed(() => {
                         <span>Certified</span>
                     </span>
                 </div>
-                <label class="group-hover:text-indigo-600 cursor-pointer">{{ node.name }}</label>
+                <h3 class="text-base font-semibold group-hover:text-indigo-600 cursor-pointer">{{ node.name }}</h3>
                 <p class="text-sm my-2 leading-5">{{ shortDescription }}</p>
             </div>
             <div class="integration-card--meta flex justify-between bg-indigo-50/50 group-hover:bg-indigo-50 p-3 text-sm">

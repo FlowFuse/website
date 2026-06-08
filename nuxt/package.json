@@ -9,11 +9,15 @@
         "preview": "nuxt preview"
     },
     "dependencies": {
-        "mermaid": "^11"
+        "markdown-it": "^14.1.1",
+        "mermaid": "^11",
+        "sanitize-html": "^2.13.0",
+        "unstorage": "^1.17.5"
     },
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
         "@nuxt/image": "^2.0.0",
+        "@types/sanitize-html": "^2.16.1",
         "better-sqlite3": "^12.10.0",
         "nuxt": "^4.4.6",
         "nuxt-link-checker": "^5.0.10",

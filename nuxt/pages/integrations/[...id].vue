@@ -1,6 +1,6 @@
 <script setup>
 import { cleanRepoUrl, formatNumber, shortDate } from '~/utils/formatters'
-import { SITE_URL, OG_IMAGE, buildJsonLd } from '~/utils/seo'
+import { SITE_URL } from '~/utils/seo'
 
 const route = useRoute()
 const router = useRouter()
@@ -39,31 +39,11 @@ const seoDescription = computed(() => node.value.description || '')
 // id can end in `/` from trailing-slash catch-all routes.
 const pageUrl = computed(() => `${SITE_URL}/integrations/${id.value.replace(/\/+$/, '')}/`)
 
-useSeoMeta({
+useFlowFuseSeo({
     title: () => seoTitle.value,
     description: () => seoDescription.value,
-    ogTitle: () => seoTitle.value,
-    ogDescription: () => seoDescription.value,
-    ogUrl: () => pageUrl.value,
-    ogImage: OG_IMAGE,
-    ogType: 'website',
-    twitterCard: 'summary_large_image',
-    twitterSite: '@FlowFuseinc',
-    twitterImage: OG_IMAGE,
-    twitterDescription: ''
+    url: () => pageUrl.value,
 })
-
-useHead(() => ({
-    link: [{ rel: 'canonical', href: pageUrl.value }],
-    script: [{
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(buildJsonLd({
-            url: pageUrl.value,
-            title: seoTitle.value,
-            description: seoDescription.value
-        }))
-    }]
-}))
 
 // Tab state for nodes with examples
 const activeTab = ref('overview')
@@ -167,28 +147,50 @@ onMounted(() => {
 
                     <!-- Tabs (only when examples exist) -->
                     <div v-if="hasExamples" class="border-b border-gray-300 mb-6">
-                        <nav class="flex gap-8" aria-label="Tabs">
+                        <div class="flex gap-8" role="tablist" aria-label="Integration details">
                             <button
+                                id="tab-overview"
                                 type="button"
-                                class="py-3 px-1 border-b-2 font-medium focus:outline-none"
-                                :class="activeTab === 'overview' ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'"
+                                role="tab"
+                                aria-controls="panel-overview"
+                                :aria-selected="activeTab === 'overview'"
+                                :tabindex="activeTab === 'overview' ? 0 : -1"
+                                class="py-3 px-1 border-b-2 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-sm"
+                                :class="activeTab === 'overview' ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-600 hover:text-gray-800 hover:border-gray-300'"
                                 @click="switchTab('overview')"
                             >Overview</button>
                             <button
+                                id="tab-examples"
                                 type="button"
-                                class="py-3 px-1 border-b-2 font-medium focus:outline-none"
-                                :class="activeTab === 'examples' ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'"
+                                role="tab"
+                                aria-controls="panel-examples"
+                                :aria-selected="activeTab === 'examples'"
+                                :tabindex="activeTab === 'examples' ? 0 : -1"
+                                class="py-3 px-1 border-b-2 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-sm"
+                                :class="activeTab === 'examples' ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-gray-600 hover:text-gray-800 hover:border-gray-300'"
                                 @click="switchTab('examples')"
                             >Examples ({{ node.examples?.length }})</button>
-                        </nav>
+                        </div>
                     </div>
 
                     <div class="prose max-w-none">
-                        <div v-if="!hasExamples || activeTab === 'overview'">
+                        <div
+                            v-if="!hasExamples || activeTab === 'overview'"
+                            id="panel-overview"
+                            role="tabpanel"
+                            aria-labelledby="tab-overview"
+                            tabindex="0"
+                        >
                             <!-- README is pre-rendered HTML from build time. -->
                             <div v-html="node.readme || ''"></div>
                         </div>
-                        <div v-if="hasExamples && activeTab === 'examples'">
+                        <div
+                            v-if="hasExamples && activeTab === 'examples'"
+                            id="panel-examples"
+                            role="tabpanel"
+                            aria-labelledby="tab-examples"
+                            tabindex="0"
+                        >
                             <h2 class="text-2xl font-bold mb-4">Example Flows</h2>
                             <p class="text-gray-600 mb-6">The following example flows are available for this node.</p>
                             <div v-for="(example, index) in node.examples" :key="example.path" class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
@@ -241,7 +243,7 @@ onMounted(() => {
                                         </svg>
                                         Open Issues
                                     </span>
-                                    <img :src="`https://img.shields.io/github/issues/${node.githubOwner}/${node.githubRepo}.svg?style=flat-square`" alt="GitHub Issues" />
+                                    <img :src="`https://img.shields.io/github/issues/${node.githubOwner}/${node.githubRepo}.svg?style=flat-square`" alt="GitHub Issues" width="100" height="20" loading="lazy" />
                                 </a>
                                 <a :href="`https://github.com/${node.githubOwner}/${node.githubRepo}/stargazers`" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded transition-colors">
                                     <span class="text-sm text-gray-600 flex items-center gap-2">
@@ -250,7 +252,7 @@ onMounted(() => {
                                         </svg>
                                         Stars
                                     </span>
-                                    <img :src="`https://img.shields.io/github/stars/${node.githubOwner}/${node.githubRepo}.svg?style=flat-square`" alt="GitHub Stars" />
+                                    <img :src="`https://img.shields.io/github/stars/${node.githubOwner}/${node.githubRepo}.svg?style=flat-square`" alt="GitHub Stars" width="100" height="20" loading="lazy" />
                                 </a>
                                 <a :href="`https://github.com/${node.githubOwner}/${node.githubRepo}/network/members`" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2 hover:bg-gray-50 rounded transition-colors">
                                     <span class="text-sm text-gray-600 flex items-center gap-2">
@@ -259,7 +261,7 @@ onMounted(() => {
                                         </svg>
                                         Forks
                                     </span>
-                                    <img :src="`https://img.shields.io/github/forks/${node.githubOwner}/${node.githubRepo}.svg?style=flat-square`" alt="GitHub Forks" />
+                                    <img :src="`https://img.shields.io/github/forks/${node.githubOwner}/${node.githubRepo}.svg?style=flat-square`" alt="GitHub Forks" width="100" height="20" loading="lazy" />
                                 </a>
                             </div>
                         </div>

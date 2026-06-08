@@ -1,33 +1,13 @@
 <script setup>
 import { INTEGRATION_CATEGORIES } from '~/types/integrations'
 import { fetchCatalogue } from '~/utils/integrations'
-import { SITE_URL, OG_IMAGE, buildJsonLd } from '~/utils/seo'
+import { SITE_URL } from '~/utils/seo'
 
 const PAGE_URL = `${SITE_URL}/integrations/`
 const TITLE = 'Integrations • FlowFuse'
 const DESCRIPTION = 'Explore the list of integrations and modules available for your Node-RED projects. Created (and curated) by FlowFuse and the Node-RED community.'
 
-useSeoMeta({
-    title: TITLE,
-    description: DESCRIPTION,
-    ogTitle: TITLE,
-    ogDescription: DESCRIPTION,
-    ogUrl: PAGE_URL,
-    ogImage: OG_IMAGE,
-    ogType: 'website',
-    twitterCard: 'summary_large_image',
-    twitterSite: '@FlowFuseinc',
-    twitterImage: OG_IMAGE,
-    twitterDescription: ''
-})
-
-useHead({
-    link: [{ rel: 'canonical', href: PAGE_URL }],
-    script: [{
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify(buildJsonLd({ url: PAGE_URL, title: TITLE, description: DESCRIPTION }))
-    }]
-})
+useFlowFuseSeo({ title: TITLE, description: DESCRIPTION, url: PAGE_URL })
 
 const route = useRoute()
 const router = useRouter()
@@ -154,7 +134,7 @@ watch(filtered, () => {
             />
             <div class="container m-auto text-left md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4 flex">
                 <div class="catalogue-filters w-52 shrink-0 hidden md:block">
-                    <label>Filters</label>
+                    <h2 class="catalogue-filters--heading">Filters</h2>
                     <ul>
                         <li>
                             <input
@@ -169,7 +149,7 @@ watch(filtered, () => {
                             </label>
                         </li>
                     </ul>
-                    <label>Categories</label>
+                    <h2 class="catalogue-filters--heading">Categories</h2>
                     <ul id="catalogue-filter--categories">
                         <li v-for="(label, key) in INTEGRATION_CATEGORIES" :key="key">
                             <input
@@ -183,22 +163,24 @@ watch(filtered, () => {
                     </ul>
                 </div>
                 <div class="grow max-md:max-w-lg mx-auto">
+                    <label for="search-catalogue" class="sr-only">Search integrations</label>
                     <input
                         id="search-catalogue"
                         v-model="searchText"
                         class="catalogue-search"
-                        type="text"
+                        type="search"
                         placeholder="Search Integrations"
                     />
-                    <div class="catalogue-meta" aria-live="polite" aria-atomic="true">
+                    <!-- aria-live container must exist at hydration so SR can announce updates. -->
+                    <div class="catalogue-meta" aria-live="polite" aria-atomic="true" role="status">
                         <div v-if="catalogue"><span>{{ filtered.length }}</span> Integrations</div>
                     </div>
                     <ClientOnly>
                         <ul v-if="!catalogue" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" aria-hidden="true">
-                            <IntegrationsIntegrationCardSkeleton v-for="i in 6" :key="i" />
+                            <IntegrationsCardSkeleton v-for="i in 6" :key="i" />
                         </ul>
                         <ul v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                            <IntegrationsIntegrationCard
+                            <IntegrationsCard
                                 v-for="node in pageNodes"
                                 :key="node._id"
                                 :node="node"

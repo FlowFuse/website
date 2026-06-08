@@ -52,8 +52,8 @@ export function buildJsonLd (opts: { url: string, title: string, description: st
                 publisher: { '@id': `${SITE_URL}/#organization` },
                 aggregateRating: {
                     '@type': 'AggregateRating',
-                    ratingValue: '4.8',
-                    ratingCount: '3',
+                    ratingValue: '4.9',
+                    ratingCount: '4',
                     bestRating: '5',
                     worstRating: '0'
                 }

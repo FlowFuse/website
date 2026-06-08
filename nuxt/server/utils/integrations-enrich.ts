@@ -1,10 +1,9 @@
-/// <reference path="../../types/shims.d.ts" />
 import MarkdownIt from 'markdown-it'
 import MarkdownItAnchor from 'markdown-it-anchor'
 import MarkdownItFootnote from 'markdown-it-footnote'
 import MarkdownItAttrs from 'markdown-it-attrs'
-// Relative paths (not `~/` aliases) because this file is also imported by
-// nuxt.config.ts via jiti, which doesn't resolve Nuxt's path aliases.
+import sanitizeHtml from 'sanitize-html'
+// Relative paths: nuxt.config.ts imports this via jiti, which doesn't resolve `~/` aliases.
 import type {
     Integration,
     IntegrationCatalogEntry,
@@ -15,9 +14,6 @@ import { cachedFetch } from './build-cache'
 
 const MAX_EXAMPLES_PER_NODE = 20
 
-// Cache durations match the previous Eleventy data pipeline:
-// - catalog/npm: change frequently (new versions daily) → 1h
-// - GitHub directory listings + flow file contents: change rarely → 6h
 const TTL_CATALOG_MS = 60 * 60 * 1000
 const TTL_NPM_MS = 60 * 60 * 1000
 const TTL_GITHUB_MS = 6 * 60 * 60 * 1000
@@ -27,24 +23,13 @@ const GITHUB_HEADERS = {
     Accept: 'application/vnd.github+json'
 }
 
-// Markdown-it configured to match the Eleventy markdownLib (line ~1366 of .eleventy.js):
-// html: true, plus anchor + footnote + attrs. (The code-clipboard plugin is Eleventy-
-// runtime specific and intentionally not ported.)
 const md = new MarkdownIt({ html: true })
     .use(MarkdownItAnchor, { permalink: MarkdownItAnchor.permalink.headerLink() })
     .use(MarkdownItFootnote)
     .use(MarkdownItAttrs)
 
-/**
- * Build the enriched node list for detail pages.
- *
- * Mirrors src/_data/integrations.js: top-50 by weekly downloads + all
- * ffCertified nodes, each augmented with README + GitHub examples.
- *
- * Memoised at module level so the ~67 detail pages share a single fetch
- * during `nuxt generate`. On rejection the cache is cleared so dev sessions
- * can recover without a full restart.
- */
+// Memoised so all detail pages share one fetch per `nuxt generate`; cleared on
+// rejection so dev sessions recover without a restart.
 let _enrichedCache: Promise<Integration[]> | null = null
 export function buildEnrichedIntegrations (): Promise<Integration[]> {
     if (!_enrichedCache) {
@@ -62,7 +47,6 @@ async function _buildEnrichedIntegrations (): Promise<Integration[]> {
     })
     const catalogue = data.catalogue ?? []
 
-    // Top 50 by weekly downloads
     const topNodes = [...catalogue]
         .sort((a, b) => (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0))
         .slice(0, 50)
@@ -71,7 +55,7 @@ async function _buildEnrichedIntegrations (): Promise<Integration[]> {
         topNodes.map(node => [node._id, node])
     )
 
-    // Ensure all certified nodes are included even if outside the top 50
+    // Certified nodes always get a detail page even if they're outside the top 50.
     for (const node of catalogue) {
         if (node.ffCertified && !topNodesMap.has(node._id)) {
             topNodes.push(node)
@@ -79,9 +63,28 @@ async function _buildEnrichedIntegrations (): Promise<Integration[]> {
         }
     }
 
-    const enriched = await Promise.all(topNodes.map(node => enrichNode(node)))
-    return enriched.sort(sortCertifiedThenDownloads)
+    const results = await Promise.all(topNodes.map(node => enrichNode(node)))
+    const failed = results.filter(r => r.failed).map(r => r.node._id)
+    const failureRate = failed.length / results.length
+
+    // Above the threshold means upstream is broken enough to fail the deploy
+    // rather than ship a site missing READMEs/examples for most integrations.
+    if (failureRate > FAILURE_THRESHOLD) {
+        const sample = failed.slice(0, 5).join(', ')
+        const more = failed.length > 5 ? `, …+${failed.length - 5} more` : ''
+        throw new Error(
+            `[integrations] ${failed.length}/${results.length} nodes failed enrichment ` +
+            `(${Math.round(failureRate * 100)}%, threshold ${Math.round(FAILURE_THRESHOLD * 100)}%): ${sample}${more}`
+        )
+    }
+    if (failed.length > 0) {
+        console.warn(`[integrations] ${failed.length}/${results.length} nodes shipped with degraded enrichment: ${failed.join(', ')}`)
+    }
+
+    return results.map(r => r.node).sort(sortCertifiedThenDownloads)
 }
+
+const FAILURE_THRESHOLD = 0.25
 
 function sortCertifiedThenDownloads (a: Integration, b: Integration): number {
     if (a.ffCertified && !b.ffCertified) return -1
@@ -89,12 +92,11 @@ function sortCertifiedThenDownloads (a: Integration, b: Integration): number {
     return (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0)
 }
 
-async function enrichNode (entry: IntegrationCatalogEntry): Promise<Integration> {
+async function enrichNode (entry: IntegrationCatalogEntry): Promise<{ node: Integration, failed: boolean }> {
     const node: Integration = { ...entry }
 
     if (!node.categories) node.categories = []
 
-    // Mirror Eleventy's "catalogue_<cat>" prefix + "catalogue" group
     node.categories = node.categories.map(c => c.includes('catalogue') ? c : `catalogue_${c}`)
     if (!node.categories.includes('catalogue')) node.categories.push('catalogue')
 
@@ -130,17 +132,14 @@ async function enrichNode (entry: IntegrationCatalogEntry): Promise<Integration>
             const withAbsoluteAssets = rewriteRelativeAssets(npm.readme, node.githubOwner, node.githubRepo)
             const rendered = md.render(withAbsoluteAssets)
             const linked = rewriteIntegrationLinks(rendered, node)
-            // Strip <link>/<script> tags with relative paths. Required because we
-            // render markdown with `html: true`, so a malicious upstream README
-            // could otherwise embed `<script src="./pwn.js">` directly.
-            // Matches the deleted Eleventy _data/integrations.js:205.
-            node.readme = stripRelativeTags(linked)
+            node.readme = sanitizeReadme(linked)
         }
     } catch (err) {
         console.warn(`[integrations] enrich failed for ${node._id}:`, (err as Error).message)
+        return { node, failed: true }
     }
 
-    return node
+    return { node, failed: false }
 }
 
 function cleanGitUrl (url: string): string {
@@ -182,7 +181,7 @@ async function fetchExamples (owner: string, repo: string): Promise<IntegrationE
 
         return Promise.all(flowFiles.map(file => fetchFlow(file)))
     } catch {
-        // No /examples folder, or API error — both are fine
+        // No /examples folder is the common case; treat fetch errors the same.
         return []
     }
 }
@@ -214,10 +213,29 @@ function escapeForHtml (s: string): string {
     return s.replace(/&/g, '\\u0026').replace(/</g, '\\u003c').replace(/>/g, '\\u003e')
 }
 
-function stripRelativeTags (html: string): string {
-    return html
-        .replace(/<link\b[^>]*?\bhref=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*\/?>/gi, '')
-        .replace(/<script\b[^>]*?\bsrc=(?:["']|&quot;)(?!https?:\/\/)[^"'>&]*(?:["']|&quot;)[^>]*>(?:[\s\S]*?<\/script>)?/gi, '')
+// README is rendered via v-html, so it must be sanitised against XSS from upstream npm authors.
+const README_SANITIZE_OPTS: sanitizeHtml.IOptions = {
+    allowedTags: [
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'p', 'blockquote', 'ul', 'ol', 'li',
+        'em', 'strong', 'code', 'pre', 'kbd', 'samp', 'var', 'del', 's', 'sub', 'sup',
+        'a', 'img',
+        'table', 'thead', 'tbody', 'tr', 'th', 'td',
+        'hr', 'br', 'div', 'span',
+        'details', 'summary',
+    ],
+    allowedAttributes: {
+        a: ['href', 'name', 'target', 'rel', 'title'],
+        img: ['src', 'alt', 'title', 'width', 'height'],
+        '*': ['id', 'class'],
+    },
+    allowedSchemes: ['http', 'https', 'mailto'],
+    allowedSchemesByTag: { img: ['http', 'https', 'data'] },
+    disallowedTagsMode: 'discard',
+}
+
+function sanitizeReadme (html: string): string {
+    return sanitizeHtml(html, README_SANITIZE_OPTS)
 }
 
 function sanitiseFlow (raw: string): string {
@@ -226,8 +244,8 @@ function sanitiseFlow (raw: string): string {
         const parsed = JSON.parse(raw)
         const visit = (n: Record<string, unknown>) => {
             if (n && typeof n === 'object') {
-                if (typeof n.template === 'string') n.template = stripRelativeTags(n.template)
-                if (typeof n.html === 'string') n.html = stripRelativeTags(n.html)
+                if (typeof n.template === 'string') n.template = sanitizeReadme(n.template)
+                if (typeof n.html === 'string') n.html = sanitizeReadme(n.html)
             }
         }
         if (Array.isArray(parsed)) {
@@ -245,12 +263,7 @@ function sanitiseFlow (raw: string): string {
     return result
 }
 
-/**
- * Rewrites relative asset URLs in raw README markdown to absolute raw.githubusercontent.com
- * paths so images and embedded HTML render correctly off-domain. Runs on the markdown
- * *before* rendering, so it covers `![]()` syntax and any `<img>` tags the README
- * embeds via the HTML escape hatch.
- */
+// Runs on raw markdown so it covers both `![]()` and `<img>` (markdown's HTML escape hatch).
 function rewriteRelativeAssets (readme: string, owner?: string, repo?: string): string {
     if (!owner || !repo) return readme
 
@@ -267,16 +280,9 @@ function rewriteRelativeAssets (readme: string, owner?: string, repo?: string): 
         })
 }
 
-/**
- * Post-render rewrite for the README HTML:
- *  1. Collects all anchor IDs that ended up in the rendered HTML.
- *  2. Fixes same-page `#anchor` links whose target lost periods during ID slugification
- *     (e.g. README author wrote `#migration-from-0.1.2` but the rendered ID became
- *     `migration-from-0-1-2`; markdown-it-anchor's slugger normalises differently).
- *  3. Rewrites any remaining relative href/src paths to `${repo}/blob/master/${path}`.
- *
- * Ports the logic from the deleted Eleventy filter `.eleventy.js:387-453`.
- */
+// Post-render: recover `#anchor` links whose targets lost periods during slugification
+// (`#migration-from-0.1.2` → id `migration-from-0-1-2`), then point remaining relative
+// hrefs/srcs at the repo on GitHub.
 function rewriteIntegrationLinks (html: string, node: Integration): string {
     if (!html) return html
 

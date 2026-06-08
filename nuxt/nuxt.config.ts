@@ -50,6 +50,9 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
                 { name: 'theme-color', content: '#ffffff' },
+                { property: 'og:site_name', content: 'FlowFuse' },
+                { property: 'og:locale', content: 'en_US' },
+                { name: 'twitter:site', content: '@FlowFuseinc' },
             ]
         }
     },

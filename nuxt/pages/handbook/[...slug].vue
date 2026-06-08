@@ -19,10 +19,17 @@ if (!page.value) {
 }
 
 const pageTitle = computed(() => page.value?.title || slugParts.value.at(-1) || 'Handbook')
+const pageDescription = computed(() =>
+    page.value?.description || `${pageTitle.value} — FlowFuse handbook.`
+)
 
 useHead({
     title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook'),
-    meta: [{ name: 'robots', content: 'noindex' }]
+    link: [{ rel: 'canonical', href: computed(() => `https://flowfuse.com${contentPath.value}/`) }],
+    meta: [
+        { name: 'robots', content: 'noindex' },
+        { name: 'description', content: pageDescription },
+    ]
 })
 
 // Build breadcrumbs from URL parts

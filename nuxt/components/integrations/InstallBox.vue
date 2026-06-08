@@ -36,11 +36,12 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
             height="720"
             class="motion-reduce:hidden block w-full rounded border border-gray-200"
         />
-        <NetlifyImg
+        <NuxtImg
             :src="installPngUrl"
             alt="Node-RED Palette Manager dialog with the node selected and the Install button visible."
             :width="707"
             :height="376"
+            format="webp"
             class="motion-safe:hidden block w-full rounded border border-gray-200"
         />
     </div>

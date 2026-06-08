@@ -65,6 +65,9 @@ export async function cachedFetch<T> (url: string, opts: CachedFetchOptions = {}
         // (Eleventy-fetch retried internally; ofetch defaults to 1.)
         retry: 2,
         retryDelay: 500,
+        // Hard cap per request so one hung socket can't stall the entire build
+        // (Netlify's 30-min outer cap is the only other backstop).
+        timeout: 10_000,
         parseResponse: type === 'text' ? ((t: string) => t) as never : undefined
     })
     await storage.setItem(key, { url, fetchedAt: Date.now(), data })
