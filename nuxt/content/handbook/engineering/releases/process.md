@@ -206,7 +206,7 @@ For repositories where the `release-please` is configured, the release manager s
 1. Confirm that the matching Git tag and GitHub Release have been created
 1. Verify the publish workflow, triggered automatically after the release PR is merged, completes successfully
 
-#### Manual release process
+### Manual release process
 
 For repositories that do not yet have `release-please` enabled, follow the manual steps below:
 
