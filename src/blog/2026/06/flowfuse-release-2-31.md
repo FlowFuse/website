@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.31: Agentic Development Now in Open Beta, FlowFuse Expert Builds Your Industrial App on Edge Devices"
-subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and per-instance AI controls and real-time platform updates."
-description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and per-instance AI controls and real-time platform updates."
+subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and platform-level AI controls and real-time platform updates."
+description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and platform-level AI controls and real-time platform updates."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/06/images/flowfuse-release-2-31.jpg
@@ -22,7 +22,7 @@ features:
        selfHosted: all
 # Certified Nodes Self-Hosted renders "Coming soon" from the catalog SH value ('time').
 # Flip that tier to true in 2.32 when Self-Hosted support ships.
-tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and per-instance control over AI."
+tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and platform-level control over AI."
 cta:
   type: contact
   title: Get FlowFuse Expert and Certified Nodes enabled for your team
@@ -59,7 +59,7 @@ Certified Nodes are available to FlowFuse Cloud customers as of this release, wi
 
 ## What else is new?
 
-- **Control over where AI runs:** FlowFuse Cloud enables AI by default. Toggle it per team. Self-Hosted Enterprise disables it by default, and you can toggle it per team or per instance.
+- **Control over where AI runs:** FlowFuse Cloud enables AI by default, and you can toggle it per team. Self-Hosted Enterprise disables it by default; you can toggle it per team, or platform-wide via the `ai.enabled` configuration option (which overrides team-level settings).
 - **Custom CA certificates** are now documented for environments that need them.
 - **Smaller fixes**: secure (`wss://`) connections to your MQTT broker now work from the editor, and custom packages with uppercase names no longer break pipeline deploys.
 
