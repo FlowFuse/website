@@ -5,22 +5,19 @@ export interface FlowFuseSeoOptions {
     title: MaybeRefOrGetter<string>
     description: MaybeRefOrGetter<string>
     url: MaybeRefOrGetter<string>
-    image?: MaybeRefOrGetter<string | undefined>
 }
 
 export function useFlowFuseSeo (opts: FlowFuseSeoOptions) {
-    const image = () => toValue(opts.image) ?? OG_IMAGE
-
     useSeoMeta({
         title: () => toValue(opts.title),
         description: () => toValue(opts.description),
         ogTitle: () => toValue(opts.title),
         ogDescription: () => toValue(opts.description),
         ogUrl: () => toValue(opts.url),
-        ogImage: image,
+        ogImage: OG_IMAGE,
         ogType: 'website',
         twitterCard: 'summary_large_image',
-        twitterImage: image,
+        twitterImage: OG_IMAGE,
         twitterDescription: () => toValue(opts.description),
     })
 
@@ -32,7 +29,6 @@ export function useFlowFuseSeo (opts: FlowFuseSeoOptions) {
                 url: toValue(opts.url),
                 title: toValue(opts.title),
                 description: toValue(opts.description),
-                image: toValue(opts.image),
             }))
         }]
     }))
