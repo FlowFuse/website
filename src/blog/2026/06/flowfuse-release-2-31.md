@@ -59,7 +59,7 @@ Certified Nodes are available to FlowFuse Cloud customers as of this release, wi
 
 ## What else is new?
 
-- **Control over where AI runs:** FlowFuse Cloud enables AI by default, and you can toggle it per team. Self-Hosted Enterprise disables it by default; you can toggle it per team, or platform-wide via the `ai.enabled` configuration option (which overrides team-level settings).
+- **Control over where AI runs:** FlowFuse Cloud enables AI by default and you can toggle it per team. For Self-Hosted Enterprise, it is opt-in configurable for the platform via the `ai.enabled` configuration option. Once enabled, the same per team control is possible.
 - **Custom CA certificates** are now documented for environments that need them.
 - **Smaller fixes**: secure (`wss://`) connections to your MQTT broker now work from the editor, and custom packages with uppercase names no longer break pipeline deploys.
 
