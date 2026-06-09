@@ -61,6 +61,14 @@ The **redesigned sidebars** now behave the same on both sides of the editor. Con
 
 Underneath the visual changes are functional and security improvements across debugging, authentication, and TLS — the parts that matter most once Node-RED is running in production. If previous releases expanded what it could do, this one sharpens how it feels to use. For the full list, read the [release blog](https://nodered.org/blog/2026/06/09/version-5-0-released).
 
+## What it means for industrial teams
+
+The editor is where your team spends its day, so changes here add up fast across a working week.
+
+Most of what's new pulls in the same direction: less time fighting the tool, more time on the flow. The Explorer panel gives you a structured view of the whole project, so a flow set that spans dozens of tabs across several developers stops being a scavenger hunt. Picking up an unfamiliar flow, or onboarding someone new to it, takes seconds. The redesigned sidebars cut friction the other way: controls sit in the same place on both sides, and splitting one vertically keeps your debug output and node config open at once, so there are fewer clicks between the thing you're building and the thing telling you whether it works.
+
+For teams running long sessions on a plant floor or in a control room, the built-in dark theme, now in core with no custom package to install and maintain, and the accessibility review of the default theme mean a readable, lower-strain interface out of the box.
+
 ## FlowFuse Management and AI-Powered Flow Building, Now with Node-RED 5
 
 Node-RED is an editor and runtime. Operating it across teams, sites, and production environments is a different challenge entirely.
