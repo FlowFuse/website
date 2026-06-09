@@ -1,6 +1,16 @@
-import { readdirSync, statSync } from 'node:fs'
+import { readdirSync, statSync, existsSync, readFileSync } from 'node:fs'
 import { join, basename } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import remarkHandbookLinks from './utils/remark-handbook-links'
+
+// Routes generated from the markdown sources by the scripts/copy_*.js steps.
+// docs.routes.json is written by scripts/copy_docs_nuxt.js before prod:nuxt;
+// missing-file fallback keeps `nuxt dev` working before the copy step runs.
+const readRoutes = (name: string): string[] => {
+    const f = fileURLToPath(new URL(`./${name}`, import.meta.url))
+    return existsSync(f) ? JSON.parse(readFileSync(f, 'utf-8')) : []
+}
+const docsRoutes = readRoutes('docs.routes.json')
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -80,6 +90,8 @@ export default defineNuxtConfig({
                 '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                 '/resources/publications/',
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                // /docs migration: native Nuxt docs routes (generated list).
+                ...docsRoutes,
             ],
             crawlLinks: false
         }
