@@ -53,11 +53,13 @@ Node-RED 5.0 is out — the biggest change to the editor since the project began
 
 Node-RED 5 is the first release built around the editor itself. Previous major versions focused on the runtime and what Node-RED could connect to. This one reworks the place people spend their whole day.
 
-node-red-5.png
+![The redesigned Node-RED 5 editor showing the new sidebars and Explorer panel.](./images/node-red-5.png)
+*The Node-RED 5 editor, redesigned around the place teams spend their whole day.*
 
 The **redesigned sidebars** now behave the same on both sides of the editor. Controls are grouped together instead of buried in a menu, and you can split one vertically to keep two panels open at once. A new **Explorer panel** gives you a structured view of your flows, making large projects with dozens of tabs far easier to navigate. And a **built-in dark theme** now ships in core — no custom packages needed — alongside an accessibility review of the default theme.
 
-nr-dark-theme.png
+![The Node-RED 5 editor in its built-in dark theme.](./images/nr-dark-theme.png)
+*The built-in dark theme now ships in core, with no custom package to install.*
 
 Underneath the visual changes are functional and security improvements across debugging, authentication, and TLS — the parts that matter most once Node-RED is running in production. If previous releases expanded what it could do, this one sharpens how it feels to use. For the full list, read the [release blog](https://nodered.org/blog/2026/06/09/version-5-0-released).
 
@@ -79,7 +81,8 @@ The Node-RED 5 stack is available on FlowFuse Cloud today, allowing teams to tak
 
 Alongside Node-RED 5, FlowFuse continues to improve how teams build applications. With the [FlowFuse 2.31 release](/blog/2026/06/flowfuse-release-2-31/#expert-agentic-ga), FlowFuse Expert introduced agentic application building in open beta. Describe your application requirements in plain language, and FlowFuse Expert generates a working starting flow directly in your workspace for both Hosted and Remote Instances.
 
-flowfuse-expert-node-red-5.png
+![FlowFuse Expert generating a starting flow in a Node-RED 5 workspace from a plain-language prompt.](./images/flowfuse-expert-node-red-5.png)
+*FlowFuse Expert builds a working starting flow from a plain-language prompt, now on Node-RED 5.*
 
 Teams can take advantage of Node-RED 5's redesigned editor while using FlowFuse to manage, secure, deploy, and scale their applications across production environments.
 
@@ -94,7 +97,8 @@ To upgrade a FlowFuse Hosted Instance:
 1. Open the instance settings.
 2. Click the **Change Node-RED Version** button, then select the Node-RED 5 stack from the dropdown.
 
-node-red-5-stack-settings.png
+![The FlowFuse instance settings showing the Node-RED 5 stack selected from the version dropdown.](./images/node-red-5-stack-settings.png)
+*Select the Node-RED 5 stack in the instance settings, then apply the change.*
 
 3. Click **Change Node-RED Version**.
 
