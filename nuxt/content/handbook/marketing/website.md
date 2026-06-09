@@ -81,7 +81,7 @@ YouTube videos can be embedded directly in pages using the `<lite-youtube>` web 
 <lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 704px; height: 100%;" title="Video title"></lite-youtube>
 ```
 
-> **Do not use raw `<iframe>` tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/blog/#embedding-videos-in-article-body) for more detail.
+> **Do not use raw `<iframe>` tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
 
 ## Meta Keywords
 
@@ -99,7 +99,7 @@ When adding meta keywords to the website pages, a specific priority order is fol
 
 2. **Keywords:** If no `meta.keywords` are found, the `keywords` specified in the front matter of the webpage are used.
 
-3. [**Tags:**](/handbook/marketing/blog/#tags) If neither `meta.keywords` nor `keywords` are assigned, the `tags` assigned to the content are included as meta keywords. These tags are used to categorize the content and provide relevant context.
+3. [**Tags:**](/handbook/marketing/content-strategy/blog/#tags) If neither `meta.keywords` nor `keywords` are assigned, the `tags` assigned to the content are included as meta keywords. These tags are used to categorize the content and provide relevant context.
 
 4. **Default Keywords:** These are always included and provide general information about the website's content. They can be appended to the keywords obtained from previous points, or, if neither of the previous conditions are met, the default keywords are used as a fallback option.
 
