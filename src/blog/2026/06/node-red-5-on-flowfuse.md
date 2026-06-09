@@ -45,7 +45,7 @@ meta:
 tldr: "Node-RED 5 is out, the biggest change to the editor since the project began, and it's primarily an editor release: redesigned sidebars, a new Explorer panel, a built-in dark theme, and functional and security improvements across debugging, authentication, and TLS. The Node-RED 5 stack is already live on FlowFuse Cloud. To upgrade a Hosted Instance, open its settings, change the stack to Node-RED 5, and click Change Node-RED Version, the instance restarts on 5.0. Check edge hardware first: Node-RED 5 needs Node.js 22.9 or later and drops 32-bit ARM, so Raspberry Pi 3B and earlier won't run it."
 ---
 
-Node-RED 5.0 is out — the biggest change to the editor since the project began. Nick O'Leary, our CTO and Node-RED's co-creator, [announced it today on the Node-RED forum](https://discourse.nodered.org/t/node-red-5-now-available/101239).
+Node-RED 5.0 is out, the biggest change to the editor since the project began. Nick O'Leary, our CTO and Node-RED's co-creator, [announced it today on the Node-RED forum](https://discourse.nodered.org/t/node-red-5-now-available/101239).
 
 <!--more-->
 
@@ -56,12 +56,12 @@ Node-RED 5 is the first release built around the editor itself. Previous major v
 ![The redesigned Node-RED 5 editor showing the new sidebars and Explorer panel.](./images/node-red-5.png)
 *The Node-RED 5 editor, redesigned around the place teams spend their whole day.*
 
-The **redesigned sidebars** now behave the same on both sides of the editor. Controls are grouped together instead of buried in a menu, and you can split one vertically to keep two panels open at once. A new **Explorer panel** gives you a structured view of your flows, making large projects with dozens of tabs far easier to navigate. And a **built-in dark theme** now ships in core — no custom packages needed — alongside an accessibility review of the default theme.
+The **redesigned sidebars** now behave the same on both sides of the editor. Controls are grouped together instead of buried in a menu, and you can split one vertically to keep two panels open at once. A new **Explorer panel** gives you a structured view of your flows, making large projects with dozens of tabs far easier to navigate. And a **built-in dark theme** now ships in core, with no custom packages needed, alongside an accessibility review of the default theme.
 
 ![The Node-RED 5 editor in its built-in dark theme.](./images/nr-dark-theme.png)
 *The built-in dark theme now ships in core, with no custom package to install.*
 
-Underneath the visual changes are functional and security improvements across debugging, authentication, and TLS — the parts that matter most once Node-RED is running in production. If previous releases expanded what it could do, this one sharpens how it feels to use. For the full list, read the [release blog](https://nodered.org/blog/2026/06/09/version-5-0-released).
+Underneath the visual changes are functional and security improvements across debugging, authentication, and TLS, the parts that matter most once Node-RED is running in production. If previous releases expanded what it could do, this one sharpens how it feels to use. For the full list, read the [release blog](https://nodered.org/blog/2026/06/09/version-5-0-released).
 
 ## What it means for industrial teams
 
