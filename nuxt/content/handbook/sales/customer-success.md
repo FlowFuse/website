@@ -1,5 +1,5 @@
 ---
-navTitle: Customer Success
+title: "Customer Success"
 ---
 
 # Customer Success

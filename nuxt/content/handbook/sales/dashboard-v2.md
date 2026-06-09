@@ -1,6 +1,5 @@
 ---
-navTitle: Self Hosted Dashboard v2 Multi User
-navGroup: Customer department
+title: "Self Hosted Dashboard v2 Multi User"
 ---
 
 # Self Hosted Dashboard v2 Multi User Plugin

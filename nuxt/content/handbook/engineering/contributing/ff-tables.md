@@ -1,5 +1,5 @@
 ---
-navTitle: FF Tables
+title: "FF Tables"
 ---
 
 # Setting up a local FF Tables test environment

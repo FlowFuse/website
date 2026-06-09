@@ -1,5 +1,5 @@
 ---
-navTitle: Community Guidelines
+title: "Community Guidelines"
 ---
 
 ## Node-RED is FlowFuse

@@ -1,5 +1,5 @@
 ---
-navTitle: Coaching Plans
+title: "Coaching Plans"
 ---
 
 # Coaching Plans

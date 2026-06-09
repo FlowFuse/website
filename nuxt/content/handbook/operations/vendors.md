@@ -1,5 +1,5 @@
 ---
-navTitle: Vendors
+title: "Vendors"
 ---
 
 # Vendors

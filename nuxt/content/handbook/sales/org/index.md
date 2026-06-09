@@ -1,6 +1,5 @@
 ---
-navTitle: Commercial Organization
-navGroup: Sales department
+title: "Commercial Organization"
 ---
 
 # Commercial Organization

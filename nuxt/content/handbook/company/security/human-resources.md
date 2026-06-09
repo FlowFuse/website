@@ -1,5 +1,5 @@
 ---
-navTitle: Human Resources Security Policy
+title: "Human Resources Security Policy"
 ---
 
 # Human Resources Security Policy

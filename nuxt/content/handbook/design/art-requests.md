@@ -1,5 +1,5 @@
 ---
-navTitle: Art Requests
+title: "Art Requests"
 ---
 
 # Art Requests

@@ -1,6 +1,5 @@
 ---
-meta:
-  title: Front-End Services
+title: "Front-End Services"
 ---
 
 # Services

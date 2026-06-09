@@ -1,5 +1,5 @@
 ---
-navTitle: Information Security Roles and Responsibilities
+title: "Information Security Roles and Responsibilities"
 ---
 
 # Information Security Roles and Responsibilities

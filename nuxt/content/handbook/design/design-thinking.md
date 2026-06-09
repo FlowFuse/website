@@ -1,5 +1,5 @@
 ---
-navTitle: Design Thinking
+title: "Design Thinking"
 ---
 
 # Design Thinking

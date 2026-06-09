@@ -1,5 +1,5 @@
 ---
-navTitle: Expenses
+title: "Expenses"
 ---
 
 # Expenses

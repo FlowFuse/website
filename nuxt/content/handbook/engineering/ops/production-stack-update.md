@@ -1,5 +1,5 @@
 ---
-navTitle: Update Stacks on Production
+title: "Update Stacks on Production"
 ---
 
 # How to Update Stacks on Production

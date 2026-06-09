@@ -1,5 +1,5 @@
 ---
-navTitle: Inbox Management
+title: "Inbox Management"
 ---
 
 The goal of the CEO inbox is to operate at **Inbox Zero**: every message is

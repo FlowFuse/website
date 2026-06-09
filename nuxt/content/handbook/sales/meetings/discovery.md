@@ -1,5 +1,5 @@
 ---
-navTitle: Discovery Meeting
+title: "Discovery Meeting"
 ---
 
 The goal of the discovery call is to get to know the prospective client and the

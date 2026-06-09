@@ -1,6 +1,7 @@
 ---
-navTitle: Engineering
-navGroup: Engineering & Design Practices
+title: "Engineering"
+navigation:
+  group: "Engineering & Design Practices"
 ---
 
 # Engineering

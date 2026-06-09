@@ -1,5 +1,5 @@
 ---
-navTitle: Decision making and project management
+title: "Decision making and project management"
 ---
 
 # How we make decisions

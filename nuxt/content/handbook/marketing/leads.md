@@ -1,5 +1,5 @@
 ---
-navTitle: Lead Generation
+title: "Lead Generation"
 ---
 
 # Lead Generation

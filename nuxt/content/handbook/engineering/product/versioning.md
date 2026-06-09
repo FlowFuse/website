@@ -1,5 +1,5 @@
 ---
-navTitle: Versioning
+title: "Versioning"
 ---
 
 # Versioning

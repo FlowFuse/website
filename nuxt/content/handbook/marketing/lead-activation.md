@@ -1,5 +1,5 @@
 ---
-navTitle: Lead Activation
+title: "Lead Activation"
 ---
 
 # Lead Activation

@@ -1,6 +1,5 @@
 ---
-meta:
-    title: Front-End Testing
+title: "Front-End Testing"
 ---
 
 # Front-End Testing

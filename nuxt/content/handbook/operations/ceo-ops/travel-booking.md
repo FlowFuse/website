@@ -1,6 +1,5 @@
 ---
-navTitle: Travel Booking
-navGroup: CEO Ops
+title: "Travel Booking"
 ---
 
 This page captures the CEO's travel preferences to guide the E.A. when booking

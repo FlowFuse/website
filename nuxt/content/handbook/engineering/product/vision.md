@@ -1,7 +1,5 @@
 ---
 title: Vision
-meta:
-   description: FlowFuse's company vision, what it means, and how it should shape the work of every team.
 ---
 
 ## Vision Statement

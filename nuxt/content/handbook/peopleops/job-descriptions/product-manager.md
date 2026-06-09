@@ -1,6 +1,5 @@
 ---
-navTitle: Product Manager
-navGroup: Job Descriptions
+title: "Product Manager"
 ---
 
 # Product Manager

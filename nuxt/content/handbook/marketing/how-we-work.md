@@ -1,5 +1,5 @@
 ---
-navTitle: How we work
+title: "How we work"
 ---
 
 # How the marketing team works at FlowFuse

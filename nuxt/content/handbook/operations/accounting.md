@@ -1,5 +1,5 @@
 ---
-navTitle: Accounting
+title: "Accounting"
 ---
 
 # Tax & Compliance

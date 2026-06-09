@@ -1,5 +1,5 @@
 ---
-navTitle: Third-Party Risk Management Policy
+title: "Third-Party Risk Management Policy"
 ---
 
 # Third-Party Risk Management Policy

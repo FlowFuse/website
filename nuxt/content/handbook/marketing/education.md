@@ -1,5 +1,5 @@
 ---
-navTitle: FlowFuse for Education
+title: "FlowFuse for Education"
 ---
 
 # FlowFuse for Education

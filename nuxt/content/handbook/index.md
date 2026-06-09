@@ -1,5 +1,5 @@
 ---
-navTitle: Handbook
+title: "Handbook"
 ---
 
 # FlowFuse Handbook

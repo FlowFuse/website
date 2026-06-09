@@ -1,5 +1,5 @@
 ---
-navTitle: Markdown Guide
+title: "Markdown Guide"
 ---
 
 # Markdown Guide
@@ -100,6 +100,17 @@ but with an `!` in front of it.
 ```md
 ![Image Name](image.jpg "alt text when you hover the image")
 ```
+
+### Adding images to handbook pages
+
+1. Place the image file in `nuxt/public/handbook/images/` (or a subfolder, e.g. `nuxt/public/handbook/images/screenshots/`).
+2. Reference it with an absolute path starting from `/handbook/images/`:
+
+```md
+![A screenshot of the dashboard](/handbook/images/screenshots/my-screenshot.png)
+```
+
+Images in the handbook are automatically optimised on delivery — resized to fit the viewer's screen, converted to WebP or AVIF where supported, and compressed — so there is no need to manually compress or resize images before committing them. Do not run them through an external compression tool first, as that would apply lossy compression twice.
 
 ## Quoting
 

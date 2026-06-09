@@ -1,5 +1,5 @@
 ---
-navTitle: Calendar Management
+title: "Calendar Management"
 ---
 
 This guide outlines how to manage the CEO’s calendar to ensure clarity,

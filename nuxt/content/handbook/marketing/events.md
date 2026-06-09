@@ -1,5 +1,5 @@
 ---
-navTitle: Events
+title: "Events"
 ---
 
 # Events

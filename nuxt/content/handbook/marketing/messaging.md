@@ -1,8 +1,8 @@
 ---
-navTitle: Company Messaging
+title: "Company Messaging"
 ---
 
-# {{ navTitle }}
+# Company Messaging
 
 Clear and consistent messaging serves as a cornerstone for our company to
 achieve growth and a bigger market presence. The messaging framework is

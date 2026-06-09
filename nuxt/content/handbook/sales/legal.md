@@ -1,6 +1,5 @@
 ---
-navTitle: Legal
-navGroup: Customer Department
+title: "Legal"
 ---
 
 # Legal

@@ -1,5 +1,5 @@
 ---
-navTitle: Market Segments
+title: "Market Segments"
 ---
 
 # Market Segments

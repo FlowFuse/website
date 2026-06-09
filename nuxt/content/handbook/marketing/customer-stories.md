@@ -1,8 +1,3 @@
----
-navTitle: Customer Stories
-meta:
-    title: Marketing - Customer Stories
----
 
 # Customer Stories
 

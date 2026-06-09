@@ -1,5 +1,5 @@
 ---
-navTitle: Certified Nodes
+title: "Certified Nodes"
 ---
 
 # Certified Nodes

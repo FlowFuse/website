@@ -1,6 +1,5 @@
 ---
-navTitle: Engineering Manager
-navGroup: Job Descriptions
+title: "Engineering Manager"
 ---
 # Engineering Manager
 

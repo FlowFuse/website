@@ -1,5 +1,5 @@
 ---
-navTitle: Security Policy
+title: "Security Policy"
 ---
 
 # Security Reporting Policy

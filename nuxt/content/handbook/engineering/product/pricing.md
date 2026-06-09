@@ -1,5 +1,5 @@
 ---
-navTitle: Pricing Principles
+title: "Pricing Principles"
 ---
 
 # Pricing Principles

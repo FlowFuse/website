@@ -20,7 +20,7 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio'],
+    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio', '@nuxt/image'],
 
     linkChecker: {
         failOnError: true,
@@ -54,6 +54,12 @@ export default defineNuxtConfig({
         }
     },
 
+    image: {
+        provider: process.env.SKIP_IMAGES === 'true' ? 'none' : 'netlify',
+        domains: ['flowfuse.com', 'www.flowfuse.com'],
+        quality: 80,
+    },
+
     nitro: {
         preset: 'netlify',
         serverAssets: [
@@ -66,6 +72,13 @@ export default defineNuxtConfig({
             routes: [
                 '/terms',
                 '/privacy-policy',
+                '/ebooks/beginner-guide-to-a-professional-nodered/',
+                '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
+                '/whitepaper/uns-decoupling-data-producers-and-consumers/',
+                '/whitepaper/open-source-software-for-manufacturing/',
+                '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
+                '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
+                '/resources/publications/',
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
             ],
             crawlLinks: false
@@ -89,6 +102,15 @@ export default defineNuxtConfig({
                     'handbook-links': { instance: remarkHandbookLinks },
                 },
             },
+        },
+    },
+
+    vite: {
+        optimizeDeps: {
+            include: [
+                '@vue/devtools-core',
+                '@vue/devtools-kit',
+            ],
         },
     },
 

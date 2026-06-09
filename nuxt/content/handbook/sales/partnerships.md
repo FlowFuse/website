@@ -1,5 +1,5 @@
 ---
-navTitle: Partnerships
+title: "Partnerships"
 ---
 
 # Partnerships

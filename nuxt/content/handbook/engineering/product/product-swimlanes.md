@@ -1,5 +1,5 @@
 ---
-navTitle: Product Swimlanes
+title: "Product Swimlanes"
 ---
 
 # Product Swimlanes

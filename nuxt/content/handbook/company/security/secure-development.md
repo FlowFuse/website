@@ -1,5 +1,5 @@
 ---
-navTitle: Secure Development Policy
+title: "Secure Development Policy"
 ---
 
 # Secure Development Policy
