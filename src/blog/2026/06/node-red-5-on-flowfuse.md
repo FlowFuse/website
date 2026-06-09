@@ -91,3 +91,5 @@ To upgrade a FlowFuse Hosted Instance:
 3. Click the **Change Node-RED Version** button.
 
 That's it. Once the instance restarts, you'll be running Node-RED 5 and can start using the redesigned editor, Explorer panel, built-in dark theme, and the latest platform improvements immediately.
+
+To avoid having to manually update your instances in the future, enable automatic stack updates. For production deployments, FlowFuse's [Scheduled Maintenance](/changelog/2025/12/scheduled-maintenance/) feature lets you control when updates and restarts are applied, ensuring changes are rolled out during planned maintenance windows.
