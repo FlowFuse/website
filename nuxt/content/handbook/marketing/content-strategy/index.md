@@ -60,7 +60,7 @@ Primary distribution:
 
 MOFU content reaches people who understand the problem space and are evaluating solutions. The goal is to demonstrate that FlowFuse is the right choice and to capture leads.
 
-The audience consists of engineers and technical decision-makers comparing platforms or deepening their Node-RED use. Often at [Stage 2–3](/handbook/marketing/messaging/#prospect-stages-node-red-awareness).
+The audience consists of engineers and technical decision-makers comparing platforms or deepening their Node-RED use. Often at [Stage 2–3](/handbook/marketing/messaging/#audience).
 
 #### Content Criteria
 
@@ -89,7 +89,7 @@ Primary distribution:
 
 BOFU content reaches people who are ready to act. The goal is to remove friction and convert interest into a trial signup, demo request, or contact sales submission.
 
-The audience consists of decision-makers and champions ready to evaluate FlowFuse. Often at [Stage 3–4](/handbook/marketing/messaging/#prospect-stages-node-red-awareness) or actively comparing vendors.
+The audience consists of decision-makers and champions ready to evaluate FlowFuse. Often at [Stage 3–4](/handbook/marketing/messaging/#audience) or actively comparing vendors.
 
 #### Content Criteria
 
@@ -152,7 +152,7 @@ context or [quality review](/handbook/marketing/content-strategy/blog#blogging-p
 
 #### Weekly review
 
-During the weekly [marketing team meeting](/handbook/marketing/#marketing-kpi),
+During the weekly [marketing team meeting](/handbook/marketing/#marketing-metrics),
 the team reviews the content calendar for the next two weeks. The marketing
 manager confirms each planned and scheduled content piece confirms by the
 [requirements](#the-content-calendar), and also confirms:
@@ -178,7 +178,7 @@ set, the content should be planned properly.
 To propose new content, create an item in the [content calendar](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519)
 with the following clarified:
 
-- An assigned [DRI](/handbook/company/decisions/#dri,-responsible,-and-accountable) (usually the content producer)
+- An assigned [DRI](/handbook/company/decisions/#dri-responsible-and-accountable) (usually the content producer)
 - A [Content funnel stage](#content-funnel-stages)
 - A content type (blog, social, webinar, email, etc.)
 - A target publish date

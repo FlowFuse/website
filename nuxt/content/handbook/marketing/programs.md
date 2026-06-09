@@ -43,7 +43,7 @@ the two-week rolling content calendar.
   engine of our content strategy, focused on providing educational and
   insightful articles to drive organic traffic, establish thought leadership,
   and support our other marketing initiatives.
-- **[Monthly Newsletters](/handbook/marketing/email/#community-email)**: We
+- **Monthly Newsletters**: We
   engage our community and customer base with regular email updates, sharing
   product news, valuable content, and upcoming events.
 - **[Social Media](/handbook/marketing/social-media/)**: We maintain an active

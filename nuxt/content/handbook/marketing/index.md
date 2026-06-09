@@ -9,7 +9,7 @@ navigation:
 ## What we do
 
 We're the team that promotes our company and product of FlowFuse to the 
-[core audience](/handbook/marketing/messaging/#ideal-customer-profile-(icp))
+[core audience](/handbook/marketing/messaging/#ideal-customer-profile-icp)
 of FlowFuse.
 
 There's 3 pillars we're heavily invested in:
