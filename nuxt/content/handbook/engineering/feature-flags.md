@@ -4,7 +4,7 @@ navTitle: Feature Flags
 
 # Feature Flags in PostHog
 
-We use [PostHog](https://posthog.com/) to manage feature flags, which let us roll features out to teams without shipping a new release. This page covers how to **create** a new flag, how to **enable** an existing one, and how to **use** flags in code. The create and enable flows both control who a flag applies to using [release conditions](#release-conditions).
+We use [PostHog](https://posthog.com/) to manage feature flags, which let us roll features out to teams without shipping a new release. This page covers how to **create** a new flag, how to **enable** an existing one, and how to **use** flags in code. The create and enable flows both control which teams a flag applies to using [release conditions](#release-conditions).
 
 ## Creating a feature flag
 
@@ -24,7 +24,7 @@ Add a description explaining what the flag is for and what it gates. This makes 
 
 ### 4️⃣ Set the release conditions
 
-Choose who the flag applies to by adding a release condition set — see [Release conditions](#release-conditions).
+Choose who the flag applies to by adding a *release condition set* — see [Release conditions](#release-conditions).
 
 ### 5️⃣ Create the flag
 
@@ -32,7 +32,7 @@ Click **Save** to create the flag.
 
 ### 6️⃣ Copy the flag to all projects
 
-A flag is created in a single project, so you need to copy it across the rest. Open the **Projects** tab on the flag and copy it to every other project so it's available everywhere.
+PostHog organizes flags, events, and other data into separate **projects**, and FlowFuse has more than one. A flag is created in a single project, so you need to copy it across the rest. Open the **Projects** tab on the flag and copy it to every other project so it's available everywhere.
 
 ![Copying a feature flag to another project from the Projects tab](/handbook/engineering/images/feature-flag-copy.png){data-zoomable}
 
@@ -40,7 +40,7 @@ A flag is created in a single project, so you need to copy it across the rest. O
 
 ## Release conditions
 
-A release condition set controls who a flag is enabled for. Both creating and enabling a flag use the same options — configure the set for either **all teams** or a **specific team**.
+A *release condition set* controls who a flag is enabled for. Both creating and enabling a flag use the same options — configure the set for either **all teams** or a **specific team**.
 
 ### All teams
 
@@ -96,7 +96,7 @@ Finally, **hard refresh** in the environment you just enabled to pull the latest
 
 ## Using feature flags in code
 
-The `flowfuse` frontend wires PostHog flags through the `account-settings` store (`frontend/src/stores/account-settings.js`).
+The FlowFuse frontend wires PostHog flags through the `account-settings` store (`frontend/src/stores/account-settings.js`).
 
 **Where to add the flag** — register its key in the `POSTHOG_FLAGS` constant, then expose a boolean check in the `featuresCheck` getter:
 
@@ -109,7 +109,7 @@ export const POSTHOG_FLAGS = {
 checks.isExpertCommsBetaEnabled = !!state.posthogFlags[POSTHOG_FLAGS.EXPERT_COMMS_BETA_ENABLED]
 ```
 
-**How to use it** — read the check off the resolved `featuresCheck` object wherever you need it. In a component template:
+**How to use it** — read the check from the resolved `featuresCheck` object wherever you need it. In a component template:
 
 ```html
 <template v-if="featuresCheck?.isExpertCommsBetaEnabled"> … </template>
