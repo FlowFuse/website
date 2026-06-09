@@ -47,22 +47,11 @@ To eliminate manual entry duplication, we use automated Deel calendar feeds. Mak
 
 #### How to Subscribe to Deel OOO Sync Calendars
 
-Simply click the link for the **Company-Wide** calendar and your specific **Department** calendar below. Google Calendar will open a desktop prompt asking if you want to add the calendar. Click **Add**.
+You can subscribe to company-wide out-of-office calendars managed by Deel. Calendars are available for the whole company, or individual departments.
 
-* 📅 **[Click to Add] FlowFuse Company-Wide OOO Calendar**
-  [Subscribe to Company OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiJmZTVkOTJiOS00ZGY1LTRkMGYtOWFlMC00MjI2OTQwYTRjMmIiLCJpYXQiOjE3ODA0MTEzNDksImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.M_bb-zECVFcbqvimk2BGiEq2WjTNvYdgNEtH_EmH_rQ?v=1)
-
-* 📅 **[Click to Add] BizOps Department OOO**
-  [Subscribe to BizOps OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiJjOTcyMDljNS0yYTMyLTQ1ZTQtYmQ5OS04MjVmMjY1ZDIxMzQiLCJpYXQiOjE3ODA0MTUyMzgsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.zqApkZFDbT8jJaNHDHeACWwGCZ8l_1mMTjnoZjRLSmM?v=1)
-
-* 📅 **[Click to Add] Engineering Department OOO**
-  [Subscribe to Engineering OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiIxYzlhMjZhOC01YzgyLTQ4ZjItOTllZi05YWEzMjM0NTIwMzkiLCJpYXQiOjE3ODA0MTUxNjYsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.6aW-787XYMR67tmkcCpDcVLfVgHICyOMtt2TEXE6QDI?v=1)
-
-* 📅 **[Click to Add] Marketing Department OOO**
-  [Subscribe to Marketing OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiI0OGUwMTAzYy1iODIyLTRhNDctODU3Mi04YmE3NzZjZTk4ODEiLCJpYXQiOjE3ODA0MTUyMDcsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.12mOszOGcM9GOOpHyyH7j6Uob0b8f8N-1UvkRD05mgg?v=1)
-
-* 📅 **[Click to Add] Sales Department OOO**
-  [Subscribe to Sales OOO](https://calendar.google.com/calendar/render?cid=webcal://api.deel.com/apps/webhooks/calendars/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25uZWN0aW9uSWQiOiI2MTM2OWFjNi00MGQ4LTQ2MWYtOWExZS1lNThkOTFhMGUwNWIiLCJsaW5rSWQiOiI3ZGQxZTUzMS0xOWEwLTQyY2UtYTk3Ny0xYjZmNGNkOWU0YzkiLCJpYXQiOjE3ODA0MTUyMjQsImlzcyI6ImRlZWwtaW50ZWdyYXRpb25zIn0.zLOhqZPrnL9W3C62pWLKbvpzbim_XwbZUuCjrf-gEZw?v=1)
+1. Search 1password for `FlowFuse Time-Off Calendars`.
+2. Copy the URL of the calendar you want to subscribe to.
+3. In Google Calendar, scroll to the bottom of the left-hand sidebar and click the `+` under **Other Calendars**. Select the **From URL** option and enter the url
  
 *(Note: Google Calendar can take up to 12-24 hours to initially sync data packages from Deel, so newly approved time-off blocks may not populate instantly upon adding the calendar).*
 
