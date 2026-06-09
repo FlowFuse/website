@@ -12,6 +12,9 @@ export default defineContentConfig({
             schema: z.object({
                 navigation: z.object({
                     group: z.string().optional(),
+                    // Read by useHandbookNav for sort order; without it declared
+                    // here @nuxt/content strips the key from frontmatter.
+                    order: z.number().optional(),
                 }).optional(),
             })
         }),
