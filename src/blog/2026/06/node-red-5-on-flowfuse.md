@@ -21,7 +21,7 @@ meta:
     tool:
       - "FlowFuse Cloud account"
       - "FlowFuse Hosted Instance, or a Remote Instance with the Device Agent"
-      - "Node.js 22.9 or later (64-bit) on edge hardware"
+      - "Node.js 22.9.0 or later (64-bit) on edge hardware"
     steps:
       - name: "Check edge hardware requirements"
         text: "Confirm your edge hardware can run Node-RED 5 before upgrading. Node-RED 5 needs Node.js 22.9 or later and drops 32-bit ARM, so hardware that can't run a 64-bit OS, such as the Raspberry Pi 3B and earlier, won't run it."
