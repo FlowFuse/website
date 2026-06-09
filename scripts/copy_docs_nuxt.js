@@ -217,6 +217,9 @@ for (const absFile of mdFiles) {
     const navOrderRaw = scalar(fmLines, 'navOrder')
     const navOrder = navOrderRaw !== undefined ? Number(navOrderRaw) : undefined
     const redir = redirectTo(fmLines)
+    // originalPath (stamped by copy_docs.js, e.g. `api/README.md`) is the source
+    // path in the external FlowFuse/flowfuse repo -> used for the edit-this-page link.
+    const originalPath = scalar(fmLines, 'originalPath')
 
     const route = fileToRoute(absFile)
     const contentPath = fileToContentPath(absFile)
@@ -237,6 +240,7 @@ for (const absFile of mdFiles) {
     if (navGroup) entry.navGroup = navGroup
     if (navOrder !== undefined && !Number.isNaN(navOrder)) entry.navOrder = navOrder
     if (redir) { entry.redirect = redir; redirectCount++ }
+    if (originalPath) entry.editPath = `docs/${originalPath}`
     index[route] = entry
 
     navEntries.push({

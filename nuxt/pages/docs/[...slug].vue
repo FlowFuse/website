@@ -30,6 +30,28 @@ const nav = docsNav
 
 const toc = computed(() => page.value?.body?.toc?.links ?? [])
 
+// Breadcrumbs — mirror the 11ty `handbookBreadcrumbs` filter: split the URL into
+// parts (dropping a trailing `index`), each linking to its cumulative path with a
+// trailing slash (URL parity), labelled with the raw slug.
+const breadcrumbs = computed(() => {
+    const parts = route.path.split('/').filter(Boolean)
+    if (parts[parts.length - 1] === 'index') parts.pop()
+    let path = ''
+    return parts.map((name) => {
+        path += '/' + name
+        return { name, path: path + '/' }
+    })
+})
+
+// Edit this page — mirror the 11ty `handbookEditLink` filter for `/docs`: point at
+// the source file in the external FlowFuse/flowfuse repo. `editPath` (e.g.
+// `docs/api/README.md`) is stamped into docs.index.json by copy_docs_nuxt.js from
+// each doc's `originalPath` frontmatter; fall back to the content frontmatter.
+const editPath = computed(() => meta.editPath || page.value?.originalPath && `docs/${page.value.originalPath}`)
+const editLink = computed(() =>
+    editPath.value ? `https://github.com/FlowFuse/flowfuse/edit/main/${editPath.value}` : null
+)
+
 // Sidebar is a collapsible disclosure below lg; always shown inline at lg+.
 const navOpen = ref(false)
 watch(() => route.path, () => { navOpen.value = false })
@@ -64,6 +86,22 @@ useHead({
 
       <!-- Main content -->
       <article v-if="page" class="min-w-0 flex-1 prose prose-blue max-w-none main-content">
+        <!-- Breadcrumbs + edit-this-page (parity with 11ty documentation.njk) -->
+        <div class="not-prose flex items-center justify-between gap-4 border-b pb-2 mb-6 text-sm">
+          <nav aria-label="Breadcrumb" class="text-gray-500 min-w-0 truncate">
+            <span v-for="(crumb, i) in breadcrumbs" :key="crumb.path">
+              <NuxtLink :href="crumb.path" class="hover:text-blue-700">{{ crumb.name }}</NuxtLink>
+              <span v-if="i < breadcrumbs.length - 1" class="mx-1 text-gray-300">/</span>
+            </span>
+          </nav>
+          <a
+            v-if="editLink"
+            :href="editLink"
+            target="_blank"
+            rel="noopener"
+            class="flex-shrink-0 text-gray-500 hover:text-blue-700 italic"
+          >Edit this page</a>
+        </div>
         <ContentRenderer :value="page" />
       </article>
 

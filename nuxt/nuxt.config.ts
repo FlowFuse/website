@@ -45,6 +45,17 @@ export default defineNuxtConfig({
         'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
     },
 
+    // Algolia docs search (parity with 11ty common-js.njk): the docs page's
+    // <AlgoliaSearch> reads these public runtime values. Defaults reproduce the
+    // 11ty appId/apiKey/index (search-only key, safe to ship), overridable via env.
+    runtimeConfig: {
+        public: {
+            algoliaAppId: process.env.NUXT_PUBLIC_ALGOLIA_APP_ID || 'ISKYOHIT7D',
+            algoliaApiKey: process.env.NUXT_PUBLIC_ALGOLIA_API_KEY || '68d4032f487d66423c37e6483e067272',
+            algoliaIndexName: process.env.NUXT_PUBLIC_ALGOLIA_INDEX_NAME || 'prod_netlify',
+        },
+    },
+
     app: {
         head: {
             link: [
