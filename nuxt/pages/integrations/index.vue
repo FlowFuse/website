@@ -1,15 +1,10 @@
 <script setup lang="ts">
 import { INTEGRATION_CATEGORIES, type IntegrationCatalogEntry } from '../../types/integrations'
 import { fetchCatalogue } from '../../utils/integrations'
-import { SITE_URL } from '../../utils/seo'
 
 type CatalogueNode = IntegrationCatalogEntry & { _idLc: string }
 
-const PAGE_URL = `${SITE_URL}/integrations/`
-const TITLE = 'Integrations • FlowFuse'
-const DESCRIPTION = 'Explore the list of integrations and modules available for your Node-RED projects. Created (and curated) by FlowFuse and the Node-RED community.'
-
-useFlowFuseSeo({ title: TITLE, description: DESCRIPTION, url: PAGE_URL })
+useHead({ title: 'Integrations • FlowFuse' })
 
 const route = useRoute()
 const router = useRouter()

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { cleanRepoUrl, formatNumber, shortDate } from '../../utils/formatters'
-import { SITE_URL } from '../../utils/seo'
 import type { Integration } from '../../types/integrations'
 
 const route = useRoute()
@@ -32,15 +31,7 @@ const authorIsLinkable = computed(() => {
     return Boolean(url) && (url.includes('github.com') || url.includes('npmjs.com'))
 })
 
-const seoTitle = computed(() => `${node.value._id} • FlowFuse Integrations`)
-const seoDescription = computed(() => node.value.description || '')
-const pageUrl = computed(() => `${SITE_URL}/integrations/${id.value.replace(/\/+$/, '')}/`)
-
-useFlowFuseSeo({
-    title: () => seoTitle.value,
-    description: () => seoDescription.value,
-    url: () => pageUrl.value,
-})
+useHead({ title: () => `${node.value._id} • FlowFuse Integrations` })
 
 const activeTab = ref<'overview' | 'examples'>('overview')
 function switchTab (tab: 'overview' | 'examples') {
