@@ -80,26 +80,26 @@ separately. This is typically done by the development team in the build up to th
 full release and should be coordinated by the CTO or Senior Engineer prior to release
 day.
 
+If they need to be updated, refer to the [Unmanaged Repository](#unmanaged-repository) section for the guidance.
+
 The Release Manager should verify the following projects are up to date and
 have been published as needed.
 
- - [`flowfuse/device-agent`](https://github.com/FlowFuse/device-agent)
- - [`flowfuse/device-agent/installer`](https://github.com/FlowFuse/device-agent/tree/main/installer#release-process)
- - [`flowfuse/nr-project-nodes`](https://www.github.com/flowfuse/nr-project-nodes)
- - [`flowfuse/nr-file-nodes`](https://www.github.com/flowfuse/nr-file-nodes)
- - [`flowfuse/nr-tools-plugin`](https://www.github.com/flowfuse/nr-tools-plugin)
- - [`flowfuse/nr-assistant`](https://www.github.com/flowfuse/nr-assistant)
- - [`flowfuse/nr-mqtt-nodes`](https://www.github.com/flowfuse/nr-mqtt-nodes)
- - [`flowfuse/nr-tables-nodes`](https://www.github.com/flowfuse/nr-tables-nodes)
- - [`flowfuse/nr-subflow-export`](https://www.github.com/flowfuse/nr-subflow-export)
- - [`flowfuse/verdaccio-ff-auth`](https://www.github.com/flowfuse/verdaccio-ff-auth) (This is not published to npmjs at this time)
- - [`flowfuse/mqtt-schema-agent`](https://www.github.com/flowfuse/mqtt-schema-agent)
+ - [flowfuse/device-agent](https://github.com/FlowFuse/device-agent)
+ - [flowfuse/device-agent/installer](https://github.com/FlowFuse/device-agent/tree/main/installer#release-process)
+ - [flowfuse/nr-project-nodes](https://www.github.com/flowfuse/nr-project-nodes)
+ - [flowfuse/nr-file-nodes](https://www.github.com/flowfuse/nr-file-nodes)
+ - [flowfuse/nr-tools-plugin](https://www.github.com/flowfuse/nr-tools-plugin)
+ - [flowfuse/nr-assistant](https://www.github.com/flowfuse/nr-assistant)
+ - [flowfuse/nr-mqtt-nodes](https://www.github.com/flowfuse/nr-mqtt-nodes)
+ - [flowfuse/nr-tables-nodes](https://www.github.com/flowfuse/nr-tables-nodes)
+ - [flowfuse/nr-subflow-export](https://www.github.com/flowfuse/nr-subflow-export)
+ - [flowfuse/verdaccio-ff-auth](https://www.github.com/flowfuse/verdaccio-ff-auth) (This is not published to npmjs at this time)
+ - [flowfuse/mqtt-schema-agent](https://www.github.com/flowfuse/mqtt-schema-agent)
 
-Verify [`flowfuse/flowfuse-nr-launcher`](https://www.github.com//flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
+Verify [flowfuse/flowfuse-nr-launcher](https://www.github.com/flowfuse/nr-launcher) `package.json` has been updated to pull in the latest versions of `file-nodes`/`persistent-context`/`project-nodes`/`nr-assistant`.
 
 Verify that the helm/node-red-container Dockerfiles point to the latest Node-RED release (e.g. 3.1.x) and that both the helm [install-device-cache.sh](https://github.com/FlowFuse/helm/blob/main/flowforge-container/install-device-cache.sh) and docker-compose [install-device-cache.sh](https://github.com/FlowFuse/docker-compose/blob/main/flowforge-docker/install-device-cache.sh) have been updated.
-
-If any need to be updated, refer to the section [Unmanaged Releases](#unmanaged-releases) for releasing these.
 
 ### Phase Two
 
@@ -180,20 +180,20 @@ must be done manually.
 Finally, create two [change requests](/handbook/operations/change/#flowfuse-cloud-change-control), one for
 staging and one for production to upgrade to the latest version.
 
-### Unmanaged Releases
+## Unmanaged Repository
 
-The Unmanaged Repositories have a simpler release process. They are released
+An Unmanaged Repository (not covered by the shell script executed in the [Scheduled Releases](#scheduled-releases) process) has a simpler release process. It is released
 as needed in coordination with the CTO/Senior Engineer.
 
 All release activity should be highlighted in #dept-engineering so the team is aware.
 
-#### `release-please` governed repositories
+### `release-please` governed repository
 
 ::note
 A repository's release is managed by the [`release-please`](https://github.com/googleapis/release-please) if the `.github/workflows/release-please.yaml` GitHub Actions workflow exists in the repository.
 ::
 
-The release process is semi-automated in these repositories, with the `release-please` automatically maintaining a release PR that updates the version and changelog when changes are merged to `main`. 
+The release process is semi-automated in this repository, with the `release-please` automatically maintaining a release PR that updates the version and changelog when changes are merged to `main`. 
 
 The release manager's role is to review and merge the release PR. Once the release PR is merged, `release-please` will automatically create a Git tag and GitHub Release, and trigger the publish workflow to publish a package/build containers etc.
 
@@ -206,7 +206,7 @@ For repositories where the `release-please` is configured, the release manager s
 1. Confirm that the matching Git tag and GitHub Release have been created
 1. Verify the publish workflow, triggered automatically after the release PR is merged, completes successfully
 
-#### Manual release process
+### Manual release process
 
 For repositories that do not yet have `release-please` enabled, follow the manual steps below:
 
