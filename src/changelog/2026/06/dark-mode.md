@@ -16,7 +16,7 @@ A bright white UI is fatiguing in low-light control rooms or on a night shift. D
 By default, FlowFuse follows your operating system and flips live when it changes. Pick Light or Dark to lock it in — FlowFuse remembers your choice per browser.
 
 ![FlowFuse in dark mode, showing the Theme setting under User Settings](./images/dark-mode.gif){data-zoomable}
-*The whole app rethemes live as you toggle — no reload needed.*
+*The whole app re-themes live as you toggle — no reload needed.*
 
 To change your theme:
 
