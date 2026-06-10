@@ -101,11 +101,11 @@ A short summary of the challenge they faced, the implemented solution and a list
 
 ### Example customer stories index item based on the header above
 
-<img style="max-width: 300px;" alt="Example of how the headers are shown on the customer stories index" src="./images/story-index.png">
+<img style="max-width: 300px;" alt="Example of how the headers are shown on the customer stories index" src="/handbook/marketing/images/story-index.png">
 
 ### Example customer story based on the header above
 
-![Example of how the headers are shown on case studies](./images/story-page.png/)
+![Example of how the headers are shown on case studies](/handbook/marketing/images/story-page.png)
 
 ### Writing content
 

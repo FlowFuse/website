@@ -77,7 +77,7 @@ This asset allow us to post on YouTube and it gives the audience a chance to see
 #### Technical specifications
 * If the presenter has an interesting background, like a shop floor, or a wall with devices, use that for the video. Otherwise, use a solid, contrasting background to make it easier to crop the video and replace the background in post-production.
 * Frame the speaker from the chest up with space around the head and shoulders for both landscape and portrait formats.
-![Video framing examples](./images/video-framing.png){ width=600 }
+![Video framing examples](/handbook/marketing/images/video-framing.png){ width=600 }
 * Ensure the video is in HD quality or higher.
 * Keep the video under one minute to allow for YouTube Shorts.
 
