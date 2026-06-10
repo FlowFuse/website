@@ -20,7 +20,9 @@ if (!page.value) {
 
 // Handle redirect pages
 if (page.value.layout === 'redirect' && page.value.redirect?.to) {
-    await navigateTo(page.value.redirect.to, { redirectCode: 301 })
+    const target = page.value.redirect.to
+    const isExternal = target.startsWith('http://') || target.startsWith('https://')
+    throw navigateTo(target, { redirectCode: 301, external: isExternal })
 }
 
 const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Documentation')
