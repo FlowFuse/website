@@ -11,7 +11,7 @@
 #algolia-search .aa-DetachedSearchButton:focus,
 #algolia-search .aa-DetachedSearchButton:focus-within,
 #algolia-search .aa-DetachedSearchButton:active {
-    outline: 2px solid theme(colors.indigo.600);
+    outline: 2px solid var(--color-indigo-600);
     outline-offset: 2px;
     box-shadow: none;
 }
@@ -22,7 +22,7 @@
 }
 #algolia-search .aa-Form:focus-visible,
 #algolia-search .aa-Form:focus-within {
-    box-shadow: 0 0 0 2px theme(colors.indigo.600);
+    box-shadow: 0 0 0 2px var(--color-indigo-600);
     outline: none;
 }
 #algolia-search .aa-Form .aa-SubmitIcon,

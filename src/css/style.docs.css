@@ -111,28 +111,28 @@
 }
 
 .ff-callout--note {
-    background-color: theme(colors.blue.50);
-    border-left-color: theme(colors.blue.500);
+    background-color: var(--color-blue-50);
+    border-left-color: var(--color-blue-500);
 }
 
 .ff-callout--note .ff-callout__title {
-    color: theme(colors.blue.700);
+    color: var(--color-blue-700);
 }
 
 .ff-callout--warning {
-    background-color: theme(colors.yellow.50);
-    border-left-color: theme(colors.yellow.500);
+    background-color: var(--color-yellow-50);
+    border-left-color: var(--color-yellow-500);
 }
 
 .ff-callout--warning .ff-callout__title {
-    color: theme(colors.yellow.700);
+    color: var(--color-yellow-700);
 }
 
 .ff-callout--critical {
-    background-color: theme(colors.red.50);
-    border-left-color: theme(colors.red.500);
+    background-color: var(--color-red-50);
+    border-left-color: var(--color-red-500);
 }
 
 .ff-callout--critical .ff-callout__title {
-    color: theme(colors.red.700);
+    color: var(--color-red-700);
 }

@@ -1,5 +1,3 @@
-@tailwind components;
-@tailwind utilities;
 
 @layer components {
     .handbook {
@@ -16,7 +14,7 @@
         border-right: 1px solid right;
         text-transform: capitalize;
         --nav-weight: 500;
-        --nav-color: theme(colors.gray.700);
+        --nav-color: var(--color-gray-700);
         --nav-bg: transparent;
         --nav-pl: 1rem;
         background-color: transparent;
@@ -54,7 +52,7 @@
     }
 
     .handbook-nav li.handbook-nav-group {
-        color: theme(colors.indigo.700);
+        color: var(--color-indigo-700);
         padding-left: 0;
     }
 
@@ -72,30 +70,30 @@
     }
 
     .handbook-nav li button:hover .ff-icon svg path {
-        stroke: theme(colors.blue.600);
+        stroke: var(--color-blue-600);
     }
     
     .handbook-nav li.active {
-        background-color: theme(colors.gray.100);
-        border-color: theme(colors.indigo.600);
+        background-color: var(--color-gray-100);
+        border-color: var(--color-indigo-600);
     }
 
     .handbook-nav li a:hover {
-        background-color: theme(colors.gray.200);
+        background-color: var(--color-gray-200);
     }
 
     /* .handbook-nav li a:active {
-        background-color: theme(colors.gray.200);
+        background-color: var(--color-gray-200);
     } */
 
     .handbook-nav li.core-nodes-nav-group a:hover,
     .handbook-nav li.core-nodes-nav-group a {
-        color: theme(colors.indigo.600);
+        color: var(--color-indigo-600);
         text-decoration: none;
     }
 
     /* .handbook-nav li.core-nodes-nav-group.active {
-        background-color: theme(colors.gray.100);
+        background-color: var(--color-gray-100);
     } */
 
     .handbook li .icon-expand {
@@ -108,7 +106,7 @@
     }
 
     .handbook li.open {
-        background-color: theme(colors.gray.100);
+        background-color: var(--color-gray-100);
     }
 
     .handbook li.open .icon-expand {

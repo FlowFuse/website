@@ -9,7 +9,7 @@
 }
 
 .nohero a {
-    color: theme(colors.blue.600);
+    color: var(--color-blue-600);
 }
 
 .nohero strong {
@@ -88,7 +88,7 @@
 }
 
 .ff-prose .prose hr {
-    border-color: theme(colors.gray.400);
+    border-color: var(--color-gray-400);
     margin: 0;
 }
 

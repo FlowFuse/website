@@ -1,5 +1,3 @@
-@tailwind components;
-@tailwind utilities;
 
 @layer components {
 
@@ -7,7 +5,7 @@
         border-right: 1px solid right;
         text-transform: capitalize;
         --nav-weight: 500;
-        --nav-color: theme(colors.gray.700);
+        --nav-color: var(--color-gray-700);
         --nav-bg: transparent;
         --nav-pl: 1rem;
         background-color: transparent;
@@ -49,14 +47,14 @@
 
     .eleventy-nav li div:hover, 
     .eleventy-nav li > a:hover {
-        background-color: theme(colors.gray.200);
+        background-color: var(--color-gray-200);
     }
 
     .eleventy-nav li.active > a,
     .eleventy-nav li.active.has-children > div,
     .eleventy-nav .has-children > ul > li.active:not(.has-children) > a {
-        background-color: theme(colors.gray.100);
-        border-color: theme(colors.indigo.600);
+        background-color: var(--color-gray-100);
+        border-color: var(--color-indigo-600);
     }
 
     .has-children {
