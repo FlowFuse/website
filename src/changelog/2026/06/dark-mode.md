@@ -26,4 +26,4 @@ To change your theme:
 
 A note on scope: dark mode covers the FlowFuse application itself. The embedded Node-RED editor and Dashboard iframes keep their own themes — Node-RED and your Dashboard configuration manage those separately.
 
-This feature is available to all FlowFuse Cloud users and all Self Hosted users from v2.32.
+This feature is available to all FlowFuse Cloud users and all Self-Hosted users from v2.32.
