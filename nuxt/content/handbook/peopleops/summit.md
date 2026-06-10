@@ -23,6 +23,8 @@ dinners and lunches. Each employee is then responsible for booking their own fli
 and travel arrangements. Please check in with the summit organizer on your own personal
 budget, as this will differ person-to-person and be a factor of each employee's location.
 
+Prepare at least 10 weeks in advance when canvassing for vendors and expenses for activites, food, and venue.
+
 See the [Travel handbook](/handbook/peopleops/travel/) for policies on flights, visas, extended stays, and bringing family.
 
 Other expenses whilst performing duties as employee [are reimbursed](/handbook/peopleops/expenses/#expenses) if within the scope of the summit.
@@ -148,6 +150,17 @@ Additional, preferred, requirements:
 - Space for breakout rooms for smaller groups to meet in.
 - Space for individual work, and to take calls with prospects.
 - Lunch provided.
+
+### Vendor Management
+
+Reach out to vendors at least 8 weeks before the summit. Before signing anything, make sure there is clarity on their catering policy (some venues don't allow outside food or drink), cancellation terms, how they accept payment, and when to expect a final invoice.
+
+Create a vendor playbook for the on-site coordinator, covering each vendor's name, what they're covering, the date, a contact name and number, and where payments stand. Keep it updated as things get paid and get it to the on-site lead at least 48 hours before the summit starts.
+
+Keep all payments in one spreadsheet tracker. Flag any overpayment or overdue balance. 
+- Some vendors won't issue a refund until after the event, so ensure that there is a paper trail. 
+- If the group size shifts after the initial booking, follow up with the vendor get a revised confirmation before paying.
+
 
 ### Entertainment
 
