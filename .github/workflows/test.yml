@@ -15,19 +15,11 @@ jobs:
           owner: ${{ github.repository_owner }}
           repositories: |
             website
-            flowfuse
             blueprint-library
       - name: Check out website repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           path: 'website'
-          token: ${{ steps.generate_token.outputs.token }}
-      - name: Check out FlowFuse/flowfuse repository (to access the docs)
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-        with:
-          repository: 'FlowFuse/flowfuse'
-          ref: main
-          path: 'flowfuse'
           token: ${{ steps.generate_token.outputs.token }}
       - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
@@ -41,8 +33,6 @@ jobs:
           node-version: 24
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'
-      - run: npm run docs
-        working-directory: 'website'
       - run: npm run blueprints
         working-directory: 'website'
       - name: Install Dependencies
