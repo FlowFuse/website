@@ -8,7 +8,7 @@ const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/integrations', '/res
 const NUXT_ROUTE_PREFIXES = ['/integrations/']
 
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/docs']
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
