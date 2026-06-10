@@ -69,7 +69,7 @@ FlowFuse certifies a node against three pillars, each aimed at a specific failur
 
 **Quality:** Every Certified Node is tested for operational reliability and compatibility, so it behaves predictably across versions instead of surprising you in production. This means no more guesswork, no more deep vetting, and significantly quicker time to value.
 
-**Security:** FlowFuse proactively resolves potential vulnerabilities and revokes certification from any node that falls short - and notifies affected customers when that happens, so you're never the last to find out. Your nodes are secure by default - removing an entire headache from your workflow.
+**Security:** FlowFuse implements secure design and architecture by default, and this process extends to the Certified Nodes platform. Every node is checked, validated, and then secured via ongoing reviews per an SLA. This means that you don't stress, especially when fixes are time sensitive, converting a worry-mode update-fest to a smooth 5-minute task.
 
 **Support:** When a Certified Node gives you trouble, you get real troubleshooting help and a defined path to resolution, not an unanswered issue queue. FlowFuse node certification also means FlowFuse supported - so you get real, human support, not automatically generated documentation that may or may not map to solutions.
 
