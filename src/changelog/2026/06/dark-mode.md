@@ -9,7 +9,7 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/7307
 ---
 
-FlowFuse now has a dark mode. You can switch the whole app between Light, Dark, and System from your User Settings.
+FlowFuse now has a dark mode. 🦇 You can switch the whole app between Light, Dark, and System from your User Settings.
 
 A bright white UI is fatiguing in low-light control rooms or on a night shift. Dark mode lets FlowFuse fit those environments.
 
