@@ -67,6 +67,12 @@ This starts three watchers concurrently:
 
 **Note**: the first time running this, 11ty may take a little while to process all images in the `/docs` and `/handbook` folders.
 
+**Note**: if you have previously run `npm run build:nuxt`, clean the generated directories before starting dev or you will get a `spawn EBADF` error:
+
+```bash
+npm run clean:nuxt
+```
+
 ### Legacy-only mode
 
 To run just the legacy 11ty stack (equivalent to the old `npm start`):
@@ -91,7 +97,7 @@ The `npm run dev` (and `npm start`) commands will retrieve the documentation fro
 
 ## How to add blog posts
 
-See the [Blog section of the Marketing Handbook](https://flowfuse.com/handbook/marketing/blog/) for instructions on writing and publishing blog posts.
+See the [Blog section of the Marketing Handbook](https://flowfuse.com/handbook/marketing/content-strategy/blog/) for instructions on writing and publishing blog posts.
 
 ## Updating the FlowFuse Documentation
 

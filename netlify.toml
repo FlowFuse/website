@@ -1,8 +1,8 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
-    Content-Security-Policy = "frame-ancestors 'none';"
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "frame-ancestors 'self';"
 
 [[redirects]]
 from = "http://flowforge.com/*"
@@ -66,7 +66,20 @@ autoLaunch = false
 
 [build]
 command = "npm run build:nuxt"
-publish = "nuxt/.output/public"
+publish = "nuxt/dist"
+
+[functions]
+directory = "nuxt/.netlify/functions-internal"
+
+[[redirects]]
+from = "/landing/accelerating-industrial-innovation-with-low-code-platforms/"
+to = "/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/"
+status = 301
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/server"
+status = 200
 
 [context.deploy-preview]
 command = "npm run build:nuxt"

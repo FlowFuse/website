@@ -71,7 +71,7 @@ layout: default
         <div class="max-w-screen-lg mx-auto">
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2">
-                    <h2 class="max-md:text-center"><span class="text-red-600">The Problem</span> Today</h2>
+                    <h2 class="max-md:text-center">{% if problemTitle %}{{ problemTitle | safe }}{% else %}<span class="text-red-600">The Problem</span> Today{% endif %}</h2>
                     <ul class="mt-6 flex flex-col gap-6 list-none p-0 m-0">
                         {% for problem in problems %}
                         <li class="flex items-start gap-3 items-center">
@@ -145,16 +145,34 @@ layout: default
     <div class="w-full py-16 px-6 comparison-section-bg">
         <div class="max-w-screen-lg mx-auto">
             <h2 class="text-center text-indigo-600 mb-10">{{ useCases.title }}</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {% for item in useCases.items %}
-                <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
-                    <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
-                        {% image ["./", item.image] | join, item.imageAlt, [400] %}
+            {% if useCases.groups %}
+                {% for group in useCases.groups %}
+                <div class="mb-10">
+                    <h3 class="text-sm font-semibold uppercase text-indigo-400 mb-4">{{ group.label }}</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                        {% for item in group.items %}
+                        <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
+                            <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
+                                {% image ["./", item.image] | join, item.imageAlt, [400] %}
+                            </div>
+                            <p class="m-0 py-1">{{ item.description | safe }}</p>
+                        </div>
+                        {% endfor %}
                     </div>
-                    <p class="m-0 py-1">{{ item.description | safe }}</p>
                 </div>
                 {% endfor %}
-            </div>
+            {% else %}
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    {% for item in useCases.items %}
+                    <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
+                        <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
+                            {% image ["./", item.image] | join, item.imageAlt, [400] %}
+                        </div>
+                        <p class="m-0 py-1">{{ item.description | safe }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
     </div>
 

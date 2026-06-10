@@ -18,19 +18,19 @@ jobs:
             flowfuse
             blueprint-library
       - name: Check out website repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           path: 'website'
           token: ${{ steps.generate_token.outputs.token }}
       - name: Check out FlowFuse/flowfuse repository (to access the docs)
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           repository: 'FlowFuse/flowfuse'
           ref: main
           path: 'flowfuse'
           token: ${{ steps.generate_token.outputs.token }}
       - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           repository: 'FlowFuse/blueprint-library'
           ref: main
@@ -52,6 +52,6 @@ jobs:
         run: npm run build:nuxt:skip-images
         working-directory: 'website'
       - name: Check links
-        uses: untitaker/hyperlink@fb5bb9c5011a3d143a54b4b30aedc30ec5bc0f89 # 0.2.0
+        uses: untitaker/hyperlink@1ae2cef25222e3307a82bc7388f0667137f4240b # 0.2.1
         with:
-          args: website/nuxt/.output/public/ --check-anchors --sources website/src
+          args: website/nuxt/dist/ --check-anchors --sources website/src

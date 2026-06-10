@@ -2,14 +2,38 @@
 title: FlowFuse Cloud now available for free!
 subtitle: With our new FlowFuse release, comes a new team tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
 description: With our new FlowFuse release, comes a new team tier, available on FlowFuse Cloud, to provide you an easy way to manage your many Node-RED instances.
+lastUpdated: 2026-06-03
 date: 2024-12-19
-lastUpdated: 2025-08-07
 authors: ["greg-stoutenburg"]
 image: /blog/2024/12/images/tile-release-2-12.png
 tags:
    - flowfuse
    - news
    - releases
+keywords: flowfuse release, flowfuse free plan, node-red cloud, device agent, remote node-red, flowfuse 2.12, free tier, node-red management
+cta:
+  type: sign-up
+  title: "Get Started with FlowFuse for Free"
+  description: "Manage your Node-RED instances in the cloud with FlowFuse. Start with a free trial and experience centralised control, snapshots, and remote access for your edge devices."
+meta:
+  faq:
+    - question: "What is included in the FlowFuse free plan?"
+      answer: "The free plan included 2 remote Node-RED instances managed through the FlowFuse Device Agent, version control via Snapshots, and remote access using Developer Mode."
+    - question: "What is the FlowFuse Device Agent?"
+      answer: "The FlowFuse Device Agent is a package you install on any hardware (Raspberry Pi, laptop, industrial gateway) where you want Node-RED to run. It connects that device to FlowFuse Cloud for remote management."
+    - question: "How do I install the FlowFuse Device Agent on Linux or macOS?"
+      answer: "Run `sudo npm install -g @flowfuse/device-agent` in your terminal. On Windows, run `npm install -g @flowfuse/device-agent` in an elevated command prompt."
+    - question: "What are FlowFuse Snapshots?"
+      answer: "Snapshots are automatic backups of your Node-RED flows. Device Auto Snapshots means any changes to flows running on remote devices are saved automatically, giving you a version history you can restore from."
+    - question: "What is a Remote Instance in FlowFuse?"
+      answer: "A Remote Instance is a Node-RED instance that is managed by FlowFuse but runs on external hardware, such as an edge device in a factory or a home server, connected via the Device Agent."
+    - question: "Is the FlowFuse free plan still available?"
+      answer: "The free plan has been withdrawn. You can sign up for a 2-week free trial to experience all FlowFuse features, or start with the Starter plan at $20/month."
+    - question: "Can I use FlowFuse for home automation?"
+      answer: "Yes. FlowFuse is well suited for home automation scenarios where you want to manage multiple Node-RED instances from a single interface, with version control and remote access."
+    - question: "What is Developer Mode in the FlowFuse Device Agent?"
+      answer: "Developer Mode allows you to access your remote Node-RED editor directly through FlowFuse Cloud, so you can edit flows on edge devices without needing direct network access to the hardware."
+tldr: "FlowFuse 2.12 introduced a free team tier on FlowFuse Cloud, allowing users to manage two remote Node-RED instances via the Device Agent at no cost. The release also included Device Auto Snapshots for automatic flow backups. Note: the free plan has since been withdrawn, but a 2-week trial and a Starter plan are available."
 ---
 
 The new Free plan on FlowFuse Cloud will allow you to manage two remote instances using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.

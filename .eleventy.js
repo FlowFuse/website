@@ -221,6 +221,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('solution', 'layouts/solution.njk');
+    eleventyConfig.addLayoutAlias('use-case', 'layouts/use-case.njk');
     eleventyConfig.addLayoutAlias('catalog', 'layouts/catalog.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
 
@@ -531,12 +532,16 @@ module.exports = function(eleventyConfig) {
         return new URL(url, site.baseURL).href;
     })
 
+    eleventyConfig.addFilter("stripLinks", function(text) {
+        return String(text).replace(/<a\s[^>]*>([\s\S]*?)<\/a>/gi, '$1');
+    });
+
     eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
         let parts = url.split("/").filter(e => e !== '');
         if (parts[parts.length-1] === "index") {
             parts.pop();
         }
-        
+
         let path = "";
         return "/"+parts.map(p => {
             let url = `${path}/${p}`;
@@ -546,11 +551,6 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
-        // If page.inputPath looks like: ./src/handbook/abc/def.md
-        // then the url of the page will be `/handbook/abc/def/`
-        // links of the form `./` or `[^/]` must be prepended with `../`
-        // to ensure it links to the right place
-
         const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
 
         const matcher = /((href|src)="([^"]*))"/g
@@ -558,12 +558,9 @@ module.exports = function(eleventyConfig) {
         while ((match = matcher.exec(str)) !== null) {
             let url = match[3]
             if (/^(http|#|mailto:)/.test(url)) {
-                // Do not rewrite absolute urls, in-page anchors or emails
                 continue
             }
-            // */abc.md#anchor => */abc/#anchor
             url = url.replace(/.md(#.*)?$/, '$1')
-            // */README#anchor => */#anchor
             url = url.replace(/README(#.*)?$/, '$1')
             if (url[0] !== '/' && !isIndexPage) {
                 url = '../'+url
@@ -732,8 +729,9 @@ module.exports = function(eleventyConfig) {
         const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
         if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
         if (pro && enterprise && !enterpriseDimmed) return "Pro+";
-        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (contact us)";
         if (enterpriseDimmed) return "Enterprise (on request)";
+        if (enterprise === 'time') return "Coming soon";
         if (enterprise) return "Enterprise";
         return "Not available";
     }
@@ -774,7 +772,13 @@ module.exports = function(eleventyConfig) {
         return html;
     }
 
-    // Inject tier badges and changelog links into release blog posts based on frontmatter
+    function renderDocsLink(feature) {
+        if (!feature || !feature.docsLink) return '';
+        const label = feature.label || 'Documentation';
+        return `<div class="ff-related-docs">Docs: <a href="${feature.docsLink}">${label}</a></div>`;
+    }
+
+    // Inject tier badges, changelog links, and a docs link into release blog posts based on frontmatter
     eleventyConfig.addTransform("releaseFeatures", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
 
@@ -799,6 +803,7 @@ module.exports = function(eleventyConfig) {
         for (const entry of features) {
             let badges = '';
             let changelogs = '';
+            let docs = '';
 
             if (entry.id) {
                 // Feature from featureCatalog
@@ -807,6 +812,7 @@ module.exports = function(eleventyConfig) {
                 badges = renderTierBadges(feature);
                 const changelogUrls = release ? getChangelogUrlsForRelease(feature, release) : getChangelogUrls(feature);
                 changelogs = renderChangelogLinks(changelogUrls);
+                docs = renderDocsLink(feature);
             } else if (entry.tiers) {
                 // Inline tier specification (no feature ID)
                 const inlineFeature = {};
@@ -830,8 +836,9 @@ module.exports = function(eleventyConfig) {
                 badges = renderTierBadges(inlineFeature);
             }
 
-            if (badges || changelogs) {
-                injections.push({ heading: entry.heading, badges, changelogs });
+            if (badges || changelogs || docs) {
+                // Docs link sits on its own line below the changelog line
+                injections.push({ heading: entry.heading, badges, related: changelogs + docs });
             }
         }
 
@@ -863,12 +870,12 @@ module.exports = function(eleventyConfig) {
                 ops.push({ index: heading.index + heading.length, html: badgesWithLevel });
             }
 
-            // Insert changelogs before the next heading at the same or higher level
-            // H2 changelogs go before the next H2; H3 changelogs go before the next H2 or H3
-            if (injection.changelogs) {
+            // Insert changelog + docs links before the next heading at the same or higher level
+            // H2 links go before the next H2; H3 links go before the next H2 or H3
+            if (injection.related) {
                 const nextPeer = headingMatches.find((h, i) => i > headingIdx && h.level <= heading.level);
                 const insertBefore = nextPeer ? nextPeer.index : content.length;
-                ops.push({ index: insertBefore, html: injection.changelogs });
+                ops.push({ index: insertBefore, html: injection.related });
             }
         }
 
@@ -922,7 +929,7 @@ module.exports = function(eleventyConfig) {
     // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
     eleventyConfig.addTransform("docsFeatureBadges", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
-        if (!this.page.url || !/^(\/docs\/|\/node-red\/|\/handbook\/)/.test(this.page.url)) return content;
+        if (!this.page.url || !/^(\/docs\/|\/node-red\/)/.test(this.page.url)) return content;
 
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);
@@ -1109,7 +1116,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addCollection('nav', function(collection) {
         let nav = {}
 
-        createNav('handbook')
         createNav('docs')
 
         function createNav(tag) {
@@ -1140,7 +1146,7 @@ module.exports = function(eleventyConfig) {
                 // recursively parse the folder hierarchy and created our collection object
                 // pass nav = {} as the first accumulator - build up hierarchy map of TOC
                 hierarchy.reduce((accumulator, currentValue, i) => {
-                    // create a nested object detailing the full handbook hierarchy
+                    // create a nested object detailing the full docs hierarchy
                     if (!accumulator[currentValue]) {
                         accumulator[currentValue] = {
                             'name': currentValue,
@@ -1191,7 +1197,6 @@ module.exports = function(eleventyConfig) {
                 }
             }
 
-            // not req'd to have handbook in Website build, so this may be empty
             if (nav[tag]) {
                 for (child of nav[tag].children) {
                     if (child.group) {
@@ -1205,7 +1210,7 @@ module.exports = function(eleventyConfig) {
                         }
                         groups[group].children.push(child)
                     } else {
-                        // capture & flag top-level handbook docs, that haven't had a group assigned
+                        // capture & flag top-level docs that haven't had a group assigned
                         groups['Other'].children.push(child)
                     }
                 }
