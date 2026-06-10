@@ -323,15 +323,11 @@ download and copy button too for users to use what they've learned.
 To render a flow you'll need to export it to JSON in Node-RED and paste it in a
 `renderFlow` shortcode:
 
-{% raw %}
-
 ```text
 {% renderFlow %}
 <flowJSONHere>
 {% endrenderFlow %}
 ```
-
-{% endraw %}
 
 ### Writing content
 
