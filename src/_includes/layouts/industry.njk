@@ -148,8 +148,8 @@ layout: default
             {% if useCases.groups %}
                 {% for group in useCases.groups %}
                 <div class="mb-10">
-                    <h3 class="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-4">{{ group.label }}</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <h3 class="text-sm font-semibold uppercase text-indigo-400 mb-4">{{ group.label }}</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {% for item in group.items %}
                         <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
                             <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
@@ -162,7 +162,7 @@ layout: default
                 </div>
                 {% endfor %}
             {% else %}
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {% for item in useCases.items %}
                     <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
                         <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
