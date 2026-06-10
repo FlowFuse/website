@@ -57,7 +57,7 @@ cta:
 
 # Why FlowFuse Certified Nodes?
 
-With every flow that you build on FlowFuse, you’re using nodes to execute code in your environment. These nodes often connect to your data, your network, and your operations - and while the flexibility and freedom these nodes offer are part of the power behind FlowFuse, the reality of adoption means that you’re inheriting functionality as much as you are inheriting risk.
+With every flow that you build on FlowFuse, you’re using nodes to execute code in your environment. These nodes often connect to your data, your network, and your operations - and while the flexibility and freedom these nodes offer are part of the power behind FlowFuse, the reality of adoption means that you’re inheriting functionality as much as you are inheriting risk. Open source development is often offered by people who assume no liability. They needed a solution, they developed the solution, and it worked, but when it comes to adoption, the phrase "caveat emptor" - buyer beware - applies.
 
 For most users, this risk is minimal - but for some orgs, the idea of inheriting risk is a step too far. When an organisation cannot have a day of downtime following a code update, or a potential risk vector unaddressed after a maintainer loses interest, something more is necessary - and FlowFuse Certified Nodes presents a solution to this problem.
 
