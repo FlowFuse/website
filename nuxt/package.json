@@ -9,8 +9,10 @@
         "preview": "nuxt preview"
     },
     "dependencies": {
+        "@resvg/resvg-js": "^2.6.2",
         "@takumi-rs/core": "^1.7.0",
-        "mermaid": "^11"
+        "mermaid": "^11",
+        "satori": "^0.26.0"
     },
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
