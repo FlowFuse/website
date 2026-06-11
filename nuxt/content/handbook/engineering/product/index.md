@@ -36,4 +36,3 @@ We separate deciding *what* to build and *why* (discovery) from deciding *how* t
 - [Product Growth](./telemetry.md)
 - [Versioning](./versioning.md)
 - [Feature Demos](/handbook/engineering/project-management#feature-demos)
-- [Node-RED Dashboard](./dashboard.md)
