@@ -73,11 +73,13 @@ Spikes are not mandatory. What we ask is that, for a solution's riskiest assumpt
 
 OST tells us *what is worth building and why*. The **Nearsighted Roadmap** tells us *how precisely we can plan it, given how far out it is*. The two play different roles, and they complement each other.
 
-| Horizon | Contains | Precision |
-| --- | --- | --- |
-| **Now** | Validated solutions, in a current cycle. | Concrete and committed. |
-| **Next** | Evidenced opportunities, grouped by theme. | Directional. |
-| **After** | The objectives we are pursuing. | Intent. |
+| Horizon | Timeline | What sits here | Precision |
+| --- | --- | --- | --- |
+| **Now** | Current or next release | Validated solutions, in a current cycle. | Concrete and committed. |
+| **Next** | Within the three releases after "Now" | Evidenced opportunities, grouped by theme. | Directional. |
+| **Future** | Considered or aimed for beyond Next | The objectives we are pursuing. | Intent. |
+
+These horizons are the **Opportunity Horizon** field on the [Product Planning project](https://github.com/orgs/FlowFuse/projects/3): the timeline is counted in releases, so the precision of a plan falls the further out the work sits.
 
 Why they fit together:
 
