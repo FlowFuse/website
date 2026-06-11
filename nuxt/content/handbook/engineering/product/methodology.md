@@ -17,7 +17,7 @@ When the two modes get mixed into one conversation, both suffer. A meeting meant
 
 ## The Opportunity Solution Tree
 
-We organise product work as an **[Opportunity Solution Tree](https://www.producttalk.org/2023/12/opportunity-solution-trees/)** (OST), following Teresa Torres' *Continuous Discovery Habits*. The tree connects a measurable outcome to the customer opportunities that drive it, the solutions we choose, and the experiments that build our confidence in them.
+We organise product work as an **[Opportunity Solution Tree](https://www.producttalk.org/2023/12/opportunity-solution-trees/)** (OST), following Teresa Torres' *Continuous Discovery Habits*. The tree connects a measurable outcome to the customer opportunities that drive it, the solutions we choose, and the experiments that build our confidence in them. This keeps our limited build capacity on evidenced customer needs, the behaviour changes that adoption and revenue follow from, rather than on assumptions.
 
 ```
 Objective        a product outcome (a change in customer behaviour we want)
