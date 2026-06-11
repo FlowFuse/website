@@ -11,7 +11,7 @@ The product function, and Product Managers (PM) by extension, are responsible fo
 
 ## How we work
 
-We separate deciding *what* to build and *why* (discovery) from deciding *how* to build it (delivery). The [Methodology](./methodology.md) page is the operating model: the Opportunity Solution Tree, how we grade evidence, how we use spikes to build confidence, and the two conversations (Outcome to Solution, and Refinement) that move work from discovery into delivery.
+We separate deciding *what* to build and *why* (discovery) from deciding *how* to build it (delivery). The [Methodology](./methodology.md) page is the operating model.
 
 ## Product outcomes, and working with leadership
 
