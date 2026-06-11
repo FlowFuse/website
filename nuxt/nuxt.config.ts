@@ -1,6 +1,7 @@
 import { readdirSync, statSync } from 'node:fs'
 import { join, basename } from 'node:path'
 import remarkHandbookLinks from './utils/remark-handbook-links'
+import remarkDocsLinks from './utils/remark-docs-links'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -20,7 +21,7 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio', '@nuxt/image'],
+    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio', '@nuxt/image', './modules/docs-source'],
 
     linkChecker: {
         failOnError: true,
@@ -29,10 +30,11 @@ export default defineNuxtConfig({
         skipInspections: ['trailing-slash', 'no-error-response'],
     },
 
-    // @nuxt/content generates `import X from 'handbook-links'` for the remark plugin key.
-    // This alias makes that import resolvable in the Vite bundle context.
+    // @nuxt/content generates import statements for remark plugin keys.
+    // These aliases make them resolvable in the Vite bundle context.
     alias: {
         'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
+        'docs-links': join(__dirname, 'utils/remark-docs-links'),
     },
 
     app: {
@@ -100,6 +102,7 @@ export default defineNuxtConfig({
             markdown: {
                 remarkPlugins: {
                     'handbook-links': { instance: remarkHandbookLinks },
+                    'docs-links': { instance: remarkDocsLinks },
                 },
             },
         },

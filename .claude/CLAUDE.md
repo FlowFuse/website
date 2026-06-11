@@ -17,6 +17,7 @@ The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framew
 | Section | Status |
 |---------|--------|
 | `/handbook/**` | **Migrated** — served by Nuxt (`nuxt/content/handbook/`) |
+| `/docs/**` | **Migrated** — served by Nuxt; source cloned from `flowfuse/flowfuse` at build time |
 | All other routes | Still on 11ty, proxied through Nuxt in dev |
 
 ### Production build order
@@ -25,20 +26,21 @@ The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framew
 clean:nuxt → build:js:nuxt → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
 ```
 
-11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
+The `docs-source` Nuxt module runs automatically during `prod:nuxt` and sparse-clones `docs/` from `flowfuse/flowfuse` (public repo, no token needed). 11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
 
 ## Dev commands
 
 ```bash
-npm start              # all watchers in parallel (11ty + nuxt + postcss + docs + blueprints)
+npm start              # all watchers in parallel (11ty + nuxt + postcss + blueprints)
 npm run dev            # eleventy + postcss + nuxt only
 npm run dev:eleventy   # 11ty only, port 8080 (legacy; most work doesn't need this)
-npm run dev:nuxt       # Nuxt only, port 3000 — use this for handbook and migrated pages
-npm run docs           # sync docs from external source once
+npm run dev:nuxt       # Nuxt only, port 3000 — use this for handbook, docs, and migrated pages
 npm run build          # production build
 ```
 
-> When working on the handbook or other migrated sections, `npm run dev:nuxt` is sufficient. `npm start` is only needed when also touching 11ty-served pages.
+> When working on the handbook, docs, or other migrated sections, `npm run dev:nuxt` is sufficient. `npm start` is only needed when also touching 11ty-served pages.
+>
+> **Local docs development:** set `FLOWFUSE_DOCS_LOCAL=/path/to/flowfuse` to point the docs module at a local checkout instead of cloning from GitHub. If the env var is not set and `nuxt/content/docs/` already exists, that cached copy is used. If neither is true, the module clones fresh from GitHub (public, no token needed).
 
 ## Directory layout
 
@@ -51,14 +53,27 @@ src/
 ├── blog/              # Blog posts  →  /blog/YYYY/MM/slug/
 ├── changelog/         # Changelog entries  →  /changelog/YYYY/MM/slug/
 ├── customer-stories/  # Case studies  →  /customer-stories/slug/
-├── docs/              # Product docs  →  /docs/section/slug/  (synced from external)
-├── handbook/          # Employee handbook  →  /handbook/section/slug/
 ├── css/               # Tailwind + custom CSS
 ├── images/            # Static images
 └── public/            # Pass-through static files
-scripts/               # Build-time scripts (copy_docs.js, copy_blueprints.js, etc.)
+nuxt/
+├── content/
+│   ├── handbook/      # Handbook pages (edit here)
+│   └── docs/          # Product docs (build-generated, gitignored — do not edit)
+├── modules/
+│   └── docs-source.ts # Clones docs from flowfuse/flowfuse at build time
+├── composables/
+│   ├── useHandbookNav.ts
+│   └── useDocsNav.ts
+├── components/
+│   ├── HandbookLeftNav.vue
+│   └── DocsLeftNav.vue
+└── pages/
+    ├── handbook/[...slug].vue
+    └── docs/[...slug].vue
+scripts/               # Build-time scripts (copy_blueprints.js, etc.)
 lib/                   # Shared helpers used by .eleventy.js and scripts
-.eleventy.js           # Main Eleventy config (1100+ lines)
+.eleventy.js           # Main Eleventy config
 ```
 
 ---
@@ -149,25 +164,29 @@ Collection config: `nuxt/content.config.ts` (defines the `handbook` collection)
 
 ### Product docs
 
-**Source:** `src/docs/{section}/{slug}.md` — **do not edit directly**; synced via `node scripts/copy_docs.js` from the external `flowfuse/flowfuse` monorepo.  
+**Source:** `flowfuse/flowfuse` repo, `docs/` directory — **do not edit in this repo**; cloned automatically at build time by `nuxt/modules/docs-source.ts`.  
 **URL:** `/docs/{section}/{slug}/`  
-**Layout:** `layouts/documentation.njk`
+**Rendered by:** Nuxt — `nuxt/pages/docs/[...slug].vue` + `DocsLeftNav` component  
+**Local content:** `nuxt/content/docs/` (gitignored, build-generated)  
+**Local assets:** `nuxt/public/docs/` (images, etc.)
 
 ```yaml
 ---
 navTitle: "Page title for sidebar"
-navGroup: "Section heading"
+navGroup: "Section heading"   # set on section index pages only
 navOrder: 3
 meta:
   description: "Page description"
-# optional redirect:
+# optional redirect (section index pages):
 redirect:
-  to: https://example.com
+  to: /docs/section/first-page
 layout: redirect
 ---
 ```
 
-Collection config: `src/docs/docs.json`
+**Nav groups** (in order): FlowFuse User Manuals · Device Agent · FlowFuse Cloud · FlowFuse Self-Hosted · Support · Contributing  
+**Nav composable:** `nuxt/composables/useDocsNav.ts`  
+**Collection config:** `nuxt/content.config.ts` (defines the `docs` collection)
 
 ---
 
@@ -227,7 +246,7 @@ Collection config: `src/customer-stories/customer-stories.json`
 | `layouts/base.njk` | HTML shell |
 | `layouts/post.njk` | Blog posts |
 | `layouts/post-changelog.njk` | Changelog entries |
-| `layouts/documentation.njk` | Docs + handbook (with sidebar nav) |
+| `layouts/documentation.njk` | Node-RED learning resources (with sidebar nav) |
 | `layouts/story.njk` | Customer stories |
 | `layouts/nohero.njk` | General pages without hero |
 
