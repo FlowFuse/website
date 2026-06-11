@@ -119,4 +119,8 @@ If your flows run on a bench or power a low-stakes internal tool, the open libra
 
 But if your flows touch sensitive data, fall under industry regulations, carry any uptime obligations, or back a team that can't afford to debug alone, then the vetting, monitoring, and support you'd otherwise have to build yourself is exactly what FlowFuse provides. The value is not just in the nodes themselves - it's in handing off work that was quietly becoming yours by default.
 
+## Certified Ndoes Today
+
+Right now, FlowFuse offers [Certified Nodes](https://flowfuse.com/integrations/?certified=1) across a wide variety of functions, offering official support for solutions like [ModBus](https://flowfuse.com/integrations/node-red-contrib-modbus/), [MongoDB](https://flowfuse.com/integrations/node-red-contrib-mongodb4/), [MCP](https://flowfuse.com/integrations/node-red-contrib-mcprotocol/), [OPC UA](https://www.npmjs.com/package/node-red-contrib-opcua), and much more. We are constantly adding to this catalogue - with major additions planned in the coming weeks to expand this offering to even more devices and systems.
+
 FlowFuse Certified Nodes are available to Teams and Enterprise tier customers. New instances get automatic access to the catalogue, and you can [contact us](https://flowfuse.com/contact-us) to add them to an existing instance - or to talk through which of these problems you're facing. Reach out to us today to see if FlowFuse Certified Nodes can help you and your stack!
