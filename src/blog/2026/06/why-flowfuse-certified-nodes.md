@@ -77,7 +77,7 @@ Let’s take a look at some specific use cases where Certified Nodes are game ch
 
 ## Use Case 1: High-Security and High-Privacy Deployments
 
-For teams running flows that touch personal health records, customer payment data, or proprietary process telemetry, every node in that flow executes with access to sensitive data. This means that every dependency is a potential way in - and a potential source of regulatory fines and intervention.
+For teams running flows that touch critical information, customer payment data, or proprietary process telemetry, every node in that flow executes with access to sensitive data. This means that every dependency is a potential way in - and a potential source of regulatory fines and intervention. Pharmaceuticals, security, financial - these are data systems that need far more security than traditional approaches allow.
 
 Without certification, the burden of vetting falls entirely on you. You have to audit the source, trace the dependency tree, track CVEs, and hope each maintainer keeps pace. For one node, that's manageable - but across a production palette handling sensitive data, it becomes a security workload that competes directly with the work you'd rather your team be doing. The risk doesn't go away when it goes unwatched - it just waits, and the risks compound over time.
 
