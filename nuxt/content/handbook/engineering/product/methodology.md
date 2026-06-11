@@ -17,7 +17,7 @@ When the two modes get mixed into one conversation, both suffer. A meeting meant
 
 ## The Opportunity Solution Tree
 
-We organise product work as an **Opportunity Solution Tree** (OST), following Teresa Torres' *Continuous Discovery Habits*. The tree connects a measurable outcome to the customer opportunities that drive it, the solutions we choose, and the experiments that de-risk them.
+We organise product work as an **Opportunity Solution Tree** (OST), following Teresa Torres' *Continuous Discovery Habits*. The tree connects a measurable outcome to the customer opportunities that drive it, the solutions we choose, and the experiments that build our confidence in them.
 
 ```
 Objective        a product outcome (a change in customer behaviour we want)
@@ -32,7 +32,7 @@ Objective        a product outcome (a change in customer behaviour we want)
 | **Objective** | A product outcome: a change in customer behaviour we want to see, over 3 to 6 months. | A feature, a business metric, or an output. |
 | **Opportunity** | A customer need, pain, or desire, in the customer's own words. Decomposes recursively. | A solution in disguise. Test: "is there more than one way to address this?" |
 | **Solution** | Something we would build for one specific opportunity, chosen against alternatives. | A vague theme. It addresses one opportunity. |
-| **Spike** | The smallest experiment that produces evidence for one risky assumption. | An implementation task. It is throwaway by design. |
+| **Spike** | A quick experiment that builds confidence in one uncertain assumption. | An implementation task. It is throwaway by design. |
 
 These four levels are the **issue types on the [FlowFuse/product](https://github.com/FlowFuse/product) board**, where hierarchy is enforced through sub-issue links. The issue templates there are the source of truth for the fields on each level; this page describes the practice, not the form.
 
@@ -65,7 +65,9 @@ Every solution rests on assumptions across five categories:
 - **Usability** (can customers use it?)
 - **Ethical** (could it cause harm?)
 
-Before we commit engineering to a solution, we identify its **riskiest assumptions** (high importance, low existing evidence) and test them with the cheapest experiment that produces real evidence: a **spike**. Common spike shapes are mining existing data, a fast prototype, a one-question survey, or a focused engineering investigation. A solution whose riskiest assumptions have not been tested is not ready to build, however confident we feel about it.
+When we are unsure about an assumption that matters (high importance, low existing evidence), a **spike** is the cheapest way to build confidence before we invest further: mining existing data, a fast prototype, a one-question survey, or a focused engineering investigation.
+
+Spikes are not mandatory. What we ask is that, for a solution's riskiest assumptions, the team has **considered** whether a spike would help, and made that call deliberately. Where confidence is already high, note that and move on; where it is low and the assumption matters, running a spike is the recommended way to raise it.
 
 ## From discovery to delivery: the Nearsighted Roadmap
 
@@ -91,7 +93,7 @@ Discovery and delivery run as two distinct conversations with different purposes
 
 - **Purpose:** settle the **what and why**. What should we build, and is it the right thing?
 - **Owner:** Product brings the outcome and the opportunity into focus. Product and engineering collaborate to choose the solution.
-- **Produces:** the job to be done (JTBD), the chosen solution, success criteria (how we will know it worked), and the risky assumptions plus the spikes needed to de-risk them.
+- **Produces:** the job to be done (JTBD), the chosen solution, success criteria (how we will know it worked), and the risky assumptions, plus any spikes worth running to build confidence.
 - **Cadence:** held ad hoc, per outcome, as outcomes are ready to be worked.
 
 ### Refinement (delivery)
@@ -121,8 +123,8 @@ Discovery and delivery run as two distinct conversations with different purposes
 The two conversations and sprint planning form one chain:
 
 1. **Outcome to Solution** chooses the solution and names the risky assumptions worth a spike.
-2. **Spikes** run and de-risk the chosen solution.
-3. **Refinement** breaks the de-risked solution into implementation issues, with a technical path, acceptance criteria, and estimates.
+2. **Spikes**, where they help, run and build confidence in the chosen solution.
+3. **Refinement** breaks the chosen solution into implementation issues, with a technical path, acceptance criteria, and estimates.
 4. **Sprint planning** pulls those estimated issues into a sprint and commits them.
 
 Discovery decides the right thing, refinement decides how, and [sprint planning](/handbook/engineering/project-management/#sprint-planning-friday) commits the work. The same handoff is described from the delivery side under [Product Conversations Feed the Cadence](/handbook/engineering/project-management/#product-conversations-feed-the-cadence).
