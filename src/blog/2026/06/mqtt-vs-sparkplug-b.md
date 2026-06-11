@@ -4,7 +4,7 @@ subtitle: "MQTT moves your data. Sparkplug B gives it structure. Here's how to c
 description: "A practical guide to choosing between plain MQTT and Sparkplug B for industrial IoT: where MQTT's flexibility turns into a topic-namespace mess, what Sparkplug B's structure, binary payloads, and birth/death certificates fix, the QoS 0 trade-off nobody mentions, and why most large deployments end up running both."
 date: 2026-06-11
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/06/images/mqtt-vs-sparkplug.png
 keywords: mqtt vs sparkplug b, sparkplug b, mqtt, industrial pub sub, mqtt topic namespace, sparkplug birth death certificate, mqtt qos, protobuf vs json, unified namespace, scada mqtt, iiot messaging, report by exception
 tags:
   - post
