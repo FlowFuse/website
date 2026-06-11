@@ -1,6 +1,5 @@
 ---
-navTitle: Sales Development Representative (SDR)
-navGroup: Job Descriptions
+title: "Sales Development Representative (SDR)"
 ---
 
 # Sales Development Representative
