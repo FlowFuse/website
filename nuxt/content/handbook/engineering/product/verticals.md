@@ -4,7 +4,7 @@ title: "Market Segments"
 
 # Market Segments
 
-By understanding the various markets in which we fit, we can align our product strategy to meet those specific needs. For this overview, we will focus on four distinct product markets: Enterprise-Grade Node-RED, Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
+By understanding the various markets in which we fit, we can align our [product methodology](./methodology.md) to meet those specific needs. For this overview, we will focus on four distinct product markets: Enterprise-Grade Node-RED, Industrial IoT Platforms, Low-Code Tools, and Data Integration Tools.
 
 ## Enterprise Grade Node-RED
 

@@ -522,7 +522,7 @@ What problem does the persona want to solve, or which benefit does the character
 
 ## Common Use Cases
 
-Based on the Personas, the following section describes the most relevant Use Cases that we identified in exchange with our customers. These Use Cases align with our product strategy.
+Based on the Personas, the following section describes the most relevant Use Cases that we identified in exchange with our customers. These Use Cases align with our [product methodology](../methodology.md).
 
 1. **Data transformation**
 As Peter, Automation and Controls Engineer,
