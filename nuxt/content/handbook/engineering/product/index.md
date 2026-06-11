@@ -11,7 +11,18 @@ The product function, and Product Managers (PM) by extension, are responsible fo
 
 ## How we work
 
-We separate deciding *what* to build and *why* (discovery) from deciding *how* to build it (delivery). The [Methodology](./methodology.md) page is the operating model: the Opportunity Solution Tree, how we grade evidence, how we de-risk solutions with spikes, and the two conversations (Outcome to Solution, and Refinement) that move work from discovery into delivery.
+We separate deciding *what* to build and *why* (discovery) from deciding *how* to build it (delivery). The [Methodology](./methodology.md) page is the operating model: the Opportunity Solution Tree, how we grade evidence, how we use spikes to build confidence, and the two conversations (Outcome to Solution, and Refinement) that move work from discovery into delivery.
+
+## Product outcomes, and working with leadership
+
+Product steers by **product outcomes**: the changes in customer behaviour we want to see, such as a builder deploying to production more often, or a team bringing a second site online. Outcomes are what let product work well, because they are something the team can actually act on through what it builds. They are deliberately not the same as the two things they are most often confused with:
+
+- **Business metrics** (revenue, ARR, retention) are the results leadership is accountable for. Product cannot move them directly.
+- **Traction metrics** (adoption, activation, weekly active use) are the leading signals that an outcome is happening.
+
+The line runs one way: the right **product outcome** changes customer behaviour, that behaviour shows up in **traction metrics**, and those in turn move the **business metrics**. Setting a business metric as the product target skips the only link product can actually pull, and pushes the team toward chasing output.
+
+The **[Product <> Leadership Sync](./methodology.md#product-meetings)** is where this is aligned. It is a high-level conversation, and the place product earns constructive visibility with leadership: we discuss whether we have the right objectives and related metrics, our progress towards them, and high-level adjustments to steer product across the product lanes. It works only when the [product lanes](./product-swimlanes.md) are well defined and the product outcomes are genuinely agreed, so the line from an outcome back to the business metrics it is meant to move is one everyone trusts.
 
 ## Core tasks and responsibilities
 
