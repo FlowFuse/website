@@ -118,4 +118,11 @@ Discovery and delivery run as two distinct conversations with different purposes
 
 ## How this connects to delivery
 
-Once a solution's riskiest assumptions survive their spikes, refinement breaks it into implementation issues that flow into [sprint planning](/handbook/engineering/project-management/#sprint-planning-friday). Discovery decides the right thing, refinement decides how, and sprint planning commits the work.
+The two conversations and sprint planning form one chain:
+
+1. **Outcome to Solution** chooses the solution and names the risky assumptions worth a spike.
+2. **Spikes** run and de-risk the chosen solution.
+3. **Refinement** breaks the de-risked solution into implementation issues, with a technical path, acceptance criteria, and estimates.
+4. **Sprint planning** pulls those estimated issues into a sprint and commits them.
+
+Discovery decides the right thing, refinement decides how, and [sprint planning](/handbook/engineering/project-management/#sprint-planning-friday) commits the work. The same handoff is described from the delivery side under [Product Conversations Feed the Cadence](/handbook/engineering/project-management/#product-conversations-feed-the-cadence).
