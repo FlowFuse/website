@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@layer vendor, base, components, utilities;
+
 @theme {
     --color-current: currentColor;
     --color-black: #000;
@@ -40,6 +42,12 @@
     --text-page-h1--line-height: 3rem;
     --text-post-h4: 1.25rem;
     --shadow-nav: 0px 10px 20px #11182766;
+}
+
+@layer base {
+    *, ::before, ::after {
+        border-color: var(--color-gray-200);
+    }
 }
 
 @utility grid-cols-header {
@@ -94,8 +102,8 @@
 @import "./roadmap.css";
 @import "./zoom-style.css";
 @import "./node-red-style.css";
-@import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css";
-@import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
+@import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css" layer(vendor);
+@import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css" layer(vendor);
 
 
 /* Skip to main content link */
@@ -138,53 +146,55 @@ html, body {
 /*
     Standard FlowFuse Sizings
 */
-h1 {
-    font-size: 2.75rem;
-    line-height: 3.1rem;
-}
-
-@media (min-width: 1024px) {
-    h1.home {
-        font-size: 3.75rem;
-        line-height: 1.05;
+@layer base {
+    h1 {
+        font-size: 2.75rem;
+        line-height: 3.1rem;
     }
-}
 
-h2 {
-    font-size: 2.25rem;
-    line-height: 2.65rem;
-}
+    @media (min-width: 1024px) {
+        h1.home {
+            font-size: 3.75rem;
+            line-height: 1.05;
+        }
+    }
 
-h3 {
-    font-size: 1.85rem;
-    line-height: 2.3rem;
-}
+    h2 {
+        font-size: 2.25rem;
+        line-height: 2.65rem;
+    }
 
-h4 {
-    font-size: 1.4rem;
-    line-height: 1.9rem;
-}
+    h3 {
+        font-size: 1.85rem;
+        line-height: 2.3rem;
+    }
 
-h5 {
-    font-size: 1.1rem;
-    line-height: 1.85rem;
-    font-weight: 600;
-}
+    h4 {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+    }
 
-p {
-    font-size: 1rem;
-    line-height: 1.75rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 300;
-}
+    h5 {
+        font-size: 1.1rem;
+        line-height: 1.85rem;
+        font-weight: 600;
+    }
 
-h1, h2, h3, h4, h5, p {
-    color: var(--color-gray-700);
-}
+    p {
+        font-size: 1rem;
+        line-height: 1.75rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 300;
+    }
 
-h1, h2, h3, h4 {
-    font-weight: 400;
+    h1, h2, h3, h4, h5, p {
+        color: var(--color-gray-700);
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 400;
+    }
 }
 
 .prose .ff-blue-card > h1:first-of-type,
@@ -302,21 +312,23 @@ h1, h2, h3, h4 {
     background: radial-gradient(circle 70vw at 50% 0%, var(--color-indigo-50), transparent);
 }
 
-main a {
-    color: var(--color-blue-600);
-}
-main  a:hover {
-    text-decoration: underline;
-}
-main  a.ff-btn:hover {
-    text-decoration: none;
-}
+@layer base {
+    main a {
+        color: var(--color-blue-600);
+    }
+    main a:hover {
+        text-decoration: underline;
+    }
+    main a.ff-btn:hover {
+        text-decoration: none;
+    }
 
-main .ff-bg-dark a, main .ff-bg-mid a {
-    color: var(--color-blue-600);
-}
-main .ff-bg-dark a:hover, main .ff-bg-mid a:hover {
-    color: var(--color-teal-500);
+    main .ff-bg-dark a, main .ff-bg-mid a {
+        color: var(--color-blue-600);
+    }
+    main .ff-bg-dark a:hover, main .ff-bg-mid a:hover {
+        color: var(--color-teal-500);
+    }
 }
 pre code {
     background: #030303
