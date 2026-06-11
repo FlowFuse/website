@@ -70,7 +70,8 @@
         "yaml": ">=1.10.3",
         "simple-update-notifier": {
             "semver": ">=7.5.2"
-        }
+        },
+        "shell-quote": ">=1.8.4"
     },
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
