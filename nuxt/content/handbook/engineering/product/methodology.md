@@ -53,7 +53,17 @@ An opportunity's **state is inferred from its evidence**:
 - **Hypothesis** (capture only): no evidence yet, or evidence below the bar. A valid way to record a need that surfaced from a single source (one customer call, one journey map, one internal walkthrough). Not yet ready for solutioning.
 - **Evidenced** (ready for solutioning): rung 3+ evidence from at least three distinct customers.
 
-We are honest about which state an opportunity is in rather than dressing up a hunch as research. Most of our raw signal arrives through the channels in [Feedback](./feedback.md); grading it against this ladder is what turns signal into evidence.
+We are honest about which state an opportunity is in rather than dressing up a hunch as research.
+
+## Gathering evidence
+
+We gather evidence continuously, not in a once-a-quarter research push:
+
+- **Continuous interviews, often with sales.** The strongest opportunities come from specific past stories (rung 3), and sales calls are a steady source of them. We join or review sales conversations rather than running a separate research track, and listen for the moments where a customer recounts a real problem.
+- **Fathom for the qualitative record.** Customer calls are recorded in Fathom; we mine the transcripts for rung-3+ stories and link the exact moment as an opportunity's evidence. See [Feedback](./feedback.md) for the full set of channels.
+- **PostHog for behavioural metrics.** What customers actually do (rung 5) comes from product analytics in PostHog: adoption, activation, and the [metrics](./metrics.md) that show whether an objective is moving.
+
+Interviews surface the opportunity; behavioural data confirms whether a solution changed what customers do.
 
 ## Assumptions and spikes
 
@@ -87,46 +97,17 @@ Why they fit together:
 - **Confidence and commitment line up.** We commit firmly where we know, and stay open further out, so we can shift as discovery evolves.
 - **Strategy stays traceable.** Objectives sit at the top, evidenced needs in the middle, committed work at the bottom. Anyone reading the tree can trace why a given thing is being built.
 
-## Our two core product conversations
+## Two conversations hand work to engineering
 
-Discovery and delivery run as two distinct conversations with different purposes, outputs, and owners.
+Work reaches engineering through two distinct conversations. Keeping them separate is what hands engineering a clear, already-decided piece of work.
 
-### Outcome to Solution (discovery)
-
-- **Purpose:** settle the **what and why**. What should we build, and is it the right thing?
-- **Owner:** Product brings the outcome and the opportunity into focus. Product and engineering collaborate to choose the solution.
-- **Produces:** the job to be done (JTBD), the chosen solution, success criteria (how we will know it worked), and the risky assumptions, plus any spikes worth running to build confidence.
-- **Cadence:** held ad hoc, per outcome, as outcomes are ready to be worked.
-
-### Refinement (delivery)
-
-- **Purpose:** settle the **how**, and only the how. The solution is already chosen; how do we get there in technical terms?
-- **Owner:** Engineering owns it and defines the solution and implementation issues.
-- **Produces:** story breakdown, technical path, acceptance criteria (did we deliver what we said we would?), and estimates.
-- **Cadence:** fast and focused. If a refinement turns into a debate about whether we are building the right thing, that is the signal it belongs in an Outcome to Solution conversation instead.
-
-| | Outcome to Solution | Refinement |
+| | Outcome to Solution (discovery) | Refinement (delivery) |
 | --- | --- | --- |
-| Question | What should we build, and is it right? | How do we build what we chose? |
-| Mode | Discovery | Delivery |
-| Owner | Product (with engineering) | Engineering |
-| Produces | JTBD, chosen solution, success criteria, risky assumptions + spikes | Story breakdown, technical path, acceptance criteria, estimates |
+| Settles | What to build, and why it is right | How to build what we chose |
+| Owner | Product, with engineering | Engineering |
+| Produces | JTBD, chosen solution, success criteria, risky assumptions and any spikes | Story breakdown, technical path, acceptance criteria, estimates |
+| Held | Ad hoc, per outcome | Once the solution is chosen |
 
-## Who owns what
+If a refinement reopens whether we are building the right thing, that belongs back in an Outcome to Solution conversation.
 
-| | Owns |
-| --- | --- |
-| **Product** | The *why* and *what*: outcomes, opportunities, desirability, viability. Brings the outcome into focus. |
-| **Engineering** | The *how*: technical path, feasibility, implementation. Defines the implementation issues. |
-| **Together** | The handoff: turning a chosen solution into something buildable, and surfacing the risky assumptions to test. |
-
-## How this connects to delivery
-
-The two conversations and sprint planning form one chain:
-
-1. **Outcome to Solution** chooses the solution and names the risky assumptions worth a spike.
-2. **Spikes**, where they help, run and build confidence in the chosen solution.
-3. **Refinement** breaks the chosen solution into implementation issues, with a technical path, acceptance criteria, and estimates.
-4. **Sprint planning** pulls those estimated issues into a sprint and commits them.
-
-Discovery decides the right thing, refinement decides how, and [sprint planning](/handbook/engineering/project-management/#sprint-planning-friday) commits the work. The same handoff is described from the delivery side under [Product Conversations Feed the Cadence](/handbook/engineering/project-management/#product-conversations-feed-the-cadence).
+These two, plus sprint planning, form one chain: **Outcome to Solution** picks the solution and the assumptions worth a spike, any **spikes** build confidence, **Refinement** breaks the chosen solution into estimated implementation issues, and [sprint planning](/handbook/engineering/project-management/#sprint-planning-friday) commits them. The same handoff is described from the delivery side under [Product Conversations Feed the Cadence](/handbook/engineering/project-management/#product-conversations-feed-the-cadence).
