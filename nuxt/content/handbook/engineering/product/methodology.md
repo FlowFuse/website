@@ -13,7 +13,7 @@ Product work happens in two distinct modes. Keeping them separate is what keeps 
 - **Discovery** is deciding the *right thing* to build: the customer problem, the opportunity it sits in, which solution to pursue, and the risky assumptions behind it. Product leads; engineering collaborates.
 - **Delivery** is building the chosen thing *well*: story breakdown, technical path, acceptance criteria, estimates. Engineering leads.
 
-When the two modes get mixed into one conversation, both suffer. A meeting meant to break a chosen solution into stories stalls when someone reopens whether it is the right solution at all. We run discovery and delivery as separate, clearly-scoped conversations (see [Our two core product conversations](#our-two-core-product-conversations)).
+When the two modes get mixed into one conversation, both suffer. A meeting meant to break a chosen solution into stories stalls when someone reopens whether it is the right solution at all. We run discovery and delivery as separate, clearly-scoped conversations (see [Product meetings](#product-meetings)).
 
 ## The Opportunity Solution Tree
 
@@ -75,7 +75,7 @@ Every solution rests on assumptions across five categories:
 - **Usability** (can customers use it?)
 - **Ethical** (could it cause harm?)
 
-When we are unsure about an assumption that matters (high importance, low existing evidence), a **spike** is the cheapest way to build confidence before we invest further: mining existing data, a fast prototype, a one-question survey, or a focused engineering investigation.
+When we are unsure about an assumption that matters (high importance, low existing evidence), a **spike** is the cheapest way to build confidence before we invest further. A spike can take many shapes: mining existing data, a one-question survey, a fast prototype, a focused engineering investigation, or a **proof of concept (PoC)** that speeds up our understanding of how to deliver something. AI-aided development makes a PoC especially cheap to stand up, so a working PoC is often the fastest way to answer a "can we, and how, build this?" question.
 
 Spikes are not mandatory. What we ask is that, for a solution's riskiest assumptions, the team has **considered** whether a spike would help, and made that call deliberately. Where confidence is already high, note that and move on; where it is low and the assumption matters, running a spike is the recommended way to raise it.
 
@@ -97,7 +97,19 @@ Why they fit together:
 - **Confidence and commitment line up.** We commit firmly where we know, and stay open further out, so we can shift as discovery evolves.
 - **Strategy stays traceable.** Objectives sit at the top, evidenced needs in the middle, committed work at the bottom. Anyone reading the tree can trace why a given thing is being built.
 
-## Two conversations hand work to engineering
+## Product meetings
+
+Product runs a small set of meetings, from steering objectives down to handing concrete work to engineering.
+
+### Product <> Leadership Sync
+
+A dedicated, high-level meeting to align on product objectives. We discuss whether we have the right [objectives](#the-opportunity-solution-tree) and [metrics](./metrics.md), our progress against them, and high-level adjustments to steer product across the [product lanes](./product-swimlanes.md).
+
+### Product Roadmap Planning
+
+Aligns the product roadmap across product lanes, and syncs prioritisation against each lane's product objectives. It also prepares the points to be discussed in the Product <> Leadership Sync. As part of it, Product reviews customer needs and wants from renewals and prospective deals, and the CTO brings bug reports and technical needs from engineering.
+
+### Outcome to Solution and Refinement
 
 Work reaches engineering through two distinct conversations. Keeping them separate is what hands engineering a clear, already-decided piece of work.
 
