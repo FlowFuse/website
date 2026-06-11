@@ -6,7 +6,7 @@ title: "Metrics"
 
 Our ongoing mission is to enable data-driven decision-making, facilitating strategic product development and enhancing user experience. To achieve this, we focus on specific product metrics that illuminate user behavior, feature adoption, and overall product performance. 
 
-This handbook page provides an overview of the metrics we concentrate on, and how they contribute to our overall [product strategy](./strategy.md). Metrics are how we measure whether our [Objectives](./methodology.md) are moving: an Objective is a change in customer behaviour, and these metrics are the evidence that the change is happening.
+This handbook page provides an overview of the metrics we concentrate on, and how they contribute to our overall product strategy. Metrics are how we measure whether our [Objectives](./methodology.md) are moving: an Objective is a change in customer behaviour, and these metrics are the evidence that the change is happening.
 
 ## Principles
 

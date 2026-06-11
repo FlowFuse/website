@@ -17,7 +17,7 @@ We separate deciding *what* to build and *why* (discovery) from deciding *how* t
 
 | Task                                                           | Description                                                                                                                                                                                                                                                                                                     |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Maintain and Update Product Strategy](./strategy.md)          | The PM is responsible for maintaining and updating the product strategy to ensure alignment with the company's goals and market demands.                                                                                                                                                                       |
+| Maintain and Update Product Strategy                           | The PM is responsible for maintaining and updating the product strategy to ensure alignment with the company's goals and market demands.                                                                                                                                                                       |
 | Release Planning for Every Milestone                           | The PM is the DRI (Directly Responsible Individual) for planning and prioritizing work for the engineering group.                                                                                                                                                                                               |
 | Create Release Changelog Entries                               | The changelog is the way to broadcast what features have been released. The PM is responsible for ensuring that changelog items are created, reviews are complete, and posts are made.                                                                                                                         |
 | Connect User and Customer Insights with Product Prioritization | The PM is responsible for conducting customer interviews, collecting insights about customer adoption and pain points, and reprioritizing the "Backlog" and "Roadmap". The goal is to continuously refine the most important features, bugs, and technical debt to ensure market relevance. |
@@ -28,7 +28,6 @@ We separate deciding *what* to build and *why* (discovery) from deciding *how* t
 ## How product works
 
 - [Methodology](./methodology.md)
-- [Strategy](./strategy.md)
 - [Glossary](./glossary.md)
 - [Feedback](./feedback.md)
 - [Product Categories](./verticals.md)
