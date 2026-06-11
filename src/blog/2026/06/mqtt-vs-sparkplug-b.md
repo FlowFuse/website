@@ -89,7 +89,7 @@ A team starts with plain MQTT because it's the obvious choice. A handful of PLCs
 
 ## Where plain MQTT starts to hurt
 
-It's worth hearing this from the person who built it. [Arlen Nipper](https://industry4o.com/2024/08/22/mqtt-sparkplug/) co-invented MQTT and later wrote the Sparkplug specification, and he's blunt about the trade-off at the heart of the protocol:
+It's worth hearing this from the person who built it. [Arlen Nipper](https://element8.co.za/Resources/arlen-nipper-co-inventor-of-mqtt-shares-his-incredible-journey-and-his-vision-for-iiot/) co-invented MQTT and later wrote the Sparkplug specification, and he's blunt about the trade-off at the heart of the protocol:
 
 > Both the good and the bad thing about MQTT is, you can publish anything you want on any topic.
 
