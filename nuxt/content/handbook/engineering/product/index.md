@@ -5,9 +5,13 @@ title: "Product"
 
 The product function, and Product Managers (PM) by extension, are responsible for:
 
-1. Understanding and communicating the problem of our users and customers.
-2. Defining requirements for a solution that is loved by our users, customers and the community.
-3. Continuously aligning the product strategy with FlowFuse's core [strategic objectives](../../company/strategy.md), ensuring not only that the product meets current market demands but also anticipates future trends.
+1. Understanding and communicating the problems and opportunities our users and customers face.
+2. Deciding which opportunities are worth pursuing and which solutions to build, grounded in customer evidence.
+3. Continuously aligning the product strategy with FlowFuse's core [strategic objectives](../../company/strategy.md), so the product meets current demand and anticipates where the market is going.
+
+## How we work
+
+We separate deciding *what* to build and *why* (discovery) from deciding *how* to build it (delivery). The [Methodology](./methodology.md) page is the operating model: the Opportunity Solution Tree, how we grade evidence, how we de-risk solutions with spikes, and the two conversations (Outcome to Solution, and Refinement) that move work from discovery into delivery.
 
 ## Core tasks and responsibilities
 
@@ -23,13 +27,14 @@ The product function, and Product Managers (PM) by extension, are responsible fo
 
 ## How product works
 
+- [Methodology](./methodology.md)
+- [Strategy](./strategy.md)
 - [Glossary](./glossary.md)
 - [Feedback](./feedback.md)
 - [Product Categories](./verticals.md)
-- [Strategy](./strategy.md)
 - [Pricing Principles](./pricing.md)
-- [Feature Demos](/handbook/engineering/project-management#feature-demos)
-- [Versioning](./versioning.md)
 - [Metrics](./metrics.md)
-- [Node-RED Dashboard](./dashboard.md)
 - [Product Growth](./telemetry.md)
+- [Versioning](./versioning.md)
+- [Feature Demos](/handbook/engineering/project-management#feature-demos)
+- [Node-RED Dashboard](./dashboard.md)

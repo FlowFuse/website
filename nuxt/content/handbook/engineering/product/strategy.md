@@ -4,54 +4,31 @@ title: "Strategy"
 
 # Product Strategy
 
-In support of our [company strategy](/handbook/company/strategy), and derived from our [vision](/handbook/engineering/product/vision), we build our product around a single product mission statement:
+In support of our [company strategy](/handbook/company/strategy), we build our product around a single product mission statement:
 
->**We are the platform that moves you from fragile, project-based automation to governed, distributed industrial runtime infrastructure.**
+> **Provide the best way to build, manage and deploy Node-RED applications at scale, in reliable and secure production environments.**
 
-Our strategy is reviewed on a regular basis and we will iterate when there is reason to do so. 
+Our strategy is an indication and statement of intent for the next 2 years. FlowFuse will empower everyone to build custom applications to achieve their business goals and depend less on off-the-shelf point solutions.
 
-## Strategic Objectives
-
-Our strategic Objectives direct our investment and innovation efforts, and are re evaluated each quarter.
-
-### Establish FlowFuse as the Enterprise-Trusted Node-RED Platform
-
-FlowFuse is committed to augmenting the enterprise-readiness of Node-RED. Our strategy emphasises enhancing audit and compliance capabilities, instituting stringent preventive and corrective controls, and bolstering security. By integrating these vital aspects, we aim to create a reliable, secure, and scalable environment. This initiative underlines our dedication to surpassing enterprise expectations and strengthening Node-RED's position in the industry.
-
-### Deliver the Fastest, most Flexible Edge Deployments
-
-Many organizations position Node-RED instances on remote servers, edge-, or industrial-devices. This practise allows them to meet network-, infrastructure-, or use-case- requirements.
-
-FlowFuse already supports this process by creating snapshots on Node-RED instances that can be deployed to multiple remote targets. We will continue to expand the functionalities to allow users to manage existing Node-RED instances, improve their development practices to accelerate development and ensure a reliable and repeatable process, providing more flexible remote deployment options and offering the best support for devices in closed and segmented networks as we are facing it in production environments.
-
-### Win ICP Manufacturing Logos
-Our Industrial enterprise customers rely on node-red and FlowFuse to complete the observability of their OT and IT networks. Our product solves real, painful problems for people responsible for the uptime and observability of their networks and production. We are committed to building, selling and marketing our platform with their needs at the forefront of our product decisions.
-
-## Roadmap
-
-The company roadmap shows a high-level view of the features we are building to bring our company vision to fruition. Our roadmap provides transparency into our development priorities and helps align our team's efforts with our strategic objectives.
-
-You can view our current roadmap in the [12 Month Plan view](https://github.com/orgs/FlowFuse/projects/3/views/19) of our Product Planning project on GitHub.
-
-The roadmap may need to be adjusted over time as we pivot when we identify better ways to accomplish our company goals. This flexibility allows us to respond to market changes, customer feedback, and emerging opportunities while maintaining our focus on delivering maximum value to our customers.
-
-
+Our strategy is reviewed on a regular basis and we will iterate when there is reason to do so; timing is everything.
 
 ## Product Pillars
 
-When we talk about our product features and the value it offers to our customers, we refer to our product pillars. 
+When we talk about our product features and the value it offers to our customers, we refer to our product pillars.
 
 These three pillars ensure we are aligned with our product mission statement and company strategy.
 
-
-| Pillar Name                  | Strategic Value Proposition                                                                                | The "Operational Scaling" Problem/Solution                                                                                                                                                                                                                                          | Differentiation (vs. Raw Node-RED/Competitors)                                                                                                                              |
-|:-----------------------------|:-----------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Operational Scaling**      | **Deliver Consistency at Scale.** Move from "one-off" projects to a global fleet strategy.                 | **Problem:** Successful pilots often become "snowflakes" that are impossible to maintain or update across multiple sites.<br><br>**Solution:** Centralized management of application patterns, ensuring that a CNC monitoring app at Site A is identical to the one at Site B.      | Unlike raw Node-RED, FlowFuse provides the governance, deployment pipelines, and device management needed to scale without adding headcount.                                |
-| **System Agility**           | **Extend & Adapt without Rip-and-Replace.** Turn rigid vendor software into flexible business assets.      | **Problem:** Purchased systems (MES/SCADA) rarely meet 100% of local operational needs, leading to manual workarounds.<br><br>**Solution:** A "low-code" agility layer that sits atop existing systems to add custom logic, vendor-agnostic workflows, and tailored business rules. | FlowFuse acts as the "anti-lock-in" layer. It allows teams to customize their stack without relying on expensive original vendor consultants or custom C#/.NET builds.      |
-| **Event-Driven Data Bridge** | **High-Precision Data Orchestration.** Connect the shop floor to the top floor based on real-world events. | **Problem:** Traditional middleware is often too heavy, while historians are too passive for real-time action.<br><br>**Solution:** A lightweight, event-based bridge that triggers data movement, transformation, and storage only when specific operational events occur.         | We aren't a "data lake." We are the intelligent router. This avoids the "dump everything to the cloud" cost trap and positions us as a surgical tool for IT/OT integration. |
-
-
 Any new feature requests, product improvements, or other changes to our product can be reflected back to these pillars to ensure they are in line with our product strategy.
+
+| Build | Manage | Deploy |
+|-------|--------|--------|
+| [Simplified Hosting](#simplified-hosting) | [Security](#security) | [DevOps](#devops) |
+| [Version Control](#version-control) | [Centralized Management](#centralized-management) | [Remote Deployments](#remote-deployments) |
+| [Trust](#trust) | [Administration](#administration) | [Scale](#scale) |
+| [Remote Access](#remote-access) | [Frictionless Maintenance](#frictionless-maintenance) | [Reliability](#reliability) |
+| [Full Stack Applications](#full-stack-applications) | [Observability](#observability) |  |
+| [Low Code](#low-code) |  |  |
+| [Collaborative Development](#collaborative-development) |  |  |
 
 ### Build
 
@@ -132,4 +109,3 @@ FlowFuse users should not have to concern when scaling their own applications. F
 #### Reliability
 
 FlowFuse users can trust that their applications will run reliably. This includes ensuring that applications are highly available, and that users have the tools to monitor and manage the reliability of their applications, including being alerted when things go wrong, and making the recovery as easy as possible.
-
