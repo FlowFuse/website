@@ -29,7 +29,7 @@ When required, the marketing team also leverages external vendors to maintain qu
 
 ## Requesting Marketing support
 
-If you would like the marketing team to create and publish content — a demo, blog post, or social media post — follow the [feedback loop process](/handbook/marketing/content-strategy/#future-content-planning) in the Content Strategy page. For social post requests specifically, follow the steps in [Requesting a social post](/handbook/marketing/social-media/#requesting-a-social-post).
+To request work from the marketing team — blog post, video, social post, artwork, website change, or email — use the forms listed in [Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing).
 
 ## Monthly Marketing Performance Tracking
 

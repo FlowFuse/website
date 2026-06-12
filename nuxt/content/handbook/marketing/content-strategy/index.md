@@ -20,30 +20,29 @@ cohesive strategy.
 
 ## Requesting Work from Marketing
 
-All requests to the marketing team — content (blog posts, emails), artwork,
-website changes, videos, social posts, or anything else — go through the
-**Marketing Request** form. This is the single entry point for any work you need
-from the team.
+Submit the form that matches your request type. Each submission creates a task in
+the marketing team's Asana project and notifies the team — there is no need to
+also message anyone in Slack.
 
-### How to submit a request
-
-1. Open the [#marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) channel in Slack.
-2. Select the [Marketing Request](https://flowfuse.slack.com/docs/T02248RBLSU/F0BA800K0TW)
-   tab at the top of the channel.
-3. Choose the option that matches what you need and complete the form with as much
-   detail as possible.
-
-Each submission creates a task in the marketing team's Asana project and notifies
-the team with all the details you provide. There is no need to also post in the
-channel or message anyone directly.
+* Content: blog post, video, or other content piece
+[Open the Content Request Form](https://form.asana.com/?k=K_dzcim2pxCeI56fklVtRA&d=1213818720452348)
+* Web page or change: new web page or changes to an existing one
+[Open the Web Pages/Changes Request Form](https://form.asana.com/?k=nYxAzsUL57HCyN3W8IYh9w&d=1213818720452348)
+* Artwork: diagram, presentation, PDF, blog tile, or other visual asset
+[Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
+* Social post: promotion of existing content, a product update, an event recap, or similar
+[Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
+* Email: a one-off email campaign, not part of recurring sends. For the monthly
+newsletter, see [Marketing Programs](/handbook/marketing/programs/#2-content--community-marketing).
+[Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
 
 ### Prioritization and deadlines
 
-As stated in the request form, the marketing team prioritizes requests based on
-their impact on the business and their alignment with current company priorities.
-The team makes every effort to meet requested deadlines, but when bottlenecks
-occur and work needs to be reprioritized, delivery dates may shift. If your
-request is time-critical, say so in the form and explain why.
+The marketing team prioritizes requests based on their impact on the business and
+their alignment with current company priorities. The team makes every effort to
+meet requested deadlines, but when bottlenecks occur and work needs to be
+re-prioritized, delivery dates may shift. If your request is time-critical, say so
+in the form and explain why.
 
 ## Content Funnel Stages
 
