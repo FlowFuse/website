@@ -19,10 +19,6 @@ meta:
     tool:
       - "OPC UA or Modbus connection to a PLC"
       - "FlowFuse"
-      - "Timer nodes"
-      - "Switch node"
-      - "Database (FlowFuse Tables)"
-      - "Email or Telegram notification channel"
     steps:
       - name: "Catch the stop signal"
         text: "Read machine state from the PLC over OPC UA or Modbus. Point a node at the right tag, and the moment the state flips to stopped, the event lands in your flow as a message timestamped to the second, so detection starts with the machine rather than a person noticing."
