@@ -29,7 +29,14 @@ When required, the marketing team also leverages external vendors to maintain qu
 
 ## Requesting Marketing support
 
-If you would like the marketing team to create and publish content — a demo, blog post, or social media post — follow the [feedback loop process](/handbook/marketing/content-strategy/#future-content-planning) in the Content Strategy page. For social post requests specifically, follow the steps in [Requesting a social post](/handbook/marketing/social-media/#requesting-a-social-post).
+## Requesting Marketing support
+
+If you would like the marketing team to create or publish anything — content,
+artwork, website changes, videos, or social posts — submit a request through the
+**Marketing Request** tab in the
+[#marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) Slack channel. See
+[Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+for full details.
 
 ## Monthly Marketing Performance Tracking
 
