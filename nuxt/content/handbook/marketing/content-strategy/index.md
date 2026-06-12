@@ -20,7 +20,7 @@ cohesive strategy.
 
 ## Requesting Work from Marketing
 
-All requests to the marketing team — content (blog posts, demos, emails), artwork,
+All requests to the marketing team — content (blog posts, emails), artwork,
 website changes, videos, social posts, or anything else — go through the
 **Marketing Request** form. This is the single entry point for any work you need
 from the team.
