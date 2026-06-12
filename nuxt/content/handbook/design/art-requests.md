@@ -17,15 +17,23 @@ Likely places this will be required are:
 
 ## Creating an Art Request
 
-You can create an issue on any of the FlowFuse Repositories that best suits the asset required, e.g:
+Submit all art requests through the
+[Marketing Request](https://flowfuse.slack.com/docs/T02248RBLSU/F0BA800K0TW) form,
+available from the **Marketing Request** tab in the
+[#marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) Slack channel. This
+is the same process used for all marketing requests — see
+[Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+for full details, including how requests are prioritized.
 
-- [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse): In-Product Visuals (e.g. icons, diagrams, pictograms)
-- [FlowFuse/website](https://github.com/FlowFuse/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
-- [FlowFuse/content](https://github.com/FlowFuse/marketing){rel="nofollow"}: Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
+When submitting an art request, be sure to include:
 
-When creating an issue, you'll be presented with an option to create an "Art Request" from the Issue Templates:
+- **Type**: What type of asset is this? Blog Tile? YouTube Thumbnail?
+- **Format**: Image (e.g. `.png`, `.jpg`), Video (e.g. `.mp4`), Animation (e.g. `.gif` or Lottie Animation)
+- **Deadline**: When you need the asset, and why if the date is fixed (e.g. an event or release)
+- **Context**: Where the asset will be used and any reference material
 
-![Screenshot from GitHub to show the option for creating an Art Request](../images/screenshots/gh-artrequest-template.png "Screenshot from GitHub to show the option for creating an Art Request")
+Each submission creates a task in the marketing team's Asana project, where
+progress is tracked.
 
 ### Details to Include
 
