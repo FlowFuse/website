@@ -9,18 +9,23 @@
         "preview": "nuxt preview"
     },
     "dependencies": {
+        "@resvg/resvg-js": "^2.6.2",
+        "@takumi-rs/core": "^1.7.0",
         "markdown-it": "^14.1.1",
         "mermaid": "^11",
         "sanitize-html": "^2.13.0",
+        "satori": "^0.26.0",
         "unstorage": "^1.17.5"
     },
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
         "@nuxt/image": "^2.0.0",
+        "@nuxtjs/seo": "^5.1.4",
         "@types/sanitize-html": "^2.16.1",
         "better-sqlite3": "^12.10.0",
         "nuxt": "^4.4.6",
         "nuxt-link-checker": "^5.0.10",
+        "nuxt-og-image": "^6.5.3",
         "nuxt-studio": "^1.7.0"
     }
 }

@@ -30,6 +30,7 @@ The product function defines what we build and why.
 ## General
 
 - [Security Policy](./security.md)
+- [Feature Flags](./feature-flags.md) - how to create, enable, and use PostHog feature flags in code
 - [Packaging](./packaging.md) - how we manage repos and npm packaging
 - [Contributing](./contributing) - tips & details on how to set up a local development environment.
 - [Dependency Updates](./dependency-updates.md) - how we triage Dependabot PRs each week

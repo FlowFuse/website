@@ -5,10 +5,10 @@ set -e
 
 if [[ "$GITHUB_REF" == "refs/heads/main" ]]; then
   echo "Running on main branch, comparing with previous commit"
-  MODIFIED_FILES=$(git diff --name-only --diff-filter=AM HEAD^ HEAD -- src/handbook/)
+  MODIFIED_FILES=$(git diff --name-only --diff-filter=AM HEAD^ HEAD -- nuxt/content/handbook/)
 else
   echo "Running on non-default branch, comparing with $GITHUB_BASE_REF branch"
-  MODIFIED_FILES=$(git diff --name-only --diff-filter=AM origin/$GITHUB_BASE_REF...HEAD -- src/handbook/)
+  MODIFIED_FILES=$(git diff --name-only --diff-filter=AM origin/$GITHUB_BASE_REF...HEAD -- nuxt/content/handbook/)
 fi
 
 echo "Modified files in the PR:"
@@ -24,7 +24,7 @@ fi
 ALL_URLS="" 
 
 for FILE in $MODIFIED_MD_FILES; do
-    RELATIVE_PATH=${FILE#src/handbook/}
+    RELATIVE_PATH=${FILE#nuxt/content/handbook/}
     
     URL_PATH=${RELATIVE_PATH%.md}
     
