@@ -115,12 +115,11 @@ meta:
 ```
 ## Requesting New Website Pages
 
-New pages or significant page updates should start with a [Website Page Request](https://github.com/FlowFuse/website/issues/new/choose) issue in the website repository.
-
-The request should include a draft (Google Doc) with:
-- full copy for all sections  
-- CTA destinations and links  
-- any relevant context for the page  
+If you would like the marketing team to create a new page, landing or apply website changes
+submit a request through the **Marketing Request** tab in the
+[#marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) Slack channel. See
+[Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+for full details.
 
 Starting with a draft copy is often the fastest way to get feedback and move into implementation.
 
