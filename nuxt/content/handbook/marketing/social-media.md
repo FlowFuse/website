@@ -45,7 +45,6 @@ Each content type has channels which are appropriate, this table sets out which 
 
 - **Own content:** 2-3x week. Mondays, Wednesdays, and Thursdays.
     - **Fresh blogs:** Every new piece of content will be shared on social media as a link to the article.
-    - **Clips form our podcast:** Industrial Visionaries, announcing new episodes.
     - **Product updates:** Release announcement every four weeks on Thursdays. Additionally, we’ll share quick, dev-driven product highlights whenever available. These are:
         - Faster to publish: Engineers or other team members can send a short video or screenshot with a quick explanation. The marketing team will handle editing and posting.
         - Less polished: Raw demos, internal tools, experiments, early features — even work-in-progress — are welcome. These should feel more like dev logs than polished announcements.
@@ -68,6 +67,8 @@ Each content type has channels which are appropriate, this table sets out which 
 - [Detailed list here](https://docs.google.com/spreadsheets/d/1Ifz6f7D_ZxCxJkAS9LbdvdnEAae0tGFEqkGVHcnn2TU/edit?usp=sharing).
 
 #### Planning and posting
+
+Social posts are planned as part of the broader [content strategy](/handbook/marketing/content-strategy/#content-planning-scheduling). The two-week rolling schedule and weekly review apply here too — social posts for the next two weeks should always be planned and ready.
 
 - We'll plan **two weeks ahead**, to give us time to prepare content and the associated materials.
 - We'll keep the planning on our [Social Content Calendar project in Asana](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519) and handle scheduling through the [HubSpot social calendar](https://app-eu1.hubspot.com/social/26586079/manage/calendar).

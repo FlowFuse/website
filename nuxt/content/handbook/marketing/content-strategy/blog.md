@@ -1,3 +1,6 @@
+---
+title: Blog
+---
 
 # Blog
 
@@ -5,27 +8,27 @@
 
 Content creation and blogging are effective ways to communicate with our community and are tied to our SEO performance (that we track in this [dedicated dashboard](https://app-eu1.hubspot.com/reports-dashboard/26586079/view/110361885) and our [Social Media Strategy](/handbook/marketing/social-media/#strategy-for-increasing-reach) and GEO that we track in this [Google Analytics report](https://analytics.google.com/analytics/web/#/analysis/a221166832p304634214). The process for publishing a blog is as follows:
 
-1. Program your blog post content aligned with the content strategy and schedule it in the Marketing team's [Content Calendar](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519).  
-1. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
-1. Issues should be assigned a date, which should be posted here in this [GitHub projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
-1. Create an [art request](/handbook/design/art-requests/#creating-an-art-request) for a blog tile to go with your article and share a deadline for when you're planning it to go live. This image will be used not only on the web, but also when the content is promoted on socials.
-1. Create a Pull Request on the [website repository](https://github.com/FlowFuse/website) with your Blog Content.
-1. Assign yourself as an Assignee.
-1. Convert to Draft
-1. Generate a temporary, [AI-generated blog tile](/handbook/marketing/blog/#blog-tile-creation-process) for your article to ensure the content is publish-ready from the start.
-1. No Reviews shall be done until the PR is “Ready for Review”
-1. Assign two reviewers
-    * One Reviewer for Content 
-    * One Reviewer for SEO.
-1. If the content is time-sensitive, please make sure everyone involved is aware of this. 
-1. Content will be reviewed first.
-1. SEO will be reviewed second.
-1. When both reviews are done*, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
-1. Once merged, the article can be promoted on FlowFuse social channels by either the author or the Social Media Manager. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
+1. Program your blog post content aligned with the [content strategy](/handbook/marketing/content-strategy/) and schedule it in the Marketing team's [Content Calendar](https://app.asana.com/1/1213818720452348/project/1214069528696432/calendar/1214069573785519).
+2. Create an initial issue or tie your blog to one of your scheduled issues [here](https://github.com/orgs/FlowFuse/projects/21/views/1).
+3. Issues should be assigned a date, which should be posted here in this [GitHub projects](https://github.com/orgs/FlowFuse/projects/21/views/1). The target date for review should be at least three working days before the planned posting date on social media. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting).
+4. Create an [art request](/handbook/design/art-requests/#creating-an-art-request) for a blog tile to go with your article and share a deadline for when you're planning it to go live. This image will be used not only on the web, but also when the content is promoted on socials.
+5. Create a Pull Request on the [website repository](https://github.com/FlowFuse/website) with your Blog Content.
+6. Assign yourself as an Assignee.
+7. Convert to Draft
+8. Generate a temporary, [AI-generated blog tile](/handbook/marketing/content-strategy/blog/#blog-tile-creation-process) for your article to ensure the content is publish-ready from the start.
+9. No Reviews shall be done until the PR is “Ready for Review”
+10. Assign two reviewers
+    - One Reviewer for Content
+    - One Reviewer for SEO.
+11. If the content is time-sensitive, please make sure everyone involved is aware of this.
+12. Content will be reviewed first.
+13. SEO will be reviewed second.
+14. When both reviews are done\*, the Author or SEO reviewer can merge. In the event of an external author, SEO/content review will merge.
+15. Once merged, the article can be promoted on FlowFuse social channels by either the author or the Social Media Manager. Check the [social media planning and posting section](/handbook/marketing/social-media/#planning-and-posting) for guidance and considerations.
 
 ## Blog Tile Creation Process
 
-The blog tile is generated with AI to ensure fast, unblocked publishing and visual consistency across all articles.  
+The blog tile is generated with AI to ensure fast, unblocked publishing and visual consistency across all articles.
 
 This allows every post to move through review and publication without depending on design availability.
 
@@ -33,23 +36,23 @@ This allows every post to move through review and publication without depending 
 
 By generating a tile immediately, we ensure:
 
-- Fast turnaround  
-- Asynchronous, non-blocking content flow  
-- Consistent visual completeness across all new posts  
+- Fast turnaround
+- Asynchronous, non-blocking content flow
+- Consistent visual completeness across all new posts
 
 #### Requirements
 
-- Enable both modes: **thinking** and **Nano Banana**.  
+- Enable both modes: **thinking** and **Nano Banana**.
 - Always attach at least three **PNG or JPG** reference images from [the curated reference folder](https://drive.google.com/open?id=1mbJ-PFuAuhUpsR3hRYxwZM_-WrwF6PIU&usp=drive_fs)
-  - Only use images from this folder as references.  
+  - Only use images from this folder as references.
   - ❗ Do not use AI-generated images as references, as this degrades visual consistency, colour accuracy, and style over time.
-- All attached reference images must use the same background color (light indigo or dark indigo).  
+- All attached reference images must use the same background color (light indigo or dark indigo).
 - To choose the correct background color, check the [most recently published article](/blog/):
   - If the latest tile uses a light background, generate a dark one next, and vice versa.
 
 #### Basic Prompt (Recommended for Speed)
 
-```
+```text
 Create a 1600 × 900 px image for this article:  
 [insert the article’s Netlify preview URL]
 
@@ -62,33 +65,32 @@ Use the attached images as a style reference. It should include:
 
 #### Optional Prompt Refinement
 
-- You may refine the prompt if you already know the desired visual direction.  
-- For example, if you want a diagram-style tile:  
-  - Attach only diagram-based reference images.  
+- You may refine the prompt if you already know the desired visual direction.
+- For example, if you want a diagram-style tile:
+  - Attach only diagram-based reference images.
   - Provide a description of the diagram or include Mermaid code.
 
 #### Storing Generated Images
 
 - All AI-generated tiles must be uploaded to the [this folder](https://drive.google.com/open?id=10FMVkHMwCEf1zc80t8J-4sY2xtggYQ6G&usp=drive_fs).
-- This folder is for reference and organization only.  
+- This folder is for reference and organization only.
 - Images in this folder must NOT be reused as reference images for future generations.
 
 #### About the Watermark
 
-Images generated with Nano Banana Pro will include the Gemini watermark.  
+Images generated with Nano Banana Pro will include the Gemini watermark.
 
 This is acceptable and supports fast publishing.
 
 ### Design Team Visibility
 
-After generating the temporary tile, be sure to open an [art request](/handbook/design/art-requests/#creating-an-art-request) and attach the generated tile, so the design team is aware of the asset.  
+After generating the temporary tile, be sure to open an [art request](/handbook/design/art-requests/#creating-an-art-request) and attach the generated tile, so the design team is aware of the asset.
 
 This does **not** block publishing — it simply allows designers to review the temporary tile later and update it if a final, on-brand version is needed.
 
 ## Blog CMS
 
 When creating a blog post there are several headers which are used by the CMS to populate the blogs as well as the blog index page. e.g:
-
 
 ```njk
 ---
@@ -136,9 +138,11 @@ The `date` field in the blog post front matter serves a crucial role in determin
 ### Authors
 
 The author can be seen on both the blog index and the articles. If you need to add multiple authors, it can be achieved in this way:
+
 ```njk
 authors: ["rob-marcer", "joe-pavitt"]
 ```
+
 If the authors are FlowFuse team members, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/src/_data/team)
 
 If they're not FlowFuse team members, they need to be added to the [guests list](https://github.com/FlowFuse/website/tree/main/src/_data/guests). Duplicate any of the files already in that folder, proceed to change the name of the file and update the info inside the `json` file. You'll also need to add a headshot in the images/team [folder](https://github.com/FlowFuse/website/tree/main/src/images/team) following the same name convention as the rest of the files.
@@ -280,7 +284,7 @@ You can also add your own custom tags. While these won't create a new page with 
 
 #### Meta Keywords
 
-Additionally, the tags you assign to your content will also be used as [meta keywords](/handbook/marketing/website/#meta-keywords) for each article, alongside the [default keywords](/handbook/marketing/website#default-keywords).
+Additionally, the tags you assign to your content will be output as [meta keywords](/handbook/marketing/website/#meta-keywords) in the page HTML. Note that major search engines ignore meta keywords — this has no effect on Google or Bing rankings.
 
 ### Adding Images
 
@@ -304,11 +308,11 @@ The `<!--more-->` tag is used to define the text shown in the blog index from ea
 
 ### Example blog index item based on the header above
 
-![Example of how the headers are shown on the blog index](./images/blog-index.png){class="border border-gray-200 max-w-[400px]"}
+![Example of how the headers are shown on the blog index](/handbook/marketing/images/blog-index.png){.border.border-gray-200.max-w-[400px]}
 
 ### Example blogs based on the header above
 
-![Example of how the headers are shown on blogs](./images/blog-article.png){class="border border-gray-200 max-w-[600px]"}
+![Example of how the headers are shown on blogs](/handbook/marketing/images/blog-article.png){.border.border-gray-200.max-w-[600px]}
 
 ### Rendering Node-RED Flows
 
@@ -319,13 +323,11 @@ download and copy button too for users to use what they've learned.
 To render a flow you'll need to export it to JSON in Node-RED and paste it in a
 `renderFlow` shortcode:
 
-{% raw %}
-```
+```text
 {% renderFlow %}
 <flowJSONHere>
 {% endrenderFlow %}
 ```
-{% endraw %}
 
 ### Writing content
 

@@ -532,6 +532,9 @@ module.exports = function(eleventyConfig) {
         return new URL(url, site.baseURL).href;
     })
 
+    eleventyConfig.addFilter("stripLinks", function(text) {
+        return String(text).replace(/<a\s[^>]*>([\s\S]*?)<\/a>/gi, '$1');
+    });
 
     eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
         let parts = url.split("/").filter(e => e !== '');
