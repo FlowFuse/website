@@ -1,4 +1,4 @@
-@layer vendor, theme, base, components, utilities;
+@layer vendor, theme, base, components, utilities, overrides;
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -79,31 +79,35 @@
 @source inline("ml-4 ml-8 ml-6 mt-3 max-w-[90%] py-4 py-2 bg-indigo-600 text-white rounded-br-sm bg-gray-100 text-gray-800 rounded-bl-sm justify-end justify-start max-w-xs lg:max-w-md overflow-auto rounded-lg px-4 mb-4 flex hover:border-indigo-400 hover:bg-indigo-50 hover:bg-indigo-100 active:bg-indigo-100 active:border-indigo-500 transition-all duration-200 text-gray-600 hover:text-indigo-600 transition-colors");
 
 @source not "../../nuxt/.netlify/**";
+@source "../../nuxt/content/**/*.md";
 
 @layer components {
     .prose {
+        max-width: 80ch;
+    }
+}
+
+@layer overrides {
+    .prose {
+        --tw-prose-body: var(--color-gray-700);
         --tw-prose-headings: var(--color-gray-600);
         --tw-prose-code: var(--color-red-700);
         --tw-prose-bold: var(--color-gray-500);
-        max-width: 80ch;
     }
-    .prose picture { margin-top: 0; margin-bottom: 0; }
-    .prose h1 { font-weight: 500; }
-    .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-weight: 400; }
 }
 
-@import "./style.page.css" layer(components);
-@import "./style.nohero.css" layer(components);
-@import "./style.handbook.css" layer(components);
-@import "./style.catalog.css" layer(components);
-@import "./style.eleventy.nav.css" layer(components);
-@import "./style.components.css" layer(components);
-@import "./style.animations.css" layer(components);
-@import "./style.docs.css" layer(components);
-@import "./algolia-theme.css" layer(components);
-@import "./roadmap.css" layer(components);
-@import "./zoom-style.css" layer(components);
-@import "./node-red-style.css" layer(components);
+@import "./style.page.css";
+@import "./style.nohero.css";
+@import "./style.handbook.css";
+@import "./style.catalog.css";
+@import "./style.eleventy.nav.css";
+@import "./style.components.css";
+@import "./style.animations.css";
+@import "./style.docs.css";
+@import "./algolia-theme.css";
+@import "./roadmap.css";
+@import "./zoom-style.css";
+@import "./node-red-style.css";
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css" layer(vendor);
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css" layer(vendor);
 
@@ -204,23 +208,6 @@ html, body {
     }
 }
 
-.prose .ff-blue-card > h1:first-of-type,
-.prose .ff-blue-card > h2:first-of-type,
-.prose .ff-blue-card > h3:first-of-type,
-.prose .ff-blue-card > h4:first-of-type,
-.prose .ff-blue-card > h5:first-of-type,
-.prose .ff-blue-card > h6:first-of-type {
-    margin-top: 0;
-}
-
-.prose .ff-blue-card > p:last-of-type {
-    margin-bottom: 0;
-}
-
-.prose figcaption {
-    text-align: center;
-    margin-bottom: 1rem;
-}
 
 .container {
     position: relative;
@@ -341,28 +328,6 @@ pre code {
     background: #030303
 }
 
-.prose code {
-    font-weight: 500;
-    padding-right: 0.25rem;
-}
-
-.prose .zoomable-image + em,
-.prose img + em,
-.prose picture + em {
-    display: block;
-    text-align: center;
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-}
-
-/* ensure any images smaller than width of the content are centrally aligned */
-.prose .zoomable-image {
-    text-align: center;
-}
-
-.prose picture {
-    margin: auto;
-}
 
 .nodered table {
     text-align: center;
@@ -2327,4 +2292,28 @@ lite-youtube::before {
         color: var(--color-white);
         border: 1px solid var(--color-red-700);
     }
+}
+
+@layer overrides {
+    .prose h1 { font-weight: 500; }
+    .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-weight: 400; }
+    .prose picture { margin-top: 0; margin-bottom: 0; margin-left: auto; margin-right: auto; }
+    .prose figcaption { text-align: center; margin-bottom: 1rem; }
+    .prose code { font-weight: 500; padding-right: 0.25rem; }
+    .prose .zoomable-image { text-align: center; }
+    .prose .zoomable-image + em,
+    .prose img + em,
+    .prose picture + em {
+        display: block;
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--color-gray-600);
+    }
+    .prose .ff-blue-card > h1:first-of-type,
+    .prose .ff-blue-card > h2:first-of-type,
+    .prose .ff-blue-card > h3:first-of-type,
+    .prose .ff-blue-card > h4:first-of-type,
+    .prose .ff-blue-card > h5:first-of-type,
+    .prose .ff-blue-card > h6:first-of-type { margin-top: 0; }
+    .prose .ff-blue-card > p:last-of-type { margin-bottom: 0; }
 }

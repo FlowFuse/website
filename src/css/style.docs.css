@@ -1,3 +1,5 @@
+@layer components {
+
 .checklist {
     
 }
@@ -86,14 +88,6 @@
     display:block;
 }
 
-.prose .ff-callout__content > :first-child {
-    margin-top: 0;
-}
-
-.prose .ff-callout__content > :last-child {
-    margin-bottom: 0;
-}
-
 .ff-callout {
     @apply my-6 border-l-2 px-4 py-3;
 }
@@ -135,4 +129,11 @@
 
 .ff-callout--critical .ff-callout__title {
     color: var(--color-red-700);
+}
+
+} /* end @layer components */
+
+@layer overrides {
+    .prose .ff-callout__content > :first-child { margin-top: 0; }
+    .prose .ff-callout__content > :last-child { margin-bottom: 0; }
 }

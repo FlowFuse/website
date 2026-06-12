@@ -1,3 +1,5 @@
+@layer components {
+
 .nohero {
     color: #111827;
     font-size: 0.875em;
@@ -41,6 +43,10 @@
     font-size: 2.6rem;
     line-height: 2.9rem;
 }
+
+} /* end @layer components */
+
+@layer overrides {
 
 .prose code::after {
     content: '' !important;
@@ -102,3 +108,5 @@
     margin-top: 2em;
     margin-bottom: 2em;
 }
+
+} /* end @layer overrides */

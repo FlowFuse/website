@@ -1,4 +1,6 @@
 
+@layer components {
+
 .page h1 {
     font-size: 2.5rem;
     line-height: 3rem;
@@ -606,4 +608,6 @@
 .channel .button-container {
     @apply text-center max-w-4xl flex flex-col md:items-start mt-6;
 }
+
+} /* end @layer components */
 

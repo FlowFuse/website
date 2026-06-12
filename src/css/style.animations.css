@@ -1,4 +1,6 @@
 
+@layer components {
+
 .ff-animation-text-carousel {
     @apply overflow-hidden flex justify-center md:justify-start gap-2;
 }
@@ -7,12 +9,13 @@
     animation-name: change;
     animation-duration: 6s;
     animation-iteration-count: infinite;
-}  
+}
 
 .ff-animation-text-carousel li {
    @apply text-left;
 }
 
+} /* end @layer components */
 
 @keyframes change {
     0%, 17.5% {

@@ -1,4 +1,6 @@
 
+@layer components {
+
 .eleventy-nav {
     border-right: 1px solid right;
     text-transform: capitalize;
@@ -89,3 +91,5 @@
 .chevron.rotated {
     transform: rotate(180deg);
 }
+
+} /* end @layer components */

@@ -1,12 +1,10 @@
 
+@layer components {
+
 .handbook {
     grid-template-columns: 230px minmax(0, 1fr) 260px;
     margin-top: -3rem;
     @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] 2xl:grid-cols-[300px,minmax(0,1fr),270px];
-}
-
-.handbook .prose {
-    @apply max-w-full;
 }
 
 .handbook-nav {
@@ -236,4 +234,10 @@
     font-family: monospace;
     color: #9CA3AF;
     line-height: 1.3;
+}
+
+} /* end @layer components */
+
+@layer overrides {
+    .handbook .prose { max-width: 100%; }
 }
